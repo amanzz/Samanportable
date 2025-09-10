@@ -1,0 +1,80 @@
+import React from 'react';
+import Head from 'next/head';
+import { RankMathSEOData } from '@/config/api';
+
+interface RankMathSEOProps {
+  seoData?: RankMathSEOData | null;
+  fallbackTitle?: string;
+  fallbackDescription?: string;
+  fallbackCanonical?: string;
+  fallbackOgImage?: string;
+}
+
+export const RankMathSEO: React.FC<RankMathSEOProps> = ({
+  seoData,
+  fallbackTitle,
+  fallbackDescription,
+  fallbackCanonical,
+  fallbackOgImage = 'https://www.samanportable.com/og-image.svg',
+}) => {
+  // Debug logging
+
+  
+  // Use Rank Math data if available, otherwise use fallbacks
+  const title = seoData?.title || fallbackTitle;
+  const description = seoData?.description || fallbackDescription;
+  const canonical = seoData?.canonical || fallbackCanonical;
+  const ogTitle = seoData?.og_title || title;
+  const ogDescription = seoData?.og_description || description;
+  const ogImage = seoData?.og_image || fallbackOgImage;
+  const ogLocale = seoData?.og_locale || 'en_US';
+  const twitterTitle = seoData?.twitter_title || title;
+  const twitterDescription = seoData?.twitter_description || description;
+  const twitterImage = seoData?.twitter_image || ogImage;
+
+  // Handle robots meta - Override WordPress noindex for main site
+  // WordPress blog should have noindex, but main site pages should be indexed
+  const robotsContent = 'index, follow';
+
+  return (
+    <Head>
+      {/* Basic Meta Tags */}
+      {title && <title>{title}</title>}
+      {description && <meta name="description" content={description} />}
+      {canonical && <link rel="canonical" href={canonical} />}
+      
+      {/* Robots Meta */}
+      <meta name="robots" content={robotsContent} />
+      
+      {/* Open Graph Meta Tags */}
+      {ogTitle && <meta property="og:title" content={ogTitle} />}
+      {ogDescription && <meta property="og:description" content={ogDescription} />}
+      {ogImage && <meta property="og:image" content={ogImage} />}
+      {canonical && <meta property="og:url" content={canonical} />}
+      <meta property="og:locale" content={ogLocale} />
+      <meta property="og:site_name" content="SAMAN Portable Office Solutions" />
+      
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      {twitterTitle && <meta name="twitter:title" content={twitterTitle} />}
+      {twitterDescription && <meta name="twitter:description" content={twitterDescription} />}
+      {twitterImage && <meta name="twitter:image" content={twitterImage} />}
+      
+      {/* Schema.org Structured Data */}
+      {seoData?.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema)
+          }}
+        />
+      )}
+      
+      {/* Additional Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="format-detection" content="telephone=no" />
+    </Head>
+  );
+};
+
+export default RankMathSEO;

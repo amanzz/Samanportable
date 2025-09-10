@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#ffffff"/>
+  
+  <!-- House silhouettes -->
+  <g fill="#22c55e">
+    <!-- Left house -->
+    <path d="M4 20 L8 16 L12 20 L12 24 L4 24 Z"/>
+    <rect x="6" y="22" width="2" height="2" fill="#ffffff"/>
+    <rect x="8" y="22" width="2" height="2" fill="#ffffff"/>
+    
+    <!-- Center house -->
+    <path d="M12 18 L16 14 L20 18 L20 24 L12 24 Z"/>
+    <rect x="14" y="20" width="1" height="1" fill="#ffffff"/>
+    <rect x="17" y="20" width="1" height="1" fill="#ffffff"/>
+    <rect x="15.5" y="16" width="1" height="2" fill="#000000"/>
+    
+    <!-- Right house -->
+    <path d="M20 20 L24 16 L28 20 L28 24 L20 24 Z"/>
+    <rect x="22" y="22" width="2" height="2" fill="#ffffff"/>
+    <rect x="24" y="22" width="2" height="2" fill="#ffffff"/>
+  </g>
+  
+  <!-- Ground/path -->
+  <path d="M2 26 Q16 28 30 26 L30 32 L2 32 Z" fill="#22c55e"/>
+  <path d="M2 28 Q16 30 30 28 L30 32 L2 32 Z" fill="#000000"/>
+  
+  <!-- SAMAN text -->
+  <text x="16" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#000000">SAMAN</text>
+  
+  <!-- PORTABLE text -->
+  <text x="16" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="3" font-weight="bold" fill="#22c55e">PORTABLE</text>
+</svg> 
