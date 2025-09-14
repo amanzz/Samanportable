@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.samanportable.com
+
+# Sitemaps
+Sitemap: https://www.samanportable.com/sitemap.xml
