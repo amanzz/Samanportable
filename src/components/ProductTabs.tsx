@@ -156,7 +156,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ productTitle, faqs }) => {
 
 const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) => {
   const [activeTab, setActiveTab] = useState('description');
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(true);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   
@@ -594,19 +594,10 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
                       <h3 className="text-2xl font-bold text-foreground mb-2">Product Overview</h3>
                       <p className="text-muted-foreground">Detailed information about {productTitle}</p>
               </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-                      className="text-primary hover:text-primary/80"
-                    >
-                      {isDescriptionExpanded ? 'Show Less' : 'Show More'}
-                      <ChevronDown className={`w-4 h-4 ml-2 transition-transform ${isDescriptionExpanded ? 'rotate-180' : ''}`} />
-                    </Button>
             </div>
 
                   {/* Description Content with Green Theme */}
-                  <div className={`transition-all duration-300 ${isDescriptionExpanded ? 'max-h-none' : 'max-h-96 overflow-hidden'}`}>
+                  <div className="transition-all duration-300">
                     <div 
                       className="prose prose-lg max-w-none leading-relaxed overflow-x-hidden product-description-content"
                       dangerouslySetInnerHTML={{ __html: cleanDescription || '<p class="text-center text-muted-foreground py-12">No description available for this product.</p>' }}
