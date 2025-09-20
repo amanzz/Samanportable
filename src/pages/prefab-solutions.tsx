@@ -268,6 +268,8 @@ const PrefabSolutionsPage = () => {
         <title>Container Office Manufacturer India | Porta Cabin Supplier | Saman Portable</title>
         <meta name="description" content="India&apos;s #1 Container Office & Porta Cabin Manufacturer. Ready in 7-15 days. ISI Certified. Free Installation. All India Delivery. Get instant quote for container offices, porta cabins, labor colonies." />
         <meta name="keywords" content="prefab solutions India, container offices Bangalore, porta cabins, labor colonies, portable offices, container cafes, prefab construction, modular buildings, construction cabins, healthcare facilities, event spaces, storage solutions, Saman Portable" />
+        <meta name="author" content="Saman Portable Office Solutions" />
+        <meta name="publisher" content="Saman Portable Office Solutions" />
         <meta property="og:title" content="Prefab Solutions India | Saman Portable - Modern Container & Portable Buildings" />
         <meta property="og:description" content="Transform your space with India&apos;s leading prefab solutions. Container offices, porta cabins, labor colonies & more. Fast, reliable, cost-effective building solutions with free consultation." />
         <meta property="og:type" content="website" />

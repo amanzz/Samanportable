@@ -366,6 +366,8 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
         <title>Products - Saman Portable Office Solutions | Portable Cabins, Container Offices & Prefab Solutions</title>
         <meta name="description" content="Explore our wide range of portable cabins, container offices, and prefab solutions. High-quality, durable, and customizable products for all your needs." />
         <meta name="keywords" content="portable cabins, container offices, prefab solutions, portable buildings, modular offices" />
+        <meta name="author" content="Saman Portable Office Solutions" />
+        <meta name="publisher" content="Saman Portable Office Solutions" />
         <meta property="og:title" content="Products - Saman Portable Office Solutions" />
         <meta property="og:description" content="Explore our wide range of portable cabins, container offices, and prefab solutions." />
         <meta property="og:type" content="website" />
@@ -373,7 +375,14 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
         <link rel="canonical" href="https://samanportable.com/product" />
       </Head>
       
-      {rankMathSEO && <RankMathSEO seoData={rankMathSEO} />}
+      {rankMathSEO && (
+            <RankMathSEO 
+              seoData={rankMathSEO} 
+              fallbackCanonical="https://www.samanportable.com/product"
+              fallbackTitle="All Products - Saman Portable Office Solutions"
+              fallbackDescription="Browse our complete collection of portable office solutions, cabins, and containers at Saman Portable Office Solutions."
+            />
+          )}
 
       {/* Preload critical images for better performance */}
       <ImagePreloader 

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { useState } from 'react';
 import Layout from '@/components/Layout';
 import { Button } from '../components/ui/button';
 import QuoteForm from '../components/QuoteForm';
@@ -43,11 +42,65 @@ const ContactPage = () => {
       <Head>
         <title>Contact Us - Saman Portable Office Solutions</title>
         <meta name="description" content="Get in touch with Saman Portable Office Solutions. Contact us for portable cabins, container offices, and prefab solutions. We're here to help with your project." />
+        <meta name="keywords" content="contact saman portable, portable office contact, container office inquiry, prefab solutions contact, portable cabin quote, construction site office contact" />
+        <meta name="author" content="Saman Portable Office Solutions" />
+        <meta name="publisher" content="Saman Portable Office Solutions" />
         <meta property="og:title" content="Contact Us - Saman Portable Office Solutions" />
         <meta property="og:description" content="Get in touch with Saman Portable Office Solutions for portable cabins, container offices, and prefab solutions." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://blog.samanportable.com/contact" />
         <link rel="canonical" href="https://blog.samanportable.com/contact" />
+        
+        {/* Contact Page Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "name": "Contact Us - Saman Portable Office Solutions",
+              "description": "Get in touch with Saman Portable Office Solutions for portable cabins, container offices, and prefab solutions.",
+              "url": "https://www.samanportable.com/contact",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Saman Portable Office Solutions",
+                "url": "https://www.samanportable.com",
+                "logo": "https://www.samanportable.com/logo.png",
+                "contactPoint": [
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-80-4680-9920",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": "English"
+                  }
+                ],
+                "address": [
+                  {
+                    "@type": "PostalAddress",
+                    "streetAddress": "I, Sy No 34/2, near India Oil petrol pump, Gopasandra",
+                    "addressLocality": "Bengaluru",
+                    "addressRegion": "Karnataka",
+                    "postalCode": "560099",
+                    "addressCountry": "IN"
+                  }
+                ]
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "Saman Portable Office Solutions"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Saman Portable Office Solutions",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.samanportable.com/logo.png"
+                }
+              }
+            })
+          }}
+        />
       </Head>
 
       <main className="bg-background">

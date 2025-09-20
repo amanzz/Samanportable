@@ -94,6 +94,9 @@ const RentalServices = () => {
       <Head>
         <title>Rental Services - Saman Portable Office Solutions</title>
         <meta name="description" content="Professional rental services for porta cabins, container offices, and prefab structures in Bangalore. Flexible terms and quick setup available." />
+        <meta name="keywords" content="porta cabin rental, container office rental, prefab structure rental, temporary office rental, construction site rental, portable cabin hire" />
+        <meta name="author" content="Saman Portable Office Solutions" />
+        <meta name="publisher" content="Saman Portable Office Solutions" />
       </Head>
       
       <div className="min-h-screen">

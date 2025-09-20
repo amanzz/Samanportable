@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Search, Calendar, User, Tag, ArrowRight, Clock } from 'lucide-react';
 import { fetchBlogPosts } from '@/config/api';
-import { pageSEO } from '@/config/seo';
+import { pageSEO, siteConfig } from '@/config/seo';
 import BlogImage from '@/components/BlogImage';
 
 import { BlogPost as ApiBlogPost } from '@/config/api';
@@ -119,6 +119,9 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
       <SEO
         title={pageSEO.blog.title}
         description={pageSEO.blog.description}
+        keywords={pageSEO.blog.keywords}
+        author={siteConfig.author}
+        publisher={siteConfig.publisher}
         canonical={pageSEO.blog.canonical}
         openGraph={{
           title: pageSEO.blog.title,

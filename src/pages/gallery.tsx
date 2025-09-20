@@ -117,6 +117,8 @@ const Gallery = () => {
         <title>Gallery - Saman Portable Office Solutions</title>
         <meta name="description" content="Explore our comprehensive gallery of portable cabins, container offices, and prefab solutions. View high-quality images of our projects and installations." />
         <meta name="keywords" content="gallery, portable cabins, container offices, prefab solutions, project images, installations" />
+        <meta name="author" content="Saman Portable Office Solutions" />
+        <meta name="publisher" content="Saman Portable Office Solutions" />
         <link rel="canonical" href="https://samanportable.com/gallery" />
         
         {/* Open Graph */}

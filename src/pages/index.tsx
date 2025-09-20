@@ -6,7 +6,7 @@ import SEO from '@/components/SEO';
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
 import { generateOrganizationSchema } from '@/lib/schema';
-import { pageSEO } from '@/config/seo';
+import { pageSEO, siteConfig } from '@/config/seo';
 
 // Dynamic imports for below-the-fold sections to improve LCP
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'), {
@@ -115,6 +115,9 @@ const HomePage = ({ recentBlogPosts }: HomePageProps) => {
         title={pageSEO.home.title}
         description={pageSEO.home.description}
         canonical={pageSEO.home.canonical}
+        keywords={pageSEO.home.keywords}
+        author={siteConfig.author}
+        publisher={siteConfig.publisher}
         openGraph={{
           title: pageSEO.home.title,
           description: pageSEO.home.description,

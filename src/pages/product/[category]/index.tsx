@@ -99,12 +99,43 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // Fetch full description and images separately
     const descriptionData = await fetchProductDescription(category);
 
-    // Fetch Rank Math SEO data
+    // Fetch Rank Math SEO data with fallback
     let rankMathSEO: RankMathSEOData | null = null;
     try {
       rankMathSEO = await fetchProductRankMathSEO(category);
+      
+      // If RankMath data is empty or incomplete, create fallback SEO data
+      if (!rankMathSEO || Object.keys(rankMathSEO).length === 0) {
+        rankMathSEO = {
+          title: product.name + ' - SAMAN Portable Office Solutions',
+          description: product.short_description?.replace(/<[^>]*>/g, '').substring(0, 160) || product.name,
+          canonical: `https://www.samanportable.com/product/${category}/`,
+          og_title: product.name,
+          og_description: product.short_description?.replace(/<[^>]*>/g, '').substring(0, 160) || product.name,
+          og_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
+          og_locale: 'en_US',
+          twitter_title: product.name,
+          twitter_description: product.short_description?.replace(/<[^>]*>/g, '').substring(0, 160) || product.name,
+          twitter_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
+          robots: { index: 'index', follow: 'follow' }
+        };
+      }
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data:', error);
+      // Create fallback SEO data
+      rankMathSEO = {
+        title: product.name + ' - SAMAN Portable Office Solutions',
+        description: product.short_description?.replace(/<[^>]*>/g, '').substring(0, 160) || product.name,
+        canonical: `https://www.samanportable.com/product/${category}/`,
+        og_title: product.name,
+        og_description: product.short_description?.replace(/<[^>]*>/g, '').substring(0, 160) || product.name,
+        og_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
+        og_locale: 'en_US',
+        twitter_title: product.name,
+        twitter_description: product.short_description?.replace(/<[^>]*>/g, '').substring(0, 160) || product.name,
+        twitter_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
+        robots: { index: 'index', follow: 'follow' }
+      };
     }
 
     return {
@@ -315,8 +346,14 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO }: Pro
             />
           </SEO>
           
-          {/* Rank Math SEO */}
-          {rankMathSEO && <RankMathSEO seoData={rankMathSEO} />}
+          {/* Rank Math SEO - Always render with fallback */}
+          <RankMathSEO 
+            seoData={rankMathSEO} 
+            fallbackTitle={`${transformedProduct.title} - SAMAN Portable Office Solutions`}
+            fallbackDescription={transformedProduct.description?.replace(/<[^>]*>/g, '').substring(0, 160) || transformedProduct.title}
+            fallbackCanonical={`https://www.samanportable.com/product/${category}/`}
+            fallbackOgImage={images[0]?.src || '/og-image.svg'}
+          />
 
           {/* Product Structured Data for Google Merchant Center */}
           <ProductStructuredData product={product} category={category} />

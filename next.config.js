@@ -125,7 +125,18 @@ const nextConfig = {
   // Force HTTPS and WWW redirects
   async redirects() {
     return [
-      // Duplicate URL redirects for SEO
+      // Duplicate URL redirects for SEO - Container Cafes
+      {
+        source: '/container-cafes-in-central-delhi-2',
+        destination: '/container-cafes-in-central-delhi',
+        permanent: true,
+      },
+      // Duplicate URL redirects for SEO - Container Offices
+      {
+        source: '/container-offices-in-gurgaon-2',
+        destination: '/container-offices-in-gurgaon',
+        permanent: true,
+      },
       {
         source: '/container-offices-for-sale-in-btm-layout-2',
         destination: '/container-offices-for-sale-in-btm-layout',
@@ -134,6 +145,24 @@ const nextConfig = {
       {
         source: '/container-offices-for-sale-in-rt-nagar-2',
         destination: '/container-offices-for-sale-in-rt-nagar',
+        permanent: true,
+      },
+      // Duplicate URL redirects for SEO - Porta Cabins
+      {
+        source: '/portacabins-for-sale-in-hebbal-2',
+        destination: '/portacabins-for-sale-in-hebbal',
+        permanent: true,
+      },
+      // Additional duplicate URL redirects
+      {
+        source: '/innovative-office-container-designs-2',
+        destination: '/innovative-office-container-designs',
+        permanent: true,
+      },
+      // Blog to product page redirect
+      {
+        source: '/luxury-porta-cabins-your-portable-oasis-of-comfort-and-style',
+        destination: '/product/porta-cabins/luxury-porta-cabin',
         permanent: true,
       },
       // Force HTTPS and WWW redirects

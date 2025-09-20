@@ -224,7 +224,14 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
         <meta name="description" content={`Browse our ${categoryName} collection. Quality portable solutions for your needs.`} />
       </Head>
       
-      {rankMathSEO && <RankMathSEO seoData={rankMathSEO} />}
+      {rankMathSEO && (
+            <RankMathSEO 
+              seoData={rankMathSEO} 
+              fallbackCanonical={`https://www.samanportable.com/product-category/${initialCategorySlug}`}
+              fallbackTitle={`${initialCategoryName || 'Products'} - Saman Portable Office Solutions`}
+              fallbackDescription={`Browse our ${initialCategoryName || 'product'} collection at Saman Portable Office Solutions.`}
+            />
+          )}
 
       <div className="min-h-screen bg-gray-50">
         {/* Header Section */}

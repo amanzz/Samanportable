@@ -512,7 +512,7 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
 
 // Fetch Rank Math SEO data for a product
 export async function fetchProductRankMathSEO(categorySlug: string): Promise<RankMathSEOData | null> {
-  const productUrl = `https://www.samanportable.com/product/${categorySlug}`;
+  const productUrl = `https://www.samanportable.com/product/${categorySlug}/`;
   return await fetchRankMathSEO(productUrl);
 }
 

@@ -24,6 +24,7 @@ import dynamic from 'next/dynamic';
 
 
 import { fetchBlogPost, BlogPost, fetchBlogPostRankMathSEO, RankMathSEOData } from '../config/api';
+import { generateBlogPostSchema, BlogPostSchema } from '../lib/schema';
 
 interface BlogPostProps {
   post: BlogPost | null;
@@ -464,7 +465,35 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
   return (
     <Layout>
       {/* Rank Math SEO - handles all meta tags */}
-      {rankMathSEO && <RankMathSEO seoData={rankMathSEO} />}
+      {rankMathSEO && (
+            <RankMathSEO 
+              seoData={rankMathSEO} 
+              fallbackCanonical={`https://www.samanportable.com/${slug}`}
+              fallbackTitle={`${post?.title?.rendered || 'Blog Post'} - Saman Portable Office Solutions`}
+              fallbackDescription={post?.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 160) || 'Read our latest blog post at Saman Portable Office Solutions.'}
+            />
+          )}
+
+      {/* Blog Post Structured Data */}
+      {post && (
+        <Head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(generateBlogPostSchema({
+                title: post.title.rendered,
+                description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
+                image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/default-blog-image.jpg',
+                author: post._embedded?.author?.[0]?.name || 'Saman Portable Office Solutions',
+                datePublished: post.date,
+                dateModified: post.modified,
+                url: `https://www.samanportable.com/${slug}`,
+                category: post._embedded?.['wp:term']?.[0]?.[0]?.name
+              }))
+            }}
+          />
+        </Head>
+      )}
 
       <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

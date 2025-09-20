@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from '@/components/QuoteFormTrigger';
 import Link from 'next/link';
 import { CheckCircle, Users, Award, Clock, Shield, Truck } from 'lucide-react';
-import { pageSEO } from '@/config/seo';
+import { pageSEO, siteConfig } from '@/config/seo';
 
 interface AboutUsProps {
   companyStats: {
@@ -82,6 +82,9 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
         title={pageSEO.about.title}
         description={pageSEO.about.description}
         canonical={pageSEO.about.canonical}
+        keywords={pageSEO.about.keywords}
+        author={siteConfig.author}
+        publisher={siteConfig.publisher}
         openGraph={{
           title: pageSEO.about.title,
           description: pageSEO.about.description,

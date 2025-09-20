@@ -303,7 +303,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
       ) : (
         <>
           {/* Rank Math SEO - Priority over custom SEO */}
-          {rankMathSEO && <RankMathSEO seoData={rankMathSEO} />}
+          {rankMathSEO && (
+            <RankMathSEO 
+              seoData={rankMathSEO} 
+              fallbackCanonical={`https://www.samanportable.com/product/${category}/${slug}`}
+              fallbackTitle={`${transformedProduct.title} - Saman Portable Office Solutions`}
+              fallbackDescription={transformedProduct.description?.replace(/<[^>]*>/g, '') || transformedProduct.title}
+            />
+          )}
           
           {/* Product Structured Data for Google Merchant Center */}
           <ProductStructuredData product={product} category={category} />

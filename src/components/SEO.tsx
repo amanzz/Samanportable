@@ -6,6 +6,9 @@ interface SEOProps {
   title?: string;
   description?: string;
   canonical?: string;
+  keywords?: string;
+  author?: string;
+  publisher?: string;
   openGraph?: {
     title?: string;
     description?: string;
@@ -22,6 +25,9 @@ export const SEO: React.FC<SEOProps> = ({
   title,
   description,
   canonical,
+  keywords,
+  author,
+  publisher,
   openGraph,
   noindex = false,
   nofollow = false,
@@ -48,6 +54,9 @@ export const SEO: React.FC<SEOProps> = ({
   return (
     <>
       <NextSeo {...seoProps} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      {author && <meta name="author" content={author} />}
+      {publisher && <meta name="publisher" content={publisher} />}
       {children}
     </>
   );
