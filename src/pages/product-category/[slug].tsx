@@ -219,19 +219,14 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
 
   return (
     <Layout>
-      <Head>
-        <title>{typeof categoryName === 'string' ? categoryName : 'Products'} - SAMAN Portable Solutions</title>
-        <meta name="description" content={`Browse our ${categoryName} collection. Quality portable solutions for your needs.`} />
-      </Head>
-      
-      {rankMathSEO && (
-            <RankMathSEO 
-              seoData={rankMathSEO} 
-              fallbackCanonical={`https://www.samanportable.com/product-category/${initialCategorySlug}`}
-              fallbackTitle={`${initialCategoryName || 'Products'} - Saman Portable Office Solutions`}
-              fallbackDescription={`Browse our ${initialCategoryName || 'product'} collection at Saman Portable Office Solutions.`}
-            />
-          )}
+      {/* Always render RankMathSEO with fallback data */}
+      <RankMathSEO 
+        seoData={rankMathSEO} 
+        fallbackCanonical={`https://www.samanportable.com/product-category/${initialCategorySlug}`}
+        fallbackTitle={`${initialCategoryName || 'Products'} - SAMAN Portable Office Solutions`}
+        fallbackDescription={`Browse our ${initialCategoryName || 'product'} collection. Quality portable solutions for your business needs at Saman Portable Office Solutions.`}
+        fallbackOgImage="https://www.samanportable.com/og-image.svg"
+      />
 
       <div className="min-h-screen bg-gray-50">
         {/* Header Section */}

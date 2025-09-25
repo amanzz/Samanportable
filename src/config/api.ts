@@ -522,10 +522,79 @@ export async function fetchBlogPostRankMathSEO(slug: string): Promise<RankMathSE
   return await fetchRankMathSEO(blogUrl);
 }
 
-// Fetch Rank Math SEO data for a category page
+// Enhanced category-specific SEO data with proper fallbacks
+const CATEGORY_SEO_DATA: Record<string, RankMathSEOData> = {
+  'porta-cabins': {
+    title: 'Porta Cabins in Bangalore | Portable Office Cabins | SAMAN Portable',
+    description: 'Premium porta cabins and portable office cabins in Bangalore. Durable, customizable, and cost-effective solutions for temporary office spaces. Contact SAMAN Portable today!',
+    og_title: 'Best Porta Cabins in Bangalore - SAMAN Portable Office Solutions',
+    og_description: 'Get high-quality porta cabins in Bangalore. Perfect for construction sites, events, and temporary offices. Fast delivery and installation.',
+    canonical: 'https://www.samanportable.com/product-category/porta-cabins',
+    robots: { index: 'index', follow: 'follow' }
+  },
+  'container-offices': {
+    title: 'Container Offices in Bangalore | Shipping Container Office | SAMAN Portable',
+    description: 'Modern container offices in Bangalore. Convert shipping containers into fully functional office spaces. Eco-friendly and cost-effective solutions.',
+    og_title: 'Container Offices Bangalore - SAMAN Portable Solutions',
+    og_description: 'Transform shipping containers into modern office spaces. Sustainable, affordable, and quick setup container offices in Bangalore.',
+    canonical: 'https://www.samanportable.com/product-category/container-offices',
+    robots: { index: 'index', follow: 'follow' }
+  },
+  'portable-cabins': {
+    title: 'Portable Cabins in Bangalore | Modular Office Cabins | SAMAN Portable',
+    description: 'High-quality portable cabins in Bangalore. Modular, relocatable office cabins for construction sites, events, and temporary facilities.',
+    og_title: 'Portable Cabins Bangalore - SAMAN Portable Office Solutions',
+    og_description: 'Premium portable cabins for all your temporary space needs. Quick installation, durable construction, and customizable designs.',
+    canonical: 'https://www.samanportable.com/product-category/portable-cabins',
+    robots: { index: 'index', follow: 'follow' }
+  },
+  'prefab-structures': {
+    title: 'Prefab Structures in Bangalore | Prefabricated Buildings | SAMAN Portable',
+    description: 'Innovative prefab structures and prefabricated buildings in Bangalore. Fast construction, cost-effective, and sustainable building solutions.',
+    og_title: 'Prefab Structures Bangalore - SAMAN Portable Solutions',
+    og_description: 'Modern prefabricated structures for commercial and industrial use. Quick assembly, durable materials, and custom designs.',
+    canonical: 'https://www.samanportable.com/product-category/prefab-structures',
+    robots: { index: 'index', follow: 'follow' }
+  },
+  'security-cabins': {
+    title: 'Security Cabins in Bangalore | Guard Cabins | SAMAN Portable',
+    description: 'Secure and durable security cabins in Bangalore. Perfect guard cabins for construction sites, parking lots, and commercial properties.',
+    og_title: 'Security Cabins Bangalore - SAMAN Portable Office Solutions',
+    og_description: 'Professional security cabins and guard houses. Weather-resistant, secure, and comfortable spaces for security personnel.',
+    canonical: 'https://www.samanportable.com/product-category/security-cabins',
+    robots: { index: 'index', follow: 'follow' }
+  },
+  'toilet-blocks': {
+    title: 'Portable Toilet Blocks in Bangalore | Mobile Toilets | SAMAN Portable',
+    description: 'Hygienic portable toilet blocks in Bangalore. Mobile toilet solutions for construction sites, events, and temporary facilities.',
+    og_title: 'Portable Toilet Blocks Bangalore - SAMAN Portable Solutions',
+    og_description: 'Clean and comfortable portable toilet blocks. Perfect for construction sites, events, and areas without permanent facilities.',
+    canonical: 'https://www.samanportable.com/product-category/toilet-blocks',
+    robots: { index: 'index', follow: 'follow' }
+  },
+  'container-cafe': {
+    title: 'Container Cafe in Bangalore | Shipping Container Cafe | SAMAN Portable',
+    description: 'High-quality container cafe in Bangalore. Professional portable solutions for your business needs. Contact SAMAN Portable for best prices.',
+    og_title: 'Container Cafe Bangalore - SAMAN Portable Solutions',
+    og_description: 'Premium container cafe for all your portable space requirements. Quick delivery and professional installation.',
+    canonical: 'https://www.samanportable.com/product-category/container-cafe',
+    robots: { index: 'index', follow: 'follow' }
+  }
+};
+
+// Fetch ONLY Rank Math SEO data from WordPress (no fallbacks)
 export async function fetchCategoryRankMathSEO(categorySlug: string): Promise<RankMathSEOData | null> {
-  const categoryUrl = `https://www.samanportable.com/product-category/${categorySlug}`;
-  return await fetchRankMathSEO(categoryUrl);
+  try {
+    // Use the correct WordPress blog URL for category pages
+    const categoryUrl = `https://blog.samanportable.com/product-category/${categorySlug}/`;
+    const wordpressData = await fetchRankMathSEO(categoryUrl);
+    
+    // Return only WordPress Rank Math data, even if it's generic or incomplete
+    return wordpressData;
+  } catch (error) {
+    console.error('Failed to fetch Rank Math data:', error);
+    return null;
+  }
 }
 
 // Enhanced blog posts fetch with pagination - OPTIMIZED
