@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Layout from '../../../components/Layout';
-import SEO from '../../../components/SEO';
+// import SEO from '../../../components/SEO'; // Removed to avoid duplicate meta tags
 import { RankMathSEO } from '../../../components/RankMathSEO';
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import { Button } from '../../../components/ui/button';
@@ -26,7 +26,7 @@ import { fetchLightweightProduct, fetchProductDescription, fetchProducts, WooCom
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { useCart } from '../../../contexts/CartContext';
-import { generateProductSchema } from '../../../lib/schema';
+// import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
 import dynamic from 'next/dynamic';
 
@@ -314,46 +314,16 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO }: Pro
         </div>
       ) : (
         <>
-          <SEO
-            title={`${transformedProduct.title} - Saman Portable Office Solutions`}
-            description={transformedProduct.description?.replace(/<[^>]*>/g, '') || transformedProduct.title}
-            canonical={`https://www.samanportable.com/product/${category}/`}
-            openGraph={{
-              title: transformedProduct.title,
-              description: transformedProduct.description?.replace(/<[^>]*>/g, '') || transformedProduct.title,
-              image: images[0]?.src || '/og-image.svg',
-              url: `https://www.samanportable.com/product/${category}/`,
-              type: 'product',
-            }}
-          >
-            {/* Product Schema */}
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(generateProductSchema({
-                  name: transformedProduct.title,
-                  description: transformedProduct.description?.replace(/<[^>]*>/g, '') || transformedProduct.title,
-                  image: images[0]?.src || '/og-image.svg',
-                  price: transformedProduct.price,
-                  priceCurrency: 'INR',
-                  availability: transformedProduct.stock_status === 'instock' ? 'InStock' : 'OutOfStock',
-                  category: transformedProduct.category,
-                  brand: 'Saman Portable Office Solutions',
-                  sku: transformedProduct.slug,
-                  url: `https://www.samanportable.com/product/${category}/`,
-                }))
-              }}
-            />
-          </SEO>
-          
-          {/* Rank Math SEO - Always render with fallback */}
+          {/* Use only RankMathSEO to avoid duplicate meta tags */}
           <RankMathSEO 
             seoData={rankMathSEO} 
             fallbackTitle={`${transformedProduct.title} - SAMAN Portable Office Solutions`}
             fallbackDescription={transformedProduct.description?.replace(/<[^>]*>/g, '').substring(0, 160) || transformedProduct.title}
             fallbackCanonical={`https://www.samanportable.com/product/${category}/`}
-            fallbackOgImage={images[0]?.src || '/og-image.svg'}
+            fallbackOgImage={product.images?.[0]?.src || '/og-image.svg'}
           />
+          
+          {/* Product Schema handled by ProductStructuredData component */}
 
           {/* Product Structured Data for Google Merchant Center */}
           <ProductStructuredData product={product} category={category} />

@@ -100,31 +100,8 @@ export default function Document() {
           }}
         />
         
-        {/* Structured Data - Organization Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Saman Portable Office Solutions",
-              "url": "https://www.samanportable.com",
-              "logo": "https://www.samanportable.com/logo.png",
-              "description": "Premium portable cabins, container offices, and prefab solutions in Bangalore",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Bangalore",
-                "addressRegion": "Karnataka",
-                "addressCountry": "IN"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-XXXXXXXXXX",
-                "contactType": "customer service"
-              }
-            })
-          }}
-        />
+        {/* Organization Schema handled by ProductStructuredData component on product pages */}
+        {/* Removed global Organization schema to prevent duplicates */}
       </Head>
       <body className="antialiased">
         <Main />

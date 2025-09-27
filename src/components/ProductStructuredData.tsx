@@ -66,11 +66,8 @@ export default function ProductStructuredData({ product, category }: ProductStru
       priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // Valid for 1 year
       availability: getSchemaAvailability(product.stock_status),
       itemCondition: 'https://schema.org/NewCondition',
-      seller: {
-        '@type': 'Organization',
-        name: 'Saman Portable',
-        url: baseUrl
-      },
+      // Seller information removed to avoid duplicate Organization schemas
+      // Manufacturer already provides Organization information
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
         applicableCountry: 'IN',
@@ -165,33 +162,18 @@ export default function ProductStructuredData({ product, category }: ProductStru
     ]
   };
 
-  // Generate Organization structured data
-  const organizationStructuredData = {
+  // Organization information is already included in manufacturer and seller schemas
+  // No need for separate Organization schema to avoid duplicates
+
+  // Generate ItemPage schema with mainEntity pointing to Product
+  const itemPageStructuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Saman Portable',
-    url: baseUrl,
-    logo: `${baseUrl}/saman-logo.svg`,
-    description: 'Leading manufacturer of portable cabins, container offices, and modular structures in Bangalore, India',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Bangalore',
-      addressLocality: 'Bangalore',
-      addressRegion: 'Karnataka',
-      postalCode: '560001',
-      addressCountry: 'IN'
-    },
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+91-9876543210',
-      contactType: 'customer service',
-      availableLanguage: ['English', 'Hindi', 'Kannada']
-    },
-    sameAs: [
-      'https://www.facebook.com/samanportable',
-      'https://www.instagram.com/samanportable',
-      'https://www.linkedin.com/company/samanportable'
-    ]
+    '@type': 'ItemPage',
+    name: `${product.name} - Product Details`,
+    description: description,
+    url: productUrl,
+    mainEntity: productStructuredData,
+    breadcrumb: breadcrumbStructuredData
   };
 
   return (
@@ -199,21 +181,10 @@ export default function ProductStructuredData({ product, category }: ProductStru
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productStructuredData)
+          __html: JSON.stringify(itemPageStructuredData)
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationStructuredData)
-        }}
-      />
+      {/* Product and Breadcrumb schemas are now included in ItemPage mainEntity */}
     </Head>
   );
 }

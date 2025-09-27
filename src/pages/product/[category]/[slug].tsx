@@ -26,7 +26,7 @@ import { fetchLightweightProduct, fetchProductDescription, fetchProducts, WooCom
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { useCart } from '../../../contexts/CartContext';
-import { generateProductSchema } from '../../../lib/schema';
+// import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
 import dynamic from 'next/dynamic';
 
@@ -324,29 +324,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
               openGraph={{
                 title: transformedProduct.title,
                 description: transformedProduct.description?.replace(/<[^>]*>/g, '') || transformedProduct.title,
-                image: images[0]?.src || '/og-image.svg',
+                image: product.images?.[0]?.src || '/og-image.svg',
                 url: `https://www.samanportable.com/product/${category}/${slug}`,
                 type: 'product',
               }}
             >
-              {/* Product Schema */}
-              <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                  __html: JSON.stringify(generateProductSchema({
-                    name: transformedProduct.title,
-                    description: transformedProduct.description?.replace(/<[^>]*>/g, '') || transformedProduct.title,
-                    image: images[0]?.src || '/og-image.svg',
-                    price: transformedProduct.price,
-                    priceCurrency: 'INR',
-                    availability: transformedProduct.stock_status === 'instock' ? 'InStock' : 'OutOfStock',
-                    category: transformedProduct.category,
-                    brand: 'Saman Portable Office Solutions',
-                    sku: transformedProduct.slug,
-                    url: `https://www.samanportable.com/product/${category}/${slug}`,
-                  }))
-                }}
-              />
+              {/* Product Schema handled by ProductStructuredData component */}
             </SEO>
           )}
 

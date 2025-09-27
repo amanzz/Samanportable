@@ -60,15 +60,8 @@ export const RankMathSEO: React.FC<RankMathSEOProps> = ({
       {twitterDescription && <meta name="twitter:description" content={twitterDescription} />}
       {twitterImage && <meta name="twitter:image" content={twitterImage} />}
       
-      {/* Schema.org Structured Data */}
-      {seoData?.schema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(seoData.schema)
-          }}
-        />
-      )}
+      {/* Schema.org Structured Data handled by ProductStructuredData component */}
+      {/* Removed seoData.schema to prevent duplicate Product schemas */}
       
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />

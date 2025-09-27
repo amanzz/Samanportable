@@ -28,21 +28,8 @@ export const FAQSchema: React.FC<FAQSchemaProps> = ({ faqs, productTitle, url })
     }))
   };
 
-  // If product title is provided, also add Product FAQ schema
-  const productFAQSchema = productTitle ? {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": productTitle,
-    "url": url,
-    "mainEntity": faqs.map((faq) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer.replace(/<[^>]*>/g, '')
-      }
-    }))
-  } : null;
+  // Product schema is handled by ProductStructuredData component
+  // No need to create duplicate Product schema here
 
   return (
     <Head>
@@ -53,16 +40,6 @@ export const FAQSchema: React.FC<FAQSchemaProps> = ({ faqs, productTitle, url })
           __html: JSON.stringify(faqSchema)
         }}
       />
-      
-      {/* Product FAQ Schema (if product title provided) */}
-      {productFAQSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(productFAQSchema)
-          }}
-        />
-      )}
     </Head>
   );
 };

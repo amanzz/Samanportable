@@ -27,6 +27,8 @@ import {
   Bookmark
 } from 'lucide-react';
 import FAQSchema from './FAQSchema';
+import OptimizedContent from './OptimizedContent';
+import { replaceInternalLinks } from '../utils/imageReplacement';
 
 
 interface ProductTabsProps {
@@ -111,7 +113,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ productTitle, faqs }) => {
 
   return (
     <div className="space-y-6">
-      <div className="space-y-4">
+    <div className="space-y-4">
         {(faqs && faqs.length > 0 ? faqs : defaultFAQs).map((faq, index) => (
           <FAQItem
             key={index}
@@ -598,24 +600,24 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
 
                   {/* Description Content with Green Theme */}
                   <div className="transition-all duration-300">
-                    <div 
+                    <OptimizedContent 
+                      content={cleanDescription || '<p class="text-center text-muted-foreground py-12">No description available for this product.</p>'}
                       className="prose prose-lg max-w-none leading-relaxed overflow-x-hidden product-description-content"
-                      dangerouslySetInnerHTML={{ __html: cleanDescription || '<p class="text-center text-muted-foreground py-12">No description available for this product.</p>' }}
                     />
                   </div>
 
                   {/* Key Features Section with Green Theme */}
                   {keyFeatures.length > 0 && (
                     <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200">
-                      <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-6">
                         <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
                           <Award className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
+                  </div>
+                  <div>
                           <h4 className="text-xl font-bold text-foreground">Key Features</h4>
                           <p className="text-muted-foreground">What makes this product special</p>
-                        </div>
-                      </div>
+                  </div>
+                </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {keyFeatures.map((feature, index) => (
                           <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-xl border border-green-200/50 shadow-sm hover:shadow-md transition-shadow duration-200">
@@ -624,8 +626,8 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
                           </div>
                         ))}
                       </div>
-                    </div>
-                  )}
+              </div>
+            )}
 
 
           </div>
@@ -642,9 +644,9 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
                       <p className="text-muted-foreground">Detailed technical information and features</p>
               </div>
             </div>
-            <div 
-                    className="prose prose-lg max-w-none"
-              dangerouslySetInnerHTML={{ __html: additionalInfo }}
+            <OptimizedContent 
+              content={additionalInfo}
+              className="prose prose-lg max-w-none"
             />
           </div>
         </TabsContent>

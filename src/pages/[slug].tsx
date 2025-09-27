@@ -10,6 +10,7 @@ import parse, { domToReact, Element, HTMLReactParserOptions } from 'html-react-p
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Separator } from '../components/ui/separator';
+import OptimizedContent from '../components/OptimizedContent';
 import { 
   Calendar, 
   User, 
@@ -623,9 +624,9 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-amber-900 mb-3">Article Summary</h3>
-                    <div 
+                    <OptimizedContent 
+                      content={post.excerpt.rendered}
                       className="text-lg text-amber-800 leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                     />
                   </div>
                 </div>
@@ -634,10 +635,10 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
 
             {/* Blog Content - Direct rendering without LongformContent to avoid FAQ duplication */}
             {isClient && (
-              <div className="mb-10 prose prose-lg max-w-none">
-                <div 
-                  className="text-lg text-slate-700 leading-relaxed space-y-6"
-                  dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+              <div className="mb-10">
+                <OptimizedContent 
+                  content={post.content.rendered}
+                  className="prose prose-lg max-w-none text-lg text-slate-700 leading-relaxed space-y-6"
                 />
               </div>
             )}

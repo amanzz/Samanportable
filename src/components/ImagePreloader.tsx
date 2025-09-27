@@ -15,22 +15,28 @@ const ImagePreloader: React.FC<ImagePreloaderProps> = ({ images, maxPreload = 6 
       
       // Preload only the first few critical images
       const imagesToPreload = images.slice(0, maxPreload);
+      const preloadedImages = new Set<string>();
       
       imagesToPreload.forEach((src) => {
-        if (src && src !== '/placeholder.svg') {
+        if (src && src !== '/placeholder.svg' && !preloadedImages.has(src)) {
           try {
             // Validate URL before preloading
             const url = new URL(src);
             
             // Only preload if it's a valid HTTP/HTTPS URL
             if (url.protocol === 'http:' || url.protocol === 'https:') {
-              // Use link preload for better performance
-              const link = document.createElement('link');
-              link.rel = 'preload';
-              link.as = 'image';
-              link.href = src;
-              link.type = 'image/webp'; // Assume WebP for products (faster)
-              document.head.appendChild(link);
+              // Check if preload already exists to avoid duplicates
+              const existingPreload = document.querySelector(`link[rel="preload"][href="${src}"]`);
+              if (!existingPreload) {
+                // Use link preload for better performance
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                link.type = 'image/webp'; // Assume WebP for products (faster)
+                document.head.appendChild(link);
+                preloadedImages.add(src);
+              }
               
               // Preload with fetch for better caching - only for critical images
               if (imagesToPreload.indexOf(src) < 3) {

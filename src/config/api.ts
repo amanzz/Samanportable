@@ -494,15 +494,8 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
       };
     }
     
-    // Extract JSON-LD schema
-    const schemaMatch = headHtml.match(/<script\s+type=["']application\/ld\+json["'][^>]*>([^<]+)<\/script>/i);
-    if (schemaMatch) {
-      try {
-        seoData.schema = JSON.parse(schemaMatch[1]);
-      } catch (e) {
-        // Silent error handling for production
-      }
-    }
+    // Schema extraction removed to prevent duplicate Product schemas
+    // Schema is now handled by ProductStructuredData component only
 
     return seoData;
   } catch (error) {

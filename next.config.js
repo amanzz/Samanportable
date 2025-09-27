@@ -108,6 +108,15 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'shop.samanportable.com',
+      },
+      // Add external image domains
+      {
+        protocol: 'https',
+        hostname: 'images.surferseo.art',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.surferseo.art',
       }
     ],
     formats: ['image/webp'], // Only WebP for faster processing, removed AVIF

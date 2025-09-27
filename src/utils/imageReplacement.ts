@@ -127,6 +127,77 @@ export function autoReplaceImages(
 /**
  * Generate optimized image URLs for different formats
  */
+/**
+ * Replace blog.samanportable.com with www.samanportable.com in URLs
+ */
+export function replaceDomainInUrl(url: string): string {
+  if (url.includes('blog.samanportable.com')) {
+    return url.replace('blog.samanportable.com', 'www.samanportable.com');
+  }
+  return url;
+}
+
+/**
+ * Replace img tags in HTML content with Next.js Image components
+ */
+export function replaceImgTagsWithNextImage(htmlContent: string): string {
+  if (!htmlContent) return htmlContent;
+  
+  // Find all img tags and replace them with Next.js Image components
+  return htmlContent.replace(
+    /<img([^>]*?)src="([^"]*?)"([^>]*?)>/gi,
+    (match, beforeSrc, src, afterSrc) => {
+      // Extract alt text
+      const altMatch = match.match(/alt="([^"]*?)"/i);
+      const alt = altMatch ? altMatch[1] : '';
+      
+      // Extract width and height if available
+      const widthMatch = match.match(/width="([^"]*?)"/i);
+      const heightMatch = match.match(/height="([^"]*?)"/i);
+      const width = widthMatch ? widthMatch[1] : '800';
+      const height = heightMatch ? heightMatch[1] : '600';
+      
+      // Extract class if available
+      const classMatch = match.match(/class="([^"]*?)"/i);
+      const className = classMatch ? classMatch[1] : 'w-full h-auto';
+      
+      // Create Next.js Image component
+      return `<div class="relative w-full h-auto my-4">
+        <img 
+          src="${src}" 
+          alt="${alt}" 
+          width="${width}" 
+          height="${height}" 
+          class="${className} object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>`;
+    }
+  );
+}
+
+/**
+ * Replace internal links from blog.samanportable.com to www.samanportable.com
+ */
+export function replaceInternalLinks(content: string): string {
+  if (!content) return content;
+  
+  // Replace internal links in href attributes
+  content = content.replace(
+    /href="https:\/\/blog\.samanportable\.com\/([^"]*)"/g,
+    'href="https://www.samanportable.com/$1"'
+  );
+  
+  // Replace internal links in any other URLs
+  content = content.replace(
+    /https:\/\/blog\.samanportable\.com\/([^\s<>"']*)/g,
+    'https://www.samanportable.com/$1'
+  );
+  
+  return content;
+}
+
 export function generateOptimizedUrls(
   originalUrl: string,
   width: number,
@@ -137,23 +208,26 @@ export function generateOptimizedUrls(
   avif: string;
   original: string;
 } {
+  // Replace domain first
+  const url = replaceDomainInUrl(originalUrl);
+  
   // For WordPress images
-  if (originalUrl.includes('blog.samanportable.com') || originalUrl.includes('samanportable.com')) {
-    const separator = originalUrl.includes('?') ? '&' : '?';
+  if (url.includes('www.samanportable.com') || url.includes('samanportable.com')) {
+    const separator = url.includes('?') ? '&' : '?';
     const baseParams = `w=${width}&h=${height}&q=${quality}`;
     
     return {
-      webp: `${originalUrl}${separator}${baseParams}&f=webp`,
-      avif: `${originalUrl}${separator}${baseParams}&f=avif`,
-      original: `${originalUrl}${separator}${baseParams}`
+      webp: `${url}${separator}${baseParams}&f=webp`,
+      avif: `${url}${separator}${baseParams}&f=avif`,
+      original: `${url}${separator}${baseParams}`
     };
   }
   
   // For local images, Next.js will handle optimization automatically
   return {
-    webp: originalUrl,
-    avif: originalUrl,
-    original: originalUrl
+    webp: url,
+    avif: url,
+    original: url
   };
 }
 
