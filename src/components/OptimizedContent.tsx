@@ -23,18 +23,11 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
   content, 
   className = "prose prose-lg max-w-none" 
 }) => {
-  if (!content) {
-    return (
-      <div className={className}>
-        <p className="text-center text-muted-foreground py-12">
-          No content available.
-        </p>
-      </div>
-    );
-  }
-
   // Extract images from content and process them
   const { processedContent, images } = useMemo(() => {
+    if (!content) {
+      return { processedContent: '', images: new Map<string, ImageData>() };
+    }
     const imageMap = new Map<string, ImageData>();
     let imageCounter = 0;
 
@@ -94,6 +87,17 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
 
     return { processedContent: cleanContent, images: imageMap };
   }, [content]);
+
+  // Early return after hooks
+  if (!content) {
+    return (
+      <div className={className}>
+        <p className="text-center text-muted-foreground py-12">
+          No content available.
+        </p>
+      </div>
+    );
+  }
 
   // Render content with Next.js Image components
   const renderContentWithImages = () => {
