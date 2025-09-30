@@ -108,10 +108,10 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       )}
       
       {/* Additional SEO Meta Tags */}
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="index, follow, max-image-preview:large" />
       <meta name="googlebot" content="index, follow" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="format-detection" content="telephone=no" />
+      {/* Referrer and format detection are handled globally in _document.tsx */}
       
       {/* Structured Data */}
       <script

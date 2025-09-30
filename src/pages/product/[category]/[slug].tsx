@@ -1,8 +1,8 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Layout from '../../../components/Layout';
-import { SEO } from '../../../components/SEO';
-import { RankMathSEO } from '../../../components/RankMathSEO';
+// import { SEO } from '../../../components/SEO'; // Removed to avoid duplicate meta tags
+import { UnifiedSEO } from '../../../components/UnifiedSEO';
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import { Button } from '../../../components/ui/button';
 import { Badge } from '../../../components/ui/badge';
@@ -25,6 +25,7 @@ import {
 import { fetchLightweightProduct, fetchProductDescription, fetchProducts, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData } from '../../../config/api';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
+import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
 import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
@@ -56,7 +57,6 @@ interface ProductDetailsProps {
   category: string;
   slug: string;
   relatedProducts: WooCommerceProduct[];
-  productDescription?: string;
   productImages?: Array<{ src: string; alt: string }>;
   rankMathSEO?: RankMathSEOData | null;
 }
@@ -155,7 +155,6 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         category,
         slug,
         relatedProducts,
-        productDescription: descriptionData?.description,
         productImages: descriptionData?.images,
         rankMathSEO,
       },
@@ -196,7 +195,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
       title: product.name,
       slug: product.slug,
       content: product.short_description || '',
-      description: product.description || product.short_description || '',
+      description: product.description || '',
       featured_image: product.images?.[0]?.src || '/placeholder.svg',
       price: product.price || 'Contact for pricing',
       regular_price: product.regular_price || product.price || 'Contact for pricing',
@@ -256,7 +255,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
       image: p.images && p.images.length > 0 ? p.images[0].src : '/placeholder.svg',
       price: p.price || 'Contact for pricing',
       rating: parseFloat(p.average_rating) || 4.5,
-      description: p.short_description || p.description || ''
+      description: p.description || ''
     }));
   }, [relatedProducts]);
 
@@ -302,36 +301,21 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
         </div>
       ) : (
         <>
-          {/* Rank Math SEO - Priority over custom SEO */}
-          {rankMathSEO && (
-            <RankMathSEO 
-              seoData={rankMathSEO} 
-              fallbackCanonical={`https://www.samanportable.com/product/${category}/${slug}`}
-              fallbackTitle={`${transformedProduct.title} - Saman Portable Office Solutions`}
-              fallbackDescription={transformedProduct.description?.replace(/<[^>]*>/g, '') || transformedProduct.title}
-            />
-          )}
+          {/* Unified SEO - Single source of truth for all meta tags */}
+        <UnifiedSEO 
+          rankMathSEO={rankMathSEO} 
+          fallbackCanonical={`https://www.samanportable.com/product/${category}/${slug}`}
+          fallbackTitle={`${transformedProduct.title} - Saman Portable Office Solutions`}
+          fallbackDescription={`${transformedProduct.title} - Quality portable solution by Saman Portable. Professional design and reliable construction.`}
+          fallbackOgImage={product.images?.[0]?.src || '/og-image.svg'}
+          fallbackOgDescription={`${transformedProduct.title} - Premium portable structures with advanced features and customization options.`}
+          fallbackTwitterDescription={`${transformedProduct.title} - Durable and reliable portable solutions for your business needs.`}
+          keywords={`${transformedProduct.title}, ${transformedProduct.category}, portable solutions`}
+          structuredData={undefined} // ProductStructuredData component handles this separately
+        />
           
           {/* Product Structured Data for Google Merchant Center */}
           <ProductStructuredData product={product} category={category} />
-          
-          {/* Fallback SEO when RankMath data is not available */}
-          {!rankMathSEO && (
-            <SEO
-              title={`${transformedProduct.title} - Saman Portable Office Solutions`}
-              description={transformedProduct.description?.replace(/<[^>]*>/g, '') || transformedProduct.title}
-              canonical={`https://www.samanportable.com/product/${category}/${slug}`}
-              openGraph={{
-                title: transformedProduct.title,
-                description: transformedProduct.description?.replace(/<[^>]*>/g, '') || transformedProduct.title,
-                image: product.images?.[0]?.src || '/og-image.svg',
-                url: `https://www.samanportable.com/product/${category}/${slug}`,
-                type: 'product',
-              }}
-            >
-              {/* Product Schema handled by ProductStructuredData component */}
-            </SEO>
-          )}
 
           {/* Preload critical images for better performance */}
           <ImagePreloader 
@@ -756,7 +740,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
               {/* Product Tabs */}
               <div className="mt-4">
                 <ProductTabs
-                  description={transformedProduct.description || transformedProduct.content || ''}
+                  description={product.description || ''}
                   productTitle={transformedProduct.title}
                 />
               </div>

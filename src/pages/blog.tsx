@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GetServerSideProps } from 'next';
 import Layout from '@/components/Layout';
-import SEO from '@/components/SEO';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -116,19 +116,14 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
 
   return (
     <Layout>
-      <SEO
-        title={pageSEO.blog.title}
-        description={pageSEO.blog.description}
+      <UnifiedSEO
+        fallbackTitle={pageSEO.blog.title}
+        fallbackDescription={pageSEO.blog.description}
+        fallbackCanonical={pageSEO.blog.canonical}
+        fallbackOgImage="/blog-hero.jpg"
         keywords={pageSEO.blog.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
-        canonical={pageSEO.blog.canonical}
-        openGraph={{
-          title: pageSEO.blog.title,
-          description: pageSEO.blog.description,
-          image: '/blog-hero.jpg',
-          url: pageSEO.blog.canonical,
-        }}
       />
 
       <div className="min-h-screen">

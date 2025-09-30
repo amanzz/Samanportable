@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '@/components/Layout';
-import SEO from '@/components/SEO';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { GetServerSideProps } from 'next';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from '@/components/QuoteFormTrigger';
@@ -78,19 +78,14 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
 
   return (
     <Layout>
-      <SEO
-        title={pageSEO.about.title}
-        description={pageSEO.about.description}
-        canonical={pageSEO.about.canonical}
+      <UnifiedSEO
+        fallbackTitle={pageSEO.about.title}
+        fallbackDescription={pageSEO.about.description}
+        fallbackCanonical={pageSEO.about.canonical}
+        fallbackOgImage="/about-us-hero.jpg"
         keywords={pageSEO.about.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
-        openGraph={{
-          title: pageSEO.about.title,
-          description: pageSEO.about.description,
-          image: '/about-us-hero.jpg',
-          url: pageSEO.about.canonical,
-        }}
       />
 
       <div className="min-h-screen">

@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Image from 'next/image';
-import { replaceInternalLinks } from '../utils/imageReplacement';
 
 interface OptimizedContentProps {
   content: string;
   className?: string;
 }
 
+interface ImageData {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className: string;
+  title?: string;
+}
+
 /**
- * Component that renders HTML content with optimized Next.js Images
+ * Component that renders HTML content with optimized Next.js Image components
+ * Replaces img tags with Next.js Image for better performance and optimization
  */
 export const OptimizedContent: React.FC<OptimizedContentProps> = ({ 
   content, 
@@ -24,106 +33,118 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
     );
   }
 
-  // Clean content by removing scripts
-  const cleanContent = content
-    .replace(/<script[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, '')
-    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '');
+  // Extract images from content and process them
+  const { processedContent, images } = useMemo(() => {
+    const imageMap = new Map<string, ImageData>();
+    let imageCounter = 0;
 
-  // Parse HTML and extract images
-  const parseContent = (html: string) => {
-    const parts: React.ReactNode[] = [];
-    let lastIndex = 0;
+    // Clean content by removing scripts and other potentially problematic elements
+    let cleanContent = content
+      .replace(/<script[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, '')
+      .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+      .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+      .replace(/<link[^>]*>/gi, '')
+      .replace(/<meta[^>]*>/gi, '');
+
+    // Replace internal blog links
+    cleanContent = cleanContent.replace(
+      /href="https:\/\/blog\.samanportable\.com\/([^"]*)"/g,
+      'href="https://www.samanportable.com/$1"'
+    );
+
+    // Replace img tags with placeholders and collect image data
+    cleanContent = cleanContent.replace(
+      /<img([^>]*?)src="([^"]*?)"([^>]*?)>/gi,
+      (match, beforeSrc, src, afterSrc) => {
+        // Skip if src is empty or invalid
+        if (!src || src.trim() === '') {
+          return match;
+        }
+
+        // Extract attributes
+        const altMatch = match.match(/alt="([^"]*?)"/i);
+        const alt = altMatch ? altMatch[1] : 'Image';
+        
+        const widthMatch = match.match(/width="([^"]*?)"/i);
+        const heightMatch = match.match(/height="([^"]*?)"/i);
+        const width = widthMatch ? parseInt(widthMatch[1]) : 1600;
+        const height = heightMatch ? parseInt(heightMatch[1]) : 1000;
+        
+        const classMatch = match.match(/class="([^"]*?)"/i);
+        const imgClassName = classMatch ? classMatch[1] : 'w-full h-auto';
+        
+        const titleMatch = match.match(/title="([^"]*?)"/i);
+        const title = titleMatch ? titleMatch[1] : '';
+
+        const imageId = `optimized-image-${imageCounter++}`;
+        
+        imageMap.set(imageId, {
+          src,
+          alt,
+          width,
+          height,
+          className: imgClassName,
+          title
+        });
+
+        // Return placeholder div that will be replaced with React component
+        return `<div data-image-id="${imageId}" class="optimized-image-placeholder"></div>`;
+      }
+    );
+
+    return { processedContent: cleanContent, images: imageMap };
+  }, [content]);
+
+  // Render content with Next.js Image components
+  const renderContentWithImages = () => {
+    const parts = processedContent.split(/(<div data-image-id="[^"]*" class="optimized-image-placeholder"><\/div>)/);
     
-    // Find all img tags
-    const imgRegex = /<img([^>]*?)src="([^"]*?)"([^>]*?)>/gi;
-    let match;
-    
-    while ((match = imgRegex.exec(html)) !== null) {
-      const [fullMatch, beforeSrc, src, afterSrc] = match;
-      const startIndex = match.index;
+    return parts.map((part, index) => {
+      const imageIdMatch = part.match(/data-image-id="([^"]*)"/);
       
-      // Add text content before the image
-      if (startIndex > lastIndex) {
-        const textContent = html.slice(lastIndex, startIndex);
-        if (textContent.trim()) {
-          // Replace internal links in text content
-          const processedText = textContent.replace(
-            /href="https:\/\/blog\.samanportable\.com\/([^"]*)"/g,
-            'href="https://www.samanportable.com/$1"'
-          );
-          parts.push(
+      if (imageIdMatch) {
+        const imageId = imageIdMatch[1];
+        const imageData = images.get(imageId);
+        
+        if (imageData) {
+          return (
             <div 
-              key={`text-${startIndex}`}
-              dangerouslySetInnerHTML={{ __html: processedText }}
-            />
+              key={index} 
+              className="relative w-full my-4 sm:my-6 md:my-8 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-6xl mx-auto lg:max-w-5xl md:max-w-4xl sm:max-w-full px-2 sm:px-0"
+            >
+              <Image
+                src={imageData.src}
+                alt={imageData.alt}
+                width={imageData.width}
+                height={imageData.height}
+                className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+                title={imageData.title}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, (max-width: 1280px) 85vw, 1600px"
+                style={{
+                    width: '100%',
+                    height: 'auto',
+                    maxWidth: '100%',
+                    minHeight: '200px'
+                  }}
+              />
+            </div>
           );
         }
       }
       
-      // Extract image attributes
-      const altMatch = fullMatch.match(/alt="([^"]*?)"/i);
-      const widthMatch = fullMatch.match(/width="([^"]*?)"/i);
-      const heightMatch = fullMatch.match(/height="([^"]*?)"/i);
-      const classMatch = fullMatch.match(/class="([^"]*?)"/i);
-      
-      const alt = altMatch ? altMatch[1] : '';
-      const width = widthMatch ? parseInt(widthMatch[1]) : 800;
-      const height = heightMatch ? parseInt(heightMatch[1]) : 600;
-      const imgClass = classMatch ? classMatch[1] : '';
-      
-      // Add optimized Next.js Image
-      parts.push(
-        <div key={`img-${startIndex}`} className="relative w-full h-auto my-6">
-          <Image
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            className={`w-full h-auto object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ${imgClass}`}
-            loading="lazy"
-            quality={85}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-            style={{
-              aspectRatio: `${width}/${height}`,
-              contain: 'layout style paint'
-            }}
-          />
-        </div>
+      return (
+        <div 
+          key={index}
+          dangerouslySetInnerHTML={{ __html: part }}
+        />
       );
-      
-      lastIndex = startIndex + fullMatch.length;
-    }
-    
-    // Add remaining text content
-    if (lastIndex < html.length) {
-      const remainingContent = html.slice(lastIndex);
-      if (remainingContent.trim()) {
-        // Replace internal links in remaining text content
-        const processedText = remainingContent.replace(
-          /href="https:\/\/blog\.samanportable\.com\/([^"]*)"/g,
-          'href="https://www.samanportable.com/$1"'
-        );
-        parts.push(
-          <div 
-            key="text-end"
-            dangerouslySetInnerHTML={{ __html: processedText }}
-          />
-        );
-      }
-    }
-    
-    return parts;
+    });
   };
-
-  const parsedContent = parseContent(cleanContent);
 
   return (
     <div className={className}>
-      {parsedContent.length > 0 ? parsedContent : (
-        <div 
-          dangerouslySetInnerHTML={{ __html: cleanContent }}
-        />
-      )}
+      {renderContentWithImages()}
     </div>
   );
 };

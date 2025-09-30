@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
-import { RankMathSEO } from '../components/RankMathSEO';
+import { UnifiedSEO } from '../components/UnifiedSEO';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import parse, { domToReact, Element, HTMLReactParserOptions } from 'html-react-parser';
@@ -465,36 +465,25 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
 
   return (
     <Layout>
-      {/* Rank Math SEO - handles all meta tags */}
-      {rankMathSEO && (
-            <RankMathSEO 
-              seoData={rankMathSEO} 
-              fallbackCanonical={`https://www.samanportable.com/${slug}`}
-              fallbackTitle={`${post?.title?.rendered || 'Blog Post'} - Saman Portable Office Solutions`}
-              fallbackDescription={post?.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 160) || 'Read our latest blog post at Saman Portable Office Solutions.'}
-            />
-          )}
-
-      {/* Blog Post Structured Data */}
-      {post && (
-        <Head>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(generateBlogPostSchema({
-                title: post.title.rendered,
-                description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
-                image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/default-blog-image.jpg',
-                author: post._embedded?.author?.[0]?.name || 'Saman Portable Office Solutions',
-                datePublished: post.date,
-                dateModified: post.modified,
-                url: `https://www.samanportable.com/${slug}`,
-                category: post._embedded?.['wp:term']?.[0]?.[0]?.name
-              }))
-            }}
-          />
-        </Head>
-      )}
+      {/* Unified SEO - Single source of truth for all meta tags */}
+      <UnifiedSEO 
+        rankMathSEO={rankMathSEO} 
+        fallbackCanonical={`https://www.samanportable.com/${slug}`}
+        fallbackTitle={`${post?.title?.rendered || 'Blog Post'} - Saman Portable Office Solutions`}
+        fallbackDescription={post?.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 160) || 'Read our latest blog post at Saman Portable Office Solutions.'}
+        fallbackOgImage={post?._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/og-image.svg'}
+        keywords={`blog, portable office, container office, prefab solutions, ${post?._embedded?.['wp:term']?.[0]?.[0]?.name || ''}`}
+        structuredData={post ? generateBlogPostSchema({
+          title: post.title.rendered,
+          description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
+          image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/default-blog-image.jpg',
+          author: post._embedded?.author?.[0]?.name || 'Saman Portable Office Solutions',
+          datePublished: post.date,
+          dateModified: post.modified,
+          url: `https://www.samanportable.com/${slug}`,
+          category: post._embedded?.['wp:term']?.[0]?.[0]?.name
+        }) : undefined}
+      />
 
       <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -613,25 +602,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               </div>
             )}
 
-                         {/* Excerpt */}
-            {post.excerpt.rendered && (
-              <div className="mb-12 p-8 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 border-l-6 border-amber-400 rounded-2xl shadow-lg">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-amber-900 mb-3">Article Summary</h3>
-                    <OptimizedContent 
-                      content={post.excerpt.rendered}
-                      className="text-lg text-amber-800 leading-relaxed"
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
+             
 
             {/* Blog Content - Direct rendering without LongformContent to avoid FAQ duplication */}
             {isClient && (

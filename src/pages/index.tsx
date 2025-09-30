@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
-import SEO from '@/components/SEO';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 
 // Import Layout component
 import Layout from '@/components/Layout';
@@ -111,28 +111,16 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
 const HomePage = ({ recentBlogPosts }: HomePageProps) => {
   return (
     <Layout>
-      <SEO
-        title={pageSEO.home.title}
-        description={pageSEO.home.description}
-        canonical={pageSEO.home.canonical}
+      <UnifiedSEO
+        fallbackTitle={pageSEO.home.title}
+        fallbackDescription={pageSEO.home.description}
+        fallbackCanonical={pageSEO.home.canonical}
+        fallbackOgImage="/og-image.svg"
         keywords={pageSEO.home.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
-        openGraph={{
-          title: pageSEO.home.title,
-          description: pageSEO.home.description,
-          image: '/og-image.svg',
-          url: pageSEO.home.canonical,
-        }}
-      >
-        {/* Structured Data - Preloaded for better performance */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateOrganizationSchema())
-          }}
-        />
-      </SEO>
+        structuredData={generateOrganizationSchema()}
+      />
       
       <main>
         {/* Hero Section - Critical for LCP */}

@@ -20,7 +20,7 @@ import {
   RankMathSEOData
 } from '../config/api';
 import { sortProductsByCategoryPriority, debugCategoryPriorities } from '@/utils/categoryPriority';
-import { RankMathSEO } from '@/components/RankMathSEO';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import ProductFilters from '../components/ProductFilters';
 import Pagination from '../components/Pagination';
 import { formatPrice } from '../lib/utils';
@@ -362,27 +362,16 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
 
   return (
     <Layout>
-      <Head>
-        <title>Products - Saman Portable Office Solutions | Portable Cabins, Container Offices & Prefab Solutions</title>
-        <meta name="description" content="Explore our wide range of portable cabins, container offices, and prefab solutions. High-quality, durable, and customizable products for all your needs." />
-        <meta name="keywords" content="portable cabins, container offices, prefab solutions, portable buildings, modular offices" />
-        <meta name="author" content="Saman Portable Office Solutions" />
-        <meta name="publisher" content="Saman Portable Office Solutions" />
-        <meta property="og:title" content="Products - Saman Portable Office Solutions" />
-        <meta property="og:description" content="Explore our wide range of portable cabins, container offices, and prefab solutions." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://samanportable.com/product" />
-        <link rel="canonical" href="https://samanportable.com/product" />
-      </Head>
-      
-      {rankMathSEO && (
-            <RankMathSEO 
-              seoData={rankMathSEO} 
-              fallbackCanonical="https://www.samanportable.com/product"
-              fallbackTitle="All Products - Saman Portable Office Solutions"
-              fallbackDescription="Browse our complete collection of portable office solutions, cabins, and containers at Saman Portable Office Solutions."
-            />
-          )}
+      {/* Unified SEO - Single source of truth for all meta tags */}
+      <UnifiedSEO 
+        rankMathSEO={rankMathSEO} 
+        fallbackCanonical="https://www.samanportable.com/product"
+        fallbackTitle="All Products - Saman Portable Office Solutions"
+        fallbackDescription="Browse our complete collection of portable office solutions, cabins, and containers at Saman Portable Office Solutions."
+        keywords="portable cabins, container offices, prefab solutions, portable buildings, modular offices"
+        author="Saman Portable Office Solutions"
+        publisher="Saman Portable Office Solutions"
+      />
 
       {/* Preload critical images for better performance */}
       <ImagePreloader 

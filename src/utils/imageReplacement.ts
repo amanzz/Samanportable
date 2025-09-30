@@ -143,34 +143,45 @@ export function replaceDomainInUrl(url: string): string {
 export function replaceImgTagsWithNextImage(htmlContent: string): string {
   if (!htmlContent) return htmlContent;
   
-  // Find all img tags and replace them with Next.js Image components
+  // Find all img tags and replace them with optimized Next.js Image components
   return htmlContent.replace(
     /<img([^>]*?)src="([^"]*?)"([^>]*?)>/gi,
     (match, beforeSrc, src, afterSrc) => {
       // Extract alt text
       const altMatch = match.match(/alt="([^"]*?)"/i);
-      const alt = altMatch ? altMatch[1] : '';
+      const alt = altMatch ? altMatch[1] : 'Image';
       
       // Extract width and height if available
       const widthMatch = match.match(/width="([^"]*?)"/i);
       const heightMatch = match.match(/height="([^"]*?)"/i);
-      const width = widthMatch ? widthMatch[1] : '800';
-      const height = heightMatch ? heightMatch[1] : '600';
+      const width = widthMatch ? parseInt(widthMatch[1]) : 800;
+      const height = heightMatch ? parseInt(heightMatch[1]) : 600;
       
       // Extract class if available
       const classMatch = match.match(/class="([^"]*?)"/i);
       const className = classMatch ? classMatch[1] : 'w-full h-auto';
       
-      // Create Next.js Image component
-      return `<div class="relative w-full h-auto my-4">
+      // Extract title if available
+      const titleMatch = match.match(/title="([^"]*?)"/i);
+      const title = titleMatch ? titleMatch[1] : '';
+
+      // Skip if src is empty or invalid
+      if (!src || src.trim() === '') {
+        return match;
+      }
+
+      // Create Next.js optimized image with proper attributes
+      return `<div class="relative w-full h-auto my-4 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
         <img 
           src="${src}" 
           alt="${alt}" 
           width="${width}" 
           height="${height}" 
-          class="${className} object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+          class="${className} object-cover transition-transform duration-300 hover:scale-105"
           loading="lazy"
           decoding="async"
+          ${title ? `title="${title}"` : ''}
+          style="width: 100%; height: auto; max-width: 100%;"
         />
       </div>`;
     }

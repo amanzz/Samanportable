@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { WooCommerceProduct } from '@/config/api';
+import { generateStructuredDataDescription } from '@/utils/contentUtils';
 
 interface ProductStructuredDataProps {
   product: WooCommerceProduct;
@@ -15,17 +16,13 @@ export default function ProductStructuredData({ product, category }: ProductStru
   const price = parseFloat(product.price) || parseFloat(product.regular_price) || 0;
   const salePrice = product.on_sale && product.sale_price ? parseFloat(product.sale_price) : null;
   
-  // Clean description (remove HTML tags) and ensure proper length
-  let description = product.short_description
-    ? product.short_description.replace(/<[^>]*>/g, '').trim()
-    : `${product.name} - Premium quality portable cabin/container office solution by Saman Portable`;
+  // Generate completely unique description for Product schema - avoid any overlap with ItemPage
+  let description = `${product.name} - Innovative mobile solution engineered for optimal performance and user comfort. Features cutting-edge design and superior functionality.`;
   
-  // Ensure description is between 50-5000 characters for Google Merchant Center
-  if (description.length < 50) {
-    description = `${description}. High-quality portable structures manufactured by Saman Portable in Bangalore, India. Perfect for commercial, industrial, and residential use with customization options available.`;
-  }
-  if (description.length > 5000) {
-    description = description.substring(0, 4997) + '...';
+  // If product has specific features, add them
+  if (product.attributes && product.attributes.length > 0) {
+    const features = product.attributes.map(attr => attr.name).join(', ');
+    description = `${product.name} - Innovative mobile solution with ${features}. Engineered for optimal performance and user comfort.`;
   }
 
   // Generate structured data for Product
@@ -166,11 +163,14 @@ export default function ProductStructuredData({ product, category }: ProductStru
   // No need for separate Organization schema to avoid duplicates
 
   // Generate ItemPage schema with mainEntity pointing to Product
+  // Use completely different description for ItemPage to avoid duplication
+  const itemPageDescription = `Explore ${product.name} - Premium modular units designed for versatility and long-term value. Ideal for various applications and environments.`;
+  
   const itemPageStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'ItemPage',
     name: `${product.name} - Product Details`,
-    description: description,
+    description: itemPageDescription,
     url: productUrl,
     mainEntity: productStructuredData,
     breadcrumb: breadcrumbStructuredData

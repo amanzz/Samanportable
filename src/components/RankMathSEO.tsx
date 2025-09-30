@@ -50,22 +50,27 @@ export const RankMathSEO: React.FC<RankMathSEOProps> = ({
       {ogTitle && <meta property="og:title" content={ogTitle} />}
       {ogDescription && <meta property="og:description" content={ogDescription} />}
       {ogImage && <meta property="og:image" content={ogImage} />}
+      {ogImage && <meta property="og:image:width" content="800" />}
+      {ogImage && <meta property="og:image:height" content="600" />}
+      {ogImage && <meta property="og:image:type" content="image/webp" />}
       {canonical && <meta property="og:url" content={canonical} />}
       <meta property="og:locale" content={ogLocale} />
       <meta property="og:site_name" content="SAMAN Portable Office Solutions" />
       
       {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@Saman_Portable" />
+      <meta name="twitter:creator" content="@Saman_Portable" />
       {twitterTitle && <meta name="twitter:title" content={twitterTitle} />}
       {twitterDescription && <meta name="twitter:description" content={twitterDescription} />}
       {twitterImage && <meta name="twitter:image" content={twitterImage} />}
+      {twitterImage && <meta name="twitter:image:alt" content="Portable Toilet Image" />}
       
       {/* Schema.org Structured Data handled by ProductStructuredData component */}
       {/* Removed seoData.schema to prevent duplicate Product schemas */}
       
-      {/* Additional Meta Tags */}
+      {/* Additional Meta Tags - Format detection is handled globally in _document.tsx */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="format-detection" content="telephone=no" />
     </Head>
   );
 };

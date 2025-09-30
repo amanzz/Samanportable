@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
-import { RankMathSEO } from '@/components/RankMathSEO';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { fetchLightweightProductsByCategory, fetchProductCategories, fetchProductAttributes, fetchCategoryRankMathSEO, RankMathSEOData } from '@/config/api';
 import { LightweightProduct, ProductFilters as ProductFiltersType, PaginationInfo } from '@/config/api';
 import ProductCard from '@/components/ProductCard';
@@ -219,13 +219,14 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
 
   return (
     <Layout>
-      {/* Always render RankMathSEO with fallback data */}
-      <RankMathSEO 
-        seoData={rankMathSEO} 
+      {/* Unified SEO - Single source of truth for all meta tags */}
+      <UnifiedSEO 
+        rankMathSEO={rankMathSEO} 
         fallbackCanonical={`https://www.samanportable.com/product-category/${initialCategorySlug}`}
         fallbackTitle={`${initialCategoryName || 'Products'} - SAMAN Portable Office Solutions`}
         fallbackDescription={`Browse our ${initialCategoryName || 'product'} collection. Quality portable solutions for your business needs at Saman Portable Office Solutions.`}
         fallbackOgImage="https://www.samanportable.com/og-image.svg"
+        keywords={`${initialCategoryName || 'products'}, portable office, container office, prefab solutions, ${initialCategorySlug}`}
       />
 
       <div className="min-h-screen bg-gray-50">

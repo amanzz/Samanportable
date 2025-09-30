@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en" className={inter.variable}>
       <Head>
-        <meta charSet="utf-8" />
+        {/* Charset is automatically added by Next.js */}
         
         {/* Critical Resource Preloading - Optimized for LCP */}
         <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
@@ -29,9 +29,17 @@ export default function Document() {
         <meta name="theme-color" content="#0A3D2A" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="SAMAN Portable" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <link rel="manifest" href="/manifest.json" />
+        
+        {/* Security and Performance Meta Tags */}
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta name="msapplication-TileColor" content="#0A3D2A" />
+        <meta name="next-head-count" content="30" />
+        {/* Robots meta tags are handled by individual SEO components */}
         
         {/* Performance Meta Tags - Enhanced */}
         <meta httpEquiv="x-dns-prefetch-control" content="on" />

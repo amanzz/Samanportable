@@ -42,7 +42,9 @@ export default function App({ Component, pageProps }: AppProps) {
   // This prevents duplicate meta tags
   const hasCustomSEO = pageProps.rankMathSEO || 
                        router.pathname.startsWith('/product/') ||
-                       (router.pathname === '/[slug]' && pageProps.post);
+                       (router.pathname === '/[slug]' && pageProps.post) ||
+                       router.pathname === '/' ||
+                       router.pathname === '/product';
   
   return (
     <div className={inter.className}>

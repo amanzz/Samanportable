@@ -26,7 +26,7 @@ import {
   Heart,
   Bookmark
 } from 'lucide-react';
-import FAQSchema from './FAQSchema';
+// FAQSchema removed as it's not being used
 import OptimizedContent from './OptimizedContent';
 import { replaceInternalLinks } from '../utils/imageReplacement';
 
@@ -162,137 +162,11 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   
-  // Extract FAQs from product description or use default ones
-  const extractFAQsFromDescription = (description: string) => {
-    try {
-      // First, remove table content to avoid interference
-      const descriptionWithoutTables = description.replace(/<table[\s\S]*?<\/table>/gi, '');
-      
-      // Try to find FAQ section with heading
-      const faqSectionRegex = /(<h[1-6][^>]*>FAQ[^<]*<\/h[1-6]>[\s\S]*?)(?=<h[1-6]|$)/gi;
-      const faqMatches = descriptionWithoutTables.match(faqSectionRegex);
-      
-      if (faqMatches) {
-        const faqs = [];
-        for (const section of faqMatches) {
-          // Remove FAQ heading and split by question headings
-          const content = section.replace(/<h[1-6][^>]*>FAQ[^<]*<\/h[1-6]>/gi, '');
-          
-          // Find all question headings
-          const questionRegex = /<h[1-6][^>]*>([^<]+)<\/h[1-6]>/gi;
-          const questions = [];
-          let match;
-          
-          while ((match = questionRegex.exec(content)) !== null) {
-            if (!match[1].toLowerCase().includes('faq')) {
-              questions.push({
-                text: match[1].trim(),
-                index: match.index
-              });
-            }
-          }
-          
-          // Extract answers for each question
-          for (let i = 0; i < questions.length; i++) {
-            const currentQuestion = questions[i];
-            const nextQuestion = questions[i + 1];
-            
-            // Get content between current question and next question (or end)
-            const startIndex = currentQuestion.index + currentQuestion.text.length;
-            const endIndex = nextQuestion ? nextQuestion.index : content.length;
-            const answerContent = content.substring(startIndex, endIndex);
-            
-            // Clean the answer content
-            const cleanAnswer = answerContent
-              .replace(/<[^>]*>/g, '') // Remove HTML tags
-              .replace(/^\s*[\r\n]+/gm, '') // Remove empty lines
-              .trim();
-            
-            if (cleanAnswer) {
-              faqs.push({
-                question: currentQuestion.text,
-                answer: cleanAnswer
-              });
-            }
-          }
-        }
-        if (faqs.length > 0) return faqs;
-      }
-
-      // Parse Rank Math FAQ schema from WordPress content
-      const faqSchemaRegex = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
-      const matches = descriptionWithoutTables.match(faqSchemaRegex);
-      
-      if (matches) {
-        for (const match of matches) {
-          const jsonContent = match.replace(/<script[^>]*>/, '').replace(/<\/script>/, '').trim();
-          try {
-            const schema = JSON.parse(jsonContent);
-            if (schema['@type'] === 'FAQPage' && schema.mainEntity) {
-              return schema.mainEntity.map((item: any) => ({
-                question: item.name || item.question,
-                answer: item.acceptedAnswer?.text || item.answer
-              }));
-            }
-          } catch (e) {
-            console.warn('Failed to parse FAQ schema:', e);
-          }
-        }
-      }
-      
-      // Alternative: Parse HTML FAQ blocks
-      const faqBlockRegex = /<div[^>]*class=["'][^"']*faq[^"']*["'][^>]*>([\s\S]*?)<\/div>/gi;
-      const faqBlocks = descriptionWithoutTables.match(faqBlockRegex);
-      
-      if (faqBlocks) {
-        const faqs = [];
-        for (const block of faqBlocks) {
-          const questionMatch = block.match(/<h[1-6][^>]*>([^<]+)<\/h[1-6]>/i) || 
-                               block.match(/<[^>]*class=["'][^"']*question[^"']*["'][^>]*>([^<]+)</i);
-          const answerMatch = block.match(/<p[^>]*>([\s\S]*?)<\/p>/i) || 
-                             block.match(/<[^>]*class=["'][^"']*answer[^"']*["'][^>]*>([\s\S]*?)</i);
-          
-          if (questionMatch && answerMatch) {
-            faqs.push({
-              question: questionMatch[1].trim(),
-              answer: answerMatch[1].replace(/<[^>]*>/g, '').trim()
-            });
-          }
-        }
-        if (faqs.length > 0) return faqs;
-      }
-      
-      return [];
-    } catch (error) {
-      console.warn('Error parsing FAQs from description:', error);
-      return [];
-    }
-  };
-  
-  // Simple approach: Don't extract FAQs, let WordPress content display as-is
-  const productFAQs: Array<{ question: string; answer: string }> = [];
+  // Simplified approach: Use description directly without any processing
   const cleanDescription = description;
 
-  // Extract key features from description
-  const extractKeyFeatures = (description: string): string[] => {
-    const features: string[] = [];
-    const featureRegex = /(?:features?|benefits?|highlights?)[\s\S]*?<ul[^>]*>([\s\S]*?)<\/ul>/gi;
-    const matches = description.match(featureRegex);
-    
-    if (matches) {
-      const listItems = matches[0].match(/<li[^>]*>([^<]+)<\/li>/gi);
-      if (listItems) {
-        listItems.forEach(item => {
-          const text = item.replace(/<[^>]*>/g, '').trim();
-          if (text) features.push(text);
-        });
-      }
-    }
-    
-    return features.slice(0, 6); // Limit to 6 features
-  };
-
-  const keyFeatures = extractKeyFeatures(description);
+  // Remove key features extraction to prevent duplication
+  // The description will be displayed only once in the main content area
 
   // SEO-optimized additional information content
   const additionalInfo = `
@@ -484,13 +358,6 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
 
   return (
     <>
-      {/* FAQ Schema for SEO */}
-      <FAQSchema 
-         faqs={productFAQs} 
-         productTitle={productTitle}
-         url={typeof window !== 'undefined' ? window.location.href : undefined}
-       />
-      
       {/* Modern Product Description Section */}
       <div className="space-y-6">
         {/* Hero Section with Green Theme */}
@@ -511,17 +378,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
                   </div>
                 </div>
                 
-                {/* Key Features Preview */}
-                {keyFeatures.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
-                    {keyFeatures.slice(0, 3).map((feature, index) => (
-                      <div key={index} className="flex items-center gap-2 p-3 bg-white/70 rounded-lg border border-green-200/50 backdrop-blur-sm">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span className="text-sm font-medium text-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                {/* Key Features Preview removed to prevent duplication */}
               </div>
               
               {/* Action Buttons */}
@@ -555,41 +412,39 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
 
         {/* Modern Tabs Design with Green Theme */}
         <Card className="border-0 shadow-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-200">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-200">
               <TabsList className="grid w-full grid-cols-3 bg-transparent border-0 h-auto p-0">
-          <TabsTrigger 
-            value="description" 
+                <TabsTrigger 
+                  value="description" 
                   className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none border-r border-green-200 transition-all duration-200"
-          >
+                >
                   <FileText className="w-5 h-5" />
-            <span className="hidden sm:inline">Description</span>
-            <span className="sm:hidden">Info</span>
-          </TabsTrigger>
-          <TabsTrigger 
-            value="additional" 
+                  <span className="hidden sm:inline">Description</span>
+                  <span className="sm:hidden">Info</span>
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="additional" 
                   className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none border-r border-green-200 transition-all duration-200"
                 >
                   <Info className="w-5 h-5" />
                   <span className="hidden sm:inline">Specifications</span>
                   <span className="sm:hidden">Specs</span>
-          </TabsTrigger>
-          <TabsTrigger 
-            value="shipping" 
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="shipping" 
                   className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none transition-all duration-200"
-          >
+                >
                   <Truck className="w-5 h-5" />
-            <span className="hidden sm:inline">Shipping</span>
-            <span className="sm:hidden">Ship</span>
-          </TabsTrigger>
-        </TabsList>
-            </Tabs>
-              </div>
+                  <span className="hidden sm:inline">Shipping</span>
+                  <span className="sm:hidden">Ship</span>
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
-          <div className="p-0">
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-              <TabsContent value="description" className="mt-0 p-8">
-                <div className="space-y-8">
+            <div className="p-0">
+              <TabsContent value="description" className="mt-0 p-4 sm:p-6 md:p-8">
+                <div className="space-y-4 sm:space-y-6 md:space-y-8">
                   {/* Description Header */}
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
@@ -606,34 +461,13 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
                     />
                   </div>
 
-                  {/* Key Features Section with Green Theme */}
-                  {keyFeatures.length > 0 && (
-                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200">
-                <div className="flex items-center gap-3 mb-6">
-                        <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
-                          <Award className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                          <h4 className="text-xl font-bold text-foreground">Key Features</h4>
-                          <p className="text-muted-foreground">What makes this product special</p>
-                  </div>
-                </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {keyFeatures.map((feature, index) => (
-                          <div key={index} className="flex items-start gap-3 p-4 bg-white rounded-xl border border-green-200/50 shadow-sm hover:shadow-md transition-shadow duration-200">
-                            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm font-medium text-foreground">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-              </div>
-            )}
+                  {/* Key Features section removed to prevent duplication with main description */}
 
 
           </div>
         </TabsContent>
 
-              <TabsContent value="additional" className="mt-0 p-8">
+              <TabsContent value="additional" className="mt-0 p-4 sm:p-6 md:p-8">
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
@@ -666,10 +500,10 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
               <ShippingInfoContent />
             </div>
           </div>
-        </TabsContent>
-      </Tabs>
-          </div>
-    </Card>
+            </TabsContent>
+            </div>
+          </Tabs>
+        </Card>
       </div>
     </>
   );
