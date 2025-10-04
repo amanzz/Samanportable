@@ -35,10 +35,7 @@ export function middleware(request: NextRequest) {
     }
   }
   
-  // Debug logging (commented out for production)
-  // console.log('=== MIDDLEWARE CALLED ===');
-  // console.log('Path:', pathname);
-  // console.log('URL:', request.url);
+  // Debug logging removed for production
   
   // TEMPORARY TEST: Block all requests to test if middleware is working
   if (pathname === '/test-middleware') {
@@ -148,7 +145,7 @@ export function middleware(request: NextRequest) {
   
   // Check if the path is empty (root path) - allow it
   if (pathWithoutSlash === '') {
-    // console.log('Root path detected, allowing');
+    console.log('Root path detected, allowing');
     return NextResponse.next();
   }
   
@@ -156,8 +153,8 @@ export function middleware(request: NextRequest) {
   // This regex matches strings that contain only digits from start to end
   const isNumericOnly = /^\d+$/.test(pathWithoutSlash);
   
-  // console.log('Path without slash:', pathWithoutSlash);
-  // console.log('Is numeric only:', isNumericOnly);
+  console.log('Path without slash:', pathWithoutSlash);
+  console.log('Is numeric only:', isNumericOnly);
   
   if (isNumericOnly) {
     // console.log('=== BLOCKING NUMERIC URL ===');

@@ -133,7 +133,7 @@ const nextConfig = {
 
   // Force HTTPS and WWW redirects
   async redirects() {
-    return [
+    const redirects = [
       // Duplicate URL redirects for SEO - Container Cafes
       {
         source: '/container-cafes-in-central-delhi-2',
@@ -174,41 +174,218 @@ const nextConfig = {
         destination: '/product/porta-cabins/luxury-porta-cabin',
         permanent: true,
       },
-      // Force HTTPS and WWW redirects
+
+      // NEW REDIRECTS FROM BROKEN LINKS LIST - 301 REDIRECTS
       {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'samanportable.com',
-          },
-        ],
-        destination: 'https://www.samanportable.com/:path*',
+        source: '/products/shipping-container-house',
+        destination: '/product/container-houses',
         permanent: true,
       },
       {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'http://samanportable.com',
-          },
-        ],
-        destination: 'https://www.samanportable.com/:path*',
+        source: '/project/portable-cabins-manufacturer',
+        destination: '/product/portable-cabin',
         permanent: true,
       },
       {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'http://www.samanportable.com',
-          },
-        ],
-        destination: 'https://www.samanportable.com/:path*',
+        source: '/project/industrial-shed-manufacturer',
+        destination: '/product/industrial-sheds',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabins',
+        destination: '/product/porta-cabins',
+        permanent: true,
+      },
+      {
+        source: '/products/kitchen-container',
+        destination: '/product/container-houses',
+        permanent: true,
+      },
+      {
+        source: '/container-office-for-sale-in-bangalore',
+        destination: '/product/container-offices',
+        permanent: true,
+      },
+      {
+        source: '/products/portable-cabin',
+        destination: '/product/portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/products/mobile-toilet',
+        destination: '/product/portable-toilet',
+        permanent: true,
+      },
+      {
+        source: '/project/container-homes',
+        destination: '/product/container-houses',
+        permanent: true,
+      },
+      {
+        source: '/labour-colonies-in-najafgarh',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/products/portable-toilet',
+        destination: '/product/portable-toilet',
+        permanent: true,
+      },
+      {
+        source: '/prefab-labour-colonies-in-central-delhi',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/labour-colonies-for-sale-in-central-delhi',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/products/industrial-shed-manufacturer',
+        destination: '/product/industrial-sheds',
+        permanent: true,
+      },
+      {
+        source: '/container-offices-for-sale-in-nagarbhavi-3',
+        destination: '/product/container-offices',
+        permanent: true,
+      },
+      {
+        source: '/prefab-labour-colonies-in-east-delhi',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/labour-colonies-in-okhla-industrial',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/prefab-labour-colonies-in-west-delhi',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/labour-colonies-in-loni-ghaziabad',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/container-offices-for-sale-in-peenya',
+        destination: '/product/container-offices',
+        permanent: true,
+      },
+      {
+        source: '/products/mobile-home',
+        destination: '/product/container-houses',
+        permanent: true,
+      },
+      {
+        source: '/project/portable-cabin',
+        destination: '/product/portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/labour-camps-in-noida',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/prefab-labour-colonies-in-north-delhi',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/prefab-labour-camps-in-ghaziabad',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/prefab-labour-colonies-in-lucknow',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/labour-colonies-for-sale-in-north-delhi',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/products/office-cabins',
+        destination: '/product/portable-office/portable-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/labour-colonies-for-sale-in-south-delhi',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/labour-colonies-for-sale-in-new-delhi',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/container-offices-for-sale-in-hosur-3',
+        destination: '/product/container-offices',
+        permanent: true,
+      },
+      {
+        source: '/prefab-labour-colonies-in-meerut',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+
+      // 410 GONE REDIRECTS - These redirect to the 410 page
+      {
+        source: '/find-out-how-i-cured-my-easter-weekend-in-2-days',
+        destination: '/410',
         permanent: true,
       },
     ];
+
+    // Only add HTTPS and WWW redirects in production
+    if (process.env.NODE_ENV === 'production') {
+      redirects.push(
+        // Force HTTPS and WWW redirects
+        {
+          source: '/:path*',
+          has: [
+            {
+              type: 'host',
+              value: 'samanportable.com',
+            },
+          ],
+          destination: 'https://www.samanportable.com/:path*',
+          permanent: true,
+        },
+        {
+          source: '/:path*',
+          has: [
+            {
+              type: 'host',
+              value: 'http://samanportable.com',
+            },
+          ],
+          destination: 'https://www.samanportable.com/:path*',
+          permanent: true,
+        },
+        {
+          source: '/:path*',
+          has: [
+            {
+              type: 'host',
+              value: 'http://www.samanportable.com',
+            },
+          ],
+          destination: 'https://www.samanportable.com/:path*',
+          permanent: true,
+        }
+      );
+    }
+
+    return redirects;
   },
 
   // Headers for security and performance

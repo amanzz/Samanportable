@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import Link from 'next/link';
 import { Button } from '../components/ui/button';
 import { Home, ArrowLeft } from 'lucide-react';
+import { GetServerSideProps } from 'next';
 
 const Custom410Page = () => {
   return (
@@ -52,6 +53,14 @@ const Custom410Page = () => {
       </div>
     </Layout>
   );
+};
+
+// Set the proper 410 status code
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+  res.statusCode = 410;
+  return {
+    props: {},
+  };
 };
 
 export default Custom410Page;
