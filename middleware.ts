@@ -56,6 +56,92 @@ export function middleware(request: NextRequest) {
       }
     );
   }
+
+  // 410 Gone responses for intentionally removed content
+  const goneUrls = [
+    '/find-out-how-i-cured-my-easter-weekend-in-2-days/',
+    '/find-out-how-i-cured-my-easter-weekend-in-2-days'
+  ];
+
+  if (goneUrls.includes(pathname)) {
+    return new NextResponse(
+      JSON.stringify({
+        error: 'Gone',
+        message: 'This content has been permanently removed.',
+        status: 410
+      }),
+      {
+        status: 410,
+        statusText: 'Gone',
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+          'X-Content-Type-Options': 'nosniff',
+          'X-Frame-Options': 'DENY',
+          'X-XSS-Protection': '1; mode=block'
+        }
+      }
+    );
+  }
+
+  // 301 Permanent Redirects for broken links
+  const redirectMap: Record<string, string> = {
+    // Container Houses redirects
+    '/products/shipping-container-house/': '/product/container-houses',
+    '/products/shipping-container-house': '/product/container-houses',
+    '/products/kitchen-container/': '/product/container-houses',
+    '/products/kitchen-container': '/product/container-houses',
+    '/project/container-homes': '/product/container-houses',
+    '/products/mobile-home': '/product/container-houses',
+    
+    // Portable Cabin redirects
+    '/project/portable-cabins-manufacturer': '/product/portable-cabin',
+    '/products/portable-cabin': '/product/portable-cabin',
+    '/project/portable-cabin': '/product/portable-cabin',
+    
+    // Industrial Sheds redirects
+    '/project/industrial-shed-manufacturer': '/product/industrial-sheds',
+    '/products/industrial-shed-manufacturer': '/product/industrial-sheds',
+    
+    // Porta Cabins redirects
+    '/porta-cabins': '/product/porta-cabins',
+    
+    // Container Offices redirects
+    '/container-office-for-sale-in-bangalore': '/product/container-offices',
+    '/container-offices-for-sale-in-nagarbhavi-3': '/product/container-offices',
+    '/container-offices-for-sale-in-peenya': '/product/container-offices',
+    '/container-offices-for-sale-in-hosur-3': '/product/container-offices',
+    
+    // Labor Colony redirects
+    '/labour-colonies-in-najafgarh': '/product/labor-colony',
+    '/prefab-labour-colonies-in-central-delhi': '/product/labor-colony',
+    '/labour-colonies-for-sale-in-central-delhi': '/product/labor-colony',
+    '/prefab-labour-colonies-in-east-delhi': '/product/labor-colony',
+    '/labour-colonies-in-okhla-industrial': '/product/labor-colony',
+    '/prefab-labour-colonies-in-west-delhi': '/product/labor-colony',
+    '/labour-colonies-in-loni-ghaziabad': '/product/labor-colony',
+    '/labour-camps-in-noida': '/product/labor-colony',
+    '/prefab-labour-colonies-in-north-delhi': '/product/labor-colony',
+    '/prefab-labour-camps-in-ghaziabad': '/product/labor-colony',
+    '/prefab-labour-colonies-in-lucknow': '/product/labor-colony',
+    '/labour-colonies-for-sale-in-north-delhi': '/product/labor-colony',
+    '/labour-colonies-for-sale-in-south-delhi': '/product/labor-colony',
+    '/labour-colonies-for-sale-in-new-delhi': '/product/labor-colony',
+    '/prefab-labour-colonies-in-meerut': '/product/labor-colony',
+    
+    // Portable Toilet redirects
+    '/products/mobile-toilet': '/product/portable-toilet',
+    '/products/portable-toilet': '/product/portable-toilet',
+    
+    // Office Cabins redirects
+    '/products/office-cabins': '/product/portable-office/portable-office-cabin'
+  };
+
+  // Check for redirects
+  if (redirectMap[pathname]) {
+    const redirectUrl = new URL(redirectMap[pathname], request.url);
+    return NextResponse.redirect(redirectUrl, 301);
+  }
   
   // Remove leading slash to check if the path is numeric-only
   const pathWithoutSlash = pathname.replace(/^\//, '');
