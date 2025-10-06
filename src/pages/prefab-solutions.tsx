@@ -670,12 +670,12 @@ const PrefabSolutionsPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "/Container Office in Bangalore(10).jpg",
-              "/Porta Cabins In Bangalore (1).jpg",
-              "/Container Cafe In Bangalore (2).jpg",
-              "/Marketing office in Bangalore.jpg",
-              "/Portable Security Cabins (1).jpg",
-              "/Interior Look Of Portable Cabin.jpg"
+              "/Prefab solutions/work/IMG-20210610-WA0083.webp",
+              "/Prefab solutions/work/SAMAN-21.jpeg.webp",
+              "/Prefab solutions/work/SAMAN23948.jpeg.webp",
+              "/Prefab solutions/work/WhatsApp Image 2025-03-21 at 12.20.38.jpeg.webp",
+              "/Prefab solutions/work/WhatsApp Image 2025-03-21 at 12.22.41.jpeg.webp",
+              "/Prefab solutions/work/WhatsApp Image 2025-03-21 at 12.26.26.jpeg.webp"
             ].map((image, index) => (
               <div key={index} className="relative group overflow-hidden rounded-xl shadow-lg">
                 <div className="relative h-64 w-full">

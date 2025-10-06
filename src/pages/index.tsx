@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 
 // Import Layout component
@@ -130,6 +131,45 @@ const HomePage = ({ recentBlogPosts }: HomePageProps) => {
         <ServicesSection />
         <WhyChooseUs />
         <StatsSection />
+        
+        {/* Our Work in Action Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Our Work in Action</h2>
+              <p className="text-base md:text-xl text-gray-600">See some of our successful prefab projects</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                "/Prefab solutions/work/IMG-20210610-WA0083.webp",
+                "/Prefab solutions/work/SAMAN-21.jpeg.webp",
+                "/Prefab solutions/work/SAMAN23948.jpeg.webp",
+                "/Prefab solutions/work/WhatsApp Image 2025-03-21 at 12.20.38.jpeg.webp",
+                "/Prefab solutions/work/WhatsApp Image 2025-03-21 at 12.22.41.jpeg.webp",
+                "/Prefab solutions/work/WhatsApp Image 2025-03-21 at 12.26.26.jpeg.webp"
+              ].map((image, index) => (
+                <div key={index} className="relative group overflow-hidden rounded-xl shadow-lg">
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src={image}
+                      alt={`Project ${index + 1}`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button className="bg-white text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        
         <TestimonialsSection />
         <ScrollToTop />
       </main>
