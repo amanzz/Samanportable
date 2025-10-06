@@ -199,6 +199,18 @@ const RefundAndReturnPolicy = () => {
                     <li>Shipping and handling costs for non-defective returns</li>
                   </ul>
 
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                    <div className="flex items-start gap-3">
+                      <Shield className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <h5 className="font-semibold text-blue-800 mb-2">Note</h5>
+                        <p className="text-blue-700 text-sm">
+                          Standard returns have no restocking fee. A restocking charge may apply only in rare cases, such as missing accessories or product damage.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Non-Refundable Items</h3>
                   <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
                     <h4 className="font-semibold text-red-800 mb-3">Items Not Eligible for Return/Refund</h4>
