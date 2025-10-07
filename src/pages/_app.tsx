@@ -53,13 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {!hasCustomSEO && <DefaultSeo {...defaultSEO} />}
       
       {/* Performance Monitoring Scripts - Lazy Loaded */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-        strategy="lazyOnload"
-        onLoad={() => {
-          console.log('Google Analytics loaded');
-        }}
-      />
+      {/* Google Analytics removed - using GTM instead */}
       
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
