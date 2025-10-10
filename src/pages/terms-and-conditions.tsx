@@ -1,7 +1,7 @@
 import React from 'react';
-
-import Layout from '@/components/Layout';
 import Head from 'next/head';
+import Layout from '@/components/Layout';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,6 +9,14 @@ import { Button } from '@/components/ui/button';
 const TermsAndConditions = () => {
   return (
     <Layout>
+      <UnifiedSEO
+        fallbackTitle="Terms and Conditions - Saman Portable Office Solutions"
+        fallbackDescription="Terms and Conditions for Saman Portable Office Solutions. Read our terms of service and usage policies."
+        fallbackCanonical="https://www.samanportable.com/terms-and-conditions"
+        keywords="terms and conditions, terms of service, usage policy, legal terms"
+        author="Saman Portable Office Solutions"
+        publisher="Saman Portable Office Solutions"
+      />
       <Head>
         <title>Terms and Conditions - Saman Portable Office Solutions</title>
         <meta name="description" content="Terms and Conditions for Saman Portable Office Solutions. Read our terms of service and usage policies." />

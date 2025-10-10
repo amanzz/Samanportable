@@ -1,7 +1,8 @@
 import React from 'react';
-
-import Layout from '@/components/Layout';
 import Head from 'next/head';
+import Layout from '@/components/Layout';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
+
 import Link from 'next/link';
 import { ArrowLeft, RefreshCw, Shield, Clock, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,6 +10,14 @@ import { Button } from '@/components/ui/button';
 const RefundAndReturnPolicy = () => {
   return (
     <Layout>
+      <UnifiedSEO
+        fallbackTitle="Refund and Return Policy - Saman Portable Office Solutions"
+        fallbackDescription="Refund and Return Policy for Saman Portable Office Solutions. Learn about our return process and refund terms."
+        fallbackCanonical="https://www.samanportable.com/refund-and-return-policy"
+        keywords="refund policy, return policy, refund terms, return process"
+        author="Saman Portable Office Solutions"
+        publisher="Saman Portable Office Solutions"
+      />
       <Head>
         <title>Refund and Return Policy - Saman Portable Office Solutions</title>
         <meta name="description" content="Refund and Return Policy for Saman Portable Office Solutions. Learn about our return process, refund policies, and warranty information." />

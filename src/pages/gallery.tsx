@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import Layout from '@/components/Layout';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { Button } from '@/components/ui/button';
 import { 
   Grid3X3, 
@@ -113,25 +114,15 @@ const Gallery = () => {
 
   return (
     <Layout>
-      <Head>
-        <title>Gallery - Saman Portable Office Solutions</title>
-        <meta name="description" content="Explore our comprehensive gallery of portable cabins, container offices, and prefab solutions. View high-quality images of our projects and installations." />
-        <meta name="keywords" content="gallery, portable cabins, container offices, prefab solutions, project images, installations" />
-        <meta name="author" content="Saman Portable Office Solutions" />
-        <meta name="publisher" content="Saman Portable Office Solutions" />
-        <link rel="canonical" href="https://samanportable.com/gallery" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Gallery - Saman Portable Office Solutions" />
-        <meta property="og:description" content="Explore our comprehensive gallery of portable cabins, container offices, and prefab solutions." />
-        <meta property="og:url" content="https://samanportable.com/gallery" />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter */}
-        <meta name="twitter:title" content="Gallery - Saman Portable Office Solutions" />
-        <meta name="twitter:description" content="Explore our comprehensive gallery of portable cabins, container offices, and prefab solutions." />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <UnifiedSEO
+        fallbackTitle="Gallery - Saman Portable Office Solutions"
+        fallbackDescription="Explore our comprehensive gallery of portable cabins, container offices, and prefab solutions. View high-quality images of our projects and installations."
+        fallbackCanonical="https://www.samanportable.com/gallery"
+        fallbackOgImage="/og-image.svg"
+        keywords="gallery, portable cabins, container offices, prefab solutions, project images, installations"
+        author="Saman Portable Office Solutions"
+        publisher="Saman Portable Office Solutions"
+      />
 
       <div className="min-h-screen bg-background">
         <div className="max-w-7xl mx-auto">

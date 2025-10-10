@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle, MapPin, Phone, Mail, Clock, Package, Shield, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,10 +41,14 @@ const ContainerOffice10x8Rental = () => {
 
   return (
     <Layout>
-      <Head>
-        <title>10x8 Container Office Rental - Saman Portable Office Solutions</title>
-        <meta name="description" content="Rent 10x8 ft container offices in Bangalore. Compact, high-quality container offices perfect for small offices, accommodation, and temporary structures. Flexible rental terms available." />
-      </Head>
+      <UnifiedSEO
+        fallbackTitle="10x8 Container Office Rental - Saman Portable Office Solutions"
+        fallbackDescription="Rent 10x8 ft container offices in Bangalore. Compact, high-quality container offices perfect for small offices, accommodation, and temporary structures. Flexible rental terms available."
+        fallbackCanonical="https://www.samanportable.com/container-rent-services/10x8-container-office-rental"
+        keywords="portable cabin rental, container office rental, office space rental, temporary office"
+        author="Saman Portable Office Solutions"
+        publisher="Saman Portable Office Solutions"
+      />
       <div className="min-h-screen bg-background">
         <main>
           {/* Hero Section */}
@@ -271,5 +276,8 @@ export const getStaticProps = async () => {
 };
 
 export default ContainerOffice10x8Rental;
+
+
+
 
 

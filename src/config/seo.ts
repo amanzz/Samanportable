@@ -21,7 +21,7 @@ export const defaultSEO = {
   titleTemplate: '%s | Saman Portable Office Solutions',
   defaultTitle: 'Saman Portable Office Solutions - Premium Portable Cabins & Container Offices in Bangalore',
   description: siteConfig.description,
-  canonical: siteConfig.url,
+  // canonical: siteConfig.url, // Removed to prevent duplicate canonical tags - handled by UnifiedSEO
   openGraph: {
     type: 'website',
     locale: 'en_US',

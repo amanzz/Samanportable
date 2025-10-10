@@ -273,13 +273,13 @@ const PrefabSolutionsPage = () => {
         <meta property="og:title" content="Prefab Solutions India | Saman Portable - Modern Container & Portable Buildings" />
         <meta property="og:description" content="Transform your space with India&apos;s leading prefab solutions. Container offices, porta cabins, labor colonies & more. Fast, reliable, cost-effective building solutions with free consultation." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://samanportable.com/prefab-solutions" />
+        <meta property="og:url" content="https://www.samanportable.com/prefab-solutions" />
         <meta property="og:image" content="https://samanportable.com/og-image.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Prefab Solutions India | Saman Portable" />
         <meta name="twitter:description" content="India&apos;s leading prefab solutions provider. Container offices, porta cabins, labor colonies & more. 50% faster construction with free quote." />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <link rel="canonical" href="https://samanportable.com/prefab-solutions" />
+        <link rel="canonical" href="https://www.samanportable.com/prefab-solutions" />
         <style dangerouslySetInnerHTML={{
           __html: `
             html, body {

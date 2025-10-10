@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,10 +9,14 @@ import { Button } from '@/components/ui/button';
 const PrivacyPolicy = () => {
   return (
     <Layout>
-      <Head>
-        <title>Privacy Policy - Saman Portable Office Solutions</title>
-        <meta name="description" content="Privacy Policy for Saman Portable Office Solutions. Learn how we collect, use, and protect your personal information." />
-      </Head>
+      <UnifiedSEO
+        fallbackTitle="Privacy Policy - Saman Portable Office Solutions"
+        fallbackDescription="Privacy Policy for Saman Portable Office Solutions. Learn how we collect, use, and protect your personal information."
+        fallbackCanonical="https://www.samanportable.com/privacy-policy"
+        keywords="privacy policy, data protection, personal information, GDPR compliance"
+        author="Saman Portable Office Solutions"
+        publisher="Saman Portable Office Solutions"
+      />
       
       <div className="min-h-screen">
         <main>

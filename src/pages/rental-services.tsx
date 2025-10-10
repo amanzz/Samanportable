@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { ArrowRight, Building2, Container, Package, Clock, MapPin, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from '@/components/QuoteFormTrigger';
@@ -91,13 +92,14 @@ const RentalServices = () => {
 
   return (
     <Layout>
-      <Head>
-        <title>Rental Services - Saman Portable Office Solutions</title>
-        <meta name="description" content="Professional rental services for porta cabins, container offices, and prefab structures in Bangalore. Flexible terms and quick setup available." />
-        <meta name="keywords" content="porta cabin rental, container office rental, prefab structure rental, temporary office rental, construction site rental, portable cabin hire" />
-        <meta name="author" content="Saman Portable Office Solutions" />
-        <meta name="publisher" content="Saman Portable Office Solutions" />
-      </Head>
+      <UnifiedSEO
+        fallbackTitle="Rental Services - Saman Portable Office Solutions"
+        fallbackDescription="Professional rental services for porta cabins, container offices, and prefab structures in Bangalore. Flexible terms and quick setup available."
+        fallbackCanonical="https://www.samanportable.com/rental-services"
+        keywords="porta cabin rental, container office rental, prefab structure rental, temporary office rental, construction site rental, portable cabin hire"
+        author="Saman Portable Office Solutions"
+        publisher="Saman Portable Office Solutions"
+      />
       
       <div className="min-h-screen">
         <main>

@@ -48,8 +48,8 @@ const ContactPage = () => {
         <meta property="og:title" content="Contact Us - Saman Portable Office Solutions" />
         <meta property="og:description" content="Get in touch with Saman Portable Office Solutions for portable cabins, container offices, and prefab solutions." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://blog.samanportable.com/contact" />
-        <link rel="canonical" href="https://blog.samanportable.com/contact" />
+        <meta property="og:url" content="https://www.samanportable.com/contact" />
+        <link rel="canonical" href="https://www.samanportable.com/contact" />
         
         {/* Contact Page Structured Data */}
         <script

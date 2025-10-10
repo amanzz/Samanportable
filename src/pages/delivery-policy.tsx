@@ -1,13 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Link from 'next/link';
 import { ArrowLeft, Truck, Clock, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-export default function DeliveryPolicy() {
+const DeliveryPolicy = () => {
   return (
     <Layout>
+      <UnifiedSEO
+        fallbackTitle="Delivery Policy - Saman Portable Office Solutions"
+        fallbackDescription="Delivery Policy for Saman Portable Office Solutions. Learn about our delivery process, timelines, and shipping terms."
+        fallbackCanonical="https://www.samanportable.com/delivery-policy"
+        keywords="delivery policy, shipping policy, delivery terms, shipping process"
+        author="Saman Portable Office Solutions"
+        publisher="Saman Portable Office Solutions"
+      />
       <Head>
         <title>Delivery Policy - Saman Portable Office Solutions</title>
         <meta name="description" content="Delivery Policy for Saman Portable Office Solutions. Learn about our delivery process, timelines, and coverage areas." />
