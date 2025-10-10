@@ -268,3 +268,5 @@ const DeliveryPolicy = () => {
   );
 };
 
+export default DeliveryPolicy;
+

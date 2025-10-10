@@ -38,7 +38,7 @@ export const SEO: React.FC<SEOProps> = ({
     ...defaultSEO,
     title,
     description,
-    canonical: canonical || defaultSEO.canonical,
+    canonical,
     noindex,
     nofollow,
     openGraph: {
