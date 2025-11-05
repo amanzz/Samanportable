@@ -6,8 +6,9 @@ import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { ArrowRight, Building2, Container, Package, Clock, MapPin, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from '@/components/QuoteFormTrigger';
+import { pageSEO, siteConfig } from '@/config/seo';
 
-const RentalServices = () => {
+const RentalServicesPage = () => {
   const rentalServices = [
     {
       id: 1,
@@ -93,12 +94,12 @@ const RentalServices = () => {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="Rental Services - Saman Portable Office Solutions"
-        fallbackDescription="Professional rental services for porta cabins, container offices, and prefab structures in Bangalore. Flexible terms and quick setup available."
-        fallbackCanonical="https://www.samanportable.com/rental-services"
-        keywords="porta cabin rental, container office rental, prefab structure rental, temporary office rental, construction site rental, portable cabin hire"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        fallbackTitle={pageSEO.rental.title}
+        fallbackDescription={pageSEO.rental.description}
+        fallbackCanonical={pageSEO.rental.canonical}
+        keywords={pageSEO.rental.keywords}
+        author={siteConfig.author}
+        publisher={siteConfig.publisher}
       />
       
       <div className="min-h-screen">
@@ -365,5 +366,5 @@ const RentalServices = () => {
   );
 };
 
-export default RentalServices;
+export default RentalServicesPage;
 

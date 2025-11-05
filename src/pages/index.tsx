@@ -117,6 +117,8 @@ const HomePage = ({ recentBlogPosts }: HomePageProps) => {
         fallbackDescription={pageSEO.home.description}
         fallbackCanonical={pageSEO.home.canonical}
         fallbackOgImage="/og-image.svg"
+        fallbackOgDescription="Discover premium portable cabins, container offices, and prefab structures in Bangalore."
+        fallbackTwitterDescription="Portable cabins and container offices—fast delivery and custom designs."
         keywords={pageSEO.home.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}

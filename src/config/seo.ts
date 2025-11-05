@@ -76,28 +76,28 @@ export const defaultSEO = {
 
 export const pageSEO = {
   home: {
-    title: 'Premium Portable Cabins & Container Offices in Bangalore',
-    description: 'Leading provider of portable cabins, container offices, and prefab solutions in Bangalore. Quality, durability, and innovation in portable construction.',
+    title: 'Portable Cabins & Container Offices in Bangalore | Saman Portable',
+    description: 'Buy or rent premium portable cabins, container offices, and prefab structures in Bangalore. Fast delivery, durable build, and custom designs.',
     canonical: `${siteConfig.url}/`,
-    keywords: 'portable cabins Bangalore, container offices, prefab solutions, portable buildings, modular offices, portable construction, office containers',
+    keywords: 'portable cabins Bangalore, container offices, prefab structures, portable buildings, modular offices, office containers',
   },
   about: {
-    title: 'About Us - Leading Portable Office Solutions Provider',
-    description: 'Learn about Saman Portable Office Solutions - your trusted partner for portable cabins, container offices, and prefab solutions in Bangalore.',
+    title: 'About Saman Portable | Portable Cabins & Prefab Experts',
+    description: 'Know our mission, team, and 15+ years building portable cabins, container offices, and prefab solutions across India.',
     canonical: `${siteConfig.url}/about-us`,
     keywords: 'about Saman Portable, portable office company, container office manufacturer, prefab solutions provider, Bangalore',
   },
   contact: {
-    title: 'Contact Us - Get Portable Office Solutions Quote',
-    description: 'Contact Saman Portable Office Solutions for quotes on portable cabins, container offices, and prefab solutions in Bangalore.',
+    title: 'Contact Saman Portable | Get a Quote or Consultation',
+    description: 'Reach our Bangalore and Greater Noida teams for portable cabins, container offices, rentals, and prefab solutions. Quick assistance and free quotes.',
     canonical: `${siteConfig.url}/contact`,
-    keywords: 'contact portable office, quote container office, portable cabin inquiry, prefab solutions contact, Bangalore',
+    keywords: 'contact portable office, quote container office, portable cabin inquiry, prefab solutions contact, Bangalore, Greater Noida',
   },
   gallery: {
-    title: 'Portfolio Gallery - Our Portable Office Projects',
-    description: 'Explore our portfolio of portable cabins, container offices, and prefab solutions projects across Bangalore and Karnataka.',
+    title: 'Project Gallery | Portable Cabins & Container Offices',
+    description: 'Browse real installations of portable cabins, container offices, labor colonies, and prefab structures delivered by Saman Portable.',
     canonical: `${siteConfig.url}/gallery`,
-    keywords: 'portable office gallery, container office projects, prefab solutions portfolio, portable cabin images, construction projects',
+    keywords: 'portable office gallery, container office projects, prefab solutions portfolio, portable cabin images, project installations',
   },
   products: {
     title: 'Portable Office Products & Solutions',
@@ -112,9 +112,33 @@ export const pageSEO = {
     keywords: 'portable office blog, container office news, prefab construction insights, portable building trends, modular office articles',
   },
   rental: {
-    title: 'Portable Office Rental Services in Bangalore',
-    description: 'Rent portable cabins, container offices, and prefab solutions in Bangalore. Flexible rental terms and competitive pricing.',
+    title: 'Portable Cabin & Container Office Rentals in Bangalore',
+    description: 'Flexible short- and long-term rentals for porta cabins and container offices. Fast setup, maintenance included, competitive pricing.',
     canonical: `${siteConfig.url}/rental-services`,
-    keywords: 'portable office rental, container office rent, prefab solutions lease, portable cabin hire, temporary office space Bangalore',
+    keywords: 'porta cabin rental, container office rent, prefab structure lease, portable cabin hire, temporary office space Bangalore',
+  },
+  privacyPolicy: {
+    title: 'Privacy Policy | Saman Portable Office Solutions',
+    description: 'How we collect, use, and protect personal data at Saman Portable, including cookies and contact details.',
+    canonical: `${siteConfig.url}/privacy-policy`,
+    keywords: 'privacy policy, data protection, personal information, cookies, GDPR',
+  },
+  deliveryPolicy: {
+    title: 'Delivery Policy | Shipping & Timelines',
+    description: 'Delivery coverage, timelines, and logistics for portable cabins and container offices. Safe handling and on-site installation.',
+    canonical: `${siteConfig.url}/delivery-policy`,
+    keywords: 'delivery policy, shipping policy, delivery terms, shipping process, timelines',
+  },
+  refundPolicy: {
+    title: 'Refund & Return Policy | Saman Portable',
+    description: 'Conditions for returns, cancellations, and refunds for portable cabins and prefab products, along with process steps.',
+    canonical: `${siteConfig.url}/refund-and-return-policy`,
+    keywords: 'refund policy, return policy, cancellations, refunds, warranty',
+  },
+  terms: {
+    title: 'Terms & Conditions | Saman Portable Office Solutions',
+    description: 'Usage terms, payment, warranties, and liabilities for Saman Portable products and services.',
+    canonical: `${siteConfig.url}/terms-and-conditions`,
+    keywords: 'terms and conditions, terms of service, usage policy, legal terms',
   },
 };

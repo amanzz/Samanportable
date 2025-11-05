@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { Button } from '@/components/ui/button';
+import { pageSEO, siteConfig } from '@/config/seo';
 import { 
   Grid3X3, 
   ZoomIn, 
@@ -115,13 +116,13 @@ const Gallery = () => {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="Gallery - Saman Portable Office Solutions"
-        fallbackDescription="Explore our comprehensive gallery of portable cabins, container offices, and prefab solutions. View high-quality images of our projects and installations."
-        fallbackCanonical="https://www.samanportable.com/gallery"
-        fallbackOgImage="/og-image.svg"
-        keywords="gallery, portable cabins, container offices, prefab solutions, project images, installations"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        fallbackTitle={pageSEO.gallery.title}
+        fallbackDescription={pageSEO.gallery.description}
+        fallbackCanonical={pageSEO.gallery.canonical}
+        fallbackOgImage={siteConfig.ogImage}
+        keywords={pageSEO.gallery.keywords}
+        author={siteConfig.author}
+        publisher={siteConfig.publisher}
       />
 
       <div className="min-h-screen bg-background">

@@ -2,26 +2,26 @@ import React from 'react';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
+import { pageSEO, siteConfig } from '@/config/seo';
 
 import Link from 'next/link';
 import { ArrowLeft, RefreshCw, Shield, Clock, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const RefundAndReturnPolicy = () => {
+export default function RefundAndReturnPolicyPage() {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="Refund and Return Policy - Saman Portable Office Solutions"
-        fallbackDescription="Refund and Return Policy for Saman Portable Office Solutions. Learn about our return process and refund terms."
-        fallbackCanonical="https://www.samanportable.com/refund-and-return-policy"
-        keywords="refund policy, return policy, refund terms, return process"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        fallbackTitle={pageSEO.refundPolicy.title}
+        fallbackDescription={pageSEO.refundPolicy.description}
+        fallbackCanonical={pageSEO.refundPolicy.canonical}
+        keywords={pageSEO.refundPolicy.keywords}
+        author={siteConfig.author}
+        publisher={siteConfig.publisher}
       />
-      <Head>
-        <title>Refund and Return Policy - Saman Portable Office Solutions</title>
-        <meta name="description" content="Refund and Return Policy for Saman Portable Office Solutions. Learn about our return process, refund policies, and warranty information." />
-      </Head>
+
+      {/* removed any extra Head tags; keep the policy content intact */}
+      {/* Head tags handled by UnifiedSEO; removed duplicate Head block */}
       
       <div className="min-h-screen">
         <main>

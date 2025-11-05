@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
+import { pageSEO, siteConfig } from '@/config/seo';
 import Link from 'next/link';
 import { ArrowLeft, Truck, Clock, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,17 +11,16 @@ const DeliveryPolicy = () => {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="Delivery Policy - Saman Portable Office Solutions"
-        fallbackDescription="Delivery Policy for Saman Portable Office Solutions. Learn about our delivery process, timelines, and shipping terms."
-        fallbackCanonical="https://www.samanportable.com/delivery-policy"
-        keywords="delivery policy, shipping policy, delivery terms, shipping process"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        fallbackTitle={pageSEO.deliveryPolicy.title}
+        fallbackDescription={pageSEO.deliveryPolicy.description}
+        fallbackCanonical={pageSEO.deliveryPolicy.canonical}
+        keywords={pageSEO.deliveryPolicy.keywords}
+        author={siteConfig.author}
+        publisher={siteConfig.publisher}
       />
-      <Head>
-        <title>Delivery Policy - Saman Portable Office Solutions</title>
-        <meta name="description" content="Delivery Policy for Saman Portable Office Solutions. Learn about our delivery process, timelines, and coverage areas." />
-      </Head>
+
+      {/* remove duplicate Head tags if any; keep content intact */}
+      {/* Head tags handled by UnifiedSEO; removed duplicate Head block */}
       
       <div className="min-h-screen">
         <main>

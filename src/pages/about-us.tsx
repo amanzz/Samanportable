@@ -83,6 +83,8 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
         fallbackDescription={pageSEO.about.description}
         fallbackCanonical={pageSEO.about.canonical}
         fallbackOgImage="/about-us-hero.jpg"
+        fallbackOgDescription="Inside Saman Portable—our mission, team, and quality promise."
+        fallbackTwitterDescription="15+ years of portable cabins and prefab expertise across India."
         keywords={pageSEO.about.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}

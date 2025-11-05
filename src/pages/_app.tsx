@@ -40,11 +40,23 @@ export default function App({ Component, pageProps }: AppProps) {
   
   // Don't render DefaultSeo for pages that have their own SEO components
   // This prevents duplicate meta tags
+  const staticSEORoutes = new Set([
+    '/',
+    '/product',
+    '/about-us',
+    '/contact',
+    '/gallery',
+    '/rental-services',
+    '/privacy-policy',
+    '/delivery-policy',
+    '/refund-and-return-policy',
+    '/terms-and-conditions',
+  ]);
+
   const hasCustomSEO = pageProps.rankMathSEO || 
                        router.pathname.startsWith('/product/') ||
                        (router.pathname === '/[slug]' && pageProps.post) ||
-                       router.pathname === '/' ||
-                       router.pathname === '/product';
+                       staticSEORoutes.has(router.pathname);
   
   return (
     <div className={inter.className}>

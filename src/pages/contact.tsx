@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { Button } from '../components/ui/button';
 import QuoteForm from '../components/QuoteForm';
@@ -8,9 +7,55 @@ import {
   Mail, 
   Clock
 } from 'lucide-react';
+import { UnifiedSEO } from '@/components/UnifiedSEO';
+import { pageSEO, siteConfig } from '@/config/seo';
 
 const ContactPage = () => {
-
+  // Structured data object moved to pass via UnifiedSEO
+  const contactStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": pageSEO.contact.title,
+    "description": pageSEO.contact.description,
+    "url": pageSEO.contact.canonical,
+    "mainEntity": {
+      "@type": "Organization",
+      "name": siteConfig.name,
+      "url": siteConfig.url,
+      "logo": siteConfig.ogImage,
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-80-4680-9920",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": "English"
+        }
+      ],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "I, Sy No 34/2, near India Oil petrol pump, Gopasandra",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560099",
+          "addressCountry": "IN"
+        }
+      ]
+    },
+    "author": {
+      "@type": "Organization",
+      "name": siteConfig.name
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": siteConfig.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": siteConfig.ogImage
+      }
+    }
+  };
 
   const contactInfo = [
     {
@@ -39,70 +84,17 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <Head>
-        <title>Contact Us - Saman Portable Office Solutions</title>
-        <meta name="description" content="Get in touch with Saman Portable Office Solutions. Contact us for portable cabins, container offices, and prefab solutions. We're here to help with your project." />
-        <meta name="keywords" content="contact saman portable, portable office contact, container office inquiry, prefab solutions contact, portable cabin quote, construction site office contact" />
-        <meta name="author" content="Saman Portable Office Solutions" />
-        <meta name="publisher" content="Saman Portable Office Solutions" />
-        <meta property="og:title" content="Contact Us - Saman Portable Office Solutions" />
-        <meta property="og:description" content="Get in touch with Saman Portable Office Solutions for portable cabins, container offices, and prefab solutions." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.samanportable.com/contact" />
-        <link rel="canonical" href="https://www.samanportable.com/contact" />
-        
-        {/* Contact Page Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ContactPage",
-              "name": "Contact Us - Saman Portable Office Solutions",
-              "description": "Get in touch with Saman Portable Office Solutions for portable cabins, container offices, and prefab solutions.",
-              "url": "https://www.samanportable.com/contact",
-              "mainEntity": {
-                "@type": "Organization",
-                "name": "Saman Portable Office Solutions",
-                "url": "https://www.samanportable.com",
-                "logo": "https://www.samanportable.com/logo.png",
-                "contactPoint": [
-                  {
-                    "@type": "ContactPoint",
-                    "telephone": "+91-80-4680-9920",
-                    "contactType": "customer service",
-                    "areaServed": "IN",
-                    "availableLanguage": "English"
-                  }
-                ],
-                "address": [
-                  {
-                    "@type": "PostalAddress",
-                    "streetAddress": "I, Sy No 34/2, near India Oil petrol pump, Gopasandra",
-                    "addressLocality": "Bengaluru",
-                    "addressRegion": "Karnataka",
-                    "postalCode": "560099",
-                    "addressCountry": "IN"
-                  }
-                ]
-              },
-              "author": {
-                "@type": "Organization",
-                "name": "Saman Portable Office Solutions"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Saman Portable Office Solutions",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://www.samanportable.com/logo.png"
-                }
-              }
-            })
-          }}
-        />
-      </Head>
+      <UnifiedSEO
+        fallbackTitle={pageSEO.contact.title}
+        fallbackDescription={pageSEO.contact.description}
+        fallbackCanonical={pageSEO.contact.canonical}
+        keywords={pageSEO.contact.keywords}
+        author={siteConfig.author}
+        publisher={siteConfig.publisher}
+        structuredData={contactStructuredData}
+      />
 
+      {/* Removed duplicate Head meta tags in favor of UnifiedSEO */}
       <main className="bg-background">
         {/* Hero Section */}
         <section className="relative py-12 bg-[#0A3D2A]">
