@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { pageSEO, siteConfig } from '@/config/seo';
@@ -337,5 +337,6 @@ export default function RefundAndReturnPolicyPage() {
   );
 };
 
-export default RefundAndReturnPolicy;
+// Removed duplicate default export
+// default export already declared above as RefundAndReturnPolicyPage
 
