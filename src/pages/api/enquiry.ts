@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { name, email, phone, message, productName } = req.body;
+    const { name, email, phone, message, productName, pageUrl } = req.body;
 
     // Validate required fields
     if (!name || !email || !phone || !message) {
@@ -24,6 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       'Phone': phone,
       'Product/Service': productName || 'General Enquiry',
       'Message': message,
+      'Submission Page': pageUrl || req.headers.referer || 'Unknown',
       'Submission Time': new Date().toLocaleString('en-IN', {
         timeZone: 'Asia/Kolkata'
       })

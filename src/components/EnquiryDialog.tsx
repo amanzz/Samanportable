@@ -39,7 +39,10 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          pageUrl: typeof window !== 'undefined' ? window.location.href : ''
+        })
       });
 
       if (!response.ok) {

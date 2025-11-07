@@ -64,7 +64,8 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
           email: formData.email,
           company: formData.company,
           service: formData.service,
-          projectDetails: formData.projectDetails
+          projectDetails: formData.projectDetails,
+          pageUrl: typeof window !== 'undefined' ? window.location.href : ''
         })
       });
 

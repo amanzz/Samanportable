@@ -39,7 +39,8 @@ const ContactCTA = () => {
           email: formData.email,
           phone: formData.phone,
           service: formData.service,
-          message: formData.message
+          message: formData.message,
+          pageUrl: typeof window !== 'undefined' ? window.location.href : ''
         })
       });
 
