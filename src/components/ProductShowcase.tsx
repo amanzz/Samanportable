@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 import ProductCard from './ProductCard';
 
 interface LightweightProduct {
@@ -20,10 +22,28 @@ interface ProductShowcaseProps {
 }
 
 const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = [] }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+    slidesToScroll: 1,
+    breakpoints: {
+      '(min-width: 768px)': { slidesToScroll: 2 },
+      '(min-width: 1024px)': { slidesToScroll: 3 }
+    }
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   return (
     <section className="section-padding bg-background">
       <div className="max-w-7xl mx-auto container-padding">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Featured Products
@@ -32,26 +52,40 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
               Discover our premium selection of portable cabins and container offices, designed for modern businesses seeking flexible and sustainable workspace solutions.
             </p>
           </div>
-          <Link href="/product">
-            <Button 
-              size="lg" 
-              className="bg-[#0A3D2A] hover:bg-[#0A3D2A]/90 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-            >
-              View All Products
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
+
+          <div className="flex items-center gap-4">
+            <div className="flex gap-2">
+              <Button onClick={scrollPrev} variant="outline" size="icon" className="rounded-full w-10 h-10 border-gray-300 hover:border-[#0A3D2A] hover:text-[#0A3D2A]">
+                <ChevronLeft className="w-5 h-5" />
+              </Button>
+              <Button onClick={scrollNext} variant="outline" size="icon" className="rounded-full w-10 h-10 border-gray-300 hover:border-[#0A3D2A] hover:text-[#0A3D2A]">
+                <ChevronRight className="w-5 h-5" />
+              </Button>
+            </div>
+            <Link href="/product">
+              <Button
+                size="lg"
+                className="bg-[#0A3D2A] hover:bg-[#0A3D2A]/90 text-white px-6 py-2 h-10 text-base font-semibold shadow-md transition-all duration-200"
+              >
+                View All
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {featuredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product, index) => (
-              <ProductCard 
-                key={product.id} 
-                product={product} 
-                priority={index < 3} // Priority loading for first 3 products
-              />
-            ))}
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex -ml-6 pb-4">
+              {featuredProducts.map((product, index) => (
+                <div key={product.id} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-6 min-w-0">
+                  <ProductCard
+                    product={product}
+                    priority={index < 3} // Priority loading for first 3 products
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         ) : (
           <div className="text-center py-16">
@@ -63,8 +97,8 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
               We&apos;re currently updating our product catalog. Please check back soon!
             </p>
             <Link href="/product">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-[#0A3D2A] hover:bg-[#0A3D2A] text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
               >
                 Browse All Products

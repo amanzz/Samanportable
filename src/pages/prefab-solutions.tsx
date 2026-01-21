@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  Check, 
-  ArrowRight, 
-  Star, 
-  Shield, 
-  Clock, 
-  Users, 
-  Building2, 
-  Wrench, 
+import {
+  Check,
+  ArrowRight,
+  Star,
+  Shield,
+  Clock,
+  Users,
+  Building2,
+  Wrench,
   Truck,
   ChevronDown,
   Menu,
@@ -34,7 +34,7 @@ const PrefabSolutionsPage = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
@@ -216,7 +216,7 @@ const PrefabSolutionsPage = () => {
       icon: <Users className="w-8 h-8 text-white" />
     },
     {
-      step: "02", 
+      step: "02",
       title: "Design",
       description: "Our team creates detailed 3D designs and blueprints tailored to your specific requirements.",
       icon: <Building2 className="w-8 h-8 text-white" />
@@ -316,7 +316,7 @@ const PrefabSolutionsPage = () => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <div className="flex items-center">
-                <Image 
+                <Image
                   src="/saman-logo.svg"
                   alt="Saman Portable"
                   width={120}
@@ -334,11 +334,10 @@ const PrefabSolutionsPage = () => {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                      activeSection === item.id
-                        ? 'text-[#06261A] bg-gray-100'
-                        : 'text-gray-700 hover:text-[#06261A] hover:bg-gray-100'
-                    }`}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${activeSection === item.id
+                      ? 'text-[#06261A] bg-gray-100'
+                      : 'text-gray-700 hover:text-[#06261A] hover:bg-gray-100'
+                      }`}
                   >
                     {item.label}
                   </button>
@@ -366,11 +365,10 @@ const PrefabSolutionsPage = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 ${
-                    activeSection === item.id
-                      ? 'text-[#06261A] bg-gray-100'
-                      : 'text-gray-700 hover:text-[#06261A] hover:bg-gray-100'
-                  }`}
+                  className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 ${activeSection === item.id
+                    ? 'text-[#06261A] bg-gray-100'
+                    : 'text-gray-700 hover:text-[#06261A] hover:bg-gray-100'
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -381,22 +379,22 @@ const PrefabSolutionsPage = () => {
       </nav>
 
       {/* Hero Section */}
-       <section id="home" className="pt-16 bg-gradient-to-br from-green-50 via-blue-50 to-indigo-50 relative overflow-hidden">
-         {/* Background Pattern */}
-         <div className="absolute inset-0 opacity-40">
-           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMjY2MTAiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')]"></div>
-         </div>
-         
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
+      <section id="home" className="pt-16 bg-gradient-to-br from-green-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMjY2MTAiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8">
-               <div className="space-y-6">
-                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#06261A]/10 text-[#06261A] text-sm font-medium mb-4">
-                   <Award className="w-4 h-4 mr-2" />
-                   India&apos;s Leading Prefab Solutions Provider
-              </div>
-              
+              <div className="space-y-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#06261A]/10 text-[#06261A] text-sm font-medium mb-4">
+                  <Award className="w-4 h-4 mr-2" />
+                  India&apos;s Leading Prefab Solutions Provider
+                </div>
+
                 <h1 className="text-2xl md:text-5xl font-bold text-gray-900 leading-tight">
                   <span className="text-[#06261A] bg-gradient-to-r from-[#06261A] to-[#0A3D2A] bg-clip-text text-transparent">Container Offices</span>, <span className="text-[#06261A] bg-gradient-to-r from-[#06261A] to-[#0A3D2A] bg-clip-text text-transparent">Porta Cabins</span> & <span className="text-[#06261A] bg-gradient-to-r from-[#06261A] to-[#0A3D2A] bg-clip-text text-transparent">Prefab Buildings</span> in India
                 </h1>
@@ -406,42 +404,42 @@ const PrefabSolutionsPage = () => {
               </div>
 
               {/* Quick Highlights */}
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                 <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                   <div className="bg-[#06261A]/10 p-2 rounded-lg">
-                     <Check className="w-5 h-5 text-[#06261A]" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <div className="bg-[#06261A]/10 p-2 rounded-lg">
+                    <Check className="w-5 h-5 text-[#06261A]" />
+                  </div>
+                  <span className="text-sm md:text-base text-gray-700 font-medium">Ready in 7-15 Days</span>
                 </div>
-                   <span className="text-sm md:text-base text-gray-700 font-medium">Ready in 7-15 Days</span>
+                <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <div className="bg-[#06261A]/10 p-2 rounded-lg">
+                    <Shield className="w-5 h-5 text-[#06261A]" />
+                  </div>
+                  <span className="text-sm md:text-base text-gray-700 font-medium">ISI Certified Quality</span>
                 </div>
-                 <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                   <div className="bg-[#06261A]/10 p-2 rounded-lg">
-                     <Shield className="w-5 h-5 text-[#06261A]" />
-                   </div>
-                   <span className="text-sm md:text-base text-gray-700 font-medium">ISI Certified Quality</span>
-                 </div>
-                 <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                   <div className="bg-[#06261A]/10 p-2 rounded-lg">
-                     <Wrench className="w-5 h-5 text-[#06261A]" />
-                   </div>
-                   <span className="text-sm md:text-base text-gray-700 font-medium">Free Installation</span>
-                 </div>
-                 <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                   <div className="bg-[#06261A]/10 p-2 rounded-lg">
-                     <Globe className="w-5 h-5 text-[#06261A]" />
-                   </div>
-                   <span className="text-sm md:text-base text-gray-700 font-medium">All India Delivery</span>
+                <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <div className="bg-[#06261A]/10 p-2 rounded-lg">
+                    <Wrench className="w-5 h-5 text-[#06261A]" />
+                  </div>
+                  <span className="text-sm md:text-base text-gray-700 font-medium">Free Installation</span>
+                </div>
+                <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <div className="bg-[#06261A]/10 p-2 rounded-lg">
+                    <Globe className="w-5 h-5 text-[#06261A]" />
+                  </div>
+                  <span className="text-sm md:text-base text-gray-700 font-medium">All India Delivery</span>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                 <QuoteFormTrigger className="shadow-lg hover:shadow-xl transition-all duration-300">
+                <QuoteFormTrigger className="shadow-lg hover:shadow-xl transition-all duration-300">
                   Get Container Office Quote
                 </QuoteFormTrigger>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="xl"
                   onClick={() => scrollToSection('solutions')}
-                   className="border-[#06261A] text-[#06261A] hover:bg-[#06261A] hover:text-white bg-white/60 backdrop-blur-sm hover:bg-[#06261A] transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="border-[#06261A] text-[#06261A] hover:bg-[#06261A] hover:text-white bg-white/60 backdrop-blur-sm hover:bg-[#06261A] transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   View Container Offices
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -449,11 +447,11 @@ const PrefabSolutionsPage = () => {
               </div>
             </div>
 
-             {/* Right Content - Quote Form */}
-             <div className="relative">
-               <div className="absolute -inset-4 bg-gradient-to-r from-[#06261A]/20 to-[#0A3D2A]/20 rounded-2xl blur-xl"></div>
-               <div className="relative">
-                 <QuoteForm variant="hero" />
+            {/* Right Content - Quote Form */}
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#06261A]/20 to-[#0A3D2A]/20 rounded-2xl blur-xl"></div>
+              <div className="relative">
+                <QuoteForm variant="hero" />
               </div>
             </div>
           </div>
@@ -464,7 +462,7 @@ const PrefabSolutionsPage = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjMDI2NjEwIiBmaWxsLW9wYWNpdHk9IjAuMDIiPjxwYXRoIGQ9Ik0yMCAyMGMwLTExLjA0Ni04Ljk1NC0yMC0yMC0ydjIwaDIweiIvPjwvZz48L3N2Zz4=')] opacity-30"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#06261A]/10 text-[#06261A] text-sm font-medium mb-6">
@@ -474,7 +472,7 @@ const PrefabSolutionsPage = () => {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by 500+ Companies for Container Offices</h2>
             <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">See what our clients say about our container offices, porta cabins & prefab buildings. India&apos;s most trusted manufacturer.</p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
             <div className="text-center">
               <div className="bg-[#06261A] text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -512,7 +510,7 @@ const PrefabSolutionsPage = () => {
       <section id="why-prefab" className="py-20 bg-gradient-to-br from-white via-gray-50 to-green-50 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMjY2MTAiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTMwIDMwYzAtMTYuNTY5LTEzLjQzMS0zMC0zMC0zMHYzMGgzMHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#06261A]/10 text-[#06261A] text-sm font-medium mb-6">
@@ -527,14 +525,14 @@ const PrefabSolutionsPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyPrefabFeatures.map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 hover:border-[#06261A]/20 hover:-translate-y-2"
               >
                 <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
                   <div className="bg-gradient-to-br from-[#06261A]/10 to-[#0A3D2A]/10 p-4 rounded-xl w-fit">
-                  {feature.icon}
-                </div>
+                    {feature.icon}
+                  </div>
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 group-hover:text-[#06261A] transition-colors duration-300">{feature.title}</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed">{feature.description}</p>
@@ -548,7 +546,7 @@ const PrefabSolutionsPage = () => {
       <section id="solutions" className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjMDI2NjEwIiBmaWxsLW9wYWNpdHk9IjAuMDIiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIvPjxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIi8+PC9nPjwvc3ZnPg==')] opacity-30"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#06261A]/10 text-[#06261A] text-sm font-medium mb-6">
@@ -563,7 +561,7 @@ const PrefabSolutionsPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {containerSolutions.map((solution, index) => (
-              <div 
+              <div
                 key={index}
                 className="group bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-white/20 hover:border-[#06261A]/20 hover:-translate-y-2"
               >
@@ -579,7 +577,7 @@ const PrefabSolutionsPage = () => {
                 <div className="p-6">
                   <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3">{solution.title}</h3>
                   <p className="text-sm md:text-base text-gray-600 mb-4">{solution.description}</p>
-                  
+
                   <div className="space-y-2 mb-6">
                     {solution.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center space-x-2">
@@ -588,7 +586,7 @@ const PrefabSolutionsPage = () => {
                       </div>
                     ))}
                   </div>
-                  
+
                   <QuoteFormTrigger variant="outline" size="sm" className="w-full">
                     Get Quote
                   </QuoteFormTrigger>
@@ -729,7 +727,7 @@ const PrefabSolutionsPage = () => {
       <section id="faq" className="py-20 bg-gradient-to-br from-gray-50 via-white to-green-50 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjMDI2NjEwIiBmaWxsLW9wYWNpdHk9IjAuMDIiPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjIiLz48Y2lyY2xlIGN4PSIyNSIgY3k9IjI1IiByPSIxIi8+PGNpcmNsZSBjeD0iNzUiIGN5PSI3NSIgcj0iMSIvPjxjaXJjbGUgY3g9IjI1IiBjeT0iNzUiIHI9IjEiLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjI1IiByPSIxIi8+PC9nPjwvc3ZnPg==')] opacity-40"></div>
-        
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#06261A]/10 text-[#06261A] text-sm font-medium mb-6">
@@ -752,7 +750,7 @@ const PrefabSolutionsPage = () => {
       <section id="contact" className="py-24 bg-gradient-to-br from-gray-50 via-white to-green-50 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwNjI2MUEiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iMiIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiLz48Y2lyY2xlIGN4PSI5MCIgY3k9Ijk wIiByPSIxIi8+PGNpcmNsZSBjeD0iMzAiIGN5PSI5MCIgcj0iMSIvPjxjaXJjbGUgY3g9Ijk wIiBjeT0iMzAiIHI9IjEiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#06261A]/10 backdrop-blur-sm text-[#06261A] text-sm font-medium mb-8 border border-[#06261A]/20">
@@ -771,11 +769,11 @@ const PrefabSolutionsPage = () => {
                   <div className="bg-gradient-to-br from-[#06261A]/20 to-[#06261A]/10 p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                     <Phone className="w-7 h-7 text-[#06261A]" />
                   </div>
-                <div>
+                  <div>
                     <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Call Us</h3>
                     <p className="text-sm md:text-base text-gray-600">Speak directly with our experts</p>
+                  </div>
                 </div>
-              </div>
                 <div className="space-y-3">
                   <a href="tel:+918046809920" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">+91 80 4680 9920</a>
                   <a href="tel:+918861622859" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">+91 88616 22859</a>
@@ -788,23 +786,23 @@ const PrefabSolutionsPage = () => {
                   <div className="bg-gradient-to-br from-[#06261A]/20 to-[#06261A]/10 p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                     <Mail className="w-7 h-7 text-[#06261A]" />
                   </div>
-                <div>
+                  <div>
                     <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Email Us</h3>
                     <p className="text-sm md:text-base text-gray-600">Send us your requirements</p>
+                  </div>
                 </div>
-              </div>
                 <div className="space-y-3">
                   <a href="mailto:Sales@samanportable.com" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">Sales@samanportable.com</a>
                   <a href="mailto:monazir.alam@samanportable.com" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">monazir.alam@samanportable.com</a>
+                </div>
               </div>
-            </div>
 
               <div className="group bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-gray-200 hover:border-[#06261A]/40 transition-all duration-300 hover:bg-white/90 shadow-lg hover:shadow-xl">
                 <div className="flex items-center space-x-6 mb-6">
                   <div className="bg-gradient-to-br from-[#06261A]/20 to-[#06261A]/10 p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300">
                     <MapPin className="w-7 h-7 text-[#06261A]" />
-                </div>
-                <div>
+                  </div>
+                  <div>
                     <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Visit Us</h3>
                     <p className="text-sm md:text-base text-gray-600">Our manufacturing units</p>
                   </div>
@@ -830,17 +828,17 @@ const PrefabSolutionsPage = () => {
       <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden pb-0">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMDMiPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 py-4 md:py-16 relative z-10">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-4 md:mb-12">
             {/* Company Info */}
             <div className="md:col-span-2">
               <div className="flex items-center mb-4">
-              <Image 
+                <Image
                   src="/saman-logo.svg"
                   alt="SAMAN Portable"
-                width={120}
+                  width={120}
                   height={40}
                   className="h-10 w-auto"
                   unoptimized
@@ -860,11 +858,11 @@ const PrefabSolutionsPage = () => {
                 </a>
               </div>
             </div>
-            
+
 
             {/* Services */}
             <div>
-              <h4 className="text-base md:text-lg font-semibold text-white mb-4">Our Services</h4>
+              <h4 className="text-base md:text-lg font-semibold text-white mb-4">Our Products</h4>
               <ul className="space-y-3">
                 <li><span className="text-sm md:text-base text-gray-400">Container Offices</span></li>
                 <li><span className="text-sm md:text-base text-gray-400">Porta Cabins</span></li>
@@ -881,7 +879,7 @@ const PrefabSolutionsPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5">
               {[
                 "Best Container Office Solutions in Delhi",
-                "Top Portable Cabin Manufacturers in Mumbai", 
+                "Top Portable Cabin Manufacturers in Mumbai",
                 "Leading Prefab Solutions in Bangalore",
                 "Container Cafe Design in Chennai",
                 "Labor Colony Construction in Hyderabad",
@@ -911,26 +909,26 @@ const PrefabSolutionsPage = () => {
               <div className="text-gray-400 text-sm md:text-base text-center md:text-left">
                 © 2024 SAMAN Portable Office Solutions. All rights reserved.
               </div>
-              
+
               <div className="flex flex-wrap gap-2 md:gap-6 justify-center md:justify-end">
                 <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm md:text-base">
-                Privacy Policy
-              </Link>
+                  Privacy Policy
+                </Link>
                 <Link href="/terms-and-conditions" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm md:text-base">
-                Terms & Conditions
-              </Link>
+                  Terms & Conditions
+                </Link>
                 <Link href="/delivery-policy" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm md:text-base">
-                Delivery Policy
-              </Link>
+                  Delivery Policy
+                </Link>
                 <Link href="/refund-and-return-policy" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm md:text-base">
-                Refund Policy
-              </Link>
+                  Refund Policy
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </footer>
-      
+
     </div>
   );
 };
@@ -947,11 +945,10 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
       >
         <span className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-[#06261A] transition-colors duration-300 pr-4">{question}</span>
         <div className="bg-[#06261A]/10 p-2 rounded-lg group-hover:bg-[#06261A]/20 transition-colors duration-300">
-        <ChevronDown 
-            className={`w-5 h-5 text-[#06261A] transition-transform duration-300 ${
-            isOpen ? 'rotate-180' : ''
-          }`} 
-        />
+          <ChevronDown
+            className={`w-5 h-5 text-[#06261A] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''
+              }`}
+          />
         </div>
       </button>
       {isOpen && (

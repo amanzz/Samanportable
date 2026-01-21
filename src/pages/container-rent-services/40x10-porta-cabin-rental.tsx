@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
-import { ArrowLeft, CheckCircle, MapPin, Phone, Mail, Clock, Package, Shield } from 'lucide-react';
+import { ArrowLeft, CheckCircle, MapPin, Phone, Mail, Clock, Package, Shield, ShieldCheck, Truck, Wrench, Zap, Thermometer, Move, Leaf, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from '@/components/QuoteFormTrigger';
 
@@ -26,7 +26,7 @@ const PortaCabin40x10Rental = () => {
     { label: 'Material', value: 'Premium steel with insulation' },
     { label: 'Weight', value: 'Approx. 2,500 kg' },
     { label: 'Installation Time', value: '4-6 hours' },
-    { label: 'Minimum Rental', value: '1 month' }
+    { label: 'Minimum Rental', value: '6 months' }
   ];
 
   const rentalTerms = [
@@ -40,14 +40,14 @@ const PortaCabin40x10Rental = () => {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="40x10 Porta Cabin Rental - Saman Portable Office Solutions"
-        fallbackDescription="Rent 40x10 ft porta cabins in Bangalore. High-quality, spacious portable cabins perfect for offices, accommodation, and temporary structures. Flexible rental terms available."
+        fallbackTitle="Premium 40×10 Porta Cabin for Rent in Bangalore & Delhi NCR"
+        fallbackDescription="Rent BIS-certified 40×10 porta cabins with quick 4–6 hr setup, insulated interiors & 24×7 support across Bangalore and Delhi NCR."
         fallbackCanonical="https://www.samanportable.com/container-rent-services/40x10-porta-cabin-rental"
         keywords="40x10 porta cabin rental, large porta cabin rental, spacious portable cabin, temporary office rental, construction site cabin"
         author="Saman Portable Office Solutions"
         publisher="Saman Portable Office Solutions"
       />
-      
+
       <div className="min-h-screen bg-background">
         <main>
           {/* Hero Section */}
@@ -57,7 +57,7 @@ const PortaCabin40x10Rental = () => {
                 40×10 Porta Cabin Rental
               </h1>
               <p className="text-xl text-white/90 max-w-4xl mx-auto mb-8">
-                Spacious and comfortable portable cabins perfect for temporary offices, accommodation, 
+                Spacious and comfortable portable cabins perfect for temporary offices, accommodation,
                 and construction site facilities. Available for short and long-term rentals across Bangalore.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -83,33 +83,40 @@ const PortaCabin40x10Rental = () => {
             </div>
           </section>
 
-          {/* Product Overview */}
+          {/* Product Overview & Detailed Content */}
           <section className="section-padding">
             <div className="max-w-7xl mx-auto container-padding">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div>
                   <h2 className="text-3xl font-bold text-foreground mb-6">
                     Premium 40×10 Porta Cabin
                   </h2>
                   <p className="text-slate-700 mb-4">
-                    <strong>Last updated:</strong> January 15, 2025
+                    <strong>Last updated:</strong> January 21, 2026
                   </p>
-                  <p className="text-lg text-muted-foreground mb-6">
-                    Our 40×10 porta cabins are designed for maximum comfort and functionality. 
-                    Perfect for temporary offices, accommodation, construction site facilities, 
-                    and any application requiring a large, portable space.
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    Our 40×10 ft porta cabins are designed for maximum comfort, durability, and function — ideal for 8–10-person site offices, executive cabins, or temporary accommodation units. Built with high-strength steel frames, PUF-insulated panels, and pre-wired electrical systems, these units provide a ready-to-use workspace within hours.
                   </p>
-                  
+
                   <div className="space-y-4 mb-8">
-                    {features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    {[
+                      'Spacious 400 sq ft interior with flexible partitions',
+                      'Durable, corrosion-resistant construction',
+                      'Insulated walls and roof for thermal efficiency',
+                      'Pre-wired LED lighting, outlets, and switches',
+                      'Ventilation system with optional HVAC',
+                      'Secure doors and grilled windows',
+                      'Rapid setup in 4–6 hours, easy relocation',
+                      'Custom interior fit-outs for office or staff use'
+                    ].map((feature, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                         <span className="text-slate-700">{feature}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4 mb-12">
                     <QuoteFormTrigger size="lg" className="bg-[#0A3D2A] hover:bg-[#0A3D2A]/90 px-8 py-4 text-lg">
                       Request Quote
                     </QuoteFormTrigger>
@@ -119,17 +126,16 @@ const PortaCabin40x10Rental = () => {
                   </div>
                 </div>
 
-                <div className="bg-slate-100 rounded-2xl p-8">
-                  <div className="aspect-video bg-gradient-to-br from-slate-200 to-slate-300 rounded-lg overflow-hidden mb-6">
-                    <Image 
-                      src="/Porta Cabins In Bangalore (1).jpg" 
-                      alt="40×10 Porta Cabin"
-                      width={800}
-                      height={450}
-                      className="w-full h-full object-cover"
+                <div className="bg-slate-100 rounded-2xl p-8 sticky top-24">
+                  <div className="aspect-video bg-gradient-to-br from-slate-200 to-slate-300 rounded-lg overflow-hidden mb-6 relative">
+                    <Image
+                      src="/40x10-executive-porta-cabin-office.png"
+                      alt="40x10 Executive Site Office Cabin - Large 400 sq ft Container Office"
+                      fill
+                      className="object-cover"
                     />
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="flex justify-between items-center py-3 border-b border-slate-200">
                       <span className="font-semibold text-slate-700">Availability:</span>
@@ -146,6 +152,158 @@ const PortaCabin40x10Rental = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Enhanced Detailed Content with Premium Design */}
+              <section className="section-padding bg-white relative overflow-hidden">
+                {/* Background decorative elements */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-50">
+                  <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#0A3D2A]/5 rounded-full blur-3xl"></div>
+                  <div className="absolute top-1/2 -left-24 w-64 h-64 bg-[#0A3D2A]/5 rounded-full blur-3xl"></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto container-padding relative z-10">
+                  <div className="max-w-3xl mx-auto mb-16 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                      Prefabricated Workspace Solutions for the Modern Site
+                    </h2>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Designed for site offices, project teams, and corporate events, this 400 sq ft portable cabin ensures comfort, fast setup, and energy efficiency with BIS-certified construction and flexible rental options.
+                    </p>
+                  </div>
+
+                  {/* Premium Feature Grid - Why Choose */}
+                  <div className="mb-20">
+                    <div className="text-center mb-10">
+                      <span className="bg-[#0A3D2A]/10 text-[#0A3D2A] px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide">Premium Features</span>
+                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mt-4">Why Choose Our 40×10 Cabin?</h3>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                      {[
+                        { icon: ShieldCheck, title: "Built to Last", desc: "Corrosion-proof steel chassis ensures durability even under heavy site conditions." },
+                        { icon: Thermometer, title: "Climate Control", desc: "PUF insulation and weather-sealed doors maintain year-round indoor comfort." },
+                        { icon: Move, title: "Flexible Design", desc: "Modular layout supports expansion, relocation, or refurbishment as needs change." },
+                        { icon: Leaf, title: "Eco-Friendly", desc: "Reusable, low-emission materials align with sustainable building practices." }
+                      ].map((item, idx) => (
+                        <div key={idx} className="bg-slate-50 hover:bg-white rounded-2xl p-6 transition-all duration-300 border border-slate-100 hover:border-[#0A3D2A]/20 hover:shadow-xl group">
+                          <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <item.icon className="w-6 h-6 text-[#0A3D2A]" />
+                          </div>
+                          <h4 className="font-bold text-lg text-gray-900 mb-2">{item.title}</h4>
+                          <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Deployment & Maintenance Split */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+                    <div className="bg-[#0A3D2A] text-white rounded-3xl p-8 md:p-10 relative overflow-hidden">
+                      <div className="relative z-10">
+                        <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
+                          <Truck className="w-7 h-7 text-white" />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-4">Deployment Excellence</h3>
+                        <p className="text-white/80 mb-6 leading-relaxed">
+                          Installation is handled by our BIS-certified technicians, completing site assembly in <span className="text-white font-bold">just 4–6 hours</span> through ground placement (no crane needed).
+                        </p>
+                        <ul className="space-y-3">
+                          <li className="flex items-center gap-3 text-sm font-medium">
+                            <CheckCircle className="w-5 h-5 text-green-400" /> Transportation Included
+                          </li>
+                          <li className="flex items-center gap-3 text-sm font-medium">
+                            <CheckCircle className="w-5 h-5 text-green-400" /> BIS-Certified Installers
+                          </li>
+                          <li className="flex items-center gap-3 text-sm font-medium">
+                            <CheckCircle className="w-5 h-5 text-green-400" /> No Crane Required
+                          </li>
+                        </ul>
+                      </div>
+                      {/* Decorative Circle */}
+                      <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white/5 rounded-full"></div>
+                    </div>
+
+                    <div className="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 relative shadow-sm hover:shadow-md transition-shadow">
+                      <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6">
+                        <Wrench className="w-7 h-7 text-green-700" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Maintenance Guarantee</h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed">
+                        Zero downtime is our promise. A dedicated account manager provides rapid technical support within <span className="text-gray-900 font-bold">2–4 hours</span>.
+                      </p>
+                      <ul className="space-y-3">
+                        <li className="flex items-center gap-3 text-sm text-gray-700">
+                          <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> Weekly maintenance checks
+                        </li>
+                        <li className="flex items-center gap-3 text-sm text-gray-700">
+                          <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> Inspection reports provided
+                        </li>
+                        <li className="flex items-center gap-3 text-sm text-gray-700">
+                          <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> Free upgrades for long-term rentals
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Key Advantages List */}
+                  <div className="mb-20">
+                    <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12">
+                      <div className="flex flex-col md:flex-row gap-12">
+                        <div className="md:w-1/3">
+                          <h3 className="text-2xl font-bold text-gray-900 mb-4">Key Advantages</h3>
+                          <p className="text-gray-600 mb-6">
+                            Renting offers immediate access to a fully equipped workspace without the cost or delay of permanent construction.
+                          </p>
+                          <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Ideal For Industries</p>
+                            <p className="text-sm font-medium text-gray-800">
+                              Construction, Infrastructure, Real Estate, IT Parks, Manufacturing, Defense, Education
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="md:w-2/3">
+                          <h4 className="text-lg font-bold text-[#0A3D2A] mb-6 flex items-center gap-2">
+                            <Settings className="w-5 h-5" /> Included Services
+                          </h4>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {[
+                              "Delivery & installation within 24 hours",
+                              "Weekly maintenance & cleaning support",
+                              "24×7 helpline for technical issues",
+                              "Optional furniture & HVAC systems",
+                              "Electrical safety certification",
+                              "Free relocation support (conditions apply)"
+                            ].map((service, i) => (
+                              <div key={i} className="flex items-center gap-3 bg-white p-4 rounded-xl border border-gray-100">
+                                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                <span className="text-sm font-medium text-gray-700">{service}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Buying Option Callout */}
+                  <div className="bg-gradient-to-r from-gray-900 to-[#0A3D2A] rounded-2xl p-8 md:p-12 text-center text-white shadow-2xl relative overflow-hidden">
+                    <div className="relative z-10">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-4">Looking to Buy Instead of Rent?</h3>
+                      <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg">
+                        If you’re planning a long-term setup or wish to own your cabin outright, explore our range of porta cabins for sale — fully customizable and built for permanence.
+                      </p>
+                      <Link href="/contact">
+                        <Button className="bg-white text-[#0A3D2A] hover:bg-gray-100 border-none font-bold px-8 py-6 text-lg rounded-xl transition-all hover:scale-105 shadow-lg">
+                          Explore Purchase Options
+                        </Button>
+                      </Link>
+                    </div>
+                    {/* Decorative background blur */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                  </div>
+                </div>
+              </section>
             </div>
           </section>
 
@@ -245,6 +403,40 @@ const PortaCabin40x10Rental = () => {
             </div>
           </section>
 
+          {/* FAQ Section */}
+          <section className="section-padding bg-white">
+            <div className="max-w-4xl mx-auto container-padding">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-foreground mb-4">
+                  Frequently Asked Questions (FAQs)
+                </h2>
+                <p className="text-xl text-muted-foreground">
+                  Everything you need to know about renting a 40×10 porta cabin.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                {[
+                  { q: "1. How much does it cost to rent a 40×10 porta cabin?", a: "Rental rates range from ₹35,000 to ₹45,000 per month, depending on customization, duration, and delivery location. Short-term daily and weekly plans are available upon request." },
+                  { q: "2. What is the minimum rental period?", a: "Our standard minimum rental period is 6 months, with options for quarterly and annual contracts." },
+                  { q: "3. Can I customize the interior layout?", a: "Yes — choose from partition walls, furniture sets, lighting styles, and storage solutions to create your ideal workspace." },
+                  { q: "4. How long does installation and removal take?", a: "Our team completes installation and dismantling within 4–6 hours using ground placement methods that avoid crane costs." },
+                  { q: "5. Do you offer daily, weekly, and monthly rental plans?", a: "Absolutely. Flexible plans are available to fit your project schedule and budget." },
+                  { q: "6. Are your porta cabins BIS and fire-safety certified?", a: "Yes. All units are BIS IS-3840 fire safety and Seismic Zone III compliant, ensuring full safety and regulatory compliance." },
+                  { q: "7. What locations do you serve?", a: "We serve Bangalore City, Greater Bangalore, Industrial Areas (Peenya, Bommasandra, Doddaballapur, Nelamangala), and Delhi NCR (New Delhi, Noida, Gurugram, Ghaziabad)." },
+                  { q: "8. Is maintenance included in the rental cost?", a: "Yes. Weekly preventive maintenance and 24×7 emergency response (within 2–4 hours) are included at no additional charge." },
+                  { q: "9. Can porta cabins be relocated mid-rental?", a: "Yes, relocation is part of our service. We can move your cabin anywhere within our coverage zones in less than 24 hours." },
+                  { q: "10. Do you offer HVAC and electrical installations?", a: "Every cabin is pre-wired for power and lighting, and we offer optional HVAC installation handled by licensed technicians." }
+                ].map((faq, i) => (
+                  <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                    <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
+                    <p className="text-gray-600">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Rental Process */}
           <section className="section-padding">
             <div className="max-w-7xl mx-auto container-padding">
@@ -267,7 +459,7 @@ const PortaCabin40x10Rental = () => {
                     Call or email us with your requirements and preferred rental period.
                   </p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-16 h-16 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                     2
@@ -277,7 +469,7 @@ const PortaCabin40x10Rental = () => {
                     Our team will visit your site to assess requirements and provide recommendations.
                   </p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-16 h-16 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                     3
@@ -287,7 +479,7 @@ const PortaCabin40x10Rental = () => {
                     Sign the rental agreement and make the initial payment to confirm your booking.
                   </p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-16 h-16 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                     4
@@ -308,16 +500,16 @@ const PortaCabin40x10Rental = () => {
                 Ready to Rent Your 40×10 Porta Cabin?
               </h2>
               <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
-                Get in touch with us today for a customized quote and quick setup. 
+                Get in touch with us today for a customized quote and quick setup.
                 Available for immediate rental across Bangalore and surrounding areas.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <QuoteFormTrigger size="lg" className="bg-white text-[#0A3D2A] hover:bg-gray-100 px-8 py-4 text-lg">
                   Get Free Quote
                 </QuoteFormTrigger>
-                <Button 
-                  variant="heroOutline" 
-                  size="lg" 
+                <Button
+                  variant="heroOutline"
+                  size="lg"
                   className="px-8 py-4 text-lg"
                   onClick={() => window.location.href = 'tel:+918046809920'}
                 >

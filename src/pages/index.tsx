@@ -43,6 +43,16 @@ const ScrollToTop = dynamic(() => import('@/components/ScrollToTop'), {
   loading: () => null,
 });
 
+const ProductShowcase = dynamic(() => import('@/components/ProductShowcase'), {
+  ssr: true,
+  loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse" />,
+});
+
+const BlogShowcase = dynamic(() => import('@/components/BlogShowcase'), {
+  ssr: true,
+  loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse" />,
+});
+
 // Lightweight product interface for homepage
 interface LightweightProduct {
   id: number;
@@ -72,29 +82,44 @@ interface HomePageProps {
 export const getServerSideProps: GetServerSideProps<HomePageProps> = async () => {
   try {
     // Import API functions dynamically to reduce initial bundle
-    const { fetchBlogPosts, testWooCommerceConnection, testWordPressAccessibility } = await import('@/config/api');
-    
-    // Test WordPress site accessibility first
-    const wordpressAccessible = await testWordPressAccessibility();
-    
-    // Test WooCommerce API connection first
-    const apiConnected = await testWooCommerceConnection();
+    const { fetchBlogPosts, fetchProductsByCategoryPriority, testWordPressAccessibility, testWordPressAccessibility: testConnect } = await import('@/config/api');
 
-    // Fetch recent blog posts server-side with caching
-    const blogPostsResponse = await fetchBlogPosts(1, 2);
+    // Test connection (silently fail if not working to avoid crashing page)
+    try {
+      await testConnect();
+    } catch (e) {
+      // ignore
+    }
+
+    // Fetch featured products (15 items for slider) from specific categories
+    // "Portable Cabin", "Container Offices", "Porta Cabins", "Labor Colony", "Portable Office", "Container Cafe"
+    const productsResponse = await fetchProductsByCategoryPriority(1, 15);
+    const lightweightProducts: LightweightProduct[] = (productsResponse.products || []).map(product => ({
+      id: product.id,
+      name: product.name,
+      slug: product.slug,
+      price: product.price,
+      sale_price: product.sale_price,
+      on_sale: product.on_sale,
+      featured_image: product.images[0]?.src || '',
+      category: product.categories[0]?.name || 'Uncategorized',
+    }));
+
+    // Fetch recent blog posts server-side (12 items for slider)
+    const blogPostsResponse = await fetchBlogPosts(1, 12);
 
     const lightweightBlogPosts: LightweightBlogPost[] = (blogPostsResponse.posts || []).map(post => ({
       id: post.id,
       title: post.title?.rendered || '',
       slug: post.slug,
       excerpt: post.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 150) || '',
-      date: post.date,
-      featured_image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '',
+      date: new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }),
+      featured_image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/placeholder-blog.jpg',
     }));
 
     return {
       props: {
-        featuredProducts: [],
+        featuredProducts: lightweightProducts,
         recentBlogPosts: lightweightBlogPosts,
       },
     };
@@ -109,12 +134,17 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
   }
 };
 
-const HomePage = ({ recentBlogPosts }: HomePageProps) => {
+const ModularSolutionsSEO = dynamic(() => import('@/components/ModularSolutionsSEO'), {
+  ssr: true,
+  loading: () => <div className="w-full h-64 bg-gray-50 animate-pulse" />,
+});
+
+const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle={pageSEO.home.title}
-        fallbackDescription={pageSEO.home.description}
+        fallbackTitle="Portable Cabin & Container Offices in India | Saman Portable"
+        fallbackDescription="Buy premium portable cabins, container offices, and prefab buildings from Saman Portable. 21-day delivery, ISO-certified quality, and 25-year warranty assured."
         fallbackCanonical={pageSEO.home.canonical}
         fallbackOgImage="/og-image.svg"
         fallbackOgDescription="Discover premium portable cabins, container offices, and prefab structures in Bangalore."
@@ -124,16 +154,16 @@ const HomePage = ({ recentBlogPosts }: HomePageProps) => {
         publisher={siteConfig.publisher}
         structuredData={generateOrganizationSchema()}
       />
-      
+
       <main>
         {/* Hero Section - Critical for LCP */}
         <HeroSection />
-        
+
         {/* Below-the-fold sections - Dynamically loaded */}
         <ServicesSection />
         <WhyChooseUs />
         <StatsSection />
-        
+
         {/* Our Work in Action Section */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -171,11 +201,16 @@ const HomePage = ({ recentBlogPosts }: HomePageProps) => {
             </div>
           </div>
         </section>
-        
+
+        {featuredProducts.length > 0 && <ProductShowcase featuredProducts={featuredProducts} />}
+
         <TestimonialsSection />
+
+        {recentBlogPosts.length > 0 && <BlogShowcase posts={recentBlogPosts} />}
+        <ModularSolutionsSEO />
         <ScrollToTop />
       </main>
-    </Layout>
+    </Layout >
   );
 };
 

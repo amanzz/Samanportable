@@ -37,7 +37,7 @@ const queryClient = new QueryClient({
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  
+
   // Don't render DefaultSeo for pages that have their own SEO components
   // This prevents duplicate meta tags
   const staticSEORoutes = new Set([
@@ -53,32 +53,33 @@ export default function App({ Component, pageProps }: AppProps) {
     '/terms-and-conditions',
   ]);
 
-  const hasCustomSEO = pageProps.rankMathSEO || 
-                       router.pathname.startsWith('/product/') ||
-                       (router.pathname === '/[slug]' && pageProps.post) ||
-                       staticSEORoutes.has(router.pathname);
-  
+  const hasCustomSEO = pageProps.rankMathSEO ||
+    router.pathname.startsWith('/product/') ||
+    router.pathname.startsWith('/container-rent-services/') ||
+    (router.pathname === '/[slug]' && pageProps.post) ||
+    staticSEORoutes.has(router.pathname);
+
   return (
     <div className={inter.className}>
       <MobileLCPOptimizer />
       <ErrorBoundary>
         {!hasCustomSEO && <DefaultSeo {...defaultSEO} />}
-      
-      {/* Performance Monitoring Scripts - Lazy Loaded */}
-      {/* Google Analytics removed - using GTM instead */}
-      
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <AuthProvider>
-            <CartProvider>
-              <Component {...pageProps} />
-            </CartProvider>
-          </AuthProvider>
-        </TooltipProvider>
-        <Toaster />
-        <Sonner />
-      </QueryClientProvider>
-    </ErrorBoundary>
+
+        {/* Performance Monitoring Scripts - Lazy Loaded */}
+        {/* Google Analytics removed - using GTM instead */}
+
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <AuthProvider>
+              <CartProvider>
+                <Component {...pageProps} />
+              </CartProvider>
+            </AuthProvider>
+          </TooltipProvider>
+          <Toaster />
+          <Sonner />
+        </QueryClientProvider>
+      </ErrorBoundary>
     </div>
   );
 }
