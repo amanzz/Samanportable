@@ -9,6 +9,7 @@ const ContactCTA = () => {
     email: '',
     phone: '',
     service: '',
+    region: '',
     message: ''
   });
 
@@ -39,6 +40,7 @@ const ContactCTA = () => {
           email: formData.email,
           phone: formData.phone,
           service: formData.service,
+          region: formData.region,
           message: formData.message,
           pageUrl: typeof window !== 'undefined' ? window.location.href : ''
         })
@@ -56,6 +58,7 @@ const ContactCTA = () => {
         email: '',
         phone: '',
         service: '',
+        region: '',
         message: ''
       });
 
@@ -171,7 +174,7 @@ const ContactCTA = () => {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  placeholder="First Name"
+                  placeholder="First Name *"
                   required
                   className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
@@ -180,7 +183,7 @@ const ContactCTA = () => {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  placeholder="Last Name"
+                  placeholder="Last Name *"
                   required
                   className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
@@ -190,7 +193,7 @@ const ContactCTA = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                placeholder="Email Address"
+                placeholder="Email Address *"
                 required
                 className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
               />
@@ -199,28 +202,48 @@ const ContactCTA = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                placeholder="Phone Number"
+                placeholder="Phone Number *"
                 required
                 className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
               />
-              <label htmlFor="service" className="sr-only">Select Product</label>
-              <select 
-                id="service"
-                name="service"
-                value={formData.service}
-                onChange={handleInputChange}
-                required
-                className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-              >
-                <option value="">Select Product</option>
-                <option value="Portable Cabin">Portable Cabin</option>
-                <option value="Container Offices">Container Offices</option>
-                <option value="Porta Cabins">Porta Cabins</option>
-                <option value="Labor Colony">Labor Colony</option>
-                <option value="Portable Offices">Portable Offices</option>
-                <option value="Container Cafe">Container Cafe</option>
-                <option value="Container Marketing Office">Container Marketing Office</option>
-              </select>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="service" className="sr-only">Select Product</label>
+                  <select 
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                  >
+                    <option value="" className="text-gray-900">- Select Product * -</option>
+                    <option value="MS Porta Cabin" className="text-gray-900">MS Porta Cabin</option>
+                    <option value="Container Office" className="text-gray-900">Container Office</option>
+                    <option value="Prefab Labor Colony" className="text-gray-900">Prefab Labor Colony</option>
+                    <option value="Marketing Office" className="text-gray-900">Marketing Office</option>
+                    <option value="PEB Buildings" className="text-gray-900">PEB Buildings</option>
+                    <option value="Portable Toilets and Security" className="text-gray-900">Portable Toilets and Security</option>
+                    <option value="Container Cafes" className="text-gray-900">Container Cafes</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="region" className="sr-only">Select Region</label>
+                  <select 
+                    id="region"
+                    name="region"
+                    value={formData.region}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                  >
+                    <option value="" className="text-gray-900">- Select Region -</option>
+                    <option value="South India" className="text-gray-900">South India</option>
+                    <option value="North India" className="text-gray-900">North India</option>
+                  </select>
+                </div>
+              </div>
+
               <textarea
                 name="message"
                 value={formData.message}
@@ -260,4 +283,3 @@ const ContactCTA = () => {
 };
 
 export default ContactCTA;
-

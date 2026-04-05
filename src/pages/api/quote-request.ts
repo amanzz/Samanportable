@@ -8,20 +8,56 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { name, phone, email, company, service, projectDetails, pageUrl } = req.body;
+    const { firstName, lastName, phone, email, company, service, region, projectDetails, pageUrl } = req.body;
 
-    // Validate required fields
-    if (!name || !phone || !email || !service) {
-      return res.status(400).json({ 
-        message: 'Missing required fields' 
+    // Strict Backend Validation
+    if (!firstName || !lastName || !phone || !email || !service) {
+      return res.status(400).json({ message: 'Missing required fields' });
+    }
+    
+    // Email and Phone Regex Validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ message: 'Invalid email format' });
+    }
+    const phoneRegex = /^\+?[\d\s-]{7,16}$/;
+    if (!phoneRegex.test(phone)) {
+      return res.status(400).json({ message: 'Invalid phone format' });
+    }
+
+    // Submit to Zoho CRM
+    try {
+      const zohoData = new URLSearchParams();
+      zohoData.append('Name_First', firstName || '-');
+      zohoData.append('Name_Last', lastName || '-');
+      zohoData.append('PhoneNumber_countrycode', phone || '');
+      zohoData.append('Email', email || '');
+      zohoData.append('Dropdown1', service || '-Select-');
+      zohoData.append('Dropdown', region || '-Select-');
+      zohoData.append('SingleLine', (company ? `Company: ${company}. ` : '') + (projectDetails || ''));
+
+      const zohoResponse = await fetch('https://forms.zohopublic.com/samanportable1/form/GetQuoteForm/formperma/-RQ6B5h5-oglLK1XIN6BcUhddk3Z4msxkoTE5r7OBok/htmlRecords/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: zohoData.toString()
       });
+      
+      if (!zohoResponse.ok) {
+        console.error(`[Zoho CRM] Submission failed. Status: ${zohoResponse.status} - Email: ${email}`);
+      } else {
+        console.log(`[Zoho CRM] Successfully recorded lead for Email: ${email}`);
+      }
+    } catch (e) {
+      console.error('[Zoho CRM] Critical Network/Fetch error during submission:', e);
     }
 
     // Format form data
     const formData = {
-      'Full Name': name,
+      'First Name': firstName,
+      'Last Name': lastName,
       'Email': email,
       'Phone': phone,
+      'Region': region || 'Not specified',
       'Company': company || 'Not specified',
       'Service Required': service,
       'Project Details': projectDetails || 'Not specified',

@@ -13,15 +13,17 @@ interface EnquiryDialogProps {
 
 const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
+    region: '',
     message: ''
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -56,9 +58,11 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose }) => {
       setTimeout(() => {
         setSubmitted(false);
         setFormData({
-          name: '',
+          firstName: '',
+          lastName: '',
           email: '',
           phone: '',
+          region: '',
           message: ''
         });
         onClose();
@@ -73,9 +77,11 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose }) => {
 
   const resetForm = () => {
     setFormData({
-      name: '',
+      firstName: '',
+      lastName: '',
       email: '',
       phone: '',
+      region: '',
       message: ''
     });
     setSubmitted(false);
@@ -115,15 +121,29 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose }) => {
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
+            <Label htmlFor="firstName" className="text-right">
+              First Name
             </Label>
             <Input
-              id="name"
-              name="name"
-              value={formData.name}
+              id="firstName"
+              name="firstName"
+              value={formData.firstName}
               onChange={handleInputChange}
-              placeholder="Your full name"
+              placeholder="First Name"
+              className="col-span-3"
+              required
+            />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="lastName" className="text-right">
+              Last Name
+            </Label>
+            <Input
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleInputChange}
+              placeholder="Last Name"
               className="col-span-3"
               required
             />
@@ -157,6 +177,22 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose }) => {
               className="col-span-3"
               required
             />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="region" className="text-right">
+              Region
+            </Label>
+            <select
+              id="region"
+              name="region"
+              value={formData.region}
+              onChange={handleInputChange}
+              className="col-span-3 flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <option value="">- Select -</option>
+              <option value="South India">South India</option>
+              <option value="North India">North India</option>
+            </select>
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="message" className="text-right">

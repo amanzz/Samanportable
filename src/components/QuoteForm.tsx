@@ -4,7 +4,6 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { 
   User, 
   Phone, 
@@ -12,7 +11,8 @@ import {
   Building, 
   Send,
   CheckCircle,
-  Loader2
+  Loader2,
+  MapPin
 } from 'lucide-react';
 
 interface QuoteFormProps {
@@ -22,18 +22,20 @@ interface QuoteFormProps {
 
 const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     phone: '',
     email: '',
     company: '',
     service: '',
+    region: '',
     projectDetails: ''
   });
   
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -59,11 +61,13 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: formData.name,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           phone: formData.phone,
           email: formData.email,
           company: formData.company,
           service: formData.service,
+          region: formData.region,
           projectDetails: formData.projectDetails,
           pageUrl: typeof window !== 'undefined' ? window.location.href : ''
         })
@@ -80,11 +84,13 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
       setTimeout(() => {
         setSubmitted(false);
         setFormData({
-          name: '',
+          firstName: '',
+          lastName: '',
           phone: '',
           email: '',
           company: '',
           service: '',
+          region: '',
           projectDetails: ''
         });
         if (onClose) onClose();
@@ -98,18 +104,18 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
   };
 
   const products = [
-    'Portable Cabin',
-    'Container Offices',
-    'Porta Cabins',
-    'Labor Colony',
-    'Portable Offices',
-    'Container Cafe',
-    'Container Marketing Office'
+    'MS Porta Cabin',
+    'Container Office',
+    'Prefab Labor Colony',
+    'Marketing Office',
+    'PEB Buildings',
+    'Portable Toilets and Security',
+    'Container Cafes'
   ];
 
   if (submitted) {
     return (
-              <div className="bg-white border rounded-lg p-4 text-center shadow-lg">
+      <div className="bg-white border rounded-lg p-4 text-center shadow-lg">
         <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-3" />
         <h3 className="text-lg font-semibold text-black mb-2">Quote Request Sent Successfully!</h3>
         <p className="text-black text-sm">
@@ -129,26 +135,45 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-3">
-        {/* Row 1: Full Name and Phone Number */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1">
-            <Label htmlFor="name" className="text-xs font-semibold text-gray-700 block text-left">
-              Full Name *
+            <Label htmlFor="firstName" className="text-xs font-semibold text-gray-700 block text-left">
+              First Name *
             </Label>
             <div className="relative group">
               <User className="absolute left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 text-gray-400 group-focus-within:text-[#0A3D2A] transition-colors duration-200" />
               <Input
-                id="name"
-                name="name"
-                value={formData.name}
+                id="firstName"
+                name="firstName"
+                value={formData.firstName}
                 onChange={handleInputChange}
                 required
-                placeholder="Your full name"
+                placeholder="First Name"
                 className="pl-7 border-gray-300 focus:border-[#0A3D2A] focus:ring-[#0A3D2A] focus:ring-opacity-20 h-9 text-xs text-gray-900 bg-white placeholder-gray-500 rounded-md transition-all duration-200 hover:border-gray-400"
               />
             </div>
           </div>
           
+          <div className="space-y-1">
+            <Label htmlFor="lastName" className="text-xs font-semibold text-gray-700 block text-left">
+              Last Name *
+            </Label>
+            <div className="relative group">
+              <User className="absolute left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 text-gray-400 group-focus-within:text-[#0A3D2A] transition-colors duration-200" />
+              <Input
+                id="lastName"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleInputChange}
+                required
+                placeholder="Last Name"
+                className="pl-7 border-gray-300 focus:border-[#0A3D2A] focus:ring-[#0A3D2A] focus:ring-opacity-20 h-9 text-xs text-gray-900 bg-white placeholder-gray-500 rounded-md transition-all duration-200 hover:border-gray-400"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="space-y-1">
             <Label htmlFor="phone" className="text-xs font-semibold text-gray-700 block text-left">
               Phone Number *
@@ -167,10 +192,7 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
               />
             </div>
           </div>
-        </div>
 
-        {/* Row 2: Email Address and Company Name */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="space-y-1">
             <Label htmlFor="email" className="text-xs font-semibold text-gray-700 block text-left">
               Email Address *
@@ -189,59 +211,67 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
               />
             </div>
           </div>
-          
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="space-y-1">
-            <Label htmlFor="company" className="text-xs font-semibold text-gray-700 block text-left">
-              Company Name
+            <Label htmlFor="service" className="text-xs font-semibold text-gray-700 block text-left">
+              Products *
             </Label>
             <div className="relative group">
-              <Building className="absolute left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 text-gray-400 group-focus-within:text-[#0A3D2A] transition-colors duration-200" />
-              <Input
-                id="company"
-                name="company"
-                value={formData.company}
+              <select
+                id="service"
+                name="service"
+                value={formData.service}
                 onChange={handleInputChange}
-                placeholder="Your company name"
-                className="pl-7 border-gray-300 focus:border-[#0A3D2A] focus:ring-[#0A3D2A] focus:ring-opacity-20 h-9 text-xs text-gray-900 bg-white placeholder-gray-500 rounded-md transition-all duration-200 hover:border-gray-400"
-              />
+                required
+                aria-label="Select a product"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-xs text-gray-900 placeholder-gray-500 focus:border-[#0A3D2A] focus:ring-[#0A3D2A] focus:ring-opacity-20 bg-white h-9 appearance-none cursor-pointer transition-all duration-200 hover:border-gray-400 group-focus-within:border-[#0A3D2A]"
+              >
+                <option value="" className="text-gray-600">-Select-</option>
+                {products.map((product) => (
+                  <option key={product} value={product} className="text-gray-900">
+                    {product}
+                  </option>
+                ))}
+              </select>
+              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <Label htmlFor="region" className="text-xs font-semibold text-gray-700 block text-left">
+              Region
+            </Label>
+            <div className="relative group">
+              <select
+                id="region"
+                name="region"
+                value={formData.region}
+                onChange={handleInputChange}
+                aria-label="Select region"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 text-xs text-gray-900 placeholder-gray-500 focus:border-[#0A3D2A] focus:ring-[#0A3D2A] focus:ring-opacity-20 bg-white h-9 appearance-none cursor-pointer transition-all duration-200 hover:border-gray-400 group-focus-within:border-[#0A3D2A]"
+              >
+                <option value="" className="text-gray-600">-Select-</option>
+                <option value="South India" className="text-gray-900">South India</option>
+                <option value="North India" className="text-gray-900">North India</option>
+              </select>
+              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Row 3: Service Selection - Single Line */}
-        <div className="space-y-1">
-          <Label htmlFor="service" className="text-xs font-semibold text-gray-700 block text-left">
-            Product Interested In *
-          </Label>
-          <div className="relative group">
-            <select
-              id="service"
-              name="service"
-              value={formData.service}
-              onChange={(e) => handleServiceChange(e.target.value)}
-              required
-              aria-label="Select a service"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 text-xs text-gray-900 placeholder-gray-500 focus:border-[#0A3D2A] focus:ring-[#0A3D2A] focus:ring-opacity-20 bg-white h-9 appearance-none cursor-pointer transition-all duration-200 hover:border-gray-400 group-focus-within:border-[#0A3D2A]"
-            >
-              <option value="" className="text-gray-600">Select a product</option>
-              {products.map((product) => (
-                <option key={product} value={product} className="text-gray-900">
-                  {product}
-                </option>
-              ))}
-            </select>
-            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
-              <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* Row 4: Project Details - Single Line */}
         <div className="space-y-1">
           <Label htmlFor="projectDetails" className="text-xs font-semibold text-gray-700 block text-left">
-            Project Details *
+            Write your requirement *
           </Label>
           <Textarea
             id="projectDetails"
@@ -250,12 +280,11 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
             onChange={handleInputChange}
             required
             rows={2}
-            placeholder="Please describe your requirements, timeline, and any specific needs..."
+            placeholder="..."
             className="border-gray-300 focus:border-[#0A3D2A] focus:ring-[#0A3D2A] focus:ring-opacity-20 resize-none text-xs text-gray-900 bg-white placeholder-gray-500 rounded-md min-h-[60px] transition-all duration-200 hover:border-gray-400"
           />
         </div>
 
-        {/* Submit Button */}
         <Button 
           type="submit" 
           disabled={loading}
@@ -270,26 +299,13 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
           ) : (
             <>
               <Send className="w-4 h-4 mr-1" />
-              Send Message
+              Submit
             </>
           )}
         </Button>
-
-        {/* Privacy Policy Disclaimer */}
-        <p className="text-xs text-gray-500 text-center mt-2 leading-tight">
-          By submitting this form, you agree to our{' '}
-          <Link href="/privacy-policy" className="text-[#0A3D2A] hover:text-[#1a5f3a] underline text-xs">
-            Privacy Policy
-          </Link>{' '}
-          and{' '}
-          <Link href="/terms-and-conditions" className="text-[#0A3D2A] hover:text-[#1a5f3a] underline text-xs">
-            Terms of Service
-          </Link>
-        </p>
       </form>
     </div>
   );
 };
 
 export default QuoteForm;
-
