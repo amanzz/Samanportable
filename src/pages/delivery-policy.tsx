@@ -231,19 +231,19 @@ const DeliveryPolicy = () => {
                       <div className="flex items-center gap-3">
                         <Phone className="w-5 h-5 text-[#0A3D2A]" />
                         <span className="text-slate-700">
-                          <strong>Delivery Hotline:</strong> +91 80 4680 9920
+                          <strong>Delivery Hotline:</strong> +91 88616 22859
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
                         <Phone className="w-5 h-5 text-[#0A3D2A]" />
                         <span className="text-slate-700">
-                          <strong>Customer Service:</strong> +91 80 4680 9920
+                          <strong>Customer Service:</strong> +91 88616 22859
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
                         <Phone className="w-5 h-5 text-[#0A3D2A]" />
                         <span className="text-slate-700">
-                          <strong>Email:</strong> Sales@samanportable.com
+                          <strong>Email:</strong> sales@samanportable.com
                         </span>
                       </div>
                     </div>

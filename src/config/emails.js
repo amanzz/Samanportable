@@ -28,5 +28,5 @@ export const COMPANY_INFO = {
   name: "Enquiry from Samanportable",
   email: "enquiry@samanportable.com",
   website: "https://samanportable.com",
-  phone: "+91 80 4680 9920"
+  phone: "+91 88616 22859"
 };

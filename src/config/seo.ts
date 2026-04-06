@@ -89,7 +89,7 @@ export const pageSEO = {
   },
   contact: {
     title: 'Contact SAMAN Portable in Bangalore & Delhi NCR Today',
-    description: 'Get in touch with SAMAN Portable for porta cabin rentals, container offices, and prefab structures. Call +91 80 4680 9920 for instant assistance today.',
+    description: 'Get in touch with SAMAN Portable for porta cabin rentals, container offices, and prefab structures. Call +91 88616 22859 for instant assistance today.',
     canonical: `${siteConfig.url}/contact`,
     keywords: 'contact portable office, quote container office, portable cabin inquiry, prefab solutions contact, Bangalore, Greater Noida',
   },

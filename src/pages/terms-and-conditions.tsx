@@ -154,10 +154,10 @@ const TermsAndConditions = () => {
                   </p>
                   <div className="bg-slate-50 rounded-lg p-4 mb-6">
                     <p className="text-slate-700 mb-2">
-                      <strong>Email:</strong> Sales@samanportable.com
+                      <strong>Email:</strong> sales@samanportable.com
                     </p>
                     <p className="text-slate-700 mb-2">
-                      <strong>Phone:</strong> +91 80 4680 9920
+                      <strong>Phone:</strong> +91 88616 22859
                     </p>
                     <p className="text-slate-700">
                       <strong>Address:</strong> I, Sy No 34/2, near India Oil petrol pump, Gopasandra, Bengaluru, Karnataka 560099

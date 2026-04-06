@@ -920,7 +920,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO }: Pro
                    <Button 
                      size="lg" 
                      className="h-14 px-8 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-                     onClick={() => window.location.href = 'tel:+918046809920'}
+                     onClick={() => window.location.href = 'tel:+918861622859'}
                    >
                      <Phone className="w-5 h-5 mr-3" />
                      Call: +91 80468 09920

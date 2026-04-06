@@ -775,7 +775,7 @@ const PrefabSolutionsPage = () => {
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <a href="tel:+918046809920" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">+91 80 4680 9920</a>
+                  <a href="tel:+918861622859" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">+91 88616 22859</a>
                   <a href="tel:+918861622859" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">+91 88616 22859</a>
                   <a href="tel:+918088685440" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">+91 80886 85440</a>
                 </div>
@@ -792,8 +792,8 @@ const PrefabSolutionsPage = () => {
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <a href="mailto:Sales@samanportable.com" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">Sales@samanportable.com</a>
-                  <a href="mailto:monazir.alam@samanportable.com" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">monazir.alam@samanportable.com</a>
+                  <a href="mailto:sales@samanportable.com" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">sales@samanportable.com</a>
+                  <a href="mailto:ncr@samanportable.com" className="block text-gray-900 font-semibold hover:text-[#06261A] transition-colors duration-300 text-base md:text-lg">ncr@samanportable.com</a>
                 </div>
               </div>
 
@@ -848,11 +848,11 @@ const PrefabSolutionsPage = () => {
                 India&apos;s leading prefab solutions provider. We deliver innovative, sustainable, and cost-effective building solutions across the country.
               </p>
               <div className="flex space-x-4">
-                <a href="tel:+918046809920" className="bg-[#06261A] hover:bg-[#0A3D2A] text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center space-x-2">
+                <a href="tel:+918861622859" className="bg-[#06261A] hover:bg-[#0A3D2A] text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center space-x-2">
                   <Phone className="w-4 h-4" />
                   <span className="text-sm md:text-base">Call Now</span>
                 </a>
-                <a href="mailto:Sales@samanportable.com" className="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center space-x-2">
+                <a href="mailto:sales@samanportable.com" className="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
                   <span className="text-sm md:text-base">Email Us</span>
                 </a>

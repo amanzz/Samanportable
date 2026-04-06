@@ -69,7 +69,7 @@ const ContainerOffice30x8Rental = () => {
                   variant="heroOutline" 
                   size="lg" 
                   className="px-8 py-4 text-lg"
-                  onClick={() => window.location.href = 'tel:+918046809920'}
+                  onClick={() => window.location.href = 'tel:+918861622859'}
                 >
                   Call Now
                 </Button>
@@ -254,7 +254,7 @@ const ContainerOffice30x8Rental = () => {
                   variant="heroOutline" 
                   size="lg" 
                   className="px-8 py-4 text-lg"
-                  onClick={() => window.location.href = 'tel:+918046809920'}
+                  onClick={() => window.location.href = 'tel:+918861622859'}
                 >
                   Call Now
                 </Button>

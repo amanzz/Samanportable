@@ -270,7 +270,7 @@ const RentalServicesPage = () => {
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">Instant Quote & Expert Consultation</h3>
                       <p className="text-sm text-gray-500 flex items-center gap-2 mt-1">
-                        <Phone className="w-3 h-3" /> Call: +91 80 4680 9920 <span className="mx-1">|</span> <Clock className="w-3 h-3" /> Quote in 2 mins
+                        <Phone className="w-3 h-3" /> Call: +91 88616 22859 <span className="mx-1">|</span> <Clock className="w-3 h-3" /> Quote in 2 mins
                       </p>
                     </div>
                   </div>
@@ -438,7 +438,7 @@ const RentalServicesPage = () => {
                   </div>
                   <h4 className="font-bold text-gray-900 mb-1">Urgent Requirement</h4>
                   <p className="text-sm text-gray-600 mb-3">(Same Day)</p>
-                  <a href="tel:+918046809920" className="text-red-700 font-bold hover:underline">+91 80 4680 9920</a>
+                  <a href="tel:+918861622859" className="text-red-700 font-bold hover:underline">+91 88616 22859</a>
                 </div>
 
                 <div className="bg-white border border-gray-200 p-6 rounded-xl text-center">
@@ -629,7 +629,7 @@ const RentalServicesPage = () => {
                   variant="heroOutline"
                   size="lg"
                   className="px-8 py-4 text-lg"
-                  onClick={() => window.location.href = 'tel:+918046809920'}
+                  onClick={() => window.location.href = 'tel:+918861622859'}
                 >
                   Call Now
                 </Button>
