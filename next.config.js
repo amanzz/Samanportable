@@ -177,6 +177,16 @@ const nextConfig = {
 
       // NEW REDIRECTS FROM BROKEN LINKS LIST - 301 REDIRECTS
       {
+        source: '/wp-content/uploads/2020/04/saman-profiles.pdf',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/wp-content/uploads/2020/03/saman-catalogue.pdf',
+        destination: '/product',
+        permanent: true,
+      },
+      {
         source: '/products/shipping-container-house',
         destination: '/product/container-houses',
         permanent: true,

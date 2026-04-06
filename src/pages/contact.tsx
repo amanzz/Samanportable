@@ -71,7 +71,7 @@ const ContactPage = () => {
       address: 'I, Sy No 34/2, near India Oil petrol pump, Gopasandra, Bengaluru, Karnataka 560099',
       phone: ['+91 88616 22859', '+91 80886 85440'],
       email: 'sales@samanportable.com',
-      mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.7787720567044!2d77.78377877507451!3d12.85756058744741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae72e3e1942f9f%3A0x912c72665bf2a58d!2sSAMAN%20POS%20India%20Private%20Limited!5e0!3m2!1sen!2sin!4v1755245398218!5m2!1sen!2sin'
+      mapEmbed: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15556.703211516599!2d77.7291942!3d12.8509838!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6d55f6f82ca7%3A0xf28e36c870c3ef6a!2sSAMAN%20Portable%20Office%20Solutions%20Private%20Limited!5e0!3m2!1sen!2sin!4v1712400000000!5m2!1sen!2sin'
     },
     {
       name: 'Greater Noida Branch',
