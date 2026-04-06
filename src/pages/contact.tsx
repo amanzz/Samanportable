@@ -26,7 +26,7 @@ const ContactPage = () => {
       "contactPoint": [
         {
           "@type": "ContactPoint",
-          "telephone": "+91-80-4680-9920",
+          "telephone": "+91-88616-22859",
           "contactType": "customer service",
           "areaServed": "IN",
           "availableLanguage": "English"
@@ -69,15 +69,15 @@ const ContactPage = () => {
     {
       name: 'Bangalore Branch',
       address: 'I, Sy No 34/2, near India Oil petrol pump, Gopasandra, Bengaluru, Karnataka 560099',
-      phone: ['+91 80 4680 9920', '+91 88616 22859', '+91 80886 85440'],
-      email: 'Sales@samanportable.com',
+      phone: ['+91 88616 22859', '+91 80886 85440'],
+      email: 'sales@samanportable.com',
       mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.7787720567044!2d77.78377877507451!3d12.85756058744741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae72e3e1942f9f%3A0x912c72665bf2a58d!2sSAMAN%20POS%20India%20Private%20Limited!5e0!3m2!1sen!2sin!4v1755245398218!5m2!1sen!2sin'
     },
     {
       name: 'Greater Noida Branch',
       address: 'Khata No 226, Vill-Jalpura, Bisrakh Rd, Jalpura, Dadri, Greater Noida, Uttar Pradesh 201308',
-      phone: ['+91 92208 53435', '+91 97089 89937'],
-      email: 'monazir.alam@samanportable.com',
+      phone: ['+91 8796039938', '+91 9708989937'],
+      email: 'ncr@samanportable.com',
       mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.586582617375!2d77.43468027890346!3d28.55214352511481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce9cb67686ca3%3A0x9848ba80412bf2ea!2sSAMAN%20POS%20India%20Private%20Limited!5e0!3m2!1sen!2sin!4v1755245548890!5m2!1sen!2sin'
     }
   ];
@@ -195,21 +195,21 @@ const ContactPage = () => {
                  </p>
                  <div className="space-y-2">
                     <Button 
-                      onClick={() => window.location.href = 'tel:+918046809920'}
+                      onClick={() => window.location.href = 'tel:+918861622859'}
                       className="w-full"
                       size="lg"
                     >
                       <Phone className="w-4 h-4 mr-2" />
-                      Call Now: +91 80 4680 9920
+                      Call Now: +91 88616 22859
                     </Button>
                     <Button 
                       variant="outline"
-                      onClick={() => window.location.href = 'mailto:Sales@samanportable.com'}
+                      onClick={() => window.location.href = 'mailto:sales@samanportable.com'}
                       className="w-full"
                       size="lg"
                     >
                      <Mail className="w-4 h-4 mr-2" />
-                     Email: Sales@samanportable.com
+                     Email: sales@samanportable.com
                    </Button>
                  </div>
                </div>

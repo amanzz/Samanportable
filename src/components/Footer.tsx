@@ -163,12 +163,6 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-white flex-shrink-0" />
-                <a href="tel:+918046809920" className="text-white text-xs break-all hover:text-green-300 transition-colors">
-                  +91 80 4680 9920
-                </a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-white flex-shrink-0" />
                 <a href="tel:+918861622859" className="text-white text-xs break-all hover:text-green-300 transition-colors">
                   +91 88616 22859
                 </a>
@@ -181,7 +175,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-white flex-shrink-0" />
-                <p className="text-white text-xs break-all">Sales@samanportable.com</p>
+                <p className="text-white text-xs break-all">sales@samanportable.com</p>
               </div>
             </div>
           </div>
@@ -198,19 +192,19 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-white flex-shrink-0" />
-                <a href="tel:+919220853435" className="text-white text-xs break-all hover:text-green-300 transition-colors">
-                  +91 92208 53435
+                <a href="tel:+918796039938" className="text-white text-xs break-all hover:text-green-300 transition-colors">
+                  +91 8796039938
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-white flex-shrink-0" />
                 <a href="tel:+919708989937" className="text-white text-xs break-all hover:text-green-300 transition-colors">
-                  +91 97089 89937
+                  +91 9708989937
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-white flex-shrink-0" />
-                <p className="text-white text-xs break-all">monazir.alam@samanportable.com</p>
+                <p className="text-white text-xs break-all">ncr@samanportable.com</p>
               </div>
             </div>
           </div>
