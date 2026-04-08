@@ -23,7 +23,7 @@ export default function Document() {
         {/* Critical Resource Preloading - Optimized for LCP */}
         <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/container-office-by-saman (1).jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/hero-image/saman-portable-office-cabin-bangalore.webp" as="image" type="image/webp" />
         <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
         
         {/* DNS Prefetching and Preconnecting - Optimized */}
@@ -51,12 +51,14 @@ export default function Document() {
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
         <meta name="msapplication-TileColor" content="#0A3D2A" />
-        <meta name="next-head-count" content="30" />
         {/* Robots meta tags are handled by individual SEO components */}
         
         {/* Performance Meta Tags - Enhanced */}
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
         <meta name="renderer" content="webkit" />
+        
+        {/* Social Media Verification (Invisible) */}
+        <link rel="me" href="https://mastodon.social/@saman_portable" />
         
         {/* Critical CSS Inline for above-the-fold content */}
         <style

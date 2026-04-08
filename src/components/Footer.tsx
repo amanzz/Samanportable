@@ -217,7 +217,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             {/* Copyright */}
             <div className="text-gray-400 text-xs">
-              © 2024 SAMAN Portable Office Solutions. All rights reserved.
+              © {new Date().getFullYear()} SAMAN Portable Office Solutions. All rights reserved.
             </div>
             
             {/* Policy Links */}

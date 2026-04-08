@@ -119,6 +119,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const rating = product.average_rating ? parseFloat(product.average_rating) : 0;
   const ratingCount = product.rating_count || 0;
 
+  const discountPercentage = product.sale_price && originalPrice 
+    ? Math.round(((parseFloat(originalPrice as string) - parseFloat(product.sale_price)) / parseFloat(originalPrice as string)) * 100)
+    : 0;
+
   return (
     <>
       <div className={`bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group ${
@@ -210,9 +214,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 }`}>
                   {formatPrice(originalPrice)}
                 </span>
-                {product.sale_price && variant !== 'compact' && (
+                {discountPercentage > 0 && variant !== 'compact' && (
                   <span className="text-xs bg-red-100 text-red-600 px-1 py-0.5 rounded">
-                    {Math.round(((parseFloat(originalPrice as string) - parseFloat(product.sale_price)) / parseFloat(originalPrice as string)) * 100)}% OFF
+                    {discountPercentage}% OFF
                   </span>
                 )}
               </div>

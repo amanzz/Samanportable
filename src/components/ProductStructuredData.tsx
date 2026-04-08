@@ -53,7 +53,6 @@ export default function ProductStructuredData({ product, category }: ProductStru
     },
     category: product.categories?.[0]?.name || 'Portable Structures',
     sku: product.id.toString(),
-    gtin: `SAMAN${product.id.toString().padStart(8, '0')}`, // Generate valid GTIN-like identifier
     mpn: `SP-${product.id}`, // Manufacturer Part Number
     offers: {
       '@type': 'Offer',

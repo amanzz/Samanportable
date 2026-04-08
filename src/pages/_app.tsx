@@ -51,6 +51,11 @@ export default function App({ Component, pageProps }: AppProps) {
     '/delivery-policy',
     '/refund-and-return-policy',
     '/terms-and-conditions',
+    '/checkout',
+    '/cart',
+    '/my-orders',
+    '/404',
+    '/410',
   ]);
 
   const hasCustomSEO = pageProps.rankMathSEO ||

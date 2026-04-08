@@ -158,6 +158,7 @@ const MyOrders = () => {
         <Head>
           <title>My Orders - Saman Portable Office Solutions</title>
           <meta name="description" content="View your order history and track your portable office solutions." />
+          <meta name="robots" content="noindex, nofollow" />
         </Head>
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
@@ -187,6 +188,7 @@ const MyOrders = () => {
       <Head>
         <title>My Orders - Saman Portable Office Solutions</title>
         <meta name="description" content="View your order history and track your portable office solutions." />
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
 
       <div className="min-h-screen">

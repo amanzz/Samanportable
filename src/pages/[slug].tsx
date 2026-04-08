@@ -188,9 +188,9 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
         // Handle headings with proper Tailwind classes
         if (domNode.name === 'h1') {
           return (
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mt-8 sm:mt-12 mb-4 sm:mb-6 leading-tight">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-800 mt-8 mb-4">
               {domToReact(domNode.children as any, parserOptions)}
-            </h1>
+            </h2>
           );
         }
         if (domNode.name === 'h2') {

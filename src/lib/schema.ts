@@ -115,3 +115,45 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url:
     })),
   };
 };
+
+export const getLocalBusinessSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "SAMAN Portable Office Solutions",
+  "url": "https://www.samanportable.com",
+  "logo": "https://www.samanportable.com/saman-logo.svg",
+  "telephone": [
+    "+91 88616 22859",
+    "+91 80886 85440",
+    "+91 8796039938",
+    "+91 9708989937"
+  ],
+  "email": [
+    "sales@samanportable.com",
+    "ncr@samanportable.com"
+  ],
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "I, Sy No 34/2, near India Oil petrol pump, Gopasandra, Bengaluru, Karnataka 560099",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Khata No 226, Vill-Jalpura, Bisrakh Rd, Jalpura, Dadri, Greater Noida, Uttar Pradesh 201308",
+      "addressCountry": "IN"
+    }
+  ]
+});
+
+export const getWebSiteSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Saman Portable",
+  "url": "https://www.samanportable.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.samanportable.com/product?search={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+});

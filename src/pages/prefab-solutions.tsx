@@ -668,18 +668,18 @@ const PrefabSolutionsPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "/Prefab solutions/work/IMG-20210610-WA0083.webp",
-              "/Prefab solutions/work/SAMAN-21.jpeg.webp",
-              "/Prefab solutions/work/SAMAN23948.jpeg.webp",
-              "/Prefab solutions/work/WhatsApp Image 2025-03-21 at 12.20.38.jpeg.webp",
-              "/Prefab solutions/work/WhatsApp Image 2025-03-21 at 12.22.41.jpeg.webp",
-              "/Prefab solutions/work/WhatsApp Image 2025-03-21 at 12.26.26.jpeg.webp"
+              { src: "/Prefab solutions/work/portable-cabin-labour-colony-setup.webp", alt: "Portable cabin labour colony setup for construction projects" },
+              { src: "/Prefab solutions/work/saman-portable-modular-office-cabin.webp", alt: "Saman Portable modular office cabin with custom finish" },
+              { src: "/Prefab solutions/work/saman-prefab-container-office-unit.webp", alt: "Saman prefab container office unit ready for delivery" },
+              { src: "/Prefab solutions/work/portable-cabin-site-office-bangalore.webp", alt: "Portable cabin site office setup in Bangalore by Saman Portable" },
+              { src: "/Prefab solutions/work/container-office-exterior-india.webp", alt: "Modern container office exterior for industrial use in India" },
+              { src: "/Prefab solutions/work/prefab-cabin-installation-worksite.webp", alt: "Prefab cabin installation at construction worksite by Saman Portable" }
             ].map((image, index) => (
               <div key={index} className="relative group overflow-hidden rounded-xl shadow-lg">
                 <div className="relative h-64 w-full">
                   <Image
-                    src={image}
-                    alt={`Project ${index + 1}`}
+                    src={image.src}
+                    alt={image.alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     unoptimized
