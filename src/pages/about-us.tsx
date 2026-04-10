@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from '@/components/QuoteFormTrigger';
 import Link from 'next/link';
@@ -17,20 +17,29 @@ interface AboutUsProps {
   };
 }
 
-export const getServerSideProps: GetServerSideProps<AboutUsProps> = async () => {
-  // In a real implementation, you might fetch company stats from WordPress
-  const companyStats = {
-    yearsExperience: 15,
-    projectsCompleted: 5000,
-    happyCustomers: 3000,
-    teamMembers: 200,
-  };
+export const getStaticProps: GetStaticProps<AboutUsProps> = async () => {
+  try {
+    // In a real implementation, you might fetch company stats from WordPress
+    const companyStats = {
+      yearsExperience: 15,
+      projectsCompleted: 5000,
+      happyCustomers: 3000,
+      teamMembers: 200,
+    };
 
-  return {
-    props: {
-      companyStats,
-    },
-  };
+    return {
+      props: {
+        companyStats,
+      },
+      revalidate: 3600,
+    };
+  } catch (error) {
+    console.error('Error fetching data for about us page:', error);
+    return {
+      notFound: true,
+      revalidate: 3600,
+    };
+  }
 };
 
 const AboutUs = ({ companyStats }: AboutUsProps) => {

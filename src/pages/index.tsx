@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
@@ -81,7 +81,7 @@ interface HomePageProps {
   recentBlogPosts: LightweightBlogPost[];
 }
 
-export const getServerSideProps: GetServerSideProps<HomePageProps> = async () => {
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   try {
     // Import API functions dynamically to reduce initial bundle
     const { fetchBlogPosts, fetchProductsByCategoryPriority, testWordPressAccessibility, testWordPressAccessibility: testConnect } = await import('@/config/api');
@@ -125,6 +125,7 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
         featuredProducts: lightweightProducts,
         recentBlogPosts: lightweightBlogPosts,
       },
+      revalidate: 3600,
     };
   } catch (error) {
     console.error('Error fetching data for home page:', error);
@@ -133,6 +134,7 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
         featuredProducts: [],
         recentBlogPosts: [],
       },
+      revalidate: 3600,
     };
   }
 };
