@@ -971,7 +971,7 @@ All colors MUST be HSL. Green theme with professional look.
 
     /* Muted colors */
     --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 40%;
 
     /* Accent yellow - Saman accent */
     --accent: 45 100% 60%;

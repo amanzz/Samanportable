@@ -56,10 +56,10 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
 
           <div className="flex items-center gap-4">
             <div className="flex gap-2">
-              <Button onClick={scrollPrev} variant="outline" size="icon" className="rounded-full w-10 h-10 border-gray-300 hover:border-[#0A3D2A] hover:text-[#0A3D2A]">
+              <Button onClick={scrollPrev} variant="outline" size="icon" className="rounded-full w-10 h-10 border-gray-300 hover:border-[#0A3D2A] hover:text-[#0A3D2A]" aria-label="Previous slide">
                 <ChevronLeft className="w-5 h-5" />
               </Button>
-              <Button onClick={scrollNext} variant="outline" size="icon" className="rounded-full w-10 h-10 border-gray-300 hover:border-[#0A3D2A] hover:text-[#0A3D2A]">
+              <Button onClick={scrollNext} variant="outline" size="icon" className="rounded-full w-10 h-10 border-gray-300 hover:border-[#0A3D2A] hover:text-[#0A3D2A]" aria-label="Next slide">
                 <ChevronRight className="w-5 h-5" />
               </Button>
             </div>
