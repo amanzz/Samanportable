@@ -29,6 +29,16 @@ export const API_CONFIG = {
   RETRY_ATTEMPTS: 2, // Number of retry attempts
 };
 
+// Standard headers for API requests to bypass security firewalls
+function getApiHeaders() {
+  return {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'User-Agent': 'Saman-Portable-Website/1.0',
+  };
+}
+
+
 // Lightweight product interface for category pages
 export interface LightweightProduct {
   id: number;
@@ -211,11 +221,9 @@ export async function testWordPressAccessibility(): Promise<boolean> {
     
     const response = await fetch(testUrl, {
       method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'User-Agent': 'Saman-Portable-Website/1.0',
-      },
+      headers: getApiHeaders(),
     });
+
     
     if (response.ok) {
       const data = await response.json();
@@ -235,11 +243,9 @@ export async function testWooCommerceConnection(): Promise<boolean> {
     
     const response = await fetch(testUrl, {
       method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'User-Agent': 'Saman-Portable-Website/1.0',
-      },
+      headers: getApiHeaders(),
     });
+
     
     if (response.ok) {
       const data = await response.json();
@@ -298,9 +304,11 @@ export async function fetchProducts(
           const categoryResponse = await fetch(
             `${API_CONFIG.WC_BASE_URL}/products/categories?consumer_key=${API_CONFIG.WC_CONSUMER_KEY}&consumer_secret=${API_CONFIG.WC_CONSUMER_SECRET}&slug=${filters.category}`,
             {
+              headers: getApiHeaders(),
               next: { revalidate: 3600 },
             }
           );
+
           
           if (categoryResponse.ok) {
             const categories = await categoryResponse.json();
@@ -350,8 +358,10 @@ export async function fetchProducts(
     const apiUrl = `${API_CONFIG.WC_BASE_URL}/products?${params.toString()}`;
 
     const response = await fetch(apiUrl, {
+      headers: getApiHeaders(),
       next: { revalidate: 300 }, // Revalidate every 5 minutes
     });
+
     
     if (!response.ok) {
       const errorText = await response.text();
@@ -399,9 +409,11 @@ export async function fetchProduct(slug: string): Promise<WooCommerceProduct | n
     const response = await fetch(
       `${API_CONFIG.WC_BASE_URL}/products?slug=${slug}&consumer_key=${API_CONFIG.WC_CONSUMER_KEY}&consumer_secret=${API_CONFIG.WC_CONSUMER_SECRET}&_embed`,
       {
+        headers: getApiHeaders(),
         next: { revalidate: 300 },
       }
     );
+
     
     if (!response.ok) {
       throw new Error(`Failed to fetch product: ${response.status}`);
@@ -430,12 +442,10 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
     
     const response = await fetch(apiUrl, {
       method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'User-Agent': 'Saman-Portable-Website/1.0',
-      },
+      headers: getApiHeaders(),
       next: { revalidate: API_CONFIG.CACHE_DURATION_LONG / 1000 }, // Cache for 15 minutes
     });
+
 
     if (!response.ok) {
       return null;
@@ -600,13 +610,10 @@ export async function fetchBlogPosts(page = 1, perPage = API_CONFIG.BLOG_PER_PAG
     
     const response = await fetch(url, {
       method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'User-Agent': 'Saman-Portable-Website/1.0',
-      },
+      headers: getApiHeaders(),
       next: { revalidate: 300 } // Cache for 5 minutes
     });
+
 
     if (!response.ok) {
       throw new Error(`Failed to fetch blog posts: ${response.status}`);
@@ -652,14 +659,19 @@ export async function getFeaturedImageUrl(mediaId: number): Promise<string | nul
   if (!mediaId) return null;
   
   try {
-    const response = await fetch(`${API_CONFIG.BLOG_API_ENDPOINT}/media/${mediaId}`);
+    const response = await fetch(`${API_CONFIG.BLOG_API_ENDPOINT}/media/${mediaId}`, {
+      headers: getApiHeaders(),
+    });
     if (response.ok) {
       const media = await response.json();
       return media.source_url || null;
+    } else {
+      console.warn(`Failed to fetch media ${mediaId}: ${response.status}`);
     }
   } catch (error) {
-    // Silent error handling for production
+    console.error(`Error fetching featured image ${mediaId}:`, error);
   }
+
   return null;
 }
 
@@ -668,9 +680,11 @@ export async function fetchBlogPost(slug: string) {
     const response = await fetch(
       `${API_CONFIG.BLOG_API_ENDPOINT}/posts?slug=${slug}&_embed`,
       {
+        headers: getApiHeaders(),
         next: { revalidate: 300 },
       }
     );
+
     
     if (!response.ok) {
       throw new Error(`Failed to fetch blog post: ${response.status}`);
@@ -689,9 +703,11 @@ export async function fetchProductCategories() {
     const response = await fetch(
       `${API_CONFIG.WC_BASE_URL}/products/categories?consumer_key=${API_CONFIG.WC_CONSUMER_KEY}&consumer_secret=${API_CONFIG.WC_CONSUMER_SECRET}&per_page=20&hide_empty=true&_fields=id,name,slug,count`,
       {
+        headers: getApiHeaders(),
         next: { revalidate: 3600 }, // Revalidate every hour
       }
     );
+
     
     if (!response.ok) {
       throw new Error(`Failed to fetch product categories: ${response.status}`);
@@ -716,9 +732,11 @@ export async function fetchProductsByCategory(
     const categoriesResponse = await fetch(
       `${API_CONFIG.WC_BASE_URL}/products/categories?consumer_key=${API_CONFIG.WC_CONSUMER_KEY}&consumer_secret=${API_CONFIG.WC_CONSUMER_SECRET}&slug=${categorySlug}`,
       {
+        headers: getApiHeaders(),
         next: { revalidate: 3600 },
       }
     );
+
     
     if (!categoriesResponse.ok) {
       throw new Error(`Failed to fetch category: ${categoriesResponse.status}`);
@@ -770,9 +788,11 @@ export async function fetchProductAttributes() {
     const response = await fetch(
       `${API_CONFIG.WC_BASE_URL}/products/attributes?consumer_key=${API_CONFIG.WC_CONSUMER_KEY}&consumer_secret=${API_CONFIG.WC_CONSUMER_SECRET}&per_page=10&_fields=id,name,options`,
       {
+        headers: getApiHeaders(),
         next: { revalidate: 3600 },
       }
     );
+
     
     if (!response.ok) {
       throw new Error(`Failed to fetch product attributes: ${response.status}`);
@@ -876,9 +896,11 @@ export async function fetchLightweightProductsByCategory(
     const categoriesResponse = await fetch(
       `${API_CONFIG.WC_BASE_URL}/products/categories?consumer_key=${API_CONFIG.WC_CONSUMER_KEY}&consumer_secret=${API_CONFIG.WC_CONSUMER_SECRET}&slug=${categorySlug}`,
       {
+        headers: getApiHeaders(),
         next: { revalidate: 3600 },
       }
     );
+
     
     if (!categoriesResponse.ok) {
       throw new Error(`Failed to fetch category: ${categoriesResponse.status}`);
@@ -915,8 +937,10 @@ export async function fetchLightweightProductsByCategory(
     const apiUrl = `${API_CONFIG.WC_BASE_URL}/products?${params.toString()}`;
 
     const response = await fetch(apiUrl, {
+      headers: getApiHeaders(),
       next: { revalidate: 300 }, // Revalidate every 5 minutes
     });
+
     
     if (!response.ok) {
       const errorText = await response.text();
@@ -997,9 +1021,11 @@ export async function fetchLightweightProduct(slug: string): Promise<Lightweight
     const response = await fetch(
       `${API_CONFIG.WC_BASE_URL}/products?${params.toString()}`,
       {
+        headers: getApiHeaders(),
         next: { revalidate: 300 },
       }
     );
+
     
     if (!response.ok) {
       throw new Error(`Failed to fetch product: ${response.status}`);
@@ -1045,9 +1071,11 @@ export async function fetchProductDescription(slug: string): Promise<{ descripti
     const response = await fetch(
       `${API_CONFIG.WC_BASE_URL}/products?${params.toString()}`,
       {
+        headers: getApiHeaders(),
         next: { revalidate: 300 },
       }
     );
+
     
     if (!response.ok) {
       throw new Error(`Failed to fetch product description: ${response.status}`);
