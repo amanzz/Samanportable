@@ -64,6 +64,7 @@ interface LightweightProduct {
   on_sale: boolean;
   featured_image: string;
   category: string;
+  category_slug: string;
 }
 
 interface LightweightBlogPost {
@@ -103,7 +104,8 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
       sale_price: product.sale_price,
       on_sale: product.on_sale,
       featured_image: product.images[0]?.src || '',
-      category: product.categories[0]?.name || 'Uncategorized',
+      category: product.category_name || (product.categories && product.categories[0]?.name) || 'Uncategorized',
+      category_slug: product.category_slug || (product.categories && product.categories[0]?.slug) || 'uncategorized',
     }));
 
     // Fetch recent blog posts server-side (12 items for slider)

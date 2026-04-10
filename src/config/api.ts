@@ -108,6 +108,8 @@ export interface WooCommerceProduct {
   };
   date_created: string;
   date_modified: string;
+  category_slug?: string;
+  category_name?: string;
 }
 
 export interface ProductFilters {
@@ -812,7 +814,13 @@ export async function fetchProductsByCategoryPriority(
       try {
         const categoryResponse = await fetchProductsByCategory(categorySlug, 1, 20, additionalFilters);
         if (categoryResponse.products && categoryResponse.products.length > 0) {
-          allProducts = [...allProducts, ...categoryResponse.products];
+          // Inject category info if missing to ensure correct routing
+          const productsWithCategory = categoryResponse.products.map(product => ({
+            ...product,
+            category_slug: product.category_slug || categorySlug,
+            category_name: product.category_name || (product.categories && product.categories[0]?.name) || categorySlug.replace(/-/g, ' ')
+          }));
+          allProducts = [...allProducts, ...productsWithCategory];
           totalProducts += categoryResponse.pagination?.totalProducts || 0;
         }
       } catch (error) {

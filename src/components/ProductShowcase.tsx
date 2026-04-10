@@ -15,6 +15,7 @@ interface LightweightProduct {
   on_sale: boolean;
   featured_image: string;
   category: string;
+  category_slug?: string;
 }
 
 interface ProductShowcaseProps {
