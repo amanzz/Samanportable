@@ -31,7 +31,7 @@ const MobileLCPOptimizer = () => {
 
       // Preload critical images for mobile viewport
       const criticalImages = [
-        '/container-office-by-saman (1).jpg'
+        '/container-office-by-saman-1.webp'
       ];
 
       criticalImages.forEach(image => {

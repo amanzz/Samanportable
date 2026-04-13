@@ -117,7 +117,7 @@ const ContainerOffice20x8Rental = () => {
                 <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-8">
                   <div className="aspect-video bg-white rounded-xl shadow-lg overflow-hidden">
                     <Image 
-                      src="/container-office-by-saman (1).jpg" 
+                      src="/container-office-by-saman-1.webp" 
                       alt="20×8 Container Office"
                       width={800}
                       height={450}
