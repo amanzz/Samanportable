@@ -69,7 +69,8 @@ const HeroSection = () => {
               fill
               priority={true} // Priority on for LCP
               className="object-cover"
-              quality={90}
+              quality={60}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             />
           </motion.div>
         </AnimatePresence>
