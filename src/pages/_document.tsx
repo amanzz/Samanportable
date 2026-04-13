@@ -95,7 +95,6 @@ export default function Document() {
               }
               .hero-section-responsive {
                 contain: layout style paint;
-                content-visibility: auto;
                 font-family: 'Inter', system-ui, -apple-system, sans-serif;
               }
               .hero-text-shadow {

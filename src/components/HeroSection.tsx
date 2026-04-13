@@ -14,7 +14,6 @@ const QuoteForm = dynamic(() => import('./QuoteForm'), {
       className="w-full h-[360px] rounded-xl bg-white/5 border border-white/10 animate-pulse"
       style={{
         contain: 'layout style paint',
-        contentVisibility: 'auto',
         containIntrinsicSize: '600px 500px'
       }}
     />
@@ -51,8 +50,7 @@ const HeroSection = () => {
     <section
       className="min-h-screen flex items-center justify-center relative overflow-hidden hero-section-responsive"
       style={{
-        contain: 'layout style paint',
-        contentVisibility: 'auto'
+        contain: 'layout style paint'
       }}
     >
       <div className="absolute inset-0 z-0">
@@ -89,7 +87,6 @@ const HeroSection = () => {
                 className="font-bold text-3xl md:text-5xl lg:text-6xl mb-4 tracking-tight hero-text-shadow leading-tight text-white"
                 style={{
                   contain: 'layout style paint',
-                  contentVisibility: 'auto',
                   willChange: 'auto'
                 }}
               >
@@ -106,8 +103,7 @@ const HeroSection = () => {
             <p
               className="text-base md:text-lg lg:text-xl text-gray-200 mb-8 max-w-2xl leading-relaxed"
               style={{
-                contain: 'layout style paint',
-                contentVisibility: 'auto'
+                contain: 'layout style paint'
               }}
             >
               Experience India’s fastest-delivered modular cabins, built with MS steel and wooden, eco-smart engineering, and backed by ISO-certified quality. From site offices to luxury prefab homes, we craft durable, relocatable spaces that last.
@@ -117,8 +113,7 @@ const HeroSection = () => {
             <div
               className="flex flex-col sm:flex-row gap-3 md:gap-4"
               style={{
-                contain: 'layout style paint',
-                contentVisibility: 'auto'
+                contain: 'layout style paint'
               }}
             >
               <QuoteFormTrigger
@@ -144,7 +139,6 @@ const HeroSection = () => {
           <div
             className="hero-form-container"
             style={{
-              contentVisibility: 'auto',
               containIntrinsicSize: '600px 500px',
               contain: 'layout style paint'
             }}
