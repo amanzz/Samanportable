@@ -79,6 +79,10 @@ export default function RefundAndReturnPolicyPage() {
                   
                   <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Eligibility for Returns</h4>
                   <p className="text-slate-700 mb-4">
+                    Returns are accepted within 7 days for defective products only. 
+                    For non-defective products, returns are not accepted.
+                  </p>
+                  <p className="text-slate-700 mb-4">
                     Products may be returned under the following conditions:
                   </p>
                   <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
