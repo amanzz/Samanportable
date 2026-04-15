@@ -55,24 +55,38 @@ const HeroSection = () => {
     >
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode='popLayout'>
-          <motion.div
-            key={currentImageIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }} // Smooth 1.5s transition
-            className="absolute inset-0"
-          >
-            <Image
-              src={heroImages[currentImageIndex].src}
-              alt={heroImages[currentImageIndex].alt}
-              fill
-              priority={true} // Priority on for LCP
-              className="object-cover"
-              quality={60}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-            />
-          </motion.div>
+          {currentImageIndex === 0 ? (
+            <div className="absolute inset-0">
+              <Image
+                src={heroImages[0].src}
+                alt={heroImages[0].alt}
+                fill
+                priority={true}
+                quality={60}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <motion.div
+              key={currentImageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={heroImages[currentImageIndex].src}
+                alt={heroImages[currentImageIndex].alt}
+                fill
+                priority={false}
+                quality={60}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                className="object-cover"
+              />
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
 
