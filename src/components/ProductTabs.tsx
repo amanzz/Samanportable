@@ -26,7 +26,7 @@ import {
   Heart,
   Bookmark
 } from 'lucide-react';
-// FAQSchema removed as it's not being used
+import FAQSchema from './FAQSchema';
 import OptimizedContent from './OptimizedContent';
 import { replaceInternalLinks } from '../utils/imageReplacement';
 
@@ -113,7 +113,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({ productTitle, faqs }) => {
 
   return (
     <div className="space-y-6">
-    <div className="space-y-4">
+      <FAQSchema faqs={faqs && faqs.length > 0 ? faqs : defaultFAQs} productTitle={productTitle} />
+      <div className="space-y-4">
         {(faqs && faqs.length > 0 ? faqs : defaultFAQs).map((faq, index) => (
           <FAQItem
             key={index}
@@ -414,7 +415,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
         <Card className="border-0 shadow-xl overflow-hidden">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-200">
-              <TabsList className="grid w-full grid-cols-3 bg-transparent border-0 h-auto p-0">
+              <TabsList className="grid w-full grid-cols-4 bg-transparent border-0 h-auto p-0">
                 <TabsTrigger 
                   value="description" 
                   className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none border-r border-green-200 transition-all duration-200"
@@ -433,11 +434,19 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
                 </TabsTrigger>
                 <TabsTrigger 
                   value="shipping" 
-                  className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none transition-all duration-200"
+                  className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none border-r border-green-200 transition-all duration-200"
                 >
                   <Truck className="w-5 h-5" />
                   <span className="hidden sm:inline">Shipping</span>
                   <span className="sm:hidden">Ship</span>
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="faq" 
+                  className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none transition-all duration-200"
+                >
+                  <HelpCircle className="w-5 h-5" />
+                  <span className="hidden sm:inline">FAQs</span>
+                  <span className="sm:hidden">FAQ</span>
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -485,7 +494,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
           </div>
         </TabsContent>
 
-              <TabsContent value="shipping" className="mt-0 p-8">
+                <TabsContent value="shipping" className="mt-0 p-8">
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
@@ -498,6 +507,23 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
             </div>
                   <div className="prose prose-lg max-w-none">
               <ShippingInfoContent />
+            </div>
+          </div>
+            </TabsContent>
+
+            <TabsContent value="faq" className="mt-0 p-8">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                      <HelpCircle className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                      <h3 className="text-2xl font-bold text-foreground">Frequently Asked Questions</h3>
+                      <p className="text-muted-foreground">Find answers to common questions about {productTitle}</p>
+              </div>
+            </div>
+                  <div className="prose prose-lg max-w-none">
+              <FAQSection productTitle={productTitle} />
             </div>
           </div>
             </TabsContent>
