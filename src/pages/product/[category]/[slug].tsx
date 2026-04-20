@@ -29,6 +29,8 @@ import { generateProductMetaDescription, generateProductTabContent } from '../..
 import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
+import FAQSchema from '../../../components/FAQSchema';
+import { getDefaultFAQs } from '../../../utils/faqUtils';
 import dynamic from 'next/dynamic';
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -316,6 +318,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
           
           {/* Product Structured Data for Google Merchant Center */}
           <ProductStructuredData product={product} category={category} />
+          
+          {/* FAQ Structured Data for Rich Results */}
+          <FAQSchema faqs={getDefaultFAQs(transformedProduct.title)} productTitle={transformedProduct.title} />
 
           {/* Preload critical images for better performance */}
           <ImagePreloader 
