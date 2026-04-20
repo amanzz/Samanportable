@@ -25,6 +25,7 @@ import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from '@/components/QuoteFormTrigger';
 import QuoteForm from '@/components/QuoteForm';
 import SmartImage from '@/components/SmartImage';
+import FAQSchema from '@/components/FAQSchema';
 
 const PrefabSolutionsPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -308,6 +309,8 @@ const PrefabSolutionsPage = () => {
           `
         }} />
       </Head>
+
+      <FAQSchema faqs={faqData} productTitle="Prefab Solutions" />
 
       {/* Custom Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">

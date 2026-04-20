@@ -26,7 +26,6 @@ import {
   Heart,
   Bookmark
 } from 'lucide-react';
-import FAQSchema from './FAQSchema';
 import OptimizedContent from './OptimizedContent';
 import { replaceInternalLinks } from '../utils/imageReplacement';
 import { getDefaultFAQs } from '../utils/faqUtils';
