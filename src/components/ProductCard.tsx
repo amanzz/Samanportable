@@ -125,7 +125,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <>
-      <div className={`bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group ${
+      <div className={`bg-white rounded-2xl overflow-hidden shadow-[0_4px_15px_-3px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_25px_-5px_rgba(10,61,42,0.1)] transition-all duration-500 border border-gray-100 group ${
         variant === 'compact' ? 'max-w-sm' : variant === 'featured' ? 'max-w-md' : ''
       }`}>
         {/* Product Image Container */}
@@ -134,95 +134,84 @@ const ProductCard: React.FC<ProductCardProps> = ({
         }`}>
           {/* Loading skeleton */}
           {imageLoading && (
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse"></div>
+            <div className="absolute inset-0 bg-gray-100 animate-pulse"></div>
           )}
           
           {/* Product Image */}
           <OptimizedCategoryImage
             src={product.featured_image || product.images?.[0]?.src || '/placeholder.svg'}
             alt={product.images?.[0]?.alt || product.name}
-            className="absolute inset-0 w-full h-full group-hover:scale-110 transition-transform duration-500"
+            className="absolute inset-0 w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
             priority={priority}
             width={400}
             height={300}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
 
-          {/* Badges removed as requested */}
-
-          {/* Category tag moved into card content */}
-
           {/* Quick Actions Overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-            <div className="flex gap-2">
-              <Link href={productUrl}>
-                <Button size="sm" variant="secondary" className="bg-white text-gray-800 hover:bg-gray-100">
-                  Quick View
-                </Button>
-              </Link>
-            </div>
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+            <Link href={productUrl}>
+              <Button size="sm" variant="secondary" className="bg-white text-gray-900 hover:bg-gray-100 font-bold px-6 py-2 rounded-xl shadow-xl transition-all">
+                View Details
+              </Button>
+            </Link>
           </div>
         </div>
 
         {/* Product Content */}
-        <div className={`${variant === 'compact' ? 'p-3' : 'p-4'}`}>
+        <div className={`${variant === 'compact' ? 'p-4' : 'p-6'}`}>
           {/* Category Tag (inside card) */}
-          <div className={`${variant === 'compact' ? 'mb-1' : 'mb-2'}`}>
-            <span className="inline-block bg-emerald-100 text-emerald-800 text-xs font-medium px-2 py-1 rounded-md">
+          <div className={`${variant === 'compact' ? 'mb-2' : 'mb-3'}`}>
+            <span className="inline-block bg-[#0A3D2A]/5 text-[#0A3D2A] text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-lg border border-[#0A3D2A]/10">
               {categoryName}
             </span>
           </div>
           {/* Product Title */}
-          <h3 className={`font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors ${
-            variant === 'compact' ? 'text-sm' : 'text-lg'
+          <h3 className={`font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#0A3D2A] transition-colors leading-tight ${
+            variant === 'compact' ? 'text-base' : 'text-xl'
           }`}>
             {product.name}
           </h3>
 
           {/* Rating */}
           {rating > 0 && variant !== 'compact' && (
-            <div className="flex items-center gap-1 mb-3">
+            <div className="flex items-center gap-1.5 mb-4">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className={`w-4 h-4 ${
+                    className={`w-3.5 h-3.5 ${
                       i < Math.floor(rating) 
                         ? 'text-yellow-400 fill-current' 
-                        : 'text-gray-300'
+                        : 'text-gray-200'
                     }`}
                   />
                 ))}
               </div>
-              <span className="text-sm text-gray-600 ml-1">
+              <span className="text-xs text-gray-500 font-medium">
                 ({ratingCount})
               </span>
             </div>
           )}
 
           {/* Price */}
-          <div className={`${variant === 'compact' ? 'mb-2' : 'mb-4'}`}>
+          <div className={`${variant === 'compact' ? 'mb-4' : 'mb-6'}`}>
             {isOnSale ? (
-              <div className="flex items-center gap-2">
-                <span className={`font-bold text-red-600 ${
-                  variant === 'compact' ? 'text-sm' : 'text-xl'
+              <div className="flex items-center gap-3">
+                <span className={`font-black text-[#0A3D2A] ${
+                  variant === 'compact' ? 'text-lg' : 'text-2xl'
                 }`}>
                   {formatPrice(currentPrice)}
                 </span>
-                <span className={`text-gray-500 line-through ${
+                <span className={`text-gray-400 line-through font-medium ${
                   variant === 'compact' ? 'text-xs' : 'text-sm'
                 }`}>
                   {formatPrice(originalPrice)}
                 </span>
-                {discountPercentage > 0 && variant !== 'compact' && (
-                  <span className="text-xs bg-red-100 text-red-600 px-1 py-0.5 rounded">
-                    {discountPercentage}% OFF
-                  </span>
-                )}
               </div>
             ) : (
-              <span className={`font-bold text-gray-900 ${
-                variant === 'compact' ? 'text-sm' : 'text-xl'
+              <span className={`font-black text-gray-900 ${
+                variant === 'compact' ? 'text-lg' : 'text-2xl'
               }`}>
                 {formatPrice(currentPrice)}
               </span>
@@ -230,53 +219,53 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-2">
-            <Link href={productUrl} className="flex-1">
-              <Button 
-                variant="outline" 
-                className={`w-full border-gray-300 hover:border-emerald-500 hover:text-emerald-600 ${
-                  variant === 'compact' ? 'text-xs py-1' : ''
-                }`}
-              >
-                View Details
-              </Button>
-            </Link>
-            
-            {isProductInCart ? (
-              <Button 
-                disabled 
-                className={`flex-1 bg-emerald-500 text-white ${
-                  variant === 'compact' ? 'text-xs py-1' : ''
-                }`}
-              >
-                <Check className={`${variant === 'compact' ? 'w-3 h-3' : 'w-4 h-4'} mr-2`} />
-                In Cart
-              </Button>
-            ) : (
-              <Button 
-                onClick={() => addItem(getCartItemData())}
-                className={`flex-1 bg-emerald-600 hover:bg-emerald-700 text-white ${
-                  variant === 'compact' ? 'text-xs py-1' : ''
-                }`}
-                disabled={!isInStock}
-              >
-                <ShoppingCart className={`${variant === 'compact' ? 'w-3 h-3' : 'w-4 h-4'} mr-2`} />
-                Add to Cart
-              </Button>
-            )}
-          </div>
-
-          {/* Quote Button */}
-          {variant !== 'compact' && (
+          <div className="flex flex-col gap-2.5">
             <Button 
-              variant="ghost" 
-              className="w-full mt-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50"
               onClick={() => setIsQuoteFormOpen(true)}
+              className={`w-full bg-[#0A3D2A] hover:bg-[#082F20] text-white font-bold h-12 rounded-xl transition-all shadow-lg shadow-[#0A3D2A]/10 ${
+                variant === 'compact' ? 'text-sm' : ''
+              }`}
             >
               <Tag className="w-4 h-4 mr-2" />
-              Get Quote
+              Request Quote
             </Button>
-          )}
+            
+            <div className="flex gap-2">
+              <Link href={productUrl} className="flex-1">
+                <Button 
+                  variant="outline" 
+                  className={`w-full border-gray-200 text-gray-600 font-bold h-11 rounded-xl hover:bg-gray-50 hover:text-[#0A3D2A] hover:border-[#0A3D2A]/20 transition-all ${
+                    variant === 'compact' ? 'text-xs' : 'text-sm'
+                  }`}
+                >
+                  Specs
+                </Button>
+              </Link>
+              
+              {isProductInCart ? (
+                <Button 
+                  disabled 
+                  className={`flex-1 bg-gray-100 text-gray-400 font-bold h-11 rounded-xl ${
+                    variant === 'compact' ? 'text-xs' : 'text-sm'
+                  }`}
+                >
+                  <Check className="w-4 h-4 mr-2" />
+                  In Cart
+                </Button>
+              ) : (
+                <Button 
+                  onClick={() => addItem(getCartItemData())}
+                  className={`flex-1 border border-[#0A3D2A]/20 bg-transparent text-[#0A3D2A] hover:bg-[#0A3D2A] hover:text-white font-bold h-11 rounded-xl transition-all ${
+                    variant === 'compact' ? 'text-xs' : 'text-sm'
+                  }`}
+                  disabled={!isInStock}
+                >
+                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  Add
+                </Button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
       

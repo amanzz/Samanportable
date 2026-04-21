@@ -139,9 +139,9 @@ const DeliveryPolicy = () => {
                   </div>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Requirements</h3>
-                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-6">
-                    <h4 className="font-semibold text-amber-800 mb-3">Important Information</h4>
-                    <ul className="list-disc list-inside text-amber-700 space-y-2 text-sm">
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                    <h4 className="font-semibold text-green-800 mb-3">Important Information</h4>
+                    <ul className="list-disc list-inside text-green-700 space-y-2 text-sm">
                       <li>Clear access to the delivery location (minimum 3 meters width)</li>
                       <li>Level ground surface for proper placement</li>
                       <li>Someone must be present at the delivery location</li>

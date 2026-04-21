@@ -1,46 +1,46 @@
 export const siteConfig = {
-  name: 'Saman Portable Office Solutions',
-  description: 'Premium portable cabins, container offices, and prefab solutions in Bangalore. Quality, durability, and innovation in portable construction.',
+  name: 'Saman Portable',
+  description: 'ISO 9001:2015 certified manufacturer of portable cabins, container offices and prefab structures in Bangalore and Delhi NCR. 21-day delivery. Prices from ₹1.45 Lakh. Get a free quote.',
   url: 'https://www.samanportable.com',
-  ogImage: 'https://www.samanportable.com/og-image.svg',
+  ogImage: 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
   author: 'Saman Portable Office Solutions',
   publisher: 'Saman Portable Office Solutions',
-  keywords: 'portable cabins, container offices, prefab solutions, portable buildings, modular offices, Bangalore, Karnataka, India',
+  keywords: 'portable cabin manufacturer India, container office manufacturer Bangalore, portable cabins Delhi NCR, prefab structures, security cabins, labour colony, container cafe, ISO certified portable cabins, portable cabin price India',
   links: {
     twitter: 'https://twitter.com/samanportable',
     github: 'https://github.com/samanportable',
   },
   contact: {
-    phone: '+91-XXXXXXXXXX',
+    phone: '+91 88616 22859',
     email: 'info@samanportable.com',
-    address: 'Bangalore, Karnataka, India',
+    address: 'Sy No 34/2, near India Oil Petrol Pump, Gopasandra, Bengaluru, Karnataka 560099',
   },
 };
 
 export const defaultSEO = {
-  titleTemplate: '%s | Saman Portable Office Solutions',
-  defaultTitle: 'Saman Portable Office Solutions - Premium Portable Cabins & Container Offices in Bangalore',
+  titleTemplate: '%s | Saman Portable',
+  defaultTitle: 'Portable Cabin & Container Office Manufacturer in Bangalore, Delhi NCR',
   description: siteConfig.description,
   // canonical: siteConfig.url, // Removed to prevent duplicate canonical tags - handled by UnifiedSEO
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: siteConfig.url,
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: 'Portable Cabin & Container Office Manufacturer in Bangalore, Delhi NCR',
+    description: 'ISO 9001:2015 certified manufacturer of portable cabins, container offices and prefab structures in Bangalore and Delhi NCR. 21-day delivery. Prices from ₹1.45 Lakh. Get a free quote.',
     siteName: siteConfig.name,
     images: [
       {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: 'Saman Portable - Portable Cabin & Container Office Manufacturer in Bangalore, Delhi NCR',
       },
     ],
   },
   twitter: {
-    handle: '@samanportable',
-    site: '@samanportable',
+    handle: '@Saman_Portable',
+    site: '@Saman_Portable',
     cardType: 'summary_large_image',
   },
   additionalMetaTags: [
@@ -76,14 +76,14 @@ export const defaultSEO = {
 
 export const pageSEO = {
   home: {
-    title: 'Portable Cabins & Container Offices in Bangalore | Saman Portable',
-    description: 'Buy or rent premium portable cabins, container offices, and prefab structures in Bangalore. Fast delivery, durable build, and custom designs.',
+    title: 'Portable Cabin & Container Office Manufacturer in Bangalore, Delhi NCR',
+    description: 'ISO 9001:2015 certified manufacturer of portable cabins, container offices and prefab structures in Bangalore and Delhi NCR. 21-day delivery. Prices from ₹1.45 Lakh. Get a free quote.',
     canonical: `${siteConfig.url}/`,
-    keywords: 'portable cabins Bangalore, container offices, prefab structures, portable buildings, modular offices, office containers',
+    keywords: 'portable cabin manufacturer India, container office manufacturer Bangalore, portable cabins Delhi NCR, prefab structures, security cabins, labour colony, container cafe, ISO certified portable cabins, portable cabin price India',
   },
   about: {
-    title: 'About Saman Portable | India’s Trusted Modular Construction Leader',
-    description: 'Discover Saman Portable, India’s leading name in portable cabins, container offices, and prefab solutions. 15+ years of innovation, quality, and reliability.',
+    title: 'About Saman Portable | India\'s Trusted Modular Construction Leader',
+    description: 'Discover Saman Portable, India\'s leading name in portable cabins, container offices, and prefab solutions. 15+ years of innovation, quality, and reliability.',
     canonical: `${siteConfig.url}/about-us`,
     keywords: 'about Saman Portable, portable office company, container office manufacturer, prefab solutions provider, Bangalore',
   },

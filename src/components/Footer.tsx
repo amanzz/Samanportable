@@ -123,32 +123,32 @@ const Footer = () => {
             <h3 className="text-white font-bold text-base mb-4 uppercase tracking-wide">Product Categories</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/product-category/portable-cabin" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/product/portable-cabin" className="text-gray-300 hover:text-white transition-colors text-xs">
                   Portable Cabin
                 </Link>
               </li>
               <li>
-                <Link href="/product-category/container-offices" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/product/container-offices" className="text-gray-300 hover:text-white transition-colors text-xs">
                   Container Offices
                 </Link>
               </li>
               <li>
-                <Link href="/product-category/porta-cabins" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/product/porta-cabins" className="text-gray-300 hover:text-white transition-colors text-xs">
                   Porta Cabins
                 </Link>
               </li>
               <li>
-                <Link href="/product-category/labor-colony" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/product/labor-colony" className="text-gray-300 hover:text-white transition-colors text-xs">
                   Labor Colony
                 </Link>
               </li>
               <li>
-                <Link href="/product-category/portable-office" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/product/portable-office" className="text-gray-300 hover:text-white transition-colors text-xs">
                   Portable Office
                 </Link>
               </li>
               <li>
-                <Link href="/product-category/container-cafe" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/product/container-cafe" className="text-gray-300 hover:text-white transition-colors text-xs">
                   Container Cafe
                 </Link>
               </li>

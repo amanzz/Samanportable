@@ -1,5 +1,6 @@
 import React from 'react';
-import { CheckCircle, Shield, Clock, Award, Users, Truck, ArrowRight, Compass, Settings, Factory, ClipboardList, Wrench } from 'lucide-react';
+import { CheckCircle, Shield, Clock, Award, Users, Truck, ArrowRight, Phone, ClipboardCheck, Factory, Wrench, Headphones, Building2, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from './QuoteFormTrigger';
 import Link from 'next/link';
@@ -8,202 +9,188 @@ const WhyChooseUs = () => {
   const reasons = [
     {
       icon: Award,
-      title: 'Quality Assurance',
-      description: 'Every cabin is manufactured under 52 in-house quality checkpoints using German-engineered PUF panels and ISI-certified steel for precision and reliability.'
+      title: '52 Quality Checkpoints',
+      description: 'Every cabin is inspected at 52 stages — from raw material to final wiring test. ISI-certified steel, PUF insulation, no outsourced assembly.',
     },
     {
       icon: Clock,
-      title: 'Quick Delivery',
-      description: 'Our 21-day delivery model—40% faster than the industry average—ensures you get fully finished modular spaces without delays.'
+      title: '21-Day Delivery, Guaranteed',
+      description: 'Our own factory, transport and installation crew — no middlemen, no delays. Your space is ready to use on day 21.',
     },
     {
       icon: Shield,
-      title: 'Durability',
-      description: 'Each structure carries a 25-year structural warranty and withstands 200 km/hr wind loads, ensuring long-term performance in any climate.'
+      title: '25-Year Structural Warranty',
+      description: 'PUF insulation cuts heat by 8–12°C. Wind-rated to 200 km/hr. Galvanised roof handles heavy monsoon. We back it with a 25-year warranty.',
     },
     {
       icon: Users,
-      title: 'Expert Team',
-      description: 'A skilled team of certified engineers, designers, and technicians brings 8+ years of experience in modular and prefab innovation.'
+      title: 'Site-Experienced Engineers',
+      description: 'Our team has installed on highway projects, factory floors, rooftops and remote sites. We plan for real constraints — not ideal conditions.',
     },
     {
       icon: Truck,
-      title: 'Installation Service',
-      description: 'We handle everything—from foundation setup to on-site installation—for a seamless, ready-to-use experience anywhere in India.'
+      title: 'We Install It — You Walk In',
+      description: 'No crane, no civil team, no coordination stress. We handle levelling, placement, electrical and fit-out. You walk in and start working.',
     },
     {
-      icon: CheckCircle,
-      title: 'Customer Support',
-      description: 'Our 24/7 customer success team offers real-time project tracking, maintenance, and post-installation assistance to keep your operations running smoothly.'
-    }
+      icon: Headphones,
+      title: 'Support After Delivery',
+      description: 'Warranty claims, maintenance, repairs — we respond. Many clients have been with us since 2017. Our relationship continues long after handover.',
+    },
   ];
 
   const processSteps = [
     {
-      icon: Compass,
-      title: 'Consultation & Design',
-      description: 'We begin with a detailed project discussion to understand your purpose, budget, and site conditions. Our design experts use 3D BIM modeling and structural analysis to visualize your perfect cabin before production.'
+      icon: Phone,
+      step: '01',
+      title: 'Tell Us What You Need',
+      description: 'Call, WhatsApp or fill the form. Share your size, site location and use case. We respond within 24 hours with a fixed-price quote.',
     },
     {
-      icon: Settings,
-      title: 'Material Selection',
-      description: 'Only ISI-certified steel, PUF panels, and fire-resistant insulation make it through our material audit. Each component is chosen for performance, sustainability, and long-term durability.'
+      icon: ClipboardCheck,
+      step: '02',
+      title: 'We Design for Your Site',
+      description: 'Our engineers create a layout based on your dimensions and access. You approve design, spec and price before anything is built.',
     },
     {
       icon: Factory,
-      title: 'Manufacturing & Check',
-      description: 'At our Bangalore facility, automated cutting and precision welding robots ensure ±2 mm accuracy. Every unit passes through 52 internal inspections under ISO 9001:2015 protocols.'
+      step: '03',
+      title: 'Factory Manufacturing',
+      description: 'Built at our Bengaluru or Greater Noida facility. Steel cutting, welding, panels, wiring — all under controlled quality conditions.',
     },
     {
       icon: Truck,
+      step: '04',
       title: 'Delivery & Installation',
-      description: 'Your modular structure is shipped and installed within 21 days. Our team manages on-site setup, foundation alignment, and finishing for immediate occupancy.'
+      description: 'Our crew brings your cabin to site and handles placement, levelling, electrical connection and final fit-out. No outside help needed.',
     },
     {
-      icon: ClipboardList,
-      title: 'Final Inspection & Handover',
-      description: 'Before handover, our engineers perform a full structural, electrical, and safety audit. Only after client approval do we certify the project as complete.'
+      icon: CheckCircle,
+      step: '05',
+      title: 'You Inspect & Approve',
+      description: 'Walk through with our supervisor. Check every fitting, switch and panel. We fix anything on the spot. Handover on your written approval.',
     },
     {
       icon: Wrench,
-      title: 'Lifetime Support',
-      description: 'Our service team provides 24/7 maintenance, upgrades, and warranty support throughout your cabin’s lifecycle. With Saman Portable, your investment stays protected for decades.'
-    }
+      step: '06',
+      title: 'Ongoing Support',
+      description: '25-year structural warranty begins. If anything needs attention — call us. We respond and resolve. Long-term relationship guaranteed.',
+    },
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-gray-50 to-white overflow-hidden relative">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-50">
-        <div className="absolute top-[10%] left-[-5%] w-[30%] h-[30%] bg-green-50/50 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-blue-50/50 rounded-full blur-3xl"></div>
-      </div>
+    <section className="py-16 md:py-32 bg-white overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-      <div className="max-w-7xl mx-auto container-padding relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-[#0A3D2A]/10 text-[#0A3D2A] font-semibold text-sm tracking-wide uppercase">
-            Why Choose Us
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
-            India’s Next-Generation <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A3D2A] to-[#145C41]">Modular Space Innovator</span>
-          </h2>
-
-          <div className="max-w-5xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative mb-24">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0A3D2A] text-white px-6 py-2 rounded-full font-semibold text-sm shadow-lg">
-              Engineering Success Stories
-            </div>
-            <div className="grid md:grid-cols-2 gap-8 text-left">
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p className="font-medium text-gray-900 text-lg">
-                  Beyond Building Cabins, We Engineer Success Stories.
-                </p>
-                <p>
-                  At Saman Portable, we redefine modular construction through precision, technology, and trust. Since 2016, we’ve delivered 500+ high-performance portable cabins and container offices across 15+ Indian states, earning a 98.7% on-time delivery record.
-                </p>
-                <p>
-                  Our 21-day delivery promise outpaces industry timelines by 40%, powered by automated production lines and 52 quality checkpoints. Each structure is built using German-engineered PUF panels, ISI-marked steel, and European insulation systems, backed by a 25-year structural warranty.
-                </p>
-              </div>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  The exclusive ThermoShield™ climate system ensures comfort from –20°C to 50°C, reducing energy use by up to 35%. We’re also India’s first manufacturer to integrate IoT-enabled monitoring, allowing real-time tracking through a mobile dashboard.
-                </p>
-                <p>
-                  Certified under ISO 9001:2015 and ISO 14001:2015, we maintain GRIHA-approved sustainability standards. Our carbon-negative approach saves over 2.5 tons of CO₂ per project.
-                </p>
-                <p className="font-medium text-[#0A3D2A]">
-                  Trusted by Tech Mahindra, JSW Steel, and Prestige Group, we remain India’s most awarded prefab brand.
-                </p>
-              </div>
-            </div>
-          </div>
-
-
+        {/* ─── WHY CHOOSE US ─── */}
+        <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10"
+          >
+            Why Choose Saman
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
+          >
+            The B2B Standard for <span className="text-[#0A3D2A]">Portable Solutions</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light"
+          >
+            Over 500+ corporate clients trust us for critical site infrastructure. Built to last, delivered on time.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {reasons.map((reason, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
-              <div className="flex items-start space-x-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#0A3D2A] to-[#145C41] rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <reason.icon className="w-7 h-7 text-white" />
+        {/* Reason cards - Enhanced Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+          {reasons.map((reason, index) => {
+            const Icon = reason.icon;
+            return (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-[#F8FAF9] rounded-2xl md:rounded-[2rem] p-6 md:p-8 border border-gray-100 hover:border-[#0A3D2A]/20 hover:shadow-2xl hover:shadow-[#0A3D2A]/5 transition-all duration-500 group relative"
+              >
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#0A3D2A] transition-colors duration-500">
+                  <Icon className="w-6 h-6 text-[#0A3D2A] group-hover:text-white transition-colors duration-500" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0A3D2A] transition-colors">
-                    {reason.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {reason.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#0A3D2A] transition-colors">
+                  {reason.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  {reason.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
-        <div className="text-center mb-24">
-          <div className="bg-[#0A3D2A] rounded-3xl p-10 md:p-16 text-white text-center relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
-                Ready to Build Your Space?
-              </h3>
-              <p className="text-lg md:text-xl mb-10 text-white/90 leading-relaxed font-light">
-                Join 500+ satisfied clients who chose Saman Portable for their modular needs. Get a free consultation and quote today.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-5 justify-center">
-                <QuoteFormTrigger variant="white" size="lg" className="px-10 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 font-semibold text-[#0A3D2A]">
-                  Get Free Quote
-                </QuoteFormTrigger>
-                <Link href="/gallery">
-                  <Button variant="outline" size="lg" className="px-10 py-6 text-lg rounded-xl border-2 border-white text-white hover:bg-white hover:text-[#0A3D2A] bg-transparent transition-all hover:scale-105 font-semibold">
-                    View Portfolio
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-              </div>
+        {/* ─── PROCESS SECTION - Enhanced ─── */}
+        <div className="relative pt-12 md:pt-20 pb-12 md:pb-16 px-6 md:px-16 rounded-2xl md:rounded-[3rem] bg-[#0A3D2A]/[0.02] border border-[#0A3D2A]/5 overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0A3D2A]/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+          
+          <div className="text-center mb-20 relative z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10">
+              Our Methodology
             </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+              A Seamless <span className="text-[#0A3D2A]">6-Step Journey</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-xl mx-auto font-light">
+              We handle the complexity, you handle your business. From initial consultation to final handover.
+            </p>
           </div>
-        </div>
 
-        {/* Our Process Section */}
-        <div className="text-center relative">
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-[#0A3D2A]/10 text-[#0A3D2A] font-semibold text-sm tracking-wide uppercase">
-            Workflow TO Success
-          </div>
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our Process – <span className="text-[#0A3D2A]">Precision at Every Step</span>
-          </h3>
-          <p className="text-gray-600 max-w-3xl mx-auto mb-16 text-lg">
-            From concept to completion, every build follows a tested, transparent workflow used by India&apos;s top infrastructure companies.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-            {/* Connecting Line for Desktop */}
-            <div className="hidden lg:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-transparent via-[#0A3D2A]/20 to-transparent z-0"></div>
-
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative z-10 group">
-                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center text-center group-hover:-translate-y-2">
-                  <div className="w-16 h-16 bg-white border-2 border-[#0A3D2A]/10 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:border-[#0A3D2A] group-hover:bg-[#0A3D2A] transition-all duration-300 relative">
-                    <step.icon className="w-7 h-7 text-[#0A3D2A] group-hover:text-white transition-colors duration-300" />
-                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-xs font-bold text-gray-500 group-hover:bg-white group-hover:text-[#0A3D2A] transition-all shadow-sm">
-                      {index + 1}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
+            {processSteps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <div key={index} className="relative group">
+                  <div className="flex items-start gap-6 h-full">
+                    <div className="flex flex-col items-center">
+                      <div className="w-12 h-12 bg-[#0A3D2A] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#0A3D2A]/20 relative z-10">
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      {index < processSteps.length - 1 && (
+                        <div className="w-0.5 flex-grow bg-gradient-to-b from-[#0A3D2A]/20 to-transparent my-2 hidden md:block" />
+                      )}
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-2xl font-black text-[#0A3D2A]/10 tabular-nums">
+                          {step.step}
+                        </span>
+                        <h4 className="text-lg font-bold text-gray-900 group-hover:text-[#0A3D2A] transition-colors">
+                          {step.title}
+                        </h4>
+                      </div>
+                      <p className="text-sm text-gray-600 leading-relaxed font-light">
+                        {step.description}
+                      </p>
                     </div>
                   </div>
-
-                  <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#0A3D2A] transition-colors">
-                    {step.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {step.description}
-                  </p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
+        </div>
+
+        {/* Bottom trust bar */}
+        <div className="mt-24 pt-12 border-t border-gray-100 flex flex-wrap justify-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+           {/* Add partner logos here if available, otherwise just leave the space or use trust labels */}
+           <div className="text-sm font-bold tracking-[0.3em] uppercase text-gray-400">Trusted by India&apos;s Infrastructure Leaders</div>
         </div>
       </div>
     </section>
@@ -211,4 +198,3 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
-

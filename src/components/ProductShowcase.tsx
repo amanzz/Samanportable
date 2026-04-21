@@ -46,11 +46,14 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
       <div className="max-w-7xl mx-auto container-padding">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Featured Products
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0A3D2A]/10 text-[#0A3D2A] font-semibold text-sm mb-4">
+              Live Product Catalogue
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 tracking-tight">
+              Browse Our Portable Cabins &amp; Container Offices
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl">
-              Discover our premium selection of portable cabins and container offices, designed for modern businesses seeking flexible and sustainable workspace solutions.
+            <p className="text-base text-muted-foreground max-w-xl leading-relaxed">
+              Prices, specs and photos — pulled directly from our product catalogue. Click any product to get full details and request a quote.
             </p>
           </div>
 

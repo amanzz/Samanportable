@@ -149,9 +149,9 @@ export default function RefundAndReturnPolicyPage() {
                   </div>
 
                   <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Return Requirements</h4>
-                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-6">
-                    <h5 className="font-semibold text-amber-800 mb-3">Important Return Conditions</h5>
-                    <ul className="list-disc list-inside text-amber-700 space-y-2 text-sm">
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                    <h5 className="font-semibold text-green-800 mb-3">Important Return Conditions</h5>
+                    <ul className="list-disc list-inside text-green-700 space-y-2 text-sm">
                       <li>Product must be in original condition and packaging</li>
                       <li>All original accessories and documentation must be included</li>
                       <li>Product must not show signs of use, damage, or modification</li>

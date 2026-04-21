@@ -232,51 +232,51 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
         </div>
       </div>
       
-      <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-2xl border border-orange-200 shadow-sm">
+      <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-200 shadow-sm">
         <div className="flex items-center mb-6">
-          <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-600 rounded-xl flex items-center justify-center mr-3">
+          <div className="w-10 h-10 bg-gradient-to-br from-[#0A3D2A] to-emerald-600 rounded-xl flex items-center justify-center mr-3">
             <Shield className="w-5 h-5 text-white" />
           </div>
-          <h4 className="text-lg font-bold text-orange-900">Warranty & Support</h4>
+          <h4 className="text-lg font-bold text-green-900">Warranty & Support</h4>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white/70 p-4 rounded-xl">
-            <h5 className="font-bold text-orange-800 mb-3 flex items-center gap-2">
+            <h5 className="font-bold text-green-800 mb-3 flex items-center gap-2">
               <Award className="w-4 h-4" />
               Warranty Coverage
             </h5>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Star className="w-3 h-3 text-orange-500 fill-current" />
-                <span className="text-sm font-medium text-orange-700">2-year structural warranty</span>
+                <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                <span className="text-sm font-medium text-green-700">2-year structural warranty</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-3 h-3 text-orange-500 fill-current" />
-                <span className="text-sm font-medium text-orange-700">1-year electrical components</span>
+                <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                <span className="text-sm font-medium text-green-700">1-year electrical components</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-3 h-3 text-orange-500 fill-current" />
-                <span className="text-sm font-medium text-orange-700">6-month paint and finish</span>
+                <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                <span className="text-sm font-medium text-green-700">6-month paint and finish</span>
               </div>
             </div>
           </div>
           <div className="bg-white/70 p-4 rounded-xl">
-            <h5 className="font-bold text-orange-800 mb-3 flex items-center gap-2">
+            <h5 className="font-bold text-green-800 mb-3 flex items-center gap-2">
               <Users className="w-4 h-4" />
               After-Sales Support
             </h5>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Star className="w-3 h-3 text-orange-500 fill-current" />
-                <span className="text-sm font-medium text-orange-700">24/7 customer support</span>
+                <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                <span className="text-sm font-medium text-green-700">24/7 customer support</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-3 h-3 text-orange-500 fill-current" />
-                <span className="text-sm font-medium text-orange-700">On-site maintenance service</span>
+                <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                <span className="text-sm font-medium text-green-700">On-site maintenance service</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-3 h-3 text-orange-500 fill-current" />
-                <span className="text-sm font-medium text-orange-700">Spare parts availability</span>
+                <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                <span className="text-sm font-medium text-green-700">Spare parts availability</span>
               </div>
             </div>
           </div>

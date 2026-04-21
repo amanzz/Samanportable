@@ -11,6 +11,7 @@ interface UnifiedSEOProps {
   fallbackDescription?: string;
   fallbackCanonical?: string;
   fallbackOgImage?: string;
+  fallbackOgTitle?: string;
   fallbackOgDescription?: string;
   fallbackTwitterDescription?: string;
   
@@ -32,7 +33,10 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   fallbackTitle,
   fallbackDescription,
   fallbackCanonical,
-  fallbackOgImage = 'https://www.samanportable.com/og-image.svg',
+  fallbackOgImage = 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
+  fallbackOgTitle,
+  fallbackOgDescription,
+  fallbackTwitterDescription,
   keywords,
   author = 'SAMAN Portable Office Solutions',
   publisher = 'SAMAN Portable Office Solutions',
@@ -46,15 +50,15 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   const title = rankMathSEO?.title || fallbackTitle || 'SAMAN Portable Office Solutions';
   
   // Description - Rank Math has highest priority
-  const description = rankMathSEO?.description || fallbackDescription || 'Premium portable cabins, container offices, and prefab solutions in Bangalore';
+  const description = rankMathSEO?.description || fallbackDescription || 'ISO 9001:2015 certified manufacturer of portable cabins, container offices and prefab structures in Bangalore and Delhi NCR.';
   
   // Canonical URL - Rank Math has highest priority
   const canonical = rankMathSEO?.canonical || fallbackCanonical || 'https://www.samanportable.com';
   
   // OpenGraph data - Rank Math has highest priority
-  const ogTitle = rankMathSEO?.og_title || title;
+  const ogTitle = rankMathSEO?.og_title || fallbackOgTitle || title;
   // Create unique OpenGraph description to avoid duplication
-  const ogDescription = rankMathSEO?.og_description || fallbackDescription || `${title} - Premium portable solutions with advanced features and customization options.`;
+  const ogDescription = rankMathSEO?.og_description || fallbackOgDescription || fallbackDescription || `${title} - Premium portable solutions with advanced features and customization options.`;
   const ogImage = rankMathSEO?.og_image || fallbackOgImage;
   const ogUrl = canonical;
   const ogLocale = rankMathSEO?.og_locale || 'en_US';
@@ -62,7 +66,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   // Twitter Card data - Rank Math has highest priority
   const twitterTitle = rankMathSEO?.twitter_title || ogTitle;
   // Create unique Twitter description to avoid duplication
-  const twitterDescription = rankMathSEO?.twitter_description || fallbackDescription || `${title} - Durable and reliable portable structures for your business needs.`;
+  const twitterDescription = rankMathSEO?.twitter_description || fallbackTwitterDescription || ogDescription;
   const twitterImage = rankMathSEO?.twitter_image || ogImage;
   
   // Robots meta - respect noindex/nofollow overrides
@@ -112,7 +116,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
       <meta name="twitter:title" content={twitterTitle} />
       <meta name="twitter:description" content={twitterDescription} />
       <meta name="twitter:image" content={twitterImage} />
-      <meta name="twitter:image:alt" content="Portable Toilet Image" />
+      <meta name="twitter:image:alt" content="Saman Portable - Portable Cabin & Container Office Manufacturer in Bangalore, Delhi NCR" />
       
       {/* Viewport - Format detection is handled globally in _document.tsx */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
