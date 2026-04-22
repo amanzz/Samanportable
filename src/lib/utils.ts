@@ -22,11 +22,7 @@ export function formatNumber(num: number): string {
 }
 
 // Parse WordPress short description to extract table data
-export function parseShortDescriptionTable(shortDescription: string): {
-  size?: string;
-  materials?: string;
-  brand?: string;
-} {
+export function parseShortDescriptionTable(shortDescription: string): Record<string, string> {
   if (!shortDescription) {
     return {};
   }
@@ -43,30 +39,16 @@ export function parseShortDescriptionTable(shortDescription: string): {
     }
 
     const rows = table.querySelectorAll('tr');
-    const result: {
-      size?: string;
-      materials?: string;
-      brand?: string;
-    } = {};
+    const result: Record<string, string> = {};
 
     rows.forEach((row) => {
       const cells = row.querySelectorAll('td');
       if (cells.length >= 2) {
-        const key = cells[0]?.textContent?.trim().toLowerCase();
+        const key = cells[0]?.textContent?.trim();
         const value = cells[1]?.textContent?.trim();
 
         if (key && value) {
-          switch (key) {
-            case 'size':
-              result.size = value;
-              break;
-            case 'materials':
-              result.materials = value;
-              break;
-            case 'brand':
-              result.brand = value;
-              break;
-          }
+          result[key] = value;
         }
       }
     });
@@ -156,53 +138,56 @@ export function extractButtonsFromShortDescription(shortDescription: string): Ar
 }
 
 // Fallback function for server-side rendering (when DOMParser is not available)
-export function parseShortDescriptionTableSSR(shortDescription: string): {
-  size?: string;
-  materials?: string;
-  brand?: string;
-} {
+export function parseShortDescriptionTableSSR(shortDescription: string): Record<string, string> {
   if (!shortDescription) {
     return {};
   }
 
   try {
-    // Simple regex-based parsing for server-side
-    const result: {
-      size?: string;
-      materials?: string;
-      brand?: string;
-    } = {};
+    const result: Record<string, string> = {};
 
-    // Extract all td elements first
-    const tdRegex = /<td[^>]*>([^<]*?)<\/td>/gi;
-    const tdMatches = [];
-    let match;
-
-    while ((match = tdRegex.exec(shortDescription)) !== null) {
-      tdMatches.push(match[1]?.trim());
+    // More robust regex to capture content between <td> tags, even if it contains other tags
+    const trRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+    const tdRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+    
+    let trMatch;
+    while ((trMatch = trRegex.exec(shortDescription)) !== null) {
+      const trContent = trMatch[1];
+      const tdMatches = [];
+      let tdMatch;
+      
+      while ((tdMatch = tdRegex.exec(trContent)) !== null) {
+        // Remove all HTML tags from the cell content and decode entities
+        let text = tdMatch[1].replace(/<[^>]*>/g, '').trim();
+        text = decodeHtmlEntities(text);
+        tdMatches.push(text);
+      }
+      
+      if (tdMatches.length >= 2) {
+        const key = tdMatches[0];
+        const value = tdMatches[1];
+        if (key && value) {
+          result[key] = value;
+        }
+      }
     }
 
-    // Process td elements in pairs (key-value pairs)
-    for (let i = 0; i < tdMatches.length; i += 2) {
-      if (i + 1 < tdMatches.length) {
-        let key = tdMatches[i]?.toLowerCase();
-        let value = tdMatches[i + 1];
-
-        // Use consistent HTML entity decoding for both server and client
-        key = decodeHtmlEntities(key);
-        value = decodeHtmlEntities(value);
-
-        if (key && value) {
-          switch (key) {
-            case 'size':
-              result.size = value;
-              break;
-            case 'materials':
-              result.materials = value;
-              break;
-            case 'brand':
-              result.brand = value;
-              break;
+    // If no <tr> structure was found, try a flat <td> search as fallback
+    if (Object.keys(result).length === 0) {
+      const tdMatches = [];
+      let tdMatch;
+      while ((tdMatch = tdRegex.exec(shortDescription)) !== null) {
+        let text = tdMatch[1].replace(/<[^>]*>/g, '').trim();
+        text = decodeHtmlEntities(text);
+        tdMatches.push(text);
+      }
+      
+      for (let i = 0; i < tdMatches.length; i += 2) {
+        if (i + 1 < tdMatches.length) {
+          const key = tdMatches[i];
+          const value = tdMatches[i + 1];
+          if (key && value) {
+            result[key] = value;
           }
         }
       }

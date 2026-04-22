@@ -615,37 +615,42 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
                         )}
                       </div>
 
-                                                                                           {/* Short Description */}
-                        <div className="space-y-3">
+                          {/* Short Description */}
+                          <div className="space-y-3">
                          
-                        {/* Buttons are now displayed below product images */}
-                         
-                         {/* Product Specifications Table */}
-                         <div className="bg-slate-50 rounded-lg overflow-hidden">
-                           <table className="w-full">
-                             <tbody>
-                               <tr className="border-b border-slate-200">
-                                 <td className="px-3 py-2 font-medium text-foreground bg-slate-100 text-sm">Size</td>
-                                 <td className="px-3 py-2 text-muted-foreground text-sm break-words">
-                                   {isHydrated ? (shortDescriptionData.size || '30\'X10\'X8.6"') : '30\'X10\'X8.6"'}
-                                 </td>
-                               </tr>
-                               <tr className="border-b border-slate-200">
-                                 <td className="px-3 py-2 font-medium text-foreground bg-slate-100 text-sm">Materials</td>
-                                 <td className="px-3 py-2 text-muted-foreground text-sm break-words">
-                                   {isHydrated ? (shortDescriptionData.materials || 'Steel & Wood') : 'Steel & Wood'}
-                                 </td>
-                               </tr>
-                               <tr>
-                                 <td className="px-3 py-2 font-medium text-foreground bg-slate-100 text-sm">Brand</td>
-                                 <td className="px-3 py-2 text-muted-foreground text-sm break-words">
-                                   {isHydrated ? (shortDescriptionData.brand || 'SAMAN Portable') : 'SAMAN Portable'}
-                                 </td>
-                               </tr>
-                             </tbody>
-                           </table>
-                         </div>
-                       </div>
+                          {/* Short Description Content from WordPress */}
+                          {product.short_description && (
+                            <div 
+                              className="text-muted-foreground text-sm leading-relaxed mb-4 short-description-content"
+                              dangerouslySetInnerHTML={{ 
+                                __html: product.short_description 
+                              }}
+                            />
+                          )}
+
+                          {/* Dynamic Specifications Table (only if data is found and not already in description) */}
+                          {Object.keys(shortDescriptionData).length > 0 && !product.short_description?.includes('<table') && (
+                            <div className="bg-slate-50 rounded-lg overflow-hidden border border-slate-200 mb-4">
+                              <table className="w-full">
+                                <tbody>
+                                  {Object.entries(shortDescriptionData).map(([key, value], index, array) => (
+                                    <tr 
+                                      key={key} 
+                                      className={cn(
+                                        index !== array.length - 1 && "border-b border-slate-200"
+                                      )}
+                                    >
+                                      <td className="px-3 py-2 font-semibold text-foreground bg-slate-100/80 text-xs uppercase tracking-wider w-1/3">{key}</td>
+                                      <td className="px-3 py-2 text-muted-foreground text-sm break-words">
+                                        {value}
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          )}
+                          </div>
 
                       {/* Quantity and Actions */}
                       <div className="space-y-3 pt-3 border-t border-slate-200">

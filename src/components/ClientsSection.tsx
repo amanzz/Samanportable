@@ -1,6 +1,8 @@
 import React from 'react';
-import { Star, Quote, Building2, CheckCircle } from 'lucide-react';
+import { Star, Quote, Building2, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
+import { cn } from '@/lib/utils';
 
 const ClientsSection = () => {
   const clients = [
@@ -23,30 +25,48 @@ const ClientsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Rajesh Kumar',
-      company: 'ABC Construction',
-      role: 'Project Director',
+      name: 'Amarnath Babu',
+      company: 'Arvind Infrastructure',
+      role: 'Contracts South',
       rating: 5,
-      project: '12 site office cabins · Karnataka highway project',
-      text: 'All 12 cabins delivered within the promised 7–21 days — exactly as scheduled. PUF insulation keeps interiors comfortable even in May. Our engineers moved in the same day.',
+      project: 'Site office cabins · Karnataka road project',
+      text: 'We ordered 6 cabins for two Karnataka sites. SAMAN coordinated both deliveries together and had everything erected in a single day. Our teams were operational that same evening.',
     },
     {
       id: 2,
-      name: 'Priya Sharma',
-      company: 'XYZ Industries',
-      role: 'Facilities Manager',
-      project: 'Container office · Greater Noida factory',
+      name: 'Harikrishna Pasupuleti',
+      company: 'Azim Premji University, Bangalore',
+      role: 'Leader – Procurement',
+      project: 'Admin office cabin · Azim Premji University campus',
       rating: 5,
-      text: 'Saman handled everything — design, electrical, AC fitting, furniture. The finished office looks like a permanent building. Visitors cannot tell the difference.',
+      text: 'Our concern was how a prefab cabin would look on a university campus. Two years later it still looks good, staff use it daily, and we have had zero maintenance calls. Good decision.',
     },
     {
       id: 3,
-      name: 'Amit Patel',
-      company: 'DEF Enterprises',
-      role: 'Operations Head',
-      project: 'Rental cabins · 3 sites across Hyderabad & Chennai',
+      name: 'Sambalingamoorthy S',
+      company: 'URC Construction (P) Ltd, Chennai',
+      role: 'Purchase Manager',
+      project: 'Site cabins · URC Construction project · Chennai',
       rating: 5,
-      text: 'Renting from Saman for two years across three sites. Monthly rental is transparent — delivery, installation and pickup included. No hidden costs. Reliable every time.',
+      text: 'Third supplier I have tried for site cabins. SAMAN is the first where the quote matched the final invoice. Quality was consistent across all units and delivery to Chennai was on schedule.',
+    },
+    {
+      id: 4,
+      name: 'Shantha Kumar',
+      company: 'NCC Limited, Bengaluru',
+      role: 'Purchase Manager',
+      project: 'Multiple orders · NCC construction projects',
+      rating: 5,
+      text: 'We have ordered from SAMAN twice for NCC projects in Bengaluru. Same quality both times, same response time, same billing with no surprises. That consistency is what keeps us coming back.',
+    },
+    {
+      id: 5,
+      name: 'Ashoka A',
+      company: 'HAL India, Bengaluru',
+      role: 'SM – Purchase',
+      project: 'Facility cabins · HAL India · Bengaluru',
+      rating: 5,
+      text: 'HAL has strict procurement standards. SAMAN came prepared — full documentation, material specs, and test certificates provided upfront. Eighteen months of use and not one structural complaint.',
     },
   ];
 
@@ -57,8 +77,48 @@ const ClientsSection = () => {
     '25-year structural warranty on all units',
   ];
 
-  // Duplicate for seamless infinite loop
   const marqueeClients = [...clients, ...clients];
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    align: 'start',
+    skipSnaps: false
+  });
+
+  const [prevBtnEnabled, setPrevBtnEnabled] = React.useState(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = React.useState(false);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
+
+  const scrollPrev = React.useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = React.useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const scrollTo = React.useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
+
+  const onSelect = React.useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setPrevBtnEnabled(emblaApi.canScrollPrev());
+    setNextBtnEnabled(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+
+    // Auto-play logic
+    const autoplay = setInterval(() => {
+      if (emblaApi.canScrollNext()) {
+        emblaApi.scrollNext();
+      } else {
+        emblaApi.scrollTo(0);
+      }
+    }, 5000);
+
+    return () => clearInterval(autoplay);
+  }, [emblaApi, onSelect]);
 
   return (
     <section className="py-16 md:py-28 bg-[#F8FAF9]">
@@ -147,46 +207,83 @@ const ClientsSection = () => {
           ))}
         </div>
 
-        {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <div
-              key={t.id}
-              className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
-            >
-              {/* Stars */}
-              <div className="flex items-center gap-0.5 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-4 h-4 ${i < t.rating ? 'text-yellow-400 fill-current' : 'text-gray-200'}`}
-                  />
-                ))}
-              </div>
+        {/* Testimonials Slider */}
+        <div className="relative group">
+          <div className="overflow-hidden cursor-grab active:cursor-grabbing px-4 -mx-4" ref={emblaRef}>
+            <div className="flex gap-6">
+              {testimonials.map((t) => (
+                <div
+                  key={t.id}
+                  className="flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
+                >
+                  <div className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+                    {/* Stars */}
+                    <div className="flex items-center gap-0.5 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-4 h-4 ${i < t.rating ? 'text-yellow-400 fill-current' : 'text-gray-200'}`}
+                        />
+                      ))}
+                    </div>
 
-              {/* Project badge */}
-              <div className="text-xs font-semibold text-[#0A3D2A] bg-[#0A3D2A]/8 px-3 py-1 rounded-full mb-4 inline-block w-fit">
-                {t.project}
-              </div>
+                    {/* Project badge */}
+                    <div className="text-xs font-semibold text-[#0A3D2A] bg-[#0A3D2A]/8 px-3 py-1 rounded-full mb-4 inline-block w-fit">
+                      {t.project}
+                    </div>
 
-              {/* Quote */}
-              <blockquote className="text-gray-700 leading-relaxed text-sm italic flex-grow mb-5 relative">
-                <Quote className="w-6 h-6 text-gray-200 absolute -top-1 -left-1" />
-                <span className="relative z-10 pl-4">&quot;{t.text}&quot;</span>
-              </blockquote>
+                    {/* Quote */}
+                    <blockquote className="text-gray-700 leading-relaxed text-sm italic flex-grow mb-5 relative">
+                      <Quote className="w-6 h-6 text-gray-200 absolute -top-1 -left-1" />
+                      <span className="relative z-10 pl-4">&quot;{t.text}&quot;</span>
+                    </blockquote>
 
-              {/* Author */}
-              <div className="border-t border-gray-100 pt-4 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#0A3D2A]/10 flex items-center justify-center text-[#0A3D2A] font-bold text-sm flex-shrink-0">
-                  {t.name.charAt(0)}
+                    {/* Author */}
+                    <div className="border-t border-gray-100 pt-4 flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-full bg-[#0A3D2A]/10 flex items-center justify-center text-[#0A3D2A] font-bold text-sm flex-shrink-0">
+                        {t.name.charAt(0)}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
+                        <p className="text-xs text-gray-500">{t.role}, {t.company}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
-                  <p className="text-xs text-gray-500">{t.role}, {t.company}</p>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Slider Navigation Buttons */}
+          <button
+            onClick={scrollPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-6 w-10 h-10 rounded-full bg-white border border-gray-100 shadow-lg flex items-center justify-center text-gray-600 hover:text-[#0A3D2A] hover:border-[#0A3D2A] transition-all z-10 opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            disabled={!prevBtnEnabled}
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-6 w-10 h-10 rounded-full bg-white border border-gray-100 shadow-lg flex items-center justify-center text-gray-600 hover:text-[#0A3D2A] hover:border-[#0A3D2A] transition-all z-10 opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            disabled={!nextBtnEnabled}
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {scrollSnaps.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollTo(index)}
+                className={cn(
+                  "w-2 h-2 rounded-full transition-all duration-300",
+                  index === selectedIndex ? "w-8 bg-[#0A3D2A]" : "bg-gray-300 hover:bg-gray-400"
+                )}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* CTA */}

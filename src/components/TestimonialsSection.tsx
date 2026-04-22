@@ -6,24 +6,38 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Rajesh Kumar',
-      company: 'ABC Construction',
+      name: 'Amarnath Babu',
+      company: 'Arvind Infrastructure',
       rating: 5,
-      text: 'Saman Portable delivered our porta cabin office exactly as promised. The quality is exceptional and the installation was smooth. Highly recommended!'
+      text: 'We ordered 6 cabins for two Karnataka sites. SAMAN coordinated both deliveries together and had everything erected in a single day. Our teams were operational that same evening.'
     },
     {
       id: 2,
-      name: 'Priya Sharma',
-      company: 'XYZ Industries',
+      name: 'Harikrishna Pasupuleti',
+      company: 'Azim Premji University, Bangalore',
       rating: 5,
-      text: 'We needed a quick office solution and Saman Portable came through. The container office is perfect for our needs and the team was professional throughout.'
+      text: 'Our concern was how a prefab cabin would look on a university campus. Two years later it still looks good, staff use it daily, and we have had zero maintenance calls. Good decision.'
     },
     {
       id: 3,
-      name: 'Amit Patel',
-      company: 'DEF Enterprises',
+      name: 'Sambalingamoorthy S',
+      company: 'URC Construction (P) Ltd, Chennai',
       rating: 5,
-      text: 'Outstanding service and product quality. Our prefab structure was completed ahead of schedule and exceeded our expectations.'
+      text: 'Third supplier I have tried for site cabins. SAMAN is the first where the quote matched the final invoice. Quality was consistent across all units and delivery to Chennai was on schedule.'
+    },
+    {
+      id: 4,
+      name: 'Shantha Kumar',
+      company: 'NCC Limited, Bengaluru',
+      rating: 5,
+      text: 'We have ordered from SAMAN twice for NCC projects in Bengaluru. Same quality both times, same response time, same billing with no surprises. That consistency is what keeps us coming back.'
+    },
+    {
+      id: 5,
+      name: 'Ashoka A',
+      company: 'HAL India, Bengaluru',
+      rating: 5,
+      text: 'HAL has strict procurement standards. SAMAN came prepared — full documentation, material specs, and test certificates provided upfront. Eighteen months of use and not one structural complaint.'
     }
   ];
 
