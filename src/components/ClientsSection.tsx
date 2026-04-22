@@ -4,12 +4,20 @@ import QuoteFormTrigger from './QuoteFormTrigger';
 
 const ClientsSection = () => {
   const clients = [
-    { name: 'Tech Mahindra', sector: 'IT & Corporate' },
-    { name: 'JSW Steel', sector: 'Manufacturing' },
-    { name: 'Prestige Group', sector: 'Real Estate' },
-    { name: 'L&T Construction', sector: 'Infrastructure' },
-    { name: 'Sobha Developers', sector: 'Real Estate' },
-    { name: 'Brigade Group', sector: 'Real Estate' },
+    { name: 'Embassy Group', sector: 'Real Estate', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09 (1).jpeg' },
+    { name: 'BHEL', sector: 'Infrastructure & Power', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09 (2).jpeg' },
+    { name: 'BOSCH', sector: 'Engineering & Tech', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09 (3).jpeg' },
+    { name: 'BIAL', sector: 'Aviation', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09 (4).jpeg' },
+    { name: 'Indian Oil', sector: 'Energy & Petrochemicals', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09 (5).jpeg' },
+    { name: 'Bharat Electronics', sector: 'Defense & Electronics', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09 (6).jpeg' },
+    { name: 'Shell', sector: 'Energy & Oil', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09 (7).jpeg' },
+    { name: 'TATA', sector: 'Conglomerate', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09 (8).jpeg' },
+    { name: 'Aditya Birla Group', sector: 'Conglomerate', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09 (9).jpeg' },
+    { name: 'AO Smith', sector: 'Manufacturing', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.09.jpeg' },
+    { name: 'Mahindra', sector: 'Automotive & Tech', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.10 (1).jpeg' },
+    { name: "Domino's", sector: 'Food & Beverage', logo: '/client logo/WhatsApp Image 2026-04-21 at 21.47.10.jpeg' },
+    { name: 'URC Construction', sector: 'Infrastructure', logo: '/client logo/WhatsApp Image 2026-04-21 at 22.05.14 (1).jpeg' },
+    { name: 'MFAR', sector: 'Infrastructure', logo: '/client logo/WhatsApp Image 2026-04-21 at 22.05.14.jpeg' },
   ];
 
   const testimonials = [
@@ -20,7 +28,7 @@ const ClientsSection = () => {
       role: 'Project Director',
       rating: 5,
       project: '12 site office cabins · Karnataka highway project',
-      text: 'All 12 cabins delivered within 19 days — two days ahead of schedule. PUF insulation keeps interiors comfortable even in May. Our engineers moved in the same day.',
+      text: 'All 12 cabins delivered within the promised 7–21 days — exactly as scheduled. PUF insulation keeps interiors comfortable even in May. Our engineers moved in the same day.',
     },
     {
       id: 2,
@@ -49,8 +57,26 @@ const ClientsSection = () => {
     '25-year structural warranty on all units',
   ];
 
+  // Duplicate for seamless infinite loop
+  const marqueeClients = [...clients, ...clients];
+
   return (
     <section className="py-16 md:py-28 bg-[#F8FAF9]">
+      {/* CSS keyframe for marquee animation */}
+      <style>{`
+        @keyframes marquee-scroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .clients-marquee-track {
+          animation: marquee-scroll 32s linear infinite;
+          will-change: transform;
+        }
+        .clients-marquee-wrapper:hover .clients-marquee-track {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section header */}
@@ -68,24 +94,46 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        {/* Client Logos */}
+        {/* ── Infinite Auto-Scrolling Logo Marquee ── */}
         <div className="mb-10">
           <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
             Companies We&apos;ve Served
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center hover:border-[#0A3D2A]/30 hover:shadow-md transition-all duration-300 group min-h-[72px]"
-              >
-                <div className="w-8 h-8 rounded-lg bg-[#0A3D2A]/10 flex items-center justify-center mb-2 group-hover:bg-[#0A3D2A]/20 transition-colors">
-                  <Building2 className="w-4 h-4 text-[#0A3D2A]" />
+
+          {/* Outer wrapper: overflow hidden + fade edges with CSS mask */}
+          <div
+            className="clients-marquee-wrapper relative overflow-hidden"
+            style={{
+              maskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+            }}
+          >
+            {/* Scrolling track — contains 2× the logos for a seamless loop */}
+            <div
+              className="clients-marquee-track flex gap-4"
+              style={{ width: 'max-content' }}
+            >
+              {marqueeClients.map((client, index) => (
+                <div
+                  key={index}
+                  className="bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center hover:border-[#0A3D2A]/30 hover:shadow-md transition-all duration-300 group flex-shrink-0"
+                  style={{ width: '140px', minHeight: '120px' }}
+                >
+                  <div className="w-16 h-12 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300">
+                    <img
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      className="max-w-full max-h-full object-contain transition-all duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="text-[11px] font-bold text-gray-700 text-center leading-tight mb-1">
+                    {client.name}
+                  </span>
+                  <span className="text-[9px] text-gray-400 text-center">{client.sector}</span>
                 </div>
-                <span className="text-xs font-bold text-gray-700 text-center leading-tight">{client.name}</span>
-                <span className="text-[10px] text-gray-400 mt-0.5">{client.sector}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 

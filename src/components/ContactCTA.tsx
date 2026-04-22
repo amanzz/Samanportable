@@ -96,7 +96,7 @@ const ContactCTA = () => {
     {
       icon: Clock,
       title: 'Business Hours',
-      value: 'Mon - Sat: 9AM - 6PM',
+      value: 'Mon - Sat: 9:00 AM - 6:00 PM',
       description: 'Sunday: Closed'
     }
   ];

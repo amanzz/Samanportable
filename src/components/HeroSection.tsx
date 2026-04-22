@@ -127,7 +127,7 @@ const HeroSection = () => {
                   ISO 9001:2015 Certified
                 </span>
                 <span className="text-white/40 hidden md:inline">•</span>
-                <span className="text-sm md:text-base font-medium text-white/90">21-Day Delivery</span>
+                <span className="text-sm md:text-base font-medium text-white/90">7–21 Day Delivery</span>
                 <span className="text-white/40 hidden md:inline">•</span>
                 <span className="text-sm md:text-base font-medium text-white/90">25-Year Warranty</span>
               </motion.div>

@@ -66,6 +66,7 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about-us' },
     { name: 'Products', href: '/product' },
+    { name: 'Rental Services', href: '/rental-services' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
@@ -114,56 +115,56 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8 justify-center flex-1">
+            <nav className="hidden lg:flex items-center space-x-6 justify-center flex-1">
               {navigationItems.map((item) => (
-                <NavLink
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground hover:text-primary font-medium transition-colors relative group text-base whitespace-nowrap"
-                >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                </NavLink>
-              ))}
-              
-              {/* Rental Services Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger className="text-foreground hover:text-primary font-medium transition-colors relative group flex items-center text-base whitespace-nowrap">
-                  Rental Services
-                  <ChevronDown className="w-4 h-4 ml-1 transition-transform group-data-[state=open]:rotate-180" />
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-80 bg-white text-gray-900 shadow-lg rounded-md mt-2 z-50 p-2">
-                  {rentalServicesItems.map((category, categoryIndex) => (
-                    <div key={categoryIndex} className="mb-4 last:mb-0">
-                      <h3 className="font-semibold text-primary px-3 py-2 text-sm uppercase tracking-wide">
-                        {category.category}
-                      </h3>
-                      <div className="space-y-1">
-                        {category.items.map((item, itemIndex) => (
-                          <DropdownMenuItem key={itemIndex} className="cursor-pointer p-0">
-                            <Link 
-                              href={item.href}
-                              className="flex items-center px-3 py-2 hover:bg-primary hover:text-white w-full text-left transition-colors rounded-md"
-                            >
-                              <item.icon className="w-4 h-4 mr-3 text-muted-foreground group-hover:text-white" />
-                              {item.name}
-                            </Link>
-                          </DropdownMenuItem>
+                <div key={item.name} className="flex items-center group">
+                  <NavLink
+                    href={item.href}
+                    className="text-foreground hover:text-primary font-medium transition-colors relative group text-base whitespace-nowrap"
+                  >
+                    {item.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                  </NavLink>
+                  
+                  {item.name === 'Rental Services' && (
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className="p-1 hover:text-primary transition-colors focus:outline-none">
+                        <ChevronDown className="w-4 h-4 transition-transform data-[state=open]:rotate-180" />
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="w-80 bg-white text-gray-900 shadow-lg rounded-md mt-2 z-50 p-2 border border-gray-100">
+                        {rentalServicesItems.map((category, categoryIndex) => (
+                          <div key={categoryIndex} className="mb-4 last:mb-0">
+                            <h3 className="font-semibold text-primary px-3 py-2 text-sm uppercase tracking-wide">
+                              {category.category}
+                            </h3>
+                            <div className="space-y-1">
+                              {category.items.map((item, itemIndex) => (
+                                <DropdownMenuItem key={itemIndex} className="cursor-pointer p-0 focus:bg-transparent">
+                                  <Link 
+                                    href={item.href}
+                                    className="flex items-center px-3 py-2 hover:bg-primary hover:text-white w-full text-left transition-colors rounded-md group"
+                                  >
+                                    <item.icon className="w-4 h-4 mr-3 text-muted-foreground group-hover:text-white" />
+                                    {item.name}
+                                  </Link>
+                                </DropdownMenuItem>
+                              ))}
+                            </div>
+                          </div>
                         ))}
-                      </div>
-                    </div>
-                  ))}
-                  <div className="border-t pt-3 mt-3">
-                    <Link 
-                      href="/rental-services"
-                      className="flex items-center px-3 py-2 hover:bg-primary hover:text-white w-full text-left transition-colors rounded-md font-medium"
-                    >
-                      View All Rental Services
-                    </Link>
-                  </div>
-                </DropdownMenuContent>
-              </DropdownMenu>
+                        <div className="border-t pt-3 mt-3">
+                          <Link 
+                            href="/rental-services"
+                            className="flex items-center px-3 py-2 hover:bg-primary hover:text-white w-full text-left transition-colors rounded-md font-medium"
+                          >
+                            View All Rental Services
+                          </Link>
+                        </div>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  )}
+                </div>
+              ))}
             </nav>
 
             {/* CTA Button */}

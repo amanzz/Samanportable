@@ -23,7 +23,7 @@ import { sortProductsByCategoryPriority, debugCategoryPriorities } from '@/utils
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import ProductFilters from '../components/ProductFilters';
 import Pagination from '../components/Pagination';
-import { formatPrice } from '../lib/utils';
+import { formatPriceWithCurrency } from '../lib/utils';
 import OptimizedProductImage from '../components/OptimizedProductImage';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
@@ -522,15 +522,15 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                             {product.on_sale && product.sale_price ? (
                               <>
                                 <span className="text-lg font-bold text-red-600">
-                                  {formatPrice(parseFloat(product.sale_price || product.price))}
+                                  {formatPriceWithCurrency(parseFloat(product.sale_price || product.price))}
                                 </span>
                                 <span className="text-sm text-muted-foreground line-through">
-                                  {formatPrice(parseFloat(product.regular_price || product.price))}
+                                  {formatPriceWithCurrency(parseFloat(product.regular_price || product.price))}
                                 </span>
                               </>
                             ) : (
                               <span className="text-lg font-bold text-foreground">
-                                {formatPrice(parseFloat(product.price))}
+                                {formatPriceWithCurrency(parseFloat(product.price))}
                               </span>
                             )}
                           </div>

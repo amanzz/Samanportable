@@ -21,7 +21,7 @@ const TrustBar = () => {
     },
     {
       icon: Truck,
-      value: '21-Day Delivery',
+      value: '7–21 Day Delivery',
       label: 'Order to Installation',
     },
     {

@@ -5,7 +5,7 @@ export const getDefaultFAQs = (productTitle: string) => [
   },
   {
     question: "How long does installation take?",
-    answer: "Installation is fast and efficient. Once delivered, a portable office cabin can be placed on RCC blocks or strip footing in one to two days. Units arrive prefabricated from the factory, so only utility hookups and inspections remain. Even custom cabins rarely exceed one week for full setup."
+    answer: "Installation is fast and efficient. Standard orders are delivered and fully installed within 7–21 days anywhere in India. Units arrive prefabricated from the factory, so only utility hookups and inspections remain on-site."
   },
   {
     question: "Do I need permits for a portable cabin?",

@@ -17,9 +17,9 @@ const StatsSection = () => {
     },
     {
       icon: Truck,
-      count: '21-Day',
+      count: '7–21 Days',
       label: 'Order to Installation',
-      sublabel: 'Guaranteed timeline',
+      sublabel: 'Standard timeline',
     },
     {
       icon: Calendar,

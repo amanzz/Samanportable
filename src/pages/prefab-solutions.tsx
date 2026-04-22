@@ -173,7 +173,7 @@ const PrefabSolutionsPage = () => {
   const comparisonData = [
     {
       feature: "Construction Time",
-      prefab: "2-4 weeks",
+      prefab: "7–21 days",
       traditional: "3-6 months",
       advantage: "50% faster"
     },
@@ -239,7 +239,7 @@ const PrefabSolutionsPage = () => {
   const faqData = [
     {
       question: "How long does it take to complete a prefab project?",
-      answer: "Most prefab projects can be completed in 2-4 weeks, which is significantly faster than traditional construction methods that typically take 3-6 months."
+      answer: "Most prefab projects can be completed in 7–21 days, which is significantly faster than traditional construction methods that typically take 3-6 months."
     },
     {
       question: "Are prefab structures as durable as traditional buildings?",
@@ -267,7 +267,7 @@ const PrefabSolutionsPage = () => {
     <div className="page-container min-h-screen overflow-x-hidden">
       <Head>
         <title>Container Office Manufacturer India | Porta Cabin Supplier | Saman Portable</title>
-        <meta name="description" content="India&apos;s #1 Container Office & Porta Cabin Manufacturer. Ready in 7-15 days. ISI Certified. Free Installation. All India Delivery. Get instant quote for container offices, porta cabins, labor colonies." />
+        <meta name="description" content="India&apos;s #1 Container Office & Porta Cabin Manufacturer. Ready in 7–21 days. ISI Certified. Free Installation. All India Delivery. Get instant quote for container offices, porta cabins, labor colonies." />
         <meta name="keywords" content="prefab solutions India, container offices Bangalore, porta cabins, labor colonies, portable offices, container cafes, prefab construction, modular buildings, construction cabins, healthcare facilities, event spaces, storage solutions, Saman Portable" />
         <meta name="author" content="Saman Portable Office Solutions" />
         <meta name="publisher" content="Saman Portable Office Solutions" />
@@ -412,7 +412,7 @@ const PrefabSolutionsPage = () => {
                   <div className="bg-[#06261A]/10 p-2 rounded-lg">
                     <Check className="w-5 h-5 text-[#06261A]" />
                   </div>
-                  <span className="text-sm md:text-base text-gray-700 font-medium">Ready in 7-15 Days</span>
+                  <span className="text-sm md:text-base text-gray-700 font-medium">Ready in 7–21 Days</span>
                 </div>
                 <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                   <div className="bg-[#06261A]/10 p-2 rounded-lg">

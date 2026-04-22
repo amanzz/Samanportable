@@ -299,7 +299,7 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
 
                     <div className="absolute bottom-8 left-8 right-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                       <h3 className="text-xl font-bold text-white mb-1">{image.title}</h3>
-                      <p className="text-white/60 text-sm font-light">Precision manufactured in 21 days</p>
+                      <p className="text-white/60 text-sm font-light">Precision manufactured in 7–21 days</p>
                     </div>
                   </div>
                 </motion.div>

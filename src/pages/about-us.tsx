@@ -117,7 +117,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                   Saman Portable is India’s trusted name in portable cabins, container offices, and prefab buildings. Since 2016, we’ve been transforming the way businesses and communities build — combining speed, sustainability, and modern design in every structure.
                 </p>
                 <p>
-                  With ISO-certified quality, advanced PUF-panel engineering, and a 21-day delivery promise, we help clients across India create durable, ready-to-use spaces that perform beautifully and last for years.
+                  With ISO-certified quality, advanced PUF-panel engineering, and a 7–21 days delivery promise, we help clients across India create durable, ready-to-use spaces that perform beautifully and last for years.
                 </p>
               </div>
             </div>

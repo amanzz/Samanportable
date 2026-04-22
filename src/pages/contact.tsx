@@ -61,7 +61,7 @@ const ContactPage = () => {
     {
       icon: Clock,
       title: 'Business Hours',
-      details: 'Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 9:00 AM - 2:00 PM'
+      details: 'Monday - Saturday: 9:00 AM - 6:00 PM\nSunday: Closed'
     }
   ];
 
@@ -286,7 +286,7 @@ const ContactPage = () => {
               <div className="bg-card p-6 rounded-lg border">
                 <h3 className="font-semibold text-foreground mb-2">How long does delivery take?</h3>
                 <p className="text-muted-foreground">
-                  Standard delivery times range from 2-4 weeks for custom orders. We also have ready-to-ship options available for immediate delivery.
+                  Standard delivery times range from 7–21 days for custom orders. We also have ready-to-ship options available for immediate delivery.
                 </p>
               </div>
               

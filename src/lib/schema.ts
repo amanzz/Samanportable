@@ -166,7 +166,7 @@ export const getLocalBusinessSchema = () => ({
     "latitude": "13.0450",
     "longitude": "77.5540"
   },
-  "openingHours": "Mo-Sa 09:00-19:00",
+  "openingHours": "Mo-Sa 09:00-18:00",
   "areaServed": [
     "Karnataka", "Tamil Nadu", "Andhra Pradesh", "Telangana", "Kerala",
     "Maharashtra", "Goa", "Gujarat", "Rajasthan", "Delhi NCR",
@@ -212,7 +212,7 @@ export const getHomepageFAQSchema = () => ({
       "@type": "Question",
       "name": "How long does delivery and installation take?",
       "acceptedAnswer": { "@type": "Answer",
-        "text": "Standard orders are delivered and fully installed within 21 calendar days anywhere in India. Includes manufacturing, transport to site, and on-site installation by our team." }
+        "text": "Standard orders are delivered and fully installed within 7–21 days anywhere in India. Includes manufacturing, transport to site, and on-site installation by our team." }
     },
     {
       "@type": "Question",

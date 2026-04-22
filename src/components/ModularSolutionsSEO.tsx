@@ -169,7 +169,7 @@ const ModularSolutionsSEO = () => {
                 Trusted by 500+ <span className="text-emerald-400">Industry Leaders</span>
               </h3>
               <p className="text-white/70 text-lg md:text-xl font-light leading-relaxed">
-                Empowering JSW Steel, Tech Mahindra, and Prestige Group with zero-compromise site infrastructure.
+                Empowering TATA, BIAL, Embassy Group, and 500+ industry leaders with zero-compromise site infrastructure.
               </p>
             </div>
             <div className="flex-shrink-0 w-full lg:w-auto">

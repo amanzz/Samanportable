@@ -10,7 +10,6 @@ import {
   Package, 
   Shield, 
   Clock, 
-  HelpCircle, 
   ChevronDown, 
   ChevronUp, 
   Star,
@@ -28,7 +27,6 @@ import {
 } from 'lucide-react';
 import OptimizedContent from './OptimizedContent';
 import { replaceInternalLinks } from '../utils/imageReplacement';
-import { getDefaultFAQs } from '../utils/faqUtils';
 
 
 interface ProductTabsProps {
@@ -36,98 +34,7 @@ interface ProductTabsProps {
   productTitle: string;
 }
 
-// FAQ Component with beautiful accordion design
-const FAQItem: React.FC<{ question: string; answer: string; isOpen: boolean; onToggle: () => void }> = ({ 
-  question, 
-  answer, 
-  isOpen, 
-  onToggle 
-}) => {
-  return (
-    <div className="group border border-gray-200 rounded-xl overflow-hidden mb-4 bg-white shadow-sm hover:shadow-lg transition-all duration-300 hover:border-primary/20">
-      <button
-        onClick={onToggle}
-        className="w-full px-6 py-5 text-left flex items-center justify-between bg-gradient-to-r from-white to-gray-50 hover:from-primary/5 hover:to-blue-50 transition-all duration-200 group-hover:bg-gradient-to-r group-hover:from-primary/5 group-hover:to-blue-50"
-      >
-        <span className="font-semibold text-gray-900 pr-4 text-left group-hover:text-primary transition-colors duration-200">{question}</span>
-        <div className="flex-shrink-0">
-        {isOpen ? (
-            <ChevronUp className="w-5 h-5 text-primary transition-transform duration-200" />
-        ) : (
-            <ChevronDown className="w-5 h-5 text-gray-500 group-hover:text-primary transition-all duration-200" />
-        )}
-        </div>
-      </button>
-      {isOpen && (
-        <div className="px-6 py-5 bg-gradient-to-r from-gray-50/50 to-white border-t border-gray-100">
-          <div 
-            className="text-gray-700 leading-relaxed prose prose-sm max-w-none [&_p]:mb-3 [&_p]:last:mb-0 [&_ul]:mb-3 [&_ol]:mb-3 [&_li]:mb-1"
-            dangerouslySetInnerHTML={{ __html: answer }}
-          />
-        </div>
-      )}
-    </div>
-  );
-};
 
-// FAQ Section Component
-interface FAQSectionProps {
-  productTitle?: string;
-  faqs?: Array<{ question: string; answer: string }>;
-}
-
-const FAQSection: React.FC<FAQSectionProps> = ({ productTitle, faqs }) => {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-  const defaultFAQs = getDefaultFAQs(productTitle || 'product');
-
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index);
-  };
-
-  return (
-    <div className="space-y-6">
-      <div className="space-y-4">
-        {(faqs && faqs.length > 0 ? faqs : defaultFAQs).map((faq, index) => (
-          <FAQItem
-            key={index}
-            question={faq.question}
-            answer={faq.answer}
-            isOpen={openFAQ === index}
-            onToggle={() => toggleFAQ(index)}
-          />
-        ))}
-      </div>
-      
-      <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-200 shadow-sm">
-        <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
-            <Shield className="w-6 h-6 text-white" />
-        </div>
-          <div className="flex-1">
-            <h4 className="text-lg font-bold text-green-900 mb-2">Quality Guarantee</h4>
-            <p className="text-green-800 leading-relaxed">
-          All our portable cabins come with quality assurance and are manufactured using premium materials with rigorous quality checks.
-        </p>
-            <div className="flex items-center gap-4 mt-4">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-green-600" />
-                <span className="text-sm font-medium text-green-800">Premium Materials</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-green-600" />
-                <span className="text-sm font-medium text-green-800">Quality Tested</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-green-600" />
-                <span className="text-sm font-medium text-green-800">Warranty Included</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) => {
   const [activeTab, setActiveTab] = useState('description');
@@ -195,7 +102,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
             </div>
             <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
               <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-green-800">Delivery time: 7-14 working days</span>
+              <span className="text-sm font-medium text-green-800">Delivery time: 7–21 days</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
               <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
@@ -387,7 +294,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
         <Card className="border-0 shadow-xl overflow-hidden">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-200">
-              <TabsList className="grid w-full grid-cols-4 bg-transparent border-0 h-auto p-0">
+              <TabsList className="grid w-full grid-cols-3 bg-transparent border-0 h-auto p-0">
                 <TabsTrigger 
                   value="description" 
                   className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none border-r border-green-200 transition-all duration-200"
@@ -406,19 +313,11 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
                 </TabsTrigger>
                 <TabsTrigger 
                   value="shipping" 
-                  className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none border-r border-green-200 transition-all duration-200"
+                  className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none transition-all duration-200"
                 >
                   <Truck className="w-5 h-5" />
                   <span className="hidden sm:inline">Shipping</span>
                   <span className="sm:hidden">Ship</span>
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="faq" 
-                  className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none transition-all duration-200"
-                >
-                  <HelpCircle className="w-5 h-5" />
-                  <span className="hidden sm:inline">FAQs</span>
-                  <span className="sm:hidden">FAQ</span>
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -483,22 +382,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
           </div>
             </TabsContent>
 
-            <TabsContent value="faq" className="mt-0 p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
-                      <HelpCircle className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                      <h3 className="text-2xl font-bold text-foreground">Frequently Asked Questions</h3>
-                      <p className="text-muted-foreground">Find answers to common questions about {productTitle}</p>
-              </div>
-            </div>
-                  <div className="prose prose-lg max-w-none">
-              <FAQSection productTitle={productTitle} />
-            </div>
-          </div>
-            </TabsContent>
+
             </div>
           </Tabs>
         </Card>

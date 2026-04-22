@@ -812,7 +812,7 @@ const Checkout = ({ cartItems: dummyCartItems, subtotal: dummySubtotal, tax: dum
                       Fast Delivery
                     </h3>
                     <p className="text-muted-foreground">
-                      Quick installation and setup within 2-4 weeks
+                      Quick installation and setup within 7–21 days
                     </p>
                   </div>
                   

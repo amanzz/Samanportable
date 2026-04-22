@@ -89,14 +89,14 @@ const DeliveryPolicy = () => {
                         <Clock className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
                         <div>
                           <h4 className="font-semibold text-slate-800">Standard Delivery</h4>
-                          <p className="text-slate-700 text-sm">3-5 business days from order confirmation</p>
+                          <p className="text-slate-700 text-sm">7–21 days from order confirmation</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <Clock className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
                         <div>
                           <h4 className="font-semibold text-slate-800">Express Delivery</h4>
-                          <p className="text-slate-700 text-sm">1-2 business days (additional charges apply)</p>
+                          <p className="text-slate-700 text-sm">Priority scheduling available (contact us)</p>
                         </div>
                       </div>
                     </div>
@@ -172,8 +172,8 @@ const DeliveryPolicy = () => {
                         <Truck className="w-6 h-6 text-[#0A3D2A]" />
                         <h4 className="font-semibold text-slate-800">Express Delivery</h4>
                       </div>
-                      <p className="text-slate-700 text-sm">Priority delivery within 24-48 hours for urgent requirements.</p>
-                      <p className="text-[#0A3D2A] font-semibold text-sm mt-2">Additional ₹3,000</p>
+                      <p className="text-slate-700 text-sm">Priority scheduling and accelerated production for urgent requirements.</p>
+                      <p className="text-[#0A3D2A] font-semibold text-sm mt-2">Contact for pricing</p>
                     </div>
                     
                     <div className="bg-slate-50 rounded-lg p-4">

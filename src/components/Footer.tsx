@@ -6,7 +6,8 @@ import {
   Mail, 
   Facebook, 
   Twitter, 
-  Instagram
+  Instagram,
+  Navigation
 } from 'lucide-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
 
@@ -181,6 +182,17 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-white flex-shrink-0" />
                 <p className="text-white text-xs break-all">sales@samanportable.com</p>
               </div>
+              <div className="pt-2">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=SAMAN+Portable+Office+Solutions+Private+Limited+Gopasandra+Bengaluru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 hover:bg-white hover:text-black text-white text-[10px] px-3 py-2 rounded-md transition-all duration-300 font-medium group"
+                >
+                  <Navigation className="w-3 h-3 group-hover:scale-110 transition-transform" />
+                  <span>Get Directions</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -209,6 +221,17 @@ const Footer = () => {
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-white flex-shrink-0" />
                 <p className="text-white text-xs break-all">ncr@samanportable.com</p>
+              </div>
+              <div className="pt-2">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=SAMAN+POS+India+Private+Limited+Jalpura+Greater+Noida"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 hover:bg-white hover:text-black text-white text-[10px] px-3 py-2 rounded-md transition-all duration-300 font-medium group"
+                >
+                  <Navigation className="w-3 h-3 group-hover:scale-110 transition-transform" />
+                  <span>Get Directions</span>
+                </a>
               </div>
             </div>
           </div>

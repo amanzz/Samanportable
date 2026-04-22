@@ -27,7 +27,7 @@ const faqs = [
   {
     question: 'How long does delivery and installation take?',
     answer:
-      'Standard orders are delivered and fully installed within 21 calendar days anywhere in India. This includes manufacturing, transport and on-site installation by our own crew. No crane or civil team required on your end — we handle everything.',
+      'Standard orders are delivered and fully installed within 7–21 days anywhere in India. This includes manufacturing, transport and on-site installation by our own crew. No crane or civil team required on your end — we handle everything.',
   },
   {
     question: 'Can portable cabins withstand Indian weather conditions?',
