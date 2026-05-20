@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+// AUTO-GENERATED CSV redirects (572 entries) – do not edit redirects-from-csv.js by hand.
+const csvRedirects = require('./redirects-from-csv');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -353,6 +355,11 @@ const nextConfig = {
         destination: '/410',
         permanent: true,
       },
+
+      // ─── CSV BULK REDIRECTS (572 entries from spreadsheet) ───────────────
+      // Source: Untitled spreadsheet - Sheet1 (1).csv
+      // Skipped: 7 MERGE rows, 2 conflicts with existing config, 0 duplicates
+      ...csvRedirects,
     ];
 
     // Only add HTTPS and WWW redirects in production
