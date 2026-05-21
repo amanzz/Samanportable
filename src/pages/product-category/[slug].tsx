@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
-import { fetchLightweightProductsByCategory, fetchProductCategories, fetchProductAttributes, fetchCategoryRankMathSEO, RankMathSEOData } from '@/config/api';
+import { fetchLightweightProductsByCategory, fetchProductCategories, fetchProductAttributes, fetchCategoryRankMathSEO, fetchProductCategoryBySlug, RankMathSEOData, ProductCategoryDetail } from '@/config/api';
 import { LightweightProduct, ProductFilters as ProductFiltersType, PaginationInfo } from '@/config/api';
 import ProductCard from '@/components/ProductCard';
 import ProductFilters from '@/components/ProductFilters';
@@ -17,6 +17,8 @@ interface ProductCategoryPageProps {
   products: LightweightProduct[];
   categoryName: string;
   categorySlug: string;
+  categoryDescription: string;
+  categoryExtraDescription: string;
   pagination: PaginationInfo;
   categories: Array<{ id: number; name: string; slug: string; count: number }>;
   attributes: Array<{ id: number; name: string; options: string[] }>;
@@ -39,13 +41,15 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
   }
 
   try {
-    const [productsResponse, categoriesResponse, attributesResponse] = await Promise.all([
+    const [productsResponse, categoriesResponse, attributesResponse, categoryDetail] = await Promise.all([
       fetchLightweightProductsByCategory(slug, 1, 20), // Using optimized function with 20 items per page
       fetchProductCategories(),
       fetchProductAttributes(),
+      fetchProductCategoryBySlug(slug),
     ]);
 
-    const categoryName = productsResponse.products[0]?.category ||
+    const categoryName = categoryDetail?.name ||
+      productsResponse.products[0]?.category ||
       slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'Products';
 
     // Fetch Rank Math SEO data
@@ -61,6 +65,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
         products: productsResponse.products,
         categoryName,
         categorySlug: slug,
+        categoryDescription: categoryDetail?.description || '',
+        categoryExtraDescription: categoryDetail?.extraDescription || '',
         pagination: productsResponse.pagination,
         categories: categoriesResponse,
         attributes: attributesResponse,
@@ -74,6 +80,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
         products: [],
         categoryName: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'Products',
         categorySlug: slug,
+        categoryDescription: '',
+        categoryExtraDescription: '',
         pagination: {
           currentPage: 1,
           totalPages: 0,
@@ -94,6 +102,8 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
   products: initialProducts,
   categoryName: initialCategoryName,
   categorySlug: initialCategorySlug,
+  categoryDescription,
+  categoryExtraDescription,
   pagination: initialPagination,
   categories,
   attributes,
@@ -271,7 +281,6 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
 
             {/* Products Grid */}
             <div className="lg:col-span-3">
-              
               {isLoading ? (
                 <div className="flex items-center justify-center py-12">
                   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0A3D2A]"></div>
@@ -315,6 +324,21 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
               )}
             </div>
           </div>
+
+          {/* Category Descriptions - Rendered at the bottom of the page, before the footer */}
+          {categoryDescription && (
+            <section
+              className="category-description prose max-w-none bg-white rounded-lg p-6 mt-8 border border-gray-200 text-gray-700"
+              dangerouslySetInnerHTML={{ __html: categoryDescription }}
+            />
+          )}
+
+          {categoryExtraDescription && (
+            <section
+              className="category-seo-content prose max-w-none bg-white rounded-lg p-6 mt-6 border border-gray-200 text-gray-700"
+              dangerouslySetInnerHTML={{ __html: categoryExtraDescription }}
+            />
+          )}
         </div>
       </div>
     </Layout>

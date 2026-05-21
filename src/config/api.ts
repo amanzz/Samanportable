@@ -1059,6 +1059,74 @@ export async function fetchLightweightProduct(slug: string): Promise<Lightweight
 }
 
 // Fetch full product description separately (for product detail pages)
+// Common meta keys used by themes for category extra descriptions
+const CATEGORY_EXTRA_DESC_META_KEYS = [
+  'extra_description',
+  'category_extra_desc',
+  '_category_extra_desc',
+  'cat_extra_desc',
+  'term_extra_description',
+  'cat_seo_description',
+];
+
+export interface ProductCategoryDetail {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  extraDescription: string;
+  count: number;
+  image?: {
+    id: number;
+    src: string;
+    alt: string;
+  } | null;
+}
+
+// Fetch a single product category by slug with description and meta data
+export async function fetchProductCategoryBySlug(slug: string): Promise<ProductCategoryDetail | null> {
+  try {
+    const response = await fetch(
+      `${API_CONFIG.WC_BASE_URL}/products/categories?consumer_key=${API_CONFIG.WC_CONSUMER_KEY}&consumer_secret=${API_CONFIG.WC_CONSUMER_SECRET}&slug=${slug}`,
+      {
+        headers: getApiHeaders(),
+        next: { revalidate: 3600 },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch category: ${response.status}`);
+    }
+
+    const categories = await response.json();
+    const category = categories[0] || null;
+    if (!category) return null;
+
+    // Try to find extra description from meta_data
+    let extraDescription = '';
+    const metaData = category.meta_data || [];
+    for (const meta of metaData) {
+      if (CATEGORY_EXTRA_DESC_META_KEYS.includes(meta.key) && meta.value) {
+        extraDescription = meta.value;
+        break;
+      }
+    }
+
+    return {
+      id: category.id,
+      name: category.name,
+      slug: category.slug,
+      description: category.description || '',
+      extraDescription,
+      count: category.count || 0,
+      image: category.image || null,
+    };
+  } catch (error) {
+    console.error('Error fetching product category by slug:', error);
+    return null;
+  }
+}
+
 export async function fetchProductDescription(slug: string): Promise<{ description: string; images: Array<{ src: string; alt: string }> } | null> {
   try {
     const params = new URLSearchParams({
