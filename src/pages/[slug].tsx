@@ -25,7 +25,7 @@ import dynamic from 'next/dynamic';
 
 
 import { fetchBlogPost, BlogPost, fetchBlogPostRankMathSEO, RankMathSEOData } from '../config/api';
-import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema } from '../lib/schema';
+import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 
 interface BlogPostProps {
@@ -511,30 +511,28 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
         keywords={`blog, portable office, container office, prefab solutions, ${post?._embedded?.['wp:term']?.[0]?.[0]?.name || ''}`}
         structuredData={(() => {
           if (!post) return undefined;
-          const schemas: any[] = [
-            generateBlogPostSchema({
+          
+          const isOrgAuthor = !post._embedded?.author?.[0]?.name || post._embedded?.author?.[0]?.name === 'Saman Portable';
+          
+          return generateUnifiedBlogGraph({
+            postSchema: {
               title: decodeHtmlEntities(post.title.rendered),
               description: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)),
               image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/default-blog-image.jpg',
               author: post._embedded?.author?.[0]?.name || 'Saman Portable',
+              authorUrl: isOrgAuthor ? undefined : 'https://www.samanportable.com/about-us',
               datePublished: post.date,
               dateModified: post.modified,
               url: `https://www.samanportable.com/${slug}`,
               category: post._embedded?.['wp:term']?.[0]?.[0]?.name
-            }),
-            generateBreadcrumbSchema([
+            },
+            breadcrumbs: [
               { name: 'Home', url: 'https://www.samanportable.com/' },
               { name: 'Blog', url: 'https://www.samanportable.com/blog' },
               { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` }
-            ])
-          ];
-
-          const faqSchema = extractFAQSchema(post.content.rendered);
-          if (faqSchema) {
-            schemas.push(faqSchema);
-          }
-
-          return schemas;
+            ],
+            faqSchema: extractFAQSchema(post.content.rendered)
+          });
         })()}
       />
 

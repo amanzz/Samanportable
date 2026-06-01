@@ -16,6 +16,7 @@ export interface BlogPostSchema {
   description: string;
   image: string;
   author: string;
+  authorUrl?: string;
   datePublished: string;
   dateModified: string;
   url: string;
@@ -57,6 +58,7 @@ export const generateBlogPostSchema = (post: BlogPostSchema) => {
     } : {
       '@type': 'Person',
       name: post.author,
+      ...(post.authorUrl && { url: post.authorUrl }),
     },
     publisher: {
       '@id': 'https://www.samanportable.com/#organization',
@@ -497,6 +499,121 @@ export const extractFAQSchema = (html: string): object | null => {
         text: faq.answer,
       },
     })),
+  };
+};
+
+/**
+ * Format raw date string to valid ISO8601 standard with timezone offset (+05:30 for IST)
+ */
+export const formatISO8601WithOffset = (dateString: string, offset: string = '+05:30'): string => {
+  if (!dateString) return '';
+  // If date already includes timezone info (ends with Z or has +/-xx:xx offset)
+  if (dateString.endsWith('Z') || dateString.match(/[+-]\d{2}:\d{2}$/)) {
+    return dateString;
+  }
+  return `${dateString}${offset}`;
+};
+
+/**
+ * Generate a complete, interconnected schema graph for a blog post
+ */
+export const generateUnifiedBlogGraph = (params: {
+  postSchema: BlogPostSchema;
+  breadcrumbs: Array<{ name: string; url: string }>;
+  faqSchema: any | null;
+}) => {
+  const { postSchema, breadcrumbs, faqSchema } = params;
+  const postUrl = postSchema.url;
+  
+  const webpageId = `${postUrl}#webpage`;
+  const blogpostId = `${postUrl}#blogposting`;
+  const breadcrumbId = `${postUrl}#breadcrumb`;
+  const faqpageId = `${postUrl}#faqpage`;
+
+  const org = generateOrganizationSchema();
+  const website = getWebSiteSchema();
+
+  // Create WebPage schema
+  const webpage = {
+    '@type': 'WebPage',
+    '@id': webpageId,
+    url: postUrl,
+    name: postSchema.title,
+    description: postSchema.description,
+    isPartOf: { '@id': 'https://www.samanportable.com/#website' },
+    publisher: { '@id': 'https://www.samanportable.com/#organization' },
+    breadcrumb: { '@id': breadcrumbId },
+    inLanguage: 'en-IN',
+  };
+
+  // Create BreadcrumbList schema
+  const breadcrumbList = {
+    '@type': 'BreadcrumbList',
+    '@id': breadcrumbId,
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.url,
+    })),
+  };
+
+  // Format publication/modification dates with Indian offset (+05:30)
+  const datePublishedFormatted = formatISO8601WithOffset(postSchema.datePublished);
+  const dateModifiedFormatted = formatISO8601WithOffset(postSchema.dateModified);
+
+  // Create BlogPosting schema
+  const blogPosting = {
+    '@type': 'BlogPosting',
+    '@id': blogpostId,
+    isPartOf: { '@id': webpageId },
+    mainEntityOfPage: { '@id': webpageId },
+    headline: postSchema.title,
+    description: postSchema.description,
+    image: postSchema.image,
+    author: postSchema.author === 'Saman Portable' ? {
+      '@id': 'https://www.samanportable.com/#organization'
+    } : {
+      '@type': 'Person',
+      name: postSchema.author,
+      ...(postSchema.authorUrl && { url: postSchema.authorUrl })
+    },
+    publisher: {
+      '@id': 'https://www.samanportable.com/#organization',
+    },
+    datePublished: datePublishedFormatted,
+    dateModified: dateModifiedFormatted,
+    ...(postSchema.category && { articleSection: postSchema.category }),
+    inLanguage: 'en-IN',
+  };
+
+  const graph: any[] = [
+    {
+      ...org,
+      '@context': undefined // Strip duplicate contexts inside graph
+    },
+    {
+      ...website,
+      '@context': undefined
+    },
+    webpage,
+    breadcrumbList,
+    blogPosting
+  ];
+
+  if (faqSchema) {
+    const faqEntity = {
+      ...faqSchema,
+      '@context': undefined,
+      '@id': faqpageId,
+      isPartOf: { '@id': webpageId }
+    };
+    graph.push(faqEntity);
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': graph
   };
 };
 
