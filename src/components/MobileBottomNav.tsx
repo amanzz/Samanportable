@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { Home, ShoppingBag, ShoppingCart, X, Package, Menu } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
 import { cn } from '@/lib/utils';
+import { getSeoAnchorText } from '@/lib/seoAnchorMap';
 
 interface RelatedProduct {
   id: number;
@@ -15,6 +16,8 @@ interface RelatedProduct {
   price: string;
   rating: number;
   category: string;
+  url?: string;
+  seoAnchorText?: string;
 }
 
 interface NavItem {
@@ -170,49 +173,53 @@ const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
             <div className="overflow-y-auto max-h-[calc(80vh-80px)]">
               {relatedProducts.length > 0 ? (
                 <div className="p-4 space-y-3">
-                  {relatedProducts.map((product) => (
-                    <div key={product.id} className="group">
-                      <Link 
-                        href={`/product/${product.categorySlug || 'default'}/${product.slug}`}
-                        className="block p-3 rounded-lg border border-gray-200 hover:border-primary/30 hover:bg-gray-50 transition-all duration-200"
-                        onClick={() => setShowSidebar(false)}
-                      >
-                        <div className="flex items-start space-x-3">
-                          {/* Product Image */}
-                          <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
-                            <Image 
-                              src={product.image || '/placeholder.svg'}
-                              alt={product.title}
-                              width={64}
-                              height={64}
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                e.currentTarget.src = '/placeholder.svg';
-                              }}
-                            />
-                          </div>
-                          
-                          {/* Product Info */}
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-medium text-sm text-gray-900 line-clamp-2 group-hover:text-primary transition-colors">
-                              {product.title}
-                            </h4>
-                            <div className="flex items-center justify-between mt-1">
-                              <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                                {product.category}
-                              </span>
-                              <span className="text-sm font-semibold text-primary">
-                                {product.price === 'Contact for pricing' 
-                                  ? 'Contact for pricing' 
-                                  : `₹${product.price}`
-                                }
-                              </span>
+                  {relatedProducts.map((product) => {
+                    const href = product.url || `/product/${product.categorySlug || 'default'}/${product.slug}`;
+                    const anchorText = product.seoAnchorText || getSeoAnchorText(product.categorySlug) || product.title;
+                    return (
+                      <div key={product.id} className="group">
+                        <Link
+                          href={href}
+                          className="block p-3 rounded-lg border border-gray-200 hover:border-primary/30 hover:bg-gray-50 transition-all duration-200"
+                          onClick={() => setShowSidebar(false)}
+                        >
+                          <div className="flex items-start space-x-3">
+                            {/* Product Image */}
+                            <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
+                              <Image
+                                src={product.image || '/placeholder.svg'}
+                                alt={anchorText}
+                                width={64}
+                                height={64}
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  e.currentTarget.src = '/placeholder.svg';
+                                }}
+                              />
+                            </div>
+
+                            {/* Product Info */}
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-medium text-sm text-gray-900 line-clamp-2 group-hover:text-primary transition-colors">
+                                {anchorText}
+                              </h4>
+                              <div className="flex items-center justify-between mt-1">
+                                <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                                  {product.category}
+                                </span>
+                                <span className="text-sm font-semibold text-primary">
+                                  {product.price === 'Contact for pricing'
+                                    ? 'Contact for pricing'
+                                    : `₹${product.price}`
+                                  }
+                                </span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
+                        </Link>
+                      </div>
+                    );
+                  })}
                 </div>
               ) : (
                 <div className="p-8 text-center">

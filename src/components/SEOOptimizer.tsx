@@ -30,7 +30,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
   tags = [],
   structuredData
 }) => {
-  const fullTitle = `${title} | SAMAN Portable Office Solutions`;
+  const fullTitle = `${title} | SAMAN POS India Private Limited`;
   const fullDescription = description.length > 160 ? description.substring(0, 157) + '...' : description;
   
   // Default structured data if none provided
@@ -41,29 +41,10 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
     "description": description,
     "url": canonical || 'https://www.samanportable.com',
     "publisher": {
-      "@type": "Organization",
-      "name": "SAMAN Portable Office Solutions",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.samanportable.com/logo.png"
-      }
+      "@id": "https://www.samanportable.com/#organization"
     },
     "mainEntity": {
-      "@type": "Organization",
-      "name": "SAMAN Portable Office Solutions",
-      "url": "https://www.samanportable.com",
-      "description": "Premium portable cabins, container offices, and prefab solutions in Bangalore",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bangalore",
-        "addressRegion": "Karnataka",
-        "addressCountry": "IN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-XXXXXXXXXX",
-        "contactType": "customer service"
-      }
+      "@id": "https://www.samanportable.com/#organization"
     }
   };
 
@@ -86,7 +67,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonical || 'https://www.samanportable.com'} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="SAMAN Portable Office Solutions" />
+      <meta property="og:site_name" content="SAMAN POS India Private Limited" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card Meta Tags */}

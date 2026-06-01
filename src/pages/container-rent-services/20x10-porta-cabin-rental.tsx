@@ -43,12 +43,45 @@ const PortaCabin20x10Rental = () => {
     <Layout>
       <UnifiedSEO
         fallbackTitle="20×10 Porta Cabin Rental Bangalore & Delhi NCR | Quick Setup"
-        fallbackDescription="Rent a 20×10 portable cabin in Bangalore or Delhi NCR—200 sq ft workspace, 24–48 hr delivery, BIS-compliant, flexible terms, and 24×7 support. Book now."
+        fallbackDescription="Rent a 20×10 portable cabin in Bangalore or Delhi NCR—200 sq ft workspace, 24–48 hr delivery, quality-tested construction, flexible terms, and 24×7 support. Book now."
         fallbackCanonical="https://www.samanportable.com/container-rent-services/20x10-porta-cabin-rental"
         keywords="20x10 porta cabin rental, 200 sq ft office cabin, small portable office, portable cabin Bangalore, site office rental"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        author="SAMAN POS India Private Limited"
+        publisher="SAMAN POS India Private Limited"
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"Product\", \"@id\": \"https://www.samanportable.com/container-rent-services/20x10-porta-cabin-rental#product\", \"name\": \"20x10 Porta Cabin Rental\", \"description\": \"200 sq ft compact porta cabin for rent in Bangalore and Delhi NCR. Quick positioning with minimal site prep. Ideal for small site offices and consultants.\", \"image\": [\"https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp\"], \"category\": \"Porta Cabin Rental\", \"brand\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"additionalProperty\": [{\"@type\": \"PropertyValue\", \"name\": \"Structural warranty\", \"value\": \"5 years\"}, {\"@type\": \"PropertyValue\", \"name\": \"Standard warranty (fittings)\", \"value\": \"1 year, extendable to 2 years on request\"}], \"offers\": {\"@type\": \"Offer\", \"businessFunction\": \"http://purl.org/goodrelations/v1#LeaseOut\", \"priceCurrency\": \"INR\", \"availability\": \"https://schema.org/InStock\", \"seller\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"eligibleDuration\": {\"@type\": \"QuantitativeValue\", \"minValue\": 6, \"unitCode\": \"MON\"}, \"priceSpecification\": {\"@type\": \"UnitPriceSpecification\", \"minPrice\": \"18000\", \"maxPrice\": \"25000\", \"priceCurrency\": \"INR\", \"unitCode\": \"MON\"}}}" }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.samanportable.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Rental Services",
+                "item": "https://www.samanportable.com/rental-services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "20x10 Porta Cabin Rental",
+                "item": "https://www.samanportable.com/container-rent-services/20x10-porta-cabin-rental"
+              }
+            ]
+          }) }}
+        />
+      </Head>
       <div className="min-h-screen bg-background">
         <main>
           {/* Hero Section */}
@@ -101,7 +134,7 @@ const PortaCabin20x10Rental = () => {
                     <strong>Last updated:</strong> January 21, 2026
                   </p>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    Our 20×10 ft porta cabins deliver 200 sq ft of highly efficient workspace, perfectly sized for small offices, security stations, retail kiosks, and field labs. Built on a durable steel frame with anti-corrosion coating and BIS-compliant fire-resistant panels, these cabins ensure safety and longevity in Bangalore’s varied climate.
+                    Our 20×10 ft porta cabins deliver 200 sq ft of highly efficient workspace, perfectly sized for small offices, security stations, retail kiosks, and field labs. Built on a durable steel frame with anti-corrosion coating and fire-resistant panels, these cabins ensure safety and longevity in Bangalore’s varied climate.
                   </p>
 
                   <div className="space-y-4 mb-8">
@@ -182,7 +215,7 @@ const PortaCabin20x10Rental = () => {
               {/* Detailed Text Content */}
               <div className="prose prose-lg max-w-none text-slate-700 mb-20">
                 <p>
-                  Designed on a heavy-duty steel frame with corrosion-resistant coatings, each cabin meets BIS fire safety and seismic compliance standards. Insulated walls and roofs maintain optimal temperatures, while reinforced windows maximize natural light and airflow, reducing energy costs. Pre-installed wiring and LED fixtures streamline setup, and optional HVAC packages deliver year-round comfort for teams working in Bangalore’s fluctuating climate.
+                  Designed on a heavy-duty steel frame with corrosion-resistant coatings, each cabin meets industry-standard fire safety and seismic compliance measures. Insulated walls and roofs maintain optimal temperatures, while reinforced windows maximize natural light and airflow, reducing energy costs. Pre-installed wiring and LED fixtures streamline setup, and optional HVAC packages deliver year-round comfort for teams working in Bangalore’s fluctuating climate.
                 </p>
               </div>
 
@@ -307,7 +340,7 @@ const PortaCabin20x10Rental = () => {
                 Book Your 20×10 Portable Workspace – Bangalore & Delhi NCR
               </h2>
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-                Secure a 200 sq ft modular cabin for site offices, security posts, or retail — available across Bangalore and Delhi NCR. Enjoy 24–48 hr delivery, BIS-certified quality, and 24×7 expert support from SAMAN Portable.
+                Secure a 200 sq ft modular cabin for site offices, security posts, or retail — available across Bangalore and Delhi NCR. Enjoy 24–48 hr delivery, quality-tested construction, and 24×7 expert support from SAMAN Portable.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left max-w-4xl mx-auto mb-10">

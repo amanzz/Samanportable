@@ -11,18 +11,87 @@ import {
 } from 'lucide-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
 
+const MONEY_STRIP_LINKS = [
+  { label: "Porta Cabin Price Guide", href: "/porta-cabin-price-a-complete-guide-2025" },
+  { label: "Porta Cabin in Delhi NCR", href: "/porta-cabins-in-delhi-ncr" },
+  { label: "Porta Cabin Sizes India", href: "/porta-cabin-sizes-and-specifications-in-india" },
+  { label: "Porta Cabin in Noida", href: "/porta-cabin-in-noida" },
+  { label: "Portable Cabin Bangalore Price", href: "/portable-cabin-price-in-bangalore" },
+  { label: "Portable Cabins in Gurgaon", href: "/portable-cabins-in-gurgaon" },
+  { label: "Portable Office in West Delhi", href: "/portable-office-cabins-in-west-delhi" },
+  { label: "Portable Office in Greater Noida", href: "/portable-office-cabins-in-greater-noida" },
+  { label: "Container Office Design", href: "/container-office-design" },
+  { label: "Container Office Price", href: "/container-offices-price" },
+  { label: "Container Cafe in North Delhi", href: "/container-cafes-in-north-delhi" },
+  { label: "Labour Colony in Gurgaon", href: "/labour-colonies-in-gurgaon" },
+  { label: "Prefab Container Homes", href: "/product/container-houses/prefab-container-homes" },
+  { label: "Container House in Tamil Nadu", href: "/container-house-price-in-tamil-nadu" },
+  { label: "Luxury Container Houses", href: "/product/container-houses/luxury-container-houses" },
+  { label: "Industrial Sheds in Bangalore", href: "/industrial-sheds-in-bangalore" },
+  { label: "PEB Construction India", href: "/product-category/peb-constructions" },
+  { label: "Pre-Engineered Buildings", href: "/product-category/pre-engineered-buildings" },
+  { label: "Industrial Sheds Range", href: "/product-category/industrial-sheds" },
+  { label: "Prefab Houses in Bangalore", href: "/prefabricated-houses-in-bangalore" },
+  { label: "Top Quality Prefab Cabins Delhi", href: "/top-quality-prefab-cabins-delhi" },
+  { label: "Best Portable Cabins in India", href: "/best-portable-cabins-in-india" },
+  { label: "Portable Toilets in Bangalore", href: "/portable-toilets-in-bangalore" },
+  { label: "Portable Toilet Cabin", href: "/product/portable-toilet/portable-toilet-cabin" },
+  { label: "Prefabricated Security Cabin", href: "/product/security-cabins/prefabricated-security-cabin" },
+  { label: "Readymade Security Cabin", href: "/product/security-cabins/readymade-security-cabin" },
+];
+
+const PRODUCT_CATEGORIES = [
+  { label: "Porta Cabin", href: "/product/porta-cabins" },
+  { label: "Portable Cabin", href: "/product/portable-cabin" },
+  { label: "Portable Office Cabin", href: "/product/portable-office" },
+  { label: "Container Office", href: "/product/container-offices" },
+  { label: "Container Cafe", href: "/product/container-cafe" },
+  { label: "Labour Colony", href: "/product/labor-colony" },
+  { label: "Container House", href: "/product/container-houses" },
+  { label: "Security Cabin", href: "/product/security-cabins" },
+  { label: "Portable Toilet", href: "/product/portable-toilet" },
+  { label: "Industrial Shed", href: "/product/industrial-sheds" },
+  { label: "PEB Construction", href: "/product/peb-constructions" },
+  { label: "Pre-Engineered Building", href: "/product/pre-engineered-buildings" },
+  { label: "Prefab Building", href: "/product/prefab-buildings" },
+  { label: "Prefabricated House", href: "/product/prefabricated-houses" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-black text-white relative z-20 pb-16 lg:pb-0">
+      {/* Footer Money Keyword Strip */}
+      <div className="border-b border-zinc-900/50 relative z-10 bg-black">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <h2 className="text-white font-semibold text-xl">
+            Popular Portable Cabin Resources
+          </h2>
+          <p className="text-zinc-200 text-sm mt-2 max-w-2xl leading-relaxed">
+            Explore our most searched portable cabin, container office, prefab building and industrial shed resources.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            {MONEY_STRIP_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="inline-block px-3.5 py-1.5 text-sm font-medium text-zinc-200 bg-zinc-900/50 hover:bg-zinc-900/90 border border-gray-700 hover:border-primary hover:text-green-300 hover:shadow-[0_0_8px_rgba(34,197,94,0.15)] rounded-full transition-all duration-300"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Main Footer Content - 5 Columns */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2.6fr_1.2fr_2.2fr_3fr_3fr] gap-6 items-start">
           
           {/* Column 1: Company Information */}
           <div className="lg:col-span-1">
             {/* Logo */}
-            <div className="mb-3">
-              <div className="flex items-center space-x-2 mb-2">
+            <div className="mb-5">
+              <div className="flex items-center space-x-2 mb-4">
                 <Image 
                   src="/saman-logo.svg"
                   alt="SAMAN Portable Logo"
@@ -35,12 +104,12 @@ const Footer = () => {
             </div>
             
             {/* Company Description */}
-            <p className="text-gray-300 text-xs leading-relaxed mb-4">
+            <p className="text-zinc-200 text-sm font-medium leading-7 mb-5 mt-4">
               Saman Portable offers durable, modular, and maintenance-free buildings, designed with high-quality materials for reliability and long-term performance.
             </p>
             
             {/* Social Media Icons */}
-            <div className="flex space-x-3">
+            <div className="flex space-x-3 mt-6 items-center">
               <a 
                 href="https://www.facebook.com/p/SAMAN-Portable-Office-Solutions-is-leading-manufacturer-of-Porta-Cabins-100067811252556/" 
                 target="_blank" 
@@ -84,35 +153,35 @@ const Footer = () => {
 
           {/* Column 2: Useful Links */}
           <div className="lg:col-span-1">
-            <h3 className="text-white font-bold text-base mb-4 uppercase tracking-wide">Useful Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-semibold text-lg whitespace-nowrap tracking-wide mb-5">Useful Links</h3>
+            <ul className="space-y-3">
               <li>
-                <Link href="/about-us" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/about-us" className="text-zinc-300 hover:text-primary transition-colors duration-300 text-sm font-medium block py-0.5">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/product" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/product" className="text-zinc-300 hover:text-primary transition-colors duration-300 text-sm font-medium block py-0.5">
                   Products
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/gallery" className="text-zinc-300 hover:text-primary transition-colors duration-300 text-sm font-medium block py-0.5">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/rental-services" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/rental-services" className="text-zinc-300 hover:text-primary transition-colors duration-300 text-sm font-medium block py-0.5">
                   Rental Services
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/blog" className="text-zinc-300 hover:text-primary transition-colors duration-300 text-sm font-medium block py-0.5">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors text-xs">
+                <Link href="/contact" className="text-zinc-300 hover:text-primary transition-colors duration-300 text-sm font-medium block py-0.5">
                   Contact Us
                 </Link>
               </li>
@@ -121,73 +190,55 @@ const Footer = () => {
 
           {/* Column 3: Product Categories */}
           <div className="lg:col-span-1">
-            <h3 className="text-white font-bold text-base mb-4 uppercase tracking-wide">Product Categories</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/product/portable-cabin" className="text-gray-300 hover:text-white transition-colors text-xs">
-                  Portable Cabin
-                </Link>
-              </li>
-              <li>
-                <Link href="/product/container-offices" className="text-gray-300 hover:text-white transition-colors text-xs">
-                  Container Offices
-                </Link>
-              </li>
-              <li>
-                <Link href="/product/porta-cabins" className="text-gray-300 hover:text-white transition-colors text-xs">
-                  Porta Cabins
-                </Link>
-              </li>
-              <li>
-                <Link href="/product/labor-colony" className="text-gray-300 hover:text-white transition-colors text-xs">
-                  Labor Colony
-                </Link>
-              </li>
-              <li>
-                <Link href="/product/portable-office" className="text-gray-300 hover:text-white transition-colors text-xs">
-                  Portable Office
-                </Link>
-              </li>
-              <li>
-                <Link href="/product/container-cafe" className="text-gray-300 hover:text-white transition-colors text-xs">
-                  Container Cafe
-                </Link>
-              </li>
+            <h3 className="text-white font-semibold text-lg whitespace-nowrap tracking-wide mb-5">Product Categories</h3>
+            <ul className="space-y-1.5">
+              {PRODUCT_CATEGORIES.map((category) => (
+                <li key={category.href}>
+                  <Link 
+                    href={category.href} 
+                    className="text-zinc-300 hover:text-primary transition-colors duration-300 text-sm font-medium whitespace-nowrap block py-0.5"
+                  >
+                    {category.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Column 4: Manufacturing Unit - 1 */}
           <div className="lg:col-span-1">
-            <h3 className="text-white font-bold text-base mb-4 uppercase tracking-wide">Manufacturing Unit - 1</h3>
-            <div className="bg-black rounded-lg p-3 space-y-2 min-w-0 border border-gray-800">
-              <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
-                <p className="text-white text-xs leading-relaxed break-words">
+            <h3 className="text-white font-semibold text-lg whitespace-nowrap tracking-wide mb-5">Manufacturing Unit - 1</h3>
+            <div className="bg-zinc-950/40 rounded-xl p-5 space-y-3.5 min-w-0 border border-zinc-800 hover:border-zinc-700/80 transition-all duration-300 shadow-sm">
+              <div className="flex items-start space-x-2.5">
+                <MapPin className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
+                <p className="text-zinc-200 text-sm leading-relaxed break-words">
                   I, Sy No 34/2, near India Oil petrol pump, Gopasandra, Bengaluru, Karnataka 560099
                 </p>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-white flex-shrink-0" />
-                <a href="tel:+918861622859" className="text-white text-xs break-all hover:text-green-300 transition-colors">
+              <div className="flex items-center space-x-2.5">
+                <Phone className="w-5 h-5 text-white flex-shrink-0" />
+                <a href="tel:+918861622859" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">
                   +91 88616 22859
                 </a>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-white flex-shrink-0" />
-                <a href="tel:+918088685440" className="text-white text-xs break-all hover:text-green-300 transition-colors">
+              <div className="flex items-center space-x-2.5">
+                <Phone className="w-5 h-5 text-white flex-shrink-0" />
+                <a href="tel:+918088685440" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">
                   +91 80886 85440
                 </a>
               </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-white flex-shrink-0" />
-                <p className="text-white text-xs break-all">sales@samanportable.com</p>
+              <div className="flex items-center space-x-2.5">
+                <Mail className="w-5 h-5 text-white flex-shrink-0" />
+                <a href="mailto:sales@samanportable.com" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">
+                  sales@samanportable.com
+                </a>
               </div>
               <div className="pt-2">
                 <a 
-                  href="https://www.google.com/maps/search/?api=1&query=SAMAN+Portable+Office+Solutions+Private+Limited+Gopasandra+Bengaluru"
+                  href="https://www.google.com/maps/search/?api=1&query=SAMAN+POS+India+Private+Limited+Gopasandra+Bengaluru"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 hover:bg-white hover:text-black text-white text-[10px] px-3 py-2 rounded-md transition-all duration-300 font-medium group"
+                  className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 hover:bg-white hover:text-black text-white text-[10px] px-3.5 py-2.5 rounded-lg transition-all duration-300 font-medium group animate-none"
                 >
                   <Navigation className="w-3 h-3 group-hover:scale-110 transition-transform" />
                   <span>Get Directions</span>
@@ -198,36 +249,38 @@ const Footer = () => {
 
           {/* Column 5: Manufacturing Unit - 2 */}
           <div className="lg:col-span-1">
-            <h3 className="text-white font-bold text-base mb-4 uppercase tracking-wide">Manufacturing Unit - 2</h3>
-            <div className="bg-black rounded-lg p-3 space-y-2 min-w-0 border border-gray-800">
-              <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
-                <p className="text-white text-xs leading-relaxed break-words">
+            <h3 className="text-white font-semibold text-lg whitespace-nowrap tracking-wide mb-5">Manufacturing Unit - 2</h3>
+            <div className="bg-zinc-950/40 rounded-xl p-5 space-y-3.5 min-w-0 border border-zinc-800 hover:border-zinc-700/80 transition-all duration-300 shadow-sm">
+              <div className="flex items-start space-x-2.5">
+                <MapPin className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
+                <p className="text-zinc-200 text-sm leading-relaxed break-words">
                   Khata No 226, Vill-Jalpura, Bisrakh Rd, Jalpura, Dadri, Greater Noida, Uttar Pradesh 201308
                 </p>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-white flex-shrink-0" />
-                <a href="tel:+918796039938" className="text-white text-xs break-all hover:text-green-300 transition-colors">
+              <div className="flex items-center space-x-2.5">
+                <Phone className="w-5 h-5 text-white flex-shrink-0" />
+                <a href="tel:+918796039938" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">
                   +91 8796039938
                 </a>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-white flex-shrink-0" />
-                <a href="tel:+919708989937" className="text-white text-xs break-all hover:text-green-300 transition-colors">
+              <div className="flex items-center space-x-2.5">
+                <Phone className="w-5 h-5 text-white flex-shrink-0" />
+                <a href="tel:+919708989937" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">
                   +91 9708989937
                 </a>
               </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-white flex-shrink-0" />
-                <p className="text-white text-xs break-all">ncr@samanportable.com</p>
+              <div className="flex items-center space-x-2.5">
+                <Mail className="w-5 h-5 text-white flex-shrink-0" />
+                <a href="mailto:ncr@samanportable.com" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">
+                  ncr@samanportable.com
+                </a>
               </div>
               <div className="pt-2">
                 <a 
                   href="https://www.google.com/maps/search/?api=1&query=SAMAN+POS+India+Private+Limited+Jalpura+Greater+Noida"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 hover:bg-white hover:text-black text-white text-[10px] px-3 py-2 rounded-md transition-all duration-300 font-medium group"
+                  className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 hover:bg-white hover:text-black text-white text-[10px] px-3.5 py-2.5 rounded-lg transition-all duration-300 font-medium group animate-none"
                 >
                   <Navigation className="w-3 h-3 group-hover:scale-110 transition-transform" />
                   <span>Get Directions</span>
@@ -239,12 +292,12 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section - Copyright and Policies */}
-      <div className="border-t border-gray-700 relative z-10">
+      <div className="border-t border-gray-800/80 relative z-10">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             {/* Copyright */}
             <div className="text-gray-400 text-xs">
-              © {new Date().getFullYear()} SAMAN Portable Office Solutions. All rights reserved.
+              © {new Date().getFullYear()} SAMAN POS India Private Limited. All rights reserved.
             </div>
             
             {/* Policy Links */}

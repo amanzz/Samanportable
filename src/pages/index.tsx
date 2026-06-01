@@ -10,7 +10,7 @@ import Head from 'next/head';
 // Import Layout component
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
-import { generateOrganizationSchema, getLocalBusinessSchema, getWebSiteSchema, getHomepageFAQSchema } from '@/lib/schema';
+import { generateOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema } from '@/lib/schema';
 import { pageSEO, siteConfig } from '@/config/seo';
 
 // Dynamic imports for below-the-fold sections to improve LCP
@@ -180,17 +180,12 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
   return (
     <Layout>
       <Head>
-        {/* Schema 1: LocalBusiness */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(getLocalBusinessSchema()) }}
-        />
-        {/* Schema 2: WebSite */}
+        {/* Schema 1: WebSite */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebSiteSchema()) }}
         />
-        {/* Schema 3: FAQPage (Block 2 from Excel) */}
+        {/* Schema 2: FAQPage */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getHomepageFAQSchema()) }}
@@ -198,12 +193,12 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
       </Head>
       <UnifiedSEO
         fallbackTitle="Portable Cabin & Container Office Manufacturer in Bangalore & Delhi NCR"
-        fallbackDescription="Saman Portable manufactures portable cabins, container offices, and prefab structures for businesses across India. ISO-certified. Delivering since 2017. Prices from ₹1.45 Lakh. Get a free quote."
+        fallbackDescription="Saman Portable manufactures portable cabins, container offices, and prefab structures for businesses across India. ISO-certified. Delivering since 2009. Prices from ₹1.45 Lakh. Get a free quote."
         fallbackCanonical="https://www.samanportable.com/"
         fallbackOgTitle="Portable Cabin & Container Office Manufacturer"
-        fallbackOgDescription="ISO-certified portable cabin manufacturer in Bangalore and Delhi NCR. Serving all of India since 2017. Prices from ₹1.45 Lakh."
+        fallbackOgDescription="ISO-certified portable cabin manufacturer in Bangalore and Delhi NCR. Serving all of India since 2009. Prices from ₹1.45 Lakh."
         fallbackOgImage="https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp"
-        fallbackTwitterDescription="ISO-certified portable cabin manufacturer in Bangalore and Delhi NCR. Serving all of India since 2017. Prices from ₹1.45 Lakh."
+        fallbackTwitterDescription="ISO-certified portable cabin manufacturer in Bangalore and Delhi NCR. Serving all of India since 2009. Prices from ₹1.45 Lakh."
         keywords={pageSEO.home.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}

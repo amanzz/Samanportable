@@ -9,6 +9,7 @@ import { Search, Calendar, User, Tag, ArrowRight, Clock } from 'lucide-react';
 import { fetchBlogPosts } from '@/config/api';
 import { pageSEO, siteConfig } from '@/config/seo';
 import BlogImage from '@/components/BlogImage';
+import { decodeHtmlEntities } from '@/lib/utils';
 
 import { BlogPost as ApiBlogPost } from '@/config/api';
 type BlogPost = ApiBlogPost;
@@ -103,7 +104,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
   };
 
   const truncateExcerpt = (excerpt: string, maxLength: number = 150) => {
-    const stripped = excerpt.replace(/<[^>]*>/g, '');
+    const stripped = decodeHtmlEntities(excerpt.replace(/<[^>]*>/g, ''));
     if (stripped.length <= maxLength) return stripped;
     return stripped.substring(0, maxLength) + '...';
   };
@@ -113,6 +114,34 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
     const wordCount = content.replace(/<[^>]*>/g, '').split(' ').length;
     return Math.ceil(wordCount / wordsPerMinute);
   };
+
+  const blogHubStructuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/blog#collectionpage",
+      "url": "https://www.samanportable.com/blog",
+      "name": "Saman Portable Blog | Modular Construction Insights",
+      "description": "Stay updated with the latest news, tips, and insights about portable construction at Saman Portable.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "about": { "@id": "https://www.samanportable.com/#organization" },
+      "mainEntity": { "@id": "https://www.samanportable.com/blog#itemlist" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/blog#itemlist",
+      "name": "Saman Portable Blog Posts",
+      "numberOfItems": posts.length,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": posts.map((post, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": decodeHtmlEntities(post.title?.rendered || ''),
+        "url": `https://www.samanportable.com/${post.slug}`
+      }))
+    }
+  ];
 
   return (
     <Layout>
@@ -124,6 +153,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
         keywords={pageSEO.blog.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
+        structuredData={blogHubStructuredData}
       />
 
       <div className="min-h-screen">
@@ -287,7 +317,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
                             {/* Title */}
                             <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
                               <Link href={`/${post.slug}`} className="hover:text-primary transition-colors">
-                                {post.title.rendered}
+                                {decodeHtmlEntities(post.title.rendered)}
                               </Link>
                             </h3>
                             

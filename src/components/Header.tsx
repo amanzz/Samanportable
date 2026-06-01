@@ -93,6 +93,23 @@ const Header = () => {
     }
   ];
 
+  const productCategories = [
+    { name: 'Porta Cabin', href: '/product/porta-cabins' },
+    { name: 'Portable Cabin', href: '/product/portable-cabin' },
+    { name: 'Portable Office Cabin', href: '/product/portable-office' },
+    { name: 'Container Office', href: '/product/container-offices' },
+    { name: 'Container Cafe', href: '/product/container-cafe' },
+    { name: 'Labour Colony', href: '/product/labor-colony' },
+    { name: 'Container House', href: '/product/container-houses' },
+    { name: 'Security Cabin', href: '/product/security-cabins' },
+    { name: 'Portable Toilet', href: '/product/portable-toilet' },
+    { name: 'Industrial Shed', href: '/product/industrial-sheds' },
+    { name: 'PEB Construction', href: '/product/peb-constructions' },
+    { name: 'Pre-Engineered Building', href: '/product/pre-engineered-buildings' },
+    { name: 'Prefab Building', href: '/product/prefab-buildings' },
+    { name: 'Prefabricated House', href: '/product/prefabricated-houses' },
+  ];
+
   return (
     <>
       {/* Main Header */}
@@ -158,6 +175,36 @@ const Header = () => {
                             className="flex items-center px-3 py-2 hover:bg-primary hover:text-white w-full text-left transition-colors rounded-md font-medium"
                           >
                             View All Rental Services
+                          </Link>
+                        </div>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  )}
+
+                  {item.name === 'Products' && (
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className="p-1 hover:text-primary transition-colors focus:outline-none">
+                        <ChevronDown className="w-4 h-4 transition-transform data-[state=open]:rotate-180" />
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="w-[640px] bg-white text-gray-900 shadow-lg rounded-md mt-2 z-50 p-4 border border-gray-100">
+                        <div className="grid grid-cols-3 gap-2">
+                          {productCategories.map((cat, idx) => (
+                            <DropdownMenuItem key={idx} className="cursor-pointer p-0 focus:bg-transparent">
+                              <Link
+                                href={cat.href}
+                                className="flex items-center px-3 py-2 hover:bg-primary hover:text-white w-full text-left transition-colors rounded-md text-sm"
+                              >
+                                {cat.name}
+                              </Link>
+                            </DropdownMenuItem>
+                          ))}
+                        </div>
+                        <div className="border-t pt-3 mt-3">
+                          <Link
+                            href="/product"
+                            className="flex items-center px-3 py-2 hover:bg-primary hover:text-white w-full text-left transition-colors rounded-md font-medium text-sm"
+                          >
+                            View All Products
                           </Link>
                         </div>
                       </DropdownMenuContent>
@@ -294,7 +341,39 @@ const Header = () => {
                       )}
                     </NavLink>
                   ))}
-                  
+
+                  {/* Mobile Product Hubs — 14 categories */}
+                  <div className="border-t pt-3 mt-3">
+                    <h3 className="font-semibold text-primary mb-2 text-sm uppercase tracking-wide px-2">
+                      Product Categories
+                    </h3>
+                    {[
+                      { name: 'Porta Cabin', href: '/product/porta-cabins' },
+                      { name: 'Portable Cabin', href: '/product/portable-cabin' },
+                      { name: 'Portable Office Cabin', href: '/product/portable-office' },
+                      { name: 'Container Office', href: '/product/container-offices' },
+                      { name: 'Container Cafe', href: '/product/container-cafe' },
+                      { name: 'Labour Colony', href: '/product/labor-colony' },
+                      { name: 'Container House', href: '/product/container-houses' },
+                      { name: 'Security Cabin', href: '/product/security-cabins' },
+                      { name: 'Portable Toilet', href: '/product/portable-toilet' },
+                      { name: 'Industrial Shed', href: '/product/industrial-sheds' },
+                      { name: 'PEB Construction', href: '/product/peb-constructions' },
+                      { name: 'Pre-Engineered Building', href: '/product/pre-engineered-buildings' },
+                      { name: 'Prefab Building', href: '/product/prefab-buildings' },
+                      { name: 'Prefabricated House', href: '/product/prefabricated-houses' },
+                    ].map((hub) => (
+                      <Link
+                        key={hub.name}
+                        href={hub.href}
+                        className="block text-foreground hover:text-primary font-medium transition-colors text-sm py-1.5 px-2 rounded-md hover:bg-gray-50"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {hub.name}
+                      </Link>
+                    ))}
+                  </div>
+
                   {/* Mobile Rental Services */}
                   <div className="border-t pt-3 mt-3">
                     <h3 className="font-semibold text-primary mb-2 text-sm uppercase tracking-wide px-2">

@@ -11,7 +11,7 @@ const ServicesSection = () => {
       icon: Building2,
       title: 'Portable Cabins',
       tagline: 'Ready to use on arrival',
-      description: 'Factory-built cabins for site offices, guard rooms, canteens and accommodation. ISI-certified steel frame, 50mm PUF insulation. Delivered and installed at your site.',
+      description: 'Factory-built cabins for site offices, guard rooms, canteens and accommodation. Manufactured using quality-tested steel and industry-standard processes, 50mm PUF insulation. Delivered and installed at your site.',
       features: ['10×10 ft to 40×12 ft — standard & custom', 'PUF insulation — 8–12°C cooler inside', 'Delivered installed, ready same day'],
       href: '/product/porta-cabins',
       buttonText: 'See Portable Cabins',

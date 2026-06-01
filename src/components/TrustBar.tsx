@@ -11,8 +11,8 @@ const TrustBar = () => {
     },
     {
       icon: Calendar,
-      value: 'Since 2017',
-      label: '8+ Years Experience',
+      value: 'Since 2009',
+      label: '15+ Years Experience',
     },
     {
       icon: Factory,
@@ -26,7 +26,7 @@ const TrustBar = () => {
     },
     {
       icon: ShieldCheck,
-      value: '25-Year Warranty',
+      value: '5-Year Structural Warranty',
       label: 'Structural Guarantee',
     },
   ];

@@ -42,13 +42,46 @@ const ContainerOffice30x8Rental = () => {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="30x8 Container Office Rental - Saman Portable Office Solutions"
+        fallbackTitle="30x8 Container Office Rental - Saman Portable"
         fallbackDescription="Rent 30x8 ft container offices in Bangalore. High-quality, spacious container offices perfect for temporary offices, accommodation, and commercial spaces. Flexible rental terms available."
         fallbackCanonical="https://www.samanportable.com/container-rent-services/30x8-container-office-rental"
         keywords="portable cabin rental, container office rental, office space rental, temporary office"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        author="SAMAN POS India Private Limited"
+        publisher="SAMAN POS India Private Limited"
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"Product\", \"@id\": \"https://www.samanportable.com/container-rent-services/30x8-container-office-rental#product\", \"name\": \"30x8 Container Office Rental\", \"description\": \"240 sq ft container office for rent in Bangalore and Delhi NCR. Repositionable, configurable interiors for medium teams, workstations and meeting rooms.\", \"image\": [\"https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp\"], \"category\": \"Container Office Rental\", \"brand\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"additionalProperty\": [{\"@type\": \"PropertyValue\", \"name\": \"Structural warranty\", \"value\": \"5 years\"}, {\"@type\": \"PropertyValue\", \"name\": \"Standard warranty (fittings)\", \"value\": \"1 year, extendable to 2 years on request\"}], \"offers\": {\"@type\": \"Offer\", \"businessFunction\": \"http://purl.org/goodrelations/v1#LeaseOut\", \"priceCurrency\": \"INR\", \"availability\": \"https://schema.org/InStock\", \"seller\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"eligibleDuration\": {\"@type\": \"QuantitativeValue\", \"minValue\": 6, \"unitCode\": \"MON\"}, \"priceSpecification\": {\"@type\": \"UnitPriceSpecification\", \"minPrice\": \"22000\", \"maxPrice\": \"32000\", \"priceCurrency\": \"INR\", \"unitCode\": \"MON\"}}}" }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.samanportable.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Rental Services",
+                "item": "https://www.samanportable.com/rental-services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "30x8 Container Office Rental",
+                "item": "https://www.samanportable.com/container-rent-services/30x8-container-office-rental"
+              }
+            ]
+          }) }}
+        />
+      </Head>
       <div className="min-h-screen bg-background">
         <main>
           {/* Hero Section */}

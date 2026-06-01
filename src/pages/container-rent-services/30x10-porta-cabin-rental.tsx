@@ -43,12 +43,45 @@ const PortaCabin30x10Rental = () => {
     <Layout>
       <UnifiedSEO
         fallbackTitle="30×10 Porta Cabin Rental Bangalore & Delhi NCR | SAMAN Portable"
-        fallbackDescription="Rent a 300 sq ft 30×10 porta cabin in Bangalore with 24-48 hr setup, BIS compliance, HVAC options & 24×7 support. Flexible daily, weekly & monthly rates."
+        fallbackDescription="Rent a 300 sq ft 30×10 porta cabin in Bangalore with 24-48 hr setup, quality-tested construction, HVAC options & 24×7 support. Flexible daily, weekly & monthly rates."
         fallbackCanonical="https://www.samanportable.com/container-rent-services/30x10-porta-cabin-rental"
         keywords="30x10 porta cabin rental, 300 sq ft office cabin, portable cabin rental Bangalore, site office rental, security cabin rental"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        author="SAMAN POS India Private Limited"
+        publisher="SAMAN POS India Private Limited"
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"Product\", \"@id\": \"https://www.samanportable.com/container-rent-services/30x10-porta-cabin-rental#product\", \"name\": \"30x10 Porta Cabin Rental\", \"description\": \"300 sq ft porta cabin for rent across Bangalore and Delhi NCR. ISO-certified, weather-resistant, customizable layout for medium-scale site offices.\", \"image\": [\"https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp\"], \"category\": \"Porta Cabin Rental\", \"brand\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"additionalProperty\": [{\"@type\": \"PropertyValue\", \"name\": \"Structural warranty\", \"value\": \"5 years\"}, {\"@type\": \"PropertyValue\", \"name\": \"Standard warranty (fittings)\", \"value\": \"1 year, extendable to 2 years on request\"}], \"offers\": {\"@type\": \"Offer\", \"businessFunction\": \"http://purl.org/goodrelations/v1#LeaseOut\", \"priceCurrency\": \"INR\", \"availability\": \"https://schema.org/InStock\", \"seller\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"eligibleDuration\": {\"@type\": \"QuantitativeValue\", \"minValue\": 6, \"unitCode\": \"MON\"}, \"priceSpecification\": {\"@type\": \"UnitPriceSpecification\", \"minPrice\": \"25000\", \"maxPrice\": \"35000\", \"priceCurrency\": \"INR\", \"unitCode\": \"MON\"}}}" }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.samanportable.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Rental Services",
+                "item": "https://www.samanportable.com/rental-services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "30x10 Porta Cabin Rental",
+                "item": "https://www.samanportable.com/container-rent-services/30x10-porta-cabin-rental"
+              }
+            ]
+          }) }}
+        />
+      </Head>
       <div className="min-h-screen bg-background">
         <main>
           {/* Hero Section */}
@@ -101,7 +134,7 @@ const PortaCabin30x10Rental = () => {
                     <strong>Last updated:</strong> January 21, 2026
                   </p>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    Our 30×10 ft porta cabins deliver the ideal balance of space and portability, offering 300 sq ft of well-appointed workspace for temporary offices, site accommodations, retail kiosks, and commercial applications. Constructed on a robust steel frame with corrosion-resistant coating, these units meet BIS IS-3840 fire safety standards and include insulated walls and roof panels to ensure year-round comfort.
+                    Our 30×10 ft porta cabins deliver the ideal balance of space and portability, offering 300 sq ft of well-appointed workspace for temporary offices, site accommodations, retail kiosks, and commercial applications. Constructed on a robust steel frame with corrosion-resistant coating, these units include fire-resistant insulated walls and roof panels to ensure year-round comfort.
                   </p>
 
                   <div className="space-y-4 mb-8">
@@ -182,7 +215,7 @@ const PortaCabin30x10Rental = () => {
               {/* Detailed Text Content */}
               <div className="prose prose-lg max-w-none text-slate-700 mb-20">
                 <p>
-                  Engineered on a high-strength steel frame with corrosion-resistant coating, it meets BIS IS-3840 fire safety standards and provides exceptional durability against Bangalore’s varied weather conditions.
+                  Engineered on a high-strength steel frame with corrosion-resistant coating, it provides exceptional durability against Bangalore’s varied weather conditions.
                 </p>
                 <p>
                   The open-plan interior can be configured with modular partitions, furniture clusters, or consultation stations to suit engineering teams, security control rooms, or temporary classrooms. Reinforced windows flood the space with natural light, reducing reliance on artificial lighting during daytime operations. Standard features include pre-installed electrical wiring, energy-efficient LED lighting, and a built-in ventilation system. For year-round comfort, upgrade to a complete HVAC package and enhanced insulation.

@@ -156,7 +156,7 @@ const MyOrders = () => {
     return (
       <Layout>
         <Head>
-          <title>My Orders - Saman Portable Office Solutions</title>
+          <title>My Orders - Saman Portable</title>
           <meta name="description" content="View your order history and track your portable office solutions." />
           <meta name="robots" content="noindex, nofollow" />
         </Head>
@@ -186,7 +186,7 @@ const MyOrders = () => {
   return (
     <Layout>
       <Head>
-        <title>My Orders - Saman Portable Office Solutions</title>
+        <title>My Orders - Saman Portable</title>
         <meta name="description" content="View your order history and track your portable office solutions." />
         <meta name="robots" content="noindex, nofollow" />
       </Head>

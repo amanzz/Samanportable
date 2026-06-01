@@ -1,0 +1,70 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/container-cafe#collectionpage",
+      "url": "https://www.samanportable.com/product-category/container-cafe",
+      "name": "Container Cafe Designs, Types & Price List — India",
+      "description": "SAMAN's full container cafe range: 15 designs from ₹2,15,000 to ₹33,25,000. Custom, kitchen-ready, built in about 15 days across Bangalore and Delhi NCR.",
+      "inLanguage": "en-IN",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "about": { "@id": "https://www.samanportable.com/#organization" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product-category/container-cafe#itemlist" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/container-cafe#itemlist",
+      "name": "SAMAN Container Cafe Range",
+      "numberOfItems": 15,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Container Coffee Shop", "url": "https://www.samanportable.com/product/container-cafe/container-coffee-shop" },
+        { "@type": "ListItem", "position": 2, "name": "Mobile Cafe", "url": "https://www.samanportable.com/product/container-cafe/mobile-cafe" },
+        { "@type": "ListItem", "position": 3, "name": "Mobile Container Cafe", "url": "https://www.samanportable.com/product/container-cafe/mobile-container-cafe" },
+        { "@type": "ListItem", "position": 4, "name": "Pop-Up Restaurant", "url": "https://www.samanportable.com/product/container-cafe/pop-up-restaurants" },
+        { "@type": "ListItem", "position": 5, "name": "Food Truck Container", "url": "https://www.samanportable.com/product/container-cafe/food-truck-containers" },
+        { "@type": "ListItem", "position": 6, "name": "Container Cafe", "url": "https://www.samanportable.com/product/container-cafe/container-cafe" },
+        { "@type": "ListItem", "position": 7, "name": "Container Hotel", "url": "https://www.samanportable.com/product/container-cafe/container-hotel" },
+        { "@type": "ListItem", "position": 8, "name": "Restaurant Food Container", "url": "https://www.samanportable.com/product/container-cafe/restaurant-food-containers" },
+        { "@type": "ListItem", "position": 9, "name": "Shipping Container Hotel", "url": "https://www.samanportable.com/product/container-cafe/shipping-container-hotel" },
+        { "@type": "ListItem", "position": 10, "name": "Mobile Restaurant", "url": "https://www.samanportable.com/product/container-cafe/mobile-restaurants" },
+        { "@type": "ListItem", "position": 11, "name": "Shipping Container Restaurant", "url": "https://www.samanportable.com/product/container-cafe/shipping-container-restaurant" },
+        { "@type": "ListItem", "position": 12, "name": "Shipping Container Cafe", "url": "https://www.samanportable.com/product/container-cafe/shipping-container-cafe" },
+        { "@type": "ListItem", "position": 13, "name": "Container Restaurant", "url": "https://www.samanportable.com/product/container-cafe/container-restaurant" },
+        { "@type": "ListItem", "position": 14, "name": "Portable Cafe Container", "url": "https://www.samanportable.com/product/container-cafe/portable-cafe-container" },
+        { "@type": "ListItem", "position": 15, "name": "Modular Container Cafe", "url": "https://www.samanportable.com/product/container-cafe/modular-container-cafe" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/container-cafe#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "Container Cafe", "item": "https://www.samanportable.com/product-category/container-cafe" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/container-cafe#faqpage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do container cafe prices range from ₹2 lakh to ₹33 lakh?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Price tracks the format and the build. A compact coffee kiosk needs one small container and a single service window, so it starts near ₹2,15,000. A glass-façade flagship or a multi-unit modular restaurant uses more steel, a larger kitchen and full interior fit-out, which is why the range tops out around ₹33,25,000." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which container cafe is right for my business?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Match it to how you operate: a coffee-only walk-up suits the Container Coffee Shop; a sit-down menu suits the Container Cafe or a full Container Restaurant; if you relocate between markets, choose a mobile unit or food truck; and if you plan to grow, a modular build lets you add units later." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I start a container cafe, and how soon can it open?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pick the format that fits your concept and budget, and we build and hand it over kitchen-ready in about 15 days from order confirmation. You then install equipment, finish branding and complete local licensing before you start serving — far quicker than fitting out a conventional café space." }
+        }
+      ]
+    }
+  ]
+}

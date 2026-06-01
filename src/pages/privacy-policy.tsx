@@ -55,7 +55,7 @@ const PrivacyPolicy = () => {
                   </p>
 
                   <p className="text-slate-700 mb-6">
-                    At Saman Portable Office Solutions, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                    At Saman Portable, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
                   </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Information We Collect</h3>

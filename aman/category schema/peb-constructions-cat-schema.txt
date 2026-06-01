@@ -1,0 +1,60 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/peb-constructions/#collectionpage",
+      "url": "https://www.samanportable.com/product-category/peb-constructions/",
+      "name": "PEB Construction Company in India",
+      "description": "SAMAN is a PEB construction company in India that designs, supplies and erects warehouses, factory sheds and steel buildings. Compare build types, spans and price bands.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "about": { "@id": "https://www.samanportable.com/#organization" },
+      "publisher": { "@id": "https://www.samanportable.com/#organization" },
+      "breadcrumb": { "@id": "https://www.samanportable.com/product-category/peb-constructions/#breadcrumb" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product-category/peb-constructions/#itemlist" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/peb-constructions/#itemlist",
+      "name": "SAMAN PEB Construction Range",
+      "numberOfItems": 12,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Engineered Steel Structures", "url": "https://www.samanportable.com/product/peb-constructions/engineered-steel-structures" },
+        { "@type": "ListItem", "position": 2, "name": "Pre-Engineered Building Suppliers", "url": "https://www.samanportable.com/product/peb-constructions/pre-engineered-building-suppliers" },
+        { "@type": "ListItem", "position": 3, "name": "PEB Building Manufacturers", "url": "https://www.samanportable.com/product/peb-constructions/peb-building-manufacturers" },
+        { "@type": "ListItem", "position": 4, "name": "Engineered Buildings", "url": "https://www.samanportable.com/product/peb-constructions/engineered-buildings" },
+        { "@type": "ListItem", "position": 5, "name": "Prefab Building Construction", "url": "https://www.samanportable.com/product/peb-constructions/prefab-building-construction" },
+        { "@type": "ListItem", "position": 6, "name": "PEB Construction", "url": "https://www.samanportable.com/product/peb-constructions/peb-constructions" },
+        { "@type": "ListItem", "position": 7, "name": "Pre-engineering Structures", "url": "https://www.samanportable.com/product/peb-constructions/pre-engineering-structures" },
+        { "@type": "ListItem", "position": 8, "name": "Construction Prefabricated Buildings", "url": "https://www.samanportable.com/product/peb-constructions/construction-prefabricated-buildings" },
+        { "@type": "ListItem", "position": 9, "name": "Pre-engineered Structures", "url": "https://www.samanportable.com/product/peb-constructions/pre-engineered-structures" },
+        { "@type": "ListItem", "position": 10, "name": "Prefab Modular Construction", "url": "https://www.samanportable.com/product/peb-constructions/prefab-modular-construction" },
+        { "@type": "ListItem", "position": 11, "name": "PEB Steel Structure", "url": "https://www.samanportable.com/product/peb-constructions/peb-steel-structure" },
+        { "@type": "ListItem", "position": 12, "name": "Prefabricated Construction", "url": "https://www.samanportable.com/product/peb-constructions/prefabricated-construction" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/peb-constructions/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "PEB Constructions", "item": "https://www.samanportable.com/product-category/peb-constructions/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/peb-constructions/#faqpage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the cost of PEB construction?", "acceptedAnswer": { "@type": "Answer", "text": "Across SAMAN's range it runs from about ₹19.25 lakh for an entry steel building to ₹53.45 lakh for a large or multi-storey structure. The exact figure is set by span, eave height, cladding grade, any mezzanine and site location, and is quoted against your drawing — erection included." } },
+        { "@type": "Question", "name": "What's the difference between hiring a PEB construction company and buying a pre-engineered building?", "acceptedAnswer": { "@type": "Answer", "text": "A PEB construction company designs, supplies and erects the structure on your site as a turnkey job. Buying a pre-engineered building on its own means you take supply of the steel components and arrange erection separately. If you only want the building product supplied, that sits under SAMAN's pre-engineered building range rather than this construction service." } },
+        { "@type": "Question", "name": "What can SAMAN build — warehouses, factory sheds or both?", "acceptedAnswer": { "@type": "Answer", "text": "Both, plus godowns, workshops, logistics buildings, industrial plants and multi-storey steel structures. The clear-span frame is sized to the use, so the same turnkey process covers a single-bay shed and a wide-span warehouse alike." } },
+        { "@type": "Question", "name": "How long does it take to design and erect a PEB structure?", "acceptedAnswer": { "@type": "Answer", "text": "Because components are fabricated in the factory and assembled by bolting on site, a PEB build is markedly faster than conventional RCC. Timelines depend on span, size and approvals; we confirm a schedule once the design is fixed at the quoting stage." } },
+        { "@type": "Question", "name": "Do you handle PEB construction across India?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. With units in Bangalore and Greater Noida, SAMAN takes PEB construction projects pan-India, managing design, fabrication, delivery and on-site erection from a single point of contact." } },
+        { "@type": "Question", "name": "Is a PEB construction the same as an industrial shed?", "acceptedAnswer": { "@type": "Answer", "text": "An industrial shed is one of the things a PEB construction builds — a single-use steel shed. PEB construction is the broader engineered-building service that also covers wide-span warehouses, factory blocks and multi-storey structures. If you specifically need a standalone shed, that's covered by SAMAN's industrial shed range." } }
+      ]
+    }
+  ]
+}
+</script>

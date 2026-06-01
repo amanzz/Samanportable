@@ -1,0 +1,76 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/container-offices#collectionpage",
+      "url": "https://www.samanportable.com/product-category/container-offices",
+      "name": "Container Office Types & Full Range — For Sale Across India",
+      "description": "SAMAN's full container office range — 15 ISO-grade types for sale across India from ₹2,15,000. Compare sizes, prices and use-cases, then pick the right unit.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "publisher": { "@id": "https://www.samanportable.com/#organization" },
+      "about": { "@id": "https://www.samanportable.com/product-category/container-offices#itemlist" },
+      "breadcrumb": { "@id": "https://www.samanportable.com/product-category/container-offices#breadcrumb" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/container-offices#itemlist",
+      "name": "Container Office Products",
+      "numberOfItems": 15,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Shipping Container Office", "url": "https://www.samanportable.com/product/container-offices/shipping-container-office" },
+        { "@type": "ListItem", "position": 2, "name": "Portable Container Offices", "url": "https://www.samanportable.com/product/container-offices/portable-container-offices" },
+        { "@type": "ListItem", "position": 3, "name": "Cargo Container Office", "url": "https://www.samanportable.com/product/container-offices/cargo-container-office" },
+        { "@type": "ListItem", "position": 4, "name": "Storage Container Office", "url": "https://www.samanportable.com/product/container-offices/storage-container-office" },
+        { "@type": "ListItem", "position": 5, "name": "Mobile Office Container", "url": "https://www.samanportable.com/product/container-offices/mobile-office-container" },
+        { "@type": "ListItem", "position": 6, "name": "Modular Container Office", "url": "https://www.samanportable.com/product/container-offices/modular-container-office" },
+        { "@type": "ListItem", "position": 7, "name": "Container Office Cabin", "url": "https://www.samanportable.com/product/container-offices/container-office-cabin" },
+        { "@type": "ListItem", "position": 8, "name": "Modular Shipping Container Office", "url": "https://www.samanportable.com/product/container-offices/modular-shipping-container-office" },
+        { "@type": "ListItem", "position": 9, "name": "Construction Site Office", "url": "https://www.samanportable.com/product/container-offices/construction-site-office" },
+        { "@type": "ListItem", "position": 10, "name": "Prefabricated Container Office", "url": "https://www.samanportable.com/product/container-offices/prefabricated-container-office" },
+        { "@type": "ListItem", "position": 11, "name": "Mobile Container Office", "url": "https://www.samanportable.com/product/container-offices/mobile-container-office" },
+        { "@type": "ListItem", "position": 12, "name": "Container Offices", "url": "https://www.samanportable.com/product/container-offices/container-offices" },
+        { "@type": "ListItem", "position": 13, "name": "Site Office Container", "url": "https://www.samanportable.com/product/container-offices/site-office-container" },
+        { "@type": "ListItem", "position": 14, "name": "Container Portable Office", "url": "https://www.samanportable.com/product/container-offices/container-portable-office" },
+        { "@type": "ListItem", "position": 15, "name": "Container Site Office", "url": "https://www.samanportable.com/product/container-offices/container-site-office" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/container-offices#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "Container Offices", "item": "https://www.samanportable.com/product-category/container-offices" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/container-offices#faqpage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is a container office different from a portable office cabin?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A container office is built to ISO shipping-container form factor from heavy steel — a shell that stacks, takes crane lifting and handles rough industrial sites. A portable office cabin is a lighter MS-framed unit suited to softer interiors and flat ground. Choose a container office for stacking, security and industrial durability." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can container offices be stacked or joined into a larger office?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. ISO corner castings let most units stack two to three high, and modular units connect side-by-side to form a larger floor plate — the main advantage of the container form factor over a single cabin." }
+        },
+        {
+          "@type": "Question",
+          "name": "What sizes do container offices come in?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Standard units are 20ft and 40ft. A 20ft unit suits a one-to-four-person office; a 40ft unit or a multi-unit combination suits larger teams and meeting rooms." }
+        },
+        {
+          "@type": "Question",
+          "name": "How soon can a container office be delivered across India?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Units are fabricated to order and typically dispatched within 7–21 working days, then delivered Pan India. Lead time depends on the configuration and your site location." }
+        }
+      ]
+    }
+  ]
+}
+</script>

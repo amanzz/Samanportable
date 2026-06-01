@@ -17,7 +17,7 @@ const faqs = [
   {
     question: 'What materials are used in Saman Portable structures?',
     answer:
-      'ISI-certified MS steel frame (1.2–2.0 mm thickness), 50mm PUF-insulated sandwich panels with 0.50mm PPGI cladding, galvanised steel roofing, and 18mm cement particle board flooring. EPS, Rockwool and Glasswool insulation options available on request.',
+      'Quality-tested MS steel frame (1.2–2.0 mm thickness), 50mm PUF-insulated sandwich panels with 0.50mm PPGI cladding, galvanised steel roofing, and 18mm cement particle board flooring. EPS, Rockwool and Glasswool insulation options available on request.',
   },
   {
     question: 'What sizes are available? Can I get a custom size?',

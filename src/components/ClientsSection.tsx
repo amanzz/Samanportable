@@ -71,10 +71,10 @@ const ClientsSection = () => {
   ];
 
   const trustPoints = [
-    '500+ structures delivered since 2017',
+    '500+ structures delivered since 2009',
     'Pan-India delivery across 15+ states',
     'ISO 9001:2015 certified processes',
-    '25-year structural warranty on all units',
+    '5-year structural warranty on all units',
   ];
 
   const marqueeClients = [...clients, ...clients];

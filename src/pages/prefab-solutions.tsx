@@ -26,6 +26,7 @@ import QuoteFormTrigger from '@/components/QuoteFormTrigger';
 import QuoteForm from '@/components/QuoteForm';
 import SmartImage from '@/components/SmartImage';
 import FAQSchema from '@/components/FAQSchema';
+import CategoryMenu from '@/components/CategoryMenu';
 
 const PrefabSolutionsPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -267,10 +268,10 @@ const PrefabSolutionsPage = () => {
     <div className="page-container min-h-screen overflow-x-hidden">
       <Head>
         <title>Container Office Manufacturer India | Porta Cabin Supplier | Saman Portable</title>
-        <meta name="description" content="India&apos;s #1 Container Office & Porta Cabin Manufacturer. Ready in 7–21 days. ISI Certified. Free Installation. All India Delivery. Get instant quote for container offices, porta cabins, labor colonies." />
+        <meta name="description" content="India&apos;s #1 Container Office & Porta Cabin Manufacturer. Ready in 7–21 days. Manufactured using quality-tested steel and industry-standard processes. Free Installation. All India Delivery. Get instant quote for container offices, porta cabins, labor colonies." />
         <meta name="keywords" content="prefab solutions India, container offices Bangalore, porta cabins, labor colonies, portable offices, container cafes, prefab construction, modular buildings, construction cabins, healthcare facilities, event spaces, storage solutions, Saman Portable" />
-        <meta name="author" content="Saman Portable Office Solutions" />
-        <meta name="publisher" content="Saman Portable Office Solutions" />
+        <meta name="author" content="Saman Portable" />
+        <meta name="publisher" content="Saman Portable" />
         <meta property="og:title" content="Prefab Solutions India | Saman Portable - Modern Container & Portable Buildings" />
         <meta property="og:description" content="Transform your space with India&apos;s leading prefab solutions. Container offices, porta cabins, labor colonies & more. Fast, reliable, cost-effective building solutions with free consultation." />
         <meta property="og:type" content="website" />
@@ -381,6 +382,9 @@ const PrefabSolutionsPage = () => {
         )}
       </nav>
 
+      {/* Shared 14-hub category navigation for SEO consistency */}
+      <CategoryMenu />
+
       {/* Hero Section */}
       <section id="home" className="pt-16 bg-gradient-to-br from-green-50 via-blue-50 to-indigo-50 relative overflow-hidden">
         {/* Background Pattern */}
@@ -418,7 +422,7 @@ const PrefabSolutionsPage = () => {
                   <div className="bg-[#06261A]/10 p-2 rounded-lg">
                     <Shield className="w-5 h-5 text-[#06261A]" />
                   </div>
-                  <span className="text-sm md:text-base text-gray-700 font-medium">ISI Certified Quality</span>
+                  <span className="text-sm md:text-base text-gray-700 font-medium">Quality-tested Construction</span>
                 </div>
                 <div className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                   <div className="bg-[#06261A]/10 p-2 rounded-lg">
@@ -503,7 +507,7 @@ const PrefabSolutionsPage = () => {
                 <Users className="w-8 h-8" />
               </div>
               <h3 className="text-base md:text-lg font-semibold text-gray-900">Expert Team</h3>
-              <p className="text-sm md:text-base text-gray-600">10+ years experience</p>
+              <p className="text-sm md:text-base text-gray-600">15+ years experience</p>
             </div>
           </div>
         </div>
@@ -910,7 +914,7 @@ const PrefabSolutionsPage = () => {
           <div className="border-t border-gray-800 pt-3 md:pt-8 pb-0">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
               <div className="text-gray-400 text-sm md:text-base text-center md:text-left">
-                © 2024 SAMAN Portable Office Solutions. All rights reserved.
+                © 2024 SAMAN POS India Private Limited. All rights reserved.
               </div>
 
               <div className="flex flex-wrap gap-2 md:gap-6 justify-center md:justify-end">

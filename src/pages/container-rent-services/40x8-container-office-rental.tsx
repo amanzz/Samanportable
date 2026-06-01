@@ -61,9 +61,42 @@ const ContainerOffice40x8Rental = () => {
         fallbackDescription="Rent a 40×8 container office in Bangalore for large projects, offices, or commercial use. Spacious 320 sq ft unit with clear terms and fast setup."
         fallbackCanonical="https://www.samanportable.com/container-rent-services/40x8-container-office-rental"
         keywords="40x8 container office rental, large site office rental, 320 sq ft office container, portable office Bangalore, construction site office"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        author="SAMAN POS India Private Limited"
+        publisher="SAMAN POS India Private Limited"
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"Product\", \"@id\": \"https://www.samanportable.com/container-rent-services/40x8-container-office-rental#product\", \"name\": \"40x8 Container Office Rental\", \"description\": \"320 sq ft container office for rent in Bangalore and Delhi NCR. Galvanized steel, insulated, HVAC-ready. Built for large project offices and corporate site teams.\", \"image\": [\"https://www.samanportable.com/40x8-container-office-rental-bangalore.png\"], \"category\": \"Container Office Rental\", \"brand\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"additionalProperty\": [{\"@type\": \"PropertyValue\", \"name\": \"Structural warranty\", \"value\": \"5 years\"}, {\"@type\": \"PropertyValue\", \"name\": \"Standard warranty (fittings)\", \"value\": \"1 year, extendable to 2 years on request\"}], \"offers\": {\"@type\": \"Offer\", \"businessFunction\": \"http://purl.org/goodrelations/v1#LeaseOut\", \"priceCurrency\": \"INR\", \"availability\": \"https://schema.org/InStock\", \"seller\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"eligibleDuration\": {\"@type\": \"QuantitativeValue\", \"minValue\": 6, \"unitCode\": \"MON\"}, \"priceSpecification\": {\"@type\": \"UnitPriceSpecification\", \"minPrice\": \"32000\", \"maxPrice\": \"42000\", \"priceCurrency\": \"INR\", \"unitCode\": \"MON\"}}}" }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.samanportable.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Rental Services",
+                "item": "https://www.samanportable.com/rental-services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "40x8 Container Office Rental",
+                "item": "https://www.samanportable.com/container-rent-services/40x8-container-office-rental"
+              }
+            ]
+          }) }}
+        />
+      </Head>
       <div className="min-h-screen bg-background">
         <main>
           {/* Hero Section */}

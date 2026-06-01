@@ -38,18 +38,7 @@ export default function ProductStructuredData({ product, category }: ProductStru
       name: 'Saman Portable'
     },
     manufacturer: {
-      '@type': 'Organization',
-      name: 'Saman Portable',
-      url: baseUrl,
-      logo: `${baseUrl}/saman-logo.svg`,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Bangalore',
-        addressLocality: 'Bangalore',
-        addressRegion: 'Karnataka',
-        postalCode: '560001',
-        addressCountry: 'IN'
-      }
+      '@id': 'https://www.samanportable.com/#organization'
     },
     category: product.categories?.[0]?.name || 'Portable Structures',
     sku: product.id.toString(),

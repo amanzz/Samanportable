@@ -532,7 +532,7 @@ const CATEGORY_SEO_DATA: Record<string, RankMathSEOData> = {
   'porta-cabins': {
     title: 'Porta Cabins in Bangalore | Portable Office Cabins | SAMAN Portable',
     description: 'Premium porta cabins and portable office cabins in Bangalore. Durable, customizable, and cost-effective solutions for temporary office spaces. Contact SAMAN Portable today!',
-    og_title: 'Best Porta Cabins in Bangalore - SAMAN Portable Office Solutions',
+    og_title: 'Best Porta Cabins in Bangalore - Saman Portable',
     og_description: 'Get high-quality porta cabins in Bangalore. Perfect for construction sites, events, and temporary offices. Fast delivery and installation.',
     canonical: 'https://www.samanportable.com/product-category/porta-cabins',
     robots: { index: 'index', follow: 'follow' }
@@ -548,7 +548,7 @@ const CATEGORY_SEO_DATA: Record<string, RankMathSEOData> = {
   'portable-cabins': {
     title: 'Portable Cabins in Bangalore | Modular Office Cabins | SAMAN Portable',
     description: 'High-quality portable cabins in Bangalore. Modular, relocatable office cabins for construction sites, events, and temporary facilities.',
-    og_title: 'Portable Cabins Bangalore - SAMAN Portable Office Solutions',
+    og_title: 'Portable Cabins Bangalore - Saman Portable',
     og_description: 'Premium portable cabins for all your temporary space needs. Quick installation, durable construction, and customizable designs.',
     canonical: 'https://www.samanportable.com/product-category/portable-cabins',
     robots: { index: 'index', follow: 'follow' }
@@ -564,7 +564,7 @@ const CATEGORY_SEO_DATA: Record<string, RankMathSEOData> = {
   'security-cabins': {
     title: 'Security Cabins in Bangalore | Guard Cabins | SAMAN Portable',
     description: 'Secure and durable security cabins in Bangalore. Perfect guard cabins for construction sites, parking lots, and commercial properties.',
-    og_title: 'Security Cabins Bangalore - SAMAN Portable Office Solutions',
+    og_title: 'Security Cabins Bangalore - Saman Portable',
     og_description: 'Professional security cabins and guard houses. Weather-resistant, secure, and comfortable spaces for security personnel.',
     canonical: 'https://www.samanportable.com/product-category/security-cabins',
     robots: { index: 'index', follow: 'follow' }

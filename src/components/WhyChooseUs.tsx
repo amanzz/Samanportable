@@ -10,7 +10,7 @@ const WhyChooseUs = () => {
     {
       icon: Award,
       title: '52 Quality Checkpoints',
-      description: 'Every cabin is inspected at 52 stages — from raw material to final wiring test. ISI-certified steel, PUF insulation, no outsourced assembly.',
+      description: 'Every cabin is inspected at 52 stages — from raw material to final wiring test. Manufactured using quality-tested steel and industry-standard processes, PUF insulation, no outsourced assembly.',
     },
     {
       icon: Clock,
@@ -19,8 +19,8 @@ const WhyChooseUs = () => {
     },
     {
       icon: Shield,
-      title: '25-Year Structural Warranty',
-      description: 'PUF insulation cuts heat by 8–12°C. Wind-rated to 200 km/hr. Galvanised roof handles heavy monsoon. We back it with a 25-year warranty.',
+      title: '5-Year Structural Warranty',
+      description: 'PUF insulation cuts heat by 8–12°C. Wind-rated to 200 km/hr. Galvanised roof handles heavy monsoon. 5-year structural warranty; 1-year standard warranty on fittings (extendable to 2 years on request).',
     },
     {
       icon: Users,
@@ -35,7 +35,7 @@ const WhyChooseUs = () => {
     {
       icon: Headphones,
       title: 'Support After Delivery',
-      description: 'Warranty claims, maintenance, repairs — we respond. Many clients have been with us since 2017. Our relationship continues long after handover.',
+      description: 'Warranty claims, maintenance, repairs — we respond. Many clients have been with us since 2009. Our relationship continues long after handover.',
     },
   ];
 
@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
       icon: Wrench,
       step: '06',
       title: 'Ongoing Support',
-      description: '25-year structural warranty begins. If anything needs attention — call us. We respond and resolve. Long-term relationship guaranteed.',
+      description: '5-year structural warranty begins. If anything needs attention — call us. We respond and resolve. Long-term relationship guaranteed.',
     },
   ];
 

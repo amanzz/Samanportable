@@ -1,0 +1,17 @@
+FINAL REDIRECT AUDIT (after Row 26 correction)
+Generated: 2026-05-30T08:40:48.918Z
+
+Redirect Chains Found: 0
+Redirect Loops Found: 0
+
+Redirect Statistics:
+- redirects-from-csv.js: 572
+- next.config.js (hardcoded): 87
+- middleware.ts: 34
+- Total active redirect rules: 693
+
+Row 26 Verification:
+/portacabins-for-sale-in-hebbal-2 → /porta-cabins-in-hebbal
+Status: CORRECT (direct to canonical)
+
+Overall: ALL CLEAR

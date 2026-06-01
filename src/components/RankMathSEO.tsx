@@ -55,7 +55,7 @@ export const RankMathSEO: React.FC<RankMathSEOProps> = ({
       {ogImage && <meta property="og:image:type" content="image/webp" />}
       {canonical && <meta property="og:url" content={canonical} />}
       <meta property="og:locale" content={ogLocale} />
-      <meta property="og:site_name" content="SAMAN Portable Office Solutions" />
+      <meta property="og:site_name" content="SAMAN POS India Private Limited" />
       
       {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />

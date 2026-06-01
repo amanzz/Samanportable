@@ -360,17 +360,46 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
     return image;
   };
 
+  const productHubStructuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product#collectionpage",
+      "url": "https://www.samanportable.com/product",
+      "name": "All Products | Saman Portable",
+      "description": "Browse our complete collection of portable office solutions, cabins, and containers at Saman Portable.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "about": { "@id": "https://www.samanportable.com/#organization" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product#itemlist" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product#itemlist",
+      "name": "Saman Portable Products Catalog",
+      "numberOfItems": products.length,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": products.map((product, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": product.name,
+        "url": `https://www.samanportable.com/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`
+      }))
+    }
+  ];
+
   return (
     <Layout>
       {/* Unified SEO - Single source of truth for all meta tags */}
       <UnifiedSEO 
         rankMathSEO={rankMathSEO} 
         fallbackCanonical="https://www.samanportable.com/product"
-        fallbackTitle="All Products - Saman Portable Office Solutions"
-        fallbackDescription="Browse our complete collection of portable office solutions, cabins, and containers at Saman Portable Office Solutions."
+        fallbackTitle="All Products - Saman Portable"
+        fallbackDescription="Browse our complete collection of portable office solutions, cabins, and containers at Saman Portable."
         keywords="portable cabins, container offices, prefab solutions, portable buildings, modular offices"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        author="Saman Portable"
+        publisher="Saman Portable"
+        structuredData={productHubStructuredData}
       />
 
       {/* Preload critical images for better performance */}

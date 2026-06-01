@@ -38,8 +38,8 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   fallbackOgDescription,
   fallbackTwitterDescription,
   keywords,
-  author = 'SAMAN Portable Office Solutions',
-  publisher = 'SAMAN Portable Office Solutions',
+  author = 'SAMAN POS India Private Limited',
+  publisher = 'SAMAN POS India Private Limited',
   structuredData,
   noindex = false,
   nofollow = false,
@@ -47,7 +47,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   // Priority order: Rank Math SEO > Fallback values > Default values
   
   // Title - Rank Math has highest priority
-  const title = rankMathSEO?.title || fallbackTitle || 'SAMAN Portable Office Solutions';
+  const title = rankMathSEO?.title || fallbackTitle || 'SAMAN POS India Private Limited';
   
   // Description - Rank Math has highest priority
   const description = rankMathSEO?.description || fallbackDescription || 'ISO 9001:2015 certified manufacturer of portable cabins, container offices and prefab structures in Bangalore and Delhi NCR.';
@@ -106,7 +106,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
       <meta property="og:image:width" content="800" />
       <meta property="og:image:height" content="600" />
       <meta property="og:image:type" content="image/webp" />
-      <meta property="og:site_name" content="SAMAN Portable Office Solutions" />
+      <meta property="og:site_name" content="SAMAN POS India Private Limited" />
       <meta property="og:locale" content={ogLocale} />
       
       {/* Twitter Card Meta Tags - Single instances only */}

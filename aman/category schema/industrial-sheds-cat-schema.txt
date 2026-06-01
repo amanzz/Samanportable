@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/industrial-sheds/#collectionpage",
+      "url": "https://www.samanportable.com/product-category/industrial-sheds/",
+      "name": "Industrial Shed Manufacturer in India",
+      "description": "Compare nine industrial steel shed types by use and price band, from SAMAN's own plants in Bangalore and Greater Noida.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "publisher": { "@id": "https://www.samanportable.com/#organization" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product-category/industrial-sheds/#itemlist" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/industrial-sheds/#itemlist",
+      "name": "Industrial Shed Range",
+      "numberOfItems": 9,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Garden Sheds", "url": "https://www.samanportable.com/product/industrial-sheds/garden-sheds" },
+        { "@type": "ListItem", "position": 2, "name": "Prefabricated Industrial Shed", "url": "https://www.samanportable.com/product/industrial-sheds/prefabricated-industrial-shed" },
+        { "@type": "ListItem", "position": 3, "name": "Prefab Steel House", "url": "https://www.samanportable.com/product/industrial-sheds/prefab-steel-house" },
+        { "@type": "ListItem", "position": 4, "name": "Portable Sheds", "url": "https://www.samanportable.com/product/industrial-sheds/portable-sheds" },
+        { "@type": "ListItem", "position": 5, "name": "Steel Sheds", "url": "https://www.samanportable.com/product/industrial-sheds/steel-sheds" },
+        { "@type": "ListItem", "position": 6, "name": "Prefabricated Warehouse", "url": "https://www.samanportable.com/product/industrial-sheds/prefabricated-warehouses" },
+        { "@type": "ListItem", "position": 7, "name": "Storage Sheds", "url": "https://www.samanportable.com/product/industrial-sheds/storage-sheds" },
+        { "@type": "ListItem", "position": 8, "name": "Industrial Sheds", "url": "https://www.samanportable.com/product/industrial-sheds/industrial-sheds" },
+        { "@type": "ListItem", "position": 9, "name": "Commercial Sheds", "url": "https://www.samanportable.com/product/industrial-sheds/commercial-sheds" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/industrial-sheds/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "Industrial Sheds", "item": "https://www.samanportable.com/product-category/industrial-sheds/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/industrial-sheds/#faqpage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much does an industrial shed cost per square foot?", "acceptedAnswer": { "@type": "Answer", "text": "There is no single rate — covered-area cost moves with span, eave height and cladding. A plain GI-sheeted storage span costs less per square foot than an insulated sandwich-panel production shed. Send your footprint and use for a figure tied to your plot." } },
+        { "@type": "Question", "name": "Which industrial shed type should I choose for my use?", "acceptedAnswer": { "@type": "Answer", "text": "Match the job: garden and storage sheds for cover, portable and steel sheds for workshops and relocation, prefabricated industrial sheds and warehouses for production and bulk storage, commercial sheds where customers see the building." } },
+        { "@type": "Question", "name": "Can SAMAN customise the size, span and cladding?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Because fabrication is in-house, span, length, eave height, door and window positions, and wall and roof cladding (GI sheeting or insulated PUF sandwich panels) are all configured to your brief rather than fixed." } },
+        { "@type": "Question", "name": "How long does manufacturing and installation take?", "acceptedAnswer": { "@type": "Answer", "text": "Smaller sheds ship faster than large clear-span structures. Lead time depends on size and finish; we confirm a fabrication and erection timeline against your site once the configuration is locked." } },
+        { "@type": "Question", "name": "Industrial shed, PEB construction or prefab building — which do I need?", "acceptedAnswer": { "@type": "Answer", "text": "An industrial shed is a single-span steel structure bought as a finished product. A large engineered building designed, supplied and erected as a turnkey project is PEB construction. A finished, multi-room building is a prefab building. For a standalone steel shed, this range is the right place." } },
+        { "@type": "Question", "name": "Do you deliver and install beyond Bangalore and Delhi NCR?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — both plants serve their surrounding regions for delivery and erection, and outstation supply is quoted on your pincode." } }
+      ]
+    }
+  ]
+}

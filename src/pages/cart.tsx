@@ -30,7 +30,7 @@ const Cart = () => {
   return (
     <Layout>
       <Head>
-        <title>Shopping Cart - Saman Portable Office Solutions</title>
+        <title>Shopping Cart - Saman Portable</title>
         <meta name="description" content="Review your cart items and proceed to checkout for portable office solutions." />
         <meta name="robots" content="noindex, nofollow" />
       </Head>

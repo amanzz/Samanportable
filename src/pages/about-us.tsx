@@ -7,6 +7,7 @@ import QuoteFormTrigger from '@/components/QuoteFormTrigger';
 import Link from 'next/link';
 import { CheckCircle, Users, Award, Clock, Shield, Truck, ArrowRight, Compass, Building2, Leaf, HeartHandshake, Target, Zap } from 'lucide-react';
 import { pageSEO, siteConfig } from '@/config/seo';
+import { getAboutPageSchema } from '@/lib/schema';
 
 interface AboutUsProps {
   companyStats: {
@@ -22,7 +23,7 @@ export const getStaticProps: GetStaticProps<AboutUsProps> = async () => {
     // In a real implementation, you might fetch company stats from WordPress
     const companyStats = {
       yearsExperience: 15,
-      projectsCompleted: 5000,
+      projectsCompleted: 500,
       happyCustomers: 3000,
       teamMembers: 200,
     };
@@ -82,7 +83,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
     { year: '2015', title: 'Expansion Milestone', description: 'Introduced container offices and prefab buildings, expanding production capacity and entering multi-state markets across Karnataka and Tamil Nadu.' },
     { year: '2018', title: 'Innovation Hub', description: 'Launched a dedicated R&D centre for advanced prefab technologies, PUF-panel development, and eco-smart construction systems.' },
     { year: '2021', title: 'Digital Transformation', description: 'Integrated smart IoT monitoring and BIM-based design systems, setting new benchmarks in portable construction efficiency and precision.' },
-    { year: '2024', title: 'Market Leadership', description: 'Recognized as Bangalore’s top portable office manufacturer, serving 15+ states and completing 5,000+ successful installations across India.' }
+    { year: '2024', title: 'Market Leadership', description: 'Recognized as Bangalore’s top portable office manufacturer, serving 15+ states and completing 500+ successful installations across India.' }
   ];
 
   return (
@@ -97,6 +98,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
         keywords={pageSEO.about.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
+        structuredData={getAboutPageSchema()}
       />
 
       <div className="min-h-screen">
@@ -114,7 +116,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
               </h2>
               <div className="text-lg md:text-xl max-w-4xl mx-auto opacity-90 space-y-4">
                 <p>
-                  Saman Portable is India’s trusted name in portable cabins, container offices, and prefab buildings. Since 2016, we’ve been transforming the way businesses and communities build — combining speed, sustainability, and modern design in every structure.
+                  Saman Portable is India’s trusted name in portable cabins, container offices, and prefab buildings. Since 2009, we’ve been transforming the way businesses and communities build — combining speed, sustainability, and modern design in every structure.
                 </p>
                 <p>
                   With ISO-certified quality, advanced PUF-panel engineering, and a 7–21 days delivery promise, we help clients across India create durable, ready-to-use spaces that perform beautifully and last for years.
@@ -164,10 +166,10 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                     Our Story
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6">
-                    Founded in 2009, Saman Portable Office Solutions began with a single goal — to make high-quality portable cabins and container offices accessible to every business, large or small. What started as a modest workshop in Bangalore has grown into one of India’s most trusted names in modular and prefabricated construction.
+                    Founded in 2009 and incorporated as SAMAN POS India Private Limited in 2019, Saman Portable has delivered portable cabins, container offices and prefab structures across India for over 15 years. We manufacture from our own facilities in Bengaluru and Greater Noida and serve clients in 15+ states.
                   </p>
                   <p className="text-lg text-muted-foreground mb-6">
-                    Over the years, we’ve built more than 5,000 projects across India, combining engineering precision with a customer-first approach. Our commitment to innovation, sustainability, and performance has helped companies in construction, real estate, education, and manufacturing find faster, smarter space solutions.
+                    Over the years, we’ve built more than 500 projects across India, combining engineering precision with a customer-first approach. Our commitment to innovation, sustainability, and performance has helped companies in construction, real estate, education, and manufacturing find faster, smarter space solutions.
                   </p>
                   <p className="text-lg text-muted-foreground">
                     Today, Saman Portable stands for design excellence and reliability, offering modular spaces that are built to last and delivered on time, every time.
@@ -254,7 +256,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                   </div>
                   <h3 className="text-xl font-semibold mb-4 text-foreground">Proven Scale & Quality</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    With 15+ years of expertise and 5,000+ completed projects, we ensure end-to-end control from fabrication to installation, meeting strict ISO and ISI standards.
+                    With 15+ years of expertise and 500+ completed projects, we ensure end-to-end control from fabrication to installation, meeting strict ISO standards.
                   </p>
                 </div>
 

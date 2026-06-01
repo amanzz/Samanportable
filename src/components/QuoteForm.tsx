@@ -107,7 +107,7 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
     'MS Porta Cabin',
     'Container Office',
     'Prefab Labor Colony',
-    'Marketing Office',
+    'Portable Office',
     'PEB Buildings',
     'Portable Toilets and Security',
     'Container Cafes'

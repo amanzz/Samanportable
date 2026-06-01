@@ -41,12 +41,46 @@ const PortaCabin40x10Rental = () => {
     <Layout>
       <UnifiedSEO
         fallbackTitle="Premium 40×10 Porta Cabin for Rent in Bangalore & Delhi NCR"
-        fallbackDescription="Rent BIS-certified 40×10 porta cabins with quick 4–6 hr setup, insulated interiors & 24×7 support across Bangalore and Delhi NCR."
+        fallbackDescription="Rent quality-tested 40×10 porta cabins with quick 4–6 hr setup, insulated interiors & 24×7 support across Bangalore and Delhi NCR."
         fallbackCanonical="https://www.samanportable.com/container-rent-services/40x10-porta-cabin-rental"
         keywords="40x10 porta cabin rental, large porta cabin rental, spacious portable cabin, temporary office rental, construction site cabin"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        author="SAMAN POS India Private Limited"
+        publisher="SAMAN POS India Private Limited"
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"Product\", \"@id\": \"https://www.samanportable.com/container-rent-services/40x10-porta-cabin-rental#product\", \"name\": \"40x10 Porta Cabin Rental\", \"description\": \"400 sq ft porta cabin for rent in Bangalore and Delhi NCR. PUF-insulated, pre-wired, ISO-certified. Ideal for 8-10 person site offices and temporary accommodation.\", \"image\": [\"https://www.samanportable.com/40x10-executive-porta-cabin-office.png\"], \"category\": \"Porta Cabin Rental\", \"brand\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"additionalProperty\": [{\"@type\": \"PropertyValue\", \"name\": \"Structural warranty\", \"value\": \"5 years\"}, {\"@type\": \"PropertyValue\", \"name\": \"Standard warranty (fittings)\", \"value\": \"1 year, extendable to 2 years on request\"}], \"offers\": {\"@type\": \"Offer\", \"businessFunction\": \"http://purl.org/goodrelations/v1#LeaseOut\", \"priceCurrency\": \"INR\", \"availability\": \"https://schema.org/InStock\", \"seller\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"eligibleDuration\": {\"@type\": \"QuantitativeValue\", \"minValue\": 6, \"unitCode\": \"MON\"}, \"priceSpecification\": {\"@type\": \"UnitPriceSpecification\", \"minPrice\": \"35000\", \"maxPrice\": \"45000\", \"priceCurrency\": \"INR\", \"unitCode\": \"MON\"}}}" }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.samanportable.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Rental Services",
+                "item": "https://www.samanportable.com/rental-services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "40x10 Porta Cabin Rental",
+                "item": "https://www.samanportable.com/container-rent-services/40x10-porta-cabin-rental"
+              }
+            ]
+          }) }}
+        />
+      </Head>
+      
 
       <div className="min-h-screen bg-background">
         <main>
@@ -167,7 +201,7 @@ const PortaCabin40x10Rental = () => {
                       Prefabricated Workspace Solutions for the Modern Site
                     </h2>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      Designed for site offices, project teams, and corporate events, this 400 sq ft portable cabin ensures comfort, fast setup, and energy efficiency with BIS-certified construction and flexible rental options.
+                      Designed for site offices, project teams, and corporate events, this 400 sq ft portable cabin ensures comfort, fast setup, and energy efficiency. Manufactured using quality-tested steel and industry-standard processes with flexible rental options.
                     </p>
                   </div>
 
@@ -205,14 +239,14 @@ const PortaCabin40x10Rental = () => {
                         </div>
                         <h3 className="text-2xl font-bold mb-4">Deployment Excellence</h3>
                         <p className="text-white/80 mb-6 leading-relaxed">
-                          Installation is handled by our BIS-certified technicians, completing site assembly in <span className="text-white font-bold">just 4–6 hours</span> through ground placement (no crane needed).
+                          Installation is handled by our certified technicians, completing site assembly in <span className="text-white font-bold">just 4–6 hours</span> through ground placement (no crane needed).
                         </p>
                         <ul className="space-y-3">
                           <li className="flex items-center gap-3 text-sm font-medium">
                             <CheckCircle className="w-5 h-5 text-green-400" /> Transportation Included
                           </li>
                           <li className="flex items-center gap-3 text-sm font-medium">
-                            <CheckCircle className="w-5 h-5 text-green-400" /> BIS-Certified Installers
+                            <CheckCircle className="w-5 h-5 text-green-400" /> Certified Installers
                           </li>
                           <li className="flex items-center gap-3 text-sm font-medium">
                             <CheckCircle className="w-5 h-5 text-green-400" /> No Crane Required
@@ -422,7 +456,7 @@ const PortaCabin40x10Rental = () => {
                   { q: "3. Can I customize the interior layout?", a: "Yes — choose from partition walls, furniture sets, lighting styles, and storage solutions to create your ideal workspace." },
                   { q: "4. How long does installation and removal take?", a: "Our team completes installation and dismantling within 4–6 hours using ground placement methods that avoid crane costs." },
                   { q: "5. Do you offer daily, weekly, and monthly rental plans?", a: "Absolutely. Flexible plans are available to fit your project schedule and budget." },
-                  { q: "6. Are your porta cabins BIS and fire-safety certified?", a: "Yes. All units are BIS IS-3840 fire safety and Seismic Zone III compliant, ensuring full safety and regulatory compliance." },
+                  { q: "6. Are your porta cabins fire-safe and durable?", a: "Yes. All units are manufactured using quality-tested steel and industry-standard processes, with fire safety and seismic Zone III compliance measures built in." },
                   { q: "7. What locations do you serve?", a: "We serve Bangalore City, Greater Bangalore, Industrial Areas (Peenya, Bommasandra, Doddaballapur, Nelamangala), and Delhi NCR (New Delhi, Noida, Gurugram, Ghaziabad)." },
                   { q: "8. Is maintenance included in the rental cost?", a: "Yes. Weekly preventive maintenance and 24×7 emergency response (within 2–4 hours) are included at no additional charge." },
                   { q: "9. Can porta cabins be relocated mid-rental?", a: "Yes, relocation is part of our service. We can move your cabin anywhere within our coverage zones in less than 24 hours." },

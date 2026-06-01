@@ -1,0 +1,61 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/porta-cabins/#collectionpage",
+      "url": "https://www.samanportable.com/product-category/porta-cabins/",
+      "name": "Porta Cabin Types & Price List in India",
+      "description": "Compare every SAMAN porta cabin type by use and price — from mini units to multi-room offices. Custom sizes, two factories in Bangalore and Delhi NCR.",
+      "inLanguage": "en-IN",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "publisher": { "@id": "https://www.samanportable.com/#organization" },
+      "breadcrumb": { "@id": "https://www.samanportable.com/product-category/porta-cabins/#breadcrumb" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product-category/porta-cabins/#itemlist" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/porta-cabins/#itemlist",
+      "name": "SAMAN Porta Cabin Range",
+      "numberOfItems": 14,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Mini Porta Cabin", "url": "https://www.samanportable.com/product/porta-cabins/mini-porta-cabin" },
+        { "@type": "ListItem", "position": 2, "name": "Low Cost Porta Cabin", "url": "https://www.samanportable.com/product/porta-cabins/low-cost-porta-cabin" },
+        { "@type": "ListItem", "position": 3, "name": "Steel Porta Cabin", "url": "https://www.samanportable.com/product/porta-cabins/steel-porta-cabin" },
+        { "@type": "ListItem", "position": 4, "name": "Small Portacabin", "url": "https://www.samanportable.com/product/porta-cabins/small-portacabin" },
+        { "@type": "ListItem", "position": 5, "name": "Porta Cabin Shop", "url": "https://www.samanportable.com/product/porta-cabins/porta-cabin-shop" },
+        { "@type": "ListItem", "position": 6, "name": "Porta Cabin with Toilet", "url": "https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet" },
+        { "@type": "ListItem", "position": 7, "name": "MS Porta Cabin", "url": "https://www.samanportable.com/product/porta-cabins/ms-porta-cabin" },
+        { "@type": "ListItem", "position": 8, "name": "Toilet Porta Cabins", "url": "https://www.samanportable.com/product/porta-cabins/toilet-porta-cabins" },
+        { "@type": "ListItem", "position": 9, "name": "Porta Cabin Office", "url": "https://www.samanportable.com/product/porta-cabins/porta-cabin-office" },
+        { "@type": "ListItem", "position": 10, "name": "Buy Porta Cabins", "url": "https://www.samanportable.com/product/porta-cabins/buy-porta-cabins" },
+        { "@type": "ListItem", "position": 11, "name": "Portacabin Office", "url": "https://www.samanportable.com/product/porta-cabins/portacabin-office" },
+        { "@type": "ListItem", "position": 12, "name": "Prefabricated Porta Cabin", "url": "https://www.samanportable.com/product/porta-cabins/prefabricated-porta-cabin" },
+        { "@type": "ListItem", "position": 13, "name": "Luxury Porta Cabin", "url": "https://www.samanportable.com/product/porta-cabins/luxury-porta-cabin" },
+        { "@type": "ListItem", "position": 14, "name": "Porta Cabin", "url": "https://www.samanportable.com/product/porta-cabins/porta-cabins" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/porta-cabins/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "Porta Cabins", "item": "https://www.samanportable.com/product-category/porta-cabins/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/porta-cabins/#faqpage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What porta cabin types does SAMAN make, and which fits my project?", "acceptedAnswer": { "@type": "Answer", "text": "SAMAN builds budget, mini, small, site-office, professional-office, shop, sanitation, steel, MS, prefabricated and luxury porta cabins. Match the type to your job — a single-person post needs a mini unit, a manager needs a site office, a retailer needs a shop cabin — then refine by budget and footprint." } },
+        { "@type": "Question", "name": "What is the price range across SAMAN's porta cabin types?", "acceptedAnswer": { "@type": "Answer", "text": "Starting prices run from ₹1,25,000 for a mini porta cabin to ₹5,35,000 for a luxury unit. The figure you pay depends on size, frame and panel grade, and interior fit-out; each product page lists its own starting price and exact dimensions." } },
+        { "@type": "Question", "name": "Should I choose a standard porta cabin type or a custom configuration?", "acceptedAnswer": { "@type": "Answer", "text": "Start with the standard type closest to your use — it ships faster and costs less. Move to a custom configuration only when your size, layout or finish genuinely differs from the standard unit; SAMAN can adjust dimensions and fit-out on any cabin in the range." } },
+        { "@type": "Question", "name": "Which porta cabin suits a site office versus a shop versus sanitation?", "acceptedAnswer": { "@type": "Answer", "text": "A site office calls for the Porta Cabin Office or Portacabin Office; a retail outlet suits the Porta Cabin Shop; and sanitation is the Porta Cabin with Toilet (workspace plus attached toilet) or the Toilet Porta Cabins (a dedicated block)." } }
+      ]
+    }
+  ]
+}
+</script>

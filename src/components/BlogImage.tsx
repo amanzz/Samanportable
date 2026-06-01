@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { getFeaturedImageUrl } from '@/config/api';
+import { decodeHtmlEntities } from '../lib/utils';
 
 interface BlogImageProps {
   post: any;
@@ -16,7 +17,7 @@ const BlogImage: React.FC<BlogImageProps> = ({ post, index, className = '' }) =>
   // Check if post has featured media
   const hasFeaturedMedia = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
   const imageUrl = hasFeaturedMedia ? post._embedded['wp:featuredmedia'][0].source_url : fallbackImageUrl;
-  const imageAlt = hasFeaturedMedia ? post._embedded['wp:featuredmedia'][0].alt_text || post.title.rendered : post.title.rendered;
+  const imageAlt = decodeHtmlEntities(hasFeaturedMedia ? post._embedded['wp:featuredmedia'][0].alt_text || post.title.rendered : post.title.rendered);
 
   // Fallback: Try to fetch featured image if embedded data is missing
   useEffect(() => {

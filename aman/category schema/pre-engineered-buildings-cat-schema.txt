@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/pre-engineered-buildings/#collectionpage",
+      "url": "https://www.samanportable.com/product-category/pre-engineered-buildings/",
+      "name": "Pre-Engineered Building Supplier & Manufacturer in India",
+      "description": "SAMAN is a pre-engineered building manufacturer and supplier in India. Compare 8 IS-certified steel building configurations from ₹16,25,000 to ₹38,55,000.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "about": { "@id": "https://www.samanportable.com/#organization" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product-category/pre-engineered-buildings/#itemlist" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/pre-engineered-buildings/#itemlist",
+      "name": "Pre-Engineered Building Configurations",
+      "numberOfItems": 8,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Prefab Building Manufacturers", "url": "https://www.samanportable.com/product/pre-engineered-buildings/prefab-building-manufacturers" },
+        { "@type": "ListItem", "position": 2, "name": "Pre-engineered Metal Building Manufacturers", "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-metal-building-manufacturers" },
+        { "@type": "ListItem", "position": 3, "name": "Pre-engineered Building Structures", "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-building-structures" },
+        { "@type": "ListItem", "position": 4, "name": "Pre-Engineered Steel Building Manufacturers", "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-steel-building-manufacturers" },
+        { "@type": "ListItem", "position": 5, "name": "Pre-Engineered Building Manufacturers", "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-building-manufacturers" },
+        { "@type": "ListItem", "position": 6, "name": "Engineered Steel Buildings", "url": "https://www.samanportable.com/product/pre-engineered-buildings/engineered-steel-buildings" },
+        { "@type": "ListItem", "position": 7, "name": "Engineered Metal Buildings", "url": "https://www.samanportable.com/product/pre-engineered-buildings/engineered-metal-buildings" },
+        { "@type": "ListItem", "position": 8, "name": "Pre-Engineered Buildings", "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-buildings" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/pre-engineered-buildings/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "Pre-Engineered Buildings", "item": "https://www.samanportable.com/product-category/pre-engineered-buildings/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/pre-engineered-buildings/#faqpage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the cost of a pre-engineered building in India?", "acceptedAnswer": { "@type": "Answer", "text": "From SAMAN, ₹16,25,000 to ₹38,55,000 depending on configuration. A factory-fabricated metal building is the entry point; a wide-span steel building is mid-range; the flagship structure is the top. The final figure is set by clear span, eave height, cladding grade and openings — each product page lists its own starting price." } },
+        { "@type": "Question", "name": "Do you supply the building, or construct and erect it on site?", "acceptedAnswer": { "@type": "Answer", "text": "This range is supply — we manufacture the building from IS-certified steel and deliver it to your site as factory-fabricated, ready-to-bolt components for assembly. If you need the structure designed, supplied and erected under one turnkey contract, that is SAMAN's separate PEB construction service." } },
+        { "@type": "Question", "name": "Which configuration suits a warehouse, a factory or a multi-bay structure — and what's the difference between steel and metal builds?", "acceptedAnswer": { "@type": "Answer", "text": "Wide-span warehouses and logistics halls suit a wide-span steel or engineered metal building; standard factories and workshops fit a standard pre-engineered or steel building; the largest multi-bay footprints take the flagship structure. Metal and steel builds use the same engineered-frame principle — heavier steel sections carry longer clear spans and higher roof loads." } },
+        { "@type": "Question", "name": "Are SAMAN's pre-engineered buildings IS-certified, and how are they delivered?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — frames are fabricated from IS-certified steel to IS 800 and IS 875 design standards, then delivered Pan-India as ready-to-bolt components from our Bangalore and Greater Noida units." } }
+      ]
+    }
+  ]
+}

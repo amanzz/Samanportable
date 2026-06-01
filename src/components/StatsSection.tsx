@@ -7,7 +7,7 @@ const StatsSection = () => {
       icon: Building2,
       count: '500+',
       label: 'Structures Delivered',
-      sublabel: 'Across India since 2017',
+      sublabel: 'Across India since 2009',
     },
     {
       icon: MapPin,
@@ -23,7 +23,7 @@ const StatsSection = () => {
     },
     {
       icon: Calendar,
-      count: '8+ Years',
+      count: '15+ Years',
       label: 'Manufacturing Experience',
       sublabel: 'ISO 9001:2015 certified',
     },

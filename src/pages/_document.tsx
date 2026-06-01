@@ -23,7 +23,7 @@ export default function Document() {
         {/* Critical Resource Preloading - Optimized for LCP */}
         <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/hero-image/saman-portable-office-cabin-bangalore.webp" as="image" type="image/webp" fetchPriority="high" />
+        <link rel="preload" href="/hero-image/saman-portable-office-cabin-bangalore.webp" as="image" type="image/webp" {...{ fetchpriority: "high" }} />
         <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
         
         {/* DNS Prefetching and Preconnecting - Optimized */}

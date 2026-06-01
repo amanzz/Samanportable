@@ -26,6 +26,8 @@ const nextConfig = {
     }
 
     // Enable optimizations only in production - OPTIMIZED
+    // Disabled custom splitChunks override as it interferes with standard Next.js page generation.
+    /*
     if (!dev) {
       config.optimization = {
         ...config.optimization,
@@ -80,6 +82,7 @@ const nextConfig = {
         },
       };
     }
+    */
 
     return config;
   },
@@ -119,6 +122,15 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: '*.surferseo.art',
+      },
+      // Legitimate external blog hosts discovered during audit
+      {
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'secure.gravatar.com',
       }
     ],
     formats: ['image/webp'], // Only WebP for faster processing, removed AVIF
@@ -161,13 +173,13 @@ const nextConfig = {
       // Duplicate URL redirects for SEO - Porta Cabins
       {
         source: '/portacabins-for-sale-in-hebbal-2',
-        destination: '/portacabins-for-sale-in-hebbal',
+        destination: '/porta-cabins-in-hebbal',
         permanent: true,
       },
       // Additional duplicate URL redirects
       {
         source: '/innovative-office-container-designs-2',
-        destination: '/innovative-office-container-designs',
+        destination: '/product-category/container-offices/',
         permanent: true,
       },
       // Blog to product page redirect
@@ -356,6 +368,218 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ─── BLOG DEDUPE REDIRECTS (42 entries from SAMAN_Blog_Dedupe_Action_List.csv) ───
+      {
+        source: '/portacabins-for-sale-in-hosur',
+        destination: '/affordable-porta-cabins-in-hosur',
+        permanent: true,
+      },
+      {
+        source: '/affordable-prefabricated-homes-delhi',
+        destination: '/top-quality-prefab-cabins-delhi',
+        permanent: true,
+      },
+      {
+        source: '/warehouse-manufacturer-in-bangalore',
+        destination: '/industrial-sheds-in-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/low-cost-porta-cabins',
+        destination: '/porta-cabin-price-a-complete-guide-2025',
+        permanent: true,
+      },
+      {
+        source: '/office-cabin-rentals-in-delhi',
+        destination: '/portable-office-cabins-in-delhi-ncr',
+        permanent: true,
+      },
+      {
+        source: '/prefabricated-porta-cabin-in-delhi-ncr',
+        destination: '/porta-cabins-in-delhi-ncr',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabin-in-delhi-ncr',
+        destination: '/porta-cabins-in-delhi-ncr',
+        permanent: true,
+      },
+      {
+        source: '/trusted-porta-cabin-dealer-in-delhi-ncr',
+        destination: '/porta-cabins-in-delhi-ncr',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabin-price-in-delhi',
+        destination: '/porta-cabins-in-delhi-ncr',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabin-manufacturer-in-delhi',
+        destination: '/porta-cabins-in-delhi-ncr',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabin-manufacturer-in-delhi-ncr',
+        destination: '/porta-cabins-in-delhi-ncr',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabin-manufacturer-in-bangalore',
+        destination: '/portacabins-for-sale-in-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabin-size',
+        destination: '/porta-cabin-sizes-and-specifications-in-india',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-anekal',
+        destination: '/porta-cabins-in-anekal',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-banashankari',
+        destination: '/porta-cabins-in-banashankari',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabins-in-bannerghatta-road',
+        destination: '/portacabins-for-sale-in-bannerghatta-road',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-bellandur',
+        destination: '/porta-cabins-in-bellandur',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-btm-layout',
+        destination: '/porta-cabins-in-btm-layout',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-domlur',
+        destination: '/porta-cabins-in-domlur',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-electronic-city',
+        destination: '/porta-cabins-in-electronic-city',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-hebbal',
+        destination: '/porta-cabins-in-hebbal',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-hsr-layout',
+        destination: '/porta-cabins-in-hsr-layout',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-jayanagar',
+        destination: '/porta-cabins-in-jayanagar',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-jigani',
+        destination: '/porta-cabins-in-jigani',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-jp-nagar',
+        destination: '/porta-cabins-in-jp-nagar',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-kengeri',
+        destination: '/porta-cabins-in-kengeri',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-koramangala',
+        destination: '/porta-cabins-in-koramangala',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-malleshwaram',
+        destination: '/porta-cabins-in-malleshwaram',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-marathahalli',
+        destination: '/porta-cabins-in-marathahalli',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-nagarbhavi',
+        destination: '/porta-cabins-in-nagarbhavi',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-peenya',
+        destination: '/porta-cabins-in-peenya-f',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-rajajinagar',
+        destination: '/porta-cabins-in-rajajinagar',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-rt-nagar',
+        destination: '/porta-cabins-in-rt-nagar',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-sarjapur-road',
+        destination: '/porta-cabins-in-sarjapur-road',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-ulsoor',
+        destination: '/porta-cabins-in-ulsoor',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-vijayanagar',
+        destination: '/porta-cabins-in-vijayanagar',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabins-in-whitefield',
+        destination: '/portacabins-for-sale-in-whitefield',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-yelahanka',
+        destination: '/porta-cabins-in-yelahanka',
+        permanent: true,
+      },
+      {
+        source: '/portable-cabin-suppliers-in-bangalore',
+        destination: '/portable-cabin-price-in-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/portable-cabins-for-sale-in-bangalore-option',
+        destination: '/portable-cabin-price-in-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/portable-cabin-solutions-in-hennur',
+        destination: '/portable-cabins-in-hennur',
+        permanent: true,
+      },
+      {
+        source: '/trusted-porta-cabins-in-shivajinagar',
+        destination: '/portacabins-for-sale-in-shivajinagar',
+        permanent: true,
+      },
+
       // ─── CSV BULK REDIRECTS (572 entries from spreadsheet) ───────────────
       // Source: Untitled spreadsheet - Sheet1 (1).csv
       // Skipped: 7 MERGE rows, 2 conflicts with existing config, 0 duplicates
@@ -531,7 +755,7 @@ const nextConfig = {
 
   // Performance optimizations - ENHANCED
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
     // Reduce bundle size warnings
     largePageDataBytes: 128 * 1024, // 128KB threshold instead of default 128KB

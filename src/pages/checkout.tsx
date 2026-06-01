@@ -322,7 +322,7 @@ const Checkout = ({ cartItems: dummyCartItems, subtotal: dummySubtotal, tax: dum
   return (
     <Layout>
       <Head>
-        <title>Checkout - Saman Portable Office Solutions</title>
+        <title>Checkout - Saman Portable</title>
         <meta name="description" content="Complete your purchase of portable office solutions securely." />
         <meta name="robots" content="noindex, nofollow" />
       </Head>
@@ -824,7 +824,7 @@ const Checkout = ({ cartItems: dummyCartItems, subtotal: dummySubtotal, tax: dum
                       Quality Guarantee
                     </h3>
                     <p className="text-muted-foreground">
-                      5-year warranty on all our portable office solutions
+                      5-Year Structural Warranty + 1-Year Standard Warranty (extendable to 2 years on request)
                     </p>
                   </div>
                 </div>

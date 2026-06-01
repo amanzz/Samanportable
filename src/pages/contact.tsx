@@ -9,59 +9,20 @@ import {
 } from 'lucide-react';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { pageSEO, siteConfig } from '@/config/seo';
+import { getLocalBusinessSchemaBengaluru, getLocalBusinessSchemaGreaterNoida } from '@/lib/schema';
 
 const ContactPage = () => {
-  // Structured data object moved to pass via UnifiedSEO
-  const contactStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": pageSEO.contact.title,
-    "description": pageSEO.contact.description,
-    "url": pageSEO.contact.canonical,
-    "mainEntity": {
-      "@type": "Organization",
-      "name": siteConfig.name,
-      "url": siteConfig.url,
-      "logo": siteConfig.ogImage,
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+91-88616-22859",
-          "contactType": "customer service",
-          "areaServed": "IN",
-          "availableLanguage": "English"
-        }
-      ],
-      "address": [
-        {
-          "@type": "PostalAddress",
-          "streetAddress": "I, Sy No 34/2, near India Oil petrol pump, Gopasandra",
-          "addressLocality": "Bengaluru",
-          "addressRegion": "Karnataka",
-          "postalCode": "560099",
-          "addressCountry": "IN"
-        }
-      ]
-    },
-    "author": {
-      "@type": "Organization",
-      "name": siteConfig.name
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": siteConfig.name,
-      "logo": {
-        "@type": "ImageObject",
-        "url": siteConfig.ogImage
-      }
-    }
-  };
+  // Emit two separate LocalBusiness schemas referencing the canonical Organization
+  const contactStructuredData = [
+    getLocalBusinessSchemaBengaluru(),
+    getLocalBusinessSchemaGreaterNoida(),
+  ];
 
   const contactInfo = [
     {
       icon: Clock,
       title: 'Business Hours',
-      details: 'Monday - Saturday: 9:00 AM - 6:00 PM\nSunday: Closed'
+      details: 'Mon–Sat 9:00 AM – 8:00 PM\nSunday: Closed'
     }
   ];
 
@@ -71,7 +32,7 @@ const ContactPage = () => {
       address: 'I, Sy No 34/2, near India Oil petrol pump, Gopasandra, Bengaluru, Karnataka 560099',
       phone: ['+91 88616 22859', '+91 80886 85440'],
       email: 'sales@samanportable.com',
-      mapEmbed: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15556.703211516599!2d77.7291942!3d12.8509838!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6d55f6f82ca7%3A0xf28e36c870c3ef6a!2sSAMAN%20Portable%20Office%20Solutions%20Private%20Limited!5e0!3m2!1sen!2sin!4v1712400000000!5m2!1sen!2sin'
+      mapEmbed: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15556.703211516599!2d77.7291942!3d12.8509838!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6d55f6f82ca7%3A0xf28e36c870c3ef6a!2sSAMAN%20POS%20India%20Private%20Limited!5e0!3m2!1sen!2sin!4v1712400000000!5m2!1sen!2sin'
     },
     {
       name: 'Greater Noida Branch',
@@ -279,14 +240,14 @@ const ContactPage = () => {
               <div className="bg-card p-6 rounded-lg border">
                 <h3 className="font-semibold text-foreground mb-2">What areas do you serve?</h3>
                 <p className="text-muted-foreground">
-                  We primarily serve Bangalore and surrounding areas in Karnataka, but we can accommodate projects across India depending on the scope and requirements.
+                  We serve Bangalore and Delhi NCR, with project delivery across 15+ states in India.
                 </p>
               </div>
               
               <div className="bg-card p-6 rounded-lg border">
                 <h3 className="font-semibold text-foreground mb-2">How long does delivery take?</h3>
                 <p className="text-muted-foreground">
-                  Standard delivery times range from 7–21 days for custom orders. We also have ready-to-ship options available for immediate delivery.
+                  Standard delivery is 7–21 days from confirmed order, with on-site setup typically completed within 24–48 hours.
                 </p>
               </div>
               

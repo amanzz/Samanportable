@@ -25,7 +25,8 @@ import dynamic from 'next/dynamic';
 
 
 import { fetchBlogPost, BlogPost, fetchBlogPostRankMathSEO, RankMathSEOData } from '../config/api';
-import { generateBlogPostSchema, BlogPostSchema } from '../lib/schema';
+import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema } from '../lib/schema';
+import { decodeHtmlEntities } from '../lib/utils';
 
 interface BlogPostProps {
   post: BlogPost | null;
@@ -74,6 +75,41 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       };
     }
 
+    // ─── SSR Content Normalisation ──────────────────────────────────────────
+    // Runs server-side so the initial HTML sent to browsers and search engine
+    // crawlers is already clean — before any client-side JavaScript executes.
+    //
+    // Rule 1: Replace blog subdomain hrefs with the canonical frontend domain.
+    //   href="https://blog.samanportable.com/[path]"
+    //   → href="https://www.samanportable.com/[path]"
+    //   Images (src=) are intentionally left unchanged — they must continue to
+    //   resolve against the WordPress media library host.
+    //
+    // Rule 2: Strip ?utm_source=chatgpt.com ONLY from internal samanportable.com
+    //   links. External URLs (grandviewresearch.com, willscot.com, etc.) are not
+    //   touched.
+    function normaliseContent(html: string): string {
+      if (!html) return html;
+
+      // Rule 1 — subdomain href rewrite (href only, not src)
+      let cleaned = html.replace(
+        /(<a[^>]*\s)href="https?:\/\/blog\.samanportable\.com\/([^"]*)"/gi,
+        '$1href="https://www.samanportable.com/$2"'
+      );
+
+      // Rule 2 — strip utm_source=chatgpt.com from internal links only
+      cleaned = cleaned.replace(
+        /(href="https?:\/\/(?:www\.)?samanportable\.com\/[^"]*)\?utm_source=chatgpt\.com([^"]*")/gi,
+        '$1$2'
+      );
+
+      return cleaned;
+    }
+
+    post.content.rendered  = normaliseContent(post.content.rendered);
+    post.excerpt.rendered  = normaliseContent(post.excerpt.rendered);
+    // ────────────────────────────────────────────────────────────────────────
+
     // Fetch Rank Math SEO data with fallback
     let rankMathSEO: RankMathSEOData | null = null;
     try {
@@ -82,15 +118,15 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       // If RankMath data is empty or incomplete, create fallback SEO data
       if (!rankMathSEO || Object.keys(rankMathSEO).length === 0) {
         rankMathSEO = {
-          title: post.title.rendered + ' - SAMAN Portable Office Solutions',
-          description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
+          title: decodeHtmlEntities(post.title.rendered) + ' - Saman Portable',
+          description: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)),
           canonical: `https://www.samanportable.com/${slug}`,
-          og_title: post.title.rendered,
-          og_description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
+          og_title: decodeHtmlEntities(post.title.rendered),
+          og_description: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)),
           og_image: post.featured_media_url || 'https://www.samanportable.com/og-image.svg',
           og_locale: 'en_US',
-          twitter_title: post.title.rendered,
-          twitter_description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
+          twitter_title: decodeHtmlEntities(post.title.rendered),
+          twitter_description: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)),
           twitter_image: post.featured_media_url || 'https://www.samanportable.com/og-image.svg',
           robots: { index: 'index', follow: 'follow' }
         };
@@ -99,15 +135,15 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       console.warn('Failed to fetch Rank Math SEO data:', error);
       // Create fallback SEO data
       rankMathSEO = {
-        title: post.title.rendered + ' - SAMAN Portable Office Solutions',
-        description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
+        title: decodeHtmlEntities(post.title.rendered) + ' - Saman Portable',
+        description: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)),
         canonical: `https://www.samanportable.com/${slug}`,
-        og_title: post.title.rendered,
-        og_description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
+        og_title: decodeHtmlEntities(post.title.rendered),
+        og_description: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)),
         og_image: post.featured_media_url || 'https://www.samanportable.com/og-image.svg',
         og_locale: 'en_US',
-        twitter_title: post.title.rendered,
-        twitter_description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
+        twitter_title: decodeHtmlEntities(post.title.rendered),
+        twitter_description: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)),
         twitter_image: post.featured_media_url || 'https://www.samanportable.com/og-image.svg',
         robots: { index: 'index', follow: 'follow' }
       };
@@ -453,8 +489,8 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
     
     if (navigator.share) {
       navigator.share({
-        title: post.title.rendered,
-        text: post.excerpt.rendered.replace(/<[^>]*>/g, ''),
+        title: decodeHtmlEntities(post.title.rendered),
+        text: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '')),
         url: window.location.href,
       });
     } else {
@@ -469,20 +505,37 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
       <UnifiedSEO 
         rankMathSEO={rankMathSEO} 
         fallbackCanonical={`https://www.samanportable.com/${slug}`}
-        fallbackTitle={`${post?.title?.rendered || 'Blog Post'} - Saman Portable Office Solutions`}
-        fallbackDescription={post?.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 160) || 'Read our latest blog post at Saman Portable Office Solutions.'}
+        fallbackTitle={`${decodeHtmlEntities(post?.title?.rendered || 'Blog Post')} - Saman Portable`}
+        fallbackDescription={decodeHtmlEntities(post?.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 160) || 'Read our latest blog post at Saman Portable.')}
         fallbackOgImage={post?._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/og-image.svg'}
         keywords={`blog, portable office, container office, prefab solutions, ${post?._embedded?.['wp:term']?.[0]?.[0]?.name || ''}`}
-        structuredData={post ? generateBlogPostSchema({
-          title: post.title.rendered,
-          description: post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160),
-          image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/default-blog-image.jpg',
-          author: post._embedded?.author?.[0]?.name || 'Saman Portable Office Solutions',
-          datePublished: post.date,
-          dateModified: post.modified,
-          url: `https://www.samanportable.com/${slug}`,
-          category: post._embedded?.['wp:term']?.[0]?.[0]?.name
-        }) : undefined}
+        structuredData={(() => {
+          if (!post) return undefined;
+          const schemas: any[] = [
+            generateBlogPostSchema({
+              title: decodeHtmlEntities(post.title.rendered),
+              description: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)),
+              image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/default-blog-image.jpg',
+              author: post._embedded?.author?.[0]?.name || 'Saman Portable',
+              datePublished: post.date,
+              dateModified: post.modified,
+              url: `https://www.samanportable.com/${slug}`,
+              category: post._embedded?.['wp:term']?.[0]?.[0]?.name
+            }),
+            generateBreadcrumbSchema([
+              { name: 'Home', url: 'https://www.samanportable.com/' },
+              { name: 'Blog', url: 'https://www.samanportable.com/blog' },
+              { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` }
+            ])
+          ];
+
+          const faqSchema = extractFAQSchema(post.content.rendered);
+          if (faqSchema) {
+            schemas.push(faqSchema);
+          }
+
+          return schemas;
+        })()}
       />
 
       <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50">
@@ -504,7 +557,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             <svg className="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="text-slate-800 font-semibold line-clamp-1 max-w-xs">{post.title.rendered}</span>
+            <span className="text-slate-800 font-semibold line-clamp-1 max-w-xs">{decodeHtmlEntities(post.title.rendered)}</span>
           </nav>
 
           {/* Back Button */}
@@ -522,7 +575,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             {/* Title */}
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-900 via-green-900 to-slate-900 bg-clip-text text-transparent leading-tight tracking-tight mb-6">
-                {post.title.rendered}
+                {decodeHtmlEntities(post.title.rendered)}
               </h1>
               <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full"></div>
             </div>
@@ -568,7 +621,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
                 <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
                   <Image
                     src={featuredImage}
-                    alt={post.title.rendered}
+                    alt={decodeHtmlEntities(post.title.rendered)}
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -582,7 +635,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             )}
 
             {/* Categories */}
-            {isClient && post._embedded?.['wp:term']?.[0] && (
+            {post._embedded?.['wp:term']?.[0] && (
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center">
@@ -605,14 +658,12 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
              
 
             {/* Blog Content - Direct rendering without LongformContent to avoid FAQ duplication */}
-            {isClient && (
-              <div className="mb-10">
-                <OptimizedContent 
-                  content={post.content.rendered}
-                  className="prose prose-lg max-w-none text-lg text-slate-700 leading-relaxed space-y-6"
-                />
-              </div>
-            )}
+            <div className="mb-10">
+              <OptimizedContent 
+                content={post.content.rendered}
+                className="prose prose-lg max-w-none text-lg text-slate-700 leading-relaxed space-y-6"
+              />
+            </div>
           </article>
 
           {/* Article Footer */}

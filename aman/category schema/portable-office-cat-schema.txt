@@ -1,0 +1,59 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/portable-office#collectionpage",
+      "url": "https://www.samanportable.com/product-category/portable-office",
+      "name": "Portable Office Cabin Types & Price List — Full Range in India",
+      "description": "SAMAN builds 15 portable office cabin types, from ₹1,85,000 compact units to ₹43,55,000 multi-room blocks. Compare sizes, prices and choose the right unit.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "publisher": { "@id": "https://www.samanportable.com/#organization" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product-category/portable-office#itemlist" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/portable-office#itemlist",
+      "name": "Portable Office Cabin Range",
+      "numberOfItems": 15,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Small Office Cabin", "url": "https://www.samanportable.com/product/portable-office/small-office-cabin" },
+        { "@type": "ListItem", "position": 2, "name": "Portable Office Container", "url": "https://www.samanportable.com/product/portable-office/portable-office-container" },
+        { "@type": "ListItem", "position": 3, "name": "Modular Portable Office Cabin", "url": "https://www.samanportable.com/product/portable-office/modular-portable-office-cabin" },
+        { "@type": "ListItem", "position": 4, "name": "Buy Portable Office Cabin", "url": "https://www.samanportable.com/product/portable-office/buy-portable-office-cabin" },
+        { "@type": "ListItem", "position": 5, "name": "Prefabricated Portable Office Cabin", "url": "https://www.samanportable.com/product/portable-office/prefabricated-portable-office-cabin" },
+        { "@type": "ListItem", "position": 6, "name": "Prefabricated Office Cabins", "url": "https://www.samanportable.com/product/portable-office/prefabricated-office-cabins" },
+        { "@type": "ListItem", "position": 7, "name": "Portable Office Cabin", "url": "https://www.samanportable.com/product/portable-office/portable-office-cabin" },
+        { "@type": "ListItem", "position": 8, "name": "MS Portable Office Cabin", "url": "https://www.samanportable.com/product/portable-office/ms-portable-office-cabin" },
+        { "@type": "ListItem", "position": 9, "name": "Prefab Mobile Office", "url": "https://www.samanportable.com/product/portable-office/prefab-mobile-office" },
+        { "@type": "ListItem", "position": 10, "name": "Readymade Office Cabin", "url": "https://www.samanportable.com/product/portable-office/readymade-office-cabin" },
+        { "@type": "ListItem", "position": 11, "name": "Modern Office Cabin", "url": "https://www.samanportable.com/product/portable-office/modern-office-cabin" },
+        { "@type": "ListItem", "position": 12, "name": "Prefab Portable Office", "url": "https://www.samanportable.com/product/portable-office/prefab-portable-office" },
+        { "@type": "ListItem", "position": 13, "name": "Portable Office", "url": "https://www.samanportable.com/product/portable-office/portable-office" },
+        { "@type": "ListItem", "position": 14, "name": "Modular Portable Office", "url": "https://www.samanportable.com/product/portable-office/modular-portable-office" },
+        { "@type": "ListItem", "position": 15, "name": "Modular Office Cabin", "url": "https://www.samanportable.com/product/portable-office/modular-office-cabin" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/portable-office#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "Portable Office", "item": "https://www.samanportable.com/product-category/portable-office" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/portable-office#faqpage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What's the difference between a portable office cabin and a container office?", "acceptedAnswer": { "@type": "Answer", "text": "A portable office cabin is a lighter mild-steel-framed unit for small-to-mid teams, flat ground and shorter-to-medium durations. A container office uses heavier ISO shipping-container steel that stacks and crane-lifts for rough industrial sites." } },
+        { "@type": "Question", "name": "Is SAMAN a portable office manufacturer or a reseller?", "acceptedAnswer": { "@type": "Answer", "text": "SAMAN fabricates every unit in-house rather than reselling, so the same build standard runs from the entry cabin to the multi-room block, with customisation, quality and after-sales under one contact." } },
+        { "@type": "Question", "name": "How much does a portable office cost, and is the starting price the final price?", "acceptedAnswer": { "@type": "Answer", "text": "The range runs from ₹1,85,000 to ₹43,55,000. The 'from' figure is the base starting price; the final quote depends on size, panel grade, fit-out and any plumbing or electrical additions. Each product page lists its own starting point." } },
+        { "@type": "Question", "name": "What's the difference between the modular, prefab, MS and readymade options?", "acceptedAnswer": { "@type": "Answer", "text": "Modular units connect and expand later; prefab and prefabricated units arrive factory-finished as a complete build; MS denotes a heavier mild-steel frame for long-duration use; and readymade ships pre-built from existing stock for the fastest setup." } }
+      ]
+    }
+  ]
+}
+</script>

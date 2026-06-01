@@ -1,0 +1,95 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/portable-toilet/#collectionpage",
+      "url": "https://www.samanportable.com/product-category/portable-toilet/",
+      "name": "Portable Toilet Manufacturer in India — SAMAN's Full Range",
+      "description": "SAMAN manufactures seven standalone portable toilet variants in India, from Rs 65,000 to Rs 1,05,000. FRP, HDPE and MS units with Indian or Western pan, built to BOCW Act site-sanitation requirements, with pan-India delivery in 7 to 15 days.",
+      "image": "https://www.samanportable.com/wp-content/uploads/portable-toilets-factory-gate-worker-sanitation.jpg",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "breadcrumb": { "@id": "https://www.samanportable.com/product-category/portable-toilet/#breadcrumb" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product-category/portable-toilet/#itemlist" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/portable-toilet/#itemlist",
+      "name": "Portable toilet products",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 6,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1,
+          "item": { "@id": "https://www.samanportable.com/product/portable-toilet/readymade-toilet-cabin/",
+                    "name": "Readymade Toilet Cabin" } },
+        { "@type": "ListItem", "position": 2,
+          "item": { "@id": "https://www.samanportable.com/product/portable-toilet/mobile-toilet",
+                    "name": "Mobile Toilet" } },
+        { "@type": "ListItem", "position": 3,
+          "item": { "@id": "https://www.samanportable.com/product/portable-toilet/portable-toilet-cabin/",
+                    "name": "Portable Toilet Cabin" } },
+        { "@type": "ListItem", "position": 4,
+          "item": { "@id": "https://www.samanportable.com/product/portable-toilet/movable-toilet-cabin",
+                    "name": "Movable Toilet Cabin" } },
+        { "@type": "ListItem", "position": 5,
+          "item": { "@id": "https://www.samanportable.com/product/portable-toilet/mobile-toilet-cabin",
+                    "name": "Mobile Toilet Cabin" } },
+        { "@type": "ListItem", "position": 6,
+          "item": { "@id": "https://www.samanportable.com/product/portable-toilet/prefabricated-toilet",
+                    "name": "Prefabricated Toilet" } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/portable-toilet/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",
+          "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products",
+          "item": "https://www.samanportable.com/products/" },
+        { "@type": "ListItem", "position": 3, "name": "Portable Toilet",
+          "item": "https://www.samanportable.com/product-category/portable-toilet/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/portable-toilet/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the price range across SAMAN's portable toilet variants?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SAMAN's standalone portable toilets run from Rs 65,000 for a readymade fitted cabin to Rs 1,05,000 for a roomy mobile steel cabin or a factory-checked prefabricated unit. Price moves with size, material (FRP, HDPE or MS), pan style, and whether you add an overhead water tank. Transport and GST are charged separately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which variant should I choose for a 200-worker construction site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For 200 workers you would plan several enclosed cabin units placed across the site, not one toilet. The portable toilet cabin handles high daily footfall best. For the headcount-to-unit ratio and BOCW Act obligations, the main portable toilet page carries the full calculation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you deliver portable toilets pan-India, and how long does it take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. SAMAN ships from two factories — Bangalore for South and West India, Greater Noida for North and East — which keeps freight cost and delivery time down. Standard lead time is 7 to 15 days depending on variant and site location."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a portable toilet and a portable cabin with toilet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A portable toilet is a standalone sanitation unit only. A portable cabin with toilet is a living or working cabin with a toilet section built into it. If you need usable room space as well as sanitation, you want the cabin product, not a standalone toilet."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>

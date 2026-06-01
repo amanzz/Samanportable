@@ -60,7 +60,7 @@ export default function RefundAndReturnPolicyPage() {
                   </p>
                   
                   <p className="text-slate-700 mb-6">
-                    At Saman Portable Office Solutions, we stand behind the quality of our products and services. This policy outlines the terms and conditions for returns, refunds, and exchanges of our portable office solutions.
+                    At SAMAN POS India Private Limited, we stand behind the quality of our products and services. This policy outlines the terms and conditions for returns, refunds, and exchanges of our portable office solutions.
                   </p>
 
                   <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
@@ -245,11 +245,11 @@ export default function RefundAndReturnPolicyPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <h5 className="font-semibold text-slate-800">Standard Warranty</h5>
-                        <p className="text-slate-700 text-sm">1 year on all portable office solutions</p>
+                        <p className="text-slate-700 text-sm">1 year on all portable office solutions (extendable to 2 years on request)</p>
                       </div>
                       <div>
                         <h5 className="font-semibold text-slate-800">Extended Warranty</h5>
-                        <p className="text-slate-700 text-sm">Available for purchase (2-5 years)</p>
+                        <p className="text-slate-700 text-sm">5-Year Structural Warranty available</p>
                       </div>
                     </div>
                   </div>

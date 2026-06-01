@@ -155,11 +155,11 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                <span className="text-sm font-medium text-green-700">2-year structural warranty</span>
+                <span className="text-sm font-medium text-green-700">5-Year Structural Warranty</span>
               </div>
               <div className="flex items-center gap-2">
                 <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                <span className="text-sm font-medium text-green-700">1-year electrical components</span>
+                <span className="text-sm font-medium text-green-700">1-Year Standard Warranty (extendable to 2 years on request)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Star className="w-3 h-3 text-yellow-500 fill-current" />

@@ -1,0 +1,105 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/prefab-buildings/#collectionpage",
+      "url": "https://www.samanportable.com/product-category/prefab-buildings/",
+      "name": "Prefab Building Manufacturer in India",
+      "description": "SAMAN is a prefab building manufacturer in India producing factory-built, multi-room commercial and industrial structures from Bangalore and Greater Noida. The full range covers projects from 300 sq ft compact offices to 3,240 sq ft production facilities, with prices from Rs 4,15,000 to Rs 35,25,000.",
+      "image": "https://www.samanportable.com/og-image.svg",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "breadcrumb": { "@id": "https://www.samanportable.com/product-category/prefab-buildings/#breadcrumb" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product-category/prefab-buildings/#itemlist" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/prefab-buildings/#itemlist",
+      "name": "prefab building products",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 10,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/prefab-office-buildings",
+                    "name": "Prefab Office Buildings" } },
+        { "@type": "ListItem", "position": 2,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/buy-prefabricated-buildings",
+                    "name": "Prefabricated Buildings" } },
+        { "@type": "ListItem", "position": 3,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/buy-container-buildings",
+                    "name": "Buy Container Buildings" } },
+        { "@type": "ListItem", "position": 4,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/",
+                    "name": "Prefab Buildings (flagship)" } },
+        { "@type": "ListItem", "position": 5,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/modular-office-buildings",
+                    "name": "Modular Office Buildings" } },
+        { "@type": "ListItem", "position": 6,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/steel-prefab-buildings",
+                    "name": "Steel Prefab Buildings" } },
+        { "@type": "ListItem", "position": 7,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/prefab-industrial-buildings",
+                    "name": "Prefab Industrial Buildings" } },
+        { "@type": "ListItem", "position": 8,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/prefab-commercial-buildings",
+                    "name": "Prefab Commercial Buildings" } },
+        { "@type": "ListItem", "position": 9,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/prefab-manufacturing-buildings",
+                    "name": "Prefab Manufacturing Buildings" } },
+        { "@type": "ListItem", "position": 10,
+          "item": { "@id": "https://www.samanportable.com/product/prefab-buildings/prefabricated-steel-buildings",
+                    "name": "Prefabricated Steel Buildings" } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/prefab-buildings/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",
+          "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products",
+          "item": "https://www.samanportable.com/products/" },
+        { "@type": "ListItem", "position": 3, "name": "Prefab Buildings",
+          "item": "https://www.samanportable.com/product-category/prefab-buildings/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/prefab-buildings/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the price range across SAMAN's prefab building products?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entry prices on the live range run from Rs 4,15,000 for a compact 360 sq ft office building up to Rs 35,25,000 for a 3,240 sq ft IS-certified steel structure. For custom builds, pricing is worked out per square foot at brief stage, with the actual rate depending on storey count, interior finish grade, glazing scope, and the structural specification your project needs. Itemised costing comes back with the project quote within 24 hours of brief."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What sizes of prefab buildings can SAMAN manufacture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our standard configurations span 300 sq ft up to 3,240 sq ft as listed in the range above. Beyond standard, we manufacture custom prefab buildings up to and above 8,000 sq ft on project briefs — for example, multi-bay industrial structures, two and three-storey office blocks, and institutional buildings combining office, classroom, and utility spaces in one structure. Smaller requirements that do not need a full prefab building structure are usually served from our portable office cabin range instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are SAMAN's prefab buildings manufactured, and where can they be delivered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every prefab building is manufactured at one of our two facilities — Gopasandra (Bangalore) for South and West India dispatch, and Jalpura (Greater Noida) for North and East India dispatch. Pan-India delivery is standard. Site location influences logistics cost only, not lead time for fabrication. We have installed prefab buildings on projects across more than 20 states."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SAMAN offer custom prefab building designs, or only the standard models above?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 10 products in the range above are configured starting points — every one is customisable on dimensions, internal partition layout, exterior finish, glazing, and fit-out specification. About 70% of our project orders involve customisation beyond the standard configuration. Share what your project actually needs and we respond with a preliminary floor plan, structural brief, and itemised cost estimate within 24 hours."
+          }
+        }
+      ]
+    }
+  ]
+}

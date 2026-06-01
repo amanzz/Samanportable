@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Package } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { categorySchemas } from '@/lib/categorySchemas';
 
 interface ProductCategoryPageProps {
   products: LightweightProduct[];
@@ -233,11 +234,19 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
       <UnifiedSEO 
         rankMathSEO={rankMathSEO} 
         fallbackCanonical={`https://www.samanportable.com/product-category/${initialCategorySlug}`}
-        fallbackTitle={`${initialCategoryName || 'Products'} - SAMAN Portable Office Solutions`}
-        fallbackDescription={`Browse our ${initialCategoryName || 'product'} collection. Quality portable solutions for your business needs at Saman Portable Office Solutions.`}
+        fallbackTitle={`${initialCategoryName || 'Products'} - Saman Portable`}
+        fallbackDescription={`Browse our ${initialCategoryName || 'product'} collection. Quality portable solutions for your business needs at Saman Portable.`}
         fallbackOgImage="https://www.samanportable.com/og-image.svg"
         keywords={`${initialCategoryName || 'products'}, portable office, container office, prefab solutions, ${initialCategorySlug}`}
       />
+      {categorySchemas[initialCategorySlug] && (
+        <Head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(categorySchemas[initialCategorySlug]) }}
+          />
+        </Head>
+      )}
 
       <div className="min-h-screen bg-gray-50">
         {/* Header Section */}

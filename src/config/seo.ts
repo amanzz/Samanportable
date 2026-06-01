@@ -3,8 +3,8 @@ export const siteConfig = {
   description: 'ISO 9001:2015 certified manufacturer of portable cabins, container offices and prefab structures in Bangalore and Delhi NCR. 21-day delivery. Prices from ₹1.45 Lakh. Get a free quote.',
   url: 'https://www.samanportable.com',
   ogImage: 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
-  author: 'Saman Portable Office Solutions',
-  publisher: 'Saman Portable Office Solutions',
+  author: 'SAMAN POS India Private Limited',
+  publisher: 'SAMAN POS India Private Limited',
   keywords: 'portable cabin manufacturer India, container office manufacturer Bangalore, portable cabins Delhi NCR, prefab structures, security cabins, labour colony, container cafe, ISO certified portable cabins, portable cabin price India',
   links: {
     twitter: 'https://twitter.com/samanportable',
@@ -118,7 +118,7 @@ export const pageSEO = {
     keywords: 'porta cabin rental, container office rent, prefab structure lease, portable cabin hire, temporary office space Bangalore',
   },
   privacyPolicy: {
-    title: 'Privacy Policy | Saman Portable Office Solutions',
+    title: 'Privacy Policy | Saman Portable',
     description: 'How we collect, use, and protect personal data at Saman Portable, including cookies and contact details.',
     canonical: `${siteConfig.url}/privacy-policy`,
     keywords: 'privacy policy, data protection, personal information, cookies, GDPR',
@@ -136,7 +136,7 @@ export const pageSEO = {
     keywords: 'refund policy, return policy, cancellations, refunds, warranty',
   },
   terms: {
-    title: 'Terms & Conditions | Saman Portable Office Solutions',
+    title: 'Terms & Conditions | Saman Portable',
     description: 'Usage terms, payment, warranties, and liabilities for Saman Portable products and services.',
     canonical: `${siteConfig.url}/terms-and-conditions`,
     keywords: 'terms and conditions, terms of service, usage policy, legal terms',

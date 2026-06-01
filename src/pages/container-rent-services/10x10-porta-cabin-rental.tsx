@@ -61,9 +61,42 @@ const PortaCabin10x10Rental = () => {
         fallbackDescription="Need a compact porta cabin on rent in Bangalore? Get a ready-to-use 10×10 cabin with transparent terms, fast setup, and expert support."
         fallbackCanonical="https://www.samanportable.com/container-rent-services/10x10-porta-cabin-rental"
         keywords="10x10 porta cabin rental, small site office, security guard cabin rental, portable cabin Bangalore, compact office container"
-        author="Saman Portable Office Solutions"
-        publisher="Saman Portable Office Solutions"
+        author="SAMAN POS India Private Limited"
+        publisher="SAMAN POS India Private Limited"
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"Product\", \"@id\": \"https://www.samanportable.com/container-rent-services/10x10-porta-cabin-rental#product\", \"name\": \"10x10 Porta Cabin Rental\", \"description\": \"100 sq ft individual porta cabin for rent in Bangalore and Delhi NCR. Lightweight, crane-free installation. Ideal for site supervisors and security personnel.\", \"image\": [\"https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp\"], \"category\": \"Porta Cabin Rental\", \"brand\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"additionalProperty\": [{\"@type\": \"PropertyValue\", \"name\": \"Structural warranty\", \"value\": \"5 years\"}, {\"@type\": \"PropertyValue\", \"name\": \"Standard warranty (fittings)\", \"value\": \"1 year, extendable to 2 years on request\"}], \"offers\": {\"@type\": \"Offer\", \"businessFunction\": \"http://purl.org/goodrelations/v1#LeaseOut\", \"priceCurrency\": \"INR\", \"availability\": \"https://schema.org/InStock\", \"seller\": {\"@id\": \"https://www.samanportable.com/#organization\"}, \"eligibleDuration\": {\"@type\": \"QuantitativeValue\", \"minValue\": 6, \"unitCode\": \"MON\"}, \"priceSpecification\": {\"@type\": \"UnitPriceSpecification\", \"minPrice\": \"12000\", \"maxPrice\": \"18000\", \"priceCurrency\": \"INR\", \"unitCode\": \"MON\"}}}" }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.samanportable.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Rental Services",
+                "item": "https://www.samanportable.com/rental-services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "10x10 Porta Cabin Rental",
+                "item": "https://www.samanportable.com/container-rent-services/10x10-porta-cabin-rental"
+              }
+            ]
+          }) }}
+        />
+      </Head>
       <div className="min-h-screen bg-background">
         <main>
           {/* Hero Section */}

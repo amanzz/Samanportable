@@ -96,7 +96,7 @@ const ContactCTA = () => {
     {
       icon: Clock,
       title: 'Business Hours',
-      value: 'Mon - Sat: 9:00 AM - 6:00 PM',
+      value: 'Mon–Sat 9:00 AM – 8:00 PM',
       description: 'Sunday: Closed'
     }
   ];
@@ -222,7 +222,7 @@ const ContactCTA = () => {
                     <option value="MS Porta Cabin" className="text-gray-900">MS Porta Cabin</option>
                     <option value="Container Office" className="text-gray-900">Container Office</option>
                     <option value="Prefab Labor Colony" className="text-gray-900">Prefab Labor Colony</option>
-                    <option value="Marketing Office" className="text-gray-900">Marketing Office</option>
+                    <option value="Portable Office" className="text-gray-900">Portable Office</option>
                     <option value="PEB Buildings" className="text-gray-900">PEB Buildings</option>
                     <option value="Portable Toilets and Security" className="text-gray-900">Portable Toilets and Security</option>
                     <option value="Container Cafes" className="text-gray-900">Container Cafes</option>

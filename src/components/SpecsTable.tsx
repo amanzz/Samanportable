@@ -4,14 +4,14 @@ import QuoteFormTrigger from './QuoteFormTrigger';
 
 const SpecsTable = () => {
   const technicalSpecs = [
-    { label: 'Frame', value: 'ISI-certified Mild Steel (1.2–2.0 mm)' },
+    { label: 'Frame', value: 'Quality-tested Mild Steel (1.2–2.0 mm)' },
     { label: 'Wall Panels', value: '50mm PUF Sandwich Panels (PPGI coated)' },
     { label: 'Roof', value: 'Galvanised Steel Sheet with PUF insulation' },
     { label: 'Flooring', value: '18mm Cement Particle Board / Vinyl' },
     { label: 'Insulation Options', value: 'PUF / EPS / Rockwool / Glasswool' },
     { label: 'Wind Load Rated', value: 'Up to 200 km/hr' },
     { label: 'Temp Reduction', value: '8–12°C below ambient' },
-    { label: 'Structural Warranty', value: '25 Years' },
+    { label: 'Structural Warranty', value: '5 Years' },
   ];
 
   const standardSizes = [

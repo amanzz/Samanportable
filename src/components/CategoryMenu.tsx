@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { ChevronDown, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu';
@@ -12,19 +12,26 @@ interface ProductCategory {
 }
 
 const CategoryMenu = () => {
-  const router = useRouter();
   const [categories, setCategories] = useState<ProductCategory[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Main categories to display prominently
+  // Main categories to display prominently (14 hubs per SAMAN Implementation Guide)
   const mainCategories = [
-    { name: 'Portable Cabin', slug: 'portable-cabin', href: '/product-category/portable-cabin' },
-    { name: 'Container Offices', slug: 'container-offices', href: '/product-category/container-offices' },
-    { name: 'Porta Cabins', slug: 'porta-cabins', href: '/product-category/porta-cabins' },
-    { name: 'Labor Colony', slug: 'labor-colony', href: '/product-category/labor-colony' },
-    { name: 'Portable Office', slug: 'portable-office', href: '/product-category/portable-office' },
-    { name: 'Container Cafe', slug: 'container-cafe', href: '/product-category/container-cafe' },
+    { name: 'Porta Cabin', slug: 'porta-cabins', href: '/product/porta-cabins' },
+    { name: 'Portable Cabin', slug: 'portable-cabin', href: '/product/portable-cabin' },
+    { name: 'Portable Office Cabin', slug: 'portable-office', href: '/product/portable-office' },
+    { name: 'Container Office', slug: 'container-offices', href: '/product/container-offices' },
+    { name: 'Container Cafe', slug: 'container-cafe', href: '/product/container-cafe' },
+    { name: 'Labour Colony', slug: 'labor-colony', href: '/product/labor-colony' },
+    { name: 'Container House', slug: 'container-houses', href: '/product/container-houses' },
+    { name: 'Security Cabin', slug: 'security-cabins', href: '/product/security-cabins' },
+    { name: 'Portable Toilet', slug: 'portable-toilet', href: '/product/portable-toilet' },
+    { name: 'Industrial Shed', slug: 'industrial-sheds', href: '/product/industrial-sheds' },
+    { name: 'PEB Construction', slug: 'peb-constructions', href: '/product/peb-constructions' },
+    { name: 'Pre-Engineered Building', slug: 'pre-engineered-buildings', href: '/product/pre-engineered-buildings' },
+    { name: 'Prefab Building', slug: 'prefab-buildings', href: '/product/prefab-buildings' },
+    { name: 'Prefabricated House', slug: 'prefabricated-houses', href: '/product/prefabricated-houses' },
   ];
 
   useEffect(() => {
@@ -59,19 +66,6 @@ const CategoryMenu = () => {
     };
   }, []);
 
-  const handleCategoryClick = async (slug: string) => {
-    setIsDropdownOpen(false);
-    try {
-      await router.push(
-        `/product-category/${slug}`,
-        undefined,
-        { scroll: true, shallow: false }
-      );
-    } catch (error) {
-      console.error('Navigation error:', error);
-    }
-  };
-
   return (
     <div className="bg-black text-white">
       <div className="max-w-7xl mx-auto container-padding">
@@ -99,40 +93,40 @@ const CategoryMenu = () => {
                     </h3>
                   </div>
                   {categories.map((category) => (
-                    <DropdownMenuItem key={category.id} className="cursor-pointer p-0">
-                      <button
-                        onClick={() => handleCategoryClick(category.slug)}
-                        className="flex items-center justify-between px-3 py-2 hover:bg-[#0A3D2A] hover:text-white w-full text-left transition-colors rounded-md"
+                    <DropdownMenuItem key={category.id} className="cursor-pointer p-0 focus:bg-transparent">
+                      <Link
+                        href={`/product-category/${category.slug}`}
+                        className="flex items-center justify-between px-3 py-2 hover:bg-[#0A3D2A] hover:text-white w-full text-left transition-colors rounded-md text-sm"
                       >
                         <span>{category.name}</span>
                         <span className="text-xs text-gray-400 group-hover:text-white">
                           ({category.count})
                         </span>
-                      </button>
+                      </Link>
                     </DropdownMenuItem>
                   ))}
                   <div className="border-t pt-3 mt-3">
-                    <button
-                      onClick={() => router.push('/product')}
-                      className="flex items-center px-3 py-2 hover:bg-[#0A3D2A] hover:text-white w-full text-left transition-colors rounded-md font-medium"
+                    <Link
+                      href="/product"
+                      className="flex items-center px-3 py-2 hover:bg-[#0A3D2A] hover:text-white w-full text-left transition-colors rounded-md font-medium text-sm"
                     >
                       View All Products
-                    </button>
+                    </Link>
                   </div>
                 </>
               )}
             </DropdownMenuContent>
           </DropdownMenu>
 
-          {/* Main Category Links */}
+          {/* Main Category Links — crawlable <a> links for SEO */}
           {mainCategories.map((category) => (
-            <button
+            <Link
               key={category.slug}
-              onClick={() => handleCategoryClick(category.slug)}
+              href={category.href}
               className="text-white hover:text-gray-300 font-medium transition-colors whitespace-nowrap text-sm"
             >
               {category.name}
-            </button>
+            </Link>
           ))}
         </nav>
       </div>

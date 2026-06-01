@@ -25,6 +25,7 @@ import {
 import { fetchLightweightProduct, fetchProductDescription, fetchProducts, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData } from '../../../config/api';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
+import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
 import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
 import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
@@ -35,7 +36,7 @@ import dynamic from 'next/dynamic';
 
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
-  ssr: false,
+  ssr: true,
   loading: () => (
     <div className="animate-pulse">
       <div className="h-8 bg-muted rounded mb-4"></div>
@@ -248,17 +249,28 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
     console.log('Related products count:', relatedProducts.length);
     console.log('Related products:', relatedProducts.map(p => ({ name: p.name, category: p.categories?.[0]?.name })));
     
-    return relatedProducts.map((p) => ({
-      id: p.id,
-      title: p.name,
-      slug: p.slug,
-      category: p.categories && p.categories.length > 0 ? p.categories[0].name : 'Uncategorized',
-      categorySlug: p.categories && p.categories.length > 0 ? p.categories[0].slug : 'default',
-      image: p.images && p.images.length > 0 ? p.images[0].src : '/placeholder.svg',
-      price: p.price || 'Contact for pricing',
-      rating: parseFloat(p.average_rating) || 4.5,
-      description: p.description || ''
-    }));
+    return relatedProducts.map((p) => {
+      const catSlug = p.categories && p.categories.length > 0 ? p.categories[0].slug : 'default';
+      const catName = p.categories && p.categories.length > 0 ? p.categories[0].name : 'Uncategorized';
+      const prodSlug = p.slug.toLowerCase();
+      const catNameLower = catName.toLowerCase().replace(/\s+/g, '-');
+      const url = catNameLower === prodSlug
+        ? `/product/${catSlug}/`
+        : `/product/${catSlug}/${p.slug}`;
+      return {
+        id: p.id,
+        title: p.name,
+        slug: p.slug,
+        category: catName,
+        categorySlug: catSlug,
+        image: p.images && p.images.length > 0 ? p.images[0].src : '/placeholder.svg',
+        price: p.price || 'Contact for pricing',
+        rating: parseFloat(p.average_rating) || 4.5,
+        description: p.description || '',
+        url,
+        seoAnchorText: getSeoAnchorText(catSlug) || p.name,
+      };
+    });
   }, [relatedProducts]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration
@@ -307,7 +319,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
         <UnifiedSEO 
           rankMathSEO={rankMathSEO} 
           fallbackCanonical={`https://www.samanportable.com/product/${category}/${slug}`}
-          fallbackTitle={`${transformedProduct.title} - Saman Portable Office Solutions`}
+          fallbackTitle={`${transformedProduct.title} - Saman Portable`}
           fallbackDescription={`${transformedProduct.title} - Quality portable solution by Saman Portable. Professional design and reliable construction.`}
           fallbackOgImage={product.images?.[0]?.src || '/og-image.svg'}
           fallbackOgDescription={`${transformedProduct.title} - Premium portable structures with advanced features and customization options.`}
@@ -407,7 +419,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
                                         ? "text-white font-semibold" 
                                         : "text-foreground group-hover:text-primary"
                                     )}>
-                                      {relatedProduct.title}
+                                      {getSeoAnchorText(relatedProduct.categorySlug) || relatedProduct.title}
                                     </h4>
                                     
                                     {/* Category Badge */}
@@ -831,9 +843,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
                                   
                                   {/* Product Info */}
                                   <div className="space-y-2">
-                                    <h4 className="font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
-                                      {relatedProduct.title}
-                                    </h4>
+                                    <Link
+                                      href={relatedProduct.url}
+                                      className="block group/link"
+                                    >
+                                      <h4 className="font-semibold text-foreground line-clamp-2 group-hover/link:text-primary transition-colors">
+                                        {relatedProduct.seoAnchorText}
+                                      </h4>
+                                    </Link>
                                     
                                     <div className="flex items-center justify-between">
                                       <Badge variant="secondary" className="text-xs">
@@ -852,27 +869,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
                                           : formatPriceWithCurrency(parseFloat(relatedProduct.price))
                                         }
                                       </span>
-                                      <Button 
-                                        size="sm" 
-                                        variant="outline"
-                                        className="text-xs"
-                                        onClick={() => {
-                                          // Generate correct URL for related products
-                                          const categoryName = relatedProduct.category.toLowerCase().replace(/\s+/g, '-');
-                                          const productSlug = relatedProduct.slug.toLowerCase();
-                                          
-                                          let url;
-                                          if (categoryName === productSlug) {
-                                            url = `/product/${relatedProduct.categorySlug || 'default'}/`;
-                                          } else {
-                                            url = `/product/${relatedProduct.categorySlug || 'default'}/${relatedProduct.slug}`;
-                                          }
-                                          
-                                          window.location.href = url;
-                                        }}
+                                      <Link
+                                        href={relatedProduct.url}
+                                        className="inline-flex items-center justify-center rounded-md text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-8 px-3 py-1.5 border border-input bg-background hover:bg-accent hover:text-accent-foreground"
                                       >
                                         View Details
-                                      </Button>
+                                      </Link>
                                     </div>
                                   </div>
                                 </div>
@@ -891,6 +893,17 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
                     </div>
                   </div>
                 </Card>
+              </div>
+
+              {/* Cluster Hub Link */}
+              <div className="mt-4 text-center">
+                <Link
+                  href={getHubUrl(category)}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary"
+                >
+                  See the full range: {getSeoAnchorText(category) || transformedProduct?.category || 'Products'}
+                  <ArrowLeft className="w-4 h-4 rotate-180" />
+                </Link>
               </div>
 
               {/* Enhanced Contact CTA */}

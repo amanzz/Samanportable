@@ -1,0 +1,51 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/prefabricated-houses#webpage",
+      "url": "https://www.samanportable.com/product-category/prefabricated-houses",
+      "name": "Prefabricated House Manufacturer in India",
+      "description": "SAMAN's prefabricated house range — factory-built homes and site units, delivered whole. Compare the range and get a quote.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "about": { "@id": "https://www.samanportable.com/#organization" },
+      "breadcrumb": { "@id": "https://www.samanportable.com/product-category/prefabricated-houses#breadcrumb" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/prefabricated-houses#itemlist",
+      "name": "Prefabricated House Range",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Prefabricated House", "url": "https://www.samanportable.com/product/prefabricated-houses/prefabricated-houses" },
+        { "@type": "ListItem", "position": 2, "name": "Porta Cabin House", "url": "https://www.samanportable.com/product/prefabricated-houses/porta-cabin-house" },
+        { "@type": "ListItem", "position": 3, "name": "Portable Cabin House", "url": "https://www.samanportable.com/product/prefabricated-houses/portable-cabin-house" },
+        { "@type": "ListItem", "position": 4, "name": "SAMAN Prefab Office", "url": "https://www.samanportable.com/product/prefabricated-houses/saman-prefab-office" },
+        { "@type": "ListItem", "position": 5, "name": "Prefab Site Office", "url": "https://www.samanportable.com/product/prefabricated-houses/prefab-site-office" },
+        { "@type": "ListItem", "position": 6, "name": "Prefabricated Bunkhouse", "url": "https://www.samanportable.com/product/prefabricated-houses/prefabricated-bunkhouse" },
+        { "@type": "ListItem", "position": 7, "name": "Bunkhouse Cabin", "url": "https://www.samanportable.com/product/prefabricated-houses/bunkhouse-cabin" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/prefabricated-houses#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "Prefabricated Houses", "item": "https://www.samanportable.com/product-category/prefabricated-houses" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/prefabricated-houses#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Which prefab unit suits a home versus a construction site?", "acceptedAnswer": { "@type": "Answer", "text": "Homes — the full prefabricated home, porta-cabin house and cabin-style house — are finished for year-round living. Site units — the SAMAN office cabin, panel site office and the two bunkhouses — are built for fast deployment and reuse across projects." } },
+        { "@type": "Question", "name": "What is SAMAN's price range for prefabricated houses?", "acceptedAnswer": { "@type": "Answer", "text": "From ₹2,15,000 for a panel site office to ₹16,25,000 for a full residential home, with site offices and bunkhouses between ₹2.15 and ₹4.55 lakh. These are starting prices; size and customisation move the final figure." } },
+        { "@type": "Question", "name": "How do I buy a prefabricated house from SAMAN?", "acceptedAnswer": { "@type": "Answer", "text": "Send a quote request with your use-case and preferred size to either factory. We confirm the configuration and price, build the unit, and deliver it whole to your site." } },
+        { "@type": "Question", "name": "How long does a SAMAN prefabricated house last?", "acceptedAnswer": { "@type": "Answer", "text": "The MS-frame and panel structures are built for long service with normal upkeep. The steel frame and weatherproof panels determine how long the unit lasts." } },
+        { "@type": "Question", "name": "Can the units be relocated or customised?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Because they are factory-built rather than site-poured, units can be relocated between sites, and colour and internal layout are customisable before dispatch." } }
+      ]
+    }
+  ]
+}
+</script>

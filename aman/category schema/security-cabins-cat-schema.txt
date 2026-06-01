@@ -1,0 +1,44 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/security-cabins#collectionpage",
+      "url": "https://www.samanportable.com/product-category/security-cabins",
+      "name": "Security Cabin Manufacturer in India",
+      "description": "SAMAN's security cabin range in India — portable, readymade and prefabricated guard cabins from ₹85,000. Compare sizes, materials and prices.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "publisher": { "@id": "https://www.samanportable.com/#organization" },
+      "breadcrumb": { "@id": "https://www.samanportable.com/product-category/security-cabins#breadcrumb" },
+      "mainEntity": { "@id": "https://www.samanportable.com/product-category/security-cabins#itemlist" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/security-cabins#itemlist",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Portable Security Cabin", "url": "https://www.samanportable.com/product/security-cabins/portable-security-cabin" },
+        { "@type": "ListItem", "position": 2, "name": "Readymade Security Cabin", "url": "https://www.samanportable.com/product/security-cabins/readymade-security-cabin" },
+        { "@type": "ListItem", "position": 3, "name": "Prefabricated Security Cabin", "url": "https://www.samanportable.com/product/security-cabins/prefabricated-security-cabin" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/security-cabins#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "Security Cabins", "item": "https://www.samanportable.com/product-category/security-cabins" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/security-cabins#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What standard sizes do security cabins come in?", "acceptedAnswer": { "@type": "Answer", "text": "6×6 ft is SAMAN's standard single-guard size. A 4×4 ft suits a tight checkpoint; an 8×8 ft gives room for a desk, heater and a second guard. All sizes are made to order, so window and door positions match your sightlines." } },
+        { "@type": "Question", "name": "FRP or mild-steel security cabin — which should I choose?", "acceptedAnswer": { "@type": "Answer", "text": "Choose FRP where the cabin moves often or sits in coastal or damp air — it is light (around 150–175 kg) and will not rust. Choose mild steel for a fixed industrial perimeter that needs a tougher, knock-resistant shell. Both are insulated and weatherproof." } },
+        { "@type": "Question", "name": "Can the security cabin be customised?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Size, colour, window and door placement, and fittings such as a counter, light points and CCTV provision are configured to your post. Customisation doesn't shift the price bands much unless the footprint changes." } },
+        { "@type": "Question", "name": "Is a security cabin the same as a mini porta cabin or guard room?", "acceptedAnswer": { "@type": "Answer", "text": "A security cabin is a purpose-built guard post — 360-degree visibility, vandal-resistant walls and a single-guard footprint built around watch-keeping. A mini porta cabin is sold on compact size for general use such as a store or reception and isn't built for guarding." } }
+      ]
+    }
+  ]
+}

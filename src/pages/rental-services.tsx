@@ -32,8 +32,8 @@ const RentalServicesPage = () => {
     {
       id: 2,
       title: '30×10 Porta Cabin Rental - Project Office Standard',
-      description: '₹25,000-35,000/month | 300 sq ft professional workspace. The most requested size for medium-scale construction projects and temporary business operations. Features professional-grade interiors with customizable layouts, perfect for on-site engineering teams or temporary classrooms. BIS-certified construction ensures weather resistance across Bangalore\'s climate variations.',
-      features: ['300 sq ft professional workspace', 'Weather-resistant BIS certified', 'Customizable layouts', 'Utility-ready'],
+      description: '₹25,000-35,000/month | 300 sq ft professional workspace. The most requested size for medium-scale construction projects and temporary business operations. Features professional-grade interiors with customizable layouts, perfect for on-site engineering teams or temporary classrooms. Manufactured using quality-tested steel and industry-standard processes to ensure weather resistance across Bangalore\'s climate variations.',
+      features: ['300 sq ft professional workspace', 'Weather-resistant quality-tested construction', 'Customizable layouts', 'Utility-ready'],
       link: '/container-rent-services/30x10-porta-cabin-rental',
       idealFor: 'Engineering teams, temporary classrooms, site meetings',
       capacity: '6-8 people'
@@ -117,6 +117,34 @@ const RentalServicesPage = () => {
     }
   ];
 
+  const rentalHubStructuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/rental-services#collectionpage",
+      "url": "https://www.samanportable.com/rental-services",
+      "name": "Portable Cabin & Container Office Rental Services | Saman Portable",
+      "description": "Professional rental services for portable cabins, porta cabins, and container offices in Bangalore and Delhi NCR.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "about": { "@id": "https://www.samanportable.com/#organization" },
+      "mainEntity": { "@id": "https://www.samanportable.com/rental-services#itemlist" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/rental-services#itemlist",
+      "name": "Saman Portable Rental Services Catalog",
+      "numberOfItems": rentalServices.length,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": rentalServices.map((service, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": service.title,
+        "url": `https://www.samanportable.com${service.link}`
+      }))
+    }
+  ];
+
   return (
     <Layout>
       <UnifiedSEO
@@ -126,6 +154,7 @@ const RentalServicesPage = () => {
         keywords={pageSEO.rental.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
+        structuredData={rentalHubStructuredData}
       />
 
       <div className="min-h-screen">
@@ -137,7 +166,7 @@ const RentalServicesPage = () => {
                 Professional Rental Services for Portable Cabins and Container Offices
               </h1>
               <p className="text-xl text-white/90 max-w-4xl mx-auto mb-8">
-                Looking for a flexible space solution without a longterm commitment? Saman Portable Office Solutions offers portable cabin rental, porta cabin rental and container office rental services designed for businesses in Bangalore and beyond. Renting means you only pay for the space you need, when you need it, which is much more affordable than signing a conventional office lease. We supply modern, prefab structures that are quick to install, easy to relocate and fully equipped for comfortable work or accommodation.
+                Looking for a flexible space solution without a longterm commitment? Saman Portable offers portable cabin rental, porta cabin rental and container office rental services designed for businesses in Bangalore and beyond. Renting means you only pay for the space you need, when you need it, which is much more affordable than signing a conventional office lease. We supply modern, prefab structures that are quick to install, easy to relocate and fully equipped for comfortable work or accommodation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <QuoteFormTrigger size="lg" className="bg-white text-[#0A3D2A] hover:bg-gray-100 px-8 py-4 text-lg">
@@ -415,7 +444,7 @@ const RentalServicesPage = () => {
                   {[
                     "Fastest Setup: Workspace ready in 24–48 hours",
                     "No Hidden Costs: Written quotes for every project",
-                    "Certified Installation: BIS-trained technicians",
+                    "Certified Installation: trained technicians",
                     "Round-the-Clock Support: 2–4 hour response time",
                     "Flexible Plans: Modify, extend, or relocate anytime",
                     "Fully Digital: Quick, paperless, and eco-friendly process"
@@ -572,7 +601,7 @@ const RentalServicesPage = () => {
                       <h4 className="font-semibold text-[#0A3D2A] mb-2 text-sm">Key Highlights</h4>
                       <ul className="space-y-2 text-sm text-gray-600">
                         <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-[#0A3D2A] mt-0.5 shrink-0" /> Heavy-duty container offices</li>
-                        <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-[#0A3D2A] mt-0.5 shrink-0" /> BIS standards compliant</li>
+                        <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-[#0A3D2A] mt-0.5 shrink-0" /> Industry-standard compliant</li>
                       </ul>
                     </div>
                   </div>

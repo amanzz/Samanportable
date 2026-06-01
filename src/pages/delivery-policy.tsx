@@ -59,7 +59,7 @@ const DeliveryPolicy = () => {
                   </p>
                   
                   <p className="text-slate-700 mb-6">
-                    At Saman Portable Office Solutions, we understand that timely delivery is crucial for your business operations. Our comprehensive delivery policy ensures that your portable office solutions reach you safely and on schedule.
+                    At SAMAN POS India Private Limited, we understand that timely delivery is crucial for your business operations. Our comprehensive delivery policy ensures that your portable office solutions reach you safely and on schedule.
                   </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Coverage Areas</h3>

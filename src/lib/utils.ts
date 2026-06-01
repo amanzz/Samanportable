@@ -60,20 +60,36 @@ export function parseShortDescriptionTable(shortDescription: string): Record<str
   }
 }
 
-// Consistent HTML entity decoding for both server and client
-function decodeHtmlEntities(text: string): string {
-  return text
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#8242;/g, "'")
-    .replace(/&#8243;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&#8217;/g, "'")
-    .replace(/&#8216;/g, "'")
-    .replace(/&#8220;/g, '"')
-    .replace(/&#8221;/g, '"');
+// Consistent HTML entity decoding for both server and client (browser-safe, SSR-compatible)
+export function decodeHtmlEntities(str: string): string {
+  if (!str) return '';
+  
+  const namedEntities: Record<string, string> = {
+    amp: '&',
+    lt: '<',
+    gt: '>',
+    quot: '"',
+    apos: "'",
+    rsquo: '’',
+    lsquo: '‘',
+    rdquo: '”',
+    ldquo: '“',
+    ndash: '–',
+    mdash: '—',
+    hellip: '…',
+    middot: '·',
+    nbsp: ' '
+  };
+
+  return str.replace(/&(#(?:\d+|x[a-fA-F0-9]+)|[a-zA-Z]+);/g, (match, entity) => {
+    if (entity.startsWith('#')) {
+      const code = entity.startsWith('#x')
+        ? parseInt(entity.slice(2), 16)
+        : parseInt(entity.slice(1), 10);
+      return !isNaN(code) ? String.fromCharCode(code) : match;
+    }
+    return namedEntities[entity.toLowerCase()] || match;
+  });
 }
 
 // Extract buttons and links from short description

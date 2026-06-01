@@ -1,0 +1,54 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.samanportable.com/product-category/portable-cabin/#collectionpage",
+      "url": "https://www.samanportable.com/product-category/portable-cabin/",
+      "name": "Portable Cabin Products — All Types, Sizes & Prices",
+      "description": "Compare SAMAN's 11 portable cabin products — from a ₹1,35,000 small cabin to multi-room buildings. Match type, size and price to your use, then shortlist.",
+      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
+      "publisher": { "@id": "https://www.samanportable.com/#organization" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.samanportable.com/product-category/portable-cabin/#itemlist",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 11,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Small Portable Cabin", "url": "https://www.samanportable.com/product/portable-cabin/small-portable-cabin" },
+        { "@type": "ListItem", "position": 2, "name": "Portable Shop Cabin", "url": "https://www.samanportable.com/product/portable-cabin/portable-shop-cabin" },
+        { "@type": "ListItem", "position": 3, "name": "MS Portable Cabin", "url": "https://www.samanportable.com/product/portable-cabin/ms-portable-cabin" },
+        { "@type": "ListItem", "position": 4, "name": "Container Portable Cabin", "url": "https://www.samanportable.com/product/portable-cabin/container-portable-cabin" },
+        { "@type": "ListItem", "position": 5, "name": "Portable Cabin", "url": "https://www.samanportable.com/product/portable-cabin/portable-cabin" },
+        { "@type": "ListItem", "position": 6, "name": "Prefabricated Portable Cabin", "url": "https://www.samanportable.com/product/portable-cabin/prefabricated-portable-cabin" },
+        { "@type": "ListItem", "position": 7, "name": "Buy Portable Cabin", "url": "https://www.samanportable.com/product/portable-cabin/buy-portable-cabin" },
+        { "@type": "ListItem", "position": 8, "name": "Portable Cabin with Toilet", "url": "https://www.samanportable.com/product/portable-cabin/portable-cabin-with-toilet" },
+        { "@type": "ListItem", "position": 9, "name": "Office Portable Cabin", "url": "https://www.samanportable.com/product/portable-cabin/office-portable-cabin" },
+        { "@type": "ListItem", "position": 10, "name": "Modular Portable Cabin", "url": "https://www.samanportable.com/product/portable-cabin/modular-portable-cabin" },
+        { "@type": "ListItem", "position": 11, "name": "Portable Cabin Building", "url": "https://www.samanportable.com/product/portable-cabin/portable-cabin-building" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product-category/portable-cabin/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" },
+        { "@type": "ListItem", "position": 3, "name": "Portable Cabin", "item": "https://www.samanportable.com/product-category/portable-cabin/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.samanportable.com/product-category/portable-cabin/#faqpage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is SAMAN a portable cabin manufacturer or a reseller?", "acceptedAnswer": { "@type": "Answer", "text": "SAMAN manufactures every unit in-house rather than reselling, which is why the same build standard runs from the entry cabin to the multi-room building and why customisation, quality and after-sales all sit with one contact." } },
+        { "@type": "Question", "name": "What's the difference between a portable cabin and a portable cabin building?", "acceptedAnswer": { "@type": "Answer", "text": "A portable cabin is a single relocatable unit for one main use. A portable cabin building is a larger multi-room layout for several functions or a bigger team — it sits at the top of the range and is priced and configured as a full building." } },
+        { "@type": "Question", "name": "Can a portable cabin be customised and moved to another site?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Size, partitions, windows, flooring and fit-out are configured to order, and the mild-steel frame is built to be dismantled, relocated and reassembled at a new site, so the spend carries forward." } },
+        { "@type": "Question", "name": "Is the starting price the final price?", "acceptedAnswer": { "@type": "Answer", "text": "The 'from' figure is the base starting price for each unit. The final quote depends on the size you choose, panel grade, interior fit-out and any plumbing or electrical additions — each product page lists its own starting point." } }
+      ]
+    }
+  ]
+}
+</script>

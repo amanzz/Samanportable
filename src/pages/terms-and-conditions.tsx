@@ -59,7 +59,7 @@ const TermsAndConditions = () => {
                   </p>
 
                   <p className="text-slate-700 mb-6">
-                    These Terms and Conditions (&quot;Terms&quot;) govern your use of the Saman Portable Office Solutions website and services. By accessing or using our services, you agree to be bound by these Terms.
+                    These Terms and Conditions (&quot;Terms&quot;) govern your use of the SAMAN POS India Private Limited website and services. By accessing or using our services, you agree to be bound by these Terms.
                   </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">1. Acceptance of Terms</h3>
@@ -69,7 +69,7 @@ const TermsAndConditions = () => {
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">2. Use License</h3>
                   <p className="text-slate-700 mb-4">
-                    Permission is granted to temporarily download one copy of the materials (information or software) on Saman Portable Office Solutions&apos;s website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                    Permission is granted to temporarily download one copy of the materials (information or software) on SAMAN POS India Private Limited&apos;s website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
                   </p>
                   <ul className="list-disc list-inside text-slate-700 mb-4 space-y-2">
                     <li>Modify or copy the materials</li>
@@ -81,27 +81,27 @@ const TermsAndConditions = () => {
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">3. Disclaimer</h3>
                   <p className="text-slate-700 mb-6">
-                    The materials on Saman Portable Office Solutions&apos;s website are provided on an &apos;as is&apos; basis. Saman Portable Office Solutions makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                    The materials on SAMAN POS India Private Limited&apos;s website are provided on an &apos;as is&apos; basis. SAMAN POS India Private Limited makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
                   </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">4. Limitations</h3>
                   <p className="text-slate-700 mb-6">
-                    In no event shall Saman Portable Office Solutions or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Saman Portable Office Solutions&apos;s website, even if Saman Portable Office Solutions or a Saman Portable Office Solutions authorized representative has been notified orally or in writing of the possibility of such damage.
+                    In no event shall SAMAN POS India Private Limited or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on SAMAN POS India Private Limited&apos;s website, even if SAMAN POS India Private Limited or a SAMAN POS India Private Limited authorized representative has been notified orally or in writing of the possibility of such damage.
                   </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">5. Accuracy of Materials</h3>
                   <p className="text-slate-700 mb-6">
-                    The materials appearing on Saman Portable Office Solutions&apos;s website could include technical, typographical, or photographic errors. Saman Portable Office Solutions does not warrant that any of the materials on its website are accurate, complete, or current. Saman Portable Office Solutions may make changes to the materials contained on its website at any time without notice.
+                    The materials appearing on SAMAN POS India Private Limited&apos;s website could include technical, typographical, or photographic errors. SAMAN POS India Private Limited does not warrant that any of the materials on its website are accurate, complete, or current. SAMAN POS India Private Limited may make changes to the materials contained on its website at any time without notice.
                   </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">6. Links</h3>
                   <p className="text-slate-700 mb-6">
-                    Saman Portable Office Solutions has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Saman Portable Office Solutions of the site. Use of any such linked website is at the user&apos;s own risk.
+                    SAMAN POS India Private Limited has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by SAMAN POS India Private Limited of the site. Use of any such linked website is at the user&apos;s own risk.
                   </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">7. Modifications</h3>
                   <p className="text-slate-700 mb-6">
-                    Saman Portable Office Solutions may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms of Service.
+                    SAMAN POS India Private Limited may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms of Service.
                   </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">8. Governing Law</h3>
@@ -128,7 +128,7 @@ const TermsAndConditions = () => {
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">10. Intellectual Property</h3>
                   <p className="text-slate-700 mb-6">
-                    The Service and its original content, features, and functionality are and will remain the exclusive property of Saman Portable Office Solutions and its licensors. The Service is protected by copyright, trademark, and other laws.
+                    The Service and its original content, features, and functionality are and will remain the exclusive property of SAMAN POS India Private Limited and its licensors. The Service is protected by copyright, trademark, and other laws.
                   </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">11. User Conduct</h3>

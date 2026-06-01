@@ -129,7 +129,7 @@ const HeroSection = () => {
                 <span className="text-white/40 hidden md:inline">•</span>
                 <span className="text-sm md:text-base font-medium text-white/90">7–21 Day Delivery</span>
                 <span className="text-white/40 hidden md:inline">•</span>
-                <span className="text-sm md:text-base font-medium text-white/90">25-Year Warranty</span>
+                <span className="text-sm md:text-base font-medium text-white/90">5-Year Structural Warranty</span>
               </motion.div>
             </div>
 
@@ -140,7 +140,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed font-light"
             >
-              India&apos;s leading manufacturer of high-ticket prefab structures for industrial, construction and commercial headquarters. Delivered ready-to-use since 2017.
+              India&apos;s leading manufacturer of high-ticket prefab structures for industrial, construction and commercial headquarters. Delivered ready-to-use since 2009.
             </motion.p>
 
             {/* CTA Buttons */}
