@@ -55,6 +55,7 @@ export interface LightweightProduct {
   stock_status: string;
   average_rating: string;
   rating_count: number;
+  sku: string;
 }
 
 // Rank Math SEO data interface
@@ -87,6 +88,7 @@ export interface WooCommerceProduct {
   id: number;
   name: string;
   slug: string;
+  sku: string;
   price: string;
   regular_price: string;
   sale_price: string;
@@ -1053,7 +1055,7 @@ export async function fetchLightweightProduct(slug: string): Promise<Lightweight
       slug: slug,
       consumer_key: API_CONFIG.WC_CONSUMER_KEY,
       consumer_secret: API_CONFIG.WC_CONSUMER_SECRET,
-      _fields: 'id,name,slug,price,regular_price,sale_price,on_sale,images,short_description,stock_status,average_rating,rating_count,categories',
+      _fields: 'id,name,slug,sku,price,regular_price,sale_price,on_sale,images,short_description,stock_status,average_rating,rating_count,categories',
     });
 
     const response = await fetch(
@@ -1089,6 +1091,7 @@ export async function fetchLightweightProduct(slug: string): Promise<Lightweight
       stock_status: product.stock_status,
       average_rating: product.average_rating,
       rating_count: product.rating_count,
+      sku: product.sku || '',
     };
   } catch (error) {
     console.error('Error fetching lightweight product:', error);

@@ -207,8 +207,8 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
       category: product.categories?.[0]?.name || 'Uncategorized',
       categoryId: product.categories?.[0]?.id?.toString() || '1',
       categories: product.categories || [],
-      rating: parseFloat(product.average_rating) || 4.5,
-      reviews: typeof product.rating_count === 'string' ? parseInt(product.rating_count) || 25 : product.rating_count || 25,
+      rating: parseFloat(product.average_rating) || 0,
+      reviews: typeof product.rating_count === 'string' ? parseInt(product.rating_count) || 0 : product.rating_count || 0,
       date: product.date_created || '2024-01-01',
       stock_status: product.stock_status || 'instock',
       images: product.images || [],
@@ -264,7 +264,8 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
         categorySlug: catSlug,
         image: p.images && p.images.length > 0 ? p.images[0].src : '/placeholder.svg',
         price: p.price || 'Contact for pricing',
-        rating: parseFloat(p.average_rating) || 4.5,
+        rating: parseFloat(p.average_rating) || 0,
+        ratingCount: Number(p.rating_count) || 0,
         description: p.description || '',
         url,
         seoAnchorText: getSeoAnchorText(catSlug) || p.name,
@@ -605,14 +606,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
                           <h1 className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">
                             {transformedProduct.title}
                           </h1>
-                          <div className="flex items-center space-x-2 flex-wrap">
-                            <div className="flex items-center space-x-1">
-                              {renderStars(transformedProduct.rating)}
+                          {/* Real ratings only: render stars/review count solely when
+                              WooCommerce has genuine reviews (rating_count > 0). No fake stars. */}
+                          {product.rating_count > 0 && (
+                            <div className="flex items-center space-x-2 flex-wrap">
+                              <div className="flex items-center space-x-1">
+                                {renderStars(parseFloat(product.average_rating) || 0)}
+                              </div>
+                              <span className="text-sm text-muted-foreground">
+                                ({product.rating_count} {product.rating_count === 1 ? 'review' : 'reviews'})
+                              </span>
                             </div>
-                            <span className="text-sm text-muted-foreground">
-                              ({transformedProduct.reviews} reviews)
-                            </span>
-                          </div>
+                          )}
                         </div>
                         
                         {transformedProduct.on_sale && transformedProduct.sale_price ? (
@@ -749,10 +754,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
                       <div className="space-y-3 pt-6 border-t border-slate-200">
                         <h3 className="text-lg font-semibold text-foreground">Product Information</h3>
                         <div className="space-y-2 text-sm">
-                          <div className="flex justify-between items-center py-2">
-                            <span className="font-medium text-foreground">SKU:</span>
-                            <span className="text-muted-foreground break-words">SP-CC-40-2024</span>
-                          </div>
+                          {/* Real WooCommerce SKU only; row hidden when the product has none. */}
+                          {product.sku && (
+                            <div className="flex justify-between items-center py-2">
+                              <span className="font-medium text-foreground">SKU:</span>
+                              <span className="text-muted-foreground break-words">{product.sku}</span>
+                            </div>
+                          )}
                           <div className="flex justify-between items-center py-2">
                             <span className="font-medium text-foreground">Category:</span>
                             <Link href={`/product-category/${primaryCategory.slug}`} className="text-primary hover:underline font-medium break-words text-right">
@@ -863,10 +871,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
                                       <Badge variant="secondary" className="text-xs">
                                         {relatedProduct.category}
                                       </Badge>
-                                      <div className="flex items-center space-x-1">
-                                        <Star className="w-3 h-3 text-yellow-400 fill-current" />
-                                        <span className="text-xs text-muted-foreground">{relatedProduct.rating || 4.5}</span>
-                                      </div>
+                                      {relatedProduct.ratingCount > 0 && (
+                                        <div className="flex items-center space-x-1">
+                                          <Star className="w-3 h-3 text-yellow-400 fill-current" />
+                                          <span className="text-xs text-muted-foreground">{relatedProduct.rating}</span>
+                                        </div>
+                                      )}
                                     </div>
                                     
                                     <div className="flex items-center justify-between">

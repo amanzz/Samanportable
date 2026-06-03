@@ -342,17 +342,47 @@ export const extractFAQSchema = (html: string): object | null => {
 
   const faqs: FAQItem[] = [];
 
+  // ── Shared FAQ validation (hardening) ──────────────────────────────────
+  // Strip tags + decode common HTML entities to clean plain text.
+  const clean = (s: string): string =>
+    (s || '')
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/&nbsp;/gi, ' ')
+      .replace(/&lt;/gi, '<')
+      .replace(/&gt;/gi, '>')
+      .replace(/&quot;/gi, '"')
+      .replace(/&#0?39;|&apos;/gi, "'")
+      .replace(/&amp;/gi, '&')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+  const QUESTION_WORDS = /^(how|what|why|when|where|who|which|is|are|can|could|should|do|does|will)\b/i;
+  // Non-question headings frequently mis-captured as questions by the heading scan.
+  const SKIP_HEADINGS = /^(conclusion|summary|final thoughts|overview|introduction|contact us|contact|about us|about|cta|get a quote|process|steps|consultation|site assessment|customized design|proposal|installation|handover|support)\b/i;
+  const isQuestionShape = (q: string): boolean => q.endsWith('?') || QUESTION_WORDS.test(q);
+  // Reject blobs: emails or long phone-like digit runs (real questions have neither).
+  const looksLikeBlob = (q: string): boolean => /@/.test(q) || /\d[\d\s().-]{6,}\d/.test(q);
+
+  // Validate a Q/A pair. requireQuestionShape=true for the unreliable heading-scan fallback.
+  const keepPair = (qRaw: string, aRaw: string, requireQuestionShape: boolean): FAQItem | null => {
+    const question = clean(qRaw);
+    const answer = clean(aRaw);
+    if (question.length < 10 || question.length > 200) return null;
+    if (answer.length < 20) return null;
+    if (SKIP_HEADINGS.test(question)) return null;
+    if (looksLikeBlob(question)) return null;
+    if (requireQuestionShape && !isQuestionShape(question)) return null;
+    return { question, answer };
+  };
+
   // 1. Rank Math FAQ Block (extremely common)
   const questionMatches = [...html.matchAll(/<(?:h[1-6]|div|p|strong)[^>]*class="[^"]*rank-math-question[^"]*"[^>]*>([\s\S]*?)<\/(?:h[1-6]|div|p|strong)>/gi)];
   const answerMatches = [...html.matchAll(/<(?:div|p)[^>]*class="[^"]*rank-math-answer[^"]*"[^>]*>([\s\S]*?)<\/(?:div|p)>/gi)];
 
   if (questionMatches.length > 0 && questionMatches.length === answerMatches.length) {
     for (let i = 0; i < questionMatches.length; i++) {
-      const q = questionMatches[i][1].replace(/<[^>]*>/g, '').trim();
-      const a = answerMatches[i][1].replace(/<[^>]*>/g, '').trim();
-      if (q && a) {
-        faqs.push({ question: q, answer: a });
-      }
+      const pair = keepPair(questionMatches[i][1], answerMatches[i][1], false);
+      if (pair) faqs.push(pair);
     }
   }
 
@@ -362,11 +392,8 @@ export const extractFAQSchema = (html: string): object | null => {
     const yoastAMatches = [...html.matchAll(/<(?:div|p)[^>]*class="[^"]*schema-faq-answer[^"]*"[^>]*>([\s\S]*?)<\/(?:div|p)>/gi)];
     if (yoastQMatches.length > 0 && yoastQMatches.length === yoastAMatches.length) {
       for (let i = 0; i < yoastQMatches.length; i++) {
-        const q = yoastQMatches[i][1].replace(/<[^>]*>/g, '').trim();
-        const a = yoastAMatches[i][1].replace(/<[^>]*>/g, '').trim();
-        if (q && a) {
-          faqs.push({ question: q, answer: a });
-        }
+        const pair = keepPair(yoastQMatches[i][1], yoastAMatches[i][1], false);
+        if (pair) faqs.push(pair);
       }
     }
   }
@@ -376,32 +403,33 @@ export const extractFAQSchema = (html: string): object | null => {
     const manualRegex = /<(h[2-4]|p)(?:[^>]*)>\s*(?:<strong>)?\s*(?:Q|Question)\s*[:.-]\s*([\s\S]*?)(?:<\/strong>)?\s*<\/\1>\s*<p(?:[^>]*)>\s*(?:<strong>)?\s*(?:A|Answer)\s*[:.-]\s*([\s\S]*?)(?:<\/strong>)?\s*<\/p>/gi;
     const matches = [...html.matchAll(manualRegex)];
     for (const match of matches) {
-      const q = match[2].replace(/<[^>]*>/g, '').trim();
-      const a = match[3].replace(/<[^>]*>/g, '').trim();
-      if (q && a) {
-        faqs.push({ question: q, answer: a });
-      }
+      const pair = keepPair(match[2], match[3], false);
+      if (pair) faqs.push(pair);
     }
   }
 
-  // 4. Content section after an "FAQ" or "Frequently Asked Questions" heading
+  // 4. Content section after an "FAQ" or "Frequently Asked Questions" heading.
+  // This heading-scan is unreliable (it can pick up non-question headings and large
+  // content blobs), so each candidate must pass the strict keepPair() question check.
+  let usedHeadingScan = false;
   if (faqs.length === 0) {
+    usedHeadingScan = true;
     const faqSectionIndex = html.toLowerCase().search(/id="[^"]*faq[^"]*"|class="[^"]*faq[^"]*"|h[2-4][^>]*>\s*(?:faq|frequently\s+asked\s+questions)/i);
     if (faqSectionIndex !== -1) {
       const faqSectionHtml = html.substring(faqSectionIndex);
       const headingRegex = /<(h[3-4])(?:[^>]*)>([\s\S]*?)<\/\1>\s*<p(?:[^>]*)>([\s\S]*?)<\/p>/gi;
       const matches = [...faqSectionHtml.matchAll(headingRegex)];
       for (const match of matches) {
-        const q = match[2].replace(/<[^>]*>/g, '').trim();
-        const a = match[3].replace(/<[^>]*>/g, '').trim();
-        if (q && a && (q.endsWith('?') || q.toLowerCase().startsWith('how') || q.toLowerCase().startsWith('what') || q.toLowerCase().startsWith('why') || q.toLowerCase().startsWith('is') || q.toLowerCase().startsWith('can') || q.length < 120)) {
-          faqs.push({ question: q, answer: a });
-        }
+        const pair = keepPair(match[2], match[3], true);
+        if (pair) faqs.push(pair);
       }
     }
   }
 
-  if (faqs.length === 0) return null;
+  // Reliable Rank Math/Yoast/manual blocks may emit with >=1 valid pair; the unreliable
+  // heading-scan must produce >=2 valid Q&A pairs to emit a FAQPage at all.
+  const minRequired = usedHeadingScan ? 2 : 1;
+  if (faqs.length < minRequired) return null;
 
   return {
     '@context': 'https://schema.org',
@@ -430,14 +458,71 @@ export const formatISO8601WithOffset = (dateString: string, offset: string = '+0
 };
 
 /**
+ * City/location porta-cabin service landing pages (allowlisted slug prefixes only).
+ * Returns a clean `Service` node built from backend post data, or null for any
+ * non-allowlisted slug. Never adds Offer/AggregateRating/Review (no price/reviews are
+ * shown on these pages). provider reuses the existing Organization @id (no duplicate node).
+ */
+const CITY_SERVICE_SLUG = /^(?:porta-cabins-in-|porta-cabin-in-|portacabins-for-sale-in-|affordable-porta-cabins-in-)(.+)$/i;
+const AREA_ACRONYMS: Record<string, string> = { ncr: 'NCR', hsr: 'HSR', btm: 'BTM', jp: 'JP', kr: 'KR', orr: 'ORR' };
+
+// Slugs that match the city prefixes but are NOT a location (no Service schema).
+const NON_LOCATION_AREAS = new Set(['construction']);
+
+export const getCityServiceArea = (slug: string): string | null => {
+  const m = (slug || '').match(CITY_SERVICE_SLUG);
+  if (!m) return null;
+  if (NON_LOCATION_AREAS.has(m[1].toLowerCase())) return null;
+  return m[1]
+    .split('-')
+    .filter(Boolean)
+    .map(w => AREA_ACRONYMS[w.toLowerCase()] || (w.charAt(0).toUpperCase() + w.slice(1)))
+    .join(' ');
+};
+
+export const getCityServiceSchema = (params: {
+  slug: string;
+  description?: string;
+  image?: string;
+  url: string;
+}): object | null => {
+  const area = getCityServiceArea(params.slug);
+  if (!area) return null;
+  const description = (params.description || '')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#0?39;|&apos;/gi, "'")
+    .replace(/&amp;/gi, '&')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 300);
+  return {
+    '@type': 'Service',
+    '@id': `${params.url}#service`,
+    name: `Porta Cabins in ${area}`,
+    serviceType: 'Porta Cabin Supply & Installation',
+    ...(description && { description }),
+    provider: { '@id': 'https://www.samanportable.com/#organization' },
+    areaServed: { '@type': 'Place', name: area },
+    url: params.url,
+    ...(params.image && { image: params.image }),
+    inLanguage: 'en-IN',
+  };
+};
+
+/**
  * Generate a complete, interconnected schema graph for a blog post
  */
 export const generateUnifiedBlogGraph = (params: {
   postSchema: BlogPostSchema;
   breadcrumbs: Array<{ name: string; url: string }>;
   faqSchema: any | null;
+  serviceSchema?: any | null;
 }) => {
-  const { postSchema, breadcrumbs, faqSchema } = params;
+  const { postSchema, breadcrumbs, faqSchema, serviceSchema } = params;
   const postUrl = postSchema.url;
   
   const webpageId = `${postUrl}#webpage`;
@@ -524,6 +609,16 @@ export const generateUnifiedBlogGraph = (params: {
       isPartOf: { '@id': webpageId }
     };
     graph.push(faqEntity);
+  }
+
+  // Optional Service node for allowlisted city/location landing pages. Coexists with
+  // BlogPosting; provider references the Organization @id already in the graph.
+  if (serviceSchema) {
+    graph.push({
+      ...serviceSchema,
+      '@context': undefined,
+      isPartOf: { '@id': webpageId }
+    });
   }
 
   return {

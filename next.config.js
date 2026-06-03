@@ -623,6 +623,36 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ─── URL Index-Control Batch 2 (business-approved old-URL → closest live
+      // commercial category). Targets verified 200; sources/destinations slash-less;
+      // no CMS recategorisation. Weak/ambiguous + removed-article URLs intentionally
+      // excluded (kept 404 / 410-later). ───────────────────────────────────
+      {
+        source: '/office-cabins',
+        destination: '/product-category/portable-office',
+        permanent: true,
+      },
+      {
+        source: '/project/container-cafe-india',
+        destination: '/product-category/container-cafe',
+        permanent: true,
+      },
+      {
+        source: '/project/container-cafe',
+        destination: '/product-category/container-cafe',
+        permanent: true,
+      },
+      {
+        source: '/project/container-homes-new',
+        destination: '/product-category/container-houses',
+        permanent: true,
+      },
+      {
+        source: '/portfolio/portable-cabin-manufacturers-in-bangalore',
+        destination: '/product-category/portable-cabin',
+        permanent: true,
+      },
+
       // ─── CSV BULK REDIRECTS (572 entries from spreadsheet) ───────────────
       // Source: Untitled spreadsheet - Sheet1 (1).csv
       // Skipped: 7 MERGE rows, 2 conflicts with existing config, 0 duplicates

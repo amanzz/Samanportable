@@ -25,7 +25,7 @@ import dynamic from 'next/dynamic';
 
 
 import { fetchBlogPost, BlogPost, fetchBlogPostRankMathSEO, RankMathSEOData } from '../config/api';
-import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph } from '../lib/schema';
+import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 
 interface BlogPostProps {
@@ -564,7 +564,13 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               { name: 'Blog', url: 'https://www.samanportable.com/blog' },
               { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` }
             ],
-            faqSchema: extractFAQSchema(post.content.rendered)
+            faqSchema: extractFAQSchema(post.content.rendered),
+            serviceSchema: getCityServiceSchema({
+              slug,
+              description: post.excerpt.rendered,
+              image: METADATA_IMAGE_OVERRIDES[slug] || post._embedded?.['wp:featuredmedia']?.[0]?.source_url,
+              url: `https://www.samanportable.com/${slug}`,
+            })
           });
         })()}
       />

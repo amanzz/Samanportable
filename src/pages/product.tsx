@@ -186,8 +186,8 @@ export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ qu
             on_sale: true,
             image: "/placeholder.svg",
             stock_status: "instock",
-            average_rating: "4.5",
-            rating_count: "12",
+            average_rating: "0",
+            rating_count: 0,
             categories: [{ id: 1, name: "Portable Office", slug: "portable-office" }]
           },
           {
@@ -200,8 +200,8 @@ export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ qu
             on_sale: false,
             image: "/placeholder.svg",
             stock_status: "instock",
-            average_rating: "4.8",
-            rating_count: "8",
+            average_rating: "0",
+            rating_count: 0,
             categories: [{ id: 2, name: "Container Office", slug: "container-office" }]
           }
         ],

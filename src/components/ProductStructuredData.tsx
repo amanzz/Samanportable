@@ -16,14 +16,32 @@ export default function ProductStructuredData({ product, category }: ProductStru
   const price = parseFloat(product.price) || parseFloat(product.regular_price) || 0;
   const salePrice = product.on_sale && product.sale_price ? parseFloat(product.sale_price) : null;
   
-  // Generate completely unique description for Product schema - avoid any overlap with ItemPage
-  let description = `${product.name} - Innovative mobile solution engineered for optimal performance and user comfort. Features cutting-edge design and superior functionality.`;
-  
-  // If product has specific features, add them
-  if (product.attributes && product.attributes.length > 0) {
-    const features = product.attributes.map(attr => attr.name).join(', ');
-    description = `${product.name} - Innovative mobile solution with ${features}. Engineered for optimal performance and user comfort.`;
-  }
+  // Product description from REAL WooCommerce data: prefer short_description, fall back to
+  // the full description, and only use a generic line if BOTH backend fields are empty.
+  // HTML is stripped so the schema description is plain text matching the visible content.
+  const stripHtml = (html: string): string =>
+    (html || '')
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/&nbsp;/gi, ' ')
+      .replace(/&lt;/gi, '<')
+      .replace(/&gt;/gi, '>')
+      .replace(/&quot;/gi, '"')
+      .replace(/&#0?39;|&apos;/gi, "'")
+      .replace(/&amp;/gi, '&')
+      .replace(/\s+/g, ' ')
+      .trim();
+  const backendShort = stripHtml(product.short_description);
+  const backendFull = stripHtml(product.description);
+  const description =
+    backendShort ||
+    (backendFull ? backendFull.slice(0, 5000) : '') ||
+    `${product.name} - Premium portable structure by Saman Portable.`;
+
+  // Only REAL WooCommerce attributes become additionalProperty; omit entirely if none
+  // (no invented Material/Usage/Customization values).
+  const realAdditionalProperty = (product.attributes || [])
+    .filter(a => a && a.name && Array.isArray(a.options) && a.options.length > 0)
+    .map(a => ({ '@type': 'PropertyValue', name: a.name, value: a.options.join(', ') }));
 
   // Generate structured data for Product
   const productStructuredData = {
@@ -41,8 +59,9 @@ export default function ProductStructuredData({ product, category }: ProductStru
       '@id': 'https://www.samanportable.com/#organization'
     },
     category: product.categories?.[0]?.name || 'Portable Structures',
-    sku: product.id.toString(),
-    mpn: `SP-${product.id}`, // Manufacturer Part Number
+    // Use the REAL WooCommerce SKU; omit the field entirely if the product has none
+    // (never fall back to the numeric product id as a fake SKU).
+    ...(product.sku ? { sku: product.sku } : {}),
     // Only emit an Offer when a real price exists. An Offer with price 0 (quote-only
     // products) is invalid for Google and triggers "price" errors in Search Console.
     offers: (salePrice || price) > 0 ? {
@@ -98,23 +117,8 @@ export default function ProductStructuredData({ product, category }: ProductStru
       bestRating: '5',
       worstRating: '1'
     } : undefined,
-    additionalProperty: [
-      {
-        '@type': 'PropertyValue',
-        name: 'Material',
-        value: 'Steel, Insulation, Interior Fittings'
-      },
-      {
-        '@type': 'PropertyValue',
-        name: 'Usage',
-        value: 'Commercial, Industrial, Residential'
-      },
-      {
-        '@type': 'PropertyValue',
-        name: 'Customization',
-        value: 'Available'
-      }
-    ]
+    // additionalProperty only from real WooCommerce attributes; omitted when none exist.
+    ...(realAdditionalProperty.length > 0 ? { additionalProperty: realAdditionalProperty } : {}),
   };
 
   // Generate BreadcrumbList structured data
