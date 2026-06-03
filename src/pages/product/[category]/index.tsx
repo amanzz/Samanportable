@@ -184,10 +184,17 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       },
     };
   } catch (error) {
-    console.error('Error in getServerSideProps:', error);
-    return {
-      notFound: true,
-    };
+    // A transient backend failure (network/timeout/5xx/429, surfaced as
+    // BackendFetchError by fetchLightweightProduct) must NOT become a false 404 —
+    // that would deindex a real product. Re-throw so Next returns HTTP 500
+    // (retryable by Google) instead of notFound. A GENUINE missing product is
+    // handled above (product === null → notFound) and only happens when the backend
+    // responded successfully. Only the error message is logged (no request URL / keys).
+    console.error(
+      'Product (category index) SSR failed — returning 5xx, not 404:',
+      error instanceof Error ? error.message : 'unknown error'
+    );
+    throw error instanceof Error ? error : new Error('Failed to render product');
   }
 };
 

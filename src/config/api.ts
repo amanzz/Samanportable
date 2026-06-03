@@ -38,6 +38,83 @@ function getApiHeaders() {
   };
 }
 
+// Thrown when the backend is unreachable or returns a TRANSIENT failure
+// (network error, timeout, 408, 429, or any 5xx), OR when it responds with an
+// unexpected/invalid shape. This is deliberately DISTINCT from "the backend
+// responded successfully but the requested item does not exist" — for that
+// genuine-absent case the single-item helpers return `null`.
+//
+// Why this matters: a server-side render (getServerSideProps) must NOT turn a
+// transient backend failure into `notFound: true`. A false 404 on a real
+// product/blog page tells Google the page is gone and gets it deindexed. By
+// throwing this error instead of returning null on failure, the calling route
+// can surface an HTTP 5xx (which search engines retry) rather than a 404.
+// The message never contains the request URL, so API keys in query strings are
+// never logged.
+export class BackendFetchError extends Error {
+  status?: number;
+  constructor(message: string, status?: number) {
+    super(message);
+    this.name = 'BackendFetchError';
+    this.status = status;
+  }
+}
+
+// HTTP statuses that indicate a transient/unavailable backend (worth a retry,
+// and — if retries are exhausted — should surface as a 5xx, never a 404).
+function isTransientStatus(status: number): boolean {
+  return status === 408 || status === 429 || (status >= 500 && status <= 599);
+}
+
+// fetch() with a hard per-attempt timeout (AbortController) and a small, bounded
+// retry for transient failures. Returns the Response for a 2xx or a NON-transient
+// 4xx (the caller decides what a 4xx means). Throws BackendFetchError on a network
+// error, a timeout, or transient failures that survive all retry attempts.
+//
+// Retries are conservative — at most API_CONFIG.RETRY_ATTEMPTS, with a short
+// linear backoff — so a struggling backend is never hit with an aggressive burst.
+async function fetchWithResilience(url: string, init?: RequestInit): Promise<Response> {
+  const maxAttempts = Math.max(1, API_CONFIG.RETRY_ATTEMPTS);
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), API_CONFIG.REQUEST_TIMEOUT);
+    try {
+      const response = await fetch(url, { ...init, signal: controller.signal });
+      clearTimeout(timer);
+
+      // Transient server-side failure → retry if attempts remain, else throw.
+      if (isTransientStatus(response.status)) {
+        if (attempt < maxAttempts) {
+          await new Promise((resolve) => setTimeout(resolve, 300 * attempt));
+          continue;
+        }
+        throw new BackendFetchError(
+          `Backend transient failure after ${maxAttempts} attempt(s): ${response.status}`,
+          response.status
+        );
+      }
+
+      // 2xx or a non-transient 4xx (e.g. 400/401/403/404) — hand back to caller.
+      return response;
+    } catch (error) {
+      clearTimeout(timer);
+      // A BackendFetchError thrown above for an exhausted transient status: rethrow.
+      if (error instanceof BackendFetchError) throw error;
+      // Otherwise this is a network error or an AbortError (timeout). Retry if we
+      // still have attempts; on the last attempt fall through to the throw below.
+      if (attempt < maxAttempts) {
+        await new Promise((resolve) => setTimeout(resolve, 300 * attempt));
+        continue;
+      }
+      throw new BackendFetchError('Backend unreachable (network error or timeout)');
+    }
+  }
+
+  // Unreachable in practice (loop either returns or throws), but keeps types happy.
+  throw new BackendFetchError(`Backend unreachable after ${maxAttempts} attempt(s)`);
+}
+
 
 // Lightweight product interface for category pages
 export interface LightweightProduct {
@@ -715,26 +792,40 @@ export async function getFeaturedImageUrl(mediaId: number): Promise<string | nul
   return null;
 }
 
+// Single blog post fetch.
+//
+// Return contract (relied upon by the blog-detail getServerSideProps):
+//   • returns a post object   → post exists.
+//   • returns null            → backend responded SUCCESSFULLY but no such post
+//                               (WordPress returns 200 + []). A 404 is correct.
+//   • THROWS BackendFetchError → backend failed/timeout/5xx/429 or invalid shape.
+//                               The caller MUST surface a 5xx, never a false 404.
+// Previously this swallowed every failure into null, so a transient backend
+// outage was indistinguishable from a genuinely missing post and produced a 404.
 export async function fetchBlogPost(slug: string) {
-  try {
-    const response = await fetch(
-      `${API_CONFIG.BLOG_API_ENDPOINT}/posts?slug=${slug}&_embed`,
-      {
-        headers: getApiHeaders(),
-        next: { revalidate: 300 },
-      }
-    );
-
-    
-    if (!response.ok) {
-      throw new Error(`Failed to fetch blog post: ${response.status}`);
+  const response = await fetchWithResilience(
+    `${API_CONFIG.BLOG_API_ENDPOINT}/posts?slug=${slug}&_embed`,
+    {
+      headers: getApiHeaders(),
+      next: { revalidate: 300 },
     }
-    
-    const posts = await response.json();
-    return posts[0] || null;
-  } catch (error) {
-    return null;
+  );
+
+  if (!response.ok) {
+    throw new BackendFetchError(`Failed to fetch blog post: ${response.status}`, response.status);
   }
+
+  let posts: any;
+  try {
+    posts = await response.json();
+  } catch {
+    throw new BackendFetchError('Invalid JSON from posts endpoint');
+  }
+  if (!Array.isArray(posts)) {
+    throw new BackendFetchError('Unexpected posts response shape');
+  }
+
+  return posts[0] || null; // backend OK, post genuinely does not exist → 404 valid
 }
 
 // Enhanced product categories fetch - OPTIMIZED
@@ -1048,55 +1139,71 @@ export async function fetchLightweightProductsByCategory(
   }
 }
 
-// Optimized single product fetch with minimal fields
+// Optimized single product fetch with minimal fields.
+//
+// Return contract (relied upon by the product-detail getServerSideProps):
+//   • returns a LightweightProduct  → product exists.
+//   • returns null                  → backend responded SUCCESSFULLY but no such
+//                                      product (WooCommerce returns 200 + []). A
+//                                      404 for this case is correct.
+//   • THROWS BackendFetchError      → backend failed/timeout/5xx/429 or returned an
+//                                      invalid shape. The caller MUST surface a 5xx
+//                                      (retryable), never a false 404.
+// This function intentionally no longer swallows fetch failures into null.
 export async function fetchLightweightProduct(slug: string): Promise<LightweightProduct | null> {
-  try {
-    const params = new URLSearchParams({
-      slug: slug,
-      consumer_key: API_CONFIG.WC_CONSUMER_KEY,
-      consumer_secret: API_CONFIG.WC_CONSUMER_SECRET,
-      _fields: 'id,name,slug,sku,price,regular_price,sale_price,on_sale,images,short_description,stock_status,average_rating,rating_count,categories',
-    });
+  const params = new URLSearchParams({
+    slug: slug,
+    consumer_key: API_CONFIG.WC_CONSUMER_KEY,
+    consumer_secret: API_CONFIG.WC_CONSUMER_SECRET,
+    _fields: 'id,name,slug,sku,price,regular_price,sale_price,on_sale,images,short_description,stock_status,average_rating,rating_count,categories',
+  });
 
-    const response = await fetch(
-      `${API_CONFIG.WC_BASE_URL}/products?${params.toString()}`,
-      {
-        headers: getApiHeaders(),
-        next: { revalidate: 300 },
-      }
-    );
-
-    
-    if (!response.ok) {
-      throw new Error(`Failed to fetch product: ${response.status}`);
+  const response = await fetchWithResilience(
+    `${API_CONFIG.WC_BASE_URL}/products?${params.toString()}`,
+    {
+      headers: getApiHeaders(),
+      next: { revalidate: 300 },
     }
-    
-    const products = await response.json();
-    const product = products[0] || null;
-    
-    if (!product) return null;
+  );
 
-    return {
-      id: product.id,
-      name: product.name,
-      slug: product.slug,
-      price: product.price,
-      regular_price: product.regular_price,
-      sale_price: product.sale_price,
-      on_sale: product.on_sale,
-      featured_image: product.images?.[0]?.src || '/placeholder.svg',
-      category: product.categories?.[0]?.name || 'Uncategorized',
-      category_slug: product.categories?.[0]?.slug || 'uncategorized',
-      short_description: product.short_description,
-      stock_status: product.stock_status,
-      average_rating: product.average_rating,
-      rating_count: product.rating_count,
-      sku: product.sku || '',
-    };
-  } catch (error) {
-    console.error('Error fetching lightweight product:', error);
-    return null;
+  // A non-2xx here (401/403/404/400 from the REST endpoint, etc.) means the
+  // request itself failed — NOT that this specific product is confirmed absent
+  // (genuine absence is a 200 with an empty array). Treat as a backend failure so
+  // the page returns a retryable 5xx rather than a false 404.
+  if (!response.ok) {
+    throw new BackendFetchError(`Failed to fetch product: ${response.status}`, response.status);
   }
+
+  let products: any;
+  try {
+    products = await response.json();
+  } catch {
+    throw new BackendFetchError('Invalid JSON from products endpoint');
+  }
+  if (!Array.isArray(products)) {
+    throw new BackendFetchError('Unexpected products response shape');
+  }
+
+  const product = products[0] || null;
+  if (!product) return null; // backend OK, product genuinely does not exist → 404 valid
+
+  return {
+    id: product.id,
+    name: product.name,
+    slug: product.slug,
+    price: product.price,
+    regular_price: product.regular_price,
+    sale_price: product.sale_price,
+    on_sale: product.on_sale,
+    featured_image: product.images?.[0]?.src || '/placeholder.svg',
+    category: product.categories?.[0]?.name || 'Uncategorized',
+    category_slug: product.categories?.[0]?.slug || 'uncategorized',
+    short_description: product.short_description,
+    stock_status: product.stock_status,
+    average_rating: product.average_rating,
+    rating_count: product.rating_count,
+    sku: product.sku || '',
+  };
 }
 
 // Fetch full product description separately (for product detail pages)

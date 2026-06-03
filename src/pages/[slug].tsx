@@ -180,10 +180,17 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       },
     };
   } catch (error) {
-    console.error('Error fetching blog post:', error);
-    return {
-      notFound: true,
-    };
+    // A transient backend failure (network/timeout/5xx/429, surfaced as
+    // BackendFetchError by fetchBlogPost) must NOT become a false 404 — that would
+    // deindex a real post. Re-throw so Next returns HTTP 500 (retryable by Google)
+    // instead of notFound. A GENUINE missing post is handled above (post === null →
+    // notFound) and only happens when the backend responded successfully.
+    // Only the error message is logged (no request URL), so no secrets are exposed.
+    console.error(
+      'Blog post SSR failed — returning 5xx, not 404:',
+      error instanceof Error ? error.message : 'unknown error'
+    );
+    throw error instanceof Error ? error : new Error('Failed to render blog post');
   }
 };
 

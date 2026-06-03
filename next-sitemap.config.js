@@ -75,6 +75,59 @@ function isRedirectingPath(path, redirectSources) {
   return redirectSources.has(norm) || isDuplicateProductSegment(norm);
 }
 
+// ── Resilient build-time fetch ───────────────────────────────────────────────
+// The sitemap is generated at build time by fetching the WordPress/WooCommerce
+// API. A transient backend hiccup during a deploy used to silently truncate the
+// sitemap (a `!ok` response just stopped the loop), shipping a dangerously
+// reduced URL list. To avoid that, every fetch here goes through a bounded retry
+// with a hard timeout and a small inter-request delay (never an aggressive burst).
+// Returns the parsed JSON on success; throws on a network error, timeout, or a
+// non-OK response that survives all retries — so the caller can decide whether a
+// partial result is safe to ship or the build should fail.
+const SITEMAP_FETCH_TIMEOUT_MS = 15000;
+const SITEMAP_FETCH_RETRIES = 3;
+
+function sitemapDelay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchJsonWithRetry(url, label) {
+  let lastStatus = 0;
+  for (let attempt = 1; attempt <= SITEMAP_FETCH_RETRIES; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), SITEMAP_FETCH_TIMEOUT_MS);
+    try {
+      const res = await fetch(url, { signal: controller.signal });
+      clearTimeout(timer);
+      if (res.ok) {
+        return await res.json();
+      }
+      lastStatus = res.status;
+      const transient = res.status === 408 || res.status === 429 || (res.status >= 500 && res.status <= 599);
+      if (!transient) {
+        // Non-transient 4xx (e.g. WordPress 400 "rest_post_invalid_page_number"
+        // once we page past the last page, or 401/403/404). It will not recover on
+        // retry, so throw immediately with the status attached and let the caller
+        // decide whether this is a clean end-of-pagination or a real failure.
+        const err = new Error(`[next-sitemap] ${label}: HTTP ${res.status}`);
+        err.status = res.status;
+        throw err;
+      }
+      console.warn(`[next-sitemap] ${label}: HTTP ${res.status} (attempt ${attempt}/${SITEMAP_FETCH_RETRIES})`);
+    } catch (err) {
+      clearTimeout(timer);
+      if (err && typeof err.status === 'number') throw err; // non-transient → final, no retry
+      console.warn(`[next-sitemap] ${label}: ${err && err.message ? err.message : 'fetch error'} (attempt ${attempt}/${SITEMAP_FETCH_RETRIES})`);
+    }
+    if (attempt < SITEMAP_FETCH_RETRIES) {
+      await sitemapDelay(400 * attempt);
+    }
+  }
+  const exhausted = new Error(`[next-sitemap] ${label}: failed after ${SITEMAP_FETCH_RETRIES} attempts${lastStatus ? ` (last HTTP ${lastStatus})` : ''}`);
+  exhausted.status = lastStatus || undefined;
+  throw exhausted;
+}
+
 module.exports = {
   siteUrl: 'https://www.samanportable.com',
   generateRobotsTxt: true,
@@ -108,119 +161,142 @@ module.exports = {
   // Use custom sitemap generation for comprehensive content
   additionalPaths: async (config) => {
     const paths = [];
-    
-    try {
-      
-      
-      // Fetch product categories
-      
-      const categoriesResponse = await fetch(
-        'https://blog.samanportable.com/wp-json/wc/v3/products/categories?per_page=100&consumer_key=ck_34fce5a6d68e1199b9ac194e1a3431c76b7e6c92&consumer_secret=cs_2205531d149e9d4835ee3485dd5414133817fdf2'
-      );
-      
-      if (categoriesResponse.ok) {
-        const categories = await categoriesResponse.json();
-        categories.forEach(category => {
-          if (category.slug && category.slug !== 'uncategorized') {
-            paths.push({
-              loc: `/product-category/${category.slug}`,
-              changefreq: 'weekly',
-              priority: 0.8,
-              lastmod: new Date().toISOString(),
-            });
-          }
-        });
-        
-      }
-      
-      // Fetch products with pagination
-      
-      let page = 1;
-      let hasMore = true;
-      const perPage = 100;
-      
-      while (hasMore) {
-        const productsUrl = `https://blog.samanportable.com/wp-json/wc/v3/products?page=${page}&per_page=${perPage}&consumer_key=ck_34fce5a6d68e1199b9ac194e1a3431c76b7e6c92&consumer_secret=cs_2205531d149e9d4835ee3485dd5414133817fdf2&_embed`;
-        
-        const productsResponse = await fetch(productsUrl);
-        if (productsResponse.ok) {
-          const products = await productsResponse.json();
-          
-          if (products.length === 0) {
-            hasMore = false;
-          } else {
-            products.forEach(product => {
-              if (product.slug && product.categories && product.categories.length > 0) {
-                const primaryCategory = product.categories[0];
-                paths.push({
-                  loc: `/product/${primaryCategory.slug}/${product.slug}`,
-                  changefreq: 'weekly',
-                  priority: 0.8,
-                  lastmod: new Date(product.date_modified || product.date_created).toISOString(),
-                });
-              }
-            });
-            
-            page++;
-          }
-        } else {
-          hasMore = false;
-        }
-      }
-      
-      // Fetch blog posts with pagination
-      
-      page = 1;
-      hasMore = true;
-      let totalPostsFetched = 0;
-      
-      while (hasMore) {
-        const postsUrl = `https://blog.samanportable.com/wp-json/wp/v2/posts?page=${page}&per_page=${perPage}&_embed`;
-        
-        try {
-          const postsResponse = await fetch(postsUrl);
-          
-          
-          if (postsResponse.ok) {
-            const posts = await postsResponse.json();
-            
-            if (posts.length === 0) {
-              
-              hasMore = false;
-            } else {
-              posts.forEach(post => {
-                if (post.slug) {
-                  paths.push({
-                    loc: `/${post.slug}`,
-                    changefreq: 'monthly',
-                    priority: 0.6,
-                    lastmod: new Date(post.modified || post.date).toISOString(),
-                  });
-                }
-              });
-              totalPostsFetched += posts.length;
-              
-              page++;
-              
-              // Add a small delay to avoid rate limiting
-              await new Promise(resolve => setTimeout(resolve, 100));
-            }
-          } else {
-            
-            hasMore = false;
-          }
-        } catch (error) {
-          
-          hasMore = false;
-        }
-      }
-      
-      
-      
-      
-      
-    } catch (error) {
 
+    // Failure tracking: a transient backend blip must not silently ship a
+    // dangerously reduced sitemap. We record whether each section ERRORED and how
+    // many URLs it produced, then fail the build only on a clear TOTAL outage
+    // (a section errored AND collected zero URLs). A partial-but-substantial run
+    // is kept with a loud warning.
+    let productCount = 0;
+    let postCount = 0;
+    let productErrored = false;
+    let postErrored = false;
+
+    const perPage = 100;
+
+    // ── Product categories ──────────────────────────────────────────────────
+    try {
+      const categories = await fetchJsonWithRetry(
+        'https://blog.samanportable.com/wp-json/wc/v3/products/categories?per_page=100&consumer_key=ck_34fce5a6d68e1199b9ac194e1a3431c76b7e6c92&consumer_secret=cs_2205531d149e9d4835ee3485dd5414133817fdf2',
+        'product categories'
+      );
+      (Array.isArray(categories) ? categories : []).forEach((category) => {
+        if (category.slug && category.slug !== 'uncategorized') {
+          paths.push({
+            loc: `/product-category/${category.slug}`,
+            changefreq: 'weekly',
+            priority: 0.8,
+            lastmod: new Date().toISOString(),
+          });
+        }
+      });
+    } catch (error) {
+      console.error(`[next-sitemap] Product categories fetch failed: ${error && error.message}`);
+    }
+
+    // ── Products (paginated) ────────────────────────────────────────────────
+    let page = 1;
+    let hasMore = true;
+    while (hasMore) {
+      const productsUrl = `https://blog.samanportable.com/wp-json/wc/v3/products?page=${page}&per_page=${perPage}&consumer_key=ck_34fce5a6d68e1199b9ac194e1a3431c76b7e6c92&consumer_secret=cs_2205531d149e9d4835ee3485dd5414133817fdf2&_embed`;
+      try {
+        const products = await fetchJsonWithRetry(productsUrl, `products page ${page}`);
+        if (!Array.isArray(products) || products.length === 0) {
+          hasMore = false;
+        } else {
+          products.forEach((product) => {
+            if (product.slug && product.categories && product.categories.length > 0) {
+              const primaryCategory = product.categories[0];
+              paths.push({
+                loc: `/product/${primaryCategory.slug}/${product.slug}`,
+                changefreq: 'weekly',
+                priority: 0.8,
+                lastmod: new Date(product.date_modified || product.date_created).toISOString(),
+              });
+              productCount++;
+            }
+          });
+          page++;
+          // Small inter-request delay so a long catalog pull never bursts the backend.
+          await sitemapDelay(150);
+        }
+      } catch (error) {
+        const status = error && error.status;
+        const clientErr = typeof status === 'number' && status >= 400 && status < 500 && status !== 429;
+        if (clientErr && page > 1) {
+          // Paged past the last page (clean end of pagination) — not a failure.
+          hasMore = false;
+        } else {
+          // Real failure (5xx/timeout/network, or a 4xx on the very first page).
+          // Record it so the guard below can decide whether the partial result ships.
+          productErrored = true;
+          console.error(`[next-sitemap] Products fetch aborted at page ${page}: ${error && error.message}`);
+          hasMore = false;
+        }
+      }
+    }
+
+    // ── Blog posts (paginated) ──────────────────────────────────────────────
+    // Posts use a smaller page size than products: the WordPress backend returns
+    // HTTP 500 when serializing 100 fully-_embed'd posts at deeper offsets (a PHP
+    // memory/execution limit, not corrupt content — every post is individually
+    // valid). per_page=50 succeeds across the full range, so all ~870 posts are
+    // captured instead of truncating at the first oversized page.
+    const POSTS_PER_PAGE = 50;
+    page = 1;
+    hasMore = true;
+    while (hasMore) {
+      const postsUrl = `https://blog.samanportable.com/wp-json/wp/v2/posts?page=${page}&per_page=${POSTS_PER_PAGE}&_embed`;
+      try {
+        const posts = await fetchJsonWithRetry(postsUrl, `posts page ${page}`);
+        if (!Array.isArray(posts) || posts.length === 0) {
+          hasMore = false;
+        } else {
+          posts.forEach((post) => {
+            if (post.slug) {
+              paths.push({
+                loc: `/${post.slug}`,
+                changefreq: 'monthly',
+                priority: 0.6,
+                lastmod: new Date(post.modified || post.date).toISOString(),
+              });
+              postCount++;
+            }
+          });
+          page++;
+          await sitemapDelay(150);
+        }
+      } catch (error) {
+        const status = error && error.status;
+        const clientErr = typeof status === 'number' && status >= 400 && status < 500 && status !== 429;
+        if (clientErr && page > 1) {
+          // Paged past the last page (clean end of pagination) — not a failure.
+          hasMore = false;
+        } else {
+          // Real failure (5xx/timeout/network, or a 4xx on the very first page).
+          postErrored = true;
+          console.error(`[next-sitemap] Posts fetch aborted at page ${page}: ${error && error.message}`);
+          hasMore = false;
+        }
+      }
+    }
+
+    // ── Total-outage guard ──────────────────────────────────────────────────
+    // Fail the build (rather than ship an empty/near-empty sitemap) only when a
+    // section both ERRORED and produced ZERO URLs — an unambiguous backend outage.
+    // This is the safe outcome for the deploy that triggered this work: a failed
+    // build keeps the previous, working deployment live instead of publishing a
+    // sitemap that omits the entire catalog/blog.
+    if (productErrored && productCount === 0) {
+      throw new Error('[next-sitemap] Aborting build: product fetch failed and produced 0 product URLs (backend outage). Not shipping a truncated sitemap.');
+    }
+    if (postErrored && postCount === 0) {
+      throw new Error('[next-sitemap] Aborting build: blog post fetch failed and produced 0 post URLs (backend outage). Not shipping a truncated sitemap.');
+    }
+    if (productErrored || postErrored) {
+      console.warn(`[next-sitemap] WARNING: dynamic fetch was partial (products=${productCount}, posts=${postCount}). Sitemap may be incomplete — investigate backend availability.`);
+    } else {
+      console.log(`[next-sitemap] Collected ${productCount} product + ${postCount} post URLs.`);
     }
 
     // Drop any URL that the live site 301-redirects so the sitemap only lists
