@@ -43,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const staticSEORoutes = new Set([
     '/',
     '/product',
+    '/blog',
     '/about-us',
     '/contact',
     '/gallery',
