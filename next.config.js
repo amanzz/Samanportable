@@ -179,7 +179,7 @@ const nextConfig = {
       // Additional duplicate URL redirects
       {
         source: '/innovative-office-container-designs-2',
-        destination: '/product-category/container-offices/',
+        destination: '/product-category/container-offices',
         permanent: true,
       },
       // Blog to product page redirect
@@ -580,6 +580,49 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ─── GSC "Not found 404" redirect-worthy small batch (1:1 equivalents) ─
+      // Six high-confidence 301s for legacy 404 URLs whose canonical page is live (200).
+      // Destinations are slash-less (trailingSlash:false). No CMS recategorisation here.
+      {
+        source: '/product/uncategorized/office-portable-cabin',
+        destination: '/product/portable-cabin/office-portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/uncategorized/small-portable-cabin',
+        destination: '/product/portable-cabin/small-portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/uncategorized/mobile-office-container',
+        destination: '/product/container-offices/mobile-office-container',
+        permanent: true,
+      },
+      {
+        source: '/product/uncategorized/portable-cabin-with-toilet',
+        destination: '/product/portable-cabin/portable-cabin-with-toilet',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/labour-colonies-for-sale-in-west-delhi',
+        destination: '/labour-colonies-in-west-delhi',
+        permanent: true,
+      },
+
+      // ─── GSC "Soft 404" Group A (nonexistent category → real listing) ─────
+      // /product-category/products is not a real WooCommerce category; it renders an
+      // empty "No products" page at 200 (soft 404). Redirect to the real /product listing.
+      {
+        source: '/product-category/products',
+        destination: '/product',
+        permanent: true,
+      },
+
       // ─── CSV BULK REDIRECTS (572 entries from spreadsheet) ───────────────
       // Source: Untitled spreadsheet - Sheet1 (1).csv
       // Skipped: 7 MERGE rows, 2 conflicts with existing config, 0 duplicates
@@ -660,14 +703,12 @@ const nextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-          {
-            key: 'Expires',
-            value: new Date(Date.now() + 31536000000).toUTCString(),
-          },
+          // NOTE: deliberately NO catch-all Cache-Control here.
+          // HTML pages must NOT be cached as "immutable" for a year — that serves stale
+          // content (old prices/content) to returning visitors and crawlers. Next.js sets
+          // the correct per-page Cache-Control on its own (s-maxage for ISR/getStaticProps
+          // pages, private/no-cache for getServerSideProps). Long-lived immutable caching is
+          // applied ONLY to static assets in the dedicated rules below.
           // Enhanced performance headers for Core Web Vitals
           {
             key: 'X-DNS-Prefetch-Control',

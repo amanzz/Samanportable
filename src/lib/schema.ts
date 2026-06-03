@@ -1,3 +1,5 @@
+import { homepageFaqs } from '@/data/homepageFaqs';
+
 export interface ProductSchema {
   name: string;
   description: string;
@@ -194,11 +196,11 @@ export const getLocalBusinessSchemaBengaluru = () => ({
     '@type': 'OfferCatalog',
     name: 'Portable Cabin & Prefab Structure Products',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Container Cafe', description: 'Custom container cafes and food kiosks' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Cafe', description: 'Custom container cafes and food kiosks' } },
     ],
   },
 });
@@ -266,11 +268,11 @@ export const getLocalBusinessSchemaGreaterNoida = () => ({
     '@type': 'OfferCatalog',
     name: 'Portable Cabin & Prefab Structure Products',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Container Cafe', description: 'Custom container cafes and food kiosks' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Cafe', description: 'Custom container cafes and food kiosks' } },
     ],
   },
 });
@@ -289,108 +291,21 @@ export const getWebSiteSchema = () => ({
   },
 });
 
+// Built from the SAME array that renders the visible <FAQSection /> on the homepage,
+// so the structured data always matches the on-page content (Google FAQ-policy requirement).
 export const getHomepageFAQSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   '@id': 'https://www.samanportable.com/#faqpage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'How much does a portable cabin cost in India?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Prices start at Rs 1,45,000 for a 10x10 ft security cabin. Standard site offices from Rs 2,55,000. Large container offices Rs 3,35,000 to Rs 5,00,000. Per square foot: Rs 900 to Rs 2,500 depending on specification. Saman Portable provides fixed-price quotes within 48 hours.',
-      },
+  mainEntity: homepageFaqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      // Strip any HTML so the schema carries clean text matching the rendered answer.
+      text: faq.answer.replace(/<[^>]*>/g, ''),
     },
-    {
-      '@type': 'Question',
-      name: 'How long does delivery and installation take?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Standard orders are delivered and fully installed within 7–21 days anywhere in India. Includes manufacturing, transport to site, and on-site installation by our team.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can portable cabins handle Indian heat, rain and high winds?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. 50mm PUF insulation reduces interior temperature 8-12 degrees below outside. Galvanised steel roof handles 3000mm annual rainfall. Wind-load certified to 200 km/hr. Installed across Kerala, Rajasthan, coastal Karnataka and high-altitude sites.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do you offer portable cabins on rent?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Rental from Rs 8,000 per month. Available in Bangalore, Delhi NCR, Hyderabad, Chennai, Pune and Mumbai. Delivery, installation and removal included. Short-term and long-term contracts available.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What standard sizes are available?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Standard sizes: 10x10 ft, 10x14 ft, 10x20 ft, 20x10 ft, 30x10 ft, 40x10 ft, 40x12 ft. Custom sizes available without extra delivery time for orders of 1-5 units.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Are portable cabins permanent or only temporary?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Both. Portable cabins are relocatable but many clients use them as permanent structures for years. Saman Portable offers a 5-year structural warranty and a 1-year standard warranty on all manufactured structures.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do I need to arrange a crane or civil team for installation?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'No. Our installation team handles everything on-site. You need only a levelled area or concrete pad. No foundation excavation required for standard units.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can portable cabins be customised in size, interior and colour?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Size, interior layout, electrical configuration, exterior colour and company branding are all customisable. Custom orders of 1-5 units delivered within the standard 21-day timeline.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What materials are used in Saman Portable structures?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Quality-tested MS steel frame (1.2-2.0mm), 50mm PUF insulated sandwich panels with 0.50mm PPGI cladding, 18mm cement particle board flooring. EPS, Rockwool and Glasswool insulation available on request.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do you deliver and install outside Bangalore?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes, all of India. Manufacturing in Bengaluru (Karnataka) and Greater Noida (UP). Delivers to Karnataka, Tamil Nadu, Kerala, Andhra Pradesh, Telangana, Maharashtra, Gujarat, Rajasthan, Delhi NCR, UP, Haryana, Punjab, West Bengal, Odisha and more.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the structural warranty?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '5-year structural warranty on frame and panels from date of installation handover. 1-year standard warranty on fittings (extendable to 2 years on request).',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How do I get a quote?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Fill in the quote form on the website (24-hour response), call +91 88616 22859 (Bangalore) or +91 8796039938 (Delhi NCR), or WhatsApp us for fastest response (2-hour reply on weekdays). Fixed-price quote with layout drawing within 48 hours.',
-      },
-    },
-  ],
+  })),
 });
 
 export const getAboutPageSchema = () => ({

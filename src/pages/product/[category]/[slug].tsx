@@ -30,8 +30,7 @@ import { generateProductMetaDescription, generateProductTabContent } from '../..
 import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
-import FAQSchema from '../../../components/FAQSchema';
-import { getDefaultFAQs } from '../../../utils/faqUtils';
+import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -82,7 +81,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       // Redirect to the shorter URL format
       return {
         redirect: {
-          destination: `/product/${category}/`,
+          destination: `/product/${category}`,
           permanent: true,
         },
       };
@@ -331,8 +330,16 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO 
           {/* Product Structured Data for Google Merchant Center */}
           <ProductStructuredData product={product} category={category} />
           
-          {/* FAQ Structured Data for Rich Results */}
-          <FAQSchema faqs={getDefaultFAQs(transformedProduct.title)} productTitle={transformedProduct.title} />
+          {/* FAQ Structured Data — sourced from RankMath, which mirrors the FAQ
+              actually rendered in the product description below. No fake/templated FAQs. */}
+          {rankMathSEO?.faqSchema && (
+            <Head>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(rankMathSEO.faqSchema) }}
+              />
+            </Head>
+          )}
 
           {/* Preload critical images for better performance */}
           <ImagePreloader 

@@ -274,7 +274,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
               </div>
 
               <div className="mt-12 text-center">
-                <Link href="/products" className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white transition-all duration-200 bg-primary rounded-lg hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group">
+                <Link href="/product" className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white transition-all duration-200 bg-primary rounded-lg hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group">
                   Explore our Portable Solutions
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>

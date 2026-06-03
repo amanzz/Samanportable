@@ -14,8 +14,20 @@ import { decodeHtmlEntities } from '@/lib/utils';
 import { BlogPost as ApiBlogPost } from '@/config/api';
 type BlogPost = ApiBlogPost;
 
+// Reading time computed server-side (matches the previous in-component getReadingTime logic:
+// 200 wpm). Computing it here lets us strip the full `content.rendered` from the returned props
+// so large post bodies are no longer serialized into __NEXT_DATA__ (Large HTML fix).
+function computeReadingTime(content: string): number {
+  const wordsPerMinute = 200;
+  const wordCount = (content || '').replace(/<[^>]*>/g, '').split(' ').length;
+  return Math.ceil(wordCount / wordsPerMinute);
+}
+
+// Listing only needs card data + a precomputed reading-time number (not the full body).
+type BlogCardPost = BlogPost & { readingTime: number };
+
 interface BlogProps {
-  posts: BlogPost[];
+  posts: BlogCardPost[];
   totalPages: number;
   currentPage: number;
   totalPosts: number;
@@ -57,8 +69,17 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       { id: 5, name: 'Construction', slug: 'construction', count: 35 }
     ];
 
+    // Compute reading time from the full content, then strip `content.rendered` so the large
+    // post bodies are NOT serialized into __NEXT_DATA__. All other card fields (title, excerpt,
+    // date, slug, _embedded featured media / term / author) are preserved unchanged.
+    const lightPosts: BlogCardPost[] = (result.posts || []).map((post: BlogPost) => ({
+      ...post,
+      readingTime: computeReadingTime(post?.content?.rendered || ''),
+      content: { ...(post.content || {}), rendered: '' },
+    }));
+
     const props = {
-      posts: result.posts || [],
+      posts: lightPosts,
       totalPages: result.pagination.totalPages,
       currentPage: result.pagination.currentPage,
       totalPosts: result.pagination.totalPosts || 0,
@@ -107,12 +128,6 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
     const stripped = decodeHtmlEntities(excerpt.replace(/<[^>]*>/g, ''));
     if (stripped.length <= maxLength) return stripped;
     return stripped.substring(0, maxLength) + '...';
-  };
-
-  const getReadingTime = (content: string) => {
-    const wordsPerMinute = 200;
-    const wordCount = content.replace(/<[^>]*>/g, '').split(' ').length;
-    return Math.ceil(wordCount / wordsPerMinute);
   };
 
   const blogHubStructuredData = [
@@ -310,7 +325,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
                               </div>
                               <div className="flex items-center">
                                 <Clock className="w-3 h-3 mr-1" />
-                                {getReadingTime(post.content.rendered)} min read
+                                {post.readingTime} min read
                               </div>
                             </div>
                             

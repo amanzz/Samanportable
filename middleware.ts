@@ -81,6 +81,40 @@ export function middleware(request: NextRequest) {
     );
   }
 
+  // 410 Gone for unwanted legacy archive/system URL patterns (GSC "Not found 404"
+  // deindexing). These paths have NO route on the headless front-end and should be
+  // permanently removed from Google's index. Matching is PATH-based only — never on
+  // query parameters — so valid product pages carrying e.g. ?add-to-cart=<id> are
+  // unaffected. Numeric-only spam keeps its separate 410 handler below, unchanged.
+  const isGoneArchivePattern =
+    pathname.startsWith('/product-tag/') || // WooCommerce product-tag archives (+ ?orderby/per_page/add-to-cart variants)
+    pathname.startsWith('/tag/') ||         // WordPress blog-tag archives
+    pathname === '/feed' ||                 // root RSS feed
+    pathname.startsWith('/feed/') ||        // root-level feed paths (NOT nested /product/.../feed/)
+    pathname.startsWith('/author/') ||      // WordPress author archives
+    /^\/page\/\d+\/?$/.test(pathname);      // old Divi root-level pagination artifact (/page/2, /page/3, ...)
+
+  if (isGoneArchivePattern) {
+    return new NextResponse(
+      JSON.stringify({
+        error: 'Gone',
+        message: 'This content has been permanently removed.',
+        status: 410
+      }),
+      {
+        status: 410,
+        statusText: 'Gone',
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+          'X-Content-Type-Options': 'nosniff',
+          'X-Frame-Options': 'DENY',
+          'X-XSS-Protection': '1; mode=block'
+        }
+      }
+    );
+  }
+
   // 301 Permanent Redirects for broken links
   const redirectMap: Record<string, string> = {
     // Container Houses redirects

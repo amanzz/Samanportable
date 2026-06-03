@@ -43,7 +43,9 @@ export default function ProductStructuredData({ product, category }: ProductStru
     category: product.categories?.[0]?.name || 'Portable Structures',
     sku: product.id.toString(),
     mpn: `SP-${product.id}`, // Manufacturer Part Number
-    offers: {
+    // Only emit an Offer when a real price exists. An Offer with price 0 (quote-only
+    // products) is invalid for Google and triggers "price" errors in Search Console.
+    offers: (salePrice || price) > 0 ? {
       '@type': 'Offer',
       url: productUrl,
       priceCurrency: 'INR',
@@ -88,7 +90,7 @@ export default function ProductStructuredData({ product, category }: ProductStru
           }
         }
       }
-    },
+    } : undefined,
     aggregateRating: product.rating_count > 0 ? {
       '@type': 'AggregateRating',
       ratingValue: product.average_rating,

@@ -30,8 +30,7 @@ import { generateProductMetaDescription, generateProductTabContent } from '../..
 import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
-import FAQSchema from '../../../components/FAQSchema';
-import { getDefaultFAQs } from '../../../utils/faqUtils';
+import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
 // Dynamic import for ImagePreloader to reduce initial bundle size
@@ -118,7 +117,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         rankMathSEO = {
           title: product.name + ' - Saman Portable',
           description: metaDescription,
-          canonical: `https://www.samanportable.com/product/${category}/`,
+          canonical: `https://www.samanportable.com/product/${category}`,
           og_title: product.name,
           og_description: ogDescription,
           og_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
@@ -140,7 +139,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       rankMathSEO = {
         title: product.name + ' - Saman Portable',
         description: metaDescription,
-        canonical: `https://www.samanportable.com/product/${category}/`,
+        canonical: `https://www.samanportable.com/product/${category}`,
         og_title: product.name,
         og_description: ogDescription,
         og_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
@@ -343,7 +342,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO }: Pro
             rankMathSEO={rankMathSEO} 
             fallbackTitle={`${transformedProduct.title} - Saman Portable`}
             fallbackDescription={`${transformedProduct.title} - Quality portable solution by Saman Portable. Professional design and reliable construction.`}
-            fallbackCanonical={`https://www.samanportable.com/product/${category}/`}
+            fallbackCanonical={`https://www.samanportable.com/product/${category}`}
             fallbackOgImage={product.images?.[0]?.src || '/og-image.svg'}
             fallbackOgDescription={`${transformedProduct.title} - Premium portable structures with advanced features and customization options.`}
             fallbackTwitterDescription={`${transformedProduct.title} - Durable and reliable portable solutions for your business needs.`}
@@ -356,8 +355,16 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO }: Pro
           {/* Product Structured Data for Google Merchant Center */}
           <ProductStructuredData product={product} category={category} />
 
-          {/* FAQ Structured Data for Rich Results */}
-          <FAQSchema faqs={getDefaultFAQs(transformedProduct.title)} productTitle={transformedProduct.title} />
+          {/* FAQ Structured Data — sourced from RankMath, which mirrors the FAQ
+              actually rendered in the product description below. No fake/templated FAQs. */}
+          {rankMathSEO?.faqSchema && (
+            <Head>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(rankMathSEO.faqSchema) }}
+              />
+            </Head>
+          )}
 
           {/* Preload critical images for better performance */}
           <ImagePreloader 

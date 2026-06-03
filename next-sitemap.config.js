@@ -1,4 +1,80 @@
 /** @type {import('next-sitemap').IConfig} */
+
+// ── Redirect-aware sitemap filtering ─────────────────────────────────────────
+// The sitemap is built from the WordPress/WooCommerce API, which still emits
+// legacy slugs that the live site 301-redirects. Listing those URLs in the
+// sitemap triggers Google's "Page with redirect" exclusion. To prevent that,
+// every URL that is a known redirect source is dropped before it reaches the
+// sitemap. Sources of truth (read at build time, never hand-maintained here):
+//   1. redirects-from-csv.js      – bulk 301s (required directly as a baseline)
+//   2. next.config.js redirects() – manual 301s (+ the CSV, de-duplicated)
+//   3. /product/{x}/{x} pattern   – WooCommerce category-placeholder products
+//      whose slug equals their category; these redirect at the route level and
+//      are not in any static map, so they are matched structurally.
+const csvRedirects = require('./redirects-from-csv');
+
+/** Normalize a path for comparison: ensure a leading slash, drop trailing slash. */
+function normalizeRedirectPath(p) {
+  if (typeof p !== 'string') return '';
+  let s = p.trim();
+  if (!s) return '';
+  if (!s.startsWith('/')) s = '/' + s;
+  if (s.length > 1 && s.endsWith('/')) s = s.slice(0, -1);
+  return s;
+}
+
+/** WooCommerce category-placeholder products: /product/{a}/{a} where a === a. */
+function isDuplicateProductSegment(path) {
+  const m = /^\/product\/([^/]+)\/([^/]+)$/.exec(path);
+  return !!m && m[1] === m[2];
+}
+
+/** Collect literal redirect SOURCE paths only (never destinations or patterns). */
+function collectRedirectSources(list, set) {
+  if (!Array.isArray(list)) return;
+  for (const entry of list) {
+    if (!entry || typeof entry.source !== 'string') continue;
+    // Skip conditional (host/cookie/header) and wildcard/param redirects — they
+    // are not concrete URLs and must never be treated as sitemap entries.
+    if (entry.has || entry.missing) continue;
+    if (entry.source.includes(':') || entry.source.includes('*')) continue;
+    const norm = normalizeRedirectPath(entry.source);
+    if (norm) set.add(norm);
+  }
+}
+
+// Build the redirect-source set exactly once (promise-memoized so concurrent
+// additionalPaths/transform calls share a single build).
+let redirectSourcePromise = null;
+function getRedirectSources() {
+  if (redirectSourcePromise) return redirectSourcePromise;
+  redirectSourcePromise = (async () => {
+    const set = new Set();
+    // Baseline: the bulk CSV redirects (always available via sync require).
+    collectRedirectSources(csvRedirects, set);
+    // Additive: manual redirects from next.config.js (this also re-includes the
+    // CSV, which the Set de-duplicates). Wrapped in try/catch so a future config
+    // change can never crash sitemap generation — the CSV baseline still applies.
+    try {
+      const nextConfig = require('./next.config.js');
+      if (nextConfig && typeof nextConfig.redirects === 'function') {
+        collectRedirectSources(await nextConfig.redirects(), set);
+      }
+    } catch (err) {
+      console.warn('[next-sitemap] Skipped next.config redirects:', err && err.message);
+    }
+    return set;
+  })();
+  return redirectSourcePromise;
+}
+
+/** True when a path must be kept OUT of the sitemap because the site redirects it. */
+function isRedirectingPath(path, redirectSources) {
+  const norm = normalizeRedirectPath(path);
+  if (!norm) return false;
+  return redirectSources.has(norm) || isDuplicateProductSegment(norm);
+}
+
 module.exports = {
   siteUrl: 'https://www.samanportable.com',
   generateRobotsTxt: true,
@@ -144,13 +220,30 @@ module.exports = {
       
       
     } catch (error) {
-      
+
     }
-    
-    return paths;
+
+    // Drop any URL that the live site 301-redirects so the sitemap only lists
+    // canonical 200 pages. additionalPaths bypass `exclude`/`transform`, so this
+    // is the one place the WooCommerce/WordPress-derived URLs can be filtered.
+    const redirectSources = await getRedirectSources();
+    const kept = paths.filter((p) => p && p.loc && !isRedirectingPath(p.loc, redirectSources));
+    const removed = paths.length - kept.length;
+    if (removed > 0) {
+      console.log(`[next-sitemap] Excluded ${removed} redirecting URL(s) from sitemap; kept ${kept.length}.`);
+    }
+
+    return kept;
   },
   
   transform: async (config, path) => {
+    // Never emit a URL the live site redirects. Covers auto-discovered routes
+    // (additionalPaths are filtered separately, before they reach here).
+    const redirectSources = await getRedirectSources();
+    if (isRedirectingPath(path, redirectSources)) {
+      return null;
+    }
+
     // Custom priority and changefreq for different page types
     if (path === '/') {
       return {

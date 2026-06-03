@@ -77,6 +77,9 @@ export interface RankMathSEOData {
   twitter_description?: string;
   twitter_image?: string;
   schema?: any;
+  // FAQPage JSON-LD extracted from RankMath's head output for this URL.
+  // Only the FAQPage node is kept (Product/Organization schema is handled elsewhere).
+  faqSchema?: any;
 }
 
 // Enhanced TypeScript interfaces for better type safety
@@ -469,9 +472,16 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
     const descMatch = headHtml.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i);
     if (descMatch) seoData.description = descMatch[1];
     
-    // Extract canonical
+    // Extract canonical. Normalize the host to the public www domain: RankMath may emit
+    // the WordPress backend host (e.g. blog.samanportable.com) or a non-www variant, which
+    // would point Google's canonical at a different host and risk deindexing the live page.
     const canonicalMatch = headHtml.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
-    if (canonicalMatch) seoData.canonical = canonicalMatch[1];
+    if (canonicalMatch) {
+      seoData.canonical = canonicalMatch[1].replace(
+        /^https?:\/\/(?:[a-z0-9-]+\.)*samanportable\.com/i,
+        'https://www.samanportable.com'
+      );
+    }
     
     // Extract Open Graph tags
     const ogTitleMatch = headHtml.match(/<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i);
@@ -506,8 +516,36 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
       };
     }
     
-    // Schema extraction removed to prevent duplicate Product schemas
-    // Schema is now handled by ProductStructuredData component only
+    // Product/Organization schema is intentionally NOT taken from RankMath here
+    // (ProductStructuredData handles it) to avoid duplicate Product/Organization nodes.
+    // We ONLY extract the FAQPage node, because the FAQ text is genuinely rendered
+    // on the page (inside the product description), so its schema is Google-compliant.
+    try {
+      const ldJsonBlocks = [...headHtml.matchAll(
+        /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi
+      )];
+      for (const block of ldJsonBlocks) {
+        let parsed: any;
+        try {
+          parsed = JSON.parse(block[1].trim());
+        } catch {
+          continue; // skip any malformed JSON-LD block
+        }
+        // RankMath usually wraps everything in a single @graph array.
+        const nodes = Array.isArray(parsed?.['@graph']) ? parsed['@graph'] : [parsed];
+        const faqNode = nodes.find((node: any) => {
+          const t = node?.['@type'];
+          return t === 'FAQPage' || (Array.isArray(t) && t.includes('FAQPage'));
+        });
+        if (faqNode && Array.isArray(faqNode.mainEntity) && faqNode.mainEntity.length > 0) {
+          // Emit as a standalone, valid FAQPage document.
+          seoData.faqSchema = { '@context': 'https://schema.org', ...faqNode };
+          break;
+        }
+      }
+    } catch {
+      // FAQ extraction is best-effort; never block SEO data on it.
+    }
 
     return seoData;
   } catch (error) {

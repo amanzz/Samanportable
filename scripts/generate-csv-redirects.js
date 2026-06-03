@@ -133,7 +133,11 @@ function main() {
 
     // 2. Validate & convert URLs
     const source      = toPathname(sourceUrl);
-    const destination = toPathname(destinationUrl);
+    // Normalize destination to slash-less canonical form (site uses trailingSlash: false);
+    // this prevents an extra 308 redirect hop / redirect chains. Source paths are
+    // intentionally left unchanged.
+    let destination   = toPathname(destinationUrl);
+    if (destination && destination !== '/') destination = destination.replace(/\/+$/, '');
 
     if (!source || !destination) {
       stats.invalid++;

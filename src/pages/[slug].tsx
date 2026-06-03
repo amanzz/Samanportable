@@ -34,6 +34,16 @@ interface BlogPostProps {
   rankMathSEO?: RankMathSEOData | null;
 }
 
+// Slug-specific metadata image override. This post's WordPress featured image
+// (container-office-by-saman-13-1_11zon-1024x584.webp) returns 404, so its
+// og:image / twitter:image / BlogPosting schema image use a valid absolute local
+// image. Keyed to this one slug only — no other page is affected.
+const METADATA_IMAGE_OVERRIDES: Record<string, string> = {
+  'best-porta-cabin-supplier': 'https://www.samanportable.com/container-office-by-saman-1.webp',
+};
+// Distinctive marker of the broken WordPress image (matches its size variants).
+const BROKEN_WP_IMAGE_MARKER = 'container-office-by-saman-13-1_11zon';
+
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
   try {
     const slug = params?.slug as string;
@@ -149,6 +159,19 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       };
     }
 
+    // Slug-specific fix: override RankMath og/twitter image ONLY when it points to
+    // the broken WordPress featured image (or is missing), for this one slug.
+    // RankMath has highest priority in UnifiedSEO, so this must run here.
+    const metadataImageOverride = METADATA_IMAGE_OVERRIDES[slug];
+    if (metadataImageOverride && rankMathSEO) {
+      if (!rankMathSEO.og_image || rankMathSEO.og_image.includes(BROKEN_WP_IMAGE_MARKER)) {
+        rankMathSEO.og_image = metadataImageOverride;
+      }
+      if (!rankMathSEO.twitter_image || rankMathSEO.twitter_image.includes(BROKEN_WP_IMAGE_MARKER)) {
+        rankMathSEO.twitter_image = metadataImageOverride;
+      }
+    }
+
     return {
       props: {
         post,
@@ -200,10 +223,20 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
 
   // Get featured image
   const getFeaturedImage = () => {
+    // Slug-specific override: this post's WordPress featured image
+    // (a blog.samanportable.com upload) returns 404, so serve a valid local image.
+    const featuredImageOverrides: Record<string, string> = {
+      'best-porta-cabin-supplier': '/container-office-by-saman-1.webp',
+    };
+    if (featuredImageOverrides[slug]) {
+      return featuredImageOverrides[slug];
+    }
     if (post._embedded?.['wp:featuredmedia']?.[0]) {
       return post._embedded['wp:featuredmedia'][0].source_url;
     }
-    return '/placeholder.svg';
+    // Fallback when a post has no featured image. Use a valid local raster image
+    // instead of /placeholder.svg, which fails Next/Image optimization (HTTP 400).
+    return '/hero-image/premium-container-site-office-rental.webp';
   };
 
   // Get author info
@@ -507,7 +540,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
         fallbackCanonical={`https://www.samanportable.com/${slug}`}
         fallbackTitle={`${decodeHtmlEntities(post?.title?.rendered || 'Blog Post')} - Saman Portable`}
         fallbackDescription={decodeHtmlEntities(post?.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 160) || 'Read our latest blog post at Saman Portable.')}
-        fallbackOgImage={post?._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/og-image.svg'}
+        fallbackOgImage={METADATA_IMAGE_OVERRIDES[slug] || post?._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/og-image.svg'}
         keywords={`blog, portable office, container office, prefab solutions, ${post?._embedded?.['wp:term']?.[0]?.[0]?.name || ''}`}
         structuredData={(() => {
           if (!post) return undefined;
@@ -518,7 +551,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             postSchema: {
               title: decodeHtmlEntities(post.title.rendered),
               description: decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160)),
-              image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/default-blog-image.jpg',
+              image: METADATA_IMAGE_OVERRIDES[slug] || post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.samanportable.com/default-blog-image.jpg',
               author: post._embedded?.author?.[0]?.name || 'Saman Portable',
               authorUrl: isOrgAuthor ? undefined : 'https://www.samanportable.com/about-us',
               datePublished: post.date,

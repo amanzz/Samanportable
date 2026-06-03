@@ -51,6 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
     '/delivery-policy',
     '/refund-and-return-policy',
     '/terms-and-conditions',
+    '/prefab-solutions',
     '/checkout',
     '/cart',
     '/my-orders',
@@ -60,6 +61,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const hasCustomSEO = pageProps.rankMathSEO ||
     router.pathname.startsWith('/product/') ||
+    router.pathname.startsWith('/product-category/') ||
     router.pathname.startsWith('/container-rent-services/') ||
     (router.pathname === '/[slug]' && pageProps.post) ||
     staticSEORoutes.has(router.pathname);
