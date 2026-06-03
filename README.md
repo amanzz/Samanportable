@@ -309,3 +309,5 @@ For issues or questions:
 ---
 
 **Note**: This migration maintains 100% visual and functional parity with your original Vite site while adding the benefits of Next.js SSR for better SEO and performance.
+
+<!-- deploy: redeployment trigger 2026-06-04 -->
