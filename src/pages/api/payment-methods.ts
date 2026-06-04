@@ -15,12 +15,12 @@ export default async function handler(
     const consumerKey = process.env.WORDPRESS_REVIEW_WRITE_KEY || '';
     const consumerSecret = process.env.WORDPRESS_REVIEW_WRITE_SECRET || '';
 
-    // Fetch payment gateways from WordPress WooCommerce API using Basic Auth
-    const basicAuth = Buffer.from(`${consumerKey}:${consumerSecret}`).toString('base64');
-    
-    const response = await fetch(`${wcBaseUrl}/payment_gateways`, {
+    // Authenticate with consumer_key/secret as query-string params — the same method
+    // the working read routes use. Avoids relying on the Authorization (Basic) header
+    // being preserved end-to-end through the proxy/origin.
+    const authParams = new URLSearchParams({ consumer_key: consumerKey, consumer_secret: consumerSecret });
+    const response = await fetch(`${wcBaseUrl}/payment_gateways?${authParams.toString()}`, {
       headers: {
-        'Authorization': `Basic ${basicAuth}`,
         'Content-Type': 'application/json',
       },
     });

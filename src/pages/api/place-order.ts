@@ -99,13 +99,12 @@ export default async function handler(
       status: 'pending' // Can be: pending, processing, completed, etc.
     };
 
-    // Create order in WooCommerce using Basic Auth
-    const basicAuth = Buffer.from(`${consumerKey}:${consumerSecret}`).toString('base64');
-    
-    const response = await fetch(`${wcBaseUrl}/orders`, {
+    // Authenticate with consumer_key/secret as query-string params — the same method
+    // the working read routes use (consistent, proxy/header-independent auth).
+    const authParams = new URLSearchParams({ consumer_key: consumerKey, consumer_secret: consumerSecret });
+    const response = await fetch(`${wcBaseUrl}/orders?${authParams.toString()}`, {
       method: 'POST',
       headers: {
-        'Authorization': `Basic ${basicAuth}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(orderData),
