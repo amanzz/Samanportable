@@ -509,7 +509,9 @@ export const getCityServiceSchema = (params: {
     areaServed: { '@type': 'Place', name: area },
     url: params.url,
     ...(params.image && { image: params.image }),
-    inLanguage: 'en-IN',
+    // NOTE: do NOT add `inLanguage` or `isPartOf` here — they are not valid
+    // properties of schema.org/Service (validator warnings). Page-level
+    // inLanguage/isPartOf live on the WebPage/BlogPosting nodes instead.
   };
 };
 
@@ -614,10 +616,12 @@ export const generateUnifiedBlogGraph = (params: {
   // Optional Service node for allowlisted city/location landing pages. Coexists with
   // BlogPosting; provider references the Organization @id already in the graph.
   if (serviceSchema) {
+    // `isPartOf` is intentionally NOT added here — it is not a valid property of
+    // schema.org/Service. The Service node links to the page via its provider
+    // (Organization @id) and its own @id; page-level isPartOf stays on WebPage.
     graph.push({
       ...serviceSchema,
       '@context': undefined,
-      isPartOf: { '@id': webpageId }
     });
   }
 
