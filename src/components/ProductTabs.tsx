@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
@@ -23,21 +23,42 @@ import {
   Download,
   Share2,
   Heart,
-  Bookmark
+  Bookmark,
+  MessageSquare
 } from 'lucide-react';
 import OptimizedContent from './OptimizedContent';
 import { replaceInternalLinks } from '../utils/imageReplacement';
+import ProductReviews from './ProductReviews';
+import { ProductReview } from '@/config/api';
 
 
 interface ProductTabsProps {
   description: string;
   productTitle: string;
+  reviews?: ProductReview[];
+  averageRating?: string;
+  ratingCount?: number;
+  productId: number;
+  productName?: string;
 }
 
 
 
-const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) => {
+const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle, reviews = [], averageRating, ratingCount, productId, productName }) => {
   const [activeTab, setActiveTab] = useState('description');
+
+  // Allow a "Write a Review" trigger anywhere on the page to open the Reviews tab
+  // and scroll to it (instead of redirecting to Contact Us).
+  useEffect(() => {
+    const openReviews = () => {
+      setActiveTab('reviews');
+      window.setTimeout(() => {
+        document.getElementById('product-reviews-tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+    };
+    window.addEventListener('open-reviews-tab', openReviews);
+    return () => window.removeEventListener('open-reviews-tab', openReviews);
+  }, []);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(true);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
@@ -291,10 +312,10 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
         </Card>
 
         {/* Modern Tabs Design with Green Theme */}
-        <Card className="border-0 shadow-xl overflow-hidden">
+        <Card id="product-reviews-tabs" className="border-0 shadow-xl overflow-hidden">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-200">
-              <TabsList className="grid w-full grid-cols-3 bg-transparent border-0 h-auto p-0">
+              <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 bg-transparent border-0 h-auto p-0">
                 <TabsTrigger 
                   value="description" 
                   className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none border-r border-green-200 transition-all duration-200"
@@ -311,13 +332,20 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
                   <span className="hidden sm:inline">Specifications</span>
                   <span className="sm:hidden">Specs</span>
                 </TabsTrigger>
-                <TabsTrigger 
-                  value="shipping" 
-                  className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none transition-all duration-200"
+                <TabsTrigger
+                  value="shipping"
+                  className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none sm:border-r border-green-200 transition-all duration-200"
                 >
                   <Truck className="w-5 h-5" />
                   <span className="hidden sm:inline">Shipping</span>
                   <span className="sm:hidden">Ship</span>
+                </TabsTrigger>
+                <TabsTrigger
+                  value="reviews"
+                  className="flex items-center gap-3 px-6 py-4 data-[state=active]:bg-white data-[state=active]:shadow-lg data-[state=active]:text-green-600 font-semibold rounded-none transition-all duration-200"
+                >
+                  <MessageSquare className="w-5 h-5" />
+                  <span>Reviews</span>
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -381,6 +409,23 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle }) 
             </div>
           </div>
             </TabsContent>
+
+              {/* Reviews tab — forceMount keeps the approved reviews in the SSR DOM
+                  (so the visible reviews stay in sync with the Review JSON-LD), while
+                  staying visually hidden until the tab is opened. */}
+              <TabsContent
+                value="reviews"
+                forceMount
+                className="mt-0 p-2 sm:p-4 md:p-6 data-[state=inactive]:hidden"
+              >
+                <ProductReviews
+                  reviews={reviews}
+                  averageRating={averageRating}
+                  ratingCount={ratingCount}
+                  productId={productId}
+                  productName={productName}
+                />
+              </TabsContent>
 
 
             </div>

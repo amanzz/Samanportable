@@ -1,13 +1,16 @@
-import Link from 'next/link';
+import { useRef } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Star, CheckCircle, MessageSquare, PenLine } from 'lucide-react';
 import { ProductReview } from '@/config/api';
+import ReviewForm from './ReviewForm';
 
 interface ProductReviewsProps {
   reviews: ProductReview[];
   averageRating?: string;
   ratingCount?: number;
+  productId: number;
+  productName?: string;
 }
 
 // Strip HTML/entities so review text renders as plain, safe text (no
@@ -31,12 +34,8 @@ const MONTH_NAMES = [
 ];
 
 // DETERMINISTIC date formatter — no `Date`, no `toLocaleDateString`, no `Intl`,
-// no timezone. WooCommerce `date_created` is a local "YYYY-MM-DDTHH:MM:SS" string;
-// we read only the calendar date and format it with a fixed English month table.
-// Because it is pure string manipulation, the server (Node) and the client
-// (any browser/locale/timezone) produce the EXACT same output → no React
-// hydration mismatch. (`toLocaleDateString` was the prior hydration cause: its
-// output depends on the runtime's ICU/locale and system timezone.)
+// no timezone. Pure string manipulation → identical on server and client → no
+// React hydration mismatch. (Unchanged from the approved review-rendering logic.)
 function formatDate(iso: string): string {
   if (!iso) return '';
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso);
@@ -46,7 +45,7 @@ function formatDate(iso: string): string {
   const day = parseInt(m[3], 10);
   const monthName = MONTH_NAMES[monthIndex];
   if (!monthName || !day) return '';
-  return `${day} ${monthName} ${year}`; // e.g. "15 January 2025"
+  return `${day} ${monthName} ${year}`;
 }
 
 function Stars({ rating }: { rating: number }) {
@@ -62,66 +61,67 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
-// Safe, non-functional CTA. It does NOT submit a review and does NOT touch the
-// backend — it links to the contact/enquiry page so a customer can share
-// feedback, which is then published only after WooCommerce moderation. Rendered
-// as a single <a> (Button asChild) to keep HTML nesting valid + hydration-safe.
-function WriteReviewCta() {
-  return (
-    <div className="mt-6 pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-      <Button asChild variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-white">
-        <Link href="/contact">
-          <PenLine className="w-4 h-4 mr-2" />
-          Write a Review
-        </Link>
-      </Button>
-      <p className="text-xs text-muted-foreground">
-        Share your experience with our team. Verified customer reviews are published after approval.
-      </p>
-    </div>
-  );
-}
-
 /**
- * Renders the Customer Reviews section for a product.
- * - With approved backend reviews: shows the real backend average + count and
- *   the latest approved review cards (these are the SAME reviews placed in the
- *   Review JSON-LD — visible === structured).
- * - With NO reviews (rating_count = 0): shows a clear "no reviews yet" state with
- *   NO fake stars, NO aggregate, and (separately) NO Review/AggregateRating schema.
- * Every value rendered here is deterministic, so SSR and client output match.
+ * Customer Reviews panel (rendered inside the product "Reviews" tab).
+ * - With approved backend reviews: real backend average + count + the latest
+ *   approved review cards (the SAME reviews placed in the Review JSON-LD —
+ *   visible === structured). No fake stars/cards/aggregate.
+ * - With NO reviews: a clean zero-state, then the review submission form.
+ * The "Write a Review" button scrolls to / focuses the in-page form — it does NOT
+ * redirect to Contact Us. Submitted reviews go to WooCommerce as PENDING (admin
+ * approval) via /api/submit-review; nothing here changes the approved-review
+ * fetch or the Review/AggregateRating schema.
  */
-export default function ProductReviews({ reviews, averageRating, ratingCount }: ProductReviewsProps) {
+export default function ProductReviews({ reviews, averageRating, ratingCount, productId, productName }: ProductReviewsProps) {
   const list = Array.isArray(reviews) ? reviews : [];
   const hasReviews = list.length > 0;
   const count = typeof ratingCount === 'number' && ratingCount > 0 ? ratingCount : 0;
   const avg = averageRating ? parseFloat(averageRating) : 0;
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const focusForm = () => {
+    const el = formRef.current;
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const nameInput = el.querySelector<HTMLInputElement>('#rv-name');
+    if (nameInput) window.setTimeout(() => nameInput.focus(), 350);
+  };
 
   return (
-    <section className="mt-4" aria-labelledby="customer-reviews-heading">
+    <section className="mt-0" aria-labelledby="customer-reviews-heading">
       <Card className="p-4 sm:p-6 md:p-8 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
         {/* Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
-            <MessageSquare className="w-5 h-5 text-white" />
+        <div className="flex items-center justify-between gap-3 mb-6 flex-wrap">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+              <MessageSquare className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 id="customer-reviews-heading" className="text-2xl font-bold text-foreground">
+                Customer Reviews
+              </h2>
+              {hasReviews && count > 0 ? (
+                <div className="flex items-center gap-2 mt-1">
+                  {avg > 0 && <Stars rating={Math.round(avg)} />}
+                  <span className="text-sm text-muted-foreground">
+                    {avg > 0 ? `${avg.toFixed(2)} out of 5 · ` : ''}
+                    {count} {count === 1 ? 'review' : 'reviews'}
+                  </span>
+                </div>
+              ) : (
+                <p className="text-sm text-muted-foreground mt-1">0 reviews</p>
+              )}
+            </div>
           </div>
-          <div>
-            <h2 id="customer-reviews-heading" className="text-2xl font-bold text-foreground">
-              Customer Reviews
-            </h2>
-            {hasReviews && count > 0 ? (
-              <div className="flex items-center gap-2 mt-1">
-                {avg > 0 && <Stars rating={Math.round(avg)} />}
-                <span className="text-sm text-muted-foreground">
-                  {avg > 0 ? `${avg.toFixed(2)} out of 5 · ` : ''}
-                  {count} {count === 1 ? 'review' : 'reviews'}
-                </span>
-              </div>
-            ) : (
-              // No fake stars — explicit zero state.
-              <p className="text-sm text-muted-foreground mt-1">0 reviews</p>
-            )}
-          </div>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={focusForm}
+            className="border-2 border-primary text-primary hover:bg-primary hover:text-white"
+          >
+            <PenLine className="w-4 h-4 mr-2" />
+            Write a Review
+          </Button>
         </div>
 
         {hasReviews ? (
@@ -152,12 +152,13 @@ export default function ProductReviews({ reviews, averageRating, ratingCount }: 
         ) : (
           // Zero-review state: clear, honest, no fake reviewer cards / stars.
           <div className="bg-slate-50 rounded-xl border border-dashed border-slate-300 p-6 text-center">
-            <p className="text-sm font-medium text-foreground">No customer reviews yet.</p>
-            <p className="text-sm text-muted-foreground mt-1">Be the first to review this product.</p>
+            <p className="text-sm font-medium text-foreground">No reviews yet. Be the first to review this product.</p>
           </div>
         )}
 
-        <WriteReviewCta />
+        {/* Real review submission form (pending admin approval). Single form, no
+            duplication, no redirect to Contact. */}
+        <ReviewForm ref={formRef} productId={productId} productName={productName} />
       </Card>
     </section>
   );

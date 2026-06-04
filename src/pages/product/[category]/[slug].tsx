@@ -30,7 +30,6 @@ import { generateProductMetaDescription, generateProductTabContent } from '../..
 import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
-import ProductReviews from '../../../components/ProductReviews';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
@@ -805,16 +804,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <ProductTabs
                   description={product.description || ''}
                   productTitle={transformedProduct.title}
+                  reviews={reviews}
+                  averageRating={product.average_rating}
+                  ratingCount={product.rating_count}
+                  productId={product.id}
+                  productName={transformedProduct.title}
                 />
               </div>
-
-              {/* Customer Reviews — REAL approved backend reviews only. Renders
-                  nothing when there are none; never shows fake reviews. */}
-              <ProductReviews
-                reviews={reviews}
-                averageRating={product.average_rating}
-                ratingCount={product.rating_count}
-              />
 
               {/* Related Products Section */}
               <div className="mt-4 hidden lg:block">
