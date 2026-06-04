@@ -22,7 +22,7 @@ import {
   BookOpen,
   Check
 } from 'lucide-react';
-import { fetchLightweightProduct, fetchProductDescription, fetchProducts, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData } from '../../../config/api';
+import { fetchLightweightProduct, fetchProductDescription, fetchProducts, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData, fetchProductReviews, ProductReview } from '../../../config/api';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
@@ -30,6 +30,7 @@ import { generateProductMetaDescription, generateProductTabContent } from '../..
 import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
+import ProductReviews from '../../../components/ProductReviews';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
@@ -53,6 +54,7 @@ interface ProductDetailsProps {
   relatedProducts: WooCommerceProduct[];
   productImages?: Array<{ src: string; alt: string }>;
   rankMathSEO?: RankMathSEOData | null;
+  reviews?: ProductReview[];
 }
 
 export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params }) => {
@@ -100,6 +102,15 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
 
     // Fetch full description and images separately
     const descriptionData = await fetchProductDescription(category);
+
+    // Fetch REAL approved backend reviews — ONLY when the product actually has
+    // ratings (rating_count > 0), so unrated products skip the extra API call.
+    // fetchProductReviews is non-fatal (returns [] on any error) so a reviews
+    // problem never breaks the page or causes a false 404.
+    let reviews: ProductReview[] = [];
+    if (product.rating_count > 0) {
+      reviews = await fetchProductReviews(product.id, 5);
+    }
 
     // Fetch Rank Math SEO data with fallback
     let rankMathSEO: RankMathSEOData | null = null;
@@ -179,8 +190,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         } as unknown as WooCommerceProduct,
         category,
         relatedProducts,
-        productImages: descriptionData?.images,
+        // `|| []` guard: when the description fetch fails, descriptionData is null and
+        // `?.images` is `undefined`, which Next.js cannot serialize as a prop → 500.
+        // An empty array is serializable (the prop is optional and unused downstream).
+        productImages: descriptionData?.images || [],
         rankMathSEO,
+        reviews,
       },
     };
   } catch (error) {
@@ -198,7 +213,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
   }
 };
 
-const ProductDetails = ({ product, category, relatedProducts, rankMathSEO }: ProductDetailsProps) => {
+const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, reviews = [] }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -360,8 +375,10 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO }: Pro
           
           {/* Product Schema handled by ProductStructuredData component */}
 
-          {/* Product Structured Data for Google Merchant Center */}
-          <ProductStructuredData product={product} category={category} />
+          {/* Product Structured Data for Google Merchant Center.
+              Review JSON-LD is emitted ONLY for the same real approved reviews
+              that are rendered in the Customer Reviews section below. */}
+          <ProductStructuredData product={product} category={category} reviews={reviews} />
 
           {/* FAQ Structured Data — sourced from RankMath, which mirrors the FAQ
               actually rendered in the product description below. No fake/templated FAQs. */}
@@ -809,6 +826,14 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO }: Pro
                   productTitle={transformedProduct.title}
                 />
               </div>
+
+              {/* Customer Reviews — REAL approved backend reviews only. Renders
+                  nothing when there are none; never shows fake reviews. */}
+              <ProductReviews
+                reviews={reviews}
+                averageRating={product.average_rating}
+                ratingCount={product.rating_count}
+              />
 
               {/* Related Products Section */}
               <div className="mt-4 hidden lg:block">

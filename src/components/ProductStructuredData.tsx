@@ -1,13 +1,17 @@
 import Head from 'next/head';
-import { WooCommerceProduct } from '@/config/api';
+import { WooCommerceProduct, ProductReview } from '@/config/api';
 import { generateStructuredDataDescription } from '@/utils/contentUtils';
 
 interface ProductStructuredDataProps {
   product: WooCommerceProduct;
   category?: string;
+  // REAL approved backend reviews that are ALSO rendered on the page. Only these
+  // become Review JSON-LD — never fabricated. When empty/undefined, no Review
+  // schema is emitted (AggregateRating is independent, from rating_count).
+  reviews?: ProductReview[];
 }
 
-export default function ProductStructuredData({ product, category }: ProductStructuredDataProps) {
+export default function ProductStructuredData({ product, category, reviews }: ProductStructuredDataProps) {
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
@@ -42,6 +46,27 @@ export default function ProductStructuredData({ product, category }: ProductStru
   const realAdditionalProperty = (product.attributes || [])
     .filter(a => a && a.name && Array.isArray(a.options) && a.options.length > 0)
     .map(a => ({ '@type': 'PropertyValue', name: a.name, value: a.options.join(', ') }));
+
+  // Review JSON-LD is built ONLY from the real approved reviews passed in (the same
+  // ones rendered visibly on the page). Text is stripped to plain text. If no
+  // reviews are supplied, the `review` array is omitted entirely — never invented.
+  const reviewNodes = (reviews || [])
+    .filter(r => r && typeof r.rating === 'number' && r.rating > 0 && r.review && stripHtml(r.review).length > 0)
+    .map(r => {
+      const datePublished = (r.date_created || '').split('T')[0];
+      return {
+        '@type': 'Review',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: r.rating,
+          bestRating: '5',
+          worstRating: '1',
+        },
+        author: { '@type': 'Person', name: r.reviewer || 'Anonymous' },
+        ...(datePublished ? { datePublished } : {}),
+        reviewBody: stripHtml(r.review),
+      };
+    });
 
   // Generate structured data for Product
   const productStructuredData = {
@@ -119,6 +144,9 @@ export default function ProductStructuredData({ product, category }: ProductStru
     } : undefined,
     // additionalProperty only from real WooCommerce attributes; omitted when none exist.
     ...(realAdditionalProperty.length > 0 ? { additionalProperty: realAdditionalProperty } : {}),
+    // Review nodes ONLY for real approved reviews that are visibly rendered on the
+    // page; omitted entirely when none were fetched/shown (no fake reviews).
+    ...(reviewNodes.length > 0 ? { review: reviewNodes } : {}),
   };
 
   // Generate BreadcrumbList structured data

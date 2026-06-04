@@ -204,6 +204,88 @@ export interface WooCommerceProduct {
   category_name?: string;
 }
 
+// A single REAL, approved WooCommerce product review.
+// Source of truth = WooCommerce backend `/wc/v3/products/reviews`. No fields here
+// are ever fabricated: reviewer name, rating, text and date come straight from
+// the backend. Used both to render visible reviews and to emit Review JSON-LD —
+// the two MUST stay in sync (schema only for what is actually shown).
+export interface ProductReview {
+  id: number;
+  product_id: number;
+  reviewer: string;
+  rating: number; // 1–5 from WooCommerce
+  review: string; // may contain HTML; stripped before display/schema
+  date_created: string;
+  verified: boolean;
+  status?: string;
+}
+
+// Fetch APPROVED reviews for a single product (product DETAIL pages only).
+//
+// Deliberately NON-FATAL: returns `[]` on ANY failure (non-2xx, network, timeout,
+// invalid shape) and NEVER throws. A reviews-fetch problem must never break the
+// product page or turn into a false 404 — reviews are a secondary page section,
+// not an existence signal. When this returns `[]`, the caller shows no reviews
+// section and emits no Review schema (AggregateRating is handled separately from
+// the product's own average_rating/rating_count).
+//
+// Only approved reviews are requested (`status=approved`) AND re-filtered client
+// side. `perPage` is capped small (default 5) so the same bounded, latest set is
+// both displayed and placed in JSON-LD. The request URL carries the consumer
+// key/secret in its query string, so it is never logged.
+export async function fetchProductReviews(productId: number, perPage = 5): Promise<ProductReview[]> {
+  if (!productId || productId <= 0) return [];
+  try {
+    const params = new URLSearchParams({
+      product: String(productId),
+      status: 'approved',
+      per_page: String(Math.max(1, Math.min(perPage, 10))),
+      orderby: 'date_gmt',
+      order: 'desc',
+      consumer_key: API_CONFIG.WC_CONSUMER_KEY,
+      consumer_secret: API_CONFIG.WC_CONSUMER_SECRET,
+      _fields: 'id,product_id,reviewer,rating,review,date_created,verified,status',
+    });
+
+    const response = await fetch(
+      `${API_CONFIG.WC_BASE_URL}/products/reviews?${params.toString()}`,
+      {
+        headers: getApiHeaders(),
+        next: { revalidate: 300 },
+      }
+    );
+
+    if (!response.ok) return [];
+
+    const data = await response.json();
+    if (!Array.isArray(data)) return [];
+
+    return data
+      .filter(
+        (r: any) =>
+          r &&
+          (r.status === 'approved' || r.status === undefined) &&
+          typeof r.rating === 'number' &&
+          r.rating > 0 &&
+          typeof r.review === 'string' &&
+          r.review.trim().length > 0
+      )
+      .map((r: any) => ({
+        id: r.id,
+        product_id: r.product_id,
+        reviewer: (r.reviewer && String(r.reviewer).trim()) || 'Anonymous',
+        rating: r.rating,
+        review: r.review,
+        date_created: r.date_created || '',
+        verified: Boolean(r.verified),
+        status: r.status,
+      }));
+  } catch {
+    // Non-fatal: never break the product page or cause a false 404.
+    return [];
+  }
+}
+
 export interface ProductFilters {
   category?: string;
   min_price?: number;
