@@ -10,9 +10,10 @@ export default async function handler(
 
   try {
     // Use the WooCommerce base URL from next.config.js
-    const wcBaseUrl = 'https://blog.samanportable.com/wp-json/wc/v3';
-    const consumerKey = 'ck_34fce5a6d68e1199b9ac194e1a3431c76b7e6c92';
-    const consumerSecret = 'cs_2205531d149e9d4835ee3485dd5414133817fdf2';
+    const wcBaseUrl = (process.env.WORDPRESS_API_URL || 'https://blog.samanportable.com/wp-json') + '/wc/v3';
+    // Server-side WooCommerce WRITE credentials from env (payment gateways need an authenticated key).
+    const consumerKey = process.env.WORDPRESS_REVIEW_WRITE_KEY || '';
+    const consumerSecret = process.env.WORDPRESS_REVIEW_WRITE_SECRET || '';
 
     // Fetch payment gateways from WordPress WooCommerce API using Basic Auth
     const basicAuth = Buffer.from(`${consumerKey}:${consumerSecret}`).toString('base64');

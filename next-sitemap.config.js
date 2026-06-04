@@ -128,6 +128,14 @@ async function fetchJsonWithRetry(url, label) {
   throw exhausted;
 }
 
+// WooCommerce credentials for build-time sitemap fetches — read-only key, from env
+// only (no hardcoded fallback). In DigitalOcean these are injected as build env vars;
+// locally they come from the shell environment. A missing key yields a 401, which the
+// build-fail guard surfaces loudly rather than silently shipping a truncated sitemap.
+const WC_BASE = (process.env.WORDPRESS_API_URL || 'https://blog.samanportable.com/wp-json') + '/wc/v3';
+const WC_KEY = process.env.WORDPRESS_CONSUMER_KEY || '';
+const WC_SECRET = process.env.WORDPRESS_CONSUMER_SECRET || '';
+
 module.exports = {
   siteUrl: 'https://www.samanportable.com',
   generateRobotsTxt: true,
@@ -177,7 +185,7 @@ module.exports = {
     // ── Product categories ──────────────────────────────────────────────────
     try {
       const categories = await fetchJsonWithRetry(
-        'https://blog.samanportable.com/wp-json/wc/v3/products/categories?per_page=100&consumer_key=ck_34fce5a6d68e1199b9ac194e1a3431c76b7e6c92&consumer_secret=cs_2205531d149e9d4835ee3485dd5414133817fdf2',
+        `${WC_BASE}/products/categories?per_page=100&consumer_key=${WC_KEY}&consumer_secret=${WC_SECRET}`,
         'product categories'
       );
       (Array.isArray(categories) ? categories : []).forEach((category) => {
@@ -198,7 +206,7 @@ module.exports = {
     let page = 1;
     let hasMore = true;
     while (hasMore) {
-      const productsUrl = `https://blog.samanportable.com/wp-json/wc/v3/products?page=${page}&per_page=${perPage}&consumer_key=ck_34fce5a6d68e1199b9ac194e1a3431c76b7e6c92&consumer_secret=cs_2205531d149e9d4835ee3485dd5414133817fdf2&_embed`;
+      const productsUrl = `${WC_BASE}/products?page=${page}&per_page=${perPage}&consumer_key=${WC_KEY}&consumer_secret=${WC_SECRET}&_embed`;
       try {
         const products = await fetchJsonWithRetry(productsUrl, `products page ${page}`);
         if (!Array.isArray(products) || products.length === 0) {

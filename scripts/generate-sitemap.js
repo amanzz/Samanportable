@@ -89,12 +89,17 @@ async function fetchAllWithPagination(baseUrl, itemType = 'items') {
 // Fetch dynamic content from WordPress
 async function fetchDynamicContent() {
   const dynamicPaths = [];
-  
+
+  // Read-only WooCommerce credentials from env (no hardcoded keys).
+  const WC = (process.env.WORDPRESS_API_URL || 'https://blog.samanportable.com/wp-json') + '/wc/v3';
+  const KEY = process.env.WORDPRESS_CONSUMER_KEY || '';
+  const SEC = process.env.WORDPRESS_CONSUMER_SECRET || '';
+
   try {
     // Fetch ALL product categories
     console.log('\n📂 Fetching product categories...');
     const categoriesResponse = await fetch(
-      'https://blog.samanportable.com/wp-json/wc/v3/products/categories?per_page=100&consumer_key=ck_34fce5a6d68e1199b9ac194e1a3431c76b7e6c92&consumer_secret=cs_2205531d149e9d4835ee3485dd5414133817fdf2'
+      `${WC}/products/categories?per_page=100&consumer_key=${KEY}&consumer_secret=${SEC}`
     );
     
     if (categoriesResponse.ok) {
@@ -114,7 +119,7 @@ async function fetchDynamicContent() {
     
     // Fetch ALL products with pagination
     console.log('\n🛍️ Fetching ALL products...');
-    const productsBaseUrl = 'https://blog.samanportable.com/wp-json/wc/v3/products?consumer_key=ck_34fce5a6d68e1199b9ac194e1a3431c76b7e6c92&consumer_secret=cs_2205531d149e9d4835ee3485dd5414133817fdf2&_embed';
+    const productsBaseUrl = `${WC}/products?consumer_key=${KEY}&consumer_secret=${SEC}&_embed`;
     const allProducts = await fetchAllWithPagination(productsBaseUrl, 'products');
     
     allProducts.forEach(product => {

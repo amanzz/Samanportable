@@ -28,6 +28,24 @@ interface ProductCategoryPageProps {
 
 import { GetServerSideProps } from 'next';
 
+// Client-side product fetch for pagination/filters. Goes through the same-origin
+// /api/products-by-category route so the WooCommerce consumer key/secret stays
+// server-side and is NEVER shipped to the browser. (Calling the WooCommerce fetch
+// helper directly from the client previously inlined the key/secret into the
+// client bundle.) getServerSideProps below still calls the helper directly —
+// that code runs only on the server and is stripped from the client bundle.
+async function fetchCategoryProductsClient(
+  slug: string,
+  page: number,
+  perPage = 20
+): Promise<{ products: LightweightProduct[]; pagination: PaginationInfo }> {
+  const res = await fetch(
+    `/api/products-by-category?slug=${encodeURIComponent(slug)}&page=${page}&perPage=${perPage}`
+  );
+  if (!res.ok) throw new Error(`products-by-category request failed: ${res.status}`);
+  return res.json();
+}
+
 export const getServerSideProps: GetServerSideProps = async ({ params, res }) => {
   res.setHeader(
     'Cache-Control',
@@ -167,7 +185,7 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
     setIsLoading(true);
     try {
       const slug = router.query.slug as string;
-      const result = await fetchLightweightProductsByCategory(slug, page, 20);
+      const result = await fetchCategoryProductsClient(slug, page, 20);
       setProducts(result.products);
       setPagination(result.pagination);
       setCurrentPage(page);
@@ -199,7 +217,7 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
         }
       });
       
-      const result = await fetchLightweightProductsByCategory(slug, 1, 20);
+      const result = await fetchCategoryProductsClient(slug, 1, 20);
       setProducts(result.products);
       setPagination(result.pagination);
       setCurrentPage(1);
@@ -216,7 +234,7 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
     setIsLoading(true);
     try {
       const slug = router.query.slug as string;
-      const result = await fetchLightweightProductsByCategory(slug, 1, 20);
+      const result = await fetchCategoryProductsClient(slug, 1, 20);
       setProducts(result.products);
       setPagination(result.pagination);
       setCurrentPage(1);

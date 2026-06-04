@@ -4,9 +4,15 @@ export const API_CONFIG = {
   WP_BASE_URL: process.env.WORDPRESS_API_URL || 'https://blog.samanportable.com/wp-json',
   WC_BASE_URL: (process.env.WORDPRESS_API_URL || 'https://blog.samanportable.com/wp-json') + '/wc/v3',
   
-  // WooCommerce API credentials
-  WC_CONSUMER_KEY: process.env.WORDPRESS_CONSUMER_KEY || 'ck_8649e855e2c557f0a545b674bd5fb1eacc32ad59',
-  WC_CONSUMER_SECRET: process.env.WORDPRESS_CONSUMER_SECRET || 'cs_d9b9536ff84a86871d7877481225b939cd4bacb2',
+  // WooCommerce API credentials — SERVER-SIDE ONLY, read from environment.
+  // No hardcoded fallback: a literal key here was being inlined into the client
+  // bundle (api.ts helpers were called from the browser), exposing the secret.
+  // These helpers must only run server-side (getServerSideProps / API routes);
+  // browser code must call a same-origin API route instead. Empty-string fallback
+  // keeps types/URLs valid (a missing key yields a 401 the callers already handle),
+  // and is never a usable credential.
+  WC_CONSUMER_KEY: process.env.WORDPRESS_CONSUMER_KEY || '',
+  WC_CONSUMER_SECRET: process.env.WORDPRESS_CONSUMER_SECRET || '',
   
   // Blog API endpoint (WordPress posts)
   BLOG_API_ENDPOINT: process.env.WORDPRESS_BLOG_API || 'https://blog.samanportable.com/wp-json/wp/v2',
