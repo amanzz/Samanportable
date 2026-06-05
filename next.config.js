@@ -653,6 +653,138 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ──────────────────────────────────────────────────
+      // WAIT REDIRECTS BATCH — added 2026-06-05
+      // Source: SAMAN_MASTER_PAGE_STATE.xlsx → REDIRECTS WAIT
+      // 22 new + 1 inline override (/dimensions-of-portable-cabins) + 1 skip (/porta-cabin-size in CSV)
+      // Inline placement BEFORE ...csvRedirects ensures first-match-wins over stale CSV entry
+      // ──────────────────────────────────────────────────
+      // UPDATE — inline override of stale CSV rule (redirects-from-csv.js:177).
+      // Old dest was /product-category/portable-cabin; first-match-wins (this
+      // precedes ...csvRedirects) so the new dest below takes effect.
+      {
+        source: '/dimensions-of-portable-cabins',
+        destination: '/porta-cabin-sizes-and-specifications-in-india',
+        permanent: true,
+      },
+      // C1 Porta Cabin (8)
+      {
+        source: '/second-hand-portacabin-offices-for-sale',
+        destination: '/2nd-hand-porta-cabins',
+        permanent: true,
+      },
+      {
+        source: '/best-porta-cabin-solutions-10-top-designs',
+        destination: '/best-porta-cabin-manufacturer-ncr',
+        permanent: true,
+      },
+      {
+        source: '/best-porta-cabin-supplier',
+        destination: '/best-porta-cabin-manufacturer-ncr',
+        permanent: true,
+      },
+      {
+        source: '/best-porta-cabins-india-solutions',
+        destination: '/best-porta-cabin-manufacturer-ncr',
+        permanent: true,
+      },
+      {
+        source: '/customized-porta-cabins',
+        destination: '/durable-porta-cabins',
+        permanent: true,
+      },
+      {
+        source: '/rapid-construction-porta-cabins-ncr',
+        destination: '/durable-porta-cabins',
+        permanent: true,
+      },
+      {
+        source: '/top-quality-ms-porta-cabin',
+        destination: '/durable-porta-cabins',
+        permanent: true,
+      },
+      {
+        source: '/portacabins-for-sale-in-frazer-town',
+        destination: '/porta-cabins-in-frazer',
+        permanent: true,
+      },
+      // C2 Portable Cabin (3)
+      {
+        source: '/affordable-portable-cabins-for-rent',
+        destination: '/cheap-portable-cabins',
+        permanent: true,
+      },
+      {
+        source: '/cheap-portable-cabins-for-sale',
+        destination: '/cheap-portable-cabins',
+        permanent: true,
+      },
+      {
+        source: '/best-materials-for-portable-cabins',
+        destination: '/top-rated-portable-cabin-supplier-delhi',
+        permanent: true,
+      },
+      // C3 Portable Office (2)
+      {
+        source: '/cost-effective-office-cabin-rentals',
+        destination: '/discount-mobile-office-units',
+        permanent: true,
+      },
+      {
+        source: '/cost-effective-temporary-office-cabins',
+        destination: '/discount-mobile-office-units',
+        permanent: true,
+      },
+      // C4 Container Office (4)
+      {
+        source: '/cheap-container-office',
+        destination: '/affordable-office-containers-for-sale',
+        permanent: true,
+      },
+      {
+        source: '/reliable-office-container-manufacturers',
+        destination: '/best-container-office-solutions',
+        permanent: true,
+      },
+      {
+        source: '/best-deals-on-refurbished-office-containers',
+        destination: '/second-hand-container-office',
+        permanent: true,
+      },
+      {
+        source: '/second-hand-office-container-for-sale',
+        destination: '/second-hand-container-office',
+        permanent: true,
+      },
+      // C7 Container House (1)
+      {
+        source: '/second-hand-container-for-sale',
+        destination: '/2nd-hand-containers',
+        permanent: true,
+      },
+      // C11 Prefab Building (2)
+      {
+        source: '/affordable-portable-structures',
+        destination: '/low-cost-modular-office-solutions',
+        permanent: true,
+      },
+      {
+        source: '/affordable-prefab-office-buildings',
+        destination: '/low-cost-modular-office-solutions',
+        permanent: true,
+      },
+      // C12 Prefab House (2 — chain-flattened from old /affordable-prefabricated-homes-delhi)
+      {
+        source: '/affordable-prefab-homes',
+        destination: '/top-quality-prefab-cabins-delhi',
+        permanent: true,
+      },
+      {
+        source: '/affordable-small-prefab-cabins',
+        destination: '/top-quality-prefab-cabins-delhi',
+        permanent: true,
+      },
+
       // ─── CSV BULK REDIRECTS (572 entries from spreadsheet) ───────────────
       // Source: Untitled spreadsheet - Sheet1 (1).csv
       // Skipped: 7 MERGE rows, 2 conflicts with existing config, 0 duplicates
