@@ -22,7 +22,7 @@ export default function RefundAndReturnPolicyPage() {
 
       {/* removed any extra Head tags; keep the policy content intact */}
       {/* Head tags handled by UnifiedSEO; removed duplicate Head block */}
-      
+
       <div className="min-h-screen">
         <main>
           {/* Hero Section */}
@@ -54,253 +54,165 @@ export default function RefundAndReturnPolicyPage() {
               <div className="max-w-none">
                 <div className="bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
                   <h2 className="text-2xl font-bold text-[#0A3D2A] mb-6">Refund and Return Policy</h2>
-                  
+
                   <p className="text-slate-700 mb-4">
-                    <strong>Last updated:</strong> January 15, 2025
-                  </p>
-                  
-                  <p className="text-slate-700 mb-6">
-                    At SAMAN POS India Private Limited, we stand behind the quality of our products and services. This policy outlines the terms and conditions for returns, refunds, and exchanges of our portable office solutions.
+                    <strong>Last updated:</strong> June 7, 2026
                   </p>
 
+                  <p className="text-slate-700 mb-6">
+                    At SAMAN POS India Private Limited, we manufacture and supply portable cabins, porta cabins, container offices, portable toilets, labour colonies, prefab buildings, and related prefabricated structures. This policy explains our return, exchange, and refund rules for products purchased from SAMAN Portable.
+                  </p>
+
+                  {/* Quick summary box for clear Merchant Center review */}
                   <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
                     <div className="flex items-start gap-3">
                       <Shield className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
-                        <h3 className="font-semibold text-green-800 mb-2">Quality Guarantee</h3>
-                        <p className="text-green-700 text-sm">
-                          We offer a comprehensive warranty on all our products and guarantee customer satisfaction. If you&apos;re not completely satisfied with your purchase, we&apos;re here to help.
-                        </p>
+                        <h3 className="font-semibold text-green-800 mb-2">Return &amp; Refund Summary</h3>
+                        <ul className="list-disc list-inside text-green-700 space-y-1 text-sm">
+                          <li>Returns accepted for both defective and non-defective products.</li>
+                          <li>Product condition accepted: new only.</li>
+                          <li>Standard return window: 7 days from delivery or installation.</li>
+                          <li>Returns are by mail/transport; return shipping is the customer&rsquo;s responsibility.</li>
+                          <li>No standard restocking fee.</li>
+                          <li>Approved refunds processed within 7 days of inspection.</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Return Policy</h3>
-                  
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Eligibility for Returns</h4>
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Returns Accepted</h3>
                   <p className="text-slate-700 mb-4">
-                    Returns are accepted within 7 days for defective products only. 
-                    For non-defective products, returns are not accepted.
+                    We accept returns for both defective and non-defective standard products, subject to the conditions below.
                   </p>
                   <p className="text-slate-700 mb-4">
-                    Products may be returned under the following conditions:
+                    Standard products may be returned within 7 days from the date of delivery or installation. The product must be new, unused, undamaged, not modified, and in the same condition as delivered.
                   </p>
-                  <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
-                    <li>Product arrives damaged or defective</li>
-                    <li>Product does not match the description or specifications</li>
-                    <li>Wrong product was delivered</li>
-                    <li>Product has manufacturing defects</li>
-                    <li>Return request is made within the specified time frame</li>
-                  </ul>
+                  <p className="text-slate-700 mb-6">
+                    Custom-made, site-specific, installed, used, modified, or specially fabricated products are not eligible for normal non-defective returns. However, they may be reviewed for return, repair, replacement, or correction if the product is defective, damaged on arrival, wrongly delivered, or does not match approved specifications.
+                  </p>
 
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Return Timeframe</h4>
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Custom Product Return Request Window</h3>
                   <div className="bg-slate-50 rounded-lg p-6 mb-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="flex items-start gap-3">
                         <Clock className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
                         <div>
-                          <h5 className="font-semibold text-slate-800">Standard Products</h5>
-                          <p className="text-slate-700 text-sm">7 days from delivery date</p>
+                          <h4 className="font-semibold text-slate-800">Standard Products</h4>
+                          <p className="text-slate-700 text-sm">7 days from delivery or installation</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <Clock className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
                         <div>
-                          <h5 className="font-semibold text-slate-800">Custom Products</h5>
-                          <p className="text-slate-700 text-sm">3 days from delivery date</p>
+                          <h4 className="font-semibold text-slate-800">Custom / Site-Specific Products</h4>
+                          <p className="text-slate-700 text-sm">3 days from delivery or installation</p>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <p className="text-slate-700 mb-6">
+                    For custom-made or site-specific products, any return, repair, replacement, or correction request must be raised within 3 days from the date of delivery or installation. Approval will depend on inspection and the nature of the issue.
+                  </p>
 
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Return Process</h4>
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
-                      <div>
-                        <h5 className="font-semibold text-slate-800">Contact Customer Service</h5>
-                        <p className="text-slate-700 text-sm">Call or email us within the return timeframe to initiate the return process.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
-                      <div>
-                        <h5 className="font-semibold text-slate-800">Return Authorization</h5>
-                        <p className="text-slate-700 text-sm">We will provide you with a Return Authorization Number (RAN) and return instructions.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
-                      <div>
-                        <h5 className="font-semibold text-slate-800">Product Return</h5>
-                        <p className="text-slate-700 text-sm">Pack the product securely and return it to our facility using the provided shipping label.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">4</div>
-                      <div>
-                        <h5 className="font-semibold text-slate-800">Inspection & Processing</h5>
-                        <p className="text-slate-700 text-sm">We will inspect the returned product and process your refund or replacement.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Return Requirements</h4>
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-                    <h5 className="font-semibold text-green-800 mb-3">Important Return Conditions</h5>
-                    <ul className="list-disc list-inside text-green-700 space-y-2 text-sm">
-                      <li>Product must be in original condition and packaging</li>
-                      <li>All original accessories and documentation must be included</li>
-                      <li>Product must not show signs of use, damage, or modification</li>
-                      <li>Return authorization number must be clearly visible on the package</li>
-                      <li>Product must be returned using our provided shipping method</li>
-                    </ul>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Refund Policy</h3>
-                  
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Refund Eligibility</h4>
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Eligible Return Reasons</h3>
                   <p className="text-slate-700 mb-4">
-                    Refunds will be processed for:
+                    A return request may be accepted when:
                   </p>
                   <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
-                    <li>Damaged or defective products</li>
-                    <li>Products that don&apos;t match specifications</li>
-                    <li>Wrong products delivered</li>
-                    <li>Manufacturing defects</li>
-                    <li>Service cancellations before work begins</li>
+                    <li>The product is defective.</li>
+                    <li>The product arrives damaged.</li>
+                    <li>The wrong product is delivered.</li>
+                    <li>The product does not match approved specifications.</li>
+                    <li>A standard, non-defective product is returned within 7 days in new and unused condition.</li>
                   </ul>
 
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Refund Processing</h4>
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Return Method</h3>
+                  <p className="text-slate-700 mb-6">
+                    All approved returns must be initiated by contacting SAMAN customer support first. Products must be returned by mail, transport, or the return method confirmed by SAMAN POS India Private Limited. Customers must not send any product back without written return authorization.
+                  </p>
+
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Return Shipping and Transport Cost</h3>
+                  <p className="text-slate-700 mb-4">
+                    Return shipping, transport, loading, unloading, crane, toll, RTO, dismantling, packing, and related return logistics costs are the customer&rsquo;s responsibility unless SAMAN POS India Private Limited confirms otherwise in writing.
+                  </p>
+                  <p className="text-slate-700 mb-4">
+                    For approved defective, damaged, wrong-product, or specification-mismatch cases, SAMAN may support or arrange return logistics within Bangalore and Delhi NCR service areas only. These service areas include Bangalore, Noida, Greater Noida, Delhi, Gurugram, Faridabad, and Ghaziabad.
+                  </p>
+                  <p className="text-slate-700 mb-6">
+                    For all other India locations, return logistics costs are the customer&rsquo;s responsibility unless SAMAN confirms a different arrangement in writing.
+                  </p>
+
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Restocking Fee</h3>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                    <div className="flex items-start gap-3">
+                      <Shield className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-blue-800 mb-2">No Standard Restocking Fee</h4>
+                        <p className="text-blue-700 text-sm">
+                          SAMAN does not charge a standard restocking fee for approved returns. However, deductions may apply if the returned product has missing accessories, damage, modification, use marks, site damage, or missing documents.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Refund Processing Time</h3>
                   <div className="bg-slate-50 rounded-lg p-6 mb-6">
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
                         <RefreshCw className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
                         <div>
-                          <h5 className="font-semibold text-slate-800">Processing Time</h5>
-                          <p className="text-slate-700 text-sm">3-5 business days after product inspection</p>
+                          <h4 className="font-semibold text-slate-800">Processing Time</h4>
+                          <p className="text-slate-700 text-sm">Within 7 days after the returned product is received, inspected, and approved</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <RefreshCw className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
                         <div>
-                          <h5 className="font-semibold text-slate-800">Refund Method</h5>
-                          <p className="text-slate-700 text-sm">Same method as original payment (credit card, bank transfer, etc.)</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <RefreshCw className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
-                        <div>
-                          <h5 className="font-semibold text-slate-800">Bank Processing</h5>
-                          <p className="text-slate-700 text-sm">Additional 3-7 business days for bank processing</p>
+                          <h4 className="font-semibold text-slate-800">Bank / Gateway Time</h4>
+                          <p className="text-slate-700 text-sm">Bank, payment gateway, or account processing may take additional time depending on the payment method</p>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Partial Refunds</h4>
                   <p className="text-slate-700 mb-6">
-                    Partial refunds may be issued in the following cases:
+                    Approved refunds will be processed within 7 days after the returned product is received, inspected, and approved by SAMAN POS India Private Limited. Bank, payment gateway, or account processing timelines may take additional time depending on the payment method.
                   </p>
-                  <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
-                    <li>Product returned with minor damage or missing accessories</li>
-                    <li>Service partially completed before cancellation</li>
-                    <li>Restocking fees for non-defective returns</li>
-                    <li>Shipping and handling costs for non-defective returns</li>
-                  </ul>
 
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-                    <div className="flex items-start gap-3">
-                      <Shield className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <h5 className="font-semibold text-blue-800 mb-2">Note</h5>
-                        <p className="text-blue-700 text-sm">
-                          Standard returns have no restocking fee. A restocking charge may apply only in rare cases, such as missing accessories or product damage.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Refund Method</h3>
+                  <p className="text-slate-700 mb-6">
+                    Refunds will be issued through the original payment method wherever possible. If the original payment method is not available, SAMAN may process the refund by bank transfer after verification.
+                  </p>
 
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Non-Refundable Items</h3>
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Exchanges</h3>
+                  <p className="text-slate-700 mb-6">
+                    We accept exchanges where practical and approved by SAMAN POS India Private Limited. Exchange requests may apply to size changes, configuration changes, colour/finish changes, product correction, or replacement of defective products. Any difference in product price, transport cost, loading/unloading, crane charges, or site-related charges must be paid by the customer before dispatch.
+                  </p>
+
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Non-Returnable Cases</h3>
                   <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
-                    <h4 className="font-semibold text-red-800 mb-3">Items Not Eligible for Return/Refund</h4>
+                    <h4 className="font-semibold text-red-800 mb-3">Returns may be rejected in the following cases</h4>
                     <ul className="list-disc list-inside text-red-700 space-y-2 text-sm">
-                      <li>Custom-made or personalized products</li>
-                      <li>Products with signs of use, damage, or modification</li>
-                      <li>Products returned after the specified timeframe</li>
-                      <li>Products without proper return authorization</li>
-                      <li>Services that have been completed</li>
-                      <li>Digital products or downloadable content</li>
-                      <li>Products purchased from third-party sellers</li>
+                      <li>Return request raised after the allowed return window.</li>
+                      <li>Product used, installed, modified, damaged, or altered after delivery.</li>
+                      <li>Custom-made or site-specific product returned for normal non-defective reasons.</li>
+                      <li>Product returned without written authorization.</li>
+                      <li>Product missing accessories, documents, fittings, or approved components.</li>
+                      <li>Damage caused by improper handling, site conditions, unauthorized repair, misuse, or natural events.</li>
                     </ul>
                   </div>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Warranty Information</h3>
-                  
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Product Warranty</h4>
-                  <div className="bg-slate-50 rounded-lg p-6 mb-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <h5 className="font-semibold text-slate-800">Standard Warranty</h5>
-                        <p className="text-slate-700 text-sm">1 year on all portable office solutions (extendable to 2 years on request)</p>
-                      </div>
-                      <div>
-                        <h5 className="font-semibold text-slate-800">Extended Warranty</h5>
-                        <p className="text-slate-700 text-sm">5-Year Structural Warranty available</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Warranty Coverage</h4>
-                  <p className="text-slate-700 mb-4">
-                    Our warranty covers:
-                  </p>
-                  <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
-                    <li>Manufacturing defects in materials and workmanship</li>
-                    <li>Structural integrity issues</li>
-                    <li>Electrical and plumbing system defects</li>
-                    <li>Door and window mechanism failures</li>
-                    <li>Roof and wall panel defects</li>
-                  </ul>
-
-                  <h4 className="text-lg font-medium text-slate-800 mt-6 mb-3">Warranty Exclusions</h4>
                   <p className="text-slate-700 mb-6">
-                    Warranty does not cover:
+                    SAMAN warranty coverage includes 5 years on the structural frame and base, 1&ndash;2 years on finishing depending on product specification, and 20&ndash;25 years engineered service life under proper use and maintenance. The 20&ndash;25 years engineered service life is not a warranty period.
                   </p>
-                  <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
-                    <li>Normal wear and tear</li>
-                    <li>Damage from misuse or accidents</li>
-                    <li>Damage from natural disasters</li>
-                    <li>Unauthorized modifications or repairs</li>
-                    <li>Cosmetic damage from normal use</li>
-                  </ul>
 
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Exchange Policy</h3>
-                  <p className="text-slate-700 mb-4">
-                    We offer product exchanges for:
-                  </p>
-                  <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
-                    <li>Different size or configuration of the same product</li>
-                    <li>Different color or finish options</li>
-                    <li>Upgrades to higher-tier models</li>
-                    <li>Products with minor defects (repaired or replaced)</li>
-                  </ul>
-
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Contact Information</h3>
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Contact for Returns and Refunds</h3>
                   <div className="bg-slate-50 rounded-lg p-6 mb-6">
                     <p className="text-slate-700 mb-4">
-                      For returns, refunds, or warranty claims:
+                      For returns, refunds, exchanges, or warranty claims, contact <strong>SAMAN POS India Private Limited</strong>:
                     </p>
                     <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-[#0A3D2A]" />
-                        <span className="text-slate-700">
-                          <strong>Customer Service:</strong> +91 88616 22859
-                        </span>
-                      </div>
                       <div className="flex items-center gap-3">
                         <Mail className="w-5 h-5 text-[#0A3D2A]" />
                         <span className="text-slate-700">
@@ -310,20 +222,16 @@ export default function RefundAndReturnPolicyPage() {
                       <div className="flex items-center gap-3">
                         <Phone className="w-5 h-5 text-[#0A3D2A]" />
                         <span className="text-slate-700">
-                          <strong>Warranty Claims:</strong> +91 88616 22859
+                          <strong>Bangalore / South India:</strong> Call +91 80886 85440 &middot; WhatsApp +91 88616 22859
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Phone className="w-5 h-5 text-[#0A3D2A]" />
+                        <span className="text-slate-700">
+                          <strong>Delhi NCR / North India:</strong> Call +91 87960 39938 &middot; WhatsApp +91 97089 89937
                         </span>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                    <h4 className="font-semibold text-blue-800 mb-3">Need Help with Returns?</h4>
-                    <p className="text-blue-700 text-sm mb-3">
-                      Our customer service team is here to help you with any questions about returns, refunds, or warranty claims.
-                    </p>
-                    <Button className="bg-[#0A3D2A] hover:bg-[#0A3D2A]/90">
-                      Contact Customer Service
-                    </Button>
                   </div>
 
                   <div className="mt-8 p-4 bg-slate-100 rounded-lg">
@@ -343,4 +251,3 @@ export default function RefundAndReturnPolicyPage() {
 
 // Removed duplicate default export
 // default export already declared above as RefundAndReturnPolicyPage
-

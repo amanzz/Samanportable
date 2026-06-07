@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { pageSEO, siteConfig } from '@/config/seo';
 import Link from 'next/link';
-import { ArrowLeft, Truck, Clock, MapPin, Phone } from 'lucide-react';
+import { ArrowLeft, Truck, Clock, MapPin, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const DeliveryPolicy = () => {
@@ -21,7 +21,7 @@ const DeliveryPolicy = () => {
 
       {/* remove duplicate Head tags if any; keep content intact */}
       {/* Head tags handled by UnifiedSEO; removed duplicate Head block */}
-      
+
       <div className="min-h-screen">
         <main>
           {/* Hero Section */}
@@ -31,7 +31,7 @@ const DeliveryPolicy = () => {
                 Delivery Policy
               </h1>
               <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                Fast, reliable delivery of portable office solutions across Bangalore and surrounding areas.
+                Pan-India delivery of portable cabins and prefab structures, with transport cost confirmed by quotation.
               </p>
             </div>
           </section>
@@ -53,210 +53,200 @@ const DeliveryPolicy = () => {
               <div className="max-w-none">
                 <div className="bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
                   <h2 className="text-2xl font-bold text-[#0A3D2A] mb-6">Delivery Policy</h2>
-                  
+
                   <p className="text-slate-700 mb-4">
-                    <strong>Last updated:</strong> January 15, 2025
-                  </p>
-                  
-                  <p className="text-slate-700 mb-6">
-                    At SAMAN POS India Private Limited, we understand that timely delivery is crucial for your business operations. Our comprehensive delivery policy ensures that your portable office solutions reach you safely and on schedule.
+                    <strong>Last updated:</strong> June 7, 2026
                   </p>
 
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Coverage Areas</h3>
+                  <p className="text-slate-700 mb-6">
+                    SAMAN POS India Private Limited supplies portable cabins, porta cabins, container offices, portable toilets, labour colonies, prefab buildings, and related prefabricated structures across India. Because these products are large, heavy, and often project-specific, final delivery and transport charges are confirmed through quotation.
+                  </p>
+
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Coverage</h3>
+                  <p className="text-slate-700 mb-4">
+                    SAMAN delivers across India subject to transport availability, route permission, vehicle access, site readiness, and product size. Our main service areas are:
+                  </p>
                   <div className="bg-slate-50 rounded-lg p-6 mb-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-4">
                       <div className="flex items-start gap-3">
                         <MapPin className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
                         <div>
-                          <h4 className="font-semibold text-slate-800">Primary Coverage</h4>
-                          <p className="text-slate-700 text-sm">Bangalore City and surrounding areas within 50km radius</p>
+                          <h4 className="font-semibold text-slate-800">Bangalore</h4>
+                          <p className="text-slate-700 text-sm">Bangalore and nearby Karnataka project locations</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <MapPin className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
                         <div>
-                          <h4 className="font-semibold text-slate-800">Extended Coverage</h4>
-                          <p className="text-slate-700 text-sm">Greater Bangalore, Whitefield, Electronic City, and nearby industrial areas</p>
+                          <h4 className="font-semibold text-slate-800">Delhi NCR</h4>
+                          <p className="text-slate-700 text-sm">Delhi NCR, including Noida, Greater Noida, Delhi, Gurugram, Faridabad, and Ghaziabad</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <MapPin className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-slate-800">Rest of India</h4>
+                          <p className="text-slate-700 text-sm">Other India locations served through quotation-based transport</p>
                         </div>
                       </div>
                     </div>
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Merchant Center Default Shipping Charge</h3>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                    <div className="flex items-start gap-3">
+                      <Truck className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-blue-800 mb-2">Default Flat Shipping Charge: &#8377;3,000</h4>
+                        <p className="text-blue-700 text-sm">
+                          For Google Merchant Center, a default flat shipping charge of &#8377;3,000 is shown as a minimum/default shipping value. This is not a final all-India transport quote.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-slate-700 mb-4">
+                    Final shipping, transport, loading, unloading, crane, toll, RTO, route permission, and site-handling charges may vary based on:
+                  </p>
+                  <ul className="list-disc list-inside text-slate-700 mb-4 space-y-2">
+                    <li>Delivery location</li>
+                    <li>Product size and weight</li>
+                    <li>Vehicle type</li>
+                    <li>Route distance</li>
+                    <li>Site access</li>
+                    <li>Loading and unloading requirement</li>
+                    <li>Crane or hydra requirement</li>
+                    <li>Local permissions, tolls, RTO, and route restrictions</li>
+                  </ul>
+                  <p className="text-slate-700 mb-6">
+                    The final delivery cost will be confirmed in the quotation before order confirmation.
+                  </p>
+
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Free Delivery Clarification</h3>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-6">
+                    <p className="text-amber-800 text-sm font-semibold mb-2">
+                      SAMAN does not provide free delivery all over India.
+                    </p>
+                    <p className="text-amber-700 text-sm mb-2">
+                      Local delivery support may be available only in selected Bangalore and Delhi NCR service areas, depending on order value, product type, vehicle access, and written quotation terms.
+                    </p>
+                    <p className="text-amber-700 text-sm">
+                      The service areas include Bangalore, Noida, Greater Noida, Delhi, Gurugram, Faridabad, and Ghaziabad. Any free or included delivery must be clearly mentioned in the written quotation. If it is not mentioned in the quotation, delivery and transport charges are extra.
+                    </p>
                   </div>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Timeline</h3>
                   <div className="bg-slate-50 rounded-lg p-6 mb-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="flex items-start gap-3">
-                        <Clock className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
-                        <div>
-                          <h4 className="font-semibold text-slate-800">Standard Delivery</h4>
-                          <p className="text-slate-700 text-sm">7–21 days from order confirmation</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <Clock className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
-                        <div>
-                          <h4 className="font-semibold text-slate-800">Express Delivery</h4>
-                          <p className="text-slate-700 text-sm">Priority scheduling available (contact us)</p>
-                        </div>
+                    <div className="flex items-start gap-3">
+                      <Clock className="w-5 h-5 text-[#0A3D2A] mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-slate-800">Standard / Default Estimate</h4>
+                        <p className="text-slate-700 text-sm">3&ndash;5 business days, as shown in Google Merchant Center</p>
                       </div>
                     </div>
                   </div>
+                  <p className="text-slate-700 mb-4">
+                    The Merchant Center delivery timeline is shown as 3&ndash;5 business days as a standard/default delivery estimate. Actual delivery timelines depend on:
+                  </p>
+                  <ul className="list-disc list-inside text-slate-700 mb-4 space-y-2">
+                    <li>Product availability</li>
+                    <li>Customization requirement</li>
+                    <li>Production schedule</li>
+                    <li>Payment confirmation</li>
+                    <li>Site readiness</li>
+                    <li>Transport availability</li>
+                    <li>Distance from the nearest SAMAN factory or dispatch point</li>
+                  </ul>
+                  <p className="text-slate-700 mb-6">
+                    For standard available products, dispatch may be planned faster. For custom-made products, production and delivery timelines will be mentioned in the quotation.
+                  </p>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Process</h3>
-                  
                   <div className="space-y-6 mb-6">
                     <div className="flex items-start gap-4">
                       <div className="w-8 h-8 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
                       <div>
                         <h4 className="font-semibold text-slate-800">Order Confirmation</h4>
-                        <p className="text-slate-700 text-sm">Once your order is confirmed, our team will contact you within 24 hours to schedule delivery.</p>
+                        <p className="text-slate-700 text-sm">After quotation approval and payment confirmation, SAMAN confirms the product, size, specification, delivery address, and site contact.</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-4">
                       <div className="w-8 h-8 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
                       <div>
-                        <h4 className="font-semibold text-slate-800">Site Assessment</h4>
-                        <p className="text-slate-700 text-sm">Our delivery team will assess your site to ensure proper access and placement requirements.</p>
+                        <h4 className="font-semibold text-slate-800">Site Access Check</h4>
+                        <p className="text-slate-700 text-sm">The customer must confirm road width, entry gate size, unloading area, ground level, crane/hydra need, and permissions before dispatch.</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-4">
                       <div className="w-8 h-8 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
                       <div>
-                        <h4 className="font-semibold text-slate-800">Delivery & Installation</h4>
-                        <p className="text-slate-700 text-sm">Professional delivery and basic installation at your specified location.</p>
+                        <h4 className="font-semibold text-slate-800">Dispatch Planning</h4>
+                        <p className="text-slate-700 text-sm">SAMAN arranges or coordinates the suitable vehicle based on product size, route, and delivery location.</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-4">
                       <div className="w-8 h-8 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">4</div>
                       <div>
-                        <h4 className="font-semibold text-slate-800">Quality Check</h4>
-                        <p className="text-slate-700 text-sm">Final inspection to ensure everything meets our quality standards.</p>
+                        <h4 className="font-semibold text-slate-800">Delivery and Placement</h4>
+                        <p className="text-slate-700 text-sm">The product is delivered to the approved site location. Placement, unloading, crane, or installation support is provided only as per quotation terms.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-[#0A3D2A] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">5</div>
+                      <div>
+                        <h4 className="font-semibold text-slate-800">Final Check</h4>
+                        <p className="text-slate-700 text-sm">The customer or site representative should inspect the product during delivery and report any visible transit damage immediately.</p>
                       </div>
                     </div>
                   </div>
 
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Requirements</h3>
                   <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-                    <h4 className="font-semibold text-green-800 mb-3">Important Information</h4>
+                    <h4 className="font-semibold text-green-800 mb-3">The customer must ensure</h4>
                     <ul className="list-disc list-inside text-green-700 space-y-2 text-sm">
-                      <li>Clear access to the delivery location (minimum 3 meters width)</li>
-                      <li>Level ground surface for proper placement</li>
-                      <li>Someone must be present at the delivery location</li>
-                      <li>All necessary permits and permissions must be obtained</li>
-                      <li>Payment must be completed before delivery</li>
+                      <li>Clear vehicle access to the site</li>
+                      <li>Required permissions from owner, society, authority, contractor, or project manager</li>
+                      <li>Suitable unloading space</li>
+                      <li>Level and ready foundation or placement area</li>
+                      <li>Availability of crane/hydra if required</li>
+                      <li>Site representative available during delivery</li>
+                      <li>Payment completed as per quotation terms</li>
                     </ul>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Charges</h3>
-                  <div className="bg-slate-50 rounded-lg p-6 mb-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="font-semibold text-slate-800">Free Delivery</h4>
-                        <p className="text-slate-700 text-sm">Within 25km of Bangalore city center</p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-slate-800">Additional Charges</h4>
-                        <p className="text-slate-700 text-sm">₹2,000 - ₹5,000 for areas beyond 25km</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Special Delivery Services</h3>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div className="bg-slate-50 rounded-lg p-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <Truck className="w-6 h-6 text-[#0A3D2A]" />
-                        <h4 className="font-semibold text-slate-800">Express Delivery</h4>
-                      </div>
-                      <p className="text-slate-700 text-sm">Priority scheduling and accelerated production for urgent requirements.</p>
-                      <p className="text-[#0A3D2A] font-semibold text-sm mt-2">Contact for pricing</p>
-                    </div>
-                    
-                    <div className="bg-slate-50 rounded-lg p-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <Clock className="w-6 h-6 text-[#0A3D2A]" />
-                        <h4 className="font-semibold text-slate-800">Weekend Delivery</h4>
-                      </div>
-                      <p className="text-slate-700 text-sm">Delivery on weekends and holidays for your convenience.</p>
-                      <p className="text-[#0A3D2A] font-semibold text-sm mt-2">Additional ₹1,500</p>
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Tracking</h3>
-                  <p className="text-slate-700 mb-4">
-                    We provide real-time delivery tracking through:
-                  </p>
-                  <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
-                    <li>SMS updates at key delivery milestones</li>
-                    <li>WhatsApp notifications with delivery status</li>
-                    <li>Phone call from our delivery team 1 hour before arrival</li>
-                    <li>Online tracking portal (coming soon)</li>
-                  </ul>
-
                   <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Delivery Delays</h3>
-                  <p className="text-slate-700 mb-4">
-                    While we strive for on-time delivery, certain circumstances may cause delays:
-                  </p>
-                  <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
-                    <li>Adverse weather conditions</li>
-                    <li>Traffic congestion or road closures</li>
-                    <li>Site access issues</li>
-                    <li>Unforeseen technical difficulties</li>
-                  </ul>
                   <p className="text-slate-700 mb-6">
-                    In case of delays, we will immediately notify you and provide an updated delivery timeline.
+                    Delivery may be delayed due to weather, traffic, route restrictions, RTO checks, local permissions, vehicle issues, site access problems, crane delay, payment delay, or changes in product specification. SAMAN will update the customer if any delay affects the agreed schedule.
                   </p>
 
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Post-Delivery Support</h3>
-                  <p className="text-slate-700 mb-4">
-                    After delivery, our support team will:
-                  </p>
-                  <ul className="list-disc list-inside text-slate-700 mb-6 space-y-2">
-                    <li>Ensure proper setup and functionality</li>
-                    <li>Provide basic usage instructions</li>
-                    <li>Address any immediate concerns</li>
-                    <li>Schedule follow-up maintenance if required</li>
-                  </ul>
-
-                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Contact Information</h3>
+                  <h3 className="text-xl font-semibold text-[#0A3D2A] mt-8 mb-4">Contact for Delivery Support</h3>
                   <div className="bg-slate-50 rounded-lg p-6 mb-6">
                     <p className="text-slate-700 mb-4">
-                      For delivery-related inquiries or to schedule delivery:
+                      For delivery-related inquiries, contact <strong>SAMAN POS India Private Limited</strong>:
                     </p>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-[#0A3D2A]" />
-                        <span className="text-slate-700">
-                          <strong>Delivery Hotline:</strong> +91 88616 22859
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-[#0A3D2A]" />
-                        <span className="text-slate-700">
-                          <strong>Customer Service:</strong> +91 88616 22859
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-[#0A3D2A]" />
+                        <Mail className="w-5 h-5 text-[#0A3D2A]" />
                         <span className="text-slate-700">
                           <strong>Email:</strong> sales@samanportable.com
                         </span>
                       </div>
+                      <div className="flex items-center gap-3">
+                        <Phone className="w-5 h-5 text-[#0A3D2A]" />
+                        <span className="text-slate-700">
+                          <strong>Bangalore / South India:</strong> Call +91 80886 85440 &middot; WhatsApp +91 88616 22859
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Phone className="w-5 h-5 text-[#0A3D2A]" />
+                        <span className="text-slate-700">
+                          <strong>Delhi NCR / North India:</strong> Call +91 87960 39938 &middot; WhatsApp +91 97089 89937
+                        </span>
+                      </div>
                     </div>
-                  </div>
-
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                    <h4 className="font-semibold text-blue-800 mb-3">Need Immediate Assistance?</h4>
-                    <p className="text-blue-700 text-sm mb-3">
-                      For urgent delivery requirements or special arrangements, please contact our delivery team directly.
-                    </p>
-                    <Button className="bg-[#0A3D2A] hover:bg-[#0A3D2A]/90">
-                      Contact Delivery Team
-                    </Button>
                   </div>
                 </div>
               </div>
@@ -269,4 +259,3 @@ const DeliveryPolicy = () => {
 };
 
 export default DeliveryPolicy;
-
