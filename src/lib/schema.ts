@@ -463,21 +463,78 @@ export const formatISO8601WithOffset = (dateString: string, offset: string = '+0
  * non-allowlisted slug. Never adds Offer/AggregateRating/Review (no price/reviews are
  * shown on these pages). provider reuses the existing Organization @id (no duplicate node).
  */
-const CITY_SERVICE_SLUG = /^(?:porta-cabins-in-|porta-cabin-in-|portacabins-for-sale-in-|affordable-porta-cabins-in-)(.+)$/i;
+interface CityServiceCluster {
+  prefix: RegExp;
+  namePrefix: string;
+  serviceType: string;
+  // Optional cluster-level enrichments emitted on the Service node for every city
+  // page in that cluster. Safe schema.org/Service fields only — never Product/Review/Rating.
+  termsOfService?: string;
+  offerCatalogName?: string;
+  offers?: string[];
+}
+
+const CITY_SERVICE_CLUSTERS: CityServiceCluster[] = [
+  {
+    prefix: /^(?:porta-cabins-in-|porta-cabin-in-|portacabins-for-sale-in-|affordable-porta-cabins-in-)(.+)$/i,
+    namePrefix: 'Porta Cabins in',
+    serviceType: 'Porta Cabin Supply & Installation',
+  },
+  {
+    prefix: /^(?:container-cafes-in-|container-cafe-in-)(.+)$/i,
+    namePrefix: 'Container Cafe in',
+    serviceType: 'Container Cafe Manufacturing and Installation',
+    termsOfService:
+      '5 years structural frame and base; 1–2 years finishing; 20–25 years engineered service life',
+    offerCatalogName: 'Container cafe formats',
+    offers: [
+      'Coffee / takeaway kiosk container cafe',
+      'Compact sit-in container cafe',
+      'Full kitchen-ready container cafe',
+      'Multi-unit / event container cafe',
+    ],
+  },
+];
+
 const AREA_ACRONYMS: Record<string, string> = { ncr: 'NCR', hsr: 'HSR', btm: 'BTM', jp: 'JP', kr: 'KR', orr: 'ORR' };
 
 // Slugs that match the city prefixes but are NOT a location (no Service schema).
 const NON_LOCATION_AREAS = new Set(['construction']);
 
+// Optional per-city enrichment for areaServed: approximate district/city centroid
+// (lat/lng) + canonical Wikipedia URL (sameAs). Keyed by normalised area name
+// (lower-cased). Cities not in the map still emit a valid plain Place (name only).
+const CITY_GEO: Record<string, { lat: number; lng: number; sameAs: string }> = {
+  'west delhi': { lat: 28.6663, lng: 77.0667, sameAs: 'https://en.wikipedia.org/wiki/West_Delhi_district' },
+  'north delhi': { lat: 28.7186, lng: 77.2167, sameAs: 'https://en.wikipedia.org/wiki/North_Delhi_district' },
+  'south delhi': { lat: 28.4817, lng: 77.1873, sameAs: 'https://en.wikipedia.org/wiki/South_Delhi_district' },
+  'east delhi': { lat: 28.6279, lng: 77.2952, sameAs: 'https://en.wikipedia.org/wiki/East_Delhi_district' },
+  'central delhi': { lat: 28.6469, lng: 77.2167, sameAs: 'https://en.wikipedia.org/wiki/Central_Delhi_district' },
+  'noida': { lat: 28.5355, lng: 77.3910, sameAs: 'https://en.wikipedia.org/wiki/Noida' },
+  'greater noida': { lat: 28.4744, lng: 77.5040, sameAs: 'https://en.wikipedia.org/wiki/Greater_Noida' },
+  'ghaziabad': { lat: 28.6692, lng: 77.4538, sameAs: 'https://en.wikipedia.org/wiki/Ghaziabad' },
+  'gurgaon': { lat: 28.4595, lng: 77.0266, sameAs: 'https://en.wikipedia.org/wiki/Gurgaon' },
+  'faridabad': { lat: 28.4089, lng: 77.3178, sameAs: 'https://en.wikipedia.org/wiki/Faridabad' },
+};
+
+const matchCityServiceCluster = (slug: string): { area: string; cluster: CityServiceCluster } | null => {
+  for (const cluster of CITY_SERVICE_CLUSTERS) {
+    const m = (slug || '').match(cluster.prefix);
+    if (!m) continue;
+    if (NON_LOCATION_AREAS.has(m[1].toLowerCase())) return null;
+    const area = m[1]
+      .split('-')
+      .filter(Boolean)
+      .map(w => AREA_ACRONYMS[w.toLowerCase()] || (w.charAt(0).toUpperCase() + w.slice(1)))
+      .join(' ');
+    return { area, cluster };
+  }
+  return null;
+};
+
 export const getCityServiceArea = (slug: string): string | null => {
-  const m = (slug || '').match(CITY_SERVICE_SLUG);
-  if (!m) return null;
-  if (NON_LOCATION_AREAS.has(m[1].toLowerCase())) return null;
-  return m[1]
-    .split('-')
-    .filter(Boolean)
-    .map(w => AREA_ACRONYMS[w.toLowerCase()] || (w.charAt(0).toUpperCase() + w.slice(1)))
-    .join(' ');
+  const matched = matchCityServiceCluster(slug);
+  return matched ? matched.area : null;
 };
 
 export const getCityServiceSchema = (params: {
@@ -486,8 +543,9 @@ export const getCityServiceSchema = (params: {
   image?: string;
   url: string;
 }): object | null => {
-  const area = getCityServiceArea(params.slug);
-  if (!area) return null;
+  const matched = matchCityServiceCluster(params.slug);
+  if (!matched) return null;
+  const { area, cluster } = matched;
   const description = (params.description || '')
     .replace(/<[^>]*>/g, ' ')
     .replace(/&nbsp;/gi, ' ')
@@ -499,19 +557,40 @@ export const getCityServiceSchema = (params: {
     .replace(/\s+/g, ' ')
     .trim()
     .slice(0, 300);
+  // areaServed: plain Place by default; enriched with GeoCoordinates + Wikipedia
+  // sameAs when the city is present in CITY_GEO. Both are valid on schema.org/Place.
+  const geo = CITY_GEO[area.toLowerCase()];
+  const areaServedPlace: Record<string, unknown> = { '@type': 'Place', name: area };
+  if (geo) {
+    areaServedPlace.geo = { '@type': 'GeoCoordinates', latitude: geo.lat, longitude: geo.lng };
+    areaServedPlace.sameAs = geo.sameAs;
+  }
   return {
     '@type': 'Service',
     '@id': `${params.url}#service`,
-    name: `Porta Cabins in ${area}`,
-    serviceType: 'Porta Cabin Supply & Installation',
+    name: `${cluster.namePrefix} ${area}`,
+    serviceType: cluster.serviceType,
     ...(description && { description }),
     provider: { '@id': 'https://www.samanportable.com/#organization' },
-    areaServed: { '@type': 'Place', name: area },
+    areaServed: areaServedPlace,
     url: params.url,
     ...(params.image && { image: params.image }),
-    // NOTE: do NOT add `inLanguage` or `isPartOf` here — they are not valid
-    // properties of schema.org/Service (validator warnings). Page-level
-    // inLanguage/isPartOf live on the WebPage/BlogPosting nodes instead.
+    // Cluster-level enrichments (e.g. container cafe): warranty terms + an INR
+    // OfferCatalog of formats. Emitted only when the cluster config defines them.
+    ...(cluster.termsOfService && { termsOfService: cluster.termsOfService }),
+    ...(cluster.offers && cluster.offers.length > 0 && {
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: cluster.offerCatalogName || `${cluster.namePrefix} ${area}`,
+        itemListElement: cluster.offers.map((offerName) => ({
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: offerName },
+          priceCurrency: 'INR',
+        })),
+      },
+    }),
+    // NOTE: do NOT add `inLanguage` or `isPartOf` here — not valid schema.org/Service
+    // properties. Page-level inLanguage/isPartOf live on WebPage/BlogPosting nodes.
   };
 };
 
