@@ -1312,6 +1312,20 @@ const nextConfig = {
     return redirects;
   },
 
+  // Rewrites — serve a page's response under a different URL WITHOUT redirecting.
+  // /track-your-order (WooCommerce system page, intentionally removed 2026-06-09) is
+  // rewritten to the /410 SSR page, which sets res.statusCode = 410. This returns a
+  // TRUE HTTP 410 Gone at the original URL (no 3xx redirect). afterFiles so it only
+  // fires when no real page/route matches. (middleware.ts does not run on www.)
+  async rewrites() {
+    return {
+      afterFiles: [
+        { source: '/track-your-order', destination: '/410' },
+        { source: '/track-your-order/', destination: '/410' },
+      ],
+    };
+  },
+
   // Headers for security and performance
   async headers() {
     const isDev = process.env.NODE_ENV !== 'production';

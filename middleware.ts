@@ -57,10 +57,7 @@ export function middleware(request: NextRequest) {
   // 410 Gone responses for intentionally removed content
   const goneUrls = [
     '/find-out-how-i-cured-my-easter-weekend-in-2-days/',
-    '/find-out-how-i-cured-my-easter-weekend-in-2-days',
-    // WooCommerce system page — intentionally removed (2026-06-09). True 410, not a redirect.
-    '/track-your-order/',
-    '/track-your-order'
+    '/find-out-how-i-cured-my-easter-weekend-in-2-days'
   ];
 
   if (goneUrls.includes(pathname)) {
