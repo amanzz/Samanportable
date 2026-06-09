@@ -788,6 +788,484 @@ const nextConfig = {
       // ─── CSV BULK REDIRECTS (572 entries from spreadsheet) ───────────────
       // Source: Untitled spreadsheet - Sheet1 (1).csv
       // Skipped: 7 MERGE rows, 2 conflicts with existing config, 0 duplicates
+      // ──────────────────────────────────────────────────
+      // DEAD-URL EQUITY RECOVERY BATCH — added 2026-06-09
+      // Source: SAMAN_Dead_URL_Redirect_Map_1.xlsx → "Redirect Map (ACTION)"
+      // 94 confirmed 301s (permanent:true → Next 308). All targets pre-verified live 200.
+      // Placed BEFORE ...csvRedirects so first-match-wins over any stale CSV rule.
+      // (/track-your-order → true 410 handled in middleware.ts goneUrls, not here.)
+      // ──────────────────────────────────────────────────
+      {
+        source: '/product/affordable-container-homes',
+        destination: '/product/container-houses/affordable-container-homes',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-container-buildings',
+        destination: '/product/prefab-buildings/buy-container-buildings',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-porta-cabins',
+        destination: '/product/porta-cabins/buy-porta-cabins',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-portable-cabin',
+        destination: '/product/portable-cabin/buy-portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/cargo-container-house',
+        destination: '/product/container-houses/cargo-container-house',
+        permanent: true,
+      },
+      {
+        source: '/product/cargo-container-office',
+        destination: '/product/container-offices/cargo-container-office',
+        permanent: true,
+      },
+      {
+        source: '/product/container-coffee-shop',
+        destination: '/product/container-cafe/container-coffee-shop',
+        permanent: true,
+      },
+      {
+        source: '/product/container-office-cabin',
+        destination: '/product/container-offices/container-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/container-office',
+        destination: '/product/container-offices/container-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/container-portable-cabin',
+        destination: '/product/portable-cabin/container-portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/container-portable-office',
+        destination: '/product/container-offices/container-portable-office',
+        permanent: true,
+      },
+      {
+        source: '/product/container-restaurant',
+        destination: '/product/container-cafe/container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/container-site-office',
+        destination: '/product/container-offices/site-office-container',
+        permanent: true,
+      },
+      {
+        source: '/product/food-truck-containers',
+        destination: '/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/garden-sheds',
+        destination: '/product/industrial-sheds/garden-sheds',
+        permanent: true,
+      },
+      {
+        source: '/product/inexpensive-container-homes',
+        destination: '/product/container-houses/inexpensive-container-homes',
+        permanent: true,
+      },
+      {
+        source: '/product/low-cost-porta-cabin',
+        destination: '/product/porta-cabins/low-cost-porta-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/luxury-container-houses',
+        destination: '/product/container-houses/luxury-container-houses',
+        permanent: true,
+      },
+      {
+        source: '/product/luxury-porta-cabin',
+        destination: '/product/porta-cabins/luxury-porta-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/mobile-container-cafe',
+        destination: '/product/container-cafe/mobile-container-cafe',
+        permanent: true,
+      },
+      {
+        source: '/product/mobile-container-office',
+        destination: '/product/container-offices/mobile-office-container',
+        permanent: true,
+      },
+      {
+        source: '/product/mobile-office-container',
+        destination: '/product/container-offices/mobile-office-container',
+        permanent: true,
+      },
+      {
+        source: '/product/modern-container-home',
+        destination: '/product/container-houses/modern-container-home',
+        permanent: true,
+      },
+      {
+        source: '/product/modern-office-cabin',
+        destination: '/product/portable-office/modern-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/modular-container-cafe',
+        destination: '/product/container-cafe/modular-container-cafe',
+        permanent: true,
+      },
+      {
+        source: '/product/modular-container-office',
+        destination: '/product/container-offices/modular-container-office',
+        permanent: true,
+      },
+      {
+        source: '/product/modular-office-cabin',
+        destination: '/product/portable-office/modular-portable-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/modular-portable-cabin',
+        destination: '/product/portable-cabin/modular-portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/modular-portable-office-cabin',
+        destination: '/product/portable-office/modular-portable-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/modular-shipping-container-office',
+        destination: '/product/container-offices/modular-shipping-container-office',
+        permanent: true,
+      },
+      {
+        source: '/product/movable-toilet-cabin',
+        destination: '/product/portable-toilet/movable-toilet-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/ms-portable-cabin',
+        destination: '/product/portable-cabin/ms-portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/ms-portable-office-cabin',
+        destination: '/product/portable-office/ms-portable-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/porta-cabin-house',
+        destination: '/product/prefabricated-houses/porta-cabin-house',
+        permanent: true,
+      },
+      {
+        source: '/product/porta-cabin-office',
+        destination: '/product/porta-cabins/porta-cabin-office',
+        permanent: true,
+      },
+      {
+        source: '/product/porta-cabin-shop',
+        destination: '/product/porta-cabins/porta-cabin-shop',
+        permanent: true,
+      },
+      {
+        source: '/product/portable-cabin-building',
+        destination: '/product/portable-cabin/portable-cabin-building',
+        permanent: true,
+      },
+      {
+        source: '/product/portable-cabin-house',
+        destination: '/product/portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/portable-cabin-with-toilet',
+        destination: '/product/portable-toilet/portable-toilet-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/portable-container-offices',
+        destination: '/product/container-offices/portable-container-offices',
+        permanent: true,
+      },
+      {
+        source: '/product/portable-office-cabin',
+        destination: '/product/portable-office/portable-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/portable-office-container',
+        destination: '/product/portable-office/portable-office-container',
+        permanent: true,
+      },
+      {
+        source: '/product/portable-security-cabin',
+        destination: '/product/security-cabins/portable-security-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/portable-shop-cabin',
+        destination: '/product/portable-cabin/portable-shop-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/portable-toilet-cabin',
+        destination: '/product/portable-toilet/portable-toilet-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/prebuilt-container-homes',
+        destination: '/product/container-houses/prebuilt-container-homes',
+        permanent: true,
+      },
+      {
+        source: '/product/prefab-container-homes',
+        destination: '/product/container-houses/prefab-container-homes',
+        permanent: true,
+      },
+      {
+        source: '/product/prefab-office-buildings',
+        destination: '/product/prefab-buildings/prefab-office-buildings',
+        permanent: true,
+      },
+      {
+        source: '/product/prefab-steel-house',
+        destination: '/product/industrial-sheds/prefab-steel-house',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-bunkhouse',
+        destination: '/product/prefabricated-houses/prefabricated-bunkhouse',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-container-home',
+        destination: '/product/container-houses/prefabricated-container-home',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-container-house',
+        destination: '/product/container-houses/prefabricated-container-house',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-container-office',
+        destination: '/product/container-offices/prefabricated-container-office',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-office-cabins',
+        destination: '/product/portable-office/prefabricated-office-cabins',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-porta-cabin',
+        destination: '/product/porta-cabins/prefabricated-porta-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-portable-cabin',
+        destination: '/product/portable-cabin/prefabricated-portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-portable-office-cabin',
+        destination: '/product/portable-office/prefabricated-portable-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-toilet',
+        destination: '/product/portable-toilet/prefabricated-toilet',
+        permanent: true,
+      },
+      {
+        source: '/product/prefabricated-warehouses',
+        destination: '/product/industrial-sheds/prefabricated-warehouses',
+        permanent: true,
+      },
+      {
+        source: '/product/readymade-office-cabin',
+        destination: '/product/portable-office/readymade-office-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/readymade-security-cabin',
+        destination: '/product/security-cabins/readymade-security-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/readymade-toilet-cabin',
+        destination: '/product/portable-toilet/readymade-toilet-cabin',
+        permanent: true,
+      },
+      {
+        source: '/product/restaurant-food-containers',
+        destination: '/product/container-cafe/restaurant-food-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/saman-prefab-office',
+        destination: '/product/prefabricated-houses/saman-prefab-office',
+        permanent: true,
+      },
+      {
+        source: '/product/shipping-container-cafe',
+        destination: '/product/container-cafe/shipping-container-cafe',
+        permanent: true,
+      },
+      {
+        source: '/product/shipping-container-homes',
+        destination: '/product/container-houses/shipping-container-homes',
+        permanent: true,
+      },
+      {
+        source: '/product/shipping-container-office',
+        destination: '/product/container-offices/shipping-container-office',
+        permanent: true,
+      },
+      {
+        source: '/product/shipping-container-restaurant',
+        destination: '/product/container-cafe/shipping-container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/shipping-container-tiny-house',
+        destination: '/product/container-houses/shipping-container-tiny-house',
+        permanent: true,
+      },
+      {
+        source: '/product/site-office-container',
+        destination: '/product/container-offices/site-office-container',
+        permanent: true,
+      },
+      {
+        source: '/product/storage-container-house',
+        destination: '/product/container-houses/storage-container-house',
+        permanent: true,
+      },
+      {
+        source: '/product/tiny-container-homes',
+        destination: '/product/container-houses/tiny-container-homes',
+        permanent: true,
+      },
+      {
+        source: '/porta-cabin-price-a-complete-guide-2024',
+        destination: '/porta-cabin-price-a-complete-guide-2025',
+        permanent: true,
+      },
+      {
+        source: '/project/bunkhouse-for-rent',
+        destination: '/product-category/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/project/bunkhouse-for-sale',
+        destination: '/product-category/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/project/container-cafes-in-bangalore',
+        destination: '/product-category/container-cafe',
+        permanent: true,
+      },
+      {
+        source: '/project/container-cafes',
+        destination: '/product-category/container-cafe',
+        permanent: true,
+      },
+      {
+        source: '/project/container-homes-for-sale',
+        destination: '/product-category/container-houses',
+        permanent: true,
+      },
+      {
+        source: '/project/container-hotel-for-sale',
+        destination: '/product-category/container-houses',
+        permanent: true,
+      },
+      {
+        source: '/project/peb-manufacturer',
+        destination: '/product-category/peb-constructions',
+        permanent: true,
+      },
+      {
+        source: '/project/porta-cabin-interior',
+        destination: '/product-category/porta-cabins',
+        permanent: true,
+      },
+      {
+        source: '/project/portable-bunkhouse',
+        destination: '/product-category/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/project/portable-cabin-in-bangalore',
+        destination: '/product-category/portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/project/portable-cabin-manufacturers-in-bangalore',
+        destination: '/product-category/portable-cabin',
+        permanent: true,
+      },
+      {
+        source: '/project/portable-security-cabin',
+        destination: '/product/security-cabins/portable-security-cabin',
+        permanent: true,
+      },
+      {
+        source: '/project/portable-toilet-in-bangalore',
+        destination: '/portable-toilets-in-bangalore',
+        permanent: true,
+      },
+      {
+        source: '/project/prefab-house',
+        destination: '/product-category/prefabricated-houses',
+        permanent: true,
+      },
+      {
+        source: '/project/prefab-labour-colony-in-bangalore',
+        destination: '/product-category/labor-colony',
+        permanent: true,
+      },
+      {
+        source: '/project/prefabricated-office',
+        destination: '/product-category/portable-office',
+        permanent: true,
+      },
+      {
+        source: '/project/prefabricated-steel-buildings',
+        destination: '/product-category/pre-engineered-buildings',
+        permanent: true,
+      },
+      {
+        source: '/project/prefabricated-warehouse',
+        destination: '/product/industrial-sheds/prefabricated-warehouses',
+        permanent: true,
+      },
+      {
+        source: '/project/security-guard-cabins',
+        destination: '/product/security-cabins/security-guard-cabin',
+        permanent: true,
+      },
+      {
+        source: '/project/shipping-container-homes-for-sale',
+        destination: '/product-category/container-houses',
+        permanent: true,
+      },
+      {
+        source: '/temporary-sheds-your-guide-to-small-portable-and-movable-storage-solutions',
+        destination: '/product-category/industrial-sheds',
+        permanent: true,
+      },
+
       ...csvRedirects,
     ];
 
