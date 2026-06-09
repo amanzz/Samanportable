@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { CheckCircle, Loader2 } from 'lucide-react';
+import { pushDataLayer, safeText } from '@/lib/analytics';
 
 interface EnquiryDialogProps {
   isOpen: boolean;
@@ -53,6 +54,13 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose }) => {
       }
 
       setSubmitted(true);
+
+      // GTM lead event on confirmed success only. Safe params only - no name/phone/email/message.
+      pushDataLayer('contact_form_submit', {
+        form_type: 'enquiry',
+        region: safeText(formData.region),
+        page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+      });
       
       // Reset form after 3 seconds
       setTimeout(() => {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { pushDataLayer, safeText } from '@/lib/analytics';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -79,6 +80,14 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
       }
 
       setSubmitted(true);
+
+      // GTM lead event on confirmed success only. Safe params only - no name/phone/email/message.
+      pushDataLayer('contact_form_submit', {
+        form_type: 'quote_request',
+        product_or_page_type: safeText(formData.service),
+        region: safeText(formData.region),
+        page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+      });
       
       // Reset form after 3 seconds
       setTimeout(() => {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, Clock, Loader2, CheckCircle } from 'lucide-react';
+import { pushDataLayer, safeText } from '@/lib/analytics';
 
 const ContactCTA = () => {
   const [formData, setFormData] = useState({
@@ -52,6 +53,14 @@ const ContactCTA = () => {
       }
 
       setSubmitted(true);
+
+      // GTM lead event on confirmed success only. Safe params only - no name/phone/email/message.
+      pushDataLayer('contact_form_submit', {
+        form_type: 'contact_form',
+        product_or_page_type: safeText(formData.service),
+        region: safeText(formData.region),
+        page_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+      });
       setFormData({
         firstName: '',
         lastName: '',
