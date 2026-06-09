@@ -1319,7 +1319,9 @@ const nextConfig = {
   // fires when no real page/route matches. (middleware.ts does not run on www.)
   async rewrites() {
     return {
-      afterFiles: [
+      // beforeFiles: intercept BEFORE dynamic [slug] routes (which would otherwise
+      // match /track-your-order and return notFound/404, shadowing an afterFiles rule).
+      beforeFiles: [
         { source: '/track-your-order', destination: '/410' },
         { source: '/track-your-order/', destination: '/410' },
       ],
