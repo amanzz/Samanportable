@@ -184,12 +184,23 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) 
       }
     }
 
+    // ISR (Option 2). Batch-1 slugs stay PURE STATIC (revalidate: false — never
+    // refetch, baked at build). All other [slug] pages background-regenerate
+    // hourly (revalidate: 3600).
+    // STALE-ON-ERROR GUARD: a failed or empty backend fetch THROWS (the catch
+    // below re-throws; fetchBlogPost throws BackendFetchError on transient
+    // failure and returns null ONLY on a genuine 200+empty result). Per Next.js
+    // ISR, a throw during a background revalidation makes Next KEEP serving the
+    // last good page — it never caches an error/404/empty shell and never serves
+    // a thin body. A throw on the very first (uncached) blocking render yields a
+    // 500 that is NOT cached and is retried — never a poisoned empty page.
     return {
       props: {
         post,
         slug,
         rankMathSEO,
       },
+      revalidate: BATCH1_SLUGS.includes(slug) ? false : 3600,
     };
   } catch (error) {
     // A transient backend failure (network/timeout/5xx/429, surfaced as
