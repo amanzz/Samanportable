@@ -5,25 +5,13 @@ export default function Document() {
   return (
     <Html lang="en" className={inter.variable}>
       <Head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-WCT5SSR');
-            `
-          }}
-        />
-        
+        {/* Google Tag Manager moved to next/script (afterInteractive) in _app.tsx so it
+            no longer blocks first paint. GA4 + all GTM lead events are preserved. */}
+
         {/* Charset is automatically added by Next.js */}
         
-        {/* Critical Resource Preloading - Optimized for LCP */}
-        <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/hero-image/saman-portable-office-cabin-bangalore.webp" as="image" type="image/webp" {...{ fetchpriority: "high" }} />
+        {/* Critical Resource Preloading — Inter fonts are auto-preloaded by next/font;
+            the hero image is preloaded by next/image priority in HeroSection (manual duplicate removed). */}
         <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
         
         {/* DNS Prefetching and Preconnecting - Optimized */}
@@ -64,38 +52,13 @@ export default function Document() {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              /* Critical CSS for LCP optimization - Updated to WOFF2 */
-              @font-face {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 400;
-                font-display: swap;
-                src: url('/fonts/Inter-Regular.woff2') format('woff2');
-              }
-              @font-face {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 500;
-                font-display: swap;
-                src: url('/fonts/Inter-Medium.woff2') format('woff2');
-              }
-              @font-face {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 600;
-                font-display: swap;
-                src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
-              }
-              @font-face {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 700;
-                font-display: swap;
-                src: url('/fonts/Inter-Bold.woff2') format('woff2');
-              }
+              /* Critical CSS for LCP optimization.
+                 Inter @font-face is now provided solely by next/font (single source);
+                 the manual duplicate @font-face block was removed to stop double-loading
+                 the same four woff2 files. */
               .hero-section-responsive {
                 contain: layout style paint;
-                font-family: 'Inter', system-ui, -apple-system, sans-serif;
+                font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
               }
               .hero-text-shadow {
                 text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
