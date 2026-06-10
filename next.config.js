@@ -1290,6 +1290,20 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ──────────────────────────────────────────────────
+      // BATCH 4 — C6 R-C same-cluster consolidation (owner approved 2026-06-10)
+      // Child product /product/labor-colony/prefab-labour-colony -> parent product
+      // /product/labor-colony. Parent already contains the child's phrases x11
+      // (P6-C1 pre-satisfied — no content edit). Placed BEFORE ...csvRedirects so
+      // first-match-wins. Target /product/labor-colony verified live 200, single hop.
+      // Rollback = remove this block.
+      // ──────────────────────────────────────────────────
+      {
+        source: '/product/labor-colony/prefab-labour-colony',
+        destination: '/product/labor-colony',
+        permanent: true,
+      },
+
       ...csvRedirects,
     ];
 
