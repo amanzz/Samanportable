@@ -32,7 +32,7 @@ export const API_CONFIG = {
   // Performance settings
   MAX_CONCURRENT_REQUESTS: 5, // Limit concurrent API calls
   REQUEST_TIMEOUT: 10000, // 10 seconds timeout
-  RETRY_ATTEMPTS: 2, // Number of retry attempts
+  RETRY_ATTEMPTS: 5, // Number of retry attempts (raised for build-time backend-500 resilience; exponential backoff below)
 };
 
 // Standard headers for API requests to bypass security firewalls
@@ -92,7 +92,7 @@ async function fetchWithResilience(url: string, init?: RequestInit): Promise<Res
       // Transient server-side failure → retry if attempts remain, else throw.
       if (isTransientStatus(response.status)) {
         if (attempt < maxAttempts) {
-          await new Promise((resolve) => setTimeout(resolve, 300 * attempt));
+          await new Promise((resolve) => setTimeout(resolve, 500 * Math.pow(2, attempt - 1)));
           continue;
         }
         throw new BackendFetchError(
@@ -110,7 +110,7 @@ async function fetchWithResilience(url: string, init?: RequestInit): Promise<Res
       // Otherwise this is a network error or an AbortError (timeout). Retry if we
       // still have attempts; on the last attempt fall through to the throw below.
       if (attempt < maxAttempts) {
-        await new Promise((resolve) => setTimeout(resolve, 300 * attempt));
+        await new Promise((resolve) => setTimeout(resolve, 500 * Math.pow(2, attempt - 1)));
         continue;
       }
       throw new BackendFetchError('Backend unreachable (network error or timeout)');

@@ -1490,6 +1490,11 @@ const nextConfig = {
 
   // Performance optimizations - ENHANCED
   experimental: {
+    // Build-time static-generation concurrency cap (applies to `next build` only):
+    // limits prerender worker count so the getStaticProps fetch burst stays under
+    // the shared LiteSpeed host's safe ~4 concurrent. Does NOT affect runtime
+    // SSR/getServerSideProps or ISR on-demand revalidation concurrency.
+    cpus: 3,
     optimizeCss: false,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
     // Reduce bundle size warnings
