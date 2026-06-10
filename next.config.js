@@ -1266,6 +1266,30 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ──────────────────────────────────────────────────
+      // BATCH 2 — C7 TN re-point (owner approved 2026-06-10)
+      // Inline override of 3 stale CSV rules (sources currently in
+      // "Untitled spreadsheet - Sheet1 (1).csv" → /product-category/container-houses).
+      // Placed BEFORE ...csvRedirects so first-match-wins; new dest = the live
+      // TN price page (has Coimbatore + Chennai sections). NOT duplicates — overrides.
+      // Target /container-house-price-in-tamil-nadu verified live 200, single hop.
+      // ──────────────────────────────────────────────────
+      {
+        source: '/container-house-in-coimbatore',
+        destination: '/container-house-price-in-tamil-nadu',
+        permanent: true,
+      },
+      {
+        source: '/container-house-in-coimbatore-price',
+        destination: '/container-house-price-in-tamil-nadu',
+        permanent: true,
+      },
+      {
+        source: '/container-homes-chennai-guide',
+        destination: '/container-house-price-in-tamil-nadu',
+        permanent: true,
+      },
+
       ...csvRedirects,
     ];
 
