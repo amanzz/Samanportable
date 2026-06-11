@@ -117,6 +117,20 @@ export const generateOrganizationSchema = () => {
       'https://www.instagram.com/pos_containerhomes/',
       'https://in.pinterest.com/samanportablecabins/',
     ],
+    // Organization-level return policy for Google Merchant Center "Return window"
+    // and "Return cost" detection. Mirrors /refund-and-return-policy exactly:
+    // 7-day window, return transport paid by the customer, full refund.
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'IN',
+      returnPolicyCountry: 'IN',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+      merchantReturnDays: 7,
+      returnMethod: 'https://schema.org/ReturnByMail',
+      returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility',
+      refundType: 'https://schema.org/FullRefund',
+      merchantReturnLink: 'https://www.samanportable.com/refund-and-return-policy',
+    },
   };
 };
 
