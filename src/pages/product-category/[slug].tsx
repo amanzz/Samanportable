@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
-import { fetchLightweightProductsByCategory, fetchProductCategories, fetchProductAttributes, fetchCategoryRankMathSEO, fetchProductCategoryBySlug, RankMathSEOData, ProductCategoryDetail } from '@/config/api';
+import { fetchLightweightProductsByCategoryStrict, fetchProductCategoriesStrict, fetchProductAttributesStrict, fetchCategoryRankMathSEO, fetchProductCategoryBySlugStrict, RankMathSEOData, ProductCategoryDetail } from '@/config/api';
 import { LightweightProduct, ProductFilters as ProductFiltersType, PaginationInfo } from '@/config/api';
 import ProductCard from '@/components/ProductCard';
 import ProductFilters from '@/components/ProductFilters';
@@ -26,13 +26,13 @@ interface ProductCategoryPageProps {
   rankMathSEO?: RankMathSEOData | null;
 }
 
-import { GetServerSideProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
 // Client-side product fetch for pagination/filters. Goes through the same-origin
 // /api/products-by-category route so the WooCommerce consumer key/secret stays
 // server-side and is NEVER shipped to the browser. (Calling the WooCommerce fetch
 // helper directly from the client previously inlined the key/secret into the
-// client bundle.) getServerSideProps below still calls the helper directly —
+// client bundle.) getStaticProps below still calls the helper directly —
 // that code runs only on the server and is stripped from the client bundle.
 async function fetchCategoryProductsClient(
   slug: string,
@@ -46,12 +46,20 @@ async function fetchCategoryProductsClient(
   return res.json();
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params, res }) => {
-  res.setHeader(
-    'Cache-Control',
-    'no-store, no-cache, must-revalidate, proxy-revalidate'
-  );
+// GATE-A REMEDY (ISR): the hub is rendered once, cached, background-revalidated
+// hourly — no per-request WooCommerce fetch. fallback 'blocking' = an uncached
+// hub still renders fully server-side on first hit. Every fetch is STRICT
+// (throws on transient failure) so a failed revalidation KEEPS the last-good
+// page. The old catch-all that returned EMPTY PROPS on any error was the
+// THIN-200 hub shell Gate A reproduced (e.g. container-offices at 1,710 chars) —
+// it is gone: failures now throw, they never render an empty grid.
+// (A GENUINELY empty category still renders its empty state — parity preserved.)
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [],
+  fallback: 'blocking',
+});
 
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug as string;
   if (!slug) {
     return {
@@ -61,23 +69,19 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
 
   try {
     const [productsResponse, categoriesResponse, attributesResponse, categoryDetail] = await Promise.all([
-      fetchLightweightProductsByCategory(slug, 1, 20), // Using optimized function with 20 items per page
-      fetchProductCategories(),
-      fetchProductAttributes(),
-      fetchProductCategoryBySlug(slug),
+      fetchLightweightProductsByCategoryStrict(slug, 1, 20), // STRICT: throws on failure, [] only on genuine empty
+      fetchProductCategoriesStrict(),
+      fetchProductAttributesStrict(),
+      fetchProductCategoryBySlugStrict(slug),
     ]);
 
     const categoryName = categoryDetail?.name ||
       productsResponse.products[0]?.category ||
       slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'Products';
 
-    // Fetch Rank Math SEO data
-    let rankMathSEO: RankMathSEOData | null = null;
-    try {
-      rankMathSEO = await fetchCategoryRankMathSEO(slug);
-    } catch (error) {
-      console.warn('Failed to fetch Rank Math SEO data for category:', error);
-    }
+    // Fetch Rank Math SEO data. STRICT: transient failure throws (keep last-good);
+    // genuine 200-with-no-head returns null (baseline fallback behavior).
+    const rankMathSEO: RankMathSEOData | null = await fetchCategoryRankMathSEO(slug, true);
 
     return {
       props: {
@@ -91,29 +95,17 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
         attributes: attributesResponse,
         rankMathSEO,
       },
+      revalidate: 3600, // ISR: background hourly revalidation (same as the [slug] blog route)
     };
   } catch (error) {
-    console.error('Error fetching category data:', error);
-    return {
-      props: {
-        products: [],
-        categoryName: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'Products',
-        categorySlug: slug,
-        categoryDescription: '',
-        categoryExtraDescription: '',
-        pagination: {
-          currentPage: 1,
-          totalPages: 0,
-          totalProducts: 0,
-          perPage: 20,
-          hasNextPage: false,
-          hasPrevPage: false,
-        },
-        categories: [],
-        attributes: [],
-        rankMathSEO: null,
-      },
-    };
+    // STRICT contract: a transient backend failure must NEVER cache an empty
+    // shell. Re-throw: during background revalidation Next keeps the last-good
+    // hub; on an uncached first render it returns a 500 (retryable, not cached).
+    console.error(
+      'Category hub ISR render failed — keeping last-good / returning 5xx:',
+      error instanceof Error ? error.message : 'unknown error'
+    );
+    throw error instanceof Error ? error : new Error('Failed to render category hub');
   }
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
@@ -27,6 +27,7 @@ import dynamic from 'next/dynamic';
 import { fetchBlogPost, BlogPost, fetchBlogPostRankMathSEO, RankMathSEOData } from '../config/api';
 import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
+import { BATCH1_SLUGS } from '../data/batch1Slugs';
 
 interface BlogPostProps {
   post: BlogPost | null;
@@ -44,7 +45,18 @@ const METADATA_IMAGE_OVERRIDES: Record<string, string> = {
 // Distinctive marker of the broken WordPress image (matches its size variants).
 const BROKEN_WP_IMAGE_MARKER = 'container-office-by-saman-13-1_11zon';
 
-export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
+// BATCH 1 MIGRATION (local staging only). All 75 Batch-1 URLs are PREBUILT as
+// static at build time (baked artifacts, getStaticProps fetched once at build,
+// zero per-request backend fetch). Non-batch [slug] pages use blocking fallback:
+// on-demand SSG — full server render on first hit, then cached, NEVER an empty
+// shell. NOTE for deploy design: this changes non-batch pages from SSR to
+// on-demand SSG (cached until next build). Revert: git checkout "src/pages/[slug].tsx".
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: BATCH1_SLUGS.map((slug) => ({ params: { slug } })),
+  fallback: 'blocking',
+});
+
+export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) => {
   try {
     const slug = params?.slug as string;
     
@@ -172,12 +184,23 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       }
     }
 
+    // ISR (Option 2). Batch-1 slugs stay PURE STATIC (revalidate: false — never
+    // refetch, baked at build). All other [slug] pages background-regenerate
+    // hourly (revalidate: 3600).
+    // STALE-ON-ERROR GUARD: a failed or empty backend fetch THROWS (the catch
+    // below re-throws; fetchBlogPost throws BackendFetchError on transient
+    // failure and returns null ONLY on a genuine 200+empty result). Per Next.js
+    // ISR, a throw during a background revalidation makes Next KEEP serving the
+    // last good page — it never caches an error/404/empty shell and never serves
+    // a thin body. A throw on the very first (uncached) blocking render yields a
+    // 500 that is NOT cached and is retried — never a poisoned empty page.
     return {
       props: {
         post,
         slug,
         rankMathSEO,
       },
+      revalidate: BATCH1_SLUGS.includes(slug) ? false : 3600,
     };
   } catch (error) {
     // A transient backend failure (network/timeout/5xx/429, surfaced as

@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
 import Layout from '../../../components/Layout';
 // import { SEO } from '../../../components/SEO'; // Removed to avoid duplicate meta tags
@@ -22,7 +22,7 @@ import {
   BookOpen,
   Check
 } from 'lucide-react';
-import { fetchLightweightProduct, fetchProductDescription, fetchProducts, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData, fetchProductReviews, ProductReview } from '../../../config/api';
+import { fetchLightweightProduct, fetchProductDescriptionStrict, fetchRelatedProductsStrict, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData, fetchProductReviews, ProductReview } from '../../../config/api';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
@@ -64,7 +64,18 @@ interface ProductDetailsProps {
   reviews?: ProductReview[];
 }
 
-export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
+// GATE-A REMEDY (ISR): rendered once, cached, background-revalidated hourly —
+// no per-request WooCommerce fetch. fallback 'blocking' = an uncached page still
+// renders fully server-side on first hit (never an empty shell). Every data
+// fetch below is STRICT: a transient backend failure THROWS, so a failed
+// revalidation KEEPS the last-good cached page (stale-on-error) — it can never
+// cache the THIN-200 shells Gate A caught under load.
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [],
+  fallback: 'blocking',
+});
+
+export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ params }) => {
   try {
     const { category, slug } = params as { category: string; slug: string };
     
@@ -107,20 +118,15 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       };
     }
 
-    // Get related products from the same category (lightweight)
-    let relatedProducts: WooCommerceProduct[] = [];
-    try {
-      const relatedResponse = await fetchProducts(1, 12, { // Increased to 12 for better variety
-        category: product.category_slug
-      });
-      // Filter out the current product manually since exclude is not supported
-      relatedProducts = (relatedResponse.products || []).filter(p => p.id !== product.id);
-    } catch (error) {
-      // Silent error handling for production
-    }
+    // Get related products from the same category (lightweight).
+    // STRICT: a failed fetch THROWS (ISR keeps last-good) — the old swallow
+    // pattern shipped the page with this section missing.
+    const relatedProducts: WooCommerceProduct[] =
+      (await fetchRelatedProductsStrict(product.category_slug)).filter(p => p.id !== product.id);
 
-    // Fetch full description and images separately
-    const descriptionData = await fetchProductDescription(slug);
+    // Fetch full description and images separately.
+    // STRICT: the old null-on-failure version rendered description:'' = THIN-200.
+    const descriptionData = await fetchProductDescriptionStrict(slug);
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -131,13 +137,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       reviews = await fetchProductReviews(product.id, 5);
     }
 
-    // Fetch Rank Math SEO data
-    let rankMathSEO: RankMathSEOData | null = null;
-    try {
-      rankMathSEO = await fetchProductRankMathSEO(`${category}/${slug}`);
-    } catch (error) {
-      console.warn('Failed to fetch Rank Math SEO data:', error);
-    }
+    // Fetch Rank Math SEO data. STRICT: a transient failure throws (ISR keeps
+    // last-good meta); a genuine 200-with-no-head still returns null (baseline).
+    const rankMathSEO: RankMathSEOData | null = await fetchProductRankMathSEO(`${category}/${slug}`, true);
 
     return {
       props: {
@@ -174,17 +176,19 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         rankMathSEO,
         reviews,
       },
+      revalidate: 3600, // ISR: background hourly revalidation (same as the [slug] blog route)
     };
   } catch (error) {
     // A transient backend failure (network/timeout/5xx/429, surfaced as
-    // BackendFetchError by fetchLightweightProduct) must NOT become a false 404 —
-    // that would deindex a real product. Re-throw so Next returns HTTP 500
-    // (retryable by Google) instead of notFound. A GENUINE missing product is
-    // handled above (product === null → notFound) and only happens when the backend
-    // responded successfully; the category-mismatch 404 likewise only runs after a
-    // successful fetch. Only the error message is logged (no request URL / keys).
+    // BackendFetchError by any STRICT fetcher above) must NOT become a false 404 —
+    // that would deindex a real product. Re-throw: during an ISR background
+    // revalidation Next then KEEPS the last-good cached page; on an uncached
+    // first render it returns HTTP 500 (retryable by Google, never cached).
+    // A GENUINE missing product is handled above (product === null → notFound)
+    // and only happens when the backend responded successfully; the
+    // category-mismatch 404 likewise only runs after a successful fetch.
     console.error(
-      'Product SSR failed — returning 5xx, not 404:',
+      'Product ISR render failed — keeping last-good / returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render product');
