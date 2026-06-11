@@ -1,0 +1,42 @@
+[
+  {
+    "id": 3170,
+    "date_created": "2026-06-09T17:58:13",
+    "date_created_gmt": "2026-06-09T12:28:13",
+    "product_id": 1273,
+    "product_name": "Container Office Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/container-offices/container-office-cabin/",
+    "status": "approved",
+    "reviewer": "Kiran Kumar",
+    "reviewer_email": "kk5523068@gmail.com",
+    "review": "<p>We needed a proper site office for our project team and went with a container office from SAMAN after comparing a few suppliers. The deciding factor was that they actually listened to our layout — we wanted a partitioned cabin with a separate meeting space, and they built it exactly to that. Insulation and the AC point were sorted before it arrived, so the team could move in the same week. It's been on site through summer and the monsoon now and there's no leakage, no rust starting, nothing loose. Sturdy unit, fair pricing, and they kept to the delivery date they gave us.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3170",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1273"
+        }
+      ]
+    }
+  }
+]

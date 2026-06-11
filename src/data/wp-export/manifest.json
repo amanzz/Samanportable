@@ -1,0 +1,23 @@
+{
+  "export_source": "https://blog.samanportable.com",
+  "keeper_basis": "baseline_snapshot.csv (467 URLs)",
+  "counts": {
+    "posts": 236,
+    "products": 154,
+    "categories": 14,
+    "reviews": 56,
+    "review_products": 19
+  },
+  "missing": {
+    "posts": [],
+    "products": [],
+    "categories": [
+      "portable-toilets"
+    ]
+  },
+  "excluded_junk_draft_product_id": 272605,
+  "included_draft_product": "prefab-labour-colony (id 3807, already 308-redirected on www; kept per owner instruction)",
+  "F3_duplicate_category_note": "/product-category/portable-toilets (plural) is NOT a WordPress category. It renders 200 on www because the Next.js route /product-category/[slug] accepts any slug at request time and falls back to a title-cased name when no WP term matches. Only the singular portable-toilet has WP data. DUPLICATE — owner decision needed; nothing merged or redirected in this export.",
+  "errors": [],
+  "hub_products_note": "14 keeper URLs are 2-segment /product/<slug>. On www these render via the /product/[category] listing route, but WooCommerce ALSO holds a product with the same slug; both the product object and the category data are exported."
+}

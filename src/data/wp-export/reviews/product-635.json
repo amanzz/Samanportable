@@ -1,0 +1,42 @@
+[
+  {
+    "id": 227,
+    "date_created": "2024-12-22T19:04:34",
+    "date_created_gmt": "2024-12-22T13:34:34",
+    "product_id": 635,
+    "product_name": "Prefabricated Portable Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-cabin/prefabricated-portable-cabin/",
+    "status": "approved",
+    "reviewer": "Vijay M kumar",
+    "reviewer_email": "mojahidbelwa@gmail.com",
+    "review": "<p>I recently purchased a prefabricated portable cabin from SAMAN, and it has been an outstanding addition to my workspace.</p>\n<p>🚪 Functional Design: The layout is simple yet highly efficient, providing ample space for my needs.<br />\n🏗️ Durable Build: The cabin feels solid and well-constructed, ensuring reliability in all conditions.<br />\n⚡ Quick Setup: Installation was smooth and surprisingly fast, ready to use within hours.</p>\n<p>SAMAN has delivered a top-quality product with great service. Highly recommended!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/227",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/635"
+        }
+      ]
+    }
+  }
+]

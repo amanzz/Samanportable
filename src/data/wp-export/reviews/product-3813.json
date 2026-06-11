@@ -1,0 +1,42 @@
+[
+  {
+    "id": 408,
+    "date_created": "2025-02-17T04:28:42",
+    "date_created_gmt": "2025-02-16T22:58:42",
+    "product_id": 3813,
+    "product_name": "Labor Camps",
+    "product_permalink": "https://blog.samanportable.com/product/labor-colony/labor-camps/",
+    "status": "approved",
+    "reviewer": "Steve",
+    "reviewer_email": "asdac@acasd.com",
+    "review": "<p>Are you aware this clearly AI generated page just gives a detailed explanation of the holocaust? Unclear how this relates to your products or why there's a price tag attached to this service.</p>\n",
+    "rating": 1,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/408",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/3813"
+        }
+      ]
+    }
+  }
+]

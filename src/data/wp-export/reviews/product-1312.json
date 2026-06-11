@@ -1,0 +1,42 @@
+[
+  {
+    "id": 188,
+    "date_created": "2024-12-16T12:07:17",
+    "date_created_gmt": "2024-12-16T06:37:17",
+    "product_id": 1312,
+    "product_name": "Luxury Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/luxury-porta-cabin/",
+    "status": "approved",
+    "reviewer": "Debendrànayak",
+    "reviewer_email": "debendranayak1972@gmail.com",
+    "review": "<p>I’m impressed with the luxury porta cabin I got from SAMAN!</p>\n<p>💼 Highly Functional: It’s compact yet perfectly designed for a comfortable workspace.<br />\n🌦️ Durable: Sturdy build and weather-resistant—no worries about wear and tear.<br />\n⏱️ Fast Delivery: Delivered and set up within a day—super efficient!<br />\n💰 Great Value: Affordable without cutting corners on quality.</p>\n<p>This porta cabin has made my work so much easier. Highly recommend SAMAN for their top-notch service!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/188",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1312"
+        }
+      ]
+    }
+  }
+]

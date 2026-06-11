@@ -1,0 +1,122 @@
+[
+  {
+    "id": 291,
+    "date_created": "2025-01-15T15:53:31",
+    "date_created_gmt": "2025-01-15T10:23:31",
+    "product_id": 1415,
+    "product_name": "Portable Office Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/portable-office-cabin/",
+    "status": "approved",
+    "reviewer": "Prakash Solanki",
+    "reviewer_email": "prakashchandkantaliya@gmail.com",
+    "review": "<p>Portable Office Cabins: A Game-Changer for Modern Workspaces</p>\n<p>⭐ Efficient Design<br />\nPortable office cabins combine smart layouts with contemporary aesthetics, offering a practical workspace solution.</p>\n<p>⭐ Built to Last<br />\nConstructed with high-quality materials, they endure harsh weather while maintaining their structural integrity.</p>\n<p>⭐ Customizable &amp; Eco-Friendly<br />\nFrom tailored interiors to sustainable designs, these cabins adapt to your needs while supporting green initiatives.</p>\n<p>⭐ Easy Mobility<br />\nLightweight and durable, these cabins are easy to transport and set up, ensuring hassle-free relocations.</p>\n<p>Portable office cabins are the future of workspace solutions, balancing flexibility, affordability, and durability seamlessly. 🌟</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/291",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1415"
+        }
+      ]
+    }
+  },
+  {
+    "id": 192,
+    "date_created": "2024-12-17T16:33:53",
+    "date_created_gmt": "2024-12-17T11:03:53",
+    "product_id": 1415,
+    "product_name": "Portable Office Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/portable-office-cabin/",
+    "status": "approved",
+    "reviewer": "Manoj Shetty",
+    "reviewer_email": "killermanojshetty123@gmail.com",
+    "review": "<p>I recently opted for a portable office cabin from SAMAN, and it’s been a great investment.</p>\n<p>🪴 Well-Utilized Space: The layout is thoughtfully designed, offering enough room for furniture, storage, and movement without feeling cramped.<br />\n🛡️ Dependable Quality: The structure is solid, and the finishes are clean and professional—built to last.<br />\n📦 Minimal Effort, Maximum Use: It arrived fully ready with electrical fittings, so I could start using it immediately.<br />\n💼 Perfect Work Environment: It’s quiet, secure, and comfortable, making it ideal for productivity.</p>\n<p>SAMAN’s portable office cabins are practical, stylish, and highly reliable. I couldn’t have asked for a better solution!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/192",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1415"
+        }
+      ]
+    }
+  },
+  {
+    "id": 187,
+    "date_created": "2024-12-16T11:54:26",
+    "date_created_gmt": "2024-12-16T06:24:26",
+    "product_id": 1415,
+    "product_name": "Portable Office Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/portable-office-cabin/",
+    "status": "approved",
+    "reviewer": "Mushtaque Roti Wala",
+    "reviewer_email": "alammdmustak915@gmail.com",
+    "review": "<p>I recently got a portable office cabin from SAMAN, and it’s been a fantastic experience!</p>\n<p>🏢 Smart Design: Spacious, functional, and tailored to my needs. It feels like a real office, not just a cabin.<br />\n🔧 Built to Last: The sturdy structure and weatherproof materials ensure durability.<br />\n⚡ Quick Setup: It was installed and ready to use within hours—so convenient!<br />\n💸 Affordable: Great value for money without compromising quality.</p>\n<p>If you’re looking for a practical, durable, and stylish workspace, SAMAN’s portable office cabins are the perfect choice.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/187",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1415"
+        }
+      ]
+    }
+  }
+]

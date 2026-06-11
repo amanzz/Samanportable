@@ -1,0 +1,42 @@
+[
+  {
+    "id": 3171,
+    "date_created": "2026-06-09T20:08:07",
+    "date_created_gmt": "2026-06-09T14:38:07",
+    "product_id": 1423,
+    "product_name": "Readymade Office Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/readymade-office-cabin/",
+    "status": "approved",
+    "reviewer": "ZGMFAJ",
+    "reviewer_email": "zgmfaj48@gmail.com",
+    "review": "<p>Bought a ready office cabin to use as a temporary branch while our main premises were being renovated, and it solved the problem fast. What sold me was that it was genuinely ready — wiring points, lighting and the flooring were already done, so we just moved in our desks and started working the next day. The size suited a four-person team comfortably without feeling cramped. It's well sealed, so dust and noise from outside stay out, and it doesn't heat up the way I feared a metal cabin might. Delivered on schedule and the price was reasonable for how little hassle it gave us.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3171",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1423"
+        }
+      ]
+    }
+  }
+]

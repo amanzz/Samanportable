@@ -1,0 +1,82 @@
+[
+  {
+    "id": 3168,
+    "date_created": "2026-06-07T20:11:03",
+    "date_created_gmt": "2026-06-07T14:41:03",
+    "product_id": 1427,
+    "product_name": "Container Cafe",
+    "product_permalink": "https://blog.samanportable.com/product/container-cafe/",
+    "status": "approved",
+    "reviewer": "MJ Akbar",
+    "reviewer_email": "786mjakbar@gmail.com",
+    "review": "<p>We bought a container cafe unit to launch our coffee outlet in a high-footfall commercial spot, and it's been running smoothly for the past few months. The fabrication finish was better than we expected for the price — clean welds, proper insulation, and the serving window and counter layout were done exactly to the drawing we shared. Delivery was coordinated well and they craned it into position without any fuss. The electricals and plumbing points were pre-fitted, so our local fit-out for the kitchen equipment was quick. It handles the daytime heat fine with the insulated panels, and the exterior still looks sharp after regular use. Good value if you want a ready outlet without the wait of a permanent build.<br />\nReviewer: Akbar MJ— Bengaluru, Karnataka</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3168",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1427"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3164,
+    "date_created": "2026-06-05T21:32:46",
+    "date_created_gmt": "2026-06-05T16:02:46",
+    "product_id": 1427,
+    "product_name": "Container Cafe",
+    "product_permalink": "https://blog.samanportable.com/product/container-cafe/",
+    "status": "approved",
+    "reviewer": "Shaikh Kalam",
+    "reviewer_email": "portableofficecabin@gmail.com",
+    "review": "<p>Planning to open a specialty coffee brand, rents were brutal and civil work timelines were 4–5 months. SAMAN's Bangalore team got on a call, asked the right questions — footfall, equipment list, takeaway window vs seating — and quoted three layouts in two days. We picked the 20ft with a long serving window.</p>\n<p>Delivered five weeks after advance, exactly on the committed date. Placed on our plinth in 90 minutes. Interior laminate clean, electrical points exactly where we marked, exhaust hood pre-cut. Handles April heat with one 1.5-ton AC.</p>\n<p>One issue — door hinges needed adjustment after first heavy rain. Called service, person on site in 48 hours, fixed free. 5-year structural cover, 1–2 year finishing, in writing.</p>\n<p>If you're launching F&B and don't want to lose six months on civil work and rent advance, this is the smarter route. Recovered the cabin cost inside the first quarter.</p>\n<p>— Kalam Shaikh., Bangalore (Bellandur)<br />\nVerified Buyer · April 2026</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3164",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1427"
+        }
+      ]
+    }
+  }
+]

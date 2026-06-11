@@ -1,0 +1,82 @@
+[
+  {
+    "id": 186,
+    "date_created": "2024-12-14T21:31:51",
+    "date_created_gmt": "2024-12-14T16:01:51",
+    "product_id": 1334,
+    "product_name": "Container Houses",
+    "product_permalink": "https://blog.samanportable.com/product/container-houses/",
+    "status": "approved",
+    "reviewer": "Karan Murshy",
+    "reviewer_email": "md8596193@gmail.com",
+    "review": "<p>I wasn’t sure about living in a container house, but SAMAN completely changed my mind!</p>\n<p>📦 Modern and Functional<br />\nEvery inch is designed with purpose. It’s compact, stylish, and suits my lifestyle perfectly.</p>\n<p>🌿 Sustainable and Efficient<br />\nKnowing my home is eco-friendly and energy-efficient makes me feel great—and saves on bills!</p>\n<p>🛠️ Quick and Hassle-Free<br />\nThe setup was unbelievably fast. It arrived ready to go, and I moved in the same day.</p>\n<p>It’s more than a house—it’s my cozy, modern retreat. SAMAN truly nailed it!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/186",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1334"
+        }
+      ]
+    }
+  },
+  {
+    "id": 184,
+    "date_created": "2024-12-14T20:32:19",
+    "date_created_gmt": "2024-12-14T15:02:19",
+    "product_id": 1334,
+    "product_name": "Container Houses",
+    "product_permalink": "https://blog.samanportable.com/product/container-houses/",
+    "status": "approved",
+    "reviewer": "Akram salon",
+    "reviewer_email": "akramahmed88807@gmail.com",
+    "review": "<p>I never thought living in a container house could feel this comfortable! SAMAN Portable Office Solutions has truly exceeded my expectations.</p>\n<p>🏡 Feels Like Home<br />\nFrom the moment I stepped inside, it felt cozy and welcoming. The layout is well-planned, making the most of the space while still feeling open and airy.</p>\n<p>🌦️ Built to Last<br />\nThe quality is incredible. It’s solid, weatherproof, and feels like it could handle anything. I don’t worry about maintenance at all.</p>\n<p>🎨 Customizable Design<br />\nSAMAN helped me tailor the interiors exactly how I wanted—modern finishes, great lighting, and even the perfect spot for my plants.</p>\n<p>⏱️ Quick Setup, Zero Stress<br />\nMoving in was so simple. The entire house was delivered and set up faster than I imagined—no construction mess, no delays.</p>\n<p>This container house is proof that you don’t need bricks and mortar for a home that’s stylish, comfortable, and functional. SAMAN has nailed it with this one!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/184",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1334"
+        }
+      ]
+    }
+  }
+]
