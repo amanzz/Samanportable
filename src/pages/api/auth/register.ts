@@ -1,84 +1,11 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+﻿import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
-  }
-
-  try {
-    const { username, email, password, firstName, lastName } = req.body;
-
-    if (!username || !email || !password) {
-      return res.status(400).json({ message: 'Username, email, and password are required' });
-    }
-
-    // Create user in WordPress
-    const wpResponse = await fetch(`${process.env.WORDPRESS_URL}/wp-json/wp/v2/users`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Basic ${Buffer.from(`${process.env.WORDPRESS_ADMIN_USERNAME}:${process.env.WORDPRESS_ADMIN_PASSWORD}`).toString('base64')}`,
-      },
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-        first_name: firstName,
-        last_name: lastName,
-        roles: ['customer'],
-      }),
-    });
-
-    if (!wpResponse.ok) {
-      const errorData = await wpResponse.json();
-      return res.status(400).json({ 
-        message: errorData.message || 'Failed to create user' 
-      });
-    }
-
-    const userData = await wpResponse.json();
-
-    // Now login the user to get JWT token
-    const loginResponse = await fetch(`${process.env.WORDPRESS_URL}/wp-json/jwt-auth/v1/token`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    });
-
-    if (!loginResponse.ok) {
-      return res.status(500).json({ message: 'User created but login failed' });
-    }
-
-    const loginData = await loginResponse.json();
-
-    // Transform user data to match our interface
-    const user = {
-      id: userData.id,
-      username: userData.slug,
-      email: userData.email,
-      firstName: userData.first_name || '',
-      lastName: userData.last_name || '',
-      roles: userData.roles || [],
-    };
-
-    res.status(201).json({
-      token: loginData.token,
-      user,
-      message: 'User registered successfully',
-    });
-  } catch (error) {
-    console.error('Registration API Error:', error);
-    res.status(500).json({
-      message: 'Internal server error',
-      error: (error as Error).message,
-    });
-  }
+// DISABLED in the static migration (owner-approved, Phase 2).
+// SAMAN is an enquiry-only business: the cart/checkout/WooCommerce-order path
+// was removed so the visitor-facing site has zero WordPress dependency.
+// Buyers use the Call button (tel:+916200909435) or the Send Enquiry form (Zoho).
+export default function handler(_req: NextApiRequest, res: NextApiResponse) {
+  return res.status(410).json({
+    error: 'Online ordering is disabled. Please call +91 62009 09435 or use the enquiry form.',
+  });
 }

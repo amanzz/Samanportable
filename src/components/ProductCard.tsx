@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import QuoteFormPopup from './QuoteFormPopup';
 import { useCart } from '@/contexts/CartContext';
-import { ShoppingCart, Check, Tag, Star } from 'lucide-react';
+import { ShoppingCart, Check, Tag, Star, Phone } from 'lucide-react';
 import { formatPriceWithCurrency } from '@/lib/utils';
 import OptimizedCategoryImage from './OptimizedCategoryImage';
 
@@ -242,28 +242,18 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 </Button>
               </Link>
               
-              {isProductInCart ? (
-                <Button 
-                  disabled 
-                  className={`flex-1 bg-gray-100 text-gray-400 font-bold h-11 rounded-xl ${
-                    variant === 'compact' ? 'text-xs' : 'text-sm'
-                  }`}
-                >
-                  <Check className="w-4 h-4 mr-2" />
-                  In Cart
-                </Button>
-              ) : (
-                <Button 
-                  onClick={() => addItem(getCartItemData())}
-                  className={`flex-1 border border-[#0A3D2A]/20 bg-transparent text-[#0A3D2A] hover:bg-[#0A3D2A] hover:text-white font-bold h-11 rounded-xl transition-all ${
-                    variant === 'compact' ? 'text-xs' : 'text-sm'
-                  }`}
-                  disabled={!isInStock}
-                >
-                  <ShoppingCart className="w-4 h-4 mr-2" />
-                  Add
-                </Button>
-              )}
+              {/* Cart removed (enquiry-only business): direct Call button instead */}
+              <Button
+                asChild
+                className={`flex-1 border border-[#0A3D2A]/20 bg-transparent text-[#0A3D2A] hover:bg-[#0A3D2A] hover:text-white font-bold h-11 rounded-xl transition-all ${
+                  variant === 'compact' ? 'text-xs' : 'text-sm'
+                }`}
+              >
+                <a href="tel:+916200909435">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call
+                </a>
+              </Button>
             </div>
           </div>
         </div>

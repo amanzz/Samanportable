@@ -257,16 +257,7 @@ const Header = () => {
                 </div>
               )}
               
-              {/* Cart Icon */}
-              <Link href="/cart" className="relative cursor-pointer hover:opacity-80 transition-opacity" aria-label="Shopping Cart">
-                <ShoppingCart className="w-6 h-6 text-gray-700" />
-                {itemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
-                    {itemCount}
-                  </span>
-                )}
-              </Link>
-              
+              {/* Cart icon removed — enquiry-only business (cart path disabled, Phase 2) */}
               <QuoteFormTrigger variant="default" size="lg">
                 Get Quote
               </QuoteFormTrigger>
@@ -274,14 +265,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center gap-4">
-              <Link href="/cart" className="relative cursor-pointer hover:opacity-80 transition-opacity" aria-label="Shopping Cart">
-                <ShoppingCart className="w-6 h-6 text-gray-700" />
-                {itemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
-                    {itemCount}
-                  </span>
-                )}
-              </Link>
+              {/* Cart icon removed — enquiry-only business (cart path disabled, Phase 2) */}
               <button
                 className="p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}

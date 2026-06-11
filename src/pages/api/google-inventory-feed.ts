@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { fetchProducts } from '@/config/api';
+﻿import { NextApiRequest, NextApiResponse } from 'next';
+import { fetchProducts } from '@/lib/staticContent';
 
 // Google Merchant Center Inventory Feed API
 // This provides real-time inventory data for Google Merchant Center

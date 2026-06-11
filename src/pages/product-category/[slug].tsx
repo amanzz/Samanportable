@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
-import { fetchLightweightProductsByCategory, fetchProductCategories, fetchProductAttributes, fetchCategoryRankMathSEO, fetchProductCategoryBySlug, RankMathSEOData, ProductCategoryDetail } from '@/config/api';
-import { LightweightProduct, ProductFilters as ProductFiltersType, PaginationInfo } from '@/config/api';
+import type { RankMathSEOData, ProductCategoryDetail } from '@/config/api';
+import type { LightweightProduct, ProductFilters as ProductFiltersType, PaginationInfo } from '@/config/api';
 import ProductCard from '@/components/ProductCard';
 import ProductFilters from '@/components/ProductFilters';
 import Pagination from '@/components/Pagination';
@@ -60,11 +60,14 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
   }
 
   try {
+    // Static content layer: reads exported files — no WordPress call.
+    // Server-only module, loaded dynamically so fs never reaches the client bundle.
+    const staticContent = await import('@/lib/staticContent');
     const [productsResponse, categoriesResponse, attributesResponse, categoryDetail] = await Promise.all([
-      fetchLightweightProductsByCategory(slug, 1, 20), // Using optimized function with 20 items per page
-      fetchProductCategories(),
-      fetchProductAttributes(),
-      fetchProductCategoryBySlug(slug),
+      staticContent.fetchLightweightProductsByCategory(slug, 1, 20), // Using optimized function with 20 items per page
+      staticContent.fetchProductCategories(),
+      staticContent.fetchProductAttributes(),
+      staticContent.fetchProductCategoryBySlug(slug),
     ]);
 
     const categoryName = categoryDetail?.name ||
@@ -74,7 +77,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
     // Fetch Rank Math SEO data
     let rankMathSEO: RankMathSEOData | null = null;
     try {
-      rankMathSEO = await fetchCategoryRankMathSEO(slug);
+      rankMathSEO = await staticContent.fetchCategoryRankMathSEO(slug);
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data for category:', error);
     }

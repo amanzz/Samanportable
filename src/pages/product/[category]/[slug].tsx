@@ -22,7 +22,7 @@ import {
   BookOpen,
   Check
 } from 'lucide-react';
-import { fetchLightweightProduct, fetchProductDescription, fetchProducts, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData, fetchProductReviews, ProductReview } from '../../../config/api';
+import type { WooCommerceProduct, RankMathSEOData, ProductReview } from '../../../config/api';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
@@ -88,8 +88,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       };
     }
 
+    // Static content layer: reads exported product files — no WordPress call.
+    // Server-only module, loaded dynamically so fs never reaches the client bundle.
+    const staticContent = await import('../../../lib/staticContent');
+
     // Fetch lightweight product data first
-    const product = await fetchLightweightProduct(slug);
+    const product = await staticContent.fetchLightweightProduct(slug);
     
     if (!product) {
       return {
@@ -110,7 +114,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // Get related products from the same category (lightweight)
     let relatedProducts: WooCommerceProduct[] = [];
     try {
-      const relatedResponse = await fetchProducts(1, 12, { // Increased to 12 for better variety
+      const relatedResponse = await staticContent.fetchProducts(1, 12, { // Increased to 12 for better variety
         category: product.category_slug
       });
       // Filter out the current product manually since exclude is not supported
@@ -120,7 +124,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     }
 
     // Fetch full description and images separately
-    const descriptionData = await fetchProductDescription(slug);
+    const descriptionData = await staticContent.fetchProductDescription(slug);
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -128,13 +132,13 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // problem never breaks the page or causes a false 404.
     let reviews: ProductReview[] = [];
     if (product.rating_count > 0) {
-      reviews = await fetchProductReviews(product.id, 5);
+      reviews = await staticContent.fetchProductReviews(product.id, 5);
     }
 
     // Fetch Rank Math SEO data
     let rankMathSEO: RankMathSEOData | null = null;
     try {
-      rankMathSEO = await fetchProductRankMathSEO(`${category}/${slug}`);
+      rankMathSEO = await staticContent.fetchProductRankMathSEO(`${category}/${slug}`);
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data:', error);
     }
@@ -701,72 +705,25 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           )}
                           </div>
 
-                      {/* Quantity and Actions */}
+                      {/* Actions — enquiry-only business (owner-approved):
+                          Add to Cart replaced by a direct Call button; the quantity
+                          stepper only served the cart and was removed with it. */}
                       <div className="space-y-3 pt-3 border-t border-slate-200">
-                        {/* Quantity Selector */}
-                        <div className="space-y-2">
-                          <h3 className="text-base font-semibold text-foreground">Quantity</h3>
-                          <div className="flex items-center space-x-3">
-                            <div className="flex items-center border border-slate-300 rounded-lg overflow-hidden bg-white">
-                              <Button 
-                                variant="ghost"
-                                size="icon"
-                                className="h-8 w-8 hover:bg-slate-100 rounded-none"
-                                onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                              >
-                                <Minus className="h-3 w-3" />
-                              </Button>
-                              <span className="px-4 py-1 border-x border-slate-300 font-medium text-foreground min-w-[50px] text-center text-sm">{quantity}</span>
-                              <Button 
-                                variant="ghost"
-                                size="icon"
-                                className="h-8 w-8 hover:bg-slate-100 rounded-none"
-                                onClick={() => setQuantity(prev => prev + 1)}
-                              >
-                                <Plus className="h-3 w-3" />
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-
                         {/* Enhanced Action Buttons */}
                         <div className="flex flex-col sm:flex-row gap-3">
-                          <Button 
-                            size="lg" 
-                            className={`flex-1 w-full sm:w-auto py-3 px-4 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] ${
-                              isProductInCart 
-                                ? 'bg-green-600 hover:bg-green-700 text-white' 
-                                : 'bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white'
-                            }`}
-                            onClick={() => {
-                              if (!isProductInCart && transformedProduct) {
-                                addItem({
-                                  id: product.id,
-                                  name: product.name,
-                                  price: parseFloat(product.price || '0'),
-                                  image: product.images?.[0]?.src || '/placeholder.svg',
-                                  category: product.categories?.[0]?.name || 'Uncategorized',
-                                  slug: product.slug,
-                                });
-                              }
-                            }}
-                            disabled={isProductInCart}
+                          <Button
+                            size="lg"
+                            className="flex-1 w-full sm:w-auto py-3 px-4 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
+                            asChild
                           >
-                            {isProductInCart ? (
-                              <>
-                                <Check className="w-4 h-4 mr-2" />
-                                Added to Cart
-                              </>
-                            ) : (
-                              <>
-                                <ShoppingCart className="w-4 h-4 mr-2" />
-                                Add to Cart
-                              </>
-                            )}
+                            <a href="tel:+916200909435">
+                              <Phone className="w-4 h-4 mr-2" />
+                              Call
+                            </a>
                           </Button>
-                          <Button 
-                            variant="outline" 
-                            size="lg" 
+                          <Button
+                            variant="outline"
+                            size="lg"
                             className="flex-1 w-full sm:w-auto py-3 px-4 text-sm font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-200 transform hover:scale-[1.02]"
                             onClick={() => setIsQuoteFormOpen(true)}
                           >

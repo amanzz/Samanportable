@@ -24,7 +24,7 @@ import {
 import dynamic from 'next/dynamic';
 
 
-import { fetchBlogPost, BlogPost, fetchBlogPostRankMathSEO, RankMathSEOData } from '../config/api';
+import type { BlogPost, RankMathSEOData } from '../config/api';
 import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 
@@ -77,8 +77,11 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       };
     }
 
-    const post = await fetchBlogPost(slug);
-    
+    // Static content layer: reads the exported post file — no WordPress call.
+    // Server-only module, loaded dynamically so fs never reaches the client bundle.
+    const staticContent = await import('../lib/staticContent');
+    const post = await staticContent.fetchBlogPost(slug);
+
     if (!post) {
       return {
         notFound: true,
@@ -123,7 +126,7 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
     // Fetch Rank Math SEO data with fallback
     let rankMathSEO: RankMathSEOData | null = null;
     try {
-      rankMathSEO = await fetchBlogPostRankMathSEO(slug);
+      rankMathSEO = await staticContent.fetchBlogPostRankMathSEO(slug);
       
       // If RankMath data is empty or incomplete, create fallback SEO data
       if (!rankMathSEO || Object.keys(rankMathSEO).length === 0) {

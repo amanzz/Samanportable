@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { fetchProducts } from '@/config/api';
+import { fetchProducts } from '@/lib/staticContent';
 
 // Google Merchant Center Product Feed API
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

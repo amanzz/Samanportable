@@ -8,13 +8,8 @@ import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { Search, Filter, Grid3X3, List, Star, ShoppingCart, Eye, Loader2 } from 'lucide-react';
-import {
-  fetchProducts,
-  fetchProductsByCategoryPriority,
-  fetchProductCategories,
-  fetchProductAttributes,
-  fetchRankMathSEO,
+import { Search, Filter, Grid3X3, List, Star, ShoppingCart, Eye, Loader2, Phone } from 'lucide-react';
+import type {
   ProductFilters as ProductFiltersType,
   PaginationInfo,
   RankMathSEOData
@@ -101,10 +96,12 @@ export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ qu
 
     // Fetch products and supporting data in parallel - limit data for better performance
     // Use the new category priority function to get products in the correct order
+    // Static content layer: reads exported files — no WordPress call.
+    const staticContent = await import('@/lib/staticContent');
     const [productsResponse, cats, attrs] = await Promise.all([
-      fetchProductsByCategoryPriority(page, 8, filters), // Use new priority-based function
-      fetchProductCategories().then(c => c?.slice(0, 8) || []), // Reduced from 10 to 8
-      fetchProductAttributes().then(a => a?.slice(0, 3) || [])   // Reduced from 5 to 3
+      staticContent.fetchProductsByCategoryPriority(page, 8, filters), // Use new priority-based function
+      staticContent.fetchProductCategories().then(c => c?.slice(0, 8) || []), // Reduced from 10 to 8
+      staticContent.fetchProductAttributes().then(a => a?.slice(0, 3) || [])   // Reduced from 5 to 3
     ]);
 
     console.log('getServerSideProps: Products response:', {
@@ -155,7 +152,7 @@ export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ qu
     // Fetch Rank Math SEO data for main products page
     let rankMathSEO: RankMathSEOData | null = null;
     try {
-      rankMathSEO = await fetchRankMathSEO('https://www.samanportable.com/product');
+      rankMathSEO = await staticContent.fetchRankMathSEO('https://www.samanportable.com/product');
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data for products page:', error);
     }
@@ -594,13 +591,16 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                                 View Details
                               </Button>
                             </Link>
-                            <Button 
-                              size="sm" 
+                            {/* Cart removed (enquiry-only business): direct Call button instead */}
+                            <Button
+                              size="sm"
                               className="flex-1"
-                              onClick={() => handleAddToCart(product)}
+                              asChild
                             >
-                              <ShoppingCart className="w-4 h-4 mr-2" />
-                              Add to Cart
+                              <a href="tel:+916200909435">
+                                <Phone className="w-4 h-4 mr-2" />
+                                Call
+                              </a>
                             </Button>
                           </div>
                         </div>

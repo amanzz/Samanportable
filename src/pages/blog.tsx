@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Search, Calendar, User, Tag, ArrowRight, Clock } from 'lucide-react';
-import { fetchBlogPosts } from '@/config/api';
 import { pageSEO, siteConfig } from '@/config/seo';
 import BlogImage from '@/components/BlogImage';
 import { decodeHtmlEntities } from '@/lib/utils';
@@ -44,7 +43,9 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     
     console.log('Blog getServerSideProps: Starting to fetch blog posts...');
     
-    // Fetch blog posts with pagination - reduced to 10 posts per page for better performance
+    // Fetch blog posts with pagination - reduced to 10 posts per page for better performance.
+    // Static content layer: reads exported post files — no WordPress call.
+    const { fetchBlogPosts } = await import('@/lib/staticContent');
     const result = await fetchBlogPosts(page, 10);
     
     console.log('Blog getServerSideProps: Result:', {

@@ -622,13 +622,23 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
     }
 
     const data = await response.json();
-    
+
     if (!data.success || !data.head) {
       return null;
     }
 
-    // Parse HTML head content to extract meta tags
-    const headHtml = data.head;
+    return parseRankMathHeadHtml(data.head);
+  } catch (error) {
+    return null;
+  }
+}
+
+// Pure parser for a RankMath getHead `head` HTML string → RankMathSEOData.
+// Extracted from fetchRankMathSEO so the static-content layer (which reads the
+// same head HTML from exported files instead of the live API) produces
+// byte-identical SEO data. No network, no side effects.
+export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
+  {
     const seoData: RankMathSEOData = {};
     
     // Extract title
@@ -715,8 +725,6 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
     }
 
     return seoData;
-  } catch (error) {
-    return null;
   }
 }
 

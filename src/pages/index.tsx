@@ -115,15 +115,8 @@ interface HomePageProps {
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   try {
-    // Import API functions dynamically to reduce initial bundle
-    const { fetchBlogPosts, fetchProductsByCategoryPriority, testWordPressAccessibility, testWordPressAccessibility: testConnect } = await import('@/config/api');
-
-    // Test connection (silently fail if not working to avoid crashing page)
-    try {
-      await testConnect();
-    } catch (e) {
-      // ignore
-    }
+    // Static content layer: reads exported files — no WordPress call at build time.
+    const { fetchBlogPosts, fetchProductsByCategoryPriority } = await import('@/lib/staticContent');
 
     // Fetch featured products (15 items for slider) from specific categories
     // "Portable Cabin", "Container Offices", "Porta Cabins", "Labor Colony", "Portable Office", "Container Cafe"
