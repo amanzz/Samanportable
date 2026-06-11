@@ -5,6 +5,10 @@ export default function Document() {
   return (
     <Html lang="en" className={inter.variable}>
       <Head>
+        {/* STAGING GOOGLE-BLOCK (migration-staging branch ONLY — must NEVER reach
+            main/migration-batch1). Second layer behind middleware X-Robots-Tag. */}
+        <meta name="robots" content="noindex, nofollow" />
+
         {/* Google Tag Manager moved to next/script (afterInteractive) in _app.tsx so it
             no longer blocks first paint. GA4 + all GTM lead events are preserved. */}
 
