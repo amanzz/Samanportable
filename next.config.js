@@ -140,7 +140,8 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     // Optimize loading performance - ENHANCED
-    loader: 'default',
+    loader: 'custom',
+    loaderFile: './image-loader.js',
     // STAGING ONLY: when the env-gated Google block is on (goldfish), serve images
     // unoptimized. The optimizer fetches LOCAL public/ images via an internal HTTP
     // self-request that carries no credentials, so the 401 wall breaks it (blank
