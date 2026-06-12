@@ -107,15 +107,6 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
 };
 
 const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: BlogProps) => {
-  // Debug logging
-  console.log('Blog component rendered with:', { posts, totalPages, currentPage, totalPosts, categories, tags });
-  
-  // Debug embedded data structure
-  if (posts && posts.length > 0) {
-    console.log('First post _embedded data:', posts[0]._embedded);
-    console.log('First post featured_media:', posts[0].featured_media);
-  }
-  
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
