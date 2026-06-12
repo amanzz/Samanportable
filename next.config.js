@@ -154,6 +154,28 @@ const nextConfig = {
   // Force HTTPS and WWW redirects
   async redirects() {
     const redirects = [
+      // F3 resolution (owner-approved 2026-06-12): the plural category URL was a
+      // phantom (no WordPress term behind it — soft-404 on live, fallback page on
+      // the static build). 301 it to the real, canonical singular category.
+      {
+        source: '/product-category/portable-toilets',
+        destination: '/product-category/portable-toilet',
+        permanent: true,
+      },
+      // Cart/checkout retirement (owner-approved 2026-06-12): enquiry-only
+      // business — the cart path was removed in Phase 2; these dead-end pages
+      // now 301 home. Page files remain but are unreachable (redirects run
+      // before the filesystem).
+      {
+        source: '/cart',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/checkout',
+        destination: '/',
+        permanent: true,
+      },
       // Duplicate URL redirects for SEO - Container Cafes
       {
         source: '/container-cafes-in-central-delhi-2',
