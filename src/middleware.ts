@@ -61,5 +61,13 @@ export function middleware(request: NextRequest) {
   });
 }
 
-// No matcher: gate EVERY path (pages, /api/*, robots.txt, sitemap.xml, assets)
-// when the block is on. When off, the function returns immediately.
+// Matcher: gate everything INCLUDING Next's internal /_next/image (optimizer) and
+// /_next/data (page-props JSON), which the default matcher silently exempts —
+// found unauthenticated on staging during Phase 6. Only /_next/static is left
+// open: hashed JS/CSS/font chunks, meaningless without the 401-blocked pages,
+// and fonts are fetched with crossorigin=anonymous (no credentials), so gating
+// them would break rendering for authenticated reviewers. When the block is
+// off, the function no-ops on every matched path — production unaffected.
+export const config = {
+  matcher: ['/((?!_next/static).*)'],
+};

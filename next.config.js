@@ -141,7 +141,13 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     // Optimize loading performance - ENHANCED
     loader: 'default',
-    unoptimized: false // Enable Next.js image optimization
+    // STAGING ONLY: when the env-gated Google block is on (goldfish), serve images
+    // unoptimized. The optimizer fetches LOCAL public/ images via an internal HTTP
+    // self-request that carries no credentials, so the 401 wall breaks it (blank
+    // images). Unoptimized <img> tags are fetched by the BROWSER, which sends the
+    // staging credentials — images render and the wall stays fully intact.
+    // Production (env unset) => false => image optimization enabled, identical to before.
+    unoptimized: process.env.STAGING_GOOGLE_BLOCK === '1'
 
   },
 
