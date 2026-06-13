@@ -69,13 +69,17 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <div className={inter.className}>
-      {/* Google Tag Manager — deferred to afterInteractive so it never blocks first paint.
-          Preserves GA4 + all GTM-managed lead events (form submit, WhatsApp, phone, RFQ). */}
+      {/* Google Tag Manager — loaded on FIRST user interaction (pointerdown/click/touchstart/
+          keydown/scroll) OR a 2s fallback timeout, whichever comes first. Keeps GTM off the
+          critical paint path while still loading well before realistic lead actions. Same
+          container GTM-WCT5SSR; GA4 inside GTM unchanged. dataLayer + gtm.start are set
+          immediately so any early lead event (form/phone/WhatsApp via analytics.ts) queues and
+          is processed once GTM loads. Guarded to load exactly once. */}
       <Script
         id="gtm-base"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WCT5SSR');`,
+          __html: `(function(w,d){w.dataLayer=w.dataLayer||[];w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var loaded=false;var evts=['pointerdown','click','touchstart','keydown','scroll'];function load(){if(loaded)return;loaded=true;for(var k=0;k<evts.length;k++){w.removeEventListener(evts[k],load);}clearTimeout(t);var s=d.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-WCT5SSR';var f=d.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);}for(var k=0;k<evts.length;k++){w.addEventListener(evts[k],load,{once:true,passive:true});}var t=setTimeout(load,2000);})(window,document);`,
         }}
       />
       <MobileLCPOptimizer />
