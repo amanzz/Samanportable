@@ -194,8 +194,9 @@ const Footer = () => {
             <ul className="space-y-1.5">
               {PRODUCT_CATEGORIES.map((category) => (
                 <li key={category.href}>
-                  <Link 
-                    href={category.href} 
+                  <Link
+                    href={category.href}
+                    prefetch={false}
                     className="text-zinc-300 hover:text-primary transition-colors duration-300 text-sm font-medium whitespace-nowrap block py-0.5"
                   >
                     {category.label}

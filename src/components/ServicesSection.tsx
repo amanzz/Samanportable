@@ -162,7 +162,7 @@ const ServicesSection = () => {
                 </div>
 
                 {/* CTA */}
-                <Link href={service.href} className="mt-auto relative z-10">
+                <Link href={service.href} prefetch={false} className="mt-auto relative z-10">
                   <Button
                     variant="outline"
                     className="w-full border-2 border-[#0A3D2A]/10 text-[#0A3D2A] font-bold hover:bg-[#0A3D2A] hover:border-[#0A3D2A] hover:text-white transition-all duration-300 h-14 rounded-2xl group/btn text-base"

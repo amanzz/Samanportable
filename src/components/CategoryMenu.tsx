@@ -123,6 +123,7 @@ const CategoryMenu = () => {
             <Link
               key={category.slug}
               href={category.href}
+              prefetch={false}
               className="text-white hover:text-gray-300 font-medium transition-colors whitespace-nowrap text-sm"
             >
               {category.name}
