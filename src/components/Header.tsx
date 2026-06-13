@@ -145,7 +145,7 @@ const Header = () => {
                   
                   {item.name === 'Rental Services' && (
                     <DropdownMenu>
-                      <DropdownMenuTrigger className="p-1 hover:text-primary transition-colors focus:outline-none">
+                      <DropdownMenuTrigger aria-label="Open Rental Services menu" className="p-1 hover:text-primary transition-colors focus:outline-none">
                         <ChevronDown className="w-4 h-4 transition-transform data-[state=open]:rotate-180" />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="w-80 bg-white text-gray-900 shadow-lg rounded-md mt-2 z-50 p-2 border border-gray-100">
@@ -183,7 +183,7 @@ const Header = () => {
 
                   {item.name === 'Products' && (
                     <DropdownMenu>
-                      <DropdownMenuTrigger className="p-1 hover:text-primary transition-colors focus:outline-none">
+                      <DropdownMenuTrigger aria-label="Open Products menu" className="p-1 hover:text-primary transition-colors focus:outline-none">
                         <ChevronDown className="w-4 h-4 transition-transform data-[state=open]:rotate-180" />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="w-[640px] bg-white text-gray-900 shadow-lg rounded-md mt-2 z-50 p-4 border border-gray-100">

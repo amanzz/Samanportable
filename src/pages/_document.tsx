@@ -37,7 +37,7 @@ export default function Document() {
         
         {/* Security and Performance Meta Tags */}
         <meta name="referrer" content="strict-origin-when-cross-origin" />
-        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
+        {/* X-Frame-Options is sent as an HTTP response header from next.config.js (the only valid place); the duplicate <meta> here was invalid and logged a console warning. */}
         <meta name="msapplication-TileColor" content="#0A3D2A" />
         {/* Robots meta tags are handled by individual SEO components */}
         

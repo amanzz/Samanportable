@@ -156,7 +156,7 @@ const ClientsSection = () => {
 
         {/* ── Infinite Auto-Scrolling Logo Marquee ── */}
         <div className="mb-10">
-          <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+          <p className="text-center text-xs font-bold text-gray-600 uppercase tracking-widest mb-6">
             Companies We&apos;ve Served
           </p>
 
@@ -257,6 +257,7 @@ const ClientsSection = () => {
           {/* Slider Navigation Buttons */}
           <button
             onClick={scrollPrev}
+            aria-label="Previous clients"
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-6 w-10 h-10 rounded-full bg-white border border-gray-100 shadow-lg flex items-center justify-center text-gray-600 hover:text-[#0A3D2A] hover:border-[#0A3D2A] transition-all z-10 opacity-0 group-hover:opacity-100 disabled:opacity-0"
             disabled={!prevBtnEnabled}
           >
@@ -264,6 +265,7 @@ const ClientsSection = () => {
           </button>
           <button
             onClick={scrollNext}
+            aria-label="Next clients"
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-6 w-10 h-10 rounded-full bg-white border border-gray-100 shadow-lg flex items-center justify-center text-gray-600 hover:text-[#0A3D2A] hover:border-[#0A3D2A] transition-all z-10 opacity-0 group-hover:opacity-100 disabled:opacity-0"
             disabled={!nextBtnEnabled}
           >
@@ -276,12 +278,16 @@ const ClientsSection = () => {
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
-                className={cn(
-                  "w-2 h-2 rounded-full transition-all duration-300",
-                  index === selectedIndex ? "w-8 bg-[#0A3D2A]" : "bg-gray-300 hover:bg-gray-400"
-                )}
+                className="flex items-center justify-center p-2 -m-1 group/dot"
                 aria-label={`Go to slide ${index + 1}`}
-              />
+              >
+                <span
+                  className={cn(
+                    "h-2 rounded-full transition-all duration-300 block",
+                    index === selectedIndex ? "w-8 bg-[#0A3D2A]" : "w-2 bg-gray-300 group-hover/dot:bg-gray-400"
+                  )}
+                />
+              </button>
             ))}
           </div>
         </div>

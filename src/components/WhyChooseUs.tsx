@@ -172,9 +172,9 @@ const WhyChooseUs = () => {
                         <span className="text-2xl font-black text-[#0A3D2A]/10 tabular-nums">
                           {step.step}
                         </span>
-                        <h4 className="text-lg font-bold text-gray-900 group-hover:text-[#0A3D2A] transition-colors">
+                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#0A3D2A] transition-colors">
                           {step.title}
-                        </h4>
+                        </h3>
                       </div>
                       <p className="text-sm text-gray-600 leading-relaxed font-light">
                         {step.description}

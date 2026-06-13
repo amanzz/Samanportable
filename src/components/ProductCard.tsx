@@ -203,7 +203,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 }`}>
                   {formatPrice(currentPrice)}
                 </span>
-                <span className={`text-gray-400 line-through font-medium ${
+                <span className={`text-gray-500 line-through font-medium ${
                   variant === 'compact' ? 'text-xs' : 'text-sm'
                 }`}>
                   {formatPrice(originalPrice)}
