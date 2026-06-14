@@ -282,6 +282,18 @@ const PrefabSolutionsPage = () => {
         <meta name="twitter:description" content="India&apos;s leading prefab solutions provider. Container offices, porta cabins, labor colonies & more. 50% faster construction with free quote." />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="canonical" href="https://www.samanportable.com/prefab-solutions" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            '@id': 'https://www.samanportable.com/prefab-solutions#breadcrumb',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.samanportable.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Prefab Solutions', item: 'https://www.samanportable.com/prefab-solutions' },
+            ],
+          }) }}
+        />
         <style dangerouslySetInnerHTML={{
           __html: `
             html, body {

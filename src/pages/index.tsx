@@ -195,7 +195,17 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
         keywords={pageSEO.home.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
-        structuredData={generateOrganizationSchema()}
+        structuredData={[
+          generateOrganizationSchema(),
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            '@id': 'https://www.samanportable.com/#breadcrumb',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.samanportable.com/' },
+            ],
+          },
+        ]}
       />
 
       <main>

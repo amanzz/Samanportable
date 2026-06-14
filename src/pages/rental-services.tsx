@@ -142,6 +142,15 @@ const RentalServicesPage = () => {
         "name": service.title,
         "url": `https://www.samanportable.com${service.link}`
       }))
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/rental-services#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Rental Services", "item": "https://www.samanportable.com/rental-services" }
+      ]
     }
   ];
 
