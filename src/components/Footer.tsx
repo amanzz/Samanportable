@@ -38,6 +38,11 @@ const MONEY_STRIP_LINKS = [
   { label: "Portable Toilet Cabin", href: "/product/portable-toilet/portable-toilet-cabin" },
   { label: "Prefabricated Security Cabin", href: "/product/security-cabins/prefabricated-security-cabin" },
   { label: "Readymade Security Cabin", href: "/product/security-cabins/readymade-security-cabin" },
+  { label: "Container Offices in HSR Layout", href: "/container-offices-for-sale-in-hsr-layout" },
+  { label: "Portable Cabins in Marathahalli", href: "/portable-cabins-in-marathahalli" },
+  { label: "Portable Cabins in Rajajinagar", href: "/portable-cabins-in-rajajinagar" },
+  { label: "Portable Office Cabins in Noida", href: "/portable-office-cabins-in-noida" },
+  { label: "Temporary Shed Solutions", href: "/temporary-shed" },
 ];
 
 const PRODUCT_CATEGORIES = [
