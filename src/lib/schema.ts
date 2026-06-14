@@ -582,6 +582,27 @@ const CITY_SERVICE_CLUSTERS: CityServiceCluster[] = [
     namePrefix: 'Container Houses in',
     serviceType: 'Container House Manufacturer',
   },
+  // Additional clear local-service clusters (owner-approved beyond initial list).
+  {
+    prefix: /^(?:industrial-sheds-in-|industrial-shed-in-)(.+)$/i,
+    namePrefix: 'Industrial Sheds in',
+    serviceType: 'Industrial Shed Manufacturer',
+  },
+  {
+    prefix: /^(?:prefabricated-houses-in-|prefab-houses-in-)(.+)$/i,
+    namePrefix: 'Prefabricated Houses in',
+    serviceType: 'Prefabricated House Manufacturer',
+  },
+  {
+    prefix: /^(?:portable-office-cabin-manufacturers-in-|portable-office-cabins-manufacturers-in-)(.+)$/i,
+    namePrefix: 'Portable Office Cabins in',
+    serviceType: 'Portable Office Cabin Manufacturer',
+  },
+  {
+    prefix: /^(?:prefabricated-warehouse-manufacturer-in-|prefabricated-warehouses-in-)(.+)$/i,
+    namePrefix: 'Prefabricated Warehouses in',
+    serviceType: 'Prefabricated Warehouse Manufacturer',
+  },
   // National (no city) — exact temporary-shed landing slug only. Informational
   // guide slugs (e.g. temporary-sheds-guide-*) intentionally do NOT match.
   {
