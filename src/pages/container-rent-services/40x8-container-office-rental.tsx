@@ -96,6 +96,10 @@ const ContainerOffice40x8Rental = () => {
             ]
           }) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "Service", "@id": "https://www.samanportable.com/container-rent-services/40x8-container-office-rental#service", "name": "40x8 Container Office Rental", "serviceType": "Container Office Rental", "description": "Flexible rental of a 40x8 container office in Bangalore and Delhi NCR, with delivery, professional installation, maintenance support and transparent, refundable-deposit terms.", "provider": {"@id": "https://www.samanportable.com/#organization"}, "areaServed": [{"@type": "Place", "name": "Bengaluru"}, {"@type": "Place", "name": "Delhi NCR"}], "url": "https://www.samanportable.com/container-rent-services/40x8-container-office-rental"}) }}
+        />
       </Head>
       <div className="min-h-screen bg-background">
         <main>

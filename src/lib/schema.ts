@@ -147,6 +147,23 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url:
   };
 };
 
+/**
+ * Generic WebPage node for static pages (gallery, policy pages) that otherwise
+ * carry no meaningful schema. Links to the site Organization/WebSite by @id —
+ * no duplicate Organization node. Safe, additive: no Product/Service/Review.
+ */
+export const generateWebPageSchema = (params: { url: string; name: string; description?: string }) => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${params.url}#webpage`,
+  url: params.url,
+  name: params.name,
+  ...(params.description ? { description: params.description } : {}),
+  isPartOf: { '@id': 'https://www.samanportable.com/#website' },
+  publisher: { '@id': 'https://www.samanportable.com/#organization' },
+  inLanguage: 'en-IN',
+});
+
 export const getLocalBusinessSchemaBengaluru = () => ({
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
@@ -481,6 +498,10 @@ interface CityServiceCluster {
   prefix: RegExp;
   namePrefix: string;
   serviceType: string;
+  // National (no city in slug) clusters: areaServed defaults to `areaName` (e.g. India)
+  // instead of a captured locality. Used for product-service pages without a location.
+  national?: boolean;
+  areaName?: string;
   // Optional cluster-level enrichments emitted on the Service node for every city
   // page in that cluster. Safe schema.org/Service fields only — never Product/Review/Rating.
   termsOfService?: string;
@@ -507,6 +528,89 @@ const CITY_SERVICE_CLUSTERS: CityServiceCluster[] = [
       'Full kitchen-ready container cafe',
       'Multi-unit / event container cafe',
     ],
+  },
+  // ── Extended local/service clusters (schema-gaps fix) ───────────────────
+  // Order is significant: more-specific prefixes precede their shorter variants
+  // so the right serviceType wins. All emit a lean Service node (no price/review).
+  {
+    prefix: /^(?:portable-office-cabins-in-)(.+)$/i,
+    namePrefix: 'Portable Office Cabins in',
+    serviceType: 'Portable Office Cabin Supplier',
+  },
+  {
+    prefix: /^(?:portable-cabins-in-)(.+)$/i,
+    namePrefix: 'Portable Cabins in',
+    serviceType: 'Portable Cabin Supplier',
+  },
+  {
+    prefix: /^(?:container-offices-for-sale-in-)(.+)$/i,
+    namePrefix: 'Container Offices for Sale in',
+    serviceType: 'Container Office for Sale',
+  },
+  {
+    prefix: /^(?:container-offices-in-)(.+)$/i,
+    namePrefix: 'Container Offices in',
+    serviceType: 'Container Office Supplier',
+  },
+  {
+    prefix: /^(?:labour-colonies-in-|labor-colonies-in-)(.+)$/i,
+    namePrefix: 'Labour Colonies in',
+    serviceType: 'Labour Colony Manufacturer',
+  },
+  {
+    prefix: /^(?:portable-toilets-in-)(.+)$/i,
+    namePrefix: 'Portable Toilets in',
+    serviceType: 'Portable Toilet Cabin Supplier',
+  },
+  {
+    prefix: /^(?:pre-engineered-buildings-in-|peb-structures-in-|peb-buildings-in-)(.+)$/i,
+    namePrefix: 'Pre-Engineered Buildings in',
+    serviceType: 'PEB Structure Manufacturer',
+  },
+  {
+    prefix: /^(?:prefab-buildings-in-)(.+)$/i,
+    namePrefix: 'Prefab Buildings in',
+    serviceType: 'Prefab Building Manufacturer',
+  },
+  {
+    prefix: /^(?:prefabricated-structures-in-)(.+)$/i,
+    namePrefix: 'Prefabricated Structures in',
+    serviceType: 'Prefabricated Structure Manufacturer',
+  },
+  {
+    prefix: /^(?:container-house-in-|container-houses-in-)(.+)$/i,
+    namePrefix: 'Container Houses in',
+    serviceType: 'Container House Manufacturer',
+  },
+  // Additional clear local-service clusters (owner-approved beyond initial list).
+  {
+    prefix: /^(?:industrial-sheds-in-|industrial-shed-in-)(.+)$/i,
+    namePrefix: 'Industrial Sheds in',
+    serviceType: 'Industrial Shed Manufacturer',
+  },
+  {
+    prefix: /^(?:prefabricated-houses-in-|prefab-houses-in-)(.+)$/i,
+    namePrefix: 'Prefabricated Houses in',
+    serviceType: 'Prefabricated House Manufacturer',
+  },
+  {
+    prefix: /^(?:portable-office-cabin-manufacturers-in-|portable-office-cabins-manufacturers-in-)(.+)$/i,
+    namePrefix: 'Portable Office Cabins in',
+    serviceType: 'Portable Office Cabin Manufacturer',
+  },
+  {
+    prefix: /^(?:prefabricated-warehouse-manufacturer-in-|prefabricated-warehouses-in-)(.+)$/i,
+    namePrefix: 'Prefabricated Warehouses in',
+    serviceType: 'Prefabricated Warehouse Manufacturer',
+  },
+  // National (no city) — exact temporary-shed landing slug only. Informational
+  // guide slugs (e.g. temporary-sheds-guide-*) intentionally do NOT match.
+  {
+    prefix: /^temporary-sheds?$/i,
+    namePrefix: 'Temporary Shed Supply',
+    serviceType: 'Temporary Shed Supplier',
+    national: true,
+    areaName: 'India',
   },
 ];
 
@@ -535,8 +639,14 @@ const matchCityServiceCluster = (slug: string): { area: string; cluster: CitySer
   for (const cluster of CITY_SERVICE_CLUSTERS) {
     const m = (slug || '').match(cluster.prefix);
     if (!m) continue;
-    if (NON_LOCATION_AREAS.has(m[1].toLowerCase())) return null;
-    const area = m[1]
+    // National (no-location) cluster: fixed areaServed, no locality to parse.
+    if (cluster.national) {
+      return { area: cluster.areaName || 'India', cluster };
+    }
+    const captured = m[1];
+    if (!captured) continue;
+    if (NON_LOCATION_AREAS.has(captured.toLowerCase())) return null;
+    const area = captured
       .split('-')
       .filter(Boolean)
       .map(w => AREA_ACRONYMS[w.toLowerCase()] || (w.charAt(0).toUpperCase() + w.slice(1)))

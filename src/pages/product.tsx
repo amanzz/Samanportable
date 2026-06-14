@@ -382,6 +382,15 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
         "name": product.name,
         "url": `https://www.samanportable.com/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`
       }))
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/product#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.samanportable.com/product" }
+      ]
     }
   ];
 

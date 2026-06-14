@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { pageSEO, siteConfig } from '@/config/seo';
+import { generateWebPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import Link from 'next/link';
 import { ArrowLeft, Truck, Clock, MapPin, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,6 +18,17 @@ const DeliveryPolicy = () => {
         keywords={pageSEO.deliveryPolicy.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
+        structuredData={[
+          generateWebPageSchema({
+            url: 'https://www.samanportable.com/delivery-policy',
+            name: pageSEO.deliveryPolicy.title,
+            description: pageSEO.deliveryPolicy.description,
+          }),
+          generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.samanportable.com/' },
+            { name: 'Delivery Policy', url: 'https://www.samanportable.com/delivery-policy' },
+          ]),
+        ]}
       />
 
       {/* remove duplicate Head tags if any; keep content intact */}

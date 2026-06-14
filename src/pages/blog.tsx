@@ -147,6 +147,15 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
         "name": decodeHtmlEntities(post.title?.rendered || ''),
         "url": `https://www.samanportable.com/${post.slug}`
       }))
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://www.samanportable.com/blog#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.samanportable.com/blog" }
+      ]
     }
   ];
 
