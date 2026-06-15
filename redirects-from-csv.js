@@ -1,10 +1,10 @@
 /**
  * redirects-from-csv.js
  * AUTO-GENERATED – do not edit by hand.
- * Generated: 2026-05-20T17:35:11.412Z
+ * Generated: 2026-06-15T14:34:11.124Z
  * Source: Untitled spreadsheet - Sheet1 (1).csv
  *
- * Stats: 572 redirects added | 7 MERGE skipped
+ * Stats: 575 redirects added | 7 MERGE skipped
  *        2 conflict skipped | 0 duplicate skipped
  *        0 invalid/empty skipped
  */
@@ -583,6 +583,9 @@ const csvRedirects = [
   { source: '/security-cabins-for-sale', destination: '/product-category/security-cabins', permanent: true },
   { source: '/top-portable-security-cabin-solutions-guide', destination: '/product-category/security-cabins', permanent: true },
   { source: '/top-security-cabins-solutions', destination: '/product-category/security-cabins', permanent: true },
+  { source: '/7-advantages-of-using-a-portable-cabin-on-your-worksite', destination: '/product-category/porta-cabins', permanent: true },
+  { source: '/prefabrication-structures', destination: '/product-category/prefab-buildings', permanent: true },
+  { source: '/portable-cabin-manufacturer', destination: '/product/portable-cabin', permanent: true },
 ];
 
 module.exports = csvRedirects;
