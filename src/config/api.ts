@@ -714,10 +714,28 @@ export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
           const t = node?.['@type'];
           return t === 'FAQPage' || (Array.isArray(t) && t.includes('FAQPage'));
         });
-        if (faqNode && Array.isArray(faqNode.mainEntity) && faqNode.mainEntity.length > 0) {
-          // Emit as a standalone, valid FAQPage document.
-          seoData.faqSchema = { '@context': 'https://schema.org', ...faqNode };
-          break;
+        if (faqNode && Array.isArray(faqNode.mainEntity)) {
+          // Some RankMath exports leave an empty trailing FAQ slot in the block,
+          // which serializes as a Question node with no `name` / `acceptedAnswer`.
+          // Emitting it verbatim produces invalid FAQ structured data (Google /
+          // Semrush flag the missing required fields), so keep ONLY well-formed
+          // Question nodes whose name and answer text are both present. This keeps
+          // the schema matching the FAQ actually rendered on the page.
+          const isValidQuestion = (q: any): boolean => {
+            const t = q?.['@type'];
+            const isQuestion = t === 'Question' || (Array.isArray(t) && t.includes('Question'));
+            const name = typeof q?.name === 'string' ? q.name.trim() : '';
+            const answerText = typeof q?.acceptedAnswer?.text === 'string'
+              ? q.acceptedAnswer.text.trim()
+              : '';
+            return isQuestion && name.length > 0 && answerText.length > 0;
+          };
+          const validQuestions = faqNode.mainEntity.filter(isValidQuestion);
+          if (validQuestions.length > 0) {
+            // Emit as a standalone, valid FAQPage document.
+            seoData.faqSchema = { '@context': 'https://schema.org', ...faqNode, mainEntity: validQuestions };
+            break;
+          }
         }
       }
     } catch {

@@ -122,6 +122,13 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
     return stripped.substring(0, maxLength) + '...';
   };
 
+  // Out-of-range pagination pages (e.g. ?page=25+ when only ~24 pages of posts
+  // exist) return zero posts. In that case we must NOT emit the ItemList — an
+  // ItemList with an empty `itemListElement` is invalid structured data (Google /
+  // Semrush flag the required field as missing). We suppress the ItemList node and
+  // its CollectionPage `mainEntity` reference whenever the page has no posts.
+  const hasPosts = posts.length > 0;
+
   const blogHubStructuredData = [
     {
       "@context": "https://schema.org",
@@ -132,9 +139,9 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
       "description": "Stay updated with the latest news, tips, and insights about portable construction at Saman Portable.",
       "isPartOf": { "@id": "https://www.samanportable.com/#website" },
       "about": { "@id": "https://www.samanportable.com/#organization" },
-      "mainEntity": { "@id": "https://www.samanportable.com/blog#itemlist" }
+      ...(hasPosts ? { "mainEntity": { "@id": "https://www.samanportable.com/blog#itemlist" } } : {})
     },
-    {
+    ...(hasPosts ? [{
       "@context": "https://schema.org",
       "@type": "ItemList",
       "@id": "https://www.samanportable.com/blog#itemlist",
@@ -147,7 +154,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
         "name": decodeHtmlEntities(post.title?.rendered || ''),
         "url": `https://www.samanportable.com/${post.slug}`
       }))
-    },
+    }] : []),
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
