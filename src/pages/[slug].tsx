@@ -97,6 +97,10 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
     //   → href="https://www.samanportable.com/[path]"
     //   Images (src=) are intentionally left unchanged — they must continue to
     //   resolve against the WordPress media library host.
+    //   EXCEPTION: media asset links under /wp-content/ (click-to-enlarge full-size
+    //   <a href="blog…/wp-content/…jpg">) are NOT rewritten — the static www site does
+    //   not host /wp-content/, so rewriting them to www would 404 (Semrush "internal
+    //   images are broken"). They must stay on the blog origin that serves the files.
     //
     // Rule 2: Strip ?utm_source=chatgpt.com ONLY from internal samanportable.com
     //   links. External URLs (grandviewresearch.com, willscot.com, etc.) are not
@@ -104,9 +108,9 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
     function normaliseContent(html: string): string {
       if (!html) return html;
 
-      // Rule 1 — subdomain href rewrite (href only, not src)
+      // Rule 1 — subdomain href rewrite (href only, not src), skipping /wp-content/ media links
       let cleaned = html.replace(
-        /(<a[^>]*\s)href="https?:\/\/blog\.samanportable\.com\/([^"]*)"/gi,
+        /(<a[^>]*\s)href="https?:\/\/blog\.samanportable\.com\/((?!wp-content\/)[^"]*)"/gi,
         '$1href="https://www.samanportable.com/$2"'
       );
 

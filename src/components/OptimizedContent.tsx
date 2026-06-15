@@ -39,9 +39,14 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       .replace(/<link[^>]*>/gi, '')
       .replace(/<meta[^>]*>/gi, '');
 
-    // Replace internal blog links
+    // Replace internal blog links from blog.samanportable.com to www.samanportable.com,
+    // EXCEPT media asset links under /wp-content/ (uploads). The static www site does not
+    // host /wp-content/, so rewriting a click-to-enlarge <a href="blog…/wp-content/…jpg">
+    // to www would 404 (Semrush "internal images are broken"). Those media links must stay
+    // on the blog origin that actually serves the files. Normal article/page links
+    // (e.g. blog…/some-post/) still rewrite to www. The negative lookahead skips wp-content.
     cleanContent = cleanContent.replace(
-      /href="https:\/\/blog\.samanportable\.com\/([^"]*)"/g,
+      /href="https:\/\/blog\.samanportable\.com\/((?!wp-content\/)[^"]*)"/g,
       'href="https://www.samanportable.com/$1"'
     );
 
