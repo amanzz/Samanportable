@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { CheckCircle, Users, Award, Clock, Shield, Truck, ArrowRight, Compass, Building2, Leaf, HeartHandshake, Target, Zap } from 'lucide-react';
 import { pageSEO, siteConfig } from '@/config/seo';
 import { getAboutPageSchema } from '@/lib/schema';
+import CertificationsSection from '@/components/CertificationsSection';
 
 interface AboutUsProps {
   companyStats: {
@@ -358,6 +359,9 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
               </div>
             </div>
           </section>
+
+          {/* Certifications, Registrations and Manufacturer Proof ★ NEW */}
+          <CertificationsSection />
 
           {/* CTA Section */}
           <section className="section-padding bg-[#0A3D2A] text-white">

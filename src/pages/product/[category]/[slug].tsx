@@ -30,6 +30,7 @@ import { generateProductMetaDescription, generateProductTabContent } from '../..
 import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
+import ManufacturerTrustStrip from '../../../components/ManufacturerTrustStrip';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
@@ -767,6 +768,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   productId={product.id}
                   productName={transformedProduct.title}
                 />
+              </div>
+
+              {/* Manufacturer Trust Strip ★ NEW (links to /about-us#certifications) */}
+              <div className="mt-4">
+                <ManufacturerTrustStrip />
               </div>
 
               {/* Related Products Section */}

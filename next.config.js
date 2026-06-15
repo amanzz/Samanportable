@@ -1333,6 +1333,27 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ──────────────────────────────────────────────────
+      // Owner-approved redirect (2026-06-15): consolidate "prefabricated-site-office"
+      // onto "prefab-site-office". The owner approved the bare form
+      // /prefabricated-site-office -> /prefab-site-office, BUT local verification
+      // proved the bare destination /prefab-site-office returns 404 (HARD RULE 3
+      // forbids redirecting to a 404). The real, live (HTTP 200) page is the nested
+      // product /product/prefabricated-houses/prefab-site-office. So the SOURCE is
+      // kept as approved and the DESTINATION is repointed to the verified 200 URL.
+      // OPEN OWNER DECISION (see CERTIFICATION_ADDRESS_AND_FACT_CONFLICTS report):
+      // the longer live product /product/prefabricated-houses/prefabricated-site-office
+      // (currently 200) is NOT redirected here — confirm whether it should also be
+      // merged into prefab-site-office before deploy.
+      // Placed BEFORE ...csvRedirects (first-match-wins). 308 permanent.
+      // Rollback = remove this block.
+      // ──────────────────────────────────────────────────
+      {
+        source: '/prefabricated-site-office',
+        destination: '/product/prefabricated-houses/prefab-site-office',
+        permanent: true,
+      },
+
       ...csvRedirects,
     ];
 

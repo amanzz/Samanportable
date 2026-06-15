@@ -21,6 +21,13 @@ const TrustBar = dynamic(() => import('@/components/TrustBar'), {
   ),
 });
 
+const CertificationTrustStrip = dynamic(() => import('@/components/CertificationTrustStrip'), {
+  ssr: true,
+  loading: () => (
+    <div className="w-full h-16 bg-[#0A3D2A] animate-pulse" />
+  ),
+});
+
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'), {
   ssr: true,
   loading: () => (
@@ -214,6 +221,9 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
 
         {/* 2. Trust Bar ★ NEW */}
         <TrustBar />
+
+        {/* 2b. Certification Trust Strip ★ NEW (links to /about-us#certifications) */}
+        <CertificationTrustStrip />
 
         {/* 3. Products Section (6 cards) */}
         <ServicesSection />
