@@ -1,0 +1,4 @@
+# Keep binary assets byte-exact across checkouts (repo has core.autocrlf=true).
+# Without this, PDFs whose first 8KB contain no NUL byte are misdetected as text
+# and get LF->CRLF converted on checkout, corrupting the file on deploy.
+*.pdf binary
