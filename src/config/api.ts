@@ -637,17 +637,40 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
 // Extracted from fetchRankMathSEO so the static-content layer (which reads the
 // same head HTML from exported files instead of the live API) produces
 // byte-identical SEO data. No network, no side effects.
+// Decode HTML entities EXACTLY ONE level (single pass — the replacer never
+// re-scans its own output). The RankMath head stores already-encoded text
+// (e.g. "&amp;"), but the SEO fields below are rendered through escaped JSX
+// (`<title>{title}</title>`, `<meta content={description}/>`), which encodes a
+// second time and ships "&amp;amp;" to Google. Decoding once here means the
+// stored "&amp;" becomes "&", and JSX then re-encodes it to a correct single
+// "&amp;". JSX always escapes, so this can never emit a raw, HTML-breaking "&".
+function decodeHtmlEntitiesOnce(s: string): string {
+  return s.replace(/&(#x[0-9a-fA-F]+|#\d+|[a-zA-Z][a-zA-Z0-9]*);/g, (m, code) => {
+    if (code[0] === '#') {
+      const n = code[1] === 'x' || code[1] === 'X'
+        ? parseInt(code.slice(2), 16)
+        : parseInt(code.slice(1), 10);
+      return Number.isFinite(n) ? String.fromCodePoint(n) : m;
+    }
+    const named: Record<string, string> = {
+      amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ',
+    };
+    const key = code.toLowerCase();
+    return Object.prototype.hasOwnProperty.call(named, key) ? named[key] : m;
+  });
+}
+
 export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
   {
     const seoData: RankMathSEOData = {};
-    
-    // Extract title
+
+    // Extract title (decode once — see decodeHtmlEntitiesOnce; render layer re-escapes)
     const titleMatch = headHtml.match(/<title[^>]*>([^<]+)<\/title>/i);
-    if (titleMatch) seoData.title = titleMatch[1];
-    
-    // Extract description
+    if (titleMatch) seoData.title = decodeHtmlEntitiesOnce(titleMatch[1]);
+
+    // Extract description (decode once — render layer re-escapes)
     const descMatch = headHtml.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i);
-    if (descMatch) seoData.description = descMatch[1];
+    if (descMatch) seoData.description = decodeHtmlEntitiesOnce(descMatch[1]);
     
     // Extract canonical. Normalize the host to the public www domain: RankMath may emit
     // the WordPress backend host (e.g. blog.samanportable.com) or a non-www variant, which
@@ -662,10 +685,10 @@ export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
     
     // Extract Open Graph tags
     const ogTitleMatch = headHtml.match(/<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i);
-    if (ogTitleMatch) seoData.og_title = ogTitleMatch[1];
-    
+    if (ogTitleMatch) seoData.og_title = decodeHtmlEntitiesOnce(ogTitleMatch[1]);
+
     const ogDescMatch = headHtml.match(/<meta\s+property=["']og:description["']\s+content=["']([^"']+)["']/i);
-    if (ogDescMatch) seoData.og_description = ogDescMatch[1];
+    if (ogDescMatch) seoData.og_description = decodeHtmlEntitiesOnce(ogDescMatch[1]);
     
     const ogImageMatch = headHtml.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
     if (ogImageMatch) seoData.og_image = ogImageMatch[1];
@@ -675,10 +698,10 @@ export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
     
     // Extract Twitter tags
     const twitterTitleMatch = headHtml.match(/<meta\s+name=["']twitter:title["']\s+content=["']([^"']+)["']/i);
-    if (twitterTitleMatch) seoData.twitter_title = twitterTitleMatch[1];
-    
+    if (twitterTitleMatch) seoData.twitter_title = decodeHtmlEntitiesOnce(twitterTitleMatch[1]);
+
     const twitterDescMatch = headHtml.match(/<meta\s+name=["']twitter:description["']\s+content=["']([^"']+)["']/i);
-    if (twitterDescMatch) seoData.twitter_description = twitterDescMatch[1];
+    if (twitterDescMatch) seoData.twitter_description = decodeHtmlEntitiesOnce(twitterDescMatch[1]);
     
     const twitterImageMatch = headHtml.match(/<meta\s+name=["']twitter:image["']\s+content=["']([^"']+)["']/i);
     if (twitterImageMatch) seoData.twitter_image = twitterImageMatch[1];

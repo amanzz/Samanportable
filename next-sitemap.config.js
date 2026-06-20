@@ -159,6 +159,10 @@ module.exports = {
     '/cart',
     '/my-orders',
     '/test-optimizations',
+    // /410 is a real route (src/pages/410.tsx) that returns HTTP 410 Gone, so
+    // next-sitemap auto-discovers it. A 410 page must never be listed in the
+    // sitemap (Google would flag a "Gone" URL). The page itself is unchanged.
+    '/410',
   ],
   generateIndexSitemap: false,
   sitemapSize: 7000,
