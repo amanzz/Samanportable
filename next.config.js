@@ -1306,6 +1306,20 @@ const nextConfig = {
         destination: '/portable-sheds-complete-guide-2024',
         permanent: true,
       },
+      // (B43, held 2026-06-21 — SEPARATE owner Manzar YES required before push):
+      // the SHORT published slug serving the SAME old movable/fabric/collapsible
+      // shed guide. B42 redirected only the long descriptive slug; this short
+      // slug stayed live 200 as a cannibal of the steel keeper. Evidence: 6M =
+      // 0 clicks / 187 impr / pos 17.52, off-brand fabric+tent+plastic body
+      // (SAMAN sells steel). Single hop → keeper is a live 200 and NOT a redirect
+      // source (no chain); short slug is NOT a destination anywhere (no loop);
+      // no internal links point to it. permanent:true → 308 (Google treats 301).
+      // Rollback = delete this block. HELD: do not push without owner YES.
+      {
+        source: '/temporary-sheds-guide-2024',
+        destination: '/portable-sheds-complete-guide-2024',
+        permanent: true,
+      },
       // (B42-1) Car-portable-garage: near-duplicate of the steel car-shed keeper
       // (pos ~31, slipping). New 301 → /portable-car-shed (keeper ranks pos 1.88
       // "readymade car parking shed"). Source dropped from sitemap automatically
