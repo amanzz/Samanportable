@@ -1451,6 +1451,98 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ──────────────────────────────────────────────────
+      // P2-B54 — Remaining classroom consolidation (2026-06-21).
+      // Both /portable-classrooms and /portable-classrooms-2 are off-brand
+      // US AI duplicates (USD prices, fabricated %, "Case Studies", "30 years"
+      // experience, used-framing, banned words) that target a generic
+      // education angle SAMAN cannot win in India. GSC: both collapsed to
+      // ZERO clicks in the last 6 months (13,662→409 and 16,733→229 impr) and
+      // share the keeper's exact topic with no unique surviving query. Live
+      // SERP: the keeper /portable-classroom-for-sale-2 ranks #4 for the
+      // buying query; neither page ranks. 301 consolidates residual signal
+      // into the keeper (not a content throwaway). Same convention already
+      // applied to modular-classroom*/portacabin-classroom* (csv:139,485).
+      // Keeper is a live 200 page and is NOT a redirect source anywhere
+      // (no chain, no loop, one hop). Placed BEFORE ...csvRedirects so
+      // first-match-wins. 308 permanent. Rollback = remove this block.
+      // ──────────────────────────────────────────────────
+      {
+        source: '/portable-classrooms',
+        destination: '/portable-classroom-for-sale-2',
+        permanent: true,
+      },
+      {
+        source: '/portable-classrooms-2',
+        destination: '/portable-classroom-for-sale-2',
+        permanent: true,
+      },
+
+      // ──────────────────────────────────────────────────
+      // P2-B55 (2026-06-21): 5 UNASSIGNED orphan blog URLs consolidated onto
+      // their cluster-correct product-category keepers. All 5 are old AI/off-
+      // brand Divi posts, NOT in Keyword Lock, NOT assigned to any cluster, with
+      // ZERO unique GSC traffic worth protecting (verified GSC 6M + 16M Pages:
+      // 3 absent entirely; small-cabin-designs = 0 clicks / 18 impr; small-
+      // portable-buildings-solutions = 0 clicks / 10 impr — both 0 clicks). No
+      // live page internally links to any of these 5 slugs (only blog tag-
+      // taxonomy references exist). Each source verified live HTTP 200 on www;
+      // each destination verified live HTTP 200 and appears ONLY as a redirect
+      // DESTINATION in the manual list + redirects-from-csv.js (never a source)
+      // -> single hop, no chain, no loop. No source is a destination anywhere
+      // -> no loop. Placed BEFORE ...csvRedirects so first-match-wins.
+      // permanent:true -> Next serves 308 (Google treats as 301). next-sitemap
+      // auto-drops redirect sources. Rollback = delete this block.
+      //
+      // (B55-1) Prefabricated office buildings: 0/0 GSC. Off-brand generic prefab-
+      // office post. -> /product-category/portable-office (the cluster where the
+      // live ranking keeper for "prefabricated office" queries lives —
+      // /product/portable-office/prefabricated-office-cabins, pos ~1.5-6).
+      // ALTERNATE documented for owner: /product-category/prefab-buildings (cf.
+      // CSV /prefab-office-spaces). Office-intent -> portable-office chosen.
+      {
+        source: '/prefabricated-office-buildings',
+        destination: '/product-category/portable-office',
+        permanent: true,
+      },
+      // (B55-2) Small cabin designs: 0 clicks / 18 impr, off-brand residential
+      // "cozy living" tiny-cabin content (SAMAN sells porta cabins). The cluster
+      // winner /small-cabin-design-tips is out of scope (untouched). -> porta-
+      // cabins category (cf. CSV /porta-cabin-design, /porta-cabin-designs-for-
+      // 2024 -> same keeper; "porta cabin design" ranks pos ~1.1).
+      {
+        source: '/small-cabin-designs',
+        destination: '/product-category/porta-cabins',
+        permanent: true,
+      },
+      // (B55-3) 6 reasons to buy a portable building (this winter): 0/0 GSC. Off-
+      // brand foreign consumer storage-shed content. -> prefab-buildings category
+      // (cf. CSV /portable-buildings, /portable-building-solutions -> same keeper).
+      {
+        source: '/6-reasons-benefits-2-buy-portable-building',
+        destination: '/product-category/prefab-buildings',
+        permanent: true,
+      },
+      // (B55-4) Small portable buildings solutions: 0 clicks / 10 impr. Duplicate
+      // SHORT slug of /small-portable-buildings-versatile-solutions-for-modern-
+      // needs which ALREADY 301s -> /product-category/prefab-buildings (CSV:535).
+      // Same title, same off-brand body. Sent to the SAME keeper for consistency.
+      {
+        source: '/small-portable-buildings-solutions',
+        destination: '/product-category/prefab-buildings',
+        permanent: true,
+      },
+      // (B55-5) Rise of prefab office & structures in 2024: 0/0 GSC. Dated-slug
+      // AI/3D-printing dupe of the 2023 post /revolutionizing-construction-the-
+      // rise-of-prefab-office-and-structures-in-2023 which ALREADY 301s ->
+      // /product-category/prefab-buildings (CSV:532). 2024 dead dupe sent to the
+      // SAME keeper for consistency (resolves the B53 redirect-vs-retire question).
+      {
+        source: '/rise-of-prefab-office-and-structures-in-2024',
+        destination: '/product-category/prefab-buildings',
+        permanent: true,
+      },
+
       ...csvRedirects,
     ];
 
