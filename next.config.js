@@ -1331,6 +1331,48 @@ const nextConfig = {
       },
 
       // ──────────────────────────────────────────────────
+      // P2-B50 (HELD 2026-06-21 — owner Manzar YES required before push):
+      // off-brand "used / preloved / recycled" office blogs consolidated onto an
+      // honest keeper. SAMAN sells NEW (CLAUDE.md brand lock), so these three
+      // off-brand pages misrepresent the brand and carry ZERO unique traffic
+      // (verified against GSC 6M + 16M Pages reports: none appear). Each source
+      // is live HTTP 200 on www; each destination is live HTTP 200 and is NOT
+      // itself a redirect source (no chain); no source is a destination anywhere
+      // (no loop). Placed BEFORE ...csvRedirects so first-match-wins. permanent:
+      // true -> Next serves 308 (Google treats as 301). Rollback = delete this
+      // block. HELD: do not push without owner YES.
+      //
+      // (B50-1) Preloved office modules: off-brand used framing, 0 GSC traffic.
+      // -> /second-hand-container-office (the kept honest "Used Container Office
+      // Buying Guide" — already the keeper for 2 other refurbished/used office-
+      // container sources at lines ~780/785).
+      {
+        source: '/competitive-prices-for-preloved-office-modules',
+        destination: '/second-hand-container-office',
+        permanent: true,
+      },
+      // (B50-2) Top-rated recycled office structures: off-brand recycled framing,
+      // 0 GSC traffic. -> same honest used keeper.
+      {
+        source: '/top-rated-recycled-office-structures',
+        destination: '/second-hand-container-office',
+        permanent: true,
+      },
+      // (B50-3) Used portacabins for sale (SHORT slug, live 200, 0 GSC traffic):
+      // a porta-cabin-cluster off-brand "used" duplicate. Its trafficked twin —
+      // the long slug /used-portacabin-for-sale-porta-cabin-office-second-hand-
+      // portacabin (225 clicks 16M, pos ~12) — ALREADY 301s to
+      // /product-category/porta-cabins (redirects-from-csv.js:158). This short
+      // slug is sent to the SAME cluster-correct keeper for consistency (porta
+      // cabin -> porta-cabin category, not the C4 container-office guide).
+      // Destination verified 200 and is NOT a redirect source.
+      {
+        source: '/used-portacabins-for-sale',
+        destination: '/product-category/porta-cabins',
+        permanent: true,
+      },
+
+      // ──────────────────────────────────────────────────
       // BATCH 2 — C7 TN re-point (owner approved 2026-06-10)
       // Inline override of 3 stale CSV rules (sources currently in
       // "Untitled spreadsheet - Sheet1 (1).csv" → /product-category/container-houses).
