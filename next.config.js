@@ -1289,9 +1289,30 @@ const nextConfig = {
         destination: '/product-category/container-houses',
         permanent: true,
       },
+      // ──────────────────────────────────────────────────
+      // P2-B42 (owner Manzar approved 2026-06-16): consolidate the 2 cannibal
+      // shed blog URLs into their B40 steel keeper pages. permanent:true → Next
+      // serves 308 (Google treats as 301). Placed BEFORE ...csvRedirects so
+      // first-match-wins. Both destinations verified live HTTP 200 and are NOT
+      // themselves redirect sources (no chain, no loop). Rollback = revert this
+      // block (and restore the movable-storage destination below).
+      //
+      // (B42-2) Movable-storage guide: this source ALREADY redirected (→
+      // /product-category/industrial-sheds). Owner approved repointing it to the
+      // steel storage-sheds keeper guide. Destination changed below — single hop.
+      // ──────────────────────────────────────────────────
       {
         source: '/temporary-sheds-your-guide-to-small-portable-and-movable-storage-solutions',
-        destination: '/product-category/industrial-sheds',
+        destination: '/portable-sheds-complete-guide-2024',
+        permanent: true,
+      },
+      // (B42-1) Car-portable-garage: near-duplicate of the steel car-shed keeper
+      // (pos ~31, slipping). New 301 → /portable-car-shed (keeper ranks pos 1.88
+      // "readymade car parking shed"). Source dropped from sitemap automatically
+      // (next-sitemap collects redirect sources). Destination is a 200 keeper.
+      {
+        source: '/car-portable-garage',
+        destination: '/portable-car-shed',
         permanent: true,
       },
 
