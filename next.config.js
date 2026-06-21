@@ -1431,6 +1431,26 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ──────────────────────────────────────────────────
+      // P2-B52 (2026-06-21): classroom consolidation. Of the 4 near-duplicate
+      // "portable classroom" pages, /portable-classroom-for-sale-2 is the KEEPER
+      // (68,920 impressions / 51 clicks over 16 months — by far the strongest;
+      // body cleaned of false US-market claims in the same task). The bare slug
+      // /portable-classroom-for-sale is a near-identical duplicate with ZERO
+      // unique traffic (not present in GSC 6M or 16M pages) and a bloated 2.2 MB
+      // body of embedded base64 images, so it is consolidated into the keeper.
+      // One hop, destination is a live 200 keeper, no chain, no loop.
+      // HELD: portable-classrooms (13,662 impr) and portable-classrooms-2
+      // (16,733 impr) carry impressions and are NOT redirected here — owner call.
+      // Placed BEFORE ...csvRedirects (first-match-wins). 308 permanent.
+      // Rollback = remove this block.
+      // ──────────────────────────────────────────────────
+      {
+        source: '/portable-classroom-for-sale',
+        destination: '/portable-classroom-for-sale-2',
+        permanent: true,
+      },
+
       ...csvRedirects,
     ];
 
