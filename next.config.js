@@ -549,8 +549,12 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // B58 (HELD 2026-06-21): repointed from /porta-cabins-in-peenya-f to the
+        // C2 keeper so this URL stays one hop after the B58 twin block redirects
+        // porta-cabins-in-peenya-f -> /portable-cabins-in-peenya. (was: /porta-
+        // cabins-in-peenya-f). Revert with the rest of B58.
         source: '/portacabins-for-sale-in-peenya',
-        destination: '/porta-cabins-in-peenya-f',
+        destination: '/portable-cabins-in-peenya',
         permanent: true,
       },
       {
@@ -733,8 +737,12 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // B58 (HELD 2026-06-21): repointed from /porta-cabins-in-frazer to the C2
+        // keeper so this URL stays one hop after the B58 twin block redirects
+        // porta-cabins-in-frazer -> /portable-cabins-in-frazer-town. (was: /porta-
+        // cabins-in-frazer). Revert with the rest of B58.
         source: '/portacabins-for-sale-in-frazer-town',
-        destination: '/porta-cabins-in-frazer',
+        destination: '/portable-cabins-in-frazer-town',
         permanent: true,
       },
       // C2 Portable Cabin (3)
@@ -1540,6 +1548,87 @@ const nextConfig = {
       {
         source: '/rise-of-prefab-office-and-structures-in-2024',
         destination: '/product-category/prefab-buildings',
+        permanent: true,
+      },
+
+      // ─── P2-B58 (HELD 2026-06-21 — owner Manzar YES required before push) ───
+      // C1/C2 duplicate-twin consolidation. For 7 Bangalore localities that have
+      // BOTH a "porta-cabin / portacabins-for-sale" (C1) page AND a systematic
+      // "portable-cabins-in-X" (C2) page, Google + IndiaMART treat "porta cabin"
+      // = "portable cabin" as one product, so the twin pages self-cannibalise.
+      // Decision (B56): keep the C2 "portable-cabins-in-X" set as the one locality
+      // template; 301 the C1 twin into its matching C2 keeper.
+      //
+      // Safety (all verified 2026-06-21 on www.samanportable.com):
+      //  • Every C1 SOURCE earns 0 GSC clicks — none of the 7 sources appears in
+      //    GSC 6M or 16M Pages at all (below reporting threshold). 0 traffic lost.
+      //  • Every C2 TARGET returns live HTTP 200 (7/7 curl-confirmed).
+      //  • No target is a redirect SOURCE anywhere -> single hop, no chain.
+      //  • No clean source is a redirect DESTINATION anywhere -> no loop.
+      //  • permanent:true -> Next serves 308 (Google treats as 301). next-sitemap
+      //    auto-drops redirect sources. Rollback = delete this block (+ revert the
+      //    two B58 chain-prevention repoints tagged "B58" above at the peenya and
+      //    frazer-town predecessor rules).
+      //
+      // CHAIN-PREVENTION NOTE: twins #6 (peenya) and #7 (frazer) sit BEHIND an
+      // existing redirect (portacabins-for-sale-in-peenya -> porta-cabins-in-
+      // peenya-f ; portacabins-for-sale-in-frazer-town -> porta-cabins-in-frazer).
+      // To keep every URL one hop, those two PREDECESSOR rules are repointed
+      // straight to the C2 keeper in the same change (see "B58" tags above). After
+      // this block, all four URLs (the 2 C1 twins + their 2 predecessors) land on
+      // the keeper in a single 308.
+      //
+      // (B58-1) Hennur — C1 twin, 0/0 GSC. (keeper also receives
+      // /portable-cabin-solutions-in-hennur, already live.)
+      {
+        source: '/portacabins-for-sale-in-hennur',
+        destination: '/portable-cabins-in-hennur',
+        permanent: true,
+      },
+      // (B58-2) Hoskote — C1 twin, 0/0 GSC.
+      {
+        source: '/portacabins-for-sale-in-hoskote',
+        destination: '/portable-cabins-in-hoskote',
+        permanent: true,
+      },
+      // (B58-3) Indiranagar — C1 twin, 0/0 GSC. (C1 twin also carried fake
+      // reviews/client claims — redirect removes that liability for free.)
+      {
+        source: '/portacabins-for-sale-in-indiranagar',
+        destination: '/portable-cabins-in-indiranagar',
+        permanent: true,
+      },
+      // (B58-4) KR Puram — C1 twin, 0/0 GSC. (C1 twin flagged "outranked by own
+      // page" in the Master Keyword Map.)
+      {
+        source: '/portacabins-for-sale-in-kr-puram',
+        destination: '/portable-cabins-in-kr-puram',
+        permanent: true,
+      },
+      // (B58-5) Magadi Road — C1 twin, 0/0 GSC. (C1 twin carried banned words +
+      // a client claim — redirect removes it.)
+      {
+        source: '/portacabins-for-sale-in-magadi-road',
+        destination: '/portable-cabins-in-magadi-road',
+        permanent: true,
+      },
+      // (B58-6) Peenya — C1 twin porta-cabins-in-peenya-f (live 200, 0 clicks)
+      // -> keeper portable-cabins-in-peenya (live 200; GSC 0clk/9impr/pos 6, the
+      // stronger of the pair). Predecessor portacabins-for-sale-in-peenya repointed
+      // to the same keeper above (B58) to avoid a 2-hop chain.
+      {
+        source: '/porta-cabins-in-peenya-f',
+        destination: '/portable-cabins-in-peenya',
+        permanent: true,
+      },
+      // (B58-7) Frazer — C1 twin porta-cabins-in-frazer (live 200, 0 clicks) ->
+      // keeper portable-cabins-in-frazer-town (live 200; "Frazer Town" is the
+      // correct Bangalore locality name, "frazer" is a truncation). Predecessor
+      // portacabins-for-sale-in-frazer-town repointed to the same keeper above
+      // (B58) to avoid a 2-hop chain.
+      {
+        source: '/porta-cabins-in-frazer',
+        destination: '/portable-cabins-in-frazer-town',
         permanent: true,
       },
 
