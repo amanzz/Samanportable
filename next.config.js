@@ -822,6 +822,41 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ─── C4 ZERO-IMPRESSION DOORWAY CONSOLIDATION (Agent A, P3, 2026-06-22) ─
+      // 29 templated container-office city-swap blogs: 0 impressions / 0 clicks
+      // (3-month GSC), doorway-page risk per Rulebook L10. Owner-approved redirect
+      // to the C4 category. Slash-less destination (trailingSlash:false) to avoid a
+      // chain — matches existing /product-category/container-offices siblings.
+      { source: '/container-offices-for-sale-in-anekal', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-banashankari', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-bannerghatta-road', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-bellandur', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-btm-layout', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-domlur', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-electronic-city', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-frazer-town', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-hebbal', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-hennur', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-hsr-layout', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-jigani', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-kengeri', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-koramangala', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-kr-puram', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-magadi-road', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-malleshwaram', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-marathahalli', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-nagarbhavi', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-rajajinagar', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-rt-nagar', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-sarjapur-road', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-shivajinagar', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-ulsoor', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-whitefield', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-yelahanka', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-in-east-delhi', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-in-ghaziabad', destination: '/product-category/container-offices', permanent: true },
+      { source: '/container-offices-in-north-delhi', destination: '/product-category/container-offices', permanent: true },
+
       // ─── CSV BULK REDIRECTS (572 entries from spreadsheet) ───────────────
       // Source: Untitled spreadsheet - Sheet1 (1).csv
       // Skipped: 7 MERGE rows, 2 conflicts with existing config, 0 duplicates
