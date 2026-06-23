@@ -163,6 +163,14 @@ const nextConfig = {
         destination: '/product-category/portable-toilet',
         permanent: true,
       },
+      // Duplicate-category fix (Agent C P13): the singular container-house URL is a
+      // phantom category (self-canonical duplicate of the real plural cluster hub,
+      // where all /product/container-houses/* products live). 301 it to canonical plural.
+      {
+        source: '/product-category/container-house',
+        destination: '/product-category/container-houses',
+        permanent: true,
+      },
       // Cart/checkout retirement (owner-approved 2026-06-12): enquiry-only
       // business — the cart path was removed in Phase 2; these dead-end pages
       // now 301 home. Page files remain but are unreachable (redirects run
