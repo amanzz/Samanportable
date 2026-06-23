@@ -33,7 +33,7 @@
     "footnotes": ""
   },
   "categories": [
-    615
+    187
   ],
   "tags": [
     3245,
@@ -48,7 +48,7 @@
     "format-standard",
     "has-post-thumbnail",
     "hentry",
-    "category-portable-buildings",
+    "category-container-offices",
     "tag-it-park-innovations",
     "tag-noida-container-offices",
     "tag-tech-team-solutions"
@@ -340,15 +340,15 @@
     "wp:term": [
       [
         {
-          "id": 615,
-          "link": "https://blog.samanportable.com/category/portable-buildings/",
-          "name": "Portable Buildings",
-          "slug": "portable-buildings",
+          "id": 187,
+          "link": "https://blog.samanportable.com/category/container-offices/",
+          "name": "Container Offices",
+          "slug": "container-offices",
           "taxonomy": "category",
           "_links": {
             "self": [
               {
-                "href": "https://blog.samanportable.com/wp-json/wp/v2/categories/615",
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/categories/187",
                 "targetHints": {
                   "allow": [
                     "GET"
@@ -368,7 +368,7 @@
             ],
             "wp:post_type": [
               {
-                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?categories=615"
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?categories=187"
               }
             ],
             "curies": [
@@ -510,6 +510,6 @@
   },
   "_rank_math_head": {
     "success": true,
-    "head": "<title>Container Offices in Noida | IT Park &amp; Tech Team Solutions</title>\n<meta name=\"description\" content=\"Discover functional container offices in Noida for IT parks and satellite teams. Fast-deploy workspaces in Sector 62, 137 &amp; Noida Extension with tech-ready infrastructure. Get a quote today!\"/>\n<meta name=\"robots\" content=\"nofollow, noindex\"/>\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Container Offices in Noida | IT Park &amp; Tech Team Solutions\" />\n<meta property=\"og:description\" content=\"Discover functional container offices in Noida for IT parks and satellite teams. Fast-deploy workspaces in Sector 62, 137 &amp; Noida Extension with tech-ready infrastructure. Get a quote today!\" />\n<meta property=\"og:site_name\" content=\"SAMAN Portable Office Solutions India Private Limited\" />\n<meta property=\"article:author\" content=\"https://www.facebook.com/share/14HTkGyZ4Cp\" />\n<meta property=\"article:tag\" content=\"IT Park Innovations\" />\n<meta property=\"article:tag\" content=\"Noida Container Offices\" />\n<meta property=\"article:tag\" content=\"Tech Team Solutions\" />\n<meta property=\"article:section\" content=\"Portable Buildings\" />\n<meta property=\"og:updated_time\" content=\"2025-07-13T15:30:42+05:30\" />\n<meta property=\"og:image\" content=\"https://blog.samanportable.com/wp-content/uploads/2025/07/Modern-container-office-setup-in-Noida-IT-park-with-tech-professionals-working.jpeg\" />\n<meta property=\"og:image:secure_url\" content=\"https://blog.samanportable.com/wp-content/uploads/2025/07/Modern-container-office-setup-in-Noida-IT-park-with-tech-professionals-working.jpeg\" />\n<meta property=\"og:image:width\" content=\"1344\" />\n<meta property=\"og:image:height\" content=\"768\" />\n<meta property=\"og:image:alt\" content=\"Modern container office setup in Noida IT park with tech professionals working\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Container Offices in Noida | IT Park &amp; Tech Team Solutions\" />\n<meta name=\"twitter:description\" content=\"Discover functional container offices in Noida for IT parks and satellite teams. Fast-deploy workspaces in Sector 62, 137 &amp; Noida Extension with tech-ready infrastructure. Get a quote today!\" />\n<meta name=\"twitter:creator\" content=\"@ytamanzz\" />\n<meta name=\"twitter:image\" content=\"https://blog.samanportable.com/wp-content/uploads/2025/07/Modern-container-office-setup-in-Noida-IT-park-with-tech-professionals-working.jpeg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"Aman Dubey\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"7 minutes\" />\n"
+    "head": "<title>Container Offices in Noida | IT Park &amp; Tech Team Solutions</title>\n<meta name=\"description\" content=\"Discover functional container offices in Noida for IT parks and satellite teams. Fast-deploy workspaces in Sector 62, 137 &amp; Noida Extension with tech-ready infrastructure. Get a quote today!\"/>\n<meta name=\"robots\" content=\"nofollow, noindex\"/>\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Container Offices in Noida | IT Park &amp; Tech Team Solutions\" />\n<meta property=\"og:description\" content=\"Discover functional container offices in Noida for IT parks and satellite teams. Fast-deploy workspaces in Sector 62, 137 &amp; Noida Extension with tech-ready infrastructure. Get a quote today!\" />\n<meta property=\"og:site_name\" content=\"SAMAN Portable Office Solutions India Private Limited\" />\n<meta property=\"article:author\" content=\"https://www.facebook.com/share/14HTkGyZ4Cp\" />\n<meta property=\"article:tag\" content=\"IT Park Innovations\" />\n<meta property=\"article:tag\" content=\"Noida Container Offices\" />\n<meta property=\"article:tag\" content=\"Tech Team Solutions\" />\n<meta property=\"article:section\" content=\"Container Offices\" />\n<meta property=\"og:updated_time\" content=\"2025-07-13T15:30:42+05:30\" />\n<meta property=\"og:image\" content=\"https://blog.samanportable.com/wp-content/uploads/2025/07/Modern-container-office-setup-in-Noida-IT-park-with-tech-professionals-working.jpeg\" />\n<meta property=\"og:image:secure_url\" content=\"https://blog.samanportable.com/wp-content/uploads/2025/07/Modern-container-office-setup-in-Noida-IT-park-with-tech-professionals-working.jpeg\" />\n<meta property=\"og:image:width\" content=\"1344\" />\n<meta property=\"og:image:height\" content=\"768\" />\n<meta property=\"og:image:alt\" content=\"Modern container office setup in Noida IT park with tech professionals working\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Container Offices in Noida | IT Park &amp; Tech Team Solutions\" />\n<meta name=\"twitter:description\" content=\"Discover functional container offices in Noida for IT parks and satellite teams. Fast-deploy workspaces in Sector 62, 137 &amp; Noida Extension with tech-ready infrastructure. Get a quote today!\" />\n<meta name=\"twitter:creator\" content=\"@ytamanzz\" />\n<meta name=\"twitter:image\" content=\"https://blog.samanportable.com/wp-content/uploads/2025/07/Modern-container-office-setup-in-Noida-IT-park-with-tech-professionals-working.jpeg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"Aman Dubey\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"7 minutes\" />\n"
   }
 }
