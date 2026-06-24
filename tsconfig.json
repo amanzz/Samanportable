@@ -29,6 +29,33 @@
       "@/styles/*": ["./src/styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "middleware.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "**/.next/**",
+    "**/node_modules/**",
+    "saman-deploy*/**",
+    "backup-*/**",
+    "SAMAN Content Growth/**",
+    "SAMAN Backlink Intelligence/**",
+    "SAMAN Local business Bangalore and Greater Noida/**",
+    "AGENT_*/**",
+    "phase*/**",
+    "migration-phase0/**",
+    "product-publisher/**",
+    "blog-publisher/**",
+    "gbp-automation/**",
+    "audit-data/**",
+    "issues-saman-website/**",
+    "home-audit/**",
+    "scratch/**",
+    "_*/**"
+  ]
 }

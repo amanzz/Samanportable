@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Star, Quote, Building2, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
@@ -156,7 +157,7 @@ const ClientsSection = () => {
 
         {/* ── Infinite Auto-Scrolling Logo Marquee ── */}
         <div className="mb-10">
-          <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+          <p className="text-center text-xs font-bold text-gray-600 uppercase tracking-widest mb-6">
             Companies We&apos;ve Served
           </p>
 
@@ -180,11 +181,14 @@ const ClientsSection = () => {
                   style={{ width: '140px', minHeight: '120px' }}
                 >
                   <div className="w-16 h-12 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300">
-                    <img
+                    <Image
                       src={client.logo}
                       alt={`${client.name} logo`}
+                      width={96}
+                      height={72}
                       className="max-w-full max-h-full object-contain transition-all duration-300"
                       loading="lazy"
+                      sizes="96px"
                     />
                   </div>
                   <span className="text-[11px] font-bold text-gray-700 text-center leading-tight mb-1">
@@ -257,6 +261,7 @@ const ClientsSection = () => {
           {/* Slider Navigation Buttons */}
           <button
             onClick={scrollPrev}
+            aria-label="Previous clients"
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-6 w-10 h-10 rounded-full bg-white border border-gray-100 shadow-lg flex items-center justify-center text-gray-600 hover:text-[#0A3D2A] hover:border-[#0A3D2A] transition-all z-10 opacity-0 group-hover:opacity-100 disabled:opacity-0"
             disabled={!prevBtnEnabled}
           >
@@ -264,6 +269,7 @@ const ClientsSection = () => {
           </button>
           <button
             onClick={scrollNext}
+            aria-label="Next clients"
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-6 w-10 h-10 rounded-full bg-white border border-gray-100 shadow-lg flex items-center justify-center text-gray-600 hover:text-[#0A3D2A] hover:border-[#0A3D2A] transition-all z-10 opacity-0 group-hover:opacity-100 disabled:opacity-0"
             disabled={!nextBtnEnabled}
           >
@@ -276,12 +282,16 @@ const ClientsSection = () => {
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
-                className={cn(
-                  "w-2 h-2 rounded-full transition-all duration-300",
-                  index === selectedIndex ? "w-8 bg-[#0A3D2A]" : "bg-gray-300 hover:bg-gray-400"
-                )}
+                className="flex items-center justify-center p-2 -m-1 group/dot"
                 aria-label={`Go to slide ${index + 1}`}
-              />
+              >
+                <span
+                  className={cn(
+                    "h-2 rounded-full transition-all duration-300 block",
+                    index === selectedIndex ? "w-8 bg-[#0A3D2A]" : "w-2 bg-gray-300 group-hover/dot:bg-gray-400"
+                  )}
+                />
+              </button>
             ))}
           </div>
         </div>

@@ -7,7 +7,6 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { CartProvider } from '@/contexts/CartContext';
 import ErrorBoundary from '@/components/ErrorBoundary';
-import MobileLCPOptimizer from '@/components/MobileLCPOptimizer';
 import { defaultSEO } from '@/config/seo';
 import Script from 'next/script';
 import { inter } from '@/lib/fonts';
@@ -38,6 +37,8 @@ const queryClient = new QueryClient({
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
+  // Analytics note: GA4 + lead events + SPA page_views are handled by the
+  // GTM-WCT5SSR container below and GA4 Enhanced Measurement.
   // Don't render DefaultSeo for pages that have their own SEO components
   // This prevents duplicate meta tags
   const staticSEORoutes = new Set([
@@ -78,12 +79,10 @@ export default function App({ Component, pageProps }: AppProps) {
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WCT5SSR');`,
         }}
       />
-      <MobileLCPOptimizer />
       <ErrorBoundary>
         {!hasCustomSEO && <DefaultSeo {...defaultSEO} />}
 
-        {/* Performance Monitoring Scripts - Lazy Loaded */}
-        {/* Google Analytics removed - using GTM instead */}
+        {/* Tracking is loaded via GTM-WCT5SSR after hydration (GA4, lead events, page_view). */}
 
         <QueryClientProvider client={queryClient}>
           <TooltipProvider>
