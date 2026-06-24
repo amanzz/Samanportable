@@ -7,7 +7,6 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { CartProvider } from '@/contexts/CartContext';
 import ErrorBoundary from '@/components/ErrorBoundary';
-import MobileLCPOptimizer from '@/components/MobileLCPOptimizer';
 import { defaultSEO } from '@/config/seo';
 import Script from 'next/script';
 import { inter } from '@/lib/fonts';
@@ -82,7 +81,6 @@ export default function App({ Component, pageProps }: AppProps) {
           __html: `(function(w,d){w.dataLayer=w.dataLayer||[];w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var loaded=false;var evts=['pointerdown','click','touchstart','keydown','scroll'];function load(){if(loaded)return;loaded=true;for(var k=0;k<evts.length;k++){w.removeEventListener(evts[k],load);}clearTimeout(t);var s=d.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-WCT5SSR';var f=d.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);}for(var k=0;k<evts.length;k++){w.addEventListener(evts[k],load,{once:true,passive:true});}var t=setTimeout(load,2000);})(window,document);`,
         }}
       />
-      <MobileLCPOptimizer />
       <ErrorBoundary>
         {!hasCustomSEO && <DefaultSeo {...defaultSEO} />}
 

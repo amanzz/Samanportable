@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone, Mail, ChevronDown, Building2, Container, User, LogOut, Package, ShoppingCart } from 'lucide-react';
-import EnquiryDialog from './EnquiryDialog';
 import { useEnquiryDialog } from '@/hooks/useEnquiryDialog';
 import { useAuth } from '@/contexts/AuthContext';
 import { useCart } from '@/contexts/CartContext';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
-import LoginModal from '@/components/LoginModal';
 import QuoteFormTrigger from './QuoteFormTrigger';
 import { cn } from '@/lib/utils';
+
+const EnquiryDialog = dynamic(() => import('./EnquiryDialog'), { ssr: false });
+const LoginModal = dynamic(() => import('@/components/LoginModal'), { ssr: false });
 
 // Optimized navigation link with prefetching
 const NavLink = ({ href, children, className, ...props }: any) => {

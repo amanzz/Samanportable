@@ -13,7 +13,7 @@ interface ProductCategory {
 
 const CategoryMenu = () => {
   const [categories, setCategories] = useState<ProductCategory[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Main categories to display prominently (14 hubs per SAMAN Implementation Guide)
@@ -35,6 +35,10 @@ const CategoryMenu = () => {
   ];
 
   useEffect(() => {
+    if (!isDropdownOpen || categories.length > 0) return;
+
+    let isCancelled = false;
+
     const fetchCategories = async () => {
       try {
         setIsLoading(true);
@@ -49,22 +53,27 @@ const CategoryMenu = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        setCategories(data);
+        if (!isCancelled) {
+          setCategories(data);
+        }
       } catch (error) {
         console.error('Error fetching categories:', error);
-        setCategories([]); // Set empty array on error
+        if (!isCancelled) {
+          setCategories([]);
+        }
       } finally {
-        setIsLoading(false);
+        if (!isCancelled) {
+          setIsLoading(false);
+        }
       }
     };
+
     fetchCategories();
 
-    // Cleanup function
     return () => {
-      setCategories([]);
-      setIsLoading(true);
+      isCancelled = true;
     };
-  }, []);
+  }, [isDropdownOpen, categories.length]);
 
   return (
     <div className="bg-black text-white">

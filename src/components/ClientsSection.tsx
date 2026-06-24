@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Star, Quote, Building2, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
@@ -180,11 +181,14 @@ const ClientsSection = () => {
                   style={{ width: '140px', minHeight: '120px' }}
                 >
                   <div className="w-16 h-12 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300">
-                    <img
+                    <Image
                       src={client.logo}
                       alt={`${client.name} logo`}
+                      width={96}
+                      height={72}
                       className="max-w-full max-h-full object-contain transition-all duration-300"
                       loading="lazy"
+                      sizes="96px"
                     />
                   </div>
                   <span className="text-[11px] font-bold text-gray-700 text-center leading-tight mb-1">

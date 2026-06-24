@@ -12,12 +12,9 @@ export default function Document() {
         
         {/* Critical Resource Preloading — Inter fonts are auto-preloaded by next/font;
             the hero image is preloaded by next/image priority in HeroSection (manual duplicate removed). */}
-        <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
-        
         {/* DNS Prefetching and Preconnecting - Optimized */}
         <link rel="dns-prefetch" href="https://blog.samanportable.com" />
         <link rel="preconnect" href="https://blog.samanportable.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.samanportable.com" />
         
         {/* Favicon Configuration */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -105,4 +102,3 @@ export default function Document() {
     </Html>
   );
 }
-
