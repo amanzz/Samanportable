@@ -5,14 +5,13 @@ export default function Document() {
   return (
     <Html lang="en" className={inter.variable}>
       <Head>
-        {/* Google Tag Manager — GTM-WCT5SSR (frontend tracking container, updated 2026-06-09).
-            GA4 (G-BHT76W46RH), lead-event tags, and page_view are all configured INSIDE this
-            GTM container — there is NO direct GA4/gtag in the frontend code, so no duplicate
-            tracking. SPA route page_views are handled by GA4 Enhanced Measurement (history events). */}
-        {/* GTM is loaded after hydration in _app.tsx so it does not compete with LCP. */}
-        
+        {/* Google Tag Manager moved to next/script (afterInteractive) in _app.tsx so it
+            no longer blocks first paint. GA4 + all GTM lead events are preserved. */}
+
         {/* Charset is automatically added by Next.js */}
         
+        {/* Critical Resource Preloading — Inter fonts are auto-preloaded by next/font;
+            the hero image is preloaded by next/image priority in HeroSection (manual duplicate removed). */}
         {/* DNS Prefetching and Preconnecting - Optimized */}
         <link rel="dns-prefetch" href="https://blog.samanportable.com" />
         <link rel="preconnect" href="https://blog.samanportable.com" crossOrigin="anonymous" />
@@ -35,7 +34,7 @@ export default function Document() {
         
         {/* Security and Performance Meta Tags */}
         <meta name="referrer" content="strict-origin-when-cross-origin" />
-        {/* X-Frame-Options is sent as an HTTP response header from next.config.js (the only valid place); the duplicate <meta> here was invalid and logged a console warning. */}
+        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
         <meta name="msapplication-TileColor" content="#0A3D2A" />
         {/* Robots meta tags are handled by individual SEO components */}
         
@@ -50,38 +49,13 @@ export default function Document() {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              /* Critical CSS for LCP optimization - Updated to WOFF2 */
-              @font-face {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 400;
-                font-display: swap;
-                src: url('/fonts/Inter-Regular.woff2') format('woff2');
-              }
-              @font-face {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 500;
-                font-display: swap;
-                src: url('/fonts/Inter-Medium.woff2') format('woff2');
-              }
-              @font-face {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 600;
-                font-display: swap;
-                src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
-              }
-              @font-face {
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 700;
-                font-display: swap;
-                src: url('/fonts/Inter-Bold.woff2') format('woff2');
-              }
+              /* Critical CSS for LCP optimization.
+                 Inter @font-face is now provided solely by next/font (single source);
+                 the manual duplicate @font-face block was removed to stop double-loading
+                 the same four woff2 files. */
               .hero-section-responsive {
                 contain: layout style paint;
-                font-family: 'Inter', system-ui, -apple-system, sans-serif;
+                font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
               }
               .hero-text-shadow {
                 text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -112,7 +86,7 @@ export default function Document() {
         {/* Removed global Organization schema to prevent duplicates */}
       </Head>
       <body className="antialiased">
-        {/* Google Tag Manager (noscript) — GTM-WCT5SSR */}
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WCT5SSR"

@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
 import Layout from '../../../components/Layout';
 // import SEO from '../../../components/SEO'; // Removed to avoid duplicate meta tags
@@ -22,7 +22,7 @@ import {
   BookOpen,
   Check
 } from 'lucide-react';
-import { fetchLightweightProduct, fetchProductDescription, fetchProducts, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData, fetchProductReviews, ProductReview } from '../../../config/api';
+import { fetchLightweightProduct, fetchProductDescriptionStrict, fetchRelatedProductsStrict, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData, fetchProductReviews, ProductReview } from '../../../config/api';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
@@ -56,7 +56,16 @@ interface ProductDetailsProps {
   reviews?: ProductReview[];
 }
 
-export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params }) => {
+// GATE-A REMEDY (ISR): rendered once, cached, background-revalidated hourly —
+// no per-request WooCommerce fetch. fallback 'blocking' = uncached pages still
+// render fully server-side on first hit. STRICT fetchers throw on transient
+// failure so a failed revalidation keeps the last-good page (never a THIN-200).
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [],
+  fallback: 'blocking',
+});
+
+export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ params }) => {
   try {
     const { category } = params as { category: string };
     
@@ -85,22 +94,15 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       };
     }
 
-    // Get related products from the same category (lightweight) - OPTIMIZED
-    let relatedProducts: WooCommerceProduct[] = [];
-    try {
-      const relatedResponse = await fetchProducts(1, 12, { // Increased to 12 for better variety
-        category: product.category_slug
-      });
-      // Filter out the current product manually since exclude is not supported
-      relatedProducts = (relatedResponse.products || []).filter(p => p.id !== product.id);
+    // Get related products from the same category (lightweight).
+    // STRICT: a failed fetch THROWS (ISR keeps last-good) — the old swallow
+    // pattern shipped the page with this section missing.
+    const relatedProducts: WooCommerceProduct[] =
+      (await fetchRelatedProductsStrict(product.category_slug)).filter(p => p.id !== product.id);
 
-    } catch (error) {
-      console.error('Error fetching related products:', error);
-      // Silent error handling for production
-    }
-
-    // Fetch full description and images separately
-    const descriptionData = await fetchProductDescription(category);
+    // Fetch full description and images separately.
+    // STRICT: the old null-on-failure version rendered description:'' = THIN-200.
+    const descriptionData = await fetchProductDescriptionStrict(category);
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -111,41 +113,20 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       reviews = await fetchProductReviews(product.id, 5);
     }
 
-    // Fetch Rank Math SEO data with fallback
-    let rankMathSEO: RankMathSEOData | null = null;
-    try {
-      rankMathSEO = await fetchProductRankMathSEO(category);
-      
-      // If RankMath data is empty or incomplete, create fallback SEO data
-      if (!rankMathSEO || Object.keys(rankMathSEO).length === 0) {
-        // Create unique descriptions for each purpose to avoid duplication
-        const baseDescription = product.short_description?.replace(/<[^>]*>/g, '').substring(0, 120) || product.name;
-        const metaDescription = `${baseDescription} - Quality portable solution by Saman Portable.`;
-        const ogDescription = `${product.name} - Premium portable structures with customization options.`;
-        const twitterDescription = `${product.name} - Durable and reliable portable solutions.`;
-        
-        rankMathSEO = {
-          title: product.name + ' - Saman Portable',
-          description: metaDescription,
-          canonical: `https://www.samanportable.com/product/${category}`,
-          og_title: product.name,
-          og_description: ogDescription,
-          og_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
-          og_locale: 'en_US',
-          twitter_title: product.name,
-          twitter_description: twitterDescription,
-          twitter_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
-          robots: { index: 'index', follow: 'follow' }
-        };
-      }
-    } catch (error) {
-      console.warn('Failed to fetch Rank Math SEO data:', error);
-      // Create fallback SEO data with unique descriptions
+    // Fetch Rank Math SEO data. STRICT: a transient failure THROWS (ISR keeps
+    // last-good meta — never caches fallback meta for an hour). The genuine-empty
+    // fallback below is baseline behavior and stays: it only runs after a
+    // SUCCESSFUL fetch that returned no RankMath head for this page.
+    let rankMathSEO: RankMathSEOData | null = await fetchProductRankMathSEO(category, true);
+
+    // If RankMath data is genuinely empty, create fallback SEO data
+    if (!rankMathSEO || Object.keys(rankMathSEO).length === 0) {
+      // Create unique descriptions for each purpose to avoid duplication
       const baseDescription = product.short_description?.replace(/<[^>]*>/g, '').substring(0, 120) || product.name;
       const metaDescription = `${baseDescription} - Quality portable solution by Saman Portable.`;
       const ogDescription = `${product.name} - Premium portable structures with customization options.`;
       const twitterDescription = `${product.name} - Durable and reliable portable solutions.`;
-      
+
       rankMathSEO = {
         title: product.name + ' - Saman Portable',
         description: metaDescription,
@@ -196,16 +177,17 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         rankMathSEO,
         reviews,
       },
+      revalidate: 3600, // ISR: background hourly revalidation (same as the [slug] blog route)
     };
   } catch (error) {
     // A transient backend failure (network/timeout/5xx/429, surfaced as
-    // BackendFetchError by fetchLightweightProduct) must NOT become a false 404 —
-    // that would deindex a real product. Re-throw so Next returns HTTP 500
-    // (retryable by Google) instead of notFound. A GENUINE missing product is
-    // handled above (product === null → notFound) and only happens when the backend
-    // responded successfully. Only the error message is logged (no request URL / keys).
+    // BackendFetchError by any STRICT fetcher above) must NOT become a false 404 —
+    // that would deindex a real product. Re-throw: during an ISR background
+    // revalidation Next then KEEPS the last-good cached page; on an uncached
+    // first render it returns HTTP 500 (retryable by Google, never cached).
+    // A GENUINE missing product is handled above (product === null → notFound).
     console.error(
-      'Product (category index) SSR failed — returning 5xx, not 404:',
+      'Product (category index) ISR render failed — keeping last-good / returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render product');

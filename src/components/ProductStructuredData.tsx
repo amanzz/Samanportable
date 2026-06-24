@@ -99,19 +99,26 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
       itemCondition: 'https://schema.org/NewCondition',
       // Seller information removed to avoid duplicate Organization schemas
       // Manufacturer already provides Organization information
+      // Mirrors the published policy at /refund-and-return-policy: 7-day window,
+      // return transport paid by the customer, full refund after inspection.
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
         applicableCountry: 'IN',
+        returnPolicyCountry: 'IN',
         returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-        merchantReturnDays: 30,
+        merchantReturnDays: 7,
         returnMethod: 'https://schema.org/ReturnByMail',
-        returnFees: 'https://schema.org/FreeReturn'
+        returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility',
+        refundType: 'https://schema.org/FullRefund',
+        merchantReturnLink: 'https://www.samanportable.com/refund-and-return-policy'
       },
+      // Mirrors /delivery-policy: default flat ₹3,000 shipping shown in Merchant
+      // Center (final cost quoted), standard estimate 3–5 business days.
       shippingDetails: {
         '@type': 'OfferShippingDetails',
         shippingRate: {
           '@type': 'MonetaryAmount',
-          value: '0',
+          value: '3000',
           currency: 'INR'
         },
         shippingDestination: {
@@ -128,8 +135,8 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
           },
           transitTime: {
             '@type': 'QuantitativeValue',
-            minValue: 7,
-            maxValue: 15,
+            minValue: 3,
+            maxValue: 5,
             unitCode: 'DAY'
           }
         }

@@ -148,8 +148,8 @@ function generateGoogleMerchantXML(products: any[]): string {
 `;
     xml += `        <g:service>Standard</g:service>
 `;
-    xml += `        <g:price>0.00 INR</g:price>
-`; // Free shipping
+    xml += `        <g:price>3000.00 INR</g:price>
+`; // Default flat shipping per /delivery-policy (final cost confirmed in quotation)
     xml += `      </g:shipping>
 `;
     
