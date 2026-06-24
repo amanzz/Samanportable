@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Head from 'next/head';
 
@@ -233,30 +232,15 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16 md:mb-20">
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10"
-              >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10">
                 Project Showcase
-              </motion.div>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
-              >
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
                 Real Projects, <span className="text-[#0A3D2A]">Proven Quality</span>
-              </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light"
-              >
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
                 A curated selection of our high-performance modular installations across India&apos;s industrial landscapes.
-              </motion.p>
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
@@ -268,12 +252,8 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
                 { src: "/Prefab solutions/work/container-office-exterior-india.webp", alt: "Modern container office exterior for industrial use in India", label: "Retail", title: "Custom Container Hub" },
                 { src: "/Prefab solutions/work/prefab-cabin-installation-worksite.webp", alt: "Prefab cabin installation at construction worksite by Saman Portable", label: "Process", title: "Rapid Deployment" },
               ].map((image, index) => (
-                <motion.div 
+                <div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
                   className="group relative overflow-hidden rounded-2xl md:rounded-[2.5rem] bg-white shadow-2xl shadow-gray-200/50 border border-gray-100"
                 >
                   <div className="relative h-80 w-full overflow-hidden">
@@ -297,16 +277,11 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
                       <p className="text-white/60 text-sm font-light">Precision manufactured in 7–21 days</p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mt-20"
-            >
+            <div className="text-center mt-20">
               <Link
                 href="/gallery"
                 className="inline-flex items-center gap-3 bg-[#0A3D2A] text-white px-10 py-5 rounded-2xl font-black text-lg shadow-2xl shadow-[#0A3D2A]/20 transition-all hover:scale-105 active:scale-95 group"
@@ -314,7 +289,7 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
                 Explore Full Portfolio
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
               </Link>
-            </motion.div>
+            </div>
           </div>
         </section>
 

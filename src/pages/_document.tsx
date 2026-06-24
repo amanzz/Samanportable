@@ -5,31 +5,17 @@ export default function Document() {
   return (
     <Html lang="en" className={inter.variable}>
       <Head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-NZT9MN77');
-            `
-          }}
-        />
+        {/* Google Tag Manager — GTM-WCT5SSR (frontend tracking container, updated 2026-06-09).
+            GA4 (G-BHT76W46RH), lead-event tags, and page_view are all configured INSIDE this
+            GTM container — there is NO direct GA4/gtag in the frontend code, so no duplicate
+            tracking. SPA route page_views are handled by GA4 Enhanced Measurement (history events). */}
+        {/* GTM is loaded after hydration in _app.tsx so it does not compete with LCP. */}
         
         {/* Charset is automatically added by Next.js */}
-        
-        {/* Critical Resource Preloading - Optimized for LCP */}
-        <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/hero-image/saman-portable-office-cabin-bangalore.webp" as="image" type="image/webp" {...{ fetchpriority: "high" }} />
-        <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml" />
         
         {/* DNS Prefetching and Preconnecting - Optimized */}
         <link rel="dns-prefetch" href="https://blog.samanportable.com" />
         <link rel="preconnect" href="https://blog.samanportable.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.samanportable.com" />
         
         {/* Favicon Configuration */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -49,7 +35,7 @@ export default function Document() {
         
         {/* Security and Performance Meta Tags */}
         <meta name="referrer" content="strict-origin-when-cross-origin" />
-        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
+        {/* X-Frame-Options is sent as an HTTP response header from next.config.js (the only valid place); the duplicate <meta> here was invalid and logged a console warning. */}
         <meta name="msapplication-TileColor" content="#0A3D2A" />
         {/* Robots meta tags are handled by individual SEO components */}
         
@@ -126,10 +112,10 @@ export default function Document() {
         {/* Removed global Organization schema to prevent duplicates */}
       </Head>
       <body className="antialiased">
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager (noscript) — GTM-WCT5SSR */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NZT9MN77"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WCT5SSR"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
@@ -142,4 +128,3 @@ export default function Document() {
     </Html>
   );
 }
-

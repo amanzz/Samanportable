@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone, Mail, ChevronDown, Building2, Container, User, LogOut, Package, ShoppingCart } from 'lucide-react';
-import EnquiryDialog from './EnquiryDialog';
 import { useEnquiryDialog } from '@/hooks/useEnquiryDialog';
 import { useAuth } from '@/contexts/AuthContext';
 import { useCart } from '@/contexts/CartContext';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
-import LoginModal from '@/components/LoginModal';
 import QuoteFormTrigger from './QuoteFormTrigger';
 import { cn } from '@/lib/utils';
+
+const EnquiryDialog = dynamic(() => import('./EnquiryDialog'), { ssr: false });
+const LoginModal = dynamic(() => import('@/components/LoginModal'), { ssr: false });
 
 // Optimized navigation link with prefetching
 const NavLink = ({ href, children, className, ...props }: any) => {
@@ -145,7 +147,7 @@ const Header = () => {
                   
                   {item.name === 'Rental Services' && (
                     <DropdownMenu>
-                      <DropdownMenuTrigger className="p-1 hover:text-primary transition-colors focus:outline-none">
+                      <DropdownMenuTrigger aria-label="Open Rental Services menu" className="p-1 hover:text-primary transition-colors focus:outline-none">
                         <ChevronDown className="w-4 h-4 transition-transform data-[state=open]:rotate-180" />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="w-80 bg-white text-gray-900 shadow-lg rounded-md mt-2 z-50 p-2 border border-gray-100">
@@ -183,7 +185,7 @@ const Header = () => {
 
                   {item.name === 'Products' && (
                     <DropdownMenu>
-                      <DropdownMenuTrigger className="p-1 hover:text-primary transition-colors focus:outline-none">
+                      <DropdownMenuTrigger aria-label="Open Products menu" className="p-1 hover:text-primary transition-colors focus:outline-none">
                         <ChevronDown className="w-4 h-4 transition-transform data-[state=open]:rotate-180" />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="w-[640px] bg-white text-gray-900 shadow-lg rounded-md mt-2 z-50 p-4 border border-gray-100">
