@@ -70,6 +70,17 @@ function headToSeo(raw: any): RankMathSEOData | null {
   return parseRankMathHeadHtml(head.head);
 }
 
+function applyPublicFaqSchemaUrl(seoData: RankMathSEOData | null, pageUrl: string): RankMathSEOData | null {
+  if (!seoData?.faqSchema) return seoData;
+  const publicUrl = pageUrl.replace(
+    /^https?:\/\/(?:[a-z0-9-]+\.)*samanportable\.com/i,
+    'https://www.samanportable.com'
+  );
+  seoData.faqSchema['@id'] = `${publicUrl.replace(/\/$/, '')}#faq`;
+  seoData.faqSchema.url = publicUrl;
+  return seoData;
+}
+
 // ─── posts ───────────────────────────────────────────────────────────────────
 
 // Light index (slug + date) built once; full post JSON is read per request.
@@ -272,7 +283,9 @@ export async function fetchProductDescription(
 export async function fetchProductRankMathSEO(categorySlug: string): Promise<RankMathSEOData | null> {
   const parts = String(categorySlug).split('/').filter(Boolean);
   const slug = parts[parts.length - 1] || '';
-  return headToSeo(findProductBySlug(slug));
+  const productPath = parts.join('/');
+  const productUrl = `https://www.samanportable.com/product/${productPath}${productPath.includes('/') ? '/' : ''}`;
+  return applyPublicFaqSchemaUrl(headToSeo(findProductBySlug(slug)), productUrl);
 }
 
 // Mirrors api.fetchProductReviews: approved-only, latest first, capped, non-fatal.

@@ -660,6 +660,23 @@ function decodeHtmlEntitiesOnce(s: string): string {
   });
 }
 
+const PUBLIC_SITE_ORIGIN = 'https://www.samanportable.com';
+
+function normalizeSamanportableHost(url: string): string {
+  return url.replace(
+    /^https?:\/\/(?:[a-z0-9-]+\.)*samanportable\.com/i,
+    PUBLIC_SITE_ORIGIN
+  );
+}
+
+function applyPublicFaqSchemaUrl(seoData: RankMathSEOData | null, pageUrl: string): RankMathSEOData | null {
+  if (!seoData?.faqSchema) return seoData;
+  const publicUrl = normalizeSamanportableHost(pageUrl);
+  seoData.faqSchema['@id'] = `${publicUrl.replace(/\/$/, '')}#faq`;
+  seoData.faqSchema.url = publicUrl;
+  return seoData;
+}
+
 export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
   {
     const seoData: RankMathSEOData = {};
@@ -677,10 +694,7 @@ export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
     // would point Google's canonical at a different host and risk deindexing the live page.
     const canonicalMatch = headHtml.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
     if (canonicalMatch) {
-      seoData.canonical = canonicalMatch[1].replace(
-        /^https?:\/\/(?:[a-z0-9-]+\.)*samanportable\.com/i,
-        'https://www.samanportable.com'
-      );
+      seoData.canonical = normalizeSamanportableHost(canonicalMatch[1]);
     }
     
     // Extract Open Graph tags
@@ -773,8 +787,9 @@ export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
 
             const canonical = typeof seoData.canonical === 'string' ? seoData.canonical.trim() : '';
             if (canonical) {
-              faqSchema['@id'] = `${canonical.replace(/\/$/, '')}#faq`;
-              faqSchema.url = canonical;
+              const publicCanonical = normalizeSamanportableHost(canonical);
+              faqSchema['@id'] = `${publicCanonical.replace(/\/$/, '')}#faq`;
+              faqSchema.url = publicCanonical;
             }
 
             if (typeof faqNode.name === 'string' && faqNode.name.trim()) {
@@ -800,7 +815,7 @@ export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
 // Fetch Rank Math SEO data for a product
 export async function fetchProductRankMathSEO(categorySlug: string): Promise<RankMathSEOData | null> {
   const productUrl = `https://www.samanportable.com/product/${categorySlug}/`;
-  return await fetchRankMathSEO(productUrl);
+  return applyPublicFaqSchemaUrl(await fetchRankMathSEO(productUrl), productUrl);
 }
 
 // Fetch Rank Math SEO data for a blog post
