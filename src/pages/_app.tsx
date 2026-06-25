@@ -68,17 +68,21 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <div className={inter.className}>
-      {/* Google Tag Manager — loaded on FIRST user interaction (pointerdown/click/touchstart/
-          keydown/scroll) OR a 2s fallback timeout, whichever comes first. Keeps GTM off the
-          critical paint path while still loading well before realistic lead actions. Same
-          container GTM-WCT5SSR; GA4 inside GTM unchanged. dataLayer + gtm.start are set
-          immediately so any early lead event (form/phone/WhatsApp via analytics.ts) queues and
-          is processed once GTM loads. Guarded to load exactly once. */}
+      {/* Google Tag Manager — loaded on the FIRST user interaction (pointerdown/click/
+          touchstart/keydown/scroll), firing instantly. The no-interaction fallback waits for
+          the window 'load' event and then a fixed 4s delay, so GTM/GA4 execution lands AFTER
+          the page's interactive window instead of competing with hydration — this removes
+          their long tasks from Total Blocking Time. (A fixed delay is used rather than
+          requestIdleCallback, which fired during the window because the browser went idle
+          before TTI.) Same
+          container GTM-WCT5SSR; GA4 inside GTM unchanged; tracking IDs unchanged. dataLayer +
+          gtm.start are set immediately so any early lead event (form/phone/WhatsApp via
+          analytics.ts) queues and is processed once GTM loads. Guarded to load exactly once. */}
       <Script
         id="gtm-base"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: `(function(w,d){w.dataLayer=w.dataLayer||[];w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var loaded=false;var evts=['pointerdown','click','touchstart','keydown','scroll'];function load(){if(loaded)return;loaded=true;for(var k=0;k<evts.length;k++){w.removeEventListener(evts[k],load);}clearTimeout(t);var s=d.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-WCT5SSR';var f=d.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);}for(var k=0;k<evts.length;k++){w.addEventListener(evts[k],load,{once:true,passive:true});}var t=setTimeout(load,2000);})(window,document);`,
+          __html: `(function(w,d){w.dataLayer=w.dataLayer||[];w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var loaded=false;var evts=['pointerdown','click','touchstart','keydown','scroll'];function load(){if(loaded)return;loaded=true;for(var k=0;k<evts.length;k++){w.removeEventListener(evts[k],load);}var s=d.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-WCT5SSR';var f=d.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);}for(var k=0;k<evts.length;k++){w.addEventListener(evts[k],load,{once:true,passive:true});}function schedule(){setTimeout(load,4000);}if(d.readyState==='complete'){schedule();}else{w.addEventListener('load',schedule,{once:true});}})(window,document);`,
         }}
       />
       <ErrorBoundary>
