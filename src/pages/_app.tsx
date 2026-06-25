@@ -1,8 +1,6 @@
 import type { AppProps } from 'next/app';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import dynamic from 'next/dynamic';
 import { DefaultSeo } from 'next-seo';
-import { Toaster } from '@/components/ui/toaster';
-import { Toaster as Sonner } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { CartProvider } from '@/contexts/CartContext';
@@ -14,25 +12,12 @@ import { useRouter } from 'next/router';
 
 import '@/styles/globals.css';
 
-// Enhanced Query Client with better performance settings
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 10 * 60 * 1000, // 10 minutes
-      gcTime: 15 * 60 * 1000, // 15 minutes
-      retry: 1,
-      retryDelay: 1000,
-      // Enhanced performance settings
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: false,
-      refetchOnMount: false,
-    },
-    mutations: {
-      retry: 1,
-      retryDelay: 1000,
-    },
-  },
-});
+// Toast UIs render nothing until a toast is dispatched (always on a user action),
+// so they don't need to be in the server render or the initial hydration pass.
+// Loading them client-only (ssr:false) keeps their JS off the critical path; they
+// mount automatically right after hydration, well before any toast can fire.
+const Toaster = dynamic(() => import('@/components/ui/toaster').then((m) => m.Toaster), { ssr: false });
+const Sonner = dynamic(() => import('@/components/ui/sonner').then((m) => m.Toaster), { ssr: false });
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -91,17 +76,17 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Performance Monitoring Scripts - Lazy Loaded */}
         {/* Google Analytics removed - using GTM instead */}
 
-        <QueryClientProvider client={queryClient}>
-          <TooltipProvider>
-            <AuthProvider>
-              <CartProvider>
-                <Component {...pageProps} />
-              </CartProvider>
-            </AuthProvider>
-          </TooltipProvider>
-          <Toaster />
-          <Sonner />
-        </QueryClientProvider>
+        {/* react-query removed: QueryClientProvider had zero consumers
+            (no useQuery/useMutation anywhere), so it was dead hydration weight. */}
+        <TooltipProvider>
+          <AuthProvider>
+            <CartProvider>
+              <Component {...pageProps} />
+            </CartProvider>
+          </AuthProvider>
+        </TooltipProvider>
+        <Toaster />
+        <Sonner />
       </ErrorBoundary>
     </div>
   );
