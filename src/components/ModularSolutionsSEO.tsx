@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, MapPin, Building2, HardHat, Factory, GraduationCap, HeartPulse, UtensilsCrossed, Shield } from 'lucide-react';
-import { motion } from 'framer-motion';
 import QuoteFormTrigger from './QuoteFormTrigger';
 
 const industries = [
@@ -50,32 +49,23 @@ const ModularSolutionsSEO = () => {
 
         {/* Section header */}
         <div className="text-center mb-16 md:mb-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10"
           >
             <Building2 className="w-3.5 h-3.5" />
             Sectors We Empower
-          </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          </div>
+          <h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
           >
             Built for Every Industry,{' '}
             <span className="text-[#0A3D2A]">Delivered Nationwide</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          </h2>
+          <p
             className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light"
           >
             Engineering robust modular architecture for India&apos;s most demanding project sites and commercial environments.
-          </motion.p>
+          </p>
         </div>
 
         {/* Industry grid - Enhanced */}
@@ -83,12 +73,8 @@ const ModularSolutionsSEO = () => {
           {industries.map((industry, index) => {
             const Icon = industry.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="bg-white p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-10px_rgba(10,61,42,0.15)] transition-all duration-500 group"
               >
                 <div className="flex flex-col gap-6">
@@ -104,7 +90,7 @@ const ModularSolutionsSEO = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
@@ -154,10 +140,7 @@ const ModularSolutionsSEO = () => {
         </div>
 
         {/* Trust banner - Premium Refresh */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+        <div
           className="relative overflow-hidden rounded-2xl md:rounded-[3rem] bg-gradient-to-br from-[#0A3D2A] to-[#051F15] px-6 py-10 md:px-16 md:py-16 shadow-[0_30px_60px_-15px_rgba(10,61,42,0.3)]"
         >
           <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10" />
@@ -179,7 +162,7 @@ const ModularSolutionsSEO = () => {
               </QuoteFormTrigger>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

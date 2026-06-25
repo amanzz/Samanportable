@@ -1,6 +1,5 @@
 import React from 'react';
 import { CheckCircle, Shield, Clock, Award, Users, Truck, ArrowRight, Phone, ClipboardCheck, Factory, Wrench, Headphones, Building2, CheckCircle2 } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from './QuoteFormTrigger';
 import Link from 'next/link';
@@ -84,30 +83,21 @@ const WhyChooseUs = () => {
 
         {/* ─── WHY CHOOSE US ─── */}
         <div className="text-center mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10"
           >
             Why Choose Saman
-          </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          </div>
+          <h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
           >
             The B2B Standard for <span className="text-[#0A3D2A]">Portable Solutions</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          </h2>
+          <p
             className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light"
           >
             Over 500+ corporate clients trust us for critical site infrastructure. Built to last, delivered on time.
-          </motion.p>
+          </p>
         </div>
 
         {/* Reason cards - Enhanced Grid */}
@@ -115,12 +105,8 @@ const WhyChooseUs = () => {
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
-              <motion.div 
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="bg-[#F8FAF9] rounded-2xl md:rounded-[2rem] p-6 md:p-8 border border-gray-100 hover:border-[#0A3D2A]/20 hover:shadow-2xl hover:shadow-[#0A3D2A]/5 transition-all duration-500 group relative"
               >
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#0A3D2A] transition-colors duration-500">
@@ -132,7 +118,7 @@ const WhyChooseUs = () => {
                 <p className="text-gray-600 leading-relaxed font-light">
                   {reason.description}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
         </div>

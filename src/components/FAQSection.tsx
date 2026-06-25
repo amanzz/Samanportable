@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
 import QuoteFormTrigger from './QuoteFormTrigger';
 import { homepageFaqs } from '@/data/homepageFaqs';
 
@@ -21,42 +20,29 @@ const FAQSection = () => {
 
         {/* Section header */}
         <div className="text-center mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10"
           >
             <HelpCircle className="w-3.5 h-3.5" />
             Knowledge Base
-          </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          </div>
+          <h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight"
           >
             Insights & <span className="text-[#0A3D2A]">Information</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          </h2>
+          <p
             className="text-lg text-gray-600 leading-relaxed font-light"
           >
             Expert answers to the most common questions about India&apos;s leading modular solutions.
-          </motion.p>
+          </p>
         </div>
 
         {/* FAQ accordion - Enhanced */}
         <div className="space-y-4 mb-20">
           {faqs.map((faq, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
               className={`rounded-2xl md:rounded-3xl border transition-all duration-500 overflow-hidden ${
                 openIndex === index
                   ? 'border-[#0A3D2A]/30 shadow-xl shadow-[#0A3D2A]/5 bg-white'
@@ -88,15 +74,12 @@ const FAQSection = () => {
                   {faq.answer}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Bottom CTA block - Standardized */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="bg-white rounded-2xl md:rounded-[2.5rem] border border-gray-100 p-8 md:p-12 shadow-2xl shadow-gray-200/50 text-center relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#0A3D2A]/5 rounded-bl-full pointer-events-none" />
@@ -121,7 +104,7 @@ const FAQSection = () => {
               Call +91 88616 22859
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
