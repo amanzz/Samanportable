@@ -48,7 +48,7 @@ const MONEY_STRIP_LINKS = [
 const PRODUCT_CATEGORIES = [
   { label: "Porta Cabin", href: "/product/porta-cabins" },
   { label: "Portable Cabin", href: "/product/portable-cabin" },
-  { label: "Portable Office Cabin", href: "/product/portable-office" },
+  { label: "Portable Office Cabin", href: "/product-category/portable-office" },
   { label: "Container Office", href: "/product/container-offices" },
   { label: "Container Cafe", href: "/product/container-cafe" },
   { label: "Labour Colony", href: "/product/labor-colony" },
