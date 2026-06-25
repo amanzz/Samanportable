@@ -27,6 +27,7 @@ import dynamic from 'next/dynamic';
 import type { BlogPost, RankMathSEOData } from '../config/api';
 import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
+import { demoteHtmlH1ToH2 } from '../lib/seoHtml';
 
 interface BlogPostProps {
   post: BlogPost | null;
@@ -43,6 +44,15 @@ const METADATA_IMAGE_OVERRIDES: Record<string, string> = {
 };
 // Distinctive marker of the broken WordPress image (matches its size variants).
 const BROKEN_WP_IMAGE_MARKER = 'container-office-by-saman-13-1_11zon';
+
+const SEO_TITLE_OVERRIDES: Record<string, string> = {
+  'container-houses-cost-guide-2024': 'Container Houses Cost Guide 2024 | SAMAN',
+  'porta-cabin-office-price': 'Porta Office Cabin Price Guide 2025 | SAMAN',
+};
+
+const CONTENT_H1_DEMOTION_SLUGS = new Set([
+  'best-porta-cabins-in-bangalore',
+]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
   try {
@@ -125,6 +135,9 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
 
     post.content.rendered  = normaliseContent(post.content.rendered);
     post.excerpt.rendered  = normaliseContent(post.excerpt.rendered);
+    if (CONTENT_H1_DEMOTION_SLUGS.has(slug)) {
+      post.content.rendered = demoteHtmlH1ToH2(post.content.rendered);
+    }
     // ────────────────────────────────────────────────────────────────────────
 
     // Fetch Rank Math SEO data with fallback
@@ -177,6 +190,16 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       if (!rankMathSEO.twitter_image || rankMathSEO.twitter_image.includes(BROKEN_WP_IMAGE_MARKER)) {
         rankMathSEO.twitter_image = metadataImageOverride;
       }
+    }
+
+    const seoTitleOverride = SEO_TITLE_OVERRIDES[slug];
+    if (seoTitleOverride) {
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        title: seoTitleOverride,
+        og_title: seoTitleOverride,
+        twitter_title: seoTitleOverride,
+      };
     }
 
     return {

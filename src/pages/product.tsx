@@ -22,13 +22,6 @@ import { formatPriceWithCurrency } from '../lib/utils';
 import OptimizedProductImage from '../components/OptimizedProductImage';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
-import dynamic from 'next/dynamic';
-
-// Dynamic import for ImagePreloader to reduce initial bundle size
-const ImagePreloader = dynamic(() => import('../components/ImagePreloader'), {
-  ssr: false,
-  loading: () => null
-});
 
 interface Category {
   id: number;
@@ -408,14 +401,6 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
         structuredData={productHubStructuredData}
       />
 
-      {/* Preload critical images for better performance */}
-      <ImagePreloader 
-        images={products.map(p => p.image).filter(Boolean).filter(url => 
-          url && url !== '/placeholder.svg' && url.startsWith('http')
-        )} 
-        maxPreload={3} // Reduced from 6 to 3 for faster loading
-      />
-
         <main className="section-padding bg-background">
         <div className="max-w-7xl mx-auto container-padding">
           {/* Page Header */}
@@ -509,7 +494,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                               width={400}
                               height={300}
                               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer"
-                              priority={index < 3}
+                              priority={index === 0}
                               index={index}
                             />
                           </Link>
@@ -653,4 +638,3 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
 };
 
 export default Products;
-

@@ -29,25 +29,9 @@ const OptimizedProductImage: React.FC<OptimizedProductImageProps> = ({
   const showSkeleton = index < 3;
 
   useEffect(() => {
-    if (src && src !== '/placeholder.svg') {
-      setIsLoading(true);
-      setImageError(false);
-      
-      // Preload image
-      const img = new window.Image();
-      img.onload = () => {
-        setImageLoaded(true);
-        setIsLoading(false);
-      };
-      img.onerror = () => {
-        setImageError(true);
-        setIsLoading(false);
-      };
-      img.src = src;
-    } else {
-      setIsLoading(false);
-      setImageError(true);
-    }
+    setImageLoaded(false);
+    setImageError(!src || src === '/placeholder.svg');
+    setIsLoading(Boolean(src && src !== '/placeholder.svg'));
   }, [src]);
 
   // If image failed to load, show placeholder
@@ -88,8 +72,14 @@ const OptimizedProductImage: React.FC<OptimizedProductImageProps> = ({
           contain: 'layout style paint',
           contentVisibility: 'auto'
         }}
-        onLoad={() => setImageLoaded(true)}
-        onError={() => setImageError(true)}
+        onLoad={() => {
+          setImageLoaded(true);
+          setIsLoading(false);
+        }}
+        onError={() => {
+          setImageError(true);
+          setIsLoading(false);
+        }}
       />
     </>
   );

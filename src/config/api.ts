@@ -753,10 +753,38 @@ export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
               : '';
             return isQuestion && name.length > 0 && answerText.length > 0;
           };
-          const validQuestions = faqNode.mainEntity.filter(isValidQuestion);
+          const validQuestions = faqNode.mainEntity.filter(isValidQuestion).map((q: any) => ({
+            '@type': 'Question',
+            name: q.name.trim(),
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: q.acceptedAnswer.text.trim(),
+            },
+          }));
           if (validQuestions.length > 0) {
-            // Emit as a standalone, valid FAQPage document.
-            seoData.faqSchema = { '@context': 'https://schema.org', ...faqNode, mainEntity: validQuestions };
+            // Emit as a clean standalone FAQPage document. Do not spread the
+            // RankMath node here: it can carry backend-only @id/isPartOf/image
+            // references from blog.samanportable.com and empty url fields.
+            const faqSchema: any = {
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: validQuestions,
+            };
+
+            const canonical = typeof seoData.canonical === 'string' ? seoData.canonical.trim() : '';
+            if (canonical) {
+              faqSchema['@id'] = `${canonical.replace(/\/$/, '')}#faq`;
+              faqSchema.url = canonical;
+            }
+
+            if (typeof faqNode.name === 'string' && faqNode.name.trim()) {
+              faqSchema.name = faqNode.name.trim();
+            }
+            if (typeof faqNode.inLanguage === 'string' && faqNode.inLanguage.trim()) {
+              faqSchema.inLanguage = faqNode.inLanguage.trim();
+            }
+
+            seoData.faqSchema = faqSchema;
             break;
           }
         }

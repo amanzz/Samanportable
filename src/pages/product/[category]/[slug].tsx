@@ -33,6 +33,7 @@ import ProductStructuredData from '../../../components/ProductStructuredData';
 import ManufacturerTrustStrip from '../../../components/ManufacturerTrustStrip';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
+import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
 
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
@@ -49,11 +50,9 @@ const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
   )
 });
 
-// Dynamic import for ImagePreloader to reduce initial bundle size
-const ImagePreloader = dynamic(() => import('../../../components/ImagePreloader'), {
-  ssr: false,
-  loading: () => null
-});
+const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
+  'portable-office-cabin',
+]);
 
 interface ProductDetailsProps {
   product: WooCommerceProduct | null;
@@ -126,6 +125,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
 
     // Fetch full description and images separately
     const descriptionData = await staticContent.fetchProductDescription(slug);
+    const productDescription = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
+      ? demoteHtmlH1ToH2(descriptionData?.description || '')
+      : descriptionData?.description || '';
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -148,7 +150,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...product,
-          description: descriptionData?.description || '',
+          description: productDescription,
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
             src: img.src,
@@ -372,12 +374,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             </Head>
           )}
 
-          {/* Preload critical images for better performance */}
-          <ImagePreloader 
-            images={images.map(img => img.src).filter(Boolean)} 
-            maxPreload={4} 
-          />
-
           <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
               
@@ -582,7 +578,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                                   className="w-full h-full object-cover"
                                   width={150}
                                   height={150}
-                                  priority={index < 3}
+                                  loading="lazy"
                                   placeholder="blur"
                                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXwGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                                   sizes="(max-width: 768px) 25vw, 150px"

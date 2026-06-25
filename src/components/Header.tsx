@@ -127,7 +127,6 @@ const Header = () => {
                   width={200}
                   height={100}
                   className="h-12 w-auto object-contain"
-                  priority
                   unoptimized
                 />
               </Link>
@@ -295,7 +294,6 @@ const Header = () => {
                       width={200}
                       height={100}
                       className="h-8 w-auto object-contain"
-                      priority
                       unoptimized
                     />
               </Link>

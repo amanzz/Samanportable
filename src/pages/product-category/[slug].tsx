@@ -141,26 +141,6 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
     category: initialCategorySlug,
   });
 
-
-
-  // Preload images for better performance
-   useEffect(() => {
-     const preloadImages = () => {
-       initialProducts.slice(0, 6).forEach((product) => {
-         const imageUrl = product.featured_image;
-         if (imageUrl) {
-           const link = document.createElement('link');
-           link.rel = 'preload';
-           link.as = 'image';
-           link.href = imageUrl;
-           document.head.appendChild(link);
-         }
-       });
-     };
- 
-     preloadImages();
-   }, [initialProducts]);
-
   // Reset states when initial props change
   useEffect(() => {
     setProducts(initialProducts);
@@ -322,7 +302,7 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                       <ProductCard 
                         key={product.id} 
                         product={product} 
-                        priority={index < 6} // Prioritize first 6 products for better LCP
+                        priority={index === 0}
                       />
                     ))}
                   </div>

@@ -33,12 +33,6 @@ import ProductStructuredData from '../../../components/ProductStructuredData';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
-// Dynamic import for ImagePreloader to reduce initial bundle size
-const ImagePreloader = dynamic(() => import('../../../components/ImagePreloader'), {
-  ssr: false,
-  loading: () => null
-});
-
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
   ssr: true,
@@ -393,12 +387,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               />
             </Head>
           )}
-
-          {/* Preload critical images for better performance */}
-          <ImagePreloader 
-            images={images.map(img => img.src).filter(Boolean)} 
-            maxPreload={4} 
-          />
 
           <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
