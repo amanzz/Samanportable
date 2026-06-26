@@ -34,6 +34,7 @@ import ManufacturerTrustStrip from '../../../components/ManufacturerTrustStrip';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
+import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
 
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
@@ -145,6 +146,11 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data:', error);
     }
+
+    // Public marketing page with no per-user data — safe to edge-cache. Set only
+    // on the success path so the 404s/redirects above keep Next's default no-store
+    // and newly-published URLs are never cache-poisoned.
+    setPublicEdgeCache(res);
 
     return {
       props: {

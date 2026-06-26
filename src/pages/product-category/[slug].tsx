@@ -13,6 +13,7 @@ import { ArrowLeft, Package } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { categorySchemas } from '@/lib/categorySchemas';
+import { setPublicEdgeCache } from '@/lib/cacheHeaders';
 
 interface ProductCategoryPageProps {
   products: LightweightProduct[];
@@ -47,11 +48,6 @@ async function fetchCategoryProductsClient(
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params, res }) => {
-  res.setHeader(
-    'Cache-Control',
-    'no-store, no-cache, must-revalidate, proxy-revalidate'
-  );
-
   const slug = params?.slug as string;
   if (!slug) {
     return {
@@ -81,6 +77,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data for category:', error);
     }
+
+    // Public marketing page with no per-user data — safe to edge-cache. Set only on
+    // the success path; the notFound above and the catch-fallback below keep Next's
+    // default no-store so transient failures / new URLs are never cache-poisoned.
+    setPublicEdgeCache(res);
 
     return {
       props: {

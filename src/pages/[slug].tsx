@@ -28,6 +28,7 @@ import type { BlogPost, RankMathSEOData } from '../config/api';
 import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 import { demoteHtmlH1ToH2 } from '../lib/seoHtml';
+import { setPublicEdgeCache } from '../lib/cacheHeaders';
 
 interface BlogPostProps {
   post: BlogPost | null;
@@ -201,6 +202,11 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
         twitter_title: seoTitleOverride,
       };
     }
+
+    // Public marketing page with no per-user data — safe to edge-cache. Set only
+    // on the success path so the 404s/redirects above keep Next's default no-store
+    // and newly-published URLs are never cache-poisoned.
+    setPublicEdgeCache(res);
 
     return {
       props: {
