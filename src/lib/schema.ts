@@ -834,3 +834,84 @@ export const generateUnifiedBlogGraph = (params: {
   };
 };
 
+/**
+ * City/geo landing-page schema graph — emits EXACTLY THREE nodes:
+ *   1. Organization  (no LocalBusiness — SAMAN has no branch in the city; both
+ *      factory addresses are listed as PostalAddress entries)
+ *   2. BreadcrumbList (Home → Porta Cabins → this city page)
+ *   3. FAQPage        (the FAQs rendered on the page; omitted only if none found)
+ * No BlogPosting / WebPage / WebSite / Service / Product nodes — this is a
+ * deliberately leaner graph than generateUnifiedBlogGraph(), used only for
+ * allowlisted city pages (see CITY_PAGE_SCHEMA_SLUGS in [slug].tsx). Injected
+ * the same way as every other page: as the UnifiedSEO `structuredData` prop.
+ */
+export const getCityPageGraph = (params: {
+  url: string;
+  breadcrumbs: Array<{ name: string; url: string }>;
+  faqSchema: any | null;
+}) => {
+  const { url, breadcrumbs, faqSchema } = params;
+
+  const organization = {
+    '@type': 'Organization',
+    '@id': 'https://www.samanportable.com/#organization',
+    name: 'SAMAN POS India Pvt Ltd',
+    legalName: 'SAMAN POS India Private Limited',
+    url: 'https://www.samanportable.com',
+    logo: 'https://www.samanportable.com/saman-logo.svg',
+    foundingDate: '2009',
+    description:
+      'Direct manufacturer of steel porta cabins, container offices, security cabins and prefab structures, serving India since 2009. Certified to ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018; NSIC government-purchase enlisted, DPIIT-recognised startup and Udyam registered.',
+    address: [
+      {
+        '@type': 'PostalAddress',
+        streetAddress: 'Gopasandra',
+        addressLocality: 'Bengaluru',
+        addressRegion: 'Karnataka',
+        postalCode: '560099',
+        addressCountry: 'IN',
+      },
+      {
+        '@type': 'PostalAddress',
+        streetAddress: 'Vill Jalpura, Tehsil Dadri, Gautam Budh Nagar',
+        addressLocality: 'Greater Noida',
+        addressRegion: 'Uttar Pradesh',
+        postalCode: '201308',
+        addressCountry: 'IN',
+      },
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+91 88616 22859',
+      contactType: 'sales',
+      areaServed: 'IN',
+    },
+  };
+
+  const breadcrumbList = {
+    '@type': 'BreadcrumbList',
+    '@id': `${url}#breadcrumb`,
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.url,
+    })),
+  };
+
+  const graph: any[] = [organization, breadcrumbList];
+
+  if (faqSchema) {
+    graph.push({
+      ...faqSchema,
+      '@context': undefined,
+      '@id': `${url}#faqpage`,
+    });
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': graph,
+  };
+};
+

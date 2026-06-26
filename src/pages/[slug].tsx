@@ -25,7 +25,7 @@ import dynamic from 'next/dynamic';
 
 
 import type { BlogPost, RankMathSEOData } from '../config/api';
-import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema } from '../lib/schema';
+import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema, getCityPageGraph } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 import { demoteHtmlH1ToH2 } from '../lib/seoHtml';
 import { setPublicEdgeCache } from '../lib/cacheHeaders';
@@ -53,6 +53,14 @@ const SEO_TITLE_OVERRIDES: Record<string, string> = {
 
 const CONTENT_H1_DEMOTION_SLUGS = new Set([
   'best-porta-cabins-in-bangalore',
+]);
+
+// City/geo landing pages that emit the lean 3-node city graph (Organization +
+// BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
+// Allowlisted per slug so no other blog post's schema is affected.
+const CITY_PAGE_SCHEMA_SLUGS = new Set([
+  'porta-cabin-in-hyderabad',
+  'porta-cabin-in-chennai',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
@@ -587,9 +595,23 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
         keywords={`blog, portable office, container office, prefab solutions, ${post?._embedded?.['wp:term']?.[0]?.[0]?.name || ''}`}
         structuredData={(() => {
           if (!post) return undefined;
-          
+
+          // City/geo landing pages: emit exactly three schemas
+          // (Organization + BreadcrumbList + FAQPage), no LocalBusiness/Product.
+          if (CITY_PAGE_SCHEMA_SLUGS.has(slug)) {
+            return getCityPageGraph({
+              url: `https://www.samanportable.com/${slug}`,
+              breadcrumbs: [
+                { name: 'Home', url: 'https://www.samanportable.com/' },
+                { name: 'Porta Cabins', url: 'https://www.samanportable.com/product-category/porta-cabins' },
+                { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` },
+              ],
+              faqSchema: extractFAQSchema(post.content.rendered),
+            });
+          }
+
           const isOrgAuthor = !post._embedded?.author?.[0]?.name || post._embedded?.author?.[0]?.name === 'Saman Portable';
-          
+
           return generateUnifiedBlogGraph({
             postSchema: {
               title: decodeHtmlEntities(post.title.rendered),
@@ -695,8 +717,10 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               </div>
             </div>
 
-            {/* Featured Image */}
-            {featuredImage && (
+            {/* Featured Image — suppressed for city/geo landing pages, which carry
+                their hero as the first in-body content image (eager LCP) instead, so
+                the template block does not duplicate it or show a wrong fallback. */}
+            {featuredImage && !CITY_PAGE_SCHEMA_SLUGS.has(slug) && (
               <div className="mb-12">
                 <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
                   <Image
