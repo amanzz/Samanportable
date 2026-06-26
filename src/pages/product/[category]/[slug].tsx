@@ -60,7 +60,6 @@ interface ProductDetailsProps {
   category: string;
   slug: string;
   relatedProducts: WooCommerceProduct[];
-  productImages?: Array<{ src: string; alt: string }>;
   rankMathSEO?: RankMathSEOData | null;
   reviews?: ProductReview[];
 }
@@ -118,8 +117,26 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       const relatedResponse = await staticContent.fetchProducts(1, 12, { // Increased to 12 for better variety
         category: product.category_slug
       });
-      // Filter out the current product manually since exclude is not supported
-      relatedProducts = (relatedResponse.products || []).filter(p => p.id !== product.id);
+      // Filter out the current product, then serialize ONLY the lightweight fields
+      // the related-products UI actually reads (id, name, slug, price, rating,
+      // first category, first image). Full WooCommerce objects — chiefly each
+      // product's `description` (~11KB) — bloated __NEXT_DATA__ by ~120KB but are
+      // never rendered by the slider or MobileBottomNav, so they are dropped to
+      // shrink the client hydration payload. SSR-rendered cards are unchanged.
+      relatedProducts = (relatedResponse.products || [])
+        .filter(p => p.id !== product.id)
+        .map(p => ({
+          id: p.id,
+          name: p.name,
+          slug: p.slug,
+          price: p.price,
+          average_rating: p.average_rating,
+          rating_count: p.rating_count,
+          categories: (p.categories || []).slice(0, 1).map(c => ({ id: c.id, name: c.name, slug: c.slug })),
+          images: p.images && p.images.length > 0
+            ? [{ id: p.images[0].id, src: p.images[0].src, alt: p.images[0].alt }]
+            : [],
+        })) as unknown as WooCommerceProduct[];
     } catch (error) {
       // Silent error handling for production
     }
@@ -180,10 +197,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         category,
         slug,
         relatedProducts,
-        // `|| []` guard: when the description fetch fails, descriptionData is null and
-        // `?.images` is `undefined`, which Next.js cannot serialize as a prop → 500.
-        // An empty array is serializable (the prop is optional and unused downstream).
-        productImages: descriptionData?.images || [],
+        // productImages prop removed: it was never destructured/used in the component
+        // (the gallery uses getProductImages() from product.images), and serializing
+        // it added ~7KB of dead data to __NEXT_DATA__.
         rankMathSEO,
         reviews,
       },
