@@ -1,730 +1,730 @@
 {
- "id": 236811,
- "date": "2024-12-04T18:10:55",
- "date_gmt": "2024-12-04T12:40:55",
- "guid": {
-  "rendered": "https://blog.samanportable.com/sustainable-construction/"
- },
- "modified": "2024-12-11T12:26:49",
- "modified_gmt": "2024-12-11T06:56:49",
- "slug": "sustainable-construction",
- "status": "publish",
- "type": "post",
- "link": "https://blog.samanportable.com/sustainable-construction/",
- "title": {
-  "rendered": "Sustainable Construction with Container Offices"
- },
- "content": {
-  "rendered": "<p><strong>Container offices</strong> are one of the more sustainable ways to add workspace: they reuse steel structures, build mostly off-site, and can be insulated and powered efficiently. This guide explains why a container office is a greener choice and what to specify for a genuinely low-impact build.</p>\n<p>SAMAN POS India Private Limited manufactures steel container offices (since 2009; incorporated 2019) to <strong>IS 2062</strong> standards with insulated panels.</p>\n<h2>Why Container Offices Are More Sustainable</h2>\n<ul>\n<li><strong>Material efficiency:</strong> a steel structure reuses and recycles well, reducing demand for new masonry materials.</li>\n<li><strong>Less on-site waste:</strong> most of the build is completed in a controlled factory, cutting site waste and disruption.</li>\n<li><strong>Faster builds:</strong> shorter on-site time means lower energy and logistics impact during construction.</li>\n<li><strong>Relocatable:</strong> the same unit can be moved and reused on the next project instead of being demolished.</li>\n</ul>\n<h2>Designing for Energy Efficiency</h2>\n<ul>\n<li>Insulated wall and roof panels to reduce cooling load in Indian summers.</li>\n<li>Cross-ventilation and shading to cut air-conditioning demand.</li>\n<li>Energy-efficient lighting and the option to add solar on the roof.</li>\n</ul>\n<h2>Container Office vs Conventional Construction</h2>\n<table>\n<tr><th>Aspect</th><th>Conventional</th><th>Container office</th></tr>\n<tr><td>Build location</td><td>Mostly on-site</td><td>Mostly in factory</td></tr>\n<tr><td>On-site waste</td><td>Higher</td><td>Lower</td></tr>\n<tr><td>Reuse / relocation</td><td>Difficult</td><td>Designed to relocate</td></tr>\n<tr><td>Build speed</td><td>Slower</td><td>Faster</td></tr>\n</table>\n<h2>Customisation for Sustainable Workspaces</h2>\n<p>Layout, insulation, glazing, ventilation and solar-readiness are all configurable so the office meets your comfort and energy goals.</p>\n<p>Cover: <strong>5 years on the structural frame and base, 1–2 years on finishing, and a 20–25 year engineered service life</strong>. Standard delivery ₹3,000; transit 3–5 days.</p>\n<h2>Build a Sustainable Container Office</h2>\n<p>Tell us your size and site. <strong>Call +91 62009 09435</strong> or use <strong>Send Enquiry</strong>.</p>\n<p>Explore <a href=\"https://www.samanportable.com/product-category/container-offices/\">container offices</a> for options that suit your requirement.</p>\n<h2>FAQs: Sustainable Container Offices</h2>\n<br>\n<h3>Are container offices eco-friendly?</h3>\n<p>Yes — they reuse steel structures, build mostly off-site with less waste, and can be insulated and solar-ready for efficient running.</p>\n<br>\n<h3>Do they stay cool in Indian summers?</h3>\n<p>Insulated panels, shading and cross-ventilation reduce cooling load; AC can be added where needed.</p>\n<br>\n<h3>Are they cheaper than conventional offices?</h3>\n<p>They are usually faster to build with less site work; the cost saving depends on size and specification.</p>\n<br>\n<h3>Can a container office be relocated?</h3>\n<p>Yes — it is designed to be moved and reused on another site, which adds to its sustainability.</p>\n<br>\n<h3>How long does a container office last?</h3>\n<p>5 years structural-frame cover, 1–2 years finishing, with a 20–25 year engineered service life.</p>\n",
-  "protected": false
- },
- "excerpt": {
-  "rendered": "<p>How container offices support sustainable construction — material reuse, insulation, energy efficiency and faster builds. From an Indian steel manufacturer.</p>\n",
-  "protected": false
- },
- "author": 1,
- "featured_media": 236812,
- "comment_status": "open",
- "ping_status": "open",
- "sticky": false,
- "template": "",
- "format": "standard",
- "meta": {
-  "footnotes": ""
- },
- "categories": [
-  615
- ],
- "tags": [
-  939,
-  1918,
-  1919,
-  1917,
-  1681,
-  1800,
-  690,
-  1331
- ],
- "class_list": [
-  "post-236811",
-  "post",
-  "type-post",
-  "status-publish",
-  "format-standard",
-  "has-post-thumbnail",
-  "hentry",
-  "category-portable-buildings",
-  "tag-container-offices",
-  "tag-eco-friendly-offices",
-  "tag-environmentally-conscious-construction",
-  "tag-green-building-design",
-  "tag-modern-workspaces",
-  "tag-sustainable-architecture",
-  "tag-sustainable-construction",
-  "tag-workspace-innovation"
- ],
- "_links": {
-  "self": [
-   {
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/posts/236811",
-    "targetHints": {
-     "allow": [
-      "GET"
-     ]
-    }
-   }
+  "id": 236811,
+  "date": "2024-12-04T18:10:55",
+  "date_gmt": "2024-12-04T12:40:55",
+  "guid": {
+    "rendered": "https://blog.samanportable.com/sustainable-construction/"
+  },
+  "modified": "2024-12-11T12:26:49",
+  "modified_gmt": "2024-12-11T06:56:49",
+  "slug": "sustainable-construction",
+  "status": "publish",
+  "type": "post",
+  "link": "https://blog.samanportable.com/sustainable-construction/",
+  "title": {
+    "rendered": "Sustainable Construction with Container Offices"
+  },
+  "content": {
+    "rendered": "<p><strong>Container offices</strong> are one of the more sustainable ways to add workspace: they reuse steel structures, build mostly off-site, and can be insulated and powered efficiently. This guide explains why a container office is a greener choice and what to specify for a genuinely low-impact build.</p>\n<p>SAMAN POS India Private Limited manufactures steel container offices (since 2009; incorporated 2019) to <strong>IS 2062</strong> standards with insulated panels.</p>\n<h2>Why Container Offices Are More Sustainable</h2>\n<ul>\n<li><strong>Material efficiency:</strong> a steel structure reuses and recycles well, reducing demand for new masonry materials.</li>\n<li><strong>Less on-site waste:</strong> most of the build is completed in a controlled factory, cutting site waste and disruption.</li>\n<li><strong>Faster builds:</strong> shorter on-site time means lower energy and logistics impact during construction.</li>\n<li><strong>Relocatable:</strong> the same unit can be moved and reused on the next project instead of being demolished.</li>\n</ul>\n<h2>Designing for Energy Efficiency</h2>\n<ul>\n<li>Insulated wall and roof panels to reduce cooling load in Indian summers.</li>\n<li>Cross-ventilation and shading to cut air-conditioning demand.</li>\n<li>Energy-efficient lighting and the option to add solar on the roof.</li>\n</ul>\n<h2>What Makes the Build Genuinely Low-Impact</h2>\n<p>The sustainability of a container office is decided at the factory, not on site. Three things matter most:</p>\n<p>Off-site completion. Around 80–90% of the build — frame fabrication, panel fitting, wiring, and finishing — happens inside our Bangalore plant under controlled conditions. Only foundation prep and final placement happen on site, which cuts dust, debris, and construction traffic at your location.</p>\n<p>Insulated PUF panel envelope. The wall and roof panels are PUF sandwich panels on an IS 2062 steel frame. The insulation core slows heat transfer, so the interior stays cooler in summer and the air-conditioning runs less — lower running cost and lower energy use over the unit’s life.</p>\n<p>Reuse over demolition. A masonry office is demolished at end of use and becomes rubble. A steel container office is unbolted, transported, and re-erected on the next site. The same structure can serve several projects across its 20–25 year engineered service life, which is the single biggest sustainability advantage over conventional construction.</p>\n<h2>Container Office vs Conventional Construction</h2>\n<table>\n<tr><th>Aspect</th><th>Conventional</th><th>Container office</th></tr>\n<tr><td>Build location</td><td>Mostly on-site</td><td>Mostly in factory</td></tr>\n<tr><td>On-site waste</td><td>Higher</td><td>Lower</td></tr>\n<tr><td>Reuse / relocation</td><td>Difficult</td><td>Designed to relocate</td></tr>\n<tr><td>Build speed</td><td>Slower</td><td>Faster</td></tr>\n</table>\n<h2>Customisation for Sustainable Workspaces</h2>\n<p>Layout, insulation, glazing, ventilation and solar-readiness are all configurable so the office meets your comfort and energy goals.</p>\n<p>Cover: <strong>5 years on the structural frame and base, 1–2 years on finishing, and a 20–25 year engineered service life</strong>. Standard delivery ₹3,000; transit 3–5 days.</p>\n<h2>Build a Sustainable Container Office</h2>\n<p>Tell us your size and site. <strong>Call +91 62009 09435</strong> or use <strong>Send Enquiry</strong>.</p>\n<p>Explore our <a href=\"https://www.samanportable.com/product-category/container-offices\">container office range</a>, or see the <a href=\"https://www.samanportable.com/product/container-offices/container-office-cabin\">container office cabin</a> for a fully fitted unit.</p>\n<h2>FAQs: Sustainable Container Offices</h2>\n<br>\n<h3>Are container offices eco-friendly?</h3>\n<p>Yes — they reuse steel structures, build mostly off-site with less waste, and can be insulated and solar-ready for efficient running.</p>\n<br>\n<h3>Do they stay cool in Indian summers?</h3>\n<p>Insulated panels, shading and cross-ventilation reduce cooling load; AC can be added where needed.</p>\n<br>\n<h3>Are they cheaper than conventional offices?</h3>\n<p>They are usually faster to build with less site work; the cost saving depends on size and specification.</p>\n<br>\n<h3>Can a container office be relocated?</h3>\n<p>Yes — it is designed to be moved and reused on another site, which adds to its sustainability.</p>\n<br>\n<h3>How long does a container office last?</h3>\n<p>5 years structural-frame cover, 1–2 years finishing, with a 20–25 year engineered service life.</p>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>How container offices support sustainable construction — material reuse, insulation, energy efficiency and faster builds. From an Indian steel manufacturer.</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 236812,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+    "footnotes": ""
+  },
+  "categories": [
+    615
   ],
-  "collection": [
-   {
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/posts"
-   }
+  "tags": [
+    939,
+    1918,
+    1919,
+    1917,
+    1681,
+    1800,
+    690,
+    1331
   ],
-  "about": [
-   {
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/types/post"
-   }
+  "class_list": [
+    "post-236811",
+    "post",
+    "type-post",
+    "status-publish",
+    "format-standard",
+    "has-post-thumbnail",
+    "hentry",
+    "category-portable-buildings",
+    "tag-container-offices",
+    "tag-eco-friendly-offices",
+    "tag-environmentally-conscious-construction",
+    "tag-green-building-design",
+    "tag-modern-workspaces",
+    "tag-sustainable-architecture",
+    "tag-sustainable-construction",
+    "tag-workspace-innovation"
   ],
-  "author": [
-   {
-    "embeddable": true,
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/users/1"
-   }
-  ],
-  "replies": [
-   {
-    "embeddable": true,
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/comments?post=236811"
-   }
-  ],
-  "version-history": [
-   {
-    "count": 0,
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/posts/236811/revisions"
-   }
-  ],
-  "wp:featuredmedia": [
-   {
-    "embeddable": true,
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/media/236812"
-   }
-  ],
-  "wp:attachment": [
-   {
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/media?parent=236811"
-   }
-  ],
-  "wp:term": [
-   {
-    "taxonomy": "category",
-    "embeddable": true,
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/categories?post=236811"
-   },
-   {
-    "taxonomy": "post_tag",
-    "embeddable": true,
-    "href": "https://blog.samanportable.com/wp-json/wp/v2/tags?post=236811"
-   }
-  ],
-  "curies": [
-   {
-    "name": "wp",
-    "href": "https://api.w.org/{rel}",
-    "templated": true
-   }
-  ]
- },
- "_embedded": {
-  "author": [
-   {
-    "id": 1,
-    "name": "Aman Dubey",
-    "url": "https://blog.samanportable.com",
-    "description": "Aman Dubey is the lead marketing and copywriting expert at Saman Portable, specializing in prefabricated, shipping-container, and modular structures. With over 15 years of industry experience, Aman has helped global clients optimize design, streamline production, and amplify brand visibility through data-driven content and strategic SEO. Under his guidance, Saman Portable has become a trusted name in container office solutions and turnkey prefabricated buildings across India and beyond.",
-    "link": "https://blog.samanportable.com/author/admin-1/",
-    "slug": "admin-1",
-    "avatar_urls": {
-     "24": "https://blog.samanportable.com/wp-content/litespeed/avatar/7e09a64acdc40e95962e8f5c2bf3728f.jpg?ver=1780593559",
-     "48": "https://blog.samanportable.com/wp-content/litespeed/avatar/85b3332cf56eedaec848a27e1429a5b9.jpg?ver=1780593559",
-     "96": "https://blog.samanportable.com/wp-content/litespeed/avatar/b86783ac56d8618102ce3a0821524069.jpg?ver=1780588107"
-    },
-    "is_super_admin": true,
-    "woocommerce_meta": {
-     "variable_product_tour_shown": "",
-     "activity_panel_inbox_last_read": "",
-     "activity_panel_reviews_last_read": "",
-     "categories_report_columns": "",
-     "coupons_report_columns": "",
-     "customers_report_columns": "",
-     "orders_report_columns": "",
-     "products_report_columns": "",
-     "revenue_report_columns": "",
-     "taxes_report_columns": "",
-     "variations_report_columns": "",
-     "dashboard_sections": "",
-     "dashboard_chart_type": "",
-     "dashboard_chart_interval": "",
-     "dashboard_leaderboard_rows": "",
-     "order_attribution_install_banner_dismissed": "",
-     "scheduled_updates_promotion_notice_dismissed": "",
-     "homepage_layout": "",
-     "homepage_stats": "",
-     "task_list_tracked_started_tasks": "",
-     "android_app_banner_dismissed": "yes",
-     "launch_your_store_tour_hidden": "",
-     "coming_soon_banner_dismissed": ""
-    },
-    "_links": {
-     "self": [
+  "_links": {
+    "self": [
       {
-       "href": "https://blog.samanportable.com/wp-json/wp/v2/users/1",
-       "targetHints": {
-        "allow": [
-         "GET"
-        ]
-       }
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts/236811",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
       }
-     ],
-     "collection": [
+    ],
+    "collection": [
       {
-       "href": "https://blog.samanportable.com/wp-json/wp/v2/users"
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts"
       }
-     ]
-    }
-   }
-  ],
-  "wp:featuredmedia": [
-   {
-    "id": 236812,
-    "date": "2024-12-04T23:40:56",
-    "slug": "sustainable-construction-1",
-    "type": "attachment",
-    "link": "https://blog.samanportable.com/sustainable-construction/attachment/sustainable-construction-1/",
-    "title": {
-     "rendered": "Sustainable-Construction-1"
-    },
-    "author": 1,
-    "featured_media": 0,
-    "caption": {
-     "rendered": ""
-    },
-    "alt_text": "Sustainable Construction",
-    "media_type": "image",
-    "mime_type": "image/jpeg",
-    "media_details": {
-     "width": 1344,
-     "height": 768,
-     "file": "2024/12/Sustainable-Construction-1.jpg",
-     "filesize": 243513,
-     "sizes": {
-      "woocommerce_thumbnail": {
-       "file": "Sustainable-Construction-1-300x300.jpg",
-       "width": 300,
-       "height": 300,
-       "filesize": 29780,
-       "mime_type": "image/jpeg",
-       "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-300x300.jpg"
+    ],
+    "about": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/types/post"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/comments?post=236811"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 0,
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts/236811/revisions"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/media/236812"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/media?parent=236811"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/categories?post=236811"
       },
-      "woocommerce_gallery_thumbnail": {
-       "file": "Sustainable-Construction-1-100x57.jpg",
-       "width": 100,
-       "height": 57,
-       "filesize": 3624,
-       "mime_type": "image/jpeg",
-       "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-100x57.jpg"
-      },
-      "woocommerce_single": {
-       "file": "Sustainable-Construction-1-600x343.jpg",
-       "width": 600,
-       "height": 343,
-       "filesize": 71114,
-       "mime_type": "image/jpeg",
-       "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-600x343.jpg"
-      },
-      "medium": {
-       "file": "Sustainable-Construction-1-300x171.jpg",
-       "width": 300,
-       "height": 171,
-       "filesize": 21348,
-       "mime_type": "image/jpeg",
-       "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-300x171.jpg"
-      },
-      "large": {
-       "file": "Sustainable-Construction-1-1024x585.jpg",
-       "width": 1024,
-       "height": 585,
-       "filesize": 181945,
-       "mime_type": "image/jpeg",
-       "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-1024x585.jpg"
-      },
-      "thumbnail": {
-       "file": "Sustainable-Construction-1-150x150.jpg",
-       "width": 150,
-       "height": 150,
-       "filesize": 9422,
-       "mime_type": "image/jpeg",
-       "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-150x150.jpg"
-      },
-      "medium_large": {
-       "file": "Sustainable-Construction-1-768x439.jpg",
-       "width": 768,
-       "height": 439,
-       "filesize": 110582,
-       "mime_type": "image/jpeg",
-       "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-768x439.jpg"
-      },
-      "full": {
-       "file": "Sustainable-Construction-1.jpg",
-       "width": 1344,
-       "height": 768,
-       "mime_type": "image/jpeg",
-       "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg"
-      }
-     },
-     "image_meta": {
-      "aperture": "0",
-      "credit": "",
-      "camera": "",
-      "caption": "",
-      "created_timestamp": "0",
-      "copyright": "",
-      "focal_length": "0",
-      "iso": "0",
-      "shutter_speed": "0",
-      "title": "",
-      "orientation": "0",
-      "keywords": []
-     }
-    },
-    "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg",
-    "_links": {
-     "self": [
       {
-       "href": "https://blog.samanportable.com/wp-json/wp/v2/media/236812",
-       "targetHints": {
-        "allow": [
-         "GET"
-        ]
-       }
+        "taxonomy": "post_tag",
+        "embeddable": true,
+        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags?post=236811"
       }
-     ],
-     "collection": [
+    ],
+    "curies": [
       {
-       "href": "https://blog.samanportable.com/wp-json/wp/v2/media"
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
       }
-     ],
-     "about": [
+    ]
+  },
+  "_embedded": {
+    "author": [
       {
-       "href": "https://blog.samanportable.com/wp-json/wp/v2/types/attachment"
+        "id": 1,
+        "name": "Aman Dubey",
+        "url": "https://blog.samanportable.com",
+        "description": "Aman Dubey is the lead marketing and copywriting expert at Saman Portable, specializing in prefabricated, shipping-container, and modular structures. With over 15 years of industry experience, Aman has helped global clients optimize design, streamline production, and amplify brand visibility through data-driven content and strategic SEO. Under his guidance, Saman Portable has become a trusted name in container office solutions and turnkey prefabricated buildings across India and beyond.",
+        "link": "https://blog.samanportable.com/author/admin-1/",
+        "slug": "admin-1",
+        "avatar_urls": {
+          "24": "https://blog.samanportable.com/wp-content/litespeed/avatar/7e09a64acdc40e95962e8f5c2bf3728f.jpg?ver=1780593559",
+          "48": "https://blog.samanportable.com/wp-content/litespeed/avatar/85b3332cf56eedaec848a27e1429a5b9.jpg?ver=1780593559",
+          "96": "https://blog.samanportable.com/wp-content/litespeed/avatar/b86783ac56d8618102ce3a0821524069.jpg?ver=1780588107"
+        },
+        "is_super_admin": true,
+        "woocommerce_meta": {
+          "variable_product_tour_shown": "",
+          "activity_panel_inbox_last_read": "",
+          "activity_panel_reviews_last_read": "",
+          "categories_report_columns": "",
+          "coupons_report_columns": "",
+          "customers_report_columns": "",
+          "orders_report_columns": "",
+          "products_report_columns": "",
+          "revenue_report_columns": "",
+          "taxes_report_columns": "",
+          "variations_report_columns": "",
+          "dashboard_sections": "",
+          "dashboard_chart_type": "",
+          "dashboard_chart_interval": "",
+          "dashboard_leaderboard_rows": "",
+          "order_attribution_install_banner_dismissed": "",
+          "scheduled_updates_promotion_notice_dismissed": "",
+          "homepage_layout": "",
+          "homepage_stats": "",
+          "task_list_tracked_started_tasks": "",
+          "android_app_banner_dismissed": "yes",
+          "launch_your_store_tour_hidden": "",
+          "coming_soon_banner_dismissed": ""
+        },
+        "_links": {
+          "self": [
+            {
+              "href": "https://blog.samanportable.com/wp-json/wp/v2/users/1",
+              "targetHints": {
+                "allow": [
+                  "GET"
+                ]
+              }
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://blog.samanportable.com/wp-json/wp/v2/users"
+            }
+          ]
+        }
       }
-     ],
-     "author": [
+    ],
+    "wp:featuredmedia": [
       {
-       "embeddable": true,
-       "href": "https://blog.samanportable.com/wp-json/wp/v2/users/1"
+        "id": 236812,
+        "date": "2024-12-04T23:40:56",
+        "slug": "sustainable-construction-1",
+        "type": "attachment",
+        "link": "https://blog.samanportable.com/sustainable-construction/attachment/sustainable-construction-1/",
+        "title": {
+          "rendered": "Sustainable-Construction-1"
+        },
+        "author": 1,
+        "featured_media": 0,
+        "caption": {
+          "rendered": ""
+        },
+        "alt_text": "Sustainable Construction",
+        "media_type": "image",
+        "mime_type": "image/jpeg",
+        "media_details": {
+          "width": 1344,
+          "height": 768,
+          "file": "2024/12/Sustainable-Construction-1.jpg",
+          "filesize": 243513,
+          "sizes": {
+            "woocommerce_thumbnail": {
+              "file": "Sustainable-Construction-1-300x300.jpg",
+              "width": 300,
+              "height": 300,
+              "filesize": 29780,
+              "mime_type": "image/jpeg",
+              "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-300x300.jpg"
+            },
+            "woocommerce_gallery_thumbnail": {
+              "file": "Sustainable-Construction-1-100x57.jpg",
+              "width": 100,
+              "height": 57,
+              "filesize": 3624,
+              "mime_type": "image/jpeg",
+              "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-100x57.jpg"
+            },
+            "woocommerce_single": {
+              "file": "Sustainable-Construction-1-600x343.jpg",
+              "width": 600,
+              "height": 343,
+              "filesize": 71114,
+              "mime_type": "image/jpeg",
+              "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-600x343.jpg"
+            },
+            "medium": {
+              "file": "Sustainable-Construction-1-300x171.jpg",
+              "width": 300,
+              "height": 171,
+              "filesize": 21348,
+              "mime_type": "image/jpeg",
+              "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-300x171.jpg"
+            },
+            "large": {
+              "file": "Sustainable-Construction-1-1024x585.jpg",
+              "width": 1024,
+              "height": 585,
+              "filesize": 181945,
+              "mime_type": "image/jpeg",
+              "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-1024x585.jpg"
+            },
+            "thumbnail": {
+              "file": "Sustainable-Construction-1-150x150.jpg",
+              "width": 150,
+              "height": 150,
+              "filesize": 9422,
+              "mime_type": "image/jpeg",
+              "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-150x150.jpg"
+            },
+            "medium_large": {
+              "file": "Sustainable-Construction-1-768x439.jpg",
+              "width": 768,
+              "height": 439,
+              "filesize": 110582,
+              "mime_type": "image/jpeg",
+              "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1-768x439.jpg"
+            },
+            "full": {
+              "file": "Sustainable-Construction-1.jpg",
+              "width": 1344,
+              "height": 768,
+              "mime_type": "image/jpeg",
+              "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg"
+            }
+          },
+          "image_meta": {
+            "aperture": "0",
+            "credit": "",
+            "camera": "",
+            "caption": "",
+            "created_timestamp": "0",
+            "copyright": "",
+            "focal_length": "0",
+            "iso": "0",
+            "shutter_speed": "0",
+            "title": "",
+            "orientation": "0",
+            "keywords": []
+          }
+        },
+        "source_url": "https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg",
+        "_links": {
+          "self": [
+            {
+              "href": "https://blog.samanportable.com/wp-json/wp/v2/media/236812",
+              "targetHints": {
+                "allow": [
+                  "GET"
+                ]
+              }
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://blog.samanportable.com/wp-json/wp/v2/media"
+            }
+          ],
+          "about": [
+            {
+              "href": "https://blog.samanportable.com/wp-json/wp/v2/types/attachment"
+            }
+          ],
+          "author": [
+            {
+              "embeddable": true,
+              "href": "https://blog.samanportable.com/wp-json/wp/v2/users/1"
+            }
+          ],
+          "replies": [
+            {
+              "embeddable": true,
+              "href": "https://blog.samanportable.com/wp-json/wp/v2/comments?post=236812"
+            }
+          ],
+          "wp:attached-to": [
+            {
+              "embeddable": true,
+              "post_type": "post",
+              "id": 236811,
+              "href": "https://blog.samanportable.com/wp-json/wp/v2/posts/236811"
+            }
+          ],
+          "curies": [
+            {
+              "name": "wp",
+              "href": "https://api.w.org/{rel}",
+              "templated": true
+            }
+          ]
+        }
       }
-     ],
-     "replies": [
-      {
-       "embeddable": true,
-       "href": "https://blog.samanportable.com/wp-json/wp/v2/comments?post=236812"
-      }
-     ],
-     "wp:attached-to": [
-      {
-       "embeddable": true,
-       "post_type": "post",
-       "id": 236811,
-       "href": "https://blog.samanportable.com/wp-json/wp/v2/posts/236811"
-      }
-     ],
-     "curies": [
-      {
-       "name": "wp",
-       "href": "https://api.w.org/{rel}",
-       "templated": true
-      }
-     ]
-    }
-   }
-  ],
-  "wp:term": [
-   [
-    {
-     "id": 615,
-     "link": "https://blog.samanportable.com/category/portable-buildings/",
-     "name": "Portable Buildings",
-     "slug": "portable-buildings",
-     "taxonomy": "category",
-     "_links": {
-      "self": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/categories/615",
-        "targetHints": {
-         "allow": [
-          "GET"
-         ]
+    ],
+    "wp:term": [
+      [
+        {
+          "id": 615,
+          "link": "https://blog.samanportable.com/category/portable-buildings/",
+          "name": "Portable Buildings",
+          "slug": "portable-buildings",
+          "taxonomy": "category",
+          "_links": {
+            "self": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/categories/615",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?categories=615"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
         }
-       }
       ],
-      "collection": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/categories"
-       }
-      ],
-      "about": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/category"
-       }
-      ],
-      "wp:post_type": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?categories=615"
-       }
-      ],
-      "curies": [
-       {
-        "name": "wp",
-        "href": "https://api.w.org/{rel}",
-        "templated": true
-       }
-      ]
-     }
-    }
-   ],
-   [
-    {
-     "id": 939,
-     "link": "https://blog.samanportable.com/tag/container-offices/",
-     "name": "Container Offices",
-     "slug": "container-offices",
-     "taxonomy": "post_tag",
-     "_links": {
-      "self": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/939",
-        "targetHints": {
-         "allow": [
-          "GET"
-         ]
+      [
+        {
+          "id": 939,
+          "link": "https://blog.samanportable.com/tag/container-offices/",
+          "name": "Container Offices",
+          "slug": "container-offices",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/939",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=939"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 1918,
+          "link": "https://blog.samanportable.com/tag/eco-friendly-offices/",
+          "name": "Eco-friendly offices",
+          "slug": "eco-friendly-offices",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1918",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1918"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 1919,
+          "link": "https://blog.samanportable.com/tag/environmentally-conscious-construction/",
+          "name": "Environmentally conscious construction",
+          "slug": "environmentally-conscious-construction",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1919",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1919"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 1917,
+          "link": "https://blog.samanportable.com/tag/green-building-design/",
+          "name": "Green building design",
+          "slug": "green-building-design",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1917",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1917"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 1681,
+          "link": "https://blog.samanportable.com/tag/modern-workspaces/",
+          "name": "Modern Workspaces",
+          "slug": "modern-workspaces",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1681",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1681"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 1800,
+          "link": "https://blog.samanportable.com/tag/sustainable-architecture/",
+          "name": "Sustainable Architecture",
+          "slug": "sustainable-architecture",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1800",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1800"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 690,
+          "link": "https://blog.samanportable.com/tag/sustainable-construction/",
+          "name": "Sustainable Construction",
+          "slug": "sustainable-construction",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/690",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=690"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 1331,
+          "link": "https://blog.samanportable.com/tag/workspace-innovation/",
+          "name": "Workspace Innovation",
+          "slug": "workspace-innovation",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1331",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1331"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
         }
-       }
-      ],
-      "collection": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
-       }
-      ],
-      "about": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
-       }
-      ],
-      "wp:post_type": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=939"
-       }
-      ],
-      "curies": [
-       {
-        "name": "wp",
-        "href": "https://api.w.org/{rel}",
-        "templated": true
-       }
       ]
-     }
-    },
-    {
-     "id": 1918,
-     "link": "https://blog.samanportable.com/tag/eco-friendly-offices/",
-     "name": "Eco-friendly offices",
-     "slug": "eco-friendly-offices",
-     "taxonomy": "post_tag",
-     "_links": {
-      "self": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1918",
-        "targetHints": {
-         "allow": [
-          "GET"
-         ]
-        }
-       }
-      ],
-      "collection": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
-       }
-      ],
-      "about": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
-       }
-      ],
-      "wp:post_type": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1918"
-       }
-      ],
-      "curies": [
-       {
-        "name": "wp",
-        "href": "https://api.w.org/{rel}",
-        "templated": true
-       }
-      ]
-     }
-    },
-    {
-     "id": 1919,
-     "link": "https://blog.samanportable.com/tag/environmentally-conscious-construction/",
-     "name": "Environmentally conscious construction",
-     "slug": "environmentally-conscious-construction",
-     "taxonomy": "post_tag",
-     "_links": {
-      "self": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1919",
-        "targetHints": {
-         "allow": [
-          "GET"
-         ]
-        }
-       }
-      ],
-      "collection": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
-       }
-      ],
-      "about": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
-       }
-      ],
-      "wp:post_type": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1919"
-       }
-      ],
-      "curies": [
-       {
-        "name": "wp",
-        "href": "https://api.w.org/{rel}",
-        "templated": true
-       }
-      ]
-     }
-    },
-    {
-     "id": 1917,
-     "link": "https://blog.samanportable.com/tag/green-building-design/",
-     "name": "Green building design",
-     "slug": "green-building-design",
-     "taxonomy": "post_tag",
-     "_links": {
-      "self": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1917",
-        "targetHints": {
-         "allow": [
-          "GET"
-         ]
-        }
-       }
-      ],
-      "collection": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
-       }
-      ],
-      "about": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
-       }
-      ],
-      "wp:post_type": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1917"
-       }
-      ],
-      "curies": [
-       {
-        "name": "wp",
-        "href": "https://api.w.org/{rel}",
-        "templated": true
-       }
-      ]
-     }
-    },
-    {
-     "id": 1681,
-     "link": "https://blog.samanportable.com/tag/modern-workspaces/",
-     "name": "Modern Workspaces",
-     "slug": "modern-workspaces",
-     "taxonomy": "post_tag",
-     "_links": {
-      "self": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1681",
-        "targetHints": {
-         "allow": [
-          "GET"
-         ]
-        }
-       }
-      ],
-      "collection": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
-       }
-      ],
-      "about": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
-       }
-      ],
-      "wp:post_type": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1681"
-       }
-      ],
-      "curies": [
-       {
-        "name": "wp",
-        "href": "https://api.w.org/{rel}",
-        "templated": true
-       }
-      ]
-     }
-    },
-    {
-     "id": 1800,
-     "link": "https://blog.samanportable.com/tag/sustainable-architecture/",
-     "name": "Sustainable Architecture",
-     "slug": "sustainable-architecture",
-     "taxonomy": "post_tag",
-     "_links": {
-      "self": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1800",
-        "targetHints": {
-         "allow": [
-          "GET"
-         ]
-        }
-       }
-      ],
-      "collection": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
-       }
-      ],
-      "about": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
-       }
-      ],
-      "wp:post_type": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1800"
-       }
-      ],
-      "curies": [
-       {
-        "name": "wp",
-        "href": "https://api.w.org/{rel}",
-        "templated": true
-       }
-      ]
-     }
-    },
-    {
-     "id": 690,
-     "link": "https://blog.samanportable.com/tag/sustainable-construction/",
-     "name": "Sustainable Construction",
-     "slug": "sustainable-construction",
-     "taxonomy": "post_tag",
-     "_links": {
-      "self": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/690",
-        "targetHints": {
-         "allow": [
-          "GET"
-         ]
-        }
-       }
-      ],
-      "collection": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
-       }
-      ],
-      "about": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
-       }
-      ],
-      "wp:post_type": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=690"
-       }
-      ],
-      "curies": [
-       {
-        "name": "wp",
-        "href": "https://api.w.org/{rel}",
-        "templated": true
-       }
-      ]
-     }
-    },
-    {
-     "id": 1331,
-     "link": "https://blog.samanportable.com/tag/workspace-innovation/",
-     "name": "Workspace Innovation",
-     "slug": "workspace-innovation",
-     "taxonomy": "post_tag",
-     "_links": {
-      "self": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags/1331",
-        "targetHints": {
-         "allow": [
-          "GET"
-         ]
-        }
-       }
-      ],
-      "collection": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/tags"
-       }
-      ],
-      "about": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/taxonomies/post_tag"
-       }
-      ],
-      "wp:post_type": [
-       {
-        "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?tags=1331"
-       }
-      ],
-      "curies": [
-       {
-        "name": "wp",
-        "href": "https://api.w.org/{rel}",
-        "templated": true
-       }
-      ]
-     }
-    }
-   ]
-  ]
- },
- "_rank_math_head": {
-  "success": true,
-  "head": "<title>Sustainable Container Office Construction | SAMAN</title>\n<meta name=\"description\" content=\"How container offices support sustainable construction — material reuse, insulation, energy efficiency and faster builds. From an Indian steel manufacturer.\"/>\n<meta name=\"robots\" content=\"nofollow, noindex\"/>\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Sustainable Container Office Construction | SAMAN\" />\n<meta property=\"og:description\" content=\"How container offices support sustainable construction — material reuse, insulation, energy efficiency and faster builds. From an Indian steel manufacturer.\" />\n<meta property=\"og:site_name\" content=\"SAMAN Portable Office Solutions India Private Limited\" />\n<meta property=\"article:author\" content=\"https://www.facebook.com/share/14HTkGyZ4Cp\" />\n<meta property=\"article:tag\" content=\"Container Offices\" />\n<meta property=\"article:tag\" content=\"Eco-friendly offices\" />\n<meta property=\"article:tag\" content=\"Environmentally conscious construction\" />\n<meta property=\"article:tag\" content=\"Green building design\" />\n<meta property=\"article:tag\" content=\"Modern Workspaces\" />\n<meta property=\"article:tag\" content=\"Sustainable Architecture\" />\n<meta property=\"article:tag\" content=\"Sustainable Construction\" />\n<meta property=\"article:tag\" content=\"Workspace Innovation\" />\n<meta property=\"article:section\" content=\"Portable Buildings\" />\n<meta property=\"og:updated_time\" content=\"2024-12-11T12:26:49+05:30\" />\n<meta property=\"og:image\" content=\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\" />\n<meta property=\"og:image:secure_url\" content=\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\" />\n<meta property=\"og:image:width\" content=\"1344\" />\n<meta property=\"og:image:height\" content=\"768\" />\n<meta property=\"og:image:alt\" content=\"Sustainable Construction\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta property=\"article:published_time\" content=\"2024-12-04T18:10:55+05:30\" />\n<meta property=\"article:modified_time\" content=\"2024-12-11T12:26:49+05:30\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Sustainable Container Office Construction | SAMAN\" />\n<meta name=\"twitter:description\" content=\"How container offices support sustainable construction — material reuse, insulation, energy efficiency and faster builds. From an Indian steel manufacturer.\" />\n<meta name=\"twitter:creator\" content=\"@ytamanzz\" />\n<meta name=\"twitter:image\" content=\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"Aman Dubey\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"20 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema-pro\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Place\",\"@id\":\"https://blog.samanportable.com/#place\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":\"12.850989017512308\",\"longitude\":\" 77.7266192745009\"},\"hasMap\":\"https://www.google.com/maps/search/?api=1&amp;query=12.850989017512308, 77.7266192745009\"},{\"@type\":\"Organization\",\"@id\":\"https://blog.samanportable.com/#organization\",\"name\":\"SAMAN Portable Office Solutions India Private Limited\",\"url\":\"https://blog.samanportable.com/\",\"email\":\"sales@samanportable.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://blog.samanportable.com/#logo\",\"url\":\"https://blog.samanportable.com/wp-content/uploads/2025/08/saman-portable-logo-1.png\",\"contentUrl\":\"https://blog.samanportable.com/wp-content/uploads/2025/08/saman-portable-logo-1.png\",\"caption\":\"SAMAN Portable Office Solutions India Private Limited\",\"inLanguage\":\"en-US\",\"width\":\"250\",\"height\":\"250\"},\"location\":{\"@id\":\"https://blog.samanportable.com/#place\"}},{\"@type\":\"WebSite\",\"@id\":\"https://blog.samanportable.com/#website\",\"url\":\"https://blog.samanportable.com\",\"name\":\"SAMAN Portable Office Solutions India Private Limited\",\"alternateName\":\"Saman Portable\",\"publisher\":{\"@id\":\"https://blog.samanportable.com/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\",\"url\":\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\",\"width\":\"1344\",\"height\":\"768\",\"caption\":\"Sustainable Construction\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"#webpage\",\"url\":\"\",\"name\":\"Sustainable Construction: Container Offices &amp; Green Workspaces\",\"datePublished\":\"2024-12-04T18:10:55+05:30\",\"dateModified\":\"2024-12-11T12:26:49+05:30\",\"isPartOf\":{\"@id\":\"https://blog.samanportable.com/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://blog.samanportable.com/author/admin-1/\",\"name\":\"Aman Dubey\",\"url\":\"https://blog.samanportable.com/author/admin-1/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://blog.samanportable.com/wp-content/litespeed/avatar/b86783ac56d8618102ce3a0821524069.jpg?ver=1780588107\",\"url\":\"https://blog.samanportable.com/wp-content/litespeed/avatar/b86783ac56d8618102ce3a0821524069.jpg?ver=1780588107\",\"caption\":\"Aman Dubey\",\"inLanguage\":\"en-US\"},\"sameAs\":[\"https://blog.samanportable.com\",\"https://www.facebook.com/share/14HTkGyZ4Cp\",\"https://twitter.com/https://x.com/ytamanzz\"],\"worksFor\":{\"@id\":\"https://blog.samanportable.com/#organization\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Sustainable Construction: Container Offices &amp; Green Workspaces\",\"keywords\":\"Sustainable Construction,Portable Cabins,Container Offices,Office Containers,Portable Office Cabins\",\"datePublished\":\"2024-12-04T18:10:55+05:30\",\"dateModified\":\"2024-12-11T12:26:49+05:30\",\"articleSection\":\"Portable Buildings\",\"author\":{\"@id\":\"https://blog.samanportable.com/author/admin-1/\",\"name\":\"Aman Dubey\"},\"publisher\":{\"@id\":\"https://blog.samanportable.com/#organization\"},\"description\":\"Discover how sustainable construction is transforming the workplace with eco-friendly container offices. Learn about cost savings, environmental benefits, and modern design solutions\",\"name\":\"Sustainable Construction: Container Offices &amp; Green Workspaces\",\"@id\":\"#richSnippet\",\"isPartOf\":{\"@id\":\"#webpage\"},\"image\":{\"@id\":\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"#webpage\"}}]}</script>\n"
- }
+    ]
+  },
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Sustainable Container Office Construction | SAMAN</title>\n<meta name=\"description\" content=\"How container offices support sustainable construction — material reuse, insulation, energy efficiency and faster builds. From an Indian steel manufacturer.\"/>\n<meta name=\"robots\" content=\"nofollow, noindex\"/>\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Sustainable Container Office Construction | SAMAN\" />\n<meta property=\"og:description\" content=\"How container offices support sustainable construction — material reuse, insulation, energy efficiency and faster builds. From an Indian steel manufacturer.\" />\n<meta property=\"og:site_name\" content=\"SAMAN Portable Office Solutions India Private Limited\" />\n<meta property=\"article:author\" content=\"https://www.facebook.com/share/14HTkGyZ4Cp\" />\n<meta property=\"article:tag\" content=\"Container Offices\" />\n<meta property=\"article:tag\" content=\"Eco-friendly offices\" />\n<meta property=\"article:tag\" content=\"Environmentally conscious construction\" />\n<meta property=\"article:tag\" content=\"Green building design\" />\n<meta property=\"article:tag\" content=\"Modern Workspaces\" />\n<meta property=\"article:tag\" content=\"Sustainable Architecture\" />\n<meta property=\"article:tag\" content=\"Sustainable Construction\" />\n<meta property=\"article:tag\" content=\"Workspace Innovation\" />\n<meta property=\"article:section\" content=\"Portable Buildings\" />\n<meta property=\"og:updated_time\" content=\"2024-12-11T12:26:49+05:30\" />\n<meta property=\"og:image\" content=\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\" />\n<meta property=\"og:image:secure_url\" content=\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\" />\n<meta property=\"og:image:width\" content=\"1344\" />\n<meta property=\"og:image:height\" content=\"768\" />\n<meta property=\"og:image:alt\" content=\"Sustainable Construction\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta property=\"article:published_time\" content=\"2024-12-04T18:10:55+05:30\" />\n<meta property=\"article:modified_time\" content=\"2024-12-11T12:26:49+05:30\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Sustainable Container Office Construction | SAMAN\" />\n<meta name=\"twitter:description\" content=\"How container offices support sustainable construction — material reuse, insulation, energy efficiency and faster builds. From an Indian steel manufacturer.\" />\n<meta name=\"twitter:creator\" content=\"@ytamanzz\" />\n<meta name=\"twitter:image\" content=\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"Aman Dubey\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"20 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema-pro\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Place\",\"@id\":\"https://blog.samanportable.com/#place\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":\"12.850989017512308\",\"longitude\":\" 77.7266192745009\"},\"hasMap\":\"https://www.google.com/maps/search/?api=1&amp;query=12.850989017512308, 77.7266192745009\"},{\"@type\":\"Organization\",\"@id\":\"https://blog.samanportable.com/#organization\",\"name\":\"SAMAN Portable Office Solutions India Private Limited\",\"url\":\"https://blog.samanportable.com/\",\"email\":\"sales@samanportable.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://blog.samanportable.com/#logo\",\"url\":\"https://blog.samanportable.com/wp-content/uploads/2025/08/saman-portable-logo-1.png\",\"contentUrl\":\"https://blog.samanportable.com/wp-content/uploads/2025/08/saman-portable-logo-1.png\",\"caption\":\"SAMAN Portable Office Solutions India Private Limited\",\"inLanguage\":\"en-US\",\"width\":\"250\",\"height\":\"250\"},\"location\":{\"@id\":\"https://blog.samanportable.com/#place\"}},{\"@type\":\"WebSite\",\"@id\":\"https://blog.samanportable.com/#website\",\"url\":\"https://blog.samanportable.com\",\"name\":\"SAMAN Portable Office Solutions India Private Limited\",\"alternateName\":\"Saman Portable\",\"publisher\":{\"@id\":\"https://blog.samanportable.com/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\",\"url\":\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\",\"width\":\"1344\",\"height\":\"768\",\"caption\":\"Sustainable Construction\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"#webpage\",\"url\":\"\",\"name\":\"Sustainable Construction: Container Offices &amp; Green Workspaces\",\"datePublished\":\"2024-12-04T18:10:55+05:30\",\"dateModified\":\"2024-12-11T12:26:49+05:30\",\"isPartOf\":{\"@id\":\"https://blog.samanportable.com/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://blog.samanportable.com/author/admin-1/\",\"name\":\"Aman Dubey\",\"url\":\"https://blog.samanportable.com/author/admin-1/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://blog.samanportable.com/wp-content/litespeed/avatar/b86783ac56d8618102ce3a0821524069.jpg?ver=1780588107\",\"url\":\"https://blog.samanportable.com/wp-content/litespeed/avatar/b86783ac56d8618102ce3a0821524069.jpg?ver=1780588107\",\"caption\":\"Aman Dubey\",\"inLanguage\":\"en-US\"},\"sameAs\":[\"https://blog.samanportable.com\",\"https://www.facebook.com/share/14HTkGyZ4Cp\",\"https://twitter.com/https://x.com/ytamanzz\"],\"worksFor\":{\"@id\":\"https://blog.samanportable.com/#organization\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Sustainable Construction: Container Offices &amp; Green Workspaces\",\"keywords\":\"Sustainable Construction,Portable Cabins,Container Offices,Office Containers,Portable Office Cabins\",\"datePublished\":\"2024-12-04T18:10:55+05:30\",\"dateModified\":\"2024-12-11T12:26:49+05:30\",\"articleSection\":\"Portable Buildings\",\"author\":{\"@id\":\"https://blog.samanportable.com/author/admin-1/\",\"name\":\"Aman Dubey\"},\"publisher\":{\"@id\":\"https://blog.samanportable.com/#organization\"},\"description\":\"Discover how sustainable construction is transforming the workplace with eco-friendly container offices. Learn about cost savings, environmental benefits, and modern design solutions\",\"name\":\"Sustainable Construction: Container Offices &amp; Green Workspaces\",\"@id\":\"#richSnippet\",\"isPartOf\":{\"@id\":\"#webpage\"},\"image\":{\"@id\":\"https://blog.samanportable.com/wp-content/uploads/2024/12/Sustainable-Construction-1.jpg\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"#webpage\"}}]}</script>\n"
+  }
 }
