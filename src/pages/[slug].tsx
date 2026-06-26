@@ -654,7 +654,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
           <article className="mb-16">
             {/* Title */}
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-900 via-green-900 to-slate-900 bg-clip-text text-transparent leading-tight tracking-tight mb-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight mb-6">
                 {decodeHtmlEntities(post.title.rendered)}
               </h1>
               <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full"></div>
