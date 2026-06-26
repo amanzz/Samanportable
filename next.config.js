@@ -408,7 +408,7 @@ const nextConfig = {
       // ─── BLOG DEDUPE REDIRECTS (42 entries from SAMAN_Blog_Dedupe_Action_List.csv) ───
       {
         source: '/portacabins-for-sale-in-hosur',
-        destination: '/affordable-porta-cabins-in-hosur',
+        destination: '/portable-cabins-in-hosur',
         permanent: true,
       },
       {
@@ -488,7 +488,7 @@ const nextConfig = {
       },
       {
         source: '/portacabins-for-sale-in-bellandur',
-        destination: '/porta-cabins-in-bellandur',
+        destination: '/portable-cabins-in-bellandur',
         permanent: true,
       },
       {
@@ -617,9 +617,40 @@ const nextConfig = {
       },
       {
         source: '/trusted-porta-cabins-in-shivajinagar',
-        destination: '/portacabins-for-sale-in-shivajinagar',
+        destination: '/portable-cabins-in-shivajinagar',
         permanent: true,
       },
+
+      // C1/C2 locality consolidation (2026-06-26): one-hop 308s into keeper
+      // pages. Do not add Bangalore/India catch-alls here.
+      { source: '/portable-cabins-in-anekal', destination: '/porta-cabins-in-anekal', permanent: true },
+      { source: '/portable-cabins-in-banashankari', destination: '/porta-cabins-in-banashankari', permanent: true },
+      { source: '/portable-cabins-in-bannerghatta-road', destination: '/portacabins-for-sale-in-bannerghatta-road', permanent: true },
+      { source: '/portable-cabins-in-bommasandra', destination: '/portacabins-for-sale-in-bommasandra', permanent: true },
+      { source: '/portable-cabins-in-btm-layout', destination: '/porta-cabins-in-btm-layout', permanent: true },
+      { source: '/portable-cabins-in-domlur', destination: '/porta-cabins-in-domlur', permanent: true },
+      { source: '/portable-cabins-in-electronic-city', destination: '/porta-cabins-in-electronic-city', permanent: true },
+      { source: '/portable-cabins-in-hebbal', destination: '/porta-cabins-in-hebbal', permanent: true },
+      { source: '/portable-cabins-in-hsr-layout', destination: '/porta-cabins-in-hsr-layout', permanent: true },
+      { source: '/portable-cabins-in-jayanagar', destination: '/porta-cabins-in-jayanagar', permanent: true },
+      { source: '/portable-cabins-in-jigani', destination: '/porta-cabins-in-jigani', permanent: true },
+      { source: '/portable-cabins-in-jp-nagar', destination: '/porta-cabins-in-jp-nagar', permanent: true },
+      { source: '/portable-cabins-in-kengeri', destination: '/porta-cabins-in-kengeri', permanent: true },
+      { source: '/portable-cabins-in-koramangala', destination: '/porta-cabins-in-koramangala', permanent: true },
+      { source: '/portable-cabins-in-malleshwaram', destination: '/porta-cabins-in-malleshwaram', permanent: true },
+      { source: '/portable-cabins-in-marathahalli', destination: '/porta-cabins-in-marathahalli', permanent: true },
+      { source: '/portable-cabins-in-nagarbhavi', destination: '/porta-cabins-in-nagarbhavi', permanent: true },
+      { source: '/portable-cabins-in-noida', destination: '/porta-cabin-in-noida', permanent: true },
+      { source: '/portable-cabins-in-rajajinagar', destination: '/porta-cabins-in-rajajinagar', permanent: true },
+      { source: '/portable-cabins-in-rt-nagar', destination: '/porta-cabins-in-rt-nagar', permanent: true },
+      { source: '/portable-cabins-in-sarjapur-road', destination: '/porta-cabins-in-sarjapur-road', permanent: true },
+      { source: '/portable-cabins-in-ulsoor', destination: '/porta-cabins-in-ulsoor', permanent: true },
+      { source: '/portable-cabins-in-vijayanagar', destination: '/porta-cabins-in-vijayanagar', permanent: true },
+      { source: '/portable-cabins-in-whitefield', destination: '/portacabins-for-sale-in-whitefield', permanent: true },
+      { source: '/portable-cabins-in-yelahanka', destination: '/porta-cabins-in-yelahanka', permanent: true },
+      { source: '/porta-cabins-in-bellandur', destination: '/portable-cabins-in-bellandur', permanent: true },
+      { source: '/portacabins-for-sale-in-shivajinagar', destination: '/portable-cabins-in-shivajinagar', permanent: true },
+      { source: '/affordable-porta-cabins-in-hosur', destination: '/portable-cabins-in-hosur', permanent: true },
 
       // ─── GSC "Not found 404" redirect-worthy small batch (1:1 equivalents) ─
       // Six high-confidence 301s for legacy 404 URLs whose canonical page is live (200).
