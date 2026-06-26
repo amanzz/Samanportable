@@ -33,7 +33,7 @@
     "footnotes": ""
   },
   "categories": [
-    615
+    3871
   ],
   "tags": [
     1528,
@@ -49,7 +49,7 @@
     "format-standard",
     "has-post-thumbnail",
     "hentry",
-    "category-portable-buildings",
+    "category-porta-cabins",
     "tag-affordable-workspaces",
     "tag-budget-friendly-offices",
     "tag-porta-cabin-office",
@@ -357,15 +357,15 @@
     "wp:term": [
       [
         {
-          "id": 615,
-          "link": "https://blog.samanportable.com/category/portable-buildings/",
-          "name": "Portable Buildings",
-          "slug": "portable-buildings",
+          "id": 3871,
+          "link": "https://blog.samanportable.com/category/porta-cabins/",
+          "name": "Porta Cabins",
+          "slug": "porta-cabins",
           "taxonomy": "category",
           "_links": {
             "self": [
               {
-                "href": "https://blog.samanportable.com/wp-json/wp/v2/categories/615",
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/categories/3871",
                 "targetHints": {
                   "allow": [
                     "GET"
@@ -385,7 +385,7 @@
             ],
             "wp:post_type": [
               {
-                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?categories=615"
+                "href": "https://blog.samanportable.com/wp-json/wp/v2/posts?categories=3871"
               }
             ],
             "curies": [
