@@ -37,7 +37,16 @@
   ],
   "tags": [],
   "class_list": [],
-  "_embedded": {},
+  "_embedded": {
+    "wp:featuredmedia": [
+      {
+        "id": 0,
+        "source_url": "https://blog.samanportable.com/wp-content/uploads/2025/07/Compact-labour-colony-in-East-Delhi-with-modular-units-arranged-efficiently-on-a-construction.jpeg",
+        "alt_text": "Labour hutment — modular site accommodation units at a construction site",
+        "media_type": "image"
+      }
+    ]
+  },
   "_rank_math_head": {
     "success": true,
     "head": "<title>What Is a Labour Hutment? Meaning, Types & Uses</title>\n<meta name=\"description\" content=\"Labour hutment meaning explained: what a hutment is in construction, types of labour hutments, portable vs permanent, and what SAMAN supplies. Factory-direct.\"/>\n<meta name=\"robots\" content=\"index, follow\"/>\n<link rel=\"canonical\" href=\"https://www.samanportable.com/what-is-a-labour-hutment\"/>\n<meta property=\"og:title\" content=\"What Is a Labour Hutment? Meaning, Types & Uses\"/>\n<meta property=\"og:description\" content=\"Labour hutment meaning explained: what a hutment is in construction, types of labour hutments, portable vs permanent, and what SAMAN supplies. Factory-direct.\"/>\n<meta property=\"og:locale\" content=\"en_US\"/>\n<meta name=\"twitter:title\" content=\"What Is a Labour Hutment? Meaning, Types & Uses\"/>\n<meta name=\"twitter:description\" content=\"Labour hutment meaning explained: what a hutment is in construction, types of labour hutments, portable vs permanent, and what SAMAN supplies. Factory-direct.\"/>\n"

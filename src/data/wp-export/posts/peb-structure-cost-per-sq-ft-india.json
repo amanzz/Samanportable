@@ -37,7 +37,16 @@
   ],
   "tags": [],
   "class_list": [],
-  "_embedded": {},
+  "_embedded": {
+    "wp:featuredmedia": [
+      {
+        "id": 0,
+        "source_url": "https://blog.samanportable.com/wp-content/uploads/2026/06/industrial-shed-in-bangalore-prefab-steel-factory-shed.webp",
+        "alt_text": "New prefab steel PEB factory shed on an Indian industrial plot",
+        "media_type": "image"
+      }
+    ]
+  },
   "_rank_math_head": {
     "success": false,
     "head": ""
