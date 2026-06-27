@@ -25,7 +25,7 @@ import dynamic from 'next/dynamic';
 
 
 import type { BlogPost, RankMathSEOData } from '../config/api';
-import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema, getCityPageGraph } from '../lib/schema';
+import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema, getCityPageGraph, getFAQSchemaOverride } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 import { demoteHtmlH1ToH2 } from '../lib/seoHtml';
 import { setPublicEdgeCache } from '../lib/cacheHeaders';
@@ -68,6 +68,13 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'porta-cabin-in-visakhapatnam',
   'porta-cabin-in-madurai',
   'porta-cabin-in-mangalore',
+  'porta-cabin-in-lucknow',
+]);
+
+// City pages served from the North (Greater Noida) factory: their Organization
+// contactPoint uses the North sales number instead of the South default.
+const NORTH_CITY_PAGE_SLUGS = new Set([
+  'porta-cabin-in-lucknow',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
@@ -613,7 +620,8 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
                 { name: 'Porta Cabins', url: 'https://www.samanportable.com/product-category/porta-cabins' },
                 { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` },
               ],
-              faqSchema: extractFAQSchema(post.content.rendered),
+              faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
+              contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug) ? '+91 87960 39938' : undefined,
             });
           }
 
@@ -636,7 +644,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               { name: 'Blog', url: 'https://www.samanportable.com/blog' },
               { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` }
             ],
-            faqSchema: extractFAQSchema(post.content.rendered),
+            faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
             serviceSchema: getCityServiceSchema({
               slug,
               description: post.excerpt.rendered,

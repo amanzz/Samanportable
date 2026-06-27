@@ -476,6 +476,111 @@ export const extractFAQSchema = (html: string): object | null => {
   };
 };
 
+const faqSchemaFromItems = (items: FAQItem[]): object => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+});
+
+const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
+  'portable-cabins-in-gurgaon': [
+    {
+      question: 'How long does delivery of a portable cabin to Gurgaon take?',
+      answer: 'Standard portable cabins typically reach Gurgaon sites in 3-5 days once the unit is ready, because we dispatch from our Greater Noida factory in the same NCR region. Custom or fully fitted cabins follow a build-time estimate, commonly around 7-21 working days depending on size, insulation, and fit-out.',
+    },
+    {
+      question: 'What decides the price of a portable cabin in Gurgaon?',
+      answer: 'Price depends on the cabin size, panel type and insulation (single-skin versus ~50 mm PUF), fit-out (toilet, partitions, windows, electricals), finish level, and delivery distance to your site. Because we sell direct from the factory on an enquiry basis, send your requirement and we quote it exactly - there is no fixed per-square-foot rate.',
+    },
+    {
+      question: 'Do I need a permit for a portable cabin in Gurgaon?',
+      answer: 'Permit rules for temporary structures vary by location and by who owns or governs the site, and may differ inside special zones such as Cyber City or industrial areas like Manesar. A portable cabin is a movable, dry-assembled unit, but you should confirm any temporary-structure approval with your local authority or site owner before installation.',
+    },
+    {
+      question: 'What sizes of portable cabin can I get?',
+      answer: 'Cabins are built to your floor plan, from a compact single site office to larger cabin offices, cabins with an attached toilet, and multi-unit layouts for bigger teams. Share your plot dimensions and headcount and we will recommend a layout that fits.',
+    },
+    {
+      question: "Can a portable cabin handle Gurgaon's heat and monsoon?",
+      answer: 'Yes. Our cabins use ~50 mm insulated PUF sandwich panels that help keep interiors cooler in summer, with GI roofing built for monsoon rain and a powder-coated IS 2062 steel frame for durability. You can add air-conditioning provision and extra insulation for longer or office deployments.',
+    },
+    {
+      question: 'Can the cabin be relocated if our site changes?',
+      answer: 'Yes. A portable cabin is designed to be moved. Single units can usually be lifted and transported as built; larger or multi-unit layouts may need dismantling and reassembly. Tell us the move details and we can advise on the right approach.',
+    },
+  ],
+  'portable-cabins-in-greater-noida': [
+    {
+      question: 'How quickly can you deliver a portable cabin in Greater Noida?',
+      answer: 'Standard cabins are usually delivered within about 3-5 days, since they dispatch from our Greater Noida factory. Installation on a prepared site adds roughly one to three days. Custom or fully fitted cabins need extra build time before dispatch - share your specification and we will confirm a realistic timeline for your site in Alpha, Beta, Gamma, or Knowledge Park.',
+    },
+    {
+      question: 'What decides the price of a portable cabin?',
+      answer: 'Price depends on size, panel thickness and insulation, flooring grade, doors and windows, electrical and plumbing fittings, any toilet or partition, the finish you choose, and delivery distance. A bare single-room cabin is much cheaper than a fitted, air-conditioned office cabin of the same size. Send us your requirement and we will give you a clear, itemised quote.',
+    },
+    {
+      question: 'What foundation does a portable cabin need at a factory site?',
+      answer: 'Most cabins sit on a simple concrete pad or a steel base frame. For short-term use, a leveled patch of ground with support blocks at load points is often enough. The exact requirement depends on soil, cabin size, and how long it will stay. Our team can assess your site before delivery to confirm the right base.',
+    },
+    {
+      question: "Can a portable cabin handle Greater Noida's summer heat and monsoon?",
+      answer: 'Yes. The ~50 mm PUF insulated panels reduce heat transfer in summer, and the sloped GI roof with sealed joints channels monsoon water away. UV-resistant exterior coating limits sun damage on open industrial plots. For very hot zones, you can add AC provision or thicker panels.',
+    },
+    {
+      question: 'What is the warranty and expected life of a SAMAN cabin?',
+      answer: 'The warranty is 5 years on the structural frame and base plus 1-2 years on finishing, with a 20-25 year engineered service life for the structure. The galvanised steel frame resists corrosion, and powder-coated members hold up in industrial conditions. With basic maintenance, cabins stay in service for many years.',
+    },
+  ],
+  'portable-cabins-in-faridabad': [
+    {
+      question: 'How quickly can you deliver a portable cabin in Faridabad?',
+      answer: 'Standard cabin configurations typically reach site in 3-5 days across Faridabad, Ballabhgarh and Surajkund, dispatched from our Greater Noida factory. Custom or fitted units take longer to build; we confirm the timeline on your quote.',
+    },
+    {
+      question: 'What decides the price of a portable cabin?',
+      answer: 'Size, panel thickness, insulation, internal fit-out (flooring, partitions, attached toilet, electricals) and delivery distance set the price. There is no single fixed rate - share your requirement and we send a written quote.',
+    },
+    {
+      question: 'What site preparation is needed before installation?',
+      answer: 'You need a level base - usually a concrete pad or well-compacted ground with drainage. For short-term use, an adjustable foundation can work. Our team gives site-prep guidance before delivery so installation is straightforward.',
+    },
+    {
+      question: 'Are portable cabins suitable during Delhi-NCR construction bans?',
+      answer: 'Generally yes. During GRAP restriction windows, wet construction may be limited, but dry-assembly factory-built cabins are usually not barred because they are installed, not cast on site. Confirm current rules with local authorities for your project.',
+    },
+    {
+      question: 'What warranty do you offer?',
+      answer: 'Our cabins carry 5 years structural frame and base + 1-2 years finishing + 20-25 years engineered service life. The 20-25 years is the engineered service life of the structure, not a warranty period.',
+    },
+    {
+      question: 'Can a portable cabin be relocated later?',
+      answer: 'Yes. A key advantage is mobility - the cabin can be lifted and moved as your project changes. Our team can handle disassembly, transport and reinstallation so the unit stays in good condition after a move.',
+    },
+  ],
+  'porta-cabin-in-noida': [
+    {
+      question: 'Which factory supplies porta cabins to Noida?',
+      answer: 'Your unit ships factory-direct from our Greater Noida facility (Jalpura, 201308) — a short same-region delivery into Noida, with a ₹3,000 default delivery charge and typical transit of 3–5 days.',
+    },
+    {
+      question: 'Is the porta cabin built to a structural standard?',
+      answer: 'Yes — every unit is built on an IS 2062 steel frame by an ISO 9001:2015 / 14001:2015 / 45001:2018-certified manufacturer (NSIC-enlisted, DPIIT-recognised).',
+    },
+  ],
+};
+
+export const getFAQSchemaOverride = (slug: string): object | null => {
+  const items = FAQ_SCHEMA_OVERRIDES[slug];
+  return items ? faqSchemaFromItems(items) : null;
+};
+
 /**
  * Format raw date string to valid ISO8601 standard with timezone offset (+05:30 for IST)
  */
@@ -629,6 +734,10 @@ const CITY_GEO: Record<string, { lat: number; lng: number; sameAs: string }> = {
   'east delhi': { lat: 28.6279, lng: 77.2952, sameAs: 'https://en.wikipedia.org/wiki/East_Delhi_district' },
   'central delhi': { lat: 28.6469, lng: 77.2167, sameAs: 'https://en.wikipedia.org/wiki/Central_Delhi_district' },
   'noida': { lat: 28.5355, lng: 77.3910, sameAs: 'https://en.wikipedia.org/wiki/Noida' },
+  // Delhi NCR dispatch-origin geo reuses the Noida-unit coordinates (verbatim from
+  // the 'noida' entry above) for cross-page consistency; sameAs points to the NCR
+  // region article to match the "Delhi NCR" area name.
+  'delhi ncr': { lat: 28.5355, lng: 77.3910, sameAs: 'https://en.wikipedia.org/wiki/National_Capital_Region_(India)' },
   'greater noida': { lat: 28.4744, lng: 77.5040, sameAs: 'https://en.wikipedia.org/wiki/Greater_Noida' },
   'ghaziabad': { lat: 28.6692, lng: 77.4538, sameAs: 'https://en.wikipedia.org/wiki/Ghaziabad' },
   'gurgaon': { lat: 28.4595, lng: 77.0266, sameAs: 'https://en.wikipedia.org/wiki/Gurgaon' },
@@ -849,8 +958,9 @@ export const getCityPageGraph = (params: {
   url: string;
   breadcrumbs: Array<{ name: string; url: string }>;
   faqSchema: any | null;
+  contactTelephone?: string;
 }) => {
-  const { url, breadcrumbs, faqSchema } = params;
+  const { url, breadcrumbs, faqSchema, contactTelephone = '+91 88616 22859' } = params;
 
   const organization = {
     '@type': 'Organization',
@@ -882,7 +992,7 @@ export const getCityPageGraph = (params: {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91 88616 22859',
+      telephone: contactTelephone,
       contactType: 'sales',
       areaServed: 'IN',
     },
@@ -914,4 +1024,3 @@ export const getCityPageGraph = (params: {
     '@graph': graph,
   };
 };
-
