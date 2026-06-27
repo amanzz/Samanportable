@@ -61,6 +61,13 @@ const CONTENT_H1_DEMOTION_SLUGS = new Set([
 const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'porta-cabin-in-hyderabad',
   'porta-cabin-in-chennai',
+  'porta-cabin-in-kochi',
+  'porta-cabin-in-coimbatore',
+  'porta-cabin-in-mysore',
+  'porta-cabin-in-vijayawada',
+  'porta-cabin-in-visakhapatnam',
+  'porta-cabin-in-madurai',
+  'porta-cabin-in-mangalore',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
