@@ -490,6 +490,28 @@ const faqSchemaFromItems = (items: FAQItem[]): object => ({
 });
 
 const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
+  'porta-cabin-in-indore': [
+    {
+      question: 'Do you deliver porta cabins to Pithampur and Sanwer Road?',
+      answer: 'Yes — Pithampur, Sanwer Road, Dewas Naka, and construction sites right across Indore. The cabin ships from our Greater Noida factory and takes 3–5 days in transit. Delivery is ₹3,000 standard.',
+    },
+    {
+      question: "How does the cabin hold up in Indore's summer heat?",
+      answer: "The 50 mm PUF panels are real insulation, not just a skin, and we'd push you toward a turbo ventilator and false ceiling for any open Pithampur-type plot with no shade. For an office you'll sit in all summer, add an AC provision and pick a light exterior colour. Done that way it stays workable past 40°C; a bare cabin in full sun won't.",
+    },
+    {
+      question: 'What does a porta cabin cost in Indore?',
+      answer: "It depends on size, panel type, how much fit-out you want, and quantity. We don't publish a fixed price because every cabin is built to order — call +91 87960 39938 or send an enquiry and we'll quote your exact spec.",
+    },
+    {
+      question: 'Can you supply for an Indore Metro or industrial project?',
+      answer: "Yes. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send us the project scope and we'll confirm what we can supply and by when.",
+    },
+    {
+      question: 'How long from order to delivery in Indore?',
+      answer: "Transit is 3–5 days once the cabin's built. Production time depends on the configuration and where you land in our queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+    },
+  ],
   'portable-cabins-in-gurgaon': [
     {
       question: 'How long does delivery of a portable cabin to Gurgaon take?',
@@ -770,6 +792,138 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     {
       question: 'How long does delivery from the factory to Bhubaneswar take?',
       answer: '4–5 days from our Greater Noida factory via the NH-19 / NH-16 corridor, after production is complete. Bhubaneswar is farther east than most of our North-dispatch cities, so allow the upper end of the range. Production lead time depends on your configuration and the order queue — confirm at enquiry.',
+    },
+  ],
+  'porta-cabin-in-raipur': [
+    {
+      question: 'Do you deliver porta cabins to Urla and Siltara?',
+      answer: 'Yes — Urla, Siltara, the Bhilai steel belt, and construction sites across the Raipur region. The cabin ships from our Greater Noida factory and takes 4–5 days in transit, since Raipur is a longer haul. Delivery is ₹3,000 standard.',
+    },
+    {
+      question: 'Will the cabin hold up in a dusty, high-heat steel-belt plant?',
+      answer: 'That’s what it’s built for. The frame is IS 2062 steel, zinc-phosphate primed and powder-coated, and for a dusty sponge-iron or rolling-mill yard we can spec a heavier anti-rust coating and seal the windows and doors to keep plant dust out. The 50 mm PUF panels handle the heat. Tell us the plant conditions and we’ll match the spec.',
+    },
+    {
+      question: 'What does a porta cabin cost in Raipur?',
+      answer: 'It depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+    },
+    {
+      question: 'Can you supply multiple cabins for a Siltara or Bhilai plant project?',
+      answer: 'Yes — multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we’ll confirm capacity and timeline.',
+    },
+    {
+      question: 'How long from order to delivery in Raipur?',
+      answer: 'Transit is 4–5 days once the cabin’s built, since Raipur is farther southeast than our central-India cities. Production time depends on the configuration and your place in the queue — standard sizes move faster. We’ll confirm a firm timeline at enquiry.',
+    },
+  ],
+  'porta-cabin-in-ranchi': [
+    {
+      question: 'Do you deliver porta cabins to Namkum, HEC, and Tatisilwai?',
+      answer: 'Yes — Namkum Industrial Area, the HEC/Dhurwa area, Tatisilwai, and project sites across the Ranchi region. The cabin ships from our Greater Noida factory and takes 4–5 days in transit, since Ranchi is a longer haul. Delivery is ₹3,000 standard.',
+    },
+    {
+      question: "How does the cabin handle Ranchi's monsoon and sloping sites?",
+      answer: "The GI roof is pitched steep with factory-sealed joints to throw off the highland rain, and the frame is anchor-bolted to an RCC plinth so it stays level on rocky or sloping ground. For wet sites we'll recommend a raised plinth. The 50 mm PUF panels handle the temperature swings between summer and the monsoon.",
+    },
+    {
+      question: 'What does a porta cabin cost in Ranchi?',
+      answer: 'It depends on size, panel type, any site additions like a raised plinth, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+    },
+    {
+      question: 'Can you supply for an HEC or government project in Ranchi?',
+      answer: "Yes. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity and timeline.",
+    },
+    {
+      question: 'How long from order to delivery in Ranchi?',
+      answer: "Transit is 4–5 days once the cabin's built, since Ranchi is well east of our central-India cities. Production time depends on the configuration and your place in the queue — standard sizes move faster. We'll confirm a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-bhopal': [
+    {
+      question: "Do you deliver porta cabins to Govindpura and Mandideep?",
+      answer: "Yes — Govindpura, Mandideep, Bagroda, and construction sites across Bhopal. The cabin ships from our Greater Noida factory and takes 3–5 days in transit. Delivery is ₹3,000 standard.",
+    },
+    {
+      question: "How does the cabin cope with Bhopal's summer heat?",
+      answer: "The 50 mm PUF panels do real insulation work, and for any open plot without shade we'd add a turbo ventilator and false ceiling. For an office you'll use all summer, put in an AC provision and choose a light exterior colour. Built that way it stays usable past 42°C — a plain cabin in full sun won't.",
+    },
+    {
+      question: "What does a porta cabin cost in Bhopal?",
+      answer: "You'll see roughly ₹1,200 a square foot quoted on marketplaces, but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.",
+    },
+    {
+      question: "Can you supply for a Bhopal Smart City or industrial project?",
+      answer: "Yes. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm what we can supply and the timeline.",
+    },
+    {
+      question: "How long from order to delivery in Bhopal?",
+      answer: "Transit is 3–5 days once the cabin's built. Production time depends on the configuration and your place in the queue — standard sizes move faster. We'll give you a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-guwahati': [
+    {
+      question: 'Do you deliver porta cabins all the way to Guwahati?',
+      answer: 'Yes — Bamunimaidan, Amingaon, Changsari, and project sites across the Guwahati region. The cabin ships from our Greater Noida factory up the NH-27 corridor and takes 4–6 days, since it’s a long route. Delivery is ₹3,000 standard and we’ll confirm exact freight for your site given the distance.',
+    },
+    {
+      question: 'Is the cabin built for Assam’s rain and humidity?',
+      answer: 'Yes, and that’s built in before it leaves the factory. The frame is IS 2062 steel, zinc-phosphate primed and powder-coated against the humidity; the panel joints and roof are factory-sealed and the roof pitched steep for heavy monsoon. On floodplain or low-lying sites we recommend a raised RCC plinth or elevated MS-joist flooring to keep the floor above water.',
+    },
+    {
+      question: 'What does a porta cabin cost in Guwahati?',
+      answer: 'It depends on size, panel type, site additions, fit-out, and the freight for the long route. We quote against your exact spec and confirm Guwahati freight rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+    },
+    {
+      question: 'Can you supply for an NE logistics, oil, or government project in Guwahati?',
+      answer: 'Yes. We supply contractors and project managers across the Northeast, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we’ll confirm capacity, freight, and timeline.',
+    },
+    {
+      question: 'How long does delivery to Guwahati take?',
+      answer: '4–6 days in transit once the cabin’s built, given the distance up the NH-27 corridor. We plan for the upper end and tell you straight rather than promise a date we can’t hold. Production time depends on the configuration and your place in the queue — we’ll confirm a firm timeline at enquiry.',
+    },
+  ],
+  'porta-cabin-in-dehradun': [
+    {
+      question: 'Do you deliver porta cabins to Selaqui and Mohabbewala?',
+      answer: "Yes — Selaqui, Mohabbewala, Patel Nagar, and construction sites across the Dehradun region. The cabin ships from our Greater Noida factory and takes 3–5 days, since Dehradun is one of our closer cities. Delivery is ₹3,000 standard.",
+    },
+    {
+      question: 'Is the cabin built for a Dehradun winter and monsoon?',
+      answer: "Yes. The 50 mm PUF panels insulate against the cold, and for hill-foot sites we can add extra roof and wall insulation for the winter. The GI roof is pitched steep with sealed joints for the heavy monsoon, and the frame is anchor-bolted to an RCC plinth for sloping ground. Tell us the site and we'll match the spec.",
+    },
+    {
+      question: 'What does a porta cabin cost in Dehradun?',
+      answer: 'It depends on size, panel type, climate additions like extra insulation, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+    },
+    {
+      question: 'Can you deliver to a hill site above Dehradun?',
+      answer: "In most cases yes, but it depends on road access — a flatbed truck needs a road it can physically reach the site on, and very tight or steep hill roads may limit the cabin size we can deliver in one piece. Tell us the exact location and we'll confirm what the access will take before you order.",
+    },
+    {
+      question: 'How long from order to delivery in Dehradun?',
+      answer: "Transit is 3–5 days once the cabin's built, since Dehradun is a shorter run for us. Production time depends on the configuration and your place in the queue — standard sizes move faster. We'll confirm a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-gwalior': [
+    {
+      question: 'Do you deliver porta cabins to Malanpur and Banmore?',
+      answer: 'Yes — Malanpur, Banmore, the Maharajpura/Gwalior city belt, and construction sites across the Gwalior region. The cabin ships from our Greater Noida factory and takes 3–5 days, since Gwalior is one of our closer cities. Delivery is ₹3,000 standard.',
+    },
+    {
+      question: "How does the cabin handle Gwalior's heat and dust?",
+      answer: 'The 50 mm PUF panels insulate against the heat, and we fit sealed louvre or sliding windows and doors to keep the dry Chambal dust out. The powder-coat frame finish resists the dust too. For an open plot with no shade, add a turbo ventilator and false ceiling, and an AC provision for any working office.',
+    },
+    {
+      question: 'What does a porta cabin cost in Gwalior?',
+      answer: 'It depends on size, panel type, the heat-and-dust additions you need, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+    },
+    {
+      question: 'Can you supply for a Gwalior smart-city or industrial project?',
+      answer: "Yes. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity and timeline.",
+    },
+    {
+      question: 'How long from order to delivery in Gwalior?',
+      answer: "Transit is 3–5 days once the cabin's built, since Gwalior is a shorter run for us down the Yamuna Expressway. Production time depends on the configuration and your place in the queue — standard sizes move faster. We'll confirm a firm timeline at enquiry.",
     },
   ],
 };
