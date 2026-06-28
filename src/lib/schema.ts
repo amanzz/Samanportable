@@ -574,6 +574,50 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: 'Yes — every unit is built on an IS 2062 steel frame by an ISO 9001:2015 / 14001:2015 / 45001:2018-certified manufacturer (NSIC-enlisted, DPIIT-recognised).',
     },
   ],
+  'porta-cabin-in-jaipur': [
+    {
+      question: 'Does SAMAN deliver porta cabins to RIICO Sitapura and Mansarovar?',
+      answer: 'Yes. We deliver to all RIICO zones in Jaipur — Sitapura, Mansarovar, Vishwakarma, and Bindayaka — and to construction sites anywhere in Jaipur district. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+    },
+    {
+      question: "How does a porta cabin perform in Jaipur's 45°C+ summer heat?",
+      answer: 'With the right specification, well. We recommend three additions for all Jaipur orders: a turbo ventilator, an internal false ceiling, and an AC provision (wall-sleeve + power point). A light RAL colour (white or cream) on the outer skin reduces solar heat gain significantly compared to dark colours. A cabin with these additions performs comfortably as a working office even in peak Rajasthan summer. Without them, a bare cabin in direct sun becomes unusable by mid-morning in May.',
+    },
+    {
+      question: 'What is the price of a porta cabin in Jaipur?',
+      answer: 'Price depends on size, panel type, fit-out level, and heat-management additions. Call +91 87960 39938 or send an enquiry for a quotation built around your specific site and requirement. We do not publish fixed prices because every cabin is built to order.',
+    },
+    {
+      question: "How does SAMAN's cabin handle Jaipur's dust and the brief monsoon season?",
+      answer: 'The MS frame is zinc-phosphate primed before powder coating — this gives it resistance to the dust-and-moisture abrasion cycle common in Rajasthan. Panel joints are factory-sealed before despatch, not site-sealed after arrival. The GI roof has a controlled drainage slope so the July–August monsoon rain runs off cleanly without pooling.',
+    },
+    {
+      question: 'Can I get a porta cabin for a real-estate sales office launch in Jaipur?',
+      answer: "Yes. A 10×12 ft or 10×20 ft porta cabin makes an effective temporary sales office — easy to brand, quick to install, and fully removable when the project is done. We can add a canopy, glass-front door, and AC provision to match the presentation standard that Jaipur's real-estate market expects.",
+    },
+  ],
+  'porta-cabin-in-kolkata': [
+    {
+      question: 'Does SAMAN deliver porta cabins to Howrah, Durgapur, and Haldia?',
+      answer: 'Yes. We deliver across West Bengal — Kolkata, Howrah, Salt Lake, New Town Rajarhat, Durgapur, Kalyani, and Haldia. Transit from our Greater Noida factory is 3–5 days to Kolkata. Deliveries to Durgapur and Haldia may take an additional day depending on road conditions. Confirm the freight rate for district deliveries at enquiry stage.',
+    },
+    {
+      question: 'What is the price of a porta cabin in Kolkata?',
+      answer: 'Price depends on size, panel type, fit-out level, and any site-specific requirements such as elevated flooring or additional corrosion protection. Call +91 87960 39938 or send an enquiry for an itemised quotation built for your specific site and specification. We do not publish fixed prices because every cabin is built to order.',
+    },
+    {
+      question: 'How does SAMAN handle West Bengal’s high humidity and monsoon conditions in the cabin build?',
+      answer: 'Our standard specification includes zinc-phosphate primed and powder-coated MS frames, factory-sealed panel joints, and colour-coated GI roofing with a drainage slope. For sites in coastal or delta regions (Haldia, Diamond Harbour, Kakdwip), we recommend an epoxy primer coat on external surfaces and cement-board panels instead of PUF for sustained moisture resistance. These are confirmed at order stage, not added as afterthoughts.',
+    },
+    {
+      question: 'What GST applies to a porta cabin purchase in West Bengal?',
+      answer: 'Porta cabins are classified under HSN 9406 (prefabricated structures) and attract 18% GST. We issue a full tax invoice from SAMAN POS India Pvt Ltd (GST registration 09ABBCS7101B1ZT — Noida). We can provide e-way bill documentation and lorry receipt as required for your site accounts. Confirm documentation requirements when placing your order.',
+    },
+    {
+      question: 'Can SAMAN supply porta cabins for a government infrastructure project in West Bengal?',
+      answer: 'Yes. We supply to government contractors and infrastructure project managers. Our NSIC registration (NSIC/GP/BAN/2024/0055207) and DPIIT recognition (DIPP56005) are available for vendor documentation. We can provide ISO certificates, GST registration, PAN, and company incorporation documents as required for government vendor empanelment. Contact us with your project scope and we will confirm what we can supply and on what timeline.',
+    },
+  ],
 };
 
 export const getFAQSchemaOverride = (slug: string): object | null => {

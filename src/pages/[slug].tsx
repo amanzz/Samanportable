@@ -69,12 +69,26 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'porta-cabin-in-madurai',
   'porta-cabin-in-mangalore',
   'porta-cabin-in-lucknow',
+  'porta-cabin-in-mumbai',
+  'porta-cabin-in-ahmedabad',
+  'porta-cabin-in-kolkata',
+  'porta-cabin-in-jaipur',
+  'porta-cabin-in-kanpur',
+  'porta-cabin-in-chandigarh',
+  'porta-cabin-in-pune',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
 // contactPoint uses the North sales number instead of the South default.
 const NORTH_CITY_PAGE_SLUGS = new Set([
   'porta-cabin-in-lucknow',
+  'porta-cabin-in-mumbai',
+  'porta-cabin-in-ahmedabad',
+  'porta-cabin-in-kolkata',
+  'porta-cabin-in-jaipur',
+  'porta-cabin-in-kanpur',
+  'porta-cabin-in-chandigarh',
+  'porta-cabin-in-pune',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
