@@ -32,14 +32,18 @@ interface BlogProps {
   totalPosts: number;
   categories: Array<{ id: number; name: string; slug: string; count: number }>;
   tags: Array<{ id: number; name: string; slug: string; count: number }>;
+  seoCanonical: string;
+  seoNoindex: boolean;
+  seoRouteBehavior: string;
 }
 
 export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query }) => {
   try {
-    const page = parseInt(query.page as string) || 1;
-    const category = query.category as string;
-    const tag = query.tag as string;
-    const search = query.search as string;
+    const rawPage = Array.isArray(query.page) ? query.page[0] : query.page;
+    const parsedPage = rawPage ? parseInt(rawPage, 10) : 1;
+    const page = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1;
+    const category = Array.isArray(query.category) ? query.category[0] : query.category;
+    const tag = Array.isArray(query.tag) ? query.tag[0] : query.tag;
     
     console.log('Blog getServerSideProps: Starting to fetch blog posts...');
     
@@ -70,6 +74,33 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       { id: 5, name: 'Construction', slug: 'construction', count: 35 }
     ];
 
+    const blogCanonicalBase = `${siteConfig.url}/blog`;
+    const cleanCategory = category?.trim();
+    const cleanTag = tag?.trim();
+    const params = new URLSearchParams();
+    let seoNoindex = false;
+    let seoRouteBehavior = 'indexable blog hub';
+
+    if (cleanCategory) {
+      params.set('category', cleanCategory);
+      seoRouteBehavior = 'indexable category filter';
+    } else if (cleanTag) {
+      params.set('tag', cleanTag);
+      seoRouteBehavior = 'indexable tag filter';
+    } else if (rawPage && page <= 1) {
+      seoRouteBehavior = 'page 0/1 canonicalized to blog hub';
+    } else if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
+      params.set('page', String(page));
+      seoRouteBehavior = 'indexable paginated blog listing';
+    } else if (page > 1) {
+      seoNoindex = true;
+      seoRouteBehavior = 'out-of-range pagination noindexed and canonicalized to blog hub';
+    }
+
+    const seoCanonical = params.toString()
+      ? `${blogCanonicalBase}?${params.toString()}`
+      : blogCanonicalBase;
+
     // Compute reading time from the full content, then strip `content.rendered` so the large
     // post bodies are NOT serialized into __NEXT_DATA__. All other card fields (title, excerpt,
     // date, slug, _embedded featured media / term / author) are preserved unchanged.
@@ -86,6 +117,9 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       totalPosts: result.pagination.totalPosts || 0,
       categories,
       tags,
+      seoCanonical,
+      seoNoindex,
+      seoRouteBehavior,
     };
 
     console.log('Blog getServerSideProps: Returning props with', props.posts.length, 'posts');
@@ -101,12 +135,15 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
         totalPosts: 0,
         categories: [],
         tags: [],
+        seoCanonical: `${siteConfig.url}/blog`,
+        seoNoindex: true,
+        seoRouteBehavior: 'blog fetch error noindexed and canonicalized to blog hub',
       },
     };
   }
 };
 
-const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: BlogProps) => {
+const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, seoCanonical, seoNoindex }: BlogProps) => {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
@@ -171,12 +208,13 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
       <UnifiedSEO
         fallbackTitle={pageSEO.blog.title}
         fallbackDescription={pageSEO.blog.description}
-        fallbackCanonical={pageSEO.blog.canonical}
+        fallbackCanonical={seoCanonical}
         fallbackOgImage={siteConfig.ogImage}
         keywords={pageSEO.blog.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
         structuredData={blogHubStructuredData}
+        noindex={seoNoindex}
       />
 
       <div className="min-h-screen">
@@ -600,4 +638,3 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags }: 
 };
 
 export default Blog;
-
