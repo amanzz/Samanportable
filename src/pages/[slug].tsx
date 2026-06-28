@@ -76,6 +76,13 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'porta-cabin-in-kanpur',
   'porta-cabin-in-chandigarh',
   'porta-cabin-in-pune',
+  'porta-cabin-in-surat',
+  'porta-cabin-in-nashik',
+  'porta-cabin-in-vadodara',
+  'porta-cabin-in-nagpur',
+  'porta-cabin-in-rajkot',
+  'porta-cabin-in-patna',
+  'porta-cabin-in-bhubaneswar',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
@@ -89,6 +96,13 @@ const NORTH_CITY_PAGE_SLUGS = new Set([
   'porta-cabin-in-kanpur',
   'porta-cabin-in-chandigarh',
   'porta-cabin-in-pune',
+  'porta-cabin-in-surat',
+  'porta-cabin-in-nashik',
+  'porta-cabin-in-vadodara',
+  'porta-cabin-in-nagpur',
+  'porta-cabin-in-patna',
+  'porta-cabin-in-rajkot',
+  'porta-cabin-in-bhubaneswar',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {

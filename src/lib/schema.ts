@@ -618,6 +618,160 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: 'Yes. We supply to government contractors and infrastructure project managers. Our NSIC registration (NSIC/GP/BAN/2024/0055207) and DPIIT recognition (DIPP56005) are available for vendor documentation. We can provide ISO certificates, GST registration, PAN, and company incorporation documents as required for government vendor empanelment. Contact us with your project scope and we will confirm what we can supply and on what timeline.',
     },
   ],
+  'porta-cabin-in-surat': [
+    {
+      question: 'Does SAMAN deliver porta cabins to Hazira and Sachin GIDC?',
+      answer: 'Yes. We deliver across Surat — Sachin GIDC, Hazira industrial belt, Pandesara, and city construction sites. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+    },
+    {
+      question: "What corrosion protection do you provide for Surat's coastal Hazira sites?",
+      answer: 'For Hazira and any site within about 5 km of the coast, we add an epoxy primer coat on external surfaces before the powder coat, and recommend cement-board panels over standard PUF. The MS frame is IS 2062 Grade A, zinc-phosphate primed in all cases. This resists the salt-air corrosion cycle better than a standard cabin.',
+    },
+    {
+      question: 'What is the price of a porta cabin in Surat?',
+      answer: 'Price depends on size, panel type, corrosion spec, and fit-out level. Call +91 87960 39938 or send an enquiry for a quotation built for your site and specification. We do not publish fixed prices because every cabin is built to order.',
+    },
+    {
+      question: 'How long does delivery from the factory to Surat take?',
+      answer: '3–5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+    },
+    {
+      question: 'Can SAMAN supply porta cabins for a Hazira plant project or government contract?',
+      answer: 'Yes. We supply to industrial contractors and project managers. Our NSIC (NSIC/GP/BAN/2024/0055207) and DPIIT (DIPP56005) recognition, ISO certificates, GST registration, and incorporation documents are available for vendor empanelment. Share your project scope and we will confirm supply capacity and timeline.',
+    },
+  ],
+  'porta-cabin-in-nashik': [
+    {
+      question: 'Does SAMAN deliver porta cabins to Satpur and Ambad MIDC?',
+      answer: "Yes. We deliver to Nashik's industrial zones — Satpur MIDC, Ambad MIDC — and to construction and processing sites across the Nashik region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.",
+    },
+    {
+      question: 'What is the price of a porta cabin in Nashik?',
+      answer: 'Price depends on size, panel type, fit-out level, and any site additions such as a raised plinth or AC provision. Call +91 87960 39938 or send an enquiry for a quotation built for your site and specification. We do not publish fixed prices because every cabin is built to order.',
+    },
+    {
+      question: "How does a SAMAN porta cabin handle Nashik's monsoon?",
+      answer: 'Panel joints are factory-sealed before despatch, and the GI roof has a controlled drainage slope so rain runs off cleanly without pooling. For low-lying or monsoon-exposed sites we recommend a raised RCC plinth to keep the floor above ground water. The MS frame is zinc-phosphate primed and powder-coated to resist rust through wet seasons.',
+    },
+    {
+      question: 'Can SAMAN supply porta cabins for a food-processing or precision manufacturing site in Nashik?',
+      answer: "Yes. We build clean, factory-finished cabins suitable for QC rooms, supervisor offices, and inspection points at food-processing and auto-component sites. Specifications such as sealed joints, proper flooring, and electrical provisions are confirmed at order stage to suit your site's requirements.",
+    },
+    {
+      question: 'How long does delivery from the factory to Nashik take?',
+      answer: '3–5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+    },
+  ],
+  'porta-cabin-in-vadodara': [
+    {
+      question: 'Does SAMAN deliver porta cabins to Nandesari, Makarpura, and Savli GIDC?',
+      answer: "Yes. We deliver across Vadodara's industrial zones — Nandesari GIDC, Makarpura GIDC, and the Savli/Manjusar belt — and to construction sites across the Vadodara region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.",
+    },
+    {
+      question: "What corrosion protection do you provide for Vadodara's chemical GIDC sites?",
+      answer: 'For Nandesari and other chemical-belt sites we add an epoxy primer coat on external surfaces before the powder coat, and recommend cement-board panels over standard PUF. The MS frame is IS 2062 Grade A, zinc-phosphate primed in all cases. This gives better resistance to chemical-zone air over long service life.',
+    },
+    {
+      question: 'What is the price of a porta cabin in Vadodara?',
+      answer: 'Price depends on size, panel type, corrosion spec, and fit-out level. Call +91 87960 39938 or send an enquiry for a quotation built for your site and specification. We do not publish fixed prices because every cabin is built to order.',
+    },
+    {
+      question: 'Can SAMAN supply porta cabins for a petrochemical shutdown or government project in Vadodara?',
+      answer: 'Yes. We supply industrial contractors, petrochemical project managers, and government contractors. Our NSIC (NSIC/GP/BAN/2024/0055207) and DPIIT (DIPP56005) recognition, ISO certificates, GST registration, and incorporation documents are available for vendor empanelment. Share your project scope and we will confirm supply capacity and timeline.',
+    },
+    {
+      question: 'How long does delivery from the factory to Vadodara take?',
+      answer: '3–5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+    },
+  ],
+  'porta-cabin-in-nagpur': [
+    {
+      question: 'Does SAMAN deliver porta cabins to MIHAN, Butibori, and Hingna MIDC?',
+      answer: 'Yes. We deliver to all Nagpur industrial zones — MIHAN, Butibori MIDC, Hingna MIDC — and to construction sites across the Nagpur region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+    },
+    {
+      question: "How does a porta cabin handle Nagpur's extreme summer heat?",
+      answer: 'The 50 mm PUF sandwich panels provide genuine thermal insulation, and we recommend a turbo ventilator plus an internal false ceiling on all Nagpur orders. For a working office used through summer, add an AC provision (wall-sleeve + power point). A light exterior colour reduces solar heat gain. With these, the cabin stays usable even above 44°C; a bare cabin in direct sun does not.',
+    },
+    {
+      question: 'What is the price of a porta cabin in Nagpur?',
+      answer: 'Price depends on size, panel type, heat-management additions, and fit-out level. Call +91 87960 39938 or send an enquiry for a quotation built for your site and specification. We do not publish fixed prices because every cabin is built to order.',
+    },
+    {
+      question: 'Can SAMAN supply porta cabins for a MIHAN, Samruddhi Mahamarg, or government project?',
+      answer: 'Yes. We supply industrial contractors, infrastructure project managers, and government contractors. Our NSIC (NSIC/GP/BAN/2024/0055207) and DPIIT (DIPP56005) recognition, ISO certificates, GST registration, and incorporation documents are available for vendor empanelment. Share your project scope and we will confirm supply capacity and timeline.',
+    },
+    {
+      question: 'How long does delivery from the factory to Nagpur take?',
+      answer: '3–5 days from our Greater Noida factory via the NH-44 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+    },
+  ],
+  'porta-cabin-in-patna': [
+    {
+      question: 'Does SAMAN deliver porta cabins to Bihta, Patliputra, and Fatuha?',
+      answer: 'Yes. We deliver across Patna — Patliputra Industrial Area, Bihta, and Fatuha — and to construction sites across the Patna region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+    },
+    {
+      question: 'How does a SAMAN porta cabin handle Patna’s monsoon and flood-prone sites?',
+      answer: 'Panel joints are factory-sealed and the GI roof has a controlled drainage slope so rain runs off cleanly. For low-lying and flood-prone Patna sites we recommend a raised RCC plinth or elevated flooring on MS joists to keep the floor above waterlogging. The MS frame is zinc-phosphate primed and powder-coated to resist rust through Bihar’s long wet season.',
+    },
+    {
+      question: 'What is the price of a porta cabin in Patna?',
+      answer: 'Price depends on size, panel type, fit-out level, and site additions such as a raised plinth. Call +91 87960 39938 or send an enquiry for a quotation built for your site and specification. We do not publish fixed prices because every cabin is built to order.',
+    },
+    {
+      question: 'Can SAMAN supply porta cabins for a Patna bridge, metro, or government infrastructure project?',
+      answer: 'Yes. We supply infrastructure project managers and government contractors. Our NSIC (NSIC/GP/BAN/2024/0055207) and DPIIT (DIPP56005) recognition, ISO certificates, GST registration, and incorporation documents are available for vendor empanelment. Share your project scope and we will confirm supply capacity and timeline.',
+    },
+    {
+      question: 'How long does delivery from the factory to Patna take?',
+      answer: '3–5 days from our Greater Noida factory via the Purvanchal / NH-19 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+    },
+  ],
+  'porta-cabin-in-rajkot': [
+    {
+      question: 'Does SAMAN deliver porta cabins to Aji, Metoda, and Shapar GIDC?',
+      answer: 'Yes. We deliver across Rajkot’s industrial zones — Aji GIDC, Metoda/Lodhika GIDC, and Shapar-Veraval — and to construction sites across the Rajkot region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+    },
+    {
+      question: 'How does a porta cabin handle Rajkot’s heat and dust?',
+      answer: 'The 50 mm PUF panels insulate against the heat, and we fit sealed louvre or sliding windows and doors to keep dust out — important in foundry and engineering environments. The powder-coat frame finish resists Rajkot’s dry abrasive dust. We recommend a turbo ventilator and false ceiling, and an AC provision for any working office used through summer.',
+    },
+    {
+      question: 'What is the price of a porta cabin in Rajkot?',
+      answer: 'Price depends on size, panel type, fit-out level, and heat-and-dust additions such as sealed windows and ventilation. Call +91 87960 39938 or send an enquiry for a quotation built for your site and specification. We do not publish fixed prices because every cabin is built to order.',
+    },
+    {
+      question: 'Can SAMAN supply porta cabins for a foundry or engineering site in Rajkot?',
+      answer: 'Yes. We build robust, sealed cabins suitable for plant gate security, supervisor offices, and QC rooms at Rajkot’s casting, forging, and machine-tool units. Dust-sealing, durable coatings, and electrical provisions are confirmed at order stage to suit your site’s conditions.',
+    },
+    {
+      question: 'How long does delivery from the factory to Rajkot take?',
+      answer: '3–5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+    },
+  ],
+  'porta-cabin-in-bhubaneswar': [
+    {
+      question: 'Does SAMAN deliver porta cabins to Mancheswar, Chandaka, and Cuttack?',
+      answer: 'Yes. We deliver across Bhubaneswar — Mancheswar Industrial Estate, Chandaka Industrial Estate, Infocity — and to Cuttack and Khordha-region construction sites. Transit from our Greater Noida factory is 4–5 days. Delivery charge is ₹3,000 standard; confirm exact freight for Cuttack/Paradip-side sites at order stage.',
+    },
+    {
+      question: 'How does a SAMAN porta cabin handle coastal Odisha’s humidity and winds?',
+      answer: 'We add an epoxy primer coat before powder coat for coastal-proximity sites and recommend cement-board panels for sustained humidity. The frame is anchor-bolted to an RCC plinth for stability in strong seasonal winds, and we provide the anchor-bolt pattern and load data so your plinth is prepared correctly. We do not claim cyclone-proofing — we provide proper corrosion protection and secure anchoring suited to the coastal environment.',
+    },
+    {
+      question: 'What is the price of a porta cabin in Bhubaneswar?',
+      answer: 'Price depends on size, panel type, coastal corrosion spec, and fit-out level. Call +91 87960 39938 or send an enquiry for a quotation built for your site and specification. We do not publish fixed prices because every cabin is built to order.',
+    },
+    {
+      question: 'Can SAMAN supply porta cabins for an IT campus or government project in Bhubaneswar?',
+      answer: 'Yes. We supply IT-campus contractors, infrastructure project managers, and government contractors. Our NSIC (NSIC/GP/BAN/2024/0055207) and DPIIT (DIPP56005) recognition, ISO certificates, GST registration, and incorporation documents are available for vendor empanelment. Share your project scope and we will confirm supply capacity and timeline.',
+    },
+    {
+      question: 'How long does delivery from the factory to Bhubaneswar take?',
+      answer: '4–5 days from our Greater Noida factory via the NH-19 / NH-16 corridor, after production is complete. Bhubaneswar is farther east than most of our North-dispatch cities, so allow the upper end of the range. Production lead time depends on your configuration and the order queue — confirm at enquiry.',
+    },
+  ],
 };
 
 export const getFAQSchemaOverride = (slug: string): object | null => {
