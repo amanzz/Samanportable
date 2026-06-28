@@ -68,8 +68,78 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
       };
     });
 
-  // Generate structured data for Product
-  const productStructuredData = {
+  const offerStructuredData = (salePrice || price) > 0 ? {
+    '@type': 'Offer',
+    url: productUrl,
+    priceCurrency: 'INR',
+    price: salePrice || price,
+    priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // Valid for 1 year
+    availability: getSchemaAvailability(product.stock_status),
+    itemCondition: 'https://schema.org/NewCondition',
+    // Seller information removed to avoid duplicate Organization schemas
+    // Manufacturer already provides Organization information
+    // Mirrors the published policy at /refund-and-return-policy: 7-day window,
+    // return transport paid by the customer, full refund after inspection.
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'IN',
+      returnPolicyCountry: 'IN',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+      merchantReturnDays: 7,
+      returnMethod: 'https://schema.org/ReturnByMail',
+      returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility',
+      refundType: 'https://schema.org/FullRefund',
+      merchantReturnLink: 'https://www.samanportable.com/refund-and-return-policy'
+    },
+    // Mirrors /delivery-policy: default flat â‚¹3,000 shipping shown in Merchant
+    // Center (final cost quoted), standard estimate 3â€“5 business days.
+    shippingDetails: {
+      '@type': 'OfferShippingDetails',
+      shippingRate: {
+        '@type': 'MonetaryAmount',
+        value: '3000',
+        currency: 'INR'
+      },
+      shippingDestination: {
+        '@type': 'DefinedRegion',
+        addressCountry: 'IN'
+      },
+      deliveryTime: {
+        '@type': 'ShippingDeliveryTime',
+        handlingTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 1,
+          maxValue: 3,
+          unitCode: 'DAY'
+        },
+        transitTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 3,
+          maxValue: 5,
+          unitCode: 'DAY'
+        }
+      }
+    }
+  } : undefined;
+
+  const aggregateRatingStructuredData = product.rating_count > 0 ? {
+    '@type': 'AggregateRating',
+    ratingValue: product.average_rating,
+    reviewCount: product.rating_count,
+    bestRating: '5',
+    worstRating: '1'
+  } : undefined;
+
+  const hasProductRichResultEvidence = Boolean(
+    offerStructuredData ||
+    aggregateRatingStructuredData ||
+    reviewNodes.length > 0
+  );
+
+  // Generate structured data for Product only when it has real Product-snippet
+  // evidence. Quote-only/unrated products must not emit an ineligible Product
+  // node with no offers, aggregateRating, or review.
+  const productStructuredData = hasProductRichResultEvidence ? {
     '@context': 'https://schema.org/',
     '@type': 'Product',
     name: product.name.length > 150 ? product.name.substring(0, 147) + '...' : product.name,
@@ -87,74 +157,14 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
     // Use the REAL WooCommerce SKU; omit the field entirely if the product has none
     // (never fall back to the numeric product id as a fake SKU).
     ...(product.sku ? { sku: product.sku } : {}),
-    // Only emit an Offer when a real price exists. An Offer with price 0 (quote-only
-    // products) is invalid for Google and triggers "price" errors in Search Console.
-    offers: (salePrice || price) > 0 ? {
-      '@type': 'Offer',
-      url: productUrl,
-      priceCurrency: 'INR',
-      price: salePrice || price,
-      priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // Valid for 1 year
-      availability: getSchemaAvailability(product.stock_status),
-      itemCondition: 'https://schema.org/NewCondition',
-      // Seller information removed to avoid duplicate Organization schemas
-      // Manufacturer already provides Organization information
-      // Mirrors the published policy at /refund-and-return-policy: 7-day window,
-      // return transport paid by the customer, full refund after inspection.
-      hasMerchantReturnPolicy: {
-        '@type': 'MerchantReturnPolicy',
-        applicableCountry: 'IN',
-        returnPolicyCountry: 'IN',
-        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-        merchantReturnDays: 7,
-        returnMethod: 'https://schema.org/ReturnByMail',
-        returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility',
-        refundType: 'https://schema.org/FullRefund',
-        merchantReturnLink: 'https://www.samanportable.com/refund-and-return-policy'
-      },
-      // Mirrors /delivery-policy: default flat ₹3,000 shipping shown in Merchant
-      // Center (final cost quoted), standard estimate 3–5 business days.
-      shippingDetails: {
-        '@type': 'OfferShippingDetails',
-        shippingRate: {
-          '@type': 'MonetaryAmount',
-          value: '3000',
-          currency: 'INR'
-        },
-        shippingDestination: {
-          '@type': 'DefinedRegion',
-          addressCountry: 'IN'
-        },
-        deliveryTime: {
-          '@type': 'ShippingDeliveryTime',
-          handlingTime: {
-            '@type': 'QuantitativeValue',
-            minValue: 1,
-            maxValue: 3,
-            unitCode: 'DAY'
-          },
-          transitTime: {
-            '@type': 'QuantitativeValue',
-            minValue: 3,
-            maxValue: 5,
-            unitCode: 'DAY'
-          }
-        }
-      }
-    } : undefined,
-    aggregateRating: product.rating_count > 0 ? {
-      '@type': 'AggregateRating',
-      ratingValue: product.average_rating,
-      reviewCount: product.rating_count,
-      bestRating: '5',
-      worstRating: '1'
-    } : undefined,
+    ...(offerStructuredData ? { offers: offerStructuredData } : {}),
+    ...(aggregateRatingStructuredData ? { aggregateRating: aggregateRatingStructuredData } : {}),
     // additionalProperty only from real WooCommerce attributes; omitted when none exist.
     ...(realAdditionalProperty.length > 0 ? { additionalProperty: realAdditionalProperty } : {}),
     // Review nodes ONLY for real approved reviews that are visibly rendered on the
     // page; omitted entirely when none were fetched/shown (no fake reviews).
     ...(reviewNodes.length > 0 ? { review: reviewNodes } : {}),
-  };
+  } : null;
 
   // Generate BreadcrumbList structured data
   const breadcrumbStructuredData = {
@@ -201,7 +211,7 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
     name: `${product.name} - Product Details`,
     description: itemPageDescription,
     url: productUrl,
-    mainEntity: productStructuredData,
+    ...(productStructuredData ? { mainEntity: productStructuredData } : {}),
     breadcrumb: breadcrumbStructuredData
   };
 
