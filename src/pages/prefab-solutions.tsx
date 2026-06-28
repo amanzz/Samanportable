@@ -282,6 +282,8 @@ const PrefabSolutionsPage = () => {
         <meta name="twitter:description" content="India&apos;s leading prefab solutions provider. Container offices, porta cabins, labor colonies & more. 50% faster construction with free quote." />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="canonical" href="https://www.samanportable.com/prefab-solutions" />
+        <link rel="alternate" hrefLang="en-IN" href="https://www.samanportable.com/prefab-solutions" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.samanportable.com/prefab-solutions" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

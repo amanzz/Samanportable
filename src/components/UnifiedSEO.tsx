@@ -92,6 +92,8 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
       
       {/* Canonical URL */}
       {canonical && <link rel="canonical" href={canonical} />}
+      {canonical && <link rel="alternate" hrefLang="en-IN" href={canonical} />}
+      {canonical && <link rel="alternate" hrefLang="x-default" href={canonical} />}
       
       {/* Robots Meta */}
       <meta name="robots" content={robotsContent} />

@@ -3,7 +3,7 @@ import { inter } from '@/lib/fonts';
 
 export default function Document() {
   return (
-    <Html lang="en" className={inter.variable}>
+    <Html lang="en-IN" className={inter.variable}>
       <Head>
         {/* Google Tag Manager moved to next/script (afterInteractive) in _app.tsx so it
             no longer blocks first paint. GA4 + all GTM lead events are preserved. */}
