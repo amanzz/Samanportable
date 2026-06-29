@@ -120,6 +120,7 @@ interface BlogProps {
   categories: Array<{ id: number; name: string; slug: string; count: number }>;
   tags: Array<{ id: number; name: string; slug: string; count: number }>;
   seoCanonical: string;
+  hreflangSelf: string;
   seoNoindex: boolean;
   seoRouteBehavior: string;
   seoTitle: string;
@@ -191,6 +192,18 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       seoRouteBehavior = 'out-of-range pagination noindexed and canonicalized to blog hub';
     }
 
+    // Self-referencing hreflang: mirror the EXACT crawled filter URL (?category=,
+    // ?tag= or ?page=) so every blog filter page carries a self-referencing
+    // hreflang, even though pagination/tag pages canonicalize back to the /blog hub.
+    let hreflangSelf = blogCanonicalBase;
+    if (cleanCategory) {
+      hreflangSelf = `${blogCanonicalBase}?category=${encodeURIComponent(cleanCategory)}`;
+    } else if (cleanTag) {
+      hreflangSelf = `${blogCanonicalBase}?tag=${encodeURIComponent(cleanTag)}`;
+    } else if (rawPage) {
+      hreflangSelf = `${blogCanonicalBase}?page=${encodeURIComponent(String(rawPage))}`;
+    }
+
     // Title / meta selection: category -> unique per-category; tag/page/plain -> default hub.
     const categorySeo = cleanCategory ? CATEGORY_SEO[cleanCategory.toLowerCase()] : undefined;
     const seoTitle = categorySeo?.title || pageSEO.blog.title;
@@ -218,6 +231,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       categories,
       tags,
       seoCanonical,
+      hreflangSelf,
       seoNoindex,
       seoRouteBehavior,
       seoTitle,
@@ -239,6 +253,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
         categories: [],
         tags: [],
         seoCanonical: `${siteConfig.url}/blog`,
+        hreflangSelf: `${siteConfig.url}/blog`,
         seoNoindex: true,
         seoRouteBehavior: 'blog fetch error noindexed and canonicalized to blog hub',
         seoTitle: pageSEO.blog.title,
@@ -249,7 +264,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
   }
 };
 
-const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, seoCanonical, seoNoindex, seoTitle, seoDescription, seoCategoryIntro }: BlogProps) => {
+const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, seoCanonical, hreflangSelf, seoNoindex, seoTitle, seoDescription, seoCategoryIntro }: BlogProps) => {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
@@ -315,6 +330,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
         fallbackTitle={seoTitle}
         fallbackDescription={seoDescription}
         canonical={seoCanonical}
+        hreflangSelf={hreflangSelf}
         fallbackCanonical={seoCanonical}
         fallbackOgImage={siteConfig.ogImage}
         keywords={pageSEO.blog.keywords}

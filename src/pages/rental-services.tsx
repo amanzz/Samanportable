@@ -494,7 +494,7 @@ const RentalServicesPage = () => {
                   </div>
                   <h4 className="font-bold text-gray-900 mb-1">Quick Queries</h4>
                   <p className="text-sm text-gray-600 mb-3">WhatsApp</p>
-                  <a href="https://wa.me/918861622859" className="text-green-700 font-bold hover:underline">+91 88616 22859</a>
+                  <a href="https://www.samanportable.com/contact" className="text-green-700 font-bold hover:underline">+91 88616 22859</a>
                 </div>
 
                 <div className="bg-white border border-gray-200 p-6 rounded-xl text-center">

@@ -69,7 +69,7 @@ const CTAStrip = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm font-medium"
         >
           <a
-            href="https://wa.me/918861622859"
+            href="https://www.samanportable.com/contact"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 text-white/60 hover:text-white transition-colors group"
