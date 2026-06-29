@@ -5,6 +5,9 @@ import { RankMathSEOData } from '@/config/api';
 interface UnifiedSEOProps {
   // Rank Math SEO data (highest priority)
   rankMathSEO?: RankMathSEOData | null;
+
+  // Explicit canonical override (highest priority when provided)
+  canonical?: string;
   
   // Fallback values when Rank Math data is not available
   fallbackTitle?: string;
@@ -30,6 +33,7 @@ interface UnifiedSEOProps {
 
 export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   rankMathSEO,
+  canonical: canonicalProp,
   fallbackTitle,
   fallbackDescription,
   fallbackCanonical,
@@ -53,7 +57,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   const description = rankMathSEO?.description || fallbackDescription || 'ISO 9001:2015 certified manufacturer of portable cabins, container offices and prefab structures in Bangalore and Delhi NCR.';
   
   // Canonical URL - Rank Math has highest priority
-  const canonical = rankMathSEO?.canonical || fallbackCanonical || 'https://www.samanportable.com';
+  const canonical = canonicalProp || rankMathSEO?.canonical || fallbackCanonical || 'https://www.samanportable.com';
   
   // OpenGraph data - Rank Math has highest priority
   const ogTitle = rankMathSEO?.og_title || fallbackOgTitle || title;
