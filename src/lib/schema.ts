@@ -490,6 +490,28 @@ const faqSchemaFromItems = (items: FAQItem[]): object => ({
 });
 
 const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
+  'porta-cabin-in-sonipat': [
+    {
+      question: "Do you deliver porta cabins to Kundli, Rai, and Barhi?",
+      answer: "Yes — Kundli, Rai, Barhi, and construction sites right across Sonipat. The cabin ships from our Greater Noida factory straight up the NH-44 and takes 3–5 days, since Sonipat is one of our closest cities. Delivery is ₹3,000 standard.",
+    },
+    {
+      question: "What does a porta cabin cost in Sonipat?",
+      answer: "Marketplace listings run from about ₹45,000 for a small basic unit to over ₹1.9 lakh, with per-sq-ft rates around ₹950–₹1,200 — but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+    },
+    {
+      question: "What sizes and layouts can I get?",
+      answer: "Stock sizes run 8×10, 10×12, 10×20 (the common 20 ft office), 10×30, and 10×40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. If you need an odd size, we build to it.",
+    },
+    {
+      question: "Can you supply multiple cabins for an HSIIDC or expressway project?",
+      answer: "Yes. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm what we can supply and by when.",
+    },
+    {
+      question: "How long from order to delivery in Sonipat?",
+      answer: "Transit is 3–5 days once the cabin's built, since Sonipat is a short run up the NH-44. Production time depends on the configuration and where you land in our queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+    },
+  ],
   'porta-cabin-in-indore': [
     {
       question: 'Do you deliver porta cabins to Pithampur and Sanwer Road?',
@@ -924,6 +946,138 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     {
       question: 'How long from order to delivery in Gwalior?',
       answer: "Transit is 3–5 days once the cabin's built, since Gwalior is a shorter run for us down the Yamuna Expressway. Production time depends on the configuration and your place in the queue — standard sizes move faster. We'll confirm a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-durgapur': [
+    {
+      question: "Do you deliver porta cabins to the Durgapur Steel Plant belt?",
+      answer: "Yes — the DSP belt, the Heavy Engineering / V.K. Nagar area, City Centre, and project sites across the Durgapur region. The cabin ships from our Greater Noida factory and takes 4–6 days in transit, since Durgapur is a longer haul. Delivery is ₹3,000 standard.",
+    },
+    {
+      question: "Will the cabin hold up in a dusty, high-heat steel-belt plant?",
+      answer: "That's what it's built for. The frame is IS 2062 steel, zinc-phosphate primed and powder-coated, and for a dusty steel-yard posting we can spec a heavier anti-rust coating and seal the windows and doors to keep plant dust out. The 50 mm PUF panels handle the heat. Tell us the plant conditions and we'll match the spec.",
+    },
+    {
+      question: "What does a porta cabin cost in Durgapur?",
+      answer: "Marketplace listings run from about ₹50,000 to over ₹2.1 lakh, around ₹1,200 a square foot — but the real number depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+    },
+    {
+      question: "Can you supply multiple cabins for a DSP or DHEP project?",
+      answer: "Yes — multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity, freight, and timeline.",
+    },
+    {
+      question: "How long does delivery to Durgapur take?",
+      answer: "Transit is 4–6 days once the cabin's built, since Durgapur is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue — we'll confirm a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-manesar': [
+    {
+      question: 'Do you deliver porta cabins to IMT Manesar?',
+      answer: "Yes — IMT Manesar (all sectors), the Kasan and Naharpur belt, and construction sites across Manesar. The cabin ships from our Greater Noida factory and takes 3–5 days, since Manesar is a short run on the Gurgaon belt. Delivery is ₹3,000 standard.",
+    },
+    {
+      question: 'What does a porta cabin cost in Manesar?',
+      answer: "Marketplace listings run from about ₹38,000 for a small basic unit to over ₹2 lakh, with per-sq-ft rates around ₹870 — but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+    },
+    {
+      question: 'What sizes and layouts can I get?',
+      answer: "Stock sizes run 8×10, 10×12, 10×20 (the common 20 ft office), 10×30, and 10×40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. Need an odd size? We build to it.",
+    },
+    {
+      question: 'Can you supply multiple cabins for an IMT plant project?',
+      answer: "Yes. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm what we can supply and by when.",
+    },
+    {
+      question: 'How long from order to delivery in Manesar?',
+      answer: "Transit is 3–5 days once the cabin's built, since Manesar is a short run on the Gurgaon belt. Production time depends on the configuration and your place in the queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-panipat': [
+    {
+      question: "Do you deliver porta cabins to the HUDA sectors and Refinery Road?",
+      answer: "Yes — the HUDA/HSIIDC sectors, the Refinery Road belt, and construction sites across Panipat. The cabin ships from our Greater Noida factory up the NH-44 and takes 3–5 days, since Panipat is one of our closer cities. Delivery is ₹3,000 standard.",
+    },
+    {
+      question: "What does a porta cabin cost in Panipat?",
+      answer: "Marketplace listings run from about ₹50,000 for a small basic unit to over ₹2.1 lakh — but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+    },
+    {
+      question: "What sizes and layouts can I get?",
+      answer: "Stock sizes run 8×10, 10×12, 10×20 (the common 20 ft office), 10×30, and 10×40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. Need an odd size? We build to it.",
+    },
+    {
+      question: "Can you supply multiple cabins for a refinery or HSIIDC project?",
+      answer: "Yes. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm what we can supply and by when.",
+    },
+    {
+      question: "How long from order to delivery in Panipat?",
+      answer: "Transit is 3–5 days once the cabin's built, since Panipat is a short run up the NH-44. Production time depends on the configuration and your place in the queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-rourkela': [
+    {
+      question: "Do you deliver porta cabins to the RSP belt and Kalunga?",
+      answer: "Yes — the Rourkela Steel Plant belt, the Kalunga Industrial Estate, the RSP sector township, and project sites across Rourkela. The cabin ships from our Greater Noida factory and takes 4–6 days in transit, since Rourkela is a longer haul. Delivery is ₹3,000 standard.",
+    },
+    {
+      question: "Will the cabin hold up in a dusty Kalunga steel-belt plot?",
+      answer: "That's what it's built for. The frame is IS 2062 steel, zinc-phosphate primed and powder-coated, and for a dusty sponge-iron or steel-yard posting we can spec a heavier anti-rust coating and seal the windows and doors to keep plant dust out. The 50 mm PUF panels handle the heat. Tell us the plant conditions and we'll match the spec.",
+    },
+    {
+      question: "What does a porta cabin cost in Rourkela?",
+      answer: "Marketplace listings run around ₹825–₹1,200 a square foot, with finished units up past ₹1.9 lakh — but the real number depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+    },
+    {
+      question: "Can you supply multiple cabins for an RSP or Kalunga plant project?",
+      answer: "Yes — multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity, freight, and timeline.",
+    },
+    {
+      question: "How long does delivery to Rourkela take?",
+      answer: "Transit is 4–6 days once the cabin's built, since Rourkela is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue — we'll confirm a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-bhiwadi': [
+    {
+      question: "Do you deliver porta cabins to RIICO, Khushkhera, and Chopanki?",
+      answer: "Yes — RIICO Bhiwadi, Khushkhera, Chopanki, and construction sites across the Bhiwadi belt. The cabin ships from our Greater Noida factory and takes 3–5 days, since Bhiwadi is a short run. Delivery is ₹3,000 standard.",
+    },
+    {
+      question: "What does a porta cabin cost in Bhiwadi?",
+      answer: "Marketplace listings run around ₹780–₹1,250 a square foot, with finished units from about ₹2.5 lakh — but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+    },
+    {
+      question: "What sizes and layouts can I get?",
+      answer: "Stock sizes run 8×10, 10×12, 10×20 (the common 20 ft office), 10×30, and 10×40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. Need an odd size? We build to it.",
+    },
+    {
+      question: "Can you supply multiple cabins for a RIICO plant project?",
+      answer: "Yes. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm what we can supply and by when.",
+    },
+    {
+      question: "How long from order to delivery in Bhiwadi?",
+      answer: "Transit is 3–5 days once the cabin's built, since Bhiwadi is a short run from Greater Noida. Production time depends on the configuration and your place in the queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-jamshedpur': [
+    {
+      question: "Do you deliver porta cabins to Adityapur and the AIADA belt?",
+      answer: "Yes — Adityapur AIADA, the Gamharia industrial phases, the Tata Steel works belt, and project sites across Jamshedpur. The cabin ships from our Greater Noida factory and takes 4–6 days in transit, since Jamshedpur is a longer haul. Delivery is ₹3,000 standard.",
+    },
+    {
+      question: "Will the cabin hold up in a dusty AIADA steel-belt plot?",
+      answer: "That's what it's built for. The frame is IS 2062 steel, zinc-phosphate primed and powder-coated, and for a dusty steel-yard posting we can spec a heavier anti-rust coating and seal the windows and doors to keep plant dust out. The 50 mm PUF panels handle the heat. Tell us the plant conditions and we'll match the spec.",
+    },
+    {
+      question: "What does a porta cabin cost in Jamshedpur?",
+      answer: "Marketplace listings run from about ₹1.36 lakh to over ₹2.45 lakh, around ₹800 a square foot — but the real number depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+    },
+    {
+      question: "Can you supply multiple cabins for a Tata Steel or AIADA vendor project?",
+      answer: "Yes — multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity, freight, and timeline.",
+    },
+    {
+      question: "How long does delivery to Jamshedpur take?",
+      answer: "Transit is 4–6 days once the cabin's built, since Jamshedpur is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue — we'll confirm a firm timeline at enquiry.",
     },
   ],
 };
