@@ -297,9 +297,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   // Transform related products to match Vite design
   const transformedRelatedProducts = useMemo(() => {
-    console.log('Related products count:', relatedProducts.length);
-    console.log('Related products:', relatedProducts.map(p => ({ name: p.name, category: p.categories?.[0]?.name })));
-    
     return relatedProducts.map((p) => {
       const catSlug = p.categories && p.categories.length > 0 ? p.categories[0].slug : 'default';
       const catName = p.categories && p.categories.length > 0 ? p.categories[0].name : 'Uncategorized';
@@ -320,7 +317,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         ratingCount: Number(p.rating_count) || 0,
         description: p.description || '',
         url,
-        seoAnchorText: getSeoAnchorText(catSlug) || p.name,
+        seoAnchorText: p.name,
       };
     });
   }, [relatedProducts]);
@@ -470,12 +467,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                                   {/* Product Info */}
                                   <div className="flex-1 min-w-0">
                                     <h4 className={cn(
-                                      "font-medium text-sm leading-tight mb-1 transition-colors line-clamp-1",
+                                      "font-medium text-sm leading-tight mb-1 transition-colors line-clamp-2",
                                       relatedProduct.slug === slug 
                                         ? "text-white font-semibold" 
                                         : "text-foreground group-hover:text-primary"
                                     )}>
-                                      {getSeoAnchorText(relatedProduct.categorySlug) || relatedProduct.title}
+                                      {relatedProduct.title}
                                     </h4>
                                     
                                     {/* Category Badge */}

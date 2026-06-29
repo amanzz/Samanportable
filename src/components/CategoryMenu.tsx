@@ -20,7 +20,7 @@ const CategoryMenu = () => {
   const mainCategories = [
     { name: 'Porta Cabin', slug: 'porta-cabins', href: '/product/porta-cabins' },
     { name: 'Portable Cabin', slug: 'portable-cabin', href: '/product/portable-cabin' },
-    { name: 'Portable Office Cabin', slug: 'portable-office', href: '/product-category/portable-office' },
+    { name: 'Portable Office Cabin', slug: 'portable-office', href: '/product/portable-office' },
     { name: 'Container Office', slug: 'container-offices', href: '/product/container-offices' },
     { name: 'Container Cafe', slug: 'container-cafe', href: '/product/container-cafe' },
     { name: 'Labour Colony', slug: 'labor-colony', href: '/product/labor-colony' },

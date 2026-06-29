@@ -98,7 +98,7 @@ const Header = () => {
   const productCategories = [
     { name: 'Porta Cabin', href: '/product/porta-cabins' },
     { name: 'Portable Cabin', href: '/product/portable-cabin' },
-    { name: 'Portable Office Cabin', href: '/product-category/portable-office' },
+    { name: 'Portable Office Cabin', href: '/product/portable-office' },
     { name: 'Container Office', href: '/product/container-offices' },
     { name: 'Container Cafe', href: '/product/container-cafe' },
     { name: 'Labour Colony', href: '/product/labor-colony' },
@@ -334,7 +334,7 @@ const Header = () => {
                     {[
                       { name: 'Porta Cabin', href: '/product/porta-cabins' },
                       { name: 'Portable Cabin', href: '/product/portable-cabin' },
-                      { name: 'Portable Office Cabin', href: '/product-category/portable-office' },
+                      { name: 'Portable Office Cabin', href: '/product/portable-office' },
                       { name: 'Container Office', href: '/product/container-offices' },
                       { name: 'Container Cafe', href: '/product/container-cafe' },
                       { name: 'Labour Colony', href: '/product/labor-colony' },
