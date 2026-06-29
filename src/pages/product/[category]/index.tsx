@@ -968,9 +968,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
           <MobileBottomNav relatedProducts={transformedRelatedProducts} />
         </>
       )}
-      
-      {/* Mobile Bottom Navigation - Always visible outside conditional */}
-      <MobileBottomNav relatedProducts={transformedRelatedProducts} />
     </Layout>
   );
 };

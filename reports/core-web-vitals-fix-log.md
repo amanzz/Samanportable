@@ -273,3 +273,129 @@ Expected impact:
 - Serves WebP instead of JPEG.
 - Matches the rendered 4:3 product hero box instead of downloading a square 1254x1254 source.
 - Expected impact is a modest LCP improvement for the garden-sheds product detail page and its represented GSC LCP group.
+
+## Fix 4 Planning — Mobile INP /product/container-houses
+
+Date: 2026-06-29
+
+GSC issue group:
+- Export file: `reports/gsc_mobile_inp_longer_than_200ms.csv`
+- Example URL: `https://www.samanportable.com/product/container-houses`
+- Group population: 15 URLs
+- Device: mobile
+- Metric: INP 219ms
+
+Affected template:
+- URL pattern `/product/<category>` maps to `src/pages/product/[category]/index.tsx`.
+- This is the category-hub/product-hub style product page, not `src/pages/product-category/[slug].tsx`.
+
+Likely INP interaction source:
+- Duplicate mobile bottom navigation on `src/pages/product/[category]/index.tsx`.
+- The template renders `<MobileBottomNav relatedProducts={transformedRelatedProducts} />` twice:
+  - once inside the normal `transformedProduct` render branch
+  - once again outside the conditional with the comment "Always visible outside conditional"
+- On mobile, this duplicates the fixed bottom nav and the related-products sidebar interaction tree.
+
+Heavy hydrated components active on the page:
+- `MobileBottomNav`:
+  - uses `useRouter`
+  - reads `useCart` context
+  - manages `showSidebar` state
+  - renders mobile nav buttons
+  - conditionally renders a related-products sidebar with images and close/navigation handlers
+- `ProductTabs`:
+  - Radix tabs
+  - local tab/bookmark/like/description state
+  - review/form-related UI below the fold
+- `QuoteFormPopup` / `QuoteForm`:
+  - mounted from the product page and opened by enquiry buttons
+  - form state is created when the popup opens
+- Product image/gallery controls:
+  - selected image state
+  - thumbnail click handlers
+- Scroll-to-top state:
+  - a window scroll listener updates React state when crossing the threshold
+- Related products slider:
+  - desktop-only scroll buttons and related product cards
+
+JavaScript/client-side components that may delay interaction:
+- The duplicate `MobileBottomNav` is the safest first target because it multiplies mobile interactive handlers and sidebar state without adding unique content.
+- The page also has global layout hydration (`Header`, `CategoryMenu`, `RouteProgressBar`, `PageLoader`, `AccessibilityChecker`), but those are sitewide and should not be touched for this narrow Fix 4.
+
+Safest small fix proposal:
+- Remove the duplicate outer `<MobileBottomNav relatedProducts={transformedRelatedProducts} />` from `src/pages/product/[category]/index.tsx`.
+- Keep the existing `MobileBottomNav` inside the normal product render branch so mobile users still get the bottom nav and related-products sidebar.
+- Do not change `MobileBottomNav.tsx` behavior in the first INP fix.
+- Do not remove filters, tabs, quote form, related products, SEO content, schema, internal links, or layout.
+
+Files that would be touched if approved:
+- `src/pages/product/[category]/index.tsx`
+
+SEO risk:
+- Very low.
+- The change removes duplicate mobile UI chrome only.
+- No URLs, canonical, hreflang, schema, headings, product copy, or internal links in page content should change.
+
+UX risk:
+- Low.
+- Mobile bottom nav remains available from the retained instance.
+- Risk to verify: no duplicate bottom nav before/after; retained nav still opens the related-products sidebar.
+
+Expected INP impact:
+- Small but targeted.
+- Reduces duplicate hydrated mobile nav/sidebar work on the affected `/product/<category>` page group.
+- Best first step because it is a clear duplicate render with low SEO/content risk.
+
+Validation plan if approved:
+- Run `npm run build`.
+- Run `npx tsc --noEmit`.
+- Local check `/product/container-houses`:
+  - HTTP 200
+  - exactly one mobile bottom nav in rendered/mobile DOM
+  - bottom nav still visible on mobile viewport
+  - sidebar button still opens related products
+  - canonical count remains 1
+  - hreflang remains unchanged
+  - JSON-LD scripts remain present
+  - title/content remain unchanged
+  - no broken images
+- Optional browser check with mobile viewport to confirm no visual layout regression.
+
+## Fix 4: Remove Duplicate Mobile Nav On Product Category Pages
+
+Date: 2026-06-29
+
+Affected GSC group:
+- `https://www.samanportable.com/product/container-houses`
+- Mobile INP: 219ms
+- Group population: 15 URLs
+
+Files changed:
+- `src/pages/product/[category]/index.tsx`
+- `reports/core-web-vitals-fix-log.md`
+
+What changed:
+- Removed the duplicate outer `<MobileBottomNav relatedProducts={transformedRelatedProducts} />`.
+- Kept the normal in-branch `MobileBottomNav` so mobile users still have the bottom nav and related-products sidebar.
+
+Why it is safe:
+- The removed instance was duplicate mobile UI chrome.
+- No product content, filters, quote forms, tabs, schema, URLs, canonical, hreflang, headings, or internal links were changed.
+- The retained mobile nav still renders and keeps the same related-products data.
+
+Validation:
+- `npm run build`: passed
+- `npx tsc --noEmit`: passed
+- Local `/product/container-houses`: 200
+- H1 unchanged: Container Houses
+- Canonical count: 1
+- JSON-LD script count: 2
+- Fixed mobile bottom nav wrappers: 1
+- Mobile bottom nav safe area occurrences: 1
+- Sidebar button occurrences: 1
+- Product/category content present
+- Broken rendered image count: 0
+
+Expected INP impact:
+- Small but targeted improvement for mobile product category pages.
+- Removes duplicate hydrated mobile nav/sidebar state and handlers from the affected `/product/<category>` template without altering page content or SEO surfaces.
