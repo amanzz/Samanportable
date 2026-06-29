@@ -490,6 +490,60 @@ const faqSchemaFromItems = (items: FAQItem[]): object => ({
 });
 
 const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
+  'porta-cabin-in-hosur': [
+    {
+      question: "Can you deliver a porta cabin inside SIPCOT Phase 2 Hosur?",
+      answer: "Yes. We deliver to SIPCOT Phase 1 (PIN 635126) and SIPCOT Phase 2 Moranapalli (PIN 635109) and all other Hosur addresses. You will need to arrange a gate pass for our delivery vehicle as per your factory's visitor vehicle procedure. Give us the contact name and gate entry timing in advance and we coordinate directly with your site.",
+    },
+    {
+      question: "How long from order to delivery in Hosur?",
+      answer: "Standard sizes with no customisation: 7 to 10 working days to manufacture, then 1 day transit to Hosur. Custom cabins with electrical fit-out, partition, or toilet attachment: 12 to 18 working days manufacture, then 1 day transit. We confirm the exact schedule in writing when you place the order.",
+    },
+    {
+      question: "What size crane is needed to offload at my Hosur site?",
+      answer: "A 10 ft × 8 ft cabin weighs approximately 800 to 1,000 kg. A 20 ft × 10 ft fitted cabin can be 2,000 to 2,500 kg. We provide the weight with your delivery note so you can book the right crane. A 5-tonne mobile crane handles most standard sizes. If your site has low overhead cables or a narrow access road, tell us and we plan accordingly.",
+    },
+    {
+      question: "Do you provide erection and installation at the Hosur site?",
+      answer: "We provide placement coordination and can guide your crane operator by phone during placement. If you need a SAMAN erection team on-site for levelling, anchor bolt fixing, or commissioning of electrical connections, mention this at enquiry stage. We include it in your quotation as a separate item.",
+    },
+  ],
+  'porta-cabin-in-hubli': [
+    {
+      question: "Can you deliver porta cabins to Tarihal Industrial Estate and Gokul Road?",
+      answer: "Yes. We deliver to Tarihal Industrial Estate (PIN 580026), Gokul Road Industrial Estate (PIN 580030), and all Hubli-Dharwad addresses. Industrial estate deliveries often need advance vehicle entry passes — tell us the estate's entry procedure and contact person when you place the order and we coordinate the delivery vehicle timing directly with your site.",
+    },
+    {
+      question: "Do you also supply to Dharwad, or only Hubli?",
+      answer: "We supply to the full Hubli-Dharwad twin-city area and all of Dharwad district. Mention your exact delivery PIN when enquiring so we can accurately quote freight and plan the delivery route. There is no difference in our supply terms between Hubli city and Dharwad locations.",
+    },
+    {
+      question: "How does the cabin perform in Hubli's weather conditions?",
+      answer: "Hubli-Dharwad has a semi-arid climate with hot summers and a monsoon season. Our GI sheet roof is treated for anti-corrosion and will not rust under normal monsoon exposure. PUF panel walls provide insulation against heat. For sites with prolonged direct sun exposure, we recommend the double-skin roof option and an AC provision fit-out. The MS frame and base are hot-dip primed and painted — they do not degrade under the Hubli climate for the full service life of the structure.",
+    },
+    {
+      question: "Can you supply 3 to 5 porta cabins for a highway project at multiple Hubli area locations?",
+      answer: "Yes. Multi-unit orders for highway and infrastructure projects are planned as a set. We confirm the size and fit-out for each unit, sequence the manufacturing to complete the batch, and dispatch in coordinated deliveries to your different site locations along the NH 48 corridor. Call us with the project scope — number of cabins, sizes, sites — and we plan the production and delivery schedule.",
+    },
+  ],
+  'porta-cabin-in-belgaum': [
+    {
+      question: "Can you deliver porta cabins to Machhe Industrial Area, Belgaum?",
+      answer: "Yes. We deliver to Machhe Industrial Area (PIN 590014) and Udyambag Industrial Area (PIN 590008) and all Belgaum and Belagavi addresses. For industrial estate entries requiring vehicle advance authorisation, provide the gate-pass contact and procedure when placing your order. We coordinate the delivery vehicle timing with your site team so there is no waiting at the estate gate.",
+    },
+    {
+      question: "How long does manufacturing and delivery take from Bangalore to Belgaum?",
+      answer: "Standard sizes with no customisation: 7 to 10 working days manufacture, then 5 to 6 days in transit. Custom cabins with electrical, AC provision, partition, or toilet: 12 to 18 working days manufacture, then 5 to 6 days transit. We confirm production start date and expected dispatch date in writing when you place the order — not an estimate, a committed schedule we hold ourselves to.",
+    },
+    {
+      question: "Do you supply to highway project sites between Pune and Belgaum on NH 48?",
+      answer: "Yes. We supply to highway and infrastructure project sites along the NH 48 corridor both in Karnataka and into the adjoining Maharashtra belt near Kolhapur. For multi-site projects where you need cabins at several active work fronts along the highway stretch, we plan the manufacturing batch and dispatch sequence so each site receives its cabin on schedule. Call us with the project scope — number of cabins, sizes, site locations — and we build the supply plan.",
+    },
+    {
+      question: "Can you supply documentation for a Belgaum project tender or factory audit?",
+      answer: "Yes. We provide ISO certificate copies (9001, 14001, 45001), NSIC registration certificate, DPIIT recognition letter, and GST registration document as part of your order file. If your tender requires a manufacturer's declaration or material compliance statement, request it when placing the order and we include it with your delivery paperwork.",
+    },
+  ],
   'porta-cabin-in-sonipat': [
     {
       question: "Do you deliver porta cabins to Kundli, Rai, and Barhi?",
@@ -1078,6 +1132,78 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     {
       question: "How long does delivery to Jamshedpur take?",
       answer: "Transit is 4–6 days once the cabin's built, since Jamshedpur is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue — we'll confirm a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-salem': [
+    {
+      question: "Can you supply porta cabins to the SIPCOT Mecheri industrial estate?",
+      answer: "Yes. We deliver to SIPCOT Mecheri (PIN 636453) and all industrial estate addresses in Salem district. If your unit requires vehicle entry authorisation, share the contact details and gate procedure when placing the order. We coordinate the delivery vehicle arrival with your site team.",
+    },
+    {
+      question: "How should I prepare my Salem site for cabin delivery and placement?",
+      answer: "Clear and level a footprint slightly larger than the cabin size. Confirm overhead clearance — no low power lines or cables above the placement zone. Book a crane or JCB rated for the cabin weight (we provide this with the delivery note). Arrange gate-pass for our delivery vehicle if your site is inside an industrial estate. Installation takes 2 to 3 hours once the crane is on-site.",
+    },
+    {
+      question: "Salem gets very hot in summer. Will the cabin be comfortable to work in?",
+      answer: "A standard 40mm PUF panel cabin provides meaningful thermal insulation. For direct-sun sites in Salem's peak summer (April to June), we recommend the insulation upgrade plus AC provision. A 1.5-tonne AC unit paired with an insulated cabin and a false ceiling will maintain a workable temperature even at 40°C outside.",
+    },
+    {
+      question: "Can you supply multiple porta cabins for a large Salem project?",
+      answer: "Yes. We handle multi-unit orders for labour colonies, site office clusters, and permanent installations. Multi-unit orders are planned as a set — cabin sizes, layout, spacing, and shared services (power, water) — and dispatched in coordinated batches. Call us with the project scope and we plan the supply schedule.",
+    },
+  ],
+  'porta-cabin-in-tumkur': [
+    {
+      question: "Can you deliver a porta cabin to KIADB Hirehalli Industrial Area, Tumkur, within 2 weeks of my order?",
+      answer: "For a standard size with no custom fit-out — 10 ft × 8 ft or 20 ft × 8 ft with a door and window only — manufacture takes 7 to 10 working days and transit to Hirehalli (PIN 572168) is 1 to 2 days. Total: 8 to 12 working days from order confirmation. Yes, 2 weeks is achievable for standard cabins. Custom fit-out with electrical, AC, and toilet takes 11 to 17 working days total. Tell us your deadline when you call — we confirm whether it is achievable honestly, not optimistically.",
+    },
+    {
+      question: "What base does my Tumkur site need for the cabin to sit on?",
+      answer: "A levelled, hard, compacted surface. Compacted murrum, paver block, or existing concrete slab all work for temporary or semi-permanent placement. The cabin does not need a poured RCC foundation unless you are installing it permanently, in which case we include anchor bolt fixing plates in the base frame and provide the bolt pattern drawing. For KIADB plot installations where the cabin is part of a long-term factory setup, we recommend the anchor bolt option.",
+    },
+    {
+      question: "Do you supply porta cabins to warehouse and logistics sites near Tumkur on NH 48?",
+      answer: "Yes. We supply to logistics parks, warehouse campuses, and e-commerce fulfilment centres along the NH 48 Tumkur belt. Security cabins at compound gates, supervisor offices inside the warehouse, and labour rest rooms are the standard requirements for these sites. We can supply multiple units in a coordinated dispatch if your project needs cabins at several locations.",
+    },
+    {
+      question: "Can we visit your factory in Bangalore before placing the order?",
+      answer: "Yes. Our manufacturing facility is at Gopasandra, Sarjapura Hubli Road, Bangalore 560099 — approximately 65 km from Tumkur. You are welcome to visit and inspect a cabin in progress or a completed unit before placing your order. Call +91 88616 22859 to arrange the visit in advance so we can schedule time with our production team.",
+    },
+  ],
+  'porta-cabin-in-tirupur': [
+    {
+      question: "Can you supply porta cabins for a garment factory construction site in Tirupur with fast delivery?",
+      answer: "Yes. For a standard 10 ft × 8 ft or 20 ft × 8 ft cabin with no custom fit-out, manufacture takes 7 to 10 working days and transit to Tirupur is 4 to 5 days. Total from order to delivery: 11 to 15 working days. For custom fit-out with electrical, insulation upgrade, AC provision, and toilet: 14 to 20 working days total. If your construction start date is fixed, call us with the date and we confirm whether it is achievable from our current production queue.",
+    },
+    {
+      question: "Will a standard porta cabin handle Tirupur's summer heat comfortably?",
+      answer: "A standard 40mm PUF panel cabin with heat-reflective GI roof and upper louvre vents provides meaningful thermal protection. For sites with all-day direct western sun exposure — common on open garment factory construction sites — we recommend the 60mm PUF upgrade plus AC provision. A 1.5-tonne split AC in an upgraded PUF cabin maintains a workable internal temperature even at 39 to 40°C outside. Specify the upgrade at enquiry stage — it cannot be added after manufacturing begins.",
+    },
+    {
+      question: "Can you supply the security cabin with a counter ledge for a garment compound gate in Tirupur?",
+      answer: "Yes. A fixed MS flat-bar counter ledge below the sliding window is a standard add-on for garment factory security cabins. Specify it when enquiring and we include it in the manufacturing plan. The counter is sized to the window width and welded to the cabin frame — not bolted on as an afterthought.",
+    },
+    {
+      question: "Do you supply vendor documentation for garment buyer compliance audits in Tirupur?",
+      answer: "Yes. If your factory audit requires vendor certification for any cabins installed on your compound, we supply ISO certificate copies (9001, 14001, 45001), NSIC registration, DPIIT recognition letter, and GST registration document. Request the documentation file when placing your order and we include it with your delivery paperwork.",
+    },
+  ],
+  'porta-cabin-in-aurangabad': [
+    {
+      question: "Can you deliver porta cabins to MIDC Waluj, Aurangabad, from your Greater Noida factory?",
+      answer: "Yes. We dispatch from our Greater Noida facility (PIN 201308) and deliver to MIDC Waluj (PIN 431136), MIDC Chikalthana (PIN 431006), MIDC Shendra, and all Aurangabad addresses. Transit is 4 to 6 days by road. For MIDC Waluj heavy-vehicle entries, share the entry authorisation procedure and contact when placing your order — we coordinate the delivery vehicle clearance with your site team.",
+    },
+    {
+      question: "How long does manufacturing and delivery take from Greater Noida to Aurangabad?",
+      answer: "Standard cabins without custom fit-out: 7 to 10 working days manufacture, then 4 to 6 days transit. Fully custom cabins with electrical, AC provision, partition, and toilet: 12 to 18 working days manufacture, then 4 to 6 days transit. We confirm both dates in writing when you place the order. For MIDC procurement, we can provide a formal delivery commitment letter on company letterhead on request.",
+    },
+    {
+      question: "Do you supply vendor documentation for auto sector quality audits at MIDC Waluj, Aurangabad?",
+      answer: "Yes. We supply ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 certificate copies, NSIC registration certificate (NSIC/GP/BAN/2024/0055207), DPIIT recognition (DIPP56005), and GST registration (09ABBCS7101B1ZT) as part of your order documentation file. If your Bajaj or Tier-1 auto supplier audit requires a manufacturer's quality declaration or material compliance statement, request it at order stage and we include it with your delivery paperwork.",
+    },
+    {
+      question: "Can you supply 4 to 6 porta cabins for a large factory construction project at MIDC Shendra, Aurangabad?",
+      answer: "Yes. Multi-unit orders for large construction projects are planned as a manufacturing batch. We confirm the size and fit-out for each unit, sequence production so all units complete in one batch, and dispatch in a coordinated delivery. For DMIC-node projects at Shendra where the construction schedule is formal and phased, we can align our dispatch dates to your project timeline. Call with the project scope and we build the supply plan.",
     },
   ],
 };
