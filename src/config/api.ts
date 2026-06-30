@@ -686,44 +686,44 @@ export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
     if (titleMatch) seoData.title = decodeHtmlEntitiesOnce(titleMatch[1]);
 
     // Extract description (decode once — render layer re-escapes)
-    const descMatch = headHtml.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i);
-    if (descMatch) seoData.description = decodeHtmlEntitiesOnce(descMatch[1]);
+    const descMatch = headHtml.match(/<meta\s+name=["']description["']\s+content=(["'])(.*?)\1/i);
+    if (descMatch) seoData.description = decodeHtmlEntitiesOnce(descMatch[2]);
     
     // Extract canonical. Normalize the host to the public www domain: RankMath may emit
     // the WordPress backend host (e.g. blog.samanportable.com) or a non-www variant, which
     // would point Google's canonical at a different host and risk deindexing the live page.
-    const canonicalMatch = headHtml.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
+    const canonicalMatch = headHtml.match(/<link\s+rel=["']canonical["']\s+href=(["'])(.*?)\1/i);
     if (canonicalMatch) {
-      seoData.canonical = normalizeSamanportableHost(canonicalMatch[1]);
+      seoData.canonical = normalizeSamanportableHost(canonicalMatch[2]);
     }
     
     // Extract Open Graph tags
-    const ogTitleMatch = headHtml.match(/<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i);
-    if (ogTitleMatch) seoData.og_title = decodeHtmlEntitiesOnce(ogTitleMatch[1]);
+    const ogTitleMatch = headHtml.match(/<meta\s+property=["']og:title["']\s+content=(["'])(.*?)\1/i);
+    if (ogTitleMatch) seoData.og_title = decodeHtmlEntitiesOnce(ogTitleMatch[2]);
 
-    const ogDescMatch = headHtml.match(/<meta\s+property=["']og:description["']\s+content=["']([^"']+)["']/i);
-    if (ogDescMatch) seoData.og_description = decodeHtmlEntitiesOnce(ogDescMatch[1]);
+    const ogDescMatch = headHtml.match(/<meta\s+property=["']og:description["']\s+content=(["'])(.*?)\1/i);
+    if (ogDescMatch) seoData.og_description = decodeHtmlEntitiesOnce(ogDescMatch[2]);
     
-    const ogImageMatch = headHtml.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
-    if (ogImageMatch) seoData.og_image = ogImageMatch[1];
+    const ogImageMatch = headHtml.match(/<meta\s+property=["']og:image["']\s+content=(["'])(.*?)\1/i);
+    if (ogImageMatch) seoData.og_image = ogImageMatch[2];
     
-    const ogLocaleMatch = headHtml.match(/<meta\s+property=["']og:locale["']\s+content=["']([^"']+)["']/i);
-    if (ogLocaleMatch) seoData.og_locale = ogLocaleMatch[1];
+    const ogLocaleMatch = headHtml.match(/<meta\s+property=["']og:locale["']\s+content=(["'])(.*?)\1/i);
+    if (ogLocaleMatch) seoData.og_locale = ogLocaleMatch[2];
     
     // Extract Twitter tags
-    const twitterTitleMatch = headHtml.match(/<meta\s+name=["']twitter:title["']\s+content=["']([^"']+)["']/i);
-    if (twitterTitleMatch) seoData.twitter_title = decodeHtmlEntitiesOnce(twitterTitleMatch[1]);
+    const twitterTitleMatch = headHtml.match(/<meta\s+name=["']twitter:title["']\s+content=(["'])(.*?)\1/i);
+    if (twitterTitleMatch) seoData.twitter_title = decodeHtmlEntitiesOnce(twitterTitleMatch[2]);
 
-    const twitterDescMatch = headHtml.match(/<meta\s+name=["']twitter:description["']\s+content=["']([^"']+)["']/i);
-    if (twitterDescMatch) seoData.twitter_description = decodeHtmlEntitiesOnce(twitterDescMatch[1]);
+    const twitterDescMatch = headHtml.match(/<meta\s+name=["']twitter:description["']\s+content=(["'])(.*?)\1/i);
+    if (twitterDescMatch) seoData.twitter_description = decodeHtmlEntitiesOnce(twitterDescMatch[2]);
     
-    const twitterImageMatch = headHtml.match(/<meta\s+name=["']twitter:image["']\s+content=["']([^"']+)["']/i);
-    if (twitterImageMatch) seoData.twitter_image = twitterImageMatch[1];
+    const twitterImageMatch = headHtml.match(/<meta\s+name=["']twitter:image["']\s+content=(["'])(.*?)\1/i);
+    if (twitterImageMatch) seoData.twitter_image = twitterImageMatch[2];
     
     // Extract robots
-    const robotsMatch = headHtml.match(/<meta\s+name=["']robots["']\s+content=["']([^"']+)["']/i);
+    const robotsMatch = headHtml.match(/<meta\s+name=["']robots["']\s+content=(["'])(.*?)\1/i);
     if (robotsMatch) {
-      const robotsContent = robotsMatch[1];
+      const robotsContent = robotsMatch[2];
       seoData.robots = {
         index: robotsContent.includes('noindex') ? 'noindex' : 'index',
         follow: robotsContent.includes('nofollow') ? 'nofollow' : 'follow'

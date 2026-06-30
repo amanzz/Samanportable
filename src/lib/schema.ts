@@ -1296,6 +1296,96 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. We supply deployable site offices and security cabins for government, PWD, and municipal civil projects across Delhi. We provide the vendor documentation — ISO certificates, NSIC registration, DPIIT recognition, GST papers — needed for a tender or procurement file. Mention the documentation requirement when you place the order.",
     },
   ],
+  'container-office-in-jaipur': [
+    {
+      question: "What is the price of a container office in Jaipur?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the insulation and AC fit-out, and any partition or toilet additions. A compact 10 ft or 20 ft unit is an economical option for an MSME office. Freight from our Greater Noida factory is added as a separate transparent line. Call +91 87960 39938 for a written quotation with full breakup within 24 hours.",
+    },
+    {
+      question: "Can you deliver a container office to Sitapura or VKI RIICO areas?",
+      answer: "Yes. We deliver to Sitapura Industrial Area (PIN 302022), Vishwakarma Industrial Area / VKI (302013), the surrounding RIICO estates, and all Jaipur industrial and construction addresses. For RIICO estate deliveries needing gate-pass authorisation, share the entry procedure when you order and we coordinate the delivery vehicle with your site.",
+    },
+    {
+      question: "Is a container office a good option for a small RIICO plot without space for construction?",
+      answer: "Yes — that is exactly where it fits best. A container office needs no foundation or civil construction for temporary or semi-permanent use; a levelled hard surface is enough. It arrives as a finished, lockable office and can be placed in a single delivery on a compact plot. When the unit is no longer needed in that spot, it can be relocated by crane. For an MSME avoiding the cost and delay of building, it is the efficient choice.",
+    },
+    {
+      question: "Do you provide documentation for MSME registration or a vendor audit?",
+      answer: "Yes. We supply ISO certificate copies (9001, 14001, 45001), NSIC registration, DPIIT recognition, and GST registration with your order file. These are useful for MSME and tender documentation. If your audit requires a manufacturer's declaration for the installed cabin, request it at order stage and we include it with the delivery paperwork.",
+    },
+  ],
+  'container-office-in-pune': [
+    {
+      question: "What is the price of a container office in Pune?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the insulation and AC fit-out, and any partition or toilet additions. A basic 20 ft unit costs less than a 40 ft fully-fitted office. Freight from our Greater Noida factory to Pune is added as a separate transparent line. Call +91 87960 39938 for a written quotation with full breakup within 24 hours.",
+    },
+    {
+      question: "Can you deliver a container office to Chakan or Ranjangaon MIDC?",
+      answer: "Yes. We deliver to Chakan MIDC (PIN 410501), Talegaon MIDC, Ranjangaon MIDC, Pimpri-Chinchwad, and all Pune industrial and construction addresses. For MIDC estate deliveries needing gate-pass authorisation, share the entry procedure when you order and we coordinate the delivery vehicle with your site.",
+    },
+    {
+      question: "Pune is far from your factory — how do you manage delivery?",
+      answer: "Pune is about 1,400 km from our Greater Noida factory, with road transit of several days. We are upfront about this and plan the dispatch around your project schedule, so the unit arrives when you need it on-site rather than as a surprise. The cabin is fully built and fitted before dispatch — nothing is assembled at your site. For a unit that must last years on a MIDC plot, certified build quality and real documentation justify the planned lead time.",
+    },
+    {
+      question: "Do you provide documentation for an auto-sector vendor audit in Pune?",
+      answer: "Yes. We supply ISO certificate copies (9001, 14001, 45001), NSIC registration, DPIIT recognition, and GST registration as part of your order file. If your Tier-1 supplier or plant audit requires a manufacturer's declaration for installed cabins, request it at order stage and we include it with the delivery paperwork.",
+    },
+  ],
+  'container-office-in-lucknow': [
+    {
+      question: "What is the price of a container office in Lucknow?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the insulation and AC fit-out, and any partition or toilet additions. A basic 20 ft unit costs less than a 40 ft fully-fitted office. Because Lucknow is within the north India belt, freight from our Greater Noida factory is reasonable and quoted as a separate line. Call +91 87960 39938 for a written quotation with full breakup within 24 hours.",
+    },
+    {
+      question: "Can you deliver a container office to the Amausi or Nadarganj UPSIDA area?",
+      answer: "Yes. We deliver to the Amausi / Nadarganj Industrial Area (PIN 226008), the Sarojini Nagar UPSIDA estate, the Kanpur Road logistics corridor, and all Lucknow industrial, construction, and government project addresses. For UPSIDA estate or government site deliveries needing gate-pass or entry authorisation, share the procedure when you order and we coordinate the delivery vehicle with your site.",
+    },
+    {
+      question: "Do you supply container offices for government and UPSIDA projects in Lucknow?",
+      answer: "Yes. We supply deployable site offices and security cabins for government, PWD, UPSIDA, and infrastructure projects across Lucknow. We provide the vendor documentation — ISO certificates, NSIC registration, DPIIT recognition, GST papers — that a tender or procurement file requires. Mention the documentation requirement when you place the order so we include it with the delivery paperwork.",
+    },
+    {
+      question: "How quickly can you deliver to Lucknow from your Greater Noida factory?",
+      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation. Lucknow is within the north India delivery belt from our Greater Noida factory, so transit is short relative to far-zone cities. Custom fit-out with AC, partition, and toilet adds a few working days to production. We confirm the dispatch and delivery dates in writing when you order.",
+    },
+  ],
+  'container-office-in-kolkata': [
+    {
+      question: "What is the price of a container office in Kolkata?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the monsoon-sealing and anti-corrosion level, the AC fit-out, and any partition or toilet additions. A basic 20 ft unit costs less than a 40 ft fully-fitted office. Freight from our Greater Noida factory is added as a separate transparent line. Call +91 87960 39938 for a written quotation with full breakup within 24 hours.",
+    },
+    {
+      question: "Can you deliver a container office to the Taratala belt or Kolkata Port area?",
+      answer: "Yes. We deliver to the Taratala industrial corridor (PIN 700088), the Kolkata Port and Haldia dock area, the Dankuni logistics belt, the Howrah industrial zone, and all Kolkata addresses. For port and dock deliveries needing gate-pass or security authorisation, share the entry procedure when you order and we coordinate the delivery vehicle with your site.",
+    },
+    {
+      question: "Will the container office hold up through the Kolkata monsoon?",
+      answer: "Yes. We seal the roof overlaps, treat the door and window seals, and offer a sloped over-roof to shed heavy rain — specified as standard for Kolkata-bound units. We also apply upgraded anti-corrosion treatment for the humid, river-side environment. The unit stays dry and structurally sound through the Bengal monsoon, and the steel is protected against humidity over its full service life.",
+    },
+    {
+      question: "Do you supply container offices for port and warehouse operations in Kolkata?",
+      answer: "Yes. We supply dispatch supervisor cabins, gate security posts, and yard offices for port, dock, and warehouse operators across Kolkata, Haldia, and Dankuni. For operations that reconfigure their yard, the units are movable by crane or forklift. We can supply multiple units in a coordinated dispatch for a large logistics site.",
+    },
+  ],
+  'container-office-in-ahmedabad': [
+    {
+      question: "What is the price of a container office in Ahmedabad?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the insulation and heat-protection level, the AC fit-out, and any partition or toilet additions. A basic 20 ft unit costs less than a 40 ft fully-fitted office. Freight from our Greater Noida factory is added as a separate transparent line. Call +91 87960 39938 for a written quotation with full breakup within 24 hours.",
+    },
+    {
+      question: "Can you deliver a container office to Vatva or Sanand GIDC?",
+      answer: "Yes. We deliver to Vatva GIDC (PIN 382445), Naroda GIDC, Sanand (382110), Changodar, and all Ahmedabad industrial and construction addresses. For GIDC estate deliveries needing gate-pass authorisation, share the entry procedure when you order and we coordinate the delivery vehicle with your site.",
+    },
+    {
+      question: "Will the container office stay workable in Ahmedabad's summer heat?",
+      answer: "Yes — if it is built for it, which ours are. We use upgraded PUF or rock wool insulation and a heat-reflective over-roof as standard for Ahmedabad-bound units, which cuts radiant heat gain significantly. Paired with AC provision and a false ceiling, the office stays workable even through a Gujarat April afternoon. We specify the heat protection before manufacturing so the unit arrives ready for the climate.",
+    },
+    {
+      question: "Do you provide documentation for a GIDC or pharma vendor audit?",
+      answer: "Yes. We supply ISO certificate copies (9001, 14001, 45001), NSIC registration, DPIIT recognition, and GST registration as part of your order file. If your facility audit requires a manufacturer's declaration for installed cabins, request it at order stage and we include it with the delivery paperwork.",
+    },
+  ],
 };
 
 export const getFAQSchemaOverride = (slug: string): object | null => {
@@ -1680,7 +1770,7 @@ export const getCityPageGraph = (params: {
   url: string;
   breadcrumbs: Array<{ name: string; url: string }>;
   faqSchema: any | null;
-  contactTelephone?: string;
+  contactTelephone?: string | string[];
 }) => {
   const { url, breadcrumbs, faqSchema, contactTelephone = '+91 88616 22859' } = params;
 
@@ -1694,6 +1784,16 @@ export const getCityPageGraph = (params: {
     foundingDate: '2009',
     description:
       'Direct manufacturer of steel porta cabins, container offices, security cabins and prefab structures, serving India since 2009. Certified to ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018; NSIC government-purchase enlisted, DPIIT-recognised startup and Udyam registered.',
+    identifier: [
+      { '@type': 'PropertyValue', name: 'ISO 9001:2015', value: 'E20250218645' },
+      { '@type': 'PropertyValue', name: 'ISO 14001:2015', value: 'E20250218646' },
+      { '@type': 'PropertyValue', name: 'ISO 45001:2018', value: 'E20250218647' },
+      { '@type': 'PropertyValue', name: 'NSIC', value: 'NSIC/GP/BAN/2024/0055207' },
+      { '@type': 'PropertyValue', name: 'DPIIT', value: 'DIPP56005' },
+      { '@type': 'PropertyValue', name: 'GST North', value: '09ABBCS7101B1ZT' },
+      { '@type': 'PropertyValue', name: 'GST South', value: '29ABBCS7101B1ZR' },
+      { '@type': 'PropertyValue', name: 'Udyam', value: 'UDYAM-KR-03-0172770' },
+    ],
     address: [
       {
         '@type': 'PostalAddress',
