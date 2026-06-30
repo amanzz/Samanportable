@@ -1476,6 +1476,24 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-coimbatore': [
+    {
+      question: "How much does a container office cost in Coimbatore?",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft security cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "How long does delivery take to Coimbatore?",
+      answer: "We dispatch from our Bangalore factory, roughly 360 km away, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+    },
+    {
+      question: "Are the units suitable for foundry and dusty shop-floor conditions?",
+      answer: "Yes. We can dust-seal openings, add insulation and AC provision, and finish the unit for hot, dusty environments common in Coimbatore’s foundry and fabrication belts. Specify the conditions and we configure accordingly.",
+    },
+    {
+      question: "Can I move the container office between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
 };
 
 export const getFAQSchemaOverride = (slug: string): object | null => {

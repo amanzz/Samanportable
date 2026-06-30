@@ -121,6 +121,7 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-visakhapatnam',
   'container-office-in-vijayawada',
   'container-office-in-mangalore',
+  'container-office-in-coimbatore',
 ]);
 
 // Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
@@ -141,6 +142,7 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-visakhapatnam',
   'container-office-in-vijayawada',
   'container-office-in-mangalore',
+  'container-office-in-coimbatore',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
