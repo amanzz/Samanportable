@@ -490,6 +490,42 @@ const faqSchemaFromItems = (items: FAQItem[]): object => ({
 });
 
 const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
+  'container-office-in-mangalore': [
+    {
+      question: "How much does a container office cost in Mangalore?",
+      answer: "Price depends on size, insulation, weather/corrosion protection, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "How long does delivery take to Mangalore?",
+      answer: "We dispatch from our Bangalore factory, around 350 km away on NH75 via Hassan and the Shiradi ghat, with typical road transit of 3-5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+    },
+    {
+      question: "Are the units suitable for port, refinery and coastal sites?",
+      answer: "Yes. We can add extra weather and corrosion protection, galvanised roofing with proper drainage, and the insulation and fit-out your site needs. Tell us the conditions and intended use and we configure the unit accordingly.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
+  'container-office-in-mysore': [
+    {
+      question: "How much does a container office cost in Mysore?",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft security cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "How quickly can you deliver to Mysore?",
+      answer: "Mysore is about 145 km from our Bangalore factory, so it is one of our fastest South routes. Typical road transit is 3-5 days once the unit is built, often quicker given the short distance. We confirm the schedule at order stage.",
+    },
+    {
+      question: "Can I visit the factory before ordering?",
+      answer: "Yes. Because Mysore is close to our Bangalore plant, you are welcome to see the build and finish quality before you place an order. Contact us to arrange a visit.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
   'porta-cabin-in-hosur': [
     {
       question: "Can you deliver a porta cabin inside SIPCOT Phase 2 Hosur?",
@@ -1260,6 +1296,24 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. We supply ISO certificate copies (9001, 14001, 45001), NSIC registration, DPIIT recognition, and GST registration as part of your order file. If your facility audit or GMP documentation requires a manufacturer's declaration for installed cabins, request it at order stage and we include it with the delivery paperwork.",
     },
   ],
+  'container-office-in-kochi': [
+    {
+      question: "How much does a container office cost in Kochi?",
+      answer: "Price depends on size, insulation, weather-sealing, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification - share your requirement for an itemised price.",
+    },
+    {
+      question: "How long does delivery take to Kochi?",
+      answer: "We dispatch from our Bangalore factory, roughly 550 km away, with typical road transit of 3-5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+    },
+    {
+      question: "Are the units built for Kochi's monsoon and coastal conditions?",
+      answer: "Yes. We use galvanised roofing with proper drainage slope, sealed openings and added weather protection for salt air and heavy rain. Tell us the site conditions and we configure the unit accordingly.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
   'container-office-in-mumbai': [
     {
       question: "What is the price of a container office in Mumbai?",
@@ -1384,6 +1438,42 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     {
       question: "Do you provide documentation for a GIDC or pharma vendor audit?",
       answer: "Yes. We supply ISO certificate copies (9001, 14001, 45001), NSIC registration, DPIIT recognition, and GST registration as part of your order file. If your facility audit requires a manufacturer's declaration for installed cabins, request it at order stage and we include it with the delivery paperwork.",
+    },
+  ],
+  'container-office-in-visakhapatnam': [
+    {
+      question: "How much does a container office cost in Visakhapatnam?",
+      answer: "Price depends on size, insulation, corrosion protection, partitions, electricals and fit-out, plus the long-distance transport. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "How long does delivery take to Visakhapatnam?",
+      answer: "Vizag is roughly 1,000 km from our Bangalore factory, so it is a longer haul than our nearer South cities. We confirm a realistic transit window at order stage based on your site location and access, and dispatch once the unit is built.",
+    },
+    {
+      question: "Are the units suitable for steel-plant, shipyard and coastal sites?",
+      answer: "Yes. We can build on a reinforced shell with extra corrosion protection and the insulation and fit-out your site needs. Tell us the conditions and intended use and we configure the unit accordingly.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
+  'container-office-in-vijayawada': [
+    {
+      question: "How much does a container office cost in Vijayawada?",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "How long does delivery take to Vijayawada?",
+      answer: "We dispatch from our Bangalore factory, around 760 km away on NH44, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+    },
+    {
+      question: "Do you supply container offices for Amaravati capital-region construction sites?",
+      answer: "Yes. The Mangalagiri–Tadepalli–Amaravati corridor is one of our main areas of demand around Vijayawada. We supply site offices, engineer cabins and security posts, and can relocate units as the project moves.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
 };
