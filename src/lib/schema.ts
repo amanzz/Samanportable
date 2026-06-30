@@ -1206,6 +1206,96 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Multi-unit orders for large construction projects are planned as a manufacturing batch. We confirm the size and fit-out for each unit, sequence production so all units complete in one batch, and dispatch in a coordinated delivery. For DMIC-node projects at Shendra where the construction schedule is formal and phased, we can align our dispatch dates to your project timeline. Call with the project scope and we build the supply plan.",
     },
   ],
+  'container-office-in-bangalore': [
+    {
+      question: "What is the price of a container office in Bangalore?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, and the fit-out level. A basic 20 ft unit costs less than a 40 ft fully-fitted office with AC, partition, and toilet. Because we manufacture and dispatch from within Bangalore, freight is lower than from out-of-state suppliers. Call +91 88616 22859 with your requirement for a written quotation with full cost breakup within 24 hours.",
+    },
+    {
+      question: "How quickly can SAMAN deliver a container office in Bangalore?",
+      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation. Since our factory is in Gopasandra (560099), transit to any Bangalore address — Peenya, Bommasandra, Electronic City, Whitefield — is same-day once dispatched. Custom fit-out with AC, partition, and toilet adds a few working days to production.",
+    },
+    {
+      question: "Can I visit your factory before ordering?",
+      answer: "Yes. Our manufacturing facility is at Gopasandra, Sarjapura Hubli Road, Bangalore 560099. You are welcome to inspect a container office in progress or a completed unit before placing your order. Call +91 88616 22859 to schedule a visit with our production team.",
+    },
+    {
+      question: "Do you deliver container offices to Peenya and Electronic City industrial areas?",
+      answer: "Yes. We deliver across all Bangalore industrial zones including Peenya (560058), Bommasandra (560099), Electronic City (560100), and Whitefield / EPIP (560066), plus construction sites anywhere a crane or forklift can place the unit. For industrial estate deliveries needing a gate pass, share the entry procedure when you order.",
+    },
+  ],
+  'container-office-in-chennai': [
+    {
+      question: "What is the price of a container office in Chennai?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the insulation and AC fit-out, and any partition or toilet additions. A basic 20 ft unit costs less than a 40 ft fully-fitted office. Freight from our Bangalore factory to Chennai is added as a separate line. Call +91 88616 22859 with your requirement for a written quotation with full breakup within 24 hours.",
+    },
+    {
+      question: "Can you deliver a container office to Oragadam or Sriperumbudur auto plants?",
+      answer: "Yes. We deliver to the Oragadam SIPCOT corridor (PIN 603204), Sriperumbudur (602105), Ambattur (600058), Guindy (600032), and all Chennai industrial and construction addresses. For auto plant and SIPCOT estate deliveries needing gate-pass authorisation, share the entry procedure when you order and we coordinate the delivery vehicle with your site.",
+    },
+    {
+      question: "How long does delivery take from Bangalore to Chennai?",
+      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation, with transit to Chennai of 4–5 days. Custom fit-out with AC, partition, and toilet adds a few working days to production. We confirm the dispatch and delivery dates in writing when you order.",
+    },
+    {
+      question: "Are your container offices suitable for Chennai's hot, humid coastal climate?",
+      answer: "Yes. We use PUF or rock wool insulation as standard and apply anti-corrosion treatment to the steel. For coastal and direct-sun sites we recommend upgraded insulation, a heat-reflective over-roof, and AC provision. This keeps the interior workable through Chennai summers and protects the structure against humidity and salt air over its service life.",
+    },
+  ],
+  'container-office-in-hyderabad': [
+    {
+      question: "What is the price of a container office in Hyderabad?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the insulation and AC fit-out, and any partition or toilet additions. A basic 20 ft unit costs less than a 40 ft fully-fitted office. Freight from our Bangalore factory to Hyderabad is added as a separate line. Call +91 88616 22859 with your requirement for a written quotation with full breakup within 24 hours.",
+    },
+    {
+      question: "Can you deliver a container office to pharma plants in Jeedimetla or Patancheru?",
+      answer: "Yes. We deliver to Jeedimetla (PIN 500055), the Patancheru and Bollaram pharma belt (502319 / 502325), the Genome Valley cluster, the Gachibowli IT corridor (500032), and all Hyderabad industrial and construction addresses. For pharma plant and industrial estate deliveries needing gate-pass or controlled-entry authorisation, share the procedure when you order and we coordinate the delivery vehicle with your site.",
+    },
+    {
+      question: "How long does delivery take from Bangalore to Hyderabad?",
+      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation, with transit to Hyderabad of 4–5 days. Custom fit-out with AC, partition, and toilet adds a few working days to production. We confirm dispatch and delivery dates in writing when you order.",
+    },
+    {
+      question: "Do you provide documentation for a pharma facility audit?",
+      answer: "Yes. We supply ISO certificate copies (9001, 14001, 45001), NSIC registration, DPIIT recognition, and GST registration as part of your order file. If your facility audit or GMP documentation requires a manufacturer's declaration for installed cabins, request it at order stage and we include it with the delivery paperwork.",
+    },
+  ],
+  'container-office-in-mumbai': [
+    {
+      question: "What is the price of a container office in Mumbai?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the insulation and coastal anti-corrosion level, and any partition or toilet additions. A basic 20 ft unit costs less than a 40 ft fully-fitted office. Freight from our Greater Noida factory to Mumbai is added as a separate transparent line. Call +91 87960 39938 for a written quotation with full breakup within 24 hours.",
+    },
+    {
+      question: "Mumbai is far from your factory — why order from SAMAN instead of a local supplier?",
+      answer: "Most container offices sold locally in Mumbai are resold by dealers or assembled by fabricators with no quality certification, no warranty, and no traceability on the steel. SAMAN builds every unit under ISO 9001:2015 quality management, with a 5-year structural warranty and a 20-25 year engineered service life. For a unit that must last years through Mumbai's monsoon and coastal humidity, certified build quality and real documentation justify the 4-6 day transit. We are upfront about the lead time so you can plan around it.",
+    },
+    {
+      question: "Can you deliver a container office to MIDC Andheri, Taloja, or the Bhiwandi belt?",
+      answer: "Yes. We deliver to MIDC Andheri (PIN 400069), Wagle Estate Thane (400604), Taloja MIDC (410208), the Bhiwandi logistics belt (421308), and all Mumbai Metropolitan Region addresses. For MIDC estate deliveries needing gate-pass authorisation, share the entry procedure when you order and we coordinate the delivery vehicle with your site.",
+    },
+    {
+      question: "Are your container offices treated for Mumbai's coastal climate?",
+      answer: "Yes. We apply anti-corrosion treatment to the steel as standard and, for Mumbai, strongly recommend the upgraded coastal treatment plus monsoon-grade roof sealing. PUF or rock wool insulation keeps the interior workable through humid summers. These protections are specified before manufacturing so the unit arrives ready for the coastal environment and lasts its full service life.",
+    },
+  ],
+  'container-office-in-delhi': [
+    {
+      question: "What is the price of a container office in Delhi?",
+      answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the insulation and AC fit-out, and any partition or toilet additions. A basic 20 ft unit costs less than a 40 ft fully-fitted office. Because our factory is in Greater Noida, next to the NCR, freight to Delhi is lower than from distant suppliers. Call +91 87960 39938 for a written quotation with full breakup within 24 hours.",
+    },
+    {
+      question: "Can you deliver a container office to Okhla, Bawana, or Narela industrial areas?",
+      answer: "Yes. We deliver to Okhla (PIN 110020), Bawana (110039), Narela (110040), Mayapuri (110064), and all Delhi industrial, construction, and government project addresses. For industrial estate or government site deliveries needing gate-pass or entry authorisation, share the procedure when you order and we coordinate the delivery vehicle with your site.",
+    },
+    {
+      question: "How quickly can you deliver to Delhi from your Greater Noida factory?",
+      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation. Because our factory is only 40 to 50 km from most of Delhi, transit is usually same-day once dispatched. Custom fit-out with AC, partition, and toilet adds a few working days to production.",
+    },
+    {
+      question: "Do you supply container offices for PWD and government civil projects in Delhi?",
+      answer: "Yes. We supply deployable site offices and security cabins for government, PWD, and municipal civil projects across Delhi. We provide the vendor documentation — ISO certificates, NSIC registration, DPIIT recognition, GST papers — needed for a tender or procurement file. Mention the documentation requirement when you place the order.",
+    },
+  ],
 };
 
 export const getFAQSchemaOverride = (slug: string): object | null => {

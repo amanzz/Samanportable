@@ -104,6 +104,22 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'porta-cabin-in-belgaum',
   'porta-cabin-in-tirupur',
   'porta-cabin-in-aurangabad',
+  // C3 Container Office city pages (Container Offices hub breadcrumb, not Porta Cabins)
+  'container-office-in-bangalore',
+  'container-office-in-chennai',
+  'container-office-in-hyderabad',
+  'container-office-in-mumbai',
+  'container-office-in-delhi',
+]);
+
+// Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
+// city pages, but the breadcrumb hub is "Container Offices", not "Porta Cabins".
+const CONTAINER_OFFICE_CITY_SLUGS = new Set([
+  'container-office-in-bangalore',
+  'container-office-in-chennai',
+  'container-office-in-hyderabad',
+  'container-office-in-mumbai',
+  'container-office-in-delhi',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
@@ -139,6 +155,8 @@ const NORTH_CITY_PAGE_SLUGS = new Set([
   'porta-cabin-in-durgapur',
   'porta-cabin-in-jamshedpur',
   'porta-cabin-in-aurangabad',
+  'container-office-in-mumbai',
+  'container-office-in-delhi',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
@@ -681,7 +699,9 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               url: `https://www.samanportable.com/${slug}`,
               breadcrumbs: [
                 { name: 'Home', url: 'https://www.samanportable.com/' },
-                { name: 'Porta Cabins', url: 'https://www.samanportable.com/product-category/porta-cabins' },
+                CONTAINER_OFFICE_CITY_SLUGS.has(slug)
+                  ? { name: 'Container Offices', url: 'https://www.samanportable.com/product-category/container-offices' }
+                  : { name: 'Porta Cabins', url: 'https://www.samanportable.com/product-category/porta-cabins' },
                 { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` },
               ],
               faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
