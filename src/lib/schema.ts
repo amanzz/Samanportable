@@ -645,6 +645,78 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-ankleshwar': [
+    {
+      question: "How much does a container office cost in Ankleshwar?",
+      answer: "Price depends on size, panel type, corrosion protection, partitions, electricals and fit-out, plus long-haul transport from our Greater Noida factory. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "Is a container office suitable for a chemical or pharma site in GIDC Ankleshwar?",
+      answer: "As an admin, QC, documentation or supervisor cabin placed within the estate, yes — and we can add corrosion protection and cement-board panelling suited to a humid, chemical-adjacent position. Note these are site/admin cabins, not process-area explosion-proof enclosures; tell us the use and we advise on the right build.",
+    },
+    {
+      question: "How long does delivery take to Ankleshwar?",
+      answer: "We dispatch from our Greater Noida factory, roughly 1,050–1,120 km away via the NH48 corridor. It is a long-haul route, so we confirm the exact transit window at order stage based on your estate and gate access.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between plots or project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
+  'container-office-in-dahej': [
+    {
+      question: "How much does a container office cost in Dahej?",
+      answer: "Price depends on size, panel type, corrosion protection, partitions, electricals and fit-out, plus long-haul transport from our Greater Noida factory. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "Are your cabins suited to a coastal, chemical-adjacent Dahej site?",
+      answer: "As site, admin or documentation cabins, yes — and we can add corrosion protection and cement-board panelling suited to a coastal, chemical-adjacent position. Note these are site/admin cabins, not process-area explosion-proof enclosures; tell us the use and we advise on the right build.",
+    },
+    {
+      question: "How long does delivery take to Dahej?",
+      answer: "We dispatch from our Greater Noida factory, roughly 1,100–1,170 km away via the NH48 corridor and the Dahej port/PCPIR road. It is a long-haul route, so we confirm the exact transit window at order stage based on your site and gate access.",
+    },
+    {
+      question: "Can you supply a staged set of offices for a large EPC project?",
+      answer: "Yes. Alongside single units we can supply a staged set of site and project offices for a large petrochemical or EPC build. Tell us the phasing and team sizes at order stage and we plan the units accordingly.",
+    },
+  ],
+  'container-office-in-morbi': [
+    {
+      question: "How much does a container office cost in Morbi?",
+      answer: "Price depends on size, insulation/AC for hot yards, partitions, dispatch-window layout, electricals and fit-out, plus long-haul transport from our Greater Noida factory. A bare 10 ft gate cabin and a fully fitted 40 ft admin office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "Can the cabin handle a hot, dusty ceramic yard?",
+      answer: "Yes — we insulate for heat and can add AC provision, plus sealed windows and a durable finish suited to a dusty yard. Tell us the yard conditions and we advise on the right build.",
+    },
+    {
+      question: "How long does delivery take to Morbi?",
+      answer: "We dispatch from our Greater Noida factory, roughly 1,190–1,280 km away via the NH48 corridor through Ahmedabad and Rajkot. It is a long-haul route, so we confirm the exact transit window at order stage based on your yard and offloading access.",
+    },
+    {
+      question: "Can you supply a dispatch cabin with a storage section?",
+      answer: "Yes. Alongside plain office cabins we can supply a combined storage-and-office unit suited to a packing and dispatch yard. Tell us the split you need and we configure the layout.",
+    },
+  ],
+  'container-office-in-mundra': [
+    {
+      question: "How much does a container office cost in Mundra?",
+      answer: "Price depends on size, corrosion protection, documentation/gate layout, partitions, electricals and fit-out, plus long-haul transport into Kutch. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "Will the cabin hold up in Mundra's coastal port environment?",
+      answer: "Yes — we can add extra corrosion protection and cement-board panelling suited to a coastal, humid, dusty position. Tell us the site conditions and we advise on the right build.",
+    },
+    {
+      question: "How long does delivery take to Mundra?",
+      answer: "We dispatch from our Greater Noida factory, roughly 1,350–1,450 km away via NH48 to Ahmedabad and across Kutch to Mundra. It is a long-haul route, so we confirm the exact transit window at order stage based on your site and gate access.",
+    },
+    {
+      question: "Can you supply gate and documentation cabins for a CFS or terminal?",
+      answer: "Yes. We can build cabins with a gate-window or documentation-counter layout suited to CFS, weighbridge and terminal use. Tell us the layout and we configure accordingly.",
+    },
+  ],
   'container-office-in-meerut': [
     {
       question: "How much does a container office cost in Meerut?",
