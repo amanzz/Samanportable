@@ -123,6 +123,7 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-mangalore',
   'container-office-in-coimbatore',
   'container-office-in-madurai',
+  'container-office-in-surat',
 ]);
 
 // Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
@@ -145,6 +146,7 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-mangalore',
   'container-office-in-coimbatore',
   'container-office-in-madurai',
+  'container-office-in-surat',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
@@ -187,6 +189,7 @@ const NORTH_CITY_PAGE_SLUGS = new Set([
   'container-office-in-lucknow',
   'container-office-in-ahmedabad',
   'container-office-in-kolkata',
+  'container-office-in-surat',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {

@@ -544,6 +544,24 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-surat': [
+    {
+      question: "How much does a container office cost in Surat?",
+      answer: "Price depends on size, insulation, corrosion protection, partitions, electricals and fit-out, plus the long-distance transport. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "How long does delivery take to Surat?",
+      answer: "Surat is roughly 1,100 km from our Greater Noida factory, so it is a longer haul. We confirm a realistic transit window at order stage based on your site location and access, and dispatch once the unit is built.",
+    },
+    {
+      question: "Are the units suitable for Hazira heavy-industry and coastal sites?",
+      answer: "Yes. We can build on a reinforced shell with extra corrosion protection and the insulation and fit-out your site needs for Hazira and the humid coastal belt. Tell us the conditions and intended use and we configure accordingly.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
   'porta-cabin-in-hosur': [
     {
       question: "Can you deliver a porta cabin inside SIPCOT Phase 2 Hosur?",
