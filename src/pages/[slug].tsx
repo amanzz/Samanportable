@@ -126,6 +126,7 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-surat',
   'container-office-in-indore',
   'container-office-in-nagpur',
+  'container-office-in-vadodara',
 ]);
 
 // Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
@@ -151,6 +152,7 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-surat',
   'container-office-in-indore',
   'container-office-in-nagpur',
+  'container-office-in-vadodara',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
@@ -196,6 +198,7 @@ const NORTH_CITY_PAGE_SLUGS = new Set([
   'container-office-in-surat',
   'container-office-in-indore',
   'container-office-in-nagpur',
+  'container-office-in-vadodara',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {

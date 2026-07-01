@@ -627,6 +627,24 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-vadodara': [
+    {
+      question: "How much does a container office cost in Vadodara?",
+      answer: "Price depends on size, insulation, corrosion protection, partitions, electricals and fit-out, plus the transport. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "How long does delivery take to Vadodara?",
+      answer: "Vadodara is roughly 1,000 km from our Greater Noida factory. We confirm a realistic transit window at order stage based on your site location and access, and dispatch once the unit is built.",
+    },
+    {
+      question: "Are the units suitable for Nandesari chemical and process sites?",
+      answer: "Yes. We can add extra corrosion protection, safety/permit-room layouts and the insulation and fit-out your site needs for chemical and process-industry positions. Tell us the conditions and intended use and we configure accordingly.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
   'porta-cabin-in-hosur': [
     {
       question: "Can you deliver a porta cabin inside SIPCOT Phase 2 Hosur?",
