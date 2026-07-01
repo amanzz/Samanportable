@@ -645,6 +645,78 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-meerut': [
+    {
+      question: "How much does a container office cost in Meerut?",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost, though Meerut's short haul from our factory keeps delivery low. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "How quickly can you deliver to Meerut?",
+      answer: "Faster than most — Meerut is only around 100 km from our Greater Noida factory via the Delhi–Meerut and Eastern Peripheral Expressways, the shortest route of any city we serve. We confirm the exact schedule at order stage based on your site and access.",
+    },
+    {
+      question: "Do you supply cabins for sports-goods and MSME factories?",
+      answer: "Yes. Meerut's sports-goods and MSME engineering units are a major source of demand. We supply admin, sampling, dispatch and supervisor cabins, fitted out for the use, and can relocate them as needed.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
+  'container-office-in-kanpur': [
+    {
+      question: "How much does a container office cost in Kanpur?",
+      answer: "Price depends on size, panel type, corrosion protection, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "Which panel is better for a Kanpur leather or chemical site — PUF or cement board?",
+      answer: "For humid, chemical or leather-adjacent sites we usually recommend cement-board panelling with extra corrosion protection, as it stands up better to moisture and cleaning. Tell us the site conditions and we advise on the right build.",
+    },
+    {
+      question: "How long does delivery take to Kanpur?",
+      answer: "We dispatch from our Greater Noida factory, around 440 km away via the Yamuna and Agra–Lucknow Expressways, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site and access.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
+  'container-office-in-chandigarh': [
+    {
+      question: "Does one quote cover Chandigarh, Mohali and Panchkula?",
+      answer: "Yes. We supply across all three Tricity administrations from the same factory. Tell us which one your site falls under (Chandigarh UT, Mohali/Punjab or Panchkula/Haryana) and we confirm delivery and any local access details for that location.",
+    },
+    {
+      question: "Can you provide documents for government and institutional contractors?",
+      answer: "Yes. As the manufacturer we can supply GST, ISO, NSIC and DPIIT documentation for vendor onboarding on institutional and government projects. Tell us what your tender or contractor process needs.",
+    },
+    {
+      question: "How long does delivery take to the Tricity?",
+      answer: "We dispatch from our Greater Noida factory, around 300 km away via the Eastern Peripheral Expressway and NH-44, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site and access.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
+  'container-office-in-ludhiana': [
+    {
+      question: "How much does a container office cost in Ludhiana?",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost — and buying direct from us avoids a reseller markup. We quote to your exact specification, so share your requirement for an itemised price.",
+    },
+    {
+      question: "Do you sell direct or through a Ludhiana dealer?",
+      answer: "Direct. We are the manufacturer and dispatch from our own factory near Greater Noida, so you deal with us on specification, price and after-sales without a local resale markup.",
+    },
+    {
+      question: "What size suits a Ludhiana MSME factory admin or dispatch office?",
+      answer: "For a compact plot, a 20 ft unit usually works well for admin, sampling or dispatch; a 10 ft suits a single supervisor or gate post; a 40 ft suits a larger project office. Tell us your team size and plot and we advise.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between plots or sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
   'porta-cabin-in-hosur': [
     {
       question: "Can you deliver a porta cabin inside SIPCOT Phase 2 Hosur?",
