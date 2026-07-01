@@ -57,6 +57,88 @@ const CONTENT_H1_DEMOTION_SLUGS = new Set([
   'container-office-in-kolkata',
 ]);
 
+type RelatedContainerCafeLink = {
+  href: string;
+  label: string;
+};
+
+const CONTAINER_CAFE_NCR_RELATED_LINKS: Record<string, RelatedContainerCafeLink[]> = {
+  'container-cafes-in-central-delhi': [
+    { href: '/container-cafes-in-east-delhi', label: 'container cafe options in East Delhi' },
+    { href: '/container-cafes-in-south-delhi', label: 'modular cafe setups for South Delhi' },
+    { href: '/container-cafes-in-west-delhi', label: 'cafe container units for West Delhi' },
+    { href: '/product/container-cafe', label: 'custom container cafe design' },
+  ],
+  'container-cafes-in-east-delhi': [
+    { href: '/container-cafes-in-central-delhi', label: 'container cafe choices in Central Delhi' },
+    { href: '/container-cafes-in-noida', label: 'Noida container cafe projects' },
+    { href: '/container-cafes-in-ghaziabad', label: 'cafe container units for Ghaziabad' },
+    { href: '/product-category/container-cafe', label: 'container cafe designs and price bands' },
+  ],
+  'container-cafes-in-faridabad': [
+    { href: '/container-cafes-in-south-delhi', label: 'South Delhi container cafe support' },
+    { href: '/container-cafes-in-gurgaon', label: 'modular cafe cabins in Gurgaon' },
+    { href: '/container-cafes-in-greater-noida', label: 'container cafe units for Greater Noida' },
+    { href: '/product/container-cafe', label: 'SAMAN container cafe unit' },
+  ],
+  'container-cafes-in-ghaziabad': [
+    { href: '/container-cafes-in-east-delhi', label: 'East Delhi container cafe options' },
+    { href: '/container-cafes-in-noida', label: 'container cafes for Noida outlets' },
+    { href: '/container-cafes-in-greater-noida', label: 'Greater Noida cafe container projects' },
+    { href: '/product-category/container-cafe', label: 'full container cafe range' },
+  ],
+  'container-cafes-in-greater-noida': [
+    { href: '/container-cafes-in-noida', label: 'Noida container cafe requirements' },
+    { href: '/container-cafes-in-ghaziabad', label: 'cafe container units for Ghaziabad' },
+    { href: '/container-cafes-in-faridabad', label: 'Faridabad modular cafe projects' },
+    { href: '/product/container-cafe', label: 'container cafe build options' },
+  ],
+  'container-cafes-in-gurgaon': [
+    { href: '/container-cafes-in-south-delhi', label: 'South Delhi modular cafe options' },
+    { href: '/container-cafes-in-west-delhi', label: 'West Delhi cafe container units' },
+    { href: '/container-cafes-in-faridabad', label: 'container cafe projects in Faridabad' },
+    { href: '/product-category/container-cafe', label: 'container cafe formats' },
+  ],
+  'container-cafes-in-noida': [
+    { href: '/container-cafes-in-greater-noida', label: 'Greater Noida container cafe projects' },
+    { href: '/container-cafes-in-east-delhi', label: 'East Delhi cafe container options' },
+    { href: '/container-cafes-in-ghaziabad', label: 'Ghaziabad modular cafe units' },
+    { href: '/product/container-cafe', label: 'custom container cafe design' },
+  ],
+  'container-cafes-in-south-delhi': [
+    { href: '/container-cafes-in-faridabad', label: 'Faridabad container cafe units' },
+    { href: '/container-cafes-in-gurgaon', label: 'Gurgaon modular cafe cabins' },
+    { href: '/container-cafes-in-central-delhi', label: 'Central Delhi cafe container options' },
+    { href: '/product-category/container-cafe', label: 'container cafe designs and price bands' },
+  ],
+  'container-cafes-in-west-delhi': [
+    { href: '/container-cafes-in-gurgaon', label: 'Gurgaon container cafe options' },
+    { href: '/container-cafes-in-south-delhi', label: 'South Delhi modular cafe setups' },
+    { href: '/container-cafes-in-central-delhi', label: 'Central Delhi cafe container units' },
+    { href: '/product/container-cafe', label: 'SAMAN container cafe unit' },
+  ],
+};
+
+const RelatedContainerCafeLocations = ({ slug }: { slug: string }) => {
+  const links = CONTAINER_CAFE_NCR_RELATED_LINKS[slug];
+  if (!links?.length) return null;
+
+  const currentPath = `/${slug}`;
+  const visibleLinks = links.filter((link) => link.href !== currentPath);
+
+  return (
+    <section className="mt-10 rounded-lg border border-emerald-100 bg-emerald-50/50 p-5 sm:p-6" aria-labelledby="related-container-cafe-locations">
+      <h2 id="related-container-cafe-locations" className="text-xl font-semibold text-slate-900 mb-4">Related Container Cafe Locations in NCR</h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visibleLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="rounded-md border border-emerald-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-emerald-300 hover:bg-emerald-50">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+};
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
 // BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
 // Allowlisted per slug so no other blog post's schema is affected.
@@ -946,6 +1028,8 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
                 className="prose prose-lg max-w-none text-lg text-slate-700 leading-relaxed space-y-6"
               />
             </div>
+
+            <RelatedContainerCafeLocations slug={slug} />
           </article>
 
           {/* Article Footer */}
