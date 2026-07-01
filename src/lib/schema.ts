@@ -190,9 +190,17 @@ export const getLocalBusinessSchemaBengaluru = () => ({
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '12.8509',
-    longitude: '77.7291',
+    latitude: '12.851009',
+    longitude: '77.729225',
   },
+  identifier: [
+    { '@type': 'PropertyValue', name: 'GSTIN', value: '29ABBCS7101B1ZR' },
+    { '@type': 'PropertyValue', name: 'ISO 9001:2015', value: 'E20250218645' },
+    { '@type': 'PropertyValue', name: 'ISO 14001:2015', value: 'E20250218646' },
+    { '@type': 'PropertyValue', name: 'ISO 45001:2018', value: 'E20250218647' },
+    { '@type': 'PropertyValue', name: 'NSIC', value: 'NSIC/GP/BAN/2024/0055207' },
+    { '@type': 'PropertyValue', name: 'DPIIT', value: 'DIPP56005' },
+  ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -262,9 +270,17 @@ export const getLocalBusinessSchemaGreaterNoida = () => ({
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '28.5521',
-    longitude: '77.4347',
+    latitude: '28.552251',
+    longitude: '77.439618',
   },
+  identifier: [
+    { '@type': 'PropertyValue', name: 'GSTIN', value: '09ABBCS7101B1ZT' },
+    { '@type': 'PropertyValue', name: 'ISO 9001:2015', value: 'E20250218645' },
+    { '@type': 'PropertyValue', name: 'ISO 14001:2015', value: 'E20250218646' },
+    { '@type': 'PropertyValue', name: 'ISO 45001:2018', value: 'E20250218647' },
+    { '@type': 'PropertyValue', name: 'NSIC', value: 'NSIC/GP/BAN/2024/0055207' },
+    { '@type': 'PropertyValue', name: 'DPIIT', value: 'DIPP56005' },
+  ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -306,6 +322,19 @@ export const getLocalBusinessSchemaGreaterNoida = () => ({
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Cafe', description: 'Custom container cafes and food kiosks' } },
     ],
   },
+});
+
+const withoutHomepageCommercialFields = (schema: Record<string, unknown>) => {
+  const { hasOfferCatalog, priceRange, ...schemaWithoutCommercialFields } = schema;
+  return schemaWithoutCommercialFields;
+};
+
+export const getHomepageLocalBusinessGraphSchema = () => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    withoutHomepageCommercialFields(getLocalBusinessSchemaBengaluru()),
+    withoutHomepageCommercialFields(getLocalBusinessSchemaGreaterNoida()),
+  ],
 });
 
 export const getWebSiteSchema = () => ({

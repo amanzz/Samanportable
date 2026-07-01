@@ -9,7 +9,7 @@ import Head from 'next/head';
 // Import Layout component
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
-import { generateOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema } from '@/lib/schema';
+import { generateOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema, getHomepageLocalBusinessGraphSchema } from '@/lib/schema';
 import { pageSEO, siteConfig } from '@/config/seo';
 
 // Dynamic imports for below-the-fold sections to improve LCP
@@ -188,6 +188,11 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getHomepageFAQSchema()) }}
+        />
+        {/* Schema 3: LocalBusiness factory graph */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getHomepageLocalBusinessGraphSchema()) }}
         />
       </Head>
       <UnifiedSEO
