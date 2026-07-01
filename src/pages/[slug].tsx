@@ -215,6 +215,83 @@ const RelatedLabourColonyLocations = ({ slug }: { slug: string }) => {
     </section>
   );
 };
+
+type RelatedPortableOfficeLink = {
+  href: string;
+  label: string;
+};
+
+const PORTABLE_OFFICE_NCR_RELATED_LINKS: Record<string, RelatedPortableOfficeLink[]> = {
+  'portable-office-cabins-in-faridabad': [
+    { href: '/portable-office-cabins-in-gurgaon', label: 'modular office cabin options in Gurgaon' },
+    { href: '/portable-office-cabins-in-south-delhi', label: 'portable office cabins in South Delhi' },
+    { href: '/portable-office-cabins-in-ghaziabad', label: 'site office cabins in Ghaziabad' },
+    { href: '/product/portable-office', label: 'SAMAN portable office cabins' },
+  ],
+  'portable-office-cabins-in-ghaziabad': [
+    { href: '/portable-office-cabins-in-east-delhi', label: 'portable office cabin solutions in East Delhi' },
+    { href: '/portable-office-cabins-in-faridabad', label: 'portable office cabins in Faridabad' },
+    { href: '/portable-office-cabins-in-delhi-ncr', label: 'temporary site office cabins in Delhi NCR' },
+    { href: '/product/portable-office', label: 'factory-built portable office units' },
+  ],
+  'portable-office-cabins-in-gurgaon': [
+    { href: '/portable-office-cabins-in-faridabad', label: 'portable office cabins in Faridabad' },
+    { href: '/portable-office-cabins-in-south-delhi', label: 'site office cabins in South Delhi' },
+    { href: '/portable-office-cabins-in-central-delhi', label: 'modular office cabins for Central Delhi' },
+    { href: '/product/portable-office', label: 'portable office cabin designs' },
+  ],
+  'portable-office-cabins-in-central-delhi': [
+    { href: '/portable-office-cabins-in-east-delhi', label: 'East Delhi portable office cabins' },
+    { href: '/portable-office-cabins-in-north-delhi', label: 'site office cabins in North Delhi' },
+    { href: '/portable-office-cabins-in-gurgaon', label: 'Gurgaon modular office cabin options' },
+    { href: '/product/portable-office', label: 'portable office cabin range' },
+  ],
+  'portable-office-cabins-in-east-delhi': [
+    { href: '/portable-office-cabins-in-ghaziabad', label: 'Ghaziabad site office cabin support' },
+    { href: '/portable-office-cabins-in-central-delhi', label: 'portable office cabins in Central Delhi' },
+    { href: '/portable-office-cabins-in-delhi-ncr', label: 'Delhi NCR portable office projects' },
+    { href: '/product/portable-office', label: 'custom portable office cabins' },
+  ],
+  'portable-office-cabins-in-north-delhi': [
+    { href: '/portable-office-cabins-in-central-delhi', label: 'Central Delhi portable office cabins' },
+    { href: '/portable-office-cabins-in-east-delhi', label: 'temporary site office cabins in East Delhi' },
+    { href: '/portable-office-cabins-in-delhi-ncr', label: 'portable office cabin solutions in Delhi NCR' },
+    { href: '/product/portable-office', label: 'portable office cabin options' },
+  ],
+  'portable-office-cabins-in-south-delhi': [
+    { href: '/portable-office-cabins-in-faridabad', label: 'Faridabad portable office cabin support' },
+    { href: '/portable-office-cabins-in-gurgaon', label: 'site office cabins in Gurgaon' },
+    { href: '/portable-office-cabins-in-delhi-ncr', label: 'temporary office cabins across Delhi NCR' },
+    { href: '/product/portable-office', label: 'SAMAN modular office cabins' },
+  ],
+  'portable-office-cabins-in-delhi-ncr': [
+    { href: '/portable-office-cabins-in-gurgaon', label: 'modular office cabin options in Gurgaon' },
+    { href: '/portable-office-cabins-in-ghaziabad', label: 'site office cabins in Ghaziabad' },
+    { href: '/portable-office-cabins-in-faridabad', label: 'portable office cabins in Faridabad' },
+    { href: '/product/portable-office', label: 'portable office cabin solutions' },
+  ],
+};
+
+const RelatedPortableOfficeLocations = ({ slug }: { slug: string }) => {
+  const links = PORTABLE_OFFICE_NCR_RELATED_LINKS[slug];
+  if (!links?.length) return null;
+
+  const currentPath = `/${slug}`;
+  const visibleLinks = links.filter((link) => link.href !== currentPath);
+
+  return (
+    <section className="mt-10 rounded-lg border border-sky-100 bg-sky-50/50 p-5 sm:p-6" aria-labelledby="related-portable-office-locations">
+      <h2 id="related-portable-office-locations" className="text-xl font-semibold text-slate-900 mb-4">Related Portable Office Cabin Locations in NCR</h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visibleLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="rounded-md border border-sky-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-sky-300 hover:bg-sky-50">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+};
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
 // BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
 // Allowlisted per slug so no other blog post's schema is affected.
@@ -1121,6 +1198,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
 
             <RelatedContainerCafeLocations slug={slug} />
             <RelatedLabourColonyLocations slug={slug} />
+            <RelatedPortableOfficeLocations slug={slug} />
           </article>
 
           {/* Article Footer */}
