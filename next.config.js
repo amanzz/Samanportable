@@ -155,6 +155,14 @@ const nextConfig = {
   // Force HTTPS and WWW redirects
   async redirects() {
     const redirects = [
+      // Product singular-to-canonical plural redirects (owner-approved 2026-07-01).
+      // Absolute destinations keep these migration URLs single-hop.
+      { source: '/product/container-office', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/product/container-house', destination: 'https://www.samanportable.com/product/container-houses', permanent: true },
+      { source: '/product/porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', permanent: true },
+      { source: '/product/security-cabin', destination: 'https://www.samanportable.com/product/security-cabins', permanent: true },
+      { source: '/product/labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', permanent: true },
+
       // F3 resolution (owner-approved 2026-06-12): the plural category URL was a
       // phantom (no WordPress term behind it — soft-404 on live, fallback page on
       // the static build). 301 it to the real, canonical singular category.
