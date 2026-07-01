@@ -54,6 +54,7 @@ const SEO_TITLE_OVERRIDES: Record<string, string> = {
 const CONTENT_H1_DEMOTION_SLUGS = new Set([
   'best-porta-cabins-in-bangalore',
   'container-office-in-ahmedabad',
+  'container-office-in-kolkata',
 ]);
 
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
