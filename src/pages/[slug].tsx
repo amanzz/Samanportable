@@ -292,6 +292,89 @@ const RelatedPortableOfficeLocations = ({ slug }: { slug: string }) => {
     </section>
   );
 };
+
+type RelatedPortableCabinLink = {
+  href: string;
+  label: string;
+};
+
+const PORTABLE_CABIN_RELATED_LINKS: Record<string, RelatedPortableCabinLink[]> = {
+  'portable-cabins-in-central-delhi': [
+    { href: '/portable-cabins-in-east-delhi', label: 'site cabin options for East Delhi' },
+    { href: '/portable-cabins-in-north-delhi', label: 'portable cabins in North Delhi' },
+    { href: '/top-rated-portable-cabin-supplier-delhi', label: 'portable cabin buying guide for Delhi' },
+    { href: '/product/portable-cabin', label: 'SAMAN portable cabin range' },
+  ],
+  'portable-cabins-in-east-delhi': [
+    { href: '/portable-cabins-in-central-delhi', label: 'portable cabins in Central Delhi' },
+    { href: '/portable-cabins-in-west-delhi', label: 'portable cabin suppliers in West Delhi' },
+    { href: '/top-rated-portable-cabin-supplier-delhi', label: 'Delhi portable cabin buyer guide' },
+    { href: '/product/portable-cabin', label: 'custom portable cabin options' },
+  ],
+  'portable-cabins-in-mg-road': [
+    { href: '/best-porta-cabins-in-bangalore', label: 'portable cabins in Bangalore' },
+    { href: '/portacabins-for-sale-in-frazer-town-2', label: 'porta cabin options in Frazer Town' },
+    { href: '/portable-cabins-in-central-delhi', label: 'portable cabin projects in Central Delhi' },
+    { href: '/product/portable-cabin', label: 'portable cabin product range' },
+  ],
+  'portable-cabins-in-north-delhi': [
+    { href: '/portable-cabins-in-central-delhi', label: 'Central Delhi portable cabin support' },
+    { href: '/portable-cabins-in-east-delhi', label: 'East Delhi site cabin options' },
+    { href: '/portable-cabins-in-south-delhi', label: 'portable cabins in South Delhi' },
+    { href: '/product/portable-cabin', label: 'SAMAN portable cabin solutions' },
+  ],
+  'portable-cabins-in-south-delhi': [
+    { href: '/portable-cabins-in-west-delhi', label: 'West Delhi portable cabin suppliers' },
+    { href: '/portable-cabins-in-central-delhi', label: 'portable cabins in Central Delhi' },
+    { href: '/top-rated-portable-cabin-supplier-delhi', label: 'portable cabin guide for Delhi buyers' },
+    { href: '/product/portable-cabin', label: 'portable cabin models from SAMAN' },
+  ],
+  'portable-cabins-in-west-delhi': [
+    { href: '/portable-cabins-in-south-delhi', label: 'portable cabins in South Delhi' },
+    { href: '/portable-cabins-in-east-delhi', label: 'East Delhi portable cabin options' },
+    { href: '/top-rated-portable-cabin-supplier-delhi', label: 'Delhi portable cabin buying guide' },
+    { href: '/product/portable-cabin', label: 'factory-built portable cabin range' },
+  ],
+  'portacabins-for-sale-in-frazer-town-2': [
+    { href: '/best-porta-cabins-in-bangalore', label: 'portable cabins in Bangalore' },
+    { href: '/portable-cabins-in-mg-road', label: 'portable cabins near MG Road' },
+    { href: '/portable-cabins-in-central-delhi', label: 'portable cabin options in Central Delhi' },
+    { href: '/product/portable-cabin', label: 'SAMAN portable cabin range' },
+  ],
+  'top-rated-portable-cabin-supplier-delhi': [
+    { href: '/portable-cabins-in-central-delhi', label: 'portable cabins in Central Delhi' },
+    { href: '/portable-cabins-in-east-delhi', label: 'site cabin options for East Delhi' },
+    { href: '/portable-cabins-in-west-delhi', label: 'portable cabin suppliers in West Delhi' },
+    { href: '/product/portable-cabin', label: 'portable cabin product range' },
+  ],
+  'best-porta-cabins-in-bangalore': [
+    { href: '/portable-cabins-in-mg-road', label: 'portable cabins near MG Road' },
+    { href: '/portacabins-for-sale-in-frazer-town-2', label: 'porta cabin options in Frazer Town' },
+    { href: '/portable-cabins-in-central-delhi', label: 'portable cabin projects in Central Delhi' },
+    { href: '/product/portable-cabin', label: 'SAMAN portable cabin solutions' },
+  ],
+};
+
+const RelatedPortableCabinResources = ({ slug }: { slug: string }) => {
+  const links = PORTABLE_CABIN_RELATED_LINKS[slug];
+  if (!links?.length) return null;
+
+  const currentPath = `/${slug}`;
+  const visibleLinks = links.filter((link) => link.href !== currentPath);
+
+  return (
+    <section className="mt-10 rounded-lg border border-lime-100 bg-lime-50/50 p-5 sm:p-6" aria-labelledby="related-portable-cabin-resources">
+      <h2 id="related-portable-cabin-resources" className="text-xl font-semibold text-slate-900 mb-4">Related Portable Cabin Locations and Resources</h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visibleLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="rounded-md border border-lime-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-lime-300 hover:bg-lime-50">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+};
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
 // BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
 // Allowlisted per slug so no other blog post's schema is affected.
@@ -1199,6 +1282,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             <RelatedContainerCafeLocations slug={slug} />
             <RelatedLabourColonyLocations slug={slug} />
             <RelatedPortableOfficeLocations slug={slug} />
+            <RelatedPortableCabinResources slug={slug} />
           </article>
 
           {/* Article Footer */}
