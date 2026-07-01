@@ -498,6 +498,78 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "We build 10 ft, 20 ft and 40 ft standard units. A 20 ft cabin covers most admin and supervisor needs, while 10 ft suits a gate or single-desk point and 40 ft suits a larger office. Layouts are customised and confirmed at quotation.",
     },
   ],
+  'container-office-in-trichy': [
+    {
+      question: "What does a container office cost in Trichy?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Trichy site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to BHEL Township and the SIDCO estates?",
+      answer: "Yes. We dispatch from our Bangalore factory via Salem and Karur to BHEL Township, Kailasapuram, the Thiruverumbur SIDCO estate (620014) and the Thuvakudi SIDCO estate (620015) \u2014 about 350\u2013370 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a BHEL ancillary or fabrication unit?",
+      answer: "A 20 ft cabin covers most admin, QC and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-tirupur': [
+    {
+      question: "What does a container office cost in Tirupur?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Tirupur site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to SIDCO Harvey Road, Veerapandi and Mudalipalayam?",
+      answer: "Yes. We dispatch from our Bangalore factory via Salem and Erode to the Tirupur city cluster (641601), the SIDCO estate on Harvey Road (641602), Veerapandi (641605) and Mudalipalayam (641606) \u2014 about 320\u2013360 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "How is a container office different from a porta cabin?",
+      answer: "A container office uses a container-style steel shell, which makes it sturdier for larger site, storage and gate use and easy to relocate between factory phases. A porta cabin is a lighter panel cabin. Tell us your use and we advise the right one.",
+    },
+    {
+      question: "Can the office include AC, partitions and electrical fit-out?",
+      answer: "Yes. We add AC provision, internal partitions, electrical points, a document-storage area and an attached toilet as needed, all built into the cabin before dispatch and confirmed at quotation.",
+    },
+  ],
+  'container-office-in-tirupati': [
+    {
+      question: "What does a container office cost in Tirupati?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Tirupati site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Renigunta and Gajulamandyam factory sites?",
+      answer: "Yes. We dispatch from our Bangalore factory via Chittoor to Gajulamandyam and the APIIC park (517520), Karakambadi (517520), Renigunta (517520) and Tirupati city (517501) \u2014 about 250\u2013290 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an electronics plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and certificate numbers for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-sri-city': [
+    {
+      question: "What does a container office cost in Sri City?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Sri City site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver inside the Sri City SEZ, and how is gate access handled?",
+      answer: "Yes. We dispatch from our Bangalore factory via Chittoor and the Chennai corridor to the SEZ, DTZ and FTWZ zones of Sri City (517646). Because the zones are gated, we plan the gate-pass and offloading with you before dispatch.",
+    },
+    {
+      question: "Which size suits an SEZ project or admin office?",
+      answer: "A 20 ft cabin covers most project, admin and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and certificate numbers for SEZ vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
   'container-office-in-mangalore': [
     {
       question: "How much does a container office cost in Mangalore?",

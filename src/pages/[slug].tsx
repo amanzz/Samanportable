@@ -205,6 +205,11 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-vijayawada',
   'container-office-in-mangalore',
   'container-office-in-coimbatore',
+  'container-office-in-trichy',
+  'container-office-in-tirupur',
+  'container-office-in-tirupati',
+  'container-office-in-sri-city',
+
   'container-office-in-madurai',
   'container-office-in-surat',
   'container-office-in-indore',
@@ -243,6 +248,11 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-vijayawada',
   'container-office-in-mangalore',
   'container-office-in-coimbatore',
+  'container-office-in-trichy',
+  'container-office-in-tirupur',
+  'container-office-in-tirupati',
+  'container-office-in-sri-city',
+
   'container-office-in-madurai',
   'container-office-in-surat',
   'container-office-in-indore',
@@ -866,7 +876,11 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
                 { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` },
               ],
               faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
-              contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug) ? ['+91 87960 39938', '+91 97089 89937'] : undefined,
+              contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug)
+                ? ['+91 87960 39938', '+91 97089 89937']
+                : ['container-office-in-trichy', 'container-office-in-tirupur', 'container-office-in-tirupati', 'container-office-in-sri-city'].includes(slug)
+                  ? ['+91 88616 22859', '+91 80886 85440']
+                  : undefined,
             });
           }
 
