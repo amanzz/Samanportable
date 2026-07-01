@@ -609,6 +609,24 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-nagpur': [
+    {
+      question: "How much does a container office cost in Nagpur?",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+    },
+    {
+      question: "How long does delivery take to Nagpur?",
+      answer: "We dispatch from our Greater Noida factory, around 950 km away via NH44, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+    },
+    {
+      question: "Do you supply site offices for MIHAN and Butibori projects?",
+      answer: "Yes. MIHAN logistics and the Butibori industrial estate are major sources of demand around Nagpur. We supply gate cabins, project offices and supervisor cabins, fitted out for logistics and heavy-industry use, and can relocate units as the project moves.",
+    },
+    {
+      question: "Can the container office be moved between sites later?",
+      answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
   'porta-cabin-in-hosur': [
     {
       question: "Can you deliver a porta cabin inside SIPCOT Phase 2 Hosur?",
