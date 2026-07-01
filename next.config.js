@@ -157,19 +157,18 @@ const nextConfig = {
     const redirects = [
       // Product singular-to-canonical plural redirects (owner-approved 2026-07-01).
       // Absolute destinations keep these migration URLs single-hop.
-      { source: '/product/container-office', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/product/container-house', destination: 'https://www.samanportable.com/product/container-houses', permanent: true },
-      { source: '/product/porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', permanent: true },
-      { source: '/product/security-cabin', destination: 'https://www.samanportable.com/product/security-cabins', permanent: true },
-      { source: '/product/labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', permanent: true },
+      { source: '/product/container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
+      { source: '/product/container-house', destination: 'https://www.samanportable.com/product/container-houses', statusCode: 301 },
+      { source: '/product/porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/security-cabin', destination: 'https://www.samanportable.com/product/security-cabins', statusCode: 301 },
+      { source: '/product/labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
 
+      // Already identified nav/internal 404s.
+      { source: '/porta-cabin-in-bangalore', destination: 'https://www.samanportable.com/best-porta-cabins-in-bangalore', statusCode: 301 },
+      { source: '/porta-cabins-in-bangalore', destination: 'https://www.samanportable.com/best-porta-cabins-in-bangalore', statusCode: 301 },
       // Phantom cross-category path fix (owner-approved 2026-07-01): the
-      // "portable-office-container" product lives in the portable-office category,
-      // so /product/container-offices/portable-office-container 404s (route guards
-      // on category match). 301 the phantom container-offices path to the real,
-      // canonical product URL. The container-offices sibling with a similar name is
-      // "container-portable-office" (a separate, live product).
-      { source: '/product/container-offices/portable-office-container', destination: 'https://www.samanportable.com/product/portable-office/portable-office-container', permanent: true },
+      // "portable-office-container" product lives in the portable-office category.
+      { source: '/product/container-offices/portable-office-container', destination: 'https://www.samanportable.com/product/portable-office/portable-office-container', statusCode: 301 },
 
       // F3 resolution (owner-approved 2026-06-12): the plural category URL was a
       // phantom (no WordPress term behind it — soft-404 on live, fallback page on
