@@ -426,6 +426,78 @@ const faqSchemaFromItems = (items: FAQItem[]): object => ({
 });
 
 const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
+  'container-office-in-haridwar': [
+    {
+      question: "What does a container office cost in Haridwar?",
+      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and delivery distance to your Haridwar site. Share your requirement and we send an itemised quote.",
+    },
+    {
+      question: "Do you deliver to SIDCUL Haridwar and BHEL Ranipur?",
+      answer: "Yes. We dispatch from our Greater Noida factory to the SIDCUL Integrated Industrial Estate, Shivalik Nagar, BHEL Ranipur, Bahadrabad and Haridwar city, via the Delhi–Meerut Expressway and Roorkee corridor. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "What sizes of container office are available?",
+      answer: "We build 10 ft, 20 ft and 40 ft standard units, and customise layouts such as partitioned, two-unit or two-storey cabins. Internal usable area is confirmed at quotation.",
+    },
+    {
+      question: "Can the container office be shifted to another Uttarakhand site later?",
+      answer: "Yes. A container office is a self-contained steel cabin, so it can be lifted and relocated to another plot in Haridwar or elsewhere in Uttarakhand when your project moves.",
+    },
+  ],
+  'container-office-in-rudrapur': [
+    {
+      question: "What does a container office cost in Rudrapur?",
+      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the long-haul delivery distance to your Rudrapur or Pantnagar site. Share your requirement and we send an itemised quote.",
+    },
+    {
+      question: "Do you deliver to SIDCUL Pantnagar and Rudrapur?",
+      answer: "Yes. We dispatch from our Greater Noida factory on NH-9 through Moradabad and Rampur to the SIDCUL Integrated Industrial Estate at Pantnagar and the Rudrapur SIDCUL area — about 230–270 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which sizes suit auto and FMCG plants here?",
+      answer: "We build 10 ft, 20 ft and 40 ft standard units. A 20 ft cabin covers most supervisor, QC and admin needs, while 10 ft suits line-side or guard points and 40 ft suits larger offices. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Are the cabins built for Rudrapur's humid, monsoon-heavy weather?",
+      answer: "Yes. We use PUF-insulated panels with sealed joints and a GI-sheet roof, which suit the Terai belt's heat and monsoon humidity. Exact panel and sealing spec is confirmed at quotation.",
+    },
+  ],
+  'container-office-in-kashipur': [
+    {
+      question: "What does a container office cost in Kashipur?",
+      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the long-haul delivery distance to your Kashipur site. Share your requirement and we send an itemised quote.",
+    },
+    {
+      question: "Do you deliver to SIIDCUL Kashipur and the Kashipur–Thakurdwara Road belt?",
+      answer: "Yes. We dispatch from our Greater Noida factory through Moradabad to the SIIDCUL Escort Farm estate, the Kundeshwari belt and mill sites across Kashipur — about 220–250 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Do you make gate offices and weighbridge cabins?",
+      answer: "Yes. A 10 ft or 20 ft container cabin works well as a gate office or weighbridge office, and we can add a facing window, partition and electricals to suit. Sizes and layout are confirmed at quotation.",
+    },
+    {
+      question: "Are these cabins suitable for a paper or sugar mill site?",
+      answer: "Yes, as admin, gate and supervisor offices on the mill premises. We supply clean, insulated steel office cabins — not process or storage structures. The exact spec is confirmed at quotation.",
+    },
+  ],
+  'container-office-in-agra': [
+    {
+      question: "What does a container office cost in Agra?",
+      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Agra site. Share your requirement and we send an itemised quote.",
+    },
+    {
+      question: "Do you deliver to Sikandra and Foundry Nagar in Agra?",
+      answer: "Yes. We dispatch from our Greater Noida factory on the Yamuna Expressway to the Sikandra Industrial Area, Foundry Nagar and the Trans-Yamuna belt — about 165–190 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Do you supply site offices for hotel and real-estate projects?",
+      answer: "Yes. A 20 ft or 40 ft container cabin works well as a contractor or project site office for hotel, road and real-estate work, with partitions and electricals to suit. Sizes and layout are confirmed at quotation.",
+    },
+    {
+      question: "What size suits a foundry or footwear unit admin cabin?",
+      answer: "We build 10 ft, 20 ft and 40 ft standard units. A 20 ft cabin covers most admin and supervisor needs, while 10 ft suits a gate or single-desk point and 40 ft suits a larger office. Layouts are customised and confirmed at quotation.",
+    },
+  ],
   'container-office-in-mangalore': [
     {
       question: "How much does a container office cost in Mangalore?",
