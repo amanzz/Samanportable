@@ -32,6 +32,7 @@ const MONEY_STRIP_LINKS = [
   { label: "Pre-Engineered Buildings", href: "/product/pre-engineered-buildings" },
   { label: "Industrial Sheds Range", href: "/product/industrial-sheds" },
   { label: "Prefab Houses in Bangalore", href: "/prefabricated-houses-in-bangalore" },
+  { label: "Prefab Solutions", href: "/prefab-solutions" },
   { label: "Top Quality Prefab Cabins Delhi", href: "/top-quality-prefab-cabins-delhi" },
   { label: "Best Portable Cabins in India", href: "/best-portable-cabins-in-india" },
   { label: "Portable Toilets in Bangalore", href: "/portable-toilets-in-bangalore" },
