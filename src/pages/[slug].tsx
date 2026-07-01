@@ -139,6 +139,82 @@ const RelatedContainerCafeLocations = ({ slug }: { slug: string }) => {
     </section>
   );
 };
+type RelatedLabourColonyLink = {
+  href: string;
+  label: string;
+};
+
+const LABOUR_COLONY_NCR_RELATED_LINKS: Record<string, RelatedLabourColonyLink[]> = {
+  'labour-colonies-in-east-delhi': [
+    { href: '/labour-colonies-in-north-delhi', label: 'labour colony setup in North Delhi' },
+    { href: '/labour-colonies-in-noida', label: 'worker accommodation units in Noida' },
+    { href: '/labour-colonies-in-ghaziabad', label: 'temporary worker housing in Ghaziabad' },
+    { href: '/product/labor-colony', label: 'SAMAN labour colony cabins' },
+  ],
+  'labour-colonies-in-north-delhi': [
+    { href: '/labour-colonies-in-east-delhi', label: 'labour colony setup in East Delhi' },
+    { href: '/labour-colonies-in-west-delhi', label: 'worker housing units in West Delhi' },
+    { href: '/labour-colonies-in-noida', label: 'site labour housing in Noida' },
+    { href: '/product/labor-colony', label: 'labour colony cabin options' },
+  ],
+  'labour-colonies-in-south-delhi': [
+    { href: '/labour-colonies-in-faridabad', label: 'worker accommodation units in Faridabad' },
+    { href: '/labour-colonies-in-west-delhi', label: 'temporary labour housing in West Delhi' },
+    { href: '/labour-colonies-in-east-delhi', label: 'labour colony cabins in East Delhi' },
+    { href: '/product/labor-colony', label: 'factory-built labour colony units' },
+  ],
+  'labour-colonies-in-west-delhi': [
+    { href: '/labour-colonies-in-south-delhi', label: 'site labour housing in South Delhi' },
+    { href: '/labour-colonies-in-north-delhi', label: 'labour colony cabins in North Delhi' },
+    { href: '/labour-colonies-in-faridabad', label: 'worker housing units in Faridabad' },
+    { href: '/product/labor-colony', label: 'modular labour accommodation units' },
+  ],
+  'labour-colonies-in-faridabad': [
+    { href: '/labour-colonies-in-south-delhi', label: 'South Delhi labour colony support' },
+    { href: '/labour-colonies-in-noida', label: 'labour colony cabins in Noida' },
+    { href: '/labour-colonies-in-greater-noida', label: 'site labour housing in Greater Noida' },
+    { href: '/product/labor-colony', label: 'SAMAN worker accommodation cabins' },
+  ],
+  'labour-colonies-in-ghaziabad': [
+    { href: '/labour-colonies-in-east-delhi', label: 'East Delhi worker housing options' },
+    { href: '/labour-colonies-in-noida', label: 'labour colony setup in Noida' },
+    { href: '/labour-colonies-in-greater-noida', label: 'worker accommodation units in Greater Noida' },
+    { href: '/product/labor-colony', label: 'labour colony units for project sites' },
+  ],
+  'labour-colonies-in-greater-noida': [
+    { href: '/labour-colonies-in-noida', label: 'Noida labour colony cabins' },
+    { href: '/labour-colonies-in-ghaziabad', label: 'temporary worker housing in Ghaziabad' },
+    { href: '/labour-colonies-in-faridabad', label: 'Faridabad site labour housing' },
+    { href: '/product/labor-colony', label: 'worker accommodation cabin range' },
+  ],
+  'labour-colonies-in-noida': [
+    { href: '/labour-colonies-in-greater-noida', label: 'site labour housing in Greater Noida' },
+    { href: '/labour-colonies-in-east-delhi', label: 'East Delhi labour colony setup' },
+    { href: '/labour-colonies-in-ghaziabad', label: 'Ghaziabad worker accommodation units' },
+    { href: '/product/labor-colony', label: 'custom labour colony cabins' },
+  ],
+};
+
+const RelatedLabourColonyLocations = ({ slug }: { slug: string }) => {
+  const links = LABOUR_COLONY_NCR_RELATED_LINKS[slug];
+  if (!links?.length) return null;
+
+  const currentPath = `/${slug}`;
+  const visibleLinks = links.filter((link) => link.href !== currentPath);
+
+  return (
+    <section className="mt-10 rounded-lg border border-amber-100 bg-amber-50/50 p-5 sm:p-6" aria-labelledby="related-labour-colony-locations">
+      <h2 id="related-labour-colony-locations" className="text-xl font-semibold text-slate-900 mb-4">Related Labour Colony Locations in NCR</h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visibleLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="rounded-md border border-amber-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-amber-300 hover:bg-amber-50">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+};
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
 // BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
 // Allowlisted per slug so no other blog post's schema is affected.
@@ -1030,6 +1106,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             </div>
 
             <RelatedContainerCafeLocations slug={slug} />
+            <RelatedLabourColonyLocations slug={slug} />
           </article>
 
           {/* Article Footer */}
