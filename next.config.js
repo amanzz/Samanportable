@@ -163,6 +163,14 @@ const nextConfig = {
       { source: '/product/security-cabin', destination: 'https://www.samanportable.com/product/security-cabins', permanent: true },
       { source: '/product/labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', permanent: true },
 
+      // Phantom cross-category path fix (owner-approved 2026-07-01): the
+      // "portable-office-container" product lives in the portable-office category,
+      // so /product/container-offices/portable-office-container 404s (route guards
+      // on category match). 301 the phantom container-offices path to the real,
+      // canonical product URL. The container-offices sibling with a similar name is
+      // "container-portable-office" (a separate, live product).
+      { source: '/product/container-offices/portable-office-container', destination: 'https://www.samanportable.com/product/portable-office/portable-office-container', permanent: true },
+
       // F3 resolution (owner-approved 2026-06-12): the plural category URL was a
       // phantom (no WordPress term behind it — soft-404 on live, fallback page on
       // the static build). 301 it to the real, canonical singular category.
