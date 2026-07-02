@@ -249,7 +249,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                   variant === 'compact' ? 'text-xs' : 'text-sm'
                 }`}
               >
-                <a href="tel:+916200909435">
+                <a href="tel:+918861622859">
                   <Phone className="w-4 h-4 mr-2" />
                   Call
                 </a>
@@ -270,4 +270,3 @@ const ProductCard: React.FC<ProductCardProps> = ({
 };
 
 export default ProductCard;
-

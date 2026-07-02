@@ -8,28 +8,21 @@ import { Button } from '../../../components/ui/button';
 import { Badge } from '../../../components/ui/badge';
 import { Card } from '../../../components/ui/card';
 import { ScrollArea } from '../../../components/ui/scroll-area';
-import QuoteFormPopup from '../../../components/QuoteFormPopup';
 import MobileBottomNav from '../../../components/MobileBottomNav';
 import { 
   Star, 
   ShoppingCart, 
   ArrowLeft,
-  Loader2,
-  Phone,
-  Mail,
-  Minus,
-  Plus,
-  BookOpen,
-  Check
+  Loader2
 } from 'lucide-react';
 import type { WooCommerceProduct, RankMathSEOData, ProductReview } from '../../../config/api';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
 import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
-import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
+import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
@@ -256,12 +249,8 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
 const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, reviews = [] }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [quantity, setQuantity] = useState(1);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
-  const { addItem, isInCart } = useCart();
-  const isProductInCart = isInCart(product?.id || 0);
 
   // Parse short description table data
   const shortDescriptionData = useMemo(() => {
@@ -646,6 +635,10 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                           ))}
                         </div>
                       )}
+
+                      <div className="-mx-2 pt-1 md:pt-3">
+                        <ProductZoneCtas variant="strip" className="w-full" />
+                      </div>
                       
                       {/* Dynamic Buttons from Short Description */}
                       {isHydrated && shortDescriptionButtons.length > 0 && (
@@ -755,30 +748,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                       {/* Actions — enquiry-only business (owner-approved):
                           Add to Cart replaced by a direct Call button; the quantity
                           stepper only served the cart and was removed with it. */}
-                      <div className="space-y-3 pt-3 border-t border-slate-200">
-                        {/* Enhanced Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-3">
-                          <Button
-                            size="lg"
-                            className="flex-1 w-full sm:w-auto py-3 px-4 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white"
-                            asChild
-                          >
-                            <a href="tel:+916200909435">
-                              <Phone className="w-4 h-4 mr-2" />
-                              Call
-                            </a>
-                          </Button>
-                          <Button
-                            variant="outline"
-                            size="lg"
-                            className="flex-1 w-full sm:w-auto py-3 px-4 text-sm font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-200 transform hover:scale-[1.02]"
-                            onClick={() => setIsQuoteFormOpen(true)}
-                          >
-                            Send Enquiry
-                          </Button>
-                        </div>
-                      </div>
-
                       {/* Product Info */}
                       <div className="space-y-3 pt-6 border-t border-slate-200">
                         <h3 className="text-lg font-semibold text-foreground">Product Information</h3>
@@ -960,38 +929,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                 </Link>
               </div>
 
-              {/* Enhanced Contact CTA */}
-              <Card className="mt-4 p-6 shadow-xl border-0 bg-gradient-to-br from-primary/10 via-blue-50/50 to-accent/10 overflow-hidden relative">
-               <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-50"></div>
-               <div className="relative z-10 text-center">
-                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                   <Phone className="w-8 h-8 text-primary" />
-                 </div>
-                 <h3 className="text-3xl font-bold mb-4 text-foreground">Need Custom Requirements?</h3>
-                 <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
-                   Get in touch with our experts for customized solutions and bulk orders. We&apos;re here to help you find the perfect solution.
-                 </p>
-                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                   <Button 
-                     size="lg" 
-                     className="h-14 px-8 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-                     onClick={() => window.location.href = 'tel:+919708989937'}
-                   >
-                     <Phone className="w-5 h-5 mr-3" />
-                     Call: +91 97089 89937
-                   </Button>
-                   <Button 
-                     variant="outline" 
-                     size="lg" 
-                     className="h-14 px-8 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-200 transform hover:scale-105"
-                     onClick={() => setIsQuoteFormOpen(true)}
-                   >
-                     <Mail className="w-5 h-5 mr-3" />
-                     Contact Us
-                   </Button>
-                 </div>
-               </div>
-             </Card>
             </div>
           </main>
           
@@ -1005,9 +942,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               <ArrowLeft className="w-5 h-5 rotate-90" />
             </button>
             )}
-
-          {/* Quote Form Popup */}
-          <QuoteFormPopup isOpen={isQuoteFormOpen} onClose={() => setIsQuoteFormOpen(false)} />
 
           {/* Mobile Bottom Navigation */}
           <MobileBottomNav relatedProducts={transformedRelatedProducts} />
