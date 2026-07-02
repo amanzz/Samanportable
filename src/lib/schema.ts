@@ -1880,6 +1880,78 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-guntur': [
+    {
+      question: "What does a container office cost in Guntur?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Guntur site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Autonagar and the Guntur Industrial Estate?",
+      answer: "Yes. We dispatch from our Bangalore factory via Kurnool to the Autonagar workshop estate (522001), the Guntur Industrial Estate on the Lam side (522034) and Guntur city (522002) — about 570–620 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an Autonagar workshop or construction site office?",
+      answer: "A 20 ft cabin covers most admin, supervisor and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-kozhikode': [
+    {
+      question: "What does a container office cost in Kozhikode?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Kozhikode site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Feroke and the Kozhikode timber belt?",
+      answer: "Yes. We dispatch from our Bangalore factory via Mysore and the Wayanad ghats to Feroke (673631), the Kallai trade area (673003) and Kozhikode city (673001) — about 350–390 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a timber-yard or construction site office?",
+      answer: "A 20 ft cabin covers most admin, dispatch and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-puducherry': [
+    {
+      question: "What does a container office cost in Puducherry?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Puducherry site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Sedarapet and Mettupalayam PIPDIC estates?",
+      answer: "Yes. We dispatch from our Bangalore factory via Tiruvannamalai to the Mettupalayam estate (605009), Sedarapet (605111), Thirubuvanai (605107) and Puducherry city (605001) — about 310–360 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an auto-component plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-thrissur': [
+    {
+      question: "What does a container office cost in Thrissur?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Thrissur site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Kinfra Koratty park and Ollur?",
+      answer: "Yes. We dispatch from our Bangalore factory via Salem and Palakkad to the Kinfra Koratty park (680308), Athani (680581), the Ollur belt (680306) and Thrissur city (680001) — about 450–490 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a Kinfra unit or construction site office?",
+      answer: "A 20 ft cabin covers most admin, supervisor and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
   'container-office-in-penukonda': [
     {
       question: "What does a container office cost in Penukonda?",
