@@ -376,6 +376,54 @@ const RelatedPortableCabinResources = ({ slug }: { slug: string }) => {
   );
 };
 
+const PORTABLE_CABIN_SUPPORT_RELATED_LINKS: Record<string, RelatedPortableCabinLink[]> = {
+  'best-porta-cabin-manufacturer-ncr': [
+    { href: '/portable-cabin-rental-services', label: 'portable cabin rental services' },
+    { href: '/porta-cabins-on-rent', label: 'porta cabins on rent' },
+    { href: '/eco-friendly-portable-cabins', label: 'eco-friendly portable cabins' },
+    { href: '/product/portable-cabin', label: 'SAMAN portable cabin range' },
+  ],
+  'eco-friendly-portable-cabins': [
+    { href: '/best-porta-cabin-manufacturer-ncr', label: 'porta cabin manufacturer in NCR' },
+    { href: '/portable-cabin-rental-services', label: 'portable cabin rental services' },
+    { href: '/porta-cabins-on-rent', label: 'porta cabins on rent' },
+    { href: '/product-category/portable-cabin', label: 'portable cabin product category' },
+  ],
+  'porta-cabins-on-rent': [
+    { href: '/portable-cabin-rental-services', label: 'portable cabin rental services' },
+    { href: '/best-porta-cabin-manufacturer-ncr', label: 'NCR porta cabin manufacturer guide' },
+    { href: '/eco-friendly-portable-cabins', label: 'eco-friendly portable cabin options' },
+    { href: '/product/portable-cabin', label: 'portable cabin models from SAMAN' },
+  ],
+  'portable-cabin-rental-services': [
+    { href: '/porta-cabins-on-rent', label: 'porta cabins on rent' },
+    { href: '/best-porta-cabin-manufacturer-ncr', label: 'porta cabin manufacturer in NCR' },
+    { href: '/eco-friendly-portable-cabins', label: 'eco-friendly portable cabins' },
+    { href: '/product-category/portable-cabin', label: 'portable cabin product category' },
+  ],
+};
+
+const RelatedPortableCabinSupportResources = ({ slug }: { slug: string }) => {
+  const links = PORTABLE_CABIN_SUPPORT_RELATED_LINKS[slug];
+  if (!links?.length) return null;
+
+  const currentPath = `/${slug}`;
+  const visibleLinks = links.filter((link) => link.href !== currentPath);
+
+  return (
+    <section className="mt-10 rounded-lg border border-emerald-100 bg-emerald-50/50 p-5 sm:p-6" aria-labelledby="related-portable-cabin-support-resources">
+      <h2 id="related-portable-cabin-support-resources" className="text-xl font-semibold text-slate-900 mb-4">Related Portable Cabin Resources</h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visibleLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="rounded-md border border-emerald-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-emerald-300 hover:bg-emerald-50">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 type RelatedContainerOfficeLink = {
   href: string;
   label: string;
@@ -1408,6 +1456,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             <RelatedLabourColonyLocations slug={slug} />
             <RelatedPortableOfficeLocations slug={slug} />
             <RelatedPortableCabinResources slug={slug} />
+            <RelatedPortableCabinSupportResources slug={slug} />
             <RelatedContainerOfficeResources slug={slug} />
             <RelatedContainerOfficeNcrLocations slug={slug} />
           </article>
