@@ -50,6 +50,49 @@ interface ProductDetailsProps {
   reviews?: ProductReview[];
 }
 
+type PrefabricatedWarehouseLink = {
+  label: string;
+  context: string;
+};
+
+const PREFABRICATED_WAREHOUSE_SOURCE_LINKS: Record<string, PrefabricatedWarehouseLink> = {
+  'prefab-buildings': {
+    label: 'prefabricated warehouse options',
+    context: 'Compare warehouse-grade prefab building formats for industrial storage and dispatch requirements.',
+  },
+  'industrial-sheds': {
+    label: 'steel warehouse building solutions',
+    context: 'Review prefabricated warehouse structures when a shed needs larger covered storage capacity.',
+  },
+  'peb-constructions': {
+    label: 'warehouse building solutions',
+    context: 'Explore prefabricated warehouse choices alongside PEB construction planning.',
+  },
+  'pre-engineered-buildings': {
+    label: 'prefab industrial warehouse options',
+    context: 'See warehouse-focused prefab options for pre-engineered industrial building projects.',
+  },
+};
+
+const RelatedPrefabricatedWarehouseResource = ({ category }: { category: string }) => {
+  const resource = PREFABRICATED_WAREHOUSE_SOURCE_LINKS[category];
+  if (!resource) return null;
+
+  return (
+    <section className="mt-4 rounded-lg border border-amber-100 bg-amber-50/50 p-4 sm:p-5" aria-labelledby="related-prefabricated-warehouse-resource">
+      <h2 id="related-prefabricated-warehouse-resource" className="text-lg font-semibold text-slate-900 mb-2">Related Prefabricated Warehouse Resource</h2>
+      <p className="text-sm text-slate-700 leading-relaxed mb-3">{resource.context}</p>
+      <Link
+        href="/product-category/prefabricated-warehouses"
+        className="inline-flex items-center gap-2 rounded-md border border-amber-100 bg-white px-4 py-2 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-amber-300 hover:bg-amber-50"
+      >
+        {resource.label}
+        <ArrowLeft className="w-4 h-4 rotate-180" />
+      </Link>
+    </section>
+  );
+};
+
 export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params }) => {
   try {
     const { category } = params as { category: string };
@@ -772,6 +815,8 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   productName={transformedProduct.title}
                 />
               </div>
+
+              <RelatedPrefabricatedWarehouseResource category={category} />
 
               {/* Related Products Section */}
               <div className="mt-4 hidden lg:block">
