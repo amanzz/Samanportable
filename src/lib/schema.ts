@@ -498,6 +498,78 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "We build 10 ft, 20 ft and 40 ft standard units. A 20 ft cabin covers most admin and supervisor needs, while 10 ft suits a gate or single-desk point and 40 ft suits a larger office. Layouts are customised and confirmed at quotation.",
     },
   ],
+  'container-office-in-neemrana': [
+    {
+      question: "What does a container office cost in Neemrana?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Neemrana site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the RIICO estate, Ghiloth and the Japanese zone?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Gurgaon and Bhiwadi on NH48 to the RIICO Industrial Area, the Neemrana Japanese Zone, Ghiloth Industrial Area and Neemrana town (301705) — about 140?160 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an auto-component plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-bawal': [
+    {
+      question: "What does a container office cost in Bawal?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Bawal site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to IMT Bawal and the Dharuhera belt?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Gurgaon and Dharuhera on NH48 to IMT Bawal (123501), Bawal town (123501), Dharuhera (123106) and the Dharuhera Industrial Area (123110) — about 120–140 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an auto-component plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-jalandhar': [
+    {
+      question: "What does a container office cost in Jalandhar?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Jalandhar site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Focal Point and the Industrial Estate?",
+      answer: "Yes. We dispatch from our Greater Noida factory up NH44 via Panipat, Ambala and Ludhiana to the Focal Point industrial area (144004), the Industrial Town and Industrial Estate belt (144004) and Jalandhar city (144001) — about 420–450 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a sports goods or hand tools export unit?",
+      answer: "A 20 ft cabin covers most admin, sampling and dispatch needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-moradabad': [
+    {
+      question: "What does a container office cost in Moradabad?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Moradabad site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Peetal Nagri cluster and Lakri Fazalpur?",
+      answer: "Yes. We dispatch from our Greater Noida factory on NH9 via Ghaziabad, Hapur and Gajraula to the Peetal Nagri brass cluster, the Lakri Fazalpur industrial belt on Delhi Road and Moradabad city (244001) â€” about 160â€“180 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a brass export unit admin or sampling office?",
+      answer: "A 20 ft cabin covers most admin, sampling and dispatch needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a buyer-inspection area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
   'container-office-in-trichy': [
     {
       question: "What does a container office cost in Trichy?",
