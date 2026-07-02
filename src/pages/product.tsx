@@ -22,6 +22,7 @@ import { formatPriceWithCurrency } from '../lib/utils';
 import OptimizedProductImage from '../components/OptimizedProductImage';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
+import { setNoStoreCache } from '../lib/cacheHeaders';
 
 interface Category {
   id: number;
@@ -60,7 +61,7 @@ interface ProductsProps {
   rankMathSEO?: RankMathSEOData | null;
 }
 
-export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ query }) => {
+export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ query, res }) => {
   try {
     console.log('getServerSideProps: Starting to fetch products...');
     
@@ -149,6 +150,10 @@ export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ qu
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data for products page:', error);
     }
+
+    // Keep rendered HTML out of shared caches so it cannot outlive the hashed
+    // Next.js chunks from the build that generated it.
+    setNoStoreCache(res);
 
     return {
       props: {

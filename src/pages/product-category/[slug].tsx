@@ -13,7 +13,7 @@ import { ArrowLeft, Package } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { categorySchemas } from '@/lib/categorySchemas';
-import { setPublicEdgeCache } from '@/lib/cacheHeaders';
+import { setNoStoreCache } from '@/lib/cacheHeaders';
 
 interface ProductCategoryPageProps {
   products: LightweightProduct[];
@@ -78,10 +78,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
       console.warn('Failed to fetch Rank Math SEO data for category:', error);
     }
 
-    // Public marketing page with no per-user data — safe to edge-cache. Set only on
-    // the success path; the notFound above and the catch-fallback below keep Next's
-    // default no-store so transient failures / new URLs are never cache-poisoned.
-    setPublicEdgeCache(res);
+    // Keep rendered HTML out of shared caches so it cannot outlive the hashed
+    // Next.js chunks from the build that generated it.
+    setNoStoreCache(res);
 
     return {
       props: {
