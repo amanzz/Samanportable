@@ -1880,6 +1880,79 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-penukonda': [
+    {
+      question: "What does a container office cost in Penukonda?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Penukonda site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Kia plant belt and Erramanchi side?",
+      answer: "Yes. We dispatch from our Bangalore factory up NH44 via Bagepalli to the Kia belt at Erramanchi, Penukonda town and the auto-ancillary plots around Penukonda (515110) — about 150–180 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an auto-component plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and certificate numbers for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-ballari': [
+    {
+      question: "What does a container office cost in Ballari?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Ballari site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Toranagallu and the JSW Vijayanagar belt?",
+      answer: "Yes. We dispatch from our Bangalore factory via Tumakuru and Chitradurga to Toranagallu and Vidyanagar (583123), Ballari city (583101) and the Hospet corridor (583201) — about 310–360 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a steel-yard supervisor or project office?",
+      answer: "A 20 ft cabin covers most supervisor, documentation and admin needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger project office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-nellore': [
+    {
+      question: "What does a container office cost in Nellore?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Nellore site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Krishnapatnam port-side sites?",
+      answer: "Yes. We dispatch from our Bangalore factory via the Tirupati corridor to the Krishnapatnam port belt (524344), Nellore city (524001) and the Naidupeta side (524126) — about 360–430 km. Because port plots need planned access, we confirm the gate pass and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a port logistics or warehouse admin office?",
+      answer: "A 20 ft cabin covers most dispatch-yard, admin and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-warangal': [
+    {
+      question: "What does a container office cost in Warangal?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Warangal site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Kakatiya Mega Textile Park?",
+      answer: "Yes. We dispatch from our Bangalore factory via Hyderabad to the Kakatiya Mega Textile Park at Shayampet (506319), the Hanamkonda belt (506001) and Warangal city (506002) — about 700–780 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a textile-park admin or supervisor office?",
+      answer: "A 20 ft cabin covers most project, admin and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+
 };
 
 export const getFAQSchemaOverride = (slug: string): object | null => {
