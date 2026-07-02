@@ -375,6 +375,95 @@ const RelatedPortableCabinResources = ({ slug }: { slug: string }) => {
     </section>
   );
 };
+
+type RelatedContainerOfficeLink = {
+  href: string;
+  label: string;
+};
+
+const CONTAINER_OFFICE_RELATED_LINKS: Record<string, RelatedContainerOfficeLink[]> = {
+  'container-offices-for-sale-in-jayanagar': [
+    { href: '/container-offices-for-sale-in-jp-nagar', label: 'container offices in JP Nagar' },
+    { href: '/container-offices-for-sale-in-vijayanagar', label: 'site container offices in Vijayanagar' },
+    { href: '/20ft-container-office', label: '20ft container office options' },
+    { href: '/product/container-offices', label: 'SAMAN container office range' },
+  ],
+  'container-offices-for-sale-in-vijayanagar': [
+    { href: '/container-offices-for-sale-in-jayanagar', label: 'container offices in Jayanagar' },
+    { href: '/container-offices-for-sale-in-jp-nagar', label: 'JP Nagar container office options' },
+    { href: '/container-office-rental-is-perfect-solution', label: 'container office rental guide' },
+    { href: '/product/container-offices', label: 'container office product range' },
+  ],
+  'customized-office-container-solutions': [
+    { href: '/inside-container-office', label: 'inside container office layouts' },
+    { href: '/20ft-container-office', label: '20ft container office planning' },
+    { href: '/best-container-office-solutions', label: 'modular container office layouts' },
+    { href: '/product/container-offices', label: 'custom container office range' },
+  ],
+  'container-offices-for-sale-in-jp-nagar': [
+    { href: '/container-offices-for-sale-in-jayanagar', label: 'container offices in Jayanagar' },
+    { href: '/container-offices-for-sale-in-vijayanagar', label: 'Vijayanagar site office containers' },
+    { href: '/10-foot-shipping-container-office-perfect-fit-for-small-spaces', label: '10ft shipping container office ideas' },
+    { href: '/product/container-offices', label: 'SAMAN container office units' },
+  ],
+  '10-foot-shipping-container-office-perfect-fit-for-small-spaces': [
+    { href: '/12ft-office-container-smart-choice-for-growing-startups', label: '12ft office container options' },
+    { href: '/20ft-container-office', label: '20ft container office options' },
+    { href: '/inside-container-office', label: 'inside container office layouts' },
+    { href: '/product/container-offices', label: 'compact container office range' },
+  ],
+  '12ft-office-container-smart-choice-for-growing-startups': [
+    { href: '/10-foot-shipping-container-office-perfect-fit-for-small-spaces', label: '10ft shipping container office ideas' },
+    { href: '/20ft-container-office', label: '20ft container office planning' },
+    { href: '/customized-office-container-solutions', label: 'customized office container solutions' },
+    { href: '/product/container-offices', label: 'factory-built container offices' },
+  ],
+  '20ft-container-office': [
+    { href: '/inside-container-office', label: 'inside container office layouts' },
+    { href: '/12ft-office-container-smart-choice-for-growing-startups', label: '12ft office container options' },
+    { href: '/customized-office-container-solutions', label: 'custom container office layouts' },
+    { href: '/product/container-offices', label: '20ft and modular container offices' },
+  ],
+  'inside-container-office': [
+    { href: '/20ft-container-office', label: '20ft container office options' },
+    { href: '/customized-office-container-solutions', label: 'modular container office layouts' },
+    { href: '/best-container-office-solutions', label: 'best container office solutions' },
+    { href: '/product/container-offices', label: 'container office design range' },
+  ],
+  'best-container-office-solutions': [
+    { href: '/customized-office-container-solutions', label: 'customized office container solutions' },
+    { href: '/inside-container-office', label: 'inside container office layouts' },
+    { href: '/container-office-rental-is-perfect-solution', label: 'container office rental guide' },
+    { href: '/product/container-offices', label: 'SAMAN container office range' },
+  ],
+  'container-office-rental-is-perfect-solution': [
+    { href: '/20ft-container-office', label: '20ft container office options' },
+    { href: '/best-container-office-solutions', label: 'modular container office solutions' },
+    { href: '/container-offices-for-sale-in-vijayanagar', label: 'site container offices in Vijayanagar' },
+    { href: '/product/container-offices', label: 'container office rental and sale range' },
+  ],
+};
+
+const RelatedContainerOfficeResources = ({ slug }: { slug: string }) => {
+  const links = CONTAINER_OFFICE_RELATED_LINKS[slug];
+  if (!links?.length) return null;
+
+  const currentPath = `/${slug}`;
+  const visibleLinks = links.filter((link) => link.href !== currentPath);
+
+  return (
+    <section className="mt-10 rounded-lg border border-cyan-100 bg-cyan-50/50 p-5 sm:p-6" aria-labelledby="related-container-office-resources">
+      <h2 id="related-container-office-resources" className="text-xl font-semibold text-slate-900 mb-4">Related Container Office Resources</h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visibleLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="rounded-md border border-cyan-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-cyan-300 hover:bg-cyan-50">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+};
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
 // BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
 // Allowlisted per slug so no other blog post's schema is affected.
@@ -1283,6 +1372,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             <RelatedLabourColonyLocations slug={slug} />
             <RelatedPortableOfficeLocations slug={slug} />
             <RelatedPortableCabinResources slug={slug} />
+            <RelatedContainerOfficeResources slug={slug} />
           </article>
 
           {/* Article Footer */}
