@@ -548,6 +548,234 @@ const RelatedContainerOfficeNcrLocations = ({ slug }: { slug: string }) => {
     </section>
   );
 };
+
+type RelatedSupportLink = {
+  href: string;
+  label: string;
+};
+
+const PREFAB_HOME_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
+  'durable-modular-homes-delhi': [
+    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
+    { href: '/prefab-homes-mumbai', label: 'prefab homes in Mumbai' },
+    { href: '/prefabricated-houses-in-hyderabad', label: 'prefabricated houses in Hyderabad' },
+    { href: '/product/prefabricated-houses', label: 'SAMAN prefabricated house range' },
+  ],
+  'cost-of-prefab-homes': [
+    { href: '/build-a-prefabricated-modular-houses', label: 'building a prefabricated modular house' },
+    { href: '/luxury-prefab-homes', label: 'luxury prefab home options' },
+    { href: '/container-houses-cost-guide-2024', label: 'container house cost guide' },
+    { href: '/product/prefabricated-houses', label: 'prefabricated house product range' },
+  ],
+  'prefab-homes-mumbai': [
+    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
+    { href: '/luxury-prefab-homes', label: 'luxury prefab homes' },
+    { href: '/prefabricated-houses-in-hyderabad', label: 'prefabricated houses in Hyderabad' },
+    { href: '/product-category/prefab-buildings', label: 'prefab building category' },
+  ],
+  'prefabricated-houses-in-hyderabad': [
+    { href: '/durable-modular-homes-delhi', label: 'durable modular homes in Delhi' },
+    { href: '/prefab-homes-mumbai', label: 'prefab homes in Mumbai' },
+    { href: '/cost-of-prefab-homes', label: 'prefab home pricing guide' },
+    { href: '/product/prefabricated-houses', label: 'prefabricated house range' },
+  ],
+  'build-a-prefabricated-modular-houses': [
+    { href: '/cost-of-prefab-homes', label: 'cost of prefab homes' },
+    { href: '/luxury-prefab-homes', label: 'luxury prefab home ideas' },
+    { href: '/precast-housing-construction-guide', label: 'precast housing construction guide' },
+    { href: '/product/prefabricated-houses', label: 'prefabricated house solutions' },
+  ],
+  'container-houses-cost-guide-2024': [
+    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
+    { href: '/build-a-prefabricated-modular-houses', label: 'build a prefabricated modular house' },
+    { href: '/luxury-prefab-homes', label: 'luxury prefab homes' },
+    { href: '/product/container-houses', label: 'container house product range' },
+  ],
+  'luxury-prefab-homes': [
+    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
+    { href: '/prefab-homes-mumbai', label: 'prefab homes in Mumbai' },
+    { href: '/build-a-prefabricated-modular-houses', label: 'prefabricated modular house guide' },
+    { href: '/product/prefabricated-houses', label: 'premium prefabricated houses' },
+  ],
+  'precast-housing-construction-guide': [
+    { href: '/build-a-prefabricated-modular-houses', label: 'prefabricated modular house guide' },
+    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
+    { href: '/prefabricated-houses-in-hyderabad', label: 'prefabricated houses in Hyderabad' },
+    { href: '/product/prefabricated-houses', label: 'prefabricated house range' },
+  ],
+};
+
+const PORTABLE_OFFICE_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
+  'modern-portable-office-solutions': [
+    { href: '/sleek-prefab-office-cabins-ncr', label: 'prefab office cabins in NCR' },
+    { href: '/low-cost-modular-office-solutions', label: 'low-cost modular office options' },
+    { href: '/budget-friendly-office-workspace-alternatives', label: 'budget-friendly office workspace ideas' },
+    { href: '/product/portable-office', label: 'SAMAN portable office range' },
+  ],
+  'sleek-prefab-office-cabins-ncr': [
+    { href: '/modern-portable-office-solutions', label: 'modern portable office solutions' },
+    { href: '/portable-office-cabin-manufacturers-in-bangalore', label: 'portable office cabin manufacturers in Bangalore' },
+    { href: '/discount-mobile-office-units', label: 'discount mobile office units' },
+    { href: '/product-category/portable-office', label: 'portable office category' },
+  ],
+  'low-cost-modular-office-solutions': [
+    { href: '/budget-friendly-office-workspace-alternatives', label: 'budget-friendly office workspace alternatives' },
+    { href: '/discount-mobile-office-units', label: 'discount mobile office units' },
+    { href: '/modern-portable-office-solutions', label: 'modern portable office solutions' },
+    { href: '/product/portable-office', label: 'portable office product range' },
+  ],
+  'budget-friendly-office-workspace-alternatives': [
+    { href: '/low-cost-modular-office-solutions', label: 'low-cost modular office solutions' },
+    { href: '/discount-mobile-office-units', label: 'discount mobile office units' },
+    { href: '/cheap-office-trailers-for-sale', label: 'cheap office trailers for sale' },
+    { href: '/product-category/portable-office', label: 'portable office category' },
+  ],
+  'discount-mobile-office-units': [
+    { href: '/budget-friendly-office-workspace-alternatives', label: 'budget-friendly office workspace ideas' },
+    { href: '/cheap-office-trailers-for-sale', label: 'cheap office trailers for sale' },
+    { href: '/modern-portable-office-solutions', label: 'modern portable office options' },
+    { href: '/product/portable-office', label: 'portable office units from SAMAN' },
+  ],
+  'cheap-office-trailers-for-sale': [
+    { href: '/budget-friendly-office-workspace-alternatives', label: 'budget-friendly office workspace alternatives' },
+    { href: '/discount-mobile-office-units', label: 'discount mobile office units' },
+    { href: '/low-cost-modular-office-solutions', label: 'low-cost modular office solutions' },
+    { href: '/product/portable-office', label: 'portable office product range' },
+  ],
+  'portable-office-cabin-manufacturers-in-bangalore': [
+    { href: '/modern-portable-office-solutions', label: 'modern portable office solutions' },
+    { href: '/sleek-prefab-office-cabins-ncr', label: 'prefab office cabins in NCR' },
+    { href: '/low-cost-modular-office-solutions', label: 'low-cost modular office options' },
+    { href: '/product-category/portable-office', label: 'portable office category' },
+  ],
+};
+
+const PORTABLE_CABIN_GUIDE_LINKS: Record<string, RelatedSupportLink[]> = {
+  '18-benefits-of-luxury-portable-cabin': [
+    { href: '/7-tips-for-choosing-the-perfect-portable-cabin-location', label: 'portable cabin location tips' },
+    { href: '/porta-cabin-office-price', label: 'porta cabin office price guide' },
+    { href: '/prefab-porta-cabins', label: 'prefab porta cabin options' },
+    { href: '/product/portable-cabin', label: 'SAMAN portable cabin range' },
+  ],
+  '7-tips-for-choosing-the-perfect-portable-cabin-location': [
+    { href: '/18-benefits-of-luxury-portable-cabin', label: 'luxury portable cabin benefits' },
+    { href: '/world-of-customized-porta-cabin', label: 'customized porta cabin ideas' },
+    { href: '/prefab-porta-cabins', label: 'prefab porta cabins' },
+    { href: '/product-category/portable-cabin', label: 'portable cabin category' },
+  ],
+  'porta-cabin-office-price': [
+    { href: '/prefab-porta-cabins', label: 'prefab porta cabin options' },
+    { href: '/world-of-customized-porta-cabin', label: 'customized porta cabin guide' },
+    { href: '/18-benefits-of-luxury-portable-cabin', label: 'luxury portable cabin benefits' },
+    { href: '/product/portable-cabin', label: 'portable cabin product range' },
+  ],
+  'prefab-porta-cabins': [
+    { href: '/porta-cabin-office-price', label: 'porta cabin office price guide' },
+    { href: '/world-of-customized-porta-cabin', label: 'customized porta cabin options' },
+    { href: '/7-tips-for-choosing-the-perfect-portable-cabin-location', label: 'portable cabin location tips' },
+    { href: '/product-category/portable-cabin', label: 'portable cabin category' },
+  ],
+  'world-of-customized-porta-cabin': [
+    { href: '/prefab-porta-cabins', label: 'prefab porta cabins' },
+    { href: '/porta-cabin-office-price', label: 'porta cabin office price guide' },
+    { href: '/18-benefits-of-luxury-portable-cabin', label: 'luxury portable cabin benefits' },
+    { href: '/product/portable-cabin', label: 'custom portable cabin range' },
+  ],
+};
+
+const CONTAINER_CAFE_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
+  'best-container-cafe-designs-for-experience': [
+    { href: '/product/container-cafe', label: 'SAMAN container cafe range' },
+    { href: '/product-category/container-cafe', label: 'container cafe category' },
+    { href: '/container-cafes-in-noida', label: 'container cafe options in Noida' },
+    { href: '/container-cafes-in-gurgaon', label: 'container cafe options in Gurgaon' },
+  ],
+};
+
+const PREFAB_CONSTRUCTION_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
+  'customized-prefab-structures-ncr': [
+    { href: '/material-specifications-features', label: 'prefab material specifications' },
+    { href: '/sustainable-construction', label: 'sustainable construction methods' },
+    { href: '/peb-structure-cost-per-sq-ft-india', label: 'PEB structure cost guide' },
+    { href: '/product/peb-constructions', label: 'PEB construction solutions' },
+  ],
+  'peb-structure-cost-per-sq-ft-india': [
+    { href: '/customized-prefab-structures-ncr', label: 'customized prefab structures in NCR' },
+    { href: '/material-specifications-features', label: 'material specifications and features' },
+    { href: '/sustainable-construction', label: 'sustainable construction guide' },
+    { href: '/product/pre-engineered-buildings', label: 'pre-engineered building range' },
+  ],
+  'material-specifications-features': [
+    { href: '/customized-prefab-structures-ncr', label: 'customized prefab structures' },
+    { href: '/peb-structure-cost-per-sq-ft-india', label: 'PEB structure cost guide' },
+    { href: '/sustainable-construction', label: 'sustainable construction methods' },
+    { href: '/product/industrial-sheds', label: 'industrial shed solutions' },
+  ],
+  'sustainable-construction': [
+    { href: '/material-specifications-features', label: 'material specifications and features' },
+    { href: '/customized-prefab-structures-ncr', label: 'customized prefab structures in NCR' },
+    { href: '/peb-structure-cost-per-sq-ft-india', label: 'PEB cost planning guide' },
+    { href: '/product/pre-engineered-buildings', label: 'pre-engineered building solutions' },
+  ],
+  'what-is-a-labour-hutment': [
+    { href: '/material-specifications-features', label: 'portable structure material details' },
+    { href: '/sustainable-construction', label: 'sustainable construction methods' },
+    { href: '/customized-prefab-structures-ncr', label: 'customized prefab structures' },
+    { href: '/product/labor-colony', label: 'labour colony product range' },
+  ],
+};
+
+const SHELTER_SHED_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
+  'temporary-garage-shelter': [
+    { href: '/temporary-garden-shed', label: 'temporary garden shed options' },
+    { href: '/portable-carports', label: 'portable carport solutions' },
+    { href: '/product/industrial-sheds', label: 'industrial shed product range' },
+    { href: '/product-category/industrial-sheds', label: 'industrial sheds category' },
+  ],
+  'temporary-garden-shed': [
+    { href: '/temporary-garage-shelter', label: 'temporary garage shelter options' },
+    { href: '/portable-carports', label: 'portable carport solutions' },
+    { href: '/product/industrial-sheds', label: 'storage and industrial shed range' },
+    { href: '/product-category/industrial-sheds', label: 'industrial sheds category' },
+  ],
+  'portable-carports': [
+    { href: '/temporary-garage-shelter', label: 'temporary garage shelter options' },
+    { href: '/temporary-garden-shed', label: 'temporary garden shed options' },
+    { href: '/product/industrial-sheds', label: 'industrial shed product range' },
+    { href: '/product-category/industrial-sheds', label: 'industrial sheds category' },
+  ],
+};
+
+const RelatedSupportResources = ({
+  slug,
+  linksBySlug,
+  title,
+  sectionId,
+}: {
+  slug: string;
+  linksBySlug: Record<string, RelatedSupportLink[]>;
+  title: string;
+  sectionId: string;
+}) => {
+  const links = linksBySlug[slug];
+  if (!links?.length) return null;
+
+  const currentPath = `/${slug}`;
+  const visibleLinks = links.filter((link) => link.href !== currentPath);
+
+  return (
+    <section className="mt-10 rounded-lg border border-indigo-100 bg-indigo-50/50 p-5 sm:p-6" aria-labelledby={sectionId}>
+      <h2 id={sectionId} className="text-xl font-semibold text-slate-900 mb-4">{title}</h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visibleLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="rounded-md border border-indigo-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-indigo-300 hover:bg-indigo-50">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+};
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
 // BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
 // Allowlisted per slug so no other blog post's schema is affected.
@@ -1471,6 +1699,12 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             <RelatedPortableCabinSupportResources slug={slug} />
             <RelatedContainerOfficeResources slug={slug} />
             <RelatedContainerOfficeNcrLocations slug={slug} />
+            <RelatedSupportResources slug={slug} linksBySlug={PREFAB_HOME_SUPPORT_LINKS} title="Related Prefab Home Resources" sectionId="related-prefab-home-resources" />
+            <RelatedSupportResources slug={slug} linksBySlug={PORTABLE_OFFICE_SUPPORT_LINKS} title="Related Portable Office Resources" sectionId="related-portable-office-support-resources" />
+            <RelatedSupportResources slug={slug} linksBySlug={PORTABLE_CABIN_GUIDE_LINKS} title="Related Portable Cabin Guides" sectionId="related-portable-cabin-guides" />
+            <RelatedSupportResources slug={slug} linksBySlug={CONTAINER_CAFE_SUPPORT_LINKS} title="Related Container Cafe Resources" sectionId="related-container-cafe-support-resources" />
+            <RelatedSupportResources slug={slug} linksBySlug={PREFAB_CONSTRUCTION_SUPPORT_LINKS} title="Related Prefab Construction Resources" sectionId="related-prefab-construction-resources" />
+            <RelatedSupportResources slug={slug} linksBySlug={SHELTER_SHED_SUPPORT_LINKS} title="Related Shelter and Shed Resources" sectionId="related-shelter-shed-resources" />
           </article>
 
           {/* Article Footer */}
