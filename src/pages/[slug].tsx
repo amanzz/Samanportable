@@ -464,6 +464,42 @@ const RelatedContainerOfficeResources = ({ slug }: { slug: string }) => {
     </section>
   );
 };
+
+const CONTAINER_OFFICE_NCR_RELATED_LINKS: Record<string, RelatedContainerOfficeLink[]> = {
+  'container-offices-in-noida': [
+    { href: '/container-offices-in-gurgaon', label: 'container offices in Gurgaon' },
+    { href: '/product/container-offices', label: 'SAMAN container office range' },
+    { href: '/product-category/container-offices', label: 'container office product category' },
+    { href: '/customized-office-container-solutions', label: 'custom container office layouts' },
+  ],
+  'container-offices-in-gurgaon': [
+    { href: '/container-offices-in-noida', label: 'container offices in Noida' },
+    { href: '/product/container-offices', label: 'modular container office options' },
+    { href: '/product-category/container-offices', label: 'container office product category' },
+    { href: '/20ft-container-office', label: '20ft container office options' },
+  ],
+};
+
+const RelatedContainerOfficeNcrLocations = ({ slug }: { slug: string }) => {
+  const links = CONTAINER_OFFICE_NCR_RELATED_LINKS[slug];
+  if (!links?.length) return null;
+
+  const currentPath = `/${slug}`;
+  const visibleLinks = links.filter((link) => link.href !== currentPath);
+
+  return (
+    <section className="mt-10 rounded-lg border border-teal-100 bg-teal-50/50 p-5 sm:p-6" aria-labelledby="related-container-office-ncr-locations">
+      <h2 id="related-container-office-ncr-locations" className="text-xl font-semibold text-slate-900 mb-4">Related Container Office Locations in NCR</h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visibleLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="rounded-md border border-teal-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-teal-300 hover:bg-teal-50">
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+};
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
 // BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
 // Allowlisted per slug so no other blog post's schema is affected.
@@ -1373,6 +1409,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
             <RelatedPortableOfficeLocations slug={slug} />
             <RelatedPortableCabinResources slug={slug} />
             <RelatedContainerOfficeResources slug={slug} />
+            <RelatedContainerOfficeNcrLocations slug={slug} />
           </article>
 
           {/* Article Footer */}
