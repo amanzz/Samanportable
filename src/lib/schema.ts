@@ -498,6 +498,114 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "We build 10 ft, 20 ft and 40 ft standard units. A 20 ft cabin covers most admin and supervisor needs, while 10 ft suits a gate or single-desk point and 40 ft suits a larger office. Layouts are customised and confirmed at quotation.",
     },
   ],
+  'container-office-in-rohtak': [
+    {
+      question: "What does a container office cost in Rohtak?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Rohtak site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to IMT Rohtak?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Delhi and Bahadurgarh to IMT Rohtak on Delhi Road (124021) and Rohtak city (124001) — about 90–120 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an IMT plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-sonipat': [
+    {
+      question: "What does a container office cost in Sonipat?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Sonipat site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Kundli and Rai estates?",
+      answer: "Yes. We dispatch from our Greater Noida factory on the Eastern Peripheral Expressway to the Kundli Industrial Estate (131028), the Rai HSIIDC area (131029) and Sonipat city (131001) — about 50–70 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an estate-unit admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-yamunanagar': [
+    {
+      question: "What does a container office cost in Yamunanagar?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Yamunanagar site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the plywood belt and Jagadhri?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Karnal on NH44 to the Yamunanagar plywood belt (135001), the Jagadhri Workshop area (135002) and the Jagadhri metal belt (135003) — about 200–240 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a plywood-mill or metal-workshop office?",
+      answer: "A 20 ft cabin covers most admin, dispatch and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-saharanpur': [
+    {
+      question: "What does a container office cost in Saharanpur?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Saharanpur site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the woodcraft cluster and paper-mill belt?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Meerut and Muzaffarnagar to the woodcraft cluster, the paper-mill belt and the Saharanpur city industrial area (247001) — about 170–200 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a woodcraft-unit or paper-mill office?",
+      answer: "A 20 ft cabin covers most admin, sampling and dispatch needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-bareilly': [
+    {
+      question: "What does a container office cost in Bareilly?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Bareilly site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Parsakhera and C.B. Ganj?",
+      answer: "Yes. We dispatch from our Greater Noida factory on NH9 via Moradabad to the Parsakhera industrial area and C.B. Ganj estate (243502) and Bareilly city (243001) — about 240–270 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a Parsakhera-unit or warehouse office?",
+      answer: "A 20 ft cabin covers most admin, dispatch and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-varanasi': [
+    {
+      question: "What does a container office cost in Varanasi?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Varanasi site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Chandpur and Ramnagar estates?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Kanpur and Prayagraj on NH19 to the Chandpur Industrial Estate (221106), the Ramnagar area (221008) and Varanasi city (221001) — about 750–800 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an estate-unit or infrastructure site office?",
+      answer: "A 20 ft cabin covers most admin, site and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
   'container-office-in-neemrana': [
     {
       question: "What does a container office cost in Neemrana?",
