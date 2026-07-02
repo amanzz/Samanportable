@@ -163,6 +163,12 @@ const nextConfig = {
       { source: '/product/security-cabin', destination: 'https://www.samanportable.com/product/security-cabins', statusCode: 301 },
       { source: '/product/labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
 
+      // Root-level product alias fixes from 2026-07-02 crawl 4xx report.
+      { source: '/site-office-container', destination: 'https://www.samanportable.com/product/container-offices/site-office-container', statusCode: 301 },
+      { source: '/modular-container-office', destination: 'https://www.samanportable.com/product/container-offices/modular-container-office', statusCode: 301 },
+      { source: '/prefabricated-container-office', destination: 'https://www.samanportable.com/product/container-offices/prefabricated-container-office', statusCode: 301 },
+      { source: '/container-office-cabin', destination: 'https://www.samanportable.com/product/container-offices/container-office-cabin', statusCode: 301 },
+
       // Already identified nav/internal 404s.
       { source: '/porta-cabin-in-bangalore', destination: 'https://www.samanportable.com/best-porta-cabins-in-bangalore', statusCode: 301 },
       { source: '/porta-cabins-in-bangalore', destination: 'https://www.samanportable.com/best-porta-cabins-in-bangalore', statusCode: 301 },
