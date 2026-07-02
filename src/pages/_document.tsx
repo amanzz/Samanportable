@@ -8,6 +8,33 @@ export default function Document() {
         {/* Google Tag Manager moved to next/script (afterInteractive) in _app.tsx so it
             no longer blocks first paint. GA4 + all GTM lead events are preserved. */}
 
+        {/* Local dev fallback: if Next's dev FOUC guard is not cleared because a
+            chunk/runtime refresh stalls, reveal the page instead of leaving a
+            blank white body. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                function revealBody() {
+                  var nodes = document.querySelectorAll('style[data-next-hide-fouc], noscript[data-next-hide-fouc]');
+                  for (var i = 0; i < nodes.length; i += 1) {
+                    if (nodes[i].parentNode) nodes[i].parentNode.removeChild(nodes[i]);
+                  }
+                  if (document.body && document.body.style.display === 'none') {
+                    document.body.style.display = '';
+                  }
+                }
+                revealBody();
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', revealBody, { once: true });
+                } else {
+                  revealBody();
+                }
+              })();
+            `,
+          }}
+        />
+
         {/* Charset is automatically added by Next.js */}
         
         {/* Critical Resource Preloading — Inter fonts are auto-preloaded by next/font;

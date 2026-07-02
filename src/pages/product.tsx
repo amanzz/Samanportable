@@ -591,7 +591,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                               className="flex-1"
                               asChild
                             >
-                              <a href="tel:+916200909435">
+                              <a href="tel:+918861622859">
                                 <Phone className="w-4 h-4 mr-2" />
                                 Call
                               </a>

@@ -19,6 +19,11 @@ import '@/styles/globals.css';
 const Toaster = dynamic(() => import('@/components/ui/toaster').then((m) => m.Toaster), { ssr: false });
 const Sonner = dynamic(() => import('@/components/ui/sonner').then((m) => m.Toaster), { ssr: false });
 
+// Native guided-enquiry chatbot. Client-only (ssr:false) so its tiny launcher
+// mounts after hydration and stays off the critical path. The full chat panel is
+// a further code-split chunk inside this component, fetched only on first click.
+const EnquiryChatbot = dynamic(() => import('@/components/chatbot/EnquiryChatbot'), { ssr: false });
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
@@ -87,6 +92,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </TooltipProvider>
         <Toaster />
         <Sonner />
+        <EnquiryChatbot />
       </ErrorBoundary>
     </div>
   );
