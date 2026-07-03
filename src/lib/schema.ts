@@ -1757,6 +1757,132 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-vellore': [
+    {
+      question: "Do you deliver container offices to Vellore and Ranipet?",
+      answer: "Yes. We manufacture at our Bangalore factory and dispatch by road across Vellore city (632001), the Katpadi belt (632007), and the SIPCOT Ranipet–Walajapet industrial area (632403). Transit is usually 3–4 days once the unit is built, with delivery charged at ₹3,000 where applicable.",
+    },
+    {
+      question: "What sizes of container office are available for Vellore sites?",
+      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for plots where ground space is limited.",
+    },
+    {
+      question: "How much does a container office cost in Vellore?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the container office be customized for our Vellore site?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout to your headcount and the space at your site.",
+    },
+  ],
+  'container-office-in-tirunelveli': [
+    {
+      question: "Do you deliver container offices to Tirunelveli and the SIPCOT Gangaikondan area?",
+      answer: "Yes. We manufacture at our Bangalore factory and dispatch by road to Tirunelveli city (627001), the SIPCOT Gangaikondan zone (627352), and the Pettai industrial colony (627010). As a long-distance route, transit is about 4–5 days once the unit is built, with delivery charged at ₹3,000 where applicable.",
+    },
+    {
+      question: "What container office sizes suit Tirunelveli sites?",
+      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for compact SIPCOT plots and wind-farm sites.",
+    },
+    {
+      question: "What does a container office cost in Tirunelveli?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can you customise the cabin for wind-energy and SIPCOT project sites?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for control-room or store use, and we match the layout to the headcount and space at your site.",
+    },
+  ],
+  'container-office-in-erode': [
+    {
+      question: "Do you deliver container offices to Erode and Perundurai SIPCOT?",
+      answer: "Yes. We manufacture at our Bangalore factory and dispatch by road across Erode city (638001), the Perundurai SIPCOT belt (638052), and the Chithode textile corridor (638102). Transit is usually 3–4 days once the unit is built, with delivery charged at ₹3,000 where applicable.",
+    },
+    {
+      question: "What container office sizes work for Erode textile and warehouse sites?",
+      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for compact mill yards and SIPCOT plots.",
+    },
+    {
+      question: "What does a container office cost in Erode?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the cabin be customised for textile units, mills, and warehouses?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout to the headcount and space at your site.",
+    },
+  ],
+  'container-office-in-kurnool': [
+    {
+      question: "Do you deliver container offices to Kurnool and the Orvakal industrial belt?",
+      answer: "Yes. We manufacture at our Bangalore factory and dispatch by road up NH44 to Kurnool city (518001), the Kallur Industrial Estate (518003), and the Orvakal industrial and airport belt (518010). Transit is usually 3–4 days once the unit is built, with delivery charged at ₹3,000 where applicable.",
+    },
+    {
+      question: "What container office sizes suit Kurnool cement and solar project sites?",
+      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for compact estate plots and spread-out solar sites.",
+    },
+    {
+      question: "What does a container office cost in Kurnool?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the cabin be customised for cement, mining, and solar EPC sites?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout to the headcount and space at your site.",
+    },
+  ],
+  'container-office-in-shivamogga': [
+    {
+      question: "Do you deliver container offices to Shivamogga and the Machenahalli KIADB area?",
+      answer: "Yes. We manufacture at our Bangalore factory and dispatch by road across Shivamogga city (577201), the Machenahalli KIADB industrial area (577222), and the KSSIDC estate on Sagar Road (577204). Transit is usually 3–4 days once the unit is built, with delivery charged at ₹3,000 where applicable.",
+    },
+    {
+      question: "What container office sizes suit Shivamogga factory and site use?",
+      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for compact foundry yards and KIADB plots.",
+    },
+    {
+      question: "What does a container office cost in Shivamogga?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the cabin be customised for foundry, engineering, and agri-processing units?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout to the headcount and space at your site.",
+    },
+  ],
+  'container-office-in-davangere': [
+    {
+      question: "Do you deliver container offices to Davangere and the Karur Industrial Area?",
+      answer: "Yes. We manufacture at our Bangalore factory and dispatch by road up NH48 to Davangere city (577001), the Karur Industrial Area on P.B. Road (577006), and the wider Davanagere city belt (577002). Transit is usually 3–4 days once the unit is built, with delivery charged at ₹3,000 where applicable.",
+    },
+    {
+      question: "What container office sizes suit Davangere factory and warehouse sites?",
+      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for compact mill yards and industrial-area plots.",
+    },
+    {
+      question: "What does a container office cost in Davangere?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the cabin be customised for rice mills, garment, and engineering units?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout to the headcount and space at your site.",
+    },
+  ],
+  'container-office-in-rajahmundry': [
+    {
+      question: "Do you deliver container offices to Rajahmundry and the Dowleswaram industrial belt?",
+      answer: "Yes. We manufacture at our Bangalore factory and dispatch by road to Rajahmundry city (533101), the Dowleswaram–Vemagiri–Jegurupadu industrial belt (533125), and the Rajanagaram area (533294). As our longest route, we confirm exact freight at quotation, and transit is usually 5–6 days once the unit is built.",
+    },
+    {
+      question: "What container office sizes suit Rajahmundry project and site use?",
+      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units, and 40×8 ft multi-room offices are popular for long oil, gas, and power deployments.",
+    },
+    {
+      question: "What does a container office cost in Rajahmundry?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the cabin be customised for oil-and-gas, power, and paper-mill project sites?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout to the headcount and space at your site.",
+    },
+  ],
 };
 
 export const getFAQSchemaOverride = (slug: string): object | null => {

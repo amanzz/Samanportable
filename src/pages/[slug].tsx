@@ -136,6 +136,13 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-dahej',
   'container-office-in-morbi',
   'container-office-in-mundra',
+  'container-office-in-vellore',
+  'container-office-in-tirunelveli',
+  'container-office-in-erode',
+  'container-office-in-kurnool',
+  'container-office-in-shivamogga',
+  'container-office-in-davangere',
+  'container-office-in-rajahmundry',
 ]);
 
 // Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
@@ -170,6 +177,13 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-dahej',
   'container-office-in-morbi',
   'container-office-in-mundra',
+  'container-office-in-vellore',
+  'container-office-in-tirunelveli',
+  'container-office-in-erode',
+  'container-office-in-kurnool',
+  'container-office-in-shivamogga',
+  'container-office-in-davangere',
+  'container-office-in-rajahmundry',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
