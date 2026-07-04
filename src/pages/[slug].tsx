@@ -57,725 +57,6 @@ const CONTENT_H1_DEMOTION_SLUGS = new Set([
   'container-office-in-kolkata',
 ]);
 
-type RelatedContainerCafeLink = {
-  href: string;
-  label: string;
-};
-
-const CONTAINER_CAFE_NCR_RELATED_LINKS: Record<string, RelatedContainerCafeLink[]> = {
-  'container-cafes-in-central-delhi': [
-    { href: '/container-cafes-in-east-delhi', label: 'container cafe options in East Delhi' },
-    { href: '/container-cafes-in-south-delhi', label: 'modular cafe setups for South Delhi' },
-    { href: '/container-cafes-in-west-delhi', label: 'cafe container units for West Delhi' },
-    { href: '/product/container-cafe', label: 'custom container cafe design' },
-  ],
-  'container-cafes-in-east-delhi': [
-    { href: '/container-cafes-in-central-delhi', label: 'container cafe choices in Central Delhi' },
-    { href: '/container-cafes-in-noida', label: 'Noida container cafe projects' },
-    { href: '/container-cafes-in-ghaziabad', label: 'cafe container units for Ghaziabad' },
-    { href: '/product-category/container-cafe', label: 'container cafe designs and price bands' },
-  ],
-  'container-cafes-in-faridabad': [
-    { href: '/container-cafes-in-south-delhi', label: 'South Delhi container cafe support' },
-    { href: '/container-cafes-in-gurgaon', label: 'modular cafe cabins in Gurgaon' },
-    { href: '/container-cafes-in-greater-noida', label: 'container cafe units for Greater Noida' },
-    { href: '/product/container-cafe', label: 'SAMAN container cafe unit' },
-  ],
-  'container-cafes-in-ghaziabad': [
-    { href: '/container-cafes-in-east-delhi', label: 'East Delhi container cafe options' },
-    { href: '/container-cafes-in-noida', label: 'container cafes for Noida outlets' },
-    { href: '/container-cafes-in-greater-noida', label: 'Greater Noida cafe container projects' },
-    { href: '/product-category/container-cafe', label: 'full container cafe range' },
-  ],
-  'container-cafes-in-greater-noida': [
-    { href: '/container-cafes-in-noida', label: 'Noida container cafe requirements' },
-    { href: '/container-cafes-in-ghaziabad', label: 'cafe container units for Ghaziabad' },
-    { href: '/container-cafes-in-faridabad', label: 'Faridabad modular cafe projects' },
-    { href: '/product/container-cafe', label: 'container cafe build options' },
-  ],
-  'container-cafes-in-gurgaon': [
-    { href: '/container-cafes-in-south-delhi', label: 'South Delhi modular cafe options' },
-    { href: '/container-cafes-in-west-delhi', label: 'West Delhi cafe container units' },
-    { href: '/container-cafes-in-faridabad', label: 'container cafe projects in Faridabad' },
-    { href: '/product-category/container-cafe', label: 'container cafe formats' },
-  ],
-  'container-cafes-in-noida': [
-    { href: '/container-cafes-in-greater-noida', label: 'Greater Noida container cafe projects' },
-    { href: '/container-cafes-in-east-delhi', label: 'East Delhi cafe container options' },
-    { href: '/container-cafes-in-ghaziabad', label: 'Ghaziabad modular cafe units' },
-    { href: '/product/container-cafe', label: 'custom container cafe design' },
-  ],
-  'container-cafes-in-south-delhi': [
-    { href: '/container-cafes-in-faridabad', label: 'Faridabad container cafe units' },
-    { href: '/container-cafes-in-gurgaon', label: 'Gurgaon modular cafe cabins' },
-    { href: '/container-cafes-in-central-delhi', label: 'Central Delhi cafe container options' },
-    { href: '/product-category/container-cafe', label: 'container cafe designs and price bands' },
-  ],
-  'container-cafes-in-west-delhi': [
-    { href: '/container-cafes-in-gurgaon', label: 'Gurgaon container cafe options' },
-    { href: '/container-cafes-in-south-delhi', label: 'South Delhi modular cafe setups' },
-    { href: '/container-cafes-in-central-delhi', label: 'Central Delhi cafe container units' },
-    { href: '/product/container-cafe', label: 'SAMAN container cafe unit' },
-  ],
-};
-
-const RelatedContainerCafeLocations = ({ slug }: { slug: string }) => {
-  const links = CONTAINER_CAFE_NCR_RELATED_LINKS[slug];
-  if (!links?.length) return null;
-
-  const currentPath = `/${slug}`;
-  const visibleLinks = links.filter((link) => link.href !== currentPath);
-
-  return (
-    <section className="mt-10 rounded-lg border border-emerald-100 bg-emerald-50/50 p-5 sm:p-6" aria-labelledby="related-container-cafe-locations">
-      <h2 id="related-container-cafe-locations" className="text-xl font-semibold text-slate-900 mb-4">Related Container Cafe Locations in NCR</h2>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {visibleLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="rounded-md border border-emerald-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-emerald-300 hover:bg-emerald-50">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
-type RelatedLabourColonyLink = {
-  href: string;
-  label: string;
-};
-
-const LABOUR_COLONY_NCR_RELATED_LINKS: Record<string, RelatedLabourColonyLink[]> = {
-  'labour-colonies-in-east-delhi': [
-    { href: '/labour-colonies-in-north-delhi', label: 'labour colony setup in North Delhi' },
-    { href: '/labour-colonies-in-noida', label: 'worker accommodation units in Noida' },
-    { href: '/labour-colonies-in-ghaziabad', label: 'temporary worker housing in Ghaziabad' },
-    { href: '/product/labor-colony', label: 'SAMAN labour colony cabins' },
-  ],
-  'labour-colonies-in-north-delhi': [
-    { href: '/labour-colonies-in-east-delhi', label: 'labour colony setup in East Delhi' },
-    { href: '/labour-colonies-in-west-delhi', label: 'worker housing units in West Delhi' },
-    { href: '/labour-colonies-in-noida', label: 'site labour housing in Noida' },
-    { href: '/product/labor-colony', label: 'labour colony cabin options' },
-  ],
-  'labour-colonies-in-south-delhi': [
-    { href: '/labour-colonies-in-faridabad', label: 'worker accommodation units in Faridabad' },
-    { href: '/labour-colonies-in-west-delhi', label: 'temporary labour housing in West Delhi' },
-    { href: '/labour-colonies-in-east-delhi', label: 'labour colony cabins in East Delhi' },
-    { href: '/product/labor-colony', label: 'factory-built labour colony units' },
-  ],
-  'labour-colonies-in-west-delhi': [
-    { href: '/labour-colonies-in-south-delhi', label: 'site labour housing in South Delhi' },
-    { href: '/labour-colonies-in-north-delhi', label: 'labour colony cabins in North Delhi' },
-    { href: '/labour-colonies-in-faridabad', label: 'worker housing units in Faridabad' },
-    { href: '/product/labor-colony', label: 'modular labour accommodation units' },
-  ],
-  'labour-colonies-in-faridabad': [
-    { href: '/labour-colonies-in-south-delhi', label: 'South Delhi labour colony support' },
-    { href: '/labour-colonies-in-noida', label: 'labour colony cabins in Noida' },
-    { href: '/labour-colonies-in-greater-noida', label: 'site labour housing in Greater Noida' },
-    { href: '/product/labor-colony', label: 'SAMAN worker accommodation cabins' },
-  ],
-  'labour-colonies-in-ghaziabad': [
-    { href: '/labour-colonies-in-east-delhi', label: 'East Delhi worker housing options' },
-    { href: '/labour-colonies-in-noida', label: 'labour colony setup in Noida' },
-    { href: '/labour-colonies-in-greater-noida', label: 'worker accommodation units in Greater Noida' },
-    { href: '/product/labor-colony', label: 'labour colony units for project sites' },
-  ],
-  'labour-colonies-in-greater-noida': [
-    { href: '/labour-colonies-in-noida', label: 'Noida labour colony cabins' },
-    { href: '/labour-colonies-in-ghaziabad', label: 'temporary worker housing in Ghaziabad' },
-    { href: '/labour-colonies-in-faridabad', label: 'Faridabad site labour housing' },
-    { href: '/product/labor-colony', label: 'worker accommodation cabin range' },
-  ],
-  'labour-colonies-in-noida': [
-    { href: '/labour-colonies-in-greater-noida', label: 'site labour housing in Greater Noida' },
-    { href: '/labour-colonies-in-east-delhi', label: 'East Delhi labour colony setup' },
-    { href: '/labour-colonies-in-ghaziabad', label: 'Ghaziabad worker accommodation units' },
-    { href: '/product/labor-colony', label: 'custom labour colony cabins' },
-  ],
-};
-
-const RelatedLabourColonyLocations = ({ slug }: { slug: string }) => {
-  const links = LABOUR_COLONY_NCR_RELATED_LINKS[slug];
-  if (!links?.length) return null;
-
-  const currentPath = `/${slug}`;
-  const visibleLinks = links.filter((link) => link.href !== currentPath);
-
-  return (
-    <section className="mt-10 rounded-lg border border-amber-100 bg-amber-50/50 p-5 sm:p-6" aria-labelledby="related-labour-colony-locations">
-      <h2 id="related-labour-colony-locations" className="text-xl font-semibold text-slate-900 mb-4">Related Labour Colony Locations in NCR</h2>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {visibleLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="rounded-md border border-amber-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-amber-300 hover:bg-amber-50">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-type RelatedPortableOfficeLink = {
-  href: string;
-  label: string;
-};
-
-const PORTABLE_OFFICE_NCR_RELATED_LINKS: Record<string, RelatedPortableOfficeLink[]> = {
-  'portable-office-cabins-in-faridabad': [
-    { href: '/portable-office-cabins-in-gurgaon', label: 'modular office cabin options in Gurgaon' },
-    { href: '/portable-office-cabins-in-south-delhi', label: 'portable office cabins in South Delhi' },
-    { href: '/portable-office-cabins-in-ghaziabad', label: 'site office cabins in Ghaziabad' },
-    { href: '/product/portable-office', label: 'SAMAN portable office cabins' },
-  ],
-  'portable-office-cabins-in-ghaziabad': [
-    { href: '/portable-office-cabins-in-east-delhi', label: 'portable office cabin solutions in East Delhi' },
-    { href: '/portable-office-cabins-in-faridabad', label: 'portable office cabins in Faridabad' },
-    { href: '/portable-office-cabins-in-delhi-ncr', label: 'temporary site office cabins in Delhi NCR' },
-    { href: '/product/portable-office', label: 'factory-built portable office units' },
-  ],
-  'portable-office-cabins-in-gurgaon': [
-    { href: '/portable-office-cabins-in-faridabad', label: 'portable office cabins in Faridabad' },
-    { href: '/portable-office-cabins-in-south-delhi', label: 'site office cabins in South Delhi' },
-    { href: '/portable-office-cabins-in-central-delhi', label: 'modular office cabins for Central Delhi' },
-    { href: '/product/portable-office', label: 'portable office cabin designs' },
-  ],
-  'portable-office-cabins-in-central-delhi': [
-    { href: '/portable-office-cabins-in-east-delhi', label: 'East Delhi portable office cabins' },
-    { href: '/portable-office-cabins-in-north-delhi', label: 'site office cabins in North Delhi' },
-    { href: '/portable-office-cabins-in-gurgaon', label: 'Gurgaon modular office cabin options' },
-    { href: '/product/portable-office', label: 'portable office cabin range' },
-  ],
-  'portable-office-cabins-in-east-delhi': [
-    { href: '/portable-office-cabins-in-ghaziabad', label: 'Ghaziabad site office cabin support' },
-    { href: '/portable-office-cabins-in-central-delhi', label: 'portable office cabins in Central Delhi' },
-    { href: '/portable-office-cabins-in-delhi-ncr', label: 'Delhi NCR portable office projects' },
-    { href: '/product/portable-office', label: 'custom portable office cabins' },
-  ],
-  'portable-office-cabins-in-north-delhi': [
-    { href: '/portable-office-cabins-in-central-delhi', label: 'Central Delhi portable office cabins' },
-    { href: '/portable-office-cabins-in-east-delhi', label: 'temporary site office cabins in East Delhi' },
-    { href: '/portable-office-cabins-in-delhi-ncr', label: 'portable office cabin solutions in Delhi NCR' },
-    { href: '/product/portable-office', label: 'portable office cabin options' },
-  ],
-  'portable-office-cabins-in-south-delhi': [
-    { href: '/portable-office-cabins-in-faridabad', label: 'Faridabad portable office cabin support' },
-    { href: '/portable-office-cabins-in-gurgaon', label: 'site office cabins in Gurgaon' },
-    { href: '/portable-office-cabins-in-delhi-ncr', label: 'temporary office cabins across Delhi NCR' },
-    { href: '/product/portable-office', label: 'SAMAN modular office cabins' },
-  ],
-  'portable-office-cabins-in-delhi-ncr': [
-    { href: '/portable-office-cabins-in-gurgaon', label: 'modular office cabin options in Gurgaon' },
-    { href: '/portable-office-cabins-in-ghaziabad', label: 'site office cabins in Ghaziabad' },
-    { href: '/portable-office-cabins-in-faridabad', label: 'portable office cabins in Faridabad' },
-    { href: '/product/portable-office', label: 'portable office cabin solutions' },
-  ],
-};
-
-const RelatedPortableOfficeLocations = ({ slug }: { slug: string }) => {
-  const links = PORTABLE_OFFICE_NCR_RELATED_LINKS[slug];
-  if (!links?.length) return null;
-
-  const currentPath = `/${slug}`;
-  const visibleLinks = links.filter((link) => link.href !== currentPath);
-
-  return (
-    <section className="mt-10 rounded-lg border border-sky-100 bg-sky-50/50 p-5 sm:p-6" aria-labelledby="related-portable-office-locations">
-      <h2 id="related-portable-office-locations" className="text-xl font-semibold text-slate-900 mb-4">Related Portable Office Cabin Locations in NCR</h2>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {visibleLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="rounded-md border border-sky-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-sky-300 hover:bg-sky-50">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-type RelatedPortableCabinLink = {
-  href: string;
-  label: string;
-};
-
-const PORTABLE_CABIN_RELATED_LINKS: Record<string, RelatedPortableCabinLink[]> = {
-  'portable-cabins-in-central-delhi': [
-    { href: '/portable-cabins-in-east-delhi', label: 'site cabin options for East Delhi' },
-    { href: '/portable-cabins-in-north-delhi', label: 'portable cabins in North Delhi' },
-    { href: '/top-rated-portable-cabin-supplier-delhi', label: 'portable cabin buying guide for Delhi' },
-    { href: '/product/portable-cabin', label: 'SAMAN portable cabin range' },
-  ],
-  'portable-cabins-in-east-delhi': [
-    { href: '/portable-cabins-in-central-delhi', label: 'portable cabins in Central Delhi' },
-    { href: '/portable-cabins-in-west-delhi', label: 'portable cabin suppliers in West Delhi' },
-    { href: '/top-rated-portable-cabin-supplier-delhi', label: 'Delhi portable cabin buyer guide' },
-    { href: '/product/portable-cabin', label: 'custom portable cabin options' },
-  ],
-  'portable-cabins-in-mg-road': [
-    { href: '/best-porta-cabins-in-bangalore', label: 'portable cabins in Bangalore' },
-    { href: '/portacabins-for-sale-in-frazer-town-2', label: 'porta cabin options in Frazer Town' },
-    { href: '/portable-cabins-in-central-delhi', label: 'portable cabin projects in Central Delhi' },
-    { href: '/product/portable-cabin', label: 'portable cabin product range' },
-  ],
-  'portable-cabins-in-north-delhi': [
-    { href: '/portable-cabins-in-central-delhi', label: 'Central Delhi portable cabin support' },
-    { href: '/portable-cabins-in-east-delhi', label: 'East Delhi site cabin options' },
-    { href: '/portable-cabins-in-south-delhi', label: 'portable cabins in South Delhi' },
-    { href: '/product/portable-cabin', label: 'SAMAN portable cabin solutions' },
-  ],
-  'portable-cabins-in-south-delhi': [
-    { href: '/portable-cabins-in-west-delhi', label: 'West Delhi portable cabin suppliers' },
-    { href: '/portable-cabins-in-central-delhi', label: 'portable cabins in Central Delhi' },
-    { href: '/top-rated-portable-cabin-supplier-delhi', label: 'portable cabin guide for Delhi buyers' },
-    { href: '/product/portable-cabin', label: 'portable cabin models from SAMAN' },
-  ],
-  'portable-cabins-in-west-delhi': [
-    { href: '/portable-cabins-in-south-delhi', label: 'portable cabins in South Delhi' },
-    { href: '/portable-cabins-in-east-delhi', label: 'East Delhi portable cabin options' },
-    { href: '/top-rated-portable-cabin-supplier-delhi', label: 'Delhi portable cabin buying guide' },
-    { href: '/product/portable-cabin', label: 'factory-built portable cabin range' },
-  ],
-  'portacabins-for-sale-in-frazer-town-2': [
-    { href: '/best-porta-cabins-in-bangalore', label: 'portable cabins in Bangalore' },
-    { href: '/portable-cabins-in-mg-road', label: 'portable cabins near MG Road' },
-    { href: '/portable-cabins-in-central-delhi', label: 'portable cabin options in Central Delhi' },
-    { href: '/product/portable-cabin', label: 'SAMAN portable cabin range' },
-  ],
-  'top-rated-portable-cabin-supplier-delhi': [
-    { href: '/portable-cabins-in-central-delhi', label: 'portable cabins in Central Delhi' },
-    { href: '/portable-cabins-in-east-delhi', label: 'site cabin options for East Delhi' },
-    { href: '/portable-cabins-in-west-delhi', label: 'portable cabin suppliers in West Delhi' },
-    { href: '/product/portable-cabin', label: 'portable cabin product range' },
-  ],
-  'best-porta-cabins-in-bangalore': [
-    { href: '/portable-cabins-in-mg-road', label: 'portable cabins near MG Road' },
-    { href: '/portacabins-for-sale-in-frazer-town-2', label: 'porta cabin options in Frazer Town' },
-    { href: '/portable-cabins-in-central-delhi', label: 'portable cabin projects in Central Delhi' },
-    { href: '/product/portable-cabin', label: 'SAMAN portable cabin solutions' },
-  ],
-};
-
-const RelatedPortableCabinResources = ({ slug }: { slug: string }) => {
-  const links = PORTABLE_CABIN_RELATED_LINKS[slug];
-  if (!links?.length) return null;
-
-  const currentPath = `/${slug}`;
-  const visibleLinks = links.filter((link) => link.href !== currentPath);
-
-  return (
-    <section className="mt-10 rounded-lg border border-lime-100 bg-lime-50/50 p-5 sm:p-6" aria-labelledby="related-portable-cabin-resources">
-      <h2 id="related-portable-cabin-resources" className="text-xl font-semibold text-slate-900 mb-4">Related Portable Cabin Locations and Resources</h2>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {visibleLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="rounded-md border border-lime-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-lime-300 hover:bg-lime-50">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-const PORTABLE_CABIN_SUPPORT_RELATED_LINKS: Record<string, RelatedPortableCabinLink[]> = {
-  'best-porta-cabin-manufacturer-ncr': [
-    { href: '/portable-cabin-rental-services', label: 'portable cabin rental services' },
-    { href: '/porta-cabins-on-rent', label: 'porta cabins on rent' },
-    { href: '/eco-friendly-portable-cabins', label: 'eco-friendly portable cabins' },
-    { href: '/product/portable-cabin', label: 'SAMAN portable cabin range' },
-  ],
-  'eco-friendly-portable-cabins': [
-    { href: '/best-porta-cabin-manufacturer-ncr', label: 'porta cabin manufacturer in NCR' },
-    { href: '/portable-cabin-rental-services', label: 'portable cabin rental services' },
-    { href: '/porta-cabins-on-rent', label: 'porta cabins on rent' },
-    { href: '/product-category/portable-cabin', label: 'portable cabin product category' },
-  ],
-  'porta-cabins-on-rent': [
-    { href: '/portable-cabin-rental-services', label: 'portable cabin rental services' },
-    { href: '/best-porta-cabin-manufacturer-ncr', label: 'NCR porta cabin manufacturer guide' },
-    { href: '/eco-friendly-portable-cabins', label: 'eco-friendly portable cabin options' },
-    { href: '/product/portable-cabin', label: 'portable cabin models from SAMAN' },
-  ],
-  'portable-cabin-rental-services': [
-    { href: '/porta-cabins-on-rent', label: 'porta cabins on rent' },
-    { href: '/best-porta-cabin-manufacturer-ncr', label: 'porta cabin manufacturer in NCR' },
-    { href: '/eco-friendly-portable-cabins', label: 'eco-friendly portable cabins' },
-    { href: '/product-category/portable-cabin', label: 'portable cabin product category' },
-  ],
-};
-
-const RelatedPortableCabinSupportResources = ({ slug }: { slug: string }) => {
-  const links = PORTABLE_CABIN_SUPPORT_RELATED_LINKS[slug];
-  if (!links?.length) return null;
-
-  const currentPath = `/${slug}`;
-  const visibleLinks = links.filter((link) => link.href !== currentPath);
-
-  return (
-    <section className="mt-10 rounded-lg border border-emerald-100 bg-emerald-50/50 p-5 sm:p-6" aria-labelledby="related-portable-cabin-support-resources">
-      <h2 id="related-portable-cabin-support-resources" className="text-xl font-semibold text-slate-900 mb-4">Related Portable Cabin Resources</h2>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {visibleLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="rounded-md border border-emerald-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-emerald-300 hover:bg-emerald-50">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-type RelatedContainerOfficeLink = {
-  href: string;
-  label: string;
-};
-
-const CONTAINER_OFFICE_RELATED_LINKS: Record<string, RelatedContainerOfficeLink[]> = {
-  'container-offices-for-sale-in-jayanagar': [
-    { href: '/container-offices-for-sale-in-jp-nagar', label: 'container offices in JP Nagar' },
-    { href: '/container-offices-for-sale-in-vijayanagar', label: 'site container offices in Vijayanagar' },
-    { href: '/20ft-container-office', label: '20ft container office options' },
-    { href: '/product/container-offices', label: 'SAMAN container office range' },
-  ],
-  'container-offices-for-sale-in-vijayanagar': [
-    { href: '/container-offices-for-sale-in-jayanagar', label: 'container offices in Jayanagar' },
-    { href: '/container-offices-for-sale-in-jp-nagar', label: 'JP Nagar container office options' },
-    { href: '/container-office-rental-is-perfect-solution', label: 'container office rental guide' },
-    { href: '/product/container-offices', label: 'container office product range' },
-  ],
-  'customized-office-container-solutions': [
-    { href: '/inside-container-office', label: 'inside container office layouts' },
-    { href: '/20ft-container-office', label: '20ft container office planning' },
-    { href: '/best-container-office-solutions', label: 'modular container office layouts' },
-    { href: '/product/container-offices', label: 'custom container office range' },
-  ],
-  'container-offices-for-sale-in-jp-nagar': [
-    { href: '/container-offices-for-sale-in-jayanagar', label: 'container offices in Jayanagar' },
-    { href: '/container-offices-for-sale-in-vijayanagar', label: 'Vijayanagar site office containers' },
-    { href: '/10-foot-shipping-container-office-perfect-fit-for-small-spaces', label: '10ft shipping container office ideas' },
-    { href: '/product/container-offices', label: 'SAMAN container office units' },
-  ],
-  '10-foot-shipping-container-office-perfect-fit-for-small-spaces': [
-    { href: '/12ft-office-container-smart-choice-for-growing-startups', label: '12ft office container options' },
-    { href: '/20ft-container-office', label: '20ft container office options' },
-    { href: '/inside-container-office', label: 'inside container office layouts' },
-    { href: '/product/container-offices', label: 'compact container office range' },
-  ],
-  '12ft-office-container-smart-choice-for-growing-startups': [
-    { href: '/10-foot-shipping-container-office-perfect-fit-for-small-spaces', label: '10ft shipping container office ideas' },
-    { href: '/20ft-container-office', label: '20ft container office planning' },
-    { href: '/customized-office-container-solutions', label: 'customized office container solutions' },
-    { href: '/product/container-offices', label: 'factory-built container offices' },
-  ],
-  '20ft-container-office': [
-    { href: '/inside-container-office', label: 'inside container office layouts' },
-    { href: '/12ft-office-container-smart-choice-for-growing-startups', label: '12ft office container options' },
-    { href: '/customized-office-container-solutions', label: 'custom container office layouts' },
-    { href: '/product/container-offices', label: '20ft and modular container offices' },
-  ],
-  'inside-container-office': [
-    { href: '/20ft-container-office', label: '20ft container office options' },
-    { href: '/customized-office-container-solutions', label: 'modular container office layouts' },
-    { href: '/best-container-office-solutions', label: 'best container office solutions' },
-    { href: '/product/container-offices', label: 'container office design range' },
-  ],
-  'best-container-office-solutions': [
-    { href: '/customized-office-container-solutions', label: 'customized office container solutions' },
-    { href: '/inside-container-office', label: 'inside container office layouts' },
-    { href: '/container-office-rental-is-perfect-solution', label: 'container office rental guide' },
-    { href: '/product/container-offices', label: 'SAMAN container office range' },
-  ],
-  'container-office-rental-is-perfect-solution': [
-    { href: '/20ft-container-office', label: '20ft container office options' },
-    { href: '/best-container-office-solutions', label: 'modular container office solutions' },
-    { href: '/container-offices-for-sale-in-vijayanagar', label: 'site container offices in Vijayanagar' },
-    { href: '/product/container-offices', label: 'container office rental and sale range' },
-  ],
-};
-
-const RelatedContainerOfficeResources = ({ slug }: { slug: string }) => {
-  const links = CONTAINER_OFFICE_RELATED_LINKS[slug];
-  if (!links?.length) return null;
-
-  const currentPath = `/${slug}`;
-  const visibleLinks = links.filter((link) => link.href !== currentPath);
-
-  return (
-    <section className="mt-10 rounded-lg border border-cyan-100 bg-cyan-50/50 p-5 sm:p-6" aria-labelledby="related-container-office-resources">
-      <h2 id="related-container-office-resources" className="text-xl font-semibold text-slate-900 mb-4">Related Container Office Resources</h2>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {visibleLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="rounded-md border border-cyan-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-cyan-300 hover:bg-cyan-50">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-const CONTAINER_OFFICE_NCR_RELATED_LINKS: Record<string, RelatedContainerOfficeLink[]> = {
-  'container-offices-in-noida': [
-    { href: '/container-offices-in-gurgaon', label: 'container offices in Gurgaon' },
-    { href: '/product/container-offices', label: 'SAMAN container office range' },
-    { href: '/product-category/container-offices', label: 'container office product category' },
-    { href: '/customized-office-container-solutions', label: 'custom container office layouts' },
-  ],
-  'container-offices-in-gurgaon': [
-    { href: '/container-offices-in-noida', label: 'container offices in Noida' },
-    { href: '/product/container-offices', label: 'modular container office options' },
-    { href: '/product-category/container-offices', label: 'container office product category' },
-    { href: '/20ft-container-office', label: '20ft container office options' },
-  ],
-};
-
-const RelatedContainerOfficeNcrLocations = ({ slug }: { slug: string }) => {
-  const links = CONTAINER_OFFICE_NCR_RELATED_LINKS[slug];
-  if (!links?.length) return null;
-
-  const currentPath = `/${slug}`;
-  const visibleLinks = links.filter((link) => link.href !== currentPath);
-
-  return (
-    <section className="mt-10 rounded-lg border border-teal-100 bg-teal-50/50 p-5 sm:p-6" aria-labelledby="related-container-office-ncr-locations">
-      <h2 id="related-container-office-ncr-locations" className="text-xl font-semibold text-slate-900 mb-4">Related Container Office Locations in NCR</h2>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {visibleLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="rounded-md border border-teal-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-teal-300 hover:bg-teal-50">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-type RelatedSupportLink = {
-  href: string;
-  label: string;
-};
-
-const PREFAB_HOME_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
-  'durable-modular-homes-delhi': [
-    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
-    { href: '/prefab-homes-mumbai', label: 'prefab homes in Mumbai' },
-    { href: '/prefabricated-houses-in-hyderabad', label: 'prefabricated houses in Hyderabad' },
-    { href: '/product/prefabricated-houses', label: 'SAMAN prefabricated house range' },
-  ],
-  'cost-of-prefab-homes': [
-    { href: '/build-a-prefabricated-modular-houses', label: 'building a prefabricated modular house' },
-    { href: '/luxury-prefab-homes', label: 'luxury prefab home options' },
-    { href: '/container-houses-cost-guide-2024', label: 'container house cost guide' },
-    { href: '/product/prefabricated-houses', label: 'prefabricated house product range' },
-  ],
-  'prefab-homes-mumbai': [
-    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
-    { href: '/luxury-prefab-homes', label: 'luxury prefab homes' },
-    { href: '/prefabricated-houses-in-hyderabad', label: 'prefabricated houses in Hyderabad' },
-    { href: '/product-category/prefab-buildings', label: 'prefab building category' },
-  ],
-  'prefabricated-houses-in-hyderabad': [
-    { href: '/durable-modular-homes-delhi', label: 'durable modular homes in Delhi' },
-    { href: '/prefab-homes-mumbai', label: 'prefab homes in Mumbai' },
-    { href: '/cost-of-prefab-homes', label: 'prefab home pricing guide' },
-    { href: '/product/prefabricated-houses', label: 'prefabricated house range' },
-  ],
-  'build-a-prefabricated-modular-houses': [
-    { href: '/cost-of-prefab-homes', label: 'cost of prefab homes' },
-    { href: '/luxury-prefab-homes', label: 'luxury prefab home ideas' },
-    { href: '/precast-housing-construction-guide', label: 'precast housing construction guide' },
-    { href: '/product/prefabricated-houses', label: 'prefabricated house solutions' },
-  ],
-  'container-houses-cost-guide-2024': [
-    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
-    { href: '/build-a-prefabricated-modular-houses', label: 'build a prefabricated modular house' },
-    { href: '/luxury-prefab-homes', label: 'luxury prefab homes' },
-    { href: '/product/container-houses', label: 'container house product range' },
-  ],
-  'luxury-prefab-homes': [
-    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
-    { href: '/prefab-homes-mumbai', label: 'prefab homes in Mumbai' },
-    { href: '/build-a-prefabricated-modular-houses', label: 'prefabricated modular house guide' },
-    { href: '/product/prefabricated-houses', label: 'premium prefabricated houses' },
-  ],
-  'precast-housing-construction-guide': [
-    { href: '/build-a-prefabricated-modular-houses', label: 'prefabricated modular house guide' },
-    { href: '/cost-of-prefab-homes', label: 'prefab home cost guide' },
-    { href: '/prefabricated-houses-in-hyderabad', label: 'prefabricated houses in Hyderabad' },
-    { href: '/product/prefabricated-houses', label: 'prefabricated house range' },
-  ],
-};
-
-const PORTABLE_OFFICE_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
-  'modern-portable-office-solutions': [
-    { href: '/sleek-prefab-office-cabins-ncr', label: 'prefab office cabins in NCR' },
-    { href: '/low-cost-modular-office-solutions', label: 'low-cost modular office options' },
-    { href: '/budget-friendly-office-workspace-alternatives', label: 'budget-friendly office workspace ideas' },
-    { href: '/product/portable-office', label: 'SAMAN portable office range' },
-  ],
-  'sleek-prefab-office-cabins-ncr': [
-    { href: '/modern-portable-office-solutions', label: 'modern portable office solutions' },
-    { href: '/portable-office-cabin-manufacturers-in-bangalore', label: 'portable office cabin manufacturers in Bangalore' },
-    { href: '/discount-mobile-office-units', label: 'discount mobile office units' },
-    { href: '/product-category/portable-office', label: 'portable office category' },
-  ],
-  'low-cost-modular-office-solutions': [
-    { href: '/budget-friendly-office-workspace-alternatives', label: 'budget-friendly office workspace alternatives' },
-    { href: '/discount-mobile-office-units', label: 'discount mobile office units' },
-    { href: '/modern-portable-office-solutions', label: 'modern portable office solutions' },
-    { href: '/product/portable-office', label: 'portable office product range' },
-  ],
-  'budget-friendly-office-workspace-alternatives': [
-    { href: '/low-cost-modular-office-solutions', label: 'low-cost modular office solutions' },
-    { href: '/discount-mobile-office-units', label: 'discount mobile office units' },
-    { href: '/cheap-office-trailers-for-sale', label: 'cheap office trailers for sale' },
-    { href: '/product-category/portable-office', label: 'portable office category' },
-  ],
-  'discount-mobile-office-units': [
-    { href: '/budget-friendly-office-workspace-alternatives', label: 'budget-friendly office workspace ideas' },
-    { href: '/cheap-office-trailers-for-sale', label: 'cheap office trailers for sale' },
-    { href: '/modern-portable-office-solutions', label: 'modern portable office options' },
-    { href: '/product/portable-office', label: 'portable office units from SAMAN' },
-  ],
-  'cheap-office-trailers-for-sale': [
-    { href: '/budget-friendly-office-workspace-alternatives', label: 'budget-friendly office workspace alternatives' },
-    { href: '/discount-mobile-office-units', label: 'discount mobile office units' },
-    { href: '/low-cost-modular-office-solutions', label: 'low-cost modular office solutions' },
-    { href: '/product/portable-office', label: 'portable office product range' },
-  ],
-  'portable-office-cabin-manufacturers-in-bangalore': [
-    { href: '/modern-portable-office-solutions', label: 'modern portable office solutions' },
-    { href: '/sleek-prefab-office-cabins-ncr', label: 'prefab office cabins in NCR' },
-    { href: '/low-cost-modular-office-solutions', label: 'low-cost modular office options' },
-    { href: '/product-category/portable-office', label: 'portable office category' },
-  ],
-};
-
-const PORTABLE_CABIN_GUIDE_LINKS: Record<string, RelatedSupportLink[]> = {
-  '18-benefits-of-luxury-portable-cabin': [
-    { href: '/7-tips-for-choosing-the-perfect-portable-cabin-location', label: 'portable cabin location tips' },
-    { href: '/porta-cabin-office-price', label: 'porta cabin office price guide' },
-    { href: '/prefab-porta-cabins', label: 'prefab porta cabin options' },
-    { href: '/product/portable-cabin', label: 'SAMAN portable cabin range' },
-  ],
-  '7-tips-for-choosing-the-perfect-portable-cabin-location': [
-    { href: '/18-benefits-of-luxury-portable-cabin', label: 'luxury portable cabin benefits' },
-    { href: '/world-of-customized-porta-cabin', label: 'customized porta cabin ideas' },
-    { href: '/prefab-porta-cabins', label: 'prefab porta cabins' },
-    { href: '/product-category/portable-cabin', label: 'portable cabin category' },
-  ],
-  'porta-cabin-office-price': [
-    { href: '/prefab-porta-cabins', label: 'prefab porta cabin options' },
-    { href: '/world-of-customized-porta-cabin', label: 'customized porta cabin guide' },
-    { href: '/18-benefits-of-luxury-portable-cabin', label: 'luxury portable cabin benefits' },
-    { href: '/product/portable-cabin', label: 'portable cabin product range' },
-  ],
-  'prefab-porta-cabins': [
-    { href: '/porta-cabin-office-price', label: 'porta cabin office price guide' },
-    { href: '/world-of-customized-porta-cabin', label: 'customized porta cabin options' },
-    { href: '/7-tips-for-choosing-the-perfect-portable-cabin-location', label: 'portable cabin location tips' },
-    { href: '/product-category/portable-cabin', label: 'portable cabin category' },
-  ],
-  'world-of-customized-porta-cabin': [
-    { href: '/prefab-porta-cabins', label: 'prefab porta cabins' },
-    { href: '/porta-cabin-office-price', label: 'porta cabin office price guide' },
-    { href: '/18-benefits-of-luxury-portable-cabin', label: 'luxury portable cabin benefits' },
-    { href: '/product/portable-cabin', label: 'custom portable cabin range' },
-  ],
-};
-
-const CONTAINER_CAFE_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
-  'best-container-cafe-designs-for-experience': [
-    { href: '/product/container-cafe', label: 'SAMAN container cafe range' },
-    { href: '/product-category/container-cafe', label: 'container cafe category' },
-    { href: '/container-cafes-in-noida', label: 'container cafe options in Noida' },
-    { href: '/container-cafes-in-gurgaon', label: 'container cafe options in Gurgaon' },
-  ],
-};
-
-const PREFAB_CONSTRUCTION_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
-  'customized-prefab-structures-ncr': [
-    { href: '/material-specifications-features', label: 'prefab material specifications' },
-    { href: '/sustainable-construction', label: 'sustainable construction methods' },
-    { href: '/peb-structure-cost-per-sq-ft-india', label: 'PEB structure cost guide' },
-    { href: '/product/peb-constructions', label: 'PEB construction solutions' },
-  ],
-  'peb-structure-cost-per-sq-ft-india': [
-    { href: '/customized-prefab-structures-ncr', label: 'customized prefab structures in NCR' },
-    { href: '/material-specifications-features', label: 'material specifications and features' },
-    { href: '/sustainable-construction', label: 'sustainable construction guide' },
-    { href: '/product/pre-engineered-buildings', label: 'pre-engineered building range' },
-  ],
-  'material-specifications-features': [
-    { href: '/customized-prefab-structures-ncr', label: 'customized prefab structures' },
-    { href: '/peb-structure-cost-per-sq-ft-india', label: 'PEB structure cost guide' },
-    { href: '/sustainable-construction', label: 'sustainable construction methods' },
-    { href: '/product/industrial-sheds', label: 'industrial shed solutions' },
-  ],
-  'sustainable-construction': [
-    { href: '/material-specifications-features', label: 'material specifications and features' },
-    { href: '/customized-prefab-structures-ncr', label: 'customized prefab structures in NCR' },
-    { href: '/peb-structure-cost-per-sq-ft-india', label: 'PEB cost planning guide' },
-    { href: '/product/pre-engineered-buildings', label: 'pre-engineered building solutions' },
-  ],
-  'what-is-a-labour-hutment': [
-    { href: '/material-specifications-features', label: 'portable structure material details' },
-    { href: '/sustainable-construction', label: 'sustainable construction methods' },
-    { href: '/customized-prefab-structures-ncr', label: 'customized prefab structures' },
-    { href: '/product/labor-colony', label: 'labour colony product range' },
-  ],
-};
-
-const SHELTER_SHED_SUPPORT_LINKS: Record<string, RelatedSupportLink[]> = {
-  'temporary-garage-shelter': [
-    { href: '/temporary-garden-shed', label: 'temporary garden shed options' },
-    { href: '/portable-carports', label: 'portable carport solutions' },
-    { href: '/product/industrial-sheds', label: 'industrial shed product range' },
-    { href: '/product-category/industrial-sheds', label: 'industrial sheds category' },
-  ],
-  'temporary-garden-shed': [
-    { href: '/temporary-garage-shelter', label: 'temporary garage shelter options' },
-    { href: '/portable-carports', label: 'portable carport solutions' },
-    { href: '/product/industrial-sheds', label: 'storage and industrial shed range' },
-    { href: '/product-category/industrial-sheds', label: 'industrial sheds category' },
-  ],
-  'portable-carports': [
-    { href: '/temporary-garage-shelter', label: 'temporary garage shelter options' },
-    { href: '/temporary-garden-shed', label: 'temporary garden shed options' },
-    { href: '/product/industrial-sheds', label: 'industrial shed product range' },
-    { href: '/product-category/industrial-sheds', label: 'industrial sheds category' },
-  ],
-};
-
-const RelatedSupportResources = ({
-  slug,
-  linksBySlug,
-  title,
-  sectionId,
-}: {
-  slug: string;
-  linksBySlug: Record<string, RelatedSupportLink[]>;
-  title: string;
-  sectionId: string;
-}) => {
-  const links = linksBySlug[slug];
-  if (!links?.length) return null;
-
-  const currentPath = `/${slug}`;
-  const visibleLinks = links.filter((link) => link.href !== currentPath);
-
-  return (
-    <section className="mt-10 rounded-lg border border-indigo-100 bg-indigo-50/50 p-5 sm:p-6" aria-labelledby={sectionId}>
-      <h2 id={sectionId} className="text-xl font-semibold text-slate-900 mb-4">{title}</h2>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {visibleLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="rounded-md border border-indigo-100 bg-white px-4 py-3 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-indigo-300 hover:bg-indigo-50">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
 // BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
 // Allowlisted per slug so no other blog post's schema is affected.
@@ -842,19 +123,6 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-vijayawada',
   'container-office-in-mangalore',
   'container-office-in-coimbatore',
-  'container-office-in-penukonda',
-  'container-office-in-ballari',
-  'container-office-in-nellore',
-  'container-office-in-warangal',
-  'container-office-in-guntur',
-  'container-office-in-kozhikode',
-  'container-office-in-puducherry',
-  'container-office-in-thrissur',
-  'container-office-in-trichy',
-  'container-office-in-tirupur',
-  'container-office-in-tirupati',
-  'container-office-in-sri-city',
-
   'container-office-in-madurai',
   'container-office-in-surat',
   'container-office-in-indore',
@@ -868,20 +136,6 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-dahej',
   'container-office-in-morbi',
   'container-office-in-mundra',
-  'container-office-in-haridwar',
-  'container-office-in-rudrapur',
-  'container-office-in-kashipur',
-  'container-office-in-agra',
-  'container-office-in-rohtak',
-  'container-office-in-sonipat',
-  'container-office-in-yamunanagar',
-  'container-office-in-saharanpur',
-  'container-office-in-bareilly',
-  'container-office-in-varanasi',
-  'container-office-in-neemrana',
-  'container-office-in-bawal',
-  'container-office-in-jalandhar',
-  'container-office-in-moradabad',
   'container-office-in-vellore',
   'container-office-in-tirunelveli',
   'container-office-in-erode',
@@ -889,6 +143,13 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-shivamogga',
   'container-office-in-davangere',
   'container-office-in-rajahmundry',
+  'container-office-in-gwalior',
+  'container-office-in-bhiwadi',
+  'container-office-in-bhopal',
+  'container-office-in-raipur',
+  'container-office-in-nashik',
+  'container-office-in-panipat',
+  'container-office-in-dehradun',
 ]);
 
 // Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
@@ -910,19 +171,6 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-vijayawada',
   'container-office-in-mangalore',
   'container-office-in-coimbatore',
-  'container-office-in-penukonda',
-  'container-office-in-ballari',
-  'container-office-in-nellore',
-  'container-office-in-warangal',
-  'container-office-in-guntur',
-  'container-office-in-kozhikode',
-  'container-office-in-puducherry',
-  'container-office-in-thrissur',
-  'container-office-in-trichy',
-  'container-office-in-tirupur',
-  'container-office-in-tirupati',
-  'container-office-in-sri-city',
-
   'container-office-in-madurai',
   'container-office-in-surat',
   'container-office-in-indore',
@@ -936,20 +184,6 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-dahej',
   'container-office-in-morbi',
   'container-office-in-mundra',
-  'container-office-in-haridwar',
-  'container-office-in-rudrapur',
-  'container-office-in-kashipur',
-  'container-office-in-agra',
-  'container-office-in-rohtak',
-  'container-office-in-sonipat',
-  'container-office-in-yamunanagar',
-  'container-office-in-saharanpur',
-  'container-office-in-bareilly',
-  'container-office-in-varanasi',
-  'container-office-in-neemrana',
-  'container-office-in-bawal',
-  'container-office-in-jalandhar',
-  'container-office-in-moradabad',
   'container-office-in-vellore',
   'container-office-in-tirunelveli',
   'container-office-in-erode',
@@ -957,6 +191,13 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-shivamogga',
   'container-office-in-davangere',
   'container-office-in-rajahmundry',
+  'container-office-in-gwalior',
+  'container-office-in-bhiwadi',
+  'container-office-in-bhopal',
+  'container-office-in-raipur',
+  'container-office-in-nashik',
+  'container-office-in-panipat',
+  'container-office-in-dehradun',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
@@ -1011,20 +252,13 @@ const NORTH_CITY_PAGE_SLUGS = new Set([
   'container-office-in-dahej',
   'container-office-in-morbi',
   'container-office-in-mundra',
-  'container-office-in-haridwar',
-  'container-office-in-rudrapur',
-  'container-office-in-kashipur',
-  'container-office-in-agra',
-  'container-office-in-rohtak',
-  'container-office-in-sonipat',
-  'container-office-in-yamunanagar',
-  'container-office-in-saharanpur',
-  'container-office-in-bareilly',
-  'container-office-in-varanasi',
-  'container-office-in-neemrana',
-  'container-office-in-bawal',
-  'container-office-in-jalandhar',
-  'container-office-in-moradabad',
+  'container-office-in-gwalior',
+  'container-office-in-bhiwadi',
+  'container-office-in-bhopal',
+  'container-office-in-raipur',
+  'container-office-in-nashik',
+  'container-office-in-panipat',
+  'container-office-in-dehradun',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
@@ -1573,11 +807,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
                 { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` },
               ],
               faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
-              contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug)
-                ? ['+91 87960 39938', '+91 97089 89937']
-                : ['container-office-in-trichy', 'container-office-in-tirupur', 'container-office-in-tirupati', 'container-office-in-sri-city'].includes(slug)
-                  ? ['+91 88616 22859', '+91 80886 85440']
-                  : undefined,
+              contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug) ? ['+91 87960 39938', '+91 97089 89937'] : undefined,
             });
           }
 
@@ -1739,20 +969,6 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
                 className="prose prose-lg max-w-none text-lg text-slate-700 leading-relaxed space-y-6"
               />
             </div>
-
-            <RelatedContainerCafeLocations slug={slug} />
-            <RelatedLabourColonyLocations slug={slug} />
-            <RelatedPortableOfficeLocations slug={slug} />
-            <RelatedPortableCabinResources slug={slug} />
-            <RelatedPortableCabinSupportResources slug={slug} />
-            <RelatedContainerOfficeResources slug={slug} />
-            <RelatedContainerOfficeNcrLocations slug={slug} />
-            <RelatedSupportResources slug={slug} linksBySlug={PREFAB_HOME_SUPPORT_LINKS} title="Related Prefab Home Resources" sectionId="related-prefab-home-resources" />
-            <RelatedSupportResources slug={slug} linksBySlug={PORTABLE_OFFICE_SUPPORT_LINKS} title="Related Portable Office Resources" sectionId="related-portable-office-support-resources" />
-            <RelatedSupportResources slug={slug} linksBySlug={PORTABLE_CABIN_GUIDE_LINKS} title="Related Portable Cabin Guides" sectionId="related-portable-cabin-guides" />
-            <RelatedSupportResources slug={slug} linksBySlug={CONTAINER_CAFE_SUPPORT_LINKS} title="Related Container Cafe Resources" sectionId="related-container-cafe-support-resources" />
-            <RelatedSupportResources slug={slug} linksBySlug={PREFAB_CONSTRUCTION_SUPPORT_LINKS} title="Related Prefab Construction Resources" sectionId="related-prefab-construction-resources" />
-            <RelatedSupportResources slug={slug} linksBySlug={SHELTER_SHED_SUPPORT_LINKS} title="Related Shelter and Shed Resources" sectionId="related-shelter-shed-resources" />
           </article>
 
           {/* Article Footer */}

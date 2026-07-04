@@ -1,4 +1,4 @@
-import { homepageFaqs } from '@/data/homepageFaqs';
+﻿import { homepageFaqs } from '@/data/homepageFaqs';
 
 export interface ProductSchema {
   name: string;
@@ -80,46 +80,37 @@ export const generateOrganizationSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': 'https://www.samanportable.com/#organization',
-    name: 'SAMAN Portable',
+    name: 'Saman Portable',
     legalName: 'SAMAN POS India Private Limited',
-    alternateName: 'Saman Portable',
-    url: 'https://www.samanportable.com/',
+    url: 'https://www.samanportable.com',
     logo: 'https://www.samanportable.com/saman-logo.svg',
+    foundingDate: '2009',
+    description:
+      'ISO 9001:2015 certified manufacturer of portable cabins, container offices, security cabins and prefab structures. Manufacturing in Bengaluru and Greater Noida. Delivering across India since 2009. Over 500+ projects delivered.',
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+918861622859',
+        telephone: '+91-80886-85440',
         contactType: 'Sales',
         areaServed: 'IN',
+        availableLanguage: ['English', 'Hindi', 'Kannada'],
       },
       {
         '@type': 'ContactPoint',
-        telephone: '+918796039938',
+        telephone: '+91-87960-39938',
         contactType: 'Sales',
         areaServed: 'IN',
+        availableLanguage: ['English', 'Hindi'],
       },
     ],
-    email: ['sales@samanportable.com', 'ncr@samanportable.com'],
-    address: [
-      {
-        '@type': 'PostalAddress',
-        name: 'Manufacturing Unit 1 - Bangalore',
-        streetAddress: 'Sy No 34/2, near India Oil petrol pump, Gopasandra',
-        addressLocality: 'Bengaluru',
-        addressRegion: 'Karnataka',
-        postalCode: '560099',
-        addressCountry: 'IN',
-      },
-      {
-        '@type': 'PostalAddress',
-        name: 'Manufacturing Unit 2 - Greater Noida',
-        streetAddress: 'Khata No 226, Vill-Jalpura, Bisrakh Rd, Jalpura, Dadri',
-        addressLocality: 'Greater Noida',
-        addressRegion: 'Uttar Pradesh',
-        postalCode: '201308',
-        addressCountry: 'IN',
-      },
-    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Sy No 34/2, near India Oil Petrol Pump, Gopasandra',
+      addressLocality: 'Bengaluru',
+      addressRegion: 'Karnataka',
+      postalCode: '560099',
+      addressCountry: 'IN',
+    },
     sameAs: [
       'https://www.facebook.com/p/SAMAN-Portable-Office-Solutions-is-leading-manufacturer-of-Porta-Cabins-100067811252556/',
       'https://x.com/Saman_Portable',
@@ -178,18 +169,20 @@ export const getLocalBusinessSchemaBengaluru = () => ({
   '@type': 'LocalBusiness',
   '@id': 'https://www.samanportable.com/#localbusiness-bengaluru',
   parentOrganization: { '@id': 'https://www.samanportable.com/#organization' },
-  name: 'SAMAN Portable - Bangalore Manufacturing Unit',
-  legalName: 'SAMAN POS India Private Limited',
-  alternateName: 'SAMAN Portable Bangalore',
-  url: 'https://www.samanportable.com/',
+  name: 'Saman Portable — Bengaluru',
+  description:
+    'ISO 9001:2015 certified manufacturer of portable cabins, container offices, security cabins, labour colonies and prefab structures. Serving all of India since 2009. Manufacturing in Bengaluru and Greater Noida.',
+  url: 'https://www.samanportable.com',
   logo: 'https://www.samanportable.com/saman-logo.svg',
   image: 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
-  telephone: ['+918861622859', '+918088685440'],
+  foundingDate: '2009',
+  priceRange: '₹₹',
+  telephone: ['+918088685440', '+918861622859'],
   email: 'sales@samanportable.com',
   address: {
     '@type': 'PostalAddress',
-    name: 'Manufacturing Unit 1 - Bangalore',
-    streetAddress: 'Sy No 34/2, near India Oil petrol pump, Gopasandra',
+    name: 'Manufacturing Unit 1 — Bengaluru',
+    streetAddress: 'Sy No 34/2, near India Oil Petrol Pump, Gopasandra',
     addressLocality: 'Bengaluru',
     addressRegion: 'Karnataka',
     postalCode: '560099',
@@ -200,6 +193,55 @@ export const getLocalBusinessSchemaBengaluru = () => ({
     latitude: '12.851009',
     longitude: '77.729225',
   },
+  identifier: [
+    { '@type': 'PropertyValue', name: 'GSTIN', value: '29ABBCS7101B1ZR' },
+    { '@type': 'PropertyValue', name: 'ISO 9001:2015', value: 'E20250218645' },
+    { '@type': 'PropertyValue', name: 'ISO 14001:2015', value: 'E20250218646' },
+    { '@type': 'PropertyValue', name: 'ISO 45001:2018', value: 'E20250218647' },
+    { '@type': 'PropertyValue', name: 'NSIC', value: 'NSIC/GP/BAN/2024/0055207' },
+    { '@type': 'PropertyValue', name: 'DPIIT', value: 'DIPP56005' },
+  ],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '09:00',
+      closes: '20:00',
+    },
+  ],
+  areaServed: [
+    'Karnataka',
+    'Tamil Nadu',
+    'Andhra Pradesh',
+    'Telangana',
+    'Kerala',
+    'Maharashtra',
+    'Goa',
+    'Gujarat',
+    'Rajasthan',
+    'Delhi NCR',
+    'Uttar Pradesh',
+    'Haryana',
+    'Punjab',
+    'West Bengal',
+    'Odisha',
+    'Madhya Pradesh',
+    'Jharkhand',
+    'Bihar',
+    'Assam',
+    'Himachal Pradesh',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Portable Cabin & Prefab Structure Products',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Cafe', description: 'Custom container cafes and food kiosks' } },
+    ],
+  },
 });
 
 export const getLocalBusinessSchemaGreaterNoida = () => ({
@@ -207,18 +249,20 @@ export const getLocalBusinessSchemaGreaterNoida = () => ({
   '@type': 'LocalBusiness',
   '@id': 'https://www.samanportable.com/#localbusiness-greater-noida',
   parentOrganization: { '@id': 'https://www.samanportable.com/#organization' },
-  name: 'SAMAN Portable - Greater Noida Manufacturing Unit',
-  legalName: 'SAMAN POS India Private Limited',
-  alternateName: 'SAMAN Portable Greater Noida',
-  url: 'https://www.samanportable.com/',
+  name: 'Saman Portable — Greater Noida',
+  description:
+    'ISO 9001:2015 certified manufacturer of portable cabins, container offices, security cabins, labour colonies and prefab structures. Serving all of India since 2009. Manufacturing in Bengaluru and Greater Noida.',
+  url: 'https://www.samanportable.com',
   logo: 'https://www.samanportable.com/saman-logo.svg',
   image: 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
+  foundingDate: '2009',
+  priceRange: '₹₹',
   telephone: ['+918796039938', '+919708989937'],
   email: 'ncr@samanportable.com',
   address: {
     '@type': 'PostalAddress',
-    name: 'Manufacturing Unit 2 - Greater Noida',
-    streetAddress: 'Khata No 226, Vill-Jalpura, Bisrakh Rd, Jalpura, Dadri',
+    name: 'Manufacturing Unit 2 — Greater Noida',
+    streetAddress: 'Khata No 226, Vill-Jalpura, Bisrakh Rd, Dadri',
     addressLocality: 'Greater Noida',
     addressRegion: 'Uttar Pradesh',
     postalCode: '201308',
@@ -226,8 +270,57 @@ export const getLocalBusinessSchemaGreaterNoida = () => ({
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '28.552346',
-    longitude: '77.439519',
+    latitude: '28.552251',
+    longitude: '77.439618',
+  },
+  identifier: [
+    { '@type': 'PropertyValue', name: 'GSTIN', value: '09ABBCS7101B1ZT' },
+    { '@type': 'PropertyValue', name: 'ISO 9001:2015', value: 'E20250218645' },
+    { '@type': 'PropertyValue', name: 'ISO 14001:2015', value: 'E20250218646' },
+    { '@type': 'PropertyValue', name: 'ISO 45001:2018', value: 'E20250218647' },
+    { '@type': 'PropertyValue', name: 'NSIC', value: 'NSIC/GP/BAN/2024/0055207' },
+    { '@type': 'PropertyValue', name: 'DPIIT', value: 'DIPP56005' },
+  ],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '09:00',
+      closes: '20:00',
+    },
+  ],
+  areaServed: [
+    'Karnataka',
+    'Tamil Nadu',
+    'Andhra Pradesh',
+    'Telangana',
+    'Kerala',
+    'Maharashtra',
+    'Goa',
+    'Gujarat',
+    'Rajasthan',
+    'Delhi NCR',
+    'Uttar Pradesh',
+    'Haryana',
+    'Punjab',
+    'West Bengal',
+    'Odisha',
+    'Madhya Pradesh',
+    'Jharkhand',
+    'Bihar',
+    'Assam',
+    'Himachal Pradesh',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Portable Cabin & Prefab Structure Products',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Cafe', description: 'Custom container cafes and food kiosks' } },
+    ],
   },
 });
 
@@ -426,330 +519,6 @@ const faqSchemaFromItems = (items: FAQItem[]): object => ({
 });
 
 const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
-  'container-office-in-haridwar': [
-    {
-      question: "What does a container office cost in Haridwar?",
-      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and delivery distance to your Haridwar site. Share your requirement and we send an itemised quote.",
-    },
-    {
-      question: "Do you deliver to SIDCUL Haridwar and BHEL Ranipur?",
-      answer: "Yes. We dispatch from our Greater Noida factory to the SIDCUL Integrated Industrial Estate, Shivalik Nagar, BHEL Ranipur, Bahadrabad and Haridwar city, via the Delhi–Meerut Expressway and Roorkee corridor. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "What sizes of container office are available?",
-      answer: "We build 10 ft, 20 ft and 40 ft standard units, and customise layouts such as partitioned, two-unit or two-storey cabins. Internal usable area is confirmed at quotation.",
-    },
-    {
-      question: "Can the container office be shifted to another Uttarakhand site later?",
-      answer: "Yes. A container office is a self-contained steel cabin, so it can be lifted and relocated to another plot in Haridwar or elsewhere in Uttarakhand when your project moves.",
-    },
-  ],
-  'container-office-in-rudrapur': [
-    {
-      question: "What does a container office cost in Rudrapur?",
-      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the long-haul delivery distance to your Rudrapur or Pantnagar site. Share your requirement and we send an itemised quote.",
-    },
-    {
-      question: "Do you deliver to SIDCUL Pantnagar and Rudrapur?",
-      answer: "Yes. We dispatch from our Greater Noida factory on NH-9 through Moradabad and Rampur to the SIDCUL Integrated Industrial Estate at Pantnagar and the Rudrapur SIDCUL area — about 230–270 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which sizes suit auto and FMCG plants here?",
-      answer: "We build 10 ft, 20 ft and 40 ft standard units. A 20 ft cabin covers most supervisor, QC and admin needs, while 10 ft suits line-side or guard points and 40 ft suits larger offices. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Are the cabins built for Rudrapur's humid, monsoon-heavy weather?",
-      answer: "Yes. We use PUF-insulated panels with sealed joints and a GI-sheet roof, which suit the Terai belt's heat and monsoon humidity. Exact panel and sealing spec is confirmed at quotation.",
-    },
-  ],
-  'container-office-in-kashipur': [
-    {
-      question: "What does a container office cost in Kashipur?",
-      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the long-haul delivery distance to your Kashipur site. Share your requirement and we send an itemised quote.",
-    },
-    {
-      question: "Do you deliver to SIIDCUL Kashipur and the Kashipur–Thakurdwara Road belt?",
-      answer: "Yes. We dispatch from our Greater Noida factory through Moradabad to the SIIDCUL Escort Farm estate, the Kundeshwari belt and mill sites across Kashipur — about 220–250 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Do you make gate offices and weighbridge cabins?",
-      answer: "Yes. A 10 ft or 20 ft container cabin works well as a gate office or weighbridge office, and we can add a facing window, partition and electricals to suit. Sizes and layout are confirmed at quotation.",
-    },
-    {
-      question: "Are these cabins suitable for a paper or sugar mill site?",
-      answer: "Yes, as admin, gate and supervisor offices on the mill premises. We supply clean, insulated steel office cabins — not process or storage structures. The exact spec is confirmed at quotation.",
-    },
-  ],
-  'container-office-in-agra': [
-    {
-      question: "What does a container office cost in Agra?",
-      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Agra site. Share your requirement and we send an itemised quote.",
-    },
-    {
-      question: "Do you deliver to Sikandra and Foundry Nagar in Agra?",
-      answer: "Yes. We dispatch from our Greater Noida factory on the Yamuna Expressway to the Sikandra Industrial Area, Foundry Nagar and the Trans-Yamuna belt — about 165–190 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Do you supply site offices for hotel and real-estate projects?",
-      answer: "Yes. A 20 ft or 40 ft container cabin works well as a contractor or project site office for hotel, road and real-estate work, with partitions and electricals to suit. Sizes and layout are confirmed at quotation.",
-    },
-    {
-      question: "What size suits a foundry or footwear unit admin cabin?",
-      answer: "We build 10 ft, 20 ft and 40 ft standard units. A 20 ft cabin covers most admin and supervisor needs, while 10 ft suits a gate or single-desk point and 40 ft suits a larger office. Layouts are customised and confirmed at quotation.",
-    },
-  ],
-  'container-office-in-rohtak': [
-    {
-      question: "What does a container office cost in Rohtak?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Rohtak site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to IMT Rohtak?",
-      answer: "Yes. We dispatch from our Greater Noida factory via Delhi and Bahadurgarh to IMT Rohtak on Delhi Road (124021) and Rohtak city (124001) — about 90–120 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits an IMT plant admin or QC office?",
-      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-sonipat': [
-    {
-      question: "What does a container office cost in Sonipat?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Sonipat site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the Kundli and Rai estates?",
-      answer: "Yes. We dispatch from our Greater Noida factory on the Eastern Peripheral Expressway to the Kundli Industrial Estate (131028), the Rai HSIIDC area (131029) and Sonipat city (131001) — about 50–70 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits an estate-unit admin or QC office?",
-      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-yamunanagar': [
-    {
-      question: "What does a container office cost in Yamunanagar?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Yamunanagar site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the plywood belt and Jagadhri?",
-      answer: "Yes. We dispatch from our Greater Noida factory via Karnal on NH44 to the Yamunanagar plywood belt (135001), the Jagadhri Workshop area (135002) and the Jagadhri metal belt (135003) — about 200–240 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a plywood-mill or metal-workshop office?",
-      answer: "A 20 ft cabin covers most admin, dispatch and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-saharanpur': [
-    {
-      question: "What does a container office cost in Saharanpur?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Saharanpur site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the woodcraft cluster and paper-mill belt?",
-      answer: "Yes. We dispatch from our Greater Noida factory via Meerut and Muzaffarnagar to the woodcraft cluster, the paper-mill belt and the Saharanpur city industrial area (247001) — about 170–200 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a woodcraft-unit or paper-mill office?",
-      answer: "A 20 ft cabin covers most admin, sampling and dispatch needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-bareilly': [
-    {
-      question: "What does a container office cost in Bareilly?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Bareilly site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to Parsakhera and C.B. Ganj?",
-      answer: "Yes. We dispatch from our Greater Noida factory on NH9 via Moradabad to the Parsakhera industrial area and C.B. Ganj estate (243502) and Bareilly city (243001) — about 240–270 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a Parsakhera-unit or warehouse office?",
-      answer: "A 20 ft cabin covers most admin, dispatch and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-varanasi': [
-    {
-      question: "What does a container office cost in Varanasi?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Varanasi site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the Chandpur and Ramnagar estates?",
-      answer: "Yes. We dispatch from our Greater Noida factory via Kanpur and Prayagraj on NH19 to the Chandpur Industrial Estate (221106), the Ramnagar area (221008) and Varanasi city (221001) — about 750–800 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits an estate-unit or infrastructure site office?",
-      answer: "A 20 ft cabin covers most admin, site and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-neemrana': [
-    {
-      question: "What does a container office cost in Neemrana?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Neemrana site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the RIICO estate, Ghiloth and the Japanese zone?",
-      answer: "Yes. We dispatch from our Greater Noida factory via Gurgaon and Bhiwadi on NH48 to the RIICO Industrial Area, the Neemrana Japanese Zone, Ghiloth Industrial Area and Neemrana town (301705) — about 140?160 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits an auto-component plant admin or QC office?",
-      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-bawal': [
-    {
-      question: "What does a container office cost in Bawal?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Bawal site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to IMT Bawal and the Dharuhera belt?",
-      answer: "Yes. We dispatch from our Greater Noida factory via Gurgaon and Dharuhera on NH48 to IMT Bawal (123501), Bawal town (123501), Dharuhera (123106) and the Dharuhera Industrial Area (123110) — about 120–140 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits an auto-component plant admin or QC office?",
-      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-jalandhar': [
-    {
-      question: "What does a container office cost in Jalandhar?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Jalandhar site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to Focal Point and the Industrial Estate?",
-      answer: "Yes. We dispatch from our Greater Noida factory up NH44 via Panipat, Ambala and Ludhiana to the Focal Point industrial area (144004), the Industrial Town and Industrial Estate belt (144004) and Jalandhar city (144001) — about 420–450 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a sports goods or hand tools export unit?",
-      answer: "A 20 ft cabin covers most admin, sampling and dispatch needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-moradabad': [
-    {
-      question: "What does a container office cost in Moradabad?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Moradabad site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the Peetal Nagri cluster and Lakri Fazalpur?",
-      answer: "Yes. We dispatch from our Greater Noida factory on NH9 via Ghaziabad, Hapur and Gajraula to the Peetal Nagri brass cluster, the Lakri Fazalpur industrial belt on Delhi Road and Moradabad city (244001) â€” about 160â€“180 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a brass export unit admin or sampling office?",
-      answer: "A 20 ft cabin covers most admin, sampling and dispatch needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a buyer-inspection area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-trichy': [
-    {
-      question: "What does a container office cost in Trichy?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Trichy site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to BHEL Township and the SIDCO estates?",
-      answer: "Yes. We dispatch from our Bangalore factory via Salem and Karur to BHEL Township, Kailasapuram, the Thiruverumbur SIDCO estate (620014) and the Thuvakudi SIDCO estate (620015) \u2014 about 350\u2013370 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a BHEL ancillary or fabrication unit?",
-      answer: "A 20 ft cabin covers most admin, QC and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-tirupur': [
-    {
-      question: "What does a container office cost in Tirupur?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Tirupur site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to SIDCO Harvey Road, Veerapandi and Mudalipalayam?",
-      answer: "Yes. We dispatch from our Bangalore factory via Salem and Erode to the Tirupur city cluster (641601), the SIDCO estate on Harvey Road (641602), Veerapandi (641605) and Mudalipalayam (641606) \u2014 about 320\u2013360 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "How is a container office different from a porta cabin?",
-      answer: "A container office uses a container-style steel shell, which makes it sturdier for larger site, storage and gate use and easy to relocate between factory phases. A porta cabin is a lighter panel cabin. Tell us your use and we advise the right one.",
-    },
-    {
-      question: "Can the office include AC, partitions and electrical fit-out?",
-      answer: "Yes. We add AC provision, internal partitions, electrical points, a document-storage area and an attached toilet as needed, all built into the cabin before dispatch and confirmed at quotation.",
-    },
-  ],
-  'container-office-in-tirupati': [
-    {
-      question: "What does a container office cost in Tirupati?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Tirupati site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to Renigunta and Gajulamandyam factory sites?",
-      answer: "Yes. We dispatch from our Bangalore factory via Chittoor to Gajulamandyam and the APIIC park (517520), Karakambadi (517520), Renigunta (517520) and Tirupati city (517501) \u2014 about 250\u2013290 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits an electronics plant admin or QC office?",
-      answer: "A 20 ft cabin covers most admin, QC and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and certificate numbers for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-sri-city': [
-    {
-      question: "What does a container office cost in Sri City?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Sri City site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver inside the Sri City SEZ, and how is gate access handled?",
-      answer: "Yes. We dispatch from our Bangalore factory via Chittoor and the Chennai corridor to the SEZ, DTZ and FTWZ zones of Sri City (517646). Because the zones are gated, we plan the gate-pass and offloading with you before dispatch.",
-    },
-    {
-      question: "Which size suits an SEZ project or admin office?",
-      answer: "A 20 ft cabin covers most project, admin and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and certificate numbers for SEZ vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
   'container-office-in-mangalore': [
     {
       question: "How much does a container office cost in Mangalore?",
@@ -1988,150 +1757,6 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
-  'container-office-in-guntur': [
-    {
-      question: "What does a container office cost in Guntur?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Guntur site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to Autonagar and the Guntur Industrial Estate?",
-      answer: "Yes. We dispatch from our Bangalore factory via Kurnool to the Autonagar workshop estate (522001), the Guntur Industrial Estate on the Lam side (522034) and Guntur city (522002) — about 570–620 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits an Autonagar workshop or construction site office?",
-      answer: "A 20 ft cabin covers most admin, supervisor and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-kozhikode': [
-    {
-      question: "What does a container office cost in Kozhikode?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Kozhikode site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to Feroke and the Kozhikode timber belt?",
-      answer: "Yes. We dispatch from our Bangalore factory via Mysore and the Wayanad ghats to Feroke (673631), the Kallai trade area (673003) and Kozhikode city (673001) — about 350–390 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a timber-yard or construction site office?",
-      answer: "A 20 ft cabin covers most admin, dispatch and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-puducherry': [
-    {
-      question: "What does a container office cost in Puducherry?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Puducherry site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the Sedarapet and Mettupalayam PIPDIC estates?",
-      answer: "Yes. We dispatch from our Bangalore factory via Tiruvannamalai to the Mettupalayam estate (605009), Sedarapet (605111), Thirubuvanai (605107) and Puducherry city (605001) — about 310–360 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits an auto-component plant admin or QC office?",
-      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-thrissur': [
-    {
-      question: "What does a container office cost in Thrissur?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Thrissur site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the Kinfra Koratty park and Ollur?",
-      answer: "Yes. We dispatch from our Bangalore factory via Salem and Palakkad to the Kinfra Koratty park (680308), Athani (680581), the Ollur belt (680306) and Thrissur city (680001) — about 450–490 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a Kinfra unit or construction site office?",
-      answer: "A 20 ft cabin covers most admin, supervisor and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-penukonda': [
-    {
-      question: "What does a container office cost in Penukonda?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Penukonda site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the Kia plant belt and Erramanchi side?",
-      answer: "Yes. We dispatch from our Bangalore factory up NH44 via Bagepalli to the Kia belt at Erramanchi, Penukonda town and the auto-ancillary plots around Penukonda (515110) — about 150–180 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits an auto-component plant admin or QC office?",
-      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and certificate numbers for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-ballari': [
-    {
-      question: "What does a container office cost in Ballari?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Ballari site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to Toranagallu and the JSW Vijayanagar belt?",
-      answer: "Yes. We dispatch from our Bangalore factory via Tumakuru and Chitradurga to Toranagallu and Vidyanagar (583123), Ballari city (583101) and the Hospet corridor (583201) — about 310–360 km. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a steel-yard supervisor or project office?",
-      answer: "A 20 ft cabin covers most supervisor, documentation and admin needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger project office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-nellore': [
-    {
-      question: "What does a container office cost in Nellore?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Nellore site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to Krishnapatnam port-side sites?",
-      answer: "Yes. We dispatch from our Bangalore factory via the Tirupati corridor to the Krishnapatnam port belt (524344), Nellore city (524001) and the Naidupeta side (524126) — about 360–430 km. Because port plots need planned access, we confirm the gate pass and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a port logistics or warehouse admin office?",
-      answer: "A 20 ft cabin covers most dispatch-yard, admin and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
-  'container-office-in-warangal': [
-    {
-      question: "What does a container office cost in Warangal?",
-      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Warangal site. Share your requirement and we send an itemised quote the same way for every buyer.",
-    },
-    {
-      question: "Do you deliver to the Kakatiya Mega Textile Park?",
-      answer: "Yes. We dispatch from our Bangalore factory via Hyderabad to the Kakatiya Mega Textile Park at Shayampet (506319), the Hanamkonda belt (506001) and Warangal city (506002) — about 700–780 km, so we suggest planning 4–5 days. We confirm the schedule and offloading with your quote.",
-    },
-    {
-      question: "Which size suits a textile-park admin or supervisor office?",
-      answer: "A 20 ft cabin covers most project, admin and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
-    },
-    {
-      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
-      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
-    },
-  ],
   'container-office-in-vellore': [
     {
       question: "Do you deliver container offices to Vellore and Ranipet?",
@@ -2258,8 +1883,14 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout to the headcount and space at your site.",
     },
   ],
-
-};
+'container-office-in-panipat': [    {      question: "Do you deliver container offices to Panipat and the HSIIDC industrial estate?",      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road down NH-44 to Panipat city (132103), the HSIIDC industrial estate and Sector 25 and 29 HUDA belt (132103), and the Samalkha zone (132101). Transit is usually 2–3 days once the unit is built, with delivery charged at ?3,000 where applicable.",    },    {      question: "What container office sizes suit Panipat textile and warehouse units?",      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for packed HUDA plots and mill yards.",    },    {      question: "What does a container office cost in Panipat?",      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",    },    {      question: "Can the cabin be customised for textile units, warehouses, and project sites?",      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",    },  ],
+'container-office-in-gwalior': [    {      question: "Do you deliver container offices to Gwalior and the Malanpur industrial area?",      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road via the Agra corridor to Gwalior city (474001), the Malanpur MPIDC belt (477117), and the Banmore industrial area (476444). Transit is usually 3–4 days once the unit is built, with delivery charged at ?3,000 where applicable.",    },    {      question: "What container office sizes suit Gwalior factory and site use?",      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for packed Malanpur and Banmore plots.",    },    {      question: "What does a container office cost in Gwalior?",      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",    },    {      question: "Can the cabin be customised for FMCG, auto, and engineering units?",      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",    },  ],
+'container-office-in-dehradun': [    {      question: "Do you deliver container offices to Dehradun and the Selaqui industrial area?",      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Dehradun city (248001), the Selaqui industrial belt (248197), and the IT Park and Mohabbewala areas. Transit is usually 3–4 days once the unit is built, with delivery charged at ?3,000 where applicable.",    },    {      question: "What container office sizes suit Dehradun site and factory use?",      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for compact Selaqui and Mohabbewala plots.",    },    {      question: "What does a container office cost in Dehradun?",      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",    },    {      question: "Can the cabin be customised for pharma, IT, and packaging unit sites?",      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout to the headcount and space at your site.",    },  ],
+'container-office-in-bhopal': [    {      question: "Do you deliver container offices to Bhopal and the Mandideep industrial area?",      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Bhopal city (462001), the Govindpura industrial estate (462023), and the Mandideep AKVN belt (462046). As a long-distance route, transit is about 4–5 days once the unit is built, with delivery charged at ?3,000 where applicable.",    },    {      question: "What container office sizes suit Bhopal factory and site use?",      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for packed Govindpura and Mandideep plots.",    },    {      question: "What does a container office cost in Bhopal?",      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",    },    {      question: "Can the cabin be customised for BHEL-ancillary, pharma, and engineering units?",      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",    },  ],
+'container-office-in-bhiwadi': [    {      question: "Do you deliver container offices to Bhiwadi and the RIICO industrial area?",      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road across the Bhiwadi RIICO industrial area, Khushkhera, and Chopanki (301019), and the Tapukara belt (301707). Transit is usually 2–3 days once the unit is built, with delivery charged at ?3,000 where applicable.",    },    {      question: "What container office sizes suit Bhiwadi factory and site use?",      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for packed RIICO and Tapukara plots.",    },    {      question: "What does a container office cost in Bhiwadi?",      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",    },    {      question: "Can the cabin be customised for auto, engineering, and warehousing units?",      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",    },  ],
+'container-office-in-raipur': [    {      question: "Do you deliver container offices to Raipur and the Urla and Siltara industrial areas?",      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Raipur city (492001), the Urla and Bhanpuri industrial areas (493221), and the Siltara industrial growth centre (493111). As a long-distance route, transit is about 5–6 days once the unit is built, with delivery charged at ?3,000 where applicable.",    },    {      question: "What container office sizes suit Raipur steel and site use?",      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for packed Urla and Siltara plots.",    },    {      question: "What does a container office cost in Raipur?",      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",    },    {      question: "Can the cabin be customised for steel, engineering, and logistics units?",      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout to the headcount and space at your site.",    },  ],
+'container-office-in-nashik': [    {      question: "Do you deliver container offices to Nashik and the Satpur and Ambad MIDC areas?",      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Nashik city (422001), the Satpur MIDC (422007), and the Ambad MIDC (422010). As a long-distance route, transit is about 5–6 days once the unit is built, with delivery charged at ?3,000 where applicable.",    },    {      question: "What container office sizes suit Nashik factory and site use?",      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for packed Satpur and Ambad plots.",    },    {      question: "What does a container office cost in Nashik?",      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",    },    {      question: "Can the cabin be customised for auto, engineering, and food-processing units?",      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",    },  ],
+};;
 
 export const getFAQSchemaOverride = (slug: string): object | null => {
   const items = FAQ_SCHEMA_OVERRIDES[slug];
@@ -2719,3 +2350,5 @@ export const getCityPageGraph = (params: {
     '@graph': graph,
   };
 };
+
+
