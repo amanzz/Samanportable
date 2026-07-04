@@ -163,6 +163,14 @@ const nextConfig = {
       { source: '/product/security-cabin', destination: 'https://www.samanportable.com/product/security-cabins', statusCode: 301 },
       { source: '/product/labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
 
+      // Labour Colony dead indexed URLs (owner-approved 2026-07-04).
+      // Absolute destination keeps both www and apex requests single-hop to the money page.
+      { source: '/product/prefab-labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+      { source: '/prefab-labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+      { source: '/labor-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+      { source: '/know-what-is-use-of-labour-colony-its-advantages-and-features', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+      { source: '/labour-colony-is-the-ultimate-option-for-entrepreneurs', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+
       // Root-level product alias fixes from 2026-07-02 crawl 4xx report.
       { source: '/site-office-container', destination: 'https://www.samanportable.com/product/container-offices/site-office-container', statusCode: 301 },
       { source: '/modular-container-office', destination: 'https://www.samanportable.com/product/container-offices/modular-container-office', statusCode: 301 },
