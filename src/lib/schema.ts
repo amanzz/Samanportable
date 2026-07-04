@@ -843,6 +843,78 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. We provide ISO certificate copies (9001, 14001, 45001), NSIC registration certificate, DPIIT recognition letter, and GST registration document as part of your order file. If your tender requires a manufacturer's declaration or material compliance statement, request it when placing the order and we include it with your delivery paperwork.",
     },
   ],
+  'porta-cabin-in-meerut': [
+    {
+      question: "Do you deliver porta cabins to Meerut and the Partapur industrial area?",
+      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Meerut city (250001), the Partapur industrial estate, and the Mohkampur belt on Delhi Road (250103). Transit is usually 2-3 days once the unit is built, with delivery charged at Rs. 3,000 where applicable.",
+    },
+    {
+      question: "What porta cabin sizes are available for Meerut sites?",
+      answer: "Common sizes are 10x8 ft and 10x10 ft cabins, 20x8 ft site offices, and 40x8 ft project offices. We also build custom dimensions and double-decker units for plots where ground space is limited.",
+    },
+    {
+      question: "What does a porta cabin cost in Meerut?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the porta cabin be customised for factory, site, and security use?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",
+    },
+  ],
+  'porta-cabin-in-ludhiana': [
+    {
+      question: "Do you deliver porta cabins to Ludhiana and the Focal Point industrial area?",
+      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Ludhiana city (141001), the Focal Point industrial estate (141010), and the Dhandari Kalan belt (141014). Transit is usually 3-4 days once the unit is built, with delivery charged at Rs. 3,000 where applicable.",
+    },
+    {
+      question: "What porta cabin sizes are available for Ludhiana sites?",
+      answer: "Common sizes are 10x8 ft and 10x10 ft cabins, 20x8 ft site offices, and 40x8 ft project offices. We also build custom dimensions and double-decker units for packed Focal Point and Dhandari Kalan plots.",
+    },
+    {
+      question: "What does a porta cabin cost in Ludhiana?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the porta cabin be customised for factory, site, and security use?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",
+    },
+  ],
+  'porta-cabin-in-bareilly': [
+    {
+      question: "Do you deliver porta cabins to Bareilly and the C.B. Ganj industrial area?",
+      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Bareilly city (243001), the C.B. Ganj industrial estate (243502), and the Parsakhera industrial area (243502). Transit is usually 3-4 days once the unit is built, with delivery charged at Rs. 3,000 where applicable.",
+    },
+    {
+      question: "What porta cabin sizes are available for Bareilly sites?",
+      answer: "Common sizes are 10x8 ft and 10x10 ft cabins, 20x8 ft site offices, and 40x8 ft project offices. We also build custom dimensions and double-decker units for packed C.B. Ganj and Parsakhera plots.",
+    },
+    {
+      question: "What does a porta cabin cost in Bareilly?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the porta cabin be customised for factory, site, and security use?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",
+    },
+  ],
+  'porta-cabin-in-moradabad': [
+    {
+      question: "Do you deliver porta cabins to Moradabad and the Lakri Fazalpur industrial area?",
+      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Moradabad city (244001), the Lakri Fazalpur brass belt (244001), and the Majhola industrial side (244103). Transit is usually 2–3 days once the unit is built, with delivery charged at ₹3,000 where applicable.",
+    },
+    {
+      question: "What porta cabin sizes are available for Moradabad sites?",
+      answer: "Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for packed Lakri Fazalpur and Majhola plots.",
+    },
+    {
+      question: "What does a porta cabin cost in Moradabad?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the porta cabin be customised for factory, site, and security use?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",
+    },
+  ],
   'porta-cabin-in-sonipat': [
     {
       question: "Do you deliver porta cabins to Kundli, Rai, and Barhi?",
