@@ -143,6 +143,13 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-shivamogga',
   'container-office-in-davangere',
   'container-office-in-rajahmundry',
+  'container-office-in-gwalior',
+  'container-office-in-bhiwadi',
+  'container-office-in-bhopal',
+  'container-office-in-raipur',
+  'container-office-in-nashik',
+  'container-office-in-panipat',
+  'container-office-in-dehradun',
 ]);
 
 // Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
@@ -184,6 +191,13 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-shivamogga',
   'container-office-in-davangere',
   'container-office-in-rajahmundry',
+  'container-office-in-gwalior',
+  'container-office-in-bhiwadi',
+  'container-office-in-bhopal',
+  'container-office-in-raipur',
+  'container-office-in-nashik',
+  'container-office-in-panipat',
+  'container-office-in-dehradun',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
@@ -238,6 +252,13 @@ const NORTH_CITY_PAGE_SLUGS = new Set([
   'container-office-in-dahej',
   'container-office-in-morbi',
   'container-office-in-mundra',
+  'container-office-in-gwalior',
+  'container-office-in-bhiwadi',
+  'container-office-in-bhopal',
+  'container-office-in-raipur',
+  'container-office-in-nashik',
+  'container-office-in-panipat',
+  'container-office-in-dehradun',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
