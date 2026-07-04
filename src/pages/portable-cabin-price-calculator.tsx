@@ -73,27 +73,27 @@ const FAQ_ITEMS = [
   {
     question: 'What does the SAMAN price calculator show?',
     answer:
-      'It shows an estimated budget range based on product type, size, quantity, selected specification, GST, transport, installation, and optional add-ons. The final quotation is shared after drawing and requirement review.',
+      'It shows an estimated budget range based on product type, size, quantity, selected specification, GST, transport, installation, and optional add-ons. A written quotation is shared after drawing and requirement review.',
   },
   {
-    question: 'Is the calculator budget the final quotation?',
+    question: 'Is the calculator budget the written quotation?',
     answer:
-      'No. The calculator shows only a budget range. Final quotation depends on approved drawing, site location, material specification, transport, installation scope, GST treatment, and current market rates.',
+      'No. The calculator shows only a budget range. A written quotation depends on approved drawing, site location, material specification, transport, installation scope, GST treatment, and current market rates.',
   },
   {
     question: 'Why do I need to enter my mobile number before seeing the estimate?',
     answer:
-      'SAMAN collects basic contact details so our team can understand your requirement, share the correct zone contact, and help with final quotation support.',
+      'SAMAN collects basic contact details so our team can understand your requirement, share the correct zone contact, and help with written quotation support.',
   },
   {
     question: 'Can I add furniture, toilet, pantry, or partition requirements?',
     answer:
-      'Yes. You can select optional add-ons and quantity, such as workstation, chairs, attached toilet, pantry, urinal, washbasin, partition, cabinet, rack, or table. These items are reviewed before final quotation.',
+      'Yes. You can select optional add-ons and quantity, such as workstation, chairs, attached toilet, pantry, urinal, washbasin, partition, cabinet, rack, or table. These items are reviewed before quotation approval.',
   },
   {
     question: 'Can the calculator estimate PUF, Rockwool, and PIR panels?',
     answer:
-      'Yes. Panel products are calculated by square meter area, selected panel type, thickness, and quantity. Final panel pricing may change based on coating, profile, order quantity, delivery location, and accessories.',
+      'Yes. Panel products are calculated by square meter area, selected panel type, thickness, and quantity. Panel budget range may change based on coating, profile, order quantity, delivery location, and accessories.',
   },
 ];
 
@@ -334,12 +334,12 @@ const ProductCalculatorPage = () => {
 
     if (estimate.mode === 'custom') {
       setMode('custom');
-      setStatusMessage('Custom quotation required. Contact SAMAN for Final Quotation.');
+      setStatusMessage('Custom quotation required. Contact SAMAN for a written quotation.');
       return;
     }
 
     setMode('ready');
-    setStatusMessage('Estimated budget range is shown below. Contact SAMAN for Final Quotation.');
+    setStatusMessage('Estimated budget range is shown below. Contact SAMAN for a written quotation.');
   };
 
   const handlePrint = () => {
@@ -438,7 +438,7 @@ const ProductCalculatorPage = () => {
                 Get an estimated budget range for cabins, container offices, labor colonies, prefab structures, and panel products.
               </p>
               <p className="mt-2 text-xs text-muted-foreground">
-                Budget output is shown as low, typical and high range only. Final quotation will be shared after drawing and specification review.
+                Budget output is shown as low, typical and high range only. A written quotation will be shared after drawing and specification review.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {TRUST_BADGES.map((badge) => (
@@ -672,7 +672,7 @@ const ProductCalculatorPage = () => {
                         />,
                       )}
                       <p className="text-xs text-muted-foreground">
-                        Civil work is not included in SAMAN scope unless clearly mentioned in the final quotation.
+                        Civil work is not included in SAMAN scope unless clearly included in the written quotation.
                       </p>
                     </>
                   ) : (
@@ -767,7 +767,7 @@ const ProductCalculatorPage = () => {
                   <div className="space-y-4 rounded-md border border-emerald-200 bg-emerald-50/40 p-3">
                     <h2 className="text-lg font-semibold text-foreground">Optional Add-ons</h2>
                     <p className="text-xs text-muted-foreground">
-                      Select quantity if required. Add-ons are estimated separately and reviewed by SAMAN before final quotation.
+                      Select quantity if required. Add-ons are estimated separately and reviewed by SAMAN before quotation approval.
                     </p>
 
                     <fieldset className="space-y-3">
@@ -820,7 +820,7 @@ const ProductCalculatorPage = () => {
 
                     {isSpecial && (
                       <p className="text-xs text-muted-foreground">
-                        Civil scope note: Civil work is not included in SAMAN scope unless clearly mentioned in the final quotation.
+                        Civil scope note: Civil work is not included in SAMAN scope unless clearly included in the written quotation.
                       </p>
                     )}
                   </div>
@@ -988,7 +988,7 @@ const ProductCalculatorPage = () => {
                     </section>
 
                     <p className="text-sm text-foreground">
-                      Contact SAMAN for Final Quotation. Final quotation will be shared after drawing and specification review.
+                      Contact SAMAN for a written quotation. A written quotation will be shared after drawing and specification review.
                     </p>
 
                     {currentZoneContact && (
@@ -1008,7 +1008,7 @@ const ProductCalculatorPage = () => {
                         href="/contact"
                         className="block w-full rounded-full border border-emerald-700 bg-white px-3 py-2 text-center font-semibold text-emerald-800 hover:bg-emerald-50"
                       >
-                        Contact SAMAN for Final Quotation
+                        Contact SAMAN for a Written Quotation
                       </Link>
                       <button
                         type="button"
@@ -1044,12 +1044,12 @@ const ProductCalculatorPage = () => {
                         <p className="text-sm text-muted-foreground">No optional add-ons selected.</p>
                       )}
                     </section>
-                    <p className="text-muted-foreground">Contact SAMAN for Final Quotation.</p>
+                    <p className="text-muted-foreground">Contact SAMAN for a written quotation.</p>
                   </div>
                 )}
 
                 <p className="mt-4 text-xs text-muted-foreground">
-                  This estimate is shown as budget range only. Final quotation depends on approved drawing, site location,
+                  This estimate is shown as budget range only. Written quotation depends on approved drawing, site location,
                   material specification, transport, installation scope, GST treatment, and current market rates.
                 </p>
               </section>

@@ -129,7 +129,7 @@ const getProductRows = (
       `<tr><td>Panel / Sheet</td><td>${escapeHtml(form.specialPanelSheet || '')}</td><td>-</td></tr>`,
       `<tr><td>Building Floor</td><td>${escapeHtml(form.specialFloorStructure || '')}</td><td>-</td></tr>`,
       `<tr><td>Number of Rooms</td><td>${escapeHtml(form.numberOfRooms || '')}</td><td>-</td></tr>`,
-      `<tr><td>Civil Scope Note</td><td>Civil work is not included in SAMAN scope unless clearly mentioned in final quotation</td><td>-</td></tr>`,
+      `<tr><td>Civil Scope Note</td><td>Civil work is not included in SAMAN scope unless clearly included in the written quotation</td><td>-</td></tr>`,
     );
   } else {
     rows.push(
@@ -195,7 +195,7 @@ const renderEstimateSection = (estimate: EstimateWithBreakdown): string => {
           <td>${formatCurrency(estimate.lowRange)} / ${formatCurrency(estimate.typicalRange)} / ${formatCurrency(estimate.highRange)}</td>
         </tr>
       </table>
-      <p class="tiny">Estimated Budget Range - Contact SAMAN for Final Quotation.</p>
+      <p class="tiny">Estimated Budget Range - Contact SAMAN for a Written Quotation.</p>
     </section>
   `;
 };
@@ -225,7 +225,7 @@ const renderOptionalAddons = (estimate: EstimateWithBreakdown): string => {
           })
           .join('')}
       </table>
-      <p class="tiny">Optional add-ons are subject to final specification, drawing, and quotation approval.</p>
+      <p class="tiny">Optional add-ons are subject to approved specification, drawing, and quotation approval.</p>
     </section>
   `;
 };
@@ -355,7 +355,7 @@ const renderBody = (payload: PriceCalculatorPrintPayload & { referenceToken: str
   <section class="section">
     <h2 class="section-title">Disclaimer</h2>
     <p class="disclaimer">
-      This estimate is based on selected size and specification options. Final price depends on approved drawing,
+      This estimate is based on selected size and specification options. Commercial offer depends on approved drawing,
       material specification, site location, transport, installation scope, GST treatment, and current market rates.
     </p>
   </section>

@@ -128,7 +128,7 @@ const OPTIONAL_ADDONS = [...ATTACHED_SCOPE_ADDONS, ...FURNITURE_INTERIOR_ADDONS]
 export const OPTIONAL_ADDON_LIST = [...OPTIONAL_ADDONS];
 
 export const PANEL_PRODUCT_ADDON_NOTE =
-  "Panel accessories, trims, fasteners, and related items can be discussed with SAMAN during final quotation.";
+  "Panel accessories, trims, fasteners, and related items can be discussed with SAMAN during quotation review.";
 
 export const MAX_ADDON_QUANTITY = 20;
 
