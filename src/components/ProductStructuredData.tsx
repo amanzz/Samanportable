@@ -15,7 +15,11 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
-  const productUrl = `${baseUrl}/product/${category || product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`;
+  const categorySlug = category || product.categories?.[0]?.slug || 'uncategorized';
+  const productPath = product.slug === categorySlug
+    ? `/product/${categorySlug}`
+    : `/product/${categorySlug}/${product.slug}`;
+  const productUrl = `${baseUrl}${productPath}`;
   const imageUrl = product.images?.[0]?.src || `${baseUrl}/placeholder.svg`;
   const price = parseFloat(product.price) || parseFloat(product.regular_price) || 0;
   const salePrice = product.on_sale && product.sale_price ? parseFloat(product.sale_price) : null;
@@ -44,8 +48,17 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
   // Only REAL WooCommerce attributes become additionalProperty; omit entirely if none
   // (no invented Material/Usage/Customization values).
   const realAdditionalProperty = (product.attributes || [])
-    .filter(a => a && a.name && Array.isArray(a.options) && a.options.length > 0)
-    .map(a => ({ '@type': 'PropertyValue', name: a.name, value: a.options.join(', ') }));
+    .map(a => {
+      const name = typeof a?.name === 'string' ? a.name.trim() : '';
+      const values = Array.isArray(a?.options)
+        ? a.options.map(option => String(option).trim()).filter(Boolean)
+        : [];
+
+      return name && values.length > 0
+        ? { '@type': 'PropertyValue', name, value: values.join(', ') }
+        : null;
+    })
+    .filter((property): property is { '@type': 'PropertyValue'; name: string; value: string } => Boolean(property));
 
   // Review JSON-LD is built ONLY from the real approved reviews passed in (the same
   // ones rendered visibly on the page). Text is stripped to plain text. If no

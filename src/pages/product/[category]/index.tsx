@@ -26,6 +26,8 @@ import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
+const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
+
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
   ssr: true,
@@ -144,6 +146,13 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     if (product.rating_count > 0) {
       reviews = await staticContent.fetchProductReviews(product.id, 5);
     }
+    const sourceAttributes = SAFE_PRODUCT_SLUG.test(category)
+      ? await import(`../../../data/wp-export/products/${category}.json`)
+          .then((mod: { default?: { attributes?: WooCommerceProduct['attributes'] } }) =>
+            Array.isArray(mod.default?.attributes) ? mod.default.attributes : []
+          )
+          .catch(() => [])
+      : [];
 
     // Fetch Rank Math SEO data with fallback
     let rankMathSEO: RankMathSEOData | null = null;
@@ -214,7 +223,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
               slug: (product as any).category_slug || 'uncategorized'
             }
           ],
-          attributes: [],
+          attributes: sourceAttributes,
           stock_quantity: null,
           weight: '',
           dimensions: { length: '', width: '', height: '' },
