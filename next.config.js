@@ -171,6 +171,8 @@ const nextConfig = {
       { source: '/know-what-is-use-of-labour-colony-its-advantages-and-features', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
       { source: '/labour-colony-is-the-ultimate-option-for-entrepreneurs', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
 
+      { source: '/product-tag/second-hand-office-containers-for-sale', destination: 'https://www.samanportable.com/affordable-office-containers-for-sale', statusCode: 301 },
+
       // Root-level product alias fixes from 2026-07-02 crawl 4xx report.
       { source: '/site-office-container', destination: 'https://www.samanportable.com/product/container-offices/site-office-container', statusCode: 301 },
       { source: '/modular-container-office', destination: 'https://www.samanportable.com/product/container-offices/modular-container-office', statusCode: 301 },
