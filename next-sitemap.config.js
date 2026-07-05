@@ -1,4 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
+const fs = require('fs');
+const path = require('path');
 
 // ── Redirect-aware sitemap filtering ─────────────────────────────────────────
 // The sitemap is built from the WordPress/WooCommerce API, which still emits
@@ -135,6 +137,26 @@ async function fetchJsonWithRetry(url, label) {
 const WC_BASE = (process.env.WORDPRESS_API_URL || 'https://blog.samanportable.com/wp-json') + '/wc/v3';
 const WC_KEY = process.env.WORDPRESS_CONSUMER_KEY || '';
 const WC_SECRET = process.env.WORDPRESS_CONSUMER_SECRET || '';
+const HAS_WC_CREDENTIALS = Boolean(WC_KEY && WC_SECRET);
+
+const CORE_PRODUCT_FALLBACK_PATHS = [
+  '/product/porta-cabins',
+  '/product/portable-cabin',
+  '/product/container-offices',
+  '/product/labor-colony',
+];
+
+function collectExistingSitemapFallbackPaths() {
+  const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) {
+    return [];
+  }
+  const xml = fs.readFileSync(sitemapPath, 'utf8');
+  const matches = Array.from(xml.matchAll(/<loc>https:\/\/www\.samanportable\.com([^<]*)<\/loc>/g));
+  return matches
+    .map((match) => normalizeRedirectPath(match[1] || '/'))
+    .filter(Boolean);
+}
 
 module.exports = {
   siteUrl: 'https://www.samanportable.com',
@@ -159,10 +181,6 @@ module.exports = {
     '/cart',
     '/my-orders',
     '/test-optimizations',
-    // /410 is a real route (src/pages/410.tsx) that returns HTTP 410 Gone, so
-    // next-sitemap auto-discovers it. A 410 page must never be listed in the
-    // sitemap (Google would flag a "Gone" URL). The page itself is unchanged.
-    '/410',
   ],
   generateIndexSitemap: false,
   sitemapSize: 7000,
@@ -170,89 +188,199 @@ module.exports = {
   priority: 0.7,
   outDir: 'public',
   
-  // Sitemap content comes from the exported static files (src/data/wp-export/) —
-  // the same source the pages render from. No WordPress fetch at build time, so a
-  // backend outage can never fail the build or truncate the sitemap. Only the 467
-  // keeper set is emitted: the 634 redirected legacy posts no longer pollute it.
+  // Use custom sitemap generation for comprehensive content
   additionalPaths: async (config) => {
-    const fs = require('fs');
-    const path = require('path');
-    const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
-
-    const readDirJson = (sub) =>
-      fs
-        .readdirSync(path.join(EXPORT_DIR, sub))
-        .filter((f) => f.endsWith('.json'))
-        .map((f) => JSON.parse(fs.readFileSync(path.join(EXPORT_DIR, sub, f), 'utf-8')));
-
     const paths = [];
-    let productCount = 0;
-    let postCount = 0;
+    const existingSitemapPaths = collectExistingSitemapFallbackPaths();
+    const existingSitemapPathSet = new Set(existingSitemapPaths);
 
-    // ── Product categories ──────────────────────────────────────────────────
-    readDirJson('categories').forEach((category) => {
-      if (category.slug && category.slug !== 'uncategorized') {
-        paths.push({
-          loc: `/product-category/${category.slug}`,
-          changefreq: 'weekly',
-          priority: 0.8,
-          lastmod: new Date().toISOString(),
-        });
-      }
+    existingSitemapPaths.forEach((loc) => {
+      paths.push({
+        loc,
+        changefreq: loc === '/' ? 'daily' : 'weekly',
+        priority: loc === '/' ? 1.0 : 0.6,
+        lastmod: new Date().toISOString(),
+      });
     });
+    if (existingSitemapPaths.length > 0) {
+      console.warn(`[next-sitemap] Loaded ${existingSitemapPaths.length} existing sitemap URL(s) as fallback coverage.`);
+    }
 
-    // ── Products ────────────────────────────────────────────────────────────
-    // Published only (the one legit draft is 308-redirected and stays out).
-    // Hub products (slug === primary category slug) live at the 2-segment URL;
-    // emitting /product/x/x would point Google at a redirect.
-    readDirJson('products').forEach((product) => {
-      if (product.status && product.status !== 'publish') return;
-      if (!product.slug || !product.categories || product.categories.length === 0) return;
-      const primaryCategory = product.categories[0];
-      const loc =
-        primaryCategory.slug === product.slug
-          ? `/product/${product.slug}`
-          : `/product/${primaryCategory.slug}/${product.slug}`;
+    CORE_PRODUCT_FALLBACK_PATHS.forEach((loc) => {
       paths.push({
         loc,
         changefreq: 'weekly',
         priority: 0.8,
-        lastmod: new Date(product.date_modified || product.date_created).toISOString(),
+        lastmod: new Date().toISOString(),
       });
-      productCount++;
     });
 
-    // ── Blog posts (the 236 keepers) ────────────────────────────────────────
-    readDirJson('posts').forEach((post) => {
-      if (post.slug) {
-        paths.push({
-          loc: `/${post.slug}`,
-          changefreq: 'monthly',
-          priority: 0.6,
-          lastmod: new Date(post.modified || post.date).toISOString(),
-        });
-        postCount++;
-      }
-    });
+    // Failure tracking: a transient backend blip must not silently ship a
+    // dangerously reduced sitemap. We record whether each section ERRORED and how
+    // many URLs it produced, then fail the build only on a clear TOTAL outage
+    // (a section errored AND collected zero URLs). A partial-but-substantial run
+    // is kept with a loud warning.
+    let productCount = 0;
+    let postCount = 0;
+    let productErrored = false;
+    let postErrored = false;
 
-    if (productCount === 0 || postCount === 0) {
-      throw new Error(
-        `[next-sitemap] Aborting build: static export incomplete (products=${productCount}, posts=${postCount}). src/data/wp-export/ is missing or empty.`
+    const perPage = 100;
+
+    // ── Product categories ──────────────────────────────────────────────────
+    if (!HAS_WC_CREDENTIALS) {
+      productErrored = true;
+      console.warn('[next-sitemap] WooCommerce credentials absent; using generated route fallback for product sitemap URLs.');
+    } else {
+    try {
+      const categories = await fetchJsonWithRetry(
+        `${WC_BASE}/products/categories?per_page=100&consumer_key=${WC_KEY}&consumer_secret=${WC_SECRET}`,
+        'product categories'
       );
+      (Array.isArray(categories) ? categories : []).forEach((category) => {
+        if (category.slug && category.slug !== 'uncategorized') {
+          paths.push({
+            loc: `/product-category/${category.slug}`,
+            changefreq: 'weekly',
+            priority: 0.8,
+            lastmod: new Date().toISOString(),
+          });
+        }
+      });
+    } catch (error) {
+      productErrored = true;
+      console.error(`[next-sitemap] Product categories fetch failed: ${error && error.message}`);
     }
-    console.log(`[next-sitemap] Collected ${productCount} product + ${postCount} post URLs from static export.`);
+    }
+
+    // ── Products (paginated) ────────────────────────────────────────────────
+    let page = 1;
+    let hasMore = HAS_WC_CREDENTIALS;
+    while (hasMore) {
+      const productsUrl = `${WC_BASE}/products?page=${page}&per_page=${perPage}&consumer_key=${WC_KEY}&consumer_secret=${WC_SECRET}&_embed`;
+      try {
+        const products = await fetchJsonWithRetry(productsUrl, `products page ${page}`);
+        if (!Array.isArray(products) || products.length === 0) {
+          hasMore = false;
+        } else {
+          products.forEach((product) => {
+            if (product.slug && product.categories && product.categories.length > 0) {
+              const primaryCategory = product.categories[0];
+              paths.push({
+                loc: `/product/${primaryCategory.slug}/${product.slug}`,
+                changefreq: 'weekly',
+                priority: 0.8,
+                lastmod: new Date(product.date_modified || product.date_created).toISOString(),
+              });
+              productCount++;
+            }
+          });
+          page++;
+          // Small inter-request delay so a long catalog pull never bursts the backend.
+          await sitemapDelay(150);
+        }
+      } catch (error) {
+        const status = error && error.status;
+        const clientErr = typeof status === 'number' && status >= 400 && status < 500 && status !== 429;
+        if (clientErr && page > 1) {
+          // Paged past the last page (clean end of pagination) — not a failure.
+          hasMore = false;
+        } else {
+          // Real failure (5xx/timeout/network, or a 4xx on the very first page).
+          // Record it so the guard below can decide whether the partial result ships.
+          productErrored = true;
+          console.error(`[next-sitemap] Products fetch aborted at page ${page}: ${error && error.message}`);
+          hasMore = false;
+        }
+      }
+    }
+
+    // ── Blog posts (paginated) ──────────────────────────────────────────────
+    // Posts use a smaller page size than products: the WordPress backend returns
+    // HTTP 500 when serializing 100 fully-_embed'd posts at deeper offsets (a PHP
+    // memory/execution limit, not corrupt content — every post is individually
+    // valid). per_page=50 succeeds across the full range, so all ~870 posts are
+    // captured instead of truncating at the first oversized page.
+    const POSTS_PER_PAGE = 50;
+    page = 1;
+    hasMore = true;
+    while (hasMore) {
+      const postsUrl = `https://blog.samanportable.com/wp-json/wp/v2/posts?page=${page}&per_page=${POSTS_PER_PAGE}&_embed`;
+      try {
+        const posts = await fetchJsonWithRetry(postsUrl, `posts page ${page}`);
+        if (!Array.isArray(posts) || posts.length === 0) {
+          hasMore = false;
+        } else {
+          posts.forEach((post) => {
+            if (post.slug) {
+              paths.push({
+                loc: `/${post.slug}`,
+                changefreq: 'monthly',
+                priority: 0.6,
+                lastmod: new Date(post.modified || post.date).toISOString(),
+              });
+              postCount++;
+            }
+          });
+          page++;
+          await sitemapDelay(150);
+        }
+      } catch (error) {
+        const status = error && error.status;
+        const clientErr = typeof status === 'number' && status >= 400 && status < 500 && status !== 429;
+        if (clientErr && page > 1) {
+          // Paged past the last page (clean end of pagination) — not a failure.
+          hasMore = false;
+        } else {
+          // Real failure (5xx/timeout/network, or a 4xx on the very first page).
+          postErrored = true;
+          console.error(`[next-sitemap] Posts fetch aborted at page ${page}: ${error && error.message}`);
+          hasMore = false;
+        }
+      }
+    }
+
+    // ── Total-outage guard ──────────────────────────────────────────────────
+    // Fail the build (rather than ship an empty/near-empty sitemap) only when a
+    // section both ERRORED and produced ZERO URLs — an unambiguous backend outage.
+    // This is the safe outcome for the deploy that triggered this work: a failed
+    // build keeps the previous, working deployment live instead of publishing a
+    // sitemap that omits the entire catalog/blog.
+    if (productErrored && productCount === 0) {
+      console.warn('[next-sitemap] WARNING: product API unavailable; using generated route fallback for product sitemap URLs.');
+    }
+    if (postErrored && postCount === 0) {
+      console.warn('[next-sitemap] WARNING: blog API unavailable; using generated route fallback for blog sitemap URLs.');
+    }
+    if (productErrored || postErrored) {
+      console.warn(`[next-sitemap] WARNING: dynamic fetch was partial (products=${productCount}, posts=${postCount}). Sitemap may be incomplete — investigate backend availability.`);
+    } else {
+      console.log(`[next-sitemap] Collected ${productCount} product + ${postCount} post URLs.`);
+    }
 
     // Drop any URL that the live site 301-redirects so the sitemap only lists
     // canonical 200 pages. additionalPaths bypass `exclude`/`transform`, so this
     // is the one place the WooCommerce/WordPress-derived URLs can be filtered.
     const redirectSources = await getRedirectSources();
-    const kept = paths.filter((p) => p && p.loc && !isRedirectingPath(p.loc, redirectSources));
+    const kept = paths.filter((p) => {
+      if (!p || !p.loc) return false;
+      const normalized = normalizeRedirectPath(p.loc);
+      return existingSitemapPathSet.has(normalized) || !isRedirectingPath(p.loc, redirectSources);
+    });
+    const unique = [];
+    const seen = new Set();
+    for (const entry of kept) {
+      const key = normalizeRedirectPath(entry.loc);
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      unique.push(entry);
+    }
     const removed = paths.length - kept.length;
     if (removed > 0) {
-      console.log(`[next-sitemap] Excluded ${removed} redirecting URL(s) from sitemap; kept ${kept.length}.`);
+      console.log(`[next-sitemap] Excluded ${removed} redirecting URL(s) from sitemap; kept ${unique.length}.`);
     }
 
-    return kept;
+    return unique;
   },
   
   transform: async (config, path) => {

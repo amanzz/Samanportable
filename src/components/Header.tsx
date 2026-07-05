@@ -4,15 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Phone, Mail, ChevronDown, Building2, Container, User, LogOut, Package, ShoppingCart } from 'lucide-react';
-import { useEnquiryDialog } from '@/hooks/useEnquiryDialog';
+import { Menu, X, ChevronDown, Building2, Container, User, LogOut, Package } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
-import { useCart } from '@/contexts/CartContext';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
-import QuoteFormTrigger from './QuoteFormTrigger';
 import { cn } from '@/lib/utils';
 
-const EnquiryDialog = dynamic(() => import('./EnquiryDialog'), { ssr: false });
 const LoginModal = dynamic(() => import('@/components/LoginModal'), { ssr: false });
 
 // Optimized navigation link with prefetching
@@ -45,10 +41,7 @@ const NavLink = ({ href, children, className, ...props }: any) => {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const enquiryDialog = useEnquiryDialog();
   const { user, logout } = useAuth();
-  const { state: cartState } = useCart();
-  const { itemCount } = cartState;
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -217,6 +210,13 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:flex items-center space-x-4 flex-shrink-0">
+              <Link
+                href="/portable-cabin-price-calculator"
+                className="inline-flex items-center rounded-full bg-teal-700 text-white px-4 py-2 text-sm font-semibold shadow-sm transition-colors hover:bg-teal-800"
+                aria-label="Customize requirements and calculate price"
+              >
+                Customize &amp; Price
+              </Link>
               {user ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -258,17 +258,19 @@ const Header = () => {
                 </div>
               )}
               
-              {/* Cart icon removed — enquiry-only business (cart path disabled, Phase 2) */}
-              <QuoteFormTrigger variant="default" size="lg">
-                Get Quote
-              </QuoteFormTrigger>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden flex items-center gap-4">
-              {/* Cart icon removed — enquiry-only business (cart path disabled, Phase 2) */}
+            <div className="lg:hidden flex items-center gap-3">
+              <Link
+                href="/portable-cabin-price-calculator"
+                className="inline-flex items-center rounded-full bg-teal-700 text-white px-3 py-1.5 text-sm font-semibold whitespace-nowrap shadow-sm hover:bg-teal-800 transition-colors"
+                aria-label="Price calculator"
+              >
+                Price Calc
+              </Link>
               <button
-                className="p-2"
+                className="p-2 rounded-full bg-gray-50 border border-border"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label={isMenuOpen ? "Close mobile menu" : "Open mobile menu"}
               >
@@ -318,11 +320,6 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
-                      {item.name === 'Cart' && itemCount > 0 && (
-                        <span className="ml-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
-                          {itemCount}
-                        </span>
-                      )}
                     </NavLink>
                   ))}
 
@@ -427,9 +424,6 @@ const Header = () => {
                         Login
                       </Button>
                     )}
-                    <Button variant="default" size="sm" className="w-full mt-3" onClick={() => { enquiryDialog.openDialog(); setIsMenuOpen(false); }}>
-                      Get Quote
-                    </Button>
                   </div>
                 </nav>
               </div>
@@ -437,7 +431,6 @@ const Header = () => {
           </div>
         )}
       </header>
-      <EnquiryDialog isOpen={enquiryDialog.isOpen} onClose={enquiryDialog.closeDialog} />
       <LoginModal
         isOpen={showLoginModal}
         onClose={() => setShowLoginModal(false)}
