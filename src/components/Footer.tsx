@@ -61,6 +61,7 @@ const PRODUCT_CATEGORIES = [
   { label: "Pre-Engineered Building", href: "/product/pre-engineered-buildings" },
   { label: "Prefab Building", href: "/product/prefab-buildings" },
   { label: "Prefabricated House", href: "/product/prefabricated-houses" },
+  { label: "PUF Panel", href: "/product/puf-panel" },
 ];
 
 const Footer = () => {

@@ -1,0 +1,27 @@
+{
+  "id": 990001,
+  "name": "PUF Panel",
+  "slug": "puf-panel",
+  "date_created": "2026-07-06T00:00:00",
+  "status": "publish",
+  "description": "<p>PUF Panel — factory-made insulated sandwich panels by SAMAN, manufactured in Bangalore and Greater Noida. 30–200 mm thickness, PPGI/PPGL/BGL/stainless/aluminium facings, roof and wall profiles.</p>",
+  "short_description": "<p>Factory-made PUF panel, 30–200 mm, PPGI/PPGL/BGL/SS/Aluminium facings. HSN 940690. From ₹1,000/m² base spec, ex-GST.</p>",
+  "sku": "SP-C15-HUB-2026",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990101, "name": "PUF Panels", "slug": "puf-panel" }
+  ],
+  "images": [
+    { "id": 1, "src": "/images/puf-panel/hub-factory-stack-50mm-1200x675.webp", "name": "PUF Panel", "alt": "PUF panel factory stack", "srcset": "", "sizes": "", "thumbnail": "/images/puf-panel/hub-factory-stack-50mm-1200x675.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}

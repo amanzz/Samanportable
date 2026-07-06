@@ -1128,12 +1128,13 @@ export async function fetchProductsByCategoryPriority(
     // Define category priority order
     const categoryPriority = [
       'portable-cabin',
-      'container-offices', 
+      'container-offices',
       'porta-cabins',
       'labor-colony',
       'portable-office',
       'container-cafe',
-      'industrial-sheds'
+      'industrial-sheds',
+      'puf-panel'
     ];
 
     let allProducts: any[] = [];
