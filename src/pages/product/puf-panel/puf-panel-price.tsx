@@ -471,8 +471,8 @@ export default function PufPanelPrice() {
             <div className="order-1 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <ProductInfoBox
                 h1="PUF Panel Price 2026 — Rate per Sq Ft and Sq Mt by Thickness"
-                priceMain="₹1,050 / m²"
-                priceSubline="30 mm base panel · full thickness-wise rate table below"
+                priceMain="From ₹1,050 / sq mt"
+                priceSubline="30mm base spec · ex-GST · final price at quotation"
                 shortDescription={SHORT_DESCRIPTION}
                 application="Cabin walls, roofs, cold rooms"
                 sku="SP-C15-PRC-2026"

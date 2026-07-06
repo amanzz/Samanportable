@@ -514,8 +514,8 @@ export default function PufPanelHub() {
             <div className="order-1 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <ProductInfoBox
                 h1="PUF Panel — Factory-Made Insulated Panels by SAMAN"
-                priceMain="₹1,050 / m²"
-                priceSubline="30 mm base panel · PPGI-faced PUF core 40 ± 2 kg/m³ · ex-GST"
+                priceMain="From ₹1,050 / sq mt"
+                priceSubline="30mm base spec · ex-GST · final price at quotation"
                 shortDescription={INTRO_TEXT}
                 application="Site offices, cold rooms, industrial sheds"
                 sku="SP-C15-HUB-2026"
