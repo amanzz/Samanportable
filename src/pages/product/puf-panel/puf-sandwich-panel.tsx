@@ -336,8 +336,8 @@ export default function PufSandwichPanel() {
             <div className="order-1 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <ProductInfoBox
                 h1="PUF Sandwich Panel — PUF Sheets Manufactured for Wall, Roof and Cold Rooms"
-                priceMain="₹1,050 / m²"
-                priceSubline="30 mm base panel · PPGI-faced PUF core 40 ± 2 kg/m³ · ex-GST"
+                priceMain="From ₹1,050 / sq mt"
+                priceSubline="30mm base spec · ex-GST · final price at quotation"
                 shortDescription={SHORT_DESCRIPTION}
                 application="Walls, roofs, cabins, cold rooms"
                 sku="SP-C15-SND-2026"
