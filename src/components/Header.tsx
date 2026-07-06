@@ -103,6 +103,7 @@ const Header = () => {
     { name: 'Pre-Engineered Building', href: '/product/pre-engineered-buildings' },
     { name: 'Prefab Building', href: '/product/prefab-buildings' },
     { name: 'Prefabricated House', href: '/product/prefabricated-houses' },
+    { name: 'PUF Panels', href: '/product/puf-panel' },
   ];
 
   return (

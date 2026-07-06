@@ -32,6 +32,7 @@ const CategoryMenu = () => {
     { name: 'Pre-Engineered Building', slug: 'pre-engineered-buildings', href: '/product/pre-engineered-buildings' },
     { name: 'Prefab Building', slug: 'prefab-buildings', href: '/product/prefab-buildings' },
     { name: 'Prefabricated House', slug: 'prefabricated-houses', href: '/product/prefabricated-houses' },
+    { name: 'PUF Panels', slug: 'puf-panel', href: '/product/puf-panel' },
   ];
 
   useEffect(() => {

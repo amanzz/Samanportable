@@ -1,0 +1,27 @@
+{
+  "id": 990004,
+  "name": "PUF Sandwich Panel",
+  "slug": "puf-sandwich-panel",
+  "date_created": "2026-07-06T00:00:00",
+  "status": "publish",
+  "description": "<p>PUF Sandwich Panel — the three-layer insulated PUF sheet, also called puff panel or insulated sheet, by SAMAN, manufactured in Bangalore and Greater Noida.</p>",
+  "short_description": "<p>Three-layer PUF sandwich panel / PUF sheet for wall, roof and cold rooms. 30–200 mm. HSN 940690.</p>",
+  "sku": "SP-C15-SND-2026",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990101, "name": "PUF Panels", "slug": "puf-panel" }
+  ],
+  "images": [
+    { "id": 4, "src": "/images/puf-panel/cutaway-detail-30mm-1200x675.webp", "name": "PUF Sandwich Panel", "alt": "30 mm panel cutaway detail", "srcset": "", "sizes": "", "thumbnail": "/images/puf-panel/cutaway-detail-30mm-1200x675.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}
