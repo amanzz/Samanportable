@@ -1,0 +1,27 @@
+{
+  "id": 990003,
+  "name": "PUF Panel Roofing",
+  "slug": "puf-panel-roofing",
+  "date_created": "2026-07-06T00:00:00",
+  "status": "publish",
+  "description": "<p>PUF Panel Roofing — insulated roof sheets in trapezoidal and ribbed profiles, 30–200 mm, by SAMAN, manufactured in Bangalore and Greater Noida.</p>",
+  "short_description": "<p>Insulated PUF roof panels, trapezoidal/ribbed profiles, 1000 mm effective width. HSN 940690.</p>",
+  "sku": "SP-C15-ROF-2026",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990101, "name": "PUF Panels", "slug": "puf-panel" }
+  ],
+  "images": [
+    { "id": 3, "src": "/images/puf-panel/roofing-installed-shed-40mm-1200x675.webp", "name": "PUF Panel Roofing", "alt": "PUF roofing panel on a shed roof", "srcset": "", "sizes": "", "thumbnail": "/images/puf-panel/roofing-installed-shed-40mm-1200x675.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}

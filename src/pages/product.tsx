@@ -343,8 +343,9 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
   // Get product image
   const getProductImage = (product: MinimalProduct) => {
     const image = product.image;
-    // Return placeholder if image is invalid or missing
-    if (!image || image === '/placeholder.svg' || !image.startsWith('http')) {
+    // Return placeholder if image is invalid or missing. Accepts absolute
+    // WooCommerce URLs (http...) and local /public-served relative paths (/...).
+    if (!image || image === '/placeholder.svg' || !(image.startsWith('http') || image.startsWith('/'))) {
       return '/placeholder.svg';
     }
     return image;
@@ -548,10 +549,12 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                                   {formatPriceWithCurrency(parseFloat(product.regular_price || product.price))}
                                 </span>
                               </>
-                            ) : (
+                            ) : Number.isFinite(parseFloat(product.price)) && parseFloat(product.price) > 0 ? (
                               <span className="text-lg font-bold text-foreground">
                                 {formatPriceWithCurrency(parseFloat(product.price))}
                               </span>
+                            ) : (
+                              <span className="text-sm font-semibold text-muted-foreground">Contact for pricing</span>
                             )}
                           </div>
                           

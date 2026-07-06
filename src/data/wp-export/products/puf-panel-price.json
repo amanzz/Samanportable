@@ -1,0 +1,27 @@
+{
+  "id": 990002,
+  "name": "PUF Panel Price",
+  "slug": "puf-panel-price",
+  "date_created": "2026-07-06T00:00:00",
+  "status": "publish",
+  "description": "<p>PUF Panel Price 2026 — fixed base rates ₹1,000–₹1,775 per sq mt for 30–80 mm, by SAMAN, manufactured in Bangalore and Greater Noida.</p>",
+  "short_description": "<p>Fixed base-specification PUF panel rates by thickness. Supply-only, ex-GST. HSN 940690.</p>",
+  "sku": "SP-C15-PRC-2026",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990101, "name": "PUF Panels", "slug": "puf-panel" }
+  ],
+  "images": [
+    { "id": 2, "src": "/images/puf-panel/price-stack-40mm-1200x675.webp", "name": "PUF Panel Price", "alt": "PUF panel stock, factory floor", "srcset": "", "sizes": "", "thumbnail": "/images/puf-panel/price-stack-40mm-1200x675.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}
