@@ -14,7 +14,10 @@ export interface RelatedItem {
 // and hardcoded — no live fetchProducts() query needed (that pattern exists in
 // the WooCommerce template for a 150+ product catalog; here it would be
 // over-engineering for a 4-item family).
-export const PUF_CATALOG: Record<'hub' | 'price' | 'roofing' | 'sandwich', RelatedItem> = {
+export const PUF_CATALOG: Record<
+  'hub' | 'price' | 'roofing' | 'sandwich' | 'house' | 'wall' | 'specification' | 'coldStorage',
+  RelatedItem
+> = {
   hub: {
     title: 'PUF Panel',
     href: '/product/puf-panel',
@@ -38,6 +41,30 @@ export const PUF_CATALOG: Record<'hub' | 'price' | 'roofing' | 'sandwich', Relat
     href: '/product/puf-panel/puf-sandwich-panel',
     image: '/images/puf-panel/cutaway-detail-30mm-1200x675.webp',
     blurb: 'The three-layer PUF sheet for wall, roof and cold-room use.',
+  },
+  house: {
+    title: 'PUF Panel House',
+    href: '/product/puf-panel/puf-panel-house',
+    image: '/images/puf-panel/house/puf-panel-house-installation-wall-roof.webp',
+    blurb: 'Factory-made insulated panel house shells for residential and site use.',
+  },
+  wall: {
+    title: 'PUF Wall Panel',
+    href: '/product/puf-panel/puf-wall-panel',
+    image: '/images/puf-panel/wall/40mm-puf-wall-panel-stockyard.webp',
+    blurb: 'Insulated wall, partition and ceiling panels, 30–200 mm.',
+  },
+  specification: {
+    title: 'PUF Panel Specification',
+    href: '/product/puf-panel/puf-panel-specification',
+    image: '/images/puf-panel/spec/50mm-off-white-puf-panel-factory-stack.webp',
+    blurb: 'Owner-verified thickness, size, facing and weight reference.',
+  },
+  coldStorage: {
+    title: 'Cold Storage PUF Panel',
+    href: '/product/puf-panel/cold-storage-puf-panel',
+    image: '/images/puf-panel/cold-storage/100mm-dairy-cold-storage-room-interior.webp',
+    blurb: 'Insulated panels for cold rooms and freezer rooms, freezer-grade to 150 mm.',
   },
 };
 

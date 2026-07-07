@@ -125,16 +125,12 @@ const ProductDetailTabs = ({
           </TabsContent>
 
           <TabsContent value="reviews" forceMount className="m-0 p-4 data-[state=inactive]:hidden sm:p-6 md:p-8">
-            {/* FF-1 (open): these productIds are placeholders with no real WooCommerce
-                product yet, so submission is hidden until the owner team creates the 4
-                real products and maps IDs. Zero-state and approved-review list still work. */}
             <ProductReviews
               reviews={reviews}
               averageRating={averageRating}
               ratingCount={ratingCount}
               productId={productId}
               productName={productName}
-              showSubmissionForm={false}
             />
           </TabsContent>
         </Tabs>
