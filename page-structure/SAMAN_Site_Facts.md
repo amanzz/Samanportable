@@ -8,7 +8,7 @@
   - Send Enquiry form
 - Real policy facts (in live schema — content must MATCH these exactly):
   - Returns: 7-day window, customer-paid return transport, full refund
-  - Delivery: ₹3,000 default shipping
+  - Delivery (CORRECTED 2026-07-08): ₹3,000 is WRONG — legacy error, scrub on sight. Real cabin freight: ₹10,000 per trip (20-ft open trailer) / ₹20,000 (40-ft open trailer) within Bengaluru; outstation = route-based lump sums verified by transport partner (route/corridor/return-vehicle dependent — never quote per-km). Transit 3–5 days after dispatch; order-to-installation 7–21 working days.
   - Transit: 3–5 days
 - Reviews: real customer reviews pulled from WordPress approval queue (56+ approved). Never invent reviews.
 
