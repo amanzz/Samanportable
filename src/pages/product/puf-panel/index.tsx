@@ -391,6 +391,24 @@ function DescriptionContent() {
             alt="40 mm PUF panel bundle wrapped and ready for transport from the factory"
             title="40 mm PUF panel, transport-ready bundle"
           />
+          <P>
+            Beyond the roofing and sandwich ranges above, we also supply{' '}
+            <Link href="/product/puf-panel/puf-panel-house" className="font-semibold text-primary hover:underline">
+              PUF panel houses and residential units
+            </Link>
+            , <Link href="/product/puf-panel/puf-wall-panel" className="font-semibold text-primary hover:underline">
+              wall and partition PUF panels
+            </Link>
+            , the full{' '}
+            <Link href="/product/puf-panel/puf-panel-specification" className="font-semibold text-primary hover:underline">
+              technical specification of our PUF panels
+            </Link>
+            , and{' '}
+            <Link href="/product/puf-panel/cold-storage-puf-panel" className="font-semibold text-primary hover:underline">
+              PUF panels for cold rooms and freezer rooms
+            </Link>
+            .
+          </P>
         </section>
 
         <section id="faq" className="space-y-4">
