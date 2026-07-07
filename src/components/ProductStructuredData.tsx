@@ -135,6 +135,13 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
     }
   } : undefined;
 
+  // When the product states real, distance-based freight on-page (shippingHtml),
+  // omit the flat ₹3,000 Merchant-Center shippingDetails so the schema does not
+  // contradict the page. All other products keep the default shippingDetails.
+  if (offerStructuredData && (product as any).shippingHtml) {
+    delete (offerStructuredData as any).shippingDetails;
+  }
+
   const aggregateRatingStructuredData = product.rating_count > 0 ? {
     '@type': 'AggregateRating',
     ratingValue: product.average_rating,

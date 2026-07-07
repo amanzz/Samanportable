@@ -272,10 +272,17 @@ export async function fetchLightweightProduct(slug: string): Promise<Lightweight
 // Mirrors api.fetchProductDescription.
 export async function fetchProductDescription(
   slug: string
-): Promise<{ description: string; images: Array<{ src: string; alt: string }> } | null> {
+): Promise<{ description: string; images: Array<{ src: string; alt: string }>; specificationsHtml?: string; shippingHtml?: string } | null> {
   const p = findProductBySlug(slug);
   if (!p) return null;
-  return { description: p.description || '', images: p.images || [] };
+  return {
+    description: p.description || '',
+    images: p.images || [],
+    // Optional per-product tab overrides — passed through only when present in the
+    // product JSON. Absent on all other products, so their tabs render unchanged.
+    ...(p.specificationsHtml ? { specificationsHtml: p.specificationsHtml } : {}),
+    ...(p.shippingHtml ? { shippingHtml: p.shippingHtml } : {}),
+  };
 }
 
 // Mirrors api.fetchProductRankMathSEO. Accepts "category/slug" or a bare slug —
