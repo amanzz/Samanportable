@@ -63,10 +63,14 @@ const PRODUCT_JSONLD = {
   additionalProperty: [
     { '@type': 'PropertyValue', name: 'Construction', value: 'Three-layer: steel facing / PUF core / steel facing' },
     { '@type': 'PropertyValue', name: 'Thickness range', value: '30–200 mm' },
-    { '@type': 'PropertyValue', name: 'Core density', value: '40 ± 2 kg/m³' },
-    { '@type': 'PropertyValue', name: 'Service temperature', value: '−40°C to +80°C' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'INR',
+    lowPrice: '1050',
+    url: 'https://www.samanportable.com/product/puf-panel/puf-sandwich-panel',
+  },
 };
 
 const BREADCRUMB_JSONLD = {

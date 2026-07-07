@@ -75,11 +75,14 @@ const PRODUCT_JSONLD = {
   material: 'Polyurethane foam core with steel facing sheets',
   additionalProperty: [
     { '@type': 'PropertyValue', name: 'Thickness range', value: '30–200 mm' },
-    { '@type': 'PropertyValue', name: 'Core density', value: '40 ± 2 kg/m³' },
-    { '@type': 'PropertyValue', name: 'Thermal conductivity', value: '0.022–0.024 W/m·K' },
-    { '@type': 'PropertyValue', name: 'Service temperature', value: '−40°C to +80°C' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'INR',
+    lowPrice: '1050',
+    url: 'https://www.samanportable.com/product/puf-panel',
+  },
 };
 
 const BREADCRUMB_JSONLD = {

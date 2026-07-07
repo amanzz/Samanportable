@@ -66,9 +66,14 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Roof profiles', value: 'Trapezoidal, ribbed' },
     { '@type': 'PropertyValue', name: 'Cover width', value: '1000 mm effective (1070 mm overall)' },
     { '@type': 'PropertyValue', name: 'Thickness range', value: '30–200 mm' },
-    { '@type': 'PropertyValue', name: 'Thermal conductivity', value: '0.022–0.024 W/m·K' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'INR',
+    lowPrice: '1050',
+    url: 'https://www.samanportable.com/product/puf-panel/puf-panel-roofing',
+  },
 };
 
 const BREADCRUMB_JSONLD = {
