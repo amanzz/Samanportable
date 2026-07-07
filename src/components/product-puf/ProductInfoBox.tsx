@@ -11,6 +11,7 @@ interface ProductInfoBoxProps {
   sku: string;
   averageRating?: string;
   ratingCount?: number;
+  materialOverride?: string;
 }
 
 function Stars({ rating }: { rating: number }) {
@@ -39,10 +40,11 @@ const ProductInfoBox = ({
   sku,
   averageRating,
   ratingCount = 0,
+  materialOverride,
 }: ProductInfoBoxProps) => {
   const specSnapshot = [
     { icon: Ruler, label: 'Size', value: 'Thickness 30–200 mm' },
-    { icon: Layers, label: 'Material', value: 'PPGI-faced PUF core, 40 ± 2 kg/m³' },
+    { icon: Layers, label: 'Material', value: materialOverride ?? 'PPGI-faced PUF core, 40 ± 2 kg/m³' },
     { icon: Truck, label: 'Delivery', value: '3–5 day dispatch' },
     { icon: MapPin, label: 'Coverage', value: 'Bangalore · Delhi NCR' },
     { icon: Building2, label: 'Brand', value: 'SAMAN Portable' },

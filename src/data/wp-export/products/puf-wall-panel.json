@@ -1,0 +1,27 @@
+{
+  "id": 990006,
+  "name": "PUF Wall Panel",
+  "slug": "puf-wall-panel",
+  "date_created": "2026-07-07T00:00:00",
+  "status": "publish",
+  "description": "<p>PUF Wall Panel — factory-made insulated wall, partition and ceiling panels by SAMAN, manufactured in Bangalore and Greater Noida. 30–200 mm thickness, plain/baby-rib/micro-rib profiles, PPGI/PPGL/BGL/stainless/aluminium/craft paper facings.</p>",
+  "short_description": "<p>Factory-made PUF wall panel, 30–200 mm, plain/baby-rib/micro-rib profiles. HSN 940690. From ₹1,050/sq mt base spec, ex-GST.</p>",
+  "sku": "SP-C15-WAL-2026",
+  "price": "1050",
+  "regular_price": "1050",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990101, "name": "PUF Panels", "slug": "puf-panel" }
+  ],
+  "images": [
+    { "id": 1, "src": "/images/puf-panel/wall/40mm-puf-wall-panel-stockyard.webp", "name": "PUF Wall Panel", "alt": "40 mm PUF wall panel stock in stockyard storage", "srcset": "", "sizes": "", "thumbnail": "/images/puf-panel/wall/40mm-puf-wall-panel-stockyard.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}
