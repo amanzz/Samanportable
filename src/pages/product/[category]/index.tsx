@@ -209,6 +209,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         product: {
           ...product,
           description: descriptionData?.description || '',
+          // Optional per-product tab overrides (additive; empty for all other products).
+          specificationsHtml: descriptionData?.specificationsHtml || '',
+          shippingHtml: descriptionData?.shippingHtml || '',
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
             src: img.src,
@@ -785,6 +788,8 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               <div className="mt-4">
                 <ProductTabs
                   description={product.description || ''}
+                  specificationsHtml={(product as any).specificationsHtml || ''}
+                  shippingHtml={(product as any).shippingHtml || ''}
                   productTitle={transformedProduct.title}
                   reviews={reviews}
                   averageRating={product.average_rating}
