@@ -91,6 +91,21 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Facings', value: 'PPGI / PPGL / Stainless Steel / Aluminium' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
+  offers: {
+    '@type': 'AggregateOffer',
+    lowPrice: 1410,
+    highPrice: 1980,
+    priceCurrency: 'INR',
+    offerCount: 5,
+    availability: 'https://schema.org/InStock',
+    url: 'https://www.samanportable.com/product/pir-panel',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      priceCurrency: 'INR',
+      unitCode: 'MTK',
+      unitText: 'm²',
+    },
+  },
 };
 
 const BREADCRUMB_JSONLD = {
