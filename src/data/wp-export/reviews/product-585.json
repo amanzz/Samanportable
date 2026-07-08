@@ -1,5 +1,205 @@
 [
   {
+    "id": 3183,
+    "date_created": "2026-06-23T12:59:57",
+    "date_created_gmt": "2026-06-23T07:29:57",
+    "product_id": 585,
+    "product_name": "Portable Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-cabin/",
+    "status": "approved",
+    "reviewer": "Sahedh Hussain",
+    "reviewer_email": "sahedhhussain@gmail.com",
+    "review": "<p>Got a portable office cabin for our project site and it's turned out to be a solid call. We needed a proper workspace fast — meetings, paperwork, a couple of workstations — and this sorted it without the months of waiting a built office takes.<br />\nWhat sold me is how usable it actually is inside. Good insulation, so it doesn't turn into a furnace by midday like the older units we rented. The flooring and electrical points were done neatly, and the AC handles the space fine even with four people working.<br />\nDelivery slipped by a day or two from what we were told, but the install crew was quick and clean. For a portable office cabin that needs to handle daily use and move when the site moves, it's done everything we needed. Would recommend it to anyone running a site that needs a real working office, not just a shed.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3183",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/585"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3181,
+    "date_created": "2026-06-22T18:30:33",
+    "date_created_gmt": "2026-06-22T13:00:33",
+    "product_id": 585,
+    "product_name": "Portable Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-cabin/",
+    "status": "approved",
+    "reviewer": "Md Azad",
+    "reviewer_email": "mdazad9663725690@gmail.com",
+    "review": "<p>We ordered a site office cabin from SAMAN Portable for our Greater Noida project and it's held up really well. Delivered on time, solid build, and the insulation actually keeps it cool even in peak summer — unlike the flimsy cabins we'd rented before. The team handled our customisation (extra windows, a partition) without any fuss. Eight months in, no leakage or rust through summer and monsoon. Good value for the price. Would recommend.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3181",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/585"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3179,
+    "date_created": "2026-06-18T19:19:31",
+    "date_created_gmt": "2026-06-18T13:49:31",
+    "product_id": 585,
+    "product_name": "Portable Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-cabin/",
+    "status": "approved",
+    "reviewer": "Nishad Alam",
+    "reviewer_email": "nishad786alam@gmail.com",
+    "review": "<p>I was a little hesitant before placing the order because we had a bad experience with a portable cabin supplier in the past. This time, however, things went much better than expected.</p>\n<p>The cabin was installed at our project location without any major issues. What stood out to me was the usable space inside. From the outside it looked compact, but once furnished, it easily accommodated our supervisor, documents, and a few visitors throughout the day.</p>\n<p>After several months of use, there have been no problems with leakage, door alignment, or wall panels. The cabin still looks presentable and professional when clients visit the site. For anyone who needs a practical office setup without spending months on construction work, a portable cabin is definitely worth considering.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3179",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/585"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3177,
+    "date_created": "2026-06-17T19:27:42",
+    "date_created_gmt": "2026-06-17T13:57:42",
+    "product_id": 585,
+    "product_name": "Portable Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-cabin/",
+    "status": "approved",
+    "reviewer": "Khaja Husen",
+    "reviewer_email": "husenkhaja83@gmail.com",
+    "review": "<p>I was initially unsure about investing in a portable cabin, but it turned out to be a great decision. We are using it as a temporary office, and it feels much more professional than I imagined. The cabin is sturdy, looks modern, and was installed quickly without any hassle. What impressed me most was the efficient use of space inside. The staff were helpful and kept us updated from manufacturing to delivery. Happy with the purchase and would recommend it to others looking for a quick office setup.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3177",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/585"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3173,
+    "date_created": "2026-06-13T19:30:10",
+    "date_created_gmt": "2026-06-13T14:00:10",
+    "product_id": 585,
+    "product_name": "Portable Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-cabin/",
+    "status": "approved",
+    "reviewer": "Shabbir Ahmad",
+    "reviewer_email": "shabbirahmad7060@gmail.com",
+    "review": "<p>We recently purchased a portable cabin and had a very good experience from start to finish. The cabin quality is excellent, with a strong structure, neat finishing, and a well-planned interior. The team was professional, responsive, and completed the work within the promised timeline.</p>\n<p>What impressed us most was the customization support and attention to detail. The cabin was delivered exactly as discussed and is serving our requirements perfectly. We are happy with the overall product quality, pricing, and service. Highly recommended for anyone looking for portable cabins, site offices, container offices, or modular building solutions.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3173",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/585"
+        }
+      ]
+    }
+  },
+  {
     "id": 743,
     "date_created": "2025-04-09T18:36:17",
     "date_created_gmt": "2025-04-09T13:06:17",
