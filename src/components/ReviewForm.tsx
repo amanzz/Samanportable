@@ -4,6 +4,9 @@ import { Star, Loader2, CheckCircle, PenLine } from 'lucide-react';
 
 interface ReviewFormProps {
   productId: number;
+  /** Real WooCommerce product id to submit against, when it differs from the
+   *  display `productId` (merchant-feed g:id). Falls back to `productId`. */
+  reviewProductId?: number;
   productName?: string;
 }
 
@@ -15,7 +18,7 @@ type Status = 'idle' | 'submitting' | 'success' | 'error';
  * (status: 'hold') for admin approval. No WooCommerce keys are ever exposed here.
  * Deterministic markup (no Date/locale) → hydration-safe.
  */
-const ReviewForm = forwardRef<HTMLDivElement, ReviewFormProps>(({ productId, productName }, ref) => {
+const ReviewForm = forwardRef<HTMLDivElement, ReviewFormProps>(({ productId, reviewProductId, productName }, ref) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [name, setName] = useState('');
@@ -38,7 +41,7 @@ const ReviewForm = forwardRef<HTMLDivElement, ReviewFormProps>(({ productId, pro
       const res = await fetch('/api/submit-review', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId, name, email, review, rating, company }),
+        body: JSON.stringify({ productId: reviewProductId ?? productId, name, email, review, rating, company }),
       });
       const data = await res.json().catch(() => ({} as any));
       if (res.ok && data && data.ok) {

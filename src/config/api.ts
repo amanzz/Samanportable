@@ -32,7 +32,7 @@ export const API_CONFIG = {
   // Performance settings
   MAX_CONCURRENT_REQUESTS: 5, // Limit concurrent API calls
   REQUEST_TIMEOUT: 10000, // 10 seconds timeout
-  RETRY_ATTEMPTS: 5, // Number of retry attempts (raised for build-time backend-500 resilience; exponential backoff below)
+  RETRY_ATTEMPTS: 2, // Number of retry attempts
 };
 
 // Standard headers for API requests to bypass security firewalls
@@ -92,7 +92,7 @@ async function fetchWithResilience(url: string, init?: RequestInit): Promise<Res
       // Transient server-side failure → retry if attempts remain, else throw.
       if (isTransientStatus(response.status)) {
         if (attempt < maxAttempts) {
-          await new Promise((resolve) => setTimeout(resolve, 500 * Math.pow(2, attempt - 1)));
+          await new Promise((resolve) => setTimeout(resolve, 300 * attempt));
           continue;
         }
         throw new BackendFetchError(
@@ -110,7 +110,7 @@ async function fetchWithResilience(url: string, init?: RequestInit): Promise<Res
       // Otherwise this is a network error or an AbortError (timeout). Retry if we
       // still have attempts; on the last attempt fall through to the throw below.
       if (attempt < maxAttempts) {
-        await new Promise((resolve) => setTimeout(resolve, 500 * Math.pow(2, attempt - 1)));
+        await new Promise((resolve) => setTimeout(resolve, 300 * attempt));
         continue;
       }
       throw new BackendFetchError('Backend unreachable (network error or timeout)');
@@ -601,20 +601,15 @@ export async function fetchProduct(slug: string): Promise<WooCommerceProduct | n
   }
 }
 
-// Fetch Rank Math SEO data for a specific URL.
-// `strict` (ISR getStaticProps callers ONLY): a TRANSIENT failure (non-2xx /
-// network / bad JSON) THROWS BackendFetchError so a failed ISR revalidation
-// keeps the last-good cached page instead of caching fallback meta for an hour.
-// A genuine 200-with-no-head still returns null in both modes (the page's
-// baseline fallback behavior). Default false = unchanged for existing callers.
-export async function fetchRankMathSEO(url: string, strict = false): Promise<RankMathSEOData | null> {
+// Fetch Rank Math SEO data for a specific URL
+export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | null> {
   try {
     const params = new URLSearchParams({
       url: url,
     });
 
     const apiUrl = `${API_CONFIG.RANK_MATH_API_ENDPOINT}?${params}`;
-
+    
     const response = await fetch(apiUrl, {
       method: 'GET',
       headers: getApiHeaders(),
@@ -623,66 +618,112 @@ export async function fetchRankMathSEO(url: string, strict = false): Promise<Ran
 
 
     if (!response.ok) {
-      if (strict) throw new BackendFetchError(`RankMath getHead failed: ${response.status}`, response.status);
       return null;
     }
 
     const data = await response.json();
-    
+
     if (!data.success || !data.head) {
       return null;
     }
 
-    // Parse HTML head content to extract meta tags
-    const headHtml = data.head;
+    return parseRankMathHeadHtml(data.head);
+  } catch (error) {
+    return null;
+  }
+}
+
+// Pure parser for a RankMath getHead `head` HTML string → RankMathSEOData.
+// Extracted from fetchRankMathSEO so the static-content layer (which reads the
+// same head HTML from exported files instead of the live API) produces
+// byte-identical SEO data. No network, no side effects.
+// Decode HTML entities EXACTLY ONE level (single pass — the replacer never
+// re-scans its own output). The RankMath head stores already-encoded text
+// (e.g. "&amp;"), but the SEO fields below are rendered through escaped JSX
+// (`<title>{title}</title>`, `<meta content={description}/>`), which encodes a
+// second time and ships "&amp;amp;" to Google. Decoding once here means the
+// stored "&amp;" becomes "&", and JSX then re-encodes it to a correct single
+// "&amp;". JSX always escapes, so this can never emit a raw, HTML-breaking "&".
+function decodeHtmlEntitiesOnce(s: string): string {
+  return s.replace(/&(#x[0-9a-fA-F]+|#\d+|[a-zA-Z][a-zA-Z0-9]*);/g, (m, code) => {
+    if (code[0] === '#') {
+      const n = code[1] === 'x' || code[1] === 'X'
+        ? parseInt(code.slice(2), 16)
+        : parseInt(code.slice(1), 10);
+      return Number.isFinite(n) ? String.fromCodePoint(n) : m;
+    }
+    const named: Record<string, string> = {
+      amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ',
+    };
+    const key = code.toLowerCase();
+    return Object.prototype.hasOwnProperty.call(named, key) ? named[key] : m;
+  });
+}
+
+const PUBLIC_SITE_ORIGIN = 'https://www.samanportable.com';
+
+function normalizeSamanportableHost(url: string): string {
+  return url.replace(
+    /^https?:\/\/(?:[a-z0-9-]+\.)*samanportable\.com/i,
+    PUBLIC_SITE_ORIGIN
+  );
+}
+
+function applyPublicFaqSchemaUrl(seoData: RankMathSEOData | null, pageUrl: string): RankMathSEOData | null {
+  if (!seoData?.faqSchema) return seoData;
+  const publicUrl = normalizeSamanportableHost(pageUrl);
+  seoData.faqSchema['@id'] = `${publicUrl.replace(/\/$/, '')}#faq`;
+  seoData.faqSchema.url = publicUrl;
+  return seoData;
+}
+
+export function parseRankMathHeadHtml(headHtml: string): RankMathSEOData {
+  {
     const seoData: RankMathSEOData = {};
-    
-    // Extract title
+
+    // Extract title (decode once — see decodeHtmlEntitiesOnce; render layer re-escapes)
     const titleMatch = headHtml.match(/<title[^>]*>([^<]+)<\/title>/i);
-    if (titleMatch) seoData.title = titleMatch[1];
-    
-    // Extract description
-    const descMatch = headHtml.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i);
-    if (descMatch) seoData.description = descMatch[1];
+    if (titleMatch) seoData.title = decodeHtmlEntitiesOnce(titleMatch[1]);
+
+    // Extract description (decode once — render layer re-escapes)
+    const descMatch = headHtml.match(/<meta\s+name=["']description["']\s+content=(["'])(.*?)\1/i);
+    if (descMatch) seoData.description = decodeHtmlEntitiesOnce(descMatch[2]);
     
     // Extract canonical. Normalize the host to the public www domain: RankMath may emit
     // the WordPress backend host (e.g. blog.samanportable.com) or a non-www variant, which
     // would point Google's canonical at a different host and risk deindexing the live page.
-    const canonicalMatch = headHtml.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
+    const canonicalMatch = headHtml.match(/<link\s+rel=["']canonical["']\s+href=(["'])(.*?)\1/i);
     if (canonicalMatch) {
-      seoData.canonical = canonicalMatch[1].replace(
-        /^https?:\/\/(?:[a-z0-9-]+\.)*samanportable\.com/i,
-        'https://www.samanportable.com'
-      );
+      seoData.canonical = normalizeSamanportableHost(canonicalMatch[2]);
     }
     
     // Extract Open Graph tags
-    const ogTitleMatch = headHtml.match(/<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i);
-    if (ogTitleMatch) seoData.og_title = ogTitleMatch[1];
+    const ogTitleMatch = headHtml.match(/<meta\s+property=["']og:title["']\s+content=(["'])(.*?)\1/i);
+    if (ogTitleMatch) seoData.og_title = decodeHtmlEntitiesOnce(ogTitleMatch[2]);
+
+    const ogDescMatch = headHtml.match(/<meta\s+property=["']og:description["']\s+content=(["'])(.*?)\1/i);
+    if (ogDescMatch) seoData.og_description = decodeHtmlEntitiesOnce(ogDescMatch[2]);
     
-    const ogDescMatch = headHtml.match(/<meta\s+property=["']og:description["']\s+content=["']([^"']+)["']/i);
-    if (ogDescMatch) seoData.og_description = ogDescMatch[1];
+    const ogImageMatch = headHtml.match(/<meta\s+property=["']og:image["']\s+content=(["'])(.*?)\1/i);
+    if (ogImageMatch) seoData.og_image = ogImageMatch[2];
     
-    const ogImageMatch = headHtml.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i);
-    if (ogImageMatch) seoData.og_image = ogImageMatch[1];
-    
-    const ogLocaleMatch = headHtml.match(/<meta\s+property=["']og:locale["']\s+content=["']([^"']+)["']/i);
-    if (ogLocaleMatch) seoData.og_locale = ogLocaleMatch[1];
+    const ogLocaleMatch = headHtml.match(/<meta\s+property=["']og:locale["']\s+content=(["'])(.*?)\1/i);
+    if (ogLocaleMatch) seoData.og_locale = ogLocaleMatch[2];
     
     // Extract Twitter tags
-    const twitterTitleMatch = headHtml.match(/<meta\s+name=["']twitter:title["']\s+content=["']([^"']+)["']/i);
-    if (twitterTitleMatch) seoData.twitter_title = twitterTitleMatch[1];
+    const twitterTitleMatch = headHtml.match(/<meta\s+name=["']twitter:title["']\s+content=(["'])(.*?)\1/i);
+    if (twitterTitleMatch) seoData.twitter_title = decodeHtmlEntitiesOnce(twitterTitleMatch[2]);
+
+    const twitterDescMatch = headHtml.match(/<meta\s+name=["']twitter:description["']\s+content=(["'])(.*?)\1/i);
+    if (twitterDescMatch) seoData.twitter_description = decodeHtmlEntitiesOnce(twitterDescMatch[2]);
     
-    const twitterDescMatch = headHtml.match(/<meta\s+name=["']twitter:description["']\s+content=["']([^"']+)["']/i);
-    if (twitterDescMatch) seoData.twitter_description = twitterDescMatch[1];
-    
-    const twitterImageMatch = headHtml.match(/<meta\s+name=["']twitter:image["']\s+content=["']([^"']+)["']/i);
-    if (twitterImageMatch) seoData.twitter_image = twitterImageMatch[1];
+    const twitterImageMatch = headHtml.match(/<meta\s+name=["']twitter:image["']\s+content=(["'])(.*?)\1/i);
+    if (twitterImageMatch) seoData.twitter_image = twitterImageMatch[2];
     
     // Extract robots
-    const robotsMatch = headHtml.match(/<meta\s+name=["']robots["']\s+content=["']([^"']+)["']/i);
+    const robotsMatch = headHtml.match(/<meta\s+name=["']robots["']\s+content=(["'])(.*?)\1/i);
     if (robotsMatch) {
-      const robotsContent = robotsMatch[1];
+      const robotsContent = robotsMatch[2];
       seoData.robots = {
         index: robotsContent.includes('noindex') ? 'noindex' : 'index',
         follow: robotsContent.includes('nofollow') ? 'nofollow' : 'follow'
@@ -710,10 +751,57 @@ export async function fetchRankMathSEO(url: string, strict = false): Promise<Ran
           const t = node?.['@type'];
           return t === 'FAQPage' || (Array.isArray(t) && t.includes('FAQPage'));
         });
-        if (faqNode && Array.isArray(faqNode.mainEntity) && faqNode.mainEntity.length > 0) {
-          // Emit as a standalone, valid FAQPage document.
-          seoData.faqSchema = { '@context': 'https://schema.org', ...faqNode };
-          break;
+        if (faqNode && Array.isArray(faqNode.mainEntity)) {
+          // Some RankMath exports leave an empty trailing FAQ slot in the block,
+          // which serializes as a Question node with no `name` / `acceptedAnswer`.
+          // Emitting it verbatim produces invalid FAQ structured data (Google /
+          // Semrush flag the missing required fields), so keep ONLY well-formed
+          // Question nodes whose name and answer text are both present. This keeps
+          // the schema matching the FAQ actually rendered on the page.
+          const isValidQuestion = (q: any): boolean => {
+            const t = q?.['@type'];
+            const isQuestion = t === 'Question' || (Array.isArray(t) && t.includes('Question'));
+            const name = typeof q?.name === 'string' ? q.name.trim() : '';
+            const answerText = typeof q?.acceptedAnswer?.text === 'string'
+              ? q.acceptedAnswer.text.trim()
+              : '';
+            return isQuestion && name.length > 0 && answerText.length > 0;
+          };
+          const validQuestions = faqNode.mainEntity.filter(isValidQuestion).map((q: any) => ({
+            '@type': 'Question',
+            name: q.name.trim(),
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: q.acceptedAnswer.text.trim(),
+            },
+          }));
+          if (validQuestions.length > 0) {
+            // Emit as a clean standalone FAQPage document. Do not spread the
+            // RankMath node here: it can carry backend-only @id/isPartOf/image
+            // references from blog.samanportable.com and empty url fields.
+            const faqSchema: any = {
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: validQuestions,
+            };
+
+            const canonical = typeof seoData.canonical === 'string' ? seoData.canonical.trim() : '';
+            if (canonical) {
+              const publicCanonical = normalizeSamanportableHost(canonical);
+              faqSchema['@id'] = `${publicCanonical.replace(/\/$/, '')}#faq`;
+              faqSchema.url = publicCanonical;
+            }
+
+            if (typeof faqNode.name === 'string' && faqNode.name.trim()) {
+              faqSchema.name = faqNode.name.trim();
+            }
+            if (typeof faqNode.inLanguage === 'string' && faqNode.inLanguage.trim()) {
+              faqSchema.inLanguage = faqNode.inLanguage.trim();
+            }
+
+            seoData.faqSchema = faqSchema;
+            break;
+          }
         }
       }
     } catch {
@@ -721,20 +809,13 @@ export async function fetchRankMathSEO(url: string, strict = false): Promise<Ran
     }
 
     return seoData;
-  } catch (error) {
-    if (strict) {
-      // Propagate transient failures so an ISR revalidation keeps the last-good page.
-      if (error instanceof BackendFetchError) throw error;
-      throw new BackendFetchError('RankMath getHead unreachable (network error or timeout)');
-    }
-    return null;
   }
 }
 
 // Fetch Rank Math SEO data for a product
-export async function fetchProductRankMathSEO(categorySlug: string, strict = false): Promise<RankMathSEOData | null> {
+export async function fetchProductRankMathSEO(categorySlug: string): Promise<RankMathSEOData | null> {
   const productUrl = `https://www.samanportable.com/product/${categorySlug}/`;
-  return await fetchRankMathSEO(productUrl, strict);
+  return applyPublicFaqSchemaUrl(await fetchRankMathSEO(productUrl), productUrl);
 }
 
 // Fetch Rank Math SEO data for a blog post
@@ -804,16 +885,15 @@ const CATEGORY_SEO_DATA: Record<string, RankMathSEOData> = {
 };
 
 // Fetch ONLY Rank Math SEO data from WordPress (no fallbacks)
-export async function fetchCategoryRankMathSEO(categorySlug: string, strict = false): Promise<RankMathSEOData | null> {
+export async function fetchCategoryRankMathSEO(categorySlug: string): Promise<RankMathSEOData | null> {
   try {
     // Use the correct WordPress blog URL for category pages
     const categoryUrl = `https://blog.samanportable.com/product-category/${categorySlug}/`;
-    const wordpressData = await fetchRankMathSEO(categoryUrl, strict);
-
+    const wordpressData = await fetchRankMathSEO(categoryUrl);
+    
     // Return only WordPress Rank Math data, even if it's generic or incomplete
     return wordpressData;
   } catch (error) {
-    if (strict) throw error; // ISR caller: keep last-good page, never cache fallback meta
     console.error('Failed to fetch Rank Math data:', error);
     return null;
   }
@@ -1048,12 +1128,14 @@ export async function fetchProductsByCategoryPriority(
     // Define category priority order
     const categoryPriority = [
       'portable-cabin',
-      'container-offices', 
+      'container-offices',
       'porta-cabins',
       'labor-colony',
       'portable-office',
       'container-cafe',
-      'industrial-sheds'
+      'industrial-sheds',
+      'puf-panel',
+      'pir-panel'
     ];
 
     let allProducts: any[] = [];
@@ -1410,150 +1492,4 @@ export async function fetchProductDescription(slug: string): Promise<{ descripti
     console.error('Error fetching product description:', error);
     return null;
   }
-}
-
-// ═════════════════════════════════════════════════════════════════════════════
-// STRICT server-side fetchers — for ISR getStaticProps on product/category
-// routes ONLY (Gate-A remedy). Contract (mirrors fetchBlogPost/fetchLightweightProduct):
-//   • return data        → backend responded 2xx
-//   • return null / []   → backend responded 2xx and the item GENUINELY does not
-//                           exist / is genuinely empty (parity: a legitimately
-//                           empty category still renders its empty state)
-//   • THROW BackendFetchError → transient failure (non-2xx / network / timeout /
-//                           bad JSON). Next.js ISR then KEEPS the last-good cached
-//                           page (stale-on-error) — it never caches a thin shell.
-// The non-strict helpers above deliberately swallow errors for client-side use;
-// do NOT call them from getStaticProps — that is what produced the THIN-200s.
-// ═════════════════════════════════════════════════════════════════════════════
-
-// Same field lists the non-strict helpers request — identical data → identical HTML.
-const RELATED_PRODUCT_FIELDS = 'id,name,slug,price,regular_price,sale_price,on_sale,images,short_description,stock_status,stock_quantity,average_rating,rating_count,categories,weight,dimensions';
-const LIGHTWEIGHT_PRODUCT_FIELDS = 'id,name,slug,price,regular_price,sale_price,on_sale,images,short_description,stock_status,average_rating,rating_count';
-
-// Authenticated WooCommerce GET that never swallows: throws BackendFetchError on
-// any transient failure, returns parsed JSON + the Response (for X-WP-* headers).
-async function wcGetStrict(pathAndQuery: string): Promise<{ data: any; response: Response }> {
-  const sep = pathAndQuery.includes('?') ? '&' : '?';
-  const url = `${API_CONFIG.WC_BASE_URL}${pathAndQuery}${sep}consumer_key=${API_CONFIG.WC_CONSUMER_KEY}&consumer_secret=${API_CONFIG.WC_CONSUMER_SECRET}`;
-  const response = await fetchWithResilience(url, { headers: getApiHeaders() });
-  if (!response.ok) {
-    throw new BackendFetchError(`WooCommerce request failed: ${response.status}`, response.status);
-  }
-  let data: any;
-  try {
-    data = await response.json();
-  } catch {
-    throw new BackendFetchError('Invalid JSON from WooCommerce endpoint');
-  }
-  return { data, response };
-}
-
-// Strict description/images fetch (the non-strict version returning null on
-// failure is what shipped product pages with an empty long description = THIN-200).
-export async function fetchProductDescriptionStrict(slug: string): Promise<{ description: string; images: Array<{ src: string; alt: string }> } | null> {
-  const { data } = await wcGetStrict(`/products?slug=${encodeURIComponent(slug)}&_fields=description,images`);
-  if (!Array.isArray(data)) throw new BackendFetchError('Unexpected products response shape');
-  const product = data[0] || null;
-  if (!product) return null; // genuine absent
-  return { description: product.description, images: product.images || [] };
-}
-
-// Strict related-products fetch (category slug → id → 12 products, same fields
-// as the non-strict fetchProducts path). Genuine missing category → [].
-export async function fetchRelatedProductsStrict(categorySlug: string): Promise<WooCommerceProduct[]> {
-  const { data: cats } = await wcGetStrict(`/products/categories?slug=${encodeURIComponent(categorySlug)}`);
-  if (!Array.isArray(cats)) throw new BackendFetchError('Unexpected categories response shape');
-  if (!cats.length) return []; // genuine: category does not exist
-  const { data: prods } = await wcGetStrict(
-    `/products?page=1&per_page=12&category=${cats[0].id}&_fields=${RELATED_PRODUCT_FIELDS}`
-  );
-  if (!Array.isArray(prods)) throw new BackendFetchError('Unexpected products response shape');
-  return prods;
-}
-
-// Strict category products grid (the hub THIN-200 source). Returns the same
-// shape as fetchLightweightProductsByCategory. A genuinely empty category still
-// returns the empty state (parity with production's empty hubs).
-export async function fetchLightweightProductsByCategoryStrict(
-  categorySlug: string,
-  page = 1,
-  perPage = 20
-): Promise<{ products: LightweightProduct[]; pagination: PaginationInfo }> {
-  const emptyState = {
-    products: [] as LightweightProduct[],
-    pagination: { currentPage: page, totalPages: 0, totalProducts: 0, perPage, hasNextPage: false, hasPrevPage: false },
-  };
-  const { data: cats } = await wcGetStrict(`/products/categories?slug=${encodeURIComponent(categorySlug)}`);
-  if (!Array.isArray(cats)) throw new BackendFetchError('Unexpected categories response shape');
-  if (!cats.length) return emptyState; // genuine: category does not exist
-  const categoryId = cats[0].id;
-  const categoryName = cats[0].name;
-  const { data: products, response } = await wcGetStrict(
-    `/products?page=${page}&per_page=${perPage}&category=${categoryId}&_fields=${LIGHTWEIGHT_PRODUCT_FIELDS}`
-  );
-  if (!Array.isArray(products)) throw new BackendFetchError('Unexpected products response shape');
-  const totalProducts = parseInt(response.headers.get('X-WP-Total') || '0');
-  const totalPages = parseInt(response.headers.get('X-WP-TotalPages') || '0');
-  return {
-    products: products.map((product: any) => ({
-      id: product.id,
-      name: product.name,
-      slug: product.slug,
-      price: product.price,
-      regular_price: product.regular_price,
-      sale_price: product.sale_price,
-      on_sale: product.on_sale,
-      featured_image: (product.images && product.images.length > 0 && product.images[0].src) ? product.images[0].src : '/placeholder.svg',
-      category: categoryName,
-      category_slug: categorySlug,
-      short_description: product.short_description,
-      stock_status: product.stock_status,
-      average_rating: product.average_rating,
-      rating_count: product.rating_count,
-      sku: product.sku || '',
-    })),
-    pagination: {
-      currentPage: page, totalPages, totalProducts, perPage,
-      hasNextPage: page < totalPages, hasPrevPage: page > 1,
-    },
-  };
-}
-
-// Strict category list (sidebar/filters content — same query as fetchProductCategories).
-export async function fetchProductCategoriesStrict(): Promise<any[]> {
-  const { data } = await wcGetStrict('/products/categories?per_page=20&hide_empty=true&_fields=id,name,slug,count');
-  if (!Array.isArray(data)) throw new BackendFetchError('Unexpected categories response shape');
-  return data;
-}
-
-// Strict attributes list (same query as fetchProductAttributes).
-export async function fetchProductAttributesStrict(): Promise<any[]> {
-  const { data } = await wcGetStrict('/products/attributes?per_page=10&_fields=id,name,options');
-  if (!Array.isArray(data)) throw new BackendFetchError('Unexpected attributes response shape');
-  return data;
-}
-
-// Strict single-category detail (same parsing as fetchProductCategoryBySlug).
-export async function fetchProductCategoryBySlugStrict(slug: string): Promise<ProductCategoryDetail | null> {
-  const { data: categories } = await wcGetStrict(`/products/categories?slug=${encodeURIComponent(slug)}`);
-  if (!Array.isArray(categories)) throw new BackendFetchError('Unexpected categories response shape');
-  const category = categories[0] || null;
-  if (!category) return null; // genuine absent
-  let extraDescription = '';
-  const metaData = category.meta_data || [];
-  for (const meta of metaData) {
-    if (CATEGORY_EXTRA_DESC_META_KEYS.includes(meta.key) && meta.value) {
-      extraDescription = meta.value;
-      break;
-    }
-  }
-  return {
-    id: category.id,
-    name: category.name,
-    slug: category.slug,
-    description: category.description || '',
-    extraDescription,
-    count: category.count || 0,
-    image: category.image || null,
-  };
 }

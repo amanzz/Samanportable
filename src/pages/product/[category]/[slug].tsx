@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Layout from '../../../components/Layout';
 // import { SEO } from '../../../components/SEO'; // Removed to avoid duplicate meta tags
@@ -8,30 +8,26 @@ import { Button } from '../../../components/ui/button';
 import { Badge } from '../../../components/ui/badge';
 import { Card } from '../../../components/ui/card';
 import { ScrollArea } from '../../../components/ui/scroll-area';
-import QuoteFormPopup from '../../../components/QuoteFormPopup';
 import MobileBottomNav from '../../../components/MobileBottomNav';
 import { 
   Star, 
   ShoppingCart, 
   ArrowLeft,
-  Loader2,
-  Phone,
-  Mail,
-  Minus,
-  Plus,
-  BookOpen,
-  Check
+  Loader2
 } from 'lucide-react';
-import { fetchLightweightProduct, fetchProductDescriptionStrict, fetchRelatedProductsStrict, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData, fetchProductReviews, ProductReview } from '../../../config/api';
+import type { WooCommerceProduct, RankMathSEOData, ProductReview } from '../../../config/api';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
 import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
-import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
+import ManufacturerTrustStrip from '../../../components/ManufacturerTrustStrip';
+import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
+import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
+import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
 
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
@@ -48,34 +44,20 @@ const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
   )
 });
 
-// Dynamic import for ImagePreloader to reduce initial bundle size
-const ImagePreloader = dynamic(() => import('../../../components/ImagePreloader'), {
-  ssr: false,
-  loading: () => null
-});
+const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
+  'portable-office-cabin',
+]);
 
 interface ProductDetailsProps {
   product: WooCommerceProduct | null;
   category: string;
   slug: string;
   relatedProducts: WooCommerceProduct[];
-  productImages?: Array<{ src: string; alt: string }>;
   rankMathSEO?: RankMathSEOData | null;
   reviews?: ProductReview[];
 }
 
-// GATE-A REMEDY (ISR): rendered once, cached, background-revalidated hourly —
-// no per-request WooCommerce fetch. fallback 'blocking' = an uncached page still
-// renders fully server-side on first hit (never an empty shell). Every data
-// fetch below is STRICT: a transient backend failure THROWS, so a failed
-// revalidation KEEPS the last-good cached page (stale-on-error) — it can never
-// cache the THIN-200 shells Gate A caught under load.
-export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: [],
-  fallback: 'blocking',
-});
-
-export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
   try {
     const { category, slug } = params as { category: string; slug: string };
     
@@ -99,8 +81,12 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
       };
     }
 
+    // Static content layer: reads exported product files — no WordPress call.
+    // Server-only module, loaded dynamically so fs never reaches the client bundle.
+    const staticContent = await import('../../../lib/staticContent');
+
     // Fetch lightweight product data first
-    const product = await fetchLightweightProduct(slug);
+    const product = await staticContent.fetchLightweightProduct(slug);
     
     if (!product) {
       return {
@@ -118,15 +104,41 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
       };
     }
 
-    // Get related products from the same category (lightweight).
-    // STRICT: a failed fetch THROWS (ISR keeps last-good) — the old swallow
-    // pattern shipped the page with this section missing.
-    const relatedProducts: WooCommerceProduct[] =
-      (await fetchRelatedProductsStrict(product.category_slug)).filter(p => p.id !== product.id);
+    // Get related products from the same category (lightweight)
+    let relatedProducts: WooCommerceProduct[] = [];
+    try {
+      const relatedResponse = await staticContent.fetchProducts(1, 12, { // Increased to 12 for better variety
+        category: product.category_slug
+      });
+      // Filter out the current product, then serialize ONLY the lightweight fields
+      // the related-products UI actually reads (id, name, slug, price, rating,
+      // first category, first image). Full WooCommerce objects — chiefly each
+      // product's `description` (~11KB) — bloated __NEXT_DATA__ by ~120KB but are
+      // never rendered by the slider or MobileBottomNav, so they are dropped to
+      // shrink the client hydration payload. SSR-rendered cards are unchanged.
+      relatedProducts = (relatedResponse.products || [])
+        .filter(p => p.id !== product.id)
+        .map(p => ({
+          id: p.id,
+          name: p.name,
+          slug: p.slug,
+          price: p.price,
+          average_rating: p.average_rating,
+          rating_count: p.rating_count,
+          categories: (p.categories || []).slice(0, 1).map(c => ({ id: c.id, name: c.name, slug: c.slug })),
+          images: p.images && p.images.length > 0
+            ? [{ id: p.images[0].id, src: p.images[0].src, alt: p.images[0].alt }]
+            : [],
+        })) as unknown as WooCommerceProduct[];
+    } catch (error) {
+      // Silent error handling for production
+    }
 
-    // Fetch full description and images separately.
-    // STRICT: the old null-on-failure version rendered description:'' = THIN-200.
-    const descriptionData = await fetchProductDescriptionStrict(slug);
+    // Fetch full description and images separately
+    const descriptionData = await staticContent.fetchProductDescription(slug);
+    const productDescription = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
+      ? demoteHtmlH1ToH2(descriptionData?.description || '')
+      : descriptionData?.description || '';
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -134,18 +146,27 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
     // problem never breaks the page or causes a false 404.
     let reviews: ProductReview[] = [];
     if (product.rating_count > 0) {
-      reviews = await fetchProductReviews(product.id, 5);
+      reviews = await staticContent.fetchProductReviews(product.id, 5);
     }
 
-    // Fetch Rank Math SEO data. STRICT: a transient failure throws (ISR keeps
-    // last-good meta); a genuine 200-with-no-head still returns null (baseline).
-    const rankMathSEO: RankMathSEOData | null = await fetchProductRankMathSEO(`${category}/${slug}`, true);
+    // Fetch Rank Math SEO data
+    let rankMathSEO: RankMathSEOData | null = null;
+    try {
+      rankMathSEO = await staticContent.fetchProductRankMathSEO(`${category}/${slug}`);
+    } catch (error) {
+      console.warn('Failed to fetch Rank Math SEO data:', error);
+    }
+
+    // Public marketing page with no per-user data — safe to edge-cache. Set only
+    // on the success path so the 404s/redirects above keep Next's default no-store
+    // and newly-published URLs are never cache-poisoned.
+    setPublicEdgeCache(res);
 
     return {
       props: {
         product: {
           ...product,
-          description: descriptionData?.description || '',
+          description: productDescription,
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
             src: img.src,
@@ -169,26 +190,23 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
         category,
         slug,
         relatedProducts,
-        // `|| []` guard: when the description fetch fails, descriptionData is null and
-        // `?.images` is `undefined`, which Next.js cannot serialize as a prop → 500.
-        // An empty array is serializable (the prop is optional and unused downstream).
-        productImages: descriptionData?.images || [],
+        // productImages prop removed: it was never destructured/used in the component
+        // (the gallery uses getProductImages() from product.images), and serializing
+        // it added ~7KB of dead data to __NEXT_DATA__.
         rankMathSEO,
         reviews,
       },
-      revalidate: 3600, // ISR: background hourly revalidation (same as the [slug] blog route)
     };
   } catch (error) {
     // A transient backend failure (network/timeout/5xx/429, surfaced as
-    // BackendFetchError by any STRICT fetcher above) must NOT become a false 404 —
-    // that would deindex a real product. Re-throw: during an ISR background
-    // revalidation Next then KEEPS the last-good cached page; on an uncached
-    // first render it returns HTTP 500 (retryable by Google, never cached).
-    // A GENUINE missing product is handled above (product === null → notFound)
-    // and only happens when the backend responded successfully; the
-    // category-mismatch 404 likewise only runs after a successful fetch.
+    // BackendFetchError by fetchLightweightProduct) must NOT become a false 404 —
+    // that would deindex a real product. Re-throw so Next returns HTTP 500
+    // (retryable by Google) instead of notFound. A GENUINE missing product is
+    // handled above (product === null → notFound) and only happens when the backend
+    // responded successfully; the category-mismatch 404 likewise only runs after a
+    // successful fetch. Only the error message is logged (no request URL / keys).
     console.error(
-      'Product ISR render failed — keeping last-good / returning 5xx, not 404:',
+      'Product SSR failed — returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render product');
@@ -198,12 +216,8 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
 const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [] }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [quantity, setQuantity] = useState(1);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
-  const { addItem, isInCart } = useCart();
-  const isProductInCart = isInCart(product?.id || 0);
 
   // Parse short description table data
   const shortDescriptionData = useMemo(() => {
@@ -272,9 +286,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   // Transform related products to match Vite design
   const transformedRelatedProducts = useMemo(() => {
-    console.log('Related products count:', relatedProducts.length);
-    console.log('Related products:', relatedProducts.map(p => ({ name: p.name, category: p.categories?.[0]?.name })));
-    
     return relatedProducts.map((p) => {
       const catSlug = p.categories && p.categories.length > 0 ? p.categories[0].slug : 'default';
       const catName = p.categories && p.categories.length > 0 ? p.categories[0].name : 'Uncategorized';
@@ -295,7 +306,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         ratingCount: Number(p.rating_count) || 0,
         description: p.description || '',
         url,
-        seoAnchorText: getSeoAnchorText(catSlug) || p.name,
+        seoAnchorText: p.name,
       };
     });
   }, [relatedProducts]);
@@ -371,12 +382,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             </Head>
           )}
 
-          {/* Preload critical images for better performance */}
-          <ImagePreloader 
-            images={images.map(img => img.src).filter(Boolean)} 
-            maxPreload={4} 
-          />
-
           <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
               
@@ -451,12 +456,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                                   {/* Product Info */}
                                   <div className="flex-1 min-w-0">
                                     <h4 className={cn(
-                                      "font-medium text-sm leading-tight mb-1 transition-colors line-clamp-1",
+                                      "font-medium text-sm leading-tight mb-1 transition-colors line-clamp-2",
                                       relatedProduct.slug === slug 
                                         ? "text-white font-semibold" 
                                         : "text-foreground group-hover:text-primary"
                                     )}>
-                                      {getSeoAnchorText(relatedProduct.categorySlug) || relatedProduct.title}
+                                      {relatedProduct.title}
                                     </h4>
                                     
                                     {/* Category Badge */}
@@ -516,6 +521,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                               width={800}
                               height={600}
                               priority={true}
+                              fetchPriority="high"
                               placeholder="blur"
                               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -581,7 +587,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                                   className="w-full h-full object-cover"
                                   width={150}
                                   height={150}
-                                  priority={index < 3}
+                                  loading="lazy"
                                   placeholder="blur"
                                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXwGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                                   sizes="(max-width: 768px) 25vw, 150px"
@@ -599,6 +605,10 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           ))}
                         </div>
                       )}
+
+                      <div className="-mx-2 pt-1 md:pt-3">
+                        <ProductZoneCtas variant="strip" className="w-full" />
+                      </div>
                       
                       {/* Dynamic Buttons from Short Description */}
                       {isHydrated && shortDescriptionButtons.length > 0 && (
@@ -705,80 +715,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           )}
                           </div>
 
-                      {/* Quantity and Actions */}
-                      <div className="space-y-3 pt-3 border-t border-slate-200">
-                        {/* Quantity Selector */}
-                        <div className="space-y-2">
-                          <h3 className="text-base font-semibold text-foreground">Quantity</h3>
-                          <div className="flex items-center space-x-3">
-                            <div className="flex items-center border border-slate-300 rounded-lg overflow-hidden bg-white">
-                              <Button 
-                                variant="ghost"
-                                size="icon"
-                                className="h-8 w-8 hover:bg-slate-100 rounded-none"
-                                onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                              >
-                                <Minus className="h-3 w-3" />
-                              </Button>
-                              <span className="px-4 py-1 border-x border-slate-300 font-medium text-foreground min-w-[50px] text-center text-sm">{quantity}</span>
-                              <Button 
-                                variant="ghost"
-                                size="icon"
-                                className="h-8 w-8 hover:bg-slate-100 rounded-none"
-                                onClick={() => setQuantity(prev => prev + 1)}
-                              >
-                                <Plus className="h-3 w-3" />
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Enhanced Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-3">
-                          <Button 
-                            size="lg" 
-                            className={`flex-1 w-full sm:w-auto py-3 px-4 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] ${
-                              isProductInCart 
-                                ? 'bg-green-600 hover:bg-green-700 text-white' 
-                                : 'bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white'
-                            }`}
-                            onClick={() => {
-                              if (!isProductInCart && transformedProduct) {
-                                addItem({
-                                  id: product.id,
-                                  name: product.name,
-                                  price: parseFloat(product.price || '0'),
-                                  image: product.images?.[0]?.src || '/placeholder.svg',
-                                  category: product.categories?.[0]?.name || 'Uncategorized',
-                                  slug: product.slug,
-                                });
-                              }
-                            }}
-                            disabled={isProductInCart}
-                          >
-                            {isProductInCart ? (
-                              <>
-                                <Check className="w-4 h-4 mr-2" />
-                                Added to Cart
-                              </>
-                            ) : (
-                              <>
-                                <ShoppingCart className="w-4 h-4 mr-2" />
-                                Add to Cart
-                              </>
-                            )}
-                          </Button>
-                          <Button 
-                            variant="outline" 
-                            size="lg" 
-                            className="flex-1 w-full sm:w-auto py-3 px-4 text-sm font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-200 transform hover:scale-[1.02]"
-                            onClick={() => setIsQuoteFormOpen(true)}
-                          >
-                            Send Enquiry
-                          </Button>
-                        </div>
-                      </div>
-
+                      {/* Actions — enquiry-only business (owner-approved):
+                          Add to Cart replaced by a direct Call button; the quantity
+                          stepper only served the cart and was removed with it. */}
                       {/* Product Info */}
                       <div className="space-y-3 pt-6 border-t border-slate-200">
                         <h3 className="text-lg font-semibold text-foreground">Product Information</h3>
@@ -814,6 +753,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   productId={product.id}
                   productName={transformedProduct.title}
                 />
+              </div>
+
+              {/* Manufacturer Trust Strip ★ NEW (links to /about-us#certifications) */}
+              <div className="mt-4">
+                <ManufacturerTrustStrip />
               </div>
 
               {/* Related Products Section */}
@@ -957,38 +901,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 </Link>
               </div>
 
-              {/* Enhanced Contact CTA */}
-              <Card className="mt-4 p-6 shadow-xl border-0 bg-gradient-to-br from-primary/10 via-blue-50/50 to-accent/10 overflow-hidden relative">
-               <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-50"></div>
-               <div className="relative z-10 text-center">
-                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                   <Phone className="w-8 h-8 text-primary" />
-                 </div>
-                 <h3 className="text-3xl font-bold mb-4 text-foreground">Need Custom Requirements?</h3>
-                 <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
-                   Get in touch with our experts for customized solutions and bulk orders. We&apos;re here to help you find the perfect solution.
-                 </p>
-                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                   <Button 
-                     size="lg" 
-                     className="h-14 px-8 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-                     onClick={() => window.location.href = 'tel:+919708989937'}
-                   >
-                     <Phone className="w-5 h-5 mr-3" />
-                     Call: +91 97089 89937
-                   </Button>
-                   <Button 
-                     variant="outline" 
-                     size="lg" 
-                     className="h-14 px-8 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-200 transform hover:scale-105"
-                     onClick={() => setIsQuoteFormOpen(true)}
-                   >
-                     <Mail className="w-5 h-5 mr-3" />
-                     Contact Us
-                   </Button>
-                 </div>
-               </div>
-             </Card>
             </div>
           </main>
           
@@ -1002,9 +914,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               <ArrowLeft className="w-5 h-5 rotate-90" />
             </button>
             )}
-
-          {/* Quote Form Popup */}
-          <QuoteFormPopup isOpen={isQuoteFormOpen} onClose={() => setIsQuoteFormOpen(false)} />
 
           {/* Mobile Bottom Navigation */}
           <MobileBottomNav relatedProducts={transformedRelatedProducts} />

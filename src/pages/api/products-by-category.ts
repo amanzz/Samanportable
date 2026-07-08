@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { fetchLightweightProductsByCategory } from '@/config/api';
+import { fetchLightweightProductsByCategory } from '@/lib/staticContent';
 
 // Server-side proxy for the product-category page's CLIENT-SIDE pagination/filter
 // fetches. The browser must NOT call WooCommerce directly — that previously dragged

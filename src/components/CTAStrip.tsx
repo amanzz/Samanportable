@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Phone, MessageSquare, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
 import QuoteFormTrigger from './QuoteFormTrigger';
 
 const CTAStrip = () => {
@@ -19,10 +18,7 @@ const CTAStrip = () => {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* Availability Badge */}
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-white/90 text-xs font-black uppercase tracking-[0.2em] mb-8"
         >
           <span className="relative flex h-2 w-2">
@@ -30,35 +26,23 @@ const CTAStrip = () => {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
           Support Active: Mon–Sat, 9am–6pm IST
-        </motion.div>
+        </div>
 
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+        <h2
           className="text-3xl md:text-6xl font-bold text-white mb-8 tracking-tight leading-[1.1]"
         >
           Engineered for Performance. <br className="hidden md:block" />
           <span className="text-emerald-400">Built for Growth.</span>
-        </motion.h2>
+        </h2>
         
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+        <p
           className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed font-light"
         >
           Experience zero-compromise modular solutions. From custom technical drawings to nationwide delivery, we handle the complexity while you scale your business.
-        </motion.p>
+        </p>
 
         {/* Primary CTAs */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+        <div
           className="flex flex-col sm:flex-row gap-5 justify-center mb-12"
         >
           <QuoteFormTrigger
@@ -78,18 +62,14 @@ const CTAStrip = () => {
               Call +91 88616 22859
             </Button>
           </a>
-        </motion.div>
+        </div>
 
         {/* Secondary Contact Channels */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
+        <div
           className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm font-medium"
         >
           <a
-            href="https://wa.me/918861622859"
+            href="https://www.samanportable.com/contact"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 text-white/60 hover:text-white transition-colors group"
@@ -107,7 +87,7 @@ const CTAStrip = () => {
             Detailed Inquiry Form
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

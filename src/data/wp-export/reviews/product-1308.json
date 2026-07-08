@@ -1,0 +1,122 @@
+[
+  {
+    "id": 226,
+    "date_created": "2024-12-22T18:59:29",
+    "date_created_gmt": "2024-12-22T13:29:29",
+    "product_id": 1308,
+    "product_name": "MS Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/ms-porta-cabin/",
+    "status": "approved",
+    "reviewer": "Wasim AKRAM",
+    "reviewer_email": "Skfsam506@gmail.com",
+    "review": "<p>I recently purchased a Porta Cabin from SAMAN, and it exceeded my expectations!</p>\n<p>🏗️ Robust Build: Designed to handle tough conditions effortlessly.<br />\n🌞 Bright Interior: Great natural light, making it feel open and welcoming.<br />\n🛠️ Easy Maintenance: Practical design ensures it stays in great shape with minimal effort.</p>\n<p>SAMAN’s Porta Cabin is a perfect blend of durability and functionality. Truly impressed!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/226",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1308"
+        }
+      ]
+    }
+  },
+  {
+    "id": 207,
+    "date_created": "2024-12-19T18:30:32",
+    "date_created_gmt": "2024-12-19T13:00:32",
+    "product_id": 1308,
+    "product_name": "MS Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/ms-porta-cabin/",
+    "status": "approved",
+    "reviewer": "Sudhanshu Kumar",
+    "reviewer_email": "sudhanshukumar22161@gmail.com",
+    "review": "<p>I recently purchased an MS Porta Cabin from SAMAN, and it has been a great addition to my workspace.</p>\n<p>🛡️ Exceptional Durability: The mild steel construction feels solid and is built to withstand harsh environments without any issues.<br />\n🏗️ Flexible Usage: I use it as an office, but it’s versatile enough for storage, accommodation, or even site operations.<br />\n🌟 Neat and Professional Look: The design is sleek with smooth finishes, making it suitable for both industrial and professional setups.<br />\n🔥 Weather-Resistant: No matter the heat, rain, or wind, the cabin remains comfortable and secure throughout.<br />\n📦 Low Maintenance: It requires minimal upkeep, saving time and effort in the long run.</p>\n<p>SAMAN’s MS Porta Cabins are a smart choice for anyone looking for a durable and functional solution that adapts to various needs. It’s practical, reliable, and well worth the investment!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/207",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1308"
+        }
+      ]
+    }
+  },
+  {
+    "id": 202,
+    "date_created": "2024-12-19T17:57:08",
+    "date_created_gmt": "2024-12-19T12:27:08",
+    "product_id": 1308,
+    "product_name": "MS Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/ms-porta-cabin/",
+    "status": "approved",
+    "reviewer": "Sahil rao",
+    "reviewer_email": "sr0979257@gmail.com",
+    "review": "<p>I recently purchased an MS Porta Cabin from SAMAN, and I couldn’t be happier with it.</p>\n<p>🔧 Sturdy Construction: The mild steel frame is incredibly strong and durable, perfect for tough environments.<br />\n💼 Highly Functional: The layout is simple yet effective, offering enough space for an office setup without feeling cramped.<br />\n❄️ Comfortable Interior: Despite its steel structure, the insulation keeps the cabin comfortable in all weather conditions.<br />\n⏱️ Quick Installation: The entire process was efficient, with the cabin ready to use in no time.</p>\n<p>SAMAN’s MS Porta Cabins are reliable, practical, and built to last. A great investment for anyone needing a portable solution!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/202",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1308"
+        }
+      ]
+    }
+  }
+]

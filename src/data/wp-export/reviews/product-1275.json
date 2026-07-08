@@ -1,0 +1,42 @@
+[
+  {
+    "id": 248,
+    "date_created": "2025-01-01T12:35:37",
+    "date_created_gmt": "2025-01-01T07:05:37",
+    "product_id": 1275,
+    "product_name": "Site Office Container",
+    "product_permalink": "https://blog.samanportable.com/product/container-offices/site-office-container/",
+    "status": "approved",
+    "reviewer": "Saddam Hussain",
+    "reviewer_email": "saddam.hussain7764864856@gmail.com",
+    "review": "<p>Very good site container office. 100% recommended.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/248",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1275"
+        }
+      ]
+    }
+  }
+]

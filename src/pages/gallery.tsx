@@ -7,6 +7,7 @@ import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { Button } from '@/components/ui/button';
 import { pageSEO, siteConfig } from '@/config/seo';
+import { generateWebPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { 
   Grid3X3, 
   ZoomIn, 
@@ -123,6 +124,17 @@ const Gallery = () => {
         keywords={pageSEO.gallery.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
+        structuredData={[
+          generateWebPageSchema({
+            url: 'https://www.samanportable.com/gallery',
+            name: pageSEO.gallery.title,
+            description: pageSEO.gallery.description,
+          }),
+          generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.samanportable.com/' },
+            { name: 'Gallery', url: 'https://www.samanportable.com/gallery' },
+          ]),
+        ]}
       />
 
       <div className="min-h-screen bg-background">

@@ -1,0 +1,28 @@
+{
+  "id": 990005,
+  "wc_review_product_id": 272761,
+  "name": "PUF Panel House",
+  "slug": "puf-panel-house",
+  "date_created": "2026-07-07T00:00:00",
+  "status": "publish",
+  "description": "<p>PUF Panel House — factory-made insulated panel house shell by SAMAN for residential and site-accommodation use, manufactured in Bangalore and Greater Noida. 30–200 mm thickness, PPGI/PPGL/BGL/stainless/aluminium/craft paper facings.</p>",
+  "short_description": "<p>Factory-made PUF panel house shell, 30–200 mm, built to your drawing. HSN 940690. From ₹1,050/sq mt base spec, ex-GST.</p>",
+  "sku": "SP-C15-HSE-2026",
+  "price": "1050",
+  "regular_price": "1050",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990101, "name": "PUF Panels", "slug": "puf-panel" }
+  ],
+  "images": [
+    { "id": 1, "src": "/images/puf-panel/house/puf-panel-house-installation-wall-roof.webp", "name": "PUF Panel House", "alt": "PUF panel house wall and roof panel installation", "srcset": "", "sizes": "", "thumbnail": "/images/puf-panel/house/puf-panel-house-installation-wall-roof.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}

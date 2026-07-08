@@ -16,6 +16,15 @@ const ContactPage = () => {
   const contactStructuredData = [
     getLocalBusinessSchemaBengaluru(),
     getLocalBusinessSchemaGreaterNoida(),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.samanportable.com/contact#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.samanportable.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.samanportable.com/contact' },
+      ],
+    },
   ];
 
   const contactInfo = [

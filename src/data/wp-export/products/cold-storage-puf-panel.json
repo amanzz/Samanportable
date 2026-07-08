@@ -1,0 +1,28 @@
+{
+  "id": 990008,
+  "wc_review_product_id": 272764,
+  "name": "Cold Storage PUF Panel",
+  "slug": "cold-storage-puf-panel",
+  "date_created": "2026-07-07T00:00:00",
+  "status": "publish",
+  "description": "<p>Cold Storage PUF Panel — factory-made insulated panels for cold rooms and freezer rooms by SAMAN, manufactured in Bangalore and Greater Noida. Freezer-grade manufacture up to 150 mm, tongue-and-groove or cam-lock joining.</p>",
+  "short_description": "<p>Factory-made cold storage PUF panel, freezer-grade to 150 mm. HSN 940690. From ₹1,050/sq mt base spec, ex-GST.</p>",
+  "sku": "SP-C15-CLD-2026",
+  "price": "1050",
+  "regular_price": "1050",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990101, "name": "PUF Panels", "slug": "puf-panel" }
+  ],
+  "images": [
+    { "id": 1, "src": "/images/puf-panel/cold-storage/100mm-dairy-cold-storage-room-interior.webp", "name": "Cold Storage PUF Panel", "alt": "100 mm cold storage PUF panel room interior, dairy cold-storage application", "srcset": "", "sizes": "", "thumbnail": "/images/puf-panel/cold-storage/100mm-dairy-cold-storage-room-interior.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}

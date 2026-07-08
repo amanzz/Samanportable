@@ -227,7 +227,36 @@
   .product-description-content a:hover {
     color: #15803d;
   }
-  
+
+  /* "On this page" TOC (JumpNav-style card injected into the description):
+     render as the reference 2-col grid card — override the prose list/link
+     styling above so it is not a bulleted green-link list. Scoped to the TOC
+     nav only, so all other description lists/links are unaffected. */
+  .product-description-content nav[aria-label="On this page"] ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  @media (min-width: 640px) {
+    .product-description-content nav[aria-label="On this page"] ul {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .product-description-content nav[aria-label="On this page"] li {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  .product-description-content nav[aria-label="On this page"] a {
+    color: hsl(var(--muted-foreground));
+    text-decoration: none;
+  }
+  .product-description-content nav[aria-label="On this page"] a:hover {
+    color: hsl(var(--primary));
+  }
+
   .product-description-content strong {
     font-weight: 600;
   }

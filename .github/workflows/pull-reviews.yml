@@ -1,0 +1,39 @@
+# Hourly reviews bridge — the ONLY WordPress connection of the static site.
+# Pulls approved WooCommerce reviews into src/data/wp-export/ and commits the
+# change, which triggers the normal deploy of whatever branch this runs on.
+#
+# SETUP REQUIRED (owner, one time, when this branch goes live):
+#   GitHub repo → Settings → Secrets and variables → Actions → add:
+#     WORDPRESS_CONSUMER_KEY, WORDPRESS_CONSUMER_SECRET  (read keys from .env.local)
+#
+# This workflow only takes effect on the branch it is merged into.
+name: Pull approved reviews
+
+on:
+  schedule:
+    - cron: '17 * * * *' # hourly
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  pull-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Pull approved reviews into static files
+        env:
+          WORDPRESS_CONSUMER_KEY: ${{ secrets.WORDPRESS_CONSUMER_KEY }}
+          WORDPRESS_CONSUMER_SECRET: ${{ secrets.WORDPRESS_CONSUMER_SECRET }}
+        run: node scripts/pull-approved-reviews.mjs
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "saman-reviews-bot"
+          git config user.email "noreply@samanportable.com"
+          git add src/data/wp-export
+          git diff --cached --quiet || git commit -m "chore: hourly approved-reviews sync from WordPress"
+          git push

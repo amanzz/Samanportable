@@ -1,0 +1,42 @@
+[
+  {
+    "id": 336,
+    "date_created": "2025-01-27T14:05:20",
+    "date_created_gmt": "2025-01-27T08:35:20",
+    "product_id": 1330,
+    "product_name": "Portacabin Office",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/portacabin-office/",
+    "status": "approved",
+    "reviewer": "Md Ajhar Azad",
+    "reviewer_email": "mdajhar88939@gmail.com",
+    "review": "<p>Compact and Convenient<br />\nThe Portacabin Office is a game-changer for businesses seeking flexibility. With its durable structure and sleek design, it provides a professional workspace in even the most challenging environments. 🌟 Its modular construction ensures hassle-free relocation, making it perfect for temporary and permanent setups.</p>\n<p>Key Features<br />\n✔️ Premium Quality Materials: Ensures durability and weather resistance.<br />\n✔️ Customizable Interiors: Tailored to your specific needs.<br />\n✔️ Energy Efficiency: Designed to optimize energy usage.<br />\n✔️ Fast Installation: Ready to use in no time.</p>\n<p>Why Choose Portacabin Offices?<br />\nPortacabin offices blend functionality and style. They’re ideal for industries like construction, IT, and startups. 🏢 Whether you need a site office or a long-term workspace, these cabins are a cost-effective and sustainable choice.</p>\n<p>Customer Verdict<br />\n“Our team loved the Portacabin Office! It’s spacious, well-ventilated, and incredibly easy to maintain.” – ⭐⭐⭐⭐⭐</p>\n<p>Explore the versatility of Portacabin Offices and upgrade your workspace today! For more details, visit SAMAN Portable Office Solutions.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/336",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1330"
+        }
+      ]
+    }
+  }
+]

@@ -28,16 +28,22 @@ const MONEY_STRIP_LINKS = [
   { label: "Container House in Tamil Nadu", href: "/container-house-price-in-tamil-nadu" },
   { label: "Luxury Container Houses", href: "/product/container-houses/luxury-container-houses" },
   { label: "Industrial Sheds in Bangalore", href: "/industrial-sheds-in-bangalore" },
-  { label: "PEB Construction India", href: "/product-category/peb-constructions" },
-  { label: "Pre-Engineered Buildings", href: "/product-category/pre-engineered-buildings" },
-  { label: "Industrial Sheds Range", href: "/product-category/industrial-sheds" },
+  { label: "PEB Construction India", href: "/product/peb-constructions" },
+  { label: "Pre-Engineered Buildings", href: "/product/pre-engineered-buildings" },
+  { label: "Industrial Sheds Range", href: "/product/industrial-sheds" },
   { label: "Prefab Houses in Bangalore", href: "/prefabricated-houses-in-bangalore" },
+  { label: "Prefab Solutions", href: "/prefab-solutions" },
   { label: "Top Quality Prefab Cabins Delhi", href: "/top-quality-prefab-cabins-delhi" },
   { label: "Best Portable Cabins in India", href: "/best-portable-cabins-in-india" },
   { label: "Portable Toilets in Bangalore", href: "/portable-toilets-in-bangalore" },
   { label: "Portable Toilet Cabin", href: "/product/portable-toilet/portable-toilet-cabin" },
   { label: "Prefabricated Security Cabin", href: "/product/security-cabins/prefabricated-security-cabin" },
   { label: "Readymade Security Cabin", href: "/product/security-cabins/readymade-security-cabin" },
+  { label: "Container Offices in HSR Layout", href: "/product/container-offices" },
+  { label: "Portable Cabins in Marathahalli", href: "/porta-cabins-in-marathahalli" },
+  { label: "Portable Cabins in Rajajinagar", href: "/porta-cabins-in-rajajinagar" },
+  { label: "Portable Office Cabins in Noida", href: "/portable-office-cabins-in-noida" },
+  { label: "Temporary Shed Solutions", href: "/temporary-shed" },
 ];
 
 const PRODUCT_CATEGORIES = [
@@ -55,6 +61,7 @@ const PRODUCT_CATEGORIES = [
   { label: "Pre-Engineered Building", href: "/product/pre-engineered-buildings" },
   { label: "Prefab Building", href: "/product/prefab-buildings" },
   { label: "Prefabricated House", href: "/product/prefabricated-houses" },
+  { label: "PUF Panel", href: "/product/puf-panel" },
 ];
 
 const Footer = () => {
@@ -194,8 +201,9 @@ const Footer = () => {
             <ul className="space-y-1.5">
               {PRODUCT_CATEGORIES.map((category) => (
                 <li key={category.href}>
-                  <Link 
-                    href={category.href} 
+                  <Link
+                    href={category.href}
+                    prefetch={false}
                     className="text-zinc-300 hover:text-primary transition-colors duration-300 text-sm font-medium whitespace-nowrap block py-0.5"
                   >
                     {category.label}
@@ -323,4 +331,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

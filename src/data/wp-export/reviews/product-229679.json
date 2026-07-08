@@ -1,0 +1,42 @@
+[
+  {
+    "id": 200,
+    "date_created": "2024-12-19T15:23:05",
+    "date_created_gmt": "2024-12-19T09:53:05",
+    "product_id": 229679,
+    "product_name": "Pre-Engineered Steel Building manufacturers",
+    "product_permalink": "https://blog.samanportable.com/product/pre-engineered-buildings/pre-engineered-steel-building-manufacturers/",
+    "status": "approved",
+    "reviewer": "Margo",
+    "reviewer_email": "margosimmons@hotmail.com",
+    "review": "<p>Hey very interesting blog!</p>\n",
+    "rating": 2,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/200",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/229679"
+        }
+      ]
+    }
+  }
+]

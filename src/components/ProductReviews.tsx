@@ -10,7 +10,13 @@ interface ProductReviewsProps {
   averageRating?: string;
   ratingCount?: number;
   productId: number;
+  /** Real WooCommerce product id for review submission; falls back to `productId`. */
+  reviewProductId?: number;
   productName?: string;
+  /** Default true. Set false when productId has no corresponding real
+   *  WooCommerce product yet — submitting would silently fail against the
+   *  live API. The zero-state / approved-review list still render normally. */
+  showSubmissionForm?: boolean;
 }
 
 // Strip HTML/entities so review text renders as plain, safe text (no
@@ -72,7 +78,7 @@ function Stars({ rating }: { rating: number }) {
  * approval) via /api/submit-review; nothing here changes the approved-review
  * fetch or the Review/AggregateRating schema.
  */
-export default function ProductReviews({ reviews, averageRating, ratingCount, productId, productName }: ProductReviewsProps) {
+export default function ProductReviews({ reviews, averageRating, ratingCount, productId, reviewProductId, productName, showSubmissionForm = true }: ProductReviewsProps) {
   const list = Array.isArray(reviews) ? reviews : [];
   const hasReviews = list.length > 0;
   const count = typeof ratingCount === 'number' && ratingCount > 0 ? ratingCount : 0;
@@ -113,6 +119,7 @@ export default function ProductReviews({ reviews, averageRating, ratingCount, pr
               )}
             </div>
           </div>
+          {showSubmissionForm && (
           <Button
             type="button"
             variant="outline"
@@ -122,6 +129,7 @@ export default function ProductReviews({ reviews, averageRating, ratingCount, pr
             <PenLine className="w-4 h-4 mr-2" />
             Write a Review
           </Button>
+          )}
         </div>
 
         {hasReviews ? (
@@ -157,8 +165,10 @@ export default function ProductReviews({ reviews, averageRating, ratingCount, pr
         )}
 
         {/* Real review submission form (pending admin approval). Single form, no
-            duplication, no redirect to Contact. */}
-        <ReviewForm ref={formRef} productId={productId} productName={productName} />
+            duplication, no redirect to Contact. Hidden entirely when
+            showSubmissionForm=false (no real WooCommerce product mapped yet —
+            see FF-1). */}
+        {showSubmissionForm && <ReviewForm ref={formRef} productId={productId} reviewProductId={reviewProductId} productName={productName} />}
       </Card>
     </section>
   );

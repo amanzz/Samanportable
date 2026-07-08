@@ -85,7 +85,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
                 <div key={product.id} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-6 min-w-0">
                   <ProductCard
                     product={product}
-                    priority={index < 3} // Priority loading for first 3 products
+                    priority={false} // Below-the-fold section: lazy-load all (was index<3 eager); defers offscreen images, keeps hero eager
                   />
                 </div>
               ))}

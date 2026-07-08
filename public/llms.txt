@@ -1,0 +1,19 @@
+# SAMAN Portable
+
+SAMAN Portable is the public website of SAMAN POS India Private Limited.
+
+Business description: factory-built portable and prefabricated structures for commercial, industrial, site, and infrastructure use in India.
+
+Main product categories:
+- Portable cabins and porta cabins
+- Container offices and portable office cabins
+- Container cafes and container houses
+- Prefabricated houses and prefab buildings
+- Industrial sheds, PEB construction, and pre-engineered buildings
+- Security cabins, portable toilets, and labour colony units
+
+Website: https://www.samanportable.com
+Sitemap: https://www.samanportable.com/sitemap.xml
+Contact email: sales@samanportable.com
+
+Use the sitemap for current public URLs and page discovery.

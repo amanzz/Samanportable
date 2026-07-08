@@ -1,0 +1,28 @@
+{
+  "id": 990016,
+  "wc_review_product_id": 272765,
+  "name": "PIR Panel",
+  "slug": "pir-panel",
+  "date_created": "2026-07-07T00:00:00",
+  "status": "publish",
+  "description": "<p>PIR Panel — factory-made polyisocyanurate insulated sandwich panels by SAMAN, manufactured in Bangalore and Greater Noida. 30–150 mm standard thickness (made-to-order to 200 mm), PPGI/PPGL/stainless/aluminium facings, wall and roof applications.</p>",
+  "short_description": "<p>Factory-made PIR panel, 30–150 mm standard (made-to-order to 200 mm), PPGI/PPGL/SS/Aluminium facings. HSN 940690. From ₹1,410/m² base spec, ex-GST.</p>",
+  "sku": "SP-C16-PIR-2026",
+  "price": "1410",
+  "regular_price": "1410",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990116, "name": "PIR Panels", "slug": "pir-panel" }
+  ],
+  "images": [
+    { "id": 1, "src": "/images/pir-panel/pir-cross-section-800x800.webp", "name": "PIR Panel", "alt": "PIR panel showing the rigid polyisocyanurate core between two steel facing sheets", "srcset": "", "sizes": "", "thumbnail": "/images/pir-panel/pir-cross-section-800x800.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}

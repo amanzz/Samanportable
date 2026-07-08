@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
-import { fetchLightweightProductsByCategoryStrict, fetchProductCategoriesStrict, fetchProductAttributesStrict, fetchCategoryRankMathSEO, fetchProductCategoryBySlugStrict, RankMathSEOData, ProductCategoryDetail } from '@/config/api';
-import { LightweightProduct, ProductFilters as ProductFiltersType, PaginationInfo } from '@/config/api';
+import type { RankMathSEOData, ProductCategoryDetail } from '@/config/api';
+import type { LightweightProduct, ProductFilters as ProductFiltersType, PaginationInfo } from '@/config/api';
 import ProductCard from '@/components/ProductCard';
 import ProductFilters from '@/components/ProductFilters';
 import Pagination from '@/components/Pagination';
@@ -13,6 +13,7 @@ import { ArrowLeft, Package } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { categorySchemas } from '@/lib/categorySchemas';
+import { setPublicEdgeCache } from '@/lib/cacheHeaders';
 
 interface ProductCategoryPageProps {
   products: LightweightProduct[];
@@ -26,13 +27,13 @@ interface ProductCategoryPageProps {
   rankMathSEO?: RankMathSEOData | null;
 }
 
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetServerSideProps } from 'next';
 
 // Client-side product fetch for pagination/filters. Goes through the same-origin
 // /api/products-by-category route so the WooCommerce consumer key/secret stays
 // server-side and is NEVER shipped to the browser. (Calling the WooCommerce fetch
 // helper directly from the client previously inlined the key/secret into the
-// client bundle.) getStaticProps below still calls the helper directly —
+// client bundle.) getServerSideProps below still calls the helper directly —
 // that code runs only on the server and is stripped from the client bundle.
 async function fetchCategoryProductsClient(
   slug: string,
@@ -46,20 +47,7 @@ async function fetchCategoryProductsClient(
   return res.json();
 }
 
-// GATE-A REMEDY (ISR): the hub is rendered once, cached, background-revalidated
-// hourly — no per-request WooCommerce fetch. fallback 'blocking' = an uncached
-// hub still renders fully server-side on first hit. Every fetch is STRICT
-// (throws on transient failure) so a failed revalidation KEEPS the last-good
-// page. The old catch-all that returned EMPTY PROPS on any error was the
-// THIN-200 hub shell Gate A reproduced (e.g. container-offices at 1,710 chars) —
-// it is gone: failures now throw, they never render an empty grid.
-// (A GENUINELY empty category still renders its empty state — parity preserved.)
-export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: [],
-  fallback: 'blocking',
-});
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params, res }) => {
   const slug = params?.slug as string;
   if (!slug) {
     return {
@@ -68,20 +56,32 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   try {
+    // Static content layer: reads exported files — no WordPress call.
+    // Server-only module, loaded dynamically so fs never reaches the client bundle.
+    const staticContent = await import('@/lib/staticContent');
     const [productsResponse, categoriesResponse, attributesResponse, categoryDetail] = await Promise.all([
-      fetchLightweightProductsByCategoryStrict(slug, 1, 20), // STRICT: throws on failure, [] only on genuine empty
-      fetchProductCategoriesStrict(),
-      fetchProductAttributesStrict(),
-      fetchProductCategoryBySlugStrict(slug),
+      staticContent.fetchLightweightProductsByCategory(slug, 1, 20), // Using optimized function with 20 items per page
+      staticContent.fetchProductCategories(),
+      staticContent.fetchProductAttributes(),
+      staticContent.fetchProductCategoryBySlug(slug),
     ]);
 
     const categoryName = categoryDetail?.name ||
       productsResponse.products[0]?.category ||
       slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'Products';
 
-    // Fetch Rank Math SEO data. STRICT: transient failure throws (keep last-good);
-    // genuine 200-with-no-head returns null (baseline fallback behavior).
-    const rankMathSEO: RankMathSEOData | null = await fetchCategoryRankMathSEO(slug, true);
+    // Fetch Rank Math SEO data
+    let rankMathSEO: RankMathSEOData | null = null;
+    try {
+      rankMathSEO = await staticContent.fetchCategoryRankMathSEO(slug);
+    } catch (error) {
+      console.warn('Failed to fetch Rank Math SEO data for category:', error);
+    }
+
+    // Public marketing page with no per-user data — safe to edge-cache. Set only on
+    // the success path; the notFound above and the catch-fallback below keep Next's
+    // default no-store so transient failures / new URLs are never cache-poisoned.
+    setPublicEdgeCache(res);
 
     return {
       props: {
@@ -95,17 +95,29 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         attributes: attributesResponse,
         rankMathSEO,
       },
-      revalidate: 3600, // ISR: background hourly revalidation (same as the [slug] blog route)
     };
   } catch (error) {
-    // STRICT contract: a transient backend failure must NEVER cache an empty
-    // shell. Re-throw: during background revalidation Next keeps the last-good
-    // hub; on an uncached first render it returns a 500 (retryable, not cached).
-    console.error(
-      'Category hub ISR render failed — keeping last-good / returning 5xx:',
-      error instanceof Error ? error.message : 'unknown error'
-    );
-    throw error instanceof Error ? error : new Error('Failed to render category hub');
+    console.error('Error fetching category data:', error);
+    return {
+      props: {
+        products: [],
+        categoryName: slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'Products',
+        categorySlug: slug,
+        categoryDescription: '',
+        categoryExtraDescription: '',
+        pagination: {
+          currentPage: 1,
+          totalPages: 0,
+          totalProducts: 0,
+          perPage: 20,
+          hasNextPage: false,
+          hasPrevPage: false,
+        },
+        categories: [],
+        attributes: [],
+        rankMathSEO: null,
+      },
+    };
   }
 };
 
@@ -129,26 +141,6 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
   const [filters, setFilters] = useState<ProductFiltersType>({
     category: initialCategorySlug,
   });
-
-
-
-  // Preload images for better performance
-   useEffect(() => {
-     const preloadImages = () => {
-       initialProducts.slice(0, 6).forEach((product) => {
-         const imageUrl = product.featured_image;
-         if (imageUrl) {
-           const link = document.createElement('link');
-           link.rel = 'preload';
-           link.as = 'image';
-           link.href = imageUrl;
-           document.head.appendChild(link);
-         }
-       });
-     };
- 
-     preloadImages();
-   }, [initialProducts]);
 
   // Reset states when initial props change
   useEffect(() => {
@@ -311,7 +303,7 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                       <ProductCard 
                         key={product.id} 
                         product={product} 
-                        priority={index < 6} // Prioritize first 6 products for better LCP
+                        priority={index === 0}
                       />
                     ))}
                   </div>

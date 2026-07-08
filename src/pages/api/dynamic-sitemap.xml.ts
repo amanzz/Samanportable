@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { fetchProducts, fetchProductCategories } from '@/config/api';
+﻿import { NextApiRequest, NextApiResponse } from 'next';
+import { fetchProducts, fetchProductCategories } from '@/lib/staticContent';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {

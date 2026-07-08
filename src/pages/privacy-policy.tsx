@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { pageSEO, siteConfig } from '@/config/seo';
+import { generateWebPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,6 +17,17 @@ const PrivacyPolicy = () => {
         keywords={pageSEO.privacyPolicy.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
+        structuredData={[
+          generateWebPageSchema({
+            url: 'https://www.samanportable.com/privacy-policy',
+            name: pageSEO.privacyPolicy.title,
+            description: pageSEO.privacyPolicy.description,
+          }),
+          generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.samanportable.com/' },
+            { name: 'Privacy Policy', url: 'https://www.samanportable.com/privacy-policy' },
+          ]),
+        ]}
       />
 
       <div className="min-h-screen">

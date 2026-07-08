@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { pageSEO, siteConfig } from '@/config/seo';
+import { generateWebPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 import Link from 'next/link';
 import { ArrowLeft, RefreshCw, Shield, Clock, Phone, Mail } from 'lucide-react';
@@ -18,6 +19,17 @@ export default function RefundAndReturnPolicyPage() {
         keywords={pageSEO.refundPolicy.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
+        structuredData={[
+          generateWebPageSchema({
+            url: 'https://www.samanportable.com/refund-and-return-policy',
+            name: pageSEO.refundPolicy.title,
+            description: pageSEO.refundPolicy.description,
+          }),
+          generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://www.samanportable.com/' },
+            { name: 'Refund and Return Policy', url: 'https://www.samanportable.com/refund-and-return-policy' },
+          ]),
+        ]}
       />
 
       {/* removed any extra Head tags; keep the policy content intact */}

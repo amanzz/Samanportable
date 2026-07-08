@@ -34,6 +34,11 @@ import { ProductReview } from '@/config/api';
 
 interface ProductTabsProps {
   description: string;
+  // Optional per-product HTML overrides. When present, they replace the global
+  // Specifications / Shipping tab content; when absent, the existing global
+  // defaults render unchanged (backward-compatible for all other products).
+  specificationsHtml?: string;
+  shippingHtml?: string;
   productTitle: string;
   reviews?: ProductReview[];
   averageRating?: string;
@@ -44,7 +49,7 @@ interface ProductTabsProps {
 
 
 
-const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle, reviews = [], averageRating, ratingCount, productId, productName }) => {
+const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHtml, shippingHtml, productTitle, reviews = [], averageRating, ratingCount, productId, productName }) => {
   const [activeTab, setActiveTab] = useState('description');
 
   // Allow a "Write a Review" trigger anywhere on the page to open the Reviews tab
@@ -386,8 +391,8 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle, re
                       <p className="text-muted-foreground">Detailed technical information and features</p>
               </div>
             </div>
-            <OptimizedContent 
-              content={additionalInfo}
+            <OptimizedContent
+              content={specificationsHtml && specificationsHtml.trim() ? specificationsHtml : additionalInfo}
               className="prose prose-lg max-w-none"
             />
           </div>
@@ -405,7 +410,9 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, productTitle, re
               </div>
             </div>
                   <div className="prose prose-lg max-w-none">
-              <ShippingInfoContent />
+              {shippingHtml && shippingHtml.trim()
+                ? <OptimizedContent content={shippingHtml} className="prose prose-lg max-w-none" />
+                : <ShippingInfoContent />}
             </div>
           </div>
             </TabsContent>

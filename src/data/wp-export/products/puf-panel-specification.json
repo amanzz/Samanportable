@@ -1,0 +1,28 @@
+{
+  "id": 990007,
+  "wc_review_product_id": 272763,
+  "name": "PUF Panel Specification",
+  "slug": "puf-panel-specification",
+  "date_created": "2026-07-07T00:00:00",
+  "status": "publish",
+  "description": "<p>PUF Panel Specification — owner-verified thickness, size, facing and weight reference by SAMAN, manufactured in Bangalore and Greater Noida. 30–200 mm thickness, PPGI/PPGL/BGL/stainless/aluminium/craft paper facings.</p>",
+  "short_description": "<p>Owner-verified PUF panel specification: thickness, size, facing, weight. HSN 940690. From ₹1,050/sq mt base spec, ex-GST.</p>",
+  "sku": "SP-C15-SPC-2026",
+  "price": "1050",
+  "regular_price": "1050",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990101, "name": "PUF Panels", "slug": "puf-panel" }
+  ],
+  "images": [
+    { "id": 1, "src": "/images/puf-panel/spec/50mm-off-white-puf-panel-factory-stack.webp", "name": "PUF Panel Specification", "alt": "50 mm PUF panel factory stack, standard specification thickness", "srcset": "", "sizes": "", "thumbnail": "/images/puf-panel/spec/50mm-off-white-puf-panel-factory-stack.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}

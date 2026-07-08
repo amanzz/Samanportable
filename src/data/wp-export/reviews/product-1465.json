@@ -1,0 +1,122 @@
+[
+  {
+    "id": 3167,
+    "date_created": "2026-06-07T20:05:22",
+    "date_created_gmt": "2026-06-07T14:35:22",
+    "product_id": 1465,
+    "product_name": "Labor Colony",
+    "product_permalink": "https://blog.samanportable.com/product/labor-colony/",
+    "status": "approved",
+    "reviewer": "Naushadalam Naushadalam",
+    "reviewer_email": "nnaushadalam069@gmail.com",
+    "review": "<p>We ordered a labour colony unit for our site team at an infrastructure project near Hosur Road, and the build quality held up exactly as promised. The structure was delivered on schedule and the team handled installation in a single day with minimal disruption to our site work. Each room comfortably houses our workers, ventilation is good even in the afternoon heat, and the steel frame feels solid — no flexing or panel gaps after the first monsoon. What stood out was the clear communication on specs and pricing upfront, so there were no surprises at delivery. We've since asked them to quote a second block for our next phase. Reliable supplier for on-site worker accommodation.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3167",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1465"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3166,
+    "date_created": "2026-06-06T19:15:26",
+    "date_created_gmt": "2026-06-06T13:45:26",
+    "product_id": 1465,
+    "product_name": "Labor Colony",
+    "product_permalink": "https://blog.samanportable.com/product/labor-colony/",
+    "status": "approved",
+    "reviewer": "Mustak Alam",
+    "reviewer_email": "mustakalam64652@gmail.com",
+    "review": "<p>Reliable labor colony supplier for our Bangalore project<br />\nOrdered a 120-worker labor colony from SAMAN for our infrastructure project near Electronic City. The prefab units were delivered in 10 days — sleeping dormitories, sanitation block, and dining facility all properly fitted from the factory. MS frame and PUF panels are solid, and the on-site assembly was smooth and on schedule. Quality of worker accommodation matches what they promise on the product page. For any EPC contractor in Bangalore needing fast, ready-to-deploy labor camps, this is a reliable choice.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3166",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1465"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3165,
+    "date_created": "2026-06-05T21:34:55",
+    "date_created_gmt": "2026-06-05T16:04:55",
+    "product_id": 1465,
+    "product_name": "Labor Colony",
+    "product_permalink": "https://blog.samanportable.com/product/labor-colony/",
+    "status": "approved",
+    "reviewer": "Shaikh Samreen",
+    "reviewer_email": "shaikhsamreen.q@gmail.com",
+    "review": "<p>Needed accommodation for 48 workers on our Devanahalli site. SAMAN's team came down, measured the plot, and proposed a 6-room block with attached toilets and a separate kitchen-dining unit. Quote was clear — no hidden charges later.</p>\n<p>Delivered and installed in three weeks. Bunk beds fitted, fans and lights working day one, water tank mounted on the roof. Workers moved in the same evening.</p>\n<p>Six months in, zero leaks through the monsoon. Site engineer is happy, labour contractor is happy, and we didn't lose project days waiting on civil construction.</p>\n<p>— Samreen Shaikh, Bangalore (Devanahalli site)<br />\nVerified Buyer · March 2026</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3165",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1465"
+        }
+      ]
+    }
+  }
+]

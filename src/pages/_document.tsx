@@ -3,10 +3,37 @@ import { inter } from '@/lib/fonts';
 
 export default function Document() {
   return (
-    <Html lang="en" className={inter.variable}>
+    <Html lang="en-IN" className={inter.variable}>
       <Head>
         {/* Google Tag Manager moved to next/script (afterInteractive) in _app.tsx so it
             no longer blocks first paint. GA4 + all GTM lead events are preserved. */}
+
+        {/* Local dev fallback: if Next's dev FOUC guard is not cleared because a
+            chunk/runtime refresh stalls, reveal the page instead of leaving a
+            blank white body. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                function revealBody() {
+                  var nodes = document.querySelectorAll('style[data-next-hide-fouc], noscript[data-next-hide-fouc]');
+                  for (var i = 0; i < nodes.length; i += 1) {
+                    if (nodes[i].parentNode) nodes[i].parentNode.removeChild(nodes[i]);
+                  }
+                  if (document.body && document.body.style.display === 'none') {
+                    document.body.style.display = '';
+                  }
+                }
+                revealBody();
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', revealBody, { once: true });
+                } else {
+                  revealBody();
+                }
+              })();
+            `,
+          }}
+        />
 
         {/* Charset is automatically added by Next.js */}
         
@@ -34,7 +61,7 @@ export default function Document() {
         
         {/* Security and Performance Meta Tags */}
         <meta name="referrer" content="strict-origin-when-cross-origin" />
-        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
+        {/* X-Frame-Options is sent as an HTTP response header from next.config.js (the only valid place); the duplicate <meta> here was invalid and logged a console warning. */}
         <meta name="msapplication-TileColor" content="#0A3D2A" />
         {/* Robots meta tags are handled by individual SEO components */}
         

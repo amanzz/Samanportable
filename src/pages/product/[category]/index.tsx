@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Layout from '../../../components/Layout';
 // import SEO from '../../../components/SEO'; // Removed to avoid duplicate meta tags
@@ -8,36 +8,25 @@ import { Button } from '../../../components/ui/button';
 import { Badge } from '../../../components/ui/badge';
 import { Card } from '../../../components/ui/card';
 import { ScrollArea } from '../../../components/ui/scroll-area';
-import QuoteFormPopup from '../../../components/QuoteFormPopup';
 import MobileBottomNav from '../../../components/MobileBottomNav';
 import { 
   Star, 
   ShoppingCart, 
   ArrowLeft,
-  Loader2,
-  Phone,
-  Mail,
-  Minus,
-  Plus,
-  BookOpen,
-  Check
+  Loader2
 } from 'lucide-react';
-import { fetchLightweightProduct, fetchProductDescriptionStrict, fetchRelatedProductsStrict, WooCommerceProduct, fetchProductRankMathSEO, RankMathSEOData, fetchProductReviews, ProductReview } from '../../../config/api';
+import type { WooCommerceProduct, RankMathSEOData, ProductReview } from '../../../config/api';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
 import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
-import { useCart } from '../../../contexts/CartContext';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
+import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
-// Dynamic import for ImagePreloader to reduce initial bundle size
-const ImagePreloader = dynamic(() => import('../../../components/ImagePreloader'), {
-  ssr: false,
-  loading: () => null
-});
+const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
@@ -56,16 +45,50 @@ interface ProductDetailsProps {
   reviews?: ProductReview[];
 }
 
-// GATE-A REMEDY (ISR): rendered once, cached, background-revalidated hourly —
-// no per-request WooCommerce fetch. fallback 'blocking' = uncached pages still
-// render fully server-side on first hit. STRICT fetchers throw on transient
-// failure so a failed revalidation keeps the last-good page (never a THIN-200).
-export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: [],
-  fallback: 'blocking',
-});
+type PrefabricatedWarehouseLink = {
+  label: string;
+  context: string;
+};
 
-export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ params }) => {
+const PREFABRICATED_WAREHOUSE_SOURCE_LINKS: Record<string, PrefabricatedWarehouseLink> = {
+  'prefab-buildings': {
+    label: 'prefabricated warehouse options',
+    context: 'Compare warehouse-grade prefab building formats for industrial storage and dispatch requirements.',
+  },
+  'industrial-sheds': {
+    label: 'steel warehouse building solutions',
+    context: 'Review prefabricated warehouse structures when a shed needs larger covered storage capacity.',
+  },
+  'peb-constructions': {
+    label: 'warehouse building solutions',
+    context: 'Explore prefabricated warehouse choices alongside PEB construction planning.',
+  },
+  'pre-engineered-buildings': {
+    label: 'prefab industrial warehouse options',
+    context: 'See warehouse-focused prefab options for pre-engineered industrial building projects.',
+  },
+};
+
+const RelatedPrefabricatedWarehouseResource = ({ category }: { category: string }) => {
+  const resource = PREFABRICATED_WAREHOUSE_SOURCE_LINKS[category];
+  if (!resource) return null;
+
+  return (
+    <section className="mt-4 rounded-lg border border-amber-100 bg-amber-50/50 p-4 sm:p-5" aria-labelledby="related-prefabricated-warehouse-resource">
+      <h2 id="related-prefabricated-warehouse-resource" className="text-lg font-semibold text-slate-900 mb-2">Related Prefabricated Warehouse Resource</h2>
+      <p className="text-sm text-slate-700 leading-relaxed mb-3">{resource.context}</p>
+      <Link
+        href="/product-category/prefabricated-warehouses"
+        className="inline-flex items-center gap-2 rounded-md border border-amber-100 bg-white px-4 py-2 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-amber-300 hover:bg-amber-50"
+      >
+        {resource.label}
+        <ArrowLeft className="w-4 h-4 rotate-180" />
+      </Link>
+    </section>
+  );
+};
+
+export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params }) => {
   try {
     const { category } = params as { category: string };
     
@@ -75,8 +98,12 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
       };
     }
 
+    // Static content layer: reads exported product files — no WordPress call.
+    // Server-only module, loaded dynamically so fs never reaches the client bundle.
+    const staticContent = await import('../../../lib/staticContent');
+
     // Fetch lightweight product data first
-    const product = await fetchLightweightProduct(category);
+    const product = await staticContent.fetchLightweightProduct(category);
     
     if (!product) {
       return {
@@ -94,15 +121,22 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
       };
     }
 
-    // Get related products from the same category (lightweight).
-    // STRICT: a failed fetch THROWS (ISR keeps last-good) — the old swallow
-    // pattern shipped the page with this section missing.
-    const relatedProducts: WooCommerceProduct[] =
-      (await fetchRelatedProductsStrict(product.category_slug)).filter(p => p.id !== product.id);
+    // Get related products from the same category (lightweight) - OPTIMIZED
+    let relatedProducts: WooCommerceProduct[] = [];
+    try {
+      const relatedResponse = await staticContent.fetchProducts(1, 12, { // Increased to 12 for better variety
+        category: product.category_slug
+      });
+      // Filter out the current product manually since exclude is not supported
+      relatedProducts = (relatedResponse.products || []).filter(p => p.id !== product.id);
 
-    // Fetch full description and images separately.
-    // STRICT: the old null-on-failure version rendered description:'' = THIN-200.
-    const descriptionData = await fetchProductDescriptionStrict(category);
+    } catch (error) {
+      console.error('Error fetching related products:', error);
+      // Silent error handling for production
+    }
+
+    // Fetch full description and images separately
+    const descriptionData = await staticContent.fetchProductDescription(category);
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -110,23 +144,51 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
     // problem never breaks the page or causes a false 404.
     let reviews: ProductReview[] = [];
     if (product.rating_count > 0) {
-      reviews = await fetchProductReviews(product.id, 5);
+      reviews = await staticContent.fetchProductReviews(product.id, 5);
     }
+    const sourceAttributes = SAFE_PRODUCT_SLUG.test(category)
+      ? await import(`../../../data/wp-export/products/${category}.json`)
+          .then((mod: { default?: { attributes?: WooCommerceProduct['attributes'] } }) =>
+            Array.isArray(mod.default?.attributes) ? mod.default.attributes : []
+          )
+          .catch(() => [])
+      : [];
 
-    // Fetch Rank Math SEO data. STRICT: a transient failure THROWS (ISR keeps
-    // last-good meta — never caches fallback meta for an hour). The genuine-empty
-    // fallback below is baseline behavior and stays: it only runs after a
-    // SUCCESSFUL fetch that returned no RankMath head for this page.
-    let rankMathSEO: RankMathSEOData | null = await fetchProductRankMathSEO(category, true);
-
-    // If RankMath data is genuinely empty, create fallback SEO data
-    if (!rankMathSEO || Object.keys(rankMathSEO).length === 0) {
-      // Create unique descriptions for each purpose to avoid duplication
+    // Fetch Rank Math SEO data with fallback
+    let rankMathSEO: RankMathSEOData | null = null;
+    try {
+      rankMathSEO = await staticContent.fetchProductRankMathSEO(category);
+      
+      // If RankMath data is empty or incomplete, create fallback SEO data
+      if (!rankMathSEO || Object.keys(rankMathSEO).length === 0) {
+        // Create unique descriptions for each purpose to avoid duplication
+        const baseDescription = product.short_description?.replace(/<[^>]*>/g, '').substring(0, 120) || product.name;
+        const metaDescription = `${baseDescription} - Quality portable solution by Saman Portable.`;
+        const ogDescription = `${product.name} - Premium portable structures with customization options.`;
+        const twitterDescription = `${product.name} - Durable and reliable portable solutions.`;
+        
+        rankMathSEO = {
+          title: product.name + ' - Saman Portable',
+          description: metaDescription,
+          canonical: `https://www.samanportable.com/product/${category}`,
+          og_title: product.name,
+          og_description: ogDescription,
+          og_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
+          og_locale: 'en_US',
+          twitter_title: product.name,
+          twitter_description: twitterDescription,
+          twitter_image: product.featured_image || 'https://www.samanportable.com/og-image.svg',
+          robots: { index: 'index', follow: 'follow' }
+        };
+      }
+    } catch (error) {
+      console.warn('Failed to fetch Rank Math SEO data:', error);
+      // Create fallback SEO data with unique descriptions
       const baseDescription = product.short_description?.replace(/<[^>]*>/g, '').substring(0, 120) || product.name;
       const metaDescription = `${baseDescription} - Quality portable solution by Saman Portable.`;
       const ogDescription = `${product.name} - Premium portable structures with customization options.`;
       const twitterDescription = `${product.name} - Durable and reliable portable solutions.`;
-
+      
       rankMathSEO = {
         title: product.name + ' - Saman Portable',
         description: metaDescription,
@@ -147,6 +209,9 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
         product: {
           ...product,
           description: descriptionData?.description || '',
+          // Optional per-product tab overrides (additive; empty for all other products).
+          specificationsHtml: descriptionData?.specificationsHtml || '',
+          shippingHtml: descriptionData?.shippingHtml || '',
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
             src: img.src,
@@ -161,7 +226,7 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
               slug: (product as any).category_slug || 'uncategorized'
             }
           ],
-          attributes: [],
+          attributes: sourceAttributes,
           stock_quantity: null,
           weight: '',
           dimensions: { length: '', width: '', height: '' },
@@ -177,17 +242,16 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
         rankMathSEO,
         reviews,
       },
-      revalidate: 3600, // ISR: background hourly revalidation (same as the [slug] blog route)
     };
   } catch (error) {
     // A transient backend failure (network/timeout/5xx/429, surfaced as
-    // BackendFetchError by any STRICT fetcher above) must NOT become a false 404 —
-    // that would deindex a real product. Re-throw: during an ISR background
-    // revalidation Next then KEEPS the last-good cached page; on an uncached
-    // first render it returns HTTP 500 (retryable by Google, never cached).
-    // A GENUINE missing product is handled above (product === null → notFound).
+    // BackendFetchError by fetchLightweightProduct) must NOT become a false 404 —
+    // that would deindex a real product. Re-throw so Next returns HTTP 500
+    // (retryable by Google) instead of notFound. A GENUINE missing product is
+    // handled above (product === null → notFound) and only happens when the backend
+    // responded successfully. Only the error message is logged (no request URL / keys).
     console.error(
-      'Product (category index) ISR render failed — keeping last-good / returning 5xx, not 404:',
+      'Product (category index) SSR failed — returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render product');
@@ -197,12 +261,8 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps> = async ({ para
 const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, reviews = [] }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [quantity, setQuantity] = useState(1);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
-  const { addItem, isInCart } = useCart();
-  const isProductInCart = isInCart(product?.id || 0);
 
   // Parse short description table data
   const shortDescriptionData = useMemo(() => {
@@ -286,9 +346,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
 
   // Transform related products to match Vite design
   const transformedRelatedProducts = useMemo(() => {
-    console.log('Related products count:', relatedProducts.length);
-    console.log('Related products:', relatedProducts.map(p => ({ name: p.name, category: p.categories?.[0]?.name })));
-    
     return relatedProducts.map((p) => {
       const catSlug = p.categories && p.categories.length > 0 ? p.categories[0].slug : 'default';
       const catName = p.categories && p.categories.length > 0 ? p.categories[0].name : 'Uncategorized';
@@ -309,7 +366,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
         ratingCount: Number(p.rating_count) || 0,
         description: p.description || '',
         url,
-        seoAnchorText: getSeoAnchorText(catSlug) || p.name,
+        seoAnchorText: p.name,
       };
     });
   }, [relatedProducts]);
@@ -371,12 +428,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               />
             </Head>
           )}
-
-          {/* Preload critical images for better performance */}
-          <ImagePreloader 
-            images={images.map(img => img.src).filter(Boolean)} 
-            maxPreload={4} 
-          />
 
           <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -452,7 +503,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                                   {/* Product Info */}
                                   <div className="flex-1 min-w-0">
                                     <h4 className={cn(
-                                      "font-medium text-sm leading-tight mb-1 transition-colors line-clamp-1",
+                                      "font-medium text-sm leading-tight mb-1 transition-colors line-clamp-2",
                                       relatedProduct.slug === product.slug 
                                         ? "text-white font-semibold" 
                                         : "text-foreground group-hover:text-primary"
@@ -596,6 +647,10 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                           ))}
                         </div>
                       )}
+
+                      <div className="-mx-2 pt-1 md:pt-3">
+                        <ProductZoneCtas variant="strip" className="w-full" />
+                      </div>
                       
                       {/* Dynamic Buttons from Short Description */}
                       {isHydrated && shortDescriptionButtons.length > 0 && (
@@ -702,80 +757,9 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                         )}
                       </div>
 
-                      {/* Quantity and Actions */}
-                      <div className="space-y-3 pt-3 border-t border-slate-200">
-                        {/* Quantity Selector */}
-                        <div className="space-y-2">
-                          <h3 className="text-base font-semibold text-foreground">Quantity</h3>
-                          <div className="flex items-center space-x-3">
-                            <div className="flex items-center border border-slate-300 rounded-lg overflow-hidden bg-white">
-                              <Button 
-                                variant="ghost"
-                                size="icon"
-                                className="h-8 w-8 hover:bg-slate-100 rounded-none"
-                                onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                              >
-                                <Minus className="h-3 w-3" />
-                              </Button>
-                              <span className="px-4 py-1 border-x border-slate-300 font-medium text-foreground min-w-[50px] text-center text-sm">{quantity}</span>
-                              <Button 
-                                variant="ghost"
-                                size="icon"
-                                className="h-8 w-8 hover:bg-slate-100 rounded-none"
-                                onClick={() => setQuantity(prev => prev + 1)}
-                              >
-                                <Plus className="h-3 w-3" />
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Enhanced Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-3">
-                          <Button 
-                            size="lg" 
-                            className={`flex-1 w-full sm:w-auto py-3 px-4 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] ${
-                              isProductInCart 
-                                ? 'bg-green-600 hover:bg-green-700 text-white' 
-                                : 'bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white'
-                            }`}
-                            onClick={() => {
-                              if (!isProductInCart && transformedProduct) {
-                                addItem({
-                                  id: product.id,
-                                  name: product.name,
-                                  price: parseFloat(product.price || '0'),
-                                  image: product.images?.[0]?.src || '/placeholder.svg',
-                                  category: product.categories?.[0]?.name || 'Uncategorized',
-                                  slug: product.slug,
-                                });
-                              }
-                            }}
-                            disabled={isProductInCart}
-                          >
-                            {isProductInCart ? (
-                              <>
-                                <Check className="w-4 h-4 mr-2" />
-                                Added to Cart
-                              </>
-                            ) : (
-                              <>
-                                <ShoppingCart className="w-4 h-4 mr-2" />
-                                Add to Cart
-                              </>
-                            )}
-                          </Button>
-                          <Button 
-                            variant="outline" 
-                            size="lg" 
-                            className="flex-1 w-full sm:w-auto py-3 px-4 text-sm font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-200 transform hover:scale-[1.02]"
-                            onClick={() => setIsQuoteFormOpen(true)}
-                          >
-                            Send Enquiry
-                          </Button>
-                        </div>
-                      </div>
-
+                      {/* Actions — enquiry-only business (owner-approved):
+                          Add to Cart replaced by a direct Call button; the quantity
+                          stepper only served the cart and was removed with it. */}
                       {/* Product Info */}
                       <div className="space-y-3 pt-6 border-t border-slate-200">
                         <h3 className="text-lg font-semibold text-foreground">Product Information</h3>
@@ -804,6 +788,8 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               <div className="mt-4">
                 <ProductTabs
                   description={product.description || ''}
+                  specificationsHtml={(product as any).specificationsHtml || ''}
+                  shippingHtml={(product as any).shippingHtml || ''}
                   productTitle={transformedProduct.title}
                   reviews={reviews}
                   averageRating={product.average_rating}
@@ -812,6 +798,8 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   productName={transformedProduct.title}
                 />
               </div>
+
+              <RelatedPrefabricatedWarehouseResource category={category} />
 
               {/* Related Products Section */}
               <div className="mt-4 hidden lg:block">
@@ -955,38 +943,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                 </Link>
               </div>
 
-              {/* Enhanced Contact CTA */}
-              <Card className="mt-4 p-6 shadow-xl border-0 bg-gradient-to-br from-primary/10 via-blue-50/50 to-accent/10 overflow-hidden relative">
-               <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-50"></div>
-               <div className="relative z-10 text-center">
-                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                   <Phone className="w-8 h-8 text-primary" />
-                 </div>
-                 <h3 className="text-3xl font-bold mb-4 text-foreground">Need Custom Requirements?</h3>
-                 <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
-                   Get in touch with our experts for customized solutions and bulk orders. We&apos;re here to help you find the perfect solution.
-                 </p>
-                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                   <Button 
-                     size="lg" 
-                     className="h-14 px-8 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-                     onClick={() => window.location.href = 'tel:+919708989937'}
-                   >
-                     <Phone className="w-5 h-5 mr-3" />
-                     Call: +91 97089 89937
-                   </Button>
-                   <Button 
-                     variant="outline" 
-                     size="lg" 
-                     className="h-14 px-8 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-200 transform hover:scale-105"
-                     onClick={() => setIsQuoteFormOpen(true)}
-                   >
-                     <Mail className="w-5 h-5 mr-3" />
-                     Contact Us
-                   </Button>
-                 </div>
-               </div>
-             </Card>
             </div>
           </main>
           
@@ -1001,16 +957,10 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
             </button>
             )}
 
-          {/* Quote Form Popup */}
-          <QuoteFormPopup isOpen={isQuoteFormOpen} onClose={() => setIsQuoteFormOpen(false)} />
-
           {/* Mobile Bottom Navigation */}
           <MobileBottomNav relatedProducts={transformedRelatedProducts} />
         </>
       )}
-      
-      {/* Mobile Bottom Navigation - Always visible outside conditional */}
-      <MobileBottomNav relatedProducts={transformedRelatedProducts} />
     </Layout>
   );
 };

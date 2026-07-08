@@ -9,7 +9,7 @@ import Head from 'next/head';
 // Import Layout component
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
-import { generateOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema } from '@/lib/schema';
+import { generateOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema, getHomepageLocalBusinessGraphSchema } from '@/lib/schema';
 import { pageSEO, siteConfig } from '@/config/seo';
 
 // Dynamic imports for below-the-fold sections to improve LCP
@@ -17,6 +17,13 @@ const TrustBar = dynamic(() => import('@/components/TrustBar'), {
   ssr: true,
   loading: () => (
     <div className="w-full h-24 bg-[#F5F7FA] animate-pulse" />
+  ),
+});
+
+const CertificationTrustStrip = dynamic(() => import('@/components/CertificationTrustStrip'), {
+  ssr: true,
+  loading: () => (
+    <div className="w-full h-16 bg-[#0A3D2A] animate-pulse" />
   ),
 });
 
@@ -114,15 +121,8 @@ interface HomePageProps {
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   try {
-    // Import API functions dynamically to reduce initial bundle
-    const { fetchBlogPosts, fetchProductsByCategoryPriority, testWordPressAccessibility, testWordPressAccessibility: testConnect } = await import('@/config/api');
-
-    // Test connection (silently fail if not working to avoid crashing page)
-    try {
-      await testConnect();
-    } catch (e) {
-      // ignore
-    }
+    // Static content layer: reads exported files — no WordPress call at build time.
+    const { fetchBlogPosts, fetchProductsByCategoryPriority } = await import('@/lib/staticContent');
 
     // Fetch featured products (15 items for slider) from specific categories
     // "Portable Cabin", "Container Offices", "Porta Cabins", "Labor Colony", "Portable Office", "Container Cafe"
@@ -189,6 +189,11 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getHomepageFAQSchema()) }}
         />
+        {/* Schema 3: LocalBusiness factory graph */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getHomepageLocalBusinessGraphSchema()) }}
+        />
       </Head>
       <UnifiedSEO
         fallbackTitle="Portable Cabin & Container Office Manufacturer in Bangalore & Delhi NCR"
@@ -201,7 +206,17 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
         keywords={pageSEO.home.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
-        structuredData={generateOrganizationSchema()}
+        structuredData={[
+          generateOrganizationSchema(),
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            '@id': 'https://www.samanportable.com/#breadcrumb',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.samanportable.com/' },
+            ],
+          },
+        ]}
       />
 
       <main>
@@ -210,6 +225,9 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
 
         {/* 2. Trust Bar ★ NEW */}
         <TrustBar />
+
+        {/* 2b. Certification Trust Strip ★ NEW (links to /about-us#certifications) */}
+        <CertificationTrustStrip />
 
         {/* 3. Products Section (6 cards) */}
         <ServicesSection />

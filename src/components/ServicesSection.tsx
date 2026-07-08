@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
 import { Building2, Container, Coffee, Truck, Shield, Users, CheckCircle2, ArrowRight } from 'lucide-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
 
@@ -33,7 +32,7 @@ const ServicesSection = () => {
       tagline: 'Install in hours, not days',
       description: 'Compact guard rooms for gates, societies and factory entrances. FRP (lightweight) or MS steel (heavy-duty). No foundation required.',
       features: ['4×4 ft to 8×8 ft sizes available', 'FRP or MS steel — choose material', 'No foundation — install in hours'],
-      href: '/product-category/porta-cabins',
+      href: '/product/security-cabins',
       buttonText: 'See Security Cabins',
       price: 'From ₹75,000',
     },
@@ -43,7 +42,7 @@ const ServicesSection = () => {
       tagline: 'Full camp setup within days',
       description: 'Modular bunk houses and labour accommodation for construction sites. Individual units or multi-storey. Toilet, ventilation and lighting included.',
       features: ['Single units or multi-floor camps', 'Toilet, ventilation & lighting included', 'Full worksite camp in days'],
-      href: '/product-category/labor-colony',
+      href: '/product/labor-colony',
       buttonText: 'See Labour Colony Options',
       price: 'Custom pricing',
     },
@@ -76,33 +75,22 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16 md:mb-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10"
           >
             <Building2 className="w-3.5 h-3.5" />
             Product Portfolio
-          </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+          </div>
+          <h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
           >
             Premium Modular <span className="text-[#0A3D2A]">Architecture</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+          </h2>
+          <p
             className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light"
           >
             Engineering precision and high-ticket finishes for construction, industrial and corporate headquarters across India.
-          </motion.p>
+          </p>
         </div>
 
         {/* Product cards */}
@@ -110,12 +98,8 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="group relative bg-white rounded-2xl md:rounded-[2.5rem] p-6 md:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-10px_rgba(10,61,42,0.15)] transition-all duration-500 border border-gray-100 flex flex-col overflow-hidden"
               >
                 {/* Decorative background element */}
@@ -162,7 +146,7 @@ const ServicesSection = () => {
                 </div>
 
                 {/* CTA */}
-                <Link href={service.href} className="mt-auto relative z-10">
+                <Link href={service.href} prefetch={false} className="mt-auto relative z-10">
                   <Button
                     variant="outline"
                     className="w-full border-2 border-[#0A3D2A]/10 text-[#0A3D2A] font-bold hover:bg-[#0A3D2A] hover:border-[#0A3D2A] hover:text-white transition-all duration-300 h-14 rounded-2xl group/btn text-base"
@@ -171,16 +155,13 @@ const ServicesSection = () => {
                     <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1.5 transition-transform" />
                   </Button>
                 </Link>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
         {/* Bottom CTA Block */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="mt-16 md:mt-24 p-8 md:p-12 rounded-2xl md:rounded-[2.5rem] bg-gradient-to-br from-gray-900 to-[#051F15] text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10" />
@@ -204,7 +185,7 @@ const ServicesSection = () => {
               Request Layout
             </QuoteFormTrigger>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -379,6 +379,26 @@ export interface PanelConfig {
   options: PanelThicknessRate[];
 }
 
+export interface FixedSizeBasePrice {
+  lengthFt: number;
+  widthFt: number;
+  heightFt: number;
+  basePrice: number;
+}
+
+const FIXED_SIZE_BASE_PRICE_PRODUCTS = new Set<CalculatorProductId>([
+  "portable_toilet",
+  "security_cabin",
+]);
+
+export const PORTABLE_TOILET_SECURITY_CABIN_BASE_PRICES: FixedSizeBasePrice[] = [
+  { lengthFt: 4, widthFt: 4, heightFt: 7, basePrice: 45000 },
+  { lengthFt: 6, widthFt: 4, heightFt: 7, basePrice: 50000 },
+  { lengthFt: 6, widthFt: 6, heightFt: 7, basePrice: 55000 },
+  { lengthFt: 8, widthFt: 6, heightFt: 7, basePrice: 65000 },
+  { lengthFt: 8, widthFt: 8, heightFt: 8, basePrice: 80000 },
+];
+
 export const PANEL_CONFIG: Record<"puf_panel" | "rockwool_panel" | "pir_panel", PanelConfig> = {
   puf_panel: {
     options: [
@@ -865,6 +885,26 @@ export const getProductName = (productId: CalculatorProductId): string => {
   return PRODUCT_LABELS[productId] || productId;
 };
 
+export const isFixedSizeBasePriceProduct = (productId: CalculatorProductId): boolean => {
+  return FIXED_SIZE_BASE_PRICE_PRODUCTS.has(productId);
+};
+
+export const getFixedSizeBasePrice = (
+  productId: CalculatorProductId,
+  length: number,
+  width: number,
+): FixedSizeBasePrice | undefined => {
+  if (!isFixedSizeBasePriceProduct(productId)) {
+    return undefined;
+  }
+
+  const normalizedLength = Number(length.toFixed(2));
+  const normalizedWidth = Number(width.toFixed(2));
+  return PORTABLE_TOILET_SECURITY_CABIN_BASE_PRICES.find(
+    (item) => item.lengthFt === normalizedLength && item.widthFt === normalizedWidth,
+  );
+};
+
 export const currencyInRupee = (value: number): string =>
   `₹${Math.round(value || 0).toLocaleString("en-IN")}`;
 
@@ -940,11 +980,17 @@ export const calculateCabinEstimate = (
   const transportMultiplier = BASED_TRANSPORT_MULTIPLIERS[input.transport] || 1;
   const installationMultiplier = BASED_INSTALLATION_MULTIPLIERS[input.installation] || 1;
   const gstMultiplier = BASED_GST_MULTIPLIERS[input.gst] || 1;
+  const fixedSizeBasePrice = getFixedSizeBasePrice(input.productId, length, width);
+  if (isFixedSizeBasePriceProduct(input.productId) && !fixedSizeBasePrice) {
+    return null;
+  }
 
-  const baseValue = area * quantity * BASE_CABIN_RATE * materialMultiplier * transportMultiplier * installationMultiplier * gstMultiplier;
-  const baseLowRange = roundStep(baseValue * 0.88);
+  const baseValue = fixedSizeBasePrice
+    ? fixedSizeBasePrice.basePrice * quantity * transportMultiplier * installationMultiplier * gstMultiplier
+    : area * quantity * BASE_CABIN_RATE * materialMultiplier * transportMultiplier * installationMultiplier * gstMultiplier;
+  const baseLowRange = roundStep(baseValue * (fixedSizeBasePrice ? 1 : 0.88));
   const baseTypicalRange = roundStep(baseValue);
-  const baseHighRange = roundStep(baseValue * 1.12);
+  const baseHighRange = roundStep(baseValue * (fixedSizeBasePrice ? 1 : 1.12));
   const addOnSummary = calculateAddOnBudgetSummary(input.productId, input.selectedAddOns);
 
   const lowRange = baseLowRange + addOnSummary.lowRange;
@@ -954,14 +1000,18 @@ export const calculateCabinEstimate = (
   const zoneContact = ZONE_CONTACTS[input.zone] || "Zone contact details pending internal review.";
   const baseLine: EstimateBudgetLine = {
     label: "Base Product Estimate",
-    details: `${input.productName} (${area.toLocaleString("en-IN")} sq ft × ${quantity} pcs)`,
+    details: fixedSizeBasePrice
+      ? `${input.productName} (${fixedSizeBasePrice.lengthFt}x${fixedSizeBasePrice.widthFt}x${fixedSizeBasePrice.heightFt} ft x ${quantity} pcs)`
+      : `${input.productName} (${area.toLocaleString("en-IN")} sq ft × ${quantity} pcs)`,
     lowRange: baseLowRange,
     typicalRange: baseTypicalRange,
     highRange: baseHighRange,
   };
   const specificationLine: EstimateBudgetLine = {
     label: "Specification / Material",
-    details: `Material: ${input.materialType} | Internal Wall: ${input.materialType === "MS Cabin" ? input.internalWall : "N/A"} | Ceiling: ${input.ceiling} | Flooring: ${input.flooring} | Window: ${input.windowType}`,
+    details: fixedSizeBasePrice
+      ? `Standard size base: ${fixedSizeBasePrice.lengthFt}x${fixedSizeBasePrice.widthFt}x${fixedSizeBasePrice.heightFt} ft | GST, transport, installation, add-ons, and custom changes are outside base price`
+      : `Material: ${input.materialType} | Internal Wall: ${input.materialType === "MS Cabin" ? input.internalWall : "N/A"} | Ceiling: ${input.ceiling} | Flooring: ${input.flooring} | Window: ${input.windowType}`,
     lowRange: baseLowRange,
     typicalRange: baseTypicalRange,
     highRange: baseHighRange,
@@ -991,11 +1041,11 @@ export const calculateCabinEstimate = (
       specification: specificationLine,
       addOns: addOnSummary,
     },
-    materialType: input.materialType,
-    internalWall: input.materialType === "MS Cabin" ? input.internalWall : "N/A",
-    ceiling: input.ceiling,
-    flooring: input.flooring,
-    windowType: input.windowType,
+    materialType: fixedSizeBasePrice ? "Standard base specification" : input.materialType,
+    internalWall: fixedSizeBasePrice ? "Standard base specification" : input.materialType === "MS Cabin" ? input.internalWall : "N/A",
+    ceiling: fixedSizeBasePrice ? "Standard base specification" : input.ceiling,
+    flooring: fixedSizeBasePrice ? "Standard base specification" : input.flooring,
+    windowType: fixedSizeBasePrice ? "Standard base specification" : input.windowType,
   };
 };
 

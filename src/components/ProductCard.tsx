@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import QuoteFormPopup from './QuoteFormPopup';
 import { useCart } from '@/contexts/CartContext';
-import { ShoppingCart, Check, Tag, Star } from 'lucide-react';
+import { ShoppingCart, Check, Tag, Star, Phone } from 'lucide-react';
 import { formatPriceWithCurrency } from '@/lib/utils';
 import OptimizedCategoryImage from './OptimizedCategoryImage';
 
@@ -36,6 +36,24 @@ interface ProductCardProps {
   priority?: boolean;
   variant?: 'default' | 'compact' | 'featured';
 }
+
+const PUF_PANEL_CATEGORY_SLUG = 'puf-panel';
+const PUF_PRICE_SUBLINE = '30mm base spec · ex-GST · final price at quotation';
+
+const parsePriceValue = (price: string | number | undefined | null): number => {
+  if (typeof price === 'number') {
+    return Number.isFinite(price) ? price : 0;
+  }
+
+  const parsed = parseFloat(String(price || '').replace(/,/g, '').trim());
+  return Number.isFinite(parsed) ? parsed : 0;
+};
+
+const formatPrice = (price: number) => `₹${Math.round(price).toLocaleString('en-IN')}`;
+
+const isPufPanelProduct = (product: ProductCardProps['product']) =>
+  product.category_slug === PUF_PANEL_CATEGORY_SLUG ||
+  product.categories?.some((category) => category.slug === PUF_PANEL_CATEGORY_SLUG);
 
 const ProductCard: React.FC<ProductCardProps> = ({ 
   product, 
@@ -92,35 +110,32 @@ const ProductCard: React.FC<ProductCardProps> = ({
     };
   };
 
-  // Format price display
-  const formatPrice = (price: string | number | undefined) => {
-    if (!price) return '₹0';
-    const numPrice = typeof price === 'string' ? parseFloat(price) : price;
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(numPrice);
-  };
-
-  // Check if product is on sale
-  const isOnSale = product.on_sale || (product.sale_price && product.sale_price !== product.price);
-  const currentPrice = product.sale_price || product.price;
-  const originalPrice = product.regular_price || product.price;
-
   // Check stock status
   const isInStock = product.stock_status === 'instock' || !product.stock_status;
 
   // Get category name
   const categoryName = product.categories?.[0]?.name || product.category || 'Uncategorized';
 
+  const isPufProduct = isPufPanelProduct(product);
+  const salePrice = parsePriceValue(product.sale_price);
+  const listPrice = parsePriceValue(product.price);
+  const regularPrice = parsePriceValue(product.regular_price);
+  const originalPrice = regularPrice > 0 ? regularPrice : listPrice;
+  const isOnSale = !isPufProduct && salePrice > 0 && originalPrice > salePrice && Boolean(product.on_sale || product.sale_price !== product.price);
+  const currentPrice = isOnSale ? salePrice : listPrice > 0 ? listPrice : regularPrice;
+  const hasDisplayPrice = currentPrice > 0;
+  const displayPrice = hasDisplayPrice
+    ? isPufProduct
+      ? `From ${formatPrice(currentPrice)} / sq mt`
+      : formatPrice(currentPrice)
+    : 'Price on request';
+
   // Rating display
   const rating = product.average_rating ? parseFloat(product.average_rating) : 0;
   const ratingCount = product.rating_count || 0;
 
-  const discountPercentage = product.sale_price && originalPrice 
-    ? Math.round(((parseFloat(originalPrice as string) - parseFloat(product.sale_price)) / parseFloat(originalPrice as string)) * 100)
+  const discountPercentage = isOnSale && originalPrice > 0
+    ? Math.round(((originalPrice - salePrice) / originalPrice) * 100)
     : 0;
 
   return (
@@ -201,9 +216,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 <span className={`font-black text-[#0A3D2A] ${
                   variant === 'compact' ? 'text-lg' : 'text-2xl'
                 }`}>
-                  {formatPrice(currentPrice)}
+                  {displayPrice}
                 </span>
-                <span className={`text-gray-400 line-through font-medium ${
+                <span className={`text-gray-500 line-through font-medium ${
                   variant === 'compact' ? 'text-xs' : 'text-sm'
                 }`}>
                   {formatPrice(originalPrice)}
@@ -213,8 +228,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
               <span className={`font-black text-gray-900 ${
                 variant === 'compact' ? 'text-lg' : 'text-2xl'
               }`}>
-                {formatPrice(currentPrice)}
+                {displayPrice}
               </span>
+            )}
+            {isPufProduct && hasDisplayPrice && (
+              <p className="mt-1 text-xs font-medium text-gray-500">
+                {PUF_PRICE_SUBLINE}
+              </p>
             )}
           </div>
 
@@ -242,28 +262,18 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 </Button>
               </Link>
               
-              {isProductInCart ? (
-                <Button 
-                  disabled 
-                  className={`flex-1 bg-gray-100 text-gray-400 font-bold h-11 rounded-xl ${
-                    variant === 'compact' ? 'text-xs' : 'text-sm'
-                  }`}
-                >
-                  <Check className="w-4 h-4 mr-2" />
-                  In Cart
-                </Button>
-              ) : (
-                <Button 
-                  onClick={() => addItem(getCartItemData())}
-                  className={`flex-1 border border-[#0A3D2A]/20 bg-transparent text-[#0A3D2A] hover:bg-[#0A3D2A] hover:text-white font-bold h-11 rounded-xl transition-all ${
-                    variant === 'compact' ? 'text-xs' : 'text-sm'
-                  }`}
-                  disabled={!isInStock}
-                >
-                  <ShoppingCart className="w-4 h-4 mr-2" />
-                  Add
-                </Button>
-              )}
+              {/* Cart removed (enquiry-only business): direct Call button instead */}
+              <Button
+                asChild
+                className={`flex-1 border border-[#0A3D2A]/20 bg-transparent text-[#0A3D2A] hover:bg-[#0A3D2A] hover:text-white font-bold h-11 rounded-xl transition-all ${
+                  variant === 'compact' ? 'text-xs' : 'text-sm'
+                }`}
+              >
+                <a href="tel:+918861622859">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -280,4 +290,3 @@ const ProductCard: React.FC<ProductCardProps> = ({
 };
 
 export default ProductCard;
-

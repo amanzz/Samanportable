@@ -1,8 +1,6 @@
 import type { AppProps } from 'next/app';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import dynamic from 'next/dynamic';
 import { DefaultSeo } from 'next-seo';
-import { Toaster } from '@/components/ui/toaster';
-import { Toaster as Sonner } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { CartProvider } from '@/contexts/CartContext';
@@ -14,31 +12,21 @@ import { useRouter } from 'next/router';
 
 import '@/styles/globals.css';
 
-// Enhanced Query Client with better performance settings
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 10 * 60 * 1000, // 10 minutes
-      gcTime: 15 * 60 * 1000, // 15 minutes
-      retry: 1,
-      retryDelay: 1000,
-      // Enhanced performance settings
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: false,
-      refetchOnMount: false,
-    },
-    mutations: {
-      retry: 1,
-      retryDelay: 1000,
-    },
-  },
-});
+// Toast UIs render nothing until a toast is dispatched (always on a user action),
+// so they don't need to be in the server render or the initial hydration pass.
+// Loading them client-only (ssr:false) keeps their JS off the critical path; they
+// mount automatically right after hydration, well before any toast can fire.
+const Toaster = dynamic(() => import('@/components/ui/toaster').then((m) => m.Toaster), { ssr: false });
+const Sonner = dynamic(() => import('@/components/ui/sonner').then((m) => m.Toaster), { ssr: false });
+
+// Native guided-enquiry chatbot. Client-only (ssr:false) so its tiny launcher
+// mounts after hydration and stays off the critical path. The full chat panel is
+// a further code-split chunk inside this component, fetched only on first click.
+const EnquiryChatbot = dynamic(() => import('@/components/chatbot/EnquiryChatbot'), { ssr: false });
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
-  // Analytics note: GA4 + lead events + SPA page_views are handled by the
-  // GTM-WCT5SSR container below and GA4 Enhanced Measurement.
   // Don't render DefaultSeo for pages that have their own SEO components
   // This prevents duplicate meta tags
   const staticSEORoutes = new Set([
@@ -70,31 +58,41 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <div className={inter.className}>
-      {/* Google Tag Manager — deferred to afterInteractive so it never blocks first paint.
-          Preserves GA4 + all GTM-managed lead events (form submit, WhatsApp, phone, RFQ). */}
+      {/* Google Tag Manager — loaded on the FIRST user interaction (pointerdown/click/
+          touchstart/keydown/scroll), firing instantly. The no-interaction fallback waits for
+          the window 'load' event and then a fixed 4s delay, so GTM/GA4 execution lands AFTER
+          the page's interactive window instead of competing with hydration — this removes
+          their long tasks from Total Blocking Time. (A fixed delay is used rather than
+          requestIdleCallback, which fired during the window because the browser went idle
+          before TTI.) Same
+          container GTM-WCT5SSR; GA4 inside GTM unchanged; tracking IDs unchanged. dataLayer +
+          gtm.start are set immediately so any early lead event (form/phone/WhatsApp via
+          analytics.ts) queues and is processed once GTM loads. Guarded to load exactly once. */}
       <Script
         id="gtm-base"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WCT5SSR');`,
+          __html: `(function(w,d){w.dataLayer=w.dataLayer||[];w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var loaded=false;var evts=['pointerdown','click','touchstart','keydown','scroll'];function load(){if(loaded)return;loaded=true;for(var k=0;k<evts.length;k++){w.removeEventListener(evts[k],load);}var s=d.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-WCT5SSR';var f=d.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);}for(var k=0;k<evts.length;k++){w.addEventListener(evts[k],load,{once:true,passive:true});}function schedule(){setTimeout(load,4000);}if(d.readyState==='complete'){schedule();}else{w.addEventListener('load',schedule,{once:true});}})(window,document);`,
         }}
       />
       <ErrorBoundary>
         {!hasCustomSEO && <DefaultSeo {...defaultSEO} />}
 
-        {/* Tracking is loaded via GTM-WCT5SSR after hydration (GA4, lead events, page_view). */}
+        {/* Performance Monitoring Scripts - Lazy Loaded */}
+        {/* Google Analytics removed - using GTM instead */}
 
-        <QueryClientProvider client={queryClient}>
-          <TooltipProvider>
-            <AuthProvider>
-              <CartProvider>
-                <Component {...pageProps} />
-              </CartProvider>
-            </AuthProvider>
-          </TooltipProvider>
-          <Toaster />
-          <Sonner />
-        </QueryClientProvider>
+        {/* react-query removed: QueryClientProvider had zero consumers
+            (no useQuery/useMutation anywhere), so it was dead hydration weight. */}
+        <TooltipProvider>
+          <AuthProvider>
+            <CartProvider>
+              <Component {...pageProps} />
+            </CartProvider>
+          </AuthProvider>
+        </TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <EnquiryChatbot />
       </ErrorBoundary>
     </div>
   );

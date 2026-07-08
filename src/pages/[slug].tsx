@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
@@ -24,10 +24,11 @@ import {
 import dynamic from 'next/dynamic';
 
 
-import { fetchBlogPost, BlogPost, fetchBlogPostRankMathSEO, RankMathSEOData } from '../config/api';
-import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema } from '../lib/schema';
+import type { BlogPost, RankMathSEOData } from '../config/api';
+import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema, getCityPageGraph, getFAQSchemaOverride } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
-import { BATCH1_SLUGS } from '../data/batch1Slugs';
+import { demoteHtmlH1ToH2 } from '../lib/seoHtml';
+import { setPublicEdgeCache } from '../lib/cacheHeaders';
 
 interface BlogPostProps {
   post: BlogPost | null;
@@ -45,18 +46,230 @@ const METADATA_IMAGE_OVERRIDES: Record<string, string> = {
 // Distinctive marker of the broken WordPress image (matches its size variants).
 const BROKEN_WP_IMAGE_MARKER = 'container-office-by-saman-13-1_11zon';
 
-// BATCH 1 MIGRATION (local staging only). All 75 Batch-1 URLs are PREBUILT as
-// static at build time (baked artifacts, getStaticProps fetched once at build,
-// zero per-request backend fetch). Non-batch [slug] pages use blocking fallback:
-// on-demand SSG — full server render on first hit, then cached, NEVER an empty
-// shell. NOTE for deploy design: this changes non-batch pages from SSR to
-// on-demand SSG (cached until next build). Revert: git checkout "src/pages/[slug].tsx".
-export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: BATCH1_SLUGS.map((slug) => ({ params: { slug } })),
-  fallback: 'blocking',
-});
+const SEO_TITLE_OVERRIDES: Record<string, string> = {
+  'container-houses-cost-guide-2024': 'Container Houses Cost Guide 2024 | SAMAN',
+  'porta-cabin-office-price': 'Porta Office Cabin Price Guide 2025 | SAMAN',
+};
 
-export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) => {
+const CONTENT_H1_DEMOTION_SLUGS = new Set([
+  'best-porta-cabins-in-bangalore',
+  'container-office-in-ahmedabad',
+  'container-office-in-kolkata',
+]);
+
+// City/geo landing pages that emit the lean 3-node city graph (Organization +
+// BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
+// Allowlisted per slug so no other blog post's schema is affected.
+const CITY_PAGE_SCHEMA_SLUGS = new Set([
+  'porta-cabin-in-hyderabad',
+  'porta-cabin-in-chennai',
+  'porta-cabin-in-kochi',
+  'porta-cabin-in-coimbatore',
+  'porta-cabin-in-mysore',
+  'porta-cabin-in-vijayawada',
+  'porta-cabin-in-visakhapatnam',
+  'porta-cabin-in-madurai',
+  'porta-cabin-in-mangalore',
+  'porta-cabin-in-lucknow',
+  'porta-cabin-in-mumbai',
+  'porta-cabin-in-ahmedabad',
+  'porta-cabin-in-kolkata',
+  'porta-cabin-in-jaipur',
+  'porta-cabin-in-kanpur',
+  'porta-cabin-in-chandigarh',
+  'porta-cabin-in-pune',
+  'porta-cabin-in-surat',
+  'porta-cabin-in-nashik',
+  'porta-cabin-in-vadodara',
+  'porta-cabin-in-nagpur',
+  'porta-cabin-in-rajkot',
+  'porta-cabin-in-patna',
+  'porta-cabin-in-bhubaneswar',
+  'porta-cabin-in-raipur',
+  'porta-cabin-in-bhopal',
+  'porta-cabin-in-ranchi',
+  'porta-cabin-in-guwahati',
+  'porta-cabin-in-dehradun',
+  'porta-cabin-in-gwalior',
+  'porta-cabin-in-indore',
+  'porta-cabin-in-manesar',
+  'porta-cabin-in-bhiwadi',
+  'porta-cabin-in-sonipat',
+  'porta-cabin-in-panipat',
+  'porta-cabin-in-meerut',
+  'porta-cabin-in-ludhiana',
+  'porta-cabin-in-bareilly',
+  'porta-cabin-in-moradabad',
+  'porta-cabin-in-rourkela',
+  'porta-cabin-in-durgapur',
+  'porta-cabin-in-jamshedpur',
+  'porta-cabin-in-hosur',
+  'porta-cabin-in-salem',
+  'porta-cabin-in-hubli',
+  'porta-cabin-in-tumkur',
+  'porta-cabin-in-belgaum',
+  'porta-cabin-in-tirupur',
+  'porta-cabin-in-aurangabad',
+  // C3 Container Office city pages (Container Offices hub breadcrumb, not Porta Cabins)
+  'container-office-in-bangalore',
+  'container-office-in-chennai',
+  'container-office-in-hyderabad',
+  'container-office-in-mumbai',
+  'container-office-in-delhi',
+  'container-office-in-jaipur',
+  'container-office-in-pune',
+  'container-office-in-lucknow',
+  'container-office-in-ahmedabad',
+  'container-office-in-kolkata',
+  'container-office-in-kochi',
+  'container-office-in-mysore',
+  'container-office-in-visakhapatnam',
+  'container-office-in-vijayawada',
+  'container-office-in-mangalore',
+  'container-office-in-coimbatore',
+  'container-office-in-madurai',
+  'container-office-in-surat',
+  'container-office-in-indore',
+  'container-office-in-nagpur',
+  'container-office-in-vadodara',
+  'container-office-in-meerut',
+  'container-office-in-kanpur',
+  'container-office-in-chandigarh',
+  'container-office-in-ludhiana',
+  'container-office-in-ankleshwar',
+  'container-office-in-dahej',
+  'container-office-in-morbi',
+  'container-office-in-mundra',
+  'container-office-in-vellore',
+  'container-office-in-tirunelveli',
+  'container-office-in-erode',
+  'container-office-in-kurnool',
+  'container-office-in-shivamogga',
+  'container-office-in-davangere',
+  'container-office-in-rajahmundry',
+  'container-office-in-gwalior',
+  'container-office-in-bhiwadi',
+  'container-office-in-bhopal',
+  'container-office-in-raipur',
+  'container-office-in-nashik',
+  'container-office-in-panipat',
+  'container-office-in-dehradun',
+]);
+
+// Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
+// city pages, but the breadcrumb hub is "Container Offices", not "Porta Cabins".
+const CONTAINER_OFFICE_CITY_SLUGS = new Set([
+  'container-office-in-bangalore',
+  'container-office-in-chennai',
+  'container-office-in-hyderabad',
+  'container-office-in-mumbai',
+  'container-office-in-delhi',
+  'container-office-in-jaipur',
+  'container-office-in-pune',
+  'container-office-in-lucknow',
+  'container-office-in-ahmedabad',
+  'container-office-in-kolkata',
+  'container-office-in-kochi',
+  'container-office-in-mysore',
+  'container-office-in-visakhapatnam',
+  'container-office-in-vijayawada',
+  'container-office-in-mangalore',
+  'container-office-in-coimbatore',
+  'container-office-in-madurai',
+  'container-office-in-surat',
+  'container-office-in-indore',
+  'container-office-in-nagpur',
+  'container-office-in-vadodara',
+  'container-office-in-meerut',
+  'container-office-in-kanpur',
+  'container-office-in-chandigarh',
+  'container-office-in-ludhiana',
+  'container-office-in-ankleshwar',
+  'container-office-in-dahej',
+  'container-office-in-morbi',
+  'container-office-in-mundra',
+  'container-office-in-vellore',
+  'container-office-in-tirunelveli',
+  'container-office-in-erode',
+  'container-office-in-kurnool',
+  'container-office-in-shivamogga',
+  'container-office-in-davangere',
+  'container-office-in-rajahmundry',
+  'container-office-in-gwalior',
+  'container-office-in-bhiwadi',
+  'container-office-in-bhopal',
+  'container-office-in-raipur',
+  'container-office-in-nashik',
+  'container-office-in-panipat',
+  'container-office-in-dehradun',
+]);
+
+// City pages served from the North (Greater Noida) factory: their Organization
+// contactPoint uses the North sales number instead of the South default.
+const NORTH_CITY_PAGE_SLUGS = new Set([
+  'porta-cabin-in-lucknow',
+  'porta-cabin-in-mumbai',
+  'porta-cabin-in-ahmedabad',
+  'porta-cabin-in-kolkata',
+  'porta-cabin-in-jaipur',
+  'porta-cabin-in-kanpur',
+  'porta-cabin-in-chandigarh',
+  'porta-cabin-in-pune',
+  'porta-cabin-in-surat',
+  'porta-cabin-in-nashik',
+  'porta-cabin-in-vadodara',
+  'porta-cabin-in-nagpur',
+  'porta-cabin-in-patna',
+  'porta-cabin-in-rajkot',
+  'porta-cabin-in-bhubaneswar',
+  'porta-cabin-in-raipur',
+  'porta-cabin-in-bhopal',
+  'porta-cabin-in-ranchi',
+  'porta-cabin-in-guwahati',
+  'porta-cabin-in-dehradun',
+  'porta-cabin-in-gwalior',
+  'porta-cabin-in-indore',
+  'porta-cabin-in-manesar',
+  'porta-cabin-in-bhiwadi',
+  'porta-cabin-in-sonipat',
+  'porta-cabin-in-panipat',
+  'porta-cabin-in-meerut',
+  'porta-cabin-in-ludhiana',
+  'porta-cabin-in-bareilly',
+  'porta-cabin-in-moradabad',
+  'porta-cabin-in-rourkela',
+  'porta-cabin-in-durgapur',
+  'porta-cabin-in-jamshedpur',
+  'porta-cabin-in-aurangabad',
+  'container-office-in-mumbai',
+  'container-office-in-delhi',
+  'container-office-in-jaipur',
+  'container-office-in-pune',
+  'container-office-in-lucknow',
+  'container-office-in-ahmedabad',
+  'container-office-in-kolkata',
+  'container-office-in-surat',
+  'container-office-in-indore',
+  'container-office-in-nagpur',
+  'container-office-in-vadodara',
+  'container-office-in-meerut',
+  'container-office-in-kanpur',
+  'container-office-in-chandigarh',
+  'container-office-in-ludhiana',
+  'container-office-in-ankleshwar',
+  'container-office-in-dahej',
+  'container-office-in-morbi',
+  'container-office-in-mundra',
+  'container-office-in-gwalior',
+  'container-office-in-bhiwadi',
+  'container-office-in-bhopal',
+  'container-office-in-raipur',
+  'container-office-in-nashik',
+  'container-office-in-panipat',
+  'container-office-in-dehradun',
+]);
+
+export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
   try {
     const slug = params?.slug as string;
     
@@ -89,8 +302,11 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) 
       };
     }
 
-    const post = await fetchBlogPost(slug);
-    
+    // Static content layer: reads the exported post file — no WordPress call.
+    // Server-only module, loaded dynamically so fs never reaches the client bundle.
+    const staticContent = await import('../lib/staticContent');
+    const post = await staticContent.fetchBlogPost(slug);
+
     if (!post) {
       return {
         notFound: true,
@@ -106,6 +322,10 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) 
     //   → href="https://www.samanportable.com/[path]"
     //   Images (src=) are intentionally left unchanged — they must continue to
     //   resolve against the WordPress media library host.
+    //   EXCEPTION: media asset links under /wp-content/ (click-to-enlarge full-size
+    //   <a href="blog…/wp-content/…jpg">) are NOT rewritten — the static www site does
+    //   not host /wp-content/, so rewriting them to www would 404 (Semrush "internal
+    //   images are broken"). They must stay on the blog origin that serves the files.
     //
     // Rule 2: Strip ?utm_source=chatgpt.com ONLY from internal samanportable.com
     //   links. External URLs (grandviewresearch.com, willscot.com, etc.) are not
@@ -113,9 +333,9 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) 
     function normaliseContent(html: string): string {
       if (!html) return html;
 
-      // Rule 1 — subdomain href rewrite (href only, not src)
+      // Rule 1 — subdomain href rewrite (href only, not src), skipping /wp-content/ media links
       let cleaned = html.replace(
-        /(<a[^>]*\s)href="https?:\/\/blog\.samanportable\.com\/([^"]*)"/gi,
+        /(<a[^>]*\s)href="https?:\/\/blog\.samanportable\.com\/((?!wp-content\/)[^"]*)"/gi,
         '$1href="https://www.samanportable.com/$2"'
       );
 
@@ -130,12 +350,15 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) 
 
     post.content.rendered  = normaliseContent(post.content.rendered);
     post.excerpt.rendered  = normaliseContent(post.excerpt.rendered);
+    if (CONTENT_H1_DEMOTION_SLUGS.has(slug)) {
+      post.content.rendered = demoteHtmlH1ToH2(post.content.rendered);
+    }
     // ────────────────────────────────────────────────────────────────────────
 
     // Fetch Rank Math SEO data with fallback
     let rankMathSEO: RankMathSEOData | null = null;
     try {
-      rankMathSEO = await fetchBlogPostRankMathSEO(slug);
+      rankMathSEO = await staticContent.fetchBlogPostRankMathSEO(slug);
       
       // If RankMath data is empty or incomplete, create fallback SEO data
       if (!rankMathSEO || Object.keys(rankMathSEO).length === 0) {
@@ -184,23 +407,27 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) 
       }
     }
 
-    // ISR (Option 2). Batch-1 slugs stay PURE STATIC (revalidate: false — never
-    // refetch, baked at build). All other [slug] pages background-regenerate
-    // hourly (revalidate: 3600).
-    // STALE-ON-ERROR GUARD: a failed or empty backend fetch THROWS (the catch
-    // below re-throws; fetchBlogPost throws BackendFetchError on transient
-    // failure and returns null ONLY on a genuine 200+empty result). Per Next.js
-    // ISR, a throw during a background revalidation makes Next KEEP serving the
-    // last good page — it never caches an error/404/empty shell and never serves
-    // a thin body. A throw on the very first (uncached) blocking render yields a
-    // 500 that is NOT cached and is retried — never a poisoned empty page.
+    const seoTitleOverride = SEO_TITLE_OVERRIDES[slug];
+    if (seoTitleOverride) {
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        title: seoTitleOverride,
+        og_title: seoTitleOverride,
+        twitter_title: seoTitleOverride,
+      };
+    }
+
+    // Public marketing page with no per-user data — safe to edge-cache. Set only
+    // on the success path so the 404s/redirects above keep Next's default no-store
+    // and newly-published URLs are never cache-poisoned.
+    setPublicEdgeCache(res);
+
     return {
       props: {
         post,
         slug,
         rankMathSEO,
       },
-      revalidate: BATCH1_SLUGS.includes(slug) ? false : 3600,
     };
   } catch (error) {
     // A transient backend failure (network/timeout/5xx/429, surfaced as
@@ -574,9 +801,26 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
         keywords={`blog, portable office, container office, prefab solutions, ${post?._embedded?.['wp:term']?.[0]?.[0]?.name || ''}`}
         structuredData={(() => {
           if (!post) return undefined;
-          
+
+          // City/geo landing pages: emit exactly three schemas
+          // (Organization + BreadcrumbList + FAQPage), no LocalBusiness/Product.
+          if (CITY_PAGE_SCHEMA_SLUGS.has(slug)) {
+            return getCityPageGraph({
+              url: `https://www.samanportable.com/${slug}`,
+              breadcrumbs: [
+                { name: 'Home', url: 'https://www.samanportable.com/' },
+                CONTAINER_OFFICE_CITY_SLUGS.has(slug)
+                  ? { name: 'Container Offices', url: 'https://www.samanportable.com/product-category/container-offices' }
+                  : { name: 'Porta Cabins', url: 'https://www.samanportable.com/product-category/porta-cabins' },
+                { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` },
+              ],
+              faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
+              contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug) ? ['+91 87960 39938', '+91 97089 89937'] : undefined,
+            });
+          }
+
           const isOrgAuthor = !post._embedded?.author?.[0]?.name || post._embedded?.author?.[0]?.name === 'Saman Portable';
-          
+
           return generateUnifiedBlogGraph({
             postSchema: {
               title: decodeHtmlEntities(post.title.rendered),
@@ -594,7 +838,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               { name: 'Blog', url: 'https://www.samanportable.com/blog' },
               { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` }
             ],
-            faqSchema: extractFAQSchema(post.content.rendered),
+            faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
             serviceSchema: getCityServiceSchema({
               slug,
               description: post.excerpt.rendered,
@@ -641,7 +885,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
           <article className="mb-16">
             {/* Title */}
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-900 via-green-900 to-slate-900 bg-clip-text text-transparent leading-tight tracking-tight mb-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight mb-6">
                 {decodeHtmlEntities(post.title.rendered)}
               </h1>
               <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full"></div>
@@ -682,8 +926,10 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               </div>
             </div>
 
-            {/* Featured Image */}
-            {featuredImage && (
+            {/* Featured Image — suppressed for city/geo landing pages, which carry
+                their hero as the first in-body content image (eager LCP) instead, so
+                the template block does not duplicate it or show a wrong fallback. */}
+            {featuredImage && !CITY_PAGE_SCHEMA_SLUGS.has(slug) && (
               <div className="mb-12">
                 <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
                   <Image

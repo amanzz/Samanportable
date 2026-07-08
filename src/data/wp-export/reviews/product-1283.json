@@ -1,0 +1,42 @@
+[
+  {
+    "id": 252,
+    "date_created": "2025-01-01T17:29:09",
+    "date_created_gmt": "2025-01-01T11:59:09",
+    "product_id": 1283,
+    "product_name": "Portable Container Offices",
+    "product_permalink": "https://blog.samanportable.com/product/container-offices/portable-container-offices/",
+    "status": "approved",
+    "reviewer": "Sahanvaj Alam",
+    "reviewer_email": "irshadak420@gmail.com",
+    "review": "<p>\"We recently invested in a portable container office from SAMAN Portable, and it has been a fantastic decision! The office is incredibly sturdy, with high-quality materials that ensure durability and a professional finish. The spacious interiors were custom-designed to suit our specific requirements, and the insulation makes it comfortable in any climate. What stood out the most was the flexibility—it's easy to relocate without compromising on functionality. The delivery was prompt, and the team provided excellent support throughout the process. If you're looking for a modern and efficient workspace, SAMAN Portable's container offices are unbeatable!\"</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/252",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1283"
+        }
+      ]
+    }
+  }
+]

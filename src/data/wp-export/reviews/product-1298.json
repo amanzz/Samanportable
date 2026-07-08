@@ -1,0 +1,408 @@
+[
+  {
+    "id": 413,
+    "date_created": "2025-02-17T20:33:07",
+    "date_created_gmt": "2025-02-17T15:03:07",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "Guddu Kumar",
+    "reviewer_email": "guddudd865@gmail.com",
+    "review": "<p>The Portal Cabin excels as a stylish, functional escape blending contemporary aesthetics with sustainability. Its sleek design features an airy open layout, floor-to-ceiling windows, and premium materials like steel and reclaimed wood, ensuring both durability and visual appeal. Energy-efficient insulation, solar readiness, and smart home integration (lighting, climate, security) cater to eco-conscious living, though tech setup may challenge novices.</p>\n<p>Spacious yet cozy, the cabin’s noise insulation and versatile spaces suit remote work or family getaways. While the price is premium, its low-maintenance build and timeless design justify the investment. Perfect for nature enthusiasts seeking a serene, modern haven—Portal Cabin delivers comfort and eco-smart innovation in one package.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/413",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ]
+    }
+  },
+  {
+    "id": 331,
+    "date_created": "2025-01-26T17:07:30",
+    "date_created_gmt": "2025-01-26T11:37:30",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "Farooq PK",
+    "reviewer_email": "mdasgar83514@gmail.com",
+    "review": "<p>⭐ Porta Cabins: A Reliable Solution<br />\nSAMAN Portable’s porta cabins stand out for their durability, quick installation, and eco-friendly design. These structures are fully customizable, making them ideal for offices, accommodations, or storage needs. They are cost-effective, versatile, and require minimal maintenance, offering great value for businesses. Highly recommended for temporary and permanent setups.</p>\n",
+    "rating": 4,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/331",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ]
+    }
+  },
+  {
+    "id": 251,
+    "date_created": "2025-01-01T16:01:20",
+    "date_created_gmt": "2025-01-01T10:31:20",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "Gulesh MB",
+    "reviewer_email": "mdgulesh92@gmail.com",
+    "review": "<p>\"SAMAN Portable’s porta cabin has been a fantastic addition to our site. The cabin is robust, well-designed, and perfectly suited for our needs. The interiors are thoughtfully planned, providing a comfortable and professional workspace. We were especially impressed with how quickly it was delivered and set up—truly hassle-free. The insulation and ventilation work wonders, making it suitable for all weather conditions. The team at SAMAN was professional and supportive, guiding us through the entire process with ease. If you’re looking for a reliable and efficient porta cabin solution, SAMAN Portable is the way to go!\"</p>\n",
+    "rating": 4,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/251",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ]
+    }
+  },
+  {
+    "id": 250,
+    "date_created": "2025-01-01T15:58:14",
+    "date_created_gmt": "2025-01-01T10:28:14",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "Mohd Ashraf",
+    "reviewer_email": "mashraful18@gmail.com",
+    "review": "<p>\"SAMAN Portable’s porta cabin exceeded all our expectations. The design is both functional and stylish, offering a comfortable space that feels more like a permanent structure than a portable one. The quality of materials used is top-notch, ensuring durability and long-term use. What impressed us the most was the ease of installation—it was quick and seamless, saving us a lot of time. The cabin is well-insulated, making it ideal for any weather conditions. Their customer service was exceptional, guiding us through customization options and ensuring on-time delivery. Highly recommend SAMAN Porta Cabins for innovative and efficient workspace solutions!\"</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/250",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ]
+    }
+  },
+  {
+    "id": 246,
+    "date_created": "2024-12-31T13:41:50",
+    "date_created_gmt": "2024-12-31T08:11:50",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "Zafer Hussain",
+    "reviewer_email": "Zafarhussain0966@gmail.com",
+    "review": "<p>🌟 Highly Impressed with SAMAN Porta Cabins! 🌟</p>\n<p>We recently purchased a porta cabin from SAMAN Portable, and it has been an absolute game-changer! 🏗️ The cabin arrived on time, fully customized to our specifications. The sleek design and solid build quality immediately caught our attention. 🏠✨</p>\n<p>What we loved:</p>\n<p>✅ Comfortable Interiors – Spacious, well-ventilated, and equipped with excellent insulation, making it suitable for all seasons.</p>\n<p>✅ Quick Setup – The team installed it in no time, with no hassle at all.</p>\n<p>✅ Durable Materials – Built to last, even under challenging conditions.</p>\n<p>The porta cabin is now a perfect addition to our site, providing a professional and cozy workspace. 🛠️💼 Big thanks to the SAMAN team for their outstanding service and support throughout the process. Highly recommend them for anyone looking for high-quality porta cabins! 👏</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/246",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ]
+    }
+  },
+  {
+    "id": 222,
+    "date_created": "2024-12-21T14:45:26",
+    "date_created_gmt": "2024-12-21T09:15:26",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "Shaikh Samreen Q",
+    "reviewer_email": "shaikhsamreen.q@gmail.com",
+    "review": "<p>I purchased a Porta Cabin from SAMAN, and it’s been excellent!</p>\n<p>🏗️ Solid Construction: Built to last with premium materials.<br />\n🚀 Fast Setup: Ready for use in no time.<br />\n🌟 Impressive Finish: Sleek, modern, and functional!</p>\n<p>Highly recommended!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/222",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ]
+    }
+  },
+  {
+    "id": 221,
+    "date_created": "2024-12-20T19:38:07",
+    "date_created_gmt": "2024-12-20T14:08:07",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "Sameer SN",
+    "reviewer_email": "alamsammer780@gmail.com",
+    "review": "<p>I recently purchased a Porta Cabin from SAMAN Portable for my company, SN Fabrication. The entire experience was seamless and exceeded my expectations!</p>\n<p>💪 Top-Notch Quality: The cabin is sturdy, well-built, and perfect for our needs.<br />\n⚡ Quick Delivery: The process was fast and hassle-free, with the cabin delivered on time.<br />\n👍 Exceptional Service: The team was professional and ensured everything was up to the mark.</p>\n<p>I’m extremely satisfied with the product and service from SAMAN Portable. Highly recommend them for anyone looking for high-quality Porta Cabins!</p>\n",
+    "rating": 5,
+    "verified": true,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/221",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ],
+      "reviewer": [
+        {
+          "embeddable": true,
+          "href": "https://blog.samanportable.com/wp-json/wp/v2/users/47"
+        }
+      ]
+    }
+  },
+  {
+    "id": 201,
+    "date_created": "2024-12-19T17:51:49",
+    "date_created_gmt": "2024-12-19T12:21:49",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "Balraj Bariky",
+    "reviewer_email": "balrajbariki@gmail.com",
+    "review": "<p>I chose a Porta cabin from SAMAN, and it has been an incredible addition to my space.</p>\n<p>✨ Impressive Utility: The cabin is compact yet perfectly designed to utilize every inch efficiently.<br />\n🌞 Bright and Welcoming: The large windows allow plenty of natural light, creating a cheerful environment.<br />\n💪 Strong Build: The materials are robust, and the overall construction feels premium and reliable.<br />\n⏳ Time-Saving Solution: It was delivered and installed swiftly, ready for immediate use without any delays.</p>\n<p>This Porta cabin blends practicality with comfort, making it an excellent choice for versatile needs. I’m very happy with my decision!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/201",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ]
+    }
+  },
+  {
+    "id": 172,
+    "date_created": "2024-12-11T21:24:16",
+    "date_created_gmt": "2024-12-11T15:54:16",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "A Rehman",
+    "reviewer_email": "abdurrehaman87@gmail.com",
+    "review": "<p>We recently purchased a Porta Cabin from SAMAN Portable Office Solutions, and it exceeded our expectations. The cabin is built with premium materials, ensuring it stands the test of time. We used it as a portable office, and the insulation kept the interior comfortable in all weather conditions. The design is sleek, with plenty of natural light streaming through the perfectly placed windows. The team at SAMAN was professional and delivered the cabin on time. What impressed us most was the customization options. We tailored the layout to fit our needs, and it was executed flawlessly. We highly recommend these Porta Cabins for anyone seeking a cost-effective and durable solution for their workspace.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/172",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ]
+    }
+  },
+  {
+    "id": 171,
+    "date_created": "2024-12-11T20:35:17",
+    "date_created_gmt": "2024-12-11T15:05:17",
+    "product_id": 1298,
+    "product_name": "Porta Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/porta-cabins/",
+    "status": "approved",
+    "reviewer": "Prabakaran",
+    "reviewer_email": "prabakaranramasamy451995@gmail.com",
+    "review": "<p>I was looking for a reliable and efficient solution for our construction site office, and SAMAN’s Porta Cabin was the perfect choice. The cabin is not only sturdy but also aesthetically appealing. It provided a quiet, comfortable space for our team to work, even in a bustling construction environment. The setup process was seamless, and the delivery was faster than expected. We were amazed at the attention to detail, from the secure locking system to the spacious interiors. This Porta Cabin has become an integral part of our operations. Kudos to SAMAN for delivering such high-quality product!</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/171",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1298"
+        }
+      ]
+    }
+  }
+]

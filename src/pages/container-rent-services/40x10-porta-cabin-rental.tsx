@@ -79,6 +79,10 @@ const PortaCabin40x10Rental = () => {
             ]
           }) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "Service", "@id": "https://www.samanportable.com/container-rent-services/40x10-porta-cabin-rental#service", "name": "40x10 Porta Cabin Rental", "serviceType": "Porta Cabin Rental", "description": "Flexible rental of a 40x10 porta cabin in Bangalore and Delhi NCR, with delivery, professional installation, maintenance support and transparent, refundable-deposit terms.", "provider": {"@id": "https://www.samanportable.com/#organization"}, "areaServed": [{"@type": "Place", "name": "Bengaluru"}, {"@type": "Place", "name": "Delhi NCR"}], "url": "https://www.samanportable.com/container-rent-services/40x10-porta-cabin-rental"}) }}
+        />
       </Head>
       
 

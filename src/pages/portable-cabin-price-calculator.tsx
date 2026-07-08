@@ -17,6 +17,7 @@ import {
   CalculatorProductId,
   CUSTOM_PRODUCT_ID,
   PANEL_CONFIG,
+  PORTABLE_TOILET_SECURITY_CABIN_BASE_PRICES,
   PriceCalculatorEstimate,
   PriceCalculatorFormState,
   AddOnEntry,
@@ -31,8 +32,10 @@ import {
   sanitizeSelectedAddOns,
   currencyInRupee,
   getEstimateFromInput,
+  getFixedSizeBasePrice,
   getPanelDefaultThickness,
   getProductName,
+  isFixedSizeBasePriceProduct,
   isPanelProduct,
   isSpecialScopeProduct,
 } from '@/lib/price-calculator-config';
@@ -163,6 +166,7 @@ const ProductCalculatorPage = () => {
   const isCustom = formData.productId === CUSTOM_PRODUCT_ID;
   const isPanel = isPanelProduct(formData.productId);
   const isSpecial = isSpecialScopeProduct(formData.productId);
+  const isFixedSizeBase = isFixedSizeBasePriceProduct(formData.productId);
   const isLaborColony = formData.productId === 'labor_colony';
   const currentProductName = getProductName(formData.productId);
   const currentZoneContact = formData.zone ? ZONE_CONTACTS[formData.zone] : '';
@@ -191,6 +195,16 @@ const ProductCalculatorPage = () => {
       .padStart(2, '0')}`;
   }, [result]);
   const budgetBreakdown = result && result.mode !== 'custom' ? result.budgetBreakdown : null;
+  const fixedSizeBasePrice = useMemo(
+    () => getFixedSizeBasePrice(formData.productId, toNumber(formData.length), toNumber(formData.width)),
+    [formData.productId, formData.length, formData.width],
+  );
+  const fixedSizeHelpText = PORTABLE_TOILET_SECURITY_CABIN_BASE_PRICES.map(
+    (item) => `${item.lengthFt}x${item.widthFt}x${item.heightFt}`,
+  ).join(', ');
+  const selectedFixedSizeKey = fixedSizeBasePrice
+    ? `${fixedSizeBasePrice.lengthFt}x${fixedSizeBasePrice.widthFt}x${fixedSizeBasePrice.heightFt}`
+    : '';
 
   const customerDetailsValid = () =>
     isValidName(formData.fullName) &&
@@ -202,6 +216,9 @@ const ProductCalculatorPage = () => {
     const length = toNumber(formData.length);
     const width = toNumber(formData.width);
     const quantity = Math.max(1, Math.floor(toNumber(formData.quantity) || 0));
+    if (isFixedSizeBase) {
+      return Boolean(fixedSizeBasePrice) && quantity >= 1;
+    }
     return isCustom || (length > 0 && width > 0 && quantity >= 1);
   };
 
@@ -239,6 +256,19 @@ const ProductCalculatorPage = () => {
 
   const setOptionValue = <K extends keyof PriceCalculatorFormState>(key: K, value: string) =>
     setFormValue(key, value as PriceCalculatorFormState[K]);
+
+  const onFixedSizeChange = (value: string) => {
+    const selectedSize = PORTABLE_TOILET_SECURITY_CABIN_BASE_PRICES.find(
+      (item) => `${item.lengthFt}x${item.widthFt}x${item.heightFt}` === value,
+    );
+    if (!selectedSize) return;
+    setFormData((prev) => ({
+      ...prev,
+      length: String(selectedSize.lengthFt),
+      width: String(selectedSize.widthFt),
+    }));
+    clearResult();
+  };
 
   const setSelectedAddOns = (nextAddOns: PriceCalculatorFormState['selectedAddOns']) => {
     const normalized = sanitizeSelectedAddOns(formData.productId, nextAddOns);
@@ -278,9 +308,14 @@ const ProductCalculatorPage = () => {
   }, [isPanel, isSpecial]);
 
   const onProductChange = (productId: CalculatorProductId) => {
+    const fixedSizeDefault = isFixedSizeBasePriceProduct(productId)
+      ? PORTABLE_TOILET_SECURITY_CABIN_BASE_PRICES[0]
+      : null;
     setFormData((prev) => ({
       ...prev,
       productId,
+      length: fixedSizeDefault ? String(fixedSizeDefault.lengthFt) : prev.length,
+      width: fixedSizeDefault ? String(fixedSizeDefault.widthFt) : prev.width,
       specialPanelSheet: SPECIAL_PANEL_SHEET_OPTIONS[0],
       specialFloorStructure: SPECIAL_FLOOR_STRUCTURE_OPTIONS[0],
       numberOfRooms: isSpecialScopeProduct(productId) && productId === 'labor_colony' ? '1' : '0',
@@ -304,7 +339,11 @@ const ProductCalculatorPage = () => {
 
     if (!dimensionsValid()) {
       setMode('error');
-      setStatusMessage('Enter valid dimensions and quantity.');
+      setStatusMessage(
+        isFixedSizeBase
+          ? `Select one of the standard sizes: ${fixedSizeHelpText}.`
+          : 'Enter valid dimensions and quantity.',
+      );
       return;
     }
 
@@ -548,6 +587,34 @@ const ProductCalculatorPage = () => {
                   </select>,
                 )}
 
+                {isFixedSizeBase && (
+                  <div className="space-y-2 rounded-md border border-border/70 bg-muted/20 p-3">
+                    {renderField(
+                      'standardFixedSize',
+                      'Standard Size',
+                      <select
+                        id="standardFixedSize"
+                        className="w-full h-10 border border-input rounded-md px-3 bg-white"
+                        value={selectedFixedSizeKey}
+                        onChange={(event) => onFixedSizeChange(event.target.value)}
+                      >
+                        <option value="">Select standard size</option>
+                        {PORTABLE_TOILET_SECURITY_CABIN_BASE_PRICES.map((item) => {
+                          const optionKey = `${item.lengthFt}x${item.widthFt}x${item.heightFt}`;
+                          return (
+                            <option key={optionKey} value={optionKey}>
+                              {optionKey} ft - {currencyInRupee(item.basePrice)} base
+                            </option>
+                          );
+                        })}
+                      </select>,
+                    )}
+                    <p className="text-xs text-muted-foreground">
+                      Base price excludes GST, transport, installation, optional add-ons, and custom changes.
+                    </p>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div>
                     {renderField(
@@ -558,8 +625,9 @@ const ProductCalculatorPage = () => {
                         type="number"
                         min="0.1"
                         step="0.1"
-                        className="w-full h-10 border border-input rounded-md px-3"
+                        className={`w-full h-10 border border-input rounded-md px-3 ${isFixedSizeBase ? 'bg-muted/30' : ''}`}
                         value={formData.length}
+                        readOnly={isFixedSizeBase}
                         onChange={(event) => setFormValue('length', event.target.value)}
                       />,
                     )}
@@ -573,8 +641,9 @@ const ProductCalculatorPage = () => {
                         type="number"
                         min="0.1"
                         step="0.1"
-                        className="w-full h-10 border border-input rounded-md px-3"
+                        className={`w-full h-10 border border-input rounded-md px-3 ${isFixedSizeBase ? 'bg-muted/30' : ''}`}
                         value={formData.width}
+                        readOnly={isFixedSizeBase}
                         onChange={(event) => setFormValue('width', event.target.value)}
                       />,
                     )}
@@ -598,6 +667,11 @@ const ProductCalculatorPage = () => {
                 <p className="text-xs text-muted-foreground">
                   Total area: {unitArea.toLocaleString('en-IN')} {isPanel ? 'm²' : 'sq ft'}
                 </p>
+                {isFixedSizeBase && (
+                  <p className="text-xs text-muted-foreground">
+                    Standard sizes: {fixedSizeHelpText}. Select a listed size to use approved base pricing.
+                  </p>
+                )}
               </div>
 
               {isPanel && (

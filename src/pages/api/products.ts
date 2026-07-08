@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { fetchProducts, ProductFilters } from '@/config/api';
+import { fetchProducts } from '@/lib/staticContent';
+import type { ProductFilters } from '@/config/api';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {

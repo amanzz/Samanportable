@@ -1,0 +1,42 @@
+[
+  {
+    "id": 3169,
+    "date_created": "2026-06-08T12:53:03",
+    "date_created_gmt": "2026-06-08T07:23:03",
+    "product_id": 228284,
+    "product_name": "Porta Cabin House",
+    "product_permalink": "https://blog.samanportable.com/product/prefabricated-houses/porta-cabin-house/",
+    "status": "approved",
+    "reviewer": "Manjuntha Manju",
+    "reviewer_email": "manjunthamanju65720@gmail.com",
+    "review": "<p>Set this porta cabin up on our farm plot as a weekend stay-over, and it's held up better than I expected. The insulation makes a real difference — inside stays cool through the afternoon without running the AC constantly. Fit and finish on the doors, windows and the small kitchen area was neat, and they were upfront about what the price covered, so no extra charges were sprung on us at delivery. They reached a fairly remote location without any fuss and had it set up the same day. Comfortable, sturdy, and a quick way to get a usable room without months of construction.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3169",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/228284"
+        }
+      ]
+    }
+  }
+]
