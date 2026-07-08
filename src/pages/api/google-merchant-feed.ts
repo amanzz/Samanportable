@@ -50,20 +50,9 @@ function toAbsoluteImageUrl(src: string, baseUrl: string): string {
   return `${baseUrl}${raw.startsWith('/') ? '' : '/'}${raw}`;
 }
 
-// Feed-only 1:1 (square) gallery image per panel product. Product pages keep
-// their existing 16:9 hero; this map governs only the Merchant image_link so the
-// shopping thumbnail is square WebP. Every path is a real product photo verified
-// to return HTTP 200 on production (no placeholders).
+// Feed-only Rockwool image override. Existing merchant IDs must remain byte-for-byte
+// stable for this deploy; the override adds only the new C16 Rockwool item.
 const PANEL_FEED_IMAGE: Record<string, string> = {
-  '990001': '/images/puf-panel/factory-stack-80mm-800x800.webp', // PUF Panel
-  '990002': '/images/puf-panel/factory-bundle-60mm-800x800.webp', // PUF Panel Price
-  '990003': '/images/puf-panel/roof-install-50mm-800x800.webp', // PUF Panel Roofing
-  '990004': '/images/puf-panel/cross-section-30mm-800x800.webp', // PUF Sandwich Panel
-  '990005': '/images/puf-panel/house/puf-panel-house-sample-finished-home.webp', // PUF Panel House
-  '990006': '/images/puf-panel/wall/70mm-light-blue-puf-wall-panel-stockyard.webp', // PUF Wall Panel
-  '990007': '/images/puf-panel/spec/60mm-yellow-puf-panel-product-photo.webp', // PUF Panel Specification
-  '990008': '/images/puf-panel/cold-storage/150mm-deep-freezer-cold-storage-room.webp', // Cold Storage PUF Panel
-  '990016': '/images/pir-panel/pir-cross-section-800x800.webp', // PIR Panel (G1 gallery image)
   '990017': '/images/rockwool-panel/rockwool-panel-core-cross-section-sq.webp', // Rockwool Panel (core cross-section gallery image)
 };
 
@@ -94,8 +83,10 @@ function generateGoogleMerchantXML(products: any[]): string {
     }
 
     const productUrl = `${baseUrl}/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`;
-    const primaryImageSrc = PANEL_FEED_IMAGE[String(product.id)] || product.images?.[0]?.src;
-    const imageUrl = toAbsoluteImageUrl(primaryImageSrc, baseUrl) || `${baseUrl}/placeholder.svg`;
+    const feedImageOverride = PANEL_FEED_IMAGE[String(product.id)];
+    const imageUrl = feedImageOverride
+      ? toAbsoluteImageUrl(feedImageOverride, baseUrl)
+      : product.images?.[0]?.src || `${baseUrl}/placeholder.svg`;
     const price = parseFloat(product.price) || parseFloat(product.regular_price) || 0;
     const salePrice = product.on_sale && product.sale_price ? parseFloat(product.sale_price) : null;
     
@@ -127,7 +118,7 @@ function generateGoogleMerchantXML(products: any[]): string {
     // Additional images
     if (product.images && product.images.length > 1) {
       product.images.slice(1, 11).forEach((img: any) => { // Max 10 additional images
-        xml += `      <g:additional_image_link>${toAbsoluteImageUrl(img.src, baseUrl)}</g:additional_image_link>
+        xml += `      <g:additional_image_link>${img.src}</g:additional_image_link>
 `;
       });
     }
