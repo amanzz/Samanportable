@@ -413,6 +413,7 @@ export default function PufPanelSpecification() {
               averageRating="0.00"
               ratingCount={0}
               productId={990007}
+              reviewProductId={272763}
               productName="PUF Panel Specification"
             />
           </div>

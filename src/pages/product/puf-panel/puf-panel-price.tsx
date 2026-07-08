@@ -492,6 +492,7 @@ export default function PufPanelPrice() {
               averageRating="0.00"
               ratingCount={0}
               productId={990002}
+              reviewProductId={272758}
               productName="PUF Panel Price"
             />
           </div>

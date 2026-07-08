@@ -355,6 +355,7 @@ export default function ColdStoragePufPanel() {
               averageRating="0.00"
               ratingCount={0}
               productId={990008}
+              reviewProductId={272764}
               productName="Cold Storage PUF Panel"
             />
           </div>

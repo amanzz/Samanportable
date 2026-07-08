@@ -91,6 +91,21 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Facings', value: 'PPGI / PPGL / Stainless Steel / Aluminium' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
+  offers: {
+    '@type': 'AggregateOffer',
+    lowPrice: 1410,
+    highPrice: 1980,
+    priceCurrency: 'INR',
+    offerCount: 5,
+    availability: 'https://schema.org/InStock',
+    url: 'https://www.samanportable.com/product/pir-panel',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      priceCurrency: 'INR',
+      unitCode: 'MTK',
+      unitText: 'm²',
+    },
+  },
 };
 
 const BREADCRUMB_JSONLD = {
@@ -160,7 +175,7 @@ function DescriptionContent() {
 
         <div className="space-y-2">
           <H3>Food processing, pharma and audited facilities</H3>
-          <P>{`Processing halls, packing areas and pharma envelopes are the most common PIR-specified projects. Consultants and insurers who write panel schedules for these buildings increasingly name a PIR core for its improved fire behaviour over standard foam, and audit trails in these industries demand exactly the certificate-backed supply chain a manufacturer provides. Hygiene-critical zones in the same facilities often pair the PIR core with a stainless steel facing, which cleans and sanitises the way a food or pharma auditor expects. For fire-critical walls where a mineral core is preferred instead, we also make a Rockwool panel option for fire-focused walls.`}</P>
+          <P>{`Processing halls, packing areas and pharma envelopes are the most common PIR-specified projects. Consultants and insurers who write panel schedules for these buildings increasingly name a PIR core for its improved fire behaviour over standard foam, and audit trails in these industries demand exactly the certificate-backed supply chain a manufacturer provides. Hygiene-critical zones in the same facilities often pair the PIR core with a stainless steel facing, which cleans and sanitises the way a food or pharma auditor expects. For fire-critical walls where a mineral core is preferred instead, we also make a `}<Link href="/product/rockwool-panel" className="font-semibold text-primary hover:underline">rockwool panel</Link>{` option for fire-focused walls.`}</P>
         </div>
         <LongImage
           src="/images/pir-panel/pir-hygienic-partition-1200x675.webp"
@@ -410,6 +425,7 @@ export default function PirPanelHub() {
               averageRating="0.00"
               ratingCount={0}
               productId={990016}
+              reviewProductId={272765}
               productName="PIR Panel"
             />
           </div>

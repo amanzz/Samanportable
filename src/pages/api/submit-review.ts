@@ -15,6 +15,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
+    const wcBase = (process.env.WORDPRESS_API_URL || 'https://blog.samanportable.com/wp-json') + '/wc/v3';
+    // Effective WooCommerce base URL (URL only — NEVER keys/secrets) so a
+    // misconfigured WORDPRESS_API_URL is diagnosable from server logs.
+    console.log('submit-review: WooCommerce base URL in use =', wcBase);
+
     const body = (req.body && typeof req.body === 'object') ? req.body : {};
     const productId = parseInt(String((body as any).productId ?? ''), 10);
     const reviewer = String((body as any).name ?? '').trim().slice(0, 100);
@@ -40,24 +45,38 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ ok: false, message: 'Please select a rating from 1 to 5 stars.' });
     }
 
-    const base = (process.env.WORDPRESS_API_URL || 'https://blog.samanportable.com/wp-json') + '/wc/v3';
+    const base = wcBase;
     const key = process.env.WORDPRESS_REVIEW_WRITE_KEY || '';
     const secret = process.env.WORDPRESS_REVIEW_WRITE_SECRET || '';
     // Query-string auth (same method the working routes use); keys never leave the server.
     const auth = new URLSearchParams({ consumer_key: key, consumer_secret: secret });
 
-    const wcRes = await fetch(`${base}/products/reviews?${auth.toString()}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        product_id: productId,
-        review,
-        reviewer,
-        reviewer_email: reviewerEmail,
-        rating,
-        status: 'hold', // PENDING — requires admin approval; never auto-published
-      }),
-    });
+    // Bound the upstream call so a hung/slow WooCommerce write returns a clean JSON
+    // error instead of letting the platform emit a raw 504 HTML page (see FF-1).
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    let wcRes: Response;
+    try {
+      wcRes = await fetch(`${base}/products/reviews?${auth.toString()}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          product_id: productId,
+          review,
+          reviewer,
+          reviewer_email: reviewerEmail,
+          rating,
+          status: 'hold', // PENDING — requires admin approval; never auto-published
+        }),
+        signal: controller.signal,
+      });
+    } catch (fetchError) {
+      const reason = fetchError instanceof Error && fetchError.name === 'AbortError' ? 'timeout' : 'network error';
+      console.error('submit-review: WooCommerce fetch failed:', reason);
+      return res.status(502).json({ ok: false, message: 'Review service is temporarily unavailable. Please try again later.' });
+    } finally {
+      clearTimeout(timeout);
+    }
 
     if (wcRes.status === 201 || wcRes.ok) {
       return res.status(200).json({ ok: true, pending: true });
