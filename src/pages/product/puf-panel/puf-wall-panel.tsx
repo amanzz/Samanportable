@@ -345,6 +345,7 @@ export default function PufWallPanel() {
               averageRating="0.00"
               ratingCount={0}
               productId={990006}
+              reviewProductId={272762}
               productName="PUF Wall Panel"
             />
           </div>

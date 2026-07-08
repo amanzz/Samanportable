@@ -361,6 +361,7 @@ export default function PufSandwichPanel() {
               averageRating="0.00"
               ratingCount={0}
               productId={990004}
+              reviewProductId={272760}
               productName="PUF Sandwich Panel"
             />
           </div>

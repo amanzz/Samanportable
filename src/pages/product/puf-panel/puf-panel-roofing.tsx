@@ -364,6 +364,7 @@ export default function PufPanelRoofing() {
               averageRating="0.00"
               ratingCount={0}
               productId={990003}
+              reviewProductId={272759}
               productName="PUF Panel Roofing"
             />
           </div>

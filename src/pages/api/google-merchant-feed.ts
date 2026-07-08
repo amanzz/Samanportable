@@ -64,6 +64,7 @@ const PANEL_FEED_IMAGE: Record<string, string> = {
   '990007': '/images/puf-panel/spec/60mm-yellow-puf-panel-product-photo.webp', // PUF Panel Specification
   '990008': '/images/puf-panel/cold-storage/150mm-deep-freezer-cold-storage-room.webp', // Cold Storage PUF Panel
   '990016': '/images/pir-panel/pir-cross-section-800x800.webp', // PIR Panel (G1 gallery image)
+  '990017': '/images/rockwool-panel/rockwool-panel-core-cross-section-sq.webp', // Rockwool Panel (core cross-section gallery image)
 };
 
 function generateGoogleMerchantXML(products: any[]): string {

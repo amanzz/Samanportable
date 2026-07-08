@@ -15,6 +15,9 @@ interface ProductDetailTabsProps {
   averageRating?: string;
   ratingCount?: number;
   productId: number;
+  /** Real WooCommerce product id for review submission, when it differs from the
+   *  display `productId` (merchant-feed g:id). Falls back to `productId` when absent. */
+  reviewProductId?: number;
   productName?: string;
 }
 
@@ -35,6 +38,7 @@ const ProductDetailTabs = ({
   averageRating,
   ratingCount,
   productId,
+  reviewProductId,
   productName,
 }: ProductDetailTabsProps) => {
   const [activeTab, setActiveTab] = useState('description');
@@ -130,6 +134,7 @@ const ProductDetailTabs = ({
               averageRating={averageRating}
               ratingCount={ratingCount}
               productId={productId}
+              reviewProductId={reviewProductId}
               productName={productName}
             />
           </TabsContent>

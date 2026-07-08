@@ -375,6 +375,7 @@ export default function PufPanelHouse() {
               averageRating="0.00"
               ratingCount={0}
               productId={990005}
+              reviewProductId={272761}
               productName="PUF Panel House"
             />
           </div>

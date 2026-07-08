@@ -1,0 +1,28 @@
+{
+  "id": 990017,
+  "wc_review_product_id": 272766,
+  "name": "Rockwool Panel",
+  "slug": "rockwool-panel",
+  "date_created": "2026-07-08T00:00:00",
+  "status": "publish",
+  "description": "<p>Rockwool Panel — non-combustible stone wool sandwich panels by SAMAN, manufactured in Bangalore and Greater Noida. 30–150 mm standard thickness (made-to-order to 200 mm), PPGI/PPGL/stainless/aluminium facings, wall and roof applications.</p>",
+  "short_description": "<p>Non-combustible rockwool sandwich panel, 30–150 mm standard (made-to-order to 200 mm), PPGI/PPGL/SS/Aluminium facings. HSN 940690. From ₹1,290/m² base spec, ex-GST.</p>",
+  "sku": "SP-C16-RWP-2026",
+  "price": "1290",
+  "regular_price": "1290",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990117, "name": "Rockwool Panels", "slug": "rockwool-panel" }
+  ],
+  "images": [
+    { "id": 1, "src": "/images/rockwool-panel/rockwool-panel-core-cross-section-sq.webp", "name": "Rockwool Panel", "alt": "Cut section of a SAMAN rockwool panel showing the stone wool core on the QC table", "srcset": "", "sizes": "", "thumbnail": "/images/rockwool-panel/rockwool-panel-core-cross-section-sq.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}
