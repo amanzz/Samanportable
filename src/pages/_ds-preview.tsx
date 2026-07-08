@@ -49,7 +49,7 @@ const ph = (w: number, h: number, label: string): string =>
     `<svg xmlns='http://www.w3.org/2000/svg' width='${w}' height='${h}'>` +
       `<rect width='100%' height='100%' fill='honeydew'/>` +
       `<rect x='0.5' y='0.5' width='${w - 1}' height='${h - 1}' fill='none' stroke='seagreen'/>` +
-      `<text x='50%' y='50%' font-family='monospace' font-size='13' fill='seagreen' ` +
+      `<text x='50%' y='50%' font-family='var(--ds-font-mono)' font-size='13' fill='seagreen' ` +
       `text-anchor='middle' dominant-baseline='middle'>${label}</text></svg>`,
   );
 
