@@ -1,0 +1,122 @@
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-space-2);
+  min-height: 44px; /* touch target */
+  padding: var(--ds-space-3) var(--ds-space-6);
+  border-radius: var(--ds-radius-sm);
+  font-family: var(--ds-text-body-family);
+  font-size: var(--ds-text-body-size);
+  font-weight: var(--ds-text-h3-weight);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color var(--ds-motion-fast) var(--ds-motion-ease),
+    color var(--ds-motion-fast) var(--ds-motion-ease),
+    border-color var(--ds-motion-fast) var(--ds-motion-ease);
+}
+
+/* Size steps. */
+.md {
+  min-height: 44px;
+}
+.lg {
+  min-height: 48px;
+  padding: var(--ds-space-3) var(--ds-space-8);
+}
+
+/* Fully-rounded pill radius (owner-approved CTA-row style). */
+.pill {
+  border-radius: 999px;
+}
+
+.primary {
+  background: var(--ds-primary);
+  color: var(--ds-text-inverse);
+}
+.primary:hover {
+  background: var(--ds-primary-hover);
+}
+/* Subtle pressed/active state (deeper green + 1px nudge). */
+.primary:active {
+  background: var(--ds-primary-active);
+}
+.cta:active {
+  transform: translateY(1px);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--ds-primary);
+  border-color: var(--ds-border-strong);
+}
+.secondary:hover {
+  background: var(--ds-surface-alt);
+  border-color: var(--ds-primary);
+}
+.secondary:active {
+  background: var(--ds-surface-alt);
+  border-color: var(--ds-primary-active);
+}
+
+/* Ghost/outline — used by the Hero Call button. Ink text, hairline border. */
+.ghost {
+  background: transparent;
+  color: var(--ds-text-primary);
+  border-color: var(--ds-border-strong);
+  font-family: var(--ds-text-mono-family);
+  font-weight: var(--ds-text-mono-weight);
+  letter-spacing: var(--ds-text-mono-tracking);
+}
+.ghost:hover {
+  background: var(--ds-surface-alt);
+  border-color: var(--ds-surface-inverse);
+}
+.ghost:active {
+  border-color: var(--ds-surface-inverse);
+  background: var(--ds-surface-alt);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.15em;
+  color: var(--ds-primary);
+}
+.ghost .icon {
+  color: var(--ds-surface-inverse);
+}
+
+/* On-dark (forest surface) recolouring. Primary inverts to a paper button with
+   forest text; secondary/outline switches to inverse text + hairline. */
+.primary.onDark {
+  background: var(--ds-surface);
+  color: var(--ds-surface-inverse);
+}
+.primary.onDark:hover {
+  background: var(--ds-surface-alt);
+}
+.primary.onDark:active {
+  background: var(--ds-surface-alt);
+}
+.primary.onDark .icon {
+  color: var(--ds-primary);
+}
+.secondary.onDark {
+  color: var(--ds-text-inverse);
+  border-color: var(--ds-border-strong);
+  background: transparent;
+}
+.secondary.onDark:hover {
+  background: rgba(234, 243, 236, 0.12);
+  border-color: var(--ds-text-inverse);
+}
+.secondary.onDark .icon {
+  color: var(--ds-text-inverse);
+}
+
+.block {
+  width: 100%;
+}

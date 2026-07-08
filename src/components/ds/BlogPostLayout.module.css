@@ -1,0 +1,122 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6);
+  padding: var(--ds-space-8) 0;
+}
+
+.breadcrumb {
+  margin-bottom: calc(-1 * var(--ds-space-2));
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-4);
+  max-width: 68ch;
+}
+
+.title {
+  font-family: var(--ds-text-h1-family);
+  font-size: var(--ds-text-h1-size);
+  line-height: var(--ds-text-h1-lh);
+  font-weight: var(--ds-text-h1-weight);
+  letter-spacing: var(--ds-text-h1-tracking);
+  color: var(--ds-text-primary);
+}
+
+.subtitle {
+  font-size: var(--ds-text-h3-size);
+  line-height: 1.5;
+  color: var(--ds-text-secondary);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  padding-top: var(--ds-space-2);
+  border-top: 1px solid var(--ds-border);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--ds-surface-alt);
+  flex: 0 0 auto;
+}
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.authorMeta {
+  display: flex;
+  flex-direction: column;
+}
+.authorName {
+  font-weight: var(--ds-text-h3-weight);
+  color: var(--ds-text-primary);
+}
+.authorSub {
+  font-size: var(--ds-text-small-size);
+  color: var(--ds-text-secondary);
+}
+
+.grid {
+  display: block;
+}
+
+.gridWithToc {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ds-space-8);
+}
+@media (min-width: 960px) {
+  .gridWithToc {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+.toc {
+  align-self: start;
+}
+@media (min-width: 960px) {
+  .toc {
+    position: sticky;
+    top: calc(var(--ds-header-h) + var(--ds-space-4));
+  }
+}
+
+.body {
+  max-width: 68ch;
+  font-size: var(--ds-text-body-size);
+  line-height: var(--ds-text-body-lh);
+  color: var(--ds-text-primary);
+}
+.body > :where(h2) {
+  font-family: var(--ds-text-h2-family);
+  font-size: var(--ds-text-h2-size);
+  font-weight: var(--ds-text-h2-weight);
+  line-height: var(--ds-text-h2-lh);
+  margin: var(--ds-space-8) 0 var(--ds-space-3);
+  color: var(--ds-text-primary);
+}
+.body > :where(h3) {
+  font-family: var(--ds-text-h3-family);
+  font-size: var(--ds-text-h3-size);
+  font-weight: var(--ds-text-h3-weight);
+  margin: var(--ds-space-6) 0 var(--ds-space-2);
+}
+.body > :where(p) {
+  margin: 0 0 var(--ds-space-4);
+}
+
+.related,
+.cta {
+  margin-top: var(--ds-space-8);
+}
