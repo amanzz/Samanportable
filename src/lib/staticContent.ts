@@ -211,6 +211,8 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
     average_rating: p.average_rating,
     rating_count: p.rating_count,
     sku: p.sku || '',
+    ...(Array.isArray(p.relatedProductSlugs) ? { relatedProductSlugs: p.relatedProductSlugs } : {}),
+    ...(p.schemaMode ? { schemaMode: p.schemaMode } : {}),
   };
 }
 
@@ -292,7 +294,10 @@ export async function fetchProductRankMathSEO(categorySlug: string): Promise<Ran
   const slug = parts[parts.length - 1] || '';
   const productPath = parts.join('/');
   const productUrl = `https://www.samanportable.com/product/${productPath}${productPath.includes('/') ? '/' : ''}`;
-  return applyPublicFaqSchemaUrl(headToSeo(findProductBySlug(slug)), productUrl);
+  const product = findProductBySlug(slug);
+  const seoData = headToSeo(product) || (product?.faqSchema ? {} : null);
+  if (seoData && product?.faqSchema) seoData.faqSchema = product.faqSchema;
+  return applyPublicFaqSchemaUrl(seoData, productUrl);
 }
 
 // Mirrors api.fetchProductReviews: approved-only, latest first, capped, non-fatal.

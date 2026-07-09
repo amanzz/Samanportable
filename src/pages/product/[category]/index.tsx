@@ -130,6 +130,35 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       // Filter out the current product manually since exclude is not supported
       relatedProducts = (relatedResponse.products || []).filter(p => p.id !== product.id);
 
+      const relatedProductSlugs = Array.isArray((product as any).relatedProductSlugs)
+        ? (product as any).relatedProductSlugs
+        : [];
+      if (relatedProductSlugs.length > 0) {
+        const overrideProducts = await Promise.all(
+          relatedProductSlugs.map(async (relatedSlug: string) => staticContent.fetchLightweightProduct(relatedSlug))
+        );
+        relatedProducts = overrideProducts
+          .filter(Boolean)
+          .map((related: any) => ({
+            id: related.id,
+            name: related.name,
+            slug: related.slug,
+            price: related.price,
+            average_rating: related.average_rating,
+            rating_count: related.rating_count,
+            categories: [
+              {
+                id: 0,
+                name: related.category || 'Uncategorized',
+                slug: related.category_slug || 'uncategorized',
+              },
+            ],
+            images: related.featured_image
+              ? [{ id: 0, src: related.featured_image, alt: related.name }]
+              : [],
+          })) as unknown as WooCommerceProduct[];
+      }
+
     } catch (error) {
       console.error('Error fetching related products:', error);
       // Silent error handling for production
@@ -226,6 +255,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
               slug: (product as any).category_slug || 'uncategorized'
             }
           ],
+          schemaMode: (product as any).schemaMode || '',
           attributes: sourceAttributes,
           stock_quantity: null,
           weight: '',

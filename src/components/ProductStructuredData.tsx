@@ -15,6 +15,7 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
+  const schemaMode = (product as any).schemaMode || '';
   const categorySlug = category || product.categories?.[0]?.slug || 'uncategorized';
   const productPath = product.slug === categorySlug
     ? `/product/${categorySlug}`
@@ -155,13 +156,15 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
     aggregateRatingStructuredData ||
     reviewNodes.length > 0
   );
+  const forceStandaloneQuoteProduct = schemaMode === 'standalone-quote-product';
 
   // Generate structured data for Product only when it has real Product-snippet
   // evidence. Quote-only/unrated products must not emit an ineligible Product
   // node with no offers, aggregateRating, or review.
-  const productStructuredData = hasProductRichResultEvidence ? {
+  const productStructuredData = (hasProductRichResultEvidence || forceStandaloneQuoteProduct) ? {
     '@context': 'https://schema.org/',
     '@type': 'Product',
+    ...(forceStandaloneQuoteProduct ? { '@id': `${productUrl}#product` } : {}),
     name: product.name.length > 150 ? product.name.substring(0, 147) + '...' : product.name,
     description: description,
     image: product.images?.map(img => img.src) || [imageUrl],
@@ -234,6 +237,25 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
     ...(productStructuredData ? { mainEntity: productStructuredData } : {}),
     breadcrumb: breadcrumbStructuredData
   };
+
+  if (forceStandaloneQuoteProduct && productStructuredData) {
+    return (
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(productStructuredData)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbStructuredData)
+          }}
+        />
+      </Head>
+    );
+  }
 
   return (
     <Head>
