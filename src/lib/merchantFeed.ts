@@ -13,6 +13,8 @@ type ProductLike = {
   price?: string | number | null;
   regular_price?: string | number | null;
   sale_price?: string | number | null;
+  priceDisplay?: string | null;
+  priceSubline?: string | null;
   on_sale?: boolean;
   stock_status?: string;
   short_description?: string;
@@ -195,6 +197,17 @@ export function getEffectiveProductPrice(product: ProductLike): number {
   if (price > 0) return price;
 
   return parseNumber(product.regular_price);
+}
+
+export function hasMerchantUnsafePrice(product: ProductLike): boolean {
+  const visiblePriceText = [
+    product.priceDisplay,
+    product.priceSubline,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  return /\bex\s*-?\s*gst\b/i.test(visiblePriceText);
 }
 
 export function formatMerchantPrice(value: number): string {
@@ -420,6 +433,7 @@ export function buildMerchantProduct(product: ProductLike, baseUrl = MERCHANT_BA
   const priceValue = getEffectiveProductPrice(product);
 
   if (!id || !title || !slug) return null;
+  if (hasMerchantUnsafePrice(product)) return null;
   if (!priceValue || priceValue <= 0) return null;
 
   const images = selectProductImages(product, baseUrl);
@@ -473,7 +487,9 @@ export function buildMerchantProducts(products: ProductLike[], baseUrl = MERCHAN
       title: cleanText(product.name, 150),
       slug: cleanText(product.slug, 160),
       reason:
-        getEffectiveProductPrice(product) <= 0
+        hasMerchantUnsafePrice(product)
+          ? 'tax_exclusive_price_not_merchant_safe'
+          : getEffectiveProductPrice(product) <= 0
           ? 'missing_visible_price'
           : selectProductImages(product, baseUrl).length === 0
             ? 'missing_valid_image'
