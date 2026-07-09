@@ -12,7 +12,7 @@ import JumpNav from '@/components/product-puf/JumpNav';
 import MobileStickyCta from '@/components/product-puf/MobileStickyCta';
 import SpecTable from '@/components/product-puf/SpecTable';
 import ProductDetailTabs from '@/components/product-puf/ProductDetailTabs';
-import RelatedProductsRail, { PUF_CATALOG } from '@/components/product-puf/RelatedProductsRail';
+import RelatedProductsRail, { C16_PANELS } from '@/components/product-puf/RelatedProductsRail';
 import ProductCarousel from '@/components/product-puf/ProductCarousel';
 import { LongImage } from '@/components/product-puf/Gallery';
 import PirInfoBox from '@/components/product-pir/PirInfoBox';
@@ -392,11 +392,19 @@ export default function PirPanelHub() {
             <span className="font-semibold text-foreground">PIR Panel</span>
           </nav>
 
-          {/* Commerce top section — 1:1 gallery + above-fold dual-zone CTA (left),
-              H1 + short description info box (right, sticky). Two columns because
-              this C16 page has no sibling sub-pages to fill a third rail column. */}
+          {/* Commerce top section — 3-column: left sibling-panel sidebar, middle
+              1:1 gallery + above-fold dual-zone CTA, right H1 + short description
+              info box (sticky). Sidebar = C16 material siblings (Ruling 4). */}
           <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
-            <div className="order-2 lg:order-1 lg:col-span-7">
+            <div className="order-3 lg:order-1 lg:col-span-3 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
+              <RelatedProductsRail
+                variant="sidebar"
+                heading="Explore the Range"
+                items={[C16_PANELS.puf, C16_PANELS.eps, C16_PANELS.rockwool, C16_PANELS.sandwich]}
+              />
+            </div>
+
+            <div className="order-1 lg:order-2 lg:col-span-5">
               <ProductCarousel images={GALLERY_IMAGES} />
               <div className="mt-4 rounded-xl border-2 border-primary/25 bg-primary/[0.04] p-3 sm:p-4">
                 <p className="mb-2 text-sm font-bold text-foreground">Get a factory-direct quotation</p>
@@ -404,7 +412,7 @@ export default function PirPanelHub() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 lg:col-span-5 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
+            <div className="order-2 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <PirInfoBox
                 h1="PIR Panel — Polyisocyanurate Insulated Panels by SAMAN"
                 priceMain="From ₹1,410 / sq mt"
@@ -445,8 +453,8 @@ export default function PirPanelHub() {
             <ProductZoneCtas />
           </div>
 
+          {/* Related products now live in the left sibling sidebar above. */}
           <div className="mt-8 space-y-8">
-            <RelatedProductsRail heading="Related products" items={[PUF_CATALOG.hub]} />
             <CertBadgeStrip />
           </div>
         </div>

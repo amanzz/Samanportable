@@ -1,0 +1,28 @@
+{
+  "id": 990020,
+  "wc_review_product_id": 272769,
+  "name": "EPS Panel",
+  "slug": "eps-panel",
+  "date_created": "2026-07-09T00:00:00",
+  "status": "publish",
+  "description": "<p>An EPS panel is a steel-faced insulated sandwich panel with an expanded-polystyrene (thermocol) core — two coated steel sheets bonded to a lightweight EPS core for walls, roofs, partitions and dry storage. It is the most budget-friendly of the five sandwich cores, which makes it the practical pick for site offices, sheds, warehouse partitions and economy wall/roof work. SAMAN manufactures EPS sandwich panels on our own lines in Bangalore and Greater Noida, so you buy the finished panel factory-direct and get the core matched to your budget, thickness and site.</p>",
+  "short_description": "<p>Steel-faced EPS sandwich panels for walls, roofs and partitions — the economy core, factory-direct from Bangalore and Greater Noida.</p>",
+  "sku": "SP-C16-EPS-SUB-2026",
+  "price": "770",
+  "regular_price": "770",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 990118, "name": "EPS Panels", "slug": "eps-panel" }
+  ],
+  "images": [
+    { "id": 1, "src": "/images/eps-panel/eps-panel-wall-roof-stack-1x1.webp", "name": "EPS Panel", "alt": "Stack of SAMAN steel-faced EPS sandwich panels with visible white EPS core", "srcset": "", "sizes": "", "thumbnail": "/images/eps-panel/eps-panel-wall-roof-stack-1x1.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}
