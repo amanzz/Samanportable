@@ -1,0 +1,82 @@
+.hero {
+  padding: var(--ds-space-8) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ds-space-8);
+  align-items: center;
+}
+
+/* Two-column only at desktop, so the 3-pill CTARow keeps one line at tablet. */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--ds-space-12);
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-5);
+  animation: reveal var(--ds-motion-base) var(--ds-motion-ease) both;
+}
+
+.headline {
+  font-family: var(--ds-text-display-family);
+  font-size: var(--ds-text-display-size);
+  line-height: var(--ds-text-display-lh);
+  font-weight: var(--ds-text-display-weight);
+  letter-spacing: var(--ds-text-display-tracking);
+  color: var(--ds-text-primary);
+}
+
+.subline {
+  font-size: var(--ds-text-h3-size);
+  line-height: 1.5;
+  color: var(--ds-text-secondary);
+  max-width: 44ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3);
+}
+
+.trustSlot {
+  margin-top: var(--ds-space-2);
+}
+
+.media {
+  border-radius: var(--ds-radius-md);
+  overflow: hidden;
+  box-shadow: var(--ds-shadow-card);
+  background: var(--ds-surface-alt);
+  /* Fixed 16:9 frame — cover, zero CLS regardless of source ratio. */
+  aspect-ratio: 16 / 9;
+}
+
+.mediaImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.specSlot {
+  margin-top: var(--ds-space-8);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

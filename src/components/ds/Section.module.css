@@ -1,0 +1,79 @@
+.band {
+  width: 100%;
+  padding-block: var(--ds-section-y);
+}
+
+.paper {
+  background: var(--ds-background);
+}
+.mist {
+  background: var(--ds-surface-alt);
+}
+.surface {
+  background: var(--ds-surface);
+}
+.forest {
+  background: var(--ds-surface-inverse);
+  color: var(--ds-text-inverse);
+}
+
+.inner {
+  max-width: var(--ds-maxw);
+  margin: 0 auto;
+  padding-inline: var(--ds-space-4);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3);
+  margin-bottom: var(--ds-space-8);
+}
+
+.eyebrowRow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+
+.rule {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--ds-color-forest);
+}
+.forest .rule {
+  background: var(--ds-text-inverse);
+}
+
+.eyebrowText {
+  font-family: var(--ds-text-mono-family);
+  font-size: var(--ds-text-caption-size);
+  font-weight: var(--ds-text-mono-weight);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-color-forest);
+}
+.forest .eyebrowText {
+  color: var(--ds-text-inverse);
+}
+
+.heading {
+  font-family: var(--ds-text-h2-family);
+  font-size: var(--ds-text-h2-size);
+  line-height: var(--ds-text-h2-lh);
+  font-weight: var(--ds-text-h2-weight);
+  letter-spacing: var(--ds-text-h2-tracking);
+  color: inherit;
+}
+
+.sub {
+  font-size: var(--ds-text-h3-size);
+  line-height: 1.5;
+  color: var(--ds-text-secondary);
+  max-width: 60ch;
+}
+.forest .sub {
+  color: var(--ds-text-inverse);
+  opacity: 0.85;
+}

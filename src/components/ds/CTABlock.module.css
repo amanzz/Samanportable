@@ -1,0 +1,71 @@
+.block {
+  padding: var(--ds-section-y) var(--ds-space-6);
+}
+
+.inverse {
+  background: var(--ds-surface-inverse);
+  color: var(--ds-text-inverse);
+}
+.soft {
+  background: var(--ds-surface-alt);
+  color: var(--ds-text-primary);
+}
+
+.inner {
+  max-width: var(--ds-maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6);
+  align-items: flex-start;
+}
+
+/* Side-by-side only when there's room for copy + a full action row; below
+   this it stacks so a CTARow lays out/wraps in full width (no overflow). */
+@media (min-width: 960px) {
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ds-space-8);
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3);
+}
+
+.title {
+  font-family: var(--ds-text-h2-family);
+  font-size: var(--ds-text-h2-size);
+  line-height: var(--ds-text-h2-lh);
+  font-weight: var(--ds-text-h2-weight);
+  letter-spacing: var(--ds-text-h2-tracking);
+}
+
+.desc {
+  font-size: var(--ds-text-h3-size);
+  line-height: 1.5;
+  opacity: 0.9;
+  max-width: 52ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3);
+  flex: 0 0 auto;
+}
+
+/* Secondary CTA rendered on the inverse (forest) surface. */
+.onDarkSecondary {
+  color: var(--ds-text-inverse);
+  border-color: var(--ds-border-strong);
+  background: transparent;
+}
+.onDarkSecondary:hover {
+  background: rgba(234, 243, 236, 0.12);
+  border-color: var(--ds-text-inverse);
+}

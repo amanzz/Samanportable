@@ -1,0 +1,37 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3);
+  align-items: stretch;
+}
+
+.item {
+  display: flex;
+}
+
+/* Smallest screens: stack full-width, one action per line. */
+@media (max-width: 419px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .item {
+    width: 100%;
+  }
+  .item :where(a, button) {
+    width: 100%;
+  }
+}
+
+/* Tablet+: keep all three pills on a single line. Trim the lg pill's
+   horizontal padding one step so they fit comfortably. */
+@media (min-width: 768px) {
+  .row {
+    flex-wrap: nowrap;
+  }
+  .item :where(a, button) {
+    padding-left: var(--ds-space-6);
+    padding-right: var(--ds-space-6);
+    white-space: nowrap;
+  }
+}

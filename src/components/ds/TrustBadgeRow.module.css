@@ -1,0 +1,75 @@
+.row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3) var(--ds-space-5);
+  align-items: stretch;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  min-width: 0;
+}
+
+/* 2-up rows at 360px so 5–6 badges wrap tidily rather than one-per-line. */
+@media (max-width: 419px) {
+  .badge {
+    flex: 1 1 calc(50% - var(--ds-space-5));
+  }
+}
+
+.glyph {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 20px;
+  border-radius: var(--ds-radius-sm);
+  color: var(--ds-primary);
+  border: 1px solid var(--ds-border-strong);
+  background: var(--ds-surface);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  min-width: 0;
+}
+
+.label {
+  font-family: var(--ds-text-mono-family);
+  font-size: var(--ds-text-mono-size);
+  font-weight: var(--ds-text-mono-weight);
+  letter-spacing: var(--ds-text-mono-tracking);
+  color: var(--ds-text-primary);
+  overflow-wrap: anywhere;
+}
+
+.sub {
+  font-family: var(--ds-text-mono-family);
+  font-size: var(--ds-text-caption-size);
+  color: var(--ds-text-secondary);
+  /* Long unbreakable tokens (CIN, GST) must break rather than overflow at 360px. */
+  overflow-wrap: anywhere;
+}
+
+/* Reversed on forest. */
+.inverse .glyph {
+  color: var(--ds-text-inverse);
+  background: transparent;
+  border-color: var(--ds-border-strong);
+}
+.inverse .label {
+  color: var(--ds-text-inverse);
+}
+.inverse .sub {
+  color: var(--ds-text-inverse);
+  opacity: 0.72;
+}
