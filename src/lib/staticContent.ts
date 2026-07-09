@@ -191,6 +191,8 @@ function toFeedProduct(p: any): WooCommerceProduct {
     categories: p.categories || [],
     weight: p.weight || '',
     dimensions: p.dimensions || { length: '', width: '', height: '' },
+    ...(p.priceDisplay ? { priceDisplay: p.priceDisplay } : {}),
+    ...(p.priceSubline ? { priceSubline: p.priceSubline } : {}),
   } as unknown as WooCommerceProduct;
 }
 

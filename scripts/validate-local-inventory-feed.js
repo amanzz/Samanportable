@@ -5,7 +5,6 @@ const ts = require('typescript');
 
 const ROOT = path.resolve(__dirname, '..');
 const REPORT_DATE = process.env.REPORT_DATE || new Date().toISOString().slice(0, 10);
-const PRODUCTS_DIR = path.join(ROOT, 'src', 'data', 'wp-export', 'products');
 const REPORT_DIR = path.join(ROOT, 'reports');
 const TSV_OUT = path.join(REPORT_DIR, 'google-local-inventory.tsv');
 const REPORT_MD = path.join(REPORT_DIR, `google-local-inventory-validation-${REPORT_DATE}.md`);
@@ -43,13 +42,10 @@ registerTsLoader();
 
 const merchant = require(path.join(ROOT, 'src', 'lib', 'merchantFeed.ts'));
 const localInventory = require(path.join(ROOT, 'src', 'lib', 'localInventoryFeed.ts'));
+const staticContent = require(path.join(ROOT, 'src', 'lib', 'staticContent.ts'));
 
 function readProducts() {
-  return fs
-    .readdirSync(PRODUCTS_DIR)
-    .filter((file) => file.endsWith('.json'))
-    .map((file) => JSON.parse(fs.readFileSync(path.join(PRODUCTS_DIR, file), 'utf8')))
-    .filter((product) => !product.status || product.status === 'publish');
+  return staticContent.getAllProductsForFeed();
 }
 
 function parseTsv(tsv) {

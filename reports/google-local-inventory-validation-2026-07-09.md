@@ -20,7 +20,7 @@
 - 0 validation errors
 
 ## Warnings
-- Skipped 2 published product(s) because the primary Merchant feed excludes them: 900010 (missing_visible_price); 990018 (tax_exclusive_price_not_merchant_safe)
+- Skipped 2 published product(s) because the primary Merchant feed excludes them: 990018 (tax_exclusive_price_not_merchant_safe); 900010 (missing_visible_price)
 
 ## Stop Point
 No deployment, Merchant Center upload, Google API call, WooCommerce setting change, or Source ID 10673171443 change was performed.
