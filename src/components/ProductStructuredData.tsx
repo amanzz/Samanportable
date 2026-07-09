@@ -16,6 +16,7 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
 
   const baseUrl = 'https://www.samanportable.com';
   const schemaMode = (product as any).schemaMode || '';
+  const forceStandaloneQuoteProduct = schemaMode === 'standalone-quote-product';
   const categorySlug = category || product.categories?.[0]?.slug || 'uncategorized';
   const productPath = product.slug === categorySlug
     ? `/product/${categorySlug}`
@@ -82,7 +83,7 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
       };
     });
 
-  const offerStructuredData = (salePrice || price) > 0 ? {
+  const offerStructuredData = !forceStandaloneQuoteProduct && (salePrice || price) > 0 ? {
     '@type': 'Offer',
     url: productUrl,
     priceCurrency: 'INR',
@@ -156,8 +157,6 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
     aggregateRatingStructuredData ||
     reviewNodes.length > 0
   );
-  const forceStandaloneQuoteProduct = schemaMode === 'standalone-quote-product';
-
   // Generate structured data for Product only when it has real Product-snippet
   // evidence. Quote-only/unrated products must not emit an ineligible Product
   // node with no offers, aggregateRating, or review.

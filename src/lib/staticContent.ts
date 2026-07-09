@@ -211,6 +211,8 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
     average_rating: p.average_rating,
     rating_count: p.rating_count,
     sku: p.sku || '',
+    ...(p.priceDisplay ? { priceDisplay: p.priceDisplay } : {}),
+    ...(p.priceSubline ? { priceSubline: p.priceSubline } : {}),
     ...(Array.isArray(p.relatedProductSlugs) ? { relatedProductSlugs: p.relatedProductSlugs } : {}),
     ...(p.schemaMode ? { schemaMode: p.schemaMode } : {}),
   };

@@ -23,6 +23,7 @@ import { generateProductMetaDescription, generateProductTabContent } from '../..
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
 import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
+import SandwichInfoBox from '../../../components/product-sandwich/SandwichInfoBox';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
@@ -256,6 +257,8 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
             }
           ],
           schemaMode: (product as any).schemaMode || '',
+          priceDisplay: (product as any).priceDisplay || '',
+          priceSubline: (product as any).priceSubline || '',
           attributes: sourceAttributes,
           stock_quantity: null,
           weight: '',
@@ -344,11 +347,14 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
       stock_status: product.stock_status || 'instock',
       images: product.images || [],
       attributes: product.attributes || [],
+      priceDisplay: (product as any).priceDisplay || '',
+      priceSubline: (product as any).priceSubline || '',
     };
   }, [product]);
 
   // Get primary category for breadcrumb
   const primaryCategory = product?.categories?.[0] || { name: 'Uncategorized', slug: 'uncategorized' };
+  const isSandwichPanel = product?.slug === 'sandwich-panel';
 
   // Handle scroll to top
   useEffect(() => {
@@ -708,6 +714,14 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
 
                 {/* Right Section - Product Details */}
                 <div className="lg:col-span-4">
+                  {isSandwichPanel ? (
+                    <SandwichInfoBox
+                      h1={transformedProduct.title}
+                      sku={product.sku || 'SP-C16-SWP-HUB-2026'}
+                      averageRating={product.average_rating}
+                      ratingCount={product.rating_count}
+                    />
+                  ) : (
                   <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
                     <div className="space-y-4">
                       
@@ -743,9 +757,9 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                         ) : (
                           <div className="space-y-2">
                             <span className="text-2xl md:text-3xl font-bold text-primary break-words">
-                              {transformedProduct.price === 'Contact for pricing' ? 'Contact for pricing' : formatPriceWithCurrency(parseFloat(transformedProduct.price))}
+                              {transformedProduct.priceDisplay || (transformedProduct.price === 'Contact for pricing' ? 'Contact for pricing' : formatPriceWithCurrency(parseFloat(transformedProduct.price)))}
                             </span>
-                            <p className="text-sm text-muted-foreground">Inclusive of all taxes</p>
+                            <p className="text-sm text-muted-foreground">{transformedProduct.priceSubline || 'Inclusive of all taxes'}</p>
                           </div>
                         )}
                       </div>
@@ -811,6 +825,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                       </div>
                     </div>
                   </Card>
+                  )}
                 </div>
               </div>
 
