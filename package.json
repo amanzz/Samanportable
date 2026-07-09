@@ -12,6 +12,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
+    "validate:merchant-feed": "node scripts/validate-merchant-feed.js",
     "validate:local-inventory": "node scripts/validate-local-inventory-feed.js",
     "analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
