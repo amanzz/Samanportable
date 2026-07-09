@@ -6,6 +6,11 @@ export interface GalleryImage {
   src: string;
   alt: string;
   title: string;
+  /** Optional small (~200px) thumbnail file for the carousel thumbnail row. When
+   *  absent, the carousel falls back to `src`. Needed because the site's image
+   *  optimizer is bypassed (image-loader.js), so a 150px thumbnail would otherwise
+   *  download the full-size `src` file. */
+  thumb?: string;
 }
 
 // Long-description (16:9) block: full content width, caption below. The very

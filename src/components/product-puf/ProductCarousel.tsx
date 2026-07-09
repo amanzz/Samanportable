@@ -108,7 +108,7 @@ const ProductCarousel = ({ images }: ProductCarouselProps) => {
               }`}
             >
               <Image
-                src={img.src}
+                src={img.thumb ?? img.src}
                 alt={img.alt}
                 width={150}
                 height={150}

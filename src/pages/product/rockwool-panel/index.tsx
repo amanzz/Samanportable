@@ -26,11 +26,11 @@ const SHORT_DESCRIPTION =
 
 // ── Commerce gallery — 5 real rockwool photos, 1:1 (subjects/alt/title unique each)
 const GALLERY_IMAGES = [
-  { src: '/images/rockwool-panel/rockwool-panel-product-front-sq.webp', alt: 'SAMAN rockwool sandwich panel front face with exposed stone wool core edge', title: 'Rockwool sandwich panel front' },
-  { src: '/images/rockwool-panel/rockwool-panel-core-cross-section-sq.webp', alt: 'Cut section of a SAMAN rockwool panel showing the stone wool core on the QC table', title: 'Rockwool panel core cross-section' },
-  { src: '/images/rockwool-panel/rockwool-panel-joint-profile-sq.webp', alt: 'Hidden-fix joint detail of a SAMAN rockwool panel with stone wool core', title: 'Rockwool panel joint profile detail' },
-  { src: '/images/rockwool-panel/rockwool-panel-stacked-sq.webp', alt: 'Stack of black-faced SAMAN rockwool sandwich panels in the factory', title: 'Rockwool sandwich panels stacked' },
-  { src: '/images/rockwool-panel/rockwool-panel-installed-wall-sq.webp', alt: 'SAMAN rockwool wall panels installed on an industrial building', title: 'Rockwool wall panels installed' },
+  { src: '/images/rockwool-panel/rockwool-panel-product-front-sq.webp', thumb: '/images/rockwool-panel/thumbs/rockwool-panel-product-front-sq.webp', alt: 'SAMAN rockwool sandwich panel front face with exposed stone wool core edge', title: 'Rockwool sandwich panel front' },
+  { src: '/images/rockwool-panel/rockwool-panel-core-cross-section-sq.webp', thumb: '/images/rockwool-panel/thumbs/rockwool-panel-core-cross-section-sq.webp', alt: 'Cut section of a SAMAN rockwool panel showing the stone wool core on the QC table', title: 'Rockwool panel core cross-section' },
+  { src: '/images/rockwool-panel/rockwool-panel-joint-profile-sq.webp', thumb: '/images/rockwool-panel/thumbs/rockwool-panel-joint-profile-sq.webp', alt: 'Hidden-fix joint detail of a SAMAN rockwool panel with stone wool core', title: 'Rockwool panel joint profile detail' },
+  { src: '/images/rockwool-panel/rockwool-panel-stacked-sq.webp', thumb: '/images/rockwool-panel/thumbs/rockwool-panel-stacked-sq.webp', alt: 'Stack of black-faced SAMAN rockwool sandwich panels in the factory', title: 'Rockwool sandwich panels stacked' },
+  { src: '/images/rockwool-panel/rockwool-panel-installed-wall-sq.webp', thumb: '/images/rockwool-panel/thumbs/rockwool-panel-installed-wall-sq.webp', alt: 'SAMAN rockwool wall panels installed on an industrial building', title: 'Rockwool wall panels installed' },
 ];
 
 const JUMP_ITEMS = [
@@ -411,7 +411,10 @@ export default function RockwoolPanelHub() {
               H1 + short description info box (right, sticky). Mirrors the pir-panel
               C16 layout (two columns; no sibling sub-pages to fill a third rail). */}
           <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
-            <div className="order-2 lg:order-1 lg:col-span-7">
+            {/* Mobile LCP: carousel first on mobile too (order-1) so the preloaded,
+                priority hero image is the LCP element instead of the InfoBox text
+                paragraph. CSS-only reorder (DOM source order unchanged), CLS stays 0. */}
+            <div className="order-1 lg:order-1 lg:col-span-7">
               <ProductCarousel images={GALLERY_IMAGES} />
               <div className="mt-4 rounded-xl border-2 border-primary/25 bg-primary/[0.04] p-3 sm:p-4">
                 <p className="mb-2 text-sm font-bold text-foreground">Get Rockwool Panel Quotation</p>
@@ -419,7 +422,7 @@ export default function RockwoolPanelHub() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 lg:col-span-5 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
+            <div className="order-2 lg:order-2 lg:col-span-5 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <RockwoolInfoBox
                 h1="Rockwool Panel — Non-Combustible Stone Wool Sandwich Panels"
                 priceMain="From ₹1,290 / sq mt"
