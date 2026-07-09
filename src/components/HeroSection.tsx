@@ -1,23 +1,8 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from './QuoteFormTrigger';
-
-// Defer heavy form hydration to reduce LCP render delay
-const QuoteForm = dynamic(() => import('./QuoteForm'), {
-  ssr: false,
-  loading: () => (
-    <div
-      className="w-full h-[360px] rounded-xl bg-white/5 border border-white/10 animate-pulse"
-      style={{
-        contain: 'layout style paint',
-        containIntrinsicSize: '600px 500px'
-      }}
-    />
-  ),
-});
 
 const heroImages = [
   {
@@ -113,8 +98,8 @@ const HeroSection = () => {
               India&apos;s leading manufacturer of high-ticket prefab structures for industrial, construction and commercial headquarters. Delivered ready-to-use since 2009.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA Buttons — three CTAs (T2: form removed from hero) */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <QuoteFormTrigger
                 size="lg"
                 className="btn-primary text-base md:text-lg px-8 md:px-10 py-4 md:py-5 shadow-2xl shadow-[#0A3D2A]/40"
@@ -131,14 +116,39 @@ const HeroSection = () => {
                   Browse Solutions
                 </Link>
               </Button>
+              <Button
+                variant="heroOutline"
+                size="lg"
+                className="text-base md:text-lg px-8 md:px-10 py-4 md:py-5"
+                asChild
+              >
+                <a href="tel:+919708989937">
+                  Call +91 97089 89937
+                </a>
+              </Button>
             </div>
-          </div>
 
-          {/* Form Container - Enhanced appearance */}
-          <div className="hero-form-container relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#0A3D2A] to-emerald-500 rounded-2xl blur opacity-20"></div>
-            <div className="relative">
-              <QuoteForm variant="hero" />
+            {/* Certification badge row (T2 §3) — below CTA row, lazy so it never precedes the hero LCP */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              {[
+                { src: '/credentials/optimized/zed-bronze.webp', alt: 'ZED Bronze certified manufacturer — SAMAN Portable' },
+                { src: '/credentials/optimized/msme-udyam.webp', alt: 'MSME Udyam registered enterprise — SAMAN Portable' },
+                { src: '/credentials/optimized/dpiit-startup.webp', alt: 'DPIIT recognised startup — SAMAN Portable' },
+              ].map((badge) => (
+                <span
+                  key={badge.src}
+                  className="inline-flex items-center justify-center rounded-lg bg-white/90 px-2.5 py-1.5 shadow-sm"
+                >
+                  <Image
+                    src={badge.src}
+                    alt={badge.alt}
+                    width={56}
+                    height={56}
+                    loading="lazy"
+                    className="h-10 md:h-[52px] w-auto object-contain"
+                  />
+                </span>
+              ))}
             </div>
           </div>
         </div>
