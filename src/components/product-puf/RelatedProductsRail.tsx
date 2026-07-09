@@ -68,6 +68,39 @@ export const PUF_CATALOG: Record<
   },
 };
 
+// C16 material-family siblings — the shared cross-link set for the single-product
+// C16 panel pages (EPS, PIR, and future Glass Wool). Each page renders the others
+// as its left sidebar (Ruling 4 / L1 default). Blurbs are Claude-Senior supplied,
+// truth-checked against the fixed price matrix and live pages. `puf` reuses the
+// already-approved PUF hub rail entry.
+export const C16_PANELS: Record<'puf' | 'pir' | 'eps' | 'rockwool' | 'sandwich', RelatedItem> = {
+  puf: PUF_CATALOG.hub,
+  pir: {
+    title: 'PIR Panel',
+    href: '/product/pir-panel',
+    image: '/images/pir-panel/pir-factory-stack-1200x675.webp',
+    blurb: 'Fire-improved polyisocyanurate foam panels for cold rooms, cleanrooms and premium insulation.',
+  },
+  eps: {
+    title: 'EPS Panel',
+    href: '/product/eps-panel',
+    image: '/images/eps-panel/eps-panel-wall-roof-stack-1x1.webp',
+    blurb: 'Budget-friendly lightweight insulated panels for dry-use walls and partitions. From ₹770 / sq mt.',
+  },
+  rockwool: {
+    title: 'Rockwool Panel',
+    href: '/product/rockwool-panel',
+    image: '/images/rockwool-panel/rockwool-panel-product-front-sq.webp',
+    blurb: 'Non-combustible stone wool core for fire-rated walls and acoustic enclosures. From ₹1,290 / sq mt.',
+  },
+  sandwich: {
+    title: 'Sandwich Panel',
+    href: '/product/sandwich-panel',
+    image: '/images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp',
+    blurb: 'Compare all five insulated cores and choose the right panel for your job. From ₹770 / sq mt.',
+  },
+};
+
 interface RelatedProductsRailProps {
   items: RelatedItem[];
   heading?: string;

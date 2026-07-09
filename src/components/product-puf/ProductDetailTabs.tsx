@@ -19,6 +19,10 @@ interface ProductDetailTabsProps {
    *  display `productId` (merchant-feed g:id). Falls back to `productId` when absent. */
   reviewProductId?: number;
   productName?: string;
+  /** Default true. Set false when the product has no real WooCommerce product
+   *  mapped yet (e.g. C16-P2 EPS panel): the zero-state review list still renders,
+   *  but the submission form is hidden so it never posts to a non-existent product. */
+  showSubmissionForm?: boolean;
 }
 
 const TAB_TRIGGER_CLASS =
@@ -40,6 +44,7 @@ const ProductDetailTabs = ({
   productId,
   reviewProductId,
   productName,
+  showSubmissionForm = true,
 }: ProductDetailTabsProps) => {
   const [activeTab, setActiveTab] = useState('description');
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -136,6 +141,7 @@ const ProductDetailTabs = ({
               productId={productId}
               reviewProductId={reviewProductId}
               productName={productName}
+              showSubmissionForm={showSubmissionForm}
             />
           </TabsContent>
         </Tabs>

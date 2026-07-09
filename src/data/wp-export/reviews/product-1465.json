@@ -1,5 +1,165 @@
 [
   {
+    "id": 3190,
+    "date_created": "2026-06-25T18:06:39",
+    "date_created_gmt": "2026-06-25T12:36:39",
+    "product_id": 1465,
+    "product_name": "Labor Colony",
+    "product_permalink": "https://blog.samanportable.com/product/labor-colony/",
+    "status": "approved",
+    "reviewer": "Siyd Rizwa",
+    "reviewer_email": "siydrizwa@gmail.com",
+    "review": "<p>We deployed a 50-room labour colony for our workforce at a thermal power plant project in Chhattisgarh. Coordinating accommodation for that many workers on a remote site is always a headache — drainage, toilets, kitchen space, everything needs to be planned properly or you end up with complaints and productivity issues. SAMAN handled the layout discussion seriously, suggested a practical room arrangement with attached toilet blocks and a separate common kitchen unit. The prefab rooms were sturdy, ventilation was decent, and the toilet units had proper plumbing connections. Our workers settled in without the usual grumbling. For large infrastructure sites where you need organised accommodation fast, this is a sensible option.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3190",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1465"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3186,
+    "date_created": "2026-06-24T17:18:36",
+    "date_created_gmt": "2026-06-24T11:48:36",
+    "product_id": 1465,
+    "product_name": "Labor Colony",
+    "product_permalink": "https://blog.samanportable.com/product/labor-colony/",
+    "status": "approved",
+    "reviewer": "Soumya ranjan Ray",
+    "reviewer_email": "soumyaranjanray26@gmail.com",
+    "review": "<p>We set up a labour colony from SAMAN for around 80 workers at our site, and it's been a good decision. The prefab units came ready and were assembled in a fraction of the time normal construction takes. Each room is well-ventilated, the roofing holds up against both heat and monsoon rain, and the washroom and toilet blocks kept things clean and organised.<br />\nBuild quality is solid for worker housing — sturdy panels, proper electrical points, and enough natural light so rooms don't feel cramped. Coordination from enquiry to installation was smooth, and the team understood our site needs without much back and forth. Three months in and the units are holding up well with daily use. If you're sourcing labour colony or workforce housing for a construction site, SAMAN is worth a quote.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3186",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1465"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3182,
+    "date_created": "2026-06-22T18:35:03",
+    "date_created_gmt": "2026-06-22T13:05:03",
+    "product_id": 1465,
+    "product_name": "Labor Colony",
+    "product_permalink": "https://blog.samanportable.com/product/labor-colony/",
+    "status": "approved",
+    "reviewer": "Aslam",
+    "reviewer_email": "mdaslam85431195@gmail.com",
+    "review": "<p>We needed accommodation set up for around 60 workers at our project site, and SAMAN Portable handled the entire labour colony for us. The units were sturdy, well-ventilated, and the bathroom and washing areas were planned sensibly — which honestly makes a big difference when you're housing that many people. The rooms stay reasonably cool, and there's been no issue with leakage even during heavy rain. Delivery and installation were done on time without disrupting our site work. The workers are comfortable, which keeps everyone settled and productive. Good quality for the cost. Would definitely use them again for future sites.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3182",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1465"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3178,
+    "date_created": "2026-06-17T19:33:23",
+    "date_created_gmt": "2026-06-17T14:03:23",
+    "product_id": 1465,
+    "product_name": "Labor Colony",
+    "product_permalink": "https://blog.samanportable.com/product/labor-colony/",
+    "status": "approved",
+    "reviewer": "Shaik Rafik",
+    "reviewer_email": "rafikshaik0615@gmail.com",
+    "review": "<p>We ordered a labour colony setup for our project site, and it has been very useful for accommodating our workforce. The rooms are spacious enough for daily living, and the ventilation is good. The installation was completed within the promised timeline, which helped us avoid delays at the site. The structure feels strong and well-built, and our workers are comfortable staying there. Overall, a reliable solution for temporary workforce accommodation.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3178",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1465"
+        }
+      ]
+    }
+  },
+  {
     "id": 3167,
     "date_created": "2026-06-07T20:05:22",
     "date_created_gmt": "2026-06-07T14:35:22",

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 3175,
+    "date_created": "2026-06-16T12:03:45",
+    "date_created_gmt": "2026-06-16T06:33:45",
+    "product_id": 1281,
+    "product_name": "Shipping Container Office",
+    "product_permalink": "https://blog.samanportable.com/product/container-offices/shipping-container-office/",
+    "status": "approved",
+    "reviewer": "Suhani Sharma",
+    "reviewer_email": "alamsammee@gmail.com",
+    "review": "<p>Very happy with our shipping container office from SAMAN. We needed a proper site office that could be set up quickly, and this delivered on every point. The build quality is solid — clean welding, good insulation, and the interior finish looks far more professional than we expected for a container conversion. The electrical fittings, lights, and switches were all done neatly and were ready to use from day one.<br />\nDelivery was on time and the placement was handled smoothly, with no fuss on site. The team was responsive throughout and answered all our questions before and after installation. It's comfortable to work in even through the day, and our staff genuinely like using it.<br />\nWould definitely recommend SAMAN to anyone looking for a durable, ready-to-use container office. We'll be coming back for our next site requirement.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3175",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1281"
+        }
+      ]
+    }
+  }
+]

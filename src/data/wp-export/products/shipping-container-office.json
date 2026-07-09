@@ -51,8 +51,8 @@
   "shipping_class": "",
   "shipping_class_id": 0,
   "reviews_allowed": true,
-  "average_rating": "0.00",
-  "rating_count": 0,
+  "average_rating": "5.00",
+  "rating_count": 1,
   "upsell_ids": [],
   "cross_sell_ids": [],
   "parent_id": 0,
@@ -218,7 +218,7 @@
           "hide_information": "0",
           "audio_status": "unmute"
         },
-        "271089": {
+        "271084": {
           "video_type": "mp4",
           "upload_video_id": "",
           "upload_video_url": "",
@@ -244,7 +244,7 @@
           "hide_information": "0",
           "audio_status": "unmute"
         },
-        "271084": {
+        "271086": {
           "video_type": "mp4",
           "upload_video_id": "",
           "upload_video_url": "",
@@ -257,7 +257,7 @@
           "hide_information": "0",
           "audio_status": "unmute"
         },
-        "271086": {
+        "271089": {
           "video_type": "mp4",
           "upload_video_id": "",
           "upload_video_url": "",

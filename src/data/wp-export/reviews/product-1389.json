@@ -1,0 +1,242 @@
+[
+  {
+    "id": 3192,
+    "date_created": "2026-07-01T09:54:00",
+    "date_created_gmt": "2026-07-01T04:24:00",
+    "product_id": 1389,
+    "product_name": "Portable Office",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/",
+    "status": "approved",
+    "reviewer": "Alam Zain",
+    "reviewer_email": "alam22209191@gmail.com",
+    "review": "<p>Really happy with the portable office cabin. The build quality is good, it's comfortable to work in, and there's enough space for our daily office needs. The installation was quick, and everything was ready on time. Overall, it's a great option if you're looking for a practical and affordable office setup.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3192",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1389"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3189,
+    "date_created": "2026-06-25T11:39:32",
+    "date_created_gmt": "2026-06-25T06:09:32",
+    "product_id": 1389,
+    "product_name": "Portable Office",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/",
+    "status": "approved",
+    "reviewer": "Md sajid Ansari",
+    "reviewer_email": "mdsajidansari97706@gmail.com",
+    "review": "<p>Didn't expect a portable office cabin to feel this professional from the inside. Got one for my transport yard — needed a small office for billing and coordination. The uPVC windows, the interior ACP panelling, the vinyl floor — it doesn't feel like a temporary setup at all. My staff actually prefers sitting in it over the old pucca room we had. SAMAN customized the layout exactly as I asked. Highly recommend for anyone who wants a proper workspace without the cost of construction.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3189",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1389"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3188,
+    "date_created": "2026-06-25T11:32:00",
+    "date_created_gmt": "2026-06-25T06:02:00",
+    "product_id": 1389,
+    "product_name": "Portable Office",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/",
+    "status": "approved",
+    "reviewer": "Md. Naim",
+    "reviewer_email": "md.naim04@gmail.com",
+    "review": "<p>I've bought porta cabins from different vendors over the years. SAMAN's portable office cabin is a step above the usual stuff you find — the panels are thicker, the door and windows don't rattle, and the interior finish looks cleaner. We use it as a project manager's cabin on metro work sites and it's held up well through rains and dust. Good value for the money and the team was responsive when we had a query about customization.</p>\n",
+    "rating": 4,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3188",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1389"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3187,
+    "date_created": "2026-06-25T11:27:50",
+    "date_created_gmt": "2026-06-25T05:57:50",
+    "product_id": 1389,
+    "product_name": "Portable Office",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/",
+    "status": "approved",
+    "reviewer": "Jamal Ahamad",
+    "reviewer_email": "ja8015675@gmail.com",
+    "review": "<p>Ordered two portable office cabins for our plant in Greater Noida — one for the HR team, one for the security supervisor. Both came with electrical fittings and vinyl flooring, which saved us the hassle of interior work. The sizing was exactly as agreed and both units fit perfectly in the space we had planned. Only minus: the delivery took a bit longer than expected, but the installation crew was efficient once they arrived. Overall happy with the product quality.</p>\n",
+    "rating": 4,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3187",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1389"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3185,
+    "date_created": "2026-06-24T16:49:39",
+    "date_created_gmt": "2026-06-24T11:19:39",
+    "product_id": 1389,
+    "product_name": "Portable Office",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/",
+    "status": "approved",
+    "reviewer": "Praksh Solanki",
+    "reviewer_email": "prakashchandkantaliya@gmail.com",
+    "review": "<p>Got our portable office cabin from SAMAN about three months back for our site at Greater Noida, and honestly it's held up better than I expected. We needed something quick for the engineers and it was up and running within a couple of days. The insulation actually does its job in this heat, which was my biggest worry. Finish is clean, doors and windows sit properly, no rattling. One small thing — I'd asked for an extra power point and they sorted it without any fuss. Would order again for our next site.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3185",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1389"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3184,
+    "date_created": "2026-06-24T13:16:48",
+    "date_created_gmt": "2026-06-24T07:46:48",
+    "product_id": 1389,
+    "product_name": "Portable Office",
+    "product_permalink": "https://blog.samanportable.com/product/portable-office/",
+    "status": "approved",
+    "reviewer": "Balraj SLV",
+    "reviewer_email": "balrajbariki@icloud.com",
+    "review": "<p>We purchased a portable office cabin for our project site, and the cabin has been very useful for daily office work. The overall build quality is good, and the cabin feels strong, neat, and comfortable for staff use.</p>\n<p>The internal finishing, flooring, wall panels, windows, door, and electrical fittings were completed properly. The space is well planned and suitable for meetings, staff seating, documentation work, and site office operations.</p>\n<p>The cabin was delivered on time and installed smoothly. It also gives a professional look at the site and can be shifted easily whenever required.</p>\n<p>Overall, we are happy with the portable office cabin quality, finishing, and service. It is a reliable and practical solution for temporary and project-based office requirements.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3184",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/1389"
+        }
+      ]
+    }
+  }
+]
