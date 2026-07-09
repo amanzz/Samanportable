@@ -6,15 +6,15 @@ import QuoteFormTrigger from './QuoteFormTrigger';
 
 const heroImages = [
   {
-    src: '/hero-image/saman-portable-office-cabin-bangalore.webp',
+    src: '/hero-image/saman-portable-office-cabin-bangalore-clean.webp',
     alt: 'Saman Portable Office Cabin in Bangalore - High Quality Site Office'
   },
   {
-    src: '/hero-image/premium-container-site-office-rental.webp',
+    src: '/hero-image/premium-container-site-office-rental-clean.webp',
     alt: 'Premium Container Site Office Rental Service by Saman Portable'
   },
   {
-    src: '/hero-image/modular-prefab-homes-structures-india.webp',
+    src: '/hero-image/modular-prefab-homes-structures-india-clean.webp',
     alt: 'Modular Prefab Homes and Steel Structures in India - Eco-friendly Construction'
   },
 ];
@@ -123,13 +123,15 @@ const HeroSection = () => {
                 asChild
               >
                 <a href="tel:+919708989937">
-                  Call +91 97089 89937
+                  Call Now
                 </a>
               </Button>
             </div>
 
-            {/* Certification badge row (T2 §3) — below CTA row, lazy so it never precedes the hero LCP */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            {/* Certification badge row (T2.1 §B) — uniform white chips, one deliberate
+                set; fixed heights (52px mobile / 72px desktop) => zero CLS; lazy so it
+                never precedes the hero LCP. Aligned to the CTA column edge. */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               {[
                 { src: '/credentials/optimized/zed-bronze.webp', alt: 'ZED Bronze certified manufacturer — SAMAN Portable' },
                 { src: '/credentials/optimized/msme-udyam.webp', alt: 'MSME Udyam registered enterprise — SAMAN Portable' },
@@ -137,7 +139,7 @@ const HeroSection = () => {
               ].map((badge) => (
                 <span
                   key={badge.src}
-                  className="inline-flex items-center justify-center rounded-lg bg-white/90 px-2.5 py-1.5 shadow-sm"
+                  className="inline-flex h-[52px] md:h-[72px] items-center justify-center rounded-xl bg-white p-3 shadow-md"
                 >
                   <Image
                     src={badge.src}
@@ -145,7 +147,7 @@ const HeroSection = () => {
                     width={56}
                     height={56}
                     loading="lazy"
-                    className="h-10 md:h-[52px] w-auto object-contain"
+                    className="h-full w-auto object-contain"
                   />
                 </span>
               ))}

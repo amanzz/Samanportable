@@ -232,6 +232,11 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
         {/* 3. Products Section (6 cards) */}
         <ServicesSection />
 
+        {/* 3b. Product Showcase (WordPress products) — T2.1 §D1: moved directly
+            after the 6-card products section so product cards with photos appear
+            in the first half of the page. Component unchanged (no redesign). */}
+        {featuredProducts.length > 0 && <ProductShowcase featuredProducts={featuredProducts} />}
+
         {/* 4. Specs Table ★ NEW */}
         <SpecsTable />
 
@@ -310,9 +315,6 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
             </div>
           </div>
         </section>
-
-        {/* 9. Product Showcase (WordPress products) */}
-        {featuredProducts.length > 0 && <ProductShowcase featuredProducts={featuredProducts} />}
 
         {/* 10. Industries / Modular Solutions SEO */}
         <ModularSolutionsSEO />
