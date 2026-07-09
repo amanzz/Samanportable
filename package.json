@@ -12,6 +12,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
+    "validate:local-inventory": "node scripts/validate-local-inventory-feed.js",
     "analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "generate-sitemap": "node scripts/generate-sitemap.js",
