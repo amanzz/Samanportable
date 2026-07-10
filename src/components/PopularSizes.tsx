@@ -70,8 +70,30 @@ const groupB = {
   rows: [
     { label: 'Container Office', href: '/product/container-offices', thumb: '/homepage/cards/thumbs/container-office-112.webp', chips: CABIN_CHIPS },
     { label: 'Porta Cabin', href: '/product/porta-cabins', thumb: '/homepage/cards/thumbs/porta-cabin-112.webp', chips: CABIN_CHIPS },
-    { label: 'Container Café', href: '/product/container-cafe', thumb: '/homepage/cards/thumbs/container-cafe-112.webp', chips: [], rateLine: 'From ₹1,150/sq ft' },
-    { label: 'Labour Colony', href: '/product/labor-colony', thumb: '/homepage/cards/thumbs/labour-colony-112.webp', chips: [], rateLine: '₹750/sq ft' },
+    {
+      label: 'Container Café',
+      href: '/product/container-cafe',
+      thumb: '/homepage/cards/thumbs/container-cafe-112.webp',
+      chips: [
+        { size: '10x10x8.5', price: '₹1.35 L' },
+        { size: '20x10x8.5', price: '₹2.30 L' },
+        { size: '30x10x8.5', price: '₹3.45 L' },
+        { size: '40x10x8.5', price: '₹4.60 L' },
+      ],
+      rateLine: 'From ₹1,150/sq ft',
+    },
+    {
+      label: 'Labour Colony',
+      href: '/product/labor-colony',
+      thumb: '/homepage/cards/thumbs/labour-colony-112.webp',
+      chips: [
+        { size: '90x24x19', price: 'G+1' },
+        { size: '120x24x19', price: 'G+1' },
+        { size: '90x24x28', price: 'G+2' },
+        { size: '60x24x28', price: 'G+2' },
+      ],
+      rateLine: '₹750/sq ft',
+    },
   ] as Row[],
   footnote:
     'Standard rates ex-GST — 200 sq ft and above ₹1,050/sq ft; smaller units ₹1,150/sq ft. Transport and customisation quoted separately. Final price confirmed at quotation.',
