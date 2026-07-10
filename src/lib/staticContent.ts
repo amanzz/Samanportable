@@ -438,6 +438,7 @@ export async function fetchProductsByCategoryPriority(
     'pir-panel',
     'eps-panel',
     'rockwool-panel',
+    'glass-wool-panel',
   ];
   let all: any[] = [];
   for (const categorySlug of categoryPriority) {
