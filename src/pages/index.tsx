@@ -131,6 +131,9 @@ const HomePage = () => {
         {/* 1. Hero Section - Critical for LCP */}
         <HeroSection />
 
+        {/* 1b. Certifications & Recognition (T6.16) — directly after hero */}
+        <HomepageCertifications />
+
         {/* 2. Calculator Strip (T6 §2) — full-width price-transparency band under hero */}
         <CalculatorStrip />
 
@@ -142,9 +145,6 @@ const HomePage = () => {
 
         {/* 4. Specs section */}
         <SpecsTable />
-
-        {/* 4b. Certifications & Recognition (T6.15) — before Clients + Testimonials */}
-        <HomepageCertifications />
 
         {/* 5. Clients + testimonials (ClientsSection already merges both) */}
         <ClientsSection />

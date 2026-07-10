@@ -127,32 +127,6 @@ const HeroSection = () => {
                 </a>
               </Button>
             </div>
-
-            {/* Certification badge row (T2.1 §B) — uniform white chips, one deliberate
-                set; fixed heights (52px mobile / 72px desktop) => zero CLS; lazy so it
-                never precedes the hero LCP. Aligned to the CTA column edge. */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              {[
-                { src: '/credentials/optimized/zed-bronze.webp', alt: 'ZED Bronze certified manufacturer — SAMAN Portable' },
-                { src: '/credentials/optimized/msme-udyam.webp', alt: 'MSME Udyam registered enterprise — SAMAN Portable' },
-                { src: '/credentials/optimized/dpiit-startup.webp', alt: 'DPIIT recognised startup — SAMAN Portable' },
-                { src: '/credentials/optimized/nsic.webp', alt: 'NSIC registered enterprise — SAMAN Portable' },
-              ].map((badge) => (
-                <span
-                  key={badge.src}
-                  className="inline-flex h-[52px] md:h-[72px] items-center justify-center rounded-xl bg-white p-3 shadow-md"
-                >
-                  <Image
-                    src={badge.src}
-                    alt={badge.alt}
-                    width={56}
-                    height={56}
-                    loading="lazy"
-                    className="h-full w-auto object-contain"
-                  />
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

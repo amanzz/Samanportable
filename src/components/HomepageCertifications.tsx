@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { ArrowRight, X } from 'lucide-react';
 
-// T6.15 — homepage "Certifications & Recognition" section. Copy verbatim from the
-// draft. Certificates are VIEW-ONLY (owner v2 rule): each CTA opens an on-page
-// lightbox showing the certificate as a watermarked image — no PDF link, no
-// download. The source PDFs live in gitignored private-data/ and are not
-// URL-accessible. Card background + logo images are local WebP (lazy, explicit
-// dims -> 0 CLS). Distinct from the existing CertificationsSection (ISO/GST page).
+// T6.16 — homepage "Certifications & Recognition" section, placed directly after the
+// hero. Copy verbatim from the v2 draft (uniform one-line titles, two-line bodies,
+// one "View Certificate" DS button on all four). Certificates are VIEW-ONLY: each
+// button opens the watermarked-image lightbox (unchanged from T6.15). Source PDFs
+// stay in gitignored private-data/ (not URL-accessible). Card banners + logos are
+// local WebP, lazy (none preload before the hero) with explicit dims -> 0 CLS.
+// Mobile (<768px): the four cards become a scroll-snap carousel (auto-advance,
+// leaf-green dots). Tablet 2x2, desktop 4-across.
 
 type Cert = {
   bg: string;
@@ -26,9 +28,9 @@ const CERTS: Cert[] = [
     bg: '/homepage/cert-bg/cert-bg-zed-quality-inspection.webp',
     bgAlt: 'Quality inspection of insulated panels at a SAMAN Portable factory',
     logo: '/credentials/optimized/zed-bronze.webp',
-    title: 'Zero Defect manufacturing, certified',
-    body: "SAMAN Portable holds ZED Bronze certification under the Government of India's Zero Defect Zero Effect programme — a manufacturing quality standard covering how our cabins and panels are built.",
-    cta: 'View ZED Bronze certificate',
+    title: 'Zero Defect manufacturing',
+    body: "ZED Bronze certified under the Government of India's Zero Defect Zero Effect programme for manufacturing quality.",
+    cta: 'View Certificate',
     cert: '/homepage/certificates/zed-bronze.webp',
     certAlt: 'ZED Bronze certificate for SAMAN POS India Private Limited (verification copy)',
     certH: 1698,
@@ -37,9 +39,9 @@ const CERTS: Cert[] = [
     bg: '/homepage/cert-bg/cert-bg-msme-factory-floor.webp',
     bgAlt: 'Cabin fabrication line at a SAMAN Portable manufacturing facility',
     logo: '/credentials/optimized/msme-udyam.webp',
-    title: 'A registered Indian manufacturer',
-    body: "Registered under Udyam with the Ministry of MSME, Government of India — the official registry of the country's manufacturing enterprises.",
-    cta: 'View Udyam certificate',
+    title: 'Registered Indian manufacturer',
+    body: "Registered under Udyam with the Ministry of MSME — the Government of India's official registry of manufacturers.",
+    cta: 'View Certificate',
     cert: '/homepage/certificates/msme-udyam.webp',
     certAlt: 'Udyam registration certificate for SAMAN POS India Private Limited (verification copy)',
     certH: 1698,
@@ -49,8 +51,8 @@ const CERTS: Cert[] = [
     bgAlt: 'Modular building design and engineering at SAMAN Portable',
     logo: '/credentials/optimized/dpiit-startup.webp',
     title: 'Recognised under Startup India',
-    body: 'Recognised by the Department for Promotion of Industry and Internal Trade (DPIIT) under the Startup India initiative.',
-    cta: 'View DPIIT certificate',
+    body: 'Recognised by the Department for Promotion of Industry and Internal Trade under the Startup India initiative.',
+    cta: 'View Certificate',
     cert: '/homepage/certificates/dpiit-startup.webp',
     certAlt: 'DPIIT Startup India recognition certificate for SAMAN POS India Private Limited (verification copy)',
     certH: 850,
@@ -60,8 +62,8 @@ const CERTS: Cert[] = [
     bgAlt: 'Finished portable cabins ready for dispatch at a SAMAN Portable yard',
     logo: '/credentials/optimized/nsic.webp',
     title: 'NSIC registered enterprise',
-    body: 'Registered with the National Small Industries Corporation — a Government of India enterprise supporting qualified small-scale manufacturers.',
-    cta: 'View NSIC certificate',
+    body: 'Registered with the National Small Industries Corporation, a Government of India enterprise for small-scale industry.',
+    cta: 'View Certificate',
     cert: '/homepage/certificates/nsic.webp',
     certAlt: 'NSIC registration document for SAMAN POS India Private Limited (verification copy)',
     certH: 1695,
@@ -143,44 +145,137 @@ const CertLightbox = ({ cert, onClose }: { cert: Cert; onClose: () => void }) =>
 
 const HomepageCertifications = () => {
   const [open, setOpen] = useState<number | null>(null);
+  const [active, setActive] = useState(0);
+  const activeRef = useRef(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const goTo = (i: number) => {
+    const track = trackRef.current;
+    const card = cardRefs.current[i];
+    if (!track || !card) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    track.scrollTo({ left: card.offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+  };
+
+  // Mobile carousel: active-dot tracking + 5s auto-advance (loop). Pauses on
+  // interaction; no auto-advance under prefers-reduced-motion (manual swipe works).
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const mqMobile = window.matchMedia('(max-width: 767px)');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let io: IntersectionObserver | null = null;
+    let timer: ReturnType<typeof setInterval> | null = null;
+    let paused = false;
+    const pause = () => {
+      paused = true;
+    };
+
+    const start = () => {
+      if (!mqMobile.matches) return;
+      io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              const idx = cardRefs.current.indexOf(e.target as HTMLDivElement);
+              if (idx >= 0) {
+                activeRef.current = idx;
+                setActive(idx);
+              }
+            }
+          });
+        },
+        { root: track, threshold: 0.6 }
+      );
+      cardRefs.current.forEach((c) => c && io!.observe(c));
+      track.addEventListener('pointerdown', pause, { passive: true });
+      track.addEventListener('touchstart', pause, { passive: true });
+      track.addEventListener('wheel', pause, { passive: true });
+      if (!reduce) {
+        timer = setInterval(() => {
+          if (paused) return;
+          goTo((activeRef.current + 1) % CERTS.length);
+        }, 5000);
+      }
+    };
+    const stop = () => {
+      if (io) io.disconnect();
+      io = null;
+      if (timer) clearInterval(timer);
+      timer = null;
+      track.removeEventListener('pointerdown', pause);
+      track.removeEventListener('touchstart', pause);
+      track.removeEventListener('wheel', pause);
+      paused = false;
+    };
+    const onChange = () => {
+      stop();
+      start();
+    };
+    start();
+    mqMobile.addEventListener('change', onChange);
+    return () => {
+      mqMobile.removeEventListener('change', onChange);
+      stop();
+    };
+  }, []);
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white py-12 md:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center md:mb-16">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#0A3D2A]/10 bg-[#0A3D2A]/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#0A3D2A]">
+        {/* Compact left-aligned header */}
+        <div className="mb-8 max-w-2xl md:mb-10">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0A3D2A]/10 bg-[#0A3D2A]/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#0A3D2A]">
             GOVERNMENT RECOGNISED
           </div>
-          <h2 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">Certified. Registered. Verifiable.</h2>
-          <p className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-gray-600">
+          <h2 className="mb-3 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">Certified. Registered. Verifiable.</h2>
+          <p className="text-base font-light leading-relaxed text-gray-600">
             Every credential below is issued by a Government of India body — open the certificate and check it yourself.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Cards: mobile carousel (scroll-snap) / tablet 2x2 / desktop 4-across */}
+        <div
+          ref={trackRef}
+          className="relative flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-2 md:gap-6 md:overflow-visible lg:grid-cols-4 [&::-webkit-scrollbar]:hidden"
+        >
           {CERTS.map((c, i) => (
-            <div key={c.title} className="flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg">
-              <div className="relative h-40 overflow-hidden bg-gray-100">
-                <Image src={c.bg} alt={c.bgAlt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" loading="lazy" className="object-cover" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="flex h-[88px] w-[88px] items-center justify-center rounded-2xl bg-white p-3 shadow-md">
-                    <Image src={c.logo} alt="" width={64} height={64} loading="lazy" className="h-full w-auto object-contain" />
-                  </span>
-                </div>
+            <div
+              key={c.title}
+              ref={(el) => {
+                cardRefs.current[i] = el;
+              }}
+              className="flex w-full shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg md:w-auto md:shrink"
+            >
+              <div className="relative h-[140px] overflow-hidden bg-gray-100">
+                <Image src={c.bg} alt={c.bgAlt} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" loading="lazy" className="object-cover" />
               </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-bold leading-snug text-gray-900">{c.title}</h3>
+              <div className="flex flex-1 flex-col items-center px-5 pb-5 text-center">
+                <span className="-mt-11 mb-3 flex h-[88px] w-[88px] items-center justify-center rounded-2xl border border-gray-100 bg-white p-3 shadow-md">
+                  <Image src={c.logo} alt="" width={64} height={64} loading="lazy" className="h-full w-auto object-contain" />
+                </span>
+                <h3 className="text-base font-bold leading-snug text-gray-900">{c.title}</h3>
                 <p className="mt-2 flex-1 text-sm font-light leading-relaxed text-gray-600">{c.body}</p>
                 <button
                   type="button"
                   onClick={() => setOpen(i)}
-                  className="group mt-4 inline-flex items-center gap-1.5 self-start text-sm font-bold text-[#0A3D2A] transition-colors hover:text-[#082F20]"
+                  className="mt-4 inline-flex items-center gap-1.5 rounded-lg border-2 border-[#1A6B45] px-4 py-2 text-sm font-bold text-[#0A3D2A] transition-all hover:bg-[#0A3D2A] hover:text-white"
                 >
                   {c.cta}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Dots — mobile only */}
+        <div className="mt-5 flex justify-center gap-2 md:hidden">
+          {CERTS.map((_, i) => (
+            <button key={i} type="button" onClick={() => goTo(i)} aria-label={`Go to certificate ${i + 1}`} className="flex items-center p-1.5">
+              <span className={`block h-2 rounded-full transition-all duration-300 ${active === i ? 'w-6 bg-[#1A6B45]' : 'w-2 bg-gray-300'}`} />
+            </button>
           ))}
         </div>
       </div>
