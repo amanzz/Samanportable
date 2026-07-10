@@ -3,26 +3,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Layers, SquareStack, LucideIcon } from 'lucide-react';
 
-// T6.3 — "Most In Demand" showcase with header subtitles, a decorated panels rate
-// table (Group A) and standard cabin rates (Group B). Copy verbatim from the T6.3
-// draft v2; all other copy byte-identical to T6.2. Links unchanged. No remote images
-// (tiny local WebP, lazy, explicit dims). L12: chips/rows link only to owning pages.
-//
-// Reserved (owner 10 Jul 2026): "Wall Sheets" -> /product/wall-sheet and
-// "Roof Sheets" -> /product/roofing-sheet rows stay omitted until those pages are live.
+// "Most In Demand" showcase. Section DATA is exported so the homepage rendering
+// (this file) and the /_popular-preview variants render byte-identical text from a
+// single source. Copy verbatim from the T6.x drafts. Links unchanged. Local WebP
+// only (lazy, explicit dims -> 0 CLS). L12: chips/rows link only to owning pages.
 
-type Chip = { size: string; price?: string };
-type Row = { label: string; href: string; chips: Chip[]; thumb?: string; icon?: LucideIcon; rateLine?: string };
-type RateRow = { t: string; eps: string; puf: string; pir: string };
+export type Chip = { size: string; price?: string };
+export type Row = { label: string; href?: string; chips: Chip[]; thumb?: string; icon?: LucideIcon; rateLine?: string; pill?: string };
+export type RateRow = { t: string; eps: string; puf: string; pir: string };
+export type TableSpec = { heading: string; cols: string[]; rows: string[][]; note?: string };
 
-const CABIN_CHIPS: Chip[] = [
-  { size: '10x10x8.5', price: '₹1.15 L' },
-  { size: '20x10x8.5', price: '₹2.10 L' },
-  { size: '30x10x8.5', price: '₹3.15 L' },
-  { size: '40x10x8.5', price: '₹4.20 L' },
-];
-
-const RATE_ROWS: RateRow[] = [
+export const RATE_ROWS: RateRow[] = [
   { t: '30mm', eps: '₹770', puf: '₹1,050', pir: '₹1,410' },
   { t: '40mm', eps: '₹840', puf: '₹1,150', pir: '₹1,550' },
   { t: '50mm', eps: '₹910', puf: '₹1,250', pir: '₹1,680' },
@@ -34,7 +25,40 @@ const RATE_ROWS: RateRow[] = [
   { t: '150mm', eps: '₹1,570', puf: '₹2,150', pir: '₹2,900' },
 ];
 
-const groupA = {
+export const CABIN_CAFE_RATE: TableSpec = {
+  heading: 'Standard rate card — all 9 sizes, ex-GST',
+  cols: ['Size (ft)', 'Area (sq ft)', 'Cabin / Container Office', 'Container Café'],
+  rows: [
+    ['10×10×8.5', '100', '₹1.15 L', '₹1.35 L'],
+    ['20×8×8.5', '160', '₹1.84 L', '₹2.16 L'],
+    ['20×10×8.5', '200', '₹2.10 L', '₹2.30 L'],
+    ['20×12×8.5', '240', '₹2.52 L', '₹2.76 L'],
+    ['30×10×8.5', '300', '₹3.15 L', '₹3.45 L'],
+    ['40×8×8.5', '320', '₹3.36 L', '₹3.68 L'],
+    ['40×10×8.5', '400', '₹4.20 L', '₹4.60 L'],
+    ['20×20×8.5', '400', '₹4.20 L', '₹4.60 L'],
+    ['40×12×8.5', '480', '₹5.04 L', '₹5.52 L'],
+  ],
+};
+
+export const LABOUR_CONFIG: TableSpec = {
+  heading: 'Labour colony — 9 standard configurations',
+  cols: ['Size (ft)', 'Floors', 'Built-up area (sq ft)'],
+  rows: [
+    ['60×24×10', 'Ground', '1,440'],
+    ['90×24×10', 'Ground', '2,160'],
+    ['120×24×10', 'Ground', '2,880'],
+    ['60×24×19', 'G+1', '2,880'],
+    ['90×24×19', 'G+1', '4,320'],
+    ['120×24×19', 'G+1', '5,760'],
+    ['60×24×28', 'G+2', '4,320'],
+    ['90×24×28', 'G+2', '6,480'],
+    ['120×24×28', 'G+2', '8,640'],
+  ],
+  note: 'Labour colony rate: ₹750/sq ft. Exact configuration and total quoted at site assessment.',
+};
+
+export const groupA = {
   title: 'PUF & Sandwich Panels',
   subtitle: 'Insulated panels in nine thicknesses — factory-direct rates',
   header: '/homepage/cards/headers/panels-header.webp',
@@ -63,37 +87,15 @@ const groupA = {
   cta: { label: 'See all panel sizes & prices', href: '/product/sandwich-panel' },
 };
 
-const groupB = {
+export const groupB = {
   title: 'Cabins & Container Offices',
   subtitle: 'Nine standard sizes at standard rates — ready in 7–21 days',
   header: '/homepage/cards/headers/cabins-header.webp',
   rows: [
-    { label: 'Container Office', href: '/product/container-offices', thumb: '/homepage/cards/thumbs/container-office-112.webp', chips: CABIN_CHIPS },
-    { label: 'Porta Cabin', href: '/product/porta-cabins', thumb: '/homepage/cards/thumbs/porta-cabin-112.webp', chips: CABIN_CHIPS },
-    {
-      label: 'Container Café',
-      href: '/product/container-cafe',
-      thumb: '/homepage/cards/thumbs/container-cafe-112.webp',
-      chips: [
-        { size: '10x10x8.5', price: '₹1.35 L' },
-        { size: '20x10x8.5', price: '₹2.30 L' },
-        { size: '30x10x8.5', price: '₹3.45 L' },
-        { size: '40x10x8.5', price: '₹4.60 L' },
-      ],
-      rateLine: 'From ₹1,150/sq ft',
-    },
-    {
-      label: 'Labour Colony',
-      href: '/product/labor-colony',
-      thumb: '/homepage/cards/thumbs/labour-colony-112.webp',
-      chips: [
-        { size: '90x24x19', price: 'G+1' },
-        { size: '120x24x19', price: 'G+1' },
-        { size: '90x24x28', price: 'G+2' },
-        { size: '60x24x28', price: 'G+2' },
-      ],
-      rateLine: '₹750/sq ft',
-    },
+    { label: 'Container Office', href: '/product/container-offices', thumb: '/homepage/cards/thumbs/container-office-112.webp', chips: [] },
+    { label: 'Porta Cabin', href: '/product/porta-cabins', thumb: '/homepage/cards/thumbs/porta-cabin-112.webp', chips: [] },
+    { label: 'Container Café', href: '/product/container-cafe', thumb: '/homepage/cards/thumbs/container-cafe-112.webp', chips: [], rateLine: 'From ₹1,150/sq ft' },
+    { label: 'Labour Colony', href: '/product/labor-colony', thumb: '/homepage/cards/thumbs/labour-colony-112.webp', chips: [], rateLine: '₹750/sq ft' },
   ] as Row[],
   footnote:
     'Standard rates ex-GST — 200 sq ft and above ₹1,050/sq ft; smaller units ₹1,150/sq ft. Transport and customisation quoted separately. Final price confirmed at quotation.',
@@ -124,16 +126,25 @@ const SizeRow = ({ row }: { row: Row }) => {
             </span>
           ) : null}
           <div>
-            <Link href={row.href} className="text-base font-bold text-gray-900 transition-colors hover:text-[#0A3D2A]">
-              {row.label}
-            </Link>
+            <div className="flex items-center gap-2">
+              {row.href ? (
+                <Link href={row.href} className="text-base font-bold text-gray-900 transition-colors hover:text-[#0A3D2A]">
+                  {row.label}
+                </Link>
+              ) : (
+                <span className="text-base font-bold text-gray-900">{row.label}</span>
+              )}
+              {row.pill && (
+                <span className="rounded-full bg-[#0A3D2A]/5 px-2.5 py-1 text-[11px] font-semibold text-[#0A3D2A]">{row.pill}</span>
+              )}
+            </div>
             {row.rateLine && <p className="mt-0.5 text-sm font-bold text-[#0A3D2A]">{row.rateLine}</p>}
           </div>
         </div>
-        {row.chips.length > 0 && (
+        {row.chips.length > 0 && row.href && (
           <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:justify-end">
             {row.chips.map((chip) => (
-              <Link key={chip.size} href={row.href} className={tileClass}>
+              <Link key={chip.size} href={row.href as string} className={tileClass}>
                 <span className="text-sm font-bold text-[#0A3D2A]">{chip.size}</span>
                 {chip.price && <span className="mt-0.5 text-xs font-normal text-gray-500">{chip.price}</span>}
               </Link>
@@ -158,8 +169,8 @@ const GroupHeader = ({ title, subtitle, header }: { title: string; subtitle: str
   </div>
 );
 
-// Decorated, crawlable rate table (Group A). Forest header, zebra rows, mono prices,
-// thickness column sticky on mobile horizontal scroll. Static SSR => zero CLS.
+// Decorated, crawlable rate table (Group A panels). Forest header, zebra rows, mono
+// prices, thickness column sticky on mobile scroll. Static SSR => zero CLS.
 const RateTable = () => (
   <div className="mt-6">
     <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#0A3D2A]">{groupA.rateHeading}</p>
@@ -192,6 +203,56 @@ const RateTable = () => (
         </tbody>
       </table>
     </div>
+  </div>
+);
+
+// Generic decorated rate table (Group B). Same design language: forest header,
+// zebra rows, mono right-aligned cells, first column sticky on mobile scroll.
+const DecoratedTable = ({ spec, minWidth = 460 }: { spec: TableSpec; minWidth?: number }) => (
+  <div className="mt-6">
+    <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#0A3D2A]">{spec.heading}</p>
+    <div className="overflow-x-auto rounded-xl border border-gray-100">
+      <table className="w-full border-collapse text-sm" style={{ minWidth }}>
+        <thead>
+          <tr className="bg-[#0A3D2A] text-white">
+            {spec.cols.map((c, ci) => (
+              <th
+                key={c}
+                scope="col"
+                className={
+                  ci === 0
+                    ? 'sticky left-0 z-10 bg-[#0A3D2A] px-4 py-3 text-left font-mono text-xs font-semibold uppercase tracking-wide'
+                    : 'border-l border-white/10 px-4 py-3 text-right text-xs font-semibold uppercase tracking-wide'
+                }
+              >
+                {c}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {spec.rows.map((r, i) => {
+            const rowBg = i % 2 === 1 ? 'bg-[#F8FAF9]' : 'bg-white';
+            return (
+              <tr key={i} className={`${rowBg} transition-colors hover:bg-[#0A3D2A]/5`}>
+                {r.map((cell, ci) =>
+                  ci === 0 ? (
+                    <th key={ci} scope="row" className={`sticky left-0 z-10 ${rowBg} border-r border-gray-100 px-4 py-3 text-left font-mono font-bold text-gray-900`}>
+                      {cell}
+                    </th>
+                  ) : (
+                    <td key={ci} className="border-l border-gray-100 px-4 py-3 text-right font-mono tabular-nums text-gray-700">
+                      {cell}
+                    </td>
+                  )
+                )}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+    {spec.note && <p className="mt-3 text-xs font-light text-gray-500">{spec.note}</p>}
   </div>
 );
 
@@ -252,6 +313,8 @@ const PopularSizes = () => {
                   <SizeRow key={row.label} row={row} />
                 ))}
               </div>
+              <DecoratedTable spec={CABIN_CAFE_RATE} minWidth={520} />
+              <DecoratedTable spec={LABOUR_CONFIG} minWidth={460} />
             </div>
             <Footnote text={groupB.footnote} />
             <CtaBar label={groupB.cta.label} href={groupB.cta.href} />
