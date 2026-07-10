@@ -136,6 +136,7 @@ const HeroSection = () => {
                 { src: '/credentials/optimized/zed-bronze.webp', alt: 'ZED Bronze certified manufacturer — SAMAN Portable' },
                 { src: '/credentials/optimized/msme-udyam.webp', alt: 'MSME Udyam registered enterprise — SAMAN Portable' },
                 { src: '/credentials/optimized/dpiit-startup.webp', alt: 'DPIIT recognised startup — SAMAN Portable' },
+                { src: '/credentials/optimized/nsic.webp', alt: 'NSIC registered enterprise — SAMAN Portable' },
               ].map((badge) => (
                 <span
                   key={badge.src}

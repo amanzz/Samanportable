@@ -45,6 +45,13 @@ const ClientsSection = dynamic(() => import('@/components/ClientsSection'), {
   ),
 });
 
+const HomepageCertifications = dynamic(() => import('@/components/HomepageCertifications'), {
+  ssr: true,
+  loading: () => (
+    <div className="w-full h-96 bg-white animate-pulse" />
+  ),
+});
+
 const ProcessSteps = dynamic(() => import('@/components/ProcessSteps'), {
   ssr: true,
   loading: () => (
@@ -135,6 +142,9 @@ const HomePage = () => {
 
         {/* 4. Specs section */}
         <SpecsTable />
+
+        {/* 4b. Certifications & Recognition (T6.15) — before Clients + Testimonials */}
+        <HomepageCertifications />
 
         {/* 5. Clients + testimonials (ClientsSection already merges both) */}
         <ClientsSection />
