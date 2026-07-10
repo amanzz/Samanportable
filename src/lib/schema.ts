@@ -357,7 +357,9 @@ export const getHomepageFAQSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   '@id': 'https://www.samanportable.com/#faqpage',
-  mainEntity: homepageFaqs.map((faq) => ({
+  // T6 §7 / G6 — homepage renders the first five FAQs (see FAQSection), so the
+  // schema slices to the same five to stay byte-matched to visible content.
+  mainEntity: homepageFaqs.slice(0, 5).map((faq) => ({
     '@type': 'Question',
     name: faq.question,
     acceptedAnswer: {
