@@ -17,6 +17,7 @@ import ProductDetailTabs from '@/components/product-puf/ProductDetailTabs';
 import RelatedProductsRail, { PUF_CATALOG } from '@/components/product-puf/RelatedProductsRail';
 import ProductCarousel from '@/components/product-puf/ProductCarousel';
 import { LongImage } from '@/components/product-puf/Gallery';
+import { panelAggregateOffer } from '@/lib/panelSchemaOffers';
 
 export const getStaticProps: GetStaticProps = async () => ({ props: {} });
 
@@ -95,21 +96,7 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Rates reviewed', value: 'July 2026' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
-  offers: {
-    '@type': 'AggregateOffer',
-    lowPrice: 1050,
-    highPrice: 1470,
-    priceCurrency: 'INR',
-    offerCount: 5,
-    availability: 'https://schema.org/InStock',
-    url: 'https://www.samanportable.com/product/puf-panel/puf-panel-price',
-    priceSpecification: {
-      '@type': 'UnitPriceSpecification',
-      priceCurrency: 'INR',
-      unitCode: 'MTK',
-      unitText: 'm²',
-    },
-  },
+  offers: panelAggregateOffer(1050, 'https://www.samanportable.com/product/puf-panel/puf-panel-price'),
 };
 
 const BREADCRUMB_JSONLD = {

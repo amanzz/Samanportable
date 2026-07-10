@@ -16,6 +16,7 @@ import RelatedProductsRail, { PUF_CATALOG } from '@/components/product-puf/Relat
 import ProductCarousel from '@/components/product-puf/ProductCarousel';
 import { LongImage } from '@/components/product-puf/Gallery';
 import RockwoolInfoBox from '@/components/product-rockwool/RockwoolInfoBox';
+import { panelAggregateOffer } from '@/lib/panelSchemaOffers';
 
 export const getStaticProps: GetStaticProps = async () => ({ props: {} });
 
@@ -112,21 +113,7 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Facings', value: 'PPGI / PPGL / Stainless Steel / Aluminium' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
-  offers: {
-    '@type': 'AggregateOffer',
-    lowPrice: 1290,
-    highPrice: 1810,
-    priceCurrency: 'INR',
-    offerCount: 5,
-    availability: 'https://schema.org/InStock',
-    url: 'https://www.samanportable.com/product/rockwool-panel',
-    priceSpecification: {
-      '@type': 'UnitPriceSpecification',
-      priceCurrency: 'INR',
-      unitCode: 'MTK',
-      unitText: 'm²',
-    },
-  },
+  offers: panelAggregateOffer(1290, 'https://www.samanportable.com/product/rockwool-panel'),
 };
 
 const BREADCRUMB_JSONLD = {
