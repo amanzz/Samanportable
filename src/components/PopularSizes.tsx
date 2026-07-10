@@ -28,18 +28,13 @@ const RATE_ROWS: RateRow[] = [
 ];
 
 const CABIN_CAFE_RATE: TableSpec = {
-  heading: 'Standard rate card — all 9 sizes, ex-GST',
+  heading: 'Standard rate card — popular sizes, ex-GST',
   cols: ['Size (ft)', 'Area (sq ft)', 'Cabin / Container Office', 'Container Café'],
   rows: [
     ['10×10×8.5', '100', '₹1.15 L', '₹1.35 L'],
-    ['20×8×8.5', '160', '₹1.84 L', '₹2.16 L'],
     ['20×10×8.5', '200', '₹2.10 L', '₹2.30 L'],
-    ['20×12×8.5', '240', '₹2.52 L', '₹2.76 L'],
     ['30×10×8.5', '300', '₹3.15 L', '₹3.45 L'],
-    ['40×8×8.5', '320', '₹3.36 L', '₹3.68 L'],
     ['40×10×8.5', '400', '₹4.20 L', '₹4.60 L'],
-    ['20×20×8.5', '400', '₹4.20 L', '₹4.60 L'],
-    ['40×12×8.5', '480', '₹5.04 L', '₹5.52 L'],
   ],
 };
 
