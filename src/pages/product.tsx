@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { Search, Filter, Grid3X3, List, Star, ShoppingCart, Eye, Loader2, Phone } from 'lucide-react';
+import { Search, Filter, Grid3X3, List, Star, Eye, Loader2, Phone } from 'lucide-react';
 import type {
   ProductFilters as ProductFiltersType,
   PaginationInfo,
@@ -20,8 +20,6 @@ import ProductFilters from '../components/ProductFilters';
 import Pagination from '../components/Pagination';
 import { formatPriceWithCurrency } from '../lib/utils';
 import OptimizedProductImage from '../components/OptimizedProductImage';
-import { useCart } from '@/contexts/CartContext';
-import { toast } from 'sonner';
 
 interface Category {
   id: number;
@@ -216,7 +214,6 @@ export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ qu
 
 const Products = ({ products, pagination, categories, attributes, rankMathSEO }: ProductsProps) => {
   const router = useRouter();
-  const { addItem } = useCart();
   
   // Products are already sorted by category priority from the server
   const sortedProducts = products;
@@ -231,29 +228,6 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
   
 
 
-  const handleAddToCart = (product: MinimalProduct) => {
-    try {
-      const price = parseFloat(product.price || '0');
-      const salePrice = product.sale_price ? parseFloat(product.sale_price) : null;
-      const finalPrice = salePrice || price;
-      
-      addItem({
-        id: product.id,
-        name: product.name,
-        price: finalPrice,
-        quantity: 1,
-        category: product.categories?.[0]?.name || 'Uncategorized',
-        image: product.image || '/placeholder.svg',
-        slug: product.slug || `product-${product.id}`
-      });
-      
-      toast.success(`${product.name} added to cart!`);
-    } catch (error) {
-      console.error('Error adding to cart:', error);
-      toast.error('Failed to add item to cart');
-    }
-  };
-  
   // State management
   // products and pagination are fully SSR-driven now
   const [filters, setFilters] = useState<ProductFiltersType>({
@@ -508,8 +482,10 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                               <Button size="sm" variant="secondary" className="w-8 h-8 p-0">
                                 <Eye className="w-4 h-4" />
                               </Button>
-                              <Button size="sm" className="w-8 h-8 p-0">
-                                <ShoppingCart className="w-4 h-4" />
+                              <Button size="sm" className="w-8 h-8 p-0" asChild>
+                                <a href="tel:+918861622859" aria-label={`Call about ${product.name}`}>
+                                  <Phone className="w-4 h-4" />
+                                </a>
                               </Button>
                             </div>
                           </div>

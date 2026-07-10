@@ -3,8 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import QuoteFormPopup from './QuoteFormPopup';
-import { useCart } from '@/contexts/CartContext';
-import { ShoppingCart, Check, Tag, Star, Phone } from 'lucide-react';
+import { Tag, Star, Phone } from 'lucide-react';
 import { formatPriceWithCurrency } from '@/lib/utils';
 import OptimizedCategoryImage from './OptimizedCategoryImage';
 
@@ -63,8 +62,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
-  const { addItem, isInCart } = useCart();
-  const isProductInCart = isInCart(product.id);
 
   // Get the correct product URL based on WordPress data
   const getProductUrl = () => {
@@ -97,18 +94,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   const productUrl = getProductUrl();
-
-  // Format product data for cart
-  const getCartItemData = () => {
-    return {
-      id: product.id,
-      name: product.name,
-      price: typeof product.price === 'string' ? parseFloat(product.price) || 0 : product.price || 0,
-      image: product.featured_image || product.images?.[0]?.src || '/placeholder.svg',
-      category: product.categories?.[0]?.name || product.category || 'Uncategorized',
-      slug: product.slug,
-    };
-  };
 
   // Check stock status
   const isInStock = product.stock_status === 'instock' || !product.stock_status;

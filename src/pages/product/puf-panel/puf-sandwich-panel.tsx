@@ -16,6 +16,7 @@ import ProductDetailTabs from '@/components/product-puf/ProductDetailTabs';
 import RelatedProductsRail, { PUF_CATALOG } from '@/components/product-puf/RelatedProductsRail';
 import ProductCarousel from '@/components/product-puf/ProductCarousel';
 import { LongImage } from '@/components/product-puf/Gallery';
+import { panelAggregateOffer } from '@/lib/panelSchemaOffers';
 
 export const getStaticProps: GetStaticProps = async () => ({ props: {} });
 
@@ -65,12 +66,7 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Thickness range', value: '30–200 mm' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
-  offers: {
-    '@type': 'AggregateOffer',
-    priceCurrency: 'INR',
-    lowPrice: '1050',
-    url: 'https://www.samanportable.com/product/puf-panel/puf-sandwich-panel',
-  },
+  offers: panelAggregateOffer(1050, 'https://www.samanportable.com/product/puf-panel/puf-sandwich-panel'),
 };
 
 const BREADCRUMB_JSONLD = {

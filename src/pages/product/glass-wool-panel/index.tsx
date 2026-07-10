@@ -16,6 +16,7 @@ import RelatedProductsRail, { C16_PANELS } from '@/components/product-puf/Relate
 import ProductCarousel from '@/components/product-puf/ProductCarousel';
 import { LongImage } from '@/components/product-puf/Gallery';
 import GlassWoolInfoBox from '@/components/product-glasswool/GlassWoolInfoBox';
+import { panelAggregateOffer } from '@/lib/panelSchemaOffers';
 
 export const getStaticProps: GetStaticProps = async () => ({ props: {} });
 
@@ -136,6 +137,7 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Thickness range', value: '30–150 mm standard; 110–200 mm made to order' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
+  offers: panelAggregateOffer(1010, 'https://www.samanportable.com/product/glass-wool-panel'),
 };
 
 const BREADCRUMB_JSONLD = {

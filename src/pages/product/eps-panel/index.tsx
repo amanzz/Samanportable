@@ -16,6 +16,7 @@ import RelatedProductsRail, { C16_PANELS } from '@/components/product-puf/Relate
 import ProductCarousel from '@/components/product-puf/ProductCarousel';
 import { LongImage } from '@/components/product-puf/Gallery';
 import EpsInfoBox from '@/components/product-eps/EpsInfoBox';
+import { panelAggregateOffer } from '@/lib/panelSchemaOffers';
 
 export const getStaticProps: GetStaticProps = async () => ({ props: {} });
 
@@ -109,6 +110,7 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Facings', value: 'PPGI / PPGL / Galvalume / aluminium / stainless' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
+  offers: panelAggregateOffer(770, 'https://www.samanportable.com/product/eps-panel'),
 };
 
 const BREADCRUMB_JSONLD = {
