@@ -31,10 +31,12 @@ const ServicesSection = dynamic(() => import('@/components/ServicesSection'), {
   ),
 });
 
-const SpecsTable = dynamic(() => import('@/components/SpecsTable'), {
+// T6.18 — category grid replaces the SpecsTable slot (SpecsTable.tsx stays on disk,
+// no longer mounted). Kept SSR so the tile <a> links are crawlable in the HTML.
+const CategoryGrid = dynamic(() => import('@/components/CategoryGrid'), {
   ssr: true,
   loading: () => (
-    <div className="w-full h-96 bg-gray-50 animate-pulse" />
+    <div className="w-full h-96 bg-white animate-pulse" />
   ),
 });
 
@@ -76,14 +78,31 @@ const ScrollToTop = dynamic(() => import('@/components/ScrollToTop'), {
 
 // T6: the homepage no longer renders the product grid or blog feed (they live on
 // /product and /blog), so no product/blog data is fetched here. ISR retained.
+// T6.18: read the real per-category product counts from the WooCommerce export at
+// BUILD TIME (never hardcoded) so the category grid chips stay in sync with the data.
 export const getStaticProps: GetStaticProps = async () => {
+  const fs = await import('fs');
+  const path = await import('path');
+  const dir = path.join(process.cwd(), 'src/data/wp-export/categories');
+  const categoryCounts: Record<string, number> = {};
+  for (const file of fs.readdirSync(dir)) {
+    if (!file.endsWith('.json')) continue;
+    try {
+      const cat = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+      if (cat && typeof cat.slug === 'string' && typeof cat.count === 'number') {
+        categoryCounts[cat.slug] = cat.count;
+      }
+    } catch {
+      // skip unreadable/malformed category files
+    }
+  }
   return {
-    props: {},
+    props: { categoryCounts },
     revalidate: 3600,
   };
 };
 
-const HomePage = () => {
+const HomePage = ({ categoryCounts }: { categoryCounts: Record<string, number> }) => {
   return (
     <Layout>
       <Head>
@@ -143,8 +162,8 @@ const HomePage = () => {
         {/* 3. Six category cards (T2.2) */}
         <ServicesSection />
 
-        {/* 4. Specs section */}
-        <SpecsTable />
+        {/* 4. Product category grid (T6.18) — replaces the old specs section */}
+        <CategoryGrid counts={categoryCounts} />
 
         {/* 5. Clients + testimonials (ClientsSection already merges both) */}
         <ClientsSection />
