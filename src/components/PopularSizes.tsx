@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Layers, SquareStack, LucideIcon } from 'lucide-react';
+import { ArrowRight, Layers, LucideIcon } from 'lucide-react';
 
 // "Most In Demand" showcase. Section DATA is exported so the homepage rendering
 // (this file) and the /_popular-preview variants render byte-identical text from a
@@ -66,7 +66,7 @@ export const groupA = {
     {
       label: 'PUF Panels',
       href: '/product/puf-panel',
-      icon: Layers,
+      thumb: '/homepage/cards/thumbs/puf-panels-112.webp',
       chips: [
         { size: '40mm', price: '₹1,150/m²' },
         { size: '50mm', price: '₹1,250/m²' },
@@ -77,9 +77,11 @@ export const groupA = {
     {
       label: 'Sandwich Panels',
       href: '/product/sandwich-panel',
-      icon: SquareStack,
+      thumb: '/homepage/cards/thumbs/sandwich-panels-112.webp',
       chips: [{ size: '40mm' }, { size: '50mm' }, { size: '60mm' }, { size: '80mm' }],
     },
+    { label: 'Wall Sheets', icon: Layers, chips: [], pill: 'Launching soon' },
+    { label: 'Roofing Sheets', icon: Layers, chips: [], pill: 'Launching soon' },
   ] as Row[],
   rateHeading: 'Factory rate card — ₹ per m², ex-GST',
   footnote:
