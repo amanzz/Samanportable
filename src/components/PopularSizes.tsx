@@ -224,16 +224,31 @@ const CtaBar = ({ label, href }: { label: string; href: string }) => (
   </Link>
 );
 
+type Photo = { src: string; alt: string; caption: string };
+
+// Flex-grow photo panel (T6.12): sits between the footnote and CTA bar of the
+// shorter card and absorbs all leftover vertical space so both cards end on the
+// same line at >=1024px; fixed 160px when the cards are stacked (<1024px). The
+// height is layout-determined (fill image), so there is no CLS.
+const PhotoPanel = ({ photo }: { photo: Photo }) => (
+  <div className="relative mx-6 mb-4 mt-2 h-40 overflow-hidden rounded-2xl md:mx-8 lg:h-auto lg:min-h-[140px] lg:flex-grow">
+    <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 1024px) 100vw, 560px" className="object-cover" loading="lazy" />
+    <span className="absolute bottom-3 left-3 rounded-lg bg-white/90 px-3 py-1.5 text-xs font-semibold text-[#0A3D2A] shadow-sm">{photo.caption}</span>
+  </div>
+);
+
 const GroupCard = ({
   data,
   tables,
+  photo,
 }: {
   data: typeof groupA | typeof groupB;
   tables: { spec: TableSpec; minWidth: number }[];
+  photo?: Photo;
 }) => (
   <div className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-2xl">
     <HeaderBand title={data.title} subtitle={data.subtitle} header={data.header} />
-    <div className="flex-1 px-6 py-6 md:px-8">
+    <div className={`${photo ? '' : 'flex-1 '}px-6 py-6 md:px-8`}>
       <div className="divide-y divide-gray-100">
         {data.rows.map((row) => (
           <SizeRow key={row.label} row={row} />
@@ -244,6 +259,7 @@ const GroupCard = ({
       ))}
     </div>
     <p className="px-6 pb-5 pt-3 text-xs font-light text-gray-500 md:px-8">{data.footnote}</p>
+    {photo && <PhotoPanel photo={photo} />}
     <CtaBar label={data.cta.label} href={data.cta.href} />
   </div>
 );
@@ -267,7 +283,15 @@ const PopularSizes = () => {
 
         {/* Cards side-by-side (stack below lg) — tops and CTA bars aligned via stretch */}
         <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2">
-          <GroupCard data={groupA} tables={[{ spec: PANELS_SPEC, minWidth: 460 }]} />
+          <GroupCard
+            data={groupA}
+            tables={[{ spec: PANELS_SPEC, minWidth: 460 }]}
+            photo={{
+              src: '/homepage/cards/panels-factory.webp',
+              alt: 'Insulated sandwich panels manufactured at a SAMAN Portable factory',
+              caption: 'Manufactured at our Bengaluru & Greater Noida factories',
+            }}
+          />
           <GroupCard
             data={groupB}
             tables={[
