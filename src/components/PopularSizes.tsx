@@ -108,7 +108,7 @@ const PANELS_SPEC: TableSpec = {
 };
 
 const HeaderBand = ({ title, subtitle, header }: { title: string; subtitle: string; header: string }) => (
-  <div className="relative h-[200px] overflow-hidden">
+  <div className="relative h-40 overflow-hidden">
     <Image src={header} alt="" fill sizes="(max-width: 768px) 100vw, 640px" className="object-cover" loading="lazy" />
     <div className="absolute inset-0 bg-gradient-to-t from-[#0A3D2A] via-[#0A3D2A]/75 to-[#0A3D2A]/20" />
     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
@@ -233,7 +233,7 @@ const GroupCard = ({
 }) => (
   <div className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-2xl">
     <HeaderBand title={data.title} subtitle={data.subtitle} header={data.header} />
-    <div className="flex-1 px-10 py-8 md:px-12">
+    <div className="flex-1 px-6 py-6 md:px-8">
       <div className="divide-y divide-gray-100">
         {data.rows.map((row) => (
           <SizeRow key={row.label} row={row} />
@@ -243,7 +243,7 @@ const GroupCard = ({
         <RateGrid key={i} spec={t.spec} minWidth={t.minWidth} />
       ))}
     </div>
-    <p className="px-10 pb-5 pt-3 text-xs font-light text-gray-500 md:px-12">{data.footnote}</p>
+    <p className="px-6 pb-5 pt-3 text-xs font-light text-gray-500 md:px-8">{data.footnote}</p>
     <CtaBar label={data.cta.label} href={data.cta.href} />
   </div>
 );
@@ -251,7 +251,7 @@ const GroupCard = ({
 const PopularSizes = () => {
   return (
     <section className="bg-[#0A3D2A] py-20 md:py-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-12 text-center md:mb-16">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white">
@@ -265,8 +265,8 @@ const PopularSizes = () => {
           </p>
         </div>
 
-        {/* Cards stacked full-width */}
-        <div className="flex flex-col gap-8">
+        {/* Cards side-by-side (stack below lg) — tops and CTA bars aligned via stretch */}
+        <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2">
           <GroupCard data={groupA} tables={[{ spec: PANELS_SPEC, minWidth: 460 }]} />
           <GroupCard
             data={groupB}
