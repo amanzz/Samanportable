@@ -304,17 +304,17 @@ const GroupCard = ({
 
 const PopularSizes = () => {
   return (
-    <section className="bg-[#0A3D2A] py-20 md:py-28">
+    <section className="bg-[#F8FAF9] py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-12 text-center md:mb-16">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#0A3D2A]/10 bg-[#0A3D2A]/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#0A3D2A]">
             MOST IN DEMAND
           </div>
-          <h2 className="mb-6 text-5xl font-bold tracking-tight text-white md:text-7xl">
+          <h2 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 md:text-7xl">
             {"India's most-ordered sizes, ready to quote"}
           </h2>
-          <p className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-white/70 md:text-xl">
+          <p className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-gray-600 md:text-xl">
             These configurations ship fastest — standard specifications, fixed base prices, delivery in 7–21 days.
           </p>
         </div>
