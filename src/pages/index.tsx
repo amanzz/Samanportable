@@ -17,6 +17,13 @@ const CalculatorStrip = dynamic(() => import('@/components/CalculatorStrip'), {
   ),
 });
 
+const PopularSizes = dynamic(() => import('@/components/PopularSizes'), {
+  ssr: true,
+  loading: () => (
+    <div className="w-full h-96 bg-white animate-pulse" />
+  ),
+});
+
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'), {
   ssr: true,
   loading: () => (
@@ -119,6 +126,9 @@ const HomePage = () => {
 
         {/* 2. Calculator Strip (T6 §2) — full-width price-transparency band under hero */}
         <CalculatorStrip />
+
+        {/* 2b. Most In Demand — popular sizes showcase (T6.1), between calculator and cards */}
+        <PopularSizes />
 
         {/* 3. Six category cards (T2.2) */}
         <ServicesSection />
