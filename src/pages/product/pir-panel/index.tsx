@@ -16,6 +16,7 @@ import RelatedProductsRail, { C16_PANELS } from '@/components/product-puf/Relate
 import ProductCarousel from '@/components/product-puf/ProductCarousel';
 import { LongImage } from '@/components/product-puf/Gallery';
 import PirInfoBox from '@/components/product-pir/PirInfoBox';
+import { panelAggregateOffer } from '@/lib/panelSchemaOffers';
 
 export const getStaticProps: GetStaticProps = async () => ({ props: {} });
 
@@ -91,21 +92,7 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Facings', value: 'PPGI / PPGL / Stainless Steel / Aluminium' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
-  offers: {
-    '@type': 'AggregateOffer',
-    lowPrice: 1410,
-    highPrice: 1980,
-    priceCurrency: 'INR',
-    offerCount: 5,
-    availability: 'https://schema.org/InStock',
-    url: 'https://www.samanportable.com/product/pir-panel',
-    priceSpecification: {
-      '@type': 'UnitPriceSpecification',
-      priceCurrency: 'INR',
-      unitCode: 'MTK',
-      unitText: 'm²',
-    },
-  },
+  offers: panelAggregateOffer(1410, 'https://www.samanportable.com/product/pir-panel'),
 };
 
 const BREADCRUMB_JSONLD = {

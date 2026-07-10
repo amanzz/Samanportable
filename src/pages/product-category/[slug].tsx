@@ -12,7 +12,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Package } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { categorySchemas } from '@/lib/categorySchemas';
 import { setPublicEdgeCache } from '@/lib/cacheHeaders';
 
 interface ProductCategoryPageProps {
@@ -28,6 +27,89 @@ interface ProductCategoryPageProps {
 }
 
 import { GetServerSideProps } from 'next';
+
+const SITE_URL = 'https://www.samanportable.com';
+
+function getProductCanonicalUrl(product: LightweightProduct): string {
+  const categorySlug = product.category_slug || 'product';
+  return product.slug === categorySlug
+    ? `${SITE_URL}/product/${categorySlug}`
+    : `${SITE_URL}/product/${categorySlug}/${product.slug}`;
+}
+
+function getPlainDescription(description: string, categoryName: string): string {
+  const plainDescription = description
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return plainDescription || `Browse ${categoryName} products from SAMAN Portable.`;
+}
+
+function buildCategoryStructuredData({
+  products,
+  categoryName,
+  categorySlug,
+  categoryDescription,
+}: {
+  products: LightweightProduct[];
+  categoryName: string;
+  categorySlug: string;
+  categoryDescription: string;
+}) {
+  const categoryUrl = `${SITE_URL}/product-category/${categorySlug}`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${categoryUrl}#collectionpage`,
+        name: categoryName,
+        description: getPlainDescription(categoryDescription, categoryName),
+        url: categoryUrl,
+        mainEntity: { '@id': `${categoryUrl}#itemlist` },
+        breadcrumb: { '@id': `${categoryUrl}#breadcrumb` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${categoryUrl}#itemlist`,
+        itemListOrder: 'https://schema.org/ItemListUnordered',
+        numberOfItems: products.length,
+        itemListElement: products.map((product, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: product.name,
+          url: getProductCanonicalUrl(product),
+        })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${categoryUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: SITE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Products',
+            item: `${SITE_URL}/product`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: categoryName,
+            item: categoryUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
 
 // Client-side product fetch for pagination/filters. Goes through the same-origin
 // /api/products-by-category route so the WooCommerce consumer key/secret stays
@@ -141,6 +223,12 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
   const [filters, setFilters] = useState<ProductFiltersType>({
     category: initialCategorySlug,
   });
+  const categoryStructuredData = buildCategoryStructuredData({
+    products: initialProducts,
+    categoryName: initialCategoryName,
+    categorySlug: initialCategorySlug,
+    categoryDescription,
+  });
 
   // Reset states when initial props change
   useEffect(() => {
@@ -241,14 +329,12 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
         fallbackOgImage="https://www.samanportable.com/og-image.svg"
         keywords={`${initialCategoryName || 'products'}, portable office, container office, prefab solutions, ${initialCategorySlug}`}
       />
-      {categorySchemas[initialCategorySlug] && (
-        <Head>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(categorySchemas[initialCategorySlug]) }}
-          />
-        </Head>
-      )}
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryStructuredData) }}
+        />
+      </Head>
 
       <div className="min-h-screen bg-gray-50">
         {/* Header Section */}
