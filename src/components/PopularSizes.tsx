@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Layers, LucideIcon } from 'lucide-react';
+import { ArrowRight, ChevronRight, Layers, LucideIcon } from 'lucide-react';
 
 // "Most In Demand" showcase — Variant A "Dark flagship" (T6.9). Deep-forest full-bleed
 // section, centered white heading, cards stacked full-width, full-bleed header photos
@@ -11,7 +11,8 @@ import { ArrowRight, Layers, LucideIcon } from 'lucide-react';
 // /product/wall-sheet and /product/roofing-sheet return 200.
 
 type Chip = { size: string; price?: string };
-type Row = { label: string; href?: string; chips: Chip[]; thumb?: string; icon?: LucideIcon; rateLine?: string; pill?: string };
+type ValueBlock = { primary: string; secondary?: string };
+type Row = { label: string; href?: string; chips: Chip[]; thumb?: string; icon?: LucideIcon; value?: ValueBlock; pill?: string };
 type RateRow = { t: string; eps: string; puf: string; pir: string };
 type TableSpec = { heading: string; cols: string[]; rows: string[][]; note?: string };
 
@@ -91,10 +92,10 @@ const groupB = {
   subtitle: 'Nine standard sizes at standard rates — ready in 7–21 days',
   header: '/homepage/cards/headers/cabins-header.webp',
   rows: [
-    { label: 'Container Office', href: '/product/container-offices', thumb: '/homepage/cards/thumbs/container-office-112.webp', chips: [] },
-    { label: 'Porta Cabin', href: '/product/porta-cabins', thumb: '/homepage/cards/thumbs/porta-cabin-112.webp', chips: [] },
-    { label: 'Container Café', href: '/product/container-cafe', thumb: '/homepage/cards/thumbs/container-cafe-112.webp', chips: [], rateLine: 'From ₹1,150/sq ft' },
-    { label: 'Labour Colony', href: '/product/labor-colony', thumb: '/homepage/cards/thumbs/labour-colony-112.webp', chips: [], rateLine: '₹750/sq ft' },
+    { label: 'Container Office', href: '/product/container-offices', thumb: '/homepage/cards/thumbs/container-office-112.webp', chips: [], value: { primary: 'From ₹1.15 L', secondary: 'per unit, ex-GST' } },
+    { label: 'Porta Cabin', href: '/product/porta-cabins', thumb: '/homepage/cards/thumbs/porta-cabin-112.webp', chips: [], value: { primary: 'From ₹1.15 L', secondary: 'per unit, ex-GST' } },
+    { label: 'Container Café', href: '/product/container-cafe', thumb: '/homepage/cards/thumbs/container-cafe-112.webp', chips: [], value: { primary: 'From ₹1.35 L', secondary: '₹1,150/sq ft' } },
+    { label: 'Labour Colony', href: '/product/labor-colony', thumb: '/homepage/cards/thumbs/labour-colony-112.webp', chips: [], value: { primary: '₹750/sq ft', secondary: '9 configurations' } },
   ] as Row[],
   footnote:
     'Standard rates ex-GST — 200 sq ft and above ₹1,050/sq ft; smaller units ₹1,150/sq ft. Transport and customisation quoted separately. Final price confirmed at quotation.',
@@ -118,50 +119,87 @@ const HeaderBand = ({ title, subtitle, header }: { title: string; subtitle: stri
   </div>
 );
 
+// Unified row anatomy (T6.13): [72px thumb/icon][name] ....... [right value block][chevron].
+// Value rows are full-width click targets whose chevron slides 4px on hover and take a
+// mist hover wash. Chip rows (PUF/Sandwich) keep their chips on the right; Wall/Roof are
+// non-interactive with a right-aligned "Launching soon" tag.
 const SizeRow = ({ row }: { row: Row }) => {
   const Icon = row.icon;
-  return (
-    <div className="py-5">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div className="flex flex-shrink-0 items-center gap-4">
-          {row.thumb ? (
-            <Image src={row.thumb} alt="" width={112} height={112} loading="lazy" className="h-[72px] w-[72px] flex-shrink-0 rounded-2xl object-cover" />
-          ) : Icon ? (
-            <span className="flex h-[72px] w-[72px] flex-shrink-0 items-center justify-center rounded-2xl bg-[#0A3D2A]/5">
-              <Icon className="h-7 w-7 text-[#0A3D2A]" />
-            </span>
-          ) : null}
-          <div>
-            <div className="flex items-center gap-2">
-              {row.href ? (
-                <Link href={row.href} className="text-lg font-bold text-gray-900 transition-colors hover:text-[#0A3D2A]">
-                  {row.label}
-                </Link>
-              ) : (
-                <span className="text-lg font-bold text-gray-900">{row.label}</span>
-              )}
-              {row.pill && <span className="rounded-full bg-[#0A3D2A]/5 px-2.5 py-1 text-[11px] font-semibold text-[#0A3D2A]">{row.pill}</span>}
-            </div>
-            {row.rateLine && <p className="mt-0.5 text-sm font-bold text-[#0A3D2A]">{row.rateLine}</p>}
-          </div>
-        </div>
-        {row.chips.length > 0 && row.href && (
-          <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:justify-end">
-            {row.chips.map((chip) => (
-              <Link
-                key={chip.size}
-                href={row.href as string}
-                className="flex flex-col items-center justify-center rounded-xl border border-[#0A3D2A]/10 bg-[#0A3D2A]/[0.04] px-3.5 py-2 text-center leading-tight transition-all duration-150 hover:-translate-y-0.5 hover:border-[#1A6B45] hover:shadow-md"
-              >
-                <span className="text-sm font-bold text-[#0A3D2A]">{chip.size}</span>
-                {chip.price && <span className="mt-0.5 text-xs font-normal text-gray-500">{chip.price}</span>}
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
+  const chipRow = row.chips.length > 0;
+  const isRowLink = !!row.href && !!row.value; // full-width linked value rows
+
+  const media = row.thumb ? (
+    <Image src={row.thumb} alt="" width={112} height={112} loading="lazy" className="h-[72px] w-[72px] flex-shrink-0 rounded-2xl object-cover" />
+  ) : Icon ? (
+    <span className="flex h-[72px] w-[72px] flex-shrink-0 items-center justify-center rounded-2xl bg-[#0A3D2A]/5">
+      <Icon className="h-7 w-7 text-[#0A3D2A]" />
+    </span>
+  ) : null;
+
+  const name =
+    chipRow && row.href ? (
+      <Link href={row.href} className="text-lg font-bold text-gray-900 transition-colors hover:text-[#0A3D2A]">
+        {row.label}
+      </Link>
+    ) : (
+      <span className={`text-lg font-bold text-gray-900${isRowLink ? ' transition-colors group-hover:text-[#0A3D2A]' : ''}`}>{row.label}</span>
+    );
+
+  const left = (
+    <div className="flex min-w-0 items-center gap-4">
+      {media}
+      {name}
     </div>
   );
+
+  const right = row.value ? (
+    <div className="flex flex-shrink-0 items-center gap-3">
+      <div className="text-right">
+        <div className="font-mono text-lg font-bold text-gray-900">{row.value.primary}</div>
+        {row.value.secondary && <div className="text-xs text-gray-400">{row.value.secondary}</div>}
+      </div>
+      {isRowLink && (
+        <ChevronRight className="h-5 w-5 flex-shrink-0 text-gray-300 transition-transform duration-150 group-hover:translate-x-1 group-hover:text-[#0A3D2A]" />
+      )}
+    </div>
+  ) : row.pill ? (
+    <span className="flex-shrink-0 rounded-full bg-[#0A3D2A]/5 px-3 py-1.5 text-xs font-semibold text-[#0A3D2A]">{row.pill}</span>
+  ) : chipRow && row.href ? (
+    <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:justify-end">
+      {row.chips.map((chip) => (
+        <Link
+          key={chip.size}
+          href={row.href as string}
+          className="flex flex-col items-center justify-center rounded-xl border border-[#0A3D2A]/10 bg-[#0A3D2A]/[0.04] px-3.5 py-2 text-center leading-tight transition-all duration-150 hover:-translate-y-0.5 hover:border-[#1A6B45] hover:shadow-md"
+        >
+          <span className="text-sm font-bold text-[#0A3D2A]">{chip.size}</span>
+          {chip.price && <span className="mt-0.5 text-xs font-normal text-gray-500">{chip.price}</span>}
+        </Link>
+      ))}
+    </div>
+  ) : null;
+
+  const layout = chipRow
+    ? 'flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'
+    : 'flex items-center justify-between gap-4';
+  const body = (
+    <div className={layout}>
+      {left}
+      {right}
+    </div>
+  );
+
+  if (isRowLink) {
+    return (
+      <Link href={row.href as string} className="group block py-5 transition-colors hover:bg-[#0A3D2A]/[0.03]">
+        {body}
+      </Link>
+    );
+  }
+  if (chipRow) {
+    return <div className="group py-5 transition-colors hover:bg-[#0A3D2A]/[0.03]">{body}</div>;
+  }
+  return <div className="py-5">{body}</div>;
 };
 
 // Decorated, crawlable rate table (roomier cells, 18px prices). Forest header, zebra
