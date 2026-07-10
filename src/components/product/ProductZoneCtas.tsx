@@ -3,17 +3,20 @@ import { cn } from '@/lib/utils';
 type ProductZoneCtasProps = {
   variant?: 'strip' | 'card';
   className?: string;
+  showPhoneNumber?: boolean;
 };
 
 const zones = [
   {
     label: 'Bangalore & South Zone',
+    phone: '+91 88616 22859',
     phoneHref: 'tel:+918861622859',
     email: 'sales@samanportable.com',
     emailHref: 'mailto:sales@samanportable.com',
   },
   {
     label: 'Delhi NCR & North Zone',
+    phone: '+91 87960 39938',
     phoneHref: 'tel:+918796039938',
     email: 'ncr@samanportable.com',
     emailHref: 'mailto:ncr@samanportable.com',
@@ -51,7 +54,7 @@ const MailIcon = () => (
   </svg>
 );
 
-const ZoneActions = ({ compact = false }: { compact?: boolean }) => (
+const ZoneActions = ({ compact = false, showPhoneNumber = false }: { compact?: boolean; showPhoneNumber?: boolean }) => (
   <>
     {zones.map((zone) => (
       <div
@@ -67,7 +70,7 @@ const ZoneActions = ({ compact = false }: { compact?: boolean }) => (
           </p>
           <span className="h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />
         </div>
-        <div className="mt-auto grid grid-cols-2 gap-2">
+        <div className={cn('mt-auto grid gap-2', showPhoneNumber ? 'grid-cols-1' : 'grid-cols-2')}>
           <a
             href={zone.phoneHref}
             className={cn(
@@ -76,7 +79,7 @@ const ZoneActions = ({ compact = false }: { compact?: boolean }) => (
             )}
           >
             <PhoneIcon />
-            <span>Call</span>
+            <span>{showPhoneNumber ? `Call ${zone.phone}` : 'Call'}</span>
           </a>
           <a
             href={zone.emailHref}
@@ -94,7 +97,7 @@ const ZoneActions = ({ compact = false }: { compact?: boolean }) => (
   </>
 );
 
-const ProductZoneCtas = ({ variant = 'card', className }: ProductZoneCtasProps) => {
+const ProductZoneCtas = ({ variant = 'card', className, showPhoneNumber = false }: ProductZoneCtasProps) => {
   return (
     <section
       aria-label="Product enquiry contacts by zone"
@@ -104,7 +107,7 @@ const ProductZoneCtas = ({ variant = 'card', className }: ProductZoneCtasProps) 
       )}
     >
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-        <ZoneActions compact={variant === 'strip'} />
+        <ZoneActions compact={variant === 'strip'} showPhoneNumber={showPhoneNumber} />
       </div>
     </section>
   );

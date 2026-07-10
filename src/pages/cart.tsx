@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { useCart } from '@/contexts/CartContext';
 import { useAuth } from '@/contexts/AuthContext';
 import LoginModal from '@/components/LoginModal';
-import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft, Truck, CreditCard, Shield, LogIn, Package } from 'lucide-react';
+import { Trash2, Plus, Minus, ArrowLeft, Truck, CreditCard, Shield, LogIn, Package } from 'lucide-react';
 import { formatPriceWithCurrency } from '@/lib/utils';
 
 const Cart = () => {
@@ -60,7 +60,7 @@ const Cart = () => {
             {items.length === 0 ? (
               /* Empty Cart */
               <div className="text-center py-16">
-                <ShoppingBag className="w-24 h-24 text-muted-foreground mx-auto mb-6" />
+                <Package className="w-24 h-24 text-muted-foreground mx-auto mb-6" />
                 <h2 className="text-2xl font-semibold text-foreground mb-4">
                   Your cart is empty
                 </h2>
@@ -315,4 +315,3 @@ const Cart = () => {
 };
 
 export default Cart;
-

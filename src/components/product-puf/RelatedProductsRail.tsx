@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ShoppingBag } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export interface RelatedItem {
   title: string;
   href: string;
   image: string;
   blurb: string;
+  category?: string;
 }
 
 // The C15 micro-catalog is exactly 4 fixed pages, so relationships are known
@@ -111,6 +112,20 @@ interface RelatedProductsRailProps {
   variant?: 'grid' | 'sidebar';
 }
 
+const getCategoryLabel = (item: RelatedItem) =>
+  item.category ||
+  (item.title.includes('PUF')
+    ? 'PUF Panels'
+    : item.title.includes('PIR')
+      ? 'PIR Panels'
+      : item.title.includes('EPS')
+        ? 'EPS Panels'
+        : item.title.includes('Rockwool')
+          ? 'Rockwool Panels'
+          : item.title.includes('Sandwich')
+            ? 'Sandwich Panels'
+            : 'Related product');
+
 const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', variant = 'grid' }: RelatedProductsRailProps) => {
   const isSidebar = variant === 'sidebar';
   const Heading = isSidebar ? 'h3' : 'h2';
@@ -144,6 +159,7 @@ const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', va
             {isSidebar ? (
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-bold text-foreground">{item.title}</p>
+                <span className="inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">{getCategoryLabel(item)}</span>
                 <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
                   View <ArrowRight className="h-3 w-3" aria-hidden="true" />
                 </span>
@@ -151,10 +167,9 @@ const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', va
             ) : (
               <div className="flex flex-1 flex-col p-4">
                 <div className="mb-1 flex items-center gap-2">
-                  <ShoppingBag className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                   <h3 className="font-bold text-foreground">{item.title}</h3>
                 </div>
-                <p className="mb-3 flex-1 text-sm text-muted-foreground">{item.blurb}</p>
+                <span className="mb-3 inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">{getCategoryLabel(item)}</span>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
                   View <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
