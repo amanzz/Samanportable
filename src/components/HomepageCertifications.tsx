@@ -248,13 +248,18 @@ const HomepageCertifications = () => {
               }}
               className="flex w-full shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg md:w-auto md:shrink"
             >
-              <div className="relative h-[140px] overflow-hidden bg-gray-100">
+              {/* Logo-dominant banner (T6.17): photo recedes behind a soft dark overlay;
+                  a large white logo tile centered fully inside the banner. */}
+              <div className="relative h-[150px] overflow-hidden bg-gray-100">
                 <Image src={c.bg} alt={c.bgAlt} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" loading="lazy" className="object-cover" />
+                <div className="absolute inset-0 bg-black/45" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex h-[72%] w-[58%] items-center justify-center rounded-xl bg-white p-4 shadow-lg">
+                    <Image src={c.logo} alt="" width={200} height={200} loading="lazy" className="max-h-full max-w-full object-contain" />
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-1 flex-col items-center px-5 pb-5 text-center">
-                <span className="-mt-11 mb-3 flex h-[88px] w-[88px] items-center justify-center rounded-2xl border border-gray-100 bg-white p-3 shadow-md">
-                  <Image src={c.logo} alt="" width={64} height={64} loading="lazy" className="h-full w-auto object-contain" />
-                </span>
+              <div className="flex flex-1 flex-col items-center px-5 pb-5 pt-5 text-center">
                 <h3 className="text-base font-bold leading-snug text-gray-900">{c.title}</h3>
                 <p className="mt-2 flex-1 text-sm font-light leading-relaxed text-gray-600">{c.body}</p>
                 <button
