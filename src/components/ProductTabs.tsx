@@ -44,12 +44,13 @@ interface ProductTabsProps {
   averageRating?: string;
   ratingCount?: number;
   productId: number;
+  reviewProductId?: number;
   productName?: string;
 }
 
 
 
-const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHtml, shippingHtml, productTitle, reviews = [], averageRating, ratingCount, productId, productName }) => {
+const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHtml, shippingHtml, productTitle, reviews = [], averageRating, ratingCount, productId, reviewProductId, productName }) => {
   const [activeTab, setActiveTab] = useState('description');
 
   // Allow a "Write a Review" trigger anywhere on the page to open the Reviews tab
@@ -430,6 +431,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
                   averageRating={averageRating}
                   ratingCount={ratingCount}
                   productId={productId}
+                  reviewProductId={reviewProductId}
                   productName={productName}
                 />
               </TabsContent>

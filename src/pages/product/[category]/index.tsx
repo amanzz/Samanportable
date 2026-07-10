@@ -840,6 +840,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   averageRating={product.average_rating}
                   ratingCount={product.rating_count}
                   productId={product.id}
+                  reviewProductId={isSandwichPanel ? 272770 : undefined}
                   productName={transformedProduct.title}
                 />
               </div>
