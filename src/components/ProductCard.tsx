@@ -6,6 +6,7 @@ import QuoteFormPopup from './QuoteFormPopup';
 import { Tag, Star, Phone } from 'lucide-react';
 import { formatPriceWithCurrency } from '@/lib/utils';
 import OptimizedCategoryImage from './OptimizedCategoryImage';
+import { getCanonicalProductPath } from '@/lib/productCanonicalPaths';
 
 interface ProductCardProps {
   product: {
@@ -65,6 +66,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   // Get the correct product URL based on WordPress data
   const getProductUrl = () => {
+    const canonicalPath = getCanonicalProductPath(product);
+    if (canonicalPath) {
+      return canonicalPath;
+    }
+
     // If product has categories from WordPress API, use the first category
     if (product.categories && product.categories.length > 0) {
       const category = product.categories[0];

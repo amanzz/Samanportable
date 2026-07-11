@@ -13,6 +13,7 @@ import { ArrowLeft, Package } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { setPublicEdgeCache } from '@/lib/cacheHeaders';
+import { getCanonicalProductPath } from '@/lib/productCanonicalPaths';
 
 interface ProductCategoryPageProps {
   products: LightweightProduct[];
@@ -31,10 +32,7 @@ import { GetServerSideProps } from 'next';
 const SITE_URL = 'https://www.samanportable.com';
 
 function getProductCanonicalUrl(product: LightweightProduct): string {
-  const categorySlug = product.category_slug || 'product';
-  return product.slug === categorySlug
-    ? `${SITE_URL}/product/${categorySlug}`
-    : `${SITE_URL}/product/${categorySlug}/${product.slug}`;
+  return `${SITE_URL}${getCanonicalProductPath(product)}`;
 }
 
 function getPlainDescription(description: string, categoryName: string): string {
