@@ -12,6 +12,10 @@
 //      whose slug equals their category; these redirect at the route level and
 //      are not in any static map, so they are matched structurally.
 const csvRedirects = require('./redirects-from-csv');
+const customProductCanonicalPaths = require('./src/lib/customProductCanonicalPaths.json');
+const customProductCanonicalBySlug = new Map(
+  customProductCanonicalPaths.map((entry) => [entry.slug, entry.canonicalPath])
+);
 
 /** Normalize a path for comparison: ensure a leading slash, drop trailing slash. */
 function normalizeRedirectPath(p) {
@@ -213,9 +217,10 @@ module.exports = {
       if (!product.slug || !product.categories || product.categories.length === 0) return;
       const primaryCategory = product.categories[0];
       const loc =
-        primaryCategory.slug === product.slug
+        customProductCanonicalBySlug.get(product.slug) ||
+        (primaryCategory.slug === product.slug
           ? `/product/${product.slug}`
-          : `/product/${primaryCategory.slug}/${product.slug}`;
+          : `/product/${primaryCategory.slug}/${product.slug}`);
       paths.push({
         loc,
         changefreq: 'weekly',
