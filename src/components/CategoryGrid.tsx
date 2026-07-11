@@ -37,11 +37,10 @@ export type CategoryDef = {
   href: string;
   icon: LucideIcon;
   description: string;
-  featured?: boolean;
 };
 
 export const CATEGORIES: CategoryDef[] = [
-  { name: 'Porta Cabin', slug: 'porta-cabins', href: '/product/porta-cabins', icon: Building2, featured: true, description: 'Site offices, guard rooms, stores and accommodation for construction sites — factory-built and delivered ready to use.' },
+  { name: 'Porta Cabin', slug: 'porta-cabins', href: '/product/porta-cabins', icon: Building2, description: 'Site offices, guard rooms, stores and accommodation for construction sites — factory-built and delivered ready to use.' },
   { name: 'Portable Cabin', slug: 'portable-cabin', href: '/product/portable-cabin', icon: Home, description: 'Relocatable cabins for offices, shops and flexible workspaces. Move them whenever your requirement changes.' },
   { name: 'Portable Office Cabin', slug: 'portable-office', href: '/product/portable-office', icon: Briefcase, description: 'Office cabins with interiors, wiring and AC fitted at the factory — walk in and start working.' },
   { name: 'Container Office', slug: 'container-offices', href: '/product/container-offices', icon: Container, description: '20 ft and 40 ft container offices built for heavy-duty industrial and project site use.' },
@@ -70,16 +69,18 @@ const CategoryGrid = ({ counts }: { counts: Record<string, number> }) => {
           <h2 className="text-4xl font-bold tracking-tight text-white md:text-5xl">Explore Every Product Category</h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {/* T6.19a: uniform grid — every tile identical (4x4 desktop / 2x8 tablet /
+            2-col mobile). auto-rows-fr + h-full give all 16 tiles equal height
+            regardless of how the descriptions wrap; content is aligned to the top. */}
+        <div className="grid auto-rows-fr grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             const count = counts[cat.slug];
-            const featured = !!cat.featured;
             return (
               <Link
                 key={cat.slug}
                 href={cat.href}
-                className={`group relative flex flex-col rounded-2xl border border-[#1A6B45]/20 bg-white/5 p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1A6B45]/60 hover:bg-white/[0.08] ${featured ? 'col-span-2' : ''}`}
+                className="group relative flex h-full flex-col rounded-2xl border border-[#1A6B45]/20 bg-white/5 p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1A6B45]/60 hover:bg-white/[0.08]"
               >
                 <div className="mb-4 flex items-start justify-between gap-3">
                   <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#1A6B45] to-[#0A3D2A] shadow-lg shadow-black/25 ring-1 ring-white/10 transition-shadow duration-200 group-hover:ring-[#1A6B45]/60 group-hover:shadow-[#1A6B45]/40">
@@ -92,11 +93,7 @@ const CategoryGrid = ({ counts }: { counts: Record<string, number> }) => {
 
                 <div className="flex items-center gap-1.5">
                   <h3 className="text-base font-bold leading-snug text-white">{cat.name}</h3>
-                  <ArrowRight
-                    className={`h-4 w-4 flex-shrink-0 text-[#F8FAF9] transition-all duration-200 ${
-                      featured ? 'translate-x-0 opacity-100' : '-translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100'
-                    }`}
-                  />
+                  <ArrowRight className="h-4 w-4 flex-shrink-0 -translate-x-1 text-[#F8FAF9] opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
                 </div>
                 <p className="mt-1.5 text-sm leading-relaxed text-[#F8FAF9]/75">{cat.description}</p>
               </Link>
