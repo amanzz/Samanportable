@@ -6,6 +6,7 @@ import Head from 'next/head';
 // Import Layout component
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
+import { dsCssVariables } from '@/components/ds/tokens';
 import { generateOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema, getHomepageLocalBusinessGraphSchema } from '@/lib/schema';
 import { pageSEO, siteConfig } from '@/config/seo';
 
@@ -146,7 +147,16 @@ const HomePage = ({ categoryCounts }: { categoryCounts: Record<string, number> }
         ]}
       />
 
-      <main>
+      <main data-ds-root="">
+        {/* T6.21: the homepage renders under Layout (not PageShell), so the DS
+            token custom properties are otherwise never emitted here and every
+            var(--ds-*) used by the token-remediated homepage sections resolved
+            to nothing (dark sections went transparent → white-on-white). Inject
+            the same [data-ds-root] variable block PageShell uses, scoped to the
+            homepage main only. Generated from tokens.ts — the single source of
+            truth for hex — so components stay hex-free. */}
+        <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}` }} />
+
         {/* 1. Hero Section - Critical for LCP */}
         <HeroSection />
 
