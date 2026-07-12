@@ -41,8 +41,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const base = (process.env.WORDPRESS_API_URL || 'https://blog.samanportable.com/wp-json') + '/wc/v3';
-    const key = process.env.WORDPRESS_REVIEW_WRITE_KEY || '';
-    const secret = process.env.WORDPRESS_REVIEW_WRITE_SECRET || '';
+    const key = process.env.WORDPRESS_REVIEW_WRITE_KEY || process.env.WC_CONSUMER_KEY || '';
+    const secret = process.env.WORDPRESS_REVIEW_WRITE_SECRET || process.env.WC_CONSUMER_SECRET || '';
     // Query-string auth (same method the working routes use); keys never leave the server.
     const auth = new URLSearchParams({ consumer_key: key, consumer_secret: secret });
 
