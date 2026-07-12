@@ -26,12 +26,6 @@ const EnquiryDialog = dynamic(() => import('@/components/EnquiryDialog'), { ssr:
 // every category <a> is present in the server HTML. This replaces the old black
 // CategoryMenu bar (+ its per-page /api/categories client fetch — now gone).
 
-const UTILITY_PHONES = [
-  { label: 'Sales', display: '+91 97089 89937', tel: 'tel:+919708989937' },
-  { label: 'South', display: '+91 88616 22859', tel: 'tel:+918861622859' },
-  { label: 'North', display: '+91 87960 39938', tel: 'tel:+918796039938' },
-];
-
 const NAV_ITEMS = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about-us' },
@@ -116,9 +110,10 @@ const Header = () => {
   const [mobileGroup, setMobileGroup] = useState<string | null>('Cabins & Offices');
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Scroll-condense: hide the utility strip past ~80px. rAF-throttled; only flips state
-  // on threshold crossing (no per-scroll re-render). Utility strip collapses via
-  // max-height/opacity above the fixed-height main bar → no reflow of in-view content.
+  // Scroll-condense: past ~80px, slide the utility strip out and the main bar up using
+  // transform + opacity only (never height/padding). rAF-throttled; only flips state on
+  // threshold crossing (no per-scroll re-render). A constant-height spacer reserves the
+  // full header height in normal flow, so the fixed header condensing reflows nothing → 0 CLS.
   useEffect(() => {
     let ticking = false;
     const onScroll = () => {
@@ -163,45 +158,57 @@ const Header = () => {
   const isActive = (href: string) => router.pathname === href;
 
   return (
-    <header
-      data-ds-root=""
-      className="sticky top-0 z-50 bg-white shadow-card"
-      onKeyDown={(e) => {
-        if (e.key === 'Escape') setActiveMenu(null);
-      }}
-    >
+    <>
+      {/* Constant-height spacer in normal flow — reserves the full header height so the
+          fixed, condensing header never reflows page content (zero CLS). */}
+      <div aria-hidden="true" className="h-16 lg:h-[6.25rem]" />
+      <header
+        data-ds-root=""
+        className="pointer-events-none fixed inset-x-0 top-0 z-50"
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') setActiveMenu(null);
+        }}
+      >
       <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}` }} />
 
-      {/* Utility strip (desktop ≥lg only) — collapses on scroll-condense. */}
+      {/* Utility strip (desktop ≥lg only) — fixed height; slides out on condense
+          (transform + opacity only, never height). */}
       <div
         className={cn(
-          'hidden overflow-hidden bg-[var(--ds-color-forest)] text-[var(--ds-color-on-dark)] transition-all duration-300 lg:block',
-          condensed ? 'max-h-0 opacity-0' : 'max-h-12 opacity-100'
+          'pointer-events-auto hidden h-9 bg-[var(--ds-color-forest)] text-[var(--ds-color-on-dark)] transition-[transform,opacity] duration-300 motion-reduce:transition-none lg:block',
+          condensed ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
         )}
         aria-hidden={condensed}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-xs sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2">
-            {UTILITY_PHONES.map((p, i) => (
-              <React.Fragment key={p.tel}>
-                {i > 0 && <span className="text-white/40">·</span>}
-                <a href={p.tel} className="font-medium transition-colors hover:text-white">
-                  <span className="text-white/60">{p.label}: </span>
-                  {p.display}
-                </a>
-              </React.Fragment>
-            ))}
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between whitespace-nowrap px-4 text-xs sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-2">
+              <span className="text-white/60">South — Bengaluru:</span>
+              <a href="tel:+918861622859" className="font-medium transition-colors hover:text-white">+91 88616 22859</a>
+              <span className="text-white/40">·</span>
+              <a href="mailto:sales@samanportable.com" className="font-medium transition-colors hover:text-white">sales@samanportable.com</a>
+            </span>
+            <span className="text-white/30">|</span>
+            <span className="flex items-center gap-2">
+              <span className="text-white/60">North — Greater Noida:</span>
+              <a href="tel:+918796039938" className="font-medium transition-colors hover:text-white">+91 87960 39938</a>
+              <span className="text-white/40">·</span>
+              <a href="mailto:ncr@samanportable.com" className="font-medium transition-colors hover:text-white">ncr@samanportable.com</a>
+            </span>
           </div>
-          <div className="flex items-center gap-2">
-            <a href="mailto:sales@samanportable.com" className="font-medium transition-colors hover:text-white">
-              sales@samanportable.com
-            </a>
-            <span className="text-white/40">·</span>
-            <span className="text-white/80">Fixed-price quote in 48 hours</span>
-          </div>
+          <span className="text-white/80">Fixed-price quote in 48 hours</span>
         </div>
       </div>
 
+      {/* Bar group: main bar + mega-menus. On condense this slides UP by the strip height
+          (transform only) so the main bar pins to the top; the mega-menus are absolute
+          children so they stay anchored to the bar's bottom. */}
+      <div
+        className={cn(
+          'pointer-events-auto relative bg-white shadow-card transition-transform duration-300 motion-reduce:transition-none',
+          condensed && 'lg:-translate-y-9'
+        )}
+      >
       {/* Main bar — fixed height (zero CLS on condense). */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -275,8 +282,8 @@ const Header = () => {
           {/* Right actions (desktop) */}
           <div className="hidden flex-shrink-0 items-center gap-3 lg:flex">
             <a
-              href="tel:+919708989937"
-              aria-label="Call SAMAN Portable sales"
+              href="tel:+918861622859"
+              aria-label="Call SAMAN Portable, Bengaluru"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--ds-color-forest)_20%,transparent)] text-[var(--ds-color-forest)] transition-colors hover:bg-[var(--ds-color-mist)]"
             >
               <Phone className="h-5 w-5" />
@@ -329,8 +336,8 @@ const Header = () => {
           {/* Mobile actions */}
           <div className="flex items-center gap-2 lg:hidden">
             <a
-              href="tel:+919708989937"
-              aria-label="Call SAMAN Portable sales"
+              href="tel:+918861622859"
+              aria-label="Call SAMAN Portable, Bengaluru"
               className="flex h-10 w-10 items-center justify-center rounded-full text-[var(--ds-color-forest)]"
             >
               <Phone className="h-5 w-5" />
@@ -458,10 +465,12 @@ const Header = () => {
           </div>
         </div>
       </div>
+      </div>
+      {/* /bar group */}
 
       {/* ===== Mobile menu ===== */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-white lg:hidden">
+        <div className="pointer-events-auto fixed inset-0 z-50 flex flex-col bg-white lg:hidden">
           <div className="flex flex-shrink-0 items-center justify-between border-b border-border p-4">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <Image src="/saman-logo.svg" alt="SAMAN Portable Logo" width={200} height={100} className="h-8 w-auto object-contain" unoptimized />
@@ -473,6 +482,15 @@ const Header = () => {
 
           <div className="flex-1 overflow-y-auto p-4">
             <nav className="space-y-1" aria-label="Mobile">
+              {/* Contact block (top) */}
+              <div className="mb-2 rounded-lg bg-[var(--ds-color-mist)] p-3">
+                <a href="tel:+918861622859" className="block text-sm font-semibold text-[var(--ds-color-forest)]">
+                  South — Bengaluru: +91 88616 22859
+                </a>
+                <a href="tel:+918796039938" className="mt-1 block text-sm font-semibold text-[var(--ds-color-forest)]">
+                  North — Greater Noida: +91 87960 39938
+                </a>
+              </div>
               {NAV_ITEMS.filter((i) => !i.menu).map((item) => (
                 <Link
                   key={item.name}
@@ -602,7 +620,8 @@ const Header = () => {
 
       <LoginModal isOpen={showLoginModal} onClose={() => setShowLoginModal(false)} onSuccess={() => setShowLoginModal(false)} />
       <EnquiryDialog isOpen={showEnquiry} onClose={() => setShowEnquiry(false)} />
-    </header>
+      </header>
+    </>
   );
 };
 
