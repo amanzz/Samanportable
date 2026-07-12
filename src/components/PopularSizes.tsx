@@ -1,342 +1,325 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ChevronRight, Layers, LucideIcon } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 
-// "Most In Demand" showcase — Variant A "Dark flagship" (T6.9). Deep-forest full-bleed
-// section, centered white heading, cards stacked full-width, full-bleed header photos
-// with overlaid titles, 72px row thumbnails, roomier tables. Copy verbatim; links as
-// verified; local WebP only (lazy, explicit dims -> 0 CLS). L12: chips/rows link only
-// to owning pages. Wall/Roof rows are non-links with a "Launching soon" pill until
-// /product/wall-sheet and /product/roofing-sheet return 200.
+// T7 — "Most In Demand" 8-tab section (SAP-style). Replaces the previous two-card
+// PopularSizes. Content authority: page-structure/content-drafts/
+// T7_MostInDemand_8Tab_Draft_v1_11Jul2026.md (owner-approved). All 8 tab panels are
+// SERVER-RENDERED into the HTML (crawlable) and toggled purely by CSS via hidden radio
+// inputs + the general-sibling combinator — NO JavaScript, NO new dependencies, and no
+// click-time lazy loading of panel content. With JS disabled the first panel shows and
+// every panel's text remains in view-source.
+//
+// Copy is verbatim from the draft. Prices are pre-authorized: PUF 9-thickness rates and
+// cabin/café/labour figures diff-match T6.3/T6.4/T6.5. Image alt text: Tabs 1–4 come
+// from the T2.2 image pack; Tabs 5–6 from the T6.12-approved panel alt (owner-authorized
+// reuse for Tab 5); Tabs 7–8 are "Launching soon" stand-ins with decorative alt=""
+// (owner ruling). Wall/Roof tabs carry NO anchor element until their product pages ship.
+// Price-surface disclaimers reuse the approved T6.3 footnotes verbatim.
 
-type Chip = { size: string; price?: string };
-type ValueBlock = { primary: string; secondary?: string };
-type Row = { label: string; href?: string; chips: Chip[]; thumb?: string; icon?: LucideIcon; value?: ValueBlock; pill?: string };
-type RateRow = { t: string; eps: string; puf: string; pir: string };
-type TableSpec = { heading: string; cols: string[]; rows: string[][]; note?: string };
+type Price = { size: string; price: string };
+type Tab = {
+  key: string;
+  name: string;
+  href?: string;
+  img: string;
+  alt: string;
+  desc: string;
+  bullets: readonly [string, string];
+  cta?: string;
+  badge?: string;
+  prices?: readonly Price[];
+  labourLine?: string;
+  thicknessLine?: string;
+  pufTable?: boolean;
+  note?: string;
+};
 
-const RATE_ROWS: RateRow[] = [
-  { t: '30mm', eps: '₹770', puf: '₹1,050', pir: '₹1,410' },
-  { t: '40mm', eps: '₹840', puf: '₹1,150', pir: '₹1,550' },
-  { t: '50mm', eps: '₹910', puf: '₹1,250', pir: '₹1,680' },
-  { t: '60mm', eps: '₹970', puf: '₹1,330', pir: '₹1,790' },
-  { t: '80mm', eps: '₹1,070', puf: '₹1,470', pir: '₹1,980' },
-  { t: '90mm', eps: '₹1,130', puf: '₹1,550', pir: '₹2,090' },
-  { t: '100mm', eps: '₹1,210', puf: '₹1,650', pir: '₹2,220' },
-  { t: '120mm', eps: '₹1,350', puf: '₹1,850', pir: '₹2,490' },
-  { t: '150mm', eps: '₹1,570', puf: '₹2,150', pir: '₹2,900' },
+// PUF panel rate card — 9 thicknesses, ₹ per m² ex-GST. Values diff-match T6.3 §2 (PUF col).
+const PUF_ROWS: readonly (readonly [string, string])[] = [
+  ['30mm', '₹1,050'],
+  ['40mm', '₹1,150'],
+  ['50mm', '₹1,250'],
+  ['60mm', '₹1,330'],
+  ['80mm', '₹1,470'],
+  ['90mm', '₹1,550'],
+  ['100mm', '₹1,650'],
+  ['120mm', '₹1,850'],
+  ['150mm', '₹2,150'],
 ];
 
-const CABIN_CAFE_RATE: TableSpec = {
-  heading: 'Standard rate card — popular sizes, ex-GST',
-  cols: ['Size (ft)', 'Area (sq ft)', 'Cabin / Container Office', 'Container Café'],
-  rows: [
-    ['10×10×8.5', '100', '₹1.15 L', '₹1.35 L'],
-    ['20×10×8.5', '200', '₹2.10 L', '₹2.30 L'],
-    ['30×10×8.5', '300', '₹3.15 L', '₹3.45 L'],
-    ['40×10×8.5', '400', '₹4.20 L', '₹4.60 L'],
-  ],
-};
+// Cabin / Container Office chips — T6.3 §3. Café chips — T6.4 §1.
+const CABIN_PRICES: readonly Price[] = [
+  { size: '10×10', price: '₹1.15 L' },
+  { size: '20×10', price: '₹2.10 L' },
+  { size: '30×10', price: '₹3.15 L' },
+  { size: '40×10', price: '₹4.20 L' },
+];
+const CAFE_PRICES: readonly Price[] = [
+  { size: '10×10', price: '₹1.35 L' },
+  { size: '20×10', price: '₹2.30 L' },
+  { size: '30×10', price: '₹3.45 L' },
+  { size: '40×10', price: '₹4.60 L' },
+];
 
-const LABOUR_CONFIG: TableSpec = {
-  heading: 'Labour colony — 9 standard configurations',
-  cols: ['Size (ft)', 'Floors', 'Built-up area (sq ft)'],
-  rows: [
-    ['60×24×10', 'Ground', '1,440'],
-    ['90×24×10', 'Ground', '2,160'],
-    ['120×24×10', 'Ground', '2,880'],
-    ['60×24×19', 'G+1', '2,880'],
-    ['90×24×19', 'G+1', '4,320'],
-    ['120×24×19', 'G+1', '5,760'],
-    ['60×24×28', 'G+2', '4,320'],
-    ['90×24×28', 'G+2', '6,480'],
-    ['120×24×28', 'G+2', '8,640'],
-  ],
-  note: 'Labour colony rate: ₹750/sq ft. Exact configuration and total quoted at site assessment.',
-};
+// Approved price-surface disclaimer for the cabin group — T6.3 §3 Group B footnote (verbatim).
+const CABIN_NOTE =
+  'Standard rates ex-GST — 200 sq ft and above ₹1,050/sq ft; smaller units ₹1,150/sq ft. Transport and customisation quoted separately. Final price confirmed at quotation.';
+// Approved panel disclaimer — T6.3 §2 Group A footnote (verbatim).
+const PANEL_NOTE =
+  'Rates per m², ex-GST, base specification — freight, installation and accessories quoted separately. Final price confirmed at quotation.';
 
-const groupA = {
-  title: 'PUF & Sandwich Panels',
-  subtitle: 'Insulated panels in nine thicknesses — factory-direct rates',
-  header: '/homepage/cards/headers/panels-header.webp',
-  rows: [
-    {
-      label: 'PUF Panels',
-      href: '/product/puf-panel',
-      thumb: '/homepage/cards/thumbs/puf-panels-112.webp',
-      chips: [
-        { size: '30mm', price: '₹1,050/m²' },
-        { size: '40mm', price: '₹1,150/m²' },
-        { size: '50mm', price: '₹1,250/m²' },
-        { size: '80mm', price: '₹1,470/m²' },
-      ],
-    },
-    {
-      label: 'Sandwich Panels',
-      href: '/product/sandwich-panel',
-      thumb: '/homepage/cards/thumbs/sandwich-panels-112.webp',
-      chips: [{ size: '30mm' }, { size: '40mm' }, { size: '50mm' }, { size: '80mm' }],
-    },
-    { label: 'Wall Sheets', icon: Layers, chips: [], pill: 'Launching soon' },
-    { label: 'Roofing Sheets', icon: Layers, chips: [], pill: 'Launching soon' },
-  ] as Row[],
-  rateHeading: 'Factory rate card — ₹ per m², ex-GST',
-  footnote:
-    'Rates per m², ex-GST, base specification — freight, installation and accessories quoted separately. Final price confirmed at quotation.',
-  cta: { label: 'See all panel sizes & prices', href: '/product/sandwich-panel' },
-};
+const TABS: readonly Tab[] = [
+  {
+    key: 'porta',
+    name: 'Porta Cabin',
+    href: '/product/porta-cabins',
+    img: '/homepage/cards/ms-corrugated-portable-cabin-site-office.webp',
+    alt: 'New MS corrugated portable cabin site office with grilled windows and AC unit at an Indian construction site',
+    desc: 'Steel-frame site offices, guard rooms and stores — delivered ready to use.',
+    prices: CABIN_PRICES,
+    bullets: ['50mm PUF-insulated steel panels', 'Fully relocatable — move it to your next site'],
+    cta: 'See all Porta Cabins',
+    note: CABIN_NOTE,
+  },
+  {
+    key: 'container-office',
+    name: 'Container Office',
+    href: '/product/container-offices',
+    img: '/homepage/cards/container-office-20ft-construction-site.webp',
+    alt: 'New 20 ft container office with grilled windows and AC unit installed at an Indian project site',
+    desc: '20 ft and 40 ft container offices built for heavy-duty project sites.',
+    prices: CABIN_PRICES,
+    bullets: ['AC, wiring and interiors fitted before delivery', 'Ready to move in on arrival'],
+    cta: 'See all Container Offices',
+    note: CABIN_NOTE,
+  },
+  {
+    key: 'container-cafe',
+    name: 'Container Café',
+    href: '/product/container-cafe',
+    img: '/homepage/cards/container-cafe-food-outlet-service-window.webp',
+    alt: 'Modern container café with fold-up service window, counter and outdoor seating at golden hour',
+    desc: 'Cafés, kiosks and food outlets delivered ready to open.',
+    prices: CAFE_PRICES,
+    bullets: ['Branding, plumbing and electrical done at the factory', 'Relocatable — move any time'],
+    cta: 'See Container Café options',
+    note: CABIN_NOTE,
+  },
+  {
+    key: 'labour',
+    name: 'Labour Colony',
+    href: '/product/labor-colony',
+    img: '/homepage/cards/labour-colony-prefab-worker-accommodation.webp',
+    alt: 'Rows of new prefab labour colony units with walkway and drainage at an Indian construction project',
+    desc: 'Complete worker accommodation camps, up to G+2.',
+    labourLine: 'Ground / G+1 / G+2 · 60×24 to 120×24 ft · from ₹750/sq ft',
+    bullets: ['Rooms, toilets and services set up in days', 'Individual units or multi-storey blocks'],
+    cta: 'See Labour Colony options',
+  },
+  {
+    key: 'puf',
+    name: 'PUF Panels',
+    href: '/product/puf-panel',
+    img: '/homepage/cards/headers/panels-header.webp',
+    alt: 'Insulated sandwich panels manufactured at a SAMAN Portable factory',
+    desc: 'Insulated wall and roof panels at factory-direct rates.',
+    pufTable: true,
+    bullets: ['PPGI-coated PUF sandwich panels', 'Thicknesses 30mm to 150mm'],
+    cta: 'See all panel sizes & prices',
+    note: PANEL_NOTE,
+  },
+  {
+    key: 'sandwich',
+    name: 'Sandwich Panels',
+    href: '/product/sandwich-panel',
+    img: '/homepage/cards/panels-factory.webp',
+    alt: 'Insulated sandwich panels manufactured at a SAMAN Portable factory',
+    desc: 'EPS, rockwool, glass wool and PIR core panels for walls, roofs and cold rooms.',
+    thicknessLine: '30 · 40 · 50 · 80 mm, up to 150mm',
+    bullets: ['Core options for fire, thermal and acoustic needs', 'Wall and roof profiles'],
+    cta: 'Explore Sandwich Panels',
+  },
+  {
+    key: 'wall',
+    name: 'Wall Sheets',
+    img: '/homepage/cards/headers/panels-header.webp',
+    alt: '',
+    badge: 'Launching soon',
+    desc: 'Decorative and cladding wall sheets in a range of finishes.',
+    bullets: ['PVC, UV-marble and cladding options', 'For interiors and building façades'],
+  },
+  {
+    key: 'roof',
+    name: 'Roofing Sheets',
+    img: '/homepage/cards/panels-factory.webp',
+    alt: '',
+    badge: 'Launching soon',
+    desc: 'Metal, polycarbonate and PVC roofing sheets for every span.',
+    bullets: ['Profile and transparent options', 'Pairs with industrial sheds and PEB'],
+  },
+];
 
-const groupB = {
-  title: 'Cabins & Container Offices',
-  subtitle: 'Nine standard sizes at standard rates — ready in 7–21 days',
-  header: '/homepage/cards/headers/cabins-header.webp',
-  rows: [
-    { label: 'Container Office', href: '/product/container-offices', thumb: '/homepage/cards/thumbs/container-office-112.webp', chips: [], value: { primary: 'From ₹1.15 L', secondary: 'per unit, ex-GST' } },
-    { label: 'Porta Cabin', href: '/product/porta-cabins', thumb: '/homepage/cards/thumbs/porta-cabin-112.webp', chips: [], value: { primary: 'From ₹1.15 L', secondary: 'per unit, ex-GST' } },
-    { label: 'Container Café', href: '/product/container-cafe', thumb: '/homepage/cards/thumbs/container-cafe-112.webp', chips: [], value: { primary: 'From ₹1.35 L', secondary: '₹1,150/sq ft' } },
-    { label: 'Labour Colony', href: '/product/labor-colony', thumb: '/homepage/cards/thumbs/labour-colony-112.webp', chips: [], value: { primary: '₹750/sq ft', secondary: '9 configurations' } },
-  ] as Row[],
-  footnote:
-    'Standard rates ex-GST — 200 sq ft and above ₹1,050/sq ft; smaller units ₹1,150/sq ft. Transport and customisation quoted separately. Final price confirmed at quotation.',
-  cta: { label: 'See all cabin sizes', href: '/product' },
-};
+// Scoped, hex-free CSS for the pure-CSS radio tabs (active label + panel visibility +
+// keyboard focus ring). Emitted once; all colours reference DS custom properties.
+const TAB_CSS = [
+  '.mid-radio{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}',
+  '.mid-tabrow{display:flex;gap:.25rem;overflow-x:auto;border-bottom:1px solid var(--ds-border);-webkit-overflow-scrolling:touch}',
+  '.mid-tabrow label{flex:0 0 auto;white-space:nowrap;cursor:pointer;padding:.75rem 1rem;font-size:.875rem;font-weight:600;color:var(--ds-text-secondary);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s ease,border-color .15s ease}',
+  '.mid-tabrow label:hover{color:var(--ds-color-forest)}',
+  '.mid-panels>.mid-panel{display:none}',
+  ...TABS.map((_, i) => `#mid-tab-${i}:checked~.mid-tabrow label[for="mid-tab-${i}"]{color:var(--ds-color-forest);border-bottom-color:var(--ds-primary)}`),
+  ...TABS.map((_, i) => `#mid-tab-${i}:checked~.mid-panels>#mid-panel-${i}{display:block}`),
+  ...TABS.map((_, i) => `#mid-tab-${i}:focus-visible~.mid-tabrow label[for="mid-tab-${i}"]{outline:2px solid var(--ds-focus);outline-offset:2px;border-radius:4px}`),
+].join('');
 
-const PANELS_SPEC: TableSpec = {
-  heading: groupA.rateHeading,
-  cols: ['Thickness', 'EPS Panel', 'PUF Panel', 'PIR Panel'],
-  rows: RATE_ROWS.map((r) => [r.t, r.eps, r.puf, r.pir]),
-};
+const Bullets = ({ items }: { items: readonly string[] }) => (
+  <ul className="mt-5 space-y-2">
+    {items.map((b) => (
+      <li key={b} className="flex items-start gap-2 text-sm text-[var(--ds-text-secondary)]">
+        <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--ds-primary)]" strokeWidth={2.5} />
+        <span>{b}</span>
+      </li>
+    ))}
+  </ul>
+);
 
-const HeaderBand = ({ title, subtitle, header }: { title: string; subtitle: string; header: string }) => (
-  <div className="relative h-40 overflow-hidden">
-    <Image src={header} alt="" fill sizes="(max-width: 768px) 100vw, 640px" className="object-cover" loading="lazy" />
-    <div className="absolute inset-0 bg-gradient-to-t from-[var(--ds-surface-inverse)] via-[color-mix(in_srgb,var(--ds-surface-inverse)_75%,transparent)] to-[color-mix(in_srgb,var(--ds-surface-inverse)_20%,transparent)]" />
-    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-      <h3 className="text-2xl font-bold tracking-tight text-white md:text-3xl">{title}</h3>
-      <p className="mt-1 max-w-[80%] text-sm font-medium text-white/75">{subtitle}</p>
-    </div>
+const PriceChips = ({ prices }: { prices: readonly Price[] }) => (
+  <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+    {prices.map((p) => (
+      <div key={p.size} className="rounded-xl border border-[var(--ds-border)] bg-[var(--ds-surface-alt)] px-3 py-2.5 text-center leading-tight">
+        <div className="text-sm font-bold text-[var(--ds-color-forest)]">{p.size}</div>
+        <div className="mt-0.5 font-mono text-xs text-[var(--ds-text-secondary)]">{p.price}</div>
+      </div>
+    ))}
   </div>
 );
 
-// Unified row anatomy (T6.13): [72px thumb/icon][name] ....... [right value block][chevron].
-// Value rows are full-width click targets whose chevron slides 4px on hover and take a
-// mist hover wash. Chip rows (PUF/Sandwich) keep their chips on the right; Wall/Roof are
-// non-interactive with a right-aligned "Launching soon" tag.
-const SizeRow = ({ row }: { row: Row }) => {
-  const Icon = row.icon;
-  const chipRow = row.chips.length > 0;
-  const isRowLink = !!row.href && !!row.value; // full-width linked value rows
-
-  const media = row.thumb ? (
-    <Image src={row.thumb} alt="" width={112} height={112} loading="lazy" className="h-[72px] w-[72px] flex-shrink-0 rounded-2xl object-cover" />
-  ) : Icon ? (
-    <span className="flex h-[72px] w-[72px] flex-shrink-0 items-center justify-center rounded-2xl bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)]">
-      <Icon className="h-7 w-7 text-[var(--ds-surface-inverse)]" />
-    </span>
-  ) : null;
-
-  const name =
-    chipRow && row.href ? (
-      <Link href={row.href} className="text-lg font-bold text-gray-900 transition-colors hover:text-[var(--ds-surface-inverse)]">
-        {row.label}
-      </Link>
-    ) : (
-      <span className={`text-lg font-bold text-gray-900${isRowLink ? ' transition-colors group-hover:text-[var(--ds-surface-inverse)]' : ''}`}>{row.label}</span>
-    );
-
-  const left = (
-    <div className="flex min-w-0 items-center gap-4">
-      {media}
-      {name}
-    </div>
-  );
-
-  const right = row.value ? (
-    <div className="flex flex-shrink-0 items-center gap-3">
-      <div className="text-right">
-        <div className="font-mono text-lg font-bold text-gray-900">{row.value.primary}</div>
-        {row.value.secondary && <div className="text-xs text-gray-400">{row.value.secondary}</div>}
-      </div>
-      {isRowLink && (
-        <ChevronRight className="h-5 w-5 flex-shrink-0 text-gray-300 transition-transform duration-150 group-hover:translate-x-1 group-hover:text-[var(--ds-surface-inverse)]" />
-      )}
-    </div>
-  ) : row.pill ? (
-    <span className="flex-shrink-0 rounded-full bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)] px-3 py-1.5 text-xs font-semibold text-[var(--ds-surface-inverse)]">{row.pill}</span>
-  ) : chipRow && row.href ? (
-    <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:justify-end">
-      {row.chips.map((chip) => (
-        <Link
-          key={chip.size}
-          href={row.href as string}
-          className="flex flex-col items-center justify-center rounded-xl border border-[color-mix(in_srgb,var(--ds-surface-inverse)_10%,transparent)] bg-[color-mix(in_srgb,var(--ds-surface-inverse)_4%,transparent)] px-3.5 py-2 text-center leading-tight transition-all duration-150 hover:-translate-y-0.5 hover:border-[var(--ds-primary)] hover:shadow-md"
-        >
-          <span className="text-sm font-bold text-[var(--ds-surface-inverse)]">{chip.size}</span>
-          {chip.price && <span className="mt-0.5 text-xs font-normal text-gray-500">{chip.price}</span>}
-        </Link>
-      ))}
-    </div>
-  ) : null;
-
-  const layout = chipRow
-    ? 'flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'
-    : 'flex items-center justify-between gap-4';
-  const body = (
-    <div className={layout}>
-      {left}
-      {right}
-    </div>
-  );
-
-  if (isRowLink) {
-    return (
-      <Link href={row.href as string} className="group block py-5 transition-colors hover:bg-[color-mix(in_srgb,var(--ds-surface-inverse)_3%,transparent)]">
-        {body}
-      </Link>
-    );
-  }
-  if (chipRow) {
-    return <div className="group py-5 transition-colors hover:bg-[color-mix(in_srgb,var(--ds-surface-inverse)_3%,transparent)]">{body}</div>;
-  }
-  return <div className="py-5">{body}</div>;
-};
-
-// Decorated, crawlable rate table (roomier cells, 18px prices). Forest header, zebra
-// rows, mono right-aligned cells, first column sticky on mobile scroll. Static SSR => 0 CLS.
-const RateGrid = ({ spec, minWidth }: { spec: TableSpec; minWidth: number }) => (
-  <div className="mt-6">
-    <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--ds-surface-inverse)]">{spec.heading}</p>
-    <div className="overflow-x-auto rounded-xl border border-gray-100">
-      <table className="w-full border-collapse text-sm" style={{ minWidth }}>
+// Crawlable PUF rate table (2 columns, 9 rows). Forest header, zebra body, mono numerals.
+const PufTable = () => (
+  <div className="mt-5">
+    <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--ds-color-forest)]">Factory rate card — ₹ per m², ex-GST</p>
+    <div className="overflow-x-auto rounded-xl border border-[var(--ds-border)]">
+      <table className="w-full border-collapse text-sm">
         <thead>
           <tr className="bg-[var(--ds-surface-inverse)] text-white">
-            {spec.cols.map((c, ci) => (
-              <th
-                key={c}
-                scope="col"
-                className={
-                  ci === 0
-                    ? 'sticky left-0 z-10 bg-[var(--ds-surface-inverse)] px-6 py-4 text-left font-mono text-xs font-semibold uppercase tracking-wide'
-                    : 'border-l border-white/10 px-6 py-4 text-right text-xs font-semibold uppercase tracking-wide'
-                }
-              >
-                {c}
-              </th>
-            ))}
+            <th scope="col" className="px-5 py-3 text-left font-mono text-xs font-semibold uppercase tracking-wide">Thickness</th>
+            <th scope="col" className="border-l border-white/10 px-5 py-3 text-right text-xs font-semibold uppercase tracking-wide">PUF panel (₹/m²)</th>
           </tr>
         </thead>
         <tbody>
-          {spec.rows.map((r, i) => {
-            const rowBg = i % 2 === 1 ? 'bg-[var(--ds-surface-alt)]' : 'bg-white';
+          {PUF_ROWS.map(([thickness, rate], i) => {
+            const bg = i % 2 === 1 ? 'bg-[var(--ds-surface-alt)]' : 'bg-white';
             return (
-              <tr key={i} className={`${rowBg} transition-colors hover:bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)]`}>
-                {r.map((cell, ci) =>
-                  ci === 0 ? (
-                    <th key={ci} scope="row" className={`sticky left-0 z-10 ${rowBg} border-r border-gray-100 px-6 py-4 text-left font-mono font-bold text-gray-900`}>
-                      {cell}
-                    </th>
-                  ) : (
-                    <td key={ci} className="border-l border-gray-100 px-6 py-4 text-right font-mono text-lg tabular-nums text-gray-700">
-                      {cell}
-                    </td>
-                  )
-                )}
+              <tr key={thickness} className={bg}>
+                <th scope="row" className={`${bg} px-5 py-3 text-left font-mono font-bold text-[var(--ds-text-primary)]`}>{thickness}</th>
+                <td className="border-l border-[var(--ds-border)] px-5 py-3 text-right font-mono tabular-nums text-[var(--ds-text-secondary)]">{rate}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
     </div>
-    {spec.note && <p className="mt-3 text-xs font-light text-gray-500">{spec.note}</p>}
   </div>
 );
 
-const CtaBar = ({ label, href }: { label: string; href: string }) => (
-  <Link
-    href={href}
-    className="mt-auto flex items-center justify-center gap-2 bg-[var(--ds-surface-inverse)] px-6 py-5 text-base font-bold text-white transition-colors hover:bg-[var(--ds-color-forest)]"
-  >
-    {label}
-    <ArrowRight className="h-4 w-4" />
-  </Link>
-);
-
-type Photo = { src: string; alt: string; caption: string };
-
-// Flex-grow photo panel (T6.12): sits between the footnote and CTA bar of the
-// shorter card and absorbs all leftover vertical space so both cards end on the
-// same line at >=1024px; fixed 160px when the cards are stacked (<1024px). The
-// height is layout-determined (fill image), so there is no CLS.
-const PhotoPanel = ({ photo }: { photo: Photo }) => (
-  <div className="relative mx-6 mb-4 mt-2 h-40 overflow-hidden rounded-2xl md:mx-8 lg:h-auto lg:min-h-[140px] lg:flex-grow">
-    <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 1024px) 100vw, 560px" className="object-cover" loading="lazy" />
-    <span className="absolute bottom-3 left-3 rounded-lg bg-white/90 px-3 py-1.5 text-xs font-semibold text-[var(--ds-surface-inverse)] shadow-sm">{photo.caption}</span>
-  </div>
-);
-
-const GroupCard = ({
-  data,
-  tables,
-  photo,
-}: {
-  data: typeof groupA | typeof groupB;
-  tables: { spec: TableSpec; minWidth: number }[];
-  photo?: Photo;
-}) => (
-  <div className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-2xl">
-    <HeaderBand title={data.title} subtitle={data.subtitle} header={data.header} />
-    <div className={`${photo ? '' : 'flex-1 '}px-6 py-6 md:px-8`}>
-      <div className="divide-y divide-gray-100">
-        {data.rows.map((row) => (
-          <SizeRow key={row.label} row={row} />
-        ))}
+const TabPanel = ({ tab, index }: { tab: Tab; index: number }) => (
+  <div id={`mid-panel-${index}`} className="mid-panel" aria-labelledby={`mid-tab-label-${index}`}>
+    <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-10">
+      {/* Image LEFT (stacks on top < lg). Fixed 4:3 aspect box → space reserved, no CLS. */}
+      <div className="lg:w-[44%] lg:flex-shrink-0">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-border)]">
+          <Image src={tab.img} alt={tab.alt} fill sizes="(max-width: 1024px) 100vw, 500px" className="object-cover" loading="lazy" />
+        </div>
       </div>
-      {tables.map((t, i) => (
-        <RateGrid key={i} spec={t.spec} minWidth={t.minWidth} />
-      ))}
+
+      {/* Details RIGHT */}
+      <div className="min-w-0 flex-1">
+        {tab.badge && (
+          <span className="mb-3 inline-flex items-center rounded-full bg-[var(--ds-surface-alt)] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[var(--ds-color-forest)]">
+            {tab.badge}
+          </span>
+        )}
+        <h3 className="text-2xl font-bold tracking-tight text-[var(--ds-color-forest)] md:text-3xl">{tab.name}</h3>
+        <p className="mt-2 text-base text-[var(--ds-text-secondary)]">{tab.desc}</p>
+
+        {tab.prices && <PriceChips prices={tab.prices} />}
+        {tab.labourLine && (
+          <div className="mt-5 rounded-xl border border-[var(--ds-border)] bg-[var(--ds-surface-alt)] px-4 py-3 text-sm font-semibold text-[var(--ds-color-forest)]">
+            {tab.labourLine}
+          </div>
+        )}
+        {tab.thicknessLine && (
+          <div className="mt-5 rounded-xl border border-[var(--ds-border)] bg-[var(--ds-surface-alt)] px-4 py-3 text-sm font-semibold text-[var(--ds-color-forest)]">
+            {tab.thicknessLine}
+          </div>
+        )}
+        {tab.pufTable && <PufTable />}
+
+        <Bullets items={tab.bullets} />
+
+        {tab.note && <p className="mt-4 text-xs font-light leading-relaxed text-[var(--ds-text-secondary)]">{tab.note}</p>}
+
+        {tab.href && tab.cta && (
+          <Link
+            href={tab.href}
+            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[var(--ds-primary)] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[var(--ds-color-leaf-dark)]"
+          >
+            {tab.cta}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        )}
+      </div>
     </div>
-    <p className="px-6 pb-5 pt-3 text-xs font-light text-gray-500 md:px-8">{data.footnote}</p>
-    {photo && <PhotoPanel photo={photo} />}
-    <CtaBar label={data.cta.label} href={data.cta.href} />
   </div>
 );
 
 const PopularSizes = () => {
   return (
-    <section className="bg-[var(--ds-surface-alt)] py-20 md:py-28">
+    <section className="bg-[var(--ds-surface)] py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-12 text-center md:mb-16">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[color-mix(in_srgb,var(--ds-surface-inverse)_10%,transparent)] bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[var(--ds-surface-inverse)]">
+        <div className="mb-10 text-center md:mb-14">
+          <span className="mb-5 inline-flex items-center rounded-full border border-[color-mix(in_srgb,var(--ds-primary)_35%,transparent)] bg-[color-mix(in_srgb,var(--ds-primary)_12%,transparent)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[var(--ds-primary)]">
             MOST IN DEMAND
-          </div>
-          <h2 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 md:text-7xl">
+          </span>
+          <h2 className="text-4xl font-bold tracking-tight text-[var(--ds-color-forest)] md:text-5xl">
             {"India's most-ordered sizes, ready to quote"}
           </h2>
-          <p className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-gray-600 md:text-xl">
+          <p className="mx-auto mt-5 max-w-2xl text-lg font-light leading-relaxed text-[var(--ds-text-secondary)]">
             These configurations ship fastest — standard specifications, fixed base prices, delivery in 7–21 days.
           </p>
         </div>
 
-        {/* Cards side-by-side (stack below lg) — tops and CTA bars aligned via stretch */}
-        <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2">
-          <GroupCard
-            data={groupA}
-            tables={[{ spec: PANELS_SPEC, minWidth: 460 }]}
-            photo={{
-              src: '/homepage/cards/panels-factory.webp',
-              alt: 'Insulated sandwich panels manufactured at a SAMAN Portable factory',
-              caption: 'Manufactured at our Bengaluru & Greater Noida factories',
-            }}
-          />
-          <GroupCard
-            data={groupB}
-            tables={[
-              { spec: CABIN_CAFE_RATE, minWidth: 520 },
-              { spec: LABOUR_CONFIG, minWidth: 460 },
-            ]}
-          />
+        {/* Pure-CSS radio tabs: all 8 panels SSR'd; hidden radios drive visibility. */}
+        <div className="mid relative">
+          <style dangerouslySetInnerHTML={{ __html: TAB_CSS }} />
+          {TABS.map((t, i) => (
+            <input
+              key={t.key}
+              type="radio"
+              name="mid-tabs"
+              id={`mid-tab-${i}`}
+              className="mid-radio"
+              defaultChecked={i === 0}
+              aria-label={t.name}
+            />
+          ))}
+
+          <div className="mid-tabrow" aria-hidden="true">
+            {TABS.map((t, i) => (
+              <label key={t.key} id={`mid-tab-label-${i}`} htmlFor={`mid-tab-${i}`}>
+                {t.name}
+              </label>
+            ))}
+          </div>
+
+          <div className="mid-panels relative mt-8 min-h-[30rem]">
+            {TABS.map((t, i) => (
+              <TabPanel key={t.key} tab={t} index={i} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
