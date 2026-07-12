@@ -47,11 +47,11 @@ const ProcessSteps = () => {
     <section className="py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 md:mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-4 border border-[#0A3D2A]/10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)] text-[var(--ds-surface-inverse)] font-bold text-xs uppercase tracking-widest mb-4 border border-[color-mix(in_srgb,var(--ds-surface-inverse)_10%,transparent)]">
             Our Methodology
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
-            A Seamless <span className="text-[#0A3D2A]">6-Step Journey</span>
+            A Seamless <span className="text-[var(--ds-surface-inverse)]">6-Step Journey</span>
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto font-light">
             We handle the complexity, you handle your business. From initial consultation to final handover.
@@ -64,14 +64,14 @@ const ProcessSteps = () => {
             return (
               <div
                 key={index}
-                className="flex items-start gap-4 rounded-2xl border border-gray-100 bg-[#F8FAF9] p-5 transition-all duration-300 hover:border-[#0A3D2A]/20 hover:shadow-lg"
+                className="flex items-start gap-4 rounded-2xl border border-gray-100 bg-[var(--ds-surface-alt)] p-5 transition-all duration-300 hover:border-[color-mix(in_srgb,var(--ds-surface-inverse)_20%,transparent)] hover:shadow-lg"
               >
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#0A3D2A] shadow-md shadow-[#0A3D2A]/20">
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[var(--ds-surface-inverse)] shadow-md shadow-[color-mix(in_srgb,var(--ds-surface-inverse)_20%,transparent)]">
                   <Icon className="h-5 w-5 text-white" />
                 </div>
                 <div>
                   <div className="mb-1 flex items-center gap-2">
-                    <span className="text-lg font-black text-[#0A3D2A]/20 tabular-nums">{step.step}</span>
+                    <span className="text-lg font-black text-[color-mix(in_srgb,var(--ds-surface-inverse)_20%,transparent)] tabular-nums">{step.step}</span>
                     <h3 className="text-base font-bold text-gray-900">{step.title}</h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed font-light">{step.description}</p>

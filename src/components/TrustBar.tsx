@@ -84,7 +84,7 @@ const TrustBar = () => {
   return (
     <section ref={rootRef} className="bg-white border-b border-gray-100 shadow-sm relative z-30">
       {/* Top accent strip */}
-      <div className="h-1 bg-gradient-to-r from-[#0A3D2A] via-[#1A6B45] to-[#0A3D2A]" />
+      <div className="h-1 bg-gradient-to-r from-[var(--ds-surface-inverse)] via-[var(--ds-primary)] to-[var(--ds-surface-inverse)]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-8">
@@ -98,7 +98,7 @@ const TrustBar = () => {
                 }`}
               >
                 {/* Filled DS-green tile (applied to all five) */}
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-gradient-to-br from-[#0A3D2A] to-[#1A6B45] text-white shadow-md">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-gradient-to-br from-[var(--ds-surface-inverse)] to-[var(--ds-primary)] text-white shadow-md">
                   <Icon className="w-6 h-6" />
                 </div>
 

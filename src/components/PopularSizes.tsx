@@ -111,7 +111,7 @@ const PANELS_SPEC: TableSpec = {
 const HeaderBand = ({ title, subtitle, header }: { title: string; subtitle: string; header: string }) => (
   <div className="relative h-40 overflow-hidden">
     <Image src={header} alt="" fill sizes="(max-width: 768px) 100vw, 640px" className="object-cover" loading="lazy" />
-    <div className="absolute inset-0 bg-gradient-to-t from-[#0A3D2A] via-[#0A3D2A]/75 to-[#0A3D2A]/20" />
+    <div className="absolute inset-0 bg-gradient-to-t from-[var(--ds-surface-inverse)] via-[color-mix(in_srgb,var(--ds-surface-inverse)_75%,transparent)] to-[color-mix(in_srgb,var(--ds-surface-inverse)_20%,transparent)]" />
     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
       <h3 className="text-2xl font-bold tracking-tight text-white md:text-3xl">{title}</h3>
       <p className="mt-1 max-w-[80%] text-sm font-medium text-white/75">{subtitle}</p>
@@ -131,18 +131,18 @@ const SizeRow = ({ row }: { row: Row }) => {
   const media = row.thumb ? (
     <Image src={row.thumb} alt="" width={112} height={112} loading="lazy" className="h-[72px] w-[72px] flex-shrink-0 rounded-2xl object-cover" />
   ) : Icon ? (
-    <span className="flex h-[72px] w-[72px] flex-shrink-0 items-center justify-center rounded-2xl bg-[#0A3D2A]/5">
-      <Icon className="h-7 w-7 text-[#0A3D2A]" />
+    <span className="flex h-[72px] w-[72px] flex-shrink-0 items-center justify-center rounded-2xl bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)]">
+      <Icon className="h-7 w-7 text-[var(--ds-surface-inverse)]" />
     </span>
   ) : null;
 
   const name =
     chipRow && row.href ? (
-      <Link href={row.href} className="text-lg font-bold text-gray-900 transition-colors hover:text-[#0A3D2A]">
+      <Link href={row.href} className="text-lg font-bold text-gray-900 transition-colors hover:text-[var(--ds-surface-inverse)]">
         {row.label}
       </Link>
     ) : (
-      <span className={`text-lg font-bold text-gray-900${isRowLink ? ' transition-colors group-hover:text-[#0A3D2A]' : ''}`}>{row.label}</span>
+      <span className={`text-lg font-bold text-gray-900${isRowLink ? ' transition-colors group-hover:text-[var(--ds-surface-inverse)]' : ''}`}>{row.label}</span>
     );
 
   const left = (
@@ -159,20 +159,20 @@ const SizeRow = ({ row }: { row: Row }) => {
         {row.value.secondary && <div className="text-xs text-gray-400">{row.value.secondary}</div>}
       </div>
       {isRowLink && (
-        <ChevronRight className="h-5 w-5 flex-shrink-0 text-gray-300 transition-transform duration-150 group-hover:translate-x-1 group-hover:text-[#0A3D2A]" />
+        <ChevronRight className="h-5 w-5 flex-shrink-0 text-gray-300 transition-transform duration-150 group-hover:translate-x-1 group-hover:text-[var(--ds-surface-inverse)]" />
       )}
     </div>
   ) : row.pill ? (
-    <span className="flex-shrink-0 rounded-full bg-[#0A3D2A]/5 px-3 py-1.5 text-xs font-semibold text-[#0A3D2A]">{row.pill}</span>
+    <span className="flex-shrink-0 rounded-full bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)] px-3 py-1.5 text-xs font-semibold text-[var(--ds-surface-inverse)]">{row.pill}</span>
   ) : chipRow && row.href ? (
     <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:justify-end">
       {row.chips.map((chip) => (
         <Link
           key={chip.size}
           href={row.href as string}
-          className="flex flex-col items-center justify-center rounded-xl border border-[#0A3D2A]/10 bg-[#0A3D2A]/[0.04] px-3.5 py-2 text-center leading-tight transition-all duration-150 hover:-translate-y-0.5 hover:border-[#1A6B45] hover:shadow-md"
+          className="flex flex-col items-center justify-center rounded-xl border border-[color-mix(in_srgb,var(--ds-surface-inverse)_10%,transparent)] bg-[color-mix(in_srgb,var(--ds-surface-inverse)_4%,transparent)] px-3.5 py-2 text-center leading-tight transition-all duration-150 hover:-translate-y-0.5 hover:border-[var(--ds-primary)] hover:shadow-md"
         >
-          <span className="text-sm font-bold text-[#0A3D2A]">{chip.size}</span>
+          <span className="text-sm font-bold text-[var(--ds-surface-inverse)]">{chip.size}</span>
           {chip.price && <span className="mt-0.5 text-xs font-normal text-gray-500">{chip.price}</span>}
         </Link>
       ))}
@@ -191,13 +191,13 @@ const SizeRow = ({ row }: { row: Row }) => {
 
   if (isRowLink) {
     return (
-      <Link href={row.href as string} className="group block py-5 transition-colors hover:bg-[#0A3D2A]/[0.03]">
+      <Link href={row.href as string} className="group block py-5 transition-colors hover:bg-[color-mix(in_srgb,var(--ds-surface-inverse)_3%,transparent)]">
         {body}
       </Link>
     );
   }
   if (chipRow) {
-    return <div className="group py-5 transition-colors hover:bg-[#0A3D2A]/[0.03]">{body}</div>;
+    return <div className="group py-5 transition-colors hover:bg-[color-mix(in_srgb,var(--ds-surface-inverse)_3%,transparent)]">{body}</div>;
   }
   return <div className="py-5">{body}</div>;
 };
@@ -206,18 +206,18 @@ const SizeRow = ({ row }: { row: Row }) => {
 // rows, mono right-aligned cells, first column sticky on mobile scroll. Static SSR => 0 CLS.
 const RateGrid = ({ spec, minWidth }: { spec: TableSpec; minWidth: number }) => (
   <div className="mt-6">
-    <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#0A3D2A]">{spec.heading}</p>
+    <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--ds-surface-inverse)]">{spec.heading}</p>
     <div className="overflow-x-auto rounded-xl border border-gray-100">
       <table className="w-full border-collapse text-sm" style={{ minWidth }}>
         <thead>
-          <tr className="bg-[#0A3D2A] text-white">
+          <tr className="bg-[var(--ds-surface-inverse)] text-white">
             {spec.cols.map((c, ci) => (
               <th
                 key={c}
                 scope="col"
                 className={
                   ci === 0
-                    ? 'sticky left-0 z-10 bg-[#0A3D2A] px-6 py-4 text-left font-mono text-xs font-semibold uppercase tracking-wide'
+                    ? 'sticky left-0 z-10 bg-[var(--ds-surface-inverse)] px-6 py-4 text-left font-mono text-xs font-semibold uppercase tracking-wide'
                     : 'border-l border-white/10 px-6 py-4 text-right text-xs font-semibold uppercase tracking-wide'
                 }
               >
@@ -228,9 +228,9 @@ const RateGrid = ({ spec, minWidth }: { spec: TableSpec; minWidth: number }) => 
         </thead>
         <tbody>
           {spec.rows.map((r, i) => {
-            const rowBg = i % 2 === 1 ? 'bg-[#F8FAF9]' : 'bg-white';
+            const rowBg = i % 2 === 1 ? 'bg-[var(--ds-surface-alt)]' : 'bg-white';
             return (
-              <tr key={i} className={`${rowBg} transition-colors hover:bg-[#0A3D2A]/5`}>
+              <tr key={i} className={`${rowBg} transition-colors hover:bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)]`}>
                 {r.map((cell, ci) =>
                   ci === 0 ? (
                     <th key={ci} scope="row" className={`sticky left-0 z-10 ${rowBg} border-r border-gray-100 px-6 py-4 text-left font-mono font-bold text-gray-900`}>
@@ -255,7 +255,7 @@ const RateGrid = ({ spec, minWidth }: { spec: TableSpec; minWidth: number }) => 
 const CtaBar = ({ label, href }: { label: string; href: string }) => (
   <Link
     href={href}
-    className="mt-auto flex items-center justify-center gap-2 bg-[#0A3D2A] px-6 py-5 text-base font-bold text-white transition-colors hover:bg-[#082F20]"
+    className="mt-auto flex items-center justify-center gap-2 bg-[var(--ds-surface-inverse)] px-6 py-5 text-base font-bold text-white transition-colors hover:bg-[var(--ds-color-forest)]"
   >
     {label}
     <ArrowRight className="h-4 w-4" />
@@ -271,7 +271,7 @@ type Photo = { src: string; alt: string; caption: string };
 const PhotoPanel = ({ photo }: { photo: Photo }) => (
   <div className="relative mx-6 mb-4 mt-2 h-40 overflow-hidden rounded-2xl md:mx-8 lg:h-auto lg:min-h-[140px] lg:flex-grow">
     <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 1024px) 100vw, 560px" className="object-cover" loading="lazy" />
-    <span className="absolute bottom-3 left-3 rounded-lg bg-white/90 px-3 py-1.5 text-xs font-semibold text-[#0A3D2A] shadow-sm">{photo.caption}</span>
+    <span className="absolute bottom-3 left-3 rounded-lg bg-white/90 px-3 py-1.5 text-xs font-semibold text-[var(--ds-surface-inverse)] shadow-sm">{photo.caption}</span>
   </div>
 );
 
@@ -304,11 +304,11 @@ const GroupCard = ({
 
 const PopularSizes = () => {
   return (
-    <section className="bg-[#F8FAF9] py-20 md:py-28">
+    <section className="bg-[var(--ds-surface-alt)] py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-12 text-center md:mb-16">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#0A3D2A]/10 bg-[#0A3D2A]/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#0A3D2A]">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[color-mix(in_srgb,var(--ds-surface-inverse)_10%,transparent)] bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[var(--ds-surface-inverse)]">
             MOST IN DEMAND
           </div>
           <h2 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 md:text-7xl">

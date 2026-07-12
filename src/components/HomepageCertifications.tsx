@@ -127,7 +127,7 @@ const CertLightbox = ({ cert, onClose }: { cert: Cert; onClose: () => void }) =>
           type="button"
           onClick={onClose}
           aria-label="Close certificate"
-          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-gray-700 shadow-md transition-colors hover:bg-white hover:text-[#0A3D2A]"
+          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-gray-700 shadow-md transition-colors hover:bg-white hover:text-[var(--ds-surface-inverse)]"
         >
           <X className="h-5 w-5" />
         </button>
@@ -226,7 +226,7 @@ const HomepageCertifications = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Compact left-aligned header */}
         <div className="mb-8 max-w-2xl md:mb-10">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0A3D2A]/10 bg-[#0A3D2A]/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#0A3D2A]">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[color-mix(in_srgb,var(--ds-surface-inverse)_10%,transparent)] bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[var(--ds-surface-inverse)]">
             GOVERNMENT RECOGNISED
           </div>
           <h2 className="mb-3 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">Certified. Registered. Verifiable.</h2>
@@ -265,7 +265,7 @@ const HomepageCertifications = () => {
                 <button
                   type="button"
                   onClick={() => setOpen(i)}
-                  className="mt-4 inline-flex items-center gap-1.5 rounded-lg border-2 border-[#1A6B45] px-4 py-2 text-sm font-bold text-[#0A3D2A] transition-all hover:bg-[#0A3D2A] hover:text-white"
+                  className="mt-4 inline-flex items-center gap-1.5 rounded-lg border-2 border-[var(--ds-primary)] px-4 py-2 text-sm font-bold text-[var(--ds-surface-inverse)] transition-all hover:bg-[var(--ds-surface-inverse)] hover:text-white"
                 >
                   {c.cta}
                   <ArrowRight className="h-4 w-4" />
@@ -279,7 +279,7 @@ const HomepageCertifications = () => {
         <div className="mt-5 flex justify-center gap-2 md:hidden">
           {CERTS.map((_, i) => (
             <button key={i} type="button" onClick={() => goTo(i)} aria-label={`Go to certificate ${i + 1}`} className="flex items-center p-1.5">
-              <span className={`block h-2 rounded-full transition-all duration-300 ${active === i ? 'w-6 bg-[#1A6B45]' : 'w-2 bg-gray-300'}`} />
+              <span className={`block h-2 rounded-full transition-all duration-300 ${active === i ? 'w-6 bg-[var(--ds-primary)]' : 'w-2 bg-gray-300'}`} />
             </button>
           ))}
         </div>

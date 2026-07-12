@@ -13,7 +13,7 @@ import { pageSEO, siteConfig } from '@/config/seo';
 const CalculatorStrip = dynamic(() => import('@/components/CalculatorStrip'), {
   ssr: true,
   loading: () => (
-    <div className="w-full h-48 bg-[#0A3D2A] animate-pulse" />
+    <div className="w-full h-48 bg-[var(--ds-surface-inverse)] animate-pulse" />
   ),
 });
 
@@ -68,7 +68,7 @@ const FAQSection = dynamic(() => import('@/components/FAQSection'), {
 
 const CTAStrip = dynamic(() => import('@/components/CTAStrip'), {
   ssr: true,
-  loading: () => <div className="w-full h-48 bg-[#0A3D2A] animate-pulse" />,
+  loading: () => <div className="w-full h-48 bg-[var(--ds-surface-inverse)] animate-pulse" />,
 });
 
 const ScrollToTop = dynamic(() => import('@/components/ScrollToTop'), {

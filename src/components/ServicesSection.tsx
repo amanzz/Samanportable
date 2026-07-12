@@ -77,13 +77,13 @@ const ServicesSection = () => {
 
   return (
     <section className="py-16 md:py-32 bg-white relative" id="products">
-      <div className="absolute inset-0 bg-[#F8FAF9]/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-[color-mix(in_srgb,var(--ds-surface-alt)_50%,transparent)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16 md:mb-20">
           <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)] text-[var(--ds-surface-inverse)] font-bold text-xs uppercase tracking-widest mb-6 border border-[color-mix(in_srgb,var(--ds-surface-inverse)_10%,transparent)]"
           >
             <Building2 className="w-3.5 h-3.5" />
             Product Portfolio
@@ -91,7 +91,7 @@ const ServicesSection = () => {
           <h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
           >
-            Premium Modular <span className="text-[#0A3D2A]">Architecture</span>
+            Premium Modular <span className="text-[var(--ds-surface-inverse)]">Architecture</span>
           </h2>
           <p
             className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light"
@@ -118,7 +118,7 @@ const ServicesSection = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-200 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute bottom-3 left-3 rounded-xl bg-[#0A3D2A] px-3 py-2 shadow-lg">
+                <div className="absolute bottom-3 left-3 rounded-xl bg-[var(--ds-surface-inverse)] px-3 py-2 shadow-lg">
                   <span className="block text-[9px] font-black uppercase tracking-widest text-white/70 leading-none mb-0.5">Starting Price</span>
                   <span className="block text-sm font-bold text-white leading-none">{service.price}</span>
                 </div>
@@ -126,10 +126,10 @@ const ServicesSection = () => {
 
               {/* Content */}
               <div className="flex flex-1 flex-col p-6 md:p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1.5 transition-colors group-hover:text-[#0A3D2A]">
+                <h3 className="text-2xl font-bold text-gray-900 mb-1.5 transition-colors group-hover:text-[var(--ds-surface-inverse)]">
                   {service.title}
                 </h3>
-                <p className="text-xs font-bold text-[#0A3D2A]/60 uppercase tracking-[0.2em] mb-4">
+                <p className="text-xs font-bold text-[color-mix(in_srgb,var(--ds-surface-inverse)_60%,transparent)] uppercase tracking-[0.2em] mb-4">
                   {service.tagline}
                 </p>
 
@@ -142,8 +142,8 @@ const ServicesSection = () => {
                 <div className="space-y-3 mb-10">
                   {service.features.map((feature, fi) => (
                     <div key={fi} className="flex items-start text-sm text-gray-700 group/item">
-                      <div className="w-5 h-5 rounded-full bg-[#0A3D2A]/5 flex items-center justify-center mr-3 mt-0.5 group-hover/item:bg-[#0A3D2A]/10 transition-colors">
-                        <CheckCircle2 className="w-3 h-3 text-[#0A3D2A]" />
+                      <div className="w-5 h-5 rounded-full bg-[color-mix(in_srgb,var(--ds-surface-inverse)_5%,transparent)] flex items-center justify-center mr-3 mt-0.5 group-hover/item:bg-[color-mix(in_srgb,var(--ds-surface-inverse)_10%,transparent)] transition-colors">
+                        <CheckCircle2 className="w-3 h-3 text-[var(--ds-surface-inverse)]" />
                       </div>
                       <span className="font-medium">{feature}</span>
                     </div>
@@ -154,7 +154,7 @@ const ServicesSection = () => {
                 <Link href={service.href} prefetch={false} className="mt-auto">
                   <Button
                     variant="outline"
-                    className="w-full border-2 border-[#0A3D2A]/10 text-[#0A3D2A] font-bold hover:bg-[#0A3D2A] hover:border-[#0A3D2A] hover:text-white transition-all duration-300 h-14 rounded-2xl group/btn text-base"
+                    className="w-full border-2 border-[color-mix(in_srgb,var(--ds-surface-inverse)_10%,transparent)] text-[var(--ds-surface-inverse)] font-bold hover:bg-[var(--ds-surface-inverse)] hover:border-[var(--ds-surface-inverse)] hover:text-white transition-all duration-300 h-14 rounded-2xl group/btn text-base"
                   >
                     View Specifications
                     <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1.5 transition-transform" />
@@ -167,7 +167,7 @@ const ServicesSection = () => {
 
         {/* Bottom CTA Block */}
         <div
-          className="mt-16 md:mt-24 p-8 md:p-12 rounded-2xl md:rounded-[2.5rem] bg-gradient-to-br from-gray-900 to-[#051F15] text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden"
+          className="mt-16 md:mt-24 p-8 md:p-12 rounded-2xl md:rounded-[2.5rem] bg-gradient-to-br from-gray-900 to-[var(--ds-surface-inverse)] text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10" />
           <div className="relative z-10 text-center md:text-left">

@@ -60,10 +60,10 @@ export const CATEGORIES: CategoryDef[] = [
 
 const CategoryGrid = ({ counts }: { counts: Record<string, number> }) => {
   return (
-    <section className="bg-[#0A3D2A] py-16 md:py-24">
+    <section className="bg-[var(--ds-surface-inverse)] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center md:mb-16">
-          <span className="mb-5 inline-flex items-center rounded-full border border-[#1A6B45]/40 bg-[#1A6B45]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white">
+          <span className="mb-5 inline-flex items-center rounded-full border border-[color-mix(in_srgb,var(--ds-primary)_40%,transparent)] bg-[color-mix(in_srgb,var(--ds-primary)_15%,transparent)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white">
             ALL PRODUCTS
           </span>
           <h2 className="text-4xl font-bold tracking-tight text-white md:text-5xl">Explore Every Product Category</h2>
@@ -80,22 +80,22 @@ const CategoryGrid = ({ counts }: { counts: Record<string, number> }) => {
               <Link
                 key={cat.slug}
                 href={cat.href}
-                className="group relative flex h-full flex-col rounded-2xl border border-[#1A6B45]/20 bg-white/5 p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1A6B45]/60 hover:bg-white/[0.08]"
+                className="group relative flex h-full flex-col rounded-2xl border border-[color-mix(in_srgb,var(--ds-primary)_20%,transparent)] bg-white/5 p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[color-mix(in_srgb,var(--ds-primary)_60%,transparent)] hover:bg-white/[0.08]"
               >
                 <div className="mb-4 flex items-start justify-between gap-3">
-                  <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#1A6B45] to-[#0A3D2A] shadow-lg shadow-black/25 ring-1 ring-white/10 transition-shadow duration-200 group-hover:ring-[#1A6B45]/60 group-hover:shadow-[#1A6B45]/40">
-                    <Icon className="h-7 w-7 text-[#F8FAF9]" strokeWidth={2} />
+                  <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--ds-primary)] to-[var(--ds-surface-inverse)] shadow-lg shadow-black/25 ring-1 ring-white/10 transition-shadow duration-200 group-hover:ring-[color-mix(in_srgb,var(--ds-primary)_60%,transparent)] group-hover:shadow-lg">
+                    <Icon className="h-7 w-7 text-[var(--ds-surface-alt)]" strokeWidth={2} />
                   </span>
                   {typeof count === 'number' && (
-                    <span className="flex-shrink-0 rounded-full bg-[#1A6B45] px-2.5 py-0.5 text-xs font-bold text-white">{count}</span>
+                    <span className="flex-shrink-0 rounded-full bg-[var(--ds-primary)] px-2.5 py-0.5 text-xs font-bold text-white">{count}</span>
                   )}
                 </div>
 
                 <div className="flex items-center gap-1.5">
                   <h3 className="text-base font-bold leading-snug text-white">{cat.name}</h3>
-                  <ArrowRight className="h-4 w-4 flex-shrink-0 -translate-x-1 text-[#F8FAF9] opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
+                  <ArrowRight className="h-4 w-4 flex-shrink-0 -translate-x-1 text-[var(--ds-surface-alt)] opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
                 </div>
-                <p className="mt-1.5 text-sm leading-relaxed text-[#F8FAF9]/75">{cat.description}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-[color-mix(in_srgb,var(--ds-surface-alt)_75%,transparent)]">{cat.description}</p>
               </Link>
             );
           })}
