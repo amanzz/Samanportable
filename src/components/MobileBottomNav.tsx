@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Home, ShoppingBag, ShoppingCart, X, Package, Menu } from 'lucide-react';
-import { useCart } from '@/contexts/CartContext';
+import { Home, Phone, X, Package, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { getSeoAnchorText } from '@/lib/seoAnchorMap';
 
@@ -35,8 +34,6 @@ interface MobileBottomNavProps {
 
 const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
   const router = useRouter();
-  const { state: cartState } = useCart();
-  const { itemCount } = cartState;
   const [showSidebar, setShowSidebar] = useState(false);
   
 
@@ -54,17 +51,19 @@ const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
       isActive: router.pathname === '/'
     },
     {
-      name: 'Shop',
+      name: 'Products',
       href: '/product',
-      icon: ShoppingBag,
+      icon: Package,
       isActive: router.pathname.startsWith('/product')
     },
     {
-      name: 'Cart',
-      href: '/cart',
-      icon: ShoppingCart,
-      isActive: router.pathname === '/cart',
-      badge: itemCount > 0 ? itemCount : null
+      name: 'Call',
+      href: 'tel:+918861622859',
+      icon: Phone,
+      isActive: false,
+      onClick: () => {
+        window.location.href = 'tel:+918861622859';
+      }
     }
   ];
 
@@ -236,4 +235,3 @@ const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
 };
 
 export default MobileBottomNav;
-

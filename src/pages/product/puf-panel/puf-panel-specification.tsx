@@ -376,11 +376,11 @@ export default function PufPanelSpecification() {
               <RelatedProductsRail
                 variant="sidebar"
                 heading="Explore the Range"
-                items={[PUF_CATALOG.hub, PUF_CATALOG.house, PUF_CATALOG.coldStorage]}
+                items={[PUF_CATALOG.hub, PUF_CATALOG.house, PUF_CATALOG.coldStorage, PUF_CATALOG.wall, PUF_CATALOG.price, PUF_CATALOG.roofing, PUF_CATALOG.sandwich]}
               />
             </div>
 
-            <div className="order-2 lg:order-2 lg:col-span-5">
+            <div className="order-1 lg:order-2 lg:col-span-5">
               <ProductCarousel images={GALLERY_IMAGES} />
               <div className="mt-4 rounded-xl border-2 border-primary/25 bg-primary/[0.04] p-3 sm:p-4">
                 <p className="mb-2 text-sm font-bold text-foreground">Get a factory-direct quotation</p>
@@ -388,7 +388,7 @@ export default function PufPanelSpecification() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
+            <div className="order-2 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <ProductInfoBox
                 h1="PUF Panel Specification — Thickness, Size, Facing and Weight"
                 priceMain="From ₹1,050 / sq mt"
@@ -419,7 +419,7 @@ export default function PufPanelSpecification() {
           </div>
 
           <div className="mt-8 space-y-8">
-            <RelatedProductsRail items={[PUF_CATALOG.hub, PUF_CATALOG.house, PUF_CATALOG.coldStorage]} />
+            <RelatedProductsRail items={[PUF_CATALOG.hub, PUF_CATALOG.house, PUF_CATALOG.coldStorage, PUF_CATALOG.wall, PUF_CATALOG.price, PUF_CATALOG.roofing, PUF_CATALOG.sandwich]} />
             <CertBadgeStrip />
           </div>
         </div>

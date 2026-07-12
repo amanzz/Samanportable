@@ -93,7 +93,6 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
           </div>
         ) : (
           <div className="text-center py-16">
-            <div className="text-6xl mb-4">📦</div>
             <h3 className="text-xl font-semibold text-muted-foreground mb-2">
               No Products Available
             </h3>
@@ -117,4 +116,3 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
 };
 
 export default ProductShowcase;
-

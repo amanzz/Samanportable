@@ -67,7 +67,7 @@ const RockwoolInfoBox = ({ h1, priceMain, priceSubline, shortDescription, hsn }:
           <div className="flex items-center justify-between py-1">
             <span className="font-medium text-foreground">Category:</span>
             <Link href="/product" className="break-words text-right font-medium text-primary hover:underline">
-              Insulated Panels
+              Rockwool Panels
             </Link>
           </div>
         </div>

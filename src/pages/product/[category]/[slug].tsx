@@ -11,7 +11,7 @@ import { ScrollArea } from '../../../components/ui/scroll-area';
 import MobileBottomNav from '../../../components/MobileBottomNav';
 import { 
   Star, 
-  ShoppingCart, 
+  Package,
   ArrowLeft,
   Loader2
 } from 'lucide-react';
@@ -410,7 +410,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm h-fit max-h-[80vh]">
                     <div className="flex items-center space-x-3 mb-4">
                       <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <ShoppingCart className="w-5 h-5 text-primary" />
+                        <Package className="w-5 h-5 text-primary" />
                       </div>
                       <div>
                         <h2 className="text-xl font-bold text-foreground">Related Products</h2>
@@ -438,19 +438,23 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                                   </div>
                                 )}
                                 <div className="flex items-start space-x-3">
-                                  {/* Product Icon */}
+                                  {/* Product thumbnail */}
                                   <div className={cn(
-                                    "w-12 h-12 rounded-lg flex-shrink-0 border-2 flex items-center justify-center",
+                                    "relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg border-2",
                                     relatedProduct.slug === slug 
-                                      ? "border-white bg-white/20 shadow-md" 
-                                      : "border-border group-hover:border-primary/50 bg-muted group-hover:bg-primary/5"
+                                      ? "border-white shadow-md" 
+                                      : "border-border group-hover:border-primary/50"
                                   )}>
-                                    <ShoppingCart className={cn(
-                                      "w-6 h-6",
-                                      relatedProduct.slug === slug 
-                                        ? "text-white" 
-                                        : "text-muted-foreground group-hover:text-primary"
-                                    )} />
+                                    <Image
+                                      src={relatedProduct.image || '/placeholder.svg'}
+                                      alt={relatedProduct.title}
+                                      width={96}
+                                      height={96}
+                                      className="h-full w-full object-cover"
+                                      onError={(event) => {
+                                        event.currentTarget.src = '/placeholder.svg';
+                                      }}
+                                    />
                                   </div>
                                   
                                   {/* Product Info */}
@@ -497,7 +501,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                       ) : (
                         <div className="text-center text-muted-foreground py-8">
                           <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-muted flex items-center justify-center">
-                            <ShoppingCart className="w-6 h-6 text-muted-foreground" />
+                            <Package className="w-6 h-6 text-muted-foreground" />
                           </div>
                           <p className="text-sm">No products in this category.</p>
                         </div>
@@ -527,17 +531,17 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               quality={85}
                               onError={(e) => {
-                                e.currentTarget.src = `https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;
+                                e.currentTarget.src = '/placeholder.svg';
                               }}
                             />
                           ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
-                              <div className="text-center">
-                                <div className="text-6xl opacity-60 mb-4">📦</div>
-                                <p className="text-muted-foreground">No image available</p>
-                                <p className="text-sm text-muted-foreground">Contact us for details</p>
-                              </div>
-                            </div>
+                            <Image
+                              src="/placeholder.svg"
+                              alt={transformedProduct.title}
+                              width={800}
+                              height={600}
+                              className="h-full w-full object-cover"
+                            />
                           )}
                           {/* Image Navigation Arrows */}
                           {images.length > 1 && (
@@ -593,13 +597,17 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                                   sizes="(max-width: 768px) 25vw, 150px"
                                   quality={75}
                                   onError={(e) => {
-                                    e.currentTarget.src = `https://via.placeholder.com/150x150/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;
+                                    e.currentTarget.src = '/placeholder.svg';
                                   }}
                                 />
                               ) : (
-                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 to-primary/10">
-                                  <div className="text-2xl opacity-60">📷</div>
-                                </div>
+                                <Image
+                                  src="/placeholder.svg"
+                                  alt={`${transformedProduct.title} ${index + 1}`}
+                                  width={150}
+                                  height={150}
+                                  className="h-full w-full object-cover"
+                                />
                               )}
                             </button>
                           ))}
@@ -767,7 +775,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <ShoppingCart className="w-5 h-5 text-primary" />
+                          <Package className="w-5 h-5 text-primary" />
                         </div>
                         <div>
                           <h3 className="text-xl font-bold text-foreground">Related Products</h3>
@@ -817,14 +825,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                                   {/* Product Image */}
                                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden relative">
                                     <Image 
-                                      src={relatedProduct.image || `https://via.placeholder.com/320x240/3B82F6/FFFFFF?text=${encodeURIComponent(relatedProduct.title)}`}
+                                      src={relatedProduct.image || '/placeholder.svg'}
                                       alt={relatedProduct.title}
                                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                       width={320}
                                       height={240}
                                       onError={(e) => {
                                         const target = e.target as HTMLImageElement;
-                                        target.src = `https://via.placeholder.com/320x240/3B82F6/FFFFFF?text=${encodeURIComponent(relatedProduct.title)}`;
+                                        target.src = '/placeholder.svg';
                                       }}
                                     />
                                     {relatedProduct.slug === slug && (
@@ -879,7 +887,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                         ) : (
                           <div className="flex items-center justify-center w-full py-12">
                             <div className="text-center">
-                              <ShoppingCart className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
+                              <Package className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
                               <p className="text-muted-foreground">No related products available</p>
                             </div>
                           </div>
