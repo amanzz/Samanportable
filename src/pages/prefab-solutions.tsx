@@ -26,7 +26,6 @@ import QuoteFormTrigger from '@/components/QuoteFormTrigger';
 import QuoteForm from '@/components/QuoteForm';
 import SmartImage from '@/components/SmartImage';
 import FAQSchema from '@/components/FAQSchema';
-import CategoryMenu from '@/components/CategoryMenu';
 
 const PrefabSolutionsPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -395,9 +394,6 @@ const PrefabSolutionsPage = () => {
           </div>
         )}
       </nav>
-
-      {/* Shared 14-hub category navigation for SEO consistency */}
-      <CategoryMenu />
 
       {/* Hero Section */}
       <section id="home" className="pt-16 bg-gradient-to-br from-green-50 via-blue-50 to-indigo-50 relative overflow-hidden">
