@@ -3,20 +3,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Check } from 'lucide-react';
 
-// T7 — "Most In Demand" 8-tab section (SAP-style). Replaces the previous two-card
-// PopularSizes. Content authority: page-structure/content-drafts/
-// T7_MostInDemand_8Tab_Draft_v1_11Jul2026.md (owner-approved). All 8 tab panels are
-// SERVER-RENDERED into the HTML (crawlable) and toggled purely by CSS via hidden radio
-// inputs + the general-sibling combinator — NO JavaScript, NO new dependencies, and no
-// click-time lazy loading of panel content. With JS disabled the first panel shows and
+// T7 / T7.1 — "Most In Demand" 8-tab section (SAP-style). Content authority:
+// page-structure/content-drafts/T7_MostInDemand_8Tab_Draft_v1_11Jul2026.md and its
+// amendment T7.1_8Tab_Expand_Draft_v1_11Jul2026.md (both owner-approved). All 8 tab
+// panels are SERVER-RENDERED into the HTML (crawlable) and toggled purely by CSS via
+// hidden radio inputs + the general-sibling combinator — NO JavaScript, NO new deps,
+// no click-time lazy loading of panel text. With JS disabled the first panel shows and
 // every panel's text remains in view-source.
 //
-// Copy is verbatim from the draft. Prices are pre-authorized: PUF 9-thickness rates and
-// cabin/café/labour figures diff-match T6.3/T6.4/T6.5. Image alt text: Tabs 1–4 come
-// from the T2.2 image pack; Tabs 5–6 from the T6.12-approved panel alt (owner-authorized
-// reuse for Tab 5); Tabs 7–8 are "Launching soon" stand-ins with decorative alt=""
-// (owner ruling). Wall/Roof tabs carry NO anchor element until their product pages ship.
-// Price-surface disclaimers reuse the approved T6.3 footnotes verbatim.
+// Copy is verbatim from the drafts (T7.1 §3 expanded descriptions + bullets + CTAs).
+// Prices are pre-authorized and diff-match T6.3/T6.4/T6.5. Image alt: Tabs 1–4 from the
+// T2.2 image pack; Tabs 5–6 + 8 (Roofing) from the T6.12-approved panel alt (Roofing is
+// now a live product so it carries descriptive alt; the image is still the approved panel
+// stand-in until a dedicated roofing photo ships). Tab 7 (Wall Sheets) stays decorative
+// alt="" per the T7 ruling. Price-surface disclaimers reuse the approved T6.3 footnotes.
+//
+// CWV (T7.1 §2): all 8 tab images are SSR'd (img+alt in HTML) but loading="lazy", so
+// page-load fetches ZERO of them — the visible one loads only when the section scrolls
+// into view. The draft floated making the first image eager, but this section is BELOW
+// the fold: measuring 5× showed an eager tab-0 image competes with the hero and regresses
+// LCP (~4.0s → ~4.3s), so per "LCP must not regress" and the standing hero-only-priority
+// CWV law, tab-0 stays lazy too. Each image sits in a fixed 4:3 aspect box → zero CLS.
 
 type Price = { size: string; price: string };
 type Tab = {
@@ -26,7 +33,8 @@ type Tab = {
   img: string;
   alt: string;
   desc: string;
-  bullets: readonly [string, string];
+  desc2: string;
+  bullets: readonly string[];
   cta?: string;
   badge?: string;
   prices?: readonly Price[];
@@ -78,8 +86,14 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/ms-corrugated-portable-cabin-site-office.webp',
     alt: 'New MS corrugated portable cabin site office with grilled windows and AC unit at an Indian construction site',
     desc: 'Steel-frame site offices, guard rooms and stores — delivered ready to use.',
+    desc2: 'Built at our factory and installed on site by our own crew — no crane or civil work needed at your end.',
     prices: CABIN_PRICES,
-    bullets: ['50mm PUF-insulated steel panels', 'Fully relocatable — move it to your next site'],
+    bullets: [
+      '50mm PUF-insulated steel panels',
+      'Sizes from 10×10 to 40×12 ft',
+      'Electrical, lighting and flooring pre-fitted',
+      'Fully relocatable — move it to your next site',
+    ],
     cta: 'See all Porta Cabins',
     note: CABIN_NOTE,
   },
@@ -90,8 +104,14 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/container-office-20ft-construction-site.webp',
     alt: 'New 20 ft container office with grilled windows and AC unit installed at an Indian project site',
     desc: '20 ft and 40 ft container offices built for heavy-duty project sites.',
+    desc2: 'Climate-controlled and wired at the factory, they arrive ready for your team to move in.',
     prices: CABIN_PRICES,
-    bullets: ['AC, wiring and interiors fitted before delivery', 'Ready to move in on arrival'],
+    bullets: [
+      '20 ft and 40 ft standard sizes',
+      'AC, wiring and interiors fitted before delivery',
+      'Corrugated steel body — built to last on site',
+      'Ready to move in on arrival',
+    ],
     cta: 'See all Container Offices',
     note: CABIN_NOTE,
   },
@@ -102,8 +122,14 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/container-cafe-food-outlet-service-window.webp',
     alt: 'Modern container café with fold-up service window, counter and outdoor seating at golden hour',
     desc: 'Cafés, kiosks and food outlets delivered ready to open.',
+    desc2: 'We handle the full build — layout, branding, plumbing and electrical — so you can start serving on day one.',
     prices: CAFE_PRICES,
-    bullets: ['Branding, plumbing and electrical done at the factory', 'Relocatable — move any time'],
+    bullets: [
+      'Custom exterior branding and signage',
+      'Plumbing and electrical fitted at the factory',
+      'Indoor and window-service layouts',
+      'Relocatable — move to a new location any time',
+    ],
     cta: 'See Container Café options',
     note: CABIN_NOTE,
   },
@@ -114,8 +140,14 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/labour-colony-prefab-worker-accommodation.webp',
     alt: 'Rows of new prefab labour colony units with walkway and drainage at an Indian construction project',
     desc: 'Complete worker accommodation camps, up to G+2.',
-    labourLine: 'Ground / G+1 / G+2 · 60×24 to 120×24 ft · from ₹750/sq ft',
-    bullets: ['Rooms, toilets and services set up in days', 'Individual units or multi-storey blocks'],
+    desc2: 'From a few rooms to a full multi-storey camp — delivered and assembled in days, not months.',
+    labourLine: 'Ground, G+1 and G+2 · 60×24 to 120×24 ft · from ₹750/sq ft',
+    bullets: [
+      'Individual units or multi-storey blocks',
+      'Attached toilets, ventilation and lighting',
+      'Full worksite camp set up within days',
+      'Built for large construction and infrastructure sites',
+    ],
     cta: 'See Labour Colony options',
   },
   {
@@ -125,8 +157,13 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/headers/panels-header.webp',
     alt: 'Insulated sandwich panels manufactured at a SAMAN Portable factory',
     desc: 'Insulated wall and roof panels at factory-direct rates.',
+    desc2: 'PPGI-coated PUF sandwich panels for portable cabins, prefab buildings, cold rooms and industrial roofs.',
     pufTable: true,
-    bullets: ['PPGI-coated PUF sandwich panels', 'Thicknesses 30mm to 150mm'],
+    bullets: [
+      'PPGI steel skin, rigid PUF core',
+      'Thicknesses 30mm to 150mm',
+      'Also in EPS, rockwool, glass wool and PIR',
+    ],
     cta: 'See all panel sizes & prices',
     note: PANEL_NOTE,
   },
@@ -137,27 +174,48 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/panels-factory.webp',
     alt: 'Insulated sandwich panels manufactured at a SAMAN Portable factory',
     desc: 'EPS, rockwool, glass wool and PIR core panels for walls, roofs and cold rooms.',
-    thicknessLine: '30 · 40 · 50 · 80 mm, up to 150mm',
-    bullets: ['Core options for fire, thermal and acoustic needs', 'Wall and roof profiles'],
+    desc2: 'Choose the core that fits your fire, thermal and acoustic needs — supplied and installed across India.',
+    thicknessLine: 'Standard thicknesses 30, 40, 50 and 80 mm, up to 150 mm',
+    bullets: [
+      'EPS — economical thermal insulation',
+      'Rockwool — fire-resistant, acoustic control',
+      'Glass wool — thermal and sound insulation',
+      'PIR — high thermal performance for cold rooms',
+    ],
     cta: 'Explore Sandwich Panels',
   },
   {
     key: 'wall',
     name: 'Wall Sheets',
+    href: '/product',
     img: '/homepage/cards/headers/panels-header.webp',
     alt: '',
     badge: 'Launching soon',
-    desc: 'Decorative and cladding wall sheets in a range of finishes.',
-    bullets: ['PVC, UV-marble and cladding options', 'For interiors and building façades'],
+    desc: 'Decorative and cladding wall sheets for interiors and building façades.',
+    desc2: 'A new range is on the way — PVC, UV-marble and cladding finishes for homes, offices and commercial spaces.',
+    bullets: [
+      'PVC and UV-marble finishes',
+      'Interior feature walls and façades',
+      'Easy to install over existing walls',
+      'Low-maintenance, durable surfaces',
+    ],
+    cta: 'Browse all products',
   },
   {
     key: 'roof',
     name: 'Roofing Sheets',
+    href: '/product/roofing-sheet',
     img: '/homepage/cards/panels-factory.webp',
-    alt: '',
-    badge: 'Launching soon',
+    alt: 'Insulated sandwich panels manufactured at a SAMAN Portable factory',
     desc: 'Metal, polycarbonate and PVC roofing sheets for every span.',
-    bullets: ['Profile and transparent options', 'Pairs with industrial sheds and PEB'],
+    desc2: 'Single-skin and profile roofing for industrial sheds, warehouses and PEB structures — supplied and fitted across India.',
+    bullets: [
+      'Galvanised and colour-coated metal profiles',
+      'Polycarbonate and transparent options for daylight',
+      'PVC and UPVC weather-resistant sheets',
+      'Pairs with our industrial sheds and PEB projects',
+    ],
+    cta: 'See Roofing Sheets',
   },
 ];
 
@@ -226,23 +284,32 @@ const PufTable = () => (
 
 const TabPanel = ({ tab, index }: { tab: Tab; index: number }) => (
   <div id={`mid-panel-${index}`} className="mid-panel" aria-labelledby={`mid-tab-label-${index}`}>
-    <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-10">
-      {/* Image LEFT (stacks on top < lg). Fixed 4:3 aspect box → space reserved, no CLS. */}
-      <div className="lg:w-[44%] lg:flex-shrink-0">
+    {/* Equal-height columns (items-stretch). Left image is a fixed 4:3 box centered in its
+        column so it never towers over the text; the expanded copy fills / centers in the
+        right column. Space is reserved by the aspect box → zero CLS. */}
+    <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10">
+      <div className="lg:flex lg:w-[44%] lg:flex-shrink-0 lg:items-center">
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-border)]">
-          <Image src={tab.img} alt={tab.alt} fill sizes="(max-width: 1024px) 100vw, 500px" className="object-cover" loading="lazy" />
+          <Image
+            src={tab.img}
+            alt={tab.alt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 500px"
+            className="object-cover"
+            loading="lazy"
+          />
         </div>
       </div>
 
-      {/* Details RIGHT */}
-      <div className="min-w-0 flex-1">
+      <div className="flex min-w-0 flex-1 flex-col justify-center">
         {tab.badge && (
-          <span className="mb-3 inline-flex items-center rounded-full bg-[var(--ds-surface-alt)] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[var(--ds-color-forest)]">
+          <span className="mb-3 inline-flex w-fit items-center rounded-full bg-[var(--ds-surface-alt)] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[var(--ds-color-forest)]">
             {tab.badge}
           </span>
         )}
         <h3 className="text-2xl font-bold tracking-tight text-[var(--ds-color-forest)] md:text-3xl">{tab.name}</h3>
         <p className="mt-2 text-base text-[var(--ds-text-secondary)]">{tab.desc}</p>
+        <p className="mt-2 text-sm leading-relaxed text-[var(--ds-text-secondary)]">{tab.desc2}</p>
 
         {tab.prices && <PriceChips prices={tab.prices} />}
         {tab.labourLine && (
@@ -264,7 +331,7 @@ const TabPanel = ({ tab, index }: { tab: Tab; index: number }) => (
         {tab.href && tab.cta && (
           <Link
             href={tab.href}
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[var(--ds-primary)] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[var(--ds-color-leaf-dark)]"
+            className="mt-6 inline-flex w-fit items-center gap-2 rounded-xl bg-[var(--ds-primary)] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[var(--ds-color-leaf-dark)]"
           >
             {tab.cta}
             <ArrowRight className="h-4 w-4" />
