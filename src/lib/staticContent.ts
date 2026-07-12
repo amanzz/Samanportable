@@ -434,8 +434,12 @@ export async function fetchProductsByCategoryPriority(
     'portable-office',
     'container-cafe',
     'industrial-sheds',
+    'roofing-sheets',
     'puf-panel',
     'pir-panel',
+    'eps-panel',
+    'rockwool-panel',
+    'glass-wool-panel',
   ];
   let all: any[] = [];
   for (const categorySlug of categoryPriority) {

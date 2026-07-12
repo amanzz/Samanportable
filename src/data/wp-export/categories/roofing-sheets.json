@@ -1,0 +1,27 @@
+{
+  "id": 3950,
+  "name": "Roofing Sheets",
+  "slug": "roofing-sheets",
+  "parent": 0,
+  "description": "",
+  "display": "default",
+  "image": null,
+  "menu_order": 0,
+  "count": 1,
+  "_links": {
+    "self": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products/categories/3950"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products/categories"
+      }
+    ]
+  },
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Roofing Sheets Archives | SAMAN</title>\n<meta name=\"robots\" content=\"nofollow, noindex\"/>"
+  }
+}

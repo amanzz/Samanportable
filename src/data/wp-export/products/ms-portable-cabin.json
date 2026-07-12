@@ -51,8 +51,8 @@
   "shipping_class": "",
   "shipping_class_id": 0,
   "reviews_allowed": true,
-  "average_rating": "0.00",
-  "rating_count": 0,
+  "average_rating": "5.00",
+  "rating_count": 1,
   "upsell_ids": [
     1050,
     899,
@@ -243,33 +243,7 @@
       "id": 8963,
       "key": "woodmart_wc_video_gallery",
       "value": {
-        "269233": {
-          "video_type": "mp4",
-          "upload_video_id": "",
-          "upload_video_url": "",
-          "youtube_url": "",
-          "vimeo_url": "",
-          "autoplay": "0",
-          "video_size": "contain",
-          "video_control": "theme",
-          "hide_gallery_img": "0",
-          "hide_information": "0",
-          "audio_status": "unmute"
-        },
-        "269232": {
-          "video_type": "mp4",
-          "upload_video_id": "",
-          "upload_video_url": "",
-          "youtube_url": "",
-          "vimeo_url": "",
-          "autoplay": "0",
-          "video_size": "contain",
-          "video_control": "theme",
-          "hide_gallery_img": "0",
-          "hide_information": "0",
-          "audio_status": "unmute"
-        },
-        "269231": {
+        "269229": {
           "video_type": "mp4",
           "upload_video_id": "",
           "upload_video_url": "",
@@ -295,7 +269,33 @@
           "hide_information": "0",
           "audio_status": "unmute"
         },
-        "269229": {
+        "269231": {
+          "video_type": "mp4",
+          "upload_video_id": "",
+          "upload_video_url": "",
+          "youtube_url": "",
+          "vimeo_url": "",
+          "autoplay": "0",
+          "video_size": "contain",
+          "video_control": "theme",
+          "hide_gallery_img": "0",
+          "hide_information": "0",
+          "audio_status": "unmute"
+        },
+        "269232": {
+          "video_type": "mp4",
+          "upload_video_id": "",
+          "upload_video_url": "",
+          "youtube_url": "",
+          "vimeo_url": "",
+          "autoplay": "0",
+          "video_size": "contain",
+          "video_control": "theme",
+          "hide_gallery_img": "0",
+          "hide_information": "0",
+          "audio_status": "unmute"
+        },
+        "269233": {
           "video_type": "mp4",
           "upload_video_id": "",
           "upload_video_url": "",

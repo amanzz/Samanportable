@@ -1,0 +1,42 @@
+[
+  {
+    "id": 3180,
+    "date_created": "2026-06-18T21:15:21",
+    "date_created_gmt": "2026-06-18T15:45:21",
+    "product_id": 229832,
+    "product_name": "Portable Toilet",
+    "product_permalink": "https://blog.samanportable.com/product/portable-toilet/",
+    "status": "approved",
+    "reviewer": "Mujahid Qasmi",
+    "reviewer_email": "mujahidpurnawi@gmail.com",
+    "review": "<p>We ordered a portable toilet unit for our site, and it has been useful from day one. The size is compact, but inside space is enough for regular use. The fittings were properly installed, and the door, ventilation, and flooring felt practical for daily site conditions.</p>\n<p>Cleaning and maintenance are also easy, which is very important for labour sites. The unit was delivered safely and placed without much trouble. Overall, it is a good portable toilet option for construction sites, events, or temporary work locations.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3180",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/229832"
+        }
+      ]
+    }
+  }
+]

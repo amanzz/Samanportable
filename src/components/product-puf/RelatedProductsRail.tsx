@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ShoppingBag } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export interface RelatedItem {
   title: string;
   href: string;
   image: string;
   blurb: string;
+  category?: string;
 }
 
 // The C15 micro-catalog is exactly 4 fixed pages, so relationships are known
@@ -68,6 +69,39 @@ export const PUF_CATALOG: Record<
   },
 };
 
+// C16 material-family siblings — the shared cross-link set for the single-product
+// C16 panel pages (EPS, PIR, and future Glass Wool). Each page renders the others
+// as its left sidebar (Ruling 4 / L1 default). Blurbs are Claude-Senior supplied,
+// truth-checked against the fixed price matrix and live pages. `puf` reuses the
+// already-approved PUF hub rail entry.
+export const C16_PANELS: Record<'puf' | 'pir' | 'eps' | 'rockwool' | 'sandwich', RelatedItem> = {
+  puf: PUF_CATALOG.hub,
+  pir: {
+    title: 'PIR Panel',
+    href: '/product/pir-panel',
+    image: '/images/pir-panel/pir-factory-stack-1200x675.webp',
+    blurb: 'Fire-improved polyisocyanurate foam panels for cold rooms, cleanrooms and premium insulation.',
+  },
+  eps: {
+    title: 'EPS Panel',
+    href: '/product/eps-panel',
+    image: '/images/eps-panel/eps-panel-wall-roof-stack-1x1.webp',
+    blurb: 'Budget-friendly lightweight insulated panels for dry-use walls and partitions. From ₹770 / sq mt.',
+  },
+  rockwool: {
+    title: 'Rockwool Panel',
+    href: '/product/rockwool-panel',
+    image: '/images/rockwool-panel/rockwool-panel-product-front-sq.webp',
+    blurb: 'Non-combustible stone wool core for fire-rated walls and acoustic enclosures. From ₹1,290 / sq mt.',
+  },
+  sandwich: {
+    title: 'Sandwich Panel',
+    href: '/product/sandwich-panel',
+    image: '/images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp',
+    blurb: 'Compare all five insulated cores and choose the right panel for your job. From ₹770 / sq mt.',
+  },
+};
+
 interface RelatedProductsRailProps {
   items: RelatedItem[];
   heading?: string;
@@ -77,6 +111,20 @@ interface RelatedProductsRailProps {
    *  inside the sidebar column, keeping heading hierarchy valid. */
   variant?: 'grid' | 'sidebar';
 }
+
+const getCategoryLabel = (item: RelatedItem) =>
+  item.category ||
+  (item.title.includes('PUF')
+    ? 'PUF Panels'
+    : item.title.includes('PIR')
+      ? 'PIR Panels'
+      : item.title.includes('EPS')
+        ? 'EPS Panels'
+        : item.title.includes('Rockwool')
+          ? 'Rockwool Panels'
+          : item.title.includes('Sandwich')
+            ? 'Sandwich Panels'
+            : 'Related product');
 
 const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', variant = 'grid' }: RelatedProductsRailProps) => {
   const isSidebar = variant === 'sidebar';
@@ -111,6 +159,7 @@ const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', va
             {isSidebar ? (
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-bold text-foreground">{item.title}</p>
+                <span className="inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">{getCategoryLabel(item)}</span>
                 <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
                   View <ArrowRight className="h-3 w-3" aria-hidden="true" />
                 </span>
@@ -118,10 +167,9 @@ const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', va
             ) : (
               <div className="flex flex-1 flex-col p-4">
                 <div className="mb-1 flex items-center gap-2">
-                  <ShoppingBag className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                   <h3 className="font-bold text-foreground">{item.title}</h3>
                 </div>
-                <p className="mb-3 flex-1 text-sm text-muted-foreground">{item.blurb}</p>
+                <span className="mb-3 inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">{getCategoryLabel(item)}</span>
                 <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
                   View <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>

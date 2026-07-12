@@ -17,7 +17,6 @@ import {
   Clock, 
   AlertCircle,
   ArrowLeft,
-  ShoppingBag,
   User
 } from 'lucide-react';
 import { formatPriceWithCurrency } from '@/lib/utils';
@@ -276,7 +275,7 @@ const MyOrders = () => {
               </div>
             ) : orders.length === 0 ? (
               <div className="text-center py-16">
-                <ShoppingBag className="w-24 h-24 text-muted-foreground mx-auto mb-6" />
+                <Package className="w-24 h-24 text-muted-foreground mx-auto mb-6" />
                 <h2 className="text-2xl font-semibold text-foreground mb-4">
                   No Orders Found
                 </h2>
@@ -442,7 +441,7 @@ const MyOrders = () => {
                   ))
                 ) : (
                   <div className="text-center py-16">
-                    <ShoppingBag className="w-24 h-24 text-muted-foreground mx-auto mb-6" />
+                    <Package className="w-24 h-24 text-muted-foreground mx-auto mb-6" />
                     <h2 className="text-2xl font-semibold text-foreground mb-4">
                       {orders.length === 0 ? 'No Orders Found' : 'No Orders Yet'}
                     </h2>
@@ -479,4 +478,3 @@ const MyOrders = () => {
 };
 
 export default MyOrders;
-

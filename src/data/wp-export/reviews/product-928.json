@@ -1,0 +1,42 @@
+[
+  {
+    "id": 3174,
+    "date_created": "2026-06-13T19:33:21",
+    "date_created_gmt": "2026-06-13T14:03:21",
+    "product_id": 928,
+    "product_name": "MS Portable Cabin",
+    "product_permalink": "https://blog.samanportable.com/product/portable-cabin/ms-portable-cabin/",
+    "status": "approved",
+    "reviewer": "sammer Alam",
+    "reviewer_email": "alamsammer780@gmail.com",
+    "review": "<p>We recently purchased an MS Portable Cabin for our construction site, and the overall experience was very good. The cabin was delivered on time and the build quality was better than expected. The structure feels strong and sturdy, and the finishing was neat both inside and outside.</p>\n<p>The team was helpful throughout the process and accommodated a few customization requests without any issues. Installation was completed quickly, which helped us start using the cabin immediately. It has been serving perfectly as our site office and provides a comfortable working space.</p>\n<p>Happy with the product quality, service, and professionalism. Would definitely recommend them to anyone looking for a reliable portable cabin solution.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3174",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/928"
+        }
+      ]
+    }
+  }
+]

@@ -2011,23 +2011,6 @@ All colors MUST be HSL. Green theme with professional look.
 }
 
 
-  
-  /* Badge animations */
-  .mobile-bottom-nav .cart-badge {
-    animation: pulse 2s infinite;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.1);
-    }
-  }
-  
   /* Safe area for devices with home indicator */
   .mobile-bottom-nav-safe-area {
     height: env(safe-area-inset-bottom, 1px);
