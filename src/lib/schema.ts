@@ -235,7 +235,7 @@ export const getLocalBusinessSchemaBengaluru = () => ({
     '@type': 'OfferCatalog',
     name: 'Portable Cabin & Prefab Structure Products',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,15,000' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
@@ -315,7 +315,7 @@ export const getLocalBusinessSchemaGreaterNoida = () => ({
     '@type': 'OfferCatalog',
     name: 'Portable Cabin & Prefab Structure Products',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,15,000' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
