@@ -1,0 +1,136 @@
+{
+  "id": 272774,
+  "wc_review_product_id": 272774,
+  "name": "Polycarbonate Roofing Sheet",
+  "slug": "polycarbonate-roofing-sheet",
+  "permalink": "https://blog.samanportable.com/product/polycarbonate-roofing-sheet/",
+  "date_created": "2026-07-12T00:00:00",
+  "date_created_gmt": "2026-07-11T18:30:00",
+  "date_modified": "2026-07-12T00:00:00",
+  "date_modified_gmt": "2026-07-11T18:30:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "hidden",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-C17-PCR-SUB-2026",
+  "price": "66",
+  "regular_price": "66",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": true,
+  "total_sales": 0,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "download_limit": -1,
+  "download_expiry": -1,
+  "external_url": "",
+  "button_text": "",
+  "tax_status": "taxable",
+  "tax_class": "",
+  "manage_stock": false,
+  "stock_quantity": null,
+  "backorders": "no",
+  "backorders_allowed": false,
+  "backordered": false,
+  "low_stock_amount": null,
+  "sold_individually": false,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "shipping_required": true,
+  "shipping_taxable": true,
+  "shipping_class": "",
+  "shipping_class_id": 0,
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "upsell_ids": [],
+  "cross_sell_ids": [],
+  "parent_id": 0,
+  "purchase_note": "",
+  "categories": [
+    {
+      "id": 3950,
+      "name": "Roofing Sheets",
+      "slug": "roofing-sheets"
+    }
+  ],
+  "tags": [],
+  "images": [
+    {
+      "id": 0,
+      "src": "/panel-images/polycarbonate-roofing-sheet/polycarbonate-roofing-sheet-clear-solid.webp",
+      "name": "polycarbonate-roofing-sheet-clear-solid",
+      "alt": "Clear solid polycarbonate roofing sheet held against the sky"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/polycarbonate-roofing-sheet/polycarbonate-roofing-sheet-multiwall-flutes.webp",
+      "name": "polycarbonate-roofing-sheet-multiwall-flutes",
+      "alt": "Multiwall polycarbonate roofing sheet flutes close-up"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/polycarbonate-roofing-sheet/polycarbonate-roofing-sheet-corrugated-profile.webp",
+      "name": "polycarbonate-roofing-sheet-corrugated-profile",
+      "alt": "Corrugated polycarbonate roofing sheet profile section"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/polycarbonate-roofing-sheet/polycarbonate-roofing-sheet-stack-masking-film.webp",
+      "name": "polycarbonate-roofing-sheet-stack-masking-film",
+      "alt": "Stack of UV-coated polycarbonate roofing sheets with masking film"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/polycarbonate-roofing-sheet/polycarbonate-roofing-sheet-pergola-detail.webp",
+      "name": "polycarbonate-roofing-sheet-pergola-detail",
+      "alt": "Solid polycarbonate roofing sheet fixed on a pergola frame"
+    }
+  ],
+  "attributes": [],
+  "default_attributes": [],
+  "variations": [],
+  "grouped_products": [],
+  "menu_order": 0,
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#8377;</span>66</bdi></span>",
+  "related_ids": [],
+  "meta_data": [
+    {
+      "id": 0,
+      "key": "rank_math_robots",
+      "value": [
+        "noindex"
+      ]
+    },
+    {
+      "id": 0,
+      "key": "rank_math_focus_keyword",
+      "value": "polycarbonate roofing sheet"
+    }
+  ],
+  "stock_status": "instock",
+  "has_options": false,
+  "_links": {
+    "self": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products/272774"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products"
+      }
+    ]
+  },
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Polycarbonate Roofing Sheet - Draft | SAMAN</title>\n<meta name=\"robots\" content=\"nofollow, noindex\"/>"
+  }
+}
