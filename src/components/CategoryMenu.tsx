@@ -28,6 +28,7 @@ const CategoryMenu = () => {
     { name: 'Security Cabin', slug: 'security-cabins', href: '/product/security-cabins' },
     { name: 'Portable Toilet', slug: 'portable-toilet', href: '/product/portable-toilet' },
     { name: 'Industrial Shed', slug: 'industrial-sheds', href: '/product/industrial-sheds' },
+    { name: 'Roofing Sheets', slug: 'roofing-sheets', href: '/product/roofing-sheet' },
     { name: 'PEB Construction', slug: 'peb-constructions', href: '/product/peb-constructions' },
     { name: 'Pre-Engineered Building', slug: 'pre-engineered-buildings', href: '/product/pre-engineered-buildings' },
     { name: 'Prefab Building', slug: 'prefab-buildings', href: '/product/prefab-buildings' },

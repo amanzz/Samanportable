@@ -121,7 +121,7 @@ const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
                   />
                   {/* Badge */}
                   {item.badge && (
-                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold cart-badge shadow-lg">
+                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold nav-badge shadow-lg">
                       {item.badge > 99 ? '99+' : item.badge}
                     </div>
                   )}

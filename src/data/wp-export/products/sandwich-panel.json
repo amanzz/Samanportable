@@ -1,0 +1,28 @@
+{
+  "id": 272770,
+  "wc_review_product_id": 272770,
+  "name": "Sandwich Panel",
+  "slug": "sandwich-panel",
+  "date_created": "2026-07-09T00:00:00",
+  "status": "publish",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-C16-SWP-HUB-2026",
+  "price": "770",
+  "regular_price": "770",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    { "id": 3948, "name": "Sandwich Panels", "slug": "sandwich-panel" }
+  ],
+  "images": [
+    { "id": 1, "src": "/panel-images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp", "name": "Sandwich Panel", "alt": "", "srcset": "", "sizes": "", "thumbnail": "/panel-images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp" }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": { "length": "", "width": "", "height": "" }
+}

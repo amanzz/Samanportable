@@ -1,0 +1,42 @@
+[
+  {
+    "id": 3176,
+    "date_created": "2026-06-17T13:17:38",
+    "date_created_gmt": "2026-06-17T07:47:37",
+    "product_id": 3825,
+    "product_name": "Labor Cottages",
+    "product_permalink": "https://blog.samanportable.com/product/labor-colony/labor-cottages/",
+    "status": "approved",
+    "reviewer": "Md Dilbar",
+    "reviewer_email": "mddilbar8660@gmail.com",
+    "review": "<p>We required a labour colony for our construction project and were looking for a durable and comfortable solution for our workers. The team delivered the labour colony on time and the quality was better than expected. The rooms are spacious, well-ventilated, and suitable for long-term use.</p>\n<p>The installation process was smooth and professional. The structure feels strong, and the finishing work was neat. Our workers are comfortable staying there, which has helped improve site management and productivity. Overall, a reliable company with good service and quality products. Highly recommended for labour accommodation projects.</p>\n",
+    "rating": 5,
+    "verified": false,
+    "_links": {
+      "self": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews/3176",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/reviews"
+        }
+      ],
+      "up": [
+        {
+          "href": "https://blog.samanportable.com/wp-json/wc/v3/products/3825"
+        }
+      ]
+    }
+  }
+]

@@ -51,8 +51,8 @@
   "shipping_class": "",
   "shipping_class_id": 0,
   "reviews_allowed": true,
-  "average_rating": "0.00",
-  "rating_count": 0,
+  "average_rating": "5.00",
+  "rating_count": 1,
   "upsell_ids": [],
   "cross_sell_ids": [],
   "parent_id": 0,
@@ -230,20 +230,7 @@
       "id": 37941,
       "key": "woodmart_wc_video_gallery",
       "value": {
-        "271295": {
-          "video_type": "mp4",
-          "upload_video_id": "",
-          "upload_video_url": "",
-          "youtube_url": "",
-          "vimeo_url": "",
-          "autoplay": "0",
-          "video_size": "contain",
-          "video_control": "theme",
-          "hide_gallery_img": "0",
-          "hide_information": "0",
-          "audio_status": "unmute"
-        },
-        "271301": {
+        "271293": {
           "video_type": "mp4",
           "upload_video_id": "",
           "upload_video_url": "",
@@ -269,6 +256,19 @@
           "hide_information": "0",
           "audio_status": "unmute"
         },
+        "271295": {
+          "video_type": "mp4",
+          "upload_video_id": "",
+          "upload_video_url": "",
+          "youtube_url": "",
+          "vimeo_url": "",
+          "autoplay": "0",
+          "video_size": "contain",
+          "video_control": "theme",
+          "hide_gallery_img": "0",
+          "hide_information": "0",
+          "audio_status": "unmute"
+        },
         "271298": {
           "video_type": "mp4",
           "upload_video_id": "",
@@ -282,7 +282,7 @@
           "hide_information": "0",
           "audio_status": "unmute"
         },
-        "271293": {
+        "271301": {
           "video_type": "mp4",
           "upload_video_id": "",
           "upload_video_url": "",

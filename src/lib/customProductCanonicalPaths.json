@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "roofing-sheet",
+    "categorySlug": "roofing-sheets",
+    "canonicalPath": "/product/roofing-sheet"
+  },
+  {
+    "slug": "sandwich-panel",
+    "categorySlug": "sandwich-panel",
+    "canonicalPath": "/product/sandwich-panel"
+  },
+  {
+    "slug": "puf-panel",
+    "categorySlug": "puf-panel",
+    "canonicalPath": "/product/puf-panel"
+  },
+  {
+    "slug": "cold-storage-puf-panel",
+    "categorySlug": "puf-panel",
+    "canonicalPath": "/product/puf-panel/cold-storage-puf-panel"
+  },
+  {
+    "slug": "puf-panel-house",
+    "categorySlug": "puf-panel",
+    "canonicalPath": "/product/puf-panel/puf-panel-house"
+  },
+  {
+    "slug": "puf-panel-price",
+    "categorySlug": "puf-panel",
+    "canonicalPath": "/product/puf-panel/puf-panel-price"
+  },
+  {
+    "slug": "puf-panel-roofing",
+    "categorySlug": "puf-panel",
+    "canonicalPath": "/product/puf-panel/puf-panel-roofing"
+  },
+  {
+    "slug": "puf-panel-specification",
+    "categorySlug": "puf-panel",
+    "canonicalPath": "/product/puf-panel/puf-panel-specification"
+  },
+  {
+    "slug": "puf-sandwich-panel",
+    "categorySlug": "puf-panel",
+    "canonicalPath": "/product/puf-panel/puf-sandwich-panel"
+  },
+  {
+    "slug": "puf-wall-panel",
+    "categorySlug": "puf-panel",
+    "canonicalPath": "/product/puf-panel/puf-wall-panel"
+  },
+  {
+    "slug": "pir-panel",
+    "categorySlug": "pir-panel",
+    "canonicalPath": "/product/pir-panel"
+  },
+  {
+    "slug": "rockwool-panel",
+    "categorySlug": "rockwool-panel",
+    "canonicalPath": "/product/rockwool-panel"
+  },
+  {
+    "slug": "eps-panel",
+    "categorySlug": "eps-panel",
+    "canonicalPath": "/product/eps-panel"
+  },
+  {
+    "slug": "glass-wool-panel",
+    "categorySlug": "glass-wool-panel",
+    "canonicalPath": "/product/glass-wool-panel"
+  }
+]

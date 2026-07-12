@@ -1,6 +1,16 @@
 /** @type {import('next').NextConfig} */
 // AUTO-GENERATED CSV redirects (572 entries) – do not edit redirects-from-csv.js by hand.
 const csvRedirects = require('./redirects-from-csv');
+const customProductCanonicalPaths = require('./src/lib/customProductCanonicalPaths.json');
+
+const customProductDuplicateRedirects = customProductCanonicalPaths
+  .map(({ slug, categorySlug, canonicalPath }) => ({
+    source: `/product/${categorySlug}/${slug}`,
+    destination: `https://www.samanportable.com${canonicalPath}`,
+    statusCode: 301,
+  }))
+  .filter(({ source, destination }) => source !== new URL(destination).pathname);
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -155,6 +165,11 @@ const nextConfig = {
   // Force HTTPS and WWW redirects
   async redirects() {
     const redirects = [
+      // Custom product pages must not also resolve at their WooCommerce
+      // category-nested mirror paths. Keep all cards/sitemaps on the canonical
+      // custom URL and send any discovered duplicates there.
+      ...customProductDuplicateRedirects,
+
       // Product singular-to-canonical plural redirects (owner-approved 2026-07-01).
       // Absolute destinations keep these migration URLs single-hop.
       { source: '/product/container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
@@ -1953,6 +1968,11 @@ const nextConfig = {
 
   // Performance optimizations - ENHANCED
   experimental: {
+    // Build-time static-generation concurrency cap (applies to `next build` only):
+    // limits prerender worker count so the getStaticProps fetch burst stays under
+    // the shared LiteSpeed host's safe ~4 concurrent. Does NOT affect runtime
+    // SSR/getServerSideProps or ISR on-demand revalidation concurrency.
+    cpus: 3,
     optimizeCss: false,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
     // Reduce bundle size warnings

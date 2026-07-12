@@ -7,7 +7,6 @@ import { useState, useMemo, useCallback, useEffect } from 'react';
 import { Button } from '../../../components/ui/button';
 import { Badge } from '../../../components/ui/badge';
 import { Card } from '../../../components/ui/card';
-import { ScrollArea } from '../../../components/ui/scroll-area';
 import MobileBottomNav from '../../../components/MobileBottomNav';
 import { 
   Star, 
@@ -23,11 +22,14 @@ import { generateProductMetaDescription, generateProductTabContent } from '../..
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
 import ManufacturerTrustStrip from '../../../components/ManufacturerTrustStrip';
+import RelatedProductRail from '../../../components/product/RelatedProductRail';
 import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
 import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
+import { cleanText } from '../../../lib/merchantFeed';
+import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
@@ -123,6 +125,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           name: p.name,
           slug: p.slug,
           price: p.price,
+          short_description: p.short_description || '',
           average_rating: p.average_rating,
           rating_count: p.rating_count,
           categories: (p.categories || []).slice(0, 1).map(c => ({ id: c.id, name: c.name, slug: c.slug })),
@@ -304,12 +307,28 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         price: p.price || 'Contact for pricing',
         rating: parseFloat(p.average_rating) || 0,
         ratingCount: Number(p.rating_count) || 0,
-        description: p.description || '',
+        description: cleanText((p as any).short_description || p.description || '', 130),
         url,
         seoAnchorText: p.name,
       };
     });
   }, [relatedProducts]);
+
+  const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
+    const currentSlug = transformedProduct?.slug || slug;
+    if (isC16PanelSlug(currentSlug)) {
+      return getC16PanelSiblingRail(currentSlug);
+    }
+
+    return transformedRelatedProducts.map((relatedProduct) => ({
+      title: relatedProduct.seoAnchorText || relatedProduct.title,
+      href: relatedProduct.url || `/product/${relatedProduct.categorySlug || 'default'}/${relatedProduct.slug}`,
+      category: relatedProduct.category,
+      blurb: relatedProduct.description || 'Factory-direct product from SAMAN Portable. Open the product page for sizes, specifications and quotation details.',
+      imageSrc: relatedProduct.image && relatedProduct.image !== '/placeholder.svg' ? relatedProduct.image : undefined,
+      imageAlt: relatedProduct.title,
+    }));
+  }, [slug, transformedProduct?.slug, transformedRelatedProducts]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
@@ -407,107 +426,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
                 {/* Left Sidebar - Related Products (Desktop Only) */}
                 <div className="hidden lg:block lg:col-span-3">
-                  <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm h-fit max-h-[80vh]">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Package className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <h2 className="text-xl font-bold text-foreground">Related Products</h2>
-                        <p className="text-sm text-muted-foreground">Explore similar items</p>
-                      </div>
-                    </div>
-                    <ScrollArea className="h-[60vh] pr-4">
-                      {transformedRelatedProducts.length > 0 ? (
-                        <div className="space-y-3 related-products-list">
-                          {transformedRelatedProducts.map((relatedProduct) => (
-                            <div key={relatedProduct.id} className="group related-product-item">
-                              <Link 
-                                href={`/product/${relatedProduct.categorySlug || 'default'}/${relatedProduct.slug}`} 
-                                className={cn(
-                                  "block p-4 rounded-lg border transition-all duration-200 hover:shadow-md relative",
-                                  relatedProduct.slug === slug 
-                                    ? "bg-[#126e4c] border-[#126e4c] shadow-lg ring-2 ring-[#126e4c]/30" 
-                                    : "bg-card border-border hover:border-primary/30 hover:bg-accent/5"
-                                )}
-                              >
-                                {/* Current Product Indicator */}
-                                {relatedProduct.slug === slug && (
-                                  <div className="absolute -top-1 -right-1 bg-[#126e4c] text-white text-xs px-2 py-0.5 rounded-md border border-white shadow-sm font-medium z-10">
-                                    Current
-                                  </div>
-                                )}
-                                <div className="flex items-start space-x-3">
-                                  {/* Product thumbnail */}
-                                  <div className={cn(
-                                    "relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg border-2",
-                                    relatedProduct.slug === slug 
-                                      ? "border-white shadow-md" 
-                                      : "border-border group-hover:border-primary/50"
-                                  )}>
-                                    <Image
-                                      src={relatedProduct.image || '/placeholder.svg'}
-                                      alt={relatedProduct.title}
-                                      width={96}
-                                      height={96}
-                                      className="h-full w-full object-cover"
-                                      onError={(event) => {
-                                        event.currentTarget.src = '/placeholder.svg';
-                                      }}
-                                    />
-                                  </div>
-                                  
-                                  {/* Product Info */}
-                                  <div className="flex-1 min-w-0">
-                                    <h4 className={cn(
-                                      "font-medium text-sm leading-tight mb-1 transition-colors line-clamp-2",
-                                      relatedProduct.slug === slug 
-                                        ? "text-white font-semibold" 
-                                        : "text-foreground group-hover:text-primary"
-                                    )}>
-                                      {relatedProduct.title}
-                                    </h4>
-                                    
-                                    {/* Category Badge */}
-                                    <div className="flex items-center space-x-1 flex-wrap gap-y-1">
-                                      <Badge 
-                                        variant="secondary"
-                                        className={cn(
-                                          "text-xs px-2 py-0.5 whitespace-nowrap",
-                                          relatedProduct.slug === slug 
-                                            ? "bg-white/20 text-white border-white/30" 
-                                            : ""
-                                        )}
-                                      >
-                                        {relatedProduct.category}
-                                      </Badge>
-                                    </div>
-                                  </div>
-                                  
-                                  {/* Arrow Icon */}
-                                  <div className={cn(
-                                    "w-4 h-4 transition-transform group-hover:translate-x-1 flex items-center justify-center mr-1 mt-1",
-                                    relatedProduct.slug === slug 
-                                      ? "text-white" 
-                                      : "text-muted-foreground group-hover:text-primary"
-                                  )}>
-                                    <ArrowLeft className="w-4 h-4 rotate-180" />
-                                  </div>
-                                </div>
-                              </Link>
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="text-center text-muted-foreground py-8">
-                          <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-muted flex items-center justify-center">
-                            <Package className="w-6 h-6 text-muted-foreground" />
-                          </div>
-                          <p className="text-sm">No products in this category.</p>
-                        </div>
-                      )}
-                    </ScrollArea>
-                  </Card>
+                  <RelatedProductRail
+                    items={relatedRailItems}
+                    currentHref={`/product/${category}/${slug}`}
+                    className="h-fit max-h-[80vh] bg-white/80 shadow-lg"
+                    scroll
+                  />
                 </div>
 
                 {/* Middle Section - Product Images */}
@@ -747,6 +671,10 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                       </div>
                     </div>
                   </Card>
+                </div>
+
+                <div className="lg:hidden">
+                  <RelatedProductRail items={relatedRailItems} currentHref={`/product/${category}/${slug}`} />
                 </div>
               </div>
 

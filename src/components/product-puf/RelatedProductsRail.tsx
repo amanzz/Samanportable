@@ -6,8 +6,8 @@ export interface RelatedItem {
   title: string;
   href: string;
   image: string;
-  category: string;
-  blurb: string;
+  category?: string;
+  blurb?: string;
 }
 
 // The C15 micro-catalog is exactly 4 fixed pages, so relationships are known
@@ -130,6 +130,20 @@ interface RelatedProductsRailProps {
   variant?: 'grid' | 'sidebar';
 }
 
+const getCategoryLabel = (item: RelatedItem) =>
+  item.category ||
+  (item.title.includes('PUF')
+    ? 'PUF Panels'
+    : item.title.includes('PIR')
+      ? 'PIR Panels'
+      : item.title.includes('EPS')
+        ? 'EPS Panels'
+        : item.title.includes('Rockwool')
+          ? 'Rockwool Panels'
+          : item.title.includes('Sandwich')
+            ? 'Sandwich Panels'
+            : 'Related product');
+
 const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', variant = 'grid' }: RelatedProductsRailProps) => {
   const isSidebar = variant === 'sidebar';
   const Heading = isSidebar ? 'h3' : 'h2';
@@ -166,15 +180,15 @@ const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', va
             {isSidebar ? (
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-bold text-foreground">{item.title}</p>
-                <span className="mt-1 inline-flex rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">
-                  {item.category}
+                <span className="mt-1 inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">
+                  {getCategoryLabel(item)}
                 </span>
               </div>
             ) : (
               <div className="flex flex-1 flex-col p-4">
                 <h3 className="font-bold text-foreground">{item.title}</h3>
-                <span className="mt-2 inline-flex w-fit rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">
-                  {item.category}
+                <span className="mt-2 inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">
+                  {getCategoryLabel(item)}
                 </span>
               </div>
             )}
