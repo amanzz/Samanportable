@@ -12,7 +12,7 @@ export const homepageFaqs: HomepageFaq[] = [
   {
     question: 'How much does a portable cabin cost in India?',
     answer:
-      'Prices start at ₹1,45,000 for a 10×10 ft security cabin. Standard site offices (10×20 ft) from ₹2,55,000. Large container offices (40×10 ft) range ₹3,35,000–₹5,00,000. Per sq ft cost: ₹900–₹2,500 depending on spec and fittings. We provide a fixed-price quote within 48 hours — no hidden charges.',
+      'Standard rates are ₹1,050 per sq ft for cabins and container offices (₹1,150 for units under 200 sq ft) and ₹750 per sq ft for labour colonies. Use the price calculator on this page for an instant estimate by size and specification, or send your requirement for a fixed-price quote within 48 hours. All prices are ex-GST, base specification — no hidden charges.',
   },
   {
     question: 'What is the difference between a portable cabin and a prefab structure?',
@@ -27,7 +27,7 @@ export const homepageFaqs: HomepageFaq[] = [
   {
     question: 'What sizes are available? Can I get a custom size?',
     answer:
-      'Standard sizes: 10×10 ft, 10×14 ft, 10×20 ft, 20×10 ft, 30×10 ft, 40×10 ft, 40×12 ft. Custom sizes available at no extra charge — we design to your site requirements. Custom orders of 1–5 units delivered within the standard 21-day timeline.',
+      'Popular sizes are 10×10, 20×10, 30×10 and 40×10 ft, with nine standard sizes in all — see the rate card on this page. Custom sizes are available at no extra charge; we design to your site requirements. Custom orders of 1–5 units are delivered within the standard 7–21 day timeline.',
   },
   {
     question: 'How long does delivery and installation take?',

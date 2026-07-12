@@ -3,9 +3,10 @@ import { ChevronDown, HelpCircle } from 'lucide-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
 import { homepageFaqs } from '@/data/homepageFaqs';
 
-// Single source of truth — the same array also generates the FAQPage JSON-LD
-// (see getHomepageFAQSchema in src/lib/schema.ts), so schema always matches the page.
-const faqs = homepageFaqs;
+// T6 §7 — homepage shows the first five FAQs only. The FAQPage JSON-LD
+// (getHomepageFAQSchema in src/lib/schema.ts) slices to the same five, so the
+// schema always matches visible content (G6). The full homepageFaqs data is kept.
+const faqs = homepageFaqs.slice(0, 5);
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

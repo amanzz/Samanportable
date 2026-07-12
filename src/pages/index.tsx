@@ -1,29 +1,27 @@
 import { GetStaticProps } from 'next';
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Head from 'next/head';
 
 // Import Layout component
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
+import { dsCssVariables } from '@/components/ds/tokens';
 import { generateOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema, getHomepageLocalBusinessGraphSchema } from '@/lib/schema';
 import { pageSEO, siteConfig } from '@/config/seo';
 
 // Dynamic imports for below-the-fold sections to improve LCP
-const TrustBar = dynamic(() => import('@/components/TrustBar'), {
+const CalculatorStrip = dynamic(() => import('@/components/CalculatorStrip'), {
   ssr: true,
   loading: () => (
-    <div className="w-full h-24 bg-[#F5F7FA] animate-pulse" />
+    <div className="w-full h-48 bg-[var(--ds-surface-inverse)] animate-pulse" />
   ),
 });
 
-const CertificationTrustStrip = dynamic(() => import('@/components/CertificationTrustStrip'), {
+const PopularSizes = dynamic(() => import('@/components/PopularSizes'), {
   ssr: true,
   loading: () => (
-    <div className="w-full h-16 bg-[#0A3D2A] animate-pulse" />
+    <div className="w-full h-96 bg-white animate-pulse" />
   ),
 });
 
@@ -34,10 +32,12 @@ const ServicesSection = dynamic(() => import('@/components/ServicesSection'), {
   ),
 });
 
-const SpecsTable = dynamic(() => import('@/components/SpecsTable'), {
+// T6.18 — category grid replaces the SpecsTable slot (SpecsTable.tsx stays on disk,
+// no longer mounted). Kept SSR so the tile <a> links are crawlable in the HTML.
+const CategoryGrid = dynamic(() => import('@/components/CategoryGrid'), {
   ssr: true,
   loading: () => (
-    <div className="w-full h-96 bg-gray-50 animate-pulse" />
+    <div className="w-full h-96 bg-white animate-pulse" />
   ),
 });
 
@@ -48,38 +48,18 @@ const ClientsSection = dynamic(() => import('@/components/ClientsSection'), {
   ),
 });
 
-const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs'), {
+const HomepageCertifications = dynamic(() => import('@/components/HomepageCertifications'), {
   ssr: true,
   loading: () => (
-    <div className="w-full h-96 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse rounded-lg" />
+    <div className="w-full h-96 bg-white animate-pulse" />
   ),
 });
 
-const StatsSection = dynamic(() => import('@/components/StatsSection'), {
+const ProcessSteps = dynamic(() => import('@/components/ProcessSteps'), {
   ssr: true,
   loading: () => (
-    <div className="w-full h-32 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse rounded-lg" />
+    <div className="w-full h-96 bg-white animate-pulse" />
   ),
-});
-
-const ScrollToTop = dynamic(() => import('@/components/ScrollToTop'), {
-  ssr: false, // Defer scroll-to-top button
-  loading: () => null,
-});
-
-const ProductShowcase = dynamic(() => import('@/components/ProductShowcase'), {
-  ssr: true,
-  loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse" />,
-});
-
-const BlogShowcase = dynamic(() => import('@/components/BlogShowcase'), {
-  ssr: true,
-  loading: () => <div className="w-full h-96 bg-gray-50 animate-pulse" />,
-});
-
-const ModularSolutionsSEO = dynamic(() => import('@/components/ModularSolutionsSEO'), {
-  ssr: true,
-  loading: () => <div className="w-full h-64 bg-gray-50 animate-pulse" />,
 });
 
 const FAQSection = dynamic(() => import('@/components/FAQSection'), {
@@ -89,93 +69,41 @@ const FAQSection = dynamic(() => import('@/components/FAQSection'), {
 
 const CTAStrip = dynamic(() => import('@/components/CTAStrip'), {
   ssr: true,
-  loading: () => <div className="w-full h-48 bg-[#0A3D2A] animate-pulse" />,
+  loading: () => <div className="w-full h-48 bg-[var(--ds-surface-inverse)] animate-pulse" />,
 });
 
-// Lightweight product interface for homepage
-interface LightweightProduct {
-  id: number;
-  name: string;
-  slug: string;
-  price: string;
-  sale_price: string;
-  on_sale: boolean;
-  featured_image: string;
-  category: string;
-  category_slug: string;
-}
+const ScrollToTop = dynamic(() => import('@/components/ScrollToTop'), {
+  ssr: false, // Defer scroll-to-top button
+  loading: () => null,
+});
 
-interface LightweightBlogPost {
-  id: number;
-  title: string;
-  slug: string;
-  excerpt: string;
-  date: string;
-  featured_image: string;
-}
-
-interface HomePageProps {
-  featuredProducts: LightweightProduct[];
-  recentBlogPosts: LightweightBlogPost[];
-}
-
-export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  try {
-    // Static content layer: reads exported files — no WordPress call at build time.
-    const { fetchBlogPosts, fetchProductsByCategoryPriority } = await import('@/lib/staticContent');
-
-    // Fetch featured products (15 items for slider) from specific categories
-    // "Portable Cabin", "Container Offices", "Porta Cabins", "Labor Colony", "Portable Office", "Container Cafe"
-    const productsResponse = await fetchProductsByCategoryPriority(1, 15);
-    const lightweightProducts: LightweightProduct[] = (productsResponse.products || []).map(product => ({
-      id: product.id,
-      name: product.name,
-      slug: product.slug,
-      price: product.price,
-      sale_price: product.sale_price,
-      on_sale: product.on_sale,
-      featured_image: product.images[0]?.src || '',
-      category: product.category_name || (product.categories && product.categories[0]?.name) || 'Uncategorized',
-      category_slug: product.category_slug || (product.categories && product.categories[0]?.slug) || 'uncategorized',
-    }));
-
-    // Fetch recent blog posts server-side (12 items for slider)
-    const blogPostsResponse = await fetchBlogPosts(1, 12);
-
-    const lightweightBlogPosts: LightweightBlogPost[] = (blogPostsResponse.posts || [])
-      // Filter out doorway posts (slugs containing 'for-sale-in-')
-      .filter((post: any) => !post.slug?.includes('for-sale-in-'))
-      // Limit to 3 posts on homepage
-      .slice(0, 3)
-      .map((post: any) => ({
-        id: post.id,
-        title: post.title?.rendered || '',
-        slug: post.slug,
-        excerpt: post.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 150) || '',
-        date: new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }),
-        featured_image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/placeholder-blog.jpg',
-      }));
-
-    return {
-      props: {
-        featuredProducts: lightweightProducts,
-        recentBlogPosts: lightweightBlogPosts,
-      },
-      revalidate: 3600,
-    };
-  } catch (error) {
-    console.error('Error fetching data for home page:', error);
-    return {
-      props: {
-        featuredProducts: [],
-        recentBlogPosts: [],
-      },
-      revalidate: 3600,
-    };
+// T6: the homepage no longer renders the product grid or blog feed (they live on
+// /product and /blog), so no product/blog data is fetched here. ISR retained.
+// T6.18: read the real per-category product counts from the WooCommerce export at
+// BUILD TIME (never hardcoded) so the category grid chips stay in sync with the data.
+export const getStaticProps: GetStaticProps = async () => {
+  const fs = await import('fs');
+  const path = await import('path');
+  const dir = path.join(process.cwd(), 'src/data/wp-export/categories');
+  const categoryCounts: Record<string, number> = {};
+  for (const file of fs.readdirSync(dir)) {
+    if (!file.endsWith('.json')) continue;
+    try {
+      const cat = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+      if (cat && typeof cat.slug === 'string' && typeof cat.count === 'number') {
+        categoryCounts[cat.slug] = cat.count;
+      }
+    } catch {
+      // skip unreadable/malformed category files
+    }
   }
+  return {
+    props: { categoryCounts },
+    revalidate: 3600,
+  };
 };
 
-const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
+const HomePage = ({ categoryCounts }: { categoryCounts: Record<string, number> }) => {
   return (
     <Layout>
       <Head>
@@ -219,114 +147,47 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
         ]}
       />
 
-      <main>
+      <main data-ds-root="">
+        {/* T6.21: the homepage renders under Layout (not PageShell), so the DS
+            token custom properties are otherwise never emitted here and every
+            var(--ds-*) used by the token-remediated homepage sections resolved
+            to nothing (dark sections went transparent → white-on-white). Inject
+            the same [data-ds-root] variable block PageShell uses, scoped to the
+            homepage main only. Generated from tokens.ts — the single source of
+            truth for hex — so components stay hex-free. */}
+        <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}` }} />
+
         {/* 1. Hero Section - Critical for LCP */}
         <HeroSection />
 
-        {/* 2. Trust Bar ★ NEW */}
-        <TrustBar />
+        {/* 1b. Certifications & Recognition (T6.16) — directly after hero */}
+        <HomepageCertifications />
 
-        {/* 2b. Certification Trust Strip ★ NEW (links to /about-us#certifications) */}
-        <CertificationTrustStrip />
+        {/* 2. Calculator Strip (T6 §2) — full-width price-transparency band under hero */}
+        <CalculatorStrip />
 
-        {/* 3. Products Section (6 cards) */}
+        {/* 2b. Most In Demand — popular sizes showcase (T6.1), between calculator and cards */}
+        <PopularSizes />
+
+        {/* 3. Six category cards (T2.2) */}
         <ServicesSection />
 
-        {/* 4. Specs Table ★ NEW */}
-        <SpecsTable />
+        {/* 4. Product category grid (T6.18) — replaces the old specs section */}
+        <CategoryGrid counts={categoryCounts} />
 
-        {/* 5. Clients Section ★ NEW (replaces TestimonialsSection) */}
+        {/* 5. Clients + testimonials (ClientsSection already merges both) */}
         <ClientsSection />
 
-        {/* 6. Why Choose Us (includes Process Steps) */}
-        <WhyChooseUs />
+        {/* 6. Process steps — compressed single-view layout (T6 §6) */}
+        <ProcessSteps />
 
-        {/* 7. Stats Bar */}
-        <StatsSection />
-
-        {/* 8. Our Work in Action */}
-        <section className="py-16 md:py-32 bg-[#F8FAF9] relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 pointer-events-none" />
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-16 md:mb-20">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A3D2A]/5 text-[#0A3D2A] font-bold text-xs uppercase tracking-widest mb-6 border border-[#0A3D2A]/10">
-                Project Showcase
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-                Real Projects, <span className="text-[#0A3D2A]">Proven Quality</span>
-              </h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
-                A curated selection of our high-performance modular installations across India&apos;s industrial landscapes.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-              {[
-                { src: "/Prefab solutions/work/portable-cabin-labour-colony-setup.webp", alt: "Portable cabin labour colony setup for construction site in India", label: "Infrastructure", title: "Mega Labour Colony" },
-                { src: "/Prefab solutions/work/saman-portable-modular-office-cabin.webp", alt: "Saman Portable modular office cabin with custom finish", label: "Corporate", title: "Premium Modular Office" },
-                { src: "/Prefab solutions/work/saman-prefab-container-office-unit.webp", alt: "Saman prefab container office unit installed at industrial site", label: "Industrial", title: "Smart Site HQ" },
-                { src: "/Prefab solutions/work/portable-cabin-site-office-bangalore.webp", alt: "Portable cabin site office installed in Bangalore by Saman Portable", label: "Civil", title: "Bangalore Metro Unit" },
-                { src: "/Prefab solutions/work/container-office-exterior-india.webp", alt: "Modern container office exterior for industrial use in India", label: "Retail", title: "Custom Container Hub" },
-                { src: "/Prefab solutions/work/prefab-cabin-installation-worksite.webp", alt: "Prefab cabin installation at construction worksite by Saman Portable", label: "Process", title: "Rapid Deployment" },
-              ].map((image, index) => (
-                <div
-                  key={index}
-                  className="group relative overflow-hidden rounded-2xl md:rounded-[2.5rem] bg-white shadow-2xl shadow-gray-200/50 border border-gray-100"
-                >
-                  <div className="relative h-80 w-full overflow-hidden">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    
-                    <div className="absolute top-6 left-6">
-                      <span className="text-[10px] font-black text-white bg-[#0A3D2A] px-4 py-2 rounded-xl uppercase tracking-widest shadow-xl">
-                        {image.label}
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-8 left-8 right-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                      <h3 className="text-xl font-bold text-white mb-1">{image.title}</h3>
-                      <p className="text-white/60 text-sm font-light">Precision manufactured in 7–21 days</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center mt-20">
-              <Link
-                href="/gallery"
-                className="inline-flex items-center gap-3 bg-[#0A3D2A] text-white px-10 py-5 rounded-2xl font-black text-lg shadow-2xl shadow-[#0A3D2A]/20 transition-all hover:scale-105 active:scale-95 group"
-              >
-                Explore Full Portfolio
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* 9. Product Showcase (WordPress products) */}
-        {featuredProducts.length > 0 && <ProductShowcase featuredProducts={featuredProducts} />}
-
-        {/* 10. Industries / Modular Solutions SEO */}
-        <ModularSolutionsSEO />
-
-        {/* 11. Blog Feed */}
-        {recentBlogPosts.length > 0 && <BlogShowcase posts={recentBlogPosts} />}
-
-        {/* 12. FAQ Section ★ NEW */}
+        {/* 7. Top-5 FAQ */}
         <FAQSection />
 
-        {/* 13. CTA Strip ★ NEW */}
+        {/* 8. CTA block */}
         <CTAStrip />
 
-        {/* 14. Scroll to Top */}
+        {/* Scroll to Top (utility control) */}
         <ScrollToTop />
       </main>
     </Layout>

@@ -1,35 +1,20 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from './QuoteFormTrigger';
 
-// Defer heavy form hydration to reduce LCP render delay
-const QuoteForm = dynamic(() => import('./QuoteForm'), {
-  ssr: false,
-  loading: () => (
-    <div
-      className="w-full h-[360px] rounded-xl bg-white/5 border border-white/10 animate-pulse"
-      style={{
-        contain: 'layout style paint',
-        containIntrinsicSize: '600px 500px'
-      }}
-    />
-  ),
-});
-
 const heroImages = [
   {
-    src: '/hero-image/saman-portable-office-cabin-bangalore.webp',
+    src: '/hero-image/saman-portable-office-cabin-bangalore-clean.webp',
     alt: 'Saman Portable Office Cabin in Bangalore - High Quality Site Office'
   },
   {
-    src: '/hero-image/premium-container-site-office-rental.webp',
+    src: '/hero-image/premium-container-site-office-rental-clean.webp',
     alt: 'Premium Container Site Office Rental Service by Saman Portable'
   },
   {
-    src: '/hero-image/modular-prefab-homes-structures-india.webp',
+    src: '/hero-image/modular-prefab-homes-structures-india-clean.webp',
     alt: 'Modular Prefab Homes and Steel Structures in India - Eco-friendly Construction'
   },
 ];
@@ -113,8 +98,8 @@ const HeroSection = () => {
               India&apos;s leading manufacturer of high-ticket prefab structures for industrial, construction and commercial headquarters. Delivered ready-to-use since 2009.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA Buttons — three CTAs (T2: form removed from hero) */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <QuoteFormTrigger
                 size="lg"
                 className="btn-primary text-base md:text-lg px-8 md:px-10 py-4 md:py-5 shadow-2xl shadow-[#0A3D2A]/40"
@@ -131,14 +116,16 @@ const HeroSection = () => {
                   Browse Solutions
                 </Link>
               </Button>
-            </div>
-          </div>
-
-          {/* Form Container - Enhanced appearance */}
-          <div className="hero-form-container relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#0A3D2A] to-emerald-500 rounded-2xl blur opacity-20"></div>
-            <div className="relative">
-              <QuoteForm variant="hero" />
+              <Button
+                variant="heroOutline"
+                size="lg"
+                className="text-base md:text-lg px-8 md:px-10 py-4 md:py-5"
+                asChild
+              >
+                <a href="tel:+919708989937">
+                  Call Now
+                </a>
+              </Button>
             </div>
           </div>
         </div>
