@@ -127,7 +127,7 @@ async function fetchCategoryProductsClient(
   return res.json();
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params, res }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params, res, req }) => {
   const slug = params?.slug as string;
   if (!slug) {
     return {
@@ -140,7 +140,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
     // Server-only module, loaded dynamically so fs never reaches the client bundle.
     const staticContent = await import('@/lib/staticContent');
     const [productsResponse, categoriesResponse, attributesResponse, categoryDetail] = await Promise.all([
-      staticContent.fetchLightweightProductsByCategory(slug, 1, 20), // Using optimized function with 20 items per page
+      staticContent.fetchLightweightProductsByCategory(slug, 1, 20, {
+        includeDrafts: staticContent.shouldShowDraftsInListings(req.headers.host),
+      }), // Using optimized function with 20 items per page
       staticContent.fetchProductCategories(),
       staticContent.fetchProductAttributes(),
       staticContent.fetchProductCategoryBySlug(slug),

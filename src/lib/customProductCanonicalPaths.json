@@ -10,6 +10,16 @@
     "canonicalPath": "/product/roofing-sheet/polycarbonate-roofing-sheet"
   },
   {
+    "slug": "metal-roofing-sheet",
+    "categorySlug": "roofing-sheets",
+    "canonicalPath": "/product/roofing-sheet/metal-roofing-sheet"
+  },
+  {
+    "slug": "pvc-roofing-sheet",
+    "categorySlug": "roofing-sheets",
+    "canonicalPath": "/product/roofing-sheet/pvc-roofing-sheet"
+  },
+  {
     "slug": "sandwich-panel",
     "categorySlug": "sandwich-panel",
     "canonicalPath": "/product/sandwich-panel"

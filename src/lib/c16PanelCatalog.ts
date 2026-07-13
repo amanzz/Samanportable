@@ -58,11 +58,68 @@ export const C16_PANEL_CATALOG: Record<string, RelatedRailItem> = {
   },
 };
 
+export const ROOFING_SHEET_HUB: RelatedRailItem = {
+  title: 'Roofing Sheet',
+  href: '/product/roofing-sheet',
+  category: 'Roofing Sheets',
+  imageSrc: '/panel-images/roofing-sheet/roofing-sheet-colour-coated-stack.webp',
+  imageAlt: 'Stack of colour-coated roofing sheets in multiple colours at SAMAN supply yard',
+  blurb: 'Compare every mainstream roof sheet type sold in India from one counter.',
+};
+
+export const METAL_ROOFING_SHEET: RelatedRailItem = {
+  title: 'Metal Roofing Sheet',
+  href: '/product/roofing-sheet/metal-roofing-sheet',
+  category: 'Roofing Sheets',
+  imageSrc: '/panel-images/metal-roofing-sheet/metal-roofing-sheet-colour-stack.webp',
+  imageAlt: 'Stack of colour-coated metal roofing sheets at the SAMAN factory',
+  blurb: 'GI, galvalume and colour-coated metal roofing sheets for sheds, warehouses and project roofs.',
+};
+
+export const POLYCARBONATE_ROOFING_SHEET: RelatedRailItem = {
+  title: 'Polycarbonate Roofing Sheet',
+  href: '/product/roofing-sheet/polycarbonate-roofing-sheet',
+  category: 'Roofing Sheets',
+  imageSrc: '/panel-images/polycarbonate-roofing-sheet/polycarbonate-roofing-sheet-clear-solid.webp',
+  imageAlt: 'Clear solid polycarbonate roofing sheet held against the sky',
+  blurb: 'UV-coated solid, multiwall and corrugated transparent sheets for daylight and canopy roofs.',
+};
+
 const ROOFING_PANEL_SLUGS = ['puf-panel', 'sandwich-panel', 'pir-panel', 'eps-panel', 'rockwool-panel'];
+const METAL_ROOFING_SHEET_RAIL_SLUGS = ['puf-panel', 'sandwich-panel', 'pir-panel', 'eps-panel'];
+const POLYCARBONATE_ROOFING_SHEET_RAIL_SLUGS = ['pir-panel', 'puf-panel', 'sandwich-panel', 'eps-panel'];
 const C16_PANEL_SLUGS = ['puf-panel', 'sandwich-panel', 'pir-panel', 'eps-panel', 'rockwool-panel', 'glass-wool-panel'];
 
 export function getRoofingPanelRail(): RelatedRailItem[] {
   return ROOFING_PANEL_SLUGS.map((slug) => C16_PANEL_CATALOG[slug]);
+}
+
+export function getMetalRoofingSheetRail(): RelatedRailItem[] {
+  return [ROOFING_SHEET_HUB, ...METAL_ROOFING_SHEET_RAIL_SLUGS.map((slug) => C16_PANEL_CATALOG[slug])];
+}
+
+export function getPolycarbonateRoofingSheetRail(): RelatedRailItem[] {
+  return [ROOFING_SHEET_HUB, ...POLYCARBONATE_ROOFING_SHEET_RAIL_SLUGS.map((slug) => C16_PANEL_CATALOG[slug])];
+}
+
+export function getPvcRoofingSheetRail(): RelatedRailItem[] {
+  return [
+    ROOFING_SHEET_HUB,
+    POLYCARBONATE_ROOFING_SHEET,
+    METAL_ROOFING_SHEET,
+    C16_PANEL_CATALOG['puf-panel'],
+    C16_PANEL_CATALOG['sandwich-panel'],
+  ];
+}
+
+export function getPvcRoofingSheetRailWithPirFallback(): RelatedRailItem[] {
+  return [
+    ROOFING_SHEET_HUB,
+    POLYCARBONATE_ROOFING_SHEET,
+    C16_PANEL_CATALOG['pir-panel'],
+    C16_PANEL_CATALOG['puf-panel'],
+    C16_PANEL_CATALOG['sandwich-panel'],
+  ];
 }
 
 export function getC16PanelSiblingRail(currentSlug: string): RelatedRailItem[] {

@@ -13,7 +13,7 @@ type RelatedProductRailProps = {
 
 const RelatedProductRail = ({ items, currentHref, className, scroll = false }: RelatedProductRailProps) => {
   return (
-    <div className={cn('rounded-lg border border-slate-200 bg-white/90 p-4 shadow-sm', className)}>
+    <div className={cn('h-full rounded-lg border border-slate-200 bg-white/90 p-4 shadow-sm', className)}>
       <div className="mb-4 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50">
           <Package className="h-5 w-5 text-emerald-700" />
@@ -24,7 +24,7 @@ const RelatedProductRail = ({ items, currentHref, className, scroll = false }: R
         </div>
       </div>
 
-      <div className={cn('space-y-3 related-products-list', scroll && 'max-h-[60vh] overflow-y-auto pr-2')}>
+      <div className={cn('space-y-3 related-products-list', scroll && 'pr-2')}>
         {items.length > 0 ? (
           items.map((item) => {
             const isCurrent = currentHref === item.href;

@@ -58,7 +58,7 @@ interface ProductsProps {
   rankMathSEO?: RankMathSEOData | null;
 }
 
-export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ query }) => {
+export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ query, req }) => {
   try {
     console.log('getServerSideProps: Starting to fetch products...');
     
@@ -90,7 +90,9 @@ export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ qu
     // Static content layer: reads exported files — no WordPress call.
     const staticContent = await import('@/lib/staticContent');
     const [productsResponse, cats, attrs] = await Promise.all([
-      staticContent.fetchProductsByCategoryPriority(page, 8, filters), // Use new priority-based function
+      staticContent.fetchProductsByCategoryPriority(page, 8, filters, {
+        includeDrafts: staticContent.shouldShowDraftsInListings(req.headers.host),
+      }), // Use new priority-based function
       staticContent.fetchProductCategories().then(c => c?.slice(0, 8) || []), // Reduced from 10 to 8
       staticContent.fetchProductAttributes().then(a => a?.slice(0, 3) || [])   // Reduced from 5 to 3
     ]);

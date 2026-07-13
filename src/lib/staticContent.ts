@@ -199,10 +199,26 @@ function getAllProductsRaw(): any[] {
   return items;
 }
 
-// Buyer-visible listings only contain published products (the one legit draft is
-// excluded from listings; its old URL is already 308-redirected in next.config).
+type ListingOptions = {
+  includeDrafts?: boolean;
+};
+
+export function shouldShowDraftsInListings(host?: string | null): boolean {
+  if (process.env.SAMAN_SHOW_DRAFTS_IN_LISTINGS === 'true') return true;
+  const normalized = String(host || '').toLowerCase();
+  return /^(localhost|127\.0\.0\.1|\[::1\])(?::|$)/.test(normalized);
+}
+
+// Buyer-visible production listings only contain published products. Localhost
+// preview can opt into drafts so owners can review listing-card behavior before
+// publish approval.
 function getPublishedProducts(): any[] {
   return getAllProductsRaw().filter((p) => !p.status || p.status === 'publish');
+}
+
+function getListingProducts(options: ListingOptions = {}): any[] {
+  if (!options.includeDrafts) return getPublishedProducts();
+  return getAllProductsRaw().filter((p) => !p.status || p.status === 'publish' || p.status === 'draft');
 }
 
 function findProductBySlug(slug: string): any | null {
@@ -262,9 +278,10 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
 export async function fetchProducts(
   page = 1,
   perPage = 12,
-  filters: ProductFilters = {}
+  filters: ProductFilters = {},
+  options: ListingOptions = {}
 ): Promise<ProductsResponse> {
-  let items = getPublishedProducts();
+  let items = getListingProducts(options);
 
   if (filters.category) {
     const wanted = String(filters.category);
@@ -438,7 +455,8 @@ export async function fetchProductAttributes(): Promise<any[]> {
 export async function fetchLightweightProductsByCategory(
   categorySlug: string,
   page = 1,
-  perPage = 20
+  perPage = 20,
+  options: ListingOptions = {}
 ): Promise<{ products: LightweightProduct[]; pagination: PaginationInfo }> {
   if (!SAFE_SLUG.test(categorySlug)) {
     return { products: [], pagination: emptyPagination(page, perPage) };
@@ -447,9 +465,9 @@ export async function fetchLightweightProductsByCategory(
   if (!category) {
     return { products: [], pagination: emptyPagination(page, perPage) };
   }
-  const items = getPublishedProducts().filter((p) =>
-    (p.categories || []).some((c: any) => c.slug === categorySlug)
-  );
+  const items = getListingProducts(options)
+    .filter((p) => (p.categories || []).some((c: any) => c.slug === categorySlug))
+    .filter((p) => !(options.includeDrafts && categorySlug === 'roofing-sheets' && p.slug === 'roofing-sheet'));
   const { slice, pagination } = paginate(items, page, perPage);
   return {
     products: slice.map((p) => toLightweight(p, category.name, categorySlug)),
@@ -462,9 +480,17 @@ export async function fetchLightweightProductsByCategory(
 export async function fetchProductsByCategoryPriority(
   page = 1,
   perPage = 8,
-  additionalFilters: Omit<ProductFilters, 'category'> = {}
+  additionalFilters: Omit<ProductFilters, 'category'> = {},
+  options: ListingOptions = {}
 ): Promise<ProductsResponse> {
   const categoryPriority = [
+    'roofing-sheets',
+    'sandwich-panel',
+    'puf-panel',
+    'pir-panel',
+    'rockwool-panel',
+    'eps-panel',
+    'glass-wool-panel',
     'portable-cabin',
     'container-offices',
     'porta-cabins',
@@ -472,19 +498,21 @@ export async function fetchProductsByCategoryPriority(
     'portable-office',
     'container-cafe',
     'industrial-sheds',
-    'roofing-sheets',
-    'puf-panel',
-    'pir-panel',
-    'eps-panel',
-    'rockwool-panel',
-    'glass-wool-panel',
   ];
   let all: any[] = [];
+  const seenProductKeys = new Set<string>();
+
   for (const categorySlug of categoryPriority) {
     const category = getAllCategoriesRaw().find((c) => c.slug === categorySlug);
     if (!category) continue;
-    const inCat = getPublishedProducts()
+    const inCat = getListingProducts(options)
       .filter((p) => (p.categories || []).some((c: any) => c.slug === categorySlug))
+      .filter((p) => {
+        const key = String(p.id || p.slug);
+        if (seenProductKeys.has(key)) return false;
+        seenProductKeys.add(key);
+        return true;
+      })
       .slice(0, 20)
       .map((p) => ({
         ...toFeedProduct(p),
