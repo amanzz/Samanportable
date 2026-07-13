@@ -1,0 +1,136 @@
+{
+  "id": 0,
+  "wc_review_product_id": 0,
+  "name": "PVC & uPVC Roofing Sheet",
+  "slug": "pvc-roofing-sheet",
+  "permalink": "https://blog.samanportable.com/product/pvc-roofing-sheet/",
+  "date_created": "2026-07-13T00:00:00",
+  "date_created_gmt": "2026-07-12T18:30:00",
+  "date_modified": "2026-07-13T00:00:00",
+  "date_modified_gmt": "2026-07-12T18:30:00",
+  "type": "simple",
+  "status": "draft",
+  "featured": false,
+  "catalog_visibility": "hidden",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-C17-PVC-SUB-2026",
+  "price": "50",
+  "regular_price": "50",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": true,
+  "total_sales": 0,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "download_limit": -1,
+  "download_expiry": -1,
+  "external_url": "",
+  "button_text": "",
+  "tax_status": "taxable",
+  "tax_class": "",
+  "manage_stock": false,
+  "stock_quantity": null,
+  "backorders": "no",
+  "backorders_allowed": false,
+  "backordered": false,
+  "low_stock_amount": null,
+  "sold_individually": false,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "shipping_required": true,
+  "shipping_taxable": true,
+  "shipping_class": "",
+  "shipping_class_id": 0,
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "upsell_ids": [],
+  "cross_sell_ids": [],
+  "parent_id": 0,
+  "purchase_note": "",
+  "categories": [
+    {
+      "id": 3950,
+      "name": "Roofing Sheets",
+      "slug": "roofing-sheets"
+    }
+  ],
+  "tags": [],
+  "images": [
+    {
+      "id": 0,
+      "src": "/panel-images/pvc-roofing-sheet/pvc-upvc-roofing-sheet-corrugated-profile.webp",
+      "name": "pvc-upvc-roofing-sheet-corrugated-profile",
+      "alt": "Corrugated uPVC roofing sheet displayed in a factory yard"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-layer-edge-closeup.webp",
+      "name": "upvc-roofing-sheet-layer-edge-closeup",
+      "alt": "Cut edge of a multi-layer uPVC roofing sheet showing the ASA cap layer"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/pvc-roofing-sheet/pvc-roofing-sheet-stack-factory.webp",
+      "name": "pvc-roofing-sheet-stack-factory",
+      "alt": "Stack of new PVC and uPVC roofing sheets at the SAMAN factory"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-shed-roof-detail.webp",
+      "name": "upvc-roofing-sheet-shed-roof-detail",
+      "alt": "uPVC roofing sheets fixed on a steel shed roof with crest screws"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-ridge-fixing-detail.webp",
+      "name": "upvc-roofing-sheet-ridge-fixing-detail",
+      "alt": "Profile-matched uPVC ridge cap on a corrugated roofing sheet roof"
+    }
+  ],
+  "attributes": [],
+  "default_attributes": [],
+  "variations": [],
+  "grouped_products": [],
+  "menu_order": 0,
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#8377;</span>50</bdi></span>",
+  "related_ids": [],
+  "meta_data": [
+    {
+      "id": 0,
+      "key": "rank_math_robots",
+      "value": [
+        "noindex"
+      ]
+    },
+    {
+      "id": 0,
+      "key": "rank_math_focus_keyword",
+      "value": "upvc roofing sheet, pvc roofing sheet"
+    }
+  ],
+  "stock_status": "instock",
+  "has_options": false,
+  "_links": {
+    "self": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products/0"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products"
+      }
+    ]
+  },
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>PVC &amp; uPVC Roofing Sheet - Draft | SAMAN</title>\n<meta name=\"robots\" content=\"nofollow, noindex\"/>"
+  }
+}
