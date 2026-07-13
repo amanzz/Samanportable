@@ -209,7 +209,7 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
         '@type': 'ListItem',
         position: 3,
         name: product.categories?.[0]?.name || 'Category',
-        item: `${baseUrl}/product-category/${product.categories?.[0]?.slug || 'uncategorized'}`
+        item: `${baseUrl}/product/${product.categories?.[0]?.slug || 'uncategorized'}`
       },
       {
         '@type': 'ListItem',

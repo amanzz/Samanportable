@@ -1,11 +1,70 @@
-# SEO-Lock Exceptions Register
+# T6 — Exceptions Register
 
-**Branch:** `feat/shikhar-T8-blog` · **Base:** `origin/static-migration` @ `5d52d052`
+Append-only. Each entry records a deliberate departure from the standing "do not retire a
+published, indexable URL" rule, with the evidence that justified it. Never rewrite or
+remove a prior entry.
 
-> Note: this register is created fresh on the T8 branch. The T6/T7 exception entries
-> (homepage first-100-words, `/container-office-in-moradabad`, `/product/sandwich-panel`,
-> `src/lib/schema.ts` offer price) live on the homepage/header branches and are unaffected
-> by T8. Merge order will reconcile the two registers.
+---
+
+## T1.2 — /product-category/* archives retired by 301 (21 URLs)
+
+- **Date:** 12 Jul 2026 · **Amended:** 13 Jul 2026 (14 URLs → 21)
+- **Ticket:** SHIKHAR T1.2 — /product-category → /product 301 Consolidation
+- **Build packet:** `page-structure/content-drafts/T1.2_ProductCategory_301_Consolidation_Draft_v1_12Jul2026.md`
+- **Owner approval:** SAMAN, 12 Jul 2026 ("Approved") — recorded in the build packet.
+- **Amendment authority:** Fable 5, 13 Jul 2026 — the 7 panel/roofing archives below.
+- **Raised by:** Fable 5 (L3 exception)
+
+### Exception
+21 published URLs are being retired by permanent redirect. The first 14 are the set named
+in the original build packet; the last 7 were added by the 13 Jul 2026 amendment, after the
+build found that the category export carries 21 slugs, not 14. Without explicit rules those
+7 would have fallen to the catch-all and landed on the generic `/product` listing rather
+than their own canonical hub.
+
+| Retired URL | 301 destination | Source |
+| --- | --- | --- |
+| /product-category/container-cafe | /product/container-cafe | packet |
+| /product-category/container-houses | /product/container-houses | packet |
+| /product-category/container-offices | /product/container-offices | packet |
+| /product-category/industrial-sheds | /product/industrial-sheds | packet |
+| /product-category/labor-colony | /product/labor-colony | packet |
+| /product-category/peb-constructions | /product/peb-constructions | packet |
+| /product-category/porta-cabins | /product/porta-cabins | packet |
+| /product-category/portable-cabin | /product/portable-cabin | packet |
+| /product-category/portable-office | /product/portable-office | packet |
+| /product-category/portable-toilet | /product/portable-toilet | packet |
+| /product-category/pre-engineered-buildings | /product/pre-engineered-buildings | packet |
+| /product-category/prefab-buildings | /product/prefab-buildings | packet |
+| /product-category/prefabricated-houses | /product/prefabricated-houses | packet |
+| /product-category/security-cabins | /product/security-cabins | packet |
+| /product-category/eps-panel | /product/eps-panel | amendment |
+| /product-category/glass-wool-panel | /product/glass-wool-panel | amendment |
+| /product-category/pir-panel | /product/pir-panel | amendment |
+| /product-category/puf-panel | /product/puf-panel | amendment |
+| /product-category/rockwool-panel | /product/rockwool-panel | amendment |
+| /product-category/roofing-sheets | /product/roofing-sheet | amendment |
+| /product-category/sandwich-panel | /product/sandwich-panel | amendment |
+
+Note the roofing rule: the category slug is plural (`roofing-sheets`) but the canonical hub
+is singular (`/product/roofing-sheet`). `/product/roofing-sheets` is a 404 and must never be
+used as a destination.
+
+Every one of the 21 destinations was verified to return HTTP 200 on the branch build before
+the rule was written. A catch-all (`/product-category/:slug*` → `/product`) sits below the
+21 exact rules so no stray archive URL can 404.
+
+### Evidence
+`/audit/T1.1/PRODUCT-CATEGORY-AUDIT.md` — all 14 packet URLs were live, indexable,
+self-canonical and present in the sitemap, with roughly 540 internal referrers. They were
+textbook cannibalization of the canonical `/product/*` cluster hubs: two indexable pages
+competing for one topic. The 7 amendment URLs are the same duplication pattern on the newer
+panel and roofing clusters.
+
+### Justification
+Consolidates the internal link equity from ~540 referrers, plus any external equity held by
+the 21 duplicate archives, into the canonical hubs. Result: one page per cluster, sitemap
+noise removed, and breadcrumb schema that now matches the canonical tree.
 
 ---
 
