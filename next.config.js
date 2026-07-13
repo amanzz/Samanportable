@@ -206,7 +206,7 @@ const nextConfig = {
       // the static build). 301 it to the real, canonical singular category.
       {
         source: '/product-category/portable-toilets',
-        destination: 'https://www.samanportable.com/product-category/portable-toilet',
+        destination: 'https://www.samanportable.com/product/portable-toilet',
         permanent: true,
       },
       // Duplicate-category fix (Agent C P13): the singular container-house URL is a
@@ -214,7 +214,7 @@ const nextConfig = {
       // where all /product/container-houses/* products live). 301 it to canonical plural.
       {
         source: '/product-category/container-house',
-        destination: 'https://www.samanportable.com/product-category/container-houses',
+        destination: 'https://www.samanportable.com/product/container-houses',
         permanent: true,
       },
 
@@ -297,7 +297,7 @@ const nextConfig = {
       // Additional duplicate URL redirects
       {
         source: '/innovative-office-container-designs-2',
-        destination: 'https://www.samanportable.com/product-category/container-offices',
+        destination: 'https://www.samanportable.com/product/container-offices',
         permanent: true,
       },
       // Blog to product page redirect
@@ -782,27 +782,27 @@ const nextConfig = {
       // excluded (kept 404 / 410-later). ───────────────────────────────────
       {
         source: '/office-cabins',
-        destination: 'https://www.samanportable.com/product-category/portable-office',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       {
         source: '/project/container-cafe-india',
-        destination: 'https://www.samanportable.com/product-category/container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-cafe',
-        destination: 'https://www.samanportable.com/product-category/container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-homes-new',
-        destination: 'https://www.samanportable.com/product-category/container-houses',
+        destination: 'https://www.samanportable.com/product/container-houses',
         permanent: true,
       },
       {
         source: '/portfolio/portable-cabin-manufacturers-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/portable-cabin',
+        destination: 'https://www.samanportable.com/product/portable-cabin',
         permanent: true,
       },
 
@@ -947,35 +947,35 @@ const nextConfig = {
       // (3-month GSC), doorway-page risk per Rulebook L10. Owner-approved redirect
       // to the C4 category. Slash-less destination (trailingSlash:false) to avoid a
       // chain — matches existing /product-category/container-offices siblings.
-      { source: '/container-offices-for-sale-in-anekal', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-banashankari', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-bannerghatta-road', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-bellandur', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-btm-layout', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-domlur', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-electronic-city', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-frazer-town', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-hebbal', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-hennur', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-hsr-layout', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-jigani', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-kengeri', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-koramangala', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-kr-puram', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-magadi-road', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-malleshwaram', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-marathahalli', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-nagarbhavi', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-rajajinagar', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-rt-nagar', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-sarjapur-road', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-shivajinagar', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-ulsoor', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-whitefield', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-yelahanka', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-in-east-delhi', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-in-ghaziabad', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
-      { source: '/container-offices-in-north-delhi', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-anekal', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-banashankari', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-bannerghatta-road', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-bellandur', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-btm-layout', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-domlur', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-electronic-city', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-frazer-town', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-hebbal', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-hennur', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-hsr-layout', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-jigani', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-kengeri', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-koramangala', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-kr-puram', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-magadi-road', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-malleshwaram', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-marathahalli', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-nagarbhavi', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-rajajinagar', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-rt-nagar', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-sarjapur-road', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-shivajinagar', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-ulsoor', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-whitefield', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-yelahanka', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-in-east-delhi', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-in-ghaziabad', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-in-north-delhi', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
 
       // ─── CSV BULK REDIRECTS (572 entries from spreadsheet) ───────────────
       // Source: Untitled spreadsheet - Sheet1 (1).csv
@@ -1354,57 +1354,57 @@ const nextConfig = {
       },
       {
         source: '/project/bunkhouse-for-rent',
-        destination: 'https://www.samanportable.com/product-category/labor-colony',
+        destination: 'https://www.samanportable.com/product/labor-colony',
         permanent: true,
       },
       {
         source: '/project/bunkhouse-for-sale',
-        destination: 'https://www.samanportable.com/product-category/labor-colony',
+        destination: 'https://www.samanportable.com/product/labor-colony',
         permanent: true,
       },
       {
         source: '/project/container-cafes-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-cafes',
-        destination: 'https://www.samanportable.com/product-category/container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-homes-for-sale',
-        destination: 'https://www.samanportable.com/product-category/container-houses',
+        destination: 'https://www.samanportable.com/product/container-houses',
         permanent: true,
       },
       {
         source: '/project/container-hotel-for-sale',
-        destination: 'https://www.samanportable.com/product-category/container-houses',
+        destination: 'https://www.samanportable.com/product/container-houses',
         permanent: true,
       },
       {
         source: '/project/peb-manufacturer',
-        destination: 'https://www.samanportable.com/product-category/peb-constructions',
+        destination: 'https://www.samanportable.com/product/peb-constructions',
         permanent: true,
       },
       {
         source: '/project/porta-cabin-interior',
-        destination: 'https://www.samanportable.com/product-category/porta-cabins',
+        destination: 'https://www.samanportable.com/product/porta-cabins',
         permanent: true,
       },
       {
         source: '/project/portable-bunkhouse',
-        destination: 'https://www.samanportable.com/product-category/labor-colony',
+        destination: 'https://www.samanportable.com/product/labor-colony',
         permanent: true,
       },
       {
         source: '/project/portable-cabin-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/portable-cabin',
+        destination: 'https://www.samanportable.com/product/portable-cabin',
         permanent: true,
       },
       {
         source: '/project/portable-cabin-manufacturers-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/portable-cabin',
+        destination: 'https://www.samanportable.com/product/portable-cabin',
         permanent: true,
       },
       {
@@ -1419,22 +1419,22 @@ const nextConfig = {
       },
       {
         source: '/project/prefab-house',
-        destination: 'https://www.samanportable.com/product-category/prefabricated-houses',
+        destination: 'https://www.samanportable.com/product/prefabricated-houses',
         permanent: true,
       },
       {
         source: '/project/prefab-labour-colony-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/labor-colony',
+        destination: 'https://www.samanportable.com/product/labor-colony',
         permanent: true,
       },
       {
         source: '/project/prefabricated-office',
-        destination: 'https://www.samanportable.com/product-category/portable-office',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       {
         source: '/project/prefabricated-steel-buildings',
-        destination: 'https://www.samanportable.com/product-category/pre-engineered-buildings',
+        destination: 'https://www.samanportable.com/product/pre-engineered-buildings',
         permanent: true,
       },
       {
@@ -1449,7 +1449,7 @@ const nextConfig = {
       },
       {
         source: '/project/shipping-container-homes-for-sale',
-        destination: 'https://www.samanportable.com/product-category/container-houses',
+        destination: 'https://www.samanportable.com/product/container-houses',
         permanent: true,
       },
       // ──────────────────────────────────────────────────
@@ -1531,7 +1531,7 @@ const nextConfig = {
       // Destination verified 200 and is NOT a redirect source.
       {
         source: '/used-portacabins-for-sale',
-        destination: 'https://www.samanportable.com/product-category/porta-cabins',
+        destination: 'https://www.samanportable.com/product/porta-cabins',
         permanent: true,
       },
 
@@ -1665,7 +1665,7 @@ const nextConfig = {
       // CSV /prefab-office-spaces). Office-intent -> portable-office chosen.
       {
         source: '/prefabricated-office-buildings',
-        destination: 'https://www.samanportable.com/product-category/portable-office',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       // (B55-2) Small cabin designs: 0 clicks / 18 impr, off-brand residential
@@ -1675,7 +1675,7 @@ const nextConfig = {
       // 2024 -> same keeper; "porta cabin design" ranks pos ~1.1).
       {
         source: '/small-cabin-designs',
-        destination: 'https://www.samanportable.com/product-category/porta-cabins',
+        destination: 'https://www.samanportable.com/product/porta-cabins',
         permanent: true,
       },
       // (B55-3) 6 reasons to buy a portable building (this winter): 0/0 GSC. Off-
@@ -1683,7 +1683,7 @@ const nextConfig = {
       // (cf. CSV /portable-buildings, /portable-building-solutions -> same keeper).
       {
         source: '/6-reasons-benefits-2-buy-portable-building',
-        destination: 'https://www.samanportable.com/product-category/prefab-buildings',
+        destination: 'https://www.samanportable.com/product/prefab-buildings',
         permanent: true,
       },
       // (B55-4) Small portable buildings solutions: 0 clicks / 10 impr. Duplicate
@@ -1692,7 +1692,7 @@ const nextConfig = {
       // Same title, same off-brand body. Sent to the SAME keeper for consistency.
       {
         source: '/small-portable-buildings-solutions',
-        destination: 'https://www.samanportable.com/product-category/prefab-buildings',
+        destination: 'https://www.samanportable.com/product/prefab-buildings',
         permanent: true,
       },
       // (B55-5) Rise of prefab office & structures in 2024: 0/0 GSC. Dated-slug
@@ -1702,7 +1702,7 @@ const nextConfig = {
       // SAME keeper for consistency (resolves the B53 redirect-vs-retire question).
       {
         source: '/rise-of-prefab-office-and-structures-in-2024',
-        destination: 'https://www.samanportable.com/product-category/prefab-buildings',
+        destination: 'https://www.samanportable.com/product/prefab-buildings',
         permanent: true,
       },
 
