@@ -65,3 +65,31 @@ panel and roofing clusters.
 Consolidates the internal link equity from ~540 referrers, plus any external equity held by
 the 21 duplicate archives, into the canonical hubs. Result: one page per cluster, sitemap
 noise removed, and breadcrumb schema that now matches the canonical tree.
+
+---
+
+## T8.1 — `/blog` H1 change
+**Ruling:** L3 EXCEPTION — **granted by Fable 5** in the T8 build packet
+(`page-structure/content-drafts/T8_Blog_Optimization_Draft_v1_13Jul2026.md`, §B3).
+
+The blog hub's H1 was changed:
+
+- **Before:** `Our Blog`
+- **After:** `Prefab & Portable Cabin Insights`
+
+**Rationale (per the packet):** the old H1 `Our Blog` carries **zero keyword signal** on an
+indexable hub page. The replacement is keyword-bearing and matches the page's actual subject.
+The change was explicitly authorised in the packet, which grants the L3 exception and directs
+that it be recorded here.
+
+**What did NOT change (L3 intact):**
+- `<title>` and meta description of `/blog` — **unchanged** (`pageSEO.blog` values used as-is).
+- All `CATEGORY_SEO` titles/metas and all `CATEGORY_INTRO` paragraphs — **byte-identical**
+  to base (verified by string diff against `origin/static-migration:src/pages/blog.tsx`).
+- The category self-canonical strategy — unchanged.
+
+**Related T8 SEO change (not an L3 exception, recorded for the audit trail):** in-range
+paginated pages (`/blog?page=N`, N ≥ 2) are now **self-canonical and indexable**, with the
+title suffixed ` — Page {N}` (meta description unchanged). Out-of-range pages remain
+`noindex` + canonical to the hub. This recovers crawl depth to the deep legacy posts while
+avoiding duplicate-title flags.
