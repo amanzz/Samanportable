@@ -237,8 +237,19 @@ const nextConfig = {
       { source: '/product-category/prefab-buildings', destination: 'https://www.samanportable.com/product/prefab-buildings', permanent: true },
       { source: '/product-category/prefabricated-houses', destination: 'https://www.samanportable.com/product/prefabricated-houses', permanent: true },
       { source: '/product-category/security-cabins', destination: 'https://www.samanportable.com/product/security-cabins', permanent: true },
+      // T1.2 amendment (Fable 5, 13 Jul 2026): the 7 panel/roofing category archives.
+      // Without these they would fall to the catch-all and land on the generic /product
+      // listing instead of their own canonical hub. Note roofing: the category slug is
+      // plural but the hub is singular (/product/roofing-sheets is a 404).
+      { source: '/product-category/eps-panel', destination: 'https://www.samanportable.com/product/eps-panel', permanent: true },
+      { source: '/product-category/glass-wool-panel', destination: 'https://www.samanportable.com/product/glass-wool-panel', permanent: true },
+      { source: '/product-category/pir-panel', destination: 'https://www.samanportable.com/product/pir-panel', permanent: true },
+      { source: '/product-category/puf-panel', destination: 'https://www.samanportable.com/product/puf-panel', permanent: true },
+      { source: '/product-category/rockwool-panel', destination: 'https://www.samanportable.com/product/rockwool-panel', permanent: true },
+      { source: '/product-category/roofing-sheets', destination: 'https://www.samanportable.com/product/roofing-sheet', permanent: true },
+      { source: '/product-category/sandwich-panel', destination: 'https://www.samanportable.com/product/sandwich-panel', permanent: true },
       // Catch-all safety net: any remaining /product-category/* archive lands on the
-      // /product listing rather than 404ing. MUST stay below the 14 exact rules.
+      // /product listing rather than 404ing. MUST stay below the 21 exact rules.
       { source: '/product-category/:slug*', destination: 'https://www.samanportable.com/product', permanent: true },
 
       // Cart/checkout retirement (owner-approved 2026-06-12): enquiry-only
