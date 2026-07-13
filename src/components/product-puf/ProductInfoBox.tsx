@@ -101,7 +101,7 @@ const ProductInfoBox = ({
           </div>
           <div className="flex items-center justify-between py-1">
             <span className="font-medium text-foreground">Category:</span>
-            <Link href="/product-category/puf-panel" className="break-words text-right font-medium text-primary hover:underline">
+            <Link href="/product/puf-panel" className="break-words text-right font-medium text-primary hover:underline">
               PUF Panels
             </Link>
           </div>
