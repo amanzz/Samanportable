@@ -24,6 +24,7 @@ import {
   type ProductCategoryDetail,
   type BlogPost,
 } from '@/config/api';
+import { decodeHtmlEntities } from '@/lib/utils';
 
 const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
 
@@ -176,6 +177,114 @@ export function getBlogCategories(): BlogCategory[] {
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
   return blogCategoriesCache;
+}
+
+// ─── T8.1 blog hub helpers ───────────────────────────────────────────────────
+// Every value these produce is derived from the exported post files themselves —
+// read time from real word counts, "start here" from real category sizes, search
+// from real titles. Nothing here invents, curates or estimates.
+
+type PostMeta = {
+  slug: string;
+  date: string;
+  title: string;
+  categories: Array<{ name: string; slug: string }>;
+};
+
+// Title + category index (newest first), built once. `getPostIndex()` carries only
+// slug + date, which is not enough for title search or newest-per-category.
+let postMetaIndex: PostMeta[] | null = null;
+
+function getPostMetaIndex(): PostMeta[] {
+  if (postMetaIndex) return postMetaIndex;
+
+  const dir = path.join(EXPORT_DIR, 'posts');
+  const entries: PostMeta[] = [];
+
+  for (const f of fs.readdirSync(dir)) {
+    if (!f.endsWith('.json')) continue;
+    const post = readJson(path.join(dir, f));
+    if (!post?.slug) continue;
+
+    const terms: any[] = post?._embedded?.['wp:term']?.[0] || [];
+    entries.push({
+      slug: post.slug,
+      date: post.date || '',
+      title: post?.title?.rendered || '',
+      categories: terms
+        .filter((t) => t?.taxonomy === 'category' && t?.slug)
+        .map((t) => ({ name: t.name, slug: t.slug })),
+    });
+  }
+
+  entries.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  postMetaIndex = entries;
+  return entries;
+}
+
+/** Total number of published posts — the real figure the hub renders. */
+export function getBlogPostCount(): number {
+  return getPostIndex().length;
+}
+
+/** Read time from the post's REAL word count: ceil(words / 200). */
+export function computeReadTime(html: string): number {
+  const words = (html || '')
+    .replace(/<[^>]*>/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.ceil(words / 200);
+}
+
+export type StartHereItem = {
+  categoryName: string;
+  categorySlug: string;
+  postTitle: string;
+  postSlug: string;
+};
+
+// The newest post in each of the N largest categories. "Largest" uses the same real
+// counts getBlogCategories() reports, so the selection is fully deterministic — no
+// pinning, no curation, no popularity signal.
+export function getStartHerePosts(topCategories = 4): StartHereItem[] {
+  const index = getPostMetaIndex(); // newest first
+  const items: StartHereItem[] = [];
+
+  for (const category of getBlogCategories().slice(0, topCategories)) {
+    const newest = index.find((p) => p.categories.some((c) => c.slug === category.slug));
+    if (!newest) continue;
+    items.push({
+      categoryName: category.name,
+      categorySlug: category.slug,
+      postTitle: newest.title,
+      postSlug: newest.slug,
+    });
+  }
+
+  return items;
+}
+
+// Case-insensitive substring match against post TITLES only (fast, predictable).
+// `total` is the REAL number of matching posts; `posts` is the newest `limit` of
+// them — so the results line can state a true count even when the render is capped.
+export async function searchPostsByTitle(
+  query: string,
+  limit = 50
+): Promise<{ posts: BlogPost[]; total: number }> {
+  const q = (query || '').trim().toLowerCase();
+  if (!q) return { posts: [], total: 0 };
+
+  const matches = getPostMetaIndex().filter((p) =>
+    decodeHtmlEntities(p.title).toLowerCase().includes(q)
+  );
+
+  const posts = matches
+    .slice(0, limit)
+    .map((m) => readPostFile(m.slug))
+    .filter(Boolean)
+    .map(({ _rank_math_head, ...rest }: any) => rest);
+
+  return { posts: posts as BlogPost[], total: matches.length };
 }
 
 // ─── products ────────────────────────────────────────────────────────────────
