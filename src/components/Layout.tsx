@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Header from './Header';
-import CategoryMenu from './CategoryMenu';
 import Footer from './Footer';
 import PerformanceOptimizer from './PerformanceOptimizer';
 import AccessibilityChecker from './AccessibilityChecker';
@@ -47,7 +46,6 @@ export default function Layout({ children }: LayoutProps) {
       <RouteProgressBar />
       <PageLoader isLoading={isLoading} />
       <Header />
-      <CategoryMenu />
       <PerformanceOptimizer>
         {/* Mobile bottom padding - only applied on mobile devices, removed on desktop */}
         <main className="flex-1 pb-16 lg:pb-0">
