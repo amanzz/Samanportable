@@ -140,6 +140,44 @@ export function getAllPostSlugs(): string[] {
   return getPostIndex().map((p) => p.slug);
 }
 
+export type BlogCategory = { id: number; name: string; slug: string; count: number };
+
+// REAL blog categories with REAL post counts, derived from every exported post's
+// embedded `wp:term` category terms. This replaces the previously hardcoded category
+// list on /blog, whose counts were invented. Only categories with at least one post
+// are returned, so a rendered count can never claim posts that don't exist.
+let blogCategoriesCache: BlogCategory[] | null = null;
+
+export function getBlogCategories(): BlogCategory[] {
+  if (blogCategoriesCache) return blogCategoriesCache;
+
+  const dir = path.join(EXPORT_DIR, 'posts');
+  const bySlug = new Map<string, BlogCategory>();
+
+  for (const f of fs.readdirSync(dir)) {
+    if (!f.endsWith('.json')) continue;
+    const post = readJson(path.join(dir, f));
+    if (!post?.slug) continue;
+
+    const terms: any[] = post?._embedded?.['wp:term']?.[0] || [];
+    for (const term of terms) {
+      if (term?.taxonomy !== 'category' || !term?.slug) continue;
+      const existing = bySlug.get(term.slug);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        bySlug.set(term.slug, { id: term.id, name: term.name, slug: term.slug, count: 1 });
+      }
+    }
+  }
+
+  blogCategoriesCache = Array.from(bySlug.values())
+    .filter((c) => c.count >= 1)
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+  return blogCategoriesCache;
+}
+
 // ─── products ────────────────────────────────────────────────────────────────
 
 let productsCache: any[] | null = null;
