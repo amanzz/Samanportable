@@ -68,7 +68,7 @@ function parseTsv(tsv) {
 }
 
 function walkCodeFiles(dir, files = []) {
-  const skip = new Set(['.git', '.next', 'node_modules', 'out', 'dist', 'reports']);
+  const skip = new Set(['.git', '.next', 'node_modules', 'out', 'dist', 'reports', 'scratch', 'audit']);
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (skip.has(entry.name)) continue;
     const full = path.join(dir, entry.name);
