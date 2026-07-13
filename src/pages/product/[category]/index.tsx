@@ -500,17 +500,17 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               quality={85}
                               onError={(e) => {
-                                e.currentTarget.src = `https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;
+                                e.currentTarget.src = '/placeholder.svg';
                               }}
                             />
                           ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
-                              <div className="text-center">
-                                <div className="text-6xl opacity-60 mb-4">📦</div>
-                                <p className="text-muted-foreground">No image available</p>
-                                <p className="text-sm text-muted-foreground">Contact us for details</p>
-                              </div>
-                            </div>
+                            <Image
+                              src="/placeholder.svg"
+                              alt={transformedProduct.title}
+                              width={800}
+                              height={600}
+                              className="h-full w-full object-cover"
+                            />
                           )}
                           {/* Image Navigation Arrows */}
                           {images.length > 1 && (
@@ -562,13 +562,17 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                                   className="w-full h-full object-cover"
                                   loading="lazy"
                                   onError={(e) => {
-                                    e.currentTarget.src = `https://via.placeholder.com/150x150/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;
+                                    e.currentTarget.src = '/placeholder.svg';
                                   }}
                                 />
                               ) : (
-                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 to-primary/10">
-                                  <div className="text-2xl opacity-60">📷</div>
-                                </div>
+                                <Image
+                                  src="/placeholder.svg"
+                                  alt={`${transformedProduct.title} ${index + 1}`}
+                                  width={150}
+                                  height={150}
+                                  className="h-full w-full object-cover"
+                                />
                               )}
                             </button>
                           ))}
@@ -789,7 +793,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                                   {/* Product Image */}
                                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden relative">
                                     <Image 
-                                      src={relatedProduct.image || `https://via.placeholder.com/320x240/3B82F6/FFFFFF?text=${encodeURIComponent(relatedProduct.title)}`}
+                                      src={relatedProduct.image || '/placeholder.svg'}
                                       alt={relatedProduct.title}
                                       width={320}
                                       height={240}
@@ -797,7 +801,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                                       loading="lazy"
                                       onError={(e) => {
                                         const target = e.target as HTMLImageElement;
-                                        target.src = `https://via.placeholder.com/320x240/3B82F6/FFFFFF?text=${encodeURIComponent(relatedProduct.title)}`;
+                                        target.src = '/placeholder.svg';
                                       }}
                                     />
                                     {relatedProduct.slug === product.slug && (

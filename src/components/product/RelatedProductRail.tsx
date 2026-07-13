@@ -53,6 +53,9 @@ const RelatedProductRail = ({ items, currentHref, className, scroll = false }: R
                         width={56}
                         height={56}
                         loading="lazy"
+                        onError={(event) => {
+                          event.currentTarget.src = '/placeholder.svg';
+                        }}
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center" data-rail-fallback="true">

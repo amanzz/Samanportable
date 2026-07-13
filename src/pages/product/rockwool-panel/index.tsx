@@ -12,7 +12,7 @@ import JumpNav from '@/components/product-puf/JumpNav';
 import MobileStickyCta from '@/components/product-puf/MobileStickyCta';
 import SpecTable from '@/components/product-puf/SpecTable';
 import ProductDetailTabs from '@/components/product-puf/ProductDetailTabs';
-import RelatedProductsRail, { PUF_CATALOG } from '@/components/product-puf/RelatedProductsRail';
+import RelatedProductsRail, { C16_PANELS } from '@/components/product-puf/RelatedProductsRail';
 import ProductCarousel from '@/components/product-puf/ProductCarousel';
 import { LongImage } from '@/components/product-puf/Gallery';
 import RockwoolInfoBox from '@/components/product-rockwool/RockwoolInfoBox';
@@ -99,7 +99,7 @@ const PRODUCT_JSONLD = {
   '@id': 'https://www.samanportable.com/product/rockwool-panel#product',
   name: 'Rockwool Panel',
   description: SHORT_DESCRIPTION,
-  category: 'Insulated Sandwich Panel',
+  category: 'Rockwool Panels',
   brand: { '@id': 'https://www.samanportable.com/#organization' },
   manufacturer: { '@id': 'https://www.samanportable.com/#organization' },
   material: 'Non-combustible stone wool (mineral wool) core with steel facing sheets',
@@ -398,7 +398,15 @@ export default function RockwoolPanelHub() {
               H1 + short description info box (right, sticky). Mirrors the pir-panel
               C16 layout (two columns; no sibling sub-pages to fill a third rail). */}
           <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
-            <div className="order-2 lg:order-1 lg:col-span-7">
+            <div className="order-3 lg:order-1 lg:col-span-3 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
+              <RelatedProductsRail
+                variant="sidebar"
+                heading="Explore the Range"
+                items={[C16_PANELS.puf, C16_PANELS.sandwich, C16_PANELS.pir, C16_PANELS.eps, C16_PANELS.glassWool]}
+              />
+            </div>
+
+            <div className="order-1 lg:order-2 lg:col-span-5">
               <ProductCarousel images={GALLERY_IMAGES} />
               <div className="mt-4 rounded-xl border-2 border-primary/25 bg-primary/[0.04] p-3 sm:p-4">
                 <p className="mb-2 text-sm font-bold text-foreground">Get Rockwool Panel Quotation</p>
@@ -406,7 +414,7 @@ export default function RockwoolPanelHub() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 lg:col-span-5 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
+            <div className="order-2 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <RockwoolInfoBox
                 h1="Rockwool Panel — Non-Combustible Stone Wool Sandwich Panels"
                 priceMain="From ₹1,290 / sq mt"
@@ -445,7 +453,6 @@ export default function RockwoolPanelHub() {
           </div>
 
           <div className="mt-8 space-y-8">
-            <RelatedProductsRail heading="Related products" items={[PUF_CATALOG.hub]} />
             <CertBadgeStrip />
           </div>
         </div>

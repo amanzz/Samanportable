@@ -426,6 +426,7 @@ export async function fetchProductsByCategoryPriority(
     'container-cafe',
     'industrial-sheds',
     'roofing-sheets',
+    'sandwich-panel',
     'puf-panel',
     'pir-panel',
     'eps-panel',

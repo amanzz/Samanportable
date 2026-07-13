@@ -363,7 +363,7 @@ export default function EpsPanelHub() {
               <RelatedProductsRail
                 variant="sidebar"
                 heading="Explore the Range"
-                items={[C16_PANELS.puf, C16_PANELS.pir, C16_PANELS.rockwool, C16_PANELS.sandwich]}
+                items={[C16_PANELS.puf, C16_PANELS.sandwich, C16_PANELS.pir, C16_PANELS.rockwool, C16_PANELS.glassWool]}
               />
             </div>
 

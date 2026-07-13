@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Home, X, Package, Menu } from 'lucide-react';
+import { Home, Phone, X, Package, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { getSeoAnchorText } from '@/lib/seoAnchorMap';
 
@@ -51,10 +51,19 @@ const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
       isActive: router.pathname === '/'
     },
     {
-      name: 'Shop',
+      name: 'Products',
       href: '/product',
       icon: Package,
       isActive: router.pathname.startsWith('/product')
+    },
+    {
+      name: 'Call',
+      href: 'tel:+918861622859',
+      icon: Phone,
+      isActive: false,
+      onClick: () => {
+        window.location.href = 'tel:+918861622859';
+      }
     }
   ];
 

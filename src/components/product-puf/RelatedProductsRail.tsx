@@ -1,14 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
 
 export interface RelatedItem {
   title: string;
   href: string;
   image: string;
-  blurb: string;
   category?: string;
+  blurb?: string;
 }
 
 // The C15 micro-catalog is exactly 4 fixed pages, so relationships are known
@@ -23,48 +22,56 @@ export const PUF_CATALOG: Record<
     title: 'PUF Panel',
     href: '/product/puf-panel',
     image: '/images/puf-panel/hub-factory-stack-50mm-1200x675.webp',
+    category: 'PUF Panels',
     blurb: 'The full factory-made PUF panel range — specs, manufacturing and applications.',
   },
   price: {
     title: 'PUF Panel Price',
     href: '/product/puf-panel/puf-panel-price',
     image: '/images/puf-panel/price-stack-40mm-1200x675.webp',
+    category: 'PUF Panels',
     blurb: 'Fixed base rates by thickness, ₹1,050–₹1,470 per sq mt.',
   },
   roofing: {
     title: 'PUF Panel Roofing',
     href: '/product/puf-panel/puf-panel-roofing',
     image: '/images/puf-panel/roofing-installed-shed-40mm-1200x675.webp',
+    category: 'PUF Panels',
     blurb: 'Insulated roof sheets in trapezoidal and ribbed profiles.',
   },
   sandwich: {
     title: 'PUF Sandwich Panel',
     href: '/product/puf-panel/puf-sandwich-panel',
     image: '/images/puf-panel/cutaway-detail-30mm-1200x675.webp',
+    category: 'PUF Panels',
     blurb: 'The three-layer PUF sheet for wall, roof and cold-room use.',
   },
   house: {
     title: 'PUF Panel House',
     href: '/product/puf-panel/puf-panel-house',
     image: '/images/puf-panel/house/puf-panel-house-installation-wall-roof.webp',
+    category: 'PUF Panels',
     blurb: 'Factory-made insulated panel house shells for residential and site use.',
   },
   wall: {
     title: 'PUF Wall Panel',
     href: '/product/puf-panel/puf-wall-panel',
     image: '/images/puf-panel/wall/40mm-puf-wall-panel-stockyard.webp',
+    category: 'PUF Panels',
     blurb: 'Insulated wall, partition and ceiling panels, 30–200 mm.',
   },
   specification: {
     title: 'PUF Panel Specification',
     href: '/product/puf-panel/puf-panel-specification',
     image: '/images/puf-panel/spec/50mm-off-white-puf-panel-factory-stack.webp',
+    category: 'PUF Panels',
     blurb: 'Owner-verified thickness, size, facing and weight reference.',
   },
   coldStorage: {
     title: 'Cold Storage PUF Panel',
     href: '/product/puf-panel/cold-storage-puf-panel',
     image: '/images/puf-panel/cold-storage/100mm-dairy-cold-storage-room-interior.webp',
+    category: 'PUF Panels',
     blurb: 'Insulated panels for cold rooms and freezer rooms, freezer-grade to 150 mm.',
   },
 };
@@ -74,30 +81,41 @@ export const PUF_CATALOG: Record<
 // as its left sidebar (Ruling 4 / L1 default). Blurbs are Claude-Senior supplied,
 // truth-checked against the fixed price matrix and live pages. `puf` reuses the
 // already-approved PUF hub rail entry.
-export const C16_PANELS: Record<'puf' | 'pir' | 'eps' | 'rockwool' | 'sandwich', RelatedItem> = {
+export const C16_PANELS: Record<'puf' | 'pir' | 'eps' | 'rockwool' | 'glassWool' | 'sandwich', RelatedItem> = {
   puf: PUF_CATALOG.hub,
   pir: {
     title: 'PIR Panel',
     href: '/product/pir-panel',
     image: '/images/pir-panel/pir-factory-stack-1200x675.webp',
+    category: 'PIR Panels',
     blurb: 'Fire-improved polyisocyanurate foam panels for cold rooms, cleanrooms and premium insulation.',
   },
   eps: {
     title: 'EPS Panel',
     href: '/product/eps-panel',
     image: '/images/eps-panel/eps-panel-wall-roof-stack-1x1.webp',
+    category: 'EPS Panels',
     blurb: 'Budget-friendly lightweight insulated panels for dry-use walls and partitions. From ₹770 / sq mt.',
   },
   rockwool: {
     title: 'Rockwool Panel',
     href: '/product/rockwool-panel',
     image: '/images/rockwool-panel/rockwool-panel-product-front-sq.webp',
+    category: 'Rockwool Panels',
     blurb: 'Non-combustible stone wool core for fire-rated walls and acoustic enclosures. From ₹1,290 / sq mt.',
+  },
+  glassWool: {
+    title: 'Glass Wool Panel',
+    href: '/product/glass-wool-panel',
+    image: '/images/glass-wool-panel/glass-wool-panel-stack-yellow-core.webp',
+    category: 'Glass Wool Panels',
+    blurb: 'Acoustic mineral-fibre panels for plant rooms, generator enclosures and fire-conscious walls.',
   },
   sandwich: {
     title: 'Sandwich Panel',
     href: '/product/sandwich-panel',
     image: '/images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp',
+    category: 'Sandwich Panels',
     blurb: 'Compare all five insulated cores and choose the right panel for your job. From ₹770 / sq mt.',
   },
 };
@@ -154,24 +172,23 @@ const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', va
                 height={isSidebar ? 112 : 225}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
+                onError={(event) => {
+                  event.currentTarget.src = '/placeholder.svg';
+                }}
               />
             </div>
             {isSidebar ? (
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-bold text-foreground">{item.title}</p>
-                <span className="inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">{getCategoryLabel(item)}</span>
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
-                  View <ArrowRight className="h-3 w-3" aria-hidden="true" />
+                <span className="mt-1 inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">
+                  {getCategoryLabel(item)}
                 </span>
               </div>
             ) : (
               <div className="flex flex-1 flex-col p-4">
-                <div className="mb-1 flex items-center gap-2">
-                  <h3 className="font-bold text-foreground">{item.title}</h3>
-                </div>
-                <span className="mb-3 inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">{getCategoryLabel(item)}</span>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                  View <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                <h3 className="font-bold text-foreground">{item.title}</h3>
+                <span className="mt-2 inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-normal text-emerald-700">
+                  {getCategoryLabel(item)}
                 </span>
               </div>
             )}
