@@ -170,6 +170,10 @@ module.exports = {
     // next-sitemap auto-discovers it. A 410 page must never be listed in the
     // sitemap (Google would flag a "Gone" URL). The page itself is unchanged.
     '/410',
+    // SHIKHAR T8.1: /blog/search is a noindex,follow UX surface. next-sitemap
+    // auto-discovers SSR routes, so without this the sitemap would advertise a
+    // noindex URL and earn an "Excluded by noindex" report in Search Console.
+    '/blog/search',
   ],
   generateIndexSitemap: false,
   sitemapSize: 7000,

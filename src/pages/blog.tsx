@@ -3,23 +3,16 @@ import { GetServerSideProps } from 'next';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Link from 'next/link';
-import { Calendar, ArrowRight, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { Calendar, ArrowRight, Clock, Search } from 'lucide-react';
 import { pageSEO, siteConfig } from '@/config/seo';
 import BlogImage from '@/components/BlogImage';
 import { decodeHtmlEntities } from '@/lib/utils';
 import { dsCssVariables } from '@/components/ds/tokens';
+import type { StartHereItem } from '@/lib/staticContent';
 
 import { BlogPost as ApiBlogPost } from '@/config/api';
 type BlogPost = ApiBlogPost;
-
-// Reading time computed server-side (matches the previous in-component getReadingTime logic:
-// 200 wpm). Computing it here lets us strip the full `content.rendered` from the returned props
-// so large post bodies are no longer serialized into __NEXT_DATA__ (Large HTML fix).
-function computeReadingTime(content: string): number {
-  const wordsPerMinute = 200;
-  const wordCount = (content || '').replace(/<[^>]*>/g, '').split(' ').length;
-  return Math.ceil(wordCount / wordsPerMinute);
-}
 
 // T8: excerpts are stripped to PLAIN TEXT server-side (no dangerouslySetInnerHTML in the
 // card), decoded, collapsed and truncated at a word boundary.
@@ -124,8 +117,24 @@ const CATEGORY_INTRO: Record<string, string> = {
   'uncategorized': 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd — ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified manufacturer with factories in Bangalore and Greater Noida serving buyers across India.',
 };
 
+// T8.1 B: the featured (newest) post, rendered as the lead card on page 1 only.
+// It is post #1 of the same 10 this page already returns — so the grid simply skips
+// it, the ItemList still describes exactly the 10 visible posts, and the pagination
+// math (36 pages of 10) is untouched.
+type FeaturedPost = {
+  slug: string;
+  title: string;
+  date: string;
+  readTime: number;
+  excerpt: string;
+  image: { src: string; alt: string } | null;
+  category: { name: string; slug: string } | null;
+};
+
 interface BlogProps {
   posts: BlogCardPost[];
+  featured: FeaturedPost | null;
+  startHere: StartHereItem[];
   totalPages: number;
   currentPage: number;
   totalPosts: number;
@@ -149,12 +158,17 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     const tag = Array.isArray(query.tag) ? query.tag[0] : query.tag;
 
     // Static content layer: reads exported post files — no WordPress call.
-    const { fetchBlogPosts, getBlogCategories } = await import('@/lib/staticContent');
+    const { fetchBlogPosts, getBlogCategories, getStartHerePosts, computeReadTime } = await import(
+      '@/lib/staticContent'
+    );
     const result = await fetchBlogPosts(page, 10);
 
     // T8 B1: REAL categories with REAL counts, derived from the post data itself.
     // (The previous hardcoded list invented both the categories and their counts.)
     const categories = getBlogCategories();
+
+    // T8.1 D2: newest post of each of the 4 largest categories. Pure data.
+    const startHere = getStartHerePosts(4);
 
     const blogCanonicalBase = `${siteConfig.url}/blog`;
     const cleanCategory = category?.trim();
@@ -214,15 +228,44 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     // __NEXT_DATA__.
     const lightPosts: BlogCardPost[] = (result.posts || []).map((post: BlogPost) => ({
       ...post,
-      readingTime: computeReadingTime(post?.content?.rendered || ''),
+      readingTime: computeReadTime(post?.content?.rendered || ''),
       excerptText: plainExcerpt(post?.excerpt?.rendered || ''),
       content: { ...(post.content || {}), rendered: '' },
       excerpt: { ...(post.excerpt || {}), rendered: '' },
     }));
 
+    // T8.1 B: featured lead card = the newest post, on page 1 only. Its longer excerpt,
+    // image and real category are read from the SAME post object the grid would have
+    // rendered, before `content`/`excerpt` were stripped above.
+    const featuredSource: any = page === 1 ? (result.posts || [])[0] : undefined;
+    let featured: FeaturedPost | null = null;
+
+    if (featuredSource) {
+      const media = featuredSource?._embedded?.['wp:featuredmedia']?.[0];
+      const terms: any[] = featuredSource?._embedded?.['wp:term']?.[0] || [];
+      const term = terms.find((t) => t?.taxonomy === 'category' && t?.slug);
+
+      featured = {
+        slug: featuredSource.slug,
+        title: featuredSource?.title?.rendered || '',
+        date: featuredSource.date,
+        readTime: computeReadTime(featuredSource?.content?.rendered || ''),
+        excerpt: plainExcerpt(featuredSource?.excerpt?.rendered || '', 200),
+        image: media?.source_url
+          ? {
+              src: media.source_url,
+              alt: decodeHtmlEntities(media.alt_text || featuredSource?.title?.rendered || ''),
+            }
+          : null,
+        category: term ? { name: term.name, slug: term.slug } : null,
+      };
+    }
+
     return {
       props: {
         posts: lightPosts,
+        featured,
+        startHere,
         totalPages: result.pagination.totalPages,
         currentPage: result.pagination.currentPage,
         totalPosts: result.pagination.totalPosts || 0,
@@ -242,6 +285,8 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     return {
       props: {
         posts: [],
+        featured: null,
+        startHere: [],
         totalPages: 1,
         currentPage: 1,
         totalPosts: 0,
@@ -273,8 +318,17 @@ function pageWindow(currentPage: number, totalPages: number): Array<number | 'ga
   return [1, 'gap', currentPage - 1, currentPage, currentPage + 1, 'gap', totalPages];
 }
 
+// Category pills (T8.1 C). /blog/search carries its own copy of these class strings —
+// importing them from this page module would pull the hub into the search bundle.
+const pillClass =
+  'inline-flex items-center whitespace-nowrap rounded-full border border-[var(--ds-border)] bg-[var(--ds-surface)] px-3.5 py-1.5 text-sm font-medium text-[var(--ds-color-forest)] transition-colors hover:border-[var(--ds-color-forest)] hover:bg-[var(--ds-color-mist)]';
+const pillActiveClass =
+  'inline-flex items-center whitespace-nowrap rounded-full border border-[var(--ds-color-forest)] bg-[var(--ds-color-forest)] px-3.5 py-1.5 text-sm font-semibold text-white';
+
 const Blog = ({
   posts,
+  featured,
+  startHere,
   totalPages,
   currentPage,
   totalPosts,
@@ -292,12 +346,32 @@ const Blog = ({
   // its CollectionPage `mainEntity` reference whenever the page has no posts.
   const hasPosts = posts.length > 0;
 
+  // The featured card IS post #1 of this page's 10, so the grid renders the other 9 and
+  // no post appears twice. ItemList below still describes all 10 (featured + grid).
+  const gridPosts = featured ? posts.slice(1) : posts;
+
+  // MOBILE CWV LAW: only the first hero image is priority-loaded. When the featured card
+  // is present it owns that slot, so grid images must not also load eagerly — BlogImage
+  // prioritises index < 3, so we offset past the threshold.
+  const gridImageIndex = (index: number) => (featured ? index + 3 : index);
+
   // T8 B7: schema @id / url reflect the CURRENT (canonical) page URL, so a paginated
   // listing describes itself rather than the hub. ItemList mirrors exactly the posts
   // rendered on this page (G6).
   const pageUrl = seoCanonical;
 
   const blogHubStructuredData = [
+    // T8.1 G: Blog entity, tying the content library to the site's Organization. The
+    // publisher is referenced by the @id the rest of the site already uses for the
+    // Organization node — no new org fields invented here.
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      '@id': `${pageUrl}#blog`,
+      url: pageUrl,
+      name: seoTitle,
+      publisher: { '@id': 'https://www.samanportable.com/#organization' },
+    },
     {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
@@ -373,44 +447,222 @@ const Blog = ({
               so the LCP text paints immediately). */}
           <section className="border-b border-[var(--ds-border)] bg-[var(--ds-color-mist)]">
             <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-16 lg:px-8">
+              {/* T8.1 A: visible breadcrumb — mirrors the BreadcrumbList JSON-LD exactly
+                  (Home › Blog), and stays Home › Blog on paginated pages. */}
+              <nav aria-label="Breadcrumb" className="mb-5">
+                <ol className="flex items-center gap-1.5 text-xs text-[var(--ds-text-secondary)]">
+                  <li>
+                    <Link href="/" className="transition-colors hover:text-[var(--ds-color-forest)]">
+                      Home
+                    </Link>
+                  </li>
+                  <li aria-hidden="true" className="text-[var(--ds-border-strong)]">
+                    ›
+                  </li>
+                  <li aria-current="page" className="font-medium text-[var(--ds-color-forest)]">
+                    Blog
+                  </li>
+                </ol>
+              </nav>
+
               <h1 className="text-3xl font-bold tracking-tight text-[var(--ds-color-forest)] md:text-4xl">
                 Prefab &amp; Portable Cabin Insights
               </h1>
               <p className="mt-3 max-w-3xl text-base leading-relaxed text-[var(--ds-text-secondary)] md:text-lg">
                 Buying guides, price breakdowns, specifications and project stories from SAMAN&apos;s manufacturing team — updated regularly.
               </p>
+
+              {/* T8.1 F: plain GET form — no JS required. The placeholder count is the
+                  real post total, so it follows the data. */}
+              <form action="/blog/search" method="get" role="search" className="mt-6 flex max-w-xl gap-2">
+                <input
+                  type="search"
+                  name="q"
+                  aria-label="Search guides"
+                  placeholder={`Search ${totalPosts} guides…`}
+                  className="h-11 w-full rounded-lg border border-[var(--ds-border)] bg-[var(--ds-surface)] px-4 text-sm text-[var(--ds-text-primary)] outline-none transition-colors placeholder:text-[var(--ds-text-secondary)] focus:border-[var(--ds-color-forest)]"
+                />
+                <button
+                  type="submit"
+                  className="inline-flex h-11 shrink-0 items-center gap-1.5 rounded-lg bg-[var(--ds-color-forest)] px-5 text-sm font-semibold text-white transition-colors hover:bg-[var(--ds-color-leaf)]"
+                >
+                  <Search className="h-4 w-4" aria-hidden="true" />
+                  Search
+                </button>
+              </form>
             </div>
           </section>
 
           <section className="py-12 md:py-16">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
-                {/* Sidebar — REAL categories with REAL counts (T8 B1). Tags removed. */}
+                {/* Sidebar (T8.1 D) — the category list moved out to the pills row, so the
+                    sidebar now carries the E-E-A-T box and the deterministic Start Here list. */}
                 <aside className="lg:col-span-1">
-                  <div className="sticky top-24 rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] p-6">
-                    <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-[var(--ds-color-forest)]">
-                      Categories
-                    </h2>
-                    <ul className="space-y-1">
-                      {categories.map((category) => (
-                        <li key={category.id}>
-                          <Link
-                            href={`/blog?category=${category.slug}`}
-                            className="flex items-center justify-between rounded-lg px-2 py-1.5 text-sm text-[var(--ds-text-secondary)] transition-colors hover:bg-[var(--ds-color-mist)] hover:text-[var(--ds-color-forest)]"
-                          >
-                            <span>{decodeHtmlEntities(category.name)}</span>
-                            <span className="ml-2 rounded-full bg-[var(--ds-color-mist)] px-2 py-0.5 text-xs font-semibold text-[var(--ds-color-forest)]">
-                              {category.count}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="sticky top-24 space-y-6">
+                    <div className="rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] p-6">
+                      <h2 className="mb-3 text-sm font-bold uppercase tracking-widest text-[var(--ds-color-forest)]">
+                        From the factory floor
+                      </h2>
+                      <p className="text-sm leading-relaxed text-[var(--ds-text-secondary)]">
+                        Every guide here is written from real manufacturing and installation experience — portable cabins, container offices, prefab structures and site accommodation built and delivered across India.
+                      </p>
+
+                      <div className="mt-5 space-y-3 border-t border-[var(--ds-border)] pt-5 text-sm text-[var(--ds-text-secondary)]">
+                        <p>
+                          South — Bengaluru:{' '}
+                          <a href="tel:+918861622859" className="font-semibold text-[var(--ds-color-forest)] hover:text-[var(--ds-color-leaf)]">
+                            +91 88616 22859
+                          </a>{' '}
+                          ·{' '}
+                          <a href="mailto:sales@samanportable.com" className="font-semibold text-[var(--ds-color-forest)] hover:text-[var(--ds-color-leaf)]">
+                            sales@samanportable.com
+                          </a>
+                        </p>
+                        <p>
+                          North — Greater Noida:{' '}
+                          <a href="tel:+918796039938" className="font-semibold text-[var(--ds-color-forest)] hover:text-[var(--ds-color-leaf)]">
+                            +91 87960 39938
+                          </a>{' '}
+                          ·{' '}
+                          <a href="mailto:ncr@samanportable.com" className="font-semibold text-[var(--ds-color-forest)] hover:text-[var(--ds-color-leaf)]">
+                            ncr@samanportable.com
+                          </a>
+                        </p>
+                      </div>
+
+                      <Link
+                        href="/about-us"
+                        className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:text-[var(--ds-color-forest)]"
+                      >
+                        About SAMAN Portable
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    </div>
+
+                    {startHere.length > 0 && (
+                      <div className="rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] p-6">
+                        <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-[var(--ds-color-forest)]">
+                          Start here — by topic
+                        </h2>
+                        <ul className="space-y-4">
+                          {startHere.map((item) => (
+                            <li key={item.categorySlug}>
+                              <p className="text-xs uppercase tracking-wide text-[var(--ds-text-secondary)]">
+                                {decodeHtmlEntities(item.categoryName)}
+                              </p>
+                              <Link
+                                href={`/${item.postSlug}`}
+                                className="mt-0.5 block text-sm font-semibold leading-snug text-[var(--ds-text-primary)] transition-colors hover:text-[var(--ds-color-forest)]"
+                              >
+                                {decodeHtmlEntities(item.postTitle)}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </aside>
 
                 {/* Posts */}
                 <div className="lg:col-span-3">
+                  {/* T8.1 B: featured lead card — the newest post, page 1 only. */}
+                  {featured && (
+                    <section aria-labelledby="latest-guide" className="mb-10">
+                      <p
+                        id="latest-guide"
+                        className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--ds-color-leaf)]"
+                      >
+                        LATEST GUIDE
+                      </p>
+
+                      <article className="grid grid-cols-1 overflow-hidden rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] transition-colors hover:border-[var(--ds-color-forest)] md:grid-cols-2">
+                        {/* Fixed height on mobile, stretched grid cell on desktop → the box is
+                            reserved before the image loads. Zero CLS. */}
+                        <div className="relative h-56 w-full bg-[var(--ds-color-mist)] md:h-full md:min-h-[20rem]">
+                          {featured.image && (
+                            <Image
+                              src={featured.image.src}
+                              alt={featured.image.alt}
+                              fill
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                              priority
+                              className="object-cover"
+                            />
+                          )}
+                        </div>
+
+                        <div className="flex flex-col justify-center gap-3 p-6 md:p-8">
+                          {featured.category && (
+                            <Link
+                              href={`/blog?category=${featured.category.slug}`}
+                              className="w-fit rounded-full bg-[var(--ds-color-mist)] px-3 py-1 text-xs font-semibold text-[var(--ds-color-forest)] transition-colors hover:bg-[var(--ds-color-forest)] hover:text-white"
+                            >
+                              {decodeHtmlEntities(featured.category.name)}
+                            </Link>
+                          )}
+
+                          <h2 className="text-xl font-bold leading-snug text-[var(--ds-text-primary)] md:text-2xl">
+                            <Link
+                              href={`/${featured.slug}`}
+                              className="transition-colors hover:text-[var(--ds-color-forest)]"
+                            >
+                              {decodeHtmlEntities(featured.title)}
+                            </Link>
+                          </h2>
+
+                          <p className="text-sm leading-relaxed text-[var(--ds-text-secondary)]">
+                            {featured.excerpt}
+                          </p>
+
+                          <div className="flex items-center gap-4 text-xs text-[var(--ds-text-secondary)]">
+                            <span className="flex items-center">
+                              <Calendar className="mr-1 h-3 w-3" />
+                              {formatDate(featured.date)}
+                            </span>
+                            <span className="flex items-center">
+                              <Clock className="mr-1 h-3 w-3" />
+                              {featured.readTime} min read
+                            </span>
+                          </div>
+
+                          <Link
+                            href={`/${featured.slug}`}
+                            className="inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:text-[var(--ds-color-forest)]"
+                          >
+                            Read article
+                            <ArrowRight className="h-3.5 w-3.5" />
+                          </Link>
+                        </div>
+                      </article>
+                    </section>
+                  )}
+
+                  {/* T8.1 C: category pills — real counts from getBlogCategories(). SSR links;
+                      one scrollable row on mobile (CSS only), wrapping on desktop. */}
+                  {categories.length > 0 && (
+                    <nav aria-label="Blog categories" className="mb-8">
+                      <ul className="flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:overflow-visible md:pb-0">
+                        <li className="shrink-0">
+                          <Link href="/blog" className={activeCategory ? pillClass : pillActiveClass}>
+                            All articles ({totalPosts})
+                          </Link>
+                        </li>
+                        {categories.map((category) => (
+                          <li key={category.id} className="shrink-0">
+                            <Link
+                              href={`/blog?category=${category.slug}`}
+                              className={activeCategory === category.slug ? pillActiveClass : pillClass}
+                            >
+                              {decodeHtmlEntities(category.name)} ({category.count})
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </nav>
+                  )}
+
                   {/* Category intro paragraph — unique on-page content per category filter. */}
                   {seoCategoryIntro && (
                     <p className="mb-6 text-base leading-relaxed text-[var(--ds-text-secondary)]">
@@ -427,14 +679,14 @@ const Blog = ({
 
                   {hasPosts ? (
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                      {posts.map((post, index) => (
+                      {gridPosts.map((post, index) => (
                         <article
                           key={post.id}
                           className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--ds-color-forest)] hover:shadow-md"
                         >
                           {/* Fixed aspect box → space reserved, zero CLS. */}
                           <div className="relative aspect-video overflow-hidden bg-[var(--ds-color-mist)]">
-                            <BlogImage post={post} index={index} className="h-full w-full" />
+                            <BlogImage post={post} index={gridImageIndex(index)} className="h-full w-full" />
                           </div>
 
                           <div className="flex flex-grow flex-col p-5">

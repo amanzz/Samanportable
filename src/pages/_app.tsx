@@ -33,6 +33,10 @@ export default function App({ Component, pageProps }: AppProps) {
     '/',
     '/product',
     '/blog',
+    // SHIKHAR T8.1: /blog/search owns its SEO via UnifiedSEO and must stay
+    // noindex,follow. Without this, DefaultSeo would add its own index,follow
+    // robots tags alongside it and the page would contradict itself.
+    '/blog/search',
     '/about-us',
     '/contact',
     '/gallery',
