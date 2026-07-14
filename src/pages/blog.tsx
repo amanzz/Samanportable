@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Link from 'next/link';
 import Image from 'next/image';
-import { isRemoteImageSrc } from '@/lib/imageSrc';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { Calendar, ArrowRight, Clock, Search } from 'lucide-react';
 import { pageSEO, siteConfig } from '@/config/seo';
 import BlogImage from '@/components/BlogImage';
@@ -613,7 +613,7 @@ const Blog = ({
                           {featured.image && (
                             <Image
                               src={featured.image.src}
-                              unoptimized={isRemoteImageSrc(featured.image.src)}
+                              unoptimized={shouldBypassOptimizer(featured.image.src)}
                               alt={featured.image.alt}
                               fill
                               sizes="(max-width: 768px) 100vw, 50vw"

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { isRemoteImageSrc } from '@/lib/imageSrc';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { ArrowRight } from 'lucide-react';
 
 export interface RelatedItem {
@@ -150,7 +150,7 @@ const RelatedProductsRail = ({ items, heading = 'Related PUF Panel Products', va
             <div className={isSidebar ? 'relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-muted' : 'relative aspect-video w-full overflow-hidden bg-muted'}>
               <Image
                 src={item.image}
-                unoptimized={isRemoteImageSrc(item.image)}
+                unoptimized={shouldBypassOptimizer(item.image)}
                 alt={item.title}
                 width={isSidebar ? 112 : 400}
                 height={isSidebar ? 112 : 225}

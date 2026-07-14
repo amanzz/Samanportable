@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { isRemoteImageSrc } from '@/lib/imageSrc';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { Skeleton } from '@/components/ui/skeleton';
 
 interface OptimizedProductImageProps {
@@ -59,7 +59,7 @@ const OptimizedProductImage: React.FC<OptimizedProductImageProps> = ({
         src={src}
         alt={alt}
         // T12: product images are Hostinger-hosted; keep them off the optimizer fetch path.
-        unoptimized={isRemoteImageSrc(src)}
+        unoptimized={shouldBypassOptimizer(src)}
         width={width}
         height={height}
         className={`${className} transition-opacity duration-300 ${

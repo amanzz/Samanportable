@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import { isRemoteImageSrc } from '@/lib/imageSrc';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
@@ -181,7 +181,7 @@ const Gallery = () => {
                     <div className="aspect-square relative overflow-hidden">
                       <Image
                         src={image.src}
-                        unoptimized={isRemoteImageSrc(image.src)}
+                        unoptimized={shouldBypassOptimizer(image.src)}
                         alt={image.alt}
                         width={400}
                         height={400}
@@ -283,7 +283,7 @@ const Gallery = () => {
             <div className="flex items-center justify-center h-full">
               <Image
                 src={selectedImage.src}
-                unoptimized={isRemoteImageSrc(selectedImage.src)}
+                unoptimized={shouldBypassOptimizer(selectedImage.src)}
                 alt={selectedImage.alt}
                 width={800}
                 height={600}

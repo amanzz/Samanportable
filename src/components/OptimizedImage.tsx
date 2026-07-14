@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { isRemoteImageSrc } from '@/lib/imageSrc';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 
 interface OptimizedImageProps {
   src: string;
@@ -77,7 +77,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         src={src}
         alt={alt}
         // T12: remote (Hostinger/WP) images bypass the optimizer's server-side fetch.
-        unoptimized={isRemoteImageSrc(src)}
+        unoptimized={shouldBypassOptimizer(src)}
         width={width}
         height={height}
         className={`${className} transition-opacity duration-200 ${

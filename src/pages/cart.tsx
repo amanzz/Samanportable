@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import { isRemoteImageSrc } from '@/lib/imageSrc';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -102,7 +102,7 @@ const Cart = () => {
                               {item.image && item.image !== '/placeholder.svg' ? (
                                 <Image 
                                   src={item.image}
-                                  unoptimized={isRemoteImageSrc(item.image)} 
+                                  unoptimized={shouldBypassOptimizer(item.image)} 
                                   alt={item.name}
                                   width={96}
                                   height={96}

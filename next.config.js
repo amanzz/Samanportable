@@ -98,57 +98,34 @@ const nextConfig = {
   },
 
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'blog.samanportable.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'samanportable.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.samanportable.com',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.samanportable.com',
-      },
-      // Add WooCommerce specific domains for product images
-      {
-        protocol: 'https',
-        hostname: 'woocommerce.samanportable.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'shop.samanportable.com',
-      },
-      // Add external image domains
-      {
-        protocol: 'https',
-        hostname: 'images.surferseo.art',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.surferseo.art',
-      },
-      // Legitimate external blog hosts discovered during audit
-      {
-        protocol: 'https',
-        hostname: 'storage.googleapis.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'secure.gravatar.com',
-      }
-    ],
+    // SHIKHAR T12 HARDENING (2026-07-14): remotePatterns is INTENTIONALLY EMPTY.
+    //
+    // It previously allow-listed blog.samanportable.com (Hostinger) and the other SAMAN /
+    // external origins. That allow-list is precisely what let the optimizer server-fetch
+    // Hostinger — the fetch that failed with ECONNRESET on 2026-06-12 and 500'd every blog
+    // image. Nothing depends on it any more: EVERY remote next/image src is passed
+    // `unoptimized` via shouldBypassOptimizer() (src/lib/imageSrc.ts), so remote images are
+    // fetched by the BROWSER directly and never touch /_next/image.
+    //
+    // With no host allow-listed, a hand-crafted /_next/image?url=<any remote URL> is
+    // rejected with 400 by Next itself. The outage path is now closed BY CONSTRUCTION, not
+    // merely by call-site discipline: even a future call site that forgets `unoptimized`
+    // fails loudly instead of re-arming the Hostinger fetch.
+    //
+    // DO NOT re-add a remote host here to "fix" a broken remote image. Mark that image
+    // `unoptimized` (or rehost it into /public) instead.
+    remotePatterns: [],
     formats: ['image/webp'], // Only WebP for faster processing, removed AVIF
     deviceSizes: [640, 750, 828, 1080, 1200, 1920], // Reduced sizes for faster processing
     imageSizes: [16, 32, 48, 64, 96, 128, 256], // Reduced sizes for faster processing
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days for better balance
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // T12 HARDENING: SVG is never passed through the optimizer (it rasterises/serves SVG,
+    // which is the XSS vector `dangerouslyAllowSVG` guards). Every SVG next/image src —
+    // the /saman-logo.svg header/footer logos and the /placeholder.svg card fallback — is
+    // `unoptimized` via shouldBypassOptimizer(), so it renders as a plain <img> and nothing
+    // breaks. The stray contentSecurityPolicy below only ever applied to optimizer-served
+    // SVG, so it is removed with the flag it belonged to.
+    dangerouslyAllowSVG: false,
     // SHIKHAR T12 (2026-07-14): the `loader: 'custom'` + `loaderFile: './image-loader.js'`
     // bypass is REMOVED, restoring the built-in /_next/image optimizer. The loader was an
     // emergency fix for the optimizer's server-side fetch of Hostinger-hosted blog images
@@ -157,9 +134,10 @@ const nextConfig = {
     // formats/deviceSizes/imageSizes/quality settings above were dead config until now.
     //
     // The optimizer must still never server-fetch Hostinger. That is enforced at the call
-    // sites, not here: every remote (absolute-URL) image is passed `unoptimized` via
-    // isRemoteImageSrc() in src/lib/imageSrc.ts, so the browser fetches it directly exactly
-    // as it does today. Local /public images are optimized by the server from disk.
+    // sites AND by the empty remotePatterns above: every remote (absolute-URL) image is
+    // passed `unoptimized` via shouldBypassOptimizer() in src/lib/imageSrc.ts, so the
+    // browser fetches it directly exactly as it does today. Local /public raster images are
+    // optimized by the server from disk.
     // STAGING ONLY: when the env-gated Google block is on (goldfish), serve images
     // unoptimized. The optimizer fetches LOCAL public/ images via an internal HTTP
     // self-request that carries no credentials, so the 401 wall breaks it (blank

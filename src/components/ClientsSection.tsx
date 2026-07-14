@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { isRemoteImageSrc } from '@/lib/imageSrc';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { Star, Quote, Building2, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
@@ -184,7 +184,7 @@ const ClientsSection = () => {
                   <div className="w-16 h-12 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300">
                     <Image
                       src={client.logo}
-                      unoptimized={isRemoteImageSrc(client.logo)}
+                      unoptimized={shouldBypassOptimizer(client.logo)}
                       alt={`${client.name} logo`}
                       width={96}
                       height={72}
