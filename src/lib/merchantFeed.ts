@@ -13,6 +13,8 @@ type ProductLike = {
   price?: string | number | null;
   regular_price?: string | number | null;
   sale_price?: string | number | null;
+  priceDisplay?: string | null;
+  priceSubline?: string | null;
   on_sale?: boolean;
   stock_status?: string;
   short_description?: string;
@@ -65,10 +67,6 @@ export type MerchantProduct = {
   product_type: string;
   google_product_category: string;
   shipping_label: string;
-  shipping_weight: string;
-  shipping_length: string;
-  shipping_width: string;
-  shipping_height: string;
   adult: 'no';
   is_bundle: 'no';
   custom_label_0: string;
@@ -92,33 +90,18 @@ const PREFAB_BRAND_CATEGORIES = new Set([
   'prefabricated-houses',
 ]);
 
-const CATEGORY_DEFAULTS: Record<
-  string,
-  { lengthCm: number; widthCm: number; heightCm: number; weightKg: number; shippingLabel: string }
-> = {
-  'container-cafe': { lengthCm: 610, widthCm: 305, heightCm: 290, weightKg: 3500, shippingLabel: 'freight-container-cafe' },
-  'container-houses': { lengthCm: 1220, widthCm: 366, heightCm: 320, weightKg: 9000, shippingLabel: 'freight-container-house' },
-  'container-offices': { lengthCm: 610, widthCm: 305, heightCm: 290, weightKg: 3000, shippingLabel: 'freight-container-office' },
-  'industrial-sheds': { lengthCm: 1200, widthCm: 600, heightCm: 450, weightKg: 10000, shippingLabel: 'freight-prefab-building' },
-  'labor-colony': { lengthCm: 1220, widthCm: 305, heightCm: 320, weightKg: 8000, shippingLabel: 'freight-labour-housing' },
-  'peb-constructions': { lengthCm: 1800, widthCm: 900, heightCm: 600, weightKg: 12000, shippingLabel: 'freight-peb-structure' },
-  'porta-cabins': { lengthCm: 610, widthCm: 305, heightCm: 290, weightKg: 3000, shippingLabel: 'freight-porta-cabin' },
-  'portable-cabin': { lengthCm: 610, widthCm: 305, heightCm: 290, weightKg: 2800, shippingLabel: 'freight-portable-cabin' },
-  'portable-office': { lengthCm: 610, widthCm: 305, heightCm: 290, weightKg: 3000, shippingLabel: 'freight-portable-office' },
-  'portable-toilet': { lengthCm: 240, widthCm: 180, heightCm: 240, weightKg: 600, shippingLabel: 'freight-compact-unit' },
-  'pre-engineered-buildings': { lengthCm: 1800, widthCm: 900, heightCm: 600, weightKg: 12000, shippingLabel: 'freight-peb-building' },
-  'prefab-buildings': { lengthCm: 610, widthCm: 457, heightCm: 290, weightKg: 4500, shippingLabel: 'freight-prefab-building' },
-  'prefabricated-houses': { lengthCm: 1220, widthCm: 366, heightCm: 320, weightKg: 8500, shippingLabel: 'freight-prefab-house' },
-  'security-cabins': { lengthCm: 240, widthCm: 240, heightCm: 240, weightKg: 700, shippingLabel: 'freight-compact-cabin' },
-};
+const PANEL_CATEGORY_SLUGS = new Set([
+  'eps-panel',
+  'pir-panel',
+  'puf-panel',
+  'rockwool-panel',
+  'sandwich-panel',
+]);
 
-const FALLBACK_DEFAULT = {
-  lengthCm: 610,
-  widthCm: 305,
-  heightCm: 290,
-  weightKg: 3000,
-  shippingLabel: 'freight-portable-structure',
-};
+const COMPACT_UNIT_CATEGORY_SLUGS = new Set([
+  'portable-toilet',
+  'security-cabins',
+]);
 
 export function decodeHtmlEntities(value: string): string {
   if (!value) return '';
@@ -195,6 +178,17 @@ export function getEffectiveProductPrice(product: ProductLike): number {
   if (price > 0) return price;
 
   return parseNumber(product.regular_price);
+}
+
+export function hasMerchantUnsafePrice(product: ProductLike): boolean {
+  const visiblePriceText = [
+    product.priceDisplay,
+    product.priceSubline,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  return /\bex\s*-?\s*gst\b/i.test(visiblePriceText);
 }
 
 export function formatMerchantPrice(value: number): string {
@@ -329,73 +323,23 @@ function scoreImage(url: string, width?: number, height?: number, galleryImage =
   return score;
 }
 
-function getDimensionDefaults(product: ProductLike) {
-  return CATEGORY_DEFAULTS[getPrimaryCategorySlug(product)] || FALLBACK_DEFAULT;
-}
-
-function convertToCm(value: number, unit: string): number {
-  const normalized = unit.toLowerCase();
-  if (normalized === 'ft' || normalized === 'feet') return value * 30.48;
-  if (normalized === 'm' || normalized === 'meter' || normalized === 'metre') return value * 100;
-  return value;
-}
-
-function extractDimensionsFromText(product: ProductLike): { lengthCm?: number; widthCm?: number; heightCm?: number } {
-  const text = [
-    product.name,
-    stripHtml(product.short_description),
-    stripHtml(product.description),
-  ].join(' ');
-
-  const pattern = /(\d+(?:\.\d+)?)\s*(?:x|\u00d7)\s*(\d+(?:\.\d+)?)(?:\s*(?:x|\u00d7)\s*(\d+(?:\.\d+)?))?\s*(ft|feet|m|meter|metre|cm)\b/gi;
-  let match: RegExpExecArray | null;
-  while ((match = pattern.exec(text)) !== null) {
-    const unit = match[4];
-    const length = parseFloat(match[1]);
-    const width = parseFloat(match[2]);
-    const height = match[3] ? parseFloat(match[3]) : 0;
-    if (!isPlausibleDimension(length, width, height, unit)) continue;
-    return {
-      lengthCm: convertToCm(length, unit),
-      widthCm: convertToCm(width, unit),
-      ...(height ? { heightCm: convertToCm(height, unit) } : {}),
-    };
-  }
-  return {};
-}
-
-function isPlausibleDimension(length: number, width: number, height: number, unit: string): boolean {
-  if (!Number.isFinite(length) || !Number.isFinite(width) || length <= 0 || width <= 0) return false;
-  const normalized = unit.toLowerCase();
-  if (normalized === 'ft' || normalized === 'feet') {
-    return length >= 4 && length <= 220 && width >= 3 && width <= 120 && (!height || (height >= 5 && height <= 80));
-  }
-  if (normalized === 'm' || normalized === 'meter' || normalized === 'metre') {
-    return length >= 1 && length <= 70 && width >= 1 && width <= 40 && (!height || (height >= 1.5 && height <= 25));
-  }
-  return length >= 100 && length <= 7000 && width >= 100 && width <= 4000 && (!height || (height >= 150 && height <= 2500));
-}
-
 export function getShippingAttributes(product: ProductLike) {
-  const defaults = getDimensionDefaults(product);
-  const extracted = extractDimensionsFromText(product);
-  const directDimensions = {
-    lengthCm: parseNumber(product.dimensions?.length) || undefined,
-    widthCm: parseNumber(product.dimensions?.width) || undefined,
-    heightCm: parseNumber(product.dimensions?.height) || undefined,
-  };
+  const categorySlug = getPrimaryCategorySlug(product);
+  const title = cleanText(product.name, 160).toLowerCase();
+  const isPanel =
+    PANEL_CATEGORY_SLUGS.has(categorySlug) ||
+    /\b(?:eps|pir|puf|rockwool|sandwich)\s+panel\b/i.test(title);
 
-  const lengthCm = directDimensions.lengthCm || extracted.lengthCm || defaults.lengthCm;
-  const widthCm = directDimensions.widthCm || extracted.widthCm || defaults.widthCm;
-  const heightCm = directDimensions.heightCm || extracted.heightCm || defaults.heightCm;
-  const weightKg = parseNumber(product.weight) || defaults.weightKg;
+  const isCompactUnit =
+    COMPACT_UNIT_CATEGORY_SLUGS.has(categorySlug) ||
+    /\b(?:portable\s+toilet|security\s+cabin|frp\s+security)\b/i.test(title);
 
   return {
-    shipping_label: defaults.shippingLabel,
-    shipping_weight: `${Math.max(1, Math.round(weightKg))} kg`,
-    shipping_length: `${Math.max(1, Math.round(lengthCm))} cm`,
-    shipping_width: `${Math.max(1, Math.round(widthCm))} cm`,
-    shipping_height: `${Math.max(1, Math.round(heightCm))} cm`,
+    shipping_label: isPanel
+      ? 'freight_panels_quote_required'
+      : isCompactUnit
+        ? 'freight_compact_unit'
+        : 'freight_quote_required',
   };
 }
 
@@ -420,6 +364,7 @@ export function buildMerchantProduct(product: ProductLike, baseUrl = MERCHANT_BA
   const priceValue = getEffectiveProductPrice(product);
 
   if (!id || !title || !slug) return null;
+  if (hasMerchantUnsafePrice(product)) return null;
   if (!priceValue || priceValue <= 0) return null;
 
   const images = selectProductImages(product, baseUrl);
@@ -473,7 +418,9 @@ export function buildMerchantProducts(products: ProductLike[], baseUrl = MERCHAN
       title: cleanText(product.name, 150),
       slug: cleanText(product.slug, 160),
       reason:
-        getEffectiveProductPrice(product) <= 0
+        hasMerchantUnsafePrice(product)
+          ? 'tax_exclusive_price_not_merchant_safe'
+          : getEffectiveProductPrice(product) <= 0
           ? 'missing_visible_price'
           : selectProductImages(product, baseUrl).length === 0
             ? 'missing_valid_image'
@@ -519,10 +466,6 @@ export function generateGoogleMerchantXml(products: ProductLike[], baseUrl = MER
     xml += xmlElement('g:product_type', item.product_type, true);
     xml += xmlElement('g:google_product_category', item.google_product_category);
     xml += xmlElement('g:shipping_label', item.shipping_label);
-    xml += xmlElement('g:shipping_weight', item.shipping_weight);
-    xml += xmlElement('g:shipping_length', item.shipping_length);
-    xml += xmlElement('g:shipping_width', item.shipping_width);
-    xml += xmlElement('g:shipping_height', item.shipping_height);
     xml += xmlElement('g:adult', item.adult);
     xml += xmlElement('g:is_bundle', item.is_bundle);
     xml += xmlElement('g:custom_label_0', item.custom_label_0, true);

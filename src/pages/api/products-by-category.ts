@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { fetchLightweightProductsByCategory } from '@/lib/staticContent';
+import { fetchLightweightProductsByCategory, shouldShowDraftsInListings } from '@/lib/staticContent';
 
 // Server-side proxy for the product-category page's CLIENT-SIDE pagination/filter
 // fetches. The browser must NOT call WooCommerce directly — that previously dragged
@@ -25,7 +25,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const perPage = Number.isFinite(perPageNum) && perPageNum > 0 ? Math.min(perPageNum, 50) : 20;
 
   try {
-    const result = await fetchLightweightProductsByCategory(slug, page, perPage);
+    const result = await fetchLightweightProductsByCategory(slug, page, perPage, {
+      includeDrafts: shouldShowDraftsInListings(req.headers.host),
+    });
     // Short cache; this is public catalog data.
     res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
     return res.status(200).json(result);

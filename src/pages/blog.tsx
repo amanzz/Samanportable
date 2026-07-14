@@ -1,29 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { GetServerSideProps } from 'next';
 import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Search, Calendar, User, Tag, ArrowRight, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { Calendar, ArrowRight, Clock, Search } from 'lucide-react';
 import { pageSEO, siteConfig } from '@/config/seo';
 import BlogImage from '@/components/BlogImage';
 import { decodeHtmlEntities } from '@/lib/utils';
+import { dsCssVariables } from '@/components/ds/tokens';
+import type { StartHereItem } from '@/lib/staticContent';
 
 import { BlogPost as ApiBlogPost } from '@/config/api';
 type BlogPost = ApiBlogPost;
 
-// Reading time computed server-side (matches the previous in-component getReadingTime logic:
-// 200 wpm). Computing it here lets us strip the full `content.rendered` from the returned props
-// so large post bodies are no longer serialized into __NEXT_DATA__ (Large HTML fix).
-function computeReadingTime(content: string): number {
-  const wordsPerMinute = 200;
-  const wordCount = (content || '').replace(/<[^>]*>/g, '').split(' ').length;
-  return Math.ceil(wordCount / wordsPerMinute);
+// T8: excerpts are stripped to PLAIN TEXT server-side (no dangerouslySetInnerHTML in the
+// card), decoded, collapsed and truncated at a word boundary.
+function plainExcerpt(html: string, maxLength = 140): string {
+  const text = decodeHtmlEntities((html || '').replace(/<[^>]*>/g, ''))
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (text.length <= maxLength) return text;
+  const cut = text.slice(0, maxLength);
+  const lastSpace = cut.lastIndexOf(' ');
+  const trimmed = (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).replace(/[\s.,;:!?–—-]+$/, '');
+  return `${trimmed}…`;
 }
 
-// Listing only needs card data + a precomputed reading-time number (not the full body).
-type BlogCardPost = BlogPost & { readingTime: number };
+// Listing only needs card data + precomputed reading time and plain-text excerpt.
+type BlogCardPost = BlogPost & { readingTime: number; excerptText: string };
 
 // Per-category unique title + meta description. When a visitor lands on a category
 // filter (e.g. /blog?category=porta-cabins) we serve a unique, self-canonical title
@@ -112,13 +117,29 @@ const CATEGORY_INTRO: Record<string, string> = {
   'uncategorized': 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd — ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified manufacturer with factories in Bangalore and Greater Noida serving buyers across India.',
 };
 
+// T8.1 B: the featured (newest) post, rendered as the lead card on page 1 only.
+// It is post #1 of the same 10 this page already returns — so the grid simply skips
+// it, the ItemList still describes exactly the 10 visible posts, and the pagination
+// math (36 pages of 10) is untouched.
+type FeaturedPost = {
+  slug: string;
+  title: string;
+  date: string;
+  readTime: number;
+  excerpt: string;
+  image: { src: string; alt: string } | null;
+  category: { name: string; slug: string } | null;
+};
+
 interface BlogProps {
   posts: BlogCardPost[];
+  featured: FeaturedPost | null;
+  startHere: StartHereItem[];
   totalPages: number;
   currentPage: number;
   totalPosts: number;
   categories: Array<{ id: number; name: string; slug: string; count: number }>;
-  tags: Array<{ id: number; name: string; slug: string; count: number }>;
+  activeCategory: string | null;
   seoCanonical: string;
   hreflangSelf: string;
   seoNoindex: boolean;
@@ -135,35 +156,19 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     const page = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1;
     const category = Array.isArray(query.category) ? query.category[0] : query.category;
     const tag = Array.isArray(query.tag) ? query.tag[0] : query.tag;
-    
-    console.log('Blog getServerSideProps: Starting to fetch blog posts...');
-    
-    // Fetch blog posts with pagination - reduced to 10 posts per page for better performance.
+
     // Static content layer: reads exported post files — no WordPress call.
-    const { fetchBlogPosts } = await import('@/lib/staticContent');
+    const { fetchBlogPosts, getBlogCategories, getStartHerePosts, computeReadTime } = await import(
+      '@/lib/staticContent'
+    );
     const result = await fetchBlogPosts(page, 10);
-    
-    console.log('Blog getServerSideProps: Result:', {
-      postsCount: result.posts?.length || 0,
-      pagination: result.pagination
-    });
-    
-    // In a real implementation, you would fetch categories and tags from WordPress
-    const categories = [
-      { id: 1, name: 'Portable Construction', slug: 'portable-construction', count: 15 },
-      { id: 2, name: 'Industry News', slug: 'industry-news', count: 8 },
-      { id: 3, name: 'Case Studies', slug: 'case-studies', count: 12 },
-      { id: 4, name: 'Tips & Guides', slug: 'tips-guides', count: 20 },
-      { id: 5, name: 'Company Updates', slug: 'company-updates', count: 6 }
-    ];
-    
-    const tags = [
-      { id: 1, name: 'Porta Cabins', slug: 'porta-cabins', count: 25 },
-      { id: 2, name: 'Container Offices', slug: 'container-offices', count: 18 },
-      { id: 3, name: 'Prefab Solutions', slug: 'prefab-solutions', count: 22 },
-      { id: 4, name: 'Bangalore', slug: 'bangalore', count: 30 },
-      { id: 5, name: 'Construction', slug: 'construction', count: 35 }
-    ];
+
+    // T8 B1: REAL categories with REAL counts, derived from the post data itself.
+    // (The previous hardcoded list invented both the categories and their counts.)
+    const categories = getBlogCategories();
+
+    // T8.1 D2: newest post of each of the 4 largest categories. Pure data.
+    const startHere = getStartHerePosts(4);
 
     const blogCanonicalBase = `${siteConfig.url}/blog`;
     const cleanCategory = category?.trim();
@@ -171,12 +176,21 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     let seoNoindex = false;
     let seoRouteBehavior = 'indexable blog hub';
 
-    // Canonical strategy (duplicate-content fix):
+    // Canonical strategy:
     //  - category filter -> self-canonical, so each category is its own indexable page
-    //  - tag filter       -> canonical back to /blog hub (no unique content for tags)
-    //  - pagination       -> canonical back to /blog hub
-    //  - plain /blog      -> /blog
+    //  - tag filter      -> canonical back to /blog hub (no unique content for tags)
+    //  - pagination      -> T8 B5: in-range pages 2+ are now SELF-canonical + indexable
+    //                       (recovers crawl depth to the deep legacy posts);
+    //                       out-of-range stays noindex + canonical to hub
+    //  - plain /blog     -> /blog
     let seoCanonical = blogCanonicalBase;
+
+    const categorySeo = cleanCategory ? CATEGORY_SEO[cleanCategory.toLowerCase()] : undefined;
+    let seoTitle = categorySeo?.title || pageSEO.blog.title;
+    // Meta description is NOT altered by pagination (L3: hub meta stays as-is).
+    const seoDescription = categorySeo?.meta || pageSEO.blog.description;
+
+    const inRangePage = page > 1 && page <= result.pagination.totalPages && result.posts.length > 0;
 
     if (cleanCategory) {
       seoCanonical = `${blogCanonicalBase}?category=${encodeURIComponent(cleanCategory)}`;
@@ -185,16 +199,16 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       seoRouteBehavior = 'tag filter canonicalized to blog hub';
     } else if (rawPage && page <= 1) {
       seoRouteBehavior = 'page 0/1 canonicalized to blog hub';
-    } else if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
-      seoRouteBehavior = 'paginated blog listing canonicalized to blog hub';
+    } else if (inRangePage) {
+      seoCanonical = `${blogCanonicalBase}?page=${page}`;
+      seoTitle = `${pageSEO.blog.title} — Page ${page}`;
+      seoRouteBehavior = 'indexable paginated listing (self-canonical)';
     } else if (page > 1) {
       seoNoindex = true;
       seoRouteBehavior = 'out-of-range pagination noindexed and canonicalized to blog hub';
     }
 
-    // Self-referencing hreflang: mirror the EXACT crawled filter URL (?category=,
-    // ?tag= or ?page=) so every blog filter page carries a self-referencing
-    // hreflang, even though pagination/tag pages canonicalize back to the /blog hub.
+    // Self-referencing hreflang: mirror the EXACT crawled filter URL.
     let hreflangSelf = blogCanonicalBase;
     if (cleanCategory) {
       hreflangSelf = `${blogCanonicalBase}?category=${encodeURIComponent(cleanCategory)}`;
@@ -204,54 +218,80 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       hreflangSelf = `${blogCanonicalBase}?page=${encodeURIComponent(String(rawPage))}`;
     }
 
-    // Title / meta selection: category -> unique per-category; tag/page/plain -> default hub.
-    const categorySeo = cleanCategory ? CATEGORY_SEO[cleanCategory.toLowerCase()] : undefined;
-    const seoTitle = categorySeo?.title || pageSEO.blog.title;
-    const seoDescription = categorySeo?.meta || pageSEO.blog.description;
-
     // Visible intro paragraph: only on a category filter page (not tag/page/plain /blog).
     const seoCategoryIntro = cleanCategory
       ? CATEGORY_INTRO[cleanCategory.toLowerCase()] || null
       : null;
 
-    // Compute reading time from the full content, then strip `content.rendered` so the large
-    // post bodies are NOT serialized into __NEXT_DATA__. All other card fields (title, excerpt,
-    // date, slug, _embedded featured media / term / author) are preserved unchanged.
+    // Compute reading time + plain-text excerpt from the full post, then strip the heavy
+    // `content.rendered` / `excerpt.rendered` so post bodies are NOT serialized into
+    // __NEXT_DATA__.
     const lightPosts: BlogCardPost[] = (result.posts || []).map((post: BlogPost) => ({
       ...post,
-      readingTime: computeReadingTime(post?.content?.rendered || ''),
+      readingTime: computeReadTime(post?.content?.rendered || ''),
+      excerptText: plainExcerpt(post?.excerpt?.rendered || ''),
       content: { ...(post.content || {}), rendered: '' },
+      excerpt: { ...(post.excerpt || {}), rendered: '' },
     }));
 
-    const props = {
-      posts: lightPosts,
-      totalPages: result.pagination.totalPages,
-      currentPage: result.pagination.currentPage,
-      totalPosts: result.pagination.totalPosts || 0,
-      categories,
-      tags,
-      seoCanonical,
-      hreflangSelf,
-      seoNoindex,
-      seoRouteBehavior,
-      seoTitle,
-      seoDescription,
-      seoCategoryIntro,
+    // T8.1 B: featured lead card = the newest post, on page 1 only. Its longer excerpt,
+    // image and real category are read from the SAME post object the grid would have
+    // rendered, before `content`/`excerpt` were stripped above.
+    const featuredSource: any = page === 1 ? (result.posts || [])[0] : undefined;
+    let featured: FeaturedPost | null = null;
+
+    if (featuredSource) {
+      const media = featuredSource?._embedded?.['wp:featuredmedia']?.[0];
+      const terms: any[] = featuredSource?._embedded?.['wp:term']?.[0] || [];
+      const term = terms.find((t) => t?.taxonomy === 'category' && t?.slug);
+
+      featured = {
+        slug: featuredSource.slug,
+        title: featuredSource?.title?.rendered || '',
+        date: featuredSource.date,
+        readTime: computeReadTime(featuredSource?.content?.rendered || ''),
+        excerpt: plainExcerpt(featuredSource?.excerpt?.rendered || '', 200),
+        image: media?.source_url
+          ? {
+              src: media.source_url,
+              alt: decodeHtmlEntities(media.alt_text || featuredSource?.title?.rendered || ''),
+            }
+          : null,
+        category: term ? { name: term.name, slug: term.slug } : null,
+      };
+    }
+
+    return {
+      props: {
+        posts: lightPosts,
+        featured,
+        startHere,
+        totalPages: result.pagination.totalPages,
+        currentPage: result.pagination.currentPage,
+        totalPosts: result.pagination.totalPosts || 0,
+        categories,
+        activeCategory: cleanCategory?.toLowerCase() || null,
+        seoCanonical,
+        hreflangSelf,
+        seoNoindex,
+        seoRouteBehavior,
+        seoTitle,
+        seoDescription,
+        seoCategoryIntro,
+      },
     };
-
-    console.log('Blog getServerSideProps: Returning props with', props.posts.length, 'posts');
-
-    return { props };
   } catch (error) {
     console.error('Error in getServerSideProps:', error);
     return {
       props: {
         posts: [],
+        featured: null,
+        startHere: [],
         totalPages: 1,
         currentPage: 1,
         totalPosts: 0,
         categories: [],
-        tags: [],
+        activeCategory: null,
         seoCanonical: `${siteConfig.url}/blog`,
         hreflangSelf: `${siteConfig.url}/blog`,
         seoNoindex: true,
@@ -264,65 +304,122 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
   }
 };
 
-const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, seoCanonical, hreflangSelf, seoNoindex, seoTitle, seoDescription, seoCategoryIntro }: BlogProps) => {
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+const formatDate = (dateString: string) =>
+  new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-  const truncateExcerpt = (excerpt: string, maxLength: number = 150) => {
-    const stripped = decodeHtmlEntities(excerpt.replace(/<[^>]*>/g, ''));
-    if (stripped.length <= maxLength) return stripped;
-    return stripped.substring(0, maxLength) + '...';
-  };
+// Page numbers to render (with gaps) — mirrors the previous "smart pagination" window.
+function pageWindow(currentPage: number, totalPages: number): Array<number | 'gap'> {
+  const maxVisible = 7;
+  if (totalPages <= maxVisible) return Array.from({ length: totalPages }, (_, i) => i + 1);
+  if (currentPage <= 4) return [1, 2, 3, 4, 5, 'gap', totalPages];
+  if (currentPage >= totalPages - 3) {
+    return [1, 'gap', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+  }
+  return [1, 'gap', currentPage - 1, currentPage, currentPage + 1, 'gap', totalPages];
+}
 
-  // Out-of-range pagination pages (e.g. ?page=25+ when only ~24 pages of posts
-  // exist) return zero posts. In that case we must NOT emit the ItemList — an
-  // ItemList with an empty `itemListElement` is invalid structured data (Google /
-  // Semrush flag the required field as missing). We suppress the ItemList node and
+// Category pills (T8.1 C). /blog/search carries its own copy of these class strings —
+// importing them from this page module would pull the hub into the search bundle.
+const pillClass =
+  'inline-flex items-center whitespace-nowrap rounded-full border border-[var(--ds-border)] bg-[var(--ds-surface)] px-3.5 py-1.5 text-sm font-medium text-[var(--ds-color-forest)] transition-colors hover:border-[var(--ds-color-forest)] hover:bg-[var(--ds-color-mist)]';
+const pillActiveClass =
+  'inline-flex items-center whitespace-nowrap rounded-full border border-[var(--ds-color-forest)] bg-[var(--ds-color-forest)] px-3.5 py-1.5 text-sm font-semibold text-white';
+
+const Blog = ({
+  posts,
+  featured,
+  startHere,
+  totalPages,
+  currentPage,
+  totalPosts,
+  categories,
+  activeCategory,
+  seoCanonical,
+  hreflangSelf,
+  seoNoindex,
+  seoTitle,
+  seoDescription,
+  seoCategoryIntro,
+}: BlogProps) => {
+  // Out-of-range pagination pages return zero posts. An ItemList with an empty
+  // `itemListElement` is invalid structured data, so we suppress the ItemList node and
   // its CollectionPage `mainEntity` reference whenever the page has no posts.
   const hasPosts = posts.length > 0;
 
+  // The featured card IS post #1 of this page's 10, so the grid renders the other 9 and
+  // no post appears twice. ItemList below still describes all 10 (featured + grid).
+  const gridPosts = featured ? posts.slice(1) : posts;
+
+  // MOBILE CWV LAW: only the first hero image is priority-loaded. When the featured card
+  // is present it owns that slot, so grid images must not also load eagerly — BlogImage
+  // prioritises index < 3, so we offset past the threshold.
+  const gridImageIndex = (index: number) => (featured ? index + 3 : index);
+
+  // T8 B7: schema @id / url reflect the CURRENT (canonical) page URL, so a paginated
+  // listing describes itself rather than the hub. ItemList mirrors exactly the posts
+  // rendered on this page (G6).
+  const pageUrl = seoCanonical;
+
   const blogHubStructuredData = [
+    // T8.1 G: Blog entity, tying the content library to the site's Organization. The
+    // publisher is referenced by the @id the rest of the site already uses for the
+    // Organization node — no new org fields invented here.
     {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "@id": "https://www.samanportable.com/blog#collectionpage",
-      "url": "https://www.samanportable.com/blog",
-      "name": "Saman Portable Blog | Modular Construction Insights",
-      "description": "Stay updated with the latest news, tips, and insights about portable construction at Saman Portable.",
-      "isPartOf": { "@id": "https://www.samanportable.com/#website" },
-      "about": { "@id": "https://www.samanportable.com/#organization" },
-      ...(hasPosts ? { "mainEntity": { "@id": "https://www.samanportable.com/blog#itemlist" } } : {})
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      '@id': `${pageUrl}#blog`,
+      url: pageUrl,
+      name: seoTitle,
+      publisher: { '@id': 'https://www.samanportable.com/#organization' },
     },
-    ...(hasPosts ? [{
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "@id": "https://www.samanportable.com/blog#itemlist",
-      "name": "Saman Portable Blog Posts",
-      "numberOfItems": posts.length,
-      "itemListOrder": "https://schema.org/ItemListUnordered",
-      "itemListElement": posts.map((post, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "name": decodeHtmlEntities(post.title?.rendered || ''),
-        "url": `https://www.samanportable.com/${post.slug}`
-      }))
-    }] : []),
     {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "@id": "https://www.samanportable.com/blog#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.samanportable.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.samanportable.com/blog" }
-      ]
-    }
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': `${pageUrl}#collectionpage`,
+      url: pageUrl,
+      name: 'Saman Portable Blog | Modular Construction Insights',
+      description: 'Stay updated with the latest news, tips, and insights about portable construction at Saman Portable.',
+      isPartOf: { '@id': 'https://www.samanportable.com/#website' },
+      about: { '@id': 'https://www.samanportable.com/#organization' },
+      ...(hasPosts ? { mainEntity: { '@id': `${pageUrl}#itemlist` } } : {}),
+    },
+    ...(hasPosts
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            '@id': `${pageUrl}#itemlist`,
+            name: 'Saman Portable Blog Posts',
+            numberOfItems: posts.length,
+            itemListOrder: 'https://schema.org/ItemListUnordered',
+            itemListElement: posts.map((post, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: decodeHtmlEntities(post.title?.rendered || ''),
+              url: `https://www.samanportable.com/${post.slug}`,
+            })),
+          },
+        ]
+      : []),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.samanportable.com/blog#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.samanportable.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.samanportable.com/blog' },
+      ],
+    },
   ];
+
+  // Pagination hrefs preserve an active category filter.
+  const pageHref = (n: number) =>
+    activeCategory ? `/blog?category=${activeCategory}&page=${n}` : `/blog?page=${n}`;
+
+  const pageLinkClass =
+    'inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-lg border border-[var(--ds-border)] px-3 text-sm font-medium text-[var(--ds-text-secondary)] transition-colors hover:border-[var(--ds-color-forest)] hover:text-[var(--ds-color-forest)]';
+  const pageLinkActiveClass =
+    'inline-flex h-10 min-w-[2.5rem] items-center justify-center rounded-lg border border-[var(--ds-color-forest)] bg-[var(--ds-color-forest)] px-3 text-sm font-semibold text-white';
 
   return (
     <Layout>
@@ -340,428 +437,347 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
         noindex={seoNoindex}
       />
 
-      <div className="min-h-screen">
+      {/* The DS custom properties are not defined globally, so this page scopes its own
+          token block — every var(--ds-*) below then resolves within the blog subtree. */}
+      <div data-ds-root="" className="min-h-screen bg-[var(--ds-surface)]">
+        <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}` }} />
+
         <main>
-          {/* Hero Section */}
-          <section className="hero-gradient min-h-[50vh] flex items-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-black/40 z-10"></div>
-            <div className="max-w-7xl mx-auto container-padding relative z-20 text-center text-white">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 hero-text-shadow">
-                Our Blog
+          {/* Compact page header (T8 B3 — replaces the 50vh dark hero; no background image
+              so the LCP text paints immediately). */}
+          <section className="border-b border-[var(--ds-border)] bg-[var(--ds-color-mist)]">
+            <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-16 lg:px-8">
+              {/* T8.1 A: visible breadcrumb — mirrors the BreadcrumbList JSON-LD exactly
+                  (Home › Blog), and stays Home › Blog on paginated pages. */}
+              <nav aria-label="Breadcrumb" className="mb-5">
+                <ol className="flex items-center gap-1.5 text-xs text-[var(--ds-text-secondary)]">
+                  <li>
+                    <Link href="/" className="transition-colors hover:text-[var(--ds-color-forest)]">
+                      Home
+                    </Link>
+                  </li>
+                  <li aria-hidden="true" className="text-[var(--ds-border-strong)]">
+                    ›
+                  </li>
+                  <li aria-current="page" className="font-medium text-[var(--ds-color-forest)]">
+                    Blog
+                  </li>
+                </ol>
+              </nav>
+
+              <h1 className="text-3xl font-bold tracking-tight text-[var(--ds-color-forest)] md:text-4xl">
+                Prefab &amp; Portable Cabin Insights
               </h1>
-              <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-                Stay updated with the latest news, tips, and insights about portable construction
+              <p className="mt-3 max-w-3xl text-base leading-relaxed text-[var(--ds-text-secondary)] md:text-lg">
+                Buying guides, price breakdowns, specifications and project stories from SAMAN&apos;s manufacturing team — updated regularly.
               </p>
-              
-              {/* Loading Indicator */}
-              {(!posts || posts.length === 0) && (
-                <div className="mt-8">
-                  <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3">
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span className="text-white text-sm font-medium">Loading blog posts...</span>
-                  </div>
-                </div>
-              )}
+
+              {/* T8.1 F: plain GET form — no JS required. The placeholder count is the
+                  real post total, so it follows the data. */}
+              <form action="/blog/search" method="get" role="search" className="mt-6 flex max-w-xl gap-2">
+                <input
+                  type="search"
+                  name="q"
+                  aria-label="Search guides"
+                  placeholder={`Search ${totalPosts} guides…`}
+                  className="h-11 w-full rounded-lg border border-[var(--ds-border)] bg-[var(--ds-surface)] px-4 text-sm text-[var(--ds-text-primary)] outline-none transition-colors placeholder:text-[var(--ds-text-secondary)] focus:border-[var(--ds-color-forest)]"
+                />
+                <button
+                  type="submit"
+                  className="inline-flex h-11 shrink-0 items-center gap-1.5 rounded-lg bg-[var(--ds-color-forest)] px-5 text-sm font-semibold text-white transition-colors hover:bg-[var(--ds-color-leaf)]"
+                >
+                  <Search className="h-4 w-4" aria-hidden="true" />
+                  Search
+                </button>
+              </form>
             </div>
           </section>
 
-          {/* Search and Filters */}
-          <section className="section-padding bg-background border-b">
-            <div className="max-w-7xl mx-auto container-padding">
-              <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
-                <div className="flex-1 max-w-md">
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                    <Input
-                      placeholder="Search articles..."
-                      className="pl-10"
-                    />
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <Button variant="outline" size="sm">
-                    <Tag className="w-4 h-4 mr-2" />
-                    All Categories
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
+          <section className="py-12 md:py-16">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+                {/* Sidebar (T8.1 D) — the category list moved out to the pills row, so the
+                    sidebar now carries the E-E-A-T box and the deterministic Start Here list. */}
+                <aside className="lg:col-span-1">
+                  <div className="sticky top-24 space-y-6">
+                    <div className="rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] p-6">
+                      <h2 className="mb-3 text-sm font-bold uppercase tracking-widest text-[var(--ds-color-forest)]">
+                        From the factory floor
+                      </h2>
+                      <p className="text-sm leading-relaxed text-[var(--ds-text-secondary)]">
+                        Every guide here is written from real manufacturing and installation experience — portable cabins, container offices, prefab structures and site accommodation built and delivered across India.
+                      </p>
 
-          {/* Main Content */}
-          <section className="section-padding bg-background">
-            <div className="max-w-7xl mx-auto container-padding">
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                {/* Sidebar */}
-                <div className="lg:col-span-1">
-                  <div className="bg-card rounded-lg p-6 shadow-card sticky top-4">
-                    <h3 className="text-lg font-semibold text-foreground mb-4">Categories</h3>
-                    <div className="space-y-2">
-                      {categories.map((category) => (
-                        <Link
-                          key={category.id}
-                          href={`/blog?category=${category.slug}`}
-                          className="flex items-center justify-between text-sm text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                          <span>{category.name}</span>
-                          <span className="bg-muted px-2 py-1 rounded-full text-xs">
-                            {category.count}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-
-                    <div className="border-t border-border mt-6 pt-6">
-                      <h3 className="text-lg font-semibold text-foreground mb-4">Popular Tags</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {tags.slice(0, 10).map((tag) => (
-                          <Link
-                            key={tag.id}
-                            href={`/blog?tag=${tag.slug}`}
-                            className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full hover:bg-primary/20 transition-colors"
-                          >
-                            {tag.name}
-                          </Link>
-                        ))}
+                      <div className="mt-5 space-y-3 border-t border-[var(--ds-border)] pt-5 text-sm text-[var(--ds-text-secondary)]">
+                        <p>
+                          South — Bengaluru:{' '}
+                          <a href="tel:+918861622859" className="font-semibold text-[var(--ds-color-forest)] hover:text-[var(--ds-color-leaf)]">
+                            +91 88616 22859
+                          </a>{' '}
+                          ·{' '}
+                          <a href="mailto:sales@samanportable.com" className="font-semibold text-[var(--ds-color-forest)] hover:text-[var(--ds-color-leaf)]">
+                            sales@samanportable.com
+                          </a>
+                        </p>
+                        <p>
+                          North — Greater Noida:{' '}
+                          <a href="tel:+918796039938" className="font-semibold text-[var(--ds-color-forest)] hover:text-[var(--ds-color-leaf)]">
+                            +91 87960 39938
+                          </a>{' '}
+                          ·{' '}
+                          <a href="mailto:ncr@samanportable.com" className="font-semibold text-[var(--ds-color-forest)] hover:text-[var(--ds-color-leaf)]">
+                            ncr@samanportable.com
+                          </a>
+                        </p>
                       </div>
+
+                      <Link
+                        href="/about-us"
+                        className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:text-[var(--ds-color-forest)]"
+                      >
+                        About SAMAN Portable
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
                     </div>
 
-
+                    {startHere.length > 0 && (
+                      <div className="rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] p-6">
+                        <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-[var(--ds-color-forest)]">
+                          Start here — by topic
+                        </h2>
+                        <ul className="space-y-4">
+                          {startHere.map((item) => (
+                            <li key={item.categorySlug}>
+                              <p className="text-xs uppercase tracking-wide text-[var(--ds-text-secondary)]">
+                                {decodeHtmlEntities(item.categoryName)}
+                              </p>
+                              <Link
+                                href={`/${item.postSlug}`}
+                                className="mt-0.5 block text-sm font-semibold leading-snug text-[var(--ds-text-primary)] transition-colors hover:text-[var(--ds-color-forest)]"
+                              >
+                                {decodeHtmlEntities(item.postTitle)}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
-                </div>
+                </aside>
 
-                {/* Blog Posts */}
+                {/* Posts */}
                 <div className="lg:col-span-3">
-                  {/* Category intro paragraph — unique on-page content per category
-                      filter (duplicate-content fix). Only rendered on ?category= pages. */}
+                  {/* T8.1 B: featured lead card — the newest post, page 1 only. */}
+                  {featured && (
+                    <section aria-labelledby="latest-guide" className="mb-10">
+                      <p
+                        id="latest-guide"
+                        className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--ds-color-leaf)]"
+                      >
+                        LATEST GUIDE
+                      </p>
+
+                      <article className="grid grid-cols-1 overflow-hidden rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] transition-colors hover:border-[var(--ds-color-forest)] md:grid-cols-2">
+                        {/* Fixed height on mobile, stretched grid cell on desktop → the box is
+                            reserved before the image loads. Zero CLS. */}
+                        <div className="relative h-56 w-full bg-[var(--ds-color-mist)] md:h-full md:min-h-[20rem]">
+                          {featured.image && (
+                            <Image
+                              src={featured.image.src}
+                              alt={featured.image.alt}
+                              fill
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                              priority
+                              className="object-cover"
+                            />
+                          )}
+                        </div>
+
+                        <div className="flex flex-col justify-center gap-3 p-6 md:p-8">
+                          {featured.category && (
+                            <Link
+                              href={`/blog?category=${featured.category.slug}`}
+                              className="w-fit rounded-full bg-[var(--ds-color-mist)] px-3 py-1 text-xs font-semibold text-[var(--ds-color-forest)] transition-colors hover:bg-[var(--ds-color-forest)] hover:text-white"
+                            >
+                              {decodeHtmlEntities(featured.category.name)}
+                            </Link>
+                          )}
+
+                          <h2 className="text-xl font-bold leading-snug text-[var(--ds-text-primary)] md:text-2xl">
+                            <Link
+                              href={`/${featured.slug}`}
+                              className="transition-colors hover:text-[var(--ds-color-forest)]"
+                            >
+                              {decodeHtmlEntities(featured.title)}
+                            </Link>
+                          </h2>
+
+                          <p className="text-sm leading-relaxed text-[var(--ds-text-secondary)]">
+                            {featured.excerpt}
+                          </p>
+
+                          <div className="flex items-center gap-4 text-xs text-[var(--ds-text-secondary)]">
+                            <span className="flex items-center">
+                              <Calendar className="mr-1 h-3 w-3" />
+                              {formatDate(featured.date)}
+                            </span>
+                            <span className="flex items-center">
+                              <Clock className="mr-1 h-3 w-3" />
+                              {featured.readTime} min read
+                            </span>
+                          </div>
+
+                          <Link
+                            href={`/${featured.slug}`}
+                            className="inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:text-[var(--ds-color-forest)]"
+                          >
+                            Read article
+                            <ArrowRight className="h-3.5 w-3.5" />
+                          </Link>
+                        </div>
+                      </article>
+                    </section>
+                  )}
+
+                  {/* T8.1 C: category pills — real counts from getBlogCategories(). SSR links;
+                      one scrollable row on mobile (CSS only), wrapping on desktop. */}
+                  {categories.length > 0 && (
+                    <nav aria-label="Blog categories" className="mb-8">
+                      <ul className="flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:overflow-visible md:pb-0">
+                        <li className="shrink-0">
+                          <Link href="/blog" className={activeCategory ? pillClass : pillActiveClass}>
+                            All articles ({totalPosts})
+                          </Link>
+                        </li>
+                        {categories.map((category) => (
+                          <li key={category.id} className="shrink-0">
+                            <Link
+                              href={`/blog?category=${category.slug}`}
+                              className={activeCategory === category.slug ? pillActiveClass : pillClass}
+                            >
+                              {decodeHtmlEntities(category.name)} ({category.count})
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </nav>
+                  )}
+
+                  {/* Category intro paragraph — unique on-page content per category filter. */}
                   {seoCategoryIntro && (
-                    <p className="text-muted-foreground text-base leading-relaxed mb-6">
+                    <p className="mb-6 text-base leading-relaxed text-[var(--ds-text-secondary)]">
                       {seoCategoryIntro}
                     </p>
                   )}
 
-                  {/* Enhanced Results Summary */}
-                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-4 mb-6">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h2 className="text-lg font-semibold text-green-900 mb-1">
-                          📚 Blog Articles
-                        </h2>
-                        <p className="text-green-700 text-sm">
-                          {posts && posts.length > 0 ? (
-                            <>
-                              Showing <span className="font-semibold">{posts.length}</span> of <span className="font-semibold">{totalPosts}</span> articles 
-                              • Page <span className="font-semibold">{currentPage}</span> of <span className="font-semibold">{totalPages}</span>
-                            </>
-                          ) : (
-                            'No articles available at the moment'
-                          )}
-                        </p>
-                        {totalPosts > 100 && (
-                          <p className="text-green-600 text-xs mt-1">
-                            💡 Use the pagination below or &quot;Go to Page&quot; to navigate through all {totalPosts} articles
-                          </p>
-                        )}
-                      </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-green-600">{totalPosts}</div>
-                        <div className="text-xs text-green-500">Total Articles</div>
-                      </div>
-                    </div>
-                  </div>
+                  {/* Results summary (T8 B4) — one muted line, no emoji, no gradient. */}
+                  {hasPosts && (
+                    <p className="mb-6 text-sm text-[var(--ds-text-secondary)]">
+                      Showing {posts.length} of {totalPosts} articles · Page {currentPage} of {totalPages}
+                    </p>
+                  )}
 
-                  {/* Blog Posts Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                    {posts && posts.length > 0 ? (
-                      posts.map((post) => (
-                        <article key={post.id} className="bg-card rounded-lg overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 group">
-                          {/* Featured Image */}
-                          <div className="aspect-video bg-muted relative overflow-hidden">
-                            <BlogImage 
-                              post={post} 
-                              index={posts.indexOf(post)} 
-                              className="w-full h-full"
-                            />
-                            
-                            {/* Category Badge */}
-                            {post._embedded?.['wp:term']?.[0]?.[0] && (
-                              <div className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full">
-                                {post._embedded['wp:term'][0][0].name}
-                              </div>
-                            )}
+                  {hasPosts ? (
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+                      {gridPosts.map((post, index) => (
+                        <article
+                          key={post.id}
+                          className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--ds-color-forest)] hover:shadow-md"
+                        >
+                          {/* Fixed aspect box → space reserved, zero CLS. */}
+                          <div className="relative aspect-video overflow-hidden bg-[var(--ds-color-mist)]">
+                            <BlogImage post={post} index={gridImageIndex(index)} className="h-full w-full" />
                           </div>
-                          
-                          {/* Post Content */}
-                          <div className="p-4">
-                            {/* Meta Information */}
-                            <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
-                              <div className="flex items-center">
-                                <Calendar className="w-3 h-3 mr-1" />
+
+                          <div className="flex flex-grow flex-col p-5">
+                            <div className="mb-3 flex items-center gap-4 text-xs text-[var(--ds-text-secondary)]">
+                              <span className="flex items-center">
+                                <Calendar className="mr-1 h-3 w-3" />
                                 {formatDate(post.date)}
-                              </div>
-                              <div className="flex items-center">
-                                <Clock className="w-3 h-3 mr-1" />
+                              </span>
+                              <span className="flex items-center">
+                                <Clock className="mr-1 h-3 w-3" />
                                 {post.readingTime} min read
-                              </div>
+                              </span>
                             </div>
-                            
-                            {/* Title */}
-                            <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                              <Link href={`/${post.slug}`} className="hover:text-primary transition-colors">
+
+                            <h3 className="mb-2 line-clamp-2 text-base font-bold leading-snug text-[var(--ds-text-primary)]">
+                              <Link
+                                href={`/${post.slug}`}
+                                className="transition-colors hover:text-[var(--ds-color-forest)]"
+                              >
                                 {decodeHtmlEntities(post.title.rendered)}
                               </Link>
                             </h3>
-                            
-                            {/* Excerpt */}
-                            <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                              {truncateExcerpt(post.excerpt.rendered)}
+
+                            <p className="mb-4 line-clamp-3 flex-grow text-sm leading-relaxed text-[var(--ds-text-secondary)]">
+                              {post.excerptText}
                             </p>
-                            
-                            {/* Author */}
-                            {post._embedded?.author?.[0] && (
-                              <div className="flex items-center mb-4">
-                                <div className="w-6 h-6 bg-muted rounded-full mr-2 flex items-center justify-center">
-                                  <User className="w-3 h-3 text-muted-foreground" />
-                                </div>
-                                <span className="text-xs text-muted-foreground">
-                                  {post._embedded.author[0].name}
-                                </span>
-                              </div>
-                            )}
-                            
-                            {/* Read More */}
-                            <Link href={`/${post.slug}`}>
-                              <Button variant="outline" size="sm" className="w-full group">
-                                Read More
-                                <ArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
-                              </Button>
+
+                            <Link
+                              href={`/${post.slug}`}
+                              className="mt-auto inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:text-[var(--ds-color-forest)]"
+                            >
+                              Read article
+                              <ArrowRight className="h-3.5 w-3.5" />
                             </Link>
                           </div>
                         </article>
-                      ))
-                    ) : (
-                      <div className="col-span-full text-center py-12">
-                        <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl">📝</span>
-                        </div>
-                        <h3 className="text-xl font-semibold text-foreground mb-2">
-                          No blog posts available
-                        </h3>
-                        <p className="text-muted-foreground mb-6">
-                          We&apos;re working on creating great content for you. Please check back soon!
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Load More Option */}
-                  {currentPage < totalPages && (
-                    <div className="text-center mt-8 mb-6">
-                      <Link href={`/blog?page=${currentPage + 1}`}>
-                        <Button 
-                          variant="outline" 
-                          size="lg" 
-                          className="px-8 py-3 text-lg font-medium hover:bg-[#0A3D2A]/10 hover:border-[#0A3D2A]/30 transition-all duration-300"
-                        >
-                          📖 Load More Articles
-                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </Button>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] p-12 text-center">
+                      <h2 className="mb-2 text-xl font-semibold text-[var(--ds-text-primary)]">No articles found</h2>
+                      <p className="mb-6 text-[var(--ds-text-secondary)]">
+                        Browse all articles or pick a category from the list.
+                      </p>
+                      <Link
+                        href="/blog"
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--ds-color-leaf)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--ds-color-forest)]"
+                      >
+                        View all articles
+                        <ArrowRight className="h-4 w-4" />
                       </Link>
-                      <p className="text-sm text-muted-foreground mt-2">
-                        Next {Math.min(20, totalPosts - (currentPage * 20))} articles available
-                      </p>
                     </div>
                   )}
 
-                  {/* Enhanced Pagination */}
+                  {/* Pagination (T8 B5) — real SSR <a href> links; no JS controls. */}
                   {totalPages > 1 && (
-                    <div className="flex items-center justify-center mt-12">
-                      <div className="flex items-center gap-2">
-                        {/* Previous Button */}
-                        <Link href={`/blog?page=${currentPage - 1}`}>
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            disabled={currentPage === 1}
-                            className="flex items-center gap-2"
-                          >
-                            ← Previous
-                          </Button>
+                    <nav className="mt-12 flex flex-wrap items-center justify-center gap-2" aria-label="Blog pagination">
+                      {currentPage > 1 && (
+                        <Link href={pageHref(currentPage - 1)} rel="prev" className={pageLinkClass}>
+                          ← Previous
                         </Link>
-                        
-                        {/* Page Numbers - Smart pagination for large numbers */}
-                        {(() => {
-                          const pages = [];
-                          const maxVisiblePages = 7;
-                          
-                          if (totalPages <= maxVisiblePages) {
-                            // Show all pages if total is small
-                            for (let i = 1; i <= totalPages; i++) {
-                              pages.push(
-                                <Link key={i} href={`/blog?page=${i}`}>
-                                  <Button
-                                    variant={currentPage === i ? "default" : "outline"}
-                                    size="sm"
-                                    className="w-10 h-10 p-0"
-                                  >
-                                    {i}
-                                  </Button>
-                                </Link>
-                              );
-                            }
-                          } else {
-                            // Smart pagination for large numbers
-                            if (currentPage <= 4) {
-                              // Show first 5 pages + ... + last page
-                              for (let i = 1; i <= 5; i++) {
-                                pages.push(
-                                  <Link key={i} href={`/blog?page=${i}`}>
-                                    <Button
-                                      variant={currentPage === i ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-10 h-10 p-0"
-                                    >
-                                      {i}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                              pages.push(<span key="dots1" className="px-2 text-muted-foreground">...</span>);
-                              pages.push(
-                                <Link key={totalPages} href={`/blog?page=${totalPages}`}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">
-                                    {totalPages}
-                                  </Button>
-                                </Link>
-                              );
-                            } else if (currentPage >= totalPages - 3) {
-                              // Show first page + ... + last 5 pages
-                              pages.push(
-                                <Link key={1} href={`/blog?page=1`}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">1</Button>
-                                </Link>
-                              );
-                              pages.push(<span key="dots2" className="px-2 text-muted-foreground">...</span>);
-                              for (let i = totalPages - 4; i <= totalPages; i++) {
-                                pages.push(
-                                  <Link key={i} href={`/blog?page=${i}`}>
-                                    <Button
-                                      variant={currentPage === i ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-10 h-10 p-0"
-                                    >
-                                      {i}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                            } else {
-                              // Show first + ... + current-1, current, current+1 + ... + last
-                              pages.push(
-                                <Link key={1} href={`/blog?page=1`}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">1</Button>
-                                </Link>
-                              );
-                              pages.push(<span key="dots3" className="px-2 text-muted-foreground">...</span>);
-                              for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-                                pages.push(
-                                  <Link key={i} href={`/blog?page=${i}`}>
-                                    <Button
-                                      variant={currentPage === i ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-10 h-10 p-0"
-                                    >
-                                      {i}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                              pages.push(<span key="dots4" className="px-2 text-muted-foreground">...</span>);
-                              pages.push(
-                                <Link key={totalPages} href={`/blog?page=${totalPages}`}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">
-                                    {totalPages}
-                                  </Button>
-                                </Link>
-                              );
-                            }
-                          }
-                          
-                          return pages;
-                        })()}
-                        
-                        {/* Next Button */}
-                        <Link href={`/blog?page=${currentPage + 1}`}>
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            disabled={currentPage === totalPages}
-                            className="flex items-center gap-2"
-                          >
-                            Next →
-                          </Button>
-                        </Link>
-                      </div>
-                      
-                      {/* Page Info */}
-                      <div className="ml-6 text-sm text-muted-foreground">
-                        Page {currentPage} of {totalPages} • {totalPosts} total articles
-                      </div>
-                      
-                      {/* Quick Jump to Page */}
-                      <div className="ml-6 flex items-center gap-2">
-                        <span className="text-sm text-muted-foreground">Go to:</span>
-                        <form 
-                          onSubmit={(e) => {
-                            e.preventDefault();
-                            const formData = new FormData(e.currentTarget);
-                            const page = formData.get('page') as string;
-                            if (page && parseInt(page) >= 1 && parseInt(page) <= totalPages) {
-                              window.location.href = `/blog?page=${page}`;
-                            }
-                          }}
-                          className="flex items-center gap-2"
-                        >
-                          <Input
-                            name="page"
-                            type="number"
-                            min="1"
-                            max={totalPages}
-                            placeholder="Page #"
-                            className="w-20 h-8 text-center"
-                            defaultValue={currentPage}
-                          />
-                          <Button type="submit" size="sm" variant="outline" className="h-8 px-3">
-                            Go
-                          </Button>
-                        </form>
-                      </div>
-                    </div>
-                  )}
+                      )}
 
-                  {/* No Posts Message */}
-                  {posts.length === 0 && (
-                    <div className="text-center py-12">
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
-                        No articles found
-                      </h3>
-                      <p className="text-muted-foreground mb-6">
-                        Try adjusting your search criteria or browse our categories.
-                      </p>
-                      <Button asChild>
-                        <Link href="/blog">
-                          View All Articles
+                      {pageWindow(currentPage, totalPages).map((p, i) =>
+                        p === 'gap' ? (
+                          <span key={`gap-${i}`} className="px-1 text-[var(--ds-text-secondary)]">
+                            …
+                          </span>
+                        ) : (
+                          <Link
+                            key={p}
+                            href={pageHref(p)}
+                            aria-current={p === currentPage ? 'page' : undefined}
+                            className={p === currentPage ? pageLinkActiveClass : pageLinkClass}
+                          >
+                            {p}
+                          </Link>
+                        )
+                      )}
+
+                      {currentPage < totalPages && (
+                        <Link href={pageHref(currentPage + 1)} rel="next" className={pageLinkClass}>
+                          Next →
                         </Link>
-                      </Button>
-                    </div>
+                      )}
+                    </nav>
                   )}
                 </div>
               </div>
             </div>
           </section>
-
-
         </main>
       </div>
     </Layout>

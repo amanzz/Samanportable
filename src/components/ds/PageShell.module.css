@@ -1,0 +1,43 @@
+.root {
+  min-height: 100%;
+  width: 100%;
+}
+
+/* Fixed-height sticky header → header mount causes zero CLS. */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: var(--ds-header-h);
+  background: var(--ds-surface-inverse);
+  color: var(--ds-text-inverse);
+  border-bottom: 1px solid var(--ds-border-strong);
+}
+
+.headerInner {
+  height: 100%;
+  max-width: var(--ds-maxw);
+  margin: 0 auto;
+  padding: 0 var(--ds-space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-4);
+}
+
+.main {
+  width: 100%;
+}
+
+.mainContained {
+  width: 100%;
+  max-width: var(--ds-maxw);
+  margin: 0 auto;
+  padding: 0 var(--ds-space-4);
+}
+
+.footer {
+  background: var(--ds-surface-inverse);
+  color: var(--ds-text-inverse);
+  margin-top: var(--ds-space-16);
+  padding: var(--ds-space-12) var(--ds-space-4);
+}

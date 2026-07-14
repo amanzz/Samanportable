@@ -24,6 +24,7 @@ import {
   type ProductCategoryDetail,
   type BlogPost,
 } from '@/config/api';
+import { decodeHtmlEntities } from '@/lib/utils';
 
 const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
 
@@ -140,6 +141,152 @@ export function getAllPostSlugs(): string[] {
   return getPostIndex().map((p) => p.slug);
 }
 
+export type BlogCategory = { id: number; name: string; slug: string; count: number };
+
+// REAL blog categories with REAL post counts, derived from every exported post's
+// embedded `wp:term` category terms. This replaces the previously hardcoded category
+// list on /blog, whose counts were invented. Only categories with at least one post
+// are returned, so a rendered count can never claim posts that don't exist.
+let blogCategoriesCache: BlogCategory[] | null = null;
+
+export function getBlogCategories(): BlogCategory[] {
+  if (blogCategoriesCache) return blogCategoriesCache;
+
+  const dir = path.join(EXPORT_DIR, 'posts');
+  const bySlug = new Map<string, BlogCategory>();
+
+  for (const f of fs.readdirSync(dir)) {
+    if (!f.endsWith('.json')) continue;
+    const post = readJson(path.join(dir, f));
+    if (!post?.slug) continue;
+
+    const terms: any[] = post?._embedded?.['wp:term']?.[0] || [];
+    for (const term of terms) {
+      if (term?.taxonomy !== 'category' || !term?.slug) continue;
+      const existing = bySlug.get(term.slug);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        bySlug.set(term.slug, { id: term.id, name: term.name, slug: term.slug, count: 1 });
+      }
+    }
+  }
+
+  blogCategoriesCache = Array.from(bySlug.values())
+    .filter((c) => c.count >= 1)
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+  return blogCategoriesCache;
+}
+
+// ─── T8.1 blog hub helpers ───────────────────────────────────────────────────
+// Every value these produce is derived from the exported post files themselves —
+// read time from real word counts, "start here" from real category sizes, search
+// from real titles. Nothing here invents, curates or estimates.
+
+type PostMeta = {
+  slug: string;
+  date: string;
+  title: string;
+  categories: Array<{ name: string; slug: string }>;
+};
+
+// Title + category index (newest first), built once. `getPostIndex()` carries only
+// slug + date, which is not enough for title search or newest-per-category.
+let postMetaIndex: PostMeta[] | null = null;
+
+function getPostMetaIndex(): PostMeta[] {
+  if (postMetaIndex) return postMetaIndex;
+
+  const dir = path.join(EXPORT_DIR, 'posts');
+  const entries: PostMeta[] = [];
+
+  for (const f of fs.readdirSync(dir)) {
+    if (!f.endsWith('.json')) continue;
+    const post = readJson(path.join(dir, f));
+    if (!post?.slug) continue;
+
+    const terms: any[] = post?._embedded?.['wp:term']?.[0] || [];
+    entries.push({
+      slug: post.slug,
+      date: post.date || '',
+      title: post?.title?.rendered || '',
+      categories: terms
+        .filter((t) => t?.taxonomy === 'category' && t?.slug)
+        .map((t) => ({ name: t.name, slug: t.slug })),
+    });
+  }
+
+  entries.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  postMetaIndex = entries;
+  return entries;
+}
+
+/** Total number of published posts — the real figure the hub renders. */
+export function getBlogPostCount(): number {
+  return getPostIndex().length;
+}
+
+/** Read time from the post's REAL word count: ceil(words / 200). */
+export function computeReadTime(html: string): number {
+  const words = (html || '')
+    .replace(/<[^>]*>/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.ceil(words / 200);
+}
+
+export type StartHereItem = {
+  categoryName: string;
+  categorySlug: string;
+  postTitle: string;
+  postSlug: string;
+};
+
+// The newest post in each of the N largest categories. "Largest" uses the same real
+// counts getBlogCategories() reports, so the selection is fully deterministic — no
+// pinning, no curation, no popularity signal.
+export function getStartHerePosts(topCategories = 4): StartHereItem[] {
+  const index = getPostMetaIndex(); // newest first
+  const items: StartHereItem[] = [];
+
+  for (const category of getBlogCategories().slice(0, topCategories)) {
+    const newest = index.find((p) => p.categories.some((c) => c.slug === category.slug));
+    if (!newest) continue;
+    items.push({
+      categoryName: category.name,
+      categorySlug: category.slug,
+      postTitle: newest.title,
+      postSlug: newest.slug,
+    });
+  }
+
+  return items;
+}
+
+// Case-insensitive substring match against post TITLES only (fast, predictable).
+// `total` is the REAL number of matching posts; `posts` is the newest `limit` of
+// them — so the results line can state a true count even when the render is capped.
+export async function searchPostsByTitle(
+  query: string,
+  limit = 50
+): Promise<{ posts: BlogPost[]; total: number }> {
+  const q = (query || '').trim().toLowerCase();
+  if (!q) return { posts: [], total: 0 };
+
+  const matches = getPostMetaIndex().filter((p) =>
+    decodeHtmlEntities(p.title).toLowerCase().includes(q)
+  );
+
+  const posts = matches
+    .slice(0, limit)
+    .map((m) => readPostFile(m.slug))
+    .filter(Boolean)
+    .map(({ _rank_math_head, ...rest }: any) => rest);
+
+  return { posts: posts as BlogPost[], total: matches.length };
+}
+
 // ─── products ────────────────────────────────────────────────────────────────
 
 let productsCache: any[] | null = null;
@@ -161,10 +308,26 @@ function getAllProductsRaw(): any[] {
   return items;
 }
 
-// Buyer-visible listings only contain published products (the one legit draft is
-// excluded from listings; its old URL is already 308-redirected in next.config).
+type ListingOptions = {
+  includeDrafts?: boolean;
+};
+
+export function shouldShowDraftsInListings(host?: string | null): boolean {
+  if (process.env.SAMAN_SHOW_DRAFTS_IN_LISTINGS === 'true') return true;
+  const normalized = String(host || '').toLowerCase();
+  return /^(localhost|127\.0\.0\.1|\[::1\])(?::|$)/.test(normalized);
+}
+
+// Buyer-visible production listings only contain published products. Localhost
+// preview can opt into drafts so owners can review listing-card behavior before
+// publish approval.
 function getPublishedProducts(): any[] {
   return getAllProductsRaw().filter((p) => !p.status || p.status === 'publish');
+}
+
+function getListingProducts(options: ListingOptions = {}): any[] {
+  if (!options.includeDrafts) return getPublishedProducts();
+  return getAllProductsRaw().filter((p) => !p.status || p.status === 'publish' || p.status === 'draft');
 }
 
 function findProductBySlug(slug: string): any | null {
@@ -191,6 +354,8 @@ function toFeedProduct(p: any): WooCommerceProduct {
     categories: p.categories || [],
     weight: p.weight || '',
     dimensions: p.dimensions || { length: '', width: '', height: '' },
+    ...(p.priceDisplay ? { priceDisplay: p.priceDisplay } : {}),
+    ...(p.priceSubline ? { priceSubline: p.priceSubline } : {}),
   } as unknown as WooCommerceProduct;
 }
 
@@ -211,6 +376,10 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
     average_rating: p.average_rating,
     rating_count: p.rating_count,
     sku: p.sku || '',
+    ...(p.priceDisplay ? { priceDisplay: p.priceDisplay } : {}),
+    ...(p.priceSubline ? { priceSubline: p.priceSubline } : {}),
+    ...(Array.isArray(p.relatedProductSlugs) ? { relatedProductSlugs: p.relatedProductSlugs } : {}),
+    ...(p.schemaMode ? { schemaMode: p.schemaMode } : {}),
   };
 }
 
@@ -218,9 +387,10 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
 export async function fetchProducts(
   page = 1,
   perPage = 12,
-  filters: ProductFilters = {}
+  filters: ProductFilters = {},
+  options: ListingOptions = {}
 ): Promise<ProductsResponse> {
-  let items = getPublishedProducts();
+  let items = getListingProducts(options);
 
   if (filters.category) {
     const wanted = String(filters.category);
@@ -292,7 +462,10 @@ export async function fetchProductRankMathSEO(categorySlug: string): Promise<Ran
   const slug = parts[parts.length - 1] || '';
   const productPath = parts.join('/');
   const productUrl = `https://www.samanportable.com/product/${productPath}${productPath.includes('/') ? '/' : ''}`;
-  return applyPublicFaqSchemaUrl(headToSeo(findProductBySlug(slug)), productUrl);
+  const product = findProductBySlug(slug);
+  const seoData = headToSeo(product) || (product?.faqSchema ? {} : null);
+  if (seoData && product?.faqSchema) seoData.faqSchema = product.faqSchema;
+  return applyPublicFaqSchemaUrl(seoData, productUrl);
 }
 
 // Mirrors api.fetchProductReviews: approved-only, latest first, capped, non-fatal.
@@ -391,7 +564,8 @@ export async function fetchProductAttributes(): Promise<any[]> {
 export async function fetchLightweightProductsByCategory(
   categorySlug: string,
   page = 1,
-  perPage = 20
+  perPage = 20,
+  options: ListingOptions = {}
 ): Promise<{ products: LightweightProduct[]; pagination: PaginationInfo }> {
   if (!SAFE_SLUG.test(categorySlug)) {
     return { products: [], pagination: emptyPagination(page, perPage) };
@@ -400,9 +574,9 @@ export async function fetchLightweightProductsByCategory(
   if (!category) {
     return { products: [], pagination: emptyPagination(page, perPage) };
   }
-  const items = getPublishedProducts().filter((p) =>
-    (p.categories || []).some((c: any) => c.slug === categorySlug)
-  );
+  const items = getListingProducts(options)
+    .filter((p) => (p.categories || []).some((c: any) => c.slug === categorySlug))
+    .filter((p) => !(options.includeDrafts && categorySlug === 'roofing-sheets' && p.slug === 'roofing-sheet'));
   const { slice, pagination } = paginate(items, page, perPage);
   return {
     products: slice.map((p) => toLightweight(p, category.name, categorySlug)),
@@ -415,9 +589,17 @@ export async function fetchLightweightProductsByCategory(
 export async function fetchProductsByCategoryPriority(
   page = 1,
   perPage = 8,
-  additionalFilters: Omit<ProductFilters, 'category'> = {}
+  additionalFilters: Omit<ProductFilters, 'category'> = {},
+  options: ListingOptions = {}
 ): Promise<ProductsResponse> {
   const categoryPriority = [
+    'roofing-sheets',
+    'sandwich-panel',
+    'puf-panel',
+    'pir-panel',
+    'rockwool-panel',
+    'eps-panel',
+    'glass-wool-panel',
     'portable-cabin',
     'container-offices',
     'porta-cabins',
@@ -425,19 +607,21 @@ export async function fetchProductsByCategoryPriority(
     'portable-office',
     'container-cafe',
     'industrial-sheds',
-    'roofing-sheets',
-    'puf-panel',
-    'pir-panel',
-    'eps-panel',
-    'rockwool-panel',
-    'glass-wool-panel',
   ];
   let all: any[] = [];
+  const seenProductKeys = new Set<string>();
+
   for (const categorySlug of categoryPriority) {
     const category = getAllCategoriesRaw().find((c) => c.slug === categorySlug);
     if (!category) continue;
-    const inCat = getPublishedProducts()
+    const inCat = getListingProducts(options)
       .filter((p) => (p.categories || []).some((c: any) => c.slug === categorySlug))
+      .filter((p) => {
+        const key = String(p.id || p.slug);
+        if (seenProductKeys.has(key)) return false;
+        seenProductKeys.add(key);
+        return true;
+      })
       .slice(0, 20)
       .map((p) => ({
         ...toFeedProduct(p),

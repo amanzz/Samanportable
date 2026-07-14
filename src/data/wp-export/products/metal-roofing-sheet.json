@@ -1,0 +1,136 @@
+{
+  "id": 272773,
+  "wc_review_product_id": 272773,
+  "name": "Metal Roofing Sheet",
+  "slug": "metal-roofing-sheet",
+  "permalink": "https://blog.samanportable.com/product/metal-roofing-sheet/",
+  "date_created": "2026-07-11T00:00:00",
+  "date_created_gmt": "2026-07-10T18:30:00",
+  "date_modified": "2026-07-11T00:00:00",
+  "date_modified_gmt": "2026-07-10T18:30:00",
+  "type": "simple",
+  "status": "draft",
+  "featured": false,
+  "catalog_visibility": "hidden",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-C17-MRS-SUB-2026",
+  "price": "58",
+  "regular_price": "58",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": true,
+  "total_sales": 0,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "download_limit": -1,
+  "download_expiry": -1,
+  "external_url": "",
+  "button_text": "",
+  "tax_status": "taxable",
+  "tax_class": "",
+  "manage_stock": false,
+  "stock_quantity": null,
+  "backorders": "no",
+  "backorders_allowed": false,
+  "backordered": false,
+  "low_stock_amount": null,
+  "sold_individually": false,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "shipping_required": true,
+  "shipping_taxable": true,
+  "shipping_class": "",
+  "shipping_class_id": 0,
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "upsell_ids": [],
+  "cross_sell_ids": [],
+  "parent_id": 0,
+  "purchase_note": "",
+  "categories": [
+    {
+      "id": 3950,
+      "name": "Roofing Sheets",
+      "slug": "roofing-sheets"
+    }
+  ],
+  "tags": [],
+  "images": [
+    {
+      "id": 0,
+      "src": "/panel-images/metal-roofing-sheet/metal-roofing-sheet-colour-stack.webp",
+      "name": "metal-roofing-sheet-colour-stack",
+      "alt": "Stack of colour-coated metal roofing sheets in multiple colours"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/metal-roofing-sheet/metal-roofing-sheet-gi-corrugated-texture.webp",
+      "name": "metal-roofing-sheet-gi-corrugated-texture",
+      "alt": "Galvanized GI corrugated metal roofing sheet close-up"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/metal-roofing-sheet/metal-roofing-sheet-trapezoidal-profile.webp",
+      "name": "metal-roofing-sheet-trapezoidal-profile",
+      "alt": "Trapezoidal profile metal roofing sheet in colour-coated steel"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/metal-roofing-sheet/metal-roofing-sheet-tile-profile.webp",
+      "name": "metal-roofing-sheet-tile-profile",
+      "alt": "Tile profile metal roofing sheet section"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/metal-roofing-sheet/metal-roofing-sheet-standing-seam-detail.webp",
+      "name": "metal-roofing-sheet-standing-seam-detail",
+      "alt": "Standing seam metal roofing sheet joint with concealed fixing"
+    }
+  ],
+  "attributes": [],
+  "default_attributes": [],
+  "variations": [],
+  "grouped_products": [],
+  "menu_order": 0,
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#8377;</span>58</bdi></span>",
+  "related_ids": [],
+  "meta_data": [
+    {
+      "id": 0,
+      "key": "rank_math_robots",
+      "value": [
+        "noindex"
+      ]
+    },
+    {
+      "id": 0,
+      "key": "rank_math_focus_keyword",
+      "value": "metal roofing sheet"
+    }
+  ],
+  "stock_status": "instock",
+  "has_options": false,
+  "_links": {
+    "self": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products/272773"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products"
+      }
+    ]
+  },
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Metal Roofing Sheet - Draft | SAMAN</title>\n<meta name=\"robots\" content=\"nofollow, noindex\"/>"
+  }
+}

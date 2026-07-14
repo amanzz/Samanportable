@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { fetchProducts } from '@/lib/staticContent';
+import { fetchProducts, shouldShowDraftsInListings } from '@/lib/staticContent';
 import type { ProductFilters } from '@/config/api';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -44,7 +44,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       filters.order = order as 'asc' | 'desc';
     }
 
-    const result = await fetchProducts(parseInt(page as string), parseInt(per_page as string), filters);
+    const result = await fetchProducts(parseInt(page as string), parseInt(per_page as string), filters, {
+      includeDrafts: shouldShowDraftsInListings(req.headers.host),
+    });
 
     res.status(200).json(result);
   } catch (error) {

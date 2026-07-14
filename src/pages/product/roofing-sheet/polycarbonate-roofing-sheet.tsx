@@ -6,6 +6,7 @@ import Layout from '@/components/Layout';
 import ProductReviews from '@/components/ProductReviews';
 import RelatedProductRail from '@/components/product/RelatedProductRail';
 import ProductZoneCtas from '@/components/product/ProductZoneCtas';
+import ProductSummaryLayout from '@/components/product/ProductSummaryLayout';
 import { C16_PANEL_CATALOG, type RelatedRailItem } from '@/lib/c16PanelCatalog';
 import { CheckCircle, Factory, Truck } from 'lucide-react';
 
@@ -338,12 +339,10 @@ export default function PolycarbonateRoofingSheetPage() {
             <span className="font-semibold text-slate-950">Polycarbonate Roofing Sheet</span>
           </nav>
 
-          <div className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)_420px]">
-            <aside className="order-3 hidden lg:order-none lg:block">
-              <RelatedProductRail items={relatedRail} currentHref="/product/roofing-sheet/polycarbonate-roofing-sheet" scroll />
-            </aside>
-
-            <div className="order-1 lg:order-none">
+          <ProductSummaryLayout
+            rail={<RelatedProductRail items={relatedRail} currentHref="/product/roofing-sheet/polycarbonate-roofing-sheet" scroll />}
+            gallery={
+              <>
               <div className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
                 <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-slate-100">
                   <img
@@ -375,13 +374,13 @@ export default function PolycarbonateRoofingSheetPage() {
                 </div>
                 <p className="mt-3 text-sm text-slate-600">{galleryImages[0].caption}</p>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 lg:hidden">
                 <h2 className="mb-2 text-lg font-bold text-slate-950">Get a factory-direct quotation</h2>
                 <ProductZoneCtas variant="strip" className="w-full" showPhoneNumber />
               </div>
-            </div>
-
-            <div className="order-2 flex flex-col justify-start lg:order-none">
+              </>
+            }
+            description={
               <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
                 <div className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-800">
                   <Factory className="h-4 w-4" />
@@ -407,11 +406,12 @@ export default function PolycarbonateRoofingSheetPage() {
                   <span className="font-semibold text-slate-950">SKU:</span> SP-C17-PCR-SUB-2026
                 </div>
               </div>
-            </div>
-
-            <div className="order-3 lg:hidden">
-              <RelatedProductRail items={relatedRail} currentHref="/product/roofing-sheet/polycarbonate-roofing-sheet" />
-            </div>
+            }
+            mobileRail={<RelatedProductRail items={relatedRail} currentHref="/product/roofing-sheet/polycarbonate-roofing-sheet" />}
+          />
+          <div className="mt-4 hidden lg:block lg:max-w-[calc(100%-684px)] lg:pl-[264px]">
+            <h2 className="mb-2 text-lg font-bold text-slate-950">Get a factory-direct quotation</h2>
+            <ProductZoneCtas variant="strip" className="w-full" showPhoneNumber />
           </div>
         </section>
 

@@ -1813,7 +1813,7 @@ All colors MUST be HSL. Green theme with professional look.
 
 @media (min-width: 1024px) {
   .hero-grid {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr !important;
     gap: 4rem !important;
     align-items: center !important;
     justify-items: stretch !important;
@@ -1840,9 +1840,9 @@ All colors MUST be HSL. Green theme with professional look.
     order: 1 !important;
     text-align: left !important;
     padding: 0 !important;
-    max-width: 600px !important;
+    max-width: 760px !important;
   }
-  
+
   .hero-form-container {
     order: 2 !important;
     margin-top: 0 !important;
