@@ -18,6 +18,7 @@ import type { WooCommerceProduct, RankMathSEOData, ProductReview } from '../../.
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
+import { categoryHref } from '../../../lib/categoryHubMap';
 import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
@@ -81,7 +82,7 @@ const RelatedPrefabricatedWarehouseResource = ({ category }: { category: string 
       <h2 id="related-prefabricated-warehouse-resource" className="text-lg font-semibold text-slate-900 mb-2">Related Prefabricated Warehouse Resource</h2>
       <p className="text-sm text-slate-700 leading-relaxed mb-3">{resource.context}</p>
       <Link
-        href="/product-category/prefabricated-warehouses"
+        href="/product/industrial-sheds"
         className="inline-flex items-center gap-2 rounded-md border border-amber-100 bg-white px-4 py-2 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-amber-300 hover:bg-amber-50"
       >
         {resource.label}
@@ -744,7 +745,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                           )}
                           <div className="flex justify-between items-center py-2">
                             <span className="font-medium text-foreground">Category:</span>
-                            <Link href={`/product-category/${primaryCategory.slug}`} className="text-primary hover:underline font-medium break-words text-right">
+                            <Link href={categoryHref(primaryCategory.slug)} className="text-primary hover:underline font-medium break-words text-right">
                               {transformedProduct.category}
                             </Link>
                           </div>
