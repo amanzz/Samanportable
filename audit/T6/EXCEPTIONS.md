@@ -93,3 +93,37 @@ paginated pages (`/blog?page=N`, N ≥ 2) are now **self-canonical and indexable
 title suffixed ` — Page {N}` (meta description unchanged). Out-of-range pages remain
 `noindex` + canonical to the hub. This recovers crawl depth to the deep legacy posts while
 avoiding duplicate-title flags.
+
+---
+
+## T1.2d — City-page BreadcrumbList item URLs corrected to canonical /product hubs
+
+- **Date:** 14 Jul 2026
+- **Ticket:** SHIKHAR T1.2d — Redirect-Straggler Cleanup
+- **Build packet:** `content-drafts/T1.2d_Redirect_Straggler_Cleanup_Packet_14Jul2026.md`
+- **Authority:** Fable 5 amendment, 14 Jul 2026.
+
+### Exception
+T1.2d: city-page BreadcrumbList item URLs corrected from redirecting
+`/product-category/*` to canonical `/product/*` (schema-truth / G6; breadcrumb names
+unchanged); authorized by Fable 5 as part of the redirect-consolidation arc.
+
+This is a live JSON-LD change on an L3-locked surface, hence this entry. Emitted by
+`getCityPageGraph` from `src/pages/[slug].tsx` for every slug in
+`CITY_PAGE_SCHEMA_SLUGS`:
+
+| Breadcrumb name | Before | After |
+| --- | --- | --- |
+| Container Offices | /product-category/container-offices | /product/container-offices |
+| Porta Cabins | /product-category/porta-cabins | /product/porta-cabins |
+
+Both slugs are identity-mapped in `src/lib/categoryHubMap.ts`. The breadcrumb `name`
+values, the third (page) crumb, and every other schema field are unchanged. No visible
+copy, heading or meta changed on any city page — verified by a rendered DOM diff showing
+byte-identical visible text.
+
+### Justification
+The breadcrumb was naming a URL that 301-redirects, so the schema described a page that
+no longer resolves at that address. Google is explicit that structured-data URLs must be
+canonical. This makes the city-page breadcrumb trail agree with the canonical /product
+tree established by T1.2.

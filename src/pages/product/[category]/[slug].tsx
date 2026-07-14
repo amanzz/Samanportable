@@ -15,6 +15,7 @@ import {
   Loader2
 } from 'lucide-react';
 import type { WooCommerceProduct, RankMathSEOData, ProductReview } from '../../../config/api';
+import { categoryHref } from '../../../lib/categoryHubMap';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
@@ -659,7 +660,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           )}
                           <div className="flex justify-between items-center py-2">
                             <span className="font-medium text-foreground">Category:</span>
-                            <Link href={`/product-category/${primaryCategory.slug}`} className="text-primary hover:underline font-medium break-words text-right">
+                            <Link href={categoryHref(primaryCategory.slug)} className="text-primary hover:underline font-medium break-words text-right">
                               {transformedProduct.category}
                             </Link>
                           </div>
