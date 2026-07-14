@@ -833,6 +833,15 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
               ],
               faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
               contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug) ? ['+91 87960 39938', '+91 97089 89937'] : undefined,
+              // T8.2 amendment: the city graph has no BlogPosting node to hang `about`
+              // on, so it rides the FAQPage node instead — same hub, same name as the
+              // visible module on this page (G6). Omitted when the post owns no hub.
+              about: hubLink
+                ? {
+                    name: hubLink.hubName,
+                    url: `https://www.samanportable.com${hubLink.hubPath}`,
+                  }
+                : undefined,
             });
           }
 

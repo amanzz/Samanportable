@@ -2366,14 +2366,29 @@ export const generateUnifiedBlogGraph = (params: {
  * deliberately leaner graph than generateUnifiedBlogGraph(), used only for
  * allowlisted city pages (see CITY_PAGE_SCHEMA_SLUGS in [slug].tsx). Injected
  * the same way as every other page: as the UnifiedSEO `structuredData` prop.
+ *
+ * T8.2 amendment — `about` (owning-cluster hub) is attached to the FAQPage node.
+ * It is the ONLY node here that can legitimately carry it:
+ *   · Organization  — `about` is not a property of Organization, and "the company is
+ *                     about Porta Cabins" would be a false claim.
+ *   · BreadcrumbList — an ItemList; `about` is not valid on it.
+ *   · FAQPage       — a WebPage → CreativeWork subtype, so `about` IS valid, and it is
+ *                     this graph's page-level entity. "This page is about {cluster}" is
+ *                     true and mirrors the visible Related-product module.
+ * No BlogPosting node is fabricated here (that would be a false type claim), and no
+ * WebPage node is invented to hold the property — if a city page ever had no FAQs, the
+ * FAQPage node is absent and `about` is simply omitted rather than forced onto a node
+ * that cannot carry it. (Today all 91 city module pages emit an FAQPage.)
  */
 export const getCityPageGraph = (params: {
   url: string;
   breadcrumbs: Array<{ name: string; url: string }>;
   faqSchema: any | null;
   contactTelephone?: string | string[];
+  /** The page's owning cluster hub — same hub the visible module links to. */
+  about?: { name: string; url: string };
 }) => {
-  const { url, breadcrumbs, faqSchema, contactTelephone = '+91 88616 22859' } = params;
+  const { url, breadcrumbs, faqSchema, contactTelephone = '+91 88616 22859', about } = params;
 
   const organization = {
     '@type': 'Organization',
@@ -2439,6 +2454,17 @@ export const getCityPageGraph = (params: {
       ...faqSchema,
       '@context': undefined,
       '@id': `${url}#faqpage`,
+      // T8.2 amendment: ADDITIVE only — spread above is untouched, this appends the one
+      // new property. `Thing`, not `Product`, for the same reason as the Blog `about`:
+      // the hub is a CollectionPage of many products, not a product entity.
+      ...(about && {
+        about: {
+          '@type': 'Thing',
+          '@id': about.url,
+          name: about.name,
+          url: about.url,
+        },
+      }),
     });
   }
 
