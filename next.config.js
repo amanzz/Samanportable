@@ -149,9 +149,17 @@ const nextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days for better balance
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // Optimize loading performance - ENHANCED
-    loader: 'custom',
-    loaderFile: './image-loader.js',
+    // SHIKHAR T12 (2026-07-14): the `loader: 'custom'` + `loaderFile: './image-loader.js'`
+    // bypass is REMOVED, restoring the built-in /_next/image optimizer. The loader was an
+    // emergency fix for the optimizer's server-side fetch of Hostinger-hosted blog images
+    // (ECONNRESET), but registering a loaderFile disables the optimizer for EVERY source,
+    // so all local /public images lost resize/srcset/WebP as collateral damage. The
+    // formats/deviceSizes/imageSizes/quality settings above were dead config until now.
+    //
+    // The optimizer must still never server-fetch Hostinger. That is enforced at the call
+    // sites, not here: every remote (absolute-URL) image is passed `unoptimized` via
+    // isRemoteImageSrc() in src/lib/imageSrc.ts, so the browser fetches it directly exactly
+    // as it does today. Local /public images are optimized by the server from disk.
     // STAGING ONLY: when the env-gated Google block is on (goldfish), serve images
     // unoptimized. The optimizer fetches LOCAL public/ images via an internal HTTP
     // self-request that carries no credentials, so the 401 wall breaks it (blank

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
+import { isRemoteImageSrc } from '@/lib/imageSrc';
 
 interface SmartImageProps {
   src: string;
@@ -124,6 +125,8 @@ const SmartImage: React.FC<SmartImageProps> = ({
       <Image
         src={src}
         alt={alt}
+        // T12: remote images bypass the optimizer server-fetch path.
+        unoptimized={isRemoteImageSrc(src)}
         width={width || 200}
         height={height || 100}
         className={className}
@@ -149,6 +152,8 @@ const SmartImage: React.FC<SmartImageProps> = ({
         <Image
           src={src}
           alt={alt}
+          // T12: remote images bypass the optimizer server-fetch path.
+          unoptimized={isRemoteImageSrc(src)}
           fill
           className={`transition-opacity duration-300 ${
             isLoading ? 'opacity-0' : 'opacity-100'
@@ -185,6 +190,8 @@ const SmartImage: React.FC<SmartImageProps> = ({
       <Image
         src={src}
         alt={alt}
+        // T12: remote images bypass the optimizer server-fetch path.
+        unoptimized={isRemoteImageSrc(src)}
         width={width}
         height={height}
         className={`transition-opacity duration-300 ${

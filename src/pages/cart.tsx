@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { isRemoteImageSrc } from '@/lib/imageSrc';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -100,7 +101,8 @@ const Cart = () => {
                             <div className="w-24 h-24 bg-muted rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                               {item.image && item.image !== '/placeholder.svg' ? (
                                 <Image 
-                                  src={item.image} 
+                                  src={item.image}
+                                  unoptimized={isRemoteImageSrc(item.image)} 
                                   alt={item.name}
                                   width={96}
                                   height={96}

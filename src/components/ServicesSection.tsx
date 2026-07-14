@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { isRemoteImageSrc } from '@/lib/imageSrc';
 import { Button } from '@/components/ui/button';
 import { Building2, CheckCircle2, ArrowRight } from 'lucide-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
@@ -111,6 +112,7 @@ const ServicesSection = () => {
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <Image
                   src={service.image}
+                  unoptimized={isRemoteImageSrc(service.image)}
                   alt={service.alt}
                   width={800}
                   height={800}

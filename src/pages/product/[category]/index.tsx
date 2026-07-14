@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
+import { isRemoteImageSrc } from '@/lib/imageSrc';
 import Layout from '../../../components/Layout';
 // import SEO from '../../../components/SEO'; // Removed to avoid duplicate meta tags
 import { UnifiedSEO } from '../../../components/UnifiedSEO';
@@ -527,6 +528,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                           {transformedProduct.featured_image && transformedProduct.featured_image !== '/placeholder.svg' ? (
                             <Image 
                               src={images[selectedImageIndex]?.src || transformedProduct.featured_image}
+                              unoptimized={isRemoteImageSrc(images[selectedImageIndex]?.src || transformedProduct.featured_image)}
                               alt={transformedProduct.title}
                               width={800}
                               height={600}
@@ -593,6 +595,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                               {image.src && image.src !== '/placeholder.svg' ? (
                                 <Image 
                                   src={image.src}
+                                  unoptimized={isRemoteImageSrc(image.src)}
                                   alt={`${transformedProduct.title} ${index + 1}`}
                                   width={150}
                                   height={150}
@@ -837,6 +840,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden relative">
                                     <Image 
                                       src={relatedProduct.image || `https://via.placeholder.com/320x240/3B82F6/FFFFFF?text=${encodeURIComponent(relatedProduct.title)}`}
+                                      unoptimized={isRemoteImageSrc(relatedProduct.image || `https://via.placeholder.com/320x240/3B82F6/FFFFFF?text=${encodeURIComponent(relatedProduct.title)}`)}
                                       alt={relatedProduct.title}
                                       width={320}
                                       height={240}
