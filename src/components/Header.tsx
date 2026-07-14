@@ -4,10 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Phone, User, LogOut, Package, ArrowRight, Building2, Container } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, User, LogOut, Package, ArrowRight, Building2, Container, BadgeCheck } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 import { dsCssVariables } from '@/components/ds/tokens';
+import { GST_REGISTRATIONS } from '@/data/certifications';
 import { cn } from '@/lib/utils';
 
 const LoginModal = dynamic(() => import('@/components/LoginModal'), { ssr: false });
@@ -106,6 +107,7 @@ const Header = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showEnquiry, setShowEnquiry] = useState(false);
   const [activeMenu, setActiveMenu] = useState<'products' | 'rental' | null>(null);
+  const [gstOpen, setGstOpen] = useState(false);
   const [condensed, setCondensed] = useState(false);
   const [mobileGroup, setMobileGroup] = useState<string | null>('Cabins & Offices');
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -196,7 +198,47 @@ const Header = () => {
               <a href="mailto:ncr@samanportable.com" className="font-medium transition-colors hover:text-white">ncr@samanportable.com</a>
             </span>
           </div>
-          <span className="text-white/80">Fixed-price quote in 48 hours</span>
+          <div className="flex items-center gap-3">
+            {/* T1.4 — GST trust badge. The popover is absolutely positioned and the strip keeps
+                its fixed h-9, so opening it overlays and never reflows anything (zero CLS). */}
+            <div
+              className="relative"
+              onMouseEnter={() => setGstOpen(true)}
+              onMouseLeave={() => setGstOpen(false)}
+            >
+              <button
+                type="button"
+                aria-expanded={gstOpen}
+                aria-describedby="gst-registrations"
+                onClick={() => setGstOpen((open) => !open)}
+                onFocus={() => setGstOpen(true)}
+                onBlur={() => setGstOpen(false)}
+                className="flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-2.5 py-0.5 font-medium transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ds-color-focus)]"
+              >
+                <BadgeCheck className="h-3.5 w-3.5 text-[var(--ds-color-focus)]" aria-hidden="true" />
+                GST Registered
+              </button>
+              <div
+                id="gst-registrations"
+                role="tooltip"
+                className={cn(
+                  'absolute right-0 top-full z-50 mt-1.5 w-max rounded-lg bg-white p-3 text-left shadow-lg transition-opacity duration-200 motion-reduce:transition-none',
+                  gstOpen ? 'opacity-100' : 'invisible pointer-events-none opacity-0'
+                )}
+              >
+                <ul className="space-y-1">
+                  {GST_REGISTRATIONS.map(({ state, gstin }) => (
+                    <li key={state} className="flex items-baseline gap-2 whitespace-nowrap">
+                      <span className="text-gray-500">{state}:</span>
+                      <span className="font-semibold tracking-wide text-[var(--ds-color-forest)]">{gstin}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <span className="text-white/30">|</span>
+            <span className="text-white/80">Fixed-price quote in 48 hours</span>
+          </div>
         </div>
       </div>
 
@@ -490,6 +532,18 @@ const Header = () => {
                 <a href="tel:+918796039938" className="mt-1 block text-sm font-semibold text-[var(--ds-color-forest)]">
                   North — Greater Noida: +91 87960 39938
                 </a>
+                {/* T1.4 — the utility strip is desktop-only, so the GSTINs surface here on mobile. */}
+                <div className="mt-2 border-t border-[var(--ds-color-forest)]/10 pt-2">
+                  <p className="flex items-center gap-1.5 text-xs font-semibold text-[var(--ds-color-forest)]">
+                    <BadgeCheck className="h-3.5 w-3.5 text-[var(--ds-color-leaf)]" aria-hidden="true" />
+                    GST Registered
+                  </p>
+                  {GST_REGISTRATIONS.map(({ state, gstin }) => (
+                    <p key={state} className="mt-0.5 text-xs text-gray-600">
+                      {state}: <span className="font-medium tracking-wide">{gstin}</span>
+                    </p>
+                  ))}
+                </div>
               </div>
               {NAV_ITEMS.filter((i) => !i.menu).map((item) => (
                 <Link
