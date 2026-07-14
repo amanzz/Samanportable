@@ -34,7 +34,7 @@ const SandwichInfoBox = ({ h1, sku, averageRating, ratingCount = 0 }: SandwichIn
     <div className="rounded-2xl border border-border bg-background p-5 shadow-sm sm:p-6">
       <div className="mb-1 flex items-center gap-2">
         <Tag className="h-4 w-4 text-primary" aria-hidden="true" />
-        <Link href="/product-category/sandwich-panel" className="text-xs font-semibold uppercase tracking-wide text-primary hover:underline">
+        <Link href="/product/sandwich-panel" className="text-xs font-semibold uppercase tracking-wide text-primary hover:underline">
           Sandwich Panels
         </Link>
       </div>
@@ -81,7 +81,7 @@ const SandwichInfoBox = ({ h1, sku, averageRating, ratingCount = 0 }: SandwichIn
           </div>
           <div className="flex items-center justify-between gap-4 py-1">
             <span className="font-medium text-foreground">Category:</span>
-            <Link href="/product-category/sandwich-panel" className="break-words text-right font-medium text-primary hover:underline">
+            <Link href="/product/sandwich-panel" className="break-words text-right font-medium text-primary hover:underline">
               Sandwich Panels
             </Link>
           </div>

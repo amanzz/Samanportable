@@ -489,7 +489,7 @@ export default function MetalRoofingSheetPage() {
               <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700">
                 <h2>Sizes, coverage and screws — the ordering math</h2>
                 <p>
-                  Corrugated GI comes 910/1220 mm wide; profiled colour sheets cover roughly 1000–1070 mm after overlap; lengths are cut to order so long roofs take fewer joints. Count with <strong>covered width</strong> (never flat width): roof length ÷ covered width, rounded up, per side. Screws: plan roughly one per rib per purlin line — the exact count depends on profile and purlin spacing, and our quotation lists screws, ridge, flashings and gutters as separate items so nothing surprises you on site. These sheets also pair naturally with structural work — for complete steel buildings, see our <Link href="/product-category/industrial-sheds">industrial shed structures we fabricate</Link>.
+                  Corrugated GI comes 910/1220 mm wide; profiled colour sheets cover roughly 1000–1070 mm after overlap; lengths are cut to order so long roofs take fewer joints. Count with <strong>covered width</strong> (never flat width): roof length ÷ covered width, rounded up, per side. Screws: plan roughly one per rib per purlin line — the exact count depends on profile and purlin spacing, and our quotation lists screws, ridge, flashings and gutters as separate items so nothing surprises you on site. These sheets also pair naturally with structural work — for complete steel buildings, see our <Link href="/product/industrial-sheds">industrial shed structures we fabricate</Link>.
                 </p>
 
                 <h2>What decides the price</h2>
