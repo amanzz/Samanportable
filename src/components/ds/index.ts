@@ -54,3 +54,5 @@ export { Section } from './Section';
 export type { SectionProps } from './Section';
 export { GSTRegistrationCard } from './GSTRegistrationCard';
 export type { GSTRegistrationCardProps, GstEntry } from './GSTRegistrationCard';
+export { RelatedProductLink } from './RelatedProductLink';
+export type { RelatedProductLinkProps } from './RelatedProductLink';

@@ -23,6 +23,13 @@ export interface BlogPostSchema {
   dateModified: string;
   url: string;
   category?: string;
+  /**
+   * SHIKHAR T8.2: the ONE product hub this post's cluster owns — the same hub the
+   * visible Related-product module links to, so the schema mirrors what's on the page
+   * (G6). Omitted entirely for posts whose category owns no hub (they render no module
+   * either). Never more than one entity: a post feeds exactly one cluster.
+   */
+  about?: { name: string; url: string };
 }
 
 export const generateProductSchema = (product: ProductSchema) => {
@@ -2288,6 +2295,22 @@ export const generateUnifiedBlogGraph = (params: {
     datePublished: datePublishedFormatted,
     dateModified: dateModifiedFormatted,
     ...(postSchema.category && { articleSection: postSchema.category }),
+    // T8.2: entity association to the post's owning product hub. Additive — every
+    // field above is untouched.
+    //
+    // `Thing`, deliberately: the hub is a CollectionPage listing many products, so
+    // typing it `Product` here would assert a product entity that doesn't exist (and
+    // invite a "Product without offers" warning). `Thing` claims only what is true —
+    // this post is about the named entity at that URL. The bare-URL @id also cannot
+    // collide with the hub's own #collectionpage / #itemlist nodes.
+    ...(postSchema.about && {
+      about: {
+        '@type': 'Thing',
+        '@id': postSchema.about.url,
+        name: postSchema.about.name,
+        url: postSchema.about.url,
+      },
+    }),
     inLanguage: 'en-IN',
   };
 

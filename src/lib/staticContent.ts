@@ -521,6 +521,15 @@ export async function fetchProductCategories(): Promise<any[]> {
   return getAllCategoriesRaw().map((c) => ({ id: c.id, name: c.name, slug: c.slug, count: c.count }));
 }
 
+// SHIKHAR T8.2: a product hub's own display name (e.g. 'porta-cabins' → 'Porta Cabins'),
+// or null when no such category ships. Sync because the blog→hub mapping runs inside
+// getStaticProps; it reads the same cache fetchProductCategories() does. The name is
+// never derived from the blog term — the hub is the authority for its own name.
+export function getProductCategoryName(slug: string): string | null {
+  if (!SAFE_SLUG.test(slug)) return null;
+  return getAllCategoriesRaw().find((c) => c.slug === slug)?.name || null;
+}
+
 // Mirrors api.fetchProductCategoryBySlug.
 export async function fetchProductCategoryBySlug(slug: string): Promise<ProductCategoryDetail | null> {
   if (!SAFE_SLUG.test(slug)) return null;
