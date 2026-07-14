@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from './QuoteFormTrigger';
@@ -41,6 +42,7 @@ const HeroSection = () => {
         <div className="absolute inset-0">
           <Image
             src={heroImages[0].src}
+            unoptimized={shouldBypassOptimizer(heroImages[0].src)}
             alt={heroImages[0].alt}
             fill
             priority
@@ -53,6 +55,7 @@ const HeroSection = () => {
           <div className="absolute inset-0">
             <Image
               src={heroImages[currentImageIndex].src}
+              unoptimized={shouldBypassOptimizer(heroImages[currentImageIndex].src)}
               alt={heroImages[currentImageIndex].alt}
               fill
               quality={75}

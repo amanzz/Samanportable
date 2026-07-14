@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 
 interface OptimizedCategoryImageProps {
   src: string;
@@ -43,6 +44,8 @@ const OptimizedCategoryImage: React.FC<OptimizedCategoryImageProps> = ({
       <Image
         src={hasError ? fallbackSrc : src}
         alt={alt}
+        // T12: category/product images are Hostinger-hosted; keep them off the optimizer.
+        unoptimized={shouldBypassOptimizer(hasError ? fallbackSrc : src)}
         width={width}
         height={height}
         className="w-full h-full object-cover"

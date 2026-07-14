@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { useRouter } from 'next/router';
 import { Home, X, Package, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -178,6 +179,7 @@ const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
                             <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
                               <Image
                                 src={product.image || '/placeholder.svg'}
+                                unoptimized={shouldBypassOptimizer(product.image || '/placeholder.svg')}
                                 alt={anchorText}
                                 width={64}
                                 height={64}

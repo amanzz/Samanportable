@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { getFeaturedImageUrl } from '@/config/api';
 import { decodeHtmlEntities } from '../lib/utils';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 
 interface BlogImageProps {
   post: any;
@@ -47,6 +48,10 @@ const BlogImage: React.FC<BlogImageProps> = ({ post, index, className = '' }) =>
       <Image
         src={imageUrl}
         alt={imageAlt}
+        // T12: WP featured images are Hostinger-hosted. Keep them off the optimizer's
+        // server-side fetch path (the 2026-06-12 ECONNRESET); the browser fetches them
+        // directly, exactly as today.
+        unoptimized={shouldBypassOptimizer(imageUrl)}
         width={400}
         height={225}
         className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 ${className}`}

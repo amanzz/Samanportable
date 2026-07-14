@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { GalleryImage } from './Gallery';
 
@@ -51,6 +52,7 @@ const ProductCarousel = ({ images }: ProductCarouselProps) => {
       >
         <Image
           src={active.src}
+          unoptimized={shouldBypassOptimizer(active.src)}
           alt={active.alt}
           title={active.title}
           width={800}
@@ -109,6 +111,7 @@ const ProductCarousel = ({ images }: ProductCarouselProps) => {
             >
               <Image
                 src={img.thumb ?? img.src}
+                unoptimized={shouldBypassOptimizer(img.thumb ?? img.src)}
                 alt={img.alt}
                 width={150}
                 height={150}
@@ -153,7 +156,7 @@ const ProductCarousel = ({ images }: ProductCarouselProps) => {
           </button>
           <div className="relative max-h-[80vh] w-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
             <div className="relative aspect-square w-full overflow-hidden rounded-xl">
-              <Image src={active.src} alt={active.alt} title={active.title} width={800} height={800} className="h-full w-full object-contain" />
+              <Image src={active.src} unoptimized={shouldBypassOptimizer(active.src)} alt={active.alt} title={active.title} width={800} height={800} className="h-full w-full object-contain" />
             </div>
             <p className="mt-3 text-center text-sm text-white/90">{active.title}</p>
           </div>

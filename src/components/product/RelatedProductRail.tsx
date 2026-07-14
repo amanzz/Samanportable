@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import Link from 'next/link';
 import { Package } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -48,6 +49,7 @@ const RelatedProductRail = ({ items, currentHref, className, scroll = false }: R
                     {item.imageSrc ? (
                       <Image
                         src={item.imageSrc}
+                        unoptimized={shouldBypassOptimizer(item.imageSrc)}
                         alt={item.imageAlt || item.title}
                         className="h-full w-full object-cover"
                         width={56}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { ArrowRight, Check } from 'lucide-react';
 
 // T7 / T7.1 — "Most In Demand" 8-tab section (SAP-style). Content authority:
@@ -292,6 +293,7 @@ const TabPanel = ({ tab, index }: { tab: Tab; index: number }) => (
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-border)]">
           <Image
             src={tab.img}
+            unoptimized={shouldBypassOptimizer(tab.img)}
             alt={tab.alt}
             fill
             sizes="(max-width: 1024px) 100vw, 500px"

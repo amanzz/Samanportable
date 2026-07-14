@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export interface GalleryImage {
@@ -21,6 +22,7 @@ export const LongImage = ({ src, alt, title, priority = false }: GalleryImage & 
     <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-muted">
       <Image
         src={src}
+        unoptimized={shouldBypassOptimizer(src)}
         alt={alt}
         title={title}
         width={1200}
@@ -62,6 +64,7 @@ export const GalleryGrid = ({ images, priorityFirst = false }: { images: Gallery
             >
               <Image
                 src={img.src}
+                unoptimized={shouldBypassOptimizer(img.src)}
                 alt={img.alt}
                 title={img.title}
                 width={800}
@@ -111,6 +114,7 @@ export const GalleryGrid = ({ images, priorityFirst = false }: { images: Gallery
             <div className="relative aspect-square w-full overflow-hidden rounded-xl">
               <Image
                 src={images[openIndex].src}
+                unoptimized={shouldBypassOptimizer(images[openIndex].src)}
                 alt={images[openIndex].alt}
                 title={images[openIndex].title}
                 width={800}

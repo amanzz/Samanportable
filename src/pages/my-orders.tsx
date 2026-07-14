@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -336,7 +337,8 @@ const MyOrders = () => {
                                 {item.image ? (
                                   <>
                                     <Image 
-                                      src={item.image} 
+                                      src={item.image}
+                                      unoptimized={shouldBypassOptimizer(item.image)} 
                                       alt={item.name}
                                       width={64}
                                       height={64}

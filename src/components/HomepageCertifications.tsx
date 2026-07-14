@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { ArrowRight, X } from 'lucide-react';
 
 // T6.16 — homepage "Certifications & Recognition" section, placed directly after the
@@ -133,6 +134,7 @@ const CertLightbox = ({ cert, onClose }: { cert: Cert; onClose: () => void }) =>
         </button>
         <Image
           src={cert.cert}
+          unoptimized={shouldBypassOptimizer(cert.cert)}
           alt={cert.certAlt}
           width={1200}
           height={cert.certH}
@@ -251,11 +253,11 @@ const HomepageCertifications = () => {
               {/* Logo-dominant banner (T6.17): photo recedes behind a soft dark overlay;
                   a large white logo tile centered fully inside the banner. */}
               <div className="relative h-[150px] overflow-hidden bg-gray-100">
-                <Image src={c.bg} alt={c.bgAlt} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" loading="lazy" className="object-cover" />
+                <Image src={c.bg} unoptimized={shouldBypassOptimizer(c.bg)} alt={c.bgAlt} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" loading="lazy" className="object-cover" />
                 <div className="absolute inset-0 bg-black/45" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="flex h-[72%] w-[58%] items-center justify-center rounded-xl bg-white p-4 shadow-lg">
-                    <Image src={c.logo} alt="" width={200} height={200} loading="lazy" className="max-h-full max-w-full object-contain" />
+                    <Image src={c.logo} unoptimized={shouldBypassOptimizer(c.logo)} alt="" width={200} height={200} loading="lazy" className="max-h-full max-w-full object-contain" />
                   </span>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import Layout from '../components/Layout';
 import { UnifiedSEO } from '../components/UnifiedSEO';
 import { useRouter } from 'next/router';
@@ -732,7 +733,8 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
           return (
             <div className={containerClasses}>
               <Image 
-                src={src} 
+                src={src}
+                unoptimized={shouldBypassOptimizer(src)} 
                 alt={alt}
                 width={800}
                 height={600}
@@ -968,6 +970,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
                 <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
                   <Image
                     src={featuredImage}
+                    unoptimized={shouldBypassOptimizer(featuredImage)}
                     alt={decodeHtmlEntities(post.title.rendered)}
                     width={1200}
                     height={800}
