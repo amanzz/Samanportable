@@ -82,7 +82,7 @@ const RelatedPrefabricatedWarehouseResource = ({ category }: { category: string 
       <h2 id="related-prefabricated-warehouse-resource" className="text-lg font-semibold text-slate-900 mb-2">Related Prefabricated Warehouse Resource</h2>
       <p className="text-sm text-slate-700 leading-relaxed mb-3">{resource.context}</p>
       <Link
-        href="/product-category/prefabricated-warehouses"
+        href="/product/industrial-sheds"
         className="inline-flex items-center gap-2 rounded-md border border-amber-100 bg-white px-4 py-2 text-sm font-medium text-[#0A3D2A] transition-colors hover:border-amber-300 hover:bg-amber-50"
       >
         {resource.label}

@@ -810,8 +810,8 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               breadcrumbs: [
                 { name: 'Home', url: 'https://www.samanportable.com/' },
                 CONTAINER_OFFICE_CITY_SLUGS.has(slug)
-                  ? { name: 'Container Offices', url: 'https://www.samanportable.com/product-category/container-offices' }
-                  : { name: 'Porta Cabins', url: 'https://www.samanportable.com/product-category/porta-cabins' },
+                  ? { name: 'Container Offices', url: 'https://www.samanportable.com/product/container-offices' }
+                  : { name: 'Porta Cabins', url: 'https://www.samanportable.com/product/porta-cabins' },
                 { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` },
               ],
               faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
