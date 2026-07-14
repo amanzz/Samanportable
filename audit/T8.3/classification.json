@@ -1,0 +1,1490 @@
+{
+  "totals": {
+    "files": 360,
+    "redirecting": 77,
+    "posts": 283,
+    "t82Covered": 160,
+    "moduleLess": 123,
+    "newlyClassified": 103,
+    "unclassified": 20,
+    "newTotalCoverage": 263
+  },
+  "byCluster": {
+    "portable-cabin": 27,
+    "porta-cabins": 29,
+    "container-cafe": 1,
+    "container-offices": 13,
+    "prefabricated-houses": 5,
+    "portable-office": 15,
+    "container-houses": 1,
+    "prefab-buildings": 1,
+    "industrial-sheds": 6,
+    "pre-engineered-buildings": 3,
+    "portable-toilet": 1,
+    "labor-colony": 1
+  },
+  "byReason": {
+    "ambiguous-no-title-tiebreak": 9,
+    "boundary-pair-porta-vs-portable": 10,
+    "ambiguous-multi-title-cluster": 1
+  },
+  "classified": [
+    {
+      "slug": "18-benefits-of-luxury-portable-cabin",
+      "title": "18 Benefits of a Luxury Portable Cabin on Your Worksite",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "2nd-hand-porta-cabins",
+      "title": "Used Porta Cabin Buying Guide: What to Inspect Before You Pay",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "7-tips-for-choosing-the-perfect-portable-cabin-location",
+      "title": "Where to Place a Portable Cabin: 7 Site Selection Tips",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "best-container-cafe-designs-for-experience",
+      "title": "Container Cafe Design Ideas: Layouts, Interiors & Features",
+      "hubSlug": "container-cafe",
+      "hubName": "Container Cafe",
+      "phrases": [
+        "container cafe",
+        "container coffee"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "best-container-office-solutions",
+      "title": "Container Office Buying Guide for India: How to Choose the Right Unit in 2026",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office",
+        "office container",
+        "shipping container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "best-porta-cabin-manufacturer-ncr",
+      "title": "Porta Cabin in Delhi NCR: 2026 Buyer Guide for Price, Sizes, Delivery and Installation",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "best-porta-cabins-in-bangalore",
+      "title": "SAMAN, The Best Company For Manufacturing And Supplying Porta Cabins In Bangalore",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "best-portable-cabins-in-india",
+      "title": "Discover the Best Portable Cabins in India",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "build-a-prefabricated-modular-houses",
+      "title": "Buying Land for a Prefab Modular Home: What to Check First",
+      "hubSlug": "prefabricated-houses",
+      "hubName": "Prefabricated Houses",
+      "phrases": [
+        "modular home",
+        "prefabricated house",
+        "prefab home"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "cheap-office-trailers-for-sale",
+      "title": "Affordable Office Trailers: Portable Workspaces for Indian Sites",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": false
+    },
+    {
+      "slug": "cheap-porta-cabins-for-sale",
+      "title": "Budget-Friendly & Cheap Porta Cabins for Sale: Affordable, Quality Spaces!",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "cheap-portable-cabins",
+      "title": "Cheap Portable Cabins in India: An Honest Buyer-Safety Guide",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-house-price-in-tamil-nadu",
+      "title": "Container House Price in Tamil Nadu (2026): Cost Ranges & Factors",
+      "hubSlug": "container-houses",
+      "hubName": "Container Houses",
+      "phrases": [
+        "container house",
+        "container home"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-office-rental-is-perfect-solution",
+      "title": "Why Container Office Rental is the Perfect Solution for Temporary Workspaces",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-offices-for-sale-in-bommasandra",
+      "title": "Container Offices for Sale in Bommasandra",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-offices-for-sale-in-hosur",
+      "title": "Container Offices for Sale in Hosur",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-offices-for-sale-in-jp-nagar",
+      "title": "Container Offices for Sale in JP Nagar",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-offices-in-central-delhi",
+      "title": "Container Offices for Sale in Central Delhi",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-offices-in-faridabad",
+      "title": "Container Offices in Faridabad: Heavy-Duty Workspaces for Factories & Construction Sites",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-offices-in-south-delhi",
+      "title": "Container Offices for Sale in South Delhi",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-offices-in-west-delhi",
+      "title": "Container Offices in West Delhi: Smart Solutions for Government & Real Estate Projects",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office",
+        "office container"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "container-offices-price",
+      "title": "Container Offices Price Guide 2025: Smart Costing and ROI for Indian Projects",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "customized-prefab-structures-ncr",
+      "title": "Custom Prefab Structures in NCR: Tailored Steel Buildings",
+      "hubSlug": "prefab-buildings",
+      "hubName": "Prefab Buildings",
+      "phrases": [
+        "prefab structure",
+        "prefab building"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "durable-modular-homes-delhi",
+      "title": "Durable Modular Homes in Delhi NCR: Factory-Built Living",
+      "hubSlug": "prefabricated-houses",
+      "hubName": "Prefabricated Houses",
+      "phrases": [
+        "modular home",
+        "prefabricated house"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "durable-porta-cabins",
+      "title": "Porta Cabin Durability Guide: What Determines 20-Year Lifespan in India",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "eco-friendly-portable-cabins",
+      "title": "Eco-Friendly Portable Cabins for Sustainable Living",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "industrial-sheds-in-bangalore",
+      "title": "Industrial Sheds in Bangalore: Types, Sizes, Cost Drivers and Factory-Direct Build",
+      "hubSlug": "industrial-sheds",
+      "hubName": "Industrial Sheds",
+      "phrases": [
+        "industrial shed",
+        "steel shed",
+        "storage shed",
+        "warehouse"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "luxury-prefab-homes",
+      "title": "Luxury Prefab Homes in India: Design, Cost & Build Time",
+      "hubSlug": "prefabricated-houses",
+      "hubName": "Prefabricated Houses",
+      "phrases": [
+        "prefab home",
+        "prefabricated house"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "material-specifications-features",
+      "title": "Portable Cabin Material Specifications, Sizes & Features",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "modern-portable-office-solutions",
+      "title": "Flexible Portable Office Setups for the Modern Workplace",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "owning-a-porta-cabin-is-perfect",
+      "title": "Owning a Porta Cabin: The Perfect Solution for Modern Living and Business Needs",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "peb-structure-cost-per-kg-india",
+      "title": "PEB Structure Cost Per Kg in India",
+      "hubSlug": "pre-engineered-buildings",
+      "hubName": "Pre-Engineered Buildings",
+      "phrases": [
+        "peb structure"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "peb-structure-cost-per-sq-ft-india",
+      "title": "PEB Structure Cost Per Sq Ft in India",
+      "hubSlug": "pre-engineered-buildings",
+      "hubName": "Pre-Engineered Buildings",
+      "phrases": [
+        "peb structure",
+        "peb building"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabin-in-chennai",
+      "title": "Porta Cabin in Chennai",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabin-in-noida",
+      "title": "Porta Cabin in Noida: SAMAN&#8217;s Factory-Direct Guide to Sizes, Prices & Local Delivery",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabin-price-a-complete-guide-2025",
+      "title": "Porta Cabin Cost in India 2026: Sq Ft Rates, Size Brackets, and What Actually Drives the Final Number",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabin-sizes-and-specifications-in-india",
+      "title": "Porta Cabin Sizes in India: Standard Dimensions, Custom Layouts & Specifications",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin",
+        "portacabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-anekal",
+      "title": "Porta Cabins in Anekal: Rugged Build for Heavy-Duty Sites",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-banashankari",
+      "title": "Reliable Porta Cabins in Banashankari for Site & Office Use",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-delhi-ncr",
+      "title": "Porta Cabin in Delhi: SAMAN&#8217;s Factory-Direct Guide to Sizes, Prices & Greater Noida Delivery",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-hsr-layout",
+      "title": "Porta Cabin in HSR Layout: SAMAN&#8217;s Factory-Direct Site Cabins for 7-Sector Tenant Fitouts, 27th Main Retail-Spine & Sarjapur-Edge Startup Build Sites",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-jayanagar",
+      "title": "Porta Cabin in Jayanagar: SAMAN&#8217;s Factory-Direct Site Cabins for 4th-Block Retail Spine, South-Bangalore Dental & Specialty Clinic Cluster, and 5-9 Block Apartment-Redevelopment Sites",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-jigani",
+      "title": "Buy Porta Cabins in Jigani for Quick & Easy Installation",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-jp-nagar",
+      "title": "High-End Porta Cabins in JP Nagar for Flexible Work Zones",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-kengeri",
+      "title": "Porta Cabin in Kengeri — Site Cabins Delivered Across Bangalore&#8217;s Western Mysore Road Corridor",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-koramangala",
+      "title": "Porta Cabins in Koramangala: Fast Setup for Urban Projects",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin",
+        "portacabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-marathahalli",
+      "title": "Porta Cabin in Marathahalli: Factory-Direct MS Cabins for Phoenix Marketcity Retail Tenants, Mid-ORR Apartment-Build Sites, and Marathahalli Bridge–Inner Ring Road Junction Plots",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-in-nagarbhavi",
+      "title": "Porta Cabin in Nagarbhavi: Factory-Direct MS Cabins for BDA 2nd Stage Plots, Outer Ring Road Nagarbhavi Circle Sites, and Inner-West Bangalore Layout Build-Outs",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-is-budget-friendly-product",
+      "title": "Why Porta Cabins Are a Budget-Friendly Choice in India",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "porta-cabins-on-rent",
+      "title": "Porta Cabins on Rent in India: A 2026 Buyer&#8217;s Guide to Sizes, Costs, and Tenure",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabin-price-in-bangalore",
+      "title": "Portable Cabin Price in Bangalore",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabin-rental-services",
+      "title": "Rent Portable Cabins for Your Next Getaway",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-bellandur",
+      "title": "Order Portable Cabins in Bellandur for Any Location",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-central-delhi",
+      "title": "Portable Cabins in Central Delhi",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-east-delhi",
+      "title": "Portable Cabins in East Delhi: Site Offices, Classrooms and Toilets",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-faridabad",
+      "title": "Portable Cabins in Faridabad",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-ghaziabad",
+      "title": "Portable Cabins in Ghaziabad",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-greater-noida",
+      "title": "Portable Cabins in Greater Noida",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-gurgaon",
+      "title": "Portable Cabins in Gurgaon",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-hennur",
+      "title": "Budget Portable Cabins in Hennur for Quick Use",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-hoskote",
+      "title": "Durable Portable Cabins in Hoskote Delivered Fast",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-hosur",
+      "title": "Hosur’s Leading Provider of Portable Cabins Today",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-indiranagar",
+      "title": "Portable Cabins in Indiranagar: Your Ideal Retreat",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-kr-puram",
+      "title": "Strong Portable Cabins in KR Puram for Site Works",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-magadi-road",
+      "title": "Find Reliable Portable Cabins in Magadi Road Now",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-north-delhi",
+      "title": "Portable Cabins in North Delhi for Construction and Office Use",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-peenya",
+      "title": "Trusted Supplier of Portable Cabins in Peenya Area",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-shivajinagar",
+      "title": "Order Portable Cabins in Shivajinagar at Best Rate",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-south-delhi",
+      "title": "Portable Cabins in South Delhi",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-cabins-in-west-delhi",
+      "title": "Portable Cabins in West Delhi",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-car-shed",
+      "title": "Compact Portable Car Sheds: Convenient and Protective Shelters for Your Vehicle",
+      "hubSlug": "industrial-sheds",
+      "hubName": "Industrial Sheds",
+      "phrases": [
+        "industrial shed",
+        "steel shed",
+        "warehouse"
+      ],
+      "inTitle": false
+    },
+    {
+      "slug": "portable-carports",
+      "title": "Reliable Portable Carports: Protect Your Vehicles with Easy-to-Install Shelters",
+      "hubSlug": "industrial-sheds",
+      "hubName": "Industrial Sheds",
+      "phrases": [
+        "industrial shed",
+        "steel shed",
+        "warehouse"
+      ],
+      "inTitle": false
+    },
+    {
+      "slug": "portable-office-cabin-manufacturers-in-bangalore",
+      "title": "Portable Office Cabin Manufacturers in Bangalore",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-central-delhi",
+      "title": "Portable Office Cabins in Central Delhi: Sleek, Secure & Perfect for Business on the Go",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-delhi-ncr",
+      "title": "Discover Portable Office Cabins for Flexible Work in Delhi NCR",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-east-delhi",
+      "title": "East Delhi Portable Office Cabins: Smart Workspaces for Schools, Clinics & Builders",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-faridabad",
+      "title": "Industrial-Grade Portable Office Cabins in Faridabad for On-Site Excellence",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-ghaziabad",
+      "title": "Portable Office Cabins in Ghaziabad: Versatile Solutions for Schools, Events & Security",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-greater-noida",
+      "title": "Portable Office Cabins in Greater Noida: Industrial-Grade Solutions for Factories & Projects",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-gurgaon",
+      "title": "Portable Office Cabins in Gurgaon: Flexible Workspace Solutions for Fast-Moving Firms",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-noida",
+      "title": "Portable Office Cabins in Noida: Fast, Flexible Workspaces for Startups & IT Teams",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-north-delhi",
+      "title": "Top Portable Office Cabins in North Delhi for Site Managers & Field Professionals",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-south-delhi",
+      "title": "Premium Portable Office Cabins in South Delhi: Elegant Workspaces for Modern Professionals",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-office-cabins-in-west-delhi",
+      "title": "Portable Office Cabins in West Delhi: Smart Solutions for Modern Businesses",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "portable office",
+        "office cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portable-toilets-in-bangalore",
+      "title": "Portable Toilets in Bangalore — Cabins, Readymade Units, Cost &#038; Rental",
+      "hubSlug": "portable-toilet",
+      "hubName": "Portable Toilet",
+      "phrases": [
+        "portable toilet",
+        "mobile toilet"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portacabins-for-sale-in-bangalore",
+      "title": "Porta Cabin in Bangalore: SAMAN&#8217;s Factory-Direct Guide from Our Gopasandra Unit",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portacabins-for-sale-in-bannerghatta-road",
+      "title": "Easy-to-Install Porta cabins in Bannerghatta Road – Book Now",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portacabins-for-sale-in-bommasandra",
+      "title": "Porta Cabin in Bommasandra: Same-PIN Factory-Direct Site Cabins from SAMAN&#8217;s Gopasandra Plant (PIN 560099)",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "portacabins-for-sale-in-whitefield",
+      "title": "Portacabins for Sale in Whitefield &#8211; Affordable & Reliable",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "portacabin",
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "pre-engineered-buildings-in-bangalore",
+      "title": "From Blueprint to Reality: Discovering the Wonders of Pre-Engineered Buildings in Bangalore",
+      "hubSlug": "pre-engineered-buildings",
+      "hubName": "Pre-Engineered Buildings",
+      "phrases": [
+        "pre-engineered building",
+        "pre engineered building",
+        "peb building",
+        "peb structure"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "precast-housing-construction-guide",
+      "title": "Precast Housing & Construction: A Practical Guide for Indian Buyers",
+      "hubSlug": "prefabricated-houses",
+      "hubName": "Prefabricated Houses",
+      "phrases": [
+        "prefab house",
+        "prefabricated house"
+      ],
+      "inTitle": false
+    },
+    {
+      "slug": "prefab-porta-cabins",
+      "title": "Prefab Porta Cabins",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "prefabricated-houses-in-bangalore",
+      "title": "Prefabricated Houses in Bangalore — Cost, Design &#038; Sizes",
+      "hubSlug": "prefabricated-houses",
+      "hubName": "Prefabricated Houses",
+      "phrases": [
+        "prefabricated house",
+        "prefab house",
+        "prefab home",
+        "modular home"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "prefabricated-warehouse-manufacturer-in-bangalore",
+      "title": "Prefabricated Warehouse Manufacturer in Bangalore",
+      "hubSlug": "industrial-sheds",
+      "hubName": "Industrial Sheds",
+      "phrases": [
+        "warehouse",
+        "industrial shed"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "second-hand-container-office",
+      "title": "Used Container Office Buying Guide: What to Inspect Before You Pay in India",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office",
+        "office container",
+        "shipping container office",
+        "container site office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "sleek-prefab-office-cabins-ncr",
+      "title": "Sleek Prefab Office Cabins in NCR &#8211; Modern Workspace",
+      "hubSlug": "portable-office",
+      "hubName": "Portable Office",
+      "phrases": [
+        "office cabin",
+        "portable office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "sustainable-construction",
+      "title": "Sustainable Construction with Container Offices",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "temporary-garage-shelter",
+      "title": "Easy-to-Assemble Temporary Garage Shelters: Secure Your Car with Portable Protection",
+      "hubSlug": "industrial-sheds",
+      "hubName": "Industrial Sheds",
+      "phrases": [
+        "industrial shed",
+        "steel shed",
+        "warehouse"
+      ],
+      "inTitle": false
+    },
+    {
+      "slug": "temporary-shed",
+      "title": "Versatile Temporary Sheds: Quick and Affordable Storage Solutions for Your Needs",
+      "hubSlug": "industrial-sheds",
+      "hubName": "Industrial Sheds",
+      "phrases": [
+        "industrial shed",
+        "steel shed",
+        "storage shed",
+        "warehouse"
+      ],
+      "inTitle": false
+    },
+    {
+      "slug": "top-quality-prefab-cabins-delhi",
+      "title": "Prefab Cabins Delhi: Top Quality Options",
+      "hubSlug": "portable-cabin",
+      "hubName": "Portable Cabin",
+      "phrases": [
+        "portable cabin"
+      ],
+      "inTitle": false
+    },
+    {
+      "slug": "what-is-a-labour-hutment",
+      "title": "What Is a Labour Hutment? Meaning, Types and Uses",
+      "hubSlug": "labor-colony",
+      "hubName": "Labor Colony",
+      "phrases": [
+        "labour hutment",
+        "labour colony",
+        "worker accommodation"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "why-you-need-to-consider-a-container-office",
+      "title": "Affordable Container Office for Sale in Bangalore: Your Flexible Workspace Solution",
+      "hubSlug": "container-offices",
+      "hubName": "Container Offices",
+      "phrases": [
+        "container office"
+      ],
+      "inTitle": true
+    },
+    {
+      "slug": "world-of-customized-porta-cabin",
+      "title": "Explore the World of Customized Porta Cabin",
+      "hubSlug": "porta-cabins",
+      "hubName": "Porta Cabins",
+      "phrases": [
+        "porta cabin"
+      ],
+      "inTitle": true
+    }
+  ],
+  "unclassified": [
+    {
+      "slug": "2nd-hand-containers",
+      "title": "Used Shipping Container Buying Guide for India: How to Inspect, Price, and Decide Between DIY and Pre-Built",
+      "reason": "ambiguous-no-title-tiebreak",
+      "signals": [
+        "container-houses",
+        "industrial-sheds"
+      ]
+    },
+    {
+      "slug": "budget-friendly-office-workspace-alternatives",
+      "title": "Budget-Friendly Office Workspace Alternatives",
+      "reason": "ambiguous-no-title-tiebreak",
+      "signals": [
+        "portable-office",
+        "industrial-sheds"
+      ]
+    },
+    {
+      "slug": "container-houses-cost-guide-2024",
+      "title": "Eco-Friendly Porta Cabins: Affordable and Sustainable",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "porta-cabins",
+        "container-offices",
+        "container-houses",
+        "portable-cabin"
+      ]
+    },
+    {
+      "slug": "container-offices-in-greater-noida",
+      "title": "Heavy-Duty Container Offices in Greater Noida for Plant & Warehouse Integration",
+      "reason": "ambiguous-multi-title-cluster",
+      "signals": [
+        "container-offices",
+        "industrial-sheds",
+        "portable-office"
+      ]
+    },
+    {
+      "slug": "cost-of-prefab-homes",
+      "title": "Cost of Prefab Homes in India",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "prefabricated-houses",
+        "porta-cabins",
+        "portable-cabin",
+        "portable-office"
+      ]
+    },
+    {
+      "slug": "discount-mobile-office-units",
+      "title": "Mobile Office Unit Cost Guide: What an Indian Buyer Actually Pays in 2026",
+      "reason": "ambiguous-no-title-tiebreak",
+      "signals": [
+        "container-offices",
+        "portable-office",
+        "security-cabins",
+        "prefab-buildings"
+      ]
+    },
+    {
+      "slug": "in-the-long-run-are-prefabricated-industrial-buildings-more-cost-effective",
+      "title": "In the long run, are prefabricated industrial buildings more cost-effective?",
+      "reason": "ambiguous-no-title-tiebreak",
+      "signals": [
+        "portable-office",
+        "industrial-sheds",
+        "prefab-buildings"
+      ]
+    },
+    {
+      "slug": "low-cost-modular-office-solutions",
+      "title": "Modular Office Cost Guide: What a Multi-Room Prefab Office Building Costs in India",
+      "reason": "ambiguous-no-title-tiebreak",
+      "signals": [
+        "portable-office",
+        "prefab-buildings"
+      ]
+    },
+    {
+      "slug": "porta-cabins-in-hebbal",
+      "title": "orta Cabin in Hebbal — Factory-Fitted MS Site Cabins for Manyata Tech Park, Bellary Road / ORR North & BIAL-Bound Sites",
+      "reason": "ambiguous-no-title-tiebreak",
+      "signals": [
+        "porta-cabins",
+        "security-cabins"
+      ]
+    },
+    {
+      "slug": "porta-cabins-in-malleshwaram",
+      "title": "Porta Cabin in Malleshwaram: SAMAN&#8217;s Factory-Direct Site Cabins for Northwest Bangalore&#8217;s Education Belt, Heritage Lanes & Brigade Gateway Corridor",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "porta-cabins",
+        "portable-cabin"
+      ]
+    },
+    {
+      "slug": "portable-cabins-in-frazer-town",
+      "title": "Portable Cabins in Frazer Town: Quick, Clean, Ready",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "portable-cabin",
+        "porta-cabins",
+        "portable-office",
+        "security-cabins"
+      ]
+    },
+    {
+      "slug": "portable-cabins-in-mg-road",
+      "title": "Fast Delivery of Portable Cabins in MG Road Area",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "portable-cabin",
+        "porta-cabins",
+        "portable-office"
+      ]
+    },
+    {
+      "slug": "portable-classroom-for-sale-2",
+      "title": "Portable Classroom for Sale: Buy Cost-Effective, Ready-to-Use Modular School Buildings",
+      "reason": "ambiguous-no-title-tiebreak",
+      "signals": [
+        "portable-cabin",
+        "prefab-buildings"
+      ]
+    },
+    {
+      "slug": "portable-sheds-complete-guide-2024",
+      "title": "The Ultimate Guide to Portable Sheds: Versatile Storage Solutions for Every Need",
+      "reason": "ambiguous-no-title-tiebreak",
+      "signals": [
+        "labor-colony",
+        "portable-office",
+        "industrial-sheds"
+      ]
+    },
+    {
+      "slug": "portacabins-for-sale-in-frazer-town-2",
+      "title": "Discover Space-Saving Portacabins for Sale in Frazer Town Today",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "porta-cabins",
+        "portable-cabin",
+        "portable-office"
+      ]
+    },
+    {
+      "slug": "prefab-homes-mumbai",
+      "title": "Prefab Homes in Mumbai",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "prefabricated-houses",
+        "porta-cabins",
+        "portable-cabin",
+        "portable-office"
+      ]
+    },
+    {
+      "slug": "prefabricated-houses-in-hyderabad",
+      "title": "Prefabricated Houses in Hyderabad",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "prefabricated-houses",
+        "porta-cabins",
+        "portable-cabin",
+        "portable-office"
+      ]
+    },
+    {
+      "slug": "temporary-garden-shed",
+      "title": "Affordable Temporary Garden Sheds: Quick and Easy Storage for Your Outdoor Essentials",
+      "reason": "ambiguous-no-title-tiebreak",
+      "signals": [
+        "container-offices",
+        "porta-cabins",
+        "portable-cabin",
+        "industrial-sheds",
+        "prefab-buildings"
+      ]
+    },
+    {
+      "slug": "top-rated-portable-cabin-supplier-delhi",
+      "title": "Portable Cabin in Delhi: A 2026 Manufacturer's Buyer Guide",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "portable-cabin",
+        "labor-colony",
+        "porta-cabins",
+        "portable-toilet",
+        "security-cabins",
+        "industrial-sheds",
+        "prefab-buildings"
+      ]
+    },
+    {
+      "slug": "types-of-container-offices",
+      "title": "Types of Container Offices: Complete Global Guide to Sizes, Modular, Portable & Custom Solutions",
+      "reason": "boundary-pair-porta-vs-portable",
+      "signals": [
+        "container-offices",
+        "porta-cabins",
+        "portable-cabin",
+        "portable-office",
+        "security-cabins"
+      ]
+    }
+  ],
+  "t82CoveredSlugs": [
+    "10-foot-shipping-container-office-perfect-fit-for-small-spaces",
+    "12ft-office-container-smart-choice-for-growing-startups",
+    "20ft-container-office",
+    "affordable-office-containers-for-sale",
+    "container-cafes-in-central-delhi",
+    "container-cafes-in-east-delhi",
+    "container-cafes-in-faridabad",
+    "container-cafes-in-ghaziabad",
+    "container-cafes-in-greater-noida",
+    "container-cafes-in-gurgaon",
+    "container-cafes-in-noida",
+    "container-cafes-in-north-delhi",
+    "container-cafes-in-south-delhi",
+    "container-cafes-in-west-delhi",
+    "container-office-design",
+    "container-office-in-agra",
+    "container-office-in-ahmedabad",
+    "container-office-in-ankleshwar",
+    "container-office-in-ballari",
+    "container-office-in-bangalore",
+    "container-office-in-bareilly",
+    "container-office-in-bawal",
+    "container-office-in-bhiwadi",
+    "container-office-in-bhopal",
+    "container-office-in-chandigarh",
+    "container-office-in-chennai",
+    "container-office-in-coimbatore",
+    "container-office-in-dahej",
+    "container-office-in-davangere",
+    "container-office-in-dehradun",
+    "container-office-in-delhi",
+    "container-office-in-erode",
+    "container-office-in-guntur",
+    "container-office-in-gwalior",
+    "container-office-in-haridwar",
+    "container-office-in-hyderabad",
+    "container-office-in-indore",
+    "container-office-in-jaipur",
+    "container-office-in-jalandhar",
+    "container-office-in-kanpur",
+    "container-office-in-kashipur",
+    "container-office-in-kochi",
+    "container-office-in-kolkata",
+    "container-office-in-kozhikode",
+    "container-office-in-kurnool",
+    "container-office-in-lucknow",
+    "container-office-in-ludhiana",
+    "container-office-in-madurai",
+    "container-office-in-mangalore",
+    "container-office-in-meerut",
+    "container-office-in-moradabad",
+    "container-office-in-morbi",
+    "container-office-in-mumbai",
+    "container-office-in-mundra",
+    "container-office-in-mysore",
+    "container-office-in-nagpur",
+    "container-office-in-nashik",
+    "container-office-in-neemrana",
+    "container-office-in-nellore",
+    "container-office-in-panipat",
+    "container-office-in-penukonda",
+    "container-office-in-puducherry",
+    "container-office-in-pune",
+    "container-office-in-raipur",
+    "container-office-in-rajahmundry",
+    "container-office-in-rohtak",
+    "container-office-in-rudrapur",
+    "container-office-in-saharanpur",
+    "container-office-in-shivamogga",
+    "container-office-in-sonipat",
+    "container-office-in-sri-city",
+    "container-office-in-surat",
+    "container-office-in-thrissur",
+    "container-office-in-tirunelveli",
+    "container-office-in-tirupati",
+    "container-office-in-tirupur",
+    "container-office-in-trichy",
+    "container-office-in-vadodara",
+    "container-office-in-varanasi",
+    "container-office-in-vellore",
+    "container-office-in-vijayawada",
+    "container-office-in-visakhapatnam",
+    "container-office-in-warangal",
+    "container-office-in-yamunanagar",
+    "container-offices-for-sale-in-hoskote",
+    "container-offices-for-sale-in-jayanagar",
+    "container-offices-for-sale-in-vijayanagar",
+    "container-offices-in-gurgaon",
+    "container-offices-in-noida",
+    "customized-office-container-solutions",
+    "inside-container-office",
+    "labour-colonies-in-central-delhi",
+    "labour-colonies-in-east-delhi",
+    "labour-colonies-in-faridabad",
+    "labour-colonies-in-ghaziabad",
+    "labour-colonies-in-greater-noida",
+    "labour-colonies-in-gurgaon",
+    "labour-colonies-in-noida",
+    "labour-colonies-in-north-delhi",
+    "labour-colonies-in-south-delhi",
+    "labour-colonies-in-west-delhi",
+    "porta-cabin-in-ahmedabad",
+    "porta-cabin-in-aurangabad",
+    "porta-cabin-in-bareilly",
+    "porta-cabin-in-belgaum",
+    "porta-cabin-in-bhiwadi",
+    "porta-cabin-in-bhopal",
+    "porta-cabin-in-bhubaneswar",
+    "porta-cabin-in-chandigarh",
+    "porta-cabin-in-coimbatore",
+    "porta-cabin-in-dehradun",
+    "porta-cabin-in-durgapur",
+    "porta-cabin-in-guwahati",
+    "porta-cabin-in-gwalior",
+    "porta-cabin-in-hosur",
+    "porta-cabin-in-hubli",
+    "porta-cabin-in-hyderabad",
+    "porta-cabin-in-indore",
+    "porta-cabin-in-jaipur",
+    "porta-cabin-in-jamshedpur",
+    "porta-cabin-in-kanpur",
+    "porta-cabin-in-kochi",
+    "porta-cabin-in-kolkata",
+    "porta-cabin-in-lucknow",
+    "porta-cabin-in-ludhiana",
+    "porta-cabin-in-madurai",
+    "porta-cabin-in-manesar",
+    "porta-cabin-in-mangalore",
+    "porta-cabin-in-meerut",
+    "porta-cabin-in-moradabad",
+    "porta-cabin-in-mumbai",
+    "porta-cabin-in-mysore",
+    "porta-cabin-in-nagpur",
+    "porta-cabin-in-nashik",
+    "porta-cabin-in-panipat",
+    "porta-cabin-in-patna",
+    "porta-cabin-in-pune",
+    "porta-cabin-in-raipur",
+    "porta-cabin-in-rajkot",
+    "porta-cabin-in-ranchi",
+    "porta-cabin-in-rourkela",
+    "porta-cabin-in-salem",
+    "porta-cabin-in-sonipat",
+    "porta-cabin-in-surat",
+    "porta-cabin-in-tirupur",
+    "porta-cabin-in-tumkur",
+    "porta-cabin-in-vadodara",
+    "porta-cabin-in-vijayawada",
+    "porta-cabin-in-visakhapatnam",
+    "porta-cabin-office-price",
+    "porta-cabins-in-btm-layout",
+    "porta-cabins-in-domlur",
+    "porta-cabins-in-electronic-city",
+    "porta-cabins-in-rajajinagar",
+    "porta-cabins-in-rt-nagar",
+    "porta-cabins-in-sarjapur-road",
+    "porta-cabins-in-ulsoor",
+    "porta-cabins-in-vijayanagar",
+    "porta-cabins-in-yelahanka",
+    "why-labor-camps-are-essential"
+  ]
+}
