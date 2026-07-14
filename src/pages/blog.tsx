@@ -10,6 +10,7 @@ import BlogImage from '@/components/BlogImage';
 import { decodeHtmlEntities } from '@/lib/utils';
 import { dsCssVariables } from '@/components/ds/tokens';
 import type { StartHereItem } from '@/lib/staticContent';
+import type { BlogHubLink } from '@/lib/blogHubLink';
 
 import { BlogPost as ApiBlogPost } from '@/config/api';
 type BlogPost = ApiBlogPost;
@@ -147,6 +148,12 @@ interface BlogProps {
   seoTitle: string;
   seoDescription: string;
   seoCategoryIntro: string | null;
+  /**
+   * SHIKHAR T8.2: the real clusters this library covers that also own a product hub —
+   * the entity set behind the Blog `about` array. Derived from the same category data
+   * the page renders, so it can never name a cluster with no posts or no hub.
+   */
+  hubClusters: BlogHubLink[];
 }
 
 export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query }) => {
@@ -169,6 +176,11 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
 
     // T8.1 D2: newest post of each of the 4 largest categories. Pure data.
     const startHere = getStartHerePosts(4);
+
+    // T8.2 Part B: the clusters this library actually covers that own a product hub.
+    // Same category data as above, filtered through categoryHubMap — no invented topics.
+    const { getBlogHubClusters } = await import('@/lib/blogHubLink');
+    const hubClusters = getBlogHubClusters();
 
     const blogCanonicalBase = `${siteConfig.url}/blog`;
     const cleanCategory = category?.trim();
@@ -278,6 +290,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
         seoTitle,
         seoDescription,
         seoCategoryIntro,
+        hubClusters,
       },
     };
   } catch (error) {
@@ -299,6 +312,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
         seoTitle: pageSEO.blog.title,
         seoDescription: pageSEO.blog.description,
         seoCategoryIntro: null,
+        hubClusters: [],
       },
     };
   }
@@ -340,6 +354,7 @@ const Blog = ({
   seoTitle,
   seoDescription,
   seoCategoryIntro,
+  hubClusters,
 }: BlogProps) => {
   // Out-of-range pagination pages return zero posts. An ItemList with an empty
   // `itemListElement` is invalid structured data, so we suppress the ItemList node and
@@ -371,6 +386,19 @@ const Blog = ({
       url: pageUrl,
       name: seoTitle,
       publisher: { '@id': 'https://www.samanportable.com/#organization' },
+      // T8.2 Part B: the real clusters this library covers, each tied to its canonical
+      // /product hub. Derived from the same category data the page renders (via
+      // categoryHubMap), so no topic here is invented and no hub URL is guessed.
+      // `Thing`, not `Product`: a hub is a CollectionPage of many products, so claiming
+      // a Product entity at that URL would be false. Omitted entirely if empty.
+      ...(hubClusters.length > 0 && {
+        about: hubClusters.map((cluster) => ({
+          '@type': 'Thing',
+          '@id': `https://www.samanportable.com${cluster.hubPath}`,
+          name: cluster.hubName,
+          url: `https://www.samanportable.com${cluster.hubPath}`,
+        })),
+      }),
     },
     {
       '@context': 'https://schema.org',

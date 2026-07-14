@@ -25,6 +25,8 @@ import dynamic from 'next/dynamic';
 
 
 import type { BlogPost, RankMathSEOData } from '../config/api';
+import { RelatedProductLink } from '../components/ds';
+import type { BlogHubLink } from '../lib/blogHubLink';
 import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema, getCityPageGraph, getFAQSchemaOverride } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 import { demoteHtmlH1ToH2 } from '../lib/seoHtml';
@@ -34,6 +36,12 @@ interface BlogPostProps {
   post: BlogPost | null;
   slug: string;
   rankMathSEO?: RankMathSEOData | null;
+  /**
+   * SHIKHAR T8.2: the ONE product hub this post's category owns, resolved server-side.
+   * null when the post is uncategorized or its category owns no hub — those posts
+   * render no module and get no schema `about`. Never force a link.
+   */
+  hubLink?: BlogHubLink | null;
 }
 
 // Slug-specific metadata image override. This post's WordPress featured image
@@ -422,11 +430,20 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
     // and newly-published URLs are never cache-poisoned.
     setPublicEdgeCache(res);
 
+    // T8.2: resolve this post's owning product hub from its real category terms.
+    // Dynamically imported (like staticContent) because it reads the export files —
+    // fs must never reach the client bundle. Returns null for uncategorized posts and
+    // for categories that own no hub; the module and the schema `about` are both
+    // omitted in that case.
+    const { getPostHubLink } = await import('../lib/blogHubLink');
+    const hubLink = getPostHubLink(post);
+
     return {
       props: {
         post,
         slug,
         rankMathSEO,
+        hubLink,
       },
     };
   } catch (error) {
@@ -444,7 +461,7 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
   }
 };
 
-const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
+const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
   const [loading, setLoading] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
@@ -816,6 +833,15 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               ],
               faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
               contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug) ? ['+91 87960 39938', '+91 97089 89937'] : undefined,
+              // T8.2 amendment: the city graph has no BlogPosting node to hang `about`
+              // on, so it rides the FAQPage node instead — same hub, same name as the
+              // visible module on this page (G6). Omitted when the post owns no hub.
+              about: hubLink
+                ? {
+                    name: hubLink.hubName,
+                    url: `https://www.samanportable.com${hubLink.hubPath}`,
+                  }
+                : undefined,
             });
           }
 
@@ -831,7 +857,15 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               datePublished: post.date,
               dateModified: post.modified,
               url: `https://www.samanportable.com/${slug}`,
-              category: post._embedded?.['wp:term']?.[0]?.[0]?.name
+              category: post._embedded?.['wp:term']?.[0]?.[0]?.name,
+              // T8.2: mirrors the visible Related-product module exactly — same hub,
+              // same name. Omitted whenever the module is omitted (G6).
+              ...(hubLink && {
+                about: {
+                  name: hubLink.hubName,
+                  url: `https://www.samanportable.com${hubLink.hubPath}`,
+                },
+              }),
             },
             breadcrumbs: [
               { name: 'Home', url: 'https://www.samanportable.com/' },
@@ -978,6 +1012,15 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
               />
             </div>
           </article>
+
+          {/* SHIKHAR T8.2 — Related-product module. Deliberately OUTSIDE </article>:
+              the indexed article body and its first-100-words stay byte-identical.
+              Rendered only when the post's category owns a hub (never forced). */}
+          {hubLink && (
+            <div className="mb-12">
+              <RelatedProductLink hubName={hubLink.hubName} hubPath={hubLink.hubPath} />
+            </div>
+          )}
 
           {/* Article Footer */}
           <Separator className="my-12" />

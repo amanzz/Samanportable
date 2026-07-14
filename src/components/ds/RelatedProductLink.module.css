@@ -1,0 +1,77 @@
+/* SHIKHAR T8.2 — Related-product module (blog post → owning cluster hub).
+   Tokens only; no hex literal appears in this file. */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--ds-space-3);
+  padding: var(--ds-space-6);
+  background: var(--ds-surface-alt);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-shadow-card);
+
+  /* Zero CLS: the box reserves its full height from first paint. The module is
+     pure SSR text — no image, no async content — so nothing can arrive late and
+     push the page. min-height (not height) reserves the space without ever
+     clipping a long cluster name at narrow widths. */
+  min-height: 188px;
+}
+
+@media (min-width: 640px) {
+  .card {
+    min-height: 148px;
+  }
+}
+
+.eyebrow {
+  font-family: var(--ds-text-caption-family);
+  font-size: var(--ds-text-caption-size);
+  line-height: var(--ds-text-caption-lh);
+  font-weight: var(--ds-text-caption-weight);
+  letter-spacing: var(--ds-text-caption-tracking);
+  text-transform: uppercase;
+  color: var(--ds-text-secondary);
+}
+
+.line {
+  font-family: var(--ds-text-h3-family);
+  font-size: var(--ds-text-h3-size);
+  line-height: var(--ds-text-h3-lh);
+  font-weight: var(--ds-text-h3-weight);
+  letter-spacing: var(--ds-text-h3-tracking);
+  color: var(--ds-text-primary);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.cta {
+  align-self: flex-start;
+  font-family: var(--ds-font-sans-stack);
+  font-size: var(--ds-text-body-size);
+  line-height: var(--ds-text-body-lh);
+  font-weight: 600;
+  color: var(--ds-primary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color var(--ds-motion-fast) var(--ds-motion-ease),
+    border-color var(--ds-motion-fast) var(--ds-motion-ease);
+}
+
+.cta:hover {
+  color: var(--ds-primary-hover);
+  border-bottom-color: var(--ds-primary-hover);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--ds-focus);
+  outline-offset: 3px;
+  border-radius: var(--ds-radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    transition: none;
+  }
+}
