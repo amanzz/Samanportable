@@ -177,6 +177,7 @@ const nextConfig = {
       { source: '/product/porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/product/security-cabin', destination: 'https://www.samanportable.com/product/security-cabins', statusCode: 301 },
       { source: '/product/labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+      { source: '/product/wall-sheets', destination: 'https://www.samanportable.com/product/wall-sheet', statusCode: 301 },
 
       // Labour Colony dead indexed URLs (owner-approved 2026-07-04).
       // Absolute destination keeps both www and apex requests single-hop to the money page.
@@ -250,7 +251,8 @@ const nextConfig = {
       { source: '/product-category/sandwich-panel', destination: 'https://www.samanportable.com/product/sandwich-panel', permanent: true },
       // Catch-all safety net: any remaining /product-category/* archive lands on the
       // /product listing rather than 404ing. MUST stay below the 21 exact rules.
-      { source: '/product-category/:slug*', destination: 'https://www.samanportable.com/product', permanent: true },
+      // C18 wall-sheets is an owner-approved live archive and is excluded.
+      { source: '/product-category/:slug((?!wall-sheets$).*)', destination: 'https://www.samanportable.com/product', permanent: true },
 
       // Cart/checkout retirement (owner-approved 2026-06-12): enquiry-only
       // business — the cart path was removed in Phase 2; these dead-end pages

@@ -1,0 +1,136 @@
+{
+  "id": 272776,
+  "wc_review_product_id": 272776,
+  "name": "Wall Sheet",
+  "slug": "wall-sheet",
+  "permalink": "https://blog.samanportable.com/product/wall-sheet/",
+  "date_created": "2026-07-13T00:00:00",
+  "date_created_gmt": "2026-07-12T18:30:00",
+  "date_modified": "2026-07-13T00:00:00",
+  "date_modified_gmt": "2026-07-12T18:30:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-C18-WSH-HUB-2026",
+  "price": "55",
+  "regular_price": "55",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": true,
+  "total_sales": 0,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "download_limit": -1,
+  "download_expiry": -1,
+  "external_url": "",
+  "button_text": "",
+  "tax_status": "taxable",
+  "tax_class": "",
+  "manage_stock": false,
+  "stock_quantity": null,
+  "backorders": "no",
+  "backorders_allowed": false,
+  "backordered": false,
+  "low_stock_amount": null,
+  "sold_individually": false,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "shipping_required": true,
+  "shipping_taxable": true,
+  "shipping_class": "",
+  "shipping_class_id": 0,
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "upsell_ids": [],
+  "cross_sell_ids": [],
+  "parent_id": 0,
+  "purchase_note": "",
+  "categories": [
+    {
+      "id": 3951,
+      "name": "Wall Sheets",
+      "slug": "wall-sheets"
+    }
+  ],
+  "tags": [],
+  "images": [
+    {
+      "id": 0,
+      "src": "/panel-images/wall-sheet/wall-sheet-five-families-lineup.webp",
+      "name": "wall-sheet-five-families-lineup",
+      "alt": "Five wall sheet types compared — UV marble, PVC panel, fluted louver, foam board and WPC"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/wall-sheet/pvc-wall-panel-profile-closeup.webp",
+      "name": "pvc-wall-panel-profile-closeup",
+      "alt": "Cut edge of a hollow PVC wall panel showing cellular ribs and interlock"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/wall-sheet/uv-marble-sheet-gloss-closeup.webp",
+      "name": "uv-marble-sheet-gloss-closeup",
+      "alt": "High-gloss UV marble sheet surface with white and gold veining"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/wall-sheet/fluted-louver-wall-panel-closeup.webp",
+      "name": "fluted-louver-wall-panel-closeup",
+      "alt": "Walnut fluted louver wall panel with deep shadow lines"
+    },
+    {
+      "id": 0,
+      "src": "/panel-images/wall-sheet/wall-sheet-living-room-installed.webp",
+      "name": "wall-sheet-living-room-installed",
+      "alt": "Living room TV wall finished with fluted louver panels and UV marble sheets"
+    }
+  ],
+  "attributes": [],
+  "default_attributes": [],
+  "variations": [],
+  "grouped_products": [],
+  "menu_order": 0,
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#8377;</span>55</bdi></span>",
+  "related_ids": [],
+  "meta_data": [
+    {
+      "id": 0,
+      "key": "rank_math_robots",
+      "value": [
+        "index"
+      ]
+    },
+    {
+      "id": 0,
+      "key": "rank_math_focus_keyword",
+      "value": "wall sheet"
+    }
+  ],
+  "stock_status": "instock",
+  "has_options": false,
+  "_links": {
+    "self": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products/272776"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products"
+      }
+    ]
+  },
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Wall Sheet | SAMAN</title>\n<meta name=\"robots\" content=\"index, follow\"/>"
+  }
+}
