@@ -34,6 +34,19 @@ export interface Credential {
   publicPdf: boolean;
 }
 
+// The two verified GST registrations of SAMAN POS India Private Limited, taken verbatim from
+// the GST certificates on file. Declared here as the single source: the CERTIFICATIONS entries
+// below, the header GST badge and the footer regional cards all read these — so a GSTIN can
+// never drift between surfaces. Never edit a character without the certificate in hand.
+export const GSTIN_KARNATAKA = '29ABBCS7101B1ZR';
+export const GSTIN_UTTAR_PRADESH = '09ABBCS7101B1ZT';
+
+/** GSTINs paired with the state that issued them, in header/footer display order. */
+export const GST_REGISTRATIONS: ReadonlyArray<{ state: string; gstin: string }> = [
+  { state: 'Karnataka', gstin: GSTIN_KARNATAKA },
+  { state: 'Uttar Pradesh', gstin: GSTIN_UTTAR_PRADESH },
+];
+
 export const CERTIFICATIONS: Credential[] = [
   {
     key: 'iso-9001',
@@ -123,7 +136,7 @@ export const CERTIFICATIONS: Credential[] = [
     name: 'GST — Karnataka',
     scope: 'Bengaluru manufacturing unit (560099)',
     issuer: 'Goods & Services Tax, Government of India',
-    number: '29ABBCS7101B1ZR',
+    number: GSTIN_KARNATAKA,
     benefit: 'A GST-registered business at our Bengaluru factory.',
     category: 'tax',
     pdf: 'saman-pos-gst-karnataka-certificate.pdf',
@@ -134,7 +147,7 @@ export const CERTIFICATIONS: Credential[] = [
     name: 'GST — Uttar Pradesh',
     scope: 'Greater Noida manufacturing unit (201308)',
     issuer: 'Goods & Services Tax, Government of India',
-    number: '09ABBCS7101B1ZT',
+    number: GSTIN_UTTAR_PRADESH,
     benefit: 'A GST-registered business at our Greater Noida factory.',
     category: 'tax',
     pdf: 'saman-pos-gst-uttar-pradesh-greater-noida-certificate.pdf',

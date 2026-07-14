@@ -10,6 +10,7 @@ import {
   Navigation
 } from 'lucide-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
+import { GSTIN_KARNATAKA, GSTIN_UTTAR_PRADESH } from '@/data/certifications';
 
 const MONEY_STRIP_LINKS = [
   { label: "Porta Cabin Price Guide", href: "/porta-cabin-price-a-complete-guide-2025" },
@@ -241,6 +242,9 @@ const Footer = () => {
                   sales@samanportable.com
                 </a>
               </div>
+              <p className="text-zinc-400 text-xs leading-relaxed">
+                GSTIN (Karnataka): <span className="text-zinc-300 font-medium tracking-wide">{GSTIN_KARNATAKA}</span>
+              </p>
               <div className="pt-2">
                 <a 
                   href="https://www.google.com/maps/search/?api=1&query=SAMAN+POS+India+Private+Limited+Gopasandra+Bengaluru"
@@ -283,6 +287,9 @@ const Footer = () => {
                   ncr@samanportable.com
                 </a>
               </div>
+              <p className="text-zinc-400 text-xs leading-relaxed">
+                GSTIN (Uttar Pradesh): <span className="text-zinc-300 font-medium tracking-wide">{GSTIN_UTTAR_PRADESH}</span>
+              </p>
               <div className="pt-2">
                 <a 
                   href="https://www.google.com/maps/search/?api=1&query=SAMAN+POS+India+Private+Limited+Jalpura+Greater+Noida"
