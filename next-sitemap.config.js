@@ -201,10 +201,19 @@ module.exports = {
     let postCount = 0;
 
     // ── Product categories ──────────────────────────────────────────────────
-    // SHIKHAR T1.2 (owner-approved 2026-07-12): the /product-category/* archives are
-    // retired — every one now 301s to its canonical /product/* hub (next.config.js).
-    // They are therefore no longer generated here. The redirect-aware filter below
-    // would drop them anyway; not emitting them keeps the sitemap honest at source.
+    // SHIKHAR T1.2 (owner-approved 2026-07-12): most /product-category/* archives
+    // are retired to their canonical /product/* hubs. C18 wall-sheets is a new
+    // owner-approved live archive, so emit only that category URL here.
+    readDirJson('categories').forEach((category) => {
+      if (category.slug === 'wall-sheets') {
+        paths.push({
+          loc: `/product-category/${category.slug}`,
+          changefreq: 'weekly',
+          priority: 0.8,
+          lastmod: new Date().toISOString(),
+        });
+      }
+    });
 
     // ── Products ────────────────────────────────────────────────────────────
     // Published only (the one legit draft is 308-redirected and stays out).
