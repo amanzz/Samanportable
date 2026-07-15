@@ -10,10 +10,9 @@ interface UnifiedSEOProps {
   canonical?: string;
 
   // Self-referencing hreflang URL. When provided, the hreflang alternate links
-  // point here instead of the canonical. Used by blog filter pages (?page=/?tag=)
-  // whose canonical points to the /blog hub but which still need a
-  // self-referencing hreflang so Semrush/Google don't flag a missing self-ref.
+  // point here instead of the canonical.
   hreflangSelf?: string;
+  enableHreflang?: boolean;
 
   // Fallback values when Rank Math data is not available
   fallbackTitle?: string;
@@ -54,6 +53,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   structuredData,
   noindex = false,
   nofollow = false,
+  enableHreflang = true,
 }) => {
   // Priority order: Rank Math SEO > Fallback values > Default values
   
@@ -86,7 +86,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
     : 'index, follow';
 
   // hreflang target: self-referencing URL when provided, otherwise mirror canonical.
-  const hreflangHref = hreflangSelf || canonical;
+  const hreflangHref = enableHreflang ? hreflangSelf || canonical : null;
 
   // Clean and deduplicate keywords
   const cleanKeywords = keywords ? keywords
@@ -106,8 +106,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
       
       {/* Canonical URL */}
       {canonical && <link rel="canonical" href={canonical} />}
-      {/* Self-referencing hreflang. Uses hreflangSelf when provided (e.g. blog
-          filter pages whose canonical points to the hub); otherwise mirrors canonical. */}
+      {/* Self-referencing hreflang. Uses hreflangSelf when provided; otherwise mirrors canonical. */}
       {hreflangHref && <link rel="alternate" hrefLang="en-IN" href={hreflangHref} />}
       {hreflangHref && <link rel="alternate" hrefLang="x-default" href={hreflangHref} />}
       
