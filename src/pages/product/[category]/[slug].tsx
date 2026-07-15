@@ -20,6 +20,8 @@ import { categoryHref } from '../../../lib/categoryHubMap';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
+import { Breadcrumb } from '../../../components/ds/Breadcrumb';
+import { getProductBreadcrumb, crumbsToDsItems, crumbsToJsonLd } from '../../../lib/breadcrumbs';
 import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
@@ -265,6 +267,17 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // Get primary category for breadcrumb
   const primaryCategory = product?.categories?.[0] || { name: 'Uncategorized', slug: 'uncategorized' };
 
+  // SHIKHAR C1 — single source for BOTH the visible breadcrumb and the
+  // BreadcrumbList JSON-LD (fed to ProductStructuredData below), so they match
+  // exactly: Home › Products › {Cluster} › {Product}, cluster node linked to its hub.
+  const breadcrumbCrumbs = getProductBreadcrumb({
+    productName: product?.name || '',
+    productSlug: slug,
+    clusterName: primaryCategory.name,
+    clusterSlug: primaryCategory.slug,
+    isHub: false,
+  });
+
   // Handle scroll to top
   useEffect(() => {
     const handleScroll = () => {
@@ -390,7 +403,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData product={product} category={category} reviews={reviews} />
+          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} />
 
           {/* FAQ Structured Data — sourced from RankMath, which mirrors the FAQ
               actually rendered in the product description below. No fake/templated FAQs. */}
@@ -405,25 +418,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
           <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-              
-              {/* Enhanced Breadcrumb */}
-              <nav className="flex items-center space-x-2 text-sm mb-4">
-                <Link 
-                  href="/" 
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-                >
-                  Home
-                </Link>
-                <span className="text-muted-foreground">/</span>
-                <Link 
-                  href="/product" 
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-                >
-                  Products
-                </Link>
-                <span className="text-muted-foreground">/</span>
-                <span className="text-foreground font-semibold">{transformedProduct.title}</span>
-              </nav>
+
+              {/* SHIKHAR C1 — cluster-parent breadcrumb. Visible trail is projected from
+                  the SAME array as the BreadcrumbList JSON-LD above, so they match
+                  exactly: Home › Products › {Cluster} › {Product}. */}
+              <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
                 {/* Left Sidebar - Related Products (Desktop Only) */}

@@ -30,6 +30,8 @@ import { RelatedProductLink } from '../components/ds';
 import type { BlogHubLink } from '../lib/blogHubLink';
 import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema, getCityPageGraph, getFAQSchemaOverride } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
+import { Breadcrumb } from '../components/ds/Breadcrumb';
+import { getPostBreadcrumb, crumbsToDsItems, crumbsToJsonLd } from '../lib/breadcrumbs';
 import { demoteHtmlH1ToH2 } from '../lib/seoHtml';
 import { setPublicEdgeCache } from '../lib/cacheHeaders';
 
@@ -173,53 +175,9 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-dehradun',
 ]);
 
-// Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
-// city pages, but the breadcrumb hub is "Container Offices", not "Porta Cabins".
-const CONTAINER_OFFICE_CITY_SLUGS = new Set([
-  'container-office-in-bangalore',
-  'container-office-in-chennai',
-  'container-office-in-hyderabad',
-  'container-office-in-mumbai',
-  'container-office-in-delhi',
-  'container-office-in-jaipur',
-  'container-office-in-pune',
-  'container-office-in-lucknow',
-  'container-office-in-ahmedabad',
-  'container-office-in-kolkata',
-  'container-office-in-kochi',
-  'container-office-in-mysore',
-  'container-office-in-visakhapatnam',
-  'container-office-in-vijayawada',
-  'container-office-in-mangalore',
-  'container-office-in-coimbatore',
-  'container-office-in-madurai',
-  'container-office-in-surat',
-  'container-office-in-indore',
-  'container-office-in-nagpur',
-  'container-office-in-vadodara',
-  'container-office-in-meerut',
-  'container-office-in-kanpur',
-  'container-office-in-chandigarh',
-  'container-office-in-ludhiana',
-  'container-office-in-ankleshwar',
-  'container-office-in-dahej',
-  'container-office-in-morbi',
-  'container-office-in-mundra',
-  'container-office-in-vellore',
-  'container-office-in-tirunelveli',
-  'container-office-in-erode',
-  'container-office-in-kurnool',
-  'container-office-in-shivamogga',
-  'container-office-in-davangere',
-  'container-office-in-rajahmundry',
-  'container-office-in-gwalior',
-  'container-office-in-bhiwadi',
-  'container-office-in-bhopal',
-  'container-office-in-raipur',
-  'container-office-in-nashik',
-  'container-office-in-panipat',
-  'container-office-in-dehradun',
-]);
+// SHIKHAR C1: the container-office-vs-porta-cabin breadcrumb split now lives in
+// src/lib/breadcrumbs.ts (resolvePostCluster), which drives BOTH the visible trail
+// and the JSON-LD, so the former CONTAINER_OFFICE_CITY_SLUGS set was removed here.
 
 // City pages served from the North (Greater Noida) factory: their Organization
 // contactPoint uses the North sales number instead of the South default.
@@ -553,6 +511,12 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
   const author = getAuthor();
   const featuredImage = getFeaturedImage();
 
+  // SHIKHAR C1 — one breadcrumb array for the whole page. Local/city posts resolve to
+  // their product-cluster hub (Home › {Cluster} › {Page}); genuine editorial stays
+  // Home › Blog › {Post}. The SAME array feeds the visible <Breadcrumb> and the
+  // BreadcrumbList JSON-LD in the graph builders below, so they always match.
+  const breadcrumbCrumbs = getPostBreadcrumb(slug, decodeHtmlEntities(post.title.rendered));
+
   // HTML Parser Options for semantic rendering
   const parserOptions: HTMLReactParserOptions = {
     replace: (domNode) => {
@@ -854,13 +818,8 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
           if (CITY_PAGE_SCHEMA_SLUGS.has(slug)) {
             return getCityPageGraph({
               url: `https://www.samanportable.com/${slug}`,
-              breadcrumbs: [
-                { name: 'Home', url: 'https://www.samanportable.com/' },
-                CONTAINER_OFFICE_CITY_SLUGS.has(slug)
-                  ? { name: 'Container Offices', url: 'https://www.samanportable.com/product/container-offices' }
-                  : { name: 'Porta Cabins', url: 'https://www.samanportable.com/product/porta-cabins' },
-                { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` },
-              ],
+              // SHIKHAR C1 — same array as the visible breadcrumb (cluster parent).
+              breadcrumbs: crumbsToJsonLd(breadcrumbCrumbs),
               faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
               contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug) ? ['+91 87960 39938', '+91 97089 89937'] : undefined,
               // T8.2 amendment: the city graph has no BlogPosting node to hang `about`
@@ -897,11 +856,9 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
                 },
               }),
             },
-            breadcrumbs: [
-              { name: 'Home', url: 'https://www.samanportable.com/' },
-              { name: 'Blog', url: 'https://www.samanportable.com/blog' },
-              { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` }
-            ],
+            // SHIKHAR C1 — same array as the visible breadcrumb. Local/city posts now
+            // carry their product-cluster parent here; editorial stays Home › Blog › Post.
+            breadcrumbs: crumbsToJsonLd(breadcrumbCrumbs),
             faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
             serviceSchema: getCityServiceSchema({
               slug,
@@ -915,25 +872,10 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
 
       <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-green-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Breadcrumb */}
-          <nav className="flex items-center space-x-2 text-sm mb-10">
-                         <Link href="/" className="flex items-center gap-2 text-slate-600 hover:text-green-600 transition-all duration-200 font-medium group">
-              <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-              Home
-            </Link>
-            <svg className="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <Link href="/blog" className="text-slate-600 hover:text-green-600 transition-all duration-200 font-medium">
-              Blog
-            </Link>
-            <svg className="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            <span className="text-slate-800 font-semibold line-clamp-1 max-w-xs">{decodeHtmlEntities(post.title.rendered)}</span>
-          </nav>
+          {/* SHIKHAR C1 — breadcrumb. Visible trail projected from the SAME array as the
+              BreadcrumbList JSON-LD (see structuredData above), so they match exactly.
+              Local/city posts show their product-cluster parent; editorial shows Blog. */}
+          <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-10" />
 
           {/* Back Button */}
           <div className="mb-8">

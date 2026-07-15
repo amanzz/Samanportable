@@ -9,9 +9,14 @@ interface ProductStructuredDataProps {
   // become Review JSON-LD — never fabricated. When empty/undefined, no Review
   // schema is emitted (AggregateRating is independent, from rating_count).
   reviews?: ProductReview[];
+  // SHIKHAR C1 — when provided, the BreadcrumbList is built from this exact array
+  // (the SAME one that renders the visible breadcrumb), guaranteeing visible/JSON-LD
+  // parity. Absolute `item` URLs. Falls back to the internal 4-node build when omitted
+  // (backward compatible for any caller that does not pass it).
+  breadcrumbItems?: Array<{ name: string; url: string }>;
 }
 
-export default function ProductStructuredData({ product, category, reviews }: ProductStructuredDataProps) {
+export default function ProductStructuredData({ product, category, reviews, breadcrumbItems }: ProductStructuredDataProps) {
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
@@ -188,36 +193,27 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
     ...(reviewNodes.length > 0 ? { review: reviewNodes } : {}),
   } : null;
 
-  // Generate BreadcrumbList structured data
+  // Generate BreadcrumbList structured data.
+  // SHIKHAR C1: when the page passes `breadcrumbItems` (the same array that renders
+  // the visible trail), build the list from it so visible and JSON-LD match exactly.
+  // Otherwise fall back to the original 4-node build (backward compatible).
+  const breadcrumbSource = (breadcrumbItems && breadcrumbItems.length > 0)
+    ? breadcrumbItems
+    : [
+        { name: 'Home', url: baseUrl },
+        { name: 'Products', url: `${baseUrl}/product` },
+        { name: product.categories?.[0]?.name || 'Category', url: `${baseUrl}/product/${product.categories?.[0]?.slug || 'uncategorized'}` },
+        { name: product.name, url: productUrl },
+      ];
   const breadcrumbStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: baseUrl
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Products',
-        item: `${baseUrl}/product`
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: product.categories?.[0]?.name || 'Category',
-        item: `${baseUrl}/product/${product.categories?.[0]?.slug || 'uncategorized'}`
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: product.name,
-        item: productUrl
-      }
-    ]
+    itemListElement: breadcrumbSource.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.url,
+    })),
   };
 
   // Organization information is already included in manufacturer and seller schemas
