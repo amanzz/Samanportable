@@ -155,12 +155,12 @@
       "date_created_gmt": "2025-09-06T18:24:31",
       "date_modified": "2026-05-20T22:52:01",
       "date_modified_gmt": "2026-05-20T11:52:01",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/cargo-container-house-with-porch.webp",
+      "src": "/images/product-heroes/container-houses/cargo-container-house-with-porch.webp",
       "name": "Cargo Container House with Front Porch",
       "alt": "Dark cargo container house with terracotta tile roof, white porch, and outdoor seating on a concrete plinth at a residential plot.",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/cargo-container-house-with-porch.webp 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/cargo-container-house-with-porch-300x300.webp 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/cargo-container-house-with-porch-150x150.webp 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/cargo-container-house-with-porch-768x768.webp 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/cargo-container-house-with-porch-600x600.webp 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/cargo-container-house-with-porch-100x100.webp 100w",
+      "srcset": "/images/product-heroes/container-houses/cargo-container-house-with-porch.webp 1024w",
       "sizes": "(max-width: 1024px) 100vw, 1024px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/cargo-container-house-with-porch-300x300.webp"
+      "thumbnail": "/images/product-heroes/container-houses/cargo-container-house-with-porch.webp"
     },
     {
       "id": 269589,

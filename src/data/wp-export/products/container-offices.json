@@ -169,12 +169,12 @@
       "date_created_gmt": "2025-08-30T16:29:01",
       "date_modified": "2025-10-03T01:15:48",
       "date_modified_gmt": "2025-10-02T14:15:48",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/modern-green-container-office-exterior.jpeg",
+      "src": "/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg",
       "name": "dern Green Container Office Exterior",
       "alt": "Container Offices",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/modern-green-container-office-exterior.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/modern-green-container-office-exterior-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/modern-green-container-office-exterior-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/modern-green-container-office-exterior-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/modern-green-container-office-exterior-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/modern-green-container-office-exterior-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg 1024w",
       "sizes": "(max-width: 1024px) 100vw, 1024px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/modern-green-container-office-exterior-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg"
     },
     {
       "id": 269466,

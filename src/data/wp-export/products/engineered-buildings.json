@@ -160,12 +160,12 @@
       "date_created_gmt": "2026-05-27T11:11:02",
       "date_modified": "2026-05-27T22:11:31",
       "date_modified_gmt": "2026-05-27T11:11:31",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/engineered-building-steel-blue-hero.jpeg",
+      "src": "/images/product-heroes/peb-constructions/engineered-building-steel-blue-hero.jpeg",
       "name": "engineered-building-steel-blue-hero",
       "alt": "Steel-blue engineered steel building, 2,100 sq ft, complete on a cleared industrial plot.",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/engineered-building-steel-blue-hero.jpeg 1254w, https://blog.samanportable.com/wp-content/uploads/2024/10/engineered-building-steel-blue-hero-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/engineered-building-steel-blue-hero-1024x1024.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/engineered-building-steel-blue-hero-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/engineered-building-steel-blue-hero-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/engineered-building-steel-blue-hero-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/engineered-building-steel-blue-hero-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/peb-constructions/engineered-building-steel-blue-hero.jpeg 1254w",
       "sizes": "(max-width: 1254px) 100vw, 1254px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/engineered-building-steel-blue-hero-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/peb-constructions/engineered-building-steel-blue-hero.jpeg"
     },
     {
       "id": 272219,

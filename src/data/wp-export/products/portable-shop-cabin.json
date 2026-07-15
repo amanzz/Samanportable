@@ -163,12 +163,12 @@
       "date_created_gmt": "2025-08-23T13:05:15",
       "date_modified": "2025-08-24T00:06:01",
       "date_modified_gmt": "2025-08-23T13:06:01",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/portable-shop-cabin-waffle-stall.jpeg",
+      "src": "/images/product-heroes/portable-cabin/portable-shop-cabin-waffle-stall.jpeg",
       "name": "Portable Waffle Cabin for Street Food Business",
       "alt": "Portable Shop Cabin with striped canopy",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/portable-shop-cabin-waffle-stall.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-shop-cabin-waffle-stall-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-shop-cabin-waffle-stall-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-shop-cabin-waffle-stall-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-shop-cabin-waffle-stall-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-shop-cabin-waffle-stall-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/portable-cabin/portable-shop-cabin-waffle-stall.jpeg 1024w",
       "sizes": "(max-width: 1024px) 100vw, 1024px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/portable-shop-cabin-waffle-stall-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/portable-cabin/portable-shop-cabin-waffle-stall.jpeg"
     },
     {
       "id": 269244,

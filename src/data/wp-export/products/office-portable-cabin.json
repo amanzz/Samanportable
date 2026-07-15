@@ -157,12 +157,12 @@
       "date_created_gmt": "2025-08-23T07:29:11",
       "date_modified": "2025-08-23T18:30:10",
       "date_modified_gmt": "2025-08-23T07:30:10",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-lounge-area.jpeg",
+      "src": "/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg",
       "name": "Office Portable Cabin with Reception Lounge",
       "alt": "Office Portable Cabin with lounge and glass partition",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-lounge-area.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-lounge-area-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-lounge-area-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-lounge-area-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-lounge-area-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-lounge-area-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg 1024w",
       "sizes": "(max-width: 1024px) 100vw, 1024px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-lounge-area-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg"
     },
     {
       "id": 269220,

@@ -150,12 +150,12 @@
       "date_created_gmt": "2025-08-23T12:26:03",
       "date_modified": "2025-08-23T23:26:36",
       "date_modified_gmt": "2025-08-23T12:26:36",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-3-windows.jpeg",
+      "src": "/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg",
       "name": "Spacious Container Portable Cabin with natural light",
       "alt": "Container Portable Cabin with triple window design",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-3-windows.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-3-windows-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-3-windows-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-3-windows-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-3-windows-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-3-windows-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg 1024w",
       "sizes": "(max-width: 1024px) 100vw, 1024px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-3-windows-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg"
     },
     {
       "id": 269239,

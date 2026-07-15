@@ -123,12 +123,12 @@
       "date_created_gmt": "2025-08-23T09:01:43",
       "date_modified": "2025-08-23T20:02:25",
       "date_modified_gmt": "2025-08-23T09:02:25",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-dark-office.jpeg",
+      "src": "/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg",
       "name": "Portable cabin with dark interiors and workstations",
       "alt": "Buy Portable Cabin with Dark Interior Office Setup",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-dark-office.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-dark-office-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-dark-office-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-dark-office-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-dark-office-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-dark-office-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg 1024w",
       "sizes": "(max-width: 1024px) 100vw, 1024px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-dark-office-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg"
     },
     {
       "id": 269227,

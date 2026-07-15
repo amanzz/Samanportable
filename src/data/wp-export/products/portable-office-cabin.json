@@ -148,12 +148,12 @@
       "date_created_gmt": "2026-05-14T17:01:08",
       "date_modified": "2026-05-15T04:02:06",
       "date_modified_gmt": "2026-05-14T17:02:06",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/office-cabin-hero-three-quarter-saman-portable.jpeg",
+      "src": "/images/product-heroes/portable-office/office-cabin-hero-three-quarter-saman-portable.jpeg",
       "name": "office-cabin-hero-three-quarter-saman-portable",
       "alt": "Office Cabin",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/office-cabin-hero-three-quarter-saman-portable.jpeg 1254w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-cabin-hero-three-quarter-saman-portable-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-cabin-hero-three-quarter-saman-portable-1024x1024.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-cabin-hero-three-quarter-saman-portable-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-cabin-hero-three-quarter-saman-portable-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-cabin-hero-three-quarter-saman-portable-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/office-cabin-hero-three-quarter-saman-portable-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/portable-office/office-cabin-hero-three-quarter-saman-portable.jpeg 1254w",
       "sizes": "(max-width: 1254px) 100vw, 1254px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/office-cabin-hero-three-quarter-saman-portable-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/portable-office/office-cabin-hero-three-quarter-saman-portable.jpeg"
     },
     {
       "id": 269291,

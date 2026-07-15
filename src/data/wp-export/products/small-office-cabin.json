@@ -157,12 +157,12 @@
       "date_created_gmt": "2026-05-15T06:07:22",
       "date_modified": "2026-05-15T17:08:10",
       "date_modified_gmt": "2026-05-15T06:08:10",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/small-office-cabin-hero-front-3-4-view.jpeg",
+      "src": "/images/product-heroes/portable-office/small-office-cabin-hero-front-3-4-view.jpeg",
       "name": "small-office-cabin-hero-front-3-4-view",
       "alt": "Small Office Cabin",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/small-office-cabin-hero-front-3-4-view.jpeg 1254w, https://blog.samanportable.com/wp-content/uploads/2024/10/small-office-cabin-hero-front-3-4-view-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/small-office-cabin-hero-front-3-4-view-1024x1024.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/small-office-cabin-hero-front-3-4-view-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/small-office-cabin-hero-front-3-4-view-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/small-office-cabin-hero-front-3-4-view-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/small-office-cabin-hero-front-3-4-view-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/portable-office/small-office-cabin-hero-front-3-4-view.jpeg 1254w",
       "sizes": "(max-width: 1254px) 100vw, 1254px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/small-office-cabin-hero-front-3-4-view-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/portable-office/small-office-cabin-hero-front-3-4-view.jpeg"
     },
     {
       "id": 271416,
