@@ -145,6 +145,18 @@ function getPaginatedBlogDescription(page: number): string {
   return `Explore page ${page} of the SAMAN Portable blog for practical articles on portable cabins, prefab buildings, modular offices, PEB structures, and steel solutions.`;
 }
 
+function getPaginatedTitle(title: string, page: number): string {
+  if (page <= 1) return title;
+  const pipeIndex = title.lastIndexOf('|');
+  if (pipeIndex === -1) return `${title} - Page ${page}`;
+  return `${title.slice(0, pipeIndex).trim()} - Page ${page} ${title.slice(pipeIndex).trim()}`;
+}
+
+function getPaginatedCategoryDescription(title: string, page: number): string {
+  const topic = title.replace(/\s*\|\s*SAMAN(?: Portable)?\s*$/i, '').trim();
+  return `Browse page ${page} of ${topic} from SAMAN, with more buyer guides, pricing notes and project insights for Indian prefab buyers.`;
+}
+
 interface BlogProps {
   posts: BlogCardPost[];
   totalPages: number;
@@ -270,14 +282,19 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       hreflangSelf = seoCanonical;
     }
 
-    // Title / meta selection: category -> unique per-category; tag/page/plain -> default hub.
+    // Title / meta selection: category -> unique per-category; paginated URLs
+    // include the page number so Ahrefs/Google do not see page 2+ listings as
+    // duplicate title/description variants of page one.
     const categorySeo = cleanCategory && hasMatchingCategoryPosts ? CATEGORY_SEO[cleanCategory] : undefined;
-    const seoTitle = categorySeo?.title || pageSEO.blog.title;
-    const seoDescription = categorySeo?.meta || (
-      !cleanCategory && !cleanTag && page > 1 && page <= result.pagination.totalPages && result.posts.length > 0
-        ? getPaginatedBlogDescription(page)
-        : pageSEO.blog.description
-    );
+    const hasValidPaginatedSlice = page > 1 && page <= result.pagination.totalPages && result.posts.length > 0;
+    const seoTitle = getPaginatedTitle(categorySeo?.title || pageSEO.blog.title, hasValidPaginatedSlice ? page : 1);
+    const seoDescription = categorySeo
+      ? (hasValidPaginatedSlice ? getPaginatedCategoryDescription(categorySeo.title, page) : categorySeo.meta)
+      : (
+        !cleanCategory && !cleanTag && hasValidPaginatedSlice
+          ? getPaginatedBlogDescription(page)
+          : pageSEO.blog.description
+      );
 
     // Visible intro paragraph: only on a category filter page (not tag/page/plain /blog).
     const seoCategoryIntro = cleanCategory && hasMatchingCategoryPosts
