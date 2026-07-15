@@ -117,6 +117,22 @@ const CATEGORY_INTRO: Record<string, string> = {
   'uncategorized': 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd — ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified manufacturer with factories in Bangalore and Greater Noida serving buyers across India.',
 };
 
+function getPaginatedTitle(title: string, page: number): string {
+  if (page <= 1) return title;
+  const pipeIndex = title.lastIndexOf('|');
+  if (pipeIndex === -1) return `${title} - Page ${page}`;
+  return `${title.slice(0, pipeIndex).trim()} - Page ${page} ${title.slice(pipeIndex).trim()}`;
+}
+
+function getPaginatedBlogDescription(page: number): string {
+  return `Explore page ${page} of the SAMAN Portable blog for practical articles on portable cabins, prefab buildings, modular offices, PEB structures, and steel solutions.`;
+}
+
+function getPaginatedCategoryDescription(title: string, page: number): string {
+  const topic = title.replace(/\s*\|\s*SAMAN(?: Portable)?\s*$/i, '').trim();
+  return `Browse page ${page} of ${topic} from SAMAN, with more buyer guides, pricing notes and project insights for Indian prefab buyers.`;
+}
+
 // T8.1 B: the featured (newest) post, rendered as the lead card on page 1 only.
 // It is post #1 of the same 10 this page already returns — so the grid simply skips
 // it, the ItemList still describes exactly the 10 visible posts, and the pagination
@@ -186,22 +202,30 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     let seoCanonical = blogCanonicalBase;
 
     const categorySeo = cleanCategory ? CATEGORY_SEO[cleanCategory.toLowerCase()] : undefined;
-    let seoTitle = categorySeo?.title || pageSEO.blog.title;
-    // Meta description is NOT altered by pagination (L3: hub meta stays as-is).
-    const seoDescription = categorySeo?.meta || pageSEO.blog.description;
+    const baseSeoTitle = categorySeo?.title || pageSEO.blog.title;
+    let seoTitle = baseSeoTitle;
+    let seoDescription = categorySeo?.meta || pageSEO.blog.description;
 
     const inRangePage = page > 1 && page <= result.pagination.totalPages && result.posts.length > 0;
 
     if (cleanCategory) {
       seoCanonical = `${blogCanonicalBase}?category=${encodeURIComponent(cleanCategory)}`;
-      seoRouteBehavior = 'indexable category filter (self-canonical)';
+      if (inRangePage) {
+        seoCanonical = `${seoCanonical}&page=${page}`;
+        seoTitle = getPaginatedTitle(baseSeoTitle, page);
+        seoDescription = getPaginatedCategoryDescription(baseSeoTitle, page);
+        seoRouteBehavior = 'indexable paginated category filter (self-canonical)';
+      } else {
+        seoRouteBehavior = 'indexable category filter (self-canonical)';
+      }
     } else if (cleanTag) {
       seoRouteBehavior = 'tag filter canonicalized to blog hub';
     } else if (rawPage && page <= 1) {
       seoRouteBehavior = 'page 0/1 canonicalized to blog hub';
     } else if (inRangePage) {
       seoCanonical = `${blogCanonicalBase}?page=${page}`;
-      seoTitle = `${pageSEO.blog.title} — Page ${page}`;
+      seoTitle = getPaginatedTitle(pageSEO.blog.title, page);
+      seoDescription = getPaginatedBlogDescription(page);
       seoRouteBehavior = 'indexable paginated listing (self-canonical)';
     } else if (page > 1) {
       seoNoindex = true;

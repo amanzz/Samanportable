@@ -42,6 +42,7 @@ interface BlogPostProps {
 // image. Keyed to this one slug only — no other page is affected.
 const METADATA_IMAGE_OVERRIDES: Record<string, string> = {
   'best-porta-cabin-supplier': 'https://www.samanportable.com/container-office-by-saman-1.webp',
+  'owning-a-porta-cabin-is-perfect': 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
 };
 // Distinctive marker of the broken WordPress image (matches its size variants).
 const BROKEN_WP_IMAGE_MARKER = 'container-office-by-saman-13-1_11zon';
@@ -49,6 +50,13 @@ const BROKEN_WP_IMAGE_MARKER = 'container-office-by-saman-13-1_11zon';
 const SEO_TITLE_OVERRIDES: Record<string, string> = {
   'container-houses-cost-guide-2024': 'Container Houses Cost Guide 2024 | SAMAN',
   'porta-cabin-office-price': 'Porta Office Cabin Price Guide 2025 | SAMAN',
+};
+
+const SEO_METADATA_OVERRIDES: Record<string, { title: string; description: string }> = {
+  'owning-a-porta-cabin-is-perfect': {
+    title: 'Why Own a Porta Cabin? Benefits, Sizes & Buyer Guide',
+    description: 'Should you own a porta cabin? See the benefits, sizes, uses and buying checks before you choose a factory-built SAMAN porta cabin.',
+  },
 };
 
 const CONTENT_H1_DEMOTION_SLUGS = new Set([
@@ -417,6 +425,25 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       };
     }
 
+    const seoMetadataOverride = SEO_METADATA_OVERRIDES[slug];
+    if (seoMetadataOverride) {
+      const canonicalUrl = `https://www.samanportable.com/${slug}`;
+      const imageOverride = METADATA_IMAGE_OVERRIDES[slug] || rankMathSEO?.og_image || 'https://www.samanportable.com/og-image.svg';
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        title: seoMetadataOverride.title,
+        description: seoMetadataOverride.description,
+        canonical: canonicalUrl,
+        og_title: seoMetadataOverride.title,
+        og_description: seoMetadataOverride.description,
+        og_image: imageOverride,
+        twitter_title: seoMetadataOverride.title,
+        twitter_description: seoMetadataOverride.description,
+        twitter_image: imageOverride,
+        robots: { index: 'index', follow: 'follow' },
+      };
+    }
+
     // Public marketing page with no per-user data — safe to edge-cache. Set only
     // on the success path so the 404s/redirects above keep Next's default no-store
     // and newly-published URLs are never cache-poisoned.
@@ -484,6 +511,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
     // (a blog.samanportable.com upload) returns 404, so serve a valid local image.
     const featuredImageOverrides: Record<string, string> = {
       'best-porta-cabin-supplier': '/container-office-by-saman-1.webp',
+      'owning-a-porta-cabin-is-perfect': '/hero-image/saman-portable-office-cabin-bangalore.webp',
     };
     if (featuredImageOverrides[slug]) {
       return featuredImageOverrides[slug];
