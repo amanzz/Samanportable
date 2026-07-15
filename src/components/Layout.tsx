@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import Header from './Header';
 import Footer from './Footer';
-import PerformanceOptimizer from './PerformanceOptimizer';
-import AccessibilityChecker from './AccessibilityChecker';
 import PageLoader from './PageLoader';
 import RouteProgressBar from './RouteProgressBar';
+
+// T13 (Part B): the accessibility checker is a dev-only authoring aid (toggle with
+// Ctrl+Shift+A). Gated to non-production so it is never bundled into or shipped to the
+// prod build; in development it lazy-loads on mount and stays fully usable. The former
+// PerformanceOptimizer wrapper was removed entirely — it only attached a scroll/resize
+// listener whose getBoundingClientRect result was discarded (pure main-thread cost).
+const AccessibilityChecker =
+  process.env.NODE_ENV !== 'production'
+    ? dynamic(() => import('./AccessibilityChecker'))
+    : null;
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -46,14 +55,12 @@ export default function Layout({ children }: LayoutProps) {
       <RouteProgressBar />
       <PageLoader isLoading={isLoading} />
       <Header />
-      <PerformanceOptimizer>
-        {/* Mobile bottom padding - only applied on mobile devices, removed on desktop */}
-        <main className="flex-1 pb-16 lg:pb-0">
-          {children}
-        </main>
-      </PerformanceOptimizer>
+      {/* Mobile bottom padding - only applied on mobile devices, removed on desktop */}
+      <main className="flex-1 pb-16 lg:pb-0">
+        {children}
+      </main>
       <Footer />
-      <AccessibilityChecker />
+      {AccessibilityChecker && <AccessibilityChecker />}
     </div>
   );
 }
