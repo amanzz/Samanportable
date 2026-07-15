@@ -99,12 +99,12 @@
       "date_created_gmt": "2025-09-19T12:27:40",
       "date_modified": "2025-09-19T23:28:38",
       "date_modified_gmt": "2025-09-19T12:28:38",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/brown-security-cabin.webp",
+      "src": "/images/product-heroes/security-cabins/brown-security-cabin.webp",
       "name": "Brown Security Cabin with White Trim",
       "alt": "Security Cabins",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/brown-security-cabin.webp 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/brown-security-cabin-300x300.webp 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/brown-security-cabin-150x150.webp 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/brown-security-cabin-768x768.webp 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/brown-security-cabin-600x600.webp 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/brown-security-cabin-100x100.webp 100w",
+      "srcset": "/images/product-heroes/security-cabins/brown-security-cabin.webp 1024w",
       "sizes": "(max-width: 1024px) 100vw, 1024px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/brown-security-cabin-300x300.webp"
+      "thumbnail": "/images/product-heroes/security-cabins/brown-security-cabin.webp"
     },
     {
       "id": 269909,

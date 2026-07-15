@@ -145,12 +145,12 @@
       "date_created_gmt": "2026-05-24T18:00:47",
       "date_modified": "2026-05-25T05:06:34",
       "date_modified_gmt": "2026-05-24T18:06:34",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-manufacturing-building-saman-hero.jpeg",
+      "src": "/images/product-heroes/prefab-buildings/prefab-manufacturing-building-saman-hero.jpeg",
       "name": "prefab-manufacturing-building-saman-hero",
       "alt": "Steel-blue prefab manufacturing building by SAMAN, 90 by 36 feet, in an industrial estate.",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-manufacturing-building-saman-hero.jpeg 1254w, https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-manufacturing-building-saman-hero-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-manufacturing-building-saman-hero-1024x1024.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-manufacturing-building-saman-hero-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-manufacturing-building-saman-hero-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-manufacturing-building-saman-hero-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-manufacturing-building-saman-hero-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/prefab-buildings/prefab-manufacturing-building-saman-hero.jpeg 1254w",
       "sizes": "(max-width: 1254px) 100vw, 1254px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-manufacturing-building-saman-hero-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/prefab-buildings/prefab-manufacturing-building-saman-hero.jpeg"
     },
     {
       "id": 272026,

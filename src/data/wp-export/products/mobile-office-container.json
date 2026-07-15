@@ -150,12 +150,12 @@
       "date_created_gmt": "2026-05-09T17:19:27",
       "date_modified": "2026-05-10T04:22:11",
       "date_modified_gmt": "2026-05-09T17:22:11",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/mobile-office-container-rcc-base.jpeg",
+      "src": "/images/product-heroes/container-offices/mobile-office-container-rcc-base.jpeg",
       "name": "mobile-office-container-rcc-base",
       "alt": "Mobile office container",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/mobile-office-container-rcc-base.jpeg 1254w, https://blog.samanportable.com/wp-content/uploads/2024/10/mobile-office-container-rcc-base-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/mobile-office-container-rcc-base-1024x1024.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/mobile-office-container-rcc-base-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/mobile-office-container-rcc-base-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/mobile-office-container-rcc-base-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/mobile-office-container-rcc-base-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/container-offices/mobile-office-container-rcc-base.jpeg 1254w",
       "sizes": "(max-width: 1254px) 100vw, 1254px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/mobile-office-container-rcc-base-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/container-offices/mobile-office-container-rcc-base.jpeg"
     },
     {
       "id": 271136,

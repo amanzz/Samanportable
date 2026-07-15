@@ -143,12 +143,12 @@
       "date_created_gmt": "2025-08-23T09:36:20",
       "date_modified": "2025-08-23T20:36:54",
       "date_modified_gmt": "2025-08-23T09:36:54",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-wooden-interior.jpeg",
+      "src": "/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg",
       "name": "Wooden Finish MS Portable Cabin Office",
       "alt": "Wooden finish MS Portable Cabin interior",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-wooden-interior.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-wooden-interior-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-wooden-interior-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-wooden-interior-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-wooden-interior-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-wooden-interior-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg 1024w",
       "sizes": "(max-width: 1024px) 100vw, 1024px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-wooden-interior-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg"
     },
     {
       "id": 269232,

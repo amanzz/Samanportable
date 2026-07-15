@@ -147,12 +147,12 @@
       "date_created_gmt": "2025-08-22T15:54:30",
       "date_modified": "2025-08-23T02:55:19",
       "date_modified_gmt": "2025-08-22T15:55:19",
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-front-view.jpeg",
+      "src": "/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg",
       "name": "Portable Cabin Building with Modern Glass Front",
       "alt": "Portable Cabin Building front elevation with glass panels",
-      "srcset": "https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-front-view.jpeg 1024w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-front-view-300x300.jpeg 300w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-front-view-150x150.jpeg 150w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-front-view-768x768.jpeg 768w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-front-view-600x600.jpeg 600w, https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-front-view-100x100.jpeg 100w",
+      "srcset": "/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg 1024w",
       "sizes": "(max-width: 1024px) 100vw, 1024px",
-      "thumbnail": "https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-front-view-300x300.jpeg"
+      "thumbnail": "/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg"
     },
     {
       "id": 269206,
