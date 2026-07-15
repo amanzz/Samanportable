@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic';
 import { DefaultSeo } from 'next-seo';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { AuthProvider } from '@/contexts/AuthContext';
-import { CartProvider } from '@/contexts/CartContext';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import { defaultSEO } from '@/config/seo';
 import Script from 'next/script';
@@ -46,8 +45,6 @@ export default function App({ Component, pageProps }: AppProps) {
     '/refund-and-return-policy',
     '/terms-and-conditions',
     '/prefab-solutions',
-    '/checkout',
-    '/cart',
     '/my-orders',
     '/404',
     '/410',
@@ -89,9 +86,7 @@ export default function App({ Component, pageProps }: AppProps) {
             (no useQuery/useMutation anywhere), so it was dead hydration weight. */}
         <TooltipProvider>
           <AuthProvider>
-            <CartProvider>
-              <Component {...pageProps} />
-            </CartProvider>
+            <Component {...pageProps} />
           </AuthProvider>
         </TooltipProvider>
         <Toaster />
