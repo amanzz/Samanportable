@@ -129,7 +129,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // Get related products from the same category (lightweight) - OPTIMIZED
     let relatedProducts: WooCommerceProduct[] = [];
     try {
-      const relatedResponse = await staticContent.fetchProducts(1, 12, { // Increased to 12 for better variety
+      // SHIKHAR T9 Part B: fetch ALL subpages of the cluster (uncapped) so every
+      // subpage is linked from its hub. The prior cap of 12 left the 13–14-subpage
+      // clusters (portable-office, container-offices, container-cafe, porta-cabins)
+      // with orphaned tail subpages that had no hub link on desktop OR mobile.
+      // 100 is safe headroom over the largest cluster (~15 incl. the hub-self product).
+      const relatedResponse = await staticContent.fetchProducts(1, 100, {
         category: product.category_slug
       });
       // Filter out the current product manually since exclude is not supported

@@ -7,11 +7,23 @@ import ProductReviews from '@/components/ProductReviews';
 import RelatedProductRail from '@/components/product/RelatedProductRail';
 import ProductZoneCtas from '@/components/product/ProductZoneCtas';
 import { getRoofingPanelRail } from '@/lib/c16PanelCatalog';
+import { tokens } from '@/components/ds/tokens';
 import { CheckCircle, Factory, Truck } from 'lucide-react';
 
 const baseImagePath = '/panel-images/roofing-sheet/';
 const canonicalUrl = 'https://www.samanportable.com/product/roofing-sheet';
 const wcReviewProductId = 272772;
+
+// SHIKHAR T9 Part B — this hub's three subpages, for a first-screen SSR link block.
+// href = the CANONICAL singular /product/roofing-sheet/{slug} (each returns 200 and
+// declares itself canonical); the plural /product/roofing-sheets/{slug} 301-redirects
+// here, so we link the real 200 URL, never the redirect. name = each page's real
+// product name (wp-export/products/*.json `name`), used verbatim as anchor text.
+const ROOFING_SUBPAGES: ReadonlyArray<{ name: string; href: string }> = [
+  { name: 'Metal Roofing Sheet', href: '/product/roofing-sheet/metal-roofing-sheet' },
+  { name: 'PVC & uPVC Roofing Sheet', href: '/product/roofing-sheet/pvc-roofing-sheet' },
+  { name: 'Polycarbonate Roofing Sheet', href: '/product/roofing-sheet/polycarbonate-roofing-sheet' },
+];
 
 const galleryImages = [
   {
@@ -386,6 +398,34 @@ export default function RoofingSheetPage() {
                 <p className="mt-5 text-base leading-7 text-slate-700">
                   A roofing sheet is a profiled sheet — steel, polycarbonate, UPVC or fibre cement — that forms the finished, weather-tight cover of a roof. SAMAN supplies every mainstream roof sheet type sold in India from one counter: bare GI and Galvalume, colour-coated PPGI/PPGL, tile and premium profiles, transparent polycarbonate, UPVC and fibre cement — with honest gauge, coating and coverage guidance so you buy the right sheet, not just the cheapest quote.
                 </p>
+                {/* SHIKHAR T9 Part B — first-screen, SSR, all-breakpoints links to this
+                    hub's own subpages (previously linked from nowhere on the hub). Text
+                    links only → zero layout shift. DS tokens (forest/leaf/mist), no raw hex. */}
+                <nav aria-label="Roofing sheet types" className="mt-6">
+                  <p
+                    className="text-xs font-bold uppercase tracking-normal"
+                    style={{ color: tokens.palette.forest }}
+                  >
+                    Explore roofing sheet types
+                  </p>
+                  <ul className="mt-2 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                    {ROOFING_SUBPAGES.map((sub) => (
+                      <li key={sub.href}>
+                        <Link
+                          href={sub.href}
+                          className="inline-flex items-center rounded-lg border px-3 py-2 text-sm font-semibold transition-opacity hover:opacity-90"
+                          style={{
+                            borderColor: tokens.palette.leaf,
+                            backgroundColor: tokens.palette.mist,
+                            color: tokens.palette.forest,
+                          }}
+                        >
+                          {sub.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {specGrid.map(([label, value], index) => (
                     <div key={label} className={`rounded-lg border border-slate-200 p-4 ${index === 0 ? 'sm:col-span-2' : ''}`}>
