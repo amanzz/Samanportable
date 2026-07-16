@@ -85,7 +85,9 @@ const LOCAL_FAMILIES: ReadonlyArray<readonly [RegExp, string | null]> = [
   [/^(?:container-offices-for-sale-in-)(.+)$/i, 'container-offices'],
   [/^(?:container-offices-in-|container-office-in-)(.+)$/i, 'container-offices'],
   [/^(?:container-houses-in-|container-house-in-)(.+)$/i, 'container-houses'],
-  [/^(?:labour-colonies-in-|labor-colonies-in-)(.+)$/i, 'labor-colony'],
+  // SHIKHAR C2 — singular `labour-colony-in-{city}` / `labor-colony-in-{city}` are the
+  // same local family as the plural forms (parser fix, C2 ticket Part 1).
+  [/^(?:labour-colonies-in-|labor-colonies-in-|labour-colony-in-|labor-colony-in-)(.+)$/i, 'labor-colony'],
   [/^(?:portable-toilets-in-)(.+)$/i, 'portable-toilet'],
   [/^(?:pre-engineered-buildings-in-|peb-structures-in-|peb-buildings-in-)(.+)$/i, 'pre-engineered-buildings'],
   [/^(?:prefab-buildings-in-)(.+)$/i, 'prefab-buildings'],
@@ -108,11 +110,33 @@ export interface PostClusterResolution {
 }
 
 /**
+ * SHIKHAR C2 — explicit slug→cluster overrides, consulted FIRST inside
+ * resolvePostCluster. These slugs carry unambiguous single-cluster intent the
+ * slug-family parser cannot see (they are not `{cluster}-in-{city}` landing slugs),
+ * so they otherwise resolved to null. Owner-approved (C2 ticket Part 1). Once resolved
+ * they gain the C1 breadcrumb, the up-link module and mesh eligibility automatically —
+ * they are never special-cased anywhere else. Keys must be lowercase.
+ */
+const CLUSTER_OVERRIDES: Readonly<Record<string, string>> = Object.freeze({
+  'discount-mobile-office-units': 'portable-office',
+  'low-cost-modular-office-solutions': 'portable-office',
+  'portable-classroom-for-sale-2': 'prefab-buildings',
+  'prefab-homes-mumbai': 'prefabricated-houses',
+  'top-rated-portable-cabin-supplier-delhi': 'portable-cabin',
+});
+
+/**
  * Classify a post slug as local (with its cluster hub), editorial, or unresolved
  * (looks local but no hub can be resolved — caller reports it, renders editorial).
  */
 export function resolvePostCluster(slug: string): PostClusterResolution {
   const s = (slug || '').toLowerCase();
+  // C2: explicit overrides win over the family parser.
+  const overrideHub = CLUSTER_OVERRIDES[s];
+  if (overrideHub) {
+    const name = HUB_NAMES[overrideHub];
+    if (name) return { kind: 'local', hub: { slug: overrideHub, name, path: `/product/${overrideHub}` } };
+  }
   for (const [re, hubSlug] of LOCAL_FAMILIES) {
     const m = s.match(re);
     if (!m) continue;
@@ -183,4 +207,40 @@ export function crumbsToJsonLd(crumbs: Crumb[]): BreadcrumbJsonLdItem[] {
     name: c.name,
     url: c.path.startsWith('http') ? c.path : `${SITE_ORIGIN}${c.path}`,
   }));
+}
+
+/** The owning cluster hub (name + path) for a post slug via resolvePostCluster. */
+export interface ClusterHubLink {
+  hubSlug: string;
+  hubName: string;
+  hubPath: string;
+}
+
+/**
+ * SHIKHAR C2 — the post's owning cluster hub, or null for editorial/unresolved posts.
+ * Same resolver as the breadcrumb, so a page's up-link module and its breadcrumb hub
+ * node always agree. Used by [slug].tsx to source the T8.2 up-link module from
+ * resolvePostCluster when the category/content resolver (getPostHubLink) has no match.
+ */
+export function getClusterHubLink(slug: string): ClusterHubLink | null {
+  const res = resolvePostCluster(slug);
+  if (res.kind === 'local' && res.hub) {
+    return { hubSlug: res.hub.slug, hubName: res.hub.name, hubPath: res.hub.path };
+  }
+  return null;
+}
+
+/**
+ * SHIKHAR C2 — the region (captured locality) token a slug yields from the SAME
+ * local-family parser resolvePostCluster uses, lowercased, or '' when the slug is an
+ * override / non-family slug. Used ONLY for deterministic mesh ordering (region-first).
+ * Never a cluster signal — cluster resolution is resolvePostCluster's job alone.
+ */
+export function getPostRegionToken(slug: string): string {
+  const s = (slug || '').toLowerCase();
+  for (const [re] of LOCAL_FAMILIES) {
+    const m = s.match(re);
+    if (m) return (m[1] || '').toLowerCase();
+  }
+  return '';
 }

@@ -1,0 +1,91 @@
+/* SHIKHAR C2 — sibling-mesh module ("More {cluster} pages").
+   DS tokens only; no hex literal appears in this file.
+   Zero CLS: pure SSR text, every grid slot has a reserved (min) height, so nothing
+   arrives late to push the page. */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-4);
+  padding: var(--ds-space-6);
+  background: var(--ds-surface-alt);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-shadow-card);
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--ds-text-h3-family);
+  font-size: var(--ds-text-h3-size);
+  line-height: var(--ds-text-h3-lh);
+  font-weight: var(--ds-text-h3-weight);
+  letter-spacing: var(--ds-text-h3-tracking);
+  color: var(--ds-text-primary);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ds-space-3);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Explicit reserved height per slot → the module's box is fixed from first paint. */
+.cell {
+  display: flex;
+  width: 100%;
+  min-height: 64px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 64px;
+  padding: var(--ds-space-3) var(--ds-space-4);
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-sm);
+  font-family: var(--ds-font-sans-stack);
+  font-size: var(--ds-text-body-size);
+  line-height: var(--ds-text-body-lh);
+  font-weight: 600;
+  color: var(--ds-primary);
+  text-decoration: none;
+  transition: color var(--ds-motion-fast) var(--ds-motion-ease),
+    border-color var(--ds-motion-fast) var(--ds-motion-ease);
+}
+
+/* Bound long titles to two lines so the reserved slot height always holds. The full
+   title stays in the DOM (crawlable, verbatim) — this only clamps the display. */
+.label {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.link:hover {
+  color: var(--ds-primary-hover);
+  border-color: var(--ds-primary-hover);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--ds-focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}
