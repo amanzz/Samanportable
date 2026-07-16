@@ -282,12 +282,12 @@ const nextConfig = {
       },
       {
         source: '/container-offices-for-sale-in-btm-layout-2',
-        destination: 'https://www.samanportable.com/container-offices-for-sale-in-btm-layout',
+        destination: 'https://www.samanportable.com/product/container-offices',
         permanent: true, // SEO-safe (Next.js serves 308; OK same as 301 for Google)
       },
       {
         source: '/container-offices-for-sale-in-rt-nagar-2',
-        destination: 'https://www.samanportable.com/container-offices-for-sale-in-rt-nagar',
+        destination: 'https://www.samanportable.com/product/container-offices',
         permanent: true,
       },
       // Duplicate URL redirects for SEO - Porta Cabins

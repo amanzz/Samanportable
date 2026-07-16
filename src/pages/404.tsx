@@ -75,7 +75,7 @@ const Custom404Page = () => {
                     Portable Cabins
                   </Button>
                 </Link>
-                <Link href="/product/container-office">
+                <Link href="/product/container-offices">
                   <Button variant="secondary" size="sm">
                     Container Offices
                   </Button>
@@ -113,4 +113,3 @@ const Custom404Page = () => {
 };
 
 export default Custom404Page;
-
