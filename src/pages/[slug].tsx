@@ -31,7 +31,9 @@ import type { BlogHubLink } from '../lib/blogHubLink';
 import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema, getCityPageGraph, getFAQSchemaOverride } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 import { Breadcrumb } from '../components/ds/Breadcrumb';
-import { getPostBreadcrumb, crumbsToDsItems, crumbsToJsonLd } from '../lib/breadcrumbs';
+import { getPostBreadcrumb, crumbsToDsItems, crumbsToJsonLd, getClusterHubLink } from '../lib/breadcrumbs';
+import { RelatedInCluster } from '../components/ds/RelatedInCluster';
+import type { ClusterSiblingResult } from '../lib/clusterSiblings';
 import { demoteHtmlH1ToH2 } from '../lib/seoHtml';
 import { setPublicEdgeCache } from '../lib/cacheHeaders';
 
@@ -45,6 +47,12 @@ interface BlogPostProps {
    * render no module and get no schema `about`. Never force a link.
    */
   hubLink?: BlogHubLink | null;
+  /**
+   * SHIKHAR C2: up-to-6 same-cluster sibling links for the mesh module, resolved
+   * server-side via resolvePostCluster. null when the page is editorial or has fewer
+   * than 4 live siblings (module suppressed).
+   */
+  siblings?: ClusterSiblingResult | null;
 }
 
 // Slug-specific metadata image override. This post's WordPress featured image
@@ -424,12 +432,18 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
     const { getPostHubLink } = await import('../lib/blogHubLink');
     const hubLink = getPostHubLink(post);
 
+    // SHIKHAR C2: same-cluster sibling mesh, resolved server-side (reads the export
+    // files, so it stays out of the client bundle). null → module suppressed.
+    const { getClusterSiblings } = await import('../lib/clusterSiblings');
+    const siblings = await getClusterSiblings(slug);
+
     return {
       props: {
         post,
         slug,
         rankMathSEO,
         hubLink,
+        siblings,
       },
     };
   } catch (error) {
@@ -447,7 +461,13 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
   }
 };
 
-const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
+const BlogPostPage = ({ post, slug, rankMathSEO, hubLink, siblings }: BlogPostProps) => {
+  // SHIKHAR C2: the visible up-link module is sourced from resolvePostCluster whenever
+  // the category/content resolver (getPostHubLink → hubLink) has no match — so the five
+  // C2 override slugs and any other resolvePostCluster-local page still get the module.
+  // The JSON-LD `about` below is deliberately NOT changed (it stays keyed off hubLink),
+  // so no page's JSON-LD values move.
+  const upLinkHub = hubLink ?? getClusterHubLink(slug);
   const [loading, setLoading] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
@@ -986,12 +1006,21 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink }: BlogPostProps) => {
             </div>
           </article>
 
-          {/* SHIKHAR T8.2 — Related-product module. Deliberately OUTSIDE </article>:
+          {/* SHIKHAR T8.2 — Related-product up-link module. Deliberately OUTSIDE </article>:
               the indexed article body and its first-100-words stay byte-identical.
-              Rendered only when the post's category owns a hub (never forced). */}
-          {hubLink && (
+              C2: sourced from upLinkHub (getPostHubLink, else resolvePostCluster) so every
+              cluster-resolved page gets it; rendered only when a hub resolves (never forced). */}
+          {upLinkHub && (
             <div className="mb-12">
-              <RelatedProductLink hubName={hubLink.hubName} hubPath={hubLink.hubPath} />
+              <RelatedProductLink hubName={upLinkHub.hubName} hubPath={upLinkHub.hubPath} />
+            </div>
+          )}
+
+          {/* SHIKHAR C2 — sibling mesh, immediately AFTER the up-link module. Server-resolved,
+              same-cluster only, ≤6 links, suppressed when <4 siblings (siblings === null). */}
+          {siblings && (
+            <div className="mb-12">
+              <RelatedInCluster heading={siblings.heading} items={siblings.items} />
             </div>
           )}
 
