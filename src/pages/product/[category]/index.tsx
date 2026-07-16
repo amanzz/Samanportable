@@ -521,13 +521,13 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   <RelatedProductRail
                     items={relatedRailItems}
                     currentHref={`/product/${category}`}
-                    className="bg-white/80 shadow-lg"
+                    className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
                     scroll
                   />
                 }
                 gallery={
-                  <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-                    <div className="space-y-2">
+                  <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm lg:h-full lg:flex lg:flex-col">
+                    <div className="space-y-2 lg:flex lg:flex-1 lg:flex-col">
                       {/* Main Image Slider */}
                       <div className="relative group">
                         {/* T28.2 — 1:1 ratio box at ALL breakpoints (square product assets render
@@ -647,23 +647,27 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                           ))}
                         </div>
                       )}
+
+                      {/* T28.4 — zone-contact CTAs live in the GALLERY column, under the
+                          thumbnails, as the LAST row; lg flex-1 stretches the two zone
+                          cards equally to absorb remaining column space so the gallery
+                          bottom edge meets the other two columns. Markup verbatim.
+                          Rendering here (not in the right panel) keeps the CTAs working
+                          for BOTH right-panel branches (Card and SandwichInfoBox). */}
+                      <div className="-mx-2 pt-1 md:pt-3 lg:flex lg:flex-1">
+                        <ProductZoneCtas variant="strip" className="w-full" stretch />
+                      </div>
                     </div>
                   </Card>
                 }
                 description={
                   isSandwichPanel ? (
-                    <div className="space-y-4">
-                      <SandwichInfoBox
-                        h1={transformedProduct.title}
-                        sku={product.sku || 'SP-C16-SWP-HUB-2026'}
-                        averageRating={product.average_rating}
-                        ratingCount={product.rating_count}
-                      />
-                      {/* Zone-contact CTAs — re-homed from the gallery column (T28.2);
-                          SandwichInfoBox has no CTAs of its own, so the strip renders
-                          for this branch too. Markup verbatim. */}
-                      <ProductZoneCtas variant="strip" className="w-full" />
-                    </div>
+                    <SandwichInfoBox
+                      h1={transformedProduct.title}
+                      sku={product.sku || 'SP-C16-SWP-HUB-2026'}
+                      averageRating={product.average_rating}
+                      ratingCount={product.rating_count}
+                    />
                   ) : (
                   <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:min-h-full">
                     <div className="space-y-4">
@@ -767,9 +771,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                         </div>
                       </div>
 
-                      {/* Zone-contact CTAs — re-homed into the summary column (T28.2),
-                          markup verbatim from the gallery column. */}
-                      <ProductZoneCtas variant="strip" className="w-full" />
                     </div>
                   </Card>
                   )

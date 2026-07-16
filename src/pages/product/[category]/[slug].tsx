@@ -436,13 +436,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   <RelatedProductRail
                     items={relatedRailItems}
                     currentHref={`/product/${category}/${slug}`}
-                    className="bg-white/80 shadow-lg"
+                    className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
                     scroll
                   />
                 }
                 gallery={
-                  <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-                    <div className="space-y-2">
+                  <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm lg:h-full lg:flex lg:flex-col">
+                    <div className="space-y-2 lg:flex lg:flex-1 lg:flex-col">
                       {/* Main Image Slider */}
                       <div className="relative group">
                         {/* T28 — 1:1 ratio box at ALL breakpoints (square product assets render
@@ -566,6 +566,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           ))}
                         </div>
                       )}
+
+                      {/* T28.4 — zone-contact CTAs live in the GALLERY column, under the
+                          thumbnails, as the LAST row; lg flex-1 stretches the two zone
+                          cards equally to absorb remaining column space so the gallery
+                          bottom edge meets the other two columns. Markup verbatim. */}
+                      <div className="-mx-2 pt-1 md:pt-3 lg:flex lg:flex-1">
+                        <ProductZoneCtas variant="strip" className="w-full" stretch />
+                      </div>
                     </div>
                   </Card>
                 }
@@ -672,9 +680,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                         </div>
                       </div>
 
-                      {/* Zone-contact CTAs — re-homed into the summary column (T28),
-                          markup verbatim from the gallery column. */}
-                      <ProductZoneCtas variant="strip" className="w-full" />
                     </div>
                   </Card>
                 }

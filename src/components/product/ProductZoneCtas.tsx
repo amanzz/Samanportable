@@ -4,6 +4,10 @@ type ProductZoneCtasProps = {
   variant?: 'strip' | 'card';
   className?: string;
   showPhoneNumber?: boolean;
+  /** T28.4 — lg+ only: fill the parent's height and stretch both zone cards
+      equally (gallery-column bottom-edge alignment). Opt-in; callers that
+      don't pass it render exactly as before. */
+  stretch?: boolean;
 };
 
 const zones = [
@@ -97,16 +101,17 @@ const ZoneActions = ({ compact = false, showPhoneNumber = false }: { compact?: b
   </>
 );
 
-const ProductZoneCtas = ({ variant = 'card', className, showPhoneNumber = false }: ProductZoneCtasProps) => {
+const ProductZoneCtas = ({ variant = 'card', className, showPhoneNumber = false, stretch = false }: ProductZoneCtasProps) => {
   return (
     <section
       aria-label="Product enquiry contacts by zone"
       className={cn(
         'rounded-lg border border-emerald-100 bg-white/95 p-3 shadow-md shadow-emerald-950/[0.05]',
+        stretch && 'lg:h-full',
         className
       )}
     >
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+      <div className={cn('grid grid-cols-1 gap-3 md:grid-cols-2', stretch && 'lg:h-full lg:auto-rows-fr')}>
         <ZoneActions compact={variant === 'strip'} showPhoneNumber={showPhoneNumber} />
       </div>
     </section>
