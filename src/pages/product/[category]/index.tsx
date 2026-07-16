@@ -530,9 +530,12 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                     <div className="space-y-2">
                       {/* Main Image Slider */}
                       <div className="relative group">
-                        {/* T28.2 — responsive ratio box (CSS aspect-ratio reserves the space → CLS 0):
-                            1:1 on mobile, 16:9 from tablet up; this box sets the hero row height. */}
-                        <div className="aspect-square md:aspect-video bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
+                        {/* T28.2 — 1:1 ratio box at ALL breakpoints (square product assets render
+                            uncropped; CSS aspect-ratio reserves the space → CLS 0). The gallery
+                            column (image + thumbnails) sets the hero row height — no forced ratio
+                            on the section itself. max-h clamp keeps the hero on one screen for
+                            short laptops; both constraints are viewport-deterministic (CLS-safe). */}
+                        <div className="aspect-square max-h-[calc(100vh-280px)] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
                           {transformedProduct.featured_image && transformedProduct.featured_image !== '/placeholder.svg' ? (
                             <Image 
                               src={images[selectedImageIndex]?.src || transformedProduct.featured_image}
