@@ -340,7 +340,7 @@ export default function PolycarbonateRoofingSheetPage() {
           </nav>
 
           <ProductSummaryLayout
-            rail={<RelatedProductRail items={relatedRail} currentHref="/product/roofing-sheet/polycarbonate-roofing-sheet" scroll />}
+            rail={<RelatedProductRail items={relatedRail} currentHref="/product/roofing-sheet/polycarbonate-roofing-sheet" className="lg:h-auto lg:min-h-full" scroll />}
             gallery={
               <>
               <div className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm">

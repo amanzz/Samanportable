@@ -28,6 +28,7 @@ import ProductStructuredData from '../../../components/ProductStructuredData';
 import ManufacturerTrustStrip from '../../../components/ManufacturerTrustStrip';
 import RelatedProductRail from '../../../components/product/RelatedProductRail';
 import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
+import ProductSummaryLayout from '../../../components/product/ProductSummaryLayout';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
@@ -424,24 +425,32 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   exactly: Home › Products › {Cluster} › {Product}. */}
               <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-                {/* Left Sidebar - Related Products (Desktop Only) */}
-                <div className="hidden lg:block lg:col-span-3">
+              {/* T28 — contained 3-column equal-height hero (summary 35 / gallery 40 /
+                  related 25). ProductSummaryLayout is the single layout source shared
+                  with the bespoke product pages: the gallery column establishes the row
+                  height; the summary and related columns are height-contained and scroll
+                  internally, so the rail can never bleed over the sections below. */}
+              <ProductSummaryLayout
+                variant="summary-first"
+                rail={
                   <RelatedProductRail
                     items={relatedRailItems}
                     currentHref={`/product/${category}/${slug}`}
-                    className="h-fit max-h-[80vh] bg-white/80 shadow-lg"
+                    className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
                     scroll
                   />
-                </div>
-
-                {/* Middle Section - Product Images */}
-                <div className="lg:col-span-5">
-                  <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-                    <div className="space-y-2">
+                }
+                gallery={
+                  <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm lg:h-full lg:flex lg:flex-col">
+                    <div className="space-y-2 lg:flex lg:flex-1 lg:flex-col">
                       {/* Main Image Slider */}
                       <div className="relative group">
-                        <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
+                        {/* T28 — 1:1 ratio box at ALL breakpoints (square product assets render
+                            uncropped; CSS aspect-ratio reserves the space → CLS 0). The gallery
+                            column (image + thumbnails) sets the hero row height — no forced ratio
+                            on the section itself. max-h clamp keeps the hero on one screen for
+                            short laptops; both constraints are viewport-deterministic (CLS-safe). */}
+                        <div className="aspect-square max-h-[calc(100vh-280px)] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
                           {transformedProduct.featured_image && transformedProduct.featured_image !== '/placeholder.svg' ? (
                             <Image 
                               src={images[selectedImageIndex]?.src || transformedProduct.featured_image}
@@ -454,7 +463,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                               fetchPriority="high"
                               placeholder="blur"
                               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              sizes="(max-width: 1023px) 100vw, 40vw"
                               quality={85}
                               onError={(e) => {
                                 e.currentTarget.src = `https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;
@@ -537,10 +546,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                         </div>
                       )}
 
-                      <div className="-mx-2 pt-1 md:pt-3">
-                        <ProductZoneCtas variant="strip" className="w-full" />
-                      </div>
-                      
                       {/* Dynamic Buttons from Short Description */}
                       {isHydrated && shortDescriptionButtons.length > 0 && (
                         <div className="flex gap-3 mt-4">
@@ -561,13 +566,19 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           ))}
                         </div>
                       )}
+
+                      {/* T28.4 — zone-contact CTAs live in the GALLERY column, under the
+                          thumbnails, as the LAST row; lg flex-1 stretches the two zone
+                          cards equally to absorb remaining column space so the gallery
+                          bottom edge meets the other two columns. Markup verbatim. */}
+                      <div className="-mx-2 pt-1 md:pt-3 lg:flex lg:flex-1">
+                        <ProductZoneCtas variant="strip" className="w-full" stretch />
+                      </div>
                     </div>
                   </Card>
-                </div>
-
-                {/* Right Section - Product Details */}
-                <div className="lg:col-span-4">
-                  <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
+                }
+                description={
+                  <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:min-h-full">
                     <div className="space-y-4">
                       
                       {/* Title and Price */}
@@ -668,14 +679,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           </div>
                         </div>
                       </div>
+
                     </div>
                   </Card>
-                </div>
-
-                <div className="lg:hidden">
+                }
+                mobileRail={
                   <RelatedProductRail items={relatedRailItems} currentHref={`/product/${category}/${slug}`} />
-                </div>
-              </div>
+                }
+              />
 
               {/* Product Tabs */}
               <div className="mt-4">

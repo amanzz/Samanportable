@@ -330,8 +330,13 @@ export default function MetalRoofingSheetPage() {
           </nav>
 
           <div className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)_420px]">
-            <aside className="order-3 hidden lg:order-none lg:block">
-              <RelatedProductRail items={relatedRail} currentHref="/product/roofing-sheet/metal-roofing-sheet" scroll />
+            {/* T28.5 v2 — universal height rule: the gallery column's natural height
+                drives the hero row; the rail is contained to it and scrolls
+                internally on overflow. */}
+            <aside className="order-3 hidden lg:relative lg:order-none lg:block lg:min-h-0">
+              <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
+                <RelatedProductRail items={relatedRail} currentHref="/product/roofing-sheet/metal-roofing-sheet" className="lg:h-auto lg:min-h-full" scroll />
+              </div>
             </aside>
 
             <div className="order-1 lg:order-none">
@@ -372,7 +377,10 @@ export default function MetalRoofingSheetPage() {
               </div>
             </div>
 
-            <div className="order-2 flex flex-col justify-start lg:order-none">
+            <div className="order-2 flex flex-col justify-start lg:order-none lg:relative lg:min-h-0">
+              {/* T28.5 v2 — description contained to the gallery-driven row height;
+                  scrolls in-column when longer (visible thin scrollbar). */}
+              <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
               <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
                 <div className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-800">
                   <Factory className="h-4 w-4" />
@@ -397,6 +405,7 @@ export default function MetalRoofingSheetPage() {
                 <div className="mt-5 rounded-lg bg-slate-50 p-4 text-sm text-slate-700">
                   <span className="font-semibold text-slate-950">SKU:</span> SP-C17-MRS-SUB-2026
                 </div>
+              </div>
               </div>
             </div>
 
