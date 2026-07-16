@@ -554,7 +554,7 @@ export default function WallSheetPage({
           </nav>
 
           <ProductSummaryLayout
-            rail={<RelatedProductRail items={relatedRail} currentHref="/product/wall-sheet" scroll />}
+            rail={<RelatedProductRail items={relatedRail} currentHref="/product/wall-sheet" className="lg:h-auto lg:min-h-full" scroll />}
             gallery={
               <div className="h-full rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
                 <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-slate-100">

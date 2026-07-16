@@ -56,17 +56,22 @@ const ProductSummaryLayout = ({ rail, gallery, description, mobileRail, variant 
     );
   }
 
-  // 'rail-left' — pre-T28 bespoke layout, byte-exact.
+  // 'rail-left' — bespoke layout: column arrangement, widths (240/1fr/420),
+  // gallery internals and copy unchanged. T28.5 v2 (owner ruling — universal
+  // height rule) adds ONLY the visible thin scrollbar to the two containment
+  // wrappers this layout already had: the gallery column's natural height
+  // drives the row; rail + description are contained to it and auto-scroll
+  // on overflow (.t28-rail-scroll).
   return (
     <div className="grid items-stretch gap-6 lg:grid-cols-[240px_minmax(0,1fr)_420px]">
       <aside className="order-3 hidden lg:relative lg:order-none lg:block lg:min-h-0">
-        <div className="lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{rail}</div>
+        <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{rail}</div>
       </aside>
 
       <div className="order-1 min-w-0 lg:order-none">{gallery}</div>
 
       <div className="order-2 lg:relative lg:order-none lg:min-h-0">
-        <div className="lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain lg:pr-2">{description}</div>
+        <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain lg:pr-2">{description}</div>
       </div>
 
       <div className="order-3 lg:hidden">{mobileRail}</div>

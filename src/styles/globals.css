@@ -20,8 +20,9 @@
     overflow-y: auto;
   }
 
-  /* T28.4 — visible thin scrollbar on the related-products rail wrapper
-     (generic product surfaces only; theme tokens, no raw hex). */
+  /* T28.4/T28.5v2 — visible thin scrollbar on contained hero side-columns
+     (related rail + description, every product hero surface; theme tokens,
+     no raw hex). */
   .t28-rail-scroll {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--primary) / 0.45) hsl(var(--muted));

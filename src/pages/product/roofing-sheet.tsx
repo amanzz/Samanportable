@@ -353,8 +353,13 @@ export default function RoofingSheetPage() {
 
         <section className="bg-white">
           <div className="mx-auto grid max-w-7xl gap-5 px-4 py-8 sm:px-6 lg:grid-cols-[260px_minmax(0,1fr)_minmax(360px,0.95fr)] lg:px-8">
-            <aside className="hidden lg:block">
-              <RelatedProductRail items={relatedRail} className="sticky top-24" />
+            {/* T28.5 v2 — universal height rule: the gallery column's natural height
+                (image card + caption + quotation CTA block) drives the hero row; the
+                rail is contained to it and scrolls internally on overflow. */}
+            <aside className="hidden lg:relative lg:block lg:min-h-0">
+              <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
+                <RelatedProductRail items={relatedRail} className="lg:h-auto lg:min-h-full" />
+              </div>
             </aside>
 
             <div className="order-1 lg:order-none">
@@ -384,7 +389,10 @@ export default function RoofingSheetPage() {
               </div>
             </div>
 
-            <div className="order-2 flex flex-col justify-start lg:order-none">
+            <div className="order-2 flex flex-col justify-start lg:order-none lg:relative lg:min-h-0">
+              {/* T28.5 v2 — the long description is contained to the gallery-driven
+                  row height and scrolls IN its column (visible thin scrollbar). */}
+              <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
               <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
                 <div className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-800">
                   <Factory className="h-4 w-4" />
@@ -437,6 +445,7 @@ export default function RoofingSheetPage() {
                 <div className="mt-5 rounded-lg bg-slate-50 p-4 text-sm text-slate-700">
                   <span className="font-semibold text-slate-950">SKU:</span> SP-C17-RFS-HUB-2026
                 </div>
+              </div>
               </div>
             </div>
 
