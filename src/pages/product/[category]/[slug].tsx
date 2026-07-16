@@ -431,6 +431,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   height; the summary and related columns are height-contained and scroll
                   internally, so the rail can never bleed over the sections below. */}
               <ProductSummaryLayout
+                variant="summary-first"
                 rail={
                   <RelatedProductRail
                     items={relatedRailItems}
