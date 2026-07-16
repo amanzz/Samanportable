@@ -23,16 +23,16 @@ type ProductSummaryLayoutProps = {
 
 const ProductSummaryLayout = ({ rail, gallery, description, mobileRail, variant = 'rail-left' }: ProductSummaryLayoutProps) => {
   if (variant === 'summary-first') {
-    // T28 Amendment 4 (FINAL) — generic product surfaces.
+    // T28 Amendment 5 — generic product surfaces.
     // Desktop lg+: RELATED 25fr LEFT · GALLERY 40fr CENTER · SUMMARY 35fr RIGHT,
     // one grid row, items-stretch → all three columns share ONE bottom edge:
-    //   · summary flows naturally (NO inner scroll) and drives the row height
-    //     in the common case;
-    //   · gallery is a flex-col whose zone-CTA row stretches (flex-1) to absorb
-    //     any remaining space, so its bottom edge always meets the row bottom;
-    //   · related contributes nothing to row height — its card list lives in an
-    //     absolute-inset overflow-y-auto wrapper (visible thin scrollbar via
-    //     .t28-rail-scroll) and scrolls internally when cards exceed the row.
+    //   · the GALLERY column's natural height (1:1 image + thumbnails +
+    //     stretched zone-CTA row) is the SOLE row-height driver;
+    //   · related and summary contribute nothing to row height — each is a
+    //     full-height shell whose content lives in an absolute-inset
+    //     overflow-y-auto wrapper with the same visible thin scrollbar
+    //     (.t28-rail-scroll), scrolling internally on overflow; short content
+    //     still fills the row (inner cards carry lg:min-h-full).
     // Below lg: single column in plain DOM order — gallery (image → thumbnails
     // → zone contacts) → summary → related LAST — natural heights, no nested
     // scroll boxes (all containment classes are lg-prefixed).
@@ -43,11 +43,13 @@ const ProductSummaryLayout = ({ rail, gallery, description, mobileRail, variant 
           <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{rail}</div>
         </aside>
 
-        {/* Column 2 (40fr) — image gallery; zone CTAs stretch to the row bottom */}
+        {/* Column 2 (40fr) — image gallery; natural height drives the row */}
         <div className="min-w-0">{gallery}</div>
 
-        {/* Column 3 (35fr) — summary; natural flow, drives the row height */}
-        <div className="min-w-0">{description}</div>
+        {/* Column 3 (35fr) — summary; contained, scrolls internally */}
+        <div className="min-w-0 lg:relative lg:min-h-0">
+          <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{description}</div>
+        </div>
 
         <div className="lg:hidden">{mobileRail}</div>
       </div>
