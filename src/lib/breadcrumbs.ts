@@ -122,6 +122,7 @@ const CLUSTER_OVERRIDES: Readonly<Record<string, string>> = Object.freeze({
   'low-cost-modular-office-solutions': 'portable-office',
   'portable-classroom-for-sale-2': 'prefab-buildings',
   'prefab-homes-mumbai': 'prefabricated-houses',
+  'temporary-garden-shed': 'prefab-buildings',
   'top-rated-portable-cabin-supplier-delhi': 'portable-cabin',
 });
 
