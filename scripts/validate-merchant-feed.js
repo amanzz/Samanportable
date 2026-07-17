@@ -8,7 +8,8 @@ const REPORT_DATE = process.env.REPORT_DATE || new Date().toISOString().slice(0,
 const REPORT_DIR = path.join(ROOT, 'reports');
 const REPORT_MD = path.join(REPORT_DIR, `google-merchant-feed-validation-${REPORT_DATE}.md`);
 
-const EXPECTED_PRODUCT_COUNT = 163;
+// 168 catalogue items + 9 porta-cabin variant items (PACKET-C) = 177.
+const EXPECTED_PRODUCT_COUNT = 177;
 const EXCLUDED_IDS = new Set(['990018', '900010']);
 const FORBIDDEN_SHIPPING_FIELDS = [
   'shipping_weight',
@@ -64,10 +65,11 @@ function parseItems(xml) {
 function validate() {
   registerTsLoader();
 
-  const { getAllProductsForFeed } = require(path.join(ROOT, 'src', 'lib', 'staticContent.ts'));
-  const { generateGoogleMerchantXml } = require(path.join(ROOT, 'src', 'lib', 'merchantFeed.ts'));
+  const { getAllProductsForFeed, getPortaCabinVariantData } = require(path.join(ROOT, 'src', 'lib', 'staticContent.ts'));
+  const { generateGoogleMerchantXml, buildPortaCabinVariantItems, MERCHANT_BASE_URL } = require(path.join(ROOT, 'src', 'lib', 'merchantFeed.ts'));
 
-  const xml = generateGoogleMerchantXml(getAllProductsForFeed());
+  const variantItems = buildPortaCabinVariantItems(getPortaCabinVariantData());
+  const xml = generateGoogleMerchantXml(getAllProductsForFeed(), MERCHANT_BASE_URL, variantItems);
   const items = parseItems(xml);
   const errors = [];
   const warnings = [];
