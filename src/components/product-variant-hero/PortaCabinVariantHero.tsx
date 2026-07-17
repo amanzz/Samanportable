@@ -376,16 +376,25 @@ export function PortaCabinVariantHero({
     // this subtree — the same self-sufficient pattern Header.tsx uses for global
     // chrome outside PageShell. Hex lives only in ds/tokens.ts (T0 law).
     <section ref={heroRef} className="mb-4 scroll-mt-20" data-ds-root="">
-      {/* DS color tokens + the single-tree layout grid. Layout CSS only (no hex)
-          — grid-template-areas render the hero ONCE and place it responsively, so
-          nothing double-mounts (V5 root-cause fix: the old hidden-lg / lg:hidden
-          dual tree rendered the gallery, buy box and rail twice). Desktop: one row
-          rail|gallery|buybox (25/40/35) + full-width explorer below. Mobile: a
-          single column gallery → buybox → explorer → rail. */}
+      {/* DS color tokens + the single-tree layout. Layout CSS only (no hex). The
+          hero mounts ONCE (V5 fix: the old hidden-lg / lg:hidden dual tree rendered
+          gallery, buy box and rail twice). Source order is gallery → buy box →
+          explorer → rail.
+          MOBILE (<1024): plain BLOCK FLOW — the source order IS the visual order,
+          and, crucially, the browser can lay out and paint the gallery (the LCP
+          hero) FIRST, independently of the content-heavy buy box below it. H2 wrapped
+          all four in ONE grid formatting context; a grid resolves its whole track
+          layout (gallery + buy box) before first paint, which pushed the mobile LCP
+          ~0.4s later than the baseline's block-flow mobile tree (the H2 regression).
+          Block flow restores the baseline paint order at one mount.
+          DESKTOP (>=1024): grid-template-areas repositions the rail (4th in source)
+          into column 1 — rail|gallery|buybox 25/40/35, explorer full-width below,
+          equal bottom edges (align-items:stretch). Visuals identical at every
+          breakpoint; only the mobile formatting context changes. */}
       <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}`
-        + `.pc-hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;grid-template-areas:"gallery" "buybox" "explorer" "rail";}`
-        + `.pc-hero-grid>.pc-rail{grid-area:rail;}.pc-hero-grid>.pc-gallery{grid-area:gallery;min-width:0;}.pc-hero-grid>.pc-buybox{grid-area:buybox;min-width:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;min-width:0;}`
-        + `@media(min-width:1024px){.pc-hero-grid{grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "explorer explorer explorer";}}` } } />
+        + `.pc-hero-grid{display:block;}`
+        + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
+        + `@media(min-width:1024px){.pc-hero-grid{display:grid;grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "explorer explorer explorer";}.pc-hero-grid>.pc-rail{grid-area:rail;margin-top:0;}.pc-hero-grid>.pc-gallery{grid-area:gallery;}.pc-hero-grid>.pc-buybox{grid-area:buybox;margin-top:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;margin-top:0;}}` } } />
 
       {/* SINGLE responsive tree (V5 fix). Every piece — rail, gallery, buy box,
           explorer — is mounted EXACTLY ONCE; grid-template-areas (see <style>)
@@ -394,20 +403,9 @@ export function PortaCabinVariantHero({
           explorer→rail. The buy box renders the sole H1. Rail (chrome) now renders
           once, not twice → related thumbnails satisfy the "one render each" gate. */}
       <div className="pc-hero-grid">
-        {/* Rail — desktop left column (internally-scrolling T28 shell); mobile it
-            flows full-width, LAST. One instance only. */}
-        <aside className="pc-rail lg:relative lg:min-h-0">
-          <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
-            <RelatedProductRail
-              items={railItems}
-              currentHref={currentHref}
-              className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
-              scroll
-            />
-          </div>
-        </aside>
-
-        {/* Gallery — its natural height drives the desktop row height. */}
+        {/* Gallery FIRST in source — on mobile (block flow) this makes the LCP hero
+            image the first laid-out/painted element; its natural height drives the
+            desktop row height. */}
         <div className="pc-gallery">{galleryColumn}</div>
 
         {/* Buy box — the ONLY H1 on the page. Internally-scrolling T28 shell on
@@ -429,6 +427,21 @@ export function PortaCabinVariantHero({
             onGetQuote={openQuote}
           />
         </div>
+
+        {/* Related rail — LAST in source: on mobile (block flow) it lands at the
+            bottom, below the fold, so it never sits in the hero's paint path;
+            desktop grid-template-areas repositions it into column 1. One instance
+            only (V5). Real <a> links stay in SSR HTML (crawlable). */}
+        <aside className="pc-rail lg:relative lg:min-h-0">
+          <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
+            <RelatedProductRail
+              items={railItems}
+              currentHref={currentHref}
+              className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
+              scroll
+            />
+          </div>
+        </aside>
       </div>
 
       {/* Mobile sticky buy bar — sits above the site-wide MobileBottomNav (h-16),
