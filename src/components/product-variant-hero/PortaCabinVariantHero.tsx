@@ -208,7 +208,13 @@ export function PortaCabinVariantHero({
                 onClick={() => setActiveImageIndex(i)}
                 aria-label={`Show image ${i + 1} of ${heroActive.label} porta cabin`}
               >
-                <Image src={img.src} alt={img.alt} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                {/* The thumbnail whose photo is currently enlarged in the main
+                    viewer is decorative (alt="") — the main <img> already carries
+                    that shot's descriptive alt, so this avoids the same alt/photo
+                    reading twice on the page (V5). The other four keep their unique
+                    per-shot alts and stay crawlable. The button's aria-label names
+                    the control either way. */}
+                <Image src={img.src} alt={i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
               </button>
             ))}
           </div>
@@ -296,12 +302,15 @@ export function PortaCabinVariantHero({
           <p className="text-xs text-muted-foreground">{formatIndianPrice(heroActive.priceInclGst)} incl. 18% GST</p>
         </div>
 
-        {/* Per-size shortDescription (Fable 5 Section E v2 — shortened) in the
-            fixed 3-line/63px slot (14px / 1.5). The v2 blurbs (≤118 chars) fit
-            3 lines at 1024+ with zero truncation; the fixed height keeps per-size
-            swaps zero-CLS. */}
+        {/* Per-size shortDescription (Section E v2.1). Per-breakpoint FIXED heights
+            (14px / 1.5 → 21px line): each sized to the TALLEST of the 9 blurbs at
+            that tier's narrowest width, measured on the production build —
+            <360:6L(126) · 360:5L(105) · 640:3L(63) · 768:2L(42) · 1024:5L(105) ·
+            1280+:4L(84). All 9 share one height per tier, so size swaps are zero-CLS;
+            every blurb fits with no truncation at 360/768/1024/1440. overflow-hidden
+            is a safety net only (nothing is actually clipped at any width ≥320). */}
         {heroActive.shortDescription && (
-          <p className="h-[63px] overflow-hidden text-sm leading-[1.5] text-[var(--ds-color-steel)]">
+          <p className="h-[126px] min-[360px]:h-[105px] sm:h-[63px] md:h-[42px] lg:h-[105px] xl:h-[84px] overflow-hidden text-sm leading-[1.5] text-[var(--ds-color-steel)]">
             {heroActive.shortDescription}
           </p>
         )}
@@ -367,13 +376,27 @@ export function PortaCabinVariantHero({
     // this subtree — the same self-sufficient pattern Header.tsx uses for global
     // chrome outside PageShell. Hex lives only in ds/tokens.ts (T0 law).
     <section ref={heroRef} className="mb-4 scroll-mt-20" data-ds-root="">
-      <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}` }} />
+      {/* DS color tokens + the single-tree layout grid. Layout CSS only (no hex)
+          — grid-template-areas render the hero ONCE and place it responsively, so
+          nothing double-mounts (V5 root-cause fix: the old hidden-lg / lg:hidden
+          dual tree rendered the gallery, buy box and rail twice). Desktop: one row
+          rail|gallery|buybox (25/40/35) + full-width explorer below. Mobile: a
+          single column gallery → buybox → explorer → rail. */}
+      <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}`
+        + `.pc-hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;grid-template-areas:"gallery" "buybox" "explorer" "rail";}`
+        + `.pc-hero-grid>.pc-rail{grid-area:rail;}.pc-hero-grid>.pc-gallery{grid-area:gallery;min-width:0;}.pc-hero-grid>.pc-buybox{grid-area:buybox;min-width:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;min-width:0;}`
+        + `@media(min-width:1024px){.pc-hero-grid{grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "explorer explorer explorer";}}` } } />
 
-      {/* Desktop >=1024: 25/40/35, one row, equal bottom edges. Gallery column's
-          natural height is the SOLE row-height driver; rail + buy box live in
-          absolute-inset internally-scrolling shells (T28.5 universal rule). */}
-      <div className="hidden lg:grid items-stretch gap-6 lg:grid-cols-[minmax(0,25fr)_minmax(0,40fr)_minmax(0,35fr)]">
-        <aside className="lg:relative lg:min-h-0">
+      {/* SINGLE responsive tree (V5 fix). Every piece — rail, gallery, buy box,
+          explorer — is mounted EXACTLY ONCE; grid-template-areas (see <style>)
+          place them: desktop one row rail|gallery|buybox (25/40/35) with the
+          explorer full-width below; mobile a single column gallery→buybox→
+          explorer→rail. The buy box renders the sole H1. Rail (chrome) now renders
+          once, not twice → related thumbnails satisfy the "one render each" gate. */}
+      <div className="pc-hero-grid">
+        {/* Rail — desktop left column (internally-scrolling T28 shell); mobile it
+            flows full-width, LAST. One instance only. */}
+        <aside className="pc-rail lg:relative lg:min-h-0">
           <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
             <RelatedProductRail
               items={railItems}
@@ -384,36 +407,28 @@ export function PortaCabinVariantHero({
           </div>
         </aside>
 
-        <div className="min-w-0">{galleryColumn}</div>
+        {/* Gallery — its natural height drives the desktop row height. */}
+        <div className="pc-gallery">{galleryColumn}</div>
 
-        <div className="min-w-0 lg:relative lg:min-h-0">
-          <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{buyBoxColumn('p')}</div>
+        {/* Buy box — the ONLY H1 on the page. Internally-scrolling T28 shell on
+            desktop; normal flow on mobile. */}
+        <div className="pc-buybox lg:relative lg:min-h-0">
+          <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{buyBoxColumn('h1')}</div>
         </div>
-      </div>
 
-      {/* Mobile <1024 (stacked): image/thumbs/zone-contacts/download -> buy-box
-          info -> compare cards (below) -> related rail LAST (after the table). */}
-      <div className="lg:hidden space-y-4">
-        {galleryColumn}
-        {buyBoxColumn('h1')}
-      </div>
-
-      {/* Size Applications Explorer — directly under the hero. Same design
-          language as the homepage PopularSizes tabs (leaf-underline tab strip,
-          image-left / details-right panels, var(--ds-*) tokens). DECOUPLED from
-          the hero: its own explorerIndex + #sizedetails-* hash. All 9 panels ship
-          in SSR (inactive = visibility:hidden, crawlable); grid-stack → zero CLS. */}
-      <SizeApplicationsExplorer
-        data={data}
-        sectionId={APPLICATIONS_SECTION_ID}
-        activeIndex={explorerIndex}
-        onSelectTab={selectExplorer}
-        onGetQuote={openQuote}
-      />
-
-      {/* Related products — mobile position: LAST, after the explorer. */}
-      <div className="lg:hidden mt-4">
-        <RelatedProductRail items={railItems} currentHref={currentHref} />
+        {/* Size Applications Explorer — full-width row below on desktop, third on
+            mobile. DECOUPLED from the hero (own explorerIndex + #sizedetails-*).
+            Only the ACTIVE panel renders its <img> (P1/V7); every panel's text
+            ships in SSR (crawlable); grid-stack → zero CLS. */}
+        <div className="pc-explorer">
+          <SizeApplicationsExplorer
+            data={data}
+            sectionId={APPLICATIONS_SECTION_ID}
+            activeIndex={explorerIndex}
+            onSelectTab={selectExplorer}
+            onGetQuote={openQuote}
+          />
+        </div>
       </div>
 
       {/* Mobile sticky buy bar — sits above the site-wide MobileBottomNav (h-16),
@@ -466,7 +481,7 @@ function SizeApplicationsExplorer({ data, sectionId, activeIndex, onSelectTab, o
   const panelBySlug = new Map(APPLICATIONS.panels.map((p) => [p.sizeSlug, p]));
 
   return (
-    <section id={sectionId} className="mt-8 scroll-mt-20" aria-labelledby="size-applications-heading">
+    <section id={sectionId} className="scroll-mt-20" aria-labelledby="size-applications-heading">
       <div className="mb-4">
         <h2 id="size-applications-heading" className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
           {APPLICATIONS.h2}
@@ -534,24 +549,28 @@ function SizeApplicationsExplorer({ data, sectionId, activeIndex, onSelectTab, o
                 i === activeIndex ? 'visible' : 'invisible pointer-events-none'
               )}
             >
-              {/* LEFT — that size's elevated-view photo (or placeholder for 40x8).
-                  The aspect-[4/3] box always reserves space (zero CLS, grid-stack),
-                  but the <img> of INACTIVE panels carries `hidden` (display:none) so
-                  its lazy fetch is skipped — only the active panel's image downloads
-                  (P1 R3). All 9 stay in SSR HTML (crawlable); the newly-active panel
-                  fetches its image on demand when selected. */}
+              {/* LEFT — that size's elevated-view photo (or the honest placeholder
+                  when a size has no photos). The aspect-[4/3] box always reserves
+                  space (zero CLS, grid-stack). V7: only the ACTIVE panel renders an
+                  <img>, so INACTIVE panels issue ZERO network requests at initial
+                  load (display:none alone would still fetch). Every panel's TEXT
+                  ships in SSR (crawlable); the newly-active panel mounts and fetches
+                  its image on demand when the tab is selected — into the already
+                  reserved box, so activation is zero-CLS. */}
               <div className="lg:w-[44%]">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
                   {panelImage ? (
-                    <Image
-                      src={panelImage.src}
-                      alt={panelImage.alt}
-                      fill
-                      className={cn('object-cover', i !== activeIndex && 'hidden')}
-                      sizes="(max-width: 1023px) 100vw, 500px"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    i === activeIndex ? (
+                      <Image
+                        src={panelImage.src}
+                        alt={panelImage.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1023px) 100vw, 500px"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : null
                   ) : (
                     <div className="flex h-full w-full items-center justify-center p-4 text-center">
                       <p className="text-sm text-[var(--ds-color-steel)]">

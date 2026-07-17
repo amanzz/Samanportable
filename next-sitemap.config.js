@@ -140,6 +140,45 @@ const WC_BASE = (process.env.WORDPRESS_API_URL || 'https://blog.samanportable.co
 const WC_KEY = process.env.WORDPRESS_CONSUMER_KEY || '';
 const WC_SECRET = process.env.WORDPRESS_CONSUMER_SECRET || '';
 
+// ── Deterministic lastmod (SHIKHAR T24.1 / V8) ───────────────────────────────
+// Sitemap <lastmod> must be DETERMINISTIC so two consecutive builds of the same
+// commit emit a byte-identical sitemap.xml (no dirty git tree). Product/post URLs
+// already derive lastmod from their own content date (date_modified). For the
+// remaining URLs — home, static hubs, category archives — we previously used
+// `new Date().toISOString()` (BUILD TIME), which changed every build. Instead,
+// derive ONE site-wide value from content data: the most recent content-modified
+// timestamp across the static wp-export. Same content in → same value out, with
+// no dependency on the wall-clock, git, or the environment.
+const STATIC_LASTMOD = (() => {
+  const fs = require('fs');
+  const path = require('path');
+  const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
+  let maxMs = 0;
+  for (const sub of ['products', 'posts']) {
+    const dir = path.join(EXPORT_DIR, sub);
+    let files = [];
+    try {
+      files = fs.readdirSync(dir);
+    } catch {
+      continue;
+    }
+    for (const f of files) {
+      if (!f.endsWith('.json')) continue;
+      let o;
+      try {
+        o = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf-8'));
+      } catch {
+        continue;
+      }
+      const stamp = o.date_modified || o.modified || o.date_created || o.date;
+      const ms = stamp ? new Date(stamp).getTime() : 0;
+      if (Number.isFinite(ms) && ms > maxMs) maxMs = ms;
+    }
+  }
+  // new Date(<fixed content timestamp>) is deterministic — NOT the wall clock.
+  return new Date(maxMs).toISOString();
+})();
+
 module.exports = {
   siteUrl: 'https://www.samanportable.com',
   generateRobotsTxt: true,
@@ -210,7 +249,7 @@ module.exports = {
           loc: `/product-category/${category.slug}`,
           changefreq: 'weekly',
           priority: 0.8,
-          lastmod: new Date().toISOString(),
+          lastmod: STATIC_LASTMOD,
         });
       }
     });
@@ -284,7 +323,7 @@ module.exports = {
         loc: path,
         changefreq: 'daily',
         priority: 1.0,
-        lastmod: new Date().toISOString(),
+        lastmod: STATIC_LASTMOD,
       };
     }
     
@@ -293,7 +332,7 @@ module.exports = {
         loc: path,
         changefreq: 'weekly',
         priority: 0.8,
-        lastmod: new Date().toISOString(),
+        lastmod: STATIC_LASTMOD,
       };
     }
     
@@ -302,7 +341,7 @@ module.exports = {
         loc: path,
         changefreq: 'weekly',
         priority: 0.8,
-        lastmod: new Date().toISOString(),
+        lastmod: STATIC_LASTMOD,
       };
     }
     
@@ -311,7 +350,7 @@ module.exports = {
         loc: path,
         changefreq: 'weekly',
         priority: 0.7,
-        lastmod: new Date().toISOString(),
+        lastmod: STATIC_LASTMOD,
       };
     }
     
@@ -320,7 +359,7 @@ module.exports = {
         loc: path,
         changefreq: 'weekly',
         priority: 0.7,
-        lastmod: new Date().toISOString(),
+        lastmod: STATIC_LASTMOD,
       };
     }
     
@@ -329,7 +368,7 @@ module.exports = {
       loc: path,
       changefreq: 'monthly',
       priority: 0.5,
-      lastmod: new Date().toISOString(),
+      lastmod: STATIC_LASTMOD,
     };
   },
 };
