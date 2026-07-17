@@ -169,11 +169,12 @@ export default function ProductStructuredData({ product, category, reviews, brea
   );
 
   // T24.1 — porta-cabins variant hero: ONE ProductGroup replaces the single Product
-  // node, with a hasVariant Product entry per size (name/sku/image/offers.price from
-  // data/products/porta-cabins.json — the SAME data the buy box and compare table
-  // render, so schema/page price parity is guaranteed by construction).
-  // Amendment H (Google reviews charter — no reviews without real ones): the
-  // ProductGroup carries NO aggregateRating and NO review nodes. Nothing replaces them.
+  // node, with a hasVariant Product entry per size (name/sku/image from
+  // data/products/porta-cabins.json — the SAME data the buy box renders).
+  // Amendment G v2: offers.price is the INCL-GST figure (visible on-page per G1, so
+  // G6 holds), and the ProductGroup carries the aggregateRating + reviews computed
+  // from the 5 SAMAN-verified reviews only (ratingValue 4.6, ratingCount 5) — both
+  // visible on the page (hero badge + Reviews tab), so no fake/unbacked rating.
   const productGroupStructuredData = variantData ? {
     '@context': 'https://schema.org/',
     '@type': 'ProductGroup',
@@ -184,6 +185,8 @@ export default function ProductStructuredData({ product, category, reviews, brea
       name: 'Saman Portable'
     },
     variesBy: 'size',
+    ...(aggregateRatingStructuredData ? { aggregateRating: aggregateRatingStructuredData } : {}),
+    ...(reviewNodes.length > 0 ? { review: reviewNodes } : {}),
     hasVariant: variantData.variants.map((v) => ({
       '@type': 'Product',
       name: `${v.label.replace(/\s*ft$/i, '')} ft Porta Cabin`,
@@ -191,7 +194,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
       ...(v.images[0] ? { image: `${baseUrl}${v.images[0].src}` } : {}),
       offers: {
         '@type': 'Offer',
-        price: v.priceExGst,
+        price: v.priceInclGst,
         priceCurrency: 'INR',
         availability: 'https://schema.org/InStock',
         url: productUrl,

@@ -15,7 +15,7 @@ import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Check, Download } from 'lucide-react';
+import { Check, Download, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -54,9 +54,18 @@ const EnquiryDialog = dynamic(() => import('@/components/EnquiryDialog'), { ssr:
 interface PortaCabinVariantHeroProps {
   data: VariantProductData;
   productTitle: string;
+  averageRating: string;
+  ratingCount: number;
   railItems: RelatedRailItem[];
   currentHref: string;
 }
+
+// Star row for the review badge (Amendment G v2 — real rating: 4.6 from the 5
+// SAMAN-verified reviews only). Renders solely when ratingCount > 0.
+const renderStars = (rating: number) =>
+  Array.from({ length: 5 }, (_, i) => (
+    <Star key={i} className={`w-4 h-4 ${i < Math.round(rating) ? 'text-yellow-400 fill-yellow-400' : 'text-muted'}`} />
+  ));
 
 // Deep-linkable size fragments (L12-safe: hash only, NEVER query params — the
 // URL path/canonical/sitemap/schema stay identical, zero SEO surface change).
@@ -80,6 +89,8 @@ const PRICE_PER_SQFT: Record<string, string> = {
 export function PortaCabinVariantHero({
   data,
   productTitle,
+  averageRating,
+  ratingCount,
   railItems,
   currentHref,
 }: PortaCabinVariantHeroProps) {
@@ -239,8 +250,17 @@ export function PortaCabinVariantHero({
       <div className="space-y-3 lg:flex lg:flex-1 lg:flex-col">
         <div className="space-y-1">
           <Heading className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">{productTitle}</Heading>
-          {/* Amendment H: no star rating / review count on the page (Google
-              reviews charter — no reviews without real ones). */}
+          {/* Amendment G v2 — real rating badge: the computed 4.6 average of the 5
+              SAMAN-verified reviews only (ratingCount 5). Matches the JSON-LD
+              aggregateRating + the Reviews tab. Renders only when ratingCount > 0. */}
+          {ratingCount > 0 && (
+            <div className="flex items-center space-x-2 flex-wrap">
+              <div className="flex items-center space-x-1">{renderStars(parseFloat(averageRating) || 0)}</div>
+              <span className="text-sm text-muted-foreground">
+                {averageRating} ({ratingCount} {ratingCount === 1 ? 'review' : 'reviews'})
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="space-y-2">
@@ -265,12 +285,15 @@ export function PortaCabinVariantHero({
           </div>
         </div>
 
-        {/* Sub-label + price — fixed height so size swaps cause zero CLS. */}
-        <div className="min-h-[4.5rem]" aria-live="polite">
+        {/* Sub-label + price — fixed height so size swaps cause zero CLS.
+            Ex-GST stays prominent; the incl-GST line (G1) is a small muted line
+            below it. Both swap in place, constant height → no CLS. */}
+        <div className="min-h-[5.25rem]" aria-live="polite">
           <p className="text-sm text-muted-foreground">{heroActive.label} Porta Cabin</p>
           <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
             {formatIndianPrice(heroActive.priceExGst)} + GST
           </span>
+          <p className="text-xs text-muted-foreground">{formatIndianPrice(heroActive.priceInclGst)} incl. 18% GST</p>
         </div>
 
         {/* Per-size shortDescription (Fable 5 Section E v2 — shortened) in the

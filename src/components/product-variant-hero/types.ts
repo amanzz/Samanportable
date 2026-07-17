@@ -11,6 +11,9 @@ export interface ProductVariant {
   dims: string;
   areaSqft: number;
   priceExGst: number;
+  /** Incl-GST (18%) price — owner-supplied figure; = priceExGst × 1.18. Shown as
+      a muted line under the ex-GST price, and used for Merchant offers.price. */
+  priceInclGst: number;
   capacity: string;
   useCase: string;
   sku: string;

@@ -46,7 +46,8 @@
           "height": 1254
         }
       ],
-      "shortDescription": "Compact guard rooms, gate offices, ticket counters and kiosks — fits tight sites, often placed without a crane."
+      "shortDescription": "Compact guard rooms, gate offices, ticket counters and kiosks — fits tight sites, often placed without a crane.",
+      "priceInclGst": 162250
     },
     {
       "sizeSlug": "20x8",
@@ -89,7 +90,8 @@
           "height": 1254
         }
       ],
-      "shortDescription": "Only 8 ft wide — a full site office or secure store along boundary walls and road margins other cabins can't use."
+      "shortDescription": "Only 8 ft wide — a full site office or secure store along boundary walls and road margins other cabins can't use.",
+      "priceInclGst": 259600
     },
     {
       "sizeSlug": "20x10",
@@ -132,7 +134,8 @@
           "height": 1254
         }
       ],
-      "shortDescription": "Our most popular size — the standard site office for four to six people, chosen for project, sales and clinic use."
+      "shortDescription": "Our most popular size — the standard site office for four to six people, chosen for project, sales and clinic use.",
+      "priceInclGst": 295000
     },
     {
       "sizeSlug": "20x12",
@@ -175,7 +178,8 @@
           "height": 1254
         }
       ],
-      "shortDescription": "Two extra feet of width — room for a partitioned manager area beside open seating, without a longer unit."
+      "shortDescription": "Two extra feet of width — room for a partitioned manager area beside open seating, without a longer unit.",
+      "priceInclGst": 339840
     },
     {
       "sizeSlug": "30x10",
@@ -218,7 +222,8 @@
           "height": 1254
         }
       ],
-      "shortDescription": "A two-zone cabin: office at one end, meeting or records space at the other. Built for client-facing site teams."
+      "shortDescription": "A two-zone cabin: office at one end, meeting or records space at the other. Built for client-facing site teams.",
+      "priceInclGst": 424800
     },
     {
       "sizeSlug": "40x8",
@@ -261,7 +266,8 @@
           "height": 1254
         }
       ],
-      "shortDescription": "A long, linear layout for bunkhouses, rest rooms and in-line offices along walls, fences or platform edges."
+      "shortDescription": "A long, linear layout for bunkhouses, rest rooms and in-line offices along walls, fences or platform edges.",
+      "priceInclGst": 443680
     },
     {
       "sizeSlug": "20x20",
@@ -304,7 +310,8 @@
           "height": 1254
         }
       ],
-      "shortDescription": "A square twin-module with a wide-open floor — ideal for showrooms, training halls and site command rooms."
+      "shortDescription": "A square twin-module with a wide-open floor — ideal for showrooms, training halls and site command rooms.",
+      "priceInclGst": 554600
     },
     {
       "sizeSlug": "40x10",
@@ -347,7 +354,8 @@
           "height": 1254
         }
       ],
-      "shortDescription": "Our largest single-module floor — eight to ten staff or a full training room, craned into place as one unit."
+      "shortDescription": "Our largest single-module floor — eight to ten staff or a full training room, craned into place as one unit.",
+      "priceInclGst": 554600
     },
     {
       "sizeSlug": "40x12",
@@ -390,7 +398,8 @@
           "height": 1254
         }
       ],
-      "shortDescription": "The flagship: nearly 500 sq ft planned as reception, manager cabin and open work area under one roof."
+      "shortDescription": "The flagship: nearly 500 sq ft planned as reception, manager cabin and open work area under one roof.",
+      "priceInclGst": 651360
     }
   ]
 }

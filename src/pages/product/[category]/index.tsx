@@ -541,6 +541,8 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                 <PortaCabinVariantHero
                   data={variantData}
                   productTitle={transformedProduct.title}
+                  averageRating={product.average_rating}
+                  ratingCount={product.rating_count}
                   railItems={relatedRailItems}
                   currentHref={`/product/${category}`}
                 />
