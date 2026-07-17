@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,9 +10,12 @@ import { pushDataLayer, safeText } from '@/lib/analytics';
 interface EnquiryDialogProps {
   isOpen: boolean;
   onClose: () => void;
+  /** Optional message seed (e.g. the selected size). Additive & backward-compatible:
+      when the dialog opens it pre-fills the message field if the user hasn't typed. */
+  prefillMessage?: string;
 }
 
-const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose }) => {
+const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose, prefillMessage }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -23,6 +26,14 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose }) => {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  // Seed the message field with the selected size each time the dialog opens,
+  // unless the user has already typed something. Never overrides user input.
+  useEffect(() => {
+    if (isOpen && prefillMessage) {
+      setFormData(prev => (prev.message ? prev : { ...prev, message: prefillMessage }));
+    }
+  }, [isOpen, prefillMessage]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

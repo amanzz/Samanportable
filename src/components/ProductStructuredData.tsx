@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { WooCommerceProduct, ProductReview } from '@/config/api';
 import { generateStructuredDataDescription } from '@/utils/contentUtils';
+import type { VariantProductData } from '@/components/product-variant-hero/types';
 
 interface ProductStructuredDataProps {
   product: WooCommerceProduct;
@@ -14,9 +15,13 @@ interface ProductStructuredDataProps {
   // parity. Absolute `item` URLs. Falls back to the internal 4-node build when omitted
   // (backward compatible for any caller that does not pass it).
   breadcrumbItems?: Array<{ name: string; url: string }>;
+  // T24.1 — when provided (porta-cabins only), the single Product node is replaced
+  // by ONE ProductGroup with a hasVariant Product entry per size. Every other page
+  // (this prop omitted) keeps the existing single-Product schema, byte-for-byte.
+  variantData?: VariantProductData;
 }
 
-export default function ProductStructuredData({ product, category, reviews, breadcrumbItems }: ProductStructuredDataProps) {
+export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData }: ProductStructuredDataProps) {
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
@@ -162,10 +167,42 @@ export default function ProductStructuredData({ product, category, reviews, brea
     aggregateRatingStructuredData ||
     reviewNodes.length > 0
   );
+
+  // T24.1 — porta-cabins variant hero: ONE ProductGroup replaces the single Product
+  // node, with a hasVariant Product entry per size (name/sku/image/offers.price from
+  // data/products/porta-cabins.json — the SAME data the buy box and compare table
+  // render, so schema/page price parity is guaranteed by construction).
+  // Amendment H (Google reviews charter — no reviews without real ones): the
+  // ProductGroup carries NO aggregateRating and NO review nodes. Nothing replaces them.
+  const productGroupStructuredData = variantData ? {
+    '@context': 'https://schema.org/',
+    '@type': 'ProductGroup',
+    name: product.name,
+    url: productUrl,
+    brand: {
+      '@type': 'Brand',
+      name: 'Saman Portable'
+    },
+    variesBy: 'size',
+    hasVariant: variantData.variants.map((v) => ({
+      '@type': 'Product',
+      name: `${v.label.replace(/\s*ft$/i, '')} ft Porta Cabin`,
+      sku: v.sku,
+      ...(v.images[0] ? { image: `${baseUrl}${v.images[0].src}` } : {}),
+      offers: {
+        '@type': 'Offer',
+        price: v.priceExGst,
+        priceCurrency: 'INR',
+        availability: 'https://schema.org/InStock',
+        url: productUrl,
+      },
+    })),
+  } : null;
+
   // Generate structured data for Product only when it has real Product-snippet
   // evidence. Quote-only/unrated products must not emit an ineligible Product
   // node with no offers, aggregateRating, or review.
-  const productStructuredData = (hasProductRichResultEvidence || forceStandaloneQuoteProduct) ? {
+  const productStructuredData = productGroupStructuredData ? productGroupStructuredData : (hasProductRichResultEvidence || forceStandaloneQuoteProduct) ? {
     '@context': 'https://schema.org/',
     '@type': 'Product',
     ...(forceStandaloneQuoteProduct ? { '@id': `${productUrl}#product` } : {}),

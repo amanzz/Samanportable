@@ -33,6 +33,8 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
+import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
+import type { VariantProductData } from '../../../components/product-variant-hero/types';
 
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 
@@ -51,6 +53,10 @@ interface ProductDetailsProps {
   productImages?: Array<{ src: string; alt: string }>;
   rankMathSEO?: RankMathSEOData | null;
   reviews?: ProductReview[];
+  // T24.1 — present ONLY for products with a data/products/{slug}.json file (currently
+  // just porta-cabins). Renders the variant hero instead of ProductSummaryLayout.
+  // Every other category page gets `null` here and is completely unaffected.
+  variantData?: VariantProductData | null;
 }
 
 type PrefabricatedWarehouseLink = {
@@ -246,6 +252,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       };
     }
 
+    // T24.1 — variant hero data. Only porta-cabins ships a data/products/{slug}.json
+    // today; every other category resolves to null and renders exactly as before.
+    const variantData: VariantProductData | null = SAFE_PRODUCT_SLUG.test(category)
+      ? await import(`../../../data/products/${category}.json`)
+          .then((mod: { default?: VariantProductData }) => mod.default || null)
+          .catch(() => null)
+      : null;
+
     return {
       props: {
         product: {
@@ -286,6 +300,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         productImages: descriptionData?.images || [],
         rankMathSEO,
         reviews,
+        variantData,
       },
     };
   } catch (error) {
@@ -303,7 +318,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
   }
 };
 
-const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, reviews = [] }: ProductDetailsProps) => {
+const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, reviews = [], variantData = null }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -491,7 +506,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} />
+          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} />
 
           {/* FAQ Structured Data — sourced from RankMath, which mirrors the FAQ
               actually rendered in the product description below. No fake/templated FAQs. */}
@@ -515,6 +530,21 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   treatment to the generic [slug] template: summary 35 / gallery 40 /
                   related 25, gallery sets the row height, summary & rail height-contained
                   with internal scroll — the rail can never bleed over the tabs below. */}
+              {variantData ? (
+                /* T24.1 FINAL — porta-cabins variant hero: related rail 25 /
+                   gallery+zone-contacts 40 / info-only buy box 35 + 9-size
+                   compare table. Replaces the generic hero for this page only
+                   (data-driven; every other category is untouched). The rail
+                   renders INSIDE the hero (desktop col 1, mobile last), so the
+                   separate position-9 strip below is skipped for this page —
+                   the related cards appear exactly once. */
+                <PortaCabinVariantHero
+                  data={variantData}
+                  productTitle={transformedProduct.title}
+                  railItems={relatedRailItems}
+                  currentHref={`/product/${category}`}
+                />
+              ) : (
               <ProductSummaryLayout
                 variant="summary-first"
                 rail={
@@ -779,6 +809,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   <RelatedProductRail items={relatedRailItems} currentHref={`/product/${category}`} />
                 }
               />
+              )}
 
               {/* Product Tabs */}
               <div className="mt-4">
@@ -798,7 +829,12 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
 
               <RelatedPrefabricatedWarehouseResource category={category} />
 
-              {/* Related Products Section */}
+              {/* Related Products Section — SKIPPED for the variant-hero page
+                  (T24.1 FINAL: the related rail lives inside the hero — desktop
+                  column 1, mobile after the compare table — so these cards must
+                  appear exactly once). Every other category keeps the desktop-only
+                  slider unchanged. */}
+              {!variantData && (
               <div className="mt-4 hidden lg:block">
                 <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
                   <div className="space-y-4">
@@ -929,6 +965,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   </div>
                 </Card>
               </div>
+              )}
 
               {/* Cluster Hub Link */}
               <div className="mt-4 text-center">
