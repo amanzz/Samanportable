@@ -8,6 +8,9 @@ yarn-error.log*
 .next/
 out/
 
+# Local build/validation artifacts (T24.1)
+.screenshots/
+
 # Environment variables
 .env
 .env.local

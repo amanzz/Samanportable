@@ -1,0 +1,31 @@
+{
+  "$comment": "Core Web Vitals reference lockfile for the /product/porta-cabins route (L11 baseline). Written after T24.1 + P1 image loading + P2 investigation. Supersedes the missing cwv-lockfile-2026-07-16b.json. Future PRs touching this route diff against these values; block on: LCP +200ms, CLS >0.1, or Perf below the baseline.",
+  "date": "2026-07-17",
+  "commit": "9df82842",
+  "route": "/product/porta-cabins",
+  "measurement": {
+    "tool": "Lighthouse 13.4.0",
+    "build": "next build (production) + next start -p 3310, image optimizer cache warm",
+    "throttling": "Lighthouse default (mobile: simulated Slow 4G + 4x CPU; desktop: preset=desktop)"
+  },
+  "desktop": {
+    "performance": 99,
+    "lcp_ms": 881,
+    "cls": 0
+  },
+  "mobile": {
+    "performance": 86,
+    "lcp_ms": 4117,
+    "cls": 0,
+    "$comment": "Mobile Perf varies 74-86 across runs (Lighthouse variance + machine contention). Below the 95 target."
+  },
+  "firstLoadJs_kb": 175,
+  "pageSpecificJs_kb": 12.9,
+  "initialImageRequests_content": 8,
+  "notes": {
+    "lcp_element": "Default 20x10 hero <img> (SSR, fetchpriority=high, <link rel=preload>). LCP-discovery insight scores 1/1.",
+    "mobile_lcp_breakdown": "TTFB ~120ms + resource-load-delay ~11ms + resource-load-duration ~83ms + element-render-delay ~1072ms. The image loads optimally; the shortfall is element-render-delay = React hydration of the page DOM under 4x CPU throttle.",
+    "p2_finding": "Deferring the applications explorer's hydration entirely (ssr:false diagnostic) dropped render-delay only ~290ms (1072->782) and mobile stayed ~80 / LCP ~5s. The explorer is NOT the bottleneck. First Load JS is ~92% shared framework/main/_app/CSS (only 12.9kB is page code), so route-level code-splitting cannot materially reduce it.",
+    "path_to_mobile_95": "Requires deferring hydration of the whole below-fold + a lighter shared bundle: a lazy-hydration approach (new dependency, needs approval) and/or an _app/shared-chunk reduction effort that spans the whole site — outside a single-route image/code-split packet."
+  }
+}
