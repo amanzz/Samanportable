@@ -679,3 +679,10 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
 export function getAllProductsForFeed(): WooCommerceProduct[] {
   return getPublishedProducts().map(toFeedProduct);
 }
+
+// Porta-cabin variant group data (T24.1) — single source of truth for the nine
+// standard sizes/prices/images used by the product page AND the Merchant feed.
+// Read straight from disk (server-side only); null if the file is absent.
+export function getPortaCabinVariantData(): any | null {
+  return readJson(path.join(process.cwd(), 'src', 'data', 'products', 'porta-cabins.json'));
+}

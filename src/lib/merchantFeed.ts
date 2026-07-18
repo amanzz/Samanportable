@@ -59,11 +59,15 @@ export type MerchantProduct = {
   additional_image_link: string[];
   price: string;
   priceValue: number;
-  availability: 'in_stock' | 'out_of_stock' | 'preorder' | 'backorder';
+  // 'in stock' (with a space) is the value the porta-cabin variant group emits
+  // per PACKET-C §3; the 168 catalogue items keep the underscore form.
+  availability: 'in_stock' | 'out_of_stock' | 'preorder' | 'backorder' | 'in stock';
   condition: 'new';
   brand: typeof MERCHANT_BRAND_PORTABLE | typeof MERCHANT_BRAND_PREFAB;
   mpn?: string;
-  identifier_exists: 'no';
+  // 'false' is the value the porta-cabin variant group emits per PACKET-C §3
+  // (no GTIN/MPN); the 168 catalogue items keep 'no'.
+  identifier_exists: 'no' | 'false';
   product_type: string;
   google_product_category: string;
   shipping_label: string;
@@ -72,6 +76,8 @@ export type MerchantProduct = {
   custom_label_0: string;
   custom_label_1: string;
   custom_label_2: string;
+  // Present only on variant-group items (porta cabins); groups variants in Merchant.
+  item_group_id?: string;
 };
 
 export type SkippedMerchantProduct = {
@@ -401,6 +407,111 @@ export function buildMerchantProduct(product: ProductLike, baseUrl = MERCHANT_BA
   };
 }
 
+// ─── Porta-cabin variant group (PACKET-C) ─────────────────────────────────────
+// The nine standard porta-cabin sizes are emitted as ONE Merchant variant group
+// (shared g:item_group_id). Every value is transplanted from the single source of
+// truth src/data/products/porta-cabins.json (sizes, incl-GST prices, images,
+// Section-E copy) plus the fixed title/description copy specified verbatim in
+// PACKET-C §1–§3. The literal U+00D7 (multiplication sign), U+2013 (en dash) and
+// U+2014 (em dash) constants below emit those exact bytes, verified byte-for-byte
+// against the PACKET-C source.
+const PC_TIMES = '×'; // U+00D7 multiplication sign
+const PC_NDASH = '–'; // U+2013 en dash
+const PC_MDASH = '—'; // U+2014 em dash
+
+const PORTA_CABIN_VARIANT_DESCRIPTORS: Record<string, string> = {
+  '10x10': 'Guard Room & Gate Office',
+  '20x8': 'Narrow-Plot Site Office',
+  '20x10': 'Standard Site Office',
+  '20x12': 'Office with Manager Area',
+  '30x10': 'Office + Meeting Room',
+  '40x8': 'Linear Office & Bunkhouse',
+  '20x20': 'Open-Floor Twin Module',
+  '40x10': 'Large Site Office',
+  '40x12': 'Multi-Room Office Complex',
+};
+
+type PortaCabinVariant = {
+  sizeSlug?: string;
+  label?: string;
+  areaSqft?: number;
+  priceInclGst?: number;
+  shortDescription?: string;
+  sku?: string;
+  images?: Array<{ src?: string; alt?: string; width?: number | string; height?: number | string }>;
+};
+
+export type PortaCabinVariantData = {
+  variants?: PortaCabinVariant[];
+};
+
+function portaCabinVariantTitle(v: PortaCabinVariant): string {
+  const [length, width] = String(v.sizeSlug).split('x');
+  const descriptor = PORTA_CABIN_VARIANT_DESCRIPTORS[String(v.sizeSlug)] || '';
+  return `Porta Cabin ${length}${PC_TIMES}${width} ft (${v.areaSqft} sq ft) ${PC_NDASH} ${descriptor} | ${MERCHANT_BRAND_PORTABLE}`;
+}
+
+function portaCabinVariantDescription(v: PortaCabinVariant): string {
+  const [length, width] = String(v.sizeSlug).split('x');
+  const fixedBlock =
+    'Factory-built by SAMAN Portable on a welded MS frame with 1.2 mm corrugated steel walls, ' +
+    'insulated panels, pre-laminated interior, vinyl flooring and complete electricals. ' +
+    `Dimensions ${length}${PC_TIMES}${width}${PC_TIMES}8.5 ft. Delivered and installed across South and North India in ` +
+    `7${PC_NDASH}21 working days. Base specification price ${PC_MDASH} customisations quoted separately. ` +
+    '5-year structural warranty. GST-registered manufacturer, Bengaluru & Greater Noida. HSN 9406.';
+  return `${v.shortDescription} ${fixedBlock}`;
+}
+
+// Builds the nine porta-cabin variant feed items. Kept fs-free (pure): the caller
+// supplies the parsed JSON so this module never touches the filesystem.
+export function buildPortaCabinVariantItems(
+  data: PortaCabinVariantData | null | undefined,
+  baseUrl = MERCHANT_BASE_URL
+): MerchantProduct[] {
+  const variants = data?.variants || [];
+  const items: MerchantProduct[] = [];
+
+  for (const v of variants) {
+    const sizeSlug = String(v?.sizeSlug || '');
+    if (!sizeSlug || !PORTA_CABIN_VARIANT_DESCRIPTORS[sizeSlug]) continue;
+    if (!v.priceInclGst || v.priceInclGst <= 0) continue;
+
+    const images = (v.images || []).map((img) => absoluteUrl(img?.src, baseUrl)).filter(Boolean);
+    if (!images.length) continue;
+
+    const link = `${baseUrl}/product/porta-cabins#size-${sizeSlug}`;
+    const shipping = getShippingAttributes({ name: v.label, category_slug: 'porta-cabins' });
+
+    items.push({
+      id: `porta-cabin-${sizeSlug}`,
+      item_group_id: 'porta-cabins',
+      sku: v.sku || '',
+      title: portaCabinVariantTitle(v),
+      description: portaCabinVariantDescription(v),
+      link,
+      mobile_link: link,
+      image_link: images[0],
+      additional_image_link: images.slice(1, 11),
+      price: formatMerchantPrice(v.priceInclGst),
+      priceValue: v.priceInclGst,
+      availability: 'in stock',
+      condition: 'new',
+      brand: MERCHANT_BRAND_PORTABLE,
+      identifier_exists: 'false',
+      product_type: `Porta Cabins > Standard Porta Cabin > ${v.label}`,
+      google_product_category: '720',
+      ...shipping,
+      adult: 'no',
+      is_bundle: 'no',
+      custom_label_0: 'Porta Cabins',
+      custom_label_1: MERCHANT_BRAND_PORTABLE,
+      custom_label_2: shipping.shipping_label,
+    });
+  }
+
+  return items;
+}
+
 export function buildMerchantProducts(products: ProductLike[], baseUrl = MERCHANT_BASE_URL) {
   const items: MerchantProduct[] = [];
   const skipped: SkippedMerchantProduct[] = [];
@@ -435,8 +546,14 @@ function xmlElement(name: string, value: string | number, cdata = false): string
   return `      <${name}>${cdata ? toCdata(String(value)) : escapeXml(value)}</${name}>\n`;
 }
 
-export function generateGoogleMerchantXml(products: ProductLike[], baseUrl = MERCHANT_BASE_URL): string {
-  const { items } = buildMerchantProducts(products, baseUrl);
+export function generateGoogleMerchantXml(
+  products: ProductLike[],
+  baseUrl = MERCHANT_BASE_URL,
+  extraItems: MerchantProduct[] = []
+): string {
+  const { items: catalogueItems } = buildMerchantProducts(products, baseUrl);
+  // Catalogue items first (byte-unchanged), then any pre-built variant items.
+  const items = [...catalogueItems, ...extraItems];
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n';
   xml += '  <channel>\n';
@@ -449,6 +566,7 @@ export function generateGoogleMerchantXml(products: ProductLike[], baseUrl = MER
   for (const item of items) {
     xml += '    <item>\n';
     xml += xmlElement('g:id', item.id);
+    if (item.item_group_id) xml += xmlElement('g:item_group_id', item.item_group_id);
     xml += xmlElement('g:title', item.title, true);
     xml += xmlElement('g:description', item.description, true);
     xml += xmlElement('g:link', item.link);
