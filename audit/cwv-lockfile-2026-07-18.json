@@ -1,0 +1,307 @@
+{
+  "$comment": "Core Web Vitals site-wide lockfile, ruling v2/v3 format. Scores are informational except desktop performance floor; route gates use paired median LCP non-regression band and CLS.",
+  "schema": "saman-cwv-lockfile-ruling-v3",
+  "date": "2026-07-18",
+  "commit": "8f8a5f137cd83c9ed2aeb8688a248d65c01e4985",
+  "branch": "feat/shikhar-T30-shared-bundle-mobile-cwv",
+  "baseline_commit": "f280e0fb173d98ad5da20aeeaac23c05396d7911",
+  "measurement": {
+    "tool": "Lighthouse 13.4.0 CLI",
+    "build": "fresh npm ci, deleted .next, npm run build, next start baseline :3340 and target :3341; health-gated chunks and hydration before runs",
+    "runs_per_cell": 5,
+    "routes": [
+      "/product/porta-cabins",
+      "/product/container-offices",
+      "/porta-cabins-in-electronic-city",
+      "/2nd-hand-containers",
+      "/"
+    ],
+    "gates": {
+      "mobile_lcp": "target median <= baseline median + max(100ms, 2%)",
+      "cls_max": 0.02,
+      "desktop_performance_min": 95,
+      "absolute_mobile_score": "informational only per Fable 5 pre-ruling"
+    },
+    "artifacts": {
+      "healthgate": "C:/tmp/t30-healthgate.json",
+      "lighthouse_summary": "C:/tmp/t30-lighthouse-summary.json",
+      "visual_geometry": "C:/tmp/t30-settled-image-geometry.json"
+    }
+  },
+  "routes": {
+    "/product/porta-cabins": {
+      "mobile": {
+        "baseline": {
+          "performance": 79,
+          "lcp_ms": 4656,
+          "cls": 0,
+          "tbt_ms": 211,
+          "runs": {
+            "scores": "82,78,87,72,79",
+            "lcps": "4162,4969,3995,5120,4656",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "target": {
+          "performance": 80,
+          "lcp_ms": 4710,
+          "cls": 0,
+          "tbt_ms": 178,
+          "runs": {
+            "scores": "80,77,77,87,87",
+            "lcps": "4710,4768,4866,4014,4007",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "band_ms": 4756,
+        "pass": true
+      },
+      "desktop": {
+        "baseline": {
+          "performance": 99,
+          "lcp_ms": 884,
+          "cls": 0,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "99,99,99,99,99",
+            "lcps": "881,884,880,886,887",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "target": {
+          "performance": 100,
+          "lcp_ms": 806,
+          "cls": 0,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "100,100,100,100,100",
+            "lcps": "820,796,806,808,797",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "pass": true
+      }
+    },
+    "/product/container-offices": {
+      "mobile": {
+        "baseline": {
+          "performance": 89,
+          "lcp_ms": 3703,
+          "cls": 0,
+          "tbt_ms": 60,
+          "runs": {
+            "scores": "76,89,89,89,89",
+            "lcps": "5591,3703,3705,3699,3702",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "target": {
+          "performance": 89,
+          "lcp_ms": 3776,
+          "cls": 0,
+          "tbt_ms": 61,
+          "runs": {
+            "scores": "89,89,89,89,89",
+            "lcps": "3739,3714,3783,3783,3776",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "band_ms": 3803,
+        "pass": true
+      },
+      "desktop": {
+        "baseline": {
+          "performance": 99,
+          "lcp_ms": 974,
+          "cls": 0,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "100,99,99,99,99",
+            "lcps": "791,974,932,979,975",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "target": {
+          "performance": 100,
+          "lcp_ms": 788,
+          "cls": 0,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "100,100,100,100,99",
+            "lcps": "787,790,788,782,1024",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "pass": true
+      }
+    },
+    "/porta-cabins-in-electronic-city": {
+      "mobile": {
+        "baseline": {
+          "performance": 92,
+          "lcp_ms": 3325,
+          "cls": 0,
+          "tbt_ms": 85,
+          "runs": {
+            "scores": "92,92,92,92,92",
+            "lcps": "3323,3324,3328,3325,3331",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "target": {
+          "performance": 92,
+          "lcp_ms": 3324,
+          "cls": 0,
+          "tbt_ms": 46,
+          "runs": {
+            "scores": "84,87,92,92,92",
+            "lcps": "4152,4044,3321,3319,3324",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "band_ms": 3425,
+        "pass": true
+      },
+      "desktop": {
+        "baseline": {
+          "performance": 100,
+          "lcp_ms": 713,
+          "cls": 0,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "100,100,100,100,100",
+            "lcps": "713,720,713,712,711",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "target": {
+          "performance": 100,
+          "lcp_ms": 713,
+          "cls": 0,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "100,100,100,100,100",
+            "lcps": "713,670,721,709,715",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "pass": true
+      }
+    },
+    "/2nd-hand-containers": {
+      "mobile": {
+        "baseline": {
+          "performance": 92,
+          "lcp_ms": 3324,
+          "cls": 0,
+          "tbt_ms": 60,
+          "runs": {
+            "scores": "91,92,92,92,92",
+            "lcps": "3324,3326,3317,3326,3317",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "target": {
+          "performance": 92,
+          "lcp_ms": 3328,
+          "cls": 0,
+          "tbt_ms": 26,
+          "runs": {
+            "scores": "92,92,92,91,92",
+            "lcps": "3328,3332,3321,3331,3325",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "band_ms": 3424,
+        "pass": true
+      },
+      "desktop": {
+        "baseline": {
+          "performance": 100,
+          "lcp_ms": 716,
+          "cls": 0.0061,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "100,100,100,100,100",
+            "lcps": "714,723,716,717,707",
+            "cls": "0.0061,0.0061,0.0061,0.0061,0.0061"
+          }
+        },
+        "target": {
+          "performance": 100,
+          "lcp_ms": 716,
+          "cls": 0.0061,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "100,100,100,100,100",
+            "lcps": "710,713,719,716,716",
+            "cls": "0.0061,0.0061,0.0061,0.0061,0.0061"
+          }
+        },
+        "pass": true
+      }
+    },
+    "/": {
+      "mobile": {
+        "baseline": {
+          "performance": 88,
+          "lcp_ms": 3807,
+          "cls": 0,
+          "tbt_ms": 100,
+          "runs": {
+            "scores": "82,82,89,88,88",
+            "lcps": "4776,4761,3800,3807,3801",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "target": {
+          "performance": 89,
+          "lcp_ms": 3796,
+          "cls": 0,
+          "tbt_ms": 42,
+          "runs": {
+            "scores": "81,81,89,89,89",
+            "lcps": "4759,4823,3784,3796,3785",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "band_ms": 3907,
+        "pass": true
+      },
+      "desktop": {
+        "baseline": {
+          "performance": 99,
+          "lcp_ms": 869,
+          "cls": 0,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "99,99,99,99,99",
+            "lcps": "868,869,871,867,869",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "target": {
+          "performance": 99,
+          "lcp_ms": 849,
+          "cls": 0,
+          "tbt_ms": 0,
+          "runs": {
+            "scores": "99,99,99,99,99",
+            "lcps": "828,850,830,849,855",
+            "cls": "0,0,0,0,0"
+          }
+        },
+        "pass": true
+      }
+    }
+  },
+  "bundle": {
+    "shared_first_load_js": "145 kB -> 122 kB",
+    "app_first_load_js": "117 kB -> 94 kB"
+  },
+  "notes": {
+    "variant_absolute_mobile_target_score": 80,
+    "variant_absolute_mobile_target_lcp_ms": 4710,
+    "pre_ruling": "Absolute mobile >=90 is target, not gate; non-regression gate passed on this host."
+  }
+}

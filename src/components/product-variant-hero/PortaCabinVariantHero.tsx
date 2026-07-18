@@ -183,7 +183,17 @@ export function PortaCabinVariantHero({
               // we rely on priority to drive both.
               priority={heroIndex === defaultIndex && activeImageIndex === 0}
               decoding="async"
-              sizes="(max-width: 1023px) 100vw, 40vw"
+              // T30 / T24.1-IMG §5.1 — the hero does NOT fill the viewport below
+              // 1024: it sits inside the page container (px-4 <640, px-6 >=640) and
+              // the gallery Card (p-2). MEASURED rendered width on this build:
+              //   360 -> 312px | 390 -> 342px | 412 -> 364px  (= 100vw - 48px)
+              //   768 -> 704px                                 (= 100vw - 64px)
+              // Declaring 100vw overstated the box by ~12% and made mobile resolve
+              // ~1170px, selecting the w=1200 candidate (~92 KiB into a 342px box) —
+              // a direct breach of the MOBILE CWV LAW ("correct sizes attr so mobile
+              // never downloads the 1200px variant"). calc() is exact at every width,
+              // so it never under-declares either (no blurring).
+              sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc(100vw - 64px), 40vw"
               quality={85}
             />
           ) : (
@@ -214,7 +224,13 @@ export function PortaCabinVariantHero({
                     reading twice on the page (V5). The other four keep their unique
                     per-shot alts and stay crawlable. The button's aria-label names
                     the control either way. */}
-                <Image src={img.src} alt={i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                {/* T30 / T24.1-IMG §5.3 — these 5 thumbnails are INSIDE the initial
+                    viewport on mobile AND desktop (measured 52-62px boxes, all
+                    in-viewport). loading="lazy" on an in-viewport image forces a
+                    second discovery round-trip and delays first paint, so they load
+                    eagerly. Deliberately NO fetchpriority: the law reserves high
+                    priority for the first hero, which is the main viewer above. */}
+                <Image src={img.src} alt={i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="eager" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
               </button>
             ))}
           </div>
@@ -574,12 +590,22 @@ function SizeApplicationsExplorer({ data, sectionId, activeIndex, onSelectTab, o
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
                   {panelImage ? (
                     i === activeIndex ? (
+                      /* T30 / T24.1-IMG §5.4 — this was the ONLY <img> on the page
+                         with no intrinsic dimensions (next/image `fill` cannot emit
+                         width/height). It swaps on every tab click, so it carried a
+                         CLS risk. Explicit intrinsic width/height (the source files
+                         are 1254x1254) + w-full/h-full/object-cover render exactly as
+                         `fill` did inside the aspect-[4/3] box — same crop, same box,
+                         but the browser now knows the intrinsic aspect.
+                         Also right-sized (item 5): it renders ~326-378px on mobile
+                         (measured = 100vw - 34px), not 100vw. */
                       <Image
                         src={panelImage.src}
                         alt={panelImage.alt}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1023px) 100vw, 500px"
+                        width={1254}
+                        height={1254}
+                        className="w-full h-full object-cover"
+                        sizes="(max-width: 1023px) calc(100vw - 34px), 500px"
                         loading="lazy"
                         decoding="async"
                       />

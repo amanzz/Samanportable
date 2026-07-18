@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import { DefaultSeo } from 'next-seo';
-import { TooltipProvider } from '@/components/ui/tooltip';
 import { AuthProvider } from '@/contexts/AuthContext';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import { defaultSEO } from '@/config/seo';
@@ -84,11 +83,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
         {/* react-query removed: QueryClientProvider had zero consumers
             (no useQuery/useMutation anywhere), so it was dead hydration weight. */}
-        <TooltipProvider>
-          <AuthProvider>
-            <Component {...pageProps} />
-          </AuthProvider>
-        </TooltipProvider>
+        {/* T30: TooltipProvider (@radix-ui/react-tooltip) removed — it wrapped the whole
+            app but no Tooltip/TooltipTrigger/TooltipContent is rendered anywhere in the
+            codebase, so the radix-tooltip package was dead weight in the shared/_app
+            chunk on every page. Removing it changes nothing rendered. */}
+        <AuthProvider>
+          <Component {...pageProps} />
+        </AuthProvider>
         <Toaster />
         <Sonner />
         <EnquiryChatbot />

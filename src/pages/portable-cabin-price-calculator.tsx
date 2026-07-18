@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+import React, { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
@@ -193,7 +193,10 @@ const ProductCalculatorPage = () => {
       .getDate()
       .toString()
       .padStart(2, '0')}`;
-  }, [result]);
+    // T30: `result` was an unnecessary dep (the body reads only `new Date()`); the
+    // stamp is a same-day value used solely in the suggested PDF filename, so
+    // computing it once per mount is behaviourally identical. (react-hooks/exhaustive-deps)
+  }, []);
   const budgetBreakdown = result && result.mode !== 'custom' ? result.budgetBreakdown : null;
   const fixedSizeBasePrice = useMemo(
     () => getFixedSizeBasePrice(formData.productId, toNumber(formData.length), toNumber(formData.width)),
@@ -242,17 +245,21 @@ const ProductCalculatorPage = () => {
     return length > 0 && width > 0 ? length * width : 0;
   }, [formData.length, formData.width]);
 
-  const clearResult = () => {
+  // T30: clearResult + setFormValue wrapped in useCallback so their identities are
+  // stable across renders (they close over only stable setState setters). This lets
+  // the product-change effects below list setFormValue in their dependency arrays
+  // (react-hooks/exhaustive-deps) without re-running every render. Behaviour identical.
+  const clearResult = useCallback(() => {
     setResult(null);
     setMode('idle');
     setStatusMessage('Enter required details to unlock estimate.');
     setPrintPayload('');
-  };
+  }, []);
 
-  const setFormValue = <K extends keyof PriceCalculatorFormState>(key: K, value: PriceCalculatorFormState[K]) => {
+  const setFormValue = useCallback(<K extends keyof PriceCalculatorFormState>(key: K, value: PriceCalculatorFormState[K]) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
     clearResult();
-  };
+  }, [clearResult]);
 
   const setOptionValue = <K extends keyof PriceCalculatorFormState>(key: K, value: string) =>
     setFormValue(key, value as PriceCalculatorFormState[K]);
@@ -290,7 +297,7 @@ const ProductCalculatorPage = () => {
   useEffect(() => {
     if (!isPanel) return;
     setFormValue('panelThickness', getPanelDefaultThickness(formData.productId as 'puf_panel' | 'rockwool_panel' | 'pir_panel'));
-  }, [formData.productId, isPanel]);
+  }, [formData.productId, isPanel, setFormValue]);
 
   useEffect(() => {
     if (isPanel) {
@@ -298,14 +305,14 @@ const ProductCalculatorPage = () => {
     }
     setFormValue('specialPanelSheet', SPECIAL_PANEL_SHEET_OPTIONS[0]);
     setFormValue('specialFloorStructure', SPECIAL_FLOOR_STRUCTURE_OPTIONS[0]);
-  }, [isPanel]);
+  }, [isPanel, setFormValue]);
 
   useEffect(() => {
     if (!isPanel && !isSpecial) {
       return;
     }
     setFormValue('materialType', CABIN_MATERIAL_OPTIONS[0]);
-  }, [isPanel, isSpecial]);
+  }, [isPanel, isSpecial, setFormValue]);
 
   const onProductChange = (productId: CalculatorProductId) => {
     const fixedSizeDefault = isFixedSizeBasePriceProduct(productId)

@@ -580,7 +580,13 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                               fetchPriority="high"
                               placeholder="blur"
                               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                              sizes="(max-width: 1023px) 100vw, 40vw"
+                              // T30 / T24.1-IMG §5.1 — same correction as the variant
+                              // hero: this gallery sits inside the page container
+                              // (px-4 <640, px-6 >=640) and the Card (p-2), so it
+                              // renders 100vw-48px below 640 and 100vw-64px to 1023 —
+                              // never the full viewport. Declaring 100vw made mobile
+                              // select the w=1200 candidate (MOBILE CWV LAW breach).
+                              sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc(100vw - 64px), 40vw"
                               quality={85}
                               onError={(e) => {
                                 e.currentTarget.src = `https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;
@@ -644,7 +650,11 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                                   width={150}
                                   height={150}
                                   className="w-full h-full object-cover"
-                                  loading="lazy"
+                                  // T30 / T24.1-IMG §5.3 — gallery thumbnails sit inside
+                                  // the initial viewport; lazy-loading an in-viewport
+                                  // image adds a discovery round-trip and delays paint.
+                                  // Eager, but NO fetchpriority (first hero only).
+                                  loading="eager"
                                   onError={(e) => {
                                     e.currentTarget.src = `https://via.placeholder.com/150x150/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;
                                   }}
