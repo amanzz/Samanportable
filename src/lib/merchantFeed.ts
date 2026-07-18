@@ -499,7 +499,7 @@ export function buildPortaCabinVariantItems(
       brand: MERCHANT_BRAND_PORTABLE,
       identifier_exists: 'false',
       product_type: `Porta Cabins > Standard Porta Cabin > ${v.label}`,
-      google_product_category: '632',
+      google_product_category: '720',
       ...shipping,
       adult: 'no',
       is_bundle: 'no',
