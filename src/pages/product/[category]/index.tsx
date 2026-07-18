@@ -985,7 +985,14 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   href={getHubUrl(category)}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary"
                 >
-                  See the full range: {getSeoAnchorText(category) || transformedProduct?.category || 'Products'}
+                  {/* T24.1-L C.1 — on porta-cabins ONLY, the hub anchor no longer
+                      reuses that page's own primary keyword ("Porta Cabin") as its
+                      anchor text (doctrine violation). Every other category keeps
+                      its locked SEO_ANCHOR_MAP wording unchanged. Replacement string
+                      is packet-verbatim. */}
+                  {category === 'porta-cabins'
+                    ? 'browse every size and model in the range'
+                    : `See the full range: ${getSeoAnchorText(category) || transformedProduct?.category || 'Products'}`}
                   <ArrowLeft className="w-4 h-4 rotate-180" />
                 </Link>
               </div>
