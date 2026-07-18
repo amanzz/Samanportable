@@ -156,10 +156,13 @@ function validateSourceSafety() {
   return hits;
 }
 
-function validate(products, tsv) {
+function validate(products, tsv, variantItems = []) {
   const errors = [];
   const warnings = [];
-  const { items: primaryItems, skipped } = merchant.buildMerchantProducts(products);
+  const { items: catalogueItems, skipped } = merchant.buildMerchantProducts(products);
+  // The porta-cabin variants are feed-only items with no WooCommerce product
+  // behind them, so they arrive separately — exactly as the feed route builds them.
+  const primaryItems = [...catalogueItems, ...variantItems];
   const productById = new Map(products.map((product) => [String(product.id || ''), product]));
   const primaryIds = new Set(primaryItems.map((item) => item.id));
   const { headers, rows } = parseTsv(tsv);
@@ -200,7 +203,9 @@ function validate(products, tsv) {
   for (const item of primaryItems) {
     const idRows = byId.get(item.id) || [];
     const product = productById.get(item.id);
-    const expectedAvailability = localInventory.getGoogleLocalInventoryAvailability(product || {});
+    const expectedAvailability = localInventory.getGoogleLocalInventoryAvailability(
+      product || { category_slug: item.item_group_id }
+    );
     if (idRows.length !== STORE_CODES.size) {
       errors.push(`${item.id}: expected exactly two store rows, got ${idRows.length}`);
     }
@@ -393,8 +398,9 @@ ${testLines}
 
 function main() {
   const products = readProducts();
-  const tsv = localInventory.generateGoogleLocalInventoryTsv(products);
-  const validation = validate(products, tsv);
+  const variantItems = merchant.buildPortaCabinVariantItems(staticContent.getPortaCabinVariantData());
+  const tsv = localInventory.generateGoogleLocalInventoryTsv(products, variantItems);
+  const validation = validate(products, tsv, variantItems);
   const summary = { ...validation, tsv };
   writeReport(summary);
 
