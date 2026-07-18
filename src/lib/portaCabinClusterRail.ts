@@ -1,43 +1,60 @@
-// T25 — S4 related-strip order for the porta cabin cluster.
+// T25 — S4 related-rail contents for the porta cabin cluster.
 //
-// Source of truth: D:\Project-shekhar\T25-internal-linking-matrix-v2.md (LOCKED,
-// Fable 5, 18 Jul 2026), which supersedes each copy pack's §F strip order.
+// RULING v2.1 (SAMAN veto, 18 Jul 2026) — supersedes the matrix v2 "hub + 3 siblings"
+// strip: every subpage's rail shows the FULL cluster — the hub first, then ALL sibling
+// subpages in canonical order. The flagship's own rail is untouched.
 //
-// Matrix rules relevant here:
-//  - the hub is ALWAYS first, followed by exactly the three siblings listed, in
-//    that order (rule: "strip = hub + 3 siblings");
-//  - strip chips are navigation, so exact product names are correct there and do
-//    NOT count toward the cluster's exact-match anchor cap;
-//  - "Portable Cabin" is BANNED from this cluster's related items.
+// Still in force from matrix v2:
+//  - rail entries are NAVIGATION, so exact product names are correct there and do NOT
+//    count toward the cluster's exact-match anchor cap;
+//  - "Portable Cabin" is BANNED from this cluster's related items;
+//  - S2 in-body editorial links and every anchor rule are UNCHANGED by this ruling.
 //
-// This module only decides WHICH siblings appear and in WHAT ORDER. The rail
-// items themselves (title, image, blurb, price) keep coming from the live product
-// data, so no copy is authored here.
+// Redirected slugs (toilet-porta-cabins, portacabin-office) must never appear: they
+// 301 away, so railing them would send users through a redirect.
+//
+// This module only decides WHICH siblings appear and in WHAT ORDER. The rail items
+// themselves (title, image, blurb, price) keep coming from the live product data, so
+// no copy is authored here.
 
 export const PORTA_CABIN_HUB_SLUG = 'porta-cabins';
 
-/** slug -> the exactly-three sibling slugs that follow the hub, in matrix order. */
-export const PORTA_CABIN_STRIP_MATRIX: Record<string, readonly [string, string, string]> = {
-  'ms-porta-cabin': ['steel-porta-cabin', 'low-cost-porta-cabin', 'prefabricated-porta-cabin'],
-  'steel-porta-cabin': ['ms-porta-cabin', 'porta-cabin-with-toilet', 'porta-cabin-shop'],
-  'luxury-porta-cabin': ['porta-cabin-office', 'porta-cabin-with-toilet', 'buy-porta-cabins'],
-  'buy-porta-cabins': ['low-cost-porta-cabin', 'luxury-porta-cabin', 'prefabricated-porta-cabin'],
-  'mini-porta-cabin': ['small-portacabin', 'porta-cabin-shop', 'buy-porta-cabins'],
-  'small-portacabin': ['mini-porta-cabin', 'porta-cabin-office', 'low-cost-porta-cabin'],
-  'porta-cabin-office': ['luxury-porta-cabin', 'porta-cabin-with-toilet', 'small-portacabin'],
-  'porta-cabin-shop': ['porta-cabin-office', 'buy-porta-cabins', 'mini-porta-cabin'],
-  'porta-cabin-with-toilet': ['porta-cabin-shop', 'ms-porta-cabin', 'luxury-porta-cabin'],
-  'prefabricated-porta-cabin': ['ms-porta-cabin', 'mini-porta-cabin', 'steel-porta-cabin'],
-  'low-cost-porta-cabin': ['buy-porta-cabins', 'small-portacabin', 'prefabricated-porta-cabin'],
-};
+/**
+ * Canonical cluster order. Taken from the internal-linking matrix v2's own S4 table,
+ * which is the cluster's canonical listing in the ruling document.
+ */
+export const PORTA_CABIN_CLUSTER_SLUGS: readonly string[] = [
+  'ms-porta-cabin',
+  'steel-porta-cabin',
+  'luxury-porta-cabin',
+  'buy-porta-cabins',
+  'mini-porta-cabin',
+  'small-portacabin',
+  'porta-cabin-office',
+  'porta-cabin-shop',
+  'porta-cabin-with-toilet',
+  'prefabricated-porta-cabin',
+  'low-cost-porta-cabin',
+];
+
+/** 301'd slugs — never railed. */
+export const PORTA_CABIN_REDIRECTED_SLUGS: readonly string[] = [
+  'toilet-porta-cabins',
+  'portacabin-office',
+];
 
 export const isPortaCabinStripSlug = (slug: string): boolean =>
-  Object.prototype.hasOwnProperty.call(PORTA_CABIN_STRIP_MATRIX, slug);
+  PORTA_CABIN_CLUSTER_SLUGS.includes(slug);
 
-/** The full ordered strip for a slug: hub first, then its three matrix siblings. */
+/** Full rail for a subpage: hub first, then every sibling in canonical order (self excluded). */
 export const portaCabinStripOrder = (slug: string): string[] => {
-  const siblings = PORTA_CABIN_STRIP_MATRIX[slug];
-  return siblings ? [PORTA_CABIN_HUB_SLUG, ...siblings] : [];
+  if (!isPortaCabinStripSlug(slug)) return [];
+  return [
+    PORTA_CABIN_HUB_SLUG,
+    ...PORTA_CABIN_CLUSTER_SLUGS.filter(
+      (s) => s !== slug && !PORTA_CABIN_REDIRECTED_SLUGS.includes(s)
+    ),
+  ];
 };
 
 /**
