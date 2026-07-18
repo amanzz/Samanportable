@@ -191,6 +191,11 @@ export default function ProductStructuredData({ product, category, reviews, brea
       '@type': 'Product',
       name: `${v.label.replace(/\s*ft$/i, '')} ft Porta Cabin`,
       sku: v.sku,
+      // T24.1 B — `size` matches the parent's variesBy: 'size' and clears the GSC
+      // Merchant-listings "Missing field size" warning on all 9 variants. Value is
+      // the variant's own label (honest data already in porta-cabins.json), with the
+      // dimension separator normalised to × (10x10 ft -> "10×10 ft").
+      size: v.label.replace(/(\d)\s*x\s*(\d)/i, '$1×$2'),
       ...(v.images[0] ? { image: `${baseUrl}${v.images[0].src}` } : {}),
       offers: {
         '@type': 'Offer',
@@ -200,6 +205,26 @@ export default function ProductStructuredData({ product, category, reviews, brea
         url: productUrl,
       },
     })),
+  } : null;
+
+  // T24.1-V — VideoObject for the porta-cabins product overview video. Emitted as a
+  // SEPARATE top-level node alongside the ProductGroup (which is not altered in any
+  // way). Gated on variantData, so it exists on /product/porta-cabins only — one
+  // video per page. No contentUrl: the file is YouTube-hosted, embedUrl is correct.
+  const videoStructuredData = variantData ? {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Porta Cabin — 9 Standard Sizes, Interiors & Prices | SAMAN Portable',
+    description: 'Factory-built porta cabins in 9 standard sizes (10x10 ft to 40x12 ft) — exteriors, finished interiors and specifications. Product overview by SAMAN Portable.',
+    thumbnailUrl: [`${baseUrl}/images/porta-cabin-product-video-poster.webp`],
+    uploadDate: '2026-07-18',
+    duration: 'PT1M25S',
+    embedUrl: 'https://www.youtube.com/embed/SDU26yNPBlA',
+    publisher: {
+      '@type': 'Organization',
+      name: 'SAMAN Portable',
+      url: 'https://www.samanportable.com',
+    },
   } : null;
 
   // Generate structured data for Product only when it has real Product-snippet
@@ -301,6 +326,14 @@ export default function ProductStructuredData({ product, category, reviews, brea
         }}
       />
       {/* Product and Breadcrumb schemas are now included in ItemPage mainEntity */}
+      {videoStructuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(videoStructuredData)
+          }}
+        />
+      )}
     </Head>
   );
 }

@@ -15,7 +15,7 @@ import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Check, Download, Star } from 'lucide-react';
+import { Check, Download, Play, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -77,6 +77,16 @@ const SIZE_HASH_RE = /^#size-([0-9]+x[0-9]+)$/;
 const DETAILS_HASH_RE = /^#sizedetails-([0-9]+x[0-9]+)$/;
 const APPLICATIONS_SECTION_ID = 'porta-size-applications';
 
+// T24.1-V — product overview video. ONE video per page, /product/porta-cabins only
+// (this component renders nowhere else). LAZY FACADE: the page ships only the poster
+// WebP; the YouTube iframe is injected on click and never before, so a cold load
+// makes ZERO requests to youtube.com / ytimg.com. The 1:1 box is reserved by the
+// existing aspect-square wrapper, so swapping poster -> player is zero-CLS.
+const VIDEO_EMBED_SRC = 'https://www.youtube.com/embed/SDU26yNPBlA?autoplay=1';
+const VIDEO_POSTER_SRC = '/images/porta-cabin-product-video-poster.webp';
+const VIDEO_POSTER_ALT = 'Porta cabin product video — 9 standard sizes overview (play)';
+const VIDEO_TITLE = 'Porta Cabin — 9 Standard Sizes, Interiors & Prices | SAMAN Portable';
+
 // ₹/sq ft display values — OFFICIAL owner-supplied figures (each = priceExGst /
 // areaSqft exactly). Kept as literals here (not a data-file change) so they render
 // verbatim as specified. Keyed by sizeSlug.
@@ -102,6 +112,9 @@ export function PortaCabinVariantHero({
   const [heroIndex, setHeroIndex] = useState(defaultIndex);
   const [explorerIndex, setExplorerIndex] = useState(defaultIndex);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  // T24.1-V — false until the visitor clicks the video thumb. While false no
+  // YouTube markup exists in the tree at all (facade), so nothing is requested.
+  const [showVideo, setShowVideo] = useState(false);
   // Which size the enquiry dialog quotes (set at the moment a Get Quote is
   // clicked; never changes hero/explorer selection).
   const [quoteIndex, setQuoteIndex] = useState(defaultIndex);
@@ -116,6 +129,9 @@ export function PortaCabinVariantHero({
   const selectHero = (index: number) => {
     setHeroIndex(index);
     setActiveImageIndex(0);
+    // Changing size returns the viewer to that size's photos (the video is a
+    // page-level asset, not a per-size one).
+    setShowVideo(false);
     window.history.replaceState(null, '', `#${sizeFragment(data.variants[index].sizeSlug)}`);
   };
 
@@ -143,6 +159,7 @@ export function PortaCabinVariantHero({
       if (i >= 0) {
         setHeroIndex(i);
         setActiveImageIndex(0);
+        setShowVideo(false);
       }
       return;
     }
@@ -168,7 +185,19 @@ export function PortaCabinVariantHero({
     <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm lg:h-full lg:flex lg:flex-col">
       <div className="space-y-2 lg:flex lg:flex-1 lg:flex-col">
         <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
-          {heroImages ? (
+          {showVideo ? (
+            // Injected ONLY after the thumb click. autoplay=1 because the click
+            // that mounted it IS the play gesture. youtube-nocookie is not used:
+            // the packet fixes the embed origin as youtube.com.
+            <iframe
+              src={VIDEO_EMBED_SRC}
+              title={VIDEO_TITLE}
+              className="absolute inset-0 w-full h-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          ) : heroImages ? (
             <Image
               key={heroImages[activeImageIndex].src}
               src={heroImages[activeImageIndex].src}
@@ -205,17 +234,21 @@ export function PortaCabinVariantHero({
           )}
         </div>
 
+        {/* T24.1-V — 6 columns: the 5 photo thumbs plus the video facade thumb.
+            Six-up keeps the row a single line, so gallery height, paint order and
+            everything below it are byte-identical in flow to the 5-up build (no
+            reflow, no CLS); only the per-thumb box shrinks. */}
         {heroImages && (
-          <div className="grid grid-cols-5 gap-2">
+          <div className="grid grid-cols-6 gap-2">
             {heroImages.map((img, i) => (
               <button
                 key={img.src}
                 type="button"
                 className={cn(
                   'aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden border-2 transition-all duration-200',
-                  activeImageIndex === i ? 'border-primary shadow-lg ring-2 ring-primary/20' : 'border-transparent hover:border-primary/50'
+                  !showVideo && activeImageIndex === i ? 'border-primary shadow-lg ring-2 ring-primary/20' : 'border-transparent hover:border-primary/50'
                 )}
-                onClick={() => setActiveImageIndex(i)}
+                onClick={() => { setActiveImageIndex(i); setShowVideo(false); }}
                 aria-label={`Show image ${i + 1} of ${heroActive.label} porta cabin`}
               >
                 {/* The thumbnail whose photo is currently enlarged in the main
@@ -230,9 +263,44 @@ export function PortaCabinVariantHero({
                     second discovery round-trip and delays first paint, so they load
                     eagerly. Deliberately NO fetchpriority: the law reserves high
                     priority for the first hero, which is the main viewer above. */}
-                <Image src={img.src} alt={i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="eager" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                <Image src={img.src} alt={!showVideo && i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="eager" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
               </button>
             ))}
+
+            {/* T24.1-V — video facade thumb. This is the ONLY YouTube-related
+                surface on the page until it is clicked: a local WebP poster plus a
+                CSS play badge. No iframe, no YouTube script, no ytimg preconnect.
+                Accessible name comes from the poster alt (the packet's string), so
+                no aria-label is added on top of it. */}
+            <button
+              type="button"
+              className={cn(
+                'aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden border-2 transition-all duration-200 relative',
+                showVideo ? 'border-primary shadow-lg ring-2 ring-primary/20' : 'border-transparent hover:border-primary/50'
+              )}
+              onClick={() => setShowVideo(true)}
+            >
+              {/* Sibling thumbs are eager because T30 MEASURED this row inside the
+                  initial viewport at 360/390/412/768 and on desktop; lazy on an
+                  in-viewport image costs a second discovery round-trip and delays
+                  first paint. The poster follows the row it lives in. It is a 63 KB
+                  WebP served into a ~44-52px box, i.e. the smallest srcset candidate. */}
+              <Image
+                src={VIDEO_POSTER_SRC}
+                alt={VIDEO_POSTER_ALT}
+                width={150}
+                height={150}
+                className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+                sizes="(max-width: 1023px) 15vw, 70px"
+              />
+              <span className="absolute inset-0 flex items-center justify-center bg-black/25" aria-hidden="true">
+                <span className="flex items-center justify-center w-1/2 h-1/2 rounded-full bg-white/90 shadow">
+                  <Play className="w-1/2 h-1/2 text-primary fill-primary" />
+                </span>
+              </span>
+            </button>
           </div>
         )}
 
