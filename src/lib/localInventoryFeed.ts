@@ -1,4 +1,4 @@
-import { buildMerchantProducts } from './merchantFeed';
+import { buildMerchantProducts, MerchantProduct } from './merchantFeed';
 import containerCafeCategory from '@/data/wp-export/categories/container-cafe.json';
 import containerHousesCategory from '@/data/wp-export/categories/container-houses.json';
 import containerOfficesCategory from '@/data/wp-export/categories/container-offices.json';
@@ -242,33 +242,63 @@ function tsvEscape(value: string | number): string {
     .trim();
 }
 
-export function buildLocalInventoryRows(products: ProductLike[]): LocalInventoryRow[] {
+// Feed-only items that have no WooCommerce product behind them — currently the
+// nine porta-cabin size variants built by buildPortaCabinVariantItems. The caller
+// passes the same array it hands the Merchant feed, so both feeds stay in sync
+// off one source (src/data/products/porta-cabins.json).
+export type LocalInventoryExtraItem = Pick<MerchantProduct, 'id' | 'price'> &
+  Partial<Pick<MerchantProduct, 'item_group_id'>>;
+
+export function buildLocalInventoryRows(
+  products: ProductLike[],
+  extraItems: LocalInventoryExtraItem[] = []
+): LocalInventoryRow[] {
   const { items } = buildMerchantProducts(products);
   const productById = new Map(products.map((product) => [String(product.id || ''), product]));
   const rows: LocalInventoryRow[] = [];
+  const seenIds = new Set<string>();
 
-  for (const item of items) {
-    const sourceProduct = productById.get(item.id);
-    const availability = getGoogleLocalInventoryAvailability(sourceProduct || {});
+  const pushStoreRows = (id: string, price: string, availability: LocalInventoryAvailability) => {
+    if (!id || seenIds.has(id)) return;
+    seenIds.add(id);
 
     for (const store_code of LOCAL_INVENTORY_STORE_CODES) {
       rows.push({
-        id: item.id,
+        id,
         store_code,
         availability,
         quantity: '',
-        price: item.price,
+        price,
       });
     }
+  };
+
+  for (const item of items) {
+    const sourceProduct = productById.get(item.id);
+    pushStoreRows(item.id, item.price, getGoogleLocalInventoryAvailability(sourceProduct || {}));
+  }
+
+  // Variant items carry no category array, so classify them from the category
+  // their group id maps to. They then follow the same availability rule as every
+  // catalogue product instead of a hardcoded value.
+  for (const item of extraItems) {
+    pushStoreRows(
+      item.id,
+      item.price,
+      getGoogleLocalInventoryAvailability({ category_slug: item.item_group_id })
+    );
   }
 
   return rows;
 }
 
-export function generateGoogleLocalInventoryTsv(products: ProductLike[]): string {
+export function generateGoogleLocalInventoryTsv(
+  products: ProductLike[],
+  extraItems: LocalInventoryExtraItem[] = []
+): string {
   const lines = [
     LOCAL_INVENTORY_HEADERS.join('\t'),
-    ...buildLocalInventoryRows(products).map((row) =>
+    ...buildLocalInventoryRows(products, extraItems).map((row) =>
       LOCAL_INVENTORY_HEADERS.map((header) => tsvEscape(row[header])).join('\t')
     ),
   ];
