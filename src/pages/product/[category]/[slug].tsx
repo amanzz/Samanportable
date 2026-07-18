@@ -35,6 +35,12 @@ import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
 import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
+import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
+import type { VariantProductData } from '../../../components/product-variant-hero/types';
+
+// Guards the dynamic data/products import below against path traversal — the slug
+// comes straight from the URL. Same regex as the category hub route.
+const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
@@ -62,6 +68,10 @@ interface ProductDetailsProps {
   relatedProducts: WooCommerceProduct[];
   rankMathSEO?: RankMathSEOData | null;
   reviews?: ProductReview[];
+  // T25 — variant-hero data for sibling subpages at /product/{category}/{slug}.
+  // Present only when data/products/{slug}.json exists; every other subpage keeps
+  // the generic ProductSummaryLayout hero, byte-for-byte.
+  variantData?: VariantProductData | null;
 }
 
 export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
@@ -170,6 +180,15 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // and newly-published URLs are never cache-poisoned.
     setPublicEdgeCache(res);
 
+    // T25 — variant hero data, keyed on the SUBPAGE slug (not the category). Same
+    // guard + non-fatal .catch() as the hub route: a subpage with no
+    // data/products/{slug}.json resolves to null and renders exactly as before.
+    const variantData: VariantProductData | null = SAFE_PRODUCT_SLUG.test(slug)
+      ? await import(`../../../data/products/${slug}.json`)
+          .then((mod: { default?: VariantProductData }) => mod.default || null)
+          .catch(() => null)
+      : null;
+
     return {
       props: {
         product: {
@@ -203,6 +222,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         // it added ~7KB of dead data to __NEXT_DATA__.
         rankMathSEO,
         reviews,
+        variantData,
       },
     };
   } catch (error) {
@@ -221,7 +241,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
   }
 };
 
-const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [] }: ProductDetailsProps) => {
+const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], variantData = null }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -404,7 +424,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} />
+          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} />
 
           {/* FAQ Structured Data — sourced from RankMath, which mirrors the FAQ
               actually rendered in the product description below. No fake/templated FAQs. */}
@@ -430,6 +450,22 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   with the bespoke product pages: the gallery column establishes the row
                   height; the summary and related columns are height-contained and scroll
                   internally, so the rail can never bleed over the sections below. */}
+              {variantData ? (
+                /* T25 — sibling subpage with a size-variant data file renders the
+                   T24.1 variant hero (related rail 25 / gallery+zone-contacts 40 /
+                   info-only buy box 35, size chips, Size & Applications Explorer,
+                   deep-link fragments, sticky mobile CTA). The rail renders INSIDE
+                   the hero, so the separate position-9 strip below is skipped for
+                   these pages — related cards appear exactly once. */
+                <PortaCabinVariantHero
+                  data={variantData}
+                  productTitle={transformedProduct.title}
+                  averageRating={product.average_rating}
+                  ratingCount={product.rating_count}
+                  railItems={relatedRailItems}
+                  currentHref={`/product/${category}/${slug}`}
+                />
+              ) : (
               <ProductSummaryLayout
                 variant="summary-first"
                 rail={
@@ -692,6 +728,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   <RelatedProductRail items={relatedRailItems} currentHref={`/product/${category}/${slug}`} />
                 }
               />
+              )}
 
               {/* Product Tabs */}
               <div className="mt-4">
@@ -711,7 +748,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <ManufacturerTrustStrip />
               </div>
 
-              {/* Related Products Section */}
+              {/* Related Products Section — SKIPPED for the variant-hero pages
+                  (T25, mirroring the hub route): the related rail lives inside the
+                  hero — desktop column 1, mobile last — so these cards must appear
+                  exactly once. Every other subpage keeps the desktop-only slider
+                  unchanged. */}
+              {!variantData && (
               <div className="mt-4 hidden lg:block">
                 <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
                   <div className="space-y-4">
@@ -841,6 +883,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   </div>
                 </Card>
               </div>
+              )}
 
               {/* Cluster Hub Link */}
               <div className="mt-4 text-center">
