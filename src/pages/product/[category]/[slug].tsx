@@ -35,6 +35,11 @@ import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
 import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
+import {
+  isPortaCabinStripSlug,
+  orderPortaCabinStrip,
+  slugFromProductHref,
+} from '../../../lib/portaCabinClusterRail';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 
@@ -124,7 +129,11 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // Get related products from the same category (lightweight)
     let relatedProducts: WooCommerceProduct[] = [];
     try {
-      const relatedResponse = await staticContent.fetchProducts(1, 12, { // Increased to 12 for better variety
+      // 100 is safe headroom over the largest cluster. T25: the porta cabin S4
+      // strip is a FIXED set of siblings from the internal-linking matrix, and at
+      // the old cap of 12 a named sibling could fall outside the window and be
+      // silently dropped from the strip. Mirrors the hub route's cap.
+      const relatedResponse = await staticContent.fetchProducts(1, 100, {
         category: product.category_slug
       });
       // Filter out the current product, then serialize ONLY the lightweight fields
@@ -356,7 +365,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       return getC16PanelSiblingRail(currentSlug);
     }
 
-    return transformedRelatedProducts.map((relatedProduct) => ({
+    const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
       href: relatedProduct.url || `/product/${relatedProduct.categorySlug || 'default'}/${relatedProduct.slug}`,
       category: relatedProduct.category,
@@ -364,6 +373,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       imageSrc: relatedProduct.image && relatedProduct.image !== '/placeholder.svg' ? relatedProduct.image : undefined,
       imageAlt: relatedProduct.title,
     }));
+
+    // T25 — S4 strip order is LOCKED by the internal-linking matrix v2: hub first,
+    // then exactly the three assigned siblings. Applies only to porta cabin
+    // cluster slugs; every other product keeps the live related ordering.
+    if (isPortaCabinStripSlug(currentSlug)) {
+      return orderPortaCabinStrip(currentSlug, built, (item) => slugFromProductHref(item.href));
+    }
+
+    return built;
   }, [slug, transformedProduct?.slug, transformedRelatedProducts]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration

@@ -1,0 +1,405 @@
+{
+  "productSlug": "porta-cabin-shop",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 154000,
+      "capacity": "2–3 people",
+      "useCase": "Single-Counter Kiosk",
+      "sku": "SP-PCS-10x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-hero-view.webp",
+          "alt": "Porta cabin shop 10×10 ft — retail counter cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-front-angle.webp",
+          "alt": "10×10 ft porta cabin shop — front view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-side-elevation.webp",
+          "alt": "10×10 ft porta cabin shop — side view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-workspace-interior.webp",
+          "alt": "Inside a 10×10 ft porta cabin shop — workspace with counter and display area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-entrance-interior.webp",
+          "alt": "Inside a 10×10 ft porta cabin shop — entrance with counter and display area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A compact shop cabin — a single-counter kiosk for tickets, telecom or a brand outlet.",
+      "priceInclGst": 181720
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 246400,
+      "capacity": "3–4 people",
+      "useCase": "Roadside Slim Retail Unit",
+      "sku": "SP-PCS-20x8",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-hero-view.webp",
+          "alt": "Porta cabin shop 20×8 ft — retail counter cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-front-angle.webp",
+          "alt": "20×8 ft porta cabin shop — front view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-side-elevation.webp",
+          "alt": "20×8 ft porta cabin shop — side view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-workspace-interior.webp",
+          "alt": "Inside a 20×8 ft porta cabin shop — workspace with counter and display area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-entrance-interior.webp",
+          "alt": "Inside a 20×8 ft porta cabin shop — entrance with counter and display area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A slim retail unit for boundary or roadside trading where width is tight.",
+      "priceInclGst": 290752
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 280000,
+      "capacity": "4–6 people",
+      "useCase": "Counter + Display Shop",
+      "sku": "SP-PCS-20x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-hero-view.webp",
+          "alt": "Porta cabin shop 20×10 ft — retail counter cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-front-angle.webp",
+          "alt": "20×10 ft porta cabin shop — front view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-side-elevation.webp",
+          "alt": "20×10 ft porta cabin shop — side view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-workspace-interior.webp",
+          "alt": "Inside a 20×10 ft porta cabin shop — workspace with counter and display area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-entrance-interior.webp",
+          "alt": "Inside a 20×10 ft porta cabin shop — entrance with counter and display area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The standard porta cabin shop — counter, shutter and display space for a small outlet.",
+      "priceInclGst": 330400
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 322560,
+      "capacity": "5–7 people",
+      "useCase": "Shop with Customer Area",
+      "sku": "SP-PCS-20x12",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-hero-view.webp",
+          "alt": "Porta cabin shop 20×12 ft — retail counter cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-front-angle.webp",
+          "alt": "20×12 ft porta cabin shop — front view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-side-elevation.webp",
+          "alt": "20×12 ft porta cabin shop — side view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-workspace-interior.webp",
+          "alt": "Inside a 20×12 ft porta cabin shop — workspace with counter and display area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-entrance-interior.webp",
+          "alt": "Inside a 20×12 ft porta cabin shop — entrance with counter and display area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "Added width for counter plus a small customer-standing area.",
+      "priceInclGst": 380621
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 403200,
+      "capacity": "6–8 people",
+      "useCase": "Shop + Rear Stock Room",
+      "sku": "SP-PCS-30x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-hero-view.webp",
+          "alt": "Porta cabin shop 30×10 ft — retail counter cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-front-angle.webp",
+          "alt": "30×10 ft porta cabin shop — front view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-side-elevation.webp",
+          "alt": "30×10 ft porta cabin shop — side view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-workspace-interior.webp",
+          "alt": "Inside a 30×10 ft porta cabin shop — workspace with counter and display area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-entrance-interior.webp",
+          "alt": "Inside a 30×10 ft porta cabin shop — entrance with counter and display area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A two-zone shop — counter/display at front, stock at the rear.",
+      "priceInclGst": 475776
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 421120,
+      "capacity": "7–9 people",
+      "useCase": "In-Line Market Counter",
+      "sku": "SP-PCS-40x8",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-hero-view.webp",
+          "alt": "Porta cabin shop 40×8 ft — retail counter cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-front-angle.webp",
+          "alt": "40×8 ft porta cabin shop — front view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-side-elevation.webp",
+          "alt": "40×8 ft porta cabin shop — side view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-workspace-interior.webp",
+          "alt": "Inside a 40×8 ft porta cabin shop — workspace with counter and display area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-entrance-interior.webp",
+          "alt": "Inside a 40×8 ft porta cabin shop — entrance with counter and display area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A long retail run for an in-line market or parts counter.",
+      "priceInclGst": 496922
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20x20 ft",
+      "dims": "20x20x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 526400,
+      "capacity": "8–10 people",
+      "useCase": "Walk-In Shop Floor",
+      "sku": "SP-PCS-20x20",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-hero-view.webp",
+          "alt": "Porta cabin shop 20×20 ft — retail counter cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-front-angle.webp",
+          "alt": "20×20 ft porta cabin shop — front view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-side-elevation.webp",
+          "alt": "20×20 ft porta cabin shop — side view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-workspace-interior.webp",
+          "alt": "Inside a 20×20 ft porta cabin shop — workspace with counter and display area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-entrance-interior.webp",
+          "alt": "Inside a 20×20 ft porta cabin shop — entrance with counter and display area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A square walk-in shop floor for a larger outlet or showroom.",
+      "priceInclGst": 621152
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 526400,
+      "capacity": "8–10 people",
+      "useCase": "Large Shop-Floor Module",
+      "sku": "SP-PCS-40x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-hero-view.webp",
+          "alt": "Porta cabin shop 40×10 ft — retail counter cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-front-angle.webp",
+          "alt": "40×10 ft porta cabin shop — front view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-side-elevation.webp",
+          "alt": "40×10 ft porta cabin shop — side view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-workspace-interior.webp",
+          "alt": "Inside a 40×10 ft porta cabin shop — workspace with counter and display area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-entrance-interior.webp",
+          "alt": "Inside a 40×10 ft porta cabin shop — entrance with counter and display area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A large single-module shop floor delivered as one unit.",
+      "priceInclGst": 621152
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 618240,
+      "capacity": "10–12 people",
+      "useCase": "Full Retail Unit with Stock Zone",
+      "sku": "SP-PCS-40x12",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-hero-view.webp",
+          "alt": "Porta cabin shop 40×12 ft — retail counter cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-front-angle.webp",
+          "alt": "40×12 ft porta cabin shop — front view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-side-elevation.webp",
+          "alt": "40×12 ft porta cabin shop — side view, corrugated steel retail unit with shutter",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-workspace-interior.webp",
+          "alt": "Inside a 40×12 ft porta cabin shop — workspace with counter and display area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-entrance-interior.webp",
+          "alt": "Inside a 40×12 ft porta cabin shop — entrance with counter and display area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The flagship shop cabin — a full walk-in retail unit with counter, display and stock zones.",
+      "priceInclGst": 729523
+    }
+  ]
+}

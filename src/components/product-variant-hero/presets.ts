@@ -79,7 +79,56 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
       duration: 'PT1M25S',
     },
   },
+  ...subpagePresets(),
 };
+
+/**
+ * T25 subpages — /product/porta-cabins/{slug}.
+ *
+ * Every value below is DERIVED, never authored: the category row is the cluster
+ * these pages already sit in, the explorer image path is the on-disk convention,
+ * and `productSku` is the ruled SKU (T25 content drop §1, `SP-{CODE}-{WxL}`) for
+ * the size each page defaults to — the configuration the Product Information
+ * block is describing.
+ *
+ * Deliberately ABSENT here:
+ *  - `productName` — the page's real product title already resolves it
+ *    ("MS Porta Cabin", "Porta Cabin Shop", …), so there is nothing to restate.
+ *  - `specPdfHref` — no per-subpage specification PDF exists; the download button
+ *    stays unrendered rather than pointing at the flagship's sheet.
+ *  - `applicationsDataset` — the Section H explorer copy is incomplete (paragraphs
+ *    supplied, h2/intro/h3/applications outstanding), so the Explorer renders
+ *    nothing rather than borrowing another product's copy. Registering a dataset
+ *    here is the ONLY change needed once that copy lands.
+ *  - `video` — subpages carry no video (master §2 rule 1); `hasProductVideo` is
+ *    absent from their data files, so `resolveVariantVideo` returns null anyway.
+ */
+function subpagePresets(): Record<string, VariantProductPreset> {
+  // slug -> [ruled SKU cluster code, that page's default size]
+  const SUBPAGES: Record<string, [string, string]> = {
+    'buy-porta-cabins': ['SP-BPC', '20x10'],
+    'luxury-porta-cabin': ['SP-LXPC', '20x10'],
+    'mini-porta-cabin': ['SP-MNPC', '10x10'],
+    'ms-porta-cabin': ['SP-MSPC', '20x10'],
+    'porta-cabin-office': ['SP-PCO', '20x10'],
+    'porta-cabin-shop': ['SP-PCS', '20x10'],
+    'porta-cabin-with-toilet': ['SP-PCT', '20x10'],
+    'prefabricated-porta-cabin': ['SP-PFPC', '20x10'],
+    'small-portacabin': ['SP-SMPC', '10x10'],
+    'steel-porta-cabin': ['SP-STPC', '20x10'],
+    'low-cost-porta-cabin': ['SP-LCPC', '20x10'],
+  };
+  const out: Record<string, VariantProductPreset> = {};
+  for (const [slug, [code, defaultSize]] of Object.entries(SUBPAGES)) {
+    out[slug] = {
+      categoryLabel: 'Porta Cabins',
+      categoryHref: '/product/porta-cabins',
+      productSku: `${code}-${defaultSize}`,
+      explorerImageTemplate: `/images/products/${slug}/{sizeSlug}/${slug}-{sizeSlug}-elevated-view.webp`,
+    };
+  }
+  return out;
+}
 
 export const getVariantPreset = (data: VariantProductData | null | undefined): VariantProductPreset =>
   (data ? VARIANT_PRODUCT_PRESETS[data.productSlug] : undefined) || {};

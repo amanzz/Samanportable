@@ -1,0 +1,405 @@
+{
+  "productSlug": "prefabricated-porta-cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 143000,
+      "capacity": "2–3 people",
+      "useCase": "Same-Day Compact Cabin",
+      "sku": "SP-PFPC-10x10",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-porta-cabin/10x10/prefabricated-porta-cabin-10x10-hero-view.webp",
+          "alt": "Prefabricated porta cabin 10×10 ft — factory-built ready site cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/10x10/prefabricated-porta-cabin-10x10-front-angle.webp",
+          "alt": "10×10 ft prefabricated porta cabin — front view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/10x10/prefabricated-porta-cabin-10x10-side-elevation.webp",
+          "alt": "10×10 ft prefabricated porta cabin — side view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/10x10/prefabricated-porta-cabin-10x10-workspace-interior.webp",
+          "alt": "Inside a 10×10 ft prefabricated porta cabin — finished workspace",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/10x10/prefabricated-porta-cabin-10x10-entrance-interior.webp",
+          "alt": "Inside a 10×10 ft prefabricated porta cabin — finished entrance",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A compact factory-built cabin delivered finished and ready — placed and usable the same day.",
+      "priceInclGst": 168740
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 228800,
+      "capacity": "3–4 people",
+      "useCase": "Quick-Deploy Narrow Unit",
+      "sku": "SP-PFPC-20x8",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x8/prefabricated-porta-cabin-20x8-hero-view.webp",
+          "alt": "Prefabricated porta cabin 20×8 ft — factory-built ready site cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x8/prefabricated-porta-cabin-20x8-front-angle.webp",
+          "alt": "20×8 ft prefabricated porta cabin — front view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x8/prefabricated-porta-cabin-20x8-side-elevation.webp",
+          "alt": "20×8 ft prefabricated porta cabin — side view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x8/prefabricated-porta-cabin-20x8-workspace-interior.webp",
+          "alt": "Inside a 20×8 ft prefabricated porta cabin — finished workspace",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x8/prefabricated-porta-cabin-20x8-entrance-interior.webp",
+          "alt": "Inside a 20×8 ft prefabricated porta cabin — finished entrance",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A narrow-plot prefab unit for quick boundary-wall deployment.",
+      "priceInclGst": 269984
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 260000,
+      "capacity": "4–6 people",
+      "useCase": "Ready-Delivered Site Office",
+      "sku": "SP-PFPC-20x10",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x10/prefabricated-porta-cabin-20x10-hero-view.webp",
+          "alt": "Prefabricated porta cabin 20×10 ft — factory-built ready site cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x10/prefabricated-porta-cabin-20x10-front-angle.webp",
+          "alt": "20×10 ft prefabricated porta cabin — front view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x10/prefabricated-porta-cabin-20x10-side-elevation.webp",
+          "alt": "20×10 ft prefabricated porta cabin — side view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x10/prefabricated-porta-cabin-20x10-workspace-interior.webp",
+          "alt": "Inside a 20×10 ft prefabricated porta cabin — finished workspace",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x10/prefabricated-porta-cabin-20x10-entrance-interior.webp",
+          "alt": "Inside a 20×10 ft prefabricated porta cabin — finished entrance",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The standard prefab porta cabin — a finished site office delivered as one ready unit.",
+      "priceInclGst": 306800
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 299520,
+      "capacity": "5–7 people",
+      "useCase": "Prefab Office + Manager Area",
+      "sku": "SP-PFPC-20x12",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x12/prefabricated-porta-cabin-20x12-hero-view.webp",
+          "alt": "Prefabricated porta cabin 20×12 ft — factory-built ready site cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x12/prefabricated-porta-cabin-20x12-front-angle.webp",
+          "alt": "20×12 ft prefabricated porta cabin — front view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x12/prefabricated-porta-cabin-20x12-side-elevation.webp",
+          "alt": "20×12 ft prefabricated porta cabin — side view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x12/prefabricated-porta-cabin-20x12-workspace-interior.webp",
+          "alt": "Inside a 20×12 ft prefabricated porta cabin — finished workspace",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x12/prefabricated-porta-cabin-20x12-entrance-interior.webp",
+          "alt": "Inside a 20×12 ft prefabricated porta cabin — finished entrance",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "Added width, still delivered complete and relocatable.",
+      "priceInclGst": 353434
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 374400,
+      "capacity": "6–8 people",
+      "useCase": "Fast Two-Zone Office",
+      "sku": "SP-PFPC-30x10",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-porta-cabin/30x10/prefabricated-porta-cabin-30x10-hero-view.webp",
+          "alt": "Prefabricated porta cabin 30×10 ft — factory-built ready site cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/30x10/prefabricated-porta-cabin-30x10-front-angle.webp",
+          "alt": "30×10 ft prefabricated porta cabin — front view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/30x10/prefabricated-porta-cabin-30x10-side-elevation.webp",
+          "alt": "30×10 ft prefabricated porta cabin — side view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/30x10/prefabricated-porta-cabin-30x10-workspace-interior.webp",
+          "alt": "Inside a 30×10 ft prefabricated porta cabin — finished workspace",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/30x10/prefabricated-porta-cabin-30x10-entrance-interior.webp",
+          "alt": "Inside a 30×10 ft prefabricated porta cabin — finished entrance",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A two-zone prefab cabin for teams that need room fast.",
+      "priceInclGst": 441792
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 391040,
+      "capacity": "7–9 people",
+      "useCase": "Linear Prefab Unit",
+      "sku": "SP-PFPC-40x8",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x8/prefabricated-porta-cabin-40x8-hero-view.webp",
+          "alt": "Prefabricated porta cabin 40×8 ft — factory-built ready site cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x8/prefabricated-porta-cabin-40x8-front-angle.webp",
+          "alt": "40×8 ft prefabricated porta cabin — front view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x8/prefabricated-porta-cabin-40x8-side-elevation.webp",
+          "alt": "40×8 ft prefabricated porta cabin — side view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x8/prefabricated-porta-cabin-40x8-workspace-interior.webp",
+          "alt": "Inside a 40×8 ft prefabricated porta cabin — finished workspace",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x8/prefabricated-porta-cabin-40x8-entrance-interior.webp",
+          "alt": "Inside a 40×8 ft prefabricated porta cabin — finished entrance",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A long linear prefab unit for in-line site use.",
+      "priceInclGst": 461427
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20x20 ft",
+      "dims": "20x20x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 488800,
+      "capacity": "8–10 people",
+      "useCase": "Craned-In Square Module",
+      "sku": "SP-PFPC-20x20",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x20/prefabricated-porta-cabin-20x20-hero-view.webp",
+          "alt": "Prefabricated porta cabin 20×20 ft — factory-built ready site cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x20/prefabricated-porta-cabin-20x20-front-angle.webp",
+          "alt": "20×20 ft prefabricated porta cabin — front view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x20/prefabricated-porta-cabin-20x20-side-elevation.webp",
+          "alt": "20×20 ft prefabricated porta cabin — side view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x20/prefabricated-porta-cabin-20x20-workspace-interior.webp",
+          "alt": "Inside a 20×20 ft prefabricated porta cabin — finished workspace",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/20x20/prefabricated-porta-cabin-20x20-entrance-interior.webp",
+          "alt": "Inside a 20×20 ft prefabricated porta cabin — finished entrance",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A square prefab floor delivered and craned in as one module.",
+      "priceInclGst": 576784
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 488800,
+      "capacity": "8–10 people",
+      "useCase": "Single-Module Prefab Office",
+      "sku": "SP-PFPC-40x10",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x10/prefabricated-porta-cabin-40x10-hero-view.webp",
+          "alt": "Prefabricated porta cabin 40×10 ft — factory-built ready site cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x10/prefabricated-porta-cabin-40x10-front-angle.webp",
+          "alt": "40×10 ft prefabricated porta cabin — front view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x10/prefabricated-porta-cabin-40x10-side-elevation.webp",
+          "alt": "40×10 ft prefabricated porta cabin — side view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x10/prefabricated-porta-cabin-40x10-workspace-interior.webp",
+          "alt": "Inside a 40×10 ft prefabricated porta cabin — finished workspace",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x10/prefabricated-porta-cabin-40x10-entrance-interior.webp",
+          "alt": "Inside a 40×10 ft prefabricated porta cabin — finished entrance",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A large single-module prefab office, ready on placement.",
+      "priceInclGst": 576784
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 574080,
+      "capacity": "10–12 people",
+      "useCase": "Multi-Room Prefab Office",
+      "sku": "SP-PFPC-40x12",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x12/prefabricated-porta-cabin-40x12-hero-view.webp",
+          "alt": "Prefabricated porta cabin 40×12 ft — factory-built ready site cabin by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x12/prefabricated-porta-cabin-40x12-front-angle.webp",
+          "alt": "40×12 ft prefabricated porta cabin — front view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x12/prefabricated-porta-cabin-40x12-side-elevation.webp",
+          "alt": "40×12 ft prefabricated porta cabin — side view, corrugated steel unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x12/prefabricated-porta-cabin-40x12-workspace-interior.webp",
+          "alt": "Inside a 40×12 ft prefabricated porta cabin — finished workspace",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/prefabricated-porta-cabin/40x12/prefabricated-porta-cabin-40x12-entrance-interior.webp",
+          "alt": "Inside a 40×12 ft prefabricated porta cabin — finished entrance",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The flagship prefab cabin — a multi-room factory-built office, no on-site construction.",
+      "priceInclGst": 677414
+    }
+  ]
+}

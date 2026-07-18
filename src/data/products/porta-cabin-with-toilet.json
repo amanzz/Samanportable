@@ -1,0 +1,405 @@
+{
+  "productSlug": "porta-cabin-with-toilet",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 165000,
+      "capacity": "2–3 people",
+      "useCase": "Guard Post + Toilet",
+      "sku": "SP-PCT-10x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-hero-view.webp",
+          "alt": "Porta cabin with toilet 10×10 ft — combined office and sanitation unit by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-front-angle.webp",
+          "alt": "10×10 ft porta cabin with toilet — front view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-side-elevation.webp",
+          "alt": "10×10 ft porta cabin with toilet — side view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-workspace-interior.webp",
+          "alt": "Inside a 10×10 ft porta cabin with toilet — workspace and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-entrance-interior.webp",
+          "alt": "Inside a 10×10 ft porta cabin with toilet — entrance and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A compact cabin with an attached toilet for guard posts and single-occupant sites that still need on-site sanitation.",
+      "priceInclGst": 194700
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 264000,
+      "capacity": "3–4 people",
+      "useCase": "Narrow Office + Toilet",
+      "sku": "SP-PCT-20x8",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-hero-view.webp",
+          "alt": "Porta cabin with toilet 20×8 ft — combined office and sanitation unit by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-front-angle.webp",
+          "alt": "20×8 ft porta cabin with toilet — front view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-side-elevation.webp",
+          "alt": "20×8 ft porta cabin with toilet — side view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-workspace-interior.webp",
+          "alt": "Inside a 20×8 ft porta cabin with toilet — workspace and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-entrance-interior.webp",
+          "alt": "Inside a 20×8 ft porta cabin with toilet — entrance and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A narrow-plot office-plus-toilet unit for boundary-wall placement where a separate toilet block won't fit.",
+      "priceInclGst": 311520
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 300000,
+      "capacity": "4–6 people",
+      "useCase": "Site Office + Toilet",
+      "sku": "SP-PCT-20x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-hero-view.webp",
+          "alt": "Porta cabin with toilet 20×10 ft — combined office and sanitation unit by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-front-angle.webp",
+          "alt": "20×10 ft porta cabin with toilet — front view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-side-elevation.webp",
+          "alt": "20×10 ft porta cabin with toilet — side view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-workspace-interior.webp",
+          "alt": "Inside a 20×10 ft porta cabin with toilet — workspace and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-entrance-interior.webp",
+          "alt": "Inside a 20×10 ft porta cabin with toilet — entrance and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The standard site office with attached toilet — desk space for a small team plus a factory-plumbed sanitation section.",
+      "priceInclGst": 354000
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 345600,
+      "capacity": "5–7 people",
+      "useCase": "Wide Office + Toilet",
+      "sku": "SP-PCT-20x12",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-hero-view.webp",
+          "alt": "Porta cabin with toilet 20×12 ft — combined office and sanitation unit by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-front-angle.webp",
+          "alt": "20×12 ft porta cabin with toilet — front view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-side-elevation.webp",
+          "alt": "20×12 ft porta cabin with toilet — side view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-workspace-interior.webp",
+          "alt": "Inside a 20×12 ft porta cabin with toilet — workspace and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-entrance-interior.webp",
+          "alt": "Inside a 20×12 ft porta cabin with toilet — entrance and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "Extra width to keep a full working area alongside the toilet partition.",
+      "priceInclGst": 407808
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 432000,
+      "capacity": "6–8 people",
+      "useCase": "Office + Toilet & Utility",
+      "sku": "SP-PCT-30x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-hero-view.webp",
+          "alt": "Porta cabin with toilet 30×10 ft — combined office and sanitation unit by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-front-angle.webp",
+          "alt": "30×10 ft porta cabin with toilet — front view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-side-elevation.webp",
+          "alt": "30×10 ft porta cabin with toilet — side view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-workspace-interior.webp",
+          "alt": "Inside a 30×10 ft porta cabin with toilet — workspace and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-entrance-interior.webp",
+          "alt": "Inside a 30×10 ft porta cabin with toilet — entrance and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A two-zone unit — office at one end, toilet and utility at the other — for longer site deployments.",
+      "priceInclGst": 509760
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 451200,
+      "capacity": "7–9 people",
+      "useCase": "Bunkhouse + Toilet Run",
+      "sku": "SP-PCT-40x8",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-hero-view.webp",
+          "alt": "Porta cabin with toilet 40×8 ft — combined office and sanitation unit by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-front-angle.webp",
+          "alt": "40×8 ft porta cabin with toilet — front view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-side-elevation.webp",
+          "alt": "40×8 ft porta cabin with toilet — side view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-workspace-interior.webp",
+          "alt": "Inside a 40×8 ft porta cabin with toilet — workspace and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-entrance-interior.webp",
+          "alt": "Inside a 40×8 ft porta cabin with toilet — entrance and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A linear office-plus-toilet run for bunkhouse or in-line site use.",
+      "priceInclGst": 532416
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20x20 ft",
+      "dims": "20x20x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 564000,
+      "capacity": "8–10 people",
+      "useCase": "Open Office + Internal Toilet",
+      "sku": "SP-PCT-20x20",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-hero-view.webp",
+          "alt": "Porta cabin with toilet 20×20 ft — combined office and sanitation unit by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-front-angle.webp",
+          "alt": "20×20 ft porta cabin with toilet — front view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-side-elevation.webp",
+          "alt": "20×20 ft porta cabin with toilet — side view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-workspace-interior.webp",
+          "alt": "Inside a 20×20 ft porta cabin with toilet — workspace and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-entrance-interior.webp",
+          "alt": "Inside a 20×20 ft porta cabin with toilet — entrance and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A large square unit with room for an open office and a separated internal toilet zone.",
+      "priceInclGst": 665520
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 564000,
+      "capacity": "8–10 people",
+      "useCase": "Large Office + Toilet",
+      "sku": "SP-PCT-40x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-hero-view.webp",
+          "alt": "Porta cabin with toilet 40×10 ft — combined office and sanitation unit by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-front-angle.webp",
+          "alt": "40×10 ft porta cabin with toilet — front view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-side-elevation.webp",
+          "alt": "40×10 ft porta cabin with toilet — side view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-workspace-interior.webp",
+          "alt": "Inside a 40×10 ft porta cabin with toilet — workspace and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-entrance-interior.webp",
+          "alt": "Inside a 40×10 ft porta cabin with toilet — entrance and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A large single-module office with attached toilet, delivered as one plumbed unit.",
+      "priceInclGst": 665520
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 662400,
+      "capacity": "10–12 people",
+      "useCase": "Multi-Room Office + Sanitation",
+      "sku": "SP-PCT-40x12",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-hero-view.webp",
+          "alt": "Porta cabin with toilet 40×12 ft — combined office and sanitation unit by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-front-angle.webp",
+          "alt": "40×12 ft porta cabin with toilet — front view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-side-elevation.webp",
+          "alt": "40×12 ft porta cabin with toilet — side view showing cabin and attached toilet section",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-workspace-interior.webp",
+          "alt": "Inside a 40×12 ft porta cabin with toilet — workspace and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-entrance-interior.webp",
+          "alt": "Inside a 40×12 ft porta cabin with toilet — entrance and plumbed sanitation area",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The flagship combined unit — full multi-room office with an integrated sanitation section.",
+      "priceInclGst": 781632
+    }
+  ]
+}
