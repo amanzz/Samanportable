@@ -1,0 +1,1113 @@
+{
+ "ms-porta-cabin": {
+  "10x10": {
+   "h2": "10×10 ft MS Porta Cabin (100 sq ft) — Exposed-Site Guard Post",
+   "intro": "At 100 sq ft, this is the IS 2062 frame in its smallest working form: a guard post or gate office on an exposed boundary where a lighter cabin corrodes out in two monsoons. The surface-treated frame is the reason buyers put this size on weighbridges and perimeter gates that stay for years.",
+   "h3": "Where this size earns its IS 2062 frame",
+   "applications": [
+    "MS guard post at an exposed factory gate",
+    "Weighbridge operator cabin",
+    "Perimeter security point",
+    "Toll and entry checkpost"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft MS Porta Cabin (160 sq ft) — Boundary-Wall Site Office",
+   "intro": "The 8 ft width slots along compound walls and road margins where a standard cabin will not fit. Contractors use it as a boundary-wall site office that keeps the full structural spec on a plot the site plan almost forgot.",
+   "h3": "Where this size earns its IS 2062 frame",
+   "applications": [
+    "Boundary-wall site office on a road-margin plot",
+    "Compound-wall stores cabin",
+    "Utility corridor office",
+    "Gatehouse with records desk"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft MS Porta Cabin (200 sq ft) — EPC Standard Site Office",
+   "intro": "The 200 sq ft EPC standard: four to six staff on a certified Grade A frame. This is the size procurement teams specify when the tender language says \"structural steel to IS 2062\" and the cabin must outlast the project.",
+   "h3": "Where this size earns its IS 2062 frame",
+   "applications": [
+    "EPC contractor site office for 4–6 staff",
+    "Government project site office",
+    "Structural-steel spec office",
+    "Supervision and QA cabin"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft MS Porta Cabin (240 sq ft) — Office with Manager Corner",
+   "intro": "The extra 2 ft of width takes a partitioned manager corner without giving up the open desk area. Site teams pick it when one engineer needs a door that closes and the frame still has to carry a 20-year life.",
+   "h3": "Where this size earns its IS 2062 frame",
+   "applications": [
+    "Site office with partitioned manager corner",
+    "Engineer + documentation room",
+    "Billing and dispatch office",
+    "Client meeting corner on site"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft MS Porta Cabin (300 sq ft) — Office + Records Room",
+   "intro": "Three hundred square feet splits naturally into office plus records or meeting room. Long-duration site teams take this size when the drawings cabinet and the site office must live under one treated-steel roof.",
+   "h3": "Where this size earns its IS 2062 frame",
+   "applications": [
+    "Project office with records room",
+    "Drawing and documentation office",
+    "Site office + meeting zone",
+    "Long-duration EPC team base"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft MS Porta Cabin (320 sq ft) — Linear Bunkhouse Office",
+   "intro": "A linear run for bunkhouse or in-line office use along a platform edge or boundary. The 40 ft IS 2062 frame is craned in as one piece, which is why rail and highway sites favour it.",
+   "h3": "Where this size earns its IS 2062 frame",
+   "applications": [
+    "Linear bunkhouse on a platform edge",
+    "Rail/highway in-line site office",
+    "Worker rest run with office end",
+    "Stores + office linear unit"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft MS Porta Cabin (400 sq ft) — Training / Command Room",
+   "intro": "A 400 sq ft square floor for training halls and site command rooms. The full-width span on a certified frame means an open room with no internal posts interrupting seating rows.",
+   "h3": "Where this size earns its IS 2062 frame",
+   "applications": [
+    "Site training hall on a certified frame",
+    "Project command room",
+    "Safety induction room",
+    "Multi-team briefing hall"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft MS Porta Cabin (400 sq ft) — Large Certified-Frame Office",
+   "intro": "The largest single-module MS office floor — eight to ten staff in one craned lift. Chosen when a project wants one big certified structure instead of two joined cabins.",
+   "h3": "Where this size earns its IS 2062 frame",
+   "applications": [
+    "Large single-module office for 8–10 staff",
+    "Consolidated project office",
+    "Multi-desk engineering office",
+    "Site head office floor"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft MS Porta Cabin (480 sq ft) — Multi-Room Project Office",
+   "intro": "Nearly 500 sq ft of multi-room office on one Grade A frame: reception, manager room and open desks in a single module. The flagship MS configuration for project head offices that must not flex, sag or rust out.",
+   "h3": "Where this size earns its IS 2062 frame",
+   "applications": [
+    "Multi-room project head office",
+    "Reception + manager + open desks",
+    "Long-project administration block",
+    "Full site secretariat module"
+   ]
+  }
+ },
+ "steel-porta-cabin": {
+  "10x10": {
+   "h2": "10×10 ft Steel Porta Cabin (100 sq ft) — Guard Post / Kiosk",
+   "intro": "The smallest steel cabin, specified by steel type to match exposure: MS for normal sites, GI where the guard post faces coastal air. A kiosk or gate cabin whose skin is chosen for the climate, not off a shelf.",
+   "h3": "Deployments by steel type",
+   "applications": [
+    "Steel guard kiosk matched to site exposure",
+    "Coastal-gate GI guard post",
+    "Dry-site MS kiosk",
+    "Remote checkpoint cabin"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Steel Porta Cabin (160 sq ft) — Narrow-Plot Site Office",
+   "intro": "A slim site office where the steel decision matters most: narrow roadside plots often mean long outdoor exposure, so this size is frequently quoted in GI. Full working spec on an 8 ft width.",
+   "h3": "Deployments by steel type",
+   "applications": [
+    "Narrow-plot steel site office",
+    "Roadside GI office unit",
+    "Boundary-strip office",
+    "Long-exposure margin cabin"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Steel Porta Cabin (200 sq ft) — Standard Steel Site Office",
+   "intro": "The standard steel site office for four to six staff. Most ship in MS; the same size in pre-galvanised steel goes to long-duration remote deployments where re-painting is impractical.",
+   "h3": "Deployments by steel type",
+   "applications": [
+    "Standard steel site office, MS default",
+    "GI office for humid regions",
+    "4–6 person project cabin",
+    "Pre-galv remote-site office"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Steel Porta Cabin (240 sq ft) — Office with Manager Corner",
+   "intro": "The manager-corner width in your chosen steel specification. Teams that keep one cabin across several postings often upgrade this size to GI so relocation does not mean refinishing.",
+   "h3": "Deployments by steel type",
+   "applications": [
+    "Steel office with manager corner",
+    "Multi-posting relocatable office",
+    "GI-upgraded supervision cabin",
+    "Documentation + desk office"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Steel Porta Cabin (300 sq ft) — Two-Zone Site Office",
+   "intro": "A two-zone office-plus-meeting floor. On humid-region projects this is the size where GI pays for itself — more wall area, more exposure, one zinc coat protecting all of it.",
+   "h3": "Deployments by steel type",
+   "applications": [
+    "Two-zone steel office + meeting room",
+    "Humid-region GI project office",
+    "Office + records in one module",
+    "Monsoon-belt site base"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Steel Porta Cabin (320 sq ft) — Remote Linear Bunkhouse",
+   "intro": "The linear bunkhouse run for remote camps. Pre-galvanised is worth specifying here: 40 ft of wall a day's drive from the nearest fabricator should never need field treatment.",
+   "h3": "Deployments by steel type",
+   "applications": [
+    "Remote linear bunkhouse in pre-galv steel",
+    "Mining-camp accommodation run",
+    "In-line office row",
+    "Long-duration camp module"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Steel Porta Cabin (400 sq ft) — Humid-Region Command Room",
+   "intro": "A 400 sq ft open command room. Coastal and riverine projects take this size in GI; inland projects in MS — same frame logic, different skin for the same 20-year target.",
+   "h3": "Deployments by steel type",
+   "applications": [
+    "Humid-region command room in GI steel",
+    "Open training hall",
+    "Riverine project control room",
+    "Multi-team coordination floor"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Steel Porta Cabin (400 sq ft) — Large Steel Office Floor",
+   "intro": "The largest single-module steel office floor, steel type matched to the site at quotation. One crane lift, eight to ten staff, no compromise on the specification chooser.",
+   "h3": "Deployments by steel type",
+   "applications": [
+    "Large steel office floor, one crane lift",
+    "8–10 desk project office",
+    "Consolidated steel module",
+    "Site management floor"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Steel Porta Cabin (480 sq ft) — Flagship Steel Office",
+   "intro": "The flagship steel cabin at nearly 500 sq ft, delivered in MS, GI or pre-galvanised. The size where choosing the right steel before ordering saves the most over the cabin's life.",
+   "h3": "Deployments by steel type",
+   "applications": [
+    "Flagship steel office in MS, GI or pre-galv",
+    "Multi-room project headquarters",
+    "Full administration module",
+    "Long-life site head office"
+   ]
+  }
+ },
+ "luxury-porta-cabin": {
+  "10x10": {
+   "h2": "10×10 ft Luxury Porta Cabin (100 sq ft) — Premium Reception Cabin",
+   "intro": "A hundred square feet finished like a lobby: PUF-insulated, premium laminates, proper lighting. Developers place it at project gates as a reception where the first client impression happens before the site tour.",
+   "h3": "Executive uses for this size",
+   "applications": [
+    "Premium reception cabin at a project gate",
+    "Developer welcome lounge",
+    "High-finish security reception",
+    "VIP waiting cabin"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Luxury Porta Cabin (160 sq ft) — Client-Facing Narrow Office",
+   "intro": "A narrow-plot cabin that refuses to look narrow inside — executive finish, upgraded glazing, quiet PUF walls. For client-facing offices on tight urban sites.",
+   "h3": "Executive uses for this size",
+   "applications": [
+    "Client-facing narrow office, executive finish",
+    "Urban-plot premium office",
+    "Consultant cabin with glazing",
+    "Tight-site executive unit"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Luxury Porta Cabin (200 sq ft) — Executive Site Office",
+   "intro": "The executive site office: senior engineer or project head, client seating, AC provision, premium floor. The size most luxury buyers start with when the cabin doubles as a meeting point.",
+   "h3": "Executive uses for this size",
+   "applications": [
+    "Executive site office with client seating",
+    "Project head cabin",
+    "Premium meeting office",
+    "AC executive workspace"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Luxury Porta Cabin (240 sq ft) — Premium Manager Suite",
+   "intro": "The added width becomes a manager suite — desk zone plus a proper seating corner for visitors. Premium laminate throughout keeps it presentation-ready every day of the project.",
+   "h3": "Executive uses for this size",
+   "applications": [
+    "Premium manager suite with visitor corner",
+    "Director site cabin",
+    "Executive office + lounge corner",
+    "Presentation-ready office"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Luxury Porta Cabin (300 sq ft) — Office + Meeting Lounge",
+   "intro": "An executive office at one end, a meeting lounge at the other. Marketing teams running long sales campaigns from site pick this two-zone premium layout.",
+   "h3": "Executive uses for this size",
+   "applications": [
+    "Executive office + meeting lounge",
+    "Sales campaign office",
+    "Client negotiation suite",
+    "Two-zone premium floor"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Luxury Porta Cabin (320 sq ft) — High-Finish Accommodation",
+   "intro": "High-finish linear accommodation or in-line executive offices — comfort-grade insulation and interiors for staff who live where they work.",
+   "h3": "Executive uses for this size",
+   "applications": [
+    "High-finish staff accommodation run",
+    "Executive in-line offices",
+    "Comfort-grade living module",
+    "Long-stay premium quarters"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Luxury Porta Cabin (400 sq ft) — Sales Lounge / Training Suite",
+   "intro": "The developer's sales lounge: 400 open square feet of premium floor for scale models, seating clusters and closing tables. Also ordered as a high-finish training suite.",
+   "h3": "Executive uses for this size",
+   "applications": [
+    "Developer sales lounge with model display",
+    "Premium training suite",
+    "Client experience centre",
+    "Open executive floor"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Luxury Porta Cabin (400 sq ft) — Executive Office Floor",
+   "intro": "A full executive floor delivered as one module — eight to ten senior staff in comfort-grade surroundings, one crane lift from finished to occupied.",
+   "h3": "Executive uses for this size",
+   "applications": [
+    "Full executive office floor, one module",
+    "Senior-team premium office",
+    "8–10 seat executive space",
+    "Project leadership floor"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Luxury Porta Cabin (480 sq ft) — Multi-Room Executive Suite",
+   "intro": "The multi-room executive suite: reception, cabins and meeting space under one premium-finished roof. The top of the SAMAN range for head offices that host clients weekly.",
+   "h3": "Executive uses for this size",
+   "applications": [
+    "Multi-room executive suite",
+    "Reception + cabins + meeting room",
+    "Premium project headquarters",
+    "Client-hosting head office"
+   ]
+  }
+ },
+ "buy-porta-cabins": {
+  "10x10": {
+   "h2": "10×10 ft Porta Cabin (100 sq ft) — Entry Site Office",
+   "intro": "The entry point to buying a porta cabin: ₹1,37,500 ex-GST, delivered finished. Buyers take this size as a guard post or first small office and typically order again within the year.",
+   "h3": "What buyers order this size for",
+   "applications": [
+    "First porta cabin purchase — guard post or small office",
+    "Entry-price site cabin",
+    "Starter office unit",
+    "Gate cabin order"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Porta Cabin (160 sq ft) — Narrow-Plot Site Office",
+   "intro": "The narrow-plot buy — full specification on an 8 ft width. Order it when the site boundary decides the cabin, not the other way around.",
+   "h3": "What buyers order this size for",
+   "applications": [
+    "Narrow-plot cabin purchase",
+    "Boundary-wall office order",
+    "Slim-site unit",
+    "Margin-strip cabin"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Porta Cabin (200 sq ft) — Standard Site Office",
+   "intro": "The most-ordered size in the range and the safest first purchase: a standard four-to-six-person site office at ₹2,50,000 ex-GST with the shortest quote-to-delivery cycle.",
+   "h3": "What buyers order this size for",
+   "applications": [
+    "Most-ordered standard site office",
+    "Safest first purchase",
+    "4–6 person office order",
+    "Fast quote-to-delivery unit"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Porta Cabin (240 sq ft) — Office with Manager Area",
+   "intro": "Worth the step up at order time if a manager corner is even a possibility — retrofitting a partition later costs more than the width does now.",
+   "h3": "What buyers order this size for",
+   "applications": [
+    "Office purchase with manager corner",
+    "Partition-ready order",
+    "Wider office investment",
+    "Two-role cabin order"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Porta Cabin (300 sq ft) — Office + Meeting Zone",
+   "intro": "The two-zone purchase: office plus meeting in one order, one delivery, one installation bill. Popular with buyers consolidating two old cabins into one.",
+   "h3": "What buyers order this size for",
+   "applications": [
+    "Two-zone office in one order",
+    "Cabin consolidation purchase",
+    "Office + meeting order",
+    "Single-delivery double unit"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Porta Cabin (320 sq ft) — Linear Office & Bunkhouse",
+   "intro": "Bought for bunkhouse rows and in-line site offices; one 40 ft order replaces two 20 ft cabins and one of the two transport bills.",
+   "h3": "What buyers order this size for",
+   "applications": [
+    "Bunkhouse row purchase",
+    "Two-cabins-in-one order",
+    "Linear site office buy",
+    "Single-transport 40 ft unit"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Porta Cabin (400 sq ft) — Open-Floor Module",
+   "intro": "The open-floor purchase for training rooms and command centres. A single 400 sq ft order that avoids the joint lines and double plumbing of paired cabins.",
+   "h3": "What buyers order this size for",
+   "applications": [
+    "Open-floor purchase for training rooms",
+    "Command centre order",
+    "400 sq ft single order",
+    "No-joint-line square unit"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Porta Cabin (400 sq ft) — Large Site Office",
+   "intro": "The large single-module buy — maximum office floor per rupee of crane time. Ask for the combined transport quote; one lift is the saving.",
+   "h3": "What buyers order this size for",
+   "applications": [
+    "Large single-module purchase",
+    "Maximum floor per crane lift",
+    "8–10 person office order",
+    "One-lift big office"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Porta Cabin (480 sq ft) — Multi-Room Office",
+   "intro": "The flagship purchase at ₹5,52,000 ex-GST: a complete multi-room office in one order. Buyers running multiple sites standardise on this size and relocate it project to project.",
+   "h3": "What buyers order this size for",
+   "applications": [
+    "Flagship multi-room purchase",
+    "Standardised multi-site order",
+    "Relocatable head office buy",
+    "Complete office in one order"
+   ]
+  }
+ },
+ "mini-porta-cabin": {
+  "10x10": {
+   "h2": "10×10 ft Mini Porta Cabin (100 sq ft) — Guard Post / Ticket Counter",
+   "intro": "The definitive mini cabin: guard post, ticket counter, weighbridge cabin. Placed in an hour, moved as often as the gate moves, finished inside like a cabin ten times the price.",
+   "h3": "Where this compact size fits",
+   "applications": [
+    "Mini guard post at a site gate",
+    "Ticket and toll counter",
+    "Weighbridge cabin",
+    "Parking attendant kiosk"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Mini Porta Cabin (160 sq ft) — Slim Guard & Store Unit",
+   "intro": "A slim unit for boundary-wall guard-and-store duty — two functions on a strip of land a car could not park on.",
+   "h3": "Where this compact size fits",
+   "applications": [
+    "Slim guard-and-store unit on a boundary",
+    "Gate cabin + tool store",
+    "Narrow twin-role unit",
+    "Compound wall cabin"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Mini Porta Cabin (200 sq ft) — Compact Site Office",
+   "intro": "The compact site office end of the mini range: one to four occupants who need a working cabin, not a big one.",
+   "h3": "Where this compact size fits",
+   "applications": [
+    "Compact site office for 1–4 occupants",
+    "Small supervision cabin",
+    "Entry-level project office",
+    "Utility office unit"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Mini Porta Cabin (240 sq ft) — Compact Office + Store",
+   "intro": "A little more width for a compact office with a store corner — tools locked in the same small footprint the supervisor works from.",
+   "h3": "Where this compact size fits",
+   "applications": [
+    "Compact office with store corner",
+    "Supervisor + equipment room",
+    "Small office + lockup",
+    "Two-role compact cabin"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Mini Porta Cabin (300 sq ft) — Small Two-Use Cabin",
+   "intro": "The upper mini range: a small two-use cabin — office plus store, or office plus rest room — still sized for quick placement.",
+   "h3": "Where this compact size fits",
+   "applications": [
+    "Small two-use cabin — office + rest room",
+    "Compact dual-zone unit",
+    "Guard base + records",
+    "Site utility pair"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Mini Porta Cabin (320 sq ft) — In-Line Guard/Store Run",
+   "intro": "An in-line run for gate complexes that need guard, store and utility rooms in a row along the boundary.",
+   "h3": "Where this compact size fits",
+   "applications": [
+    "In-line guard and store run at a gate complex",
+    "Boundary services row",
+    "Multi-room gate block",
+    "Linear utility run"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Mini Porta Cabin (400 sq ft) — Large Compact Square",
+   "intro": "The largest compact square before the standard range — an open small hall for briefings or a multi-guard base at a big gate.",
+   "h3": "Where this compact size fits",
+   "applications": [
+    "Open small hall for briefings",
+    "Multi-guard gate base",
+    "Compact training square",
+    "Team muster room"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Mini Porta Cabin (400 sq ft) — Larger Compact Floor",
+   "intro": "Mini-range simplicity at more floor: buyers who want one open compact space rather than a partitioned standard office.",
+   "h3": "Where this compact size fits",
+   "applications": [
+    "Larger compact floor, kept open",
+    "Single-space work hall",
+    "Open mini-range unit",
+    "Multi-use compact floor"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Mini Porta Cabin (480 sq ft) — Top Mini-Range Unit",
+   "intro": "The top of the mini range: maximum area kept deliberately simple — one open, finished, quick-to-relocate floor.",
+   "h3": "Where this compact size fits",
+   "applications": [
+    "Top mini-range open unit",
+    "Maximum simple floor",
+    "Relocatable open hall",
+    "Large single-room cabin"
+   ]
+  }
+ },
+ "small-portacabin": {
+  "10x10": {
+   "h2": "10×10 ft Small Portacabin (100 sq ft) — Supervisor Cabin",
+   "intro": "The supervisor's cabin: one desk, files, a visitor chair — a proper finished office at exactly the footprint a small site can spare.",
+   "h3": "Small-team uses for this size",
+   "applications": [
+    "Supervisor cabin with desk and files",
+    "One-person project office",
+    "Site manager post",
+    "Compact working office"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Small Portacabin (160 sq ft) — Slim Small Office",
+   "intro": "The slim small office for tight boundaries: full working interior, 8 ft width, no compromise on insulation or wiring.",
+   "h3": "Small-team uses for this size",
+   "applications": [
+    "Slim small office on a tight boundary",
+    "Narrow supervision cabin",
+    "8 ft width working office",
+    "Boundary project cabin"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Small Portacabin (200 sq ft) — Three-to-Four-Person Office",
+   "intro": "A three-to-four-person project office at the small end of the range — the size consultants and PMC teams book for single-package supervision.",
+   "h3": "Small-team uses for this size",
+   "applications": [
+    "Three-to-four person project office",
+    "PMC supervision office",
+    "Single-package site office",
+    "Small consultant cabin"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Small Portacabin (240 sq ft) — Small Office + Files Corner",
+   "intro": "A small office plus a files-and-printer corner. The width does the organising; the team stays at four desks.",
+   "h3": "Small-team uses for this size",
+   "applications": [
+    "Small office with files corner",
+    "Office + printer/records nook",
+    "Four-desk organised cabin",
+    "Compact admin office"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Small Portacabin (300 sq ft) — Compact Two-Zone Office",
+   "intro": "The compact two-zone office: desks at one end, a small meeting or records space at the other — small-team working, properly separated.",
+   "h3": "Small-team uses for this size",
+   "applications": [
+    "Compact two-zone office",
+    "Desks + small meeting space",
+    "Small-team split office",
+    "Office + records zone"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Small Portacabin (320 sq ft) — Linear Small-Office Run",
+   "intro": "A linear small-office run for in-line site layouts — several small working rooms along one 40 ft module.",
+   "h3": "Small-team uses for this size",
+   "applications": [
+    "Linear small-office run",
+    "Several small rooms in line",
+    "In-line project offices",
+    "Row of working cabins"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Small Portacabin (400 sq ft) — Large Compact-Square Office",
+   "intro": "The largest compact-square office before the standard range: an open small-team floor with room to grow by two desks.",
+   "h3": "Small-team uses for this size",
+   "applications": [
+    "Large compact-square team office",
+    "Open small-team floor",
+    "Growth-ready office square",
+    "Eight-desk open room"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Small Portacabin (400 sq ft) — Larger Small-Office Floor",
+   "intro": "A larger small-office floor kept simple — one open room, more desks, same right-sized philosophy.",
+   "h3": "Small-team uses for this size",
+   "applications": [
+    "Larger small-office floor, one room",
+    "Open-plan compact office",
+    "More desks, same philosophy",
+    "Single-module team room"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Small Portacabin (480 sq ft) — Top Small-Range Office",
+   "intro": "The top of the small range: maximum compact-office area for teams that outgrew 20x12 but do not need a flagship office.",
+   "h3": "Small-team uses for this size",
+   "applications": [
+    "Top small-range office floor",
+    "Beyond-20x12 team office",
+    "Large compact working floor",
+    "Open office before flagship"
+   ]
+  }
+ },
+ "porta-cabin-office": {
+  "10x10": {
+   "h2": "10×10 ft Porta Cabin Office (100 sq ft) — Two-Desk Supervisor Office",
+   "intro": "A fitted two-desk supervisor office: workstations, power and data points wired at the factory, usable the hour it lands.",
+   "h3": "Office configurations at this size",
+   "applications": [
+    "Fitted two-desk supervisor office",
+    "Wired starter office",
+    "Power-and-data ready cabin",
+    "Instant working office"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Porta Cabin Office (160 sq ft) — Narrow Fitted Office",
+   "intro": "A narrow fitted office for one to three staff — the full office kit (desks, points, lighting, AC provision) on a boundary-wall width.",
+   "h3": "Office configurations at this size",
+   "applications": [
+    "Narrow fitted office for 1–3 staff",
+    "Boundary office with full kit",
+    "Slim wired workspace",
+    "Tight-site office unit"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Porta Cabin Office (200 sq ft) — 4–6 Workstation Office",
+   "intro": "The standard porta cabin office: four to six workstations with per-desk power and data. The most-specified fitted office in the range.",
+   "h3": "Office configurations at this size",
+   "applications": [
+    "Standard 4–6 workstation office",
+    "Per-desk powered office",
+    "Most-specified fitted office",
+    "Team working cabin"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Porta Cabin Office (240 sq ft) — Open Office + Manager Cabin",
+   "intro": "An open office plus a partitioned manager cabin — the width buys the door that closes without losing a single desk.",
+   "h3": "Office configurations at this size",
+   "applications": [
+    "Open office + partitioned manager cabin",
+    "Door-that-closes office",
+    "Desks + manager room",
+    "Two-zone fitted office"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Porta Cabin Office (300 sq ft) — Workstations + Meeting Zone",
+   "intro": "Workstations at one end, a meeting or records zone at the other: a two-zone fitted office for teams that interview, brief and file on site.",
+   "h3": "Office configurations at this size",
+   "applications": [
+    "Workstations + meeting zone office",
+    "Interview and briefing office",
+    "Split working floor",
+    "Desks + records office"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Porta Cabin Office (320 sq ft) — Linear Office Run",
+   "intro": "A linear office run — workstation rows along one 40 ft module for in-line site layouts.",
+   "h3": "Office configurations at this size",
+   "applications": [
+    "Linear office run of workstation rows",
+    "In-line fitted offices",
+    "40 ft desk row module",
+    "Corridor office layout"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Porta Cabin Office (400 sq ft) — Open Team Office Floor",
+   "intro": "An open team floor: 400 sq ft of workstations for a larger site team or a training-and-work combination room.",
+   "h3": "Office configurations at this size",
+   "applications": [
+    "Open team office floor",
+    "Training + work combination room",
+    "400 sq ft workstation floor",
+    "Large-team open office"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Porta Cabin Office (400 sq ft) — 8–10 Workstation Office",
+   "intro": "Eight to ten workstations delivered as one fitted module — the large single-floor site office.",
+   "h3": "Office configurations at this size",
+   "applications": [
+    "8–10 workstation single module",
+    "Large fitted office floor",
+    "Full-team office in one lift",
+    "Big open working floor"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Porta Cabin Office (480 sq ft) — Multi-Room Site Office",
+   "intro": "The multi-room site office: reception, manager cabin and open work area, fully fitted at the factory and craned in ready to occupy.",
+   "h3": "Office configurations at this size",
+   "applications": [
+    "Multi-room site office — reception to desks",
+    "Manager cabin + open floor",
+    "Complete fitted office block",
+    "Ready-to-occupy office suite"
+   ]
+  }
+ },
+ "porta-cabin-shop": {
+  "10x10": {
+   "h2": "10×10 ft Porta Cabin Shop (100 sq ft) — Single-Counter Kiosk",
+   "intro": "A single-counter kiosk: shutter, counter and display in 100 sq ft — tickets, telecom, or a brand outlet that opens the day it is delivered.",
+   "h3": "Retail uses at this size",
+   "applications": [
+    "Single-counter retail kiosk with shutter",
+    "Ticket or telecom outlet",
+    "Brand kiosk unit",
+    "Small sales counter"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Porta Cabin Shop (160 sq ft) — Roadside Slim Retail Unit",
+   "intro": "The roadside slim retail unit: 8 ft deep, counter across the width, built for verges and boundary strips where trade happens on foot.",
+   "h3": "Retail uses at this size",
+   "applications": [
+    "Roadside slim retail unit",
+    "Verge trading counter",
+    "Footpath-facing shop",
+    "Narrow sales cabin"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Porta Cabin Shop (200 sq ft) — Counter + Display Shop",
+   "intro": "The standard shop cabin: counter, roll-up shutter and display run for a small outlet — spare parts, pharmacy point, or project sales counter.",
+   "h3": "Retail uses at this size",
+   "applications": [
+    "Counter and display shop cabin",
+    "Spare-parts counter",
+    "Pharmacy point unit",
+    "Project sales counter"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Porta Cabin Shop (240 sq ft) — Shop with Customer Area",
+   "intro": "Counter plus a customer-standing area inside the shop line — room for two staff serving at once.",
+   "h3": "Retail uses at this size",
+   "applications": [
+    "Shop with customer standing area",
+    "Two-staff service counter",
+    "Wider retail cabin",
+    "Walk-up shop unit"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Porta Cabin Shop (300 sq ft) — Shop + Rear Stock Room",
+   "intro": "Front-of-house and stock in one: counter and display forward, lockable stock room behind. The small-shop workhorse.",
+   "h3": "Retail uses at this size",
+   "applications": [
+    "Shop with rear stock room",
+    "Counter + lockable store",
+    "Front-and-back retail unit",
+    "Small-shop workhorse"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Porta Cabin Shop (320 sq ft) — In-Line Market Counter",
+   "intro": "The in-line market counter: one 40 ft retail run for markets, depots and parts yards that serve across a long counter.",
+   "h3": "Retail uses at this size",
+   "applications": [
+    "In-line market counter run",
+    "Depot service counter",
+    "Long parts counter",
+    "Market row unit"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Porta Cabin Shop (400 sq ft) — Walk-In Shop Floor",
+   "intro": "A walk-in shop floor: 400 sq ft of open retail with aisles and shelving — a true small store, not a kiosk.",
+   "h3": "Retail uses at this size",
+   "applications": [
+    "Walk-in shop floor with aisles",
+    "Small store square",
+    "Open retail room",
+    "Shelved shop floor"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Porta Cabin Shop (400 sq ft) — Large Shop-Floor Module",
+   "intro": "A large shop-floor module delivered in one piece — showroom-style display with a service counter and back-wall stock.",
+   "h3": "Retail uses at this size",
+   "applications": [
+    "Large shop-floor module",
+    "Showroom-style display unit",
+    "Big counter + stock wall",
+    "Single-piece retail floor"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Porta Cabin Shop (480 sq ft) — Full Retail Unit with Stock Zone",
+   "intro": "The full retail unit: entrance, display floor, counter and stock zone in one 480 sq ft module — a complete shop, craned in.",
+   "h3": "Retail uses at this size",
+   "applications": [
+    "Full retail unit — entrance to stock zone",
+    "Complete craned-in shop",
+    "480 sq ft store module",
+    "Display + counter + stock unit"
+   ]
+  }
+ },
+ "porta-cabin-with-toilet": {
+  "10x10": {
+   "h2": "10×10 ft Porta Cabin with Toilet (100 sq ft) — Guard Post + Toilet",
+   "intro": "A guard post with its own toilet: single-occupant deployments where the nearest facility is a site walk away. One delivery solves both requirements.",
+   "h3": "Combined-unit deployments",
+   "applications": [
+    "Guard post with attached toilet",
+    "Single-occupant self-contained cabin",
+    "Remote-gate unit with sanitation",
+    "One-delivery guard solution"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Porta Cabin with Toilet (160 sq ft) — Narrow Office + Toilet",
+   "intro": "A narrow office-plus-toilet for boundary placements where a separate toilet block simply has no land to stand on.",
+   "h3": "Combined-unit deployments",
+   "applications": [
+    "Narrow office with toilet section",
+    "Boundary unit with sanitation",
+    "No-spare-land combined cabin",
+    "Slim office + WC"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Porta Cabin with Toilet (200 sq ft) — Site Office + Toilet",
+   "intro": "The standard combined unit: a small-team office and a factory-plumbed toilet section in one module, one water point, one drain connection.",
+   "h3": "Combined-unit deployments",
+   "applications": [
+    "Site office with factory-plumbed toilet",
+    "Small-team combined unit",
+    "One-connection office module",
+    "Office + WC standard"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Porta Cabin with Toilet (240 sq ft) — Wide Office + Toilet",
+   "intro": "The extra width keeps a full working office beside the toilet partition — no desk sacrificed to the sanitation requirement.",
+   "h3": "Combined-unit deployments",
+   "applications": [
+    "Wide office beside toilet partition",
+    "No-desk-lost combined unit",
+    "Full office + sanitation",
+    "Comfortable combined cabin"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Porta Cabin with Toilet (300 sq ft) — Office + Toilet & Utility",
+   "intro": "Office at one end, toilet and utility zone at the other: the long-deployment configuration where the team lives on site hours, not minutes.",
+   "h3": "Combined-unit deployments",
+   "applications": [
+    "Office one end, toilet and utility the other",
+    "Long-shift site base",
+    "Two-zone combined module",
+    "All-day team unit"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Porta Cabin with Toilet (320 sq ft) — Bunkhouse + Toilet Run",
+   "intro": "The bunkhouse run with sanitation built in — accommodation and toilet in one linear module for camps and night-shift sites.",
+   "h3": "Combined-unit deployments",
+   "applications": [
+    "Bunkhouse run with built-in toilet",
+    "Night-shift camp module",
+    "Accommodation + sanitation line",
+    "Self-contained linear camp"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Porta Cabin with Toilet (400 sq ft) — Open Office + Internal Toilet",
+   "intro": "An open office floor with an internal partitioned toilet zone — the big-square answer when everything must stay under one roof.",
+   "h3": "Combined-unit deployments",
+   "applications": [
+    "Open office with internal toilet zone",
+    "One-roof square module",
+    "Partitioned combined floor",
+    "Big-team combined unit"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Porta Cabin with Toilet (400 sq ft) — Large Office + Toilet",
+   "intro": "A large office with attached toilet, delivered as one plumbed unit: eight to ten staff and their facility in a single crane lift.",
+   "h3": "Combined-unit deployments",
+   "applications": [
+    "Large office with attached toilet",
+    "8–10 staff self-contained module",
+    "One-lift office + facility",
+    "Full-team combined floor"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Porta Cabin with Toilet (480 sq ft) — Multi-Room Office + Sanitation",
+   "intro": "The flagship combined module: multi-room office plus integrated sanitation section — a complete self-contained site headquarters.",
+   "h3": "Combined-unit deployments",
+   "applications": [
+    "Multi-room office + sanitation section",
+    "Self-contained site headquarters",
+    "Complete combined flagship",
+    "Office suite with own facility"
+   ]
+  }
+ },
+ "prefabricated-porta-cabin": {
+  "10x10": {
+   "h2": "10×10 ft Prefabricated Porta Cabin (100 sq ft) — Same-Day Compact Cabin",
+   "intro": "Factory-finished and usable the same day it lands: the smallest prefab cabin proves the method — zero site construction, one placement, done.",
+   "h3": "Fast-deployment uses",
+   "applications": [
+    "Same-day-usable compact prefab cabin",
+    "Zero-site-work office",
+    "Placed-and-done unit",
+    "Instant guard cabin"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Prefabricated Porta Cabin (160 sq ft) — Quick-Deploy Narrow Unit",
+   "intro": "The quick-deploy narrow unit: fabricated complete in the works, slid onto a boundary strip, connected and occupied inside a working day.",
+   "h3": "Fast-deployment uses",
+   "applications": [
+    "Quick-deploy narrow prefab unit",
+    "One-day boundary office",
+    "Factory-finished slim cabin",
+    "Fast margin-strip unit"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Prefabricated Porta Cabin (200 sq ft) — Ready-Delivered Site Office",
+   "intro": "The ready-delivered site office: while a built-in-place room is still at plinth level, this 200 sq ft prefab is already holding its first site meeting.",
+   "h3": "Fast-deployment uses",
+   "applications": [
+    "Ready-delivered standard site office",
+    "First-meeting-ready cabin",
+    "Prefab 200 sq ft office",
+    "No-trades site office"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Prefabricated Porta Cabin (240 sq ft) — Prefab Office + Manager Area",
+   "intro": "A prefab office with manager area — the partition, points and finishes all installed on the factory floor, not yours.",
+   "h3": "Fast-deployment uses",
+   "applications": [
+    "Prefab office with manager area",
+    "Factory-partitioned unit",
+    "Finished-on-arrival office",
+    "Complete two-role cabin"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Prefabricated Porta Cabin (300 sq ft) — Fast Two-Zone Office",
+   "intro": "The fast two-zone office: 300 sq ft of finished, partitioned space that skips weeks of on-site trades and weather delay.",
+   "h3": "Fast-deployment uses",
+   "applications": [
+    "Fast two-zone prefab office",
+    "Weeks-saved project office",
+    "Factory-split 300 sq ft",
+    "No-weather-delay module"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Prefabricated Porta Cabin (320 sq ft) — Linear Prefab Unit",
+   "intro": "A linear prefab unit craned in as one 40 ft piece — the length that shows why factory build beats site build on time and finish.",
+   "h3": "Fast-deployment uses",
+   "applications": [
+    "One-piece 40 ft linear prefab unit",
+    "Single-lift bunkhouse",
+    "Factory-built office row",
+    "Craned linear module"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Prefabricated Porta Cabin (400 sq ft) — Craned-In Square Module",
+   "intro": "The craned-in square module: 400 sq ft of open floor placed in one lift — training room today, relocatable to the next project after.",
+   "h3": "Fast-deployment uses",
+   "applications": [
+    "Craned-in open square module",
+    "Relocatable training room",
+    "One-lift 400 sq ft floor",
+    "Movable project hall"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Prefabricated Porta Cabin (400 sq ft) — Single-Module Prefab Office",
+   "intro": "A single-module prefab office at full scale: eight to ten staff working in a unit that needed only placement and a service connection.",
+   "h3": "Fast-deployment uses",
+   "applications": [
+    "Single-module full-scale prefab office",
+    "8–10 staff, placement-only",
+    "One-connection big office",
+    "Complete craned floor"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Prefabricated Porta Cabin (480 sq ft) — Multi-Room Prefab Office",
+   "intro": "The multi-room prefab office: reception, cabins and open floor — an entire office building fabricated indoors and delivered finished.",
+   "h3": "Fast-deployment uses",
+   "applications": [
+    "Multi-room prefab office building",
+    "Factory-made head office",
+    "Delivered-finished office block",
+    "Reception-to-desks prefab suite"
+   ]
+  }
+ },
+ "low-cost-porta-cabin": {
+  "10x10": {
+   "h2": "10×10 ft Low Cost Porta Cabin (100 sq ft) — Entry-Price Guard Post & First Office",
+   "intro": "The entry price into a finished SAMAN cabin: ₹1,32,000 ex-GST, insulated and wired — the budget guard post or first office that cuts cost, never the frame.",
+   "h3": "Value-tier deployments",
+   "applications": [
+    "Entry-price finished guard post",
+    "Budget first office",
+    "Lowest-cost insulated cabin",
+    "Value gate unit"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft Low Cost Porta Cabin (160 sq ft) — Value Narrow-Plot Office",
+   "intro": "The keenest price on a narrow plot: full finished specification at the value tier, 8 ft width, no unfinished corners.",
+   "h3": "Value-tier deployments",
+   "applications": [
+    "Value narrow-plot office",
+    "Keenest-price slim cabin",
+    "Budget boundary unit",
+    "Full-spec value 20x8"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft Low Cost Porta Cabin (200 sq ft) — Value-Tier Standard Office",
+   "intro": "The value-tier standard office: four to six staff at the lowest complete-cabin price in the range — same IS 2062 skeleton as every tier above it.",
+   "h3": "Value-tier deployments",
+   "applications": [
+    "Value-tier standard office for 4–6",
+    "Lowest complete-cabin price",
+    "Same-frame budget office",
+    "Cost-conscious team cabin"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft Low Cost Porta Cabin (240 sq ft) — Budget Office with Manager Corner",
+   "intro": "Manager-corner width at the budget price point — the partition option without the premium-tier bill.",
+   "h3": "Value-tier deployments",
+   "applications": [
+    "Budget office with manager corner",
+    "Value partition option",
+    "Affordable wider office",
+    "Entry-price two-role cabin"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft Low Cost Porta Cabin (300 sq ft) — Two-Zone Value Office",
+   "intro": "Two working zones at the value price: the size cost-conscious contractors take when one cabin must do the work of two.",
+   "h3": "Value-tier deployments",
+   "applications": [
+    "Two-zone office at value price",
+    "One-cabin-does-two unit",
+    "Budget split office",
+    "Value 300 sq ft module"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft Low Cost Porta Cabin (320 sq ft) — Budget Bunkhouse Run",
+   "intro": "The budget bunkhouse run: 40 linear feet of finished accommodation at the lowest per-foot price in the cluster.",
+   "h3": "Value-tier deployments",
+   "applications": [
+    "Budget bunkhouse run",
+    "Lowest per-foot accommodation",
+    "Value linear module",
+    "Entry-price 40 ft unit"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft Low Cost Porta Cabin (400 sq ft) — Value Open Training Floor",
+   "intro": "The largest open floor at the value tier — 400 sq ft of finished, insulated space priced for training rooms on tight budgets.",
+   "h3": "Value-tier deployments",
+   "applications": [
+    "Value open training floor",
+    "Budget 400 sq ft square",
+    "Tight-budget team room",
+    "Entry-price open hall"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft Low Cost Porta Cabin (400 sq ft) — Large Value-Tier Office",
+   "intro": "Maximum single-module floor at minimum complete-cabin price — the value tier's big office.",
+   "h3": "Value-tier deployments",
+   "applications": [
+    "Large value-tier office floor",
+    "Maximum floor, minimum price",
+    "Budget big-team module",
+    "Value single-lift office"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft Low Cost Porta Cabin (480 sq ft) — Flagship Footprint at Entry Price",
+   "intro": "The flagship footprint at the entry price: every square foot of the 40x12 with the finish tier chosen for budget, not the frame.",
+   "h3": "Value-tier deployments",
+   "applications": [
+    "Flagship footprint at entry price",
+    "Value multi-room office",
+    "Budget 480 sq ft suite",
+    "Entry-price head office"
+   ]
+  }
+ }
+}

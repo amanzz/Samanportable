@@ -27,18 +27,45 @@ import type { VariantProductData } from './types';
 import { formatIndianPrice } from './types';
 import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
+import sectionHDatasets from '@/data/products/section-h-datasets.json';
 
 interface ApplicationPanel {
   sizeSlug: string;
   h3: string;
   paragraph: string;
   applications: string[];
+  /** Sub-heading above the applications list. Present only in the T25 Section H
+      drop (its per-panel `h3`); the flagship dataset has no equivalent. */
+  applicationsHeading?: string;
 }
 interface ApplicationsData {
-  h2: string;
-  intro: string;
+  /** Section-level heading + intro. The flagship dataset carries them; the T25
+      Section H drop is panel-only, so both are optional and their markup is
+      omitted rather than invented when absent. */
+  h2?: string;
+  intro?: string;
   panels: ApplicationPanel[];
 }
+
+/**
+ * T25 Section H drop — `{slug: {sizeSlug: {h2, intro, h3, applications[4]}}}`.
+ * Field mapping (the drop is panel-scoped, the component is section-scoped):
+ *   drop h2           -> panel heading   (renders where the flagship renders h3)
+ *   drop intro        -> panel paragraph
+ *   drop h3           -> applications sub-heading (new slot)
+ *   drop applications -> the 4 checkmark items; [0] also feeds the panel image alt
+ * No section-level h2/intro exists in the drop, so those stay undefined.
+ */
+type SectionHPanel = { h2: string; intro: string; h3: string; applications: string[] };
+const fromSectionHDrop = (bySize: Record<string, SectionHPanel>): ApplicationsData => ({
+  panels: Object.entries(bySize).map(([sizeSlug, p]) => ({
+    sizeSlug,
+    h3: p.h2,
+    paragraph: p.intro,
+    applications: p.applications,
+    applicationsHeading: p.h3,
+  })),
+});
 
 // T25 — Size & Applications Explorer copy, registered per dataset key. The key is
 // `applicationsDataset` from the data file, else the preset's, else productSlug.
@@ -47,6 +74,11 @@ interface ApplicationsData {
 // owner-authored and must never be substituted with another product's text.
 const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   'porta-cabins': portaCabinsApplications as ApplicationsData,
+  ...Object.fromEntries(
+    Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
+      ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
+    )
+  ),
 };
 
 // Application-panel alt: "Elevated view of {size} ft {product} used as
@@ -675,13 +707,27 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
   const panelBySlug = new Map(applications.panels.map((p) => [p.sizeSlug, p]));
 
   return (
-    <section id={sectionId} className="scroll-mt-20" aria-labelledby="size-applications-heading">
-      <div className="mb-4">
-        <h2 id="size-applications-heading" className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
-          {applications.h2}
-        </h2>
-        <p className="mt-1 text-sm text-[var(--ds-color-steel)]">{applications.intro}</p>
-      </div>
+    <section
+      id={sectionId}
+      className="scroll-mt-20"
+      {...(applications.h2
+        ? { 'aria-labelledby': 'size-applications-heading' }
+        : { 'aria-label': `${sentenceCase(productName)} sizes and applications` })}
+    >
+      {/* Section heading + intro exist only on datasets that supply them (the
+          flagship). The T25 Section H drop is panel-only, so this block is omitted
+          rather than filled with invented copy — each panel carries its own
+          heading, which keeps the section self-describing either way. */}
+      {applications.h2 && (
+        <div className="mb-4">
+          <h2 id="size-applications-heading" className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
+            {applications.h2}
+          </h2>
+          {applications.intro && (
+            <p className="mt-1 text-sm text-[var(--ds-color-steel)]">{applications.intro}</p>
+          )}
+        </div>
+      )}
 
       {/* Tab strip — horizontal, scrollable on mobile; selected = leaf underline
           + forest text (homepage PopularSizes design language). */}
@@ -793,7 +839,16 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{panel.h3}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{panel.paragraph}</p>
 
-                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                {/* Sub-heading above the applications list — T25 Section H drop only. */}
+                {panel.applicationsHeading && (
+                  <p className="mt-4 text-sm font-semibold text-[var(--ds-color-forest)]">
+                    {panel.applicationsHeading}
+                  </p>
+                )}
+
+                {/* Margin class stays FIRST so the flagship keeps its exact original
+                    class string ("mt-4 grid gap-2 sm:grid-cols-2") byte-for-byte. */}
+                <ul className={cn(panel.applicationsHeading ? 'mt-2' : 'mt-4', 'grid gap-2 sm:grid-cols-2')}>
                   {panel.applications.map((app, ai) => (
                     <li key={ai} className="flex items-start gap-2 text-sm text-[var(--ds-color-ink)]">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--ds-color-leaf)]" aria-hidden="true" />
