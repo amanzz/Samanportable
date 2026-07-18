@@ -463,7 +463,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                               fetchPriority="high"
                               placeholder="blur"
                               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                              sizes="(max-width: 1023px) 100vw, 40vw"
+                              // T30 / T24.1-IMG §5.1 — same correction as the hub/variant
+                              // heroes: contained by the page padding (px-4 <640,
+                              // px-6 >=640) and the gallery Card (p-2), so the hero
+                              // renders 100vw-48px / 100vw-64px, never the full
+                              // viewport. 100vw made mobile pull the w=1200 variant.
+                              sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc(100vw - 64px), 40vw"
                               quality={85}
                               onError={(e) => {
                                 e.currentTarget.src = `https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;

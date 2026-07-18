@@ -1997,7 +1997,6 @@ const nextConfig = {
     // SSR/getServerSideProps or ISR on-demand revalidation concurrency.
     cpus: 3,
     optimizeCss: false,
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
     // Reduce bundle size warnings
     largePageDataBytes: 128 * 1024, // 128KB threshold instead of default 128KB
     // Additional performance optimizations
