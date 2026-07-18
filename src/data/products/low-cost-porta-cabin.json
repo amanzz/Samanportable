@@ -13,6 +13,7 @@
       "priceExGst": 132000,
       "capacity": "2–3 people",
       "useCase": "Entry Site Office",
+      "sku": "SP-LCPC-10x10",
       "images": [
         {
           "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-hero-view.webp",
@@ -34,13 +35,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-workspace-interior.webp",
-          "alt": "Inside a 10×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Workspace inside a 10×10 ft low cost porta cabin — desk area in the finished, wired office",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-entrance-interior.webp",
-          "alt": "Inside a 10×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "10×10 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
           "width": 1254,
           "height": 1254
         }
@@ -66,13 +67,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-rear-interior.webp",
-          "alt": "Inside a 10×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Rear interior of a 10×10 ft low cost porta cabin — insulated lining and finished flooring",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-corner-interior.webp",
-          "alt": "Inside a 10×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Inside a 10×10 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
           "width": 1254,
           "height": 1254
         }
@@ -88,6 +89,7 @@
       "priceExGst": 211200,
       "capacity": "3–4 people",
       "useCase": "Narrow-Plot Site Office",
+      "sku": "SP-LCPC-20x8",
       "images": [
         {
           "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-hero-view.webp",
@@ -109,13 +111,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-workspace-interior.webp",
-          "alt": "Inside a 20×8 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Workspace inside a 20×8 ft low cost porta cabin — desk area in the finished, wired office",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-entrance-interior.webp",
-          "alt": "Inside a 20×8 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "20×8 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
           "width": 1254,
           "height": 1254
         }
@@ -141,13 +143,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-rear-interior.webp",
-          "alt": "Inside a 20×8 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Rear interior of a 20×8 ft low cost porta cabin — insulated lining and finished flooring",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-corner-interior.webp",
-          "alt": "Inside a 20×8 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Inside a 20×8 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
           "width": 1254,
           "height": 1254
         }
@@ -163,6 +165,7 @@
       "priceExGst": 240000,
       "capacity": "4–6 people",
       "useCase": "Standard Site Office",
+      "sku": "SP-LCPC-20x10",
       "images": [
         {
           "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-hero-view.webp",
@@ -184,13 +187,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-workspace-interior.webp",
-          "alt": "Inside a 20×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Workspace inside a 20×10 ft low cost porta cabin — desk area in the finished, wired office",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-entrance-interior.webp",
-          "alt": "Inside a 20×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "20×10 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
           "width": 1254,
           "height": 1254
         }
@@ -216,13 +219,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-rear-interior.webp",
-          "alt": "Inside a 20×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Rear interior of a 20×10 ft low cost porta cabin — insulated lining and finished flooring",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-corner-interior.webp",
-          "alt": "Inside a 20×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Inside a 20×10 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
           "width": 1254,
           "height": 1254
         }
@@ -238,6 +241,7 @@
       "priceExGst": 276480,
       "capacity": "5–7 people",
       "useCase": "Office with Manager Area",
+      "sku": "SP-LCPC-20x12",
       "images": [
         {
           "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-hero-view.webp",
@@ -259,13 +263,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-workspace-interior.webp",
-          "alt": "Inside a 20×12 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Workspace inside a 20×12 ft low cost porta cabin — desk area in the finished, wired office",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-entrance-interior.webp",
-          "alt": "Inside a 20×12 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "20×12 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
           "width": 1254,
           "height": 1254
         }
@@ -291,13 +295,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-rear-interior.webp",
-          "alt": "Inside a 20×12 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Rear interior of a 20×12 ft low cost porta cabin — insulated lining and finished flooring",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-corner-interior.webp",
-          "alt": "Inside a 20×12 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Inside a 20×12 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
           "width": 1254,
           "height": 1254
         }
@@ -313,6 +317,7 @@
       "priceExGst": 345600,
       "capacity": "6–8 people",
       "useCase": "Office + Meeting Zone",
+      "sku": "SP-LCPC-30x10",
       "images": [
         {
           "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-hero-view.webp",
@@ -334,13 +339,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-workspace-interior.webp",
-          "alt": "Inside a 30×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Workspace inside a 30×10 ft low cost porta cabin — desk area in the finished, wired office",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-entrance-interior.webp",
-          "alt": "Inside a 30×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "30×10 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
           "width": 1254,
           "height": 1254
         }
@@ -366,13 +371,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-rear-interior.webp",
-          "alt": "Inside a 30×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Rear interior of a 30×10 ft low cost porta cabin — insulated lining and finished flooring",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-corner-interior.webp",
-          "alt": "Inside a 30×10 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Inside a 30×10 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
           "width": 1254,
           "height": 1254
         }
@@ -388,6 +393,7 @@
       "priceExGst": 360960,
       "capacity": "7–9 people",
       "useCase": "Linear Office & Bunkhouse",
+      "sku": "SP-LCPC-40x8",
       "images": [
         {
           "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-hero-view.webp",
@@ -409,13 +415,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-workspace-interior.webp",
-          "alt": "Inside a 40×8 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Workspace inside a 40×8 ft low cost porta cabin — desk area in the finished, wired office",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-entrance-interior.webp",
-          "alt": "Inside a 40×8 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "40×8 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
           "width": 1254,
           "height": 1254
         }
@@ -441,13 +447,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-rear-interior.webp",
-          "alt": "Inside a 40×8 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Rear interior of a 40×8 ft low cost porta cabin — insulated lining and finished flooring",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-corner-interior.webp",
-          "alt": "Inside a 40×8 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Inside a 40×8 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
           "width": 1254,
           "height": 1254
         }
@@ -463,6 +469,7 @@
       "priceExGst": 451200,
       "capacity": "8–10 people",
       "useCase": "Open-Floor Module",
+      "sku": "SP-LCPC-20x20",
       "images": [
         {
           "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-hero-view.webp",
@@ -484,13 +491,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-workspace-interior.webp",
-          "alt": "Inside a 20×20 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Workspace inside a 20×20 ft low cost porta cabin — desk area in the finished, wired office",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-entrance-interior.webp",
-          "alt": "Inside a 20×20 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "20×20 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
           "width": 1254,
           "height": 1254
         }
@@ -516,13 +523,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-rear-interior.webp",
-          "alt": "Inside a 20×20 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Rear interior of a 20×20 ft low cost porta cabin — insulated lining and finished flooring",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-corner-interior.webp",
-          "alt": "Inside a 20×20 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Inside a 20×20 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
           "width": 1254,
           "height": 1254
         }
@@ -538,6 +545,7 @@
       "priceExGst": 451200,
       "capacity": "8–10 people",
       "useCase": "Large Site Office",
+      "sku": "SP-LCPC-40x10",
       "images": [
         {
           "src": "/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-hero-view.webp",
@@ -589,6 +597,7 @@
       "priceExGst": 529920,
       "capacity": "10–12 people",
       "useCase": "Multi-Room Office",
+      "sku": "SP-LCPC-40x12",
       "images": [
         {
           "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-hero-view.webp",
@@ -610,13 +619,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-workspace-interior.webp",
-          "alt": "Inside a 40×12 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Workspace inside a 40×12 ft low cost porta cabin — desk area in the finished, wired office",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-entrance-interior.webp",
-          "alt": "Inside a 40×12 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "40×12 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
           "width": 1254,
           "height": 1254
         }
@@ -629,12 +638,6 @@
           "height": 1254
         },
         {
-          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-end-elevation.webp",
-          "alt": "40×12 ft low cost porta cabin — end elevation view showing corrugated steel shell, sliding windows and MS door",
-          "width": 1254,
-          "height": 1254
-        },
-        {
           "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-rear-angle.webp",
           "alt": "40×12 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
           "width": 1254,
@@ -642,13 +645,13 @@
         },
         {
           "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-rear-interior.webp",
-          "alt": "Inside a 40×12 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Rear interior of a 40×12 ft low cost porta cabin — insulated lining and finished flooring",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-corner-interior.webp",
-          "alt": "Inside a 40×12 ft low cost porta cabin — laminate interior, vinyl floor and LED-lit finished office",
+          "alt": "Inside a 40×12 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
           "width": 1254,
           "height": 1254
         }
