@@ -398,7 +398,13 @@ ${testLines}
 
 function main() {
   const products = readProducts();
-  const variantItems = merchant.buildPortaCabinVariantItems(staticContent.getPortaCabinVariantData());
+  // T26 — validate the SAME item set the routes publish: the flagship's nine plus the
+  // eleven subpage groups. The row expectation stays computed (primary items x store
+  // codes) further down, never a hardcoded total.
+  const variantItems = merchant.buildAllVariantItems(
+    staticContent.getPortaCabinVariantData(),
+    staticContent.getSubpageVariantData(merchant.SUBPAGE_VARIANT_CONFIGS.map((c) => c.slug))
+  );
   const tsv = localInventory.generateGoogleLocalInventoryTsv(products, variantItems);
   const validation = validate(products, tsv, variantItems);
   const summary = { ...validation, tsv };

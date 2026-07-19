@@ -746,3 +746,18 @@ export function getAllProductsForFeed(): WooCommerceProduct[] {
 export function getPortaCabinVariantData(): any | null {
   return readJson(path.join(process.cwd(), 'src', 'data', 'products', 'porta-cabins.json'));
 }
+
+// T26 — the same variant data for one of the T25 porta-cabin SUBPAGES. Slug is
+// whitelist-checked against SAFE_SLUG so a caller can never read outside the folder.
+export function getVariantProductData(slug: string): any | null {
+  if (!SAFE_SLUG.test(slug)) return null;
+  return readJson(path.join(process.cwd(), 'src', 'data', 'products', `${slug}.json`));
+}
+
+// T26 — every subpage's variant data, keyed by slug, for the Merchant + local-inventory
+// feeds. Missing files simply yield null and that slug contributes no items.
+export function getSubpageVariantData(slugs: readonly string[]): Record<string, any | null> {
+  const out: Record<string, any | null> = {};
+  for (const slug of slugs) out[slug] = getVariantProductData(slug);
+  return out;
+}
