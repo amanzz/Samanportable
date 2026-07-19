@@ -1,0 +1,574 @@
+{
+  "buy-porta-cabins": {
+    "product": "Buy Porta Cabins",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "100×50×3 mm MS C-channel",
+        "Bottom Stiffeners": "100×50 mm C-channels, 50×50 mm MS angles, 75×40 mm channels and MS square pipes",
+        "Floor Frame": "100×50, 80×40 and 50×50 mm MS square pipes as required",
+        "Top Frame": "50×50×1.6 mm MS square-pipe top frame",
+        "Roof Frame": "50×50×1.2 mm plus 50×40, 40×40, 50×25 and 25×25 mm MS members",
+        "Wall Frame": "50×50×2 mm MS square-pipe posts or 60×60 mm MS angles"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.2 mm specially corrugated MS sheet",
+        "MS Roof Sheet": "1.4 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "8 mm pre-laminated MDF board with aluminium joint sections",
+        "Ceiling": "8 mm pre-laminated MDF ceiling",
+        "Floor Base": "18 mm Bison panel",
+        "Floor Finish": "1.3 mm vinyl flooring",
+        "Wall Insulation": "25 mm glass wool or 12 mm heatlon",
+        "Roof Insulation": "50 mm glass wool, nominal density 42 kg/m³"
+      },
+      "Openings & Services": {
+        "Main Door": "7×3 ft externally opening MS-framed door using 30×30 mm MS tubular sections",
+        "Windows / Service Opening": "Two-track powder-coated aluminium sliding windows with 4 mm glass",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "Buy Porta Cabins is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 100×50×3 mm MS C-channel as the main chassis, 1.2 mm specially corrugated MS sheet for the external walls and 1.4 mm corrugated MS sheet for the sloped roof. The interior uses 8 mm pre-laminated MDF board with aluminium joint sections, with 25 mm glass wool or 12 mm heatlon in the walls and 50 mm glass wool, nominal density 42 kg/m³ below the roof. The floor combines 18 mm Bison panel with 1.3 mm vinyl flooring. Purchase-ready standard specification with balanced office finishes. Reference sales configuration matching the common SAMAN standard page.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Standard purchase page with the official SAMAN material baseline."
+  },
+  "low-cost-porta-cabin": {
+    "product": "Low Cost Porta Cabin",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "100×50×3 mm MS C-channel",
+        "Bottom Stiffeners": "75×40×2 mm channels and 50×50×2 mm MS square pipes at approximately 4 ft centres",
+        "Floor Frame": "50×50×2 mm MS square-pipe floor supports",
+        "Top Frame": "50×50×1.6 mm MS square-pipe top perimeter",
+        "Roof Frame": "40×20×1.6 mm and 40×40×1.6 mm MS roof members",
+        "Wall Frame": "40×40×2 mm MS square-pipe corner and intermediate posts"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "0.8–1.0 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.2 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "6 mm pre-laminated plywood/board",
+        "Ceiling": "6 mm pre-laminated ceiling board",
+        "Floor Base": "18 mm BWP plywood",
+        "Floor Finish": "1.5 mm vinyl flooring",
+        "Wall Insulation": "12 mm heatlon or 25 mm glass wool",
+        "Roof Insulation": "25–50 mm glass wool"
+      },
+      "Openings & Services": {
+        "Main Door": "32 mm waterproof flush door with MS frame and standard hardware",
+        "Windows / Service Opening": "Powder-coated aluminium sliding windows with 3 mm glass",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "Low Cost Porta Cabin is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 100×50×3 mm MS C-channel as the main chassis, 0.8–1.0 mm corrugated MS sheet for the external walls and 1.2 mm corrugated MS sheet for the sloped roof. The interior uses 6 mm pre-laminated plywood/board, with 12 mm heatlon or 25 mm glass wool in the walls and 25–50 mm glass wool below the roof. The floor combines 18 mm BWP plywood with 1.5 mm vinyl flooring. Cost-controlled cabin for temporary office or basic site use. Cost reduction is achieved through lower sheet and lining thickness, not by removing the welded steel frame.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Lower wall thickness and economical internal finishes."
+  },
+  "luxury-porta-cabin": {
+    "product": "Luxury Porta Cabin",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "150×75×5 mm MS C-channel",
+        "Bottom Stiffeners": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+        "Floor Frame": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+        "Top Frame": "80×40×3 mm MS top perimeter",
+        "Roof Frame": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+        "Wall Frame": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.25–1.6 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.6 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels",
+        "Ceiling": "12.5 mm gypsum or premium laminated ceiling",
+        "Floor Base": "19 mm marine-grade plywood or 18 mm Bison panel",
+        "Floor Finish": "5–6 mm SPC or 3–4 mm LVT flooring",
+        "Wall Insulation": "75 mm mineral wool",
+        "Roof Insulation": "100 mm glass wool or mineral wool"
+      },
+      "Openings & Services": {
+        "Main Door": "Premium insulated/laminated door with closer and upgraded lockset",
+        "Windows / Service Opening": "Large powder-coated aluminium windows with 6 mm tinted glass",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "Luxury Porta Cabin is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 150×75×5 mm MS C-channel as the main chassis, 1.25–1.6 mm corrugated MS sheet for the external walls and 1.6 mm corrugated MS sheet for the sloped roof. The interior uses 12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels, with 75 mm mineral wool in the walls and 100 mm glass wool or mineral wool below the roof. The floor combines 19 mm marine-grade plywood or 18 mm Bison panel with 5–6 mm SPC or 3–4 mm LVT flooring. Premium customer-facing cabin with upgraded glazing, insulation and interior finish. Premium finishes, larger glazing and higher insulation create the luxury specification.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Higher steel thickness, premium laminate, SPC floor and enhanced services."
+  },
+  "mini-porta-cabin": {
+    "product": "Mini Porta Cabin",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "100×50×3 mm MS C-channel",
+        "Bottom Stiffeners": "75×40×2 mm channels and 50×50×2 mm MS square pipes at approximately 4 ft centres",
+        "Floor Frame": "50×50×2 mm MS square-pipe floor supports",
+        "Top Frame": "50×50×1.6 mm MS square-pipe top perimeter",
+        "Roof Frame": "40×20×1.6 mm and 40×40×1.6 mm MS roof members",
+        "Wall Frame": "40×40×2 mm MS square-pipe corner and intermediate posts"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "0.8–1.0 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.2 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "6 mm pre-laminated plywood/board",
+        "Ceiling": "6 mm pre-laminated ceiling board",
+        "Floor Base": "18 mm BWP plywood",
+        "Floor Finish": "1.5 mm vinyl flooring",
+        "Wall Insulation": "12 mm heatlon or 25 mm glass wool",
+        "Roof Insulation": "25–50 mm glass wool"
+      },
+      "Openings & Services": {
+        "Main Door": "32 mm waterproof flush door with MS frame and standard hardware",
+        "Windows / Service Opening": "Powder-coated aluminium sliding windows with 3 mm glass",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "Mini Porta Cabin is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 100×50×3 mm MS C-channel as the main chassis, 0.8–1.0 mm corrugated MS sheet for the external walls and 1.2 mm corrugated MS sheet for the sloped roof. The interior uses 6 mm pre-laminated plywood/board, with 12 mm heatlon or 25 mm glass wool in the walls and 25–50 mm glass wool below the roof. The floor combines 18 mm BWP plywood with 1.5 mm vinyl flooring. Simple compact-layout cabin using a lightweight standard material package. The costing size remains 20x10x8.5 ft, while the website content can describe smaller final-size availability.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Reduced openings and lightweight interior package for compact layouts."
+  },
+  "ms-porta-cabin": {
+    "product": "MS Porta Cabin",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "150×75×5 mm MS C-channel",
+        "Bottom Stiffeners": "100×50×4 mm channels and 80×40×3 mm cross members with local reinforcement",
+        "Floor Frame": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+        "Top Frame": "80×40×3 mm MS rectangular-pipe top perimeter",
+        "Roof Frame": "60×40×2.5 mm rafters and purlins",
+        "Wall Frame": "60×60×3 mm MS square-pipe posts"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.6 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.6 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "8–10 mm fibre-cement board or 0.50 mm pre-painted metal liner",
+        "Ceiling": "8 mm fibre-cement ceiling or 0.50 mm metal liner",
+        "Floor Base": "24 mm cement board or heavy MS floor plate",
+        "Floor Finish": "2–3 mm commercial PVC, epoxy or 3 mm chequered plate",
+        "Wall Insulation": "50–75 mm mineral wool",
+        "Roof Insulation": "75–100 mm mineral wool"
+      },
+      "Openings & Services": {
+        "Main Door": "Heavy single or double-leaf MS door with industrial lockset",
+        "Windows / Service Opening": "Reduced-size aluminium windows or louvered ventilators with 5 mm glass where used",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "MS Porta Cabin is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 150×75×5 mm MS C-channel as the main chassis, 1.6 mm corrugated MS sheet for the external walls and 1.6 mm corrugated MS sheet for the sloped roof. The interior uses 8–10 mm fibre-cement board or 0.50 mm pre-painted metal liner, with 50–75 mm mineral wool in the walls and 75–100 mm mineral wool below the roof. The floor combines 24 mm cement board or heavy MS floor plate with 2–3 mm commercial PVC, epoxy or 3 mm chequered plate. Heavy all-steel-oriented cabin for demanding use and repeated shifting. The specification emphasizes steel thickness, impact resistance and repeated handling.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Heavy chassis, 1.6 mm external sheet and industrial floor options."
+  },
+  "porta-cabin": {
+    "product": "Porta Cabin",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "100×50×3 mm MS C-channel",
+        "Bottom Stiffeners": "100×50 mm C-channels, 50×50 mm MS angles, 75×40 mm channels and MS square pipes",
+        "Floor Frame": "100×50, 80×40 and 50×50 mm MS square pipes as required",
+        "Top Frame": "50×50×1.6 mm MS square-pipe top frame",
+        "Roof Frame": "50×50×1.2 mm plus 50×40, 40×40, 50×25 and 25×25 mm MS members",
+        "Wall Frame": "50×50×2 mm MS square-pipe posts or 60×60 mm MS angles"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.2 mm specially corrugated MS sheet",
+        "MS Roof Sheet": "1.4 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "8 mm pre-laminated MDF board with aluminium joint sections",
+        "Ceiling": "8 mm pre-laminated MDF ceiling",
+        "Floor Base": "18 mm Bison panel",
+        "Floor Finish": "1.3 mm vinyl flooring",
+        "Wall Insulation": "25 mm glass wool or 12 mm heatlon",
+        "Roof Insulation": "50 mm glass wool, nominal density 42 kg/m³"
+      },
+      "Openings & Services": {
+        "Main Door": "7×3 ft externally opening MS-framed door using 30×30 mm MS tubular sections",
+        "Windows / Service Opening": "Two-track powder-coated aluminium sliding windows with 4 mm glass",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "Porta Cabin is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 100×50×3 mm MS C-channel as the main chassis, 1.2 mm specially corrugated MS sheet for the external walls and 1.4 mm corrugated MS sheet for the sloped roof. The interior uses 8 mm pre-laminated MDF board with aluminium joint sections, with 25 mm glass wool or 12 mm heatlon in the walls and 50 mm glass wool, nominal density 42 kg/m³ below the roof. The floor combines 18 mm Bison panel with 1.3 mm vinyl flooring. General-purpose standard MS corrugated porta cabin. General-purpose reference configuration for the main generic product page.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Core SAMAN specification with standard wall, roof, floor and electrical package."
+  },
+  "porta-cabin-office": {
+    "product": "Porta Cabin Office",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "125×75×4 mm MS C-channel",
+        "Bottom Stiffeners": "100×50×3 mm channels and 80×40×2.5 mm MS tubular members",
+        "Floor Frame": "80×40×2.5 mm primary and 50×50×2 mm secondary floor members",
+        "Top Frame": "50×50×2 mm MS square-pipe top perimeter",
+        "Roof Frame": "50×50×2 mm rafters and 40×40×2 mm purlins",
+        "Wall Frame": "50×50×2.5 mm MS square-pipe posts"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.25 mm corrugated HR/MS sheet",
+        "MS Roof Sheet": "1.4 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "8–12 mm pre-laminated MDF or plywood",
+        "Ceiling": "8 mm pre-laminated ceiling board",
+        "Floor Base": "18 mm Bison panel",
+        "Floor Finish": "2 mm commercial vinyl flooring",
+        "Wall Insulation": "50 mm glass wool",
+        "Roof Insulation": "75 mm glass wool"
+      },
+      "Openings & Services": {
+        "Main Door": "34 mm BWP flush door with powder-coated MS frame and upgraded hardware",
+        "Windows / Service Opening": "Powder-coated aluminium windows with 5 mm glass",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+        "Ventilation / AC": "Cross ventilation with wall/ceiling fans and split-AC provision.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Office layout with workstations, storage and optional manager or meeting partition."
+      }
+    },
+    "fullTechnicalDescription": "Porta Cabin Office is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 125×75×4 mm MS C-channel as the main chassis, 1.25 mm corrugated HR/MS sheet for the external walls and 1.4 mm corrugated MS sheet for the sloped roof. The interior uses 8–12 mm pre-laminated MDF or plywood, with 50 mm glass wool in the walls and 75 mm glass wool below the roof. The floor combines 18 mm Bison panel with 2 mm commercial vinyl flooring. Office-focused cabin with higher insulation, extra sockets and AC provision. Office-specific service points and insulation distinguish this page from the generic cabin.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Stronger chassis and upgraded office service points."
+  },
+  "porta-cabin-shop": {
+    "product": "Porta Cabin Shop",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "125×75×4 mm MS C-channel",
+        "Bottom Stiffeners": "100×50×3 mm channels and 80×40×2.5 mm MS members",
+        "Floor Frame": "80×40×2.5 mm MS floor supports",
+        "Top Frame": "50×50×2.5 mm MS top perimeter",
+        "Roof Frame": "50×50×2 mm roof members",
+        "Wall Frame": "50×50×2.5 mm MS posts with reinforced display/service openings"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.2–1.25 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.4 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "8–12 mm plywood with laminate or 6–8 mm HPL panels",
+        "Ceiling": "8 mm decorative board or 4 mm ACP ceiling",
+        "Floor Base": "18 mm Bison or marine-grade plywood",
+        "Floor Finish": "3–4 mm LVT/SPC or 2 mm commercial vinyl",
+        "Wall Insulation": "50 mm glass wool",
+        "Roof Insulation": "75 mm glass wool"
+      },
+      "Openings & Services": {
+        "Main Door": "Staff/customer door plus lockable service counter or shutter.",
+        "Windows / Service Opening": "Large aluminium service glazing with lockable counter opening.",
+        "Grill / Mesh": "Food-grade insect mesh at service openings; security shutter selectable.",
+        "Electrical Fittings": "LED lighting, signage supply, multiple 6A/16A appliance sockets, dedicated equipment circuits and DB/MCB protection.",
+        "Ventilation / AC": "Exhaust-hood/duct provision, fresh-air opening and optional AC for the customer zone.",
+        "Plumbing / Sanitary": "Sink/handwash, CPVC water supply, UPVC waste and equipment connection points according to layout."
+      },
+      "Layout": {
+        "Layout / Configuration": "Front service counter with separate staff preparation and storage zones."
+      }
+    },
+    "fullTechnicalDescription": "Porta Cabin Shop is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 125×75×4 mm MS C-channel as the main chassis, 1.2–1.25 mm corrugated MS sheet for the external walls and 1.4 mm corrugated MS sheet for the sloped roof. The interior uses 8–12 mm plywood with laminate or 6–8 mm HPL panels, with 50 mm glass wool in the walls and 75 mm glass wool below the roof. The floor combines 18 mm Bison or marine-grade plywood with 3–4 mm LVT/SPC or 2 mm commercial vinyl. Retail shop cabin with service counter, large display glazing and customer entry. Service counter and display glazing distinguish the retail specification.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Shop counter, display windows and retail electrical layout."
+  },
+  "porta-cabin-with-toilet": {
+    "product": "Porta Cabin with Toilet",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "125×75×4 mm protected MS C-channel",
+        "Bottom Stiffeners": "80×40×3 mm members with wet-zone and drain reinforcement",
+        "Floor Frame": "50×50×2.5 mm closely spaced MS supports",
+        "Top Frame": "50×50×2.5 mm MS top frame",
+        "Roof Frame": "50×50×2.5 mm roof members with exhaust openings",
+        "Wall Frame": "50×50×2.5 mm posts and sanitary partition frames"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.2–1.6 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.4–1.6 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "10–12 mm fibre-cement board with ceramic tiles or FRP finish in wet zones",
+        "Ceiling": "8–10 mm fibre-cement or washable PVC ceiling",
+        "Floor Base": "18–24 mm cement board with waterproof membrane",
+        "Floor Finish": "2.5–3 mm anti-skid safety vinyl, ceramic tile or FRP grating",
+        "Wall Insulation": "50 mm mineral wool where required",
+        "Roof Insulation": "75 mm glass/mineral wool"
+      },
+      "Openings & Services": {
+        "Main Door": "Waterproof FRP/flush doors with corrosion-resistant hardware and privacy fittings.",
+        "Windows / Service Opening": "Frosted aluminium ventilators/windows.",
+        "Grill / Mesh": "Mosquito mesh at ventilators; security grill where required.",
+        "Electrical Fittings": "Moisture-protected LED lights, exhaust fans, safe-position switches and RCCB/MCB protection.",
+        "Ventilation / AC": "Mandatory mechanical exhaust with natural ventilators.",
+        "Plumbing / Sanitary": "EWC/Indian WC, urinals, washbasins, flushing, CPVC supply, UPVC waste, traps and floor drains according to layout."
+      },
+      "Layout": {
+        "Layout / Configuration": "Separated toilet, urinal and washbasin zones according to selected seat count."
+      }
+    },
+    "fullTechnicalDescription": "Porta Cabin with Toilet is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 125×75×4 mm protected MS C-channel as the main chassis, 1.2–1.6 mm corrugated MS sheet for the external walls and 1.4–1.6 mm corrugated MS sheet for the sloped roof. The interior uses 10–12 mm fibre-cement board with ceramic tiles or FRP finish in wet zones, with 50 mm mineral wool where required in the walls and 75 mm glass/mineral wool below the roof. The floor combines 18–24 mm cement board with waterproof membrane with 2.5–3 mm anti-skid safety vinyl, ceramic tile or FRP grating. Office cabin with integrated wet-area toilet and plumbing package. Dry office and wet sanitary systems are separated by an internal partition.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Combined dry office and waterproof sanitary zone."
+  },
+  "prefabricated-porta-cabin": {
+    "product": "Prefabricated Porta Cabin",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "150×75×5 mm MS C-channel with module-connection plates",
+        "Bottom Stiffeners": "100×50×4 mm channels and reinforced joint-edge supports",
+        "Floor Frame": "100×50×3 mm primary and 80×40×3 mm secondary members",
+        "Top Frame": "80×40×3 mm MS top frame with bolted/welded module connectors",
+        "Roof Frame": "60×40×2.5 mm rafters with joint flashing and gutter supports",
+        "Wall Frame": "60×60×3 mm external posts and 40×40×2 mm partition frames"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.2–1.25 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.4 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "8 mm pre-laminated board with partition-ready support framing",
+        "Ceiling": "8 mm continuous pre-laminated ceiling",
+        "Floor Base": "18 mm cement fibre/Bison panel",
+        "Floor Finish": "2 mm commercial vinyl with transition strips at joints",
+        "Wall Insulation": "50 mm glass/mineral wool",
+        "Roof Insulation": "75 mm glass/mineral wool"
+      },
+      "Openings & Services": {
+        "Main Door": "External and internal doors according to modular room layout",
+        "Windows / Service Opening": "Multiple aluminium windows with 5 mm glass",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "Prefabricated Porta Cabin is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 150×75×5 mm MS C-channel with module-connection plates as the main chassis, 1.2–1.25 mm corrugated MS sheet for the external walls and 1.4 mm corrugated MS sheet for the sloped roof. The interior uses 8 mm pre-laminated board with partition-ready support framing, with 50 mm glass/mineral wool in the walls and 75 mm glass/mineral wool below the roof. The floor combines 18 mm cement fibre/Bison panel with 2 mm commercial vinyl with transition strips at joints. Factory-built modular cabin prepared for partitions and future connection. Factory-prefabricated and partition-ready details distinguish this product.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Partition-ready frame and module connection provisions."
+  },
+  "small-portacabin": {
+    "product": "Small Portacabin",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "100×50×3 mm MS C-channel",
+        "Bottom Stiffeners": "75×40×2 mm channels and 50×50×2 mm MS square pipes at approximately 4 ft centres",
+        "Floor Frame": "50×50×2 mm MS square-pipe floor supports",
+        "Top Frame": "50×50×1.6 mm MS square-pipe top perimeter",
+        "Roof Frame": "40×20×1.6 mm and 40×40×1.6 mm MS roof members",
+        "Wall Frame": "40×40×2 mm MS square-pipe corner and intermediate posts"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "0.8–1.0 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.2 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "6 mm pre-laminated plywood/board",
+        "Ceiling": "6 mm pre-laminated ceiling board",
+        "Floor Base": "18 mm BWP plywood",
+        "Floor Finish": "1.5 mm vinyl flooring",
+        "Wall Insulation": "12 mm heatlon or 25 mm glass wool",
+        "Roof Insulation": "25–50 mm glass wool"
+      },
+      "Openings & Services": {
+        "Main Door": "32 mm waterproof flush door with MS frame and standard hardware",
+        "Windows / Service Opening": "Powder-coated aluminium sliding windows with 3 mm glass",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "Small Portacabin is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 100×50×3 mm MS C-channel as the main chassis, 0.8–1.0 mm corrugated MS sheet for the external walls and 1.2 mm corrugated MS sheet for the sloped roof. The interior uses 6 mm pre-laminated plywood/board, with 12 mm heatlon or 25 mm glass wool in the walls and 25–50 mm glass wool below the roof. The floor combines 18 mm BWP plywood with 1.5 mm vinyl flooring. Economical small-layout cabin with essential door, window and electrical points. Simplified openings and service quantities distinguish the small-cabin specification.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Simple low-thickness package with reduced fixture quantity."
+  },
+  "steel-porta-cabin": {
+    "product": "Steel Porta Cabin",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "150×75×5 mm MS C-channel",
+        "Bottom Stiffeners": "100×50×4 mm channels and 80×40×3 mm cross members with local reinforcement",
+        "Floor Frame": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+        "Top Frame": "80×40×3 mm MS rectangular-pipe top perimeter",
+        "Roof Frame": "60×40×2.5 mm rafters and purlins",
+        "Wall Frame": "60×60×3 mm MS square-pipe posts"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.6 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.6 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "8–10 mm fibre-cement board or 0.50 mm pre-painted metal liner",
+        "Ceiling": "8 mm fibre-cement ceiling or 0.50 mm metal liner",
+        "Floor Base": "24 mm cement board or heavy MS floor plate",
+        "Floor Finish": "2–3 mm commercial PVC, epoxy or 3 mm chequered plate",
+        "Wall Insulation": "50–75 mm mineral wool",
+        "Roof Insulation": "75–100 mm mineral wool"
+      },
+      "Openings & Services": {
+        "Main Door": "Heavy single or double-leaf MS door with industrial lockset",
+        "Windows / Service Opening": "Reduced-size aluminium windows or louvered ventilators with 5 mm glass where used",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "Steel Porta Cabin is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 150×75×5 mm MS C-channel as the main chassis, 1.6 mm corrugated MS sheet for the external walls and 1.6 mm corrugated MS sheet for the sloped roof. The interior uses 8–10 mm fibre-cement board or 0.50 mm pre-painted metal liner, with 50–75 mm mineral wool in the walls and 75–100 mm mineral wool below the roof. The floor combines 24 mm cement board or heavy MS floor plate with 2–3 mm commercial PVC, epoxy or 3 mm chequered plate. Steel-focused cabin with heavy cladding, reinforced frame and industrial durability. Maximum standard MS sheet and frame thickness distinguish the steel-focused page.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Maximum standard steel thickness and heavy-duty frame."
+  },
+  "toilet-porta-cabins": {
+    "product": "Toilet Porta Cabins",
+    "cluster": "Porta Cabins",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "125×75×4 mm protected MS C-channel",
+        "Bottom Stiffeners": "80×40×3 mm members with wet-zone and drain reinforcement",
+        "Floor Frame": "50×50×2.5 mm closely spaced MS supports",
+        "Top Frame": "50×50×2.5 mm MS top frame",
+        "Roof Frame": "50×50×2.5 mm roof members with exhaust openings",
+        "Wall Frame": "50×50×2.5 mm posts and sanitary partition frames"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.2–1.6 mm corrugated MS sheet",
+        "MS Roof Sheet": "1.4–1.6 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "10–12 mm fibre-cement board with ceramic tiles or FRP finish in wet zones",
+        "Ceiling": "8–10 mm fibre-cement or washable PVC ceiling",
+        "Floor Base": "18–24 mm cement board with waterproof membrane",
+        "Floor Finish": "2.5–3 mm anti-skid safety vinyl, ceramic tile or FRP grating",
+        "Wall Insulation": "50 mm mineral wool where required",
+        "Roof Insulation": "75 mm glass/mineral wool"
+      },
+      "Openings & Services": {
+        "Main Door": "Waterproof FRP/flush doors with corrosion-resistant hardware and privacy fittings.",
+        "Windows / Service Opening": "Frosted aluminium ventilators/windows.",
+        "Grill / Mesh": "Mosquito mesh at ventilators; security grill where required.",
+        "Electrical Fittings": "Moisture-protected LED lights, exhaust fans, safe-position switches and RCCB/MCB protection.",
+        "Ventilation / AC": "Mandatory mechanical exhaust with natural ventilators.",
+        "Plumbing / Sanitary": "EWC/Indian WC, urinals, washbasins, flushing, CPVC supply, UPVC waste, traps and floor drains according to layout."
+      },
+      "Layout": {
+        "Layout / Configuration": "Separated toilet, urinal and washbasin zones according to selected seat count."
+      }
+    },
+    "fullTechnicalDescription": "Toilet Porta Cabins is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 125×75×4 mm protected MS C-channel as the main chassis, 1.2–1.6 mm corrugated MS sheet for the external walls and 1.4–1.6 mm corrugated MS sheet for the sloped roof. The interior uses 10–12 mm fibre-cement board with ceramic tiles or FRP finish in wet zones, with 50 mm mineral wool where required in the walls and 75 mm glass/mineral wool below the roof. The floor combines 18–24 mm cement board with waterproof membrane with 2.5–3 mm anti-skid safety vinyl, ceramic tile or FRP grating. Multi-seat sanitary cabin with waterproof lining, drainage and exhaust. Multi-seat sanitary fixture quantities distinguish this toilet-only page.",
+    "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
+    "keyDifferentiator": "Full toilet specification with multiple fixtures and wet-area materials."
+  }
+}

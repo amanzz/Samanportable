@@ -381,7 +381,17 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
           </div>
         </TabsContent>
 
-              <TabsContent value="additional" className="mt-0 p-4 sm:p-6 md:p-8">
+              {/* T31 — when a real per-product specifications override is supplied
+                  (the porta-cabin cluster), forceMount keeps its content in the SSR
+                  DOM (crawlable in view-source), hidden until the tab is opened —
+                  radix otherwise renders an inactive panel as an empty wrapper, so
+                  the content would live only in __NEXT_DATA__. Products with no
+                  override keep the default (client-rendered placeholder), untouched. */}
+              <TabsContent
+                value="additional"
+                forceMount={specificationsHtml && specificationsHtml.trim() ? true : undefined}
+                className="mt-0 p-4 sm:p-6 md:p-8 data-[state=inactive]:hidden"
+              >
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
@@ -399,7 +409,11 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
           </div>
         </TabsContent>
 
-                <TabsContent value="shipping" className="mt-0 p-8">
+                <TabsContent
+                value="shipping"
+                forceMount={shippingHtml && shippingHtml.trim() ? true : undefined}
+                className="mt-0 p-8 data-[state=inactive]:hidden"
+              >
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">

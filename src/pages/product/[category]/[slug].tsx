@@ -22,6 +22,7 @@ import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButt
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
 import { Breadcrumb } from '../../../components/ds/Breadcrumb';
 import { getProductBreadcrumb, crumbsToDsItems, crumbsToJsonLd } from '../../../lib/breadcrumbs';
+import { getProductTabsHtml } from '../../../lib/specsShippingTabs';
 import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
 import ProductStructuredData from '../../../components/ProductStructuredData';
@@ -73,6 +74,10 @@ interface ProductDetailsProps {
   relatedProducts: WooCommerceProduct[];
   rankMathSEO?: RankMathSEOData | null;
   reviews?: ProductReview[];
+  // T31 — real Specifications + shared Shipping tab HTML, present only for the porta-
+  // cabin cluster subpages (null everywhere else → generic tab content unchanged).
+  specificationsHtml?: string;
+  shippingHtml?: string;
   // T25 — variant-hero data for sibling subpages at /product/{category}/{slug}.
   // Present only when data/products/{slug}.json exists; every other subpage keeps
   // the generic ProductSummaryLayout hero, byte-for-byte.
@@ -109,7 +114,11 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
 
     // Fetch lightweight product data first
     const product = await staticContent.fetchLightweightProduct(slug);
-    
+
+    // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin cluster
+    // subpages; null for every other subpage (its tabs stay unchanged).
+    const t31Tabs = getProductTabsHtml(slug);
+
     if (!product) {
       return {
         notFound: true,
@@ -225,6 +234,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         } as unknown as WooCommerceProduct,
         category,
         slug,
+        // T31 — real tab HTML for the 12 in-scope cluster pages; null otherwise.
+        specificationsHtml: t31Tabs?.specificationsHtml || '',
+        shippingHtml: t31Tabs?.shippingHtml || '',
         relatedProducts,
         // productImages prop removed: it was never destructured/used in the component
         // (the gallery uses getProductImages() from product.images), and serializing
@@ -250,7 +262,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
   }
 };
 
-const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], variantData = null }: ProductDetailsProps) => {
+const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], specificationsHtml = '', shippingHtml = '', variantData = null }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -752,6 +764,8 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               <div className="mt-4">
                 <ProductTabs
                   description={product.description || ''}
+                  specificationsHtml={specificationsHtml}
+                  shippingHtml={shippingHtml}
                   productTitle={transformedProduct.title}
                   reviews={reviews}
                   averageRating={product.average_rating}
