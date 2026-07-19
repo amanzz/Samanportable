@@ -21,6 +21,7 @@ import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButt
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
 import { Breadcrumb } from '../../../components/ds/Breadcrumb';
 import { getProductBreadcrumb, crumbsToDsItems, crumbsToJsonLd } from '../../../lib/breadcrumbs';
+import { getProductTabsHtml } from '../../../lib/specsShippingTabs';
 import { categoryHref } from '../../../lib/categoryHubMap';
 import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
 // import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
@@ -260,14 +261,21 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .catch(() => null)
       : null;
 
+    // T31 — resolve the real Specifications + shared Shipping tab HTML for the
+    // porta-cabin cluster; null for any other category (tabs unchanged there).
+    const t31Tabs = getProductTabsHtml(category);
+
     return {
       props: {
         product: {
           ...product,
           description: descriptionData?.description || '',
-          // Optional per-product tab overrides (additive; empty for all other products).
-          specificationsHtml: descriptionData?.specificationsHtml || '',
-          shippingHtml: descriptionData?.shippingHtml || '',
+          // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
+          // cluster (null for every other product → the existing overrides/defaults
+          // apply unchanged). The flagship page slug `porta-cabins` maps to the
+          // `porta-cabin` dataset key inside getProductTabsHtml.
+          specificationsHtml: t31Tabs?.specificationsHtml || descriptionData?.specificationsHtml || '',
+          shippingHtml: t31Tabs?.shippingHtml || descriptionData?.shippingHtml || '',
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
             src: img.src,
