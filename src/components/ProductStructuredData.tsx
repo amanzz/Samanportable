@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { WooCommerceProduct, ProductReview } from '@/config/api';
 import { generateStructuredDataDescription } from '@/utils/contentUtils';
 import type { VariantProductData } from '@/components/product-variant-hero/types';
+import { resolveVariantProductName, resolveVariantVideo } from '@/components/product-variant-hero/presets';
 
 interface ProductStructuredDataProps {
   product: WooCommerceProduct;
@@ -175,6 +176,8 @@ export default function ProductStructuredData({ product, category, reviews, brea
   // G6 holds), and the ProductGroup carries the aggregateRating + reviews computed
   // from the 5 SAMAN-verified reviews only (ratingValue 4.6, ratingCount 5) — both
   // visible on the page (hero badge + Reviews tab), so no fake/unbacked rating.
+  const variantProductName = resolveVariantProductName(variantData, product.name);
+
   const productGroupStructuredData = variantData ? {
     '@context': 'https://schema.org/',
     '@type': 'ProductGroup',
@@ -189,7 +192,10 @@ export default function ProductStructuredData({ product, category, reviews, brea
     ...(reviewNodes.length > 0 ? { review: reviewNodes } : {}),
     hasVariant: variantData.variants.map((v) => ({
       '@type': 'Product',
-      name: `${v.label.replace(/\s*ft$/i, '')} ft Porta Cabin`,
+      // T25 — the product noun comes from the variant data / its preset, falling
+      // back to the page's real product name. It was hardcoded "Porta Cabin",
+      // which would have mis-named every sibling subpage's variants.
+      name: `${v.label.replace(/\s*ft$/i, '')} ft ${variantProductName}`,
       sku: v.sku,
       // T24.1 B — `size` matches the parent's variesBy: 'size' and clears the GSC
       // Merchant-listings "Missing field size" warning on all 9 variants. Value is
@@ -207,19 +213,24 @@ export default function ProductStructuredData({ product, category, reviews, brea
     })),
   } : null;
 
-  // T24.1-V — VideoObject for the porta-cabins product overview video. Emitted as a
-  // SEPARATE top-level node alongside the ProductGroup (which is not altered in any
-  // way). Gated on variantData, so it exists on /product/porta-cabins only — one
-  // video per page. No contentUrl: the file is YouTube-hosted, embedUrl is correct.
-  const videoStructuredData = variantData ? {
+  // T24.1-V — VideoObject for the product overview video. Emitted as a SEPARATE
+  // top-level node alongside the ProductGroup (which is not altered in any way).
+  // No contentUrl: the file is YouTube-hosted, embedUrl is correct.
+  // T25 §4 — OPT-IN, not "any variantData". It used to be gated on variantData
+  // alone, which meant wiring the variant template into the sibling subpage route
+  // would have emitted the FLAGSHIP's video on every subpage. It now requires the
+  // product's own `hasProductVideo: true` plus its own video metadata, so exactly
+  // one page (/product/porta-cabins) emits it — the same output as before.
+  const variantVideo = resolveVariantVideo(variantData);
+  const videoStructuredData = variantVideo ? {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    name: 'Porta Cabin — 9 Standard Sizes, Interiors & Prices | SAMAN Portable',
-    description: 'Factory-built porta cabins in 9 standard sizes (10x10 ft to 40x12 ft) — exteriors, finished interiors and specifications. Product overview by SAMAN Portable.',
-    thumbnailUrl: [`${baseUrl}/images/porta-cabin-product-video-poster.webp`],
-    uploadDate: '2026-07-18',
-    duration: 'PT1M25S',
-    embedUrl: 'https://www.youtube.com/embed/SDU26yNPBlA',
+    name: variantVideo.title,
+    description: variantVideo.schemaDescription,
+    thumbnailUrl: [`${baseUrl}${variantVideo.posterSrc}`],
+    uploadDate: variantVideo.uploadDate,
+    duration: variantVideo.duration,
+    embedUrl: variantVideo.embedUrl,
     publisher: {
       '@type': 'Organization',
       name: 'SAMAN Portable',

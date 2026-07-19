@@ -1,0 +1,405 @@
+{
+  "productSlug": "ms-porta-cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 194000,
+      "capacity": "2–3 people",
+      "useCase": "Exposed-Site Guard Post",
+      "sku": "SP-MSPC-10x10",
+      "images": [
+        {
+          "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-hero-view.webp",
+          "alt": "MS porta cabin 10×10 ft — IS 2062 mild-steel site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-front-angle.webp",
+          "alt": "10×10 ft MS porta cabin — front view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-side-elevation.webp",
+          "alt": "10×10 ft MS porta cabin — side view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-workspace-interior.webp",
+          "alt": "Inside a 10×10 ft MS porta cabin — workspace, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-entrance-interior.webp",
+          "alt": "Inside a 10×10 ft MS porta cabin — entrance, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A compact IS 2062 mild-steel cabin for guard posts and gate offices where the frame has to last years on an exposed site, not months.",
+      "priceInclGst": 228920
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 310000,
+      "capacity": "3–4 people",
+      "useCase": "Boundary-Wall Site Office",
+      "sku": "SP-MSPC-20x8",
+      "images": [
+        {
+          "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-hero-view.webp",
+          "alt": "MS porta cabin 20×8 ft — IS 2062 mild-steel site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-front-angle.webp",
+          "alt": "20×8 ft MS porta cabin — front view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-side-elevation.webp",
+          "alt": "20×8 ft MS porta cabin — side view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-workspace-interior.webp",
+          "alt": "Inside a 20×8 ft MS porta cabin — workspace, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-entrance-interior.webp",
+          "alt": "Inside a 20×8 ft MS porta cabin — entrance, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A narrow-plot MS site office — 8 ft wide for boundary-wall and road-margin placement, full IS 2062 frame, surface-treated for humidity.",
+      "priceInclGst": 365800
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 353000,
+      "capacity": "4–6 people",
+      "useCase": "EPC Standard Site Office",
+      "sku": "SP-MSPC-20x10",
+      "images": [
+        {
+          "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-hero-view.webp",
+          "alt": "MS porta cabin 20×10 ft — IS 2062 mild-steel site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-front-angle.webp",
+          "alt": "20×10 ft MS porta cabin — front view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-side-elevation.webp",
+          "alt": "20×10 ft MS porta cabin — side view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-workspace-interior.webp",
+          "alt": "Inside a 20×10 ft MS porta cabin — workspace, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-entrance-interior.webp",
+          "alt": "Inside a 20×10 ft MS porta cabin — entrance, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The standard MS site office — four to six staff on a certified IS 2062 Grade A frame, the size most EPC contractors specify.",
+      "priceInclGst": 416540
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 406000,
+      "capacity": "5–7 people",
+      "useCase": "Office with Manager Corner",
+      "sku": "SP-MSPC-20x12",
+      "images": [
+        {
+          "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-hero-view.webp",
+          "alt": "MS porta cabin 20×12 ft — IS 2062 mild-steel site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-front-angle.webp",
+          "alt": "20×12 ft MS porta cabin — front view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-side-elevation.webp",
+          "alt": "20×12 ft MS porta cabin — side view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-workspace-interior.webp",
+          "alt": "Inside a 20×12 ft MS porta cabin — workspace, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-entrance-interior.webp",
+          "alt": "Inside a 20×12 ft MS porta cabin — entrance, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The extra width for a partitioned manager corner, on the same 20+ year mild-steel structure.",
+      "priceInclGst": 479080
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 508000,
+      "capacity": "6–8 people",
+      "useCase": "Office + Records Room",
+      "sku": "SP-MSPC-30x10",
+      "images": [
+        {
+          "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-hero-view.webp",
+          "alt": "MS porta cabin 30×10 ft — IS 2062 mild-steel site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-front-angle.webp",
+          "alt": "30×10 ft MS porta cabin — front view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-side-elevation.webp",
+          "alt": "30×10 ft MS porta cabin — side view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-workspace-interior.webp",
+          "alt": "Inside a 30×10 ft MS porta cabin — workspace, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-entrance-interior.webp",
+          "alt": "Inside a 30×10 ft MS porta cabin — entrance, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A two-zone MS cabin — office plus records/meeting — for site teams that keep the unit for the full project duration.",
+      "priceInclGst": 599440
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 530000,
+      "capacity": "7–9 people",
+      "useCase": "Linear Bunkhouse Office",
+      "sku": "SP-MSPC-40x8",
+      "images": [
+        {
+          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-hero-view.webp",
+          "alt": "MS porta cabin 40×8 ft — IS 2062 mild-steel site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-front-angle.webp",
+          "alt": "40×8 ft MS porta cabin — front view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-side-elevation.webp",
+          "alt": "40×8 ft MS porta cabin — side view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-workspace-interior.webp",
+          "alt": "Inside a 40×8 ft MS porta cabin — workspace, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-entrance-interior.webp",
+          "alt": "Inside a 40×8 ft MS porta cabin — entrance, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A long linear MS unit for bunkhouses and in-line site offices, IS 2062 frame along a wall or platform edge.",
+      "priceInclGst": 625400
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20x20 ft",
+      "dims": "20x20x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 663000,
+      "capacity": "8–10 people",
+      "useCase": "Training / Command Room",
+      "sku": "SP-MSPC-20x20",
+      "images": [
+        {
+          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-hero-view.webp",
+          "alt": "MS porta cabin 20×20 ft — IS 2062 mild-steel site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-front-angle.webp",
+          "alt": "20×20 ft MS porta cabin — front view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-side-elevation.webp",
+          "alt": "20×20 ft MS porta cabin — side view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-workspace-interior.webp",
+          "alt": "Inside a 20×20 ft MS porta cabin — workspace, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-entrance-interior.webp",
+          "alt": "Inside a 20×20 ft MS porta cabin — entrance, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A square open MS floor for training halls and site command rooms where structural integrity matters as much as space.",
+      "priceInclGst": 782340
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 663000,
+      "capacity": "8–10 people",
+      "useCase": "Large Certified-Frame Office",
+      "sku": "SP-MSPC-40x10",
+      "images": [
+        {
+          "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-hero-view.webp",
+          "alt": "MS porta cabin 40×10 ft — IS 2062 mild-steel site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-front-angle.webp",
+          "alt": "40×10 ft MS porta cabin — front view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-side-elevation.webp",
+          "alt": "40×10 ft MS porta cabin — side view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-workspace-interior.webp",
+          "alt": "Inside a 40×10 ft MS porta cabin — workspace, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-entrance-interior.webp",
+          "alt": "Inside a 40×10 ft MS porta cabin — entrance, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The largest single-module MS office floor — eight to ten staff on a certified frame, craned in as one unit.",
+      "priceInclGst": 782340
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 779000,
+      "capacity": "10–12 people",
+      "useCase": "Multi-Room Project Office",
+      "sku": "SP-MSPC-40x12",
+      "images": [
+        {
+          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-hero-view.webp",
+          "alt": "MS porta cabin 40×12 ft — IS 2062 mild-steel site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-front-angle.webp",
+          "alt": "40×12 ft MS porta cabin — front view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-side-elevation.webp",
+          "alt": "40×12 ft MS porta cabin — side view, corrugated steel shell on IS 2062 frame",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-workspace-interior.webp",
+          "alt": "Inside a 40×12 ft MS porta cabin — workspace, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-entrance-interior.webp",
+          "alt": "Inside a 40×12 ft MS porta cabin — entrance, lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The flagship MS cabin — near 500 sq ft of multi-room office on a full IS 2062 Grade A structure.",
+      "priceInclGst": 919220
+    }
+  ]
+}

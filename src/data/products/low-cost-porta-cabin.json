@@ -1,0 +1,663 @@
+{
+  "productSlug": "low-cost-porta-cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 132000,
+      "capacity": "2–3 people",
+      "useCase": "Entry Site Office",
+      "sku": "SP-LCPC-10x10",
+      "images": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-hero-view.webp",
+          "alt": "Low cost porta cabin 10×10 ft — finished MS corrugated site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-front-angle.webp",
+          "alt": "10×10 ft low cost porta cabin — front angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-side-elevation.webp",
+          "alt": "10×10 ft low cost porta cabin — side elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-workspace-interior.webp",
+          "alt": "Workspace inside a 10×10 ft low cost porta cabin — desk area in the finished, wired office",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-entrance-interior.webp",
+          "alt": "10×10 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "explorerImages": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-elevated-view.webp",
+          "alt": "10×10 ft low cost porta cabin — elevated view of the value-line cabin on site",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-end-elevation.webp",
+          "alt": "10×10 ft low cost porta cabin — end elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-rear-angle.webp",
+          "alt": "10×10 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-rear-interior.webp",
+          "alt": "Rear interior of a 10×10 ft low cost porta cabin — insulated lining and finished flooring",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-corner-interior.webp",
+          "alt": "Inside a 10×10 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The lowest-price way into a real SAMAN cabin — a finished 100 sq ft guard post, gate office or ticket counter on the same MS frame, just at our keenest rate. Light enough to place on the tightest site.",
+      "priceInclGst": 155760
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 211200,
+      "capacity": "3–4 people",
+      "useCase": "Narrow-Plot Site Office",
+      "sku": "SP-LCPC-20x8",
+      "images": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-hero-view.webp",
+          "alt": "Low cost porta cabin 20×8 ft — finished MS corrugated site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-front-angle.webp",
+          "alt": "20×8 ft low cost porta cabin — front angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-side-elevation.webp",
+          "alt": "20×8 ft low cost porta cabin — side elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-workspace-interior.webp",
+          "alt": "Workspace inside a 20×8 ft low cost porta cabin — desk area in the finished, wired office",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-entrance-interior.webp",
+          "alt": "20×8 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "explorerImages": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-elevated-view.webp",
+          "alt": "20×8 ft low cost porta cabin — elevated view of the value-line cabin on site",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-end-elevation.webp",
+          "alt": "20×8 ft low cost porta cabin — end elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-rear-angle.webp",
+          "alt": "20×8 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-rear-interior.webp",
+          "alt": "Rear interior of a 20×8 ft low cost porta cabin — insulated lining and finished flooring",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-corner-interior.webp",
+          "alt": "Inside a 20×8 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A narrow-plot site office at entry pricing — 8 ft wide to sit along boundary walls and road margins, fully finished inside, at the lowest cost per usable foot.",
+      "priceInclGst": 249216
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 240000,
+      "capacity": "4–6 people",
+      "useCase": "Standard Site Office",
+      "sku": "SP-LCPC-20x10",
+      "images": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-hero-view.webp",
+          "alt": "Low cost porta cabin 20×10 ft — finished MS corrugated site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-front-angle.webp",
+          "alt": "20×10 ft low cost porta cabin — front angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-side-elevation.webp",
+          "alt": "20×10 ft low cost porta cabin — side elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-workspace-interior.webp",
+          "alt": "Workspace inside a 20×10 ft low cost porta cabin — desk area in the finished, wired office",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-entrance-interior.webp",
+          "alt": "20×10 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "explorerImages": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-elevated-view.webp",
+          "alt": "20×10 ft low cost porta cabin — elevated view of the value-line cabin on site",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-end-elevation.webp",
+          "alt": "20×10 ft low cost porta cabin — end elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-rear-angle.webp",
+          "alt": "20×10 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-rear-interior.webp",
+          "alt": "Rear interior of a 20×10 ft low cost porta cabin — insulated lining and finished flooring",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-corner-interior.webp",
+          "alt": "Inside a 20×10 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "Our most-asked-for low cost size — the standard 200 sq ft site office for four to six people, finished and wired, at the value-line price rather than the premium one.",
+      "priceInclGst": 283200
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 276480,
+      "capacity": "5–7 people",
+      "useCase": "Office with Manager Area",
+      "sku": "SP-LCPC-20x12",
+      "images": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-hero-view.webp",
+          "alt": "Low cost porta cabin 20×12 ft — finished MS corrugated site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-front-angle.webp",
+          "alt": "20×12 ft low cost porta cabin — front angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-side-elevation.webp",
+          "alt": "20×12 ft low cost porta cabin — side elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-workspace-interior.webp",
+          "alt": "Workspace inside a 20×12 ft low cost porta cabin — desk area in the finished, wired office",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-entrance-interior.webp",
+          "alt": "20×12 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "explorerImages": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-elevated-view.webp",
+          "alt": "20×12 ft low cost porta cabin — elevated view of the value-line cabin on site",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-end-elevation.webp",
+          "alt": "20×12 ft low cost porta cabin — end elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-rear-angle.webp",
+          "alt": "20×12 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-rear-interior.webp",
+          "alt": "Rear interior of a 20×12 ft low cost porta cabin — insulated lining and finished flooring",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-corner-interior.webp",
+          "alt": "Inside a 20×12 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The extra two feet of width for a partitioned manager corner, still on the economy ladder — more usable office without moving up to a premium finish.",
+      "priceInclGst": 326246
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 345600,
+      "capacity": "6–8 people",
+      "useCase": "Office + Meeting Zone",
+      "sku": "SP-LCPC-30x10",
+      "images": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-hero-view.webp",
+          "alt": "Low cost porta cabin 30×10 ft — finished MS corrugated site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-front-angle.webp",
+          "alt": "30×10 ft low cost porta cabin — front angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-side-elevation.webp",
+          "alt": "30×10 ft low cost porta cabin — side elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-workspace-interior.webp",
+          "alt": "Workspace inside a 30×10 ft low cost porta cabin — desk area in the finished, wired office",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-entrance-interior.webp",
+          "alt": "30×10 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "explorerImages": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-elevated-view.webp",
+          "alt": "30×10 ft low cost porta cabin — elevated view of the value-line cabin on site",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-end-elevation.webp",
+          "alt": "30×10 ft low cost porta cabin — end elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-rear-angle.webp",
+          "alt": "30×10 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-rear-interior.webp",
+          "alt": "Rear interior of a 30×10 ft low cost porta cabin — insulated lining and finished flooring",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-corner-interior.webp",
+          "alt": "Inside a 30×10 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A two-zone low cost cabin — office at one end, records or meeting space at the other — for site teams that need room but are watching the budget.",
+      "priceInclGst": 407808
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 360960,
+      "capacity": "7–9 people",
+      "useCase": "Linear Office & Bunkhouse",
+      "sku": "SP-LCPC-40x8",
+      "images": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-hero-view.webp",
+          "alt": "Low cost porta cabin 40×8 ft — finished MS corrugated site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-front-angle.webp",
+          "alt": "40×8 ft low cost porta cabin — front angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-side-elevation.webp",
+          "alt": "40×8 ft low cost porta cabin — side elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-workspace-interior.webp",
+          "alt": "Workspace inside a 40×8 ft low cost porta cabin — desk area in the finished, wired office",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-entrance-interior.webp",
+          "alt": "40×8 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "explorerImages": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-elevated-view.webp",
+          "alt": "40×8 ft low cost porta cabin — elevated view of the value-line cabin on site",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-end-elevation.webp",
+          "alt": "40×8 ft low cost porta cabin — end elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-rear-angle.webp",
+          "alt": "40×8 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-rear-interior.webp",
+          "alt": "Rear interior of a 40×8 ft low cost porta cabin — insulated lining and finished flooring",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-corner-interior.webp",
+          "alt": "Inside a 40×8 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A long, linear economy layout for bunkhouses, worker rest rooms and in-line site offices where the run follows a wall or fence — maximum length at minimum rate.",
+      "priceInclGst": 425933
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20x20 ft",
+      "dims": "20x20x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 451200,
+      "capacity": "8–10 people",
+      "useCase": "Open-Floor Module",
+      "sku": "SP-LCPC-20x20",
+      "images": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-hero-view.webp",
+          "alt": "Low cost porta cabin 20×20 ft — finished MS corrugated site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-front-angle.webp",
+          "alt": "20×20 ft low cost porta cabin — front angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-side-elevation.webp",
+          "alt": "20×20 ft low cost porta cabin — side elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-workspace-interior.webp",
+          "alt": "Workspace inside a 20×20 ft low cost porta cabin — desk area in the finished, wired office",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-entrance-interior.webp",
+          "alt": "20×20 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "explorerImages": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-elevated-view.webp",
+          "alt": "20×20 ft low cost porta cabin — elevated view of the value-line cabin on site",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-end-elevation.webp",
+          "alt": "20×20 ft low cost porta cabin — end elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-rear-angle.webp",
+          "alt": "20×20 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-rear-interior.webp",
+          "alt": "Rear interior of a 20×20 ft low cost porta cabin — insulated lining and finished flooring",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-corner-interior.webp",
+          "alt": "Inside a 20×20 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A square, open 400 sq ft floor at value pricing — training halls, site command rooms or showrooms without the premium-finish uplift.",
+      "priceInclGst": 532416
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 451200,
+      "capacity": "8–10 people",
+      "useCase": "Large Site Office",
+      "sku": "SP-LCPC-40x10",
+      "images": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-hero-view.webp",
+          "alt": "Low cost porta cabin 40×10 ft — finished MS corrugated site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-front-angle.webp",
+          "alt": "40×10 ft low cost porta cabin — front angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-side-elevation.webp",
+          "alt": "40×10 ft low cost porta cabin — side elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-elevated-view.webp",
+          "alt": "40×10 ft low cost porta cabin — elevated view of the value-line cabin on site",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-end-elevation.webp",
+          "alt": "40×10 ft low cost porta cabin — end elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "explorerImages": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-rear-angle.webp",
+          "alt": "40×10 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "Our largest single-module low cost office floor — eight to ten staff or a full training room, finished and delivered as one unit at the economy rate.",
+      "priceInclGst": 532416
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 529920,
+      "capacity": "10–12 people",
+      "useCase": "Multi-Room Office",
+      "sku": "SP-LCPC-40x12",
+      "images": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-hero-view.webp",
+          "alt": "Low cost porta cabin 40×12 ft — finished MS corrugated site office exterior by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-front-angle.webp",
+          "alt": "40×12 ft low cost porta cabin — front angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-side-elevation.webp",
+          "alt": "40×12 ft low cost porta cabin — side elevation view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-workspace-interior.webp",
+          "alt": "Workspace inside a 40×12 ft low cost porta cabin — desk area in the finished, wired office",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-entrance-interior.webp",
+          "alt": "40×12 ft low cost porta cabin entrance — flush door opening into the LED-lit finished interior",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "explorerImages": [
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-elevated-view.webp",
+          "alt": "40×12 ft low cost porta cabin — elevated view of the value-line cabin on site",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-rear-angle.webp",
+          "alt": "40×12 ft low cost porta cabin — rear angle view showing corrugated steel shell, sliding windows and MS door",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-rear-interior.webp",
+          "alt": "Rear interior of a 40×12 ft low cost porta cabin — insulated lining and finished flooring",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-corner-interior.webp",
+          "alt": "Inside a 40×12 ft low cost porta cabin — corner view of the lined interior and vinyl floor",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The biggest cabin on the value line — nearly 500 sq ft planned as a multi-room site office, at the lowest per-sq-ft price in the range.",
+      "priceInclGst": 625306
+    }
+  ]
+}

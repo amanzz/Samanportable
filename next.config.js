@@ -1805,6 +1805,21 @@ const nextConfig = {
       { source: '/20ft-porta-cabin', destination: 'https://www.samanportable.com/porta-cabin-sizes-and-specifications-in-india', permanent: true },
       { source: '/porta-cabins-in-mg-road', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bangalore', permanent: true },
 
+      // T25 — porta cabin subpage consolidations (SAMAN-ruled 18 Jul 2026).
+      // Placed BEFORE ...csvRedirects so first-match-wins.
+      // Both sources drop out of the sitemap automatically: next-sitemap filters every
+      // emitted URL through getRedirectSources().
+      {
+        source: '/product/porta-cabins/toilet-porta-cabins',
+        destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet',
+        permanent: true,
+      },
+      {
+        source: '/product/porta-cabins/portacabin-office',
+        destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-office',
+        permanent: true,
+      },
+
       ...csvRedirects,
     ];
 

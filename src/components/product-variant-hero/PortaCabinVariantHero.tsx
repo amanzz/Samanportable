@@ -25,28 +25,89 @@ import RelatedProductRail from '@/components/product/RelatedProductRail';
 import type { RelatedRailItem } from '@/lib/c16PanelCatalog';
 import type { VariantProductData } from './types';
 import { formatIndianPrice } from './types';
-import applicationsData from '@/data/products/porta-cabins-applications.json';
+import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
+import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
+import sectionHDatasets from '@/data/products/section-h-datasets.json';
 
 interface ApplicationPanel {
   sizeSlug: string;
   h3: string;
   paragraph: string;
   applications: string[];
+  /** Sub-heading above the applications list. Present only in the T25 Section H
+      drop (its per-panel `h3`); the flagship dataset has no equivalent. */
+  applicationsHeading?: string;
 }
 interface ApplicationsData {
-  h2: string;
-  intro: string;
+  /** Section-level heading + intro. The flagship dataset carries them; the T25
+      Section H drop is panel-only, so both are optional and their markup is
+      omitted rather than invented when absent. */
+  h2?: string;
+  intro?: string;
   panels: ApplicationPanel[];
 }
-const APPLICATIONS = applicationsData as ApplicationsData;
 
-// Application-panel alt: "Elevated view of {size} ft porta cabin used as
+/**
+ * T25 Section H drop — `{slug: {sizeSlug: {h2, intro, h3, applications[4]}}}`.
+ * Field mapping (the drop is panel-scoped, the component is section-scoped):
+ *   drop h2           -> panel heading   (renders where the flagship renders h3)
+ *   drop intro        -> panel paragraph
+ *   drop h3           -> applications sub-heading (new slot)
+ *   drop applications -> the 4 checkmark items; [0] also feeds the panel image alt
+ * No section-level h2/intro exists in the drop, so those stay undefined.
+ */
+type SectionHPanel = { h2: string; intro: string; h3: string; applications: string[] };
+const fromSectionHDrop = (bySize: Record<string, SectionHPanel>): ApplicationsData => ({
+  panels: Object.entries(bySize).map(([sizeSlug, p]) => ({
+    sizeSlug,
+    h3: p.h2,
+    paragraph: p.intro,
+    applications: p.applications,
+    applicationsHeading: p.h3,
+  })),
+});
+
+// T25 — Size & Applications Explorer copy, registered per dataset key. The key is
+// `applicationsDataset` from the data file, else the preset's, else productSlug.
+// A product with NO entry here renders NO explorer at all (see
+// SizeApplicationsExplorer's null return): the per-slug applications copy is
+// owner-authored and must never be substituted with another product's text.
+const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
+  'porta-cabins': portaCabinsApplications as ApplicationsData,
+  ...Object.fromEntries(
+    Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
+      ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
+    )
+  ),
+};
+
+// Application-panel alt: "Elevated view of {size} ft {product} used as
 // {first application}" — first checkmark lowercased + final word singularised
 // (matches the owner's example: "…used as project and site office"). Unique per
 // size, and distinct from the gallery alts (page-wide alt uniqueness).
-const applicationAlt = (label: string, firstApp: string) => {
+const applicationAlt = (label: string, firstApp: string, productLower: string) => {
   const phrase = (firstApp.charAt(0).toLowerCase() + firstApp.slice(1)).replace(/s$/, '');
-  return `Elevated view of ${label.replace('x', '×')} porta cabin used as ${phrase}`;
+  return `Elevated view of ${label.replace('x', '×')} ${productLower} used as ${phrase}`;
+};
+
+// "Porta Cabin" -> "Porta cabin". Used where the original copy was sentence-cased
+// mid-string; keeps the flagship's aria-labels byte-identical.
+const sentenceCase = (name: string) => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+
+// Explorer panel image. Prefers an explicit template (`{sizeSlug}` token); with no
+// template it derives the path from that size's FIRST gallery image by swapping the
+// trailing shot segment — so any product whose assets follow the house naming
+// convention works without extra configuration.
+const explorerImageSrc = (
+  template: string | undefined,
+  shot: string,
+  sizeSlug: string,
+  gallerySrc: string | undefined
+): string | null => {
+  if (template) return template.replace(/\{sizeSlug\}/g, sizeSlug);
+  if (!gallerySrc) return null;
+  const swapped = gallerySrc.replace(/-[a-z0-9]+-view(\.[a-z0-9]+)$/i, `-${shot}$1`);
+  return swapped === gallerySrc ? null : swapped;
 };
 
 const EnquiryDialog = dynamic(() => import('@/components/EnquiryDialog'), { ssr: false });
@@ -77,22 +138,29 @@ const SIZE_HASH_RE = /^#size-([0-9]+x[0-9]+)$/;
 const DETAILS_HASH_RE = /^#sizedetails-([0-9]+x[0-9]+)$/;
 const APPLICATIONS_SECTION_ID = 'porta-size-applications';
 
-// T24.1-V — product overview video. ONE video per page, /product/porta-cabins only
-// (this component renders nowhere else). LAZY FACADE: the page ships only the poster
-// WebP; the YouTube iframe is injected on click and never before, so a cold load
-// makes ZERO requests to youtube.com / ytimg.com. The 1:1 box is reserved by the
-// existing aspect-square wrapper, so swapping poster -> player is zero-CLS.
-const VIDEO_EMBED_SRC = 'https://www.youtube.com/embed/SDU26yNPBlA?autoplay=1';
-const VIDEO_POSTER_SRC = '/images/porta-cabin-product-video-poster.webp';
-const VIDEO_POSTER_ALT = 'Porta cabin product video — 9 standard sizes overview (play)';
-const VIDEO_TITLE = 'Porta Cabin — 9 Standard Sizes, Interiors & Prices | SAMAN Portable';
+// T24.1-V — product overview video. ONE video per page. LAZY FACADE: the page ships
+// only the poster WebP; the YouTube iframe is injected on click and never before, so
+// a cold load makes ZERO requests to youtube.com / ytimg.com. The 1:1 box is reserved
+// by the existing aspect-square wrapper, so swapping poster -> player is zero-CLS.
+// T25 — OPT-IN: the video exists only for a product whose data file sets
+// `hasProductVideo: true` AND supplies video metadata (resolveVariantVideo). Every
+// other product gets no facade thumb and no VideoObject JSON-LD.
 
-// ₹/sq ft display values — OFFICIAL owner-supplied figures (each = priceExGst /
-// areaSqft exactly). Kept as literals here (not a data-file change) so they render
-// verbatim as specified. Keyed by sizeSlug.
-const PRICE_PER_SQFT: Record<string, string> = {
-  '10x10': '1,375', '20x8': '1,375', '20x10': '1,250', '20x12': '1,200',
-  '30x10': '1,200', '40x8': '1,175', '20x20': '1,175', '40x10': '1,175', '40x12': '1,150',
+// ₹/sq ft display values — OFFICIAL owner-supplied figures. T25: derived per variant
+// as round(priceExGst / areaSqft) in en-IN grouping, which reproduces the flagship's
+// nine literals EXACTLY (1,375 · 1,375 · 1,250 · 1,200 · 1,200 · 1,175 · 1,175 ·
+// 1,175 · 1,150 — verified against the previous hardcoded map). A product may still
+// override any figure via `pricePerSqft` in its data file.
+const pricePerSqft = (
+  overrides: Record<string, string> | undefined,
+  sizeSlug: string,
+  priceExGst: number,
+  areaSqft: number
+): string => {
+  const override = overrides?.[sizeSlug];
+  if (override) return override;
+  if (!areaSqft) return '';
+  return Math.round(priceExGst / areaSqft).toLocaleString('en-IN');
 };
 
 
@@ -120,6 +188,22 @@ export function PortaCabinVariantHero({
   const [quoteIndex, setQuoteIndex] = useState(defaultIndex);
   const [showEnquiry, setShowEnquiry] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
+
+  // T25 — every value that used to be a porta-cabins literal, resolved from the
+  // data file first, then the product's preset. Anything unresolved is omitted
+  // rather than defaulted to the flagship's content.
+  const preset = getVariantPreset(data);
+  const productName = resolveVariantProductName(data, productTitle);
+  const productNameLower = productName.toLowerCase();
+  const categoryLabel = data.categoryLabel || preset.categoryLabel;
+  const categoryLinkHref = data.categoryHref || preset.categoryHref;
+  const productSku = data.productSku || preset.productSku;
+  const specPdfHref = data.specPdfHref || preset.specPdfHref;
+  // Video: null unless the product opted in AND supplied metadata (T25 §4).
+  const video = resolveVariantVideo(data);
+  // Explorer copy: resolved by dataset key. undefined => the Explorer section is
+  // not rendered at all (never another product's copy).
+  const applications = APPLICATIONS_DATASETS[data.applicationsDataset || preset.applicationsDataset || data.productSlug];
 
   const heroActive = data.variants[heroIndex];
   const heroImages = heroActive.images.length > 0 ? heroActive.images : null;
@@ -185,13 +269,13 @@ export function PortaCabinVariantHero({
     <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm lg:h-full lg:flex lg:flex-col">
       <div className="space-y-2 lg:flex lg:flex-1 lg:flex-col">
         <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
-          {showVideo ? (
+          {showVideo && video ? (
             // Injected ONLY after the thumb click. autoplay=1 because the click
             // that mounted it IS the play gesture. youtube-nocookie is not used:
             // the packet fixes the embed origin as youtube.com.
             <iframe
-              src={VIDEO_EMBED_SRC}
-              title={VIDEO_TITLE}
+              src={video.embedSrc}
+              title={video.title}
               className="absolute inset-0 w-full h-full border-0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -228,7 +312,7 @@ export function PortaCabinVariantHero({
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 text-center p-4">
               <p className="text-sm text-muted-foreground">
-                Photos for the {heroActive.label} Porta Cabin are being finalised — send an enquiry for reference images.
+                Photos for the {heroActive.label} {productName} are being finalised — send an enquiry for reference images.
               </p>
             </div>
           )}
@@ -237,9 +321,12 @@ export function PortaCabinVariantHero({
         {/* T24.1-V — 6 columns: the 5 photo thumbs plus the video facade thumb.
             Six-up keeps the row a single line, so gallery height, paint order and
             everything below it are byte-identical in flow to the 5-up build (no
-            reflow, no CLS); only the per-thumb box shrinks. */}
+            reflow, no CLS); only the per-thumb box shrinks.
+            T25 — the video thumb is opt-in, so the track count follows the real
+            number of thumbs: 6 with the video, 5 without. Full class names (not an
+            interpolated `grid-cols-${n}`) so Tailwind's scanner emits both. */}
         {heroImages && (
-          <div className="grid grid-cols-6 gap-2">
+          <div className={video ? 'grid grid-cols-6 gap-2' : 'grid grid-cols-5 gap-2'}>
             {heroImages.map((img, i) => (
               <button
                 key={img.src}
@@ -249,7 +336,7 @@ export function PortaCabinVariantHero({
                   !showVideo && activeImageIndex === i ? 'border-primary shadow-lg ring-2 ring-primary/20' : 'border-transparent hover:border-primary/50'
                 )}
                 onClick={() => { setActiveImageIndex(i); setShowVideo(false); }}
-                aria-label={`Show image ${i + 1} of ${heroActive.label} porta cabin`}
+                aria-label={`Show image ${i + 1} of ${heroActive.label} ${productNameLower}`}
               >
                 {/* The thumbnail whose photo is currently enlarged in the main
                     viewer is decorative (alt="") — the main <img> already carries
@@ -271,7 +358,10 @@ export function PortaCabinVariantHero({
                 surface on the page until it is clicked: a local WebP poster plus a
                 CSS play badge. No iframe, no YouTube script, no ytimg preconnect.
                 Accessible name comes from the poster alt (the packet's string), so
-                no aria-label is added on top of it. */}
+                no aria-label is added on top of it.
+                T25 — rendered ONLY for a product that opted in via
+                `hasProductVideo` and supplied video metadata. */}
+            {video && (
             <button
               type="button"
               className={cn(
@@ -286,8 +376,8 @@ export function PortaCabinVariantHero({
                   first paint. The poster follows the row it lives in. It is a 63 KB
                   WebP served into a ~44-52px box, i.e. the smallest srcset candidate. */}
               <Image
-                src={VIDEO_POSTER_SRC}
-                alt={VIDEO_POSTER_ALT}
+                src={video.posterSrc}
+                alt={video.posterAlt}
                 width={150}
                 height={150}
                 className="w-full h-full object-cover"
@@ -301,6 +391,7 @@ export function PortaCabinVariantHero({
                 </span>
               </span>
             </button>
+            )}
           </div>
         )}
 
@@ -311,15 +402,19 @@ export function PortaCabinVariantHero({
           <ProductZoneCtas variant="strip" className="w-full" stretch />
         </div>
 
-        {/* Slim full-width outlined download button — plain <a download>, no JS. */}
+        {/* Slim full-width outlined download button — plain <a download>, no JS.
+            T25: rendered only when the product names a spec PDF (data file or
+            preset); never points at another product's document. */}
+        {specPdfHref && (
         <a
-          href="/downloads/saman-porta-cabin-specifications.pdf"
+          href={specPdfHref}
           download
           className="flex w-full items-center justify-center gap-2 rounded-md border border-[var(--ds-color-leaf)] bg-white px-4 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:bg-[var(--ds-color-mist)]"
         >
           <Download className="h-4 w-4" aria-hidden="true" />
           Download specifications
         </a>
+        )}
       </div>
     </Card>
   );
@@ -355,7 +450,7 @@ export function PortaCabinVariantHero({
 
         <div className="space-y-2">
           <p className="text-sm font-semibold text-foreground">Choose size</p>
-          <div className="grid grid-cols-3 gap-2" role="group" aria-label="Choose porta cabin size">
+          <div className="grid grid-cols-3 gap-2" role="group" aria-label={`Choose ${productNameLower} size`}>
             {data.variants.map((v, i) => (
               <button
                 key={v.sizeSlug}
@@ -379,7 +474,10 @@ export function PortaCabinVariantHero({
             Ex-GST stays prominent; the incl-GST line (G1) is a small muted line
             below it. Both swap in place, constant height → no CLS. */}
         <div className="min-h-[5.25rem]" aria-live="polite">
-          <p className="text-sm text-muted-foreground">{heroActive.label} Porta Cabin</p>
+          {/* Two children (not three) so React SSR emits ONE `<!-- -->` text
+              separator here — byte-identical to the T24.1 markup, which had the
+              product noun as a literal in the trailing static string. */}
+          <p className="text-sm text-muted-foreground">{heroActive.label}{` ${productName}`}</p>
           <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
             {formatIndianPrice(heroActive.priceExGst)} + GST
           </span>
@@ -429,22 +527,31 @@ export function PortaCabinVariantHero({
 
         {/* Product Information (owner ruling: mandatory on every product page) —
             static, not per-variant. Verbatim SKU + category anchor. Fills the
-            gap between the green chips line and the trust row. */}
+            gap between the green chips line and the trust row.
+            T25: both rows are data-driven. A row (and, if neither resolves, the
+            whole block) is omitted rather than showing another product's SKU or
+            category anchor — those are owner-supplied values, never defaulted. */}
+        {(productSku || (categoryLabel && categoryLinkHref)) && (
         <div className="rounded-lg border border-[var(--ds-color-border)] px-3 py-2.5">
           <h3 className="mb-1.5 text-[13px] font-semibold text-[var(--ds-color-ink)]">Product Information</h3>
           <dl className="space-y-1 text-[13px]">
+            {productSku && (
             <div className="flex items-center justify-between gap-3">
               <dt className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">SKU</dt>
-              <dd className="font-semibold text-[var(--ds-color-forest)]">SP-20-PC-2024</dd>
+              <dd className="font-semibold text-[var(--ds-color-forest)]">{productSku}</dd>
             </div>
+            )}
+            {categoryLabel && categoryLinkHref && (
             <div className="flex items-center justify-between gap-3">
               <dt className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">Category</dt>
               <dd>
-                <Link href="/product/porta-cabins" className="font-semibold text-[var(--ds-color-leaf)] hover:underline">Porta Cabins</Link>
+                <Link href={categoryLinkHref} className="font-semibold text-[var(--ds-color-leaf)] hover:underline">{categoryLabel}</Link>
               </dd>
             </div>
+            )}
           </dl>
         </div>
+        )}
 
         {/* Trust row — anchored at the card bottom (mt-auto within the
             full-height flex column). */}
@@ -502,15 +609,23 @@ export function PortaCabinVariantHero({
             mobile. DECOUPLED from the hero (own explorerIndex + #sizedetails-*).
             Only the ACTIVE panel renders its <img> (P1/V7); every panel's text
             ships in SSR (crawlable); grid-stack → zero CLS. */}
+        {/* T25 — the explorer is rendered only when THIS product has its own
+            applications dataset. Without one the wrapper is omitted too, so the
+            desktop grid simply loses its second row instead of reserving an empty
+            full-width area. */}
+        {applications && (
         <div className="pc-explorer">
           <SizeApplicationsExplorer
             data={data}
+            applications={applications}
+            productName={productName}
             sectionId={APPLICATIONS_SECTION_ID}
             activeIndex={explorerIndex}
             onSelectTab={selectExplorer}
             onGetQuote={openQuote}
           />
         </div>
+        )}
 
         {/* Related rail — LAST in source: on mobile (block flow) it lands at the
             bottom, below the fold, so it never sits in the hero's paint path;
@@ -551,7 +666,7 @@ export function PortaCabinVariantHero({
       <EnquiryDialog
         isOpen={showEnquiry}
         onClose={() => setShowEnquiry(false)}
-        prefillMessage={`Enquiry for ${data.variants[quoteIndex].label} Porta Cabin`}
+        prefillMessage={`Enquiry for ${data.variants[quoteIndex].label} ${productName}`}
       />
     </section>
   );
@@ -567,28 +682,56 @@ export function PortaCabinVariantHero({
 
 interface SizeApplicationsExplorerProps {
   data: VariantProductData;
+  /** This product's OWN applications copy. Required — there is no shared default,
+      so a product without a dataset never reaches this component (T25 §3). */
+  applications: ApplicationsData | undefined;
+  productName: string;
   sectionId: string;
   activeIndex: number;
   onSelectTab: (index: number) => void;
   onGetQuote: (index: number) => void;
 }
 
-function SizeApplicationsExplorer({ data, sectionId, activeIndex, onSelectTab, onGetQuote }: SizeApplicationsExplorerProps) {
+function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote }: SizeApplicationsExplorerProps) {
+  // T25 — HARD NULL. The per-slug applications copy is owner-authored; when a
+  // product has none this section renders NOTHING. It must never fall back to the
+  // porta-cabins copy.
+  if (!applications) return null;
+
+  const preset = getVariantPreset(data);
+  const productNameLower = productName.toLowerCase();
+  const explorerTemplate = data.explorerImageTemplate || preset.explorerImageTemplate;
+  const explorerShot = data.explorerImageShot || preset.explorerImageShot || 'elevated-view';
+
   // Align the copy panels to the variant order (both keyed by sizeSlug).
-  const panelBySlug = new Map(APPLICATIONS.panels.map((p) => [p.sizeSlug, p]));
+  const panelBySlug = new Map(applications.panels.map((p) => [p.sizeSlug, p]));
 
   return (
-    <section id={sectionId} className="scroll-mt-20" aria-labelledby="size-applications-heading">
-      <div className="mb-4">
-        <h2 id="size-applications-heading" className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
-          {APPLICATIONS.h2}
-        </h2>
-        <p className="mt-1 text-sm text-[var(--ds-color-steel)]">{APPLICATIONS.intro}</p>
-      </div>
+    <section
+      id={sectionId}
+      className="scroll-mt-20"
+      {...(applications.h2
+        ? { 'aria-labelledby': 'size-applications-heading' }
+        : { 'aria-label': `${sentenceCase(productName)} sizes and applications` })}
+    >
+      {/* Section heading + intro exist only on datasets that supply them (the
+          flagship). The T25 Section H drop is panel-only, so this block is omitted
+          rather than filled with invented copy — each panel carries its own
+          heading, which keeps the section self-describing either way. */}
+      {applications.h2 && (
+        <div className="mb-4">
+          <h2 id="size-applications-heading" className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
+            {applications.h2}
+          </h2>
+          {applications.intro && (
+            <p className="mt-1 text-sm text-[var(--ds-color-steel)]">{applications.intro}</p>
+          )}
+        </div>
+      )}
 
       {/* Tab strip — horizontal, scrollable on mobile; selected = leaf underline
           + forest text (homepage PopularSizes design language). */}
-      <div role="tablist" aria-label="Porta cabin sizes" className="flex gap-1 overflow-x-auto border-b border-[var(--ds-color-border)]">
+      <div role="tablist" aria-label={`${sentenceCase(productName)} sizes`} className="flex gap-1 overflow-x-auto border-b border-[var(--ds-color-border)]">
         {data.variants.map((v, i) => {
           const selected = i === activeIndex;
           return (
@@ -627,13 +770,16 @@ function SizeApplicationsExplorer({ data, sectionId, activeIndex, onSelectTab, o
           // gallery's hero-view, so no image repeats on the page). 40x8 has no
           // real photos yet → placeholder.
           const hasPhotos = v.images.length > 0;
-          const panelImage = hasPhotos
+          const panelSrc = hasPhotos
+            ? explorerImageSrc(explorerTemplate, explorerShot, v.sizeSlug, v.images[0]?.src)
+            : null;
+          const panelImage = panelSrc
             ? {
-                src: `/images/products/porta-cabins/${v.sizeSlug}/porta-cabin-${v.sizeSlug}-elevated-view.webp`,
-                alt: applicationAlt(v.label, panel.applications[0]),
+                src: panelSrc,
+                alt: applicationAlt(v.label, panel.applications[0], productNameLower),
               }
             : null;
-          const rate = PRICE_PER_SQFT[v.sizeSlug];
+          const rate = pricePerSqft(data.pricePerSqft, v.sizeSlug, v.priceExGst, v.areaSqft);
           return (
             <div
               key={v.sizeSlug}
@@ -681,7 +827,7 @@ function SizeApplicationsExplorer({ data, sectionId, activeIndex, onSelectTab, o
                   ) : (
                     <div className="flex h-full w-full items-center justify-center p-4 text-center">
                       <p className="text-sm text-[var(--ds-color-steel)]">
-                        Photos for the {v.label} Porta Cabin are being finalised — send an enquiry for reference images.
+                        Photos for the {v.label} {productName} are being finalised — send an enquiry for reference images.
                       </p>
                     </div>
                   )}
@@ -693,7 +839,16 @@ function SizeApplicationsExplorer({ data, sectionId, activeIndex, onSelectTab, o
                 <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{panel.h3}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{panel.paragraph}</p>
 
-                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                {/* Sub-heading above the applications list — T25 Section H drop only. */}
+                {panel.applicationsHeading && (
+                  <p className="mt-4 text-sm font-semibold text-[var(--ds-color-forest)]">
+                    {panel.applicationsHeading}
+                  </p>
+                )}
+
+                {/* Margin class stays FIRST so the flagship keeps its exact original
+                    class string ("mt-4 grid gap-2 sm:grid-cols-2") byte-for-byte. */}
+                <ul className={cn(panel.applicationsHeading ? 'mt-2' : 'mt-4', 'grid gap-2 sm:grid-cols-2')}>
                   {panel.applications.map((app, ai) => (
                     <li key={ai} className="flex items-start gap-2 text-sm text-[var(--ds-color-ink)]">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--ds-color-leaf)]" aria-hidden="true" />

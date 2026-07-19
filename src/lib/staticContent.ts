@@ -65,10 +65,69 @@ function paginate<T>(items: T[], page: number, perPage: number) {
   };
 }
 
-function headToSeo(raw: any): RankMathSEOData | null {
+/**
+ * FAQ schema source of truth is the curated `rank_math_schema_FAQPage` meta field.
+ * `_rank_math_head` is a CACHED blob that lags the live body: after the T25 L3
+ * appends, seven subpages had 8 curated FAQs but a cached head carrying only 3,
+ * and low-cost had 10 vs 3 — so the cached copy was under-emitting approved
+ * content and, on low-cost/office, still carried retired figures. T25 ruling,
+ * 18 Jul 2026: curated wins, cached blob is the fallback when curated is absent.
+ *
+ * Returns a clean standalone FAQPage node, or null when there is no usable
+ * curated set (so the caller falls through to the existing cached-blob path).
+ */
+function curatedFaqSchema(raw: any): any | null {
+  const meta = raw?.meta_data;
+  if (!Array.isArray(meta)) return null;
+  const entry = meta.find((m: any) => m?.key === 'rank_math_schema_FAQPage');
+  const questions = entry?.value?.mainEntity;
+  if (!Array.isArray(questions)) return null;
+  const mainEntity = questions
+    .filter((q: any) =>
+      typeof q?.name === 'string' && q.name.trim() &&
+      typeof q?.acceptedAnswer?.text === 'string' && q.acceptedAnswer.text.trim())
+    .map((q: any) => ({
+      '@type': 'Question',
+      name: q.name.trim(),
+      acceptedAnswer: { '@type': 'Answer', text: q.acceptedAnswer.text.trim() },
+    }));
+  return mainEntity.length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity } : null;
+}
+
+/**
+ * @param preferCuratedFaq FENCED, per T25 ruling (b): the curated-FAQ preference
+ *   applies to PRODUCT records only in this PR. Posts and categories keep the
+ *   cached-blob path untouched and move in the Track-B ticket.
+ */
+function headToSeo(raw: any, preferCuratedFaq = false): RankMathSEOData | null {
   const head = raw?._rank_math_head;
-  if (!head || !head.success || !head.head) return null;
-  return parseRankMathHeadHtml(head.head);
+  const seo = head?.success && head?.head ? parseRankMathHeadHtml(head.head) : null;
+  if (!preferCuratedFaq) return seo;
+
+  const curated = curatedFaqSchema(raw);
+  if (!curated) return seo;                      // absent -> existing cached-blob path
+
+  const base = (seo || {}) as RankMathSEOData;
+
+  // Carry over the cached node's descriptive metadata. Only `mainEntity` is being
+  // corrected here; dropping `name`/`inLanguage` would silently strip properties the
+  // page already emits — and would break the flagship's byte-lock, since its curated
+  // and cached FAQ sets are identical (17/17). Assigned BEFORE @id/url so the emitted
+  // key order stays @context,@type,mainEntity,name,inLanguage,@id,url exactly as today.
+  const cached: any = (base as any).faqSchema;
+  if (cached && typeof cached === 'object') {
+    for (const key of ['name', 'inLanguage']) {
+      if (cached[key] !== undefined && curated[key] === undefined) curated[key] = cached[key];
+    }
+  }
+
+  const canonical = typeof base.canonical === 'string' ? base.canonical.trim() : '';
+  if (canonical) {
+    curated['@id'] = `${canonical.replace(/\/$/, '')}#faq`;
+    curated.url = canonical;
+  }
+  base.faqSchema = curated;                      // curated wins
+  return base;
 }
 
 function applyPublicFaqSchemaUrl(seoData: RankMathSEOData | null, pageUrl: string): RankMathSEOData | null {
@@ -463,7 +522,8 @@ export async function fetchProductRankMathSEO(categorySlug: string): Promise<Ran
   const productPath = parts.join('/');
   const productUrl = `https://www.samanportable.com/product/${productPath}${productPath.includes('/') ? '/' : ''}`;
   const product = findProductBySlug(slug);
-  const seoData = headToSeo(product) || (product?.faqSchema ? {} : null);
+  // preferCuratedFaq: PRODUCT path (T25 ruling b — products only in this PR).
+  const seoData = headToSeo(product, true) || (product?.faqSchema ? {} : null);
   if (seoData && product?.faqSchema) seoData.faqSchema = product.faqSchema;
   return applyPublicFaqSchemaUrl(seoData, productUrl);
 }
@@ -668,11 +728,11 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
   const last = parts[parts.length - 1] || '';
   if (!SAFE_SLUG.test(last)) return null;
   const post = readPostFile(last);
-  if (post) return headToSeo(post);
+  if (post) return headToSeo(post);                  // posts unchanged (Track-B)
   const product = findProductBySlug(last);
-  if (product) return headToSeo(product);
+  if (product) return headToSeo(product, true);      // PRODUCT path — curated FAQ wins
   const category = getAllCategoriesRaw().find((c) => c.slug === last);
-  if (category) return headToSeo(category);
+  if (category) return headToSeo(category);          // categories unchanged (Track-B)
   return null;
 }
 
