@@ -512,6 +512,108 @@ export function buildPortaCabinVariantItems(
   return items;
 }
 
+// ─── T26 · variant groups for the 11 porta-cabin SUBPAGES ─────────────────────
+// Same nine-size variant-group shape as the flagship above, generalised across the
+// T25 subpages. The flagship builder is deliberately left untouched so its nine
+// existing feed items cannot move.
+//
+// Per slug: the product NAME and the single DESCRIPTOR come from that pack's §G
+// title format, transcribed verbatim —
+//   "{name} {W}×{L} ft ({area} sq ft) – {descriptor} | SAMAN Portable"
+// (U+00D7 × and U+2013 – exactly as the packs print them). low-cost-porta-cabin has
+// no §G block in the T24.2 pack; its title is the SAMAN ruling of 19 Jul 2026.
+export type SubpageVariantConfig = { slug: string; name: string; descriptor: string };
+
+export const SUBPAGE_VARIANT_CONFIGS: readonly SubpageVariantConfig[] = [
+  { slug: 'ms-porta-cabin', name: 'MS Porta Cabin', descriptor: 'IS 2062 Steel Site Office' },
+  { slug: 'steel-porta-cabin', name: 'Steel Porta Cabin', descriptor: 'MS/GI/Pre-Galv Site Office' },
+  { slug: 'luxury-porta-cabin', name: 'Luxury Porta Cabin', descriptor: 'Premium Executive Cabin' },
+  // §G title says "Buy Porta Cabin" (singular) though the slug is plural — kept verbatim.
+  { slug: 'buy-porta-cabins', name: 'Buy Porta Cabin', descriptor: 'Price & Delivery' },
+  { slug: 'mini-porta-cabin', name: 'Mini Porta Cabin', descriptor: 'Compact Guard/Gate Cabin' },
+  { slug: 'small-portacabin', name: 'Small Portacabin', descriptor: 'Compact Site Office' },
+  { slug: 'porta-cabin-office', name: 'Porta Cabin Office', descriptor: 'Fitted Site Office' },
+  { slug: 'porta-cabin-shop', name: 'Porta Cabin Shop', descriptor: 'Retail Counter Cabin' },
+  { slug: 'porta-cabin-with-toilet', name: 'Porta Cabin with Toilet', descriptor: 'Office + Sanitation' },
+  { slug: 'prefabricated-porta-cabin', name: 'Prefabricated Porta Cabin', descriptor: 'Factory-Built Ready Cabin' },
+  { slug: 'low-cost-porta-cabin', name: 'Low Cost Porta Cabin', descriptor: 'Value-Tier Site Cabin' },
+];
+
+/**
+ * Builds one subpage's nine variant items.
+ *
+ * `description` is that size's approved §C short description verbatim. The flagship's
+ * fixed spec block is deliberately NOT reused: it states "1.2 mm corrugated steel
+ * walls", which is untrue of the low-cost tier (0.8–1.0 mm per the T24.2 ruling), so
+ * copying it across would put a wrong specification in the feed.
+ */
+export function buildSubpageVariantItems(
+  config: SubpageVariantConfig,
+  data: PortaCabinVariantData | null | undefined,
+  baseUrl = MERCHANT_BASE_URL
+): MerchantProduct[] {
+  const variants = data?.variants || [];
+  const items: MerchantProduct[] = [];
+
+  for (const v of variants) {
+    const sizeSlug = String(v?.sizeSlug || '');
+    if (!sizeSlug || !/^\d+x\d+$/.test(sizeSlug)) continue;
+    if (!v.priceInclGst || v.priceInclGst <= 0) continue;
+
+    const images = (v.images || []).map((img) => absoluteUrl(img?.src, baseUrl)).filter(Boolean);
+    if (!images.length) continue;
+
+    const [length, width] = sizeSlug.split('x');
+    const link = `${baseUrl}/product/porta-cabins/${config.slug}#size-${sizeSlug}`;
+    const shipping = getShippingAttributes({ name: v.label, category_slug: 'porta-cabins' });
+
+    items.push({
+      id: `${config.slug}-${sizeSlug}`,
+      item_group_id: config.slug,
+      sku: v.sku || '',
+      title: `${config.name} ${length}${PC_TIMES}${width} ft (${v.areaSqft} sq ft) ${PC_NDASH} ${config.descriptor} | ${MERCHANT_BRAND_PORTABLE}`,
+      description: String(v.shortDescription || '').trim(),
+      link,
+      mobile_link: link,
+      image_link: images[0],           // hero-view is images[0] by the P7 gallery order
+      additional_image_link: images.slice(1, 11),
+      price: formatMerchantPrice(v.priceInclGst),
+      priceValue: v.priceInclGst,
+      availability: 'in stock',
+      condition: 'new',
+      brand: MERCHANT_BRAND_PORTABLE,
+      identifier_exists: 'false',
+      product_type: `Porta Cabins > ${config.name} > ${v.label}`,
+      google_product_category: '720',
+      ...shipping,
+      adult: 'no',
+      is_bundle: 'no',
+      custom_label_0: 'Porta Cabins',
+      custom_label_1: MERCHANT_BRAND_PORTABLE,
+      custom_label_2: shipping.shipping_label,
+    });
+  }
+
+  return items;
+}
+
+/**
+ * Every porta-cabin variant item: the flagship's nine (unchanged, from the original
+ * builder) followed by the eleven subpages' nine each. `dataBySlug` is supplied by the
+ * caller so this module stays filesystem-free.
+ */
+export function buildAllVariantItems(
+  flagshipData: PortaCabinVariantData | null | undefined,
+  dataBySlug: Record<string, PortaCabinVariantData | null | undefined>,
+  baseUrl = MERCHANT_BASE_URL
+): MerchantProduct[] {
+  const items = buildPortaCabinVariantItems(flagshipData, baseUrl);
+  for (const config of SUBPAGE_VARIANT_CONFIGS) {
+    items.push(...buildSubpageVariantItems(config, dataBySlug[config.slug], baseUrl));
+  }
+  return items;
+}
+
 export function buildMerchantProducts(products: ProductLike[], baseUrl = MERCHANT_BASE_URL) {
   const items: MerchantProduct[] = [];
   const skipped: SkippedMerchantProduct[] = [];

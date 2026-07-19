@@ -8,8 +8,11 @@ const REPORT_DATE = process.env.REPORT_DATE || new Date().toISOString().slice(0,
 const REPORT_DIR = path.join(ROOT, 'reports');
 const REPORT_MD = path.join(REPORT_DIR, `google-merchant-feed-validation-${REPORT_DATE}.md`);
 
-// 168 catalogue items + 9 porta-cabin variant items (PACKET-C) = 177.
-const EXPECTED_PRODUCT_COUNT = 177;
+// T26 — the product count is now COMPUTED, not hardcoded. It was pinned at 177
+// (168 catalogue items + the flagship's 9 variant items, PACKET-C); adding the eleven
+// T25 subpage variant groups moves it to 276, and pinning a literal would have to be
+// re-edited by hand every time a variant group is added. The relationship is what
+// matters: catalogue items + every variant item the builder emits.
 const EXCLUDED_IDS = new Set(['990018', '900010']);
 const FORBIDDEN_SHIPPING_FIELDS = [
   'shipping_weight',
@@ -65,18 +68,26 @@ function parseItems(xml) {
 function validate() {
   registerTsLoader();
 
-  const { getAllProductsForFeed, getPortaCabinVariantData } = require(path.join(ROOT, 'src', 'lib', 'staticContent.ts'));
-  const { generateGoogleMerchantXml, buildPortaCabinVariantItems, MERCHANT_BASE_URL } = require(path.join(ROOT, 'src', 'lib', 'merchantFeed.ts'));
+  const { getAllProductsForFeed, getPortaCabinVariantData, getSubpageVariantData } = require(path.join(ROOT, 'src', 'lib', 'staticContent.ts'));
+  const { generateGoogleMerchantXml, buildAllVariantItems, buildMerchantProducts, SUBPAGE_VARIANT_CONFIGS, MERCHANT_BASE_URL } = require(path.join(ROOT, 'src', 'lib', 'merchantFeed.ts'));
 
-  const variantItems = buildPortaCabinVariantItems(getPortaCabinVariantData());
+  // T26 — same item set the routes publish: flagship nine + eleven subpage groups.
+  const variantItems = buildAllVariantItems(
+    getPortaCabinVariantData(),
+    getSubpageVariantData(SUBPAGE_VARIANT_CONFIGS.map((c) => c.slug))
+  );
   const xml = generateGoogleMerchantXml(getAllProductsForFeed(), MERCHANT_BASE_URL, variantItems);
   const items = parseItems(xml);
   const errors = [];
   const warnings = [];
   const labelCounts = new Map();
 
-  if (items.length !== EXPECTED_PRODUCT_COUNT) {
-    errors.push(`Expected ${EXPECTED_PRODUCT_COUNT} products, got ${items.length}`);
+  // Computed expectation: every catalogue item the builder accepted, plus every
+  // variant item it emitted. Catches a silently dropped item without needing a literal.
+  const expectedProductCount = buildMerchantProducts(getAllProductsForFeed(), MERCHANT_BASE_URL).items.length
+    + variantItems.length;
+  if (items.length !== expectedProductCount) {
+    errors.push(`Expected ${expectedProductCount} products (catalogue + variant items), got ${items.length}`);
   }
 
   for (const item of items) {

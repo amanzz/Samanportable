@@ -1,13 +1,11 @@
 import { GetServerSideProps } from 'next';
-import { getAllProductsForFeed, getPortaCabinVariantData } from '@/lib/staticContent';
-import {
-  generateGoogleMerchantXml,
-  buildPortaCabinVariantItems,
-  MERCHANT_BASE_URL,
-} from '@/lib/merchantFeed';
+import { getAllProductsForFeed } from '@/lib/staticContent';
+import { generateGoogleMerchantXml, MERCHANT_BASE_URL } from '@/lib/merchantFeed';
+import { getAllVariantFeedItems } from '@/lib/feedSources';
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const variantItems = buildPortaCabinVariantItems(getPortaCabinVariantData());
+  // T26: shared source — keeps this byte-identical to the /api twin.
+  const variantItems = getAllVariantFeedItems();
   const xmlFeed = generateGoogleMerchantXml(getAllProductsForFeed(), MERCHANT_BASE_URL, variantItems);
 
   res.setHeader('Content-Type', 'application/xml; charset=utf-8');
