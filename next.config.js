@@ -165,6 +165,24 @@ const nextConfig = {
       { source: '/product/labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
       { source: '/product/wall-sheets', destination: 'https://www.samanportable.com/product/wall-sheet', statusCode: 301 },
 
+      // CI3 Part B: retire PEB-Constructions (category 321) into the keeper
+      // Pre-Engineered Buildings / Prefab Buildings URL space. Exact rules keep
+      // every moved or folded page one-hop to its approved survivor.
+      { source: '/product/peb-constructions', destination: 'https://www.samanportable.com/product/pre-engineered-buildings', statusCode: 301 },
+      { source: '/product/peb-constructions/peb-steel-structure', destination: 'https://www.samanportable.com/product/pre-engineered-buildings/peb-steel-structure', statusCode: 301 },
+      { source: '/product/peb-constructions/pre-engineered-structures', destination: 'https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-structures', statusCode: 301 },
+      { source: '/product/peb-constructions/prefab-building-construction', destination: 'https://www.samanportable.com/product/prefab-buildings/prefab-building-construction', statusCode: 301 },
+      { source: '/product/peb-constructions/prefab-modular-construction', destination: 'https://www.samanportable.com/product/prefab-buildings/prefab-modular-construction', statusCode: 301 },
+      { source: '/product/peb-constructions/pre-engineered-building-suppliers', destination: 'https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-building-suppliers', statusCode: 301 },
+      { source: '/product/peb-constructions/peb-building-manufacturers', destination: 'https://www.samanportable.com/product/pre-engineered-buildings/peb-building-manufacturers', statusCode: 301 },
+      { source: '/product/peb-constructions/engineered-buildings', destination: 'https://www.samanportable.com/product/pre-engineered-buildings/engineered-metal-buildings', statusCode: 301 },
+      { source: '/product/peb-constructions/engineered-steel-structures', destination: 'https://www.samanportable.com/product/pre-engineered-buildings/peb-steel-structure', statusCode: 301 },
+      { source: '/product/peb-constructions/prefabricated-construction', destination: 'https://www.samanportable.com/product/prefab-buildings/prefab-building-construction', statusCode: 301 },
+      { source: '/product/peb-constructions/construction-prefabricated-buildings', destination: 'https://www.samanportable.com/product/prefab-buildings/prefab-building-construction', statusCode: 301 },
+      { source: '/product/peb-constructions/pre-engineering-structures', destination: 'https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-structures', statusCode: 301 },
+      { source: '/product/pre-engineered-buildings/engineered-steel-buildings', destination: 'https://www.samanportable.com/product/pre-engineered-buildings/peb-steel-structure', statusCode: 301 },
+      { source: '/product/pre-engineered-buildings/pre-engineered-building-structures', destination: 'https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-structures', statusCode: 301 },
+
       // Labour Colony dead indexed URLs (owner-approved 2026-07-04).
       // Absolute destination keeps both www and apex requests single-hop to the money page.
       { source: '/product/prefab-labour-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
@@ -215,7 +233,7 @@ const nextConfig = {
       { source: '/product-category/container-offices', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
       { source: '/product-category/industrial-sheds', destination: 'https://www.samanportable.com/product/industrial-sheds', permanent: true },
       { source: '/product-category/labor-colony', destination: 'https://www.samanportable.com/product/labor-colony', permanent: true },
-      { source: '/product-category/peb-constructions', destination: 'https://www.samanportable.com/product/peb-constructions', permanent: true },
+      { source: '/product-category/peb-constructions', destination: 'https://www.samanportable.com/product/pre-engineered-buildings', statusCode: 301 },
       { source: '/product-category/porta-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', permanent: true },
       { source: '/product-category/portable-cabin', destination: 'https://www.samanportable.com/product/portable-cabin', permanent: true },
       { source: '/product-category/portable-office', destination: 'https://www.samanportable.com/product/portable-office', permanent: true },
@@ -1372,8 +1390,8 @@ const nextConfig = {
       },
       {
         source: '/project/peb-manufacturer',
-        destination: 'https://www.samanportable.com/product/peb-constructions',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/pre-engineered-buildings',
+        statusCode: 301,
       },
       {
         source: '/project/porta-cabin-interior',

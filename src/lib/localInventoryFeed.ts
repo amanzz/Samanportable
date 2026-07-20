@@ -6,7 +6,6 @@ import epsPanelCategory from '@/data/wp-export/categories/eps-panel.json';
 import glassWoolPanelCategory from '@/data/wp-export/categories/glass-wool-panel.json';
 import industrialShedsCategory from '@/data/wp-export/categories/industrial-sheds.json';
 import laborColonyCategory from '@/data/wp-export/categories/labor-colony.json';
-import pebConstructionsCategory from '@/data/wp-export/categories/peb-constructions.json';
 import pirPanelCategory from '@/data/wp-export/categories/pir-panel.json';
 import portaCabinsCategory from '@/data/wp-export/categories/porta-cabins.json';
 import portableCabinCategory from '@/data/wp-export/categories/portable-cabin.json';
@@ -67,7 +66,6 @@ const ALL_LOCAL_INVENTORY_CATEGORIES = [
   glassWoolPanelCategory,
   industrialShedsCategory,
   laborColonyCategory,
-  pebConstructionsCategory,
   pirPanelCategory,
   portaCabinsCategory,
   portableCabinCategory,
@@ -84,14 +82,6 @@ const ALL_LOCAL_INVENTORY_CATEGORIES = [
 
 export const DISPLAY_TO_ORDER_CATEGORY_ROOTS = [
   {
-    id: pebConstructionsCategory.id,
-    name: pebConstructionsCategory.name,
-    slug: pebConstructionsCategory.slug,
-    parent: pebConstructionsCategory.parent,
-    parentPath: pebConstructionsCategory.slug,
-    aliases: ['peb-constructions'],
-  },
-  {
     id: industrialShedsCategory.id,
     name: industrialShedsCategory.name,
     slug: industrialShedsCategory.slug,
@@ -105,7 +95,7 @@ export const DISPLAY_TO_ORDER_CATEGORY_ROOTS = [
     slug: preEngineeredBuildingsCategory.slug,
     parent: preEngineeredBuildingsCategory.parent,
     parentPath: preEngineeredBuildingsCategory.slug,
-    aliases: ['pre-engineered-buildings', 'pre-engineered-building'],
+    aliases: ['pre-engineered-buildings', 'pre-engineered-building', 'peb-constructions'],
   },
   {
     id: laborColonyCategory.id,

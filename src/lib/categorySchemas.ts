@@ -845,8 +845,8 @@ export const categorySchemas: Record<string, any> = {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://www.samanportable.com/product-category/peb-constructions/#collectionpage",
-        "url": "https://www.samanportable.com/product-category/peb-constructions/",
+        "@id": "https://www.samanportable.com/product/pre-engineered-buildings#collectionpage",
+        "url": "https://www.samanportable.com/product/pre-engineered-buildings",
         "name": "PEB Construction Company in India",
         "description": "SAMAN is a PEB construction company in India that designs, supplies and erects warehouses, factory sheds and steel buildings. Compare build types, spans and price bands.",
         "isPartOf": {
@@ -859,15 +859,15 @@ export const categorySchemas: Record<string, any> = {
           "@id": "https://www.samanportable.com/#organization"
         },
         "breadcrumb": {
-          "@id": "https://www.samanportable.com/product-category/peb-constructions/#breadcrumb"
+          "@id": "https://www.samanportable.com/product/pre-engineered-buildings#breadcrumb"
         },
         "mainEntity": {
-          "@id": "https://www.samanportable.com/product-category/peb-constructions/#itemlist"
+          "@id": "https://www.samanportable.com/product/pre-engineered-buildings#itemlist"
         }
       },
       {
         "@type": "ItemList",
-        "@id": "https://www.samanportable.com/product-category/peb-constructions/#itemlist",
+        "@id": "https://www.samanportable.com/product/pre-engineered-buildings#itemlist",
         "name": "SAMAN PEB Construction Range",
         "numberOfItems": 12,
         "itemListElement": [
@@ -875,79 +875,79 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 1,
             "name": "Engineered Steel Structures",
-            "url": "https://www.samanportable.com/product/peb-constructions/engineered-steel-structures"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings/peb-steel-structure"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Pre-Engineered Building Suppliers",
-            "url": "https://www.samanportable.com/product/peb-constructions/pre-engineered-building-suppliers"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-building-suppliers"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "PEB Building Manufacturers",
-            "url": "https://www.samanportable.com/product/peb-constructions/peb-building-manufacturers"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings/peb-building-manufacturers"
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": "Engineered Buildings",
-            "url": "https://www.samanportable.com/product/peb-constructions/engineered-buildings"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings/engineered-metal-buildings"
           },
           {
             "@type": "ListItem",
             "position": 5,
             "name": "Prefab Building Construction",
-            "url": "https://www.samanportable.com/product/peb-constructions/prefab-building-construction"
+            "url": "https://www.samanportable.com/product/prefab-buildings/prefab-building-construction"
           },
           {
             "@type": "ListItem",
             "position": 6,
             "name": "PEB Construction",
-            "url": "https://www.samanportable.com/product/peb-constructions/peb-constructions"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings"
           },
           {
             "@type": "ListItem",
             "position": 7,
             "name": "Pre-engineering Structures",
-            "url": "https://www.samanportable.com/product/peb-constructions/pre-engineering-structures"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-structures"
           },
           {
             "@type": "ListItem",
             "position": 8,
             "name": "Construction Prefabricated Buildings",
-            "url": "https://www.samanportable.com/product/peb-constructions/construction-prefabricated-buildings"
+            "url": "https://www.samanportable.com/product/prefab-buildings/prefab-building-construction"
           },
           {
             "@type": "ListItem",
             "position": 9,
             "name": "Pre-engineered Structures",
-            "url": "https://www.samanportable.com/product/peb-constructions/pre-engineered-structures"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-structures"
           },
           {
             "@type": "ListItem",
             "position": 10,
             "name": "Prefab Modular Construction",
-            "url": "https://www.samanportable.com/product/peb-constructions/prefab-modular-construction"
+            "url": "https://www.samanportable.com/product/prefab-buildings/prefab-modular-construction"
           },
           {
             "@type": "ListItem",
             "position": 11,
             "name": "PEB Steel Structure",
-            "url": "https://www.samanportable.com/product/peb-constructions/peb-steel-structure"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings/peb-steel-structure"
           },
           {
             "@type": "ListItem",
             "position": 12,
             "name": "Prefabricated Construction",
-            "url": "https://www.samanportable.com/product/peb-constructions/prefabricated-construction"
+            "url": "https://www.samanportable.com/product/prefab-buildings/prefab-building-construction"
           }
         ]
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.samanportable.com/product-category/peb-constructions/#breadcrumb",
+        "@id": "https://www.samanportable.com/product/pre-engineered-buildings#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -965,13 +965,13 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 3,
             "name": "PEB Constructions",
-            "item": "https://www.samanportable.com/product-category/peb-constructions/"
+            "item": "https://www.samanportable.com/product/pre-engineered-buildings"
           }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.samanportable.com/product-category/peb-constructions/#faqpage",
+        "@id": "https://www.samanportable.com/product/pre-engineered-buildings#faqpage",
         "mainEntity": [
           {
             "@type": "Question",
@@ -1723,7 +1723,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 3,
             "name": "Pre-engineered Building Structures",
-            "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-building-structures"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-structures"
           },
           {
             "@type": "ListItem",
@@ -1741,7 +1741,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 6,
             "name": "Engineered Steel Buildings",
-            "url": "https://www.samanportable.com/product/pre-engineered-buildings/engineered-steel-buildings"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings/peb-steel-structure"
           },
           {
             "@type": "ListItem",

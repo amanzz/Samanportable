@@ -20,7 +20,7 @@ export const SEO_ANCHOR_MAP: Record<string, SeoAnchorEntry> = {
   'security-cabins': { anchorText: 'Security Cabin', hubUrl: '/product/security-cabins' },
   'portable-toilet': { anchorText: 'Portable Toilet', hubUrl: '/product/portable-toilet' },
   'industrial-sheds': { anchorText: 'Industrial Shed', hubUrl: '/product/industrial-sheds' },
-  'peb-constructions': { anchorText: 'PEB Construction', hubUrl: '/product/peb-constructions' },
+  'peb-constructions': { anchorText: 'PEB Construction', hubUrl: '/product/pre-engineered-buildings' },
   'pre-engineered-buildings': { anchorText: 'Pre-Engineered Building', hubUrl: '/product/pre-engineered-buildings' },
   'prefab-buildings': { anchorText: 'Prefab Building', hubUrl: '/product/prefab-buildings' },
   'prefabricated-houses': { anchorText: 'Prefabricated House', hubUrl: '/product/prefabricated-houses' },

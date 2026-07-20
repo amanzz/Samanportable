@@ -27,7 +27,7 @@ export const CATEGORY_HUB_MAP: Readonly<Record<string, string>> = Object.freeze(
   'container-offices': 'container-offices', // next.config.js:228
   'industrial-sheds': 'industrial-sheds', // next.config.js:229
   'labor-colony': 'labor-colony', // next.config.js:230
-  'peb-constructions': 'peb-constructions', // next.config.js:231
+  'peb-constructions': 'pre-engineered-buildings', // CI3 Part B: category 321 retired
   'porta-cabins': 'porta-cabins', // next.config.js:232
   'portable-cabin': 'portable-cabin', // next.config.js:233
   'portable-office': 'portable-office', // next.config.js:234

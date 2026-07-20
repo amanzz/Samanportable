@@ -63,7 +63,7 @@ const MEGA_COLUMNS = [
     title: 'Structures & Buildings',
     items: [
       { name: 'Industrial Shed', href: '/product/industrial-sheds' },
-      { name: 'PEB Construction', href: '/product/peb-constructions' },
+      { name: 'PEB Construction', href: '/product/pre-engineered-buildings' },
       { name: 'Pre-Engineered Building', href: '/product/pre-engineered-buildings' },
       { name: 'Prefab Building', href: '/product/prefab-buildings' },
       { name: 'Prefabricated House', href: '/product/prefabricated-houses' },

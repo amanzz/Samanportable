@@ -90,7 +90,6 @@ export type SkippedMerchantProduct = {
 
 const PREFAB_BRAND_CATEGORIES = new Set([
   'industrial-sheds',
-  'peb-constructions',
   'pre-engineered-buildings',
   'prefab-buildings',
   'prefabricated-houses',
