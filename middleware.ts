@@ -253,7 +253,7 @@ export function middleware(request: NextRequest) {
  */
 export const config = {
   matcher: [
-    // Match all paths except static files, API routes, and Fast Refresh
-    '/((?!_next/static|_next/image|_next/webpack|favicon.ico|robots.txt|sitemap.xml|manifest.json|sw.js|.well-known|api).*)',
+    // Match pages only; never run middleware on Next internals or static assets.
+    '/((?!_next/|static/|api/|favicon.ico$|robots.txt$|sitemap.xml$|manifest.json$|sw.js$|.well-known/|.*\\.(?:css|js|mjs|map|jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|otf|eot)$).*)',
   ],
 };
