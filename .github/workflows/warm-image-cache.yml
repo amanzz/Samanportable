@@ -1,0 +1,70 @@
+# IMG-WARM-1 — automatic post-deploy image cache warm (SOP v1.2 step 13).
+#
+# Every deploy wipes DigitalOcean's optimized-image cache, so the first real
+# visitor pays the full /_next/image cost. This workflow waits for the new
+# build to actually be live on the public domain, then pre-fetches every image
+# on every sitemap page so Cloudflare + the origin are already warm.
+#
+# WHY GITHUB ACTIONS: this repo has no committed DigitalOcean app spec — the
+# App Platform app is configured in the DO dashboard, so there is no in-repo
+# POST_DEPLOY job component to add. If the spec is ever committed, this can be
+# replaced by a DO job component with `kind: POST_DEPLOY` running the same
+# script (see scripts/warm-image-cache.mjs header).
+#
+# Read-only: the script issues GET requests against the public site only.
+name: Warm image cache (post-deploy)
+
+on:
+  push:
+    branches: [static-migration]
+  workflow_dispatch:
+    inputs:
+      skip_wait:
+        description: 'Warm immediately without waiting for a new build ID'
+        type: boolean
+        default: false
+
+# A newer deploy makes an in-flight warm obsolete — let it be cancelled.
+concurrency:
+  group: warm-image-cache
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  warm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      SITE_URL: https://www.samanportable.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # DigitalOcean builds for several minutes after the push. Warming before
+      # the new build is live would just warm the OLD images, so poll the
+      # public domain until Next.js reports a different buildId.
+      - name: Wait for the new build to go live
+        if: ${{ github.event_name == 'push' || !inputs.skip_wait }}
+        run: |
+          before=$(curl -sf --max-time 30 "$SITE_URL" \
+            | grep -oE '"buildId":"[^"]+"' | head -1 | cut -d'"' -f4 || echo "unknown")
+          echo "build id before deploy: $before"
+          for i in $(seq 1 60); do   # 60 × 30s = 30 min ceiling
+            sleep 30
+            now=$(curl -sf --max-time 30 "$SITE_URL" \
+              | grep -oE '"buildId":"[^"]+"' | head -1 | cut -d'"' -f4 || echo "")
+            if [ -n "$now" ] && [ "$now" != "$before" ]; then
+              echo "new build live: $now (after $((i * 30))s)"
+              exit 0
+            fi
+            echo "  [$i/60] still $now — waiting"
+          done
+          # Don't fail the deploy over this — warm the current build anyway.
+          echo "::warning::build id never changed; warming whatever is live"
+
+      - name: Warm image cache
+        run: npm run warm
