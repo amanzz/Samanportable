@@ -4,6 +4,8 @@
   "defaultVariant": "10x10",
   "hsn": "9406",
   "gstPercent": 18,
+  "deliveryLabel": "7 working days",
+  "emitAggregateOffer": true,
   "showSizesTable": true,
   "variants": [
     {
@@ -11,9 +13,8 @@
       "label": "10x10 ft",
       "dims": "10x10x8.6 ft",
       "areaSqft": 100,
-      "priceExGst": null,
-      "priceInclGst": null,
-      "capacity": "1 operator",
+      "priceExGst": 225000,
+      "priceInclGst": 265500,
       "useCase": "Single-counter retail outlet",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -55,9 +56,8 @@
       "label": "20x8 ft",
       "dims": "20x8x8.6 ft",
       "areaSqft": 160,
-      "priceExGst": null,
-      "priceInclGst": null,
-      "capacity": "1 operator",
+      "priceExGst": 307500,
+      "priceInclGst": 362850,
       "useCase": "Slim retail outlet / service counter",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -99,9 +99,8 @@
       "label": "20x10 ft",
       "dims": "20x10x8.6 ft",
       "areaSqft": 200,
-      "priceExGst": null,
-      "priceInclGst": null,
-      "capacity": "1–2 operators",
+      "priceExGst": 337500,
+      "priceInclGst": 398250,
       "useCase": "Everyday shop — counter + display",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -143,9 +142,8 @@
       "label": "20x12 ft",
       "dims": "20x12x8.6 ft",
       "areaSqft": 240,
-      "priceExGst": null,
-      "priceInclGst": null,
-      "capacity": "1–2 operators",
+      "priceExGst": 375500,
+      "priceInclGst": 443090,
       "useCase": "Shop — counter + extra stock space",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -183,57 +181,12 @@
       "shortDescription": "A little more depth for stock and customer space behind the counter, kept as a single relocatable shopfront."
     },
     {
-      "sizeSlug": "20x20",
-      "label": "20x20 ft",
-      "dims": "20x20x8.6 ft",
-      "areaSqft": 400,
-      "priceExGst": null,
-      "priceInclGst": null,
-      "capacity": "2–3 operators",
-      "useCase": "Wide shopfront or shop-plus-store",
-      "sku": "SP-PSC-15-2024",
-      "images": [
-        {
-          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-hero-view.webp",
-          "alt": "Portable shop cabin 20×20 ft — hero view, relocatable retail unit with shopfront by SAMAN Portable",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-front-angle.webp",
-          "alt": "Portable shop cabin 20×20 ft — front angle, relocatable retail unit with shopfront by SAMAN Portable",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-side-elevation.webp",
-          "alt": "Portable shop cabin 20×20 ft — side elevation, relocatable retail unit with shopfront by SAMAN Portable",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-workspace-interior.webp",
-          "alt": "Inside a 20×20 ft portable shop cabin — workspace interior, factory-finished retail unit",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-entrance-interior.webp",
-          "alt": "Inside a 20×20 ft portable shop cabin — entrance interior, factory-finished retail unit",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "A near-square retail floor for a wider shopfront or a shop-plus-store split, engineered to stay liftable and reusable across sites."
-    },
-    {
       "sizeSlug": "30x10",
       "label": "30x10 ft",
       "dims": "30x10x8.6 ft",
       "areaSqft": 300,
-      "priceExGst": null,
-      "priceInclGst": null,
-      "capacity": "2–3 operators",
+      "priceExGst": 447500,
+      "priceInclGst": 528050,
       "useCase": "Large outlet — counter + storeroom",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -275,9 +228,8 @@
       "label": "40x8 ft",
       "dims": "40x8x8.6 ft",
       "areaSqft": 320,
-      "priceExGst": null,
-      "priceInclGst": null,
-      "capacity": "2–3 operators",
+      "priceExGst": 463500,
+      "priceInclGst": 546930,
       "useCase": "Extended shopfront / arcade counter",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -315,13 +267,55 @@
       "shortDescription": "A long, slim retail unit — an extended shopfront or arcade-style counter that still moves on a 40 ft trailer."
     },
     {
+      "sizeSlug": "20x20",
+      "label": "20x20 ft",
+      "dims": "20x20x8.6 ft",
+      "areaSqft": 400,
+      "priceExGst": 557500,
+      "priceInclGst": 657850,
+      "useCase": "Wide shopfront or shop-plus-store",
+      "sku": "SP-PSC-15-2024",
+      "images": [
+        {
+          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-hero-view.webp",
+          "alt": "Portable shop cabin 20×20 ft — hero view, relocatable retail unit with shopfront by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-front-angle.webp",
+          "alt": "Portable shop cabin 20×20 ft — front angle, relocatable retail unit with shopfront by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-side-elevation.webp",
+          "alt": "Portable shop cabin 20×20 ft — side elevation, relocatable retail unit with shopfront by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-workspace-interior.webp",
+          "alt": "Inside a 20×20 ft portable shop cabin — workspace interior, factory-finished retail unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-entrance-interior.webp",
+          "alt": "Inside a 20×20 ft portable shop cabin — entrance interior, factory-finished retail unit",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A near-square retail floor for a wider shopfront or a shop-plus-store split, engineered to stay liftable and reusable across sites."
+    },
+    {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
       "dims": "40x10x8.6 ft",
       "areaSqft": 400,
-      "priceExGst": null,
-      "priceInclGst": null,
-      "capacity": "3–4 operators",
+      "priceExGst": 557500,
+      "priceInclGst": 657850,
       "useCase": "Full-length shop — counter, display, stock",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -363,9 +357,8 @@
       "label": "40x12 ft",
       "dims": "40x12x8.6 ft",
       "areaSqft": 480,
-      "priceExGst": null,
-      "priceInclGst": null,
-      "capacity": "3–4 operators",
+      "priceExGst": 639500,
+      "priceInclGst": 754610,
       "useCase": "Largest shop — shopfront, display, back store",
       "sku": "SP-PSC-15-2024",
       "images": [

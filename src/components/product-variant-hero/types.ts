@@ -19,7 +19,10 @@ export interface ProductVariant {
       a muted line under the ex-GST price, and used for Merchant offers.price.
       `null` when priceExGst is null (gated). */
   priceInclGst: number | null;
-  capacity: string;
+  /** Indicative operator/service guidance. OPTIONAL — the porta-cabins buy-box does
+      not show a capacity field, so pages matching that design (e.g. portable-shop-cabin)
+      omit it. Rendered only in the Applications Explorer data row, when present. */
+  capacity?: string;
   useCase: string;
   sku: string;
   images: VariantImage[];
@@ -72,6 +75,13 @@ export interface VariantProductData {
       Explorer section renders NOTHING — it never falls back to another product's
       copy. */
   applicationsDataset?: string;
+  /** Override for the buy-box "Delivery" feature cell. Default (absent) keeps the
+      porta-cabins value "7–21 Working Days" → flagship byte-identical. */
+  deliveryLabel?: string;
+  /** Emit an ex-GST AggregateOffer (lowPrice/highPrice/offerCount) on the ProductGroup
+      instead of per-variant Offers. Absent on porta-cabins → per-variant Offers kept,
+      byte-identical. Set true only when a page's price ladder is confirmed. */
+  emitAggregateOffer?: boolean;
   /** C-02 portable-shop-cabin opt-in: render the SSR "Sizes at a glance" reference
       table below the hero (size · floor area · best-for · travels-on · price). Absent
       on every porta-cabin page → not rendered → those pages stay byte-identical. */

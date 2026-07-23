@@ -438,7 +438,7 @@ export function PortaCabinVariantHero({
   const FEATURE_CELLS = [
     { label: 'Size', value: heroActive.dims },
     { label: 'Material', value: 'MS Frame · Insulated Panels' },
-    { label: 'Delivery', value: '7–21 Working Days' },
+    { label: 'Delivery', value: data.deliveryLabel || '7–21 Working Days' },
     { label: 'Coverage', value: 'Bangalore · Delhi NCR' },
     { label: 'Brand', value: 'SAMAN Portable' },
     { label: 'Application', value: heroActive.useCase },
@@ -701,6 +701,11 @@ export function PortaCabinVariantHero({
               </tbody>
             </table>
           </div>
+          {/* Ex-GST caption (copy pack §A-PRICE) — shown once the ladder is confirmed
+              (all sizes priced). Hidden while any size is gated. */}
+          {data.variants.every((v) => v.priceExGst != null) && (
+            <p className="mt-2 text-xs text-[var(--ds-color-steel)]">Prices are ex-GST for the base specification; 18% GST extra, shopfront fit-out and freight quoted separately.</p>
+          )}
         </div>
       )}
 
