@@ -203,13 +203,19 @@ export default function ProductStructuredData({ product, category, reviews, brea
       // dimension separator normalised to × (10x10 ft -> "10×10 ft").
       size: v.label.replace(/(\d)\s*x\s*(\d)/i, '$1×$2'),
       ...(v.images[0] ? { image: `${baseUrl}${v.images[0].src}` } : {}),
-      offers: {
-        '@type': 'Offer',
-        price: v.priceInclGst,
-        priceCurrency: 'INR',
-        availability: 'https://schema.org/InStock',
-        url: productUrl,
-      },
+      // Price GATED (priceInclGst null): OMIT offers entirely so no per-variant
+      // price — and therefore no AggregateOffer/low-high price — is emitted while
+      // the ladder is unconfirmed. A number emits the offer exactly as before
+      // (flagship byte-identity: the spread reproduces the original key/value).
+      ...(v.priceInclGst != null ? {
+        offers: {
+          '@type': 'Offer',
+          price: v.priceInclGst,
+          priceCurrency: 'INR',
+          availability: 'https://schema.org/InStock',
+          url: productUrl,
+        },
+      } : {}),
     })),
   } : null;
 

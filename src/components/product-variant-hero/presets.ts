@@ -79,6 +79,19 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
       duration: 'PT1M25S',
     },
   },
+  // C-02 PORTABLE SHOP CABIN subpage (/product/portable-cabin/portable-shop-cabin).
+  // Its own data/products/portable-shop-cabin.json supplies the variants; this preset
+  // supplies only the DERIVED surfaces: the cluster category row, the on-disk explorer
+  // image path, and the page-level SKU (the locked wp-export SKU, not per-variant).
+  // Deliberately absent: `applicationsDataset` (no Section H explorer copy supplied →
+  // Explorer renders nothing rather than borrowing another product's copy), `specPdfHref`
+  // and `video` (none exist for this page). `productName` resolves from the page title.
+  'portable-shop-cabin': {
+    categoryLabel: 'Portable Cabin',
+    categoryHref: '/product/portable-cabin',
+    productSku: 'SP-PSC-15-2024',
+    explorerImageTemplate: '/images/products/portable-shop-cabin/{sizeSlug}/portable-shop-cabin-{sizeSlug}-elevated-view.webp',
+  },
   ...subpagePresets(),
 };
 

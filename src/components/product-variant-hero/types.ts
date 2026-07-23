@@ -10,10 +10,15 @@ export interface ProductVariant {
   label: string;
   dims: string;
   areaSqft: number;
-  priceExGst: number;
+  /** Ex-GST price. `null` = price GATED (owner has not confirmed the ladder): the
+      buy box shows "Price on request — send enquiry", the ₹/sq ft line is hidden,
+      and NO per-variant offer / AggregateOffer is emitted in schema. A number
+      renders exactly as before (flagship byte-identity). */
+  priceExGst: number | null;
   /** Incl-GST (18%) price — owner-supplied figure; = priceExGst × 1.18. Shown as
-      a muted line under the ex-GST price, and used for Merchant offers.price. */
-  priceInclGst: number;
+      a muted line under the ex-GST price, and used for Merchant offers.price.
+      `null` when priceExGst is null (gated). */
+  priceInclGst: number | null;
   capacity: string;
   useCase: string;
   sku: string;
@@ -67,6 +72,10 @@ export interface VariantProductData {
       Explorer section renders NOTHING — it never falls back to another product's
       copy. */
   applicationsDataset?: string;
+  /** C-02 portable-shop-cabin opt-in: render the SSR "Sizes at a glance" reference
+      table below the hero (size · floor area · best-for · travels-on · price). Absent
+      on every porta-cabin page → not rendered → those pages stay byte-identical. */
+  showSizesTable?: boolean;
   /** T25 VIDEO OPT-IN. Absent/false (the default) = no video facade thumb and no
       VideoObject JSON-LD. Set true ONLY on a product that genuinely has its own
       overview video AND video metadata (own `video` field or a preset). */

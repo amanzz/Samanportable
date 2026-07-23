@@ -154,14 +154,30 @@ const APPLICATIONS_SECTION_ID = 'porta-size-applications';
 const pricePerSqft = (
   overrides: Record<string, string> | undefined,
   sizeSlug: string,
-  priceExGst: number,
+  priceExGst: number | null,
   areaSqft: number
 ): string => {
   const override = overrides?.[sizeSlug];
   if (override) return override;
+  // Price GATED (null) → no derived ₹/sq ft. Never reached by the flagship (all
+  // nine prices are numbers), so its output is unchanged.
+  if (priceExGst == null) return '';
   if (!areaSqft) return '';
   return Math.round(priceExGst / areaSqft).toLocaleString('en-IN');
 };
+
+// "Sizes at a glance" — Travels on column (C-02 portable shop cabin only). Encodes
+// the copy-pack rule VERBATIM: units up to 20 ft on a 20 ft open trailer; 30–40 ft
+// on a 40 ft open trailer; 20×20 and 40×12 are over-dimensional (40 ft ODC).
+const travelsOnLabel = (sizeSlug: string): string => {
+  const [a, b] = sizeSlug.split('x').map(Number);
+  const longest = Math.max(a || 0, b || 0);
+  if ((a === 20 && b === 20) || (longest === 40 && Math.min(a, b) === 12)) return '40 ft ODC trailer';
+  if (longest >= 30) return '40 ft trailer';
+  return '20 ft trailer';
+};
+// "10x10 ft" → "10×10 ft" for the reference table's Size column.
+const sizeDisplay = (label: string): string => label.replace(/(\d+)\s*x\s*(\d+)/i, '$1×$2');
 
 
 export function PortaCabinVariantHero({
@@ -478,10 +494,19 @@ export function PortaCabinVariantHero({
               separator here — byte-identical to the T24.1 markup, which had the
               product noun as a literal in the trailing static string. */}
           <p className="text-sm text-muted-foreground">{heroActive.label}{` ${productName}`}</p>
-          <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
-            {formatIndianPrice(heroActive.priceExGst)} + GST
-          </span>
-          <p className="text-xs text-muted-foreground">{formatIndianPrice(heroActive.priceInclGst)} incl. 18% GST</p>
+          {/* Price GATED (priceExGst null): show the enquiry line, no numbers, no
+              incl-GST line. When priceExGst is a number the ORIGINAL two elements
+              render unchanged (the fragment is transparent → flagship byte-identity). */}
+          {heroActive.priceExGst == null ? (
+            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">Price on request — send enquiry</span>
+          ) : (
+            <>
+              <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
+                {formatIndianPrice(heroActive.priceExGst)} + GST
+              </span>
+              <p className="text-xs text-muted-foreground">{formatIndianPrice(heroActive.priceInclGst!)} incl. 18% GST</p>
+            </>
+          )}
         </div>
 
         {/* Per-size shortDescription (Section E v2.1). Per-breakpoint FIXED heights
@@ -643,13 +668,49 @@ export function PortaCabinVariantHero({
         </aside>
       </div>
 
+      {/* "Sizes at a glance" — SSR reference table (C-02 portable shop cabin only,
+          gated on data.showSizesTable → absent on every porta-cabin page, which keeps
+          them byte-identical). Each row carries id="size-{WxL}" so #size-10x10 etc.
+          deep-links land here. Best-for column reuses the variant useCase verbatim;
+          the Price column shows "On request" per row while the ex-GST ladder is
+          gated (Decision-S1) — the ex-GST caption is added only once numbers land. */}
+      {data.showSizesTable && (
+        <div className="mt-6">
+          <h2 className="mb-3 text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">Sizes at a glance</h2>
+          <div className="overflow-x-auto rounded-xl border border-[var(--ds-color-border)]">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-[var(--ds-color-mist)]">
+                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Size (ft)</th>
+                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Floor area</th>
+                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Best for</th>
+                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Travels on</th>
+                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.variants.map((v) => (
+                  <tr key={v.sizeSlug} id={`size-${v.sizeSlug}`} className="scroll-mt-24 border-t border-[var(--ds-color-border)]">
+                    <td className="px-3 py-2 font-semibold text-[var(--ds-color-forest)] whitespace-nowrap">{sizeDisplay(v.label)}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-[var(--ds-color-steel)]">{v.areaSqft} sq ft</td>
+                    <td className="px-3 py-2 text-[var(--ds-color-ink)]">{v.useCase}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-[var(--ds-color-steel)]">{travelsOnLabel(v.sizeSlug)}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-[var(--ds-color-steel)]">{v.priceExGst == null ? 'On request' : `${formatIndianPrice(v.priceExGst)} + GST`}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
       {/* Mobile sticky buy bar — sits above the site-wide MobileBottomNav (h-16),
           hidden >=1024. The mobile conversion path stays: price + solid CTA. */}
       <div className="lg:hidden fixed bottom-16 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-[0_-2px_8px_rgba(20,33,27,0.08)]">
         <div className="flex items-center justify-between gap-3 px-4 py-3">
           <div>
             <p className="text-[11px] text-muted-foreground leading-none">{heroActive.label} ft</p>
-            <p className="text-base font-bold text-primary leading-tight">{formatIndianPrice(heroActive.priceExGst)} + GST</p>
+            <p className="text-base font-bold text-primary leading-tight">{heroActive.priceExGst == null ? 'Price on request' : <>{formatIndianPrice(heroActive.priceExGst)} + GST</>}</p>
           </div>
           <Button
             type="button"
@@ -865,7 +926,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   <span aria-hidden="true">·</span>
                   <span>{v.capacity}</span>
                   <span aria-hidden="true">·</span>
-                  <span className="font-bold text-[var(--ds-color-forest)]">{formatIndianPrice(v.priceExGst)} + GST</span>
+                  <span className="font-bold text-[var(--ds-color-forest)]">{v.priceExGst == null ? 'Price on request' : <>{formatIndianPrice(v.priceExGst)} + GST</>}</span>
                   <span aria-hidden="true">·</span>
                   <span>₹{rate}/sq ft</span>
                 </div>
