@@ -30,6 +30,7 @@ import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
+import containerOfficesApplications from '@/data/products/container-offices-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 
 interface ApplicationPanel {
@@ -84,6 +85,9 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // C-02 portable-cabin HUB — same dataset shape → identical SizeApplicationsExplorer.
   // Resolves via productSlug; additive, so porta-cabins/shop-cabin are unaffected.
   'portable-cabin': portableCabinApplications as ApplicationsData,
+  // C-04 container-offices HUB — same dataset shape → identical SizeApplicationsExplorer.
+  // Resolves via productSlug; additive, so the porta-cabin cluster is unaffected.
+  'container-offices': containerOfficesApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
       ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
@@ -212,6 +216,9 @@ export function PortaCabinVariantHero({
   const categoryLinkHref = data.categoryHref || preset.categoryHref;
   const productSku = data.productSku || preset.productSku;
   const specPdfHref = data.specPdfHref || preset.specPdfHref;
+  // Trust-strip warranty segment: data → preset → the deployed default. Absent on every
+  // product except container-offices → byte-identical trust strip everywhere else.
+  const trustWarranty = data.trustWarranty || preset.trustWarranty || '5-yr structural warranty';
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
@@ -580,7 +587,7 @@ export function PortaCabinVariantHero({
         {/* Trust row — anchored at the card bottom (mt-auto within the
             full-height flex column). */}
         <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">
-          GST Registered · 5-yr structural warranty · Pan-India delivery
+          {`GST Registered · ${trustWarranty} · Pan-India delivery`}
         </p>
       </div>
     </Card>

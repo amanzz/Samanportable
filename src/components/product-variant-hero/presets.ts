@@ -52,6 +52,12 @@ export interface VariantProductPreset {
   explorerImageShot?: string;
   /** Named applications dataset (resolved in PortaCabinVariantHero's registry). */
   applicationsDataset?: string;
+  /** Middle segment of the buy-box trust strip ("GST Registered · {trustWarranty} ·
+      Pan-India delivery"). Default (absent) keeps the deployed literal "5-yr structural
+      warranty" → flagship/other products byte-identical. Set only where the product's
+      warranty differs (e.g. container-offices: "12-month workmanship warranty", per
+      Decision-W1 — steel structural-frame product, NOT the 5–10-year panel line). */
+  trustWarranty?: string;
   video?: VariantProductVideo;
 }
 
@@ -94,6 +100,21 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     // 5 views (no elevated-view), so the Explorer reuses the gallery hero shot. The hero
     // component then carries that image's own §E alt (see panelImage below).
     explorerImageTemplate: '/images/products/portable-shop-cabin/{sizeSlug}/portable-shop-cabin-{sizeSlug}-hero-view.webp',
+  },
+  // C-04 CONTAINER OFFICES hub (/product/container-offices). Its own
+  // data/products/container-offices.json supplies the nine variants (ex/incl-GST ladder,
+  // images, emitAggregateOffer). This preset supplies the derived surfaces: the singular
+  // product noun, the Category row, the locked L3 SKU (page-level, not per-variant), and
+  // the Explorer tab image = each size's elevated-hero WebP (copy pack §E / build step 3).
+  // Deliberately absent: `specPdfHref` and `video` (none exist for this page).
+  'container-offices': {
+    productName: 'Container Office',
+    categoryLabel: 'Container Offices',
+    categoryHref: '/product/container-offices',
+    productSku: 'SP-20-CO-2024',
+    explorerImageTemplate: '/images/products/container-offices/{sizeSlug}/container-offices-{sizeSlug}-elevated-hero.webp',
+    applicationsDataset: 'container-offices',
+    trustWarranty: '12-month workmanship warranty',
   },
   ...subpagePresets(),
 };

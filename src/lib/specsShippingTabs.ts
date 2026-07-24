@@ -317,6 +317,104 @@ export function buildPortableCabinSpecificationsHtml(): string {
   );
 }
 
+// ─── C-04 Container Offices HUB — bespoke Specifications tab (copy pack §C, verbatim) ─
+// Fable 5 ruling (24 Jul): the container-office specs use the SAME sanctioned additive
+// pattern as the portable-cabin builder, but the §C source is a 50/50 "common platform /
+// container-office unique" split (not the grouped dataset), with a unique intro and the
+// 12-month workmanship warranty (Decision-W1: steel structural-frame products carry the
+// MSPEC-42 12-month line, NOT the 5–10-year panel warranty). Every item is verbatim; the
+// only transform is tokenising the copy pack's own " · " delimiter into list items.
+const CO_SPEC_INTRO =
+  'A container office is built on a heavier steel platform than a standard portable cabin — ' +
+  'these are the sections and materials that make the unit crane-liftable, stackable and durable ' +
+  'on industrial sites. The values below are the SAMAN container-office standard; member ' +
+  'quantities and interfaces scale by size, finalised on the approved drawing.';
+
+// COMMON PLATFORM half (shared standards) — verbatim; ends on the 12-month warranty line.
+const CO_COMMON_PLATFORM: string[] = [
+  'lifting lugs matched to unit weight',
+  'welded MS fabrication with inspection',
+  'concealed copper wiring (1.5/2.5/4 sq.mm)',
+  'DB with MCB/RCCB + earthing',
+  'red-oxide primer + two anti-rust enamel coats',
+  'pre-dispatch QC (dimensions, welds, coating, drainage, weather-seal)',
+  'warranty "12-month workmanship warranty, confirmed at quotation."',
+];
+
+// CONTAINER-OFFICE UNIQUE half (this page's spec) — verbatim.
+const CO_UNIQUE: string[] = [
+  'bottom frame 150×75×5 mm MS C-channel',
+  'stiffeners 100×50×4 + 80×40×3',
+  'floor frame 100×50×3 + 80×40×3',
+  'top frame 80×40×3',
+  'roof 60×40×2.5 rafters + 50×50×2.5 purlins',
+  'posts 60×60×3 corner + 50×50×3 intermediate',
+  'exterior 1.25–1.6 mm corrugated MS',
+  'roof 1.6 mm corrugated MS',
+  'interior 12 mm ply + laminate/HPL',
+  'ceiling 12.5 mm gypsum/laminated',
+  'floor 19 mm marine ply or 18 mm Bison + 5–6 mm SPC / 3–4 mm LVT',
+  'wall insulation 75 mm mineral wool',
+  'roof 100 mm glass/mineral wool',
+  'premium insulated door with closer',
+  'powder-coated aluminium windows, 6 mm tinted glass',
+  'LED/data/UPS provision, 6A/16A, AC circuits',
+  'cross-ventilation + split-AC provision',
+  'office layout with optional manager/meeting partition. Plumbing: not included unless in approved scope.',
+];
+
+function coSpecList(items: string[]): string {
+  return (
+    `<ul class="m-0 grid gap-2 sm:grid-cols-2">` +
+      items.map((it) => `<li class="text-sm text-slate-600">${esc(it)}</li>`).join('') +
+    `</ul>`
+  );
+}
+
+export function buildContainerOfficesSpecificationsHtml(): string {
+  return (
+    `<div class="not-prose">` +
+      `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(CO_SPEC_INTRO)}</p>` +
+      `<section class="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 p-5">` +
+        `<h4 class="mb-3 text-base font-bold text-emerald-900">Common platform</h4>` +
+        coSpecList(CO_COMMON_PLATFORM) +
+      `</section>` +
+      `<section class="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm">` +
+        `<h4 class="mb-3 text-base font-bold text-emerald-900">Container-office structure &amp; materials</h4>` +
+        coSpecList(CO_UNIQUE) +
+      `</section>` +
+    `</div>`
+  );
+}
+
+// ─── C-04 Container Offices HUB — bespoke Shipping tab (copy pack §D, verbatim) ─
+// Fable 5 ruling (24 Jul): §D container narration intro + the SHARED freight/destination
+// tables reused (freight depends on trailer size; figures verbatim vs 00-MASTER-TRUTH),
+// with the "Structural warranty 5–10 years" block OMITTED (Decision-W1: this product's
+// warranty is the 12-month line, carried in the Specifications tab §C only). The §D intro
+// already states the free-delivery zones, so the separate free-delivery callout is not
+// repeated. No shipping-rate schema is emitted.
+const CO_SHIPPING_INTRO =
+  'Container offices ship as complete steel modules on open trailers — 20-ft-class sizes on a ' +
+  '20 ft trailer, 40-ft-class and twin modules on a 40 ft trailer, with ODC routing planned for ' +
+  '20×20 and 40×12. Every dispatch includes a crane plan at both ends: the same lugs that lift ' +
+  'the unit at our works place it on your pad. Free delivery within Bangalore city and Delhi NCR ' +
+  '(Ghaziabad, Gurugram, Faridabad, Noida, Greater Noida). ODC charges are tentative and ' +
+  'confirmed with your order and route.';
+
+export function buildContainerOfficesShippingHtml(): string {
+  return (
+    `<div class="not-prose space-y-2">` +
+      `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(CO_SHIPPING_INTRO)}</p>` +
+      freightTable('20 ft open trailer · freight by distance (both zones)', FREIGHT_20FT) +
+      freightTable('40 ft open trailer · freight by distance (both zones)', FREIGHT_40FT) +
+      destinationTable('Typical destinations from our Bengaluru unit (South zone)', DEST_NOTE, DEST_SOUTH) +
+      destinationTable('Typical destinations from our Greater Noida unit (North zone)', DEST_NOTE, DEST_NORTH) +
+      `<p class="mt-2 text-xs leading-relaxed text-slate-500">${esc(FOOTNOTES)}</p>` +
+    `</div>`
+  );
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -333,6 +431,15 @@ export function getProductTabsHtml(
     return {
       specificationsHtml: buildPortableCabinSpecificationsHtml(),
       shippingHtml: buildShippingHtml(),
+    };
+  }
+  // C-04 container offices HUB — bespoke §C specs (50/50 halves, 12-month warranty) +
+  // bespoke §D shipping (container narration + shared freight/destination tables, 5–10yr
+  // structural-warranty block omitted per Decision-W1).
+  if (pageSlug === 'container-offices') {
+    return {
+      specificationsHtml: buildContainerOfficesSpecificationsHtml(),
+      shippingHtml: buildContainerOfficesShippingHtml(),
     };
   }
   const key = resolveSpecsKey(pageSlug);
