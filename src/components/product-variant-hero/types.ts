@@ -82,6 +82,9 @@ export interface VariantProductData {
       instead of per-variant Offers. Absent on porta-cabins → per-variant Offers kept,
       byte-identical. Set true only when a page's price ladder is confirmed. */
   emitAggregateOffer?: boolean;
+  /** Middle segment of the buy-box trust strip. Default (absent) → preset, else the
+      deployed literal "5-yr structural warranty" (flagship byte-identical). */
+  trustWarranty?: string;
   /** T25 VIDEO OPT-IN. Absent/false (the default) = no video facade thumb and no
       VideoObject JSON-LD. Set true ONLY on a product that genuinely has its own
       overview video AND video metadata (own `video` field or a preset). */
