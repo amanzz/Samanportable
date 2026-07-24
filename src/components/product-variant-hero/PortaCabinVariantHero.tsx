@@ -19,6 +19,7 @@ import { Check, Download, Play, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import { dsCssVariables } from '@/components/ds/tokens';
 import ProductZoneCtas from '@/components/product/ProductZoneCtas';
 import RelatedProductRail from '@/components/product/RelatedProductRail';
@@ -293,6 +294,7 @@ export function PortaCabinVariantHero({
             <Image
               key={heroImages[activeImageIndex].src}
               src={heroImages[activeImageIndex].src}
+              unoptimized={shouldBypassOptimizer(heroImages[activeImageIndex].src)}
               alt={heroImages[activeImageIndex].alt}
               width={heroImages[activeImageIndex].width}
               height={heroImages[activeImageIndex].height}
@@ -358,7 +360,7 @@ export function PortaCabinVariantHero({
                     second discovery round-trip and delays first paint, so they load
                     eagerly. Deliberately NO fetchpriority: the law reserves high
                     priority for the first hero, which is the main viewer above. */}
-                <Image src={img.src} alt={!showVideo && i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="eager" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={!showVideo && i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="eager" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
               </button>
             ))}
 
@@ -385,6 +387,7 @@ export function PortaCabinVariantHero({
                   WebP served into a ~44-52px box, i.e. the smallest srcset candidate. */}
               <Image
                 src={video.posterSrc}
+                unoptimized={shouldBypassOptimizer(video.posterSrc)}
                 alt={video.posterAlt}
                 width={150}
                 height={150}
@@ -840,6 +843,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                          (measured = 100vw - 34px), not 100vw. */
                       <Image
                         src={panelImage.src}
+                        unoptimized={shouldBypassOptimizer(panelImage.src)}
                         alt={panelImage.alt}
                         width={1254}
                         height={1254}
