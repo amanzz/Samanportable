@@ -21,7 +21,7 @@
   "date_on_sale_from_gmt": null,
   "date_on_sale_to": null,
   "date_on_sale_to_gmt": null,
-  "on_sale": true,
+  "on_sale": false,
   "purchasable": true,
   "total_sales": 4,
   "virtual": false,

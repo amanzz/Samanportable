@@ -10,8 +10,11 @@
 //  - "Portable Cabin" is BANNED from this cluster's related items;
 //  - S2 in-body editorial links and every anchor rule are UNCHANGED by this ruling.
 //
-// Redirected slugs (toilet-porta-cabins, portacabin-office) must never appear: they
-// 301 away, so railing them would send users through a redirect.
+// Redirected slugs must never appear: they 301 away, so railing them would send users
+// through a redirect. As of C01 (Fable 5 ruling, 24 Jul 2026) the redirected set is
+// toilet-porta-cabins, buy-porta-cabins, small-portacabin, porta-cabin-office and
+// prefabricated-porta-cabin. portacabin-office is NO LONGER redirected — the office pair
+// was reversed and portacabin-office is now the live office survivor, so it joins the rail.
 //
 // This module only decides WHICH siblings appear and in WHAT ORDER. The rail items
 // themselves (title, image, blurb, price) keep coming from the live product data, so
@@ -27,20 +30,20 @@ export const PORTA_CABIN_CLUSTER_SLUGS: readonly string[] = [
   'ms-porta-cabin',
   'steel-porta-cabin',
   'luxury-porta-cabin',
-  'buy-porta-cabins',
   'mini-porta-cabin',
-  'small-portacabin',
-  'porta-cabin-office',
+  'portacabin-office',
   'porta-cabin-shop',
   'porta-cabin-with-toilet',
-  'prefabricated-porta-cabin',
   'low-cost-porta-cabin',
 ];
 
 /** 301'd slugs — never railed. */
 export const PORTA_CABIN_REDIRECTED_SLUGS: readonly string[] = [
   'toilet-porta-cabins',
-  'portacabin-office',
+  'buy-porta-cabins',
+  'small-portacabin',
+  'porta-cabin-office',
+  'prefabricated-porta-cabin',
 ];
 
 export const isPortaCabinStripSlug = (slug: string): boolean =>

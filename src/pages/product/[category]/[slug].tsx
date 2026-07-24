@@ -40,6 +40,7 @@ import {
   isPortaCabinStripSlug,
   orderPortaCabinStrip,
   slugFromProductHref,
+  PORTA_CABIN_REDIRECTED_SLUGS,
 } from '../../../lib/portaCabinClusterRail';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
@@ -153,6 +154,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       // shrink the client hydration payload. SSR-rendered cards are unchanged.
       relatedProducts = (relatedResponse.products || [])
         .filter(p => p.id !== product.id)
+        // C01: never surface a retired/301'd sibling as a related card or rail item —
+        // those links would 301. Mirrors the cluster rail's redirected-slug guard.
+        .filter(p => !PORTA_CABIN_REDIRECTED_SLUGS.includes(p.slug))
         .map(p => ({
           id: p.id,
           name: p.name,
