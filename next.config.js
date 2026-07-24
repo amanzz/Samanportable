@@ -972,8 +972,10 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // C01 chain-flatten (24 Jul 2026): buy-porta-cabins now 301s to the hub, so this
+        // legacy rule is repointed straight to the hub to stay single-hop.
         source: '/product/buy-porta-cabins',
-        destination: 'https://www.samanportable.com/product/porta-cabins/buy-porta-cabins',
+        destination: 'https://www.samanportable.com/product/porta-cabins',
         permanent: true,
       },
       {
@@ -1132,8 +1134,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // C01 chain-flatten (24 Jul 2026): porta-cabin-office now 301s to portacabin-office
+        // (office pair reversed), so this legacy rule is repointed to the survivor to stay
+        // single-hop.
         source: '/product/porta-cabin-office',
-        destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-office',
+        destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office',
         permanent: true,
       },
       {
@@ -1232,8 +1237,10 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // C01 chain-flatten (24 Jul 2026): prefabricated-porta-cabin now 301s to the hub, so
+        // this legacy rule is repointed straight to the hub to stay single-hop.
         source: '/product/prefabricated-porta-cabin',
-        destination: 'https://www.samanportable.com/product/porta-cabins/prefabricated-porta-cabin',
+        destination: 'https://www.samanportable.com/product/porta-cabins',
         permanent: true,
       },
       {
@@ -1790,6 +1797,24 @@ const nextConfig = {
       { source: '/bommasandra-porta-cabins', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bommasandra', permanent: true },
       { source: '/20ft-porta-cabin', destination: 'https://www.samanportable.com/porta-cabin-sizes-and-specifications-in-india', permanent: true },
       { source: '/porta-cabins-in-mg-road', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bangalore', permanent: true },
+
+      // ─── C01 — porta-cabins P1 consolidation (Fable 5 ruling + SAMAN lock-lift, 24 Jul 2026)
+      // Five single-hop 301s retiring duplicate porta-cabin subpages into HTTP-200 keepers.
+      // ms-porta-cabin and portacabin-office are PROTECTED survivors and stay live. The office
+      // pair is REVERSED: the dying porta-cabin-office folds INTO the live portacabin-office
+      // (now the office owner). All five sources drop from the sitemap AND the Merchant feed
+      // automatically (getRedirectSources filter). Placed BEFORE ...csvRedirects so first-match
+      // wins. toilet-porta-cabins keeps permanent:true (308, SAMAN "keep as-is"); the other
+      // four use statusCode:301, matching the container-offices wave.
+      {
+        source: '/product/porta-cabins/toilet-porta-cabins',
+        destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet',
+        permanent: true,
+      },
+      { source: '/product/porta-cabins/buy-porta-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabins/prefabricated-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabins/porta-cabin-office', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', statusCode: 301 },
+      { source: '/product/porta-cabins/small-portacabin', destination: 'https://www.samanportable.com/product/porta-cabins/mini-porta-cabin', statusCode: 301 },
 
       ...csvRedirects,
     ];

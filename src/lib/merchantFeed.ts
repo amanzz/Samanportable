@@ -524,18 +524,19 @@ export function buildPortaCabinVariantItems(
 // no §G block in the T24.2 pack; its title is the SAMAN ruling of 19 Jul 2026.
 export type SubpageVariantConfig = { slug: string; name: string; descriptor: string };
 
+// C01 consolidation (Fable 5 ruling, 24 Jul 2026): the four slugs buy-porta-cabins,
+// prefabricated-porta-cabin, porta-cabin-office and small-portacabin now 301 to their
+// keepers, so their variant groups are DROPPED from the feed (their 36 SKUs leave the
+// feed entirely — no hub-landing replacement). portacabin-office gets no feed entry here;
+// that follows later via the standard merchant flag-flip (separate ticket). Seven
+// surviving subpage groups remain.
 export const SUBPAGE_VARIANT_CONFIGS: readonly SubpageVariantConfig[] = [
   { slug: 'ms-porta-cabin', name: 'MS Porta Cabin', descriptor: 'IS 2062 Steel Site Office' },
   { slug: 'steel-porta-cabin', name: 'Steel Porta Cabin', descriptor: 'MS/GI/Pre-Galv Site Office' },
   { slug: 'luxury-porta-cabin', name: 'Luxury Porta Cabin', descriptor: 'Premium Executive Cabin' },
-  // §G title says "Buy Porta Cabin" (singular) though the slug is plural — kept verbatim.
-  { slug: 'buy-porta-cabins', name: 'Buy Porta Cabin', descriptor: 'Price & Delivery' },
   { slug: 'mini-porta-cabin', name: 'Mini Porta Cabin', descriptor: 'Compact Guard/Gate Cabin' },
-  { slug: 'small-portacabin', name: 'Small Portacabin', descriptor: 'Compact Site Office' },
-  { slug: 'porta-cabin-office', name: 'Porta Cabin Office', descriptor: 'Fitted Site Office' },
   { slug: 'porta-cabin-shop', name: 'Porta Cabin Shop', descriptor: 'Retail Counter Cabin' },
   { slug: 'porta-cabin-with-toilet', name: 'Porta Cabin with Toilet', descriptor: 'Office + Sanitation' },
-  { slug: 'prefabricated-porta-cabin', name: 'Prefabricated Porta Cabin', descriptor: 'Factory-Built Ready Cabin' },
   { slug: 'low-cost-porta-cabin', name: 'Low Cost Porta Cabin', descriptor: 'Value-Tier Site Cabin' },
 ];
 
@@ -599,7 +600,7 @@ export function buildSubpageVariantItems(
 
 /**
  * Every porta-cabin variant item: the flagship's nine (unchanged, from the original
- * builder) followed by the eleven subpages' nine each. `dataBySlug` is supplied by the
+ * builder) followed by the seven surviving subpages' nine each. `dataBySlug` is supplied by the
  * caller so this module stays filesystem-free.
  */
 export function buildAllVariantItems(
@@ -648,14 +649,53 @@ function xmlElement(name: string, value: string | number, cdata = false): string
   return `      <${name}>${cdata ? toCdata(String(value)) : escapeXml(value)}</${name}>\n`;
 }
 
+/** Reduce a feed link to its comparable pathname: strip origin, query and fragment,
+ *  drop a trailing slash. Mirrors redirectSources.normalizeRedirectPath so the merchant
+ *  feed and the sitemap judge a URL "redirecting" by the identical rule. */
+function feedLinkPathname(link: string): string {
+  if (typeof link !== 'string' || !link) return '';
+  let p = link;
+  const hash = p.indexOf('#');
+  if (hash !== -1) p = p.slice(0, hash);
+  const q = p.indexOf('?');
+  if (q !== -1) p = p.slice(0, q);
+  const scheme = p.indexOf('://');
+  if (scheme !== -1) {
+    const rest = p.slice(scheme + 3);
+    const slash = rest.indexOf('/');
+    p = slash === -1 ? '/' : rest.slice(slash);
+  }
+  if (!p.startsWith('/')) p = '/' + p;
+  if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+  return p;
+}
+
+/** WooCommerce category-placeholder products: /product/{a}/{a} where a === a. */
+function isDuplicateProductSegmentPath(pathname: string): boolean {
+  const m = /^\/product\/([^/]+)\/([^/]+)$/.exec(pathname);
+  return !!m && m[1] === m[2];
+}
+
 export function generateGoogleMerchantXml(
   products: ProductLike[],
   baseUrl = MERCHANT_BASE_URL,
-  extraItems: MerchantProduct[] = []
+  extraItems: MerchantProduct[] = [],
+  // C01 hardening (Fable 5 ruling, 24 Jul 2026): when the caller supplies the redirect
+  // source set (from getRedirectSourceSet()), every item whose landing URL the site
+  // 301-redirects is structurally dropped — the same filter the sitemap applies. Omitted
+  // ⇒ no filtering, so all other output stays byte-identical.
+  redirectSources?: Set<string>
 ): string {
   const { items: catalogueItems } = buildMerchantProducts(products, baseUrl);
   // Catalogue items first (byte-unchanged), then any pre-built variant items.
-  const items = [...catalogueItems, ...extraItems];
+  let items = [...catalogueItems, ...extraItems];
+  if (redirectSources && redirectSources.size) {
+    items = items.filter((item) => {
+      const pathname = feedLinkPathname(item.link);
+      if (!pathname) return true;
+      return !redirectSources.has(pathname) && !isDuplicateProductSegmentPath(pathname);
+    });
+  }
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n';
   xml += '  <channel>\n';

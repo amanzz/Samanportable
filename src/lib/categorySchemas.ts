@@ -1077,7 +1077,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 4,
             "name": "Small Portacabin",
-            "url": "https://www.samanportable.com/product/porta-cabins/small-portacabin"
+            "url": "https://www.samanportable.com/product/porta-cabins/mini-porta-cabin"
           },
           {
             "@type": "ListItem",
@@ -1101,19 +1101,19 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 8,
             "name": "Toilet Porta Cabins",
-            "url": "https://www.samanportable.com/product/porta-cabins/toilet-porta-cabins"
+            "url": "https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet"
           },
           {
             "@type": "ListItem",
             "position": 9,
             "name": "Porta Cabin Office",
-            "url": "https://www.samanportable.com/product/porta-cabins/porta-cabin-office"
+            "url": "https://www.samanportable.com/product/porta-cabins/portacabin-office"
           },
           {
             "@type": "ListItem",
             "position": 10,
             "name": "Buy Porta Cabins",
-            "url": "https://www.samanportable.com/product/porta-cabins/buy-porta-cabins"
+            "url": "https://www.samanportable.com/product/porta-cabins"
           },
           {
             "@type": "ListItem",
@@ -1125,7 +1125,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 12,
             "name": "Prefabricated Porta Cabin",
-            "url": "https://www.samanportable.com/product/porta-cabins/prefabricated-porta-cabin"
+            "url": "https://www.samanportable.com/product/porta-cabins"
           },
           {
             "@type": "ListItem",

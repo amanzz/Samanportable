@@ -25,8 +25,17 @@ import {
   type BlogPost,
 } from '@/config/api';
 import { decodeHtmlEntities } from '@/lib/utils';
+import { PORTA_CABIN_REDIRECTED_SLUGS } from '@/lib/portaCabinClusterRail';
 
 const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
+
+// C01 (Fable 5 ruling, 24 Jul 2026): product slugs that now 301-redirect and must never
+// appear as a card/link in any buyer-facing listing (global /product, category related
+// rails, api/products, dynamic sitemap). Mirrors the sitemap/feed "exclude redirect
+// sources" rule at the listing chokepoint. The Merchant feed excludes them separately via
+// getRedirectSourceSet() so its catalogue path stays governed by the redirect map, not this
+// hand-list. Retired product PAGES still resolve (they 301 at the route level before render).
+const RETIRED_LISTING_SLUGS = new Set<string>(PORTA_CABIN_REDIRECTED_SLUGS);
 
 // Slugs are lowercase-hyphenated; reject anything else so a crafted URL can
 // never read outside the export folders.
@@ -385,8 +394,11 @@ function getPublishedProducts(): any[] {
 }
 
 function getListingProducts(options: ListingOptions = {}): any[] {
-  if (!options.includeDrafts) return getPublishedProducts();
-  return getAllProductsRaw().filter((p) => !p.status || p.status === 'publish' || p.status === 'draft');
+  const base = !options.includeDrafts
+    ? getPublishedProducts()
+    : getAllProductsRaw().filter((p) => !p.status || p.status === 'publish' || p.status === 'draft');
+  // C01: drop retired/301'd products so no listing card or rail links to a redirecting URL.
+  return base.filter((p) => !RETIRED_LISTING_SLUGS.has(p.slug));
 }
 
 function findProductBySlug(slug: string): any | null {

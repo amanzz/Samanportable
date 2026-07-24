@@ -34,6 +34,7 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
+import { PORTA_CABIN_REDIRECTED_SLUGS } from '../../../lib/portaCabinClusterRail';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 
@@ -183,6 +184,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       console.error('Error fetching related products:', error);
       // Silent error handling for production
     }
+
+    // C01: never surface a retired/301'd porta-cabin sibling as a related card — those
+    // links would 301. Mirrors the cluster rail's redirected-slug guard.
+    relatedProducts = relatedProducts.filter(p => !PORTA_CABIN_REDIRECTED_SLUGS.includes(p.slug));
 
     // Fetch full description and images separately
     const descriptionData = await staticContent.fetchProductDescription(category);
