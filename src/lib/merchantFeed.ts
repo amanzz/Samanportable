@@ -177,9 +177,12 @@ function parseNumber(value: string | number | null | undefined): number {
 }
 
 export function getEffectiveProductPrice(product: ProductLike): number {
-  const salePrice = parseNumber(product.sale_price);
-  if (product.on_sale && salePrice > 0) return salePrice;
-
+  // C01b (SAMAN ruling, 24 Jul 2026): every feed carries the actual current SELLING price
+  // only — never a sale / compare-at / "was ₹X" reference. product.price is WooCommerce's
+  // active price, which already equals the current selling price (sale_price when a product
+  // was flagged on sale, so this is byte-identical to the prior sale branch). regular_price
+  // is used only as a fallback when price is absent. sale_price and on_sale are deliberately
+  // NOT consulted, so no fake strike-through reference can ever leak into feed output.
   const price = parseNumber(product.price);
   if (price > 0) return price;
 
