@@ -35,10 +35,37 @@ export function isSvgSrc(src: unknown): boolean {
 }
 
 /**
+ * True for pre-optimized local product photography under /images/products/**.webp.
+ *
+ * These are the size-set WebP files (~70 KB, already correct dimensions) shipped in
+ * /public. Routing them through /_next/image is redundant work: the origin re-encodes an
+ * already-optimal WebP on the first request for each (w,q) variant, and Cloudflare does not
+ * cache /_next/image (every response is cf-cache-status: MISS), so the first paint of every
+ * product/size image pays a multi-second optimizer TTFB. Served directly, the file is a
+ * plain /images/**.webp GET — CDN-cacheable by extension (HIT) and fast on first paint.
+ *
+ * Scope is deliberately narrow: ONLY /images/products/**.webp. Every other local raster
+ * keeps the built-in optimizer, exactly per T12.
+ *
+ * ACCEPTED TRADE-OFF: an unoptimized next/image emits no srcset, so a thumbnail serves the
+ * full ~70 KB WebP instead of a resized variant. Outweighed by static-file CDN caching and
+ * the removal of the optimizer TTFB. Explicit width/height are kept at every call site so
+ * there is no CLS, and the hero stays priority/fetchpriority=high so its preload points at
+ * the direct static WebP.
+ */
+export function isPreOptimizedLocalImage(src: unknown): boolean {
+  return typeof src === 'string'
+    && src.startsWith('/images/products/')
+    && src.endsWith('.webp');
+}
+
+/**
  * True when `src` must NOT go through /_next/image: any remote host (the optimizer must
- * never server-fetch one) or any SVG (the optimizer rejects SVG with dangerouslyAllowSVG
- * off). Pass to next/image as `unoptimized={shouldBypassOptimizer(src)}`.
+ * never server-fetch one), any SVG (the optimizer rejects SVG with dangerouslyAllowSVG
+ * off), or a pre-optimized local product WebP (/images/products/**.webp — redundant to
+ * re-optimize; see isPreOptimizedLocalImage). Pass to next/image as
+ * `unoptimized={shouldBypassOptimizer(src)}`.
  */
 export function shouldBypassOptimizer(src: unknown): boolean {
-  return isRemoteImageSrc(src) || isSvgSrc(src);
+  return isRemoteImageSrc(src) || isSvgSrc(src) || isPreOptimizedLocalImage(src);
 }
