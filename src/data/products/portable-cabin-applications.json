@@ -1,0 +1,105 @@
+{
+  "h2": "Explore every Portable Cabin size & its applications",
+  "intro": "Nine standard sizes, one specification — pick the footprint that matches how you'll use it, built to lift, move and reuse across sites, with fixed base prices and delivery in 7–21 working days.",
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10×10 ft — the compact relocatable room",
+      "paragraph": "The 10×10 ft is the smallest one-room cabin: 100 sq ft you can crane onto any flat base and use the same day, then lift and shift when the job moves. Right-sized for a single-person office, a guard or supervisor room, or a lockable store.",
+      "applications": [
+        "Guard and supervisor rooms",
+        "Single-person offices",
+        "Ticket and enquiry rooms",
+        "Lockable store rooms"
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20×8 ft — the slim, transport-easy cabin",
+      "paragraph": "A narrow 160 sq ft unit that moves easily where access is tight and still relocates on a standard trailer. Suited to a slim office, a reception or a store that needs to shift with the work.",
+      "applications": [
+        "Slim offices",
+        "Reception and gate rooms",
+        "Narrow-access rooms",
+        "Compact stores"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20×10 ft — the everyday workhorse",
+      "paragraph": "Our most-ordered relocatable cabin: 200 sq ft with room for four to six people, desks and files. The size most teams specify first — delivered fitted with electricals, lighting and insulation, and picked up and re-sited as one unit when the location changes.",
+      "applications": [
+        "Project and team offices",
+        "Shops and counters",
+        "Study or spare rooms",
+        "Clinics and consultation rooms"
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20×12 ft — the roomier cabin",
+      "paragraph": "Two extra feet of width for a more comfortable office, a retail counter with space behind it, or a combined work-and-store layout — still a single relocatable unit.",
+      "applications": [
+        "Roomier offices",
+        "Counters with storage",
+        "Combined work-and-store rooms",
+        "Meeting rooms"
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30×10 ft — the long-run cabin",
+      "paragraph": "A long 300 sq ft unit for a multi-desk office, a bigger shop, or a clean room-plus-store split. It relocates as one piece on a 40 ft trailer when the site changes.",
+      "applications": [
+        "Multi-desk offices",
+        "Larger shops and showrooms",
+        "Room-plus-store layouts",
+        "Training and meeting rooms"
+      ]
+    },
+    {
+      "sizeSlug": "40x8",
+      "h3": "40×8 ft — the long, slim unit",
+      "paragraph": "A 320 sq ft corridor-style cabin that puts length where you need it — an extended office run or a long store — while staying slim enough to travel on a 40 ft trailer.",
+      "applications": [
+        "Corridor-style offices",
+        "Extended stores",
+        "Multi-room slim layouts",
+        "Accommodation rooms"
+      ]
+    },
+    {
+      "sizeSlug": "20x20",
+      "h3": "20×20 ft — the near-square room",
+      "paragraph": "A near-square 400 sq ft footprint for a larger single room or a two-zone layout, engineered to stay liftable and reusable across sites despite the wider body.",
+      "applications": [
+        "Large single rooms",
+        "Two-zone layouts",
+        "Halls and meeting spaces",
+        "Combined work areas"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40×10 ft — the full-length standard",
+      "paragraph": "The full-length 400 sq ft cabin: a spacious relocatable room for a team office, a showroom or a multi-use space, sized to travel on a 40 ft open trailer and re-site as one unit.",
+      "applications": [
+        "Team offices",
+        "Showrooms and display floors",
+        "Multi-use halls",
+        "Offices with storage"
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "h3": "40×12 ft — the largest single unit",
+      "paragraph": "The most floor area you can lift and reuse as one cabin: 480 sq ft for a broad office, a large retail space or a combined layout, before joining modules for anything bigger.",
+      "applications": [
+        "Broad open offices",
+        "Large retail spaces",
+        "Office-and-store layouts",
+        "Multi-team rooms"
+      ]
+    }
+  ]
+}
