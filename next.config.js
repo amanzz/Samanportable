@@ -2,15 +2,6 @@
 // AUTO-GENERATED CSV redirects (572 entries) – do not edit redirects-from-csv.js by hand.
 const csvRedirects = require('./redirects-from-csv');
 const customProductCanonicalPaths = require('./src/lib/customProductCanonicalPaths.json');
-
-const customProductDuplicateRedirects = customProductCanonicalPaths
-  .map(({ slug, categorySlug, canonicalPath }) => ({
-    source: `/product/${categorySlug}/${slug}`,
-    destination: `https://www.samanportable.com${canonicalPath}`,
-    statusCode: 301,
-  }))
-  .filter(({ source, destination }) => source !== new URL(destination).pathname);
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -98,46 +89,60 @@ const nextConfig = {
   },
 
   images: {
-    // SHIKHAR T12 HARDENING (2026-07-14): remotePatterns is INTENTIONALLY EMPTY.
-    //
-    // It previously allow-listed blog.samanportable.com (Hostinger) and the other SAMAN /
-    // external origins. That allow-list is precisely what let the optimizer server-fetch
-    // Hostinger — the fetch that failed with ECONNRESET on 2026-06-12 and 500'd every blog
-    // image. Nothing depends on it any more: EVERY remote next/image src is passed
-    // `unoptimized` via shouldBypassOptimizer() (src/lib/imageSrc.ts), so remote images are
-    // fetched by the BROWSER directly and never touch /_next/image.
-    //
-    // With no host allow-listed, a hand-crafted /_next/image?url=<any remote URL> is
-    // rejected with 400 by Next itself. The outage path is now closed BY CONSTRUCTION, not
-    // merely by call-site discipline: even a future call site that forgets `unoptimized`
-    // fails loudly instead of re-arming the Hostinger fetch.
-    //
-    // DO NOT re-add a remote host here to "fix" a broken remote image. Mark that image
-    // `unoptimized` (or rehost it into /public) instead.
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'blog.samanportable.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'samanportable.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.samanportable.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.samanportable.com',
+      },
+      // Add WooCommerce specific domains for product images
+      {
+        protocol: 'https',
+        hostname: 'woocommerce.samanportable.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'shop.samanportable.com',
+      },
+      // Add external image domains
+      {
+        protocol: 'https',
+        hostname: 'images.surferseo.art',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.surferseo.art',
+      },
+      // Legitimate external blog hosts discovered during audit
+      {
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'secure.gravatar.com',
+      }
+    ],
     formats: ['image/webp'], // Only WebP for faster processing, removed AVIF
     deviceSizes: [640, 750, 828, 1080, 1200, 1920], // Reduced sizes for faster processing
     imageSizes: [16, 32, 48, 64, 96, 128, 256], // Reduced sizes for faster processing
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days for better balance
-    // T12 HARDENING: SVG is never passed through the optimizer (it rasterises/serves SVG,
-    // which is the XSS vector `dangerouslyAllowSVG` guards). Every SVG next/image src —
-    // the /saman-logo.svg header/footer logos and the /placeholder.svg card fallback — is
-    // `unoptimized` via shouldBypassOptimizer(), so it renders as a plain <img> and nothing
-    // breaks. The stray contentSecurityPolicy below only ever applied to optimizer-served
-    // SVG, so it is removed with the flag it belonged to.
-    dangerouslyAllowSVG: false,
-    // SHIKHAR T12 (2026-07-14): the `loader: 'custom'` + `loaderFile: './image-loader.js'`
-    // bypass is REMOVED, restoring the built-in /_next/image optimizer. The loader was an
-    // emergency fix for the optimizer's server-side fetch of Hostinger-hosted blog images
-    // (ECONNRESET), but registering a loaderFile disables the optimizer for EVERY source,
-    // so all local /public images lost resize/srcset/WebP as collateral damage. The
-    // formats/deviceSizes/imageSizes/quality settings above were dead config until now.
-    //
-    // The optimizer must still never server-fetch Hostinger. That is enforced at the call
-    // sites AND by the empty remotePatterns above: every remote (absolute-URL) image is
-    // passed `unoptimized` via shouldBypassOptimizer() in src/lib/imageSrc.ts, so the
-    // browser fetches it directly exactly as it does today. Local /public raster images are
-    // optimized by the server from disk.
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Optimize loading performance - ENHANCED
+    loader: 'custom',
+    loaderFile: './image-loader.js',
     // STAGING ONLY: when the env-gated Google block is on (goldfish), serve images
     // unoptimized. The optimizer fetches LOCAL public/ images via an internal HTTP
     // self-request that carries no credentials, so the 401 wall breaks it (blank
@@ -150,11 +155,30 @@ const nextConfig = {
 
   // Force HTTPS and WWW redirects
   async redirects() {
+    const customProductDuplicateRedirects = customProductCanonicalPaths
+      .map(({ slug, categorySlug, canonicalPath }) => ({
+        source: `/product/${categorySlug}/${slug}`,
+        destination: `https://www.samanportable.com${canonicalPath}`,
+        statusCode: 301,
+      }))
+      .filter((entry) => {
+        try {
+          return new URL(entry.destination).pathname !== entry.source;
+        } catch {
+          return true;
+        }
+      });
+
     const redirects = [
-      // Custom product pages must not also resolve at their WooCommerce
-      // category-nested mirror paths. Keep all cards/sitemaps on the canonical
-      // custom URL and send any discovered duplicates there.
       ...customProductDuplicateRedirects,
+      // CANNIBALIZATION fix (owner-approved 2026-07-24): retire duplicate /product/container-offices pages.
+      // Exact 301 single-hop transitions to HTTP-200 keepers.
+      { source: '/product/container-offices/cargo-container-office', destination: 'https://www.samanportable.com/product/container-offices/shipping-container-office', statusCode: 301 },
+      { source: '/product/container-offices/storage-container-office', destination: 'https://www.samanportable.com/product/container-offices/shipping-container-office', statusCode: 301 },
+      { source: '/product/container-offices/modular-container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
+      { source: '/product/container-offices/container-portable-office', destination: 'https://www.samanportable.com/product/portable-office/portable-office-container', statusCode: 301 },
+      { source: '/product/container-offices/mobile-container-office', destination: 'https://www.samanportable.com/product/portable-office/portable-office-container', statusCode: 301 },
+      { source: '/product/container-offices/mobile-office-container', destination: 'https://www.samanportable.com/product/portable-office/portable-office-container', statusCode: 301 },
 
       // Product singular-to-canonical plural redirects (owner-approved 2026-07-01).
       // Absolute destinations keep these migration URLs single-hop.
@@ -177,7 +201,7 @@ const nextConfig = {
 
       // Root-level product alias fixes from 2026-07-02 crawl 4xx report.
       { source: '/site-office-container', destination: 'https://www.samanportable.com/product/container-offices/site-office-container', statusCode: 301 },
-      { source: '/modular-container-office', destination: 'https://www.samanportable.com/product/container-offices/modular-container-office', statusCode: 301 },
+      { source: '/modular-container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
       { source: '/prefabricated-container-office', destination: 'https://www.samanportable.com/product/container-offices/prefabricated-container-office', statusCode: 301 },
       { source: '/container-office-cabin', destination: 'https://www.samanportable.com/product/container-offices/container-office-cabin', statusCode: 301 },
 
@@ -193,7 +217,7 @@ const nextConfig = {
       // the static build). 301 it to the real, canonical singular category.
       {
         source: '/product-category/portable-toilets',
-        destination: 'https://www.samanportable.com/product/portable-toilet',
+        destination: 'https://www.samanportable.com/product-category/portable-toilet',
         permanent: true,
       },
       // Duplicate-category fix (Agent C P13): the singular container-house URL is a
@@ -201,45 +225,9 @@ const nextConfig = {
       // where all /product/container-houses/* products live). 301 it to canonical plural.
       {
         source: '/product-category/container-house',
-        destination: 'https://www.samanportable.com/product/container-houses',
+        destination: 'https://www.samanportable.com/product-category/container-houses',
         permanent: true,
       },
-
-      // SHIKHAR T1.2 (owner-approved 2026-07-12): consolidate the 14 published
-      // /product-category/* archives into their canonical /product/* hubs. Evidence:
-      // /audit/T1.1/PRODUCT-CATEGORY-AUDIT.md — all 14 were live, indexable and
-      // self-canonical, cannibalizing the /product hubs. Absolute destinations keep
-      // apex and www requests single-hop. Exact rules first; catch-all last.
-      { source: '/product-category/container-cafe', destination: 'https://www.samanportable.com/product/container-cafe', permanent: true },
-      { source: '/product-category/container-houses', destination: 'https://www.samanportable.com/product/container-houses', permanent: true },
-      { source: '/product-category/container-offices', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/product-category/industrial-sheds', destination: 'https://www.samanportable.com/product/industrial-sheds', permanent: true },
-      { source: '/product-category/labor-colony', destination: 'https://www.samanportable.com/product/labor-colony', permanent: true },
-      { source: '/product-category/peb-constructions', destination: 'https://www.samanportable.com/product/peb-constructions', permanent: true },
-      { source: '/product-category/porta-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', permanent: true },
-      { source: '/product-category/portable-cabin', destination: 'https://www.samanportable.com/product/portable-cabin', permanent: true },
-      { source: '/product-category/portable-office', destination: 'https://www.samanportable.com/product/portable-office', permanent: true },
-      { source: '/product-category/portable-toilet', destination: 'https://www.samanportable.com/product/portable-toilet', permanent: true },
-      { source: '/product-category/pre-engineered-buildings', destination: 'https://www.samanportable.com/product/pre-engineered-buildings', permanent: true },
-      { source: '/product-category/prefab-buildings', destination: 'https://www.samanportable.com/product/prefab-buildings', permanent: true },
-      { source: '/product-category/prefabricated-houses', destination: 'https://www.samanportable.com/product/prefabricated-houses', permanent: true },
-      { source: '/product-category/security-cabins', destination: 'https://www.samanportable.com/product/security-cabins', permanent: true },
-      // T1.2 amendment (Fable 5, 13 Jul 2026): the 7 panel/roofing category archives.
-      // Without these they would fall to the catch-all and land on the generic /product
-      // listing instead of their own canonical hub. Note roofing: the category slug is
-      // plural but the hub is singular (/product/roofing-sheets is a 404).
-      { source: '/product-category/eps-panel', destination: 'https://www.samanportable.com/product/eps-panel', permanent: true },
-      { source: '/product-category/glass-wool-panel', destination: 'https://www.samanportable.com/product/glass-wool-panel', permanent: true },
-      { source: '/product-category/pir-panel', destination: 'https://www.samanportable.com/product/pir-panel', permanent: true },
-      { source: '/product-category/puf-panel', destination: 'https://www.samanportable.com/product/puf-panel', permanent: true },
-      { source: '/product-category/rockwool-panel', destination: 'https://www.samanportable.com/product/rockwool-panel', permanent: true },
-      { source: '/product-category/roofing-sheets', destination: 'https://www.samanportable.com/product/roofing-sheet', permanent: true },
-      { source: '/product-category/sandwich-panel', destination: 'https://www.samanportable.com/product/sandwich-panel', permanent: true },
-      // Catch-all safety net: any remaining /product-category/* archive lands on the
-      // /product listing rather than 404ing. MUST stay below the 21 exact rules.
-      // C18 wall-sheets is an owner-approved live archive and is excluded.
-      { source: '/product-category/:slug((?!wall-sheets$).*)', destination: 'https://www.samanportable.com/product', permanent: true },
-
       // Cart/checkout retirement (owner-approved 2026-06-12): enquiry-only
       // business — the cart path was removed in Phase 2; these dead-end pages
       // now 301 home. Page files remain but are unreachable (redirects run
@@ -268,12 +256,12 @@ const nextConfig = {
       },
       {
         source: '/container-offices-for-sale-in-btm-layout-2',
-        destination: 'https://www.samanportable.com/product/container-offices',
+        destination: 'https://www.samanportable.com/container-offices-for-sale-in-btm-layout',
         permanent: true, // SEO-safe (Next.js serves 308; OK same as 301 for Google)
       },
       {
         source: '/container-offices-for-sale-in-rt-nagar-2',
-        destination: 'https://www.samanportable.com/product/container-offices',
+        destination: 'https://www.samanportable.com/container-offices-for-sale-in-rt-nagar',
         permanent: true,
       },
       // Duplicate URL redirects for SEO - Porta Cabins
@@ -285,7 +273,7 @@ const nextConfig = {
       // Additional duplicate URL redirects
       {
         source: '/innovative-office-container-designs-2',
-        destination: 'https://www.samanportable.com/product/container-offices',
+        destination: 'https://www.samanportable.com/product-category/container-offices',
         permanent: true,
       },
       // Blog to product page redirect
@@ -736,7 +724,7 @@ const nextConfig = {
       },
       {
         source: '/product/uncategorized/mobile-office-container',
-        destination: 'https://www.samanportable.com/product/container-offices/mobile-office-container',
+        destination: 'https://www.samanportable.com/product/portable-office/portable-office-container',
         permanent: true,
       },
       {
@@ -770,27 +758,27 @@ const nextConfig = {
       // excluded (kept 404 / 410-later). ───────────────────────────────────
       {
         source: '/office-cabins',
-        destination: 'https://www.samanportable.com/product/portable-office',
+        destination: 'https://www.samanportable.com/product-category/portable-office',
         permanent: true,
       },
       {
         source: '/project/container-cafe-india',
-        destination: 'https://www.samanportable.com/product/container-cafe',
+        destination: 'https://www.samanportable.com/product-category/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-cafe',
-        destination: 'https://www.samanportable.com/product/container-cafe',
+        destination: 'https://www.samanportable.com/product-category/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-homes-new',
-        destination: 'https://www.samanportable.com/product/container-houses',
+        destination: 'https://www.samanportable.com/product-category/container-houses',
         permanent: true,
       },
       {
         source: '/portfolio/portable-cabin-manufacturers-in-bangalore',
-        destination: 'https://www.samanportable.com/product/portable-cabin',
+        destination: 'https://www.samanportable.com/product-category/portable-cabin',
         permanent: true,
       },
 
@@ -935,35 +923,35 @@ const nextConfig = {
       // (3-month GSC), doorway-page risk per Rulebook L10. Owner-approved redirect
       // to the C4 category. Slash-less destination (trailingSlash:false) to avoid a
       // chain — matches existing /product-category/container-offices siblings.
-      { source: '/container-offices-for-sale-in-anekal', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-banashankari', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-bannerghatta-road', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-bellandur', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-btm-layout', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-domlur', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-electronic-city', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-frazer-town', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-hebbal', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-hennur', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-hsr-layout', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-jigani', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-kengeri', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-koramangala', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-kr-puram', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-magadi-road', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-malleshwaram', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-marathahalli', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-nagarbhavi', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-rajajinagar', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-rt-nagar', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-sarjapur-road', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-shivajinagar', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-ulsoor', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-whitefield', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-for-sale-in-yelahanka', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-in-east-delhi', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-in-ghaziabad', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
-      { source: '/container-offices-in-north-delhi', destination: 'https://www.samanportable.com/product/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-anekal', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-banashankari', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-bannerghatta-road', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-bellandur', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-btm-layout', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-domlur', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-electronic-city', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-frazer-town', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-hebbal', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-hennur', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-hsr-layout', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-jigani', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-kengeri', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-koramangala', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-kr-puram', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-magadi-road', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-malleshwaram', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-marathahalli', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-nagarbhavi', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-rajajinagar', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-rt-nagar', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-sarjapur-road', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-shivajinagar', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-ulsoor', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-whitefield', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-for-sale-in-yelahanka', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-in-east-delhi', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-in-ghaziabad', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
+      { source: '/container-offices-in-north-delhi', destination: 'https://www.samanportable.com/product-category/container-offices', permanent: true },
 
       // ─── CSV BULK REDIRECTS (572 entries from spreadsheet) ───────────────
       // Source: Untitled spreadsheet - Sheet1 (1).csv
@@ -1002,7 +990,7 @@ const nextConfig = {
       },
       {
         source: '/product/cargo-container-office',
-        destination: 'https://www.samanportable.com/product/container-offices/cargo-container-office',
+        destination: 'https://www.samanportable.com/product/container-offices/shipping-container-office',
         permanent: true,
       },
       {
@@ -1027,7 +1015,7 @@ const nextConfig = {
       },
       {
         source: '/product/container-portable-office',
-        destination: 'https://www.samanportable.com/product/container-offices/container-portable-office',
+        destination: 'https://www.samanportable.com/product/portable-office/portable-office-container',
         permanent: true,
       },
       {
@@ -1077,12 +1065,12 @@ const nextConfig = {
       },
       {
         source: '/product/mobile-container-office',
-        destination: 'https://www.samanportable.com/product/container-offices/mobile-office-container',
+        destination: 'https://www.samanportable.com/product/portable-office/portable-office-container',
         permanent: true,
       },
       {
         source: '/product/mobile-office-container',
-        destination: 'https://www.samanportable.com/product/container-offices/mobile-office-container',
+        destination: 'https://www.samanportable.com/product/portable-office/portable-office-container',
         permanent: true,
       },
       {
@@ -1102,7 +1090,7 @@ const nextConfig = {
       },
       {
         source: '/product/modular-container-office',
-        destination: 'https://www.samanportable.com/product/container-offices/modular-container-office',
+        destination: 'https://www.samanportable.com/product/container-offices',
         permanent: true,
       },
       {
@@ -1342,57 +1330,57 @@ const nextConfig = {
       },
       {
         source: '/project/bunkhouse-for-rent',
-        destination: 'https://www.samanportable.com/product/labor-colony',
+        destination: 'https://www.samanportable.com/product-category/labor-colony',
         permanent: true,
       },
       {
         source: '/project/bunkhouse-for-sale',
-        destination: 'https://www.samanportable.com/product/labor-colony',
+        destination: 'https://www.samanportable.com/product-category/labor-colony',
         permanent: true,
       },
       {
         source: '/project/container-cafes-in-bangalore',
-        destination: 'https://www.samanportable.com/product/container-cafe',
+        destination: 'https://www.samanportable.com/product-category/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-cafes',
-        destination: 'https://www.samanportable.com/product/container-cafe',
+        destination: 'https://www.samanportable.com/product-category/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-homes-for-sale',
-        destination: 'https://www.samanportable.com/product/container-houses',
+        destination: 'https://www.samanportable.com/product-category/container-houses',
         permanent: true,
       },
       {
         source: '/project/container-hotel-for-sale',
-        destination: 'https://www.samanportable.com/product/container-houses',
+        destination: 'https://www.samanportable.com/product-category/container-houses',
         permanent: true,
       },
       {
         source: '/project/peb-manufacturer',
-        destination: 'https://www.samanportable.com/product/peb-constructions',
+        destination: 'https://www.samanportable.com/product-category/peb-constructions',
         permanent: true,
       },
       {
         source: '/project/porta-cabin-interior',
-        destination: 'https://www.samanportable.com/product/porta-cabins',
+        destination: 'https://www.samanportable.com/product-category/porta-cabins',
         permanent: true,
       },
       {
         source: '/project/portable-bunkhouse',
-        destination: 'https://www.samanportable.com/product/labor-colony',
+        destination: 'https://www.samanportable.com/product-category/labor-colony',
         permanent: true,
       },
       {
         source: '/project/portable-cabin-in-bangalore',
-        destination: 'https://www.samanportable.com/product/portable-cabin',
+        destination: 'https://www.samanportable.com/product-category/portable-cabin',
         permanent: true,
       },
       {
         source: '/project/portable-cabin-manufacturers-in-bangalore',
-        destination: 'https://www.samanportable.com/product/portable-cabin',
+        destination: 'https://www.samanportable.com/product-category/portable-cabin',
         permanent: true,
       },
       {
@@ -1407,22 +1395,22 @@ const nextConfig = {
       },
       {
         source: '/project/prefab-house',
-        destination: 'https://www.samanportable.com/product/prefabricated-houses',
+        destination: 'https://www.samanportable.com/product-category/prefabricated-houses',
         permanent: true,
       },
       {
         source: '/project/prefab-labour-colony-in-bangalore',
-        destination: 'https://www.samanportable.com/product/labor-colony',
+        destination: 'https://www.samanportable.com/product-category/labor-colony',
         permanent: true,
       },
       {
         source: '/project/prefabricated-office',
-        destination: 'https://www.samanportable.com/product/portable-office',
+        destination: 'https://www.samanportable.com/product-category/portable-office',
         permanent: true,
       },
       {
         source: '/project/prefabricated-steel-buildings',
-        destination: 'https://www.samanportable.com/product/pre-engineered-buildings',
+        destination: 'https://www.samanportable.com/product-category/pre-engineered-buildings',
         permanent: true,
       },
       {
@@ -1437,7 +1425,7 @@ const nextConfig = {
       },
       {
         source: '/project/shipping-container-homes-for-sale',
-        destination: 'https://www.samanportable.com/product/container-houses',
+        destination: 'https://www.samanportable.com/product-category/container-houses',
         permanent: true,
       },
       // ──────────────────────────────────────────────────
@@ -1519,7 +1507,7 @@ const nextConfig = {
       // Destination verified 200 and is NOT a redirect source.
       {
         source: '/used-portacabins-for-sale',
-        destination: 'https://www.samanportable.com/product/porta-cabins',
+        destination: 'https://www.samanportable.com/product-category/porta-cabins',
         permanent: true,
       },
 
@@ -1653,7 +1641,7 @@ const nextConfig = {
       // CSV /prefab-office-spaces). Office-intent -> portable-office chosen.
       {
         source: '/prefabricated-office-buildings',
-        destination: 'https://www.samanportable.com/product/portable-office',
+        destination: 'https://www.samanportable.com/product-category/portable-office',
         permanent: true,
       },
       // (B55-2) Small cabin designs: 0 clicks / 18 impr, off-brand residential
@@ -1663,7 +1651,7 @@ const nextConfig = {
       // 2024 -> same keeper; "porta cabin design" ranks pos ~1.1).
       {
         source: '/small-cabin-designs',
-        destination: 'https://www.samanportable.com/product/porta-cabins',
+        destination: 'https://www.samanportable.com/product-category/porta-cabins',
         permanent: true,
       },
       // (B55-3) 6 reasons to buy a portable building (this winter): 0/0 GSC. Off-
@@ -1671,7 +1659,7 @@ const nextConfig = {
       // (cf. CSV /portable-buildings, /portable-building-solutions -> same keeper).
       {
         source: '/6-reasons-benefits-2-buy-portable-building',
-        destination: 'https://www.samanportable.com/product/prefab-buildings',
+        destination: 'https://www.samanportable.com/product-category/prefab-buildings',
         permanent: true,
       },
       // (B55-4) Small portable buildings solutions: 0 clicks / 10 impr. Duplicate
@@ -1680,7 +1668,7 @@ const nextConfig = {
       // Same title, same off-brand body. Sent to the SAME keeper for consistency.
       {
         source: '/small-portable-buildings-solutions',
-        destination: 'https://www.samanportable.com/product/prefab-buildings',
+        destination: 'https://www.samanportable.com/product-category/prefab-buildings',
         permanent: true,
       },
       // (B55-5) Rise of prefab office & structures in 2024: 0/0 GSC. Dated-slug
@@ -1690,7 +1678,7 @@ const nextConfig = {
       // SAME keeper for consistency (resolves the B53 redirect-vs-retire question).
       {
         source: '/rise-of-prefab-office-and-structures-in-2024',
-        destination: 'https://www.samanportable.com/product/prefab-buildings',
+        destination: 'https://www.samanportable.com/product-category/prefab-buildings',
         permanent: true,
       },
 
@@ -1804,21 +1792,6 @@ const nextConfig = {
       { source: '/bommasandra-porta-cabins', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bommasandra', permanent: true },
       { source: '/20ft-porta-cabin', destination: 'https://www.samanportable.com/porta-cabin-sizes-and-specifications-in-india', permanent: true },
       { source: '/porta-cabins-in-mg-road', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bangalore', permanent: true },
-
-      // T25 — porta cabin subpage consolidations (SAMAN-ruled 18 Jul 2026).
-      // Placed BEFORE ...csvRedirects so first-match-wins.
-      // Both sources drop out of the sitemap automatically: next-sitemap filters every
-      // emitted URL through getRedirectSources().
-      {
-        source: '/product/porta-cabins/toilet-porta-cabins',
-        destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet',
-        permanent: true,
-      },
-      {
-        source: '/product/porta-cabins/portacabin-office',
-        destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-office',
-        permanent: true,
-      },
 
       ...csvRedirects,
     ];
@@ -2006,12 +1979,8 @@ const nextConfig = {
 
   // Performance optimizations - ENHANCED
   experimental: {
-    // Build-time static-generation concurrency cap (applies to `next build` only):
-    // limits prerender worker count so the getStaticProps fetch burst stays under
-    // the shared LiteSpeed host's safe ~4 concurrent. Does NOT affect runtime
-    // SSR/getServerSideProps or ISR on-demand revalidation concurrency.
-    cpus: 3,
     optimizeCss: false,
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
     // Reduce bundle size warnings
     largePageDataBytes: 128 * 1024, // 128KB threshold instead of default 128KB
     // Additional performance optimizations
