@@ -178,6 +178,27 @@ export default function ProductStructuredData({ product, category, reviews, brea
   // visible on the page (hero badge + Reviews tab), so no fake/unbacked rating.
   const variantProductName = resolveVariantProductName(variantData, product.name);
 
+  // Ex-GST AggregateOffer for a variant product whose ladder is confirmed and which
+  // opts in (variantData.emitAggregateOffer). Emitted on the ProductGroup INSTEAD of
+  // per-variant Offers, so the single price signal is the ex-GST range that matches
+  // the visible primary price. porta-cabins does not set the flag → this stays null and
+  // its per-variant Offers are untouched (byte-identical).
+  const exGstPrices = variantData
+    ? variantData.variants.map((v) => v.priceExGst).filter((p): p is number => p != null)
+    : [];
+  const aggregateOfferStructuredData =
+    variantData?.emitAggregateOffer && exGstPrices.length === variantData.variants.length && exGstPrices.length > 0
+      ? {
+          '@type': 'AggregateOffer',
+          priceCurrency: 'INR',
+          lowPrice: Math.min(...exGstPrices),
+          highPrice: Math.max(...exGstPrices),
+          offerCount: variantData.variants.length,
+          availability: 'https://schema.org/InStock',
+          priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+        }
+      : null;
+
   const productGroupStructuredData = variantData ? {
     '@context': 'https://schema.org/',
     '@type': 'ProductGroup',
@@ -188,6 +209,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
       name: 'Saman Portable'
     },
     variesBy: 'size',
+    ...(aggregateOfferStructuredData ? { offers: aggregateOfferStructuredData } : {}),
     ...(aggregateRatingStructuredData ? { aggregateRating: aggregateRatingStructuredData } : {}),
     ...(reviewNodes.length > 0 ? { review: reviewNodes } : {}),
     hasVariant: variantData.variants.map((v) => ({
@@ -203,13 +225,19 @@ export default function ProductStructuredData({ product, category, reviews, brea
       // dimension separator normalised to × (10x10 ft -> "10×10 ft").
       size: v.label.replace(/(\d)\s*x\s*(\d)/i, '$1×$2'),
       ...(v.images[0] ? { image: `${baseUrl}${v.images[0].src}` } : {}),
-      offers: {
-        '@type': 'Offer',
-        price: v.priceInclGst,
-        priceCurrency: 'INR',
-        availability: 'https://schema.org/InStock',
-        url: productUrl,
-      },
+      // Per-variant Offer (incl-GST) — the porta-cabins pattern. Suppressed when the
+      // page emits an ex-GST AggregateOffer instead (emitAggregateOffer), and omitted
+      // entirely while a price is gated (priceInclGst null). porta-cabins sets neither
+      // flag → this emits exactly as before (flagship byte-identity).
+      ...((!variantData.emitAggregateOffer && v.priceInclGst != null) ? {
+        offers: {
+          '@type': 'Offer',
+          price: v.priceInclGst,
+          priceCurrency: 'INR',
+          availability: 'https://schema.org/InStock',
+          url: productUrl,
+        },
+      } : {}),
     })),
   } : null;
 

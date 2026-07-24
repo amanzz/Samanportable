@@ -10,11 +10,19 @@ export interface ProductVariant {
   label: string;
   dims: string;
   areaSqft: number;
-  priceExGst: number;
+  /** Ex-GST price. `null` = price GATED (owner has not confirmed the ladder): the
+      buy box shows "Price on request — send enquiry", the ₹/sq ft line is hidden,
+      and NO per-variant offer / AggregateOffer is emitted in schema. A number
+      renders exactly as before (flagship byte-identity). */
+  priceExGst: number | null;
   /** Incl-GST (18%) price — owner-supplied figure; = priceExGst × 1.18. Shown as
-      a muted line under the ex-GST price, and used for Merchant offers.price. */
-  priceInclGst: number;
-  capacity: string;
+      a muted line under the ex-GST price, and used for Merchant offers.price.
+      `null` when priceExGst is null (gated). */
+  priceInclGst: number | null;
+  /** Indicative operator/service guidance. OPTIONAL — the porta-cabins buy-box does
+      not show a capacity field, so pages matching that design (e.g. portable-shop-cabin)
+      omit it. Rendered only in the Applications Explorer data row, when present. */
+  capacity?: string;
   useCase: string;
   sku: string;
   images: VariantImage[];
@@ -67,6 +75,13 @@ export interface VariantProductData {
       Explorer section renders NOTHING — it never falls back to another product's
       copy. */
   applicationsDataset?: string;
+  /** Override for the buy-box "Delivery" feature cell. Default (absent) keeps the
+      porta-cabins value "7–21 Working Days" → flagship byte-identical. */
+  deliveryLabel?: string;
+  /** Emit an ex-GST AggregateOffer (lowPrice/highPrice/offerCount) on the ProductGroup
+      instead of per-variant Offers. Absent on porta-cabins → per-variant Offers kept,
+      byte-identical. Set true only when a page's price ladder is confirmed. */
+  emitAggregateOffer?: boolean;
   /** T25 VIDEO OPT-IN. Absent/false (the default) = no video facade thumb and no
       VideoObject JSON-LD. Set true ONLY on a product that genuinely has its own
       overview video AND video metadata (own `video` field or a preset). */

@@ -212,10 +212,74 @@ export function buildShippingHtml(): string {
   );
 }
 
-/** Both tab bodies for a page slug, or null when the slug is not one of the 13 in scope. */
+// ─── C-02 Portable Shop Cabin — flat Specifications table (Fable 5 §C, verbatim) ─
+// This page is NOT part of the T31 grouped specs dataset. Its Specifications tab is
+// a single flat Element/Specification table with a retail-duty intro and three
+// retail-fitment rows (shopfront opening, display glazing, service counter) that are
+// highlighted but carry NO invented dimensions — configuration stays "to approved
+// drawing" exactly as written. Rendered through the SAME specificationsHtml override
+// slot the route already reads, so no route change is needed and the 13 porta-cabin
+// pages are untouched. Shipping stays the shared buildShippingHtml.
+const PSC_SPEC_INTRO =
+  'A portable shop cabin uses the same relocatable MS platform as our portable cabin ' +
+  'range, specified here for retail duty: the corrugated steel shell and welded frame ' +
+  'carry a shopfront opening, service counter and display glazing without losing ' +
+  'liftability. The materials and sections below are the shared SAMAN cabin standard; ' +
+  'the shop configuration adds the counter and front opening in the approved drawing, ' +
+  'so the unit reads as a shopfront yet still travels and re-sites like any portable cabin.';
+
+// [element, specification, isRetailFitment] — verbatim from copy pack §C.
+const PSC_SPEC_ROWS: [string, string, boolean][] = [
+  ['Primary base frame', '100×50×3 mm MS C-channel (ISI-standard or approved equivalent), welded', false],
+  ['Floor framing', 'MS base + cross-member grid supporting 18 mm Bison / cement-fibre board', false],
+  ['Top frame', '50×50×1.6 mm MS square-pipe perimeter', false],
+  ['Roof stiffeners', '50×50×1.2 mm MS square-pipe + 50×40/40×40/25×25 mm secondary', false],
+  ['Corner / wall posts', '50×50×2 mm MS square-pipe (or approved 60×60 mm MS angle)', false],
+  ['Exterior wall', '1.2 mm specially corrugated MS sheet', false],
+  ['Roof', '1.4 mm corrugated MS sheet', false],
+  ['Interior wall', '8 mm pre-laminated MDF with aluminium H-joint sections', false],
+  ['Ceiling', '8 mm pre-laminated MDF', false],
+  ['Floor board / finish', '18 mm Bison panel + 1.3 mm vinyl flooring', false],
+  ['Wall insulation', '25 mm glass wool or 12 mm heatlon', false],
+  ['Roof insulation', '50 mm glass wool, ~42 kg/m³', false],
+  ['Shopfront opening', 'Roller shutter and/or sliding display window at the front bay, sized to approved drawing', true],
+  ['Display glazing', 'Sliding aluminium display window, 4 mm glass', true],
+  ['Service counter', 'Fixed front counter shelf; position and height to approved drawing', true],
+  ['Door', '7×3 ft externally opening MS-framed, 30×30 mm MS tubular (service/rear door)', false],
+  ['Windows', 'Two-track powder-coated aluminium sliding, 4 mm glass', false],
+  ['Electrical', 'LED lights, modular switches, 6A/16A sockets, fan + AC provision; signage/display power point on request', false],
+  ['Finish', 'Anti-rust enamel, approved colour', false],
+  ['Warranty', '5–10 years, confirmed at quotation', false],
+];
+
+export function buildPortableShopCabinSpecificationsHtml(): string {
+  const rows = PSC_SPEC_ROWS.map(([element, spec, retail]) => {
+    const cls = retail ? `${TD} font-semibold text-emerald-900` : TD;
+    return `<tr><td class="${cls}">${esc(element)}</td><td class="${cls}">${esc(spec)}</td></tr>`;
+  }).join('');
+  return (
+    `<div class="not-prose">` +
+      `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(PSC_SPEC_INTRO)}</p>` +
+      `<div class="overflow-x-auto">` +
+        `<table class="w-full border-collapse"><thead><tr>` +
+          `<th class="${TH}">Element</th><th class="${TH}">Specification</th>` +
+        `</tr></thead><tbody>${rows}</tbody></table>` +
+      `</div>` +
+    `</div>`
+  );
+}
+
+/** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
 ): { specificationsHtml: string; shippingHtml: string } | null {
+  // C-02 portable shop cabin — flat spec table + shared shipping.
+  if (pageSlug === 'portable-shop-cabin') {
+    return {
+      specificationsHtml: buildPortableShopCabinSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
   const key = resolveSpecsKey(pageSlug);
   if (!key) return null;
   return {

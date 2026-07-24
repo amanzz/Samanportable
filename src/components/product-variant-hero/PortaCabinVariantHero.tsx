@@ -27,6 +27,7 @@ import type { VariantProductData } from './types';
 import { formatIndianPrice } from './types';
 import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
+import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 
 interface ApplicationPanel {
@@ -74,6 +75,10 @@ const fromSectionHDrop = (bySize: Record<string, SectionHPanel>): ApplicationsDa
 // owner-authored and must never be substituted with another product's text.
 const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   'porta-cabins': portaCabinsApplications as ApplicationsData,
+  // C-02 portable-shop-cabin — same shape as the porta-cabins dataset, so it renders
+  // through the identical SizeApplicationsExplorer. Resolved via productSlug (the data
+  // file sets no applicationsDataset override), and additive → porta-cabins unaffected.
+  'portable-shop-cabin': portableShopCabinApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
       ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
@@ -154,11 +159,14 @@ const APPLICATIONS_SECTION_ID = 'porta-size-applications';
 const pricePerSqft = (
   overrides: Record<string, string> | undefined,
   sizeSlug: string,
-  priceExGst: number,
+  priceExGst: number | null,
   areaSqft: number
 ): string => {
   const override = overrides?.[sizeSlug];
   if (override) return override;
+  // Price GATED (null) → no derived ₹/sq ft. Never reached by the flagship (all
+  // nine prices are numbers), so its output is unchanged.
+  if (priceExGst == null) return '';
   if (!areaSqft) return '';
   return Math.round(priceExGst / areaSqft).toLocaleString('en-IN');
 };
@@ -422,7 +430,7 @@ export function PortaCabinVariantHero({
   const FEATURE_CELLS = [
     { label: 'Size', value: heroActive.dims },
     { label: 'Material', value: 'MS Frame · Insulated Panels' },
-    { label: 'Delivery', value: '7–21 Working Days' },
+    { label: 'Delivery', value: data.deliveryLabel || '7–21 Working Days' },
     { label: 'Coverage', value: 'Bangalore · Delhi NCR' },
     { label: 'Brand', value: 'SAMAN Portable' },
     { label: 'Application', value: heroActive.useCase },
@@ -478,10 +486,19 @@ export function PortaCabinVariantHero({
               separator here — byte-identical to the T24.1 markup, which had the
               product noun as a literal in the trailing static string. */}
           <p className="text-sm text-muted-foreground">{heroActive.label}{` ${productName}`}</p>
-          <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
-            {formatIndianPrice(heroActive.priceExGst)} + GST
-          </span>
-          <p className="text-xs text-muted-foreground">{formatIndianPrice(heroActive.priceInclGst)} incl. 18% GST</p>
+          {/* Price GATED (priceExGst null): show the enquiry line, no numbers, no
+              incl-GST line. When priceExGst is a number the ORIGINAL two elements
+              render unchanged (the fragment is transparent → flagship byte-identity). */}
+          {heroActive.priceExGst == null ? (
+            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">Price on request — send enquiry</span>
+          ) : (
+            <>
+              <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
+                {formatIndianPrice(heroActive.priceExGst)} + GST
+              </span>
+              <p className="text-xs text-muted-foreground">{formatIndianPrice(heroActive.priceInclGst!)} incl. 18% GST</p>
+            </>
+          )}
         </div>
 
         {/* Per-size shortDescription (Section E v2.1). Per-breakpoint FIXED heights
@@ -649,7 +666,7 @@ export function PortaCabinVariantHero({
         <div className="flex items-center justify-between gap-3 px-4 py-3">
           <div>
             <p className="text-[11px] text-muted-foreground leading-none">{heroActive.label} ft</p>
-            <p className="text-base font-bold text-primary leading-tight">{formatIndianPrice(heroActive.priceExGst)} + GST</p>
+            <p className="text-base font-bold text-primary leading-tight">{heroActive.priceExGst == null ? 'Price on request' : <>{formatIndianPrice(heroActive.priceExGst)} + GST</>}</p>
           </div>
           <Button
             type="button"
@@ -776,7 +793,15 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           const panelImage = panelSrc
             ? {
                 src: panelSrc,
-                alt: applicationAlt(v.label, panel.applications[0], productNameLower),
+                // When the Explorer reuses this size's gallery HERO shot (panelSrc equals
+                // the first gallery image — e.g. the C-02 shop cabin, which ships no
+                // separate elevated-view per the FIX-PACKET), carry that image's own §E
+                // alt. Products whose Explorer uses a DISTINCT shot (porta-cabins →
+                // elevated-view) keep the derived application alt, byte-identical.
+                alt:
+                  panelSrc === v.images[0]?.src && v.images[0]?.alt
+                    ? v.images[0].alt
+                    : applicationAlt(v.label, panel.applications[0], productNameLower),
               }
             : null;
           const rate = pricePerSqft(data.pricePerSqft, v.sizeSlug, v.priceExGst, v.areaSqft);
@@ -865,7 +890,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   <span aria-hidden="true">·</span>
                   <span>{v.capacity}</span>
                   <span aria-hidden="true">·</span>
-                  <span className="font-bold text-[var(--ds-color-forest)]">{formatIndianPrice(v.priceExGst)} + GST</span>
+                  <span className="font-bold text-[var(--ds-color-forest)]">{v.priceExGst == null ? 'Price on request' : <>{formatIndianPrice(v.priceExGst)} + GST</>}</span>
                   <span aria-hidden="true">·</span>
                   <span>₹{rate}/sq ft</span>
                 </div>
