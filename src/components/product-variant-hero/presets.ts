@@ -90,7 +90,10 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     categoryLabel: 'Portable Cabin',
     categoryHref: '/product/portable-cabin',
     productSku: 'SP-PSC-15-2024',
-    explorerImageTemplate: '/images/products/portable-shop-cabin/{sizeSlug}/portable-shop-cabin-{sizeSlug}-elevated-view.webp',
+    // Explorer tab image = each size's hero-view WebP (FIX-PACKET) — this product ships
+    // 5 views (no elevated-view), so the Explorer reuses the gallery hero shot. The hero
+    // component then carries that image's own §E alt (see panelImage below).
+    explorerImageTemplate: '/images/products/portable-shop-cabin/{sizeSlug}/portable-shop-cabin-{sizeSlug}-hero-view.webp',
   },
   ...subpagePresets(),
 };

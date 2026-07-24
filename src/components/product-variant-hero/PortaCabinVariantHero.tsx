@@ -793,7 +793,15 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           const panelImage = panelSrc
             ? {
                 src: panelSrc,
-                alt: applicationAlt(v.label, panel.applications[0], productNameLower),
+                // When the Explorer reuses this size's gallery HERO shot (panelSrc equals
+                // the first gallery image — e.g. the C-02 shop cabin, which ships no
+                // separate elevated-view per the FIX-PACKET), carry that image's own §E
+                // alt. Products whose Explorer uses a DISTINCT shot (porta-cabins →
+                // elevated-view) keep the derived application alt, byte-identical.
+                alt:
+                  panelSrc === v.images[0]?.src && v.images[0]?.alt
+                    ? v.images[0].alt
+                    : applicationAlt(v.label, panel.applications[0], productNameLower),
               }
             : null;
           const rate = pricePerSqft(data.pricePerSqft, v.sizeSlug, v.priceExGst, v.areaSqft);
