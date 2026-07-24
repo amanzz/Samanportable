@@ -269,6 +269,54 @@ export function buildPortableShopCabinSpecificationsHtml(): string {
   );
 }
 
+// ─── C-02 Portable Cabin HUB — flat spec table (cluster copy pack §C, verbatim) ────
+// The shared SAMAN cabin baseline (17 rows, no shopfront/retail rows — that is the
+// plain multipurpose cabin) plus the hub's own intro, rendered through the same flat
+// override slot. Additive: shop-cabin and porta-cabin handling are untouched.
+const PORTABLE_CABIN_SPEC_INTRO =
+  'This is the structural backbone that lets a portable cabin be lifted, carried and ' +
+  'reused. The welded MS frame, corrugated steel envelope and integrated lifting lugs ' +
+  'are specified so the unit keeps its geometry through repeated crane lifts and road ' +
+  'transport — the specification of a cabin built to move, not a fixed box. Section ' +
+  'sizes and openings below are the standard multipurpose configuration; layout is ' +
+  'finalised to your approved drawing.';
+
+const PORTABLE_CABIN_SPEC_ROWS: [string, string][] = [
+  ['Primary base frame', '100×50×3 mm MS C-channel (ISI-standard or approved equivalent), welded'],
+  ['Floor framing', 'MS base + cross-member grid supporting 18 mm Bison / cement-fibre board'],
+  ['Top frame', '50×50×1.6 mm MS square-pipe perimeter'],
+  ['Roof stiffeners', '50×50×1.2 mm MS square-pipe + 50×40/40×40/25×25 mm secondary'],
+  ['Corner / wall posts', '50×50×2 mm MS square-pipe (or approved 60×60 mm MS angle)'],
+  ['Exterior wall', '1.2 mm specially corrugated MS sheet'],
+  ['Roof', '1.4 mm corrugated MS sheet'],
+  ['Interior wall', '8 mm pre-laminated MDF with aluminium H-joint sections'],
+  ['Ceiling', '8 mm pre-laminated MDF'],
+  ['Floor board / finish', '18 mm Bison panel + 1.3 mm vinyl flooring'],
+  ['Wall insulation', '25 mm glass wool or 12 mm heatlon'],
+  ['Roof insulation', '50 mm glass wool, ~42 kg/m³'],
+  ['Door', '7×3 ft externally opening MS-framed, 30×30 mm MS tubular'],
+  ['Windows', 'Two-track powder-coated aluminium sliding, 4 mm glass'],
+  ['Electrical', 'LED lights, modular switches, 6A/16A sockets, fan + AC provision'],
+  ['Finish', 'Anti-rust enamel, approved colour'],
+  ['Warranty', '5–10 years, confirmed at quotation'],
+];
+
+export function buildPortableCabinSpecificationsHtml(): string {
+  const rows = PORTABLE_CABIN_SPEC_ROWS.map(
+    ([element, spec]) => `<tr><td class="${TD}">${esc(element)}</td><td class="${TD}">${esc(spec)}</td></tr>`
+  ).join('');
+  return (
+    `<div class="not-prose">` +
+      `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(PORTABLE_CABIN_SPEC_INTRO)}</p>` +
+      `<div class="overflow-x-auto">` +
+        `<table class="w-full border-collapse"><thead><tr>` +
+          `<th class="${TH}">Element</th><th class="${TH}">Specification</th>` +
+        `</tr></thead><tbody>${rows}</tbody></table>` +
+      `</div>` +
+    `</div>`
+  );
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -277,6 +325,13 @@ export function getProductTabsHtml(
   if (pageSlug === 'portable-shop-cabin') {
     return {
       specificationsHtml: buildPortableShopCabinSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
+  // C-02 portable cabin HUB — flat cabin-baseline spec table + shared shipping.
+  if (pageSlug === 'portable-cabin') {
+    return {
+      specificationsHtml: buildPortableCabinSpecificationsHtml(),
       shippingHtml: buildShippingHtml(),
     };
   }

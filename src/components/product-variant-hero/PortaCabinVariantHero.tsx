@@ -29,6 +29,7 @@ import { formatIndianPrice } from './types';
 import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
+import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 
 interface ApplicationPanel {
@@ -80,6 +81,9 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // through the identical SizeApplicationsExplorer. Resolved via productSlug (the data
   // file sets no applicationsDataset override), and additive → porta-cabins unaffected.
   'portable-shop-cabin': portableShopCabinApplications as ApplicationsData,
+  // C-02 portable-cabin HUB — same dataset shape → identical SizeApplicationsExplorer.
+  // Resolves via productSlug; additive, so porta-cabins/shop-cabin are unaffected.
+  'portable-cabin': portableCabinApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
       ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
