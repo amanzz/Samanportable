@@ -1,12 +1,11 @@
 {
   "productSlug": "portable-shop-cabin",
   "variantAxis": "size",
-  "defaultVariant": "10x10",
+  "defaultVariant": "20x10",
   "hsn": "9406",
   "gstPercent": 18,
   "deliveryLabel": "7 working days",
   "emitAggregateOffer": true,
-  "showSizesTable": true,
   "variants": [
     {
       "sizeSlug": "10x10",
@@ -15,6 +14,7 @@
       "areaSqft": 100,
       "priceExGst": 225000,
       "priceInclGst": 265500,
+      "capacity": "1 operator",
       "useCase": "Single-counter retail outlet",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -58,6 +58,7 @@
       "areaSqft": 160,
       "priceExGst": 307500,
       "priceInclGst": 362850,
+      "capacity": "1 operator",
       "useCase": "Slim retail outlet / service counter",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -101,6 +102,7 @@
       "areaSqft": 200,
       "priceExGst": 337500,
       "priceInclGst": 398250,
+      "capacity": "1–2 operators",
       "useCase": "Everyday shop — counter + display",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -144,6 +146,7 @@
       "areaSqft": 240,
       "priceExGst": 375500,
       "priceInclGst": 443090,
+      "capacity": "1–2 operators",
       "useCase": "Shop — counter + extra stock space",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -187,6 +190,7 @@
       "areaSqft": 300,
       "priceExGst": 447500,
       "priceInclGst": 528050,
+      "capacity": "2–3 operators",
       "useCase": "Large outlet — counter + storeroom",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -230,6 +234,7 @@
       "areaSqft": 320,
       "priceExGst": 463500,
       "priceInclGst": 546930,
+      "capacity": "2–3 operators",
       "useCase": "Extended shopfront / arcade counter",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -273,6 +278,7 @@
       "areaSqft": 400,
       "priceExGst": 557500,
       "priceInclGst": 657850,
+      "capacity": "2–3 operators",
       "useCase": "Wide shopfront or shop-plus-store",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -316,6 +322,7 @@
       "areaSqft": 400,
       "priceExGst": 557500,
       "priceInclGst": 657850,
+      "capacity": "3–4 operators",
       "useCase": "Full-length shop — counter, display, stock",
       "sku": "SP-PSC-15-2024",
       "images": [
@@ -359,6 +366,7 @@
       "areaSqft": 480,
       "priceExGst": 639500,
       "priceInclGst": 754610,
+      "capacity": "3–4 operators",
       "useCase": "Largest shop — shopfront, display, back store",
       "sku": "SP-PSC-15-2024",
       "images": [

@@ -82,10 +82,6 @@ export interface VariantProductData {
       instead of per-variant Offers. Absent on porta-cabins → per-variant Offers kept,
       byte-identical. Set true only when a page's price ladder is confirmed. */
   emitAggregateOffer?: boolean;
-  /** C-02 portable-shop-cabin opt-in: render the SSR "Sizes at a glance" reference
-      table below the hero (size · floor area · best-for · travels-on · price). Absent
-      on every porta-cabin page → not rendered → those pages stay byte-identical. */
-  showSizesTable?: boolean;
   /** T25 VIDEO OPT-IN. Absent/false (the default) = no video facade thumb and no
       VideoObject JSON-LD. Set true ONLY on a product that genuinely has its own
       overview video AND video metadata (own `video` field or a preset). */

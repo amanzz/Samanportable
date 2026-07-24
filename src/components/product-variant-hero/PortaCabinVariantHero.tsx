@@ -27,6 +27,7 @@ import type { VariantProductData } from './types';
 import { formatIndianPrice } from './types';
 import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
+import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 
 interface ApplicationPanel {
@@ -74,6 +75,10 @@ const fromSectionHDrop = (bySize: Record<string, SectionHPanel>): ApplicationsDa
 // owner-authored and must never be substituted with another product's text.
 const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   'porta-cabins': portaCabinsApplications as ApplicationsData,
+  // C-02 portable-shop-cabin — same shape as the porta-cabins dataset, so it renders
+  // through the identical SizeApplicationsExplorer. Resolved via productSlug (the data
+  // file sets no applicationsDataset override), and additive → porta-cabins unaffected.
+  'portable-shop-cabin': portableShopCabinApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
       ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
@@ -165,19 +170,6 @@ const pricePerSqft = (
   if (!areaSqft) return '';
   return Math.round(priceExGst / areaSqft).toLocaleString('en-IN');
 };
-
-// "Sizes at a glance" — Travels on column (C-02 portable shop cabin only). Encodes
-// the copy-pack rule VERBATIM: units up to 20 ft on a 20 ft open trailer; 30–40 ft
-// on a 40 ft open trailer; 20×20 and 40×12 are over-dimensional (40 ft ODC).
-const travelsOnLabel = (sizeSlug: string): string => {
-  const [a, b] = sizeSlug.split('x').map(Number);
-  const longest = Math.max(a || 0, b || 0);
-  if ((a === 20 && b === 20) || (longest === 40 && Math.min(a, b) === 12)) return '40 ft ODC trailer';
-  if (longest >= 30) return '40 ft trailer';
-  return '20 ft trailer';
-};
-// "10x10 ft" → "10×10 ft" for the reference table's Size column.
-const sizeDisplay = (label: string): string => label.replace(/(\d+)\s*x\s*(\d+)/i, '$1×$2');
 
 
 export function PortaCabinVariantHero({
@@ -667,47 +659,6 @@ export function PortaCabinVariantHero({
           </div>
         </aside>
       </div>
-
-      {/* "Sizes at a glance" — SSR reference table (C-02 portable shop cabin only,
-          gated on data.showSizesTable → absent on every porta-cabin page, which keeps
-          them byte-identical). Each row carries id="size-{WxL}" so #size-10x10 etc.
-          deep-links land here. Best-for column reuses the variant useCase verbatim;
-          the Price column shows "On request" per row while the ex-GST ladder is
-          gated (Decision-S1) — the ex-GST caption is added only once numbers land. */}
-      {data.showSizesTable && (
-        <div className="mt-6">
-          <h2 className="mb-3 text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">Sizes at a glance</h2>
-          <div className="overflow-x-auto rounded-xl border border-[var(--ds-color-border)]">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="bg-[var(--ds-color-mist)]">
-                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Size (ft)</th>
-                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Floor area</th>
-                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Best for</th>
-                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Travels on</th>
-                  <th className="px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-[var(--ds-color-steel)]">Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.variants.map((v) => (
-                  <tr key={v.sizeSlug} id={`size-${v.sizeSlug}`} className="scroll-mt-24 border-t border-[var(--ds-color-border)]">
-                    <td className="px-3 py-2 font-semibold text-[var(--ds-color-forest)] whitespace-nowrap">{sizeDisplay(v.label)}</td>
-                    <td className="px-3 py-2 whitespace-nowrap text-[var(--ds-color-steel)]">{v.areaSqft} sq ft</td>
-                    <td className="px-3 py-2 text-[var(--ds-color-ink)]">{v.useCase}</td>
-                    <td className="px-3 py-2 whitespace-nowrap text-[var(--ds-color-steel)]">{travelsOnLabel(v.sizeSlug)}</td>
-                    <td className="px-3 py-2 whitespace-nowrap text-[var(--ds-color-steel)]">{v.priceExGst == null ? 'On request' : `${formatIndianPrice(v.priceExGst)} + GST`}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          {/* Ex-GST caption (copy pack §A-PRICE) — shown once the ladder is confirmed
-              (all sizes priced). Hidden while any size is gated. */}
-          {data.variants.every((v) => v.priceExGst != null) && (
-            <p className="mt-2 text-xs text-[var(--ds-color-steel)]">Prices are ex-GST for the base specification; 18% GST extra, shopfront fit-out and freight quoted separately.</p>
-          )}
-        </div>
-      )}
 
       {/* Mobile sticky buy bar — sits above the site-wide MobileBottomNav (h-16),
           hidden >=1024. The mobile conversion path stays: price + solid CTA. */}
