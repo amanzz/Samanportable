@@ -48,7 +48,7 @@ export const buildShippingContainerOfficeSpecificationsHtml = (): string => {
     SPECIFICATIONS_INTRO
   );
   const inheritedWarranty =
-    '<li class="text-sm text-slate-600">warranty &quot;12-month workmanship warranty, confirmed at quotation.&quot;</li>';
+    '<li class="text-sm text-slate-600">warranty "12-month workmanship warranty, confirmed at quotation."</li>';
   const exactWarranty = `<li class="text-sm text-slate-600">${escapeHtml(WARRANTY_LINE)}</li>`;
 
   if (!base.includes(inheritedWarranty)) {
