@@ -570,5 +570,48 @@
     "fullTechnicalDescription": "Toilet Porta Cabins is a factory-fabricated MS corrugated container-style cabin prepared on the 20x10x8.5 ft costing reference size (200 sq.ft.). It uses 125×75×4 mm protected MS C-channel as the main chassis, 1.2–1.6 mm corrugated MS sheet for the external walls and 1.4–1.6 mm corrugated MS sheet for the sloped roof. The interior uses 10–12 mm fibre-cement board with ceramic tiles or FRP finish in wet zones, with 50 mm mineral wool where required in the walls and 75 mm glass/mineral wool below the roof. The floor combines 18–24 mm cement board with waterproof membrane with 2.5–3 mm anti-skid safety vinyl, ceramic tile or FRP grating. Multi-seat sanitary cabin with waterproof lining, drainage and exhaust. Multi-seat sanitary fixture quantities distinguish this toilet-only page.",
     "commonPlatformSummary": "Welded mild-steel frame; corrugated MS external wall and roof; MS lifting lugs; copper wiring; DB/MCB; anti-corrosion primer and enamel; sealing; quality checks; 12-month workmanship warranty.",
     "keyDifferentiator": "Full toilet specification with multiple fixtures and wet-area materials."
+  },
+  "container-office-cabin": {
+    "product": "Container Office Cabin",
+    "cluster": "Container Offices",
+    "referenceSize": "20x10x8.5 ft",
+    "groups": {
+      "Structure & Chassis": {
+        "Reference Size": "20x10x8.5 ft",
+        "Area sq.ft.": 200,
+        "Bottom Frame": "100×50×3 mm MS C-channel",
+        "Bottom Stiffeners": "100×50 mm C-channels, 50×50 mm MS angles, 75×40 mm channels and MS square pipes",
+        "Floor Frame": "100×50, 80×40 and 50×50 mm MS square pipes as required",
+        "Top Frame": "50×50×1.6 mm MS square-pipe top frame",
+        "Roof Frame": "50×50×1.2 mm plus 50×40, 40×40, 50×25 and 25×25 mm MS members",
+        "Wall Frame": "50×50×2 mm MS square-pipe posts or 60×60 mm MS angles"
+      },
+      "Cladding & Sheets": {
+        "Exterior MS Wall Sheet": "1.2 mm specially corrugated MS sheet",
+        "MS Roof Sheet": "1.4 mm corrugated MS sheet",
+        "Decorative / Exterior Finish": "Standard anti-rust enamel exterior finish in an approved colour combination."
+      },
+      "Interior & Insulation": {
+        "Interior Wall": "8 mm pre-laminated MDF board with aluminium joint sections",
+        "Ceiling": "8 mm pre-laminated MDF ceiling",
+        "Floor Base": "18 mm Bison panel",
+        "Floor Finish": "1.3 mm vinyl flooring",
+        "Wall Insulation": "25 mm glass wool or 12 mm heatlon",
+        "Roof Insulation": "50 mm glass wool, nominal density 42 kg/m³"
+      },
+      "Openings & Services": {
+        "Main Door": "7×3 ft externally opening MS-framed door using 30×30 mm MS tubular sections",
+        "Windows / Service Opening": "Two-track powder-coated aluminium sliding windows with 4 mm glass",
+        "Grill / Mesh": "MS safety grill and mosquito mesh selectable according to site requirements.",
+        "Electrical Fittings": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
+        "Ventilation / AC": "Natural cross ventilation with fan, exhaust and AC provision as required.",
+        "Plumbing / Sanitary": "Not included unless shown in the approved scope."
+      },
+      "Layout": {
+        "Layout / Configuration": "Open single-room layout with furniture and partitions finalized by approved drawing."
+      }
+    },
+    "fullTechnicalDescription": "A container office cabin runs the SAMAN cabin specification in squared container form — the welded MS frame and insulated envelope below are the shared standard; the container-form shell is what keeps the rate the lowest in the cluster.",
+    "commonPlatformSummary": "12-month workmanship warranty, confirmed at quotation."
   }
 }
