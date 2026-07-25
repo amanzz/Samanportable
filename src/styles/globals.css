@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Keep the server-rendered homepage content intact while allowing Chromium to
+   skip layout and paint work for sections below the initial mobile viewport. */
+.homepage-below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 12000px;
+}
+
 /* Related Products Slider Styles */
 @layer components {
   .related-products-slider {
@@ -472,10 +479,6 @@
     }
     
     /* Mobile LCP optimization class */
-    .mobile-lcp-optimized {
-      font-display: swap;
-      text-rendering: optimizeSpeed;
-    }
   }
   
   /* Optimize images and prevent layout shifts */
@@ -487,11 +490,6 @@
   }
   
   /* Prevent layout shifts for dynamic content */
-  .content-placeholder {
-    min-height: 200px;
-    background: #f8fafc;
-    border-radius: 8px;
-  }
   
   /* Optimize animations with will-change */
   * {
@@ -764,11 +762,6 @@
   }
   
   /* Optimized loading states */
-  .image-loading {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-  }
   
   @keyframes loading {
     0% { background-position: 200% 0; }
@@ -789,12 +782,6 @@
     }
   }
   
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease-out forwards;
-  }
-  
   @keyframes fadeInUp {
     to {
       opacity: 1;
@@ -803,109 +790,20 @@
   }
   
   /* Optimized aspect ratios */
-  .aspect-ratio-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .aspect-ratio-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
   
   /* Optimized grid layouts */
-  .grid-stable {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    align-items: start;
-  }
   
   /* Optimized font loading */
-  .font-loading {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .font-loaded {
-    opacity: 1;
-  }
   
   /* Optimized button states */
-  .btn-optimized {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.2s ease;
-  }
-  
-  .btn-optimized:active {
-    transform: scale(0.98);
-  }
   
   /* Optimized card layouts */
-  .card-stable {
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .card-stable img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-  
-  .card-stable .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 @layer utilities {
   /* Performance utilities */
-  .will-change-transform {
-    will-change: transform;
-  }
-  
-  .will-change-opacity {
-    will-change: opacity;
-  }
-  
-  .contain-layout {
-    contain: layout;
-  }
-  
-  .contain-paint {
-    contain: paint;
-  }
-  
-  .contain-size {
-    contain: size;
-  }
-  
-  .contain-style {
-    contain: style;
-  }
-  
-  .contain-strict {
-    contain: strict;
-  }
   
   /* Optimized spacing */
-  .space-y-stable > * + * {
-    margin-top: 1rem;
-  }
-  
-  .space-x-stable > * + * {
-    margin-left: 1rem;
-  }
 }
 
 /* Hide scrollbars for webkit browsers */
@@ -921,30 +819,10 @@
 
 /* Custom CSS for better image loading */
 @layer utilities {
-  .image-loading {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .image-loaded {
-    opacity: 1;
-  }
   
   /* Smooth image transitions */
-  .next-image-wrapper img {
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
-  
-  .next-image-wrapper img.loaded {
-    opacity: 1;
-  }
   
   /* Loading skeleton for images */
-  .image-skeleton {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-  }
   
   @keyframes loading {
     0% {
@@ -1139,15 +1017,6 @@ All colors MUST be HSL. Green theme with professional look.
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
-  .card-hover {
-    transition: var(--transition-smooth);
-  }
-
-  .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-card);
-  }
-
   .btn-primary {
     background: var(--gradient-primary);
     transition: var(--transition-smooth);
@@ -1167,118 +1036,6 @@ All colors MUST be HSL. Green theme with professional look.
   }
 
   /* Longform Content Styles */
-  .longform-content-wrapper {
-    position: relative;
-  }
-
-  .longform-section-content {
-    @apply text-foreground;
-  }
-
-  .longform-section-content h1,
-  .longform-section-content h2,
-  .longform-section-content h3,
-  .longform-section-content h4,
-  .longform-section-content h5,
-  .longform-section-content h6 {
-    @apply font-bold text-foreground mb-4 mt-6;
-    line-height: 1.3;
-  }
-
-  .longform-section-content h1 {
-    @apply text-2xl lg:text-3xl;
-  }
-
-  .longform-section-content h2 {
-    @apply text-xl lg:text-2xl;
-  }
-
-  .longform-section-content h3 {
-    @apply text-lg lg:text-xl;
-  }
-
-  .longform-section-content h4 {
-    @apply text-base lg:text-lg;
-  }
-
-  .longform-section-content p {
-    @apply text-foreground mb-4 leading-relaxed;
-  }
-
-  .longform-section-content ul,
-  .longform-section-content ol {
-    @apply mb-4 pl-6;
-  }
-
-  .longform-section-content li {
-    @apply mb-2 text-foreground;
-  }
-
-  .longform-section-content ul li {
-    @apply list-disc;
-  }
-
-  .longform-section-content ol li {
-    @apply list-decimal;
-  }
-
-  .longform-section-content a {
-    @apply text-primary hover:text-primary/80 underline transition-colors;
-  }
-
-  .longform-section-content blockquote {
-    @apply border-l-4 border-primary pl-4 py-2 my-4 bg-muted/50 rounded-r-lg;
-  }
-
-  .longform-section-content blockquote p {
-    @apply text-muted-foreground italic mb-0;
-  }
-
-  .longform-section-content table {
-    @apply w-full border-collapse border border-border rounded-lg overflow-hidden mb-6;
-  }
-
-  .longform-section-content th {
-    @apply bg-muted text-foreground font-semibold p-3 text-left border-b border-border;
-  }
-
-  .longform-section-content td {
-    @apply p-3 border-b border-border text-foreground;
-  }
-
-  .longform-section-content tr:hover {
-    @apply bg-muted/30;
-  }
-
-  .longform-section-content img {
-    @apply max-w-full h-auto rounded-lg shadow-md mb-4;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    display: block;
-    object-fit: contain;
-    overflow: hidden;
-  }
-
-  .longform-section-content figure {
-    @apply mb-6;
-  }
-
-  .longform-section-content figcaption {
-    @apply text-sm text-muted-foreground text-center mt-2 italic;
-  }
-
-  .longform-section-content code {
-    @apply bg-muted px-2 py-1 rounded text-sm font-mono;
-  }
-
-  .longform-section-content pre {
-    @apply bg-muted p-4 rounded-lg overflow-x-auto mb-4;
-  }
-
-  .longform-section-content pre code {
-    @apply bg-transparent p-0;
-  }
 
   .wp-content {
     @apply max-w-none;
@@ -1534,10 +1291,6 @@ All colors MUST be HSL. Green theme with professional look.
     }
   }
 
-  .wp-content .wp-block-quote {
-    @apply border-l-4 border-primary pl-4 py-2 my-4 bg-muted/50 italic;
-  }
-
   .wp-content .wp-block-image {
     @apply my-6;
     width: 100%;
@@ -1591,20 +1344,6 @@ All colors MUST be HSL. Green theme with professional look.
   }
 
   /* Responsive galleries */
-  .wp-content .wp-block-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem auto;
-  }
-
-  @media (max-width: 640px) {
-    .wp-content .wp-block-gallery {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-      margin: 1rem auto;
-    }
-  }
 
   .line-clamp-1 {
     overflow: hidden;
@@ -1632,26 +1371,6 @@ All colors MUST be HSL. Green theme with professional look.
     animation: fadeIn 0.5s ease-in-out;
   }
 
-  .fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
-  }
-
-  .fade-in-down {
-    animation: fadeInDown 0.6s ease-out;
-  }
-
-  .slide-in-left {
-    animation: slideInLeft 0.6s ease-out;
-  }
-
-  .slide-in-right {
-    animation: slideInRight 0.6s ease-out;
-  }
-
-  .scale-in {
-    animation: scaleIn 0.4s ease-out;
-  }
-
   /* Shimmer effect for skeleton loaders */
   .shimmer {
     background: linear-gradient(
@@ -1665,27 +1384,8 @@ All colors MUST be HSL. Green theme with professional look.
   }
 
   /* Stagger animations for lists */
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
-  .stagger-6 { animation-delay: 0.6s; }
 
   /* Smooth content transitions */
-  .content-transition {
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
-
-  .content-transition.loading {
-    opacity: 0.7;
-    transform: scale(0.98);
-  }
-
-  .content-transition.loaded {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 /* Keyframe animations */
@@ -1777,41 +1477,8 @@ All colors MUST be HSL. Green theme with professional look.
 }
 
 /* Enhanced button animations */
-.btn-enhanced {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.btn-enhanced::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.btn-enhanced:hover::before {
-  left: 100%;
-}
 
 /* Loading spinner enhancement */
-.spinner-enhanced {
-  border: 2px solid hsl(var(--muted));
-  border-top: 2px solid hsl(var(--primary));
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 1s linear infinite;
-}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -1935,46 +1602,10 @@ All colors MUST be HSL. Green theme with professional look.
 }
 
 /* Navigation Performance Optimizations */
-.nav-link {
-  will-change: transform, opacity;
-  transform: translateZ(0); /* Force hardware acceleration */
-}
-
-.nav-link:hover {
-  transform: translateY(-1px) translateZ(0);
-}
 
 /* Smooth page transitions */
-.page-transition {
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.page-transition-enter {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.page-transition-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.page-transition-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.page-transition-exit-active {
-  opacity: 0;
-  transform: translateY(-10px);
-}
 
 /* Loading states */
-.loading-skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-}
 
 @keyframes loading {
   0% { background-position: 200% 0; }
@@ -1982,34 +1613,10 @@ All colors MUST be HSL. Green theme with professional look.
 }
 
 /* Navigation progress bar */
-.nav-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #0A3D2A, #0F5A3A);
-  z-index: 9999;
-  transform-origin: left;
-  transition: transform 0.3s ease-out;
-}
 
 /* Optimized focus states for navigation */
-.nav-link:focus-visible {
-  outline: 2px solid #0A3D2A;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
 
 /* Reduce motion for better performance */
-@media (prefers-reduced-motion: reduce) {
-  .nav-link,
-  .page-transition,
-  .loading-skeleton {
-    animation: none !important;
-    transition: none !important;
-  }
-}
 
 /* Mobile Bottom Navigation Styles */
 @media (max-width: 1023px) {
@@ -2064,13 +1671,6 @@ body.popup-open {
   height: auto;
   display: block;
   margin: 0 auto;
-}
-
-.responsive-img-container {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: 0.5rem;
 }
 
 /* WordPress content specific responsive fixes */
@@ -2157,17 +1757,6 @@ body.popup-open {
 }
 
 /* Additional responsive image utilities */
-.img-responsive {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
 
 /* WordPress specific image responsiveness */
 .wp-content .wp-block-image img,
@@ -2233,46 +1822,8 @@ body.popup-open {
   }
   
   /* Mobile-specific longform content fixes */
-  .longform-section-content {
-    overflow: hidden;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  .longform-section-content img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    object-fit: contain !important;
-    margin: 0.5rem 0 !important;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-  }
-  
-  .longform-section-content figure {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0.5rem 0 !important;
-    overflow: hidden;
-  }
-  
-  .longform-section-content figure img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
   
   /* Ensure all content containers don't overflow */
-  .longform-content-wrapper {
-    overflow: hidden;
-    max-width: 100%;
-  }
-  
-  .longform-content-wrapper * {
-    max-width: 100% !important;
-    box-sizing: border-box;
-  }
 }
 
 /* Tablet optimizations */
@@ -2286,34 +1837,6 @@ body.popup-open {
   }
   
   /* Tablet-specific longform content fixes */
-  .longform-section-content {
-    overflow: hidden;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  .longform-section-content img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    object-fit: contain !important;
-    margin: 1rem 0 !important;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-  }
-  
-  .longform-section-content figure {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 1rem 0 !important;
-    overflow: hidden;
-  }
-  
-  .longform-content-wrapper {
-    overflow: hidden;
-    max-width: 100%;
-  }
 }
 
 /* Desktop optimizations */
@@ -2443,29 +1966,8 @@ body.popup-open {
 /* ===== FAST IMAGE LOADING - ELIMINATE BLACK PLACEHOLDER ===== */
 
 /* Optimized image loading */
-.optimized-image {
-  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-  transition: opacity 0.2s ease-in-out;
-}
-
-.optimized-image img {
-  transition: opacity 0.2s ease-in-out;
-}
-
-.optimized-image.loaded img {
-  opacity: 1;
-}
-
-.optimized-image.loading img {
-  opacity: 0;
-}
 
 /* Image skeleton loading */
-.image-skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-}
 
 @keyframes loading {
   0% {
@@ -2477,67 +1979,22 @@ body.popup-open {
 }
 
 /* Instant image loading for priority images */
-.image-priority {
-  opacity: 1 !important;
-  transition: none !important;
-}
 
 /* Progressive image loading */
-.image-progressive {
-  filter: blur(0px);
-  transition: filter 0.3s ease-out;
-}
-
-.image-progressive.loading {
-  filter: blur(5px);
-}
 
 /* Fast image transitions */
-.image-fast-transition {
-  transition: opacity 0.1s ease-in-out, transform 0.2s ease-in-out;
-}
 
 /* Eliminate black placeholder */
-.next-image-wrapper {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
-}
-
-.next-image-wrapper img {
-  background: transparent !important;
-}
 
 /* Product image optimizations */
-.product-image-container {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  overflow: hidden;
-}
-
-.product-image-container img {
-  background: transparent;
-  transition: opacity 0.15s ease-in-out;
-}
 
 /* Instant loading for first 4 images */
-.product-image-priority {
-  opacity: 1 !important;
-  transition: none !important;
-}
 
 /* Related Products Desktop Zoom Optimization */
 @media (min-width: 1024px) {
   /* Fix for related products box height on desktop zoom */
-  .related-products-container {
-    height: auto !important;
-    max-height: 70vh !important;
-    min-height: 300px !important;
-  }
   
   /* ScrollArea height adjustment for zoom levels */
-  .related-products-scroll {
-    height: auto !important;
-    max-height: calc(70vh - 120px) !important;
-    min-height: 250px !important;
-  }
   
   /* Content-based height for related products */
   .related-products-list {
@@ -2548,50 +2005,15 @@ body.popup-open {
   }
   
   /* Individual product item optimization */
-  .related-product-item {
-    flex-shrink: 0 !important;
-    height: auto !important;
-    min-height: 80px !important;
-    max-height: 120px !important;
-  }
 }
 
 /* High zoom level adjustments (150%+ zoom) */
-@media (min-width: 1024px) and (min-resolution: 1.5dppx) {
-  .related-products-container {
-    max-height: 60vh !important;
-  }
-  
-  .related-products-scroll {
-    max-height: calc(60vh - 100px) !important;
-  }
-}
 
 /* Very high zoom level adjustments (200%+ zoom) */
-@media (min-width: 1024px) and (min-resolution: 2dppx) {
-  .related-products-container {
-    max-height: 50vh !important;
-  }
-  
-  .related-products-scroll {
-    max-height: calc(50vh - 80px) !important;
-  }
-}
 
 /* TOC Mobile Optimizations - COMPLETELY HIDDEN ON MOBILE */
 @media (max-width: 640px) {
   /* Hide all TOC elements on mobile */
-  .toc-scroll-container,
-  .sticky-toc-mobile,
-  .normal-toc,
-  .longform-content-wrapper .normal-toc {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-  }
   
   /* Reset longform content wrapper spacing */
-  .longform-content-wrapper {
-    padding-top: 0 !important;
-  }
 }

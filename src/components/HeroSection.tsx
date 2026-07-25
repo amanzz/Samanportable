@@ -1,36 +1,20 @@
-import React from 'react';
-import Image from 'next/image';
+import Image, { type ImageLoaderProps } from 'next/image';
 import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from './QuoteFormTrigger';
 
-const heroImages = [
-  {
-    src: '/hero-image/saman-portable-office-cabin-bangalore-clean.webp',
-    alt: 'Saman Portable Office Cabin in Bangalore - High Quality Site Office'
-  },
-  {
-    src: '/hero-image/premium-container-site-office-rental-clean.webp',
-    alt: 'Premium Container Site Office Rental Service by Saman Portable'
-  },
-  {
-    src: '/hero-image/modular-prefab-homes-structures-india-clean.webp',
-    alt: 'Modular Prefab Homes and Steel Structures in India - Eco-friendly Construction'
-  },
-];
+const heroImage = {
+  src: '/hero-image/saman-portable-office-cabin-bangalore-clean.webp',
+  mobileSrc: '/hero-image/saman-portable-office-cabin-bangalore-640.webp',
+  alt: 'Saman Portable Office Cabin in Bangalore - High Quality Site Office'
+};
+
+const heroLoader = ({ src, width }: ImageLoaderProps) => (
+  src === heroImage.src && width <= 1080 ? heroImage.mobileSrc : src
+);
 
 const HeroSection = () => {
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change every 5 seconds
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section
       className="min-h-screen flex items-center justify-center relative overflow-hidden hero-section-responsive"
@@ -41,29 +25,17 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0">
           <Image
-            src={heroImages[0].src}
-            unoptimized={shouldBypassOptimizer(heroImages[0].src)}
-            alt={heroImages[0].alt}
+            src={heroImage.src}
+            loader={heroLoader}
+            unoptimized={shouldBypassOptimizer(heroImage.src)}
+            alt={heroImage.alt}
             fill
             priority
             quality={75}
             sizes="100vw"
-            className={`object-cover scale-105 transition-opacity duration-1000 ${currentImageIndex === 0 ? 'opacity-100' : 'opacity-0'}`}
+            className="object-cover scale-105"
           />
         </div>
-        {currentImageIndex !== 0 && (
-          <div className="absolute inset-0">
-            <Image
-              src={heroImages[currentImageIndex].src}
-              unoptimized={shouldBypassOptimizer(heroImages[currentImageIndex].src)}
-              alt={heroImages[currentImageIndex].alt}
-              fill
-              quality={75}
-              sizes="100vw"
-              className="object-cover scale-105 transition-opacity duration-1000"
-            />
-          </div>
-        )}
       </div>
 
       {/* Premium Gradient Overlay */}
