@@ -701,7 +701,7 @@ export function PortaCabinVariantHero({
       <div className="lg:hidden fixed bottom-16 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-[0_-2px_8px_rgba(20,33,27,0.08)]">
         <div className="flex items-center justify-between gap-3 px-4 py-3">
           <div>
-            <p className="text-[11px] text-muted-foreground leading-none">{heroActive.label} ft</p>
+            <p className="text-[11px] text-muted-foreground leading-none">{heroActive.label}</p>
             <p className="text-base font-bold text-primary leading-tight">{heroActive.priceExGst == null ? 'Price on request' : <>{formatIndianPrice(heroActive.priceExGst)} + GST</>}</p>
           </div>
           <Button
