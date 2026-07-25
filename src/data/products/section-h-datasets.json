@@ -1212,5 +1212,108 @@
     "Lowest-rate big offices"
    ]
   }
+ },
+ "shipping-container-office": {
+  "h2": "Explore every Shipping Container Office size & its applications",
+  "guidanceLine": "People counts are planning guidance based on typical desk layouts; the approved drawing confirms final capacity.",
+  "10x10": {
+   "h2": "10×10 ft — the compact marine-grade steel office",
+   "intro": "The compact conversion: 100 sq ft inside genuine corrugated container steel, with the marine-grade shell that shrugs off weather, transit and rough handling. One supervisor gets a secure, lockable office that reads unmistakably industrial at the gate. The small floor carries the range's highest rate per square foot, so buy it for the shell rather than the economy — where security and durability decide the purchase, nothing else in our range outlasts it. The full-height lockable door and steel shutters are part of the conversion, not accessories.",
+   "h3": "",
+   "applications": [
+    "Secure gate offices",
+    "Port and depot points",
+    "Hard-weather posts",
+    "Lockable record rooms"
+   ]
+  },
+  "20x8": {
+   "h2": "20×8 ft — the slim ISO-profile container unit",
+   "intro": "The ISO-profile footprint: 160 sq ft in the slim proportions the shipping industry standardised, sliding into rows, yards and tight margins that were designed around containers to begin with. Three to four desks run in line behind full-height corrugated walls. Ports, depots and logistics yards choose it because it matches their existing handling — the same trucks, the same placement, the same visual language as the boxes around it. Insulation and interior finish are identical to our larger conversions — only the footprint is slim.",
+   "h3": "",
+   "applications": [
+    "Container-yard offices",
+    "Port entry control",
+    "Logistics desk rows",
+    "Depot billing rooms"
+   ]
+  },
+  "20x10": {
+   "h2": "20×10 ft — the classic converted shipping container",
+   "intro": "The classic of the type: 200 sq ft of converted container office, corrugated steel outside, insulated and fully fitted inside. Four to six people work behind a shell that tolerates craneage, stacking environments and hard weather for years. At ₹1,800 per square foot it costs a premium over our cabin-form units — that premium buys the structural container frame and the service life that comes with it. It is the size most buyers picture when they say container office. Windows and the personnel door are cut and framed into the corrugation to the approved drawing.",
+   "h3": "",
+   "applications": [
+    "Classic ISO offices",
+    "Stacking environments",
+    "Crane-served sites",
+    "Long-service offices"
+   ]
+  },
+  "20x12": {
+   "h2": "20×12 ft — extra width in structural container steel",
+   "intro": "Extra width inside structural container steel: 240 sq ft that fits a manager bay or meeting corner alongside five to seven workstations. The wider body keeps the corrugated shell and heavy frame of the type while opening the floor plan beyond a single desk row. Pick it when the office must host decisions rather than just desks, the site demands the toughest shell we build, and the footprint still has to sit in a standard container position. The heavy frame takes the wider roof span without any internal posts interrupting the floor.",
+   "h3": "",
+   "applications": [
+    "Steel meeting offices",
+    "Manager + team floors",
+    "Hard-duty decision rooms",
+    "Wide ISO layouts"
+   ]
+  },
+  "30x10": {
+   "h2": "30×10 ft — the two-room converted container",
+   "intro": "A 300 sq ft conversion that partitions into a working area and a private room behind marine-grade walls. Six to eight people operate daily with reviews held in the partitioned end. The 30 ft body moves as one structural unit — the lifting points are part of the frame, not an addition welded on later. Remote and hard-duty sites pick it when the two-room plan has to survive several postings without losing its geometry or its finish. Both rooms carry independent lighting and AC provision, wired before the unit leaves the factory.",
+   "h3": "",
+   "applications": [
+    "Two-room conversions",
+    "Remote hard-duty sites",
+    "Multi-posting offices",
+    "Partitioned steel HQs"
+   ]
+  },
+  "40x8": {
+   "h2": "40×8 ft — the long ISO-form workstation run",
+   "intro": "The long ISO run: 320 sq ft of workstations in a single corrugated-steel line, sized for yards and corridors that already move 40 ft containers daily. Seven to nine people work in line with doors and windows cut to the approved drawing. Because it handles exactly like a standard 40 ft box, existing container logistics place it without special planning — a working office that ships, lifts and stacks like the freight around it. The corner castings stay functional after conversion, so standard twist-lock handling still applies.",
+   "h3": "",
+   "applications": [
+    "Forty-foot yard rows",
+    "Corridor steel offices",
+    "Freight-handled units",
+    "In-line ISO desks"
+   ]
+  },
+  "20x20": {
+   "h2": "20×20 ft — the square plan in container steel",
+   "intro": "Four hundred square feet on a square plan in container steel — an open floor with cluster seating and short supervision lines inside the hardest shell we offer. The square format is a custom fabrication rather than a standard ISO footprint, so confirm early that the approach takes a 20 ft wide delivery. Teams choose it when open-plan working and maximum shell protection have to coexist on a single pad, and the plot allows the width. The roof structure is engineered for the span, keeping the interior post-free edge to edge.",
+   "h3": "",
+   "applications": [
+    "Square steel floors",
+    "Open-plan conversions",
+    "Custom ISO formats",
+    "Protected team floors"
+   ]
+  },
+  "40x10": {
+   "h2": "40×10 ft — the flagship forty-foot conversion",
+   "intro": "The flagship conversion: 400 sq ft of department-planned office inside a full-height corrugated shell, with reception, engineering and records zones set on the drawing. Eight to twelve people run a complete operation from it. It is the choice for multi-year and multi-posting deployments, where the structural frame keeps its geometry through every lift. If the office will move more often than it sits still, this is the shell to move it in. Every opening is framed and sealed at the factory, keeping the shell's weather rating intact.",
+   "h3": "",
+   "applications": [
+    "Flagship conversions",
+    "Multi-year postings",
+    "Department steel HQs",
+    "Often-relocated offices"
+   ]
+  },
+  "40x12": {
+   "h2": "40×12 ft — the largest converted-container floor",
+   "intro": "The largest converted-container floor we build: 480 sq ft partitioned into cabins, meeting space and stores behind corrugated steel. Ten to fourteen people run full site administration at the lowest rate the premium shell reaches — ₹1,656 per square foot. It anchors container campuses as the head office among stacked and joined units. Beyond this footprint, requirements become multi-container layouts engineered to drawing rather than single deliveries. Cabin partitions, meeting walls and store rooms are positioned on the drawing before cutting.",
+   "h3": "",
+   "applications": [
+    "Container campus HQs",
+    "Largest steel floors",
+    "Multi-room conversions",
+    "Anchor-unit offices"
+   ]
+  }
  }
 }
