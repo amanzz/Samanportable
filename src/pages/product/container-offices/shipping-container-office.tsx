@@ -35,7 +35,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       product: {
         ...product,
         description: appendShippingContainerOfficePriceSection(product.description || ''),
-        shippingHtml,
+        shippingHtml: true,
       },
       category: CATEGORY,
       slug: SLUG,
