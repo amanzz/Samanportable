@@ -31,6 +31,7 @@ import portaCabinsApplications from '@/data/products/porta-cabins-applications.j
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
+import portableOfficeApplications from '@/data/products/portable-office-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 
 interface ApplicationPanel {
@@ -88,6 +89,10 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // C-04 container-offices HUB — same dataset shape → identical SizeApplicationsExplorer.
   // Resolves via productSlug; additive, so the porta-cabin cluster is unaffected.
   'container-offices': containerOfficesApplications as ApplicationsData,
+  // C-03 portable-office HUB — same dataset shape → identical SizeApplicationsExplorer.
+  // Resolves via the preset's applicationsDataset key; additive, so every other
+  // product's explorer is unaffected.
+  'portable-office': portableOfficeApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
       ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
@@ -443,7 +448,9 @@ export function PortaCabinVariantHero({
 
   const FEATURE_CELLS = [
     { label: 'Size', value: heroActive.dims },
-    { label: 'Material', value: 'MS Frame · Insulated Panels' },
+    // Material: data → preset → the deployed literal. Absent on every product except
+    // portable-office (W3-A Ruling 1) → byte-identical Material cell everywhere else.
+    { label: 'Material', value: data.materialLabel || preset.materialLabel || 'MS Frame · Insulated Panels' },
     { label: 'Delivery', value: data.deliveryLabel || '7–21 Working Days' },
     { label: 'Coverage', value: 'Bangalore · Delhi NCR' },
     { label: 'Brand', value: 'SAMAN Portable' },

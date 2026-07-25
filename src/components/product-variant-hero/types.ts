@@ -78,6 +78,11 @@ export interface VariantProductData {
   /** Override for the buy-box "Delivery" feature cell. Default (absent) keeps the
       porta-cabins value "7–21 Working Days" → flagship byte-identical. */
   deliveryLabel?: string;
+  /** Override for the buy-box "Material" feature cell. Default (absent) keeps the
+      deployed literal "MS Frame · Insulated Panels" → every other product byte-identical.
+      Set only where the product's approved copy states a different material line
+      (W3-A Ruling 1: portable-office → "MS structural frame + insulated panel build"). */
+  materialLabel?: string;
   /** Emit an ex-GST AggregateOffer (lowPrice/highPrice/offerCount) on the ProductGroup
       instead of per-variant Offers. Absent on porta-cabins → per-variant Offers kept,
       byte-identical. Set true only when a page's price ladder is confirmed. */

@@ -35,6 +35,7 @@ import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import { PORTA_CABIN_REDIRECTED_SLUGS } from '../../../lib/portaCabinClusterRail';
+import { PORTABLE_OFFICE_REDIRECTED_SLUGS } from '../../../lib/portableOfficeCluster';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 
@@ -188,6 +189,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // C01: never surface a retired/301'd porta-cabin sibling as a related card — those
     // links would 301. Mirrors the cluster rail's redirected-slug guard.
     relatedProducts = relatedProducts.filter(p => !PORTA_CABIN_REDIRECTED_SLUGS.includes(p.slug));
+
+    // C03 / W3-A (Ruling 4): same guard for the six retired portable-office subpages.
+    // This one filter covers BOTH the hub's subpage grid and the related rail, since
+    // both are projected from `relatedProducts`. The grid therefore renders the 8 live
+    // cluster subpages and zero links to a redirecting URL.
+    relatedProducts = relatedProducts.filter(p => !PORTABLE_OFFICE_REDIRECTED_SLUGS.includes(p.slug));
 
     // Fetch full description and images separately
     const descriptionData = await staticContent.fetchProductDescription(category);
