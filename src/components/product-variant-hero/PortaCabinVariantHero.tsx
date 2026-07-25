@@ -58,23 +58,31 @@ interface ApplicationsData {
 }
 
 /**
- * T25 Section H drop — `{slug: {sizeSlug: {h2, intro, h3, applications[4]}}}`.
+ * T25 Section H drop — `{slug: {h2?, guidanceLine?, sizeSlug: {h2, intro, h3, applications[4]}}}`.
  * Field mapping (the drop is panel-scoped, the component is section-scoped):
- *   drop h2           -> panel heading   (renders where the flagship renders h3)
- *   drop intro        -> panel paragraph
- *   drop h3           -> applications sub-heading (new slot)
- *   drop applications -> the 4 checkmark items; [0] also feeds the panel image alt
- * No section-level h2/intro exists in the drop, so those stay undefined.
+ *   section h2             -> optional section heading
+ *   section guidanceLine   -> optional section intro
+ *   panel h2               -> panel heading (renders where the flagship renders h3)
+ *   panel intro            -> panel paragraph
+ *   panel h3               -> applications sub-heading (new slot)
+ *   panel applications     -> the 4 checkmark items; [0] also feeds the panel image alt
  */
 type SectionHPanel = { h2: string; intro: string; h3: string; applications: string[] };
-const fromSectionHDrop = (bySize: Record<string, SectionHPanel>): ApplicationsData => ({
-  panels: Object.entries(bySize).map(([sizeSlug, p]) => ({
-    sizeSlug,
-    h3: p.h2,
-    paragraph: p.intro,
-    applications: p.applications,
-    applicationsHeading: p.h3,
-  })),
+type SectionHDataset = Record<string, SectionHPanel | string>;
+const fromSectionHDrop = (dataset: SectionHDataset): ApplicationsData => ({
+  ...(typeof dataset.h2 === 'string' ? { h2: dataset.h2 } : {}),
+  ...(typeof dataset.guidanceLine === 'string' ? { intro: dataset.guidanceLine } : {}),
+  panels: Object.entries(dataset).flatMap(([sizeSlug, panel]) =>
+    typeof panel === 'string'
+      ? []
+      : [{
+          sizeSlug,
+          h3: panel.h2,
+          paragraph: panel.intro,
+          applications: panel.applications,
+          applicationsHeading: panel.h3,
+        }]
+  ),
 });
 
 // T25 — Size & Applications Explorer copy, registered per dataset key. The key is
@@ -102,8 +110,8 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // → identical SizeApplicationsExplorer. Resolves via productSlug; additive.
   'portable-cabin-with-toilet': portableCabinWithToiletApplications as ApplicationsData,
   ...Object.fromEntries(
-    Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
-      ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
+    Object.entries(sectionHDatasets as Record<string, SectionHDataset>).map(
+      ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
     )
   ),
 };
