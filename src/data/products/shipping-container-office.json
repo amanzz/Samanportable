@@ -345,8 +345,38 @@
       "capacity": "~8–12 people",
       "useCase": "Flagship conversions",
       "sku": "SP-20-SCO-2024",
-      "images": [],
-      "imagesPending": true,
+      "images": [
+        {
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-exterior-hero.webp",
+          "alt": "Exterior view of a 40x10 ft SAMAN shipping container office",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-front-elevation-yellow.webp",
+          "alt": "Front elevation of a 40x10 ft SAMAN shipping container office",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-elevated-view-blue.webp",
+          "alt": "Elevated exterior view of a 40x10 ft SAMAN shipping container office",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-manager-office-interior-beige.webp",
+          "alt": "Inside a 40x10 ft SAMAN shipping container office — manager office",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-team-office-interior-grey.webp",
+          "alt": "Inside a 40x10 ft SAMAN shipping container office — team office",
+          "width": 900,
+          "height": 900
+        }
+      ],
       "shortDescription": "The flagship conversion: 400 sq ft of department-planned office inside a full-height corrugated shell, with reception, engineering and records zones set on the drawing."
     },
     {
