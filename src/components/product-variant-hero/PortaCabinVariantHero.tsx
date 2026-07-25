@@ -900,19 +900,14 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               </div>
 
               {/* RIGHT — H3, paragraph, 4 checkmark applications, data row, CTA.
-                  L13 REV 2 STRUCTURAL FILL RULE — the single sanctioned CSS change on the
-                  shared §H component. `justify-center` left the column short of the tab
-                  image (measured 356px against a 400px image at 1536 on the W3-A preview:
-                  a 45px gap under the CTA that widened on bigger monitors). `justify-between`
-                  distributes the residual across the title / body / uses / stats+CTA groups,
-                  so the CTA baseline lands on the image bottom edge at ANY viewport instead
-                  of only at the width the copy was counted for. Character counts alone can
-                  never track every monitor width — this absorbs whatever is left over.
-                  Column-level layout only: no child markup, spacing or copy changes, and on
-                  mobile (<1024) the panel is stacked and unconstrained, so there is no free
-                  space to distribute and the rendering is unchanged. Every product page with
-                  a §H explorer inherits it; there is no per-page styling. */}
-              <div className="flex min-w-0 flex-1 flex-col justify-between">
+                  L13 REV 2 STRUCTURAL FILL RULE: on lg+ the column distributes its
+                  four groups — title / body / uses / stats+CTA — across the full row
+                  height with space-between, so the CTA baseline lands on the tab
+                  image's bottom edge at every viewport instead of leaving a visible
+                  gap below it. Below lg the panel is a normal stacked column and
+                  keeps justify-center exactly as before. This is the one sanctioned
+                  shared-component change; every §H page inherits it. */}
+              <div className="flex min-w-0 flex-1 flex-col justify-center lg:justify-between">
                 <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{panel.h3}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{panel.paragraph}</p>
 
@@ -934,6 +929,9 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   ))}
                 </ul>
 
+                {/* Stats + CTA are ONE space-between group (REV 2): free height is
+                    absorbed above them, never between the figures and the button. */}
+                <div>
                 {/* Data row from the data file. */}
                 <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-[var(--ds-color-steel)]">
                   <span className="font-medium text-[var(--ds-color-ink)]">{v.dims}</span>
@@ -964,6 +962,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   >
                     Get Quote
                   </Button>
+                </div>
                 </div>
               </div>
             </div>
