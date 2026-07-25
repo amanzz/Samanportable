@@ -2033,7 +2033,6 @@ const nextConfig = {
   // Performance optimizations - ENHANCED
   experimental: {
     optimizeCss: false,
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
     // Reduce bundle size warnings
     largePageDataBytes: 128 * 1024, // 128KB threshold instead of default 128KB
     // Additional performance optimizations

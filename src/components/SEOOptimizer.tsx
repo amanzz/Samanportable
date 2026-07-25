@@ -105,10 +105,8 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://blog.samanportable.com" />
     </Head>
   );
 };
 
 export default SEOOptimizer;
-

@@ -159,6 +159,7 @@ const HomePage = ({ categoryCounts }: { categoryCounts: Record<string, number> }
 
         {/* 1. Hero Section - Critical for LCP */}
         <HeroSection />
+        <div className="homepage-below-fold">
 
         {/* 1b. Certifications & Recognition (T6.16) — directly after hero */}
         <HomepageCertifications />
@@ -189,6 +190,7 @@ const HomePage = ({ categoryCounts }: { categoryCounts: Record<string, number> }
 
         {/* Scroll to Top (utility control) */}
         <ScrollToTop />
+        </div>
       </main>
     </Layout>
   );
