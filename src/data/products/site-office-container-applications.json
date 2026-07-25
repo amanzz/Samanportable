@@ -1,6 +1,6 @@
 {
   "h2": "Explore every Site Office Container size & its applications",
-  "intro": "Staffing shown is layout guidance drawn from common site-office plans — exact capacity is set on your drawing.",
+  "guidanceLine": "Staffing shown is layout guidance drawn from common site-office plans — exact capacity is set on your drawing.",
   "panels": [
     {
       "sizeSlug": "10x10",

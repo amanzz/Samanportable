@@ -24,7 +24,7 @@ interface ApplicationPanel {
 
 interface ApplicationsData {
   h2: string;
-  intro: string;
+  guidanceLine: string;
   panels: ApplicationPanel[];
 }
 
@@ -111,7 +111,7 @@ function SiteOfficeApplicationsExplorer({ data }: { data: VariantProductData }) 
           {applications.h2}
         </h2>
         <p className="mt-1 text-sm text-[var(--ds-color-steel)]">
-          {applications.intro}
+          {applications.guidanceLine}
         </p>
       </div>
 
