@@ -415,6 +415,92 @@ export function buildContainerOfficesShippingHtml(): string {
   );
 }
 
+// ─── C-03 Portable Office HUB — bespoke Specifications tab (copy pack §C, verbatim) ─
+// Same sanctioned additive pattern as the container-offices builder: a unique intro plus a
+// 50/50 "common platform / office-unique" split, tokenising the copy pack's own " · "
+// delimiter into list items. Warranty is the MSPEC-28 12-month workmanship line on its own
+// line (the 5–10-year figure is panels-only and does NOT apply here), followed by the pack's
+// closing line. Additive — every other page's tabs are untouched.
+const PO_SPEC_INTRO =
+  'Every portable office leaves the factory on the same controlled MS platform — what changes ' +
+  'between sizes is the drawing, not the build quality. Half of this table is the SAMAN common ' +
+  'platform; the other half is what makes it an office.';
+
+// COMMON PLATFORM half (shared standards) — verbatim.
+const PO_COMMON_PLATFORM: string[] = [
+  'Bottom frame 100×50×3 mm MS C-channel (ISI-standard or approved equivalent)',
+  'stiffeners 100×50 mm C-channel with 50×50 mm MS angles',
+  'floor 18 mm Bison/cement-fibre board on MS grid',
+  'top frame 50×50×1.6 mm MS square pipe',
+  'roof 1.4 mm corrugated MS sheet on 50×50×1.2 mm stiffeners',
+  'walls 1.2 mm specially corrugated MS sheet on 50×50×2 mm posts',
+  'lifting lugs',
+  'anti-rust enamel finish in approved colours',
+];
+
+// OFFICE-UNIQUE half (this page's spec) — verbatim.
+const PO_UNIQUE: string[] = [
+  'Interior 8 mm pre-laminated MDF walls & ceiling with aluminium joint sections',
+  '1.3 mm vinyl flooring',
+  'wall insulation 25 mm glass wool or 12 mm heatlon; roof 50 mm glass wool (42 kg/m³)',
+  'main door 7×3 ft MS-framed, externally opening',
+  'two-track powder-coated aluminium sliding windows, 4 mm glass',
+  'office electrical package: workstation sockets, data/UPS provisioning, DB/MCB, copper wiring',
+  'cross-ventilation and AC provision sized to occupancy',
+  'plumbing excluded unless in approved scope',
+];
+
+const PO_WARRANTY_LINE = '12-month workmanship warranty, confirmed at quotation.';
+const PO_CLOSING = 'Base specification price — customisations quoted separately.';
+
+export function buildPortableOfficeSpecificationsHtml(): string {
+  return (
+    `<div class="not-prose">` +
+      `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(PO_SPEC_INTRO)}</p>` +
+      `<section class="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 p-5">` +
+        `<h4 class="mb-3 text-base font-bold text-emerald-900">Common platform</h4>` +
+        coSpecList(PO_COMMON_PLATFORM) +
+      `</section>` +
+      `<section class="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm">` +
+        `<h4 class="mb-3 text-base font-bold text-emerald-900">Portable-office structure &amp; materials</h4>` +
+        coSpecList(PO_UNIQUE) +
+      `</section>` +
+      `<section class="mt-2 rounded-xl border border-emerald-200 bg-emerald-50 p-5">` +
+        `<h4 class="mb-2 text-base font-bold text-emerald-900">Warranty &amp; Support</h4>` +
+        `<p class="m-0 text-sm leading-relaxed text-emerald-800">${esc(PO_WARRANTY_LINE)}</p>` +
+      `</section>` +
+      `<p class="mt-4 text-sm leading-relaxed text-slate-600">${esc(PO_CLOSING)}</p>` +
+    `</div>`
+  );
+}
+
+// ─── C-03 Portable Office HUB — bespoke Shipping tab (copy pack §D + W3-A Ruling 2) ─
+// Narration paragraph is the verbatim copy supplied in RULING-W3A-5-gaps (Ruling 2); the
+// internal policy code SHIP-OPEN-TRAILER-V1 is deliberately NOT rendered. Freight and
+// destination tables are the SHARED ones (freight depends on trailer size, not product);
+// their figures are byte-exact against 00-MASTER-TRUTH\shipping-charges-freight-ladder.txt.
+// The 5–10-year structural-warranty block is omitted — this product's warranty is the
+// 12-month line carried in the Specifications tab §C only. No shippingDetails schema.
+const PO_SHIPPING_INTRO =
+  'Every SAMAN portable office ships as a complete, factory-finished unit on an open trailer ' +
+  'and is craned off onto your prepared base — most units are positioned the same day they ' +
+  'arrive. Dispatch is from Bangalore for South India and Greater Noida for Delhi NCR and the ' +
+  'North. Freight depends on trailer size and distance; use the tables below to budget, and we ' +
+  'confirm the exact amount to your pin code in the quotation.';
+
+export function buildPortableOfficeShippingHtml(): string {
+  return (
+    `<div class="not-prose space-y-2">` +
+      `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(PO_SHIPPING_INTRO)}</p>` +
+      freightTable('20 ft open trailer · freight by distance (both zones)', FREIGHT_20FT) +
+      freightTable('40 ft open trailer · freight by distance (both zones)', FREIGHT_40FT) +
+      destinationTable('Typical destinations from our Bengaluru unit (South zone)', DEST_NOTE, DEST_SOUTH) +
+      destinationTable('Typical destinations from our Greater Noida unit (North zone)', DEST_NOTE, DEST_NORTH) +
+      `<p class="mt-2 text-xs leading-relaxed text-slate-500">${esc(FOOTNOTES)}</p>` +
+    `</div>`
+  );
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -440,6 +526,15 @@ export function getProductTabsHtml(
     return {
       specificationsHtml: buildContainerOfficesSpecificationsHtml(),
       shippingHtml: buildContainerOfficesShippingHtml(),
+    };
+  }
+  // C-03 portable office HUB — bespoke §C specs (50/50 halves, 12-month warranty line,
+  // closing line) + bespoke §D shipping (Ruling-2 narration + shared freight/destination
+  // tables, 5–10yr structural-warranty block omitted).
+  if (pageSlug === 'portable-office') {
+    return {
+      specificationsHtml: buildPortableOfficeSpecificationsHtml(),
+      shippingHtml: buildPortableOfficeShippingHtml(),
     };
   }
   const key = resolveSpecsKey(pageSlug);

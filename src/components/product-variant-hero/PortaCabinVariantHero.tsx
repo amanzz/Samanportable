@@ -31,6 +31,7 @@ import portaCabinsApplications from '@/data/products/porta-cabins-applications.j
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
+import portableOfficeApplications from '@/data/products/portable-office-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 
 interface ApplicationPanel {
@@ -88,6 +89,10 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // C-04 container-offices HUB — same dataset shape → identical SizeApplicationsExplorer.
   // Resolves via productSlug; additive, so the porta-cabin cluster is unaffected.
   'container-offices': containerOfficesApplications as ApplicationsData,
+  // C-03 portable-office HUB — same dataset shape → identical SizeApplicationsExplorer.
+  // Resolves via the preset's applicationsDataset key; additive, so every other
+  // product's explorer is unaffected.
+  'portable-office': portableOfficeApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
       ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
@@ -443,7 +448,9 @@ export function PortaCabinVariantHero({
 
   const FEATURE_CELLS = [
     { label: 'Size', value: heroActive.dims },
-    { label: 'Material', value: 'MS Frame · Insulated Panels' },
+    // Material: data → preset → the deployed literal. Absent on every product except
+    // portable-office (W3-A Ruling 1) → byte-identical Material cell everywhere else.
+    { label: 'Material', value: data.materialLabel || preset.materialLabel || 'MS Frame · Insulated Panels' },
     { label: 'Delivery', value: data.deliveryLabel || '7–21 Working Days' },
     { label: 'Coverage', value: 'Bangalore · Delhi NCR' },
     { label: 'Brand', value: 'SAMAN Portable' },
@@ -874,8 +881,20 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 </div>
               </div>
 
-              {/* RIGHT — H3, paragraph, 4 checkmark applications, data row, CTA. */}
-              <div className="flex min-w-0 flex-1 flex-col justify-center">
+              {/* RIGHT — H3, paragraph, 4 checkmark applications, data row, CTA.
+                  L13 REV 2 STRUCTURAL FILL RULE — the single sanctioned CSS change on the
+                  shared §H component. `justify-center` left the column short of the tab
+                  image (measured 356px against a 400px image at 1536 on the W3-A preview:
+                  a 45px gap under the CTA that widened on bigger monitors). `justify-between`
+                  distributes the residual across the title / body / uses / stats+CTA groups,
+                  so the CTA baseline lands on the image bottom edge at ANY viewport instead
+                  of only at the width the copy was counted for. Character counts alone can
+                  never track every monitor width — this absorbs whatever is left over.
+                  Column-level layout only: no child markup, spacing or copy changes, and on
+                  mobile (<1024) the panel is stacked and unconstrained, so there is no free
+                  space to distribute and the rendering is unchanged. Every product page with
+                  a §H explorer inherits it; there is no per-page styling. */}
+              <div className="flex min-w-0 flex-1 flex-col justify-between">
                 <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{panel.h3}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{panel.paragraph}</p>
 

@@ -58,6 +58,11 @@ export interface VariantProductPreset {
       warranty differs (e.g. container-offices: "12-month workmanship warranty", per
       Decision-W1 — steel structural-frame product, NOT the 5–10-year panel line). */
   trustWarranty?: string;
+  /** Buy-box "Material" feature cell. Default (absent) keeps the deployed literal
+      "MS Frame · Insulated Panels" → every other product byte-identical. Same
+      override family as `trustWarranty`/`deliveryLabel`; sanctioned by W3-A Ruling 1
+      for portable-office, whose approved §A states the material line differently. */
+  materialLabel?: string;
   video?: VariantProductVideo;
 }
 
@@ -115,6 +120,23 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     explorerImageTemplate: '/images/products/container-offices/{sizeSlug}/container-offices-{sizeSlug}-elevated-hero.webp',
     applicationsDataset: 'container-offices',
     trustWarranty: '12-month workmanship warranty',
+  },
+  // C-03 PORTABLE OFFICE hub (/product/portable-office). Its own
+  // data/products/portable-office.json supplies the nine variants (§A ex/incl-GST ladder,
+  // curated-5 images, emitAggregateOffer, deliveryLabel). This preset supplies the derived
+  // surfaces: the singular product noun, the Category row, the L3-frozen page-level SKU,
+  // and the Explorer tab image = each size's exterior-hero WebP (copy pack §E).
+  // Deliberately absent: `specPdfHref` and `video` (none exist for this page).
+  // trustWarranty + materialLabel are the two sanctioned overrides (W3-A §C / Ruling 1).
+  'portable-office': {
+    productName: 'Portable Office',
+    categoryLabel: 'Portable Office',
+    categoryHref: '/product/portable-office',
+    productSku: 'SP-PPO-20-2025',
+    explorerImageTemplate: '/images/products/portable-office/{sizeSlug}/portable-office-{sizeSlug}-exterior-hero.webp',
+    applicationsDataset: 'portable-office',
+    trustWarranty: '12-month workmanship warranty',
+    materialLabel: 'MS structural frame + insulated panel build',
   },
   ...subpagePresets(),
 };

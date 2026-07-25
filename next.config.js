@@ -428,8 +428,10 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // C03 chain-flatten (25 Jul 2026): portable-office-cabin now 301s to the hub,
+        // so this legacy source points at the hub directly (single hop).
         source: '/products/office-cabins',
-        destination: 'https://www.samanportable.com/product/portable-office/portable-office-cabin',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       {
@@ -1094,8 +1096,10 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // C03 chain-flatten (25 Jul 2026): modular-portable-office-cabin now 301s to the
+        // hub, so this legacy source points at the hub directly (single hop).
         source: '/product/modular-office-cabin',
-        destination: 'https://www.samanportable.com/product/portable-office/modular-portable-office-cabin',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       {
@@ -1104,8 +1108,10 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // C03 chain-flatten (25 Jul 2026): modular-portable-office-cabin now 301s to the
+        // hub, so this legacy source points at the hub directly (single hop).
         source: '/product/modular-portable-office-cabin',
-        destination: 'https://www.samanportable.com/product/portable-office/modular-portable-office-cabin',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       {
@@ -1124,8 +1130,10 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // C03 chain-flatten (25 Jul 2026): ms-portable-office-cabin now 301s to the MS
+        // porta-cabin keeper, so this legacy source points there directly (single hop).
         source: '/product/ms-portable-office-cabin',
-        destination: 'https://www.samanportable.com/product/portable-office/ms-portable-office-cabin',
+        destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin',
         permanent: true,
       },
       {
@@ -1167,8 +1175,10 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // C03 chain-flatten (25 Jul 2026): portable-office-cabin now 301s to the hub,
+        // so this legacy source points at the hub directly (single hop).
         source: '/product/portable-office-cabin',
-        destination: 'https://www.samanportable.com/product/portable-office/portable-office-cabin',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       {
@@ -1815,6 +1825,26 @@ const nextConfig = {
       { source: '/product/porta-cabins/prefabricated-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/product/porta-cabins/porta-cabin-office', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', statusCode: 301 },
       { source: '/product/porta-cabins/small-portacabin', destination: 'https://www.samanportable.com/product/porta-cabins/mini-porta-cabin', statusCode: 301 },
+
+      // ─── C03 / W3-A — portable-office hub consolidation (Fable 5 ruling, 25 Jul 2026)
+      // Six single-hop 301s retiring duplicate office subpages into HTTP-200 keepers, shipped
+      // in the SAME event as the hub rebuild. Five fold into the hub; ms-portable-office-cabin
+      // folds into the MS porta-cabin keeper (the office/cabin owner) per the P1 verdict R-3.
+      // All six sources drop from the sitemap AND both feeds automatically via the
+      // getRedirectSources filter. Five legacy sources that used to point INTO these slugs were
+      // retargeted above, so no chain exceeds one hop. Placed BEFORE ...csvRedirects so
+      // first-match wins. statusCode:301 matches the container-offices and C01 waves.
+      // PROTECTED (unchanged, stay live): the hub itself, readymade-office-cabin,
+      // small-office-cabin, modern-office-cabin, portable-office-container,
+      // prefabricated-office-cabins, prefab-portable-office,
+      // prefabricated-portable-office-cabin, prefab-mobile-office (W3-B later), and
+      // /product/porta-cabins/ms-porta-cabin (redirect target only, no content edits).
+      { source: '/product/portable-office/portable-office-cabin', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
+      { source: '/product/portable-office/buy-portable-office-cabin', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
+      { source: '/product/portable-office/modular-portable-office-cabin', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
+      { source: '/product/portable-office/modular-portable-office', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
+      { source: '/product/portable-office/modular-office-cabin', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
+      { source: '/product/portable-office/ms-portable-office-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
 
       ...csvRedirects,
     ];

@@ -1,0 +1,452 @@
+{
+  "productSlug": "portable-office",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "deliveryLabel": "7-21 days",
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10×10×8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 148500,
+      "priceInclGst": 175230,
+      "capacity": "~2–3 people",
+      "useCase": "Compact site office",
+      "sku": "SP-PPO-20-2025",
+      "images": [
+        {
+          "src": "/images/products/portable-office/10x10/portable-office-10x10-exterior-hero.webp",
+          "alt": "Exterior view of a 10x10 ft SAMAN portable office for site and business use",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 10x10 ft portable office — exterior view"
+        },
+        {
+          "src": "/images/products/portable-office/10x10/portable-office-10x10-front-elevation-light-blue.webp",
+          "alt": "Front elevation of a 10x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 10x10 ft portable office — front elevation"
+        },
+        {
+          "src": "/images/products/portable-office/10x10/portable-office-10x10-rear-three-quarter-sage-green.webp",
+          "alt": "Three-quarter exterior view of a 10x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 10x10 ft portable office — three-quarter view"
+        },
+        {
+          "src": "/images/products/portable-office/10x10/portable-office-10x10-workspace-interior.webp",
+          "alt": "Workspace interior of a 10x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 10x10 ft portable office — workspace interior"
+        },
+        {
+          "src": "/images/products/portable-office/10x10/portable-office-10x10-manager-office-interior.webp",
+          "alt": "Manager cabin interior of a 10x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 10x10 ft portable office — manager cabin interior"
+        }
+      ],
+      "shortDescription": "Compact single-room office for site supervisors and small admin teams."
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20×8×8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 237600,
+      "priceInclGst": 280368,
+      "capacity": "~3–4 people",
+      "useCase": "Slim gate & site office",
+      "sku": "SP-PPO-20-2025",
+      "images": [
+        {
+          "src": "/images/products/portable-office/20x8/portable-office-20x8-exterior-hero.webp",
+          "alt": "Exterior view of a 20x8 ft SAMAN portable office for site and business use",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x8 ft portable office — exterior view"
+        },
+        {
+          "src": "/images/products/portable-office/20x8/portable-office-20x8-front-elevation-light-blue.webp",
+          "alt": "Front elevation of a 20x8 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x8 ft portable office — front elevation"
+        },
+        {
+          "src": "/images/products/portable-office/20x8/portable-office-20x8-three-quarter-dark-grey.webp",
+          "alt": "Three-quarter exterior view of a 20x8 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x8 ft portable office — three-quarter view"
+        },
+        {
+          "src": "/images/products/portable-office/20x8/portable-office-20x8-workspace-interior.webp",
+          "alt": "Workspace interior of a 20x8 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x8 ft portable office — workspace interior"
+        },
+        {
+          "src": "/images/products/portable-office/20x8/portable-office-20x8-manager-office-interior.webp",
+          "alt": "Manager cabin interior of a 20x8 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x8 ft portable office — manager cabin interior"
+        }
+      ],
+      "shortDescription": "Slim-footprint office that fits narrow site margins and gate-side plots."
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20×10×8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 270000,
+      "priceInclGst": 318600,
+      "capacity": "~4–6 people",
+      "useCase": "Standard project office",
+      "sku": "SP-PPO-20-2025",
+      "images": [
+        {
+          "src": "/images/products/portable-office/20x10/portable-office-20x10-exterior-hero.webp",
+          "alt": "Exterior view of a 20x10 ft SAMAN portable office for site and business use",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x10 ft portable office — exterior view"
+        },
+        {
+          "src": "/images/products/portable-office/20x10/portable-office-20x10-front-elevation-maroon-white.webp",
+          "alt": "Front elevation of a 20x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x10 ft portable office — front elevation"
+        },
+        {
+          "src": "/images/products/portable-office/20x10/portable-office-20x10-side-elevation-light-blue.webp",
+          "alt": "Side elevation of a 20x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x10 ft portable office — side elevation"
+        },
+        {
+          "src": "/images/products/portable-office/20x10/portable-office-20x10-workspace-interior.webp",
+          "alt": "Workspace interior of a 20x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x10 ft portable office — workspace interior"
+        },
+        {
+          "src": "/images/products/portable-office/20x10/portable-office-20x10-manager-office-interior.webp",
+          "alt": "Manager cabin interior of a 20x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x10 ft portable office — manager cabin interior"
+        }
+      ],
+      "shortDescription": "Our reference office — the most-ordered size for project and sales teams."
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20×12×8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 311040,
+      "priceInclGst": 367027,
+      "capacity": "~5–7 people",
+      "useCase": "Team office + meeting corner",
+      "sku": "SP-PPO-20-2025",
+      "images": [
+        {
+          "src": "/images/products/portable-office/20x12/portable-office-20x12-exterior-hero.webp",
+          "alt": "Exterior view of a 20x12 ft SAMAN portable office for site and business use",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x12 ft portable office — exterior view"
+        },
+        {
+          "src": "/images/products/portable-office/20x12/portable-office-20x12-front-elevation-beige-charcoal.webp",
+          "alt": "Front elevation of a 20x12 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x12 ft portable office — front elevation"
+        },
+        {
+          "src": "/images/products/portable-office/20x12/portable-office-20x12-side-elevation-sage-green.webp",
+          "alt": "Side elevation of a 20x12 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x12 ft portable office — side elevation"
+        },
+        {
+          "src": "/images/products/portable-office/20x12/portable-office-20x12-team-office-interior.webp",
+          "alt": "Open-plan office interior of a 20x12 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x12 ft portable office — open-plan interior"
+        },
+        {
+          "src": "/images/products/portable-office/20x12/portable-office-20x12-manager-office-interior.webp",
+          "alt": "Manager cabin interior of a 20x12 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x12 ft portable office — manager cabin interior"
+        }
+      ],
+      "shortDescription": "Extra width for a meeting corner or manager bay alongside workstations."
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30×10×8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 388800,
+      "priceInclGst": 458784,
+      "capacity": "~6–8 people",
+      "useCase": "Site HQ, two-room layout",
+      "sku": "SP-PPO-20-2025",
+      "images": [
+        {
+          "src": "/images/products/portable-office/30x10/portable-office-30x10-exterior-hero.webp",
+          "alt": "Exterior view of a 30x10 ft SAMAN portable office for site and business use",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 30x10 ft portable office — exterior view"
+        },
+        {
+          "src": "/images/products/portable-office/30x10/portable-office-30x10-front-elevation-cream.webp",
+          "alt": "Front elevation of a 30x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 30x10 ft portable office — front elevation"
+        },
+        {
+          "src": "/images/products/portable-office/30x10/portable-office-30x10-three-quarter-cream-green.webp",
+          "alt": "Three-quarter exterior view of a 30x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 30x10 ft portable office — three-quarter view"
+        },
+        {
+          "src": "/images/products/portable-office/30x10/portable-office-30x10-workspace-interior.webp",
+          "alt": "Workspace interior of a 30x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 30x10 ft portable office — workspace interior"
+        },
+        {
+          "src": "/images/products/portable-office/30x10/portable-office-30x10-manager-office-interior.webp",
+          "alt": "Manager cabin interior of a 30x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 30x10 ft portable office — manager cabin interior"
+        }
+      ],
+      "shortDescription": "Long-plan office that partitions cleanly into cabin + manager room."
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40×8×8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 406080,
+      "priceInclGst": 479174,
+      "capacity": "~7–9 people",
+      "useCase": "Linear workstation row",
+      "sku": "SP-PPO-20-2025",
+      "images": [
+        {
+          "src": "/images/products/portable-office/40x8/portable-office-40x8-exterior-hero.webp",
+          "alt": "Exterior view of a 40x8 ft SAMAN portable office for site and business use",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x8 ft portable office — exterior view"
+        },
+        {
+          "src": "/images/products/portable-office/40x8/portable-office-40x8-front-elevation-dark-grey.webp",
+          "alt": "Front elevation of a 40x8 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x8 ft portable office — front elevation"
+        },
+        {
+          "src": "/images/products/portable-office/40x8/portable-office-40x8-side-elevation-teal.webp",
+          "alt": "Side elevation of a 40x8 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x8 ft portable office — side elevation"
+        },
+        {
+          "src": "/images/products/portable-office/40x8/portable-office-40x8-team-office-interior.webp",
+          "alt": "Open-plan office interior of a 40x8 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x8 ft portable office — open-plan interior"
+        },
+        {
+          "src": "/images/products/portable-office/40x8/portable-office-40x8-manager-office-interior.webp",
+          "alt": "Manager cabin interior of a 40x8 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x8 ft portable office — manager cabin interior"
+        }
+      ],
+      "shortDescription": "Corridor-style office for workstation rows along a compact width."
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40×10×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 507600,
+      "priceInclGst": 598968,
+      "capacity": "~8–12 people",
+      "useCase": "Project HQ",
+      "sku": "SP-PPO-20-2025",
+      "images": [
+        {
+          "src": "/images/products/portable-office/40x10/portable-office-40x10-exterior-hero.webp",
+          "alt": "Exterior view of a 40x10 ft SAMAN portable office for site and business use",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x10 ft portable office — exterior view"
+        },
+        {
+          "src": "/images/products/portable-office/40x10/portable-office-40x10-front-elevation-pink-teal.webp",
+          "alt": "Front elevation of a 40x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x10 ft portable office — front elevation"
+        },
+        {
+          "src": "/images/products/portable-office/40x10/portable-office-40x10-side-elevation-cream-red.webp",
+          "alt": "Side elevation of a 40x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x10 ft portable office — side elevation"
+        },
+        {
+          "src": "/images/products/portable-office/40x10/portable-office-40x10-workspace-interior.webp",
+          "alt": "Workspace interior of a 40x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x10 ft portable office — workspace interior"
+        },
+        {
+          "src": "/images/products/portable-office/40x10/portable-office-40x10-manager-office-interior.webp",
+          "alt": "Manager cabin interior of a 40x10 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x10 ft portable office — manager cabin interior"
+        }
+      ],
+      "shortDescription": "Full project headquarters with room for departments and reception."
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20x20 ft",
+      "dims": "20×20×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 507600,
+      "priceInclGst": 598968,
+      "capacity": "~8–12 people",
+      "useCase": "Square open-plan office",
+      "sku": "SP-PPO-20-2025",
+      "images": [
+        {
+          "src": "/images/products/portable-office/20x20/portable-office-20x20-exterior-hero.webp",
+          "alt": "Exterior view of a 20x20 ft SAMAN portable office for site and business use",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x20 ft portable office — exterior view"
+        },
+        {
+          "src": "/images/products/portable-office/20x20/portable-office-20x20-rear-three-quarter-grey-yellow.webp",
+          "alt": "Three-quarter exterior view of a 20x20 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x20 ft portable office — three-quarter view"
+        },
+        {
+          "src": "/images/products/portable-office/20x20/portable-office-20x20-three-quarter-cream-red.webp",
+          "alt": "Three-quarter exterior view of a 20x20 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x20 ft portable office — three-quarter view"
+        },
+        {
+          "src": "/images/products/portable-office/20x20/portable-office-20x20-workspace-interior.webp",
+          "alt": "Workspace interior of a 20x20 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x20 ft portable office — workspace interior"
+        },
+        {
+          "src": "/images/products/portable-office/20x20/portable-office-20x20-manager-office-interior.webp",
+          "alt": "Manager cabin interior of a 20x20 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 20x20 ft portable office — manager cabin interior"
+        }
+      ],
+      "shortDescription": "Square-plan alternative at the same area — suits open-plan seating."
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40×12×8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 596160,
+      "priceInclGst": 703469,
+      "capacity": "~10–14 people",
+      "useCase": "Large multi-team office",
+      "sku": "SP-PPO-20-2025",
+      "images": [
+        {
+          "src": "/images/products/portable-office/40x12/portable-office-40x12-exterior-hero.webp",
+          "alt": "Exterior view of a 40x12 ft SAMAN portable office for site and business use",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x12 ft portable office — exterior view"
+        },
+        {
+          "src": "/images/products/portable-office/40x12/portable-office-40x12-front-elevation-olive-green.webp",
+          "alt": "Front elevation of a 40x12 ft SAMAN portable office",
+          "width": 900,
+          "height": 600,
+          "caption": "SAMAN 40x12 ft portable office — front elevation"
+        },
+        {
+          "src": "/images/products/portable-office/40x12/portable-office-40x12-front-elevation-orange.webp",
+          "alt": "Front elevation of a 40x12 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x12 ft portable office — front elevation"
+        },
+        {
+          "src": "/images/products/portable-office/40x12/portable-office-40x12-workspace-interior.webp",
+          "alt": "Workspace interior of a 40x12 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x12 ft portable office — workspace interior"
+        },
+        {
+          "src": "/images/products/portable-office/40x12/portable-office-40x12-manager-office-interior.webp",
+          "alt": "Manager cabin interior of a 40x12 ft SAMAN portable office",
+          "width": 900,
+          "height": 900,
+          "caption": "SAMAN 40x12 ft portable office — manager cabin interior"
+        }
+      ],
+      "shortDescription": "Our largest standard office — multiple rooms, stores and pantry space."
+    }
+  ]
+}

@@ -1382,7 +1382,15 @@ export const categorySchemas: Record<string, any> = {
         "@type": "ItemList",
         "@id": "https://www.samanportable.com/product-category/portable-office#itemlist",
         "name": "Portable Office Cabin Range",
-        "numberOfItems": 15,
+        // C-03 W3-A (copy pack REV 2 · R-4): regenerated to EXACTLY the 8 pages that
+        // stay live and canonical this deploy — the 5 keeper subpages plus the 3
+        // W3-B-pending pages (prefab-portable-office, prefabricated-portable-office-cabin,
+        // prefab-mobile-office), which drop from this list in W3-B. REMOVED this deploy:
+        // the 6 W3-A redirect sources (portable-office-cabin, buy-portable-office-cabin,
+        // modular-portable-office-cabin, modular-portable-office, modular-office-cabin,
+        // ms-portable-office-cabin) and the stray `portable-office/portable-office`
+        // self/placeholder row. No entry may point at a URL that 301s.
+        "numberOfItems": 8,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -1399,80 +1407,38 @@ export const categorySchemas: Record<string, any> = {
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Modular Portable Office Cabin",
-            "url": "https://www.samanportable.com/product/portable-office/modular-portable-office-cabin"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Buy Portable Office Cabin",
-            "url": "https://www.samanportable.com/product/portable-office/buy-portable-office-cabin"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
             "name": "Prefabricated Portable Office Cabin",
             "url": "https://www.samanportable.com/product/portable-office/prefabricated-portable-office-cabin"
           },
           {
             "@type": "ListItem",
-            "position": 6,
+            "position": 4,
             "name": "Prefabricated Office Cabins",
             "url": "https://www.samanportable.com/product/portable-office/prefabricated-office-cabins"
           },
           {
             "@type": "ListItem",
-            "position": 7,
-            "name": "Portable Office Cabin",
-            "url": "https://www.samanportable.com/product/portable-office/portable-office-cabin"
-          },
-          {
-            "@type": "ListItem",
-            "position": 8,
-            "name": "MS Portable Office Cabin",
-            "url": "https://www.samanportable.com/product/portable-office/ms-portable-office-cabin"
-          },
-          {
-            "@type": "ListItem",
-            "position": 9,
+            "position": 5,
             "name": "Prefab Mobile Office",
             "url": "https://www.samanportable.com/product/portable-office/prefab-mobile-office"
           },
           {
             "@type": "ListItem",
-            "position": 10,
+            "position": 6,
             "name": "Readymade Office Cabin",
             "url": "https://www.samanportable.com/product/portable-office/readymade-office-cabin"
           },
           {
             "@type": "ListItem",
-            "position": 11,
+            "position": 7,
             "name": "Modern Office Cabin",
             "url": "https://www.samanportable.com/product/portable-office/modern-office-cabin"
           },
           {
             "@type": "ListItem",
-            "position": 12,
+            "position": 8,
             "name": "Prefab Portable Office",
             "url": "https://www.samanportable.com/product/portable-office/prefab-portable-office"
-          },
-          {
-            "@type": "ListItem",
-            "position": 13,
-            "name": "Portable Office",
-            "url": "https://www.samanportable.com/product/portable-office/portable-office"
-          },
-          {
-            "@type": "ListItem",
-            "position": 14,
-            "name": "Modular Portable Office",
-            "url": "https://www.samanportable.com/product/portable-office/modular-portable-office"
-          },
-          {
-            "@type": "ListItem",
-            "position": 15,
-            "name": "Modular Office Cabin",
-            "url": "https://www.samanportable.com/product/portable-office/modular-office-cabin"
           }
         ]
       },
