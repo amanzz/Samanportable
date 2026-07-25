@@ -10,7 +10,7 @@
     {
       "sizeSlug": "10x10",
       "label": "10x10 ft",
-      "dims": "10x10x8.5",
+      "dims": "10×10×8.5 ft",
       "areaSqft": 100,
       "priceExGst": 148500,
       "priceInclGst": 175230,
@@ -59,7 +59,7 @@
     {
       "sizeSlug": "20x8",
       "label": "20x8 ft",
-      "dims": "20x8x8.5",
+      "dims": "20×8×8.5 ft",
       "areaSqft": 160,
       "priceExGst": 237600,
       "priceInclGst": 280368,
@@ -108,7 +108,7 @@
     {
       "sizeSlug": "20x10",
       "label": "20x10 ft",
-      "dims": "20x10x8.5",
+      "dims": "20×10×8.5 ft",
       "areaSqft": 200,
       "priceExGst": 270000,
       "priceInclGst": 318600,
@@ -157,7 +157,7 @@
     {
       "sizeSlug": "20x12",
       "label": "20x12 ft",
-      "dims": "20x12x8.5",
+      "dims": "20×12×8.5 ft",
       "areaSqft": 240,
       "priceExGst": 311040,
       "priceInclGst": 367027,
@@ -206,7 +206,7 @@
     {
       "sizeSlug": "30x10",
       "label": "30x10 ft",
-      "dims": "30x10x8.5",
+      "dims": "30×10×8.5 ft",
       "areaSqft": 300,
       "priceExGst": 388800,
       "priceInclGst": 458784,
@@ -255,7 +255,7 @@
     {
       "sizeSlug": "40x8",
       "label": "40x8 ft",
-      "dims": "40x8x8.5",
+      "dims": "40×8×8.5 ft",
       "areaSqft": 320,
       "priceExGst": 406080,
       "priceInclGst": 479174,
@@ -304,7 +304,7 @@
     {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
-      "dims": "40x10x8.5",
+      "dims": "40×10×8.5 ft",
       "areaSqft": 400,
       "priceExGst": 507600,
       "priceInclGst": 598968,
@@ -353,7 +353,7 @@
     {
       "sizeSlug": "20x20",
       "label": "20x20 ft",
-      "dims": "20x20x8.5",
+      "dims": "20×20×8.5 ft",
       "areaSqft": 400,
       "priceExGst": 507600,
       "priceInclGst": 598968,
@@ -402,7 +402,7 @@
     {
       "sizeSlug": "40x12",
       "label": "40x12 ft",
-      "dims": "40x12x8.5",
+      "dims": "40×12×8.5 ft",
       "areaSqft": 480,
       "priceExGst": 596160,
       "priceInclGst": 703469,
