@@ -522,6 +522,13 @@ export function PortaCabinVariantHero({
           )}
         </div>
 
+        {/* Price caption — one owner-approved line under the price, identical for
+            all sizes so a chip swap cannot move it. Rendered OUTSIDE the fixed-height
+            price box above, and only for a product that supplies the copy. */}
+        {data.priceCaption && (
+          <p className="-mt-1 text-xs text-muted-foreground">{data.priceCaption}</p>
+        )}
+
         {/* Per-size shortDescription (Section E v2.1). Per-breakpoint FIXED heights
             (14px / 1.5 → 21px line): each sized to the TALLEST of the 9 blurbs at
             that tier's narrowest width, measured on the production build —

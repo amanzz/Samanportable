@@ -78,6 +78,10 @@ export interface VariantProductData {
   /** Override for the buy-box "Delivery" feature cell. Default (absent) keeps the
       porta-cabins value "7–21 Working Days" → flagship byte-identical. */
   deliveryLabel?: string;
+  /** Owner-approved caption rendered directly under the buy-box price (same text for
+      every size, so it never moves with a chip swap). Absent on every product that
+      supplies none → nothing is rendered and their markup is byte-identical. */
+  priceCaption?: string;
   /** Override for the buy-box "Material" feature cell. Default (absent) keeps the
       deployed literal "MS Frame · Insulated Panels" → every other product byte-identical.
       Set only where the product's approved copy states a different material line

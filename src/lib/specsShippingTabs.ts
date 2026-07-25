@@ -317,6 +317,62 @@ export function buildPortableCabinSpecificationsHtml(): string {
   );
 }
 
+// ─── C-02 Portable Cabin with Toilet — flat spec table (copy pack §C, verbatim) ────
+// The shared MS cabin platform specified for the with-toilet build: the same flat
+// Element/Specification override slot the shop cabin and the hub already use, with
+// this page's own intro plus the FRP alternative-shell row and the three washroom
+// rows (partition, fittings, plumbing) the copy pack bolds. No invented FRP numbers
+// and no washroom dimensions — every fitment row stays "to approved drawing".
+const PCWT_SPEC_INTRO =
+  'A portable cabin with toilet is the same steel cabin platform with one attached ' +
+  'washroom partitioned at one end. The specification below is the shared SAMAN ' +
+  'standard; the with-toilet build adds a partition wall, a compact washroom with its ' +
+  'own door and vent, and the supply/waste points, all inside the single relocatable ' +
+  'shell — one unit, room plus washroom, that still lifts and moves as a portable ' +
+  'cabin (it is not a multi-cubicle toilet block).';
+
+// [element, specification, isWashroomFitment] — verbatim from copy pack §C.
+const PCWT_SPEC_ROWS: [string, string, boolean][] = [
+  ['Primary base frame', '100×50×3 mm MS C-channel (ISI-standard or approved equivalent), welded', false],
+  ['Floor framing', 'MS base + cross-member grid supporting 18 mm Bison / cement-fibre board', false],
+  ['Top frame', '50×50×1.6 mm MS square-pipe perimeter', false],
+  ['Roof stiffeners', '50×50×1.2 mm MS square-pipe + 50×40/40×40/25×25 mm secondary', false],
+  ['Corner / wall posts', '50×50×2 mm MS square-pipe (or approved 60×60 mm MS angle)', false],
+  ['Exterior wall (MS)', '1.2 mm specially corrugated MS sheet', false],
+  ['Alternative shell (FRP)', 'Smooth fibre-reinforced polymer panel (FRP variant); construction to approved drawing', false],
+  ['Roof', '1.4 mm corrugated MS sheet', false],
+  ['Interior wall', '8 mm pre-laminated MDF with aluminium H-joint sections', false],
+  ['Ceiling', '8 mm pre-laminated MDF', false],
+  ['Floor board / finish', '18 mm Bison panel + 1.3 mm vinyl flooring (washroom floor sealed/sloped to drain)', false],
+  ['Wall insulation', '25 mm glass wool or 12 mm heatlon', false],
+  ['Roof insulation', '50 mm glass wool, ~42 kg/m³', false],
+  ['Washroom partition', 'Internal partition wall creating one washroom at one end; layout to approved drawing', true],
+  ['Washroom fittings', 'WC and washbasin with tap; washroom door and wall/roof vent; to approved drawing', true],
+  ['Plumbing', 'Site-connected (water + drainage points) OR bio-digester / self-contained tank system', true],
+  ['Door', '7×3 ft externally opening MS-framed, 30×30 mm MS tubular (main room)', false],
+  ['Windows', 'Two-track powder-coated aluminium sliding, 4 mm glass', false],
+  ['Electrical', 'LED lights, modular switches, 6A/16A sockets, fan + AC provision; washroom light + exhaust point', false],
+  ['Finish', 'Anti-rust enamel (MS) / gel-coat (FRP), approved colour', false],
+  ['Warranty', '5–10 years, confirmed at quotation', false],
+];
+
+export function buildPortableCabinWithToiletSpecificationsHtml(): string {
+  const rows = PCWT_SPEC_ROWS.map(([element, spec, washroom]) => {
+    const cls = washroom ? `${TD} font-semibold text-emerald-900` : TD;
+    return `<tr><td class="${cls}">${esc(element)}</td><td class="${cls}">${esc(spec)}</td></tr>`;
+  }).join('');
+  return (
+    `<div class="not-prose">` +
+      `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(PCWT_SPEC_INTRO)}</p>` +
+      `<div class="overflow-x-auto">` +
+        `<table class="w-full border-collapse"><thead><tr>` +
+          `<th class="${TH}">Element</th><th class="${TH}">Specification</th>` +
+        `</tr></thead><tbody>${rows}</tbody></table>` +
+      `</div>` +
+    `</div>`
+  );
+}
+
 // ─── C-04 Container Offices HUB — bespoke Specifications tab (copy pack §C, verbatim) ─
 // Fable 5 ruling (24 Jul): the container-office specs use the SAME sanctioned additive
 // pattern as the portable-cabin builder, but the §C source is a 50/50 "common platform /
@@ -509,6 +565,14 @@ export function getProductTabsHtml(
   if (pageSlug === 'portable-shop-cabin') {
     return {
       specificationsHtml: buildPortableShopCabinSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
+  // C-02 portable cabin with toilet — flat spec table (FRP shell + 3 washroom rows)
+  // + shared shipping.
+  if (pageSlug === 'portable-cabin-with-toilet') {
+    return {
+      specificationsHtml: buildPortableCabinWithToiletSpecificationsHtml(),
       shippingHtml: buildShippingHtml(),
     };
   }
