@@ -32,6 +32,7 @@ import portableShopCabinApplications from '@/data/products/portable-shop-cabin-a
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
 import portableOfficeApplications from '@/data/products/portable-office-applications.json';
+import portableCabinWithToiletApplications from '@/data/products/portable-cabin-with-toilet-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 
 interface ApplicationPanel {
@@ -42,6 +43,10 @@ interface ApplicationPanel {
   /** Sub-heading above the applications list. Present only in the T25 Section H
       drop (its per-panel `h3`); the flagship dataset has no equivalent. */
   applicationsHeading?: string;
+  /** Owner-authored alt for this panel's photo. Present only where the approved
+      copy specifies one (C-02 with-toilet §H → the copy-pack §E exterior template).
+      Absent everywhere else → the derived application alt is used, unchanged. */
+  imageAlt?: string;
 }
 interface ApplicationsData {
   /** Section-level heading + intro. The flagship dataset carries them; the T25
@@ -93,6 +98,9 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // Resolves via the preset's applicationsDataset key; additive, so every other
   // product's explorer is unaffected.
   'portable-office': portableOfficeApplications as ApplicationsData,
+  // C-02 portable-cabin-with-toilet — §H drop (Fable 5, 25 Jul), same dataset shape
+  // → identical SizeApplicationsExplorer. Resolves via productSlug; additive.
+  'portable-cabin-with-toilet': portableCabinWithToiletApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, Record<string, SectionHPanel>>).map(
       ([slug, bySize]) => [slug, fromSectionHDrop(bySize)]
@@ -826,10 +834,13 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 // separate elevated-view per the FIX-PACKET), carry that image's own §E
                 // alt. Products whose Explorer uses a DISTINCT shot (porta-cabins →
                 // elevated-view) keep the derived application alt, byte-identical.
+                // An owner-authored panel alt (C-02 with-toilet §H) wins outright;
+                // otherwise the existing two-branch behaviour is unchanged.
                 alt:
-                  panelSrc === v.images[0]?.src && v.images[0]?.alt
+                  panel.imageAlt ||
+                  (panelSrc === v.images[0]?.src && v.images[0]?.alt
                     ? v.images[0].alt
-                    : applicationAlt(v.label, panel.applications[0], productNameLower),
+                    : applicationAlt(v.label, panel.applications[0], productNameLower)),
               }
             : null;
           const rate = pricePerSqft(data.pricePerSqft, v.sizeSlug, v.priceExGst, v.areaSqft);
@@ -929,8 +940,17 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   <span aria-hidden="true">·</span>
                   <span>{v.areaSqft} sq ft</span>
                   <span aria-hidden="true">·</span>
-                  <span>{v.capacity}</span>
-                  <span aria-hidden="true">·</span>
+                  {/* Capacity is an occupancy claim, so it is rendered only where the
+                      product's approved data supplies one. Without this guard a page
+                      barred from people-count claims (C-02 with-toilet, §H rules) would
+                      print an empty cell between two separators. Products that DO carry
+                      capacity emit the same three nodes as before. */}
+                  {v.capacity && (
+                    <>
+                      <span>{v.capacity}</span>
+                      <span aria-hidden="true">·</span>
+                    </>
+                  )}
                   <span className="font-bold text-[var(--ds-color-forest)]">{v.priceExGst == null ? 'Price on request' : <>{formatIndianPrice(v.priceExGst)} + GST</>}</span>
                   <span aria-hidden="true">·</span>
                   <span>₹{rate}/sq ft</span>

@@ -11,15 +11,16 @@
   "materialLabel": "MS or FRP · Insulated",
   "deliveryLabel": "7–21 working days",
   "emitAggregateOffer": true,
+  "explorerImageTemplate": "/images/products/portable-cabin-with-toilet/{sizeSlug}/portable-cabin-with-toilet-{sizeSlug}-elevated-view.webp",
   "variants": [
     {
       "sizeSlug": "10x10",
       "label": "10x10 ft",
-      "dims": "10x10x8.6 ft",
+      "dims": "10x10x8.5 ft",
       "areaSqft": 100,
       "priceExGst": 165000,
       "priceInclGst": 194700,
-      "useCase": "Room + single washroom",
+      "useCase": "Room + one attached washroom",
       "sku": "SP-PCT-30-2024",
       "images": [
         {
@@ -58,11 +59,11 @@
     {
       "sizeSlug": "20x8",
       "label": "20x8 ft",
-      "dims": "20x8x8.6 ft",
+      "dims": "20x8x8.5 ft",
       "areaSqft": 160,
       "priceExGst": 264000,
       "priceInclGst": 311520,
-      "useCase": "Room + single washroom",
+      "useCase": "Room + one attached washroom",
       "sku": "SP-PCT-30-2024",
       "images": [
         {
@@ -101,11 +102,11 @@
     {
       "sizeSlug": "20x10",
       "label": "20x10 ft",
-      "dims": "20x10x8.6 ft",
+      "dims": "20x10x8.5 ft",
       "areaSqft": 200,
       "priceExGst": 300000,
       "priceInclGst": 354000,
-      "useCase": "Room + single washroom",
+      "useCase": "Room + one attached washroom",
       "sku": "SP-PCT-30-2024",
       "images": [
         {
@@ -144,11 +145,11 @@
     {
       "sizeSlug": "20x12",
       "label": "20x12 ft",
-      "dims": "20x12x8.6 ft",
+      "dims": "20x12x8.5 ft",
       "areaSqft": 240,
       "priceExGst": 345600,
       "priceInclGst": 407808,
-      "useCase": "Room + toilet & urinal",
+      "useCase": "Room + one attached washroom",
       "sku": "SP-PCT-30-2024",
       "images": [
         {
@@ -187,11 +188,11 @@
     {
       "sizeSlug": "30x10",
       "label": "30x10 ft",
-      "dims": "30x10x8.6 ft",
+      "dims": "30x10x8.5 ft",
       "areaSqft": 300,
       "priceExGst": 432000,
       "priceInclGst": 509760,
-      "useCase": "Room + toilet & urinal",
+      "useCase": "Room + one attached washroom",
       "sku": "SP-PCT-30-2024",
       "images": [
         {
@@ -230,11 +231,11 @@
     {
       "sizeSlug": "40x8",
       "label": "40x8 ft",
-      "dims": "40x8x8.6 ft",
+      "dims": "40x8x8.5 ft",
       "areaSqft": 320,
       "priceExGst": 451200,
       "priceInclGst": 532416,
-      "useCase": "Room + toilet & urinal",
+      "useCase": "Room + one attached washroom",
       "sku": "SP-PCT-30-2024",
       "images": [
         {
@@ -271,56 +272,13 @@
       "shortDescription": "A long, slim room-plus-washroom that moves on a 40 ft trailer — an extended usable space with sanitation attached."
     },
     {
-      "sizeSlug": "40x10",
-      "label": "40x10 ft",
-      "dims": "40x10x8.6 ft",
-      "areaSqft": 400,
-      "priceExGst": 564000,
-      "priceInclGst": 665520,
-      "useCase": "Room + toilet & urinal",
-      "sku": "SP-PCT-30-2024",
-      "images": [
-        {
-          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-hero-view.webp",
-          "alt": "Portable cabin with toilet 40×10 ft — hero view, relocatable room with one attached washroom by SAMAN Portable",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-front-angle.webp",
-          "alt": "Portable cabin with toilet 40×10 ft — front angle, relocatable room with one attached washroom by SAMAN Portable",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-side-elevation.webp",
-          "alt": "Portable cabin with toilet 40×10 ft — side elevation, relocatable room with one attached washroom by SAMAN Portable",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-space-interior.webp",
-          "alt": "Inside a 40×10 ft portable cabin with toilet — space interior, room with one partitioned washroom",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-entrance-interior.webp",
-          "alt": "Inside a 40×10 ft portable cabin with toilet — entrance interior, room with one partitioned washroom",
-          "width": 900,
-          "height": 900
-        }
-      ],
-      "shortDescription": "The full-length self-contained unit — a spacious room with an attached washroom, sized to travel on a 40 ft open trailer."
-    },
-    {
       "sizeSlug": "20x20",
       "label": "20x20 ft",
-      "dims": "20x20x8.6 ft",
+      "dims": "20x20x8.5 ft",
       "areaSqft": 400,
       "priceExGst": 564000,
       "priceInclGst": 665520,
-      "useCase": "Room + toilet & urinal",
+      "useCase": "Room + one attached washroom",
       "sku": "SP-PCT-30-2024",
       "images": [
         {
@@ -357,13 +315,56 @@
       "shortDescription": "A larger self-contained space — a roomy main area with an attached washroom, engineered to stay liftable and reusable across sites."
     },
     {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 564000,
+      "priceInclGst": 665520,
+      "useCase": "Room + one attached washroom",
+      "sku": "SP-PCT-30-2024",
+      "images": [
+        {
+          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-hero-view.webp",
+          "alt": "Portable cabin with toilet 40×10 ft — hero view, relocatable room with one attached washroom by SAMAN Portable",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-front-angle.webp",
+          "alt": "Portable cabin with toilet 40×10 ft — front angle, relocatable room with one attached washroom by SAMAN Portable",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-side-elevation.webp",
+          "alt": "Portable cabin with toilet 40×10 ft — side elevation, relocatable room with one attached washroom by SAMAN Portable",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-space-interior.webp",
+          "alt": "Inside a 40×10 ft portable cabin with toilet — space interior, room with one partitioned washroom",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-entrance-interior.webp",
+          "alt": "Inside a 40×10 ft portable cabin with toilet — entrance interior, room with one partitioned washroom",
+          "width": 900,
+          "height": 900
+        }
+      ],
+      "shortDescription": "The full-length self-contained unit — a spacious room with an attached washroom, sized to travel on a 40 ft open trailer."
+    },
+    {
       "sizeSlug": "40x12",
       "label": "40x12 ft",
-      "dims": "40x12x8.6 ft",
+      "dims": "40x12x8.5 ft",
       "areaSqft": 480,
       "priceExGst": 662400,
       "priceInclGst": 781632,
-      "useCase": "Room + toilet & urinal",
+      "useCase": "Room + one attached washroom",
       "sku": "SP-PCT-30-2024",
       "images": [
         {
