@@ -1,0 +1,105 @@
+{
+  "h2": "Explore every Site Office Container size & its applications",
+  "intro": "Staffing shown is layout guidance drawn from common site-office plans — exact capacity is set on your drawing.",
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10×10 ft — the one-supervisor day-one site unit",
+      "paragraph": "A single-supervisor unit built for the first day of a construction site: 100 sq ft, delivered fitted, placed at the gate before the boundary wall exists. Drawings, a desk and the site records stay secure and dry from excavation to handover. It is deliberately small — the point is presence at the gate from day one, not floor area. When staff numbers grow with the project, larger units join the compound rather than replace it. A lockable door and barred window keep instruments and files safe overnight on open sites.",
+      "applications": [
+        "Day-one gate offices",
+        "Excavation-phase posts",
+        "Drawing-safe cabins",
+        "Site record points"
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20×8 ft — the boundary-line unit for urban sites",
+      "paragraph": "The boundary-line unit: 160 sq ft running thin along the site edge, where hoarding, gates and services leave no depth for a full-width office. Three to four site staff handle entry control, billing and visitor passes in line. Contractors on urban plots — metro stations, road widening, infill builds — specify it because it is the office that still fits after everything else is marked out on the ground. Doors and windows face the traffic side, set on the drawing to match your gate and hoarding plan.",
+      "applications": [
+        "Hoarding-line offices",
+        "Urban infill sites",
+        "Metro and road works",
+        "Entry-control rows"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20×10 ft — the standard project-site container",
+      "paragraph": "The standard project-site office: 200 sq ft that four to six engineers and administrators run a live construction site from. RFIs, measurement books, contractor meetings and daily labour management pass through this size more than any other we deliver. Its ₹1,350 reference rate sits mid-cluster; what the site unit adds is the duty configuration — placement, power and access planned around a working construction site rather than a finished plot. It reaches site fitted — lighting, fan and AC provision, sockets and switchboards already wired.",
+      "applications": [
+        "Standard site offices",
+        "RFI and MB desks",
+        "Contractor meetings",
+        "Labour management points"
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20×12 ft — a site office plus a meeting corner",
+      "paragraph": "A site office with a meeting corner: 240 sq ft where contractor coordination, client walk-ins and daily planning get a table instead of a crowded desk. Five to seven people work alongside the meeting zone. Project managers add the width when the site holds weekly reviews — it costs ₹41,040 more than the standard size and earns that back at the first review that doesn't happen across working desks. The meeting corner takes a table for six, with the working desks kept clear along the far wall. Racks for drawings and registers line the review wall.",
+      "applications": [
+        "Weekly-review offices",
+        "Client walk-in rooms",
+        "Coordination corners",
+        "Site planning tables"
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30×10 ft — two rooms for the project team",
+      "paragraph": "Three hundred square feet that split into a working office and a separate room for the project head or client meetings — the two-room pattern sized for a construction site's chain of command. Six to eight staff work the floor while decisions happen behind the partition. It arrives as one unit, sits on a prepared base at the gate or inside the hoarding, and relocates intact when the site winds down. Lighting and power run independently in both rooms, so meetings don't share circuits with the floor.",
+      "applications": [
+        "Project-head offices",
+        "Work + decision rooms",
+        "Gate compound units",
+        "Relocating site HQs"
+      ]
+    },
+    {
+      "sizeSlug": "40x8",
+      "h3": "40×8 ft — the in-line unit for linear projects",
+      "paragraph": "The in-line unit for linear projects: 320 sq ft of workstation row for highways, pipelines, rail corridors and every site that is longer than it is deep. Seven to nine staff sit along the run with entries set to the traffic side. Site rows often pair it with stores and welfare units of the same width, building a facility line that reads as one planned edge along the alignment. Every unit in the row arrives identically fitted, so staff move between them without relearning anything. Entries repeat at fixed intervals along the row.",
+      "applications": [
+        "Highway site rows",
+        "Pipeline corridors",
+        "Rail project lines",
+        "Facility-edge units"
+      ]
+    },
+    {
+      "sizeSlug": "20x20",
+      "h3": "20×20 ft — the square open floor for site teams",
+      "paragraph": "An open 400 sq ft square for site teams that plan around a common table — drawings spread in the middle, desks around the edge, everyone within speaking distance. The same area and price as the 40×10 makes the decision purely about working style and plot shape. Verify the site approach can receive a 20 ft wide delivery when you plan the compound. Design-and-build teams and survey-heavy phases favour this floor. The open span carries no internal posts, so the table layout is yours to decide and change.",
+      "applications": [
+        "Common-table floors",
+        "Survey-phase teams",
+        "Design-build squads",
+        "Drawing-spread rooms"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40×10 ft — the full site-administration floor",
+      "paragraph": "The full site-administration floor: 400 sq ft holding engineering, quantity survey, documentation and a reception point in one delivered unit. Eight to twelve people run the site from it across the project's life. On big builds it anchors the office compound, with smaller units around it for stores and security. Start here when the roster is above eight from day one — joining two smaller units later costs more than one right-sized floor now. Cabin and reception walls are placed on your approved drawing, and the compound plan grows outward from this floor.",
+      "applications": [
+        "Site compound anchors",
+        "QS and documentation",
+        "Big-build admin floors",
+        "Reception + engineering"
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "h3": "40×12 ft — the multi-room site command unit",
+      "paragraph": "The multi-room command unit: 480 sq ft partitioned into cabins, a meeting room and document stores — the complete site secretariat in one lift. Ten to fourteen people run administration, engineering and client coordination under one roof. At ₹1,242 per square foot it is the lowest rate on this page's ladder. Mega-sites grow beyond it into joined multi-unit compounds, planned to drawing with this unit as the template. Every partition, door and store wall is fixed on the approved drawing before fabrication begins.",
+      "applications": [
+        "Site secretariats",
+        "Mega-site templates",
+        "Multi-room command HQs",
+        "Client coordination HQs"
+      ]
+    }
+  ]
+}
