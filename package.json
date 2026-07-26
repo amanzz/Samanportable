@@ -15,7 +15,7 @@
     "validate:merchant-feed": "node scripts/validate-merchant-feed.js",
     "validate:local-inventory": "node scripts/validate-local-inventory-feed.js",
     "analyze": "ANALYZE=true next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "node scripts/generate-segmented-sitemaps.mjs",
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "sitemap:full": "npm run generate-sitemap",
     "warm": "node scripts/warm-image-cache.mjs"

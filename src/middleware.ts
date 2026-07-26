@@ -6,6 +6,27 @@ import { NextRequest, NextResponse } from 'next/server';
 // NextResponse.next() for matched page/API-like routes and never touches static
 // or optimizer responses.
 export function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname.replace(/\/+$/, '') || '/';
+  const parts = pathname.split('/').filter(Boolean);
+  const isSelfSlug = parts.length === 3 && parts[0] === 'product' && parts[1] === parts[2];
+  const isObsoleteJunk =
+    pathname === '/find-out-how-i-cured-my-easter-weekend-in-2-days' ||
+    pathname === '/feed' ||
+    /^\/(?:product-tag|tag|author)(?:\/|$)/.test(pathname) ||
+    /^\/page\/\d+$/.test(pathname) ||
+    /^\/\d+$/.test(pathname) ||
+    isSelfSlug;
+
+  if (isObsoleteJunk) {
+    return new NextResponse(null, {
+      status: 410,
+      headers: {
+        'X-Robots-Tag': 'noindex, nofollow',
+        'Cache-Control': 'public, max-age=0, s-maxage=86400',
+      },
+    });
+  }
+
   if (process.env.STAGING_GOOGLE_BLOCK !== '1') {
     return NextResponse.next();
   }

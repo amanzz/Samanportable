@@ -157,12 +157,15 @@ let postIndex: Array<{ slug: string; date: string }> | null = null;
 
 function getPostIndex(): Array<{ slug: string; date: string }> {
   if (postIndex) return postIndex;
-  const dir = path.join(EXPORT_DIR, 'posts');
   const entries: Array<{ slug: string; date: string }> = [];
-  for (const f of fs.readdirSync(dir)) {
-    if (!f.endsWith('.json')) continue;
-    const post = readJson(path.join(dir, f));
-    if (post?.slug) entries.push({ slug: post.slug, date: post.date || '' });
+  for (const directory of ['posts', 'redirected-posts']) {
+    const dir = path.join(EXPORT_DIR, directory);
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.json')) continue;
+      const post = readJson(path.join(dir, f));
+      if (post?.slug) entries.push({ slug: post.slug, date: post.date || '' });
+    }
   }
   // Newest first — same order the WordPress posts API returned.
   entries.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
@@ -173,6 +176,11 @@ function getPostIndex(): Array<{ slug: string; date: string }> {
 function readPostFile(slug: string): any | null {
   if (!SAFE_SLUG.test(slug)) return null;
   return readJson(path.join(EXPORT_DIR, 'posts', `${slug}.json`));
+}
+
+function readPostListingFile(slug: string): any | null {
+  return readPostFile(slug) ||
+    readJson(path.join(EXPORT_DIR, 'redirected-posts', `${slug}.json`));
 }
 
 // Mirrors api.fetchBlogPost: post object, or null when it genuinely doesn't exist.
@@ -196,7 +204,7 @@ export async function fetchBlogPosts(
   const index = getPostIndex();
   const { slice, pagination } = paginate(index, page, perPage);
   const posts = slice
-    .map((entry) => readPostFile(entry.slug))
+    .map((entry) => readPostListingFile(entry.slug))
     .filter(Boolean)
     .map(({ _rank_math_head, ...rest }: any) => rest);
   return {
@@ -220,22 +228,24 @@ let blogCategoriesCache: BlogCategory[] | null = null;
 export function getBlogCategories(): BlogCategory[] {
   if (blogCategoriesCache) return blogCategoriesCache;
 
-  const dir = path.join(EXPORT_DIR, 'posts');
   const bySlug = new Map<string, BlogCategory>();
+  for (const directory of ['posts', 'redirected-posts']) {
+    const dir = path.join(EXPORT_DIR, directory);
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.json')) continue;
+      const post = readJson(path.join(dir, f));
+      if (!post?.slug) continue;
 
-  for (const f of fs.readdirSync(dir)) {
-    if (!f.endsWith('.json')) continue;
-    const post = readJson(path.join(dir, f));
-    if (!post?.slug) continue;
-
-    const terms: any[] = post?._embedded?.['wp:term']?.[0] || [];
-    for (const term of terms) {
-      if (term?.taxonomy !== 'category' || !term?.slug) continue;
-      const existing = bySlug.get(term.slug);
-      if (existing) {
-        existing.count += 1;
-      } else {
-        bySlug.set(term.slug, { id: term.id, name: term.name, slug: term.slug, count: 1 });
+      const terms: any[] = post?._embedded?.['wp:term']?.[0] || [];
+      for (const term of terms) {
+        if (term?.taxonomy !== 'category' || !term?.slug) continue;
+        const existing = bySlug.get(term.slug);
+        if (existing) {
+          existing.count += 1;
+        } else {
+          bySlug.set(term.slug, { id: term.id, name: term.name, slug: term.slug, count: 1 });
+        }
       }
     }
   }
@@ -266,23 +276,25 @@ let postMetaIndex: PostMeta[] | null = null;
 function getPostMetaIndex(): PostMeta[] {
   if (postMetaIndex) return postMetaIndex;
 
-  const dir = path.join(EXPORT_DIR, 'posts');
   const entries: PostMeta[] = [];
+  for (const directory of ['posts', 'redirected-posts']) {
+    const dir = path.join(EXPORT_DIR, directory);
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.json')) continue;
+      const post = readJson(path.join(dir, f));
+      if (!post?.slug) continue;
 
-  for (const f of fs.readdirSync(dir)) {
-    if (!f.endsWith('.json')) continue;
-    const post = readJson(path.join(dir, f));
-    if (!post?.slug) continue;
-
-    const terms: any[] = post?._embedded?.['wp:term']?.[0] || [];
-    entries.push({
-      slug: post.slug,
-      date: post.date || '',
-      title: post?.title?.rendered || '',
-      categories: terms
-        .filter((t) => t?.taxonomy === 'category' && t?.slug)
-        .map((t) => ({ name: t.name, slug: t.slug })),
-    });
+      const terms: any[] = post?._embedded?.['wp:term']?.[0] || [];
+      entries.push({
+        slug: post.slug,
+        date: post.date || '',
+        title: post?.title?.rendered || '',
+        categories: terms
+          .filter((t) => t?.taxonomy === 'category' && t?.slug)
+          .map((t) => ({ name: t.name, slug: t.slug })),
+      });
+    }
   }
 
   entries.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
@@ -348,7 +360,7 @@ export async function searchPostsByTitle(
 
   const posts = matches
     .slice(0, limit)
-    .map((m) => readPostFile(m.slug))
+    .map((m) => readPostListingFile(m.slug))
     .filter(Boolean)
     .map(({ _rank_math_head, ...rest }: any) => rest);
 
@@ -358,6 +370,7 @@ export async function searchPostsByTitle(
 // ─── products ────────────────────────────────────────────────────────────────
 
 let productsCache: any[] | null = null;
+let listingProductsCache: any[] | null = null;
 
 function getAllProductsRaw(): any[] {
   if (productsCache) return productsCache;
@@ -376,6 +389,24 @@ function getAllProductsRaw(): any[] {
   return items;
 }
 
+function getAllListingProductsRaw(): any[] {
+  if (listingProductsCache) return listingProductsCache;
+  const items = [...getAllProductsRaw()];
+  const dir = path.join(EXPORT_DIR, 'redirected-products');
+  if (fs.existsSync(dir)) {
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.json')) continue;
+      const product = readJson(path.join(dir, f));
+      if (product?.slug) items.push(product);
+    }
+  }
+  items.sort((a, b) =>
+    (a.date_created || '') < (b.date_created || '') ? 1 : (a.date_created || '') > (b.date_created || '') ? -1 : 0
+  );
+  listingProductsCache = items;
+  return items;
+}
+
 type ListingOptions = {
   includeDrafts?: boolean;
 };
@@ -390,13 +421,13 @@ export function shouldShowDraftsInListings(host?: string | null): boolean {
 // preview can opt into drafts so owners can review listing-card behavior before
 // publish approval.
 function getPublishedProducts(): any[] {
-  return getAllProductsRaw().filter((p) => !p.status || p.status === 'publish');
+  return getAllListingProductsRaw().filter((p) => !p.status || p.status === 'publish');
 }
 
 function getListingProducts(options: ListingOptions = {}): any[] {
   const base = !options.includeDrafts
     ? getPublishedProducts()
-    : getAllProductsRaw().filter((p) => !p.status || p.status === 'publish' || p.status === 'draft');
+    : getAllListingProductsRaw().filter((p) => !p.status || p.status === 'publish' || p.status === 'draft');
   // C01: drop retired/301'd products so no listing card or rail links to a redirecting URL.
   return base.filter((p) => !RETIRED_LISTING_SLUGS.has(p.slug));
 }

@@ -6,4 +6,5 @@ Allow: /
 Host: https://www.samanportable.com
 
 # Sitemaps
+
 Sitemap: https://www.samanportable.com/sitemap.xml

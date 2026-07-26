@@ -6,7 +6,7 @@ import QuoteFormPopup from './QuoteFormPopup';
 import { Tag, Star, Phone } from 'lucide-react';
 import { formatPriceWithCurrency } from '@/lib/utils';
 import OptimizedCategoryImage from './OptimizedCategoryImage';
-import { getCanonicalProductPath } from '@/lib/productCanonicalPaths';
+import { getNavigableProductPath } from '@/lib/productCanonicalPaths';
 
 interface ProductCardProps {
   product: {
@@ -66,7 +66,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   // Get the correct product URL based on WordPress data
   const getProductUrl = () => {
-    const canonicalPath = getCanonicalProductPath(product);
+    const canonicalPath = getNavigableProductPath(product);
     if (canonicalPath) {
       return canonicalPath;
     }
