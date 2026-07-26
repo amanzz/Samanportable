@@ -26,11 +26,11 @@ import { ArrowRight, Check } from 'lucide-react';
 // LCP (~4.0s → ~4.3s), so per "LCP must not regress" and the standing hero-only-priority
 // CWV law, tab-0 stays lazy too. Each image sits in a fixed 4:3 aspect box → zero CLS.
 
-type Price = { size: string; price: string };
+type Price = { size: string; price: string; ledgerValue: string };
 type Tab = {
   key: string;
   name: string;
-  href?: string;
+  href: string;
   img: string;
   alt: string;
   desc: string;
@@ -48,33 +48,39 @@ type Tab = {
 // PUF panel rate card — 9 thicknesses, ₹ per m² ex-GST. Values diff-match T6.3 §2 (PUF col).
 const PUF_ROWS: readonly (readonly [string, string])[] = [
   ['30mm', '₹1,050'],
-  ['40mm', '₹1,150'],
-  ['50mm', '₹1,250'],
-  ['60mm', '₹1,330'],
-  ['80mm', '₹1,470'],
-  ['90mm', '₹1,550'],
-  ['100mm', '₹1,650'],
-  ['120mm', '₹1,850'],
-  ['150mm', '₹2,150'],
+  ['40mm', 'Price on request'],
+  ['50mm', 'Price on request'],
+  ['60mm', 'Price on request'],
+  ['80mm', 'Price on request'],
+  ['90mm', 'Price on request'],
+  ['100mm', 'Price on request'],
+  ['120mm', 'Price on request'],
+  ['150mm', 'Price on request'],
 ];
 
-// Cabin / Container Office chips — T6.3 §3. Café chips — T6.4 §1.
-const CABIN_PRICES: readonly Price[] = [
-  { size: '10×10', price: '₹1.15 L' },
-  { size: '20×10', price: '₹2.10 L' },
-  { size: '30×10', price: '₹3.15 L' },
-  { size: '40×10', price: '₹4.20 L' },
+const PORTA_PRICES: readonly Price[] = [
+  { size: '10×10', price: '₹1.38 L', ledgerValue: '₹1,37,500' },
+  { size: '20×10', price: '₹2.50 L', ledgerValue: '₹2,50,000' },
+  { size: '30×10', price: '₹3.60 L', ledgerValue: '₹3,60,000' },
+  { size: '40×10', price: '₹4.70 L', ledgerValue: '₹4,70,000' },
+];
+const OFFICE_PRICES: readonly Price[] = [
+  { size: '10×10', price: '₹1.60 L', ledgerValue: '₹1,59,500' },
+  { size: '20×10', price: '₹2.90 L', ledgerValue: '₹2,90,000' },
+  { size: '30×10', price: '₹4.18 L', ledgerValue: '₹4,17,600' },
+  { size: '40×10', price: '₹5.45 L', ledgerValue: '₹5,45,200' },
 ];
 const CAFE_PRICES: readonly Price[] = [
-  { size: '10×10', price: '₹1.35 L' },
-  { size: '20×10', price: '₹2.30 L' },
-  { size: '30×10', price: '₹3.45 L' },
-  { size: '40×10', price: '₹4.60 L' },
+  { size: '10×10', price: '₹2.04 L', ledgerValue: '₹2,03,500' },
+  { size: '20×10', price: '₹3.70 L', ledgerValue: '₹3,70,000' },
+  { size: '30×10', price: '₹5.33 L', ledgerValue: '₹5,32,800' },
+  { size: '40×10', price: '₹6.96 L', ledgerValue: '₹6,95,600' },
 ];
 
-// Approved price-surface disclaimer for the cabin group — T6.3 §3 Group B footnote (verbatim).
-const CABIN_NOTE =
-  'Standard rates ex-GST — 200 sq ft and above ₹1,050/sq ft; smaller units ₹1,150/sq ft. Transport and customisation quoted separately. Final price confirmed at quotation.';
+const PORTA_NOTE =
+  'Standard rates ex-GST — ₹1,250/sq ft at the 200 sq ft reference, stepping down to ₹1,175/sq ft on larger floors; units below 200 sq ft ₹1,375/sq ft. Transport and customisation quoted separately. Final price confirmed at quotation.';
+const OFFICE_NOTE = 'Rate: ₹1,450/sq ft at 200 sq ft reference.';
+const CAFE_NOTE = 'Rate: ₹1,850/sq ft at 200 sq ft reference.';
 // Approved panel disclaimer — T6.3 §2 Group A footnote (verbatim).
 const PANEL_NOTE =
   'Rates per m², ex-GST, base specification — freight, installation and accessories quoted separately. Final price confirmed at quotation.';
@@ -88,7 +94,7 @@ const TABS: readonly Tab[] = [
     alt: 'New MS corrugated portable cabin site office with grilled windows and AC unit at an Indian construction site',
     desc: 'Steel-frame site offices, guard rooms and stores — delivered ready to use.',
     desc2: 'Built at our factory and installed on site by our own crew — no crane or civil work needed at your end.',
-    prices: CABIN_PRICES,
+    prices: PORTA_PRICES,
     bullets: [
       '50mm PUF-insulated steel panels',
       'Sizes from 10×10 to 40×12 ft',
@@ -96,7 +102,7 @@ const TABS: readonly Tab[] = [
       'Fully relocatable — move it to your next site',
     ],
     cta: 'See all Porta Cabins',
-    note: CABIN_NOTE,
+    note: PORTA_NOTE,
   },
   {
     key: 'container-office',
@@ -106,7 +112,7 @@ const TABS: readonly Tab[] = [
     alt: 'New 20 ft container office with grilled windows and AC unit installed at an Indian project site',
     desc: '20 ft and 40 ft container offices built for heavy-duty project sites.',
     desc2: 'Climate-controlled and wired at the factory, they arrive ready for your team to move in.',
-    prices: CABIN_PRICES,
+    prices: OFFICE_PRICES,
     bullets: [
       '20 ft and 40 ft standard sizes',
       'AC, wiring and interiors fitted before delivery',
@@ -114,7 +120,7 @@ const TABS: readonly Tab[] = [
       'Ready to move in on arrival',
     ],
     cta: 'See all Container Offices',
-    note: CABIN_NOTE,
+    note: OFFICE_NOTE,
   },
   {
     key: 'container-cafe',
@@ -132,7 +138,7 @@ const TABS: readonly Tab[] = [
       'Relocatable — move to a new location any time',
     ],
     cta: 'See Container Café options',
-    note: CABIN_NOTE,
+    note: CAFE_NOTE,
   },
   {
     key: 'labour',
@@ -142,7 +148,7 @@ const TABS: readonly Tab[] = [
     alt: 'Rows of new prefab labour colony units with walkway and drainage at an Indian construction project',
     desc: 'Complete worker accommodation camps, up to G+2.',
     desc2: 'From a few rooms to a full multi-storey camp — delivered and assembled in days, not months.',
-    labourLine: 'Ground, G+1 and G+2 · 60×24 to 120×24 ft · from ₹750/sq ft',
+    labourLine: 'Price on request — send enquiry',
     bullets: [
       'Individual units or multi-storey blocks',
       'Attached toilets, ventilation and lighting',
@@ -188,7 +194,7 @@ const TABS: readonly Tab[] = [
   {
     key: 'wall',
     name: 'Wall Sheets',
-    href: '/product',
+    href: '/product/wall-sheet',
     img: '/homepage/cards/headers/panels-header.webp',
     alt: '',
     badge: 'Launching soon',
@@ -245,9 +251,13 @@ const Bullets = ({ items }: { items: readonly string[] }) => (
 );
 
 const PriceChips = ({ prices }: { prices: readonly Price[] }) => (
-  <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+  <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-4" data-price-chips>
     {prices.map((p) => (
-      <div key={p.size} className="rounded-xl border border-[var(--ds-border)] bg-[var(--ds-surface-alt)] px-3 py-2.5 text-center leading-tight">
+      <div
+        key={p.size}
+        className="rounded-xl border border-[var(--ds-border)] bg-[var(--ds-surface-alt)] px-3 py-2.5 text-center leading-tight"
+        data-ledger-value={p.ledgerValue}
+      >
         <div className="text-sm font-bold text-[var(--ds-color-forest)]">{p.size}</div>
         <div className="mt-0.5 font-mono text-xs text-[var(--ds-text-secondary)]">{p.price}</div>
       </div>
@@ -309,13 +319,22 @@ const TabPanel = ({ tab, index }: { tab: Tab; index: number }) => (
             {tab.badge}
           </span>
         )}
-        <h3 className="text-2xl font-bold tracking-tight text-[var(--ds-color-forest)] md:text-3xl">{tab.name}</h3>
+        <Link
+          href={tab.href}
+          className="text-2xl font-bold tracking-tight text-[var(--ds-color-forest)] md:text-3xl"
+          data-showcase-title
+        >
+          {tab.name}
+        </Link>
         <p className="mt-2 text-base text-[var(--ds-text-secondary)]">{tab.desc}</p>
         <p className="mt-2 text-sm leading-relaxed text-[var(--ds-text-secondary)]">{tab.desc2}</p>
 
         {tab.prices && <PriceChips prices={tab.prices} />}
         {tab.labourLine && (
-          <div className="mt-5 rounded-xl border border-[var(--ds-border)] bg-[var(--ds-surface-alt)] px-4 py-3 text-sm font-semibold text-[var(--ds-color-forest)]">
+          <div
+            data-price-status
+            className="mt-5 rounded-xl border border-[var(--ds-border)] bg-[var(--ds-surface-alt)] px-4 py-3 text-sm font-semibold text-[var(--ds-color-forest)]"
+          >
             {tab.labourLine}
           </div>
         )}
@@ -346,7 +365,7 @@ const TabPanel = ({ tab, index }: { tab: Tab; index: number }) => (
 
 const PopularSizes = () => {
   return (
-    <section className="bg-[var(--ds-surface)] py-20 md:py-28">
+    <section className="bg-[var(--ds-surface)] py-20 md:py-28" data-homepage-showcase>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10 text-center md:mb-14">

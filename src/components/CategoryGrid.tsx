@@ -42,46 +42,59 @@ export type CategoryDef = {
 };
 
 export const CATEGORIES: CategoryDef[] = [
-  { name: 'Porta Cabin', slug: 'porta-cabins', href: '/product/porta-cabins', icon: Building2, description: 'Site offices, guard rooms, stores and accommodation for construction sites — factory-built and delivered ready to use.' },
-  { name: 'Portable Cabin', slug: 'portable-cabin', href: '/product/portable-cabin', icon: Home, description: 'Relocatable cabins for offices, shops and flexible workspaces. Move them whenever your requirement changes.' },
-  { name: 'Portable Office Cabin', slug: 'portable-office', href: '/product/portable-office', icon: Briefcase, description: 'Office cabins with interiors, wiring and AC fitted at the factory — walk in and start working.' },
-  { name: 'Container Office', slug: 'container-offices', href: '/product/container-offices', icon: Container, description: '20 ft and 40 ft container offices built for heavy-duty industrial and project site use.' },
-  { name: 'Container Cafe', slug: 'container-cafe', href: '/product/container-cafe', icon: Coffee, description: 'Cafés, kiosks and food outlets delivered ready to open — branding, plumbing and electrical done.' },
-  { name: 'Labour Colony', slug: 'labor-colony', href: '/product/labor-colony', icon: Users, description: 'Complete worker accommodation camps up to G+2 — rooms, toilets and services set up in days.' },
-  { name: 'Container House', slug: 'container-houses', href: '/product/container-houses', icon: Warehouse, description: 'Insulated container homes with full living interiors, delivered and placed on your plot.' },
-  { name: 'Security Cabin', slug: 'security-cabins', href: '/product/security-cabins', icon: Shield, description: 'Compact guard cabins for gates, societies and factories. Installed in hours, no foundation needed.' },
-  { name: 'Portable Toilet', slug: 'portable-toilet', href: '/product/portable-toilet', icon: Droplets, description: 'Clean, durable sanitation units for construction sites, events and public locations.' },
-  { name: 'Industrial Shed', slug: 'industrial-sheds', href: '/product/industrial-sheds', icon: Factory, description: 'Factory, warehouse and workshop sheds in structural steel — large spans, fast erection.' },
+  { name: 'Porta Cabins', slug: 'porta-cabins', href: '/product/porta-cabins', icon: Building2, description: 'The standard welded-steel cabin range — site offices and rooms, 9 sizes, delivered in 7–21 working days.' },
+  { name: 'Portable Cabin', slug: 'portable-cabin', href: '/product/portable-cabin', icon: Home, description: 'Cabins engineered to lift, relocate and reuse across sites — choose this when the unit will move.' },
+  { name: 'Portable Office', slug: 'portable-office', href: '/product/portable-office', icon: Briefcase, description: 'Fitted office cabins — workstations, electricals and AC provision, working from day one.' },
+  { name: 'Container Offices', slug: 'container-offices', href: '/product/container-offices', icon: Container, description: 'Container-form and converted ISO offices for industrial duty, yards and hard sites.' },
+  { name: 'Container Cafe', slug: 'container-cafe', href: '/product/container-cafe', icon: Coffee, description: 'Cafes, restaurants and food-truck units built for food businesses.' },
+  { name: 'Labour Colony', slug: 'labor-colony', href: '/product/labor-colony', icon: Users, description: 'Workforce housing at project scale — colonies, sheds, hutments and camps.' },
+  { name: 'Container Houses', slug: 'container-houses', href: '/product/container-houses', icon: Warehouse, description: 'Container-format homes — studios to full residences built from container modules.' },
+  { name: 'Security Cabins', slug: 'security-cabins', href: '/product/security-cabins', icon: Shield, description: 'Guard posts and security kiosks.' },
+  { name: 'Portable Toilet', slug: 'portable-toilet', href: '/product/portable-toilet', icon: Droplets, description: 'Standalone sanitation units — single seaters to multi-cubicle blocks.' },
+  { name: 'Industrial Sheds', slug: 'industrial-sheds', href: '/product/industrial-sheds', icon: Factory, description: 'Sheds, garden sheds and prefabricated warehouses.' },
   { name: 'PEB Construction', slug: 'peb-constructions', href: '/product/peb-constructions', icon: HardHat, description: 'Design-to-erection pre-engineered building projects, managed end to end by our team.' },
-  { name: 'Pre-Engineered Building', slug: 'pre-engineered-buildings', href: '/product/pre-engineered-buildings', icon: Building, description: 'Engineered steel building systems with clear spans for industrial and commercial use.' },
+  { name: 'Pre-Engineered Buildings', slug: 'pre-engineered-buildings', href: '/product/pre-engineered-buildings', icon: Building, description: 'Steel-framed factories, warehouses and industrial buildings, engineered to span.' },
   { name: 'Prefab Building', slug: 'prefab-buildings', href: '/product/prefab-buildings', icon: Blocks, description: 'Modular buildings for schools, offices, healthcare and site facilities — multi-room layouts.' },
-  { name: 'Prefabricated House', slug: 'prefabricated-houses', href: '/product/prefabricated-houses', icon: Home, description: 'Factory-built homes assembled on site in days, with proper doors, windows and finishes.' },
+  { name: 'Prefabricated Houses', slug: 'prefabricated-houses', href: '/product/prefabricated-houses', icon: Home, description: 'Panel-built prefab homes and bunkhouses — residential builds that are not container-based.' },
   { name: 'PUF Panels', slug: 'puf-panel', href: '/product/puf-panel', icon: Layers, description: 'Insulated wall and roof panels from 30mm to 150mm, at factory-direct rates.' },
   { name: 'Sandwich Panels', slug: 'sandwich-panel', href: '/product/sandwich-panel', icon: SquareStack, description: 'EPS, rockwool, glass wool and PIR core panels for walls, roofs and cold rooms.' },
 ];
 
 const CategoryGrid = ({ counts }: { counts: Record<string, number> }) => {
   return (
-    <section className="bg-[var(--ds-surface)] py-16 md:py-24">
+    <section className="bg-[var(--ds-surface)] py-16 md:py-24" data-homepage-router>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center md:mb-16">
           <span className="mb-5 inline-flex items-center rounded-full border border-[color-mix(in_srgb,var(--ds-primary)_35%,transparent)] bg-[color-mix(in_srgb,var(--ds-primary)_12%,transparent)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[var(--ds-primary)]">
             ALL PRODUCTS
           </span>
-          <h2 className="text-4xl font-bold tracking-tight text-[var(--ds-text-primary)] md:text-5xl">Explore Every Product Category</h2>
+          <h2
+            data-homepage-router-heading
+            className="text-4xl font-bold tracking-tight text-[var(--ds-text-primary)] md:text-5xl"
+          >
+            Which SAMAN range is right for you?
+          </h2>
+          <p
+            data-homepage-router-intro
+            className="mx-auto mt-5 max-w-2xl text-lg font-light leading-relaxed text-[var(--ds-text-secondary)]"
+          >
+            Every product line below has one definitive page — sizes, specifications and ex-factory prices included. Start where your requirement matches.
+          </p>
         </div>
 
         {/* T6.19a: uniform grid — every tile identical (4x4 desktop / 2x8 tablet /
             2-col mobile). auto-rows-fr + h-full give all 16 tiles equal height
             regardless of how the descriptions wrap; content is aligned to the top. */}
-        <div className="grid auto-rows-fr grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div
+          data-homepage-range-grid
+          className="grid auto-rows-fr grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4"
+        >
           {CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             const count = counts[cat.slug];
             return (
-              <Link
+              <div
                 key={cat.slug}
-                href={cat.href}
                 className="group relative flex h-full flex-col rounded-2xl border border-[var(--ds-border)] bg-[var(--ds-surface)] p-5 shadow-[var(--ds-shadow-card)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[color-mix(in_srgb,var(--ds-primary)_50%,transparent)] hover:bg-[var(--ds-surface-alt)]"
               >
                 <div className="mb-4 flex items-start justify-between gap-3">
@@ -94,11 +107,16 @@ const CategoryGrid = ({ counts }: { counts: Record<string, number> }) => {
                 </div>
 
                 <div className="flex items-center gap-1.5">
-                  <h3 className="text-base font-bold leading-snug text-[var(--ds-text-primary)]">{cat.name}</h3>
+                  <Link
+                    href={cat.href}
+                    className="text-base font-bold leading-snug text-[var(--ds-text-primary)]"
+                  >
+                    {cat.name}
+                  </Link>
                   <ArrowRight className="h-4 w-4 flex-shrink-0 -translate-x-1 text-[var(--ds-primary)] opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
                 </div>
                 <p className="mt-1.5 text-sm leading-relaxed text-[var(--ds-text-secondary)]">{cat.description}</p>
-              </Link>
+              </div>
             );
           })}
         </div>

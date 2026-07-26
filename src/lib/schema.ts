@@ -141,6 +141,14 @@ export const generateOrganizationSchema = () => {
   };
 };
 
+export const generateHomepageOrganizationSchema = () => {
+  const homepageOrganization = { ...generateOrganizationSchema() };
+  delete (homepageOrganization as Partial<typeof homepageOrganization>).hasMerchantReturnPolicy;
+  homepageOrganization.description =
+    'Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN.';
+  return homepageOrganization;
+};
+
 export const generateBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url: string }>) => {
   return {
     '@context': 'https://schema.org',
@@ -332,7 +340,7 @@ export const getLocalBusinessSchemaGreaterNoida = () => ({
 });
 
 const withoutHomepageCommercialFields = (schema: Record<string, unknown>) => {
-  const { hasOfferCatalog, priceRange, ...schemaWithoutCommercialFields } = schema;
+  const { description, hasOfferCatalog, priceRange, ...schemaWithoutCommercialFields } = schema;
   return schemaWithoutCommercialFields;
 };
 

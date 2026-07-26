@@ -47,6 +47,17 @@ const MONEY_STRIP_LINKS = [
   { label: "Temporary Shed Solutions", href: "/temporary-shed" },
 ];
 
+const HOMEPAGE_POPULAR_RESOURCE_LINKS = [
+  { label: "Prefab Container Homes", href: "/product/container-houses/prefab-container-homes" },
+  { label: "Luxury Container Houses", href: "/product/container-houses/luxury-container-houses" },
+  { label: "PEB Construction", href: "/product/peb-constructions" },
+  { label: "Pre-Engineered Buildings", href: "/product/pre-engineered-buildings" },
+  { label: "Industrial Sheds", href: "/product/industrial-sheds" },
+  { label: "MS Steel Portable Toilet Cabin", href: "/product/portable-toilet/portable-toilet-cabin" },
+  { label: "Prefabricated Security Cabin", href: "/product/security-cabins/prefabricated-security-cabin" },
+  { label: "Readymade Security Cabin", href: "/product/security-cabins/readymade-security-cabin" },
+];
+
 const PRODUCT_CATEGORIES = [
   { label: "Porta Cabin", href: "/product/porta-cabins" },
   { label: "Portable Cabin", href: "/product/portable-cabin" },
@@ -65,20 +76,29 @@ const PRODUCT_CATEGORIES = [
   { label: "PUF Panel", href: "/product/puf-panel" },
 ];
 
-const Footer = () => {
+interface FooterProps {
+  homepageNeutrality?: boolean;
+}
+
+const Footer = ({ homepageNeutrality = false }: FooterProps) => {
+  const resourceLinks = homepageNeutrality ? HOMEPAGE_POPULAR_RESOURCE_LINKS : MONEY_STRIP_LINKS;
+
   return (
     <footer className="bg-black text-white relative z-20 pb-16 lg:pb-0">
       {/* Footer Money Keyword Strip */}
-      <div className="border-b border-zinc-900/50 relative z-10 bg-black">
+      <div
+        data-homepage-resources={homepageNeutrality ? true : undefined}
+        className="border-b border-zinc-900/50 relative z-10 bg-black"
+      >
         <div className="max-w-7xl mx-auto px-4 py-12">
           <h2 className="text-white font-semibold text-xl">
-            Popular Portable Cabin Resources
+            {homepageNeutrality ? 'Popular Resources' : 'Popular Portable Cabin Resources'}
           </h2>
           <p className="text-zinc-200 text-sm mt-2 max-w-2xl leading-relaxed">
             Explore our most searched portable cabin, container office, prefab building and industrial shed resources.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            {MONEY_STRIP_LINKS.map((link) => (
+            {resourceLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

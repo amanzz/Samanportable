@@ -39,12 +39,11 @@ const HeroSection = () => {
       </div>
 
       {/* Premium Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto container-padding relative z-20 w-full pt-20 pb-12">
         <div className="hero-grid items-center">
-          <div className="hero-left-content text-white">
+          <div data-homepage-first-100 className="hero-left-content text-white">
             {/* H1 — Concise, SEO-optimized */}
             <div className="mb-8">
               <h1
@@ -53,7 +52,7 @@ const HeroSection = () => {
                   contain: 'layout style paint',
                 }}
               >
-                Premium <span className="text-[#E8F3EF]">Portable Cabins</span> &amp; Container Offices
+                Factory-Built Modular Structures from <span className="text-[#E8F3EF]">Bangalore &amp; Greater Noida</span>
               </h1>
 
               {/* Trust badges — refined */}
@@ -69,8 +68,11 @@ const HeroSection = () => {
             </div>
 
             {/* Paragraph — refined typography */}
-            <p className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed font-light">
-              India&apos;s leading manufacturer of high-ticket prefab structures for industrial, construction and commercial headquarters. Delivered ready-to-use since 2009.
+            <p
+              data-homepage-opening
+              className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed font-light"
+            >
+              SAMAN POS India Private Limited manufactures factory-built modular structures at its own Bangalore and Greater Noida units — ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified, NSIC-enlisted and DPIIT-recognised. You deal with the maker, not a reseller: every unit is fabricated in-house, delivered complete, and installed on your prepared base. Choose your range below — each product line has its own page with sizes, specifications and ex-factory prices — or send your requirement for a written, itemised quotation.
             </p>
 
             {/* CTA Buttons — three CTAs (T2: form removed from hero) */}

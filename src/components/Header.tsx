@@ -102,6 +102,7 @@ const RENTAL_GROUPS = [
 
 const Header = () => {
   const router = useRouter();
+  const isHomepage = router.pathname === '/';
   const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -476,7 +477,18 @@ const Header = () => {
           <div className="grid grid-cols-3 gap-8">
             {RENTAL_GROUPS.map((group) => (
               <div key={group.category}>
-                <h3 className="mb-3 text-sm font-semibold text-gray-900">{group.category}</h3>
+                {isHomepage ? (
+                  <Link
+                    href={group.items[0].href}
+                    prefetch={false}
+                    className="mb-3 block text-sm font-semibold text-gray-900"
+                    onClick={() => setActiveMenu(null)}
+                  >
+                    {group.category}
+                  </Link>
+                ) : (
+                  <h3 className="mb-3 text-sm font-semibold text-gray-900">{group.category}</h3>
+                )}
                 <ul className="space-y-1">
                   {group.items.map((it) => (
                     <li key={it.href}>
@@ -604,7 +616,18 @@ const Header = () => {
                 <p className="mb-1 px-2 text-xs font-bold uppercase tracking-widest text-[var(--ds-color-forest)]">Rental Services</p>
                 {RENTAL_GROUPS.map((group) => (
                   <div key={group.category} className="mb-2">
-                    <h4 className="px-2 py-1 text-sm font-medium text-gray-700">{group.category}</h4>
+                    {isHomepage ? (
+                      <Link
+                        href={group.items[0].href}
+                        prefetch={false}
+                        className="block px-2 py-1 text-sm font-medium text-gray-700"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {group.category}
+                      </Link>
+                    ) : (
+                      <h4 className="px-2 py-1 text-sm font-medium text-gray-700">{group.category}</h4>
+                    )}
                     <div className="pl-3">
                       {group.items.map((it) => (
                         <Link
