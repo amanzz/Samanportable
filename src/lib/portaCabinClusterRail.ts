@@ -49,6 +49,20 @@ export const PORTA_CABIN_REDIRECTED_SLUGS: readonly string[] = [
 export const isPortaCabinStripSlug = (slug: string): boolean =>
   PORTA_CABIN_CLUSTER_SLUGS.includes(slug);
 
+const C01_HUB_RETURN_ANCHORS: Record<string, string> = {
+  'low-cost-porta-cabin': 'the full cabin range and its standard specification',
+  'luxury-porta-cabin': 'our complete range of factory-built cabins',
+  'steel-porta-cabin': 'the standard cabin build',
+  'porta-cabin-with-toilet': 'the standard cabin without sanitary provision',
+  'porta-cabin-shop': 'see how the base cabin is specified',
+  'mini-porta-cabin': 'all nine standard cabin sizes',
+  'portacabin-office': 'the wider cabin range',
+  'ms-porta-cabin': 'the standard reference specification',
+};
+
+export const c01HubReturnAnchorForSlug = (slug: string): string | null =>
+  C01_HUB_RETURN_ANCHORS[slug] || null;
+
 /** Full rail for a subpage: hub first, then every sibling in canonical order (self excluded). */
 export const portaCabinStripOrder = (slug: string): string[] => {
   if (!isPortaCabinStripSlug(slug)) return [];

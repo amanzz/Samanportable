@@ -10,7 +10,7 @@
       "label": "10x10 ft",
       "dims": "10x10x8.5 ft",
       "areaSqft": 100,
-      "priceExGst": 194000,
+      "priceExGst": 198000,
       "capacity": "2–3 people",
       "useCase": "Exposed-Site Guard Post",
       "sku": "SP-MSPC-10x10",
@@ -47,14 +47,14 @@
         }
       ],
       "shortDescription": "A compact IS 2062 mild-steel cabin for guard posts and gate offices where the frame has to last years on an exposed site, not months.",
-      "priceInclGst": 228920
+      "priceInclGst": 233640
     },
     {
       "sizeSlug": "20x8",
       "label": "20x8 ft",
       "dims": "20x8x8.5 ft",
       "areaSqft": 160,
-      "priceExGst": 310000,
+      "priceExGst": 316800,
       "capacity": "3–4 people",
       "useCase": "Boundary-Wall Site Office",
       "sku": "SP-MSPC-20x8",
@@ -91,14 +91,14 @@
         }
       ],
       "shortDescription": "A narrow-plot MS site office — 8 ft wide for boundary-wall and road-margin placement, full IS 2062 frame, surface-treated for humidity.",
-      "priceInclGst": 365800
+      "priceInclGst": 373824
     },
     {
       "sizeSlug": "20x10",
       "label": "20x10 ft",
       "dims": "20x10x8.5 ft",
       "areaSqft": 200,
-      "priceExGst": 353000,
+      "priceExGst": 360000,
       "capacity": "4–6 people",
       "useCase": "EPC Standard Site Office",
       "sku": "SP-MSPC-20x10",
@@ -135,14 +135,14 @@
         }
       ],
       "shortDescription": "The standard MS site office — four to six staff on a certified IS 2062 Grade A frame, the size most EPC contractors specify.",
-      "priceInclGst": 416540
+      "priceInclGst": 424800
     },
     {
       "sizeSlug": "20x12",
       "label": "20x12 ft",
       "dims": "20x12x8.5 ft",
       "areaSqft": 240,
-      "priceExGst": 406000,
+      "priceExGst": 414720,
       "capacity": "5–7 people",
       "useCase": "Office with Manager Corner",
       "sku": "SP-MSPC-20x12",
@@ -179,14 +179,14 @@
         }
       ],
       "shortDescription": "The extra width for a partitioned manager corner, on the same 20+ year mild-steel structure.",
-      "priceInclGst": 479080
+      "priceInclGst": 489370
     },
     {
       "sizeSlug": "30x10",
       "label": "30x10 ft",
       "dims": "30x10x8.5 ft",
       "areaSqft": 300,
-      "priceExGst": 508000,
+      "priceExGst": 518400,
       "capacity": "6–8 people",
       "useCase": "Office + Records Room",
       "sku": "SP-MSPC-30x10",
@@ -223,14 +223,14 @@
         }
       ],
       "shortDescription": "A two-zone MS cabin — office plus records/meeting — for site teams that keep the unit for the full project duration.",
-      "priceInclGst": 599440
+      "priceInclGst": 611712
     },
     {
       "sizeSlug": "40x8",
       "label": "40x8 ft",
       "dims": "40x8x8.5 ft",
       "areaSqft": 320,
-      "priceExGst": 530000,
+      "priceExGst": 541440,
       "capacity": "7–9 people",
       "useCase": "Linear Bunkhouse Office",
       "sku": "SP-MSPC-40x8",
@@ -267,14 +267,14 @@
         }
       ],
       "shortDescription": "A long linear MS unit for bunkhouses and in-line site offices, IS 2062 frame along a wall or platform edge.",
-      "priceInclGst": 625400
+      "priceInclGst": 638899
     },
     {
       "sizeSlug": "20x20",
       "label": "20x20 ft",
       "dims": "20x20x8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 663000,
+      "priceExGst": 676800,
       "capacity": "8–10 people",
       "useCase": "Training / Command Room",
       "sku": "SP-MSPC-20x20",
@@ -311,14 +311,14 @@
         }
       ],
       "shortDescription": "A square open MS floor for training halls and site command rooms where structural integrity matters as much as space.",
-      "priceInclGst": 782340
+      "priceInclGst": 798624
     },
     {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
       "dims": "40x10x8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 663000,
+      "priceExGst": 676800,
       "capacity": "8–10 people",
       "useCase": "Large Certified-Frame Office",
       "sku": "SP-MSPC-40x10",
@@ -355,14 +355,14 @@
         }
       ],
       "shortDescription": "The largest single-module MS office floor — eight to ten staff on a certified frame, craned in as one unit.",
-      "priceInclGst": 782340
+      "priceInclGst": 798624
     },
     {
       "sizeSlug": "40x12",
       "label": "40x12 ft",
       "dims": "40x12x8.5 ft",
       "areaSqft": 480,
-      "priceExGst": 779000,
+      "priceExGst": 794880,
       "capacity": "10–12 people",
       "useCase": "Multi-Room Project Office",
       "sku": "SP-MSPC-40x12",
@@ -399,7 +399,8 @@
         }
       ],
       "shortDescription": "The flagship MS cabin — near 500 sq ft of multi-room office on a full IS 2062 Grade A structure.",
-      "priceInclGst": 919220
+      "priceInclGst": 937958
     }
-  ]
+  ],
+  "specPdfHref": "/specs/ms-porta-cabin-technical-specification.pdf"
 }

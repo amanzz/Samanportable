@@ -41,6 +41,7 @@ import {
   isPortaCabinStripSlug,
   orderPortaCabinStrip,
   slugFromProductHref,
+  c01HubReturnAnchorForSlug,
   PORTA_CABIN_REDIRECTED_SLUGS,
 } from '../../../lib/portaCabinClusterRail';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
@@ -776,6 +777,20 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 />
               </div>
 
+              {slug === 'portacabin-office' && (
+                <section
+                  className="mt-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
+                  aria-labelledby="portacabin-office-word-forms"
+                >
+                  <h3 id="portacabin-office-word-forms" className="mb-3 text-xl font-bold text-slate-900">
+                    Porta cabin office or portacabin office?
+                  </h3>
+                  <p className="m-0 text-sm leading-relaxed text-slate-700">
+                    Buyers write it both ways and mean the same thing: a factory-built cabin fitted out as a working office. We build one product for both spellings — the configuration described on this page, with workstations, storage and an optional manager partition, finished a grade above the plain site cabin. If you searched for a porta cabin office and landed here, you are in the right place; the specification, the nine sizes and the prices above are what you were looking for.
+                  </p>
+                </section>
+              )}
+
               {/* Manufacturer Trust Strip ★ NEW (links to /about-us#certifications) */}
               <div className="mt-4">
                 <ManufacturerTrustStrip />
@@ -924,7 +939,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   href={getHubUrl(category)}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary"
                 >
-                  See the full range: {getSeoAnchorText(category) || transformedProduct?.category || 'Products'}
+                  {category === 'porta-cabins' && c01HubReturnAnchorForSlug(slug)
+                    ? c01HubReturnAnchorForSlug(slug)
+                    : <>See the full range: {getSeoAnchorText(category) || transformedProduct?.category || 'Products'}</>}
                   <ArrowLeft className="w-4 h-4 rotate-180" />
                 </Link>
               </div>

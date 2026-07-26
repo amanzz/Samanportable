@@ -35,7 +35,9 @@ import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
-import { PORTA_CABIN_REDIRECTED_SLUGS } from '../../../lib/portaCabinClusterRail';
+import {
+  PORTA_CABIN_REDIRECTED_SLUGS,
+} from '../../../lib/portaCabinClusterRail';
 import { PORTABLE_OFFICE_REDIRECTED_SLUGS } from '../../../lib/portableOfficeCluster';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
