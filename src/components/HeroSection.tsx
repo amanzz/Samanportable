@@ -39,8 +39,7 @@ const HeroSection = () => {
       </div>
 
       {/* Premium Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto container-padding relative z-20 w-full pt-20 pb-12">
         <div className="hero-grid items-center">
