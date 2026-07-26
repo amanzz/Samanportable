@@ -54,7 +54,7 @@
       "label": "20x8 ft",
       "dims": "20x8x8.5 ft",
       "areaSqft": 160,
-      "priceExGst": 317000,
+      "priceExGst": 316800,
       "capacity": "3–4 people",
       "useCase": "Narrow-Plot Site Office",
       "sku": "SP-STPC-20x8",
@@ -91,7 +91,7 @@
         }
       ],
       "shortDescription": "A narrow-plot steel site office; choose the steel type by humidity, full finish either way.",
-      "priceInclGst": 374060
+      "priceInclGst": 373824
     },
     {
       "sizeSlug": "20x10",
@@ -142,7 +142,7 @@
       "label": "20x12 ft",
       "dims": "20x12x8.5 ft",
       "areaSqft": 240,
-      "priceExGst": 415000,
+      "priceExGst": 414720,
       "capacity": "5–7 people",
       "useCase": "Office with Manager Corner",
       "sku": "SP-STPC-20x12",
@@ -179,14 +179,14 @@
         }
       ],
       "shortDescription": "Added width for a manager corner, in your chosen steel specification.",
-      "priceInclGst": 489700
+      "priceInclGst": 489370
     },
     {
       "sizeSlug": "30x10",
       "label": "30x10 ft",
       "dims": "30x10x8.5 ft",
       "areaSqft": 300,
-      "priceExGst": 518000,
+      "priceExGst": 518400,
       "capacity": "6–8 people",
       "useCase": "Two-Zone Site Office",
       "sku": "SP-STPC-30x10",
@@ -223,14 +223,14 @@
         }
       ],
       "shortDescription": "A two-zone steel cabin — office plus meeting/records — MS/GI/pre-galv per deployment length.",
-      "priceInclGst": 611240
+      "priceInclGst": 611712
     },
     {
       "sizeSlug": "40x8",
       "label": "40x8 ft",
       "dims": "40x8x8.5 ft",
       "areaSqft": 320,
-      "priceExGst": 541000,
+      "priceExGst": 541440,
       "capacity": "7–9 people",
       "useCase": "Remote Linear Bunkhouse",
       "sku": "SP-STPC-40x8",
@@ -267,14 +267,14 @@
         }
       ],
       "shortDescription": "A long linear steel unit for bunkhouses and in-line offices; pre-galv worth it for remote long stays.",
-      "priceInclGst": 638380
+      "priceInclGst": 638899
     },
     {
       "sizeSlug": "20x20",
       "label": "20x20 ft",
       "dims": "20x20x8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 677000,
+      "priceExGst": 676800,
       "capacity": "8–10 people",
       "useCase": "Humid-Region Command Room",
       "sku": "SP-STPC-20x20",
@@ -311,14 +311,14 @@
         }
       ],
       "shortDescription": "A square open steel floor for training/command rooms; GI recommended for humid regions.",
-      "priceInclGst": 798860
+      "priceInclGst": 798624
     },
     {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
       "dims": "40x10x8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 677000,
+      "priceExGst": 676800,
       "capacity": "8–10 people",
       "useCase": "Large Steel Office Floor",
       "sku": "SP-STPC-40x10",
@@ -355,14 +355,14 @@
         }
       ],
       "shortDescription": "The largest single-module steel office floor, steel type matched to your site.",
-      "priceInclGst": 798860
+      "priceInclGst": 798624
     },
     {
       "sizeSlug": "40x12",
       "label": "40x12 ft",
       "dims": "40x12x8.5 ft",
       "areaSqft": 480,
-      "priceExGst": 795000,
+      "priceExGst": 794880,
       "capacity": "10–12 people",
       "useCase": "Flagship Steel Office",
       "sku": "SP-STPC-40x12",
@@ -399,7 +399,8 @@
         }
       ],
       "shortDescription": "The flagship steel cabin — near 500 sq ft, specified in MS, GI or pre-galvanized.",
-      "priceInclGst": 938100
+      "priceInclGst": 937958
     }
-  ]
+  ],
+  "specPdfHref": "/specs/steel-porta-cabin-technical-specification.pdf"
 }

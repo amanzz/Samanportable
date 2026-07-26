@@ -18,6 +18,7 @@
 //     its entry is never rendered. Its spec content is covered by the separate
 //     `porta-cabin-with-toilet` entry.
 import specsDataset from '@/data/products/specs-tab-dataset.json';
+import c01Specifications from '@/data/products/c01-specifications.json';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -30,6 +31,20 @@ export interface SpecsEntry {
   keyDifferentiator?: string;
 }
 const DATASET = specsDataset as unknown as Record<string, SpecsEntry>;
+
+interface C01SpecificationRow {
+  group: string;
+  component: string;
+  detail: string;
+  differsFromHub: boolean;
+}
+interface C01SpecificationEntry {
+  name: string;
+  specifications: C01SpecificationRow[];
+}
+const C01_DATASET = c01Specifications as unknown as {
+  products: Record<string, C01SpecificationEntry>;
+};
 
 // Live page slug → dataset key. Everything else maps to itself.
 const PAGE_SLUG_TO_DATASET_KEY: Record<string, string> = {
@@ -73,6 +88,35 @@ function specGroupCard(title: string, fields: Record<string, string | number>): 
       `<dl class="m-0">${rows}</dl>` +
     `</section>`
   );
+}
+
+function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
+  const groups = Array.from(new Set(entry.specifications.map((row) => row.group)));
+  const cards = groups.map((group) => {
+    const rows = entry.specifications
+      .filter((row) => row.group === group)
+      .map((row) => {
+        const differingClass = row.differsFromHub
+          ? ' border-l-4 border-l-emerald-500 bg-emerald-50/70'
+          : '';
+        return (
+          `<tr class="${differingClass.trim()}">` +
+            `<td class="${TD} font-semibold text-slate-700">${esc(row.component)}</td>` +
+            `<td class="${TD}">${esc(row.detail)}</td>` +
+          `</tr>`
+        );
+      })
+      .join('');
+    return (
+      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group)}</h4>` +
+        `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>` +
+          `<th class="${TH}">Component</th><th class="${TH}">Detail</th>` +
+        `</tr></thead><tbody>${rows}</tbody></table></div>` +
+      `</section>`
+    );
+  }).join('');
+  return `<div class="not-prose">${cards}</div>`;
 }
 
 /** Full Specifications tab body for one product. Renders below ProductTabs' own
@@ -561,6 +605,12 @@ export function buildPortableOfficeShippingHtml(): string {
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
 ): { specificationsHtml: string; shippingHtml: string } | null {
+  if (pageSlug && C01_DATASET.products[pageSlug]) {
+    return {
+      specificationsHtml: buildC01SpecificationsHtml(C01_DATASET.products[pageSlug]),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
   // C-02 portable shop cabin — flat spec table + shared shipping.
   if (pageSlug === 'portable-shop-cabin') {
     return {

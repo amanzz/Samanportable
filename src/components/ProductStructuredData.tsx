@@ -3,6 +3,7 @@ import { WooCommerceProduct, ProductReview } from '@/config/api';
 import { generateStructuredDataDescription } from '@/utils/contentUtils';
 import type { VariantProductData } from '@/components/product-variant-hero/types';
 import { resolveVariantProductName, resolveVariantVideo } from '@/components/product-variant-hero/presets';
+import { isC01ProductSlug } from '@/components/product-variant-hero/C01RightToExist';
 
 interface ProductStructuredDataProps {
   product: WooCommerceProduct;
@@ -177,6 +178,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
   // from the 5 SAMAN-verified reviews only (ratingValue 4.6, ratingCount 5) — both
   // visible on the page (hero badge + Reviews tab), so no fake/unbacked rating.
   const variantProductName = resolveVariantProductName(variantData, product.name);
+  const isC01VariantProduct = Boolean(variantData && isC01ProductSlug(variantData.productSlug));
 
   // Ex-GST AggregateOffer for a variant product whose ladder is confirmed and which
   // opts in (variantData.emitAggregateOffer). Emitted on the ProductGroup INSTEAD of
@@ -187,7 +189,10 @@ export default function ProductStructuredData({ product, category, reviews, brea
     ? variantData.variants.map((v) => v.priceExGst).filter((p): p is number => p != null)
     : [];
   const aggregateOfferStructuredData =
-    variantData?.emitAggregateOffer && exGstPrices.length === variantData.variants.length && exGstPrices.length > 0
+    (variantData?.emitAggregateOffer || isC01VariantProduct) &&
+    variantData &&
+    exGstPrices.length === variantData.variants.length &&
+    exGstPrices.length > 0
       ? {
           '@type': 'AggregateOffer',
           priceCurrency: 'INR',
@@ -229,13 +234,23 @@ export default function ProductStructuredData({ product, category, reviews, brea
       // page emits an ex-GST AggregateOffer instead (emitAggregateOffer), and omitted
       // entirely while a price is gated (priceInclGst null). porta-cabins sets neither
       // flag → this emits exactly as before (flagship byte-identity).
-      ...((!variantData.emitAggregateOffer && v.priceInclGst != null) ? {
+      ...(((isC01VariantProduct ? v.priceExGst : (!variantData.emitAggregateOffer ? v.priceInclGst : null)) != null) ? {
         offers: {
           '@type': 'Offer',
-          price: v.priceInclGst,
+          price: isC01VariantProduct ? v.priceExGst : v.priceInclGst,
           priceCurrency: 'INR',
           availability: 'https://schema.org/InStock',
           url: productUrl,
+          ...(isC01VariantProduct ? {
+            hasMerchantReturnPolicy: {
+              '@type': 'MerchantReturnPolicy',
+              applicableCountry: 'IN',
+              returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+              merchantReturnDays: 7,
+              returnMethod: 'https://schema.org/ReturnByMail',
+              returnFees: 'https://schema.org/ReturnShippingFees',
+            },
+          } : {}),
         },
       } : {}),
     })),

@@ -1,0 +1,408 @@
+{
+  "productSlug": "portacabin-office",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 159500,
+      "capacity": "2–3 people",
+      "useCase": "Two-Desk Supervisor Office",
+      "sku": "SP-PCO-10x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-hero-view.webp",
+          "alt": "Porta cabin office 10×10 ft — fitted MS site office by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-front-angle.webp",
+          "alt": "10×10 ft porta cabin office — front view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-side-elevation.webp",
+          "alt": "10×10 ft porta cabin office — side view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-workspace-interior.webp",
+          "alt": "Inside a 10×10 ft porta cabin office — workspace with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-entrance-interior.webp",
+          "alt": "Inside a 10×10 ft porta cabin office — entrance with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A compact porta cabin office for a supervisor or two — desk, seating and power points, finished and wired.",
+      "priceInclGst": 188210
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 255200,
+      "capacity": "3–4 people",
+      "useCase": "Narrow Fitted Office",
+      "sku": "SP-PCO-20x8",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-hero-view.webp",
+          "alt": "Porta cabin office 20×8 ft — fitted MS site office by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-front-angle.webp",
+          "alt": "20×8 ft porta cabin office — front view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-side-elevation.webp",
+          "alt": "20×8 ft porta cabin office — side view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-workspace-interior.webp",
+          "alt": "Inside a 20×8 ft porta cabin office — workspace with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-entrance-interior.webp",
+          "alt": "Inside a 20×8 ft porta cabin office — entrance with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A narrow-plot office cabin for boundary-wall placement, fitted for one to three staff.",
+      "priceInclGst": 301136
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 290000,
+      "capacity": "4–6 people",
+      "useCase": "4–6 Workstation Office",
+      "sku": "SP-PCO-20x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-hero-view.webp",
+          "alt": "Porta cabin office 20×10 ft — fitted MS site office by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-front-angle.webp",
+          "alt": "20×10 ft porta cabin office — front view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-side-elevation.webp",
+          "alt": "20×10 ft porta cabin office — side view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-workspace-interior.webp",
+          "alt": "Inside a 20×10 ft porta cabin office — workspace with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-entrance-interior.webp",
+          "alt": "Inside a 20×10 ft porta cabin office — entrance with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The standard porta cabin office — four to six workstations with power and data, the most-specified site office.",
+      "priceInclGst": 342200
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 334080,
+      "capacity": "5–7 people",
+      "useCase": "Open Office + Manager Cabin",
+      "sku": "SP-PCO-20x12",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-hero-view.webp",
+          "alt": "Porta cabin office 20×12 ft — fitted MS site office by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-front-angle.webp",
+          "alt": "20×12 ft porta cabin office — front view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-side-elevation.webp",
+          "alt": "20×12 ft porta cabin office — side view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-workspace-interior.webp",
+          "alt": "Inside a 20×12 ft porta cabin office — workspace with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-entrance-interior.webp",
+          "alt": "Inside a 20×12 ft porta cabin office — entrance with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "Added width for an open office plus a partitioned manager area.",
+      "priceInclGst": 394214
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 417600,
+      "capacity": "6–8 people",
+      "useCase": "Workstations + Meeting Zone",
+      "sku": "SP-PCO-30x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-hero-view.webp",
+          "alt": "Porta cabin office 30×10 ft — fitted MS site office by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-front-angle.webp",
+          "alt": "30×10 ft porta cabin office — front view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-side-elevation.webp",
+          "alt": "30×10 ft porta cabin office — side view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-workspace-interior.webp",
+          "alt": "Inside a 30×10 ft porta cabin office — workspace with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-entrance-interior.webp",
+          "alt": "Inside a 30×10 ft porta cabin office — entrance with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A two-zone office — open workstations at one end, manager or meeting at the other.",
+      "priceInclGst": 492768
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 436160,
+      "capacity": "7–9 people",
+      "useCase": "Linear Office Run",
+      "sku": "SP-PCO-40x8",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-hero-view.webp",
+          "alt": "Porta cabin office 40×8 ft — fitted MS site office by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-front-angle.webp",
+          "alt": "40×8 ft porta cabin office — front view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-side-elevation.webp",
+          "alt": "40×8 ft porta cabin office — side view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-workspace-interior.webp",
+          "alt": "Inside a 40×8 ft porta cabin office — workspace with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-entrance-interior.webp",
+          "alt": "Inside a 40×8 ft porta cabin office — entrance with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A linear office run for in-line site-office rows.",
+      "priceInclGst": 514669
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20x20 ft",
+      "dims": "20x20x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 545200,
+      "capacity": "8–10 people",
+      "useCase": "Open Team Office Floor",
+      "sku": "SP-PCO-20x20",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-hero-view.webp",
+          "alt": "Porta cabin office 20×20 ft — fitted MS site office by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-front-angle.webp",
+          "alt": "20×20 ft porta cabin office — front view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-side-elevation.webp",
+          "alt": "20×20 ft porta cabin office — side view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-workspace-interior.webp",
+          "alt": "Inside a 20×20 ft porta cabin office — workspace with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-entrance-interior.webp",
+          "alt": "Inside a 20×20 ft porta cabin office — entrance with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A square open office floor for a larger site team or training use.",
+      "priceInclGst": 643336
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 545200,
+      "capacity": "8–10 people",
+      "useCase": "8–10 Workstation Office",
+      "sku": "SP-PCO-40x10",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-hero-view.webp",
+          "alt": "Porta cabin office 40×10 ft — fitted MS site office by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-front-angle.webp",
+          "alt": "40×10 ft porta cabin office — front view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-side-elevation.webp",
+          "alt": "40×10 ft porta cabin office — side view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-workspace-interior.webp",
+          "alt": "Inside a 40×10 ft porta cabin office — workspace with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-entrance-interior.webp",
+          "alt": "Inside a 40×10 ft porta cabin office — entrance with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "A large single-module office — eight to ten workstations delivered as one unit.",
+      "priceInclGst": 643336
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 640320,
+      "capacity": "10–12 people",
+      "useCase": "Multi-Room Site Office",
+      "sku": "SP-PCO-40x12",
+      "images": [
+        {
+          "src": "/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-hero-view.webp",
+          "alt": "Porta cabin office 40×12 ft — fitted MS site office by SAMAN Portable",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-front-angle.webp",
+          "alt": "40×12 ft porta cabin office — front view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-side-elevation.webp",
+          "alt": "40×12 ft porta cabin office — side view, corrugated steel office unit",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-workspace-interior.webp",
+          "alt": "Inside a 40×12 ft porta cabin office — workspace with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-entrance-interior.webp",
+          "alt": "Inside a 40×12 ft porta cabin office — entrance with workstations and power points",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "The flagship office cabin — a multi-room site office with reception, manager and open work areas.",
+      "priceInclGst": 755578
+    }
+  ],
+  "productName": "Portacabin Office",
+  "applicationsDataset": "portacabin-office",
+  "specPdfHref": "/specs/portacabin-office-technical-specification.pdf"
+}

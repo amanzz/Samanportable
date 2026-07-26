@@ -34,6 +34,8 @@ import containerOfficesApplications from '@/data/products/container-offices-appl
 import portableOfficeApplications from '@/data/products/portable-office-applications.json';
 import portableCabinWithToiletApplications from '@/data/products/portable-cabin-with-toilet-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
+import { pushDataLayer } from '@/lib/analytics';
+import C01RightToExist, { isC01ProductSlug } from './C01RightToExist';
 
 interface ApplicationPanel {
   sizeSlug: string;
@@ -237,6 +239,7 @@ export function PortaCabinVariantHero({
   const categoryLinkHref = data.categoryHref || preset.categoryHref;
   const productSku = data.productSku || preset.productSku;
   const specPdfHref = data.specPdfHref || preset.specPdfHref;
+  const isC01Product = isC01ProductSlug(data.productSlug);
   // Trust-strip warranty segment: data → preset → the deployed default. Absent on every
   // product except container-offices → byte-identical trust strip everywhere else.
   const trustWarranty = data.trustWarranty || preset.trustWarranty || '5-yr structural warranty';
@@ -452,10 +455,11 @@ export function PortaCabinVariantHero({
         <a
           href={specPdfHref}
           download
+          onClick={isC01Product ? () => pushDataLayer('file_download', { product_slug: data.productSlug }) : undefined}
           className="flex w-full items-center justify-center gap-2 rounded-md border border-[var(--ds-color-leaf)] bg-white px-4 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:bg-[var(--ds-color-mist)]"
         >
           <Download className="h-4 w-4" aria-hidden="true" />
-          Download specifications
+          {isC01Product ? 'Download Specification PDF' : 'Download specifications'}
         </a>
         )}
       </div>
@@ -645,8 +649,8 @@ export function PortaCabinVariantHero({
           breakpoint; only the mobile formatting context changes. */}
       <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}`
         + `.pc-hero-grid{display:block;}`
-        + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
-        + `@media(min-width:1024px){.pc-hero-grid{display:grid;grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "explorer explorer explorer";}.pc-hero-grid>.pc-rail{grid-area:rail;margin-top:0;}.pc-hero-grid>.pc-gallery{grid-area:gallery;}.pc-hero-grid>.pc-buybox{grid-area:buybox;margin-top:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;margin-top:0;}}` } } />
+        + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rte{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
+        + `@media(min-width:1024px){.pc-hero-grid{display:grid;grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "rte rte rte" "explorer explorer explorer";}.pc-hero-grid>.pc-rail{grid-area:rail;margin-top:0;}.pc-hero-grid>.pc-gallery{grid-area:gallery;}.pc-hero-grid>.pc-buybox{grid-area:buybox;margin-top:0;}.pc-hero-grid>.pc-rte{grid-area:rte;margin-top:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;margin-top:0;}}` } } />
 
       {/* SINGLE responsive tree (V5 fix). Every piece — rail, gallery, buy box,
           explorer — is mounted EXACTLY ONCE; grid-template-areas (see <style>)
@@ -665,6 +669,12 @@ export function PortaCabinVariantHero({
         <div className="pc-buybox lg:relative lg:min-h-0">
           <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{buyBoxColumn('h1')}</div>
         </div>
+
+        {isC01Product && (
+          <div className="pc-rte">
+            <C01RightToExist productSlug={data.productSlug} />
+          </div>
+        )}
 
         {/* Size Applications Explorer — full-width row below on desktop, third on
             mobile. DECOUPLED from the hero (own explorerIndex + #sizedetails-*).
