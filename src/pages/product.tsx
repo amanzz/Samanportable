@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { Search, Filter, Grid3X3, List, Star, ShoppingCart, Eye, Loader2, Phone } from 'lucide-react';
+import { Search, Filter, Grid3X3, List, Star, Eye, Loader2, Phone } from 'lucide-react';
 import type {
   ProductFilters as ProductFiltersType,
   PaginationInfo,
@@ -20,9 +20,8 @@ import ProductFilters from '../components/ProductFilters';
 import Pagination from '../components/Pagination';
 import { formatPriceWithCurrency } from '../lib/utils';
 import OptimizedProductImage from '../components/OptimizedProductImage';
-import { useCart } from '@/contexts/CartContext';
-import { toast } from 'sonner';
 import { setNoStoreCache } from '../lib/cacheHeaders';
+import { getCanonicalProductPath } from '@/lib/productCanonicalPaths';
 
 interface Category {
   id: number;
@@ -61,7 +60,28 @@ interface ProductsProps {
   rankMathSEO?: RankMathSEOData | null;
 }
 
-export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ query, res }) => {
+const PRODUCT_LISTING_CATEGORY_SLUGS = [
+  'roofing-sheets',
+  'wall-sheets',
+  'sandwich-panel',
+  'puf-panel',
+  'pir-panel',
+  'rockwool-panel',
+  'eps-panel',
+  'glass-wool-panel',
+];
+
+const pickListingCategories = (categories: any[]): any[] => {
+  const bySlug = new Map(categories.map((category) => [category.slug, category]));
+  const picked = PRODUCT_LISTING_CATEGORY_SLUGS
+    .map((slug) => bySlug.get(slug))
+    .filter(Boolean);
+  const pickedSlugs = new Set(picked.map((category) => category.slug));
+  const remaining = categories.filter((category) => !pickedSlugs.has(category.slug));
+  return [...picked, ...remaining].slice(0, 8);
+};
+
+export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ query, res, req }) => {
   try {
     console.log('getServerSideProps: Starting to fetch products...');
     
@@ -92,9 +112,13 @@ export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ qu
     // Use the new category priority function to get products in the correct order
     // Static content layer: reads exported files — no WordPress call.
     const staticContent = await import('@/lib/staticContent');
+    const listingOptions = {
+      includeDrafts: staticContent.shouldShowDraftsInListings(req.headers.host),
+    };
+
     const [productsResponse, cats, attrs] = await Promise.all([
-      staticContent.fetchProductsByCategoryPriority(page, 8, filters), // Use new priority-based function
-      staticContent.fetchProductCategories().then(c => c?.slice(0, 8) || []), // Reduced from 10 to 8
+      staticContent.fetchProductsByCategoryPriority(page, 8, filters, listingOptions), // Use new priority-based function
+      staticContent.fetchProductCategories(listingOptions).then(c => pickListingCategories(c || [])), // Keep the compact filter aligned with product-family priority.
       staticContent.fetchProductAttributes().then(a => a?.slice(0, 3) || [])   // Reduced from 5 to 3
     ]);
 
@@ -221,7 +245,6 @@ export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ qu
 
 const Products = ({ products, pagination, categories, attributes, rankMathSEO }: ProductsProps) => {
   const router = useRouter();
-  const { addItem } = useCart();
   
   // Products are already sorted by category priority from the server
   const sortedProducts = products;
@@ -236,29 +259,6 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
   
 
 
-  const handleAddToCart = (product: MinimalProduct) => {
-    try {
-      const price = parseFloat(product.price || '0');
-      const salePrice = product.sale_price ? parseFloat(product.sale_price) : null;
-      const finalPrice = salePrice || price;
-      
-      addItem({
-        id: product.id,
-        name: product.name,
-        price: finalPrice,
-        quantity: 1,
-        category: product.categories?.[0]?.name || 'Uncategorized',
-        image: product.image || '/placeholder.svg',
-        slug: product.slug || `product-${product.id}`
-      });
-      
-      toast.success(`${product.name} added to cart!`);
-    } catch (error) {
-      console.error('Error adding to cart:', error);
-      toast.error('Failed to add item to cart');
-    }
-  };
-  
   // State management
   // products and pagination are fully SSR-driven now
   const [filters, setFilters] = useState<ProductFiltersType>({
@@ -349,11 +349,14 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
   const getProductImage = (product: MinimalProduct) => {
     const image = product.image;
     // Return placeholder if image is invalid or missing
-    if (!image || image === '/placeholder.svg' || !image.startsWith('http')) {
+    if (!image || image === '/placeholder.svg') {
       return '/placeholder.svg';
     }
+    if (image.startsWith('http') || image.startsWith('/')) return image;
     return image;
   };
+
+  const getProductUrl = (product: MinimalProduct) => getCanonicalProductPath(product);
 
   const productHubStructuredData = [
     {
@@ -378,7 +381,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
         "@type": "ListItem",
         "position": index + 1,
         "name": product.name,
-        "url": `https://www.samanportable.com/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`
+        "url": `https://www.samanportable.com${getProductUrl(product)}`
       }))
     },
     {
@@ -492,7 +495,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                         <div className={`bg-muted relative overflow-hidden ${
                           viewMode === 'list' ? 'w-48 h-32' : 'aspect-video'
                         }`}>
-                          <Link href={`/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`}>
+                          <Link href={getProductUrl(product)}>
                             <OptimizedProductImage
                               src={getProductImage(product)}
                               alt={product.name}
@@ -512,8 +515,10 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                               <Button size="sm" variant="secondary" className="w-8 h-8 p-0">
                                 <Eye className="w-4 h-4" />
                               </Button>
-                              <Button size="sm" className="w-8 h-8 p-0">
-                                <ShoppingCart className="w-4 h-4" />
+                              <Button size="sm" className="w-8 h-8 p-0" asChild>
+                                <a href="tel:+918861622859" aria-label={`Call about ${product.name}`}>
+                                  <Phone className="w-4 h-4" />
+                                </a>
                               </Button>
                             </div>
                           </div>
@@ -537,7 +542,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                           
                           {/* Title */}
                           <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                            <Link href={`/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`} className="hover:text-primary transition-colors">
+                            <Link href={getProductUrl(product)} className="hover:text-primary transition-colors">
                             {product.name}
                             </Link>
                           </h3>
@@ -585,7 +590,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                           
                           {/* Action Buttons */}
                           <div className="flex gap-2">
-                            <Link href={`/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`}>
+                            <Link href={getProductUrl(product)}>
                               <Button variant="outline" size="sm" className="flex-1">
                                 View Details
                               </Button>

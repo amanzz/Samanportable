@@ -73,6 +73,10 @@ const CATEGORY_SEO: Record<string, { title: string; meta: string }> = {
     title: 'Portable Building Articles & Guides | SAMAN Portable',
     meta: 'Guides on portable and modular buildings from SAMAN — site offices, prefab classrooms, temporary showrooms and custom portable steel structures for Indian B2B buyers.',
   },
+  'prefab-buildings': {
+    title: 'Prefab Building Articles & Modular Construction Guides | SAMAN',
+    meta: 'SAMAN prefab building articles on factory-built commercial, office and industrial structures, including modular construction methods, cost factors and project planning.',
+  },
   'portable-construction': {
     title: 'Portable Construction Solutions — Articles | SAMAN',
     meta: 'Articles on portable construction site solutions from SAMAN — site offices, toilet cabins, labour hutments and security cabins dispatched from Bangalore and Greater Noida.',
@@ -103,6 +107,7 @@ const CATEGORY_INTRO: Record<string, string> = {
   'design-customization': "SAMAN's design and customisation articles help you plan the right prefab structure for your site. Explore layout options, cladding choices, PUF and cement board panels, electrical point configurations, plumbing fitouts and colour finishes — all customised to your requirement and dispatched from our Bangalore or Greater Noida factory.",
   'prefab-solutions': "Technical articles on SAMAN's prefab solutions — covering MS frame fabrication, sandwich panel and PUF insulation systems, anchor bolt and base plate erection, weld quality standards and customisation options for Indian B2B buyers across construction, manufacturing and infrastructure sectors.",
   'portable-buildings': "SAMAN's portable building articles cover modular steel structures for a wide range of uses — construction site offices, prefab classrooms, temporary showrooms, portable health centres and custom buildings. Find size guides, material specs and deployment advice for Indian B2B buyers.",
+  'prefab-buildings': "Browse SAMAN's prefab building articles for practical guidance on factory-built offices, commercial buildings, modular workspaces and industrial prefab structures. These posts focus on construction methods, planning tradeoffs and buyer questions that sit alongside the main prefab building product range.",
   'portable-construction': "Find articles on SAMAN's full range of portable construction site solutions — MS frame site offices, portable toilet cabins, prefab labour hutments and steel security cabins. All units dispatched from our Bangalore and Greater Noida factories with 3–5 day transit and ₹3,000 standard delivery.",
   'industry-news': "Stay current with India's prefab and modular construction industry — steel material trends, IS code developments, government infrastructure project updates and market insights. Articles written and curated by SAMAN's team with 15+ years in prefab steel structure manufacturing.",
   'tips-guides': "Practical buying guides from SAMAN's manufacturing team — how to select the right size porta cabin, prepare your site for delivery, plan electrical and plumbing fitouts, understand price factors and get your prefab structure installed correctly the first time.",
@@ -111,6 +116,46 @@ const CATEGORY_INTRO: Record<string, string> = {
   'electronic-city': "Articles on portable cabins and prefab site offices for Electronic City, Bangalore — covering MS frame construction, sizes, price factors and delivery. All units dispatched from SAMAN's Gopasandra factory in Bangalore Urban (560099) with fast turnaround for South Bangalore sites.",
   'uncategorized': 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd — ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified manufacturer with factories in Bangalore and Greater Noida serving buyers across India.',
 };
+
+function postMatchesCategory(post: BlogPost, categorySlug: string): boolean {
+  const terms = post._embedded?.['wp:term']?.[0] || [];
+  return (
+    terms.some((term: any) => term?.taxonomy === 'category' && term?.slug === categorySlug) ||
+    (post as any).class_list?.includes(`category-${categorySlug}`)
+  );
+}
+
+function paginatePosts(posts: BlogPost[], page: number, perPage: number) {
+  const totalPages = Math.ceil(posts.length / perPage);
+  const start = (page - 1) * perPage;
+  return {
+    posts: posts.slice(start, start + perPage),
+    pagination: {
+      currentPage: page,
+      totalPages,
+      totalPosts: posts.length,
+      perPage,
+      hasNextPage: page < totalPages,
+      hasPrevPage: page > 1,
+    },
+  };
+}
+
+function getPaginatedBlogDescription(page: number): string {
+  return `Explore page ${page} of the SAMAN Portable blog for practical articles on portable cabins, prefab buildings, modular offices, PEB structures, and steel solutions.`;
+}
+
+function getPaginatedTitle(title: string, page: number): string {
+  if (page <= 1) return title;
+  const pipeIndex = title.lastIndexOf('|');
+  if (pipeIndex === -1) return `${title} - Page ${page}`;
+  return `${title.slice(0, pipeIndex).trim()} - Page ${page} ${title.slice(pipeIndex).trim()}`;
+}
+
+function getPaginatedCategoryDescription(title: string, page: number): string {
+  const topic = title.replace(/\s*\|\s*SAMAN(?: Portable)?\s*$/i, '').trim();
+  return `Browse page ${page} of ${topic} from SAMAN, with more buyer guides, pricing notes and project insights for Indian prefab buyers.`;
+}
 
 interface BlogProps {
   posts: BlogCardPost[];
@@ -126,22 +171,44 @@ interface BlogProps {
   seoTitle: string;
   seoDescription: string;
   seoCategoryIntro: string | null;
+  activeCategory: string | null;
 }
 
 export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query }) => {
   try {
     const rawPage = Array.isArray(query.page) ? query.page[0] : query.page;
-    const parsedPage = rawPage ? parseInt(rawPage, 10) : 1;
-    const page = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1;
+    const hasExplicitPage = typeof rawPage === 'string' && rawPage.length > 0;
+
+    if (hasExplicitPage && !/^[1-9]\d*$/.test(rawPage)) {
+      return { notFound: true };
+    }
+
+    const parsedPage = hasExplicitPage ? parseInt(rawPage, 10) : 1;
+    const page = Number.isFinite(parsedPage) ? parsedPage : 1;
     const category = Array.isArray(query.category) ? query.category[0] : query.category;
     const tag = Array.isArray(query.tag) ? query.tag[0] : query.tag;
     
     console.log('Blog getServerSideProps: Starting to fetch blog posts...');
     
+    const postsPerPage = 10;
+    const cleanCategory = category?.trim().toLowerCase();
+    const cleanTag = tag?.trim();
+
     // Fetch blog posts with pagination - reduced to 10 posts per page for better performance.
     // Static content layer: reads exported post files — no WordPress call.
     const { fetchBlogPosts } = await import('@/lib/staticContent');
-    const result = await fetchBlogPosts(page, 10);
+    let result = await fetchBlogPosts(page, postsPerPage);
+    let categoryHasMatchingPosts = false;
+
+    if (cleanCategory) {
+      const allPostsResult = await fetchBlogPosts(1, 10000);
+      const matchingPosts = allPostsResult.posts.filter((post: BlogPost) => postMatchesCategory(post, cleanCategory));
+
+      if (matchingPosts.length > 0) {
+        categoryHasMatchingPosts = true;
+        result = paginatePosts(matchingPosts, page, postsPerPage);
+      }
+    }
     
     console.log('Blog getServerSideProps: Result:', {
       postsCount: result.posts?.length || 0,
@@ -154,7 +221,8 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       { id: 2, name: 'Industry News', slug: 'industry-news', count: 8 },
       { id: 3, name: 'Case Studies', slug: 'case-studies', count: 12 },
       { id: 4, name: 'Tips & Guides', slug: 'tips-guides', count: 20 },
-      { id: 5, name: 'Company Updates', slug: 'company-updates', count: 6 }
+      { id: 5, name: 'Company Updates', slug: 'company-updates', count: 6 },
+      { id: 6, name: 'Prefab Buildings', slug: 'prefab-buildings', count: 1 }
     ];
     
     const tags = [
@@ -166,52 +234,71 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     ];
 
     const blogCanonicalBase = `${siteConfig.url}/blog`;
-    const cleanCategory = category?.trim();
-    const cleanTag = tag?.trim();
     let seoNoindex = false;
     let seoRouteBehavior = 'indexable blog hub';
+    const hasMatchingCategoryPosts = Boolean(cleanCategory && categoryHasMatchingPosts);
 
     // Canonical strategy (duplicate-content fix):
     //  - category filter -> self-canonical, so each category is its own indexable page
     //  - tag filter       -> canonical back to /blog hub (no unique content for tags)
-    //  - pagination       -> canonical back to /blog hub
+    //  - valid pagination -> self-canonical because each page has a different post slice
     //  - plain /blog      -> /blog
     let seoCanonical = blogCanonicalBase;
 
-    if (cleanCategory) {
+    if (cleanCategory && hasMatchingCategoryPosts) {
       seoCanonical = `${blogCanonicalBase}?category=${encodeURIComponent(cleanCategory)}`;
-      seoRouteBehavior = 'indexable category filter (self-canonical)';
+      if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
+        seoCanonical = `${seoCanonical}&page=${encodeURIComponent(String(page))}`;
+        seoRouteBehavior = 'indexable paginated category filter (self-canonical)';
+      } else if (page > 1) {
+        seoNoindex = true;
+        seoRouteBehavior = 'out-of-range category pagination noindexed and canonicalized to category page one';
+      } else {
+        seoRouteBehavior = 'indexable category filter (self-canonical)';
+      }
+    } else if (cleanCategory) {
+      seoNoindex = true;
+      seoRouteBehavior = 'unknown category filter canonicalized to blog hub';
     } else if (cleanTag) {
       seoRouteBehavior = 'tag filter canonicalized to blog hub';
-    } else if (rawPage && page <= 1) {
+    } else if (hasExplicitPage && page <= 1) {
       seoRouteBehavior = 'page 0/1 canonicalized to blog hub';
     } else if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
-      seoRouteBehavior = 'paginated blog listing canonicalized to blog hub';
+      seoCanonical = `${blogCanonicalBase}?page=${encodeURIComponent(String(page))}`;
+      seoRouteBehavior = 'indexable paginated blog listing (self-canonical)';
     } else if (page > 1) {
       seoNoindex = true;
       seoRouteBehavior = 'out-of-range pagination noindexed and canonicalized to blog hub';
     }
 
-    // Self-referencing hreflang: mirror the EXACT crawled filter URL (?category=,
-    // ?tag= or ?page=) so every blog filter page carries a self-referencing
-    // hreflang, even though pagination/tag pages canonicalize back to the /blog hub.
+    // Self-referencing hreflang follows the normalized canonical URL policy.
+    // That keeps ?page=1 variants out of alternates while preserving real page 2+ URLs.
     let hreflangSelf = blogCanonicalBase;
-    if (cleanCategory) {
-      hreflangSelf = `${blogCanonicalBase}?category=${encodeURIComponent(cleanCategory)}`;
+    if (cleanCategory && hasMatchingCategoryPosts) {
+      hreflangSelf = seoCanonical;
     } else if (cleanTag) {
       hreflangSelf = `${blogCanonicalBase}?tag=${encodeURIComponent(cleanTag)}`;
-    } else if (rawPage) {
-      hreflangSelf = `${blogCanonicalBase}?page=${encodeURIComponent(String(rawPage))}`;
+    } else if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
+      hreflangSelf = seoCanonical;
     }
 
-    // Title / meta selection: category -> unique per-category; tag/page/plain -> default hub.
-    const categorySeo = cleanCategory ? CATEGORY_SEO[cleanCategory.toLowerCase()] : undefined;
-    const seoTitle = categorySeo?.title || pageSEO.blog.title;
-    const seoDescription = categorySeo?.meta || pageSEO.blog.description;
+    // Title / meta selection: category -> unique per-category; paginated URLs
+    // include the page number so Ahrefs/Google do not see page 2+ listings as
+    // duplicate title/description variants of page one.
+    const categorySeo = cleanCategory && hasMatchingCategoryPosts ? CATEGORY_SEO[cleanCategory] : undefined;
+    const hasValidPaginatedSlice = page > 1 && page <= result.pagination.totalPages && result.posts.length > 0;
+    const seoTitle = getPaginatedTitle(categorySeo?.title || pageSEO.blog.title, hasValidPaginatedSlice ? page : 1);
+    const seoDescription = categorySeo
+      ? (hasValidPaginatedSlice ? getPaginatedCategoryDescription(categorySeo.title, page) : categorySeo.meta)
+      : (
+        !cleanCategory && !cleanTag && hasValidPaginatedSlice
+          ? getPaginatedBlogDescription(page)
+          : pageSEO.blog.description
+      );
 
     // Visible intro paragraph: only on a category filter page (not tag/page/plain /blog).
-    const seoCategoryIntro = cleanCategory
-      ? CATEGORY_INTRO[cleanCategory.toLowerCase()] || null
+    const seoCategoryIntro = cleanCategory && hasMatchingCategoryPosts
+      ? CATEGORY_INTRO[cleanCategory] || null
       : null;
 
     // Compute reading time from the full content, then strip `content.rendered` so the large
@@ -237,6 +324,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       seoTitle,
       seoDescription,
       seoCategoryIntro,
+      activeCategory: hasMatchingCategoryPosts ? cleanCategory || null : null,
     };
 
     console.log('Blog getServerSideProps: Returning props with', props.posts.length, 'posts');
@@ -259,12 +347,13 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
         seoTitle: pageSEO.blog.title,
         seoDescription: pageSEO.blog.description,
         seoCategoryIntro: null,
+        activeCategory: null,
       },
     };
   }
 };
 
-const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, seoCanonical, hreflangSelf, seoNoindex, seoTitle, seoDescription, seoCategoryIntro }: BlogProps) => {
+const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, seoCanonical, hreflangSelf, seoNoindex, seoTitle, seoDescription, seoCategoryIntro, activeCategory }: BlogProps) => {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
@@ -286,6 +375,21 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
   // Semrush flag the required field as missing). We suppress the ItemList node and
   // its CollectionPage `mainEntity` reference whenever the page has no posts.
   const hasPosts = posts.length > 0;
+  const getBlogPageHref = (pageNumber: number) => {
+    const normalizedPage = Math.max(1, pageNumber);
+    const params = new URLSearchParams();
+
+    if (activeCategory) {
+      params.set('category', activeCategory);
+    }
+
+    if (normalizedPage > 1) {
+      params.set('page', String(normalizedPage));
+    }
+
+    const queryString = params.toString();
+    return queryString ? `/blog?${queryString}` : '/blog';
+  };
 
   const blogHubStructuredData = [
     {
@@ -331,6 +435,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
         fallbackDescription={seoDescription}
         canonical={seoCanonical}
         hreflangSelf={hreflangSelf}
+        enableHreflang={false}
         fallbackCanonical={seoCanonical}
         fallbackOgImage={siteConfig.ogImage}
         keywords={pageSEO.blog.keywords}
@@ -558,7 +663,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                   {/* Load More Option */}
                   {currentPage < totalPages && (
                     <div className="text-center mt-8 mb-6">
-                      <Link href={`/blog?page=${currentPage + 1}`}>
+                      <Link href={getBlogPageHref(currentPage + 1)}>
                         <Button 
                           variant="outline" 
                           size="lg" 
@@ -579,7 +684,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                     <div className="flex items-center justify-center mt-12">
                       <div className="flex items-center gap-2">
                         {/* Previous Button */}
-                        <Link href={`/blog?page=${currentPage - 1}`}>
+                        <Link href={getBlogPageHref(currentPage - 1)}>
                           <Button 
                             variant="outline" 
                             size="sm" 
@@ -599,7 +704,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                             // Show all pages if total is small
                             for (let i = 1; i <= totalPages; i++) {
                               pages.push(
-                                <Link key={i} href={`/blog?page=${i}`}>
+                                <Link key={i} href={getBlogPageHref(i)}>
                                   <Button
                                     variant={currentPage === i ? "default" : "outline"}
                                     size="sm"
@@ -616,7 +721,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                               // Show first 5 pages + ... + last page
                               for (let i = 1; i <= 5; i++) {
                                 pages.push(
-                                  <Link key={i} href={`/blog?page=${i}`}>
+                                  <Link key={i} href={getBlogPageHref(i)}>
                                     <Button
                                       variant={currentPage === i ? "default" : "outline"}
                                       size="sm"
@@ -629,7 +734,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                               }
                               pages.push(<span key="dots1" className="px-2 text-muted-foreground">...</span>);
                               pages.push(
-                                <Link key={totalPages} href={`/blog?page=${totalPages}`}>
+                                <Link key={totalPages} href={getBlogPageHref(totalPages)}>
                                   <Button variant="outline" size="sm" className="w-10 h-10 p-0">
                                     {totalPages}
                                   </Button>
@@ -638,14 +743,14 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                             } else if (currentPage >= totalPages - 3) {
                               // Show first page + ... + last 5 pages
                               pages.push(
-                                <Link key={1} href={`/blog?page=1`}>
+                                <Link key={1} href={getBlogPageHref(1)}>
                                   <Button variant="outline" size="sm" className="w-10 h-10 p-0">1</Button>
                                 </Link>
                               );
                               pages.push(<span key="dots2" className="px-2 text-muted-foreground">...</span>);
                               for (let i = totalPages - 4; i <= totalPages; i++) {
                                 pages.push(
-                                  <Link key={i} href={`/blog?page=${i}`}>
+                                  <Link key={i} href={getBlogPageHref(i)}>
                                     <Button
                                       variant={currentPage === i ? "default" : "outline"}
                                       size="sm"
@@ -659,14 +764,14 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                             } else {
                               // Show first + ... + current-1, current, current+1 + ... + last
                               pages.push(
-                                <Link key={1} href={`/blog?page=1`}>
+                                <Link key={1} href={getBlogPageHref(1)}>
                                   <Button variant="outline" size="sm" className="w-10 h-10 p-0">1</Button>
                                 </Link>
                               );
                               pages.push(<span key="dots3" className="px-2 text-muted-foreground">...</span>);
                               for (let i = currentPage - 1; i <= currentPage + 1; i++) {
                                 pages.push(
-                                  <Link key={i} href={`/blog?page=${i}`}>
+                                  <Link key={i} href={getBlogPageHref(i)}>
                                     <Button
                                       variant={currentPage === i ? "default" : "outline"}
                                       size="sm"
@@ -679,7 +784,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                               }
                               pages.push(<span key="dots4" className="px-2 text-muted-foreground">...</span>);
                               pages.push(
-                                <Link key={totalPages} href={`/blog?page=${totalPages}`}>
+                                <Link key={totalPages} href={getBlogPageHref(totalPages)}>
                                   <Button variant="outline" size="sm" className="w-10 h-10 p-0">
                                     {totalPages}
                                   </Button>
@@ -692,7 +797,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                         })()}
                         
                         {/* Next Button */}
-                        <Link href={`/blog?page=${currentPage + 1}`}>
+                        <Link href={getBlogPageHref(currentPage + 1)}>
                           <Button 
                             variant="outline" 
                             size="sm" 
@@ -717,8 +822,9 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                             e.preventDefault();
                             const formData = new FormData(e.currentTarget);
                             const page = formData.get('page') as string;
-                            if (page && parseInt(page) >= 1 && parseInt(page) <= totalPages) {
-                              window.location.href = `/blog?page=${page}`;
+                            const pageNumber = parseInt(page, 10);
+                            if (page && pageNumber >= 1 && pageNumber <= totalPages) {
+                              window.location.href = getBlogPageHref(pageNumber);
                             }
                           }}
                           className="flex items-center gap-2"

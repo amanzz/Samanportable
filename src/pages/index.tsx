@@ -9,8 +9,9 @@ import Head from 'next/head';
 // Import Layout component
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
-import { generateOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema, getHomepageLocalBusinessGraphSchema } from '@/lib/schema';
+import { generateHomepageOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema, getHomepageLocalBusinessGraphSchema } from '@/lib/schema';
 import { pageSEO, siteConfig } from '@/config/seo';
+import { dsCssVariables } from '@/components/ds/tokens';
 
 // Dynamic imports for below-the-fold sections to improve LCP
 const TrustBar = dynamic(() => import('@/components/TrustBar'), {
@@ -20,11 +21,9 @@ const TrustBar = dynamic(() => import('@/components/TrustBar'), {
   ),
 });
 
-const CertificationTrustStrip = dynamic(() => import('@/components/CertificationTrustStrip'), {
+const HomepageCertifications = dynamic(() => import('@/components/HomepageCertifications'), {
   ssr: true,
-  loading: () => (
-    <div className="w-full h-16 bg-[#0A3D2A] animate-pulse" />
-  ),
+  loading: () => <div className="w-full h-96 bg-white animate-pulse" />,
 });
 
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'), {
@@ -32,6 +31,11 @@ const ServicesSection = dynamic(() => import('@/components/ServicesSection'), {
   loading: () => (
     <div className="w-full h-96 bg-gradient-to-r from-gray-100 to-gray-200 animate-pulse rounded-lg" />
   ),
+});
+
+const PopularSizes = dynamic(() => import('@/components/PopularSizes'), {
+  ssr: true,
+  loading: () => <div className="w-full h-[48rem] bg-white animate-pulse" />,
 });
 
 const SpecsTable = dynamic(() => import('@/components/SpecsTable'), {
@@ -196,18 +200,18 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
         />
       </Head>
       <UnifiedSEO
-        fallbackTitle="Portable Cabin & Container Office Manufacturer in Bangalore & Delhi NCR"
-        fallbackDescription="Saman Portable manufactures portable cabins, container offices, and prefab structures for businesses across India. ISO-certified. Delivering since 2009. Prices from ₹1.45 Lakh. Get a free quote."
+        fallbackTitle="SAMAN Portable — ISO-Certified Modular Building Manufacturer, India"
+        fallbackDescription="Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN."
         fallbackCanonical="https://www.samanportable.com/"
-        fallbackOgTitle="Portable Cabin & Container Office Manufacturer"
-        fallbackOgDescription="ISO-certified portable cabin manufacturer in Bangalore and Delhi NCR. Serving all of India since 2009. Prices from ₹1.45 Lakh."
+        fallbackOgTitle="SAMAN Portable — ISO-Certified Modular Building Manufacturer, India"
+        fallbackOgDescription="Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN."
         fallbackOgImage="https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp"
-        fallbackTwitterDescription="ISO-certified portable cabin manufacturer in Bangalore and Delhi NCR. Serving all of India since 2009. Prices from ₹1.45 Lakh."
+        fallbackTwitterDescription="Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN."
         keywords={pageSEO.home.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
         structuredData={[
-          generateOrganizationSchema(),
+          generateHomepageOrganizationSchema(),
           {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
@@ -219,18 +223,23 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
         ]}
       />
 
-      <main>
+      <main data-ds-root>
+        <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}` }} />
         {/* 1. Hero Section - Critical for LCP */}
         <HeroSection />
+        <div className="homepage-below-fold">
 
-        {/* 2. Trust Bar ★ NEW */}
+        {/* 2. Certified. Registered. Verifiable. flagship */}
+        <HomepageCertifications />
+
+        {/* 2b. Trust Bar */}
         <TrustBar />
-
-        {/* 2b. Certification Trust Strip ★ NEW (links to /about-us#certifications) */}
-        <CertificationTrustStrip />
 
         {/* 3. Products Section (6 cards) */}
         <ServicesSection />
+
+        {/* 3b. India's most-ordered sizes flagship */}
+        <PopularSizes />
 
         {/* 4. Specs Table ★ NEW */}
         <SpecsTable />
@@ -291,7 +300,7 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
                     </div>
 
                     <div className="absolute bottom-8 left-8 right-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                      <h3 className="text-xl font-bold text-white mb-1">{image.title}</h3>
+                      <div className="text-xl font-bold text-white mb-1">{image.title}</div>
                       <p className="text-white/60 text-sm font-light">Precision manufactured in 7–21 days</p>
                     </div>
                   </div>
@@ -328,6 +337,7 @@ const HomePage = ({ featuredProducts, recentBlogPosts }: HomePageProps) => {
 
         {/* 14. Scroll to Top */}
         <ScrollToTop />
+        </div>
       </main>
     </Layout>
   );

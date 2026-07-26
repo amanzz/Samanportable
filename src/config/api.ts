@@ -1133,7 +1133,8 @@ export async function fetchProductsByCategoryPriority(
       'labor-colony',
       'portable-office',
       'container-cafe',
-      'industrial-sheds'
+      'industrial-sheds',
+      'roofing-sheets'
     ];
 
     let allProducts: any[] = [];

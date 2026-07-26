@@ -28,7 +28,7 @@ import type { BlogPost, RankMathSEOData } from '../config/api';
 import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema, getCityPageGraph, getFAQSchemaOverride } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 import { demoteHtmlH1ToH2 } from '../lib/seoHtml';
-import { setPublicEdgeCache } from '../lib/cacheHeaders';
+import { setNoStoreCache } from '../lib/cacheHeaders';
 
 interface BlogPostProps {
   post: BlogPost | null;
@@ -42,6 +42,7 @@ interface BlogPostProps {
 // image. Keyed to this one slug only — no other page is affected.
 const METADATA_IMAGE_OVERRIDES: Record<string, string> = {
   'best-porta-cabin-supplier': 'https://www.samanportable.com/container-office-by-saman-1.webp',
+  'owning-a-porta-cabin-is-perfect': 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
 };
 // Distinctive marker of the broken WordPress image (matches its size variants).
 const BROKEN_WP_IMAGE_MARKER = 'container-office-by-saman-13-1_11zon';
@@ -49,6 +50,13 @@ const BROKEN_WP_IMAGE_MARKER = 'container-office-by-saman-13-1_11zon';
 const SEO_TITLE_OVERRIDES: Record<string, string> = {
   'container-houses-cost-guide-2024': 'Container Houses Cost Guide 2024 | SAMAN',
   'porta-cabin-office-price': 'Porta Office Cabin Price Guide 2025 | SAMAN',
+};
+
+const SEO_METADATA_OVERRIDES: Record<string, { title: string; description: string }> = {
+  'owning-a-porta-cabin-is-perfect': {
+    title: 'Why Own a Porta Cabin? Benefits, Sizes & Buyer Guide',
+    description: 'Should you own a porta cabin? See the benefits, sizes, uses and buying checks before you choose a factory-built SAMAN porta cabin.',
+  },
 };
 
 const CONTENT_H1_DEMOTION_SLUGS = new Set([
@@ -74,9 +82,12 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'porta-cabin-in-mumbai',
   'porta-cabin-in-ahmedabad',
   'porta-cabin-in-kolkata',
+  'porta-cabin-in-bareilly',
   'porta-cabin-in-jaipur',
   'porta-cabin-in-kanpur',
+  'porta-cabin-in-moradabad',
   'porta-cabin-in-chandigarh',
+  'porta-cabin-in-ludhiana',
   'porta-cabin-in-pune',
   'porta-cabin-in-surat',
   'porta-cabin-in-nashik',
@@ -94,6 +105,7 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'porta-cabin-in-indore',
   'porta-cabin-in-manesar',
   'porta-cabin-in-bhiwadi',
+  'porta-cabin-in-bareilly',
   'porta-cabin-in-sonipat',
   'porta-cabin-in-panipat',
   'porta-cabin-in-rourkela',
@@ -106,6 +118,7 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'porta-cabin-in-belgaum',
   'porta-cabin-in-tirupur',
   'porta-cabin-in-aurangabad',
+  'porta-cabin-in-meerut',
   // C3 Container Office city pages (Container Offices hub breadcrumb, not Porta Cabins)
   'container-office-in-bangalore',
   'container-office-in-chennai',
@@ -123,6 +136,18 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-vijayawada',
   'container-office-in-mangalore',
   'container-office-in-coimbatore',
+  'container-office-in-guntur',
+  'container-office-in-kozhikode',
+  'container-office-in-thrissur',
+  'container-office-in-puducherry',
+  'container-office-in-nellore',
+  'container-office-in-penukonda',
+  'container-office-in-ballari',
+  'container-office-in-warangal',
+  'container-office-in-trichy',
+  'container-office-in-tirupur',
+  'container-office-in-tirupati',
+  'container-office-in-sri-city',
   'container-office-in-madurai',
   'container-office-in-surat',
   'container-office-in-indore',
@@ -136,6 +161,23 @@ const CITY_PAGE_SCHEMA_SLUGS = new Set([
   'container-office-in-dahej',
   'container-office-in-morbi',
   'container-office-in-mundra',
+  'container-office-in-haridwar',
+  'container-office-in-kashipur',
+  'container-office-in-rudrapur',
+  'container-office-in-agra',
+  'container-office-in-varanasi',
+  'container-office-in-bareilly',
+  'container-office-in-neemrana',
+  'container-office-in-bawal',
+  'container-office-in-jalandhar',
+  'container-office-in-moradabad',
+  'container-office-in-rohtak',
+  'container-office-in-panipat',
+  'container-office-in-sonipat',
+  'container-office-in-yamunanagar',
+  'container-office-in-saharanpur',
+  'container-office-in-dehradun',
+  'container-office-in-bhopal',
 ]);
 
 // Container-office (C3) city pages: same lean 3-node graph as the porta-cabin
@@ -157,6 +199,18 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-vijayawada',
   'container-office-in-mangalore',
   'container-office-in-coimbatore',
+  'container-office-in-guntur',
+  'container-office-in-kozhikode',
+  'container-office-in-thrissur',
+  'container-office-in-puducherry',
+  'container-office-in-nellore',
+  'container-office-in-penukonda',
+  'container-office-in-ballari',
+  'container-office-in-warangal',
+  'container-office-in-trichy',
+  'container-office-in-tirupur',
+  'container-office-in-tirupati',
+  'container-office-in-sri-city',
   'container-office-in-madurai',
   'container-office-in-surat',
   'container-office-in-indore',
@@ -170,6 +224,23 @@ const CONTAINER_OFFICE_CITY_SLUGS = new Set([
   'container-office-in-dahej',
   'container-office-in-morbi',
   'container-office-in-mundra',
+  'container-office-in-haridwar',
+  'container-office-in-kashipur',
+  'container-office-in-rudrapur',
+  'container-office-in-agra',
+  'container-office-in-varanasi',
+  'container-office-in-bareilly',
+  'container-office-in-neemrana',
+  'container-office-in-bawal',
+  'container-office-in-jalandhar',
+  'container-office-in-moradabad',
+  'container-office-in-rohtak',
+  'container-office-in-panipat',
+  'container-office-in-sonipat',
+  'container-office-in-yamunanagar',
+  'container-office-in-saharanpur',
+  'container-office-in-dehradun',
+  'container-office-in-bhopal',
 ]);
 
 // City pages served from the North (Greater Noida) factory: their Organization
@@ -181,6 +252,7 @@ const NORTH_CITY_PAGE_SLUGS = new Set([
   'porta-cabin-in-kolkata',
   'porta-cabin-in-jaipur',
   'porta-cabin-in-kanpur',
+  'porta-cabin-in-moradabad',
   'porta-cabin-in-chandigarh',
   'porta-cabin-in-pune',
   'porta-cabin-in-surat',
@@ -205,6 +277,8 @@ const NORTH_CITY_PAGE_SLUGS = new Set([
   'porta-cabin-in-durgapur',
   'porta-cabin-in-jamshedpur',
   'porta-cabin-in-aurangabad',
+  'porta-cabin-in-meerut',
+  'porta-cabin-in-ludhiana',
   'container-office-in-mumbai',
   'container-office-in-delhi',
   'container-office-in-jaipur',
@@ -224,6 +298,23 @@ const NORTH_CITY_PAGE_SLUGS = new Set([
   'container-office-in-dahej',
   'container-office-in-morbi',
   'container-office-in-mundra',
+  'container-office-in-haridwar',
+  'container-office-in-kashipur',
+  'container-office-in-rudrapur',
+  'container-office-in-agra',
+  'container-office-in-varanasi',
+  'container-office-in-bareilly',
+  'container-office-in-neemrana',
+  'container-office-in-bawal',
+  'container-office-in-jalandhar',
+  'container-office-in-moradabad',
+  'container-office-in-rohtak',
+  'container-office-in-panipat',
+  'container-office-in-sonipat',
+  'container-office-in-yamunanagar',
+  'container-office-in-saharanpur',
+  'container-office-in-dehradun',
+  'container-office-in-bhopal',
 ]);
 
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ params, res }) => {
@@ -374,10 +465,28 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
       };
     }
 
-    // Public marketing page with no per-user data — safe to edge-cache. Set only
-    // on the success path so the 404s/redirects above keep Next's default no-store
-    // and newly-published URLs are never cache-poisoned.
-    setPublicEdgeCache(res);
+    const seoMetadataOverride = SEO_METADATA_OVERRIDES[slug];
+    if (seoMetadataOverride) {
+      const canonicalUrl = `https://www.samanportable.com/${slug}`;
+      const imageOverride = METADATA_IMAGE_OVERRIDES[slug] || rankMathSEO?.og_image || 'https://www.samanportable.com/og-image.svg';
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        title: seoMetadataOverride.title,
+        description: seoMetadataOverride.description,
+        canonical: canonicalUrl,
+        og_title: seoMetadataOverride.title,
+        og_description: seoMetadataOverride.description,
+        og_image: imageOverride,
+        twitter_title: seoMetadataOverride.title,
+        twitter_description: seoMetadataOverride.description,
+        twitter_image: imageOverride,
+        robots: { index: 'index', follow: 'follow' },
+      };
+    }
+
+    // Avoid serving stale HTML with old Next.js build asset references after a
+    // deploy. Set only on the success path so 404s/redirects keep Next defaults.
+    setNoStoreCache(res);
 
     return {
       props: {
@@ -772,7 +881,14 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
                 { name: decodeHtmlEntities(post.title.rendered), url: `https://www.samanportable.com/${slug}` },
               ],
               faqSchema: getFAQSchemaOverride(slug) || extractFAQSchema(post.content.rendered),
-              contactTelephone: NORTH_CITY_PAGE_SLUGS.has(slug) ? ['+91 87960 39938', '+91 97089 89937'] : undefined,
+              contactTelephone:
+                slug === 'porta-cabin-in-meerut'
+                  ? ['+91 87960 39938', '+91 97089 39937']
+                  : NORTH_CITY_PAGE_SLUGS.has(slug)
+                    ? ['+91 87960 39938', '+91 97089 89937']
+                    : slug === 'container-office-in-trichy' || slug === 'container-office-in-sri-city' || slug === 'container-office-in-tirupati' || slug === 'container-office-in-puducherry'
+                      ? ['+91 88616 22859', '+91 80886 85440']
+                      : undefined,
             });
           }
 

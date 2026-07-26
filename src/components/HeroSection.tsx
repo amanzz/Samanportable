@@ -1,50 +1,68 @@
-import React from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import QuoteFormTrigger from './QuoteFormTrigger';
 
-// Defer heavy form hydration to reduce LCP render delay
+const HeroFormPlaceholder = () => (
+  <div
+    className="w-full h-[360px] rounded-xl bg-white/5 border border-white/10"
+    style={{
+      contain: 'layout style paint',
+      containIntrinsicSize: '600px 500px'
+    }}
+  />
+);
+
+// The form sits below the initial mobile viewport. Keep its SSR geometry, but do not
+// download or hydrate the form controls until the visitor interacts or reaches the
+// desktop layout. This removes the form's Radix/UI chunk from the mobile LCP window.
 const QuoteForm = dynamic(() => import('./QuoteForm'), {
   ssr: false,
-  loading: () => (
-    <div
-      className="w-full h-[360px] rounded-xl bg-white/5 border border-white/10 animate-pulse"
-      style={{
-        contain: 'layout style paint',
-        containIntrinsicSize: '600px 500px'
-      }}
-    />
-  ),
+  loading: HeroFormPlaceholder,
 });
 
-const heroImages = [
-  {
-    src: '/hero-image/saman-portable-office-cabin-bangalore.webp',
-    alt: 'Saman Portable Office Cabin in Bangalore - High Quality Site Office'
-  },
-  {
-    src: '/hero-image/premium-container-site-office-rental.webp',
-    alt: 'Premium Container Site Office Rental Service by Saman Portable'
-  },
-  {
-    src: '/hero-image/modular-prefab-homes-structures-india.webp',
-    alt: 'Modular Prefab Homes and Steel Structures in India - Eco-friendly Construction'
-  },
-];
+const DeferredQuoteForm = () => {
+  const [shouldHydrate, setShouldHydrate] = useState(false);
 
-const HeroSection = () => {
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+  useEffect(() => {
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      setShouldHydrate(true);
+      return undefined;
+    }
 
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change every 5 seconds
+    const events: Array<keyof WindowEventMap> = [
+      'pointerdown',
+      'touchstart',
+      'keydown',
+      'scroll',
+    ];
+    const hydrate = () => {
+      setShouldHydrate(true);
+      events.forEach((eventName) => window.removeEventListener(eventName, hydrate));
+    };
 
-    return () => clearInterval(timer);
+    events.forEach((eventName) => {
+      window.addEventListener(eventName, hydrate, { once: true, passive: true });
+    });
+    const fallbackTimer = window.setTimeout(hydrate, 12000);
+
+    return () => {
+      window.clearTimeout(fallbackTimer);
+      events.forEach((eventName) => window.removeEventListener(eventName, hydrate));
+    };
   }, []);
 
+  return shouldHydrate ? <QuoteForm variant="hero" /> : <HeroFormPlaceholder />;
+};
+
+const heroImage = {
+  src: '/hero-image/saman-portable-office-cabin-bangalore.webp',
+  alt: 'Saman Portable Office Cabin in Bangalore - High Quality Site Office'
+};
+
+const HeroSection = () => {
   return (
     <section
       className="min-h-screen flex items-center justify-center relative overflow-hidden hero-section-responsive"
@@ -55,27 +73,15 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0">
           <Image
-            src={heroImages[0].src}
-            alt={heroImages[0].alt}
+            src={heroImage.src}
+            alt={heroImage.alt}
             fill
             priority
             quality={75}
             sizes="100vw"
-            className={`object-cover scale-105 transition-opacity duration-1000 ${currentImageIndex === 0 ? 'opacity-100' : 'opacity-0'}`}
+            className="object-cover scale-105"
           />
         </div>
-        {currentImageIndex !== 0 && (
-          <div className="absolute inset-0">
-            <Image
-              src={heroImages[currentImageIndex].src}
-              alt={heroImages[currentImageIndex].alt}
-              fill
-              quality={75}
-              sizes="100vw"
-              className="object-cover scale-105 transition-opacity duration-1000"
-            />
-          </div>
-        )}
       </div>
 
       {/* Premium Gradient Overlay */}
@@ -84,7 +90,7 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto container-padding relative z-20 w-full pt-20 pb-12">
         <div className="hero-grid items-center">
-          <div className="hero-left-content text-white">
+          <div data-homepage-first-100 className="hero-left-content text-white">
             {/* H1 — Concise, SEO-optimized */}
             <div className="mb-8">
               <h1
@@ -93,7 +99,7 @@ const HeroSection = () => {
                   contain: 'layout style paint',
                 }}
               >
-                Premium <span className="text-[#E8F3EF]">Portable Cabins</span> &amp; Container Offices
+                Factory-Built Modular Structures from <span className="text-[#E8F3EF]">Bangalore &amp; Greater Noida</span>
               </h1>
 
               {/* Trust badges — refined */}
@@ -109,8 +115,11 @@ const HeroSection = () => {
             </div>
 
             {/* Paragraph — refined typography */}
-            <p className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed font-light">
-              India&apos;s leading manufacturer of high-ticket prefab structures for industrial, construction and commercial headquarters. Delivered ready-to-use since 2009.
+            <p
+              data-homepage-opening
+              className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed font-light"
+            >
+              SAMAN POS India Private Limited manufactures factory-built modular structures at its own Bangalore and Greater Noida units — ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified, NSIC-enlisted and DPIIT-recognised. You deal with the maker, not a reseller: every unit is fabricated in-house, delivered complete, and installed on your prepared base. Choose your range below — each product line has its own page with sizes, specifications and ex-factory prices — or send your requirement for a written, itemised quotation.
             </p>
 
             {/* CTA Buttons */}
@@ -138,7 +147,7 @@ const HeroSection = () => {
           <div className="hero-form-container relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#0A3D2A] to-emerald-500 rounded-2xl blur opacity-20"></div>
             <div className="relative">
-              <QuoteForm variant="hero" />
+              <DeferredQuoteForm />
             </div>
           </div>
         </div>

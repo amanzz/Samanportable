@@ -1,6 +1,15 @@
 import Head from 'next/head';
 import { WooCommerceProduct, ProductReview } from '@/config/api';
-import { generateStructuredDataDescription } from '@/utils/contentUtils';
+import {
+  buildProductUrl,
+  cleanText,
+  getEffectiveProductPrice,
+  getMerchantAvailability,
+  getProductBrand,
+  getProductSku,
+  selectProductImages,
+  stripHtml,
+} from '@/lib/merchantFeed';
 
 interface ProductStructuredDataProps {
   product: WooCommerceProduct;
@@ -15,25 +24,16 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
-  const productUrl = `${baseUrl}/product/${category || product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`;
-  const imageUrl = product.images?.[0]?.src || `${baseUrl}/placeholder.svg`;
-  const price = parseFloat(product.price) || parseFloat(product.regular_price) || 0;
-  const salePrice = product.on_sale && product.sale_price ? parseFloat(product.sale_price) : null;
+  const productUrl = buildProductUrl(product, category, baseUrl);
+  const productImages = selectProductImages(product, baseUrl).map((image) => image.url);
+  const imageUrl = productImages[0] || `${baseUrl}/placeholder.svg`;
+  const price = getEffectiveProductPrice(product);
+  const brandName = getProductBrand(product);
+  const sku = getProductSku(product);
   
   // Product description from REAL WooCommerce data: prefer short_description, fall back to
   // the full description, and only use a generic line if BOTH backend fields are empty.
   // HTML is stripped so the schema description is plain text matching the visible content.
-  const stripHtml = (html: string): string =>
-    (html || '')
-      .replace(/<[^>]*>/g, ' ')
-      .replace(/&nbsp;/gi, ' ')
-      .replace(/&lt;/gi, '<')
-      .replace(/&gt;/gi, '>')
-      .replace(/&quot;/gi, '"')
-      .replace(/&#0?39;|&apos;/gi, "'")
-      .replace(/&amp;/gi, '&')
-      .replace(/\s+/g, ' ')
-      .trim();
   const backendShort = stripHtml(product.short_description);
   const backendFull = stripHtml(product.description);
   const description =
@@ -68,13 +68,13 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
       };
     });
 
-  const offerStructuredData = (salePrice || price) > 0 ? {
+  const offerStructuredData = price > 0 ? {
     '@type': 'Offer',
     url: productUrl,
     priceCurrency: 'INR',
-    price: salePrice || price,
+    price: price.toFixed(2),
     priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // Valid for 1 year
-    availability: getSchemaAvailability(product.stock_status),
+    availability: getSchemaAvailability(getMerchantAvailability(product.stock_status)),
     itemCondition: 'https://schema.org/NewCondition',
     // Seller information removed to avoid duplicate Organization schemas
     // Manufacturer already provides Organization information
@@ -130,25 +130,26 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
     worstRating: '1'
   } : undefined;
 
+  const productId = `${productUrl}#product`;
+  const breadcrumbId = `${productUrl}#breadcrumb`;
+  const itemPageId = `${productUrl}#webpage`;
+
   const hasProductRichResultEvidence = Boolean(
     offerStructuredData ||
     aggregateRatingStructuredData ||
     reviewNodes.length > 0
   );
 
-  // Generate structured data for Product only when it has real Product-snippet
-  // evidence. Quote-only/unrated products must not emit an ineligible Product
-  // node with no offers, aggregateRating, or review.
   const productStructuredData = hasProductRichResultEvidence ? {
-    '@context': 'https://schema.org/',
     '@type': 'Product',
-    name: product.name.length > 150 ? product.name.substring(0, 147) + '...' : product.name,
-    description: description,
-    image: product.images?.map(img => img.src) || [imageUrl],
+    '@id': productId,
+    name: cleanText(product.name, 150),
+    description,
+    image: productImages.length > 0 ? productImages : [imageUrl],
     url: productUrl,
     brand: {
       '@type': 'Brand',
-      name: 'Saman Portable'
+      name: brandName
     },
     manufacturer: {
       '@id': 'https://www.samanportable.com/#organization'
@@ -156,7 +157,7 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
     category: product.categories?.[0]?.name || 'Portable Structures',
     // Use the REAL WooCommerce SKU; omit the field entirely if the product has none
     // (never fall back to the numeric product id as a fake SKU).
-    ...(product.sku ? { sku: product.sku } : {}),
+    ...(sku ? { sku, mpn: sku } : {}),
     ...(offerStructuredData ? { offers: offerStructuredData } : {}),
     ...(aggregateRatingStructuredData ? { aggregateRating: aggregateRatingStructuredData } : {}),
     // additionalProperty only from real WooCommerce attributes; omitted when none exist.
@@ -168,8 +169,8 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
 
   // Generate BreadcrumbList structured data
   const breadcrumbStructuredData = {
-    '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    '@id': breadcrumbId,
     itemListElement: [
       {
         '@type': 'ListItem',
@@ -206,13 +207,22 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
   const itemPageDescription = `Explore ${product.name} - Premium modular units designed for versatility and long-term value. Ideal for various applications and environments.`;
   
   const itemPageStructuredData = {
-    '@context': 'https://schema.org',
     '@type': 'ItemPage',
+    '@id': itemPageId,
     name: `${product.name} - Product Details`,
     description: itemPageDescription,
     url: productUrl,
-    ...(productStructuredData ? { mainEntity: productStructuredData } : {}),
-    breadcrumb: breadcrumbStructuredData
+    ...(productStructuredData ? { mainEntity: { '@id': productId } } : {}),
+    breadcrumb: { '@id': breadcrumbId }
+  };
+
+  const structuredDataGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      productStructuredData,
+      breadcrumbStructuredData,
+      itemPageStructuredData,
+    ].filter(Boolean),
   };
 
   return (
@@ -220,22 +230,24 @@ export default function ProductStructuredData({ product, category, reviews }: Pr
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(itemPageStructuredData)
+          __html: JSON.stringify(structuredDataGraph)
         }}
       />
-      {/* Product and Breadcrumb schemas are now included in ItemPage mainEntity */}
+      {/* Product, Breadcrumb and ItemPage are emitted as a single @graph. */}
     </Head>
   );
 }
 
 function getSchemaAvailability(stockStatus: string): string {
   switch (stockStatus) {
-    case 'instock':
+    case 'in_stock':
       return 'https://schema.org/InStock';
-    case 'outofstock':
+    case 'out_of_stock':
       return 'https://schema.org/OutOfStock';
-    case 'onbackorder':
+    case 'backorder':
       return 'https://schema.org/BackOrder';
+    case 'preorder':
+      return 'https://schema.org/PreOrder';
     default:
       return 'https://schema.org/InStock';
   }

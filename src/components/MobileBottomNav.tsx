@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Home, ShoppingBag, ShoppingCart, X, Package, Menu } from 'lucide-react';
-import { useCart } from '@/contexts/CartContext';
+import { Home, X, Package, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { getSeoAnchorText } from '@/lib/seoAnchorMap';
 
@@ -35,8 +34,6 @@ interface MobileBottomNavProps {
 
 const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
   const router = useRouter();
-  const { state: cartState } = useCart();
-  const { itemCount } = cartState;
   const [showSidebar, setShowSidebar] = useState(false);
   
 
@@ -56,15 +53,8 @@ const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
     {
       name: 'Shop',
       href: '/product',
-      icon: ShoppingBag,
+      icon: Package,
       isActive: router.pathname.startsWith('/product')
-    },
-    {
-      name: 'Cart',
-      href: '/cart',
-      icon: ShoppingCart,
-      isActive: router.pathname === '/cart',
-      badge: itemCount > 0 ? itemCount : null
     }
   ];
 
@@ -122,7 +112,7 @@ const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
                   />
                   {/* Badge */}
                   {item.badge && (
-                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold cart-badge shadow-lg">
+                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold nav-badge shadow-lg">
                       {item.badge > 99 ? '99+' : item.badge}
                     </div>
                   )}
@@ -236,4 +226,3 @@ const MobileBottomNav = ({ relatedProducts = [] }: MobileBottomNavProps) => {
 };
 
 export default MobileBottomNav;
-

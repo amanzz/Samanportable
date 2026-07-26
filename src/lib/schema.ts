@@ -1,4 +1,4 @@
-import { homepageFaqs } from '@/data/homepageFaqs';
+﻿import { homepageFaqs } from '@/data/homepageFaqs';
 
 export interface ProductSchema {
   name: string;
@@ -80,37 +80,46 @@ export const generateOrganizationSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': 'https://www.samanportable.com/#organization',
-    name: 'Saman Portable',
+    name: 'SAMAN Portable',
     legalName: 'SAMAN POS India Private Limited',
-    url: 'https://www.samanportable.com',
+    alternateName: 'Saman Portable',
+    url: 'https://www.samanportable.com/',
     logo: 'https://www.samanportable.com/saman-logo.svg',
-    foundingDate: '2009',
-    description:
-      'ISO 9001:2015 certified manufacturer of portable cabins, container offices, security cabins and prefab structures. Manufacturing in Bengaluru and Greater Noida. Delivering across India since 2009. Over 500+ projects delivered.',
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+91-80886-85440',
+        telephone: '+918861622859',
         contactType: 'Sales',
         areaServed: 'IN',
-        availableLanguage: ['English', 'Hindi', 'Kannada'],
       },
       {
         '@type': 'ContactPoint',
-        telephone: '+91-87960-39938',
+        telephone: '+918796039938',
         contactType: 'Sales',
         areaServed: 'IN',
-        availableLanguage: ['English', 'Hindi'],
       },
     ],
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Sy No 34/2, near India Oil Petrol Pump, Gopasandra',
-      addressLocality: 'Bengaluru',
-      addressRegion: 'Karnataka',
-      postalCode: '560099',
-      addressCountry: 'IN',
-    },
+    email: ['sales@samanportable.com', 'ncr@samanportable.com'],
+    address: [
+      {
+        '@type': 'PostalAddress',
+        name: 'Manufacturing Unit 1 - Bangalore',
+        streetAddress: 'Sy No 34/2, near India Oil petrol pump, Gopasandra',
+        addressLocality: 'Bengaluru',
+        addressRegion: 'Karnataka',
+        postalCode: '560099',
+        addressCountry: 'IN',
+      },
+      {
+        '@type': 'PostalAddress',
+        name: 'Manufacturing Unit 2 - Greater Noida',
+        streetAddress: 'Khata No 226, Vill-Jalpura, Bisrakh Rd, Jalpura, Dadri',
+        addressLocality: 'Greater Noida',
+        addressRegion: 'Uttar Pradesh',
+        postalCode: '201308',
+        addressCountry: 'IN',
+      },
+    ],
     sameAs: [
       'https://www.facebook.com/p/SAMAN-Portable-Office-Solutions-is-leading-manufacturer-of-Porta-Cabins-100067811252556/',
       'https://x.com/Saman_Portable',
@@ -134,6 +143,12 @@ export const generateOrganizationSchema = () => {
   };
 };
 
+export const generateHomepageOrganizationSchema = () => {
+  const homepageOrganization = { ...generateOrganizationSchema() };
+  delete (homepageOrganization as Partial<typeof homepageOrganization>).hasMerchantReturnPolicy;
+  return homepageOrganization;
+};
+
 export const generateBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url: string }>) => {
   return {
     '@context': 'https://schema.org',
@@ -149,7 +164,7 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url:
 
 /**
  * Generic WebPage node for static pages (gallery, policy pages) that otherwise
- * carry no meaningful schema. Links to the site Organization/WebSite by @id —
+ * carry no meaningful schema. Links to the site Organization/WebSite by @id â€”
  * no duplicate Organization node. Safe, additive: no Product/Service/Review.
  */
 export const generateWebPageSchema = (params: { url: string; name: string; description?: string }) => ({
@@ -169,20 +184,18 @@ export const getLocalBusinessSchemaBengaluru = () => ({
   '@type': 'LocalBusiness',
   '@id': 'https://www.samanportable.com/#localbusiness-bengaluru',
   parentOrganization: { '@id': 'https://www.samanportable.com/#organization' },
-  name: 'Saman Portable — Bengaluru',
-  description:
-    'ISO 9001:2015 certified manufacturer of portable cabins, container offices, security cabins, labour colonies and prefab structures. Serving all of India since 2009. Manufacturing in Bengaluru and Greater Noida.',
-  url: 'https://www.samanportable.com',
+  name: 'SAMAN Portable - Bangalore Manufacturing Unit',
+  legalName: 'SAMAN POS India Private Limited',
+  alternateName: 'SAMAN Portable Bangalore',
+  url: 'https://www.samanportable.com/',
   logo: 'https://www.samanportable.com/saman-logo.svg',
   image: 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
-  foundingDate: '2009',
-  priceRange: '₹₹',
-  telephone: ['+918088685440', '+918861622859'],
+  telephone: ['+918861622859', '+918088685440'],
   email: 'sales@samanportable.com',
   address: {
     '@type': 'PostalAddress',
-    name: 'Manufacturing Unit 1 — Bengaluru',
-    streetAddress: 'Sy No 34/2, near India Oil Petrol Pump, Gopasandra',
+    name: 'Manufacturing Unit 1 - Bangalore',
+    streetAddress: 'Sy No 34/2, near India Oil petrol pump, Gopasandra',
     addressLocality: 'Bengaluru',
     addressRegion: 'Karnataka',
     postalCode: '560099',
@@ -193,55 +206,6 @@ export const getLocalBusinessSchemaBengaluru = () => ({
     latitude: '12.851009',
     longitude: '77.729225',
   },
-  identifier: [
-    { '@type': 'PropertyValue', name: 'GSTIN', value: '29ABBCS7101B1ZR' },
-    { '@type': 'PropertyValue', name: 'ISO 9001:2015', value: 'E20250218645' },
-    { '@type': 'PropertyValue', name: 'ISO 14001:2015', value: 'E20250218646' },
-    { '@type': 'PropertyValue', name: 'ISO 45001:2018', value: 'E20250218647' },
-    { '@type': 'PropertyValue', name: 'NSIC', value: 'NSIC/GP/BAN/2024/0055207' },
-    { '@type': 'PropertyValue', name: 'DPIIT', value: 'DIPP56005' },
-  ],
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '09:00',
-      closes: '20:00',
-    },
-  ],
-  areaServed: [
-    'Karnataka',
-    'Tamil Nadu',
-    'Andhra Pradesh',
-    'Telangana',
-    'Kerala',
-    'Maharashtra',
-    'Goa',
-    'Gujarat',
-    'Rajasthan',
-    'Delhi NCR',
-    'Uttar Pradesh',
-    'Haryana',
-    'Punjab',
-    'West Bengal',
-    'Odisha',
-    'Madhya Pradesh',
-    'Jharkhand',
-    'Bihar',
-    'Assam',
-    'Himachal Pradesh',
-  ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Portable Cabin & Prefab Structure Products',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Cafe', description: 'Custom container cafes and food kiosks' } },
-    ],
-  },
 });
 
 export const getLocalBusinessSchemaGreaterNoida = () => ({
@@ -249,20 +213,18 @@ export const getLocalBusinessSchemaGreaterNoida = () => ({
   '@type': 'LocalBusiness',
   '@id': 'https://www.samanportable.com/#localbusiness-greater-noida',
   parentOrganization: { '@id': 'https://www.samanportable.com/#organization' },
-  name: 'Saman Portable — Greater Noida',
-  description:
-    'ISO 9001:2015 certified manufacturer of portable cabins, container offices, security cabins, labour colonies and prefab structures. Serving all of India since 2009. Manufacturing in Bengaluru and Greater Noida.',
-  url: 'https://www.samanportable.com',
+  name: 'SAMAN Portable - Greater Noida Manufacturing Unit',
+  legalName: 'SAMAN POS India Private Limited',
+  alternateName: 'SAMAN Portable Greater Noida',
+  url: 'https://www.samanportable.com/',
   logo: 'https://www.samanportable.com/saman-logo.svg',
   image: 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
-  foundingDate: '2009',
-  priceRange: '₹₹',
   telephone: ['+918796039938', '+919708989937'],
   email: 'ncr@samanportable.com',
   address: {
     '@type': 'PostalAddress',
-    name: 'Manufacturing Unit 2 — Greater Noida',
-    streetAddress: 'Khata No 226, Vill-Jalpura, Bisrakh Rd, Dadri',
+    name: 'Manufacturing Unit 2 - Greater Noida',
+    streetAddress: 'Khata No 226, Vill-Jalpura, Bisrakh Rd, Jalpura, Dadri',
     addressLocality: 'Greater Noida',
     addressRegion: 'Uttar Pradesh',
     postalCode: '201308',
@@ -270,57 +232,8 @@ export const getLocalBusinessSchemaGreaterNoida = () => ({
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '28.552251',
-    longitude: '77.439618',
-  },
-  identifier: [
-    { '@type': 'PropertyValue', name: 'GSTIN', value: '09ABBCS7101B1ZT' },
-    { '@type': 'PropertyValue', name: 'ISO 9001:2015', value: 'E20250218645' },
-    { '@type': 'PropertyValue', name: 'ISO 14001:2015', value: 'E20250218646' },
-    { '@type': 'PropertyValue', name: 'ISO 45001:2018', value: 'E20250218647' },
-    { '@type': 'PropertyValue', name: 'NSIC', value: 'NSIC/GP/BAN/2024/0055207' },
-    { '@type': 'PropertyValue', name: 'DPIIT', value: 'DIPP56005' },
-  ],
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '09:00',
-      closes: '20:00',
-    },
-  ],
-  areaServed: [
-    'Karnataka',
-    'Tamil Nadu',
-    'Andhra Pradesh',
-    'Telangana',
-    'Kerala',
-    'Maharashtra',
-    'Goa',
-    'Gujarat',
-    'Rajasthan',
-    'Delhi NCR',
-    'Uttar Pradesh',
-    'Haryana',
-    'Punjab',
-    'West Bengal',
-    'Odisha',
-    'Madhya Pradesh',
-    'Jharkhand',
-    'Bihar',
-    'Assam',
-    'Himachal Pradesh',
-  ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Portable Cabin & Prefab Structure Products',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Porta Cabin', description: 'Quality-tested steel-frame portable cabins from Rs 1,45,000' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Office', description: '20ft and 40ft container offices from Rs 2,25,000' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Security Cabin', description: 'FRP and MS steel security cabins and guard rooms' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Labour Colony', description: 'Modular labour accommodation and bunk house units' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Container Cafe', description: 'Custom container cafes and food kiosks' } },
-    ],
+    latitude: '28.552346',
+    longitude: '77.439519',
   },
 });
 
@@ -372,7 +285,7 @@ export const getAboutPageSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
   '@id': 'https://www.samanportable.com/about-us#aboutpage',
-  name: 'About SAMAN Portable | India’s Trusted Modular Construction Leader',
+  name: 'About SAMAN Portable | Indiaâ€™s Trusted Modular Construction Leader',
   description:
     'Founded in 2009 and incorporated as SAMAN POS India Private Limited in 2019. Over 15 years of portable cabin, container office and prefab structure manufacturing across India.',
   url: 'https://www.samanportable.com/about-us',
@@ -402,7 +315,7 @@ export const extractFAQSchema = (html: string): object | null => {
 
   const faqs: FAQItem[] = [];
 
-  // ── Shared FAQ validation (hardening) ──────────────────────────────────
+  // â”€â”€ Shared FAQ validation (hardening) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Strip tags + decode common HTML entities to clean plain text.
   const clean = (s: string): string =>
     (s || '')
@@ -519,14 +432,32 @@ const faqSchemaFromItems = (items: FAQItem[]): object => ({
 });
 
 const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
+  'container-office-in-rudrapur': [
+    {
+      question: "What does a container office cost in Rudrapur?",
+      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the long-haul delivery distance to your Rudrapur or Pantnagar site. Share your requirement and we send an itemised quote.",
+    },
+    {
+      question: "Do you deliver to SIDCUL Pantnagar and Rudrapur?",
+      answer: "Yes. We dispatch from our Greater Noida factory on NH-9 through Moradabad and Rampur to the SIDCUL Integrated Industrial Estate at Pantnagar and the Rudrapur SIDCUL area â€” about 230â€“270 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which sizes suit auto and FMCG plants here?",
+      answer: "We build 10 ft, 20 ft and 40 ft standard units. A 20 ft cabin covers most supervisor, QC and admin needs, while 10 ft suits line-side or guard points and 40 ft suits larger offices. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Are the cabins built for Rudrapur's humid, monsoon-heavy weather?",
+      answer: "Yes. We use PUF-insulated panels with sealed joints and a GI-sheet roof, which suit the Terai belt's heat and monsoon humidity. Exact panel and sealing spec is confirmed at quotation.",
+    },
+  ],
   'container-office-in-mangalore': [
     {
       question: "How much does a container office cost in Mangalore?",
-      answer: "Price depends on size, insulation, weather/corrosion protection, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, weather/corrosion protection, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How long does delivery take to Mangalore?",
-      answer: "We dispatch from our Bangalore factory, around 350 km away on NH75 via Hassan and the Shiradi ghat, with typical road transit of 3-5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+      answer: "We dispatch from our Bangalore factory, around 350 km away on NH75 via Hassan and the Shiradi ghat, with typical road transit of 3?5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
     },
     {
       question: "Are the units suitable for port, refinery and coastal sites?",
@@ -540,11 +471,11 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-mysore': [
     {
       question: "How much does a container office cost in Mysore?",
-      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft security cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft security cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How quickly can you deliver to Mysore?",
-      answer: "Mysore is about 145 km from our Bangalore factory, so it is one of our fastest South routes. Typical road transit is 3-5 days once the unit is built, often quicker given the short distance. We confirm the schedule at order stage.",
+      answer: "Mysore is about 145 km from our Bangalore factory, so it is one of our fastest South routes. Typical road transit is 3?5 days once the unit is built, often quicker given the short distance. We confirm the schedule at order stage.",
     },
     {
       question: "Can I visit the factory before ordering?",
@@ -558,15 +489,15 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-madurai': [
     {
       question: "How much does a container office cost in Madurai?",
-      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How long does delivery take to Madurai?",
-      answer: "We dispatch from our Bangalore factory, around 440 km away via the Salem–Dindigul corridor, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+      answer: "We dispatch from our Bangalore factory, around 440 km away via the Salemâ€“Dindigul corridor, with typical road transit of 3â€“5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
     },
     {
       question: "Do you supply site offices for hospital and institutional construction projects?",
-      answer: "Yes. Institutional and medical construction — including the AIIMS / Thoppur belt — is a major source of demand around Madurai. We supply site offices, engineer cabins and security posts, and can relocate units as the project progresses.",
+      answer: "Yes. Institutional and medical construction â€” including the AIIMS / Thoppur belt â€” is a major source of demand around Madurai. We supply site offices, engineer cabins and security posts, and can relocate units as the project progresses.",
     },
     {
       question: "Can the container office be moved between sites later?",
@@ -576,7 +507,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-surat': [
     {
       question: "How much does a container office cost in Surat?",
-      answer: "Price depends on size, insulation, corrosion protection, partitions, electricals and fit-out, plus the long-distance transport. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, corrosion protection, partitions, electricals and fit-out, plus the long-distance transport. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How long does delivery take to Surat?",
@@ -594,11 +525,11 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-indore': [
     {
       question: "How much does a container office cost in Indore?",
-      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How long does delivery take to Indore?",
-      answer: "We dispatch from our Greater Noida factory, roughly 780 km away via the Agra–Gwalior corridor, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+      answer: "We dispatch from our Greater Noida factory, roughly 780 km away via the Agraâ€“Gwalior corridor, with typical road transit of 3â€“5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
     },
     {
       question: "Do you supply site offices for Pithampur auto and pharma plants?",
@@ -612,11 +543,11 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-nagpur': [
     {
       question: "How much does a container office cost in Nagpur?",
-      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How long does delivery take to Nagpur?",
-      answer: "We dispatch from our Greater Noida factory, around 950 km away via NH44, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+      answer: "We dispatch from our Greater Noida factory, around 950 km away via NH44, with typical road transit of 3â€“5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
     },
     {
       question: "Do you supply site offices for MIHAN and Butibori projects?",
@@ -630,7 +561,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-vadodara': [
     {
       question: "How much does a container office cost in Vadodara?",
-      answer: "Price depends on size, insulation, corrosion protection, partitions, electricals and fit-out, plus the transport. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, corrosion protection, partitions, electricals and fit-out, plus the transport. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How long does delivery take to Vadodara?",
@@ -648,15 +579,15 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-ankleshwar': [
     {
       question: "How much does a container office cost in Ankleshwar?",
-      answer: "Price depends on size, panel type, corrosion protection, partitions, electricals and fit-out, plus long-haul transport from our Greater Noida factory. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, panel type, corrosion protection, partitions, electricals and fit-out, plus long-haul transport from our Greater Noida factory. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "Is a container office suitable for a chemical or pharma site in GIDC Ankleshwar?",
-      answer: "As an admin, QC, documentation or supervisor cabin placed within the estate, yes — and we can add corrosion protection and cement-board panelling suited to a humid, chemical-adjacent position. Note these are site/admin cabins, not process-area explosion-proof enclosures; tell us the use and we advise on the right build.",
+      answer: "As an admin, QC, documentation or supervisor cabin placed within the estate, yes â€” and we can add corrosion protection and cement-board panelling suited to a humid, chemical-adjacent position. Note these are site/admin cabins, not process-area explosion-proof enclosures; tell us the use and we advise on the right build.",
     },
     {
       question: "How long does delivery take to Ankleshwar?",
-      answer: "We dispatch from our Greater Noida factory, roughly 1,050–1,120 km away via the NH48 corridor. It is a long-haul route, so we confirm the exact transit window at order stage based on your estate and gate access.",
+      answer: "We dispatch from our Greater Noida factory, roughly 1,050â€“1,120 km away via the NH48 corridor. It is a long-haul route, so we confirm the exact transit window at order stage based on your estate and gate access.",
     },
     {
       question: "Can the container office be moved between sites later?",
@@ -666,15 +597,15 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-dahej': [
     {
       question: "How much does a container office cost in Dahej?",
-      answer: "Price depends on size, panel type, corrosion protection, partitions, electricals and fit-out, plus long-haul transport from our Greater Noida factory. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, panel type, corrosion protection, partitions, electricals and fit-out, plus long-haul transport from our Greater Noida factory. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "Are your cabins suited to a coastal, chemical-adjacent Dahej site?",
-      answer: "As site, admin or documentation cabins, yes — and we can add corrosion protection and cement-board panelling suited to a coastal, chemical-adjacent position. Note these are site/admin cabins, not process-area explosion-proof enclosures; tell us the use and we advise on the right build.",
+      answer: "As site, admin or documentation cabins, yes â€” and we can add corrosion protection and cement-board panelling suited to a coastal, chemical-adjacent position. Note these are site/admin cabins, not process-area explosion-proof enclosures; tell us the use and we advise on the right build.",
     },
     {
       question: "How long does delivery take to Dahej?",
-      answer: "We dispatch from our Greater Noida factory, roughly 1,100–1,170 km away via the NH48 corridor and the Dahej port/PCPIR road. It is a long-haul route, so we confirm the exact transit window at order stage based on your site and gate access.",
+      answer: "We dispatch from our Greater Noida factory, roughly 1,100â€“1,170 km away via the NH48 corridor and the Dahej port/PCPIR road. It is a long-haul route, so we confirm the exact transit window at order stage based on your site and gate access.",
     },
     {
       question: "Can you supply a staged set of offices for a large EPC project?",
@@ -684,15 +615,15 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-morbi': [
     {
       question: "How much does a container office cost in Morbi?",
-      answer: "Price depends on size, insulation/AC for hot yards, partitions, dispatch-window layout, electricals and fit-out, plus long-haul transport from our Greater Noida factory. A bare 10 ft gate cabin and a fully fitted 40 ft admin office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation/AC for hot yards, partitions, dispatch-window layout, electricals and fit-out, plus long-haul transport from our Greater Noida factory. A bare 10 ft gate cabin and a fully fitted 40 ft admin office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "Can the cabin handle a hot, dusty ceramic yard?",
-      answer: "Yes — we insulate for heat and can add AC provision, plus sealed windows and a durable finish suited to a dusty yard. Tell us the yard conditions and we advise on the right build.",
+      answer: "Yes â€” we insulate for heat and can add AC provision, plus sealed windows and a durable finish suited to a dusty yard. Tell us the yard conditions and we advise on the right build.",
     },
     {
       question: "How long does delivery take to Morbi?",
-      answer: "We dispatch from our Greater Noida factory, roughly 1,190–1,280 km away via the NH48 corridor through Ahmedabad and Rajkot. It is a long-haul route, so we confirm the exact transit window at order stage based on your yard and offloading access.",
+      answer: "We dispatch from our Greater Noida factory, roughly 1,190â€“1,280 km away via the NH48 corridor through Ahmedabad and Rajkot. It is a long-haul route, so we confirm the exact transit window at order stage based on your yard and offloading access.",
     },
     {
       question: "Can you supply a dispatch cabin with a storage section?",
@@ -702,15 +633,15 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-mundra': [
     {
       question: "How much does a container office cost in Mundra?",
-      answer: "Price depends on size, corrosion protection, documentation/gate layout, partitions, electricals and fit-out, plus long-haul transport into Kutch. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, corrosion protection, documentation/gate layout, partitions, electricals and fit-out, plus long-haul transport into Kutch. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "Will the cabin hold up in Mundra's coastal port environment?",
-      answer: "Yes — we can add extra corrosion protection and cement-board panelling suited to a coastal, humid, dusty position. Tell us the site conditions and we advise on the right build.",
+      answer: "Yes â€” we can add extra corrosion protection and cement-board panelling suited to a coastal, humid, dusty position. Tell us the site conditions and we advise on the right build.",
     },
     {
       question: "How long does delivery take to Mundra?",
-      answer: "We dispatch from our Greater Noida factory, roughly 1,350–1,450 km away via NH48 to Ahmedabad and across Kutch to Mundra. It is a long-haul route, so we confirm the exact transit window at order stage based on your site and gate access.",
+      answer: "We dispatch from our Greater Noida factory, roughly 1,350â€“1,450 km away via NH48 to Ahmedabad and across Kutch to Mundra. It is a long-haul route, so we confirm the exact transit window at order stage based on your site and gate access.",
     },
     {
       question: "Can you supply gate and documentation cabins for a CFS or terminal?",
@@ -720,11 +651,11 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-meerut': [
     {
       question: "How much does a container office cost in Meerut?",
-      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost, though Meerut's short haul from our factory keeps delivery low. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost, though Meerut's short haul from our factory keeps delivery low. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How quickly can you deliver to Meerut?",
-      answer: "Faster than most — Meerut is only around 100 km from our Greater Noida factory via the Delhi–Meerut and Eastern Peripheral Expressways, the shortest route of any city we serve. We confirm the exact schedule at order stage based on your site and access.",
+      answer: "Faster than most â€” Meerut is only around 100 km from our Greater Noida factory via the Delhiâ€“Meerut and Eastern Peripheral Expressways, the shortest route of any city we serve. We confirm the exact schedule at order stage based on your site and access.",
     },
     {
       question: "Do you supply cabins for sports-goods and MSME factories?",
@@ -735,18 +666,36 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
     },
   ],
+  'container-office-in-kashipur': [
+    {
+      question: "What does a container office cost in Kashipur?",
+      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the long-haul delivery distance to your Kashipur site. Share your requirement and we send an itemised quote.",
+    },
+    {
+      question: "Do you deliver to SIIDCUL Kashipur and the Kashipurâ€“Thakurdwara Road belt?",
+      answer: "Yes. We dispatch from our Greater Noida factory through Moradabad to the SIIDCUL Escort Farm estate, the Kundeshwari belt and mill sites across Kashipur â€” about 220â€“250 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Do you make gate offices and weighbridge cabins?",
+      answer: "Yes. A 10 ft or 20 ft container cabin works well as a gate office or weighbridge office, and we can add a facing window, partition and electricals to suit. Sizes and layout are confirmed at quotation.",
+    },
+    {
+      question: "Are these cabins suitable for a paper or sugar mill site?",
+      answer: "Yes, as admin, gate and supervisor offices on the mill premises. We supply clean, insulated steel office cabins â€” not process or storage structures. The exact spec is confirmed at quotation.",
+    },
+  ],
   'container-office-in-kanpur': [
     {
       question: "How much does a container office cost in Kanpur?",
-      answer: "Price depends on size, panel type, corrosion protection, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, panel type, corrosion protection, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
-      question: "Which panel is better for a Kanpur leather or chemical site — PUF or cement board?",
+      question: "Which panel is better for a Kanpur leather or chemical site â€” PUF or cement board?",
       answer: "For humid, chemical or leather-adjacent sites we usually recommend cement-board panelling with extra corrosion protection, as it stands up better to moisture and cleaning. Tell us the site conditions and we advise on the right build.",
     },
     {
       question: "How long does delivery take to Kanpur?",
-      answer: "We dispatch from our Greater Noida factory, around 440 km away via the Yamuna and Agra–Lucknow Expressways, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site and access.",
+      answer: "We dispatch from our Greater Noida factory, around 440 km away via the Yamuna and Agraâ€“Lucknow Expressways, with typical road transit of 3â€“5 days once the unit is built. We confirm the schedule at order stage based on your site and access.",
     },
     {
       question: "Can the container office be moved between sites later?",
@@ -764,7 +713,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How long does delivery take to the Tricity?",
-      answer: "We dispatch from our Greater Noida factory, around 300 km away via the Eastern Peripheral Expressway and NH-44, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site and access.",
+      answer: "We dispatch from our Greater Noida factory, around 300 km away via the Eastern Peripheral Expressway and NH-44, with typical road transit of 3â€“5 days once the unit is built. We confirm the schedule at order stage based on your site and access.",
     },
     {
       question: "Can the container office be moved between sites later?",
@@ -774,7 +723,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-ludhiana': [
     {
       question: "How much does a container office cost in Ludhiana?",
-      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost — and buying direct from us avoids a reseller markup. We quote to your exact specification, so share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost â€” and buying direct from us avoids a reseller markup. We quote to your exact specification, so share your requirement for an itemised price.",
     },
     {
       question: "Do you sell direct or through a Ludhiana dealer?",
@@ -800,7 +749,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "What size crane is needed to offload at my Hosur site?",
-      answer: "A 10 ft × 8 ft cabin weighs approximately 800 to 1,000 kg. A 20 ft × 10 ft fitted cabin can be 2,000 to 2,500 kg. We provide the weight with your delivery note so you can book the right crane. A 5-tonne mobile crane handles most standard sizes. If your site has low overhead cables or a narrow access road, tell us and we plan accordingly.",
+      answer: "A 10 ft Ã— 8 ft cabin weighs approximately 800 to 1,000 kg. A 20 ft Ã— 10 ft fitted cabin can be 2,000 to 2,500 kg. We provide the weight with your delivery note so you can book the right crane. A 5-tonne mobile crane handles most standard sizes. If your site has low overhead cables or a narrow access road, tell us and we plan accordingly.",
     },
     {
       question: "Do you provide erection and installation at the Hosur site?",
@@ -810,7 +759,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'porta-cabin-in-hubli': [
     {
       question: "Can you deliver porta cabins to Tarihal Industrial Estate and Gokul Road?",
-      answer: "Yes. We deliver to Tarihal Industrial Estate (PIN 580026), Gokul Road Industrial Estate (PIN 580030), and all Hubli-Dharwad addresses. Industrial estate deliveries often need advance vehicle entry passes — tell us the estate's entry procedure and contact person when you place the order and we coordinate the delivery vehicle timing directly with your site.",
+      answer: "Yes. We deliver to Tarihal Industrial Estate (PIN 580026), Gokul Road Industrial Estate (PIN 580030), and all Hubli-Dharwad addresses. Industrial estate deliveries often need advance vehicle entry passes â€” tell us the estate's entry procedure and contact person when you place the order and we coordinate the delivery vehicle timing directly with your site.",
     },
     {
       question: "Do you also supply to Dharwad, or only Hubli?",
@@ -818,11 +767,11 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How does the cabin perform in Hubli's weather conditions?",
-      answer: "Hubli-Dharwad has a semi-arid climate with hot summers and a monsoon season. Our GI sheet roof is treated for anti-corrosion and will not rust under normal monsoon exposure. PUF panel walls provide insulation against heat. For sites with prolonged direct sun exposure, we recommend the double-skin roof option and an AC provision fit-out. The MS frame and base are hot-dip primed and painted — they do not degrade under the Hubli climate for the full service life of the structure.",
+      answer: "Hubli-Dharwad has a semi-arid climate with hot summers and a monsoon season. Our GI sheet roof is treated for anti-corrosion and will not rust under normal monsoon exposure. PUF panel walls provide insulation against heat. For sites with prolonged direct sun exposure, we recommend the double-skin roof option and an AC provision fit-out. The MS frame and base are hot-dip primed and painted â€” they do not degrade under the Hubli climate for the full service life of the structure.",
     },
     {
       question: "Can you supply 3 to 5 porta cabins for a highway project at multiple Hubli area locations?",
-      answer: "Yes. Multi-unit orders for highway and infrastructure projects are planned as a set. We confirm the size and fit-out for each unit, sequence the manufacturing to complete the batch, and dispatch in coordinated deliveries to your different site locations along the NH 48 corridor. Call us with the project scope — number of cabins, sizes, sites — and we plan the production and delivery schedule.",
+      answer: "Yes. Multi-unit orders for highway and infrastructure projects are planned as a set. We confirm the size and fit-out for each unit, sequence the manufacturing to complete the batch, and dispatch in coordinated deliveries to your different site locations along the NH 48 corridor. Call us with the project scope â€” number of cabins, sizes, sites â€” and we plan the production and delivery schedule.",
     },
   ],
   'porta-cabin-in-belgaum': [
@@ -832,11 +781,11 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How long does manufacturing and delivery take from Bangalore to Belgaum?",
-      answer: "Standard sizes with no customisation: 7 to 10 working days manufacture, then 5 to 6 days in transit. Custom cabins with electrical, AC provision, partition, or toilet: 12 to 18 working days manufacture, then 5 to 6 days transit. We confirm production start date and expected dispatch date in writing when you place the order — not an estimate, a committed schedule we hold ourselves to.",
+      answer: "Standard sizes with no customisation: 7 to 10 working days manufacture, then 5 to 6 days in transit. Custom cabins with electrical, AC provision, partition, or toilet: 12 to 18 working days manufacture, then 5 to 6 days transit. We confirm production start date and expected dispatch date in writing when you place the order â€” not an estimate, a committed schedule we hold ourselves to.",
     },
     {
       question: "Do you supply to highway project sites between Pune and Belgaum on NH 48?",
-      answer: "Yes. We supply to highway and infrastructure project sites along the NH 48 corridor both in Karnataka and into the adjoining Maharashtra belt near Kolhapur. For multi-site projects where you need cabins at several active work fronts along the highway stretch, we plan the manufacturing batch and dispatch sequence so each site receives its cabin on schedule. Call us with the project scope — number of cabins, sizes, site locations — and we build the supply plan.",
+      answer: "Yes. We supply to highway and infrastructure project sites along the NH 48 corridor both in Karnataka and into the adjoining Maharashtra belt near Kolhapur. For multi-site projects where you need cabins at several active work fronts along the highway stretch, we plan the manufacturing batch and dispatch sequence so each site receives its cabin on schedule. Call us with the project scope â€” number of cabins, sizes, site locations â€” and we build the supply plan.",
     },
     {
       question: "Can you supply documentation for a Belgaum project tender or factory audit?",
@@ -846,15 +795,15 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'porta-cabin-in-sonipat': [
     {
       question: "Do you deliver porta cabins to Kundli, Rai, and Barhi?",
-      answer: "Yes — Kundli, Rai, Barhi, and construction sites right across Sonipat. The cabin ships from our Greater Noida factory straight up the NH-44 and takes 3–5 days, since Sonipat is one of our closest cities. Delivery is ₹3,000 standard.",
+      answer: "Yes â€” Kundli, Rai, Barhi, and construction sites right across Sonipat. The cabin ships from our Greater Noida factory straight up the NH-44 and takes 3â€“5 days, since Sonipat is one of our closest cities. Delivery is â‚¹3,000 standard.",
     },
     {
       question: "What does a porta cabin cost in Sonipat?",
-      answer: "Marketplace listings run from about ₹45,000 for a small basic unit to over ₹1.9 lakh, with per-sq-ft rates around ₹950–₹1,200 — but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+      answer: "Marketplace listings run from about â‚¹45,000 for a small basic unit to over â‚¹1.9 lakh, with per-sq-ft rates around â‚¹950â€“â‚¹1,200 â€” but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
     },
     {
       question: "What sizes and layouts can I get?",
-      answer: "Stock sizes run 8×10, 10×12, 10×20 (the common 20 ft office), 10×30, and 10×40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. If you need an odd size, we build to it.",
+      answer: "Stock sizes run 8Ã—10, 10Ã—12, 10Ã—20 (the common 20 ft office), 10Ã—30, and 10Ã—40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. If you need an odd size, we build to it.",
     },
     {
       question: "Can you supply multiple cabins for an HSIIDC or expressway project?",
@@ -862,21 +811,21 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How long from order to delivery in Sonipat?",
-      answer: "Transit is 3–5 days once the cabin's built, since Sonipat is a short run up the NH-44. Production time depends on the configuration and where you land in our queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+      answer: "Transit is 3â€“5 days once the cabin's built, since Sonipat is a short run up the NH-44. Production time depends on the configuration and where you land in our queue â€” standard sizes move quicker. We'll give you a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-indore': [
     {
       question: 'Do you deliver porta cabins to Pithampur and Sanwer Road?',
-      answer: 'Yes — Pithampur, Sanwer Road, Dewas Naka, and construction sites right across Indore. The cabin ships from our Greater Noida factory and takes 3–5 days in transit. Delivery is ₹3,000 standard.',
+      answer: 'Yes â€” Pithampur, Sanwer Road, Dewas Naka, and construction sites right across Indore. The cabin ships from our Greater Noida factory and takes 3â€“5 days in transit. Delivery is â‚¹3,000 standard.',
     },
     {
       question: "How does the cabin hold up in Indore's summer heat?",
-      answer: "The 50 mm PUF panels are real insulation, not just a skin, and we'd push you toward a turbo ventilator and false ceiling for any open Pithampur-type plot with no shade. For an office you'll sit in all summer, add an AC provision and pick a light exterior colour. Done that way it stays workable past 40°C; a bare cabin in full sun won't.",
+      answer: "The 50 mm PUF panels are real insulation, not just a skin, and we'd push you toward a turbo ventilator and false ceiling for any open Pithampur-type plot with no shade. For an office you'll sit in all summer, add an AC provision and pick a light exterior colour. Done that way it stays workable past 40Â°C; a bare cabin in full sun won't.",
     },
     {
       question: 'What does a porta cabin cost in Indore?',
-      answer: "It depends on size, panel type, how much fit-out you want, and quantity. We don't publish a fixed price because every cabin is built to order — call +91 87960 39938 or send an enquiry and we'll quote your exact spec.",
+      answer: "It depends on size, panel type, how much fit-out you want, and quantity. We don't publish a fixed price because every cabin is built to order â€” call +91 87960 39938 or send an enquiry and we'll quote your exact spec.",
     },
     {
       question: 'Can you supply for an Indore Metro or industrial project?',
@@ -884,13 +833,13 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long from order to delivery in Indore?',
-      answer: "Transit is 3–5 days once the cabin's built. Production time depends on the configuration and where you land in our queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+      answer: "Transit is 3â€“5 days once the cabin's built. Production time depends on the configuration and where you land in our queue â€” standard sizes move quicker. We'll give you a firm timeline at enquiry.",
     },
   ],
   'portable-cabins-in-gurgaon': [
     {
       question: 'How long does delivery of a portable cabin to Gurgaon take?',
-      answer: 'Standard portable cabins typically reach Gurgaon sites in 3-5 days once the unit is ready, because we dispatch from our Greater Noida factory in the same NCR region. Custom or fully fitted cabins follow a build-time estimate, commonly around 7-21 working days depending on size, insulation, and fit-out.',
+      answer: 'Standard portable cabins typically reach Gurgaon sites in 3?5 days once the unit is ready, because we dispatch from our Greater Noida factory in the same NCR region. Custom or fully fitted cabins follow a build-time estimate, commonly around 7-21 working days depending on size, insulation, and fit-out.',
     },
     {
       question: 'What decides the price of a portable cabin in Gurgaon?',
@@ -916,7 +865,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'portable-cabins-in-greater-noida': [
     {
       question: 'How quickly can you deliver a portable cabin in Greater Noida?',
-      answer: 'Standard cabins are usually delivered within about 3-5 days, since they dispatch from our Greater Noida factory. Installation on a prepared site adds roughly one to three days. Custom or fully fitted cabins need extra build time before dispatch - share your specification and we will confirm a realistic timeline for your site in Alpha, Beta, Gamma, or Knowledge Park.',
+      answer: 'Standard cabins are usually delivered within about 3?5 days, since they dispatch from our Greater Noida factory. Installation on a prepared site adds roughly one to three days. Custom or fully fitted cabins need extra build time before dispatch - share your specification and we will confirm a realistic timeline for your site in Alpha, Beta, Gamma, or Knowledge Park.',
     },
     {
       question: 'What decides the price of a portable cabin?',
@@ -932,13 +881,13 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'What is the warranty and expected life of a SAMAN cabin?',
-      answer: 'The warranty is 5 years on the structural frame and base plus 1-2 years on finishing, with a 20-25 year engineered service life for the structure. The galvanised steel frame resists corrosion, and powder-coated members hold up in industrial conditions. With basic maintenance, cabins stay in service for many years.',
+      answer: 'The warranty is 5 years on the structural frame and base plus 1?2 years on finishing, with a 20?25 year engineered service life for the structure. The galvanised steel frame resists corrosion, and powder-coated members hold up in industrial conditions. With basic maintenance, cabins stay in service for many years.',
     },
   ],
   'portable-cabins-in-faridabad': [
     {
       question: 'How quickly can you deliver a portable cabin in Faridabad?',
-      answer: 'Standard cabin configurations typically reach site in 3-5 days across Faridabad, Ballabhgarh and Surajkund, dispatched from our Greater Noida factory. Custom or fitted units take longer to build; we confirm the timeline on your quote.',
+      answer: 'Standard cabin configurations typically reach site in 3?5 days across Faridabad, Ballabhgarh and Surajkund, dispatched from our Greater Noida factory. Custom or fitted units take longer to build; we confirm the timeline on your quote.',
     },
     {
       question: 'What decides the price of a portable cabin?',
@@ -954,7 +903,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'What warranty do you offer?',
-      answer: 'Our cabins carry 5 years structural frame and base + 1-2 years finishing + 20-25 years engineered service life. The 20-25 years is the engineered service life of the structure, not a warranty period.',
+      answer: 'Our cabins carry 5 years structural frame and base + 1?2 years finishing + 20?25 years engineered service life. The 20?25 years is the engineered service life of the structure, not a warranty period.',
     },
     {
       question: 'Can a portable cabin be relocated later?',
@@ -964,20 +913,20 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'porta-cabin-in-noida': [
     {
       question: 'Which factory supplies porta cabins to Noida?',
-      answer: 'Your unit ships factory-direct from our Greater Noida facility (Jalpura, 201308) — a short same-region delivery into Noida, with a ₹3,000 default delivery charge and typical transit of 3–5 days.',
+      answer: 'Your unit ships factory-direct from our Greater Noida facility (Jalpura, 201308) â€” a short same-region delivery into Noida, with a â‚¹3,000 default delivery charge and typical transit of 3â€“5 days.',
     },
     {
       question: 'Is the porta cabin built to a structural standard?',
-      answer: 'Yes — every unit is built on an IS 2062 steel frame by an ISO 9001:2015 / 14001:2015 / 45001:2018-certified manufacturer (NSIC-enlisted, DPIIT-recognised).',
+      answer: 'Yes â€” every unit is built on an IS 2062 steel frame by an ISO 9001:2015 / 14001:2015 / 45001:2018-certified manufacturer (NSIC-enlisted, DPIIT-recognised).',
     },
   ],
   'porta-cabin-in-jaipur': [
     {
       question: 'Does SAMAN deliver porta cabins to RIICO Sitapura and Mansarovar?',
-      answer: 'Yes. We deliver to all RIICO zones in Jaipur — Sitapura, Mansarovar, Vishwakarma, and Bindayaka — and to construction sites anywhere in Jaipur district. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+      answer: 'Yes. We deliver to all RIICO zones in Jaipur â€” Sitapura, Mansarovar, Vishwakarma, and Bindayaka â€” and to construction sites anywhere in Jaipur district. Transit from our Greater Noida factory is 3â€“5 days. Delivery charge is â‚¹3,000 standard.',
     },
     {
-      question: "How does a porta cabin perform in Jaipur's 45°C+ summer heat?",
+      question: "How does a porta cabin perform in Jaipur's 45Â°C+ summer heat?",
       answer: 'With the right specification, well. We recommend three additions for all Jaipur orders: a turbo ventilator, an internal false ceiling, and an AC provision (wall-sleeve + power point). A light RAL colour (white or cream) on the outer skin reduces solar heat gain significantly compared to dark colours. A cabin with these additions performs comfortably as a working office even in peak Rajasthan summer. Without them, a bare cabin in direct sun becomes unusable by mid-morning in May.',
     },
     {
@@ -986,29 +935,29 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How does SAMAN's cabin handle Jaipur's dust and the brief monsoon season?",
-      answer: 'The MS frame is zinc-phosphate primed before powder coating — this gives it resistance to the dust-and-moisture abrasion cycle common in Rajasthan. Panel joints are factory-sealed before despatch, not site-sealed after arrival. The GI roof has a controlled drainage slope so the July–August monsoon rain runs off cleanly without pooling.',
+      answer: 'The MS frame is zinc-phosphate primed before powder coating â€” this gives it resistance to the dust-and-moisture abrasion cycle common in Rajasthan. Panel joints are factory-sealed before despatch, not site-sealed after arrival. The GI roof has a controlled drainage slope so the Julyâ€“August monsoon rain runs off cleanly without pooling.',
     },
     {
       question: 'Can I get a porta cabin for a real-estate sales office launch in Jaipur?',
-      answer: "Yes. A 10×12 ft or 10×20 ft porta cabin makes an effective temporary sales office — easy to brand, quick to install, and fully removable when the project is done. We can add a canopy, glass-front door, and AC provision to match the presentation standard that Jaipur's real-estate market expects.",
+      answer: "Yes. A 10Ã—12 ft or 10Ã—20 ft porta cabin makes an effective temporary sales office â€” easy to brand, quick to install, and fully removable when the project is done. We can add a canopy, glass-front door, and AC provision to match the presentation standard that Jaipur's real-estate market expects.",
     },
   ],
   'porta-cabin-in-kolkata': [
     {
       question: 'Does SAMAN deliver porta cabins to Howrah, Durgapur, and Haldia?',
-      answer: 'Yes. We deliver across West Bengal — Kolkata, Howrah, Salt Lake, New Town Rajarhat, Durgapur, Kalyani, and Haldia. Transit from our Greater Noida factory is 3–5 days to Kolkata. Deliveries to Durgapur and Haldia may take an additional day depending on road conditions. Confirm the freight rate for district deliveries at enquiry stage.',
+      answer: 'Yes. We deliver across West Bengal â€” Kolkata, Howrah, Salt Lake, New Town Rajarhat, Durgapur, Kalyani, and Haldia. Transit from our Greater Noida factory is 3â€“5 days to Kolkata. Deliveries to Durgapur and Haldia may take an additional day depending on road conditions. Confirm the freight rate for district deliveries at enquiry stage.',
     },
     {
       question: 'What is the price of a porta cabin in Kolkata?',
       answer: 'Price depends on size, panel type, fit-out level, and any site-specific requirements such as elevated flooring or additional corrosion protection. Call +91 87960 39938 or send an enquiry for an itemised quotation built for your specific site and specification. We do not publish fixed prices because every cabin is built to order.',
     },
     {
-      question: 'How does SAMAN handle West Bengal’s high humidity and monsoon conditions in the cabin build?',
+      question: 'How does SAMAN handle West Bengalâ€™s high humidity and monsoon conditions in the cabin build?',
       answer: 'Our standard specification includes zinc-phosphate primed and powder-coated MS frames, factory-sealed panel joints, and colour-coated GI roofing with a drainage slope. For sites in coastal or delta regions (Haldia, Diamond Harbour, Kakdwip), we recommend an epoxy primer coat on external surfaces and cement-board panels instead of PUF for sustained moisture resistance. These are confirmed at order stage, not added as afterthoughts.',
     },
     {
       question: 'What GST applies to a porta cabin purchase in West Bengal?',
-      answer: 'Porta cabins are classified under HSN 9406 (prefabricated structures) and attract 18% GST. We issue a full tax invoice from SAMAN POS India Pvt Ltd (GST registration 09ABBCS7101B1ZT — Noida). We can provide e-way bill documentation and lorry receipt as required for your site accounts. Confirm documentation requirements when placing your order.',
+      answer: 'Porta cabins are classified under HSN 9406 (prefabricated structures) and attract 18% GST. We issue a full tax invoice from SAMAN POS India Pvt Ltd (GST registration 09ABBCS7101B1ZT â€” Noida). We can provide e-way bill documentation and lorry receipt as required for your site accounts. Confirm documentation requirements when placing your order.',
     },
     {
       question: 'Can SAMAN supply porta cabins for a government infrastructure project in West Bengal?',
@@ -1018,7 +967,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'porta-cabin-in-surat': [
     {
       question: 'Does SAMAN deliver porta cabins to Hazira and Sachin GIDC?',
-      answer: 'Yes. We deliver across Surat — Sachin GIDC, Hazira industrial belt, Pandesara, and city construction sites. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+      answer: 'Yes. We deliver across Surat â€” Sachin GIDC, Hazira industrial belt, Pandesara, and city construction sites. Transit from our Greater Noida factory is 3â€“5 days. Delivery charge is â‚¹3,000 standard.',
     },
     {
       question: "What corrosion protection do you provide for Surat's coastal Hazira sites?",
@@ -1030,7 +979,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long does delivery from the factory to Surat take?',
-      answer: '3–5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+      answer: '3â€“5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue â€” confirm at enquiry. Standard sizes move faster.',
     },
     {
       question: 'Can SAMAN supply porta cabins for a Hazira plant project or government contract?',
@@ -1040,7 +989,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'porta-cabin-in-nashik': [
     {
       question: 'Does SAMAN deliver porta cabins to Satpur and Ambad MIDC?',
-      answer: "Yes. We deliver to Nashik's industrial zones — Satpur MIDC, Ambad MIDC — and to construction and processing sites across the Nashik region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.",
+      answer: "Yes. We deliver to Nashik's industrial zones â€” Satpur MIDC, Ambad MIDC â€” and to construction and processing sites across the Nashik region. Transit from our Greater Noida factory is 3â€“5 days. Delivery charge is â‚¹3,000 standard.",
     },
     {
       question: 'What is the price of a porta cabin in Nashik?',
@@ -1056,13 +1005,13 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long does delivery from the factory to Nashik take?',
-      answer: '3–5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+      answer: '3â€“5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue â€” confirm at enquiry. Standard sizes move faster.',
     },
   ],
   'porta-cabin-in-vadodara': [
     {
       question: 'Does SAMAN deliver porta cabins to Nandesari, Makarpura, and Savli GIDC?',
-      answer: "Yes. We deliver across Vadodara's industrial zones — Nandesari GIDC, Makarpura GIDC, and the Savli/Manjusar belt — and to construction sites across the Vadodara region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.",
+      answer: "Yes. We deliver across Vadodara's industrial zones â€” Nandesari GIDC, Makarpura GIDC, and the Savli/Manjusar belt â€” and to construction sites across the Vadodara region. Transit from our Greater Noida factory is 3â€“5 days. Delivery charge is â‚¹3,000 standard.",
     },
     {
       question: "What corrosion protection do you provide for Vadodara's chemical GIDC sites?",
@@ -1078,17 +1027,17 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long does delivery from the factory to Vadodara take?',
-      answer: '3–5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+      answer: '3â€“5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue â€” confirm at enquiry. Standard sizes move faster.',
     },
   ],
   'porta-cabin-in-nagpur': [
     {
       question: 'Does SAMAN deliver porta cabins to MIHAN, Butibori, and Hingna MIDC?',
-      answer: 'Yes. We deliver to all Nagpur industrial zones — MIHAN, Butibori MIDC, Hingna MIDC — and to construction sites across the Nagpur region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+      answer: 'Yes. We deliver to all Nagpur industrial zones â€” MIHAN, Butibori MIDC, Hingna MIDC â€” and to construction sites across the Nagpur region. Transit from our Greater Noida factory is 3â€“5 days. Delivery charge is â‚¹3,000 standard.',
     },
     {
       question: "How does a porta cabin handle Nagpur's extreme summer heat?",
-      answer: 'The 50 mm PUF sandwich panels provide genuine thermal insulation, and we recommend a turbo ventilator plus an internal false ceiling on all Nagpur orders. For a working office used through summer, add an AC provision (wall-sleeve + power point). A light exterior colour reduces solar heat gain. With these, the cabin stays usable even above 44°C; a bare cabin in direct sun does not.',
+      answer: 'The 50 mm PUF sandwich panels provide genuine thermal insulation, and we recommend a turbo ventilator plus an internal false ceiling on all Nagpur orders. For a working office used through summer, add an AC provision (wall-sleeve + power point). A light exterior colour reduces solar heat gain. With these, the cabin stays usable even above 44Â°C; a bare cabin in direct sun does not.',
     },
     {
       question: 'What is the price of a porta cabin in Nagpur?',
@@ -1100,17 +1049,17 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long does delivery from the factory to Nagpur take?',
-      answer: '3–5 days from our Greater Noida factory via the NH-44 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+      answer: '3â€“5 days from our Greater Noida factory via the NH-44 corridor, after production is complete. Production lead time depends on your configuration and the order queue â€” confirm at enquiry. Standard sizes move faster.',
     },
   ],
   'porta-cabin-in-patna': [
     {
       question: 'Does SAMAN deliver porta cabins to Bihta, Patliputra, and Fatuha?',
-      answer: 'Yes. We deliver across Patna — Patliputra Industrial Area, Bihta, and Fatuha — and to construction sites across the Patna region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+      answer: 'Yes. We deliver across Patna â€” Patliputra Industrial Area, Bihta, and Fatuha â€” and to construction sites across the Patna region. Transit from our Greater Noida factory is 3â€“5 days. Delivery charge is â‚¹3,000 standard.',
     },
     {
-      question: 'How does a SAMAN porta cabin handle Patna’s monsoon and flood-prone sites?',
-      answer: 'Panel joints are factory-sealed and the GI roof has a controlled drainage slope so rain runs off cleanly. For low-lying and flood-prone Patna sites we recommend a raised RCC plinth or elevated flooring on MS joists to keep the floor above waterlogging. The MS frame is zinc-phosphate primed and powder-coated to resist rust through Bihar’s long wet season.',
+      question: 'How does a SAMAN porta cabin handle Patnaâ€™s monsoon and flood-prone sites?',
+      answer: 'Panel joints are factory-sealed and the GI roof has a controlled drainage slope so rain runs off cleanly. For low-lying and flood-prone Patna sites we recommend a raised RCC plinth or elevated flooring on MS joists to keep the floor above waterlogging. The MS frame is zinc-phosphate primed and powder-coated to resist rust through Biharâ€™s long wet season.',
     },
     {
       question: 'What is the price of a porta cabin in Patna?',
@@ -1122,17 +1071,17 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long does delivery from the factory to Patna take?',
-      answer: '3–5 days from our Greater Noida factory via the Purvanchal / NH-19 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+      answer: '3â€“5 days from our Greater Noida factory via the Purvanchal / NH-19 corridor, after production is complete. Production lead time depends on your configuration and the order queue â€” confirm at enquiry. Standard sizes move faster.',
     },
   ],
   'porta-cabin-in-rajkot': [
     {
       question: 'Does SAMAN deliver porta cabins to Aji, Metoda, and Shapar GIDC?',
-      answer: 'Yes. We deliver across Rajkot’s industrial zones — Aji GIDC, Metoda/Lodhika GIDC, and Shapar-Veraval — and to construction sites across the Rajkot region. Transit from our Greater Noida factory is 3–5 days. Delivery charge is ₹3,000 standard.',
+      answer: 'Yes. We deliver across Rajkotâ€™s industrial zones â€” Aji GIDC, Metoda/Lodhika GIDC, and Shapar-Veraval â€” and to construction sites across the Rajkot region. Transit from our Greater Noida factory is 3â€“5 days. Delivery charge is â‚¹3,000 standard.',
     },
     {
-      question: 'How does a porta cabin handle Rajkot’s heat and dust?',
-      answer: 'The 50 mm PUF panels insulate against the heat, and we fit sealed louvre or sliding windows and doors to keep dust out — important in foundry and engineering environments. The powder-coat frame finish resists Rajkot’s dry abrasive dust. We recommend a turbo ventilator and false ceiling, and an AC provision for any working office used through summer.',
+      question: 'How does a porta cabin handle Rajkotâ€™s heat and dust?',
+      answer: 'The 50 mm PUF panels insulate against the heat, and we fit sealed louvre or sliding windows and doors to keep dust out â€” important in foundry and engineering environments. The powder-coat frame finish resists Rajkotâ€™s dry abrasive dust. We recommend a turbo ventilator and false ceiling, and an AC provision for any working office used through summer.',
     },
     {
       question: 'What is the price of a porta cabin in Rajkot?',
@@ -1140,21 +1089,21 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'Can SAMAN supply porta cabins for a foundry or engineering site in Rajkot?',
-      answer: 'Yes. We build robust, sealed cabins suitable for plant gate security, supervisor offices, and QC rooms at Rajkot’s casting, forging, and machine-tool units. Dust-sealing, durable coatings, and electrical provisions are confirmed at order stage to suit your site’s conditions.',
+      answer: 'Yes. We build robust, sealed cabins suitable for plant gate security, supervisor offices, and QC rooms at Rajkotâ€™s casting, forging, and machine-tool units. Dust-sealing, durable coatings, and electrical provisions are confirmed at order stage to suit your siteâ€™s conditions.',
     },
     {
       question: 'How long does delivery from the factory to Rajkot take?',
-      answer: '3–5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue — confirm at enquiry. Standard sizes move faster.',
+      answer: '3â€“5 days from our Greater Noida factory via the NH-48 corridor, after production is complete. Production lead time depends on your configuration and the order queue â€” confirm at enquiry. Standard sizes move faster.',
     },
   ],
   'porta-cabin-in-bhubaneswar': [
     {
       question: 'Does SAMAN deliver porta cabins to Mancheswar, Chandaka, and Cuttack?',
-      answer: 'Yes. We deliver across Bhubaneswar — Mancheswar Industrial Estate, Chandaka Industrial Estate, Infocity — and to Cuttack and Khordha-region construction sites. Transit from our Greater Noida factory is 4–5 days. Delivery charge is ₹3,000 standard; confirm exact freight for Cuttack/Paradip-side sites at order stage.',
+      answer: 'Yes. We deliver across Bhubaneswar â€” Mancheswar Industrial Estate, Chandaka Industrial Estate, Infocity â€” and to Cuttack and Khordha-region construction sites. Transit from our Greater Noida factory is 4â€“5 days. Delivery charge is â‚¹3,000 standard; confirm exact freight for Cuttack/Paradip-side sites at order stage.',
     },
     {
-      question: 'How does a SAMAN porta cabin handle coastal Odisha’s humidity and winds?',
-      answer: 'We add an epoxy primer coat before powder coat for coastal-proximity sites and recommend cement-board panels for sustained humidity. The frame is anchor-bolted to an RCC plinth for stability in strong seasonal winds, and we provide the anchor-bolt pattern and load data so your plinth is prepared correctly. We do not claim cyclone-proofing — we provide proper corrosion protection and secure anchoring suited to the coastal environment.',
+      question: 'How does a SAMAN porta cabin handle coastal Odishaâ€™s humidity and winds?',
+      answer: 'We add an epoxy primer coat before powder coat for coastal-proximity sites and recommend cement-board panels for sustained humidity. The frame is anchor-bolted to an RCC plinth for stability in strong seasonal winds, and we provide the anchor-bolt pattern and load data so your plinth is prepared correctly. We do not claim cyclone-proofing â€” we provide proper corrosion protection and secure anchoring suited to the coastal environment.',
     },
     {
       question: 'What is the price of a porta cabin in Bhubaneswar?',
@@ -1166,35 +1115,35 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long does delivery from the factory to Bhubaneswar take?',
-      answer: '4–5 days from our Greater Noida factory via the NH-19 / NH-16 corridor, after production is complete. Bhubaneswar is farther east than most of our North-dispatch cities, so allow the upper end of the range. Production lead time depends on your configuration and the order queue — confirm at enquiry.',
+      answer: '4â€“5 days from our Greater Noida factory via the NH-19 / NH-16 corridor, after production is complete. Bhubaneswar is farther east than most of our North-dispatch cities, so allow the upper end of the range. Production lead time depends on your configuration and the order queue â€” confirm at enquiry.',
     },
   ],
   'porta-cabin-in-raipur': [
     {
       question: 'Do you deliver porta cabins to Urla and Siltara?',
-      answer: 'Yes — Urla, Siltara, the Bhilai steel belt, and construction sites across the Raipur region. The cabin ships from our Greater Noida factory and takes 4–5 days in transit, since Raipur is a longer haul. Delivery is ₹3,000 standard.',
+      answer: 'Yes â€” Urla, Siltara, the Bhilai steel belt, and construction sites across the Raipur region. The cabin ships from our Greater Noida factory and takes 4â€“5 days in transit, since Raipur is a longer haul. Delivery is â‚¹3,000 standard.',
     },
     {
       question: 'Will the cabin hold up in a dusty, high-heat steel-belt plant?',
-      answer: 'That’s what it’s built for. The frame is IS 2062 steel, zinc-phosphate primed and powder-coated, and for a dusty sponge-iron or rolling-mill yard we can spec a heavier anti-rust coating and seal the windows and doors to keep plant dust out. The 50 mm PUF panels handle the heat. Tell us the plant conditions and we’ll match the spec.',
+      answer: 'Thatâ€™s what itâ€™s built for. The frame is IS 2062 steel, zinc-phosphate primed and powder-coated, and for a dusty sponge-iron or rolling-mill yard we can spec a heavier anti-rust coating and seal the windows and doors to keep plant dust out. The 50 mm PUF panels handle the heat. Tell us the plant conditions and weâ€™ll match the spec.',
     },
     {
       question: 'What does a porta cabin cost in Raipur?',
-      answer: 'It depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+      answer: 'It depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price â€” call +91 87960 39938 or send an enquiry.',
     },
     {
       question: 'Can you supply multiple cabins for a Siltara or Bhilai plant project?',
-      answer: 'Yes — multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we’ll confirm capacity and timeline.',
+      answer: 'Yes â€” multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and weâ€™ll confirm capacity and timeline.',
     },
     {
       question: 'How long from order to delivery in Raipur?',
-      answer: 'Transit is 4–5 days once the cabin’s built, since Raipur is farther southeast than our central-India cities. Production time depends on the configuration and your place in the queue — standard sizes move faster. We’ll confirm a firm timeline at enquiry.',
+      answer: 'Transit is 4â€“5 days once the cabinâ€™s built, since Raipur is farther southeast than our central-India cities. Production time depends on the configuration and your place in the queue â€” standard sizes move faster. Weâ€™ll confirm a firm timeline at enquiry.',
     },
   ],
   'porta-cabin-in-ranchi': [
     {
       question: 'Do you deliver porta cabins to Namkum, HEC, and Tatisilwai?',
-      answer: 'Yes — Namkum Industrial Area, the HEC/Dhurwa area, Tatisilwai, and project sites across the Ranchi region. The cabin ships from our Greater Noida factory and takes 4–5 days in transit, since Ranchi is a longer haul. Delivery is ₹3,000 standard.',
+      answer: 'Yes â€” Namkum Industrial Area, the HEC/Dhurwa area, Tatisilwai, and project sites across the Ranchi region. The cabin ships from our Greater Noida factory and takes 4â€“5 days in transit, since Ranchi is a longer haul. Delivery is â‚¹3,000 standard.',
     },
     {
       question: "How does the cabin handle Ranchi's monsoon and sloping sites?",
@@ -1202,7 +1151,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'What does a porta cabin cost in Ranchi?',
-      answer: 'It depends on size, panel type, any site additions like a raised plinth, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+      answer: 'It depends on size, panel type, any site additions like a raised plinth, fit-out and quantity. We quote against your exact spec rather than publish a fixed price â€” call +91 87960 39938 or send an enquiry.',
     },
     {
       question: 'Can you supply for an HEC or government project in Ranchi?',
@@ -1210,21 +1159,21 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long from order to delivery in Ranchi?',
-      answer: "Transit is 4–5 days once the cabin's built, since Ranchi is well east of our central-India cities. Production time depends on the configuration and your place in the queue — standard sizes move faster. We'll confirm a firm timeline at enquiry.",
+      answer: "Transit is 4â€“5 days once the cabin's built, since Ranchi is well east of our central-India cities. Production time depends on the configuration and your place in the queue â€” standard sizes move faster. We'll confirm a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-bhopal': [
     {
       question: "Do you deliver porta cabins to Govindpura and Mandideep?",
-      answer: "Yes — Govindpura, Mandideep, Bagroda, and construction sites across Bhopal. The cabin ships from our Greater Noida factory and takes 3–5 days in transit. Delivery is ₹3,000 standard.",
+      answer: "Yes â€” Govindpura, Mandideep, Bagroda, and construction sites across Bhopal. The cabin ships from our Greater Noida factory and takes 3â€“5 days in transit. Delivery is â‚¹3,000 standard.",
     },
     {
       question: "How does the cabin cope with Bhopal's summer heat?",
-      answer: "The 50 mm PUF panels do real insulation work, and for any open plot without shade we'd add a turbo ventilator and false ceiling. For an office you'll use all summer, put in an AC provision and choose a light exterior colour. Built that way it stays usable past 42°C — a plain cabin in full sun won't.",
+      answer: "The 50 mm PUF panels do real insulation work, and for any open plot without shade we'd add a turbo ventilator and false ceiling. For an office you'll use all summer, put in an AC provision and choose a light exterior colour. Built that way it stays usable past 42Â°C â€” a plain cabin in full sun won't.",
     },
     {
       question: "What does a porta cabin cost in Bhopal?",
-      answer: "You'll see roughly ₹1,200 a square foot quoted on marketplaces, but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.",
+      answer: "You'll see roughly â‚¹1,200 a square foot quoted on marketplaces, but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price â€” call +91 87960 39938 or send an enquiry.",
     },
     {
       question: "Can you supply for a Bhopal Smart City or industrial project?",
@@ -1232,35 +1181,35 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How long from order to delivery in Bhopal?",
-      answer: "Transit is 3–5 days once the cabin's built. Production time depends on the configuration and your place in the queue — standard sizes move faster. We'll give you a firm timeline at enquiry.",
+      answer: "Transit is 3â€“5 days once the cabin's built. Production time depends on the configuration and your place in the queue â€” standard sizes move faster. We'll give you a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-guwahati': [
     {
       question: 'Do you deliver porta cabins all the way to Guwahati?',
-      answer: 'Yes — Bamunimaidan, Amingaon, Changsari, and project sites across the Guwahati region. The cabin ships from our Greater Noida factory up the NH-27 corridor and takes 4–6 days, since it’s a long route. Delivery is ₹3,000 standard and we’ll confirm exact freight for your site given the distance.',
+      answer: 'Yes â€” Bamunimaidan, Amingaon, Changsari, and project sites across the Guwahati region. The cabin ships from our Greater Noida factory up the NH-27 corridor and takes 4â€“6 days, since itâ€™s a long route. Delivery is â‚¹3,000 standard and weâ€™ll confirm exact freight for your site given the distance.',
     },
     {
-      question: 'Is the cabin built for Assam’s rain and humidity?',
-      answer: 'Yes, and that’s built in before it leaves the factory. The frame is IS 2062 steel, zinc-phosphate primed and powder-coated against the humidity; the panel joints and roof are factory-sealed and the roof pitched steep for heavy monsoon. On floodplain or low-lying sites we recommend a raised RCC plinth or elevated MS-joist flooring to keep the floor above water.',
+      question: 'Is the cabin built for Assamâ€™s rain and humidity?',
+      answer: 'Yes, and thatâ€™s built in before it leaves the factory. The frame is IS 2062 steel, zinc-phosphate primed and powder-coated against the humidity; the panel joints and roof are factory-sealed and the roof pitched steep for heavy monsoon. On floodplain or low-lying sites we recommend a raised RCC plinth or elevated MS-joist flooring to keep the floor above water.',
     },
     {
       question: 'What does a porta cabin cost in Guwahati?',
-      answer: 'It depends on size, panel type, site additions, fit-out, and the freight for the long route. We quote against your exact spec and confirm Guwahati freight rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+      answer: 'It depends on size, panel type, site additions, fit-out, and the freight for the long route. We quote against your exact spec and confirm Guwahati freight rather than publish a fixed price â€” call +91 87960 39938 or send an enquiry.',
     },
     {
       question: 'Can you supply for an NE logistics, oil, or government project in Guwahati?',
-      answer: 'Yes. We supply contractors and project managers across the Northeast, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we’ll confirm capacity, freight, and timeline.',
+      answer: 'Yes. We supply contractors and project managers across the Northeast, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and weâ€™ll confirm capacity, freight, and timeline.',
     },
     {
       question: 'How long does delivery to Guwahati take?',
-      answer: '4–6 days in transit once the cabin’s built, given the distance up the NH-27 corridor. We plan for the upper end and tell you straight rather than promise a date we can’t hold. Production time depends on the configuration and your place in the queue — we’ll confirm a firm timeline at enquiry.',
+      answer: '4â€“6 days in transit once the cabinâ€™s built, given the distance up the NH-27 corridor. We plan for the upper end and tell you straight rather than promise a date we canâ€™t hold. Production time depends on the configuration and your place in the queue â€” weâ€™ll confirm a firm timeline at enquiry.',
     },
   ],
   'porta-cabin-in-dehradun': [
     {
       question: 'Do you deliver porta cabins to Selaqui and Mohabbewala?',
-      answer: "Yes — Selaqui, Mohabbewala, Patel Nagar, and construction sites across the Dehradun region. The cabin ships from our Greater Noida factory and takes 3–5 days, since Dehradun is one of our closer cities. Delivery is ₹3,000 standard.",
+      answer: "Yes â€” Selaqui, Mohabbewala, Patel Nagar, and construction sites across the Dehradun region. The cabin ships from our Greater Noida factory and takes 3â€“5 days, since Dehradun is one of our closer cities. Delivery is â‚¹3,000 standard.",
     },
     {
       question: 'Is the cabin built for a Dehradun winter and monsoon?',
@@ -1268,21 +1217,39 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'What does a porta cabin cost in Dehradun?',
-      answer: 'It depends on size, panel type, climate additions like extra insulation, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+      answer: 'It depends on size, panel type, climate additions like extra insulation, fit-out and quantity. We quote against your exact spec rather than publish a fixed price â€” call +91 87960 39938 or send an enquiry.',
     },
     {
       question: 'Can you deliver to a hill site above Dehradun?',
-      answer: "In most cases yes, but it depends on road access — a flatbed truck needs a road it can physically reach the site on, and very tight or steep hill roads may limit the cabin size we can deliver in one piece. Tell us the exact location and we'll confirm what the access will take before you order.",
+      answer: "In most cases yes, but it depends on road access â€” a flatbed truck needs a road it can physically reach the site on, and very tight or steep hill roads may limit the cabin size we can deliver in one piece. Tell us the exact location and we'll confirm what the access will take before you order.",
     },
     {
       question: 'How long from order to delivery in Dehradun?',
-      answer: "Transit is 3–5 days once the cabin's built, since Dehradun is a shorter run for us. Production time depends on the configuration and your place in the queue — standard sizes move faster. We'll confirm a firm timeline at enquiry.",
+      answer: "Transit is 3â€“5 days once the cabin's built, since Dehradun is a shorter run for us. Production time depends on the configuration and your place in the queue â€” standard sizes move faster. We'll confirm a firm timeline at enquiry.",
+    },
+  ],
+  'porta-cabin-in-ludhiana': [
+    {
+      question: 'Do you deliver porta cabins to Ludhiana and the Focal Point industrial area?',
+      answer: 'Yes. We manufacture at our Greater Noida factory and dispatch by road to Ludhiana city (141001), the Focal Point industrial estate (141010), and the Dhandari Kalan belt (141014). Transit is usually 3–4 days once the unit is built, with delivery charged at ₹3,000 where applicable.',
+    },
+    {
+      question: 'What porta cabin sizes are available for Ludhiana sites?',
+      answer: 'Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for packed Focal Point and Dhandari Kalan plots.',
+    },
+    {
+      question: 'What does a porta cabin cost in Ludhiana?',
+      answer: 'Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.',
+    },
+    {
+      question: 'Can the porta cabin be customised for factory, site, and security use?',
+      answer: 'Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.',
     },
   ],
   'porta-cabin-in-gwalior': [
     {
       question: 'Do you deliver porta cabins to Malanpur and Banmore?',
-      answer: 'Yes — Malanpur, Banmore, the Maharajpura/Gwalior city belt, and construction sites across the Gwalior region. The cabin ships from our Greater Noida factory and takes 3–5 days, since Gwalior is one of our closer cities. Delivery is ₹3,000 standard.',
+      answer: 'Yes â€” Malanpur, Banmore, the Maharajpura/Gwalior city belt, and construction sites across the Gwalior region. The cabin ships from our Greater Noida factory and takes 3â€“5 days, since Gwalior is one of our closer cities. Delivery is â‚¹3,000 standard.',
     },
     {
       question: "How does the cabin handle Gwalior's heat and dust?",
@@ -1290,7 +1257,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'What does a porta cabin cost in Gwalior?',
-      answer: 'It depends on size, panel type, the heat-and-dust additions you need, fit-out and quantity. We quote against your exact spec rather than publish a fixed price — call +91 87960 39938 or send an enquiry.',
+      answer: 'It depends on size, panel type, the heat-and-dust additions you need, fit-out and quantity. We quote against your exact spec rather than publish a fixed price â€” call +91 87960 39938 or send an enquiry.',
     },
     {
       question: 'Can you supply for a Gwalior smart-city or industrial project?',
@@ -1298,13 +1265,13 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long from order to delivery in Gwalior?',
-      answer: "Transit is 3–5 days once the cabin's built, since Gwalior is a shorter run for us down the Yamuna Expressway. Production time depends on the configuration and your place in the queue — standard sizes move faster. We'll confirm a firm timeline at enquiry.",
+      answer: "Transit is 3â€“5 days once the cabin's built, since Gwalior is a shorter run for us down the Yamuna Expressway. Production time depends on the configuration and your place in the queue â€” standard sizes move faster. We'll confirm a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-durgapur': [
     {
       question: "Do you deliver porta cabins to the Durgapur Steel Plant belt?",
-      answer: "Yes — the DSP belt, the Heavy Engineering / V.K. Nagar area, City Centre, and project sites across the Durgapur region. The cabin ships from our Greater Noida factory and takes 4–6 days in transit, since Durgapur is a longer haul. Delivery is ₹3,000 standard.",
+      answer: "Yes â€” the DSP belt, the Heavy Engineering / V.K. Nagar area, City Centre, and project sites across the Durgapur region. The cabin ships from our Greater Noida factory and takes 4â€“6 days in transit, since Durgapur is a longer haul. Delivery is â‚¹3,000 standard.",
     },
     {
       question: "Will the cabin hold up in a dusty, high-heat steel-belt plant?",
@@ -1312,29 +1279,29 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "What does a porta cabin cost in Durgapur?",
-      answer: "Marketplace listings run from about ₹50,000 to over ₹2.1 lakh, around ₹1,200 a square foot — but the real number depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+      answer: "Marketplace listings run from about â‚¹50,000 to over â‚¹2.1 lakh, around â‚¹1,200 a square foot â€” but the real number depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
     },
     {
       question: "Can you supply multiple cabins for a DSP or DHEP project?",
-      answer: "Yes — multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity, freight, and timeline.",
+      answer: "Yes â€” multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity, freight, and timeline.",
     },
     {
       question: "How long does delivery to Durgapur take?",
-      answer: "Transit is 4–6 days once the cabin's built, since Durgapur is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue — we'll confirm a firm timeline at enquiry.",
+      answer: "Transit is 4â€“6 days once the cabin's built, since Durgapur is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue â€” we'll confirm a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-manesar': [
     {
       question: 'Do you deliver porta cabins to IMT Manesar?',
-      answer: "Yes — IMT Manesar (all sectors), the Kasan and Naharpur belt, and construction sites across Manesar. The cabin ships from our Greater Noida factory and takes 3–5 days, since Manesar is a short run on the Gurgaon belt. Delivery is ₹3,000 standard.",
+      answer: "Yes â€” IMT Manesar (all sectors), the Kasan and Naharpur belt, and construction sites across Manesar. The cabin ships from our Greater Noida factory and takes 3â€“5 days, since Manesar is a short run on the Gurgaon belt. Delivery is â‚¹3,000 standard.",
     },
     {
       question: 'What does a porta cabin cost in Manesar?',
-      answer: "Marketplace listings run from about ₹38,000 for a small basic unit to over ₹2 lakh, with per-sq-ft rates around ₹870 — but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+      answer: "Marketplace listings run from about â‚¹38,000 for a small basic unit to over â‚¹2 lakh, with per-sq-ft rates around â‚¹870 â€” but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
     },
     {
       question: 'What sizes and layouts can I get?',
-      answer: "Stock sizes run 8×10, 10×12, 10×20 (the common 20 ft office), 10×30, and 10×40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. Need an odd size? We build to it.",
+      answer: "Stock sizes run 8Ã—10, 10Ã—12, 10Ã—20 (the common 20 ft office), 10Ã—30, and 10Ã—40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. Need an odd size? We build to it.",
     },
     {
       question: 'Can you supply multiple cabins for an IMT plant project?',
@@ -1342,21 +1309,21 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: 'How long from order to delivery in Manesar?',
-      answer: "Transit is 3–5 days once the cabin's built, since Manesar is a short run on the Gurgaon belt. Production time depends on the configuration and your place in the queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+      answer: "Transit is 3â€“5 days once the cabin's built, since Manesar is a short run on the Gurgaon belt. Production time depends on the configuration and your place in the queue â€” standard sizes move quicker. We'll give you a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-panipat': [
     {
       question: "Do you deliver porta cabins to the HUDA sectors and Refinery Road?",
-      answer: "Yes — the HUDA/HSIIDC sectors, the Refinery Road belt, and construction sites across Panipat. The cabin ships from our Greater Noida factory up the NH-44 and takes 3–5 days, since Panipat is one of our closer cities. Delivery is ₹3,000 standard.",
+      answer: "Yes â€” the HUDA/HSIIDC sectors, the Refinery Road belt, and construction sites across Panipat. The cabin ships from our Greater Noida factory up the NH-44 and takes 3â€“5 days, since Panipat is one of our closer cities. Delivery is â‚¹3,000 standard.",
     },
     {
       question: "What does a porta cabin cost in Panipat?",
-      answer: "Marketplace listings run from about ₹50,000 for a small basic unit to over ₹2.1 lakh — but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+      answer: "Marketplace listings run from about â‚¹50,000 for a small basic unit to over â‚¹2.1 lakh â€” but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
     },
     {
       question: "What sizes and layouts can I get?",
-      answer: "Stock sizes run 8×10, 10×12, 10×20 (the common 20 ft office), 10×30, and 10×40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. Need an odd size? We build to it.",
+      answer: "Stock sizes run 8Ã—10, 10Ã—12, 10Ã—20 (the common 20 ft office), 10Ã—30, and 10Ã—40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. Need an odd size? We build to it.",
     },
     {
       question: "Can you supply multiple cabins for a refinery or HSIIDC project?",
@@ -1364,13 +1331,13 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How long from order to delivery in Panipat?",
-      answer: "Transit is 3–5 days once the cabin's built, since Panipat is a short run up the NH-44. Production time depends on the configuration and your place in the queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+      answer: "Transit is 3â€“5 days once the cabin's built, since Panipat is a short run up the NH-44. Production time depends on the configuration and your place in the queue â€” standard sizes move quicker. We'll give you a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-rourkela': [
     {
       question: "Do you deliver porta cabins to the RSP belt and Kalunga?",
-      answer: "Yes — the Rourkela Steel Plant belt, the Kalunga Industrial Estate, the RSP sector township, and project sites across Rourkela. The cabin ships from our Greater Noida factory and takes 4–6 days in transit, since Rourkela is a longer haul. Delivery is ₹3,000 standard.",
+      answer: "Yes â€” the Rourkela Steel Plant belt, the Kalunga Industrial Estate, the RSP sector township, and project sites across Rourkela. The cabin ships from our Greater Noida factory and takes 4â€“6 days in transit, since Rourkela is a longer haul. Delivery is â‚¹3,000 standard.",
     },
     {
       question: "Will the cabin hold up in a dusty Kalunga steel-belt plot?",
@@ -1378,29 +1345,29 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "What does a porta cabin cost in Rourkela?",
-      answer: "Marketplace listings run around ₹825–₹1,200 a square foot, with finished units up past ₹1.9 lakh — but the real number depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+      answer: "Marketplace listings run around â‚¹825â€“â‚¹1,200 a square foot, with finished units up past â‚¹1.9 lakh â€” but the real number depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
     },
     {
       question: "Can you supply multiple cabins for an RSP or Kalunga plant project?",
-      answer: "Yes — multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity, freight, and timeline.",
+      answer: "Yes â€” multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity, freight, and timeline.",
     },
     {
       question: "How long does delivery to Rourkela take?",
-      answer: "Transit is 4–6 days once the cabin's built, since Rourkela is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue — we'll confirm a firm timeline at enquiry.",
+      answer: "Transit is 4â€“6 days once the cabin's built, since Rourkela is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue â€” we'll confirm a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-bhiwadi': [
     {
       question: "Do you deliver porta cabins to RIICO, Khushkhera, and Chopanki?",
-      answer: "Yes — RIICO Bhiwadi, Khushkhera, Chopanki, and construction sites across the Bhiwadi belt. The cabin ships from our Greater Noida factory and takes 3–5 days, since Bhiwadi is a short run. Delivery is ₹3,000 standard.",
+      answer: "Yes â€” RIICO Bhiwadi, Khushkhera, Chopanki, and construction sites across the Bhiwadi belt. The cabin ships from our Greater Noida factory and takes 3â€“5 days, since Bhiwadi is a short run. Delivery is â‚¹3,000 standard.",
     },
     {
       question: "What does a porta cabin cost in Bhiwadi?",
-      answer: "Marketplace listings run around ₹780–₹1,250 a square foot, with finished units from about ₹2.5 lakh — but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+      answer: "Marketplace listings run around â‚¹780â€“â‚¹1,250 a square foot, with finished units from about â‚¹2.5 lakh â€” but the real number depends on size, panel type, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
     },
     {
       question: "What sizes and layouts can I get?",
-      answer: "Stock sizes run 8×10, 10×12, 10×20 (the common 20 ft office), 10×30, and 10×40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. Need an odd size? We build to it.",
+      answer: "Stock sizes run 8Ã—10, 10Ã—12, 10Ã—20 (the common 20 ft office), 10Ã—30, and 10Ã—40 ft, in single-room, two-room, or full multi-room layouts, with an attached toilet or pantry on request. Need an odd size? We build to it.",
     },
     {
       question: "Can you supply multiple cabins for a RIICO plant project?",
@@ -1408,13 +1375,13 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How long from order to delivery in Bhiwadi?",
-      answer: "Transit is 3–5 days once the cabin's built, since Bhiwadi is a short run from Greater Noida. Production time depends on the configuration and your place in the queue — standard sizes move quicker. We'll give you a firm timeline at enquiry.",
+      answer: "Transit is 3â€“5 days once the cabin's built, since Bhiwadi is a short run from Greater Noida. Production time depends on the configuration and your place in the queue â€” standard sizes move quicker. We'll give you a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-jamshedpur': [
     {
       question: "Do you deliver porta cabins to Adityapur and the AIADA belt?",
-      answer: "Yes — Adityapur AIADA, the Gamharia industrial phases, the Tata Steel works belt, and project sites across Jamshedpur. The cabin ships from our Greater Noida factory and takes 4–6 days in transit, since Jamshedpur is a longer haul. Delivery is ₹3,000 standard.",
+      answer: "Yes â€” Adityapur AIADA, the Gamharia industrial phases, the Tata Steel works belt, and project sites across Jamshedpur. The cabin ships from our Greater Noida factory and takes 4â€“6 days in transit, since Jamshedpur is a longer haul. Delivery is â‚¹3,000 standard.",
     },
     {
       question: "Will the cabin hold up in a dusty AIADA steel-belt plot?",
@@ -1422,15 +1389,15 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "What does a porta cabin cost in Jamshedpur?",
-      answer: "Marketplace listings run from about ₹1.36 lakh to over ₹2.45 lakh, around ₹800 a square foot — but the real number depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
+      answer: "Marketplace listings run from about â‚¹1.36 lakh to over â‚¹2.45 lakh, around â‚¹800 a square foot â€” but the real number depends on size, panel type, coating spec, fit-out and quantity. We quote against your exact spec rather than publish a fixed price. Call +91 87960 39938 or send an enquiry.",
     },
     {
       question: "Can you supply multiple cabins for a Tata Steel or AIADA vendor project?",
-      answer: "Yes — multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity, freight, and timeline.",
+      answer: "Yes â€” multi-cabin plant orders are routine for us. We supply contractors and project managers, and our NSIC, DPIIT, ISO certificates, GST registration and incorporation papers are ready for vendor empanelment. Send the project scope and we'll confirm capacity, freight, and timeline.",
     },
     {
       question: "How long does delivery to Jamshedpur take?",
-      answer: "Transit is 4–6 days once the cabin's built, since Jamshedpur is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue — we'll confirm a firm timeline at enquiry.",
+      answer: "Transit is 4â€“6 days once the cabin's built, since Jamshedpur is well east of our NCR cities. We plan for the upper end and tell you straight rather than promise a date we can't hold. Production time depends on the configuration and your place in the queue â€” we'll confirm a firm timeline at enquiry.",
     },
   ],
   'porta-cabin-in-salem': [
@@ -1440,21 +1407,21 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How should I prepare my Salem site for cabin delivery and placement?",
-      answer: "Clear and level a footprint slightly larger than the cabin size. Confirm overhead clearance — no low power lines or cables above the placement zone. Book a crane or JCB rated for the cabin weight (we provide this with the delivery note). Arrange gate-pass for our delivery vehicle if your site is inside an industrial estate. Installation takes 2 to 3 hours once the crane is on-site.",
+      answer: "Clear and level a footprint slightly larger than the cabin size. Confirm overhead clearance â€” no low power lines or cables above the placement zone. Book a crane or JCB rated for the cabin weight (we provide this with the delivery note). Arrange gate-pass for our delivery vehicle if your site is inside an industrial estate. Installation takes 2 to 3 hours once the crane is on-site.",
     },
     {
       question: "Salem gets very hot in summer. Will the cabin be comfortable to work in?",
-      answer: "A standard 40mm PUF panel cabin provides meaningful thermal insulation. For direct-sun sites in Salem's peak summer (April to June), we recommend the insulation upgrade plus AC provision. A 1.5-tonne AC unit paired with an insulated cabin and a false ceiling will maintain a workable temperature even at 40°C outside.",
+      answer: "A standard 40mm PUF panel cabin provides meaningful thermal insulation. For direct-sun sites in Salem's peak summer (April to June), we recommend the insulation upgrade plus AC provision. A 1.5-tonne AC unit paired with an insulated cabin and a false ceiling will maintain a workable temperature even at 40Â°C outside.",
     },
     {
       question: "Can you supply multiple porta cabins for a large Salem project?",
-      answer: "Yes. We handle multi-unit orders for labour colonies, site office clusters, and permanent installations. Multi-unit orders are planned as a set — cabin sizes, layout, spacing, and shared services (power, water) — and dispatched in coordinated batches. Call us with the project scope and we plan the supply schedule.",
+      answer: "Yes. We handle multi-unit orders for labour colonies, site office clusters, and permanent installations. Multi-unit orders are planned as a set â€” cabin sizes, layout, spacing, and shared services (power, water) â€” and dispatched in coordinated batches. Call us with the project scope and we plan the supply schedule.",
     },
   ],
   'porta-cabin-in-tumkur': [
     {
       question: "Can you deliver a porta cabin to KIADB Hirehalli Industrial Area, Tumkur, within 2 weeks of my order?",
-      answer: "For a standard size with no custom fit-out — 10 ft × 8 ft or 20 ft × 8 ft with a door and window only — manufacture takes 7 to 10 working days and transit to Hirehalli (PIN 572168) is 1 to 2 days. Total: 8 to 12 working days from order confirmation. Yes, 2 weeks is achievable for standard cabins. Custom fit-out with electrical, AC, and toilet takes 11 to 17 working days total. Tell us your deadline when you call — we confirm whether it is achievable honestly, not optimistically.",
+      answer: "For a standard size with no custom fit-out â€” 10 ft Ã— 8 ft or 20 ft Ã— 8 ft with a door and window only â€” manufacture takes 7 to 10 working days and transit to Hirehalli (PIN 572168) is 1 to 2 days. Total: 8 to 12 working days from order confirmation. Yes, 2 weeks is achievable for standard cabins. Custom fit-out with electrical, AC, and toilet takes 11 to 17 working days total. Tell us your deadline when you call â€” we confirm whether it is achievable honestly, not optimistically.",
     },
     {
       question: "What base does my Tumkur site need for the cabin to sit on?",
@@ -1466,21 +1433,21 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "Can we visit your factory in Bangalore before placing the order?",
-      answer: "Yes. Our manufacturing facility is at Gopasandra, Sarjapura Hubli Road, Bangalore 560099 — approximately 65 km from Tumkur. You are welcome to visit and inspect a cabin in progress or a completed unit before placing your order. Call +91 88616 22859 to arrange the visit in advance so we can schedule time with our production team.",
+      answer: "Yes. Our manufacturing facility is at Gopasandra, Sarjapura Hubli Road, Bangalore 560099 â€” approximately 65 km from Tumkur. You are welcome to visit and inspect a cabin in progress or a completed unit before placing your order. Call +91 88616 22859 to arrange the visit in advance so we can schedule time with our production team.",
     },
   ],
   'porta-cabin-in-tirupur': [
     {
       question: "Can you supply porta cabins for a garment factory construction site in Tirupur with fast delivery?",
-      answer: "Yes. For a standard 10 ft × 8 ft or 20 ft × 8 ft cabin with no custom fit-out, manufacture takes 7 to 10 working days and transit to Tirupur is 4 to 5 days. Total from order to delivery: 11 to 15 working days. For custom fit-out with electrical, insulation upgrade, AC provision, and toilet: 14 to 20 working days total. If your construction start date is fixed, call us with the date and we confirm whether it is achievable from our current production queue.",
+      answer: "Yes. For a standard 10 ft Ã— 8 ft or 20 ft Ã— 8 ft cabin with no custom fit-out, manufacture takes 7 to 10 working days and transit to Tirupur is 4 to 5 days. Total from order to delivery: 11 to 15 working days. For custom fit-out with electrical, insulation upgrade, AC provision, and toilet: 14 to 20 working days total. If your construction start date is fixed, call us with the date and we confirm whether it is achievable from our current production queue.",
     },
     {
       question: "Will a standard porta cabin handle Tirupur's summer heat comfortably?",
-      answer: "A standard 40mm PUF panel cabin with heat-reflective GI roof and upper louvre vents provides meaningful thermal protection. For sites with all-day direct western sun exposure — common on open garment factory construction sites — we recommend the 60mm PUF upgrade plus AC provision. A 1.5-tonne split AC in an upgraded PUF cabin maintains a workable internal temperature even at 39 to 40°C outside. Specify the upgrade at enquiry stage — it cannot be added after manufacturing begins.",
+      answer: "A standard 40mm PUF panel cabin with heat-reflective GI roof and upper louvre vents provides meaningful thermal protection. For sites with all-day direct western sun exposure â€” common on open garment factory construction sites â€” we recommend the 60mm PUF upgrade plus AC provision. A 1.5-tonne split AC in an upgraded PUF cabin maintains a workable internal temperature even at 39 to 40Â°C outside. Specify the upgrade at enquiry stage â€” it cannot be added after manufacturing begins.",
     },
     {
       question: "Can you supply the security cabin with a counter ledge for a garment compound gate in Tirupur?",
-      answer: "Yes. A fixed MS flat-bar counter ledge below the sliding window is a standard add-on for garment factory security cabins. Specify it when enquiring and we include it in the manufacturing plan. The counter is sized to the window width and welded to the cabin frame — not bolted on as an afterthought.",
+      answer: "Yes. A fixed MS flat-bar counter ledge below the sliding window is a standard add-on for garment factory security cabins. Specify it when enquiring and we include it in the manufacturing plan. The counter is sized to the window width and welded to the cabin frame â€” not bolted on as an afterthought.",
     },
     {
       question: "Do you supply vendor documentation for garment buyer compliance audits in Tirupur?",
@@ -1490,7 +1457,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'porta-cabin-in-aurangabad': [
     {
       question: "Can you deliver porta cabins to MIDC Waluj, Aurangabad, from your Greater Noida factory?",
-      answer: "Yes. We dispatch from our Greater Noida facility (PIN 201308) and deliver to MIDC Waluj (PIN 431136), MIDC Chikalthana (PIN 431006), MIDC Shendra, and all Aurangabad addresses. Transit is 4 to 6 days by road. For MIDC Waluj heavy-vehicle entries, share the entry authorisation procedure and contact when placing your order — we coordinate the delivery vehicle clearance with your site team.",
+      answer: "Yes. We dispatch from our Greater Noida facility (PIN 201308) and deliver to MIDC Waluj (PIN 431136), MIDC Chikalthana (PIN 431006), MIDC Shendra, and all Aurangabad addresses. Transit is 4 to 6 days by road. For MIDC Waluj heavy-vehicle entries, share the entry authorisation procedure and contact when placing your order â€” we coordinate the delivery vehicle clearance with your site team.",
     },
     {
       question: "How long does manufacturing and delivery take from Greater Noida to Aurangabad?",
@@ -1512,7 +1479,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How quickly can SAMAN deliver a container office in Bangalore?",
-      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation. Since our factory is in Gopasandra (560099), transit to any Bangalore address — Peenya, Bommasandra, Electronic City, Whitefield — is same-day once dispatched. Custom fit-out with AC, partition, and toilet adds a few working days to production.",
+      answer: "Standard sizes are typically ready in 7â€“12 working days from order confirmation. Since our factory is in Gopasandra (560099), transit to any Bangalore address â€” Peenya, Bommasandra, Electronic City, Whitefield â€” is same-day once dispatched. Custom fit-out with AC, partition, and toilet adds a few working days to production.",
     },
     {
       question: "Can I visit your factory before ordering?",
@@ -1534,7 +1501,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How long does delivery take from Bangalore to Chennai?",
-      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation, with transit to Chennai of 4–5 days. Custom fit-out with AC, partition, and toilet adds a few working days to production. We confirm the dispatch and delivery dates in writing when you order.",
+      answer: "Standard sizes are typically ready in 7â€“12 working days from order confirmation, with transit to Chennai of 4â€“5 days. Custom fit-out with AC, partition, and toilet adds a few working days to production. We confirm the dispatch and delivery dates in writing when you order.",
     },
     {
       question: "Are your container offices suitable for Chennai's hot, humid coastal climate?",
@@ -1552,7 +1519,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How long does delivery take from Bangalore to Hyderabad?",
-      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation, with transit to Hyderabad of 4–5 days. Custom fit-out with AC, partition, and toilet adds a few working days to production. We confirm dispatch and delivery dates in writing when you order.",
+      answer: "Standard sizes are typically ready in 7â€“12 working days from order confirmation, with transit to Hyderabad of 4â€“5 days. Custom fit-out with AC, partition, and toilet adds a few working days to production. We confirm dispatch and delivery dates in writing when you order.",
     },
     {
       question: "Do you provide documentation for a pharma facility audit?",
@@ -1566,7 +1533,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How long does delivery take to Kochi?",
-      answer: "We dispatch from our Bangalore factory, roughly 550 km away, with typical road transit of 3-5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+      answer: "We dispatch from our Bangalore factory, roughly 550 km away, with typical road transit of 3?5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
     },
     {
       question: "Are the units built for Kochi's monsoon and coastal conditions?",
@@ -1583,8 +1550,8 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Price depends on size, whether it is a converted shipping container or a new steel-frame build, the insulation and coastal anti-corrosion level, and any partition or toilet additions. A basic 20 ft unit costs less than a 40 ft fully-fitted office. Freight from our Greater Noida factory to Mumbai is added as a separate transparent line. Call +91 87960 39938 for a written quotation with full breakup within 24 hours.",
     },
     {
-      question: "Mumbai is far from your factory — why order from SAMAN instead of a local supplier?",
-      answer: "Most container offices sold locally in Mumbai are resold by dealers or assembled by fabricators with no quality certification, no warranty, and no traceability on the steel. SAMAN builds every unit under ISO 9001:2015 quality management, with a 5-year structural warranty and a 20-25 year engineered service life. For a unit that must last years through Mumbai's monsoon and coastal humidity, certified build quality and real documentation justify the 4-6 day transit. We are upfront about the lead time so you can plan around it.",
+      question: "Mumbai is far from your factory â€” why order from SAMAN instead of a local supplier?",
+      answer: "Most container offices sold locally in Mumbai are resold by dealers or assembled by fabricators with no quality certification, no warranty, and no traceability on the steel. SAMAN builds every unit under ISO 9001:2015 quality management, with a 5-year structural warranty and a 20?25 year engineered service life. For a unit that must last years through Mumbai's monsoon and coastal humidity, certified build quality and real documentation justify the 4-6 day transit. We are upfront about the lead time so you can plan around it.",
     },
     {
       question: "Can you deliver a container office to MIDC Andheri, Taloja, or the Bhiwandi belt?",
@@ -1606,11 +1573,11 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "How quickly can you deliver to Delhi from your Greater Noida factory?",
-      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation. Because our factory is only 40 to 50 km from most of Delhi, transit is usually same-day once dispatched. Custom fit-out with AC, partition, and toilet adds a few working days to production.",
+      answer: "Standard sizes are typically ready in 7â€“12 working days from order confirmation. Because our factory is only 40 to 50 km from most of Delhi, transit is usually same-day once dispatched. Custom fit-out with AC, partition, and toilet adds a few working days to production.",
     },
     {
       question: "Do you supply container offices for PWD and government civil projects in Delhi?",
-      answer: "Yes. We supply deployable site offices and security cabins for government, PWD, and municipal civil projects across Delhi. We provide the vendor documentation — ISO certificates, NSIC registration, DPIIT recognition, GST papers — needed for a tender or procurement file. Mention the documentation requirement when you place the order.",
+      answer: "Yes. We supply deployable site offices and security cabins for government, PWD, and municipal civil projects across Delhi. We provide the vendor documentation â€” ISO certificates, NSIC registration, DPIIT recognition, GST papers â€” needed for a tender or procurement file. Mention the documentation requirement when you place the order.",
     },
   ],
   'container-office-in-jaipur': [
@@ -1624,7 +1591,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "Is a container office a good option for a small RIICO plot without space for construction?",
-      answer: "Yes — that is exactly where it fits best. A container office needs no foundation or civil construction for temporary or semi-permanent use; a levelled hard surface is enough. It arrives as a finished, lockable office and can be placed in a single delivery on a compact plot. When the unit is no longer needed in that spot, it can be relocated by crane. For an MSME avoiding the cost and delay of building, it is the efficient choice.",
+      answer: "Yes â€” that is exactly where it fits best. A container office needs no foundation or civil construction for temporary or semi-permanent use; a levelled hard surface is enough. It arrives as a finished, lockable office and can be placed in a single delivery on a compact plot. When the unit is no longer needed in that spot, it can be relocated by crane. For an MSME avoiding the cost and delay of building, it is the efficient choice.",
     },
     {
       question: "Do you provide documentation for MSME registration or a vendor audit?",
@@ -1641,8 +1608,8 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
       answer: "Yes. We deliver to Chakan MIDC (PIN 410501), Talegaon MIDC, Ranjangaon MIDC, Pimpri-Chinchwad, and all Pune industrial and construction addresses. For MIDC estate deliveries needing gate-pass authorisation, share the entry procedure when you order and we coordinate the delivery vehicle with your site.",
     },
     {
-      question: "Pune is far from your factory — how do you manage delivery?",
-      answer: "Pune is about 1,400 km from our Greater Noida factory, with road transit of several days. We are upfront about this and plan the dispatch around your project schedule, so the unit arrives when you need it on-site rather than as a surprise. The cabin is fully built and fitted before dispatch — nothing is assembled at your site. For a unit that must last years on a MIDC plot, certified build quality and real documentation justify the planned lead time.",
+      question: "Pune is far from your factory â€” how do you manage delivery?",
+      answer: "Pune is about 1,400 km from our Greater Noida factory, with road transit of several days. We are upfront about this and plan the dispatch around your project schedule, so the unit arrives when you need it on-site rather than as a surprise. The cabin is fully built and fitted before dispatch â€” nothing is assembled at your site. For a unit that must last years on a MIDC plot, certified build quality and real documentation justify the planned lead time.",
     },
     {
       question: "Do you provide documentation for an auto-sector vendor audit in Pune?",
@@ -1660,11 +1627,11 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "Do you supply container offices for government and UPSIDA projects in Lucknow?",
-      answer: "Yes. We supply deployable site offices and security cabins for government, PWD, UPSIDA, and infrastructure projects across Lucknow. We provide the vendor documentation — ISO certificates, NSIC registration, DPIIT recognition, GST papers — that a tender or procurement file requires. Mention the documentation requirement when you place the order so we include it with the delivery paperwork.",
+      answer: "Yes. We supply deployable site offices and security cabins for government, PWD, UPSIDA, and infrastructure projects across Lucknow. We provide the vendor documentation â€” ISO certificates, NSIC registration, DPIIT recognition, GST papers â€” that a tender or procurement file requires. Mention the documentation requirement when you place the order so we include it with the delivery paperwork.",
     },
     {
       question: "How quickly can you deliver to Lucknow from your Greater Noida factory?",
-      answer: "Standard sizes are typically ready in 7–12 working days from order confirmation. Lucknow is within the north India delivery belt from our Greater Noida factory, so transit is short relative to far-zone cities. Custom fit-out with AC, partition, and toilet adds a few working days to production. We confirm the dispatch and delivery dates in writing when you order.",
+      answer: "Standard sizes are typically ready in 7â€“12 working days from order confirmation. Lucknow is within the north India delivery belt from our Greater Noida factory, so transit is short relative to far-zone cities. Custom fit-out with AC, partition, and toilet adds a few working days to production. We confirm the dispatch and delivery dates in writing when you order.",
     },
   ],
   'container-office-in-kolkata': [
@@ -1678,7 +1645,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "Will the container office hold up through the Kolkata monsoon?",
-      answer: "Yes. We seal the roof overlaps, treat the door and window seals, and offer a sloped over-roof to shed heavy rain — specified as standard for Kolkata-bound units. We also apply upgraded anti-corrosion treatment for the humid, river-side environment. The unit stays dry and structurally sound through the Bengal monsoon, and the steel is protected against humidity over its full service life.",
+      answer: "Yes. We seal the roof overlaps, treat the door and window seals, and offer a sloped over-roof to shed heavy rain â€” specified as standard for Kolkata-bound units. We also apply upgraded anti-corrosion treatment for the humid, river-side environment. The unit stays dry and structurally sound through the Bengal monsoon, and the steel is protected against humidity over its full service life.",
     },
     {
       question: "Do you supply container offices for port and warehouse operations in Kolkata?",
@@ -1696,7 +1663,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
     },
     {
       question: "Will the container office stay workable in Ahmedabad's summer heat?",
-      answer: "Yes — if it is built for it, which ours are. We use upgraded PUF or rock wool insulation and a heat-reflective over-roof as standard for Ahmedabad-bound units, which cuts radiant heat gain significantly. Paired with AC provision and a false ceiling, the office stays workable even through a Gujarat April afternoon. We specify the heat protection before manufacturing so the unit arrives ready for the climate.",
+      answer: "Yes â€” if it is built for it, which ours are. We use upgraded PUF or rock wool insulation and a heat-reflective over-roof as standard for Ahmedabad-bound units, which cuts radiant heat gain significantly. Paired with AC provision and a false ceiling, the office stays workable even through a Gujarat April afternoon. We specify the heat protection before manufacturing so the unit arrives ready for the climate.",
     },
     {
       question: "Do you provide documentation for a GIDC or pharma vendor audit?",
@@ -1706,7 +1673,7 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-visakhapatnam': [
     {
       question: "How much does a container office cost in Visakhapatnam?",
-      answer: "Price depends on size, insulation, corrosion protection, partitions, electricals and fit-out, plus the long-distance transport. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, corrosion protection, partitions, electricals and fit-out, plus the long-distance transport. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How long does delivery take to Visakhapatnam?",
@@ -1724,15 +1691,15 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-vijayawada': [
     {
       question: "How much does a container office cost in Vijayawada?",
-      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft gate cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How long does delivery take to Vijayawada?",
-      answer: "We dispatch from our Bangalore factory, around 760 km away on NH44, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+      answer: "We dispatch from our Bangalore factory, around 760 km away on NH44, with typical road transit of 3â€“5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
     },
     {
       question: "Do you supply container offices for Amaravati capital-region construction sites?",
-      answer: "Yes. The Mangalagiri–Tadepalli–Amaravati corridor is one of our main areas of demand around Vijayawada. We supply site offices, engineer cabins and security posts, and can relocate units as the project moves.",
+      answer: "Yes. The Mangalagiriâ€“Tadepalliâ€“Amaravati corridor is one of our main areas of demand around Vijayawada. We supply site offices, engineer cabins and security posts, and can relocate units as the project moves.",
     },
     {
       question: "Can the container office be moved between sites later?",
@@ -1742,19 +1709,541 @@ const FAQ_SCHEMA_OVERRIDES: Record<string, FAQItem[]> = {
   'container-office-in-coimbatore': [
     {
       question: "How much does a container office cost in Coimbatore?",
-      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft security cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification — share your requirement for an itemised price.",
+      answer: "Price depends on size, insulation, partitions, electricals and fit-out. A bare 10 ft security cabin and a fully fitted 40 ft project office sit far apart on cost. We quote to your exact specification â€” share your requirement for an itemised price.",
     },
     {
       question: "How long does delivery take to Coimbatore?",
-      answer: "We dispatch from our Bangalore factory, roughly 360 km away, with typical road transit of 3–5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
+      answer: "We dispatch from our Bangalore factory, roughly 360 km away, with typical road transit of 3â€“5 days once the unit is built. We confirm the schedule at order stage based on your site location and access.",
     },
     {
       question: "Are the units suitable for foundry and dusty shop-floor conditions?",
-      answer: "Yes. We can dust-seal openings, add insulation and AC provision, and finish the unit for hot, dusty environments common in Coimbatore’s foundry and fabrication belts. Specify the conditions and we configure accordingly.",
+      answer: "Yes. We can dust-seal openings, add insulation and AC provision, and finish the unit for hot, dusty environments common in Coimbatoreâ€™s foundry and fabrication belts. Specify the conditions and we configure accordingly.",
     },
     {
       question: "Can I move the container office between sites later?",
       answer: "Yes. Container offices are relocatable. If you expect to shift the unit between project sites, tell us at order stage so we specify lifting points and a shell suited to repeated handling.",
+    },
+  ],
+  'container-office-in-bhopal': [
+    {
+      question: "Do you deliver container offices to Bhopal and the Mandideep industrial area?",
+      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Bhopal city (462001), the Govindpura industrial estate (462023), and the Mandideep AKVN belt (462046). As a long-distance route, transit is about 4â€“5 days once the unit is built, with delivery charged at â‚¹3,000 where applicable.",
+    },
+    {
+      question: "What container office sizes suit Bhopal factory and site use?",
+      answer: "Common sizes are 10Ã—8 ft and 10Ã—10 ft cabins, 20Ã—8 ft site offices, and 40Ã—8 ft project offices. We also build custom dimensions and double-decker units for packed Govindpura and Mandideep plots.",
+    },
+    {
+      question: "What does a container office cost in Bhopal?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the cabin be customised for BHEL-ancillary, pharma, and engineering units?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",
+    },
+  ],
+  'container-office-in-kozhikode': [
+    {
+      question: "What does a container office cost in Kozhikode?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Kozhikode site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Feroke and the Kozhikode timber belt?",
+      answer: "Yes. We dispatch from our Bangalore factory via Mysore and the Wayanad ghats to Feroke (673631), the Kallai trade area (673003) and Kozhikode city (673001) â€” about 350â€“390 km, so we suggest planning 4â€“5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a timber-yard or construction site office?",
+      answer: "A 20 ft cabin covers most admin, dispatch and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-thrissur': [
+    {
+      question: "What does a container office cost in Thrissur?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Thrissur site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Kinfra Koratty park and Ollur?",
+      answer: "Yes. We dispatch from our Bangalore factory via Salem and Palakkad to the Kinfra Koratty park (680308), Athani (680581), the Ollur belt (680306) and Thrissur city (680001) â€” about 450â€“490 km, so we suggest planning 4â€“5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a Kinfra unit or construction site office?",
+      answer: "A 20 ft cabin covers most admin, supervisor and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-puducherry': [
+    {
+      question: "What does a container office cost in Puducherry?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Puducherry site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Sedarapet and Mettupalayam PIPDIC estates?",
+      answer: "Yes. We dispatch from our Bangalore factory via Tiruvannamalai to the Mettupalayam estate (605009), Sedarapet (605111), Thirubuvanai (605107) and Puducherry city (605001) â€” about 310â€“360 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an auto-component plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-guntur': [
+    {
+      question: "What does a container office cost in Guntur?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Guntur site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Autonagar and the Guntur Industrial Estate?",
+      answer: "Yes. We dispatch from our Bangalore factory via Kurnool to the Autonagar workshop estate (522001), the Guntur Industrial Estate on the Lam side (522034) and Guntur city (522002) â€” about 570â€“620 km, so we suggest planning 4â€“5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an Autonagar workshop or construction site office?",
+      answer: "A 20 ft cabin covers most admin, supervisor and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-nellore': [
+    {
+      question: "What does a container office cost in Nellore?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Nellore site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Krishnapatnam port-side sites?",
+      answer: "Yes. We dispatch from our Bangalore factory via the Tirupati corridor to the Krishnapatnam port belt (524344), Nellore city (524001) and the Naidupeta side (524126) â€” about 360â€“430 km. Because port plots need planned access, we confirm the gate pass and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a port logistics or warehouse admin office?",
+      answer: "A 20 ft cabin covers most dispatch-yard, admin and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-penukonda': [
+    {
+      question: "What does a container office cost in Penukonda?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Penukonda site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Kia plant belt and Erramanchi side?",
+      answer: "Yes. We dispatch from our Bangalore factory up NH44 via Bagepalli to the Kia belt at Erramanchi, Penukonda town and the auto-ancillary plots around Penukonda (515110) â€” about 150â€“180 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an auto-component plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and certificate numbers for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-ballari': [
+    {
+      question: "What does a container office cost in Ballari?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Ballari site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Toranagallu and the JSW Vijayanagar belt?",
+      answer: "Yes. We dispatch from our Bangalore factory via Tumakuru and Chitradurga to Toranagallu and Vidyanagar (583123), Ballari city (583101) and the Hospet corridor (583201) â€” about 310â€“360 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a steel-yard supervisor or project office?",
+      answer: "A 20 ft cabin covers most supervisor, documentation and admin needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger project office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-warangal': [
+    {
+      question: "What does a container office cost in Warangal?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Warangal site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Kakatiya Mega Textile Park?",
+      answer: "Yes. We dispatch from our Bangalore factory via Hyderabad to the Kakatiya Mega Textile Park at Shayampet (506319), the Hanamkonda belt (506001) and Warangal city (506002) â€” about 700â€“780 km, so we suggest planning 4â€“5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a textile-park admin or supervisor office?",
+      answer: "A 20 ft cabin covers most project, admin and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-trichy': [
+    {
+      question: "What does a container office cost in Trichy?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Trichy site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to BHEL Township and the SIDCO estates?",
+      answer: "Yes. We dispatch from our Bangalore factory via Salem and Karur to BHEL Township, Kailasapuram, the Thiruverumbur SIDCO estate (620014) and the Thuvakudi SIDCO estate (620015) â€” about 350â€“370 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a BHEL ancillary or fabrication unit?",
+      answer: "A 20 ft cabin covers most admin, QC and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-tirupur': [
+    {
+      question: "What does a container office cost in Tirupur?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Tirupur site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to SIDCO Harvey Road, Veerapandi and Mudalipalayam?",
+      answer: "Yes. We dispatch from our Bangalore factory via Salem and Erode to the Tirupur city cluster (641601), the SIDCO estate on Harvey Road (641602), Veerapandi (641605) and Mudalipalayam (641606) â€” about 320â€“360 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "How is a container office different from a porta cabin?",
+      answer: "A container office uses a container-style steel shell, which makes it sturdier for larger site, storage and gate use and easy to relocate between factory phases. A porta cabin is a lighter panel cabin. Tell us your use and we advise the right one.",
+    },
+    {
+      question: "Can the office include AC, partitions and electrical fit-out?",
+      answer: "Yes. We add AC provision, internal partitions, electrical points, a document-storage area and an attached toilet as needed, all built into the cabin before dispatch and confirmed at quotation.",
+    },
+  ],
+  'container-office-in-tirupati': [
+    {
+      question: "What does a container office cost in Tirupati?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Tirupati site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Renigunta and Gajulamandyam factory sites?",
+      answer: "Yes. We dispatch from our Bangalore factory via Chittoor to Gajulamandyam and the APIIC park (517520), Karakambadi (517520), Renigunta (517520) and Tirupati city (517501) â€” about 250â€“290 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an electronics plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and stores needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and certificate numbers for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-sri-city': [
+    {
+      question: "What does a container office cost in Sri City?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Sri City site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver inside the Sri City SEZ, and how is gate access handled?",
+      answer: "Yes. We dispatch from our Bangalore factory via Chittoor and the Chennai corridor to the SEZ, DTZ and FTWZ zones of Sri City (517646). Because the zones are gated, we plan the gate-pass and offloading with you before dispatch.",
+    },
+    {
+      question: "Which size suits an SEZ project or admin office?",
+      answer: "A 20 ft cabin covers most project, admin and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and certificate numbers for SEZ vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-haridwar': [
+    {
+      question: "What does a container office cost in Haridwar?",
+      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and delivery distance to your Haridwar site. Share your requirement and we send an itemised quote.",
+    },
+    {
+      question: "Do you deliver to SIDCUL Haridwar and BHEL Ranipur?",
+      answer: "Yes. We dispatch from our Greater Noida factory to the SIDCUL Integrated Industrial Estate, Shivalik Nagar, BHEL Ranipur, Bahadrabad and Haridwar city, via the Delhiâ€“Meerut Expressway and Roorkee corridor. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "What sizes of container office are available?",
+      answer: "We build 10 ft, 20 ft and 40 ft standard units, and customise layouts such as partitioned, two-unit or two-storey cabins. Internal usable area is confirmed at quotation.",
+    },
+    {
+      question: "Can the container office be shifted to another Uttarakhand site later?",
+      answer: "Yes. A container office is a self-contained steel cabin, so it can be lifted and relocated to another plot in Haridwar or elsewhere in Uttarakhand when your project moves.",
+    },
+  ],
+  'container-office-in-agra': [
+    {
+      question: "What does a container office cost in Agra?",
+      answer: "There is no single fixed price. Cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Agra site. Share your requirement and we send an itemised quote.",
+    },
+    {
+      question: "Do you deliver to Sikandra and Foundry Nagar in Agra?",
+      answer: "Yes. We dispatch from our Greater Noida factory on the Yamuna Expressway to the Sikandra Industrial Area, Foundry Nagar and the Trans-Yamuna belt â€” about 165â€“190 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Do you supply site offices for hotel and real-estate projects?",
+      answer: "Yes. A 20 ft or 40 ft container cabin works well as a contractor or project site office for hotel, road and real-estate work, with partitions and electricals to suit. Sizes and layout are confirmed at quotation.",
+    },
+    {
+      question: "What size suits a foundry or footwear unit admin cabin?",
+      answer: "We build 10 ft, 20 ft and 40 ft standard units. A 20 ft cabin covers most admin and supervisor needs, while 10 ft suits a gate or single-desk point and 40 ft suits a larger office. Layouts are customised and confirmed at quotation.",
+    },
+  ],
+  'container-office-in-varanasi': [
+    {
+      question: "What does a container office cost in Varanasi?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Varanasi site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Chandpur and Ramnagar estates?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Kanpur and Prayagraj on NH19 to the Chandpur Industrial Estate (221106), the Ramnagar area (221008) and Varanasi city (221001) â€” about 750â€“800 km, so we suggest planning 4â€“5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an estate-unit or infrastructure site office?",
+      answer: "A 20 ft cabin covers most admin, site and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-bareilly': [
+    {
+      question: "What does a container office cost in Bareilly?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Bareilly site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Parsakhera and C.B. Ganj?",
+      answer: "Yes. We dispatch from our Greater Noida factory on NH9 via Moradabad to the Parsakhera industrial area and C.B. Ganj estate (243502) and Bareilly city (243001) â€” about 240â€“270 km, so we suggest planning 4â€“5 days. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a Parsakhera-unit or warehouse office?",
+      answer: "A 20 ft cabin covers most admin, dispatch and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-neemrana': [
+    {
+      question: "What does a container office cost in Neemrana?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Neemrana site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the RIICO estate, Ghiloth and the Japanese zone?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Gurgaon and Bhiwadi on NH48 to the RIICO Industrial Area, the Neemrana Japanese Zone, Ghiloth Industrial Area and Neemrana town (301705) â€” about 140?160 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an auto-component plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-bawal': [
+    {
+      question: "What does a container office cost in Bawal?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Bawal site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to IMT Bawal and the Dharuhera belt?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Gurgaon and Dharuhera on NH48 to IMT Bawal (123501), Bawal town (123501), Dharuhera (123106) and the Dharuhera Industrial Area (123110) â€” about 120â€“140 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an auto-component plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-jalandhar': [
+    {
+      question: "What does a container office cost in Jalandhar?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Jalandhar site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to Focal Point and the Industrial Estate?",
+      answer: "Yes. We dispatch from our Greater Noida factory up NH44 via Panipat, Ambala and Ludhiana to the Focal Point industrial area (144004), the Industrial Town and Industrial Estate belt (144004) and Jalandhar city (144001) â€” about 420â€“450 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a sports goods or hand tools export unit?",
+      answer: "A 20 ft cabin covers most admin, sampling and dispatch needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-moradabad': [
+    {
+      question: "What does a container office cost in Moradabad?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Moradabad site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Peetal Nagri cluster and Lakri Fazalpur?",
+      answer: "Yes. We dispatch from our Greater Noida factory on NH9 via Ghaziabad, Hapur and Gajraula to the Peetal Nagri brass cluster, the Lakri Fazalpur industrial belt on Delhi Road and Moradabad city (244001) Ã¢â‚¬â€ about 160Ã¢â‚¬â€œ180 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a brass export unit admin or sampling office?",
+      answer: "A 20 ft cabin covers most admin, sampling and dispatch needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a buyer-inspection area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-rohtak': [
+    {
+      question: "What does a container office cost in Rohtak?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Rohtak site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to IMT Rohtak?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Delhi and Bahadurgarh to IMT Rohtak on Delhi Road (124021) and Rohtak city (124001) â€” about 90â€“120 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an IMT plant admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-panipat': [
+    {
+      question: "Do you deliver container offices to Panipat and the HSIIDC industrial estate?",
+      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road down NH-44 to Panipat city (132103), the HSIIDC industrial estate and Sector 25 and 29 HUDA belt (132103), and the Samalkha zone (132101). Transit is usually 2â€“3 days once the unit is built, with delivery charged at â‚¹3,000 where applicable.",
+    },
+    {
+      question: "What container office sizes suit Panipat textile and warehouse units?",
+      answer: "Common sizes are 10Ã—8 ft and 10Ã—10 ft cabins, 20Ã—8 ft site offices, and 40Ã—8 ft project offices. We also build custom dimensions and double-decker units for packed HUDA plots and mill yards.",
+    },
+    {
+      question: "What does a container office cost in Panipat?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the cabin be customised for textile units, warehouses, and project sites?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",
+    },
+  ],
+  'container-office-in-sonipat': [
+    {
+      question: "What does a container office cost in Sonipat?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Sonipat site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the Kundli and Rai estates?",
+      answer: "Yes. We dispatch from our Greater Noida factory on the Eastern Peripheral Expressway to the Kundli Industrial Estate (131028), the Rai HSIIDC area (131029) and Sonipat city (131001) â€” about 50â€“70 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits an estate-unit admin or QC office?",
+      answer: "A 20 ft cabin covers most admin, QC and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-yamunanagar': [
+    {
+      question: "What does a container office cost in Yamunanagar?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Yamunanagar site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the plywood belt and Jagadhri?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Karnal on NH44 to the Yamunanagar plywood belt (135001), the Jagadhri Workshop area (135002) and the Jagadhri metal belt (135003) â€” about 200â€“240 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a plywood-mill or metal-workshop office?",
+      answer: "A 20 ft cabin covers most admin, dispatch and supervisor needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-saharanpur': [
+    {
+      question: "What does a container office cost in Saharanpur?",
+      answer: "There is no single fixed price. The cost depends on size (10, 20 or 40 ft), panel and insulation type, AC, electrical and toilet fit-out, quantity and the delivery distance to your Saharanpur site. Share your requirement and we send an itemised quote the same way for every buyer.",
+    },
+    {
+      question: "Do you deliver to the woodcraft cluster and paper-mill belt?",
+      answer: "Yes. We dispatch from our Greater Noida factory via Meerut and Muzaffarnagar to the woodcraft cluster, the paper-mill belt and the Saharanpur city industrial area (247001) â€” about 170â€“200 km. We confirm the schedule and offloading with your quote.",
+    },
+    {
+      question: "Which size suits a woodcraft-unit or paper-mill office?",
+      answer: "A 20 ft cabin covers most admin, sampling and dispatch needs, a 10 ft cabin suits a gate or single-desk point, and a 40 ft cabin suits a larger office with a meeting area. Layouts are customised and confirmed at quotation.",
+    },
+    {
+      question: "Do you provide a GST invoice and e-way bill for vendor onboarding?",
+      answer: "Yes. We are a GST-registered Private Limited manufacturer and issue a GST invoice and e-way bill for every dispatch, and can share our ISO, NSIC and DPIIT certificate numbers for vendor registration.",
+    },
+  ],
+  'container-office-in-dehradun': [
+    {
+      question: "Do you deliver container offices to Dehradun and the Selaqui industrial area?",
+      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Dehradun city (248001), the Selaqui industrial belt (248197), and the IT Park and Mohabbewala areas. Transit is usually 3â€“4 days once the unit is built, with delivery charged at â‚¹3,000 where applicable.",
+    },
+    {
+      question: "What container office sizes suit Dehradun site and factory use?",
+      answer: "Common sizes are 10Ã—8 ft and 10Ã—10 ft cabins, 20Ã—8 ft site offices, and 40Ã—8 ft project offices. We also build custom dimensions and double-decker units for compact Selaqui and Mohabbewala plots.",
+    },
+    {
+      question: "What does a container office cost in Dehradun?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the cabin be customised for pharma, IT, and packaging unit sites?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.",
+    },
+  ],
+  'porta-cabin-in-bareilly': [
+    {
+      question: 'Do you deliver porta cabins to Bareilly and the C.B. Ganj industrial area?',
+      answer: 'Yes. We manufacture at our Greater Noida factory and dispatch by road to Bareilly city (243001), the C.B. Ganj industrial estate, and the Parsakhera industrial area. Transit is usually 3–4 days once the unit is ready, with delivery charged at ₹3,000 where applicable.',
+    },
+    {
+      question: 'What porta cabin sizes are available for Bareilly sites?',
+      answer: 'Common sizes are 10×8 ft and 10×10 ft cabins, 20×8 ft site offices, and 40×8 ft project offices. We also build custom dimensions and double-decker units for plots where ground space is limited.',
+    },
+    {
+      question: 'What does a porta cabin cost in Bareilly?',
+      answer: 'Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.',
+    },
+    {
+      question: 'Can the porta cabin be customised for factory, site, and security use?',
+      answer: 'Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use, and we match the layout, colour, and window and door count to your site.',
+    },
+  ],
+  'porta-cabin-in-meerut': [
+    {
+      question: "Do you deliver porta cabins to Meerut and the Partapur industrial area?",
+      answer: "Yes. We manufacture at our Greater Noida factory and dispatch by road to Meerut city (250001), the Partapur industrial estate, and the Mohkampur belt on Delhi Road (250103). Transit is usually 2\u20133 days once the unit is built, with delivery charged at \u20B93,000 where applicable.",
+    },
+    {
+      question: "What porta cabin sizes are available for Meerut sites?",
+      answer: "Common sizes are 10\u00D78 ft and 10\u00D710 ft cabins, 20\u00D78 ft site offices, and 40\u00D78 ft project offices. We also build custom dimensions and double-decker units for plots where ground space is limited.",
+    },
+    {
+      question: "What does a porta cabin cost in Meerut?",
+      answer: "Price depends on size, panel type, flooring, and add-ons like AC or a toilet. Since every unit is made to order, we confirm the final quote after a short requirement discussion so the figure matches your exact build.",
+    },
+    {
+      question: "Can the porta cabin be customised for factory, site, and security use?",
+      answer: "Yes. We add AC, toilets, pantries, partitions, extra power points, and heavier flooring for gate or store use. We also match the layout, colour, and window and door count to your site.",
     },
   ],
 };
@@ -1791,7 +2280,7 @@ interface CityServiceCluster {
   national?: boolean;
   areaName?: string;
   // Optional cluster-level enrichments emitted on the Service node for every city
-  // page in that cluster. Safe schema.org/Service fields only — never Product/Review/Rating.
+  // page in that cluster. Safe schema.org/Service fields only â€” never Product/Review/Rating.
   termsOfService?: string;
   offerCatalogName?: string;
   offers?: string[];
@@ -1808,7 +2297,7 @@ const CITY_SERVICE_CLUSTERS: CityServiceCluster[] = [
     namePrefix: 'Container Cafe in',
     serviceType: 'Container Cafe Manufacturing and Installation',
     termsOfService:
-      '5 years structural frame and base; 1–2 years finishing; 20–25 years engineered service life',
+      '5 years structural frame and base; 1â€“2 years finishing; 20â€“25 years engineered service life',
     offerCatalogName: 'Container cafe formats',
     offers: [
       'Coffee / takeaway kiosk container cafe',
@@ -1817,7 +2306,7 @@ const CITY_SERVICE_CLUSTERS: CityServiceCluster[] = [
       'Multi-unit / event container cafe',
     ],
   },
-  // ── Extended local/service clusters (schema-gaps fix) ───────────────────
+  // â”€â”€ Extended local/service clusters (schema-gaps fix) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Order is significant: more-specific prefixes precede their shorter variants
   // so the right serviceType wins. All emit a lean Service node (no price/review).
   {
@@ -1891,7 +2380,7 @@ const CITY_SERVICE_CLUSTERS: CityServiceCluster[] = [
     namePrefix: 'Prefabricated Warehouses in',
     serviceType: 'Prefabricated Warehouse Manufacturer',
   },
-  // National (no city) — exact temporary-shed landing slug only. Informational
+  // National (no city) â€” exact temporary-shed landing slug only. Informational
   // guide slugs (e.g. temporary-sheds-guide-*) intentionally do NOT match.
   {
     prefix: /^temporary-sheds?$/i,
@@ -2005,7 +2494,7 @@ export const getCityServiceSchema = (params: {
         })),
       },
     }),
-    // NOTE: do NOT add `inLanguage` or `isPartOf` here — not valid schema.org/Service
+    // NOTE: do NOT add `inLanguage` or `isPartOf` here â€” not valid schema.org/Service
     // properties. Page-level inLanguage/isPartOf live on WebPage/BlogPosting nodes.
   };
 };
@@ -2111,7 +2600,7 @@ export const generateUnifiedBlogGraph = (params: {
   // Optional Service node for allowlisted city/location landing pages. Coexists with
   // BlogPosting; provider references the Organization @id already in the graph.
   if (serviceSchema) {
-    // `isPartOf` is intentionally NOT added here — it is not a valid property of
+    // `isPartOf` is intentionally NOT added here â€” it is not a valid property of
     // schema.org/Service. The Service node links to the page via its provider
     // (Organization @id) and its own @id; page-level isPartOf stays on WebPage.
     graph.push({
@@ -2127,12 +2616,12 @@ export const generateUnifiedBlogGraph = (params: {
 };
 
 /**
- * City/geo landing-page schema graph — emits EXACTLY THREE nodes:
- *   1. Organization  (no LocalBusiness — SAMAN has no branch in the city; both
+ * City/geo landing-page schema graph â€” emits EXACTLY THREE nodes:
+ *   1. Organization  (no LocalBusiness â€” SAMAN has no branch in the city; both
  *      factory addresses are listed as PostalAddress entries)
- *   2. BreadcrumbList (Home → Porta Cabins → this city page)
+ *   2. BreadcrumbList (Home â†’ Porta Cabins â†’ this city page)
  *   3. FAQPage        (the FAQs rendered on the page; omitted only if none found)
- * No BlogPosting / WebPage / WebSite / Service / Product nodes — this is a
+ * No BlogPosting / WebPage / WebSite / Service / Product nodes â€” this is a
  * deliberately leaner graph than generateUnifiedBlogGraph(), used only for
  * allowlisted city pages (see CITY_PAGE_SCHEMA_SLUGS in [slug].tsx). Injected
  * the same way as every other page: as the UnifiedSEO `structuredData` prop.
@@ -2143,7 +2632,7 @@ export const getCityPageGraph = (params: {
   faqSchema: any | null;
   contactTelephone?: string | string[];
 }) => {
-  const { url, breadcrumbs, faqSchema, contactTelephone = '+91 88616 22859' } = params;
+  const { url, breadcrumbs, faqSchema, contactTelephone = ['+91 88616 22859', '+91 80886 85440'] } = params;
 
   const organization = {
     '@type': 'Organization',
@@ -2217,3 +2706,4 @@ export const getCityPageGraph = (params: {
     '@graph': graph,
   };
 };
+

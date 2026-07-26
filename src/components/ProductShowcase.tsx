@@ -50,7 +50,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
               Live Product Catalogue
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 tracking-tight">
-              Browse Our Portable Cabins &amp; Container Offices
+              Explore Every Product Category
             </h2>
             <p className="text-base text-muted-foreground max-w-xl leading-relaxed">
               Prices, specs and photos — pulled directly from our product catalogue. Click any product to get full details and request a quote.
@@ -86,6 +86,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
                   <ProductCard
                     product={product}
                     priority={false} // Below-the-fold section: lazy-load all (was index<3 eager); defers offscreen images, keeps hero eager
+                    titleAsLink
                   />
                 </div>
               ))}
@@ -117,4 +118,3 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
 };
 
 export default ProductShowcase;
-

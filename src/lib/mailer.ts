@@ -1,29 +1,32 @@
 import nodemailer from 'nodemailer';
 import { RECIPIENTS, COMPANY_INFO } from '@/config/emails';
 
-// Create transporter with Brevo SMTP configuration
+const smtpHost = process.env.SMTP_HOST || 'smtp-relay.brevo.com';
+const smtpPort = Number(process.env.SMTP_PORT || 587);
+const smtpSecure = process.env.SMTP_SECURE === 'true';
+const smtpUser = process.env.SMTP_USER;
+const smtpPass = process.env.SMTP_PASS;
+
+function assertSmtpConfigured() {
+  if (!smtpUser || !smtpPass) {
+    throw new Error('SMTP_USER and SMTP_PASS must be configured in server environment variables.');
+  }
+}
+
+// Create transporter with server-side SMTP configuration only.
 const transporter = nodemailer.createTransport({
-  host: 'smtp-relay.brevo.com',
-  port: 587,
-  secure: false, // TLS
+  host: smtpHost,
+  port: smtpPort,
+  secure: smtpSecure,
   auth: {
-    user: '9370d8001@smtp-brevo.com',
-    pass: 'xsmtpsib-6e091ced1f1dd85a80df1e7be8d15498acc55a5a6e530204f1cfa85f7e25a6cf-yS6mb7GJWB0gx8AH'
+    user: smtpUser,
+    pass: smtpPass
   },
   tls: {
     rejectUnauthorized: false
   },
   debug: false, // Disable debug output
   logger: false // Disable logging
-});
-
-// Verify transporter connection
-transporter.verify(function(error, success) {
-  if (error) {
-    console.error('SMTP connection error:', error);
-  } else {
-    console.log('SMTP server is ready to send emails');
-  }
 });
 
 // Email sending function
@@ -36,6 +39,7 @@ export const sendEmail = async (options: {
   replyTo?: string;
 }) => {
   try {
+    assertSmtpConfigured();
     const { to, subject, html, text, from, replyTo } = options;
     
     const mailOptions = {

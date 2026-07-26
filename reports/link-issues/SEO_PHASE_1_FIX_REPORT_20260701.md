@@ -377,3 +377,132 @@ Commit recommendation:
 
 - Safe to commit only after isolating the Phase 1 hunk in `src/pages/[slug].tsx` if unrelated city allowlist additions must not be included.
 - Recommended Phase 1 commit set: `Footer.tsx`, the listed JSON files, the report, and only the `container-office-in-kolkata` H1 demotion hunk from `[slug].tsx`.
+
+## Live Deployment Verification
+
+Verification date: 2026-07-01
+
+Pushed branch name:
+
+- `fix/seo-priority-phase-1-20260701`
+
+Pushed commit SHA:
+
+- `cb50ce1`
+
+Remote confirmation:
+
+- `cb50ce1` is present on `origin/fix/seo-priority-phase-1-20260701`.
+
+Deployment method:
+
+- Git push to GitHub feature branch only.
+- No local dirty-working-tree deployment was run.
+- No manual deploy was run.
+- Production `www.samanportable.com` did not reflect the feature-branch commit during live verification, so deployment is not confirmed.
+
+Deployed commit SHA:
+
+- HOLD: not confirmed on live `www`.
+
+Live URL check results:
+
+| URL | HTTP | Result |
+| --- | --- | --- |
+| `https://www.samanportable.com/container-office-in-kolkata` | 200 | HOLD: live page still has 2 H1 tags: `Container Office in Kolkata`, `Container Office in Kolkata`. |
+| `https://www.samanportable.com/prefab-solutions` | 200 | HOLD: page loads, canonical/hreflang pass, but footer/navigation did not yet contain `/prefab-solutions` link from Phase 1. |
+| `https://www.samanportable.com/portable-cabins-in-magadi-road` | 200 | HOLD: old vague anchor remains live: `click here` -> `https://www.samanportable.com/cheap-portable-cabins-for-sale`. |
+| `https://www.samanportable.com/portacabins-for-sale-in-frazer-town-2` | 200 | HOLD: old vague anchor remains live: `here` -> `https://www.samanportable.com/product-category/porta-cabins`. |
+| `https://www.samanportable.com/portable-cabins-in-frazer-town` | 200 | HOLD: old vague anchor remains live: `link` -> `https://www.samanportable.com/cheap-portable-cabins`. |
+
+Canonical/hreflang check:
+
+- All checked live pages returned exactly 1 canonical tag.
+- All checked live pages had `hreflang="en-IN"`.
+- All checked live pages had `hreflang="x-default"`.
+
+Footer/layout check:
+
+- Footer HTML is present on checked live pages.
+- No live visual/browser deployment check was performed because the Phase 1 commit is not confirmed deployed to `www`.
+
+Failed checks:
+
+- `/container-office-in-kolkata` one-H1 fix is not live.
+- `/prefab-solutions` footer link is not live.
+- All 3 non-descriptive anchor fixes are not live.
+
+Final status:
+
+- HOLD. Phase 1 commit was pushed to the feature branch, but production `www.samanportable.com` does not yet reflect `cb50ce1`. Deploy should proceed only through the git-based production deployment path for the clean commit/SHA, not from the current dirty local working tree.
+
+## Production Deployment Verification
+
+Verification date: 2026-07-01
+
+Production branch name:
+
+- `static-migration`
+
+Deployed commit SHA:
+
+- `b0d18198b770c6e84f59723334638538ebf9ac56`
+
+Final production remote tip observed:
+
+- `f17249273d849fe876fe17c6d8864d3e65dcd614`
+- This newer `origin/static-migration` tip contains `b0d1819` as an ancestor, so the Phase 1 deployment commit remains included in production.
+
+Source Phase 1 commit:
+
+- `cb50ce1f3d44143cff49a8e67ddc8be7a045d3ea`
+
+Deployment method:
+
+- Clean temporary worktree created from `origin/static-migration` at `C:\tmp\saman-phase1-prod-cb50ce1`.
+- Cherry-picked only `cb50ce1` into the clean production worktree.
+- Resulting production commit: `b0d1819`.
+- Ran `npm run lint`: pass.
+- Ran `npm run build`: pass.
+- Confirmed production branch diff contained only Phase 1 files before pushing.
+- Pushed clean commit to `origin/static-migration`.
+- No local dirty-working-tree deployment was used.
+
+Deployment status:
+
+- PASS. Live `www.samanportable.com` reflected the Phase 1 changes after deployment polling.
+
+Live URL verification results:
+
+| URL | HTTP | H1 | Canonical | hreflang | Phase 1 result |
+| --- | --- | --- | --- | --- | --- |
+| `https://www.samanportable.com/container-office-in-kolkata` | 200 | 1 | 1 | `en-IN` + `x-default` present | PASS: duplicate H1 fixed live. |
+| `https://www.samanportable.com/prefab-solutions` | 200 | 1 | 1 | `en-IN` + `x-default` present | PASS: page remains indexable and healthy. It does not link to itself, as expected. |
+| `https://www.samanportable.com/portable-cabins-in-magadi-road` | 200 | 1 | 1 | `en-IN` + `x-default` present | PASS: old `click here` anchor removed; new `cheap portable cabins guide` anchor live. |
+| `https://www.samanportable.com/portacabins-for-sale-in-frazer-town-2` | 200 | 1 | 1 | `en-IN` + `x-default` present | PASS: old `here` anchor removed; new `porta cabin product range` anchor live. |
+| `https://www.samanportable.com/portable-cabins-in-frazer-town` | 200 | 1 | 1 | `en-IN` + `x-default` present | PASS: old `link` anchor removed; new `cheap portable cabin options` anchor live. |
+
+Footer status:
+
+- Footer HTML present on checked live pages.
+- New `/prefab-solutions` footer link is live on the homepage, `/container-office-in-kolkata`, and the three affected portable-cabin pages.
+- `/prefab-solutions` itself does not include a self-link to `/prefab-solutions`; this is acceptable because the orphan fix requires inbound discovery from other pages, not a self-link.
+- No footer layout break was detected from HTML checks.
+
+Canonical/hreflang status:
+
+- Every checked live page has exactly one canonical.
+- Every checked live page has `hreflang="en-IN"`.
+- Every checked live page has `hreflang="x-default"`.
+
+Failed checks:
+
+- None after production deployment reached live.
+
+Manual action needed:
+
+- None for Phase 1 deployment. Continue to avoid deploying from the dirty local working tree.
+
+Final status:
+
+- PASS.

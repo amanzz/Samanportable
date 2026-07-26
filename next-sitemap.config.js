@@ -12,6 +12,8 @@
 //      whose slug equals their category; these redirect at the route level and
 //      are not in any static map, so they are matched structurally.
 const csvRedirects = require('./redirects-from-csv');
+const customProductCanonicalPaths = require('./src/lib/customProductCanonicalPaths.json');
+const customProductCanonicalBySlug = new Map(customProductCanonicalPaths.map((entry) => [entry.slug, entry.canonicalPath]));
 
 /** Normalize a path for comparison: ensure a leading slash, drop trailing slash. */
 function normalizeRedirectPath(p) {
@@ -158,6 +160,9 @@ module.exports = {
     '/checkout',
     '/cart',
     '/my-orders',
+    '/google-merchant-feed.xml',
+    '/feeds/*',
+    '/estimate-print',
     '/test-optimizations',
     // /410 is a real route (src/pages/410.tsx) that returns HTTP 410 Gone, so
     // next-sitemap auto-discovers it. A 410 page must never be listed in the
@@ -191,6 +196,10 @@ module.exports = {
 
     // ── Product categories ──────────────────────────────────────────────────
     readDirJson('categories').forEach((category) => {
+      // C18 Wall Sheets stays draft-only until owner publish approval; keep the
+      // review category page available locally without adding an empty live
+      // category URL to the XML sitemap.
+      if (category.slug === 'wall-sheets') return;
       if (category.slug && category.slug !== 'uncategorized') {
         paths.push({
           loc: `/product-category/${category.slug}`,
@@ -210,9 +219,10 @@ module.exports = {
       if (!product.slug || !product.categories || product.categories.length === 0) return;
       const primaryCategory = product.categories[0];
       const loc =
-        primaryCategory.slug === product.slug
+        customProductCanonicalBySlug.get(product.slug) ||
+        (primaryCategory.slug === product.slug
           ? `/product/${product.slug}`
-          : `/product/${primaryCategory.slug}/${product.slug}`;
+          : `/product/${primaryCategory.slug}/${product.slug}`);
       paths.push({
         loc,
         changefreq: 'weekly',

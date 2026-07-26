@@ -10,7 +10,10 @@ out/
 
 # Environment variables
 .env
+.env.*
 .env.local
+.env*.local
+.env.backup*
 .env.development.local
 .env.test.local
 .env.production.local
@@ -75,3 +78,10 @@ jspm_packages/
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+
+# Local-only private quotation research data
+.env*.local
+zoho-automation/.env
+zoho-automation/.env.*
+zoho-automation/.env.backup*
+private-data/

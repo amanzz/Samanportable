@@ -47,7 +47,7 @@ async function fetchCategoryProductsClient(
   return res.json();
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params, res }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params, res, req }) => {
   const slug = params?.slug as string;
   if (!slug) {
     return {
@@ -59,8 +59,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res }) =>
     // Static content layer: reads exported files — no WordPress call.
     // Server-only module, loaded dynamically so fs never reaches the client bundle.
     const staticContent = await import('@/lib/staticContent');
+    const listingOptions = {
+      includeDrafts: staticContent.shouldShowDraftsInListings(req.headers.host),
+    };
     const [productsResponse, categoriesResponse, attributesResponse, categoryDetail] = await Promise.all([
-      staticContent.fetchLightweightProductsByCategory(slug, 1, 20), // Using optimized function with 20 items per page
+      staticContent.fetchLightweightProductsByCategory(slug, 1, 20, listingOptions), // Using optimized function with 20 items per page
       staticContent.fetchProductCategories(),
       staticContent.fetchProductAttributes(),
       staticContent.fetchProductCategoryBySlug(slug),

@@ -12,6 +12,13 @@
 //
 // Revert the commits introducing this file to restore full optimization
 // once the Hostinger-side block is lifted.
-export default function imageLoader({ src }) {
+const HOMEPAGE_HERO = '/hero-image/saman-portable-office-cabin-bangalore.webp';
+
+export default function imageLoader({ src, width }) {
+  if (src === HOMEPAGE_HERO) {
+    if (width <= 1080) {
+      return '/hero-image/saman-portable-office-cabin-bangalore-640.webp';
+    }
+  }
   return src;
 }

@@ -161,10 +161,26 @@ function getAllProductsRaw(): any[] {
   return items;
 }
 
-// Buyer-visible listings only contain published products (the one legit draft is
-// excluded from listings; its old URL is already 308-redirected in next.config).
+type ListingOptions = {
+  includeDrafts?: boolean;
+};
+
+export function shouldShowDraftsInListings(host?: string | null): boolean {
+  if (process.env.SAMAN_SHOW_DRAFTS_IN_LISTINGS === 'true') return true;
+  const normalized = String(host || '').toLowerCase();
+  return /^(localhost|127\.0\.0\.1|\[::1\])(?::|$)/.test(normalized);
+}
+
+// Buyer-visible production listings only contain published products. Localhost
+// preview can opt into drafts so owners can review full listing-card behavior
+// before publish approval.
 function getPublishedProducts(): any[] {
   return getAllProductsRaw().filter((p) => !p.status || p.status === 'publish');
+}
+
+function getListingProducts(options: ListingOptions = {}): any[] {
+  if (!options.includeDrafts) return getPublishedProducts();
+  return getAllProductsRaw().filter((p) => !p.status || p.status === 'publish' || p.status === 'draft');
 }
 
 function findProductBySlug(slug: string): any | null {
@@ -214,13 +230,26 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
   };
 }
 
+function countPublishedProductsInCategory(categorySlug: string): number {
+  return getPublishedProducts().filter((p) =>
+    (p.categories || []).some((c: any) => c.slug === categorySlug)
+  ).length;
+}
+
+function countListingProductsInCategory(categorySlug: string, options: ListingOptions = {}): number {
+  return getListingProducts(options).filter((p) =>
+    (p.categories || []).some((c: any) => c.slug === categorySlug)
+  ).length;
+}
+
 // Mirrors api.fetchProducts (category/search/price/orderby filters).
 export async function fetchProducts(
   page = 1,
   perPage = 12,
-  filters: ProductFilters = {}
+  filters: ProductFilters = {},
+  options: ListingOptions = {}
 ): Promise<ProductsResponse> {
-  let items = getPublishedProducts();
+  let items = getListingProducts(options);
 
   if (filters.category) {
     const wanted = String(filters.category);
@@ -337,8 +366,13 @@ function getAllCategoriesRaw(): any[] {
 }
 
 // Mirrors api.fetchProductCategories (_fields=id,name,slug,count).
-export async function fetchProductCategories(): Promise<any[]> {
-  return getAllCategoriesRaw().map((c) => ({ id: c.id, name: c.name, slug: c.slug, count: c.count }));
+export async function fetchProductCategories(options: ListingOptions = {}): Promise<any[]> {
+  return getAllCategoriesRaw().map((c) => ({
+    id: c.id,
+    name: c.name,
+    slug: c.slug,
+    count: countListingProductsInCategory(c.slug, options),
+  }));
 }
 
 // Mirrors api.fetchProductCategoryBySlug.
@@ -352,7 +386,7 @@ export async function fetchProductCategoryBySlug(slug: string): Promise<ProductC
     slug: c.slug,
     description: c.description || '',
     extraDescription: '', // category meta_data is not part of the WC category object
-    count: c.count || 0,
+    count: countPublishedProductsInCategory(c.slug),
     image: c.image || null,
   };
 }
@@ -384,7 +418,8 @@ export async function fetchProductAttributes(): Promise<any[]> {
 export async function fetchLightweightProductsByCategory(
   categorySlug: string,
   page = 1,
-  perPage = 20
+  perPage = 20,
+  options: ListingOptions = {}
 ): Promise<{ products: LightweightProduct[]; pagination: PaginationInfo }> {
   if (!SAFE_SLUG.test(categorySlug)) {
     return { products: [], pagination: emptyPagination(page, perPage) };
@@ -393,9 +428,9 @@ export async function fetchLightweightProductsByCategory(
   if (!category) {
     return { products: [], pagination: emptyPagination(page, perPage) };
   }
-  const items = getPublishedProducts().filter((p) =>
-    (p.categories || []).some((c: any) => c.slug === categorySlug)
-  );
+  const items = getListingProducts(options)
+    .filter((p) => (p.categories || []).some((c: any) => c.slug === categorySlug))
+    .filter((p) => !(options.includeDrafts && categorySlug === 'roofing-sheets' && p.slug === 'roofing-sheet'));
   const { slice, pagination } = paginate(items, page, perPage);
   return {
     products: slice.map((p) => toLightweight(p, category.name, categorySlug)),
@@ -408,9 +443,18 @@ export async function fetchLightweightProductsByCategory(
 export async function fetchProductsByCategoryPriority(
   page = 1,
   perPage = 8,
-  additionalFilters: Omit<ProductFilters, 'category'> = {}
+  additionalFilters: Omit<ProductFilters, 'category'> = {},
+  options: ListingOptions = {}
 ): Promise<ProductsResponse> {
   const categoryPriority = [
+    'roofing-sheets',
+    'wall-sheets',
+    'sandwich-panel',
+    'puf-panel',
+    'pir-panel',
+    'rockwool-panel',
+    'eps-panel',
+    'glass-wool-panel',
     'portable-cabin',
     'container-offices',
     'porta-cabins',
@@ -418,14 +462,33 @@ export async function fetchProductsByCategoryPriority(
     'portable-office',
     'container-cafe',
     'industrial-sheds',
+    'container-houses',
+    'security-cabins',
+    'portable-toilet',
+    'peb-constructions',
+    'pre-engineered-buildings',
+    'prefab-buildings',
+    'prefabricated-houses',
   ];
   let all: any[] = [];
-  for (const categorySlug of categoryPriority) {
+  const allCategorySlugs = getAllCategoriesRaw().map((c) => c.slug).filter(Boolean);
+  const orderedCategorySlugs = [
+    ...categoryPriority,
+    ...allCategorySlugs.filter((slug) => !categoryPriority.includes(slug)),
+  ];
+  const seenProductKeys = new Set<string>();
+
+  for (const categorySlug of orderedCategorySlugs) {
     const category = getAllCategoriesRaw().find((c) => c.slug === categorySlug);
     if (!category) continue;
-    const inCat = getPublishedProducts()
+    const inCat = getListingProducts(options)
       .filter((p) => (p.categories || []).some((c: any) => c.slug === categorySlug))
-      .slice(0, 20)
+      .filter((p) => {
+        const key = String(p.id || p.slug);
+        if (seenProductKeys.has(key)) return false;
+        seenProductKeys.add(key);
+        return true;
+      })
       .map((p) => ({
         ...toFeedProduct(p),
         category_slug: categorySlug,

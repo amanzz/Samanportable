@@ -114,9 +114,12 @@ const BlogShowcase: React.FC<BlogShowcaseProps> = ({ posts }) => {
 
                   {/* Content */}
                   <div className="p-5 flex flex-col flex-grow">
-                    <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-[#0A3D2A] transition-colors line-clamp-2 leading-snug">
+                    <Link
+                      href={`/${post.slug}`}
+                      className="text-base font-bold text-gray-900 mb-2 group-hover:text-[#0A3D2A] transition-colors line-clamp-2 leading-snug"
+                    >
                       {post.title}
-                    </h3>
+                    </Link>
                     <div
                       className="text-sm text-gray-500 line-clamp-2 mb-4 flex-grow leading-relaxed"
                       dangerouslySetInnerHTML={{ __html: post.excerpt }}

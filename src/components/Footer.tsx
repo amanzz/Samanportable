@@ -11,39 +11,15 @@ import {
 } from 'lucide-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
 
-const MONEY_STRIP_LINKS = [
-  { label: "Porta Cabin Price Guide", href: "/porta-cabin-price-a-complete-guide-2025" },
-  { label: "Porta Cabin in Delhi NCR", href: "/porta-cabins-in-delhi-ncr" },
-  { label: "Porta Cabin Sizes India", href: "/porta-cabin-sizes-and-specifications-in-india" },
-  { label: "Porta Cabin in Noida", href: "/porta-cabin-in-noida" },
-  { label: "Portable Cabin Bangalore Price", href: "/portable-cabin-price-in-bangalore" },
-  { label: "Portable Cabins in Gurgaon", href: "/portable-cabins-in-gurgaon" },
-  { label: "Portable Office in West Delhi", href: "/portable-office-cabins-in-west-delhi" },
-  { label: "Portable Office in Greater Noida", href: "/portable-office-cabins-in-greater-noida" },
-  { label: "Container Office Design", href: "/container-office-design" },
-  { label: "Container Office Price", href: "/container-offices-price" },
-  { label: "Container Cafe in North Delhi", href: "/container-cafes-in-north-delhi" },
-  { label: "Labour Colony in Gurgaon", href: "/labour-colonies-in-gurgaon" },
+const POPULAR_RESOURCE_LINKS = [
   { label: "Prefab Container Homes", href: "/product/container-houses/prefab-container-homes" },
-  { label: "Container House in Tamil Nadu", href: "/container-house-price-in-tamil-nadu" },
   { label: "Luxury Container Houses", href: "/product/container-houses/luxury-container-houses" },
-  { label: "Industrial Sheds in Bangalore", href: "/industrial-sheds-in-bangalore" },
-  { label: "PEB Construction India", href: "/product/peb-constructions" },
+  { label: "PEB Construction", href: "/product/peb-constructions" },
   { label: "Pre-Engineered Buildings", href: "/product/pre-engineered-buildings" },
-  { label: "Industrial Sheds Range", href: "/product/industrial-sheds" },
-  { label: "Prefab Houses in Bangalore", href: "/prefabricated-houses-in-bangalore" },
-  { label: "Prefab Solutions", href: "/prefab-solutions" },
-  { label: "Top Quality Prefab Cabins Delhi", href: "/top-quality-prefab-cabins-delhi" },
-  { label: "Best Portable Cabins in India", href: "/best-portable-cabins-in-india" },
-  { label: "Portable Toilets in Bangalore", href: "/portable-toilets-in-bangalore" },
-  { label: "Portable Toilet Cabin", href: "/product/portable-toilet/portable-toilet-cabin" },
+  { label: "Industrial Sheds", href: "/product/industrial-sheds" },
+  { label: "MS Steel Portable Toilet Cabin", href: "/product/portable-toilet/portable-toilet-cabin" },
   { label: "Prefabricated Security Cabin", href: "/product/security-cabins/prefabricated-security-cabin" },
   { label: "Readymade Security Cabin", href: "/product/security-cabins/readymade-security-cabin" },
-  { label: "Container Offices in HSR Layout", href: "/product/container-offices" },
-  { label: "Portable Cabins in Marathahalli", href: "/porta-cabins-in-marathahalli" },
-  { label: "Portable Cabins in Rajajinagar", href: "/porta-cabins-in-rajajinagar" },
-  { label: "Portable Office Cabins in Noida", href: "/portable-office-cabins-in-noida" },
-  { label: "Temporary Shed Solutions", href: "/temporary-shed" },
 ];
 
 const PRODUCT_CATEGORIES = [
@@ -67,16 +43,19 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white relative z-20 pb-16 lg:pb-0">
       {/* Footer Money Keyword Strip */}
-      <div className="border-b border-zinc-900/50 relative z-10 bg-black">
+      <div
+        data-homepage-resources
+        className="border-b border-zinc-900/50 relative z-10 bg-black"
+      >
         <div className="max-w-7xl mx-auto px-4 py-12">
           <h2 className="text-white font-semibold text-xl">
-            Popular Portable Cabin Resources
+            Popular Resources
           </h2>
           <p className="text-zinc-200 text-sm mt-2 max-w-2xl leading-relaxed">
             Explore our most searched portable cabin, container office, prefab building and industrial shed resources.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            {MONEY_STRIP_LINKS.map((link) => (
+            {POPULAR_RESOURCE_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -90,7 +69,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Content - 5 Columns */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div data-homepage-main-footer className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2.6fr_1.2fr_2.2fr_3fr_3fr] gap-6 items-start">
           
           {/* Column 1: Company Information */}

@@ -10,6 +10,7 @@ export const CATEGORY_PRIORITY: { [key: string]: number } = {
   'portable-office': 5,
   'container-cafe': 6,
   'industrial-sheds': 7, // Add industrial-sheds with lower priority
+  'roofing-sheets': 8,
 };
 
 // Debug function to log category priorities

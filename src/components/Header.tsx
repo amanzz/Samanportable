@@ -4,10 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Phone, Mail, ChevronDown, Building2, Container, User, LogOut, Package, ShoppingCart } from 'lucide-react';
+import { Menu, X, Phone, Mail, ChevronDown, Building2, Container, User, LogOut, Package } from 'lucide-react';
 import { useEnquiryDialog } from '@/hooks/useEnquiryDialog';
 import { useAuth } from '@/contexts/AuthContext';
-import { useCart } from '@/contexts/CartContext';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 import QuoteFormTrigger from './QuoteFormTrigger';
 import { cn } from '@/lib/utils';
@@ -47,8 +46,6 @@ const Header = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const enquiryDialog = useEnquiryDialog();
   const { user, logout } = useAuth();
-  const { state: cartState } = useCart();
-  const { itemCount } = cartState;
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -152,9 +149,12 @@ const Header = () => {
                       <DropdownMenuContent className="w-80 bg-white text-gray-900 shadow-lg rounded-md mt-2 z-50 p-2 border border-gray-100">
                         {rentalServicesItems.map((category, categoryIndex) => (
                           <div key={categoryIndex} className="mb-4 last:mb-0">
-                            <h3 className="font-semibold text-primary px-3 py-2 text-sm uppercase tracking-wide">
+                            <Link
+                              href={category.items[0].href}
+                              className="block font-semibold text-primary px-3 py-2 text-sm uppercase tracking-wide"
+                            >
                               {category.category}
-                            </h3>
+                            </Link>
                             <div className="space-y-1">
                               {category.items.map((item, itemIndex) => (
                                 <DropdownMenuItem key={itemIndex} className="cursor-pointer p-0 focus:bg-transparent">
@@ -258,7 +258,6 @@ const Header = () => {
                 </div>
               )}
               
-              {/* Cart icon removed — enquiry-only business (cart path disabled, Phase 2) */}
               <QuoteFormTrigger variant="default" size="lg">
                 Get Quote
               </QuoteFormTrigger>
@@ -266,7 +265,6 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center gap-4">
-              {/* Cart icon removed — enquiry-only business (cart path disabled, Phase 2) */}
               <button
                 className="p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -318,11 +316,6 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
-                      {item.name === 'Cart' && itemCount > 0 && (
-                        <span className="ml-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
-                          {itemCount}
-                        </span>
-                      )}
                     </NavLink>
                   ))}
 
@@ -365,9 +358,12 @@ const Header = () => {
                     </h3>
                     {rentalServicesItems.map((category, categoryIndex) => (
                       <div key={categoryIndex} className="mb-3 last:mb-0">
-                        <h4 className="font-medium text-gray-700 mb-1 px-2 text-sm">
+                        <Link
+                          href={category.items[0].href}
+                          className="block font-medium text-gray-700 mb-1 px-2 text-sm"
+                        >
                           {category.category}
-                        </h4>
+                        </Link>
                         <div className="space-y-1 pl-4">
                           {category.items.map((item, itemIndex) => (
                             <Link

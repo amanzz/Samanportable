@@ -3,10 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import QuoteFormPopup from './QuoteFormPopup';
-import { useCart } from '@/contexts/CartContext';
-import { ShoppingCart, Check, Tag, Star, Phone } from 'lucide-react';
+import { Tag, Star, Phone } from 'lucide-react';
 import { formatPriceWithCurrency } from '@/lib/utils';
 import OptimizedCategoryImage from './OptimizedCategoryImage';
+import { getCanonicalProductPath } from '@/lib/productCanonicalPaths';
 
 interface ProductCardProps {
   product: {
@@ -35,31 +35,23 @@ interface ProductCardProps {
   };
   priority?: boolean;
   variant?: 'default' | 'compact' | 'featured';
+  titleAsLink?: boolean;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ 
   product, 
   priority = false, 
-  variant = 'default' 
+  variant = 'default',
+  titleAsLink = false,
 }) => {
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
-  const { addItem, isInCart } = useCart();
-  const isProductInCart = isInCart(product.id);
 
   // Get the correct product URL based on WordPress data
   const getProductUrl = () => {
-    // If product has categories from WordPress API, use the first category
-    if (product.categories && product.categories.length > 0) {
-      const category = product.categories[0];
-      return `/product/${category.slug}/${product.slug}`;
-    }
-    
-    // For lightweight products, use category from the data
-    if (product.category_slug) {
-      return `/product/${product.category_slug}/${product.slug}`;
-    }
+    const canonicalPath = getCanonicalProductPath(product);
+    if (canonicalPath !== '/product') return canonicalPath;
     
     // Fallback
     const fallbackMap: Record<string, string> = {
@@ -79,18 +71,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   const productUrl = getProductUrl();
-
-  // Format product data for cart
-  const getCartItemData = () => {
-    return {
-      id: product.id,
-      name: product.name,
-      price: typeof product.price === 'string' ? parseFloat(product.price) || 0 : product.price || 0,
-      image: product.featured_image || product.images?.[0]?.src || '/placeholder.svg',
-      category: product.categories?.[0]?.name || product.category || 'Uncategorized',
-      slug: product.slug,
-    };
-  };
 
   // Format price display
   const formatPrice = (price: string | number | undefined) => {
@@ -167,11 +147,22 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </span>
           </div>
           {/* Product Title */}
-          <h3 className={`font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#0A3D2A] transition-colors leading-tight ${
-            variant === 'compact' ? 'text-base' : 'text-xl'
-          }`}>
-            {product.name}
-          </h3>
+          {titleAsLink ? (
+            <Link
+              href={productUrl}
+              className={`block font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#0A3D2A] transition-colors leading-tight ${
+                variant === 'compact' ? 'text-base' : 'text-xl'
+              }`}
+            >
+              {product.name}
+            </Link>
+          ) : (
+            <h3 className={`font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#0A3D2A] transition-colors leading-tight ${
+              variant === 'compact' ? 'text-base' : 'text-xl'
+            }`}>
+              {product.name}
+            </h3>
+          )}
 
           {/* Rating */}
           {rating > 0 && variant !== 'compact' && (
