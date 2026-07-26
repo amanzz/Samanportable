@@ -7,7 +7,7 @@ import Head from 'next/head';
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
 import { dsCssVariables } from '@/components/ds/tokens';
-import { generateOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema, getHomepageLocalBusinessGraphSchema } from '@/lib/schema';
+import { generateHomepageOrganizationSchema, getWebSiteSchema, getHomepageFAQSchema, getHomepageLocalBusinessGraphSchema } from '@/lib/schema';
 import { pageSEO, siteConfig } from '@/config/seo';
 
 // Dynamic imports for below-the-fold sections to improve LCP
@@ -105,7 +105,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const HomePage = ({ categoryCounts }: { categoryCounts: Record<string, number> }) => {
   return (
-    <Layout>
+    <Layout homepageNeutrality>
       <Head>
         {/* Schema 1: WebSite */}
         <script
@@ -124,18 +124,18 @@ const HomePage = ({ categoryCounts }: { categoryCounts: Record<string, number> }
         />
       </Head>
       <UnifiedSEO
-        fallbackTitle="Portable Cabin & Container Office Manufacturer in Bangalore & Delhi NCR"
-        fallbackDescription="Saman Portable manufactures portable cabins, container offices, and prefab structures for businesses across India. ISO-certified. Delivering since 2009. Prices from ₹1.45 Lakh. Get a free quote."
+        fallbackTitle="SAMAN Portable — ISO-Certified Modular Building Manufacturer, India"
+        fallbackDescription="Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN."
         fallbackCanonical="https://www.samanportable.com/"
-        fallbackOgTitle="Portable Cabin & Container Office Manufacturer"
-        fallbackOgDescription="ISO-certified portable cabin manufacturer in Bangalore and Delhi NCR. Serving all of India since 2009. Prices from ₹1.45 Lakh."
+        fallbackOgTitle="SAMAN Portable — ISO-Certified Modular Building Manufacturer, India"
+        fallbackOgDescription="Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN."
         fallbackOgImage="https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp"
-        fallbackTwitterDescription="ISO-certified portable cabin manufacturer in Bangalore and Delhi NCR. Serving all of India since 2009. Prices from ₹1.45 Lakh."
+        fallbackTwitterDescription="Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN."
         keywords={pageSEO.home.keywords}
         author={siteConfig.author}
         publisher={siteConfig.publisher}
         structuredData={[
-          generateOrganizationSchema(),
+          generateHomepageOrganizationSchema(),
           {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',

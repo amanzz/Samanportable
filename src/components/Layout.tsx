@@ -4,9 +4,10 @@ import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
+  homepageNeutrality?: boolean;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, homepageNeutrality = false }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -14,7 +15,7 @@ export default function Layout({ children }: LayoutProps) {
       <main className="flex-1 pb-16 lg:pb-0">
         {children}
       </main>
-      <Footer />
+      <Footer homepageNeutrality={homepageNeutrality} />
     </div>
   );
 }

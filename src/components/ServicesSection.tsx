@@ -15,7 +15,7 @@ const ServicesSection = () => {
       features: ['10×10 ft to 40×12 ft — standard & custom', 'PUF insulation — 8–12°C cooler inside', 'Delivered installed, ready same day'],
       href: '/product/porta-cabins',
       buttonText: 'See Portable Cabins',
-      price: 'From ₹1.15 Lakh',
+      price: 'From ₹1.38 Lakh',
       image: '/homepage/cards/ms-corrugated-portable-cabin-site-office.webp',
       alt: 'New MS corrugated portable cabin site office with grilled windows and AC unit at an Indian construction site',
     },
@@ -26,7 +26,7 @@ const ServicesSection = () => {
       features: ['20ft & 40ft container sizes', 'AC, wiring, lighting & furniture fitted', 'Indistinguishable from permanent offices'],
       href: '/product/container-offices',
       buttonText: 'See Container Offices',
-      price: 'From ₹1.15 Lakh',
+      price: 'From ₹1.60 Lakh',
       image: '/homepage/cards/container-office-20ft-construction-site.webp',
       alt: 'New 20 ft container office with grilled windows and AC unit installed at an Indian project site',
     },
@@ -48,7 +48,7 @@ const ServicesSection = () => {
       features: ['Single units or multi-floor camps', 'Toilet, ventilation & lighting included', 'Full worksite camp in days'],
       href: '/product/labor-colony',
       buttonText: 'See Labour Colony Options',
-      price: '₹750/sq ft',
+      price: 'Price on request — send enquiry',
       image: '/homepage/cards/labour-colony-prefab-worker-accommodation.webp',
       alt: 'Rows of new prefab labour colony units with walkway and drainage at an Indian construction project',
     },
@@ -59,7 +59,7 @@ const ServicesSection = () => {
       features: ['Custom branding & signage ready', 'Plumbing & electrical fitted before delivery', 'Relocatable — move any time'],
       href: '/product/container-cafe',
       buttonText: 'See Container Café',
-      price: 'From ₹1.35 Lakh',
+      price: 'From ₹2.04 Lakh',
       image: '/homepage/cards/container-cafe-food-outlet-service-window.webp',
       alt: 'Modern container café with fold-up service window, counter and outdoor seating at golden hour',
     },
@@ -128,9 +128,13 @@ const ServicesSection = () => {
 
               {/* Content */}
               <div className="flex flex-1 flex-col p-6 md:p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1.5 transition-colors group-hover:text-[var(--ds-surface-inverse)]">
-                  {service.title}
-                </h3>
+                <Link
+                  href={service.href}
+                  prefetch={false}
+                  className="mb-1.5 block text-2xl font-bold text-gray-900 transition-colors group-hover:text-[var(--ds-surface-inverse)]"
+                >
+                  {service.buttonText}
+                </Link>
                 <p className="text-xs font-bold text-[color-mix(in_srgb,var(--ds-surface-inverse)_60%,transparent)] uppercase tracking-[0.2em] mb-4">
                   {service.tagline}
                 </p>
