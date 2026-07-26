@@ -1,4 +1,10 @@
-const fs = require('fs');
+// Compatibility entry point. The canonical generator now writes one segmented
+// index (products, locations, projects, editorial).
+import('./generate-segmented-sitemaps.mjs').catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+if (false) {
 const path = require('path');
 
 // Configuration
@@ -246,3 +252,4 @@ if (require.main === module) {
 }
 
 module.exports = { generateSitemap };
+}

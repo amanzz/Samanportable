@@ -9,9 +9,12 @@ import { Search, Calendar, User, Tag, ArrowRight, Clock } from 'lucide-react';
 import { pageSEO, siteConfig } from '@/config/seo';
 import BlogImage from '@/components/BlogImage';
 import { decodeHtmlEntities } from '@/lib/utils';
+import redirectedPageDestinations from '@/lib/redirectedPageDestinations.json';
 
 import { BlogPost as ApiBlogPost } from '@/config/api';
 type BlogPost = ApiBlogPost;
+const navigablePostPath = (slug: string) =>
+  (redirectedPageDestinations as Record<string, string>)[slug] || `/${slug}`;
 
 // Reading time computed server-side (matches the previous in-component getReadingTime logic:
 // 200 wpm). Computing it here lets us strip the full `content.rendered` from the returned props
@@ -613,7 +616,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
 
                             {/* Title */}
                             <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                              <Link href={`/${post.slug}`} className="hover:text-primary transition-colors">
+                              <Link href={navigablePostPath(post.slug)} className="hover:text-primary transition-colors">
                                 {decodeHtmlEntities(post.title.rendered)}
                               </Link>
                             </h3>
@@ -636,7 +639,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                             )}
 
                             {/* Read More */}
-                            <Link href={`/${post.slug}`}>
+                            <Link href={navigablePostPath(post.slug)}>
                               <Button variant="outline" size="sm" className="w-full group">
                                 Read More
                                 <ArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -1,4 +1,5 @@
 import customProductCanonicalPaths from './customProductCanonicalPaths.json';
+import redirectedPageDestinations from './redirectedPageDestinations.json';
 
 type ProductLike = {
   slug?: string;
@@ -28,4 +29,10 @@ export function getCanonicalProductPath(product: ProductLike): string {
 
   const categorySlug = product.category_slug || product.categories?.[0]?.slug || 'uncategorized';
   return slug === categorySlug ? `/product/${categorySlug}` : `/product/${categorySlug}/${slug}`;
+}
+
+export function getNavigableProductPath(product: ProductLike): string {
+  const slug = product.slug || '';
+  return (redirectedPageDestinations as Record<string, string>)[slug] ||
+    getCanonicalProductPath(product);
 }

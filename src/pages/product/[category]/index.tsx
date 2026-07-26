@@ -33,6 +33,7 @@ import SandwichInfoBox from '../../../components/product-sandwich/SandwichInfoBo
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
+import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import { PORTA_CABIN_REDIRECTED_SLUGS } from '../../../lib/portaCabinClusterRail';
 import { PORTABLE_OFFICE_REDIRECTED_SLUGS } from '../../../lib/portableOfficeCluster';
@@ -443,11 +444,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
     return relatedProducts.map((p) => {
       const catSlug = p.categories && p.categories.length > 0 ? p.categories[0].slug : 'default';
       const catName = p.categories && p.categories.length > 0 ? p.categories[0].name : 'Uncategorized';
-      const prodSlug = p.slug.toLowerCase();
-      const catNameLower = catName.toLowerCase().replace(/\s+/g, '-');
-      const url = catNameLower === prodSlug
-        ? `/product/${catSlug}/`
-        : `/product/${catSlug}/${p.slug}`;
+      const url = getNavigableProductPath(p);
       return {
         id: p.id,
         title: p.name,

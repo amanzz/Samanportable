@@ -154,6 +154,7 @@ const nextConfig = {
   // Force HTTPS and WWW redirects
   async redirects() {
     const customProductDuplicateRedirects = customProductCanonicalPaths
+      .filter(({ slug, categorySlug }) => slug !== categorySlug)
       .map(({ slug, categorySlug, canonicalPath }) => ({
         source: `/product/${categorySlug}/${slug}`,
         destination: `https://www.samanportable.com${canonicalPath}`,
@@ -254,12 +255,12 @@ const nextConfig = {
       },
       {
         source: '/container-offices-for-sale-in-btm-layout-2',
-        destination: 'https://www.samanportable.com/container-offices-for-sale-in-btm-layout',
+        destination: 'https://www.samanportable.com/product-category/container-offices',
         permanent: true, // SEO-safe (Next.js serves 308; OK same as 301 for Google)
       },
       {
         source: '/container-offices-for-sale-in-rt-nagar-2',
-        destination: 'https://www.samanportable.com/container-offices-for-sale-in-rt-nagar',
+        destination: 'https://www.samanportable.com/product-category/container-offices',
         permanent: true,
       },
       // Duplicate URL redirects for SEO - Porta Cabins
@@ -456,12 +457,6 @@ const nextConfig = {
       },
 
       // 410 GONE REDIRECTS - These redirect to the 410 page
-      {
-        source: '/find-out-how-i-cured-my-easter-weekend-in-2-days',
-        destination: 'https://www.samanportable.com/410',
-        permanent: true,
-      },
-
       // ─── BLOG DEDUPE REDIRECTS (42 entries from SAMAN_Blog_Dedupe_Action_List.csv) ───
       {
         source: '/portacabins-for-sale-in-hosur',
@@ -1889,7 +1884,15 @@ const nextConfig = {
       );
     }
 
-    return redirects;
+    const seenLiteralSources = new Set();
+    return redirects.filter((entry) => {
+      if (!entry || entry.has || entry.missing || typeof entry.source !== 'string' ||
+          entry.source.includes(':') || entry.source.includes('*')) return true;
+      const source = entry.source.length > 1 ? entry.source.replace(/\/+$/, '') : entry.source;
+      if (seenLiteralSources.has(source)) return false;
+      seenLiteralSources.add(source);
+      return true;
+    });
   },
 
   // Rewrites — serve a page's response under a different URL WITHOUT redirecting.

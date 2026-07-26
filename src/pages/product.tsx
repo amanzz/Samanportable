@@ -20,6 +20,7 @@ import ProductFilters from '../components/ProductFilters';
 import Pagination from '../components/Pagination';
 import { formatPriceWithCurrency } from '../lib/utils';
 import OptimizedProductImage from '../components/OptimizedProductImage';
+import { getNavigableProductPath } from '@/lib/productCanonicalPaths';
 
 interface Category {
   id: number;
@@ -57,6 +58,8 @@ interface ProductsProps {
   attributes: Attribute[];
   rankMathSEO?: RankMathSEOData | null;
 }
+
+const productPath = (product: MinimalProduct) => getNavigableProductPath(product);
 
 export const getServerSideProps: GetServerSideProps<ProductsProps> = async ({ query, req }) => {
   try {
@@ -464,7 +467,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                         <div className={`bg-muted relative overflow-hidden ${
                           viewMode === 'list' ? 'w-48 h-32' : 'aspect-video'
                         }`}>
-                          <Link href={`/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`}>
+                          <Link href={productPath(product)}>
                             <OptimizedProductImage
                               src={getProductImage(product)}
                               alt={product.name}
@@ -511,7 +514,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                           
                           {/* Title */}
                           <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                            <Link href={`/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`} className="hover:text-primary transition-colors">
+                            <Link href={productPath(product)} className="hover:text-primary transition-colors">
                             {product.name}
                             </Link>
                           </h3>
@@ -561,7 +564,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
                           
                           {/* Action Buttons */}
                           <div className="flex gap-2">
-                            <Link href={`/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`}>
+                            <Link href={productPath(product)}>
                               <Button variant="outline" size="sm" className="flex-1">
                                 View Details
                               </Button>
