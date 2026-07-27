@@ -14,6 +14,10 @@ tsconfig.tsbuildinfo
 
 # Local build/validation artifacts (T24.1)
 .screenshots/
+.qa/
+
+# Image discovery outputs are rebuilt from rendered pages during postbuild.
+public/image-manifest.json
 
 # Environment variables
 .env

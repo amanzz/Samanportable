@@ -1,6 +1,9 @@
+export type ImageProvenance = 'photograph' | 'render' | 'unknown';
+
 export interface VariantImage {
   src: string;
   alt: string;
+  provenance: ImageProvenance;
   width: number;
   height: number;
 }

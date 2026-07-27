@@ -15,7 +15,10 @@
     "validate:merchant-feed": "node scripts/validate-merchant-feed.js",
     "validate:local-inventory": "node scripts/validate-local-inventory-feed.js",
     "analyze": "ANALYZE=true next build",
-    "postbuild": "node scripts/generate-segmented-sitemaps.mjs",
+    "postbuild": "node scripts/build-image-manifest-and-sitemaps.mjs",
+    "image-manifest:collect": "node scripts/collect-image-manifest.mjs",
+    "image-gate": "node scripts/check-image-intake.mjs",
+    "image-gate:bootstrap": "node scripts/check-image-intake.mjs --bootstrap",
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "sitemap:full": "npm run generate-sitemap",
     "warm": "node scripts/warm-image-cache.mjs"

@@ -14,10 +14,13 @@
     <image:image><image:loc>https://www.samanportable.com/client%20logo/WhatsApp%20Image%202026-04-21%20at%2021.47.09.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/client%20logo/WhatsApp%20Image%202026-04-21%20at%2021.47.10%20(1).jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/client%20logo/WhatsApp%20Image%202026-04-21%20at%2021.47.10.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/client%20logo/WhatsApp%20Image%202026-04-21%20at%2022.05.14%20(1).jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/client%20logo/WhatsApp%20Image%202026-04-21%20at%2022.05.14.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/dpiit-startup.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/msme-udyam.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/nsic.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/zed-bronze.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore-640.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore-clean.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/homepage/cards/container-cafe-food-outlet-service-window.webp</image:loc></image:image>
@@ -2349,10 +2352,10 @@
     <loc>https://www.samanportable.com/product</loc>
     <image:image><image:loc>https://www.samanportable.com/images/puf-panel/cold-storage/100mm-dairy-cold-storage-room-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/puf-panel/house/puf-panel-house-installation-wall-roof.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/puf-panel/price-stack-40mm-1200x675.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/puf-panel/spec/50mm-off-white-puf-panel-factory-stack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/puf-panel/wall/40mm-puf-wall-panel-stockyard.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-roofing-sheet-colour-stack.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/polycarbonate-roofing-sheet/polycarbonate-roofing-sheet-clear-solid.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/pvc-upvc-roofing-sheet-corrugated-profile.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/roofing-sheet/roofing-sheet-colour-coated-stack.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
@@ -4256,6 +4259,7 @@
   </url>
   <url>
     <loc>https://www.samanportable.com/product/porta-cabins</loc>
+    <image:image><image:loc>https://i.ytimg.com/vi/SJml1DgMY3I/hqdefault.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/gbp-posts/10x10-ms-corrugated-porta-cabin-office-exterior-factory-yard.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/gbp-posts/40x10-ms-corrugated-porta-cabin-site-office-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/gbp-posts/ms-porta-cabin-office-factory-yard-bengaluru.webp</image:loc></image:image>
@@ -4524,6 +4528,8 @@
   <url>
     <loc>https://www.samanportable.com/product/portable-cabin</loc>
     <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/exterior-shot-of-the-portable-cabin.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://i.ytimg.com/vi/_0pSsmEN1eo/hqdefault.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/portable-cabin-product-video-poster.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
