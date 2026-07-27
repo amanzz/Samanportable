@@ -1,0 +1,849 @@
+{
+  "audit_metadata": {
+    "site": "https://www.samanportable.com",
+    "run_date": "2026-07-27",
+    "baseline": "origin/static-migration",
+    "baseline_commit": "6c3d82570c8b56387de40159aacc55185a4e7dfd",
+    "sitemap_urls_expected_by_ticket": 459,
+    "sitemap_urls_found": 459,
+    "live_200_html_pages_outside_sitemap": 4,
+    "total_pages_audited": 463,
+    "sitemap_segment_counts": {
+      "https://www.samanportable.com/sitemap-products.xml": 167,
+      "https://www.samanportable.com/sitemap-locations.xml": 213,
+      "https://www.samanportable.com/sitemap-projects.xml": 1,
+      "https://www.samanportable.com/sitemap-editorial.xml": 78,
+      "https://www.samanportable.com/sitemap.xml": 459
+    },
+    "validation": {
+      "excluded_next_blur_placeholder_fragments": 1430,
+      "valid_real_image_occurrences": 8073,
+      "truth_review_unique_claim_images_viewed": 260,
+      "verified_c_unique_files": 164
+    }
+  },
+  "summary_1_totals": {
+    "total_image_occurrences": 8073,
+    "total_unique_files": 2926,
+    "files_used_on_more_than_one_page": 197
+  },
+  "summary_2_duplicate_filenames": {
+    "duplicate_filename_groups": 9,
+    "list": [
+      {
+        "filename": "50mm-off-white-puf-panel-factory-stack.webp",
+        "different_source_paths": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/puf-panel/spec/50mm-off-white-puf-panel-factory-stack.webp",
+          "https://www.samanportable.com/panel-images/puf-panel/50mm-off-white-puf-panel-factory-stack.webp"
+        ],
+        "content_hashes": [
+          "6fc0c64a4323a1fbeda9ea089a13a7374b00a4bc618cc01843a76800046c6234",
+          "a92c54f95f63e15de39dfbf6c87250e68a4778c4504a1379a0d1d083db2ecf5c"
+        ],
+        "occurrences": 22
+      },
+      {
+        "filename": "eps-panel-wall-roof-stack-1x1.webp",
+        "different_source_paths": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/eps-panel/eps-panel-wall-roof-stack-1x1.webp",
+          "https://www.samanportable.com/panel-images/eps-panel/eps-panel-wall-roof-stack-1x1.webp"
+        ],
+        "content_hashes": [
+          "0e86aeb19f1c7597a32b72f29c2b9b6c96732e02681caf3936600d623ab04661",
+          "87e167fc3960d906f2f07419cb0b9d47f7113de797291821b929b7f26e5e9d34"
+        ],
+        "occurrences": 14
+      },
+      {
+        "filename": "glass-wool-panel-stack-yellow-core.webp",
+        "different_source_paths": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/glass-wool-panel/glass-wool-panel-stack-yellow-core.webp",
+          "https://www.samanportable.com/panel-images/glass-wool-panel/glass-wool-panel-stack-yellow-core.webp"
+        ],
+        "content_hashes": [
+          "32e114a1e9abddc87bca77ddf27abbd046c9fff4caf5c1aa6ba26fdeb51d8c0f",
+          "74ecd8d8da4211129fb938320a147b024fd7d6861f4f7e7204d31cc8d6f19502"
+        ],
+        "occurrences": 4
+      },
+      {
+        "filename": "rockwool-panel-core-cross-section-sq.webp",
+        "different_source_paths": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/rockwool-panel/rockwool-panel-core-cross-section-sq.webp",
+          "https://www.samanportable.com/images/rockwool-panel/thumbs/rockwool-panel-core-cross-section-sq.webp"
+        ],
+        "content_hashes": [
+          "199d5364ee4ef4e9cd00ba72acff66dda5448f68178b83cd3319aeee2bbc6b3c",
+          "7d3f9f3cca2793fcab10a3c5a562ee7fb7805a2751971f321f2e2ec9ea362347"
+        ],
+        "occurrences": 2
+      },
+      {
+        "filename": "rockwool-panel-installed-wall-sq.webp",
+        "different_source_paths": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/rockwool-panel/rockwool-panel-installed-wall-sq.webp",
+          "https://www.samanportable.com/images/rockwool-panel/thumbs/rockwool-panel-installed-wall-sq.webp"
+        ],
+        "content_hashes": [
+          "6b240204a8dba83dc6568ad9d48d8d609bb6f97707900dd04375508626555c3a",
+          "d55f2fb540a43afa2843478543fe0cc4896863d372084c604b3e4c5e97b04cdc"
+        ],
+        "occurrences": 2
+      },
+      {
+        "filename": "rockwool-panel-joint-profile-sq.webp",
+        "different_source_paths": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/rockwool-panel/rockwool-panel-joint-profile-sq.webp",
+          "https://www.samanportable.com/images/rockwool-panel/thumbs/rockwool-panel-joint-profile-sq.webp"
+        ],
+        "content_hashes": [
+          "3960d61dea09a24d60cec965416092e34352e155394143017d2e1b5618f6e169",
+          "f1f9345a4ac19390582883529b933118f92b3e3346e9af27e3f1df714a0c43b2"
+        ],
+        "occurrences": 2
+      },
+      {
+        "filename": "rockwool-panel-product-front-sq.webp",
+        "different_source_paths": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/rockwool-panel/rockwool-panel-product-front-sq.webp",
+          "https://www.samanportable.com/images/rockwool-panel/thumbs/rockwool-panel-product-front-sq.webp"
+        ],
+        "content_hashes": [
+          "7c6fa9e0c2131bf58f4467c7cab9f2da5d41ae2c21651c812fd26964c708184a",
+          "b31eead683aed1feb0dd9e60e1c88de7157e07fff6a2a81cdb0a8a548b3592b4"
+        ],
+        "occurrences": 5
+      },
+      {
+        "filename": "rockwool-panel-stacked-sq.webp",
+        "different_source_paths": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/rockwool-panel/rockwool-panel-stacked-sq.webp",
+          "https://www.samanportable.com/images/rockwool-panel/thumbs/rockwool-panel-stacked-sq.webp"
+        ],
+        "content_hashes": [
+          "14cdd0a581f072f3d1ddc34b9c4473608f705b91914b6c4f982b54381c17eed9",
+          "50853ba535a5dbbb1ace3c365fb89d0b04ee2cbb5937514fda9130b8fab7dc5b"
+        ],
+        "occurrences": 2
+      },
+      {
+        "filename": "sandwich-panel-stack-facing-finishes.webp",
+        "different_source_paths": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp",
+          "https://www.samanportable.com/panel-images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp"
+        ],
+        "content_hashes": [
+          "b64d6cc3283ef06ff0ae7a927774ba7aae7c794dd1501fbbe63c666c2f6d15e3",
+          "c2ec5dfb97fd779c6b8118923f7307d6bc47ab5989902c683345a190f96ecfe3"
+        ],
+        "occurrences": 16
+      }
+    ]
+  },
+  "summary_3_duplicate_alt_text": {
+    "duplicate_alt_strings": 20,
+    "affected_occurrences": 265,
+    "list": [
+      {
+        "alt_text": "IS 2062 steel frame construction of a SAMAN container office",
+        "occurrences": 14,
+        "different_images": 14,
+        "source_paths": [
+          "https://www.samanportable.com/gbp-posts/container-office-in-bhiwadi-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-bhopal-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-davangere-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-dehradun-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-erode-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-gwalior-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-kurnool-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-nashik-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-panipat-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-raipur-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-rajahmundry-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-shivamogga-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-tirunelveli-frame.webp",
+          "https://www.samanportable.com/gbp-posts/container-office-in-vellore-frame.webp"
+        ]
+      },
+      {
+        "alt_text": "IS 2062 steel frame construction of a SAMAN porta cabin",
+        "occurrences": 4,
+        "different_images": 4,
+        "source_paths": [
+          "https://www.samanportable.com/gbp-posts/porta-cabin-in-bareilly-frame.webp",
+          "https://www.samanportable.com/gbp-posts/porta-cabin-in-ludhiana-frame.webp",
+          "https://www.samanportable.com/gbp-posts/porta-cabin-in-meerut-frame.webp",
+          "https://www.samanportable.com/gbp-posts/porta-cabin-in-moradabad-frame.webp"
+        ]
+      },
+      {
+        "alt_text": "Exterior view of a 20x10 ft SAMAN container office cabin",
+        "occurrences": 4,
+        "different_images": 3,
+        "source_paths": [
+          "https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-exterior-hero.webp",
+          "https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-front-elevation.webp",
+          "https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-side-elevation.webp"
+        ]
+      },
+      {
+        "alt_text": "Exterior view of a 20x10 ft SAMAN site office container",
+        "occurrences": 4,
+        "different_images": 3,
+        "source_paths": [
+          "https://www.samanportable.com/images/products/site-office-container/20x10/site-office-container-20x10-exterior-hero.webp",
+          "https://www.samanportable.com/images/products/site-office-container/20x10/site-office-container-20x10-front-elevation.webp",
+          "https://www.samanportable.com/images/products/site-office-container/20x10/site-office-container-20x10-three-quarter-blue.webp"
+        ]
+      },
+      {
+        "alt_text": "New mild-steel MS frame of a porta cabin being factory-fitted with panels",
+        "occurrences": 3,
+        "different_images": 3,
+        "source_paths": [
+          "https://blog.samanportable.com/wp-content/uploads/2026/06/porta-cabin-in-sarjapur-road-ms-frame-factory.jpeg",
+          "https://blog.samanportable.com/wp-content/uploads/2026/06/porta-cabin-in-ulsoor-ms-frame-factory.jpeg",
+          "https://blog.samanportable.com/wp-content/uploads/2026/06/porta-cabin-in-vijayanagar-ms-frame-factory.jpeg"
+        ]
+      },
+      {
+        "alt_text": "30x10x8.5-foot portable cabin",
+        "occurrences": 2,
+        "different_images": 2,
+        "source_paths": [
+          "https://blog.samanportable.com/wp-content/uploads/2020/04/30x10x8.5-foot-portable-cabin-designed-in-a-container-style.webp",
+          "https://blog.samanportable.com/wp-content/uploads/2020/04/30x10x8.5-foot-portable-cabin-with-a-container-like-appearance-set-in-a-snowy-alpine-village.webp"
+        ]
+      },
+      {
+        "alt_text": "Container Cafe",
+        "occurrences": 44,
+        "different_images": 2,
+        "source_paths": [
+          "https://www.samanportable.com/Prefab solutions/container cafe.webp",
+          "https://www.samanportable.com/images/product-heroes/container-cafe/container-cafe-wallart-delhincr-ghaziabad.jpeg"
+        ]
+      },
+      {
+        "alt_text": "Container Offices",
+        "occurrences": 20,
+        "different_images": 2,
+        "source_paths": [
+          "https://www.samanportable.com/Prefab solutions/container office.webp",
+          "https://www.samanportable.com/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg"
+        ]
+      },
+      {
+        "alt_text": "Insulated sandwich panels manufactured at a SAMAN Portable factory",
+        "occurrences": 3,
+        "different_images": 2,
+        "source_paths": [
+          "https://www.samanportable.com/homepage/cards/headers/panels-header.webp",
+          "https://www.samanportable.com/homepage/cards/panels-factory.webp"
+        ]
+      },
+      {
+        "alt_text": "Labor Sheds",
+        "occurrences": 29,
+        "different_images": 2,
+        "source_paths": [
+          "https://blog.samanportable.com/wp-content/uploads/2024/11/labor-sheds-1-7-edited.jpg",
+          "https://www.samanportable.com/images/product-heroes/labor-colony/labor-shed-single-block-multi-room-bangalore-india.jpeg"
+        ]
+      },
+      {
+        "alt_text": "Portable Cabin",
+        "occurrences": 27,
+        "different_images": 2,
+        "source_paths": [
+          "https://www.samanportable.com/Prefab solutions/portable cabin.webp",
+          "https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp"
+        ]
+      },
+      {
+        "alt_text": "Pre-Engineered Steel Building manufacturers",
+        "occurrences": 23,
+        "different_images": 2,
+        "source_paths": [
+          "https://blog.samanportable.com/wp-content/uploads/2024/10/pre-engineered-steel-building-colour-options.jpeg",
+          "https://www.samanportable.com/images/product-heroes/pre-engineered-buildings/pre-engineered-steel-building-front-elevation.webp"
+        ]
+      },
+      {
+        "alt_text": "Pre-engineered Metal Building Manufacturers",
+        "occurrences": 23,
+        "different_images": 2,
+        "source_paths": [
+          "https://blog.samanportable.com/wp-content/uploads/2024/10/metal-building-frame-fabrication-factory.jpeg",
+          "https://www.samanportable.com/images/product-heroes/pre-engineered-buildings/pre-engineered-metal-building-manufacturer.webp"
+        ]
+      },
+      {
+        "alt_text": "Prefabricated Container Home",
+        "occurrences": 41,
+        "different_images": 2,
+        "source_paths": [
+          "https://blog.samanportable.com/wp-content/uploads/2024/10/silver-portable-container-home-1024x683.webp",
+          "https://www.samanportable.com/images/product-heroes/container-houses/prefabricated-container-home-balcony.webp"
+        ]
+      },
+      {
+        "alt_text": "Royal Cobalt porta cabin at an NGEF or ITI Layout heritage-industrial pocket plot in Nagarbhavi serving a small fabrication unit, with secure access door visible.",
+        "occurrences": 2,
+        "different_images": 2,
+        "source_paths": [
+          "https://blog.samanportable.com/wp-content/uploads/2025/07/porta-cabin-nagarbhavi-bda-2nd-stage-plot-subdivision-sandstone-beige.jpeg",
+          "https://blog.samanportable.com/wp-content/uploads/2025/07/porta-cabin-nagarbhavi-ngef-iti-layout-heritage-pocket-royal-cobalt.jpeg"
+        ]
+      },
+      {
+        "alt_text": "SAMAN rockwool sandwich panel front face with exposed stone wool core edge",
+        "occurrences": 2,
+        "different_images": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/rockwool-panel/rockwool-panel-product-front-sq.webp",
+          "https://www.samanportable.com/images/rockwool-panel/thumbs/rockwool-panel-product-front-sq.webp"
+        ]
+      },
+      {
+        "alt_text": "Stack of SAMAN glass wool panels showing fibrous core and steel facings",
+        "occurrences": 4,
+        "different_images": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/glass-wool-panel/glass-wool-panel-stack-yellow-core.webp",
+          "https://www.samanportable.com/panel-images/glass-wool-panel/glass-wool-panel-stack-yellow-core.webp"
+        ]
+      },
+      {
+        "alt_text": "Stack of SAMAN steel-faced EPS sandwich panels with visible white EPS core",
+        "occurrences": 12,
+        "different_images": 2,
+        "source_paths": [
+          "https://www.samanportable.com/images/eps-panel/eps-panel-wall-roof-stack-1x1.webp",
+          "https://www.samanportable.com/panel-images/eps-panel/eps-panel-wall-roof-stack-1x1.webp"
+        ]
+      },
+      {
+        "alt_text": "container house Tamil Nadu",
+        "occurrences": 2,
+        "different_images": 2,
+        "source_paths": [
+          "https://blog.samanportable.com/wp-content/uploads/2024/12/container-house-Tamil-Nadu-4-1024x585.jpg",
+          "https://blog.samanportable.com/wp-content/uploads/2024/12/container-house-Tamil-Nadu-5-1024x585.jpg"
+        ]
+      },
+      {
+        "alt_text": "eco-friendly portable cabins",
+        "occurrences": 2,
+        "different_images": 2,
+        "source_paths": [
+          "https://blog.samanportable.com/wp-content/uploads/2025/07/eco-friendly-portable-cabins-1024x585.jpeg",
+          "https://blog.samanportable.com/wp-content/uploads/2025/07/eco-friendly-portable-cabins-3-1024x585.jpeg"
+        ]
+      }
+    ]
+  },
+  "summary_4_missing_empty_alt": {
+    "missing_alt_occurrences": 145,
+    "empty_alt_occurrences": 23
+  },
+  "summary_5_filename_standard": {
+    "l19_pattern_match_occurrences": 6668,
+    "l19_pattern_fail_occurrences": 1405,
+    "camera_or_export_code_occurrences": 5,
+    "camera_or_export_code_unique_files": 4
+  },
+  "summary_6_alt_length": {
+    "too_short_under_60_occurrences": 6121,
+    "too_long_over_125_occurrences": 206
+  },
+  "summary_7_not_in_sitemap": {
+    "occurrences": 8073,
+    "unique_files": 2926,
+    "image_urls_present_in_sitemaps": 0,
+    "image_sitemap_urls": []
+  },
+  "summary_8_not_in_page_schema_on_product_pages": {
+    "occurrences": 5208,
+    "unique_files": 1059
+  },
+  "summary_9_css_backgrounds_only": {
+    "unique_files": 0,
+    "occurrences": 0,
+    "source_paths": []
+  },
+  "summary_10_file_weight_and_oversizing": {
+    "over_200kb_occurrences": 74,
+    "over_200kb_unique_files": 69,
+    "served_more_than_2x_display_occurrences": 5272
+  },
+  "summary_11_non_webp": {
+    "occurrences": 3575,
+    "unique_files": 1995
+  },
+  "summary_12_per_cluster_debt": [
+    {
+      "cluster": "container-offices",
+      "image_occurrences": 1026,
+      "unique_files": 533,
+      "failing_l19_occurrences": 1026,
+      "localized_failures_excluding_systemic_image_sitemap": 833,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "container-cafe",
+      "image_occurrences": 889,
+      "unique_files": 186,
+      "failing_l19_occurrences": 889,
+      "localized_failures_excluding_systemic_image_sitemap": 849,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "container-houses",
+      "image_occurrences": 728,
+      "unique_files": 141,
+      "failing_l19_occurrences": 728,
+      "localized_failures_excluding_systemic_image_sitemap": 728,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "porta-cabins",
+      "image_occurrences": 671,
+      "unique_files": 422,
+      "failing_l19_occurrences": 671,
+      "localized_failures_excluding_systemic_image_sitemap": 495,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "peb-constructions",
+      "image_occurrences": 550,
+      "unique_files": 119,
+      "failing_l19_occurrences": 550,
+      "localized_failures_excluding_systemic_image_sitemap": 550,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "labor-colony",
+      "image_occurrences": 538,
+      "unique_files": 219,
+      "failing_l19_occurrences": 538,
+      "localized_failures_excluding_systemic_image_sitemap": 538,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "portable-cabin",
+      "image_occurrences": 537,
+      "unique_files": 191,
+      "failing_l19_occurrences": 537,
+      "localized_failures_excluding_systemic_image_sitemap": 524,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "portable-office",
+      "image_occurrences": 516,
+      "unique_files": 124,
+      "failing_l19_occurrences": 516,
+      "localized_failures_excluding_systemic_image_sitemap": 506,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "prefab-buildings",
+      "image_occurrences": 410,
+      "unique_files": 107,
+      "failing_l19_occurrences": 410,
+      "localized_failures_excluding_systemic_image_sitemap": 410,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "editorial",
+      "image_occurrences": 356,
+      "unique_files": 228,
+      "failing_l19_occurrences": 356,
+      "localized_failures_excluding_systemic_image_sitemap": 295,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "industrial-sheds",
+      "image_occurrences": 343,
+      "unique_files": 97,
+      "failing_l19_occurrences": 343,
+      "localized_failures_excluding_systemic_image_sitemap": 338,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "pre-engineered-buildings",
+      "image_occurrences": 282,
+      "unique_files": 89,
+      "failing_l19_occurrences": 282,
+      "localized_failures_excluding_systemic_image_sitemap": 282,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "prefabricated-houses",
+      "image_occurrences": 282,
+      "unique_files": 84,
+      "failing_l19_occurrences": 282,
+      "localized_failures_excluding_systemic_image_sitemap": 280,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "portable-toilet",
+      "image_occurrences": 223,
+      "unique_files": 75,
+      "failing_l19_occurrences": 223,
+      "localized_failures_excluding_systemic_image_sitemap": 219,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "puf-panel",
+      "image_occurrences": 169,
+      "unique_files": 70,
+      "failing_l19_occurrences": 169,
+      "localized_failures_excluding_systemic_image_sitemap": 169,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "security-cabins",
+      "image_occurrences": 168,
+      "unique_files": 61,
+      "failing_l19_occurrences": 168,
+      "localized_failures_excluding_systemic_image_sitemap": 168,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "roofing-sheet",
+      "image_occurrences": 104,
+      "unique_files": 58,
+      "failing_l19_occurrences": 104,
+      "localized_failures_excluding_systemic_image_sitemap": 104,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "sitewide",
+      "image_occurrences": 67,
+      "unique_files": 33,
+      "failing_l19_occurrences": 67,
+      "localized_failures_excluding_systemic_image_sitemap": 59,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "projects",
+      "image_occurrences": 36,
+      "unique_files": 35,
+      "failing_l19_occurrences": 36,
+      "localized_failures_excluding_systemic_image_sitemap": 36,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "rentals",
+      "image_occurrences": 32,
+      "unique_files": 8,
+      "failing_l19_occurrences": 32,
+      "localized_failures_excluding_systemic_image_sitemap": 27,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "wall-sheet",
+      "image_occurrences": 26,
+      "unique_files": 19,
+      "failing_l19_occurrences": 26,
+      "localized_failures_excluding_systemic_image_sitemap": 26,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "sandwich-panel",
+      "image_occurrences": 26,
+      "unique_files": 19,
+      "failing_l19_occurrences": 26,
+      "localized_failures_excluding_systemic_image_sitemap": 20,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "glass-wool-panel",
+      "image_occurrences": 21,
+      "unique_files": 19,
+      "failing_l19_occurrences": 21,
+      "localized_failures_excluding_systemic_image_sitemap": 21,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "rockwool-panel",
+      "image_occurrences": 21,
+      "unique_files": 20,
+      "failing_l19_occurrences": 21,
+      "localized_failures_excluding_systemic_image_sitemap": 18,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "eps-panel",
+      "image_occurrences": 20,
+      "unique_files": 18,
+      "failing_l19_occurrences": 20,
+      "localized_failures_excluding_systemic_image_sitemap": 18,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "pir-panel",
+      "image_occurrences": 19,
+      "unique_files": 17,
+      "failing_l19_occurrences": 19,
+      "localized_failures_excluding_systemic_image_sitemap": 15,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "product-index",
+      "image_occurrences": 10,
+      "unique_files": 9,
+      "failing_l19_occurrences": 10,
+      "localized_failures_excluding_systemic_image_sitemap": 9,
+      "failure_rate_percent": 100.0
+    },
+    {
+      "cluster": "wall-sheets",
+      "image_occurrences": 3,
+      "unique_files": 2,
+      "failing_l19_occurrences": 3,
+      "localized_failures_excluding_systemic_image_sitemap": 3,
+      "failure_rate_percent": 100.0
+    }
+  ],
+  "triage_counts": {
+    "A": 5363,
+    "B": 2536,
+    "C": 174
+  },
+  "section_5_delivery_indexation_evidence": {
+    "clean_originals": {
+      "unique_sources_tested": 2926,
+      "returning_200": 2925,
+      "not_returning_200": 1
+    },
+    "robots_txt": "# *\nUser-agent: *\nAllow: /\n\n# Host\nHost: https://www.samanportable.com\n\n# Sitemaps\n\nSitemap: https://www.samanportable.com/sitemap.xml\n",
+    "robots_allows_next_image": true,
+    "image_sitemap_url_count": 0,
+    "image_sitemap_urls": [],
+    "representative_page": "https://www.samanportable.com/product/porta-cabins",
+    "representative_rendered_img_attributes": [
+      {
+        "src": "/saman-logo.svg",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/saman-logo.svg",
+        "clean_path_literal_in_img_markup": true
+      },
+      {
+        "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-hero-view.webp",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/images/products/porta-cabins/20x10/porta-cabin-20x10-hero-view.webp",
+        "clean_path_literal_in_img_markup": true
+      },
+      {
+        "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-hero-view.webp",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/images/products/porta-cabins/20x10/porta-cabin-20x10-hero-view.webp",
+        "clean_path_literal_in_img_markup": true
+      },
+      {
+        "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-front-angle.webp",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/images/products/porta-cabins/20x10/porta-cabin-20x10-front-angle.webp",
+        "clean_path_literal_in_img_markup": true
+      },
+      {
+        "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-side-elevation.webp",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/images/products/porta-cabins/20x10/porta-cabin-20x10-side-elevation.webp",
+        "clean_path_literal_in_img_markup": true
+      },
+      {
+        "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-workspace-interior.webp",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/images/products/porta-cabins/20x10/porta-cabin-20x10-workspace-interior.webp",
+        "clean_path_literal_in_img_markup": true
+      },
+      {
+        "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-entrance-interior.webp",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/images/products/porta-cabins/20x10/porta-cabin-20x10-entrance-interior.webp",
+        "clean_path_literal_in_img_markup": true
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=1920&q=75",
+        "srcset": "/_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=96&q=75 96w, /_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=128&q=75 128w, /_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=256&q=75 256w, /_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fporta-cabin-product-video-poster.webp&w=1920&q=75 1920w",
+        "sizes": "(max-width: 1023px) 15vw, 70px",
+        "clean_source_path": "/images/porta-cabin-product-video-poster.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-elevated-view.webp",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/images/products/porta-cabins/20x10/porta-cabin-20x10-elevated-view.webp",
+        "clean_path_literal_in_img_markup": true
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Flow-cost-porta-cabin-red-white-side.jpeg&w=128&q=75",
+        "srcset": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Flow-cost-porta-cabin-red-white-side.jpeg&w=64&q=75 1x, /_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Flow-cost-porta-cabin-red-white-side.jpeg&w=128&q=75 2x",
+        "sizes": "",
+        "clean_source_path": "/images/product-heroes/porta-cabins/low-cost-porta-cabin-red-white-side.jpeg",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fportacabin-office-exterior-dual-door.jpeg&w=128&q=75",
+        "srcset": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fportacabin-office-exterior-dual-door.jpeg&w=64&q=75 1x, /_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fportacabin-office-exterior-dual-door.jpeg&w=128&q=75 2x",
+        "sizes": "",
+        "clean_source_path": "/images/product-heroes/porta-cabins/portacabin-office-exterior-dual-door.jpeg",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fmini-porta-cabin-exterior-orange-bangalore.jpeg&w=128&q=75",
+        "srcset": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fmini-porta-cabin-exterior-orange-bangalore.jpeg&w=64&q=75 1x, /_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fmini-porta-cabin-exterior-orange-bangalore.jpeg&w=128&q=75 2x",
+        "sizes": "",
+        "clean_source_path": "/images/product-heroes/porta-cabins/mini-porta-cabin-exterior-orange-bangalore.jpeg",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fporta-cabin-with-toilet-exterior-red.jpeg&w=128&q=75",
+        "srcset": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fporta-cabin-with-toilet-exterior-red.jpeg&w=64&q=75 1x, /_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fporta-cabin-with-toilet-exterior-red.jpeg&w=128&q=75 2x",
+        "sizes": "",
+        "clean_source_path": "/images/product-heroes/porta-cabins/porta-cabin-with-toilet-exterior-red.jpeg",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fporta-cabin-exterior-red-base.jpeg&w=128&q=75",
+        "srcset": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fporta-cabin-exterior-red-base.jpeg&w=64&q=75 1x, /_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fporta-cabin-exterior-red-base.jpeg&w=128&q=75 2x",
+        "sizes": "",
+        "clean_source_path": "/images/product-heroes/porta-cabins/porta-cabin-exterior-red-base.jpeg",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fluxury-porta-cabin-interior-dark-workstations.jpeg&w=128&q=75",
+        "srcset": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fluxury-porta-cabin-interior-dark-workstations.jpeg&w=64&q=75 1x, /_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fluxury-porta-cabin-interior-dark-workstations.jpeg&w=128&q=75 2x",
+        "sizes": "",
+        "clean_source_path": "/images/product-heroes/porta-cabins/luxury-porta-cabin-interior-dark-workstations.jpeg",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fporta-cabin-shop-interior-premium-wooden.jpeg&w=128&q=75",
+        "srcset": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fporta-cabin-shop-interior-premium-wooden.jpeg&w=64&q=75 1x, /_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fporta-cabin-shop-interior-premium-wooden.jpeg&w=128&q=75 2x",
+        "sizes": "",
+        "clean_source_path": "/images/product-heroes/porta-cabins/porta-cabin-shop-interior-premium-wooden.jpeg",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fms-porta-cabin-exterior-beige.jpeg&w=128&q=75",
+        "srcset": "/_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fms-porta-cabin-exterior-beige.jpeg&w=64&q=75 1x, /_next/image?url=%2Fimages%2Fproduct-heroes%2Fporta-cabins%2Fms-porta-cabin-exterior-beige.jpeg&w=128&q=75 2x",
+        "sizes": "",
+        "clean_source_path": "/images/product-heroes/porta-cabins/ms-porta-cabin-exterior-beige.jpeg",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fgbp-posts%2Fms-porta-cabin-office-factory-yard-bengaluru.webp&w=1200&q=75",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/gbp-posts/ms-porta-cabin-office-factory-yard-bengaluru.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fgbp-posts%2Fporta-cabin-40x10-site-office-floor-plan-saman.webp&w=1200&q=75",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/gbp-posts/porta-cabin-40x10-site-office-floor-plan-saman.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fgbp-posts%2Fporta-cabin-site-office-project-gate-construction.webp&w=1200&q=75",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/gbp-posts/porta-cabin-site-office-project-gate-construction.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fgbp-posts%2Fporta-cabin-office-interior-workstation-finish.webp&w=1200&q=75",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/gbp-posts/porta-cabin-office-interior-workstation-finish.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fgbp-posts%2Fporta-cabin-quality-control-installation-engineering-diagram.webp&w=1200&q=75",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/gbp-posts/porta-cabin-quality-control-installation-engineering-diagram.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fgbp-posts%2F10x10-ms-corrugated-porta-cabin-office-exterior-factory-yard.webp&w=1200&q=75",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/gbp-posts/10x10-ms-corrugated-porta-cabin-office-exterior-factory-yard.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fgbp-posts%2Fportable-cabin-office-interior-with-desks-and-grilled-windows.webp&w=1200&q=75",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/gbp-posts/portable-cabin-office-interior-with-desks-and-grilled-windows.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fgbp-posts%2F40x10-ms-corrugated-porta-cabin-site-office-exterior.webp&w=1200&q=75",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/gbp-posts/40x10-ms-corrugated-porta-cabin-site-office-exterior.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/_next/image?url=%2Fgbp-posts%2Fms-porta-cabin-project-office-interior-with-workstations.webp&w=1200&q=75",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/gbp-posts/ms-porta-cabin-project-office-interior-with-workstations.webp",
+        "clean_path_literal_in_img_markup": false
+      },
+      {
+        "src": "/saman-logo.svg",
+        "srcset": "",
+        "sizes": "",
+        "clean_source_path": "/saman-logo.svg",
+        "clean_path_literal_in_img_markup": true
+      }
+    ]
+  },
+  "crawl_errors": [],
+  "sitemap_errors": [],
+  "unresolved_images": [
+    {
+      "page_url": "https://www.samanportable.com/container-offices-for-sale-in-hosur",
+      "image_source_path": "https://www.samanportable.com/default-blog-image.jpg",
+      "delivered_url": "https://www.samanportable.com/default-blog-image.jpg",
+      "error": "HTTP 404"
+    },
+    {
+      "page_url": "https://www.samanportable.com/in-the-long-run-are-prefabricated-industrial-buildings-more-cost-effective",
+      "image_source_path": "https://www.samanportable.com/default-blog-image.jpg",
+      "delivered_url": "https://www.samanportable.com/default-blog-image.jpg",
+      "error": "HTTP 404"
+    }
+  ],
+  "outside_sitemap_live_200_pages": [
+    "https://www.samanportable.com/blog/search",
+    "https://www.samanportable.com/estimate-print",
+    "https://www.samanportable.com/my-orders",
+    "https://www.samanportable.com/product-category/container-offices"
+  ]
+}

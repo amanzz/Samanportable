@@ -17,6 +17,7 @@
     "analyze": "ANALYZE=true next build",
     "postbuild": "node scripts/build-image-manifest-and-sitemaps.mjs",
     "image-manifest:collect": "node scripts/collect-image-manifest.mjs",
+    "image-cache:populate": "node scripts/populate-image-metadata-cache.mjs",
     "image-gate": "node scripts/check-image-intake.mjs",
     "image-gate:bootstrap": "node scripts/check-image-intake.mjs --bootstrap",
     "generate-sitemap": "node scripts/generate-sitemap.js",

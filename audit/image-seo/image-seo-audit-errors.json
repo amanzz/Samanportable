@@ -1,0 +1,18 @@
+{
+  "crawl_errors": [],
+  "sitemap_errors": [],
+  "unresolved_images": [
+    {
+      "page_url": "https://www.samanportable.com/container-offices-for-sale-in-hosur",
+      "image_source_path": "https://www.samanportable.com/default-blog-image.jpg",
+      "delivered_url": "https://www.samanportable.com/default-blog-image.jpg",
+      "error": "HTTP 404"
+    },
+    {
+      "page_url": "https://www.samanportable.com/in-the-long-run-are-prefabricated-industrial-buildings-more-cost-effective",
+      "image_source_path": "https://www.samanportable.com/default-blog-image.jpg",
+      "delivered_url": "https://www.samanportable.com/default-blog-image.jpg",
+      "error": "HTTP 404"
+    }
+  ]
+}

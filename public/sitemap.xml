@@ -4,5 +4,8 @@
   <sitemap><loc>https://www.samanportable.com/sitemap-locations.xml</loc></sitemap>
   <sitemap><loc>https://www.samanportable.com/sitemap-projects.xml</loc></sitemap>
   <sitemap><loc>https://www.samanportable.com/sitemap-editorial.xml</loc></sitemap>
-  <sitemap><loc>https://www.samanportable.com/sitemap-images.xml</loc></sitemap>
+  <sitemap><loc>https://www.samanportable.com/sitemap-images-products.xml</loc></sitemap>
+  <sitemap><loc>https://www.samanportable.com/sitemap-images-locations.xml</loc></sitemap>
+  <sitemap><loc>https://www.samanportable.com/sitemap-images-projects.xml</loc></sitemap>
+  <sitemap><loc>https://www.samanportable.com/sitemap-images-editorial.xml</loc></sitemap>
 </sitemapindex>

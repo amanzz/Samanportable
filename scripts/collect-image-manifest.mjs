@@ -23,6 +23,11 @@ const outputPath = path.resolve(
   outputArgument?.slice('--output='.length) || 'public/image-manifest.json',
 );
 const baseUrl = baseArgument?.slice('--base-url='.length);
+const metadataCachePath = path.join(root, 'src/data', 'image-metadata-cache.json');
+const metadataCacheRaw = fs.existsSync(metadataCachePath)
+  ? JSON.parse(fs.readFileSync(metadataCachePath, 'utf8'))
+  : { schemaVersion: 1, generatedAt: new Date().toISOString(), entries: {} };
+const metadataCache = new Map(Object.entries(metadataCacheRaw.entries || {}));
 
 if (!baseUrl) {
   throw new Error('collect-image-manifest.mjs requires --base-url=<local built site>');
@@ -256,6 +261,9 @@ const provenanceOverrides = fs.existsSync(provenanceOverridesPath)
   : {};
 
 const localAssets = new Map();
+let metadataCacheHits = 0;
+let metadataCacheMisses = 0;
+
 for (const absolute of walk(path.join(root, 'public'))) {
   const extension = path.extname(absolute).toLowerCase();
   if (!imageExtensions.has(extension)) continue;
@@ -273,6 +281,15 @@ for (const absolute of walk(path.join(root, 'public'))) {
   localAssets.set(resolvedUrl, metadata);
   addSource(resolvedUrl, metadata.sourceFile);
 }
+
+const getImageMetadata = resolvedUrl => {
+  const metadata = metadataCache.get(resolvedUrl);
+  if (!metadata) {
+    return null;
+  }
+  metadataCacheHits += 1;
+  return metadata;
+};
 
 const parseLength = (value, viewport) => {
   const match = String(value).trim().match(/^([\d.]+)(px|vw)$/);
@@ -436,30 +453,37 @@ const ensureEntry = resolvedUrl => {
   if (!entries.has(resolvedUrl)) {
     const url = new URL(resolvedUrl);
     const local = url.origin === site && localAssets.has(resolvedUrl);
+    const cacheEntry = local ? null : getImageMetadata(resolvedUrl);
     const sources = sourceIndex.get(resolvedUrl)
       || basenameIndex.get(path.posix.basename(url.pathname).toLowerCase())
       || new Set();
+    if (!local && !cacheEntry) metadataCacheMisses += 1;
     entries.set(resolvedUrl, {
       resolvedUrl,
       sourceFiles: new Set(sources),
       usages: [],
       filename: decodeURIComponent(path.posix.basename(url.pathname)),
       format: path.posix.extname(url.pathname).slice(1).toLowerCase(),
-      bytes: local ? localAssets.get(resolvedUrl).bytes : null,
-      sha256: local ? localAssets.get(resolvedUrl).sha256 : null,
+      bytes: local ? localAssets.get(resolvedUrl).bytes : Number(cacheEntry?.bytes) || null,
+      sha256: local ? localAssets.get(resolvedUrl).sha256 : cacheEntry?.sha256 || null,
       intrinsicDimensions: local
         ? localAssets.get(resolvedUrl).dimensions
-        : { width: null, height: null },
+        : cacheEntry?.intrinsicDimensions || { width: null, height: null },
       local,
       remote: !local,
+      metadataCacheMiss: !local && !cacheEntry,
+      metadataCacheVersion: cacheEntry?.schemaVersion || null,
       inSchema: false,
       inMetadata: false,
       provenance: provenanceOverrides[resolvedUrl]
         || [...(sourceMetadata.get(resolvedUrl)?.provenances || [])]
           .find(value => value !== 'unknown')
         || 'unknown',
-      status: local ? 200 : null,
-      redirectLocation: null,
+      status: local ? 200 : cacheEntry?.status || null,
+      redirectLocation: local ? null : cacheEntry?.redirectLocation || null,
+      etag: local ? null : cacheEntry?.etag || null,
+      lastModified: local ? null : cacheEntry?.lastModified || null,
+      metadataCacheLastUpdated: local ? null : cacheEntry?.lastUpdated || null,
     });
   }
   return entries.get(resolvedUrl);
@@ -494,55 +518,6 @@ for (const page of pages) {
   }
 }
 
-const checkUrl = async entry => {
-  const requestUrl = entry.local
-    ? new URL(new URL(entry.resolvedUrl).pathname + new URL(entry.resolvedUrl).search, baseUrl)
-    : entry.resolvedUrl;
-  let lastError = null;
-  for (let attempt = 0; attempt < 3; attempt += 1) {
-    try {
-      let response = await fetch(requestUrl, {
-        method: 'HEAD',
-        redirect: 'manual',
-        signal: AbortSignal.timeout(30_000),
-        headers: { 'user-agent': 'SAMAN-Image-Manifest-Build/1.0' },
-      });
-      if ([403, 405].includes(response.status)) {
-        response = await fetch(requestUrl, {
-          method: 'GET',
-          redirect: 'manual',
-          signal: AbortSignal.timeout(30_000),
-          headers: { 'user-agent': 'SAMAN-Image-Manifest-Build/1.0' },
-        });
-      }
-      entry.status = response.status;
-      entry.redirectLocation = response.headers.get('location');
-      entry.etag = response.headers.get('etag');
-      entry.lastModified = response.headers.get('last-modified');
-      const contentLength = Number(response.headers.get('content-length'));
-      if (!entry.bytes && Number.isFinite(contentLength) && contentLength > 0) {
-        entry.bytes = contentLength;
-      }
-      if (response.body) await response.body.cancel();
-      return;
-    } catch (error) {
-      lastError = error;
-    }
-    await new Promise(resolve => setTimeout(resolve, 300 * (attempt + 1)));
-  }
-  entry.status = 0;
-  entry.statusError = lastError?.message || 'unknown request error';
-};
-
-const liveEntries = [...entries.values()].filter(entry => entry.usages.length > 0);
-let checkCursor = 0;
-const checkWorkers = Array.from({ length: 20 }, async () => {
-  while (checkCursor < liveEntries.length) {
-    await checkUrl(liveEntries[checkCursor++]);
-  }
-});
-await Promise.all(checkWorkers);
-
 for (const entry of entries.values()) {
   if (!entry.intrinsicDimensions.width || !entry.intrinsicDimensions.height) {
     const candidates = [
@@ -560,43 +535,6 @@ for (const entry of entries.values()) {
     }
   }
 }
-
-const unresolvedRemoteEntries = [...entries.values()].filter(entry =>
-  entry.remote
-  && entry.usages.length > 0
-  && entry.status === 200
-  && (
-    !Number.isFinite(entry.bytes)
-    || !Number.isFinite(entry.intrinsicDimensions.width)
-    || !Number.isFinite(entry.intrinsicDimensions.height)
-  )
-);
-let metadataCursor = 0;
-const metadataWorkers = Array.from({ length: 8 }, async () => {
-  while (metadataCursor < unresolvedRemoteEntries.length) {
-    const entry = unresolvedRemoteEntries[metadataCursor++];
-    const response = await fetch(entry.resolvedUrl, {
-      method: 'GET',
-      redirect: 'manual',
-      signal: AbortSignal.timeout(60_000),
-      headers: { 'user-agent': 'SAMAN-Image-Manifest-Build/1.0' },
-    });
-    if (response.status !== 200) {
-      if (response.body) await response.body.cancel();
-      throw new Error(
-        `Cannot resolve binary metadata for ${entry.resolvedUrl}: HTTP ${response.status}`,
-      );
-    }
-    const buffer = Buffer.from(await response.arrayBuffer());
-    entry.bytes = buffer.length;
-    entry.sha256 = crypto.createHash('sha256').update(buffer).digest('hex');
-    entry.intrinsicDimensions = readDimensions(entry.filename, buffer);
-    if (!entry.intrinsicDimensions.width || !entry.intrinsicDimensions.height) {
-      throw new Error(`Cannot read intrinsic dimensions for ${entry.resolvedUrl}`);
-    }
-  }
-});
-await Promise.all(metadataWorkers);
 
 const serializedEntries = [...entries.values()]
   .sort((left, right) => left.resolvedUrl.localeCompare(right.resolvedUrl))
@@ -621,6 +559,9 @@ const serializedEntries = [...entries.values()]
       inMetadata: entry.inMetadata,
       provenance: entry.provenance,
       status: entry.status,
+      metadataCacheMiss: entry.metadataCacheMiss,
+      metadataCacheVersion: entry.metadataCacheVersion,
+      metadataCacheLastUpdated: entry.metadataCacheLastUpdated || null,
       redirectLocation: entry.redirectLocation,
       etag: entry.etag || null,
       lastModified: entry.lastModified || null,
@@ -628,7 +569,6 @@ const serializedEntries = [...entries.values()]
         0,
         ...usages.map(usage => usage.largestRenderWidth || 0),
       ) || null,
-      ...(entry.statusError ? { statusError: entry.statusError } : {}),
     };
   });
 
@@ -667,6 +607,12 @@ const manifest = {
     liveRemoteImageCount: live.filter(entry => entry.remote).length,
     liveLocalImageCount: live.filter(entry => entry.local).length,
     unknownProvenanceCount: serializedEntries.filter(entry => entry.provenance === 'unknown').length,
+    metadataCacheStats: {
+      configuredPath: path.relative(root, metadataCachePath),
+      entries: metadataCache.size,
+      hits: metadataCacheHits,
+      misses: metadataCacheMisses,
+    },
   },
   pages: pages.map(({ images: _images, ...page }) => page),
   entries: serializedEntries,

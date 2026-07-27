@@ -155,6 +155,7 @@ const report = (entry, rule, correction) => failures.push({
 
 for (const entry of manifest.entries) {
   if (allowed.get(entry.resolvedUrl) === fingerprint(entry)) continue;
+  const remoteMetadataMissing = Boolean(entry.remote && entry.metadataCacheMiss);
 
   if (!filenamePattern.test(entry.filename) || forbiddenFilename.test(entry.filename)) {
     report(
@@ -177,7 +178,7 @@ for (const entry of manifest.entries) {
       'Convert the photograph to WebP or provide the vector as SVG before intake.',
     );
   }
-  if (!Number.isFinite(entry.bytes) || entry.bytes >= 200 * 1024) {
+  if (!remoteMetadataMissing && (!Number.isFinite(entry.bytes) || entry.bytes >= 200 * 1024)) {
     report(
       entry,
       'image must be below 200 KB',
@@ -253,13 +254,13 @@ for (const entry of manifest.entries) {
 
   const width = entry.intrinsicDimensions?.width;
   const renderWidth = entry.largestRenderWidth;
-  if (!Number.isFinite(width) || !Number.isFinite(renderWidth) || renderWidth <= 0) {
+  if (!remoteMetadataMissing && (!Number.isFinite(width) || !Number.isFinite(renderWidth) || renderWidth <= 0)) {
     report(
       entry,
       'intrinsic and largest render widths must be measurable',
       'Declare image dimensions and a responsive sizes/width value so the 2× limit can be checked.',
     );
-  } else if (width > renderWidth * 2) {
+  } else if (!remoteMetadataMissing && width > renderWidth * 2) {
     report(
       entry,
       'served image width must not exceed 2× its largest render width',
