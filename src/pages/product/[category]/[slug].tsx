@@ -132,7 +132,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     const productCategorySlug = product.category_slug.toLowerCase();
     const urlCategory = decodeURIComponent(category).toLowerCase();
     
-    if (productCategorySlug !== urlCategory && !productCategorySlug.includes(urlCategory)) {
+    // C01 namespace closure (Fable 5 + SAMAN, 27 Jul 2026): `porta-cabin`
+    // was accepted as a substring of the real `porta-cabins` category, exposing
+    // an unbounded parallel URL namespace. Explicit redirects plus the ordered
+    // catch-all in next.config.js own those aliases; the page route must not.
+    if (
+      urlCategory === 'porta-cabin' ||
+      (productCategorySlug !== urlCategory && !productCategorySlug.includes(urlCategory))
+    ) {
       return {
         notFound: true,
       };

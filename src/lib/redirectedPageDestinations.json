@@ -44,6 +44,7 @@
   "modular-portable-office-cabin": "/product/portable-office",
   "ms-portable-office-cabin": "/product/porta-cabins/ms-porta-cabin",
   "porta-cabin-office": "/product/porta-cabins/portacabin-office",
+  "porta-cabin-office-price": "/product/porta-cabins/portacabin-office",
   "porta-cabins-in-bellandur": "/portable-cabins-in-bellandur",
   "porta-cabins-in-frazer": "/portable-cabins-in-frazer-town",
   "porta-cabins-in-peenya-f": "/portable-cabins-in-peenya",
@@ -86,12 +87,12 @@
   "prefabricated-office-buildings": "/product-category/portable-office",
   "prefabricated-porta-cabin": "/product/porta-cabins",
   "rise-of-prefab-office-and-structures-in-2024": "/product-category/prefab-buildings",
-  "small-cabin-designs": "/product-category/porta-cabins",
+  "small-cabin-designs": "/product/porta-cabins",
   "small-portable-buildings-solutions": "/product-category/prefab-buildings",
   "small-portacabin": "/product/porta-cabins/mini-porta-cabin",
   "storage-container-office": "/product/container-offices/shipping-container-office",
   "temporary-sheds-guide-2024": "/portable-sheds-complete-guide-2024",
   "toilet-porta-cabins": "/product/porta-cabins/porta-cabin-with-toilet",
   "top-rated-recycled-office-structures": "/second-hand-container-office",
-  "used-portacabins-for-sale": "/product-category/porta-cabins"
+  "used-portacabins-for-sale": "/product/porta-cabins"
 }
