@@ -276,6 +276,25 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .catch(() => null)
       : null;
 
+    // Event B owns all commercial size/price data when its product JSON exists.
+    // Keep the legacy record for its frozen title, descriptions and head data, but
+    // do not hydrate obsolete commercial fields that the variant hero never reads.
+    const productForPageProps = { ...product } as Partial<WooCommerceProduct> & Record<string, unknown>;
+    if (variantData) {
+      for (const field of [
+        'price',
+        'regular_price',
+        'sale_price',
+        'priceDisplay',
+        'priceSubline',
+        'short_description',
+        'attributes',
+        'dimensions',
+      ] as const) {
+        delete productForPageProps[field];
+      }
+    }
+
     // T31 — resolve the real Specifications + shared Shipping tab HTML for the
     // porta-cabin cluster; null for any other category (tabs unchanged there).
     const t31Tabs = getProductTabsHtml(category);
@@ -283,7 +302,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     return {
       props: {
         product: {
-          ...product,
+          ...productForPageProps,
           description: descriptionData?.description || '',
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
           // cluster (null for every other product → the existing overrides/defaults
@@ -306,12 +325,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
             }
           ],
           schemaMode: (product as any).schemaMode || '',
-          priceDisplay: (product as any).priceDisplay || '',
-          priceSubline: (product as any).priceSubline || '',
-          attributes: sourceAttributes,
+          ...(variantData ? {} : {
+            priceDisplay: (product as any).priceDisplay || '',
+            priceSubline: (product as any).priceSubline || '',
+            attributes: sourceAttributes,
+            dimensions: { length: '', width: '', height: '' },
+          }),
           stock_quantity: null,
           weight: '',
-          dimensions: { length: '', width: '', height: '' },
           date_created: '',
           date_modified: '',
         } as unknown as WooCommerceProduct,
