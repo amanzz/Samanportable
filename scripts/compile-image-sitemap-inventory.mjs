@@ -82,10 +82,38 @@ for (const row of rows) {
 
 const brandMarker = /\b(?:icon|logo|favicon)\b/i;
 const uniqueCount = items => new Set(items.map(item => item.imageUrl)).size;
+const pageIndexabilityResolution = {
+  excludedNoindexPages: [
+    {
+      pageUrl: 'https://www.samanportable.com/blog/search',
+      robotsMeta: 'noindex, follow',
+      xRobotsTag: null,
+      canonical: 'https://www.samanportable.com/blog/search',
+    },
+    {
+      pageUrl: 'https://www.samanportable.com/my-orders',
+      robotsMeta: 'noindex, nofollow',
+      xRobotsTag: null,
+      canonical: null,
+    },
+  ],
+  retainedPageSitemapGaps: [
+    {
+      pageUrl: 'https://www.samanportable.com/product-category/container-offices',
+      robotsMeta: 'index, follow',
+      xRobotsTag: null,
+      canonical: 'https://www.samanportable.com/product-category/container-offices',
+    },
+  ],
+};
+const noindexPageUrls = new Set(
+  pageIndexabilityResolution.excludedNoindexPages.map(page => page.pageUrl),
+);
 const exclusions = {
   decorativeAltEmpty: [],
   iconsLogosUnder5KB: [],
   cleanPathNot200: [],
+  pageNoindex: [],
 };
 const included = [];
 
@@ -101,7 +129,9 @@ for (const pair of pairs.values()) {
     return Number.isFinite(size) && size < 5 && brandMarker.test(labels);
   });
 
-  if (decorative) {
+  if (noindexPageUrls.has(pair.pageUrl)) {
+    exclusions.pageNoindex.push(pair);
+  } else if (decorative) {
     exclusions.decorativeAltEmpty.push(pair);
   } else if (iconOrLogoUnder5KB) {
     exclusions.iconsLogosUnder5KB.push(pair);
@@ -143,6 +173,7 @@ const inventory = {
   includedRenderedAssociationCount: renderedPairCount,
   includedSchemaAssociationCount: schemaOnlyPairCount,
   includedUniqueImageCount: uniqueCount(included),
+  pageIndexabilityResolution,
   exclusions: Object.fromEntries(
     Object.entries(exclusions).map(([reason, items]) => [
       reason,

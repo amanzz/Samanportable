@@ -5,11 +5,35 @@
   "pageSitemapCount": 459,
   "auditedOccurrenceCount": 8073,
   "auditedPageImageAssociationCount": 4872,
-  "includedPageCount": 462,
-  "includedImageAssociationCount": 4868,
-  "includedRenderedAssociationCount": 4725,
+  "includedPageCount": 460,
+  "includedImageAssociationCount": 4866,
+  "includedRenderedAssociationCount": 4723,
   "includedSchemaAssociationCount": 143,
   "includedUniqueImageCount": 2923,
+  "pageIndexabilityResolution": {
+    "excludedNoindexPages": [
+      {
+        "pageUrl": "https://www.samanportable.com/blog/search",
+        "robotsMeta": "noindex, follow",
+        "xRobotsTag": null,
+        "canonical": "https://www.samanportable.com/blog/search"
+      },
+      {
+        "pageUrl": "https://www.samanportable.com/my-orders",
+        "robotsMeta": "noindex, nofollow",
+        "xRobotsTag": null,
+        "canonical": null
+      }
+    ],
+    "retainedPageSitemapGaps": [
+      {
+        "pageUrl": "https://www.samanportable.com/product-category/container-offices",
+        "robotsMeta": "index, follow",
+        "xRobotsTag": null,
+        "canonical": "https://www.samanportable.com/product-category/container-offices"
+      }
+    ]
+  },
   "exclusions": {
     "decorativeAltEmpty": {
       "associationCount": 0,
@@ -41,6 +65,20 @@
         {
           "pageUrl": "https://www.samanportable.com/in-the-long-run-are-prefabricated-industrial-buildings-more-cost-effective",
           "imageUrl": "https://www.samanportable.com/default-blog-image.jpg"
+        }
+      ]
+    },
+    "pageNoindex": {
+      "associationCount": 2,
+      "uniqueImageCount": 1,
+      "entries": [
+        {
+          "pageUrl": "https://www.samanportable.com/blog/search",
+          "imageUrl": "https://www.samanportable.com/saman-logo.svg"
+        },
+        {
+          "pageUrl": "https://www.samanportable.com/my-orders",
+          "imageUrl": "https://www.samanportable.com/saman-logo.svg"
         }
       ]
     }
@@ -246,12 +284,6 @@
         "https://www.samanportable.com/images/blog/container-office-kanpur-panki-industrial-site-office.webp",
         "https://www.samanportable.com/images/blog/container-office-ludhiana-focal-point-industrial-site-office.webp",
         "https://www.samanportable.com/images/blog/container-office-mundra-port-documentation-cabin.webp",
-        "https://www.samanportable.com/saman-logo.svg"
-      ]
-    },
-    {
-      "pageUrl": "https://www.samanportable.com/blog/search",
-      "imageUrls": [
         "https://www.samanportable.com/saman-logo.svg"
       ]
     },
@@ -1758,12 +1790,6 @@
       "imageUrls": [
         "https://blog.samanportable.com/wp-content/uploads/2025/07/mobile-office-solutions-1024x585.jpeg",
         "https://blog.samanportable.com/wp-content/uploads/2025/07/modern-portable-office-solutions.jpeg",
-        "https://www.samanportable.com/saman-logo.svg"
-      ]
-    },
-    {
-      "pageUrl": "https://www.samanportable.com/my-orders",
-      "imageUrls": [
         "https://www.samanportable.com/saman-logo.svg"
       ]
     },
