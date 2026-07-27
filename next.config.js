@@ -1792,6 +1792,7 @@ const nextConfig = {
       { source: '/office-porta-cabin-for-sale', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', permanent: true },
       { source: '/porta-cabin-supplier-delhi-custom-solutions', destination: 'https://www.samanportable.com/best-porta-cabin-manufacturer-ncr', permanent: true },
       { source: '/porta-cabin-manufacturer', destination: 'https://www.samanportable.com/best-porta-cabin-manufacturer-ncr', permanent: true },
+      { source: '/used-portacabin-for-sale-porta-cabin-office-second-hand-portacabins', destination: 'https://www.samanportable.com/2nd-hand-porta-cabins', statusCode: 301 },
       { source: '/used-portacabin-for-sale-porta-cabin-office-second-hand-portacabin', destination: 'https://www.samanportable.com/2nd-hand-porta-cabins', permanent: true },
       { source: '/porta-cabins-under-3-lakhs', destination: 'https://www.samanportable.com/cheap-porta-cabins-for-sale', permanent: true },
       { source: '/porta-cabin-price-list', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', permanent: true },
