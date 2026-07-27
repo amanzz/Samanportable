@@ -224,6 +224,7 @@
     }
   },
   "luxury-porta-cabin": {
+    "h2": "Explore every Luxury Porta Cabin size and its uses",
     "10x10": {
       "h2": "10×10 ft Luxury Porta Cabin (100 sq ft) — Premium Reception Cabin",
       "intro": "A hundred square feet finished like a lobby: PUF-insulated, premium laminates, proper lighting. Developers place it at project gates as a reception where the first client impression happens before the site tour.",
@@ -1005,6 +1006,7 @@
     }
   },
   "low-cost-porta-cabin": {
+    "h2": "Explore every Low Cost Porta Cabin size & its applications",
     "10x10": {
       "h2": "10×10 ft Low Cost Porta Cabin (100 sq ft) — Entry-Price Guard Post & First Office",
       "intro": "The entry price into a finished SAMAN cabin: ₹1,32,000 ex-GST, insulated and wired — the budget guard post or first office that cuts cost, never the frame.",

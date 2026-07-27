@@ -1,19 +1,8 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
-const PLATFORM =
-  'Newly fabricated at our own works from MS sheet, MS pipe framing and aluminium sections — not a converted shipping container.';
-
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
-const HUB_LINKS = [
-  ['low-cost-porta-cabin', 'low cost porta cabin'],
-  ['steel-porta-cabin', 'steel porta cabin built for repeat relocation'],
-  ['porta-cabin-with-toilet', 'porta cabin with toilet'],
-  ['porta-cabin-shop', 'porta cabin shop'],
-  ['mini-porta-cabin', 'mini porta cabin for compact sites'],
-  ['ms-porta-cabin', 'MS porta cabin'],
-] as const;
 
 export const C01_PRODUCT_SLUGS = [
   'porta-cabins',
@@ -35,7 +24,7 @@ const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline
 
 const COPY: Record<string, { heading: string; body: ReactNode; comparison: ReactNode }> = {
   'porta-cabins': {
-    heading: 'Why choose a SAMAN porta cabin',
+    heading: 'The SAMAN porta cabin range at a glance',
     body: (
       <>
         Every porta cabin here is newly fabricated at our own works from MS sheet, MS pipe framing and aluminium sections — not a converted shipping container. The reference build carries a 1.2 mm corrugated exterior, a 1.4 mm roof, 8 mm pre-laminated interior lining and an 18 mm Bison floor panel, in nine standard sizes. The range then splits by grade, size band and fit-out; the eight pages below cover each configuration in full.
@@ -168,22 +157,13 @@ export default function C01RightToExist({ productSlug }: { productSlug: string }
       >
         {copy.heading}
       </h2>
-      <p className="mb-3 text-sm font-semibold leading-relaxed text-[var(--ds-color-forest)]">{PLATFORM}</p>
       <p className={bodyClass}>{copy.body}</p>
-      <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">{copy.comparison}</p>
-      {productSlug === 'porta-cabins' && (
-        <nav className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4" aria-label="Porta cabin configurations">
-          {HUB_LINKS.map(([slug, anchor]) => (
-            <Link
-              key={slug}
-              href={href(slug)}
-              className="rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] underline underline-offset-2"
-            >
-              {anchor}
-            </Link>
-          ))}
-        </nav>
-      )}
+      <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">
+        {copy.comparison}
+        {productSlug === 'porta-cabins' && (
+          <> Beyond those, the <Link className={linkClass} href={href('luxury-porta-cabin')}>Luxury Porta Cabin</Link> covers client-facing rooms, the <Link className={linkClass} href={href('mini-porta-cabin')}>Mini Porta Cabin</Link> the four compact sizes, the <Link className={linkClass} href={href('steel-porta-cabin')}>Steel Porta Cabin</Link> units lifted between sites, the <Link className={linkClass} href={href('porta-cabin-shop')}>Porta Cabin Shop</Link> retail counters, and the <Link className={linkClass} href={href('porta-cabin-with-toilet')}>Porta Cabin with Toilet</Link> cabins that need their own facilities.</>
+        )}
+      </p>
     </section>
   );
 }

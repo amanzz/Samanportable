@@ -221,10 +221,29 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .catch(() => null)
       : null;
 
+    // Event B owns all commercial size/price data for this bespoke route.
+    // The variant branch does not render the legacy short description or attributes,
+    // so omit them with the obsolete commercial fields instead of hydrating conflicts.
+    const productForPageProps = { ...product } as Partial<WooCommerceProduct> & Record<string, unknown>;
+    if (variantData) {
+      for (const field of [
+        'price',
+        'regular_price',
+        'sale_price',
+        'priceDisplay',
+        'priceSubline',
+        'short_description',
+        'attributes',
+        'dimensions',
+      ] as const) {
+        delete productForPageProps[field];
+      }
+    }
+
     return {
       props: {
         product: {
-          ...product,
+          ...productForPageProps,
           description: productDescription,
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
@@ -239,10 +258,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
               slug: (product as any).category_slug || 'uncategorized'
             }
           ],
-          attributes: [],
+          ...(variantData ? {} : {
+            attributes: [],
+            dimensions: { length: '', width: '', height: '' },
+          }),
           stock_quantity: null,
           weight: '',
-          dimensions: { length: '', width: '', height: '' },
           date_created: '',
           date_modified: '',
         } as unknown as WooCommerceProduct,
