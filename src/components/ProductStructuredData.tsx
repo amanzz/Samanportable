@@ -270,14 +270,12 @@ export default function ProductStructuredData({ product, category, reviews, brea
     '@type': 'VideoObject',
     name: variantVideo.title,
     description: variantVideo.schemaDescription,
-    thumbnailUrl: [`${baseUrl}${variantVideo.posterSrc}`],
+    thumbnailUrl: [variantVideo.schemaThumbnailUrl],
     uploadDate: variantVideo.uploadDate,
     duration: variantVideo.duration,
     embedUrl: variantVideo.embedUrl,
     publisher: {
-      '@type': 'Organization',
-      name: 'SAMAN Portable',
-      url: 'https://www.samanportable.com',
+      '@id': 'https://www.samanportable.com/#organization',
     },
   } : null;
 

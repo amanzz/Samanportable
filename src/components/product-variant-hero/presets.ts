@@ -32,8 +32,12 @@ export interface VariantProductVideo {
   /** iframe title + VideoObject name. */
   title: string;
   schemaDescription: string;
+  /** YouTube-owned thumbnail URL extracted from oEmbed; schema only. */
+  schemaThumbnailUrl: string;
   uploadDate: string;
   duration: string;
+  transcriptHeading: string;
+  transcript: string;
 }
 
 export interface VariantProductPreset {
@@ -79,15 +83,38 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     explorerImageTemplate: '/images/products/porta-cabins/{sizeSlug}/porta-cabin-{sizeSlug}-elevated-view.webp',
     applicationsDataset: 'porta-cabins',
     video: {
-      embedSrc: 'https://www.youtube.com/embed/SDU26yNPBlA?autoplay=1',
-      embedUrl: 'https://www.youtube.com/embed/SDU26yNPBlA',
+      embedSrc: 'https://www.youtube-nocookie.com/embed/SJml1DgMY3I?autoplay=1',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/SJml1DgMY3I',
       posterSrc: '/images/porta-cabin-product-video-poster.webp',
       posterAlt: 'Porta cabin product video — 9 standard sizes overview (play)',
-      title: 'Porta Cabin — 9 Standard Sizes, Interiors & Prices | SAMAN Portable',
+      title: 'Porta Cabin Office by SAMAN | Prefab Cabins, Interiors & Custom Sizes — Made in India',
       schemaDescription:
-        'Factory-built porta cabins in 9 standard sizes (10x10 ft to 40x12 ft) — exteriors, finished interiors and specifications. Product overview by SAMAN Portable.',
-      uploadDate: '2026-07-18',
-      duration: 'PT1M25S',
+        'A walkthrough of every SAMAN porta cabin size from 10 × 10 ft to 40 × 12 ft, showing what each footprint holds, how the cabin is built, and where each size is used on real project sites.',
+      schemaThumbnailUrl: 'https://i.ytimg.com/vi/SJml1DgMY3I/hqdefault.jpg',
+      uploadDate: '2026-07-21T22:13:18-07:00',
+      duration: 'PT1M21S',
+      transcriptHeading: 'Transcript: porta cabin sizes',
+      transcript:
+        'SAMAN Portable manufactures porta cabins at our own works in India. Each unit is newly fabricated from MS sheet, MS pipe framing and aluminium sections — not a converted shipping container — and is offered in nine standard sizes. The 10 × 10 ft cabin gives 100 sq ft for a single desk or duty post. The 20 × 8 ft gives 160 sq ft on a slim body for tight boundaries. The 20 × 10 ft, at 200 sq ft, is our most-ordered size. The 20 × 12 ft adds 240 sq ft with room for a records or meeting corner. The 20 × 20 ft gives a 400 sq ft square floor suited to briefings. The 30 × 10 ft holds two rooms across 300 sq ft on a single trailer. The 40 × 8 ft runs to 320 sq ft for site rows. The 40 × 10 ft gives 400 sq ft as a full site headquarters. The 40 × 12 ft, at 480 sq ft, is the largest cabin we build in one piece. Every unit uses a welded MS frame with insulated walls and roof, and arrives with wiring, lighting and AC provision fitted. Grades run from value to premium. Cabins are supplied as site offices, security posts, shops, units with an attached toilet, and heavy industrial builds. All units carry a 5-year structural warranty and a 1-year finishing warranty, extendable to 2 years on request. Delivery is 7 to 21 working days from our Bengaluru or Greater Noida facility.',
+    },
+  },
+  // C-02 PORTABLE CABIN hub (/product/portable-cabin). The page data opts into
+  // this one page-owned video; no subpage inherits it.
+  'portable-cabin': {
+    video: {
+      embedSrc: 'https://www.youtube-nocookie.com/embed/_0pSsmEN1eo?autoplay=1',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/_0pSsmEN1eo',
+      posterSrc: '/images/portable-cabin-product-video-poster.webp',
+      posterAlt: 'Portable Cabin Manufacturer in India | Movable Office Cabins | SAMAN Portable',
+      title: 'Portable Cabin Manufacturer in India | Movable Office Cabins | SAMAN Portable',
+      schemaDescription:
+        'A walkthrough of every SAMAN portable cabin size, showing how each unit is craned, relocated and re-sited, and which footprint suits a site that moves as the work moves.',
+      schemaThumbnailUrl: 'https://i.ytimg.com/vi/_0pSsmEN1eo/hqdefault.jpg',
+      uploadDate: '2026-07-21T22:55:14-07:00',
+      duration: 'PT1M39S',
+      transcriptHeading: 'Transcript: portable cabin sizes',
+      transcript:
+        'SAMAN Portable builds portable cabins you can move when the work moves. Each unit is factory-built, craned onto your prepared base, and relocated when the site changes. The 10 × 10 ft cabin covers 100 sq ft for one person and lifts by pickup. The 20 × 8 ft gives 160 sq ft and is narrow enough to travel without a permit. The 20 × 10 ft offers 200 sq ft for a small team, ready to relocate. The 20 × 12 ft adds 240 sq ft with a second zone that survives the lift. The 20 × 20 ft gives 400 sq ft as two modules that separate and rejoin at the next site. The 30 × 10 ft covers 300 sq ft, partitioned and engineered to be lifted. The 40 × 8 ft gives 320 sq ft in rows that re-form at the next location. The 40 × 10 ft offers 400 sq ft as a headquarters that outlives a single project. The 40 × 12 ft, at 480 sq ft, is our biggest single-lift unit. Lifting lugs are designed against the completed unit weight, and a lifting drawing ships with every cabin — handle the unit only by that drawing. Cabins serve construction sites, infrastructure fronts, rental fleets and temporary offices that move between locations. All units carry a 5-year structural warranty and a 1-year finishing warranty, extendable to 2 years on request, and are installed by our own crew from Bengaluru or Greater Noida.',
     },
   },
   // C-02 PORTABLE SHOP CABIN subpage (/product/portable-cabin/portable-shop-cabin).
