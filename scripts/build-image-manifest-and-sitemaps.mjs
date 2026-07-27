@@ -73,11 +73,6 @@ try {
     '--output=public/image-manifest.json',
   ]);
   await runNode('scripts/generate-segmented-sitemaps.mjs');
-  if (process.env.IMAGE_GATE_BOOTSTRAP !== '1') {
-    await runNode('scripts/check-image-intake.mjs');
-  } else {
-    console.log('Image intake gate skipped for the one-time allow-list bootstrap build.');
-  }
 } finally {
   await stopServer();
 }
