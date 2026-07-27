@@ -182,6 +182,18 @@ const APPLICATIONS_SECTION_ID = 'porta-size-applications';
 // T25 — OPT-IN: the video exists only for a product whose data file sets
 // `hasProductVideo: true` AND supplies video metadata (resolveVariantVideo). Every
 // other product gets no facade thumb and no VideoObject JSON-LD.
+const VIDEO_PRECONNECT_ORIGIN = 'https://www.youtube-nocookie.com';
+
+const preconnectVideoOrigin = () => {
+  if (typeof document === 'undefined') return;
+  if (document.head.querySelector(`link[rel="preconnect"][href="${VIDEO_PRECONNECT_ORIGIN}"]`)) return;
+
+  const link = document.createElement('link');
+  link.rel = 'preconnect';
+  link.href = VIDEO_PRECONNECT_ORIGIN;
+  link.crossOrigin = 'anonymous';
+  document.head.appendChild(link);
+};
 
 // ₹/sq ft display values — OFFICIAL owner-supplied figures. T25: derived per variant
 // as round(priceExGst / areaSqft) in en-IN grouping, which reproduces the flagship's
@@ -315,8 +327,8 @@ export function PortaCabinVariantHero({
         <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
           {showVideo && video ? (
             // Injected ONLY after the thumb click. autoplay=1 because the click
-            // that mounted it IS the play gesture. youtube-nocookie is not used:
-            // the packet fixes the embed origin as youtube.com.
+            // that mounted it IS the play gesture. The privacy-enhanced
+            // youtube-nocookie host is fixed in the approved video config.
             <iframe
               src={video.embedSrc}
               title={video.title}
@@ -413,13 +425,16 @@ export function PortaCabinVariantHero({
                 'aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden border-2 transition-all duration-200 relative',
                 showVideo ? 'border-primary shadow-lg ring-2 ring-primary/20' : 'border-transparent hover:border-primary/50'
               )}
-              onClick={() => setShowVideo(true)}
+              onPointerEnter={preconnectVideoOrigin}
+              onFocus={preconnectVideoOrigin}
+              onClick={() => {
+                preconnectVideoOrigin();
+                setShowVideo(true);
+              }}
             >
               {/* Sibling thumbs are eager because T30 MEASURED this row inside the
-                  initial viewport at 360/390/412/768 and on desktop; lazy on an
-                  in-viewport image costs a second discovery round-trip and delays
-                  first paint. The poster follows the row it lives in. It is a 63 KB
-                  WebP served into a ~44-52px box, i.e. the smallest srcset candidate. */}
+                  initial viewport at 360/390/412/768 and on desktop. The approved
+                  video rule deliberately keeps this non-LCP facade poster lazy. */}
               <Image
                 src={video.posterSrc}
                 unoptimized={shouldBypassOptimizer(video.posterSrc)}
@@ -427,7 +442,7 @@ export function PortaCabinVariantHero({
                 width={150}
                 height={150}
                 className="w-full h-full object-cover"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
                 sizes="(max-width: 1023px) 15vw, 70px"
               />
@@ -649,8 +664,8 @@ export function PortaCabinVariantHero({
           breakpoint; only the mobile formatting context changes. */}
       <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}`
         + `.pc-hero-grid{display:block;}`
-        + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rte{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
-        + `@media(min-width:1024px){.pc-hero-grid{display:grid;grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "rte rte rte" "explorer explorer explorer";}.pc-hero-grid>.pc-rail{grid-area:rail;margin-top:0;}.pc-hero-grid>.pc-gallery{grid-area:gallery;}.pc-hero-grid>.pc-buybox{grid-area:buybox;margin-top:0;}.pc-hero-grid>.pc-rte{grid-area:rte;margin-top:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;margin-top:0;}}` } } />
+        + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-transcript{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rte{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
+        + `@media(min-width:1024px){.pc-hero-grid{display:grid;grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "transcript transcript transcript" "rte rte rte" "explorer explorer explorer";}.pc-hero-grid>.pc-rail{grid-area:rail;margin-top:0;}.pc-hero-grid>.pc-gallery{grid-area:gallery;}.pc-hero-grid>.pc-buybox{grid-area:buybox;margin-top:0;}.pc-hero-grid>.pc-transcript{grid-area:transcript;margin-top:0;}.pc-hero-grid>.pc-rte{grid-area:rte;margin-top:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;margin-top:0;}}` } } />
 
       {/* SINGLE responsive tree (V5 fix). Every piece — rail, gallery, buy box,
           explorer — is mounted EXACTLY ONCE; grid-template-areas (see <style>)
@@ -669,6 +684,20 @@ export function PortaCabinVariantHero({
         <div className="pc-buybox lg:relative lg:min-h-0">
           <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{buyBoxColumn('h1')}</div>
         </div>
+
+        {video && (
+          <details className="pc-transcript rounded-lg border border-slate-200 bg-white/80 px-3 py-2 text-sm text-slate-700">
+            <summary className="cursor-pointer font-semibold text-slate-900">
+              Video transcript
+            </summary>
+            <div className="pt-3">
+              <h3 className="text-base font-semibold text-slate-900">
+                {video.transcriptHeading}
+              </h3>
+              <p className="mt-2 leading-6">{video.transcript}</p>
+            </div>
+          </details>
+        )}
 
         {isC01Product && (
           <div className="pc-rte">
