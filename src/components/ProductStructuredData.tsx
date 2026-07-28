@@ -119,7 +119,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
       merchantReturnLink: 'https://www.samanportable.com/refund-and-return-policy'
     },
     // Mirrors /delivery-policy: default flat â‚¹3,000 shipping shown in Merchant
-    // Center (final cost quoted), standard estimate 3â€“5 business days.
+    // Center (final cost quoted), standard estimate 3–5 business days.
     shippingDetails: {
       '@type': 'OfferShippingDetails',
       shippingRate: {
