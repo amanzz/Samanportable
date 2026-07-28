@@ -1,4 +1,4 @@
-﻿// Auto-generated category schema mapping
+// Auto-generated category schema mapping
 // Each key is the product-category slug, value is the JSON-LD @graph schema
 
 export const categorySchemas: Record<string, any> = {
@@ -523,7 +523,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "How soon can a container office be delivered across India?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Units are fabricated to order and typically dispatched within 7â€“21 working days, then delivered Pan India. Lead time depends on the configuration and your site location."
+              "text": "Units are fabricated to order and typically dispatched within 7–21 working days, then delivered Pan India. Lead time depends on the configuration and your site location."
             }
           }
         ]
@@ -2187,7 +2187,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "FRP or mild-steel security cabin â€” which should I choose?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Choose FRP where the cabin moves often or sits in coastal or damp air â€” it is light (around 150â€“175 kg) and will not rust. Choose mild steel for a fixed industrial perimeter that needs a tougher, knock-resistant shell. Both are insulated and weatherproof."
+              "text": "Choose FRP where the cabin moves often or sits in coastal or damp air â€” it is light (around 150–175 kg) and will not rust. Choose mild steel for a fixed industrial perimeter that needs a tougher, knock-resistant shell. Both are insulated and weatherproof."
             }
           },
           {
