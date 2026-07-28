@@ -61,7 +61,7 @@ const candidates = remaining.filter(pathname => locationPattern.test(pathname));
 const locations = candidates.slice(0, 213);
 const editorial = remaining.filter(pathname => !locations.includes(pathname));
 const segments = { products, locations, projects, editorial };
-const expectedSegments = { products: 168, locations: 213, projects: 1, editorial: 78 };
+const expectedSegments = { products: 164, locations: 213, projects: 1, editorial: 78 };
 
 const imageSegmentByPath = new Map(
   Object.entries(segments).flatMap(([name, paths]) =>
@@ -74,8 +74,8 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
     throw new Error(`Page sitemap ${name} changed from ${expected} to ${segments[name].length}`);
   }
 }
-if (all.length !== 460) {
-  throw new Error(`Page sitemap total changed from 460 to ${all.length}`);
+if (all.length !== 456) {
+  throw new Error(`Page sitemap total changed from 456 to ${all.length}`);
 }
 
 const pageMap = new Map();

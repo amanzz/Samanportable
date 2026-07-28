@@ -804,7 +804,7 @@ const nextConfig = {
       // excluded (kept 404 / 410-later). ───────────────────────────────────
       {
         source: '/office-cabins',
-        destination: 'https://www.samanportable.com/product-category/portable-office',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       {
@@ -1264,7 +1264,7 @@ const nextConfig = {
       },
       {
         source: '/product/prefabricated-portable-office-cabin',
-        destination: 'https://www.samanportable.com/product/portable-office/prefabricated-portable-office-cabin',
+        destination: 'https://www.samanportable.com/product/portable-office/prefabricated-office-cabins',
         permanent: true,
       },
       {
@@ -1419,7 +1419,7 @@ const nextConfig = {
       },
       {
         source: '/project/prefabricated-office',
-        destination: 'https://www.samanportable.com/product-category/portable-office',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       {
@@ -1655,7 +1655,7 @@ const nextConfig = {
       // CSV /prefab-office-spaces). Office-intent -> portable-office chosen.
       {
         source: '/prefabricated-office-buildings',
-        destination: 'https://www.samanportable.com/product-category/portable-office',
+        destination: 'https://www.samanportable.com/product/portable-office',
         permanent: true,
       },
       // (B55-2) Small cabin designs: 0 clicks / 18 impr, off-brand residential
@@ -1802,25 +1802,23 @@ const nextConfig = {
       { source: '/20ft-porta-cabin', destination: 'https://www.samanportable.com/porta-cabin-sizes-and-specifications-in-india', permanent: true },
       { source: '/porta-cabins-in-mg-road', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bangalore', permanent: true },
 
-      // ─── C03 / W3-A — portable-office hub consolidation (Fable 5 ruling, 25 Jul 2026)
-      // Six single-hop 301s retiring duplicate office subpages into HTTP-200 keepers, shipped
-      // in the SAME event as the hub rebuild. Five fold into the hub; ms-portable-office-cabin
-      // folds into the MS porta-cabin keeper (the office/cabin owner) per the P1 verdict R-3.
-      // All six sources drop from the sitemap AND both feeds automatically via the
-      // getRedirectSources filter. Five legacy sources that used to point INTO these slugs were
-      // retargeted above, so no chain exceeds one hop. Placed BEFORE ...csvRedirects so
-      // first-match wins. statusCode:301 matches the container-offices and C01 waves.
-      // PROTECTED (unchanged, stay live): the hub itself, readymade-office-cabin,
-      // small-office-cabin, modern-office-cabin, portable-office-container,
-      // prefabricated-office-cabins, prefab-portable-office,
-      // prefabricated-portable-office-cabin, prefab-mobile-office (W3-B later), and
-      // /product/porta-cabins/ms-porta-cabin (redirect target only, no content edits).
+      // ─── C03 / Event A — portable-office retirement (Fable 5 ruling, 28 Jul 2026)
+      // Event A completes this block at eleven literal, single-hop 301s into final
+      // HTTP-200 keepers. Redirect sources drop from sitemaps and feeds through the
+      // shared getRedirectSources filter. All predecessor rules point directly at
+      // the final keeper, so no chain exceeds one hop. The six surviving Portable
+      // Office pages and both cross-cluster targets remain unchanged.
       { source: '/product/portable-office/portable-office-cabin', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
       { source: '/product/portable-office/buy-portable-office-cabin', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
       { source: '/product/portable-office/modular-portable-office-cabin', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
       { source: '/product/portable-office/modular-portable-office', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
       { source: '/product/portable-office/modular-office-cabin', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
+      { source: '/product/portable-office/prefab-portable-office', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
+      { source: '/product/portable-office/prefab-mobile-office', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
+      { source: '/product-category/portable-office', destination: 'https://www.samanportable.com/product/portable-office', statusCode: 301 },
+      { source: '/product/portable-office/prefabricated-portable-office-cabin', destination: 'https://www.samanportable.com/product/portable-office/prefabricated-office-cabins', statusCode: 301 },
       { source: '/product/portable-office/ms-portable-office-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
+      { source: '/product/prefabricated-houses/prefabricated-site-office', destination: 'https://www.samanportable.com/product/prefabricated-houses/prefab-site-office', statusCode: 301 },
 
       ...csvRedirects,
     ];
