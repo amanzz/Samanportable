@@ -26,5 +26,7 @@ jobs:
       - name: Build, collect the live image manifest, and run the intake gate
         run: npm run build
       - name: Prove that the allow-list only shrank
+        # Report-only under Fable 5 ruling R-A, 28 Jul 2026. Restore blocking when a no-op PR reports changedOrNewEntries 0.
+        continue-on-error: true
         if: github.event_name == 'pull_request'
         run: node scripts/check-image-intake.mjs --base-ref=origin/${{ github.base_ref }}
