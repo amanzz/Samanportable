@@ -10,7 +10,6 @@ import pebConstructionsCategory from '@/data/wp-export/categories/peb-constructi
 import pirPanelCategory from '@/data/wp-export/categories/pir-panel.json';
 import portaCabinsCategory from '@/data/wp-export/categories/porta-cabins.json';
 import portableCabinCategory from '@/data/wp-export/categories/portable-cabin.json';
-import portableOfficeCategory from '@/data/wp-export/categories/portable-office.json';
 import portableToiletCategory from '@/data/wp-export/categories/portable-toilet.json';
 import preEngineeredBuildingsCategory from '@/data/wp-export/categories/pre-engineered-buildings.json';
 import prefabBuildingsCategory from '@/data/wp-export/categories/prefab-buildings.json';
@@ -71,7 +70,6 @@ const ALL_LOCAL_INVENTORY_CATEGORIES = [
   pirPanelCategory,
   portaCabinsCategory,
   portableCabinCategory,
-  portableOfficeCategory,
   portableToiletCategory,
   preEngineeredBuildingsCategory,
   prefabBuildingsCategory,

@@ -26,6 +26,7 @@ import {
 } from '@/config/api';
 import { decodeHtmlEntities } from '@/lib/utils';
 import { PORTA_CABIN_REDIRECTED_SLUGS } from '@/lib/portaCabinClusterRail';
+import { PORTABLE_OFFICE_REDIRECTED_SLUGS } from '@/lib/portableOfficeCluster';
 
 const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
 
@@ -35,7 +36,11 @@ const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
 // sources" rule at the listing chokepoint. The Merchant feed excludes them separately via
 // getRedirectSourceSet() so its catalogue path stays governed by the redirect map, not this
 // hand-list. Retired product PAGES still resolve (they 301 at the route level before render).
-const RETIRED_LISTING_SLUGS = new Set<string>(PORTA_CABIN_REDIRECTED_SLUGS);
+const RETIRED_LISTING_SLUGS = new Set<string>([
+  ...PORTA_CABIN_REDIRECTED_SLUGS,
+  ...PORTABLE_OFFICE_REDIRECTED_SLUGS,
+  'prefabricated-site-office',
+]);
 
 // Slugs are lowercase-hyphenated; reject anything else so a crafted URL can
 // never read outside the export folders.
