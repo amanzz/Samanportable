@@ -785,7 +785,7 @@ export async function fetchRankMathSEO(url: string): Promise<RankMathSEOData | n
 }
 
 export function getAllProductsForFeed(): WooCommerceProduct[] {
-  return getPublishedProducts().map(toFeedProduct);
+  return getListingProducts().map(toFeedProduct);
 }
 
 // Porta-cabin variant group data (T24.1) — single source of truth for the nine
