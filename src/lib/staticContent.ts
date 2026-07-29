@@ -519,6 +519,9 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
     regular_price: p.regular_price,
     sale_price: p.sale_price,
     on_sale: p.on_sale,
+    ...(typeof p.valueAddedTaxIncluded === 'boolean'
+      ? { valueAddedTaxIncluded: p.valueAddedTaxIncluded }
+      : {}),
     featured_image: p.images?.[0]?.src || '/placeholder.svg',
     category: categoryName || p.categories?.[0]?.name || 'Uncategorized',
     category_slug: categorySlug || p.categories?.[0]?.slug || 'uncategorized',

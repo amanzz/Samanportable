@@ -37,6 +37,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
   const imageUrl = product.images?.[0]?.src || `${baseUrl}/placeholder.svg`;
   const price = parseFloat(product.price) || parseFloat(product.regular_price) || 0;
   const salePrice = product.on_sale && product.sale_price ? parseFloat(product.sale_price) : null;
+  const valueAddedTaxIncluded = (product as any).valueAddedTaxIncluded;
   
   // Product description from REAL WooCommerce data: prefer short_description, fall back to
   // the full description, and only use a generic line if BOTH backend fields are empty.
@@ -100,6 +101,14 @@ export default function ProductStructuredData({ product, category, reviews, brea
     url: productUrl,
     priceCurrency: 'INR',
     price: salePrice || price,
+    ...(typeof valueAddedTaxIncluded === 'boolean' ? {
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        price: salePrice || price,
+        priceCurrency: 'INR',
+        valueAddedTaxIncluded,
+      },
+    } : {}),
     priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // Valid for 1 year
     availability: getSchemaAvailability(product.stock_status),
     itemCondition: 'https://schema.org/NewCondition',
