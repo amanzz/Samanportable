@@ -35,7 +35,7 @@ import portableOfficeApplications from '@/data/products/portable-office-applicat
 import portableCabinWithToiletApplications from '@/data/products/portable-cabin-with-toilet-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
-import C01RightToExist, { isC01ProductSlug } from './C01RightToExist';
+import RightToExist, { hasRightToExistEntry } from './RightToExist';
 
 interface ApplicationPanel {
   sizeSlug: string;
@@ -251,7 +251,7 @@ export function PortaCabinVariantHero({
   const categoryLinkHref = data.categoryHref || preset.categoryHref;
   const productSku = data.productSku || preset.productSku;
   const specPdfHref = data.specPdfHref || preset.specPdfHref;
-  const isC01Product = isC01ProductSlug(data.productSlug);
+  const hasRightToExist = hasRightToExistEntry(data.productSlug);
   // Trust-strip warranty segment: data → preset → the deployed default. Absent on every
   // product except container-offices → byte-identical trust strip everywhere else.
   const trustWarranty = data.trustWarranty || preset.trustWarranty || '5-yr structural warranty';
@@ -470,11 +470,11 @@ export function PortaCabinVariantHero({
         <a
           href={specPdfHref}
           download
-          onClick={isC01Product ? () => pushDataLayer('file_download', { product_slug: data.productSlug }) : undefined}
+          onClick={hasRightToExist ? () => pushDataLayer('file_download', { product_slug: data.productSlug }) : undefined}
           className="flex w-full items-center justify-center gap-2 rounded-md border border-[var(--ds-color-leaf)] bg-white px-4 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:bg-[var(--ds-color-mist)]"
         >
           <Download className="h-4 w-4" aria-hidden="true" />
-          {isC01Product ? 'Download Specification PDF' : 'Download specifications'}
+          {hasRightToExist ? 'Download Specification PDF' : 'Download specifications'}
         </a>
         )}
       </div>
@@ -699,9 +699,9 @@ export function PortaCabinVariantHero({
           </details>
         )}
 
-        {isC01Product && (
+        {hasRightToExist && (
           <div className="pc-rte">
-            <C01RightToExist productSlug={data.productSlug} />
+            <RightToExist productSlug={data.productSlug} />
           </div>
         )}
 

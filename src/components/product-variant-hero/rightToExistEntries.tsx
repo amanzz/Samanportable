@@ -4,25 +4,17 @@ import type { ReactNode } from 'react';
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
 
-export const C01_PRODUCT_SLUGS = [
-  'porta-cabins',
-  'low-cost-porta-cabin',
-  'luxury-porta-cabin',
-  'mini-porta-cabin',
-  'ms-porta-cabin',
-  'steel-porta-cabin',
-  'porta-cabin-shop',
-  'porta-cabin-with-toilet',
-  'portacabin-office',
-] as const;
-
-export const isC01ProductSlug = (slug: string): boolean =>
-  C01_PRODUCT_SLUGS.includes(slug as (typeof C01_PRODUCT_SLUGS)[number]);
-
 const bodyClass = 'text-sm leading-relaxed text-slate-700';
 const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline-offset-2';
 
-const COPY: Record<string, { heading: string; body: ReactNode; comparison: ReactNode }> = {
+export interface RightToExistEntry {
+  heading: string;
+  body: ReactNode;
+  comparison: ReactNode;
+  appendix?: ReactNode;
+}
+
+const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
   'porta-cabins': {
     heading: 'The SAMAN porta cabin range at a glance',
     body: (
@@ -34,6 +26,9 @@ const COPY: Record<string, { heading: string; body: ReactNode; comparison: React
       <>
         Not sure which grade fits? Compare the <Link className={linkClass} href={href('low-cost-porta-cabin')}>value line</Link>, the <Link className={linkClass} href={href('portacabin-office')}>upgraded office build</Link> and the <Link className={linkClass} href={href('ms-porta-cabin')}>heavy industrial build</Link>.
       </>
+    ),
+    appendix: (
+      <> Beyond those, the <Link className={linkClass} href={href('luxury-porta-cabin')}>Luxury Porta Cabin</Link> covers client-facing rooms, the <Link className={linkClass} href={href('mini-porta-cabin')}>Mini Porta Cabin</Link> the four compact sizes, the <Link className={linkClass} href={href('steel-porta-cabin')}>Steel Porta Cabin</Link> units lifted between sites, the <Link className={linkClass} href={href('porta-cabin-shop')}>Porta Cabin Shop</Link> retail counters, and the <Link className={linkClass} href={href('porta-cabin-with-toilet')}>Porta Cabin with Toilet</Link> cabins that need their own facilities.</>
     ),
   },
   'low-cost-porta-cabin': {
@@ -142,28 +137,13 @@ const COPY: Record<string, { heading: string; body: ReactNode; comparison: React
   },
 };
 
-export default function C01RightToExist({ productSlug }: { productSlug: string }) {
-  const copy = COPY[productSlug];
-  if (!copy) return null;
+export const hasRightToExistEntry = (slug: string): boolean =>
+  Object.prototype.hasOwnProperty.call(RIGHT_TO_EXIST_ENTRIES, slug);
 
-  return (
-    <section
-      className="rounded-xl border border-emerald-200 bg-white p-5 shadow-sm sm:p-6"
-      aria-labelledby={`c01-right-to-exist-${productSlug}`}
-    >
-      <h2
-        id={`c01-right-to-exist-${productSlug}`}
-        className="mb-3 text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl"
-      >
-        {copy.heading}
-      </h2>
-      <p className={bodyClass}>{copy.body}</p>
-      <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">
-        {copy.comparison}
-        {productSlug === 'porta-cabins' && (
-          <> Beyond those, the <Link className={linkClass} href={href('luxury-porta-cabin')}>Luxury Porta Cabin</Link> covers client-facing rooms, the <Link className={linkClass} href={href('mini-porta-cabin')}>Mini Porta Cabin</Link> the four compact sizes, the <Link className={linkClass} href={href('steel-porta-cabin')}>Steel Porta Cabin</Link> units lifted between sites, the <Link className={linkClass} href={href('porta-cabin-shop')}>Porta Cabin Shop</Link> retail counters, and the <Link className={linkClass} href={href('porta-cabin-with-toilet')}>Porta Cabin with Toilet</Link> cabins that need their own facilities.</>
-        )}
-      </p>
-    </section>
-  );
-}
+export const getRightToExistEntry = (slug: string): RightToExistEntry | undefined =>
+  RIGHT_TO_EXIST_ENTRIES[slug];
+
+// Existing DOM id contract. Kept in the data module so the renderer remains
+// cluster-neutral while all currently rendered markup stays byte-identical.
+export const getRightToExistHeadingId = (slug: string): string =>
+  `c01-right-to-exist-${slug}`;
