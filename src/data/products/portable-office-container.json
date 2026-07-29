@@ -1,0 +1,120 @@
+{
+  "productSlug": "portable-office-container",
+  "productName": "Portable Office Container",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "applicationsDataset": "portable-office-container",
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10×10 ft",
+      "dims": "10×10×8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 151500,
+      "priceInclGst": 178770,
+      "useCase": "Event circuit offices",
+      "sku": "SP-POC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20×8 ft",
+      "dims": "20×8×8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 242400,
+      "priceInclGst": 286032,
+      "useCase": "Utility crew rotations",
+      "sku": "SP-POC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20×10 ft",
+      "dims": "20×10×8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 275400,
+      "priceInclGst": 324972,
+      "useCase": "Phase-to-phase relocation",
+      "sku": "SP-POC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20×12 ft",
+      "dims": "20×12×8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 317280,
+      "priceInclGst": 374390,
+      "useCase": "Travelling review rooms",
+      "sku": "SP-POC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30×10 ft",
+      "dims": "30×10×8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 396600,
+      "priceInclGst": 467988,
+      "useCase": "Campaign survey teams",
+      "sku": "SP-POC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40×8 ft",
+      "dims": "40×8×8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 414080,
+      "priceInclGst": 488614,
+      "useCase": "Advancing work fronts",
+      "sku": "SP-POC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40×10 ft",
+      "dims": "40×10×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 517600,
+      "priceInclGst": 610768,
+      "useCase": "Project-to-project transfer",
+      "sku": "SP-POC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20×20 ft",
+      "dims": "20×20×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 517600,
+      "priceInclGst": 610768,
+      "useCase": "Two-lift relocations",
+      "sku": "SP-POC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40×12 ft",
+      "dims": "40×12×8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 608160,
+      "priceInclGst": 717629,
+      "useCase": "Long asset rotations",
+      "sku": "SP-POC-20-2025",
+      "images": [],
+      "imagesPending": true
+    }
+  ]
+}

@@ -161,6 +161,58 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  'modern-office-cabin': {
+    heading: 'Why choose the Modern Office Cabin',
+    body: (
+      <>
+        This is the premium line of our office range, built on the same MS platform as every cabin here and then finished to a specified schedule: premium laminate walls, larger tinted windows, LED lighting in a false ceiling and SPC or LVT flooring. You choose it when clients, patients or applicants will judge the room. The structure is shared; the difference is everything a visitor can see.
+      </>
+    ),
+    comparison: (
+      <>
+        Working office where the finish does not matter? The Readymade Office Cabin does the same job at the economy rate.
+      </>
+    ),
+  },
+  'prefabricated-office-cabins': {
+    heading: 'Why choose Prefabricated Office Cabins',
+    body: (
+      <>
+        This page exists for orders of three units and more: identical offices fabricated as a batch, priced in tiers, and delivered to one site or ten cities on a single purchase order. Every unit matches the approved drawing, so a multi-site programme gets consistency that one-at-a-time buying cannot deliver. Order one cabin and a sibling page serves you better; order a fleet and this is the page.
+      </>
+    ),
+    comparison: (
+      <>
+        Buying a single office for one site? Start at our portable office range page and pick the size that fits.
+      </>
+    ),
+  },
+  'portable-office-container': {
+    heading: 'Why choose the Portable Office Container',
+    body: (
+      <>
+        Every cabin we build can be transported once; this line is for offices that relocate again and again. The build adds reinforced lifting interfaces, a stiffened frame and protected service runs, so repeated craning and road moves do not turn into repair bills. It is a newly fabricated MS unit wearing container-style hardening rather than a converted shipping box, chosen when your office&apos;s next address is already certain.
+      </>
+    ),
+    comparison: (
+      <>
+        Placing the office once and leaving it? The standard portable office range carries the same floors without the hardening premium.
+      </>
+    ),
+  },
+  'small-office-cabin': {
+    heading: 'Why choose the Small Office Cabin',
+    body: (
+      <>
+        This page carries only the three compact sizes, priced and fitted for teams of one to four, so a small-office buyer compares three honest options instead of scrolling a nine-size ladder built for site headquarters. Every unit is newly fabricated MS with the standard fitted electricals, delivered working. When the team passes four people, the step up is the main range page, and this page says so plainly.
+      </>
+    ),
+    comparison: (
+      <>
+        Team growing past four, or need a store and partitions? The full portable office cabin range carries the nine-size ladder.
+      </>
+    ),
+  },
 };
 
 export const hasRightToExistEntry = (slug: string): boolean =>
