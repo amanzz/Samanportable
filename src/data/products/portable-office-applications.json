@@ -1,104 +1,104 @@
 {
-  "h2": "Explore every Portable Office size & its applications",
-  "intro": "Team sizes shown are layout guidance based on typical workstation plans — your drawing confirms exact capacity.",
+  "h2": "Every portable office cabin size, and who each one suits",
+  "intro": "Team figures come from standard workstation planning. Your approved drawing sets the final layout.",
   "panels": [
     {
       "sizeSlug": "10x10",
-      "h3": "10×10 ft — the compact single-supervisor office",
-      "paragraph": "The smallest standard portable office puts a working desk, files and a visitor chair inside 100 sq ft, delivered as one factory-finished unit. It suits a single supervisor or a two-person admin point where plot space is tight, and it is the fastest size to place, power and start using. If the team is likely to grow past three people during the project, step up to the 20×8 or 20×10 — the rate per square foot drops as the floor grows. Like every size, it arrives wired, insulated and AC-provisioned, with the same 12-month workmanship warranty.",
+      "h3": "10x10 ft, the single-desk cabin that starts a site",
+      "paragraph": "One duty desk, a light point, a fan point and a socket pair, positioned in the factory before the cabin is loaded. At 100 square feet this is the smallest office we build as a complete unit, and its weight lets most plots place it without a crane. Gate posts, weighbridge rooms and supervisor points are where it earns its keep. Because the fit-out is preplanned rather than drawn per order, a second unit ordered months later arrives matching the first, which matters on sites that grow one cabin at a time.",
       "applications": [
-        "Site supervisor points",
-        "Gate and security admin",
-        "Small plot sales desks",
-        "Solo professional cabins"
+        "Gate and plot offices",
+        "Weighbridge duty rooms",
+        "Supervisor points",
+        "Staged site growth"
       ]
     },
     {
       "sizeSlug": "20x8",
-      "h3": "20×8 ft — the narrow-plot gate-side office",
-      "paragraph": "A narrow-width office that runs along a boundary wall or gate line where a 10 ft deep unit will not fit. The 160 sq ft plan takes three to four workstations in a row, with the door at the end or on the long side to suit the plot. Builders use it as the gate-side office for security, billing and visitor handling, and the slim body travels on a standard trailer with no special escort. Pick it when depth, not floor area, is your constraint. Power points run the length of the row, so each desk position is served without extension boards.",
+      "h3": "20x8 ft, the slim run that fits a boundary line",
+      "paragraph": "Eight feet of depth against twenty of length, shaped for compound walls and roadside plots where a squarer body simply will not sit. Two desks line up along the long wall, each with its own socket pair, and the door lands at one end so neither position is disturbed by people coming and going. The narrow body travels on a standard trailer without permits, which is the reason most buyers choose this shape rather than the extra area of a 20x10. Approach roads decide it more often than floor space does.",
       "applications": [
-        "Gate-side billing offices",
-        "Boundary-line site rooms",
-        "Toll and weighbridge admin",
-        "Visitor handling points"
+        "Boundary-line offices",
+        "Roadside plot offices",
+        "Toll and yard points",
+        "Restricted approach roads"
       ]
     },
     {
       "sizeSlug": "20x10",
-      "h3": "20×10 ft — India's reference project office",
-      "paragraph": "The reference SAMAN office and our most-ordered size. 200 sq ft seats four to six people as an open workstation row, or three desks plus a partitioned manager cabin on the approved drawing. Every rate on our price ladder is set from this size, which makes it the benchmark to compare any quotation against. Project managers specify it by default — fitted electricals, AC provision and insulation as standard, working from the day it lands. If you compare only one size across suppliers, compare this one — it exposes the real rate difference fastest.",
+      "h3": "20x10 ft, the size most buyers actually mean",
+      "paragraph": "Two hundred square feet is the reference size for this whole range, and the rate every other size is measured against. Four desks work without crowding, the switchboard and light rows sit where hundreds of previous dispatches have proved they should, and the fan points follow the same tested layout. Quotation to placement is quickest here because nothing needs deciding. Contractors who need an office working this month rather than next quarter start at this size, and a large share of repeat orders never move away from it.",
       "applications": [
-        "Project management offices",
-        "Site sales and CRM teams",
-        "Accounts and documentation",
-        "Clinic and lab admin rooms"
+        "Four-desk site offices",
+        "Fast project starts",
+        "Repeat standard orders",
+        "Rate benchmark size"
       ]
     },
     {
       "sizeSlug": "20x12",
-      "h3": "20×12 ft — the office with a meeting corner",
-      "paragraph": "Two extra feet of width over the 20×10 change how the room plans: a meeting corner, a manager bay or a records wall fits alongside five to seven workstations in 240 sq ft. This is the size where a site office stops being one row of desks and starts zoning — a front area for visitors, the working area behind. Choose it when client meetings happen at site and a 20×10 would seat them at a working desk instead of a table. The extra width costs ₹41,040 over the 20×10 — usually the cheapest meeting room a project will ever buy.",
+      "h3": "20x12 ft, the width that buys a place to sit down",
+      "paragraph": "Two extra feet of width buy a discussion corner rather than another desk: a small table and chairs beside the working positions, so vendors, drivers and visiting engineers are dealt with while the desks carry on. A socket pair lands at that corner in the factory, which means a printer or a charging point is live on day one instead of waiting for a site electrician. Everything else follows the standard build, so the step up from 20x10 buys floor and a planned corner, not a redesign or a longer lead time.",
       "applications": [
-        "Client-facing site offices",
-        "Manager bay + team layouts",
-        "Meeting-corner offices",
-        "Records and billing rooms"
+        "Visitor and vendor corners",
+        "Driver briefing points",
+        "Engineer visit rooms",
+        "Client-facing site offices"
       ]
     },
     {
       "sizeSlug": "30x10",
-      "h3": "30×10 ft — the two-room site headquarters",
-      "paragraph": "A long-plan 300 sq ft office that partitions cleanly into two rooms — typically a six-to-eight person work area plus a private manager or meeting room. The 30 ft body still moves as one unit on a standard trailer, so you get a genuine two-room site headquarters without joining modules. It is the most common pick for offices that host both daily engineering work and weekly review meetings in the same footprint. The second room doubles as a records store between reviews. Partition position is set on the drawing, so the office-to-meeting split matches how your team actually works.",
+      "h3": "30x10 ft, the first size with a real store",
+      "paragraph": "Three hundred square feet is where storage stops competing with people for floor. The rear third takes a partition and a lockable door, so instruments, drawings and consumables get a secure home while five or six staff work the front. The partition line is one of the few choices a buyer makes, picked from preset positions so the electrical layout stays factory-standard. Sites running an office and a separate store container consolidate into a single delivery, one placement and one power connection, which usually pays for the size step on its own.",
       "applications": [
-        "Two-room site headquarters",
-        "Engineering + review rooms",
-        "Multi-department admin",
-        "Long-duration projects"
+        "Office with secure store",
+        "Instrument and drawing rooms",
+        "Five to six desk teams",
+        "Consolidating two units"
       ]
     },
     {
       "sizeSlug": "40x8",
-      "h3": "40×8 ft — the linear workstation-row office",
-      "paragraph": "The corridor-plan office: 320 sq ft arranged as a single long row of workstations, made for sites where units line up along a boundary or between structures. Seven to nine people work in line, with door positions fixed on the approved drawing before fabrication. Rail, road and pipeline projects favour it because it matches the linear space they actually have — and it ships complete on a 40 ft open trailer. Door and window positions repeat cleanly across a row of identical units. If your site has depth for a 10 ft unit, the 40×10 gives more floor at a lower rate per square foot.",
+      "h3": "40x8 ft, the long run built for leftover land",
+      "paragraph": "Forty feet of frontage on eight of depth, built for compound edges, pipeline corridors and the strips of ground a project has left over rather than the ground it would have chosen. Seven or eight staff sit in a working line with socket pairs repeating at desk intervals. Despite the length it stays one factory-sealed body on one preplanned loom, so commissioning is a single connection at the switchboard rather than a joining exercise. Where a boundary wall is the only free land available, this shape turns that margin into an office.",
       "applications": [
-        "Rail and road projects",
-        "Pipeline corridor offices",
-        "In-line workstation rows",
-        "Between-structure plots"
+        "Compound-edge offices",
+        "Pipeline corridors",
+        "Seven-desk work lines",
+        "Narrow residual plots"
       ]
     },
     {
       "sizeSlug": "40x10",
-      "h3": "40×10 ft — the full project headquarters",
-      "paragraph": "A full project headquarters in one lift: 400 sq ft that plans into departments — engineering, billing, stores documentation — with space for a reception point at the door. Eight to twelve people work comfortably, and partitions are set on your drawing before the shell is fabricated. If the office roster is above eight or the project runs multi-year, start here rather than joining two smaller units later. Reception, records and meeting zones are marked on the drawing you approve. It is the largest size that still plans as one open decision — beyond it, choices multiply with the rooms.",
+      "h3": "40x10 ft, three working zones inside one body",
+      "paragraph": "A four-hundred-square-foot floor delivered as one body, dividing naturally into a reception end, an open desk run and a manager or records zone at the far end. Ten staff work it without pressure. The preplanned circuits repeat their tested pattern across all three zones, so the electrical fit-out that normally occupies a site electrician for a week is finished before the cabin is loaded. Projects with a two or three year horizon choose this length because it absorbs team growth without a second unit and a second placement.",
       "applications": [
-        "Full project headquarters",
-        "Departmental site admin",
-        "Reception + work zones",
-        "Multi-year deployments"
+        "Full project offices",
+        "Ten-desk deployments",
+        "Reception-led layouts",
+        "Multi-year site bases"
       ]
     },
     {
       "sizeSlug": "20x20",
-      "h3": "20×20 ft — the square open-plan office floor",
-      "paragraph": "The same 400 sq ft as the 40×10 on a square plan — an open-floor office suited to team seating around clusters rather than rows. The square shape shortens supervision lines and keeps a central circulation space, which open-plan teams consistently prefer. Confirm site access for the 20 ft wide load early in planning; after that you get a floor plan no corridor-shaped unit can match. Cluster seating works without a single corridor desk, and the floor centre stays open for briefing space. Rate and price match the 40×10 exactly, so the choice is purely about the shape your plot and team need.",
+      "h3": "20x20 ft, a square floor from two halves",
+      "paragraph": "The same four hundred square feet as the 40x10, delivered as two factory-matched halves and joined on site into one square room. Desks cluster centrally or run along two walls, and the joint carries a sealed floor strip so the finished floor reads as one surface rather than two. Both halves ship with mirrored electrical sets that pair at the join, which keeps the preplanned promise intact across a two-piece build. Teams that plan and meet in the same room they work in choose the square over the long plan.",
       "applications": [
-        "Open-plan team seating",
-        "Cluster desk layouts",
-        "Training and briefing rooms",
-        "Central-circulation floors"
+        "Project control rooms",
+        "Training and induction",
+        "Central desk clusters",
+        "Square or corner plots"
       ]
     },
     {
       "sizeSlug": "40x12",
-      "h3": "40×12 ft — the largest multi-room office",
-      "paragraph": "Our largest standard portable office: 480 sq ft that partitions into multiple rooms — cabins, a meeting room, stores and a pantry space — delivered complete as one unit. Ten to fourteen people can run a full site administration from it. At ₹1,242 per square foot it also carries the lowest rate on the ladder, so the biggest floor is the best value per foot. Beyond this size, offices become joined multi-unit layouts, quoted to drawing. Typical fit-outs pair it with a reception counter and server point, both positioned on the approved drawing.",
+      "h3": "40x12 ft, the largest single body we deliver",
+      "paragraph": "At 480 sq ft this is the biggest office that still arrives in one piece, and the lowest rate per square foot in the range. The extra width allows a central aisle serving desks on both sides, so twelve to fifteen people move without turning sideways past chairs. Light rows, fan points, socket pairs and the switchboard all arrive tested, with a dedicated AC run where the order calls for one. Anything larger becomes a joined layout quoted against your drawing, and most site teams never reach that point.",
       "applications": [
-        "Multi-room site admin HQs",
-        "Cabins + meeting + stores",
-        "Large-team operations",
-        "Lowest-rate large floors"
+        "Largest single offices",
+        "Twelve to fifteen staff",
+        "Aisle-served desk plans",
+        "Lowest rate per sq ft"
       ]
     }
   ]

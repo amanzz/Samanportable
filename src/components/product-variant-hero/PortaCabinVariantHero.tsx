@@ -498,7 +498,7 @@ export function PortaCabinVariantHero({
     <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:min-h-full lg:flex lg:flex-col">
       <div className="space-y-3 lg:flex lg:flex-1 lg:flex-col">
         <div className="space-y-1">
-          <Heading className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">{productTitle}</Heading>
+          <Heading className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">{data.productName || productTitle}</Heading>
           {/* Amendment G v2 — real rating badge: the computed 4.6 average of the 5
               SAMAN-verified reviews only (ratingCount 5). Matches the JSON-LD
               aggregateRating + the Reviews tab. Renders only when ratingCount > 0. */}
