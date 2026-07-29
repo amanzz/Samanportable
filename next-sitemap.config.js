@@ -42,6 +42,10 @@ function collectRedirectSources(list, set) {
     // are not concrete URLs and must never be treated as sitemap entries.
     if (entry.has || entry.missing) continue;
     if (entry.source.includes(':') || entry.source.includes('*')) continue;
+    // A slash-only source normalizes an alternate spelling of the SAME canonical
+    // page. Do not let `/path/ -> /path` remove the live `/path` winner from the
+    // sitemap after normalizeRedirectPath drops the slash.
+    if (entry.source.length > 1 && entry.source.endsWith('/')) continue;
     const norm = normalizeRedirectPath(entry.source);
     if (norm) set.add(norm);
   }

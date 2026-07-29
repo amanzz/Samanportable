@@ -221,6 +221,19 @@ const nextConfig = {
       // above always win, especially /product/porta-cabin/porta-cabins.
       { source: '/product/porta-cabin/:slug*', destination: 'https://www.samanportable.com/product/porta-cabins/:slug*', statusCode: 301 },
 
+      // C06 labour-colony Event A (Fable 5 + SAMAN, 29 Jul 2026).
+      // Every source lands directly on a verified non-slash HTTP-200 winner.
+      // The explicit slash-only rule upgrades the hub's framework 308 to the
+      // owner-required 301 without changing the canonical non-slash route.
+      { source: '/product/labor-colony/', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+      { source: '/product/labor-colony/prefab-labor-sheds', destination: 'https://www.samanportable.com/product/labor-colony/labor-sheds', statusCode: 301 },
+      { source: '/product/labor-colony/prefab-labor-hutments', destination: 'https://www.samanportable.com/product/labor-colony/labor-hutments', statusCode: 301 },
+      { source: '/product/labor-colony/labor-camps', destination: 'https://www.samanportable.com/product/labor-colony/prefab-labor-camps', statusCode: 301 },
+      { source: '/product/labor-colony/labor-accommodations', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+      { source: '/product/labor-colony/labor-cottages', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+      { source: '/product/labor-colony/labor-shelters', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+      { source: '/product-category/labor-colony', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
+
       // CANNIBALIZATION fix (owner-approved 2026-07-24): retire duplicate /product/container-offices pages.
       // Exact 301 single-hop transitions to HTTP-200 keepers.
       { source: '/product/container-offices/cargo-container-office', destination: 'https://www.samanportable.com/product/container-offices/shipping-container-office', statusCode: 301 },
@@ -1344,12 +1357,12 @@ const nextConfig = {
       },
       {
         source: '/project/bunkhouse-for-rent',
-        destination: 'https://www.samanportable.com/product-category/labor-colony',
+        destination: 'https://www.samanportable.com/product/labor-colony',
         permanent: true,
       },
       {
         source: '/project/bunkhouse-for-sale',
-        destination: 'https://www.samanportable.com/product-category/labor-colony',
+        destination: 'https://www.samanportable.com/product/labor-colony',
         permanent: true,
       },
       {
@@ -1384,7 +1397,7 @@ const nextConfig = {
       },
       {
         source: '/project/portable-bunkhouse',
-        destination: 'https://www.samanportable.com/product-category/labor-colony',
+        destination: 'https://www.samanportable.com/product/labor-colony',
         permanent: true,
       },
       {
@@ -1414,7 +1427,7 @@ const nextConfig = {
       },
       {
         source: '/project/prefab-labour-colony-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/labor-colony',
+        destination: 'https://www.samanportable.com/product/labor-colony',
         permanent: true,
       },
       {
@@ -1560,7 +1573,7 @@ const nextConfig = {
       {
         source: '/product/labor-colony/prefab-labour-colony',
         destination: 'https://www.samanportable.com/product/labor-colony',
-        permanent: true,
+        statusCode: 301,
       },
 
       // ──────────────────────────────────────────────────
