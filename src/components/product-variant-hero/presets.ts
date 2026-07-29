@@ -162,7 +162,7 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     productSku: 'SP-PPO-20-2025',
     explorerImageTemplate: '/images/products/portable-office/{sizeSlug}/portable-office-{sizeSlug}-exterior-hero.webp',
     applicationsDataset: 'portable-office',
-    trustWarranty: '12-month workmanship warranty',
+    trustWarranty: 'ISO 9001:2015 certified manufacturer',
     materialLabel: 'MS structural frame + insulated panel build',
   },
   ...subpagePresets(),

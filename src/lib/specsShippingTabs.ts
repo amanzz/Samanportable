@@ -550,7 +550,7 @@ const PO_UNIQUE: string[] = [
   'plumbing excluded unless in approved scope',
 ];
 
-const PO_WARRANTY_LINE = '12-month workmanship warranty, confirmed at quotation.';
+const PO_WARRANTY_LINE = '5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation.';
 const PO_CLOSING = 'Base specification price — customisations quoted separately.';
 
 export function buildPortableOfficeSpecificationsHtml(): string {
