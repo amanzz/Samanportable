@@ -40,6 +40,10 @@ function collectRedirectSources(list: unknown, set: Set<string>): void {
     // concrete URLs and must never be treated as feed landing paths.
     if (entry.has || entry.missing) continue;
     if (entry.source.includes(':') || entry.source.includes('*')) continue;
+    // A slash-only redirect canonicalizes an alternate spelling of the same page.
+    // The feed emits the non-slash winner, so never exclude that winner after the
+    // normalizer drops the slash from the redirect source.
+    if (entry.source.length > 1 && entry.source.endsWith('/')) continue;
     const norm = normalizeRedirectPath(entry.source);
     if (norm) set.add(norm);
   }

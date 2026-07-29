@@ -40,6 +40,15 @@ const RETIRED_LISTING_SLUGS = new Set<string>([
   ...PORTA_CABIN_REDIRECTED_SLUGS,
   ...PORTABLE_OFFICE_REDIRECTED_SLUGS,
   'prefabricated-site-office',
+  // C06 labour-colony Event A: archived records remain available for audit only.
+  // They must never re-enter buyer listings, related rails, Merchant, or local
+  // inventory through getAllListingProductsRaw().
+  'labor-accommodations',
+  'labor-camps',
+  'labor-cottages',
+  'labor-shelters',
+  'prefab-labor-hutments',
+  'prefab-labor-sheds',
 ]);
 
 // Slugs are lowercase-hyphenated; reject anything else so a crafted URL can
@@ -52,6 +61,35 @@ function readJson(file: string): any | null {
   } catch {
     return null;
   }
+}
+
+// C06 internal-link hygiene. The four winner records are byte-locked for this
+// event, so approved hrefs are corrected at the static content boundary without
+// changing any visible text, L3 field, schema payload, or winner source byte.
+const C06_RETIRED_INTERNAL_LINKS = new Map<string, string>([
+  ['/product/labor-colony/prefab-labor-sheds', '/product/labor-colony/labor-sheds'],
+  ['/product/labor-colony/prefab-labor-hutments', '/product/labor-colony/labor-hutments'],
+  ['/product/labor-colony/labor-camps', '/product/labor-colony/prefab-labor-camps'],
+  ['/product/labor-colony/labor-accommodations', '/product/labor-colony'],
+  ['/product/labor-colony/labor-cottages', '/product/labor-colony'],
+  ['/product/labor-colony/labor-shelters', '/product/labor-colony'],
+  ['/product/labor-colony/prefab-labour-colony', '/product/labor-colony'],
+  ['/product-category/labor-colony', '/product/labor-colony'],
+]);
+
+export function rewriteC06RetiredInternalLinks(html: string): string {
+  if (!html || !html.includes('href=')) return html;
+  let rewritten = html;
+  for (const [source, destination] of C06_RETIRED_INTERNAL_LINKS) {
+    for (const quote of ['"', "'"]) {
+      rewritten = rewritten
+        .split(`href=${quote}${source}${quote}`)
+        .join(`href=${quote}${destination}${quote}`)
+        .split(`href=${quote}https://www.samanportable.com${source}${quote}`)
+        .join(`href=${quote}https://www.samanportable.com${destination}${quote}`);
+    }
+  }
+  return rewritten;
 }
 
 function emptyPagination(page: number, perPage: number): PaginationInfo {
@@ -193,6 +231,12 @@ export async function fetchBlogPost(slug: string): Promise<any | null> {
   const post = readPostFile(slug);
   if (!post) return null;
   const { _rank_math_head, ...rest } = post;
+  if (typeof rest?.content?.rendered === 'string') {
+    rest.content = {
+      ...rest.content,
+      rendered: rewriteC06RetiredInternalLinks(rest.content.rendered),
+    };
+  }
   return rest;
 }
 
@@ -553,7 +597,7 @@ export async function fetchProductDescription(
   const p = findProductBySlug(slug);
   if (!p) return null;
   return {
-    description: p.description || '',
+    description: rewriteC06RetiredInternalLinks(p.description || ''),
     images: p.images || [],
     // Optional per-product tab overrides — passed through only when present in the
     // product JSON. Absent on all other products, so their tabs render unchanged.

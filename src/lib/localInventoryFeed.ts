@@ -5,7 +5,9 @@ import containerOfficesCategory from '@/data/wp-export/categories/container-offi
 import epsPanelCategory from '@/data/wp-export/categories/eps-panel.json';
 import glassWoolPanelCategory from '@/data/wp-export/categories/glass-wool-panel.json';
 import industrialShedsCategory from '@/data/wp-export/categories/industrial-sheds.json';
-import laborColonyCategory from '@/data/wp-export/categories/labor-colony.json';
+// C06: the buyer-facing category archive is retired, but its stable id/slug still
+// classify the four surviving labour-colony products for local availability.
+import laborColonyCategory from '@/data/wp-export/redirected-categories/labor-colony.json';
 import pebConstructionsCategory from '@/data/wp-export/categories/peb-constructions.json';
 import pirPanelCategory from '@/data/wp-export/categories/pir-panel.json';
 import portaCabinsCategory from '@/data/wp-export/categories/porta-cabins.json';
