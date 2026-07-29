@@ -131,6 +131,7 @@ export interface LightweightProduct {
   regular_price: string;
   sale_price: string;
   on_sale: boolean;
+  valueAddedTaxIncluded?: boolean;
   featured_image: string; // Single thumbnail image
   category: string;
   category_slug: string;
