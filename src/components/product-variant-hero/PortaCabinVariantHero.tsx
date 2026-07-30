@@ -24,7 +24,7 @@ import { dsCssVariables } from '@/components/ds/tokens';
 import ProductZoneCtas from '@/components/product/ProductZoneCtas';
 import RelatedProductRail from '@/components/product/RelatedProductRail';
 import type { RelatedRailItem } from '@/lib/c16PanelCatalog';
-import type { VariantProductData } from './types';
+import type { VariantImage, VariantProductData } from './types';
 import { formatIndianPrice } from './types';
 import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
@@ -49,6 +49,9 @@ interface ApplicationPanel {
       copy specifies one (C-02 with-toilet §H → the copy-pack §E exterior template).
       Absent everywhere else → the derived application alt is used, unchanged. */
   imageAlt?: string;
+  /** Optional owner-approved image for this explorer panel. It does not populate
+      the product gallery and is used only in the active size tab. */
+  image?: VariantImage;
 }
 interface ApplicationsData {
   /** Section-level heading + intro. The flagship dataset carries them; the T25
@@ -183,6 +186,201 @@ const SIZE_HASH_RE = /^#size-([0-9]+x[0-9]+)$/;
 const DETAILS_HASH_RE = /^#sizedetails-([0-9]+x[0-9]+)$/;
 const APPLICATIONS_SECTION_ID = 'porta-size-applications';
 
+type InternalLinkRow = {
+  before: string;
+  anchor: string;
+  href: string;
+  after: string;
+};
+
+type InternalLinkModule = {
+  heading: string;
+  rows: InternalLinkRow[];
+};
+
+const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = {
+  'portable-office': {
+    heading: 'Which portable office build fits the job',
+    rows: [
+      {
+        before: 'Where the specification is fixed and the build already done, ',
+        anchor: 'an off-the-shelf office cabin',
+        href: '/product/portable-office/readymade-office-cabin',
+        after: ' ships without a drawing cycle.',
+      },
+      {
+        before: 'Where the unit must assemble on site and be re-partitioned later, ',
+        anchor: 'prefabricated office cabins',
+        href: '/product/portable-office/prefabricated-office-cabins',
+        after: ' bolt together from panel modules.',
+      },
+      {
+        before: 'When the budget favours a rebuilt shell, a ',
+        anchor: 'portable office container',
+        href: '/product/portable-office/portable-office-container',
+        after: ' reuses a shipping container and is supplied as new.',
+      },
+      {
+        before: 'For a front-of-house position that has to look the part, the ',
+        anchor: 'modern office cabin',
+        href: '/product/portable-office/modern-office-cabin',
+        after: ' carries wide glazing and a flush finish.',
+      },
+      {
+        before: 'Where the site has room for only a hundred or two hundred square feet, the ',
+        anchor: 'small office cabin',
+        href: '/product/portable-office/small-office-cabin',
+        after: ' covers three compact sizes.',
+      },
+    ],
+  },
+  'readymade-office-cabin': {
+    heading: 'Other ways to get the same floor area',
+    rows: [
+      {
+        before: 'See how this size sits against the rest when you ',
+        anchor: 'compare all nine portable office sizes',
+        href: '/product/portable-office',
+        after: '.',
+      },
+      {
+        before: 'If the unit has to travel in parts and go up on site, ',
+        anchor: 'bolted panel construction',
+        href: '/product/portable-office/prefabricated-office-cabins',
+        after: ' does that instead.',
+      },
+      {
+        before: 'Where a reused shell is acceptable, ',
+        anchor: 'offices rebuilt from shipping containers',
+        href: '/product/portable-office/portable-office-container',
+        after: ' cost less for the same footprint.',
+      },
+      {
+        before: 'If a hundred to two hundred square feet is all the site allows, ',
+        anchor: 'the compact three-size range',
+        href: '/product/portable-office/small-office-cabin',
+        after: ' starts smaller.',
+      },
+    ],
+  },
+  'modern-office-cabin': {
+    heading: 'Plainer builds at a lower rate',
+    rows: [
+      {
+        before: 'The same nine sizes without the glazing premium sit in ',
+        anchor: 'the full portable office range',
+        href: '/product/portable-office',
+        after: '.',
+      },
+      {
+        before: 'For an immediate dispatch rather than a build slot, ',
+        anchor: 'cabins held in ready stock',
+        href: '/product/portable-office/readymade-office-cabin',
+        after: ' ship faster.',
+      },
+      {
+        before: 'Where the unit must be dismantled and moved again, ',
+        anchor: 'site-assembled panel offices',
+        href: '/product/portable-office/prefabricated-office-cabins',
+        after: ' take apart cleanly.',
+      },
+      {
+        before: 'On a working site where finish matters less than cost, ',
+        anchor: 'container-derived offices',
+        href: '/product/portable-office/portable-office-container',
+        after: ' do the same job.',
+      },
+    ],
+  },
+  'prefabricated-office-cabins': {
+    heading: 'When a single delivered unit is simpler',
+    rows: [
+      {
+        before: 'To weigh assembly against a unit that arrives complete, see ',
+        anchor: 'every office cabin size in one place',
+        href: '/product/portable-office',
+        after: '.',
+      },
+      {
+        before: 'Where no site assembly is wanted at all, ',
+        anchor: 'a unit that ships from stock',
+        href: '/product/portable-office/readymade-office-cabin',
+        after: ' arrives finished.',
+      },
+      {
+        before: 'For a customer-facing position, ',
+        anchor: 'the glazed contemporary build',
+        href: '/product/portable-office/modern-office-cabin',
+        after: ' presents better.',
+      },
+      {
+        before: 'If the shell can be reused rather than fabricated, ',
+        anchor: 'rebuilt container offices',
+        href: '/product/portable-office/portable-office-container',
+        after: ' are the cheaper route.',
+      },
+    ],
+  },
+  'portable-office-container': {
+    heading: 'Newly fabricated alternatives',
+    rows: [
+      {
+        before: 'Both platforms sit side by side in ',
+        anchor: 'the wider portable office lineup',
+        href: '/product/portable-office',
+        after: ', priced on the same nine sizes.',
+      },
+      {
+        before: 'Where a new steel body is preferred to a reused shell, ',
+        anchor: 'stock-built cabins',
+        href: '/product/portable-office/readymade-office-cabin',
+        after: ' dispatch from stock.',
+      },
+      {
+        before: 'If the unit has to be taken apart and re-erected, ',
+        anchor: 'bolt-together panel cabins',
+        href: '/product/portable-office/prefabricated-office-cabins',
+        after: ' are built for it.',
+      },
+      {
+        before: 'For a gate post or a single desk, ',
+        anchor: 'single-bay compact cabins',
+        href: '/product/portable-office/small-office-cabin',
+        after: ' are the smaller answer.',
+      },
+    ],
+  },
+  'small-office-cabin': {
+    heading: 'When three sizes are not enough',
+    rows: [
+      {
+        before: 'Nine sizes up to four hundred and eighty square feet sit in ',
+        anchor: 'larger portable office options',
+        href: '/product/portable-office',
+        after: '.',
+      },
+      {
+        before: 'For the same compact footprint delivered complete, ',
+        anchor: 'ready-to-dispatch cabins',
+        href: '/product/portable-office/readymade-office-cabin',
+        after: ' ship from stock.',
+      },
+      {
+        before: 'Where the cabin must grow later, ',
+        anchor: 'the panel-module build',
+        href: '/product/portable-office/prefabricated-office-cabins',
+        after: ' extends on its own module lines.',
+      },
+      {
+        before: 'If a reused shell suits the budget, ',
+        anchor: 'the container-based option',
+        href: '/product/portable-office/portable-office-container',
+        after: ' covers the same sizes.',
+      },
+    ],
+  },
+};
+
 // T24.1-V — product overview video. ONE video per page. LAZY FACADE: the page ships
 // only the poster WebP; the YouTube iframe is injected on click and never before, so
 // a cold load makes ZERO requests to youtube.com / ytimg.com. The 1:1 box is reserved
@@ -260,14 +458,12 @@ export function PortaCabinVariantHero({
   const productSku = data.productSku || preset.productSku;
   const specPdfHref = data.specPdfHref || preset.specPdfHref;
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
-  // Trust-strip warranty segment: data → preset → the deployed default. Absent on every
-  // product except container-offices → byte-identical trust strip everywhere else.
-  const trustWarranty = data.trustWarranty || preset.trustWarranty || '5-yr structural warranty';
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
   // not rendered at all (never another product's copy).
   const applications = APPLICATIONS_DATASETS[data.applicationsDataset || preset.applicationsDataset || data.productSlug];
+  const internalLinkModule = PORTABLE_OFFICE_LINK_MODULES[data.productSlug];
 
   const heroActive = data.variants[heroIndex];
   const heroImages = heroActive.images.length > 0 ? heroActive.images : null;
@@ -471,20 +667,6 @@ export function PortaCabinVariantHero({
           <ProductZoneCtas variant="strip" className="w-full" stretch />
         </div>
 
-        {/* Slim full-width outlined download button — plain <a download>, no JS.
-            T25: rendered only when the product names a spec PDF (data file or
-            preset); never points at another product's document. */}
-        {specPdfHref && (
-        <a
-          href={specPdfHref}
-          download
-          onClick={hasRightToExist ? () => pushDataLayer('file_download', { product_slug: data.productSlug }) : undefined}
-          className="flex w-full items-center justify-center gap-2 rounded-md border border-[var(--ds-color-leaf)] bg-white px-4 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:bg-[var(--ds-color-mist)]"
-        >
-          <Download className="h-4 w-4" aria-hidden="true" />
-          {hasRightToExist ? 'Download Specification PDF' : 'Download specifications'}
-        </a>
-        )}
       </div>
     </Card>
   );
@@ -503,7 +685,7 @@ export function PortaCabinVariantHero({
   // INFO-ONLY buy box: no CTA buttons here (owner ruling — desktop conversion
   // lives in the gallery column's zone cards; mobile keeps the sticky bar).
   const buyBoxColumn = (Heading: 'h1' | 'p') => (
-    <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:min-h-full lg:flex lg:flex-col">
+    <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:h-full lg:flex lg:flex-col">
       <div className="space-y-3 lg:flex lg:flex-1 lg:flex-col">
         <div className="space-y-1">
           <Heading className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">{data.productName || productTitle}</Heading>
@@ -643,11 +825,51 @@ export function PortaCabinVariantHero({
 
         {/* Trust row — anchored at the card bottom (mt-auto within the
             full-height flex column). */}
+        {specPdfHref && (
+        <a
+          href={specPdfHref}
+          download
+          onClick={hasRightToExist ? () => pushDataLayer('file_download', { product_slug: data.productSlug }) : undefined}
+          className="flex w-full items-center justify-center gap-2 rounded-md border border-[var(--ds-color-leaf)] bg-white px-4 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:bg-[var(--ds-color-mist)]"
+        >
+          <Download className="h-4 w-4" aria-hidden="true" />
+          {hasRightToExist ? 'Download Specification PDF' : 'Download specifications'}
+        </a>
+        )}
+
         <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">
-          {`GST Registered · ${trustWarranty} · Pan-India delivery`}
+          GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery
         </p>
       </div>
     </Card>
+  );
+
+  const linksColumn = internalLinkModule ? (
+    <Card className="h-full border-0 bg-white/80 p-4 shadow-lg backdrop-blur-sm">
+      <h2 className="text-lg font-bold leading-snug text-[var(--ds-color-forest)]">
+        {internalLinkModule.heading}
+      </h2>
+      <div className="mt-4 space-y-4">
+        {internalLinkModule.rows.map((row) => (
+          <p key={row.anchor} className="text-sm leading-relaxed text-[var(--ds-color-steel)]">
+            {row.before}
+            <strong>
+              <Link href={row.href} className="text-[var(--ds-color-leaf)] underline decoration-1 underline-offset-2 hover:text-[var(--ds-color-forest)]">
+                {row.anchor}
+              </Link>
+            </strong>
+            {row.after}
+          </p>
+        ))}
+      </div>
+    </Card>
+  ) : (
+    <RelatedProductRail
+      items={railItems}
+      currentHref={currentHref}
+      className="h-full bg-white/80 shadow-lg"
+      scroll
+    />
   );
 
   return (
@@ -658,7 +880,7 @@ export function PortaCabinVariantHero({
       {/* DS color tokens + the single-tree layout. Layout CSS only (no hex). The
           hero mounts ONCE (V5 fix: the old hidden-lg / lg:hidden dual tree rendered
           gallery, buy box and rail twice). Source order is gallery → buy box →
-          explorer → rail.
+          links → full-width sections.
           MOBILE (<1024): plain BLOCK FLOW — the source order IS the visual order,
           and, crucially, the browser can lay out and paint the gallery (the LCP
           hero) FIRST, independently of the content-heavy buy box below it. H2 wrapped
@@ -666,8 +888,8 @@ export function PortaCabinVariantHero({
           layout (gallery + buy box) before first paint, which pushed the mobile LCP
           ~0.4s later than the baseline's block-flow mobile tree (the H2 regression).
           Block flow restores the baseline paint order at one mount.
-          DESKTOP (>=1024): grid-template-areas repositions the rail (4th in source)
-          into column 1 — rail|gallery|buybox 25/40/35, explorer full-width below,
+          DESKTOP (>=1024): grid-template-areas repositions the links card into
+          column 1 — links|gallery|buybox 25/40/35, explorer full-width below,
           equal bottom edges (align-items:stretch). Visuals identical at every
           breakpoint; only the mobile formatting context changes. */}
       <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}`
@@ -675,12 +897,11 @@ export function PortaCabinVariantHero({
         + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-transcript{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rte{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
         + `@media(min-width:1024px){.pc-hero-grid{display:grid;grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "transcript transcript transcript" "rte rte rte" "explorer explorer explorer";}.pc-hero-grid>.pc-rail{grid-area:rail;margin-top:0;}.pc-hero-grid>.pc-gallery{grid-area:gallery;}.pc-hero-grid>.pc-buybox{grid-area:buybox;margin-top:0;}.pc-hero-grid>.pc-transcript{grid-area:transcript;margin-top:0;}.pc-hero-grid>.pc-rte{grid-area:rte;margin-top:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;margin-top:0;}}` } } />
 
-      {/* SINGLE responsive tree (V5 fix). Every piece — rail, gallery, buy box,
+      {/* SINGLE responsive tree (V5 fix). Every piece — links, gallery, buy box,
           explorer — is mounted EXACTLY ONCE; grid-template-areas (see <style>)
           place them: desktop one row rail|gallery|buybox (25/40/35) with the
-          explorer full-width below; mobile a single column gallery→buybox→
-          explorer→rail. The buy box renders the sole H1. Rail (chrome) now renders
-          once, not twice → related thumbnails satisfy the "one render each" gate. */}
+          explorer full-width below; mobile begins gallery→buybox→links.
+          The buy box renders the sole H1. */}
       <div className="pc-hero-grid">
         {/* Gallery FIRST in source — on mobile (block flow) this makes the LCP hero
             image the first laid-out/painted element; its natural height drives the
@@ -692,6 +913,12 @@ export function PortaCabinVariantHero({
         <div className="pc-buybox lg:relative lg:min-h-0">
           <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{buyBoxColumn('h1')}</div>
         </div>
+
+        <aside className="pc-rail lg:relative lg:min-h-0" aria-label={internalLinkModule?.heading || 'Related products'}>
+          <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
+            {linksColumn}
+          </div>
+        </aside>
 
         {video && (
           <details className="pc-transcript rounded-lg border border-slate-200 bg-white/80 px-3 py-2 text-sm text-slate-700">
@@ -735,20 +962,6 @@ export function PortaCabinVariantHero({
         </div>
         )}
 
-        {/* Related rail — LAST in source: on mobile (block flow) it lands at the
-            bottom, below the fold, so it never sits in the hero's paint path;
-            desktop grid-template-areas repositions it into column 1. One instance
-            only (V5). Real <a> links stay in SSR HTML (crawlable). */}
-        <aside className="pc-rail lg:relative lg:min-h-0">
-          <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
-            <RelatedProductRail
-              items={railItems}
-              currentHref={currentHref}
-              className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
-              scroll
-            />
-          </div>
-        </aside>
       </div>
 
       {/* Mobile sticky buy bar — sits above the site-wide MobileBottomNav (h-16),
@@ -878,9 +1091,11 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           // gallery's hero-view, so no image repeats on the page). 40x8 has no
           // real photos yet → placeholder.
           const hasPhotos = v.images.length > 0;
-          const panelSrc = hasPhotos
-            ? explorerImageSrc(explorerTemplate, explorerShot, v.sizeSlug, v.images[0]?.src)
-            : null;
+          const panelSrc =
+            panel.image?.src ||
+            (hasPhotos
+              ? explorerImageSrc(explorerTemplate, explorerShot, v.sizeSlug, v.images[0]?.src)
+              : null);
           const panelImage = panelSrc
             ? {
                 src: panelSrc,
@@ -892,6 +1107,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 // An owner-authored panel alt (C-02 with-toilet §H) wins outright;
                 // otherwise the existing two-branch behaviour is unchanged.
                 alt:
+                  panel.image?.alt ||
                   panel.imageAlt ||
                   (panelSrc === v.images[0]?.src && v.images[0]?.alt
                     ? v.images[0].alt
@@ -936,8 +1152,8 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                         src={panelImage.src}
                         unoptimized={shouldBypassOptimizer(panelImage.src)}
                         alt={panelImage.alt}
-                        width={1254}
-                        height={1254}
+                        width={panel.image?.width || 1254}
+                        height={panel.image?.height || 1254}
                         className="w-full h-full object-cover"
                         sizes="(max-width: 1023px) calc(100vw - 34px), 500px"
                         loading="lazy"

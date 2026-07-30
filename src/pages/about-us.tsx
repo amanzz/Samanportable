@@ -74,7 +74,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
     {
       icon: Award,
       title: 'Customer Support',
-      description: '24/7 support and maintenance services for all our products.'
+      description: 'Support Monday to Saturday, 09:00 to 20:00 IST.'
     }
   ];
 
@@ -394,4 +394,3 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
 };
 
 export default AboutUs;
-

@@ -84,6 +84,13 @@ const CONTENT_H1_DEMOTION_SLUGS = new Set([
   'container-office-in-kolkata',
 ]);
 
+const RETIRED_SUPPORT_CLAIM_REPLACEMENTS: Record<string, { before: string; after: string }> = {
+  'container-offices-in-west-delhi': {
+    before: '24/7 emergency maintenance support',
+    after: 'Support Monday to Saturday, 09:00 to 20:00 IST',
+  },
+};
+
 // City/geo landing pages that emit the lean 3-node city graph (Organization +
 // BreadcrumbList + FAQPage) instead of the default multi-node blog graph.
 // Allowlisted per slug so no other blog post's schema is affected.
@@ -333,6 +340,13 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
 
     post.content.rendered  = normaliseContent(post.content.rendered);
     post.excerpt.rendered  = normaliseContent(post.excerpt.rendered);
+    const retiredSupportClaim = RETIRED_SUPPORT_CLAIM_REPLACEMENTS[slug];
+    if (retiredSupportClaim) {
+      post.content.rendered = post.content.rendered.replace(
+        retiredSupportClaim.before,
+        retiredSupportClaim.after
+      );
+    }
     if (CONTENT_H1_DEMOTION_SLUGS.has(slug)) {
       post.content.rendered = demoteHtmlH1ToH2(post.content.rendered);
     }
