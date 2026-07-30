@@ -4,6 +4,13 @@
   "panels": [
     {
       "sizeSlug": "10x10",
+      "image": {
+        "src": "/images/products/portable-office/10x10/portable-office-10x10-explorer-interior.webp",
+        "alt": "Interior of a 10 x 10 ft portable office, a single desk set against the window wall beside the door.",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      },
       "h3": "10x10 ft, the single-desk cabin that starts a site",
       "paragraph": "One duty desk, a light point, a fan point and a socket pair, positioned in the factory before the cabin is loaded. At 100 square feet this is the smallest office we build as a complete unit, and its weight lets most plots place it without a crane. Gate posts, weighbridge rooms and supervisor points are where it earns its keep. Because the fit-out is preplanned rather than drawn per order, a second unit ordered months later arrives matching the first, which matters on sites that grow one cabin at a time.",
       "applications": [
@@ -15,6 +22,13 @@
     },
     {
       "sizeSlug": "20x8",
+      "image": {
+        "src": "/images/products/portable-office/20x8/portable-office-20x8-explorer-interior.webp",
+        "alt": "Interior of a 20 x 8 ft portable office, desk runs facing each other down the narrow bay.",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      },
       "h3": "20x8 ft, the slim run that fits a boundary line",
       "paragraph": "Eight feet of depth against twenty of length, shaped for compound walls and roadside plots where a squarer body simply will not sit. Two desks line up along the long wall, each with its own socket pair, and the door lands at one end so neither position is disturbed by people coming and going. The narrow body travels on a standard trailer without permits, which is the reason most buyers choose this shape rather than the extra area of a 20x10. Approach roads decide it more often than floor space does.",
       "applications": [
@@ -26,6 +40,13 @@
     },
     {
       "sizeSlug": "20x10",
+      "image": {
+        "src": "/images/products/portable-office/20x10/portable-office-20x10-explorer-interior.webp",
+        "alt": "Interior of a 20 x 10 ft portable office, desks along the window wall with a clear central walkway.",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      },
       "h3": "20x10 ft, the size most buyers actually mean",
       "paragraph": "Two hundred square feet is the reference size for this whole range, and the rate every other size is measured against. Four desks work without crowding, the switchboard and light rows sit where hundreds of previous dispatches have proved they should, and the fan points follow the same tested layout. Quotation to placement is quickest here because nothing needs deciding. Contractors who need an office working this month rather than next quarter start at this size, and a large share of repeat orders never move away from it.",
       "applications": [
@@ -37,6 +58,13 @@
     },
     {
       "sizeSlug": "20x12",
+      "image": {
+        "src": "/images/products/portable-office/20x12/portable-office-20x12-explorer-interior.webp",
+        "alt": "Interior of a 20 x 12 ft portable office, a finished room with the door and the window wall in view.",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      },
       "h3": "20x12 ft, the width that buys a place to sit down",
       "paragraph": "Two extra feet of width buy a discussion corner rather than another desk: a small table and chairs beside the working positions, so vendors, drivers and visiting engineers are dealt with while the desks carry on. A socket pair lands at that corner in the factory, which means a printer or a charging point is live on day one instead of waiting for a site electrician. Everything else follows the standard build, so the step up from 20x10 buys floor and a planned corner, not a redesign or a longer lead time.",
       "applications": [
@@ -48,6 +76,13 @@
     },
     {
       "sizeSlug": "30x10",
+      "image": {
+        "src": "/images/products/portable-office/30x10/portable-office-30x10-explorer-interior.webp",
+        "alt": "Interior of a 30 x 10 ft portable office, a long desk run down one side with seating opposite.",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      },
       "h3": "30x10 ft, the first size with a real store",
       "paragraph": "Three hundred square feet is where storage stops competing with people for floor. The rear third takes a partition and a lockable door, so instruments, drawings and consumables get a secure home while five or six staff work the front. The partition line is one of the few choices a buyer makes, picked from preset positions so the electrical layout stays factory-standard. Sites running an office and a separate store container consolidate into a single delivery, one placement and one power connection, which usually pays for the size step on its own.",
       "applications": [
@@ -59,6 +94,13 @@
     },
     {
       "sizeSlug": "40x8",
+      "image": {
+        "src": "/images/products/portable-office/40x8/portable-office-40x8-explorer-interior.webp",
+        "alt": "Interior of a 40 x 8 ft portable office, a full-length narrow floor lit from both sides.",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      },
       "h3": "40x8 ft, the long run built for leftover land",
       "paragraph": "Forty feet of frontage on eight of depth, built for compound edges, pipeline corridors and the strips of ground a project has left over rather than the ground it would have chosen. Seven or eight staff sit in a working line with socket pairs repeating at desk intervals. Despite the length it stays one factory-sealed body on one preplanned loom, so commissioning is a single connection at the switchboard rather than a joining exercise. Where a boundary wall is the only free land available, this shape turns that margin into an office.",
       "applications": [
@@ -70,6 +112,13 @@
     },
     {
       "sizeSlug": "40x10",
+      "image": {
+        "src": "/images/products/portable-office/40x10/portable-office-40x10-explorer-interior.webp",
+        "alt": "Interior of a 40 x 10 ft portable office, open-plan desks running the whole 40 ft length.",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      },
       "h3": "40x10 ft, three working zones inside one body",
       "paragraph": "A four-hundred-square-foot floor delivered as one body, dividing naturally into a reception end, an open desk run and a manager or records zone at the far end. Ten staff work it without pressure. The preplanned circuits repeat their tested pattern across all three zones, so the electrical fit-out that normally occupies a site electrician for a week is finished before the cabin is loaded. Projects with a two or three year horizon choose this length because it absorbs team growth without a second unit and a second placement.",
       "applications": [
@@ -81,6 +130,13 @@
     },
     {
       "sizeSlug": "20x20",
+      "image": {
+        "src": "/images/products/portable-office/20x20/portable-office-20x20-explorer-interior.webp",
+        "alt": "Interior of a 20 x 20 ft portable office, workstations set out across the square floor.",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      },
       "h3": "20x20 ft, a square floor from two halves",
       "paragraph": "The same four hundred square feet as the 40x10, delivered as two factory-matched halves and joined on site into one square room. Desks cluster centrally or run along two walls, and the joint carries a sealed floor strip so the finished floor reads as one surface rather than two. Both halves ship with mirrored electrical sets that pair at the join, which keeps the preplanned promise intact across a two-piece build. Teams that plan and meet in the same room they work in choose the square over the long plan.",
       "applications": [
@@ -92,6 +148,13 @@
     },
     {
       "sizeSlug": "40x12",
+      "image": {
+        "src": "/images/products/portable-office/40x12/portable-office-40x12-explorer-interior.webp",
+        "alt": "Interior of a 40 x 12 ft portable office, the widest floor in the range laid out for a full team.",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      },
       "h3": "40x12 ft, the largest single body we deliver",
       "paragraph": "At 480 sq ft this is the biggest office that still arrives in one piece, and the lowest rate per square foot in the range. The extra width allows a central aisle serving desks on both sides, so twelve to fifteen people move without turning sideways past chairs. Light rows, fan points, socket pairs and the switchboard all arrive tested, with a dedicated AC run where the order calls for one. Anything larger becomes a joined layout quoted against your drawing, and most site teams never reach that point.",
       "applications": [
