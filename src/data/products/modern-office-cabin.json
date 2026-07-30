@@ -17,8 +17,50 @@
       "priceInclGst": 183962,
       "useCase": "Consulting rooms",
       "sku": "SP-MOC-20-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/modern-office-cabin/10x10/modern-office-cabin-10x10-hero-view.webp",
+          "alt": "Modern Office Cabin, 10×10 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/10x10/modern-office-cabin-10x10-front-angle.webp",
+          "alt": "Modern Office Cabin, 10×10 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/10x10/modern-office-cabin-10x10-side-elevation.webp",
+          "alt": "Modern Office Cabin, 10×10 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/10x10/modern-office-cabin-10x10-workspace-interior.webp",
+          "alt": "Modern Office Cabin, 10×10 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/10x10/modern-office-cabin-10x10-entrance-interior.webp",
+          "alt": "Modern Office Cabin, 10×10 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/10x10/modern-office-cabin-10x10-rear-interior.webp",
+          "alt": "Modern Office Cabin, 10×10 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "20x8",
@@ -29,8 +71,50 @@
       "priceInclGst": 294339,
       "useCase": "Showroom forecourts",
       "sku": "SP-MOC-20-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/modern-office-cabin/20x8/modern-office-cabin-20x8-hero-view.webp",
+          "alt": "Modern Office Cabin, 20×8 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x8/modern-office-cabin-20x8-front-angle.webp",
+          "alt": "Modern Office Cabin, 20×8 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x8/modern-office-cabin-20x8-side-elevation.webp",
+          "alt": "Modern Office Cabin, 20×8 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x8/modern-office-cabin-20x8-workspace-interior.webp",
+          "alt": "Modern Office Cabin, 20×8 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x8/modern-office-cabin-20x8-entrance-interior.webp",
+          "alt": "Modern Office Cabin, 20×8 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x8/modern-office-cabin-20x8-rear-interior.webp",
+          "alt": "Modern Office Cabin, 20×8 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
@@ -41,8 +125,50 @@
       "priceInclGst": 334648,
       "useCase": "Client-visited offices",
       "sku": "SP-MOC-20-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/modern-office-cabin/20x10/modern-office-cabin-20x10-hero-view.webp",
+          "alt": "Modern Office Cabin, 20×10 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x10/modern-office-cabin-20x10-front-angle.webp",
+          "alt": "Modern Office Cabin, 20×10 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x10/modern-office-cabin-20x10-side-elevation.webp",
+          "alt": "Modern Office Cabin, 20×10 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x10/modern-office-cabin-20x10-workspace-interior.webp",
+          "alt": "Modern Office Cabin, 20×10 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x10/modern-office-cabin-20x10-entrance-interior.webp",
+          "alt": "Modern Office Cabin, 20×10 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x10/modern-office-cabin-20x10-rear-interior.webp",
+          "alt": "Modern Office Cabin, 20×10 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "20x12",
@@ -53,8 +179,50 @@
       "priceInclGst": 385435,
       "useCase": "Deal-closing rooms",
       "sku": "SP-MOC-20-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/modern-office-cabin/20x12/modern-office-cabin-20x12-hero-view.webp",
+          "alt": "Modern Office Cabin, 20×12 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x12/modern-office-cabin-20x12-front-angle.webp",
+          "alt": "Modern Office Cabin, 20×12 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x12/modern-office-cabin-20x12-side-elevation.webp",
+          "alt": "Modern Office Cabin, 20×12 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x12/modern-office-cabin-20x12-workspace-interior.webp",
+          "alt": "Modern Office Cabin, 20×12 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x12/modern-office-cabin-20x12-entrance-interior.webp",
+          "alt": "Modern Office Cabin, 20×12 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x12/modern-office-cabin-20x12-rear-interior.webp",
+          "alt": "Modern Office Cabin, 20×12 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "30x10",
@@ -65,8 +233,50 @@
       "priceInclGst": 481794,
       "useCase": "Sales galleries",
       "sku": "SP-MOC-20-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/modern-office-cabin/30x10/modern-office-cabin-30x10-hero-view.webp",
+          "alt": "Modern Office Cabin, 30×10 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/30x10/modern-office-cabin-30x10-front-angle.webp",
+          "alt": "Modern Office Cabin, 30×10 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/30x10/modern-office-cabin-30x10-side-elevation.webp",
+          "alt": "Modern Office Cabin, 30×10 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/30x10/modern-office-cabin-30x10-workspace-interior.webp",
+          "alt": "Modern Office Cabin, 30×10 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/30x10/modern-office-cabin-30x10-entrance-interior.webp",
+          "alt": "Modern Office Cabin, 30×10 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/30x10/modern-office-cabin-30x10-rear-interior.webp",
+          "alt": "Modern Office Cabin, 30×10 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "40x8",
@@ -77,8 +287,50 @@
       "priceInclGst": 502963,
       "useCase": "Walk-through showrooms",
       "sku": "SP-MOC-20-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/modern-office-cabin/40x8/modern-office-cabin-40x8-hero-view.webp",
+          "alt": "Modern Office Cabin, 40×8 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x8/modern-office-cabin-40x8-front-angle.webp",
+          "alt": "Modern Office Cabin, 40×8 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x8/modern-office-cabin-40x8-side-elevation.webp",
+          "alt": "Modern Office Cabin, 40×8 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x8/modern-office-cabin-40x8-workspace-interior.webp",
+          "alt": "Modern Office Cabin, 40×8 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x8/modern-office-cabin-40x8-entrance-interior.webp",
+          "alt": "Modern Office Cabin, 40×8 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x8/modern-office-cabin-40x8-rear-interior.webp",
+          "alt": "Modern Office Cabin, 40×8 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "40x10",
@@ -89,8 +341,50 @@
       "priceInclGst": 628704,
       "useCase": "Full branch offices",
       "sku": "SP-MOC-20-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/modern-office-cabin/40x10/modern-office-cabin-40x10-hero-view.webp",
+          "alt": "Modern Office Cabin, 40×10 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x10/modern-office-cabin-40x10-front-angle.webp",
+          "alt": "Modern Office Cabin, 40×10 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x10/modern-office-cabin-40x10-side-elevation.webp",
+          "alt": "Modern Office Cabin, 40×10 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x10/modern-office-cabin-40x10-workspace-interior.webp",
+          "alt": "Modern Office Cabin, 40×10 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x10/modern-office-cabin-40x10-entrance-interior.webp",
+          "alt": "Modern Office Cabin, 40×10 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x10/modern-office-cabin-40x10-rear-interior.webp",
+          "alt": "Modern Office Cabin, 40×10 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "20x20",
@@ -101,8 +395,50 @@
       "priceInclGst": 628704,
       "useCase": "Design studio floors",
       "sku": "SP-MOC-20-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/modern-office-cabin/20x20/modern-office-cabin-20x20-hero-view.webp",
+          "alt": "Modern Office Cabin, 20×20 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x20/modern-office-cabin-20x20-front-angle.webp",
+          "alt": "Modern Office Cabin, 20×20 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x20/modern-office-cabin-20x20-side-elevation.webp",
+          "alt": "Modern Office Cabin, 20×20 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x20/modern-office-cabin-20x20-workspace-interior.webp",
+          "alt": "Modern Office Cabin, 20×20 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x20/modern-office-cabin-20x20-entrance-interior.webp",
+          "alt": "Modern Office Cabin, 20×20 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/20x20/modern-office-cabin-20x20-rear-interior.webp",
+          "alt": "Modern Office Cabin, 20×20 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "40x12",
@@ -113,8 +449,50 @@
       "priceInclGst": 738586,
       "useCase": "Head-office outposts",
       "sku": "SP-MOC-20-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/modern-office-cabin/40x12/modern-office-cabin-40x12-hero-view.webp",
+          "alt": "Modern Office Cabin, 40×12 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x12/modern-office-cabin-40x12-front-angle.webp",
+          "alt": "Modern Office Cabin, 40×12 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x12/modern-office-cabin-40x12-side-elevation.webp",
+          "alt": "Modern Office Cabin, 40×12 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x12/modern-office-cabin-40x12-workspace-interior.webp",
+          "alt": "Modern Office Cabin, 40×12 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x12/modern-office-cabin-40x12-entrance-interior.webp",
+          "alt": "Modern Office Cabin, 40×12 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/modern-office-cabin/40x12/modern-office-cabin-40x12-rear-interior.webp",
+          "alt": "Modern Office Cabin, 40×12 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     }
   ]
 }
