@@ -203,10 +203,10 @@ const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = {
     heading: 'Which portable office build fits the job',
     rows: [
       {
-        before: 'For a fixed specification held in stock, a ',
-        anchor: 'readymade office cabin',
+        before: 'Where the specification is fixed and the build already done, ',
+        anchor: 'an off-the-shelf office cabin',
         href: '/product/portable-office/readymade-office-cabin',
-        after: ' skips the drawing cycle entirely.',
+        after: ' ships without a drawing cycle.',
       },
       {
         before: 'Where the unit must assemble on site and be re-partitioned later, ',
