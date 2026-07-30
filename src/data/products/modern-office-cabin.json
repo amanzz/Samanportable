@@ -1,0 +1,120 @@
+{
+  "productSlug": "modern-office-cabin",
+  "productName": "Modern Office Cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "applicationsDataset": "modern-office-cabin",
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10×10 ft",
+      "dims": "10×10×8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 155900,
+      "priceInclGst": 183962,
+      "useCase": "Consulting rooms",
+      "sku": "SP-MOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20×8 ft",
+      "dims": "20×8×8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 249440,
+      "priceInclGst": 294339,
+      "useCase": "Showroom forecourts",
+      "sku": "SP-MOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20×10 ft",
+      "dims": "20×10×8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 283600,
+      "priceInclGst": 334648,
+      "useCase": "Client-visited offices",
+      "sku": "SP-MOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20×12 ft",
+      "dims": "20×12×8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 326640,
+      "priceInclGst": 385435,
+      "useCase": "Deal-closing rooms",
+      "sku": "SP-MOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30×10 ft",
+      "dims": "30×10×8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 408300,
+      "priceInclGst": 481794,
+      "useCase": "Sales galleries",
+      "sku": "SP-MOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40×8 ft",
+      "dims": "40×8×8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 426240,
+      "priceInclGst": 502963,
+      "useCase": "Walk-through showrooms",
+      "sku": "SP-MOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40×10 ft",
+      "dims": "40×10×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 532800,
+      "priceInclGst": 628704,
+      "useCase": "Full branch offices",
+      "sku": "SP-MOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20×20 ft",
+      "dims": "20×20×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 532800,
+      "priceInclGst": 628704,
+      "useCase": "Design studio floors",
+      "sku": "SP-MOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40×12 ft",
+      "dims": "40×12×8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 625920,
+      "priceInclGst": 738586,
+      "useCase": "Head-office outposts",
+      "sku": "SP-MOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    }
+  ]
+}

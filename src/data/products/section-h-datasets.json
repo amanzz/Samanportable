@@ -1527,5 +1527,351 @@
         "Largest finished body"
       ]
     }
+  },
+  "modern-office-cabin": {
+    "h2": "Choose your Modern Office Cabin size and finish level",
+    "guidanceLine": "Finish specification is confirmed on the drawing you approve before fabrication begins.",
+    "10x10": {
+      "h2": "10x10 ft, a finished consulting room in miniature",
+      "intro": "The smallest floor in our premium office line, and the one professionals pick when a single room has to impress: a consulting desk, tinted glazing, LED panels set in a false ceiling and SPC flooring underfoot. Everything a visitor touches or sees has been specified on the drawing rather than defaulted at the factory. Clinics, advocates and property marketing suites take this size for one-to-one meetings where the room itself does part of the persuading. The premium sits in the surfaces, so even the smallest body carries the full finish schedule.",
+      "h3": "Uses",
+      "applications": [
+        "Consulting rooms",
+        "Advocate chambers",
+        "Property sales suites",
+        "One-to-one meeting rooms"
+      ]
+    },
+    "20x8": {
+      "h2": "20x8 ft, the slim premium office for street frontage",
+      "intro": "A narrow premium body for showroom forecourts and street-facing plots where the office is also the signage. The long wall takes the tinted glazing run, so the interior reads from outside, and two desk positions sit behind it in a finished shell of laminate and LED. Dealerships and rental desks use exactly this arrangement. Where the ordinary slim cabin hides beside a gate, this one is placed to be seen, and the finish schedule is what makes that front-of-plot placement earn its keep commercially.",
+      "h3": "Uses",
+      "applications": [
+        "Showroom forecourts",
+        "Dealership desks",
+        "Street-facing offices",
+        "Rental and booking counters"
+      ]
+    },
+    "20x10": {
+      "h2": "20x10 ft, the benchmark size in its premium form",
+      "intro": "The most-ordered footprint in India, delivered here with the upgraded schedule: larger tinted windows, premium laminate walls, LED lighting in a finished ceiling and SPC or LVT floor. Four people work in a room that reads like leased commercial space rather than a site placement. Companies choose this size when the cabin is the office their clients visit, not the one behind the hoarding. Same structure as the standard build, so the premium you pay is visible in the room rather than hidden in the frame.",
+      "h3": "Uses",
+      "applications": [
+        "Client-visited offices",
+        "Branch and franchise rooms",
+        "Design and studio spaces",
+        "Premium four-desk floors"
+      ]
+    },
+    "20x12": {
+      "h2": "20x12 ft, finished width for a proper meeting table",
+      "intro": "The extra width takes a real meeting table in a finished setting: six chairs, tinted glass beside them, LED panels above. In the standard line this floor hosts a working corner; in the premium line it hosts a client presentation. Sales offices for plotted developments and builder floors are the classic buyers, because the deal is closed inside the cabin itself. The laminate and flooring schedule continues under the table, which is exactly the detail where cheaper meeting rooms quietly give themselves away.",
+      "h3": "Uses",
+      "applications": [
+        "Deal-closing rooms",
+        "Development sales offices",
+        "Six-seat meeting tables",
+        "Presentation spaces"
+      ]
+    },
+    "30x10": {
+      "h2": "30x10 ft, a premium front room with a working back",
+      "intro": "The partition line earns its keep differently here: the front two-thirds is the finished client zone with glazing, LED and premium surfaces, while the rear third works as records, pantry or staff space behind a flush door. One delivered body gives a reception-grade room and a private working area. Sales galleries and admission offices run precisely this split. The finish schedule concentrates where visitors stand, which keeps the premium spend purposeful instead of spreading it thin across shelving and storage.",
+      "h3": "Uses",
+      "applications": [
+        "Sales galleries",
+        "Admission offices",
+        "Front-of-house plus records",
+        "Reception-grade rooms"
+      ]
+    },
+    "40x8": {
+      "h2": "40x8 ft, a finished ribbon of glass along a frontage",
+      "intro": "Forty feet of premium frontage on a strip plot: the glazing run turns the whole long wall into display, and the interior carries the finish schedule from end to end. Showrooms for tiles, sanitaryware and building products use this shape as a walk-through gallery with desks at one end. It is the only size in the premium line bought as much for what every passer-by sees as for the people who sit inside it, and the tinted run is what separates it from the plain slim cabin doing quiet duty at a site gate somewhere.",
+      "h3": "Uses",
+      "applications": [
+        "Walk-through showrooms",
+        "Product display galleries",
+        "Strip-plot frontages",
+        "Glass-run offices"
+      ]
+    },
+    "40x10": {
+      "h2": "40x10 ft, a branch office you do not have to build",
+      "intro": "Reception at the door, open desks in the middle, a glazed manager cabin at the end: the layout of a leased branch office, delivered as one finished body. Eight to ten staff work in premium surroundings from the day of placement. Finance, insurance and real-estate branches on plots without built space are the regular buyers. Every zone carries the same laminate, lighting and floor specification, so the room reads as one designed space rather than a site cabin that happens to have one good corner.",
+      "h3": "Uses",
+      "applications": [
+        "Full branch offices",
+        "Finance and insurance desks",
+        "Reception-led premium floors",
+        "Eight to ten staff rooms"
+      ]
+    },
+    "20x20": {
+      "h2": "20x20 ft, the finished square for open teams",
+      "intro": "Two matched halves joining into a four-hundred-square-foot square, finished to the premium schedule across the seam: continuous flooring, matched laminate, mirrored lighting. Open teams sit in clusters with a briefing space at the centre, and the tinted glazing keeps the room bright without heat. Design studios and marketing teams working from site take the square for the same reason they would in leased space, because collaboration needs width before anything else, and here the width arrives already finished.",
+      "h3": "Uses",
+      "applications": [
+        "Design studio floors",
+        "Marketing team rooms",
+        "Cluster seating layouts",
+        "Briefing-centred squares"
+      ]
+    },
+    "40x12": {
+      "h2": "40x12 ft, the largest floor in our premium line",
+      "intro": "The full 480 square feet carrying the complete finish schedule: cabins, meeting room and open desks planned on your drawing, all glazed, lit and floored to the premium standard. Twelve or more staff run a genuine head-office outpost from it. Developers running long sales programmes and companies posting managed teams to site take this floor when the alternative is a commercial lease. It is the largest single body in the premium line, and its rate per square foot is the lowest anywhere in the premium line.",
+      "h3": "Uses",
+      "applications": [
+        "Head-office outposts",
+        "Long sales programmes",
+        "Managed site teams",
+        "Largest premium floor"
+      ]
+    }
+  },
+  "prefabricated-office-cabins": {
+    "h2": "Prefabricated Office Cabin sizes for multi-unit orders",
+    "guidanceLine": "Tier pricing applies from three units on one purchase order, single or multiple destinations.",
+    "10x10": {
+      "h2": "10x10 ft, the repeatable gate unit across sites",
+      "intro": "Ordered in threes and fives rather than one at a time: identical gate offices for every entrance of a campus, or one per site across a district rollout. Because each unit is fabricated to the same drawing, the fifth arrives indistinguishable from the first, which is the entire point for an operations team standardising its estate. Facility companies and infrastructure contractors put this size on rate contract and call units off as sites open. One drawing approval at the start covers every placement that follows it.",
+      "h3": "Uses",
+      "applications": [
+        "Multi-gate campuses",
+        "District rollouts",
+        "Rate-contract call-offs",
+        "Standardised gate estates"
+      ]
+    },
+    "20x8": {
+      "h2": "20x8 ft, the slim unit ordered by the corridor",
+      "intro": "Metro corridors, pipeline stretches and road packages need the same slim office repeated every few kilometres, and this is that unit: a narrow body fabricated in batches, delivered in sequence as work fronts open. Procurement buys the batch once, and the drawing, the electrical set and the price hold across every delivery. Package contractors who have fought inconsistent one-off cabins across a long alignment order it precisely to stop that variation for good, unit after unit after identical unit.",
+      "h3": "Uses",
+      "applications": [
+        "Metro and rail packages",
+        "Pipeline work fronts",
+        "Sequential deliveries",
+        "Batch-fabricated slim units"
+      ]
+    },
+    "20x10": {
+      "h2": "20x10 ft, the standard multi-site office, by the batch",
+      "intro": "The reference office bought the procurement way: three, five or ten identical two-hundred-square-foot units on a single order, each matching the approved drawing to the millimetre. Site teams get a familiar office at every posting; head office gets one invoice, one specification and one warranty position across the fleet. This is the size most multi-site programmes standardise on, and the tier price at three units and again at higher counts is what separates this page from ordering one cabin three times.",
+      "h3": "Uses",
+      "applications": [
+        "Fleet standardisation",
+        "Single-order multi-site buys",
+        "Tiered batch pricing",
+        "Familiar office every posting"
+      ]
+    },
+    "20x12": {
+      "h2": "20x12 ft, the wider standard for programme offices",
+      "intro": "Programmes that hold weekly reviews at every site standardise on the wider body, because the weekly meeting corner needs to exist at every location, not only at the flagship site. Ordered as a set, every location gets the same room in the same layout, so a visiting programme manager walks into a fully familiar office in every single city. The two extra feet cost the same modest step at every unit in the batch, and that consistency is worth more to a programme office than the extra floor area could ever be.",
+      "h3": "Uses",
+      "applications": [
+        "Programme review offices",
+        "Same room in every city",
+        "Batch-wide layouts",
+        "Visiting-manager familiarity"
+      ]
+    },
+    "30x10": {
+      "h2": "30x10 ft, office plus store, repeated per site",
+      "intro": "The office-and-store split that most sites eventually improvise, fabricated identically for every location from the start: front section working, rear third partitioned and lockable. Instrument contractors and testing agencies who must secure equipment at each posting order it as their standard site unit. Because the partition sits on the same line in every unit, the security arrangement, the racking and even the key register work identically across the whole contract footprint, from the first posting to the last.",
+      "h3": "Uses",
+      "applications": [
+        "Per-site secure stores",
+        "Testing and instrument fleets",
+        "Identical security layouts",
+        "Contract-wide standards"
+      ]
+    },
+    "40x8": {
+      "h2": "40x8 ft, the linear unit for linear projects",
+      "intro": "Road, rail and transmission projects live along lines, and their offices follow: a forty-foot slim body repeated at each work front, fabricated in a batch and delivered as the alignment advances. The shape fits the leftover land that linear projects actually have, and batch fabrication holds the specification steady across every chainage. Contractors order the set at award and schedule deliveries against mobilisation, so each new front opens with its office already committed, priced and on the schedule.",
+      "h3": "Uses",
+      "applications": [
+        "Alignment work fronts",
+        "Road and rail mobilisation",
+        "Transmission line packages",
+        "Chainage-by-chainage delivery"
+      ]
+    },
+    "40x10": {
+      "h2": "40x10 ft, the package headquarters, one per package",
+      "intro": "Large programmes split into packages, and each package office is this: four hundred square feet of departmentalised floor, identical at every package so reporting, filing and even furniture orders repeat cleanly. Buying them as a set at award locks the price for later packages and removes the specification drift that creeps in when each package buys its own. Programme directors who have consolidated five mismatched offices into one standard remember exactly why this page exists and order accordingly at the next award.",
+      "h3": "Uses",
+      "applications": [
+        "One office per package",
+        "Award-stage set purchases",
+        "No specification drift",
+        "Departmentalised standards"
+      ]
+    },
+    "20x20": {
+      "h2": "20x20 ft, the square training unit, deployed in sets",
+      "intro": "Induction has to happen at every site of a large contract, and the square floor is the induction room: open, central, seating in rows or clusters. Ordered as a set, every location trains in the same room with the same layout, which safety teams value because the induction itself becomes standard. The two-piece build travels like the smaller units, so even the remotest sites of the contract are not excluded from it. One drawing approval covers the entire training estate for the full life of the programme.",
+      "h3": "Uses",
+      "applications": [
+        "Site induction rooms",
+        "Safety training estates",
+        "Set-deployed squares",
+        "Standardised inductions"
+      ]
+    },
+    "40x12": {
+      "h2": "40x12 ft, the flagship unit of a standardised fleet",
+      "intro": "The largest unit in a standardised order: the regional or lead-site office that anchors a fleet of smaller identical cabins. Fabricated on the same batch drawing discipline, it shares its surfaces, its openings and its electrical logic with every junior unit in the order, so the fleet reads as one estate rather than a collection. Contractors running a hub-and-spoke site structure order one of these with each cluster of smaller units, and the tier pricing counts the whole mixed order as one quantity for the discount.",
+      "h3": "Uses",
+      "applications": [
+        "Lead-site anchors",
+        "Hub-and-spoke fleets",
+        "Mixed-size single orders",
+        "Estate-consistent flagships"
+      ]
+    }
+  },
+  "portable-office-container": {
+    "h2": "Portable Office Container sizes built for relocation",
+    "guidanceLine": "Every unit carries reinforced lifting points and protected services as standard.",
+    "10x10": {
+      "h2": "10x10 ft, the unit that moves with the work",
+      "intro": "A gate office that follows the project: reinforced corner lifting points, services routed in protected conduit, and a frame stiffened for repeated craning. Event operators and short-phase contractors shift this compact unit several times in a season, and the hardening is what lets them do it without a repair bill after every move. Where an ordinary cabin is placed once and left, this one is designed around the assumption that the truck is coming back for it, this season and the next and the one after.",
+      "h3": "Uses",
+      "applications": [
+        "Event circuit offices",
+        "Short-phase works",
+        "Season-by-season moves",
+        "Repeated crane handling"
+      ]
+    },
+    "20x8": {
+      "h2": "20x8 ft, the slim mover for tight repeated drops",
+      "intro": "The narrow body that goes where the next placement is tighter than the last: reinforced for lifting, slim enough for urban lanes, services sealed against the knocks of transit. Utility contractors moving crews between road openings keep one permanently on the truck rotation, dropping it fresh at each new stretch of road. The protected wiring loom means the office is live within an hour of touching down, and just as quickly disconnected when the stretch is done, the crew moves on and the next opening is already waiting.",
+      "h3": "Uses",
+      "applications": [
+        "Utility crew rotations",
+        "Urban road openings",
+        "Hour-to-live placements",
+        "Truck-rotation offices"
+      ]
+    },
+    "20x10": {
+      "h2": "20x10 ft, the standard office, hardened to travel",
+      "intro": "The familiar two-hundred-square-foot office rebuilt around movement: lifting interfaces engineered to the unit's completed weight, glazing protected for transit, services terminating in a single armoured connection point. Contractors whose projects run in phases across a region relocate it between sites instead of buying twice. Each move costs transport and a crane, not refurbishment, which changes the arithmetic of owning one office across many postings entirely, which is the calculation this whole line is built on.",
+      "h3": "Uses",
+      "applications": [
+        "Phase-to-phase relocation",
+        "Regional project rotations",
+        "One office, many postings",
+        "Transit-protected standard"
+      ]
+    },
+    "20x12": {
+      "h2": "20x12 ft, moving width without moving damage",
+      "intro": "The wider floor with the meeting corner, built to survive the journey between placements: stiffened top frame, protected service runs, lifting points matched to the extra width. Project teams that host client reviews and then move on take it because the meeting room travels along with the project instead of being rebuilt from nothing each phase. What normally suffers in a relocated cabin is the fit-out, and here the fit-out is anchored and shielded from the outset, specifically because relocation is the plan.",
+      "h3": "Uses",
+      "applications": [
+        "Travelling review rooms",
+        "Client-facing phase offices",
+        "Protected fit-outs",
+        "Width that relocates"
+      ]
+    },
+    "30x10": {
+      "h2": "30x10 ft, office and store that redeploy together",
+      "intro": "The partitioned office-plus-store as a single relocatable body: instruments stay in their lockable rear room during the move, and the whole unit lifts as one sealed piece. Survey and geotechnical teams working campaign-style across sites redeploy it with the equipment still racked and locked inside, saving a full pack-up and set-down at every single move. The stiffened frame is what makes travelling loaded acceptable, and that capability is the whole difference between this and simply partitioning an ordinary cabin.",
+      "h3": "Uses",
+      "applications": [
+        "Campaign survey teams",
+        "Loaded relocations",
+        "Instrument rooms in transit",
+        "Redeployable stores"
+      ]
+    },
+    "40x8": {
+      "h2": "40x8 ft, the long unit that follows the alignment",
+      "intro": "Linear projects advance, and this office advances with them: a forty-foot slim body lifted from chainage to chainage as fronts complete. The length demands proper lifting engineering, and that is precisely what the hardened frame and matched lift points provide. Road and pipeline contractors move it three or four times across a package instead of placing a new cabin at each front, and the protected loom re-terminates at each drop without an electrician rebuilding the connection from scratch at every single drop.",
+      "h3": "Uses",
+      "applications": [
+        "Advancing work fronts",
+        "Chainage relocations",
+        "Three moves per package",
+        "Re-terminating services"
+      ]
+    },
+    "40x10": {
+      "h2": "40x10 ft, headquarters that transfer between projects",
+      "intro": "A full four-hundred-square-foot project office engineered to serve consecutive projects rather than one: transferred by crane and trailer at each demobilisation, arriving at the next award with its zones, services and fittings intact. Contractors treat it as plant, moving it project to project on the asset register, and the hardening is what preserves its value across those transfers. The alternative is buying a headquarters at every award and abandoning that embedded value at every project close-out.",
+      "h3": "Uses",
+      "applications": [
+        "Project-to-project transfer",
+        "Demobilisation moves",
+        "Offices held as plant",
+        "Value across awards"
+      ]
+    },
+    "20x20": {
+      "h2": "20x20 ft, the square that splits, moves and rejoins",
+      "intro": "The two-piece square with relocation designed into the joint: each half lifts separately on its own reinforced points, travels as a standard load, and rejoins with the sealed floor strip and paired electrical sets re-mating at the new site. Training rooms and control rooms that must exist at each phase of a long programme move this way. Rejoining is a procedure, not an improvisation, because the joint was engineered for its fifth mating, and not merely its first, which is where improvised joints fail.",
+      "h3": "Uses",
+      "applications": [
+        "Two-lift relocations",
+        "Re-mating joints",
+        "Phase-following control rooms",
+        "Programme training squares"
+      ]
+    },
+    "40x12": {
+      "h2": "40x12 ft, the largest office we build to move",
+      "intro": "Four hundred and eighty square feet engineered for a life of placements: the heaviest unit in this line, and therefore the one where lifting-point engineering and frame stiffening matter most. Organisations running long rotations, mine services, large EPC houses, plant hire, keep one or two circulating between commitments. It is the most office that can follow the work as a single body, and the hardening premium is what keeps it working after the fifth site instead of giving up somewhere around the second.",
+      "h3": "Uses",
+      "applications": [
+        "Long asset rotations",
+        "Mine and EPC services",
+        "Circulating head offices",
+        "Fifth-site durability"
+      ]
+    }
+  },
+  "small-office-cabin": {
+    "h2": "Small Office Cabin sizes for one to four people",
+    "guidanceLine": "Three compact sizes only. Larger floors live on our main office range page.",
+    "10x10": {
+      "h2": "10x10 ft, the two-person office in its element",
+      "intro": "One hundred square feet arranged for two people who share a task: a security supervisor beside the CCTV desk, a cashier with the records, a doctor with an assistant. This page's whole purpose is the compact brief, so the smallest size is its centre of gravity rather than its afterthought. The cabin lands, connects and works the same day, and the nine-foot ceiling keeps a small footprint from feeling like a box. Most buyers here never needed anything larger, and nothing larger is ever pushed at them here.",
+      "h3": "Uses",
+      "applications": [
+        "Two-person duty rooms",
+        "CCTV and security desks",
+        "Cash and records points",
+        "Clinic side rooms"
+      ]
+    },
+    "20x8": {
+      "h2": "20x8 ft, three desks where depth does not exist",
+      "intro": "The compact answer for narrow ground: three desks in a row against the long wall, a door at the end, and a footprint that slots beside a gate, along a boundary or behind a showroom. Small teams that outgrew a guard-post-sized room but have no depth to spare step up to this shape and stop there. It shares the slim body of the bigger ranges but is bought here for a different reason: not because the plot is a corridor, but because the team is three people and perfectly honest with itself about staying that way.",
+      "h3": "Uses",
+      "applications": [
+        "Three-desk slim offices",
+        "Beside-the-gate teams",
+        "Behind-showroom rooms",
+        "Small teams, narrow ground"
+      ]
+    },
+    "20x10": {
+      "h2": "20x10 ft, the largest office this page will sell you",
+      "intro": "Two hundred square feet for four people, and deliberately the ceiling of this range: anything bigger belongs on the main range page with the full nine-size ladder. Kept here because a four-person office is still a small office, and the buyer comparing it with the two smaller sizes is making a compact-office decision, not a site-headquarters decision dressed up small. The fit-out matches the smaller sizes exactly, so growing from the 10x10 to this floor changes the floor area and changes nothing else at all.",
+      "h3": "Uses",
+      "applications": [
+        "Four-person offices",
+        "Compact-office ceiling",
+        "Growth from two to four",
+        "Same fit-out, more floor"
+      ]
+    }
   }
 }

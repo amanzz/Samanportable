@@ -1,0 +1,120 @@
+{
+  "productSlug": "prefabricated-office-cabins",
+  "productName": "Prefabricated Office Cabins",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "applicationsDataset": "prefabricated-office-cabins",
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10×10 ft",
+      "dims": "10×10×8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 145500,
+      "priceInclGst": 171690,
+      "useCase": "Multi-gate campuses",
+      "sku": "SP-PFOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20×8 ft",
+      "dims": "20×8×8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 232800,
+      "priceInclGst": 274704,
+      "useCase": "Metro and rail packages",
+      "sku": "SP-PFOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20×10 ft",
+      "dims": "20×10×8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 264600,
+      "priceInclGst": 312228,
+      "useCase": "Fleet standardisation",
+      "sku": "SP-PFOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20×12 ft",
+      "dims": "20×12×8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 304800,
+      "priceInclGst": 359664,
+      "useCase": "Programme review offices",
+      "sku": "SP-PFOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30×10 ft",
+      "dims": "30×10×8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 381000,
+      "priceInclGst": 449580,
+      "useCase": "Per-site secure stores",
+      "sku": "SP-PFOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40×8 ft",
+      "dims": "40×8×8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 398080,
+      "priceInclGst": 469734,
+      "useCase": "Alignment work fronts",
+      "sku": "SP-PFOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40×10 ft",
+      "dims": "40×10×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 497600,
+      "priceInclGst": 587168,
+      "useCase": "One office per package",
+      "sku": "SP-PFOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20×20 ft",
+      "dims": "20×20×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 497600,
+      "priceInclGst": 587168,
+      "useCase": "Site induction rooms",
+      "sku": "SP-PFOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40×12 ft",
+      "dims": "40×12×8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 584160,
+      "priceInclGst": 689309,
+      "useCase": "Lead-site anchors",
+      "sku": "SP-PFOC-20-2025",
+      "images": [],
+      "imagesPending": true
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "productSlug": "small-office-cabin",
+  "productName": "Small Office Cabin",
+  "variantAxis": "size",
+  "defaultVariant": "10x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "applicationsDataset": "small-office-cabin",
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10×10 ft",
+      "dims": "10×10×8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 144000,
+      "priceInclGst": 169920,
+      "useCase": "Two-person duty rooms",
+      "sku": "SP-SMOC-10-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20×8 ft",
+      "dims": "20×8×8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 230400,
+      "priceInclGst": 271872,
+      "useCase": "Three-desk slim offices",
+      "sku": "SP-SMOC-10-2025",
+      "images": [],
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20×10 ft",
+      "dims": "20×10×8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 262000,
+      "priceInclGst": 309160,
+      "useCase": "Four-person offices",
+      "sku": "SP-SMOC-10-2025",
+      "images": [],
+      "imagesPending": true
+    }
+  ]
+}
