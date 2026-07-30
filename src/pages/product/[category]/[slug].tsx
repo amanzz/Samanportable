@@ -70,6 +70,21 @@ const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
   'portable-office-cabin',
 ]);
 
+// Section 17: exported WordPress records are immutable. Route-specific content
+// corrections are applied to the fetched render string, with the full anchor
+// matched so neither unrelated copy nor the destination can change.
+const PRODUCT_DESCRIPTION_ANCHOR_TEXT_REPLACEMENTS: Record<string, { before: string; after: string }> = {
+  'saman-prefab-office': {
+    before: '<a href="https://www.samanportable.com/product/portable-office/readymade-office-cabin">readymade office cabin</a>',
+    after: '<a href="https://www.samanportable.com/product/portable-office/readymade-office-cabin">ready-built office cabin</a>',
+  },
+};
+
+function applyProductDescriptionAnchorTextCorrection(slug: string, html: string): string {
+  const replacement = PRODUCT_DESCRIPTION_ANCHOR_TEXT_REPLACEMENTS[slug];
+  return replacement ? html.replace(replacement.before, replacement.after) : html;
+}
+
 interface ProductDetailsProps {
   product: WooCommerceProduct | null;
   category: string;
@@ -185,9 +200,13 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
 
     // Fetch full description and images separately
     const descriptionData = await staticContent.fetchProductDescription(slug);
-    const productDescription = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
+    const productDescriptionWithHeadingCorrection = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
       ? demoteHtmlH1ToH2(descriptionData?.description || '')
       : descriptionData?.description || '';
+    const productDescription = applyProductDescriptionAnchorTextCorrection(
+      slugLower,
+      productDescriptionWithHeadingCorrection
+    );
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
