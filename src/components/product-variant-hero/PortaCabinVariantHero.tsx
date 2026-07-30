@@ -844,14 +844,17 @@ export function PortaCabinVariantHero({
     </Card>
   );
 
-  const linksColumn = internalLinkModule ? (
-    <Card className="h-full border-0 bg-white/80 p-4 shadow-lg backdrop-blur-sm">
-      <h2 className="text-lg font-bold leading-snug text-[var(--ds-color-forest)]">
+  const internalLinksSecondary = internalLinkModule ? (
+    <section className="px-2 pb-2 pt-3" aria-labelledby={`${data.productSlug}-related-links-heading`}>
+      <h3
+        id={`${data.productSlug}-related-links-heading`}
+        className="text-sm font-semibold leading-snug text-[var(--ds-color-forest)]"
+      >
         {internalLinkModule.heading}
-      </h2>
-      <div className="mt-4 space-y-4">
+      </h3>
+      <div className="mt-2 space-y-2">
         {internalLinkModule.rows.map((row) => (
-          <p key={row.anchor} className="text-sm leading-relaxed text-[var(--ds-color-steel)]">
+          <p key={row.anchor} className="text-xs leading-snug text-[var(--ds-color-steel)]">
             {row.before}
             <strong>
               <Link href={row.href} className="text-[var(--ds-color-leaf)] underline decoration-1 underline-offset-2 hover:text-[var(--ds-color-forest)]">
@@ -862,15 +865,8 @@ export function PortaCabinVariantHero({
           </p>
         ))}
       </div>
-    </Card>
-  ) : (
-    <RelatedProductRail
-      items={railItems}
-      currentHref={currentHref}
-      className="h-full bg-white/80 shadow-lg"
-      scroll
-    />
-  );
+    </section>
+  ) : null;
 
   return (
     // data-ds-root + the injected token rule scope the --ds-* color variables to
@@ -880,7 +876,7 @@ export function PortaCabinVariantHero({
       {/* DS color tokens + the single-tree layout. Layout CSS only (no hex). The
           hero mounts ONCE (V5 fix: the old hidden-lg / lg:hidden dual tree rendered
           gallery, buy box and rail twice). Source order is gallery → buy box →
-          links → full-width sections.
+          related rail with secondary links → full-width sections.
           MOBILE (<1024): plain BLOCK FLOW — the source order IS the visual order,
           and, crucially, the browser can lay out and paint the gallery (the LCP
           hero) FIRST, independently of the content-heavy buy box below it. H2 wrapped
@@ -888,8 +884,8 @@ export function PortaCabinVariantHero({
           layout (gallery + buy box) before first paint, which pushed the mobile LCP
           ~0.4s later than the baseline's block-flow mobile tree (the H2 regression).
           Block flow restores the baseline paint order at one mount.
-          DESKTOP (>=1024): grid-template-areas repositions the links card into
-          column 1 — links|gallery|buybox 25/40/35, explorer full-width below,
+          DESKTOP (>=1024): grid-template-areas repositions the related rail into
+          column 1 — rail|gallery|buybox 25/40/35, explorer full-width below,
           equal bottom edges (align-items:stretch). Visuals identical at every
           breakpoint; only the mobile formatting context changes. */}
       <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}`
@@ -897,10 +893,10 @@ export function PortaCabinVariantHero({
         + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-transcript{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rte{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
         + `@media(min-width:1024px){.pc-hero-grid{display:grid;grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "transcript transcript transcript" "rte rte rte" "explorer explorer explorer";}.pc-hero-grid>.pc-rail{grid-area:rail;margin-top:0;}.pc-hero-grid>.pc-gallery{grid-area:gallery;}.pc-hero-grid>.pc-buybox{grid-area:buybox;margin-top:0;}.pc-hero-grid>.pc-transcript{grid-area:transcript;margin-top:0;}.pc-hero-grid>.pc-rte{grid-area:rte;margin-top:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;margin-top:0;}}` } } />
 
-      {/* SINGLE responsive tree (V5 fix). Every piece — links, gallery, buy box,
+      {/* SINGLE responsive tree (V5 fix). Every piece — rail, gallery, buy box,
           explorer — is mounted EXACTLY ONCE; grid-template-areas (see <style>)
           place them: desktop one row rail|gallery|buybox (25/40/35) with the
-          explorer full-width below; mobile begins gallery→buybox→links.
+          explorer full-width below; mobile begins gallery→buybox→rail→secondary links.
           The buy box renders the sole H1. */}
       <div className="pc-hero-grid">
         {/* Gallery FIRST in source — on mobile (block flow) this makes the LCP hero
@@ -914,9 +910,15 @@ export function PortaCabinVariantHero({
           <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{buyBoxColumn('h1')}</div>
         </div>
 
-        <aside className="pc-rail lg:relative lg:min-h-0" aria-label={internalLinkModule?.heading || 'Related products'}>
+        <aside className="pc-rail lg:relative lg:min-h-0">
           <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
-            {linksColumn}
+            <RelatedProductRail
+              items={railItems}
+              currentHref={currentHref}
+              className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
+              scroll
+            />
+            {internalLinksSecondary}
           </div>
         </aside>
 
