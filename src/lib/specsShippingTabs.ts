@@ -68,6 +68,9 @@ const GROUP_ORDER = [
   'Interior & Insulation',
   'Openings & Services',
   'Layout',
+  'Steel Structure',
+  'Walls, Roof, Floor & Insulation',
+  'Doors, Windows, Electrical & Services',
 ];
 
 function specGroupCard(title: string, fields: Record<string, string | number>): string {
@@ -126,9 +129,12 @@ export function buildSpecificationsHtml(entry: SpecsEntry): string {
     .filter(Boolean)
     .join('');
 
+  const referenceNoteSuffix = entry.cluster === 'Portable Office'
+    ? 'reference size.'
+    : 'reference size; all nine sizes are built to the same specification unless customised at quotation.';
   const referenceNote =
     `<p class="mb-5 text-sm text-slate-500">Specifications shown for the ${esc(entry.referenceSize)} ` +
-    `reference size; all nine sizes are built to the same specification unless customised at quotation.</p>`;
+    `${referenceNoteSuffix}</p>`;
 
   const fullTech =
     `<section class="mt-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
@@ -647,7 +653,7 @@ export function getProductTabsHtml(
   // tables, 5–10yr structural-warranty block omitted).
   if (pageSlug === 'portable-office') {
     return {
-      specificationsHtml: buildPortableOfficeSpecificationsHtml(),
+      specificationsHtml: buildSpecificationsHtml(DATASET['portable-office']),
       shippingHtml: buildPortableOfficeShippingHtml(),
     };
   }

@@ -7,7 +7,6 @@ import {
   FileText, 
   Info, 
   Truck, 
-  Package, 
   Shield, 
   Clock, 
   ChevronDown, 
@@ -121,46 +120,19 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
           <div className="space-y-3">
             <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
               <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-green-800">Free delivery within 50km radius</span>
+              <span className="text-sm font-medium text-green-800">Pan-India delivery</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
               <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-green-800">Professional installation service available</span>
+              <span className="text-sm font-medium text-green-800">Fixed-price quote within 48 hours</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
               <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-green-800">Delivery time: 7–21 days</span>
+              <span className="text-sm font-medium text-green-800">Delivery in 7 to 21 working days</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
               <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-green-800">GPS tracking for shipment</span>
-            </div>
-          </div>
-        </div>
-        
-        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl border border-blue-200 shadow-sm hover:shadow-md transition-shadow duration-200">
-          <div className="flex items-center mb-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-3">
-              <Package className="w-5 h-5 text-white" />
-            </div>
-            <h4 className="text-lg font-bold text-blue-900">Packaging & Handling</h4>
-          </div>
-          <div className="space-y-3">
-            <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
-              <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-blue-800">Secure packaging for safe transport</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
-              <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-blue-800">Pre-assembled components</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
-              <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-blue-800">Weather-protected shipping</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
-              <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-blue-800">Damage-free guarantee</span>
+              <span className="text-sm font-medium text-green-800">Dispatch from Bengaluru and Greater Noida</span>
             </div>
           </div>
         </div>
@@ -182,15 +154,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                <span className="text-sm font-medium text-green-700">5-Year Structural Warranty</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                <span className="text-sm font-medium text-green-700">1-Year Standard Warranty (extendable to 2 years on request)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                <span className="text-sm font-medium text-green-700">6-month paint and finish</span>
+                <span className="text-sm font-medium text-green-700">5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation.</span>
               </div>
             </div>
           </div>
@@ -202,7 +166,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                <span className="text-sm font-medium text-green-700">24/7 customer support</span>
+                <span className="text-sm font-medium text-green-700">Support Monday to Saturday, 09:00 to 20:00 IST</span>
               </div>
               <div className="flex items-center gap-2">
                 <Star className="w-3 h-3 text-yellow-500 fill-current" />
