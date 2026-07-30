@@ -7,9 +7,9 @@
   "gstPercent": 18,
   "applicationsDataset": "portable-office-container",
   "explorerImageTemplate": {
-    "10x10": "/images/products/portable-office-container/10x10/portable-office-container-10x10-01.webp",
+    "10x10": "/images/products/portable-office-container/10x10/portable-office-container-10x10-hero-view.webp",
     "20x8": "/images/products/portable-office-container/20x8/portable-office-container-20x8-hero-view.webp",
-    "20x10": "/images/products/portable-office-container/20x10/portable-office-container-20x10-01.webp",
+    "20x10": "/images/products/portable-office-container/20x10/portable-office-container-20x10-hero-view.webp",
     "20x12": "/images/products/portable-office-container/20x12/portable-office-container-20x12-hero-view.webp",
     "30x10": "/images/products/portable-office-container/30x10/portable-office-container-30x10-hero-view.webp",
     "40x8": "/images/products/portable-office-container/40x8/portable-office-container-40x8-hero-view.webp",
@@ -30,36 +30,36 @@
       "sku": "SP-POC-20-2025",
       "images": [
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-02.webp",
-          "alt": "Detail on the portable office container, 10 x 10 ft (100 sq ft), original corner castings left in place for lifting.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-front-angle.webp",
+          "alt": "Portable office container, 10 x 10 ft, mustard yellow corrugated body with the entrance door on the left and a single window to the right.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-03.webp",
-          "alt": "Second view of the portable office container, 10 x 10 ft (100 sq ft), the container profile with a new opening cut into it.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-side-elevation.webp",
+          "alt": "Portable office container, 10 x 10 ft, cream flank photographed flat on, showing two windows set into the corrugated side.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-04.webp",
-          "alt": "Third view of the portable office container, 10 x 10 ft (100 sq ft), the ribbed steel side that identifies the donor unit.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-workspace-interior.webp",
+          "alt": "Inside a 10 x 10 ft portable office container, two desks set along opposite walls with a storage cabinet and an internal door.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-05.webp",
-          "alt": "Further view of the portable office container, 10 x 10 ft (100 sq ft), the container roof line above an inserted window.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-desk-interior.webp",
+          "alt": "Inside a 10 x 10 ft portable office container, a single desk and chair below a wall-mounted air conditioner, daylight from both sides.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-06.webp",
-          "alt": "Closer view of the portable office container, 10 x 10 ft (100 sq ft), the steel end frame kept from the original box.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-meeting-interior.webp",
+          "alt": "Inside a 10 x 10 ft portable office container, a meeting table with four chairs standing against a dark wood credenza.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
@@ -124,36 +124,36 @@
       "sku": "SP-POC-20-2025",
       "images": [
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-02.webp",
-          "alt": "Detail on the portable office container, 20 x 10 ft (200 sq ft), flat board hiding the corrugation behind it.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-front-angle.webp",
+          "alt": "Portable office container, 20 x 10 ft, cream body viewed from the door corner with an industrial shed standing behind it.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-03.webp",
-          "alt": "Second view of the portable office container, 20 x 10 ft (200 sq ft), a floor rebuilt over the container's own bearers.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-side-elevation.webp",
+          "alt": "Portable office container, 20 x 10 ft, charcoal flank photographed flat on, four windows evenly spaced along its length.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-04.webp",
-          "alt": "Third view of the portable office container, 20 x 10 ft (200 sq ft), linings taken right up to the container roof.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-workspace-interior.webp",
+          "alt": "Inside a 20 x 10 ft portable office container, desks running down one side of the long floor with storage opposite.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-05.webp",
-          "alt": "Further view of the portable office container, 20 x 10 ft (200 sq ft), an internal width set by the container shell.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-corridor-interior.webp",
+          "alt": "Inside a 20 x 10 ft portable office container, looking the full length to a desk at the far end between windows on both sides.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-06.webp",
-          "alt": "Closer view of the portable office container, 20 x 10 ft (200 sq ft), services run behind the new lining.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-meeting-interior.webp",
+          "alt": "Inside a 20 x 10 ft portable office container, a meeting table and chairs beside a glazed internal partition.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
