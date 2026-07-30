@@ -6,6 +6,17 @@
   "hsn": "9406",
   "gstPercent": 18,
   "applicationsDataset": "portable-office-container",
+  "explorerImageTemplate": {
+    "10x10": "/images/products/portable-office-container/10x10/portable-office-container-10x10-01.webp",
+    "20x8": "/images/products/portable-office-container/20x8/portable-office-container-20x8-hero-view.webp",
+    "20x10": "/images/products/portable-office-container/20x10/portable-office-container-20x10-01.webp",
+    "20x12": "/images/products/portable-office-container/20x12/portable-office-container-20x12-hero-view.webp",
+    "30x10": "/images/products/portable-office-container/30x10/portable-office-container-30x10-hero-view.webp",
+    "40x8": "/images/products/portable-office-container/40x8/portable-office-container-40x8-hero-view.webp",
+    "40x10": "/images/products/portable-office-container/40x10/portable-office-container-40x10-hero-view.webp",
+    "20x20": "/images/products/portable-office-container/20x20/portable-office-container-20x20-hero-view.webp",
+    "40x12": "/images/products/portable-office-container/40x12/portable-office-container-40x12-hero-view.webp"
+  },
   "emitAggregateOffer": true,
   "variants": [
     {
@@ -19,43 +30,36 @@
       "sku": "SP-POC-20-2025",
       "images": [
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-hero-view.webp",
-          "alt": "Portable Office Container, 10×10 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-02.webp",
+          "alt": "Portable Office Container, 10×10 ft, view 2 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-front-angle.webp",
-          "alt": "Portable Office Container, 10×10 ft, seen from the front corner, with the window run and door position visible.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-03.webp",
+          "alt": "Portable Office Container, 10×10 ft, view 3 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-side-elevation.webp",
-          "alt": "Portable Office Container, 10×10 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-04.webp",
+          "alt": "Portable Office Container, 10×10 ft, view 4 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-workspace-interior.webp",
-          "alt": "Portable Office Container, 10×10 ft, interior with the desk positions in place under the fitted lighting.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-05.webp",
+          "alt": "Portable Office Container, 10×10 ft, view 5 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-entrance-interior.webp",
-          "alt": "Portable Office Container, 10×10 ft, interior looking in from the door, with the window wall on the right.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-rear-interior.webp",
-          "alt": "Portable Office Container, 10×10 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "src": "/images/products/portable-office-container/10x10/portable-office-container-10x10-06.webp",
+          "alt": "Portable Office Container, 10×10 ft, view 6 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
@@ -72,13 +76,6 @@
       "useCase": "Utility crew rotations",
       "sku": "SP-POC-20-2025",
       "images": [
-        {
-          "src": "/images/products/portable-office-container/20x8/portable-office-container-20x8-hero-view.webp",
-          "alt": "Portable Office Container, 20×8 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/portable-office-container/20x8/portable-office-container-20x8-front-angle.webp",
           "alt": "Portable Office Container, 20×8 ft, seen from the front corner, with the window run and door position visible.",
@@ -127,43 +124,36 @@
       "sku": "SP-POC-20-2025",
       "images": [
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-hero-view.webp",
-          "alt": "Portable Office Container, 20×10 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-02.webp",
+          "alt": "Portable Office Container, 20×10 ft, view 2 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-front-angle.webp",
-          "alt": "Portable Office Container, 20×10 ft, seen from the front corner, with the window run and door position visible.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-03.webp",
+          "alt": "Portable Office Container, 20×10 ft, view 3 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-side-elevation.webp",
-          "alt": "Portable Office Container, 20×10 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-04.webp",
+          "alt": "Portable Office Container, 20×10 ft, view 4 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-workspace-interior.webp",
-          "alt": "Portable Office Container, 20×10 ft, interior with the desk positions in place under the fitted lighting.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-05.webp",
+          "alt": "Portable Office Container, 20×10 ft, view 5 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-entrance-interior.webp",
-          "alt": "Portable Office Container, 20×10 ft, interior looking in from the door, with the window wall on the right.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-rear-interior.webp",
-          "alt": "Portable Office Container, 20×10 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "src": "/images/products/portable-office-container/20x10/portable-office-container-20x10-06.webp",
+          "alt": "Portable Office Container, 20×10 ft, view 6 of the factory-fitted unit.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
@@ -180,13 +170,6 @@
       "useCase": "Travelling review rooms",
       "sku": "SP-POC-20-2025",
       "images": [
-        {
-          "src": "/images/products/portable-office-container/20x12/portable-office-container-20x12-hero-view.webp",
-          "alt": "Portable Office Container, 20×12 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/portable-office-container/20x12/portable-office-container-20x12-front-angle.webp",
           "alt": "Portable Office Container, 20×12 ft, seen from the front corner, with the window run and door position visible.",
@@ -235,13 +218,6 @@
       "sku": "SP-POC-20-2025",
       "images": [
         {
-          "src": "/images/products/portable-office-container/30x10/portable-office-container-30x10-hero-view.webp",
-          "alt": "Portable Office Container, 30×10 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
           "src": "/images/products/portable-office-container/30x10/portable-office-container-30x10-front-angle.webp",
           "alt": "Portable Office Container, 30×10 ft, seen from the front corner, with the window run and door position visible.",
           "provenance": "render",
@@ -288,13 +264,6 @@
       "useCase": "Advancing work fronts",
       "sku": "SP-POC-20-2025",
       "images": [
-        {
-          "src": "/images/products/portable-office-container/40x8/portable-office-container-40x8-hero-view.webp",
-          "alt": "Portable Office Container, 40×8 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/portable-office-container/40x8/portable-office-container-40x8-front-angle.webp",
           "alt": "Portable Office Container, 40×8 ft, seen from the front corner, with the window run and door position visible.",
@@ -343,13 +312,6 @@
       "sku": "SP-POC-20-2025",
       "images": [
         {
-          "src": "/images/products/portable-office-container/40x10/portable-office-container-40x10-hero-view.webp",
-          "alt": "Portable Office Container, 40×10 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
           "src": "/images/products/portable-office-container/40x10/portable-office-container-40x10-front-angle.webp",
           "alt": "Portable Office Container, 40×10 ft, seen from the front corner, with the window run and door position visible.",
           "provenance": "render",
@@ -397,13 +359,6 @@
       "sku": "SP-POC-20-2025",
       "images": [
         {
-          "src": "/images/products/portable-office-container/20x20/portable-office-container-20x20-hero-view.webp",
-          "alt": "Portable Office Container, 20×20 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
           "src": "/images/products/portable-office-container/20x20/portable-office-container-20x20-front-angle.webp",
           "alt": "Portable Office Container, 20×20 ft, seen from the front corner, with the window run and door position visible.",
           "provenance": "render",
@@ -450,13 +405,6 @@
       "useCase": "Long asset rotations",
       "sku": "SP-POC-20-2025",
       "images": [
-        {
-          "src": "/images/products/portable-office-container/40x12/portable-office-container-40x12-hero-view.webp",
-          "alt": "Portable Office Container, 40×12 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/portable-office-container/40x12/portable-office-container-40x12-front-angle.webp",
           "alt": "Portable Office Container, 40×12 ft, seen from the front corner, with the window run and door position visible.",

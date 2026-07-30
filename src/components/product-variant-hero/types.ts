@@ -67,10 +67,11 @@ export interface VariantProductData {
       round(priceExGst / areaSqft) in en-IN grouping — which reproduces the
       flagship's owner-supplied figures exactly for all 9 sizes. */
   pricePerSqft?: Record<string, string>;
-  /** Explorer panel image path template; `{sizeSlug}` is substituted. Default:
-      preset, else derived from the variant's first gallery image by swapping its
-      trailing shot segment for `explorerImageShot`. */
-  explorerImageTemplate?: string;
+  /** Explorer panel image path template; `{sizeSlug}` is substituted. A per-size
+      path map is also accepted for products whose approved filenames do not share
+      one template. Default: preset, else derived from the variant's first gallery
+      image by swapping its trailing shot segment for `explorerImageShot`. */
+  explorerImageTemplate?: string | Record<string, string>;
   /** Shot name used by the derived explorer image path. Default: 'elevated-view'. */
   explorerImageShot?: string;
   /** Key of the Size & Applications Explorer copy dataset. Default: preset, else

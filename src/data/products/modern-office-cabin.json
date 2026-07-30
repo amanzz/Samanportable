@@ -6,6 +6,7 @@
   "hsn": "9406",
   "gstPercent": 18,
   "applicationsDataset": "modern-office-cabin",
+  "explorerImageTemplate": "/images/products/modern-office-cabin/{sizeSlug}/modern-office-cabin-{sizeSlug}-hero-view.webp",
   "emitAggregateOffer": true,
   "variants": [
     {
@@ -18,13 +19,6 @@
       "useCase": "Consulting rooms",
       "sku": "SP-MOC-20-2025",
       "images": [
-        {
-          "src": "/images/products/modern-office-cabin/10x10/modern-office-cabin-10x10-hero-view.webp",
-          "alt": "Modern Office Cabin, 10×10 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/modern-office-cabin/10x10/modern-office-cabin-10x10-front-angle.webp",
           "alt": "Modern Office Cabin, 10×10 ft, seen from the front corner, with the window run and door position visible.",
@@ -73,13 +67,6 @@
       "sku": "SP-MOC-20-2025",
       "images": [
         {
-          "src": "/images/products/modern-office-cabin/20x8/modern-office-cabin-20x8-hero-view.webp",
-          "alt": "Modern Office Cabin, 20×8 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
           "src": "/images/products/modern-office-cabin/20x8/modern-office-cabin-20x8-front-angle.webp",
           "alt": "Modern Office Cabin, 20×8 ft, seen from the front corner, with the window run and door position visible.",
           "provenance": "render",
@@ -126,13 +113,6 @@
       "useCase": "Client-visited offices",
       "sku": "SP-MOC-20-2025",
       "images": [
-        {
-          "src": "/images/products/modern-office-cabin/20x10/modern-office-cabin-20x10-hero-view.webp",
-          "alt": "Modern Office Cabin, 20×10 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/modern-office-cabin/20x10/modern-office-cabin-20x10-front-angle.webp",
           "alt": "Modern Office Cabin, 20×10 ft, seen from the front corner, with the window run and door position visible.",
@@ -181,13 +161,6 @@
       "sku": "SP-MOC-20-2025",
       "images": [
         {
-          "src": "/images/products/modern-office-cabin/20x12/modern-office-cabin-20x12-hero-view.webp",
-          "alt": "Modern Office Cabin, 20×12 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
           "src": "/images/products/modern-office-cabin/20x12/modern-office-cabin-20x12-front-angle.webp",
           "alt": "Modern Office Cabin, 20×12 ft, seen from the front corner, with the window run and door position visible.",
           "provenance": "render",
@@ -234,13 +207,6 @@
       "useCase": "Sales galleries",
       "sku": "SP-MOC-20-2025",
       "images": [
-        {
-          "src": "/images/products/modern-office-cabin/30x10/modern-office-cabin-30x10-hero-view.webp",
-          "alt": "Modern Office Cabin, 30×10 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/modern-office-cabin/30x10/modern-office-cabin-30x10-front-angle.webp",
           "alt": "Modern Office Cabin, 30×10 ft, seen from the front corner, with the window run and door position visible.",
@@ -289,13 +255,6 @@
       "sku": "SP-MOC-20-2025",
       "images": [
         {
-          "src": "/images/products/modern-office-cabin/40x8/modern-office-cabin-40x8-hero-view.webp",
-          "alt": "Modern Office Cabin, 40×8 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
           "src": "/images/products/modern-office-cabin/40x8/modern-office-cabin-40x8-front-angle.webp",
           "alt": "Modern Office Cabin, 40×8 ft, seen from the front corner, with the window run and door position visible.",
           "provenance": "render",
@@ -342,13 +301,6 @@
       "useCase": "Full branch offices",
       "sku": "SP-MOC-20-2025",
       "images": [
-        {
-          "src": "/images/products/modern-office-cabin/40x10/modern-office-cabin-40x10-hero-view.webp",
-          "alt": "Modern Office Cabin, 40×10 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/modern-office-cabin/40x10/modern-office-cabin-40x10-front-angle.webp",
           "alt": "Modern Office Cabin, 40×10 ft, seen from the front corner, with the window run and door position visible.",
@@ -397,13 +349,6 @@
       "sku": "SP-MOC-20-2025",
       "images": [
         {
-          "src": "/images/products/modern-office-cabin/20x20/modern-office-cabin-20x20-hero-view.webp",
-          "alt": "Modern Office Cabin, 20×20 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
           "src": "/images/products/modern-office-cabin/20x20/modern-office-cabin-20x20-front-angle.webp",
           "alt": "Modern Office Cabin, 20×20 ft, seen from the front corner, with the window run and door position visible.",
           "provenance": "render",
@@ -450,13 +395,6 @@
       "useCase": "Head-office outposts",
       "sku": "SP-MOC-20-2025",
       "images": [
-        {
-          "src": "/images/products/modern-office-cabin/40x12/modern-office-cabin-40x12-hero-view.webp",
-          "alt": "Modern Office Cabin, 40×12 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/modern-office-cabin/40x12/modern-office-cabin-40x12-front-angle.webp",
           "alt": "Modern Office Cabin, 40×12 ft, seen from the front corner, with the window run and door position visible.",
