@@ -17,8 +17,50 @@
       "priceInclGst": 169920,
       "useCase": "Two-person duty rooms",
       "sku": "SP-SMOC-10-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-hero-view.webp",
+          "alt": "Small Office Cabin, 10×10 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+          "alt": "Small Office Cabin, 10×10 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-side-elevation.webp",
+          "alt": "Small Office Cabin, 10×10 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-workspace-interior.webp",
+          "alt": "Small Office Cabin, 10×10 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-entrance-interior.webp",
+          "alt": "Small Office Cabin, 10×10 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-rear-interior.webp",
+          "alt": "Small Office Cabin, 10×10 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "20x8",
@@ -29,8 +71,50 @@
       "priceInclGst": 271872,
       "useCase": "Three-desk slim offices",
       "sku": "SP-SMOC-10-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-hero-view.webp",
+          "alt": "Small Office Cabin, 20×8 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-front-angle.webp",
+          "alt": "Small Office Cabin, 20×8 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-side-elevation.webp",
+          "alt": "Small Office Cabin, 20×8 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-workspace-interior.webp",
+          "alt": "Small Office Cabin, 20×8 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-entrance-interior.webp",
+          "alt": "Small Office Cabin, 20×8 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-rear-interior.webp",
+          "alt": "Small Office Cabin, 20×8 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
@@ -41,8 +125,50 @@
       "priceInclGst": 309160,
       "useCase": "Four-person offices",
       "sku": "SP-SMOC-10-2025",
-      "images": [],
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-hero-view.webp",
+          "alt": "Small Office Cabin, 20×10 ft, photographed square-on against its site, showing the full length and the entry door.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-front-angle.webp",
+          "alt": "Small Office Cabin, 20×10 ft, seen from the front corner, with the window run and door position visible.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-side-elevation.webp",
+          "alt": "Small Office Cabin, 20×10 ft, side elevation showing the wall profile and the base channel it sits on.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-workspace-interior.webp",
+          "alt": "Small Office Cabin, 20×10 ft, interior with the desk positions in place under the fitted lighting.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-entrance-interior.webp",
+          "alt": "Small Office Cabin, 20×10 ft, interior looking in from the door, with the window wall on the right.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-rear-interior.webp",
+          "alt": "Small Office Cabin, 20×10 ft, interior looking toward the rear wall, showing the floor run and ceiling.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
     }
   ]
 }
