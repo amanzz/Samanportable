@@ -6,6 +6,7 @@
   "hsn": "9406",
   "gstPercent": 18,
   "applicationsDataset": "small-office-cabin",
+  "explorerImageTemplate": "/images/products/small-office-cabin/{sizeSlug}/small-office-cabin-{sizeSlug}-hero-view.webp",
   "emitAggregateOffer": true,
   "variants": [
     {
@@ -18,13 +19,6 @@
       "useCase": "Two-person duty rooms",
       "sku": "SP-SMOC-10-2025",
       "images": [
-        {
-          "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-hero-view.webp",
-          "alt": "Small Office Cabin, 10×10 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
           "alt": "Small Office Cabin, 10×10 ft, seen from the front corner, with the window run and door position visible.",
@@ -73,13 +67,6 @@
       "sku": "SP-SMOC-10-2025",
       "images": [
         {
-          "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-hero-view.webp",
-          "alt": "Small Office Cabin, 20×8 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
           "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-front-angle.webp",
           "alt": "Small Office Cabin, 20×8 ft, seen from the front corner, with the window run and door position visible.",
           "provenance": "render",
@@ -126,13 +113,6 @@
       "useCase": "Four-person offices",
       "sku": "SP-SMOC-10-2025",
       "images": [
-        {
-          "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-hero-view.webp",
-          "alt": "Small Office Cabin, 20×10 ft, photographed square-on against its site, showing the full length and the entry door.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
         {
           "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-front-angle.webp",
           "alt": "Small Office Cabin, 20×10 ft, seen from the front corner, with the window run and door position visible.",

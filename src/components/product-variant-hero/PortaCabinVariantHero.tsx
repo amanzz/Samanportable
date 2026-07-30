@@ -69,7 +69,13 @@ interface ApplicationsData {
  *   panel h3               -> applications sub-heading (new slot)
  *   panel applications     -> the 4 checkmark items; [0] also feeds the panel image alt
  */
-type SectionHPanel = { h2: string; intro: string; h3: string; applications: string[] };
+type SectionHPanel = {
+  h2: string;
+  intro: string;
+  h3: string;
+  applications: string[];
+  imageAlt?: string;
+};
 type SectionHDataset = Record<string, SectionHPanel | string>;
 const fromSectionHDrop = (dataset: SectionHDataset): ApplicationsData => ({
   ...(typeof dataset.h2 === 'string' ? { h2: dataset.h2 } : {}),
@@ -83,6 +89,7 @@ const fromSectionHDrop = (dataset: SectionHDataset): ApplicationsData => ({
           paragraph: panel.intro,
           applications: panel.applications,
           applicationsHeading: panel.h3,
+          ...(panel.imageAlt ? { imageAlt: panel.imageAlt } : {}),
         }]
   ),
 });
@@ -136,12 +143,13 @@ const sentenceCase = (name: string) => name.charAt(0).toUpperCase() + name.slice
 // trailing shot segment — so any product whose assets follow the house naming
 // convention works without extra configuration.
 const explorerImageSrc = (
-  template: string | undefined,
+  template: string | Record<string, string> | undefined,
   shot: string,
   sizeSlug: string,
   gallerySrc: string | undefined
 ): string | null => {
-  if (template) return template.replace(/\{sizeSlug\}/g, sizeSlug);
+  if (typeof template === 'string') return template.replace(/\{sizeSlug\}/g, sizeSlug);
+  if (template?.[sizeSlug]) return template[sizeSlug].replace(/\{sizeSlug\}/g, sizeSlug);
   if (!gallerySrc) return null;
   const swapped = gallerySrc.replace(/-[a-z0-9]+-view(\.[a-z0-9]+)$/i, `-${shot}$1`);
   return swapped === gallerySrc ? null : swapped;
