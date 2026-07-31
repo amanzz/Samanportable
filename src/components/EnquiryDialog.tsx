@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { CheckCircle, Loader2 } from 'lucide-react';
 import { pushDataLayer, safeText } from '@/lib/analytics';
+import LabourColonyEnquiryDialog from '@/components/LabourColonyEnquiryDialog';
 
 interface EnquiryDialogProps {
   isOpen: boolean;
@@ -16,6 +18,7 @@ interface EnquiryDialogProps {
 }
 
 const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose, prefillMessage }) => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -111,6 +114,10 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose, prefillM
     resetForm();
     onClose();
   };
+
+  if (router.asPath.split('?')[0].replace(/\/$/, '') === '/product/labor-colony') {
+    return <LabourColonyEnquiryDialog isOpen={isOpen} onClose={onClose} prefillMessage={prefillMessage} />;
+  }
 
   if (submitted) {
     return (

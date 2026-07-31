@@ -3,27 +3,18 @@ import { RECIPIENTS, COMPANY_INFO } from '@/config/emails';
 
 // Create transporter with Brevo SMTP configuration
 const transporter = nodemailer.createTransport({
-  host: 'smtp-relay.brevo.com',
-  port: 587,
-  secure: false, // TLS
+  host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
+  port: Number(process.env.SMTP_PORT || 587),
+  secure: process.env.SMTP_SECURE === 'true',
   auth: {
-    user: '9370d8001@smtp-brevo.com',
-    pass: 'xsmtpsib-6e091ced1f1dd85a80df1e7be8d15498acc55a5a6e530204f1cfa85f7e25a6cf-yS6mb7GJWB0gx8AH'
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
   tls: {
     rejectUnauthorized: false
   },
   debug: false, // Disable debug output
   logger: false // Disable logging
-});
-
-// Verify transporter connection
-transporter.verify(function(error, success) {
-  if (error) {
-    console.error('SMTP connection error:', error);
-  } else {
-    console.log('SMTP server is ready to send emails');
-  }
 });
 
 // Email sending function
@@ -112,10 +103,16 @@ export const sendToRecipient = async (
 
 // Utility function to format form data for email
 export const formatFormDataForEmail = (formData: Record<string, any>, formType = 'general') => {
+  const escapeHtml = (value: unknown) => String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
   const formatField = (key: string, value: any) => {
     if (!value) return '';
     const label = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
-    return `<tr><td><strong>${label}:</strong></td><td>${value}</td></tr>`;
+    return `<tr><td><strong>${escapeHtml(label)}:</strong></td><td>${escapeHtml(value)}</td></tr>`;
   };
 
   const fields = Object.entries(formData)
