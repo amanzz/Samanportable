@@ -255,6 +255,22 @@ for (const absolute of sourceFiles) {
       const productData = JSON.parse(text);
       visitProductImages(productData, sourceFile);
       if (typeof productData.productSlug === 'string' && Array.isArray(productData.variants)) {
+        const applicationsKey = productData.applicationsDataset || productData.productSlug;
+        const applicationsPath = path.join(
+          root,
+          'src/data/products',
+          `${applicationsKey}-applications.json`,
+        );
+        const applicationsSourceFile = fs.existsSync(applicationsPath)
+          ? toPosix(path.relative(root, applicationsPath))
+          : null;
+        const applicationPanels = applicationsSourceFile
+          ? JSON.parse(fs.readFileSync(applicationsPath, 'utf8')).panels
+          : [];
+        const applicationPanelBySlug = new Map(
+          (Array.isArray(applicationPanels) ? applicationPanels : [])
+            .map(panel => [panel?.sizeSlug, panel]),
+        );
         for (const variant of productData.variants) {
           for (const image of Array.isArray(variant.images) ? variant.images : []) {
             const resolvedUrl = normalizeImageUrl(image?.src);
@@ -269,21 +285,23 @@ for (const absolute of sourceFiles) {
             });
           }
           const sizeSlug = typeof variant.sizeSlug === 'string' ? variant.sizeSlug : '';
+          const applicationImage = applicationPanelBySlug.get(sizeSlug)?.image;
           const explorerTemplate = productData.explorerImageTemplate;
-          const explorerSource = typeof explorerTemplate === 'string'
-            ? explorerTemplate.replaceAll('{sizeSlug}', sizeSlug)
-            : explorerTemplate?.[sizeSlug];
+          const explorerSource = applicationImage?.src
+            || (typeof explorerTemplate === 'string'
+              ? explorerTemplate.replaceAll('{sizeSlug}', sizeSlug)
+              : explorerTemplate?.[sizeSlug]);
           const explorerUrl = normalizeImageUrl(explorerSource);
           if (explorerUrl) {
-            const applicationsKey = productData.applicationsDataset || productData.productSlug;
-            const explorerAlt = sectionHDatasets?.[applicationsKey]?.[sizeSlug]?.imageAlt;
+            const explorerAlt = applicationImage?.alt
+              || sectionHDatasets?.[applicationsKey]?.[sizeSlug]?.imageAlt;
             publishedVariantImages.push({
               productSlug: productData.productSlug,
               resolvedUrl: explorerUrl,
-              sourceFile,
+              sourceFile: applicationImage ? applicationsSourceFile : sourceFile,
               altText: typeof explorerAlt === 'string' ? explorerAlt : '',
-              width: null,
-              height: null,
+              width: Number(applicationImage?.width) || null,
+              height: Number(applicationImage?.height) || null,
             });
           }
         }

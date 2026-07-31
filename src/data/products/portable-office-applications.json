@@ -5,8 +5,8 @@
     {
       "sizeSlug": "10x10",
       "image": {
-        "src": "/images/products/portable-office/10x10/portable-office-10x10-workspace-interior.webp",
-        "alt": "Inside a 10 x 10 ft portable office cabin, two desk runs facing each other with a chair at each position.",
+        "src": "/images/products/portable-office/10x10/portable-office-10x10-hero-view.webp",
+        "alt": "Portable office cabin, 10 x 10 ft, grey upper panel over a maroon base, door and two windows seen from the corner.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -23,8 +23,8 @@
     {
       "sizeSlug": "20x8",
       "image": {
-        "src": "/images/products/portable-office/20x8/portable-office-20x8-workspace-interior.webp",
-        "alt": "Inside a 20 x 8 ft portable office cabin, a single desk run down one side of the narrow bay.",
+        "src": "/images/products/portable-office/20x8/portable-office-20x8-hero-view.webp",
+        "alt": "Portable office cabin, 20 x 8 ft, cream body over a green base, three windows along the twenty foot side.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -41,8 +41,8 @@
     {
       "sizeSlug": "20x10",
       "image": {
-        "src": "/images/products/portable-office/20x10/portable-office-20x10-workspace-interior.webp",
-        "alt": "Inside a 20 x 10 ft portable office cabin, desk runs down both sides under a ceiling fan.",
+        "src": "/images/products/portable-office/20x10/portable-office-20x10-hero-view.webp",
+        "alt": "Portable office cabin, 20 x 10 ft, cream body with three shuttered windows along the twenty foot flank.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -59,8 +59,8 @@
     {
       "sizeSlug": "20x12",
       "image": {
-        "src": "/images/products/portable-office/20x12/portable-office-20x12-workspace-interior.webp",
-        "alt": "Inside a 20 x 12 ft portable office cabin, workstations along one wall with a clear central walkway.",
+        "src": "/images/products/portable-office/20x12/portable-office-20x12-hero-view.webp",
+        "alt": "Portable office cabin, 20 x 12 ft, rust red body with two shuttered windows, seen from the corner.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -77,8 +77,8 @@
     {
       "sizeSlug": "30x10",
       "image": {
-        "src": "/images/products/portable-office/30x10/portable-office-30x10-workspace-interior.webp",
-        "alt": "Inside a 30 x 10 ft portable office cabin, workstations down both sides of the thirty foot floor.",
+        "src": "/images/products/portable-office/30x10/portable-office-30x10-hero-view.webp",
+        "alt": "Portable office cabin, 30 x 10 ft, pink upper panel over a teal base along the thirty foot flank.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -95,8 +95,8 @@
     {
       "sizeSlug": "40x8",
       "image": {
-        "src": "/images/products/portable-office/40x8/portable-office-40x8-workspace-interior.webp",
-        "alt": "Inside a 40 x 8 ft portable office cabin, a clear narrow floor running the full forty feet.",
+        "src": "/images/products/portable-office/40x8/portable-office-40x8-hero-view.webp",
+        "alt": "Portable office cabin, 40 x 8 ft, teal body seen end on with a single shuttered vent.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -113,8 +113,8 @@
     {
       "sizeSlug": "40x10",
       "image": {
-        "src": "/images/products/portable-office/40x10/portable-office-40x10-workspace-interior.webp",
-        "alt": "Inside a 40 x 10 ft portable office cabin, two desk rows running the full length of the floor.",
+        "src": "/images/products/portable-office/40x10/portable-office-40x10-hero-view.webp",
+        "alt": "Portable office cabin, 40 x 10 ft, dark green body with a long window run along the forty foot flank.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -131,8 +131,8 @@
     {
       "sizeSlug": "20x20",
       "image": {
-        "src": "/images/products/portable-office/20x20/portable-office-20x20-workspace-interior.webp",
-        "alt": "Inside a 20 x 20 ft portable office cabin, paired workstations set out across the square floor.",
+        "src": "/images/products/portable-office/20x20/portable-office-20x20-hero-view.webp",
+        "alt": "Portable office cabin, 20 x 20 ft, cream body over a black base on the square twenty foot plan.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -149,11 +149,11 @@
     {
       "sizeSlug": "40x12",
       "image": {
-        "src": "/images/products/portable-office/40x12/portable-office-40x12-workspace-interior.webp",
-        "alt": "Inside a 40 x 12 ft portable office cabin, desk banks either side of a central walkway.",
+        "src": "/images/products/portable-office/40x12/portable-office-40x12-hero-view.webp",
+        "alt": "Portable office cabin, 40 x 12 ft, olive green body with five windows along the forty foot side.",
         "provenance": "render",
         "width": 1200,
-        "height": 1200
+        "height": 800
       },
       "h3": "40x12 ft, the largest single body we deliver",
       "paragraph": "At 480 sq ft this is the biggest office that still arrives in one piece, and the lowest rate per square foot in the range. The extra width allows a central aisle serving desks on both sides, so twelve to fifteen people move without turning sideways past chairs. Light rows, fan points, socket pairs and the switchboard all arrive tested, with a dedicated AC run where the order calls for one. Anything larger becomes a joined layout quoted against your drawing, and most site teams never reach that point.",
