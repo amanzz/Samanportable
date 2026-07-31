@@ -36,8 +36,8 @@ export interface VariantProductVideo {
   schemaThumbnailUrl: string;
   uploadDate: string;
   duration: string;
-  transcriptHeading: string;
-  transcript: string;
+  transcriptHeading?: string;
+  transcript?: string;
 }
 
 export interface VariantProductPreset {

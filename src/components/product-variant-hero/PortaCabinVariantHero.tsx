@@ -899,7 +899,7 @@ export function PortaCabinVariantHero({
           </div>
         </aside>
 
-        {video && (
+        {video?.transcriptHeading && video.transcript && (
           <details className="pc-transcript rounded-lg border border-slate-200 bg-white/80 px-3 py-2 text-sm text-slate-700">
             <summary className="cursor-pointer font-semibold text-slate-900">
               Video transcript

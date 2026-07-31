@@ -13,6 +13,8 @@
       "metaDescription": "Labor colony for highway, dam, and industrial projects. Accommodates 50–500 workers. Prefab labour colony units, set up in 10 days. Get a capacity quote today.",
       "canonical": "https://www.samanportable.com/product/labor-colony",
       "firstParagraphHasLink": false,
+      "descriptionFirstParagraphHasLink": false,
+      "descriptionAnchorCount": 3,
       "internalLinks": 9,
       "redirectedOrErrorTargets": [],
       "ownPrimaryLinks": [],
@@ -65,8 +67,28 @@
           false,
           false
         ],
-        "vatAllFalse": true
+        "vatAllFalse": true,
+        "videoObjectCount": 1,
+        "videoObject": {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Labour Colony for Construction Sites | SAMAN Portable Worker Accommodation",
+          "description": "Walk through a completed labour colony built by SAMAN Portable for a live industrial project.",
+          "thumbnailUrl": [
+            "https://i.ytimg.com/vi/Q41RYemNB_E/hqdefault.jpg"
+          ],
+          "uploadDate": "2026-07-27T02:22:28-07:00",
+          "duration": "PT2M15S",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Q41RYemNB_E",
+          "publisher": {
+            "@id": "https://www.samanportable.com/#organization"
+          }
+        }
       },
+      "initialVideoIframeCount": 0,
+      "initialYoutubeNocookieIframeCount": 0,
+      "initialYoutubePreconnectCount": 0,
+      "videoPosterCount": 1,
       "pdf": {
         "status": 200
       },
@@ -80,7 +102,9 @@
       "metaDescription": "Labor sheds for project sites. Basic accommodation for site workers. Insulated walls, ventilation included. Get a capacity and price quote today.",
       "canonical": "https://www.samanportable.com/product/labor-colony/labor-sheds",
       "firstParagraphHasLink": false,
-      "internalLinks": 8,
+      "descriptionFirstParagraphHasLink": false,
+      "descriptionAnchorCount": 3,
+      "internalLinks": 10,
       "redirectedOrErrorTargets": [],
       "ownPrimaryLinks": [],
       "retiredClaimHits": [],
@@ -136,8 +160,14 @@
           false,
           false
         ],
-        "vatAllFalse": true
+        "vatAllFalse": true,
+        "videoObjectCount": 0,
+        "videoObject": null
       },
+      "initialVideoIframeCount": 0,
+      "initialYoutubeNocookieIframeCount": 0,
+      "initialYoutubePreconnectCount": 0,
+      "videoPosterCount": 0,
       "pdf": {
         "status": 200
       },
@@ -151,7 +181,9 @@
       "metaDescription": "Labor hutments for construction site workers. Basic and affordable. Site-built or prefab options. For short to medium duration projects. Get a quote.",
       "canonical": "https://www.samanportable.com/product/labor-colony/labor-hutments",
       "firstParagraphHasLink": false,
-      "internalLinks": 8,
+      "descriptionFirstParagraphHasLink": false,
+      "descriptionAnchorCount": 3,
+      "internalLinks": 10,
       "redirectedOrErrorTargets": [],
       "ownPrimaryLinks": [],
       "retiredClaimHits": [],
@@ -207,8 +239,14 @@
           false,
           false
         ],
-        "vatAllFalse": true
+        "vatAllFalse": true,
+        "videoObjectCount": 0,
+        "videoObject": null
       },
+      "initialVideoIframeCount": 0,
+      "initialYoutubeNocookieIframeCount": 0,
+      "initialYoutubePreconnectCount": 0,
+      "videoPosterCount": 0,
       "pdf": {
         "status": 200
       },
@@ -222,11 +260,17 @@
       "metaDescription": "Prefab labor camps with full facilities. Factory-made units, set up in 10 days. For infrastructure and industrial projects. Get a capacity quote.",
       "canonical": "https://www.samanportable.com/product/labor-colony/prefab-labor-camps",
       "firstParagraphHasLink": false,
-      "internalLinks": 8,
+      "descriptionFirstParagraphHasLink": false,
+      "descriptionAnchorCount": 3,
+      "internalLinks": 10,
       "redirectedOrErrorTargets": [],
       "ownPrimaryLinks": [],
       "retiredClaimHits": [],
       "claimHits": [
+        {
+          "claim": "cheapest",
+          "snippet": " the difference the first time it moves. Across three projects the same block becomes the cheapest housing a contractor owns. Pedestal footings also mean leaving a site means lifting pads,"
+        },
         {
           "claim": "free delivery",
           "snippet": "ane or manual placement is arranged based on your site access and confirmed at quotation. Free delivery: within Bangalore city (South zone) · Delhi NCR — Ghaziabad, Gurugram, Faridabad, Noida a"
@@ -274,31 +318,91 @@
           false,
           false
         ],
-        "vatAllFalse": true
+        "vatAllFalse": true,
+        "videoObjectCount": 0,
+        "videoObject": null
       },
+      "initialVideoIframeCount": 0,
+      "initialYoutubeNocookieIframeCount": 0,
+      "initialYoutubePreconnectCount": 0,
+      "videoPosterCount": 0,
       "pdf": {
         "status": 200
       },
       "downloadLabelCount": 1
     }
   },
-  "packAnchorOccurrences": {
-    "labour shed building": [
+  "addendumAnchorOccurrences": {
+    "open-hall dormitory building": [
       {
         "pathname": "/product/labor-colony",
         "href": "/product/labor-colony/labor-sheds"
       }
     ],
-    "labour hutment room block": [
+    "room-based hutment blocks": [
       {
         "pathname": "/product/labor-colony",
         "href": "/product/labor-colony/labor-hutments"
       }
     ],
-    "relocatable prefab labour camp": [
+    "camp blocks built to relocate": [
       {
         "pathname": "/product/labor-colony",
         "href": "/product/labor-colony/prefab-labor-camps"
+      }
+    ],
+    "the hutment room block": [
+      {
+        "pathname": "/product/labor-colony/labor-sheds",
+        "href": "/product/labor-colony/labor-hutments"
+      }
+    ],
+    "the relocatable camp build": [
+      {
+        "pathname": "/product/labor-colony/labor-sheds",
+        "href": "/product/labor-colony/prefab-labor-camps"
+      }
+    ],
+    "the worker housing range": [
+      {
+        "pathname": "/product/labor-colony/labor-sheds",
+        "href": "/product/labor-colony"
+      }
+    ],
+    "the open-hall shed building": [
+      {
+        "pathname": "/product/labor-colony/labor-hutments",
+        "href": "/product/labor-colony/labor-sheds"
+      }
+    ],
+    "the demountable camp block": [
+      {
+        "pathname": "/product/labor-colony/labor-hutments",
+        "href": "/product/labor-colony/prefab-labor-camps"
+      }
+    ],
+    "the colony range overview": [
+      {
+        "pathname": "/product/labor-colony/labor-hutments",
+        "href": "/product/labor-colony"
+      }
+    ],
+    "a fixed open-hall shed": [
+      {
+        "pathname": "/product/labor-colony/prefab-labor-camps",
+        "href": "/product/labor-colony/labor-sheds"
+      }
+    ],
+    "the room-block hutment": [
+      {
+        "pathname": "/product/labor-colony/prefab-labor-camps",
+        "href": "/product/labor-colony/labor-hutments"
+      }
+    ],
+    "the full colony line-up": [
+      {
+        "pathname": "/product/labor-colony/prefab-labor-camps",
+        "href": "/product/labor-colony"
       }
     ],
     "the full worker housing range": [
@@ -320,8 +424,22 @@
       }
     ]
   },
-  "packAnchorUniqueSitewide": true,
+  "addendumAnchorUniqueSitewide": true,
   "sitewideSevenWordCollisions": [],
+  "ignoredCanonicalFactCollisions": [
+    {
+      "sourceUrl": "/product/labor-colony",
+      "surface": "description",
+      "competingUrl": "/product/container-offices/container-office-cabin",
+      "sequences": [
+        "5 year structural warranty and 1 year",
+        "year structural warranty and 1 year finishing",
+        "structural warranty and 1 year finishing warranty",
+        "warranty and 1 year finishing warranty as",
+        "and 1 year finishing warranty as standard"
+      ]
+    }
+  ],
   "l3": [
     {
       "pathname": "/product/labor-colony",

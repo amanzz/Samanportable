@@ -159,7 +159,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
     comparison: (
       <>
-        Crews that need lockable individual rooms are better served by the <Link className={linkClass} href={labourHref('labor-hutments')}>Labor Hutments room block</Link> instead.
+        Crews that need lockable individual rooms are better served by the Labor Hutments room block, and <Link className={linkClass} href={LABOUR_COLONY_HREF}>the full worker housing range</Link> shows where each build fits.
       </>
     ),
   },
@@ -172,7 +172,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
     comparison: (
       <>
-        If maximum beds in one supervised space is the priority, the open-hall <Link className={linkClass} href={labourHref('labor-sheds')}>Labor Sheds building</Link> houses more workers per floor.
+        If maximum beds in one supervised space is the priority, the open-hall Labor Sheds building houses more per floor; see <Link className={linkClass} href={LABOUR_COLONY_HREF}>every colony building compared</Link> before you choose.
       </>
     ),
   },
@@ -185,7 +185,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
     comparison: (
       <>
-        If the housing stays on one site for its whole life, the <Link className={linkClass} href={LABOUR_COLONY_HREF}>fixed-site Labour Colony configuration</Link> is the more economical build.
+        If the housing stays on one site for its whole life, the Labour Colony configuration is more economical, with <Link className={linkClass} href={LABOUR_COLONY_HREF}>fixed and movable options side by side</Link> on the range page.
       </>
     ),
   },

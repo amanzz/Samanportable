@@ -16,10 +16,19 @@ const PRIMARY_TERMS = {
   'labor-hutments': ['labour hutment', 'labor hutment'],
   'prefab-labor-camps': ['prefab labour camp', 'prefab labor camp', 'labour camp', 'labor camp'],
 };
-const PACK_ANCHORS = [
-  'labour shed building',
-  'labour hutment room block',
-  'relocatable prefab labour camp',
+const ADDENDUM_ANCHORS = [
+  'open-hall dormitory building',
+  'room-based hutment blocks',
+  'camp blocks built to relocate',
+  'the hutment room block',
+  'the relocatable camp build',
+  'the worker housing range',
+  'the open-hall shed building',
+  'the demountable camp block',
+  'the colony range overview',
+  'a fixed open-hall shed',
+  'the room-block hutment',
+  'the full colony line-up',
   'the full worker housing range',
   'every colony building compared',
   'fixed and movable options side by side',
@@ -45,6 +54,7 @@ const grams = value => {
   const words = tokenise(value);
   return new Set(Array.from({ length: Math.max(0, words.length - 6) }, (_, index) => words.slice(index, index + 7).join(' ')));
 };
+const CANONICAL_WARRANTY_GRAMS = grams('5-year structural warranty and 1-year finishing warranty as standard');
 const snippet = (value, needle) => {
   const lower = value.toLowerCase();
   const index = lower.indexOf(needle.toLowerCase());
@@ -57,6 +67,9 @@ const extract = html => {
   const contentEnd = contentStart >= 0 ? withoutScripts.indexOf('</main>', contentStart) : -1;
   const contentHtml = contentStart >= 0 ? withoutScripts.slice(contentStart, contentEnd >= 0 ? contentEnd : undefined) : withoutScripts;
   const contentLinks = [...contentHtml.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)].map(match => ({ href: attr(match[1], 'href'), text: text(match[2]) }));
+  const iframeSrcs = [...withoutScripts.matchAll(/<iframe\b([^>]*)>/gi)].map(match => attr(match[1], 'src'));
+  const preconnectHrefs = [...withoutScripts.matchAll(/<link\b(?=[^>]*\brel=["']preconnect["'])([^>]*)>/gi)].map(match => attr(match[1], 'href'));
+  const images = [...withoutScripts.matchAll(/<img\b([^>]*)>/gi)].map(match => ({ src: attr(match[1], 'src'), alt: attr(match[1], 'alt') }));
   const h1 = text(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || '');
   const h1Index = html.search(/<h1\b/i);
   const firstParagraph = h1Index >= 0 ? html.slice(h1Index).match(/<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1] || '' : '';
@@ -70,6 +83,9 @@ const extract = html => {
     contentText: text(contentHtml),
     links,
     contentLinks,
+    iframeSrcs,
+    preconnectHrefs,
+    images,
     firstParagraphHasLink: /<a\b/i.test(firstParagraph),
     jsonLd,
   };
@@ -132,6 +148,7 @@ for (const [slug, pathname] of Object.entries(ROUTES)) {
   const page = pages.get(pathname);
   const product = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'data', 'products', `${slug}.json`), 'utf8'));
   const aggregate = page.jsonLd.map(node => findType(node, 'ProductGroup')).find(Boolean);
+  const videoObjects = page.jsonLd.map(node => findType(node, 'VideoObject')).filter(Boolean);
   const variantOffers = aggregate?.hasVariant?.map(variant => variant.offers).filter(Boolean) || [];
   const vatValues = [aggregate?.offers?.priceSpecification?.valueAddedTaxIncluded, ...variantOffers.map(offer => offer.priceSpecification?.valueAddedTaxIncluded)].filter(value => value !== undefined);
   const expectedPrices = product.variants.map(variant => variant.priceExGst).sort((a, b) => a - b);
@@ -152,6 +169,8 @@ for (const [slug, pathname] of Object.entries(ROUTES)) {
     metaDescription: page.metaDescription,
     canonical: page.canonical,
     firstParagraphHasLink: page.firstParagraphHasLink,
+    descriptionFirstParagraphHasLink: /<a\b/i.test(product.descriptionHtml.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1] || ''),
+    descriptionAnchorCount: (product.descriptionHtml.match(/<a\b/g) || []).length,
     internalLinks: internalLinks.length,
     redirectedOrErrorTargets: checkedTargets.filter(target => target.status !== 200),
     ownPrimaryLinks,
@@ -165,32 +184,45 @@ for (const [slug, pathname] of Object.entries(ROUTES)) {
       expectedPrices,
       vatValues,
       vatAllFalse: vatValues.length === 7 && vatValues.every(value => value === false),
+      videoObjectCount: videoObjects.length,
+      videoObject: videoObjects[0] || null,
     },
+    initialVideoIframeCount: page.iframeSrcs.filter(src => src.includes('Q41RYemNB_E')).length,
+    initialYoutubeNocookieIframeCount: page.iframeSrcs.filter(src => src.includes('youtube-nocookie.com')).length,
+    initialYoutubePreconnectCount: page.preconnectHrefs.filter(href => href.includes('youtube')).length,
+    videoPosterCount: product.video?.posterSrc
+      ? page.images.filter(image => image.src.includes(product.video.posterSrc) && image.alt === product.video.posterAlt).length
+      : 0,
     pdf: await fetchPage(PREVIEW, `/specs/${slug}-technical-specification.pdf`, 'manual').then(result => ({ status: result.status })),
     downloadLabelCount: (page.visibleText.match(/Download Specification PDF/g) || []).length,
   };
 }
 
-const anchorOccurrences = Object.fromEntries(PACK_ANCHORS.map(anchor => [anchor, []]));
+const anchorOccurrences = Object.fromEntries(ADDENDUM_ANCHORS.map(anchor => [anchor, []]));
 for (const [pathname, page] of pages) {
   for (const link of page.links) {
     const normalized = norm(link.text);
-    if (PACK_ANCHORS.includes(normalized)) anchorOccurrences[normalized].push({ pathname, href: link.href });
+    if (ADDENDUM_ANCHORS.includes(normalized)) anchorOccurrences[normalized].push({ pathname, href: link.href });
   }
 }
 
 const sitewideSevenWordCollisions = [];
+const ignoredCanonicalFactCollisions = [];
 const routeGramSets = new Map([...pages].map(([pathname, page]) => [pathname, grams(page.visibleText)]));
 for (const packPage of manifest.pages) {
   const sourceBodies = [
     ...Object.entries(JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/products/section-h-datasets.json'), 'utf8'))[packPage.slug]).filter(([, value]) => typeof value === 'object').map(([sizeSlug, value]) => ({ surface: `${sizeSlug} Section H`, value: value.intro })),
     { surface: 'right-to-exist', value: `${packPage.rte.body} ${packPage.rte.comparison}` },
+    { surface: 'description', value: text(JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/products', `${packPage.slug}.json`), 'utf8')).descriptionHtml) },
   ];
   for (const source of sourceBodies) {
     const sourceGrams = grams(source.value);
     for (const [pathname, page] of pages) {
       if (pathname === ROUTES[packPage.slug]) continue;
-      const shared = [...sourceGrams].filter(sequence => routeGramSets.get(pathname).has(sequence));
+      const allShared = [...sourceGrams].filter(sequence => routeGramSets.get(pathname).has(sequence));
+      const ignored = allShared.filter(sequence => CANONICAL_WARRANTY_GRAMS.has(sequence));
+      if (ignored.length) ignoredCanonicalFactCollisions.push({ sourceUrl: ROUTES[packPage.slug], surface: source.surface, competingUrl: pathname, sequences: ignored });
+      const shared = allShared.filter(sequence => !CANONICAL_WARRANTY_GRAMS.has(sequence));
       if (shared.length) sitewideSevenWordCollisions.push({ sourceUrl: ROUTES[packPage.slug], surface: source.surface, competingUrl: pathname, sequences: shared });
     }
   }
@@ -227,9 +259,10 @@ const result = {
   route200Count: paths.length - non200.length,
   non200,
   c06,
-  packAnchorOccurrences: anchorOccurrences,
-  packAnchorUniqueSitewide: Object.values(anchorOccurrences).every(entries => entries.length === 1),
+  addendumAnchorOccurrences: anchorOccurrences,
+  addendumAnchorUniqueSitewide: Object.keys(anchorOccurrences).length === 15 && Object.values(anchorOccurrences).every(entries => entries.length === 1),
   sitewideSevenWordCollisions,
+  ignoredCanonicalFactCollisions,
   l3,
   imageSitemap: { expected: 144, hits: imageSitemapHits },
 };
@@ -249,9 +282,22 @@ console.log(JSON.stringify({
     pdf: page.pdf,
     downloadLabelCount: page.downloadLabelCount,
   }])),
-  packAnchorOccurrences: result.packAnchorOccurrences,
+  addendumAnchorOccurrences: result.addendumAnchorOccurrences,
   sitewideSevenWordCollisionCount: result.sitewideSevenWordCollisions.length,
+  ignoredCanonicalFactCollisionCount: result.ignoredCanonicalFactCollisions.length,
   l3: result.l3,
   imageSitemap: result.imageSitemap,
 }, null, 2));
-if (non200.length || !result.packAnchorUniqueSitewide || imageSitemapHits !== 144) process.exitCode = 1;
+if (
+  non200.length ||
+  !result.addendumAnchorUniqueSitewide ||
+  imageSitemapHits !== 144 ||
+  Object.values(c06).some(page => page.firstParagraphHasLink || page.descriptionFirstParagraphHasLink || page.redirectedOrErrorTargets.length > 0) ||
+  Object.values(c06).some(page => page.descriptionAnchorCount !== 3 || page.downloadLabelCount !== 1) ||
+  sitewideSevenWordCollisions.length > 0 ||
+  c06['labor-colony'].jsonLd.videoObjectCount !== 1 ||
+  c06['labor-colony'].initialVideoIframeCount !== 0 ||
+  c06['labor-colony'].initialYoutubePreconnectCount !== 0 ||
+  c06['labor-colony'].videoPosterCount < 1 ||
+  Object.entries(c06).some(([slug, page]) => slug !== 'labor-colony' && page.jsonLd.videoObjectCount !== 0)
+) process.exitCode = 1;

@@ -19,7 +19,19 @@
   "specPdfHref": "/specs/labor-colony-technical-specification.pdf",
   "priceCaption": "Base specification price, customisations quoted separately.",
   "opener": "A labour colony from SAMAN is a complete worker housing site delivered as finished buildings, not a kit of parts. Each building is a newly fabricated steel structure from our Bengaluru and Greater Noida facilities, supplied in the six approved building sizes, 60x24 ft G+1 at the small end and 120x24 ft G+2 at the large, sleeping 58 to 216 workers each on the standard planning basis. Dormitory blocks pair with toilet and bath blocks, kitchens and site services to the approved site plan. Pricing is ex-factory against one flat square-foot rate, so every configuration prices the same way and a fixed quote arrives within 48 hours.",
-  "descriptionHtml": "<section><h2>Which worker housing build fits the site.</h2><p>For one supervised open hall per floor, the <strong><a href=\"/product/labor-colony/labor-sheds\">labour shed building</a></strong> houses the most beds per rupee.</p><p>Where crews need lockable individual rooms, the <strong><a href=\"/product/labor-colony/labor-hutments\">labour hutment room block</a></strong> gives every gang its own doors.</p><p>If the housing must move to the next project, the <strong><a href=\"/product/labor-colony/prefab-labor-camps\">relocatable prefab labour camp</a></strong> dismantles and re-erects.</p></section>",
+  "descriptionHtml": "<p>A working labour colony is more than a row of dormitories, and this page is planned that way. The buildings above are newly fabricated steel structures from our Bengaluru and Greater Noida factories, and around them a complete site takes shape: toilet and bath blocks matched to headcount, kitchen and dining space, drinking water points, gate cabins and lighting along the internal roads. SAMAN has delivered worker housing within 500+ projects across 15+ states, and that experience shows in details contractors notice the second time: drainage falls that survive monsoon, stair widths that clear a shift change, distribution boards an electrician can actually reach.</p><p>Three building types carry the cluster, and choosing between them is the real decision. Where bed count per rupee decides, the <a href=\"/product/labor-colony/labor-sheds\">open-hall dormitory building</a> packs the highest headcount into a single supervised hall. Where gangs need lockable privacy for long postings, <a href=\"/product/labor-colony/labor-hutments\">room-based hutment blocks</a> split every floor into separate rooms. And where the workforce follows the work, <a href=\"/product/labor-colony/prefab-labor-camps\">camp blocks built to relocate</a> come down at one site and stand again at the next.</p><p>Every building follows the same commercial rules. Prices are ex-factory against a flat rate per square foot, so a bigger building never hides a bigger margin. Your fixed quotation reaches you inside 48 hours, dispatch follows 7 to 21 working days behind drawing approval, and structures carry the 5-year structural warranty and 1-year finishing warranty as standard. Send your plot dimensions with the enquiry and the returned layout places buildings, services and access on your actual plot rather than a generic rectangle.</p>",
+  "hasProductVideo": true,
+  "video": {
+    "embedSrc": "https://www.youtube-nocookie.com/embed/Q41RYemNB_E?autoplay=1",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Q41RYemNB_E",
+    "posterSrc": "/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-exact-front-elevation.webp",
+    "posterAlt": "Labour Colony for Construction Sites | SAMAN Portable Worker Accommodation",
+    "title": "Labour Colony for Construction Sites | SAMAN Portable Worker Accommodation",
+    "schemaDescription": "Walk through a completed labour colony built by SAMAN Portable for a live industrial project.",
+    "schemaThumbnailUrl": "https://i.ytimg.com/vi/Q41RYemNB_E/hqdefault.jpg",
+    "uploadDate": "2026-07-27T02:22:28-07:00",
+    "duration": "PT2M15S"
+  },
   "variants": [
     {
       "sizeSlug": "60x24-gplus1",

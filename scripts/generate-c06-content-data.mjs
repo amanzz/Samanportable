@@ -4,6 +4,8 @@ import path from 'node:path';
 const root = process.cwd();
 const packPath = path.join(root, 'page-structure', 'content-drafts', 'C06-CONTENT-PACK-4pages-31Jul2026.md');
 const pack = fs.readFileSync(packPath, 'utf8');
+const addendumPath = path.join(root, 'page-structure', 'content-drafts', 'C06-PACK-ADDENDUM-REV1-31Jul2026.md');
+const addendum = fs.readFileSync(addendumPath, 'utf8');
 const imageReportPath = path.join(root, 'page-structure', 'c06-image-processing-report.json');
 const publishedDimensions = new Map();
 if (fs.existsSync(imageReportPath)) {
@@ -25,26 +27,32 @@ const pages = [
     slug: 'labor-sheds',
     productName: 'Labor Sheds',
     productSku: 'CC-50-LS-2024',
-    categoryLabel: 'the full worker housing range',
-    categoryHref: '/product/labor-colony',
   },
   {
     marker: '# PAGE: Labor Hutments',
     slug: 'labor-hutments',
     productName: 'Labor Hutments',
     productSku: 'SP-90-LH-2024',
-    categoryLabel: 'every colony building compared',
-    categoryHref: '/product/labor-colony',
   },
   {
     marker: '# PAGE: Prefab Labor Camps',
     slug: 'prefab-labor-camps',
     productName: 'Prefab Labor Camps',
     productSku: 'SP-90-PLC-2024',
-    categoryLabel: 'fixed and movable options side by side',
-    categoryHref: '/product/labor-colony',
   },
 ];
+
+const hubVideo = {
+  embedSrc: 'https://www.youtube-nocookie.com/embed/Q41RYemNB_E?autoplay=1',
+  embedUrl: 'https://www.youtube-nocookie.com/embed/Q41RYemNB_E',
+  posterSrc: '/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-exact-front-elevation.webp',
+  posterAlt: 'Labour Colony for Construction Sites | SAMAN Portable Worker Accommodation',
+  title: 'Labour Colony for Construction Sites | SAMAN Portable Worker Accommodation',
+  schemaDescription: 'Walk through a completed labour colony built by SAMAN Portable for a live industrial project.',
+  schemaThumbnailUrl: 'https://i.ytimg.com/vi/Q41RYemNB_E/hqdefault.jpg',
+  uploadDate: '2026-07-27T02:22:28-07:00',
+  duration: 'PT2M15S',
+};
 
 const sizeSlug = (label) => label
   .toLowerCase()
@@ -86,6 +94,29 @@ function sectionBetween(text, startHeading, nextHeading) {
   return text.slice(start, end);
 }
 
+function addendumDescriptionHtml(slug) {
+  const marker = `### ${slug}`;
+  const start = addendum.indexOf(marker);
+  if (start < 0) throw new Error(`Missing addendum description: ${slug}`);
+  const bodyStart = start + marker.length;
+  const nextPage = addendum.indexOf('\n### ', bodyStart);
+  const videoHeading = addendum.indexOf('\n## Hub video, L18', bodyStart);
+  const candidates = [nextPage, videoHeading].filter((value) => value >= 0);
+  const end = Math.min(...candidates);
+  const paragraphs = addendum.slice(bodyStart, end).trim().split(/\n\n+/);
+  if (paragraphs.length !== 3) throw new Error(`${slug}: expected 3 addendum description paragraphs`);
+  return paragraphs
+    .map((paragraph) => `<p>${paragraph.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')}</p>`)
+    .join('');
+}
+
+function correctedComparison(slug) {
+  const marker = `**${slug}:** `;
+  const start = addendum.indexOf(marker);
+  if (start < 0) throw new Error(`Missing corrected comparison: ${slug}`);
+  return addendum.slice(start + marker.length, addendum.indexOf('\n', start)).replaceAll('**', '').trim();
+}
+
 function buildPage(page, index) {
   const block = pageBlock(page, index);
   const opener = requireMatch(
@@ -110,7 +141,9 @@ function buildPage(page, index) {
   const rte = {
     heading: requireMatch(rteSection, /\*\*H2:\*\*\s*([^\n]+)/, `${page.slug} RTE heading`),
     body: requireMatch(rteSection, /\*\*Body:\*\*\s*([^\n]+)/, `${page.slug} RTE body`),
-    comparison: requireMatch(rteSection, /\*\*Comparison:\*\*\s*([^\n]+)/, `${page.slug} RTE comparison`),
+    comparison: page.slug === 'labor-colony'
+      ? requireMatch(rteSection, /\*\*Comparison:\*\*\s*([^\n]+)/, `${page.slug} RTE comparison`)
+      : correctedComparison(page.slug),
   };
 
   const explorerSection = sectionBetween(block, '## Section H explorer', '## Specifications');
@@ -181,12 +214,7 @@ function buildPage(page, index) {
       .map((image) => [image.sizeSlug, `/images/products/${page.slug}/${image.sizeSlug}/${image.filename}`]),
   );
 
-  const descriptionHtml = page.slug === 'labor-colony'
-    ? '<section><h2>Which worker housing build fits the site.</h2>' +
-      '<p>For one supervised open hall per floor, the <strong><a href="/product/labor-colony/labor-sheds">labour shed building</a></strong> houses the most beds per rupee.</p>' +
-      '<p>Where crews need lockable individual rooms, the <strong><a href="/product/labor-colony/labor-hutments">labour hutment room block</a></strong> gives every gang its own doors.</p>' +
-      '<p>If the housing must move to the next project, the <strong><a href="/product/labor-colony/prefab-labor-camps">relocatable prefab labour camp</a></strong> dismantles and re-erects.</p></section>'
-    : `<p>${opener}</p>`;
+  const descriptionHtml = addendumDescriptionHtml(page.slug);
 
   return {
     page,
@@ -205,13 +233,12 @@ function buildPage(page, index) {
       applicationsDataset: page.slug,
       explorerImageTemplate,
       emitAggregateOffer: true,
-      categoryLabel: page.categoryLabel,
-      categoryHref: page.categoryHref,
       productSku: page.productSku,
       specPdfHref: `/specs/${page.slug}-technical-specification.pdf`,
       priceCaption: 'Base specification price, customisations quoted separately.',
       opener,
       descriptionHtml,
+      ...(page.slug === 'labor-colony' ? { hasProductVideo: true, video: hubVideo } : {}),
       variants,
     },
   };
@@ -253,6 +280,7 @@ fs.writeFileSync(
   path.join(root, 'page-structure', 'c06-generated-manifest.json'),
   `${JSON.stringify({
     sourcePack: path.relative(root, packPath).replaceAll('\\', '/'),
+    sourceAddendum: path.relative(root, addendumPath).replaceAll('\\', '/'),
     generatedAt: '2026-07-31',
     pages: built.map(({ page, opener, rte, images }) => ({ slug: page.slug, opener, rte, images })),
   }, null, 2)}\n`,

@@ -326,21 +326,21 @@
       "h2Chars": 39,
       "bodyChars": 370,
       "sentences": 3,
-      "comparisonChars": 101
+      "comparisonChars": 156
     },
     {
       "route": "/product/labor-colony/labor-hutments",
       "h2Chars": 34,
       "bodyChars": 359,
       "sentences": 3,
-      "comparisonChars": 122
+      "comparisonChars": 168
     },
     {
       "route": "/product/labor-colony/prefab-labor-camps",
       "h2Chars": 37,
       "bodyChars": 344,
       "sentences": 3,
-      "comparisonChars": 125
+      "comparisonChars": 167
     }
   ],
   "newBodySevenWordCollisions": [],

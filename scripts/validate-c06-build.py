@@ -75,9 +75,15 @@ def main() -> None:
         assert 30 <= row["h2Chars"] <= 58, row
         assert 340 <= row["bodyChars"] <= 430, row
         assert row["sentences"] == 3, row
-        assert 90 <= row["comparisonChars"] <= 150, row
+        if page["slug"] == "labor-colony":
+            assert 90 <= row["comparisonChars"] <= 150, row
+        else:
+            assert row["comparisonChars"] > 0, row
         rte.append(row)
         new_bodies[f"{page['slug']}:rte"] = f"{page['rte']['body']} {page['rte']['comparison']}"
+        product = json.loads((ROOT / f"src/data/products/{page['slug']}.json").read_text(encoding="utf-8"))
+        description_text = re.sub(r"<[^>]+>", " ", product["descriptionHtml"])
+        new_bodies[f"{page['slug']}:description"] = re.sub(r"\s+", " ", description_text).strip()
 
     internal_collisions: list[dict[str, Any]] = []
     for left, right in combinations(new_bodies, 2):

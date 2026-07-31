@@ -124,8 +124,8 @@ export interface VariantProductVideoData {
   schemaThumbnailUrl: string;
   uploadDate: string;
   duration: string;
-  transcriptHeading: string;
-  transcript: string;
+  transcriptHeading?: string;
+  transcript?: string;
 }
 
 export const formatIndianPrice = (value: number): string => `₹${Math.round(value).toLocaleString('en-IN')}`;
