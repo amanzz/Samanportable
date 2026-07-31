@@ -92,6 +92,50 @@ export function rewriteC06RetiredInternalLinks(html: string): string {
   return rewritten;
 }
 
+// C03 Event Q: WordPress exports are read-only, so the approved punctuation
+// correction is applied only to the rendered description HTML for these six
+// routes. Headings and labelled list rows read naturally with a colon; prose
+// uses a comma. SEO fields, schema, the first-section copy and source bytes are
+// outside this boundary and remain untouched.
+const C03_RENDER_PUNCTUATION_SLUGS = new Set([
+  'portable-office',
+  'readymade-office-cabin',
+  'modern-office-cabin',
+  'prefabricated-office-cabins',
+  'portable-office-container',
+  'small-office-cabin',
+]);
+
+export function rewriteC03RenderPunctuation(html: string, slug: string): string {
+  if (!html || !C03_RENDER_PUNCTUATION_SLUGS.has(slug) || !html.includes('\u2014')) {
+    return html;
+  }
+
+  const rewritten = html
+    .replace(
+      /(<h[1-6]\b[^>]*>)([\s\S]*?)(<\/h[1-6]>)/gi,
+      (_match, open: string, inner: string, close: string) =>
+        `${open}${inner.replace(/\s*\u2014\s*/g, ': ')}${close}`
+    )
+    .replace(
+      /(<li\b[^>]*>)([\s\S]*?)(<\/li>)/gi,
+      (_match, open: string, inner: string, close: string) =>
+        `${open}${inner.replace(/\s*\u2014\s*/g, ': ')}${close}`
+    )
+    .replace(/(<\/strong>)\s*\u2014\s*/gi, '$1: ')
+    .replace(/\s*\u2014\s*/g, ', ');
+
+  // The hub's first description heading begins at body-copy word 97; its dash
+  // is therefore inside the L3-frozen first 100 words and must remain byte-exact.
+  if (slug === 'portable-office') {
+    return rewritten.replace(
+      'Portable Office: Professional Workspace, Delivered in 7-21 Days',
+      'Portable Office \u2014 Professional Workspace, Delivered in 7-21 Days'
+    );
+  }
+  return rewritten;
+}
+
 function emptyPagination(page: number, perPage: number): PaginationInfo {
   return {
     currentPage: page,
@@ -600,7 +644,10 @@ export async function fetchProductDescription(
   const p = findProductBySlug(slug);
   if (!p) return null;
   return {
-    description: rewriteC06RetiredInternalLinks(p.description || ''),
+    description: rewriteC03RenderPunctuation(
+      rewriteC06RetiredInternalLinks(p.description || ''),
+      slug
+    ),
     images: p.images || [],
     // Optional per-product tab overrides — passed through only when present in the
     // product JSON. Absent on all other products, so their tabs render unchanged.

@@ -28,6 +28,9 @@ const metadataCacheRaw = fs.existsSync(metadataCachePath)
   ? JSON.parse(fs.readFileSync(metadataCachePath, 'utf8'))
   : { schemaVersion: 1, generatedAt: new Date().toISOString(), entries: {} };
 const metadataCache = new Map(Object.entries(metadataCacheRaw.entries || {}));
+const sectionHDatasets = JSON.parse(
+  fs.readFileSync(path.join(root, 'src/data/products/section-h-datasets.json'), 'utf8'),
+);
 
 if (!baseUrl) {
   throw new Error('collect-image-manifest.mjs requires --base-url=<local built site>');
@@ -182,6 +185,7 @@ const readDimensions = (file, buffer = fs.readFileSync(file)) => {
 const sourceIndex = new Map();
 const sourceMetadata = new Map();
 const basenameIndex = new Map();
+const publishedVariantImages = [];
 
 const addSource = (url, sourceFile, metadata = {}) => {
   if (!url) return;
@@ -248,7 +252,60 @@ for (const absolute of sourceFiles) {
   }
   if (sourceFile.startsWith('src/data/products/') && sourceFile.endsWith('.json')) {
     try {
-      visitProductImages(JSON.parse(text), sourceFile);
+      const productData = JSON.parse(text);
+      visitProductImages(productData, sourceFile);
+      if (typeof productData.productSlug === 'string' && Array.isArray(productData.variants)) {
+        const applicationsKey = productData.applicationsDataset || productData.productSlug;
+        const applicationsPath = path.join(
+          root,
+          'src/data/products',
+          `${applicationsKey}-applications.json`,
+        );
+        const applicationsSourceFile = fs.existsSync(applicationsPath)
+          ? toPosix(path.relative(root, applicationsPath))
+          : null;
+        const applicationPanels = applicationsSourceFile
+          ? JSON.parse(fs.readFileSync(applicationsPath, 'utf8')).panels
+          : [];
+        const applicationPanelBySlug = new Map(
+          (Array.isArray(applicationPanels) ? applicationPanels : [])
+            .map(panel => [panel?.sizeSlug, panel]),
+        );
+        for (const variant of productData.variants) {
+          for (const image of Array.isArray(variant.images) ? variant.images : []) {
+            const resolvedUrl = normalizeImageUrl(image?.src);
+            if (!resolvedUrl) continue;
+            publishedVariantImages.push({
+              productSlug: productData.productSlug,
+              resolvedUrl,
+              sourceFile,
+              altText: typeof image.alt === 'string' ? image.alt : '',
+              width: Number(image.width) || null,
+              height: Number(image.height) || null,
+            });
+          }
+          const sizeSlug = typeof variant.sizeSlug === 'string' ? variant.sizeSlug : '';
+          const applicationImage = applicationPanelBySlug.get(sizeSlug)?.image;
+          const explorerTemplate = productData.explorerImageTemplate;
+          const explorerSource = applicationImage?.src
+            || (typeof explorerTemplate === 'string'
+              ? explorerTemplate.replaceAll('{sizeSlug}', sizeSlug)
+              : explorerTemplate?.[sizeSlug]);
+          const explorerUrl = normalizeImageUrl(explorerSource);
+          if (explorerUrl) {
+            const explorerAlt = applicationImage?.alt
+              || sectionHDatasets?.[applicationsKey]?.[sizeSlug]?.imageAlt;
+            publishedVariantImages.push({
+              productSlug: productData.productSlug,
+              resolvedUrl: explorerUrl,
+              sourceFile: applicationImage ? applicationsSourceFile : sourceFile,
+              altText: typeof explorerAlt === 'string' ? explorerAlt : '',
+              width: Number(applicationImage?.width) || null,
+              height: Number(applicationImage?.height) || null,
+            });
+          }
+        }
+      }
     } catch (error) {
       throw new Error(`Cannot parse product image data in ${sourceFile}: ${error.message}`);
     }
@@ -516,6 +573,44 @@ for (const page of pages) {
         : null,
     });
   }
+}
+
+const productPageBySlug = new Map(
+  pagePaths
+    .filter(pathname => pathname.startsWith('/product/'))
+    .map(pathname => [pathname.split('/').filter(Boolean).at(-1), pathname]),
+);
+const pageByPathname = new Map(pages.map(page => [page.pathname, page]));
+
+for (const published of publishedVariantImages) {
+  const pathname = productPageBySlug.get(published.productSlug);
+  const page = pathname ? pageByPathname.get(pathname) : null;
+  // Variant datasets without a canonical product route are not published pages.
+  if (!page) continue;
+  const entry = ensureEntry(published.resolvedUrl);
+  const existingUsage = entry.usages.find(usage => usage.pageUrl === page.pageUrl);
+  if (existingUsage) {
+    existingUsage.publishedVariant = true;
+    existingUsage.altText = [...new Set([...existingUsage.altText, published.altText])].sort();
+    existingUsage.declaredWidth ||= published.width;
+    existingUsage.declaredHeight ||= published.height;
+    continue;
+  }
+  entry.usages.push({
+    pageUrl: page.pageUrl,
+    pageStatus: page.status,
+    pageIndexable: page.indexable,
+    altText: [published.altText],
+    caption: [],
+    rendered: false,
+    publishedVariant: true,
+    inSchema: false,
+    inMetadata: false,
+    decorative: false,
+    declaredWidth: published.width,
+    declaredHeight: published.height,
+    largestRenderWidth: published.width,
+  });
 }
 
 for (const entry of entries.values()) {

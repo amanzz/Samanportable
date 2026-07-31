@@ -609,11 +609,9 @@ export function PortaCabinVariantHero({
                     the control either way. */}
                 {/* T30 / T24.1-IMG §5.3 — these 5 thumbnails are INSIDE the initial
                     viewport on mobile AND desktop (measured 52-62px boxes, all
-                    in-viewport). loading="lazy" on an in-viewport image forces a
-                    second discovery round-trip and delays first paint, so they load
-                    eagerly. Deliberately NO fetchpriority: the law reserves high
-                    priority for the first hero, which is the main viewer above. */}
-                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={!showVideo && i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="eager" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                    in-viewport). They still remain lazy so only the main viewer
+                    competes in the eager/high-priority LCP lane. */}
+                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={!showVideo && i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
               </button>
             ))}
 

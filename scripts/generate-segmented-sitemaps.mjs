@@ -165,7 +165,7 @@ const main = async () => {
         exclusions.clientMarkPath.push(association);
         continue;
       }
-      if (!usage.rendered && !usage.inSchema) {
+      if (!usage.rendered && !usage.inSchema && !usage.publishedVariant) {
         exclusions.metadataOnly.push(association);
         continue;
       }
