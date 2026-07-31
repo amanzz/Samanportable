@@ -82,8 +82,9 @@ PRODUCTS: dict[str, dict[str, str]] = {
 }
 
 WARRANTY = (
-    "5-year structural warranty and 1-year finishing warranty as standard; "
-    "finishing warranty extendable to 2 years on request, confirmed at quotation."
+    "Warranty period and exclusions are confirmed only in the final quotation; "
+    "relocation damage, misuse, site services and unapproved alterations remain "
+    "outside the agreed scope unless stated otherwise."
 )
 DELIVERY = "Delivery in 7 to 21 working days"
 QUOTE = "Fixed-price quote within 48 hours"
