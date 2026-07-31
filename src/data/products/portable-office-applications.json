@@ -5,8 +5,8 @@
     {
       "sizeSlug": "10x10",
       "image": {
-        "src": "/images/products/portable-office/10x10/portable-office-10x10-explorer-interior.webp",
-        "alt": "Interior of a 10 x 10 ft portable office, a single desk set against the window wall beside the door.",
+        "src": "/images/products/portable-office/10x10/portable-office-10x10-workspace-interior.webp",
+        "alt": "Inside a 10 x 10 ft portable office cabin, two desk runs facing each other with a chair at each position.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -23,8 +23,8 @@
     {
       "sizeSlug": "20x8",
       "image": {
-        "src": "/images/products/portable-office/20x8/portable-office-20x8-explorer-interior.webp",
-        "alt": "Interior of a 20 x 8 ft portable office, desk runs facing each other down the narrow bay.",
+        "src": "/images/products/portable-office/20x8/portable-office-20x8-workspace-interior.webp",
+        "alt": "Inside a 20 x 8 ft portable office cabin, a single desk run down one side of the narrow bay.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -41,8 +41,8 @@
     {
       "sizeSlug": "20x10",
       "image": {
-        "src": "/images/products/portable-office/20x10/portable-office-20x10-explorer-interior.webp",
-        "alt": "Interior of a 20 x 10 ft portable office, desks along the window wall with a clear central walkway.",
+        "src": "/images/products/portable-office/20x10/portable-office-20x10-workspace-interior.webp",
+        "alt": "Inside a 20 x 10 ft portable office cabin, desk runs down both sides under a ceiling fan.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -59,8 +59,8 @@
     {
       "sizeSlug": "20x12",
       "image": {
-        "src": "/images/products/portable-office/20x12/portable-office-20x12-explorer-interior.webp",
-        "alt": "Interior of a 20 x 12 ft portable office, a finished room with the door and the window wall in view.",
+        "src": "/images/products/portable-office/20x12/portable-office-20x12-workspace-interior.webp",
+        "alt": "Inside a 20 x 12 ft portable office cabin, workstations along one wall with a clear central walkway.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -77,8 +77,8 @@
     {
       "sizeSlug": "30x10",
       "image": {
-        "src": "/images/products/portable-office/30x10/portable-office-30x10-explorer-interior.webp",
-        "alt": "Interior of a 30 x 10 ft portable office, a long desk run down one side with seating opposite.",
+        "src": "/images/products/portable-office/30x10/portable-office-30x10-workspace-interior.webp",
+        "alt": "Inside a 30 x 10 ft portable office cabin, workstations down both sides of the thirty foot floor.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -95,8 +95,8 @@
     {
       "sizeSlug": "40x8",
       "image": {
-        "src": "/images/products/portable-office/40x8/portable-office-40x8-explorer-interior.webp",
-        "alt": "Interior of a 40 x 8 ft portable office, a full-length narrow floor lit from both sides.",
+        "src": "/images/products/portable-office/40x8/portable-office-40x8-workspace-interior.webp",
+        "alt": "Inside a 40 x 8 ft portable office cabin, a clear narrow floor running the full forty feet.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -113,8 +113,8 @@
     {
       "sizeSlug": "40x10",
       "image": {
-        "src": "/images/products/portable-office/40x10/portable-office-40x10-explorer-interior.webp",
-        "alt": "Interior of a 40 x 10 ft portable office, open-plan desks running the whole 40 ft length.",
+        "src": "/images/products/portable-office/40x10/portable-office-40x10-workspace-interior.webp",
+        "alt": "Inside a 40 x 10 ft portable office cabin, two desk rows running the full length of the floor.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -131,8 +131,8 @@
     {
       "sizeSlug": "20x20",
       "image": {
-        "src": "/images/products/portable-office/20x20/portable-office-20x20-explorer-interior.webp",
-        "alt": "Interior of a 20 x 20 ft portable office, workstations set out across the square floor.",
+        "src": "/images/products/portable-office/20x20/portable-office-20x20-workspace-interior.webp",
+        "alt": "Inside a 20 x 20 ft portable office cabin, paired workstations set out across the square floor.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
@@ -149,8 +149,8 @@
     {
       "sizeSlug": "40x12",
       "image": {
-        "src": "/images/products/portable-office/40x12/portable-office-40x12-explorer-interior.webp",
-        "alt": "Interior of a 40 x 12 ft portable office, the widest floor in the range laid out for a full team.",
+        "src": "/images/products/portable-office/40x12/portable-office-40x12-workspace-interior.webp",
+        "alt": "Inside a 40 x 12 ft portable office cabin, desk banks either side of a central walkway.",
         "provenance": "render",
         "width": 1200,
         "height": 1200
