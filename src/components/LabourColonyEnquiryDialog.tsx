@@ -46,7 +46,10 @@ export default function LabourColonyEnquiryDialog({ isOpen, onClose, prefillMess
     if (isOpen) pushDataLayer('lc_form_started', { form_type: 'labour_colony_enquiry', page_path: '/product/labor-colony' });
   }, [isOpen, prefillMessage]);
 
-  const change = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
+  const change = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement> | React.FormEvent<HTMLInputElement>) => {
+    const { name, value } = event.currentTarget;
+    setForm((current) => ({ ...current, [name]: value }));
+  };
   const close = () => { setForm(initial); setLoading(false); setSubmitted(false); setError(''); onClose(); };
 
   const submit = async (event: React.FormEvent) => {
@@ -73,7 +76,7 @@ export default function LabourColonyEnquiryDialog({ isOpen, onClose, prefillMess
     <Field id="lc-location" label="Project Location"><Input id="lc-location" name="projectLocation" value={form.projectLocation} onChange={change} required /></Field>
     <Field id="lc-industry" label="Industry or Project Type"><select id="lc-industry" name="industry" value={form.industry} onChange={change} className={selectClass} required><option value="">Select industry</option>{industries.map((item) => <option key={item} value={item}>{item}</option>)}</select></Field>
     <Field id="lc-workers" label="Number of Workers"><Input id="lc-workers" name="workerCapacity" type="number" min="1" step="1" inputMode="numeric" value={form.workerCapacity} onChange={change} required /></Field>
-    <Field id="lc-date" label="Required Installation Date"><Input id="lc-date" name="requiredDate" type="date" min={new Date().toISOString().split('T')[0]} value={form.requiredDate} onChange={change} onBlur={change} required /></Field>
+    <Field id="lc-date" label="Required Installation Date"><Input id="lc-date" name="requiredDate" type="date" min={new Date().toISOString().split('T')[0]} value={form.requiredDate} onChange={change} onInput={change} onBlur={change} required /></Field>
     <Field id="lc-config" label="Required Configuration"><select id="lc-config" name="configuration" value={form.configuration} onChange={change} className={selectClass} required><option value="">Select configuration</option><option value="Ground Floor">Ground Floor</option><option value="G+1">G+1</option><option value="Not Decided">Not Decided</option></select></Field>
     <Field id="lc-type" label="Requirement Type"><select id="lc-type" name="requirementType" value={form.requirementType} onChange={change} className={selectClass} required><option value="">Select requirement</option><option value="Purchase">Purchase</option><option value="Rental">Rental</option><option value="Not Decided">Not Decided</option></select></Field>
     <div className="space-y-1.5 sm:col-span-2"><Label htmlFor="lc-details">Requirement Details</Label><Textarea id="lc-details" name="message" value={form.message} onChange={change} rows={3} required /></div>
