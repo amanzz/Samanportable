@@ -60,6 +60,8 @@ export interface VariantProductData {
   opener?: string;
   /** Owner-approved replacement for the legacy Description-tab HTML. */
   descriptionHtml?: string;
+  /** FAQPage JSON-LD that mirrors FAQs rendered in `descriptionHtml`. */
+  faqSchema?: Record<string, unknown>;
   /** Visible text of the "Category" row in the Product Information block. */
   categoryLabel?: string;
   /** Href of the "Category" row. Row renders only when BOTH label and href resolve. */

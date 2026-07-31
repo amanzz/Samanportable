@@ -82,7 +82,8 @@ def main() -> None:
         rte.append(row)
         new_bodies[f"{page['slug']}:rte"] = f"{page['rte']['body']} {page['rte']['comparison']}"
         product = json.loads((ROOT / f"src/data/products/{page['slug']}.json").read_text(encoding="utf-8"))
-        description_text = re.sub(r"<[^>]+>", " ", product["descriptionHtml"])
+        description_without_tables = re.sub(r"<table\b[\s\S]*?</table>", " ", product["descriptionHtml"], flags=re.I)
+        description_text = re.sub(r"<[^>]+>", " ", description_without_tables)
         new_bodies[f"{page['slug']}:description"] = re.sub(r"\s+", " ", description_text).strip()
 
     internal_collisions: list[dict[str, Any]] = []
@@ -103,19 +104,26 @@ def main() -> None:
         specification_matrix.append({"left": left, "right": right, "differingRows": len(differing), "components": differing})
 
     image_rows = image_report["images"]
-    assert image_report["published"] == 144
+    variant_image_rows = [row for row in image_rows if row["kind"] == "variant"]
+    description_image_rows = [row for row in image_rows if row["kind"] == "description"]
+    assert image_report["published"] == 168
+    assert len(variant_image_rows) == 144
+    assert len(description_image_rows) == 24
     assert image_report["filenameCollisionCount"] == 0
     assert image_report["below80KiB"] == 0
     assert image_report["above120KiB"] == 0
     alts = [row["alt"] for row in image_rows]
-    assert len(alts) == len(set(alts)) == 144
+    assert len(alts) == len(set(alts)) == 168
     assert all(value.isascii() for value in alts)
-    assert all(row["targetDimensions"][0] == 1200 for row in image_rows)
+    assert all(row["targetDimensions"][0] == 1200 for row in variant_image_rows)
+    assert all(row["targetDimensions"] == [1200, 675] for row in description_image_rows)
+    assert not ({row["alt"] for row in variant_image_rows} & {row["alt"] for row in description_image_rows})
     for slug in SLUGS:
-        per_slug = [row for row in image_rows if row["slug"] == slug]
+        per_slug = [row for row in variant_image_rows if row["slug"] == slug]
         assert len(per_slug) == 36
         for size_slug in {row["sizeSlug"] for row in per_slug}:
             assert len([row for row in per_slug if row["sizeSlug"] == size_slug]) == 6
+        assert len([row for row in description_image_rows if row["slug"] == slug]) == 6
 
     pdfs: list[dict[str, Any]] = []
     pdf_hashes: set[str] = set()
@@ -161,8 +169,11 @@ def main() -> None:
         "newBodySevenWordCollisions": internal_collisions,
         "specificationPairwiseMatrix": specification_matrix,
         "images": {
-            "published": 144,
+            "published": 168,
+            "variantImages": len(variant_image_rows),
+            "descriptionImages": len(description_image_rows),
             "distinctAlts": len(set(alts)),
+            "descriptionAltCollisionsWithVariant": 0,
             "nonAsciiAlts": sum(not value.isascii() for value in alts),
             "filenameCollisions": image_report["filenameCollisionCount"],
             "below80KiB": image_report["below80KiB"],

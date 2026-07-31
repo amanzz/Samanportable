@@ -515,8 +515,11 @@
     }
   ],
   "images": {
-    "published": 144,
-    "distinctAlts": 144,
+    "published": 168,
+    "variantImages": 144,
+    "descriptionImages": 24,
+    "distinctAlts": 168,
+    "descriptionAltCollisionsWithVariant": 0,
     "nonAsciiAlts": 0,
     "filenameCollisions": 0,
     "below80KiB": 0,

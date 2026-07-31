@@ -4,8 +4,10 @@ import path from 'node:path';
 const root = process.cwd();
 const packPath = path.join(root, 'page-structure', 'content-drafts', 'C06-CONTENT-PACK-4pages-31Jul2026.md');
 const pack = fs.readFileSync(packPath, 'utf8');
-const addendumPath = path.join(root, 'page-structure', 'content-drafts', 'C06-PACK-ADDENDUM-REV1-31Jul2026.md');
-const addendum = fs.readFileSync(addendumPath, 'utf8');
+const rev1AddendumPath = path.join(root, 'page-structure', 'content-drafts', 'C06-PACK-ADDENDUM-REV1-31Jul2026.md');
+const rev1Addendum = fs.readFileSync(rev1AddendumPath, 'utf8');
+const rev2AddendumPath = path.join(root, 'page-structure', 'content-drafts', 'C06-PACK-ADDENDUM-REV2-31Jul2026.md');
+const rev2Addendum = fs.readFileSync(rev2AddendumPath, 'utf8');
 const imageReportPath = path.join(root, 'page-structure', 'c06-image-processing-report.json');
 const publishedDimensions = new Map();
 if (fs.existsSync(imageReportPath)) {
@@ -21,24 +23,28 @@ const pages = [
     slug: 'labor-colony',
     productName: 'Labour Colony (Labor Colony)',
     productSku: 'SP-90-24-LC-24',
+    route: '/product/labor-colony',
   },
   {
     marker: '# PAGE: Labor Sheds',
     slug: 'labor-sheds',
     productName: 'Labor Sheds',
     productSku: 'CC-50-LS-2024',
+    route: '/product/labor-colony/labor-sheds',
   },
   {
     marker: '# PAGE: Labor Hutments',
     slug: 'labor-hutments',
     productName: 'Labor Hutments',
     productSku: 'SP-90-LH-2024',
+    route: '/product/labor-colony/labor-hutments',
   },
   {
     marker: '# PAGE: Prefab Labor Camps',
     slug: 'prefab-labor-camps',
     productName: 'Prefab Labor Camps',
     productSku: 'SP-90-PLC-2024',
+    route: '/product/labor-colony/prefab-labor-camps',
   },
 ];
 
@@ -94,27 +100,90 @@ function sectionBetween(text, startHeading, nextHeading) {
   return text.slice(start, end);
 }
 
-function addendumDescriptionHtml(slug) {
-  const marker = `### ${slug}`;
-  const start = addendum.indexOf(marker);
-  if (start < 0) throw new Error(`Missing addendum description: ${slug}`);
+const descriptionImageRows = tableRows(sectionBetween(
+  rev2Addendum,
+  '## 16:9 description images',
+  '## Description-tab content',
+)).map(([product, sourceSizeFolder, sourceViewToken, filename, alt]) => ({
+  product,
+  sourceSizeFolder,
+  sourceViewToken,
+  filename,
+  alt,
+}));
+
+function inlineMarkdown(value) {
+  return value
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+}
+
+function rev2Description(slug, sourceProductFolder) {
+  const marker = `# ==== ${slug} ====`;
+  const start = rev2Addendum.indexOf(marker);
+  if (start < 0) throw new Error(`Missing REV 2 description: ${slug}`);
   const bodyStart = start + marker.length;
-  const nextPage = addendum.indexOf('\n### ', bodyStart);
-  const videoHeading = addendum.indexOf('\n## Hub video, L18', bodyStart);
-  const candidates = [nextPage, videoHeading].filter((value) => value >= 0);
-  const end = Math.min(...candidates);
-  const paragraphs = addendum.slice(bodyStart, end).trim().split(/\n\n+/);
-  if (paragraphs.length !== 3) throw new Error(`${slug}: expected 3 addendum description paragraphs`);
-  return paragraphs
-    .map((paragraph) => `<p>${paragraph.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')}</p>`)
-    .join('');
+  const nextPage = rev2Addendum.indexOf('\n# ==== ', bodyStart);
+  const block = rev2Addendum.slice(bodyStart, nextPage < 0 ? undefined : nextPage).trim();
+  const rows = descriptionImageRows
+    .filter((row) => row.product === slug)
+    .map((row) => ({
+      ...row,
+      sizeSlug: sizeSlug(row.sourceSizeFolder),
+      sourceFolder: `${sourceProductFolder}/${row.sourceSizeFolder}`,
+    }));
+  if (rows.length !== 6) throw new Error(`${slug}: expected 6 REV 2 description images, got ${rows.length}`);
+  const imageByFilename = new Map(rows.map((row) => [row.filename, row]));
+  const faqs = [];
+  const html = [];
+  const lines = block.split('\n');
+  for (let index = 0; index < lines.length;) {
+    const line = lines[index].trim();
+    if (!line) { index += 1; continue; }
+    if (line.startsWith('## ')) {
+      html.push(`<h2>${inlineMarkdown(line.slice(3))}</h2>`);
+      index += 1;
+      continue;
+    }
+    const image = line.match(/^\[IMAGE ([^|]+) \| alt: (.+)\]$/);
+    if (image) {
+      const row = imageByFilename.get(image[1].trim());
+      if (!row || row.alt !== image[2].trim()) throw new Error(`${slug}: image marker differs from manifest: ${line}`);
+      html.push(`<img src="/images/products/${slug}/${row.sizeSlug}/${row.filename}" width="1200" height="675" loading="lazy" alt="${row.alt}">`);
+      index += 1;
+      continue;
+    }
+    if (line.startsWith('|')) {
+      const table = [];
+      while (index < lines.length && lines[index].trim().startsWith('|')) {
+        table.push(lines[index].trim());
+        index += 1;
+      }
+      const cells = (value) => value.slice(1, -1).split('|').map((cell) => inlineMarkdown(cell.trim()));
+      const head = cells(table[0]);
+      const body = table.slice(2).map(cells);
+      html.push(`<div class="overflow-x-auto"><table><thead><tr>${head.map((cell) => `<th>${cell}</th>`).join('')}</tr></thead><tbody>${body.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`);
+      continue;
+    }
+    const faq = line.match(/^\*\*(.+?)\*\*\s+(.+)$/);
+    if (faq) {
+      faqs.push({ question: faq[1], answer: faq[2] });
+      html.push(`<h4><strong>${faq[1]}</strong></h4><p>${inlineMarkdown(faq[2])}</p>`);
+      index += 1;
+      continue;
+    }
+    html.push(`<p>${inlineMarkdown(line)}</p>`);
+    index += 1;
+  }
+  if (faqs.length !== 5) throw new Error(`${slug}: expected 5 FAQs, got ${faqs.length}`);
+  return { html: html.join(''), images: rows, faqs };
 }
 
 function correctedComparison(slug) {
   const marker = `**${slug}:** `;
-  const start = addendum.indexOf(marker);
+  const start = rev1Addendum.indexOf(marker);
   if (start < 0) throw new Error(`Missing corrected comparison: ${slug}`);
-  return addendum.slice(start + marker.length, addendum.indexOf('\n', start)).replaceAll('**', '').trim();
+  return rev1Addendum.slice(start + marker.length, rev1Addendum.indexOf('\n', start)).replaceAll('**', '').trim();
 }
 
 function buildPage(page, index) {
@@ -214,7 +283,20 @@ function buildPage(page, index) {
       .map((image) => [image.sizeSlug, `/images/products/${page.slug}/${image.sizeSlug}/${image.filename}`]),
   );
 
-  const descriptionHtml = addendumDescriptionHtml(page.slug);
+  const sourceProductFolder = images[0]?.sourceFolder.split('/')[0];
+  if (!sourceProductFolder) throw new Error(`${page.slug}: missing source product folder`);
+  const description = rev2Description(page.slug, sourceProductFolder);
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `https://www.samanportable.com${page.route}#faq`,
+    url: `https://www.samanportable.com${page.route}`,
+    mainEntity: description.faqs.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  };
 
   return {
     page,
@@ -222,6 +304,7 @@ function buildPage(page, index) {
     rte,
     specifications,
     images,
+    descriptionImages: description.images,
     explorer,
     product: {
       productSlug: page.slug,
@@ -237,7 +320,8 @@ function buildPage(page, index) {
       specPdfHref: `/specs/${page.slug}-technical-specification.pdf`,
       priceCaption: 'Base specification price, customisations quoted separately.',
       opener,
-      descriptionHtml,
+      descriptionHtml: description.html,
+      faqSchema,
       ...(page.slug === 'labor-colony' ? { hasProductVideo: true, video: hubVideo } : {}),
       variants,
     },
@@ -280,9 +364,9 @@ fs.writeFileSync(
   path.join(root, 'page-structure', 'c06-generated-manifest.json'),
   `${JSON.stringify({
     sourcePack: path.relative(root, packPath).replaceAll('\\', '/'),
-    sourceAddendum: path.relative(root, addendumPath).replaceAll('\\', '/'),
+    sourceAddenda: [rev1AddendumPath, rev2AddendumPath].map((file) => path.relative(root, file).replaceAll('\\', '/')),
     generatedAt: '2026-07-31',
-    pages: built.map(({ page, opener, rte, images }) => ({ slug: page.slug, opener, rte, images })),
+    pages: built.map(({ page, opener, rte, images, descriptionImages }) => ({ slug: page.slug, opener, rte, images, descriptionImages })),
   }, null, 2)}\n`,
 );
 

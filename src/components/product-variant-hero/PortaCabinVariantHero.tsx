@@ -685,7 +685,7 @@ export function PortaCabinVariantHero({
   // INFO-ONLY buy box: no CTA buttons here (owner ruling — desktop conversion
   // lives in the gallery column's zone cards; mobile keeps the sticky bar).
   const buyBoxColumn = (Heading: 'h1' | 'p') => (
-    <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:h-full lg:flex lg:flex-col">
+    <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:h-full lg:overflow-visible lg:flex lg:flex-col">
       <div className="space-y-3 lg:flex lg:flex-1 lg:flex-col">
         <div className="space-y-1">
           <Heading className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">{data.productName || productTitle}</Heading>

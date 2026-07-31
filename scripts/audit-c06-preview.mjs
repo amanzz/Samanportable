@@ -20,6 +20,7 @@ const ADDENDUM_ANCHORS = [
   'open-hall dormitory building',
   'room-based hutment blocks',
   'camp blocks built to relocate',
+  'gate security cabins',
   'the hutment room block',
   'the relocatable camp build',
   'the worker housing range',
@@ -29,9 +30,6 @@ const ADDENDUM_ANCHORS = [
   'a fixed open-hall shed',
   'the room-block hutment',
   'the full colony line-up',
-  'the full worker housing range',
-  'every colony building compared',
-  'fixed and movable options side by side',
 ];
 const RETIRED_CLAIMS = [
   '20×30 to 30×50 ft', '20x30 to 30x50 ft',
@@ -146,9 +144,11 @@ const checkTarget = pathname => {
 };
 for (const [slug, pathname] of Object.entries(ROUTES)) {
   const page = pages.get(pathname);
+  const rawHtml = (await fetchPage(PREVIEW, pathname)).html;
   const product = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'data', 'products', `${slug}.json`), 'utf8'));
   const aggregate = page.jsonLd.map(node => findType(node, 'ProductGroup')).find(Boolean);
   const videoObjects = page.jsonLd.map(node => findType(node, 'VideoObject')).filter(Boolean);
+  const faqPages = page.jsonLd.map(node => findType(node, 'FAQPage')).filter(Boolean);
   const variantOffers = aggregate?.hasVariant?.map(variant => variant.offers).filter(Boolean) || [];
   const vatValues = [aggregate?.offers?.priceSpecification?.valueAddedTaxIncluded, ...variantOffers.map(offer => offer.priceSpecification?.valueAddedTaxIncluded)].filter(value => value !== undefined);
   const expectedPrices = product.variants.map(variant => variant.priceExGst).sort((a, b) => a - b);
@@ -161,6 +161,9 @@ for (const [slug, pathname] of Object.entries(ROUTES)) {
   }));
   const ownPrimaryLinks = page.contentLinks.filter(link => PRIMARY_TERMS[slug].includes(norm(link.text)));
   const visibleLower = page.contentText.toLowerCase();
+  const buyBoxStart = rawHtml.indexOf('<div class="pc-buybox');
+  const buyBoxEnd = buyBoxStart >= 0 ? rawHtml.indexOf('<aside class="pc-rail', buyBoxStart) : -1;
+  const buyBoxHtml = buyBoxStart >= 0 ? rawHtml.slice(buyBoxStart, buyBoxEnd >= 0 ? buyBoxEnd : undefined) : '';
   c06[slug] = {
     pathname,
     status: page.status,
@@ -171,6 +174,9 @@ for (const [slug, pathname] of Object.entries(ROUTES)) {
     firstParagraphHasLink: page.firstParagraphHasLink,
     descriptionFirstParagraphHasLink: /<a\b/i.test(product.descriptionHtml.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1] || ''),
     descriptionAnchorCount: (product.descriptionHtml.match(/<a\b/g) || []).length,
+    descriptionWordCount: tokenise(text(product.descriptionHtml)).length,
+    descriptionImageCount: (product.descriptionHtml.match(/<img\b/g) || []).length,
+    descriptionEmDashCount: (text(product.descriptionHtml).match(/\u2014/g) || []).length,
     internalLinks: internalLinks.length,
     redirectedOrErrorTargets: checkedTargets.filter(target => target.status !== 200),
     ownPrimaryLinks,
@@ -186,6 +192,8 @@ for (const [slug, pathname] of Object.entries(ROUTES)) {
       vatAllFalse: vatValues.length === 7 && vatValues.every(value => value === false),
       videoObjectCount: videoObjects.length,
       videoObject: videoObjects[0] || null,
+      faqPageCount: faqPages.length,
+      faqQuestionCount: faqPages[0]?.mainEntity?.length || 0,
     },
     initialVideoIframeCount: page.iframeSrcs.filter(src => src.includes('Q41RYemNB_E')).length,
     initialYoutubeNocookieIframeCount: page.iframeSrcs.filter(src => src.includes('youtube-nocookie.com')).length,
@@ -195,6 +203,8 @@ for (const [slug, pathname] of Object.entries(ROUTES)) {
       : 0,
     pdf: await fetchPage(PREVIEW, `/specs/${slug}-technical-specification.pdf`, 'manual').then(result => ({ status: result.status })),
     downloadLabelCount: (page.visibleText.match(/Download Specification PDF/g) || []).length,
+    pdfInsideScrollableColumn: /t28-rail-scroll[^"']*lg:overflow-y-auto/.test(buyBoxHtml) && buyBoxHtml.includes('Download Specification PDF'),
+    scrollCardDesktopOverflowVisible: buyBoxHtml.includes('lg:overflow-visible'),
   };
 }
 
@@ -213,7 +223,7 @@ for (const packPage of manifest.pages) {
   const sourceBodies = [
     ...Object.entries(JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/products/section-h-datasets.json'), 'utf8'))[packPage.slug]).filter(([, value]) => typeof value === 'object').map(([sizeSlug, value]) => ({ surface: `${sizeSlug} Section H`, value: value.intro })),
     { surface: 'right-to-exist', value: `${packPage.rte.body} ${packPage.rte.comparison}` },
-    { surface: 'description', value: text(JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/products', `${packPage.slug}.json`), 'utf8')).descriptionHtml) },
+    { surface: 'description', value: text(JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/products', `${packPage.slug}.json`), 'utf8')).descriptionHtml.replace(/<table\b[\s\S]*?<\/table>/gi, ' ')) },
   ];
   for (const source of sourceBodies) {
     const sourceGrams = grams(source.value);
@@ -260,11 +270,11 @@ const result = {
   non200,
   c06,
   addendumAnchorOccurrences: anchorOccurrences,
-  addendumAnchorUniqueSitewide: Object.keys(anchorOccurrences).length === 15 && Object.values(anchorOccurrences).every(entries => entries.length === 1),
+  addendumAnchorUniqueSitewide: Object.keys(anchorOccurrences).length === 13 && Object.values(anchorOccurrences).every(entries => entries.length === 1),
   sitewideSevenWordCollisions,
   ignoredCanonicalFactCollisions,
   l3,
-  imageSitemap: { expected: 144, hits: imageSitemapHits },
+  imageSitemap: { expected: 168, hits: imageSitemapHits },
 };
 fs.writeFileSync(path.join(ROOT, 'page-structure/c06-preview-audit-final.json'), `${JSON.stringify(result, null, 2)}\n`);
 console.log(JSON.stringify({
@@ -281,6 +291,11 @@ console.log(JSON.stringify({
     jsonLd: page.jsonLd,
     pdf: page.pdf,
     downloadLabelCount: page.downloadLabelCount,
+    descriptionWordCount: page.descriptionWordCount,
+    descriptionImageCount: page.descriptionImageCount,
+    descriptionEmDashCount: page.descriptionEmDashCount,
+    pdfInsideScrollableColumn: page.pdfInsideScrollableColumn,
+    scrollCardDesktopOverflowVisible: page.scrollCardDesktopOverflowVisible,
   }])),
   addendumAnchorOccurrences: result.addendumAnchorOccurrences,
   sitewideSevenWordCollisionCount: result.sitewideSevenWordCollisions.length,
@@ -291,9 +306,11 @@ console.log(JSON.stringify({
 if (
   non200.length ||
   !result.addendumAnchorUniqueSitewide ||
-  imageSitemapHits !== 144 ||
+  imageSitemapHits !== 168 ||
   Object.values(c06).some(page => page.firstParagraphHasLink || page.descriptionFirstParagraphHasLink || page.redirectedOrErrorTargets.length > 0) ||
-  Object.values(c06).some(page => page.descriptionAnchorCount !== 3 || page.downloadLabelCount !== 1) ||
+  Object.values(c06).some(page => page.downloadLabelCount !== 1 || page.descriptionImageCount !== 6 || page.descriptionEmDashCount !== 0 || !page.pdfInsideScrollableColumn || !page.scrollCardDesktopOverflowVisible) ||
+  Object.values(c06).reduce((sum, page) => sum + page.descriptionAnchorCount, 0) !== 13 ||
+  Object.values(c06).some(page => page.jsonLd.faqPageCount !== 1 || page.jsonLd.faqQuestionCount !== 5) ||
   sitewideSevenWordCollisions.length > 0 ||
   c06['labor-colony'].jsonLd.videoObjectCount !== 1 ||
   c06['labor-colony'].initialVideoIframeCount !== 0 ||

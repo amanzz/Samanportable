@@ -8,7 +8,7 @@ import io
 import json
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -51,9 +51,15 @@ def encode_webp(image: Image.Image) -> tuple[bytes, int]:
 
 def main() -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    rows = [row for page in manifest["pages"] for row in page["images"]]
-    if len(rows) != 144:
-        raise RuntimeError(f"Expected 144 manifest rows, found {len(rows)}")
+    previous_report = json.loads(REPORT_PATH.read_text(encoding="utf-8")) if REPORT_PATH.exists() else {"images": []}
+    previous_by_target = {row["target"]: row for row in previous_report.get("images", [])}
+    gallery_rows = [dict(row, kind="variant") for page in manifest["pages"] for row in page["images"]]
+    description_rows = [dict(row, kind="description") for page in manifest["pages"] for row in page["descriptionImages"]]
+    rows = gallery_rows + description_rows
+    if len(gallery_rows) != 144 or len(description_rows) != 24:
+        raise RuntimeError(
+            f"Expected 144 variant and 24 description rows, found {len(gallery_rows)} and {len(description_rows)}"
+        )
 
     target_names = [row["filename"] for row in rows]
     if len(target_names) != len(set(target_names)):
@@ -62,7 +68,7 @@ def main() -> None:
     approved_targets = {
         (Path("public") / "images" / "products" / page["slug"] / row["sizeSlug"] / row["filename"]).as_posix().lower()
         for page in manifest["pages"]
-        for row in page["images"]
+        for row in [*page["images"], *page["descriptionImages"]]
     }
     existing_names = {
         item.name.lower()
@@ -78,7 +84,10 @@ def main() -> None:
     dimensions: dict[tuple[str, str], tuple[int, int]] = {}
     for page in manifest["pages"]:
         slug = page["slug"]
-        for row in page["images"]:
+        for row in [
+            *[dict(item, kind="variant") for item in page["images"]],
+            *[dict(item, kind="description") for item in page["descriptionImages"]],
+        ]:
             source_dir = SOURCE_ROOT / Path(row["sourceFolder"])
             matches = [
                 item
@@ -93,29 +102,46 @@ def main() -> None:
             source = matches[0]
             target = REPO / "public" / "images" / "products" / slug / row["sizeSlug"] / row["filename"]
             target.parent.mkdir(parents=True, exist_ok=True)
+            target_relative = target.relative_to(REPO).as_posix()
+
+            if row["kind"] == "variant" and target.exists() and target_relative in previous_by_target:
+                previous = dict(previous_by_target[target_relative])
+                previous["kind"] = "variant"
+                report_rows.append(previous)
+                dimensions[(slug, f"/images/products/{slug}/{row['sizeSlug']}/{row['filename']}")] = tuple(previous["targetDimensions"])
+                continue
 
             with Image.open(source) as opened:
                 image = opened.convert("RGB")
                 source_width, source_height = image.size
-                if source_width != TARGET_WIDTH:
+                if row["kind"] == "description":
+                    image = ImageOps.fit(
+                        image,
+                        (TARGET_WIDTH, 675),
+                        method=Image.Resampling.LANCZOS,
+                        centering=(0.5, 0.5),
+                    )
+                elif source_width != TARGET_WIDTH:
                     target_height = round(source_height * TARGET_WIDTH / source_width)
                     image = image.resize((TARGET_WIDTH, target_height), Image.Resampling.LANCZOS)
                 payload, quality = encode_webp(image)
                 target.write_bytes(payload)
                 width, height = image.size
 
-            dimensions[(slug, f"/images/products/{slug}/{row['sizeSlug']}/{row['filename']}")] = (width, height)
+            if row["kind"] == "variant":
+                dimensions[(slug, f"/images/products/{slug}/{row['sizeSlug']}/{row['filename']}")] = (width, height)
             report_rows.append(
                 {
                     "slug": slug,
-                    "size": row["size"],
+                    "size": row.get("size", row.get("sourceSizeFolder")),
                     "sizeSlug": row["sizeSlug"],
-                    "slot": row["slot"],
+                    "slot": row.get("slot", "description"),
+                    "kind": row["kind"],
                     "sourceFolder": row["sourceFolder"],
                     "sourceViewToken": row["sourceViewToken"],
                     "sourceFilename": source.name,
                     "sourceSha256": sha256(source),
-                    "target": target.relative_to(REPO).as_posix(),
+                    "target": target_relative,
                     "targetSha256": sha256(target),
                     "sourceDimensions": [source_width, source_height],
                     "targetDimensions": [width, height],
@@ -140,7 +166,9 @@ def main() -> None:
     report = {
         "sourceRoot": str(SOURCE_ROOT),
         "targetWidth": TARGET_WIDTH,
-        "expected": 144,
+        "expected": 168,
+        "expectedVariant": 144,
+        "expectedDescription": 24,
         "published": len(report_rows),
         "filenameCollisionCount": 0,
         "below80KiB": sum(row["targetBytes"] < TARGET_LOW for row in report_rows),
