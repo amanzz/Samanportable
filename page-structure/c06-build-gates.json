@@ -1,0 +1,549 @@
+{
+  "l13": [
+    {
+      "route": "/product/labor-colony",
+      "sizeSlug": "60x24-gplus1",
+      "titleChars": 53,
+      "bodyChars": 549,
+      "useCaseChars": [
+        16,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 52
+    },
+    {
+      "route": "/product/labor-colony",
+      "sizeSlug": "90x24-gplus1",
+      "titleChars": 54,
+      "bodyChars": 588,
+      "useCaseChars": [
+        16,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 52
+    },
+    {
+      "route": "/product/labor-colony",
+      "sizeSlug": "90x24-gplus2",
+      "titleChars": 55,
+      "bodyChars": 523,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 52
+    },
+    {
+      "route": "/product/labor-colony",
+      "sizeSlug": "120x24-gplus1",
+      "titleChars": 56,
+      "bodyChars": 546,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 52
+    },
+    {
+      "route": "/product/labor-colony",
+      "sizeSlug": "118x30-gplus1",
+      "titleChars": 56,
+      "bodyChars": 533,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 52
+    },
+    {
+      "route": "/product/labor-colony",
+      "sizeSlug": "120x24-gplus2",
+      "titleChars": 56,
+      "bodyChars": 540,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 52
+    },
+    {
+      "route": "/product/labor-colony/labor-sheds",
+      "sizeSlug": "60x24-gplus1",
+      "titleChars": 53,
+      "bodyChars": 565,
+      "useCaseChars": [
+        16,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 53
+    },
+    {
+      "route": "/product/labor-colony/labor-sheds",
+      "sizeSlug": "90x24-gplus1",
+      "titleChars": 54,
+      "bodyChars": 597,
+      "useCaseChars": [
+        16,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 53
+    },
+    {
+      "route": "/product/labor-colony/labor-sheds",
+      "sizeSlug": "90x24-gplus2",
+      "titleChars": 55,
+      "bodyChars": 533,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 53
+    },
+    {
+      "route": "/product/labor-colony/labor-sheds",
+      "sizeSlug": "120x24-gplus1",
+      "titleChars": 56,
+      "bodyChars": 526,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 53
+    },
+    {
+      "route": "/product/labor-colony/labor-sheds",
+      "sizeSlug": "118x30-gplus1",
+      "titleChars": 56,
+      "bodyChars": 595,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 53
+    },
+    {
+      "route": "/product/labor-colony/labor-sheds",
+      "sizeSlug": "120x24-gplus2",
+      "titleChars": 56,
+      "bodyChars": 534,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 53
+    },
+    {
+      "route": "/product/labor-colony/labor-hutments",
+      "sizeSlug": "60x24-gplus1",
+      "titleChars": 53,
+      "bodyChars": 515,
+      "useCaseChars": [
+        16,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 57
+    },
+    {
+      "route": "/product/labor-colony/labor-hutments",
+      "sizeSlug": "90x24-gplus1",
+      "titleChars": 54,
+      "bodyChars": 521,
+      "useCaseChars": [
+        16,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 57
+    },
+    {
+      "route": "/product/labor-colony/labor-hutments",
+      "sizeSlug": "90x24-gplus2",
+      "titleChars": 55,
+      "bodyChars": 577,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 57
+    },
+    {
+      "route": "/product/labor-colony/labor-hutments",
+      "sizeSlug": "120x24-gplus1",
+      "titleChars": 56,
+      "bodyChars": 597,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 57
+    },
+    {
+      "route": "/product/labor-colony/labor-hutments",
+      "sizeSlug": "118x30-gplus1",
+      "titleChars": 56,
+      "bodyChars": 565,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 57
+    },
+    {
+      "route": "/product/labor-colony/labor-hutments",
+      "sizeSlug": "120x24-gplus2",
+      "titleChars": 56,
+      "bodyChars": 572,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 57
+    },
+    {
+      "route": "/product/labor-colony/prefab-labor-camps",
+      "sizeSlug": "60x24-gplus1",
+      "titleChars": 53,
+      "bodyChars": 519,
+      "useCaseChars": [
+        16,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 58
+    },
+    {
+      "route": "/product/labor-colony/prefab-labor-camps",
+      "sizeSlug": "90x24-gplus1",
+      "titleChars": 54,
+      "bodyChars": 574,
+      "useCaseChars": [
+        16,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 58
+    },
+    {
+      "route": "/product/labor-colony/prefab-labor-camps",
+      "sizeSlug": "90x24-gplus2",
+      "titleChars": 55,
+      "bodyChars": 604,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 58
+    },
+    {
+      "route": "/product/labor-colony/prefab-labor-camps",
+      "sizeSlug": "120x24-gplus1",
+      "titleChars": 56,
+      "bodyChars": 572,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 58
+    },
+    {
+      "route": "/product/labor-colony/prefab-labor-camps",
+      "sizeSlug": "118x30-gplus1",
+      "titleChars": 56,
+      "bodyChars": 518,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 58
+    },
+    {
+      "route": "/product/labor-colony/prefab-labor-camps",
+      "sizeSlug": "120x24-gplus2",
+      "titleChars": 56,
+      "bodyChars": 591,
+      "useCaseChars": [
+        17,
+        20,
+        25,
+        23
+      ],
+      "sectionH2Chars": 58
+    }
+  ],
+  "rightToExist": [
+    {
+      "route": "/product/labor-colony",
+      "h2Chars": 45,
+      "bodyChars": 359,
+      "sentences": 3,
+      "comparisonChars": 113
+    },
+    {
+      "route": "/product/labor-colony/labor-sheds",
+      "h2Chars": 39,
+      "bodyChars": 370,
+      "sentences": 3,
+      "comparisonChars": 101
+    },
+    {
+      "route": "/product/labor-colony/labor-hutments",
+      "h2Chars": 34,
+      "bodyChars": 359,
+      "sentences": 3,
+      "comparisonChars": 122
+    },
+    {
+      "route": "/product/labor-colony/prefab-labor-camps",
+      "h2Chars": 37,
+      "bodyChars": 344,
+      "sentences": 3,
+      "comparisonChars": 125
+    }
+  ],
+  "newBodySevenWordCollisions": [],
+  "specificationPairwiseMatrix": [
+    {
+      "left": "labor-colony",
+      "right": "labor-sheds",
+      "differingRows": 21,
+      "components": [
+        "Bottom frame",
+        "Bottom stiffeners",
+        "Floor frame",
+        "Top frame",
+        "Roof stiffeners",
+        "Corner posts / walls",
+        "Exterior walls",
+        "Roof",
+        "Interior walls",
+        "Ceiling",
+        "Floor base",
+        "Floor finish",
+        "Wall insulation",
+        "Roof insulation",
+        "Decorative / external finish",
+        "Main door / service door",
+        "Windows / service opening",
+        "Electrical fittings",
+        "Ventilation / AC",
+        "Plumbing / sanitary",
+        "Layout / configuration"
+      ]
+    },
+    {
+      "left": "labor-colony",
+      "right": "labor-hutments",
+      "differingRows": 21,
+      "components": [
+        "Bottom frame",
+        "Bottom stiffeners",
+        "Floor frame",
+        "Top frame",
+        "Roof stiffeners",
+        "Corner posts / walls",
+        "Exterior walls",
+        "Roof",
+        "Interior walls",
+        "Ceiling",
+        "Floor base",
+        "Floor finish",
+        "Wall insulation",
+        "Roof insulation",
+        "Decorative / external finish",
+        "Main door / service door",
+        "Windows / service opening",
+        "Electrical fittings",
+        "Ventilation / AC",
+        "Plumbing / sanitary",
+        "Layout / configuration"
+      ]
+    },
+    {
+      "left": "labor-colony",
+      "right": "prefab-labor-camps",
+      "differingRows": 21,
+      "components": [
+        "Bottom frame",
+        "Bottom stiffeners",
+        "Floor frame",
+        "Top frame",
+        "Roof stiffeners",
+        "Corner posts / walls",
+        "Exterior walls",
+        "Roof",
+        "Interior walls",
+        "Ceiling",
+        "Floor base",
+        "Floor finish",
+        "Wall insulation",
+        "Roof insulation",
+        "Decorative / external finish",
+        "Main door / service door",
+        "Windows / service opening",
+        "Electrical fittings",
+        "Ventilation / AC",
+        "Plumbing / sanitary",
+        "Layout / configuration"
+      ]
+    },
+    {
+      "left": "labor-sheds",
+      "right": "labor-hutments",
+      "differingRows": 21,
+      "components": [
+        "Bottom frame",
+        "Bottom stiffeners",
+        "Floor frame",
+        "Top frame",
+        "Roof stiffeners",
+        "Corner posts / walls",
+        "Exterior walls",
+        "Roof",
+        "Interior walls",
+        "Ceiling",
+        "Floor base",
+        "Floor finish",
+        "Wall insulation",
+        "Roof insulation",
+        "Decorative / external finish",
+        "Main door / service door",
+        "Windows / service opening",
+        "Electrical fittings",
+        "Ventilation / AC",
+        "Plumbing / sanitary",
+        "Layout / configuration"
+      ]
+    },
+    {
+      "left": "labor-sheds",
+      "right": "prefab-labor-camps",
+      "differingRows": 21,
+      "components": [
+        "Bottom frame",
+        "Bottom stiffeners",
+        "Floor frame",
+        "Top frame",
+        "Roof stiffeners",
+        "Corner posts / walls",
+        "Exterior walls",
+        "Roof",
+        "Interior walls",
+        "Ceiling",
+        "Floor base",
+        "Floor finish",
+        "Wall insulation",
+        "Roof insulation",
+        "Decorative / external finish",
+        "Main door / service door",
+        "Windows / service opening",
+        "Electrical fittings",
+        "Ventilation / AC",
+        "Plumbing / sanitary",
+        "Layout / configuration"
+      ]
+    },
+    {
+      "left": "labor-hutments",
+      "right": "prefab-labor-camps",
+      "differingRows": 21,
+      "components": [
+        "Bottom frame",
+        "Bottom stiffeners",
+        "Floor frame",
+        "Top frame",
+        "Roof stiffeners",
+        "Corner posts / walls",
+        "Exterior walls",
+        "Roof",
+        "Interior walls",
+        "Ceiling",
+        "Floor base",
+        "Floor finish",
+        "Wall insulation",
+        "Roof insulation",
+        "Decorative / external finish",
+        "Main door / service door",
+        "Windows / service opening",
+        "Electrical fittings",
+        "Ventilation / AC",
+        "Plumbing / sanitary",
+        "Layout / configuration"
+      ]
+    }
+  ],
+  "images": {
+    "published": 144,
+    "distinctAlts": 144,
+    "nonAsciiAlts": 0,
+    "filenameCollisions": 0,
+    "below80KiB": 0,
+    "above120KiB": 0
+  },
+  "pdfs": [
+    {
+      "slug": "labor-colony",
+      "bytes": 81012,
+      "sha256": "c33c1e15a9b48ebe48a558665d9e7083e3bacad65b0db0e6f2ca4c59d5f0253e"
+    },
+    {
+      "slug": "labor-sheds",
+      "bytes": 80822,
+      "sha256": "05126f417cd6c2ef58a03844a5c7f51f6a63cf9ff190a8a4b8374e78a1a8d043"
+    },
+    {
+      "slug": "labor-hutments",
+      "bytes": 80909,
+      "sha256": "589c95fbb5d3936d319913b4d8290897f867d127b7fe6b4e6a8a497f2cc8f7f9"
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "bytes": 80958,
+      "sha256": "ed834b2e67f74a0d0e98db8bb585e890bf1662e6386eb6348306b5869f7f2366"
+    }
+  ],
+  "wpExportDiffFiles": 0,
+  "introducedEmDashFiles": []
+}

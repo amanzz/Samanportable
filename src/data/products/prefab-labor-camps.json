@@ -1,0 +1,315 @@
+{
+  "productSlug": "prefab-labor-camps",
+  "productName": "Prefab Labor Camps",
+  "variantAxis": "size",
+  "defaultVariant": "120x24-gplus1",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "applicationsDataset": "prefab-labor-camps",
+  "explorerImageTemplate": {
+    "60x24-gplus1": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-left-hero.webp",
+    "90x24-gplus1": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-front-left-hero.webp",
+    "90x24-gplus2": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-front-left-hero.webp",
+    "120x24-gplus1": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-left-hero.webp",
+    "118x30-gplus1": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-front-left-hero.webp",
+    "120x24-gplus2": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-left-hero.webp"
+  },
+  "emitAggregateOffer": true,
+  "categoryLabel": "fixed and movable options side by side",
+  "categoryHref": "/product/labor-colony",
+  "productSku": "SP-90-PLC-2024",
+  "specPdfHref": "/specs/prefab-labor-camps-technical-specification.pdf",
+  "priceCaption": "Base specification price, customisations quoted separately.",
+  "opener": "A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project. Blocks arrange around a central services spine to the approved site plan. Sizes span 60x24 ft G+1 through 120x24 ft G+2 for 58 to 216 workers a building, each priced ex-factory on the camp's own square-foot rate with a fixed quote in 48 hours.",
+  "descriptionHtml": "<p>A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project. Blocks arrange around a central services spine to the approved site plan. Sizes span 60x24 ft G+1 through 120x24 ft G+2 for 58 to 216 workers a building, each priced ex-factory on the camp's own square-foot rate with a fixed quote in 48 hours.</p>",
+  "variants": [
+    {
+      "sizeSlug": "60x24-gplus1",
+      "label": "60x24 ft G+1",
+      "dims": "60x24 ft G+1",
+      "areaSqft": 2880,
+      "priceExGst": 1956960,
+      "priceInclGst": 2309213,
+      "capacity": "58 to 72 workers",
+      "useCase": "Crews of 58 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
+        {
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp",
+          "alt": "Prefab labour camp, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 60x24 ft G+1 prefab labour camp, double bunks in facing rows in the bolted panel block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 60x24 ft G+1 prefab labour camp, the entrance end of the room in the bolted panel block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 60x24 ft G+1 prefab labour camp, the return view toward the door in the bolted panel block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "90x24-gplus1",
+      "label": "90x24 ft G+1",
+      "dims": "90x24 ft G+1",
+      "areaSqft": 4320,
+      "priceExGst": 2935440,
+      "priceInclGst": 3463819,
+      "capacity": "86 to 108 workers",
+      "useCase": "Crews of 86 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-front-right-hero.webp",
+          "alt": "Prefab labour camp, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 90x24 ft G+1 prefab labour camp, bunk beds ranged along both walls in the bolted panel block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+1 prefab labour camp, the doorway into the sleeping room in the bolted panel block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+1 prefab labour camp, looking back toward the room door in the bolted panel block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "90x24-gplus2",
+      "label": "90x24 ft G+2",
+      "dims": "90x24 ft G+2",
+      "areaSqft": 6480,
+      "priceExGst": 4403160,
+      "priceInclGst": 5195729,
+      "capacity": "129 to 162 workers",
+      "useCase": "Crews of 129 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-front-right-hero.webp",
+          "alt": "Prefab labour camp, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 90x24 ft G+2 prefab labour camp, the sleeping bay set out in double bunks in the bolted panel block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-entrance-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+2 prefab labour camp, looking in from the room door in the bolted panel block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-reverse-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+2 prefab labour camp, the room seen from its far end in the bolted panel block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "120x24-gplus1",
+      "label": "120x24 ft G+1",
+      "dims": "120x24 ft G+1",
+      "areaSqft": 5760,
+      "priceExGst": 3913920,
+      "priceInclGst": 4618426,
+      "capacity": "115 to 144 workers",
+      "useCase": "Crews of 115 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-right-hero.webp",
+          "alt": "Prefab labour camp, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 120x24 ft G+1 prefab labour camp, double bunks in facing rows in the bolted panel block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+1 prefab labour camp, the entrance end of the room in the bolted panel block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+1 prefab labour camp, the return view toward the door in the bolted panel block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "118x30-gplus1",
+      "label": "118x30 ft G+1",
+      "dims": "118x30 ft G+1",
+      "areaSqft": 7080,
+      "priceExGst": 4810860,
+      "priceInclGst": 5676815,
+      "capacity": "142 to 177 workers",
+      "useCase": "Crews of 142 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
+        {
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-front-right-hero.webp",
+          "alt": "Prefab labour camp, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 118x30 ft G+1 prefab labour camp, bunk beds ranged along both walls in the bolted panel block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 118x30 ft G+1 prefab labour camp, the doorway into the sleeping room in the bolted panel block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 118x30 ft G+1 prefab labour camp, looking back toward the room door in the bolted panel block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "120x24-gplus2",
+      "label": "120x24 ft G+2",
+      "dims": "120x24 ft G+2",
+      "areaSqft": 8640,
+      "priceExGst": 5870880,
+      "priceInclGst": 6927638,
+      "capacity": "173 to 216 workers",
+      "useCase": "Crews of 173 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-right-hero.webp",
+          "alt": "Prefab labour camp, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 120x24 ft G+2 prefab labour camp, the sleeping bay set out in double bunks in the bolted panel block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-room-entrance-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+2 prefab labour camp, looking in from the room door in the bolted panel block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-room-reverse-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+2 prefab labour camp, the room seen from its far end in the bolted panel block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    }
+  ]
+}

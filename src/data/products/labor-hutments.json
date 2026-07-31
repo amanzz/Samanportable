@@ -1,0 +1,315 @@
+{
+  "productSlug": "labor-hutments",
+  "productName": "Labor Hutments",
+  "variantAxis": "size",
+  "defaultVariant": "120x24-gplus1",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "applicationsDataset": "labor-hutments",
+  "explorerImageTemplate": {
+    "60x24-gplus1": "/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-left-hero.webp",
+    "90x24-gplus1": "/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-front-left-hero.webp",
+    "90x24-gplus2": "/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-left-hero.webp",
+    "120x24-gplus1": "/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-left-hero.webp",
+    "118x30-gplus1": "/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-front-left-hero.webp",
+    "120x24-gplus2": "/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-front-left-hero.webp"
+  },
+  "emitAggregateOffer": true,
+  "categoryLabel": "every colony building compared",
+  "categoryHref": "/product/labor-colony",
+  "productSku": "SP-90-LH-2024",
+  "specPdfHref": "/specs/labor-hutments-technical-specification.pdf",
+  "priceCaption": "Base specification price, customisations quoted separately.",
+  "opener": "A labour hutment is the room-based member of the SAMAN worker housing range: a linear block of individual sleeping rooms, each with its own personnel door, aluminium sliding window, fans and a small distribution board. Crews get lockable rooms rather than one shared hall, which suits mixed gangs and longer postings. The block is a welded or bolted MS structure with an insulated corrugated exterior, built in six sizes between 60x24 ft G+1 and 120x24 ft G+2 that house 58 to 216 workers. Every size is priced ex-factory on a single square-foot rate.",
+  "descriptionHtml": "<p>A labour hutment is the room-based member of the SAMAN worker housing range: a linear block of individual sleeping rooms, each with its own personnel door, aluminium sliding window, fans and a small distribution board. Crews get lockable rooms rather than one shared hall, which suits mixed gangs and longer postings. The block is a welded or bolted MS structure with an insulated corrugated exterior, built in six sizes between 60x24 ft G+1 and 120x24 ft G+2 that house 58 to 216 workers. Every size is priced ex-factory on a single square-foot rate.</p>",
+  "variants": [
+    {
+      "sizeSlug": "60x24-gplus1",
+      "label": "60x24 ft G+1",
+      "dims": "60x24 ft G+1",
+      "areaSqft": 2880,
+      "priceExGst": 1982880,
+      "priceInclGst": 2339798,
+      "capacity": "58 to 72 workers",
+      "useCase": "Crews of 58 plus",
+      "sku": "SP-90-LH-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-right-hero.webp",
+          "alt": "Labour hutment, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-exact-front-elevation.webp",
+          "alt": "Labour hutment, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-bunk-layout.webp",
+          "alt": "Inside a 60x24 ft G+1 labour hutment, double bunks in facing rows in the linear room block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-room-entrance.webp",
+          "alt": "Inside a 60x24 ft G+1 labour hutment, the entrance end of the room in the linear room block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-storage-ventilation.webp",
+          "alt": "Inside a 60x24 ft G+1 labour hutment, the locker wall and ventilators in the linear room block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "90x24-gplus1",
+      "label": "90x24 ft G+1",
+      "dims": "90x24 ft G+1",
+      "areaSqft": 4320,
+      "priceExGst": 2974320,
+      "priceInclGst": 3509698,
+      "capacity": "86 to 108 workers",
+      "useCase": "Crews of 86 plus",
+      "sku": "SP-90-LH-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-front-right-hero.webp",
+          "alt": "Labour hutment, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-exact-front-elevation.webp",
+          "alt": "Labour hutment, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-bunk-layout.webp",
+          "alt": "Inside a 90x24 ft G+1 labour hutment, bunk beds ranged along both walls in the linear room block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-room-entrance.webp",
+          "alt": "Inside a 90x24 ft G+1 labour hutment, the doorway into the sleeping room in the linear room block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-storage-ventilation.webp",
+          "alt": "Inside a 90x24 ft G+1 labour hutment, lockers under the high-level vents in the linear room block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "90x24-gplus2",
+      "label": "90x24 ft G+2",
+      "dims": "90x24 ft G+2",
+      "areaSqft": 6480,
+      "priceExGst": 4461480,
+      "priceInclGst": 5264546,
+      "capacity": "129 to 162 workers",
+      "useCase": "Crews of 129 plus",
+      "sku": "SP-90-LH-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-right-hero.webp",
+          "alt": "Labour hutment, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-exact-front-elevation.webp",
+          "alt": "Labour hutment, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-bunk-layout.webp",
+          "alt": "Inside a 90x24 ft G+2 labour hutment, the sleeping bay set out in double bunks in the linear room block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-room-entrance.webp",
+          "alt": "Inside a 90x24 ft G+2 labour hutment, looking in from the room door in the linear room block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-storage-ventilation.webp",
+          "alt": "Inside a 90x24 ft G+2 labour hutment, personal storage below the vent line in the linear room block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "120x24-gplus1",
+      "label": "120x24 ft G+1",
+      "dims": "120x24 ft G+1",
+      "areaSqft": 5760,
+      "priceExGst": 3965760,
+      "priceInclGst": 4679597,
+      "capacity": "115 to 144 workers",
+      "useCase": "Crews of 115 plus",
+      "sku": "SP-90-LH-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-right-hero.webp",
+          "alt": "Labour hutment, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-exact-front-elevation.webp",
+          "alt": "Labour hutment, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-bunk-layout.webp",
+          "alt": "Inside a 120x24 ft G+1 labour hutment, double bunks in facing rows in the linear room block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-room-entrance.webp",
+          "alt": "Inside a 120x24 ft G+1 labour hutment, the entrance end of the room in the linear room block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-storage-ventilation.webp",
+          "alt": "Inside a 120x24 ft G+1 labour hutment, the locker wall and ventilators in the linear room block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "118x30-gplus1",
+      "label": "118x30 ft G+1",
+      "dims": "118x30 ft G+1",
+      "areaSqft": 7080,
+      "priceExGst": 4874580,
+      "priceInclGst": 5752004,
+      "capacity": "142 to 177 workers",
+      "useCase": "Crews of 142 plus",
+      "sku": "SP-90-LH-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-front-right-hero.webp",
+          "alt": "Labour hutment, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-exact-front-elevation.webp",
+          "alt": "Labour hutment, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-bunk-layout.webp",
+          "alt": "Inside a 118x30 ft G+1 labour hutment, bunk beds ranged along both walls in the linear room block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-room-entrance.webp",
+          "alt": "Inside a 118x30 ft G+1 labour hutment, the doorway into the sleeping room in the linear room block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-storage-ventilation.webp",
+          "alt": "Inside a 118x30 ft G+1 labour hutment, lockers under the high-level vents in the linear room block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "120x24-gplus2",
+      "label": "120x24 ft G+2",
+      "dims": "120x24 ft G+2",
+      "areaSqft": 8640,
+      "priceExGst": 5948640,
+      "priceInclGst": 7019395,
+      "capacity": "173 to 216 workers",
+      "useCase": "Crews of 173 plus",
+      "sku": "SP-90-LH-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-front-right-hero.webp",
+          "alt": "Labour hutment, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-exact-front-elevation.webp",
+          "alt": "Labour hutment, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the room-block hutment build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-bunk-layout.webp",
+          "alt": "Inside a 120x24 ft G+2 labour hutment, the sleeping bay set out in double bunks in the linear room block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-room-entrance.webp",
+          "alt": "Inside a 120x24 ft G+2 labour hutment, looking in from the room door in the linear room block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-storage-ventilation.webp",
+          "alt": "Inside a 120x24 ft G+2 labour hutment, personal storage below the vent line in the linear room block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    }
+  ]
+}

@@ -19,6 +19,7 @@
 //     `porta-cabin-with-toilet` entry.
 import specsDataset from '@/data/products/specs-tab-dataset.json';
 import c01Specifications from '@/data/products/c01-specifications.json';
+import c06Specifications from '@/data/products/c06-specifications.json';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -43,6 +44,9 @@ interface C01SpecificationEntry {
   specifications: C01SpecificationRow[];
 }
 const C01_DATASET = c01Specifications as unknown as {
+  products: Record<string, C01SpecificationEntry>;
+};
+const C06_DATASET = c06Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
 
@@ -614,6 +618,12 @@ export function getProductTabsHtml(
   if (pageSlug && C01_DATASET.products[pageSlug]) {
     return {
       specificationsHtml: buildC01SpecificationsHtml(C01_DATASET.products[pageSlug]),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
+  if (pageSlug && C06_DATASET.products[pageSlug]) {
+    return {
+      specificationsHtml: buildC01SpecificationsHtml(C06_DATASET.products[pageSlug]),
       shippingHtml: buildShippingHtml(),
     };
   }

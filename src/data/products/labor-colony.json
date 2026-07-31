@@ -1,0 +1,313 @@
+{
+  "productSlug": "labor-colony",
+  "productName": "Labour Colony (Labor Colony)",
+  "variantAxis": "size",
+  "defaultVariant": "120x24-gplus1",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "applicationsDataset": "labor-colony",
+  "explorerImageTemplate": {
+    "60x24-gplus1": "/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-left-hero.webp",
+    "90x24-gplus1": "/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-front-left-hero.webp",
+    "90x24-gplus2": "/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-front-left-hero.webp",
+    "120x24-gplus1": "/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-front-left-hero.webp",
+    "118x30-gplus1": "/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-front-left-hero.webp",
+    "120x24-gplus2": "/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-front-left-hero.webp"
+  },
+  "emitAggregateOffer": true,
+  "productSku": "SP-90-24-LC-24",
+  "specPdfHref": "/specs/labor-colony-technical-specification.pdf",
+  "priceCaption": "Base specification price, customisations quoted separately.",
+  "opener": "A labour colony from SAMAN is a complete worker housing site delivered as finished buildings, not a kit of parts. Each building is a newly fabricated steel structure from our Bengaluru and Greater Noida facilities, supplied in the six approved building sizes, 60x24 ft G+1 at the small end and 120x24 ft G+2 at the large, sleeping 58 to 216 workers each on the standard planning basis. Dormitory blocks pair with toilet and bath blocks, kitchens and site services to the approved site plan. Pricing is ex-factory against one flat square-foot rate, so every configuration prices the same way and a fixed quote arrives within 48 hours.",
+  "descriptionHtml": "<section><h2>Which worker housing build fits the site.</h2><p>For one supervised open hall per floor, the <strong><a href=\"/product/labor-colony/labor-sheds\">labour shed building</a></strong> houses the most beds per rupee.</p><p>Where crews need lockable individual rooms, the <strong><a href=\"/product/labor-colony/labor-hutments\">labour hutment room block</a></strong> gives every gang its own doors.</p><p>If the housing must move to the next project, the <strong><a href=\"/product/labor-colony/prefab-labor-camps\">relocatable prefab labour camp</a></strong> dismantles and re-erects.</p></section>",
+  "variants": [
+    {
+      "sizeSlug": "60x24-gplus1",
+      "label": "60x24 ft G+1",
+      "dims": "60x24 ft G+1",
+      "areaSqft": 2880,
+      "priceExGst": 1944000,
+      "priceInclGst": 2293920,
+      "capacity": "58 to 72 workers",
+      "useCase": "Crews of 58 plus",
+      "sku": "SP-90-24-LC-24",
+      "images": [
+        {
+          "src": "/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-right-hero.webp",
+          "alt": "Labour colony, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-exact-front-elevation.webp",
+          "alt": "Labour colony, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-bunk-layout.webp",
+          "alt": "Inside a 60x24 ft G+1 labour colony, double bunks in facing rows in the dormitory block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-room-entrance.webp",
+          "alt": "Inside a 60x24 ft G+1 labour colony, the entrance end of the room in the dormitory block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-storage-ventilation.webp",
+          "alt": "Inside a 60x24 ft G+1 labour colony, the locker wall and ventilators in the dormitory block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "90x24-gplus1",
+      "label": "90x24 ft G+1",
+      "dims": "90x24 ft G+1",
+      "areaSqft": 4320,
+      "priceExGst": 2916000,
+      "priceInclGst": 3440880,
+      "capacity": "86 to 108 workers",
+      "useCase": "Crews of 86 plus",
+      "sku": "SP-90-24-LC-24",
+      "images": [
+        {
+          "src": "/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-front-right-hero.webp",
+          "alt": "Labour colony, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-exact-front-elevation.webp",
+          "alt": "Labour colony, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 90x24 ft G+1 labour colony, bunk beds ranged along both walls in the dormitory block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+1 labour colony, the doorway into the sleeping room in the dormitory block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+1 labour colony, looking back toward the room door in the dormitory block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "90x24-gplus2",
+      "label": "90x24 ft G+2",
+      "dims": "90x24 ft G+2",
+      "areaSqft": 6480,
+      "priceExGst": 4374000,
+      "priceInclGst": 5161320,
+      "capacity": "129 to 162 workers",
+      "useCase": "Crews of 129 plus",
+      "sku": "SP-90-24-LC-24",
+      "images": [
+        {
+          "src": "/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-front-right-hero.webp",
+          "alt": "Labour colony, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-exact-front-elevation.webp",
+          "alt": "Labour colony, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 90x24 ft G+2 labour colony, the sleeping bay set out in double bunks in the dormitory block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-room-entrance-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+2 labour colony, looking in from the room door in the dormitory block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-room-reverse-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+2 labour colony, the room seen from its far end in the dormitory block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "120x24-gplus1",
+      "label": "120x24 ft G+1",
+      "dims": "120x24 ft G+1",
+      "areaSqft": 5760,
+      "priceExGst": 3888000,
+      "priceInclGst": 4587840,
+      "capacity": "115 to 144 workers",
+      "useCase": "Crews of 115 plus",
+      "sku": "SP-90-24-LC-24",
+      "images": [
+        {
+          "src": "/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-front-right-hero.webp",
+          "alt": "Labour colony, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-exact-front-elevation.webp",
+          "alt": "Labour colony, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 120x24 ft G+1 labour colony, double bunks in facing rows in the dormitory block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+1 labour colony, the entrance end of the room in the dormitory block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+1 labour colony, the return view toward the door in the dormitory block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "118x30-gplus1",
+      "label": "118x30 ft G+1",
+      "dims": "118x30 ft G+1",
+      "areaSqft": 7080,
+      "priceExGst": 4779000,
+      "priceInclGst": 5639220,
+      "capacity": "142 to 177 workers",
+      "useCase": "Crews of 142 plus",
+      "sku": "SP-90-24-LC-24",
+      "images": [
+        {
+          "src": "/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-front-right-hero.webp",
+          "alt": "Labour colony, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-exact-front-elevation.webp",
+          "alt": "Labour colony, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 118x30 ft G+1 labour colony, bunk beds ranged along both walls in the dormitory block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 118x30 ft G+1 labour colony, the doorway into the sleeping room in the dormitory block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 118x30 ft G+1 labour colony, looking back toward the room door in the dormitory block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "120x24-gplus2",
+      "label": "120x24 ft G+2",
+      "dims": "120x24 ft G+2",
+      "areaSqft": 8640,
+      "priceExGst": 5832000,
+      "priceInclGst": 6881760,
+      "capacity": "173 to 216 workers",
+      "useCase": "Crews of 173 plus",
+      "sku": "SP-90-24-LC-24",
+      "images": [
+        {
+          "src": "/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-front-right-hero.webp",
+          "alt": "Labour colony, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-exact-front-elevation.webp",
+          "alt": "Labour colony, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the multi-block housing build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 120x24 ft G+2 labour colony, the sleeping bay set out in double bunks in the dormitory block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-room-entrance-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+2 labour colony, looking in from the room door in the dormitory block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-room-reverse-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+2 labour colony, the room seen from its far end in the dormitory block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    }
+  ]
+}

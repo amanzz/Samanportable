@@ -761,9 +761,11 @@ export function PortaCabinVariantHero({
             1280+:4L(84). All 9 share one height per tier, so size swaps are zero-CLS;
             every blurb fits with no truncation at 360/768/1024/1440. overflow-hidden
             is a safety net only (nothing is actually clipped at any width ≥320). */}
-        {heroActive.shortDescription && (
-          <p className="h-[126px] min-[360px]:h-[105px] sm:h-[63px] md:h-[42px] lg:h-[105px] xl:h-[84px] overflow-hidden text-sm leading-[1.5] text-[var(--ds-color-steel)]">
-            {heroActive.shortDescription}
+        {(heroActive.shortDescription || data.opener) && (
+          <p className={data.opener
+            ? 'text-sm leading-[1.5] text-[var(--ds-color-steel)]'
+            : 'h-[126px] min-[360px]:h-[105px] sm:h-[63px] md:h-[42px] lg:h-[105px] xl:h-[84px] overflow-hidden text-sm leading-[1.5] text-[var(--ds-color-steel)]'}>
+            {data.opener || heroActive.shortDescription}
           </p>
         )}
 

@@ -262,7 +262,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: productDescription,
+          description: variantData?.descriptionHtml || productDescription,
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
             src: img.src,

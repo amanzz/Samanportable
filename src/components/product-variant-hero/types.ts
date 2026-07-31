@@ -55,6 +55,11 @@ export interface VariantProductData {
   /** Singular product noun ("Porta Cabin") used in hero copy, image alts, the
       aria-labels and the enquiry prefill. Default: preset, else the page title. */
   productName?: string;
+  /** Owner-approved page opener rendered directly below the locked H1. Optional;
+      pages without one keep their existing markup byte-identical. */
+  opener?: string;
+  /** Owner-approved replacement for the legacy Description-tab HTML. */
+  descriptionHtml?: string;
   /** Visible text of the "Category" row in the Product Information block. */
   categoryLabel?: string;
   /** Href of the "Category" row. Row renders only when BOTH label and href resolve. */

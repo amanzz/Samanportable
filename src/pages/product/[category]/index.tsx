@@ -303,7 +303,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: descriptionData?.description || '',
+          description: variantData?.descriptionHtml || descriptionData?.description || '',
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
           // cluster (null for every other product → the existing overrides/defaults
           // apply unchanged). The flagship page slug `porta-cabins` maps to the

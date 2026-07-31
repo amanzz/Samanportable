@@ -1,0 +1,315 @@
+{
+  "productSlug": "labor-sheds",
+  "productName": "Labor Sheds",
+  "variantAxis": "size",
+  "defaultVariant": "120x24-gplus1",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "applicationsDataset": "labor-sheds",
+  "explorerImageTemplate": {
+    "60x24-gplus1": "/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-left-hero.webp",
+    "90x24-gplus1": "/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-front-left-hero.webp",
+    "90x24-gplus2": "/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-front-left-hero.webp",
+    "120x24-gplus1": "/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-front-left-hero.webp",
+    "118x30-gplus1": "/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-front-left-hero.webp",
+    "120x24-gplus2": "/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-front-left-hero.webp"
+  },
+  "emitAggregateOffer": true,
+  "categoryLabel": "the full worker housing range",
+  "categoryHref": "/product/labor-colony",
+  "productSku": "CC-50-LS-2024",
+  "specPdfHref": "/specs/labor-sheds-technical-specification.pdf",
+  "priceCaption": "Base specification price, customisations quoted separately.",
+  "opener": "A labour shed is the open-hall version of SAMAN worker housing: one clear sleeping hall per floor with central aisles, built as a light portal-frame steel building with PPGI cladding and high-level ventilation. It suits contractors who need the highest bed count per rupee and manage the hall as one space. The hall comes in six sizes, 60x24 ft G+1 up to 120x24 ft G+2, sleeping 58 to 216 workers a building. The hall is priced ex-factory on one per-square-foot rate, delivered in 7 to 21 working days with zoned lighting and emergency circuits fitted.",
+  "descriptionHtml": "<p>A labour shed is the open-hall version of SAMAN worker housing: one clear sleeping hall per floor with central aisles, built as a light portal-frame steel building with PPGI cladding and high-level ventilation. It suits contractors who need the highest bed count per rupee and manage the hall as one space. The hall comes in six sizes, 60x24 ft G+1 up to 120x24 ft G+2, sleeping 58 to 216 workers a building. The hall is priced ex-factory on one per-square-foot rate, delivered in 7 to 21 working days with zoned lighting and emergency circuits fitted.</p>",
+  "variants": [
+    {
+      "sizeSlug": "60x24-gplus1",
+      "label": "60x24 ft G+1",
+      "dims": "60x24 ft G+1",
+      "areaSqft": 2880,
+      "priceExGst": 1969920,
+      "priceInclGst": 2324506,
+      "capacity": "58 to 72 workers",
+      "useCase": "Crews of 58 plus",
+      "sku": "CC-50-LS-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp",
+          "alt": "Labour shed, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-exact-front-elevation.webp",
+          "alt": "Labour shed, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-interior-bunk-layout.webp",
+          "alt": "Inside a 60x24 ft G+1 labour shed, double bunks in facing rows in the open sleeping hall, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-interior-room-entrance.webp",
+          "alt": "Inside a 60x24 ft G+1 labour shed, the entrance end of the room in the open sleeping hall, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-interior-storage-ventilation.webp",
+          "alt": "Inside a 60x24 ft G+1 labour shed, the locker wall and ventilators in the open sleeping hall, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "90x24-gplus1",
+      "label": "90x24 ft G+1",
+      "dims": "90x24 ft G+1",
+      "areaSqft": 4320,
+      "priceExGst": 2954880,
+      "priceInclGst": 3486758,
+      "capacity": "86 to 108 workers",
+      "useCase": "Crews of 86 plus",
+      "sku": "CC-50-LS-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-front-right-hero.webp",
+          "alt": "Labour shed, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-exact-front-elevation.webp",
+          "alt": "Labour shed, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-bunk-layout.webp",
+          "alt": "Inside a 90x24 ft G+1 labour shed, bunk beds ranged along both walls in the open sleeping hall, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-room-entrance.webp",
+          "alt": "Inside a 90x24 ft G+1 labour shed, the doorway into the sleeping room in the open sleeping hall, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-storage-ventilation.webp",
+          "alt": "Inside a 90x24 ft G+1 labour shed, lockers under the high-level vents in the open sleeping hall, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "90x24-gplus2",
+      "label": "90x24 ft G+2",
+      "dims": "90x24 ft G+2",
+      "areaSqft": 6480,
+      "priceExGst": 4432320,
+      "priceInclGst": 5230138,
+      "capacity": "129 to 162 workers",
+      "useCase": "Crews of 129 plus",
+      "sku": "CC-50-LS-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-front-right-hero.webp",
+          "alt": "Labour shed, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-exact-front-elevation.webp",
+          "alt": "Labour shed, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-interior-bunk-layout.webp",
+          "alt": "Inside a 90x24 ft G+2 labour shed, the sleeping bay set out in double bunks in the open sleeping hall, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-interior-room-entrance.webp",
+          "alt": "Inside a 90x24 ft G+2 labour shed, looking in from the room door in the open sleeping hall, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-interior-storage-ventilation.webp",
+          "alt": "Inside a 90x24 ft G+2 labour shed, personal storage below the vent line in the open sleeping hall, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "120x24-gplus1",
+      "label": "120x24 ft G+1",
+      "dims": "120x24 ft G+1",
+      "areaSqft": 5760,
+      "priceExGst": 3939840,
+      "priceInclGst": 4649011,
+      "capacity": "115 to 144 workers",
+      "useCase": "Crews of 115 plus",
+      "sku": "CC-50-LS-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-front-right-hero.webp",
+          "alt": "Labour shed, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-exact-front-elevation.webp",
+          "alt": "Labour shed, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-interior-bunk-layout.webp",
+          "alt": "Inside a 120x24 ft G+1 labour shed, double bunks in facing rows in the open sleeping hall, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-interior-room-entrance.webp",
+          "alt": "Inside a 120x24 ft G+1 labour shed, the entrance end of the room in the open sleeping hall, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-interior-storage-ventilation.webp",
+          "alt": "Inside a 120x24 ft G+1 labour shed, the locker wall and ventilators in the open sleeping hall, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "118x30-gplus1",
+      "label": "118x30 ft G+1",
+      "dims": "118x30 ft G+1",
+      "areaSqft": 7080,
+      "priceExGst": 4842720,
+      "priceInclGst": 5714410,
+      "capacity": "142 to 177 workers",
+      "useCase": "Crews of 142 plus",
+      "sku": "CC-50-LS-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-front-right-hero.webp",
+          "alt": "Labour shed, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-exact-front-elevation.webp",
+          "alt": "Labour shed, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-bunk-layout.webp",
+          "alt": "Inside a 118x30 ft G+1 labour shed, bunk beds ranged along both walls in the open sleeping hall, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-room-entrance.webp",
+          "alt": "Inside a 118x30 ft G+1 labour shed, the doorway into the sleeping room in the open sleeping hall, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-storage-ventilation.webp",
+          "alt": "Inside a 118x30 ft G+1 labour shed, lockers under the high-level vents in the open sleeping hall, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "120x24-gplus2",
+      "label": "120x24 ft G+2",
+      "dims": "120x24 ft G+2",
+      "areaSqft": 8640,
+      "priceExGst": 5909760,
+      "priceInclGst": 6973517,
+      "capacity": "173 to 216 workers",
+      "useCase": "Crews of 173 plus",
+      "sku": "CC-50-LS-2024",
+      "images": [
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-front-right-hero.webp",
+          "alt": "Labour shed, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-exact-front-elevation.webp",
+          "alt": "Labour shed, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the open-hall shed build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-interior-bunk-layout.webp",
+          "alt": "Inside a 120x24 ft G+2 labour shed, the sleeping bay set out in double bunks in the open sleeping hall, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-interior-room-entrance.webp",
+          "alt": "Inside a 120x24 ft G+2 labour shed, looking in from the room door in the open sleeping hall, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-interior-storage-ventilation.webp",
+          "alt": "Inside a 120x24 ft G+2 labour shed, personal storage below the vent line in the open sleeping hall, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    }
+  ]
+}
