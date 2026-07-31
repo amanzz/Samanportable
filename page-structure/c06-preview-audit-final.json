@@ -1,0 +1,585 @@
+{
+  "previewBase": "http://127.0.0.1:3106",
+  "productionBase": "https://www.samanportable.com",
+  "sitemapRoutes": 450,
+  "route200Count": 450,
+  "non200": [],
+  "c06": {
+    "labor-colony": {
+      "pathname": "/product/labor-colony",
+      "status": 200,
+      "title": "Labour Colony & Labor Colony Manufacturer | SAMAN",
+      "h1": "Labour Colony (Labor Colony)",
+      "metaDescription": "Labor colony for highway, dam, and industrial projects. Accommodates 50–500 workers. Prefab labour colony units, set up in 10 days. Get a capacity quote today.",
+      "canonical": "https://www.samanportable.com/product/labor-colony",
+      "firstParagraphHasLink": false,
+      "descriptionFirstParagraphHasLink": false,
+      "descriptionAnchorCount": 4,
+      "descriptionWordCount": 885,
+      "descriptionImageCount": 6,
+      "descriptionEmDashCount": 0,
+      "internalLinks": 10,
+      "redirectedOrErrorTargets": [],
+      "ownPrimaryLinks": [],
+      "retiredClaimHits": [],
+      "claimHits": [
+        {
+          "claim": "free delivery",
+          "snippet": "ane or manual placement is arranged based on your site access and confirmed at quotation. Free delivery: within Bangalore city (South zone) · Delhi NCR — Ghaziabad, Gurugram, Faridabad, Noida a"
+        }
+      ],
+      "jsonLd": {
+        "productGroup": true,
+        "aggregateOffer": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "INR",
+          "lowPrice": 1944000,
+          "highPrice": 5832000,
+          "offerCount": 6,
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2027-07-31",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "INR",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        "variantOfferCount": 6,
+        "emittedPrices": [
+          1944000,
+          2916000,
+          3888000,
+          4374000,
+          4779000,
+          5832000
+        ],
+        "expectedPrices": [
+          1944000,
+          2916000,
+          3888000,
+          4374000,
+          4779000,
+          5832000
+        ],
+        "vatValues": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "vatAllFalse": true,
+        "videoObjectCount": 1,
+        "videoObject": {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Labour Colony for Construction Sites | SAMAN Portable Worker Accommodation",
+          "description": "Walk through a completed labour colony built by SAMAN Portable for a live industrial project.",
+          "thumbnailUrl": [
+            "https://i.ytimg.com/vi/Q41RYemNB_E/hqdefault.jpg"
+          ],
+          "uploadDate": "2026-07-27T02:22:28-07:00",
+          "duration": "PT2M15S",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Q41RYemNB_E",
+          "publisher": {
+            "@id": "https://www.samanportable.com/#organization"
+          }
+        },
+        "faqPageCount": 1,
+        "faqQuestionCount": 5
+      },
+      "initialVideoIframeCount": 0,
+      "initialYoutubeNocookieIframeCount": 0,
+      "initialYoutubePreconnectCount": 0,
+      "videoPosterCount": 1,
+      "pdf": {
+        "status": 200
+      },
+      "downloadLabelCount": 1,
+      "pdfInsideScrollableColumn": true,
+      "scrollCardDesktopOverflowVisible": true
+    },
+    "labor-sheds": {
+      "pathname": "/product/labor-colony/labor-sheds",
+      "status": 200,
+      "title": "Labor Sheds │ Standard Worker Accommodation │ SAMAN Portable",
+      "h1": "Labor Sheds",
+      "metaDescription": "Labor sheds for project sites. Basic accommodation for site workers. Insulated walls, ventilation included. Get a capacity and price quote today.",
+      "canonical": "https://www.samanportable.com/product/labor-colony/labor-sheds",
+      "firstParagraphHasLink": false,
+      "descriptionFirstParagraphHasLink": false,
+      "descriptionAnchorCount": 3,
+      "descriptionWordCount": 708,
+      "descriptionImageCount": 6,
+      "descriptionEmDashCount": 0,
+      "internalLinks": 10,
+      "redirectedOrErrorTargets": [],
+      "ownPrimaryLinks": [],
+      "retiredClaimHits": [],
+      "claimHits": [
+        {
+          "claim": "cheapest",
+          "snippet": "ed over the room block The shed puts every bed into one open hall per floor, which is the cheapest way to house a large crew and by far the easiest arrangement to supervise as a single spa"
+        },
+        {
+          "claim": "free delivery",
+          "snippet": "ane or manual placement is arranged based on your site access and confirmed at quotation. Free delivery: within Bangalore city (South zone) · Delhi NCR — Ghaziabad, Gurugram, Faridabad, Noida a"
+        }
+      ],
+      "jsonLd": {
+        "productGroup": true,
+        "aggregateOffer": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "INR",
+          "lowPrice": 1969920,
+          "highPrice": 5909760,
+          "offerCount": 6,
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2027-07-31",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "INR",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        "variantOfferCount": 6,
+        "emittedPrices": [
+          1969920,
+          2954880,
+          3939840,
+          4432320,
+          4842720,
+          5909760
+        ],
+        "expectedPrices": [
+          1969920,
+          2954880,
+          3939840,
+          4432320,
+          4842720,
+          5909760
+        ],
+        "vatValues": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "vatAllFalse": true,
+        "videoObjectCount": 0,
+        "videoObject": null,
+        "faqPageCount": 1,
+        "faqQuestionCount": 5
+      },
+      "initialVideoIframeCount": 0,
+      "initialYoutubeNocookieIframeCount": 0,
+      "initialYoutubePreconnectCount": 0,
+      "videoPosterCount": 0,
+      "pdf": {
+        "status": 200
+      },
+      "downloadLabelCount": 1,
+      "pdfInsideScrollableColumn": true,
+      "scrollCardDesktopOverflowVisible": true
+    },
+    "labor-hutments": {
+      "pathname": "/product/labor-colony/labor-hutments",
+      "status": 200,
+      "title": "Labor Hutments │ Basic Site Accommodation │ SAMAN Portable",
+      "h1": "Labor Hutments",
+      "metaDescription": "Labor hutments for construction site workers. Basic and affordable. Site-built or prefab options. For short to medium duration projects. Get a quote.",
+      "canonical": "https://www.samanportable.com/product/labor-colony/labor-hutments",
+      "firstParagraphHasLink": false,
+      "descriptionFirstParagraphHasLink": false,
+      "descriptionAnchorCount": 3,
+      "descriptionWordCount": 655,
+      "descriptionImageCount": 6,
+      "descriptionEmDashCount": 0,
+      "internalLinks": 10,
+      "redirectedOrErrorTargets": [],
+      "ownPrimaryLinks": [],
+      "retiredClaimHits": [],
+      "claimHits": [
+        {
+          "claim": "best",
+          "snippet": "or 86 to 108 workers Ninety feet of rooms over two floors houses 86 to 108 workers in the best-balanced room block we make. The passage runs the building's length with rooms off one si"
+        },
+        {
+          "claim": "free delivery",
+          "snippet": "ane or manual placement is arranged based on your site access and confirmed at quotation. Free delivery: within Bangalore city (South zone) · Delhi NCR — Ghaziabad, Gurugram, Faridabad, Noida a"
+        }
+      ],
+      "jsonLd": {
+        "productGroup": true,
+        "aggregateOffer": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "INR",
+          "lowPrice": 1982880,
+          "highPrice": 5948640,
+          "offerCount": 6,
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2027-07-31",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "INR",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        "variantOfferCount": 6,
+        "emittedPrices": [
+          1982880,
+          2974320,
+          3965760,
+          4461480,
+          4874580,
+          5948640
+        ],
+        "expectedPrices": [
+          1982880,
+          2974320,
+          3965760,
+          4461480,
+          4874580,
+          5948640
+        ],
+        "vatValues": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "vatAllFalse": true,
+        "videoObjectCount": 0,
+        "videoObject": null,
+        "faqPageCount": 1,
+        "faqQuestionCount": 5
+      },
+      "initialVideoIframeCount": 0,
+      "initialYoutubeNocookieIframeCount": 0,
+      "initialYoutubePreconnectCount": 0,
+      "videoPosterCount": 0,
+      "pdf": {
+        "status": 200
+      },
+      "downloadLabelCount": 1,
+      "pdfInsideScrollableColumn": true,
+      "scrollCardDesktopOverflowVisible": true
+    },
+    "prefab-labor-camps": {
+      "pathname": "/product/labor-colony/prefab-labor-camps",
+      "status": 200,
+      "title": "Prefab Labor Camps │ Fully Planned & Built │ SAMAN Portable",
+      "h1": "Prefab Labor Camps",
+      "metaDescription": "Prefab labor camps with full facilities. Factory-made units, set up in 10 days. For infrastructure and industrial projects. Get a capacity quote.",
+      "canonical": "https://www.samanportable.com/product/labor-colony/prefab-labor-camps",
+      "firstParagraphHasLink": false,
+      "descriptionFirstParagraphHasLink": false,
+      "descriptionAnchorCount": 3,
+      "descriptionWordCount": 688,
+      "descriptionImageCount": 6,
+      "descriptionEmDashCount": 0,
+      "internalLinks": 10,
+      "redirectedOrErrorTargets": [],
+      "ownPrimaryLinks": [],
+      "retiredClaimHits": [],
+      "claimHits": [
+        {
+          "claim": "cheapest",
+          "snippet": " the difference the first time it moves. Across three projects the same block becomes the cheapest housing a contractor owns. Owners who repeat the block report a second erection needs abo"
+        },
+        {
+          "claim": "free delivery",
+          "snippet": "ane or manual placement is arranged based on your site access and confirmed at quotation. Free delivery: within Bangalore city (South zone) · Delhi NCR — Ghaziabad, Gurugram, Faridabad, Noida a"
+        }
+      ],
+      "jsonLd": {
+        "productGroup": true,
+        "aggregateOffer": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "INR",
+          "lowPrice": 1956960,
+          "highPrice": 5870880,
+          "offerCount": 6,
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2027-07-31",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "INR",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        "variantOfferCount": 6,
+        "emittedPrices": [
+          1956960,
+          2935440,
+          3913920,
+          4403160,
+          4810860,
+          5870880
+        ],
+        "expectedPrices": [
+          1956960,
+          2935440,
+          3913920,
+          4403160,
+          4810860,
+          5870880
+        ],
+        "vatValues": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "vatAllFalse": true,
+        "videoObjectCount": 0,
+        "videoObject": null,
+        "faqPageCount": 1,
+        "faqQuestionCount": 5
+      },
+      "initialVideoIframeCount": 0,
+      "initialYoutubeNocookieIframeCount": 0,
+      "initialYoutubePreconnectCount": 0,
+      "videoPosterCount": 0,
+      "pdf": {
+        "status": 200
+      },
+      "downloadLabelCount": 1,
+      "pdfInsideScrollableColumn": true,
+      "scrollCardDesktopOverflowVisible": true
+    }
+  },
+  "addendumAnchorOccurrences": {
+    "open-hall dormitory building": [
+      {
+        "pathname": "/product/labor-colony",
+        "href": "/product/labor-colony/labor-sheds"
+      }
+    ],
+    "room-based hutment blocks": [
+      {
+        "pathname": "/product/labor-colony",
+        "href": "/product/labor-colony/labor-hutments"
+      }
+    ],
+    "camp blocks built to relocate": [
+      {
+        "pathname": "/product/labor-colony",
+        "href": "/product/labor-colony/prefab-labor-camps"
+      }
+    ],
+    "gate security cabins": [
+      {
+        "pathname": "/product/labor-colony",
+        "href": "/product/security-cabins"
+      }
+    ],
+    "the hutment room block": [
+      {
+        "pathname": "/product/labor-colony/labor-sheds",
+        "href": "/product/labor-colony/labor-hutments"
+      }
+    ],
+    "the relocatable camp build": [
+      {
+        "pathname": "/product/labor-colony/labor-sheds",
+        "href": "/product/labor-colony/prefab-labor-camps"
+      }
+    ],
+    "the worker housing range": [
+      {
+        "pathname": "/product/labor-colony/labor-sheds",
+        "href": "/product/labor-colony"
+      }
+    ],
+    "the open-hall shed building": [
+      {
+        "pathname": "/product/labor-colony/labor-hutments",
+        "href": "/product/labor-colony/labor-sheds"
+      }
+    ],
+    "the demountable camp block": [
+      {
+        "pathname": "/product/labor-colony/labor-hutments",
+        "href": "/product/labor-colony/prefab-labor-camps"
+      }
+    ],
+    "the colony range overview": [
+      {
+        "pathname": "/product/labor-colony/labor-hutments",
+        "href": "/product/labor-colony"
+      }
+    ],
+    "a fixed open-hall shed": [
+      {
+        "pathname": "/product/labor-colony/prefab-labor-camps",
+        "href": "/product/labor-colony/labor-sheds"
+      }
+    ],
+    "the room-block hutment": [
+      {
+        "pathname": "/product/labor-colony/prefab-labor-camps",
+        "href": "/product/labor-colony/labor-hutments"
+      }
+    ],
+    "the full colony line-up": [
+      {
+        "pathname": "/product/labor-colony/prefab-labor-camps",
+        "href": "/product/labor-colony"
+      }
+    ]
+  },
+  "addendumAnchorUniqueSitewide": true,
+  "sitewideSevenWordCollisions": [
+    {
+      "sourceUrl": "/product/labor-colony",
+      "surface": "description",
+      "competingUrl": "/about-us",
+      "sequences": [
+        "own facilities in bengaluru and greater noida"
+      ]
+    },
+    {
+      "sourceUrl": "/product/labor-colony",
+      "surface": "description",
+      "competingUrl": "/product/portable-office",
+      "sequences": [
+        "fit out packages and freight are quoted",
+        "out packages and freight are quoted separately"
+      ]
+    },
+    {
+      "sourceUrl": "/product/labor-colony/prefab-labor-camps",
+      "surface": "description",
+      "competingUrl": "/product/container-cafe/container-coffee-shop",
+      "sequences": [
+        "runs 7 to 21 working days from"
+      ]
+    },
+    {
+      "sourceUrl": "/product/labor-colony/prefab-labor-camps",
+      "surface": "description",
+      "competingUrl": "/product/portable-office",
+      "sequences": [
+        "delivery runs 7 to 21 working days"
+      ]
+    },
+    {
+      "sourceUrl": "/product/labor-colony/prefab-labor-camps",
+      "surface": "description",
+      "competingUrl": "/product/security-cabins/readymade-security-cabin",
+      "sequences": [
+        "runs 7 to 21 working days from"
+      ]
+    }
+  ],
+  "ignoredCanonicalFactCollisions": [
+    {
+      "sourceUrl": "/product/labor-colony",
+      "surface": "description",
+      "competingUrl": "/product/container-offices/container-office-cabin",
+      "sequences": [
+        "5 year structural warranty and 1 year",
+        "year structural warranty and 1 year finishing",
+        "structural warranty and 1 year finishing warranty"
+      ]
+    }
+  ],
+  "l3": [
+    {
+      "pathname": "/product/labor-colony",
+      "productionStatus": 200,
+      "titleEqual": true,
+      "h1Equal": true,
+      "metaDescriptionEqual": true,
+      "canonicalEqual": true,
+      "production": {
+        "title": "Labour Colony & Labor Colony Manufacturer | SAMAN",
+        "h1": "Labour Colony (Labor Colony)",
+        "metaDescription": "Labor colony for highway, dam, and industrial projects. Accommodates 50–500 workers. Prefab labour colony units, set up in 10 days. Get a capacity quote today.",
+        "canonical": "https://www.samanportable.com/product/labor-colony"
+      },
+      "preview": {
+        "title": "Labour Colony & Labor Colony Manufacturer | SAMAN",
+        "h1": "Labour Colony (Labor Colony)",
+        "metaDescription": "Labor colony for highway, dam, and industrial projects. Accommodates 50–500 workers. Prefab labour colony units, set up in 10 days. Get a capacity quote today.",
+        "canonical": "https://www.samanportable.com/product/labor-colony"
+      }
+    },
+    {
+      "pathname": "/product/labor-colony/labor-sheds",
+      "productionStatus": 200,
+      "titleEqual": true,
+      "h1Equal": true,
+      "metaDescriptionEqual": true,
+      "canonicalEqual": true,
+      "production": {
+        "title": "Labor Sheds │ Standard Worker Accommodation │ SAMAN Portable",
+        "h1": "Labor Sheds",
+        "metaDescription": "Labor sheds for project sites. Basic accommodation for site workers. Insulated walls, ventilation included. Get a capacity and price quote today.",
+        "canonical": "https://www.samanportable.com/product/labor-colony/labor-sheds"
+      },
+      "preview": {
+        "title": "Labor Sheds │ Standard Worker Accommodation │ SAMAN Portable",
+        "h1": "Labor Sheds",
+        "metaDescription": "Labor sheds for project sites. Basic accommodation for site workers. Insulated walls, ventilation included. Get a capacity and price quote today.",
+        "canonical": "https://www.samanportable.com/product/labor-colony/labor-sheds"
+      }
+    },
+    {
+      "pathname": "/product/labor-colony/labor-hutments",
+      "productionStatus": 200,
+      "titleEqual": true,
+      "h1Equal": true,
+      "metaDescriptionEqual": true,
+      "canonicalEqual": true,
+      "production": {
+        "title": "Labor Hutments │ Basic Site Accommodation │ SAMAN Portable",
+        "h1": "Labor Hutments",
+        "metaDescription": "Labor hutments for construction site workers. Basic and affordable. Site-built or prefab options. For short to medium duration projects. Get a quote.",
+        "canonical": "https://www.samanportable.com/product/labor-colony/labor-hutments"
+      },
+      "preview": {
+        "title": "Labor Hutments │ Basic Site Accommodation │ SAMAN Portable",
+        "h1": "Labor Hutments",
+        "metaDescription": "Labor hutments for construction site workers. Basic and affordable. Site-built or prefab options. For short to medium duration projects. Get a quote.",
+        "canonical": "https://www.samanportable.com/product/labor-colony/labor-hutments"
+      }
+    },
+    {
+      "pathname": "/product/labor-colony/prefab-labor-camps",
+      "productionStatus": 200,
+      "titleEqual": true,
+      "h1Equal": true,
+      "metaDescriptionEqual": true,
+      "canonicalEqual": true,
+      "production": {
+        "title": "Prefab Labor Camps │ Fully Planned & Built │ SAMAN Portable",
+        "h1": "Prefab Labor Camps",
+        "metaDescription": "Prefab labor camps with full facilities. Factory-made units, set up in 10 days. For infrastructure and industrial projects. Get a capacity quote.",
+        "canonical": "https://www.samanportable.com/product/labor-colony/prefab-labor-camps"
+      },
+      "preview": {
+        "title": "Prefab Labor Camps │ Fully Planned & Built │ SAMAN Portable",
+        "h1": "Prefab Labor Camps",
+        "metaDescription": "Prefab labor camps with full facilities. Factory-made units, set up in 10 days. For infrastructure and industrial projects. Get a capacity quote.",
+        "canonical": "https://www.samanportable.com/product/labor-colony/prefab-labor-camps"
+      }
+    }
+  ],
+  "imageSitemap": {
+    "expected": 168,
+    "hits": 168
+  }
+}

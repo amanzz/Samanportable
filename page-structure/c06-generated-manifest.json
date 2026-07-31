@@ -1,0 +1,1574 @@
+{
+  "sourcePack": "page-structure/content-drafts/C06-CONTENT-PACK-4pages-31Jul2026.md",
+  "sourceAddenda": [
+    "page-structure/content-drafts/C06-PACK-ADDENDUM-REV1-31Jul2026.md",
+    "page-structure/content-drafts/C06-PACK-ADDENDUM-REV2-31Jul2026.md"
+  ],
+  "generatedAt": "2026-07-31",
+  "pages": [
+    {
+      "slug": "labor-colony",
+      "opener": "A labour colony from SAMAN is a complete worker housing site delivered as finished buildings, not a kit of parts. Each building is a newly fabricated steel structure from our Bengaluru and Greater Noida facilities, supplied in the six approved building sizes, 60x24 ft G+1 at the small end and 120x24 ft G+2 at the large, sleeping 58 to 216 workers each on the standard planning basis. Dormitory blocks pair with toilet and bath blocks, kitchens and site services to the approved site plan. Pricing is ex-factory against one flat square-foot rate, so every configuration prices the same way and a fixed quote arrives within 48 hours.",
+      "rte": {
+        "heading": "Why the colony page and not a single building",
+        "body": "This page carries the whole worker housing site, dormitory buildings plus the toilet blocks, kitchens and services that make a colony liveable, so a contractor plans the site once instead of buying buildings one at a time. Every building on it is newly fabricated steel in the six approved configurations. Choose it when your brief is the site, not one block.",
+        "comparison": "Need only one open sleeping hall rather than a full site? The Labor Sheds page carries that single-hall building."
+      },
+      "images": [
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labour Colony/60x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-colony-60x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour colony, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the multi-block housing build."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labour Colony/60x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-colony-60x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labour Colony/60x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-colony-60x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labour Colony/60x24 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-colony-60x24-gplus1-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 labour colony, double bunks in facing rows in the dormitory block, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labour Colony/60x24 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-colony-60x24-gplus1-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 labour colony, the entrance end of the room in the dormitory block, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labour Colony/60x24 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-colony-60x24-gplus1-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 labour colony, the locker wall and ventilators in the dormitory block, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labour Colony/90x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-colony-90x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour colony, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the multi-block housing build."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labour Colony/90x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-colony-90x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labour Colony/90x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-colony-90x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labour Colony/90x24 ft G+1",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "labor-colony-90x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 labour colony, bunk beds ranged along both walls in the dormitory block, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labour Colony/90x24 ft G+1",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "labor-colony-90x24-gplus1-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 labour colony, the doorway into the sleeping room in the dormitory block, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labour Colony/90x24 ft G+1",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "labor-colony-90x24-gplus1-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 labour colony, looking back toward the room door in the dormitory block, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labour Colony/90x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-colony-90x24-gplus2-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour colony, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the multi-block housing build."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labour Colony/90x24 ft G+2",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-colony-90x24-gplus2-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labour Colony/90x24 ft G+2",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-colony-90x24-gplus2-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labour Colony/90x24 ft G+2",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "labor-colony-90x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 labour colony, the sleeping bay set out in double bunks in the dormitory block, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labour Colony/90x24 ft G+2",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "labor-colony-90x24-gplus2-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 labour colony, looking in from the room door in the dormitory block, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labour Colony/90x24 ft G+2",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "labor-colony-90x24-gplus2-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 labour colony, the room seen from its far end in the dormitory block, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labour Colony/120x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-colony-120x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour colony, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the multi-block housing build."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labour Colony/120x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-colony-120x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labour Colony/120x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-colony-120x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labour Colony/120x24 ft G+1",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "labor-colony-120x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 labour colony, double bunks in facing rows in the dormitory block, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labour Colony/120x24 ft G+1",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "labor-colony-120x24-gplus1-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 labour colony, the entrance end of the room in the dormitory block, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labour Colony/120x24 ft G+1",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "labor-colony-120x24-gplus1-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 labour colony, the return view toward the door in the dormitory block, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labour Colony/118x30 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-colony-118x30-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour colony, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the multi-block housing build."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labour Colony/118x30 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-colony-118x30-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the multi-block housing build in view."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labour Colony/118x30 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-colony-118x30-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the multi-block housing build in view."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labour Colony/118x30 ft G+1",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "labor-colony-118x30-gplus1-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 labour colony, bunk beds ranged along both walls in the dormitory block, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labour Colony/118x30 ft G+1",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "labor-colony-118x30-gplus1-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 labour colony, the doorway into the sleeping room in the dormitory block, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labour Colony/118x30 ft G+1",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "labor-colony-118x30-gplus1-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 labour colony, looking back toward the room door in the dormitory block, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labour Colony/120x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-colony-120x24-gplus2-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour colony, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the multi-block housing build."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labour Colony/120x24 ft G+2",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-colony-120x24-gplus2-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labour Colony/120x24 ft G+2",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-colony-120x24-gplus2-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour colony, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the multi-block housing build in view."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labour Colony/120x24 ft G+2",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "labor-colony-120x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 labour colony, the sleeping bay set out in double bunks in the dormitory block, sleeping planned for 173 to 216 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labour Colony/120x24 ft G+2",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "labor-colony-120x24-gplus2-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 labour colony, looking in from the room door in the dormitory block, sleeping planned for 173 to 216 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labour Colony/120x24 ft G+2",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "labor-colony-120x24-gplus2-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 labour colony, the room seen from its far end in the dormitory block, sleeping planned for 173 to 216 workers."
+        }
+      ],
+      "descriptionImages": [
+        {
+          "product": "labor-colony",
+          "sourceSizeFolder": "120x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-colony-120x24-gplus1-front-right-hero-wide.webp",
+          "alt": "Two-floor labour colony dormitory of 120x24 ft seen across the yard, stair access and walkway rails along the full front.",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labour Colony/120x24 ft G+1"
+        },
+        {
+          "product": "labor-colony",
+          "sourceSizeFolder": "118x30 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-colony-118x30-gplus1-exact-front-elevation-wide.webp",
+          "alt": "Wide-body 118x30 ft colony building face on, door and window bays repeating along both floors.",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labour Colony/118x30 ft G+1"
+        },
+        {
+          "product": "labor-colony",
+          "sourceSizeFolder": "90x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-colony-90x24-gplus2-front-left-hero-wide.webp",
+          "alt": "Three-floor 90x24 ft colony block from the stair end, all landings visible in one frame.",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labour Colony/90x24 ft G+2"
+        },
+        {
+          "product": "labor-colony",
+          "sourceSizeFolder": "120x24 ft G+2",
+          "sourceViewToken": "exact-x-stair-end-elevation",
+          "filename": "labor-colony-120x24-gplus2-exact-x-stair-end-elevation-wide.webp",
+          "alt": "End elevation of the largest colony building showing the X-pattern stair serving three floors.",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labour Colony/120x24 ft G+2"
+        },
+        {
+          "product": "labor-colony",
+          "sourceSizeFolder": "90x24 ft G+1",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "labor-colony-90x24-gplus1-bunk-bed-layout-wide-interior-wide.webp",
+          "alt": "Dormitory room in wide view, double bunks in ordered rows under strip lighting.",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labour Colony/90x24 ft G+1"
+        },
+        {
+          "product": "labor-colony",
+          "sourceSizeFolder": "60x24 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-colony-60x24-gplus1-interior-storage-ventilation-wide.webp",
+          "alt": "Locker line and ventilators inside the compact colony dormitory.",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labour Colony/60x24 ft G+1"
+        }
+      ]
+    },
+    {
+      "slug": "labor-sheds",
+      "opener": "A labour shed is the open-hall version of SAMAN worker housing: one clear sleeping hall per floor with central aisles, built as a light portal-frame steel building with PPGI cladding and high-level ventilation. It suits contractors who need the highest bed count per rupee and manage the hall as one space. The hall comes in six sizes, 60x24 ft G+1 up to 120x24 ft G+2, sleeping 58 to 216 workers a building. The hall is priced ex-factory on one per-square-foot rate, delivered in 7 to 21 working days with zoned lighting and emergency circuits fitted.",
+      "rte": {
+        "heading": "Why choose the shed over the room block",
+        "body": "The shed puts every bed into one open hall per floor, which is the cheapest way to house a large crew and by far the easiest arrangement to supervise as a single space. Fire exits, zoned lighting circuits and high-level ventilation are all sized for open-hall occupancy rather than for individual rooms. Choose it when bed count per rupee matters more than room privacy.",
+        "comparison": "Crews that need lockable individual rooms are better served by the Labor Hutments room block, and the full worker housing range shows where each build fits."
+      },
+      "images": [
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Sheds/60x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-sheds-60x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour shed, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the open-hall shed build."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Sheds/60x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-sheds-60x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Sheds/60x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-sheds-60x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Sheds/60x24 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-sheds-60x24-gplus1-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 labour shed, double bunks in facing rows in the open sleeping hall, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Sheds/60x24 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-sheds-60x24-gplus1-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 labour shed, the entrance end of the room in the open sleeping hall, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Sheds/60x24 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-sheds-60x24-gplus1-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 labour shed, the locker wall and ventilators in the open sleeping hall, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Sheds/90x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-sheds-90x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour shed, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the open-hall shed build."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Sheds/90x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-sheds-90x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Sheds/90x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-sheds-90x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Sheds/90x24 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-sheds-90x24-gplus1-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 labour shed, bunk beds ranged along both walls in the open sleeping hall, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Sheds/90x24 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-sheds-90x24-gplus1-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 labour shed, the doorway into the sleeping room in the open sleeping hall, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Sheds/90x24 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-sheds-90x24-gplus1-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 labour shed, lockers under the high-level vents in the open sleeping hall, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Sheds/90x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-sheds-90x24-gplus2-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour shed, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the open-hall shed build."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Sheds/90x24 ft G+2",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-sheds-90x24-gplus2-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Sheds/90x24 ft G+2",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-sheds-90x24-gplus2-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Sheds/90x24 ft G+2",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-sheds-90x24-gplus2-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 labour shed, the sleeping bay set out in double bunks in the open sleeping hall, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Sheds/90x24 ft G+2",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-sheds-90x24-gplus2-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 labour shed, looking in from the room door in the open sleeping hall, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Sheds/90x24 ft G+2",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-sheds-90x24-gplus2-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 labour shed, personal storage below the vent line in the open sleeping hall, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Sheds/120x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-sheds-120x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour shed, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the open-hall shed build."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Sheds/120x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-sheds-120x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Sheds/120x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-sheds-120x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Sheds/120x24 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-sheds-120x24-gplus1-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 labour shed, double bunks in facing rows in the open sleeping hall, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Sheds/120x24 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-sheds-120x24-gplus1-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 labour shed, the entrance end of the room in the open sleeping hall, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Sheds/120x24 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-sheds-120x24-gplus1-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 labour shed, the locker wall and ventilators in the open sleeping hall, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Sheds/118x30 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-sheds-118x30-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour shed, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the open-hall shed build."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Sheds/118x30 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-sheds-118x30-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the open-hall shed build in view."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Sheds/118x30 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-sheds-118x30-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the open-hall shed build in view."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Sheds/118x30 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-sheds-118x30-gplus1-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 labour shed, bunk beds ranged along both walls in the open sleeping hall, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Sheds/118x30 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-sheds-118x30-gplus1-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 labour shed, the doorway into the sleeping room in the open sleeping hall, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Sheds/118x30 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-sheds-118x30-gplus1-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 labour shed, lockers under the high-level vents in the open sleeping hall, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Sheds/120x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-sheds-120x24-gplus2-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour shed, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the open-hall shed build."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Sheds/120x24 ft G+2",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-sheds-120x24-gplus2-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Sheds/120x24 ft G+2",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-sheds-120x24-gplus2-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour shed, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the open-hall shed build in view."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Sheds/120x24 ft G+2",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-sheds-120x24-gplus2-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 labour shed, the sleeping bay set out in double bunks in the open sleeping hall, sleeping planned for 173 to 216 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Sheds/120x24 ft G+2",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-sheds-120x24-gplus2-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 labour shed, looking in from the room door in the open sleeping hall, sleeping planned for 173 to 216 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Sheds/120x24 ft G+2",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-sheds-120x24-gplus2-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 labour shed, personal storage below the vent line in the open sleeping hall, sleeping planned for 173 to 216 workers."
+        }
+      ],
+      "descriptionImages": [
+        {
+          "product": "labor-sheds",
+          "sourceSizeFolder": "120x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-sheds-120x24-gplus1-front-right-hero-wide.webp",
+          "alt": "Open-hall labour shed of 120x24 ft from the corner, gable roof over two sleeping floors.",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Sheds/120x24 ft G+1"
+        },
+        {
+          "product": "labor-sheds",
+          "sourceSizeFolder": "90x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-sheds-90x24-gplus1-exact-front-elevation-wide.webp",
+          "alt": "The 90 ft shed square on, ventilator banks running high along the hall.",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Sheds/90x24 ft G+1"
+        },
+        {
+          "product": "labor-sheds",
+          "sourceSizeFolder": "120x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-sheds-120x24-gplus2-front-left-hero-wide.webp",
+          "alt": "Three stacked halls of the largest shed seen from the stair end.",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Sheds/120x24 ft G+2"
+        },
+        {
+          "product": "labor-sheds",
+          "sourceSizeFolder": "60x24 ft G+1",
+          "sourceViewToken": "rear-left-three-quarter",
+          "filename": "labor-sheds-60x24-gplus1-rear-left-three-quarter-wide.webp",
+          "alt": "Rear quarter of the compact shed showing the service side and end wall.",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Sheds/60x24 ft G+1"
+        },
+        {
+          "product": "labor-sheds",
+          "sourceSizeFolder": "90x24 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-sheds-90x24-gplus1-interior-bunk-layout-wide.webp",
+          "alt": "One open shed hall in wide view, facing bunk rows split by the centre aisle.",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Sheds/90x24 ft G+1"
+        },
+        {
+          "product": "labor-sheds",
+          "sourceSizeFolder": "118x30 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-sheds-118x30-gplus1-interior-storage-ventilation-wide.webp",
+          "alt": "Storage line and high ventilators inside the wide-body shed hall.",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Sheds/118x30 ft G+1"
+        }
+      ]
+    },
+    {
+      "slug": "labor-hutments",
+      "opener": "A labour hutment is the room-based member of the SAMAN worker housing range: a linear block of individual sleeping rooms, each with its own personnel door, aluminium sliding window, fans and a small distribution board. Crews get lockable rooms rather than one shared hall, which suits mixed gangs and longer postings. The block is a welded or bolted MS structure with an insulated corrugated exterior, built in six sizes between 60x24 ft G+1 and 120x24 ft G+2 that house 58 to 216 workers. Every size is priced ex-factory on a single square-foot rate.",
+      "rte": {
+        "heading": "Why choose rooms over an open hall",
+        "body": "The hutment divides each floor into individual sleeping rooms with their own doors, windows, fans and distribution boards, so mixed gangs, supervisors and longer-posting crews get privacy and lockable space that an open hall cannot offer. The trade is a lower bed count per floor at a slightly higher rate. Choose it when room separation matters on your site.",
+        "comparison": "If maximum beds in one supervised space is the priority, the open-hall Labor Sheds building houses more per floor; see every colony building compared before you choose."
+      },
+      "images": [
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Hutments/60x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-hutments-60x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour hutment, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the room-block hutment build."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Hutments/60x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-hutments-60x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Hutments/60x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-hutments-60x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Hutments/60x24 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-hutments-60x24-gplus1-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 labour hutment, double bunks in facing rows in the linear room block, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Hutments/60x24 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-hutments-60x24-gplus1-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 labour hutment, the entrance end of the room in the linear room block, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Hutments/60x24 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-hutments-60x24-gplus1-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 labour hutment, the locker wall and ventilators in the linear room block, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Hutments/90x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-hutments-90x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour hutment, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the room-block hutment build."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Hutments/90x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-hutments-90x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Hutments/90x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-hutments-90x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Hutments/90x24 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-hutments-90x24-gplus1-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 labour hutment, bunk beds ranged along both walls in the linear room block, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Hutments/90x24 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-hutments-90x24-gplus1-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 labour hutment, the doorway into the sleeping room in the linear room block, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Hutments/90x24 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-hutments-90x24-gplus1-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 labour hutment, lockers under the high-level vents in the linear room block, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Hutments/90x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-hutments-90x24-gplus2-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour hutment, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the room-block hutment build."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Hutments/90x24 ft G+2",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-hutments-90x24-gplus2-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Hutments/90x24 ft G+2",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-hutments-90x24-gplus2-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Hutments/90x24 ft G+2",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-hutments-90x24-gplus2-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 labour hutment, the sleeping bay set out in double bunks in the linear room block, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Hutments/90x24 ft G+2",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-hutments-90x24-gplus2-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 labour hutment, looking in from the room door in the linear room block, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Hutments/90x24 ft G+2",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-hutments-90x24-gplus2-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 labour hutment, personal storage below the vent line in the linear room block, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Hutments/120x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-hutments-120x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour hutment, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the room-block hutment build."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Hutments/120x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-hutments-120x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Hutments/120x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-hutments-120x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Hutments/120x24 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-hutments-120x24-gplus1-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 labour hutment, double bunks in facing rows in the linear room block, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Hutments/120x24 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-hutments-120x24-gplus1-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 labour hutment, the entrance end of the room in the linear room block, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Hutments/120x24 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-hutments-120x24-gplus1-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 labour hutment, the locker wall and ventilators in the linear room block, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Hutments/118x30 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-hutments-118x30-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour hutment, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the room-block hutment build."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Hutments/118x30 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-hutments-118x30-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the room-block hutment build in view."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Hutments/118x30 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-hutments-118x30-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the room-block hutment build in view."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Hutments/118x30 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-hutments-118x30-gplus1-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 labour hutment, bunk beds ranged along both walls in the linear room block, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Hutments/118x30 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-hutments-118x30-gplus1-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 labour hutment, the doorway into the sleeping room in the linear room block, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Hutments/118x30 ft G+1",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-hutments-118x30-gplus1-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 labour hutment, lockers under the high-level vents in the linear room block, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Hutments/120x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-hutments-120x24-gplus2-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Labour hutment, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the room-block hutment build."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Hutments/120x24 ft G+2",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-hutments-120x24-gplus2-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Hutments/120x24 ft G+2",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-hutments-120x24-gplus2-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Labour hutment, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the room-block hutment build in view."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Hutments/120x24 ft G+2",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-hutments-120x24-gplus2-interior-bunk-layout.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 labour hutment, the sleeping bay set out in double bunks in the linear room block, sleeping planned for 173 to 216 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Hutments/120x24 ft G+2",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-hutments-120x24-gplus2-interior-room-entrance.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 labour hutment, looking in from the room door in the linear room block, sleeping planned for 173 to 216 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Labor Hutments/120x24 ft G+2",
+          "sourceViewToken": "interior-storage-ventilation",
+          "filename": "labor-hutments-120x24-gplus2-interior-storage-ventilation.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 labour hutment, personal storage below the vent line in the linear room block, sleeping planned for 173 to 216 workers."
+        }
+      ],
+      "descriptionImages": [
+        {
+          "product": "labor-hutments",
+          "sourceSizeFolder": "120x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "labor-hutments-120x24-gplus1-front-right-hero-wide.webp",
+          "alt": "Room-block labour hutment of 120x24 ft from the corner, personnel doors repeating along the walkway.",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Hutments/120x24 ft G+1"
+        },
+        {
+          "product": "labor-hutments",
+          "sourceSizeFolder": "90x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "labor-hutments-90x24-gplus1-exact-front-elevation-wide.webp",
+          "alt": "The 90 ft hutment face on, each room door paired with its own window.",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Labor Hutments/90x24 ft G+1"
+        },
+        {
+          "product": "labor-hutments",
+          "sourceSizeFolder": "90x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "labor-hutments-90x24-gplus2-front-left-hero-wide.webp",
+          "alt": "Three floors of hutment rooms seen from the stair end of the 90 ft block.",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Labor Hutments/90x24 ft G+2"
+        },
+        {
+          "product": "labor-hutments",
+          "sourceSizeFolder": "118x30 ft G+1",
+          "sourceViewToken": "rear-left-three-quarter",
+          "filename": "labor-hutments-118x30-gplus1-rear-left-three-quarter-wide.webp",
+          "alt": "Rear three-quarter of the wide-body hutment showing the deeper room bays.",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Labor Hutments/118x30 ft G+1"
+        },
+        {
+          "product": "labor-hutments",
+          "sourceSizeFolder": "120x24 ft G+1",
+          "sourceViewToken": "interior-bunk-layout",
+          "filename": "labor-hutments-120x24-gplus1-interior-bunk-layout-wide.webp",
+          "alt": "Inside one hutment room, bunks along the walls and the door to the passage.",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Labor Hutments/120x24 ft G+1"
+        },
+        {
+          "product": "labor-hutments",
+          "sourceSizeFolder": "60x24 ft G+1",
+          "sourceViewToken": "interior-room-entrance",
+          "filename": "labor-hutments-60x24-gplus1-interior-room-entrance-wide.webp",
+          "alt": "Entrance view into a compact hutment room from its passage door.",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Labor Hutments/60x24 ft G+1"
+        }
+      ]
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "opener": "A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project. Blocks arrange around a central services spine to the approved site plan. Sizes span 60x24 ft G+1 through 120x24 ft G+2 for 58 to 216 workers a building, each priced ex-factory on the camp's own square-foot rate with a fixed quote in 48 hours.",
+      "rte": {
+        "heading": "Why choose the relocatable camp build",
+        "body": "The camp is engineered to move: bolted panel joints, pedestal footings and plug-and-play services mean the same buildings dismantle at one project and re-erect at the next instead of being written off. It costs slightly more per square foot than the fixed shed and repays it the first time the camp relocates. Choose it when your projects move.",
+        "comparison": "If the housing stays on one site for its whole life, the Labour Colony configuration is more economical, with fixed and movable options side by side on the range page."
+      },
+      "images": [
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "prefab-labor-camps-60x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Prefab labour camp, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the bolted panel camp build."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "prefab-labor-camps-60x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "prefab-labor-camps-60x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "prefab-labor-camps-60x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 prefab labour camp, double bunks in facing rows in the bolted panel block, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "prefab-labor-camps-60x24-gplus1-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 prefab labour camp, the entrance end of the room in the bolted panel block, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "60x24 ft G+1",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "prefab-labor-camps-60x24-gplus1-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 60x24 ft G+1 prefab labour camp, the return view toward the door in the bolted panel block, sleeping planned for 58 to 72 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "prefab-labor-camps-90x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Prefab labour camp, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the bolted panel camp build."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "prefab-labor-camps-90x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "prefab-labor-camps-90x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "prefab-labor-camps-90x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 prefab labour camp, bunk beds ranged along both walls in the bolted panel block, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "prefab-labor-camps-90x24-gplus1-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 prefab labour camp, the doorway into the sleeping room in the bolted panel block, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+1",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "prefab-labor-camps-90x24-gplus1-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+1 prefab labour camp, looking back toward the room door in the bolted panel block, sleeping planned for 86 to 108 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "prefab-labor-camps-90x24-gplus2-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Prefab labour camp, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the bolted panel camp build."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+          "sourceViewToken": "front-right-hero",
+          "filename": "prefab-labor-camps-90x24-gplus2-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "prefab-labor-camps-90x24-gplus2-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "prefab-labor-camps-90x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 prefab labour camp, the sleeping bay set out in double bunks in the bolted panel block, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "prefab-labor-camps-90x24-gplus2-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 prefab labour camp, looking in from the room door in the bolted panel block, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "90x24 ft G+2",
+          "sizeSlug": "90x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "prefab-labor-camps-90x24-gplus2-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 90x24 ft G+2 prefab labour camp, the room seen from its far end in the bolted panel block, sleeping planned for 129 to 162 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "prefab-labor-camps-120x24-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Prefab labour camp, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the bolted panel camp build."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "prefab-labor-camps-120x24-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "prefab-labor-camps-120x24-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "prefab-labor-camps-120x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 prefab labour camp, double bunks in facing rows in the bolted panel block, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "prefab-labor-camps-120x24-gplus1-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 prefab labour camp, the entrance end of the room in the bolted panel block, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "120x24 ft G+1",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "prefab-labor-camps-120x24-gplus1-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+1 prefab labour camp, the return view toward the door in the bolted panel block, sleeping planned for 115 to 144 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+          "sourceViewToken": "front-left-hero",
+          "filename": "prefab-labor-camps-118x30-gplus1-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Prefab labour camp, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the bolted panel camp build."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "prefab-labor-camps-118x30-gplus1-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the bolted panel camp build in view."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "prefab-labor-camps-118x30-gplus1-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the bolted panel camp build in view."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "prefab-labor-camps-118x30-gplus1-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 prefab labour camp, bunk beds ranged along both walls in the bolted panel block, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "prefab-labor-camps-118x30-gplus1-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 prefab labour camp, the doorway into the sleeping room in the bolted panel block, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "118x30 ft G+1",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "prefab-labor-camps-118x30-gplus1-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 118x30 ft G+1 prefab labour camp, looking back toward the room door in the bolted panel block, sleeping planned for 142 to 177 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "prefab-labor-camps-120x24-gplus2-front-left-hero.webp",
+          "slot": "section2",
+          "alt": "Prefab labour camp, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the bolted panel camp build."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+          "sourceViewToken": "front-right-hero",
+          "filename": "prefab-labor-camps-120x24-gplus2-front-right-hero.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+          "sourceViewToken": "exact-front-elevation",
+          "filename": "prefab-labor-camps-120x24-gplus2-exact-front-elevation.webp",
+          "slot": "gallery",
+          "alt": "Prefab labour camp, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the bolted panel camp build in view."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "prefab-labor-camps-120x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 prefab labour camp, the sleeping bay set out in double bunks in the bolted panel block, sleeping planned for 173 to 216 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "prefab-labor-camps-120x24-gplus2-room-entrance-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 prefab labour camp, looking in from the room door in the bolted panel block, sleeping planned for 173 to 216 workers."
+        },
+        {
+          "size": "120x24 ft G+2",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+          "sourceViewToken": "room-reverse-axis-interior",
+          "filename": "prefab-labor-camps-120x24-gplus2-room-reverse-axis-interior.webp",
+          "slot": "gallery",
+          "alt": "Inside a 120x24 ft G+2 prefab labour camp, the room seen from its far end in the bolted panel block, sleeping planned for 173 to 216 workers."
+        }
+      ],
+      "descriptionImages": [
+        {
+          "product": "prefab-labor-camps",
+          "sourceSizeFolder": "120x24 ft G+1",
+          "sourceViewToken": "front-right-hero",
+          "filename": "prefab-labor-camps-120x24-gplus1-front-right-hero-wide.webp",
+          "alt": "Bolted-panel labour camp block of 120x24 ft from the corner, module joints visible in the wall run.",
+          "sizeSlug": "120x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+1"
+        },
+        {
+          "product": "prefab-labor-camps",
+          "sourceSizeFolder": "90x24 ft G+1",
+          "sourceViewToken": "exact-x-stair-end-elevation",
+          "filename": "prefab-labor-camps-90x24-gplus1-exact-x-stair-end-elevation-wide.webp",
+          "alt": "Stair-end elevation of the 90 ft camp block, panel grid and landings in line.",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+1"
+        },
+        {
+          "product": "prefab-labor-camps",
+          "sourceSizeFolder": "120x24 ft G+2",
+          "sourceViewToken": "front-left-hero",
+          "filename": "prefab-labor-camps-120x24-gplus2-front-left-hero-wide.webp",
+          "alt": "The largest demountable camp block, three panel floors from the stair end.",
+          "sizeSlug": "120x24-gplus2",
+          "sourceFolder": "Prefab Labor Camps/120x24 ft G+2"
+        },
+        {
+          "product": "prefab-labor-camps",
+          "sourceSizeFolder": "60x24 ft G+1",
+          "sourceViewToken": "rear-left-three-quarter",
+          "filename": "prefab-labor-camps-60x24-gplus1-rear-left-three-quarter-wide.webp",
+          "alt": "Rear quarter of the starter camp block showing panel joints and service entries.",
+          "sizeSlug": "60x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/60x24 ft G+1"
+        },
+        {
+          "product": "prefab-labor-camps",
+          "sourceSizeFolder": "90x24 ft G+1",
+          "sourceViewToken": "bunk-bed-layout-wide-interior",
+          "filename": "prefab-labor-camps-90x24-gplus1-bunk-bed-layout-wide-interior-wide.webp",
+          "alt": "Camp sleeping room in wide view, bunks ranged inside the panel shell.",
+          "sizeSlug": "90x24-gplus1",
+          "sourceFolder": "Prefab Labor Camps/90x24 ft G+1"
+        },
+        {
+          "product": "prefab-labor-camps",
+          "sourceSizeFolder": "118x30 ft G+1",
+          "sourceViewToken": "room-entrance-axis-interior",
+          "filename": "prefab-labor-camps-118x30-gplus1-room-entrance-axis-interior-wide.webp",
+          "alt": "Down the room axis of the wide-body camp block from its entrance door.",
+          "sizeSlug": "118x30-gplus1",
+          "sourceFolder": "Prefab Labor Camps/118x30 ft G+1"
+        }
+      ]
+    }
+  ]
+}

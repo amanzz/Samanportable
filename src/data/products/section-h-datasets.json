@@ -1912,5 +1912,305 @@
       ],
       "imageAlt": "The whole small office cabin, 20 x 10 ft, a single-bay body with one door and one window over the 20 ft length."
     }
+  },
+  "labor-colony": {
+    "h2": "Every labour colony size, and the site each one runs",
+    "60x24-gplus1": {
+      "h2": "60x24 ft G+1, 2880 sq ft planned for 58 to 72 workers",
+      "intro": "The smallest colony dormitory holds 58 to 72 workers over two floors and usually anchors a compact site with one toilet block beside it. At 2,880 square feet it fits plots where a longer building will not, and the flat colony rate of Rs 675 per square foot keeps its cost at Rs 19,44,000 ex-GST. Phased sites place it first and let later blocks join the planned services spine. Ask for the colony starter plan and the quotation includes the matching toilet block position on your plot. Site lighting on the access side is part of the standard scope.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 58 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour colony, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the multi-block housing build."
+    },
+    "90x24-gplus1": {
+      "h2": "90x24 ft G+1, 4320 sq ft planned for 86 to 108 workers",
+      "intro": "Ninety feet of building over two floors sleeps 86 to 108 workers, which matches the crew of a mid-size civil package. This is the configuration our own costing sheet uses as its reference for the whole cluster, so quotations on it turn around fastest. The dormitory pairs with a four-seat toilet block on the standard site plan, and the 4,320 square feet price out at Rs 29,16,000 ex-GST with nothing added for size. Because it is the costing reference, its drawings are the most exercised in the library and surprises are rare. Its toilet-block pairing is drawn at four stalls per floor.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 86 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour colony, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the multi-block housing build."
+    },
+    "90x24-gplus2": {
+      "h2": "90x24 ft G+2, 6480 sq ft planned for 129 to 162 workers",
+      "intro": "Adding a third floor to the 90 ft footprint lifts capacity to 129 to 162 workers without taking one extra foot of plot, which is why tight urban sites choose it. Stair towers at the building end serve all three levels, and the structure is engineered for the extra storey from the base up rather than adapted later. The 6,480 square feet list at Rs 43,74,000 ex-GST at the same flat rate every other size uses. Local height clearances are the one item to confirm early, and our drawing pack includes what approvers ask for.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 129 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour colony, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the multi-block housing build."
+    },
+    "120x24-gplus1": {
+      "h2": "120x24 ft G+1, 5760 sq ft planned for 115 to 144 workers",
+      "intro": "The 120 ft two-floor building is the workhorse of large colonies: 115 to 144 workers in one block, long straight rooms that furnish quickly, and a footprint that packs efficiently in rows with fire separation between them. Most multi-building colonies are laid out as repeats of this unit. Its 5,760 square feet total Rs 38,88,000 ex-GST, the figure the hub record carries. Row spacing and fire separation dimensions for repeat layouts ship with the first quotation as standard. Gate distance and muster areas are marked on the same layout sheet.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 115 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour colony, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the multi-block housing build."
+    },
+    "118x30-gplus1": {
+      "h2": "118x30 ft G+1, 7080 sq ft planned for 142 to 177 workers",
+      "intro": "The 30 ft wide body changes the internal planning: deeper rooms, wider aisles and space for in-block amenities that the 24 ft buildings push to separate blocks. With 142 to 177 workers over two floors and 7,080 square feet, it suits employers who want fewer, better buildings rather than more repeats. Cost follows the same rule as every size, Rs 47,79,000 ex-GST. Employers housing supervisors alongside crews usually reserve the wide body's deeper rooms for that purpose. Verandah options along the long face are quoted on request.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 142 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour colony, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the multi-block housing build."
+    },
+    "120x24-gplus2": {
+      "h2": "120x24 ft G+2, 8640 sq ft planned for 173 to 216 workers",
+      "intro": "Three floors on the 120 ft footprint make the largest single dormitory we build: 173 to 216 workers, 8,640 square feet, one stair core serving all levels. A pair of these houses a four-hundred-strong workforce on remarkably little land. It prices at Rs 58,32,000 ex-GST, and like every configuration on this page that figure is area times the flat colony rate, nothing else. Where two of these stand together the services spine between them is designed once and shared by both. Water storage for all floors sits on the stair-core roof slab.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 173 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour colony, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the multi-block housing build."
+    }
+  },
+  "labor-sheds": {
+    "h2": "Every labour shed size, and the crew each hall sleeps",
+    "60x24-gplus1": {
+      "h2": "60x24 ft G+1, 2880 sq ft planned for 58 to 72 workers",
+      "intro": "One open hall per floor with a central aisle, sleeping 58 to 72 workers across two levels. The small shed suits a single supervised crew where the foreman wants every bed visible from the aisle. High-level ventilators run the length of both halls, and zoned lighting lets the night shift sleep while the day shift dresses. At Rs 684 per square foot the 2,880 square feet land at Rs 19,69,920 ex-GST. A canteen lean-to bolts onto either gable later without touching the hall structure, a common second-season addition. Both gables carry ventilator banks as standard.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 58 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour shed, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the open-hall shed build."
+    },
+    "90x24-gplus1": {
+      "h2": "90x24 ft G+1, 4320 sq ft planned for 86 to 108 workers",
+      "intro": "The 90 ft hall pairs two sleeping floors for 86 to 108 workers and leads the range on order volume. Beds run in facing rows with the aisle down the spine, so one supervisor covers a whole floor from the door. Drinking water points sit at the hall ends per the standard plan. Its 4,320 square feet work out at Rs 29,54,880 ex-GST. Bedding, lockers and fans install in a day because the hall has no internal walls to work around, and the whole floor cleans with one crew. Lead time here is the shortest on the page, its parts held in rolling stock. Hall lighting is zoned in thirds along its length.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 86 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour shed, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the open-hall shed build."
+    },
+    "90x24-gplus2": {
+      "h2": "90x24 ft G+2, 6480 sq ft planned for 129 to 162 workers",
+      "intro": "Stacking a third hall on the 90 ft footprint gives 129 to 162 beds where the plot cannot grow. Each level stays one open space, so supervision does not change character as the building rises; only the stair discipline does, and the end stair tower is sized for shift changes. The 6,480 square feet settle at Rs 44,32,320 ex-GST at the unchanged shed rate. Water pressure for the top level is planned from day one, with the tank platform included in the structure. Top-hall ventilators are motorised where a site standard requires it.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 129 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour shed, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the open-hall shed build."
+    },
+    "120x24-gplus1": {
+      "h2": "120x24 ft G+1, 5760 sq ft planned for 115 to 144 workers",
+      "intro": "At 120 ft the two-floor hall reaches 115 to 144 beds, the capacity class most big projects order first. The extra length goes entirely into bed rows, not circulation, which is what keeps cost per bed the lowest on this page. Emergency lighting and multiple exits are laid out for full-hall occupancy. Price for 5,760 square feet: Rs 39,39,840 ex-GST. When crews rotate seasonally, the open hall re-allocates overnight with no room-by-room administration at all. Bed numbering follows one plan across every repeat of this hall.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 115 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour shed, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the open-hall shed build."
+    },
+    "118x30-gplus1": {
+      "h2": "118x30 ft G+1, 7080 sq ft planned for 142 to 177 workers",
+      "intro": "The wide-body shed uses its 30 ft depth for double aisle circulation, cutting the walk between bed and exit on a full floor of 142 to 177 workers. Where local norms ask for more air volume per occupant, the extra width earns its keep without changing the hall concept. The 7,080 square feet list at Rs 48,42,720 ex-GST. The wider hall also takes a second locker row without narrowing the aisles, something the 24 ft buildings cannot do, and evening queues at the exits clear noticeably faster. Several state norms count air volume per sleeper, and the wide hall clears them with margin to spare.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 142 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour shed, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the open-hall shed build."
+    },
+    "120x24-gplus2": {
+      "h2": "120x24 ft G+2, 8640 sq ft planned for 173 to 216 workers",
+      "intro": "The largest shed stacks three 120 ft halls for 173 to 216 workers, more beds than any other block, a single SAMAN building provides. It is the building of choice where land is the constraint and the workforce is managed as large shifts. Structure, exits and services are engineered for that occupancy from the first drawing. Cost: Rs 59,09,760 ex-GST for 8,640 square feet. Staged handover is normal here: the ground hall opens while upper floors are still being fitted out. Its exit-width calculations ship inside the quotation pack.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 173 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour shed, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the open-hall shed build."
+    }
+  },
+  "labor-hutments": {
+    "h2": "Every labour hutment size, and the rooms each block gives",
+    "60x24-gplus1": {
+      "h2": "60x24 ft G+1, 2880 sq ft planned for 58 to 72 workers",
+      "intro": "The small hutment gives two floors of individual rooms for 58 to 72 workers, each room with its own door, window, fan and board. Short passages serve a handful of rooms per floor, so gangs keep to their own space and belongings stay behind a lock. It is the configuration for smaller mixed crews, and its 2,880 square feet come in at Rs 19,82,880 ex-GST. Couples employed together on site are usually allocated the end rooms, which sit apart from the gang rooms. Every room lock is master-keyed for the site office.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 58 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour hutment, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the room-block hutment build."
+    },
+    "90x24-gplus1": {
+      "h2": "90x24 ft G+1, 4320 sq ft planned for 86 to 108 workers",
+      "intro": "Ninety feet of rooms over two floors houses 86 to 108 workers in the best-balanced room block we make. The passage runs the building's length with rooms off one side, so every door is visible without entering any room. Supervisors and chargehands usually take the end rooms. At the hutment rate of Rs 688.50 per square foot, 4,320 square feet amount to Rs 29,74,320 ex-GST. Its room count divides cleanly by common gang sizes, which is why allocation plans on it stay tidy. Passage lighting runs on its own night circuit.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 86 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour hutment, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the room-block hutment build."
+    },
+    "90x24-gplus2": {
+      "h2": "90x24 ft G+2, 6480 sq ft planned for 129 to 162 workers",
+      "intro": "Three floors of rooms on the 90 ft plinth reach 129 to 162 workers while the plot stays the size of the two-floor block. Rooms repeat identically on every level, which simplifies allocation by gang and by shift, and the stair discipline is easier with rooms than with halls. The 6,480 square feet land at Rs 44,61,480 ex-GST. Water points and washing lines stay at ground level on the standard plan, so upper floors remain purely sleeping space and the plinth drains stay simple. The stair tower includes the luggage winch point that three-floor room blocks need on moving day.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 129 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour hutment, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the room-block hutment build."
+    },
+    "120x24-gplus1": {
+      "h2": "120x24 ft G+1, 5760 sq ft planned for 115 to 144 workers",
+      "intro": "The 120 ft room block sleeps 115 to 144 workers and suits long postings where crews live on site for seasons rather than weeks. More rooms per floor means finer-grained allocation: gangs, trades and shifts each get their own doors. Its 5,760 square feet work out at Rs 39,65,760 ex-GST, calculated exactly like every other size here. Each room keeps the standard fit of bunks, fan, board and window, so moving a gang between blocks never means re-briefing anyone on the accommodation. Season after season the same room keys go to the same gangs, and that continuity shows in how the block is kept.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 115 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour hutment, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the room-block hutment build."
+    },
+    "118x30-gplus1": {
+      "h2": "118x30 ft G+1, 7080 sq ft planned for 142 to 177 workers",
+      "intro": "With a 30 ft body the rooms deepen enough for four-bunk layouts, taking 142 to 177 workers while keeping the lockable-room principle. The wide block is chosen when employers upgrade housing standards without moving to family accommodation. Price for the 7,080 square feet is Rs 48,74,580 ex-GST. The deeper rooms also take a table and stools between the bunk rows, which crews on long postings ask for more than any other single feature in this range. The four-bunk rooms also meet client-audit standards that some principal contractors now write into subcontracts.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 142 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour hutment, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the room-block hutment build."
+    },
+    "120x24-gplus2": {
+      "h2": "120x24 ft G+2, 8640 sq ft planned for 173 to 216 workers",
+      "intro": "The largest hutment stacks three floors of rooms on the 120 ft footprint for a 173 to 216 worker strength, the deepest private-room capacity in the cluster. One stair core and repeated room modules keep it simple to run despite its size. At the flat hutment rate its 8,640 square feet run to Rs 59,48,640 ex-GST. Room allocation by floor keeps day and night shifts apart without a supervisor standing at the stair, and the top floor is usually held for chargehands. Its scale justifies a dedicated caretaker room beside the stair, which the standard plan already reserves.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 173 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Labour hutment, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the room-block hutment build."
+    }
+  },
+  "prefab-labor-camps": {
+    "h2": "Every prefab labour camp size, and the move each one makes",
+    "60x24-gplus1": {
+      "h2": "60x24 ft G+1, 2880 sq ft planned for 58 to 72 workers",
+      "intro": "The starter camp block holds 58 to 72 workers on two panel-built floors, and its whole point is the second site: bolted joints, pedestal footings and plug-in services come apart in days and go back up at the next project. Contractors who won two-year packages in different states buy this block first. Its 2,880 square feet list at Rs 19,56,960 ex-GST. The trailer count and crane hours for a move are stated on the quotation, so relocation is budgeted before purchase. Panel counts per trailer are listed in the quote.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 58 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Prefab labour camp, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the bolted panel camp build."
+    },
+    "90x24-gplus1": {
+      "h2": "90x24 ft G+1, 4320 sq ft planned for 86 to 108 workers",
+      "intro": "The 90 ft camp block sleeps 86 to 108 workers and is the unit most often ordered in pairs, one block either side of the services spine. Panel joints repeat on a fixed module, so a damaged panel swaps rather than condemns a wall. At Rs 679.50 per square foot, its 4,320 square feet total Rs 29,35,440 ex-GST. The pair arrives as matched panel kits on separate trailers, and the second block is typically standing seven working days after the first bolt goes in. Spare panels ordered with the block travel with it between sites, insurance that has saved more than one monsoon.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 86 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Prefab labour camp, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the bolted panel camp build."
+    },
+    "90x24-gplus2": {
+      "h2": "90x24 ft G+2, 6480 sq ft planned for 129 to 162 workers",
+      "intro": "Three panel floors on the 90 ft footprint carry 129 to 162 workers and still dismantle: the third storey bolts to the same module as the first, and the stair tower unbolts into liftable sections. Sites that relocate but cannot spread outward order this one. The 6,480 square feet come in at Rs 44,03,160 ex-GST. Nothing about the third floor is special order; it is the same wall, floor and roof panels from the same module library, which is what keeps relocation honest. Dismantling simply reverses assembly, numbered panels back onto their trailers. Pad positions are pre-marked on the ground template.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 129 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Prefab labour camp, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the bolted panel camp build."
+    },
+    "120x24-gplus1": {
+      "h2": "120x24 ft G+1, 5760 sq ft planned for 115 to 144 workers",
+      "intro": "At 120 ft over two floors the camp reaches 115 to 144 workers, the standard block for big relocatable sites. External cable trays and quick-connect water runs mean hookup at a new site takes a crew days, not weeks. Its 5,760 square feet amount to Rs 39,13,920 ex-GST on the same flat basis as the rest of the ladder. Foundations are pedestal pads rather than a slab, so leaving a site means lifting pads, not breaking concrete, and the ground reinstates in days. Hookup drawings are issued per site, and repeat customers keep the same block numbering across every project.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 115 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Prefab labour camp, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the bolted panel camp build."
+    },
+    "118x30-gplus1": {
+      "h2": "118x30 ft G+1, 7080 sq ft planned for 142 to 177 workers",
+      "intro": "The wide 30 ft camp body earns its width at the services spine: deeper rooms on one side, a full-width utility zone on the other, all still bolted and movable. It houses 142 to 177 workers across two floors. The 7,080 square feet land at Rs 48,10,860 ex-GST. Its width suits camps that centralise cooking and washing in the block itself rather than in separate service buildings, keeping the site footprint tight. The utility zone takes water heaters and treatment units indoors, which matters in cold-region postings.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 142 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Prefab labour camp, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the bolted panel camp build."
+    },
+    "120x24-gplus2": {
+      "h2": "120x24 ft G+2, 8640 sq ft planned for 173 to 216 workers",
+      "intro": "The largest camp stacks three 120 ft panel floors for 173 to 216 workers and remains fully demountable, which no other building this size in the cluster offers. Where a mega-project ends and another begins, this block moves whole. Its 8,640 square feet work out at Rs 58,70,880 ex-GST. When it finally stops moving, the same block converts to a permanent installation by grouting the pedestals, with no structural change above the base. Owners who repeat this block across projects report the second erection takes half the hours of the first. A move log ships with the block's document set.",
+      "h3": "Use-cases",
+      "applications": [
+        "Crews of 173 plus",
+        "Phase-one site setup",
+        "Occupancy-normed planning",
+        "48-hour fixed quotation"
+      ],
+      "imageAlt": "Prefab labour camp, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the bolted panel camp build."
+    }
   }
 }

@@ -1,0 +1,4045 @@
+{
+  "sourceRoot": "D:\\Project-shekhar\\all-product-images\\C-06",
+  "targetWidth": 1200,
+  "expected": 168,
+  "expectedVariant": 144,
+  "expectedDescription": 24,
+  "published": 168,
+  "filenameCollisionCount": 0,
+  "below80KiB": 0,
+  "above120KiB": 0,
+  "images": [
+    {
+      "slug": "labor-colony",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/60x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-front-left-hero-central-landing-stair-s01-b01.png",
+      "sourceSha256": "6802413ab7972bfa332a4b118b39d13883c912be584afd0dc4cc60ae28e1e806",
+      "target": "public/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-left-hero.webp",
+      "targetSha256": "eee8e351054608634328f25b0471242455c8e019dce166c7761d5cb5e5346cc8",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121742,
+      "webpQuality": 84,
+      "alt": "Labour colony, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the multi-block housing build."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/60x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-front-right-hero-s01-b01.png",
+      "sourceSha256": "755ab015128490294b260233c858e9d7cea9a4ab291374dfd6d04932d7197b31",
+      "target": "public/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-right-hero.webp",
+      "targetSha256": "1a33d4b44fded73781efcda44f8ead1d00742e3dce005e66f8982016e615aeb0",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 115396,
+      "webpQuality": 85,
+      "alt": "Labour colony, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/60x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-exact-front-elevation-s01-b01.png",
+      "sourceSha256": "b28ac39d3e865d725e5c4b433ad58ec87e25b22bb60182bcb9a0c6cd2537178e",
+      "target": "public/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "1ca0e7a4062db0b5392e86d39134a67fcaf269b90d4409f375237d8304ab7a84",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121870,
+      "webpQuality": 84,
+      "alt": "Labour colony, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/60x24 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-interior-bunk-layout-s01-b01.png",
+      "sourceSha256": "2ff1b4546d32f6e9025c39989fa81a38605fe602bb99a44c04a92ae24405197f",
+      "target": "public/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-bunk-layout.webp",
+      "targetSha256": "af3497afac000aad338d6470eb3c57aef3c36f3642d95004f1a79ec845ad2575",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118740,
+      "webpQuality": 84,
+      "alt": "Inside a 60x24 ft G+1 labour colony, double bunks in facing rows in the dormitory block, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/60x24 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-interior-room-entrance-s01-b01.png",
+      "sourceSha256": "4a2f814564d00c4c28ac79aa4e1104cfa0bff11dcfee2ab5a2c3287e138014dc",
+      "target": "public/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-room-entrance.webp",
+      "targetSha256": "629fea74bb443973d1de5ec9287a43c1863e49d36d4eb6fc7c0cc5c1b865ed67",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117526,
+      "webpQuality": 86,
+      "alt": "Inside a 60x24 ft G+1 labour colony, the entrance end of the room in the dormitory block, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/60x24 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-interior-storage-ventilation-s01-b01.png",
+      "sourceSha256": "185236ae2671055022b36f6ec949e8cfeb35d5c37a5993008946e39524acc72a",
+      "target": "public/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-storage-ventilation.webp",
+      "targetSha256": "70495dcfe35c925a427fd2114f61b8fbc45e5573b81a7a28ac09999fb3cc59b2",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120304,
+      "webpQuality": 80,
+      "alt": "Inside a 60x24 ft G+1 labour colony, the locker wall and ventilators in the dormitory block, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-front-left-hero-x-stair-s05-b05.png",
+      "sourceSha256": "8ad3851752c90be1da5e56a3b70d702e4f007467f1e5edf9f1f74b324da6a3f2",
+      "target": "public/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-front-left-hero.webp",
+      "targetSha256": "b52c219cf7f760b8220b1d37701c2e523cc810ad26d9a8c1a72e44efc3e01891",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 116790,
+      "webpQuality": 85,
+      "alt": "Labour colony, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the multi-block housing build."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-front-right-hero-s05-b05.png",
+      "sourceSha256": "658ce4a8d38b8cc457e487affc936f9f1fd1b96679dbe23d87cd629ea8c3bde4",
+      "target": "public/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-front-right-hero.webp",
+      "targetSha256": "f261ff2a4e20a9d726b124a7380c71b4e0b5ff4e4d9f8c2cb12a03fb5301e714",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118334,
+      "webpQuality": 70,
+      "alt": "Labour colony, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-exact-front-elevation-s05-b05.png",
+      "sourceSha256": "68c7e452f5ee68f565ab050e14d59e1d343da0b7732d8798ab356be400471ef0",
+      "target": "public/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "25ac3cad621b12a769b08acf7589c7a2d8e15cc39c2babb2c4f47093ad5489ef",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118956,
+      "webpQuality": 78,
+      "alt": "Labour colony, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+1",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-bunk-bed-layout-wide-interior-s05-b05.png",
+      "sourceSha256": "3f8552f687d877c5fc328446cc33ce2fcc9b9c5c14efcc91685635e35b51d58e",
+      "target": "public/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "d1d6793d2560fcc77a8c3437fb32eddf6102c199c62272489bd1a27cb06fe78e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119466,
+      "webpQuality": 86,
+      "alt": "Inside a 90x24 ft G+1 labour colony, bunk beds ranged along both walls in the dormitory block, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+1",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-room-entrance-axis-interior-s05-b05.png",
+      "sourceSha256": "0acca55d584587dd7c5d8e3a2e425e8e88cd201bc271fb18c82411e1a2d8404d",
+      "target": "public/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-room-entrance-axis-interior.webp",
+      "targetSha256": "b78e4916523ea5cc7db1b04c1e8f8af9e59086e5c11990b6b7e0b08a3fb7473b",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117368,
+      "webpQuality": 85,
+      "alt": "Inside a 90x24 ft G+1 labour colony, the doorway into the sleeping room in the dormitory block, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+1",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-room-reverse-axis-interior-s05-b05.png",
+      "sourceSha256": "f25f4300676b195651e41c308f3555718fdaaac5dec41a5e9ae17de9d4a654cc",
+      "target": "public/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-room-reverse-axis-interior.webp",
+      "targetSha256": "db9e255e4715727677f0c33abdbcf14cbb2ccf980dca810ea45ae16f26c61bc5",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122494,
+      "webpQuality": 86,
+      "alt": "Inside a 90x24 ft G+1 labour colony, looking back toward the room door in the dormitory block, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-front-left-hero-x-stair-s17-b17.png",
+      "sourceSha256": "659d809cbd0bdbc0f6e77783717249b5f55a3744f4a954c6578c8e65e4b72bd4",
+      "target": "public/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-front-left-hero.webp",
+      "targetSha256": "f084d9bf6600aa3dc2ce051e66000eae9c508a6c63caa01fa1f9f7b3d38472c7",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121944,
+      "webpQuality": 76,
+      "alt": "Labour colony, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the multi-block housing build."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+2",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-front-right-hero-s17-b17.png",
+      "sourceSha256": "ec6fc914d5923db18ea78f0701d0d5d563d6a4b0c091f052c8929afdd9018bec",
+      "target": "public/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-front-right-hero.webp",
+      "targetSha256": "6191f817bbfb64f4a4c94888bcdeb90a74c7914a488b9f5f5805a930f9e1bc5c",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121250,
+      "webpQuality": 65,
+      "alt": "Labour colony, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+2",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-exact-front-elevation-s17-b17.png",
+      "sourceSha256": "60a0f915c3880800022522b397534a549f32840c221471e1d94a4648c7713605",
+      "target": "public/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-exact-front-elevation.webp",
+      "targetSha256": "30dd9c01eaf9ebea5db1babd04d15fd3288d85ae185daf96623b14d9d24bf3a9",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119154,
+      "webpQuality": 82,
+      "alt": "Labour colony, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+2",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-bunk-bed-layout-wide-interior-s17-b17.png",
+      "sourceSha256": "3ba483c0e3c0250e79c3258d61dcaae0dcfc41887e35ab0b56a906085bc4119f",
+      "target": "public/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "71a851eff425081d81cf75a91d303779aaf22cda2a2d6e18f6ea96232bc9eda5",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 113508,
+      "webpQuality": 87,
+      "alt": "Inside a 90x24 ft G+2 labour colony, the sleeping bay set out in double bunks in the dormitory block, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+2",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-room-entrance-axis-interior-s17-b17.png",
+      "sourceSha256": "463b923bc88d24de1d21f9e47c911c936a59a15346b4c9758c065b01d877e44b",
+      "target": "public/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-room-entrance-axis-interior.webp",
+      "targetSha256": "b7a752c6b675d8b6b2258a36e946dbc54d07e6d2abad72dbd987f989c57d2f59",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 113976,
+      "webpQuality": 83,
+      "alt": "Inside a 90x24 ft G+2 labour colony, looking in from the room door in the dormitory block, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/90x24 ft G+2",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-room-reverse-axis-interior-s17-b17.png",
+      "sourceSha256": "1dac7899ab778807c67d5684de8a6f27c016fb54dfea9c8bd62b9db02f85bfa4",
+      "target": "public/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-room-reverse-axis-interior.webp",
+      "targetSha256": "9dd3b72f16fbd9608a9c294a460897582928473159107bec460d7329071546eb",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120696,
+      "webpQuality": 84,
+      "alt": "Inside a 90x24 ft G+2 labour colony, the room seen from its far end in the dormitory block, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-left-hero-x-stair-s09-b09.png",
+      "sourceSha256": "3b26e532756b33152d716a41a8e2a837cc98a486704eddb027355c3130c152db",
+      "target": "public/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-front-left-hero.webp",
+      "targetSha256": "ef28579027309de8af437836fdcf83de3b4af93800ce75bd8df75e2f60fb1c17",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119592,
+      "webpQuality": 79,
+      "alt": "Labour colony, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the multi-block housing build."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-right-hero-s09-b09.png",
+      "sourceSha256": "f68b5df849197caf02a5366b7bf27806c54e734b9b910949176088033c1b814d",
+      "target": "public/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-front-right-hero.webp",
+      "targetSha256": "bea533727955bd9cb3287882290fd3f5e75219e1801e2009163e31ed12be1c46",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121268,
+      "webpQuality": 79,
+      "alt": "Labour colony, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-exact-front-elevation-s09-b09.png",
+      "sourceSha256": "82f035ab25bb5cefb300eff32084fd443a89fa6724cc3dd62ec85c0108d4fd5a",
+      "target": "public/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "36f13c1ed7673d874108c6c99a8c13d02effd57ccccf14ac8e3468070888bbfc",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120514,
+      "webpQuality": 75,
+      "alt": "Labour colony, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+1",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-bunk-bed-layout-wide-interior-s09-b09.png",
+      "sourceSha256": "f3d1f6619522fb5300d8acb89018f01ba1a859c6804427d185f7c0616fe69d89",
+      "target": "public/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "2375b48c02cdab90c5155a18a38bbacb372b62c5ee4320d5c4a8a05b1b337baf",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 112616,
+      "webpQuality": 85,
+      "alt": "Inside a 120x24 ft G+1 labour colony, double bunks in facing rows in the dormitory block, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+1",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-room-entrance-axis-interior-s09-b09.png",
+      "sourceSha256": "42cbe1323d2189c3fdd2cba8466d8fe430aaa221b63b00c9bf1f255d5d772810",
+      "target": "public/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-room-entrance-axis-interior.webp",
+      "targetSha256": "1c90ee6b8072b640732752e916196c06996b998e4dfc5d08c18011077ba3caac",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 113624,
+      "webpQuality": 83,
+      "alt": "Inside a 120x24 ft G+1 labour colony, the entrance end of the room in the dormitory block, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+1",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-room-reverse-axis-interior-s09-b09.png",
+      "sourceSha256": "a9907214150f2bb342d257aa53e05966f8781d2fd0913bebe9211e6d432ee1eb",
+      "target": "public/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-room-reverse-axis-interior.webp",
+      "targetSha256": "fa1e74480e106343be4c6baec6d734b205662d3296ca2952996b34f168f44981",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119560,
+      "webpQuality": 82,
+      "alt": "Inside a 120x24 ft G+1 labour colony, the return view toward the door in the dormitory block, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/118x30 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-front-left-hero-x-stair-s13-b13.png",
+      "sourceSha256": "0c45d87b8757c5061d966e5276c2be099405964a2ee07108270fa7bf8c8822b8",
+      "target": "public/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-front-left-hero.webp",
+      "targetSha256": "977b0d7b1a27ae748549b9b4bf4368162b3360feb2d03f5b94e75c6167c86b50",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119042,
+      "webpQuality": 63,
+      "alt": "Labour colony, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the multi-block housing build."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/118x30 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-front-right-hero-s13-b13.png",
+      "sourceSha256": "cc4f0cfade97a5821989c9bf8e8c90cde68acca8be7e5775257d8a1281f7207a",
+      "target": "public/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-front-right-hero.webp",
+      "targetSha256": "466f9fc3938d37f9aaba1067a8bc78042279678ff8c204499130f02f0b32bea0",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122872,
+      "webpQuality": 76,
+      "alt": "Labour colony, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/118x30 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-exact-front-elevation-s13-b13.png",
+      "sourceSha256": "3db496f52814e39670cef0b0ae2e63cb20962f44f49f733ddb1e3a59744b85c7",
+      "target": "public/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-exact-front-elevation.webp",
+      "targetSha256": "92fd5120275904c64ca66820bd784e87b9914d36da95b3dd04f930825913e492",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118140,
+      "webpQuality": 77,
+      "alt": "Labour colony, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/118x30 ft G+1",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-bunk-bed-layout-wide-interior-s13-b13.png",
+      "sourceSha256": "a01c686d8927b4c48c3e21895186d7644eba52135a0ef75a0786100eee6a0c0a",
+      "target": "public/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "9c13ac13ecb5567aacf2f70377f78aece4300a5fb515e1b02f32aa4fd9d991e2",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120582,
+      "webpQuality": 85,
+      "alt": "Inside a 118x30 ft G+1 labour colony, bunk beds ranged along both walls in the dormitory block, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/118x30 ft G+1",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-room-entrance-axis-interior-s13-b13.png",
+      "sourceSha256": "0ac273ccf2e4e87e02f9fcf9a328b98d0d2f138703b70574dbd4856f33573dac",
+      "target": "public/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-room-entrance-axis-interior.webp",
+      "targetSha256": "6f38ce48f6e1bedaac7a51de23b1e3d7e38f9eae26a093b87fe3e0cdcf9dbc07",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119322,
+      "webpQuality": 85,
+      "alt": "Inside a 118x30 ft G+1 labour colony, the doorway into the sleeping room in the dormitory block, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/118x30 ft G+1",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-room-reverse-axis-interior-s13-b13.png",
+      "sourceSha256": "125f76695ff3e390685a0483c5c675d00e418ec1ed8f9ff33e09257dd9889ae7",
+      "target": "public/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-room-reverse-axis-interior.webp",
+      "targetSha256": "c37cb193e0d853503ae75f62e9b8379e6bddeaf62debc3ad03c3a68998b3f318",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120466,
+      "webpQuality": 87,
+      "alt": "Inside a 118x30 ft G+1 labour colony, looking back toward the room door in the dormitory block, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-front-left-hero-x-stair-s21-b21.png",
+      "sourceSha256": "92e3cbb5dcf1f378ff4e555dbd795c3a15b776acb2c06aee7d0e4fda6206171a",
+      "target": "public/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-front-left-hero.webp",
+      "targetSha256": "9dc44351a656ca99fc6a0b2bbeadecf6f3997fd8f8f1bb5c7961c1e66c8968d3",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121834,
+      "webpQuality": 58,
+      "alt": "Labour colony, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the multi-block housing build."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+2",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-front-right-hero-s21-b21.png",
+      "sourceSha256": "5c071af55bc3ca55bf5b93b0769a33687a66f2813ed82af5c7d4361dfbfefc64",
+      "target": "public/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-front-right-hero.webp",
+      "targetSha256": "c9c3f30e4b45034479a61a731ae7603518d56032bfd111fd89b883ec7a0c8593",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122114,
+      "webpQuality": 60,
+      "alt": "Labour colony, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+2",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-exact-front-elevation-s21-b21.png",
+      "sourceSha256": "aa115fd825b8668d7874b4537c95615234ba88e5c8d5ea5c034a679c0cd3b094",
+      "target": "public/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-exact-front-elevation.webp",
+      "targetSha256": "474fcceb2b61b26b8d6178d7a5863752af8ecd8f614d38aa7cd5e8b75df918eb",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122400,
+      "webpQuality": 77,
+      "alt": "Labour colony, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the multi-block housing build in view."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+2",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-bunk-bed-layout-wide-interior-s21-b21.png",
+      "sourceSha256": "be7328c7fb667290d44e1c4837257b58ae0b4c035994b9e02fde3fc7e72236e0",
+      "target": "public/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "d58f6c817f16ac78900d56649a909cbe165dabbc7f4289ba05382dce9ff98ef1",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121350,
+      "webpQuality": 88,
+      "alt": "Inside a 120x24 ft G+2 labour colony, the sleeping bay set out in double bunks in the dormitory block, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+2",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-room-entrance-axis-interior-s21-b21.png",
+      "sourceSha256": "4fcd90884c68a4d481998290c75f985b53a1e414fcbb48eff51e9a3b076e2f68",
+      "target": "public/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-room-entrance-axis-interior.webp",
+      "targetSha256": "8d070a630a6306611a0ab2ea7953840709fd08080e2902a5fa5e26bcb461d33d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 115112,
+      "webpQuality": 85,
+      "alt": "Inside a 120x24 ft G+2 labour colony, looking in from the room door in the dormitory block, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labour Colony/120x24 ft G+2",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-room-reverse-axis-interior-s21-b21.png",
+      "sourceSha256": "07db6da754a01f55bcd8fd4c262accf6f088c782f164ae666a9ae7501b302036",
+      "target": "public/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-room-reverse-axis-interior.webp",
+      "targetSha256": "0cc352c54150592671f4f49a1d9a54dea67aa26fde1d92727a83857c7099b67c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117562,
+      "webpQuality": 89,
+      "alt": "Inside a 120x24 ft G+2 labour colony, the room seen from its far end in the dormitory block, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labour Colony/120x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-right-hero-s09-b09.png",
+      "sourceSha256": "f68b5df849197caf02a5366b7bf27806c54e734b9b910949176088033c1b814d",
+      "target": "public/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-front-right-hero-wide.webp",
+      "targetSha256": "91307b4e19499b94ce8fece459cc3ca2d3326b67d84ae69b2214d5340cc32245",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 121608,
+      "webpQuality": 90,
+      "alt": "Two-floor labour colony dormitory of 120x24 ft seen across the yard, stair access and walkway rails along the full front."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labour Colony/118x30 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-exact-front-elevation-s13-b13.png",
+      "sourceSha256": "3db496f52814e39670cef0b0ae2e63cb20962f44f49f733ddb1e3a59744b85c7",
+      "target": "public/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-exact-front-elevation-wide.webp",
+      "targetSha256": "35e695ca3bdd199c5960b1e15275fed8ff3d87a019334e0ae76abca32dfadb89",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 118762,
+      "webpQuality": 90,
+      "alt": "Wide-body 118x30 ft colony building face on, door and window bays repeating along both floors."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labour Colony/90x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-front-left-hero-x-stair-s17-b17.png",
+      "sourceSha256": "659d809cbd0bdbc0f6e77783717249b5f55a3744f4a954c6578c8e65e4b72bd4",
+      "target": "public/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-front-left-hero-wide.webp",
+      "targetSha256": "49e8c5d2bfb7b0c18d9bb3fa22054f902ee2dfa27b0ee11c21bd77db50b0b46c",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 120192,
+      "webpQuality": 85,
+      "alt": "Three-floor 90x24 ft colony block from the stair end, all landings visible in one frame."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labour Colony/120x24 ft G+2",
+      "sourceViewToken": "exact-x-stair-end-elevation",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-exact-x-stair-end-elevation-s21-b21.png",
+      "sourceSha256": "0b99f959d784ed0d44dc6ba59d094c076c163b1c006596165063825c1637a9b1",
+      "target": "public/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-exact-x-stair-end-elevation-wide.webp",
+      "targetSha256": "beba8e5da86de240f054157ee3e8879bb706c3d1c531ab26c3c1450e51adbb2e",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 121160,
+      "webpQuality": 88,
+      "alt": "End elevation of the largest colony building showing the X-pattern stair serving three floors."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labour Colony/90x24 ft G+1",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-bunk-bed-layout-wide-interior-s05-b05.png",
+      "sourceSha256": "3f8552f687d877c5fc328446cc33ce2fcc9b9c5c14efcc91685635e35b51d58e",
+      "target": "public/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-bunk-bed-layout-wide-interior-wide.webp",
+      "targetSha256": "76818e98192a50c1ab8b851257c0416444ad2c69a56e852be0d57b386f938da0",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 95728,
+      "webpQuality": 90,
+      "alt": "Dormitory room in wide view, double bunks in ordered rows under strip lighting."
+    },
+    {
+      "slug": "labor-colony",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labour Colony/60x24 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-interior-storage-ventilation-s01-b01.png",
+      "sourceSha256": "185236ae2671055022b36f6ec949e8cfeb35d5c37a5993008946e39524acc72a",
+      "target": "public/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-storage-ventilation-wide.webp",
+      "targetSha256": "415cadd275c4c3329419c6f8cd8bb7f04d20bb1a32be929662aa28c66e039af9",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 113172,
+      "webpQuality": 90,
+      "alt": "Locker line and ventilators inside the compact colony dormitory."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/60x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-front-left-hero-central-landing-stair-s02-b02.png",
+      "sourceSha256": "8af33cc5896c5e35eeb48698bb7314a2485c2afa9b6430fb871c504f85d8c862",
+      "target": "public/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-left-hero.webp",
+      "targetSha256": "0799163c2f115e2eff99f8b5aa5a04b8ccd52a5074b2db3a614d95c6b2248bb0",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122080,
+      "webpQuality": 86,
+      "alt": "Labour shed, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the open-hall shed build."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/60x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-front-right-hero-s02-b02.png",
+      "sourceSha256": "028f2de4232b19c1f1098ce1fec02adbe296b8b2936752e7c10cc5adebae6635",
+      "target": "public/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp",
+      "targetSha256": "0334006b93961ea1c32e57e66ebeef7cf5cf7a4bac3c5f21bda569cd19c6b470",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121432,
+      "webpQuality": 81,
+      "alt": "Labour shed, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/60x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-exact-front-elevation-s02-b02.png",
+      "sourceSha256": "4010fa2c3058512bb546965d979014f659a3f0b66e746d164e171f2bb343f9ef",
+      "target": "public/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "fdf71ee59ea94711848d87cdd313ea273b87fca84ce32c0493a38ec8d22a99e5",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117892,
+      "webpQuality": 81,
+      "alt": "Labour shed, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/60x24 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-sheds-60x24-ft-gplus1-interior-bunk-layout-s02-b02.png",
+      "sourceSha256": "69f3c880a217fb31d83fb88a70e2fb7ba949f65f28ca28b8ee2b215010af4aee",
+      "target": "public/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-interior-bunk-layout.webp",
+      "targetSha256": "e8a2971900fedfd3fff46ea7f823eaca32de7a7dcbdfec15751cbf75a8eb3c62",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 116102,
+      "webpQuality": 82,
+      "alt": "Inside a 60x24 ft G+1 labour shed, double bunks in facing rows in the open sleeping hall, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/60x24 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-sheds-60x24-ft-gplus1-interior-room-entrance-s02-b02.png",
+      "sourceSha256": "3934072bd5f56ad89fa20ef801179ac3de4bffc229f9043f7b9b1ab80ffd8f52",
+      "target": "public/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-interior-room-entrance.webp",
+      "targetSha256": "23a4b170962e005bedf474a4a654aab1c781dc307f02bf5a96962db55168a513",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119516,
+      "webpQuality": 89,
+      "alt": "Inside a 60x24 ft G+1 labour shed, the entrance end of the room in the open sleeping hall, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/60x24 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-sheds-60x24-ft-gplus1-interior-storage-ventilation-s02-b02.png",
+      "sourceSha256": "e50d8bc2614791e3d3da8395c2aa487a52625c27bc8d9a4479d28ebc78322b33",
+      "target": "public/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-interior-storage-ventilation.webp",
+      "targetSha256": "619754434ac4805d6e9dda61655223b4b3ca261cb6d23275bd2e59ad4b4090cb",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121310,
+      "webpQuality": 83,
+      "alt": "Inside a 60x24 ft G+1 labour shed, the locker wall and ventilators in the open sleeping hall, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-front-left-hero-central-landing-stair-s06-b06.png",
+      "sourceSha256": "a9625b0806b5d6c4f53bb71338b2d64530517d0ee4b95e05c963d2b426ae0b8a",
+      "target": "public/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-front-left-hero.webp",
+      "targetSha256": "83a497b3ac2906f47fdbc4bc68b22f50556f19cfa6ec407c1cea1e594c23fe2f",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118972,
+      "webpQuality": 86,
+      "alt": "Labour shed, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the open-hall shed build."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-front-right-hero-s06-b06.png",
+      "sourceSha256": "ab7df220501c43276af8d4520f2ddc4c492e4f9a1a904d60a10b12bae0aac410",
+      "target": "public/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-front-right-hero.webp",
+      "targetSha256": "7d1e2da2c11ee88f939b080d26f4846e3eccebf812c1ef95d7f8121283865d31",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121154,
+      "webpQuality": 78,
+      "alt": "Labour shed, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-exact-front-elevation-s06-b06.png",
+      "sourceSha256": "13999e1b4b84c593cc0e6240adbcfaa6af40204059895cf0e1f343d4b1b3e624",
+      "target": "public/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "422f5ea508ab6937bdc65b2b0a00775e78c7c5ffc4df5e454eb042a3667d90f7",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119776,
+      "webpQuality": 78,
+      "alt": "Labour shed, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-sheds-90x24-ft-gplus1-interior-bunk-layout-s06-b06.png",
+      "sourceSha256": "d6523c576606dd467975742cf20a1c69fe8a7d929be5b701d8ffa3b706ec82c8",
+      "target": "public/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-bunk-layout.webp",
+      "targetSha256": "2f1ecb882ad9aed7b21f1ff3d5d47a700374249c5453a29c20430ba8c70fc65d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117050,
+      "webpQuality": 88,
+      "alt": "Inside a 90x24 ft G+1 labour shed, bunk beds ranged along both walls in the open sleeping hall, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-sheds-90x24-ft-gplus1-interior-room-entrance-s06-b06.png",
+      "sourceSha256": "c58d536c29aa388e4743d51c033d073c12410cc5a2d40e3840b9c2abeba3cccc",
+      "target": "public/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-room-entrance.webp",
+      "targetSha256": "8e6445ec8a3b0128712bac1285bcae861cf6c98789eb7267a27621f230faa19f",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121228,
+      "webpQuality": 81,
+      "alt": "Inside a 90x24 ft G+1 labour shed, the doorway into the sleeping room in the open sleeping hall, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-sheds-90x24-ft-gplus1-interior-storage-ventilation-s06-b06.png",
+      "sourceSha256": "5a1979134889e7abc982afde11c85550e17621dd7b45a1a44190e5e85df5d907",
+      "target": "public/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-storage-ventilation.webp",
+      "targetSha256": "8855af367eee37c91a51eb774af45698021ace7f24e78adeaf823b954480fdd0",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119190,
+      "webpQuality": 85,
+      "alt": "Inside a 90x24 ft G+1 labour shed, lockers under the high-level vents in the open sleeping hall, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-front-left-hero-central-landing-stair-s18-b18.png",
+      "sourceSha256": "7a2a64249badc06b3a3c78c082ff3950200513c98d168bf5efa61c336695df0b",
+      "target": "public/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-front-left-hero.webp",
+      "targetSha256": "5b9a12c370ac505dcfca4d783f65c7544a6a95446635fd1950c9626b2f90f1fa",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122050,
+      "webpQuality": 79,
+      "alt": "Labour shed, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the open-hall shed build."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+2",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-front-right-hero-s18-b18.png",
+      "sourceSha256": "1f5e3c579dea815f19948a1d52e6f4ea7734c1cdd659f4d1bb67f4f45d3bcf1f",
+      "target": "public/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-front-right-hero.webp",
+      "targetSha256": "a3084e343d0cfe7bf400b6ddae0c7bc68e8df8fcd4e6b1b58e477b1507dc06e6",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121750,
+      "webpQuality": 72,
+      "alt": "Labour shed, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+2",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-exact-front-elevation-s18-b18.png",
+      "sourceSha256": "f18ffde3928a6964f3343cc7448d6af1cd2f0c651b50b42bb42fade47da1ecdf",
+      "target": "public/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-exact-front-elevation.webp",
+      "targetSha256": "1c7f38f1fee6f784fbb0b0ce7e7bc9a9207bd0f04a59f983b9d0ecd7e7e241ec",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121954,
+      "webpQuality": 78,
+      "alt": "Labour shed, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+2",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-sheds-90x24-ft-gplus2-interior-bunk-layout-s18-b18.png",
+      "sourceSha256": "95efc584ef8e401054ea7bbb606e75170d3a71ca5cb4052a166a40e5e2966395",
+      "target": "public/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-interior-bunk-layout.webp",
+      "targetSha256": "7095d6405684c23e39fbb7e96f45757984beb003179924ff6b6e8e01d1c34d09",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121258,
+      "webpQuality": 88,
+      "alt": "Inside a 90x24 ft G+2 labour shed, the sleeping bay set out in double bunks in the open sleeping hall, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+2",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-sheds-90x24-ft-gplus2-interior-room-entrance-s18-b18.png",
+      "sourceSha256": "8d11923a6694a1fa33ab524ff105d8a6c57f3d55043de6a8aad9e78f6c969425",
+      "target": "public/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-interior-room-entrance.webp",
+      "targetSha256": "57a2c57266fee3b7073c59115f36d70cd62e8a65b9916c26cd24b428b07d319f",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 116244,
+      "webpQuality": 85,
+      "alt": "Inside a 90x24 ft G+2 labour shed, looking in from the room door in the open sleeping hall, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/90x24 ft G+2",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-sheds-90x24-ft-gplus2-interior-storage-ventilation-s18-b18.png",
+      "sourceSha256": "aed397c09cff232f7671ac187ebbd004f7f5addf7c34ccd09fe55cb04b4acb78",
+      "target": "public/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-interior-storage-ventilation.webp",
+      "targetSha256": "7db9e9ae468b25dc9bd70527fbc0c3e2efd7020f62e186977d8ce053206f94d5",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119606,
+      "webpQuality": 86,
+      "alt": "Inside a 90x24 ft G+2 labour shed, personal storage below the vent line in the open sleeping hall, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-left-hero-central-landing-stair-s10-b10.png",
+      "sourceSha256": "25dc999de86cf343541d2ba0c7044e21995202563374758072ba3b8e65a3545d",
+      "target": "public/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-front-left-hero.webp",
+      "targetSha256": "6f03d47357be0115ca53d42a48f001f3d993f06f09824d8e0c7ac3c25ba3ded1",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117940,
+      "webpQuality": 86,
+      "alt": "Labour shed, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the open-hall shed build."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-right-hero-s10-b10.png",
+      "sourceSha256": "2f6cbd9a4b575eacca229e3e4f97bbf749f9e386eb016010efcd0a9fab10a2b8",
+      "target": "public/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-front-right-hero.webp",
+      "targetSha256": "d738d283d360efba1ea95f5f0abb88595d1fceee3875d74bdb40ed73f64e6e73",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120926,
+      "webpQuality": 81,
+      "alt": "Labour shed, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-exact-front-elevation-s10-b10.png",
+      "sourceSha256": "ac144b22041298a635fa22fa77c6819316afe19889a8577e38f49a158f8fc86b",
+      "target": "public/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "55c567eae60dc9cbdff58dbe2c7c1ac60b451fc08c5cd9ee09ab0019d8dd8ed9",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122622,
+      "webpQuality": 80,
+      "alt": "Labour shed, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-sheds-120x24-ft-gplus1-interior-bunk-layout-s10-b10.png",
+      "sourceSha256": "f66e97ae2b8c0a477a511181999ea842b7b3fb611b928a76ab656ed1f1dca3fb",
+      "target": "public/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-interior-bunk-layout.webp",
+      "targetSha256": "059eb57b44389352d5c28b7a5909f258c8090b681a48c6ab86cf3b4f58f36213",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121454,
+      "webpQuality": 85,
+      "alt": "Inside a 120x24 ft G+1 labour shed, double bunks in facing rows in the open sleeping hall, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-sheds-120x24-ft-gplus1-interior-room-entrance-s10-b10.png",
+      "sourceSha256": "c6bb6a0bce2d046784311ea8e359ab17de957104c71ece04a353c64fc62ac4c7",
+      "target": "public/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-interior-room-entrance.webp",
+      "targetSha256": "a669e37b94d43283eacaa2a3b22f5086af29aa605175317540db7a63c84c73ed",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 115400,
+      "webpQuality": 87,
+      "alt": "Inside a 120x24 ft G+1 labour shed, the entrance end of the room in the open sleeping hall, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-sheds-120x24-ft-gplus1-interior-storage-ventilation-s10-b10.png",
+      "sourceSha256": "9696c9f35faf9b3783d31f410851f1530f911aec53cc04accc85c6ae8d479815",
+      "target": "public/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-interior-storage-ventilation.webp",
+      "targetSha256": "17e4350ef459a36eaf571b57b3cf0565b332e4835df9f07aea079c8bb4e1548f",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118430,
+      "webpQuality": 86,
+      "alt": "Inside a 120x24 ft G+1 labour shed, the locker wall and ventilators in the open sleeping hall, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/118x30 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-front-left-hero-central-landing-stair-s14-b14.png",
+      "sourceSha256": "3cb594a614b61a1d9850915ae4bfa1edba8fce038ffb57041b10fe5474cfa3be",
+      "target": "public/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-front-left-hero.webp",
+      "targetSha256": "0b06a4f9528d1f7178bf3158d7c4397ecf89274e7780a654a2925d0ca123a976",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118054,
+      "webpQuality": 77,
+      "alt": "Labour shed, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the open-hall shed build."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/118x30 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-front-right-hero-s14-b14.png",
+      "sourceSha256": "f4b389889ecc2978b97ff9c7a8f237748a3f87e56ece8a3cb2fa6662f0ce7236",
+      "target": "public/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-front-right-hero.webp",
+      "targetSha256": "260a9381361e35249d001c0b70003a5a9328cd41ba39022900dcf0ae38072a09",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122190,
+      "webpQuality": 74,
+      "alt": "Labour shed, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/118x30 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-exact-front-elevation-s14-b14.png",
+      "sourceSha256": "1f2baccd662fb0a83e8e2ced59518376c57ce2261acdaf853a751739d2d49c58",
+      "target": "public/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-exact-front-elevation.webp",
+      "targetSha256": "8971705e52017d6a6b52f0d7e84ba2a55dbdf0a82188d31db5eb0bfbfed13395",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120986,
+      "webpQuality": 81,
+      "alt": "Labour shed, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/118x30 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-sheds-118x30-ft-gplus1-interior-bunk-layout-s14-b14.png",
+      "sourceSha256": "f57201adcf8588b809684dadaaf65cdcee2edb5c1c31e785c198c298e3e63386",
+      "target": "public/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-bunk-layout.webp",
+      "targetSha256": "b29ebd91684a445881fbbc266f05615fbcb3ece9fa18c7562b89a68a0968b5c7",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 116504,
+      "webpQuality": 84,
+      "alt": "Inside a 118x30 ft G+1 labour shed, bunk beds ranged along both walls in the open sleeping hall, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/118x30 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-sheds-118x30-ft-gplus1-interior-room-entrance-s14-b14.png",
+      "sourceSha256": "cd110307f25eac7bd19cfd25ae7efbfbcd7589ebf09111400baae4d49eb295c1",
+      "target": "public/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-room-entrance.webp",
+      "targetSha256": "569f92e5a3bbd5d03f88a04bbc47db3335497f2cb7754e88e83fe0e2542f0bd7",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120564,
+      "webpQuality": 87,
+      "alt": "Inside a 118x30 ft G+1 labour shed, the doorway into the sleeping room in the open sleeping hall, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/118x30 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-sheds-118x30-ft-gplus1-interior-storage-ventilation-s14-b14.png",
+      "sourceSha256": "e30711c9aa28ad6911bedde48c3495a29761bcc10fa471d9a379040ef2df9e87",
+      "target": "public/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-storage-ventilation.webp",
+      "targetSha256": "8090d912d6637b557797bdec49af97711fef3409bc295e755b7b700d8209c9dc",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119840,
+      "webpQuality": 87,
+      "alt": "Inside a 118x30 ft G+1 labour shed, lockers under the high-level vents in the open sleeping hall, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-front-left-hero-central-landing-stair-s22-b22.png",
+      "sourceSha256": "a474d12fe63a05003688d1f463b5ffc4beb14c5cf589ed90796eec915a321012",
+      "target": "public/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-front-left-hero.webp",
+      "targetSha256": "b1f2a7007d6733a2fca5309e740e0e54dd0d98d5a046e2b7aebcf078e9d8f812",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121508,
+      "webpQuality": 65,
+      "alt": "Labour shed, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the open-hall shed build."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+2",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-front-right-hero-s22-b22.png",
+      "sourceSha256": "96f2b9162af6e886f462e7eba353afb7a4add70b5ae33f6a9a03ea3ddf0cb686",
+      "target": "public/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-front-right-hero.webp",
+      "targetSha256": "403af83599112245ba78d78d344a0ce5835a7d363ff0eab747b666c36fe23734",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122042,
+      "webpQuality": 55,
+      "alt": "Labour shed, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+2",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-exact-front-elevation-s22-b22.png",
+      "sourceSha256": "a1da826154ceecc48ebcb537ab77994eab3ec1c218301e917b70ca07db0b540a",
+      "target": "public/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-exact-front-elevation.webp",
+      "targetSha256": "c811b5ab25cca027d898b5a9d6a16122c3ee74f13a645087c6ec1a86a65e6d5e",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122712,
+      "webpQuality": 77,
+      "alt": "Labour shed, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the open-hall shed build in view."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+2",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-sheds-120x24-ft-gplus2-interior-bunk-layout-s22-b22.png",
+      "sourceSha256": "c23ad7e5b17d4650c6781a6c3d8f6924d5f8363b61cef4ddd8eae70b1ba198c6",
+      "target": "public/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-interior-bunk-layout.webp",
+      "targetSha256": "3fd76192842b0c1fb3987e4f080d753740408c91cf91d1f5465ffa7604aeb4a1",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122740,
+      "webpQuality": 87,
+      "alt": "Inside a 120x24 ft G+2 labour shed, the sleeping bay set out in double bunks in the open sleeping hall, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+2",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-sheds-120x24-ft-gplus2-interior-room-entrance-s22-b22.png",
+      "sourceSha256": "f43fa114027115f51d23f86c265f9031c99ade675c31f5b002ef728daa08c25a",
+      "target": "public/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-interior-room-entrance.webp",
+      "targetSha256": "c8cfdb60159530e304032b09f7757500bd28b662afbc6ec088fae7f930ff4da6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117530,
+      "webpQuality": 85,
+      "alt": "Inside a 120x24 ft G+2 labour shed, looking in from the room door in the open sleeping hall, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Sheds/120x24 ft G+2",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-sheds-120x24-ft-gplus2-interior-storage-ventilation-s22-b22.png",
+      "sourceSha256": "4e44d4c9be9ff4cf8f1c63a533ab4c96e2972ea358cb5f4c76d0d4a29f11e8fa",
+      "target": "public/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-interior-storage-ventilation.webp",
+      "targetSha256": "d7a6714a4acdc86334940c1325cf28b716ffc7e9b007f2812b29075d8fbf5eb3",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120302,
+      "webpQuality": 81,
+      "alt": "Inside a 120x24 ft G+2 labour shed, personal storage below the vent line in the open sleeping hall, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Sheds/120x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-right-hero-s10-b10.png",
+      "sourceSha256": "2f6cbd9a4b575eacca229e3e4f97bbf749f9e386eb016010efcd0a9fab10a2b8",
+      "target": "public/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-front-right-hero-wide.webp",
+      "targetSha256": "867861f8186143546a002d195cf3168e75093b9ee32fc7b21b55fdc340e0eb78",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 119492,
+      "webpQuality": 90,
+      "alt": "Open-hall labour shed of 120x24 ft from the corner, gable roof over two sleeping floors."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Sheds/90x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-exact-front-elevation-s06-b06.png",
+      "sourceSha256": "13999e1b4b84c593cc0e6240adbcfaa6af40204059895cf0e1f343d4b1b3e624",
+      "target": "public/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-exact-front-elevation-wide.webp",
+      "targetSha256": "be3c3bb4f8c7e1d6b1fcf7f611fc5b0c5d6d1aad6686657f85cb9883a5d52fbc",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 113354,
+      "webpQuality": 90,
+      "alt": "The 90 ft shed square on, ventilator banks running high along the hall."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Sheds/120x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-front-left-hero-central-landing-stair-s22-b22.png",
+      "sourceSha256": "a474d12fe63a05003688d1f463b5ffc4beb14c5cf589ed90796eec915a321012",
+      "target": "public/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-front-left-hero-wide.webp",
+      "targetSha256": "4a239fbc9b259b1d502e4d6834e85bb388ac9104d14dc2dd6df13afeb06c6977",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 120362,
+      "webpQuality": 86,
+      "alt": "Three stacked halls of the largest shed seen from the stair end."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Sheds/60x24 ft G+1",
+      "sourceViewToken": "rear-left-three-quarter",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-rear-left-three-quarter-s02-b02.png",
+      "sourceSha256": "3fd51c83d30368519c64610acbd7ff20567ff5804187e1d460db46714bc25e7b",
+      "target": "public/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-rear-left-three-quarter-wide.webp",
+      "targetSha256": "7c0eb4278b1d528bc794ce36973aaf128931b9f295e8aef183793c09cbbc5b4a",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 117458,
+      "webpQuality": 88,
+      "alt": "Rear quarter of the compact shed showing the service side and end wall."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Sheds/90x24 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-sheds-90x24-ft-gplus1-interior-bunk-layout-s06-b06.png",
+      "sourceSha256": "d6523c576606dd467975742cf20a1c69fe8a7d929be5b701d8ffa3b706ec82c8",
+      "target": "public/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-bunk-layout-wide.webp",
+      "targetSha256": "ee1cf8ca67d95587566d315d807577d2aa7112edd031e7877bb2d3e6ecd125cb",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 88874,
+      "webpQuality": 90,
+      "alt": "One open shed hall in wide view, facing bunk rows split by the centre aisle."
+    },
+    {
+      "slug": "labor-sheds",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Sheds/118x30 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-sheds-118x30-ft-gplus1-interior-storage-ventilation-s14-b14.png",
+      "sourceSha256": "e30711c9aa28ad6911bedde48c3495a29761bcc10fa471d9a379040ef2df9e87",
+      "target": "public/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-storage-ventilation-wide.webp",
+      "targetSha256": "6a24c9dfd5d3abb0e5d4d880e680eb298a73bd9f397bfc79ddc1f76bbdf6cdbc",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 88282,
+      "webpQuality": 90,
+      "alt": "Storage line and high ventilators inside the wide-body shed hall."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/60x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-front-left-hero-central-landing-stair-s03-b03.png",
+      "sourceSha256": "78d05f4d0774f140e4c661a454e5113539b0952666c7f6458884df04b61d3e67",
+      "target": "public/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-left-hero.webp",
+      "targetSha256": "5f7cbfc7bcadd61990c1f9929fe9e3dc8114a13df977f02efc87e4f02e12092c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121854,
+      "webpQuality": 81,
+      "alt": "Labour hutment, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the room-block hutment build."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/60x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-front-right-hero-s03-b03.png",
+      "sourceSha256": "b8371a51d8c3d4188ffb4c17a19aecaf5d9a9643fa04a06d081f08756fa88306",
+      "target": "public/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-right-hero.webp",
+      "targetSha256": "db2a5adb823839cc54bfcf3062116f9a53cdb07cadb174da204ec09eceea3aff",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119236,
+      "webpQuality": 80,
+      "alt": "Labour hutment, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/60x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-exact-front-elevation-s03-b03.png",
+      "sourceSha256": "46d757d1b4ce4ddb88d67cbbcac419ce6e3cae3b791f972ed2541c10a8a015d5",
+      "target": "public/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "9aca4b98888d11766a562050b57753354b647b741f801c2189df72ca7002611e",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120212,
+      "webpQuality": 79,
+      "alt": "Labour hutment, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/60x24 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-hutments-60x24-ft-gplus1-interior-bunk-layout-s03-b03.png",
+      "sourceSha256": "69f57340c814bcef6d083239229277335993ff58dbee7da7a0002790491551ad",
+      "target": "public/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-bunk-layout.webp",
+      "targetSha256": "9db00d3d0e947127ac1f2ef0c19ab84b53919ad981af3405766e44776a4aa1a2",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120270,
+      "webpQuality": 78,
+      "alt": "Inside a 60x24 ft G+1 labour hutment, double bunks in facing rows in the linear room block, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/60x24 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-hutments-60x24-ft-gplus1-interior-room-entrance-s03-b03.png",
+      "sourceSha256": "5d6323f67c1418bb08f8f15f8a7cc24dcf97c2c3b45fc386a539a4ee872da832",
+      "target": "public/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-room-entrance.webp",
+      "targetSha256": "a14033a48ffacf81eb8d0acf2940741fb5a626fa365068b18ac763f206273fc7",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121818,
+      "webpQuality": 80,
+      "alt": "Inside a 60x24 ft G+1 labour hutment, the entrance end of the room in the linear room block, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/60x24 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-hutments-60x24-ft-gplus1-interior-storage-ventilation-s03-b03.png",
+      "sourceSha256": "18569df21db3d6f7befee6149a1f441b4124be26f623ef537dc6e2c37b621bff",
+      "target": "public/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-storage-ventilation.webp",
+      "targetSha256": "c407fcbd38ca774fb465511338f527cd514dee3813a15f4b4b6976a548a0cb46",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 116330,
+      "webpQuality": 85,
+      "alt": "Inside a 60x24 ft G+1 labour hutment, the locker wall and ventilators in the linear room block, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-front-left-hero-central-landing-stair-s07-b07.png",
+      "sourceSha256": "101a0e5e7a4580c24ea9a57c4ca070e5401774f0d69cc57f74349248a2a8971f",
+      "target": "public/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-front-left-hero.webp",
+      "targetSha256": "107769baec396cff99e16a30c5eddccdc5d32922e05e76b105e18a7dc165d34c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117188,
+      "webpQuality": 83,
+      "alt": "Labour hutment, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the room-block hutment build."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-front-right-hero-s07-b07.png",
+      "sourceSha256": "625a36aa9ecd85cffb87e570b1f2ed9047fa5489a56e130990deeb7319a06a6c",
+      "target": "public/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-front-right-hero.webp",
+      "targetSha256": "a27967f5e9645bef3ffd1a39f0bd01e1688f4e4bc144ee5f5fcdf78d88c7a872",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120264,
+      "webpQuality": 80,
+      "alt": "Labour hutment, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-exact-front-elevation-s07-b07.png",
+      "sourceSha256": "1a6cdddc7e04978fb26044e95fbf6bf347c1aeeda91a07f63334327478ae980f",
+      "target": "public/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "fc33fbbd748d8a459c2cb0333a93059d1de44f88bfb18f70e43cd9a5b05a3af2",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122630,
+      "webpQuality": 73,
+      "alt": "Labour hutment, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-hutments-90x24-ft-gplus1-interior-bunk-layout-s07-b07.png",
+      "sourceSha256": "4a8d29df6b518d25da7b7cf6cff762b42340aa15156cbe74e8bf517e27ef14b1",
+      "target": "public/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-bunk-layout.webp",
+      "targetSha256": "49ac92d428f84d7d478ca0cf29bc9186bb1e8366fb970fd7e8d032a9c1934a63",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 113614,
+      "webpQuality": 85,
+      "alt": "Inside a 90x24 ft G+1 labour hutment, bunk beds ranged along both walls in the linear room block, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-hutments-90x24-ft-gplus1-interior-room-entrance-s07-b07.png",
+      "sourceSha256": "74c86bbe3311db940baac112ee00d4316b48645ee9190dc595c891c51d8c25de",
+      "target": "public/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-room-entrance.webp",
+      "targetSha256": "3d102767dbfba530b380cc0ee37c1283f3c65728d353d8addf2724ed2959e2fe",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122502,
+      "webpQuality": 87,
+      "alt": "Inside a 90x24 ft G+1 labour hutment, the doorway into the sleeping room in the linear room block, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-hutments-90x24-ft-gplus1-interior-storage-ventilation-s07-b07.png",
+      "sourceSha256": "862aa3ebc87de0ed36391d94bff64e3de6eb13ade4c93612014e4d77c08fbeb2",
+      "target": "public/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-storage-ventilation.webp",
+      "targetSha256": "448e5afef43d283cf47844f9ea3fb44f3e5d1302049fcd99a0a6e37f351a67b2",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118696,
+      "webpQuality": 86,
+      "alt": "Inside a 90x24 ft G+1 labour hutment, lockers under the high-level vents in the linear room block, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-front-left-hero-central-landing-stair-s19-b19.png",
+      "sourceSha256": "7f20f1d2f7cfe251283c7b10e2a2f486b02c39a05d59e93e2dd2af3a1b4b0179",
+      "target": "public/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-left-hero.webp",
+      "targetSha256": "e1e4842e07034ab36a4b466c67ed93c2b0c4f5360d346c3d4f4913043c0983a1",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 115358,
+      "webpQuality": 83,
+      "alt": "Labour hutment, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the room-block hutment build."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+2",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-front-right-hero-s19-b19.png",
+      "sourceSha256": "410399b84eef5d9fbedd978ec7e907a880165126e94f326bacaca6982e2065f8",
+      "target": "public/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-right-hero.webp",
+      "targetSha256": "146c0a3e266c53328bb76162700a1c0f230c5f0ecd3e5495d9ddf51eddebd4e0",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120156,
+      "webpQuality": 81,
+      "alt": "Labour hutment, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+2",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-exact-front-elevation-s19-b19.png",
+      "sourceSha256": "e8db055cd605e6abb3bfcb3e4df45554120992e2a0e35194483f22c3dc71725f",
+      "target": "public/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-exact-front-elevation.webp",
+      "targetSha256": "fbea1e61b131a4fbd4cbe226003062cbb13b8c4cc52184b1e2396479ea844402",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122614,
+      "webpQuality": 80,
+      "alt": "Labour hutment, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+2",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-hutments-90x24-ft-gplus2-interior-bunk-layout-s19-b19.png",
+      "sourceSha256": "353a2c464b6e743f0520878f8fa514e8a90ef835b4a1a9d1fb1eccfb23b49e31",
+      "target": "public/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-bunk-layout.webp",
+      "targetSha256": "58ca620954c094e922e14f59898186942c692be1f326c4db7795a29cf482bb0e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119490,
+      "webpQuality": 88,
+      "alt": "Inside a 90x24 ft G+2 labour hutment, the sleeping bay set out in double bunks in the linear room block, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+2",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-hutments-90x24-ft-gplus2-interior-room-entrance-s19-b19.png",
+      "sourceSha256": "d1c28562f654a293f20f62f5e33c6285623761534e3b612f96f9e38838ac6893",
+      "target": "public/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-room-entrance.webp",
+      "targetSha256": "cdec8b04cd3b88643bf25750e3eb570fe26694c442d3545d88f75245f3870f69",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121130,
+      "webpQuality": 90,
+      "alt": "Inside a 90x24 ft G+2 labour hutment, looking in from the room door in the linear room block, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/90x24 ft G+2",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-hutments-90x24-ft-gplus2-interior-storage-ventilation-s19-b19.png",
+      "sourceSha256": "8caf962c7f63cebd5a99d091d4f7a987d178868c92d5e650fabb924a68ae8a09",
+      "target": "public/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-storage-ventilation.webp",
+      "targetSha256": "b42397ac9b51818aca779a8adf1c5229d7ace6d16677ac043bd8b0b63172b403",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121048,
+      "webpQuality": 87,
+      "alt": "Inside a 90x24 ft G+2 labour hutment, personal storage below the vent line in the linear room block, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-left-hero-central-landing-stair-s11-b11.png",
+      "sourceSha256": "c07ec35a803dd596328bedec02ac509200b32c223aa6134d823db104ad8d57a3",
+      "target": "public/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-left-hero.webp",
+      "targetSha256": "410e74533c8a6577b4f5649641e7332667d5dcc1b693539b29cd6b0a71657328",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119314,
+      "webpQuality": 82,
+      "alt": "Labour hutment, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the room-block hutment build."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-right-hero-s11-b11.png",
+      "sourceSha256": "f7c5c04912773c1078abc7f2a3f29a0faed653da212b28d867cd88e783fd365f",
+      "target": "public/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-right-hero.webp",
+      "targetSha256": "b6397192fd8ada8c4dd32fccc340601f915ec8a84beadfd8e32b940e0c267c1c",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121348,
+      "webpQuality": 62,
+      "alt": "Labour hutment, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-exact-front-elevation-s11-b11.png",
+      "sourceSha256": "6d0b39f581664558db875ddbcedeefad667d711aa92f5b7df06dec7445f82429",
+      "target": "public/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "7bbccf38f3341e2ad02a0adf567001556418b264411b5591023838f172ac8dea",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122832,
+      "webpQuality": 84,
+      "alt": "Labour hutment, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-hutments-120x24-ft-gplus1-interior-bunk-layout-s11-b11.png",
+      "sourceSha256": "4a571b21323d03cbee4e15c2bc2486e55f51e3e6ddf8e536f2a0835d498b4ce3",
+      "target": "public/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-bunk-layout.webp",
+      "targetSha256": "29b3b586e2c39b138abe4de045266fa97a20b223fcf436781876084914925696",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120992,
+      "webpQuality": 85,
+      "alt": "Inside a 120x24 ft G+1 labour hutment, double bunks in facing rows in the linear room block, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-hutments-120x24-ft-gplus1-interior-room-entrance-s11-b11.png",
+      "sourceSha256": "cce21816550a6be28cb5091e3d64f5b15bdd6fd5c57a43eecd67b21accf43620",
+      "target": "public/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-room-entrance.webp",
+      "targetSha256": "94c647a91d4ffb1ad694bae65cbf5fa89b371f79d66cfb7b78dab05f99ad0070",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120912,
+      "webpQuality": 79,
+      "alt": "Inside a 120x24 ft G+1 labour hutment, the entrance end of the room in the linear room block, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-hutments-120x24-ft-gplus1-interior-storage-ventilation-s11-b11.png",
+      "sourceSha256": "549e994cb2f2c2ea0086a33be2f044bbe41593603f539f3ea9a7063ce54ec5e8",
+      "target": "public/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-storage-ventilation.webp",
+      "targetSha256": "69b7d01d0055ccfc450fe8b6e4caf178a23466cb6c6191a1582a0f884caffaf1",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122262,
+      "webpQuality": 86,
+      "alt": "Inside a 120x24 ft G+1 labour hutment, the locker wall and ventilators in the linear room block, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/118x30 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-front-left-hero-central-landing-stair-s15-b15.png",
+      "sourceSha256": "5b31e7e3fc96738d5ac9cf2e870e7747bb68c06200a36ccd7eda949ebc379e92",
+      "target": "public/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-front-left-hero.webp",
+      "targetSha256": "86da7a74fb5b9a4d4ec1421b8cb94dcab319a23630b568f6b0d49ec9811cafbc",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121350,
+      "webpQuality": 78,
+      "alt": "Labour hutment, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the room-block hutment build."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/118x30 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-front-right-hero-s15-b15.png",
+      "sourceSha256": "a500300e116a54113089bb95c54e41a17960fc1e8819d7f19e0029af270964dc",
+      "target": "public/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-front-right-hero.webp",
+      "targetSha256": "15c5a4ccbcaa73c26d6f2b1d3571b2a8d35ce83c776a70958c6fb9b46014a64c",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119390,
+      "webpQuality": 78,
+      "alt": "Labour hutment, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/118x30 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-exact-front-elevation-s15-b15.png",
+      "sourceSha256": "465f80c560cdaed04fe55574b520de630d4af0dcfbbbadfdcfc14862598357e7",
+      "target": "public/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-exact-front-elevation.webp",
+      "targetSha256": "c8c167734c937d0d6f7542fe024727f5260b22dac3834815bde6fbf94c09f35c",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121294,
+      "webpQuality": 60,
+      "alt": "Labour hutment, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/118x30 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-hutments-118x30-ft-gplus1-interior-bunk-layout-s15-b15.png",
+      "sourceSha256": "194cf614a5697f42c0af1c5f750775f18f0a61e356bea81b0feff83045914c8b",
+      "target": "public/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-bunk-layout.webp",
+      "targetSha256": "f338d11c9fdd38c477bf64242f7ec2ac7a0cbe857fdd21c7d17455d4767bd623",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 116216,
+      "webpQuality": 85,
+      "alt": "Inside a 118x30 ft G+1 labour hutment, bunk beds ranged along both walls in the linear room block, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/118x30 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-hutments-118x30-ft-gplus1-interior-room-entrance-s15-b15.png",
+      "sourceSha256": "67b7fc0576c801fb3b28f188fb951b1dd4bab9230d63ea1680d379c4044be276",
+      "target": "public/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-room-entrance.webp",
+      "targetSha256": "35d035b5a57b8fed6acf8f0a569d0acfdb6c96ac40e0cf7fa42bc98bbbe352d1",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 115348,
+      "webpQuality": 87,
+      "alt": "Inside a 118x30 ft G+1 labour hutment, the doorway into the sleeping room in the linear room block, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/118x30 ft G+1",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-hutments-118x30-ft-gplus1-interior-storage-ventilation-s15-b15.png",
+      "sourceSha256": "f6843e3e3f5797d9fd9aacecfc0fb880d51acdb922b3f73d64f165a9d4f65b4e",
+      "target": "public/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-storage-ventilation.webp",
+      "targetSha256": "7c9b9428ee7b45562ae026b38b5ed83e27415398702ec76322b2138d82912640",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119650,
+      "webpQuality": 86,
+      "alt": "Inside a 118x30 ft G+1 labour hutment, lockers under the high-level vents in the linear room block, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-front-left-hero-central-landing-stair-s23-b23.png",
+      "sourceSha256": "63542d0c06180dcc73749b79485057e5597ffebbd1e7897636676b1cd37851d5",
+      "target": "public/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-front-left-hero.webp",
+      "targetSha256": "d430b6263b0025e8910bc9dd15ff28bfcfb29a94cf70dea73bbb10f82a77065e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118190,
+      "webpQuality": 76,
+      "alt": "Labour hutment, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the room-block hutment build."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+2",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-front-right-hero-s23-b23.png",
+      "sourceSha256": "ff7788dc248eb917d7b3870834a11c2c07d2efd3c4e8e127c565ee3b6d0371dd",
+      "target": "public/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-front-right-hero.webp",
+      "targetSha256": "97975cc9774a64b1417013df97e384b7c5a4a0d28178b523662db5aef30677c6",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121366,
+      "webpQuality": 75,
+      "alt": "Labour hutment, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+2",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-exact-front-elevation-s23-b23.png",
+      "sourceSha256": "e9334e3d7215fb63c75bd97ce5b97d551bf55b3f18fc0f3e6596037766c72c55",
+      "target": "public/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-exact-front-elevation.webp",
+      "targetSha256": "49d09d150a1f7e2e951065d0d810d70650ff2ed2882d77fd3d29a0399715f62b",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119148,
+      "webpQuality": 80,
+      "alt": "Labour hutment, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the room-block hutment build in view."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+2",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-hutments-120x24-ft-gplus2-interior-bunk-layout-s23-b23.png",
+      "sourceSha256": "0c6a323cb52848dd62b77566bac332f91e0f7246bf40ffe7e65b884e17e26683",
+      "target": "public/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-bunk-layout.webp",
+      "targetSha256": "39a50dd1917d496458794bd533dbda651d42962d0f8d16984ea670036cbbc8b6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120404,
+      "webpQuality": 80,
+      "alt": "Inside a 120x24 ft G+2 labour hutment, the sleeping bay set out in double bunks in the linear room block, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+2",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-hutments-120x24-ft-gplus2-interior-room-entrance-s23-b23.png",
+      "sourceSha256": "6acab1c38444bf5fdbe7d06b72e37190315921c875e6d16d8f0994f6d5353345",
+      "target": "public/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-room-entrance.webp",
+      "targetSha256": "9ec47cf864a64e2f11a4ca42fcb45ee3dd5ce426ad48b0dfa524ea41f1984d28",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122662,
+      "webpQuality": 82,
+      "alt": "Inside a 120x24 ft G+2 labour hutment, looking in from the room door in the linear room block, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Labor Hutments/120x24 ft G+2",
+      "sourceViewToken": "interior-storage-ventilation",
+      "sourceFilename": "labor-hutments-120x24-ft-gplus2-interior-storage-ventilation-s23-b23.png",
+      "sourceSha256": "25e82a7061b31e29bb595491d2513c0090d2cc2db0dfc215464315ca93540242",
+      "target": "public/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-storage-ventilation.webp",
+      "targetSha256": "9d2f67e902134f9cfa930e5eb5e45d4f7bc4a5612c0aa3e2b72d82241c768a92",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 111780,
+      "webpQuality": 89,
+      "alt": "Inside a 120x24 ft G+2 labour hutment, personal storage below the vent line in the linear room block, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Hutments/120x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-right-hero-s11-b11.png",
+      "sourceSha256": "f7c5c04912773c1078abc7f2a3f29a0faed653da212b28d867cd88e783fd365f",
+      "target": "public/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-right-hero-wide.webp",
+      "targetSha256": "e73e6b5df75f2dc70e0bc7977a930e910406234b66895bd01f22c891ee248d9a",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 118358,
+      "webpQuality": 87,
+      "alt": "Room-block labour hutment of 120x24 ft from the corner, personnel doors repeating along the walkway."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Hutments/90x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-exact-front-elevation-s07-b07.png",
+      "sourceSha256": "1a6cdddc7e04978fb26044e95fbf6bf347c1aeeda91a07f63334327478ae980f",
+      "target": "public/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-exact-front-elevation-wide.webp",
+      "targetSha256": "404234f0291a4b0f3846568def71b8a7d77356d77191cb9b32a06f6f5f8f39e3",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 121008,
+      "webpQuality": 88,
+      "alt": "The 90 ft hutment face on, each room door paired with its own window."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Hutments/90x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-front-left-hero-central-landing-stair-s19-b19.png",
+      "sourceSha256": "7f20f1d2f7cfe251283c7b10e2a2f486b02c39a05d59e93e2dd2af3a1b4b0179",
+      "target": "public/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-left-hero-wide.webp",
+      "targetSha256": "d7577f980818ebfa3868da17821522d2319fbe78122afd1f2c827a07d5daef64",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 122354,
+      "webpQuality": 90,
+      "alt": "Three floors of hutment rooms seen from the stair end of the 90 ft block."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Hutments/118x30 ft G+1",
+      "sourceViewToken": "rear-left-three-quarter",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-rear-left-three-quarter-s15-b15.png",
+      "sourceSha256": "e627264a4d5546be41550342da2c03c77633461aae9a2cceb5fb6334f2eea8f3",
+      "target": "public/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-rear-left-three-quarter-wide.webp",
+      "targetSha256": "1057d7b1f445bf6277d7cec56559949194e4c50a4ba00ed0f7eb3ebd47626645",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 118788,
+      "webpQuality": 85,
+      "alt": "Rear three-quarter of the wide-body hutment showing the deeper room bays."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Hutments/120x24 ft G+1",
+      "sourceViewToken": "interior-bunk-layout",
+      "sourceFilename": "labor-hutments-120x24-ft-gplus1-interior-bunk-layout-s11-b11.png",
+      "sourceSha256": "4a571b21323d03cbee4e15c2bc2486e55f51e3e6ddf8e536f2a0835d498b4ce3",
+      "target": "public/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-bunk-layout-wide.webp",
+      "targetSha256": "a27eb57578bb5fa8012a1f21cce9bd1eea68b5c307b68a6ed92e2060e017a047",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 98808,
+      "webpQuality": 90,
+      "alt": "Inside one hutment room, bunks along the walls and the door to the passage."
+    },
+    {
+      "slug": "labor-hutments",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Labor Hutments/60x24 ft G+1",
+      "sourceViewToken": "interior-room-entrance",
+      "sourceFilename": "labor-hutments-60x24-ft-gplus1-interior-room-entrance-s03-b03.png",
+      "sourceSha256": "5d6323f67c1418bb08f8f15f8a7cc24dcf97c2c3b45fc386a539a4ee872da832",
+      "target": "public/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-room-entrance-wide.webp",
+      "targetSha256": "bed00100de846c6a76ddf7bc2cb4e3608cd4dac6af9c964acc93fab8491edc42",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 112974,
+      "webpQuality": 90,
+      "alt": "Entrance view into a compact hutment room from its passage door."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "prefab-labor-camps-60x24-ft-gplus1-front-left-hero-x-stair-s04-b04.png",
+      "sourceSha256": "197aac03f29a73579dda142742ed87fb0fd929c8bd68ec911e6e32d09b044f5a",
+      "target": "public/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-left-hero.webp",
+      "targetSha256": "53f219782a7fd35f2c70e0971e18c2374676d63bff358d4c17194ba8fa102ba6",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120886,
+      "webpQuality": 80,
+      "alt": "Prefab labour camp, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the bolted panel camp build."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-front-right-hero-s04-b04.png",
+      "sourceSha256": "1ec5c41e1da57c254eb96c39496da706166721510a95ede034d399a84f062f18",
+      "target": "public/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp",
+      "targetSha256": "b02825a3403b7d60c7fc8f21df56850530c366529def4f640773f6f1ab3cb147",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118084,
+      "webpQuality": 85,
+      "alt": "Prefab labour camp, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-exact-front-elevation-s04-b04.png",
+      "sourceSha256": "3d5aa1af67d5d612484179c6dc017615226f0cdc599f449b9f5d38f69c91ad65",
+      "target": "public/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "0ce9671027c137ff802b5f0febcbe3c3dfd1e403b99d87b7415afe0d520d9af2",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118726,
+      "webpQuality": 78,
+      "alt": "Prefab labour camp, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "prefab-labor-camps-60x24-ft-gplus1-bunk-bed-layout-wide-interior-s04-b04.png",
+      "sourceSha256": "db2582077ec1e2de5b4e627d2169144ec3420cb6bae0882fff99595504727b75",
+      "target": "public/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "f57a12cddc862d299dad53061d7d7e59164ebf2a2d9c59e7abd71e3da16c1c5c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 114248,
+      "webpQuality": 87,
+      "alt": "Inside a 60x24 ft G+1 prefab labour camp, double bunks in facing rows in the bolted panel block, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "prefab-labor-camps-60x24-ft-gplus1-room-entrance-axis-interior-s04-b04.png",
+      "sourceSha256": "6178e8dfa840a06ab04b3e480d34a506ede351596be378902ca71cbb39150341",
+      "target": "public/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-room-entrance-axis-interior.webp",
+      "targetSha256": "30c49688a76dbc82b5d74f3570148ed627b3996b5d61fa3299f835a19d12ce86",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 111588,
+      "webpQuality": 90,
+      "alt": "Inside a 60x24 ft G+1 prefab labour camp, the entrance end of the room in the bolted panel block, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "prefab-labor-camps-60x24-ft-gplus1-room-reverse-axis-interior-s04-b04.png",
+      "sourceSha256": "12e03881c3b3c01807dfab6af5d6ccf1ba134f82607b3b717f3f9ec31eaeecc6",
+      "target": "public/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-room-reverse-axis-interior.webp",
+      "targetSha256": "ad0c77316d4a027e15916c9d6c70ad41de1acc91d61b4173a1c6f2174a3ae68e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121092,
+      "webpQuality": 85,
+      "alt": "Inside a 60x24 ft G+1 prefab labour camp, the return view toward the door in the bolted panel block, sleeping planned for 58 to 72 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus1-front-left-hero-x-stair-s08-b08.png",
+      "sourceSha256": "ee5508c4b865bd446d793b3b6186e53d963c5f4a545171557f2dc2dbf445003f",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-front-left-hero.webp",
+      "targetSha256": "cc0cd1951edc5679f9c6c141899b7b560c6df31170119046ca340165f805bf68",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117504,
+      "webpQuality": 81,
+      "alt": "Prefab labour camp, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the bolted panel camp build."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-front-right-hero-s08-b08.png",
+      "sourceSha256": "cfbcd4e55c5582bf3b1d9341abec6e921331eaf46b1722822885d842907f0b70",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-front-right-hero.webp",
+      "targetSha256": "de617e23f499d7a56867f2222de88d4f238655d1c507e5f0f2dfd5c318cd83a9",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120542,
+      "webpQuality": 81,
+      "alt": "Prefab labour camp, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus1-exact-front-elevation-s08-b08.png",
+      "sourceSha256": "b3e4a744eb083924c123e8be93623f63d1f43442df391238e327c011751a4bd1",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "cd541b8ac4c2818fe68113f68237d94cab863f82f20cd5f14ca4f7cc710d5e76",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122706,
+      "webpQuality": 74,
+      "alt": "Prefab labour camp, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus1-bunk-bed-layout-wide-interior-s08-b08.png",
+      "sourceSha256": "000dd50558ddc024f9b002bfc9fd34740ec09980f887c4303f5c6d7342c2aa30",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "e6557f1e9f2d683b4a356a46ac2e89d172abc160f0a9cb2381ec2f0488e223f8",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119438,
+      "webpQuality": 82,
+      "alt": "Inside a 90x24 ft G+1 prefab labour camp, bunk beds ranged along both walls in the bolted panel block, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus1-room-entrance-axis-interior-s08-b08.png",
+      "sourceSha256": "6ad85e881a3a5a7622a41b75d2e0200b91b618321a077edcaf50a35ce31f7de5",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-room-entrance-axis-interior.webp",
+      "targetSha256": "10d77ba8e0c51fce4c95e6eed5158f997a6f608eee769f881c7892f09458ec1a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 115420,
+      "webpQuality": 88,
+      "alt": "Inside a 90x24 ft G+1 prefab labour camp, the doorway into the sleeping room in the bolted panel block, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus1-room-reverse-axis-interior-s08-b08.png",
+      "sourceSha256": "8c9fa6e2a3de6252d3989b38cdd116d9aa404e51012115d2a4d85bd4b5d0805e",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-room-reverse-axis-interior.webp",
+      "targetSha256": "d4be28e1f6d0ec4b978fb53cef6b43a4a91a1c89a153874bc604044241f8ff0d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121778,
+      "webpQuality": 79,
+      "alt": "Inside a 90x24 ft G+1 prefab labour camp, looking back toward the room door in the bolted panel block, sleeping planned for 86 to 108 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus2-front-left-hero-x-stair-s20-b20.png",
+      "sourceSha256": "044537d842ec4778abe7b51ac023d4e027d10fe45fe7fe2cca0f40905abb5fc2",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-front-left-hero.webp",
+      "targetSha256": "46ff2f20a9e3b4e9b872f6caf5806f7569d8d5207b96b34f2d8474158468251c",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120458,
+      "webpQuality": 69,
+      "alt": "Prefab labour camp, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the bolted panel camp build."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-front-right-hero-s20-b20.png",
+      "sourceSha256": "19593201593cb408d28737cb286ad9e2f3793735d5f8953741ec2bda21006e9c",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-front-right-hero.webp",
+      "targetSha256": "145c9b8fcebe86c801cb74b246d00fd89f3d9e76b2ee1ad3d81ab1312c3808d9",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122612,
+      "webpQuality": 50,
+      "alt": "Prefab labour camp, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-90x24-ft-gplus2-exact-front-elevation-s20-b20.png",
+      "sourceSha256": "85fe46ef842cb81c06c631261653f131be6eabe4e9cc408bd85c31e2b390649c",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-exact-front-elevation.webp",
+      "targetSha256": "182041aff3aaf212bcb4f072c083e9618911fa27d496d5be6ddf41762f1e2dd6",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121280,
+      "webpQuality": 76,
+      "alt": "Prefab labour camp, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus2-bunk-bed-layout-wide-interior-s20-b20.png",
+      "sourceSha256": "b88b1ae8356222340a05492f0e301833089655c2999fb7c5949e4e7679b298de",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "9e4eb180364229382b6a0466051f6609a81bba1ed58a1f303c558a19191b7cb6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122274,
+      "webpQuality": 79,
+      "alt": "Inside a 90x24 ft G+2 prefab labour camp, the sleeping bay set out in double bunks in the bolted panel block, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus2-room-entrance-axis-interior-s20-b20.png",
+      "sourceSha256": "076d520f59e016aa7c06a28572523a4886a1b5dd842ee380b992fc22fca0bc83",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-entrance-axis-interior.webp",
+      "targetSha256": "2fd1966c2d27f1680fb2aadae07d2569ce38b6ddd77c64529ff8a8e971ab5978",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121440,
+      "webpQuality": 84,
+      "alt": "Inside a 90x24 ft G+2 prefab labour camp, looking in from the room door in the bolted panel block, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+2",
+      "sizeSlug": "90x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+2",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus2-room-reverse-axis-interior-s20-b20.png",
+      "sourceSha256": "7305fa954a8224be9fa92d5938573735db75cf12953a9fa43742f454d12d21f2",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-reverse-axis-interior.webp",
+      "targetSha256": "d7d03ca245eb91225227073a809c8838eb7b8463f7e2275da33cd6827a33534e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122582,
+      "webpQuality": 82,
+      "alt": "Inside a 90x24 ft G+2 prefab labour camp, the room seen from its far end in the bolted panel block, sleeping planned for 129 to 162 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "prefab-labor-camps-120x24-ft-gplus1-front-left-hero-x-stair-s12-b12.png",
+      "sourceSha256": "078338e105895dc5aac799e095dc5bad48ec6ac946afb77b901c495c75017773",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-left-hero.webp",
+      "targetSha256": "4f274a922765569301fca7c56d999e523baea67621248386e3137a5087f8f187",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122880,
+      "webpQuality": 64,
+      "alt": "Prefab labour camp, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the bolted panel camp build."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-right-hero-s12-b12.png",
+      "sourceSha256": "da87705ab1f828b7b1021d45efc4aafbb62db41fa08c41297dff4c86949dce7d",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-right-hero.webp",
+      "targetSha256": "c221b6f1114f702cd5f1a45db5520a29e2c4f9ed665ba41b6da69c76092d499d",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120148,
+      "webpQuality": 76,
+      "alt": "Prefab labour camp, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-exact-front-elevation-s12-b12.png",
+      "sourceSha256": "0371b79bb26919df6c0e3f1c0e71cc4ce0112c8abc1a8cf196885c2b9862d0f2",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-exact-front-elevation.webp",
+      "targetSha256": "0ec3a62170a97cca8f6c2fc41635ce8668c9b18c9f7729b52d48a7ea0053eb3d",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122756,
+      "webpQuality": 76,
+      "alt": "Prefab labour camp, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "prefab-labor-camps-120x24-ft-gplus1-bunk-bed-layout-wide-interior-s12-b12.png",
+      "sourceSha256": "15edd0b5f49798a34fe3c713ca4191b765a74582aa4ecf67813354a2b45c72a5",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "3ac7d5f857496a161de19b28190a6fa992e3148fd5b18cbf8cf42412edd413de",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 119120,
+      "webpQuality": 83,
+      "alt": "Inside a 120x24 ft G+1 prefab labour camp, double bunks in facing rows in the bolted panel block, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "prefab-labor-camps-120x24-ft-gplus1-room-entrance-axis-interior-s12-b12.png",
+      "sourceSha256": "5456d44442dad9c30410e37902361bd0018d6a221659b52ca9b7bd58d2b56a46",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-room-entrance-axis-interior.webp",
+      "targetSha256": "3a0ab5e77bb262694dcc975b775545014107c3acd6f62aff9807e61fdfdbeefe",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 111598,
+      "webpQuality": 85,
+      "alt": "Inside a 120x24 ft G+1 prefab labour camp, the entrance end of the room in the bolted panel block, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "prefab-labor-camps-120x24-ft-gplus1-room-reverse-axis-interior-s12-b12.png",
+      "sourceSha256": "a7349dfd3035fc1a77f3b6f19eaa6c653d0867bc7365942a3a72921c5980736b",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-room-reverse-axis-interior.webp",
+      "targetSha256": "fdfbc82672979f3d0100bfb5bfcee54369a25179ed12514585e2041102663492",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 118884,
+      "webpQuality": 83,
+      "alt": "Inside a 120x24 ft G+1 prefab labour camp, the return view toward the door in the bolted panel block, sleeping planned for 115 to 144 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "prefab-labor-camps-118x30-ft-gplus1-front-left-hero-x-stair-s16-b16.png",
+      "sourceSha256": "aea4e8f546acf9deedc72ef43ace1262428ff6fec0e4019f0fd7720320a56d63",
+      "target": "public/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-front-left-hero.webp",
+      "targetSha256": "54af19c917c3928440200cb1c5491ea0b3fdc6679c8ba652a64b0c4f9b85ac0e",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117272,
+      "webpQuality": 79,
+      "alt": "Prefab labour camp, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the bolted panel camp build."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-front-right-hero-s16-b16.png",
+      "sourceSha256": "0097cacae2bb4a60448b147424c9c9689588c2b4732cb3a717c307d307854878",
+      "target": "public/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-front-right-hero.webp",
+      "targetSha256": "92afdd025480ccf0e2070caa3308352da33e4a98b19d5d99ffa5c10060e12168",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121464,
+      "webpQuality": 59,
+      "alt": "Prefab labour camp, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-118x30-ft-gplus1-exact-front-elevation-s16-b16.png",
+      "sourceSha256": "aacd664b6b2727317f436303599e9545684dcc9afd4542b1abc1dae781fcaaea",
+      "target": "public/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-exact-front-elevation.webp",
+      "targetSha256": "54ab042d14839dfb089de432996a616651136a229a0c907b0625d17b85136955",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121198,
+      "webpQuality": 78,
+      "alt": "Prefab labour camp, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "prefab-labor-camps-118x30-ft-gplus1-bunk-bed-layout-wide-interior-s16-b16.png",
+      "sourceSha256": "9a2038759ad1dbd6d7520701371fa21d91c408317c727d7b925520cc5cf282ee",
+      "target": "public/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "5e6ecf3e23871d9a159b9594b362620618292b55d8942db8112e3bc812164b20",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120898,
+      "webpQuality": 78,
+      "alt": "Inside a 118x30 ft G+1 prefab labour camp, bunk beds ranged along both walls in the bolted panel block, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "prefab-labor-camps-118x30-ft-gplus1-room-entrance-axis-interior-s16-b16.png",
+      "sourceSha256": "bdccc24c6718171da10d3e018bbcc50284546d6cccfd4f66e6379eb356e33164",
+      "target": "public/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-entrance-axis-interior.webp",
+      "targetSha256": "67a9513178694768f565c61a03c605bfe8385e972b0fbcdaa31fb3672f5098c6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 120440,
+      "webpQuality": 86,
+      "alt": "Inside a 118x30 ft G+1 prefab labour camp, the doorway into the sleeping room in the bolted panel block, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "prefab-labor-camps-118x30-ft-gplus1-room-reverse-axis-interior-s16-b16.png",
+      "sourceSha256": "42966ba7e7eb71e975309a6093f61ded2f93f168372f50ed450867bdf761ec02",
+      "target": "public/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-reverse-axis-interior.webp",
+      "targetSha256": "5958a914c73733c42c0ec6e4ea323d37279f7650632fb64f3d3a4898f82967cc",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 117278,
+      "webpQuality": 86,
+      "alt": "Inside a 118x30 ft G+1 prefab labour camp, looking back toward the room door in the bolted panel block, sleeping planned for 142 to 177 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "section2",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "prefab-labor-camps-120x24-ft-gplus2-front-left-hero-x-stair-s24-b24.png",
+      "sourceSha256": "98d41698083eefce38427cbb4f0c3c40c7a1dc6686b131ff1928bebe6e4cda08",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-left-hero.webp",
+      "targetSha256": "991955acdf0304fae5a94e3cea26fa7ea61bc783a8e095e7d42c3c5579993f32",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121788,
+      "webpQuality": 60,
+      "alt": "Prefab labour camp, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the bolted panel camp build."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-front-right-hero-s24-b24.png",
+      "sourceSha256": "c6f9d27e57d525987b585715eeb4d80404d0c56b3408a2ea8815d4a984136552",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-right-hero.webp",
+      "targetSha256": "cc9845ccc1e78db98e46d407c62e2b5e4e396faf137a090214b8b9dd85be69b1",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121896,
+      "webpQuality": 67,
+      "alt": "Prefab labour camp, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+      "sourceViewToken": "exact-front-elevation",
+      "sourceFilename": "labour-colony-120x24-ft-gplus2-exact-front-elevation-s24-b24.png",
+      "sourceSha256": "237de801b283274e045f7eb19fd8340b86b85a87e0811de2e95ed72dace54b80",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-exact-front-elevation.webp",
+      "targetSha256": "460f2f2cf658d31a8a896d6a1ce082424071a0e65b2e1353014cc60ff44959f2",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 122742,
+      "webpQuality": 80,
+      "alt": "Prefab labour camp, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the bolted panel camp build in view."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "prefab-labor-camps-120x24-ft-gplus2-bunk-bed-layout-wide-interior-s24-b24.png",
+      "sourceSha256": "a4e48eb3237c5a6c53887fec0777f10e9578cc86dbd901cf711d36bd205fef47",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-bunk-bed-layout-wide-interior.webp",
+      "targetSha256": "6bcc022257f0cc8c6781280bd529d209b31ccdc07314461a65ef787fb90eaa84",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 121698,
+      "webpQuality": 88,
+      "alt": "Inside a 120x24 ft G+2 prefab labour camp, the sleeping bay set out in double bunks in the bolted panel block, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "prefab-labor-camps-120x24-ft-gplus2-room-entrance-axis-interior-s24-b24.png",
+      "sourceSha256": "62c5c2c112cb2731ed64bd255e32fff7b9b255c7e8cd9b20c8a161b78e0cb77b",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-room-entrance-axis-interior.webp",
+      "targetSha256": "16682922a1fb0bfdb9c8919f2534e33ccbb7152bb0d694b58b3e8e175db0a23a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 116842,
+      "webpQuality": 87,
+      "alt": "Inside a 120x24 ft G+2 prefab labour camp, looking in from the room door in the bolted panel block, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "gallery",
+      "kind": "variant",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+      "sourceViewToken": "room-reverse-axis-interior",
+      "sourceFilename": "prefab-labor-camps-120x24-ft-gplus2-room-reverse-axis-interior-s24-b24.png",
+      "sourceSha256": "cd25940725574502e2f1f3e909232e1fbeb8b6020a1b7b198df7e986b89834d4",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-room-reverse-axis-interior.webp",
+      "targetSha256": "2b9e8e9181cbd5ab2eabd5c81a24216117f64d5abaab946864d4076e3eb89fab",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        1200
+      ],
+      "targetBytes": 114956,
+      "webpQuality": 86,
+      "alt": "Inside a 120x24 ft G+2 prefab labour camp, the room seen from its far end in the bolted panel block, sleeping planned for 173 to 216 workers."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+1",
+      "sizeSlug": "120x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+1",
+      "sourceViewToken": "front-right-hero",
+      "sourceFilename": "labour-colony-120x24-ft-gplus1-front-right-hero-s12-b12.png",
+      "sourceSha256": "da87705ab1f828b7b1021d45efc4aafbb62db41fa08c41297dff4c86949dce7d",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-right-hero-wide.webp",
+      "targetSha256": "7b95b3453af4f186189d8217f3f62ee56b3c6e51171ccec80c95a6f5b405ad97",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 117790,
+      "webpQuality": 88,
+      "alt": "Bolted-panel labour camp block of 120x24 ft from the corner, module joints visible in the wall run."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+      "sourceViewToken": "exact-x-stair-end-elevation",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus1-exact-x-stair-end-elevation-s08-b08.png",
+      "sourceSha256": "c1f10e428210b84f7141bb574f949467863174741a15a26c6ec3be764159571a",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-exact-x-stair-end-elevation-wide.webp",
+      "targetSha256": "7de8ae622405fb3500143cf46ca71ff7658648fa8fdd93a0aeb53968ddeb5dda",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 111808,
+      "webpQuality": 90,
+      "alt": "Stair-end elevation of the 90 ft camp block, panel grid and landings in line."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "120x24 ft G+2",
+      "sizeSlug": "120x24-gplus2",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Prefab Labor Camps/120x24 ft G+2",
+      "sourceViewToken": "front-left-hero",
+      "sourceFilename": "prefab-labor-camps-120x24-ft-gplus2-front-left-hero-x-stair-s24-b24.png",
+      "sourceSha256": "98d41698083eefce38427cbb4f0c3c40c7a1dc6686b131ff1928bebe6e4cda08",
+      "target": "public/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-left-hero-wide.webp",
+      "targetSha256": "5506c29958c116d2dc18b029381f479368611df2f35f63d9e8de6b8d428e3fdb",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 119062,
+      "webpQuality": 83,
+      "alt": "The largest demountable camp block, three panel floors from the stair end."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "60x24 ft G+1",
+      "sizeSlug": "60x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Prefab Labor Camps/60x24 ft G+1",
+      "sourceViewToken": "rear-left-three-quarter",
+      "sourceFilename": "labour-colony-60x24-ft-gplus1-rear-left-three-quarter-s04-b04.png",
+      "sourceSha256": "4ab2d259301c3a658017c03ca8ef9d7411a3ee23eec9c68aa8ab2192f8939f66",
+      "target": "public/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-rear-left-three-quarter-wide.webp",
+      "targetSha256": "fb5d18ec696bae5bdf0ca66ba2752994d51924eccecdfc8a1e19f22f578d585b",
+      "sourceDimensions": [
+        2048,
+        2048
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 115274,
+      "webpQuality": 90,
+      "alt": "Rear quarter of the starter camp block showing panel joints and service entries."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "90x24 ft G+1",
+      "sizeSlug": "90x24-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Prefab Labor Camps/90x24 ft G+1",
+      "sourceViewToken": "bunk-bed-layout-wide-interior",
+      "sourceFilename": "prefab-labor-camps-90x24-ft-gplus1-bunk-bed-layout-wide-interior-s08-b08.png",
+      "sourceSha256": "000dd50558ddc024f9b002bfc9fd34740ec09980f887c4303f5c6d7342c2aa30",
+      "target": "public/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-bunk-bed-layout-wide-interior-wide.webp",
+      "targetSha256": "6c0cd0a08f6b6821540e658a2134c485d2755affb2b35efa7a243b43c3ad340c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 113410,
+      "webpQuality": 90,
+      "alt": "Camp sleeping room in wide view, bunks ranged inside the panel shell."
+    },
+    {
+      "slug": "prefab-labor-camps",
+      "size": "118x30 ft G+1",
+      "sizeSlug": "118x30-gplus1",
+      "slot": "description",
+      "kind": "description",
+      "sourceFolder": "Prefab Labor Camps/118x30 ft G+1",
+      "sourceViewToken": "room-entrance-axis-interior",
+      "sourceFilename": "prefab-labor-camps-118x30-ft-gplus1-room-entrance-axis-interior-s16-b16.png",
+      "sourceSha256": "bdccc24c6718171da10d3e018bbcc50284546d6cccfd4f66e6379eb356e33164",
+      "target": "public/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-entrance-axis-interior-wide.webp",
+      "targetSha256": "b2c556a2174e1a53423c660ab35c4c214848eec095eacb786e86863ff67077fb",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "targetDimensions": [
+        1200,
+        675
+      ],
+      "targetBytes": 104276,
+      "webpQuality": 90,
+      "alt": "Down the room axis of the wide-body camp block from its entrance door."
+    }
+  ]
+}

@@ -212,6 +212,11 @@ export default function ProductStructuredData({ product, category, reviews, brea
           offerCount: variantData.variants.length,
           availability: 'https://schema.org/InStock',
           priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'INR',
+            valueAddedTaxIncluded: false,
+          },
         }
       : null;
 
@@ -233,7 +238,9 @@ export default function ProductStructuredData({ product, category, reviews, brea
       // T25 — the product noun comes from the variant data / its preset, falling
       // back to the page's real product name. It was hardcoded "Porta Cabin",
       // which would have mis-named every sibling subpage's variants.
-      name: `${v.label.replace(/\s*ft$/i, '')} ft ${variantProductName}`,
+      name: /\bft\s+G\+\d$/i.test(v.label)
+        ? `${v.label} ${variantProductName}`
+        : `${v.label.replace(/\s*ft$/i, '')} ft ${variantProductName}`,
       sku: v.sku,
       // T24.1 B — `size` matches the parent's variesBy: 'size' and clears the GSC
       // Merchant-listings "Missing field size" warning on all 9 variants. Value is
@@ -253,6 +260,12 @@ export default function ProductStructuredData({ product, category, reviews, brea
           availability: 'https://schema.org/InStock',
           url: productUrl,
           ...(hasRightToExistVariant ? {
+            priceSpecification: {
+              '@type': 'UnitPriceSpecification',
+              price: v.priceExGst,
+              priceCurrency: 'INR',
+              valueAddedTaxIncluded: false,
+            },
             hasMerchantReturnPolicy: {
               '@type': 'MerchantReturnPolicy',
               applicableCountry: 'IN',

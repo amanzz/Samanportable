@@ -685,7 +685,7 @@ export function PortaCabinVariantHero({
   // INFO-ONLY buy box: no CTA buttons here (owner ruling — desktop conversion
   // lives in the gallery column's zone cards; mobile keeps the sticky bar).
   const buyBoxColumn = (Heading: 'h1' | 'p') => (
-    <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:h-full lg:flex lg:flex-col">
+    <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:h-full lg:overflow-visible lg:flex lg:flex-col">
       <div className="space-y-3 lg:flex lg:flex-1 lg:flex-col">
         <div className="space-y-1">
           <Heading className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">{data.productName || productTitle}</Heading>
@@ -761,9 +761,11 @@ export function PortaCabinVariantHero({
             1280+:4L(84). All 9 share one height per tier, so size swaps are zero-CLS;
             every blurb fits with no truncation at 360/768/1024/1440. overflow-hidden
             is a safety net only (nothing is actually clipped at any width ≥320). */}
-        {heroActive.shortDescription && (
-          <p className="h-[126px] min-[360px]:h-[105px] sm:h-[63px] md:h-[42px] lg:h-[105px] xl:h-[84px] overflow-hidden text-sm leading-[1.5] text-[var(--ds-color-steel)]">
-            {heroActive.shortDescription}
+        {(heroActive.shortDescription || data.opener) && (
+          <p className={data.opener
+            ? 'text-sm leading-[1.5] text-[var(--ds-color-steel)]'
+            : 'h-[126px] min-[360px]:h-[105px] sm:h-[63px] md:h-[42px] lg:h-[105px] xl:h-[84px] overflow-hidden text-sm leading-[1.5] text-[var(--ds-color-steel)]'}>
+            {data.opener || heroActive.shortDescription}
           </p>
         )}
 
@@ -897,7 +899,7 @@ export function PortaCabinVariantHero({
           </div>
         </aside>
 
-        {video && (
+        {video?.transcriptHeading && video.transcript && (
           <details className="pc-transcript rounded-lg border border-slate-200 bg-white/80 px-3 py-2 text-sm text-slate-700">
             <summary className="cursor-pointer font-semibold text-slate-900">
               Video transcript

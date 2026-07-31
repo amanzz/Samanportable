@@ -1542,69 +1542,198 @@
   </url>
   <url>
     <loc>https://www.samanportable.com/product/labor-colony</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/Labour-camp-constructed-with-safety-first-approach.webp</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/Quick-to-install-labour-camp-delivered-by-SAMAN.webp</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/Site-housing-cabins-offered-by-SAMAN-for-workers.webp</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/double-storey-prefab-labour-camp-blue-rails.webp</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/industrial-campus-with-blue-and-white-architecture.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/industrial-housing-camp-with-distant-skyline.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/industrial-prefabricated-buildings-in-daylight.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/temporary-construction-site-in-rural-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/Modular-worker-cabins-developed-by-SAMAN-Portable.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-hutments-12x20-ft-mid-duration-project-site-india-hero.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-shed-single-block-multi-room-bangalore-india.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/prefab-labor-camp-hero-full-deployment-india.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-exact-front-elevation-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labor-colony-118x30-gplus1-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-front-right-hero-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus1/labor-colony-120x24-gplus1-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-exact-x-stair-end-elevation-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/120x24-gplus2/labor-colony-120x24-gplus2-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-storage-ventilation-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-bunk-bed-layout-wide-interior-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus1/labor-colony-90x24-gplus1-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-front-left-hero-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/90x24-gplus2/labor-colony-90x24-gplus2-room-reverse-axis-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/labor-colony/labor-hutments</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-hutments-front-door-concrete-plinth-foundation-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-hutments-highway-sub-contractor-camp-nhai-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-hutments-mep-workforce-factory-build-bangalore-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-hutments-metro-rail-construction-site-india-stacked.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-hutments-ms-frame-puf-panel-junction-detail.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-hutments-prefab-delivery-bridge-construction-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-hutments-side-elevation-windows-electrical-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-hutments-thermal-power-plant-sub-station-workforce-india-1.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-hutments-workers-moving-in-india-project-site.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/Modular-worker-cabins-developed-by-SAMAN-Portable.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-hutments-12x20-ft-mid-duration-project-site-india-hero.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-shed-single-block-multi-room-bangalore-india.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/prefab-labor-camp-hero-full-deployment-india.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-rear-left-three-quarter-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-right-hero-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-bunk-layout-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-room-entrance-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-exact-front-elevation-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-left-hero-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-storage-ventilation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/labor-colony/labor-sheds</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-shed-frame-puf-panel-door-junction-detail.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-shed-g-plus-1-two-storey-multi-room.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-shed-g-plus-2-bridge-construction-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-shed-highway-construction-india-project-accommodation.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-shed-metro-construction-urban-site-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-shed-on-site-assembly-industrial-construction-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-shed-side-elevation-ppgi-roof-span.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-shed-thermal-power-plant-construction-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/labor-shed-workers-ppe-construction-site-india.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/Modular-worker-cabins-developed-by-SAMAN-Portable.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-hutments-12x20-ft-mid-duration-project-site-india-hero.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-shed-single-block-multi-room-bangalore-india.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/prefab-labor-camp-hero-full-deployment-india.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-storage-ventilation-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/118x30-gplus1/labor-sheds-118x30-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-front-right-hero-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus1/labor-sheds-120x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-front-left-hero-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/120x24-gplus2/labor-sheds-120x24-gplus2-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-rear-left-three-quarter-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-exact-front-elevation-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-bunk-layout-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus1/labor-sheds-90x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-interior-room-entrance.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/90x24-gplus2/labor-sheds-90x24-gplus2-interior-storage-ventilation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/labor-colony/prefab-labor-camps</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-labor-camp-bridge-construction-project-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-labor-camp-camp-layout-side-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-labor-camp-dormitory-front-elevation.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-labor-camp-factory-expansion-warehouse-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-labor-camp-highway-project-nhai-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-labor-camp-metro-rail-project-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-labor-camp-puf-panel-ms-frame-detail.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-labor-camp-thermal-power-plant-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-labor-camp-worker-activity-india.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/Modular-worker-cabins-developed-by-SAMAN-Portable.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-hutments-12x20-ft-mid-duration-project-site-india-hero.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-shed-single-block-multi-room-bangalore-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/prefab-labor-camp-hero-full-deployment-india.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-entrance-axis-interior-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-right-hero-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-left-hero-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-rear-left-three-quarter-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-bunk-bed-layout-wide-interior-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-exact-x-stair-end-elevation-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-entrance-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-reverse-axis-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>

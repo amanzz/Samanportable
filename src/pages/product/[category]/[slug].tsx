@@ -262,7 +262,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: productDescription,
+          description: variantData?.descriptionHtml || productDescription,
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
             src: img.src,
@@ -505,13 +505,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               that are rendered in the Customer Reviews section below. */}
           <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} />
 
-          {/* FAQ Structured Data — sourced from RankMath, which mirrors the FAQ
-              actually rendered in the product description below. No fake/templated FAQs. */}
-          {rankMathSEO?.faqSchema && (
+          {/* FAQ Structured Data: the approved variant dataset owns its rendered
+              FAQs; legacy products continue to use RankMath. */}
+          {(variantData?.faqSchema || rankMathSEO?.faqSchema) && (
             <Head>
               <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(rankMathSEO.faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(variantData?.faqSchema || rankMathSEO?.faqSchema) }}
               />
             </Head>
           )}

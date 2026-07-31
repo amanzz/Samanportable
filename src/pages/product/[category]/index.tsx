@@ -303,7 +303,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: descriptionData?.description || '',
+          description: variantData?.descriptionHtml || descriptionData?.description || '',
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
           // cluster (null for every other product → the existing overrides/defaults
           // apply unchanged). The flagship page slug `porta-cabins` maps to the
@@ -548,13 +548,13 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               that are rendered in the Customer Reviews section below. */}
           <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} />
 
-          {/* FAQ Structured Data — sourced from RankMath, which mirrors the FAQ
-              actually rendered in the product description below. No fake/templated FAQs. */}
-          {rankMathSEO?.faqSchema && (
+          {/* FAQ Structured Data: the approved variant dataset owns its rendered
+              FAQs; legacy products continue to use RankMath. */}
+          {(variantData?.faqSchema || rankMathSEO?.faqSchema) && (
             <Head>
               <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(rankMathSEO.faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(variantData?.faqSchema || rankMathSEO?.faqSchema) }}
               />
             </Head>
           )}

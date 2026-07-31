@@ -3,6 +3,8 @@ import type { ReactNode } from 'react';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
+const LABOUR_COLONY_HREF = '/product/labor-colony';
+const labourHref = (slug: string) => `${LABOUR_COLONY_HREF}/${slug}`;
 
 const bodyClass = 'text-sm leading-relaxed text-slate-700';
 const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline-offset-2';
@@ -132,6 +134,58 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     comparison: (
       <>
         Room will be seen by clients? The <Link className={linkClass} href={href('luxury-porta-cabin')}>Luxury Porta Cabin</Link> adds the gypsum ceiling, feature panelling and SPC flooring.
+      </>
+    ),
+  },
+  'labor-colony': {
+    heading: 'Why the colony page and not a single building',
+    body: (
+      <>
+        This page carries the whole worker housing site, dormitory buildings plus the toilet blocks, kitchens and services that make a colony liveable, so a contractor plans the site once instead of buying buildings one at a time. Every building on it is newly fabricated steel in the six approved configurations. Choose it when your brief is the site, not one block.
+      </>
+    ),
+    comparison: (
+      <>
+        Need only one open sleeping hall rather than a full site? The <Link className={linkClass} href={labourHref('labor-sheds')}>Labor Sheds page</Link> carries that single-hall building.
+      </>
+    ),
+  },
+  'labor-sheds': {
+    heading: 'Why choose the shed over the room block',
+    body: (
+      <>
+        The shed puts every bed into one open hall per floor, which is the cheapest way to house a large crew and by far the easiest arrangement to supervise as a single space. Fire exits, zoned lighting circuits and high-level ventilation are all sized for open-hall occupancy rather than for individual rooms. Choose it when bed count per rupee matters more than room privacy.
+      </>
+    ),
+    comparison: (
+      <>
+        Crews that need lockable individual rooms are better served by the Labor Hutments room block, and <Link className={linkClass} href={LABOUR_COLONY_HREF}>the full worker housing range</Link> shows where each build fits.
+      </>
+    ),
+  },
+  'labor-hutments': {
+    heading: 'Why choose rooms over an open hall',
+    body: (
+      <>
+        The hutment divides each floor into individual sleeping rooms with their own doors, windows, fans and distribution boards, so mixed gangs, supervisors and longer-posting crews get privacy and lockable space that an open hall cannot offer. The trade is a lower bed count per floor at a slightly higher rate. Choose it when room separation matters on your site.
+      </>
+    ),
+    comparison: (
+      <>
+        If maximum beds in one supervised space is the priority, the open-hall Labor Sheds building houses more per floor; see <Link className={linkClass} href={LABOUR_COLONY_HREF}>every colony building compared</Link> before you choose.
+      </>
+    ),
+  },
+  'prefab-labor-camps': {
+    heading: 'Why choose the relocatable camp build',
+    body: (
+      <>
+        The camp is engineered to move: bolted panel joints, pedestal footings and plug-and-play services mean the same buildings dismantle at one project and re-erect at the next instead of being written off. It costs slightly more per square foot than the fixed shed and repays it the first time the camp relocates. Choose it when your projects move.
+      </>
+    ),
+    comparison: (
+      <>
+        If the housing stays on one site for its whole life, the Labour Colony configuration is more economical, with <Link className={linkClass} href={LABOUR_COLONY_HREF}>fixed and movable options side by side</Link> on the range page.
       </>
     ),
   },
