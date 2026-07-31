@@ -112,6 +112,28 @@ const Header = () => {
   const [condensed, setCondensed] = useState(false);
   const [mobileGroup, setMobileGroup] = useState<string | null>('Cabins & Offices');
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const paidLabourColonyDialogOpened = useRef(false);
+
+  // Send paid Labour Colony visitors directly into the existing qualification
+  // flow. The dialog stays dismissible so the destination remains usable and
+  // visitors can review the product page before submitting.
+  useEffect(() => {
+    if (!router.isReady || paidLabourColonyDialogOpened.current || typeof window === 'undefined') return;
+
+    const path = router.asPath.split('?')[0].replace(/\/$/, '');
+    if (path !== '/product/labor-colony') return;
+
+    const query = new URLSearchParams(window.location.search);
+    const source = query.get('utm_source')?.toLowerCase();
+    const medium = query.get('utm_medium')?.toLowerCase();
+    const isGooglePaidClick = Boolean(query.get('gclid') || query.get('gbraid') || query.get('wbraid'))
+      || (source === 'google' && ['cpc', 'ppc', 'paid', 'paid_search'].includes(medium || ''));
+
+    if (isGooglePaidClick) {
+      paidLabourColonyDialogOpened.current = true;
+      setShowEnquiry(true);
+    }
+  }, [router.asPath, router.isReady]);
 
   // Scroll-condense: past ~80px, slide the utility strip out and the main bar up using
   // transform + opacity only (never height/padding). rAF-throttled; only flips state on
