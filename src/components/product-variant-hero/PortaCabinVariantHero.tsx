@@ -198,7 +198,11 @@ type InternalLinkModule = {
   rows: InternalLinkRow[];
 };
 
-const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = {
+/**
+ * UNUSED DRAFT — retained verbatim after SAMAN's exact porta-cabins parity ruling.
+ * Do not render this copy in the product hero.
+ */
+export const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = {
   'portable-office': {
     heading: 'Which portable office build fits the job',
     rows: [
@@ -463,8 +467,6 @@ export function PortaCabinVariantHero({
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
   // not rendered at all (never another product's copy).
   const applications = APPLICATIONS_DATASETS[data.applicationsDataset || preset.applicationsDataset || data.productSlug];
-  const internalLinkModule = PORTABLE_OFFICE_LINK_MODULES[data.productSlug];
-
   const heroActive = data.variants[heroIndex];
   const heroImages = heroActive.images.length > 0 ? heroActive.images : null;
 
@@ -844,30 +846,6 @@ export function PortaCabinVariantHero({
     </Card>
   );
 
-  const internalLinksSecondary = internalLinkModule ? (
-    <section className="px-2 pb-2 pt-3" aria-labelledby={`${data.productSlug}-related-links-heading`}>
-      <h3
-        id={`${data.productSlug}-related-links-heading`}
-        className="text-sm font-semibold leading-snug text-[var(--ds-color-forest)]"
-      >
-        {internalLinkModule.heading}
-      </h3>
-      <div className="mt-2 space-y-2">
-        {internalLinkModule.rows.map((row) => (
-          <p key={row.anchor} className="text-xs leading-snug text-[var(--ds-color-steel)]">
-            {row.before}
-            <strong>
-              <Link href={row.href} className="text-[var(--ds-color-leaf)] underline decoration-1 underline-offset-2 hover:text-[var(--ds-color-forest)]">
-                {row.anchor}
-              </Link>
-            </strong>
-            {row.after}
-          </p>
-        ))}
-      </div>
-    </section>
-  ) : null;
-
   return (
     // data-ds-root + the injected token rule scope the --ds-* color variables to
     // this subtree — the same self-sufficient pattern Header.tsx uses for global
@@ -876,7 +854,7 @@ export function PortaCabinVariantHero({
       {/* DS color tokens + the single-tree layout. Layout CSS only (no hex). The
           hero mounts ONCE (V5 fix: the old hidden-lg / lg:hidden dual tree rendered
           gallery, buy box and rail twice). Source order is gallery → buy box →
-          related rail with secondary links → full-width sections.
+          related rail → full-width sections.
           MOBILE (<1024): plain BLOCK FLOW — the source order IS the visual order,
           and, crucially, the browser can lay out and paint the gallery (the LCP
           hero) FIRST, independently of the content-heavy buy box below it. H2 wrapped
@@ -896,7 +874,7 @@ export function PortaCabinVariantHero({
       {/* SINGLE responsive tree (V5 fix). Every piece — rail, gallery, buy box,
           explorer — is mounted EXACTLY ONCE; grid-template-areas (see <style>)
           place them: desktop one row rail|gallery|buybox (25/40/35) with the
-          explorer full-width below; mobile begins gallery→buybox→rail→secondary links.
+          explorer full-width below; mobile begins gallery→buybox→rail.
           The buy box renders the sole H1. */}
       <div className="pc-hero-grid">
         {/* Gallery FIRST in source — on mobile (block flow) this makes the LCP hero
@@ -918,7 +896,6 @@ export function PortaCabinVariantHero({
               className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
               scroll
             />
-            {internalLinksSecondary}
           </div>
         </aside>
 
