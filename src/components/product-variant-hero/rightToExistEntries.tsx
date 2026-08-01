@@ -25,7 +25,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>This page holds the whole container office range so a buyer can set the cabin, shipping-form and site-office builds against each other before committing to one. All three are newly fabricated steel modules from our own works, differing in duty, layout and finish rather than in platform. Start here when you know the need but not yet the model.</>
     ),
     comparison: (
-      <>Already certain a construction site office is the job? The <Link className={linkClass} href={containerOfficeHref('site-office-container')}>site office container</Link> page carries that build alone.</>
+      <>Already certain a construction site office is the job? <Link className={linkClass} href={containerOfficeHref('site-office-container')}>The dedicated site office page</Link> carries that build alone.</>
     ),
   },
   'container-office-cabin': {
@@ -43,7 +43,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>This model is the range&apos;s relocation specialist: stronger handling interfaces, reinforced cut-outs, durable floor and liner selections and secure doors, with relocation documentation included in the delivery pack. It is engineered to be lifted, moved and lifted again without anything working loose. Choose it when the office&apos;s next address is already written on the project plan.</>
     ),
     comparison: (
-      <>If the unit will stay put and daily office comfort leads, the <Link className={linkClass} href={containerOfficeHref('container-office-cabin')}>container office cabin</Link> is specified for that instead.</>
+      <>If the unit will stay put and daily office comfort leads, <Link className={linkClass} href={containerOfficeHref('container-office-cabin')}>the office-first cabin model</Link> is specified for that instead.</>
     ),
   },
   'site-office-container': {
