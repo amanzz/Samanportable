@@ -20,44 +20,46 @@
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-elevated-hero.webp",
-          "alt": "Elevated exterior view of a 10x10 ft SAMAN container office for site and commercial use",
+          "src": "/images/products/container-offices/10x10/container-offices-10x10-hero-view.webp",
+          "alt": "Grey and navy two-tone container office, 10x10 ft, three-quarter exterior view with twin sliding windows",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 10x10 ft container office — elevated exterior view"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-front-left-angle.webp",
-          "alt": "Front-left exterior angle of a 10x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/10x10/container-offices-10x10-front-angle.webp",
+          "alt": "Cream-panelled 10x10 ft container office seen from the front corner on a paved yard",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 10x10 ft container office — front-left exterior angle"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-front-elevation.webp",
-          "alt": "Front elevation of a 10x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/10x10/container-offices-10x10-side-elevation.webp",
+          "alt": "Dark grey side elevation of a compact 10x10 ft container office with a single entry door",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 10x10 ft container office — front elevation"
+          "height": 900
         },
         {
           "src": "/images/products/container-offices/10x10/container-offices-10x10-workspace-interior.webp",
-          "alt": "Workspace interior of a 10x10 ft SAMAN container office",
+          "alt": "Inside a 10x10 ft container office: timber desk against the window wall with task chair",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 10x10 ft container office — workspace interior"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-office-interior.webp",
-          "alt": "Office interior view of a 10x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/10x10/container-offices-10x10-corner-interior.webp",
+          "alt": "Corner desk arrangement inside a 10x10 ft container office, two workstations meeting at the wall",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 10x10 ft container office — office interior"
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-offices/10x10/container-offices-10x10-team-interior.webp",
+          "alt": "Two facing desks fitted into a 10x10 ft container office interior with white wall panels",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
         }
       ],
       "shortDescription": "The compact container office — one supervisor room in a crane-movable steel shell. Drops onto any levelled pad at a plant gate, weighbridge or small site and is working the same day."
@@ -74,44 +76,46 @@
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-elevated-hero.webp",
-          "alt": "Elevated exterior view of a 20x8 ft SAMAN container office for site and commercial use",
+          "src": "/images/products/container-offices/20x8/container-offices-20x8-hero-view.webp",
+          "alt": "Blue and grey 20x8 ft container office photographed at an angle showing door and window band",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x8 ft container office — elevated exterior view"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-front-left-angle.webp",
-          "alt": "Front-left exterior angle of a 20x8 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x8/container-offices-20x8-front-angle.webp",
+          "alt": "Yellow-finished 20x8 ft container office, front corner view on open hardstanding",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x8 ft container office — front-left exterior angle"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-front-elevation.webp",
-          "alt": "Front elevation of a 20x8 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x8/container-offices-20x8-side-elevation.webp",
+          "alt": "Long dark grey side wall of a 20x8 ft container office with evenly spaced windows",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x8 ft container office — front elevation"
+          "height": 900
         },
         {
           "src": "/images/products/container-offices/20x8/container-offices-20x8-workspace-interior.webp",
-          "alt": "Workspace interior of a 20x8 ft SAMAN container office",
+          "alt": "Single workstation with monitor inside a 20x8 ft container office, walls in white liner panel",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x8 ft container office — workspace interior"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-office-interior.webp",
-          "alt": "Office interior view of a 20x8 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x8/container-offices-20x8-team-interior.webp",
+          "alt": "Row of desks running the length of a 20x8 ft container office interior",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x8 ft container office — office interior"
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-offices/20x8/container-offices-20x8-corner-interior.webp",
+          "alt": "Partitioned desk bays inside a 20x8 ft container office, screens dividing each seat",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
         }
       ],
       "shortDescription": "The slim site unit — a 20-ft-class module that rides a standard trailer and fits tight laydown areas; one to two workstations with storage."
@@ -128,44 +132,46 @@
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-elevated-hero.webp",
-          "alt": "Elevated exterior view of a 20x10 ft SAMAN container office for site and commercial use",
+          "src": "/images/products/container-offices/20x10/container-offices-20x10-hero-view.webp",
+          "alt": "Green-painted 20x10 ft container office, hero exterior angle with corrugated steel cladding",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x10 ft container office — elevated exterior view"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-front-left-angle.webp",
-          "alt": "Front-left exterior angle of a 20x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x10/container-offices-20x10-front-angle.webp",
+          "alt": "White 20x10 ft container office viewed from the front with dark trim around openings",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x10 ft container office — front-left exterior angle"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-front-elevation.webp",
-          "alt": "Front elevation of a 20x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x10/container-offices-20x10-side-elevation.webp",
+          "alt": "Black side elevation of a 20x10 ft container office, matt finish and flush window frames",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x10 ft container office — front elevation"
+          "height": 900
         },
         {
           "src": "/images/products/container-offices/20x10/container-offices-20x10-workspace-interior.webp",
-          "alt": "Workspace interior of a 20x10 ft SAMAN container office",
+          "alt": "Executive desk with visitor chairs inside a 20x10 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x10 ft container office — workspace interior"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-office-interior.webp",
-          "alt": "Office interior view of a 20x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x10/container-offices-20x10-corner-interior.webp",
+          "alt": "L-shaped corner desk fitted inside a 20x10 ft container office interior",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x10 ft container office — office interior"
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-offices/20x10/container-offices-20x10-entrance-interior.webp",
+          "alt": "View towards the entry door of a 20x10 ft container office with a desk beside the doorway",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
         }
       ],
       "shortDescription": "The standard project office — the size most site teams specify: 3–4 workstations, files and a visitor chair in one lift-and-place container unit."
@@ -182,44 +188,46 @@
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-elevated-hero.webp",
-          "alt": "Elevated exterior view of a 20x12 ft SAMAN container office for site and commercial use",
+          "src": "/images/products/container-offices/20x12/container-offices-20x12-hero-view.webp",
+          "alt": "Turquoise 20x12 ft container office, three-quarter hero view on level paving",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x12 ft container office — elevated exterior view"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-front-left-angle.webp",
-          "alt": "Front-left exterior angle of a 20x12 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x12/container-offices-20x12-front-angle.webp",
+          "alt": "White-bodied 20x12 ft container office with dark plinth, front corner perspective",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x12 ft container office — front-left exterior angle"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-front-elevation.webp",
-          "alt": "Front elevation of a 20x12 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x12/container-offices-20x12-side-elevation.webp",
+          "alt": "Dark grey 20x12 ft container office standing on grass, full side elevation",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x12 ft container office — front elevation"
+          "height": 900
         },
         {
           "src": "/images/products/container-offices/20x12/container-offices-20x12-workspace-interior.webp",
-          "alt": "Workspace interior of a 20x12 ft SAMAN container office",
+          "alt": "Workstation with dual monitors inside a 20x12 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x12 ft container office — workspace interior"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-office-interior.webp",
-          "alt": "Office interior view of a 20x12 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x12/container-offices-20x12-team-interior.webp",
+          "alt": "Paired desks for two staff inside a 20x12 ft container office interior",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x12 ft container office — office interior"
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-offices/20x12/container-offices-20x12-meeting-interior.webp",
+          "alt": "Small meeting desk with chairs set up inside a 20x12 ft container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
         }
       ],
       "shortDescription": "Extra width for a meeting table beside the workstations — one container module, no site construction."
@@ -236,44 +244,46 @@
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-elevated-hero.webp",
-          "alt": "Elevated exterior view of a 30x10 ft SAMAN container office for site and commercial use",
+          "src": "/images/products/container-offices/30x10/container-offices-30x10-hero-view.webp",
+          "alt": "Green 30x10 ft container office at a port-side location, hero exterior angle",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 30x10 ft container office — elevated exterior view"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-front-left-angle.webp",
-          "alt": "Front-left exterior angle of a 30x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/30x10/container-offices-30x10-front-angle.webp",
+          "alt": "Yellow 30x10 ft container office with a multi-window front band",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 30x10 ft container office — front-left exterior angle"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-front-elevation.webp",
-          "alt": "Front elevation of a 30x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/30x10/container-offices-30x10-side-elevation.webp",
+          "alt": "Blue-grey side elevation of a 30x10 ft container office with three window bays",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 30x10 ft container office — front elevation"
+          "height": 900
         },
         {
           "src": "/images/products/container-offices/30x10/container-offices-30x10-workspace-interior.webp",
-          "alt": "Workspace interior of a 30x10 ft SAMAN container office",
+          "alt": "Executive workstation at the end wall of a 30x10 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 30x10 ft container office — workspace interior"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-office-interior.webp",
-          "alt": "Office interior view of a 30x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/30x10/container-offices-30x10-team-interior.webp",
+          "alt": "Open-plan desk layout inside a 30x10 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 30x10 ft container office — office interior"
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-offices/30x10/container-offices-30x10-corner-interior.webp",
+          "alt": "Desks grouped along the corner of a 30x10 ft container office interior",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
         }
       ],
       "shortDescription": "The multi-desk unit — engineer + documentation bays in a single 30-ft steel module, still one crane lift."
@@ -290,44 +300,46 @@
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-elevated-hero.webp",
-          "alt": "Elevated exterior view of a 40x8 ft SAMAN container office for site and commercial use",
+          "src": "/images/products/container-offices/40x8/container-offices-40x8-hero-view.webp",
+          "alt": "White 40x8 ft container office, long hero exterior with continuous window line",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x8 ft container office — elevated exterior view"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-front-left-angle.webp",
-          "alt": "Front-left exterior angle of a 40x8 ft SAMAN container office",
+          "src": "/images/products/container-offices/40x8/container-offices-40x8-front-angle.webp",
+          "alt": "Cream and green 40x8 ft container office seen from the front corner",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x8 ft container office — front-left exterior angle"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-front-elevation.webp",
-          "alt": "Front elevation of a 40x8 ft SAMAN container office",
+          "src": "/images/products/container-offices/40x8/container-offices-40x8-elevated-view.webp",
+          "alt": "Elevated view over an olive-toned 40x8 ft container office showing the full roofline",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x8 ft container office — front elevation"
+          "height": 900
         },
         {
           "src": "/images/products/container-offices/40x8/container-offices-40x8-workspace-interior.webp",
-          "alt": "Workspace interior of a 40x8 ft SAMAN container office",
+          "alt": "Single desk placed midway along a 40x8 ft container office corridor interior",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x8 ft container office — workspace interior"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-office-interior.webp",
-          "alt": "Office interior view of a 40x8 ft SAMAN container office",
+          "src": "/images/products/container-offices/40x8/container-offices-40x8-team-interior.webp",
+          "alt": "Desk row seating several staff inside a 40x8 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x8 ft container office — office interior"
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-offices/40x8/container-offices-40x8-corner-interior.webp",
+          "alt": "Desk and wall-mounted screen in the corner of a 40x8 ft container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
         }
       ],
       "shortDescription": "The 40-ft-class slim office — a corridor-style admin run for ports, yards and linear sites; travels on a 40-ft trailer."
@@ -344,44 +356,46 @@
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-elevated-hero.webp",
-          "alt": "Elevated exterior view of a 20x20 ft SAMAN container office for site and commercial use",
+          "src": "/images/products/container-offices/20x20/container-offices-20x20-hero-view.webp",
+          "alt": "Dark green 20x20 ft container office, square-format hero exterior",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x20 ft container office — elevated exterior view"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-front-left-angle.webp",
-          "alt": "Front-left exterior angle of a 20x20 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x20/container-offices-20x20-front-angle.webp",
+          "alt": "Orange and yellow two-tone 20x20 ft container office from the front corner",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x20 ft container office — front-left exterior angle"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-front-elevation.webp",
-          "alt": "Front elevation of a 20x20 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x20/container-offices-20x20-side-elevation.webp",
+          "alt": "Beige 20x20 ft container office beside a bridge, side elevation",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x20 ft container office — front elevation"
+          "height": 900
         },
         {
           "src": "/images/products/container-offices/20x20/container-offices-20x20-workspace-interior.webp",
-          "alt": "Workspace interior of a 20x20 ft SAMAN container office",
+          "alt": "Desk against a planted feature wall inside a 20x20 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x20 ft container office — workspace interior"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-office-interior.webp",
-          "alt": "Office interior view of a 20x20 ft SAMAN container office",
+          "src": "/images/products/container-offices/20x20/container-offices-20x20-team-interior.webp",
+          "alt": "Two desks arranged face-to-face inside a 20x20 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 20x20 ft container office — office interior"
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-offices/20x20/container-offices-20x20-corner-interior.webp",
+          "alt": "Workstations along two walls of a 20x20 ft container office interior",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
         }
       ],
       "shortDescription": "Twin-module square footprint — a two-bay office floor assembled from container modules, ODC-planned delivery."
@@ -398,44 +412,46 @@
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-elevated-hero.webp",
-          "alt": "Elevated exterior view of a 40x10 ft SAMAN container office for site and commercial use",
+          "src": "/images/products/container-offices/40x10/container-offices-40x10-hero-view.webp",
+          "alt": "White 40x10 ft container office, hero exterior along the access road",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x10 ft container office — elevated exterior view"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-front-left-angle.webp",
-          "alt": "Front-left exterior angle of a 40x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/40x10/container-offices-40x10-front-angle.webp",
+          "alt": "Cream 40x10 ft container office with green base band, front corner view",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x10 ft container office — front-left exterior angle"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-front-elevation.webp",
-          "alt": "Front elevation of a 40x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/40x10/container-offices-40x10-side-elevation.webp",
+          "alt": "Flat-fronted blue 40x10 ft container office, complete side elevation",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x10 ft container office — front elevation"
+          "height": 900
         },
         {
           "src": "/images/products/container-offices/40x10/container-offices-40x10-workspace-interior.webp",
-          "alt": "Workspace interior of a 40x10 ft SAMAN container office",
+          "alt": "Desk run fitted along one wall of a 40x10 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x10 ft container office — workspace interior"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-office-interior.webp",
-          "alt": "Office interior view of a 40x10 ft SAMAN container office",
+          "src": "/images/products/container-offices/40x10/container-offices-40x10-team-interior.webp",
+          "alt": "Open desks for a working team inside a 40x10 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x10 ft container office — office interior"
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-offices/40x10/container-offices-40x10-corner-interior.webp",
+          "alt": "Dark-finished desks meeting in the corner of a 40x10 ft container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
         }
       ],
       "shortDescription": "The full 40-ft project office — team floor with manager partition option; the standard large-site administration unit."
@@ -452,47 +468,50 @@
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-elevated-hero.webp",
-          "alt": "Elevated exterior view of a 40x12 ft SAMAN container office for site and commercial use",
+          "src": "/images/products/container-offices/40x12/container-offices-40x12-hero-view.webp",
+          "alt": "Sage green 40x12 ft container office, wide hero exterior angle",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x12 ft container office — elevated exterior view"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-front-left-angle.webp",
-          "alt": "Front-left exterior angle of a 40x12 ft SAMAN container office",
+          "src": "/images/products/container-offices/40x12/container-offices-40x12-front-angle.webp",
+          "alt": "White 40x12 ft container office viewed from the front on open ground",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x12 ft container office — front-left exterior angle"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-front-elevation.webp",
-          "alt": "Front elevation of a 40x12 ft SAMAN container office",
+          "src": "/images/products/container-offices/40x12/container-offices-40x12-side-elevation.webp",
+          "alt": "Dark grey 40x12 ft container office against a glazed building, side elevation",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x12 ft container office — front elevation"
+          "height": 900
         },
         {
           "src": "/images/products/container-offices/40x12/container-offices-40x12-workspace-interior.webp",
-          "alt": "Workspace interior of a 40x12 ft SAMAN container office",
+          "alt": "Single managed workstation inside a 40x12 ft container office",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x12 ft container office — workspace interior"
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-office-interior.webp",
-          "alt": "Office interior view of a 40x12 ft SAMAN container office",
+          "src": "/images/products/container-offices/40x12/container-offices-40x12-team-interior.webp",
+          "alt": "Bank of workstations inside a 40x12 ft container office interior",
           "provenance": "unknown",
           "width": 900,
-          "height": 900,
-          "caption": "SAMAN 40x12 ft container office — office interior"
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-offices/40x12/container-offices-40x12-corner-interior.webp",
+          "alt": "Desks set against a green accent wall in a 40x12 ft container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
         }
       ],
       "shortDescription": "The largest single module — 480 sq ft of office in one engineered steel unit before you stack or join modules."
     }
-  ]
+  ],
+  "explorerImageTemplate": "/images/products/container-offices/{sizeSlug}/container-offices-{sizeSlug}-hero-view.webp"
 }

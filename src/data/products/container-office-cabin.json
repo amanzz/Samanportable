@@ -14,7 +14,7 @@
   "specPdfHref": "/specs/container-office-cabin-technical-specification.pdf",
   "emitAggregateOffer": true,
   "applicationsDataset": "container-office-cabin",
-  "explorerImageTemplate": "/images/products/container-office-cabin/{sizeSlug}/container-office-cabin-{sizeSlug}-exterior-hero.webp",
+  "explorerImageTemplate": "/images/products/container-office-cabin/{sizeSlug}/container-office-cabin-{sizeSlug}-hero-view.webp",
   "variants": [
     {
       "sizeSlug": "10x10",
@@ -27,11 +27,48 @@
       "useCase": "Gate entry offices",
       "sku": "SP-20-COC-2024",
       "images": [
-        { "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-exterior-hero.webp", "alt": "Exterior view of a 10x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-front-elevation.webp", "alt": "Exterior view of a 10x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-side-elevation.webp", "alt": "Exterior view of a 10x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-workspace-interior.webp", "alt": "Inside a 10x10 ft SAMAN container office cabin — workspace interior", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-manager-office-interior.webp", "alt": "Inside a 10x10 ft SAMAN container office cabin — manager office interior", "provenance": "unknown", "width": 900, "height": 900 }
+        {
+          "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-hero-view.webp",
+          "alt": "Cream container office cabin with green base band, 10x10 ft, beside a warehouse loading bay",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-front-angle.webp",
+          "alt": "White 10x10 ft container office cabin with dark grey plinth standing on lawn",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-side-elevation.webp",
+          "alt": "Blue 10x10 ft container office cabin, side elevation with three-window run",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-workspace-interior.webp",
+          "alt": "Laptop desk facing the window inside a 10x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-meeting-interior.webp",
+          "alt": "Dark desk with two visitor chairs inside a 10x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/10x10/container-office-cabin-10x10-corner-interior.webp",
+          "alt": "Grey desk, storage cabinet and air conditioner in a 10x10 ft container office cabin corner",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
       ],
       "shortDescription": "The smallest container office cabin puts a desk, a file rack and a visitor chair into 100 sq ft of steel-shelled workspace at the lowest entry price in our container range."
     },
@@ -46,11 +83,48 @@
       "useCase": "Gate-line billing rooms",
       "sku": "SP-20-COC-2024",
       "images": [
-        { "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-exterior-hero.webp", "alt": "Exterior view of a 20x8 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-front-elevation.webp", "alt": "Exterior view of a 20x8 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-side-elevation.webp", "alt": "Exterior view of a 20x8 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-workspace-interior.webp", "alt": "Inside a 20x8 ft SAMAN container office cabin — workspace interior", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-manager-office-interior.webp", "alt": "Inside a 20x8 ft SAMAN container office cabin — manager office interior", "provenance": "unknown", "width": 900, "height": 900 }
+        {
+          "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-hero-view.webp",
+          "alt": "Grey container office cabin with navy base, 20x8 ft, hero angle on gravel ground",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-front-angle.webp",
+          "alt": "Turquoise 20x8 ft container office cabin, front view against a warehouse facade",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-side-elevation.webp",
+          "alt": "Charcoal 20x8 ft container office cabin with port cranes behind, side elevation",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-team-interior.webp",
+          "alt": "Two workstations and open shelving inside a 20x8 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-meeting-interior.webp",
+          "alt": "Compact meeting nook with two chairs inside a 20x8 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x8/container-office-cabin-20x8-entrance-interior.webp",
+          "alt": "Desk row facing a brown entry door inside a 20x8 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
       ],
       "shortDescription": "A slim 160 sq ft unit that runs along a compound wall or gate line where a full-width office cannot sit."
     },
@@ -65,11 +139,48 @@
       "useCase": "Value project offices",
       "sku": "SP-20-COC-2024",
       "images": [
-        { "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-exterior-hero.webp", "alt": "Exterior view of a 20x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-front-elevation.webp", "alt": "Exterior view of a 20x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-side-elevation.webp", "alt": "Exterior view of a 20x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-workspace-interior.webp", "alt": "Inside a 20x10 ft SAMAN container office cabin — workspace interior", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-manager-office-interior.webp", "alt": "Inside a 20x10 ft SAMAN container office cabin — manager office interior", "provenance": "unknown", "width": 900, "height": 900 }
+        {
+          "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-hero-view.webp",
+          "alt": "Deep green 20x10 ft container office cabin under a road overpass, hero angle",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-front-angle.webp",
+          "alt": "Bright yellow 20x10 ft container office cabin, straight-on front elevation",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-side-elevation.webp",
+          "alt": "Pale blue 20x10 ft container office cabin with dark base, long side view",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-workspace-interior.webp",
+          "alt": "Desk with plants against sage-toned walls in a 20x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-team-interior.webp",
+          "alt": "White paired desks inside a 20x10 ft container office cabin work area",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-corner-interior.webp",
+          "alt": "Desk beneath the air conditioner in a wood-floored 20x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
       ],
       "shortDescription": "The benchmark of the value line: 200 sq ft at ₹1,250 per square foot, the lowest reference rate in our container office range."
     },
@@ -84,11 +195,48 @@
       "useCase": "Meeting-corner layouts",
       "sku": "SP-20-COC-2024",
       "images": [
-        { "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-exterior-hero.webp", "alt": "Exterior view of a 20x12 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-front-elevation.webp", "alt": "Exterior view of a 20x12 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-side-elevation.webp", "alt": "Exterior view of a 20x12 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-workspace-interior.webp", "alt": "Inside a 20x12 ft SAMAN container office cabin — workspace interior", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-manager-office-interior.webp", "alt": "Inside a 20x12 ft SAMAN container office cabin — manager office interior", "provenance": "unknown", "width": 900, "height": 900 }
+        {
+          "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-hero-view.webp",
+          "alt": "White container office cabin with dark green base, 20x12 ft, palms behind, hero angle",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-front-angle.webp",
+          "alt": "Olive green 20x12 ft container office cabin, front elevation on open paving",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-side-elevation.webp",
+          "alt": "Cream 20x12 ft container office cabin with terracotta base band, side elevation",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-workspace-interior.webp",
+          "alt": "Monitor workstations in a grey-walled 20x12 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-team-interior.webp",
+          "alt": "Open office desks with task chairs inside a 20x12 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x12/container-office-cabin-20x12-meeting-interior.webp",
+          "alt": "Meeting desk with cantilever chairs in a wood-floored 20x12 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
       ],
       "shortDescription": "Two extra feet of width turn a desk row into a planned office: a manager bay, a records wall or a small meeting table fits alongside five to seven workstations in 240 sq ft."
     },
@@ -103,11 +251,48 @@
       "useCase": "Two-room value offices",
       "sku": "SP-20-COC-2024",
       "images": [
-        { "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-exterior-hero.webp", "alt": "Exterior view of a 30x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-front-elevation.webp", "alt": "Exterior view of a 30x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-side-elevation.webp", "alt": "Exterior view of a 30x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-workspace-interior.webp", "alt": "Inside a 30x10 ft SAMAN container office cabin — workspace interior", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-manager-office-interior.webp", "alt": "Inside a 30x10 ft SAMAN container office cabin — manager office interior", "provenance": "unknown", "width": 900, "height": 900 }
+        {
+          "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-hero-view.webp",
+          "alt": "Teal 30x10 ft container office cabin, hero exterior on a landscaped plot",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-front-angle.webp",
+          "alt": "Beige 30x10 ft container office cabin with a continuous multi-window front",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-side-elevation.webp",
+          "alt": "White 30x10 ft container office cabin with dark plinth, cable-stayed bridge behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-workspace-interior.webp",
+          "alt": "Black executive desk centred in a 30x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-team-interior.webp",
+          "alt": "Facing desk pair with task chairs inside a 30x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/30x10/container-office-cabin-30x10-corner-interior.webp",
+          "alt": "Timber desk run along the window wall of a 30x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
       ],
       "shortDescription": "A 300 sq ft long plan that partitions into a work area and a private room — the two-room layout at the lowest rate it is available anywhere in our container range."
     },
@@ -122,11 +307,48 @@
       "useCase": "Boundary workstation rows",
       "sku": "SP-20-COC-2024",
       "images": [
-        { "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-exterior-hero.webp", "alt": "Exterior view of a 40x8 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-front-elevation.webp", "alt": "Exterior view of a 40x8 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-side-elevation.webp", "alt": "Exterior view of a 40x8 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-workspace-interior.webp", "alt": "Inside a 40x8 ft SAMAN container office cabin — workspace interior", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-manager-office-interior.webp", "alt": "Inside a 40x8 ft SAMAN container office cabin — manager office interior", "provenance": "unknown", "width": 900, "height": 900 }
+        {
+          "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-hero-view.webp",
+          "alt": "Yellow container office cabin with green base, 40x8 ft, on rain-wet concrete, hero angle",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-front-angle.webp",
+          "alt": "All-white 40x8 ft container office cabin, long front elevation",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-side-elevation.webp",
+          "alt": "Sage green 40x8 ft container office cabin photographed side-on",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-meeting-interior.webp",
+          "alt": "Grey desk arranged for discussions inside a 40x8 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-team-interior.webp",
+          "alt": "Staff desks in sequence along a 40x8 ft container office cabin interior",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x8/container-office-cabin-40x8-corner-interior.webp",
+          "alt": "Corner workstations with laptop inside a 40x8 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
       ],
       "shortDescription": "The corridor plan in cabin form: 320 sq ft as one long workstation row for sites that line their units along a boundary or between structures."
     },
@@ -141,11 +363,48 @@
       "useCase": "Open-plan desk clusters",
       "sku": "SP-20-COC-2024",
       "images": [
-        { "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-exterior-hero.webp", "alt": "Exterior view of a 20x20 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-front-elevation.webp", "alt": "Exterior view of a 20x20 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-side-elevation.webp", "alt": "Exterior view of a 20x20 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-workspace-interior.webp", "alt": "Inside a 20x20 ft SAMAN container office cabin — workspace interior", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-manager-office-interior.webp", "alt": "Inside a 20x20 ft SAMAN container office cabin — manager office interior", "provenance": "unknown", "width": 900, "height": 900 }
+        {
+          "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-hero-view.webp",
+          "alt": "Sage green 20x20 ft container office cabin outside a factory, hero exterior",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-front-angle.webp",
+          "alt": "Green and yellow two-tone 20x20 ft container office cabin, front elevation",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-side-elevation.webp",
+          "alt": "Red 20x20 ft container office cabin, full side elevation on paved ground",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-workspace-interior.webp",
+          "alt": "Executive desk and timber cabinet inside a 20x20 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-team-interior.webp",
+          "alt": "Twin dark desks in a grey-walled 20x20 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/20x20/container-office-cabin-20x20-lounge-interior.webp",
+          "alt": "Sofa, coffee table and desk sharing a 20x20 ft container office cabin interior",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
       ],
       "shortDescription": "The square alternative at the same 400 sq ft and the same price as the 40×10 — the decision is purely the shape of your plot and your seating plan."
     },
@@ -160,11 +419,48 @@
       "useCase": "Large-team value floors",
       "sku": "SP-20-COC-2024",
       "images": [
-        { "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-exterior-hero.webp", "alt": "Exterior view of a 40x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-front-elevation.webp", "alt": "Exterior view of a 40x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-side-elevation.webp", "alt": "Exterior view of a 40x10 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-workspace-interior.webp", "alt": "Inside a 40x10 ft SAMAN container office cabin — workspace interior", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-manager-office-interior.webp", "alt": "Inside a 40x10 ft SAMAN container office cabin — manager office interior", "provenance": "unknown", "width": 900, "height": 900 }
+        {
+          "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-hero-view.webp",
+          "alt": "Pale blue container office cabin with dark green base, 40x10 ft, hero angle",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-front-angle.webp",
+          "alt": "Yellow 40x10 ft container office cabin with green base fronting a glass building",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-side-elevation.webp",
+          "alt": "Sage green 40x10 ft container office cabin, side elevation with planted border",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-workspace-interior.webp",
+          "alt": "Grey desk near the entrance inside a 40x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-team-interior.webp",
+          "alt": "Open-plan desks down the length of a 40x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x10/container-office-cabin-40x10-corridor-interior.webp",
+          "alt": "Desk row along the corridor wall of a 40x10 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
       ],
       "shortDescription": "Four hundred square feet in one lift, planned into departments with a reception point at the door — the large-floor pick of the value line."
     },
@@ -179,11 +475,48 @@
       "useCase": "Full admin headquarters",
       "sku": "SP-20-COC-2024",
       "images": [
-        { "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-exterior-hero.webp", "alt": "Exterior view of a 40x12 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-front-elevation.webp", "alt": "Exterior view of a 40x12 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-side-elevation.webp", "alt": "Exterior view of a 40x12 ft SAMAN container office cabin", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-workspace-interior.webp", "alt": "Inside a 40x12 ft SAMAN container office cabin — workspace interior", "provenance": "unknown", "width": 900, "height": 900 },
-        { "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-manager-office-interior.webp", "alt": "Inside a 40x12 ft SAMAN container office cabin — manager office interior", "provenance": "unknown", "width": 900, "height": 900 }
+        {
+          "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-hero-view.webp",
+          "alt": "Dark green 40x12 ft container office cabin, hero exterior beside a campus block",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-front-angle.webp",
+          "alt": "Green and cream 40x12 ft container office cabin at a forest edge, front angle",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-side-elevation.webp",
+          "alt": "Beige 40x12 ft container office cabin with hills behind, side elevation",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-meeting-interior.webp",
+          "alt": "Timber desk with two guest chairs inside a 40x12 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-team-interior.webp",
+          "alt": "Wood-topped desks in an open 40x12 ft container office cabin layout",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-office-cabin/40x12/container-office-cabin-40x12-workspace-interior.webp",
+          "alt": "Desk with monitor beside the window in a 40x12 ft container office cabin",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
       ],
       "shortDescription": "Our largest value-line floor: 480 sq ft that partitions into cabins, a meeting room and stores, delivered complete as a single unit."
     }

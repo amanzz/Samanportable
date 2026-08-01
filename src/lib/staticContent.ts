@@ -99,7 +99,7 @@ export function rewriteRetiredInternalLinks(html: string): string {
 }
 
 const C04_CANONICAL_WARRANTY =
-  'Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.';
+  '5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Typical service life is 20 to 25 years under proper use and maintenance, which is an engineering expectation, not a warranty period.';
 
 const C04_PLATFORM_DISCLOSURES: Record<string, { marker: string; sentence: string }> = {
   'container-offices': {
@@ -137,7 +137,7 @@ function applyC04GapCloseCopy(html: string, slug: string): string {
   let rendered = html;
   if (slug === 'container-offices') {
     rendered = rendered.replace(
-      /Warranty is 5 years on the structural frame\/base,[^<]+proper maintenance\./,
+      /(?:Warranty is )?5 years on the structural frame\/base, 1[-\u2013]2 years on finishing depending on scope, and 20[-\u2013]25 years engineered service life with proper maintenance\.?/g,
       C04_CANONICAL_WARRANTY
     );
   }

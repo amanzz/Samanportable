@@ -144,7 +144,7 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     categoryLabel: 'Container Offices',
     categoryHref: '/product/container-offices',
     productSku: 'SP-20-CO-2024',
-    explorerImageTemplate: '/images/products/container-offices/{sizeSlug}/container-offices-{sizeSlug}-elevated-hero.webp',
+    explorerImageTemplate: '/images/products/container-offices/{sizeSlug}/container-offices-{sizeSlug}-hero-view.webp',
     applicationsDataset: 'container-offices',
     trustWarranty: '12-month workmanship warranty',
   },

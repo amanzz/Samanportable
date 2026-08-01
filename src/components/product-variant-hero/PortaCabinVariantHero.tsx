@@ -595,7 +595,7 @@ export function PortaCabinVariantHero({
             number of thumbs: 6 with the video, 5 without. Full class names (not an
             interpolated `grid-cols-${n}`) so Tailwind's scanner emits both. */}
         {heroImages && (
-          <div className={video ? 'grid grid-cols-6 gap-2' : 'grid grid-cols-5 gap-2'}>
+          <div className={video || isC04Product ? 'grid grid-cols-6 gap-2' : 'grid grid-cols-5 gap-2'}>
             {heroImages.map((img, i) => (
               <button
                 key={img.src}

@@ -19,8 +19,7 @@
     "40x10": "1,692",
     "40x12": "1,656"
   },
-  "explorerImageTemplate": "/images/products/shipping-container-office/{sizeSlug}/shipping-container-office-{sizeSlug}-exterior-hero.webp",
-  "explorerImageShot": "exterior-hero",
+  "explorerImageTemplate": "/images/products/shipping-container-office/{sizeSlug}/shipping-container-office-{sizeSlug}-hero-view.webp",
   "applicationsDataset": "shipping-container-office",
   "deliveryLabel": "7–21 working days",
   "materialLabel": "Corrugated ISO container steel · Insulated",
@@ -40,36 +39,43 @@
       "sku": "SP-20-SCO-2024",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-exterior-hero.webp",
-          "alt": "Exterior view of a 10x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-hero-view.webp",
+          "alt": "Cream shipping container office with green base, 10x10 ft, hero angle beside a walkway",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-front-elevation-blue.webp",
-          "alt": "Front elevation of a 10x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-front-angle.webp",
+          "alt": "Green 10x10 ft shipping container office near a substation yard, front corner view",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-elevated-view-grey.webp",
-          "alt": "Elevated exterior view of a 10x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-side-elevation.webp",
+          "alt": "Blue 10x10 ft shipping container office against a white wall, side elevation",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-manager-office-interior-charcoal.webp",
-          "alt": "Inside a 10x10 ft SAMAN shipping container office — manager office",
+          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-workspace-interior.webp",
+          "alt": "Desk positioned under twin windows inside a 10x10 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-team-office-interior-grey.webp",
-          "alt": "Inside a 10x10 ft SAMAN shipping container office — team office",
+          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-corridor-interior.webp",
+          "alt": "Timber desk and cabinets lining a 10x10 ft shipping container office interior",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-corner-interior.webp",
+          "alt": "Grey executive desk with wall cabinets in a 10x10 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
@@ -89,36 +95,43 @@
       "sku": "SP-20-SCO-2024",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-exterior-hero.webp",
-          "alt": "Exterior view of a 20x8 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-hero-view.webp",
+          "alt": "Grey shipping container office with navy base, 20x8 ft, on a lawn edge, hero angle",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-side-elevation-grey.webp",
-          "alt": "Side elevation of a 20x8 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-front-angle.webp",
+          "alt": "Teal blue 20x8 ft shipping container office, front corner view on concrete",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-elevated-view-blue.webp",
-          "alt": "Elevated exterior view of a 20x8 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-side-elevation.webp",
+          "alt": "White 20x8 ft shipping container office with dark base below a gantry bridge",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-manager-office-interior-grey.webp",
-          "alt": "Inside a 20x8 ft SAMAN shipping container office — manager office",
+          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-workspace-interior.webp",
+          "alt": "Desk, plant and low sideboard inside a 20x8 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-team-office-interior-beige.webp",
-          "alt": "Inside a 20x8 ft SAMAN shipping container office — team office",
+          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-team-interior.webp",
+          "alt": "Continuous desk row with chairs inside a 20x8 ft shipping container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-corner-interior.webp",
+          "alt": "Monitor workstation by the window in a 20x8 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
@@ -138,36 +151,43 @@
       "sku": "SP-20-SCO-2024",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-exterior-hero.webp",
-          "alt": "Exterior view of a 20x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-hero-view.webp",
+          "alt": "Dark green 20x10 ft shipping container office, hero exterior on patterned paving",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-front-elevation-white.webp",
-          "alt": "Front elevation of a 20x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-front-angle.webp",
+          "alt": "Pale green and white 20x10 ft shipping container office, front angle by a pool court",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-elevated-view-yellow.webp",
-          "alt": "Elevated exterior view of a 20x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-side-elevation.webp",
+          "alt": "Amber yellow 20x10 ft shipping container office among tropical planting",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-manager-office-interior-beige.webp",
-          "alt": "Inside a 20x10 ft SAMAN shipping container office — manager office",
+          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-workspace-interior.webp",
+          "alt": "Timber desk with monitor and phone inside a 20x10 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-team-office-interior-wood.webp",
-          "alt": "Inside a 20x10 ft SAMAN shipping container office — team office",
+          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-meeting-interior.webp",
+          "alt": "Meeting table with four chairs inside a 20x10 ft shipping container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-entrance-interior.webp",
+          "alt": "Reception counter near the door of a 20x10 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
@@ -187,36 +207,43 @@
       "sku": "SP-20-SCO-2024",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-exterior-hero.webp",
-          "alt": "Exterior view of a 20x12 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-hero-view.webp",
+          "alt": "Light grey 20x12 ft shipping container office on a campus forecourt, hero angle",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-front-elevation-cream.webp",
-          "alt": "Front elevation of a 20x12 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-front-angle.webp",
+          "alt": "Blue 20x12 ft shipping container office under a site canopy, front corner view",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-elevated-view-green.webp",
-          "alt": "Elevated exterior view of a 20x12 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-side-elevation.webp",
+          "alt": "Beige 20x12 ft shipping container office with terracotta base, side elevation",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-manager-office-interior-grey.webp",
-          "alt": "Inside a 20x12 ft SAMAN shipping container office — manager office",
+          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-workspace-interior.webp",
+          "alt": "Executive desk with laptop and armchairs inside a 20x12 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-team-office-interior-grey.webp",
-          "alt": "Inside a 20x12 ft SAMAN shipping container office — team office",
+          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-team-interior.webp",
+          "alt": "Dark desks with monitors inside a 20x12 ft shipping container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-corner-interior.webp",
+          "alt": "Open floor with sideboard and desk inside a 20x12 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
@@ -236,36 +263,43 @@
       "sku": "SP-20-SCO-2024",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-exterior-hero.webp",
-          "alt": "Exterior view of a 30x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-hero-view.webp",
+          "alt": "Teal 30x10 ft shipping container office among trees, hero exterior angle",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-side-elevation-charcoal.webp",
-          "alt": "Side elevation of a 30x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-front-angle.webp",
+          "alt": "White 30x10 ft shipping container office at a waterside plot, front view",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-elevated-view-white-red.webp",
-          "alt": "Elevated exterior view of a 30x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-side-elevation.webp",
+          "alt": "Charcoal 30x10 ft shipping container office on marked parking, side elevation",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-manager-office-interior-beige.webp",
-          "alt": "Inside a 30x10 ft SAMAN shipping container office — manager office",
+          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-meeting-interior.webp",
+          "alt": "Meeting desk flanked by two chairs inside a 30x10 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-team-office-interior-wood.webp",
-          "alt": "Inside a 30x10 ft SAMAN shipping container office — team office",
+          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-team-interior.webp",
+          "alt": "Monitor desks beside bright windows in a 30x10 ft shipping container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-lounge-interior.webp",
+          "alt": "Long work counter and visitor sofa inside a 30x10 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
@@ -285,36 +319,43 @@
       "sku": "SP-20-SCO-2024",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-exterior-hero.webp",
-          "alt": "Exterior view of a 40x8 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-hero-view.webp",
+          "alt": "Yellow shipping container office with green base, 40x8 ft, before a glass tower, hero angle",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-side-elevation-green.webp",
-          "alt": "Side elevation of a 40x8 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-front-angle.webp",
+          "alt": "Long white 40x8 ft shipping container office, front corner perspective",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-elevated-view-blue.webp",
-          "alt": "Elevated exterior view of a 40x8 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-side-elevation.webp",
+          "alt": "Yellow 40x8 ft shipping container office with dark base at a waterside road",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-manager-office-interior-grey.webp",
-          "alt": "Inside a 40x8 ft SAMAN shipping container office — manager office",
+          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-workspace-interior.webp",
+          "alt": "Wall desks and tall wardrobe inside a 40x8 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-team-office-interior-beige.webp",
-          "alt": "Inside a 40x8 ft SAMAN shipping container office — team office",
+          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-team-interior.webp",
+          "alt": "Long desk row with plants inside a 40x8 ft shipping container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-corridor-interior.webp",
+          "alt": "Grey desks along the corridor of a 40x8 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
@@ -334,36 +375,43 @@
       "sku": "SP-20-SCO-2024",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-exterior-hero.webp",
-          "alt": "Exterior view of a 20x20 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-hero-view.webp",
+          "alt": "Blue 20x20 ft shipping container office near a rail yard, hero exterior",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-front-elevation-red.webp",
-          "alt": "Front elevation of a 20x20 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-front-angle.webp",
+          "alt": "Green and cream 20x20 ft shipping container office, front corner view",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-elevated-view-green.webp",
-          "alt": "Elevated exterior view of a 20x20 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-side-elevation.webp",
+          "alt": "Red 20x20 ft shipping container office outside an industrial hall, side elevation",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-manager-office-interior-grey.webp",
-          "alt": "Inside a 20x20 ft SAMAN shipping container office — manager office",
+          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-workspace-interior.webp",
+          "alt": "L-shaped desks with monitors inside a 20x20 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-team-office-interior-wood.webp",
-          "alt": "Inside a 20x20 ft SAMAN shipping container office — team office",
+          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-team-interior.webp",
+          "alt": "Twin desks facing a blue door inside a 20x20 ft shipping container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-corner-interior.webp",
+          "alt": "Timber executive desk with wall shelves in a 20x20 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
@@ -383,36 +431,43 @@
       "sku": "SP-20-SCO-2024",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-exterior-hero.webp",
-          "alt": "Exterior view of a 40x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-hero-view.webp",
+          "alt": "Dark green 40x10 ft shipping container office, hero exterior on a marked yard",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-front-elevation-yellow.webp",
-          "alt": "Front elevation of a 40x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-front-angle.webp",
+          "alt": "Sage green 40x10 ft shipping container office with clipped shrubs, front angle",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-elevated-view-blue.webp",
-          "alt": "Elevated exterior view of a 40x10 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-side-elevation.webp",
+          "alt": "Cream 40x10 ft shipping container office beside a rendered wall, side elevation",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-manager-office-interior-beige.webp",
-          "alt": "Inside a 40x10 ft SAMAN shipping container office — manager office",
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-workspace-interior.webp",
+          "alt": "Timber desk with chair and shelf unit inside a 40x10 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-team-office-interior-grey.webp",
-          "alt": "Inside a 40x10 ft SAMAN shipping container office — team office",
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-corner-interior.webp",
+          "alt": "Wall-length desk with task chairs inside a 40x10 ft shipping container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-entrance-interior.webp",
+          "alt": "Office chair and desk facing the entry of a 40x10 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
@@ -432,36 +487,43 @@
       "sku": "SP-20-SCO-2024",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-exterior-hero.webp",
-          "alt": "Exterior view of a 40x12 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-hero-view.webp",
+          "alt": "Pale green 40x12 ft shipping container office in a garden setting, hero angle",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-front-elevation-cream.webp",
-          "alt": "Front elevation of a 40x12 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-front-angle.webp",
+          "alt": "Dark green 40x12 ft shipping container office by a site gate, front corner view",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-elevated-view-blue.webp",
-          "alt": "Elevated exterior view of a 40x12 ft SAMAN shipping container office",
+          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-side-elevation.webp",
+          "alt": "Yellow 40x12 ft shipping container office on a campus plaza, side elevation",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-manager-office-interior-beige.webp",
-          "alt": "Inside a 40x12 ft SAMAN shipping container office — manager office",
+          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-workspace-interior.webp",
+          "alt": "Dark workstations with widescreen displays inside a 40x12 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
         },
         {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-team-office-interior-wood.webp",
-          "alt": "Inside a 40x12 ft SAMAN shipping container office — team office",
+          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-team-interior.webp",
+          "alt": "Grouped desks on wood flooring inside a 40x12 ft shipping container office",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-lounge-interior.webp",
+          "alt": "Open office with sofa corner inside a 40x12 ft shipping container office",
           "provenance": "unknown",
           "width": 900,
           "height": 900
