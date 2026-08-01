@@ -370,7 +370,10 @@ export function buildMerchantProduct(product: ProductLike, baseUrl = MERCHANT_BA
   const sku = getProductSku(product);
   const title = cleanText(product.name, 150);
   const slug = cleanText(product.slug, 160);
-  const priceValue = getEffectiveProductPrice(product);
+  // C04 ruling 9 (1 Aug 2026): the hub's approved inclusive ladder starts at
+  // Rs 3,42,200. Keep the immutable WordPress export untouched and correct only
+  // Merchant item 1050 at the feed boundary.
+  const priceValue = id === '1050' ? 342200 : getEffectiveProductPrice(product);
 
   if (!id || !title || !slug) return null;
   if (hasMerchantUnsafePrice(product)) return null;

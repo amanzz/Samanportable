@@ -1,24 +1,10 @@
-import specsDataset from '@/data/products/specs-tab-dataset.json';
-import { buildContainerOfficesShippingHtml } from '@/lib/specsShippingTabs';
-
-type SpecEntry = {
-  groups: Record<string, Record<string, string | number>>;
-  fullTechnicalDescription: string;
-  commonPlatformSummary: string;
-};
-
-const entry = (specsDataset as Record<string, SpecEntry>)['container-office-cabin'];
+import {
+  buildC04SpecificationsHtml,
+  buildContainerOfficesShippingHtml,
+} from '@/lib/specsShippingTabs';
 
 const esc = (value: string | number): string =>
   String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-const GROUP_ORDER = [
-  'Structure & Chassis',
-  'Cladding & Sheets',
-  'Interior & Insulation',
-  'Openings & Services',
-  'Layout',
-];
 
 const TH =
   'border-b-2 border-slate-300 px-3 py-2 text-left text-xs font-bold uppercase tracking-wide text-slate-600';
@@ -60,33 +46,8 @@ export function insertContainerOfficeCabinPriceHtml(description: string): string
   return `${description.slice(0, insertIndex)}${CONTAINER_OFFICE_CABIN_PRICE_HTML}${description.slice(insertIndex)}`;
 }
 
-function groupTable(title: string, fields: Record<string, string | number>): string {
-  const rows = Object.entries(fields)
-    .map(
-      ([label, value]) =>
-        `<tr><td class="${TD}">${esc(label)}</td><td class="${TD}">${esc(value)}</td></tr>`
-    )
-    .join('');
-  return (
-    `<section class="mb-5 overflow-x-auto rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm">` +
-    `<h4 class="mb-3 text-base font-bold text-emerald-900">${esc(title)}</h4>` +
-    `<table class="w-full border-collapse"><thead><tr>` +
-    `<th class="${TH}">Element</th><th class="${TH}">Specification</th>` +
-    `</tr></thead><tbody>${rows}</tbody></table></section>`
-  );
-}
-
 export function buildContainerOfficeCabinSpecificationsHtml(): string {
-  const groups = GROUP_ORDER.map((title) => groupTable(title, entry.groups[title])).join('');
-  return (
-    `<div class="not-prose">` +
-    `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(entry.fullTechnicalDescription)}</p>` +
-    groups +
-    `<section class="mt-2 rounded-xl border border-emerald-200 bg-emerald-50 p-5">` +
-    `<h4 class="mb-2 text-base font-bold text-emerald-900">Warranty &amp; Support</h4>` +
-    `<p class="m-0 text-sm leading-relaxed text-emerald-800">${esc(entry.commonPlatformSummary)}</p>` +
-    `</section></div>`
-  );
+  return buildC04SpecificationsHtml('container-office-cabin');
 }
 
 const SHIPPING_INTRO =

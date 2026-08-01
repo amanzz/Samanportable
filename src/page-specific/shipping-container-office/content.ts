@@ -1,6 +1,6 @@
 import {
   buildContainerOfficesShippingHtml,
-  buildContainerOfficesSpecificationsHtml,
+  buildC04SpecificationsHtml,
 } from '@/lib/specsShippingTabs';
 
 const SPECIFICATIONS_INTRO =
@@ -42,20 +42,7 @@ const replaceFirstParagraph = (
 };
 
 export const buildShippingContainerOfficeSpecificationsHtml = (): string => {
-  const base = replaceFirstParagraph(
-    buildContainerOfficesSpecificationsHtml(),
-    'mb-5 text-sm leading-relaxed text-slate-600',
-    SPECIFICATIONS_INTRO
-  );
-  const inheritedWarranty =
-    '<li class="text-sm text-slate-600">warranty "12-month workmanship warranty, confirmed at quotation."</li>';
-  const exactWarranty = `<li class="text-sm text-slate-600">${escapeHtml(WARRANTY_LINE)}</li>`;
-
-  if (!base.includes(inheritedWarranty)) {
-    throw new Error('Shipping Container Office warranty anchor is missing.');
-  }
-
-  return base.replace(inheritedWarranty, exactWarranty);
+  return buildC04SpecificationsHtml('shipping-container-office');
 };
 
 export const buildShippingContainerOfficeShippingHtml = (): string =>

@@ -20,6 +20,7 @@
 import specsDataset from '@/data/products/specs-tab-dataset.json';
 import c01Specifications from '@/data/products/c01-specifications.json';
 import c06Specifications from '@/data/products/c06-specifications.json';
+import c04Specifications from '@/data/products/c04-specifications.json';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -47,6 +48,9 @@ const C01_DATASET = c01Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
 const C06_DATASET = c06Specifications as unknown as {
+  products: Record<string, C01SpecificationEntry>;
+};
+const C04_DATASET = c04Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
 
@@ -124,6 +128,14 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
     );
   }).join('');
   return `<div class="not-prose">${cards}</div>`;
+}
+
+export function buildC04SpecificationsHtml(pageSlug: string): string {
+  const entry = C04_DATASET.products[pageSlug];
+  if (!entry) {
+    throw new Error(`Missing C-04 specification dataset for ${pageSlug}`);
+  }
+  return buildC01SpecificationsHtml(entry);
 }
 
 /** Full Specifications tab body for one product. Renders below ProductTabs' own
@@ -627,6 +639,12 @@ export function getProductTabsHtml(
       shippingHtml: buildShippingHtml(),
     };
   }
+  if (pageSlug && C04_DATASET.products[pageSlug]) {
+    return {
+      specificationsHtml: buildC04SpecificationsHtml(pageSlug),
+      shippingHtml: buildContainerOfficesShippingHtml(),
+    };
+  }
   // C-02 portable shop cabin — flat spec table + shared shipping.
   if (pageSlug === 'portable-shop-cabin') {
     return {
@@ -647,15 +665,6 @@ export function getProductTabsHtml(
     return {
       specificationsHtml: buildPortableCabinSpecificationsHtml(),
       shippingHtml: buildShippingHtml(),
-    };
-  }
-  // C-04 container offices HUB — bespoke §C specs (50/50 halves, 12-month warranty) +
-  // bespoke §D shipping (container narration + shared freight/destination tables, 5–10yr
-  // structural-warranty block omitted per Decision-W1).
-  if (pageSlug === 'container-offices') {
-    return {
-      specificationsHtml: buildContainerOfficesSpecificationsHtml(),
-      shippingHtml: buildContainerOfficesShippingHtml(),
     };
   }
   // C-03 portable office HUB — bespoke §C specs (50/50 halves, 12-month warranty line,
