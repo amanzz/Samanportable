@@ -12,7 +12,8 @@
   "deliveryLabel": "7–21 working days",
   "applicationsDataset": "site-office-container",
   "explorerImageTemplate": "/images/products/site-office-container/{sizeSlug}/site-office-container-{sizeSlug}-exterior-hero.webp",
-  "trustWarranty": "12-month workmanship warranty",
+  "trustWarranty": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+  "specPdfHref": "/specs/site-office-container-technical-specification.pdf",
   "emitAggregateOffer": true,
   "pricePerSqft": {
     "10x10": "1,485",

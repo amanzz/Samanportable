@@ -1,0 +1,748 @@
+{
+  "products": {
+    "container-offices": {
+      "name": "Container Offices",
+      "sourceSheet": "42 Container Offices",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "detail": "150×75×5 mm MS C-channel",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "detail": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "detail": "80×40×3 mm MS top perimeter",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "detail": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "detail": "1.25–1.6 mm corrugated MS sheet",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "detail": "1.6 mm corrugated MS sheet",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "detail": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "detail": "12.5 mm gypsum or premium laminated ceiling",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "detail": "19 mm marine-grade plywood or 18 mm Bison panel",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "detail": "5–6 mm SPC or 3–4 mm LVT flooring",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "detail": "75 mm mineral wool",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "detail": "100 mm glass wool or mineral wool",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "detail": "Premium insulated/laminated door with closer and upgraded lockset",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "detail": "Large powder-coated aluminium windows with 6 mm tinted glass",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "detail": "Cross ventilation with wall/ceiling fans and split-AC provision.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "detail": "Not included unless shown in the approved scope.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "detail": "Office layout with workstations, storage and optional manager or meeting partition.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "differsFromHub": false
+        }
+      ]
+    },
+    "container-office-cabin": {
+      "name": "Container Office Cabin",
+      "sourceSheet": "43 Container Office Cabin",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "detail": "100×50×3 mm MS C-channel",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "detail": "100×50 mm C-channels, 50×50 mm MS angles, 75×40 mm channels and MS square pipes",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "detail": "100×50, 80×40 and 50×50 mm MS square pipes as required",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "detail": "50×50×1.6 mm MS square-pipe top frame",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "detail": "50×50×1.2 mm plus 50×40, 40×40, 50×25 and 25×25 mm MS members",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "detail": "50×50×2 mm MS square-pipe posts or 60×60 mm MS angles",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "detail": "1.2 mm specially corrugated MS sheet",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "detail": "1.4 mm corrugated MS sheet",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "detail": "8 mm pre-laminated MDF board with aluminium joint sections",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "detail": "8 mm pre-laminated MDF ceiling",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "detail": "18 mm Bison panel",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "detail": "1.3 mm vinyl flooring",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "detail": "25 mm glass wool or 12 mm heatlon",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "detail": "50 mm glass wool, nominal density 42 kg/m³",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "detail": "7×3 ft externally opening MS-framed door using 30×30 mm MS tubular sections",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "detail": "Two-track powder-coated aluminium sliding windows with 4 mm glass",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "detail": "Cross ventilation with wall/ceiling fans and split-AC provision.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "detail": "Not included unless shown in the approved scope.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "detail": "Office layout with workstations, storage and optional manager or meeting partition.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "differsFromHub": false
+        }
+      ]
+    },
+    "shipping-container-office": {
+      "name": "Shipping Container Office",
+      "sourceSheet": "44 Shipping Container Office",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "detail": "150×75×5 mm MS C-channel",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "detail": "100×50×4 mm channels and 80×40×3 mm cross members with local reinforcement",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "detail": "80×40×3 mm MS rectangular-pipe top perimeter",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "detail": "60×40×2.5 mm rafters and purlins",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "detail": "60×60×3 mm MS square-pipe posts",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "detail": "1.6 mm corrugated MS sheet",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "detail": "1.6 mm corrugated MS sheet",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "detail": "8–10 mm fibre-cement board or 0.50 mm pre-painted metal liner",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "detail": "8 mm fibre-cement ceiling or 0.50 mm metal liner",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "detail": "24 mm cement board or heavy MS floor plate",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "detail": "2–3 mm commercial PVC, epoxy or 3 mm chequered plate",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "detail": "50–75 mm mineral wool",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "detail": "75–100 mm mineral wool",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "detail": "Heavy single or double-leaf MS door with industrial lockset",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "detail": "Reduced-size aluminium windows or louvered ventilators with 5 mm glass where used",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "detail": "Cross ventilation with wall/ceiling fans and split-AC provision.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "detail": "Not included unless shown in the approved scope.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "detail": "Office layout with workstations, storage and optional manager or meeting partition.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "differsFromHub": false
+        }
+      ]
+    },
+    "site-office-container": {
+      "name": "Site Office Container",
+      "sourceSheet": "45 Site Office Container",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "detail": "125×75×4 mm MS C-channel",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "detail": "100×50×3 mm channels and 80×40×2.5 mm MS tubular members",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "detail": "80×40×2.5 mm primary and 50×50×2 mm secondary floor members",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "detail": "50×50×2 mm MS square-pipe top perimeter",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "detail": "50×50×2 mm rafters and 40×40×2 mm purlins",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "detail": "50×50×2.5 mm MS square-pipe posts",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "detail": "1.25 mm corrugated HR/MS sheet",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "detail": "1.4 mm corrugated MS sheet",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "detail": "8–12 mm pre-laminated MDF or plywood",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "detail": "8 mm pre-laminated ceiling board",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "detail": "18 mm Bison panel",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "detail": "2 mm commercial vinyl flooring",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "detail": "50 mm glass wool",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "detail": "75 mm glass wool",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "detail": "34 mm BWP flush door with powder-coated MS frame and upgraded hardware",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "detail": "Powder-coated aluminium windows with 5 mm glass",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "detail": "Cross ventilation with wall/ceiling fans and split-AC provision.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "detail": "Not included unless shown in the approved scope.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "detail": "Office layout with workstations, storage and optional manager or meeting partition.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "differsFromHub": false
+        }
+      ]
+    }
+  }
+}

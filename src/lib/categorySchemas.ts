@@ -384,7 +384,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 2,
             "name": "Portable Container Offices",
-            "url": "https://www.samanportable.com/product/container-offices/portable-container-offices"
+            "url": "https://www.samanportable.com/product/container-offices"
           },
           {
             "@type": "ListItem",
@@ -420,7 +420,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 8,
             "name": "Modular Shipping Container Office",
-            "url": "https://www.samanportable.com/product/container-offices/modular-shipping-container-office"
+            "url": "https://www.samanportable.com/product/container-offices/shipping-container-office"
           },
           {
             "@type": "ListItem",
@@ -432,7 +432,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 10,
             "name": "Prefabricated Container Office",
-            "url": "https://www.samanportable.com/product/container-offices/prefabricated-container-office"
+            "url": "https://www.samanportable.com/product/container-offices/container-office-cabin"
           },
           {
             "@type": "ListItem",
@@ -2211,4 +2211,3 @@ export const categorySchemas: Record<string, any> = {
     ]
   },
 };
-

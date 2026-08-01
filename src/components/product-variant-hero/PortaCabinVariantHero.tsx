@@ -462,6 +462,12 @@ export function PortaCabinVariantHero({
   const productSku = data.productSku || preset.productSku;
   const specPdfHref = data.specPdfHref || preset.specPdfHref;
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
+  const isC04Product = new Set([
+    'container-offices',
+    'container-office-cabin',
+    'shipping-container-office',
+    'site-office-container',
+  ]).has(data.productSlug);
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
@@ -611,7 +617,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={!showVideo && i === activeImageIndex ? '' : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={isC04Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt)} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
               </button>
             ))}
 
@@ -840,7 +846,9 @@ export function PortaCabinVariantHero({
         )}
 
         <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">
-          GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery
+          {isC04Product
+            ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
+            : <>GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery</>}
         </p>
       </div>
     </Card>

@@ -25,7 +25,8 @@
   "deliveryLabel": "7–21 working days",
   "materialLabel": "Corrugated ISO container steel · Insulated",
   "emitAggregateOffer": true,
-  "trustWarranty": "12-month workmanship warranty",
+  "trustWarranty": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+  "specPdfHref": "/specs/shipping-container-office-technical-specification.pdf",
   "variants": [
     {
       "sizeSlug": "10x10",

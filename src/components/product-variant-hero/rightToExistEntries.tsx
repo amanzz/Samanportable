@@ -5,6 +5,8 @@ const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
 const LABOUR_COLONY_HREF = '/product/labor-colony';
 const labourHref = (slug: string) => `${LABOUR_COLONY_HREF}/${slug}`;
+const CONTAINER_OFFICES_HREF = '/product/container-offices';
+const containerOfficeHref = (slug: string) => `${CONTAINER_OFFICES_HREF}/${slug}`;
 
 const bodyClass = 'text-sm leading-relaxed text-slate-700';
 const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline-offset-2';
@@ -17,6 +19,42 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  'container-offices': {
+    heading: 'Why the range page instead of one model',
+    body: (
+      <>This page holds the whole container office range so a buyer can set the cabin, shipping-form and site-office builds against each other before committing to one. All three are newly fabricated steel modules from our own works, differing in duty, layout and finish rather than in platform. Start here when you know the need but not yet the model.</>
+    ),
+    comparison: (
+      <>Already certain a construction site office is the job? <Link className={linkClass} href={containerOfficeHref('site-office-container')}>The dedicated site office page</Link> carries that build alone.</>
+    ),
+  },
+  'container-office-cabin': {
+    heading: 'Why the cabin model earns its own page',
+    body: (
+      <>The cabin is the office-first member of the range: a defined manager-and-staff layout, computer and data points, lockable records storage and AC provision all arrive as one quotation-ready module. It is specified for the people who will sit in it every working day, not just visit it between rounds. Choose it when the office itself matters more than the relocation schedule.</>
+    ),
+    comparison: (
+      <>Moving the office between projects every season? The <Link className={linkClass} href={containerOfficeHref('shipping-container-office')}>shipping-form container office</Link> is hardened for exactly that duty.</>
+    ),
+  },
+  'shipping-container-office': {
+    heading: 'Why the shipping-form build stands apart',
+    body: (
+      <>This model is the range&apos;s relocation specialist: stronger handling interfaces, reinforced cut-outs, durable floor and liner selections and secure doors, with relocation documentation included in the delivery pack. It is engineered to be lifted, moved and lifted again without anything working loose. Choose it when the office&apos;s next address is already written on the project plan.</>
+    ),
+    comparison: (
+      <>If the unit will stay put and daily office comfort leads, <Link className={linkClass} href={containerOfficeHref('container-office-cabin')}>the office-first cabin model</Link> is specified for that instead.</>
+    ),
+  },
+  'site-office-container': {
+    heading: 'Why the site office is its own model',
+    body: (
+      <>This build is drawn around a construction site&apos;s working day: plan-table clearance, manager and staff seating, pin-up walls for current drawings, an external PPE transition point and quick service connection on arrival. It is the model that runs a project rather than merely housing its desks. Choose it when the office is going to be the site&apos;s command point.</>
+    ),
+    comparison: (
+      <>Need the same module hardened for repeated lifts between projects? The <Link className={linkClass} href={containerOfficeHref('shipping-container-office')}>shipping-form office build</Link> carries that duty.</>
+    ),
+  },
   'porta-cabins': {
     heading: 'The SAMAN porta cabin range at a glance',
     body: (

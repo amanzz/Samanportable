@@ -5,6 +5,8 @@
   "hsn": "9406",
   "gstPercent": 18,
   "emitAggregateOffer": true,
+  "specPdfHref": "/specs/container-offices-technical-specification.pdf",
+  "trustWarranty": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
   "variants": [
     {
       "sizeSlug": "10x10",

@@ -40,6 +40,9 @@ const RETIRED_LISTING_SLUGS = new Set<string>([
   ...PORTA_CABIN_REDIRECTED_SLUGS,
   ...PORTABLE_OFFICE_REDIRECTED_SLUGS,
   'prefabricated-site-office',
+  'modular-shipping-container-office',
+  'portable-container-offices',
+  'prefabricated-container-office',
   // C06 labour-colony Event A: archived records remain available for audit only.
   // They must never re-enter buyer listings, related rails, Merchant, or local
   // inventory through getAllListingProductsRaw().
@@ -66,7 +69,7 @@ function readJson(file: string): any | null {
 // C06 internal-link hygiene. The four winner records are byte-locked for this
 // event, so approved hrefs are corrected at the static content boundary without
 // changing any visible text, L3 field, schema payload, or winner source byte.
-const C06_RETIRED_INTERNAL_LINKS = new Map<string, string>([
+const RETIRED_INTERNAL_LINKS = new Map<string, string>([
   ['/product/labor-colony/prefab-labor-sheds', '/product/labor-colony/labor-sheds'],
   ['/product/labor-colony/prefab-labor-hutments', '/product/labor-colony/labor-hutments'],
   ['/product/labor-colony/labor-camps', '/product/labor-colony/prefab-labor-camps'],
@@ -75,12 +78,15 @@ const C06_RETIRED_INTERNAL_LINKS = new Map<string, string>([
   ['/product/labor-colony/labor-shelters', '/product/labor-colony'],
   ['/product/labor-colony/prefab-labour-colony', '/product/labor-colony'],
   ['/product-category/labor-colony', '/product/labor-colony'],
+  ['/product/container-offices/modular-shipping-container-office', '/product/container-offices/shipping-container-office'],
+  ['/product/container-offices/portable-container-offices', '/product/container-offices'],
+  ['/product/container-offices/prefabricated-container-office', '/product/container-offices/container-office-cabin'],
 ]);
 
-export function rewriteC06RetiredInternalLinks(html: string): string {
+export function rewriteRetiredInternalLinks(html: string): string {
   if (!html || !html.includes('href=')) return html;
   let rewritten = html;
-  for (const [source, destination] of C06_RETIRED_INTERNAL_LINKS) {
+  for (const [source, destination] of RETIRED_INTERNAL_LINKS) {
     for (const quote of ['"', "'"]) {
       rewritten = rewritten
         .split(`href=${quote}${source}${quote}`)
@@ -90,6 +96,62 @@ export function rewriteC06RetiredInternalLinks(html: string): string {
     }
   }
   return rewritten;
+}
+
+const C04_CANONICAL_WARRANTY =
+  'Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.';
+
+const C04_PLATFORM_DISCLOSURES: Record<string, { marker: string; sentence: string }> = {
+  'container-offices': {
+    marker: 'Every SAMAN container office is fabricated from new ISO-grade Corten steel.',
+    sentence:
+      'Every model on this page is newly fabricated in container form at our Bengaluru and Greater Noida works; a converted used ISO container is available only as a separately quoted option.',
+  },
+  'container-office-cabin': {
+    marker: 'A container office cabin is a container.',
+    sentence:
+      'This cabin is newly fabricated in container form; no used cargo shell is involved unless you separately request a converted-container quotation.',
+  },
+  'shipping-container-office': {
+    marker: 'A SAMAN shipping container office is a new ISO-grade Corten steel structure',
+    sentence:
+      'The shipping-form office is newly fabricated to container dimensions and hardware standards; conversion of a used ISO cargo container is quoted separately on request.',
+  },
+  'site-office-container': {
+    marker: 'The IS 2062 Corten steel frame handles years of outdoor exposure',
+    sentence:
+      'The site office container is newly fabricated in container form at our own works; used-container conversions are a separate, clearly quoted alternative.',
+  },
+};
+
+function applyC04GapCloseCopy(html: string, slug: string): string {
+  const disclosure = C04_PLATFORM_DISCLOSURES[slug];
+  if (!disclosure) return html;
+
+  const markerIndex = html.indexOf(disclosure.marker);
+  const paragraphEnd = markerIndex < 0 ? -1 : html.indexOf('</p>', markerIndex);
+  if (markerIndex < 0 || paragraphEnd < 0) {
+    throw new Error(`C04 platform-copy anchor is missing for ${slug}`);
+  }
+
+  let rendered = html;
+  if (slug === 'container-offices') {
+    rendered = rendered.replace(
+      /Warranty is 5 years on the structural frame\/base,[^<]+proper maintenance\./,
+      C04_CANONICAL_WARRANTY
+    );
+  }
+  rendered = rendered.replace(
+    '5 years structural frame and base, 1-2 years finishing, 20-25 years engineered service life',
+    C04_CANONICAL_WARRANTY
+  );
+
+  const canonicalAlreadyPresent = rendered.includes(C04_CANONICAL_WARRANTY);
+  const insertion =
+    `<p>${disclosure.sentence}</p>` +
+    (canonicalAlreadyPresent ? '' : `<p>${C04_CANONICAL_WARRANTY}</p>`);
+  const adjustedEnd = rendered.indexOf('</p>', rendered.indexOf(disclosure.marker));
+  return `${rendered.slice(0, adjustedEnd + 4)}${insertion}${rendered.slice(adjustedEnd + 4)}`;
 }
 
 // C03 Event Q: WordPress exports are read-only, so the approved punctuation
@@ -278,7 +340,7 @@ export async function fetchBlogPost(slug: string): Promise<any | null> {
   if (typeof rest?.content?.rendered === 'string') {
     rest.content = {
       ...rest.content,
-      rendered: rewriteC06RetiredInternalLinks(rest.content.rendered),
+      rendered: rewriteRetiredInternalLinks(rest.content.rendered),
     };
   }
   return rest;
@@ -644,8 +706,8 @@ export async function fetchProductDescription(
   const p = findProductBySlug(slug);
   if (!p) return null;
   return {
-    description: rewriteC03RenderPunctuation(
-      rewriteC06RetiredInternalLinks(p.description || ''),
+    description: applyC04GapCloseCopy(
+      rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
       slug
     ),
     images: p.images || [],
@@ -741,7 +803,7 @@ export async function fetchProductCategoryBySlug(slug: string): Promise<ProductC
     id: c.id,
     name: c.name,
     slug: c.slug,
-    description: c.description || '',
+    description: rewriteRetiredInternalLinks(c.description || ''),
     extraDescription: '', // category meta_data is not part of the WC category object
     count: c.count || 0,
     image: c.image || null,

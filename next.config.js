@@ -243,6 +243,13 @@ const nextConfig = {
       { source: '/product/container-offices/mobile-container-office', destination: 'https://www.samanportable.com/product/portable-office/portable-office-container', statusCode: 301 },
       { source: '/product/container-offices/mobile-office-container', destination: 'https://www.samanportable.com/product/portable-office/portable-office-container', statusCode: 301 },
 
+      // C04 gap-close (owner-approved 2026-08-01): retire the remaining competing
+      // listings and the obsolete root alias in one hop to their keepers.
+      { source: '/shipping-container-office', destination: 'https://www.samanportable.com/product/container-offices/shipping-container-office', statusCode: 301 },
+      { source: '/product/container-offices/modular-shipping-container-office', destination: 'https://www.samanportable.com/product/container-offices/shipping-container-office', statusCode: 301 },
+      { source: '/product/container-offices/portable-container-offices', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
+      { source: '/product/container-offices/prefabricated-container-office', destination: 'https://www.samanportable.com/product/container-offices/container-office-cabin', statusCode: 301 },
+
       // Product singular-to-canonical plural redirects (owner-approved 2026-07-01).
       // Absolute destinations keep these migration URLs single-hop.
       { source: '/product/container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
@@ -265,7 +272,7 @@ const nextConfig = {
       // Root-level product alias fixes from 2026-07-02 crawl 4xx report.
       { source: '/site-office-container', destination: 'https://www.samanportable.com/product/container-offices/site-office-container', statusCode: 301 },
       { source: '/modular-container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
-      { source: '/prefabricated-container-office', destination: 'https://www.samanportable.com/product/container-offices/prefabricated-container-office', statusCode: 301 },
+      { source: '/prefabricated-container-office', destination: 'https://www.samanportable.com/product/container-offices/container-office-cabin', statusCode: 301 },
       { source: '/container-office-cabin', destination: 'https://www.samanportable.com/product/container-offices/container-office-cabin', statusCode: 301 },
 
       // Already identified nav/internal 404s.
@@ -1158,7 +1165,7 @@ const nextConfig = {
       },
       {
         source: '/product/modular-shipping-container-office',
-        destination: 'https://www.samanportable.com/product/container-offices/modular-shipping-container-office',
+        destination: 'https://www.samanportable.com/product/container-offices/shipping-container-office',
         permanent: true,
       },
       {
@@ -1195,7 +1202,7 @@ const nextConfig = {
       },
       {
         source: '/product/portable-container-offices',
-        destination: 'https://www.samanportable.com/product/container-offices/portable-container-offices',
+        destination: 'https://www.samanportable.com/product/container-offices',
         permanent: true,
       },
       {
@@ -1262,7 +1269,7 @@ const nextConfig = {
       },
       {
         source: '/product/prefabricated-container-office',
-        destination: 'https://www.samanportable.com/product/container-offices/prefabricated-container-office',
+        destination: 'https://www.samanportable.com/product/container-offices/container-office-cabin',
         permanent: true,
       },
       {
