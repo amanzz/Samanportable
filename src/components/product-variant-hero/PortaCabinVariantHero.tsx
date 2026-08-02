@@ -128,6 +128,22 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   ),
 };
 
+const C04_PRODUCT_SLUGS = new Set([
+  'container-offices',
+  'container-office-cabin',
+  'shipping-container-office',
+  'site-office-container',
+]);
+
+const rewriteC04VisiblePunctuation = (
+  value: string | undefined,
+  productSlug: string,
+  heading = false
+) =>
+  value && C04_PRODUCT_SLUGS.has(productSlug)
+    ? value.replace(/\s*\u2014\s*/g, heading ? ': ' : ', ')
+    : value;
+
 // Application-panel alt: "Elevated view of {size} ft {product} used as
 // {first application}" — first checkmark lowercased + final word singularised
 // (matches the owner's example: "…used as project and site office"). Unique per
@@ -462,12 +478,7 @@ export function PortaCabinVariantHero({
   const productSku = data.productSku || preset.productSku;
   const specPdfHref = data.specPdfHref || preset.specPdfHref;
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
-  const isC04Product = new Set([
-    'container-offices',
-    'container-office-cabin',
-    'shipping-container-office',
-    'site-office-container',
-  ]).has(data.productSlug);
+  const isC04Product = C04_PRODUCT_SLUGS.has(data.productSlug);
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
@@ -685,7 +696,7 @@ export function PortaCabinVariantHero({
     { label: 'Delivery', value: data.deliveryLabel || '7–21 Working Days' },
     { label: 'Coverage', value: 'Bangalore · Delhi NCR' },
     { label: 'Brand', value: 'SAMAN Portable' },
-    { label: 'Application', value: heroActive.useCase },
+    { label: 'Application', value: rewriteC04VisiblePunctuation(heroActive.useCase, data.productSlug) },
   ];
 
   // INFO-ONLY buy box: no CTA buttons here (owner ruling — desktop conversion
@@ -771,7 +782,7 @@ export function PortaCabinVariantHero({
           <p className={data.opener
             ? 'text-sm leading-[1.5] text-[var(--ds-color-steel)]'
             : 'h-[126px] min-[360px]:h-[105px] sm:h-[63px] md:h-[42px] lg:h-[105px] xl:h-[84px] overflow-hidden text-sm leading-[1.5] text-[var(--ds-color-steel)]'}>
-            {data.opener || heroActive.shortDescription}
+            {rewriteC04VisiblePunctuation(data.opener || heroActive.shortDescription, data.productSlug)}
           </p>
         )}
 
@@ -1029,10 +1040,10 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
       {applications.h2 && (
         <div className="mb-4">
           <h2 id="size-applications-heading" className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
-            {applications.h2}
+            {rewriteC04VisiblePunctuation(applications.h2, data.productSlug, true)}
           </h2>
           {applications.intro && (
-            <p className="mt-1 text-sm text-[var(--ds-color-steel)]">{applications.intro}</p>
+            <p className="mt-1 text-sm text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(applications.intro, data.productSlug)}</p>
           )}
         </div>
       )}
@@ -1166,13 +1177,13 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   keeps justify-center exactly as before. This is the one sanctioned
                   shared-component change; every §H page inherits it. */}
               <div className="flex min-w-0 flex-1 flex-col justify-center lg:justify-between">
-                <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{panel.h3}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{panel.paragraph}</p>
+                <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{rewriteC04VisiblePunctuation(panel.h3, data.productSlug, true)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph, data.productSlug)}</p>
 
                 {/* Sub-heading above the applications list — T25 Section H drop only. */}
                 {panel.applicationsHeading && (
                   <p className="mt-4 text-sm font-semibold text-[var(--ds-color-forest)]">
-                    {panel.applicationsHeading}
+                    {rewriteC04VisiblePunctuation(panel.applicationsHeading, data.productSlug, true)}
                   </p>
                 )}
 
@@ -1182,7 +1193,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   {panel.applications.map((app, ai) => (
                     <li key={ai} className="flex items-start gap-2 text-sm text-[var(--ds-color-ink)]">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--ds-color-leaf)]" aria-hidden="true" />
-                      <span>{app}</span>
+                      <span>{rewriteC04VisiblePunctuation(app, data.productSlug)}</span>
                     </li>
                   ))}
                 </ul>

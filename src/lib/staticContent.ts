@@ -117,6 +117,47 @@ export function rewriteRetiredInternalLinks(html: string): string {
 const C04_CANONICAL_WARRANTY =
   '5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Typical service life is 20 to 25 years under proper use and maintenance, which is an engineering expectation, not a warranty period.';
 
+const C04_PRODUCT_SLUGS = new Set([
+  'container-offices',
+  'container-office-cabin',
+  'shipping-container-office',
+  'site-office-container',
+]);
+const C04_REVIEW_PRODUCT_IDS = new Set([1050, 1273, 1281, 1275]);
+
+// C-04 closure micro-REV: the first 100 rendered description words are the
+// byte-frozen L3 zone. Outside that boundary, render em dashes as punctuation
+// without changing the read-only WordPress export or any HTML attributes.
+// Heading text takes a colon; prose, FAQs and captions take a comma.
+function rewriteC04NonL3Punctuation(html: string, slug: string): string {
+  if (!C04_PRODUCT_SLUGS.has(slug) || !html.includes('\u2014')) return html;
+
+  let wordsSeen = 0;
+  let headingDepth = 0;
+  const replaceDashes = (text: string) =>
+    text.replace(/\s*\u2014\s*/g, headingDepth > 0 ? ': ' : ', ');
+
+  return html.replace(/<[^>]+>|[^<]+/g, (chunk) => {
+    if (chunk.startsWith('<')) {
+      if (/^<h[1-6]\b/i.test(chunk)) headingDepth += 1;
+      if (/^<\/h[1-6]\b/i.test(chunk)) headingDepth = Math.max(0, headingDepth - 1);
+      return chunk;
+    }
+
+    const words = [...chunk.matchAll(/\S+/g)];
+    if (words.length === 0) return chunk;
+    if (wordsSeen >= 100) return replaceDashes(chunk);
+
+    const frozenWordsRemaining = 100 - wordsSeen;
+    wordsSeen += words.length;
+    if (words.length <= frozenWordsRemaining) return chunk;
+
+    const lastFrozenWord = words[frozenWordsRemaining - 1];
+    const boundary = lastFrozenWord.index! + lastFrozenWord[0].length;
+    return `${chunk.slice(0, boundary)}${replaceDashes(chunk.slice(boundary))}`;
+  });
+}
+
 const C04_PLATFORM_DISCLOSURES: Record<string, { marker: string; sentence: string }> = {
   'container-offices': {
     marker: 'Every SAMAN container office is fabricated from new ISO-grade Corten steel.',
@@ -722,8 +763,11 @@ export async function fetchProductDescription(
   const p = findProductBySlug(slug);
   if (!p) return null;
   return {
-    description: applyC04GapCloseCopy(
-      rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
+    description: rewriteC04NonL3Punctuation(
+      applyC04GapCloseCopy(
+        rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
+        slug
+      ),
       slug
     ),
     images: p.images || [],
@@ -771,7 +815,9 @@ export async function fetchProductReviews(productId: number, perPage = 5): Promi
       product_id: r.product_id,
       reviewer: (r.reviewer && String(r.reviewer).trim()) || 'Anonymous',
       rating: r.rating,
-      review: r.review,
+      review: C04_REVIEW_PRODUCT_IDS.has(productId)
+        ? r.review.replace(/\s*\u2014\s*/g, ', ')
+        : r.review,
       date_created: r.date_created || '',
       verified: Boolean(r.verified),
       status: r.status,
