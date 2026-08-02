@@ -15,6 +15,7 @@ import { BlogPost as ApiBlogPost } from '@/config/api';
 type BlogPost = ApiBlogPost;
 const navigablePostPath = (slug: string) =>
   (redirectedPageDestinations as Record<string, string>)[slug] || `/${slug}`;
+const BLOG_POSTS_PER_PAGE = 10;
 
 // Reading time computed server-side (matches the previous in-component getReadingTime logic:
 // 200 wpm). Computing it here lets us strip the full `content.rendered` from the returned props
@@ -25,8 +26,24 @@ function computeReadingTime(content: string): number {
   return Math.ceil(wordCount / wordsPerMinute);
 }
 
-// Listing only needs card data + a precomputed reading-time number (not the full body).
-type BlogCardPost = BlogPost & { readingTime: number };
+// Listing cards deliberately use a compact server-prop projection. WordPress post
+// exports contain large SEO/head/link payloads that are not rendered by this page;
+// serializing them into __NEXT_DATA__ duplicates content and depresses the text/HTML
+// ratio, especially on category pagination.
+type BlogCardPost = {
+  id: number;
+  date: string;
+  slug: string;
+  title: { rendered: string };
+  excerpt: { rendered: string };
+  featured_media: number;
+  readingTime: number;
+  _embedded?: {
+    author?: Array<{ name: string }>;
+    'wp:featuredmedia'?: Array<{ source_url: string; alt_text?: string }>;
+    'wp:term'?: Array<Array<{ name: string; slug: string; taxonomy: string }>>;
+  };
+};
 
 // Per-category unique title + meta description. When a visitor lands on a category
 // filter (e.g. /blog?category=porta-cabins) we serve a unique, self-canonical title
@@ -193,7 +210,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
 
     console.log('Blog getServerSideProps: Starting to fetch blog posts...');
 
-    const postsPerPage = 10;
+    const postsPerPage = BLOG_POSTS_PER_PAGE;
     const cleanCategory = category?.trim().toLowerCase();
     const cleanTag = tag?.trim();
 
@@ -211,6 +228,13 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
         categoryHasMatchingPosts = true;
         result = paginatePosts(matchingPosts, page, postsPerPage);
       }
+    }
+
+    // A syntactically valid page number outside the available result set is a
+    // missing resource, not an empty listing. This prevents blank HTTP 200 pages
+    // for crawlers while retaining deterministic SSR for every valid page.
+    if (page > result.pagination.totalPages || (page > 1 && result.posts.length === 0)) {
+      return { notFound: true };
     }
 
     console.log('Blog getServerSideProps: Result:', {
@@ -304,13 +328,38 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       ? CATEGORY_INTRO[cleanCategory] || null
       : null;
 
-    // Compute reading time from the full content, then strip `content.rendered` so the large
-    // post bodies are NOT serialized into __NEXT_DATA__. All other card fields (title, excerpt,
-    // date, slug, _embedded featured media / term / author) are preserved unchanged.
+    // Compute reading time from the full content, then serialize only fields used
+    // by the visible listing cards and ItemList schema.
     const lightPosts: BlogCardPost[] = (result.posts || []).map((post: BlogPost) => ({
-      ...post,
+      id: post.id,
+      date: post.date,
+      slug: post.slug,
+      title: { rendered: post.title?.rendered || '' },
+      excerpt: { rendered: post.excerpt?.rendered || '' },
+      featured_media: post.featured_media || 0,
       readingTime: computeReadingTime(post?.content?.rendered || ''),
-      content: { ...(post.content || {}), rendered: '' },
+      _embedded: {
+        ...(post._embedded?.author?.[0]
+          ? { author: [{ name: post._embedded.author[0].name }] }
+          : {}),
+        ...(post._embedded?.['wp:featuredmedia']?.[0]
+          ? {
+              'wp:featuredmedia': [{
+                source_url: post._embedded['wp:featuredmedia'][0].source_url,
+                alt_text: post._embedded['wp:featuredmedia'][0].alt_text || '',
+              }],
+            }
+          : {}),
+        ...(post._embedded?.['wp:term']?.[0]
+          ? {
+              'wp:term': [post._embedded['wp:term'][0].map((term) => ({
+                name: term.name,
+                slug: term.slug,
+                taxonomy: term.taxonomy,
+              }))],
+            }
+          : {}),
+      },
     }));
 
     const props = {
@@ -335,24 +384,8 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     return { props };
   } catch (error) {
     console.error('Error in getServerSideProps:', error);
-    return {
-      props: {
-        posts: [],
-        totalPages: 1,
-        currentPage: 1,
-        totalPosts: 0,
-        categories: [],
-        tags: [],
-        seoCanonical: `${siteConfig.url}/blog`,
-        hreflangSelf: `${siteConfig.url}/blog`,
-        seoNoindex: true,
-        seoRouteBehavior: 'blog fetch error noindexed and canonicalized to blog hub',
-        seoTitle: pageSEO.blog.title,
-        seoDescription: pageSEO.blog.description,
-        seoCategoryIntro: null,
-        activeCategory: null,
-      },
-    };
+    // Never disguise a server/data failure as an empty successful listing.
+    return { notFound: true };
   }
 };
 
@@ -677,7 +710,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                         </Button>
                       </Link>
                       <p className="text-sm text-muted-foreground mt-2">
-                        Next {Math.min(20, totalPosts - (currentPage * 20))} articles available
+                        Next {Math.min(BLOG_POSTS_PER_PAGE, totalPosts - (currentPage * BLOG_POSTS_PER_PAGE))} articles available
                       </p>
                     </div>
                   )}

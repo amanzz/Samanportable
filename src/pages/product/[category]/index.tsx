@@ -34,6 +34,7 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
+import { toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import {
   PORTA_CABIN_REDIRECTED_SLUGS,
@@ -198,6 +199,11 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // both are projected from `relatedProducts`. The grid therefore renders the 8 live
     // cluster subpages and zero links to a redirecting URL.
     relatedProducts = relatedProducts.filter(p => !PORTABLE_OFFICE_REDIRECTED_SLUGS.includes(p.slug));
+
+    // Related rails/cards render only this compact catalog projection. Keeping full
+    // WooCommerce objects here duplicated long descriptions in __NEXT_DATA__ on
+    // every product hub without adding any visible content.
+    relatedProducts = relatedProducts.map(toRelatedProductSummary);
 
     // Fetch full description and images separately
     const descriptionData = await staticContent.fetchProductDescription(category);
