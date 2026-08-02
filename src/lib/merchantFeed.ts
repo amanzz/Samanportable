@@ -109,10 +109,9 @@ const COMPACT_UNIT_CATEGORY_SLUGS = new Set([
   'security-cabins',
 ]);
 
-// C-08's legacy catalogue offers contain the retired price/specification set. The
-// approved pack does not provide the five 2026 SKU codes needed to emit the 30
-// replacement variant offers, so the stale single-item offers are retired rather
-// than published with false commercial data.
+// C-08's five legacy catalogue offers contain the retired price/specification set.
+// They stay excluded after the approved 30 size variants are added below, so the
+// feed never publishes the stale single-item offers beside their replacements.
 const C08_PENDING_VARIANT_FEED_SLUGS = new Set([
   'container-houses',
   'prefab-container-homes',
@@ -633,6 +632,68 @@ export function buildAllVariantItems(
   return items;
 }
 
+export type C08VariantConfig = { slug: string; name: string };
+
+export const C08_VARIANT_CONFIGS: readonly C08VariantConfig[] = [
+  { slug: 'container-houses', name: 'Container Houses' },
+  { slug: 'prefab-container-homes', name: 'Prefab Container Homes' },
+  { slug: 'luxury-container-houses', name: 'Luxury Container Houses' },
+  { slug: 'shipping-container-homes', name: 'Shipping Container Homes' },
+  { slug: 'affordable-container-homes', name: 'Affordable Container Homes' },
+];
+
+type C08VariantData = PortaCabinVariantData & {
+  galleryImages?: Array<{ src?: string; alt?: string; width?: number | string; height?: number | string }>;
+};
+
+export function buildC08VariantItems(
+  config: C08VariantConfig,
+  data: C08VariantData | null | undefined,
+  baseUrl = MERCHANT_BASE_URL
+): MerchantProduct[] {
+  const variants = data?.variants || [];
+  const images = (data?.galleryImages || []).map((img) => absoluteUrl(img?.src, baseUrl)).filter(Boolean);
+  if (!images.length) return [];
+
+  const items: MerchantProduct[] = [];
+  for (const v of variants) {
+    const sizeSlug = String(v?.sizeSlug || '');
+    if (!/^\d+x\d+$/.test(sizeSlug)) continue;
+    if (!v.priceInclGst || v.priceInclGst <= 0 || !v.sku) continue;
+
+    const link = `${baseUrl}/product/container-houses${config.slug === 'container-houses' ? '' : `/${config.slug}`}#size-${sizeSlug}`;
+    const shipping = getShippingAttributes({ name: v.label, category_slug: 'container-houses' });
+
+    items.push({
+      id: `${config.slug}-${sizeSlug}`,
+      item_group_id: config.slug,
+      sku: v.sku,
+      title: `${config.name} ${sizeSlug} ft (${v.areaSqft} sq ft) | ${MERCHANT_BRAND_PORTABLE}`,
+      description: 'Base specification price - customisations quoted separately.',
+      link,
+      mobile_link: link,
+      image_link: images[0],
+      additional_image_link: images.slice(1, 11),
+      price: formatMerchantPrice(v.priceInclGst),
+      priceValue: v.priceInclGst,
+      availability: 'in stock',
+      condition: 'new',
+      brand: MERCHANT_BRAND_PORTABLE,
+      identifier_exists: 'false',
+      product_type: `Container Houses > ${config.name} > ${v.label}`,
+      google_product_category: '720',
+      ...shipping,
+      adult: 'no',
+      is_bundle: 'no',
+      custom_label_0: 'Container Houses',
+      custom_label_1: MERCHANT_BRAND_PORTABLE,
+      custom_label_2: shipping.shipping_label,
+    });
+  }
+
+  return items;
+}
+
 export function buildMerchantProducts(products: ProductLike[], baseUrl = MERCHANT_BASE_URL) {
   const items: MerchantProduct[] = [];
   const skipped: SkippedMerchantProduct[] = [];
@@ -644,7 +705,7 @@ export function buildMerchantProducts(products: ProductLike[], baseUrl = MERCHAN
         sku: '',
         title: cleanText(product.name, 150),
         slug: cleanText(product.slug, 160),
-        reason: 'c08_variant_feed_held_pending_approved_2026_skus',
+        reason: 'c08_legacy_catalogue_item_excluded_after_variant_replacement',
       });
       continue;
     }

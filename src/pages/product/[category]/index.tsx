@@ -319,7 +319,8 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       ] as const) {
         delete productForPageProps[field];
       }
-      if (variantData.suppressLegacySku) delete productForPageProps.sku;
+      if (variantData.productSku) productForPageProps.sku = variantData.productSku;
+      else if (variantData.suppressLegacySku) delete productForPageProps.sku;
     }
 
     // T31 — resolve the real Specifications + shared Shipping tab HTML for the

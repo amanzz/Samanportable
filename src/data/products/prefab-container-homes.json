@@ -11,7 +11,8 @@
       "areaSqft": 160,
       "priceExGst": 259520,
       "priceInclGst": 306234,
-      "useCase": "Colony row for project staff"
+      "useCase": "Colony row for project staff",
+      "sku": "SP-PCH-2026-20X8"
     },
     {
       "sizeSlug": "20x10",
@@ -20,7 +21,8 @@
       "areaSqft": 200,
       "priceExGst": 295000,
       "priceInclGst": 348100,
-      "useCase": "Single-family 1 BHK home"
+      "useCase": "Single-family 1 BHK home",
+      "sku": "SP-PCH-2026-20X10"
     },
     {
       "sizeSlug": "20x12",
@@ -29,7 +31,8 @@
       "areaSqft": 240,
       "priceExGst": 339840,
       "priceInclGst": 401011,
-      "useCase": "Family colony housing unit"
+      "useCase": "Family colony housing unit",
+      "sku": "SP-PCH-2026-20X12"
     },
     {
       "sizeSlug": "40x8",
@@ -38,7 +41,8 @@
       "areaSqft": 320,
       "priceExGst": 443520,
       "priceInclGst": 523354,
-      "useCase": "Paired staff quarters unit"
+      "useCase": "Paired staff quarters unit",
+      "sku": "SP-PCH-2026-40X8"
     },
     {
       "sizeSlug": "40x10",
@@ -47,7 +51,8 @@
       "areaSqft": 400,
       "priceExGst": 554400,
       "priceInclGst": 654192,
-      "useCase": "2 BHK family module home"
+      "useCase": "2 BHK family module home",
+      "sku": "SP-PCH-2026-40X10"
     },
     {
       "sizeSlug": "40x12",
@@ -56,7 +61,8 @@
       "areaSqft": 480,
       "priceExGst": 651360,
       "priceInclGst": 768605,
-      "useCase": "Family colony flagship unit"
+      "useCase": "Family colony flagship unit",
+      "sku": "SP-PCH-2026-40X12"
     }
   ],
   "galleryImages": [
@@ -100,12 +106,16 @@
   "seoTitle": "Prefab Container Homes │ Configured Single & Colony │ SAMAN",
   "metaDescription": "Prefab container homes with repeatable module plans from Rs 2.59 lakh ex-GST. Single homes or colony builds of 5 to 20 units, factory-made, pan-India delivery.",
   "opener": "Prefab container homes from SAMAN are the repeatable-module build in our container house range: identical factory modules with sealed connection details, standard kitchen and bathroom service routes, and an expansion-ready end wall. That repeatability is the point, one drawing produces one home or a colony of twenty without redesign. Prices run from Rs 2,59,520 ex-GST for the 20x8 ft module to Rs 6,51,360 for the 40x12 ft, across six sizes. Walls are corrugated MS over 75 mm mineral wool with a 100 mm glasswool roof layer, and every module is made in our Bengaluru and Greater Noida works.",
-  "descriptionHtml": "<p>Each prefab container home is newly fabricated in container form at our works; no used cargo shell is involved unless you separately request a converted-container quotation.</p><p><a href=\"/product/container-houses\">the full container house range</a></p>",
+  "descriptionHtml": "<p>Each prefab container home is newly fabricated in container form at our works; no used cargo shell is involved unless you separately request a converted-container quotation.</p><p>5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Typical service life is 20 to 25 years under proper use and maintenance, which is an engineering expectation, not a warranty period.</p><p><a href=\"/product/container-houses\">the full container house range</a></p>",
   "categoryLabel": "Container Houses",
   "categoryHref": "/product/container-houses",
   "applicationsDataset": "prefab-container-homes",
   "materialLabel": "corrugated MS over 75 mm mineral wool",
   "emitAggregateOffer": true,
+  "productSku": "SP-PCH-2026",
+  "priceCaption": "Published prices are ex-factory for the unit as specified, exclusive of GST. Foundation, site levelling, water and drainage connection and the electrical service point are arranged at your site and are quoted separately.",
+  "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
+  "specPdfHref": "/specs/prefab-container-homes-technical-specification.pdf",
   "suppressLegacySku": true,
   "suppressLegacyFaqSchema": true
 }

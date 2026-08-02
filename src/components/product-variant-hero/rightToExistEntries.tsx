@@ -63,7 +63,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>This page owns budget transparency: one fixed room plan per size, standard pre-laminated interiors, vinyl sheet floors and a modest glazing schedule, published at the lowest rate in the range. Choose it when the question is simply the cheapest honest way into a steel home, with the structure uncompromised and the options priced separately where you can see them. Nothing is hidden in the rate.</>
     ),
     comparison: (
-      <>If you expect to add units or extend later, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>prefab container homes</Link> modules earn their premium.</>
+      <>If you expect to add units or extend later, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>repeatable module line</Link> earns its premium over a fixed plan.</>
     ),
   },
   'container-offices': {

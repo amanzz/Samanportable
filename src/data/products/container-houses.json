@@ -11,7 +11,8 @@
       "areaSqft": 160,
       "priceExGst": 293440,
       "priceInclGst": 346259,
-      "useCase": "Caretaker home on a farm plot"
+      "useCase": "Caretaker home on a farm plot",
+      "sku": "SP-CH-2026-20X8"
     },
     {
       "sizeSlug": "20x10",
@@ -20,7 +21,8 @@
       "areaSqft": 200,
       "priceExGst": 333400,
       "priceInclGst": 393412,
-      "useCase": "Couple's holiday plot home"
+      "useCase": "Couple's holiday plot home",
+      "sku": "SP-CH-2026-20X10"
     },
     {
       "sizeSlug": "20x12",
@@ -29,7 +31,8 @@
       "areaSqft": 240,
       "priceExGst": 384240,
       "priceInclGst": 453403,
-      "useCase": "Full-time single-bedroom home"
+      "useCase": "Full-time single-bedroom home",
+      "sku": "SP-CH-2026-20X12"
     },
     {
       "sizeSlug": "40x8",
@@ -38,7 +41,8 @@
       "areaSqft": 320,
       "priceExGst": 501440,
       "priceInclGst": 591699,
-      "useCase": "Slim-plot boundary home"
+      "useCase": "Slim-plot boundary home",
+      "sku": "SP-CH-2026-40X8"
     },
     {
       "sizeSlug": "40x10",
@@ -47,7 +51,8 @@
       "areaSqft": 400,
       "priceExGst": 626800,
       "priceInclGst": 739624,
-      "useCase": "Small family's first home"
+      "useCase": "Small family's first home",
+      "sku": "SP-CH-2026-40X10"
     },
     {
       "sizeSlug": "40x12",
@@ -56,7 +61,8 @@
       "areaSqft": 480,
       "priceExGst": 736320,
       "priceInclGst": 868858,
-      "useCase": "Two-bedroom compact home"
+      "useCase": "Two-bedroom compact home",
+      "sku": "SP-CH-2026-40X12"
     }
   ],
   "galleryImages": [
@@ -100,12 +106,16 @@
   "seoTitle": "Container House Manufacturer in India | Modern Modular Homes | SAMAN",
   "metaDescription": "Container houses built in our Bengaluru and Greater Noida factories from Rs 2.93 lakh. Steel frame, glasswool insulation, six sizes, pan-India delivery.",
   "opener": "A container house from SAMAN is a factory-built steel home: a welded MS frame, corrugated MS outer walls, 75 mm mineral wool wall insulation and a 100 mm glasswool roof layer, finished inside and delivered ready to live in. Prices start at Rs 2,93,440 ex-GST for the 20x8 ft unit and run to Rs 7,36,320 for the 40x12 ft home, across six standard sizes. This page covers the full range; the prefab, luxury, shipping-form and affordable pages each own one build style, and every one is made in our own Bengaluru and Greater Noida works.",
-  "descriptionHtml": "<p>Every container house on this page is newly fabricated in container form at our own works; a converted used ISO container is available only as a separately quoted option.</p><p><a href=\"/product/container-houses/prefab-container-homes\">the repeatable prefab module line</a></p><p><a href=\"/product/container-houses/luxury-container-houses\">villa-grade luxury build</a></p><p><a href=\"/product/container-houses/shipping-container-homes\">the reinforced shipping-form home</a></p><p><a href=\"/product/container-houses/affordable-container-homes\">the fixed-plan affordable build</a></p><p><a href=\"/ship-container-price-in-india\">what steel space really costs</a></p><p><a href=\"/container-house-price-in-tamil-nadu\">container house prices in Tamil Nadu</a></p>",
+  "descriptionHtml": "<p>Every container house on this page is newly fabricated in container form at our own works; a converted used ISO container is available only as a separately quoted option.</p><p>5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Typical service life is 20 to 25 years under proper use and maintenance, which is an engineering expectation, not a warranty period.</p><p>If you want a permanent home built from insulated panels on a conventional rectangular footprint rather than in container form, that is a different platform, and our <a href=\"/product/prefabricated-houses\">prefabricated houses range</a> covers it.</p><p><a href=\"/product/container-houses/prefab-container-homes\">the repeatable prefab module line</a></p><p><a href=\"/product/container-houses/luxury-container-houses\">villa-grade luxury build</a></p><p><a href=\"/product/container-houses/shipping-container-homes\">the reinforced shipping-form home</a></p><p><a href=\"/product/container-houses/affordable-container-homes\">the fixed-plan affordable build</a></p><p><a href=\"/ship-container-price-in-india\">what steel space really costs</a></p><p><a href=\"/container-house-price-in-tamil-nadu\">container house prices in Tamil Nadu</a></p>",
   "categoryLabel": "Container Houses",
   "categoryHref": "/product/container-houses",
   "applicationsDataset": "container-houses",
   "materialLabel": "a welded MS frame, corrugated MS outer walls",
   "emitAggregateOffer": true,
+  "productSku": "SP-CH-2026",
+  "priceCaption": "Published prices are ex-factory for the unit as specified, exclusive of GST. Foundation, site levelling, water and drainage connection and the electrical service point are arranged at your site and are quoted separately.",
+  "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
+  "specPdfHref": "/specs/container-houses-technical-specification.pdf",
   "suppressLegacySku": true,
   "suppressLegacyFaqSchema": true
 }

@@ -11,7 +11,8 @@
       "areaSqft": 160,
       "priceExGst": 364320,
       "priceInclGst": 429898,
-      "useCase": "Rotating project quarters"
+      "useCase": "Rotating project quarters",
+      "sku": "SP-SCH-2026-20X8"
     },
     {
       "sizeSlug": "20x10",
@@ -20,7 +21,8 @@
       "areaSqft": 200,
       "priceExGst": 414000,
       "priceInclGst": 488520,
-      "useCase": "Beachside weekend home unit"
+      "useCase": "Beachside weekend home unit",
+      "sku": "SP-SCH-2026-20X10"
     },
     {
       "sizeSlug": "20x12",
@@ -29,7 +31,8 @@
       "areaSqft": 240,
       "priceExGst": 476880,
       "priceInclGst": 562718,
-      "useCase": "Hard-climate posting home"
+      "useCase": "Hard-climate posting home",
+      "sku": "SP-SCH-2026-20X12"
     },
     {
       "sizeSlug": "40x8",
@@ -38,7 +41,8 @@
       "areaSqft": 320,
       "priceExGst": 622720,
       "priceInclGst": 734810,
-      "useCase": "Annual-relocation residence"
+      "useCase": "Annual-relocation residence",
+      "sku": "SP-SCH-2026-40X8"
     },
     {
       "sizeSlug": "40x10",
@@ -47,7 +51,8 @@
       "areaSqft": 400,
       "priceExGst": 778400,
       "priceInclGst": 918512,
-      "useCase": "Project-following family home"
+      "useCase": "Project-following family home",
+      "sku": "SP-SCH-2026-40X10"
     },
     {
       "sizeSlug": "40x12",
@@ -56,7 +61,8 @@
       "areaSqft": 480,
       "priceExGst": 913920,
       "priceInclGst": 1078426,
-      "useCase": "Flagship home that relocates"
+      "useCase": "Flagship home that relocates",
+      "sku": "SP-SCH-2026-40X12"
     }
   ],
   "galleryImages": [
@@ -100,12 +106,16 @@
   "seoTitle": "Shipping Container Homes India │ Custom-Built │ SAMAN",
   "metaDescription": "Shipping container homes with a reinforced MS shell from Rs 3.64 lakh ex-GST. Built for relocation and coastal duty, six sizes, factory-made, pan-India delivery.",
   "opener": "Shipping container homes from SAMAN are the reinforced build in our range: heavier 75x75 mm corner posts, a full-height 1.6 mm corrugated MS shell, continuous ridge sealing and zinc-rich primer under the enamel, engineered for relocation and hard weather rather than a single quiet plot. These are newly fabricated container-form homes made in our Bengaluru and Greater Noida works; we do not resell used cargo boxes, and a converted ISO container is only ever a separately quoted option. Prices run from Rs 3,64,320 ex-GST at 20x8 ft to Rs 9,13,920 at 40x12 ft across six sizes.",
-  "descriptionHtml": "<p>The shipping-form home is newly fabricated to container dimensions and hardware standards; conversion of a used ISO cargo container is quoted separately on request.</p><p><a href=\"/product/container-houses\">the six-size range page</a></p><p><a href=\"/ship-container-price-in-india\">the finished building, not the container</a></p>",
+  "descriptionHtml": "<p>The shipping-form home is newly fabricated to container dimensions and hardware standards; conversion of a used ISO cargo container is quoted separately on request.</p><p>5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Typical service life is 20 to 25 years under proper use and maintenance, which is an engineering expectation, not a warranty period.</p><p><a href=\"/product/container-houses\">the six-size range page</a></p><p><a href=\"/ship-container-price-in-india\">the finished building, not the container</a></p>",
   "categoryLabel": "Container Houses",
   "categoryHref": "/product/container-houses",
   "applicationsDataset": "shipping-container-homes",
   "materialLabel": "a full-height 1.6 mm corrugated MS shell",
   "emitAggregateOffer": true,
+  "productSku": "SP-SCH-2026",
+  "priceCaption": "Published prices are ex-factory for the unit as specified, exclusive of GST. Foundation, site levelling, water and drainage connection and the electrical service point are arranged at your site and are quoted separately.",
+  "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
+  "specPdfHref": "/specs/shipping-container-homes-technical-specification.pdf",
   "suppressLegacySku": true,
   "suppressLegacyFaqSchema": true
 }
