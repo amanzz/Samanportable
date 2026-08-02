@@ -426,7 +426,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 9,
             "name": "Construction Site Office",
-            "url": "https://www.samanportable.com/product/container-offices/construction-site-office"
+            "url": "https://www.samanportable.com/product/container-offices/site-office-container"
           },
           {
             "@type": "ListItem",
@@ -462,7 +462,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 15,
             "name": "Container Site Office",
-            "url": "https://www.samanportable.com/product/container-offices/container-site-office"
+            "url": "https://www.samanportable.com/product/container-offices/site-office-container"
           }
         ]
       },
