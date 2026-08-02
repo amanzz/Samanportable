@@ -10,6 +10,13 @@ import { pageSEO, siteConfig } from '@/config/seo';
 import BlogImage from '@/components/BlogImage';
 import { decodeHtmlEntities } from '@/lib/utils';
 import redirectedPageDestinations from '@/lib/redirectedPageDestinations.json';
+import {
+  BlogPaginationModel,
+  BlogListingQuery,
+  buildBlogPageHref,
+  buildBlogPageWindow,
+  computeBlogPagination,
+} from '@/lib/blogPagination';
 
 import { BlogPost as ApiBlogPost } from '@/config/api';
 type BlogPost = ApiBlogPost;
@@ -145,19 +152,13 @@ function postMatchesCategory(post: BlogPost, categorySlug: string): boolean {
   );
 }
 
+// Slice a FILTERED collection using the shared pagination model, so the rendered
+// slice and every pagination control are derived from the same numbers.
 function paginatePosts(posts: BlogPost[], page: number, perPage: number) {
-  const totalPages = Math.ceil(posts.length / perPage);
-  const start = (page - 1) * perPage;
+  const pagination = computeBlogPagination(posts.length, perPage, page);
   return {
-    posts: posts.slice(start, start + perPage),
-    pagination: {
-      currentPage: page,
-      totalPages,
-      totalPosts: posts.length,
-      perPage,
-      hasNextPage: page < totalPages,
-      hasPrevPage: page > 1,
-    },
+    posts: posts.slice(pagination.startIndex, pagination.endIndex),
+    pagination,
   };
 }
 
@@ -179,9 +180,8 @@ function getPaginatedCategoryDescription(title: string, page: number): string {
 
 interface BlogProps {
   posts: BlogCardPost[];
-  totalPages: number;
-  currentPage: number;
-  totalPosts: number;
+  /** The one shared pagination model every control on this page reads from. */
+  pagination: BlogPaginationModel;
   categories: Array<{ id: number; name: string; slug: string; count: number }>;
   tags: Array<{ id: number; name: string; slug: string; count: number }>;
   seoCanonical: string;
@@ -191,7 +191,8 @@ interface BlogProps {
   seoTitle: string;
   seoDescription: string;
   seoCategoryIntro: string | null;
-  activeCategory: string | null;
+  /** Active filter parameters, carried across every pagination href. */
+  listingQuery: BlogListingQuery;
 }
 
 export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query }) => {
@@ -217,7 +218,17 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     // Fetch blog posts with pagination - reduced to 10 posts per page for better performance.
     // Static content layer: reads exported post files — no WordPress call.
     const { fetchBlogPosts } = await import('@/lib/staticContent');
-    let result = await fetchBlogPosts(page, postsPerPage);
+    const unfiltered = await fetchBlogPosts(page, postsPerPage);
+
+    // ONE pagination model per request, always derived from the collection that
+    // is actually rendered. The unfiltered listing starts as the default; an
+    // active category filter replaces it with the filtered collection's model.
+    let pagePosts: BlogPost[] = unfiltered.posts;
+    let pagination: BlogPaginationModel = computeBlogPagination(
+      unfiltered.pagination.totalPosts || 0,
+      postsPerPage,
+      page
+    );
     let categoryHasMatchingPosts = false;
 
     if (cleanCategory) {
@@ -226,20 +237,22 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
 
       if (matchingPosts.length > 0) {
         categoryHasMatchingPosts = true;
-        result = paginatePosts(matchingPosts, page, postsPerPage);
+        const filtered = paginatePosts(matchingPosts, page, postsPerPage);
+        pagePosts = filtered.posts;
+        pagination = filtered.pagination;
       }
     }
 
     // A syntactically valid page number outside the available result set is a
     // missing resource, not an empty listing. This prevents blank HTTP 200 pages
     // for crawlers while retaining deterministic SSR for every valid page.
-    if (page > result.pagination.totalPages || (page > 1 && result.posts.length === 0)) {
+    if (page > pagination.totalPages || (page > 1 && pagePosts.length === 0)) {
       return { notFound: true };
     }
 
     console.log('Blog getServerSideProps: Result:', {
-      postsCount: result.posts?.length || 0,
-      pagination: result.pagination
+      postsCount: pagePosts.length,
+      pagination,
     });
 
     // In a real implementation, you would fetch categories and tags from WordPress
@@ -272,9 +285,14 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     //  - plain /blog      -> /blog
     let seoCanonical = blogCanonicalBase;
 
+    // Derived once from the shared model, then reused by canonical, hreflang and
+    // title/meta selection so those three can never disagree about validity.
+    const hasValidPaginatedSlice =
+      page > 1 && page <= pagination.totalPages && pagePosts.length > 0;
+
     if (cleanCategory && hasMatchingCategoryPosts) {
       seoCanonical = `${blogCanonicalBase}?category=${encodeURIComponent(cleanCategory)}`;
-      if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
+      if (hasValidPaginatedSlice) {
         seoCanonical = `${seoCanonical}&page=${encodeURIComponent(String(page))}`;
         seoRouteBehavior = 'indexable paginated category filter (self-canonical)';
       } else if (page > 1) {
@@ -290,7 +308,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       seoRouteBehavior = 'tag filter canonicalized to blog hub';
     } else if (hasExplicitPage && page <= 1) {
       seoRouteBehavior = 'page 0/1 canonicalized to blog hub';
-    } else if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
+    } else if (hasValidPaginatedSlice) {
       seoCanonical = `${blogCanonicalBase}?page=${encodeURIComponent(String(page))}`;
       seoRouteBehavior = 'indexable paginated blog listing (self-canonical)';
     } else if (page > 1) {
@@ -305,7 +323,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       hreflangSelf = seoCanonical;
     } else if (cleanTag) {
       hreflangSelf = `${blogCanonicalBase}?tag=${encodeURIComponent(cleanTag)}`;
-    } else if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
+    } else if (hasValidPaginatedSlice) {
       hreflangSelf = seoCanonical;
     }
 
@@ -313,7 +331,6 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     // include the page number so Ahrefs/Google do not see page 2+ listings as
     // duplicate title/description variants of page one.
     const categorySeo = cleanCategory && hasMatchingCategoryPosts ? CATEGORY_SEO[cleanCategory] : undefined;
-    const hasValidPaginatedSlice = page > 1 && page <= result.pagination.totalPages && result.posts.length > 0;
     const seoTitle = getPaginatedTitle(categorySeo?.title || pageSEO.blog.title, hasValidPaginatedSlice ? page : 1);
     const seoDescription = categorySeo
       ? (hasValidPaginatedSlice ? getPaginatedCategoryDescription(categorySeo.title, page) : categorySeo.meta)
@@ -330,7 +347,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
 
     // Compute reading time from the full content, then serialize only fields used
     // by the visible listing cards and ItemList schema.
-    const lightPosts: BlogCardPost[] = (result.posts || []).map((post: BlogPost) => ({
+    const lightPosts: BlogCardPost[] = pagePosts.map((post: BlogPost) => ({
       id: post.id,
       date: post.date,
       slug: post.slug,
@@ -362,11 +379,11 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       },
     }));
 
-    const props = {
+    const activeCategory = hasMatchingCategoryPosts ? cleanCategory || null : null;
+
+    const props: BlogProps = {
       posts: lightPosts,
-      totalPages: result.pagination.totalPages,
-      currentPage: result.pagination.currentPage,
-      totalPosts: result.pagination.totalPosts || 0,
+      pagination,
       categories,
       tags,
       seoCanonical,
@@ -376,7 +393,21 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       seoTitle,
       seoDescription,
       seoCategoryIntro,
-      activeCategory: hasMatchingCategoryPosts ? cleanCategory || null : null,
+      // Only filters that ACTUALLY narrow this listing are carried into pagination
+      // hrefs. A parameter the query ignores is not an active filter, and baking
+      // it into every page link would mint a full set of crawlable duplicates of
+      // the same listing (36 pages per ignored value) that all canonicalise away.
+      //
+      //  - category: propagated only when it matched at least one post.
+      //  - tag:      NOT propagated. `?tag=` is currently read for SEO only and
+      //              does not filter the collection, so a tag listing IS the
+      //              unfiltered listing. If real tag filtering is implemented,
+      //              set `tag: cleanTag || null` here and it will be preserved
+      //              across every pagination surface automatically.
+      listingQuery: {
+        category: activeCategory,
+        tag: null,
+      },
     };
 
     console.log('Blog getServerSideProps: Returning props with', props.posts.length, 'posts');
@@ -389,7 +420,19 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
   }
 };
 
-const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, seoCanonical, hreflangSelf, seoNoindex, seoTitle, seoDescription, seoCategoryIntro, activeCategory }: BlogProps) => {
+const Blog = ({ posts, pagination, categories, tags, seoCanonical, hreflangSelf, seoNoindex, seoTitle, seoDescription, seoCategoryIntro, listingQuery }: BlogProps) => {
+  // Every pagination control below reads these — and only these — so Next, Load
+  // More, the numbered controls and the Go-to-page form can never disagree.
+  const {
+    totalItems: totalPosts,
+    pageSize,
+    currentPage,
+    totalPages,
+    remainingItems,
+    hasPreviousPage,
+    hasNextPage,
+  } = pagination;
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
@@ -411,21 +454,8 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
   // Semrush flag the required field as missing). We suppress the ItemList node and
   // its CollectionPage `mainEntity` reference whenever the page has no posts.
   const hasPosts = posts.length > 0;
-  const getBlogPageHref = (pageNumber: number) => {
-    const normalizedPage = Math.max(1, pageNumber);
-    const params = new URLSearchParams();
-
-    if (activeCategory) {
-      params.set('category', activeCategory);
-    }
-
-    if (normalizedPage > 1) {
-      params.set('page', String(normalizedPage));
-    }
-
-    const queryString = params.toString();
-    return queryString ? `/blog?${queryString}` : '/blog';
-  };
+  // Shared href builder — carries every active filter parameter across pages.
+  const getBlogPageHref = (pageNumber: number) => buildBlogPageHref(pageNumber, listingQuery);
 
   const blogHubStructuredData = [
     {
@@ -696,8 +726,9 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                     )}
                   </div>
 
-                  {/* Load More Option */}
-                  {currentPage < totalPages && (
+                  {/* Load More Option — rendered only when page currentPage + 1
+                      actually holds at least one article. */}
+                  {hasNextPage && (
                     <div className="text-center mt-8 mb-6">
                       <Link href={getBlogPageHref(currentPage + 1)}>
                         <Button
@@ -709,9 +740,11 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>
                       </Link>
-                      <p className="text-sm text-muted-foreground mt-2">
-                        Next {Math.min(BLOG_POSTS_PER_PAGE, totalPosts - (currentPage * BLOG_POSTS_PER_PAGE))} articles available
-                      </p>
+                      {remainingItems > 0 && (
+                        <p className="text-sm text-muted-foreground mt-2">
+                          Next {Math.min(pageSize, remainingItems)} articles available
+                        </p>
+                      )}
                     </div>
                   )}
 
@@ -719,130 +752,66 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                   {totalPages > 1 && (
                     <div className="flex items-center justify-center mt-12">
                       <div className="flex items-center gap-2">
-                        {/* Previous Button */}
-                        <Link href={getBlogPageHref(currentPage - 1)}>
+                        {/* Previous — a LINK only when page currentPage - 1 exists.
+                            On page one it is a plain disabled button with no anchor:
+                            a disabled <Button> inside <Link> still emits a crawlable
+                            <a href>, which is exactly how this page came to link to
+                            pages that do not exist. */}
+                        {hasPreviousPage ? (
+                          <Link href={getBlogPageHref(currentPage - 1)}>
+                            <Button variant="outline" size="sm" className="flex items-center gap-2">
+                              ← Previous
+                            </Button>
+                          </Link>
+                        ) : (
                           <Button
                             variant="outline"
                             size="sm"
-                            disabled={currentPage === 1}
+                            disabled
+                            aria-disabled="true"
                             className="flex items-center gap-2"
                           >
                             ← Previous
                           </Button>
-                        </Link>
+                        )}
 
-                        {/* Page Numbers - Smart pagination for large numbers */}
-                        {(() => {
-                          const pages = [];
-                          const maxVisiblePages = 7;
+                        {/* Page Numbers — window is clamped to 1..totalPages. */}
+                        {buildBlogPageWindow(currentPage, totalPages).map((entry, index) =>
+                          entry === 'gap' ? (
+                            <span key={`gap-${index}`} className="px-2 text-muted-foreground">...</span>
+                          ) : (
+                            <Link key={entry} href={getBlogPageHref(entry)}>
+                              <Button
+                                variant={currentPage === entry ? "default" : "outline"}
+                                size="sm"
+                                className="w-10 h-10 p-0"
+                              >
+                                {entry}
+                              </Button>
+                            </Link>
+                          )
+                        )}
 
-                          if (totalPages <= maxVisiblePages) {
-                            // Show all pages if total is small
-                            for (let i = 1; i <= totalPages; i++) {
-                              pages.push(
-                                <Link key={i} href={getBlogPageHref(i)}>
-                                  <Button
-                                    variant={currentPage === i ? "default" : "outline"}
-                                    size="sm"
-                                    className="w-10 h-10 p-0"
-                                  >
-                                    {i}
-                                  </Button>
-                                </Link>
-                              );
-                            }
-                          } else {
-                            // Smart pagination for large numbers
-                            if (currentPage <= 4) {
-                              // Show first 5 pages + ... + last page
-                              for (let i = 1; i <= 5; i++) {
-                                pages.push(
-                                  <Link key={i} href={getBlogPageHref(i)}>
-                                    <Button
-                                      variant={currentPage === i ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-10 h-10 p-0"
-                                    >
-                                      {i}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                              pages.push(<span key="dots1" className="px-2 text-muted-foreground">...</span>);
-                              pages.push(
-                                <Link key={totalPages} href={getBlogPageHref(totalPages)}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">
-                                    {totalPages}
-                                  </Button>
-                                </Link>
-                              );
-                            } else if (currentPage >= totalPages - 3) {
-                              // Show first page + ... + last 5 pages
-                              pages.push(
-                                <Link key={1} href={getBlogPageHref(1)}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">1</Button>
-                                </Link>
-                              );
-                              pages.push(<span key="dots2" className="px-2 text-muted-foreground">...</span>);
-                              for (let i = totalPages - 4; i <= totalPages; i++) {
-                                pages.push(
-                                  <Link key={i} href={getBlogPageHref(i)}>
-                                    <Button
-                                      variant={currentPage === i ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-10 h-10 p-0"
-                                    >
-                                      {i}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                            } else {
-                              // Show first + ... + current-1, current, current+1 + ... + last
-                              pages.push(
-                                <Link key={1} href={getBlogPageHref(1)}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">1</Button>
-                                </Link>
-                              );
-                              pages.push(<span key="dots3" className="px-2 text-muted-foreground">...</span>);
-                              for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-                                pages.push(
-                                  <Link key={i} href={getBlogPageHref(i)}>
-                                    <Button
-                                      variant={currentPage === i ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-10 h-10 p-0"
-                                    >
-                                      {i}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                              pages.push(<span key="dots4" className="px-2 text-muted-foreground">...</span>);
-                              pages.push(
-                                <Link key={totalPages} href={getBlogPageHref(totalPages)}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">
-                                    {totalPages}
-                                  </Button>
-                                </Link>
-                              );
-                            }
-                          }
-
-                          return pages;
-                        })()}
-
-                        {/* Next Button */}
-                        <Link href={getBlogPageHref(currentPage + 1)}>
+                        {/* Next — a LINK only when page currentPage + 1 holds at
+                            least one article. On the last page it is a plain
+                            disabled button with no anchor. */}
+                        {hasNextPage ? (
+                          <Link href={getBlogPageHref(currentPage + 1)}>
+                            <Button variant="outline" size="sm" className="flex items-center gap-2">
+                              Next →
+                            </Button>
+                          </Link>
+                        ) : (
                           <Button
                             variant="outline"
                             size="sm"
-                            disabled={currentPage === totalPages}
+                            disabled
+                            aria-disabled="true"
                             className="flex items-center gap-2"
                           >
                             Next →
                           </Button>
-                        </Link>
+                        )}
                       </div>
 
                       {/* Page Info */}
