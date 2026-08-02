@@ -7,7 +7,7 @@ const SPECIFICATIONS_INTRO =
   'A site office container is specified for construction-site duty — the frame, envelope and electricals below are the SAMAN container standard, configured for gate placement, site power and repeated relocation between projects.';
 
 const SHIPPING_INTRO =
-  'A site office container is usually the first delivery a project takes: dispatched complete from Bangalore or Greater Noida, placed at the gate on a prepared base, and running the same day. Budget freight from the tables below — the quotation fixes the figure to your pin code.';
+  'A site office container is usually the first delivery a project takes: dispatched complete from Bangalore or Greater Noida, placed at the gate on a prepared base, and running the same day. Budget freight from the tables below; the quotation fixes the figure to your pin code.';
 
 const WARRANTY_LINE = '12-month workmanship warranty, confirmed at quotation.';
 

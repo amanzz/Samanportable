@@ -36,7 +36,9 @@ export const CONTAINER_OFFICE_CABIN_PRICE_HTML =
   `<p>All figures confirmed at quotation. GST 18%. Transport is quoted to your pin code before you commit.</p>`;
 
 export function insertContainerOfficeCabinPriceHtml(description: string): string {
-  const priceHeading = '<h2>Office Container Price — What Drives It</h2>';
+  // The C-04 render-layer punctuation pass runs before this page-specific
+  // insertion, so the approved heading reaches this anchor with a colon.
+  const priceHeading = '<h2>Office Container Price: What Drives It</h2>';
   const faqHeading = '<h3>FAQ</h3>';
   const priceIndex = description.indexOf(priceHeading);
   const insertIndex = description.indexOf(faqHeading, priceIndex);

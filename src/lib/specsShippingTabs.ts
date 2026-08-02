@@ -534,7 +534,7 @@ export function buildContainerOfficesShippingHtml(): string {
       destinationTable('Typical destinations from our Greater Noida unit (North zone)', DEST_NOTE, DEST_NORTH) +
       `<p class="mt-2 text-xs leading-relaxed text-slate-500">${esc(FOOTNOTES)}</p>` +
     `</div>`
-  );
+  ).replace(/\s*\u2014\s*/g, ', ');
 }
 
 // ─── C-03 Portable Office HUB — bespoke Specifications tab (copy pack §C, verbatim) ─

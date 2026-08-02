@@ -7,7 +7,7 @@ const SPECIFICATIONS_INTRO =
   'A shipping container office starts from marine-grade corrugated container steel — the specification below covers the conversion: structural frame retained, openings framed into the corrugation, insulation and interior built inside the original shell.';
 
 const SHIPPING_INTRO =
-  'A converted shipping container office moves the way containers always have — craned onto an open trailer, hauled, and craned off at site, with the structural frame carrying every lift. The distance-based freight tables below cover both zones; your exact pin code cost is fixed in the quotation.';
+  'A converted shipping container office moves the way containers always have: craned onto an open trailer, hauled, and craned off at site, with the structural frame carrying every lift. The distance-based freight tables below cover both zones; your exact pin code cost is fixed in the quotation.';
 
 const WARRANTY_LINE = '12-month workmanship warranty, confirmed at quotation.';
 

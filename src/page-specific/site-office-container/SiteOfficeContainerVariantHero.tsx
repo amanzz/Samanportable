@@ -40,6 +40,8 @@ interface SiteOfficeContainerVariantHeroProps {
 const applications = applicationsJson as ApplicationsData;
 const DETAILS_HASH_RE = /^#sizedetails-([0-9]+x[0-9]+)$/;
 const SECTION_ID = 'site-office-size-applications';
+const rewriteVisiblePunctuation = (value: string, heading = false) =>
+  value.replace(/\s*\u2014\s*/g, heading ? ': ' : ', ');
 
 export function SiteOfficeContainerVariantHero(
   props: SiteOfficeContainerVariantHeroProps
@@ -108,10 +110,10 @@ function SiteOfficeApplicationsExplorer({ data }: { data: VariantProductData }) 
           id="site-office-size-applications-heading"
           className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl"
         >
-          {applications.h2}
+          {rewriteVisiblePunctuation(applications.h2, true)}
         </h2>
         <p className="mt-1 text-sm text-[var(--ds-color-steel)]">
-          {applications.guidanceLine}
+          {rewriteVisiblePunctuation(applications.guidanceLine)}
         </p>
       </div>
 
@@ -183,10 +185,10 @@ function SiteOfficeApplicationsExplorer({ data }: { data: VariantProductData }) 
 
               <div className="flex min-w-0 flex-1 flex-col justify-center lg:justify-between">
                 <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">
-                  {panel.h3}
+                  {rewriteVisiblePunctuation(panel.h3, true)}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">
-                  {panel.paragraph}
+                  {rewriteVisiblePunctuation(panel.paragraph)}
                 </p>
 
                 <ul className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -199,7 +201,7 @@ function SiteOfficeApplicationsExplorer({ data }: { data: VariantProductData }) 
                         className="mt-0.5 h-4 w-4 shrink-0 text-[var(--ds-color-leaf)]"
                         aria-hidden="true"
                       />
-                      <span>{application}</span>
+                      <span>{rewriteVisiblePunctuation(application)}</span>
                     </li>
                   ))}
                 </ul>
