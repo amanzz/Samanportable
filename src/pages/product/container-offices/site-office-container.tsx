@@ -40,8 +40,8 @@ import {
   isPortaCabinStripSlug,
   orderPortaCabinStrip,
   slugFromProductHref,
-  PORTA_CABIN_REDIRECTED_SLUGS,
 } from '../../../lib/portaCabinClusterRail';
+import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 import { SiteOfficeContainerVariantHero } from '../../../page-specific/site-office-container/SiteOfficeContainerVariantHero';
 import {
@@ -163,9 +163,6 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       // shrink the client hydration payload. SSR-rendered cards are unchanged.
       relatedProducts = (relatedResponse.products || [])
         .filter(p => p.id !== product.id)
-        // C01: never surface a retired/301'd sibling as a related card or rail item —
-        // those links would 301. Mirrors the cluster rail's redirected-slug guard.
-        .filter(p => !PORTA_CABIN_REDIRECTED_SLUGS.includes(p.slug))
         .map(p => ({
           id: p.id,
           name: p.name,
@@ -179,6 +176,11 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
             ? [{ id: p.images[0].id, src: p.images[0].src, alt: p.images[0].alt }]
             : [],
         })) as unknown as WooCommerceProduct[];
+      const { excludeRedirectingProducts } = await import('../../../lib/redirectSources');
+      relatedProducts = orderContainerOfficeRail(
+        slug,
+        await excludeRedirectingProducts(relatedProducts)
+      );
     } catch (error) {
       // Silent error handling for production
     }
