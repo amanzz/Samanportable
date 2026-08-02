@@ -11,7 +11,8 @@
       "areaSqft": 160,
       "priceExGst": 252960,
       "priceInclGst": 298493,
-      "useCase": "First steel home on a budget"
+      "useCase": "First steel home on a budget",
+      "sku": "SP-ACH-2026-20X8"
     },
     {
       "sizeSlug": "20x10",
@@ -20,7 +21,8 @@
       "areaSqft": 200,
       "priceExGst": 287600,
       "priceInclGst": 339368,
-      "useCase": "Value one-room family start"
+      "useCase": "Value one-room family start",
+      "sku": "SP-ACH-2026-20X10"
     },
     {
       "sizeSlug": "20x12",
@@ -29,7 +31,8 @@
       "areaSqft": 240,
       "priceExGst": 331200,
       "priceInclGst": 390816,
-      "useCase": "Permanent economy family home"
+      "useCase": "Permanent economy family home",
+      "sku": "SP-ACH-2026-20X12"
     },
     {
       "sizeSlug": "40x8",
@@ -38,7 +41,8 @@
       "areaSqft": 320,
       "priceExGst": 432320,
       "priceInclGst": 510138,
-      "useCase": "Narrow-plot budget home"
+      "useCase": "Narrow-plot budget home",
+      "sku": "SP-ACH-2026-40X8"
     },
     {
       "sizeSlug": "40x10",
@@ -47,7 +51,8 @@
       "areaSqft": 400,
       "priceExGst": 540400,
       "priceInclGst": 637672,
-      "useCase": "Family home at lowest rate"
+      "useCase": "Family home at lowest rate",
+      "sku": "SP-ACH-2026-40X10"
     },
     {
       "sizeSlug": "40x12",
@@ -56,7 +61,8 @@
       "areaSqft": 480,
       "priceExGst": 634560,
       "priceInclGst": 748781,
-      "useCase": "Largest budget family home"
+      "useCase": "Largest budget family home",
+      "sku": "SP-ACH-2026-40X12"
     }
   ],
   "galleryImages": [
@@ -100,12 +106,16 @@
   "seoTitle": "Affordable Container Homes │ Pre-Built │ SAMAN",
   "metaDescription": "Affordable container homes from Rs 2.52 lakh ex-GST, the lowest rates in our range. One efficient plan per size, six sizes, factory-built, pan-India delivery.",
   "opener": "Affordable container homes from SAMAN carry the lowest rates in our container house range, from Rs 1,438 per sq ft, by fixing one efficient plan per size and spending the budget where it is felt: the same welded MS frame, corrugated MS walls and mineral wool insulation as every home we build. What changes is choice, not construction; finishes are standard, glazing is modest, and kitchen or toilet work is a clearly separated option you add only if you need it. Six sizes run from Rs 2,52,960 ex-GST at 20x8 ft to Rs 6,34,560 at 40x12 ft.",
-  "descriptionHtml": "<p>Every affordable container home is newly fabricated in container form at our own works; a converted used ISO container is offered only as a separately quoted option.</p><p><a href=\"/product/container-houses\">all five container home builds</a></p>",
+  "descriptionHtml": "<p>Every affordable container home is newly fabricated in container form at our own works; a converted used ISO container is offered only as a separately quoted option.</p><p>5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Typical service life is 20 to 25 years under proper use and maintenance, which is an engineering expectation, not a warranty period.</p><p><a href=\"/product/container-houses\">all five container home builds</a></p>",
   "categoryLabel": "Container Houses",
   "categoryHref": "/product/container-houses",
   "applicationsDataset": "affordable-container-homes",
   "materialLabel": "the same welded MS frame, corrugated MS walls and mineral wool insulation",
   "emitAggregateOffer": true,
+  "productSku": "SP-ACH-2026",
+  "priceCaption": "Published prices are ex-factory for the unit as specified, exclusive of GST. Foundation, site levelling, water and drainage connection and the electrical service point are arranged at your site and are quoted separately.",
+  "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
+  "specPdfHref": "/specs/affordable-container-homes-technical-specification.pdf",
   "suppressLegacySku": true,
   "suppressLegacyFaqSchema": true
 }

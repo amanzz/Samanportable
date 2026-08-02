@@ -11,7 +11,8 @@
       "areaSqft": 160,
       "priceExGst": 380160,
       "priceInclGst": 448589,
-      "useCase": "Resort rentable suite room"
+      "useCase": "Resort rentable suite room",
+      "sku": "SP-LCH-2026-20X8"
     },
     {
       "sizeSlug": "20x10",
@@ -20,7 +21,8 @@
       "areaSqft": 200,
       "priceExGst": 432000,
       "priceInclGst": 509760,
-      "useCase": "Honeymoon suite for resorts"
+      "useCase": "Honeymoon suite for resorts",
+      "sku": "SP-LCH-2026-20X10"
     },
     {
       "sizeSlug": "20x12",
@@ -29,7 +31,8 @@
       "areaSqft": 240,
       "priceExGst": 497760,
       "priceInclGst": 587357,
-      "useCase": "Long-stay premium suite"
+      "useCase": "Long-stay premium suite",
+      "sku": "SP-LCH-2026-20X12"
     },
     {
       "sizeSlug": "40x8",
@@ -38,7 +41,8 @@
       "areaSqft": 320,
       "priceExGst": 649600,
       "priceInclGst": 766528,
-      "useCase": "View-facing resort key unit"
+      "useCase": "View-facing resort key unit",
+      "sku": "SP-LCH-2026-40X8"
     },
     {
       "sizeSlug": "40x10",
@@ -47,7 +51,8 @@
       "areaSqft": 400,
       "priceExGst": 812000,
       "priceInclGst": 958160,
-      "useCase": "Pool villa key for resorts"
+      "useCase": "Pool villa key for resorts",
+      "sku": "SP-LCH-2026-40X10"
     },
     {
       "sizeSlug": "40x12",
@@ -56,7 +61,8 @@
       "areaSqft": 480,
       "priceExGst": 953760,
       "priceInclGst": 1125437,
-      "useCase": "Flagship villa in one lift"
+      "useCase": "Flagship villa in one lift",
+      "sku": "SP-LCH-2026-40X12"
     }
   ],
   "galleryImages": [
@@ -100,12 +106,16 @@
   "seoTitle": "Luxury Container Houses │ Factory-Fitted Design │ SAMAN",
   "metaDescription": "Luxury container houses with villa-grade finish from Rs 3.80 lakh ex-GST. Feature glazing, acoustic insulation, attached bath, six sizes, made in our factories.",
   "opener": "A luxury container house from SAMAN is the villa-grade build in our range: 100 mm acoustic-density mineral wool in the walls, coffered ceilings with coordinated lighting, engineered wood floors, full-height feature glazing and an attached bathroom with concealed hot-water runs. The steel bones stay honest, a welded MS frame under corrugated MS walls, but every surface a hand touches is hospitality grade. Prices run from Rs 3,80,160 ex-GST for the 20x8 ft suite to Rs 9,53,760 for the 40x12 ft villa unit across six sizes, each built in our Bengaluru and Greater Noida works and finished before it leaves.",
-  "descriptionHtml": "<p>Every luxury container house is newly fabricated in container form at our own works; used-container conversions are a separate, clearly quoted alternative.</p><p><a href=\"/product/container-houses\">every build style compared</a></p>",
+  "descriptionHtml": "<p>Every luxury container house is newly fabricated in container form at our own works; used-container conversions are a separate, clearly quoted alternative.</p><p>5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Typical service life is 20 to 25 years under proper use and maintenance, which is an engineering expectation, not a warranty period.</p><p><a href=\"/product/container-houses\">every build style compared</a></p>",
   "categoryLabel": "Container Houses",
   "categoryHref": "/product/container-houses",
   "applicationsDataset": "luxury-container-houses",
   "materialLabel": "a welded MS frame under corrugated MS walls",
   "emitAggregateOffer": true,
+  "productSku": "SP-LCH-2026",
+  "priceCaption": "Published prices are ex-factory for the unit as specified, exclusive of GST. Foundation, site levelling, water and drainage connection and the electrical service point are arranged at your site and are quoted separately.",
+  "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
+  "specPdfHref": "/specs/luxury-container-houses-technical-specification.pdf",
   "suppressLegacySku": true,
   "suppressLegacyFaqSchema": true
 }

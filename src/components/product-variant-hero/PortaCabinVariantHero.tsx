@@ -698,8 +698,19 @@ export function PortaCabinVariantHero({
         {/* Zone contact cards directly under the thumbnails — the desktop
             conversion path (Call / Send Enquiry). lg:flex-1 stretches them to
             absorb remaining column height (T28.4 equal-bottom-edge rule). */}
-        <div className="pt-1 md:pt-2 lg:flex lg:flex-1">
+        <div className="pt-1 md:pt-2 lg:flex lg:flex-1 lg:flex-col lg:gap-2">
           <ProductZoneCtas variant="strip" className="w-full" stretch />
+          {isC08Product && specPdfHref && (
+          <a
+            href={specPdfHref}
+            download
+            onClick={() => pushDataLayer('file_download', { product_slug: data.productSlug })}
+            className="flex w-full items-center justify-center gap-2 rounded-md border border-[var(--ds-color-leaf)] bg-white px-4 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:bg-[var(--ds-color-mist)]"
+          >
+            <Download className="h-4 w-4" aria-hidden="true" />
+            Download Specification PDF
+          </a>
+          )}
         </div>
 
       </div>
@@ -862,7 +873,7 @@ export function PortaCabinVariantHero({
 
         {/* Trust row — anchored at the card bottom (mt-auto within the
             full-height flex column). */}
-        {specPdfHref && (
+        {specPdfHref && !isC08Product && (
         <a
           href={specPdfHref}
           download
@@ -878,7 +889,7 @@ export function PortaCabinVariantHero({
           {isC04Product
             ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
             : isC08Product
-              ? <>GST registered · ISO 9001:2015 certified manufacturer · Pan-India delivery</>
+              ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
               : <>GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery</>}
         </p>
       </div>
