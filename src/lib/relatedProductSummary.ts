@@ -31,3 +31,18 @@ export function toRelatedProductSummary(product: WooCommerceProduct): WooCommerc
       : [],
   } as WooCommerceProduct;
 }
+
+/** The C-08 related rail does not render price or short-description copy. Remove
+ * those frozen catalog fields from hydration so retired ladders and claims do not
+ * survive in the built DOM. The one ruled thumbnail-alt correction uses the
+ * page's approved H1 verbatim. */
+export function sanitizeC08RelatedProductSummary(product: WooCommerceProduct): WooCommerceProduct {
+  return {
+    ...product,
+    price: '',
+    short_description: '',
+    images: product.slug === 'affordable-container-homes' && product.images?.[0]
+      ? [{ ...product.images[0], alt: 'Affordable Container Homes' }]
+      : product.images,
+  };
+}

@@ -1,0 +1,111 @@
+{
+  "productSlug": "prefab-container-homes",
+  "variantAxis": "Size",
+  "defaultVariant": "20x10",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 259520,
+      "priceInclGst": 306234,
+      "useCase": "Colony row for project staff"
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 295000,
+      "priceInclGst": 348100,
+      "useCase": "Single-family 1 BHK home"
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 339840,
+      "priceInclGst": 401011,
+      "useCase": "Family colony housing unit"
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 443520,
+      "priceInclGst": 523354,
+      "useCase": "Paired staff quarters unit"
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 554400,
+      "priceInclGst": 654192,
+      "useCase": "2 BHK family module home"
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 651360,
+      "priceInclGst": 768605,
+      "useCase": "Family colony flagship unit"
+    }
+  ],
+  "galleryImages": [
+    {
+      "src": "/images/product-heroes/container-houses/prefab-container-home-blue-porch-hero-saman.webp",
+      "alt": "SAMAN prefab container home in marine blue with extended roof, wooden porch, red seating, and paved patio approach.",
+      "provenance": "unknown",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-container-home-front-elevation-blue-saman.webp",
+      "alt": "Front view of SAMAN marine blue prefab container home with central door, twin flanking windows, and covered wooden porch.",
+      "provenance": "unknown",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-container-home-side-elevation-blue-saman.webp",
+      "alt": "Side elevation of SAMAN marine blue prefab container home raised on wooden plinth with three white-trimmed openable windows.",
+      "provenance": "unknown",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-container-home-interior-living-1bhk-saman.webp",
+      "alt": "Interior of SAMAN prefab container home with dining table set for breakfast, fitted kitchen, double bed, and balcony slider door.",
+      "provenance": "unknown",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-container-home-1bhk-floor-plan-layout-saman.webp",
+      "alt": "Top-down floor plan of SAMAN prefab container home showing bedroom, bathroom, central kitchen, and dining layout in 480 sqft.",
+      "provenance": "unknown",
+      "width": 256,
+      "height": 256
+    }
+  ],
+  "productName": "Prefab Container Homes",
+  "seoTitle": "Prefab Container Homes │ Configured Single & Colony │ SAMAN",
+  "metaDescription": "Prefab container homes with repeatable module plans from Rs 2.59 lakh ex-GST. Single homes or colony builds of 5 to 20 units, factory-made, pan-India delivery.",
+  "opener": "Prefab container homes from SAMAN are the repeatable-module build in our container house range: identical factory modules with sealed connection details, standard kitchen and bathroom service routes, and an expansion-ready end wall. That repeatability is the point, one drawing produces one home or a colony of twenty without redesign. Prices run from Rs 2,59,520 ex-GST for the 20x8 ft module to Rs 6,51,360 for the 40x12 ft, across six sizes. Walls are corrugated MS over 75 mm mineral wool with a 100 mm glasswool roof layer, and every module is made in our Bengaluru and Greater Noida works.",
+  "descriptionHtml": "<p>Each prefab container home is newly fabricated in container form at our works; no used cargo shell is involved unless you separately request a converted-container quotation.</p><p><a href=\"/product/container-houses\">the full container house range</a></p>",
+  "categoryLabel": "Container Houses",
+  "categoryHref": "/product/container-houses",
+  "applicationsDataset": "prefab-container-homes",
+  "materialLabel": "corrugated MS over 75 mm mineral wool",
+  "emitAggregateOffer": true,
+  "suppressLegacySku": true,
+  "suppressLegacyFaqSchema": true
+}

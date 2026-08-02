@@ -185,7 +185,6 @@ export const categorySchemas: Record<string, any> = {
         "@id": "https://www.samanportable.com/product-category/container-houses#collection",
         "url": "https://www.samanportable.com/product-category/container-houses",
         "name": "Container House Types & Price Range in India",
-        "description": "Compare all container house types and prices at SAMAN â€” from about â‚¹5 lakh to â‚¹56 lakh â€” and match one to your budget.",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
         },
@@ -200,7 +199,7 @@ export const categorySchemas: Record<string, any> = {
         "@type": "ItemList",
         "@id": "https://www.samanportable.com/product-category/container-houses#itemlist",
         "name": "Container Houses",
-        "numberOfItems": 13,
+        "numberOfItems": 6,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -217,66 +216,24 @@ export const categorySchemas: Record<string, any> = {
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Cargo Container House",
-            "url": "https://www.samanportable.com/product/container-houses/cargo-container-house"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Tiny Container Homes",
-            "url": "https://www.samanportable.com/product/container-houses/tiny-container-homes"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "Storage Container House",
-            "url": "https://www.samanportable.com/product/container-houses/storage-container-house"
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
             "name": "Prefabricated Container House",
             "url": "https://www.samanportable.com/product/container-houses/prefabricated-container-house"
           },
           {
             "@type": "ListItem",
-            "position": 7,
-            "name": "Shipping Container Tiny House",
-            "url": "https://www.samanportable.com/product/container-houses/shipping-container-tiny-house"
-          },
-          {
-            "@type": "ListItem",
-            "position": 8,
-            "name": "Inexpensive Container Homes",
-            "url": "https://www.samanportable.com/product/container-houses/inexpensive-container-homes"
-          },
-          {
-            "@type": "ListItem",
-            "position": 9,
+            "position": 4,
             "name": "Prefabricated Container Home",
             "url": "https://www.samanportable.com/product/container-houses/prefabricated-container-home"
           },
           {
             "@type": "ListItem",
-            "position": 10,
-            "name": "Modern Container Home",
-            "url": "https://www.samanportable.com/product/container-houses/modern-container-home"
-          },
-          {
-            "@type": "ListItem",
-            "position": 11,
-            "name": "Prebuilt Container Home",
-            "url": "https://www.samanportable.com/product/container-houses/prebuilt-container-homes"
-          },
-          {
-            "@type": "ListItem",
-            "position": 12,
+            "position": 5,
             "name": "Affordable Container Homes",
             "url": "https://www.samanportable.com/product/container-houses/affordable-container-homes"
           },
           {
             "@type": "ListItem",
-            "position": 13,
+            "position": 6,
             "name": "Shipping Container Homes",
             "url": "https://www.samanportable.com/product/container-houses/shipping-container-homes"
           }
@@ -303,44 +260,6 @@ export const categorySchemas: Record<string, any> = {
             "position": 3,
             "name": "Container Houses",
             "item": "https://www.samanportable.com/product-category/container-houses"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.samanportable.com/product-category/container-houses#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How much does a container house cost?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "SAMAN's container houses start at about â‚¹5 lakh for the most compact single-container unit and reach around â‚¹56 lakh for a large multi-container family home. What you pay depends on size, interior fit-out and how many containers are joined or stacked."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where can I buy a container house?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can buy any of the 14 container houses listed on this page directly from SAMAN. Choose a unit, request a quote, and we fabricate to order and deliver Pan-India from our Bangalore and Greater Noida units."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What size container do you need for a 3-bedroom house?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A 3-bedroom container house usually needs two or more 40 ft containers joined or stacked. Our larger multi-container homes are built for this â€” share your layout and we'll size the build to your bedroom and plot requirements."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What's the difference between a prefabricated container home and a prefabricated container house?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Both are factory-built before delivery. The Prefabricated Container Home leans to a finished, multi-room residential fit-out, while the Prefabricated Container House is the more compact, ready-to-place build at a lower entry price â€” pick by how much fitted space you need."
-            }
           }
         ]
       }

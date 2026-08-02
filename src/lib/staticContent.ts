@@ -45,6 +45,13 @@ const RETIRED_LISTING_SLUGS = new Set<string>([
   'prefabricated-container-office',
   'construction-site-office',
   'container-site-office',
+  'cargo-container-house',
+  'storage-container-house',
+  'tiny-container-homes',
+  'shipping-container-tiny-house',
+  'inexpensive-container-homes',
+  'modern-container-home',
+  'prebuilt-container-homes',
   // C06 labour-colony Event A: archived records remain available for audit only.
   // They must never re-enter buyer listings, related rails, Merchant, or local
   // inventory through getAllListingProductsRaw().
@@ -97,6 +104,18 @@ const RETIRED_INTERNAL_LINKS = new Map<string, string>([
   ['/affordable-office-containers-for-sale', '/product/container-offices'],
   ['/why-you-need-to-consider-a-container-office', '/product/container-offices'],
   ['/container-office-rental-is-perfect-solution', '/rental-services'],
+  ['/product/container-houses/prebuilt-container-homes', '/product/container-houses/prefab-container-homes'],
+  ['/product/container-houses/cargo-container-house', '/product/container-houses/shipping-container-homes'],
+  ['/product/container-houses/storage-container-house', '/product/container-houses/shipping-container-homes'],
+  ['/product/container-houses/tiny-container-homes', '/product/container-houses/shipping-container-homes'],
+  ['/product/container-houses/shipping-container-tiny-house', '/product/container-houses/shipping-container-homes'],
+  ['/product/container-houses/inexpensive-container-homes', '/product/container-houses/affordable-container-homes'],
+  ['/product/container-houses/modern-container-home', '/product/container-houses'],
+  ['/container-houses-cost-guide-2024', '/product/container-houses'],
+  ['/prefab-container-homes', '/product/container-houses/prefab-container-homes'],
+  ['/shipping-container-home', '/product/container-houses/shipping-container-homes'],
+  ['/used-container-price', '/ship-container-price-in-india'],
+  ['/used-shipping-container-price-in-india', '/ship-container-price-in-india'],
 ]);
 
 export function rewriteRetiredInternalLinks(html: string): string {

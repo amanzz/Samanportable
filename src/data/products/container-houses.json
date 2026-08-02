@@ -1,0 +1,111 @@
+{
+  "productSlug": "container-houses",
+  "variantAxis": "Size",
+  "defaultVariant": "20x10",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 293440,
+      "priceInclGst": 346259,
+      "useCase": "Caretaker home on a farm plot"
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 333400,
+      "priceInclGst": 393412,
+      "useCase": "Couple's holiday plot home"
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 384240,
+      "priceInclGst": 453403,
+      "useCase": "Full-time single-bedroom home"
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 501440,
+      "priceInclGst": 591699,
+      "useCase": "Slim-plot boundary home"
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 626800,
+      "priceInclGst": 739624,
+      "useCase": "Small family's first home"
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 736320,
+      "priceInclGst": 868858,
+      "useCase": "Two-bedroom compact home"
+    }
+  ],
+  "galleryImages": [
+    {
+      "src": "/images/product-heroes/container-houses/container-houses-with-modern-interior-design.webp",
+      "alt": "container houses",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-houses-with-stacked-design.webp",
+      "alt": "Stacked teal container house with modern design, large glass windows, and landscaped outdoor area.",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-houses-with-exterior-blue-finish.webp",
+      "alt": "Modern blue container house exterior with large windows, patio seating, and bright landscaped surroundings.",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-houses-with-interior-green-view.webp",
+      "alt": "Container house interior with wood panel accents, potted plants, and large glass window overlooking green outdoors.",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-houses-with-outdoor-patio.webp",
+      "alt": "Teal container house with glass windows, outdoor patio seating, and sustainable modular home design.",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    }
+  ],
+  "productName": "Container Houses",
+  "seoTitle": "Container House Manufacturer in India | Modern Modular Homes | SAMAN",
+  "metaDescription": "Container houses built in our Bengaluru and Greater Noida factories from Rs 2.93 lakh. Steel frame, glasswool insulation, six sizes, pan-India delivery.",
+  "opener": "A container house from SAMAN is a factory-built steel home: a welded MS frame, corrugated MS outer walls, 75 mm mineral wool wall insulation and a 100 mm glasswool roof layer, finished inside and delivered ready to live in. Prices start at Rs 2,93,440 ex-GST for the 20x8 ft unit and run to Rs 7,36,320 for the 40x12 ft home, across six standard sizes. This page covers the full range; the prefab, luxury, shipping-form and affordable pages each own one build style, and every one is made in our own Bengaluru and Greater Noida works.",
+  "descriptionHtml": "<p>Every container house on this page is newly fabricated in container form at our own works; a converted used ISO container is available only as a separately quoted option.</p><p><a href=\"/product/container-houses/prefab-container-homes\">the repeatable prefab module line</a></p><p><a href=\"/product/container-houses/luxury-container-houses\">villa-grade luxury build</a></p><p><a href=\"/product/container-houses/shipping-container-homes\">the reinforced shipping-form home</a></p><p><a href=\"/product/container-houses/affordable-container-homes\">the fixed-plan affordable build</a></p><p><a href=\"/ship-container-price-in-india\">what steel space really costs</a></p><p><a href=\"/container-house-price-in-tamil-nadu\">container house prices in Tamil Nadu</a></p>",
+  "categoryLabel": "Container Houses",
+  "categoryHref": "/product/container-houses",
+  "applicationsDataset": "container-houses",
+  "materialLabel": "a welded MS frame, corrugated MS outer walls",
+  "emitAggregateOffer": true,
+  "suppressLegacySku": true,
+  "suppressLegacyFaqSchema": true
+}

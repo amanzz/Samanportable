@@ -66,7 +66,7 @@ const candidates = remaining.filter(pathname => locationPattern.test(pathname));
 const locations = candidates.slice(0, 213);
 const editorial = remaining.filter(pathname => !locations.includes(pathname));
 const unfilteredSegments = { products, locations, projects, editorial };
-const expectedSegments = { products: 158, locations: 213, projects: 1, editorial: 78 };
+const expectedSegments = { products: 158, locations: 213, projects: 1, editorial: 79 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -108,8 +108,8 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
     throw new Error(`Page sitemap ${name} changed from ${expected} to ${unfilteredSegments[name].length}`);
   }
 }
-if (all.length !== 450) {
-  throw new Error(`Page sitemap total changed from 450 to ${all.length}`);
+if (all.length !== 451) {
+  throw new Error(`Page sitemap total changed from 451 to ${all.length}`);
 }
 
 const pageMap = new Map();

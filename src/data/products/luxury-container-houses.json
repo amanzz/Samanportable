@@ -1,0 +1,111 @@
+{
+  "productSlug": "luxury-container-houses",
+  "variantAxis": "Size",
+  "defaultVariant": "20x10",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 380160,
+      "priceInclGst": 448589,
+      "useCase": "Resort rentable suite room"
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 432000,
+      "priceInclGst": 509760,
+      "useCase": "Honeymoon suite for resorts"
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 497760,
+      "priceInclGst": 587357,
+      "useCase": "Long-stay premium suite"
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 649600,
+      "priceInclGst": 766528,
+      "useCase": "View-facing resort key unit"
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 812000,
+      "priceInclGst": 958160,
+      "useCase": "Pool villa key for resorts"
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 953760,
+      "priceInclGst": 1125437,
+      "useCase": "Flagship villa in one lift"
+    }
+  ],
+  "galleryImages": [
+    {
+      "src": "/images/product-heroes/container-houses/luxury-container-house-rear-corner-single-window.webp",
+      "alt": "Luxury container house rear-corner view showing single-window detail and factory-finished PPGI exterior cladding",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/luxury-container-house-interior-studio-kitchen-bath.webp",
+      "alt": "Luxury container house interior with studio-layout kitchen, separated bath, vinyl plank flooring and finished ceiling",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "/images/product-heroes/container-houses/luxury-container-house-front-elevation-sliding-door.webp",
+      "alt": "Luxury container house front elevation with full-width sliding glass door and finished PPGI exterior",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "/images/product-heroes/container-houses/luxury-container-house-floor-plan-10x20-top-view.webp",
+      "alt": "Luxury container house floor plan top view showing 10x20 layout with living, sleeping, kitchen, and bath zones",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/luxury-container-house-exterior-front-side-brown.webp",
+      "alt": "Luxury container house exterior front-side view in brown finish with framed window and entry door",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    }
+  ],
+  "productName": "Luxury Container Houses",
+  "seoTitle": "Luxury Container Houses │ Factory-Fitted Design │ SAMAN",
+  "metaDescription": "Luxury container houses with villa-grade finish from Rs 3.80 lakh ex-GST. Feature glazing, acoustic insulation, attached bath, six sizes, made in our factories.",
+  "opener": "A luxury container house from SAMAN is the villa-grade build in our range: 100 mm acoustic-density mineral wool in the walls, coffered ceilings with coordinated lighting, engineered wood floors, full-height feature glazing and an attached bathroom with concealed hot-water runs. The steel bones stay honest, a welded MS frame under corrugated MS walls, but every surface a hand touches is hospitality grade. Prices run from Rs 3,80,160 ex-GST for the 20x8 ft suite to Rs 9,53,760 for the 40x12 ft villa unit across six sizes, each built in our Bengaluru and Greater Noida works and finished before it leaves.",
+  "descriptionHtml": "<p>Every luxury container house is newly fabricated in container form at our own works; used-container conversions are a separate, clearly quoted alternative.</p><p><a href=\"/product/container-houses\">every build style compared</a></p>",
+  "categoryLabel": "Container Houses",
+  "categoryHref": "/product/container-houses",
+  "applicationsDataset": "luxury-container-houses",
+  "materialLabel": "a welded MS frame under corrugated MS walls",
+  "emitAggregateOffer": true,
+  "suppressLegacySku": true,
+  "suppressLegacyFaqSchema": true
+}

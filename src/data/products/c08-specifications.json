@@ -1,0 +1,1539 @@
+{
+  "products": {
+    "container-houses": {
+      "name": "Container Houses",
+      "sourceSheet": "33 Container Houses",
+      "uniqueDifferentiator": "Residential room planning, privacy, thermal comfort, wet-service zones, storage and external utility connections adapt the portable-cabin structure for daily living.",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "materialType": "Primary structural base",
+          "section": "150×75×5 mm MS C-channel",
+          "detail": "150×75×5 mm MS C-channel",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "materialType": "Secondary base / bracing",
+          "section": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+          "detail": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "materialType": "Floor support / foundation interface",
+          "section": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "materialType": "Upper perimeter / primary member",
+          "section": "80×40×3 mm MS top perimeter",
+          "detail": "80×40×3 mm MS top perimeter",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "materialType": "Roof frame / secondary member",
+          "section": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "materialType": "Vertical / wall frame",
+          "section": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts",
+          "detail": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "materialType": "Approved handling provision",
+          "section": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "materialType": "Fabrication control",
+          "section": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "materialType": "External wall / enclosure",
+          "section": "1.25–1.6 mm corrugated MS sheet",
+          "detail": "1.25–1.6 mm corrugated MS sheet",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "materialType": "Roof sheet / system",
+          "section": "1.6 mm corrugated MS sheet",
+          "detail": "1.6 mm corrugated MS sheet",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "materialType": "Internal lining / partition",
+          "section": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels",
+          "detail": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "materialType": "Ceiling / roof underside",
+          "section": "12.5 mm gypsum or premium laminated ceiling",
+          "detail": "12.5 mm gypsum or premium laminated ceiling",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "materialType": "Structural floor / slab",
+          "section": "19 mm marine-grade plywood or 18 mm Bison panel",
+          "detail": "19 mm marine-grade plywood or 18 mm Bison panel",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "materialType": "Finished walking surface",
+          "section": "5–6 mm SPC or 3–4 mm LVT flooring",
+          "detail": "5–6 mm SPC or 3–4 mm LVT flooring",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "materialType": "Thermal / acoustic layer",
+          "section": "75 mm mineral wool",
+          "detail": "75 mm mineral wool",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "materialType": "Roof thermal layer",
+          "section": "100 mm glass wool or mineral wool",
+          "detail": "100 mm glass wool or mineral wool",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "materialType": "Coating / façade finish",
+          "section": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "materialType": "Approved joints and seals",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "materialType": "Door assembly",
+          "section": "Premium insulated/laminated door with closer and upgraded lockset",
+          "detail": "Premium insulated/laminated door with closer and upgraded lockset",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "materialType": "Opening package",
+          "section": "Large powder-coated aluminium windows with 6 mm tinted glass",
+          "detail": "Large powder-coated aluminium windows with 6 mm tinted glass",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "materialType": "Opening protection",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "materialType": "Copper wiring and containment",
+          "section": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "materialType": "DB / MCB / RCCB / earthing",
+          "section": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "materialType": "Lights, sockets and equipment points",
+          "section": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "materialType": "Ventilation and comfort services",
+          "section": "Residential daylight, cross-ventilation, exhaust and optional AC are coordinated to the room plan without changing the common Container Office construction baseline.",
+          "detail": "Residential daylight, cross-ventilation, exhaust and optional AC are coordinated to the room plan without changing the common Container Office construction baseline.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "materialType": "Water, waste and sanitary interface",
+          "section": "Container Office base services adapted only where the approved residential plan includes kitchen, basin, shower or WC connections; supply, waste, vent and external utility…",
+          "detail": "Container Office base services adapted only where the approved residential plan includes kitchen, basin, shower or WC connections; supply, waste, vent and external utility interfaces remain quotation-controlled.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "materialType": "Product-specific planning",
+          "section": "Residential configuration on the exact Container Office structural and material baseline: Residential room planning, privacy, thermal comfort, wet-service zones, storage and external utility connections…",
+          "detail": "Residential configuration on the exact Container Office structural and material baseline: Residential room planning, privacy, thermal comfort, wet-service zones, storage and external utility connections adapt the portable-cabin structure for daily living. Room zoning, privacy, storage, kitchen or bathroom interfaces are fixed only on the approved house drawing.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "materialType": "Corrosion-protection system",
+          "section": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "materialType": "Inspection and testing",
+          "section": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "materialType": "Commercially confirmed warranty",
+          "section": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope…",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        }
+      ]
+    },
+    "prefab-container-homes": {
+      "name": "Prefab Container Homes",
+      "sourceSheet": "34 Prefab Container Homes",
+      "uniqueDifferentiator": "Repeatable modules, sealed connections, service routes, expansion",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "materialType": "Primary structural base",
+          "section": "150×75×5 mm MS C-channel",
+          "detail": "150×75×5 mm MS C-channel",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "materialType": "Secondary base / bracing",
+          "section": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+          "detail": "100x50x4 mm channels with bolted inter-module connection plates at the mating edge",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "materialType": "Floor support / foundation interface",
+          "section": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "detail": "100x50x3 mm primary with pier-block bearing plates at standard module points",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "materialType": "Upper perimeter / primary member",
+          "section": "80×40×3 mm MS top perimeter",
+          "detail": "80x40x3 mm perimeter with sealed module-joint capping profile",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "materialType": "Roof frame / secondary member",
+          "section": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "materialType": "Vertical / wall frame",
+          "section": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts",
+          "detail": "60x60x3 mm corners with paired jamb posts at the expansion-side end wall",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "materialType": "Approved handling provision",
+          "section": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "materialType": "Fabrication control",
+          "section": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "materialType": "External wall / enclosure",
+          "section": "1.25–1.6 mm corrugated MS sheet",
+          "detail": "1.25–1.6 mm corrugated MS sheet",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "materialType": "Roof sheet / system",
+          "section": "1.6 mm corrugated MS sheet",
+          "detail": "1.6 mm corrugated MS sheet",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "materialType": "Internal lining / partition",
+          "section": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels",
+          "detail": "8 mm pre-laminated board on module grid, identical panel sizes for repeat production",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "materialType": "Ceiling / roof underside",
+          "section": "12.5 mm gypsum or premium laminated ceiling",
+          "detail": "PVC laminated ceiling panels, washable, module-length runs",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "materialType": "Structural floor / slab",
+          "section": "19 mm marine-grade plywood or 18 mm Bison panel",
+          "detail": "19 mm marine-grade plywood or 18 mm Bison panel",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "materialType": "Finished walking surface",
+          "section": "5–6 mm SPC or 3–4 mm LVT flooring",
+          "detail": "2 mm homogeneous vinyl sheet, welded seams at module joints",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "materialType": "Thermal / acoustic layer",
+          "section": "75 mm mineral wool",
+          "detail": "75 mm mineral wool",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "materialType": "Roof thermal layer",
+          "section": "100 mm glass wool or mineral wool",
+          "detail": "100 mm glass wool or mineral wool",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "materialType": "Coating / façade finish",
+          "section": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "materialType": "Approved joints and seals",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "materialType": "Door assembly",
+          "section": "Premium insulated/laminated door with closer and upgraded lockset",
+          "detail": "flush steel door with standard lockset, one per module",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "materialType": "Opening package",
+          "section": "Large powder-coated aluminium windows with 6 mm tinted glass",
+          "detail": "uPVC sliding windows in the standard module aperture",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "materialType": "Opening protection",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "materialType": "Copper wiring and containment",
+          "section": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "materialType": "DB / MCB / RCCB / earthing",
+          "section": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "materialType": "Lights, sockets and equipment points",
+          "section": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "materialType": "Ventilation and comfort services",
+          "section": "Residential daylight, cross-ventilation, exhaust and optional AC are coordinated to the room plan without changing the common Container Office construction baseline.",
+          "detail": "exhaust to kitchen and bathroom zones ducted on the standard service route",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "materialType": "Water, waste and sanitary interface",
+          "section": "Container Office base services adapted only where the approved residential plan includes kitchen, basin, shower or WC connections; supply, waste, vent and external utility…",
+          "detail": "kitchen and bathroom supply and drainage risers on the sealed standard route, one site connection per module",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "materialType": "Product-specific planning",
+          "section": "Residential configuration on the exact Container Office structural and material baseline: Residential room planning, privacy, thermal comfort, wet-service zones, storage and external utility connections…",
+          "detail": "repeatable 1 BHK / 2 BHK module plans, colony-ready, expansion joint on one gable end",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "materialType": "Corrosion-protection system",
+          "section": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "materialType": "Inspection and testing",
+          "section": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "materialType": "Commercially confirmed warranty",
+          "section": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope…",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        }
+      ]
+    },
+    "luxury-container-houses": {
+      "name": "Luxury Container Houses",
+      "sourceSheet": "35 Luxury Container Houses",
+      "uniqueDifferentiator": "Hospitality finish, attached bath, acoustic/thermal upgrade, feature glazing",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "materialType": "Primary structural base",
+          "section": "150×75×5 mm MS C-channel",
+          "detail": "150×75×5 mm MS C-channel",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "materialType": "Secondary base / bracing",
+          "section": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+          "detail": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "materialType": "Floor support / foundation interface",
+          "section": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "materialType": "Upper perimeter / primary member",
+          "section": "80×40×3 mm MS top perimeter",
+          "detail": "80×40×3 mm MS top perimeter",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "materialType": "Roof frame / secondary member",
+          "section": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "materialType": "Vertical / wall frame",
+          "section": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts",
+          "detail": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "materialType": "Approved handling provision",
+          "section": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "materialType": "Fabrication control",
+          "section": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "materialType": "External wall / enclosure",
+          "section": "1.25–1.6 mm corrugated MS sheet",
+          "detail": "1.25–1.6 mm corrugated MS sheet",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "materialType": "Roof sheet / system",
+          "section": "1.6 mm corrugated MS sheet",
+          "detail": "1.6 mm corrugated MS sheet",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "materialType": "Internal lining / partition",
+          "section": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels",
+          "detail": "12 mm plywood with veneer and HPL feature walls, hospitality grade",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "materialType": "Ceiling / roof underside",
+          "section": "12.5 mm gypsum or premium laminated ceiling",
+          "detail": "coffered gypsum ceiling with coordinated concealed lighting",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "materialType": "Structural floor / slab",
+          "section": "19 mm marine-grade plywood or 18 mm Bison panel",
+          "detail": "19 mm marine-grade plywood with acoustic underlay",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "materialType": "Finished walking surface",
+          "section": "5–6 mm SPC or 3–4 mm LVT flooring",
+          "detail": "engineered wood plank with skirting-matched trim",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "materialType": "Thermal / acoustic layer",
+          "section": "75 mm mineral wool",
+          "detail": "100 mm mineral wool with acoustic-grade density",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "materialType": "Roof thermal layer",
+          "section": "100 mm glass wool or mineral wool",
+          "detail": "100 mm glass wool or mineral wool",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "materialType": "Coating / façade finish",
+          "section": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "detail": "enamel system with PU topcoat in designer palette",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "materialType": "Approved joints and seals",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "materialType": "Door assembly",
+          "section": "Premium insulated/laminated door with closer and upgraded lockset",
+          "detail": "premium insulated door with smart lock and closer",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "materialType": "Opening package",
+          "section": "Large powder-coated aluminium windows with 6 mm tinted glass",
+          "detail": "full-height powder-coated aluminium feature glazing, 6 mm laminated tinted glass",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "materialType": "Opening protection",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "materialType": "Copper wiring and containment",
+          "section": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "materialType": "DB / MCB / RCCB / earthing",
+          "section": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "materialType": "Lights, sockets and equipment points",
+          "section": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "detail": "layered lighting circuits, bedside and wardrobe points, dimmer provision",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "materialType": "Ventilation and comfort services",
+          "section": "Residential daylight, cross-ventilation, exhaust and optional AC are coordinated to the room plan without changing the common Container Office construction baseline.",
+          "detail": "split AC provision per habitable room, concealed drainage",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "materialType": "Water, waste and sanitary interface",
+          "section": "Container Office base services adapted only where the approved residential plan includes kitchen, basin, shower or WC connections; supply, waste, vent and external utility…",
+          "detail": "attached bathroom with concealed CPVC/UPVC runs and hot-water line",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "materialType": "Product-specific planning",
+          "section": "Residential configuration on the exact Container Office structural and material baseline: Residential room planning, privacy, thermal comfort, wet-service zones, storage and external utility connections…",
+          "detail": "villa-grade suites with attached bath, wardrobe zone and lighting plan",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "materialType": "Corrosion-protection system",
+          "section": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "detail": "red-oxide primer with two enamel coats plus PU finish coat",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "materialType": "Inspection and testing",
+          "section": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "materialType": "Commercially confirmed warranty",
+          "section": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope…",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        }
+      ]
+    },
+    "shipping-container-homes": {
+      "name": "Shipping Container Homes",
+      "sourceSheet": "36 Shipping Container Homes",
+      "uniqueDifferentiator": "Reinforced shell, controlled openings, weatherproof penetrations, relocation",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "materialType": "Primary structural base",
+          "section": "150×75×5 mm MS C-channel",
+          "detail": "150x75x5 mm MS C-channel with additional cross-members at lifting zones",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "materialType": "Secondary base / bracing",
+          "section": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+          "detail": "100x50x4 mm channels with relocation skid provision",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "materialType": "Floor support / foundation interface",
+          "section": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "materialType": "Upper perimeter / primary member",
+          "section": "80×40×3 mm MS top perimeter",
+          "detail": "80×40×3 mm MS top perimeter",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "materialType": "Roof frame / secondary member",
+          "section": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "materialType": "Vertical / wall frame",
+          "section": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts",
+          "detail": "75x75x3 mm corner posts with reinforced door and window surrounds",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "materialType": "Approved handling provision",
+          "section": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "materialType": "Fabrication control",
+          "section": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "materialType": "External wall / enclosure",
+          "section": "1.25–1.6 mm corrugated MS sheet",
+          "detail": "1.6 mm corrugated MS sheet, full-height continuous profile",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "materialType": "Roof sheet / system",
+          "section": "1.6 mm corrugated MS sheet",
+          "detail": "1.6 mm corrugated MS with continuous ridge and edge sealing",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "materialType": "Internal lining / partition",
+          "section": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels",
+          "detail": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "materialType": "Ceiling / roof underside",
+          "section": "12.5 mm gypsum or premium laminated ceiling",
+          "detail": "12.5 mm gypsum or premium laminated ceiling",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "materialType": "Structural floor / slab",
+          "section": "19 mm marine-grade plywood or 18 mm Bison panel",
+          "detail": "18 mm Bison panel on sealed floor frame",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "materialType": "Finished walking surface",
+          "section": "5–6 mm SPC or 3–4 mm LVT flooring",
+          "detail": "5–6 mm SPC or 3–4 mm LVT flooring",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "materialType": "Thermal / acoustic layer",
+          "section": "75 mm mineral wool",
+          "detail": "75 mm mineral wool",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "materialType": "Roof thermal layer",
+          "section": "100 mm glass wool or mineral wool",
+          "detail": "100 mm glass wool or mineral wool",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "materialType": "Coating / façade finish",
+          "section": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "detail": "zinc-rich primer with anti-rust enamel, coastal-duty build",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "materialType": "Approved joints and seals",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "materialType": "Door assembly",
+          "section": "Premium insulated/laminated door with closer and upgraded lockset",
+          "detail": "reinforced insulated door in a welded surround frame",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "materialType": "Opening package",
+          "section": "Large powder-coated aluminium windows with 6 mm tinted glass",
+          "detail": "powder-coated aluminium windows with weatherproof hoods and sealed penetrations",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "materialType": "Opening protection",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "materialType": "Copper wiring and containment",
+          "section": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "materialType": "DB / MCB / RCCB / earthing",
+          "section": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "materialType": "Lights, sockets and equipment points",
+          "section": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "materialType": "Ventilation and comfort services",
+          "section": "Residential daylight, cross-ventilation, exhaust and optional AC are coordinated to the room plan without changing the common Container Office construction baseline.",
+          "detail": "Residential daylight, cross-ventilation, exhaust and optional AC are coordinated to the room plan without changing the common Container Office construction baseline.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "materialType": "Water, waste and sanitary interface",
+          "section": "Container Office base services adapted only where the approved residential plan includes kitchen, basin, shower or WC connections; supply, waste, vent and external utility…",
+          "detail": "Container Office base services adapted only where the approved residential plan includes kitchen, basin, shower or WC connections; supply, waste, vent and external utility interfaces remain quotation-controlled.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "materialType": "Product-specific planning",
+          "section": "Residential configuration on the exact Container Office structural and material baseline: Residential room planning, privacy, thermal comfort, wet-service zones, storage and external utility connections…",
+          "detail": "reinforced container-form shell planned for repeat relocation; ISO cargo-container reuse is not implied",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "materialType": "Corrosion-protection system",
+          "section": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "detail": "zinc-rich primer coat followed by two anti-rust enamel coats",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "materialType": "Inspection and testing",
+          "section": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "materialType": "Commercially confirmed warranty",
+          "section": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope…",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        }
+      ]
+    },
+    "affordable-container-homes": {
+      "name": "Affordable Container Homes",
+      "sourceSheet": "37 Affordable Container Homes",
+      "uniqueDifferentiator": "One efficient plan, standard insulation, budget transparency",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "materialType": "Primary structural base",
+          "section": "150×75×5 mm MS C-channel",
+          "detail": "150×75×5 mm MS C-channel",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "materialType": "Secondary base / bracing",
+          "section": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+          "detail": "100×50×4 mm channels and 80×40×3 mm MS tubular members",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "materialType": "Floor support / foundation interface",
+          "section": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "materialType": "Upper perimeter / primary member",
+          "section": "80×40×3 mm MS top perimeter",
+          "detail": "80×40×3 mm MS top perimeter",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "materialType": "Roof frame / secondary member",
+          "section": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "materialType": "Vertical / wall frame",
+          "section": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts",
+          "detail": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "materialType": "Approved handling provision",
+          "section": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "materialType": "Fabrication control",
+          "section": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "materialType": "External wall / enclosure",
+          "section": "1.25–1.6 mm corrugated MS sheet",
+          "detail": "1.25–1.6 mm corrugated MS sheet",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "materialType": "Roof sheet / system",
+          "section": "1.6 mm corrugated MS sheet",
+          "detail": "1.6 mm corrugated MS sheet",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "materialType": "Internal lining / partition",
+          "section": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels",
+          "detail": "8 mm pre-laminated board throughout",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "materialType": "Ceiling / roof underside",
+          "section": "12.5 mm gypsum or premium laminated ceiling",
+          "detail": "PVC ceiling panels",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "materialType": "Structural floor / slab",
+          "section": "19 mm marine-grade plywood or 18 mm Bison panel",
+          "detail": "19 mm marine-grade plywood or 18 mm Bison panel",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "materialType": "Finished walking surface",
+          "section": "5–6 mm SPC or 3–4 mm LVT flooring",
+          "detail": "2 mm vinyl sheet flooring",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "materialType": "Thermal / acoustic layer",
+          "section": "75 mm mineral wool",
+          "detail": "75 mm mineral wool",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "materialType": "Roof thermal layer",
+          "section": "100 mm glass wool or mineral wool",
+          "detail": "100 mm glass wool or mineral wool",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "materialType": "Coating / façade finish",
+          "section": "Standard anti-rust enamel exterior finish in an approved colour combination.",
+          "detail": "standard anti-rust enamel in two standard colours",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "materialType": "Approved joints and seals",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "materialType": "Door assembly",
+          "section": "Premium insulated/laminated door with closer and upgraded lockset",
+          "detail": "powder-coated steel door with standard lockset",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "materialType": "Opening package",
+          "section": "Large powder-coated aluminium windows with 6 mm tinted glass",
+          "detail": "uPVC sliding windows, modest glazing schedule (two per room plan)",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "materialType": "Opening protection",
+          "section": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "materialType": "Copper wiring and containment",
+          "section": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "materialType": "DB / MCB / RCCB / earthing",
+          "section": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "materialType": "Lights, sockets and equipment points",
+          "section": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit.",
+          "detail": "essential LED, fan and 6A/16A socket set to the single plan",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "materialType": "Ventilation and comfort services",
+          "section": "Residential daylight, cross-ventilation, exhaust and optional AC are coordinated to the room plan without changing the common Container Office construction baseline.",
+          "detail": "cross-ventilation openings with exhaust provision; AC as optional add-on",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "materialType": "Water, waste and sanitary interface",
+          "section": "Container Office base services adapted only where the approved residential plan includes kitchen, basin, shower or WC connections; supply, waste, vent and external utility…",
+          "detail": "optional kitchen and toilet work clearly separated and quoted on selection",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "materialType": "Product-specific planning",
+          "section": "Residential configuration on the exact Container Office structural and material baseline: Residential room planning, privacy, thermal comfort, wet-service zones, storage and external utility connections…",
+          "detail": "one efficient fixed room plan per size, options quoted separately",
+          "classification": "Custom / Project Variable",
+          "common": "No",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "materialType": "Corrosion-protection system",
+          "section": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "detail": "one red-oxide primer coat with two standard enamel coats",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "materialType": "Inspection and testing",
+          "section": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "materialType": "Commercially confirmed warranty",
+          "section": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope…",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "classification": "Common",
+          "common": "Yes",
+          "differsFromHub": false
+        }
+      ]
+    }
+  }
+}

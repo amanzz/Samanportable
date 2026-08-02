@@ -36,7 +36,7 @@ import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
 import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
-import { toRelatedProductSummary } from '../../../lib/relatedProductSummary';
+import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import {
   isPortaCabinStripSlug,
@@ -185,6 +185,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       if (urlCategory === 'container-offices') {
         relatedProducts = orderContainerOfficeRail(slug, relatedProducts);
       }
+      if (urlCategory === 'container-houses') {
+        relatedProducts = relatedProducts.map(sanitizeC08RelatedProductSummary);
+      }
     } catch (error) {
       // Silent error handling for production
     }
@@ -230,6 +233,27 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .catch(() => null)
       : null;
 
+    if (variantData?.seoTitle || variantData?.metaDescription) {
+      const seoTitle = variantData.seoTitle || rankMathSEO?.title;
+      const metaDescription = variantData.metaDescription || rankMathSEO?.description;
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        ...(seoTitle ? { title: seoTitle, og_title: seoTitle, twitter_title: seoTitle } : {}),
+        ...(metaDescription
+          ? {
+              description: metaDescription,
+              og_description: metaDescription,
+              twitter_description: metaDescription,
+            }
+          : {}),
+        canonical: `https://www.samanportable.com/product/${category}/${slug}`,
+      };
+    }
+
+    if (variantData?.suppressLegacyFaqSchema && rankMathSEO) {
+      rankMathSEO = { ...rankMathSEO, faqSchema: undefined };
+    }
+
     // Event B owns all commercial size/price data when its product JSON exists.
     // Keep the legacy record for its frozen title, descriptions and head data, but
     // do not hydrate obsolete commercial fields that the variant hero never reads.
@@ -247,6 +271,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       ] as const) {
         delete productForPageProps[field];
       }
+      if (variantData.suppressLegacySku) delete productForPageProps.sku;
     }
 
     return {
@@ -254,12 +279,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         product: {
           ...productForPageProps,
           description: variantData?.descriptionHtml || productDescription,
-          images: descriptionData?.images?.map((img, index) => ({
+          images: (variantData?.galleryImages || descriptionData?.images || []).map((img, index) => ({
             id: index,
             src: img.src,
             alt: img.alt,
             name: img.alt || `Image ${index + 1}`
-          })) || [],
+          })),
           categories: [
             {
               id: 0,
