@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import { WooCommerceProduct, ProductReview } from '@/config/api';
-import { generateStructuredDataDescription } from '@/utils/contentUtils';
 import type { VariantProductData } from '@/components/product-variant-hero/types';
-import { resolveVariantProductName, resolveVariantVideo } from '@/components/product-variant-hero/presets';
-import { hasRightToExistEntry } from '@/components/product-variant-hero/RightToExist';
+import { resolveVariantVideo } from '@/components/product-variant-hero/presets';
 
 interface ProductStructuredDataProps {
   product: WooCommerceProduct;
@@ -17,9 +15,8 @@ interface ProductStructuredDataProps {
   // parity. Absolute `item` URLs. Falls back to the internal 4-node build when omitted
   // (backward compatible for any caller that does not pass it).
   breadcrumbItems?: Array<{ name: string; url: string }>;
-  // T24.1 — when provided (porta-cabins only), the single Product node is replaced
-  // by ONE ProductGroup with a hasVariant Product entry per size. Every other page
-  // (this prop omitted) keeps the existing single-Product schema, byte-for-byte.
+  // Variant pages use this approved price ladder for the primary Product's
+  // AggregateOffer; individual selector options do not become Product entities.
   variantData?: VariantProductData;
 }
 
@@ -27,14 +24,11 @@ export default function ProductStructuredData({ product, category, reviews, brea
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
-  const schemaMode = (product as any).schemaMode || '';
-  const forceStandaloneQuoteProduct = schemaMode === 'standalone-quote-product';
   const categorySlug = category || product.categories?.[0]?.slug || 'uncategorized';
   const productPath = product.slug === categorySlug
     ? `/product/${categorySlug}`
     : `/product/${categorySlug}/${product.slug}`;
   const productUrl = `${baseUrl}${productPath}`;
-  const imageUrl = product.images?.[0]?.src || `${baseUrl}/placeholder.svg`;
   const price = parseFloat(product.price) || parseFloat(product.regular_price) || 0;
   const salePrice = product.on_sale && product.sale_price ? parseFloat(product.sale_price) : null;
   const valueAddedTaxIncluded = (product as any).valueAddedTaxIncluded;
@@ -55,10 +49,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
       .trim();
   const backendShort = stripHtml(product.short_description);
   const backendFull = stripHtml(product.description);
-  const description =
-    backendShort ||
-    (backendFull ? backendFull.slice(0, 5000) : '') ||
-    `${product.name} - Premium portable structure by Saman Portable.`;
+  const description = backendShort || (backendFull ? backendFull.slice(0, 5000) : '');
 
   // Only REAL WooCommerce attributes become additionalProperty; omit entirely if none
   // (no invented Material/Usage/Customization values).
@@ -96,7 +87,8 @@ export default function ProductStructuredData({ product, category, reviews, brea
       };
     });
 
-  const offerStructuredData = !forceStandaloneQuoteProduct && (salePrice || price) > 0 ? {
+  const schemaAvailability = getSchemaAvailability(product.stock_status);
+  const offerStructuredData = (salePrice || price) > 0 ? {
     '@type': 'Offer',
     url: productUrl,
     priceCurrency: 'INR',
@@ -109,8 +101,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
         valueAddedTaxIncluded,
       },
     } : {}),
-    priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // Valid for 1 year
-    availability: getSchemaAvailability(product.stock_status),
+    ...(schemaAvailability ? { availability: schemaAvailability } : {}),
     itemCondition: 'https://schema.org/NewCondition',
     // Seller information removed to avoid duplicate Organization schemas
     // Manufacturer already provides Organization information
@@ -173,34 +164,13 @@ export default function ProductStructuredData({ product, category, reviews, brea
     worstRating: '1'
   } : undefined;
 
-  const hasProductRichResultEvidence = Boolean(
-    offerStructuredData ||
-    aggregateRatingStructuredData ||
-    reviewNodes.length > 0
-  );
-
-  // T24.1 — porta-cabins variant hero: ONE ProductGroup replaces the single Product
-  // node, with a hasVariant Product entry per size (name/sku/image from
-  // data/products/porta-cabins.json — the SAME data the buy box renders).
-  // Amendment G v2: offers.price is the INCL-GST figure (visible on-page per G1, so
-  // G6 holds), and the ProductGroup carries the aggregateRating + reviews computed
-  // from the 5 SAMAN-verified reviews only (ratingValue 4.6, ratingCount 5) — both
-  // visible on the page (hero badge + Reviews tab), so no fake/unbacked rating.
-  const variantProductName = resolveVariantProductName(variantData, product.name);
-  const hasRightToExistVariant = Boolean(
-    variantData && hasRightToExistEntry(variantData.productSlug)
-  );
-
-  // Ex-GST AggregateOffer for a variant product whose ladder is confirmed and which
-  // opts in (variantData.emitAggregateOffer). Emitted on the ProductGroup INSTEAD of
-  // per-variant Offers, so the single price signal is the ex-GST range that matches
-  // the visible primary price. porta-cabins does not set the flag → this stays null and
-  // its per-variant Offers are untouched (byte-identical).
+  // Variant pages render one primary Product. The visible size selector remains UI,
+  // while its approved ex-GST ladder becomes a single AggregateOffer. This avoids
+  // producing one incomplete Product rich-result candidate per size.
   const exGstPrices = variantData
     ? variantData.variants.map((v) => v.priceExGst).filter((p): p is number => p != null)
     : [];
   const aggregateOfferStructuredData =
-    (variantData?.emitAggregateOffer || hasRightToExistVariant) &&
     variantData &&
     exGstPrices.length === variantData.variants.length &&
     exGstPrices.length > 0
@@ -210,8 +180,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
           lowPrice: Math.min(...exGstPrices),
           highPrice: Math.max(...exGstPrices),
           offerCount: variantData.variants.length,
-          availability: 'https://schema.org/InStock',
-          priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+          ...(schemaAvailability ? { availability: schemaAvailability } : {}),
           priceSpecification: {
             '@type': 'PriceSpecification',
             priceCurrency: 'INR',
@@ -220,68 +189,15 @@ export default function ProductStructuredData({ product, category, reviews, brea
         }
       : null;
 
-  const productGroupStructuredData = variantData ? {
-    '@context': 'https://schema.org/',
-    '@type': 'ProductGroup',
-    name: product.name,
-    url: productUrl,
-    brand: {
-      '@type': 'Brand',
-      name: 'Saman Portable'
-    },
-    variesBy: 'size',
-    ...(aggregateOfferStructuredData ? { offers: aggregateOfferStructuredData } : {}),
-    ...(aggregateRatingStructuredData ? { aggregateRating: aggregateRatingStructuredData } : {}),
-    ...(reviewNodes.length > 0 ? { review: reviewNodes } : {}),
-    hasVariant: variantData.variants.map((v) => ({
-      '@type': 'Product',
-      // T25 — the product noun comes from the variant data / its preset, falling
-      // back to the page's real product name. It was hardcoded "Porta Cabin",
-      // which would have mis-named every sibling subpage's variants.
-      name: /\bft\s+G\+\d$/i.test(v.label)
-        ? `${v.label} ${variantProductName}`
-        : `${v.label.replace(/\s*ft$/i, '')} ft ${variantProductName}`,
-      sku: v.sku,
-      // T24.1 B — `size` matches the parent's variesBy: 'size' and clears the GSC
-      // Merchant-listings "Missing field size" warning on all 9 variants. Value is
-      // the variant's own label (honest data already in porta-cabins.json), with the
-      // dimension separator normalised to × (10x10 ft -> "10×10 ft").
-      size: v.label.replace(/(\d)\s*x\s*(\d)/i, '$1×$2'),
-      ...(v.images[0] ? { image: `${baseUrl}${v.images[0].src}` } : {}),
-      // Per-variant Offer (incl-GST) — the porta-cabins pattern. Suppressed when the
-      // page emits an ex-GST AggregateOffer instead (emitAggregateOffer), and omitted
-      // entirely while a price is gated (priceInclGst null). porta-cabins sets neither
-      // flag → this emits exactly as before (flagship byte-identity).
-      ...(((hasRightToExistVariant ? v.priceExGst : (!variantData.emitAggregateOffer ? v.priceInclGst : null)) != null) ? {
-        offers: {
-          '@type': 'Offer',
-          price: hasRightToExistVariant ? v.priceExGst : v.priceInclGst,
-          priceCurrency: 'INR',
-          availability: 'https://schema.org/InStock',
-          url: productUrl,
-          ...(hasRightToExistVariant ? {
-            priceSpecification: {
-              '@type': 'UnitPriceSpecification',
-              price: v.priceExGst,
-              priceCurrency: 'INR',
-              valueAddedTaxIncluded: false,
-            },
-            hasMerchantReturnPolicy: {
-              '@type': 'MerchantReturnPolicy',
-              applicableCountry: 'IN',
-              returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-              merchantReturnDays: 7,
-              returnMethod: 'https://schema.org/ReturnByMail',
-              returnFees: 'https://schema.org/ReturnShippingFees',
-            },
-          } : {}),
-        },
-      } : {}),
-    })),
-  } : null;
+  const productOfferStructuredData = aggregateOfferStructuredData || offerStructuredData;
+  const hasProductRichResultEvidence = Boolean(
+    productOfferStructuredData ||
+    aggregateRatingStructuredData ||
+    reviewNodes.length > 0
+  );
 
-  // T24.1-V — VideoObject for the product overview video. Emitted as a SEPARATE
-  // top-level node alongside the ProductGroup (which is not altered in any way).
+  // T24.1-V — VideoObject for the product overview video. Emitted as a separate
+  // top-level node alongside the primary ItemPage/Product graph.
   // No contentUrl: the file is YouTube-hosted, embedUrl is correct.
   // T25 §4 — OPT-IN, not "any variantData". It used to be gated on variantData
   // alone, which meant wiring the variant template into the sibling subpage route
@@ -306,13 +222,13 @@ export default function ProductStructuredData({ product, category, reviews, brea
   // Generate structured data for Product only when it has real Product-snippet
   // evidence. Quote-only/unrated products must not emit an ineligible Product
   // node with no offers, aggregateRating, or review.
-  const productStructuredData = productGroupStructuredData ? productGroupStructuredData : (hasProductRichResultEvidence || forceStandaloneQuoteProduct) ? {
+  const productStructuredData = hasProductRichResultEvidence ? {
     '@context': 'https://schema.org/',
     '@type': 'Product',
-    ...(forceStandaloneQuoteProduct ? { '@id': `${productUrl}#product` } : {}),
+    '@id': `${productUrl}#product`,
     name: product.name.length > 150 ? product.name.substring(0, 147) + '...' : product.name,
-    description: description,
-    image: product.images?.map(img => img.src) || [imageUrl],
+    ...(description ? { description } : {}),
+    ...(product.images?.length ? { image: product.images.map(img => img.src) } : {}),
     url: productUrl,
     brand: {
       '@type': 'Brand',
@@ -321,11 +237,11 @@ export default function ProductStructuredData({ product, category, reviews, brea
     manufacturer: {
       '@id': 'https://www.samanportable.com/#organization'
     },
-    category: product.categories?.[0]?.name || 'Portable Structures',
+    ...(product.categories?.[0]?.name ? { category: product.categories[0].name } : {}),
     // Use the REAL WooCommerce SKU; omit the field entirely if the product has none
     // (never fall back to the numeric product id as a fake SKU).
     ...(product.sku ? { sku: product.sku } : {}),
-    ...(offerStructuredData ? { offers: offerStructuredData } : {}),
+    ...(productOfferStructuredData ? { offers: productOfferStructuredData } : {}),
     ...(aggregateRatingStructuredData ? { aggregateRating: aggregateRatingStructuredData } : {}),
     // additionalProperty only from real WooCommerce attributes; omitted when none exist.
     ...(realAdditionalProperty.length > 0 ? { additionalProperty: realAdditionalProperty } : {}),
@@ -360,38 +276,16 @@ export default function ProductStructuredData({ product, category, reviews, brea
   // Organization information is already included in manufacturer and seller schemas
   // No need for separate Organization schema to avoid duplicates
 
-  // Generate ItemPage schema with mainEntity pointing to Product
-  // Use completely different description for ItemPage to avoid duplication
-  const itemPageDescription = `Explore ${product.name} - Premium modular units designed for versatility and long-term value. Ideal for various applications and environments.`;
-  
+  // ItemPage reuses the real catalog values instead of inventing separate copy.
   const itemPageStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'ItemPage',
-    name: `${product.name} - Product Details`,
-    description: itemPageDescription,
+    name: product.name,
+    ...(description ? { description } : {}),
     url: productUrl,
     ...(productStructuredData ? { mainEntity: productStructuredData } : {}),
     breadcrumb: breadcrumbStructuredData
   };
-
-  if (forceStandaloneQuoteProduct && productStructuredData) {
-    return (
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(productStructuredData)
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbStructuredData)
-          }}
-        />
-      </Head>
-    );
-  }
 
   return (
     <Head>
@@ -414,7 +308,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
   );
 }
 
-function getSchemaAvailability(stockStatus: string): string {
+function getSchemaAvailability(stockStatus: string): string | undefined {
   switch (stockStatus) {
     case 'instock':
       return 'https://schema.org/InStock';
@@ -423,6 +317,6 @@ function getSchemaAvailability(stockStatus: string): string {
     case 'onbackorder':
       return 'https://schema.org/BackOrder';
     default:
-      return 'https://schema.org/InStock';
+      return undefined;
   }
 }

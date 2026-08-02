@@ -36,6 +36,7 @@ import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
 import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
+import { toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import {
   isPortaCabinStripSlug,
@@ -181,19 +182,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         // C01: never surface a retired/301'd sibling as a related card or rail item —
         // those links would 301. Mirrors the cluster rail's redirected-slug guard.
         .filter(p => !PORTA_CABIN_REDIRECTED_SLUGS.includes(p.slug))
-        .map(p => ({
-          id: p.id,
-          name: p.name,
-          slug: p.slug,
-          price: p.price,
-          short_description: p.short_description || '',
-          average_rating: p.average_rating,
-          rating_count: p.rating_count,
-          categories: (p.categories || []).slice(0, 1).map(c => ({ id: c.id, name: c.name, slug: c.slug })),
-          images: p.images && p.images.length > 0
-            ? [{ id: p.images[0].id, src: p.images[0].src, alt: p.images[0].alt }]
-            : [],
-        })) as unknown as WooCommerceProduct[];
+        .map(toRelatedProductSummary);
     } catch (error) {
       // Silent error handling for production
     }
