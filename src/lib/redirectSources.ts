@@ -9,6 +9,13 @@
 // is wrapped in try/catch + memoised, so a config change can never crash feed generation —
 // the CSV baseline still applies even if next.config.js fails to load.
 import path from 'path';
+import { getCanonicalProductPath } from './productCanonicalPaths';
+
+type ProductRouteLike = {
+  slug?: string;
+  category_slug?: string;
+  categories?: Array<{ slug?: string }>;
+};
 
 // True Node require, resolved at runtime and hidden from webpack's static analysis so the
 // root config (and its 572-entry CSV) is never pulled into any client/page bundle.
@@ -85,4 +92,16 @@ export function isRedirectingPath(pathname: string, redirectSources: Set<string>
   const norm = normalizeRedirectPath(pathname);
   if (!norm) return false;
   return redirectSources.has(norm) || isDuplicateProductSegment(norm);
+}
+
+/**
+ * Remove products whose canonical route is a redirect source. Related rails call this
+ * before converting products into cards, so a retired product name cannot survive with
+ * its href silently rewritten to the winner.
+ */
+export async function excludeRedirectingProducts<T extends ProductRouteLike>(
+  products: readonly T[]
+): Promise<T[]> {
+  const redirectSources = await getRedirectSourceSet();
+  return products.filter((product) => !isRedirectingPath(getCanonicalProductPath(product), redirectSources));
 }

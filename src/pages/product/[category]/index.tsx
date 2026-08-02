@@ -36,10 +36,7 @@ import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
 import { toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
-import {
-  PORTA_CABIN_REDIRECTED_SLUGS,
-} from '../../../lib/portaCabinClusterRail';
-import { PORTABLE_OFFICE_REDIRECTED_SLUGS } from '../../../lib/portableOfficeCluster';
+import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 
@@ -190,15 +187,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       // Silent error handling for production
     }
 
-    // C01: never surface a retired/301'd porta-cabin sibling as a related card — those
-    // links would 301. Mirrors the cluster rail's redirected-slug guard.
-    relatedProducts = relatedProducts.filter(p => !PORTA_CABIN_REDIRECTED_SLUGS.includes(p.slug));
+    // Shared rail guard: derive exclusions from the exact redirect source used by
+    // next.config and the sitemap generator, never from a hand-maintained slug list.
+    const { excludeRedirectingProducts } = await import('../../../lib/redirectSources');
+    relatedProducts = await excludeRedirectingProducts(relatedProducts);
 
-    // C03 / W3-A (Ruling 4): same guard for the six retired portable-office subpages.
-    // This one filter covers BOTH the hub's subpage grid and the related rail, since
-    // both are projected from `relatedProducts`. The grid therefore renders the 8 live
-    // cluster subpages and zero links to a redirecting URL.
-    relatedProducts = relatedProducts.filter(p => !PORTABLE_OFFICE_REDIRECTED_SLUGS.includes(p.slug));
+    if (category === 'container-offices') {
+      relatedProducts = orderContainerOfficeRail(category, relatedProducts);
+    }
 
     // Related rails/cards render only this compact catalog projection. Keeping full
     // WooCommerce objects here duplicated long descriptions in __NEXT_DATA__ on
