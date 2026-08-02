@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://www.samanportable.com/cabin-cost-calculator</loc>
+    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://www.samanportable.com/container-rent-services/10x10-porta-cabin-rental</loc>
     <image:image><image:loc>https://www.samanportable.com/10x10-porta-cabin-rental-bangalore.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp</image:loc></image:image>

@@ -1,0 +1,20 @@
+import { spawnSync } from 'node:child_process';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const directory = path.dirname(fileURLToPath(import.meta.url));
+const scripts = ['verify-v9-rates.mjs', 'report-product-ladders.mjs', 'verify-hub-anchors.mjs'];
+let failed = false;
+
+for (const script of scripts) {
+  console.log(`\n===== ${script} =====`);
+  const result = spawnSync(process.execPath, [path.join(directory, script)], { stdio: 'inherit' });
+  if (result.status !== 0) failed = true;
+}
+
+if (failed) {
+  console.error('\nCALCULATOR VERIFICATION: FAIL');
+  process.exitCode = 1;
+} else {
+  console.log('\nCALCULATOR VERIFICATION: PASS');
+}

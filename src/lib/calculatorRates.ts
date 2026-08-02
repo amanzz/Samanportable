@@ -69,7 +69,7 @@ export const CONTAINER_HOUSE_LADDERS = {
   'luxury-container-houses': PRODUCT_LADDERS.shippingContainerOffices.map((x) => Math.round((x.priceExGst / x.areaSqft) * 1.2) * x.areaSqft),
 } as const;
 
-export const calculateAreaBandBase = (areaSqft: number, referenceRate = AREA_BAND_FORMULA.referenceRatePerSqft): number => {
+export const calculateAreaBandBase = (areaSqft: number, referenceRate: number = AREA_BAND_FORMULA.referenceRatePerSqft): number => {
   const multiplier = areaSqft < 200 ? 1.1 : areaSqft > 600 ? 0.9 : areaSqft > 400 ? 0.92 : areaSqft > 300 ? 0.94 : areaSqft > 200 ? 0.96 : 1;
   return Math.round(areaSqft * referenceRate * multiplier);
 };
