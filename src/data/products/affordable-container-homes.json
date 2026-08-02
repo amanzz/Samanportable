@@ -1,0 +1,111 @@
+{
+  "productSlug": "affordable-container-homes",
+  "variantAxis": "Size",
+  "defaultVariant": "20x10",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 252960,
+      "priceInclGst": 298493,
+      "useCase": "First steel home on a budget"
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 287600,
+      "priceInclGst": 339368,
+      "useCase": "Value one-room family start"
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 331200,
+      "priceInclGst": 390816,
+      "useCase": "Permanent economy family home"
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 432320,
+      "priceInclGst": 510138,
+      "useCase": "Narrow-plot budget home"
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 540400,
+      "priceInclGst": 637672,
+      "useCase": "Family home at lowest rate"
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 634560,
+      "priceInclGst": 748781,
+      "useCase": "Largest budget family home"
+    }
+  ],
+  "galleryImages": [
+    {
+      "src": "/images/product-heroes/container-houses/affordable-container-home-with-balcony.webp",
+      "alt": "Affordable Container Homes",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/dual-tone-affordable-container-home-side-view.webp",
+      "alt": "Side elevation of SAMAN affordable container home showing full two-storey width in red and green corrugated steel panel cladding",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/green-red-affordable-container-home-exterior.webp",
+      "alt": "Front entry of SAMAN affordable container home — white double doors, burgundy and green corrugated steel panels, concrete stepping path",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/affordable-container-home-kitchen-interior-vinyl-floor.jpeg",
+      "alt": "Kitchen interior of SAMAN affordable container home — white flat-panel cabinets, vinyl plank flooring, LED lighting, and aluminium-framed window",
+      "provenance": "unknown",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/affordable-container-home-interior-staircase.webp",
+      "alt": "Interior staircase of SAMAN affordable container home — steel railing, Burgundy Red corrugated steel wall panels, polished concrete floor, confirming two-level build",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    }
+  ],
+  "productName": "Affordable Container Homes",
+  "seoTitle": "Affordable Container Homes │ Pre-Built │ SAMAN",
+  "metaDescription": "Affordable container homes from Rs 2.52 lakh ex-GST, the lowest rates in our range. One efficient plan per size, six sizes, factory-built, pan-India delivery.",
+  "opener": "Affordable container homes from SAMAN carry the lowest rates in our container house range, from Rs 1,438 per sq ft, by fixing one efficient plan per size and spending the budget where it is felt: the same welded MS frame, corrugated MS walls and mineral wool insulation as every home we build. What changes is choice, not construction; finishes are standard, glazing is modest, and kitchen or toilet work is a clearly separated option you add only if you need it. Six sizes run from Rs 2,52,960 ex-GST at 20x8 ft to Rs 6,34,560 at 40x12 ft.",
+  "descriptionHtml": "<p>Every affordable container home is newly fabricated in container form at our own works; a converted used ISO container is offered only as a separately quoted option.</p><p><a href=\"/product/container-houses\">all five container home builds</a></p>",
+  "categoryLabel": "Container Houses",
+  "categoryHref": "/product/container-houses",
+  "applicationsDataset": "affordable-container-homes",
+  "materialLabel": "the same welded MS frame, corrugated MS walls and mineral wool insulation",
+  "emitAggregateOffer": true,
+  "suppressLegacySku": true,
+  "suppressLegacyFaqSchema": true
+}

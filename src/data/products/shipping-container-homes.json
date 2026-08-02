@@ -1,0 +1,111 @@
+{
+  "productSlug": "shipping-container-homes",
+  "variantAxis": "Size",
+  "defaultVariant": "20x10",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 364320,
+      "priceInclGst": 429898,
+      "useCase": "Rotating project quarters"
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 414000,
+      "priceInclGst": 488520,
+      "useCase": "Beachside weekend home unit"
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 476880,
+      "priceInclGst": 562718,
+      "useCase": "Hard-climate posting home"
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 622720,
+      "priceInclGst": 734810,
+      "useCase": "Annual-relocation residence"
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 778400,
+      "priceInclGst": 918512,
+      "useCase": "Project-following family home"
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 913920,
+      "priceInclGst": 1078426,
+      "useCase": "Flagship home that relocates"
+    }
+  ],
+  "galleryImages": [
+    {
+      "src": "/images/product-heroes/container-houses/turquoise-shipping-container-house-view.webp",
+      "alt": "Shipping Container Homes",
+      "provenance": "unknown",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-home-side-profile.jpeg",
+      "alt": "Side view of a steel-blue 40-ft shipping container home with white-framed windows on a plot",
+      "provenance": "unknown",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-home-front-entrance.jpeg",
+      "alt": "Front entrance of a steel-blue shipping container home with white sliding-glass doors",
+      "provenance": "unknown",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/family-living-in-shipping-container-home.jpeg",
+      "alt": "Indian family at the doorway of their steel-blue shipping container home in evening light",
+      "provenance": "unknown",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-home-wall-window-detail.jpeg",
+      "alt": "Close-up of ribbed steel-blue container wall meeting a white-framed glass door",
+      "provenance": "unknown",
+      "width": 1254,
+      "height": 1254
+    }
+  ],
+  "productName": "Shipping Container Homes",
+  "seoTitle": "Shipping Container Homes India │ Custom-Built │ SAMAN",
+  "metaDescription": "Shipping container homes with a reinforced MS shell from Rs 3.64 lakh ex-GST. Built for relocation and coastal duty, six sizes, factory-made, pan-India delivery.",
+  "opener": "Shipping container homes from SAMAN are the reinforced build in our range: heavier 75x75 mm corner posts, a full-height 1.6 mm corrugated MS shell, continuous ridge sealing and zinc-rich primer under the enamel, engineered for relocation and hard weather rather than a single quiet plot. These are newly fabricated container-form homes made in our Bengaluru and Greater Noida works; we do not resell used cargo boxes, and a converted ISO container is only ever a separately quoted option. Prices run from Rs 3,64,320 ex-GST at 20x8 ft to Rs 9,13,920 at 40x12 ft across six sizes.",
+  "descriptionHtml": "<p>The shipping-form home is newly fabricated to container dimensions and hardware standards; conversion of a used ISO cargo container is quoted separately on request.</p><p><a href=\"/product/container-houses\">the six-size range page</a></p><p><a href=\"/ship-container-price-in-india\">the finished building, not the container</a></p>",
+  "categoryLabel": "Container Houses",
+  "categoryHref": "/product/container-houses",
+  "applicationsDataset": "shipping-container-homes",
+  "materialLabel": "a full-height 1.6 mm corrugated MS shell",
+  "emitAggregateOffer": true,
+  "suppressLegacySku": true,
+  "suppressLegacyFaqSchema": true
+}

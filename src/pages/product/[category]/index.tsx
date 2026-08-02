@@ -34,7 +34,7 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
-import { toRelatedProductSummary } from '../../../lib/relatedProductSummary';
+import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
@@ -200,6 +200,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // WooCommerce objects here duplicated long descriptions in __NEXT_DATA__ on
     // every product hub without adding any visible content.
     relatedProducts = relatedProducts.map(toRelatedProductSummary);
+    if (category === 'container-houses') {
+      relatedProducts = relatedProducts.map(sanitizeC08RelatedProductSummary);
+    }
 
     // Fetch full description and images separately
     const descriptionData = await staticContent.fetchProductDescription(category);
@@ -278,6 +281,27 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .catch(() => null)
       : null;
 
+    if (variantData?.seoTitle || variantData?.metaDescription) {
+      const seoTitle = variantData.seoTitle || rankMathSEO?.title;
+      const metaDescription = variantData.metaDescription || rankMathSEO?.description;
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        ...(seoTitle ? { title: seoTitle, og_title: seoTitle, twitter_title: seoTitle } : {}),
+        ...(metaDescription
+          ? {
+              description: metaDescription,
+              og_description: metaDescription,
+              twitter_description: metaDescription,
+            }
+          : {}),
+        canonical: `https://www.samanportable.com/product/${category}`,
+      };
+    }
+
+    if (variantData?.suppressLegacyFaqSchema && rankMathSEO) {
+      rankMathSEO = { ...rankMathSEO, faqSchema: undefined };
+    }
+
     // Event B owns all commercial size/price data when its product JSON exists.
     // Keep the legacy record for its frozen title, descriptions and head data, but
     // do not hydrate obsolete commercial fields that the variant hero never reads.
@@ -295,6 +319,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       ] as const) {
         delete productForPageProps[field];
       }
+      if (variantData.suppressLegacySku) delete productForPageProps.sku;
     }
 
     // T31 — resolve the real Specifications + shared Shipping tab HTML for the
@@ -312,12 +337,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // `porta-cabin` dataset key inside getProductTabsHtml.
           specificationsHtml: t31Tabs?.specificationsHtml || descriptionData?.specificationsHtml || '',
           shippingHtml: t31Tabs?.shippingHtml || descriptionData?.shippingHtml || '',
-          images: descriptionData?.images?.map((img, index) => ({
+          images: (variantData?.galleryImages || descriptionData?.images || []).map((img, index) => ({
             id: index,
             src: img.src,
             alt: img.alt,
             name: img.alt || `Image ${index + 1}`
-          })) || [],
+          })),
           // Preserve category info so UI doesn't fall back to "Uncategorized"
           categories: [
             {

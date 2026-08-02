@@ -7,6 +7,8 @@ const LABOUR_COLONY_HREF = '/product/labor-colony';
 const labourHref = (slug: string) => `${LABOUR_COLONY_HREF}/${slug}`;
 const CONTAINER_OFFICES_HREF = '/product/container-offices';
 const containerOfficeHref = (slug: string) => `${CONTAINER_OFFICES_HREF}/${slug}`;
+const CONTAINER_HOUSES_HREF = '/product/container-houses';
+const containerHouseHref = (slug: string) => `${CONTAINER_HOUSES_HREF}/${slug}`;
 
 const bodyClass = 'text-sm leading-relaxed text-slate-700';
 const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline-offset-2';
@@ -19,6 +21,51 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  'container-houses': {
+    heading: 'Why the range page instead of one home model',
+    body: (
+      <>This page exists to route you to the right build, not to sell one configuration. The four home pages under it each own a distinct specification: repeatable prefab modules, villa-grade luxury finish, the reinforced shipping-form shell, and the fixed-plan affordable build. Start here when you know the size you need but not yet the build style that fits your plot and budget.</>
+    ),
+    comparison: (
+      <>If you already know you want the budget build, go straight to <Link className={linkClass} href={containerHouseHref('affordable-container-homes')}>affordable container homes</Link>.</>
+    ),
+  },
+  'prefab-container-homes': {
+    heading: 'Why the prefab module instead of the range page',
+    body: (
+      <>This page owns the repeatable-module configuration: bolted inter-module connection plates, standard service risers and identical panel sizes that let one approved drawing become five or twenty homes. Choose it when you may ever need a second unit, a colony, or a later extension, because the expansion gable is built in from day one. The range page routes; this page standardises.</>
+    ),
+    comparison: (
+      <>For one home with villa-grade finish instead of repeatability, see the <Link className={linkClass} href={containerHouseHref('luxury-container-houses')}>luxury container house</Link> build.</>
+    ),
+  },
+  'luxury-container-houses': {
+    heading: 'Why the luxury build instead of the prefab line',
+    body: (
+      <>This page owns the finish ladder: acoustic-grade 100 mm wall insulation, veneer and HPL feature walls, engineered wood underfoot, layered lighting circuits and split AC provision in every habitable room. Choose it when the unit is a residence guests will judge, a resort suite, a designer farmhouse, a second home with a point of view. The structure matches the range; the experience does not.</>
+    ),
+    comparison: (
+      <>If repeatable modules matter more than finish, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>prefab container homes</Link> line is the better buy.</>
+    ),
+  },
+  'shipping-container-homes': {
+    heading: 'Why the shipping-form build instead of the hub range',
+    body: (
+      <>This page owns the reinforced configuration: upsized corner posts, cross-membered base with relocation skids, weatherproof window hoods and a marine-duty paint system that shrugs off coastal air. Choose it when the home will move between sites, sit near salt water, or face wind loads the standard build should not be asked to carry. It is the range&apos;s working boots, not its slippers.</>
+    ),
+    comparison: (
+      <>For a settled plot with no relocation ahead, the standard <Link className={linkClass} href={CONTAINER_HOUSES_HREF}>container house range</Link> costs less and lives identically.</>
+    ),
+  },
+  'affordable-container-homes': {
+    heading: 'Why the affordable build instead of prefab modules',
+    body: (
+      <>This page owns budget transparency: one fixed room plan per size, standard pre-laminated interiors, vinyl sheet floors and a modest glazing schedule, published at the lowest rate in the range. Choose it when the question is simply the cheapest honest way into a steel home, with the structure uncompromised and the options priced separately where you can see them. Nothing is hidden in the rate.</>
+    ),
+    comparison: (
+      <>If you expect to add units or extend later, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>prefab container homes</Link> modules earn their premium.</>
+    ),
+  },
   'container-offices': {
     heading: 'Why the range page instead of one model',
     body: (

@@ -109,6 +109,18 @@ const COMPACT_UNIT_CATEGORY_SLUGS = new Set([
   'security-cabins',
 ]);
 
+// C-08's legacy catalogue offers contain the retired price/specification set. The
+// approved pack does not provide the five 2026 SKU codes needed to emit the 30
+// replacement variant offers, so the stale single-item offers are retired rather
+// than published with false commercial data.
+const C08_PENDING_VARIANT_FEED_SLUGS = new Set([
+  'container-houses',
+  'prefab-container-homes',
+  'luxury-container-houses',
+  'shipping-container-homes',
+  'affordable-container-homes',
+]);
+
 export function decodeHtmlEntities(value: string): string {
   if (!value) return '';
   const named: Record<string, string> = {
@@ -626,6 +638,16 @@ export function buildMerchantProducts(products: ProductLike[], baseUrl = MERCHAN
   const skipped: SkippedMerchantProduct[] = [];
 
   for (const product of products) {
+    if (C08_PENDING_VARIANT_FEED_SLUGS.has(String(product.slug || ''))) {
+      skipped.push({
+        id: cleanText(String(product.id || ''), 50),
+        sku: '',
+        title: cleanText(product.name, 150),
+        slug: cleanText(product.slug, 160),
+        reason: 'c08_variant_feed_held_pending_approved_2026_skus',
+      });
+      continue;
+    }
     const item = buildMerchantProduct(product, baseUrl);
     if (item) {
       items.push(item);

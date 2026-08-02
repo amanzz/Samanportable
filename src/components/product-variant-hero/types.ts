@@ -27,8 +27,8 @@ export interface ProductVariant {
       omit it. Rendered only in the Applications Explorer data row, when present. */
   capacity?: string;
   useCase: string;
-  sku: string;
-  images: VariantImage[];
+  sku?: string;
+  images?: VariantImage[];
   imagesPending?: boolean;
   /** Per-size buy-box blurb (Fable 5 Section E). Rendered only when present —
       the copy has not been supplied yet, so the slot stays empty until then. */
@@ -39,9 +39,13 @@ export interface VariantProductData {
   productSlug: string;
   variantAxis: string;
   defaultVariant: string;
-  hsn: string;
+  hsn?: string;
   gstPercent: number;
   variants: ProductVariant[];
+  /** Current page gallery shared by every size when the image-manifest REV has
+      not yet assigned per-size galleries. Existing products keep per-variant
+      `images` and are unaffected. */
+  galleryImages?: VariantImage[];
 
   /* ------------------------------------------------------------------ */
   /* T25 — OPTIONAL per-product overrides. Every one of these is absent  */
@@ -55,6 +59,10 @@ export interface VariantProductData {
   /** Singular product noun ("Porta Cabin") used in hero copy, image alts, the
       aria-labels and the enquiry prefill. Default: preset, else the page title. */
   productName?: string;
+  /** Owner-approved SEO title and meta description for runtime replacement of
+      stale WordPress head fields. */
+  seoTitle?: string;
+  metaDescription?: string;
   /** Owner-approved page opener rendered directly below the locked H1. Optional;
       pages without one keep their existing markup byte-identical. */
   opener?: string;
@@ -68,6 +76,12 @@ export interface VariantProductData {
   categoryHref?: string;
   /** Page-level SKU shown in the Product Information block. Row omitted when absent. */
   productSku?: string;
+  /** Remove an obsolete WordPress SKU while the ruled replacement remains
+      gated. No fallback or generated SKU is emitted. */
+  suppressLegacySku?: boolean;
+  /** Suppress a stale Rank Math FAQ graph when the approved replacement does not
+      include product FAQs. */
+  suppressLegacyFaqSchema?: boolean;
   /** "Download specifications" target. The button is omitted when absent. */
   specPdfHref?: string;
   /** ₹/sq ft display strings keyed by sizeSlug. Default: derived per variant as

@@ -34,6 +34,7 @@ import containerOfficesApplications from '@/data/products/container-offices-appl
 import portableOfficeApplications from '@/data/products/portable-office-applications.json';
 import portableCabinWithToiletApplications from '@/data/products/portable-cabin-with-toilet-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
+import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
 import RightToExist, { hasRightToExistEntry } from './RightToExist';
 
@@ -126,6 +127,11 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
       ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
     )
   ),
+  ...Object.fromEntries(
+    Object.entries(c08SectionHDatasets as Record<string, SectionHDataset>).map(
+      ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
+    )
+  ),
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -133,6 +139,14 @@ const C04_PRODUCT_SLUGS = new Set([
   'container-office-cabin',
   'shipping-container-office',
   'site-office-container',
+]);
+
+const C08_PRODUCT_SLUGS = new Set([
+  'container-houses',
+  'prefab-container-homes',
+  'luxury-container-houses',
+  'shipping-container-homes',
+  'affordable-container-homes',
 ]);
 
 const rewriteC04VisiblePunctuation = (
@@ -479,13 +493,17 @@ export function PortaCabinVariantHero({
   const specPdfHref = data.specPdfHref || preset.specPdfHref;
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
   const isC04Product = C04_PRODUCT_SLUGS.has(data.productSlug);
+  const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
   // not rendered at all (never another product's copy).
   const applications = APPLICATIONS_DATASETS[data.applicationsDataset || preset.applicationsDataset || data.productSlug];
   const heroActive = data.variants[heroIndex];
-  const heroImages = heroActive.images.length > 0 ? heroActive.images : null;
+  const imagesForVariant = (variant: typeof heroActive) =>
+    variant.images?.length ? variant.images : (data.galleryImages || []);
+  const activeVariantImages = imagesForVariant(heroActive);
+  const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
 
   // Hero chips: change ONLY the hero; write #size-{WxL} (replaceState — no
   // navigation, no scroll, no history entry).
@@ -859,7 +877,9 @@ export function PortaCabinVariantHero({
         <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">
           {isC04Product
             ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
-            : <>GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery</>}
+            : isC08Product
+              ? <>GST registered · ISO 9001:2015 certified manufacturer · Pan-India delivery</>
+              : <>GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery</>}
         </p>
       </div>
     </Card>
@@ -1085,14 +1105,15 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
         {data.variants.map((v, i) => {
           const panel = panelBySlug.get(v.sizeSlug);
           if (!panel) return null;
+          const variantImages = v.images?.length ? v.images : (data.galleryImages || []);
           // Panel photo = that size's ELEVATED-VIEW shot (a different file from the
           // gallery's hero-view, so no image repeats on the page). 40x8 has no
           // real photos yet → placeholder.
-          const hasPhotos = v.images.length > 0;
+          const hasPhotos = variantImages.length > 0;
           const panelSrc =
             panel.image?.src ||
             (hasPhotos
-              ? explorerImageSrc(explorerTemplate, explorerShot, v.sizeSlug, v.images[0]?.src)
+              ? explorerImageSrc(explorerTemplate, explorerShot, v.sizeSlug, variantImages[0]?.src)
               : null);
           const panelImage = panelSrc
             ? {
@@ -1107,8 +1128,8 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 alt:
                   panel.image?.alt ||
                   panel.imageAlt ||
-                  (panelSrc === v.images[0]?.src && v.images[0]?.alt
-                    ? v.images[0].alt
+                  (panelSrc === variantImages[0]?.src && variantImages[0]?.alt
+                    ? variantImages[0].alt
                     : applicationAlt(v.label, panel.applications[0], productNameLower)),
               }
             : null;
