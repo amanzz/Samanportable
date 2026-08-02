@@ -66,26 +66,29 @@ export default function ProductStructuredData({ product, category, reviews, brea
     })
     .filter((property): property is { '@type': 'PropertyValue'; name: string; value: string } => Boolean(property));
 
-  // Review JSON-LD is built ONLY from the real approved reviews passed in (the same
-  // ones rendered visibly on the page). Text is stripped to plain text. If no
-  // reviews are supplied, the `review` array is omitted entirely — never invented.
-  const reviewNodes = (reviews || [])
-    .filter(r => r && typeof r.rating === 'number' && r.rating > 0 && r.review && stripHtml(r.review).length > 0)
-    .map(r => {
-      const datePublished = (r.date_created || '').split('T')[0];
-      return {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: r.rating,
-          bestRating: '5',
-          worstRating: '1',
-        },
-        author: { '@type': 'Person', name: r.reviewer || 'Anonymous' },
-        ...(datePublished ? { datePublished } : {}),
-        reviewBody: stripHtml(r.review),
-      };
-    });
+  // Product-wide rating-schema gate: fewer than three approved reviews is not
+  // enough evidence for AggregateRating or Review/Rating JSON-LD. Visible review
+  // cards remain governed by ProductReviews and are deliberately unchanged.
+  const shouldEmitRatingSchema = Number(product.rating_count) >= 3;
+  const reviewNodes = shouldEmitRatingSchema
+    ? (reviews || [])
+        .filter(r => r && typeof r.rating === 'number' && r.rating > 0 && r.review && stripHtml(r.review).length > 0)
+        .map(r => {
+          const datePublished = (r.date_created || '').split('T')[0];
+          return {
+            '@type': 'Review',
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: r.rating,
+              bestRating: '5',
+              worstRating: '1',
+            },
+            author: { '@type': 'Person', name: r.reviewer || 'Anonymous' },
+            ...(datePublished ? { datePublished } : {}),
+            reviewBody: stripHtml(r.review),
+          };
+        })
+    : [];
 
   const schemaAvailability = getSchemaAvailability(product.stock_status);
   const offerStructuredData = (salePrice || price) > 0 ? {
@@ -156,7 +159,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
     delete (offerStructuredData as any).shippingDetails;
   }
 
-  const aggregateRatingStructuredData = product.rating_count > 0 ? {
+  const aggregateRatingStructuredData = shouldEmitRatingSchema ? {
     '@type': 'AggregateRating',
     ratingValue: product.average_rating,
     reviewCount: product.rating_count,
