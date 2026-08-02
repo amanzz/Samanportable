@@ -43,6 +43,8 @@ const RETIRED_LISTING_SLUGS = new Set<string>([
   'modular-shipping-container-office',
   'portable-container-offices',
   'prefabricated-container-office',
+  'construction-site-office',
+  'container-site-office',
   // C06 labour-colony Event A: archived records remain available for audit only.
   // They must never re-enter buyer listings, related rails, Merchant, or local
   // inventory through getAllListingProductsRaw().
@@ -81,6 +83,20 @@ const RETIRED_INTERNAL_LINKS = new Map<string, string>([
   ['/product/container-offices/modular-shipping-container-office', '/product/container-offices/shipping-container-office'],
   ['/product/container-offices/portable-container-offices', '/product/container-offices'],
   ['/product/container-offices/prefabricated-container-office', '/product/container-offices/container-office-cabin'],
+  ['/product/container-offices/construction-site-office', '/product/container-offices/site-office-container'],
+  ['/product/container-offices/container-site-office', '/product/container-offices/site-office-container'],
+  ['/container-offices-for-sale-in-jayanagar', '/product-category/container-offices'],
+  ['/container-offices-for-sale-in-hoskote', '/product-category/container-offices'],
+  ['/container-offices-for-sale-in-hosur', '/product-category/container-offices'],
+  ['/container-offices-for-sale-in-jp-nagar', '/product-category/container-offices'],
+  ['/container-offices-for-sale-in-bommasandra', '/product-category/container-offices'],
+  ['/container-offices-for-sale-in-vijayanagar', '/product-category/container-offices'],
+  ['/20ft-container-office', '/product/container-offices/shipping-container-office'],
+  ['/10-foot-shipping-container-office-perfect-fit-for-small-spaces', '/product/container-offices/shipping-container-office'],
+  ['/12ft-office-container-smart-choice-for-growing-startups', '/product/container-offices'],
+  ['/affordable-office-containers-for-sale', '/product/container-offices'],
+  ['/why-you-need-to-consider-a-container-office', '/product/container-offices'],
+  ['/container-office-rental-is-perfect-solution', '/rental-services'],
 ]);
 
 export function rewriteRetiredInternalLinks(html: string): string {
@@ -99,7 +115,7 @@ export function rewriteRetiredInternalLinks(html: string): string {
 }
 
 const C04_CANONICAL_WARRANTY =
-  'Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.';
+  '5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Typical service life is 20 to 25 years under proper use and maintenance, which is an engineering expectation, not a warranty period.';
 
 const C04_PLATFORM_DISCLOSURES: Record<string, { marker: string; sentence: string }> = {
   'container-offices': {
@@ -137,7 +153,7 @@ function applyC04GapCloseCopy(html: string, slug: string): string {
   let rendered = html;
   if (slug === 'container-offices') {
     rendered = rendered.replace(
-      /Warranty is 5 years on the structural frame\/base,[^<]+proper maintenance\./,
+      /(?:Warranty is )?5 years on the structural frame\/base, 1[-\u2013]2 years on finishing depending on scope, and 20[-\u2013]25 years engineered service life with proper maintenance\.?/g,
       C04_CANONICAL_WARRANTY
     );
   }

@@ -1,5 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const nextConfig = require('../next.config.js');
+const { tryToParsePath } = require('next/dist/lib/try-to-parse-path');
 
 const root = process.cwd();
 const publicDir = path.join(root, 'public');
@@ -60,8 +65,37 @@ const locationPattern = /(?:-in-|for-sale-in|delhi|bangalore|bengaluru|noida|gur
 const candidates = remaining.filter(pathname => locationPattern.test(pathname));
 const locations = candidates.slice(0, 213);
 const editorial = remaining.filter(pathname => !locations.includes(pathname));
-const segments = { products, locations, projects, editorial };
+const unfilteredSegments = { products, locations, projects, editorial };
 const expectedSegments = { products: 158, locations: 213, projects: 1, editorial: 78 };
+
+const redirectEntries = await nextConfig.redirects();
+const redirectMatchers = redirectEntries
+  .filter(entry =>
+    entry
+    && typeof entry.source === 'string'
+    && !entry.has
+    && !entry.missing
+  )
+  .map(entry => {
+    const parsed = tryToParsePath(entry.source);
+    if (parsed.error || !parsed.regexStr) {
+      throw new Error(`Could not parse redirect source ${entry.source}`);
+    }
+    return { entry, regex: new RegExp(parsed.regexStr) };
+  });
+
+const redirectRuleByPath = new Map(
+  all.flatMap(pathname => {
+    const match = redirectMatchers.find(({ regex }) => regex.test(pathname));
+    return match ? [[pathname, match.entry]] : [];
+  }),
+);
+const segments = Object.fromEntries(
+  Object.entries(unfilteredSegments).map(([name, paths]) => [
+    name,
+    paths.filter(pathname => !redirectRuleByPath.has(pathname)),
+  ]),
+);
 
 const imageSegmentByPath = new Map(
   Object.entries(segments).flatMap(([name, paths]) =>
@@ -70,8 +104,8 @@ const imageSegmentByPath = new Map(
 );
 
 for (const [name, expected] of Object.entries(expectedSegments)) {
-  if (segments[name].length !== expected) {
-    throw new Error(`Page sitemap ${name} changed from ${expected} to ${segments[name].length}`);
+  if (unfilteredSegments[name].length !== expected) {
+    throw new Error(`Page sitemap ${name} changed from ${expected} to ${unfilteredSegments[name].length}`);
   }
 }
 if (all.length !== 450) {
@@ -100,6 +134,7 @@ const exclusions = {
   disallowedHost: [],
   clientMarkPath: [],
   metadataOnly: [],
+  redirectingPage: [],
 };
 
 const brandMarker = /\b(?:icon|logo|favicon)\b/i;
@@ -144,6 +179,11 @@ const main = async () => {
 
     for (const usage of entry.usages) {
       const association = { pageUrl: usage.pageUrl, imageUrl: entry.resolvedUrl };
+      const usagePathname = new URL(usage.pageUrl).pathname;
+      if (redirectRuleByPath.has(usagePathname)) {
+        exclusions.redirectingPage.push(association);
+        continue;
+      }
       if (usage.pageStatus !== 200 || !usage.pageIndexable) {
         exclusions.pageNoindexOrCanonicalElsewhere.push(association);
         continue;
@@ -287,6 +327,12 @@ const main = async () => {
       Object.entries(segments).map(([name, paths]) => [name, paths.length]),
     ),
     total: all.length,
+    indexedTotal: Object.values(segments).reduce((sum, paths) => sum + paths.length, 0),
+    redirectExclusions: [...redirectRuleByPath.entries()].map(([pathname, entry]) => ({
+      pathname,
+      source: entry.source,
+      destination: entry.destination,
+    })),
     images: {
       pages: imageEntries.length,
       associations: associations.length,

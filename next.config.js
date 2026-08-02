@@ -250,6 +250,23 @@ const nextConfig = {
       { source: '/product/container-offices/portable-container-offices', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
       { source: '/product/container-offices/prefabricated-container-office', destination: 'https://www.samanportable.com/product/container-offices/container-office-cabin', statusCode: 301 },
 
+      // C04 loser-page redirects (owner-approved 2026-08-02).
+      // Each source lands directly on its ruled HTTP-200 keeper.
+      { source: '/product/container-offices/construction-site-office', destination: 'https://www.samanportable.com/product/container-offices/site-office-container', statusCode: 301 },
+      { source: '/product/container-offices/container-site-office', destination: 'https://www.samanportable.com/product/container-offices/site-office-container', statusCode: 301 },
+      { source: '/container-offices-for-sale-in-jayanagar', destination: 'https://www.samanportable.com/product-category/container-offices', statusCode: 301 },
+      { source: '/container-offices-for-sale-in-hoskote', destination: 'https://www.samanportable.com/product-category/container-offices', statusCode: 301 },
+      { source: '/container-offices-for-sale-in-hosur', destination: 'https://www.samanportable.com/product-category/container-offices', statusCode: 301 },
+      { source: '/container-offices-for-sale-in-jp-nagar', destination: 'https://www.samanportable.com/product-category/container-offices', statusCode: 301 },
+      { source: '/container-offices-for-sale-in-bommasandra', destination: 'https://www.samanportable.com/product-category/container-offices', statusCode: 301 },
+      { source: '/container-offices-for-sale-in-vijayanagar', destination: 'https://www.samanportable.com/product-category/container-offices', statusCode: 301 },
+      { source: '/20ft-container-office', destination: 'https://www.samanportable.com/product/container-offices/shipping-container-office', statusCode: 301 },
+      { source: '/10-foot-shipping-container-office-perfect-fit-for-small-spaces', destination: 'https://www.samanportable.com/product/container-offices/shipping-container-office', statusCode: 301 },
+      { source: '/12ft-office-container-smart-choice-for-growing-startups', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
+      { source: '/affordable-office-containers-for-sale', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
+      { source: '/why-you-need-to-consider-a-container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
+      { source: '/container-office-rental-is-perfect-solution', destination: 'https://www.samanportable.com/rental-services', statusCode: 301 },
+
       // Product singular-to-canonical plural redirects (owner-approved 2026-07-01).
       // Absolute destinations keep these migration URLs single-hop.
       { source: '/product/container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
@@ -267,7 +284,7 @@ const nextConfig = {
       { source: '/know-what-is-use-of-labour-colony-its-advantages-and-features', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
       { source: '/labour-colony-is-the-ultimate-option-for-entrepreneurs', destination: 'https://www.samanportable.com/product/labor-colony', statusCode: 301 },
 
-      { source: '/product-tag/second-hand-office-containers-for-sale', destination: 'https://www.samanportable.com/affordable-office-containers-for-sale', statusCode: 301 },
+      { source: '/product-tag/second-hand-office-containers-for-sale', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
 
       // Root-level product alias fixes from 2026-07-02 crawl 4xx report.
       { source: '/site-office-container', destination: 'https://www.samanportable.com/product/container-offices/site-office-container', statusCode: 301 },
@@ -937,7 +954,7 @@ const nextConfig = {
       // C4 Container Office (4)
       {
         source: '/cheap-container-office',
-        destination: 'https://www.samanportable.com/affordable-office-containers-for-sale',
+        destination: 'https://www.samanportable.com/product/container-offices',
         permanent: true,
       },
       {
