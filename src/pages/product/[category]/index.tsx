@@ -137,7 +137,7 @@ const RelatedPrefabricatedWarehouseResource = ({ category }: { category: string 
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, query }) => {
   try {
     const { category } = params as { category: string };
     
@@ -332,11 +332,22 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // porta-cabin cluster; null for any other category (tabs unchanged there).
     const t31Tabs = getProductTabsHtml(category);
 
+    const embeddedCalculatorHtml = category === 'labor-colony'
+      ? await import('../../../lib/cabinCalculatorSSR').then(({ renderCabinCalculatorSSR }) => renderCabinCalculatorSSR({
+          embedded: true,
+          includeCopy: false,
+          productSlug: 'labor-colony',
+          query,
+          pageUrl: `/product/${category}`,
+          reference: `SP-EST-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${String(Date.now() % 1000).padStart(3, '0')}`,
+        }))
+      : '';
+
     return {
       props: {
         product: {
           ...productForPageProps,
-          description: variantData?.descriptionHtml || descriptionData?.description || '',
+          description: `${variantData?.descriptionHtml || descriptionData?.description || ''}${embeddedCalculatorHtml}`,
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
           // cluster (null for every other product → the existing overrides/defaults
           // apply unchanged). The flagship page slug `porta-cabins` maps to the

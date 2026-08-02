@@ -2,9 +2,13 @@
 
 PR: https://github.com/amanzz/Samanportable/pull/110
 
-Preview route: `/cabin-cost-calculator`
+Review URL: https://github.com/amanzz/Samanportable/pull/110
 
-The route now renders the dedicated v9 React component in `src/components/calculator/CabinCostCalculatorV9.tsx`. The legacy `/portable-cabin-price-calculator` implementation remains available and is restored to its pre-PR source. No homepage or wp-export file was changed.
+Preview route: `/cabin-cost-calculator`. PR #110 has no deployment check or preview comment, so no externally hosted preview URL was available to report without performing a prohibited deployment.
+
+The route now renders the v9 port as server-generated HTML from `src/lib/cabinCalculatorSSR.ts`. The first response contains every step, option, rate, table, estimate line, SVG, explainer and FAQ. The only calculator client code is the 18,452-byte deferred vanilla enhancement module at `public/scripts/cabin-cost-calculator.js`. It creates no elements or HTML and makes no pricing request.
+
+The legacy calculator is the React page at `/portable-cabin-price-calculator`. That route is not used by the new calculator and remains byte-identical to `origin/static-migration`. It was not retired or modified. The intermediate hydrated component created earlier in this PR was removed after SAMAN fixed the architecture at SSR HTML.
 
 ## Blocker resolution
 
@@ -17,19 +21,46 @@ The route now renders the dedicated v9 React component in `src/components/calcul
 - Labour datasets versus live C-06 page data: diff empty.
 - Container-house source mapping and derived ladders: diff empty.
 - Hub anchor declarations: one occurrence each, all four unique, no exact primary-keyword match. Diff: empty.
-- Static tap-target audit: 3 independent 44 px rules checked, 6 numeric input templates, 10 inputmode declarations, 12 ARIA-label declarations. Diff: empty.
-- Reserved step-panel height: 560 px desktop and 610 px mobile.
+- Static tap-target audit: 44 px minimum, 11 number input templates, 13 inputmode declarations and 7 ARIA-label templates. Diff: empty.
+- Reserved enhanced step-panel height: 560 px desktop and 610 px mobile.
 - Calculator-scope em dash count: 0.
 - TypeScript: pass.
 - Lint: pass, zero warnings.
-- Next production compilation: pass, 41 static pages generated.
+- Next production compilation: pass, 40 static pages generated and all dynamic SSR routes compiled.
 - Route count: 450 to 451, exactly +1.
-- Calculator route chunk: 30.4 kB; first load 178 kB. No new dependency.
+- Standalone raw HTML serves no Next page runtime and no `__NEXT_DATA__`. Its only calculator script is the 18,452-byte deferred vanilla module. No new dependency.
+- Product hub route-owned bundle before and after: 28,090 bytes raw / 8,522 bytes gzip, byte-identical.
+- Product child route-owned bundle before and after: 24,357 bytes raw / 7,439 bytes gzip, byte-identical.
+- Product total manifest assets moved from 740,680 to 741,324 bytes raw on the hub and 736,947 to 737,591 bytes raw on the child because the shared site compilation changed by 644 bytes. The calculator-specific product chunks did not change, the lockfile did not change, and no calculator enhancer is served on embedded pages.
 - Postbuild: pass after updating the explicit route-count guards to 451 total and 159 unfiltered product routes.
 - Sitemap: `/cabin-cost-calculator` present in `public/sitemap-products.xml`.
-- Local HTTP verification: 200 with exact title, meta, self-canonical, index/follow, FAQ schema and SSR body copy.
+- Production HTTP verification: 200 with exact title, meta, self-canonical, index/follow, FAQ schema and SSR body copy.
 
-The in-app browser was unavailable, so the required screenshots, measured CLS value and live axe-core scan could not be produced in this session. Static focus, ARIA, reserved-height and tap-target gates pass, but those three browser evidence gates remain unmeasured.
+The in-app browser returned `No browser is available.` Screenshots at 360, 768 and 1440, browser-measured CLS, axe-core and Lighthouse metrics could not be produced. Per SAMAN's ruling, all non-browser evidence was delivered instead. Static focus, ARIA, fixed mobile bar, reserved-height and tap-target gates pass. No alternate browser-control surface was used.
+
+## Raw HTML and JavaScript-disabled evidence
+
+Production `curl` results:
+
+| Route | HTTP | SSR step headings | Product tables | Published rows | Numeric price cells |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `/cabin-cost-calculator` | 200 | 9 of 9 | 19 | 159 | 300 |
+| `/product/labor-colony` | 200 | 8 of 8 | 1 | 6 | 12 |
+| `/product/labor-colony/labor-sheds` | 200 | 8 of 8 | 1 | 6 | 12 |
+| `/product/labor-colony/labor-hutments` | 200 | 8 of 8 | 1 | 6 | 12 |
+| `/product/labor-colony/prefab-labor-camps` | 200 | 8 of 8 | 1 | 6 | 12 |
+
+- Standalone response: 147,527 bytes, 4,878 text words. Calculator fragment: 86,697 bytes and 4,445 words.
+- Labour hub calculator fragment: 36,971 bytes and 1,411 words.
+- Framework hydration word diff on standalone: 4,878 source words versus 4,878 after framework hydration, diff 0, because the route serves no framework runtime and no Next data payload.
+- The embedded calculator is an opaque server HTML string inside the existing Description renderer. Its route-owned hydration chunks are byte-identical before and after.
+- FAQPage JSON-LD, all four FAQ answers and both explainer sections are present in view-source.
+- A shared request with `length=12&width=11` returned `12×11 ft · 132 sq ft` and `₹1,81,500` in raw source before any script ran.
+- Native form action is `POST /api/enquiry`. An empty HTML POST returned HTTP 303 to `/cabin-cost-calculator?submit_error=1`; JSON validation still returned HTTP 400 JSON.
+- Noscript contains the tables/options/form summary and no enable-JavaScript apology.
+- Network code audit: one runtime `fetch`, exclusively the enhanced quotation POST to `/api/enquiry`; pricing/rate/ladder fetches: 0.
+- DOM creation audit: `createElement`: 0; `innerHTML`: 0.
+- Exact calculator page title, meta, canonical, H1 and index/follow were verified from production source.
 
 ## Formula and estimate checks
 
@@ -83,7 +114,7 @@ Rates are rounded to the nearest rupee first, then multiplied by area. Prices ar
 
 | Competitor component | Status | Evidence |
 | --- | --- | --- |
-| Product tiles | PRESENT | Step 1 has 16 tiles, including Toilet Cabin quote mode, five priced container homes and Labour Colony. |
+| Product tiles | PRESENT | Step 1 has 19 SSR tiles, including Toilet Cabin quote mode, five priced container homes and all four C-06 labour products. |
 | L / W / H | PRESENT | Step 2 has numeric or decimal inputmode, 6 to 60 ft validation and inline ruled guidance. |
 | Plan views | PRESENT | Step 2 and Step 5 switch between a 2D plan and four SVG elevations. |
 | Rooms | PRESENT | Steps 2 and 3 select one to four rooms; partition pricing is itemised. |

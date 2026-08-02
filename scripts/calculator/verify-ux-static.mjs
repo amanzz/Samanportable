@@ -1,32 +1,36 @@
 import fs from 'node:fs';
 
-const file = 'src/components/calculator/CabinCostCalculatorV9.tsx';
-const source = fs.readFileSync(file, 'utf8');
+const renderer = fs.readFileSync('src/lib/cabinCalculatorSSR.ts', 'utf8');
+const enhancer = fs.readFileSync('public/scripts/cabin-cost-calculator.js', 'utf8');
+
 const checks = [
-  ['global button minimum', /button\{min-height:44px/],
-  ['form control minimum', /min-height:44px;border:1px/],
-  ['quantity button width', /quantity-controls button\{width:44px/],
-  ['visible focus state', /button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible/],
-  ['reserved step height', /step-panel\{min-height:560px/],
-  ['mobile breakpoint', /@media\(max-width:600px\)/],
-  ['mobile estimate fixed', /mobile-estimate\{display:block;position:fixed/],
-  ['numeric input mode', /inputMode="numeric"/],
-  ['decimal input mode', /inputMode="decimal"/],
-  ['range aria label', /aria-label={`Door \$\{index \+ 1\} position`}/],
+  ['44px form controls', /min-height:44px/],
+  ['visible focus state', /focus-visible\{outline:3px/],
+  ['desktop reserved step height', /min-height:560px/],
+  ['mobile reserved step height', /min-height:610px/],
+  ['360px fixed estimate bar', /@media\(max-width:600px\).*\.mobile-estimate\{position:fixed/],
+  ['numeric input mode', /inputmode="numeric"/],
+  ['decimal input mode', /inputmode="decimal"/],
+  ['range ARIA labels', /aria-label="Door \$\{index \+ 1\} position along wall"/],
   ['step navigation label', /aria-label="Calculator steps"/],
+  ['all steps SSR visibility', /\.calc-step\{display:block/],
+  ['enhanced-only step hiding', /\.is-enhanced \.calc-step:not\(\.is-active\)/],
+  ['no DOM content creation', !/createElement|innerHTML/.test(enhancer)],
+  ['one enquiry fetch only', (enhancer.match(/\bfetch\(/g) || []).length === 1 && /fetch\(form\.dataset\.enhancedAction \|\| '\/api\/enquiry'/.test(enhancer)],
 ];
 
-const failures = checks.filter(([, pattern]) => !pattern.test(source)).map(([name]) => name);
-const numberInputs = (source.match(/type="number"/g) || []).length;
-const numericInputModes = (source.match(/inputMode=(?:"(?:numeric|decimal|email)"|\{)/g) || []).length;
-const ariaLabels = (source.match(/aria-label/g) || []).length;
+const failures = checks.filter(([, result]) => result instanceof RegExp ? !result.test(renderer) : !result).map(([name]) => name);
+const numberInputs = (renderer.match(/type="number"/g) || []).length;
+const inputModes = (renderer.match(/inputmode="(?:numeric|decimal|email)"/g) || []).length;
+const ariaLabels = (renderer.match(/aria-label=/g) || []).length;
 
-console.log('STATIC UX AUDIT');
-console.log(`44 px tap-target rules checked: 3`);
+console.log('STATIC SSR UX AUDIT');
+console.log('minimum tap target: 44 px');
 console.log(`number input templates: ${numberInputs}`);
-console.log(`inputmode declarations: ${numericInputModes}`);
-console.log(`ARIA label declarations: ${ariaLabels}`);
-console.log(`reserved step panel height: 560 px`);
+console.log(`inputmode declarations: ${inputModes}`);
+console.log(`ARIA label templates: ${ariaLabels}`);
+console.log('reserved step panel height: 560 px desktop / 610 px mobile');
+console.log(`enhancer bytes: ${Buffer.byteLength(enhancer, 'utf8')}`);
 console.log(`static UX diff: ${failures.length ? failures.join(', ') : '(empty)'}`);
 
 if (failures.length) process.exitCode = 1;

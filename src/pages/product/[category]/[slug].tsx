@@ -103,7 +103,7 @@ interface ProductDetailsProps {
   variantData?: VariantProductData | null;
 }
 
-export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
+export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res, query }) => {
   try {
     const { category, slug } = params as { category: string; slug: string };
     
@@ -230,6 +230,21 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .catch(() => null)
       : null;
 
+    const colonySlugs = ['labor-sheds', 'labor-hutments', 'prefab-labor-camps'] as const;
+    const colonyProductSlug = categoryLower === 'labor-colony' && colonySlugs.includes(slugLower as typeof colonySlugs[number])
+      ? slugLower as typeof colonySlugs[number]
+      : null;
+    const embeddedCalculatorHtml = colonyProductSlug
+      ? await import('../../../lib/cabinCalculatorSSR').then(({ renderCabinCalculatorSSR }) => renderCabinCalculatorSSR({
+          embedded: true,
+          includeCopy: false,
+          productSlug: colonyProductSlug,
+          query,
+          pageUrl: `/product/${category}/${slug}`,
+          reference: `SP-EST-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${String(Date.now() % 1000).padStart(3, '0')}`,
+        }))
+      : '';
+
     // Event B owns all commercial size/price data when its product JSON exists.
     // Keep the legacy record for its frozen title, descriptions and head data, but
     // do not hydrate obsolete commercial fields that the variant hero never reads.
@@ -253,7 +268,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: variantData?.descriptionHtml || productDescription,
+          description: `${variantData?.descriptionHtml || productDescription}${embeddedCalculatorHtml}`,
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
             src: img.src,
