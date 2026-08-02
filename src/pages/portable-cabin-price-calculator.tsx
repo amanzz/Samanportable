@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { RankMathSEOData } from '@/config/api';
 import { siteConfig } from '@/config/seo';
+import { pushDataLayer } from '@/lib/analytics';
 import {
   CABIN_CEILING_OPTIONS,
   CABIN_FLOORING_OPTIONS,
@@ -44,10 +45,10 @@ type Zone = 'South' | 'North';
 
 type ViewMode = 'idle' | 'ready' | 'custom' | 'error';
 
-const CALCULATOR_TITLE = 'Portable Cabin Price Calculator | Customize & Price | SAMAN';
-const CALCULATOR_H1 = 'Customize Your Portable Cabin & Calculate Price';
+const CALCULATOR_TITLE = 'Cabin Cost Calculator │ Instant Price Estimate │ SAMAN';
+const CALCULATOR_H1 = 'Cabin Cost Calculator';
 const CALCULATOR_DESCRIPTION =
-  'Estimate your SAMAN cabin, container office, labor colony, prefab and panel budget range using your selected specification and commercial inputs.';
+  'Build a live estimate for your portable cabin. Enter any size, choose finishes, doors, electricals and add-ons, and get a fixed quotation within 48 hours.';
 const TRUST_BADGES = [
   'Budget Range Only',
   'GST / Transport / Installation Options',
@@ -161,6 +162,7 @@ const ProductCalculatorPage = () => {
   const [mode, setMode] = useState<ViewMode>('idle');
   const [statusMessage, setStatusMessage] = useState('Enter required details to unlock estimate.');
   const [printPayload, setPrintPayload] = useState<string>('');
+  const [restoreNotice, setRestoreNotice] = useState('');
   const printFormRef = useRef<HTMLFormElement>(null);
 
   const isCustom = formData.productId === CUSTOM_PRODUCT_ID;
@@ -255,6 +257,40 @@ const ProductCalculatorPage = () => {
     setStatusMessage('Enter required details to unlock estimate.');
     setPrintPayload('');
   }, []);
+
+  useEffect(() => {
+    try {
+      const encoded = new URLSearchParams(window.location.search).get('design');
+      const saved = encoded ? decodeURIComponent(atob(encoded)) : window.localStorage.getItem('saman-cabin-design');
+      if (saved) {
+        const parsed = JSON.parse(saved) as PriceCalculatorFormState;
+        setFormData((previous) => ({ ...previous, ...parsed }));
+        setRestoreNotice('Your saved design has been restored. Start over to begin fresh.');
+      }
+    } catch {
+      // Ignore malformed or unavailable browser storage.
+    }
+  }, []);
+
+  const saveDesign = () => {
+    try {
+      window.localStorage.setItem('saman-cabin-design', JSON.stringify(formData));
+      setStatusMessage('Design saved on this device.');
+    } catch {
+      setStatusMessage('Design could not be saved on this device.');
+    }
+  };
+
+  const copyDesignLink = async () => {
+    const encoded = btoa(encodeURIComponent(JSON.stringify(formData)));
+    const url = `${window.location.origin}/cabin-cost-calculator?design=${encoded}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setStatusMessage('Link copied. Anyone who opens it sees this exact configuration.');
+    } catch {
+      setStatusMessage(url);
+    }
+  };
 
   const setFormValue = useCallback(<K extends keyof PriceCalculatorFormState>(key: K, value: PriceCalculatorFormState[K]) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
@@ -361,6 +397,7 @@ const ProductCalculatorPage = () => {
     }
 
     let estimate: PriceCalculatorEstimate;
+    let submittedPayload: PriceCalculatorFormState;
     try {
       const normalizedAddOns = sanitizeSelectedAddOns(formData.productId, formData.selectedAddOns);
       const addOnSummaryForLead = formatAddOnsForLeadPayload(normalizedAddOns);
@@ -369,6 +406,7 @@ const ProductCalculatorPage = () => {
         selectedAddOns: normalizedAddOns,
         selectedAddOnsSummary: addOnSummaryForLead,
       };
+      submittedPayload = payload;
       estimate = getEstimateFromInput(payload);
       setPrintPayload(JSON.stringify(payload));
       setResult(estimate);
@@ -385,7 +423,28 @@ const ProductCalculatorPage = () => {
     }
 
     setMode('ready');
-    setStatusMessage('Estimated budget range is shown below. Contact SAMAN for a written quotation.');
+    setStatusMessage('Configuration received. Our sales team will send your fixed, itemised quotation within 48 hours.');
+    pushDataLayer('quote_submit', { product: currentProductName, page_type: 'cabin_cost_calculator' });
+    const nameParts = formData.fullName.trim().split(/\s+/);
+    const firstName = nameParts[0] || '';
+    const lastName = nameParts.slice(1).join(' ') || firstName;
+    void fetch('/api/enquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email: formData.email.trim(),
+        phone: formData.mobile.trim(),
+        message: JSON.stringify(submittedPayload),
+        productName: currentProductName,
+        pageUrl: typeof window !== 'undefined' ? window.location.href : '/cabin-cost-calculator',
+        region: formData.zone,
+        configuration: JSON.stringify(submittedPayload),
+      }),
+    }).then((response) => {
+      if (!response.ok) setStatusMessage('We could not submit right now. Please try again, or WhatsApp us at +91 88616 22859 and we will take it from there.');
+    }).catch(() => setStatusMessage('We could not submit right now. Please try again, or WhatsApp us at +91 88616 22859 and we will take it from there.'));
   };
 
   const handlePrint = () => {
@@ -394,8 +453,15 @@ const ProductCalculatorPage = () => {
       setStatusMessage('Generate a valid estimate first before opening printable estimate.');
       return;
     }
+    pushDataLayer('pdf_download', { product: currentProductName, page_type: 'cabin_cost_calculator' });
     printFormRef.current.submit();
   };
+
+  const whatsappUrl = useMemo(() => {
+    const encoded = typeof window !== 'undefined' ? btoa(encodeURIComponent(JSON.stringify(formData))) : '';
+    const shareUrl = typeof window !== 'undefined' ? `${window.location.origin}/cabin-cost-calculator?design=${encoded}` : '/cabin-cost-calculator';
+    return `https://wa.me/918861622859?text=${encodeURIComponent(`Cabin estimate configuration: ${shareUrl}`)}`;
+  }, [formData]);
 
   const panelThicknessOptions = useMemo(() => {
     if (!isPanel) {
@@ -405,7 +471,7 @@ const ProductCalculatorPage = () => {
   }, [isPanel, formData.productId]);
 
   const structuredData = useMemo(() => {
-    const calculatorUrl = `${siteConfig.url}/portable-cabin-price-calculator`;
+    const calculatorUrl = `${siteConfig.url}/cabin-cost-calculator`;
     const webpage = {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
@@ -434,7 +500,7 @@ const ProductCalculatorPage = () => {
         {
           '@type': 'ListItem',
           position: 2,
-          name: 'Portable Cabin Price Calculator',
+          name: 'Cabin Cost Calculator',
           item: calculatorUrl,
         },
       ],
@@ -467,11 +533,11 @@ const ProductCalculatorPage = () => {
         rankMathSEO={{
           title: CALCULATOR_TITLE,
           description: CALCULATOR_DESCRIPTION,
-          canonical: `${siteConfig.url}/portable-cabin-price-calculator`,
+          canonical: `${siteConfig.url}/cabin-cost-calculator`,
         }}
         fallbackTitle={CALCULATOR_TITLE}
         fallbackDescription={CALCULATOR_DESCRIPTION}
-        fallbackCanonical={`${siteConfig.url}/portable-cabin-price-calculator`}
+        fallbackCanonical={`${siteConfig.url}/cabin-cost-calculator`}
         structuredData={structuredData}
       />
 
@@ -501,6 +567,11 @@ const ProductCalculatorPage = () => {
         </section>
 
         <section className="max-w-7xl mx-auto px-4 md:px-6 py-10">
+          {restoreNotice && <p role="status" className="mb-4 rounded-md border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-900">{restoreNotice}</p>}
+          <div className="mb-4 flex flex-wrap gap-2">
+            <button type="button" onClick={saveDesign} className="min-h-11 rounded-full border border-emerald-700 px-4 py-2 text-sm font-semibold text-emerald-800">Save design</button>
+            <button type="button" onClick={copyDesignLink} className="min-h-11 rounded-full border border-emerald-700 px-4 py-2 text-sm font-semibold text-emerald-800">Copy link</button>
+          </div>
           <form onSubmit={onSubmit} className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-5 rounded-lg border border-border bg-card p-5 shadow-sm">
               <div className="space-y-4">
@@ -576,6 +647,9 @@ const ProductCalculatorPage = () => {
 
               <div className="space-y-4">
                 <h2 className="text-lg font-semibold">Product &amp; Size</h2>
+                {isLaborColony && (
+                  <p className="rounded-md border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">Colony buildings are configured as complete blocks. Doors, windows, electrical points and fittings follow the approved building drawing for the configuration you select, and any change you need is itemised in your fixed quotation.</p>
+                )}
                 {renderField(
                   'productId',
                   'Product',
@@ -1085,6 +1159,15 @@ const ProductCalculatorPage = () => {
                       >
                         Download SAMAN Estimate
                       </button>
+                      <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => pushDataLayer('whatsapp_share', { product: currentProductName, page_type: 'cabin_cost_calculator' })}
+                        className="block w-full rounded-full border border-green-700 bg-green-50 px-3 py-2 text-center font-semibold text-green-800"
+                      >
+                        Share on WhatsApp
+                      </a>
                       <Link
                         href="/contact"
                         className="block w-full rounded-full border border-emerald-700 bg-white px-3 py-2 text-center font-semibold text-emerald-800 hover:bg-emerald-50"
@@ -1155,6 +1238,12 @@ const ProductCalculatorPage = () => {
               </section>
             </aside>
           </form>
+          <section className="mt-10 prose prose-slate max-w-4xl">
+            <h2>What this calculator does</h2>
+            <p>This tool builds a live estimate for a SAMAN portable cabin from our published price list. Pick the product, enter any size in feet, choose the structure, finishes, doors, windows, electrical items and add-ons, and the estimate updates line by line as you select. Every base price comes from the same price list our product pages publish, transport follows our freight ladder, and branded third-party items are shown at current vendor rates plus a 5 percent handling margin.</p>
+            <h2>What the estimate is and is not</h2>
+            <p>The figure you see is an indicative ex-factory estimate with GST shown separately. It is not a quotation. When you submit your configuration, our sales team verifies it against your drawing and location and returns a fixed, itemised quotation within 48 hours. Delivery runs 7 to 21 working days across India from our Bengaluru and Greater Noida works.</p>
+          </section>
         </section>
       </main>
 

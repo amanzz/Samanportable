@@ -50,6 +50,7 @@ const all = [...new Set([...canonicalPaths, '/product-category/container-offices
 const productSupplement = new Set([
   '/rental-services',
   '/portable-cabin-price-calculator',
+  '/cabin-cost-calculator',
   ...all.filter(pathname => pathname.startsWith('/container-rent-services/')),
 ]);
 const products = all.filter(pathname =>

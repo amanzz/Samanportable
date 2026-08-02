@@ -42,6 +42,37 @@ import type { VariantProductData } from '../../../components/product-variant-her
 
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 
+const calculatorHubCopy = (category: string, html: string): string => {
+  const entries: Record<string, { sentence: string; anchor: string; marker: string }> = {
+    'porta-cabins': {
+      sentence: 'If you want the number before you talk to us, you can estimate your cabin cost live and send the same configuration in for a fixed quotation.',
+      anchor: 'estimate your cabin cost live',
+      marker: '</p><h3>Why Construction Companies Order from SAMAN',
+    },
+    'portable-office': {
+      sentence: 'Before requesting a quote, you can build a live price estimate with your own size, finishes and add-ons.',
+      anchor: 'build a live price estimate',
+      marker: '</p><h3',
+    },
+    'container-offices': {
+      sentence: 'For a configured figure rather than a table, price your configuration online and submit it for the fixed quotation.',
+      anchor: 'price your configuration online',
+      marker: '</p><h3>How this differs from our other office ranges',
+    },
+    'labor-colony': {
+      sentence: 'To match a building to your headcount, you can size and price a colony building and send the result to our team.',
+      anchor: 'size and price a colony building',
+      marker: '</p><h2>Delivery',
+    },
+  };
+  const entry = entries[category];
+  if (!entry || html.includes(`>${entry.anchor}</a>`)) return html;
+  const link = ` <a href="/cabin-cost-calculator">${entry.anchor}</a>`;
+  const sentenceHtml = `<p>${entry.sentence.replace(entry.anchor, link)}</p>`;
+  const at = html.indexOf(entry.marker);
+  return at >= 0 ? `${html.slice(0, at)}${sentenceHtml}${html.slice(at)}` : `${html}${sentenceHtml}`;
+};
+
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
   ssr: true,
@@ -868,7 +899,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               {/* Product Tabs */}
               <div className="mt-4">
                 <ProductTabs
-                  description={product.description || ''}
+                  description={calculatorHubCopy(category, product.description || '')}
                   specificationsHtml={(product as any).specificationsHtml || ''}
                   shippingHtml={(product as any).shippingHtml || ''}
                   productTitle={transformedProduct.title}
