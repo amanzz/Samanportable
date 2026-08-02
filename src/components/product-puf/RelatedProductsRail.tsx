@@ -24,7 +24,7 @@ export const PUF_CATALOG: Record<
     title: 'PUF Panel',
     href: '/product/puf-panel',
     image: '/images/puf-panel/hub-factory-stack-50mm-1200x675.webp',
-    blurb: 'The full factory-made PUF panel range — specs, manufacturing and applications.',
+    blurb: 'The full factory-made PUF panel range: specs, manufacturing and applications.',
   },
   price: {
     title: 'PUF Panel Price',

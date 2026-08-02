@@ -162,7 +162,7 @@ const PortaCabin10x10Rental = () => {
                     </p>
                     <div className="prose prose-lg text-slate-600">
                       <p className="leading-relaxed">
-                        Our 10×10 porta cabin rental is designed for locations where space matters most. With 100 sq ft of efficient interior area, it delivers a comfortable, functional environment for site offices, temporary workspaces, staff accommodation, retail counters, and commercial use—without occupying excess ground space.
+                        Our 10×10 porta cabin rental is designed for locations where space matters most. With 100 sq ft of efficient interior area, it delivers a comfortable, functional environment for site offices, temporary workspaces, staff accommodation, retail counters, and commercial use, without occupying excess ground space.
                       </p>
                       <p className="leading-relaxed mt-4">
                         Built with durability and comfort in mind, this compact cabin offers strong insulation, proper ventilation, and ready-to-use electrical fittings. It performs reliably in both short-term and long-term rental applications across Bangalore.

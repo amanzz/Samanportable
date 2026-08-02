@@ -21,7 +21,7 @@ const galleryImages = [
     src: `${baseImagePath}sandwich-panel-core-edge-detail.webp`,
     alt: 'Close-up of a sandwich panel cut edge showing steel facings bonded to the core',
     title: 'Close-up of a sandwich panel cut edge showing steel facings bonded to the core',
-    caption: 'The three-layer build — steel facing, insulated core, steel facing — at the panel edge.',
+    caption: 'The three-layer build, steel facing, insulated core, steel facing, at the panel edge.',
   },
   {
     src: `${baseImagePath}sandwich-panel-wall-installed.webp`,
@@ -47,20 +47,20 @@ const inBodyImages = {
   anatomy: {
     src: `${baseImagePath}sandwich-panel-anatomy-three-layer-diagram.webp`,
     alt: 'Labelled diagram of a sandwich panel showing the two steel facing sheets and the insulating core',
-    title: 'Sandwich panel anatomy — facing, core, facing',
+    title: 'Sandwich panel anatomy: facing, core, facing',
     caption: 'The three-layer build that gives a sandwich panel structure and insulation together.',
   },
   coreComparison: {
     src: `${baseImagePath}types-of-sandwich-panel-core-comparison-diagram.webp`,
-    alt: 'Comparison chart of five sandwich panel cores — PUF, PIR, EPS, Rockwool, Glass Wool — by thermal, fire, acoustic and cost positioning',
+    alt: 'Comparison chart of five sandwich panel cores, PUF, PIR, EPS, Rockwool, Glass Wool, by thermal, fire, acoustic and cost positioning',
     title: 'Five sandwich panel cores compared',
-    caption: 'Five cores at a glance — pick by thermal, fire, acoustic and cost need.',
+    caption: 'Five cores at a glance: pick by thermal, fire, acoustic and cost need.',
   },
   jointTypes: {
     src: `${baseImagePath}sandwich-panel-joint-types-tongue-groove-camlock-diagram.webp`,
     alt: 'Diagram comparing a tongue-and-groove wall joint and a cam-lock cold-room joint on sandwich panels',
-    title: 'Sandwich panel joint types — tongue-and-groove and cam-lock',
-    caption: 'How panels lock together — tongue-and-groove for walls, cam-lock for cold rooms.',
+    title: 'Sandwich panel joint types: tongue-and-groove and cam-lock',
+    caption: 'How panels lock together, tongue-and-groove for walls, cam-lock for cold rooms.',
   },
   manufacturing: {
     src: `${baseImagePath}sandwich-panel-manufacturing-line-india.webp`,
@@ -103,7 +103,7 @@ const faqs = [
   {
     question: 'What are sandwich panels made of?',
     answer:
-      "Two steel facing sheets — PPGI, PPGL, BGL, stainless steel, aluminium or craft paper — bonded to an insulating core. The core is one of five materials: PUF, PIR, EPS, Rockwool or Glass Wool, and the core is what sets the panel's thermal, fire and acoustic behaviour.",
+      "Two steel facing sheets, PPGI, PPGL, BGL, stainless steel, aluminium or craft paper, bonded to an insulating core. The core is one of five materials: PUF, PIR, EPS, Rockwool or Glass Wool, and the core is what sets the panel's thermal, fire and acoustic behaviour.",
   },
   {
     question: 'What are the types of sandwich panels?',
@@ -128,7 +128,7 @@ const faqs = [
   {
     question: 'Do you manufacture sandwich panels in India?',
     answer:
-      'Yes. SAMAN manufactures sandwich panels at two factories — Bangalore for South India and Greater Noida for North India and Delhi NCR — and dispatches pan-India. Buying from the manufacturer means the core, facing, thickness and length are matched to your job, not to warehouse stock.',
+      'Yes. SAMAN manufactures sandwich panels at two factories, Bangalore for South India and Greater Noida for North India and Delhi NCR, and dispatches pan-India. Buying from the manufacturer means the core, facing, thickness and length are matched to your job, not to warehouse stock.',
   },
   {
     question: 'What is the difference between PUF, PIR and mineral-wool sandwich panels?',
@@ -143,7 +143,7 @@ const productSchema = {
   '@id': 'https://www.samanportable.com/product/sandwich-panel#product',
   name: 'Sandwich Panel',
   description:
-    'Insulated sandwich panel by SAMAN — two steel facing sheets bonded to an insulating core, manufactured in five cores (PUF, PIR, EPS, Rockwool, Glass Wool) for wall, roof, cabin and cold-room use. Made in Bangalore and Greater Noida.',
+    'Insulated sandwich panel by SAMAN: two steel facing sheets bonded to an insulating core, manufactured in five cores (PUF, PIR, EPS, Rockwool, Glass Wool) for wall, roof, cabin and cold-room use. Made in Bangalore and Greater Noida.',
   category: 'Insulated Sandwich Panel',
   brand: { '@id': 'https://www.samanportable.com/#organization' },
   manufacturer: { '@id': 'https://www.samanportable.com/#organization' },
@@ -237,18 +237,18 @@ export default function SandwichPanelPage() {
   return (
     <Layout>
       <Head>
-        <title>Sandwich Panel Manufacturer in India — Types, Cores &amp; Sizes | SAMAN</title>
+        <title>Sandwich Panel Manufacturer in India, Types, Cores &amp; Sizes | SAMAN</title>
         <meta
           name="description"
-          content="Sandwich panel manufacturer in India. Compare PUF, PIR, EPS, Rockwool and Glass Wool insulated panels — cores, thickness, wall and roof use — made in Bangalore and Greater Noida. Get a factory-direct quote."
+          content="Sandwich panel manufacturer in India. Compare PUF, PIR, EPS, Rockwool and Glass Wool insulated panels, cores, thickness, wall and roof use, made in Bangalore and Greater Noida. Get a factory-direct quote."
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
-        <meta property="og:title" content="Sandwich Panel Manufacturer in India — Types, Cores &amp; Sizes | SAMAN" />
+        <meta property="og:title" content="Sandwich Panel Manufacturer in India, Types, Cores &amp; Sizes | SAMAN" />
         <meta
           property="og:description"
-          content="Sandwich panel manufacturer in India. Compare PUF, PIR, EPS, Rockwool and Glass Wool insulated panels — cores, thickness, wall and roof use — made in Bangalore and Greater Noida. Get a factory-direct quote."
+          content="Sandwich panel manufacturer in India. Compare PUF, PIR, EPS, Rockwool and Glass Wool insulated panels, cores, thickness, wall and roof use, made in Bangalore and Greater Noida. Get a factory-direct quote."
         />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={canonicalUrl} />
@@ -305,14 +305,14 @@ export default function SandwichPanelPage() {
               </div>
               <div className="mt-5 space-y-4 text-slate-700">
                 <p>
-                  <strong>Sandwich panels, factory-made in India by SAMAN.</strong> A sandwich panel is an insulated building board — two steel facing sheets bonded to an insulating core — used for walls, roofs, cabins and cold rooms. We manufacture all five cores at our Bangalore and Greater Noida lines and help you pick the right one for your job.
+                  <strong>Sandwich panels, factory-made in India by SAMAN.</strong> A sandwich panel is an insulated building board, two steel facing sheets bonded to an insulating core, used for walls, roofs, cabins and cold rooms. We manufacture all five cores at our Bangalore and Greater Noida lines and help you pick the right one for your job.
                 </p>
                 <ul className="space-y-2">
-                  <li><strong>Five cores in one place:</strong> PUF, PIR, EPS, Rockwool and Glass Wool — matched to your cost, thermal, fire and acoustic need.</li>
+                  <li><strong>Five cores in one place:</strong> PUF, PIR, EPS, Rockwool and Glass Wool: matched to your cost, thermal, fire and acoustic need.</li>
                   <li><strong>Wall, roof, cabin and cold-room</strong> panels from a single manufacturer.</li>
                   <li><strong>Thickness 30 mm to 200 mm</strong> (standard 30–150 mm; 110–200 mm made to order).</li>
                   <li><strong>Steel facings:</strong> PPGI, PPGL, BGL, stainless steel, aluminium or craft paper.</li>
-                  <li><strong>Two factories</strong> — dispatch from Bangalore for South India, Greater Noida for North India and Delhi NCR.</li>
+                  <li><strong>Two factories</strong>, dispatch from Bangalore for South India, Greater Noida for North India and Delhi NCR.</li>
                   <li><strong>HSN 940690.</strong> Supply-only quotes; panel warranty 5–10 years, confirmed at quotation; transport confirmed at quotation.</li>
                 </ul>
                 <p>
@@ -341,15 +341,15 @@ export default function SandwichPanelPage() {
 
         <article className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700 prose-table:text-sm">
-            <h1>Sandwich Panel Manufacturer in India — Compare the Five Cores and Choose Right</h1>
+            <h1>Sandwich Panel Manufacturer in India: Compare the Five Cores and Choose Right</h1>
             <p>
-              A sandwich panel is an insulated building board made of two steel facing sheets bonded to a lightweight core, so one board gives you structure, insulation and a finished surface together. SAMAN manufactures sandwich panels in five cores — PUF, PIR, EPS, Rockwool and Glass Wool — at our Bangalore and Greater Noida factories, for walls, roofs, cabins and cold rooms across India.
+              A sandwich panel is an insulated building board made of two steel facing sheets bonded to a lightweight core, so one board gives you structure, insulation and a finished surface together. SAMAN manufactures sandwich panels in five cores, PUF, PIR, EPS, Rockwool and Glass Wool, at our Bangalore and Greater Noida factories, for walls, roofs, cabins and cold rooms across India.
             </p>
             <blockquote>
               <p><strong>Get a factory-direct sandwich panel quotation:</strong> South India +91 88616 22859 · sales@samanportable.com | North India / Delhi NCR +91 87960 39938 · ncr@samanportable.com</p>
             </blockquote>
             <p>
-              Most buyers do not arrive knowing which core they need. They know the problem — heat coming through a shed roof, a cold room that will not hold temperature, a fire-rating clause in a tender, a wall that has to go up fast — and they need the panel that solves it without paying for performance they will never use. This hub exists to make that choice clear, then send you to the exact material page for specifications and price.
+              Most buyers do not arrive knowing which core they need. They know the problem, heat coming through a shed roof, a cold room that will not hold temperature, a fire-rating clause in a tender, a wall that has to go up fast, and they need the panel that solves it without paying for performance they will never use. This hub exists to make that choice clear, then send you to the exact material page for specifications and price.
             </p>
           </div>
 
@@ -358,18 +358,18 @@ export default function SandwichPanelPage() {
           <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700 prose-table:text-sm">
             <h2>What is a sandwich panel?</h2>
             <p>
-              A sandwich panel — also written &quot;sandwitch panel&quot;, and sold as an insulated panel or insulated sheet — is a three-layer board. Two thin metal facing sheets sit on the outside; a low-density insulating core sits in the middle; the core is bonded to both facings so the three layers act as one stiff, self-supporting board. That layered build is where the name comes from.
+              A sandwich panel, also written &quot;sandwitch panel&quot;, and sold as an insulated panel or insulated sheet, is a three-layer board. Two thin metal facing sheets sit on the outside; a low-density insulating core sits in the middle; the core is bonded to both facings so the three layers act as one stiff, self-supporting board. That layered build is where the name comes from.
             </p>
             <p>
-              The outer facings carry the finish, the weather resistance and most of the strength. The core carries the insulation — how well the panel blocks heat, cold, fire or sound. Change the core and you change what the panel is good at, which is exactly why the same-looking board comes in five very different materials.
+              The outer facings carry the finish, the weather resistance and most of the strength. The core carries the insulation: how well the panel blocks heat, cold, fire or sound. Change the core and you change what the panel is good at, which is exactly why the same-looking board comes in five very different materials.
             </p>
             <p>
-              Because the panel arrives finished on both faces, there is no separate insulation, cladding or lining step on site. You fix the panel and the wall or roof is done — which is why sandwich panels put up buildings far faster than block-and-plaster or single-skin sheeting with loose insulation.
+              Because the panel arrives finished on both faces, there is no separate insulation, cladding or lining step on site. You fix the panel and the wall or roof is done, which is why sandwich panels put up buildings far faster than block-and-plaster or single-skin sheeting with loose insulation.
             </p>
 
-            <h2>Types of sandwich panels — the five cores we manufacture</h2>
+            <h2>Types of sandwich panels: the five cores we manufacture</h2>
             <p>
-              The facings barely change between products; the <strong>core</strong> is the real decision. Here is what each core is known for and where it fits. For exact density, thermal, fire and acoustic figures — and price — open the material&apos;s own page.
+              The facings barely change between products; the <strong>core</strong> is the real decision. Here is what each core is known for and where it fits. For exact density, thermal, fire and acoustic figures, and price, open the material&apos;s own page.
             </p>
           </div>
 
@@ -397,21 +397,21 @@ export default function SandwichPanelPage() {
 
           <div className="prose prose-slate mt-6 max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700 prose-table:text-sm">
             <p>
-              Read the table as positioning, not as a spec sheet: it tells you which core to shortlist, and the material page gives you the tested numbers for your order. If you are unsure, tell us the problem — temperature, fire clause, noise, or budget — and we will point you to the right core.
+              Read the table as positioning, not as a spec sheet: it tells you which core to shortlist, and the material page gives you the tested numbers for your order. If you are unsure, tell us the problem, temperature, fire clause, noise, or budget, and we will point you to the right core.
             </p>
             <p>
-              For the polyurethane family specifically, start with <Link href="/product/puf-panel">our complete PUF panel range</Link>; if you already know you want the three-layer PUF board by its common names — PUF sheet, puff panel, insulated sheet — go straight to the <Link href="/product/puf-panel/puf-sandwich-panel">PUF sandwich panel and sheet page</Link>. For a fire-and-heat brief, see the <Link href="/product/pir-panel">PIR insulated panel page</Link>; for fire-rated and acoustic work, see <Link href="/product/rockwool-panel">our Rockwool panel range</Link>. EPS and Glass Wool material pages route from here as each goes live.
+              For the polyurethane family specifically, start with <Link href="/product/puf-panel">our complete PUF panel range</Link>; if you already know you want the three-layer PUF board by its common names, PUF sheet, puff panel, insulated sheet, go straight to the <Link href="/product/puf-panel/puf-sandwich-panel">PUF sandwich panel and sheet page</Link>. For a fire-and-heat brief, see the <Link href="/product/pir-panel">PIR insulated panel page</Link>; for fire-rated and acoustic work, see <Link href="/product/rockwool-panel">our Rockwool panel range</Link>. EPS and Glass Wool material pages route from here as each goes live.
             </p>
 
             <h2>Where sandwich panels are used</h2>
-            <p>One build, several jobs — and the right core depends on the job as much as the panel itself.</p>
+            <p>One build, several jobs, and the right core depends on the job as much as the panel itself.</p>
             <p><strong>Walls.</strong> As an external wall or internal partition, a sandwich panel gives an insulated, finished surface in one board, in plain or lightly ribbed profile. It is the fastest way to close a building envelope.</p>
           </div>
 
           <Figure image={inBodyImages.wall} />
 
           <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700 prose-table:text-sm">
-            <p><strong>Roofs.</strong> As a roof cover, the panel keeps heat out of the space below — the single biggest reason factories, warehouses and workshops in Indian conditions choose insulated panels over bare single-skin sheeting. Roof panels use a profiled top facing and a lapped, weather-tight joint.</p>
+            <p><strong>Roofs.</strong> As a roof cover, the panel keeps heat out of the space below. The single biggest reason factories, warehouses and workshops in Indian conditions choose insulated panels over bare single-skin sheeting. Roof panels use a profiled top facing and a lapped, weather-tight joint.</p>
           </div>
 
           <Figure image={inBodyImages.roof} />
@@ -431,7 +431,7 @@ export default function SandwichPanelPage() {
               </thead>
               <tbody className="divide-y divide-slate-200 text-slate-700">
                 <tr><td className="px-4 py-3">Thickness (standard)</td><td className="px-4 py-3">30 / 40 / 50 / 60 / 70 / 80 / 90 / 100 / 150 mm*</td></tr>
-                <tr><td className="px-4 py-3">Thickness (made to order)</td><td className="px-4 py-3">110 / 120 / 130 / 140 / 200 mm — advance payment; price and lead time confirmed at quotation</td></tr>
+                <tr><td className="px-4 py-3">Thickness (made to order)</td><td className="px-4 py-3">110 / 120 / 130 / 140 / 200 mm, advance payment; price and lead time confirmed at quotation</td></tr>
                 <tr><td className="px-4 py-3">Covered width</td><td className="px-4 py-3">1000 mm (roof profile 1070 mm overall)</td></tr>
                 <tr><td className="px-4 py-3">Facing sheets</td><td className="px-4 py-3">PPGI · PPGL · BGL · stainless steel · aluminium · craft paper</td></tr>
                 <tr><td className="px-4 py-3">Facing gauge</td><td className="px-4 py-3">0.35–0.80 mm</td></tr>
@@ -443,12 +443,12 @@ export default function SandwichPanelPage() {
           <div className="prose prose-slate mt-6 max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700 prose-table:text-sm">
             <p><em>*Standard thickness list applies to the mineral and EPS/PIR cores; the PUF range runs 30–200 mm with freezer-grade to 150 mm. Exact list per core is on the material page.</em></p>
             <p>
-              Thicker panels insulate more but cost more and weigh more, so the right thickness is a balance, not &quot;as thick as possible&quot;. Thin panels suit partitions and cabins; mid-range suits sheds and better thermal control; the thick end suits cold rooms and freezers. Longer panels reduce joints but depend on road access and offloading space at your site, so we confirm a workable length against your delivery point. This hub gives ranges only — for rate-per-square-foot by thickness and core, use the material&apos;s price page.
+              Thicker panels insulate more but cost more and weigh more, so the right thickness is a balance, not &quot;as thick as possible&quot;. Thin panels suit partitions and cabins; mid-range suits sheds and better thermal control; the thick end suits cold rooms and freezers. Longer panels reduce joints but depend on road access and offloading space at your site, so we confirm a workable length against your delivery point. This hub gives ranges only, for rate-per-square-foot by thickness and core, use the material&apos;s price page.
             </p>
 
             <h2>How SAMAN manufactures and checks sandwich panels</h2>
             <p>
-              Our lines feed two facing coils through the machine, bond the core between them, and cure the panel so the core grips both facings as one continuous board — not a slab glued on afterwards. That bonded build is what lets a thin, light panel behave as a single structural board.
+              Our lines feed two facing coils through the machine, bond the core between them, and cure the panel so the core grips both facings as one continuous board, not a slab glued on afterwards. That bonded build is what lets a thin, light panel behave as a single structural board.
             </p>
           </div>
 
@@ -456,7 +456,7 @@ export default function SandwichPanelPage() {
 
           <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700 prose-table:text-sm">
             <p>
-              On every batch we check facing gauge, panel thickness, core rise or density, and the tongue-and-groove profile so joints close cleanly and the panel sits flat. Panels are edge-protected, stacked and bundled for dispatch from the nearer of our two factories. Making the panel ourselves — rather than buying and reselling — is why we can match core, facing, thickness and length to your job instead of offering only what is in stock.
+              On every batch we check facing gauge, panel thickness, core rise or density, and the tongue-and-groove profile so joints close cleanly and the panel sits flat. Panels are edge-protected, stacked and bundled for dispatch from the nearer of our two factories. Making the panel ourselves, rather than buying and reselling, is why we can match core, facing, thickness and length to your job instead of offering only what is in stock.
             </p>
           </div>
 
@@ -471,7 +471,7 @@ export default function SandwichPanelPage() {
               <li><strong>Need strong thermal insulation for cabins, cladding or cold rooms?</strong> PUF is the all-round default.</li>
               <li><strong>Fire performance and higher heat together?</strong> PIR is the premium thermal core; Rockwool is the mineral fire-and-acoustic core.</li>
               <li><strong>Fighting noise?</strong> Rockwool or Glass Wool bring acoustic control a foam core does not.</li>
-              <li><strong>Roof vs wall?</strong> Same core, different facing profile and joint — tell us which face is exposed.</li>
+              <li><strong>Roof vs wall?</strong> Same core, different facing profile and joint, tell us which face is exposed.</li>
             </ul>
             <p>
               Then set thickness to the duty and facing to the environment (stainless or aluminium for hygienic cold rooms and food spaces; PPGI or PPGL for general wall and roof). If a tender specifies a fire class or a temperature, send it with your enquiry and we will confirm the core, thickness and any tested value at quotation.
@@ -487,12 +487,12 @@ export default function SandwichPanelPage() {
 
           <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700 prose-table:text-sm">
             <p>
-              Panel warranty is 5–10 years, confirmed at quotation. Quotes are supply-only unless stated otherwise, and any tested performance value for a specific core is confirmed at quotation rather than stated as a blanket claim. Standard products carry 7-day returns (3-day on custom) — see our <Link href="/refund-and-return-policy">Refund &amp; Return Policy</Link>. All sandwich panels fall under <strong>HSN 940690</strong> for GST and RFQ purposes.
+              Panel warranty is 5–10 years, confirmed at quotation. Quotes are supply-only unless stated otherwise, and any tested performance value for a specific core is confirmed at quotation rather than stated as a blanket claim. Standard products carry 7-day returns (3-day on custom), see our <Link href="/refund-and-return-policy">Refund &amp; Return Policy</Link>. All sandwich panels fall under <strong>HSN 940690</strong> for GST and RFQ purposes.
             </p>
 
             <h2>Why buy sandwich panels from a manufacturer, not a trader</h2>
             <p>
-              A trader sells you whatever core and thickness is already in the warehouse and marks it up. As the manufacturer, we cut the panel to your job — core matched to your fire, thermal, acoustic or budget need, facing matched to your environment, thickness matched to the duty, and length matched to what your site can actually receive. You get one point of accountability from quote to dispatch, real factory QC on every batch, and two dispatch origins so freight is shorter to most of the country. When a specification has to be met and proven, that direct line to the line that made the panel is the difference.
+              A trader sells you whatever core and thickness is already in the warehouse and marks it up. As the manufacturer, we cut the panel to your job. Core matched to your fire, thermal, acoustic or budget need, facing matched to your environment, thickness matched to the duty, and length matched to what your site can actually receive. You get one point of accountability from quote to dispatch, real factory QC on every batch, and two dispatch origins so freight is shorter to most of the country. When a specification has to be met and proven, that direct line to the line that made the panel is the difference.
             </p>
 
             <h2>Frequently asked questions</h2>

@@ -88,10 +88,10 @@ const specGrid = [
 ];
 
 const familyRows = [
-  ['GI / GC (galvanized)', 'Steel + zinc coating (Z80–Z275), bare finish', 'Lowest-cost workhorse: utility sheds, boundary roofs, back-of-plot structures', 'The roof is visible or coastal — zinc alone ages faster'],
-  ['Bare Galvalume (Aluzinc)', 'Steel + aluminium-zinc coating (AZ100–AZ150), bare finish', 'Longer life than GI at bare-metal cost; better corrosion resistance', "You want colour — that's PPGL for a small step up"],
-  ['PPGI (colour-coated GI)', 'GI + primer + colour coat', 'Colour on a budget — shops, homes, light commercial', 'Coastal or long-life demands — the base is still zinc-only'],
-  ['PPGL (colour-coated Galvalume)', 'Galvalume + primer + colour coat, AZ150 preferred', 'The default we recommend — homes, factories, anything people see or work under', 'Strictly lowest-cost utility work'],
+  ['GI / GC (galvanized)', 'Steel + zinc coating (Z80–Z275), bare finish', 'Lowest-cost workhorse: utility sheds, boundary roofs, back-of-plot structures', 'The roof is visible or coastal, zinc alone ages faster'],
+  ['Bare Galvalume (Aluzinc)', 'Steel + aluminium-zinc coating (AZ100–AZ150), bare finish', 'Longer life than GI at bare-metal cost; better corrosion resistance', "You want colour, that's PPGL for a small step up"],
+  ['PPGI (colour-coated GI)', 'GI + primer + colour coat', 'Colour on a budget: shops, homes, light commercial', 'Coastal or long-life demands, the base is still zinc-only'],
+  ['PPGL (colour-coated Galvalume)', 'Galvalume + primer + colour coat, AZ150 preferred', 'The default we recommend: homes, factories, anything people see or work under', 'Strictly lowest-cost utility work'],
 ];
 
 const engineeringRows = [
@@ -124,22 +124,22 @@ const faqs = [
   {
     question: 'Which metal sheet is best for roofing?',
     answer:
-      'For most Indian buildings: 0.50 mm PPGL colour-coated sheet with AZ150 coating — the best life-to-cost balance, and our locked standard recommendation. Pure economy work does fine with 0.50 mm GI; coastal sites step up to aluminium or heavier AZ coatings.',
+      'For most Indian buildings: 0.50 mm PPGL colour-coated sheet with AZ150 coating. The best life-to-cost balance, and our locked standard recommendation. Pure economy work does fine with 0.50 mm GI; coastal sites step up to aluminium or heavier AZ coatings.',
   },
   {
     question: 'Is a tin sheet the same as a GI sheet?',
     answer:
-      'Effectively yes. "Tin sheet" is the everyday Indian name for galvanized corrugated steel — there is no actual tin in it. If your requirement or old quote says tin sheet, the GI/GC family on this page is the same product with its real name.',
+      'Effectively yes. "Tin sheet" is the everyday Indian name for galvanized corrugated steel: there is no actual tin in it. If your requirement or old quote says tin sheet, the GI/GC family on this page is the same product with its real name.',
   },
   {
     question: 'What is the difference between GI and Galvalume roofing sheets?',
     answer:
-      'The coating. GI is zinc-coated steel; Galvalume is coated with an aluminium-zinc alloy that resists corrosion longer at similar cost. Bare-for-bare, Galvalume generally outlasts GI — which is why our colour-coated default (PPGL) is built on the Galvalume base.',
+      'The coating. GI is zinc-coated steel; Galvalume is coated with an aluminium-zinc alloy that resists corrosion longer at similar cost. Bare-for-bare, Galvalume generally outlasts GI, which is why our colour-coated default (PPGL) is built on the Galvalume base.',
   },
   {
     question: 'What thickness of metal roofing sheet should I use?',
     answer:
-      '0.50 mm BMT is the everyday default for homes, shops and factories. Light utility work can drop to 0.40–0.45 mm; industrial roofs and decking run 0.60–1.00 mm. Always confirm whether a quoted thickness is TCT or BMT — strength lives in the BMT.',
+      '0.50 mm BMT is the everyday default for homes, shops and factories. Light utility work can drop to 0.40–0.45 mm; industrial roofs and decking run 0.60–1.00 mm. Always confirm whether a quoted thickness is TCT or BMT, strength lives in the BMT.',
   },
   {
     question: 'How wide is a metal roofing sheet?',
@@ -149,17 +149,17 @@ const faqs = [
   {
     question: 'How many screws per sheet of metal roofing?',
     answer:
-      'Plan roughly one self-drilling screw per rib at every purlin line — the exact count depends on profile and purlin spacing. What matters as much as the count: EPDM-washer screws, correct length, driven straight. Our quotations list fastener quantities explicitly.',
+      'Plan roughly one self-drilling screw per rib at every purlin line. The exact count depends on profile and purlin spacing. What matters as much as the count: EPDM-washer screws, correct length, driven straight. Our quotations list fastener quantities explicitly.',
   },
   {
     question: 'How do I reduce heat from a metal sheet roof?',
     answer:
-      'First step: a light-colour PPGL sheet, which reflects meaningfully more sun than bare metal. But no single-skin sheet insulates — for genuinely cooler interiors, the answer is an insulated PUF panel roof, which we also manufacture and will recommend honestly when your use case needs it.',
+      'First step: a light-colour PPGL sheet, which reflects meaningfully more sun than bare metal. But no single-skin sheet insulates. For genuinely cooler interiors, the answer is an insulated PUF panel roof, which we also manufacture and will recommend honestly when your use case needs it.',
   },
   {
     question: 'Do you supply Tata or JSW metal roofing sheets?',
     answer:
-      "We supply ISI-marked material from Tata, JSW, SAIL or equivalent approved brands, per category — and we state the brand and standard on the quotation itself. What we don't do is charge a mystery premium for a name: you see the brand, the coating class and both thickness numbers before you pay.",
+      "We supply ISI-marked material from Tata, JSW, SAIL or equivalent approved brands, per category, and we state the brand and standard on the quotation itself. What we don't do is charge a mystery premium for a name: you see the brand, the coating class and both thickness numbers before you pay.",
   },
 ];
 
@@ -171,7 +171,7 @@ const productSchema = {
   '@id': 'https://www.samanportable.com/product/roofing-sheet/metal-roofing-sheet#product',
   name: 'Metal Roofing Sheet',
   description:
-    'Metal roofing sheets factory-direct in India — GI/GC galvanized, bare Galvalume, colour-coated PPGI and PPGL, premium coated, tile profile, standing seam, aluminium and stainless options, 0.30–1.00 mm, with TCT/BMT and coating class stated on every quotation.',
+    'Metal roofing sheets factory-direct in India: GI/GC galvanized, bare Galvalume, colour-coated PPGI and PPGL, premium coated, tile profile, standing seam, aluminium and stainless options, 0.30–1.00 mm, with TCT/BMT and coating class stated on every quotation.',
   category: 'Roofing Sheet',
   sku: 'SP-C17-MRS-SUB-2026',
   brand: { '@id': 'https://www.samanportable.com/#organization' },
@@ -281,7 +281,7 @@ function QuoteBlock() {
         </div>
       </div>
       <p className="mt-4 text-sm text-slate-700">
-        Or use the <strong>Send Enquiry</strong> form with your building size, use, preferred colour and site city — we return gauge, coating and both thickness numbers in writing.
+        Or use the <strong>Send Enquiry</strong> form with your building size, use, preferred colour and site city. We return gauge, coating and both thickness numbers in writing.
       </p>
     </div>
   );
@@ -299,16 +299,16 @@ export default function MetalRoofingSheetPage() {
   return (
     <Layout>
       <Head>
-        <title>Metal Roofing Sheet — GI, Galvalume, PPGI &amp; PPGL Sheets | SAMAN</title>
+        <title>Metal Roofing Sheet: GI, Galvalume, PPGI &amp; PPGL Sheets | SAMAN</title>
         <meta
           name="description"
-          content="Metal roofing sheets factory-direct — GI/GC, bare Galvalume, colour-coated PPGI and PPGL, tile and standing seam profiles, 0.30–1.00 mm with honest TCT/BMT and coating-class guidance. From ₹58/sq ft, pan-India."
+          content="Metal roofing sheets factory-direct: GI/GC, bare Galvalume, colour-coated PPGI and PPGL, tile and standing seam profiles, 0.30–1.00 mm with honest TCT/BMT and coating-class guidance. From ₹58/sq ft, pan-India."
         />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Metal Roofing Sheet — GI, Galvalume, PPGI & PPGL Sheets | SAMAN" />
+        <meta property="og:title" content="Metal Roofing Sheet: GI, Galvalume, PPGI & PPGL Sheets | SAMAN" />
         <meta
           property="og:description"
-          content="Metal roofing sheets factory-direct — GI/GC, bare Galvalume, colour-coated PPGI and PPGL, tile and standing seam profiles, 0.30–1.00 mm with honest TCT/BMT and coating-class guidance. From ₹58/sq ft, pan-India."
+          content="Metal roofing sheets factory-direct: GI/GC, bare Galvalume, colour-coated PPGI and PPGL, tile and standing seam profiles, 0.30–1.00 mm with honest TCT/BMT and coating-class guidance. From ₹58/sq ft, pan-India."
         />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={canonicalUrl} />
@@ -387,12 +387,12 @@ export default function MetalRoofingSheetPage() {
                   ROOFING SHEETS
                 </div>
                 <h1 className="mt-5 text-3xl font-bold tracking-normal text-slate-950 sm:text-4xl">
-                  Metal Roofing Sheet — GI, Galvalume and Colour-Coated Steel, Compared Honestly
+                  Metal Roofing Sheet: GI, Galvalume and Colour-Coated Steel, Compared Honestly
                 </h1>
                 <p className="mt-4 text-2xl font-bold text-emerald-700">From ₹58 / sq ft</p>
                 <p className="mt-1 text-sm text-slate-500">0.30mm GI base spec · ex-GST · final price at quotation</p>
                 <p className="mt-5 text-base leading-7 text-slate-700">
-                  A metal roofing sheet is the workhorse roof of India — steel or aluminium, profiled for strength, screwed onto purlins, done in a day. But "metal sheet" covers four different steel families and a dozen specs, and that's where quotes go wrong. This page compares GI, bare Galvalume, PPGI and PPGL the way we specify them on our own buildings — with the gauge, coating class and TCT/BMT stated plainly, so you can compare any two quotes and know which one is actually cheaper.
+                  A metal roofing sheet is the workhorse roof of India: steel or aluminium, profiled for strength, screwed onto purlins, done in a day. But "metal sheet" covers four different steel families and a dozen specs, and that's where quotes go wrong. This page compares GI, bare Galvalume, PPGI and PPGL the way we specify them on our own buildings. With the gauge, coating class and TCT/BMT stated plainly, so you can compare any two quotes and know which one is actually cheaper.
                 </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {specGrid.map(([label, value], index) => (
@@ -436,9 +436,9 @@ export default function MetalRoofingSheetPage() {
           <article className="mt-6 rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
             <div hidden={activeTab !== 'description'} role="tabpanel">
               <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700 prose-table:text-sm">
-                <h2>Metal Roofing Sheet — GI, Galvalume and Colour-Coated Steel, Compared Honestly</h2>
+                <h2>Metal Roofing Sheet: GI, Galvalume and Colour-Coated Steel, Compared Honestly</h2>
                 <p>
-                  A metal roofing sheet should be the simplest thing you buy for a building. It isn't — because "0.50 mm metal sheet" can mean four different steels, three coating classes and two ways of measuring thickness, and every seller quotes the version that suits them. Here is the whole metal family, specified the way we install it ourselves.
+                  A metal roofing sheet should be the simplest thing you buy for a building. It isn't, because "0.50 mm metal sheet" can mean four different steels, three coating classes and two ways of measuring thickness, and every seller quotes the version that suits them. Here is the whole metal family, specified the way we install it ourselves.
                 </p>
                 <blockquote>
                   <p><strong>Get a factory-direct metal roofing sheet quotation:</strong> South India +91 88616 22859 · sales@samanportable.com | North India / Delhi NCR +91 87960 39938 · ncr@samanportable.com</p>
@@ -446,74 +446,74 @@ export default function MetalRoofingSheetPage() {
 
                 <h2>What is a metal roofing sheet?</h2>
                 <p>
-                  A metal roofing sheet is a thin steel or aluminium sheet, roll-formed into a profile — corrugated waves, trapezoidal ribs, tile shapes — and fixed over purlins with self-drilling screws to form the finished roof. The profile gives the thin metal its stiffness; the coating gives it its life. And a note on names: what most of India calls a <strong>tin sheet or tin roof is not tin at all — it is galvanized steel (GI)</strong>. The word survives from an older era; the material under it is the same GI family on this page, so if your requirement says "tin sheet," you're in the right place.
+                  A metal roofing sheet is a thin steel or aluminium sheet, roll-formed into a profile, corrugated waves, trapezoidal ribs, tile shapes, and fixed over purlins with self-drilling screws to form the finished roof. The profile gives the thin metal its stiffness; the coating gives it its life. And a note on names: what most of India calls a <strong>tin sheet or tin roof is not tin at all, it is galvanized steel (GI)</strong>. The word survives from an older era; the material under it is the same GI family on this page, so if your requirement says "tin sheet," you're in the right place.
                 </p>
               </div>
 
               <Figure image={bodyImages.yard} />
 
               <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700">
-                <h2>GI vs Galvalume vs PPGI vs PPGL — the four steel families, decided honestly</h2>
+                <h2>GI vs Galvalume vs PPGI vs PPGL: the four steel families, decided honestly</h2>
                 <p>This is the decision that matters, and no ranking page makes it plainly:</p>
               </div>
               <DataTable headers={['Family', 'What it is', 'Choose it when', 'Skip it when']} rows={familyRows} />
               <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700">
                 <p>
-                  The pattern to remember: <strong>Galvalume base outlasts GI base; colour coat protects and finishes either.</strong> Our locked standards: everyday roof = 0.50 mm PPGL colour with AZ150; economy roof = 0.50 mm GI with Z275 where available. Beyond these four sit the specialists — <strong>aluminium</strong> (0.70 mm, coastal and corrosive sites), <strong>stainless SS 304</strong> (food and process buildings), and heavy <strong>GI decking</strong> (0.80–1.00 mm for composite floor/roof decks).
+                  The pattern to remember: <strong>Galvalume base outlasts GI base; colour coat protects and finishes either.</strong> Our locked standards: everyday roof = 0.50 mm PPGL colour with AZ150; economy roof = 0.50 mm GI with Z275 where available. Beyond these four sit the specialists, <strong>aluminium</strong> (0.70 mm, coastal and corrosive sites), <strong>stainless SS 304</strong> (food and process buildings), and heavy <strong>GI decking</strong> (0.80–1.00 mm for composite floor/roof decks).
                 </p>
               </div>
 
               <Figure image={bodyImages.factory} />
 
               <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700">
-                <h2>Gauge — which thickness your roof actually needs</h2>
+                <h2>Gauge: which thickness your roof actually needs</h2>
                 <p>
-                  Steel roof sheets run <strong>0.30 to 1.00 mm BMT</strong>, and thicker is not automatically better — it's heavier and costlier. The honest mapping: 0.30–0.35 mm for light economy and temporary work; 0.40–0.45 mm as the practical utility standard; <strong>0.50 mm as the everyday default</strong> for homes, shops and factories (the gauge that walks without denting); 0.60 mm heavy duty; 0.80–1.00 mm for industrial roofs and decking. Marketplace listings that say "0.3–0.5 mm depending on stock" are exactly the ambiguity to avoid — a quote should state one gauge, and ours do.
+                  Steel roof sheets run <strong>0.30 to 1.00 mm BMT</strong>, and thicker is not automatically better, it's heavier and costlier. The honest mapping: 0.30–0.35 mm for light economy and temporary work; 0.40–0.45 mm as the practical utility standard; <strong>0.50 mm as the everyday default</strong> for homes, shops and factories (the gauge that walks without denting); 0.60 mm heavy duty; 0.80–1.00 mm for industrial roofs and decking. Marketplace listings that say "0.3–0.5 mm depending on stock" are exactly the ambiguity to avoid. A quote should state one gauge, and ours do.
                 </p>
 
-                <h2>TCT vs BMT and coating class — how metal quotes hide their differences</h2>
-                <p><strong>Thickness:</strong> TCT (Total Coated Thickness) includes the zinc/aluzinc coating and paint; <strong>BMT (Base Metal Thickness) is the steel alone — and strength lives in the BMT.</strong> A 0.50 mm TCT sheet carries visibly less steel than a 0.50 mm BMT sheet. Every SAMAN quotation states both numbers.</p>
+                <h2>TCT vs BMT and coating class: how metal quotes hide their differences</h2>
+                <p><strong>Thickness:</strong> TCT (Total Coated Thickness) includes the zinc/aluzinc coating and paint; <strong>BMT (Base Metal Thickness) is the steel alone, and strength lives in the BMT.</strong> A 0.50 mm TCT sheet carries visibly less steel than a 0.50 mm BMT sheet. Every SAMAN quotation states both numbers.</p>
                 <p><strong>Coating class:</strong> on GI, zinc runs Z80 (light economy) → Z120 (preferred standard) → Z180 (heavy) → Z275 (industrial). On Galvalume, AZ100 (economy) → AZ150 (our preferred standard) → AZ200 (premium). Same gauge, different coating class = different product, different life, different fair price.</p>
-                <p><strong>Paint system:</strong> standard polyester (RMP/SMP, 15–25 µm) versus premium SDP/PVDF — identical on day one, very different at year eight. Coating and paint warranties are brand-backed and confirmed with documents at quotation.</p>
-                <p>When a competitor's quote is suspiciously cheaper for the "same sheet", the difference is hiding in one of these three lines. Ask for all three numbers — from anyone, including us.</p>
+                <p><strong>Paint system:</strong> standard polyester (RMP/SMP, 15–25 µm) versus premium SDP/PVDF, identical on day one, very different at year eight. Coating and paint warranties are brand-backed and confirmed with documents at quotation.</p>
+                <p>When a competitor's quote is suspiciously cheaper for the "same sheet", the difference is hiding in one of these three lines. Ask for all three numbers: from anyone, including us.</p>
               </div>
 
               <Figure image={bodyImages.screws} />
 
               <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700">
-                <h2>Profiles — corrugated, trapezoidal, tile, standing seam, curved</h2>
+                <h2>Profiles: corrugated, trapezoidal, tile, standing seam, curved</h2>
                 <p>
-                  <strong>Corrugated</strong> (the classic wave) is the economical, familiar profile for utility roofs. <strong>Trapezoidal</strong> ribs span further and shed water faster — the standard for sheds and factories. <strong>Tile profile</strong> turns steel into a home elevation — the design choice for villas and resorts. <strong>Standing seam / concealed-fix</strong> eliminates exposed screw holes entirely — the premium answer for leak-critical and long-span roofs, installed with clips and skilled hands. <strong>Crimped curved</strong> sheets form canopies and arches. Same steel families throughout — the profile changes the look, the span and the fixing method, not the metallurgy.
+                  <strong>Corrugated</strong> (the classic wave) is the economical, familiar profile for utility roofs. <strong>Trapezoidal</strong> ribs span further and shed water faster, the standard for sheds and factories. <strong>Tile profile</strong> turns steel into a home elevation, the design choice for villas and resorts. <strong>Standing seam / concealed-fix</strong> eliminates exposed screw holes entirely. The premium answer for leak-critical and long-span roofs, installed with clips and skilled hands. <strong>Crimped curved</strong> sheets form canopies and arches. Same steel families throughout: the profile changes the look, the span and the fixing method, not the metallurgy.
                 </p>
-                <p>And the fixing reality most pages skip: exposed-fastener profiles are only as waterproof as their screws — self-drilling screws with EPDM washers, correct length for the purlin, driven straight and not over-tightened. We quote fasteners and flashings as visible line items, never buried.</p>
+                <p>And the fixing reality most pages skip: exposed-fastener profiles are only as waterproof as their screws: self-drilling screws with EPDM washers, correct length for the purlin, driven straight and not over-tightened. We quote fasteners and flashings as visible line items, never buried.</p>
 
-                <h2>Heat — what a metal sheet can and cannot do</h2>
+                <h2>Heat: what a metal sheet can and cannot do</h2>
                 <p>
-                  A light-colour PPGL sheet genuinely reflects more sun than bare metal, and it's the right first step against heat. But a single-skin metal sheet <strong>cannot insulate</strong> — it slows nothing once heat is through. If the requirement is a genuinely cooler interior — work floors, offices, anything occupied through an Indian summer — the correct product is an insulated panel roof, and we make those too: see our <Link href="/product/puf-panel/puf-panel-roofing">PUF roof panels built for heat control</Link>. Honest sequencing: colour first, insulation when the requirement is real.
+                  A light-colour PPGL sheet genuinely reflects more sun than bare metal, and it's the right first step against heat. But a single-skin metal sheet <strong>cannot insulate</strong>, it slows nothing once heat is through. If the requirement is a genuinely cooler interior, work floors, offices, anything occupied through an Indian summer, the correct product is an insulated panel roof, and we make those too: see our <Link href="/product/puf-panel/puf-panel-roofing">PUF roof panels built for heat control</Link>. Honest sequencing: colour first, insulation when the requirement is real.
                 </p>
               </div>
 
               <Figure image={bodyImages.utility} />
 
               <div className="prose prose-slate max-w-none prose-headings:text-slate-950 prose-a:text-emerald-700">
-                <h2>Sizes, coverage and screws — the ordering math</h2>
+                <h2>Sizes, coverage and screws: the ordering math</h2>
                 <p>
-                  Corrugated GI comes 910/1220 mm wide; profiled colour sheets cover roughly 1000–1070 mm after overlap; lengths are cut to order so long roofs take fewer joints. Count with <strong>covered width</strong> (never flat width): roof length ÷ covered width, rounded up, per side. Screws: plan roughly one per rib per purlin line — the exact count depends on profile and purlin spacing, and our quotation lists screws, ridge, flashings and gutters as separate items so nothing surprises you on site. These sheets also pair naturally with structural work — for complete steel buildings, see our <Link href="/product/industrial-sheds">industrial shed structures we fabricate</Link>.
+                  Corrugated GI comes 910/1220 mm wide; profiled colour sheets cover roughly 1000–1070 mm after overlap; lengths are cut to order so long roofs take fewer joints. Count with <strong>covered width</strong> (never flat width): roof length ÷ covered width, rounded up, per side. Screws: plan roughly one per rib per purlin line: the exact count depends on profile and purlin spacing, and our quotation lists screws, ridge, flashings and gutters as separate items so nothing surprises you on site. These sheets also pair naturally with structural work, for complete steel buildings, see our <Link href="/product/industrial-sheds">industrial shed structures we fabricate</Link>.
                 </p>
 
                 <h2>What decides the price</h2>
                 <p>
-                  Family first (GI cheapest → Galvalume → PPGI → PPGL → premium/tile/standing seam → aluminium → stainless), then gauge, coating class, paint system, profile, length and quantity — accessories, GST, transport and unloading always separate. The From ₹58/sq ft base is the 0.30 mm GI economy spec; the full metal rate card lives on the roofing price page when Phase 2 opens. Send your building size and use, and the quotation comes back with gauge, coating, TCT and BMT all stated.
+                  Family first (GI cheapest → Galvalume → PPGI → PPGL → premium/tile/standing seam → aluminium → stainless), then gauge, coating class, paint system, profile, length and quantity: accessories, GST, transport and unloading always separate. The From ₹58/sq ft base is the 0.30 mm GI economy spec; the full metal rate card lives on the roofing price page when Phase 2 opens. Send your building size and use, and the quotation comes back with gauge, coating, TCT and BMT all stated.
                 </p>
 
                 <h2>Delivery, brands and quotation</h2>
                 <p>
-                  Dispatch from Bangalore (South) and Greater Noida (North/NCR), 3–5 business days standard — <Link href="/delivery-policy">Delivery Policy</Link>. Material is ISI-marked and brand-backed — Tata, JSW, SAIL or equivalent approved brands per category — with the brand and standard (IS 277, IS 459 profiles, ASTM A653/A792 class) stated on the quotation and coating warranties confirmed with brand documents at quotation. Returns per the <Link href="/refund-and-return-policy">Refund &amp; Return Policy</Link>. Supply-only unless stated otherwise.
+                  Dispatch from Bangalore (South) and Greater Noida (North/NCR), 3–5 business days standard, <Link href="/delivery-policy">Delivery Policy</Link>. Material is ISI-marked and brand-backed, Tata, JSW, SAIL or equivalent approved brands per category, with the brand and standard (IS 277, IS 459 profiles, ASTM A653/A792 class) stated on the quotation and coating warranties confirmed with brand documents at quotation. Returns per the <Link href="/refund-and-return-policy">Refund &amp; Return Policy</Link>. Supply-only unless stated otherwise.
                 </p>
 
                 <h2>Why buy metal roofing sheets from SAMAN</h2>
                 <p>
-                  We are not a trading counter — we build with these sheets every week on our own cabins, sheds and prefab structures. That's why our recommendation engine is simple and honest: the gauge that survives site handling, the coating class that matches your city's air, the profile that suits the span, both thickness numbers on paper, and every accessory priced in the open. To see how metal compares against every other roof sheet material, start at <Link href="/product/roofing-sheet">the complete roofing sheet comparison</Link>.
+                  We are not a trading counter. We build with these sheets every week on our own cabins, sheds and prefab structures. That's why our recommendation engine is simple and honest: the gauge that survives site handling, the coating class that matches your city's air, the profile that suits the span, both thickness numbers on paper, and every accessory priced in the open. To see how metal compares against every other roof sheet material, start at <Link href="/product/roofing-sheet">the complete roofing sheet comparison</Link>.
                 </p>
               </div>
 

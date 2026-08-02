@@ -12,7 +12,7 @@ export const homepageFaqs: HomepageFaq[] = [
   {
     question: 'How do I get an exact price?',
     answer:
-      'Every product page on this site carries its full ex-factory price ladder by size. For your configuration, send the requirement through any enquiry form and we issue a written, itemised quotation — line items, GST and freight to your pin code included.',
+      'Every product page on this site carries its full ex-factory price ladder by size. For your configuration, send the requirement through any enquiry form and we issue a written, itemised quotation, line items, GST and freight to your pin code included.',
   },
   {
     question: 'Where does SAMAN manufacture?',
@@ -27,11 +27,11 @@ export const homepageFaqs: HomepageFaq[] = [
   {
     question: 'Do you install what you deliver?',
     answer:
-      'Yes — units arrive factory-finished and our team positions them at your site. Site preparation requirements are confirmed with the quotation.',
+      'Yes, units arrive factory-finished and our team positions them at your site. Site preparation requirements are confirmed with the quotation.',
   },
   {
     question: 'Is SAMAN a manufacturer or a trader?',
     answer:
-      'A manufacturer. Every unit is fabricated in-house at our own factories — you deal directly with the maker, from drawing to delivery.',
+      'A manufacturer. Every unit is fabricated in-house at our own factories. You deal directly with the maker, from drawing to delivery.',
   },
 ];

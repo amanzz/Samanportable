@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { normaliseHtml } from '@/lib/contentNormalization';
 
 interface OptimizedContentProps {
   content: string;
@@ -116,7 +117,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       }
     );
 
-    return cleanContent;
+    return normaliseHtml(cleanContent);
   }, [content]);
 
   if (!content) {

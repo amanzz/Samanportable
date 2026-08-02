@@ -9,12 +9,12 @@ const WhyChooseUs = () => {
     {
       icon: Award,
       title: '52 Quality Checkpoints',
-      description: 'Every cabin is inspected at 52 stages — from raw material to final wiring test. Manufactured using quality-tested steel and industry-standard processes, PUF insulation, no outsourced assembly.',
+      description: 'Every cabin is inspected at 52 stages: from raw material to final wiring test. Manufactured using quality-tested steel and industry-standard processes, PUF insulation, no outsourced assembly.',
     },
     {
       icon: Clock,
       title: '21-Day Delivery, Guaranteed',
-      description: 'Our own factory, transport and installation crew — no middlemen, no delays. Your space is ready to use on day 21.',
+      description: 'Our own factory, transport and installation crew, no middlemen, no delays. Your space is ready to use on day 21.',
     },
     {
       icon: Shield,
@@ -24,17 +24,17 @@ const WhyChooseUs = () => {
     {
       icon: Users,
       title: 'Site-Experienced Engineers',
-      description: 'Our team has installed on highway projects, factory floors, rooftops and remote sites. We plan for real constraints — not ideal conditions.',
+      description: 'Our team has installed on highway projects, factory floors, rooftops and remote sites. We plan for real constraints, not ideal conditions.',
     },
     {
       icon: Truck,
-      title: 'We Install It — You Walk In',
+      title: 'We Install It: You Walk In',
       description: 'No crane, no civil team, no coordination stress. We handle levelling, placement, electrical and fit-out. You walk in and start working.',
     },
     {
       icon: Headphones,
       title: 'Support After Delivery',
-      description: 'Warranty claims, maintenance, repairs — we respond. Many clients have been with us since 2009. Our relationship continues long after handover.',
+      description: 'Warranty claims, maintenance, repairs, we respond. Many clients have been with us since 2009. Our relationship continues long after handover.',
     },
   ];
 
@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
       icon: Factory,
       step: '03',
       title: 'Factory Manufacturing',
-      description: 'Built at our Bengaluru or Greater Noida facility. Steel cutting, welding, panels, wiring — all under controlled quality conditions.',
+      description: 'Built at our Bengaluru or Greater Noida facility. Steel cutting, welding, panels, wiring, all under controlled quality conditions.',
     },
     {
       icon: Truck,
@@ -73,7 +73,7 @@ const WhyChooseUs = () => {
       icon: Wrench,
       step: '06',
       title: 'Ongoing Support',
-      description: '5-year structural warranty begins. If anything needs attention — call us. We respond and resolve. Long-term relationship guaranteed.',
+      description: '5-year structural warranty begins. If anything needs attention, call us. We respond and resolve. Long-term relationship guaranteed.',
     },
   ];
 

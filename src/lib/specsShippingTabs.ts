@@ -176,12 +176,12 @@ const SHIPPING_INTRO =
   'site access and confirmed at quotation.';
 
 const FREE_DELIVERY =
-  'Free delivery: within Bangalore city (South zone) · Delhi NCR — Ghaziabad, Gurugram, Faridabad, ' +
+  'Free delivery: within Bangalore city (South zone) · Delhi NCR: Ghaziabad, Gurugram, Faridabad, ' +
   'Noida and Greater Noida (North zone).';
 
 const FOOTNOTES =
   'Distances beyond 1,000 km are quoted at booking. ODC (over-dimensional cargo) charges depend on ' +
-  'the state. All freight figures are tentative — the final charge is confirmed once your delivery ' +
+  'the state. All freight figures are tentative, the final charge is confirmed once your delivery ' +
   'location and order are confirmed, and may vary slightly with the route and return-vehicle availability.';
 
 // [distance, freight] — 20 ft open trailer
@@ -247,7 +247,7 @@ function destinationTable(caption: string, note: string, rows: [string, string, 
   );
 }
 
-const DEST_NOTE = 'approximate road distance — find your freight band in the tables above; final charge confirmed at quotation';
+const DEST_NOTE = 'approximate road distance, find your freight band in the tables above; final charge confirmed at quotation';
 
 // Warranty & Support — Master wording "5–10 years confirmed at quotation" (replaces the
 // generic "5-Year Structural / 1-Year Standard" placeholder that shipped before T31).
@@ -255,7 +255,7 @@ const WARRANTY_BLOCK =
   `<section class="mt-2 rounded-xl border border-emerald-200 bg-emerald-50 p-5">` +
     `<h4 class="mb-2 text-base font-bold text-emerald-900">Warranty &amp; Support</h4>` +
     `<p class="m-0 text-sm leading-relaxed text-emerald-800">Structural warranty 5–10 years, confirmed at ` +
-    `quotation. Base specification price — customisations quoted separately. After-sales support and ` +
+    `quotation. Base specification price: customisations quoted separately. After-sales support and ` +
     `spare parts available from our Bengaluru and Greater Noida units.</p>` +
   `</section>`;
 
@@ -343,7 +343,7 @@ const PORTABLE_CABIN_SPEC_INTRO =
   'This is the structural backbone that lets a portable cabin be lifted, carried and ' +
   'reused. The welded MS frame, corrugated steel envelope and integrated lifting lugs ' +
   'are specified so the unit keeps its geometry through repeated crane lifts and road ' +
-  'transport — the specification of a cabin built to move, not a fixed box. Section ' +
+  'transport. The specification of a cabin built to move, not a fixed box. Section ' +
   'sizes and openings below are the standard multipurpose configuration; layout is ' +
   'finalised to your approved drawing.';
 
@@ -394,7 +394,7 @@ const PCWT_SPEC_INTRO =
   'washroom partitioned at one end. The specification below is the shared SAMAN ' +
   'standard; the with-toilet build adds a partition wall, a compact washroom with its ' +
   'own door and vent, and the supply/waste points, all inside the single relocatable ' +
-  'shell — one unit, room plus washroom, that still lifts and moves as a portable ' +
+  'shell: one unit, room plus washroom, that still lifts and moves as a portable ' +
   'cabin (it is not a multi-cubicle toilet block).';
 
 // [element, specification, isWashroomFitment] — verbatim from copy pack §C.
@@ -447,7 +447,7 @@ export function buildPortableCabinWithToiletSpecificationsHtml(): string {
 // MSPEC-42 12-month line, NOT the 5–10-year panel warranty). Every item is verbatim; the
 // only transform is tokenising the copy pack's own " · " delimiter into list items.
 const CO_SPEC_INTRO =
-  'A container office is built on a heavier steel platform than a standard portable cabin — ' +
+  'A container office is built on a heavier steel platform than a standard portable cabin: ' +
   'these are the sections and materials that make the unit crane-liftable, stackable and durable ' +
   'on industrial sites. The values below are the SAMAN container-office standard; member ' +
   'quantities and interfaces scale by size, finalised on the approved drawing.';
@@ -517,7 +517,7 @@ export function buildContainerOfficesSpecificationsHtml(): string {
 // already states the free-delivery zones, so the separate free-delivery callout is not
 // repeated. No shipping-rate schema is emitted.
 const CO_SHIPPING_INTRO =
-  'Container offices ship as complete steel modules on open trailers — 20-ft-class sizes on a ' +
+  'Container offices ship as complete steel modules on open trailers: 20-ft-class sizes on a ' +
   '20 ft trailer, 40-ft-class and twin modules on a 40 ft trailer, with ODC routing planned for ' +
   '20×20 and 40×12. Every dispatch includes a crane plan at both ends: the same lugs that lift ' +
   'the unit at our works place it on your pad. Free delivery within Bangalore city and Delhi NCR ' +
@@ -544,7 +544,7 @@ export function buildContainerOfficesShippingHtml(): string {
 // line (the 5–10-year figure is panels-only and does NOT apply here), followed by the pack's
 // closing line. Additive — every other page's tabs are untouched.
 const PO_SPEC_INTRO =
-  'Every portable office leaves the factory on the same controlled MS platform — what changes ' +
+  'Every portable office leaves the factory on the same controlled MS platform, what changes ' +
   'between sizes is the drawing, not the build quality. Half of this table is the SAMAN common ' +
   'platform; the other half is what makes it an office.';
 
@@ -573,7 +573,7 @@ const PO_UNIQUE: string[] = [
 ];
 
 const PO_WARRANTY_LINE = '5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation.';
-const PO_CLOSING = 'Base specification price — customisations quoted separately.';
+const PO_CLOSING = 'Base specification price: customisations quoted separately.';
 
 export function buildPortableOfficeSpecificationsHtml(): string {
   return (
@@ -605,7 +605,7 @@ export function buildPortableOfficeSpecificationsHtml(): string {
 // 12-month line carried in the Specifications tab §C only. No shippingDetails schema.
 const PO_SHIPPING_INTRO =
   'Every SAMAN portable office ships as a complete, factory-finished unit on an open trailer ' +
-  'and is craned off onto your prepared base — most units are positioned the same day they ' +
+  'and is craned off onto your prepared base, most units are positioned the same day they ' +
   'arrive. Dispatch is from Bangalore for South India and Greater Noida for Delhi NCR and the ' +
   'North. Freight depends on trailer size and distance; use the tables below to budget, and we ' +
   'confirm the exact amount to your pin code in the quotation.';

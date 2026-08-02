@@ -68,7 +68,7 @@ function getRedirectExclusionSet(): Promise<ReadonlySet<string>> {
       }
       if (set.size === 0) {
         throw new Error(
-          'C2 mesh: redirect source (next.config.redirects) produced 0 entries — STOP, report to Fable 5.',
+          'C2 mesh: redirect source (next.config.redirects) produced 0 entries, STOP, report to Fable 5.',
         );
       }
       return set;
@@ -124,7 +124,7 @@ export async function getClusterSiblings(currentSlug: string): Promise<ClusterSi
   const display = CLUSTER_DISPLAY[cluster];
   if (!display) {
     // A cluster reached the mesh with no ticket display name — never invent one.
-    throw new Error(`C2 mesh: no clusterDisplayName for cluster "${cluster}" — STOP, report to Fable 5.`);
+    throw new Error(`C2 mesh: no clusterDisplayName for cluster "${cluster}", STOP, report to Fable 5.`);
   }
 
   // Ordering. (1) region-first: same captured-locality token as the current page.

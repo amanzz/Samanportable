@@ -42,8 +42,8 @@ const LAYER_ROWS = [
 ];
 
 const FAQS = [
-  { question: 'What is a PUF sandwich panel?', answer: 'A PUF sandwich panel is a three-layer insulated sheet — two steel facings bonded to a rigid polyurethane foam core. The layered steel-foam-steel build is the "sandwich", and it gives structure, insulation and a finished surface in one board for walls, roofs, cabins and cold rooms.' },
-  { question: 'Is a PUF sheet the same as a PUF sandwich panel?', answer: 'Yes. A PUF sheet, PUF panel sheet, puff panel and PUF insulated sheet all describe the same three-layer product. The names vary by seller and spelling, but the panel — steel facing, PUF core, steel facing — is the same, and we quote it the same way.' },
+  { question: 'What is a PUF sandwich panel?', answer: 'A PUF sandwich panel is a three-layer insulated sheet, two steel facings bonded to a rigid polyurethane foam core. The layered steel-foam-steel build is the "sandwich", and it gives structure, insulation and a finished surface in one board for walls, roofs, cabins and cold rooms.' },
+  { question: 'Is a PUF sheet the same as a PUF sandwich panel?', answer: 'Yes. A PUF sheet, PUF panel sheet, puff panel and PUF insulated sheet all describe the same three-layer product. The names vary by seller and spelling, but the panel, steel facing, PUF core, steel facing, is the same, and we quote it the same way.' },
   { question: 'Why is it called a "sandwich" panel?', answer: 'Because the panel is built in three layers, like a sandwich: two outer steel facing sheets with a rigid PUF core in the middle. The core is injected and cured so it bonds to both facings and the three layers act as one board.' },
   { question: 'What sizes do PUF sandwich panels come in?', answer: 'Thickness runs 30 mm to 200 mm, covered width is 1000 mm (roof 1070 mm overall), and lengths run 2–15 m standard, with custom lengths subject to transport and site access. Freezer-grade panels are made up to 150 mm.' },
   { question: 'What facing sheets can I choose?', answer: 'Facings are PPGI, PPGL, BGL, stainless steel, aluminium or craft paper, at 0.35–0.80 mm gauge. PPGI and PPGL suit general wall and roof; stainless steel and aluminium suit hygienic cold rooms and food-grade spaces.' },
@@ -56,7 +56,7 @@ const PRODUCT_JSONLD = {
   '@type': 'Product',
   '@id': 'https://www.samanportable.com/product/puf-panel/puf-sandwich-panel#product',
   name: 'PUF Sandwich Panel',
-  description: 'PUF sandwich panel (PUF sheet / insulated sheet) by SAMAN — three-layer steel-foam-steel insulated panel, 30–200 mm, PPGI/PPGL/BGL/stainless/aluminium/craft-paper facings, for wall, roof, cabin and cold-room use. Manufactured in Bangalore and Greater Noida.',
+  description: 'PUF sandwich panel (PUF sheet / insulated sheet) by SAMAN: three-layer steel-foam-steel insulated panel, 30–200 mm, PPGI/PPGL/BGL/stainless/aluminium/craft-paper facings, for wall, roof, cabin and cold-room use. Manufactured in Bangalore and Greater Noida.',
   category: 'Insulated Sandwich Panel',
   brand: { '@id': 'https://www.samanportable.com/#organization' },
   manufacturer: { '@id': 'https://www.samanportable.com/#organization' },
@@ -94,7 +94,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
 );
 
 const SHORT_DESCRIPTION =
-  'A PUF sandwich panel is a three-layer insulated sheet: two steel facing sheets bonded to a rigid polyurethane foam core in the middle — the "sandwich" is that layered build. It is the same product buyers also call a PUF sheet, a puff panel or an insulated sheet, made for walls, roofs, cabins and cold rooms.';
+  'A PUF sandwich panel is a three-layer insulated sheet: two steel facing sheets bonded to a rigid polyurethane foam core in the middle, the "sandwich" is that layered build. It is the same product buyers also call a PUF sheet, a puff panel or an insulated sheet, made for walls, roofs, cabins and cold rooms.';
 
 const GALLERY_IMAGES = [
   { src: '/images/puf-panel/cross-section-30mm-800x800.webp', alt: 'Cross-section of a 30 mm panel showing the two facing layers and the foam core between them', title: 'Panel layer cross-section, facing and core' },
@@ -111,7 +111,7 @@ function DescriptionContent() {
         <JumpNav items={JUMP_ITEMS} />
 
         <section id="vocabulary" className="space-y-3">
-          <H2 id="vocabulary">PUF sheet, puff panel, insulated sheet — one product, many names</H2>
+          <H2 id="vocabulary">PUF sheet, puff panel, insulated sheet: one product, many names</H2>
           <P>
             Buyers search for this panel under half a dozen names, and the mismatched vocabulary causes real
             confusion when comparing quotes. To be clear: a{' '}
@@ -120,14 +120,14 @@ function DescriptionContent() {
             <span className="font-semibold text-foreground">puff panel</span> (a common spelling of PUF), a{' '}
             <span className="font-semibold text-foreground">PUF insulated sheet</span> and a{' '}
             <span className="font-semibold text-foreground">PUF sandwich panel</span> all describe the same
-            three-layer product. There is no material difference between them — only the word the seller
+            three-layer product. There is no material difference between them, only the word the seller
             happens to use.
           </P>
           <P>
             We use that name because it describes the build honestly: steel&ndash;foam&ndash;steel. But whether
             your drawing says &ldquo;PUF sheet&rdquo;, &ldquo;insulated sheet&rdquo; or &ldquo;puff
             panel&rdquo;, you are asking for the same panel, and we quote it the same way. Mapping these names
-            in one place is deliberate — no ranking page states plainly that these are one product, and it is
+            in one place is deliberate. No ranking page states plainly that these are one product, and it is
             the single most common reason buyers mis-compare sellers.
           </P>
           <LongImage
@@ -173,7 +173,7 @@ function DescriptionContent() {
           <P>
             Thickness follows the job: thinner sheets for partitions and cabins, mid-range for sheds and better
             thermal control, and the thick end for cold rooms and freezers. Longer panels reduce joints but are
-            transport- and site-dependent — a 15 m sheet needs road access and offloading space — so we confirm
+            transport- and site-dependent, a 15 m sheet needs road access and offloading space, so we confirm
             the workable length against your site. For the full thickness-and-size rate view, see{' '}
             <Link href="/product/puf-panel/puf-panel-price" className="font-semibold text-primary hover:underline">
               PUF sheet price by thickness and size
@@ -187,7 +187,7 @@ function DescriptionContent() {
           <P>
             One panel, several jobs. As a <span className="font-semibold text-foreground">wall</span>, it is an
             insulated, finished partition or external wall in plain, baby-rib or micro-rib profile. As a{' '}
-            <span className="font-semibold text-foreground">roof</span>, it is an insulated roof cover — for
+            <span className="font-semibold text-foreground">roof</span>, it is an insulated roof cover: for
             roof-specific span, slope and fixing depth, see our roofing page. As a{' '}
             <span className="font-semibold text-foreground">cabin</span> shell, it forms the walls and roof of
             porta cabins and site offices in one board. As a{' '}
@@ -195,7 +195,7 @@ function DescriptionContent() {
             usually with a cam-lock joint so panels lock airtight.
           </P>
           <P>
-            Because it serves all of these, this build is the base product across our range — explore{' '}
+            Because it serves all of these, this build is the base product across our range: explore{' '}
             <Link href="/product/puf-panel" className="font-semibold text-primary hover:underline">
               every PUF panel option we make
             </Link>{' '}
@@ -207,7 +207,7 @@ function DescriptionContent() {
           <H2 id="manufacturing">How SAMAN manufactures and checks PUF sandwich panels</H2>
           <P>
             The sandwich is made by feeding two facing coils through the line, injecting polyurethane between
-            them, and letting the foam expand and cure so it bonds to both sheets as one continuous board — not
+            them, and letting the foam expand and cure so it bonds to both sheets as one continuous board, not
             a slab glued in afterwards. That injected bond is what makes the three layers behave as a single
             panel.
           </P>
@@ -264,8 +264,8 @@ function ShippingContent() {
   return (
     <div className="space-y-4">
       <TrustCard
-        deliveryLine="Pan-India delivery; transport confirmed at quotation; 3–5 business day default dispatch — see our"
-        returnsLine="7-day returns on standard products (3-day on custom) — see our"
+        deliveryLine="Pan-India delivery; transport confirmed at quotation; 3–5 business day default dispatch, see our"
+        returnsLine="7-day returns on standard products (3-day on custom), see our"
       />
       <P>
         We dispatch from Bangalore for South India and Greater Noida for North India and Delhi NCR, and a{' '}
@@ -294,8 +294,8 @@ export default function PufSandwichPanel() {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="PUF Sandwich Panel & PUF Sheet — Manufacturer | SAMAN"
-        fallbackDescription="PUF sandwich panel by SAMAN — the three-layer insulated PUF sheet, also called puff panel or insulated sheet, for wall, roof and cold rooms. 30–200 mm, factory-made in Bangalore and Greater Noida."
+        fallbackTitle="PUF Sandwich Panel & PUF Sheet, Manufacturer | SAMAN"
+        fallbackDescription="PUF sandwich panel by SAMAN: the three-layer insulated PUF sheet, also called puff panel or insulated sheet, for wall, roof and cold rooms. 30–200 mm, factory-made in Bangalore and Greater Noida."
         fallbackCanonical="https://www.samanportable.com/product/puf-panel/puf-sandwich-panel"
         keywords="puf sandwich panel, puf sheet, puf insulated sheets, puff panel"
         author="SAMAN POS India Private Limited"
@@ -335,7 +335,7 @@ export default function PufSandwichPanel() {
 
             <div className="order-1 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <ProductInfoBox
-                h1="PUF Sandwich Panel — PUF Sheets Manufactured for Wall, Roof and Cold Rooms"
+                h1="PUF Sandwich Panel. PUF Sheets Manufactured for Wall, Roof and Cold Rooms"
                 priceMain="From ₹1,050 / sq mt"
                 priceSubline="30mm base spec · ex-GST · final price at quotation"
                 shortDescription={SHORT_DESCRIPTION}

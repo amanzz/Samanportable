@@ -272,7 +272,7 @@ const PortaCabin30x10Rental = () => {
                 <div className="relative z-10">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Looking to Buy Instead of Rent?</h3>
                   <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg">
-                    For clients ready to purchase their own custom porta cabin, explore our premium range of porta cabins for sale — available in multiple sizes and configurations.
+                    For clients ready to purchase their own custom porta cabin, explore our premium range of porta cabins for sale, available in multiple sizes and configurations.
                   </p>
                   <Link href="/contact">
                     <Button className="bg-white text-[#0A3D2A] hover:bg-gray-100 border-none font-bold px-8 py-6 text-lg rounded-xl transition-all hover:scale-105 shadow-lg">
@@ -326,7 +326,7 @@ const PortaCabin30x10Rental = () => {
                   { q: "4. Are electrical and lighting fixtures included in the rental?", a: "Yes. Each unit comes pre-wired with multiple power outlets, LED fixtures, and switches. HVAC system upgrades are available on request." },
                   { q: "5. What preventive maintenance services are included?", a: "Weekly inspections cover structural, electrical, and ventilation system checks. Repairs or adjustments are performed at no extra charge." },
                   { q: "6. Can I extend or shorten the rental duration?", a: "Flexible rental terms allow contract modifications with 30 days’ notice. Daily and weekly rentals are also available for short-term needs." },
-                  { q: "7. Is delivery available to remote or industrial sites?", a: "Absolutely. We serve all major zones around Bangalore—Whitefield, Electronic City, Peenya, Bommasandra—with 24–48 hour delivery windows." },
+                  { q: "7. Is delivery available to remote or industrial sites?", a: "Absolutely. We serve all major zones around Bangalore, Whitefield, Electronic City, Peenya, Bommasandra, with 24–48 hour delivery windows." },
                   { q: "8. How is disassembly and relocation handled?", a: "When you’re ready to move, our team dismantles and transports the cabin to your new site within 24 hours, ensuring seamless project transitions." },
                   { q: "9. Are security features included?", a: "Standard units feature reinforced doors, lockable windows, and optional CCTV mounts. Alarm systems and access control upgrades can be integrated." },
                   { q: "10. Where can I purchase a new 30×10 porta cabin instead of renting?", a: "Visit our purchase catalog for custom builds, pricing details, and delivery options at samanportable.com/product/porta-cabins." }

@@ -21,7 +21,7 @@ const ProcessSteps = () => {
       icon: Factory,
       step: '03',
       title: 'Factory Manufacturing',
-      description: 'Built at our Bengaluru or Greater Noida facility. Steel cutting, welding, panels, wiring — all under controlled quality conditions.',
+      description: 'Built at our Bengaluru or Greater Noida facility. Steel cutting, welding, panels, wiring, all under controlled quality conditions.',
     },
     {
       icon: Truck,
@@ -39,7 +39,7 @@ const ProcessSteps = () => {
       icon: Wrench,
       step: '06',
       title: 'Ongoing Support',
-      description: '5-year structural warranty begins. If anything needs attention — call us. We respond and resolve. Long-term relationship guaranteed.',
+      description: '5-year structural warranty begins. If anything needs attention, call us. We respond and resolve. Long-term relationship guaranteed.',
     },
   ];
 

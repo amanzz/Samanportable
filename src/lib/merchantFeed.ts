@@ -423,7 +423,7 @@ export function buildMerchantProduct(product: ProductLike, baseUrl = MERCHANT_BA
 // against the PACKET-C source.
 const PC_TIMES = '×'; // U+00D7 multiplication sign
 const PC_NDASH = '–'; // U+2013 en dash
-const PC_MDASH = '—'; // U+2014 em dash
+const PC_MDASH = ', '; // U+2014 em dash
 
 const PORTA_CABIN_VARIANT_DESCRIPTORS: Record<string, string> = {
   '10x10': 'Guard Room & Gate Office',

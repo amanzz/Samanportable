@@ -4,7 +4,7 @@ import {
 } from '@/lib/specsShippingTabs';
 
 const SPECIFICATIONS_INTRO =
-  'A site office container is specified for construction-site duty — the frame, envelope and electricals below are the SAMAN container standard, configured for gate placement, site power and repeated relocation between projects.';
+  'A site office container is specified for construction-site duty. The frame, envelope and electricals below are the SAMAN container standard, configured for gate placement, site power and repeated relocation between projects.';
 
 const SHIPPING_INTRO =
   'A site office container is usually the first delivery a project takes: dispatched complete from Bangalore or Greater Noida, placed at the gate on a prepared base, and running the same day. Budget freight from the tables below; the quotation fixes the figure to your pin code.';
@@ -54,8 +54,8 @@ export const buildSiteOfficeContainerShippingHtml = (): string =>
 
 const PRICE_SECTION =
   '<section id="site-office-container-price-by-size">' +
-    '<h2>Site Office Container Price by Size — Ex-Factory Rates</h2>' +
-    '<p>Every site office container is priced from one controlled rate card — ₹1,350 per sq ft at the 200 sq ft reference, stepping +10% below 200 sq ft and down in bands as the floor grows. The full ladder is below so you can budget before you enquire. Prices are ex-factory; interior fit-out and freight are quoted separately at confirmation.</p>' +
+    '<h2>Site Office Container Price by Size: Ex-Factory Rates</h2>' +
+    '<p>Every site office container is priced from one controlled rate card: ₹1,350 per sq ft at the 200 sq ft reference, stepping +10% below 200 sq ft and down in bands as the floor grows. The full ladder is below so you can budget before you enquire. Prices are ex-factory; interior fit-out and freight are quoted separately at confirmation.</p>' +
     '<div class="overflow-x-auto">' +
       '<table>' +
         '<thead><tr><th>Size (ft)</th><th>Area</th><th>Rate/sq ft</th><th>ex-GST</th><th>incl-GST</th></tr></thead>' +

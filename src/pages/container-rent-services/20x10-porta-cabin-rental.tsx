@@ -43,7 +43,7 @@ const PortaCabin20x10Rental = () => {
     <Layout>
       <UnifiedSEO
         fallbackTitle="20×10 Porta Cabin Rental Bangalore & Delhi NCR | Quick Setup"
-        fallbackDescription="Rent a 20×10 portable cabin in Bangalore or Delhi NCR—200 sq ft workspace, 24–48 hr delivery, quality-tested construction, flexible terms, and 24×7 support. Book now."
+        fallbackDescription="Rent a 20×10 portable cabin in Bangalore or Delhi NCR: 200 sq ft workspace, 24–48 hr delivery, quality-tested construction, flexible terms, and 24×7 support. Book now."
         fallbackCanonical="https://www.samanportable.com/container-rent-services/20x10-porta-cabin-rental"
         keywords="20x10 porta cabin rental, 200 sq ft office cabin, small portable office, portable cabin Bangalore, site office rental"
         author="SAMAN POS India Private Limited"
@@ -212,7 +212,7 @@ const PortaCabin20x10Rental = () => {
                   Discover the Ultimate 20×10 Porta Cabin Solution
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Unlock agile workspace flexibility with our 20×10 ft porta cabin—engineered for peak performance in compact spaces. Whether you need a secure site office, a retail kiosk, or a field lab, this 200 sq ft unit empowers small-scale operations.
+                  Unlock agile workspace flexibility with our 20×10 ft porta cabin: engineered for peak performance in compact spaces. Whether you need a secure site office, a retail kiosk, or a field lab, this 200 sq ft unit empowers small-scale operations.
                 </p>
               </div>
 
@@ -232,7 +232,7 @@ const PortaCabin20x10Rental = () => {
                     </div>
                     <h3 className="text-2xl font-bold mb-4">Rapid Deployment for Agile Operations</h3>
                     <p className="text-white/80 mb-6 leading-relaxed">
-                      Experience industry-leading setup times—our certified technicians assemble and level each unit in just <span className="text-white font-bold">4–6 hours</span> without cranes.
+                      Experience industry-leading setup times. Our certified technicians assemble and level each unit in just <span className="text-white font-bold">4–6 hours</span> without cranes.
                     </p>
                     <ul className="space-y-3">
                       <li className="flex items-center gap-3 text-sm font-medium">
@@ -319,7 +319,7 @@ const PortaCabin20x10Rental = () => {
                 {[
                   { q: "1. What is the monthly rental rate for a 20×10 porta cabin?", a: "Rental rates start at ₹18,000 per month, varying slightly based on location, duration, and optional upgrades like HVAC or partitions." },
                   { q: "2. Can the 200 sq ft cabin be fitted with office furniture?", a: "Yes. Choose from modular desks, storage cabinets, and seating options to create a fully equipped workspace tailored to your needs." },
-                  { q: "3. How fast can the cabin be assembled on-site?", a: "Our certified team completes installation and leveling in 4–6 hours using ground placement—no crane required—ensuring minimal project disruption." },
+                  { q: "3. How fast can the cabin be assembled on-site?", a: "Our certified team completes installation and leveling in 4–6 hours using ground placement, no crane required, ensuring minimal project disruption." },
                   { q: "4. Are electrical outlets and lighting included?", a: "Each unit comes pre-wired with multiple power outlets and energy-efficient LED fixtures. You can add additional wiring or specialty lighting upon request." },
                   { q: "5. Do you offer climate control for this cabin size?", a: "Standard ventilation is included; upgrade to a split AC or central HVAC system for reliable temperature control year-round." },
                   { q: "6. How often is maintenance performed during the rental?", a: "We conduct weekly preventive maintenance covering structural, electrical, and ventilation inspections at no extra cost." },
@@ -344,7 +344,7 @@ const PortaCabin20x10Rental = () => {
                 Book Your 20×10 Portable Workspace – Bangalore & Delhi NCR
               </h2>
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-                Secure a 200 sq ft modular cabin for site offices, security posts, or retail — available across Bangalore and Delhi NCR. Enjoy 24–48 hr delivery, quality-tested construction, and 24×7 expert support from SAMAN Portable.
+                Secure a 200 sq ft modular cabin for site offices, security posts, or retail, available across Bangalore and Delhi NCR. Enjoy 24–48 hr delivery, quality-tested construction, and 24×7 expert support from SAMAN Portable.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left max-w-4xl mx-auto mb-10">

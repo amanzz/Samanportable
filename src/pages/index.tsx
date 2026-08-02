@@ -124,10 +124,10 @@ const HomePage = ({ categoryCounts }: { categoryCounts: Record<string, number> }
         />
       </Head>
       <UnifiedSEO
-        fallbackTitle="SAMAN Portable — ISO-Certified Modular Building Manufacturer, India"
+        fallbackTitle="SAMAN Portable, ISO-Certified Modular Building Manufacturer, India"
         fallbackDescription="Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN."
         fallbackCanonical="https://www.samanportable.com/"
-        fallbackOgTitle="SAMAN Portable — ISO-Certified Modular Building Manufacturer, India"
+        fallbackOgTitle="SAMAN Portable, ISO-Certified Modular Building Manufacturer, India"
         fallbackOgDescription="Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN."
         fallbackOgImage="https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp"
         fallbackTwitterDescription="Factory-made modular structures from ISO-certified units in Bangalore and Greater Noida, delivered across India in 7–21 days. Get a written quote from SAMAN."

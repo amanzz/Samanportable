@@ -468,7 +468,7 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
     // notFound) and only happens when the backend responded successfully.
     // Only the error message is logged (no request URL), so no secrets are exposed.
     console.error(
-      'Blog post SSR failed — returning 5xx, not 404:',
+      'Blog post SSR failed, returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render blog post');

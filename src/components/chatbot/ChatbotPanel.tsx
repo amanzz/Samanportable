@@ -37,7 +37,7 @@ const ZONES: Record<ZoneKey, ZoneInfo> = {
   },
   north: {
     key: 'north',
-    label: 'North Zone (All other states — North, West, East, Central India)',
+    label: 'North Zone (All other states: North, West, East, Central India)',
     primaryDisplay: '+91 87960 39938',
     primaryTel: '+918796039938',
     secondaryDisplay: '+91 97089 89937',
@@ -351,7 +351,7 @@ const ChatbotPanel: React.FC<Props> = ({ onClose }) => {
         <div className="flex items-center justify-between gap-3 bg-primary px-4 py-3 text-primary-foreground">
           <div className="min-w-0">
             <p id={titleId} className="text-sm font-semibold leading-tight">
-              SAMAN Portable — Enquiry
+              SAMAN Portable, Enquiry
             </p>
             {status === 'form' && (
               <p className="text-xs text-primary-foreground/80">Step {step} of {TOTAL_STEPS}</p>
@@ -526,7 +526,7 @@ const ChatbotPanel: React.FC<Props> = ({ onClose }) => {
             <div className="space-y-4">
               <div className="flex flex-col items-center gap-2 pt-2 text-center">
                 <h2 className="text-base font-semibold text-gray-900">We couldn’t send that just now.</h2>
-                <p className="text-sm text-gray-600">Please call us directly — we’ll help right away.</p>
+                <p className="text-sm text-gray-600">Please call us directly, we’ll help right away.</p>
               </div>
               {zoneInfo && <UrgentSupport zone={zoneInfo} />}
             </div>

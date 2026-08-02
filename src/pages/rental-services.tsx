@@ -194,7 +194,7 @@ const RentalServicesPage = () => {
                   Why Choose Our Rental Services?
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  We provide portable cabin rental and container office rental solutions that are reliable, flexible, and costeffective. Our goal is to deliver highquality prefabricated structures with outstanding service, making it easy for you to get the space you need — right when you need it.
+                  We provide portable cabin rental and container office rental solutions that are reliable, flexible, and costeffective. Our goal is to deliver highquality prefabricated structures with outstanding service, making it easy for you to get the space you need, right when you need it.
                 </p>
               </div>
 
@@ -319,7 +319,7 @@ const RentalServicesPage = () => {
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Instant availability check from our 50+ unit fleet</li>
                         <li>• Customized cabin recommendations for your site needs</li>
-                        <li>• Transparent pricing — no hidden charges</li>
+                        <li>• Transparent pricing, no hidden charges</li>
                         <li>• Same-day site visit scheduling for complex projects</li>
                       </ul>
                     </div>
@@ -328,7 +328,7 @@ const RentalServicesPage = () => {
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Written quote within 30 minutes via email or WhatsApp</li>
                         <li>• Multiple cabin size options with full specifications</li>
-                        <li>• Flexible rental terms — daily, weekly, or monthly</li>
+                        <li>• Flexible rental terms: daily, weekly, or monthly</li>
                         <li>• Professional advice on layout and placement</li>
                       </ul>
                     </div>
@@ -390,7 +390,7 @@ const RentalServicesPage = () => {
                       <h4 className="font-semibold text-gray-900 mb-2 border-b border-gray-100 pb-1">Simple Digital Process</h4>
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Sign agreement via mobile or email</li>
-                        <li>• Multiple payment options — UPI, bank transfer, or corporate</li>
+                        <li>• Multiple payment options: UPI, bank transfer, or corporate</li>
                         <li>• Insurance and compliance handled automatically</li>
                         <li>• 2-hour delivery window scheduling</li>
                       </ul>

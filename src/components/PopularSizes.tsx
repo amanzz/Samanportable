@@ -78,12 +78,12 @@ const CAFE_PRICES: readonly Price[] = [
 ];
 
 const PORTA_NOTE =
-  'Standard rates ex-GST — ₹1,250/sq ft at the 200 sq ft reference, stepping down to ₹1,175/sq ft on larger floors; units below 200 sq ft ₹1,375/sq ft. Transport and customisation quoted separately. Final price confirmed at quotation.';
+  'Standard rates ex-GST: ₹1,250/sq ft at the 200 sq ft reference, stepping down to ₹1,175/sq ft on larger floors; units below 200 sq ft ₹1,375/sq ft. Transport and customisation quoted separately. Final price confirmed at quotation.';
 const OFFICE_NOTE = 'Rate: ₹1,450/sq ft at 200 sq ft reference.';
 const CAFE_NOTE = 'Rate: ₹1,850/sq ft at 200 sq ft reference.';
 // Approved panel disclaimer — T6.3 §2 Group A footnote (verbatim).
 const PANEL_NOTE =
-  'Rates per m², ex-GST, base specification — freight, installation and accessories quoted separately. Final price confirmed at quotation.';
+  'Rates per m², ex-GST, base specification: freight, installation and accessories quoted separately. Final price confirmed at quotation.';
 
 const TABS: readonly Tab[] = [
   {
@@ -92,14 +92,14 @@ const TABS: readonly Tab[] = [
     href: '/product/porta-cabins',
     img: '/homepage/cards/ms-corrugated-portable-cabin-site-office.webp',
     alt: 'New MS corrugated portable cabin site office with grilled windows and AC unit at an Indian construction site',
-    desc: 'Steel-frame site offices, guard rooms and stores — delivered ready to use.',
-    desc2: 'Built at our factory and installed on site by our own crew — no crane or civil work needed at your end.',
+    desc: 'Steel-frame site offices, guard rooms and stores, delivered ready to use.',
+    desc2: 'Built at our factory and installed on site by our own crew, no crane or civil work needed at your end.',
     prices: PORTA_PRICES,
     bullets: [
       '50mm PUF-insulated steel panels',
       'Sizes from 10×10 to 40×12 ft',
       'Electrical, lighting and flooring pre-fitted',
-      'Fully relocatable — move it to your next site',
+      'Fully relocatable, move it to your next site',
     ],
     cta: 'See all Porta Cabins',
     note: PORTA_NOTE,
@@ -116,7 +116,7 @@ const TABS: readonly Tab[] = [
     bullets: [
       '20 ft and 40 ft standard sizes',
       'AC, wiring and interiors fitted before delivery',
-      'Corrugated steel body — built to last on site',
+      'Corrugated steel body, built to last on site',
       'Ready to move in on arrival',
     ],
     cta: 'See all Container Offices',
@@ -129,13 +129,13 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/container-cafe-food-outlet-service-window.webp',
     alt: 'Modern container café with fold-up service window, counter and outdoor seating at golden hour',
     desc: 'Cafés, kiosks and food outlets delivered ready to open.',
-    desc2: 'We handle the full build — layout, branding, plumbing and electrical — so you can start serving on day one.',
+    desc2: 'We handle the full build, layout, branding, plumbing and electrical, so you can start serving on day one.',
     prices: CAFE_PRICES,
     bullets: [
       'Custom exterior branding and signage',
       'Plumbing and electrical fitted at the factory',
       'Indoor and window-service layouts',
-      'Relocatable — move to a new location any time',
+      'Relocatable, move to a new location any time',
     ],
     cta: 'See Container Café options',
     note: CAFE_NOTE,
@@ -147,8 +147,8 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/labour-colony-prefab-worker-accommodation.webp',
     alt: 'Rows of new prefab labour colony units with walkway and drainage at an Indian construction project',
     desc: 'Complete worker accommodation camps, up to G+2.',
-    desc2: 'From a few rooms to a full multi-storey camp — delivered and assembled in days, not months.',
-    labourLine: 'Price on request — send enquiry',
+    desc2: 'From a few rooms to a full multi-storey camp, delivered and assembled in days, not months.',
+    labourLine: 'Price on request, send enquiry',
     bullets: [
       'Individual units or multi-storey blocks',
       'Attached toilets, ventilation and lighting',
@@ -181,13 +181,13 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/panels-factory.webp',
     alt: 'Insulated sandwich panels manufactured at a SAMAN Portable factory',
     desc: 'EPS, rockwool, glass wool and PIR core panels for walls, roofs and cold rooms.',
-    desc2: 'Choose the core that fits your fire, thermal and acoustic needs — supplied and installed across India.',
+    desc2: 'Choose the core that fits your fire, thermal and acoustic needs, supplied and installed across India.',
     thicknessLine: 'Standard thicknesses 30, 40, 50 and 80 mm, up to 150 mm',
     bullets: [
-      'EPS — economical thermal insulation',
-      'Rockwool — fire-resistant, acoustic control',
-      'Glass wool — thermal and sound insulation',
-      'PIR — high thermal performance for cold rooms',
+      'EPS, economical thermal insulation',
+      'Rockwool, fire-resistant, acoustic control',
+      'Glass wool, thermal and sound insulation',
+      'PIR, high thermal performance for cold rooms',
     ],
     cta: 'Explore Sandwich Panels',
   },
@@ -199,7 +199,7 @@ const TABS: readonly Tab[] = [
     alt: '',
     badge: 'Launching soon',
     desc: 'Decorative and cladding wall sheets for interiors and building façades.',
-    desc2: 'A new range is on the way — PVC, UV-marble and cladding finishes for homes, offices and commercial spaces.',
+    desc2: 'A new range is on the way: PVC, UV-marble and cladding finishes for homes, offices and commercial spaces.',
     bullets: [
       'PVC and UV-marble finishes',
       'Interior feature walls and façades',
@@ -215,7 +215,7 @@ const TABS: readonly Tab[] = [
     img: '/homepage/cards/panels-factory.webp',
     alt: 'Insulated sandwich panels manufactured at a SAMAN Portable factory',
     desc: 'Metal, polycarbonate and PVC roofing sheets for every span.',
-    desc2: 'Single-skin and profile roofing for industrial sheds, warehouses and PEB structures — supplied and fitted across India.',
+    desc2: 'Single-skin and profile roofing for industrial sheds, warehouses and PEB structures, supplied and fitted across India.',
     bullets: [
       'Galvanised and colour-coated metal profiles',
       'Polycarbonate and transparent options for daylight',
@@ -268,7 +268,7 @@ const PriceChips = ({ prices }: { prices: readonly Price[] }) => (
 // Crawlable PUF rate table (2 columns, 9 rows). Forest header, zebra body, mono numerals.
 const PufTable = () => (
   <div className="mt-5">
-    <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--ds-color-forest)]">Factory rate card — ₹ per m², ex-GST</p>
+    <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--ds-color-forest)]">Factory rate card: ₹ per m², ex-GST</p>
     <div className="overflow-x-auto rounded-xl border border-[var(--ds-border)]">
       <table className="w-full border-collapse text-sm">
         <thead>
@@ -376,7 +376,7 @@ const PopularSizes = () => {
             {"India's most-ordered sizes, ready to quote"}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg font-light leading-relaxed text-[var(--ds-text-secondary)]">
-            These configurations ship fastest — standard specifications, fixed base prices, delivery in 7–21 days.
+            These configurations ship fastest: standard specifications, fixed base prices, delivery in 7–21 days.
           </p>
         </div>
 

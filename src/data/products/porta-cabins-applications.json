@@ -1,10 +1,10 @@
 {
   "h2": "Explore every Porta Cabin size & its applications",
-  "intro": "Nine standard sizes, one specification — pick the footprint that matches how you'll use it, with fixed base prices and delivery in 7–21 working days.",
+  "intro": "Nine standard sizes, one specification: pick the footprint that matches how you'll use it, with fixed base prices and delivery in 7–21 working days.",
   "panels": [
     {
       "sizeSlug": "10x10",
-      "h3": "10×10 ft — the compact guard & service cabin",
+      "h3": "10×10 ft: the compact guard & service cabin",
       "paragraph": "The 10×10 ft cabin is the fast solution for single-purpose spaces at gates, entrances and public sites. It installs in hours, often without a crane, and its square footprint fits corners and setbacks where longer cabins can't go.",
       "applications": [
         "Security and watchman cabins at gates and parking areas",
@@ -15,8 +15,8 @@
     },
     {
       "sizeSlug": "20x8",
-      "h3": "20×8 ft — the narrow-plot office & store",
-      "paragraph": "At just eight feet wide, the 20×8 ft cabin runs along compound walls, road margins and platform edges — full working space on strips of land other cabins waste. Contractors use it where the site is tight but the team still needs a proper office.",
+      "h3": "20×8 ft: the narrow-plot office & store",
+      "paragraph": "At just eight feet wide, the 20×8 ft cabin runs along compound walls, road margins and platform edges, full working space on strips of land other cabins waste. Contractors use it where the site is tight but the team still needs a proper office.",
       "applications": [
         "Site offices on narrow or congested plots",
         "Secure tool and material stores",
@@ -26,8 +26,8 @@
     },
     {
       "sizeSlug": "20x10",
-      "h3": "20×10 ft — India's standard site office",
-      "paragraph": "The 20×10 ft is our most-ordered cabin: 200 sq ft that seats four to six people with desks, files and a visitor chair. It's the size project managers specify by default — delivered fitted with electricals, lighting and insulation, working from day one.",
+      "h3": "20×10 ft: India's standard site office",
+      "paragraph": "The 20×10 ft is our most-ordered cabin: 200 sq ft that seats four to six people with desks, files and a visitor chair. It's the size project managers specify by default: delivered fitted with electricals, lighting and insulation, working from day one.",
       "applications": [
         "Project and site offices",
         "Sales and marketing offices at project sites",
@@ -37,8 +37,8 @@
     },
     {
       "sizeSlug": "20x12",
-      "h3": "20×12 ft — the partitioned manager office",
-      "paragraph": "Two extra feet of width is what makes a private manager cabin possible alongside open seating. The 20×12 ft plans cleanly into a glazed manager area plus staff desks — the layout most site teams actually want, without moving to a longer unit.",
+      "h3": "20×12 ft: the partitioned manager office",
+      "paragraph": "Two extra feet of width is what makes a private manager cabin possible alongside open seating. The 20×12 ft plans cleanly into a glazed manager area plus staff desks. The layout most site teams actually want, without moving to a longer unit.",
       "applications": [
         "Manager + staff combined offices",
         "Consultant and engineer cabins with meeting space",
@@ -48,8 +48,8 @@
     },
     {
       "sizeSlug": "30x10",
-      "h3": "30×10 ft — the two-zone project office",
-      "paragraph": "The 30×10 ft divides naturally into two working zones — office at one end, meeting or records room at the other. It suits teams that host clients, consultants and inspections on site, keeping the working area and the meeting area separate.",
+      "h3": "30×10 ft: the two-zone project office",
+      "paragraph": "The 30×10 ft divides naturally into two working zones, office at one end, meeting or records room at the other. It suits teams that host clients, consultants and inspections on site, keeping the working area and the meeting area separate.",
       "applications": [
         "Project offices with client meeting rooms",
         "Engineering and consultant team offices",
@@ -59,7 +59,7 @@
     },
     {
       "sizeSlug": "40x8",
-      "h3": "40×8 ft — the linear bunkhouse & rest room",
+      "h3": "40×8 ft: the linear bunkhouse & rest room",
       "paragraph": "Long and narrow, the 40×8 ft runs along walls, fences and platform edges, planning into bunk lines or a row of work points. It's the practical shape for accommodation and rest space where site width is the constraint.",
       "applications": [
         "Worker bunkhouses and rest rooms",
@@ -70,8 +70,8 @@
     },
     {
       "sizeSlug": "20x20",
-      "h3": "20×20 ft — the open-floor hall",
-      "paragraph": "A square, twin-module 400 sq ft with a wide-open floor and no corridor effect — the size to choose when the space itself is the point: display, training, coordination. It arrives as modules and is joined and finished on site.",
+      "h3": "20×20 ft: the open-floor hall",
+      "paragraph": "A square, twin-module 400 sq ft with a wide-open floor and no corridor effect. The size to choose when the space itself is the point: display, training, coordination. It arrives as modules and is joined and finished on site.",
       "applications": [
         "Showrooms and display spaces",
         "Training halls and classrooms",
@@ -81,8 +81,8 @@
     },
     {
       "sizeSlug": "40x10",
-      "h3": "40×10 ft — the large single-module office",
-      "paragraph": "Our biggest single-lift cabin: 400 sq ft craned into place as one finished unit. It seats eight to ten staff or converts to a full training room — maximum office in one delivery, one foundation-free placement, one connection.",
+      "h3": "40×10 ft: the large single-module office",
+      "paragraph": "Our biggest single-lift cabin: 400 sq ft craned into place as one finished unit. It seats eight to ten staff or converts to a full training room: maximum office in one delivery, one foundation-free placement, one connection.",
       "applications": [
         "Large site and admin offices",
         "Training rooms and classrooms",
@@ -92,8 +92,8 @@
     },
     {
       "sizeSlug": "40x12",
-      "h3": "40×12 ft — the multi-room office complex",
-      "paragraph": "The flagship 480 sq ft plans as a genuine office suite — reception at the door, a private manager cabin, and an open work area beyond. For organisations that need a permanent-feeling office without civil construction, this is the one.",
+      "h3": "40×12 ft: the multi-room office complex",
+      "paragraph": "The flagship 480 sq ft plans as a genuine office suite: reception at the door, a private manager cabin, and an open work area beyond. For organisations that need a permanent-feeling office without civil construction, this is the one.",
       "applications": [
         "Corporate site offices with reception",
         "Clinic and diagnostic suites",

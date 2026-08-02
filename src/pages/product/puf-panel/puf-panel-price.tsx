@@ -37,7 +37,7 @@ const PRICE_ROWS: PriceRow[] = [
   { thickness: '50 mm', ratePerM2: '₹1,250', ratePerSqFt: '₹116', use: 'Most common all-round choice' },
   { thickness: '60 mm', ratePerM2: '₹1,330', ratePerSqFt: '₹124', use: 'Better thermal comfort' },
   { thickness: '80 mm', ratePerM2: '₹1,470', ratePerSqFt: '₹137', use: 'Cold rooms and premium roofs' },
-  { thickness: '100 / 120 / 150 / 200 mm & freezer-grade', ratePerM2: 'Confirm at quotation', ratePerSqFt: '—', use: 'Cold storage, freezers and specialised high-insulation builds', isQuoteOnly: true },
+  { thickness: '100 / 120 / 150 / 200 mm & freezer-grade', ratePerM2: 'Confirm at quotation', ratePerSqFt: ', ', use: 'Cold storage, freezers and specialised high-insulation builds', isQuoteOnly: true },
 ];
 
 const SPEC_ROWS = [
@@ -72,13 +72,13 @@ const CHECKLIST = [
 ];
 
 const FAQS = [
-  { question: 'What is the price of a 30 mm PUF panel?', answer: 'A 30 mm PUF panel has a base rate of ₹1,050 per sq mt (≈ ₹98 per sq ft), supply-only, ex-GST. This covers our base specification — PPGI facing, 40 ± 2 kg/m³ core, standard shade. It is the value tier for budget walls and partitions; facing, gauge, colour and joint upgrades are adjusted at quotation.' },
-  { question: 'What is the 50 mm PUF panel price per sq ft?', answer: 'A 50 mm PUF panel has a base rate of ₹1,250 per sq mt (≈ ₹116 per sq ft), supply-only, ex-GST, for our base specification — PPGI facing, 40 ± 2 kg/m³ core, standard shade. It remains our most common all-round choice for cabins, offices and general walls; facing, colour and joint upgrades are adjusted at quotation.' },
-  { question: 'What is the 80 mm PUF sheet price?', answer: 'An 80 mm PUF panel has a base rate of ₹1,470 per sq mt (≈ ₹137 per sq ft), supply-only, ex-GST, for our base specification — PPGI facing, 40 ± 2 kg/m³ core, standard shade. It suits cold rooms and premium roofs needing more core depth; facing, gauge and joint upgrades are adjusted at quotation.' },
+  { question: 'What is the price of a 30 mm PUF panel?', answer: 'A 30 mm PUF panel has a base rate of ₹1,050 per sq mt (≈ ₹98 per sq ft), supply-only, ex-GST. This covers our base specification: PPGI facing, 40 ± 2 kg/m³ core, standard shade. It is the value tier for budget walls and partitions; facing, gauge, colour and joint upgrades are adjusted at quotation.' },
+  { question: 'What is the 50 mm PUF panel price per sq ft?', answer: 'A 50 mm PUF panel has a base rate of ₹1,250 per sq mt (≈ ₹116 per sq ft), supply-only, ex-GST, for our base specification: PPGI facing, 40 ± 2 kg/m³ core, standard shade. It remains our most common all-round choice for cabins, offices and general walls; facing, colour and joint upgrades are adjusted at quotation.' },
+  { question: 'What is the 80 mm PUF sheet price?', answer: 'An 80 mm PUF panel has a base rate of ₹1,470 per sq mt (≈ ₹137 per sq ft), supply-only, ex-GST, for our base specification: PPGI facing, 40 ± 2 kg/m³ core, standard shade. It suits cold rooms and premium roofs needing more core depth; facing, gauge and joint upgrades are adjusted at quotation.' },
   { question: 'Why do PUF panel quotes differ so much between suppliers?', answer: 'Usually because the panels are not the same, even at the same thickness. A cheaper quote often carries a lower core density or a thinner facing sheet. Ask each supplier to state core density, facing type and gauge, joint type and exclusions in writing, then compare like with like.' },
   { question: 'Does the panel price include GST and transport?', answer: 'No. Our base rates are supply-only and exclude GST, which is added on the invoice under HSN 940690, along with transport, installation, accessories and unloading. This keeps the quote honest and comparable rather than hiding costs inside a single headline rate.' },
   { question: 'Is PIR costlier than PUF?', answer: 'Yes. For the same thickness, a PIR core typically costs roughly a third more (about 30–35%) than PUF, in exchange for improved fire behaviour and a higher service temperature. For most wall, shed and standard cold-room jobs, PUF is the cost-effective choice; PIR is chosen where fire or temperature drives the spec.' },
-  { question: 'Do you have a minimum order for PUF panels?', answer: 'For long-distance dispatch we apply a 500 m² minimum billing quantity. Local orders around Bangalore and Greater Noida are more flexible — share your area and site city and we will confirm what applies to your project before quoting.' },
+  { question: 'Do you have a minimum order for PUF panels?', answer: 'For long-distance dispatch we apply a 500 m² minimum billing quantity. Local orders around Bangalore and Greater Noida are more flexible. Share your area and site city and we will confirm what applies to your project before quoting.' },
   { question: 'What is the difference between PUF sheet price and panel price?', answer: 'A PUF sheet price is a bare-sheet figure that excludes the facing gauge, profile, joint and colour a finished panel carries, so it reads lower than the real panel. We quote the finished panel to your specification, so the number reflects exactly what you receive.' },
 ];
 
@@ -86,7 +86,7 @@ const PRODUCT_JSONLD = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   '@id': 'https://www.samanportable.com/product/puf-panel/puf-panel-price#product',
-  name: 'PUF Panel — Price by Thickness',
+  name: 'PUF Panel: Price by Thickness',
   description: 'Fixed base-specification PUF panel prices by thickness (30–80 mm, ₹1,050–₹1,470/m²) with 100–200 mm and freezer-grade confirmed at quotation. Manufactured by SAMAN in Bangalore and Greater Noida.',
   category: 'Insulated Sandwich Panel',
   brand: { '@id': 'https://www.samanportable.com/#organization' },
@@ -143,8 +143,7 @@ function DescriptionContent() {
       <div className="space-y-10">
         <div className="rounded-xl bg-primary/[0.06] px-4 py-3">
           <p className="text-base font-bold text-foreground sm:text-lg">
-            SAMAN PUF panel price: ₹1,050–₹1,470 per sq mt (≈ ₹98–₹137 per sq ft) fixed base rates for 30–80 mm —
-            thicker and freezer-grade panels quoted per project.
+            SAMAN PUF panel price: ₹1,050–₹1,470 per sq mt (≈ ₹98–₹137 per sq ft) fixed base rates for 30–80 mm, thicker and freezer-grade panels quoted per project.
           </p>
           <p className="mt-1 text-xs italic text-muted-foreground">Rates reviewed: July 2026.</p>
         </div>
@@ -171,14 +170,14 @@ function DescriptionContent() {
         <section id="price-by-thickness-detail" className="space-y-4">
           <H2 id="price-by-thickness">PUF panel price by thickness</H2>
           <P>
-            Thickness is the single biggest driver of a PUF panel rate — more core means more polyurethane and
+            Thickness is the single biggest driver of a PUF panel rate. More core means more polyurethane and
             a heavier panel. Below is how the bands break down.
           </P>
 
           <H3>30 mm, 40 mm and 50 mm panel rates</H3>
           <P>
             These are the value tier. A 30 mm PUF panel has a base rate of ₹1,050/m² supply-only, 40 mm ₹1,150/m²,
-            and 50 mm ₹1,250/m². The 50 mm panel is our most common all-round choice — it balances insulation and
+            and 50 mm ₹1,250/m². The 50 mm panel is our most common all-round choice. It balances insulation and
             cost for cabins, offices and general insulated walls, which is why most standard enquiries settle
             here.
           </P>
@@ -186,14 +185,14 @@ function DescriptionContent() {
           <H3>60 mm, 80 mm and 100 mm panel rates</H3>
           <P>
             The mid tier steps up as core depth increases: 60 mm at a ₹1,330/m² base rate for better thermal
-            comfort, and 80 mm at ₹1,470/m² for cold rooms and premium roofs. 100 mm is quoted per order — its
-            rate depends on facing and profile — so it is confirmed at quotation. This tier suits sheds,
+            comfort, and 80 mm at ₹1,470/m² for cold rooms and premium roofs. 100 mm is quoted per order, its
+            rate depends on facing and profile, so it is confirmed at quotation. This tier suits sheds,
             better-insulated buildings and lighter cold storage.
           </P>
 
           <H3>120–200 mm and freezer-grade panels (confirm at quotation)</H3>
           <P>
-            Above 100 mm — 120 mm, 150 mm, 200 mm and freezer-grade panels — the rate is confirmed at quotation
+            Above 100 mm, 120 mm, 150 mm, 200 mm and freezer-grade panels, the rate is confirmed at quotation
             rather than banded. These are specialised builds where facing, joint type and density are set by the
             cold-chain or high-insulation requirement, and a blanket per-sq-ft figure would mislead more than it
             helps. We manufacture freezer-grade panels up to 150 mm.
@@ -206,7 +205,7 @@ function DescriptionContent() {
           <ul className="list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
             {RATE_LEVERS.map((lever) => (
               <li key={lever.title}>
-                <span className="font-semibold text-foreground">{lever.title}</span> — {lever.body}
+                <span className="font-semibold text-foreground">{lever.title}</span>, {lever.body}
               </li>
             ))}
           </ul>
@@ -225,14 +224,14 @@ function DescriptionContent() {
           </p>
           <p className="text-[15px] leading-relaxed text-muted-foreground sm:text-base">
             <span className="font-bold text-foreground">Volume and repeat orders.</span> Larger orders and
-            repeat or project buyers earn better rates than one-off small lots — the exact slabs are confirmed
+            repeat or project buyers earn better rates than one-off small lots, the exact slabs are confirmed
             at quotation. We do not publish blanket discount percentages, because the real number depends on
             thickness, facing and total area, and a headline &ldquo;bulk %&rdquo; that ignores those would be
             misleading.
           </p>
           <p className="text-[15px] leading-relaxed text-muted-foreground sm:text-base">
             <span className="font-bold text-foreground">The roof-cost trade-off.</span> If your build is
-            roof-led, expect an insulated PUF roof panel to cost more per sq ft than a plain metal sheet — but
+            roof-led, expect an insulated PUF roof panel to cost more per sq ft than a plain metal sheet: but
             it replaces the metal sheet, a separate layer of insulation and a lining step, and it goes up faster
             as one board. Judged on the finished, insulated roof rather than the bare sheet, it is usually the
             lower total cost. For how the roof profile and thickness change the selection, see our{' '}
@@ -248,7 +247,7 @@ function DescriptionContent() {
           <P>
             Buyers often ask for a &ldquo;PUF sheet price&rdquo; expecting a single number, but a PUF sheet and
             a finished, profiled panel are quoted differently. A bare sheet rate ignores the facing gauge,
-            profile, joint and colour that a real panel carries — so a headline &ldquo;sheet price&rdquo; is
+            profile, joint and colour that a real panel carries, so a headline &ldquo;sheet price&rdquo; is
             almost always lower than the panel you actually need.
           </P>
           <P>
@@ -263,21 +262,20 @@ function DescriptionContent() {
           <div className="mt-3">
             <ComparisonBox eyebrow="Flagship information gain" title="The 6-point quote comparison checklist">
               <P>
-                The reason two PUF panel quotes can differ by a wide margin is rarely the seller&apos;s margin
-                — it is usually a different panel hiding behind the same thickness number. Before you compare
+                The reason two PUF panel quotes can differ by a wide margin is rarely the seller&apos;s margin. It is usually a different panel hiding behind the same thickness number. Before you compare
                 prices, get all six of these in writing:
               </P>
               <ol className="my-4 list-decimal space-y-2 pl-5 text-[15px] leading-relaxed text-foreground sm:text-base">
                 {CHECKLIST.map((item) => (
                   <li key={item.title}>
-                    <span className="font-semibold">{item.title}</span> — {item.body}
+                    <span className="font-semibold">{item.title}</span>, {item.body}
                   </li>
                 ))}
               </ol>
               <p className="text-[15px] font-medium leading-relaxed text-foreground sm:text-base">
                 Honest-buyer warning: a quote that is much cheaper for the &ldquo;same&rdquo; thickness almost
                 always means a lower core density or a thinner facing sheet. Ask for the specification, not
-                just the number — then compare like with like.
+                just the number, then compare like with like.
               </p>
             </ComparisonBox>
           </div>
@@ -299,7 +297,7 @@ function DescriptionContent() {
           </ul>
           <P>
             Installation itself is quoted separately because it depends on building height, site access,
-            scaffolding or crane needs and the accessories used — so we never publish an installed ₹/sq ft
+            scaffolding or crane needs and the accessories used, so we never publish an installed ₹/sq ft
             figure that would fall apart on a real site. Stating exclusions cleanly is deliberate: it is the
             single most common cause of a disputed panel bill.
           </P>
@@ -309,18 +307,18 @@ function DescriptionContent() {
           <H2 id="request-quotation">How to request an accurate manufacturer quotation</H2>
           <P>The faster you give us the build, the tighter the quote. Send:</P>
           <ol className="list-decimal space-y-1.5 pl-5 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            <li><span className="font-semibold text-foreground">Use</span> — cabin, shed, cold room, partition, roof, etc.</li>
-            <li><span className="font-semibold text-foreground">Thickness</span> — or the temperature/insulation target if you are unsure.</li>
-            <li><span className="font-semibold text-foreground">Area</span> — total m² (or panel run and count).</li>
-            <li><span className="font-semibold text-foreground">Site city</span> — for the correct dispatch factory and transport.</li>
-            <li><span className="font-semibold text-foreground">Facing and colour</span> — if already decided.</li>
+            <li><span className="font-semibold text-foreground">Use</span>: cabin, shed, cold room, partition, roof, etc.</li>
+            <li><span className="font-semibold text-foreground">Thickness</span>, or the temperature/insulation target if you are unsure.</li>
+            <li><span className="font-semibold text-foreground">Area</span>, total m² (or panel run and count).</li>
+            <li><span className="font-semibold text-foreground">Site city</span>, for the correct dispatch factory and transport.</li>
+            <li><span className="font-semibold text-foreground">Facing and colour</span>, if already decided.</li>
           </ol>
           <P>
             With that, we return a firm rate against the{' '}
             <Link href="/product/puf-panel" className="font-semibold text-primary hover:underline">
               complete factory-made PUF panel range
             </Link>{' '}
-            rather than just the base rate. No calculator, no obligation — a real manufacturer quotation.
+            rather than just the base rate. No calculator, no obligation, a real manufacturer quotation.
           </P>
           <LongImage
             src="/images/puf-panel/loading-area-grey-50mm-1200x675.webp"
@@ -333,7 +331,7 @@ function DescriptionContent() {
           <H2 id="faq">Frequently asked questions</H2>
           <FaqAccordion items={FAQS} />
           <p className="text-xs italic text-muted-foreground">
-            Base rates reviewed July 2026; rates move with steel and chemical prices — request a current
+            Base rates reviewed July 2026; rates move with steel and chemical prices, request a current
             quotation for project pricing.
           </p>
         </section>
@@ -354,7 +352,7 @@ function SpecificationsContent() {
   return (
     <div className="space-y-6">
       <P>
-        The specification behind every rate on the price table — the same core, facing and joint options
+        The specification behind every rate on the price table: the same core, facing and joint options
         referenced above, tabulated for quick reference.
       </P>
       <SpecTable title="PUF Panel Specifications" subtitle="Owner-verified" rows={SPEC_ROWS} />
@@ -378,21 +376,21 @@ function ShippingContent() {
         North India and Delhi NCR</span>, so the{' '}
         <span className="font-semibold text-foreground">nearer factory quotes your freight</span>. A
         single-plant supplier ships every long-distance order from one location, and that freight quietly
-        inflates the landed cost — the panel rate looks similar, but the delivered price is not.
+        inflates the landed cost. The panel rate looks similar, but the delivered price is not.
       </P>
       <P>
-        Pan-India delivery; transport confirmed at quotation; 3–5 business day default dispatch — see our{' '}
+        Pan-India delivery; transport confirmed at quotation; 3–5 business day default dispatch, see our{' '}
         <Link href="/delivery-policy" className="font-semibold text-primary hover:underline">
           Delivery Policy
         </Link>
         . For long-distance dispatch a <span className="font-semibold text-foreground">500 m² minimum
-        billing</span> quantity applies — worth knowing before you plan a small remote order, since it
+        billing</span> quantity applies, worth knowing before you plan a small remote order, since it
         changes the effective per-m² cost. Offloading at site is arranged and costed with you; a long panel
         needs offloading space, so factor it into the delivered price rather than treating the panel rate
         as the final number.
       </P>
       <P>
-        Standard products carry 7-day returns (3-day on custom builds) — see our{' '}
+        Standard products carry 7-day returns (3-day on custom builds), see our{' '}
         <Link href="/refund-and-return-policy" className="font-semibold text-primary hover:underline">
           Refund &amp; Return Policy
         </Link>
@@ -416,8 +414,8 @@ export default function PufPanelPrice() {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="PUF Panel Price 2026 — Rate Per Sq Ft by Thickness | SAMAN"
-        fallbackDescription="PUF panel price 2026 by thickness — fixed base rates ₹1,050–₹1,470 per sq mt for 30–80 mm, with 100–200 mm and freezer-grade confirmed at quotation. Supply-only, ex-GST. Get a firm SAMAN quote."
+        fallbackTitle="PUF Panel Price 2026, Rate Per Sq Ft by Thickness | SAMAN"
+        fallbackDescription="PUF panel price 2026 by thickness: fixed base rates ₹1,050–₹1,470 per sq mt for 30–80 mm, with 100–200 mm and freezer-grade confirmed at quotation. Supply-only, ex-GST. Get a firm SAMAN quote."
         fallbackCanonical="https://www.samanportable.com/product/puf-panel/puf-panel-price"
         keywords="puf panel price, puf panel cost, puf panel rate, puf sheet price"
         author="SAMAN POS India Private Limited"
@@ -457,7 +455,7 @@ export default function PufPanelPrice() {
 
             <div className="order-1 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <ProductInfoBox
-                h1="PUF Panel Price 2026 — Rate per Sq Ft and Sq Mt by Thickness"
+                h1="PUF Panel Price 2026. Rate per Sq Ft and Sq Mt by Thickness"
                 priceMain="From ₹1,050 / sq mt"
                 priceSubline="30mm base spec · ex-GST · final price at quotation"
                 shortDescription={SHORT_DESCRIPTION}

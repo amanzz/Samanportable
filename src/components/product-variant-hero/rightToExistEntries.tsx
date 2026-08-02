@@ -59,7 +59,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     heading: 'The SAMAN porta cabin range at a glance',
     body: (
       <>
-        Every porta cabin here is newly fabricated at our own works from MS sheet, MS pipe framing and aluminium sections — not a converted shipping container. The reference build carries a 1.2 mm corrugated exterior, a 1.4 mm roof, 8 mm pre-laminated interior lining and an 18 mm Bison floor panel, in nine standard sizes. The range then splits by grade, size band and fit-out; the eight pages below cover each configuration in full.
+        Every porta cabin here is newly fabricated at our own works from MS sheet, MS pipe framing and aluminium sections, not a converted shipping container. The reference build carries a 1.2 mm corrugated exterior, a 1.4 mm roof, 8 mm pre-laminated interior lining and an 18 mm Bison floor panel, in nine standard sizes. The range then splits by grade, size band and fit-out; the eight pages below cover each configuration in full.
       </>
     ),
     comparison: (
@@ -101,7 +101,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     heading: 'Why choose the Mini Porta Cabin',
     body: (
       <>
-        The compact end of our newly fabricated range, covering the four smallest sizes from a one-person duty post to a four-person room. It keeps the value specification — a 0.8–1.0 mm exterior with 6 mm lining — and adds a second window and separate socket circuit once the cabin passes 200 sq ft. Choose it for gate posts, kiosks and small teams; the <Link className={linkClass} href={href('low-cost-porta-cabin')}>Low Cost Porta Cabin</Link> carries the same grade in the larger sizes.
+        The compact end of our newly fabricated range, covering the four smallest sizes from a one-person duty post to a four-person room. It keeps the value specification: a 0.8–1.0 mm exterior with 6 mm lining, and adds a second window and separate socket circuit once the cabin passes 200 sq ft. Choose it for gate posts, kiosks and small teams; the <Link className={linkClass} href={href('low-cost-porta-cabin')}>Low Cost Porta Cabin</Link> carries the same grade in the larger sizes.
       </>
     ),
     comparison: (
@@ -153,7 +153,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     heading: 'Why choose the Porta Cabin with Toilet',
     body: (
       <>
-        A working cabin with its own attached toilet in one newly fabricated unit — one delivery, one base, one drainage connection, no separate sanitary block. The wet zone uses 10–12 mm moisture-tolerant fibre-cement lining, an 18–24 mm cement board deck with waterproof membrane, and 2.5–3 mm anti-skid safety vinyl with sealed joints. Choose it wherever staff work and need facilities on the spot rather than at the far end of a site.
+        A working cabin with its own attached toilet in one newly fabricated unit: one delivery, one base, one drainage connection, no separate sanitary block. The wet zone uses 10–12 mm moisture-tolerant fibre-cement lining, an 18–24 mm cement board deck with waterproof membrane, and 2.5–3 mm anti-skid safety vinyl with sealed joints. Choose it wherever staff work and need facilities on the spot rather than at the far end of a site.
       </>
     ),
     comparison: (
@@ -166,7 +166,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     heading: 'Why choose the Portacabin Office',
     body: (
       <>
-        The office configuration of our newly fabricated cabin — workstations, storage and an optional manager partition. Upgraded lining and flooring sit under office-grade glazing, with power and data drawn to your furniture plan and none of the gypsum ceiling or HPL panelling of the premium build. Choose it for any working office; at ₹1,450 per square foot it sits between the <Link className={linkClass} href={CABIN_HREF}>plain cabin</Link> and the <Link className={linkClass} href={href('luxury-porta-cabin')}>premium build</Link>.
+        The office configuration of our newly fabricated cabin: workstations, storage and an optional manager partition. Upgraded lining and flooring sit under office-grade glazing, with power and data drawn to your furniture plan and none of the gypsum ceiling or HPL panelling of the premium build. Choose it for any working office; at ₹1,450 per square foot it sits between the <Link className={linkClass} href={CABIN_HREF}>plain cabin</Link> and the <Link className={linkClass} href={href('luxury-porta-cabin')}>premium build</Link>.
       </>
     ),
     comparison: (

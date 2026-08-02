@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async () => ({ props: {} });
 // ── Answer-first definition (top, above tabs) — verbatim para 1 of the C16-P1
 //    ROCKWOOL draft answer-first opening block.
 const SHORT_DESCRIPTION =
-  'A rockwool panel is an insulated sandwich panel with a stone wool (mineral wool) core bonded between two pre-painted steel facing sheets. Because stone wool is a non-combustible fibre material, rockwool sandwich panels are the standard choice in India for fire-safe industrial walls, PEB partitions, acoustic enclosures and plant rooms — applications where foam-core panels are not permitted or not preferred.';
+  'A rockwool panel is an insulated sandwich panel with a stone wool (mineral wool) core bonded between two pre-painted steel facing sheets. Because stone wool is a non-combustible fibre material, rockwool sandwich panels are the standard choice in India for fire-safe industrial walls, PEB partitions, acoustic enclosures and plant rooms. Applications where foam-core panels are not permitted or not preferred.';
 
 // ── Commerce gallery — 5 real rockwool photos, 1:1 (subjects/alt/title unique each)
 const GALLERY_IMAGES = [
@@ -85,9 +85,9 @@ const FAQS = [
   { question: 'What is the difference between rockwool and mineral wool?', answer: 'Rockwool is a type of mineral wool made from volcanic rock. In the Indian market the terms rockwool, rock wool, stone wool and mineral wool are used interchangeably for the same panel core.' },
   { question: 'What thicknesses are available in rockwool panels?', answer: 'SAMAN manufactures 30, 40, 50, 60, 70, 80, 90, 100 and 150 mm as standard, with 110, 120, 130, 140 and 200 mm available made-to-order against advance payment.' },
   { question: 'Are rockwool panels fireproof?', answer: 'The stone wool core is non-combustible. The fire rating of the complete panel system is established by test certificate for the exact assembly, which SAMAN confirms at quotation.' },
-  { question: 'Are rockwool panels good for soundproofing?', answer: 'Yes — the fibre core absorbs sound effectively, which is why rockwool panels are the common choice for generator enclosures, compressor rooms and acoustic partitions. Tested values are confirmed at quotation.' },
+  { question: 'Are rockwool panels good for soundproofing?', answer: 'Yes. The fibre core absorbs sound effectively, which is why rockwool panels are the common choice for generator enclosures, compressor rooms and acoustic partitions. Tested values are confirmed at quotation.' },
   { question: 'Can rockwool panels be used for both walls and roofs?', answer: 'Yes. Wall and roof profiles are both supplied. Because rockwool panels are heavier than foam-core panels, support spacing is confirmed during quotation.' },
-  { question: 'Who manufactures rockwool panels in India?', answer: 'SAMAN Portable manufactures rockwool sandwich panels at two factories — Bangalore (Gopasandra) and Greater Noida — supplying projects across India with nearest-factory dispatch.' },
+  { question: 'Who manufactures rockwool panels in India?', answer: 'SAMAN Portable manufactures rockwool sandwich panels at two factories, Bangalore (Gopasandra) and Greater Noida, supplying projects across India with nearest-factory dispatch.' },
   { question: 'What is the difference between rockwool, PUF and PIR panels?', answer: 'Rockwool has a non-combustible fibre core chosen for fire and acoustic performance; PUF and PIR have foam cores chosen for maximum thermal insulation. See the comparison table above, or ask our team to recommend the right core at quotation.' },
   { question: 'What facing sheets are used on rockwool panels?', answer: 'PPGI in 0.35–0.80 mm is standard, with PPGL, stainless steel and aluminium options, and special coatings for coastal, food and pharma projects.' },
   { question: 'How is rockwool panel price decided?', answer: 'By thickness, core density, facing gauge, coating and order quantity. Indicative base prices are listed above; exact pricing is confirmed at quotation.' },
@@ -159,13 +159,13 @@ const Lead = ({ label, children }: { label: string; children: React.ReactNode })
 function DescriptionContent() {
   return (
     <div className="space-y-10">
-      <P>{`SAMAN Portable manufactures rockwool sandwich panels at both of our factories — Gopasandra, Bangalore (South India dispatch) and Greater Noida (North India dispatch) — in standard thicknesses from 30mm to 150mm, with made-to-order thicknesses up to 200mm against advance payment. Panels are supplied for wall and roof applications with tongue-and-groove or cam-lock joints and a choice of facing sheets and coatings.`}</P>
+      <P>{`SAMAN Portable manufactures rockwool sandwich panels at both of our factories, Gopasandra, Bangalore (South India dispatch) and Greater Noida (North India dispatch), in standard thicknesses from 30mm to 150mm, with made-to-order thicknesses up to 200mm against advance payment. Panels are supplied for wall and roof applications with tongue-and-groove or cam-lock joints and a choice of facing sheets and coatings.`}</P>
 
       <JumpNav items={JUMP_ITEMS} />
 
       <section id="what-is" className="space-y-3">
         <H2 id="what-is">What Is a Rockwool Sandwich Panel?</H2>
-        <P>{`A rockwool sandwich panel — also written as rock wool panel or mineral wool panel — is a three-layer building panel. The core is stone wool: molten volcanic rock spun into dense fibres, arranged in lamella strips so the fibres run perpendicular to the panel faces. This fibre orientation gives the panel its compressive strength and keeps the core stable at high temperatures. The core is bonded under pressure between two coated steel sheets, and the panel edges are profiled into an interlocking joint.`}</P>
+        <P>{`A rockwool sandwich panel, also written as rock wool panel or mineral wool panel, is a three-layer building panel. The core is stone wool: molten volcanic rock spun into dense fibres, arranged in lamella strips so the fibres run perpendicular to the panel faces. This fibre orientation gives the panel its compressive strength and keeps the core stable at high temperatures. The core is bonded under pressure between two coated steel sheets, and the panel edges are profiled into an interlocking joint.`}</P>
         <P>{`The result is a single factory-finished component that replaces brickwork, insulation, and cladding in one installation step. Where PUF and PIR panels use foam cores optimised for thermal insulation, the rockwool core is chosen when fire safety and sound absorption lead the specification.`}</P>
         <LongImage
           src="/images/rockwool-panel/rockwool-panel-manufacturer-india-saman.webp"
@@ -176,11 +176,11 @@ function DescriptionContent() {
 
       <section id="why-choose" className="space-y-3">
         <H2 id="why-choose">Why Choose Rockwool Panels?</H2>
-        <Lead label="Non-combustible core.">{`Stone wool is a mineral fibre that does not burn. For fire-conscious buyers — plant rooms, electrical rooms, industrial partitions near hot work — this is the deciding factor over foam-core panels. The fire rating of the complete panel assembly is confirmed through test certificate at the time of quotation.`}</Lead>
+        <Lead label="Non-combustible core.">{`Stone wool is a mineral fibre that does not burn. For fire-conscious buyers, plant rooms, electrical rooms, industrial partitions near hot work, this is the deciding factor over foam-core panels. The fire rating of the complete panel assembly is confirmed through test certificate at the time of quotation.`}</Lead>
         <Lead label="Strong acoustic behaviour.">{`The open fibre structure of stone wool absorbs sound energy instead of reflecting it, which is why rockwool panels are widely used for generator enclosures, compressor rooms and acoustic partitions. Tested acoustic values for a specific panel build are confirmed at quotation.`}</Lead>
         <Lead label="High-temperature stability.">{`Stone wool retains its form at service temperatures far beyond the range of foam cores, making rockwool panels suitable for plant areas with sustained heat exposure.`}</Lead>
         <Lead label="Dimensional stability and durability.">{`The dense lamella core resists sagging and maintains joint integrity over the panel's service life. SAMAN rockwool panels carry a 5–10 year warranty, confirmed at quotation.`}</Lead>
-        <Lead label="One honest caution:">{`rockwool panels are heavier than PUF, PIR or EPS panels of the same thickness. Purlin and girt spacing, lifting method and supporting structure must be checked before ordering — our team verifies this with you at quotation stage.`}</Lead>
+        <Lead label="One honest caution:">{`rockwool panels are heavier than PUF, PIR or EPS panels of the same thickness. Purlin and girt spacing, lifting method and supporting structure must be checked before ordering. Our team verifies this with you at quotation stage.`}</Lead>
         <LongImage
           src="/images/rockwool-panel/rockwool-sandwich-panel-factory-production.webp"
           alt="Rockwool sandwich panel production at SAMAN Portable factory"
@@ -190,11 +190,11 @@ function DescriptionContent() {
 
       <section id="fire" className="space-y-3">
         <H2 id="fire">Fire Performance of Rockwool Panels</H2>
-        <P>{`Stone wool is made from rock melted at very high temperature and spun into fibre — the raw material itself does not burn. This is the fundamental difference between rockwool panels and foam-core panels: the fire behaviour starts at the material level, not from additives.`}</P>
+        <P>{`Stone wool is made from rock melted at very high temperature and spun into fibre, the raw material itself does not burn. This is the fundamental difference between rockwool panels and foam-core panels: the fire behaviour starts at the material level, not from additives.`}</P>
         <P>{`Two things matter when specifying fire performance, and buyers should insist on both being clear in every quotation they compare:`}</P>
         <ol className="list-decimal space-y-2 pl-5 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-          <li><span className="font-semibold text-foreground">Core behaviour</span>{` — stone wool is non-combustible by nature.`}</li>
-          <li><span className="font-semibold text-foreground">Panel-system fire rating</span>{` — the rating of the complete assembly (core + facings + joints + sealants) is established only by a test certificate for that exact build. SAMAN confirms the applicable fire documentation through quotation, datasheet or test certificate, and a third-party/government-authorized inspection certificate is provided at time of sale.`}</li>
+          <li><span className="font-semibold text-foreground">Core behaviour</span>{`, stone wool is non-combustible by nature.`}</li>
+          <li><span className="font-semibold text-foreground">Panel-system fire rating</span>{`. The rating of the complete assembly (core + facings + joints + sealants) is established only by a test certificate for that exact build. SAMAN confirms the applicable fire documentation through quotation, datasheet or test certificate, and a third-party/government-authorized inspection certificate is provided at time of sale.`}</li>
         </ol>
         <P>{`A core-only fire claim without an assembly certificate is not a fire rating. We state this plainly because it is the single most common source of confusion in panel procurement.`}</P>
         <LongImage
@@ -205,9 +205,9 @@ function DescriptionContent() {
       </section>
 
       <section id="acoustic" className="space-y-3">
-        <H2 id="acoustic">Acoustic Performance — Rockwool for Sound Insulation</H2>
+        <H2 id="acoustic">Acoustic Performance: Rockwool for Sound Insulation</H2>
         <P>{`The same fibre structure that resists fire also absorbs sound. Rockwool's dense, non-directional fibres convert sound energy into minute amounts of heat, reducing both airborne noise transmission and reverberation. This makes rockwool sandwich panels the practical choice for generator and compressor enclosures, DG rooms and plant-room partitions where equipment noise must be contained, and for industrial walls where a quieter working environment is required.`}</P>
-        <P>{`Acoustic performance depends on panel thickness, core density and the complete wall build-up. Tested acoustic values for your specific requirement are confirmed at quotation — describe the noise source and target environment in your enquiry and our team will recommend the appropriate panel configuration.`}</P>
+        <P>{`Acoustic performance depends on panel thickness, core density and the complete wall build-up. Tested acoustic values for your specific requirement are confirmed at quotation. Describe the noise source and target environment in your enquiry and our team will recommend the appropriate panel configuration.`}</P>
         <LongImage
           src="/images/rockwool-panel/rockwool-panel-acoustic-enclosure-plant-room.webp"
           alt="Rockwool panels used for acoustic enclosure in a plant room"
@@ -219,7 +219,7 @@ function DescriptionContent() {
         <H2 id="applications">Rockwool Panel Applications</H2>
         <Lead label="Fire-rated and fire-conscious walls.">{`Industrial partitions, plant rooms, electrical and battery rooms, and walls near hot-work zones where a non-combustible core is mandatory or preferred.`}</Lead>
         <p className="text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-          <span className="font-bold text-foreground">PEB and industrial buildings.</span>{` Wall cladding and internal partitions for pre-engineered buildings, warehouses and factories — SAMAN also supplies `}
+          <span className="font-bold text-foreground">PEB and industrial buildings.</span>{` Wall cladding and internal partitions for pre-engineered buildings, warehouses and factories, SAMAN also supplies `}
           <Link href="/prefab-solutions" className="font-semibold text-primary hover:underline">complete PEB structures</Link>
           {`, so panels and structure can be specified together.`}
         </p>
@@ -233,7 +233,7 @@ function DescriptionContent() {
       </section>
 
       <section id="comparison" className="space-y-3">
-        <H2 id="comparison">Rockwool vs PUF vs PIR — Which Panel for Which Job?</H2>
+        <H2 id="comparison">Rockwool vs PUF vs PIR: Which Panel for Which Job?</H2>
         <div className="mb-1.5 flex items-center justify-end gap-1 text-xs text-muted-foreground sm:hidden">
           <MoveHorizontal className="h-3.5 w-3.5" aria-hidden="true" />
           Scroll for more
@@ -265,20 +265,20 @@ function DescriptionContent() {
           <Link href="/product/puf-panel" className="font-semibold text-primary hover:underline">PUF panel</Link>
           {` or `}
           <Link href="/product/pir-panel" className="font-semibold text-primary hover:underline">PIR panel</Link>
-          {` is usually the better fit. Our team will confirm the right core for your project at quotation — many projects combine cores, using rockwool for fire-critical walls and foam-core panels elsewhere.`}
+          {` is usually the better fit. Our team will confirm the right core for your project at quotation, many projects combine cores, using rockwool for fire-critical walls and foam-core panels elsewhere.`}
         </p>
       </section>
 
       <section id="why-saman" className="space-y-3">
         <H2 id="why-saman">Why Buy Rockwool Panels from SAMAN Portable?</H2>
         <p className="text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-          <span className="font-bold text-foreground">Two factories, nationwide dispatch.</span>{` Rockwool panels are manufactured at both Gopasandra, Bangalore and Greater Noida. South and West India orders dispatch from Bangalore; North and East India orders dispatch from Greater Noida — shorter transit, lower freight, faster delivery. Dispatch typically begins within 3–5 business days as per our `}
+          <span className="font-bold text-foreground">Two factories, nationwide dispatch.</span>{` Rockwool panels are manufactured at both Gopasandra, Bangalore and Greater Noida. South and West India orders dispatch from Bangalore; North and East India orders dispatch from Greater Noida: shorter transit, lower freight, faster delivery. Dispatch typically begins within 3–5 business days as per our `}
           <Link href="/delivery-policy" className="font-semibold text-primary hover:underline">published delivery policy</Link>
           {`, with transport confirmed at quotation.`}
         </p>
         <Lead label="Verified manufacturer, not a trader.">{`You buy directly from the production line, with factory visits welcome at either location. Our panels are supplied to leading developers and EPC contractors across India.`}</Lead>
-        <Lead label="Documentation with every sale.">{`Quotation, datasheet or test certificate confirming density, k-value, service temperature and fire rating as applicable — plus third-party/government-authorized inspection certificate at time of sale, invoice with HSN 940690, and warranty terms in writing.`}</Lead>
-        <Lead label="Straight answers.">{`Where a value depends on your exact panel build, we say "confirmed at quotation" — and then we confirm it, in writing, before you pay.`}</Lead>
+        <Lead label="Documentation with every sale.">{`Quotation, datasheet or test certificate confirming density, k-value, service temperature and fire rating as applicable: plus third-party/government-authorized inspection certificate at time of sale, invoice with HSN 940690, and warranty terms in writing.`}</Lead>
+        <Lead label="Straight answers.">{`Where a value depends on your exact panel build, we say "confirmed at quotation": and then we confirm it, in writing, before you pay.`}</Lead>
         <div className="mt-4 rounded-xl border-2 border-primary/25 bg-primary/[0.04] p-3 sm:p-4">
           <p className="mb-2 text-sm font-bold text-foreground">Get Rockwool Panel Quotation</p>
           <ProductZoneCtas variant="strip" />
@@ -301,7 +301,7 @@ function SpecificationsContent() {
         </div>
         <LongImage
           src="/images/rockwool-panel/diagrams/rockwool-panel-fire-behaviour-concept.webp"
-          alt="Rockwool panel fire behaviour diagram — non-combustible stone wool core, system rating by test certificate"
+          alt="Rockwool panel fire behaviour diagram, non-combustible stone wool core, system rating by test certificate"
           title="Rockwool panel fire behaviour diagram"
         />
         <LongImage
@@ -361,7 +361,7 @@ function ShippingContent() {
   return (
     <div className="space-y-4">
       <H2 id="systems">Wall and Roof Systems</H2>
-      <P>{`Rockwool wall panels are installed vertically or horizontally on steel girts with tongue-and-groove or hidden-fix joints, sealed with fire-safe sealants and finished with matching trims and flashings. Rockwool roof panels use overlap joints with weather-side fasteners, EPDM washers and butyl sealing. Because rockwool panels are heavier than foam-core panels, SAMAN confirms purlin/girt spacing and lifting methodology as part of every quotation — this is checked for you, not left to site improvisation.`}</P>
+      <P>{`Rockwool wall panels are installed vertically or horizontally on steel girts with tongue-and-groove or hidden-fix joints, sealed with fire-safe sealants and finished with matching trims and flashings. Rockwool roof panels use overlap joints with weather-side fasteners, EPDM washers and butyl sealing. Because rockwool panels are heavier than foam-core panels, SAMAN confirms purlin/girt spacing and lifting methodology as part of every quotation. This is checked for you, not left to site improvisation.`}</P>
       <P>{`Cut edges and penetrations (doors, ducts, cable trays) are protected and sealed during installation to keep moisture out of the fibre core, and all openings are trimmed with matching accessories supplied against the project BOQ.`}</P>
     </div>
   );
@@ -411,7 +411,7 @@ export default function RockwoolPanelHub() {
 
             <div className="order-2 lg:order-2 lg:col-span-5 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <RockwoolInfoBox
-                h1="Rockwool Panel — Non-Combustible Stone Wool Sandwich Panels"
+                h1="Rockwool Panel, Non-Combustible Stone Wool Sandwich Panels"
                 priceMain="From ₹1,290 / sq mt"
                 priceSubline="30mm base spec · ex-GST · final price at quotation"
                 shortDescription={SHORT_DESCRIPTION}

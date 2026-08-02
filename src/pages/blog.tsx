@@ -51,67 +51,67 @@ type BlogCardPost = {
 const CATEGORY_SEO: Record<string, { title: string; meta: string }> = {
   'case-studies': {
     title: 'Porta Cabin & Prefab Project Case Studies | SAMAN',
-    meta: 'Real project case studies from SAMAN — porta cabins, container offices, prefab labour colonies and industrial sheds delivered across India. Read how we built it.',
+    meta: 'Real project case studies from SAMAN: porta cabins, container offices, prefab labour colonies and industrial sheds delivered across India. Read how we built it.',
   },
   'company-updates': {
     title: 'SAMAN Portable Company News & Updates',
-    meta: 'Latest updates from SAMAN POS India Pvt Ltd — new products, factory news, ISO certifications and prefab industry developments from our Bangalore and Noida factories.',
+    meta: 'Latest updates from SAMAN POS India Pvt Ltd: new products, factory news, ISO certifications and prefab industry developments from our Bangalore and Noida factories.',
   },
   'container-cafe': {
     title: 'Container Cafe Ideas, Designs & Guides | SAMAN',
-    meta: 'Articles on container cafes and coffee kiosks from SAMAN — design ideas, sizes, steel construction details and real project examples for highways, campuses and QSR outlets.',
+    meta: 'Articles on container cafes and coffee kiosks from SAMAN: design ideas, sizes, steel construction details and real project examples for highways, campuses and QSR outlets.',
   },
   'container-offices': {
     title: 'Container Office Articles & Buyer Guides | SAMAN',
-    meta: "Read SAMAN's container office articles — sizes, MS frame specs, price factors, site office uses and delivery details. Written by India's prefab steel structure manufacturer.",
+    meta: "Read SAMAN's container office articles: sizes, MS frame specs, price factors, site office uses and delivery details. Written by India's prefab steel structure manufacturer.",
   },
   'design-customization': {
     title: 'Prefab Design & Customisation Guides | SAMAN Portable',
-    meta: 'Guides on customising SAMAN prefab structures — layouts, cladding options, PUF panel insulation, electrical points, plumbing and colour finishes. Call for your requirement.',
+    meta: 'Guides on customising SAMAN prefab structures: layouts, cladding options, PUF panel insulation, electrical points, plumbing and colour finishes. Call for your requirement.',
   },
   'electronic-city': {
     title: 'Portable Cabins & Site Offices for Electronic City',
-    meta: 'SAMAN articles on portable cabins and prefab site offices for Electronic City, Bangalore — dispatched from our Gopasandra factory. Fast delivery, MS frame construction.',
+    meta: 'SAMAN articles on portable cabins and prefab site offices for Electronic City, Bangalore, dispatched from our Gopasandra factory. Fast delivery, MS frame construction.',
   },
   'industrial-shed': {
     title: 'Industrial Shed & Warehouse Articles | SAMAN Portable',
-    meta: 'Articles on prefab industrial sheds and warehouses from SAMAN — steel frame spans, GI sheet cladding, purlin design, cost factors and project delivery across India.',
+    meta: 'Articles on prefab industrial sheds and warehouses from SAMAN: steel frame spans, GI sheet cladding, purlin design, cost factors and project delivery across India.',
   },
   'industry-news': {
     title: 'Prefab & Modular Construction Industry News | SAMAN',
-    meta: "Stay updated on India's prefab and modular construction industry — material trends, IS code updates, project delivery insights and market news from SAMAN's editorial team.",
+    meta: "Stay updated on India's prefab and modular construction industry. Material trends, IS code updates, project delivery insights and market news from SAMAN's editorial team.",
   },
   'labor-colony': {
     title: 'Labour Colony & Worker Housing Articles | SAMAN',
-    meta: 'Articles on prefab labour colonies from SAMAN — MS hollow section frames, PUF panel rooms, toilet blocks, site planning and fast deployment for construction projects.',
+    meta: 'Articles on prefab labour colonies from SAMAN: MS hollow section frames, PUF panel rooms, toilet blocks, site planning and fast deployment for construction projects.',
   },
   'porta-cabins': {
     title: 'Porta Cabin Articles, Guides & Price Insights | SAMAN',
-    meta: "Read SAMAN's porta cabin articles — buyer guides, size options, MS frame specs, price factors and real project insights from India's ISO-certified prefab manufacturer.",
+    meta: "Read SAMAN's porta cabin articles: buyer guides, size options, MS frame specs, price factors and real project insights from India's ISO-certified prefab manufacturer.",
   },
   'portable-buildings': {
     title: 'Portable Building Articles & Guides | SAMAN Portable',
-    meta: 'Guides on portable and modular buildings from SAMAN — site offices, prefab classrooms, temporary showrooms and custom portable steel structures for Indian B2B buyers.',
+    meta: 'Guides on portable and modular buildings from SAMAN: site offices, prefab classrooms, temporary showrooms and custom portable steel structures for Indian B2B buyers.',
   },
   'prefab-buildings': {
     title: 'Prefab Building Articles & Modular Construction Guides | SAMAN',
     meta: 'SAMAN prefab building articles on factory-built commercial, office and industrial structures, including modular construction methods, cost factors and project planning.',
   },
   'portable-construction': {
-    title: 'Portable Construction Solutions — Articles | SAMAN',
-    meta: 'Articles on portable construction site solutions from SAMAN — site offices, toilet cabins, labour hutments and security cabins dispatched from Bangalore and Greater Noida.',
+    title: 'Portable Construction Solutions: Articles | SAMAN',
+    meta: 'Articles on portable construction site solutions from SAMAN: site offices, toilet cabins, labour hutments and security cabins dispatched from Bangalore and Greater Noida.',
   },
   'prefab-solutions': {
     title: 'Prefab Solutions Articles & Technical Guides | SAMAN',
-    meta: 'Technical articles on SAMAN prefab solutions — steel fabrication methods, sandwich panel systems, anchor bolt erection, weld specs and customisation for B2B buyers.',
+    meta: 'Technical articles on SAMAN prefab solutions: steel fabrication methods, sandwich panel systems, anchor bolt erection, weld specs and customisation for B2B buyers.',
   },
   'tips-guides': {
     title: 'Prefab Buyer Tips & Planning Guides | SAMAN Portable',
-    meta: "Practical tips for buying portable cabins, prefab offices and modular structures in India — size selection, site prep, delivery planning and installation by SAMAN's team.",
+    meta: "Practical tips for buying portable cabins, prefab offices and modular structures in India: size selection, site prep, delivery planning and installation by SAMAN's team.",
   },
   'uncategorized': {
     title: 'Prefab & Portable Cabin Articles | SAMAN Portable',
-    meta: 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd — ISO 9001:2015 certified manufacturer in Bangalore and Greater Noida.',
+    meta: 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd. ISO 9001:2015 certified manufacturer in Bangalore and Greater Noida.',
   },
 };
 
@@ -119,22 +119,22 @@ const CATEGORY_SEO: Record<string, { title: string; meta: string }> = {
 // category filter page so each category page carries unique on-page content
 // (duplicate-content fix). Shown ONLY when ?category= is active.
 const CATEGORY_INTRO: Record<string, string> = {
-  'porta-cabins': "Browse SAMAN's porta cabin articles — written by our manufacturing team in Bangalore. Find buyer guides on MS frame sizes, price factors, customisation options and real project examples from construction sites, factories and campuses across India.",
-  'container-offices': "SAMAN's container office articles cover everything a B2B buyer needs — 10ft to 40ft sizes, MS hollow section frame specs, PUF panel insulation, electrical fitouts, site office applications and delivery timelines from our Greater Noida and Bangalore factories.",
+  'porta-cabins': "Browse SAMAN's porta cabin articles, written by our manufacturing team in Bangalore. Find buyer guides on MS frame sizes, price factors, customisation options and real project examples from construction sites, factories and campuses across India.",
+  'container-offices': "SAMAN's container office articles cover everything a B2B buyer needs: 10ft to 40ft sizes, MS hollow section frame specs, PUF panel insulation, electrical fitouts, site office applications and delivery timelines from our Greater Noida and Bangalore factories.",
   'container-cafe': "SAMAN's container cafe articles cover design ideas, size options, steel fabrication details and real project examples. Whether you need a highway kiosk, campus coffee counter or a multi-unit QSR setup, find practical guidance here from India's prefab steel structure manufacturer.",
-  'industrial-shed': 'Browse articles on prefab industrial sheds and warehouses from SAMAN — IS 2062 steel frame construction, GI sheet and polycarbonate cladding, purlin and girt design, foundation requirements and project cost factors for factories, storage yards and logistics centres across India.',
-  'labor-colony': "SAMAN's labour colony articles cover prefab worker housing design — MS hollow section frame rooms, PUF panel insulation, attached toilet blocks, common kitchen units and site layout planning. Find guidance on fast deployment for construction projects, infrastructure sites and industrial campuses.",
-  'design-customization': "SAMAN's design and customisation articles help you plan the right prefab structure for your site. Explore layout options, cladding choices, PUF and cement board panels, electrical point configurations, plumbing fitouts and colour finishes — all customised to your requirement and dispatched from our Bangalore or Greater Noida factory.",
-  'prefab-solutions': "Technical articles on SAMAN's prefab solutions — covering MS frame fabrication, sandwich panel and PUF insulation systems, anchor bolt and base plate erection, weld quality standards and customisation options for Indian B2B buyers across construction, manufacturing and infrastructure sectors.",
-  'portable-buildings': "SAMAN's portable building articles cover modular steel structures for a wide range of uses — construction site offices, prefab classrooms, temporary showrooms, portable health centres and custom buildings. Find size guides, material specs and deployment advice for Indian B2B buyers.",
+  'industrial-shed': 'Browse articles on prefab industrial sheds and warehouses from SAMAN. IS 2062 steel frame construction, GI sheet and polycarbonate cladding, purlin and girt design, foundation requirements and project cost factors for factories, storage yards and logistics centres across India.',
+  'labor-colony': "SAMAN's labour colony articles cover prefab worker housing design: MS hollow section frame rooms, PUF panel insulation, attached toilet blocks, common kitchen units and site layout planning. Find guidance on fast deployment for construction projects, infrastructure sites and industrial campuses.",
+  'design-customization': "SAMAN's design and customisation articles help you plan the right prefab structure for your site. Explore layout options, cladding choices, PUF and cement board panels, electrical point configurations, plumbing fitouts and colour finishes, all customised to your requirement and dispatched from our Bangalore or Greater Noida factory.",
+  'prefab-solutions': "Technical articles on SAMAN's prefab solutions: covering MS frame fabrication, sandwich panel and PUF insulation systems, anchor bolt and base plate erection, weld quality standards and customisation options for Indian B2B buyers across construction, manufacturing and infrastructure sectors.",
+  'portable-buildings': "SAMAN's portable building articles cover modular steel structures for a wide range of uses: construction site offices, prefab classrooms, temporary showrooms, portable health centres and custom buildings. Find size guides, material specs and deployment advice for Indian B2B buyers.",
   'prefab-buildings': "Browse SAMAN's prefab building articles for practical guidance on factory-built offices, commercial buildings, modular workspaces and industrial prefab structures. These posts focus on construction methods, planning tradeoffs and buyer questions that sit alongside the main prefab building product range.",
-  'portable-construction': "Find articles on SAMAN's full range of portable construction site solutions — MS frame site offices, portable toilet cabins, prefab labour hutments and steel security cabins. All units dispatched from our Bangalore and Greater Noida factories with 3–5 day transit and ₹3,000 standard delivery.",
-  'industry-news': "Stay current with India's prefab and modular construction industry — steel material trends, IS code developments, government infrastructure project updates and market insights. Articles written and curated by SAMAN's team with 15+ years in prefab steel structure manufacturing.",
-  'tips-guides': "Practical buying guides from SAMAN's manufacturing team — how to select the right size porta cabin, prepare your site for delivery, plan electrical and plumbing fitouts, understand price factors and get your prefab structure installed correctly the first time.",
-  'case-studies': 'Real project case studies from SAMAN — see how we designed, fabricated and delivered porta cabins, container offices, prefab labour colonies and industrial sheds for clients across India. Each case study covers the brief, the build specs and the delivery outcome.',
-  'company-updates': 'Latest news from SAMAN POS India Pvt Ltd — new product launches, factory capacity updates, ISO certification milestones and company announcements from our Bangalore (560099) and Greater Noida (201308) manufacturing units.',
-  'electronic-city': "Articles on portable cabins and prefab site offices for Electronic City, Bangalore — covering MS frame construction, sizes, price factors and delivery. All units dispatched from SAMAN's Gopasandra factory in Bangalore Urban (560099) with fast turnaround for South Bangalore sites.",
-  'uncategorized': 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd — ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified manufacturer with factories in Bangalore and Greater Noida serving buyers across India.',
+  'portable-construction': "Find articles on SAMAN's full range of portable construction site solutions: MS frame site offices, portable toilet cabins, prefab labour hutments and steel security cabins. All units dispatched from our Bangalore and Greater Noida factories with 3–5 day transit and ₹3,000 standard delivery.",
+  'industry-news': "Stay current with India's prefab and modular construction industry. Steel material trends, IS code developments, government infrastructure project updates and market insights. Articles written and curated by SAMAN's team with 15+ years in prefab steel structure manufacturing.",
+  'tips-guides': "Practical buying guides from SAMAN's manufacturing team: how to select the right size porta cabin, prepare your site for delivery, plan electrical and plumbing fitouts, understand price factors and get your prefab structure installed correctly the first time.",
+  'case-studies': 'Real project case studies from SAMAN: see how we designed, fabricated and delivered porta cabins, container offices, prefab labour colonies and industrial sheds for clients across India. Each case study covers the brief, the build specs and the delivery outcome.',
+  'company-updates': 'Latest news from SAMAN POS India Pvt Ltd: new product launches, factory capacity updates, ISO certification milestones and company announcements from our Bangalore (560099) and Greater Noida (201308) manufacturing units.',
+  'electronic-city': "Articles on portable cabins and prefab site offices for Electronic City, Bangalore: covering MS frame construction, sizes, price factors and delivery. All units dispatched from SAMAN's Gopasandra factory in Bangalore Urban (560099) with fast turnaround for South Bangalore sites.",
+  'uncategorized': 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd. ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified manufacturer with factories in Bangalore and Greater Noida serving buyers across India.',
 };
 
 function postMatchesCategory(post: BlogPost, categorySlug: string): boolean {

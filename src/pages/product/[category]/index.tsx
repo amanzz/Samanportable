@@ -357,7 +357,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // handled above (product === null → notFound) and only happens when the backend
     // responded successfully. Only the error message is logged (no request URL / keys).
     console.error(
-      'Product (category index) SSR failed — returning 5xx, not 404:',
+      'Product (category index) SSR failed, returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render product');

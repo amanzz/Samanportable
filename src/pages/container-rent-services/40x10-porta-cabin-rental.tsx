@@ -133,7 +133,7 @@ const PortaCabin40x10Rental = () => {
                     <strong>Last updated:</strong> January 21, 2026
                   </p>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    Our 40×10 ft porta cabins are designed for maximum comfort, durability, and function — ideal for 8–10-person site offices, executive cabins, or temporary accommodation units. Built with high-strength steel frames, PUF-insulated panels, and pre-wired electrical systems, these units provide a ready-to-use workspace within hours.
+                    Our 40×10 ft porta cabins are designed for maximum comfort, durability, and function: ideal for 8–10-person site offices, executive cabins, or temporary accommodation units. Built with high-strength steel frames, PUF-insulated panels, and pre-wired electrical systems, these units provide a ready-to-use workspace within hours.
                   </p>
 
                   <div className="space-y-4 mb-8">
@@ -329,7 +329,7 @@ const PortaCabin40x10Rental = () => {
                     <div className="relative z-10">
                       <h3 className="text-2xl md:text-3xl font-bold mb-4">Looking to Buy Instead of Rent?</h3>
                       <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg">
-                        If you’re planning a long-term setup or wish to own your cabin outright, explore our range of porta cabins for sale — fully customizable and built for permanence.
+                        If you’re planning a long-term setup or wish to own your cabin outright, explore our range of porta cabins for sale, fully customizable and built for permanence.
                       </p>
                       <Link href="/contact">
                         <Button className="bg-white text-[#0A3D2A] hover:bg-gray-100 border-none font-bold px-8 py-6 text-lg rounded-xl transition-all hover:scale-105 shadow-lg">
@@ -457,7 +457,7 @@ const PortaCabin40x10Rental = () => {
                 {[
                   { q: "1. How much does it cost to rent a 40×10 porta cabin?", a: "Rental rates range from ₹35,000 to ₹45,000 per month, depending on customization, duration, and delivery location. Short-term daily and weekly plans are available upon request." },
                   { q: "2. What is the minimum rental period?", a: "Our standard minimum rental period is 6 months, with options for quarterly and annual contracts." },
-                  { q: "3. Can I customize the interior layout?", a: "Yes — choose from partition walls, furniture sets, lighting styles, and storage solutions to create your ideal workspace." },
+                  { q: "3. Can I customize the interior layout?", a: "Yes: choose from partition walls, furniture sets, lighting styles, and storage solutions to create your ideal workspace." },
                   { q: "4. How long does installation and removal take?", a: "Our team completes installation and dismantling within 4–6 hours using ground placement methods that avoid crane costs." },
                   { q: "5. Do you offer daily, weekly, and monthly rental plans?", a: "Absolutely. Flexible plans are available to fit your project schedule and budget." },
                   { q: "6. Are your porta cabins fire-safe and durable?", a: "Yes. All units are manufactured using quality-tested steel and industry-standard processes, with fire safety and seismic Zone III compliance measures built in." },

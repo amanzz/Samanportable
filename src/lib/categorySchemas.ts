@@ -9,8 +9,8 @@ export const categorySchemas: Record<string, any> = {
         "@type": "CollectionPage",
         "@id": "https://www.samanportable.com/product-category/container-cafe#collectionpage",
         "url": "https://www.samanportable.com/product-category/container-cafe",
-        "name": "Container Cafe Designs, Types & Price List â€” India",
-        "description": "SAMAN's full container cafe range: 15 designs from â‚¹2,15,000 to â‚¹33,25,000. Custom, kitchen-ready, built in about 15 days across Bangalore and Delhi NCR.",
+        "name": "Container Cafe Designs, Types & Price List: India",
+        "description": "SAMAN's full container cafe range: 15 designs from ₹2,15,000 to ₹33,25,000. Custom, kitchen-ready, built in about 15 days across Bangalore and Delhi NCR.",
         "inLanguage": "en-IN",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
@@ -151,10 +151,10 @@ export const categorySchemas: Record<string, any> = {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Why do container cafe prices range from â‚¹2 lakh to â‚¹33 lakh?",
+            "name": "Why do container cafe prices range from ₹2 lakh to ₹33 lakh?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Price tracks the format and the build. A compact coffee kiosk needs one small container and a single service window, so it starts near â‚¹2,15,000. A glass-faÃ§ade flagship or a multi-unit modular restaurant uses more steel, a larger kitchen and full interior fit-out, which is why the range tops out around â‚¹33,25,000."
+              "text": "Price tracks the format and the build. A compact coffee kiosk needs one small container and a single service window, so it starts near ₹2,15,000. A glass-façade flagship or a multi-unit modular restaurant uses more steel, a larger kitchen and full interior fit-out, which is why the range tops out around ₹33,25,000."
             }
           },
           {
@@ -170,7 +170,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "How do I start a container cafe, and how soon can it open?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pick the format that fits your concept and budget, and we build and hand it over kitchen-ready in about 15 days from order confirmation. You then install equipment, finish branding and complete local licensing before you start serving â€” far quicker than fitting out a conventional cafÃ© space."
+              "text": "Pick the format that fits your concept and budget, and we build and hand it over kitchen-ready in about 15 days from order confirmation. You then install equipment, finish branding and complete local licensing before you start serving, far quicker than fitting out a conventional café space."
             }
           }
         ]
@@ -185,7 +185,7 @@ export const categorySchemas: Record<string, any> = {
         "@id": "https://www.samanportable.com/product-category/container-houses#collection",
         "url": "https://www.samanportable.com/product-category/container-houses",
         "name": "Container House Types & Price Range in India",
-        "description": "Compare all container house types and prices at SAMAN â€” from about â‚¹5 lakh to â‚¹56 lakh â€” and match one to your budget.",
+        "description": "Compare all container house types and prices at SAMAN, from about ₹5 lakh to ₹56 lakh, and match one to your budget.",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
         },
@@ -315,7 +315,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "How much does a container house cost?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SAMAN's container houses start at about â‚¹5 lakh for the most compact single-container unit and reach around â‚¹56 lakh for a large multi-container family home. What you pay depends on size, interior fit-out and how many containers are joined or stacked."
+              "text": "SAMAN's container houses start at about ₹5 lakh for the most compact single-container unit and reach around ₹56 lakh for a large multi-container family home. What you pay depends on size, interior fit-out and how many containers are joined or stacked."
             }
           },
           {
@@ -331,7 +331,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "What size container do you need for a 3-bedroom house?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A 3-bedroom container house usually needs two or more 40 ft containers joined or stacked. Our larger multi-container homes are built for this â€” share your layout and we'll size the build to your bedroom and plot requirements."
+              "text": "A 3-bedroom container house usually needs two or more 40 ft containers joined or stacked. Our larger multi-container homes are built for this: share your layout and we'll size the build to your bedroom and plot requirements."
             }
           },
           {
@@ -339,7 +339,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "What's the difference between a prefabricated container home and a prefabricated container house?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Both are factory-built before delivery. The Prefabricated Container Home leans to a finished, multi-room residential fit-out, while the Prefabricated Container House is the more compact, ready-to-place build at a lower entry price â€” pick by how much fitted space you need."
+              "text": "Both are factory-built before delivery. The Prefabricated Container Home leans to a finished, multi-room residential fit-out, while the Prefabricated Container House is the more compact, ready-to-place build at a lower entry price: pick by how much fitted space you need."
             }
           }
         ]
@@ -353,8 +353,8 @@ export const categorySchemas: Record<string, any> = {
         "@type": "CollectionPage",
         "@id": "https://www.samanportable.com/product-category/container-offices#collectionpage",
         "url": "https://www.samanportable.com/product-category/container-offices",
-        "name": "Container Office Types & Full Range â€” For Sale Across India",
-        "description": "SAMAN's full container office range â€” 15 ISO-grade types for sale across India from â‚¹2,15,000. Compare sizes, prices and use-cases, then pick the right unit.",
+        "name": "Container Office Types & Full Range: For Sale Across India",
+        "description": "SAMAN's full container office range: 15 ISO-grade types for sale across India from ₹2,15,000. Compare sizes, prices and use-cases, then pick the right unit.",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
         },
@@ -499,7 +499,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "How is a container office different from a portable office cabin?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A container office is built to ISO shipping-container form factor from heavy steel â€” a shell that stacks, takes crane lifting and handles rough industrial sites. A portable office cabin is a lighter MS-framed unit suited to softer interiors and flat ground. Choose a container office for stacking, security and industrial durability."
+              "text": "A container office is built to ISO shipping-container form factor from heavy steel: a shell that stacks, takes crane lifting and handles rough industrial sites. A portable office cabin is a lighter MS-framed unit suited to softer interiors and flat ground. Choose a container office for stacking, security and industrial durability."
             }
           },
           {
@@ -507,7 +507,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Can container offices be stacked or joined into a larger office?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. ISO corner castings let most units stack two to three high, and modular units connect side-by-side to form a larger floor plate â€” the main advantage of the container form factor over a single cabin."
+              "text": "Yes. ISO corner castings let most units stack two to three high, and modular units connect side-by-side to form a larger floor plate. The main advantage of the container form factor over a single cabin."
             }
           },
           {
@@ -644,7 +644,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "How much does an industrial shed cost per square foot?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "There is no single rate â€” covered-area cost moves with span, eave height and cladding. A plain GI-sheeted storage span costs less per square foot than an insulated sandwich-panel production shed. Send your footprint and use for a figure tied to your plot."
+              "text": "There is no single rate. Covered-area cost moves with span, eave height and cladding. A plain GI-sheeted storage span costs less per square foot than an insulated sandwich-panel production shed. Send your footprint and use for a figure tied to your plot."
             }
           },
           {
@@ -673,7 +673,7 @@ export const categorySchemas: Record<string, any> = {
           },
           {
             "@type": "Question",
-            "name": "Industrial shed, PEB construction or prefab building â€” which do I need?",
+            "name": "Industrial shed, PEB construction or prefab building: which do I need?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "An industrial shed is a single-span steel structure bought as a finished product. A large engineered building designed, supplied and erected as a turnkey project is PEB construction. A finished, multi-room building is a prefab building. For a standalone steel shed, this range is the right place."
@@ -684,7 +684,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Do you deliver and install beyond Bangalore and Delhi NCR?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes â€” both plants serve their surrounding regions for delivery and erection, and outstation supply is quoted on your pincode."
+              "text": "Yes. Both plants serve their surrounding regions for delivery and erection, and outstation supply is quoted on your pincode."
             }
           }
         ]
@@ -698,8 +698,8 @@ export const categorySchemas: Record<string, any> = {
         "@type": "CollectionPage",
         "@id": "https://www.samanportable.com/product-category/labor-colony/#collection",
         "url": "https://www.samanportable.com/product-category/labor-colony/",
-        "name": "Labor Colony Products â€” Worker Housing",
-        "description": "SAMAN's range of 11 worker-housing configurations â€” cottages, sheds, hutments, camps and full labor colonies, from â‚¹12,90,000.",
+        "name": "Labor Colony Products: Worker Housing",
+        "description": "SAMAN's range of 11 worker-housing configurations: cottages, sheds, hutments, camps and full labor colonies, from ₹12,90,000.",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
         },
@@ -809,7 +809,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "How much does worker housing cost in India?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SAMAN's worker-housing units run from â‚¹12,90,000 for an entry cottage to about â‚¹46,95,000 for a complete colony with shared toilet and kitchen blocks. Where you land in that band depends on crew size, the number of blocks, panel specification and fit-out."
+              "text": "SAMAN's worker-housing units run from ₹12,90,000 for an entry cottage to about ₹46,95,000 for a complete colony with shared toilet and kitchen blocks. Where you land in that band depends on crew size, the number of blocks, panel specification and fit-out."
             }
           },
           {
@@ -817,7 +817,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Does it come ready-to-move-in with toilets, kitchen, electrical and bunk beds?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The higher tiers â€” accommodations and full colony â€” are supplied as fitted setups with attached toilet and kitchen blocks, electrical fittings and dormitory-style sleeping arrangements. Entry sheds and shelters are simpler by design to keep cost per head low; fit-out can be added to suit the site."
+              "text": "The higher tiers, accommodations and full colony, are supplied as fitted setups with attached toilet and kitchen blocks, electrical fittings and dormitory-style sleeping arrangements. Entry sheds and shelters are simpler by design to keep cost per head low; fit-out can be added to suit the site."
             }
           },
           {
@@ -978,7 +978,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "What is the cost of PEB construction?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Across SAMAN's range it runs from about â‚¹19.25 lakh for an entry steel building to â‚¹53.45 lakh for a large or multi-storey structure. The exact figure is set by span, eave height, cladding grade, any mezzanine and site location, and is quoted against your drawing â€” erection included."
+              "text": "Across SAMAN's range it runs from about ₹19.25 lakh for an entry steel building to ₹53.45 lakh for a large or multi-storey structure. The exact figure is set by span, eave height, cladding grade, any mezzanine and site location, and is quoted against your drawing, erection included."
             }
           },
           {
@@ -991,7 +991,7 @@ export const categorySchemas: Record<string, any> = {
           },
           {
             "@type": "Question",
-            "name": "What can SAMAN build â€” warehouses, factory sheds or both?",
+            "name": "What can SAMAN build: warehouses, factory sheds or both?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Both, plus godowns, workshops, logistics buildings, industrial plants and multi-storey steel structures. The clear-span frame is sized to the use, so the same turnkey process covers a single-bay shed and a wide-span warehouse alike."
@@ -1018,7 +1018,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Is a PEB construction the same as an industrial shed?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "An industrial shed is one of the things a PEB construction builds â€” a single-use steel shed. PEB construction is the broader engineered-building service that also covers wide-span warehouses, factory blocks and multi-storey structures. If you specifically need a standalone shed, that's covered by SAMAN's industrial shed range."
+              "text": "An industrial shed is one of the things a PEB construction builds, a single-use steel shed. PEB construction is the broader engineered-building service that also covers wide-span warehouses, factory blocks and multi-storey structures. If you specifically need a standalone shed, that's covered by SAMAN's industrial shed range."
             }
           }
         ]
@@ -1033,7 +1033,7 @@ export const categorySchemas: Record<string, any> = {
         "@id": "https://www.samanportable.com/product-category/porta-cabins/#collectionpage",
         "url": "https://www.samanportable.com/product-category/porta-cabins/",
         "name": "Porta Cabin Types & Price List in India",
-        "description": "Compare every SAMAN porta cabin type by use and price â€” from mini units to multi-room offices. Custom sizes, two factories in Bangalore and Delhi NCR.",
+        "description": "Compare every SAMAN porta cabin type by use and price: from mini units to multi-room offices. Custom sizes, two factories in Bangalore and Delhi NCR.",
         "inLanguage": "en-IN",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
@@ -1174,7 +1174,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "What porta cabin types does SAMAN make, and which fits my project?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SAMAN builds budget, mini, small, site-office, professional-office, shop, sanitation, steel, MS, prefabricated and luxury porta cabins. Match the type to your job â€” a single-person post needs a mini unit, a manager needs a site office, a retailer needs a shop cabin â€” then refine by budget and footprint."
+              "text": "SAMAN builds budget, mini, small, site-office, professional-office, shop, sanitation, steel, MS, prefabricated and luxury porta cabins. Match the type to your job, a single-person post needs a mini unit, a manager needs a site office, a retailer needs a shop cabin, then refine by budget and footprint."
             }
           },
           {
@@ -1182,7 +1182,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "What is the price range across SAMAN's porta cabin types?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Starting prices run from â‚¹1,25,000 for a mini porta cabin to â‚¹5,35,000 for a luxury unit. The figure you pay depends on size, frame and panel grade, and interior fit-out; each product page lists its own starting price and exact dimensions."
+              "text": "Starting prices run from ₹1,25,000 for a mini porta cabin to ₹5,35,000 for a luxury unit. The figure you pay depends on size, frame and panel grade, and interior fit-out; each product page lists its own starting price and exact dimensions."
             }
           },
           {
@@ -1190,7 +1190,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Should I choose a standard porta cabin type or a custom configuration?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Start with the standard type closest to your use â€” it ships faster and costs less. Move to a custom configuration only when your size, layout or finish genuinely differs from the standard unit; SAMAN can adjust dimensions and fit-out on any cabin in the range."
+              "text": "Start with the standard type closest to your use, it ships faster and costs less. Move to a custom configuration only when your size, layout or finish genuinely differs from the standard unit; SAMAN can adjust dimensions and fit-out on any cabin in the range."
             }
           },
           {
@@ -1212,8 +1212,8 @@ export const categorySchemas: Record<string, any> = {
         "@type": "CollectionPage",
         "@id": "https://www.samanportable.com/product-category/portable-cabin/#collectionpage",
         "url": "https://www.samanportable.com/product-category/portable-cabin/",
-        "name": "Portable Cabin Products â€” All Types, Sizes & Prices",
-        "description": "Compare SAMAN's 11 portable cabin products â€” from a â‚¹1,35,000 small cabin to multi-room buildings. Match type, size and price to your use, then shortlist.",
+        "name": "Portable Cabin Products: All Types, Sizes & Prices",
+        "description": "Compare SAMAN's 11 portable cabin products: from a ₹1,35,000 small cabin to multi-room buildings. Match type, size and price to your use, then shortlist.",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
         },
@@ -1336,7 +1336,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "What's the difference between a portable cabin and a portable cabin building?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A portable cabin is a single relocatable unit for one main use. A portable cabin building is a larger multi-room layout for several functions or a bigger team â€” it sits at the top of the range and is priced and configured as a full building."
+              "text": "A portable cabin is a single relocatable unit for one main use. A portable cabin building is a larger multi-room layout for several functions or a bigger team. It sits at the top of the range and is priced and configured as a full building."
             }
           },
           {
@@ -1352,7 +1352,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Is the starting price the final price?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The 'from' figure is the base starting price for each unit. The final quote depends on the size you choose, panel grade, interior fit-out and any plumbing or electrical additions â€” each product page lists its own starting point."
+              "text": "The 'from' figure is the base starting price for each unit. The final quote depends on the size you choose, panel grade, interior fit-out and any plumbing or electrical additions, each product page lists its own starting point."
             }
           }
         ]
@@ -1366,8 +1366,8 @@ export const categorySchemas: Record<string, any> = {
         "@type": "CollectionPage",
         "@id": "https://www.samanportable.com/product-category/portable-office#collectionpage",
         "url": "https://www.samanportable.com/product-category/portable-office",
-        "name": "Portable Office Cabin Types & Price List â€” Full Range in India",
-        "description": "SAMAN builds 15 portable office cabin types, from â‚¹1,85,000 compact units to â‚¹43,55,000 multi-room blocks. Compare sizes, prices and choose the right unit.",
+        "name": "Portable Office Cabin Types & Price List: Full Range in India",
+        "description": "SAMAN builds 15 portable office cabin types, from ₹1,85,000 compact units to ₹43,55,000 multi-room blocks. Compare sizes, prices and choose the right unit.",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
         },
@@ -1491,7 +1491,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "How much does a portable office cost, and is the starting price the final price?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The range runs from â‚¹1,85,000 to â‚¹43,55,000. The 'from' figure is the base starting price; the final quote depends on size, panel grade, fit-out and any plumbing or electrical additions. Each product page lists its own starting point."
+              "text": "The range runs from ₹1,85,000 to ₹43,55,000. The 'from' figure is the base starting price; the final quote depends on size, panel grade, fit-out and any plumbing or electrical additions. Each product page lists its own starting point."
             }
           },
           {
@@ -1513,7 +1513,7 @@ export const categorySchemas: Record<string, any> = {
         "@type": "CollectionPage",
         "@id": "https://www.samanportable.com/product-category/portable-toilet/#collectionpage",
         "url": "https://www.samanportable.com/product-category/portable-toilet/",
-        "name": "Portable Toilet Manufacturer in India â€” SAMAN's Full Range",
+        "name": "Portable Toilet Manufacturer in India: SAMAN's Full Range",
         "description": "SAMAN manufactures seven standalone portable toilet variants in India, from Rs 65,000 to Rs 1,05,000. FRP, HDPE and MS units with Indian or Western pan, built to BOCW Act site-sanitation requirements, with pan-India delivery in 7 to 15 days.",
         "image": "https://www.samanportable.com/wp-content/uploads/portable-toilets-factory-gate-worker-sanitation.jpg",
         "isPartOf": {
@@ -1632,7 +1632,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Do you deliver portable toilets pan-India, and how long does it take?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. SAMAN ships from two factories â€” Bangalore for South and West India, Greater Noida for North and East â€” which keeps freight cost and delivery time down. Standard lead time is 7 to 15 days depending on variant and site location."
+              "text": "Yes. SAMAN ships from two factories, Bangalore for South and West India, Greater Noida for North and East, which keeps freight cost and delivery time down. Standard lead time is 7 to 15 days depending on variant and site location."
             }
           },
           {
@@ -1655,7 +1655,7 @@ export const categorySchemas: Record<string, any> = {
         "@id": "https://www.samanportable.com/product-category/pre-engineered-buildings/#collectionpage",
         "url": "https://www.samanportable.com/product-category/pre-engineered-buildings/",
         "name": "Pre-Engineered Building Supplier & Manufacturer in India",
-        "description": "SAMAN is a pre-engineered building manufacturer and supplier in India. Compare 8 quality-tested steel building configurations from â‚¹16,25,000 to â‚¹38,55,000.",
+        "description": "SAMAN is a pre-engineered building manufacturer and supplier in India. Compare 8 quality-tested steel building configurations from ₹16,25,000 to ₹38,55,000.",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
         },
@@ -1756,7 +1756,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "What is the cost of a pre-engineered building in India?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "From SAMAN, â‚¹16,25,000 to â‚¹38,55,000 depending on configuration. A factory-fabricated metal building is the entry point; a wide-span steel building is mid-range; the flagship structure is the top. The final figure is set by clear span, eave height, cladding grade and openings â€” each product page lists its own starting price."
+              "text": "From SAMAN, ₹16,25,000 to ₹38,55,000 depending on configuration. A factory-fabricated metal building is the entry point; a wide-span steel building is mid-range; the flagship structure is the top. The final figure is set by clear span, eave height, cladding grade and openings, each product page lists its own starting price."
             }
           },
           {
@@ -1764,15 +1764,15 @@ export const categorySchemas: Record<string, any> = {
             "name": "Do you supply the building, or construct and erect it on site?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "This range is supply â€” we manufacture the building from quality-tested steel and deliver it to your site as factory-fabricated, ready-to-bolt components for assembly. If you need the structure designed, supplied and erected under one turnkey contract, that is SAMAN's separate PEB construction service."
+              "text": "This range is supply. We manufacture the building from quality-tested steel and deliver it to your site as factory-fabricated, ready-to-bolt components for assembly. If you need the structure designed, supplied and erected under one turnkey contract, that is SAMAN's separate PEB construction service."
             }
           },
           {
             "@type": "Question",
-            "name": "Which configuration suits a warehouse, a factory or a multi-bay structure â€” and what's the difference between steel and metal builds?",
+            "name": "Which configuration suits a warehouse, a factory or a multi-bay structure: and what's the difference between steel and metal builds?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Wide-span warehouses and logistics halls suit a wide-span steel or engineered metal building; standard factories and workshops fit a standard pre-engineered or steel building; the largest multi-bay footprints take the flagship structure. Metal and steel builds use the same engineered-frame principle â€” heavier steel sections carry longer clear spans and higher roof loads."
+              "text": "Wide-span warehouses and logistics halls suit a wide-span steel or engineered metal building; standard factories and workshops fit a standard pre-engineered or steel building; the largest multi-bay footprints take the flagship structure. Metal and steel builds use the same engineered-frame principle, heavier steel sections carry longer clear spans and higher roof loads."
             }
           },
           {
@@ -1780,7 +1780,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Are SAMAN's pre-engineered buildings quality-tested, and how are they delivered?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes â€” frames are fabricated from quality-tested steel to IS 800 and IS 875 design standards, then delivered Pan-India as ready-to-bolt components from our Bangalore and Greater Noida units."
+              "text": "Yes. Frames are fabricated from quality-tested steel to IS 800 and IS 875 design standards, then delivered Pan-India as ready-to-bolt components from our Bangalore and Greater Noida units."
             }
           }
         ]
@@ -1937,7 +1937,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "What sizes of prefab buildings can SAMAN manufacture?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our standard configurations span 300 sq ft up to 3,240 sq ft as listed in the range above. Beyond standard, we manufacture custom prefab buildings up to and above 8,000 sq ft on project briefs â€” for example, multi-bay industrial structures, two and three-storey office blocks, and institutional buildings combining office, classroom, and utility spaces in one structure. Smaller requirements that do not need a full prefab building structure are usually served from our portable office cabin range instead."
+              "text": "Our standard configurations span 300 sq ft up to 3,240 sq ft as listed in the range above. Beyond standard, we manufacture custom prefab buildings up to and above 8,000 sq ft on project briefs: for example, multi-bay industrial structures, two and three-storey office blocks, and institutional buildings combining office, classroom, and utility spaces in one structure. Smaller requirements that do not need a full prefab building structure are usually served from our portable office cabin range instead."
             }
           },
           {
@@ -1945,7 +1945,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Where are SAMAN's prefab buildings manufactured, and where can they be delivered?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Every prefab building is manufactured at one of our two facilities â€” Gopasandra (Bangalore) for South and West India dispatch, and Jalpura (Greater Noida) for North and East India dispatch. Pan-India delivery is standard. Site location influences logistics cost only, not lead time for fabrication. We have installed prefab buildings on projects across more than 20 states."
+              "text": "Every prefab building is manufactured at one of our two facilities: Gopasandra (Bangalore) for South and West India dispatch, and Jalpura (Greater Noida) for North and East India dispatch. Pan-India delivery is standard. Site location influences logistics cost only, not lead time for fabrication. We have installed prefab buildings on projects across more than 20 states."
             }
           },
           {
@@ -1953,7 +1953,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Does SAMAN offer custom prefab building designs, or only the standard models above?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The 10 products in the range above are configured starting points â€” every one is customisable on dimensions, internal partition layout, exterior finish, glazing, and fit-out specification. About 70% of our project orders involve customisation beyond the standard configuration. Share what your project actually needs and we respond with a preliminary floor plan, structural brief, and itemised cost estimate within 24 hours."
+              "text": "The 10 products in the range above are configured starting points: every one is customisable on dimensions, internal partition layout, exterior finish, glazing, and fit-out specification. About 70% of our project orders involve customisation beyond the standard configuration. Share what your project actually needs and we respond with a preliminary floor plan, structural brief, and itemised cost estimate within 24 hours."
             }
           }
         ]
@@ -1968,7 +1968,7 @@ export const categorySchemas: Record<string, any> = {
         "@id": "https://www.samanportable.com/product-category/prefabricated-houses#webpage",
         "url": "https://www.samanportable.com/product-category/prefabricated-houses",
         "name": "Prefabricated House Manufacturer in India",
-        "description": "SAMAN's prefabricated house range â€” factory-built homes and site units, delivered whole. Compare the range and get a quote.",
+        "description": "SAMAN's prefabricated house range: factory-built homes and site units, delivered whole. Compare the range and get a quote.",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
         },
@@ -2061,7 +2061,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Which prefab unit suits a home versus a construction site?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Homes â€” the full prefabricated home, porta-cabin house and cabin-style house â€” are finished for year-round living. Site units â€” the SAMAN office cabin, panel site office and the two bunkhouses â€” are built for fast deployment and reuse across projects."
+              "text": "Homes, the full prefabricated home, porta-cabin house and cabin-style house, are finished for year-round living. Site units, the SAMAN office cabin, panel site office and the two bunkhouses, are built for fast deployment and reuse across projects."
             }
           },
           {
@@ -2069,7 +2069,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "What is SAMAN's price range for prefabricated houses?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "From â‚¹2,15,000 for a panel site office to â‚¹16,25,000 for a full residential home, with site offices and bunkhouses between â‚¹2.15 and â‚¹4.55 lakh. These are starting prices; size and customisation move the final figure."
+              "text": "From ₹2,15,000 for a panel site office to ₹16,25,000 for a full residential home, with site offices and bunkhouses between ₹2.15 and ₹4.55 lakh. These are starting prices; size and customisation move the final figure."
             }
           },
           {
@@ -2108,7 +2108,7 @@ export const categorySchemas: Record<string, any> = {
         "@id": "https://www.samanportable.com/product-category/security-cabins#collectionpage",
         "url": "https://www.samanportable.com/product-category/security-cabins",
         "name": "Security Cabin Manufacturer in India",
-        "description": "SAMAN's security cabin range in India â€” portable, readymade and prefabricated guard cabins from â‚¹85,000. Compare sizes, materials and prices.",
+        "description": "SAMAN's security cabin range in India: portable, readymade and prefabricated guard cabins from ₹85,000. Compare sizes, materials and prices.",
         "isPartOf": {
           "@id": "https://www.samanportable.com/#website"
         },
@@ -2179,15 +2179,15 @@ export const categorySchemas: Record<string, any> = {
             "name": "What standard sizes do security cabins come in?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "6Ã—6 ft is SAMAN's standard single-guard size. A 4Ã—4 ft suits a tight checkpoint; an 8Ã—8 ft gives room for a desk, heater and a second guard. All sizes are made to order, so window and door positions match your sightlines."
+              "text": "6×6 ft is SAMAN's standard single-guard size. A 4×4 ft suits a tight checkpoint; an 8×8 ft gives room for a desk, heater and a second guard. All sizes are made to order, so window and door positions match your sightlines."
             }
           },
           {
             "@type": "Question",
-            "name": "FRP or mild-steel security cabin â€” which should I choose?",
+            "name": "FRP or mild-steel security cabin: which should I choose?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Choose FRP where the cabin moves often or sits in coastal or damp air â€” it is light (around 150–175 kg) and will not rust. Choose mild steel for a fixed industrial perimeter that needs a tougher, knock-resistant shell. Both are insulated and weatherproof."
+              "text": "Choose FRP where the cabin moves often or sits in coastal or damp air. It is light (around 150–175 kg) and will not rust. Choose mild steel for a fixed industrial perimeter that needs a tougher, knock-resistant shell. Both are insulated and weatherproof."
             }
           },
           {
@@ -2203,7 +2203,7 @@ export const categorySchemas: Record<string, any> = {
             "name": "Is a security cabin the same as a mini porta cabin or guard room?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A security cabin is a purpose-built guard post â€” 360-degree visibility, vandal-resistant walls and a single-guard footprint built around watch-keeping. A mini porta cabin is sold on compact size for general use such as a store or reception and isn't built for guarding."
+              "text": "A security cabin is a purpose-built guard post: 360-degree visibility, vandal-resistant walls and a single-guard footprint built around watch-keeping. A mini porta cabin is sold on compact size for general use such as a store or reception and isn't built for guarding."
             }
           }
         ]
