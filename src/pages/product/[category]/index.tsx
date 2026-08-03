@@ -280,6 +280,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .then((mod: { default?: VariantProductData }) => mod.default || null)
           .catch(() => null)
       : null;
+    const variantImages = variantData?.variants.flatMap((variant) => variant.images || []) || [];
+    const defaultVariantHero = variantData
+      ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
+        || variantImages[0]
+      : undefined;
+    const variantSocialImage = defaultVariantHero?.src
+      ? `https://www.samanportable.com${defaultVariantHero.src}`
+      : undefined;
 
     if (variantData?.seoTitle || variantData?.metaDescription) {
       const seoTitle = variantData.seoTitle || rankMathSEO?.title;
@@ -293,6 +301,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
               og_description: metaDescription,
               twitter_description: metaDescription,
             }
+          : {}),
+        ...(variantSocialImage
+          ? { og_image: variantSocialImage, twitter_image: variantSocialImage }
           : {}),
         canonical: `https://www.samanportable.com/product/${category}`,
       };
@@ -321,6 +332,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       }
       if (variantData.productSku) productForPageProps.sku = variantData.productSku;
       else if (variantData.suppressLegacySku) delete productForPageProps.sku;
+      if (defaultVariantHero) productForPageProps.featured_image = defaultVariantHero.src;
     }
 
     // T31 — resolve the real Specifications + shared Shipping tab HTML for the
@@ -338,7 +350,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // `porta-cabin` dataset key inside getProductTabsHtml.
           specificationsHtml: t31Tabs?.specificationsHtml || descriptionData?.specificationsHtml || '',
           shippingHtml: t31Tabs?.shippingHtml || descriptionData?.shippingHtml || '',
-          images: (variantData?.galleryImages || descriptionData?.images || []).map((img, index) => ({
+          images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
             id: index,
             src: img.src,
             alt: img.alt,
@@ -366,10 +378,6 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         } as unknown as WooCommerceProduct,
         category,
         relatedProducts,
-        // `|| []` guard: when the description fetch fails, descriptionData is null and
-        // `?.images` is `undefined`, which Next.js cannot serialize as a prop → 500.
-        // An empty array is serializable (the prop is optional and unused downstream).
-        productImages: descriptionData?.images || [],
         rankMathSEO,
         reviews,
         variantData,

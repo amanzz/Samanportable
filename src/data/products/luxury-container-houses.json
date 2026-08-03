@@ -12,7 +12,51 @@
       "priceExGst": 380160,
       "priceInclGst": 448589,
       "useCase": "Resort rentable suite room",
-      "sku": "SP-LCH-2026-20X8"
+      "sku": "SP-LCH-2026-20X8",
+      "images": [
+        {
+          "src": "/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x8 ft luxury container house, white cladding with a dark plinth, on red laterite ground among coastal palms",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x8 ft luxury container house, with a linen sofa with a compact dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-long-side-elevation.webp",
+          "alt": "Side elevation of a 20x8 ft luxury container house, white cladding with a dark plinth, on red laterite ground among coastal palms",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x8 ft luxury container house, white cladding with a dark plinth, on red laterite ground among coastal palms",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x8 ft luxury container house, with a slim work counter facing built-in shelving",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x8 ft luxury container house, with a bed with a padded headboard and reading lights",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
@@ -22,7 +66,51 @@
       "priceExGst": 432000,
       "priceInclGst": 509760,
       "useCase": "Honeymoon suite for resorts",
-      "sku": "SP-LCH-2026-20X10"
+      "sku": "SP-LCH-2026-20X10",
+      "images": [
+        {
+          "src": "/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x10 ft luxury container house, mid-grey cladding, on a paved terrace beside a backwater lagoon",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x10 ft luxury container house, with a lounge with a media wall and sliding doors",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 20x10 ft luxury container house in mid-grey cladding, on a paved terrace beside a backwater lagoon",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-end-dominant-view.webp",
+          "alt": "End-on view of a 20x10 ft luxury container house with the gable glazing lit, mid-grey cladding, on a paved terrace beside a backwater lagoon",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x10 ft luxury container house, with a bedroom with wardrobes and a garden window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x10 ft luxury container house towards a bathroom with a vanity mirror wall",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x12",
@@ -32,7 +120,51 @@
       "priceExGst": 497760,
       "priceInclGst": 587357,
       "useCase": "Long-stay premium suite",
-      "sku": "SP-LCH-2026-20X12"
+      "sku": "SP-LCH-2026-20X12",
+      "images": [
+        {
+          "src": "/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x12 ft luxury container house, near-black cladding, on a terrace above a bay with bougainvillea",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x12 ft luxury container house, with a lounge with an armchair and rug",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 20x12 ft luxury container house, near-black cladding, on a terrace above a bay with bougainvillea",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x12 ft luxury container house, near-black cladding, on a terrace above a bay with bougainvillea",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x12 ft luxury container house, with a dining table beside a dark timber kitchen",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x12 ft luxury container house towards a mirrored bathroom off the living end",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x8",
@@ -42,7 +174,51 @@
       "priceExGst": 649600,
       "priceInclGst": 766528,
       "useCase": "View-facing resort key unit",
-      "sku": "SP-LCH-2026-40X8"
+      "sku": "SP-LCH-2026-40X8",
+      "images": [
+        {
+          "src": "/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x8 ft luxury container house, dark brown cladding, on a eucalyptus slope with hydrangea beds",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x8 ft luxury container house, with a sofa with a timber coffee table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-long-side-elevation.webp",
+          "alt": "Side elevation of a 40x8 ft luxury container house, dark brown cladding, on a eucalyptus slope with hydrangea beds",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-end-dominant-view.webp",
+          "alt": "End-on view of a 40x8 ft luxury container house with the gable glazing lit, dark brown cladding, on a eucalyptus slope with hydrangea beds",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x8 ft luxury container house, with a dining table beneath pendant lights",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x8 ft luxury container house, with a bed under a slim window with a bedside lamp",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x10",
@@ -52,7 +228,51 @@
       "priceExGst": 812000,
       "priceInclGst": 958160,
       "useCase": "Pool villa key for resorts",
-      "sku": "SP-LCH-2026-40X10"
+      "sku": "SP-LCH-2026-40X10",
+      "images": [
+        {
+          "src": "/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x10 ft luxury container house, powder blue cladding, on a misty pine hillside",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x10 ft luxury container house, with a corner sofa opening to a glazed wall",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 40x10 ft luxury container house in powder blue cladding, on a misty pine hillside",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 40x10 ft luxury container house, powder blue cladding, on a misty pine hillside",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x10 ft luxury container house, with a bedroom with soft blue bedding",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x10 ft luxury container house towards a shower and WC with shelving beside them",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x12",
@@ -62,44 +282,51 @@
       "priceExGst": 953760,
       "priceInclGst": 1125437,
       "useCase": "Flagship villa in one lift",
-      "sku": "SP-LCH-2026-40X12"
-    }
-  ],
-  "galleryImages": [
-    {
-      "src": "/images/product-heroes/container-houses/luxury-container-house-rear-corner-single-window.webp",
-      "alt": "Luxury container house rear-corner view showing single-window detail and factory-finished PPGI exterior cladding",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/luxury-container-house-interior-studio-kitchen-bath.webp",
-      "alt": "Luxury container house interior with studio-layout kitchen, separated bath, vinyl plank flooring and finished ceiling",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "/images/product-heroes/container-houses/luxury-container-house-front-elevation-sliding-door.webp",
-      "alt": "Luxury container house front elevation with full-width sliding glass door and finished PPGI exterior",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "/images/product-heroes/container-houses/luxury-container-house-floor-plan-10x20-top-view.webp",
-      "alt": "Luxury container house floor plan top view showing 10x20 layout with living, sleeping, kitchen, and bath zones",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/luxury-container-house-exterior-front-side-brown.webp",
-      "alt": "Luxury container house exterior front-side view in brown finish with framed window and entry door",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
+      "sku": "SP-LCH-2026-40X12",
+      "images": [
+        {
+          "src": "/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x12 ft luxury container house, steel blue cladding with a blue roof, on a tea-estate slope framed by pines",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x12 ft luxury container house, with a lounge with a rug and armchairs",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 40x12 ft luxury container house, steel blue cladding with a blue roof, on a tea-estate slope framed by pines",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-long-side-elevation.webp",
+          "alt": "Side elevation of a 40x12 ft luxury container house, steel blue cladding with a blue roof, on a tea-estate slope framed by pines",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x12 ft luxury container house, with a navy island kitchen with a dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x12 ft luxury container house towards a bathroom with laundry appliances built in",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     }
   ],
   "productName": "Luxury Container Houses",

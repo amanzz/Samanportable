@@ -12,7 +12,51 @@
       "priceExGst": 364320,
       "priceInclGst": 429898,
       "useCase": "Rotating project quarters",
-      "sku": "SP-SCH-2026-20X8"
+      "sku": "SP-SCH-2026-20X8",
+      "images": [
+        {
+          "src": "/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x8 ft shipping container home, dark green cladding, on a coastal hillside above the sea",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x8 ft shipping container home, with a sofa with a round side table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-long-side-elevation.webp",
+          "alt": "Long side elevation of a 20x8 ft shipping container home showing the full window run, dark green cladding, on a coastal hillside above the sea",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x8 ft shipping container home, dark green cladding, on a coastal hillside above the sea",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x8 ft shipping container home, with a kitchen island with two stools",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x8 ft shipping container home, with a bed with a green throw under a garden window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
@@ -22,7 +66,51 @@
       "priceExGst": 414000,
       "priceInclGst": 488520,
       "useCase": "Beachside weekend home unit",
-      "sku": "SP-SCH-2026-20X10"
+      "sku": "SP-SCH-2026-20X10",
+      "images": [
+        {
+          "src": "/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x10 ft shipping container home, sand-toned cladding, on a paved suburban court behind low hedges",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x10 ft shipping container home, with a rust-red sofa facing a media wall",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 20x10 ft shipping container home in sand-toned cladding, on a paved suburban court behind low hedges",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-end-dominant-view.webp",
+          "alt": "End-on view of a 20x10 ft shipping container home with the gable glazing lit, sand-toned cladding, on a paved suburban court behind low hedges",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x10 ft shipping container home, with a bedroom with a terracotta throw",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x10 ft shipping container home towards a shower room with a fitted vanity",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x12",
@@ -32,7 +120,51 @@
       "priceExGst": 476880,
       "priceInclGst": 562718,
       "useCase": "Hard-climate posting home",
-      "sku": "SP-SCH-2026-20X12"
+      "sku": "SP-SCH-2026-20X12",
+      "images": [
+        {
+          "src": "/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x12 ft shipping container home, dark grey cladding, on paving with planters below apartment blocks",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x12 ft shipping container home, with a sofa and low table on pale flooring",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 20x12 ft shipping container home, dark grey cladding, on paving with planters below apartment blocks",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x12 ft shipping container home, dark grey cladding, on paving with planters below apartment blocks",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x12 ft shipping container home, with a kitchen with a four-seat dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x12 ft shipping container home towards a bathroom with a glazed shower screen",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x8",
@@ -42,7 +174,51 @@
       "priceExGst": 622720,
       "priceInclGst": 734810,
       "useCase": "Annual-relocation residence",
-      "sku": "SP-SCH-2026-40X8"
+      "sku": "SP-SCH-2026-40X8",
+      "images": [
+        {
+          "src": "/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x8 ft shipping container home, rust-brown cladding, on wet paving below a waterfall ridge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x8 ft shipping container home, with a sofa with a timber coffee table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-long-side-elevation.webp",
+          "alt": "Long side elevation of a 40x8 ft shipping container home showing the full window run, rust-brown cladding, on wet paving below a waterfall ridge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-end-dominant-view.webp",
+          "alt": "End-on view of a 40x8 ft shipping container home with the gable glazing lit, rust-brown cladding, on wet paving below a waterfall ridge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x8 ft shipping container home, with a kitchen counter with a dining set",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x8 ft shipping container home, with a bed beside a slim corner window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x10",
@@ -52,7 +228,51 @@
       "priceExGst": 778400,
       "priceInclGst": 918512,
       "useCase": "Project-following family home",
-      "sku": "SP-SCH-2026-40X10"
+      "sku": "SP-SCH-2026-40X10",
+      "images": [
+        {
+          "src": "/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x10 ft shipping container home, white cladding, on gravel among tea-covered hills and palms",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x10 ft shipping container home, with a corner sofa facing a long media wall",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 40x10 ft shipping container home in white cladding, on gravel among tea-covered hills and palms",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 40x10 ft shipping container home, white cladding, on gravel among tea-covered hills and palms",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x10 ft shipping container home, with a bedroom with a timber panel wall",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x10 ft shipping container home towards a WC with a laundry recess opposite",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x12",
@@ -62,44 +282,51 @@
       "priceExGst": 913920,
       "priceInclGst": 1078426,
       "useCase": "Flagship home that relocates",
-      "sku": "SP-SCH-2026-40X12"
-    }
-  ],
-  "galleryImages": [
-    {
-      "src": "/images/product-heroes/container-houses/turquoise-shipping-container-house-view.webp",
-      "alt": "Shipping Container Homes",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-home-side-profile.jpeg",
-      "alt": "Side view of a steel-blue 40-ft shipping container home with white-framed windows on a plot",
-      "provenance": "unknown",
-      "width": 1254,
-      "height": 1254
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-home-front-entrance.jpeg",
-      "alt": "Front entrance of a steel-blue shipping container home with white sliding-glass doors",
-      "provenance": "unknown",
-      "width": 1254,
-      "height": 1254
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/family-living-in-shipping-container-home.jpeg",
-      "alt": "Indian family at the doorway of their steel-blue shipping container home in evening light",
-      "provenance": "unknown",
-      "width": 1254,
-      "height": 1254
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-home-wall-window-detail.jpeg",
-      "alt": "Close-up of ribbed steel-blue container wall meeting a white-framed glass door",
-      "provenance": "unknown",
-      "width": 1254,
-      "height": 1254
+      "sku": "SP-SCH-2026-40X12",
+      "images": [
+        {
+          "src": "/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x12 ft shipping container home, navy cladding, on stone paving in an arid hill village",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x12 ft shipping container home, with a lounge with a sectional sofa and rug",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 40x12 ft shipping container home, navy cladding, on stone paving in an arid hill village",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-long-side-elevation.webp",
+          "alt": "Long side elevation of a 40x12 ft shipping container home showing the full window run, navy cladding, on stone paving in an arid hill village",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x12 ft shipping container home, with a kitchen run with a timber dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x12 ft shipping container home towards a bathroom with a shower and laundry stack",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     }
   ],
   "productName": "Shipping Container Homes",

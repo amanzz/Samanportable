@@ -652,11 +652,12 @@ export function buildC08VariantItems(
   baseUrl = MERCHANT_BASE_URL
 ): MerchantProduct[] {
   const variants = data?.variants || [];
-  const images = (data?.galleryImages || []).map((img) => absoluteUrl(img?.src, baseUrl)).filter(Boolean);
-  if (!images.length) return [];
-
   const items: MerchantProduct[] = [];
   for (const v of variants) {
+    const images = (v?.images || data?.galleryImages || [])
+      .map((img) => absoluteUrl(img?.src, baseUrl))
+      .filter(Boolean);
+    if (!images.length) continue;
     const sizeSlug = String(v?.sizeSlug || '');
     if (!/^\d+x\d+$/.test(sizeSlug)) continue;
     if (!v.priceInclGst || v.priceInclGst <= 0 || !v.sku) continue;
