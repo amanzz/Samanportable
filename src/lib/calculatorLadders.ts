@@ -36,6 +36,8 @@ import containerOfficeCabinJson from '@/data/products/container-office-cabin.jso
 import shippingContainerOfficeJson from '@/data/products/shipping-container-office.json';
 import siteOfficeContainer from '@/data/products/site-office-container.json';
 import portableCabin from '@/data/products/portable-cabin.json';
+import portableCabinWithToilet from '@/data/products/portable-cabin-with-toilet.json';
+import portableShopCabin from '@/data/products/portable-shop-cabin.json';
 
 export interface LadderRow {
   sizeSlug: string;
@@ -157,6 +159,8 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'shipping-container-office': toRows(shippingContainerOfficeJson),
   'site-office-container': toRows(siteOfficeContainer),
   'portable-cabin': toRows(portableCabin),
+  'portable-cabin-with-toilet': toRows(portableCabinWithToilet),
+  'portable-shop-cabin': toRows(portableShopCabin),
   'container-houses': containerHouseLadder('container-houses'),
   'prefab-container-homes': containerHouseLadder('prefab-container-homes'),
   'shipping-container-homes': containerHouseLadder('shipping-container-homes'),

@@ -28,7 +28,10 @@ const NORMALIZED_PORTA_SLUG_TO_PRODUCT: Record<string, ProductId> = {
   'small-portacabin': 'porta-cabin',
   'portacabin-office': 'office-cabin',
   'portable-shop-cabin': 'portable-cabin',
-  'porta-cabin-shop': 'portable-cabin',
+  // A shop cabin under /product/porta-cabins/ is a Porta Cabin. This entry
+  // previously said 'portable-cabin', which rendered the wrong half of the
+  // Porta Cabin / Portable Cabin pair on that route.
+  'porta-cabin-shop': 'porta-cabin',
   'porta-cabin-office': 'office-cabin',
   'porta-cabin-with-toilet': 'toilet-cabin',
   'portable-cabin-with-toilet': 'toilet-cabin',
@@ -52,15 +55,21 @@ function normalise(value: string): string {
 
 function resolveForPortaCabins(category: string, slug?: string): ProductId {
   const target = normalise(slug || category);
+
+  // An explicit mapping always wins over substring guessing. Previously this
+  // ran last, so `portable-shop-cabin` and friends never reached it.
+  const mapped = slug ? NORMALIZED_PORTA_SLUG_TO_PRODUCT[normalise(slug)] : undefined;
+  if (mapped) return mapped;
+
   if (target.includes('office')) return 'office-cabin';
   if (target.includes('security')) return 'security-cabin';
   if (target.includes('toilet')) return 'toilet-cabin';
   if (target.includes('accommodation') || target.includes('worker') || target.includes('staff')) return 'accommodation-cabin';
-  if (slug) {
-    const mapped = NORMALIZED_PORTA_SLUG_TO_PRODUCT[slug];
-    if (mapped) return mapped;
-  }
-  return 'portable-cabin';
+
+  // Anything under /product/porta-cabins/ IS a Porta Cabin. The old fall-through
+  // returned 'portable-cabin' here, so seven Porta Cabin routes rendered the
+  // locked name "Portable Cabin" — the highest-risk term pair on this site.
+  return 'porta-cabin';
 }
 
 function resolveForLaborColony(category: string, slug?: string): ProductId {
@@ -88,7 +97,9 @@ export function resolveEmbeddedCalculatorProduct(
 ): EmbeddedCalculatorProduct | null {
   const c = normalise(category);
 
-  if (c === 'porta-cabins' || c === 'porta-cabin' || c === 'portable-cabins') {
+  // `portable-cabin` (singular) is the live category slug and carries eleven
+  // routes. The old test used the plural only, so none of them got a calculator.
+  if (c === 'porta-cabins' || c === 'porta-cabin') {
     return {
       category,
       slug,
@@ -97,11 +108,26 @@ export function resolveEmbeddedCalculatorProduct(
     };
   }
 
+  if (c === 'portable-cabin' || c === 'portable-cabins') {
+    const mapped = slug ? NORMALIZED_PORTA_SLUG_TO_PRODUCT[normalise(slug)] : undefined;
+    const target = normalise(slug || category);
+    const productId: ProductId = mapped
+      || (target.includes('office') ? 'office-cabin'
+        : target.includes('security') ? 'security-cabin'
+          : target.includes('toilet') ? 'toilet-cabin'
+            : 'portable-cabin');
+    return { category, slug, productId, ladderKey: ladderKeyFor(category, slug) };
+  }
+
   if (c === 'portable-office') {
+    // The slug map is consulted first. `portable-office-container` maps to
+    // 'site-office'; the old unconditional 'office-cabin' short-circuited past
+    // it, so that route locked to the wrong product name.
+    const mapped = slug ? NORMALIZED_PORTA_SLUG_TO_PRODUCT[normalise(slug)] : undefined;
     return {
       category,
       slug,
-      productId: 'office-cabin',
+      productId: mapped || 'office-cabin',
       ladderKey: ladderKeyFor(category, slug),
     };
   }

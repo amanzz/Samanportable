@@ -40,35 +40,23 @@ const { computeCalculatorEstimate, DEFAULT_CALCULATOR_CONFIG, PRODUCTS } = ssr;
 const { resolveEmbeddedCalculatorProduct } = embed;
 
 /**
- * Every route that renders a calculator, paired with the product JSON whose
- * ladder that page publishes. Derived from public/sitemap-products.xml filtered
- * through resolveEmbeddedCalculatorProduct().
+ * Every route carrying a calculator, enumerated from the sitemap and filtered
+ * through the real resolver — not a hand-maintained list, so a route added
+ * later cannot silently escape the gate.
+ *
+ * The invariant is two-sided:
+ *   page publishes a ladder  -> calculator base must equal it, to the rupee
+ *   page publishes no ladder -> calculator must be in quote mode, no number
  */
-const ROUTES = [
-  ['/product/porta-cabins', 'porta-cabins', 'porta-cabins'],
-  ['/product/porta-cabins/low-cost-porta-cabin', 'porta-cabins', 'low-cost-porta-cabin'],
-  ['/product/porta-cabins/luxury-porta-cabin', 'porta-cabins', 'luxury-porta-cabin'],
-  ['/product/porta-cabins/mini-porta-cabin', 'porta-cabins', 'mini-porta-cabin'],
-  ['/product/porta-cabins/ms-porta-cabin', 'porta-cabins', 'ms-porta-cabin'],
-  ['/product/porta-cabins/porta-cabin-shop', 'porta-cabins', 'porta-cabin-shop'],
-  ['/product/porta-cabins/porta-cabin-with-toilet', 'porta-cabins', 'porta-cabin-with-toilet'],
-  ['/product/porta-cabins/portacabin-office', 'porta-cabins', 'portacabin-office'],
-  ['/product/porta-cabins/steel-porta-cabin', 'porta-cabins', 'steel-porta-cabin'],
-  ['/product/portable-office', 'portable-office', 'portable-office'],
-  ['/product/portable-office/modern-office-cabin', 'portable-office', 'modern-office-cabin'],
-  ['/product/portable-office/portable-office-container', 'portable-office', 'portable-office-container'],
-  ['/product/portable-office/prefabricated-office-cabins', 'portable-office', 'prefabricated-office-cabins'],
-  ['/product/portable-office/readymade-office-cabin', 'portable-office', 'readymade-office-cabin'],
-  ['/product/portable-office/small-office-cabin', 'portable-office', 'small-office-cabin'],
-  ['/product/container-offices', 'container-offices', 'container-offices'],
-  ['/product/container-offices/container-office-cabin', 'container-offices', 'container-office-cabin'],
-  ['/product/container-offices/shipping-container-office', 'container-offices', 'shipping-container-office'],
-  ['/product/container-offices/site-office-container', 'container-offices', 'site-office-container'],
-  ['/product/labor-colony', 'labor-colony', 'labor-colony'],
-  ['/product/labor-colony/labor-sheds', 'labor-colony', 'labor-sheds'],
-  ['/product/labor-colony/labor-hutments', 'labor-colony', 'labor-hutments'],
-  ['/product/labor-colony/prefab-labor-camps', 'labor-colony', 'prefab-labor-camps'],
-];
+const sitemap = fs.readFileSync(path.join(process.cwd(), 'public', 'sitemap-products.xml'), 'utf8');
+const ROUTES = [...new Set(
+  [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)]
+    .map((m) => m[1].split('samanportable.com')[1] || '')
+    .filter((u) => u.startsWith('/product/'))
+)].sort().map((url) => {
+  const parts = url.replace(/\/$/, '').split('/').filter(Boolean);
+  return { url, category: parts[1], slug: parts[2] };
+}).filter((r) => r.category);
 
 const COLONY = new Set(['labour-colony', 'labor-sheds', 'labor-hutments', 'prefab-labor-camps']);
 const INR = (n) => (n === null || n === undefined ? 'quote mode' : '₹' + Number(n).toLocaleString('en-IN'));
@@ -85,13 +73,13 @@ function dims(sizeSlug) {
 }
 
 const rows = [];
-for (const [route, category, jsonSlug] of ROUTES) {
-  const slug = route.split('/').length > 3 ? route.split('/').pop() : undefined;
+for (const { url: route, category, slug } of ROUTES) {
   const mapping = resolveEmbeddedCalculatorProduct(category, slug);
-  const productId = mapping?.productId ?? null;
+  if (!mapping) continue;
+  const productId = mapping.productId;
   const def = PRODUCTS.find((p) => p.id === productId) || null;
 
-  const data = loadLadder(jsonSlug);
+  const data = loadLadder(slug || category);
   const variants = data?.variants || [];
   const variant =
     variants.find((v) => v.sizeSlug === data?.defaultVariant) || variants[0] || null;
@@ -126,22 +114,23 @@ for (const [route, category, jsonSlug] of ROUTES) {
 
   const rate = COLONY.has(productId)
     ? 'colony block ladder'
-    : mapping?.ladderKey
-      ? `ladder ${mapping.ladderKey}`
-      : def?.ladderKey
-        ? `ladder ${def.ladderKey}`
-        : 'no ladder (quote mode)';
+    : calculated === null
+      ? 'no ladder (quote mode)'
+      : `ladder ${mapping.ladderKey || def?.ladderKey}`;
 
   const diff = published !== null && calculated !== null ? calculated - published : null;
+  // Two-sided invariant: no published ladder must mean no calculated number.
+  const bothAbsent = published === null && calculated === null;
+  if (bothAbsent) note = 'page publishes no ladder; calculator in quote mode';
   rows.push({
     route,
     size: variant?.label ?? '—',
-    productId: productId ?? '(none)',
+    productId,
     rate,
     published,
     calculated,
     diff,
-    ok: diff === 0,
+    ok: diff === 0 || bothAbsent,
     note,
   });
 }

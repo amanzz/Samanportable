@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const scripts = [
   'verify-route-price-identity.mjs',
+  'report-locked-product-names.mjs',
   'verify-v9-rates.mjs',
   'report-product-ladders.mjs',
   'verify-hub-anchors.mjs',
