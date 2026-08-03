@@ -26,10 +26,12 @@ A page whose best asset is another page's primary keyword has no keyword of its 
 
 **Hub RTE comparison line, replaces the 89-character line, verbatim:**
 `If you already know you want the budget build, go straight to the [affordable container homes] page.`
-100 characters, inside the 90 to 150 band. Anchor unchanged.
+Rendered length 98, inside the 90 to 150 band. Anchor unchanged.
 
 **Luxury RTE comparison line, replaces the duplicate anchor, verbatim:**
-`If repeatable modules matter more than finish, the [prefab module line] is the better buy.`
-90 characters, inside band. Anchor becomes `prefab module line`, still pointing at the prefab child. `/container-house-price-in-tamil-nadu` keeps the exact `prefab container homes` anchor as the only site-wide occurrence, which is correct: it is a legitimate external-to-cluster link and it is not ours to disturb in this event.
+`If repeatable modules matter more than finish, the [prefab module line] is the better buy for you.`
+Rendered length 96, inside the 90 to 150 band. Anchor stays `prefab module line`, still pointing at the prefab child. `/container-house-price-in-tamil-nadu` keeps the exact `prefab container homes` anchor as the only site-wide occurrence, which is correct: it is a legitimate external-to-cluster link and it is not ours to disturb in this event.
+
+New standing rule: every band count is measured on rendered DOM text with authoring notation such as Markdown brackets stripped, never on source; report rendered counts in every future build report.
 
 Affordable keeps `repeatable module line` from the addendum. All three anchors now occur once each.
