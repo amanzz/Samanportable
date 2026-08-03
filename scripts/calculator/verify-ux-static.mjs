@@ -16,28 +16,19 @@ const checks = [
 ];
 
 /**
- * PHASE 1 checks — reported, NOT failed.
+ * PHASE 1 checks. Live gates as of 03 Aug 2026, when Phase 1 was released.
  *
- * Phase 1 is suspended and none of this has been built. These have never
- * passed on this branch, so reporting them as failures would imply a
- * regression that did not happen, and it made the whole suite red for work
- * that was never started.
  *
- * Two of them need a ruling before Phase 1 builds against them:
- *
- *   'desktop fixed step height' and 'mobile reserved step height' assert
- *   height:720px and min-height:610px on the step panel. Design spec Part 5
- *   says the opposite — "No fixed inner height. No internal scrollbar. The
- *   panel grows with its content." One of the two is wrong.
- *
- *   'all steps SSR visibility' and 'enhanced-only step hiding' are design-spec
- *   item 1.2, which Phase 1 is meant to implement.
+ * The two fixed-height assertions were DELETED by ruling on 03 Aug 2026:
+ * height:720px and min-height:610px on the step panel contradicted design spec
+ * Part 5, and the spec is right. A fixed inner height is what produced the
+ * defect SAMAN rejected — a panel clipped at ~440px with its own scrollbar
+ * while the viewport sat empty. Layout stability comes from reserving space on
+ * the media inside the panel, not from freezing the container.
  */
 const phase1Checks = [
   ['44px form controls', /min-height:44px/],
   ['visible focus state', /focus-visible\{outline:3px/],
-  ['desktop fixed step height', /height:720px;min-height:720px/],
-  ['mobile reserved step height', /min-height:610px/],
   ['360px fixed estimate bar', /@media\(max-width:600px\).*\.mobile-estimate\{position:fixed/],
   ['range ARIA labels', /aria-label="Door \$\{index \+ 1\} position along wall"/],
   ['all steps SSR visibility', /\.calc-step\{display:block/],
@@ -47,7 +38,7 @@ const phase1Checks = [
 const failures = checks
   .filter(([, result]) => (result instanceof RegExp ? !result.test(renderer) : !result))
   .map(([name]) => name);
-const phase1Outstanding = phase1Checks.filter(([, result]) => !result.test(renderer)).map(([name]) => name);
+const phase1Failures = phase1Checks.filter(([, result]) => !result.test(renderer)).map(([name]) => name);
 
 const numberInputs = (renderer.match(/type="number"/g) || []).length;
 const inputModes = (renderer.match(/inputmode="(?:numeric|decimal|email)"/g) || []).length;
@@ -60,9 +51,18 @@ console.log(`ARIA label templates: ${ariaLabels}`);
 console.log(`enhancer bytes: ${Buffer.byteLength(enhancer, 'utf8')}`);
 console.log(`static UX diff: ${failures.length ? failures.join(', ') : '(empty)'}`);
 
-console.log(`\nPHASE 1, NOT YET BUILT — reported, not failed: ${phase1Outstanding.length} of ${phase1Checks.length}`);
-for (const name of phase1Outstanding) console.log(`  ${name}`);
-console.log('  NOTE: the two fixed-step-height checks contradict design spec Part 5,');
-console.log('  which requires no fixed inner height and no internal scrollbar.');
+console.log(`phase 1 diff: ${phase1Failures.length ? phase1Failures.join(', ') : '(empty)'}`);
 
-if (failures.length) process.exitCode = 1;
+/**
+ * No fixed inner height on the step panel, and no internal scrollbar.
+ * Design spec Part 5: the panel grows with its content.
+ */
+const forbiddenHeight = [
+  ['fixed step height', /\.step-card\{[^}]*[;{]height:\d/],
+  ['step panel min-height', /\.step-card\{[^}]*min-height:\d/],
+  ['step panel internal scroll', /\.step-card\{[^}]*overflow-y:\s*(?:auto|scroll)/],
+];
+const heightViolations = forbiddenHeight.filter(([, re]) => re.test(renderer)).map(([name]) => name);
+console.log(`fixed-height diff: ${heightViolations.length ? heightViolations.join(', ') : '(empty)'}`);
+
+if (failures.length || phase1Failures.length || heightViolations.length) process.exitCode = 1;

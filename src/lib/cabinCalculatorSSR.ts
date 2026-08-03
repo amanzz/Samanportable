@@ -152,6 +152,13 @@ export interface RenderCalculatorOptions {
   productSlug?: ColonyProductSlug;
   /** Product JSON slug of the embedding route, so pricing reads its ladder. */
   ladderKey?: string;
+  /**
+   * The embedding page's OWN approved product name. A subpage must show its
+   * own name, never its hub's: seven routes displayed "Portable Office" when
+   * only one of them was Portable Office, which is the same defect class as
+   * the porta-cabins routes displaying "Portable Cabin".
+   */
+  productName?: string;
   pageUrl?: string;
   submissionStatus?: 'success' | 'failure';
 }
@@ -318,6 +325,49 @@ export const CALCULATOR_MESSAGES = {
 } as const;
 
 export const CABIN_CALCULATOR_SSR_STYLES = `
+/* ---------------------------------------------------------------------------
+   PHASE 1 LAYER - design spec v1 Part 4 and Part 5.
+
+   Written compactly and last so it wins the cascade over the earlier rules.
+   Four colours only: #1a3c2e, #2d7a3f, #f0f7f2, #ffffff. Opacity variants of
+   those four are permitted; new hues are not.
+
+   Every box's background differs from the background it sits on. That is the
+   defect SAMAN rejected - a green section containing green cards, legible only
+   because the text happened to be white - and the mechanical gate asserts it.
+--------------------------------------------------------------------------- */
+.cabin-calculator-ssr{--c-ink:#1a3c2e;--c-accent:#2d7a3f;--c-soft:#f0f7f2;--c-white:#ffffff}
+.cabin-calculator-ssr[data-theme="light"]{--bg-section:var(--c-white);--fg-section:var(--c-ink);--bg-summary:var(--c-ink);--fg-summary:var(--c-white);--bg-card:var(--c-soft);--fg-card:var(--c-ink);--bd-card:rgba(26,60,46,.2);--bg-card-sel:var(--c-ink);--fg-card-sel:var(--c-white);--bd-card-sel:var(--c-accent);--bg-pill:var(--c-soft);--fg-pill:var(--c-ink);--bg-pill-on:var(--c-ink);--fg-pill-on:var(--c-white);--bd-pill-on:transparent;--bg-panel:var(--c-soft);--fg-panel:var(--c-ink);--bd-panel:rgba(26,60,46,.15);--bg-total:var(--c-ink);--fg-total:var(--c-white);--bd-total:transparent}
+.cabin-calculator-ssr[data-theme="green"]{--bg-section:var(--c-ink);--fg-section:var(--c-white);--bg-summary:var(--c-white);--fg-summary:var(--c-ink);--bg-card:var(--c-white);--fg-card:var(--c-ink);--bd-card:transparent;--bg-card-sel:var(--c-white);--fg-card-sel:var(--c-ink);--bd-card-sel:var(--c-accent);--bg-pill:var(--c-soft);--fg-pill:var(--c-ink);--bg-pill-on:var(--c-white);--fg-pill-on:var(--c-ink);--bd-pill-on:var(--c-accent);--bg-panel:var(--c-white);--fg-panel:var(--c-ink);--bd-panel:transparent;--bg-total:var(--c-soft);--fg-total:var(--c-ink);--bd-total:var(--c-accent)}
+.cabin-calculator-ssr{background:var(--bg-section);color:var(--fg-section)}
+.calculator-header{background:var(--bg-summary);color:var(--fg-summary);border-radius:12px;padding:1rem 1.15rem}
+.calculator-header h2,.calculator-header p,.calculator-header small,.calculator-header strong{color:var(--fg-summary)}
+.calc-choice>span{background:var(--bg-card);color:var(--fg-card);border:1px solid var(--bd-card);border-radius:10px;display:block;padding:.7rem .8rem}
+.calc-choice input:checked+span{background:var(--bg-card-sel);color:var(--fg-card-sel);border:2px solid var(--bd-card-sel)}
+.calc-choice input:checked+span *{color:var(--fg-card-sel)}
+.step-nav a{background:var(--bg-pill);color:var(--fg-pill);border-radius:999px;padding:.45rem .8rem;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;opacity:1}
+.step-nav a.is-active,.step-nav a[aria-current="step"]{background:var(--bg-pill-on);color:var(--fg-pill-on);border:2px solid var(--bd-pill-on);opacity:1}
+.estimate-card{background:var(--bg-panel);color:var(--fg-panel);border:1px solid var(--bd-panel);border-radius:12px;padding:1rem}
+.estimate-card .total{background:var(--bg-total);color:var(--fg-total);border:1px solid var(--bd-total);border-radius:10px;padding:.75rem;display:flex;flex-direction:column;gap:.15rem}
+.estimate-card .total *{color:var(--fg-total)}
+.cabin-calculator-ssr button.primary,.cabin-calculator-ssr [type="submit"]{background:var(--c-accent);color:var(--c-white);border:none;border-radius:8px;min-height:44px;padding:.6rem 1.1rem;font-weight:600;cursor:pointer}
+.cabin-calculator-ssr button.ghost{background:var(--bg-card);color:var(--fg-card);border:1px solid var(--bd-card);border-radius:8px;min-height:44px;padding:.6rem 1rem;cursor:pointer}
+.cabin-calculator-ssr input,.cabin-calculator-ssr select,.cabin-calculator-ssr textarea,.cabin-calculator-ssr button{min-height:44px}
+.cabin-calculator-ssr :focus-visible{outline:3px solid var(--c-accent);outline-offset:2px}
+/* Part 5: no fixed inner height, no internal scrollbar. The panel grows. */
+.calculator-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);gap:1.25rem;align-items:start}
+.step-card{height:auto;overflow:visible}
+.step-counter{margin:0 0 .4rem;font-weight:600}
+.step-progress{background:var(--bg-card);border-radius:999px;height:6px;overflow:hidden;margin-bottom:.85rem}
+.step-progress>span{display:block;height:100%;background:var(--c-accent)}
+.step-actions{display:flex;gap:.6rem;align-items:center;justify-content:space-between;border-top:1px solid var(--bd-card);margin-top:1rem;padding-top:1rem}
+/* All steps render visible. Only the enhanced path hides them. */
+.calc-step{display:block}
+.cabin-calculator-ssr.is-enhanced .calc-step:not(.is-active){display:none}
+.construction-disclosure{background:var(--bg-card);color:var(--fg-card);border:1px solid var(--bd-card);border-radius:10px;padding:.85rem 1rem;margin:.75rem 0}
+.mobile-estimate{display:none}
+@media(max-width:600px){.calculator-grid{grid-template-columns:1fr}.mobile-estimate{position:fixed;left:0;right:0;bottom:0;z-index:40;display:block;background:var(--bg-total);color:var(--fg-total);padding:.6rem .9rem;min-height:44px}.mobile-estimate a{color:var(--fg-total);display:flex;justify-content:space-between;align-items:center;min-height:44px;text-decoration:none}.step-card{padding-bottom:4.5rem}}
+
 .cabin-calculator-ssr{
   --calc-primary: #1a3c2e;
   --calc-secondary: #2d7a3f;
@@ -1295,13 +1345,13 @@ function productPriceRows(
   return PRODUCT_LADDERS.containerOfficeCabins.map((row) => withDimensions(row, null));
 }
 
-export function getEmbeddedProductSummary(productId: ProductId, ladderKey?: string | null): EmbeddedProductSummary {
+export function getEmbeddedProductSummary(productId: ProductId, ladderKey?: string | null, productName?: string): EmbeddedProductSummary {
   const product = productFor(productId);
   const rows = productPriceRows(product, ladderKey);
   const pricedRows = rows.filter((row): row is { label: string; area: number; ex: number; capacity?: string; length?: number; width?: number } => row.ex !== null && Number.isFinite(row.ex));
   if (pricedRows.length === 0) {
     return {
-      name: product.name,
+      name: productName || product.name,
       sizeLabel: null,
       price: null,
       priceLabel: 'Price on request',
@@ -1309,7 +1359,7 @@ export function getEmbeddedProductSummary(productId: ProductId, ladderKey?: stri
   }
   const cheapest = pricedRows.reduce((best, current) => (current.ex < best.ex ? current : best), pricedRows[0]);
   return {
-    name: product.name,
+    name: productName || product.name,
     sizeLabel: cheapest.label,
     price: cheapest.ex,
     priceLabel: `${cheapest.label} starts at ${money(cheapest.ex)}`,
@@ -1344,7 +1394,7 @@ function renderEstimate(estimate: CalculatorEstimate): string {
 
 function renderDoorCard(door: DoorConfig, index: number, reserved: boolean): string {
   const state = reserved ? ' data-reserved-door hidden disabled' : '';
-  return `<fieldset class="opening-card" data-door-index="${index}"${state}><legend>Door ${index + 1}</legend>${radio(`doors[${index}][type]`, 'Steel door', 'Steel door', door.type === 'Steel door', `${index === 0 ? 'Standard included' : `${money(RATE_CARD.marketRates.steelDoor)} each, ex-GST`}`, ` data-rate="${index === 0 ? 0 : RATE_CARD.marketRates.steelDoor}" data-rate-basis="each"`)}${radio(`doors[${index}][type]`, 'Glass / Aluminium / uPVC door', 'Glass / Aluminium / uPVC door', door.type !== 'Steel door', `${money(RATE_CARD.marketRates.upvcGlassDoor)} each, ex-GST`, ` data-rate="${RATE_CARD.marketRates.upvcGlassDoor}" data-rate-basis="each"`)}<label>Wall<select name="doors[${index}][wall]">${WALLS.map((wall) => `<option${selected(door.wall === wall)}>${wall}</option>`).join('')}</select></label><label>End of wall<select name="doors[${index}][end]">${['Left', 'Right'].map((end) => `<option${selected(door.end === end)}>${end}</option>`).join('')}</select></label><label>Distance from selected end (ft)<input type="number" inputmode="numeric" min="0" step="0.5" name="doors[${index}][distance]" value="${door.distance}" aria-label="Door ${index + 1} distance from end"></label><fieldset><legend>Hinge side</legend>${radio(`doors[${index}][hinge]`, 'Left', 'Left-side hinge', door.hinge === 'Left')}${radio(`doors[${index}][hinge]`, 'Right', 'Right-side hinge', door.hinge === 'Right')}</fieldset><fieldset><legend>Opening</legend>${radio(`doors[${index}][opening]`, 'In', 'Opens in', door.opening === 'In')}${radio(`doors[${index}][opening]`, 'Out', 'Opens out', door.opening === 'Out')}</fieldset><small>Use "In" when hand flow should remain inside the room edge. Use "Out" when swing clearance is outside.</small><input type="hidden" name="doors[${index}][position]" value="${door.position}"></fieldset>`;
+  return `<fieldset class="opening-card" data-door-index="${index}"${state}><legend>Door ${index + 1}</legend>${radio(`doors[${index}][type]`, 'Steel door', 'Steel door', door.type === 'Steel door', `${index === 0 ? 'Standard included' : `${money(RATE_CARD.marketRates.steelDoor)} each, ex-GST`}`, ` data-rate="${index === 0 ? 0 : RATE_CARD.marketRates.steelDoor}" data-rate-basis="each"`)}${radio(`doors[${index}][type]`, 'Glass / Aluminium / uPVC door', 'Glass / Aluminium / uPVC door', door.type !== 'Steel door', `${money(RATE_CARD.marketRates.upvcGlassDoor)} each, ex-GST`, ` data-rate="${RATE_CARD.marketRates.upvcGlassDoor}" data-rate-basis="each"`)}<label>Wall<select name="doors[${index}][wall]">${WALLS.map((wall) => `<option${selected(door.wall === wall)}>${wall}</option>`).join('')}</select></label><label>End of wall<select name="doors[${index}][end]">${['Left', 'Right'].map((end) => `<option${selected(door.end === end)}>${end}</option>`).join('')}</select></label><label>Distance from selected end (ft)<input type="number" inputmode="numeric" min="0" step="0.5" name="doors[${index}][distance]" value="${door.distance}" aria-label="Door ${index + 1} distance from end"></label><fieldset><legend>Hinge side</legend>${radio(`doors[${index}][hinge]`, 'Left', 'Left-side hinge', door.hinge === 'Left')}${radio(`doors[${index}][hinge]`, 'Right', 'Right-side hinge', door.hinge === 'Right')}</fieldset><fieldset><legend>Opening</legend>${radio(`doors[${index}][opening]`, 'In', 'Opens in', door.opening === 'In')}${radio(`doors[${index}][opening]`, 'Out', 'Opens out', door.opening === 'Out')}</fieldset><small>Use "In" when hand flow should remain inside the room edge. Use "Out" when swing clearance is outside.</small><input type="hidden" name="doors[${index}][position]" aria-label="Door ${index + 1} position along wall" value="${door.position}"></fieldset>`;
 }
 
 function renderWindowCard(window: WindowConfig, index: number, reserved: boolean): string {
@@ -1412,6 +1462,6 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;
   const summarySize = colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`;
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden><div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="theme" aria-label="Switch colour theme">${esc(CONTROLS.theme)}</button><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div></header><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav><section class="construction-disclosure" aria-labelledby="construction-disclosure-title"><h2 id="construction-disclosure-title">${esc(CONSTRUCTION_DISCLOSURE.heading)}</h2><p>${esc(CONSTRUCTION_DISCLOSURE.body)}</p></section><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card">${renderedSections.join('')}</div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}${includeCopy ? renderCopy() : ''}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden><div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="theme" aria-label="Switch colour theme">${esc(CONTROLS.theme)}</button><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div></header><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav><section class="construction-disclosure" aria-labelledby="construction-disclosure-title"><h2 id="construction-disclosure-title">${esc(CONSTRUCTION_DISCLOSURE.heading)}</h2><p>${esc(CONSTRUCTION_DISCLOSURE.body)}</p></section><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>${embedded ? 1 : 1}</span> of ${embedded ? 7 : 8}: <span data-step-name>${esc(visibleSteps[0][0])}</span></p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="${embedded ? 7 : 8}" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / (embedded ? 7 : 8))}%"></span></div>${renderedSections.join('')}<div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}${includeCopy ? renderCopy() : ''}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
 }
 

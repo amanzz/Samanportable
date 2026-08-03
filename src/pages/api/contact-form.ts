@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { submitPublicFormLead } from '@/lib/zohoCrm';
 import { sendToAllRecipients, formatFormDataForEmail } from '@/lib/mailer';
 import { EMAIL_TEMPLATES, COMPANY_INFO } from '@/config/emails';
 
@@ -27,19 +28,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Submit to Zoho CRM
     try {
-      const zohoData = new URLSearchParams();
-      zohoData.append('Name_First', firstName || '-');
-      zohoData.append('Name_Last', lastName || '-');
-      zohoData.append('PhoneNumber_countrycode', phone || '');
-      zohoData.append('Email', email || '');
-      zohoData.append('Dropdown1', service || '-Select-');
-      zohoData.append('Dropdown', region || '-Select-');
-      zohoData.append('SingleLine', message || '');
-
-      const zohoResponse = await fetch('https://forms.zohopublic.com/samanportable1/form/GetQuoteForm/formperma/-RQ6B5h5-oglLK1XIN6BcUhddk3Z4msxkoTE5r7OBok/htmlRecords/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: zohoData.toString()
+      // Single outbound boundary: see submitPublicFormLead in @/lib/zohoCrm.
+      const zohoResponse = await submitPublicFormLead({
+        firstName, lastName, phone, email,
+        category: service, region, context: message || '',
       });
 
       if (!zohoResponse.ok) {

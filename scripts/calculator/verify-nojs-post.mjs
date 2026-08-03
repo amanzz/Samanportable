@@ -54,12 +54,17 @@ exports.formatFormDataForEmail = (data) => JSON.stringify(data);
 fs.writeFileSync(path.join(stubDir, 'zohoCrm.cjs'), `
 const fs = require('fs');
 const LEDGER = ${ledgerLiteral};
-exports.upsertLabourColonyLead = async (...args) => {
+function record(kind, args) {
   const l = JSON.parse(fs.readFileSync(LEDGER, 'utf8'));
-  l.crm.push(args.map((a) => (typeof a === 'object' ? Object.keys(a || {}) : String(a))));
+  l[kind].push(args.map((a) => (typeof a === 'object' ? Object.keys(a || {}) : String(a))));
   fs.writeFileSync(LEDGER, JSON.stringify(l));
-  return { success: true, stubbed: true };
-};
+}
+exports.upsertLabourColonyLead = async (...args) => { record('crm', args); return { success: true, stubbed: true }; };
+// Every handler now reaches Zoho through this one function, so this single
+// stub stops all of them. Before the refactor three handlers bypassed it with
+// a bare fetch and a test run sent a real lead.
+exports.submitPublicFormLead = async (...args) => { record('crm', args); return { ok: true, status: 200 }; };
+exports.buildPublicFormPayload = () => new URLSearchParams();
 `);
 
 const REDIRECTS = {

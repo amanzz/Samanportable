@@ -43,6 +43,21 @@ const urls = [...new Set(
 )].sort();
 
 const nameOf = (id) => PRODUCTS.find((p) => p.id === id)?.name ?? '(unknown)';
+
+/**
+ * The name each page passes to the calculator: its OWN product record, not the
+ * shared product-family name. The renderer takes `productName` from the page,
+ * so a subpage shows its own approved name. Before this, seven routes showed
+ * "Portable Office" when only one of them was Portable Office.
+ */
+function pageName(slugOrCategory) {
+  const p = fromRoot('src', 'data', 'wp-export', 'products', `${slugOrCategory}.json`);
+  if (!fs.existsSync(p)) return null;
+  try {
+    const d = JSON.parse(fs.readFileSync(p, 'utf8'));
+    return d.name || d.title || null;
+  } catch { return null; }
+}
 const pad = (s, n) => String(s).padEnd(n);
 
 const withCalculator = [];
@@ -57,7 +72,11 @@ for (const url of urls) {
     url,
     category,
     productId: mapping.productId,
-    name: nameOf(mapping.productId),
+    // What the page actually renders: its own record's name, falling back to
+    // the product-family name only where the page has no record.
+    name: pageName(slug || category) || nameOf(mapping.productId),
+    familyName: nameOf(mapping.productId),
+    ownRecord: Boolean(pageName(slug || category)),
     ladderKey: mapping.ladderKey,
     hasLadder: COLONY.has(mapping.productId) || Boolean(getRouteLadder(mapping.ladderKey)),
     isColony: COLONY.has(mapping.productId),
@@ -78,12 +97,18 @@ for (const r of withCalculator) {
 // --- assertions -----------------------------------------------------------
 const diffs = [];
 const PORTA_FAMILY = new Set(['porta-cabin', 'office-cabin', 'toilet-cabin', 'security-cabin', 'accommodation-cabin']);
+const hubNames = new Set(withCalculator.filter((r) => !r.url.split('/')[3]).map((r) => r.name));
 for (const r of withCalculator) {
   if (r.category === 'porta-cabins' && !PORTA_FAMILY.has(r.productId)) {
-    diffs.push(`${r.url}: under /porta-cabins/ but locks to "${r.name}" (${r.productId})`);
+    diffs.push(`${r.url}: under /porta-cabins/ but prices as "${r.productId}"`);
   }
   if (r.category === 'porta-cabins' && r.name === 'Portable Cabin') {
     diffs.push(`${r.url}: renders "Portable Cabin" on a Porta Cabin route`);
+  }
+  // A subpage must never display its hub's name.
+  const isSubpage = Boolean(r.url.split('/')[3]);
+  if (isSubpage && r.ownRecord === false && hubNames.has(r.familyName)) {
+    diffs.push(`${r.url}: has no product record, so it would display the hub name "${r.familyName}"`);
   }
 }
 

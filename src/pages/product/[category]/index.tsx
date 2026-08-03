@@ -508,7 +508,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
 
   const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category), [category]);
   const embeddedCalculatorSummary = useMemo(() => (
-    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey) : null
+    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
   ), [embeddedCalculatorMapping]);
 
   const embeddedCalculatorSummaryText = useMemo(() => {
@@ -524,6 +524,8 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
         productId: embeddedCalculatorMapping.productId,
       },
       ladderKey: embeddedCalculatorMapping.ladderKey,
+      // This page's own approved product name, never its hub's.
+      productName: product?.name,
       pageUrl: makeCalculatorPageUrl(category),
     });
   }, [category, embeddedCalculatorMapping]);

@@ -7,6 +7,8 @@ const scripts = [
   'verify-route-price-identity.mjs',
   'report-locked-product-names.mjs',
   'verify-copy-pack.mjs',
+  'verify-colour-modes.mjs',
+  'verify-no-bare-fetch.mjs',
   'verify-no-emoji.mjs',
   'verify-nojs-post.mjs',
   'verify-rate-card-diff.mjs',

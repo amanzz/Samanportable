@@ -125,6 +125,22 @@
     });
     root.dataset.currentStep = String(target);
     const activeSection = sections.find((section) => num(section.dataset.step) === target);
+
+    // Step counter, progress bar and the Back/Next affordances.
+    const position = available.indexOf(target) + 1;
+    const totalSteps = available.length;
+    setText(root, '[data-step-current]', String(position));
+    const activeName = activeSection?.querySelector('h2')?.textContent || '';
+    setText(root, '[data-step-name]', activeName.replace(/^Step \d+ of \d+:\s*/, ''));
+    const progress = root.querySelector('[data-step-progress]');
+    if (progress) {
+      progress.setAttribute('aria-valuenow', String(position));
+      progress.setAttribute('aria-valuemax', String(totalSteps));
+      const fill = progress.querySelector('[data-step-progress-fill]');
+      if (fill) fill.style.width = `${Math.round((position / totalSteps) * 100)}%`;
+    }
+    root.querySelectorAll('[data-action="back"]').forEach((button) => { button.disabled = position <= 1; });
+    root.querySelectorAll('[data-action="next"]').forEach((button) => { button.hidden = position >= totalSteps; });
     if (focus) activeSection?.focus({ preventScroll: false });
     track('step_view', { step_number: target, step_name: activeSection?.querySelector('h2')?.textContent || '' });
   }
@@ -191,7 +207,6 @@
     if (!colony && !quoteOnly) {
       if (height > 8.5) total += Math.round((base / quantity) * num(root.dataset.heightRatePerFoot) * (height - 8.5)) * quantity;
       total += Math.round(base * dataNumber(chosen(form, 'roof'), 'rate') / 100);
-      total += Math.round(dataNumber(chosen(form, 'structure'), 'rate') * area * quantity);
       const rooms = Math.max(1, num(value(form, 'rooms', 1), 1));
       if (rooms > 1) total += Math.round((rooms - 1) * width * 8.5 * num(root.dataset.partitionRate) * quantity);
       total += Math.round(dataNumber(chosen(form, 'wallFinish'), 'rate') * wallArea * quantity);
@@ -243,6 +258,22 @@
         setText(root, '[data-worker-suggestion]', `${label} × ${suggestion.blocks} accommodates at least ${workers.toLocaleString('en-IN')} workers.`);
       }
     }
+    // The sticky summary header binds to live state. It used to be server-
+    // rendered once and never touched, so changing product or size left it
+    // reading the value it was born with.
+    const chosenProduct = chosen(form, 'productId');
+    const productLabel = chosenProduct
+      ? (chosenProduct.dataset.label
+        || chosenProduct.closest('label')?.querySelector('.choice-title')?.textContent?.trim()
+        || '')
+      : '';
+    if (productLabel) setText(root, '[data-summary-product]', productLabel);
+    if (!colony) {
+      setText(root, '[data-summary-size]',
+        `${length}×${width} ft · ${area.toLocaleString('en-IN')} sq ft${quantity > 1 ? ` · quantity ${quantity}` : ''}`);
+    }
+    setText(root, '[data-summary-ex]', quoteOnly ? 'Price on request' : INR.format(total));
+    setText(root, '[data-summary-incl]', quoteOnly ? 'Fixed quotation within 48 hours' : `${INR.format(total + gst)} incl. GST`);
     setText(root, '[data-estimate-ex-gst]', quoteOnly ? 'Price on request' : INR.format(total));
     setText(root, '[data-estimate-incl-gst]', quoteOnly ? 'Fixed quotation within 48 hours' : `${INR.format(total + gst)} incl. 18% GST`);
     setText(root, '[data-mobile-estimate]', quoteOnly ? 'On request' : INR.format(total));
@@ -335,6 +366,13 @@
         return;
       }
       const action = control.dataset.action;
+      if (action === 'back' || action === 'next') {
+        const steps = Array.from(root.querySelectorAll('[data-step]')).map((s) => num(s.dataset.step));
+        const at = steps.indexOf(num(root.dataset.currentStep, steps[0]));
+        const to = steps[Math.min(steps.length - 1, Math.max(0, at + (action === 'next' ? 1 : -1)))];
+        showStep(root, to, true);
+        return;
+      }
       if (action === 'theme') {
         root.dataset.theme = root.dataset.theme === 'light' ? 'green' : 'light';
       }

@@ -59,11 +59,13 @@ function domText(html) {
     .trim();
 }
 
-const standalone = domText(renderCabinCalculatorSSR({ pageUrl: '/cabin-cost-calculator' }));
-const embedded = domText(renderCabinCalculatorSSR({
+const rawStandalone = renderCabinCalculatorSSR({ pageUrl: '/cabin-cost-calculator' });
+const standalone = domText(rawStandalone);
+const rawEmbedded = renderCabinCalculatorSSR({
   embedded: true, pageUrl: '/product/porta-cabins',
   config: { productId: 'porta-cabin' }, ladderKey: 'porta-cabins',
-}));
+});
+const embedded = domText(rawEmbedded);
 const quoteMode = domText(renderCabinCalculatorSSR({
   embedded: true, pageUrl: '/product/container-houses/tiny-container-homes',
   config: { productId: 'container-houses' }, ladderKey: 'tiny-container-homes',
@@ -130,9 +132,11 @@ for (const term of FORBIDDEN) {
 }
 
 // Step count: eight standalone, seven embedded.
-const stepCount = (html) => (html.match(/Step \d+ of \d+/g) || []).length;
-const standaloneSteps = stepCount(standalone);
-const embeddedSteps = stepCount(embedded);
+// Count the step SECTIONS, not every "Step N of M" string: the step counter
+// line above the panel legitimately says the same thing and would double-count.
+const stepCount = (html) => (html.match(/id="calculator-step-title-/g) || []).length;
+const standaloneSteps = stepCount(rawStandalone);
+const embeddedSteps = stepCount(rawEmbedded);
 console.log(`\nSTEP COUNT   standalone ${standaloneSteps} (expected 8)   embedded ${embeddedSteps} (expected 7)`);
 if (standaloneSteps !== 8) diffs.push(`standalone renders ${standaloneSteps} steps, expected 8`);
 if (embeddedSteps !== 7) diffs.push(`embedded renders ${embeddedSteps} steps, expected 7`);

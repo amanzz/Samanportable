@@ -168,3 +168,54 @@ export async function upsertLabourColonyLead(input: LeadInput): Promise<boolean>
   if (!phoneMatch.ok) return false;
   return writeLead(token, apiDomain, record, phoneMatch.id);
 }
+
+/**
+ * The single outbound boundary for the Zoho public GetQuoteForm endpoint.
+ *
+ * Three API handlers used to `fetch` this URL directly. That meant the
+ * integration had no single boundary: stubbing this module in a test did not
+ * stop the traffic, and on 03 Aug 2026 a test run sent a real lead. Every call
+ * now goes through here, so one stub stops all of them.
+ *
+ * The payload shape is unchanged from what the three handlers built by hand —
+ * same seven fields, same names, same order, same encoding.
+ */
+const PUBLIC_FORM_ENDPOINT =
+  'https://forms.zohopublic.com/samanportable1/form/GetQuoteForm/formperma/-RQ6B5h5-oglLK1XIN6BcUhddk3Z4msxkoTE5r7OBok/htmlRecords/submit';
+
+export interface PublicFormLead {
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
+  email?: string;
+  /** Product or service. Zoho field Dropdown1. */
+  category?: string;
+  /** Region. Zoho field Dropdown. */
+  region?: string;
+  /** Free-text context. Zoho field SingleLine. */
+  context?: string;
+}
+
+/** Exposed for tests so payload shape can be asserted without a network call. */
+export function buildPublicFormPayload(lead: PublicFormLead): URLSearchParams {
+  const data = new URLSearchParams();
+  data.append('Name_First', lead.firstName || '-');
+  data.append('Name_Last', lead.lastName || '-');
+  data.append('PhoneNumber_countrycode', lead.phone || '');
+  data.append('Email', lead.email || '');
+  data.append('Dropdown1', lead.category || '-Select-');
+  data.append('Dropdown', lead.region || '-Select-');
+  data.append('SingleLine', lead.context || '');
+  return data;
+}
+
+export async function submitPublicFormLead(
+  lead: PublicFormLead
+): Promise<{ ok: boolean; status: number }> {
+  const response = await fetch(PUBLIC_FORM_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: buildPublicFormPayload(lead).toString(),
+  });
+  return { ok: response.ok, status: response.status };
+}
