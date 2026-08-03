@@ -500,8 +500,12 @@ export function PortaCabinVariantHero({
   // not rendered at all (never another product's copy).
   const applications = APPLICATIONS_DATASETS[data.applicationsDataset || preset.applicationsDataset || data.productSlug];
   const heroActive = data.variants[heroIndex];
-  const imagesForVariant = (variant: typeof heroActive) =>
-    variant.images?.length ? variant.images : (data.galleryImages || []);
+  const imagesForVariant = (variant: typeof heroActive) => {
+    const images = variant.images?.length ? variant.images : (data.galleryImages || []);
+    // C-08 reserves manifest row six for the independent Section H image slot.
+    // Rows one to five remain the Section 2 image set (hero plus thumbnails).
+    return isC08Product && images.length === 6 ? images.slice(0, 5) : images;
+  };
   const activeVariantImages = imagesForVariant(heroActive);
   const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
 
@@ -610,7 +614,7 @@ export function PortaCabinVariantHero({
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 text-center p-4">
               <p className="text-sm text-muted-foreground">
-                Photos for the {heroActive.label} {productName} are being finalised — send an enquiry for reference images.
+                Reference photographs for this size are available on request. Send an enquiry and we will share them.
               </p>
             </div>
           )}
@@ -1050,6 +1054,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
 
   const preset = getVariantPreset(data);
   const productNameLower = productName.toLowerCase();
+  const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
   const explorerTemplate = data.explorerImageTemplate || preset.explorerImageTemplate;
   const explorerShot = data.explorerImageShot || preset.explorerImageShot || 'elevated-view';
 
@@ -1117,28 +1122,31 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           const panel = panelBySlug.get(v.sizeSlug);
           if (!panel) return null;
           const variantImages = v.images?.length ? v.images : (data.galleryImages || []);
-          // Panel photo = that size's ELEVATED-VIEW shot (a different file from the
-          // gallery's hero-view, so no image repeats on the page). 40x8 has no
-          // real photos yet → placeholder.
+          // C-08 manifest row six is the dedicated Section H image. Other clusters
+          // retain the explicit-image/template/derived-shot resolution order.
+          const c08ExplorerImage = isC08Product && variantImages.length === 6
+            ? variantImages[5]
+            : undefined;
           const hasPhotos = variantImages.length > 0;
           const panelSrc =
             panel.image?.src ||
+            c08ExplorerImage?.src ||
             (hasPhotos
               ? explorerImageSrc(explorerTemplate, explorerShot, v.sizeSlug, variantImages[0]?.src)
               : null);
+          const manifestImage = variantImages.find((image) => image.src === panelSrc);
           const panelImage = panelSrc
             ? {
                 src: panelSrc,
-                // When the Explorer reuses this size's gallery HERO shot (panelSrc equals
-                // the first gallery image — e.g. the C-02 shop cabin, which ships no
-                // separate elevated-view per the FIX-PACKET), carry that image's own §E
-                // alt. Products whose Explorer uses a DISTINCT shot (porta-cabins →
-                // elevated-view) keep the derived application alt, byte-identical.
+                // When the Explorer resolves to a manifest image, carry that image's
+                // approved alt. Products whose Explorer uses a derived application shot
+                // retain the established application-alt fallback, byte-identical.
                 // An owner-authored panel alt (C-02 with-toilet §H) wins outright;
                 // otherwise the existing two-branch behaviour is unchanged.
                 alt:
                   panel.image?.alt ||
                   panel.imageAlt ||
+                  manifestImage?.alt ||
                   (panelSrc === variantImages[0]?.src && variantImages[0]?.alt
                     ? variantImages[0].alt
                     : applicationAlt(v.label, panel.applications[0], productNameLower)),
@@ -1157,7 +1165,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 i === activeIndex ? 'visible' : 'invisible pointer-events-none'
               )}
             >
-              {/* LEFT — that size's elevated-view photo (or the honest placeholder
+              {/* LEFT — that size's dedicated Explorer photo (or the honest placeholder
                   when a size has no photos). The aspect-[4/3] box always reserves
                   space (zero CLS, grid-stack). V7: only the ACTIVE panel renders an
                   <img>, so INACTIVE panels issue ZERO network requests at initial
@@ -1182,8 +1190,8 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                         src={panelImage.src}
                         unoptimized={shouldBypassOptimizer(panelImage.src)}
                         alt={panelImage.alt}
-                        width={panel.image?.width || 1254}
-                        height={panel.image?.height || 1254}
+                        width={panel.image?.width || manifestImage?.width || 1254}
+                        height={panel.image?.height || manifestImage?.height || 1254}
                         className="w-full h-full object-cover"
                         sizes="(max-width: 1023px) calc(100vw - 34px), 500px"
                         loading="lazy"
@@ -1193,7 +1201,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   ) : (
                     <div className="flex h-full w-full items-center justify-center p-4 text-center">
                       <p className="text-sm text-[var(--ds-color-steel)]">
-                        Photos for the {v.label} {productName} are being finalised — send an enquiry for reference images.
+                        Reference photographs for this size are available on request. Send an enquiry and we will share them.
                       </p>
                     </div>
                   )}

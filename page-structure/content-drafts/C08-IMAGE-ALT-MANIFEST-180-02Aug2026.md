@@ -206,7 +206,7 @@ Source folder: `luxury-container-houses`
 | Src | New filename | Alt text |
 |---|---|---|
 | E01 | luxury-container-houses-40x8-front-right-hero.webp | Front-right hero view of a 40x8 ft luxury container house, dark brown cladding, on a eucalyptus slope with hydrangea beds |
-| I01 | luxury-container-houses-40x8-entry-living-hall.webp | Entry and living area inside a 40x8 ft luxury container house, with a sofa with a timber coffee table |
+| I01 | luxury-container-houses-40x8-entry-living-hall.webp | Entry and living area inside a 40x8 ft luxury container house, with a linen sofa and a low timber table beneath framed artwork. |
 | E03 | luxury-container-houses-40x8-long-side-elevation.webp | Side elevation of a 40x8 ft luxury container house, dark brown cladding, on a eucalyptus slope with hydrangea beds |
 | E05 | luxury-container-houses-40x8-end-dominant-view.webp | End-on view of a 40x8 ft luxury container house with the gable glazing lit, dark brown cladding, on a eucalyptus slope with hydrangea beds |
 | I02 | luxury-container-houses-40x8-kitchen-dining.webp | Kitchen and dining zone inside a 40x8 ft luxury container house, with a dining table beneath pendant lights |
