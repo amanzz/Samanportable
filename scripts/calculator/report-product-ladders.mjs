@@ -41,7 +41,6 @@ const mappings = [
   ['affordable-container-homes', lowest, 1.15],
   ['luxury-container-houses', highest, 1.20],
 ];
-const calculatorRates = readText('src', 'lib', 'calculatorRates.ts');
 const ladderDiffs = [];
 
 console.log('\nCONTAINER-HOUSE DERIVED LADDERS');
@@ -57,10 +56,14 @@ for (const [product, source, uplift] of mappings) {
     const price = roundedRate * variant.areaSqft;
     console.log(`${variant.label} | ${variant.areaSqft} | ${sourceRate} | ${roundedRate} | ${inr(price)}`);
   }
-  const sourceKey = source === 'container-offices' ? 'containerOffices' : source === 'container-office-cabin' ? 'containerOfficeCabins' : 'shippingContainerOffices';
-  const expectedExpression = `PRODUCT_LADDERS.${sourceKey}.map((x) => Math.round((x.priceExGst / x.areaSqft) * ${uplift}) * x.areaSqft)`;
-  if (!calculatorRates.includes(`'${product}': ${expectedExpression}`)) ladderDiffs.push(`${product}: calculatorRates.ts does not use required ${source} +${Math.round((uplift - 1) * 100)}% mechanical mapping`);
-  if (variants.length !== 9) ladderDiffs.push(`${product}: expected 9 rows, found ${variants.length}`);
+  // SUPERSEDED (Fable 5, 03 Aug 2026): this used to assert that
+  // calculatorRates.ts computed the house ladders at runtime as
+  // `Math.round(rate * uplift) * area`. That mapping is now forbidden — the
+  // approved values are stored in src/lib/calculatorLadders.ts and the runtime
+  // derivation is gone, because a published price must not depend on a
+  // floating-point rounding tie. Exactness of the stored values is asserted by
+  // scripts/calculator/verify-route-price-identity.mjs instead. The block above
+  // stays as a report of how the values were originally derived.
 }
 console.log('');
 failIfDiffs('container-house mapping', ladderDiffs);

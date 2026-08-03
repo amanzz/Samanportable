@@ -433,7 +433,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
   const embeddedCalculatorSummary = useMemo(() => (
-    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId) : null
+    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey) : null
   ), [embeddedCalculatorMapping]);
 
   const embeddedCalculatorSummaryText = useMemo(() => {
@@ -448,6 +448,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       config: {
         productId: embeddedCalculatorMapping.productId,
       },
+      ladderKey: embeddedCalculatorMapping.ladderKey,
       pageUrl: makeCalculatorPageUrl(category, slug),
     });
   }, [category, slug, embeddedCalculatorMapping]);

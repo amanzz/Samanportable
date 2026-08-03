@@ -3,7 +3,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const directory = path.dirname(fileURLToPath(import.meta.url));
-const scripts = ['verify-v9-rates.mjs', 'report-product-ladders.mjs', 'verify-hub-anchors.mjs', 'verify-ux-static.mjs'];
+const scripts = [
+  'verify-route-price-identity.mjs',
+  'verify-v9-rates.mjs',
+  'report-product-ladders.mjs',
+  'verify-hub-anchors.mjs',
+  'verify-ux-static.mjs',
+];
 let failed = false;
 
 for (const script of scripts) {

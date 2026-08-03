@@ -1,5 +1,41 @@
+import fs from 'node:fs';
 import vm from 'node:vm';
-import { extractBetween, failIfDiffs, readText } from './common.mjs';
+import { extractBetween, failIfDiffs, fromRoot, readText } from './common.mjs';
+
+/**
+ * BLOCKED, not passing.
+ *
+ * This audit reads two authority files that have never been committed to any
+ * branch of this repository:
+ *
+ *   page-structure/content-drafts/saman-cabin-calculator-v9.html
+ *   page-structure/content-drafts/SAMAN-CALCULATOR-RATE-CARD-02Aug2026.md
+ *
+ * `git log --all` returns nothing for either path and neither is gitignored.
+ * Every previously reported result from this script — including "342 rows, 0
+ * mismatches" and the 15-case parity figure — was produced against untracked
+ * local files that no longer exist, so none of it is reproducible from a clean
+ * checkout.
+ *
+ * It used to crash with ENOENT, which read as a broken script rather than a
+ * missing input. It now reports the gap explicitly and fails, so the gate stays
+ * visibly unmet until SAMAN commits the two files.
+ */
+const AUTHORITY_FILES = [
+  ['page-structure', 'content-drafts', 'saman-cabin-calculator-v9.html'],
+  ['page-structure', 'content-drafts', 'SAMAN-CALCULATOR-RATE-CARD-02Aug2026.md'],
+];
+const missing = AUTHORITY_FILES.filter((parts) => !fs.existsSync(fromRoot(...parts)));
+if (missing.length) {
+  console.log('V9 PARITY AUDIT: BLOCKED — authority files absent from the repository');
+  for (const parts of missing) console.log(`  missing: ${parts.join('/')}`);
+  console.log('');
+  console.log('  Never committed to any branch; `git log --all` returns no commit for');
+  console.log('  either path, and neither is gitignored. The audit cannot run, and no');
+  console.log('  parity figure from it can be reproduced or trusted until they land.');
+  failIfDiffs('v9-parity', missing.map((parts) => `${parts.join('/')}: authority file not in the repository`));
+  process.exit(1);
+}
 
 const v9 = readText('page-structure', 'content-drafts', 'saman-cabin-calculator-v9.html');
 const rateCard = readText('page-structure', 'content-drafts', 'SAMAN-CALCULATOR-RATE-CARD-02Aug2026.md');

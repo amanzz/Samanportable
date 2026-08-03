@@ -1,10 +1,10 @@
 import {
-  CONTAINER_HOUSE_LADDERS,
   GST_RATE,
   PRODUCT_LADDERS,
   RATE_CARD,
   calculateAreaBandBase,
 } from '@/lib/calculatorRates';
+import { getRouteLadder, ladderAnchorRate, ladderPriceFor } from '@/lib/calculatorLadders';
 
 export type ProductId =
   | 'porta-cabin'
@@ -65,6 +65,12 @@ export interface QuoteFields {
 
 export interface CalculatorConfig {
   productId: ProductId;
+  /**
+   * Product JSON slug of the route this calculator is embedded on. Pricing
+   * reads this route's own published ladder and nothing else. Null on the
+   * standalone route, where the selected product supplies its own key.
+   */
+  ladderKey?: string | null;
   length: number;
   width: number;
   height: number;
@@ -119,7 +125,8 @@ interface ProductDefinition {
   subtitle: string;
   referenceRate?: number;
   quoteOnly?: boolean;
-  houseLadder?: keyof typeof CONTAINER_HOUSE_LADDERS;
+  /** Ladder this product prices from when chosen on the standalone route. */
+  ladderKey?: string;
 }
 
 export interface RenderCalculatorOptions {
@@ -131,6 +138,8 @@ export interface RenderCalculatorOptions {
   activeStep?: number;
   reference?: string;
   productSlug?: ColonyProductSlug;
+  /** Product JSON slug of the embedding route, so pricing reads its ladder. */
+  ladderKey?: string;
   pageUrl?: string;
   submissionStatus?: 'success' | 'failure';
 }
@@ -143,19 +152,19 @@ export interface EmbeddedProductSummary {
 }
 
 export const PRODUCTS: readonly ProductDefinition[] = [
-  { id: 'porta-cabin', name: 'Porta Cabin', subtitle: 'All-purpose modular cabin', referenceRate: 1250 },
-  { id: 'office-cabin', name: 'Office Cabin', subtitle: 'Furnished workspace cabin', referenceRate: 1350 },
+  { id: 'porta-cabin', name: 'Porta Cabin', subtitle: 'All-purpose modular cabin', referenceRate: 1250, ladderKey: 'porta-cabins' },
+  { id: 'office-cabin', name: 'Office Cabin', subtitle: 'Furnished workspace cabin', referenceRate: 1350, ladderKey: 'portable-office' },
   { id: 'security-cabin', name: 'Security Cabin', subtitle: 'Guard booth / gate post', referenceRate: 1250 },
-  { id: 'toilet-cabin', name: 'Toilet Cabin', subtitle: 'Portable washroom block', quoteOnly: true },
+  { id: 'toilet-cabin', name: 'Toilet Cabin', subtitle: 'Portable washroom block', quoteOnly: true, ladderKey: 'porta-cabin-with-toilet' },
   { id: 'accommodation-cabin', name: 'Accommodation Cabin', subtitle: 'Bunkhouse / staff stay', referenceRate: 1450 },
-  { id: 'container-office', name: 'Container Office', subtitle: 'Insulated container workspace', referenceRate: 1800 },
-  { id: 'site-office', name: 'Site Office', subtitle: 'On-site project office', referenceRate: 1450 },
-  { id: 'portable-cabin', name: 'Portable Cabin', subtitle: 'General-purpose portable cabin', referenceRate: 1250 },
-  { id: 'container-houses', name: 'Container House', subtitle: 'Standard container home', houseLadder: 'container-houses' },
-  { id: 'prefab-container-homes', name: 'Prefab Container Home', subtitle: 'Prefab home specification', houseLadder: 'prefab-container-homes' },
-  { id: 'shipping-container-homes', name: 'Shipping Container Home', subtitle: 'Shipping-grade shell', houseLadder: 'shipping-container-homes' },
-  { id: 'affordable-container-homes', name: 'Affordable Container Home', subtitle: 'Lowest-rate home ladder', houseLadder: 'affordable-container-homes' },
-  { id: 'luxury-container-houses', name: 'Luxury Container House', subtitle: 'Highest-rate luxury ladder', houseLadder: 'luxury-container-houses' },
+  { id: 'container-office', name: 'Container Office', subtitle: 'Insulated container workspace', referenceRate: 1800, ladderKey: 'container-offices' },
+  { id: 'site-office', name: 'Site Office', subtitle: 'On-site project office', referenceRate: 1450, ladderKey: 'site-office-container' },
+  { id: 'portable-cabin', name: 'Portable Cabin', subtitle: 'General-purpose portable cabin', referenceRate: 1250, ladderKey: 'portable-cabin' },
+  { id: 'container-houses', name: 'Container House', subtitle: 'Standard container home', ladderKey: 'container-houses' },
+  { id: 'prefab-container-homes', name: 'Prefab Container Home', subtitle: 'Prefab home specification', ladderKey: 'prefab-container-homes' },
+  { id: 'shipping-container-homes', name: 'Shipping Container Home', subtitle: 'Shipping-grade shell', ladderKey: 'shipping-container-homes' },
+  { id: 'affordable-container-homes', name: 'Affordable Container Home', subtitle: 'Lowest-rate home ladder', ladderKey: 'affordable-container-homes' },
+  { id: 'luxury-container-houses', name: 'Luxury Container House', subtitle: 'Highest-rate luxury ladder', ladderKey: 'luxury-container-houses' },
   { id: 'prefab-modular-home', name: 'Prefab Modular Home', subtitle: 'Turnkey modular living space', referenceRate: 1650 },
   { id: 'container-cafe', name: 'Container Cafe', subtitle: 'Cafe and restaurant unit', referenceRate: 1850 },
   { id: 'labour-colony', name: 'Labour Colony', subtitle: 'Worker housing blocks' },
@@ -976,6 +985,7 @@ function sanitiseConfig(value: unknown): CalculatorConfig {
   const windows = Array.isArray(source.windows) ? source.windows.slice(0, 20).map(cleanWindow).filter((item): item is WindowConfig => Boolean(item)) : DEFAULT_CALCULATOR_CONFIG.windows;
   return {
     productId: member(source.productId, productIds, DEFAULT_CALCULATOR_CONFIG.productId),
+    ladderKey: typeof source.ladderKey === 'string' && source.ladderKey ? source.ladderKey : null,
     length: finite(source.length, 20, -10000, 10000),
     width: finite(source.width, 10, -10000, 10000),
     height: finite(source.height, 8.5, -10000, 10000),
@@ -1038,18 +1048,13 @@ export function parseCalculatorQuery(query: CalculatorQuery = {}): CalculatorCon
   return sanitiseConfig(direct);
 }
 
-function sourceLadder(product: ProductDefinition) {
-  if (product.houseLadder === 'container-houses') return PRODUCT_LADDERS.containerOffices;
-  if (product.houseLadder === 'prefab-container-homes' || product.houseLadder === 'affordable-container-homes') return PRODUCT_LADDERS.containerOfficeCabins;
-  return PRODUCT_LADDERS.shippingContainerOffices;
-}
-
-function effectiveReferenceRate(product: ProductDefinition): number {
-  if (product.referenceRate) return product.referenceRate;
-  if (!product.houseLadder) return 0;
-  const source = sourceLadder(product);
-  const index = Math.max(0, source.findIndex((item) => item.areaSqft === 200));
-  return CONTAINER_HOUSE_LADDERS[product.houseLadder][index] / 200;
+/**
+ * Rate published to the client enhancer for custom sizes. Taken from the
+ * route's own ladder so the browser can never derive a figure from a rate the
+ * page does not publish.
+ */
+function effectiveReferenceRate(product: ProductDefinition, ladderKey?: string | null): number {
+  return ladderAnchorRate(ladderKey ?? product.ladderKey) ?? 0;
 }
 
 function dimensionsFromLabel(label: string): { length: number; width: number } | null {
@@ -1058,24 +1063,30 @@ function dimensionsFromLabel(label: string): { length: number; width: number } |
   return { length: Number(match[1]), width: Number(match[2]) };
 }
 
-function publishedPrice(product: ProductDefinition, length: number, width: number): number | null {
-  const row = productPriceRows(product).find((item) => item.length === length && item.width === width);
-  return row?.ex ?? null;
+/**
+ * The ladder this configuration prices from: the embedding route's own ladder
+ * where there is one, otherwise the selected product's own. Never a parent's,
+ * never a sibling's, never a shared reference row.
+ */
+function ladderKeyFor(config: CalculatorConfig): string | null {
+  return config.ladderKey ?? productFor(config.productId).ladderKey ?? null;
 }
 
 function calculateBase(config: CalculatorConfig, area: number): number | null {
-  const product = productFor(config.productId);
-  if (product.quoteOnly) return null;
-  if (isColonyProduct(config.productId)) return (colonyLadder(config.productId)[config.colonyVariant]?.priceExGst || 0) * config.quantity;
-  const ladderPrice = publishedPrice(product, config.length, config.width);
-  if (ladderPrice !== null) return ladderPrice * config.quantity;
-  if (product.houseLadder) {
-    const source = sourceLadder(product);
-    const refIndex = Math.max(0, source.findIndex((entry) => entry.areaSqft === 200));
-    const refPrice = CONTAINER_HOUSE_LADDERS[product.houseLadder][refIndex];
-    return calculateAreaBandBase(area, refPrice / 200) * config.quantity;
+  if (isColonyProduct(config.productId)) {
+    return (colonyLadder(config.productId)[config.colonyVariant]?.priceExGst || 0) * config.quantity;
   }
-  return calculateAreaBandBase(area, product.referenceRate || 1250) * config.quantity;
+  const key = ladderKeyFor(config);
+
+  // A published size is a lookup and is never recalculated.
+  const published = ladderPriceFor(key, config.length, config.width);
+  if (published !== null) return published * config.quantity;
+
+  // A size this route does not publish is derived from this route's own anchor
+  // rate. A route with no ladder at all returns null and renders quote mode.
+  const rate = ladderAnchorRate(key);
+  if (rate === null) return null;
+  return calculateAreaBandBase(area, rate) * config.quantity;
 }
 
 export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEstimate {
@@ -1141,7 +1152,7 @@ function radio(name: string, value: string, label: string, isChecked: boolean, d
 }
 
 function productChoice(name: string, item: ProductDefinition, isChecked: boolean): string {
-  return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(item.id)}"${checked(isChecked)} data-product-choice="1"><span><strong class="choice-title"><span class="choice-icon" aria-hidden="true">${PRODUCT_ICON[item.id] || '🏭'}</span>${esc(item.name)}</strong><small class="choice-description">${esc(item.subtitle)}</small><small>${item.houseLadder ? 'Published ladder-backed builder rate' : item.quoteOnly ? 'Price on request' : `from ${money(productPriceRows(item)[0]?.ex || 0)} ex-GST`}</small></span></label>`;
+  return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(item.id)}"${checked(isChecked)} data-product-choice="1"><span><strong class="choice-title"><span class="choice-icon" aria-hidden="true">${PRODUCT_ICON[item.id] || '🏭'}</span>${esc(item.name)}</strong><small class="choice-description">${esc(item.subtitle)}</small><small>${getRouteLadder(item.ladderKey) ? `from ${money(productPriceRows(item)[0]?.ex || 0)} ex-GST` : 'Price on request'}</small></span></label>`;
 }
 
 function renderStepGuidance(key: keyof typeof STEP_GUIDANCE): string {
@@ -1194,7 +1205,10 @@ function renderPlan(config: CalculatorConfig): string {
   return `<svg class="floor-plan" viewBox="0 0 320 190" role="img" aria-label="Cabin floor plan and four elevations" data-floor-plan><g data-plan-view="plan"${config.planView === 'plan' ? '' : ' hidden'}><rect x="${x}" y="${y}" width="${planWidth}" height="${planHeight}" class="shell"/>${partitions}${doors}${windows}<text x="160" y="184">Yellow: doors · Blue: windows</text></g><g data-plan-view="elevations"${config.planView === 'elevations' ? '' : ' hidden'}>${elevationLabels}</g></svg>`;
 }
 
-function productPriceRows(product: ProductDefinition): Array<{ label: string; area: number; ex: number | null; capacity?: string; length?: number; width?: number }> {
+function productPriceRows(
+  product: ProductDefinition,
+  ladderKey?: string | null
+): Array<{ label: string; area: number; ex: number | null; capacity?: string; length?: number; width?: number }> {
   const withDimensions = (row: { label: string; areaSqft: number }, ex: number | null, capacity?: string) => ({
     label: row.label,
     area: row.areaSqft,
@@ -1202,17 +1216,27 @@ function productPriceRows(product: ProductDefinition): Array<{ label: string; ar
     capacity,
     ...(dimensionsFromLabel(row.label) || {}),
   });
-  if (product.quoteOnly) return PRODUCT_LADDERS.containerOfficeCabins.map((row) => withDimensions(row, null));
-  if (isColonyProduct(product.id)) return colonyLadder(product.id).map((row) => withDimensions(row, row.priceExGst, row.capacity));
-  if (product.houseLadder) {
-    return sourceLadder(product).map((row, index) => withDimensions(row, CONTAINER_HOUSE_LADDERS[product.houseLadder!][index]));
+  if (isColonyProduct(product.id)) {
+    return colonyLadder(product.id).map((row) => withDimensions(row, row.priceExGst, row.capacity));
   }
-  return PRODUCT_LADDERS.containerOfficeCabins.map((row) => withDimensions(row, calculateAreaBandBase(row.areaSqft, product.referenceRate || 1250)));
+  // The route's own published ladder, or the product's own if none was supplied.
+  const ladder = getRouteLadder(ladderKey ?? product.ladderKey);
+  if (ladder) {
+    return ladder.map((row) => ({
+      label: row.label,
+      area: row.areaSqft,
+      ex: row.priceExGst,
+      capacity: undefined,
+      ...(row.length !== null && row.width !== null ? { length: row.length, width: row.width } : {}),
+    }));
+  }
+  // No ladder of its own. Quote mode: sizes are listed, no number is published.
+  return PRODUCT_LADDERS.containerOfficeCabins.map((row) => withDimensions(row, null));
 }
 
-export function getEmbeddedProductSummary(productId: ProductId): EmbeddedProductSummary {
+export function getEmbeddedProductSummary(productId: ProductId, ladderKey?: string | null): EmbeddedProductSummary {
   const product = productFor(productId);
-  const rows = productPriceRows(product);
+  const rows = productPriceRows(product, ladderKey);
   const pricedRows = rows.filter((row): row is { label: string; area: number; ex: number; capacity?: string; length?: number; width?: number } => row.ex !== null && Number.isFinite(row.ex));
   if (pricedRows.length === 0) {
     return {
@@ -1231,8 +1255,8 @@ export function getEmbeddedProductSummary(productId: ProductId): EmbeddedProduct
   };
 }
 
-function renderPriceTables(products: readonly ProductDefinition[] = PRODUCTS): string {
-  return `<section class="price-tables" aria-labelledby="published-price-tables"><h2 id="published-price-tables">Published cabin price tables</h2><p>All primary prices are ex-GST. Including-GST figures apply 18 percent GST.</p>${products.map((product) => `<details><summary>${esc(product.name)} price table</summary><table data-product-price-table="${product.id}"><caption>${esc(product.name)} published size and price ladder</caption><thead><tr><th scope="col">Size</th><th scope="col">Area</th>${isColonyProduct(product.id) ? '<th scope="col">Workers housed</th>' : ''}<th scope="col">Price ex-GST</th><th scope="col">Including 18% GST</th></tr></thead><tbody>${productPriceRows(product).map((row) => `<tr${row.length !== undefined && row.width !== undefined && row.ex !== null ? ` data-published-size data-length="${row.length}" data-width="${row.width}" data-price-ex-gst="${row.ex}"` : ''}><th scope="row">${esc(row.label)}</th><td>${row.area.toLocaleString('en-IN')} sq ft</td>${isColonyProduct(product.id) ? `<td>${esc(row.capacity || '')}</td>` : ''}<td>${row.ex === null ? 'price on request' : money(row.ex)}</td><td>${row.ex === null ? 'itemised in quotation' : money(Math.round(row.ex * (1 + GST_RATE)))}</td></tr>`).join('')}</tbody></table></details>`).join('')}</section>`;
+function renderPriceTables(products: readonly ProductDefinition[] = PRODUCTS, ladderKey?: string | null): string {
+  return `<section class="price-tables" aria-labelledby="published-price-tables"><h2 id="published-price-tables">Published cabin price tables</h2><p>All primary prices are ex-GST. Including-GST figures apply 18 percent GST.</p>${products.map((product) => `<details><summary>${esc(product.name)} price table</summary><table data-product-price-table="${product.id}"><caption>${esc(product.name)} published size and price ladder</caption><thead><tr><th scope="col">Size</th><th scope="col">Area</th>${isColonyProduct(product.id) ? '<th scope="col">Workers housed</th>' : ''}<th scope="col">Price ex-GST</th><th scope="col">Including 18% GST</th></tr></thead><tbody>${productPriceRows(product, products.length === 1 ? ladderKey : product.ladderKey).map((row) => `<tr${row.length !== undefined && row.width !== undefined && row.ex !== null ? ` data-published-size data-length="${row.length}" data-width="${row.width}" data-price-ex-gst="${row.ex}"` : ''}><th scope="row">${esc(row.label)}</th><td>${row.area.toLocaleString('en-IN')} sq ft</td>${isColonyProduct(product.id) ? `<td>${esc(row.capacity || '')}</td>` : ''}<td>${row.ex === null ? 'price on request' : money(row.ex)}</td><td>${row.ex === null ? 'itemised in quotation' : money(Math.round(row.ex * (1 + GST_RATE)))}</td></tr>`).join('')}</tbody></table></details>`).join('')}</section>`;
 }
 
 function renderFreightTable(): string {
@@ -1267,7 +1291,14 @@ function renderWindowCard(window: WindowConfig, index: number, reserved: boolean
 
 export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}): string {
   const parsedConfig = sanitiseConfig(options.config || parseCalculatorQuery(options.query));
-  const config = options.productSlug ? sanitiseConfig({ ...parsedConfig, productId: productIdForSlug(options.productSlug) }) : parsedConfig;
+  const withSlug = options.productSlug
+    ? sanitiseConfig({ ...parsedConfig, productId: productIdForSlug(options.productSlug) })
+    : parsedConfig;
+  // The embedding route's ladder wins over anything supplied in the query, so a
+  // page can never be talked into pricing from a different route's ladder.
+  const config: CalculatorConfig = options.ladderKey
+    ? { ...withSlug, ladderKey: options.ladderKey }
+    : withSlug;
   const embedded = options.embedded === true;
   const includeCopy = options.includeCopy ?? !embedded;
   const product = productFor(config.productId);
@@ -1311,11 +1342,11 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const itemisedMessage = `SAMAN ${product.name} configuration | ${estimate.lines.map((line) => `${line.label}: ${line.amount === null ? 'in quotation' : money(line.amount)}`).join(' | ')} | Total: ${estimate.quoteOnly ? 'price on request' : `${money(estimate.totalExGst)} ex-GST`}`;
   const messageCatalog = Object.entries(CALCULATOR_MESSAGES).map(([key, value]) => `<p hidden data-message="${key}">${esc(value)}</p>`).join('');
   const rootRates = `data-area-band-under200="1.1" data-area-band-at200="1" data-area-band-over200="0.96" data-area-band-over300="0.94" data-area-band-over400="0.92" data-area-band-over600="0.9" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
-  const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-reference-rate="${effectiveReferenceRate(product)}" data-quote-only="${product.quoteOnly ? 'true' : 'false'}" data-ladder="${esc(product.houseLadder || (isColonyProduct(product.id) ? product.id : 'formula'))}">` : '';
+  const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-reference-rate="${effectiveReferenceRate(product, config.ladderKey)}" data-quote-only="${product.quoteOnly ? 'true' : 'false'}" data-ladder="${esc(config.ladderKey || product.ladderKey || (isColonyProduct(product.id) ? product.id : 'none'))}">` : '';
   const standardPostFields = `${hiddenProduct}<input type="hidden" name="message" value="${esc(itemisedMessage)}"><input type="hidden" name="productName" value="${esc(product.name)}"><input type="hidden" name="pageUrl" value="${esc(pageUrl)}"><input type="hidden" name="returnTo" value="${esc(pageUrl)}">`;
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;
   const summarySize = colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`;
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden><div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="theme" aria-label="Switch colour theme">Theme</button><button type="button" data-action="save">Save design</button><button type="button" data-action="restore">Restore design</button><button type="button" data-action="start-over">Start over</button></div></header><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card">${renderedSections.join('')}</div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts)}${includeCopy ? renderCopy() : ''}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden><div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="theme" aria-label="Switch colour theme">Theme</button><button type="button" data-action="save">Save design</button><button type="button" data-action="restore">Restore design</button><button type="button" data-action="start-over">Start over</button></div></header><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card">${renderedSections.join('')}</div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}${includeCopy ? renderCopy() : ''}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
 }
 

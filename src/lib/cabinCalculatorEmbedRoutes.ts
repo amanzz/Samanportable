@@ -7,6 +7,12 @@ export interface EmbeddedCalculatorProduct {
   category: string;
   slug?: string;
   productId: ProductId;
+  /**
+   * Product JSON slug whose published ladder this route renders. The calculator
+   * prices from this and nothing else, so a subpage can never show its parent's
+   * price. The last path segment for a subpage, the category for a hub.
+   */
+  ladderKey: string;
 }
 
 export function makeCalculatorPageUrl(category: CategorySlug, slug?: ProductSlug): string {
@@ -31,6 +37,14 @@ const NORMALIZED_PORTA_SLUG_TO_PRODUCT: Record<string, ProductId> = {
   'portable-office': 'office-cabin',
   'portable-office-container': 'site-office',
 };
+
+/**
+ * A route publishes its own ladder from its own product JSON: the subpage slug
+ * where there is one, otherwise the category. Never a parent's or sibling's.
+ */
+function ladderKeyFor(category: string, slug?: string): string {
+  return normalise(slug || category);
+}
 
 function normalise(value: string): string {
   return decodeURIComponent(value).toLowerCase().trim();
@@ -79,6 +93,7 @@ export function resolveEmbeddedCalculatorProduct(
       category,
       slug,
       productId: resolveForPortaCabins(category, slug),
+      ladderKey: ladderKeyFor(category, slug),
     };
   }
 
@@ -87,6 +102,7 @@ export function resolveEmbeddedCalculatorProduct(
       category,
       slug,
       productId: 'office-cabin',
+      ladderKey: ladderKeyFor(category, slug),
     };
   }
 
@@ -95,6 +111,7 @@ export function resolveEmbeddedCalculatorProduct(
       category,
       slug,
       productId: resolveForContainerOffices(category, slug),
+      ladderKey: ladderKeyFor(category, slug),
     };
   }
 
@@ -103,6 +120,7 @@ export function resolveEmbeddedCalculatorProduct(
       category,
       slug,
       productId: resolveForLaborColony(category, slug),
+      ladderKey: ladderKeyFor(category, slug),
     };
   }
 

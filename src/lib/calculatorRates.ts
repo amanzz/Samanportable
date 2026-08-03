@@ -61,27 +61,27 @@ export const PRODUCT_LADDERS = {
   prefabLabourCamps: toLadder((prefabLabourCamps as any).variants || []),
 } as const;
 
-export const CONTAINER_HOUSE_LADDERS = {
-  'container-houses': PRODUCT_LADDERS.containerOffices.map((x) => Math.round((x.priceExGst / x.areaSqft) * 1.15) * x.areaSqft),
-  'prefab-container-homes': PRODUCT_LADDERS.containerOfficeCabins.map((x) => Math.round((x.priceExGst / x.areaSqft) * 1.15) * x.areaSqft),
-  'shipping-container-homes': PRODUCT_LADDERS.shippingContainerOffices.map((x) => Math.round((x.priceExGst / x.areaSqft) * 1.15) * x.areaSqft),
-  'affordable-container-homes': PRODUCT_LADDERS.containerOfficeCabins.map((x) => Math.round((x.priceExGst / x.areaSqft) * 1.15) * x.areaSqft),
-  'luxury-container-houses': PRODUCT_LADDERS.shippingContainerOffices.map((x) => Math.round((x.priceExGst / x.areaSqft) * 1.2) * x.areaSqft),
-} as const;
+/**
+ * Container-house prices used to be derived here at runtime as
+ *   Math.round(priceExGst / areaSqft * 1.15) * areaSqft
+ * which meant a published price depended on a floating-point rounding tie.
+ * Ruled by Fable 5 on 03 Aug 2026: store the approved values as data.
+ * They now live in src/lib/calculatorLadders.ts.
+ */
 
 export const calculateAreaBandBase = (areaSqft: number, referenceRate: number = AREA_BAND_FORMULA.referenceRatePerSqft): number => {
   const multiplier = areaSqft < 200 ? 1.1 : areaSqft > 600 ? 0.9 : areaSqft > 400 ? 0.92 : areaSqft > 300 ? 0.94 : areaSqft > 200 ? 0.96 : 1;
   return Math.round(areaSqft * referenceRate * multiplier);
 };
 
-export const formulaLadderDiffs = PRODUCT_LADDERS.containerOfficeCabins.map((item) => ({
-  size: item.label,
-  published: item.priceExGst,
-  calculated: calculateAreaBandBase(item.areaSqft, PRODUCT_LADDERS.containerOfficeCabins.find((x) => x.areaSqft === 200)?.priceExGst! / 200),
-  diff: calculateAreaBandBase(item.areaSqft, PRODUCT_LADDERS.containerOfficeCabins.find((x) => x.areaSqft === 200)?.priceExGst! / 200) - item.priceExGst,
-}));
-
-export const formulaMismatchCount = formulaLadderDiffs.filter((item) => item.diff !== 0).length;
-
-/** Verified against the v9 authority snapshot: 38 ladders × 9 sizes. */
-export const V9_FORMULA_VERIFICATION = { ladders: 38, rows: 342, mismatches: 0 } as const;
+/**
+ * Removed: formulaLadderDiffs / formulaMismatchCount / V9_FORMULA_VERIFICATION.
+ *
+ * That check reported "38 ladders, 342 rows, 0 mismatches" by comparing the
+ * area-band formula against the three ladders the formula was derived from. It
+ * was structurally incapable of failing, and it passed on 03 Aug 2026 while
+ * sixteen of nineteen routes were showing a price their own page contradicted.
+ *
+ * The replacement is scripts/calculator/verify-route-price-identity.mjs, which
+ * compares every route against the ladder that route's own page publishes.
+ */
