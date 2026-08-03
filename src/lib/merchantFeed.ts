@@ -118,6 +118,9 @@ const C08_PENDING_VARIANT_FEED_SLUGS = new Set([
   'luxury-container-houses',
   'shipping-container-homes',
   'affordable-container-homes',
+  // Retained live route, but no approved ladder yet: no Merchant or local-
+  // inventory offer may be published until Fable 5 supplies one.
+  'prefabricated-container-house',
 ]);
 
 export function decodeHtmlEntities(value: string): string {

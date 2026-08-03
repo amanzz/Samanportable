@@ -71,6 +71,30 @@ const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
   'portable-office-cabin',
 ]);
 
+// P0 commercial-truth gate (SAMAN, 03 Aug 2026): this retained route has no
+// approved ladder yet. The frozen WordPress export remains untouched; all
+// monetary strings and legacy commercial entities are suppressed at render time.
+const PENDING_APPROVED_LADDER_SLUGS = new Set([
+  'prefabricated-container-house',
+]);
+
+const MONETARY_TEXT_PATTERN = /(?:₹|Rs\.?\s*)\s*\d[\d,]*(?:\.\d+)?(?:\s*[–-]\s*(?:₹|Rs\.?\s*)?\s*\d[\d,]*(?:\.\d+)?)?\s*(?:lakh|crore|L)?/gi;
+
+function stripMonetaryText(value: string): string {
+  return value.replace(MONETARY_TEXT_PATTERN, '');
+}
+
+function stripMonetaryTextDeep<T>(value: T): T {
+  if (typeof value === 'string') return stripMonetaryText(value) as T;
+  if (Array.isArray(value)) return value.map((item) => stripMonetaryTextDeep(item)) as T;
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, item]) => [key, stripMonetaryTextDeep(item)])
+    ) as T;
+  }
+  return value;
+}
+
 // Section 17: exported WordPress records are immutable. Route-specific content
 // corrections are applied to the fetched render string, with the full anchor
 // matched so neither unrelated copy nor the destination can change.
@@ -116,6 +140,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // Check if category and slug are the same (case-insensitive)
     const categoryLower = decodeURIComponent(category).toLowerCase();
     const slugLower = decodeURIComponent(slug).toLowerCase();
+    const suppressLegacyCommercialSurfaces = PENDING_APPROVED_LADDER_SLUGS.has(slugLower);
     
     if (categoryLower === slugLower) {
       // Redirect to the shorter URL format
@@ -197,10 +222,13 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     const productDescriptionWithHeadingCorrection = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
       ? demoteHtmlH1ToH2(descriptionData?.description || '')
       : descriptionData?.description || '';
-    const productDescription = applyProductDescriptionAnchorTextCorrection(
+    const correctedProductDescription = applyProductDescriptionAnchorTextCorrection(
       slugLower,
       productDescriptionWithHeadingCorrection
     );
+    const productDescription = suppressLegacyCommercialSurfaces
+      ? stripMonetaryText(correctedProductDescription)
+      : correctedProductDescription;
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -217,6 +245,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       rankMathSEO = await staticContent.fetchProductRankMathSEO(`${category}/${slug}`);
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data:', error);
+    }
+    if (suppressLegacyCommercialSurfaces && rankMathSEO) {
+      rankMathSEO = stripMonetaryTextDeep(rankMathSEO);
     }
 
     // Public marketing page with no per-user data — safe to edge-cache. Set only
@@ -286,6 +317,19 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       else if (variantData.suppressLegacySku) delete productForPageProps.sku;
       if (defaultVariantHero) productForPageProps.featured_image = defaultVariantHero.src;
     }
+    if (suppressLegacyCommercialSurfaces) {
+      for (const field of [
+        'price',
+        'regular_price',
+        'sale_price',
+        'price_html',
+        'priceDisplay',
+        'priceSubline',
+      ] as const) {
+        delete productForPageProps[field];
+      }
+      productForPageProps.short_description = stripMonetaryText(String(productForPageProps.short_description || ''));
+    }
 
     return {
       props: {
@@ -349,6 +393,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
+  const suppressLegacyCommercialSurfaces = PENDING_APPROVED_LADDER_SLUGS.has(slug.toLowerCase());
 
   // Parse short description table data
   const shortDescriptionData = useMemo(() => {
@@ -532,7 +577,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} />
+          <ProductStructuredData
+            product={product}
+            category={category}
+            reviews={reviews}
+            breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
+            variantData={variantData || undefined}
+            suppressProductEntity={suppressLegacyCommercialSurfaces}
+          />
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered
               FAQs; legacy products continue to use RankMath. */}
@@ -750,7 +802,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           )}
                         </div>
                         
-                        {transformedProduct.on_sale && transformedProduct.sale_price ? (
+                        {!suppressLegacyCommercialSurfaces && (transformedProduct.on_sale && transformedProduct.sale_price ? (
                           <div className="space-y-2">
                             <div className="flex items-center space-x-3 flex-wrap gap-y-2">
                               <span className="text-2xl md:text-3xl font-bold text-primary break-words">{formatPriceWithCurrency(parseFloat(transformedProduct.sale_price))}</span>
@@ -766,7 +818,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                             </span>
                             <p className="text-sm text-muted-foreground">Inclusive of all taxes</p>
                           </div>
-                        )}
+                        ))}
                       </div>
 
                           {/* Short Description */}
