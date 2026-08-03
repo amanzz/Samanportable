@@ -6,7 +6,7 @@ const enhancer = fs.readFileSync('public/scripts/cabin-cost-calculator.js', 'utf
 const checks = [
   ['44px form controls', /min-height:44px/],
   ['visible focus state', /focus-visible\{outline:3px/],
-  ['desktop reserved step height', /min-height:560px/],
+  ['desktop fixed step height', /height:720px;min-height:720px/],
   ['mobile reserved step height', /min-height:610px/],
   ['360px fixed estimate bar', /@media\(max-width:600px\).*\.mobile-estimate\{position:fixed/],
   ['numeric input mode', /inputmode="numeric"/],
@@ -29,7 +29,7 @@ console.log('minimum tap target: 44 px');
 console.log(`number input templates: ${numberInputs}`);
 console.log(`inputmode declarations: ${inputModes}`);
 console.log(`ARIA label templates: ${ariaLabels}`);
-console.log('reserved step panel height: 560 px desktop / 610 px mobile');
+console.log('fixed step panel height: 720 px desktop / 610 px mobile');
 console.log(`enhancer bytes: ${Buffer.byteLength(enhancer, 'utf8')}`);
 console.log(`static UX diff: ${failures.length ? failures.join(', ') : '(empty)'}`);
 

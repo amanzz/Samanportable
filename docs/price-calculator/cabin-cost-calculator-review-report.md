@@ -6,7 +6,7 @@ Review URL: https://github.com/amanzz/Samanportable/pull/110
 
 Preview route: `/cabin-cost-calculator`. PR #110 has no deployment check or preview comment, so no externally hosted preview URL was available to report without performing a prohibited deployment.
 
-The route now renders the v9 port as server-generated HTML from `src/lib/cabinCalculatorSSR.ts`. The first response contains every step, option, rate, table, estimate line, SVG, explainer and FAQ. The only calculator client code is the 18,452-byte deferred vanilla enhancement module at `public/scripts/cabin-cost-calculator.js`. It creates no elements or HTML and makes no pricing request.
+The route now renders the v9 port as server-generated HTML from `src/lib/cabinCalculatorSSR.ts`. The first response contains every step, option, rate, table, estimate line, SVG, explainer and FAQ. The only calculator client code is the 18,437-byte deferred vanilla enhancement module at `public/scripts/cabin-cost-calculator.js`. It creates no elements or HTML and makes no pricing request.
 
 The legacy calculator is the React page at `/portable-cabin-price-calculator`. That route is not used by the new calculator and remains byte-identical to `origin/static-migration`. It was not retired or modified. The intermediate hydrated component created earlier in this PR was removed after SAMAN fixed the architecture at SSR HTML.
 
@@ -22,13 +22,13 @@ The legacy calculator is the React page at `/portable-cabin-price-calculator`. T
 - Container-house source mapping and derived ladders: diff empty.
 - Hub anchor declarations: one occurrence each, all four unique, no exact primary-keyword match. Diff: empty.
 - Static tap-target audit: 44 px minimum, 11 number input templates, 13 inputmode declarations and 7 ARIA-label templates. Diff: empty.
-- Reserved enhanced step-panel height: 560 px desktop and 610 px mobile.
+- Fixed enhanced step-panel height: 720 px desktop and 610 px mobile, with an internal scrollbar and stable gutter.
 - Calculator-scope em dash count: 0.
 - TypeScript: pass.
 - Lint: pass, zero warnings.
 - Next production compilation: pass, 40 static pages generated and all dynamic SSR routes compiled.
 - Route count: 450 to 451, exactly +1.
-- Standalone raw HTML serves no Next page runtime and no `__NEXT_DATA__`. Its only calculator script is the 18,452-byte deferred vanilla module. No new dependency.
+- Standalone raw HTML serves no Next page runtime and no `__NEXT_DATA__`. Its only calculator script is the 18,437-byte deferred vanilla module. No new dependency.
 - Product hub route-owned bundle before and after: 28,090 bytes raw / 8,522 bytes gzip, byte-identical.
 - Product child route-owned bundle before and after: 24,357 bytes raw / 7,439 bytes gzip, byte-identical.
 - Product total manifest assets moved from 740,680 to 741,324 bytes raw on the hub and 736,947 to 737,591 bytes raw on the child because the shared site compilation changed by 644 bytes. The calculator-specific product chunks did not change, the lockfile did not change, and no calculator enhancer is served on embedded pages.
@@ -36,7 +36,43 @@ The legacy calculator is the React page at `/portable-cabin-price-calculator`. T
 - Sitemap: `/cabin-cost-calculator` present in `public/sitemap-products.xml`.
 - Production HTTP verification: 200 with exact title, meta, self-canonical, index/follow, FAQ schema and SSR body copy.
 
-The in-app browser returned `No browser is available.` Screenshots at 360, 768 and 1440, browser-measured CLS, axe-core and Lighthouse metrics could not be produced. Per SAMAN's ruling, all non-browser evidence was delivered instead. Static focus, ARIA, fixed mobile bar, reserved-height and tap-target gates pass. No alternate browser-control surface was used.
+Local headless Google Chrome was used from `C:\Program Files\Google\Chrome\Application\chrome.exe`. The audit is repeatable with `scripts/calculator/headless-audit.mjs`; no package was added to the project. The audit found and resolved four browser-only defects before the final evidence run: invalid empty labour headcount state, numeric `data-*` key mismatches that zeroed the enhanced base price, hidden disabled opening slots being priced, and a duplicate main landmark. The final SSR header, enhanced estimate and mobile sticky total all byte-match at `₹2,60,980` for the default design.
+
+## Headless Chrome evidence
+
+Evidence folder: [all 34 headless audit files](https://github.com/amanzz/Samanportable/tree/feature/social-media-seo-foundation-20260802/docs/price-calculator/evidence/headless-20260803)
+
+- Interaction step-change CLS across steps 1, 2, 5, 9 and back to 1: `0`, with no layout-shift entries.
+- Tap targets at 360 px: 396 audited, minimum width 54.28 px, minimum height 44 px, failures 0.
+- Axe-core: 0 document violations and 0 calculator-scoped violations.
+- Runtime network: 0 XHR or fetch requests and 0 pricing requests.
+- SSR versus enhanced default total: `₹2,60,980` versus `₹2,60,980`, exact match.
+- Standalone Lighthouse three-run median: performance 97, LCP 2,088 ms, CLS 0, TBT 132 ms. Runs were 96/2,088/0/183, 97/2,388/0/132 and 100/1,816/0/0 for performance/LCP/CLS/TBT.
+- Labour-colony product page three-run median: performance 82, LCP 4,912 ms, CLS 0, TBT 82 ms.
+- Labour-colony lockfile: performance 65, LCP 7,487 ms, CLS 0, TBT 389 ms. Median delta: performance +17, LCP -2,575 ms, CLS unchanged, TBT -307 ms.
+- Chrome Launcher reported a Windows temporary-profile deletion warning after exit. It occurred after all measurements and is retained verbatim in the JSON. The audit exited 0.
+
+### Theme and step screenshots
+
+| Theme and viewport | Step 1 | Step 2 | Step 5 | Step 9 |
+| --- | --- | --- | --- | --- |
+| Light 360 | [image](./evidence/headless-20260803/standalone-light-360-step-1.jpg) | [image](./evidence/headless-20260803/standalone-light-360-step-2.jpg) | [image](./evidence/headless-20260803/standalone-light-360-step-5.jpg) | [image](./evidence/headless-20260803/standalone-light-360-step-9.jpg) |
+| Dark 360 | [image](./evidence/headless-20260803/standalone-dark-360-step-1.jpg) | [image](./evidence/headless-20260803/standalone-dark-360-step-2.jpg) | [image](./evidence/headless-20260803/standalone-dark-360-step-5.jpg) | [image](./evidence/headless-20260803/standalone-dark-360-step-9.jpg) |
+| Light 768 | [image](./evidence/headless-20260803/standalone-light-768-step-1.jpg) | [image](./evidence/headless-20260803/standalone-light-768-step-2.jpg) | [image](./evidence/headless-20260803/standalone-light-768-step-5.jpg) | [image](./evidence/headless-20260803/standalone-light-768-step-9.jpg) |
+| Dark 768 | [image](./evidence/headless-20260803/standalone-dark-768-step-1.jpg) | [image](./evidence/headless-20260803/standalone-dark-768-step-2.jpg) | [image](./evidence/headless-20260803/standalone-dark-768-step-5.jpg) | [image](./evidence/headless-20260803/standalone-dark-768-step-9.jpg) |
+| Light 1440 | [image](./evidence/headless-20260803/standalone-light-1440-step-1.jpg) | [image](./evidence/headless-20260803/standalone-light-1440-step-2.jpg) | [image](./evidence/headless-20260803/standalone-light-1440-step-5.jpg) | [image](./evidence/headless-20260803/standalone-light-1440-step-9.jpg) |
+| Dark 1440 | [image](./evidence/headless-20260803/standalone-dark-1440-step-1.jpg) | [image](./evidence/headless-20260803/standalone-dark-1440-step-2.jpg) | [image](./evidence/headless-20260803/standalone-dark-1440-step-5.jpg) | [image](./evidence/headless-20260803/standalone-dark-1440-step-9.jpg) |
+
+Mobile sticky estimate bar: [light](./evidence/headless-20260803/mobile-sticky-light-360.png), [dark](./evidence/headless-20260803/mobile-sticky-dark-360.png).
+
+### JavaScript-disabled screenshots and POST
+
+- Standalone: [full page](./evidence/headless-20260803/no-js-standalone-full-page.jpg), [enquiry form](./evidence/headless-20260803/no-js-standalone-enquiry-form.png), [published price table](./evidence/headless-20260803/no-js-standalone-price-table.png).
+- Embedded labour colony: [full page](./evidence/headless-20260803/no-js-embedded-full-page.jpg), [enquiry form](./evidence/headless-20260803/no-js-embedded-enquiry-form.png), [published price table](./evidence/headless-20260803/no-js-embedded-price-table.png).
+- Native POST result: [exact success message](./evidence/headless-20260803/no-js-form-post-result.png).
+- Compact machine evidence: [headless-audit-results.json](./evidence/headless-20260803/headless-audit-results.json).
+
+With page JavaScript disabled, the standalone route exposed 9 steps, 19 tables and 1 native form; the embedded route exposed 8 steps, 1 table and 1 native form. Neither root acquired the enhancement class. The valid native form emitted an `application/x-www-form-urlencoded` POST to `/api/enquiry` containing name, mobile, required email, configuration and estimate. The request was intercepted before external delivery, returned a 303 test result, and rendered the exact success message at `/cabin-cost-calculator?submitted=1`.
 
 ## Raw HTML and JavaScript-disabled evidence
 
@@ -50,9 +86,9 @@ Production `curl` results:
 | `/product/labor-colony/labor-hutments` | 200 | 8 of 8 | 1 | 6 | 12 |
 | `/product/labor-colony/prefab-labor-camps` | 200 | 8 of 8 | 1 | 6 | 12 |
 
-- Standalone response: 147,527 bytes, 4,878 text words. Calculator fragment: 86,697 bytes and 4,445 words.
-- Labour hub calculator fragment: 36,971 bytes and 1,411 words.
-- Framework hydration word diff on standalone: 4,878 source words versus 4,878 after framework hydration, diff 0, because the route serves no framework runtime and no Next data payload.
+- Standalone response: 147,612 bytes. Calculator fragment: 86,784 bytes.
+- Labour hub response: 409,739 bytes. Calculator fragment: 36,963 bytes.
+- Source-versus-enhancement word diff on standalone: 3,880 DOM text words with JavaScript disabled versus 3,880 after enhancement, diff 0. Script, style and noscript parser artifacts were excluded from both counts.
 - The embedded calculator is an opaque server HTML string inside the existing Description renderer. Its route-owned hydration chunks are byte-identical before and after.
 - FAQPage JSON-LD, all four FAQ answers and both explainer sections are present in view-source.
 - A shared request with `length=12&width=11` returned `12×11 ft · 132 sq ft` and `₹1,81,500` in raw source before any script ran.

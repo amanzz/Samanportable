@@ -60,12 +60,12 @@ export default function CabinCostCalculatorPage({ calculatorHtml }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <script defer src="/scripts/cabin-cost-calculator.js" />
       </Head>
-      <main className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-background text-foreground">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
           <h1 className="mb-5 text-3xl font-bold sm:text-4xl">Cabin Cost Calculator</h1>
           <div dangerouslySetInnerHTML={{ __html: calculatorHtml }} />
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }

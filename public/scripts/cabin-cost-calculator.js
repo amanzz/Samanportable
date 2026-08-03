@@ -6,7 +6,8 @@
   const CONTACT_NAMES = new Set(['fullName', 'mobile', 'email', 'company', 'city', 'state', 'notes', 'website', 'message', 'productName', 'pageUrl', 'returnTo']);
   const INR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
   const num = (value, fallback = 0) => Number.isFinite(Number(value)) ? Number(value) : fallback;
-  const controls = (form, name) => Array.from(form.elements).filter((field) => field.name === name && !field.disabled);
+  const enabled = (field) => !field.matches(':disabled');
+  const controls = (form, name) => Array.from(form.elements).filter((field) => field.name === name && enabled(field));
   const chosen = (form, name) => controls(form, name).find((field) => field.checked) || controls(form, name)[0] || null;
   const source = (field) => field instanceof HTMLSelectElement ? field.options[field.selectedIndex] : field;
   const value = (form, name, fallback = '') => chosen(form, name)?.value ?? fallback;
@@ -40,7 +41,7 @@
 
   function readConfiguration(form) {
     const result = {};
-    const names = new Set(Array.from(form.elements).filter((field) => !field.disabled).map((field) => field.name).filter(Boolean));
+    const names = new Set(Array.from(form.elements).filter(enabled).map((field) => field.name).filter(Boolean));
     names.forEach((name) => {
       if (CONTACT_NAMES.has(name) || name === 'configuration' || name === 'estimate') return;
       const fields = controls(form, name);
@@ -64,7 +65,7 @@
         }
       });
     });
-    const names = new Set(Array.from(form.elements).filter((field) => !field.disabled).map((field) => field.name).filter(Boolean));
+    const names = new Set(Array.from(form.elements).filter(enabled).map((field) => field.name).filter(Boolean));
     names.forEach((name) => {
       if (CONTACT_NAMES.has(name)) return;
       const savedValue = getPath(saved, name);
@@ -172,10 +173,10 @@
       total += Math.round(dataNumber(chosen(form, 'flooring'), 'rate') * area * quantity);
       total += Math.round(dataNumber(chosen(form, 'pufThickness'), 'rate') * (wallArea + area) * quantity);
 
-      Array.from(form.querySelectorAll('input[name^="doors["][name$="[type]"]:checked')).filter((door) => !door.disabled).forEach((door, index) => {
+      Array.from(form.querySelectorAll('input[name^="doors["][name$="[type]"]:checked')).filter(enabled).forEach((door, index) => {
         if (!(index === 0 && door.value === 'Steel door')) total += dataNumber(door, 'rate') * quantity;
       });
-      Array.from(form.querySelectorAll('select[name^="windows["][name$="[type]"]')).filter((type) => !type.disabled).forEach((type) => {
+      Array.from(form.querySelectorAll('select[name^="windows["][name$="[type]"]')).filter(enabled).forEach((type) => {
         const match = type.name.match(/^windows\[(\d+)\]/);
         if (!match) return;
         const index = match[1];
