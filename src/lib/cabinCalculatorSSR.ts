@@ -392,14 +392,25 @@ function effectiveReferenceRate(product: ProductDefinition): number {
   return CONTAINER_HOUSE_LADDERS[product.houseLadder][index] / 200;
 }
 
+function dimensionsFromLabel(label: string): { length: number; width: number } | null {
+  const match = label.match(/(\d+(?:\.\d+)?)\s*[x×]\s*(\d+(?:\.\d+)?)/i);
+  if (!match) return null;
+  return { length: Number(match[1]), width: Number(match[2]) };
+}
+
+function publishedPrice(product: ProductDefinition, length: number, width: number): number | null {
+  const row = productPriceRows(product).find((item) => item.length === length && item.width === width);
+  return row?.ex ?? null;
+}
+
 function calculateBase(config: CalculatorConfig, area: number): number | null {
   const product = productFor(config.productId);
   if (product.quoteOnly) return null;
   if (isColonyProduct(config.productId)) return (colonyLadder(config.productId)[config.colonyVariant]?.priceExGst || 0) * config.quantity;
+  const ladderPrice = publishedPrice(product, config.length, config.width);
+  if (ladderPrice !== null) return ladderPrice * config.quantity;
   if (product.houseLadder) {
     const source = sourceLadder(product);
-    const publishedIndex = source.findIndex((entry) => entry.areaSqft === Math.round(area));
-    if (publishedIndex >= 0) return CONTAINER_HOUSE_LADDERS[product.houseLadder][publishedIndex] * config.quantity;
     const refIndex = Math.max(0, source.findIndex((entry) => entry.areaSqft === 200));
     const refPrice = CONTAINER_HOUSE_LADDERS[product.houseLadder][refIndex];
     return calculateAreaBandBase(area, refPrice / 200) * config.quantity;
@@ -491,17 +502,24 @@ function renderPlan(config: CalculatorConfig): string {
   return `<svg class="floor-plan" viewBox="0 0 320 190" role="img" aria-label="Cabin floor plan and four elevations" data-floor-plan><g data-plan-view="plan"${config.planView === 'plan' ? '' : ' hidden'}><rect x="${x}" y="${y}" width="${planWidth}" height="${planHeight}" class="shell"/>${partitions}${doors}${windows}<text x="160" y="184">Yellow: doors · Blue: windows</text></g><g data-plan-view="elevations"${config.planView === 'elevations' ? '' : ' hidden'}>${elevationLabels}</g></svg>`;
 }
 
-function productPriceRows(product: ProductDefinition): Array<{ label: string; area: number; ex: number | null; capacity?: string }> {
-  if (product.quoteOnly) return PRODUCT_LADDERS.containerOfficeCabins.map((row) => ({ label: row.label, area: row.areaSqft, ex: null }));
-  if (isColonyProduct(product.id)) return colonyLadder(product.id).map((row) => ({ label: row.label, area: row.areaSqft, ex: row.priceExGst, capacity: row.capacity }));
+function productPriceRows(product: ProductDefinition): Array<{ label: string; area: number; ex: number | null; capacity?: string; length?: number; width?: number }> {
+  const withDimensions = (row: { label: string; areaSqft: number }, ex: number | null, capacity?: string) => ({
+    label: row.label,
+    area: row.areaSqft,
+    ex,
+    capacity,
+    ...(dimensionsFromLabel(row.label) || {}),
+  });
+  if (product.quoteOnly) return PRODUCT_LADDERS.containerOfficeCabins.map((row) => withDimensions(row, null));
+  if (isColonyProduct(product.id)) return colonyLadder(product.id).map((row) => withDimensions(row, row.priceExGst, row.capacity));
   if (product.houseLadder) {
-    return sourceLadder(product).map((row, index) => ({ label: row.label, area: row.areaSqft, ex: CONTAINER_HOUSE_LADDERS[product.houseLadder!][index] }));
+    return sourceLadder(product).map((row, index) => withDimensions(row, CONTAINER_HOUSE_LADDERS[product.houseLadder!][index]));
   }
-  return PRODUCT_LADDERS.containerOfficeCabins.map((row) => ({ label: row.label, area: row.areaSqft, ex: calculateAreaBandBase(row.areaSqft, product.referenceRate || 1250) }));
+  return PRODUCT_LADDERS.containerOfficeCabins.map((row) => withDimensions(row, calculateAreaBandBase(row.areaSqft, product.referenceRate || 1250)));
 }
 
 function renderPriceTables(products: readonly ProductDefinition[] = PRODUCTS): string {
-  return `<section class="price-tables" aria-labelledby="published-price-tables"><h2 id="published-price-tables">Published cabin price tables</h2><p>All primary prices are ex-GST. Including-GST figures apply 18 percent GST.</p>${products.map((product) => `<details${products.length === 1 || product.id === 'porta-cabin' ? ' open' : ''}><summary>${esc(product.name)} price table</summary><table data-product-price-table="${product.id}"><caption>${esc(product.name)} published size and price ladder</caption><thead><tr><th scope="col">Size</th><th scope="col">Area</th>${isColonyProduct(product.id) ? '<th scope="col">Workers housed</th>' : ''}<th scope="col">Price ex-GST</th><th scope="col">Including 18% GST</th></tr></thead><tbody>${productPriceRows(product).map((row) => `<tr><th scope="row">${esc(row.label)}</th><td>${row.area.toLocaleString('en-IN')} sq ft</td>${isColonyProduct(product.id) ? `<td>${esc(row.capacity || '')}</td>` : ''}<td>${row.ex === null ? 'price on request' : money(row.ex)}</td><td>${row.ex === null ? 'itemised in quotation' : money(Math.round(row.ex * (1 + GST_RATE)))}</td></tr>`).join('')}</tbody></table></details>`).join('')}</section>`;
+  return `<section class="price-tables" aria-labelledby="published-price-tables"><h2 id="published-price-tables">Published cabin price tables</h2><p>All primary prices are ex-GST. Including-GST figures apply 18 percent GST.</p>${products.map((product) => `<details${products.length === 1 || product.id === 'porta-cabin' ? ' open' : ''}><summary>${esc(product.name)} price table</summary><table data-product-price-table="${product.id}"><caption>${esc(product.name)} published size and price ladder</caption><thead><tr><th scope="col">Size</th><th scope="col">Area</th>${isColonyProduct(product.id) ? '<th scope="col">Workers housed</th>' : ''}<th scope="col">Price ex-GST</th><th scope="col">Including 18% GST</th></tr></thead><tbody>${productPriceRows(product).map((row) => `<tr${row.length !== undefined && row.width !== undefined && row.ex !== null ? ` data-published-size data-length="${row.length}" data-width="${row.width}" data-price-ex-gst="${row.ex}"` : ''}><th scope="row">${esc(row.label)}</th><td>${row.area.toLocaleString('en-IN')} sq ft</td>${isColonyProduct(product.id) ? `<td>${esc(row.capacity || '')}</td>` : ''}<td>${row.ex === null ? 'price on request' : money(row.ex)}</td><td>${row.ex === null ? 'itemised in quotation' : money(Math.round(row.ex * (1 + GST_RATE)))}</td></tr>`).join('')}</tbody></table></details>`).join('')}</section>`;
 }
 
 function renderFreightTable(): string {
@@ -578,7 +596,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const itemisedMessage = `SAMAN ${product.name} configuration | ${estimate.lines.map((line) => `${line.label}: ${line.amount === null ? 'in quotation' : money(line.amount)}`).join(' | ')} | Total: ${estimate.quoteOnly ? 'price on request' : `${money(estimate.totalExGst)} ex-GST`}`;
   const messageCatalog = Object.entries(CALCULATOR_MESSAGES).map(([key, value]) => `<p hidden data-message="${key}">${esc(value)}</p>`).join('');
   const rootRates = `data-area-band-under200="1.1" data-area-band-at200="1" data-area-band-over200="0.96" data-area-band-over300="0.94" data-area-band-over400="0.92" data-area-band-over600="0.9" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
-  const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}">` : '';
+  const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-reference-rate="${effectiveReferenceRate(product)}" data-quote-only="${product.quoteOnly ? 'true' : 'false'}" data-ladder="${esc(product.houseLadder || (isColonyProduct(product.id) ? product.id : 'formula'))}">` : '';
   const standardPostFields = `${hiddenProduct}<input type="hidden" name="message" value="${esc(itemisedMessage)}"><input type="hidden" name="productName" value="${esc(product.name)}"><input type="hidden" name="pageUrl" value="${esc(pageUrl)}"><input type="hidden" name="returnTo" value="${esc(pageUrl)}">`;
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;

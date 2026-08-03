@@ -123,6 +123,16 @@
     return num(root.dataset.areaBandAt200);
   }
 
+  function publishedPrice(root, productId, length, width) {
+    const table = Array.from(root.querySelectorAll('[data-product-price-table]'))
+      .find((item) => item.dataset.productPriceTable === productId);
+    if (!table) return null;
+    const row = Array.from(table.querySelectorAll('[data-published-size]')).find((item) => (
+      num(item.dataset.length, NaN) === length && num(item.dataset.width, NaN) === width
+    ));
+    return row ? num(row.dataset.priceExGst, NaN) : null;
+  }
+
   function updatePlan(root, length, width, area, planView) {
     root.querySelectorAll('[data-floor-plan]').forEach((svg) => {
       svg.querySelectorAll('[data-plan-view]').forEach((viewNode) => {
@@ -155,9 +165,10 @@
     const area = colony ? dataNumber(colonyVariant, 'area', dataNumber(colonyVariant, 'areaSqft')) : length * width;
     const quoteOnly = source(product)?.dataset.quoteOnly === 'true';
     const referenceRate = dataNumber(product, 'referenceRate');
+    const ladderPrice = colony ? null : publishedPrice(root, productId, length, width);
     let base = colony
       ? dataNumber(colonyVariant, 'price', dataNumber(colonyVariant, 'priceExGst')) * quantity
-      : Math.round(area * referenceRate * areaBand(root, area)) * quantity;
+      : (ladderPrice === null ? Math.round(area * referenceRate * areaBand(root, area)) : ladderPrice) * quantity;
     if (quoteOnly) base = 0;
     let total = base;
     const wallArea = 2 * (length + width) * height;
