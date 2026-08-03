@@ -28,9 +28,31 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const result = await fetchLightweightProductsByCategory(slug, page, perPage, {
       includeDrafts: shouldShowDraftsInListings(req.headers.host),
     });
+    // This route feeds ONLY the category archive's client-side pagination, and a
+    // category archive publishes no price (Fable 5 ruling, 03 Aug 2026). The price
+    // fields and the price-carrying short_description are dropped so paging to page 2
+    // cannot reintroduce a number the server-rendered page deliberately omits.
+    const products = result.products.map((product) => {
+      const {
+        price,
+        regular_price,
+        sale_price,
+        price_html,
+        on_sale,
+        priceDisplay,
+        priceSubline,
+        short_description,
+        ...rest
+      } = product as typeof product & {
+        price_html?: string;
+        priceDisplay?: string;
+        priceSubline?: string;
+      };
+      return rest;
+    });
     // Short cache; this is public catalog data.
     res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
-    return res.status(200).json(result);
+    return res.status(200).json({ ...result, products });
   } catch (error) {
     // Never leak internals/keys; log message only (helper already avoids logging URLs).
     console.error('products-by-category route failed:', error instanceof Error ? error.message : 'unknown error');

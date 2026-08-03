@@ -24,10 +24,11 @@ function invariant(value, message) {
 }
 
 function parseManifest() {
+  const manifestText = fs.readFileSync(MANIFEST, 'utf8');
   const rows = [];
   let slug;
   let sizeSlug;
-  for (const line of fs.readFileSync(MANIFEST, 'utf8').split(/\r?\n/)) {
+  for (const line of manifestText.split(/\r?\n/)) {
     if (line.startsWith('## ')) {
       const route = line.match(/(\/product\/container-houses(?:\/[a-z0-9-]+)?)\s*$/);
       if (route) {
@@ -52,6 +53,21 @@ function parseManifest() {
         alt: row[3].trim(),
       });
     }
+  }
+
+  const amendments = [...manifestText.matchAll(/<!-- C08_ALT_AMENDMENT (\{.*?\}) -->/g)]
+    .map((match) => JSON.parse(match[1]));
+  for (const amendment of amendments) {
+    const matches = rows.filter((row) =>
+      row.slug === amendment.slug
+      && row.sizeSlug === amendment.sizeSlug
+      && row.sourceViewToken === amendment.sourceViewToken
+      && row.filename === amendment.filename);
+    invariant(matches.length === 1,
+      `Manifest amendment target must resolve once: ${amendment.slug}/${amendment.sizeSlug}/${amendment.sourceViewToken}`);
+    invariant(matches[0].alt === amendment.originalAlt,
+      `Manifest amendment original alt does not match the retained row: ${amendment.filename}`);
+    matches[0].alt = amendment.supersedingAlt;
   }
   return rows;
 }
