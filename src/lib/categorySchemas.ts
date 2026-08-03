@@ -199,7 +199,7 @@ export const categorySchemas: Record<string, any> = {
         "@type": "ItemList",
         "@id": "https://www.samanportable.com/product-category/container-houses#itemlist",
         "name": "Container Houses",
-        "numberOfItems": 6,
+        "numberOfItems": 5,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -222,18 +222,12 @@ export const categorySchemas: Record<string, any> = {
           {
             "@type": "ListItem",
             "position": 4,
-            "name": "Prefabricated Container Home",
-            "url": "https://www.samanportable.com/product/container-houses/prefabricated-container-home"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
             "name": "Affordable Container Homes",
             "url": "https://www.samanportable.com/product/container-houses/affordable-container-homes"
           },
           {
             "@type": "ListItem",
-            "position": 6,
+            "position": 5,
             "name": "Shipping Container Homes",
             "url": "https://www.samanportable.com/product/container-houses/shipping-container-homes"
           }

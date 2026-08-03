@@ -267,10 +267,10 @@ const nextConfig = {
       { source: '/why-you-need-to-consider-a-container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
       { source: '/container-office-rental-is-perfect-solution', destination: 'https://www.samanportable.com/rental-services', statusCode: 301 },
 
-      // C08 container-house loser pages (SAMAN ruling, 02 Aug 2026).
-      // The two prefabricated-* candidates are intentionally absent: their GSC
-      // top-10 query families are not fully covered by the prefab child, so the
-      // binding query-read gate holds those routes for Fable 5.
+      // C08 container-house loser pages (SAMAN rulings, 02 Aug 2026).
+      // prefabricated-container-home is retired to the hub on query evidence.
+      // prefabricated-container-house remains a live 200 and is intentionally absent.
+      { source: '/product/container-houses/prefabricated-container-home', destination: 'https://www.samanportable.com/product/container-houses', statusCode: 301 },
       { source: '/product/container-houses/prebuilt-container-homes', destination: 'https://www.samanportable.com/product/container-houses/prefab-container-homes', statusCode: 301 },
       { source: '/product/container-houses/cargo-container-house', destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes', statusCode: 301 },
       { source: '/product/container-houses/storage-container-house', destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes', statusCode: 301 },
@@ -1289,7 +1289,7 @@ const nextConfig = {
       },
       {
         source: '/product/prefabricated-container-home',
-        destination: 'https://www.samanportable.com/product/container-houses/prefabricated-container-home',
+        destination: 'https://www.samanportable.com/product/container-houses',
         permanent: true,
       },
       {
