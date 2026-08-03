@@ -624,7 +624,7 @@ export function PortaCabinVariantHero({
             number of thumbs: 6 with the video, 5 without. Full class names (not an
             interpolated `grid-cols-${n}`) so Tailwind's scanner emits both. */}
         {heroImages && (
-          <div className={video || isC04Product ? 'grid grid-cols-6 gap-2' : 'grid grid-cols-5 gap-2'}>
+          <div className={video || isC04Product || isC08Product ? 'grid grid-cols-6 gap-2' : 'grid grid-cols-5 gap-2'}>
             {heroImages.map((img, i) => (
               <button
                 key={img.src}
@@ -646,7 +646,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={isC04Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt)} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt)} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
               </button>
             ))}
 

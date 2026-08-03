@@ -12,7 +12,51 @@
       "priceExGst": 259520,
       "priceInclGst": 306234,
       "useCase": "Colony row for project staff",
-      "sku": "SP-PCH-2026-20X8"
+      "sku": "SP-PCH-2026-20X8",
+      "images": [
+        {
+          "src": "/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x8 ft prefab container home, pale silver-grey cladding, on a clipped formal lawn with a paved grid court",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x8 ft prefab container home, with a compact sofa with a folding dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-long-side-elevation.webp",
+          "alt": "Side elevation of a 20x8 ft prefab container home, pale silver-grey cladding, on a clipped formal lawn with a paved grid court",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x8 ft prefab container home, pale silver-grey cladding, on a clipped formal lawn with a paved grid court",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x8 ft prefab container home, with a kitchenette facing a two-seat dining set",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x8 ft prefab container home, with a bed with blue linen under a high window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
@@ -22,7 +66,51 @@
       "priceExGst": 295000,
       "priceInclGst": 348100,
       "useCase": "Single-family 1 BHK home",
-      "sku": "SP-PCH-2026-20X10"
+      "sku": "SP-PCH-2026-20X10",
+      "images": [
+        {
+          "src": "/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x10 ft prefab container home, olive green cladding, on red-earth borders under flowering trees",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x10 ft prefab container home, with a living run with a low media unit",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 20x10 ft prefab container home in olive green cladding, on red-earth borders under flowering trees",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-end-dominant-view.webp",
+          "alt": "End-on view of a 20x10 ft prefab container home with the gable glazing lit, olive green cladding, on red-earth borders under flowering trees",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x10 ft prefab container home, with a bedroom with fitted timber wardrobes",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x10 ft prefab container home towards a WC and basin beside the wardrobe wall",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x12",
@@ -32,7 +120,51 @@
       "priceExGst": 339840,
       "priceInclGst": 401011,
       "useCase": "Family colony housing unit",
-      "sku": "SP-PCH-2026-20X12"
+      "sku": "SP-PCH-2026-20X12",
+      "images": [
+        {
+          "src": "/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x12 ft prefab container home, terracotta cladding, on lawn edging a paved villa court",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x12 ft prefab container home, with a long sofa facing a wall screen",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 20x12 ft prefab container home, terracotta cladding, on lawn edging a paved villa court",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x12 ft prefab container home, terracotta cladding, on lawn edging a paved villa court",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x12 ft prefab container home, with an open kitchen island with dining seating",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x12 ft prefab container home towards a shower room off the dining end",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x8",
@@ -42,7 +174,51 @@
       "priceExGst": 443520,
       "priceInclGst": 523354,
       "useCase": "Paired staff quarters unit",
-      "sku": "SP-PCH-2026-40X8"
+      "sku": "SP-PCH-2026-40X8",
+      "images": [
+        {
+          "src": "/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x8 ft prefab container home, teal cladding, on paving beside clipped hedges and roses",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x8 ft prefab container home, with a sofa with a coffee table on timber flooring",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-long-side-elevation.webp",
+          "alt": "Long side elevation of a 40x8 ft prefab container home showing the full window run, teal cladding, on paving beside clipped hedges and roses",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-end-dominant-view.webp",
+          "alt": "End-on view of a 40x8 ft prefab container home with the gable glazing lit, teal cladding, on paving beside clipped hedges and roses",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x8 ft prefab container home, with a kitchen with a solid timber dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x8 ft prefab container home, with a bed under a narrow ribbon window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x10",
@@ -52,7 +228,51 @@
       "priceExGst": 554400,
       "priceInclGst": 654192,
       "useCase": "2 BHK family module home",
-      "sku": "SP-PCH-2026-40X10"
+      "sku": "SP-PCH-2026-40X10",
+      "images": [
+        {
+          "src": "/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x10 ft prefab container home, slate blue cladding, on wet stone paving on a forested hillside",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x10 ft prefab container home, with a lounge with a low bench and sliding doors",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 40x10 ft prefab container home in slate blue cladding, on wet stone paving on a forested hillside",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 40x10 ft prefab container home, slate blue cladding, on wet stone paving on a forested hillside",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x10 ft prefab container home, with a bedroom with a timber wardrobe wall",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x10 ft prefab container home towards a shower and WC facing a laundry recess",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x12",
@@ -62,44 +282,51 @@
       "priceExGst": 651360,
       "priceInclGst": 768605,
       "useCase": "Family colony flagship unit",
-      "sku": "SP-PCH-2026-40X12"
-    }
-  ],
-  "galleryImages": [
-    {
-      "src": "/images/product-heroes/container-houses/prefab-container-home-blue-porch-hero-saman.webp",
-      "alt": "SAMAN prefab container home in marine blue with extended roof, wooden porch, red seating, and paved patio approach.",
-      "provenance": "unknown",
-      "width": 640,
-      "height": 640
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-container-home-front-elevation-blue-saman.webp",
-      "alt": "Front view of SAMAN marine blue prefab container home with central door, twin flanking windows, and covered wooden porch.",
-      "provenance": "unknown",
-      "width": 256,
-      "height": 256
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-container-home-side-elevation-blue-saman.webp",
-      "alt": "Side elevation of SAMAN marine blue prefab container home raised on wooden plinth with three white-trimmed openable windows.",
-      "provenance": "unknown",
-      "width": 256,
-      "height": 256
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-container-home-interior-living-1bhk-saman.webp",
-      "alt": "Interior of SAMAN prefab container home with dining table set for breakfast, fitted kitchen, double bed, and balcony slider door.",
-      "provenance": "unknown",
-      "width": 256,
-      "height": 256
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-container-home-1bhk-floor-plan-layout-saman.webp",
-      "alt": "Top-down floor plan of SAMAN prefab container home showing bedroom, bathroom, central kitchen, and dining layout in 480 sqft.",
-      "provenance": "unknown",
-      "width": 256,
-      "height": 256
+      "sku": "SP-PCH-2026-40X12",
+      "images": [
+        {
+          "src": "/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x12 ft prefab container home, dark bronze cladding, on paving with a timber deck under mountains",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x12 ft prefab container home, with a lounge with sliding doors to the deck",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 40x12 ft prefab container home, dark bronze cladding, on paving with a timber deck under mountains",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-long-side-elevation.webp",
+          "alt": "Side elevation of a 40x12 ft prefab container home, dark bronze cladding, on paving with a timber deck under mountains",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x12 ft prefab container home, with an island kitchen with a timber dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x12 ft prefab container home towards a bathroom with laundry appliances alongside",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     }
   ],
   "productName": "Prefab Container Homes",

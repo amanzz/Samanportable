@@ -12,7 +12,51 @@
       "priceExGst": 252960,
       "priceInclGst": 298493,
       "useCase": "First steel home on a budget",
-      "sku": "SP-ACH-2026-20X8"
+      "sku": "SP-ACH-2026-20X8",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x8 ft affordable container home, light grey cladding, on grass at the edge of an orchard",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x8 ft affordable container home, with a compact sofa with a low table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-long-side-elevation.webp",
+          "alt": "Long side elevation of a 20x8 ft affordable container home showing the full window run, light grey cladding, on grass at the edge of an orchard",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x8 ft affordable container home, light grey cladding, on grass at the edge of an orchard",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x8 ft affordable container home, with a kitchen counter with a breakfast bar",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x8 ft affordable container home, with a bed with grey linen beside a wardrobe",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
@@ -22,7 +66,51 @@
       "priceExGst": 287600,
       "priceInclGst": 339368,
       "useCase": "Value one-room family start",
-      "sku": "SP-ACH-2026-20X10"
+      "sku": "SP-ACH-2026-20X10",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x10 ft affordable container home, teal cladding, on a paved plot in a coastal palm village",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x10 ft affordable container home, with a sofa facing a media unit",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 20x10 ft affordable container home in teal cladding, on a paved plot in a coastal palm village",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-end-dominant-view.webp",
+          "alt": "End-on view of a 20x10 ft affordable container home with the gable glazing lit, teal cladding, on a paved plot in a coastal palm village",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x10 ft affordable container home, with a bedroom with fitted wardrobes",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x10 ft affordable container home towards a shower room with a basin and mirror",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x12",
@@ -32,7 +120,51 @@
       "priceExGst": 331200,
       "priceInclGst": 390816,
       "useCase": "Permanent economy family home",
-      "sku": "SP-ACH-2026-20X12"
+      "sku": "SP-ACH-2026-20X12",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x12 ft affordable container home, brown cladding, on stone paving above a river gorge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x12 ft affordable container home, with a sofa with a rug and side lamp",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 20x12 ft affordable container home, brown cladding, on stone paving above a river gorge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x12 ft affordable container home, brown cladding, on stone paving above a river gorge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x12 ft affordable container home, with a kitchen with a dining table beside the window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x12 ft affordable container home towards a WC and basin off the corridor",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x8",
@@ -42,7 +174,51 @@
       "priceExGst": 432320,
       "priceInclGst": 510138,
       "useCase": "Narrow-plot budget home",
-      "sku": "SP-ACH-2026-40X8"
+      "sku": "SP-ACH-2026-40X8",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x8 ft affordable container home, khaki cladding, on desert scrub among agave planting",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x8 ft affordable container home, with a bench seat with a slim dining counter",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-long-side-elevation.webp",
+          "alt": "Long side elevation of a 40x8 ft affordable container home showing the full window run, khaki cladding, on desert scrub among agave planting",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-end-dominant-view.webp",
+          "alt": "End-on view of a 40x8 ft affordable container home with the gable glazing lit, khaki cladding, on desert scrub among agave planting",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x8 ft affordable container home, with a kitchen with a mustard dining chair set",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x8 ft affordable container home, with a bed with a mustard throw",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x10",
@@ -52,7 +228,51 @@
       "priceExGst": 540400,
       "priceInclGst": 637672,
       "useCase": "Family home at lowest rate",
-      "sku": "SP-ACH-2026-40X10"
+      "sku": "SP-ACH-2026-40X10",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x10 ft affordable container home, pale grey cladding, on gravel in a forested valley",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x10 ft affordable container home, with a sofa and coffee table on timber flooring",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 40x10 ft affordable container home in pale grey cladding, on gravel in a forested valley",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 40x10 ft affordable container home, pale grey cladding, on gravel in a forested valley",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x10 ft affordable container home, with a bedroom with a corner window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x10 ft affordable container home towards a WC and basin with laundry opposite",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x12",
@@ -62,44 +282,51 @@
       "priceExGst": 634560,
       "priceInclGst": 748781,
       "useCase": "Largest budget family home",
-      "sku": "SP-ACH-2026-40X12"
-    }
-  ],
-  "galleryImages": [
-    {
-      "src": "/images/product-heroes/container-houses/affordable-container-home-with-balcony.webp",
-      "alt": "Affordable Container Homes",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/dual-tone-affordable-container-home-side-view.webp",
-      "alt": "Side elevation of SAMAN affordable container home showing full two-storey width in red and green corrugated steel panel cladding",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/green-red-affordable-container-home-exterior.webp",
-      "alt": "Front entry of SAMAN affordable container home — white double doors, burgundy and green corrugated steel panels, concrete stepping path",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/affordable-container-home-kitchen-interior-vinyl-floor.jpeg",
-      "alt": "Kitchen interior of SAMAN affordable container home — white flat-panel cabinets, vinyl plank flooring, LED lighting, and aluminium-framed window",
-      "provenance": "unknown",
-      "width": 1254,
-      "height": 1254
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/affordable-container-home-interior-staircase.webp",
-      "alt": "Interior staircase of SAMAN affordable container home — steel railing, Burgundy Red corrugated steel wall panels, polished concrete floor, confirming two-level build",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
+      "sku": "SP-ACH-2026-40X12",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x12 ft affordable container home, with a lounge with a pink throw and media unit",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-long-side-elevation.webp",
+          "alt": "Side elevation of a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x12 ft affordable container home, with a kitchen counter with a long dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x12 ft affordable container home towards a shower room off the corridor",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     }
   ],
   "productName": "Affordable Container Homes",

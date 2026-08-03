@@ -12,7 +12,51 @@
       "priceExGst": 293440,
       "priceInclGst": 346259,
       "useCase": "Caretaker home on a farm plot",
-      "sku": "SP-CH-2026-20X8"
+      "sku": "SP-CH-2026-20X8",
+      "images": [
+        {
+          "src": "/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x8 ft container house, white steel cladding, on a paved court in a hillside garden",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x8/container-houses-20x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x8 ft container house, with a compact living seat and dining nook",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x8/container-houses-20x8-long-side-elevation.webp",
+          "alt": "Long side elevation of a 20x8 ft container house showing the full window run, white steel cladding, on a paved court in a hillside garden",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x8/container-houses-20x8-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x8 ft container house, white steel cladding, on a paved court in a hillside garden",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x8/container-houses-20x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x8 ft container house, with a galley kitchen running to a dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x8/container-houses-20x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x8 ft container house, with a bed against timber-panelled wall",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
@@ -22,7 +66,51 @@
       "priceExGst": 333400,
       "priceInclGst": 393412,
       "useCase": "Couple's holiday plot home",
-      "sku": "SP-CH-2026-20X10"
+      "sku": "SP-CH-2026-20X10",
+      "images": [
+        {
+          "src": "/images/products/container-houses/20x10/container-houses-20x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x10 ft container house, cream cladding with a pale base, on paving with planted borders and mountains behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x10/container-houses-20x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x10 ft container house, with a long living run with a low TV console",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x10/container-houses-20x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 20x10 ft container house in cream cladding with a pale base, on paving with planted borders and mountains behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x10/container-houses-20x10-end-dominant-view.webp",
+          "alt": "End view of a 20x10 ft container house, cream cladding with a pale base, on paving with planted borders and mountains behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x10/container-houses-20x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x10 ft container house, with a curtained bedroom with a window seat",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x10/container-houses-20x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x10 ft container house towards a WC and basin beyond the sliding door",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "20x12",
@@ -32,7 +120,51 @@
       "priceExGst": 384240,
       "priceInclGst": 453403,
       "useCase": "Full-time single-bedroom home",
-      "sku": "SP-CH-2026-20X12"
+      "sku": "SP-CH-2026-20X12",
+      "images": [
+        {
+          "src": "/images/products/container-houses/20x12/container-houses-20x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x12 ft container house, sage green cladding, on a lawn edge below a rocky ridge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x12/container-houses-20x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x12 ft container house, with a sofa facing a wall-mounted screen",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x12/container-houses-20x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 20x12 ft container house, sage green cladding, on a lawn edge below a rocky ridge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x12/container-houses-20x12-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x12 ft container house, sage green cladding, on a lawn edge below a rocky ridge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x12/container-houses-20x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x12 ft container house, with an open kitchen with a round dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/20x12/container-houses-20x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x12 ft container house towards a shower room reached past the dining area",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x8",
@@ -42,7 +174,51 @@
       "priceExGst": 501440,
       "priceInclGst": 591699,
       "useCase": "Slim-plot boundary home",
-      "sku": "SP-CH-2026-40X8"
+      "sku": "SP-CH-2026-40X8",
+      "images": [
+        {
+          "src": "/images/products/container-houses/40x8/container-houses-40x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x8 ft container house, blue-grey cladding, on red-earth paving in a tropical garden",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x8/container-houses-40x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x8 ft container house, with a living seat under recessed lighting",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x8/container-houses-40x8-long-side-elevation.webp",
+          "alt": "Long side elevation of a 40x8 ft container house showing the full window run, blue-grey cladding, on red-earth paving in a tropical garden",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x8/container-houses-40x8-end-dominant-view.webp",
+          "alt": "End-on view of a 40x8 ft container house with the gable glazing lit, blue-grey cladding, on red-earth paving in a tropical garden",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x8/container-houses-40x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x8 ft container house, with a kitchen bar with upholstered dining chairs",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x8/container-houses-40x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x8 ft container house, with a bed under a slim high-level window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x10",
@@ -52,7 +228,51 @@
       "priceExGst": 626800,
       "priceInclGst": 739624,
       "useCase": "Small family's first home",
-      "sku": "SP-CH-2026-40X10"
+      "sku": "SP-CH-2026-40X10",
+      "images": [
+        {
+          "src": "/images/products/container-houses/40x10/container-houses-40x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x10 ft container house, charcoal cladding, on stone paving cut into a wooded slope",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x10/container-houses-40x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x10 ft container house, with a lounge opening onto a full-height glazed wall",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x10/container-houses-40x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 40x10 ft container house in charcoal cladding, on stone paving cut into a wooded slope",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x10/container-houses-40x10-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 40x10 ft container house, charcoal cladding, on stone paving cut into a wooded slope",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x10/container-houses-40x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x10 ft container house, with a bedroom with wardrobes and a corner window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x10/container-houses-40x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x10 ft container house towards a WC with a laundry appliance recessed opposite",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     },
     {
       "sizeSlug": "40x12",
@@ -62,44 +282,51 @@
       "priceExGst": 736320,
       "priceInclGst": 868858,
       "useCase": "Two-bedroom compact home",
-      "sku": "SP-CH-2026-40X12"
-    }
-  ],
-  "galleryImages": [
-    {
-      "src": "/images/product-heroes/container-houses/container-houses-with-modern-interior-design.webp",
-      "alt": "container houses",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-houses-with-stacked-design.webp",
-      "alt": "Stacked teal container house with modern design, large glass windows, and landscaped outdoor area.",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-houses-with-exterior-blue-finish.webp",
-      "alt": "Modern blue container house exterior with large windows, patio seating, and bright landscaped surroundings.",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-houses-with-interior-green-view.webp",
-      "alt": "Container house interior with wood panel accents, potted plants, and large glass window overlooking green outdoors.",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
-    },
-    {
-      "src": "https://blog.samanportable.com/wp-content/uploads/2024/10/container-houses-with-outdoor-patio.webp",
-      "alt": "Teal container house with glass windows, outdoor patio seating, and sustainable modular home design.",
-      "provenance": "unknown",
-      "width": 1024,
-      "height": 1024
+      "sku": "SP-CH-2026-40X12",
+      "images": [
+        {
+          "src": "/images/products/container-houses/40x12/container-houses-40x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x12 ft container house, sand-toned cladding, on gravel among vineyard hills in jacaranda bloom",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x12/container-houses-40x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x12 ft container house, with a lounge with a rug and full-width glazing",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x12/container-houses-40x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 40x12 ft container house, sand-toned cladding, on gravel among vineyard hills in jacaranda bloom",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x12/container-houses-40x12-long-side-elevation.webp",
+          "alt": "Side elevation of a 40x12 ft container house, sand-toned cladding, on gravel among vineyard hills in jacaranda bloom",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x12/container-houses-40x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x12 ft container house, with a dining table under pendant lighting",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/container-houses/40x12/container-houses-40x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x12 ft container house towards a bathroom with a laundry recess alongside",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
     }
   ],
   "productName": "Container Houses",
