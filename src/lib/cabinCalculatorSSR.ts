@@ -35,6 +35,8 @@ export type QuantityMap = Record<string, number>;
 export interface DoorConfig {
   type: 'Steel door' | 'Glass / Aluminium / uPVC door';
   wall: Wall;
+  end: 'Left' | 'Right';
+  distance: number;
   position: number;
   hinge: 'Left' | 'Right';
   opening: 'In' | 'Out';
@@ -43,6 +45,8 @@ export interface DoorConfig {
 export interface WindowConfig {
   type: 'uPVC Sliding' | 'Aluminium Sliding' | 'Openable uPVC' | 'Fixed Glass';
   wall: Wall;
+  end: 'Left' | 'Right';
+  distance: number;
   position: number;
   width: number;
   height: number;
@@ -83,6 +87,7 @@ export interface CalculatorConfig {
   mobility: '100% movable' | 'Fixed / semi-permanent';
   deliveryZone: 'Bangalore city' | 'Delhi NCR' | 'Other';
   distanceKm: number;
+  includeGst: boolean;
   installation: boolean;
   colonyVariant: number;
   workers: number;
@@ -102,6 +107,7 @@ export interface CalculatorEstimate {
   gst: number;
   totalInclGst: number;
   transportNote: string;
+  includeGst: boolean;
   quoteOnly: boolean;
 }
 
@@ -117,7 +123,7 @@ interface ProductDefinition {
 }
 
 export interface RenderCalculatorOptions {
-  config?: CalculatorConfig;
+  config?: Partial<CalculatorConfig>;
   query?: CalculatorQuery;
   embedded?: boolean;
   includeCopy?: boolean;
@@ -127,6 +133,13 @@ export interface RenderCalculatorOptions {
   productSlug?: ColonyProductSlug;
   pageUrl?: string;
   submissionStatus?: 'success' | 'failure';
+}
+
+export interface EmbeddedProductSummary {
+  name: string;
+  sizeLabel: string | null;
+  price: number | null;
+  priceLabel: string;
 }
 
 export const PRODUCTS: readonly ProductDefinition[] = [
@@ -151,12 +164,46 @@ export const PRODUCTS: readonly ProductDefinition[] = [
   { id: 'prefab-labor-camps', name: 'Prefab Labour Camps', subtitle: 'Relocatable worker camp blocks' },
 ] as const;
 
+const PRODUCT_ICON: Record<ProductId, string> = {
+  'porta-cabin': '🏗',
+  'office-cabin': '💼',
+  'security-cabin': '🔐',
+  'toilet-cabin': '🚻',
+  'accommodation-cabin': '🛏',
+  'container-office': '🚚',
+  'site-office': '🏢',
+  'portable-cabin': '📦',
+  'container-houses': '🏠',
+  'prefab-container-homes': '🏡',
+  'shipping-container-homes': '🚧',
+  'affordable-container-homes': '🏠',
+  'luxury-container-houses': '🏙',
+  'prefab-modular-home': '🏬',
+  'container-cafe': '☕',
+  'labour-colony': '👷',
+  'labor-sheds': '🏚',
+  'labor-hutments': '🏘',
+  'prefab-labor-camps': '🏕',
+};
+
 export const STRUCTURES = [
   ['MS frame + insulated panel', 0],
   ['GI-coated frame', 45],
   ['Heavier structural frame', 60],
   ['Container-form Corten build', 75],
 ] as const;
+
+const STEP_GUIDANCE = {
+  product: 'Pick the exact product you want to build, and we keep pricing and options aligned to that range.',
+  size: 'Pick footprint and height, then tune quantity. Published ladder or custom area pricing updates as you type.',
+  structure: 'Choose the base structure and roof method before materials. A fixed-rate ladder keeps each option transparent.',
+  interior: 'Pick a practical finish set; every chip shows whether it is standard or an added cost.',
+  openings: 'Add and position doors and windows so the plan matches your room layout before moving on.',
+  electrical: 'Set quantities for fixed items from area-sensible defaults. Suggested counts are editable.',
+  addons: 'Add any furniture or fittings you need. Every line below is shown on the quotation item list.',
+  delivery: 'Confirm transport and installation here and choose whether GST is shown in your live total.',
+  quotation: 'Review your estimate and send contact details to get a fixed, itemised quotation.',
+} as const;
 
 export const WALL_FINISHES = [['Pre-painted steel skin', 0], ['Particle Board', -15], ['PVC', 70], ['HDHMR', 60], ['Gypsum', 85], ['WPC', 140], ['SPC', 170], ['UV Sheet', 350], ['ACP', 260]] as const;
 export const CEILINGS = [['Standard ceiling', 0], ['Particle Board', -15], ['PVC', 65], ['HDHMR', 60], ['Gypsum', 85], ['WPC', 140], ['SPC', 170], ['UV Sheet', 350], ['ACP', 260]] as const;
@@ -199,6 +246,7 @@ const WINDOW_RATES = {
 } as const;
 const WALLS: readonly Wall[] = ['Front', 'Rear', 'Left', 'Right'];
 const PUF_THICKNESSES = [30, 40, 50, 60, 80] as const;
+const ROOM_TYPES = ['Reception', 'Bedroom', 'Workspace', 'Kitchen', 'Toilet', 'Storage', 'Hall', 'Other'] as const;
 const SCOPE_NOTE = 'Colony buildings are configured as complete blocks. Doors, windows, electrical points and fittings follow the approved building drawing for the configuration you select, and any change you need is itemised in your fixed quotation.';
 const SIZE_ERROR = 'Enter a length and width between 6 and 60 ft. For larger buildings, request a quotation and we will size it with you.';
 
@@ -215,8 +263,612 @@ export const CALCULATOR_MESSAGES = {
 } as const;
 
 export const CABIN_CALCULATOR_SSR_STYLES = `
-.cabin-calculator-ssr{--calc-bg:#f4f8f5;--calc-panel:#fff;--calc-soft:#eef6f0;--calc-border:#d5e3d9;--calc-text:#1d2b22;--calc-muted:#5c6f64;--calc-accent:#2d7a3f;background:var(--calc-bg);color:var(--calc-text);padding:16px;border-radius:20px}.cabin-calculator-ssr[data-theme="dark"]{--calc-bg:#0c1310;--calc-panel:#121c16;--calc-soft:#0e1712;--calc-border:#26382c;--calc-text:#eaf4ec;--calc-muted:#9db2a4;--calc-accent:#7fd49a}.cabin-calculator-ssr *{box-sizing:border-box}.cabin-calculator-ssr button,.cabin-calculator-ssr input,.cabin-calculator-ssr select,.cabin-calculator-ssr textarea{font:inherit;min-height:44px}.cabin-calculator-ssr button,.cabin-calculator-ssr input,.cabin-calculator-ssr select,.cabin-calculator-ssr textarea,.cabin-calculator-ssr .calc-choice{border:1px solid var(--calc-border);border-radius:8px;background:var(--calc-panel);color:var(--calc-text)}.cabin-calculator-ssr button:focus-visible,.cabin-calculator-ssr input:focus-visible,.cabin-calculator-ssr select:focus-visible,.cabin-calculator-ssr textarea:focus-visible,.cabin-calculator-ssr a:focus-visible{outline:3px solid var(--calc-accent);outline-offset:2px}.calculator-header,.step-card,.estimate-card,.price-tables,.calculator-copy,.noscript-content{background:var(--calc-panel);border:1px solid var(--calc-border);border-radius:14px;padding:18px;margin-block:14px}.calculator-header{display:grid;grid-template-columns:1fr auto;gap:8px 18px;align-items:center}.calculator-header>*{margin:0}.step-nav{display:flex;gap:8px;overflow-x:auto;padding:4px}.step-nav a{white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;padding:8px 12px;border:1px solid var(--calc-border);border-radius:999px;color:var(--calc-text)}.calculator-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,360px);gap:16px}.calc-step{display:block;min-height:220px;padding-block:16px;border-bottom:1px solid var(--calc-border)}.cabin-calculator-ssr.is-enhanced .calc-step:not(.is-active){display:none}.product-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.calc-choice,.quantity-row{display:flex;gap:10px;align-items:flex-start;padding:10px;margin:6px 0;min-height:44px}.calc-choice input{min-height:auto;margin-top:4px}.calc-choice span,.quantity-row span{display:flex;flex-direction:column}.calc-choice small,.quantity-row small,.cabin-calculator-ssr p,.cabin-calculator-ssr dd{color:var(--calc-muted)}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cabin-calculator-ssr label:not(.calc-choice):not(.quantity-row){display:flex;flex-direction:column;gap:5px;margin-block:8px}.cabin-calculator-ssr input,.cabin-calculator-ssr select,.cabin-calculator-ssr textarea{width:100%;padding:9px 11px}.cabin-calculator-ssr fieldset{border:1px solid var(--calc-border);border-radius:10px;padding:12px;margin-block:12px}.floor-plan{display:block;width:100%;max-width:640px;min-height:220px;background:var(--calc-soft);border:1px solid var(--calc-border);border-radius:12px}.shell{fill:var(--calc-soft);stroke:var(--calc-accent);stroke-width:2}.partition{stroke:var(--calc-muted);stroke-dasharray:4 3}.door-mark{fill:#e0ad20}.window-mark{fill:#368dcc}.floor-plan text{fill:var(--calc-muted);font-size:9px;text-anchor:middle}.quantity-row{justify-content:space-between;background:var(--calc-soft)}.quantity-row input{width:90px}.estimate-card{align-self:start;position:sticky;top:90px}.estimate-lines>div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--calc-border)}.estimate-lines dd{margin:0;text-align:right}.total{display:flex;flex-direction:column;text-align:center;background:var(--calc-soft);border-radius:10px;padding:12px;margin-block:12px}.total strong{font-size:1.5rem;color:var(--calc-accent)}.estimate-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.price-tables details{margin-block:8px}.price-tables summary{min-height:44px;padding:10px;cursor:pointer;font-weight:700}.cabin-calculator-ssr table{width:100%;border-collapse:collapse;display:table}.cabin-calculator-ssr th,.cabin-calculator-ssr td{text-align:left;padding:8px;border:1px solid var(--calc-border)}.mobile-estimate{display:none}.calculator-status{border:1px solid var(--calc-border);background:var(--calc-soft);padding:10px;border-radius:8px;margin-block:8px}.print-letterhead,.print-footer{display:none}@media(max-width:760px){.calculator-grid{grid-template-columns:1fr}.estimate-card{position:static}.field-grid{grid-template-columns:1fr}.price-tables{overflow-x:auto}.mobile-estimate{position:sticky;bottom:0;display:block;background:var(--calc-panel);border-top:1px solid var(--calc-border);padding:8px;z-index:20}.mobile-estimate a{display:flex;justify-content:space-between;align-items:center;min-height:56px;color:var(--calc-text)}}@media print{.print-letterhead,.print-footer{display:flex;flex-direction:column}.step-nav,.step-card,.mobile-estimate,.estimate-actions{display:none!important}.calculator-grid{display:block}.estimate-card{position:static}}
-.calculator-header-actions{display:flex;gap:8px;flex-wrap:wrap}.cabin-calculator-ssr.is-enhanced .step-card{height:720px;min-height:720px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}@media(max-width:600px){.cabin-calculator-ssr{padding-bottom:84px}.cabin-calculator-ssr.is-enhanced .step-card{height:610px;min-height:610px}.mobile-estimate{position:fixed;left:0;right:0;bottom:0;z-index:40}}
+.cabin-calculator-ssr{
+  --calc-primary: #1a3c2e;
+  --calc-secondary: #2d7a3f;
+  --calc-surface: #f0f7f2;
+  --calc-bg: var(--calc-surface);
+  --calc-card: var(--calc-surface);
+  --calc-soft: var(--calc-secondary);
+  --calc-softest: var(--calc-surface);
+  --calc-border: var(--calc-primary);
+  --calc-on-card: var(--calc-primary);
+  --calc-text: var(--calc-primary);
+  --calc-muted: var(--calc-primary);
+  --calc-accent: var(--calc-primary);
+  --calc-accent-strong: var(--calc-primary);
+  --calc-focus: var(--calc-primary);
+  --calc-shadow: rgba(26, 60, 46, 0.28);
+  --calc-row-gap: 12px;
+  background: var(--calc-bg);
+  color: var(--calc-text);
+  padding: 1rem;
+  border-radius: 16px;
+}
+
+.cabin-calculator-ssr[data-theme="light"]{
+  --calc-bg: var(--calc-surface);
+  --calc-card: var(--calc-secondary);
+  --calc-soft: var(--calc-primary);
+  --calc-border: var(--calc-primary);
+  --calc-on-card: var(--calc-surface);
+  --calc-text: var(--calc-surface);
+  --calc-muted: var(--calc-surface);
+  --calc-accent: var(--calc-primary);
+  --calc-accent-strong: var(--calc-surface);
+  --calc-focus: var(--calc-surface);
+}
+
+.cabin-calculator-ssr[data-theme="green"]{
+  --calc-bg: var(--calc-secondary);
+  --calc-card: var(--calc-surface);
+  --calc-soft: var(--calc-surface);
+  --calc-border: var(--calc-primary);
+  --calc-on-card: var(--calc-primary);
+  --calc-text: var(--calc-primary);
+  --calc-muted: var(--calc-primary);
+  --calc-accent: var(--calc-primary);
+  --calc-accent-strong: var(--calc-primary);
+  --calc-focus: var(--calc-primary);
+}
+
+.cabin-calculator-ssr *{
+  box-sizing: border-box;
+}
+
+.cabin-calculator-ssr button,
+.cabin-calculator-ssr input,
+.cabin-calculator-ssr select,
+.cabin-calculator-ssr textarea{
+  font: inherit;
+  min-height: 44px;
+}
+
+.cabin-calculator-ssr button,
+.cabin-calculator-ssr input,
+.cabin-calculator-ssr select,
+.cabin-calculator-ssr textarea,
+.cabin-calculator-ssr .calc-choice{
+  border: 1px solid var(--calc-border);
+  border-radius: 10px;
+  background: var(--calc-card);
+  color: var(--calc-text);
+}
+
+.cabin-calculator-ssr button:focus-visible,
+.cabin-calculator-ssr input:focus-visible,
+.cabin-calculator-ssr select:focus-visible,
+.cabin-calculator-ssr textarea:focus-visible,
+.cabin-calculator-ssr a:focus-visible{
+  outline: 3px solid var(--calc-focus);
+  outline-offset: 2px;
+}
+
+.calculator-header,
+.step-card,
+.estimate-card,
+.price-tables,
+.calculator-copy,
+.noscript-content{
+  background: var(--calc-card);
+  border: 1px solid var(--calc-border);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-block: var(--calc-row-gap);
+}
+
+.calculator-header{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+.calculator-header>*{
+  margin: 0;
+}
+
+.calculator-header p{
+  margin-bottom: 0.2rem;
+}
+
+.calculator-header small{
+  color: var(--calc-muted);
+}
+
+.calculator-header strong{
+  display: block;
+  color: var(--calc-accent-strong);
+  font-size: clamp(1.1rem, 2.2vw, 2rem);
+}
+
+.calculator-header-actions{
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.calculator-header-actions > button{
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--calc-border);
+  background: var(--calc-soft);
+}
+
+.step-nav{
+  display: flex;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding: 0.2rem 0;
+  scrollbar-width: thin;
+}
+
+.step-nav a{
+  white-space: nowrap;
+  min-height: 40px;
+  line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--calc-border);
+  color: var(--calc-text);
+  background: var(--calc-soft);
+}
+
+  .step-nav a.is-active{
+    background: var(--calc-accent);
+    color: var(--calc-surface);
+    border-color: var(--calc-accent);
+    box-shadow: 0 0 0 2px color-mix(in oklab, var(--calc-card) 65%, transparent);
+    font-weight: 700;
+  }
+
+.step-nav a.is-complete{
+  color: var(--calc-accent);
+  border-color: var(--calc-accent);
+  background: var(--calc-soft);
+  opacity: 0.85;
+}
+
+.step-nav a[aria-current="false"]{
+  opacity: 0.65;
+}
+
+.step-card{
+  position: relative;
+}
+
+.calculator-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
+  gap: 1rem;
+  align-items: start;
+}
+
+.step-card,
+.estimate-card{
+  min-height: 0;
+}
+
+.cabin-calculator-ssr.is-enhanced .calc-step{
+  display: none;
+}
+
+.cabin-calculator-ssr.is-enhanced .calc-step.is-active{
+  display: block;
+}
+
+.calc-step{
+  padding: 0.75rem 0 1.5rem;
+  border-bottom: 1px solid var(--calc-border);
+}
+
+.step-guidance{
+  margin-bottom: 0.55rem;
+  margin-top: -0.25rem;
+}
+
+.product-tiles{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.75rem;
+}
+
+.calc-choice,
+.quantity-row{
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  padding: 0.72rem;
+  margin: 0.45rem 0;
+  border-radius: 12px;
+  border: 1px solid var(--calc-border);
+  background: var(--calc-soft);
+}
+
+.calc-choice{
+  min-height: 54px;
+  position: relative;
+  align-items: center;
+}
+
+.calc-choice .choice-title{
+  color: var(--calc-on-card);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.calc-choice .choice-icon{
+  font-size: 1.1rem;
+}
+
+.choice-title{
+  font-weight: 600;
+}
+
+.calc-choice .choice-description{
+  margin-top: 0.2rem;
+}
+
+.choice-badge{
+  margin-top: 0.15rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.08rem 0.5rem;
+  font-size: 0.74rem;
+  width: fit-content;
+}
+
+.calc-choice.is-selected{
+  border-color: var(--calc-accent);
+  background: color-mix(in oklab, var(--calc-surface) 85%, var(--calc-accent) 15%);
+  color: var(--calc-accent);
+}
+
+.calc-choice.is-selected::after{
+  content: "Selected";
+  position: absolute;
+  right: 0.6rem;
+  top: 0.45rem;
+  border: 1px solid var(--calc-accent);
+  color: var(--calc-accent);
+  border-color: var(--calc-accent);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  line-height: 1;
+  padding: 0.2rem 0.45rem;
+  font-weight: 700;
+}
+
+.calc-choice.is-selected small{
+  color: var(--calc-accent);
+}
+
+.calc-choice input{
+  min-height: auto;
+  margin-top: 0.2rem;
+}
+
+.calc-choice input:checked + span{
+  color: var(--calc-accent-strong);
+}
+
+.calc-choice input:focus-visible + span{
+  outline: 2px solid var(--calc-focus);
+  outline-offset: 2px;
+}
+
+.calc-choice:has(input:checked){
+  border-color: var(--calc-accent);
+  background: color-mix(in oklab, var(--calc-surface) 85%, var(--calc-accent) 15%);
+}
+
+.calc-choice span,
+.quantity-row span{
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.quantity-row.is-filled{
+  border-color: var(--calc-accent);
+}
+
+.calc-choice small,
+.quantity-row small,
+.cabin-calculator-ssr p,
+.cabin-calculator-ssr dd{
+  color: var(--calc-muted);
+  line-height: 1.35;
+}
+
+.field-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.cabin-calculator-ssr label:not(.calc-choice):not(.quantity-row){
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-block: 0.45rem;
+}
+
+.cabin-calculator-ssr input,
+.cabin-calculator-ssr select,
+.cabin-calculator-ssr textarea{
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+}
+
+.opening-card,
+.floor-plan,
+.scope-note,
+fieldset{
+  width: 100%;
+}
+
+.wall-diagram{
+  margin-block: 0.6rem 0.8rem;
+  display: grid;
+  gap: 0.35rem;
+  border: 1px solid var(--calc-border);
+  border-radius: 12px;
+  padding: 0.65rem;
+  background: var(--calc-soft);
+}
+
+.wall-diagram .wall-layer{
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  border: 1px dashed var(--calc-border);
+  padding: 0.35rem 0.55rem;
+}
+
+.cabin-calculator-ssr fieldset{
+  border: 1px solid var(--calc-border);
+  border-radius: 12px;
+  padding: 0.8rem;
+  margin-block: 0.9rem;
+}
+
+.floor-plan{
+  display: block;
+  width: min(100%, 640px);
+  min-height: 220px;
+  background: var(--calc-soft);
+  border: 1px solid var(--calc-border);
+  border-radius: 12px;
+}
+
+.shell{
+  fill: var(--calc-soft);
+  stroke: var(--calc-accent-strong);
+  stroke-width: 2;
+}
+
+.partition{
+  stroke: color-mix(in oklab, var(--calc-muted) 70%, transparent);
+  stroke-dasharray: 4 3;
+}
+
+.door-mark{
+  fill: var(--calc-accent);
+}
+
+.window-mark{
+  fill: var(--calc-accent);
+}
+
+.floor-plan text{
+  fill: var(--calc-muted);
+  font-size: 9px;
+  text-anchor: middle;
+}
+
+.quantity-row{
+  justify-content: space-between;
+  background: var(--calc-soft);
+}
+
+.quantity-row input{
+  width: 5.2rem;
+}
+
+.estimate-card{
+  align-self: start;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.estimate-lines > div{
+  display: flex;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--calc-border);
+}
+
+.estimate-lines dd{
+  margin: 0;
+  text-align: right;
+}
+
+.total{
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  text-align: center;
+  background: var(--calc-soft);
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin: 1rem 0;
+}
+
+.total strong{
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  color: var(--calc-accent);
+}
+
+.estimate-actions{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.estimate-actions > button{
+  width: 100%;
+  min-height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--calc-border);
+  background: var(--calc-soft);
+}
+
+.price-tables details{
+  margin-block: 0.55rem;
+}
+
+.price-tables summary{
+  min-height: 40px;
+  padding: 0.55rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.cabin-calculator-ssr table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cabin-calculator-ssr th,
+.cabin-calculator-ssr td{
+  text-align: left;
+  padding: 0.65rem 0.45rem;
+  border: 1px solid var(--calc-border);
+}
+
+.calculator-status{
+  border: 1px solid var(--calc-border);
+  background: var(--calc-soft);
+  padding: 0.65rem;
+  border-radius: 10px;
+  margin-block: 0.65rem;
+}
+
+.cabin-calculator-ssr.is-enhanced .price-tables{
+  display: none;
+}
+
+.cabin-calculator-ssr.is-enhanced .price-tables[hidden]{
+  display: none !important;
+}
+
+.print-letterhead,
+.print-footer{
+  display: none;
+}
+
+.calculator-copy section,
+.calculator-copy p{
+  margin-block: 0.45rem;
+}
+
+.mobile-estimate{
+  display: none;
+}
+
+@media (max-width: 1024px){
+  .calculator-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .step-card{
+    min-height: 0;
+    max-height: none;
+  }
+}
+
+@media (max-width: 760px){
+  .calculator-header{
+    grid-template-columns: 1fr;
+  }
+
+  .step-nav{
+    gap: 0.35rem;
+  }
+
+  .step-nav a{
+    border-radius: 999px;
+  }
+
+  .estimate-card{
+    position: static;
+    top: auto;
+  }
+
+  .field-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .price-tables{
+    overflow-x: auto;
+  }
+
+  .mobile-estimate{
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background: var(--calc-card);
+    border-top: 1px solid var(--calc-border);
+    padding: 0.55rem;
+    z-index: 40;
+  }
+
+  .mobile-estimate a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 56px;
+    color: var(--calc-text);
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .cabin-calculator-ssr{
+    padding-bottom: 7rem;
+  }
+}
+
+@media print{
+  .print-letterhead,
+  .print-footer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-nav,
+  .step-card,
+  .mobile-estimate,
+  .estimate-actions{
+    display: none !important;
+  }
+
+  .calculator-grid{
+    display: block;
+  }
+
+  .estimate-card{
+    position: static;
+  }
+}
 `;
 
 export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
@@ -233,10 +885,10 @@ export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
   ceiling: CEILINGS[0][0],
   flooring: FLOORING[0][0],
   pufThickness: 50,
-  doors: [{ type: 'Steel door', wall: 'Front', position: 20, hinge: 'Left', opening: 'Out' }],
+  doors: [{ type: 'Steel door', wall: 'Front', end: 'Left', distance: 2, position: 20, hinge: 'Left', opening: 'Out' }],
   windows: [
-    { type: 'uPVC Sliding', wall: 'Front', position: 35, width: 3, height: 3, track: '2 Track' },
-    { type: 'uPVC Sliding', wall: 'Rear', position: 70, width: 3, height: 3, track: '2 Track' },
+    { type: 'uPVC Sliding', wall: 'Front', end: 'Left', distance: 1.5, position: 35, width: 3, height: 3, track: '2 Track' },
+    { type: 'uPVC Sliding', wall: 'Rear', end: 'Right', distance: 1.5, position: 70, width: 3, height: 3, track: '2 Track' },
   ],
   electrical: { 'LED Panel Light': 5, 'Ceiling Fan': 2, 'Plug Point': 4, 'External / Entrance Light': 1 },
   lightColour: 'White',
@@ -246,6 +898,7 @@ export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
   mobility: '100% movable',
   deliveryZone: 'Other',
   distanceKm: 0,
+  includeGst: true,
   installation: false,
   colonyVariant: 0,
   workers: 0,
@@ -291,6 +944,8 @@ function cleanDoor(value: unknown): DoorConfig | null {
   return {
     type: member(item.type, ['Steel door', 'Glass / Aluminium / uPVC door'] as const, 'Steel door'),
     wall: member(item.wall, WALLS, 'Front'),
+    end: member(item.end, ['Left', 'Right'] as const, 'Left'),
+    distance: finite(item.distance, 2, 0, 1000),
     position: finite(item.position, 20, 0, 100),
     hinge: member(item.hinge, ['Left', 'Right'] as const, 'Left'),
     opening: member(item.opening, ['In', 'Out'] as const, 'Out'),
@@ -303,6 +958,8 @@ function cleanWindow(value: unknown): WindowConfig | null {
   return {
     type: member(item.type, Object.keys(WINDOW_RATES) as Array<keyof typeof WINDOW_RATES>, 'uPVC Sliding'),
     wall: member(item.wall, WALLS, 'Front'),
+    end: member(item.end, ['Left', 'Right'] as const, 'Left'),
+    distance: finite(item.distance, 1.5, 0, 1000),
     position: finite(item.position, 35, 0, 100),
     width: finite(item.width, 3, 1, 12),
     height: finite(item.height, 3, 1, 12),
@@ -341,6 +998,7 @@ function sanitiseConfig(value: unknown): CalculatorConfig {
     mobility: member(source.mobility, ['100% movable', 'Fixed / semi-permanent'] as const, '100% movable'),
     deliveryZone: member(source.deliveryZone, ['Bangalore city', 'Delhi NCR', 'Other'] as const, 'Other'),
     distanceKm: finite(source.distanceKm, 0, 0, 5000),
+    includeGst: source.includeGst !== false,
     installation: source.installation === true,
     colonyVariant: int(source.colonyVariant, 0, 0, Math.max(0, PRODUCT_LADDERS.labourColony.length - 1)),
     workers: int(source.workers, 0, 0, 100000),
@@ -375,6 +1033,8 @@ export function parseCalculatorQuery(query: CalculatorQuery = {}): CalculatorCon
   }
   const zone = one(query.deliveryZone);
   if (zone) direct.deliveryZone = zone as CalculatorConfig['deliveryZone'];
+  const includeGst = one(query.includeGst);
+  if (includeGst !== undefined) direct.includeGst = includeGst === '1' || includeGst.toLowerCase() === 'true';
   return sanitiseConfig(direct);
 }
 
@@ -464,11 +1124,37 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
   }
   if (config.installation) addLine('Installation', null, 'quotation');
   const gst = Math.round(total * GST_RATE);
-  return { areaSqft: area, lines, totalExGst: total, gst, totalInclGst: total + gst, transportNote, quoteOnly: basePrice === null };
+  return {
+    areaSqft: area,
+    lines,
+    totalExGst: total,
+    gst,
+    totalInclGst: total + gst,
+    transportNote,
+    includeGst: config.includeGst,
+    quoteOnly: basePrice === null,
+  };
 }
 
 function radio(name: string, value: string, label: string, isChecked: boolean, detail = '', attributes = ''): string {
   return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(value)}"${checked(isChecked)}${attributes}><span><strong>${esc(label)}</strong>${detail ? `<small>${esc(detail)}</small>` : ''}</span></label>`;
+}
+
+function productChoice(name: string, item: ProductDefinition, isChecked: boolean): string {
+  return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(item.id)}"${checked(isChecked)} data-product-choice="1"><span><strong class="choice-title"><span class="choice-icon" aria-hidden="true">${PRODUCT_ICON[item.id] || '🏭'}</span>${esc(item.name)}</strong><small class="choice-description">${esc(item.subtitle)}</small><small>${item.houseLadder ? 'Published ladder-backed builder rate' : item.quoteOnly ? 'Price on request' : `from ${money(productPriceRows(item)[0]?.ex || 0)} ex-GST`}</small></span></label>`;
+}
+
+function renderStepGuidance(key: keyof typeof STEP_GUIDANCE): string {
+  return `<p class="step-guidance"><small>${esc(STEP_GUIDANCE[key])}</small></p>`;
+}
+
+function renderWallBuildDiagram(insulationLabel: string): string {
+  return `<section class="wall-diagram" aria-label="Wall build-up">
+      <small>Wall build-up from outside to inside</small>
+      <div class="wall-layer"><span>Weather skin</span><span>${esc(insulationLabel)}</span></div>
+      <div class="wall-layer"><span>Structural face</span><span>MS frame & panel support</span></div>
+      <div class="wall-layer"><span>Thermal layer</span><span>${esc(insulationLabel)} PUF</span></div>
+    </section>`;
 }
 
 function optionCards(name: string, choices: readonly (readonly [string, number])[], current: string, suffix = 'per sq ft'): string {
@@ -492,8 +1178,14 @@ function renderPlan(config: CalculatorConfig): string {
     return [x + planWidth, y + planHeight * ratio];
   };
   const partitions = Array.from({ length: Math.max(0, config.rooms - 1) }, (_, index) => `<line x1="${x + planWidth * (index + 1) / config.rooms}" y1="${y}" x2="${x + planWidth * (index + 1) / config.rooms}" y2="${y + planHeight}" class="partition"/>`).join('');
-  const doors = config.doors.map((door, index) => { const [cx, cy] = wallPoint(door.wall, door.position); return `<circle cx="${cx}" cy="${cy}" r="5" class="door-mark"><title>Door ${index + 1}</title></circle>`; }).join('');
-  const windows = config.windows.map((window, index) => { const [wx, wy] = wallPoint(window.wall, window.position); return `<rect x="${wx - 5}" y="${wy - 3}" width="10" height="6" class="window-mark"><title>Window ${index + 1}</title></rect>`; }).join('');
+  const doors = config.doors.map((door, index) => {
+    const [cx, cy] = wallPoint(door.wall, door.position);
+    return `<circle data-wall="${door.wall}" data-end="${door.end}" data-distance="${door.distance}" data-index="${index}" cx="${cx}" cy="${cy}" r="5" class="door-mark"><title>Door ${index + 1}</title></circle>`;
+  }).join('');
+  const windows = config.windows.map((window, index) => {
+    const [wx, wy] = wallPoint(window.wall, window.position);
+    return `<rect data-wall="${window.wall}" data-end="${window.end}" data-distance="${window.distance}" data-index="${index}" x="${wx - 5}" y="${wy - 3}" width="10" height="6" class="window-mark"><title>Window ${index + 1}</title></rect>`;
+  }).join('');
   const elevationLabels = WALLS.map((wall, index) => {
     const bx = index % 2 === 0 ? 12 : 168;
     const by = index < 2 ? 16 : 106;
@@ -518,8 +1210,29 @@ function productPriceRows(product: ProductDefinition): Array<{ label: string; ar
   return PRODUCT_LADDERS.containerOfficeCabins.map((row) => withDimensions(row, calculateAreaBandBase(row.areaSqft, product.referenceRate || 1250)));
 }
 
+export function getEmbeddedProductSummary(productId: ProductId): EmbeddedProductSummary {
+  const product = productFor(productId);
+  const rows = productPriceRows(product);
+  const pricedRows = rows.filter((row): row is { label: string; area: number; ex: number; capacity?: string; length?: number; width?: number } => row.ex !== null && Number.isFinite(row.ex));
+  if (pricedRows.length === 0) {
+    return {
+      name: product.name,
+      sizeLabel: null,
+      price: null,
+      priceLabel: 'Price on request',
+    };
+  }
+  const cheapest = pricedRows.reduce((best, current) => (current.ex < best.ex ? current : best), pricedRows[0]);
+  return {
+    name: product.name,
+    sizeLabel: cheapest.label,
+    price: cheapest.ex,
+    priceLabel: `${cheapest.label} starts at ${money(cheapest.ex)}`,
+  };
+}
+
 function renderPriceTables(products: readonly ProductDefinition[] = PRODUCTS): string {
-  return `<section class="price-tables" aria-labelledby="published-price-tables"><h2 id="published-price-tables">Published cabin price tables</h2><p>All primary prices are ex-GST. Including-GST figures apply 18 percent GST.</p>${products.map((product) => `<details${products.length === 1 || product.id === 'porta-cabin' ? ' open' : ''}><summary>${esc(product.name)} price table</summary><table data-product-price-table="${product.id}"><caption>${esc(product.name)} published size and price ladder</caption><thead><tr><th scope="col">Size</th><th scope="col">Area</th>${isColonyProduct(product.id) ? '<th scope="col">Workers housed</th>' : ''}<th scope="col">Price ex-GST</th><th scope="col">Including 18% GST</th></tr></thead><tbody>${productPriceRows(product).map((row) => `<tr${row.length !== undefined && row.width !== undefined && row.ex !== null ? ` data-published-size data-length="${row.length}" data-width="${row.width}" data-price-ex-gst="${row.ex}"` : ''}><th scope="row">${esc(row.label)}</th><td>${row.area.toLocaleString('en-IN')} sq ft</td>${isColonyProduct(product.id) ? `<td>${esc(row.capacity || '')}</td>` : ''}<td>${row.ex === null ? 'price on request' : money(row.ex)}</td><td>${row.ex === null ? 'itemised in quotation' : money(Math.round(row.ex * (1 + GST_RATE)))}</td></tr>`).join('')}</tbody></table></details>`).join('')}</section>`;
+  return `<section class="price-tables" aria-labelledby="published-price-tables"><h2 id="published-price-tables">Published cabin price tables</h2><p>All primary prices are ex-GST. Including-GST figures apply 18 percent GST.</p>${products.map((product) => `<details><summary>${esc(product.name)} price table</summary><table data-product-price-table="${product.id}"><caption>${esc(product.name)} published size and price ladder</caption><thead><tr><th scope="col">Size</th><th scope="col">Area</th>${isColonyProduct(product.id) ? '<th scope="col">Workers housed</th>' : ''}<th scope="col">Price ex-GST</th><th scope="col">Including 18% GST</th></tr></thead><tbody>${productPriceRows(product).map((row) => `<tr${row.length !== undefined && row.width !== undefined && row.ex !== null ? ` data-published-size data-length="${row.length}" data-width="${row.width}" data-price-ex-gst="${row.ex}"` : ''}><th scope="row">${esc(row.label)}</th><td>${row.area.toLocaleString('en-IN')} sq ft</td>${isColonyProduct(product.id) ? `<td>${esc(row.capacity || '')}</td>` : ''}<td>${row.ex === null ? 'price on request' : money(row.ex)}</td><td>${row.ex === null ? 'itemised in quotation' : money(Math.round(row.ex * (1 + GST_RATE)))}</td></tr>`).join('')}</tbody></table></details>`).join('')}</section>`;
 }
 
 function renderFreightTable(): string {
@@ -538,17 +1251,18 @@ function renderCopy(): string {
 }
 
 function renderEstimate(estimate: CalculatorEstimate): string {
-  return `<aside class="estimate-card" aria-label="Live itemised estimate"><h2>Live estimate</h2><p>${estimate.areaSqft.toLocaleString('en-IN')} sq ft</p><dl class="estimate-lines">${estimate.lines.map((line) => `<div><dt>${esc(line.label)}</dt><dd>${line.amount === null ? 'in quotation' : money(line.amount)}</dd></div>`).join('')}${estimate.transportNote ? `<div><dt>Transport</dt><dd>${esc(estimate.transportNote)}</dd></div>` : ''}</dl><div class="total"><small>Estimated total, ex-GST</small><strong data-estimate-ex-gst>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><span data-estimate-incl-gst>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. 18% GST`}</span></div><div class="estimate-actions"><button type="button" data-action="pdf">PDF</button><button type="button" data-action="whatsapp">WhatsApp</button><button type="button" data-action="copy-link">Copy link</button></div><p>Indicative estimate from the published price list, ex-factory and ex-GST. GST at 18% is itemised separately. Final pricing follows drawing and location review.</p></aside>`;
+  const totalWithGST = estimate.quoteOnly ? 'Fixed quotation within 48 hours' : (estimate.includeGst ? `${money(estimate.totalInclGst)} incl. 18% GST` : 'GST line shown above');
+  return `<aside class="estimate-card" aria-label="Live itemised estimate"><h2>Live estimate</h2><p>${estimate.areaSqft.toLocaleString('en-IN')} sq ft</p><dl class="estimate-lines">${estimate.lines.map((line) => `<div><dt>${esc(line.label)}</dt><dd>${line.amount === null ? 'in quotation' : money(line.amount)}</dd></div>`).join('')}${estimate.transportNote ? `<div><dt>Transport</dt><dd>${esc(estimate.transportNote)}</dd></div>` : ''}</dl><div class="total"><small>Estimated total, ex-GST</small><strong data-estimate-ex-gst>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><span data-estimate-incl-gst>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : totalWithGST}</span></div><div class="estimate-actions"><button type="button" data-action="pdf">PDF</button><button type="button" data-action="whatsapp">WhatsApp</button><button type="button" data-action="copy-link">Copy link</button></div><p>Indicative estimate from the published price list, ex-factory and ex-GST. GST at 18% is itemised separately. Final pricing follows drawing and location review.</p></aside>`;
 }
 
 function renderDoorCard(door: DoorConfig, index: number, reserved: boolean): string {
   const state = reserved ? ' data-reserved-door hidden disabled' : '';
-  return `<fieldset class="opening-card"${state}><legend>Door ${index + 1}</legend>${radio(`doors[${index}][type]`, 'Steel door', 'Steel door', door.type === 'Steel door', `${index === 0 ? 'First door included' : money(RATE_CARD.marketRates.steelDoor)}${index === 0 ? '' : ' each, ex-GST'}`, ` data-rate="${index === 0 ? 0 : RATE_CARD.marketRates.steelDoor}" data-rate-basis="each"`)}${radio(`doors[${index}][type]`, 'Glass / Aluminium / uPVC door', 'Glass / Aluminium / uPVC door', door.type !== 'Steel door', `${money(RATE_CARD.marketRates.upvcGlassDoor)} each, ex-GST`, ` data-rate="${RATE_CARD.marketRates.upvcGlassDoor}" data-rate-basis="each"`)}<label>Wall<select name="doors[${index}][wall]">${WALLS.map((wall) => `<option${selected(door.wall === wall)}>${wall}</option>`).join('')}</select></label><label>Position along wall, percent<input type="range" min="0" max="100" name="doors[${index}][position]" value="${door.position}" aria-label="Door ${index + 1} position along wall"></label><fieldset><legend>Hinge</legend>${radio(`doors[${index}][hinge]`, 'Left', 'Left hinge', door.hinge === 'Left')}${radio(`doors[${index}][hinge]`, 'Right', 'Right hinge', door.hinge === 'Right')}</fieldset><fieldset><legend>Opening</legend>${radio(`doors[${index}][opening]`, 'In', 'Opens in', door.opening === 'In')}${radio(`doors[${index}][opening]`, 'Out', 'Opens out', door.opening === 'Out')}</fieldset></fieldset>`;
+  return `<fieldset class="opening-card" data-door-index="${index}"${state}><legend>Door ${index + 1}</legend>${radio(`doors[${index}][type]`, 'Steel door', 'Steel door', door.type === 'Steel door', `${index === 0 ? 'Standard included' : `${money(RATE_CARD.marketRates.steelDoor)} each, ex-GST`}`, ` data-rate="${index === 0 ? 0 : RATE_CARD.marketRates.steelDoor}" data-rate-basis="each"`)}${radio(`doors[${index}][type]`, 'Glass / Aluminium / uPVC door', 'Glass / Aluminium / uPVC door', door.type !== 'Steel door', `${money(RATE_CARD.marketRates.upvcGlassDoor)} each, ex-GST`, ` data-rate="${RATE_CARD.marketRates.upvcGlassDoor}" data-rate-basis="each"`)}<label>Wall<select name="doors[${index}][wall]">${WALLS.map((wall) => `<option${selected(door.wall === wall)}>${wall}</option>`).join('')}</select></label><label>End of wall<select name="doors[${index}][end]">${['Left', 'Right'].map((end) => `<option${selected(door.end === end)}>${end}</option>`).join('')}</select></label><label>Distance from selected end (ft)<input type="number" inputmode="numeric" min="0" step="0.5" name="doors[${index}][distance]" value="${door.distance}" aria-label="Door ${index + 1} distance from end"></label><fieldset><legend>Hinge side</legend>${radio(`doors[${index}][hinge]`, 'Left', 'Left-side hinge', door.hinge === 'Left')}${radio(`doors[${index}][hinge]`, 'Right', 'Right-side hinge', door.hinge === 'Right')}</fieldset><fieldset><legend>Opening</legend>${radio(`doors[${index}][opening]`, 'In', 'Opens in', door.opening === 'In')}${radio(`doors[${index}][opening]`, 'Out', 'Opens out', door.opening === 'Out')}</fieldset><small>Use "In" when hand flow should remain inside the room edge. Use "Out" when swing clearance is outside.</small><input type="hidden" name="doors[${index}][position]" value="${door.position}"></fieldset>`;
 }
 
 function renderWindowCard(window: WindowConfig, index: number, reserved: boolean): string {
   const state = reserved ? ' data-reserved-window hidden disabled' : '';
-  return `<fieldset class="opening-card"${state}><legend>Window ${index + 1}</legend><label>Type<select name="windows[${index}][type]">${Object.entries(WINDOW_RATES).map(([name, rate]) => `<option value="${esc(name)}"${selected(name === window.type)} data-rate="${rate}" data-rate-basis="per sq ft">${esc(name)} · ${money(rate)} per sq ft</option>`).join('')}</select></label><label>Wall<select name="windows[${index}][wall]">${WALLS.map((wall) => `<option${selected(window.wall === wall)}>${wall}</option>`).join('')}</select></label><label>Position along wall, percent<input type="range" min="0" max="100" name="windows[${index}][position]" value="${window.position}" aria-label="Window ${index + 1} position along wall"></label><label>Width in ft<input type="number" inputmode="decimal" min="1" max="12" step="0.5" name="windows[${index}][width]" value="${window.width}"></label><label>Height in ft<input type="number" inputmode="decimal" min="1" max="12" step="0.5" name="windows[${index}][height]" value="${window.height}"></label><fieldset><legend>Track</legend>${radio(`windows[${index}][track]`, '2 Track', '2 Track', window.track === '2 Track', '', ' data-rate-multiplier="1"')}${radio(`windows[${index}][track]`, '2.5 Track', '2.5 Track', window.track === '2.5 Track', '+12%', ' data-rate-multiplier="1.12"')}</fieldset></fieldset>`;
+  return `<fieldset class="opening-card" data-window-index="${index}"${state}><legend>Window ${index + 1}</legend><label>Type<select name="windows[${index}][type]">${Object.entries(WINDOW_RATES).map(([name, rate]) => `<option value="${esc(name)}"${selected(name === window.type)} data-rate="${rate}" data-rate-basis="per sq ft">${esc(name)} · ${money(rate)} per sq ft</option>`).join('')}</select></label><label>Wall<select name="windows[${index}][wall]">${WALLS.map((wall) => `<option${selected(window.wall === wall)}>${wall}</option>`).join('')}</select></label><label>End of wall<select name="windows[${index}][end]">${['Left', 'Right'].map((end) => `<option${selected(window.end === end)}>${end}</option>`).join('')}</select></label><label>Distance from selected end (ft)<input type="number" inputmode="numeric" min="0" step="0.5" name="windows[${index}][distance]" value="${window.distance}" aria-label="Window ${index + 1} distance from end"></label><label>Width in ft<input type="number" inputmode="decimal" min="1" max="12" step="0.5" name="windows[${index}][width]" value="${window.width}"></label><label>Height in ft<input type="number" inputmode="decimal" min="1" max="12" step="0.5" name="windows[${index}][height]" value="${window.height}"></label><fieldset><legend>Track</legend>${radio(`windows[${index}][track]`, '2 Track', '2 Track', window.track === '2 Track', 'Standard', ' data-rate-multiplier="1"')}${radio(`windows[${index}][track]`, '2.5 Track', '2.5 Track', window.track === '2.5 Track', '+12%', ' data-rate-multiplier="1.12"')}</fieldset><small>Track choice affects how much frame is needed along the edge.</small><input type="hidden" name="windows[${index}][position]" value="${window.position}"></fieldset>`;
 }
 
 export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}): string {
@@ -567,26 +1281,27 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const visibleSteps = embedded ? stepDefinitions.slice(1) : stepDefinitions;
   const section = (index: number, body: string): string => `<section class="calc-step${active === index ? ' is-active' : ''}" id="calculator-step-${index + 1}" data-step="${index + 1}" aria-labelledby="calculator-step-title-${index + 1}"><h2 id="calculator-step-title-${index + 1}">Step ${embedded ? index : index + 1} of ${embedded ? 8 : 9}: ${esc(stepDefinitions[index][0])}</h2>${body}</section>`;
 
-  const productStep = section(0, `<p>Pick the SAMAN building you want to configure.</p><fieldset><legend>Product</legend><div class="product-tiles">${PRODUCTS.map((item) => radio('productId', item.id, item.name, item.id === config.productId, `${item.subtitle}. ${item.quoteOnly ? 'price on request' : isColonyProduct(item.id) ? 'published per-building prices' : `from ${money(productPriceRows(item)[0]?.ex || 0)} ex-GST`}`, ` data-label="${esc(item.name)}" data-reference-rate="${effectiveReferenceRate(item)}" data-quote-only="${item.quoteOnly ? 'true' : 'false'}" data-ladder="${esc(item.houseLadder || (isColonyProduct(item.id) ? item.id : 'formula'))}"`)).join('')}</div></fieldset>`);
+  const productStep = section(0, `${renderStepGuidance('product')}<fieldset><legend>Product</legend><div class="product-tiles">${PRODUCTS.map((item) => productChoice('productId', item, item.id === config.productId)).join('')}</div></fieldset>`);
 
   const selectedColony = colonyLadder(config.productId)[config.colonyVariant];
   const suggestedQuantity = config.workers > 0 && selectedColony?.capacityMax ? Math.ceil(config.workers / selectedColony.capacityMax) : config.quantity;
   const colonySize = `<label>Workers to accommodate<input type="number" inputmode="numeric" min="1" max="100000" name="workers" value="${config.workers || ''}" data-workers></label><p data-worker-suggestion>${config.workers > 0 && selectedColony ? `${selectedColony.label} × ${suggestedQuantity} accommodates at least ${config.workers.toLocaleString('en-IN')} workers.` : 'Enter the worker headcount to see the smallest sufficient configuration and quantity.'}</p><fieldset><legend>Approved building configuration</legend>${colonyLadder(config.productId).map((item, index) => radio('colonyVariant', String(index), `${item.label}, ${item.areaSqft.toLocaleString('en-IN')} sq ft`, index === config.colonyVariant, `${item.capacity || 'Capacity confirmed at quotation'} · ${money(item.priceExGst)} ex-GST`, ` data-price="${item.priceExGst}" data-area="${item.areaSqft}" data-capacity-max="${item.capacityMax || 0}"`)).join('')}</fieldset><label>Building quantity<input type="number" inputmode="numeric" min="1" max="50" name="quantity" value="${config.quantity}"></label>`;
   const regularSize = `<div class="field-grid"><label>Length in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="length" value="${config.length}" required aria-describedby="size-guidance"></label><label>Width in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="width" value="${config.width}" required aria-describedby="size-guidance"></label><label>Height in ft<input type="number" inputmode="decimal" min="7" max="16" step="0.5" name="height" value="${config.height}"></label><label>Cabin quantity<input type="number" inputmode="numeric" min="1" max="50" step="1" name="quantity" value="${config.quantity}"></label></div><p id="size-guidance">${SIZE_ERROR}</p><fieldset><legend>Plan view</legend>${radio('planView', 'plan', 'Floor plan', config.planView === 'plan')}${radio('planView', 'elevations', 'Four elevations', config.planView === 'elevations')}</fieldset><label>Rooms<input type="number" inputmode="numeric" min="1" max="12" name="rooms" value="${config.rooms}"></label>${renderPlan(config)}`;
-  const sizeStep = section(1, colony ? colonySize : regularSize);
+  const sizeStep = section(1, `${renderStepGuidance('size')}${colony ? colonySize : regularSize}`);
 
-  const structureStep = section(2, `<fieldset><legend>Frame structure, rate per sq ft of floor</legend>${optionCards('structure', STRUCTURES, config.structure)}</fieldset><fieldset><legend>Roof</legend>${radio('roof', 'Sloped', 'Sloped roof', config.roof === 'Sloped', 'Standard, included', ' data-rate="0" data-rate-basis="percent of base"')}${radio('roof', 'Flat / mono-pitch', 'Flat / mono-pitch roof', config.roof === 'Flat / mono-pitch', '+4% of base price', ' data-rate="4" data-rate-basis="percent of base"')}</fieldset><fieldset><legend>Mobility</legend>${radio('mobility', '100% movable', '100% movable', config.mobility === '100% movable')}${radio('mobility', 'Fixed / semi-permanent', 'Fixed / semi-permanent', config.mobility === 'Fixed / semi-permanent')}</fieldset>`);
-  const interiorStep = section(3, `<fieldset><legend>Wall finish, rate per sq ft of wall</legend>${optionCards('wallFinish', WALL_FINISHES, config.wallFinish, 'per sq ft of wall')}</fieldset><fieldset><legend>Ceiling, rate per sq ft</legend>${optionCards('ceiling', CEILINGS, config.ceiling)}</fieldset><fieldset><legend>Flooring, rate per sq ft</legend>${optionCards('flooring', FLOORING, config.flooring)}</fieldset><fieldset><legend>PUF panel thickness, delta per sq ft of wall and roof</legend>${PUF_THICKNESSES.map((thickness) => radio('pufThickness', String(thickness), `${thickness} mm`, config.pufThickness === thickness, thickness === 50 ? 'Standard, included' : `${RATE_CARD.pufThicknessDeltaPerSqft[thickness] > 0 ? '+' : '-'}${money(Math.abs(RATE_CARD.pufThicknessDeltaPerSqft[thickness]))} per sq ft`, ` data-rate="${RATE_CARD.pufThicknessDeltaPerSqft[thickness]}" data-rate-basis="per sq ft of wall and roof"`)).join('')}</fieldset>`);
+  const structureStep = section(2, `${renderStepGuidance('structure')}<fieldset><legend>Frame structure, rate per sq ft of floor</legend>${optionCards('structure', STRUCTURES, config.structure)}</fieldset><fieldset><legend>Roof</legend>${radio('roof', 'Sloped', 'Sloped roof', config.roof === 'Sloped', 'Standard, included', ' data-rate="0" data-rate-basis="percent of base"')}${radio('roof', 'Flat / mono-pitch', 'Flat / mono-pitch roof', config.roof === 'Flat / mono-pitch', '+4% of base price', ' data-rate="4" data-rate-basis="percent of base"')}</fieldset><fieldset><legend>Mobility</legend>${radio('mobility', '100% movable', '100% movable', config.mobility === '100% movable')}${radio('mobility', 'Fixed / semi-permanent', 'Fixed / semi-permanent', config.mobility === 'Fixed / semi-permanent')}</fieldset>`);
+  const interiorStep = section(3, `${renderStepGuidance('interior')}<fieldset><legend>Wall finish, rate per sq ft of wall</legend>${optionCards('wallFinish', WALL_FINISHES, config.wallFinish, 'per sq ft of wall')}</fieldset><fieldset><legend>Ceiling, rate per sq ft</legend>${optionCards('ceiling', CEILINGS, config.ceiling)}</fieldset><fieldset><legend>Flooring, rate per sq ft</legend>${optionCards('flooring', FLOORING, config.flooring)}</fieldset><fieldset><legend>PUF panel thickness, delta per sq ft of wall and roof</legend>${PUF_THICKNESSES.map((thickness) => radio('pufThickness', String(thickness), `${thickness} mm`, config.pufThickness === thickness, thickness === 50 ? 'Standard, included' : `${RATE_CARD.pufThicknessDeltaPerSqft[thickness] > 0 ? '+' : '-'}${money(Math.abs(RATE_CARD.pufThicknessDeltaPerSqft[thickness]))} per sq ft`, ` data-rate="${RATE_CARD.pufThicknessDeltaPerSqft[thickness]}" data-rate-basis="per sq ft of wall and roof"`)).join('')}</fieldset>${renderWallBuildDiagram(config.pufThickness.toString())}`);
 
   const doorSlots = Array.from({ length: Math.max(4, config.doors.length) }, (_, index) => config.doors[index] || DEFAULT_CALCULATOR_CONFIG.doors[0]);
   const windowSlots = Array.from({ length: Math.max(4, config.windows.length) }, (_, index) => config.windows[index] || DEFAULT_CALCULATOR_CONFIG.windows[0]);
   const doorCards = doorSlots.map((door, index) => renderDoorCard(door, index, index >= config.doors.length)).join('');
   const windowCards = windowSlots.map((window, index) => renderWindowCard(window, index, index >= config.windows.length)).join('');
-  const openingsStep = section(4, colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `${renderPlan(config)}<h3>Door placement</h3>${doorCards}<button type="button" data-action="add-door">Add another door</button><h3>Window placement</h3>${windowCards}<button type="button" data-action="add-window">Add another window</button>`);
-  const electricalStep = section(5, `<p>${colony ? 'Quantities are quotation items per building.' : 'Suggested quantities are a starting point and can be changed.'}</p>${ELECTRICAL.map(([label, rate, help]) => quantityRow('electrical', label, rate, config.electrical[label] || 0, help, colony)).join('')}<fieldset><legend>Light appearance</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset>`);
-  const addOnsStep = section(6, `${ADD_ONS.map(([label, rate]) => quantityRow('addOns', label, rate, config.addOns[label] || 0, '', colony)).join('')}<fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
-  const deliveryStep = section(7, `<fieldset><legend>Delivery zone</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label>${renderFreightTable()}<p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);
-  const quotationStep = section(8, `<p>Submit the exact configuration for a fixed, itemised quotation within 48 hours.</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>Full name *<input name="fullName" autocomplete="name" value="${esc(config.quote.fullName)}" required></label><label>Mobile / WhatsApp *<input type="tel" inputmode="numeric" name="mobile" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.mobile)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>Email *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>Company<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>City<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>State<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>Requirement notes<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">Get My Official Quotation</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
+  const socketPlacement = ROOM_TYPES.map((room) => `<fieldset><legend>${esc(room)} socket layout</legend><label>Wall placement<select name="socket-${esc(room.toLowerCase())}-wall">${WALLS.map((wall) => `<option>${wall}</option>`).join('')}</select><label>Front wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-front" value="0"></label><label>Rear wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-rear" value="0"></label><label>Left wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-left" value="0"></label><label>Right wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-right" value="0"></label></fieldset>`).join('');
+  const openingsStep = section(4, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `${renderPlan(config)}<h3>Door placement</h3>${doorCards}<button type="button" data-action="add-door">Add another door</button><h3>Window placement</h3>${windowCards}<button type="button" data-action="add-window">Add another window</button><p>Door/window positions are shown on plan and can be adjusted by wall, end and distance.</p>`}`);
+  const electricalStep = section(5, `${renderStepGuidance('electrical')}<p>${colony ? 'Quantities are quotation items per building.' : 'Suggested quantities are a starting point and can be changed.'}</p>${ELECTRICAL.map(([label, rate, help]) => quantityRow('electrical', label, rate, config.electrical[label] || 0, help, colony)).join('')}<fieldset><legend>Light appearance</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset><fieldset><legend>Socket placement (no cost impact)</legend><p>Placement changes position only. Plug-point count is already priced above from suggested sizes.</p>${socketPlacement}</fieldset>`);
+  const addOnsStep = section(6, `${renderStepGuidance('addons')}${ADD_ONS.map(([label, rate]) => quantityRow('addOns', label, rate, config.addOns[label] || 0, '', colony)).join('')}<fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
+  const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label>${renderFreightTable()}<p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);
+  const quotationStep = section(8, `${renderStepGuidance('quotation')}<p>Submit the exact configuration for a fixed, itemised quotation within 48 hours.</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>Full name *<input name="fullName" autocomplete="name" value="${esc(config.quote.fullName)}" required></label><label>Mobile / WhatsApp *<input type="tel" inputmode="numeric" name="mobile" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.mobile)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>Email *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>Company<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>City<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>State<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>Requirement notes<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">Get My Official Quotation</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
 
   const allSections = [productStep, sizeStep, structureStep, interiorStep, openingsStep, electricalStep, addOnsStep, deliveryStep, quotationStep];
   const renderedSections = embedded ? allSections.slice(1) : allSections;
@@ -600,5 +1315,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const standardPostFields = `${hiddenProduct}<input type="hidden" name="message" value="${esc(itemisedMessage)}"><input type="hidden" name="productName" value="${esc(product.name)}"><input type="hidden" name="pageUrl" value="${esc(pageUrl)}"><input type="hidden" name="returnTo" value="${esc(pageUrl)}">`;
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden><div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2>${esc(product.name)}</h2><p>${colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`}</p></div><p><strong>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong> ex-GST <small>${estimate.quoteOnly ? 'fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p><div class="calculator-header-actions"><button type="button" data-action="theme" aria-label="Switch colour theme">Theme</button><button type="button" data-action="save">Save design</button><button type="button" data-action="restore">Restore design</button><button type="button" data-action="start-over">Start over</button></div></header><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card">${renderedSections.join('')}</div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts)}${includeCopy ? renderCopy() : ''}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  const summarySize = colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`;
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden><div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="theme" aria-label="Switch colour theme">Theme</button><button type="button" data-action="save">Save design</button><button type="button" data-action="restore">Restore design</button><button type="button" data-action="start-over">Start over</button></div></header><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card">${renderedSections.join('')}</div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts)}${includeCopy ? renderCopy() : ''}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
 }
+

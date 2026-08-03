@@ -3,6 +3,7 @@
   'use strict';
 
   const STORAGE_KEY = 'saman-cabin-calculator-v9';
+  const THEME_KEY = '__theme';
   const CONTACT_NAMES = new Set(['fullName', 'mobile', 'email', 'company', 'city', 'state', 'notes', 'website', 'message', 'productName', 'pageUrl', 'returnTo']);
   const INR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
   const num = (value, fallback = 0) => Number.isFinite(Number(value)) ? Number(value) : fallback;
@@ -54,6 +55,20 @@
       } else setPath(result, name, first.value);
     });
     return result;
+  }
+
+  function readSavedConfiguration(form, root) {
+    return {
+      ...readConfiguration(form),
+      [THEME_KEY]: root?.dataset?.theme || 'light',
+    };
+  }
+
+  function applySavedTheme(root, saved) {
+    const candidate = saved?.[THEME_KEY];
+    if (candidate === 'light' || candidate === 'green') {
+      root.dataset.theme = candidate;
+    }
   }
 
   function applyConfiguration(form, saved) {
@@ -297,6 +312,11 @@
     if (!form) return;
     root.dataset.enhanced = 'true';
     root.classList.add('is-enhanced');
+    const priceTables = root.querySelector('.price-tables');
+    if (priceTables) {
+      priceTables.hidden = true;
+      priceTables.setAttribute('aria-hidden', 'true');
+    }
     const firstStep = num(root.querySelector('[data-step]')?.dataset.step, 1);
     showStep(root, firstStep, false);
     calculate(root, form);
@@ -310,14 +330,16 @@
         return;
       }
       const action = control.dataset.action;
-      if (action === 'theme') root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      if (action === 'theme') {
+        root.dataset.theme = root.dataset.theme === 'light' ? 'green' : 'light';
+      }
       if (action === 'pdf') {
         track('pdf_download', { page_path: window.location.pathname });
         window.print();
       }
       if (action === 'save') {
         try {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(readConfiguration(form)));
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(readSavedConfiguration(form, root)));
           notice(root, message(root, 'saved'));
         } catch (_error) { /* Storage is optional. */ }
       }
@@ -325,6 +347,7 @@
         try {
           const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
           if (saved) {
+            applySavedTheme(root, saved);
             applyConfiguration(form, saved);
             calculate(root, form);
             notice(root, message(root, 'restored'), true);

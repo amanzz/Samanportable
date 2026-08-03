@@ -27,12 +27,12 @@ const JUMP_ITEMS = [
 ];
 
 const FAQS = [
-  { question: 'What is a PUF wall panel?', answer: 'A PUF wall panel is an insulated sandwich panel — steel facing bonded to a rigid polyurethane foam core — built to serve as a wall, partition or ceiling panel. The same core panel range is used across all three applications; the difference is how the panel is fixed and finished on site.' },
+  { question: 'What is a PUF wall panel?', answer: 'A PUF wall panel is an insulated sandwich panel, steel facing bonded to a rigid polyurethane foam core, built to serve as a wall, partition or ceiling panel. The same core panel range is used across all three applications; the difference is how the panel is fixed and finished on site.' },
   { question: 'Can a PUF panel be used as a partition wall?', answer: 'Yes. A PUF partition panel divides a space while carrying its own insulation and finish, so it goes up faster than a plastered stud wall and needs no drying time before the space is usable.' },
   { question: 'Do you supply PUF panels for ceilings and false ceilings?', answer: 'Yes. A PUF ceiling or false-ceiling panel uses the same panel range as the wall, closing the underside of a roof or upper floor with a finished, insulated board instead of a separate suspended-ceiling system.' },
-  { question: 'What thickness of PUF wall panel do I need?', answer: '30–60 mm covers most wall and partition needs; thicker panels (80 mm and above) suit builds needing stronger heat control. 70 mm and 90 mm are made to order rather than standard stock — tell us your requirement and we advise the correct thickness before quoting.' },
+  { question: 'What thickness of PUF wall panel do I need?', answer: '30–60 mm covers most wall and partition needs; thicker panels (80 mm and above) suit builds needing stronger heat control. 70 mm and 90 mm are made to order rather than standard stock. Tell us your requirement and we advise the correct thickness before quoting.' },
   { question: 'What wall profiles are available?', answer: 'Wall panels are made in plain, baby-rib and micro-rib profiles, from 30 mm to 200 mm thickness, in PPGI, PPGL, BGL, stainless steel, aluminium or craft paper facing.' },
-  { question: 'Is a PUF wall panel load-bearing?', answer: 'No — it is a cladding-and-insulation panel, not a structural load-bearing wall in the conventional sense. It is fixed to a supporting frame or structure, which is confirmed against your drawing.' },
+  { question: 'Is a PUF wall panel load-bearing?', answer: 'No. It is a cladding-and-insulation panel, not a structural load-bearing wall in the conventional sense. It is fixed to a supporting frame or structure, which is confirmed against your drawing.' },
   { question: 'How is a PUF wall panel joined on site?', answer: 'Wall panels close with a tongue-and-groove side joint so panels lock together into one continuous, insulated surface.' },
   { question: 'Do you supply PUF panels for doors and openings?', answer: 'Door and window openings are framed into the wall panel layout to your drawing; the door leaf and frame hardware itself are scoped and confirmed at quotation.' },
 ];
@@ -50,7 +50,7 @@ const PRODUCT_JSONLD = {
   additionalProperty: [
     { '@type': 'PropertyValue', name: 'Thickness range', value: '30–200 mm (70/90/140 mm made to order)' },
     { '@type': 'PropertyValue', name: 'Wall profiles', value: 'Plain, baby ribs, micro ribs' },
-    { '@type': 'PropertyValue', name: 'Facing options', value: 'PPGI, PPGL, BGL, Stainless Steel, Aluminium, Craft Paper — 0.35–0.80 mm' },
+    { '@type': 'PropertyValue', name: 'Facing options', value: 'PPGI, PPGL, BGL, Stainless Steel, Aluminium, Craft Paper: 0.35–0.80 mm' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
   offers: panelAggregateOffer(1050, 'https://www.samanportable.com/product/puf-panel/puf-wall-panel'),
@@ -109,7 +109,7 @@ function DescriptionContent() {
             micro-rib wall profiles.
           </P>
 
-          <H3>30/40/50/60 mm — general wall use</H3>
+          <H3>30/40/50/60 mm: general wall use</H3>
           <P>
             The 30–60 mm range covers most wall applications: partitions, office cabin walls, shed and
             warehouse walls, and general enclosure panels. Thickness within this range is chosen on heat
@@ -122,10 +122,10 @@ function DescriptionContent() {
             title="40 mm PUF wall panel, stockyard stock"
           />
 
-          <H3>70/90 mm — made-to-order use</H3>
+          <H3>70/90 mm: made-to-order use</H3>
           <P>
             70 mm and 90 mm wall panels sit between our standard thickness steps and are made to order rather
-            than held as stock — typically specified where a project needs heat control between the 60 mm and
+            than held as stock, typically specified where a project needs heat control between the 60 mm and
             100 mm standard steps. These are manufactured on client request against advance payment, with
             price and lead time confirmed at quotation rather than quoted as a standard stock rate.
           </P>
@@ -140,7 +140,7 @@ function DescriptionContent() {
           <H2 id="partition-applications">Partition panel applications</H2>
           <P>
             As an internal partition, a PUF wall panel divides a space while carrying its own insulation and
-            finish — useful anywhere you need to split a room, cabin or industrial floor without a wet-trade
+            finish, useful anywhere you need to split a room, cabin or industrial floor without a wet-trade
             wall build. Common partition uses include office cabin divisions, cold-room-adjacent partitions,
             and internal walls inside prefab structures. Because the panel arrives finished, a partition wall
             goes up in a fraction of the time a plastered stud wall takes, with no drying time before the space
@@ -157,7 +157,7 @@ function DescriptionContent() {
           <H2 id="ceiling-false-ceiling">Ceiling and false-ceiling use</H2>
           <P>
             PUF panels are also supplied as a <span className="font-semibold text-foreground">ceiling and
-            false-ceiling panel</span> — closing the underside of a roof or floor with the same insulated board
+            false-ceiling panel</span>, closing the underside of a roof or floor with the same insulated board
             used on the walls, rather than a separate suspended-ceiling system. A PUF ceiling panel gives a
             clean, finished underside and adds a further insulation layer where the roof panel alone doesn&apos;t
             fully control heat gain, which matters most in larger industrial spans and in rooms sitting
@@ -178,7 +178,7 @@ function DescriptionContent() {
         <section id="price-factors" className="space-y-3">
           <H2 id="price-factors">Price and quote factors</H2>
           <P>
-            A PUF wall panel rate moves with thickness, facing, profile, length and order size — the same
+            A PUF wall panel rate moves with thickness, facing, profile, length and order size. The same
             drivers that set every panel rate in our range. For the base panel rate by thickness, see our{' '}
             <Link href="/product/puf-panel/puf-panel-specification" className="font-semibold text-primary hover:underline">
               detailed PUF panel specifications and sizes
@@ -187,7 +187,7 @@ function DescriptionContent() {
           </P>
           <P>
             Panels fall under HSN 940690, and every quotation states facing, gauge and joint type in writing
-            rather than a single blended rate — the same way every PUF panel quote from SAMAN is structured,
+            rather than a single blended rate. The same way every PUF panel quote from SAMAN is structured,
             across walls, roofing and cold storage.
           </P>
         </section>
@@ -216,7 +216,7 @@ function SpecificationsContent() {
         <tbody>
           {[
             ['Thickness (standard)', '30 / 40 / 50 / 60 / 80 / 100 / 120 / 150 / 200 mm'],
-            ['Thickness (made to order)', '70 mm, 90 mm, 140 mm — advance payment; price and lead time confirmed at quotation'],
+            ['Thickness (made to order)', '70 mm, 90 mm, 140 mm, advance payment; price and lead time confirmed at quotation'],
             ['Facing options', 'PPGI / PPGL / BGL / Stainless Steel / Aluminium / Craft Paper · 0.35–0.80 mm'],
             ['Profile', 'Plain · baby ribs · micro ribs'],
             ['Length', '2–15 m standard; custom lengths transport/site dependent'],
@@ -257,14 +257,14 @@ function ShippingContent() {
     <div className="space-y-4">
       <P>
         We dispatch from Bangalore for South India and Greater Noida for North India and Delhi NCR. Pan-India
-        delivery; transport confirmed at quotation; 3–5 business day default dispatch — see our{' '}
+        delivery; transport confirmed at quotation; 3–5 business day default dispatch, see our{' '}
         <Link href="/delivery-policy" className="font-semibold text-primary hover:underline">
           Delivery Policy
         </Link>
         .
       </P>
       <P>
-        Standard products carry 7-day returns (3-day on custom) — see our{' '}
+        Standard products carry 7-day returns (3-day on custom), see our{' '}
         <Link href="/refund-and-return-policy" className="font-semibold text-primary hover:underline">
           Refund &amp; Return Policy
         </Link>
@@ -278,8 +278,8 @@ export default function PufWallPanel() {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="PUF Wall Panel — Partition & Ceiling Panels | SAMAN"
-        fallbackDescription="PUF wall panel from SAMAN — insulated wall, partition and ceiling panels, 30–200 mm, factory-made in Bangalore and Greater Noida. Get a factory-direct quote."
+        fallbackTitle="PUF Wall Panel, Partition & Ceiling Panels | SAMAN"
+        fallbackDescription="PUF wall panel from SAMAN: insulated wall, partition and ceiling panels, 30–200 mm, factory-made in Bangalore and Greater Noida. Get a factory-direct quote."
         fallbackCanonical="https://www.samanportable.com/product/puf-panel/puf-wall-panel"
         keywords="puf wall panel, wall puf panel, puf panel wall, puf panel for wall, puf partition panel"
         author="SAMAN POS India Private Limited"

@@ -1,9 +1,9 @@
 {
   "ms-porta-cabin": {
     "h2": "Explore every MS Porta Cabin size and its industrial uses",
-    "guidanceLine": "Nine sizes in the heavy industrial build — fibre-cement lining, cement board floor, single-leaf industrial door, for cabins that stay in position.",
+    "guidanceLine": "Nine sizes in the heavy industrial build: fibre-cement lining, cement board floor, single-leaf industrial door, for cabins that stay in position.",
     "10x10": {
-      "h2": "10×10 ft — the heavy-duty compact control room",
+      "h2": "10×10 ft: the heavy-duty compact control room",
       "intro": "One hundred square feet built to industrial grade rather than office grade: a 1.6 mm corrugated exterior and roof, 8–10 mm fibre-cement lining, a 24 mm cement board floor and a 2–3 mm commercial PVC or epoxy finish that takes boots, trolleys and wash-down without marking. A single-leaf industrial door with a heavy lockset closes it. Plants use this size for panel rooms, dispatch control and QC points where the cabin is bolted into position and stays there. It costs more than an office cabin per square foot because the lining and floor are specified for plant conditions, not for appearance.",
       "h3": "Uses",
       "applications": [
@@ -15,7 +15,7 @@
       "stats": "10×10×8.5 ft · 100 sq ft · ₹1,98,000 + GST · ₹1,980/sq ft"
     },
     "20x8": {
-      "h2": "20×8 ft — the narrow industrial in-line cabin",
+      "h2": "20×8 ft: the narrow industrial in-line cabin",
       "intro": "A 160 square foot industrial cabin on a narrow body, made to fit between plant structures or against a boundary where depth is unavailable. The fibre-cement lining resists heat, moisture and impact far better than a laminated board, which matters when the cabin sits close to running equipment. Three staff work in line with the door set to the safe side on the approved drawing. Its narrow width also keeps it clear of crane paths and vehicle routes inside a working plant, and it moves on a standard trailer without escort when a line is reconfigured.",
       "h3": "Uses",
       "applications": [
@@ -27,8 +27,8 @@
       "stats": "20×8×8.5 ft · 160 sq ft · ₹3,16,800 + GST · ₹1,980/sq ft"
     },
     "20x10": {
-      "h2": "20×10 ft — the industrial reference cabin",
-      "intro": "The industrial build's reference size, and the one plants order most. It seats four to six, and its specification is chosen for a room that takes daily punishment: 1.6 mm sheet outside, fibre-cement inside, 50–75 mm mineral wool in the walls and a cement board floor that will not soften if water stands on it. Compare it against the 20×10 office cabin at ₹1,350 per square foot — the ₹450 difference buys lining and flooring rated for plant conditions, and it is the correct choice wherever the room opens directly onto a working floor.",
+      "h2": "20×10 ft: the industrial reference cabin",
+      "intro": "The industrial build's reference size, and the one plants order most. It seats four to six, and its specification is chosen for a room that takes daily punishment: 1.6 mm sheet outside, fibre-cement inside, 50–75 mm mineral wool in the walls and a cement board floor that will not soften if water stands on it. Compare it against the 20×10 office cabin at ₹1,350 per square foot. The ₹450 difference buys lining and flooring rated for plant conditions, and it is the correct choice wherever the room opens directly onto a working floor.",
       "h3": "Uses",
       "applications": [
         "Plant supervisor offices",
@@ -39,8 +39,8 @@
       "stats": "20×10×8.5 ft · 200 sq ft · ₹3,60,000 + GST · ₹1,800/sq ft"
     },
     "20x12": {
-      "h2": "20×12 ft — industrial floor with a second zone",
-      "intro": "Two hundred and forty square feet, wide enough to separate a working area from a records or briefing corner while keeping the whole room to industrial specification. Maintenance teams use the extra width for a bench and tool board along one wall, which a 10 ft width cannot take without blocking movement. Where the partition falls is settled on your approved drawing ahead of fabrication, so the split matches how the shift actually operates. Everything in the room — lining, ceiling, floor and door — remains the heavy build; the extra width does not dilute the specification anywhere.",
+      "h2": "20×12 ft: industrial floor with a second zone",
+      "intro": "Two hundred and forty square feet, wide enough to separate a working area from a records or briefing corner while keeping the whole room to industrial specification. Maintenance teams use the extra width for a bench and tool board along one wall, which a 10 ft width cannot take without blocking movement. Where the partition falls is settled on your approved drawing ahead of fabrication, so the split matches how the shift actually operates. Everything in the room, lining, ceiling, floor and door, remains the heavy build; the extra width does not dilute the specification anywhere.",
       "h3": "Uses",
       "applications": [
         "Maintenance rooms with benches",
@@ -51,8 +51,8 @@
       "stats": "20×12×8.5 ft · 240 sq ft · ₹4,14,720 + GST · ₹1,728/sq ft"
     },
     "30x10": {
-      "h2": "30×10 ft — the two-room industrial cabin",
-      "intro": "Three hundred square feet on a single trailer, long enough to partition cleanly into a working floor and a separate closed room for six to eight staff. Plants specify this size when a shift office also needs an enclosed space for meetings, testing or a locked store. Each zone is wired on its own lighting circuit, so work in one never depends on the other staying lit or quiet, and the fibre-cement lining and cement board floor continue throughout — the inner room is not downgraded to office finishes to save cost.",
+      "h2": "30×10 ft: the two-room industrial cabin",
+      "intro": "Three hundred square feet on a single trailer, long enough to partition cleanly into a working floor and a separate closed room for six to eight staff. Plants specify this size when a shift office also needs an enclosed space for meetings, testing or a locked store. Each zone is wired on its own lighting circuit, so work in one never depends on the other staying lit or quiet, and the fibre-cement lining and cement board floor continue throughout. The inner room is not downgraded to office finishes to save cost.",
       "h3": "Uses",
       "applications": [
         "Shift offices with meeting rooms",
@@ -63,7 +63,7 @@
       "stats": "30×10×8.5 ft · 300 sq ft · ₹5,18,400 + GST · ₹1,728/sq ft"
     },
     "40x8": {
-      "h2": "40×8 ft — the long industrial corridor cabin",
+      "h2": "40×8 ft: the long industrial corridor cabin",
       "intro": "A 320 sq ft cabin on the eight-foot body, built for plants and linear projects whose facilities run along a wall, a conveyor line or a site boundary. Nine staff can sit end to end, and repeated cabins butt together into a tidy run. Windows fall between working positions so every seat gets daylight without a glare line across the benches. At ₹1,692 per square foot this is the cheapest way to seat a full row of people in the industrial build, and the cabin still lifts and re-sites when a line is rearranged.",
       "h3": "Uses",
       "applications": [
@@ -75,7 +75,7 @@
       "stats": "40×8×8.5 ft · 320 sq ft · ₹5,41,440 + GST · ₹1,692/sq ft"
     },
     "20x20": {
-      "h2": "20×20 ft — a square floor in the industrial build",
+      "h2": "20×20 ft: a square floor in the industrial build",
       "intro": "Four hundred square feet in a square rather than a corridor, which changes how the room can be used: a central table works, desks face each other, and a training or briefing group fits without anyone sitting behind a pillar of desks. It arrives as two joined modules positioned on your prepared base. Plants choose the square over the 40×10 when the room is used for gatherings rather than individual work. The industrial specification runs unchanged across both modules, including the floor joint, which is sealed and finished to the same standard as the rest.",
       "h3": "Uses",
       "applications": [
@@ -87,8 +87,8 @@
       "stats": "20×20×8.5 ft · 400 sq ft · ₹6,76,800 + GST · ₹1,692/sq ft"
     },
     "40x10": {
-      "h2": "40×10 ft — the long industrial office run",
-      "intro": "Four hundred square feet in a single long run, the industrial build's answer to a full site office. It divides into three areas — an open working floor, one enclosed room and a lockable store — while still travelling as a single unit onto a single base. Ten to twelve people work here daily. Plants and infrastructure contractors use it as a permanent site headquarters, and the heavy lining and cement board floor mean it survives several projects rather than one. Internal wall positions are agreed at drawing stage, so they land where the work actually needs them rather than where a template puts them.",
+      "h2": "40×10 ft: the long industrial office run",
+      "intro": "Four hundred square feet in a single long run, the industrial build's answer to a full site office. It divides into three areas, an open working floor, one enclosed room and a lockable store, while still travelling as a single unit onto a single base. Ten to twelve people work here daily. Plants and infrastructure contractors use it as a permanent site headquarters, and the heavy lining and cement board floor mean it survives several projects rather than one. Internal wall positions are agreed at drawing stage, so they land where the work actually needs them rather than where a template puts them.",
       "h3": "Uses",
       "applications": [
         "Site headquarters",
@@ -99,8 +99,8 @@
       "stats": "40×10×8.5 ft · 400 sq ft · ₹6,76,800 + GST · ₹1,692/sq ft"
     },
     "40x12": {
-      "h2": "40×12 ft — the largest single industrial unit",
-      "intro": "Four hundred and eighty square feet, and the largest cabin we deliver in one piece. It holds a team of twelve to fifteen, and the extra width over the 40×10 lets a corridor run alongside enclosed rooms instead of cutting through them — the difference between a large cabin and a genuine building. Its rate of ₹1,656 is the lowest anywhere on the industrial ladder, so cost per head is the best available. Larger requirements are met by joining units, detailed at quotation stage against your base layout.",
+      "h2": "40×12 ft: the largest single industrial unit",
+      "intro": "Four hundred and eighty square feet, and the largest cabin we deliver in one piece. It holds a team of twelve to fifteen, and the extra width over the 40×10 lets a corridor run alongside enclosed rooms instead of cutting through them. The difference between a large cabin and a genuine building. Its rate of ₹1,656 is the lowest anywhere on the industrial ladder, so cost per head is the best available. Larger requirements are met by joining units, detailed at quotation stage against your base layout.",
       "h3": "Uses",
       "applications": [
         "Large plant headquarters",
@@ -113,9 +113,9 @@
   },
   "steel-porta-cabin": {
     "h2": "Explore every Steel Porta Cabin size and its relocation uses",
-    "guidanceLine": "Nine sizes in the heavy relocation build — metal liner, MS floor plate, chequered plate finish, upgraded lifting lugs, for cabins that move between sites.",
+    "guidanceLine": "Nine sizes in the heavy relocation build: metal liner, MS floor plate, chequered plate finish, upgraded lifting lugs, for cabins that move between sites.",
     "10x10": {
-      "h2": "10×10 ft — the compact cabin built to be moved",
+      "h2": "10×10 ft: the compact cabin built to be moved",
       "intro": "One hundred square feet specified for a cabin that will be craned on and off a trailer many times over its life. A 0.50 mm pre-painted metal liner replaces board lining so nothing delaminates in transit, the floor is a heavy MS plate finished in 3 mm chequered plate, and the lifting lugs are designed and certified against the completed unit weight rather than added afterwards. Contractors who move a gate office between three sites a year buy this build instead of a lighter cabin and stop replacing it every second move.",
       "h3": "Uses",
       "applications": [
@@ -127,8 +127,8 @@
       "stats": "10×10×8.5 ft · 100 sq ft · ₹1,98,000 + GST · ₹1,980/sq ft"
     },
     "20x8": {
-      "h2": "20×8 ft — the narrow cabin for repeat relocation",
-      "intro": "A 160 square foot narrow-bodied unit built for constant movement: metal-lined walls that do not mark when the cabin flexes on a crane, a chequered plate floor that shrugs off loading traffic, and double-leaf MS doors that let a desk and cabinet go in and out without dismantling anything. Its narrow width is what makes repeat moves cheap — the unit travels on a standard trailer with no escort or permit, so relocation costs stay predictable across a rental fleet or a rolling programme of short site postings.",
+      "h2": "20×8 ft: the narrow cabin for repeat relocation",
+      "intro": "A 160 square foot narrow-bodied unit built for constant movement: metal-lined walls that do not mark when the cabin flexes on a crane, a chequered plate floor that shrugs off loading traffic, and double-leaf MS doors that let a desk and cabinet go in and out without dismantling anything. Its narrow width is what makes repeat moves cheap. The unit travels on a standard trailer with no escort or permit, so relocation costs stay predictable across a rental fleet or a rolling programme of short site postings.",
       "h3": "Uses",
       "applications": [
         "Rental fleet cabins",
@@ -139,8 +139,8 @@
       "stats": "20×8×8.5 ft · 160 sq ft · ₹3,16,800 + GST · ₹1,980/sq ft"
     },
     "20x10": {
-      "h2": "20×10 ft — the relocation build's reference size",
-      "intro": "Two hundred square feet and the most-ordered size in the relocation build. Four to six people work in it between moves. Everything vulnerable in transit has been specified out: metal liner instead of board, MS floor plate instead of cement board, chequered plate instead of vinyl, and doors that shut square after the unit has been set down on ground that is not perfectly level. Compare it against the fixed-position industrial cabin at the same rate — identical price, different choices, and the right one depends entirely on whether the cabin moves.",
+      "h2": "20×10 ft: the relocation build's reference size",
+      "intro": "Two hundred square feet and the most-ordered size in the relocation build. Four to six people work in it between moves. Everything vulnerable in transit has been specified out: metal liner instead of board, MS floor plate instead of cement board, chequered plate instead of vinyl, and doors that shut square after the unit has been set down on ground that is not perfectly level. Compare it against the fixed-position industrial cabin at the same rate: identical price, different choices, and the right one depends entirely on whether the cabin moves.",
       "h3": "Uses",
       "applications": [
         "Rotating site offices",
@@ -151,7 +151,7 @@
       "stats": "20×10×8.5 ft · 200 sq ft · ₹3,60,000 + GST · ₹1,800/sq ft"
     },
     "20x12": {
-      "h2": "20×12 ft — extra width that survives the move",
+      "h2": "20×12 ft: extra width that survives the move",
       "intro": "Two hundred and forty square feet giving a second zone inside a cabin that still relocates cleanly. The wider body is where the relocation build earns its money: a lighter cabin at this width tends to rack slightly on the lift and the internal partition works loose, whereas a welded heavy frame with a plate floor holds its geometry. Contractors who move a two-zone office between sites specify this build after replacing a lighter one. Partition placement is settled at approval stage, and it does not need refitting after a move.",
       "h3": "Uses",
       "applications": [
@@ -163,8 +163,8 @@
       "stats": "20×12×8.5 ft · 240 sq ft · ₹4,14,720 + GST · ₹1,728/sq ft"
     },
     "30x10": {
-      "h2": "30×10 ft — the two-room cabin that travels",
-      "intro": "Three hundred square feet partitioned into a working floor and a closed room, built so both survive being lifted. Six to eight people operate from it. Longer units are where lifting design matters most, so the lug positions and the base member layout are engineered to the completed weight and issued as a lifting drawing with the cabin. Handle it only by that drawing. Both zones carry their own lighting circuits and both keep the metal liner and plate floor — nothing is downgraded internally to save weight on the lift.",
+      "h2": "30×10 ft: the two-room cabin that travels",
+      "intro": "Three hundred square feet partitioned into a working floor and a closed room, built so both survive being lifted. Six to eight people operate from it. Longer units are where lifting design matters most, so the lug positions and the base member layout are engineered to the completed weight and issued as a lifting drawing with the cabin. Handle it only by that drawing. Both zones carry their own lighting circuits and both keep the metal liner and plate floor. Nothing is downgraded internally to save weight on the lift.",
       "h3": "Uses",
       "applications": [
         "Travelling two-room offices",
@@ -175,7 +175,7 @@
       "stats": "30×10×8.5 ft · 300 sq ft · ₹5,18,400 + GST · ₹1,728/sq ft"
     },
     "40x8": {
-      "h2": "40×8 ft — the long narrow cabin for site rows",
+      "h2": "40×8 ft: the long narrow cabin for site rows",
       "intro": "Three hundred and twenty square feet on a narrow body, the size infrastructure contractors move most often because road, rail and pipeline work relocates its facilities as the front advances. Seven to nine people sit in line. Repeated units align door-to-door into a row that can be lifted and re-formed at the next chainage without re-planning the layout. The narrow width keeps every move to a standard trailer, which is what makes relocating a row of four cabins a routine cost rather than a project in itself.",
       "h3": "Uses",
       "applications": [
@@ -187,7 +187,7 @@
       "stats": "40×8×8.5 ft · 320 sq ft · ₹5,41,440 + GST · ₹1,692/sq ft"
     },
     "20x20": {
-      "h2": "20×20 ft — the square floor in the heavy build",
+      "h2": "20×20 ft: the square floor in the heavy build",
       "intro": "Four hundred square feet as a square rather than a corridor, delivered as two joined modules. In the relocation build the joint detail is the whole point: it is engineered to be separated and remade at the next site rather than sealed once, so the room travels as two standard loads and becomes one room again on arrival. Central-table meetings and briefings work here in a way a long narrow cabin cannot support, which is why training-led contractors choose the square. Plate flooring and metal lining continue unbroken across both modules, including over the joint line itself.",
       "h3": "Uses",
       "applications": [
@@ -199,7 +199,7 @@
       "stats": "20×20×8.5 ft · 400 sq ft · ₹6,76,800 + GST · ₹1,692/sq ft"
     },
     "40x10": {
-      "h2": "40×10 ft — the long relocatable headquarters",
+      "h2": "40×10 ft: the long relocatable headquarters",
       "intro": "Four hundred square feet in one long run, partitioned into an open floor, a closed room and a store, and still designed to be craned as a single unit. Ten to twelve people work here. This is the size that most often outlives the project it was bought for: a lighter 40 ft cabin usually needs repair after its second or third move, whereas the welded heavy frame and plate floor keep this one in service across several sites. Internal zones are set at approval stage and hold their alignment through relocation.",
       "h3": "Uses",
       "applications": [
@@ -211,7 +211,7 @@
       "stats": "40×10×8.5 ft · 400 sq ft · ₹6,76,800 + GST · ₹1,692/sq ft"
     },
     "40x12": {
-      "h2": "40×12 ft — the largest cabin we lift as one unit",
+      "h2": "40×12 ft: the largest cabin we lift as one unit",
       "intro": "Four hundred and eighty square feet, the largest single unit we build and the practical limit of what can be craned and transported in one piece. Twelve to fifteen people work in it, with a corridor running past closed rooms rather than through them. At this size the lifting drawing is not a formality: lug positions, base members and the permitted support points are all engineered to the finished weight, and handling outside that drawing is what damages large cabins. At ₹1,656 per square foot it is also the lowest rate on this ladder.",
       "h3": "Uses",
       "applications": [
@@ -226,7 +226,7 @@
   "luxury-porta-cabin": {
     "h2": "Explore every Luxury Porta Cabin size and its uses",
     "10x10": {
-      "h2": "10×10 ft Luxury Porta Cabin (100 sq ft) — Premium Reception Cabin",
+      "h2": "10×10 ft Luxury Porta Cabin (100 sq ft): Premium Reception Cabin",
       "intro": "A hundred square feet finished like a lobby: PUF-insulated, premium laminates, proper lighting. Developers place it at project gates as a reception where the first client impression happens before the site tour.",
       "h3": "Executive uses for this size",
       "applications": [
@@ -237,8 +237,8 @@
       ]
     },
     "20x8": {
-      "h2": "20×8 ft Luxury Porta Cabin (160 sq ft) — Client-Facing Narrow Office",
-      "intro": "A narrow-plot cabin that refuses to look narrow inside — executive finish, upgraded glazing, quiet PUF walls. For client-facing offices on tight urban sites.",
+      "h2": "20×8 ft Luxury Porta Cabin (160 sq ft): Client-Facing Narrow Office",
+      "intro": "A narrow-plot cabin that refuses to look narrow inside: executive finish, upgraded glazing, quiet PUF walls. For client-facing offices on tight urban sites.",
       "h3": "Executive uses for this size",
       "applications": [
         "Client-facing narrow office, executive finish",
@@ -248,7 +248,7 @@
       ]
     },
     "20x10": {
-      "h2": "20×10 ft Luxury Porta Cabin (200 sq ft) — Executive Site Office",
+      "h2": "20×10 ft Luxury Porta Cabin (200 sq ft): Executive Site Office",
       "intro": "The executive site office: senior engineer or project head, client seating, AC provision, premium floor. The size most luxury buyers start with when the cabin doubles as a meeting point.",
       "h3": "Executive uses for this size",
       "applications": [
@@ -259,8 +259,8 @@
       ]
     },
     "20x12": {
-      "h2": "20×12 ft Luxury Porta Cabin (240 sq ft) — Premium Manager Suite",
-      "intro": "The added width becomes a manager suite — desk zone plus a proper seating corner for visitors. Premium laminate throughout keeps it presentation-ready every day of the project.",
+      "h2": "20×12 ft Luxury Porta Cabin (240 sq ft): Premium Manager Suite",
+      "intro": "The added width becomes a manager suite, desk zone plus a proper seating corner for visitors. Premium laminate throughout keeps it presentation-ready every day of the project.",
       "h3": "Executive uses for this size",
       "applications": [
         "Premium manager suite with visitor corner",
@@ -270,7 +270,7 @@
       ]
     },
     "30x10": {
-      "h2": "30×10 ft Luxury Porta Cabin (300 sq ft) — Office + Meeting Lounge",
+      "h2": "30×10 ft Luxury Porta Cabin (300 sq ft): Office + Meeting Lounge",
       "intro": "An executive office at one end, a meeting lounge at the other. Marketing teams running long sales campaigns from site pick this two-zone premium layout.",
       "h3": "Executive uses for this size",
       "applications": [
@@ -281,8 +281,8 @@
       ]
     },
     "40x8": {
-      "h2": "40×8 ft Luxury Porta Cabin (320 sq ft) — High-Finish Accommodation",
-      "intro": "High-finish linear accommodation or in-line executive offices — comfort-grade insulation and interiors for staff who live where they work.",
+      "h2": "40×8 ft Luxury Porta Cabin (320 sq ft): High-Finish Accommodation",
+      "intro": "High-finish linear accommodation or in-line executive offices, comfort-grade insulation and interiors for staff who live where they work.",
       "h3": "Executive uses for this size",
       "applications": [
         "High-finish staff accommodation run",
@@ -292,7 +292,7 @@
       ]
     },
     "20x20": {
-      "h2": "20×20 ft Luxury Porta Cabin (400 sq ft) — Sales Lounge / Training Suite",
+      "h2": "20×20 ft Luxury Porta Cabin (400 sq ft): Sales Lounge / Training Suite",
       "intro": "The developer's sales lounge: 400 open square feet of premium floor for scale models, seating clusters and closing tables. Also ordered as a high-finish training suite.",
       "h3": "Executive uses for this size",
       "applications": [
@@ -303,8 +303,8 @@
       ]
     },
     "40x10": {
-      "h2": "40×10 ft Luxury Porta Cabin (400 sq ft) — Executive Office Floor",
-      "intro": "A full executive floor delivered as one module — eight to ten senior staff in comfort-grade surroundings, one crane lift from finished to occupied.",
+      "h2": "40×10 ft Luxury Porta Cabin (400 sq ft): Executive Office Floor",
+      "intro": "A full executive floor delivered as one module, eight to ten senior staff in comfort-grade surroundings, one crane lift from finished to occupied.",
       "h3": "Executive uses for this size",
       "applications": [
         "Full executive office floor, one module",
@@ -314,7 +314,7 @@
       ]
     },
     "40x12": {
-      "h2": "40×12 ft Luxury Porta Cabin (480 sq ft) — Multi-Room Executive Suite",
+      "h2": "40×12 ft Luxury Porta Cabin (480 sq ft): Multi-Room Executive Suite",
       "intro": "The multi-room executive suite: reception, cabins and meeting space under one premium-finished roof. The top of the SAMAN range for head offices that host clients weekly.",
       "h3": "Executive uses for this size",
       "applications": [
@@ -327,19 +327,19 @@
   },
   "buy-porta-cabins": {
     "10x10": {
-      "h2": "10×10 ft Porta Cabin (100 sq ft) — Entry Site Office",
+      "h2": "10×10 ft Porta Cabin (100 sq ft): Entry Site Office",
       "intro": "The entry point to buying a porta cabin: ₹1,37,500 ex-GST, delivered finished. Buyers take this size as a guard post or first small office and typically order again within the year.",
       "h3": "What buyers order this size for",
       "applications": [
-        "First porta cabin purchase — guard post or small office",
+        "First porta cabin purchase, guard post or small office",
         "Entry-price site cabin",
         "Starter office unit",
         "Gate cabin order"
       ]
     },
     "20x8": {
-      "h2": "20×8 ft Porta Cabin (160 sq ft) — Narrow-Plot Site Office",
-      "intro": "The narrow-plot buy — full specification on an 8 ft width. Order it when the site boundary decides the cabin, not the other way around.",
+      "h2": "20×8 ft Porta Cabin (160 sq ft): Narrow-Plot Site Office",
+      "intro": "The narrow-plot buy, full specification on an 8 ft width. Order it when the site boundary decides the cabin, not the other way around.",
       "h3": "What buyers order this size for",
       "applications": [
         "Narrow-plot cabin purchase",
@@ -349,7 +349,7 @@
       ]
     },
     "20x10": {
-      "h2": "20×10 ft Porta Cabin (200 sq ft) — Standard Site Office",
+      "h2": "20×10 ft Porta Cabin (200 sq ft): Standard Site Office",
       "intro": "The most-ordered size in the range and the safest first purchase: a standard four-to-six-person site office at ₹2,50,000 ex-GST with the shortest quote-to-delivery cycle.",
       "h3": "What buyers order this size for",
       "applications": [
@@ -360,8 +360,8 @@
       ]
     },
     "20x12": {
-      "h2": "20×12 ft Porta Cabin (240 sq ft) — Office with Manager Area",
-      "intro": "Worth the step up at order time if a manager corner is even a possibility — retrofitting a partition later costs more than the width does now.",
+      "h2": "20×12 ft Porta Cabin (240 sq ft): Office with Manager Area",
+      "intro": "Worth the step up at order time if a manager corner is even a possibility. Retrofitting a partition later costs more than the width does now.",
       "h3": "What buyers order this size for",
       "applications": [
         "Office purchase with manager corner",
@@ -371,7 +371,7 @@
       ]
     },
     "30x10": {
-      "h2": "30×10 ft Porta Cabin (300 sq ft) — Office + Meeting Zone",
+      "h2": "30×10 ft Porta Cabin (300 sq ft): Office + Meeting Zone",
       "intro": "The two-zone purchase: office plus meeting in one order, one delivery, one installation bill. Popular with buyers consolidating two old cabins into one.",
       "h3": "What buyers order this size for",
       "applications": [
@@ -382,7 +382,7 @@
       ]
     },
     "40x8": {
-      "h2": "40×8 ft Porta Cabin (320 sq ft) — Linear Office & Bunkhouse",
+      "h2": "40×8 ft Porta Cabin (320 sq ft): Linear Office & Bunkhouse",
       "intro": "Bought for bunkhouse rows and in-line site offices; one 40 ft order replaces two 20 ft cabins and one of the two transport bills.",
       "h3": "What buyers order this size for",
       "applications": [
@@ -393,7 +393,7 @@
       ]
     },
     "20x20": {
-      "h2": "20×20 ft Porta Cabin (400 sq ft) — Open-Floor Module",
+      "h2": "20×20 ft Porta Cabin (400 sq ft): Open-Floor Module",
       "intro": "The open-floor purchase for training rooms and command centres. A single 400 sq ft order that avoids the joint lines and double plumbing of paired cabins.",
       "h3": "What buyers order this size for",
       "applications": [
@@ -404,8 +404,8 @@
       ]
     },
     "40x10": {
-      "h2": "40×10 ft Porta Cabin (400 sq ft) — Large Site Office",
-      "intro": "The large single-module buy — maximum office floor per rupee of crane time. Ask for the combined transport quote; one lift is the saving.",
+      "h2": "40×10 ft Porta Cabin (400 sq ft): Large Site Office",
+      "intro": "The large single-module buy, maximum office floor per rupee of crane time. Ask for the combined transport quote; one lift is the saving.",
       "h3": "What buyers order this size for",
       "applications": [
         "Large single-module purchase",
@@ -415,7 +415,7 @@
       ]
     },
     "40x12": {
-      "h2": "40×12 ft Porta Cabin (480 sq ft) — Multi-Room Office",
+      "h2": "40×12 ft Porta Cabin (480 sq ft): Multi-Room Office",
       "intro": "The flagship purchase at ₹5,52,000 ex-GST: a complete multi-room office in one order. Buyers running multiple sites standardise on this size and relocate it project to project.",
       "h3": "What buyers order this size for",
       "applications": [
@@ -430,7 +430,7 @@
     "h2": "Explore every Mini Porta Cabin size and where it works",
     "guidanceLine": "Four compact sizes, from a one-person duty post to a four-person room. Larger sizes are on the Low Cost Porta Cabin page.",
     "10x10": {
-      "h2": "10×10 ft — the single-occupancy duty cabin",
+      "h2": "10×10 ft: the single-occupancy duty cabin",
       "intro": "One hundred square feet built for one person on duty, and the smallest unit we fabricate. The value specification runs throughout: a 0.8–1.0 mm corrugated exterior over the same welded MS frame, 6 mm pre-laminated lining, 12 mm heatlon insulation and an 18 mm BWP plywood floor under 1.5 mm vinyl. One sliding window and a single lighting and socket circuit are sized for one occupant, which is why it costs less to run than any other cabin here. Gate posts, watchman points and weighbridge kiosks take this size more than any other, and it lifts onto a pickup without a crane.",
       "h3": "Uses",
       "applications": [
@@ -442,7 +442,7 @@
       "stats": "10×10×8.5 ft · 100 sq ft · ₹1,32,000 + GST · ₹1,320/sq ft"
     },
     "20x8": {
-      "h2": "20×8 ft — the narrow-body single-duty cabin",
+      "h2": "20×8 ft: the narrow-body single-duty cabin",
       "intro": "The same single-occupancy build stretched to 160 square feet on a slim eight-foot body, made to sit tight against a boundary wall, hoarding or gate structure where depth simply is not available. The occupant gets a desk run along the long wall with the register, keys and monitor within reach from one chair. Slimness is also why contractors choose it: transport needs no escort and no permit, and two or three units can be placed in a row along a site boundary without losing usable ground. Value specification throughout, identical frame and warranty.",
       "h3": "Uses",
       "applications": [
@@ -454,7 +454,7 @@
       "stats": "20×8×8.5 ft · 160 sq ft · ₹2,11,200 + GST · ₹1,320/sq ft"
     },
     "20x10": {
-      "h2": "20×10 ft — the smallest room a real team can share",
+      "h2": "20×10 ft: the smallest room a real team can share",
       "intro": "Two hundred square feet at the value rate, and the point at which this cabin stops being a duty post and becomes a working room. Two to four people sit with desks along both long walls and still keep a walking route between them. A second window opposite the first lets the room cross-light and cross-ventilate, and a separate socket circuit means a printer or kettle never shares the lighting supply. Most site teams arrive at this size after discovering that a one-person cabin cannot hold their paperwork, a visitor chair and a tea point at once.",
       "h3": "Uses",
       "applications": [
@@ -466,7 +466,7 @@
       "stats": "20×10×8.5 ft · 200 sq ft · ₹2,40,000 + GST · ₹1,200/sq ft"
     },
     "20x12": {
-      "h2": "20×12 ft — two extra feet buy a second zone",
+      "h2": "20×12 ft: two extra feet buy a second zone",
       "intro": "Two hundred and forty square feet, and the least expensive way in our whole range to give a compact team a genuine second zone. Those two extra feet of width absorb a records wall, a small meeting table or a supervisor corner without lengthening the unit or complicating its transport. Four people work here without anyone shifting a chair to let another pass. Teams that hold a short daily meeting but cannot justify a 30 ft cabin land here more often than on any other compact option, and the ₹36,480 step up buys that corner outright.",
       "h3": "Uses",
       "applications": [
@@ -480,8 +480,8 @@
   },
   "small-portacabin": {
     "10x10": {
-      "h2": "10×10 ft Small Portacabin (100 sq ft) — Supervisor Cabin",
-      "intro": "The supervisor's cabin: one desk, files, a visitor chair — a proper finished office at exactly the footprint a small site can spare.",
+      "h2": "10×10 ft Small Portacabin (100 sq ft): Supervisor Cabin",
+      "intro": "The supervisor's cabin: one desk, files, a visitor chair. A proper finished office at exactly the footprint a small site can spare.",
       "h3": "Small-team uses for this size",
       "applications": [
         "Supervisor cabin with desk and files",
@@ -491,7 +491,7 @@
       ]
     },
     "20x8": {
-      "h2": "20×8 ft Small Portacabin (160 sq ft) — Slim Small Office",
+      "h2": "20×8 ft Small Portacabin (160 sq ft): Slim Small Office",
       "intro": "The slim small office for tight boundaries: full working interior, 8 ft width, no compromise on insulation or wiring.",
       "h3": "Small-team uses for this size",
       "applications": [
@@ -502,8 +502,8 @@
       ]
     },
     "20x10": {
-      "h2": "20×10 ft Small Portacabin (200 sq ft) — Three-to-Four-Person Office",
-      "intro": "A three-to-four-person project office at the small end of the range — the size consultants and PMC teams book for single-package supervision.",
+      "h2": "20×10 ft Small Portacabin (200 sq ft): Three-to-Four-Person Office",
+      "intro": "A three-to-four-person project office at the small end of the range: the size consultants and PMC teams book for single-package supervision.",
       "h3": "Small-team uses for this size",
       "applications": [
         "Three-to-four person project office",
@@ -513,7 +513,7 @@
       ]
     },
     "20x12": {
-      "h2": "20×12 ft Small Portacabin (240 sq ft) — Small Office + Files Corner",
+      "h2": "20×12 ft Small Portacabin (240 sq ft): Small Office + Files Corner",
       "intro": "A small office plus a files-and-printer corner. The width does the organising; the team stays at four desks.",
       "h3": "Small-team uses for this size",
       "applications": [
@@ -524,8 +524,8 @@
       ]
     },
     "30x10": {
-      "h2": "30×10 ft Small Portacabin (300 sq ft) — Compact Two-Zone Office",
-      "intro": "The compact two-zone office: desks at one end, a small meeting or records space at the other — small-team working, properly separated.",
+      "h2": "30×10 ft Small Portacabin (300 sq ft): Compact Two-Zone Office",
+      "intro": "The compact two-zone office: desks at one end, a small meeting or records space at the other, small-team working, properly separated.",
       "h3": "Small-team uses for this size",
       "applications": [
         "Compact two-zone office",
@@ -535,8 +535,8 @@
       ]
     },
     "40x8": {
-      "h2": "40×8 ft Small Portacabin (320 sq ft) — Linear Small-Office Run",
-      "intro": "A linear small-office run for in-line site layouts — several small working rooms along one 40 ft module.",
+      "h2": "40×8 ft Small Portacabin (320 sq ft): Linear Small-Office Run",
+      "intro": "A linear small-office run for in-line site layouts, several small working rooms along one 40 ft module.",
       "h3": "Small-team uses for this size",
       "applications": [
         "Linear small-office run",
@@ -546,7 +546,7 @@
       ]
     },
     "20x20": {
-      "h2": "20×20 ft Small Portacabin (400 sq ft) — Large Compact-Square Office",
+      "h2": "20×20 ft Small Portacabin (400 sq ft): Large Compact-Square Office",
       "intro": "The largest compact-square office before the standard range: an open small-team floor with room to grow by two desks.",
       "h3": "Small-team uses for this size",
       "applications": [
@@ -557,8 +557,8 @@
       ]
     },
     "40x10": {
-      "h2": "40×10 ft Small Portacabin (400 sq ft) — Larger Small-Office Floor",
-      "intro": "A larger small-office floor kept simple — one open room, more desks, same right-sized philosophy.",
+      "h2": "40×10 ft Small Portacabin (400 sq ft): Larger Small-Office Floor",
+      "intro": "A larger small-office floor kept simple: one open room, more desks, same right-sized philosophy.",
       "h3": "Small-team uses for this size",
       "applications": [
         "Larger small-office floor, one room",
@@ -568,7 +568,7 @@
       ]
     },
     "40x12": {
-      "h2": "40×12 ft Small Portacabin (480 sq ft) — Top Small-Range Office",
+      "h2": "40×12 ft Small Portacabin (480 sq ft): Top Small-Range Office",
       "intro": "The top of the small range: maximum compact-office area for teams that outgrew 20x12 but do not need a flagship office.",
       "h3": "Small-team uses for this size",
       "applications": [
@@ -581,7 +581,7 @@
   },
   "porta-cabin-office": {
     "10x10": {
-      "h2": "10×10 ft Porta Cabin Office (100 sq ft) — Two-Desk Supervisor Office",
+      "h2": "10×10 ft Porta Cabin Office (100 sq ft): Two-Desk Supervisor Office",
       "intro": "A fitted two-desk supervisor office: workstations, power and data points wired at the factory, usable the hour it lands.",
       "h3": "Office configurations at this size",
       "applications": [
@@ -592,8 +592,8 @@
       ]
     },
     "20x8": {
-      "h2": "20×8 ft Porta Cabin Office (160 sq ft) — Narrow Fitted Office",
-      "intro": "A narrow fitted office for one to three staff — the full office kit (desks, points, lighting, AC provision) on a boundary-wall width.",
+      "h2": "20×8 ft Porta Cabin Office (160 sq ft): Narrow Fitted Office",
+      "intro": "A narrow fitted office for one to three staff: the full office kit (desks, points, lighting, AC provision) on a boundary-wall width.",
       "h3": "Office configurations at this size",
       "applications": [
         "Narrow fitted office for 1–3 staff",
@@ -603,7 +603,7 @@
       ]
     },
     "20x10": {
-      "h2": "20×10 ft Porta Cabin Office (200 sq ft) — 4–6 Workstation Office",
+      "h2": "20×10 ft Porta Cabin Office (200 sq ft): 4–6 Workstation Office",
       "intro": "The standard porta cabin office: four to six workstations with per-desk power and data. The most-specified fitted office in the range.",
       "h3": "Office configurations at this size",
       "applications": [
@@ -614,8 +614,8 @@
       ]
     },
     "20x12": {
-      "h2": "20×12 ft Porta Cabin Office (240 sq ft) — Open Office + Manager Cabin",
-      "intro": "An open office plus a partitioned manager cabin — the width buys the door that closes without losing a single desk.",
+      "h2": "20×12 ft Porta Cabin Office (240 sq ft): Open Office + Manager Cabin",
+      "intro": "An open office plus a partitioned manager cabin: the width buys the door that closes without losing a single desk.",
       "h3": "Office configurations at this size",
       "applications": [
         "Open office + partitioned manager cabin",
@@ -625,7 +625,7 @@
       ]
     },
     "30x10": {
-      "h2": "30×10 ft Porta Cabin Office (300 sq ft) — Workstations + Meeting Zone",
+      "h2": "30×10 ft Porta Cabin Office (300 sq ft): Workstations + Meeting Zone",
       "intro": "Workstations at one end, a meeting or records zone at the other: a two-zone fitted office for teams that interview, brief and file on site.",
       "h3": "Office configurations at this size",
       "applications": [
@@ -636,8 +636,8 @@
       ]
     },
     "40x8": {
-      "h2": "40×8 ft Porta Cabin Office (320 sq ft) — Linear Office Run",
-      "intro": "A linear office run — workstation rows along one 40 ft module for in-line site layouts.",
+      "h2": "40×8 ft Porta Cabin Office (320 sq ft): Linear Office Run",
+      "intro": "A linear office run, workstation rows along one 40 ft module for in-line site layouts.",
       "h3": "Office configurations at this size",
       "applications": [
         "Linear office run of workstation rows",
@@ -647,7 +647,7 @@
       ]
     },
     "20x20": {
-      "h2": "20×20 ft Porta Cabin Office (400 sq ft) — Open Team Office Floor",
+      "h2": "20×20 ft Porta Cabin Office (400 sq ft): Open Team Office Floor",
       "intro": "An open team floor: 400 sq ft of workstations for a larger site team or a training-and-work combination room.",
       "h3": "Office configurations at this size",
       "applications": [
@@ -658,8 +658,8 @@
       ]
     },
     "40x10": {
-      "h2": "40×10 ft Porta Cabin Office (400 sq ft) — 8–10 Workstation Office",
-      "intro": "Eight to ten workstations delivered as one fitted module — the large single-floor site office.",
+      "h2": "40×10 ft Porta Cabin Office (400 sq ft): 8–10 Workstation Office",
+      "intro": "Eight to ten workstations delivered as one fitted module, the large single-floor site office.",
       "h3": "Office configurations at this size",
       "applications": [
         "8–10 workstation single module",
@@ -669,11 +669,11 @@
       ]
     },
     "40x12": {
-      "h2": "40×12 ft Porta Cabin Office (480 sq ft) — Multi-Room Site Office",
+      "h2": "40×12 ft Porta Cabin Office (480 sq ft): Multi-Room Site Office",
       "intro": "The multi-room site office: reception, manager cabin and open work area, fully fitted at the factory and craned in ready to occupy.",
       "h3": "Office configurations at this size",
       "applications": [
-        "Multi-room site office — reception to desks",
+        "Multi-room site office, reception to desks",
         "Manager cabin + open floor",
         "Complete fitted office block",
         "Ready-to-occupy office suite"
@@ -684,7 +684,7 @@
     "h2": "Explore every Porta Cabin Shop size and how it trades",
     "guidanceLine": "Nine retail sizes, each planned around a front service counter with staff preparation and storage behind it.",
     "10x10": {
-      "h2": "10×10 ft — the compact kiosk that serves a queue",
+      "h2": "10×10 ft: the compact kiosk that serves a queue",
       "intro": "Trading from a serving window with a working strip behind it, this is the smallest unit that can retail properly rather than merely store goods. The service glazing carries a lockable counter opening so items pass out without the customer stepping inside, and the HPL panels behind the counter wipe clean at the end of every shift. Ticket booths, recharge points, dairy counters and takeaway windows all operate at this footprint. One person reaches the till, the display and the storage shelf without leaving the window, which is the entire design brief for a kiosk.",
       "h3": "Uses",
       "applications": [
@@ -696,7 +696,7 @@
       "stats": "10×10×8.5 ft · 100 sq ft · ₹1,54,000 + GST · ₹1,540/sq ft"
     },
     "20x8": {
-      "h2": "20×8 ft — the long counter on a slim footprint",
+      "h2": "20×8 ft: the long counter on a slim footprint",
       "intro": "The counter runs along the length here rather than across the end, so three or four customers are served side by side instead of forming a single queue. Slim depth suits a footpath frontage, a mall corridor or a boundary line where anything deeper would block circulation. Behind the counter there is room for a preparation strip and shelving, though not for seating. Retailers who serve quickly and move volume choose this shape over a square one precisely for that reason, and the unit still travels on an ordinary trailer without escort, permit or a night movement window.",
       "h3": "Uses",
       "applications": [
@@ -708,7 +708,7 @@
       "stats": "20×8×8.5 ft · 160 sq ft · ₹2,46,400 + GST · ₹1,540/sq ft"
     },
     "20x10": {
-      "h2": "20×10 ft — the reference retail cabin, front to store",
+      "h2": "20×10 ft: the reference retail cabin, front to store",
       "intro": "Most retailers settle here: a front trading zone, a preparation area behind it and a lockable store at the rear, all inside one delivered unit. Two or three staff work a shift comfortably. Decorative ceiling and LVT flooring are specified so the interior photographs well and survives daily footfall, which matters when the cabin is a brand's only physical presence. This is the size that reads as a shop rather than a booth, and it is where most first-time retail buyers begin before they know their volumes.",
       "h3": "Uses",
       "applications": [
@@ -720,8 +720,8 @@
       "stats": "20×10×8.5 ft · 200 sq ft · ₹2,80,000 + GST · ₹1,400/sq ft"
     },
     "20x12": {
-      "h2": "20×12 ft — trading floor plus a customer standing area",
-      "intro": "Extra width here goes to the customer side rather than the staff side. Shoppers stand inside, look at a display and wait out of the weather instead of queuing on the pavement, and that alone shifts conversion in a way no amount of signage manages. The preparation zone behind the counter keeps its depth unchanged. Retailers selling anything that needs handling before purchase — eyewear, phones, garments, bakery goods — take this width over the narrower option almost every time they buy a second unit.",
+      "h2": "20×12 ft: trading floor plus a customer standing area",
+      "intro": "Extra width here goes to the customer side rather than the staff side. Shoppers stand inside, look at a display and wait out of the weather instead of queuing on the pavement, and that alone shifts conversion in a way no amount of signage manages. The preparation zone behind the counter keeps its depth unchanged. Retailers selling anything that needs handling before purchase, eyewear, phones, garments, bakery goods, take this width over the narrower option almost every time they buy a second unit.",
       "h3": "Uses",
       "applications": [
         "Browse-before-buy retail",
@@ -732,7 +732,7 @@
       "stats": "20×12×8.5 ft · 240 sq ft · ₹3,22,560 + GST · ₹1,344/sq ft"
     },
     "30x10": {
-      "h2": "30×10 ft — shopfront with a real back-of-house",
+      "h2": "30×10 ft: shopfront with a real back-of-house",
       "intro": "Split front and back, this size gives a genuine back-of-house: stock, staff and preparation sit fully behind a door rather than a curtain. That separation is what allows a unit to hold licensed stock, run a two-shift rota or pass a food-handling inspection without improvising. Four to five staff work here. Where the dividing wall falls is fixed against your stock flow at approval, so it matches how goods actually move through the business instead of following a standard template. Staff and customers stop crossing each other's path.",
       "h3": "Uses",
       "applications": [
@@ -744,7 +744,7 @@
       "stats": "30×10×8.5 ft · 300 sq ft · ₹4,03,200 + GST · ₹1,344/sq ft"
     },
     "40x8": {
-      "h2": "40×8 ft — the long parade unit for market rows",
+      "h2": "40×8 ft: the long parade unit for market rows",
       "intro": "A run of frontage rather than a deep room, built for market rows, station approaches, campus edges and event grounds. Several trades can work along its length behind separate counter openings, or a single operator can run one continuous display. Repeated units butt together into an unbroken parade with no wasted gaps between them. Slim depth keeps every unit on a standard trailer, so a market operator adds or repositions a shop between seasons without arranging special haulage or road permits for an oversize load.",
       "h3": "Uses",
       "applications": [
@@ -756,7 +756,7 @@
       "stats": "40×8×8.5 ft · 320 sq ft · ₹4,21,120 + GST · ₹1,316/sq ft"
     },
     "20x20": {
-      "h2": "20×20 ft — the square showroom floor for browsing",
+      "h2": "20×20 ft: the square showroom floor for browsing",
       "intro": "Square, and delivered as two joined modules, this is the first size that works as a showroom instead of a shop. Customers circulate around central displays rather than moving along a counter, and that single change suits furniture, tiles, two-wheelers and anything else people walk around before buying. Staff work from a desk rather than a serving window. Both modules carry identical decorative finishes, and the floor joint is sealed and levelled so the surface reads as one continuous room rather than two cabins pushed together.",
       "h3": "Uses",
       "applications": [
@@ -768,8 +768,8 @@
       "stats": "20×20×8.5 ft · 400 sq ft · ₹5,26,400 + GST · ₹1,316/sq ft"
     },
     "40x10": {
-      "h2": "40×10 ft — the full-length retail run, three zones",
-      "intro": "One long line divides naturally into three trading zones — service, display and stockroom — while still arriving as a single unit on a single base. Six to eight staff can work it. Operators running a café counter alongside a retail display, or two related trades under one roof, take this length because each zone gets its own frontage without a wall dividing the business in two. Zone widths follow the way your goods move, agreed before manufacture rather than set to a template, so neither trade ends up squeezed behind the other.",
+      "h2": "40×10 ft: the full-length retail run, three zones",
+      "intro": "One long line divides naturally into three trading zones, service, display and stockroom, while still arriving as a single unit on a single base. Six to eight staff can work it. Operators running a café counter alongside a retail display, or two related trades under one roof, take this length because each zone gets its own frontage without a wall dividing the business in two. Zone widths follow the way your goods move, agreed before manufacture rather than set to a template, so neither trade ends up squeezed behind the other.",
       "h3": "Uses",
       "applications": [
         "Dual-trade outlets",
@@ -780,7 +780,7 @@
       "stats": "40×10×8.5 ft · 400 sq ft · ₹5,26,400 + GST · ₹1,316/sq ft"
     },
     "40x12": {
-      "h2": "40×12 ft — our largest single-unit shop, aisle plan",
+      "h2": "40×12 ft: our largest single-unit shop, aisle plan",
       "intro": "The largest shop we build as a single piece, and the one size where customers, staff and stock each keep a circulation route of their own. The added width lets a customer aisle pass the counter instead of cutting through the serving area, which separates a busy shop from a blocked one. Its ₹1,288 rate is the lowest we quote on any retail ladder. Anything bigger is achieved by joining units, with that junction detailed at quotation against your actual site layout, your frontage line and the way customers approach the shop.",
       "h3": "Uses",
       "applications": [
@@ -794,9 +794,9 @@
   },
   "porta-cabin-with-toilet": {
     "h2": "Explore every Porta Cabin with Toilet size and its layout",
-    "guidanceLine": "Nine sizes, each with a working room and its own sanitary zone in one delivered unit — one base, one connection, no separate block.",
+    "guidanceLine": "Nine sizes, each with a working room and its own sanitary zone in one delivered unit: one base, one connection, no separate block.",
     "10x10": {
-      "h2": "10×10 ft — one working room with its own WC",
+      "h2": "10×10 ft: one working room with its own WC",
       "intro": "One working position and a fully separated WC cubicle behind a partition, inside the smallest footprint we build. The wet zone is lined in 10–12 mm moisture-tolerant fibre-cement over a cement board deck with a waterproof membrane, finished in anti-skid safety vinyl with sealed joints. None of that is optional: a toilet inside a steel cabin fails within two seasons if it is built like a dry room. Guard posts, remote duty points and isolated single-operator sites take this size when sending staff elsewhere for facilities is not practical.",
       "h3": "Uses",
       "applications": [
@@ -808,7 +808,7 @@
       "stats": "10×10×8.5 ft · 100 sq ft · ₹1,65,000 + GST · ₹1,650/sq ft"
     },
     "20x8": {
-      "h2": "20×8 ft — working strip with a cubicle at one end",
+      "h2": "20×8 ft: working strip with a cubicle at one end",
       "intro": "Arranged in line, the WC occupies one end behind its own door while the working area takes up the remainder, which keeps the drainage run short because the wet zone never migrates towards the middle of the cabin. Two people work here. A slim body suits a boundary position where anything wider would eat into usable site, and it simplifies connection since every service terminates at a single corner. Frosted ventilators light the cubicle without offering any sightline from outside the unit, and the door is positioned so the working area is never on view when it opens.",
       "h3": "Uses",
       "applications": [
@@ -820,8 +820,8 @@
       "stats": "20×8×8.5 ft · 160 sq ft · ₹2,64,000 + GST · ₹1,650/sq ft"
     },
     "20x10": {
-      "h2": "20×10 ft — the self-contained site office with WC",
-      "intro": "The configuration that made this product: a proper office for four to six staff with a WC and washbasin at one end, so nobody leaves the cabin to use facilities. It is the most-ordered layout in the range by a wide margin. Contractors pick it over an office cabin plus a separate toilet block because it needs one base, one drainage connection and one delivery rather than two of each — and because a locked internal facility stays measurably cleaner than a shared external one that every trade on the site can reach.",
+      "h2": "20×10 ft: the self-contained site office with WC",
+      "intro": "The configuration that made this product: a proper office for four to six staff with a WC and washbasin at one end, so nobody leaves the cabin to use facilities. It is the most-ordered layout in the range by a wide margin. Contractors pick it over an office cabin plus a separate toilet block because it needs one base, one drainage connection and one delivery rather than two of each, and because a locked internal facility stays measurably cleaner than a shared external one that every trade on the site can reach.",
       "h3": "Uses",
       "applications": [
         "Self-contained site offices",
@@ -832,7 +832,7 @@
       "stats": "20×10×8.5 ft · 200 sq ft · ₹3,00,000 + GST · ₹1,500/sq ft"
     },
     "20x12": {
-      "h2": "20×12 ft — office, WC and a separate washing area",
+      "h2": "20×12 ft: office, WC and a separate washing area",
       "intro": "Widening by two feet lets the washbasin move out of the cubicle into an area of its own. That sounds like a detail and is not: one person washes while another uses the WC, which removes the shift-change queue that irritates every six-person team sharing a single door. The working room keeps its full width throughout. Sites running staggered shifts, and any operation whose hygiene rules require washing away from the cubicle, should take this width rather than the narrower plan and settle it at drawing stage.",
       "h3": "Uses",
       "applications": [
@@ -844,8 +844,8 @@
       "stats": "20×12×8.5 ft · 240 sq ft · ₹3,45,600 + GST · ₹1,440/sq ft"
     },
     "30x10": {
-      "h2": "30×10 ft — two working zones sharing one facility",
-      "intro": "Divided into three parts — an open working area, a closed room and a sanitary zone — so a site office and a meeting or records room share facilities without either interrupting the other. Six to eight staff use it daily. The wet zone stays at one end throughout rather than being split across the unit, keeping membrane and drainage in a single continuous area. That decision, more than any other, determines whether a cabin toilet is still sound in its fifth year or has quietly rotted the floor beneath the partition line.",
+      "h2": "30×10 ft: two working zones sharing one facility",
+      "intro": "Divided into three parts, an open working area, a closed room and a sanitary zone, so a site office and a meeting or records room share facilities without either interrupting the other. Six to eight staff use it daily. The wet zone stays at one end throughout rather than being split across the unit, keeping membrane and drainage in a single continuous area. That decision, more than any other, determines whether a cabin toilet is still sound in its fifth year or has quietly rotted the floor beneath the partition line.",
       "h3": "Uses",
       "applications": [
         "Office plus meeting rooms",
@@ -856,7 +856,7 @@
       "stats": "30×10×8.5 ft · 300 sq ft · ₹4,32,000 + GST · ₹1,440/sq ft"
     },
     "40x8": {
-      "h2": "40×8 ft — the long in-line unit with facilities built in",
+      "h2": "40×8 ft: the long in-line unit with facilities built in",
       "intro": "A slim line with the sanitary zone closed off at one end and working positions filling the rest, seating seven to nine staff. Linear projects take this shape because it follows a boundary or a corridor naturally, and because a row of these units gives every working group its own facility instead of one shared block stranded at the far end of a long site. That single arrangement removes the most common complaint raised on road, rail and pipeline projects, and it keeps each drainage run short enough to maintain.",
       "h3": "Uses",
       "applications": [
@@ -868,8 +868,8 @@
       "stats": "40×8×8.5 ft · 320 sq ft · ₹4,51,200 + GST · ₹1,410/sq ft"
     },
     "20x20": {
-      "h2": "20×20 ft — the square unit with a service corner",
-      "intro": "The square puts the service corner in one corner rather than at one end, arriving as two joined modules. That corner position keeps drainage short while leaving three sides of the room clear for desks or a central table, which is the layout best suited to a space used for gatherings as well as daily work. Membrane, lining and floor finish in the wet corner are identical to every other size in this range — the specification never softens simply because a room happened to get larger or because the facility is used less often.",
+      "h2": "20×20 ft: the square unit with a service corner",
+      "intro": "The square puts the service corner in one corner rather than at one end, arriving as two joined modules. That corner position keeps drainage short while leaving three sides of the room clear for desks or a central table, which is the layout best suited to a space used for gatherings as well as daily work. Membrane, lining and floor finish in the wet corner are identical to every other size in this range: the specification never softens simply because a room happened to get larger or because the facility is used less often.",
       "h3": "Uses",
       "applications": [
         "Meeting-capable site rooms",
@@ -880,7 +880,7 @@
       "stats": "20×20×8.5 ft · 400 sq ft · ₹5,64,000 + GST · ₹1,410/sq ft"
     },
     "40x10": {
-      "h2": "40×10 ft — a site headquarters with its own facilities",
+      "h2": "40×10 ft: a site headquarters with its own facilities",
       "intro": "One long run holds an open working floor, an enclosed room, storage and a sanitary zone in a single delivered unit for ten to twelve staff. This is the configuration that lets a project operate a complete headquarters off one base and one connection, and it is the practical reason most contractors stop hiring separate toilet blocks once they have used it. Internal positions are tied to your drainage run when the drawing is signed off, so the wet zone lands where your services actually are instead of forcing a new connection across the plot.",
       "h3": "Uses",
       "applications": [
@@ -892,7 +892,7 @@
       "stats": "40×10×8.5 ft · 400 sq ft · ₹5,64,000 + GST · ₹1,410/sq ft"
     },
     "40x12": {
-      "h2": "40×12 ft — our largest self-contained cabin, two cubicles",
+      "h2": "40×12 ft: our largest self-contained cabin, two cubicles",
       "intro": "Our largest self-contained unit, and the one plan in which a corridor passes both the enclosed rooms and the sanitary zone instead of running through either. Twelve to fifteen staff work in it. That circulation is exactly what stops a large shared cabin becoming unpleasant by mid-morning. Its ₹1,380 rate is the lowest on this ladder. Two-cubicle arrangements become possible at this size and are specified at quotation against your actual headcount and shift pattern, which is the point at which most large teams stop sharing a single door.",
       "h3": "Uses",
       "applications": [
@@ -906,8 +906,8 @@
   },
   "prefabricated-porta-cabin": {
     "10x10": {
-      "h2": "10×10 ft Prefabricated Porta Cabin (100 sq ft) — Same-Day Compact Cabin",
-      "intro": "Factory-finished and usable the same day it lands: the smallest prefab cabin proves the method — zero site construction, one placement, done.",
+      "h2": "10×10 ft Prefabricated Porta Cabin (100 sq ft): Same-Day Compact Cabin",
+      "intro": "Factory-finished and usable the same day it lands: the smallest prefab cabin proves the method: zero site construction, one placement, done.",
       "h3": "Fast-deployment uses",
       "applications": [
         "Same-day-usable compact prefab cabin",
@@ -917,7 +917,7 @@
       ]
     },
     "20x8": {
-      "h2": "20×8 ft Prefabricated Porta Cabin (160 sq ft) — Quick-Deploy Narrow Unit",
+      "h2": "20×8 ft Prefabricated Porta Cabin (160 sq ft): Quick-Deploy Narrow Unit",
       "intro": "The quick-deploy narrow unit: fabricated complete in the works, slid onto a boundary strip, connected and occupied inside a working day.",
       "h3": "Fast-deployment uses",
       "applications": [
@@ -928,7 +928,7 @@
       ]
     },
     "20x10": {
-      "h2": "20×10 ft Prefabricated Porta Cabin (200 sq ft) — Ready-Delivered Site Office",
+      "h2": "20×10 ft Prefabricated Porta Cabin (200 sq ft): Ready-Delivered Site Office",
       "intro": "The ready-delivered site office: while a built-in-place room is still at plinth level, this 200 sq ft prefab is already holding its first site meeting.",
       "h3": "Fast-deployment uses",
       "applications": [
@@ -939,8 +939,8 @@
       ]
     },
     "20x12": {
-      "h2": "20×12 ft Prefabricated Porta Cabin (240 sq ft) — Prefab Office + Manager Area",
-      "intro": "A prefab office with manager area — the partition, points and finishes all installed on the factory floor, not yours.",
+      "h2": "20×12 ft Prefabricated Porta Cabin (240 sq ft): Prefab Office + Manager Area",
+      "intro": "A prefab office with manager area: the partition, points and finishes all installed on the factory floor, not yours.",
       "h3": "Fast-deployment uses",
       "applications": [
         "Prefab office with manager area",
@@ -950,7 +950,7 @@
       ]
     },
     "30x10": {
-      "h2": "30×10 ft Prefabricated Porta Cabin (300 sq ft) — Fast Two-Zone Office",
+      "h2": "30×10 ft Prefabricated Porta Cabin (300 sq ft): Fast Two-Zone Office",
       "intro": "The fast two-zone office: 300 sq ft of finished, partitioned space that skips weeks of on-site trades and weather delay.",
       "h3": "Fast-deployment uses",
       "applications": [
@@ -961,8 +961,8 @@
       ]
     },
     "40x8": {
-      "h2": "40×8 ft Prefabricated Porta Cabin (320 sq ft) — Linear Prefab Unit",
-      "intro": "A linear prefab unit craned in as one 40 ft piece — the length that shows why factory build beats site build on time and finish.",
+      "h2": "40×8 ft Prefabricated Porta Cabin (320 sq ft): Linear Prefab Unit",
+      "intro": "A linear prefab unit craned in as one 40 ft piece. The length that shows why factory build beats site build on time and finish.",
       "h3": "Fast-deployment uses",
       "applications": [
         "One-piece 40 ft linear prefab unit",
@@ -972,8 +972,8 @@
       ]
     },
     "20x20": {
-      "h2": "20×20 ft Prefabricated Porta Cabin (400 sq ft) — Craned-In Square Module",
-      "intro": "The craned-in square module: 400 sq ft of open floor placed in one lift — training room today, relocatable to the next project after.",
+      "h2": "20×20 ft Prefabricated Porta Cabin (400 sq ft): Craned-In Square Module",
+      "intro": "The craned-in square module: 400 sq ft of open floor placed in one lift, training room today, relocatable to the next project after.",
       "h3": "Fast-deployment uses",
       "applications": [
         "Craned-in open square module",
@@ -983,7 +983,7 @@
       ]
     },
     "40x10": {
-      "h2": "40×10 ft Prefabricated Porta Cabin (400 sq ft) — Single-Module Prefab Office",
+      "h2": "40×10 ft Prefabricated Porta Cabin (400 sq ft): Single-Module Prefab Office",
       "intro": "A single-module prefab office at full scale: eight to ten staff working in a unit that needed only placement and a service connection.",
       "h3": "Fast-deployment uses",
       "applications": [
@@ -994,8 +994,8 @@
       ]
     },
     "40x12": {
-      "h2": "40×12 ft Prefabricated Porta Cabin (480 sq ft) — Multi-Room Prefab Office",
-      "intro": "The multi-room prefab office: reception, cabins and open floor — an entire office building fabricated indoors and delivered finished.",
+      "h2": "40×12 ft Prefabricated Porta Cabin (480 sq ft): Multi-Room Prefab Office",
+      "intro": "The multi-room prefab office: reception, cabins and open floor. An entire office building fabricated indoors and delivered finished.",
       "h3": "Fast-deployment uses",
       "applications": [
         "Multi-room prefab office building",
@@ -1008,8 +1008,8 @@
   "low-cost-porta-cabin": {
     "h2": "Explore every Low Cost Porta Cabin size & its applications",
     "10x10": {
-      "h2": "10×10 ft Low Cost Porta Cabin (100 sq ft) — Entry-Price Guard Post & First Office",
-      "intro": "The entry price into a finished SAMAN cabin: ₹1,32,000 ex-GST, insulated and wired — the budget guard post or first office that cuts cost, never the frame.",
+      "h2": "10×10 ft Low Cost Porta Cabin (100 sq ft): Entry-Price Guard Post & First Office",
+      "intro": "The entry price into a finished SAMAN cabin: ₹1,32,000 ex-GST, insulated and wired. The budget guard post or first office that cuts cost, never the frame.",
       "h3": "Value-tier deployments",
       "applications": [
         "Entry-price finished guard post",
@@ -1019,7 +1019,7 @@
       ]
     },
     "20x8": {
-      "h2": "20×8 ft Low Cost Porta Cabin (160 sq ft) — Value Narrow-Plot Office",
+      "h2": "20×8 ft Low Cost Porta Cabin (160 sq ft): Value Narrow-Plot Office",
       "intro": "The keenest price on a narrow plot: full finished specification at the value tier, 8 ft width, no unfinished corners.",
       "h3": "Value-tier deployments",
       "applications": [
@@ -1030,8 +1030,8 @@
       ]
     },
     "20x10": {
-      "h2": "20×10 ft Low Cost Porta Cabin (200 sq ft) — Value-Tier Standard Office",
-      "intro": "The value-tier standard office: four to six staff at the lowest complete-cabin price in the range — same IS 2062 skeleton as every tier above it.",
+      "h2": "20×10 ft Low Cost Porta Cabin (200 sq ft): Value-Tier Standard Office",
+      "intro": "The value-tier standard office: four to six staff at the lowest complete-cabin price in the range: same IS 2062 skeleton as every tier above it.",
       "h3": "Value-tier deployments",
       "applications": [
         "Value-tier standard office for 4–6",
@@ -1041,8 +1041,8 @@
       ]
     },
     "20x12": {
-      "h2": "20×12 ft Low Cost Porta Cabin (240 sq ft) — Budget Office with Manager Corner",
-      "intro": "Manager-corner width at the budget price point — the partition option without the premium-tier bill.",
+      "h2": "20×12 ft Low Cost Porta Cabin (240 sq ft): Budget Office with Manager Corner",
+      "intro": "Manager-corner width at the budget price point: the partition option without the premium-tier bill.",
       "h3": "Value-tier deployments",
       "applications": [
         "Budget office with manager corner",
@@ -1052,7 +1052,7 @@
       ]
     },
     "30x10": {
-      "h2": "30×10 ft Low Cost Porta Cabin (300 sq ft) — Two-Zone Value Office",
+      "h2": "30×10 ft Low Cost Porta Cabin (300 sq ft): Two-Zone Value Office",
       "intro": "Two working zones at the value price: the size cost-conscious contractors take when one cabin must do the work of two.",
       "h3": "Value-tier deployments",
       "applications": [
@@ -1063,7 +1063,7 @@
       ]
     },
     "40x8": {
-      "h2": "40×8 ft Low Cost Porta Cabin (320 sq ft) — Budget Bunkhouse Run",
+      "h2": "40×8 ft Low Cost Porta Cabin (320 sq ft): Budget Bunkhouse Run",
       "intro": "The budget bunkhouse run: 40 linear feet of finished accommodation at the lowest per-foot price in the cluster.",
       "h3": "Value-tier deployments",
       "applications": [
@@ -1074,8 +1074,8 @@
       ]
     },
     "20x20": {
-      "h2": "20×20 ft Low Cost Porta Cabin (400 sq ft) — Value Open Training Floor",
-      "intro": "The largest open floor at the value tier — 400 sq ft of finished, insulated space priced for training rooms on tight budgets.",
+      "h2": "20×20 ft Low Cost Porta Cabin (400 sq ft): Value Open Training Floor",
+      "intro": "The largest open floor at the value tier: 400 sq ft of finished, insulated space priced for training rooms on tight budgets.",
       "h3": "Value-tier deployments",
       "applications": [
         "Value open training floor",
@@ -1085,8 +1085,8 @@
       ]
     },
     "40x10": {
-      "h2": "40×10 ft Low Cost Porta Cabin (400 sq ft) — Large Value-Tier Office",
-      "intro": "Maximum single-module floor at minimum complete-cabin price — the value tier's big office.",
+      "h2": "40×10 ft Low Cost Porta Cabin (400 sq ft): Large Value-Tier Office",
+      "intro": "Maximum single-module floor at minimum complete-cabin price: the value tier's big office.",
       "h3": "Value-tier deployments",
       "applications": [
         "Large value-tier office floor",
@@ -1096,7 +1096,7 @@
       ]
     },
     "40x12": {
-      "h2": "40×12 ft Low Cost Porta Cabin (480 sq ft) — Flagship Footprint at Entry Price",
+      "h2": "40×12 ft Low Cost Porta Cabin (480 sq ft): Flagship Footprint at Entry Price",
       "intro": "The flagship footprint at the entry price: every square foot of the 40x12 with the finish tier chosen for budget, not the frame.",
       "h3": "Value-tier deployments",
       "applications": [
@@ -1109,10 +1109,10 @@
   },
   "container-office-cabin": {
     "h2": "Explore every Container Office Cabin size & its applications",
-    "guidanceLine": "Team figures are layout guidance from standard workstation plans — your approved drawing fixes the exact seating.",
+    "guidanceLine": "Team figures are layout guidance from standard workstation plans, your approved drawing fixes the exact seating.",
     "10x10": {
-      "h2": "10×10 ft — the smallest cabin-form container office",
-      "intro": "The smallest container office cabin puts a desk, a file rack and a visitor chair into 100 sq ft of steel-shelled workspace at the lowest entry price in our container range. It is built cabin-style — welded MS frame, insulated walls, finished interior — in the squared container form that sits neatly beside stacked site infrastructure. One supervisor runs a gate, a yard or a weighbridge from it comfortably. If your team will cross three people during the project, the 20×8 and 20×10 add floor at a lower rate per square foot.",
+      "h2": "10×10 ft: the smallest cabin-form container office",
+      "intro": "The smallest container office cabin puts a desk, a file rack and a visitor chair into 100 sq ft of steel-shelled workspace at the lowest entry price in our container range. It is built cabin-style, welded MS frame, insulated walls, finished interior, in the squared container form that sits neatly beside stacked site infrastructure. One supervisor runs a gate, a yard or a weighbridge from it comfortably. If your team will cross three people during the project, the 20×8 and 20×10 add floor at a lower rate per square foot.",
       "h3": "Uses",
       "applications": [
         "A manager plus three staff desks",
@@ -1122,8 +1122,8 @@
       ]
     },
     "20x8": {
-      "h2": "20×8 ft — the slim value unit for gate-line duty",
-      "intro": "A slim 160 sq ft unit that runs along a compound wall or gate line where a full-width office cannot sit. Three to four workstations fit in a row, and the door position is set on the approved drawing to face the traffic you manage. Yards, weighbridges and dispatch gates use it as the billing and entry-control point. The cabin-form build keeps it the most affordable slim container office we make — the premium ISO conversion of this footprint costs roughly a third more. Repeat orders along one boundary are common — the units line up door-to-door.",
+      "h2": "20×8 ft: the slim value unit for gate-line duty",
+      "intro": "A slim 160 sq ft unit that runs along a compound wall or gate line where a full-width office cannot sit. Three to four workstations fit in a row, and the door position is set on the approved drawing to face the traffic you manage. Yards, weighbridges and dispatch gates use it as the billing and entry-control point. The cabin-form build keeps it the most affordable slim container office we make. The premium ISO conversion of this footprint costs roughly a third more. Repeat orders along one boundary are common, the units line up door-to-door.",
       "h3": "Uses",
       "applications": [
         "A slim office for a working pair",
@@ -1133,8 +1133,8 @@
       ]
     },
     "20x10": {
-      "h2": "20×10 ft — the value benchmark of the container range",
-      "intro": "The benchmark of the value line: 200 sq ft at ₹1,250 per square foot, the lowest reference rate in our container office range. Four to six people work in an open row, or three desks pair with a partitioned cabin on the drawing. It carries the same electricals, AC provision and insulation as every SAMAN unit — the saving comes from the cabin-form shell, not from the fit-out. Compare it against the converted ISO unit at this size to see exactly what the marine-grade shell adds and whether your site needs it.",
+      "h2": "20×10 ft: the value benchmark of the container range",
+      "intro": "The benchmark of the value line: 200 sq ft at ₹1,250 per square foot, the lowest reference rate in our container office range. Four to six people work in an open row, or three desks pair with a partitioned cabin on the drawing. It carries the same electricals, AC provision and insulation as every SAMAN unit: the saving comes from the cabin-form shell, not from the fit-out. Compare it against the converted ISO unit at this size to see exactly what the marine-grade shell adds and whether your site needs it.",
       "h3": "Uses",
       "applications": [
         "Four-desk offices ready to quote",
@@ -1144,8 +1144,8 @@
       ]
     },
     "20x12": {
-      "h2": "20×12 ft — width for a manager bay on a budget",
-      "intro": "Two extra feet of width turn a desk row into a planned office: a manager bay, a records wall or a small meeting table fits alongside five to seven workstations in 240 sq ft. Client-facing sites pick this size when meetings happen at the gate but the budget stays tight. The width rides on the same value rate band, so the step up from the 20×10 costs ₹38,000 — the least expensive way in this cluster to add a second working zone to a single unit. The manager bay takes a standard desk and two chairs; the drawing fixes its wall before fabrication.",
+      "h2": "20×12 ft: width for a manager bay on a budget",
+      "intro": "Two extra feet of width turn a desk row into a planned office: a manager bay, a records wall or a small meeting table fits alongside five to seven workstations in 240 sq ft. Client-facing sites pick this size when meetings happen at the gate but the budget stays tight. The width rides on the same value rate band, so the step up from the 20×10 costs ₹38,000. The least expensive way in this cluster to add a second working zone to a single unit. The manager bay takes a standard desk and two chairs; the drawing fixes its wall before fabrication.",
       "h3": "Uses",
       "applications": [
         "Meetings of five without a squeeze",
@@ -1155,8 +1155,8 @@
       ]
     },
     "30x10": {
-      "h2": "30×10 ft — two rooms at the cluster's lowest rate",
-      "intro": "A 300 sq ft long plan that partitions into a work area and a private room — the two-room layout at the lowest rate it is available anywhere in our container range. Six to eight people run daily operations while reviews happen behind the partition. The 30 ft body travels intact as one unit on a standard trailer, so the two-room function arrives in a single delivery. Choose it when you need a working headquarters but the project budget was fixed before the office was. The partition position is set on your drawing, so the room split matches the team, not a template.",
+      "h2": "30×10 ft: two rooms at the cluster's lowest rate",
+      "intro": "A 300 sq ft long plan that partitions into a work area and a private room. The two-room layout at the lowest rate it is available anywhere in our container range. Six to eight people run daily operations while reviews happen behind the partition. The 30 ft body travels intact as one unit on a standard trailer, so the two-room function arrives in a single delivery. Choose it when you need a working headquarters but the project budget was fixed before the office was. The partition position is set on your drawing, so the room split matches the team, not a template.",
       "h3": "Uses",
       "applications": [
         "Manager's room partitioned cleanly",
@@ -1166,7 +1166,7 @@
       ]
     },
     "40x8": {
-      "h2": "40×8 ft — the linear row unit for tight sites",
+      "h2": "40×8 ft: the linear row unit for tight sites",
       "intro": "The corridor plan in cabin form: 320 sq ft as one long workstation row for sites that line their units along a boundary or between structures. A seven-to-nine person team works in line, and repeated units make a tidy administrative row with doors aligned on the drawing. Linear infrastructure jobs use it where depth is unavailable and budgets are watched. At ₹1,175 per square foot it is the cheapest way we offer to seat a full row of staff in container form. Windows fall between workstation positions, so every desk gets daylight without glare on screens.",
       "h3": "Uses",
       "applications": [
@@ -1177,8 +1177,8 @@
       ]
     },
     "20x20": {
-      "h2": "20×20 ft — the square floor at cabin pricing",
-      "intro": "The square alternative at the same 400 sq ft and the same price as the 40×10 — the decision is purely the shape of your plot and your seating plan. Cluster desks work around the open centre, supervision lines stay short, and the middle of the floor stays free for boards or briefing. Check that the approach road takes a 20 ft wide movement before you order. Open-plan teams that found corridor offices inefficient pick this floor most often in the value line. Power and data points ring the perimeter, so cluster layouts rearrange without rewiring anything.",
+      "h2": "20×20 ft: the square floor at cabin pricing",
+      "intro": "The square alternative at the same 400 sq ft and the same price as the 40×10. The decision is purely the shape of your plot and your seating plan. Cluster desks work around the open centre, supervision lines stay short, and the middle of the floor stays free for boards or briefing. Check that the approach road takes a 20 ft wide movement before you order. Open-plan teams that found corridor offices inefficient pick this floor most often in the value line. Power and data points ring the perimeter, so cluster layouts rearrange without rewiring anything.",
       "h3": "Uses",
       "applications": [
         "A team room around one table",
@@ -1188,8 +1188,8 @@
       ]
     },
     "40x10": {
-      "h2": "40×10 ft — the large-floor pick of the value line",
-      "intro": "Four hundred square feet in one lift, planned into departments with a reception point at the door — the large-floor pick of the value line. Eight to twelve people work comfortably, with partitions set before fabrication. It suits offices that need headquarters scale without headquarters spend: the same floor in the ISO conversion costs about ₹2 lakh more. If the office will outlive several projects and travel between them, weigh that premium against this unit's price advantage. Reception, records and cabin walls are all positioned on the approved drawing before steel is cut.",
+      "h2": "40×10 ft: the large-floor pick of the value line",
+      "intro": "Four hundred square feet in one lift, planned into departments with a reception point at the door, the large-floor pick of the value line. Eight to twelve people work comfortably, with partitions set before fabrication. It suits offices that need headquarters scale without headquarters spend: the same floor in the ISO conversion costs about ₹2 lakh more. If the office will outlive several projects and travel between them, weigh that premium against this unit's price advantage. Reception, records and cabin walls are all positioned on the approved drawing before steel is cut.",
       "h3": "Uses",
       "applications": [
         "Reception, bay and cabin layout",
@@ -1199,8 +1199,8 @@
       ]
     },
     "40x12": {
-      "h2": "40×12 ft — the biggest floor at the smallest rate",
-      "intro": "Our largest value-line floor: 480 sq ft that partitions into cabins, a meeting room and stores, delivered complete as a single unit. Ten to fourteen people run a full site administration from it, and at ₹1,150 per square foot it has our lowest rate of any container office we sell. It is the size where the value line makes its strongest case — maximum floor, minimum rate, one delivery. Larger requirements move to joined multi-unit layouts, quoted to drawing. The pantry point and server position are marked on the drawing alongside the cabin walls.",
+      "h2": "40×12 ft: the biggest floor at the smallest rate",
+      "intro": "Our largest value-line floor: 480 sq ft that partitions into cabins, a meeting room and stores, delivered complete as a single unit. Ten to fourteen people run a full site administration from it, and at ₹1,150 per square foot it has our lowest rate of any container office we sell. It is the size where the value line makes its strongest case: maximum floor, minimum rate, one delivery. Larger requirements move to joined multi-unit layouts, quoted to drawing. The pantry point and server position are marked on the drawing alongside the cabin walls.",
       "h3": "Uses",
       "applications": [
         "Facing desk rows with a real aisle",
@@ -1214,8 +1214,8 @@
     "h2": "Explore Shipping Container Office sizes and applications",
     "guidanceLine": "People counts are planning guidance based on typical desk layouts; the approved drawing confirms final capacity.",
     "10x10": {
-      "h2": "10×10 ft — the compact marine-grade steel office",
-      "intro": "The compact conversion: 100 sq ft inside genuine corrugated container steel, with the marine-grade shell that shrugs off weather, transit and rough handling. One supervisor gets a secure, lockable office that reads unmistakably industrial at the gate. The small floor carries the range's highest rate per square foot, so buy it for the shell rather than the economy — where security and durability decide the purchase, nothing else in our range outlasts it. The full-height lockable door and steel shutters are part of the conversion, not accessories.",
+      "h2": "10×10 ft: the compact marine-grade steel office",
+      "intro": "The compact conversion: 100 sq ft inside genuine corrugated container steel, with the marine-grade shell that shrugs off weather, transit and rough handling. One supervisor gets a secure, lockable office that reads unmistakably industrial at the gate. The small floor carries the range's highest rate per square foot, so buy it for the shell rather than the economy, where security and durability decide the purchase, nothing else in our range outlasts it. The full-height lockable door and steel shutters are part of the conversion, not accessories.",
       "h3": "",
       "applications": [
         "A liftable one-desk site point",
@@ -1225,8 +1225,8 @@
       ]
     },
     "20x8": {
-      "h2": "20×8 ft — the slim ISO-profile container unit",
-      "intro": "The ISO-profile footprint: 160 sq ft in the slim proportions the shipping industry standardised, sliding into rows, yards and tight margins that were designed around containers to begin with. Three to four desks run in line behind full-height corrugated walls. Ports, depots and logistics yards choose it because it matches their existing handling — the same trucks, the same placement, the same visual language as the boxes around it. Insulation and interior finish are identical to our larger conversions — only the footprint is slim.",
+      "h2": "20×8 ft: the slim ISO-profile container unit",
+      "intro": "The ISO-profile footprint: 160 sq ft in the slim proportions the shipping industry standardised, sliding into rows, yards and tight margins that were designed around containers to begin with. Three to four desks run in line behind full-height corrugated walls. Ports, depots and logistics yards choose it because it matches their existing handling: the same trucks, the same placement, the same visual language as the boxes around it. Insulation and interior finish are identical to our larger conversions, only the footprint is slim.",
       "h3": "",
       "applications": [
         "Slim freight with no escort cost",
@@ -1236,8 +1236,8 @@
       ]
     },
     "20x10": {
-      "h2": "20×10 ft — the classic converted shipping container",
-      "intro": "The classic of the type: 200 sq ft of converted container office, corrugated steel outside, insulated and fully fitted inside. Four to six people work behind a shell that tolerates craneage, stacking environments and hard weather for years. At ₹1,800 per square foot it costs a premium over our cabin-form units — that premium buys the structural container frame and the service life that comes with it. It is the size most buyers picture when they say container office. Windows and the personnel door are cut and framed into the corrugation to the approved drawing.",
+      "h2": "20×10 ft: the classic converted shipping container",
+      "intro": "The classic of the type: 200 sq ft of converted container office, corrugated steel outside, insulated and fully fitted inside. Four to six people work behind a shell that tolerates craneage, stacking environments and hard weather for years. At ₹1,800 per square foot it costs a premium over our cabin-form units: that premium buys the structural container frame and the service life that comes with it. It is the size most buyers picture when they say container office. Windows and the personnel door are cut and framed into the corrugation to the approved drawing.",
       "h3": "",
       "applications": [
         "The reference floor, lift-ready",
@@ -1247,7 +1247,7 @@
       ]
     },
     "20x12": {
-      "h2": "20×12 ft — extra width in structural container steel",
+      "h2": "20×12 ft: extra width in structural container steel",
       "intro": "Extra width inside structural container steel: 240 sq ft that fits a manager bay or meeting corner alongside five to seven workstations. The wider body keeps the corrugated shell and heavy frame of the type while opening the floor plan beyond a single desk row. Pick it when the office must host decisions rather than just desks, the site demands the toughest shell we build, and the footprint still has to sit in a standard container position. The heavy frame takes the wider roof span without any internal posts interrupting the floor.",
       "h3": "",
       "applications": [
@@ -1258,8 +1258,8 @@
       ]
     },
     "30x10": {
-      "h2": "30×10 ft — the two-room converted container",
-      "intro": "A 300 sq ft conversion that partitions into a working area and a private room behind marine-grade walls. Six to eight people operate daily with reviews held in the partitioned end. The 30 ft body moves as one structural unit — the lifting points are part of the frame, not an addition welded on later. Remote and hard-duty sites pick it when the two-room plan has to survive several postings without losing its geometry or its finish. Both rooms carry independent lighting and AC provision, wired before the unit leaves the factory.",
+      "h2": "30×10 ft: the two-room converted container",
+      "intro": "A 300 sq ft conversion that partitions into a working area and a private room behind marine-grade walls. Six to eight people operate daily with reviews held in the partitioned end. The 30 ft body moves as one structural unit: the lifting points are part of the frame, not an addition welded on later. Remote and hard-duty sites pick it when the two-room plan has to survive several postings without losing its geometry or its finish. Both rooms carry independent lighting and AC provision, wired before the unit leaves the factory.",
       "h3": "",
       "applications": [
         "Two rooms moving as one lift",
@@ -1269,8 +1269,8 @@
       ]
     },
     "40x8": {
-      "h2": "40×8 ft — the long ISO-form workstation run",
-      "intro": "The long ISO run: 320 sq ft of workstations in a single corrugated-steel line, sized for yards and corridors that already move 40 ft containers daily. Crews of seven to nine keep working in line with doors and windows cut to the approved drawing. Because it handles exactly like a standard 40 ft box, existing container logistics place it without special planning — a working office that ships, lifts and stacks like the freight around it. The corner castings stay functional after conversion, so standard twist-lock handling still applies.",
+      "h2": "40×8 ft: the long ISO-form workstation run",
+      "intro": "The long ISO run: 320 sq ft of workstations in a single corrugated-steel line, sized for yards and corridors that already move 40 ft containers daily. Crews of seven to nine keep working in line with doors and windows cut to the approved drawing. Because it handles exactly like a standard 40 ft box, existing container logistics place it without special planning. A working office that ships, lifts and stacks like the freight around it. The corner castings stay functional after conversion, so standard twist-lock handling still applies.",
       "h3": "",
       "applications": [
         "Line offices for every new site",
@@ -1280,8 +1280,8 @@
       ]
     },
     "20x20": {
-      "h2": "20×20 ft — the square plan in container steel",
-      "intro": "Four hundred square feet across a square plan in container steel — an open floor with cluster seating and short supervision lines inside the hardest shell we offer. The square format is a custom fabrication rather than a standard ISO footprint, so confirm early that the approach takes a 20 ft wide delivery. Teams choose it when open-plan working and maximum shell protection have to coexist on a single pad, and the plot allows the width. The roof structure is engineered for the span, keeping the interior post-free edge to edge.",
+      "h2": "20×20 ft: the square plan in container steel",
+      "intro": "Four hundred square feet across a square plan in container steel: an open floor with cluster seating and short supervision lines inside the hardest shell we offer. The square format is a custom fabrication rather than a standard ISO footprint, so confirm early that the approach takes a 20 ft wide delivery. Teams choose it when open-plan working and maximum shell protection have to coexist on a single pad, and the plot allows the width. The roof structure is engineered for the span, keeping the interior post-free edge to edge.",
       "h3": "",
       "applications": [
         "A war room that follows the work",
@@ -1291,7 +1291,7 @@
       ]
     },
     "40x10": {
-      "h2": "40×10 ft — the flagship forty-foot conversion",
+      "h2": "40×10 ft: the flagship forty-foot conversion",
       "intro": "The flagship conversion: 400 sq ft of department-planned office inside a full-height corrugated shell, with reception, engineering and records zones set on the drawing. Eight to twelve people run a complete operation from it. It is the choice for multi-year and multi-posting deployments, where the structural frame keeps its geometry through every lift. If the office will move more often than it sits still, this is the shell to move it in. Every opening is framed and sealed at the factory, keeping the shell's weather rating intact.",
       "h3": "",
       "applications": [
@@ -1302,8 +1302,8 @@
       ]
     },
     "40x12": {
-      "h2": "40×12 ft — the largest converted-container floor",
-      "intro": "The largest converted-container floor we build: 480 sq ft partitioned into cabins, meeting space and stores behind corrugated steel. Ten to fourteen people run full site administration at the lowest rate the premium shell reaches — ₹1,656 per square foot. It anchors container campuses as the head office among stacked and joined units. Beyond this footprint, requirements become multi-container layouts engineered to drawing rather than single deliveries. Cabin partitions, meeting walls and store rooms are positioned on the drawing before cutting.",
+      "h2": "40×12 ft: the largest converted-container floor",
+      "intro": "The largest converted-container floor we build: 480 sq ft partitioned into cabins, meeting space and stores behind corrugated steel. Ten to fourteen people run full site administration at the lowest rate the premium shell reaches: ₹1,656 per square foot. It anchors container campuses as the head office among stacked and joined units. Beyond this footprint, requirements become multi-container layouts engineered to drawing rather than single deliveries. Cabin partitions, meeting walls and store rooms are positioned on the drawing before cutting.",
       "h3": "",
       "applications": [
         "The widest floor that still moves",
@@ -1315,9 +1315,9 @@
   },
   "portacabin-office": {
     "h2": "Explore every Portacabin Office size and its working layout",
-    "guidanceLine": "Nine sizes in the upgraded office build — workstations, storage and an optional manager or meeting partition, finished above site grade.",
+    "guidanceLine": "Nine sizes in the upgraded office build: workstations, storage and an optional manager or meeting partition, finished above site grade.",
     "10x10": {
-      "h2": "10×10 ft — the single-desk office that closes its door",
+      "h2": "10×10 ft: the single-desk office that closes its door",
       "intro": "Fitted as an office rather than a shelter: one workstation, a storage unit, upgraded lining and flooring, and glazing sized to admit real daylight instead of a slot of it. It suits a project manager who needs a door that shuts, a site accountant handling cash and records, or a consultant posted onto a client's premises. Everything above the frame is specified a grade up from the plain cabin, and that is what makes it a room a client can be shown into without apology rather than a store with a desk in it.",
       "h3": "Uses",
       "applications": [
@@ -1329,7 +1329,7 @@
       "stats": "10×10×8.5 ft · 100 sq ft · ₹1,59,500 + GST · ₹1,595/sq ft"
     },
     "20x8": {
-      "h2": "20×8 ft — two facing desks along a slim office",
+      "h2": "20×8 ft: two facing desks along a slim office",
       "intro": "Two facing workstations with a filing run between them, on a body slim enough for a tight plot or a rooftop position. The upgraded finish matters more at this width than at any other, because a narrow room with basic lining reads as a container while the same room with proper lining and flooring simply reads as small. Storage is planned into the layout before manufacture rather than added afterwards, which is what keeps the walkway between the two desks genuinely usable once the files, printer and equipment have all arrived.",
       "h3": "Uses",
       "applications": [
@@ -1341,8 +1341,8 @@
       "stats": "20×8×8.5 ft · 160 sq ft · ₹2,55,200 + GST · ₹1,595/sq ft"
     },
     "20x10": {
-      "h2": "20×10 ft — the reference office cabin, four to six desks",
-      "intro": "The most-ordered office configuration we make: four to six workstations, storage along one wall and the option of a partitioned manager's corner. This is the size that answers most searches for a portacabin office, and it sits deliberately between the plain cabin at ₹1,250 and the luxury build at ₹1,850 — office fittings and an upgraded finish, without the gypsum ceilings and feature panelling that a client-reception room needs and a working office simply does not. Most buyers recognise that trade the moment they compare the two.",
+      "h2": "20×10 ft: the reference office cabin, four to six desks",
+      "intro": "The most-ordered office configuration we make: four to six workstations, storage along one wall and the option of a partitioned manager's corner. This is the size that answers most searches for a portacabin office, and it sits deliberately between the plain cabin at ₹1,250 and the luxury build at ₹1,850. Office fittings and an upgraded finish, without the gypsum ceilings and feature panelling that a client-reception room needs and a working office simply does not. Most buyers recognise that trade the moment they compare the two.",
       "h3": "Uses",
       "applications": [
         "Four to six desk offices",
@@ -1353,7 +1353,7 @@
       "stats": "20×10×8.5 ft · 200 sq ft · ₹2,90,000 + GST · ₹1,450/sq ft"
     },
     "20x12": {
-      "h2": "20×12 ft — desks plus a meeting corner that stays put",
+      "h2": "20×12 ft: desks plus a meeting corner that stays put",
       "intro": "Added width creates a meeting corner that does not cost you a workstation. Four to six people carry on working while a short discussion happens at the table, with nobody moving. Offices hosting visiting consultants, client walk-throughs or weekly reviews take this width and stop borrowing the site canteen for meetings. Power and data points are set to your furniture plan before manufacture, so the table position is properly wired rather than served by a trailing extension lead, and the corner stays a meeting corner instead of drifting into storage.",
       "h3": "Uses",
       "applications": [
@@ -1365,7 +1365,7 @@
       "stats": "20×12×8.5 ft · 240 sq ft · ₹3,34,080 + GST · ₹1,392/sq ft"
     },
     "30x10": {
-      "h2": "30×10 ft — open office plus a closed manager's room",
+      "h2": "30×10 ft: open office plus a closed manager's room",
       "intro": "An open working floor plus a fully enclosed manager's or meeting room behind a door, for six to eight staff. That enclosed room changes how the office runs: appraisals, client calls and commercially sensitive conversations stop happening in the corner of a shared space. Each zone carries its own lighting and power circuits. The partition position is agreed from your seating plan ahead of manufacture, so it suits your reporting structure rather than an arbitrary halfway split, and the enclosed room ends up the size the work needs.",
       "h3": "Uses",
       "applications": [
@@ -1377,8 +1377,8 @@
       "stats": "30×10×8.5 ft · 300 sq ft · ₹4,17,600 + GST · ₹1,392/sq ft"
     },
     "40x8": {
-      "h2": "40×8 ft — the long office run for narrow plots",
-      "intro": "A row of seven to nine workstations with storage set between them, on a slim body that fits a boundary, a rooftop edge or a plot too narrow for a conventional office footprint. Repeated units line up into a coherent office row rather than a scatter of separate cabins. Glazing sits between the working positions so every seat receives daylight without a screen-glare line running the length of the row — a small detail that decides whether staff will actually sit at the far end or quietly crowd towards the door.",
+      "h2": "40×8 ft: the long office run for narrow plots",
+      "intro": "A row of seven to nine workstations with storage set between them, on a slim body that fits a boundary, a rooftop edge or a plot too narrow for a conventional office footprint. Repeated units line up into a coherent office row rather than a scatter of separate cabins. Glazing sits between the working positions so every seat receives daylight without a screen-glare line running the length of the row. A small detail that decides whether staff will actually sit at the far end or quietly crowd towards the door.",
       "h3": "Uses",
       "applications": [
         "Long-row office layouts",
@@ -1389,8 +1389,8 @@
       "stats": "40×8×8.5 ft · 320 sq ft · ₹4,36,160 + GST · ₹1,363/sq ft"
     },
     "20x20": {
-      "h2": "20×20 ft — the square office floor with clustered desks",
-      "intro": "The square allows a genuine floor plan instead of a corridor of desks: workstation clusters, a meeting table and a reception position coexist without any one of them blocking another. Ten to twelve staff. Delivered as two joined modules, it is the first size at which a portacabin office stops feeling temporary and begins working like a leased floor — which is why companies taking a two or three year site position tend to choose it over anything longer and narrower, even at the same total floor area.",
+      "h2": "20×20 ft: the square office floor with clustered desks",
+      "intro": "The square allows a genuine floor plan instead of a corridor of desks: workstation clusters, a meeting table and a reception position coexist without any one of them blocking another. Ten to twelve staff. Delivered as two joined modules, it is the first size at which a portacabin office stops feeling temporary and begins working like a leased floor, which is why companies taking a two or three year site position tend to choose it over anything longer and narrower, even at the same total floor area.",
       "h3": "Uses",
       "applications": [
         "Clustered workstation floors",
@@ -1401,7 +1401,7 @@
       "stats": "20×20×8.5 ft · 400 sq ft · ₹5,45,200 + GST · ₹1,363/sq ft"
     },
     "40x10": {
-      "h2": "40×10 ft — the three-zone office on a single base",
+      "h2": "40×10 ft: the three-zone office on a single base",
       "intro": "One long unit divides into an open floor, an enclosed room and a storage or server area, and still lands on a single prepared base. Ten to twelve staff. Companies run it as a full project office for the whole life of a contract, and the upgraded interior is the reason it can be handed over to a client or an auditor without embarrassment. Internal wall positions come from your own seating and equipment plan, settled before manufacture, so the finished layout follows how the team genuinely works rather than a standard three-way division.",
       "h3": "Uses",
       "applications": [
@@ -1413,7 +1413,7 @@
       "stats": "40×10×8.5 ft · 400 sq ft · ₹5,45,200 + GST · ₹1,363/sq ft"
     },
     "40x12": {
-      "h2": "40×12 ft — our largest office unit, corridor-served",
+      "h2": "40×12 ft: our largest office unit, corridor-served",
       "intro": "Our biggest office delivered in one piece, and the only size where a corridor serves the enclosed rooms instead of cutting across the working floor. Twelve to fifteen staff. That circulation is what separates a large cabin from an office people are genuinely willing to spend two years inside. Its ₹1,334 rate is the lowest anywhere on this ladder, so cost per desk works out better than in any other office configuration we make, and the plan scales by joining further units rather than by stretching this one.",
       "h3": "Uses",
       "applications": [

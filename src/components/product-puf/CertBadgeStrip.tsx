@@ -33,7 +33,7 @@ const CertBadgeStrip = () => {
             <div
               key={cert.key}
               className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2 shadow-sm"
-              title={cert.number ? `${cert.name} — ${cert.number}` : cert.name}
+              title={cert.number ? `${cert.name}, ${cert.number}` : cert.name}
             >
               <Icon className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
               <div className="leading-tight">

@@ -133,7 +133,7 @@ export const CERTIFICATIONS: Credential[] = [
   },
   {
     key: 'gst-karnataka',
-    name: 'GST — Karnataka',
+    name: 'GST: Karnataka',
     scope: 'Bengaluru manufacturing unit (560099)',
     issuer: 'Goods & Services Tax, Government of India',
     number: GSTIN_KARNATAKA,
@@ -144,7 +144,7 @@ export const CERTIFICATIONS: Credential[] = [
   },
   {
     key: 'gst-up',
-    name: 'GST — Uttar Pradesh',
+    name: 'GST: Uttar Pradesh',
     scope: 'Greater Noida manufacturing unit (201308)',
     issuer: 'Goods & Services Tax, Government of India',
     number: GSTIN_UTTAR_PRADESH,

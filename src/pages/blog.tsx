@@ -10,6 +10,13 @@ import { pageSEO, siteConfig } from '@/config/seo';
 import BlogImage from '@/components/BlogImage';
 import { decodeHtmlEntities } from '@/lib/utils';
 import redirectedPageDestinations from '@/lib/redirectedPageDestinations.json';
+import {
+  BlogPaginationModel,
+  BlogListingQuery,
+  buildBlogPageHref,
+  buildBlogPageWindow,
+  computeBlogPagination,
+} from '@/lib/blogPagination';
 
 import { BlogPost as ApiBlogPost } from '@/config/api';
 type BlogPost = ApiBlogPost;
@@ -51,67 +58,67 @@ type BlogCardPost = {
 const CATEGORY_SEO: Record<string, { title: string; meta: string }> = {
   'case-studies': {
     title: 'Porta Cabin & Prefab Project Case Studies | SAMAN',
-    meta: 'Real project case studies from SAMAN — porta cabins, container offices, prefab labour colonies and industrial sheds delivered across India. Read how we built it.',
+    meta: 'Real project case studies from SAMAN: porta cabins, container offices, prefab labour colonies and industrial sheds delivered across India. Read how we built it.',
   },
   'company-updates': {
     title: 'SAMAN Portable Company News & Updates',
-    meta: 'Latest updates from SAMAN POS India Pvt Ltd — new products, factory news, ISO certifications and prefab industry developments from our Bangalore and Noida factories.',
+    meta: 'Latest updates from SAMAN POS India Pvt Ltd: new products, factory news, ISO certifications and prefab industry developments from our Bangalore and Noida factories.',
   },
   'container-cafe': {
     title: 'Container Cafe Ideas, Designs & Guides | SAMAN',
-    meta: 'Articles on container cafes and coffee kiosks from SAMAN — design ideas, sizes, steel construction details and real project examples for highways, campuses and QSR outlets.',
+    meta: 'Articles on container cafes and coffee kiosks from SAMAN: design ideas, sizes, steel construction details and real project examples for highways, campuses and QSR outlets.',
   },
   'container-offices': {
     title: 'Container Office Articles & Buyer Guides | SAMAN',
-    meta: "Read SAMAN's container office articles — sizes, MS frame specs, price factors, site office uses and delivery details. Written by India's prefab steel structure manufacturer.",
+    meta: "Read SAMAN's container office articles: sizes, MS frame specs, price factors, site office uses and delivery details. Written by India's prefab steel structure manufacturer.",
   },
   'design-customization': {
     title: 'Prefab Design & Customisation Guides | SAMAN Portable',
-    meta: 'Guides on customising SAMAN prefab structures — layouts, cladding options, PUF panel insulation, electrical points, plumbing and colour finishes. Call for your requirement.',
+    meta: 'Guides on customising SAMAN prefab structures: layouts, cladding options, PUF panel insulation, electrical points, plumbing and colour finishes. Call for your requirement.',
   },
   'electronic-city': {
     title: 'Portable Cabins & Site Offices for Electronic City',
-    meta: 'SAMAN articles on portable cabins and prefab site offices for Electronic City, Bangalore — dispatched from our Gopasandra factory. Fast delivery, MS frame construction.',
+    meta: 'SAMAN articles on portable cabins and prefab site offices for Electronic City, Bangalore, dispatched from our Gopasandra factory. Fast delivery, MS frame construction.',
   },
   'industrial-shed': {
     title: 'Industrial Shed & Warehouse Articles | SAMAN Portable',
-    meta: 'Articles on prefab industrial sheds and warehouses from SAMAN — steel frame spans, GI sheet cladding, purlin design, cost factors and project delivery across India.',
+    meta: 'Articles on prefab industrial sheds and warehouses from SAMAN: steel frame spans, GI sheet cladding, purlin design, cost factors and project delivery across India.',
   },
   'industry-news': {
     title: 'Prefab & Modular Construction Industry News | SAMAN',
-    meta: "Stay updated on India's prefab and modular construction industry — material trends, IS code updates, project delivery insights and market news from SAMAN's editorial team.",
+    meta: "Stay updated on India's prefab and modular construction industry. Material trends, IS code updates, project delivery insights and market news from SAMAN's editorial team.",
   },
   'labor-colony': {
     title: 'Labour Colony & Worker Housing Articles | SAMAN',
-    meta: 'Articles on prefab labour colonies from SAMAN — MS hollow section frames, PUF panel rooms, toilet blocks, site planning and fast deployment for construction projects.',
+    meta: 'Articles on prefab labour colonies from SAMAN: MS hollow section frames, PUF panel rooms, toilet blocks, site planning and fast deployment for construction projects.',
   },
   'porta-cabins': {
     title: 'Porta Cabin Articles, Guides & Price Insights | SAMAN',
-    meta: "Read SAMAN's porta cabin articles — buyer guides, size options, MS frame specs, price factors and real project insights from India's ISO-certified prefab manufacturer.",
+    meta: "Read SAMAN's porta cabin articles: buyer guides, size options, MS frame specs, price factors and real project insights from India's ISO-certified prefab manufacturer.",
   },
   'portable-buildings': {
     title: 'Portable Building Articles & Guides | SAMAN Portable',
-    meta: 'Guides on portable and modular buildings from SAMAN — site offices, prefab classrooms, temporary showrooms and custom portable steel structures for Indian B2B buyers.',
+    meta: 'Guides on portable and modular buildings from SAMAN: site offices, prefab classrooms, temporary showrooms and custom portable steel structures for Indian B2B buyers.',
   },
   'prefab-buildings': {
     title: 'Prefab Building Articles & Modular Construction Guides | SAMAN',
     meta: 'SAMAN prefab building articles on factory-built commercial, office and industrial structures, including modular construction methods, cost factors and project planning.',
   },
   'portable-construction': {
-    title: 'Portable Construction Solutions — Articles | SAMAN',
-    meta: 'Articles on portable construction site solutions from SAMAN — site offices, toilet cabins, labour hutments and security cabins dispatched from Bangalore and Greater Noida.',
+    title: 'Portable Construction Solutions: Articles | SAMAN',
+    meta: 'Articles on portable construction site solutions from SAMAN: site offices, toilet cabins, labour hutments and security cabins dispatched from Bangalore and Greater Noida.',
   },
   'prefab-solutions': {
     title: 'Prefab Solutions Articles & Technical Guides | SAMAN',
-    meta: 'Technical articles on SAMAN prefab solutions — steel fabrication methods, sandwich panel systems, anchor bolt erection, weld specs and customisation for B2B buyers.',
+    meta: 'Technical articles on SAMAN prefab solutions: steel fabrication methods, sandwich panel systems, anchor bolt erection, weld specs and customisation for B2B buyers.',
   },
   'tips-guides': {
     title: 'Prefab Buyer Tips & Planning Guides | SAMAN Portable',
-    meta: "Practical tips for buying portable cabins, prefab offices and modular structures in India — size selection, site prep, delivery planning and installation by SAMAN's team.",
+    meta: "Practical tips for buying portable cabins, prefab offices and modular structures in India: size selection, site prep, delivery planning and installation by SAMAN's team.",
   },
   'uncategorized': {
     title: 'Prefab & Portable Cabin Articles | SAMAN Portable',
-    meta: 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd — ISO 9001:2015 certified manufacturer in Bangalore and Greater Noida.',
+    meta: 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd. ISO 9001:2015 certified manufacturer in Bangalore and Greater Noida.',
   },
 };
 
@@ -119,22 +126,22 @@ const CATEGORY_SEO: Record<string, { title: string; meta: string }> = {
 // category filter page so each category page carries unique on-page content
 // (duplicate-content fix). Shown ONLY when ?category= is active.
 const CATEGORY_INTRO: Record<string, string> = {
-  'porta-cabins': "Browse SAMAN's porta cabin articles — written by our manufacturing team in Bangalore. Find buyer guides on MS frame sizes, price factors, customisation options and real project examples from construction sites, factories and campuses across India.",
-  'container-offices': "SAMAN's container office articles cover everything a B2B buyer needs — 10ft to 40ft sizes, MS hollow section frame specs, PUF panel insulation, electrical fitouts, site office applications and delivery timelines from our Greater Noida and Bangalore factories.",
+  'porta-cabins': "Browse SAMAN's porta cabin articles, written by our manufacturing team in Bangalore. Find buyer guides on MS frame sizes, price factors, customisation options and real project examples from construction sites, factories and campuses across India.",
+  'container-offices': "SAMAN's container office articles cover everything a B2B buyer needs: 10ft to 40ft sizes, MS hollow section frame specs, PUF panel insulation, electrical fitouts, site office applications and delivery timelines from our Greater Noida and Bangalore factories.",
   'container-cafe': "SAMAN's container cafe articles cover design ideas, size options, steel fabrication details and real project examples. Whether you need a highway kiosk, campus coffee counter or a multi-unit QSR setup, find practical guidance here from India's prefab steel structure manufacturer.",
-  'industrial-shed': 'Browse articles on prefab industrial sheds and warehouses from SAMAN — IS 2062 steel frame construction, GI sheet and polycarbonate cladding, purlin and girt design, foundation requirements and project cost factors for factories, storage yards and logistics centres across India.',
-  'labor-colony': "SAMAN's labour colony articles cover prefab worker housing design — MS hollow section frame rooms, PUF panel insulation, attached toilet blocks, common kitchen units and site layout planning. Find guidance on fast deployment for construction projects, infrastructure sites and industrial campuses.",
-  'design-customization': "SAMAN's design and customisation articles help you plan the right prefab structure for your site. Explore layout options, cladding choices, PUF and cement board panels, electrical point configurations, plumbing fitouts and colour finishes — all customised to your requirement and dispatched from our Bangalore or Greater Noida factory.",
-  'prefab-solutions': "Technical articles on SAMAN's prefab solutions — covering MS frame fabrication, sandwich panel and PUF insulation systems, anchor bolt and base plate erection, weld quality standards and customisation options for Indian B2B buyers across construction, manufacturing and infrastructure sectors.",
-  'portable-buildings': "SAMAN's portable building articles cover modular steel structures for a wide range of uses — construction site offices, prefab classrooms, temporary showrooms, portable health centres and custom buildings. Find size guides, material specs and deployment advice for Indian B2B buyers.",
+  'industrial-shed': 'Browse articles on prefab industrial sheds and warehouses from SAMAN. IS 2062 steel frame construction, GI sheet and polycarbonate cladding, purlin and girt design, foundation requirements and project cost factors for factories, storage yards and logistics centres across India.',
+  'labor-colony': "SAMAN's labour colony articles cover prefab worker housing design: MS hollow section frame rooms, PUF panel insulation, attached toilet blocks, common kitchen units and site layout planning. Find guidance on fast deployment for construction projects, infrastructure sites and industrial campuses.",
+  'design-customization': "SAMAN's design and customisation articles help you plan the right prefab structure for your site. Explore layout options, cladding choices, PUF and cement board panels, electrical point configurations, plumbing fitouts and colour finishes, all customised to your requirement and dispatched from our Bangalore or Greater Noida factory.",
+  'prefab-solutions': "Technical articles on SAMAN's prefab solutions: covering MS frame fabrication, sandwich panel and PUF insulation systems, anchor bolt and base plate erection, weld quality standards and customisation options for Indian B2B buyers across construction, manufacturing and infrastructure sectors.",
+  'portable-buildings': "SAMAN's portable building articles cover modular steel structures for a wide range of uses: construction site offices, prefab classrooms, temporary showrooms, portable health centres and custom buildings. Find size guides, material specs and deployment advice for Indian B2B buyers.",
   'prefab-buildings': "Browse SAMAN's prefab building articles for practical guidance on factory-built offices, commercial buildings, modular workspaces and industrial prefab structures. These posts focus on construction methods, planning tradeoffs and buyer questions that sit alongside the main prefab building product range.",
-  'portable-construction': "Find articles on SAMAN's full range of portable construction site solutions — MS frame site offices, portable toilet cabins, prefab labour hutments and steel security cabins. All units dispatched from our Bangalore and Greater Noida factories with 3–5 day transit and ₹3,000 standard delivery.",
-  'industry-news': "Stay current with India's prefab and modular construction industry — steel material trends, IS code developments, government infrastructure project updates and market insights. Articles written and curated by SAMAN's team with 15+ years in prefab steel structure manufacturing.",
-  'tips-guides': "Practical buying guides from SAMAN's manufacturing team — how to select the right size porta cabin, prepare your site for delivery, plan electrical and plumbing fitouts, understand price factors and get your prefab structure installed correctly the first time.",
-  'case-studies': 'Real project case studies from SAMAN — see how we designed, fabricated and delivered porta cabins, container offices, prefab labour colonies and industrial sheds for clients across India. Each case study covers the brief, the build specs and the delivery outcome.',
-  'company-updates': 'Latest news from SAMAN POS India Pvt Ltd — new product launches, factory capacity updates, ISO certification milestones and company announcements from our Bangalore (560099) and Greater Noida (201308) manufacturing units.',
-  'electronic-city': "Articles on portable cabins and prefab site offices for Electronic City, Bangalore — covering MS frame construction, sizes, price factors and delivery. All units dispatched from SAMAN's Gopasandra factory in Bangalore Urban (560099) with fast turnaround for South Bangalore sites.",
-  'uncategorized': 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd — ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified manufacturer with factories in Bangalore and Greater Noida serving buyers across India.',
+  'portable-construction': "Find articles on SAMAN's full range of portable construction site solutions: MS frame site offices, portable toilet cabins, prefab labour hutments and steel security cabins. All units dispatched from our Bangalore and Greater Noida factories with 3–5 day transit and ₹3,000 standard delivery.",
+  'industry-news': "Stay current with India's prefab and modular construction industry. Steel material trends, IS code developments, government infrastructure project updates and market insights. Articles written and curated by SAMAN's team with 15+ years in prefab steel structure manufacturing.",
+  'tips-guides': "Practical buying guides from SAMAN's manufacturing team: how to select the right size porta cabin, prepare your site for delivery, plan electrical and plumbing fitouts, understand price factors and get your prefab structure installed correctly the first time.",
+  'case-studies': 'Real project case studies from SAMAN: see how we designed, fabricated and delivered porta cabins, container offices, prefab labour colonies and industrial sheds for clients across India. Each case study covers the brief, the build specs and the delivery outcome.',
+  'company-updates': 'Latest news from SAMAN POS India Pvt Ltd: new product launches, factory capacity updates, ISO certification milestones and company announcements from our Bangalore (560099) and Greater Noida (201308) manufacturing units.',
+  'electronic-city': "Articles on portable cabins and prefab site offices for Electronic City, Bangalore: covering MS frame construction, sizes, price factors and delivery. All units dispatched from SAMAN's Gopasandra factory in Bangalore Urban (560099) with fast turnaround for South Bangalore sites.",
+  'uncategorized': 'Articles on portable cabins, prefab structures and modular steel buildings from SAMAN POS India Pvt Ltd. ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified manufacturer with factories in Bangalore and Greater Noida serving buyers across India.',
 };
 
 function postMatchesCategory(post: BlogPost, categorySlug: string): boolean {
@@ -145,19 +152,13 @@ function postMatchesCategory(post: BlogPost, categorySlug: string): boolean {
   );
 }
 
+// Slice a FILTERED collection using the shared pagination model, so the rendered
+// slice and every pagination control are derived from the same numbers.
 function paginatePosts(posts: BlogPost[], page: number, perPage: number) {
-  const totalPages = Math.ceil(posts.length / perPage);
-  const start = (page - 1) * perPage;
+  const pagination = computeBlogPagination(posts.length, perPage, page);
   return {
-    posts: posts.slice(start, start + perPage),
-    pagination: {
-      currentPage: page,
-      totalPages,
-      totalPosts: posts.length,
-      perPage,
-      hasNextPage: page < totalPages,
-      hasPrevPage: page > 1,
-    },
+    posts: posts.slice(pagination.startIndex, pagination.endIndex),
+    pagination,
   };
 }
 
@@ -179,9 +180,8 @@ function getPaginatedCategoryDescription(title: string, page: number): string {
 
 interface BlogProps {
   posts: BlogCardPost[];
-  totalPages: number;
-  currentPage: number;
-  totalPosts: number;
+  /** The one shared pagination model every control on this page reads from. */
+  pagination: BlogPaginationModel;
   categories: Array<{ id: number; name: string; slug: string; count: number }>;
   tags: Array<{ id: number; name: string; slug: string; count: number }>;
   seoCanonical: string;
@@ -191,7 +191,8 @@ interface BlogProps {
   seoTitle: string;
   seoDescription: string;
   seoCategoryIntro: string | null;
-  activeCategory: string | null;
+  /** Active filter parameters, carried across every pagination href. */
+  listingQuery: BlogListingQuery;
 }
 
 export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query }) => {
@@ -217,7 +218,17 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     // Fetch blog posts with pagination - reduced to 10 posts per page for better performance.
     // Static content layer: reads exported post files — no WordPress call.
     const { fetchBlogPosts } = await import('@/lib/staticContent');
-    let result = await fetchBlogPosts(page, postsPerPage);
+    const unfiltered = await fetchBlogPosts(page, postsPerPage);
+
+    // ONE pagination model per request, always derived from the collection that
+    // is actually rendered. The unfiltered listing starts as the default; an
+    // active category filter replaces it with the filtered collection's model.
+    let pagePosts: BlogPost[] = unfiltered.posts;
+    let pagination: BlogPaginationModel = computeBlogPagination(
+      unfiltered.pagination.totalPosts || 0,
+      postsPerPage,
+      page
+    );
     let categoryHasMatchingPosts = false;
 
     if (cleanCategory) {
@@ -226,20 +237,22 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
 
       if (matchingPosts.length > 0) {
         categoryHasMatchingPosts = true;
-        result = paginatePosts(matchingPosts, page, postsPerPage);
+        const filtered = paginatePosts(matchingPosts, page, postsPerPage);
+        pagePosts = filtered.posts;
+        pagination = filtered.pagination;
       }
     }
 
     // A syntactically valid page number outside the available result set is a
     // missing resource, not an empty listing. This prevents blank HTTP 200 pages
     // for crawlers while retaining deterministic SSR for every valid page.
-    if (page > result.pagination.totalPages || (page > 1 && result.posts.length === 0)) {
+    if (page > pagination.totalPages || (page > 1 && pagePosts.length === 0)) {
       return { notFound: true };
     }
 
     console.log('Blog getServerSideProps: Result:', {
-      postsCount: result.posts?.length || 0,
-      pagination: result.pagination
+      postsCount: pagePosts.length,
+      pagination,
     });
 
     // In a real implementation, you would fetch categories and tags from WordPress
@@ -272,9 +285,14 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     //  - plain /blog      -> /blog
     let seoCanonical = blogCanonicalBase;
 
+    // Derived once from the shared model, then reused by canonical, hreflang and
+    // title/meta selection so those three can never disagree about validity.
+    const hasValidPaginatedSlice =
+      page > 1 && page <= pagination.totalPages && pagePosts.length > 0;
+
     if (cleanCategory && hasMatchingCategoryPosts) {
       seoCanonical = `${blogCanonicalBase}?category=${encodeURIComponent(cleanCategory)}`;
-      if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
+      if (hasValidPaginatedSlice) {
         seoCanonical = `${seoCanonical}&page=${encodeURIComponent(String(page))}`;
         seoRouteBehavior = 'indexable paginated category filter (self-canonical)';
       } else if (page > 1) {
@@ -290,7 +308,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       seoRouteBehavior = 'tag filter canonicalized to blog hub';
     } else if (hasExplicitPage && page <= 1) {
       seoRouteBehavior = 'page 0/1 canonicalized to blog hub';
-    } else if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
+    } else if (hasValidPaginatedSlice) {
       seoCanonical = `${blogCanonicalBase}?page=${encodeURIComponent(String(page))}`;
       seoRouteBehavior = 'indexable paginated blog listing (self-canonical)';
     } else if (page > 1) {
@@ -305,7 +323,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       hreflangSelf = seoCanonical;
     } else if (cleanTag) {
       hreflangSelf = `${blogCanonicalBase}?tag=${encodeURIComponent(cleanTag)}`;
-    } else if (page > 1 && page <= result.pagination.totalPages && result.posts.length > 0) {
+    } else if (hasValidPaginatedSlice) {
       hreflangSelf = seoCanonical;
     }
 
@@ -313,7 +331,6 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
     // include the page number so Ahrefs/Google do not see page 2+ listings as
     // duplicate title/description variants of page one.
     const categorySeo = cleanCategory && hasMatchingCategoryPosts ? CATEGORY_SEO[cleanCategory] : undefined;
-    const hasValidPaginatedSlice = page > 1 && page <= result.pagination.totalPages && result.posts.length > 0;
     const seoTitle = getPaginatedTitle(categorySeo?.title || pageSEO.blog.title, hasValidPaginatedSlice ? page : 1);
     const seoDescription = categorySeo
       ? (hasValidPaginatedSlice ? getPaginatedCategoryDescription(categorySeo.title, page) : categorySeo.meta)
@@ -330,7 +347,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
 
     // Compute reading time from the full content, then serialize only fields used
     // by the visible listing cards and ItemList schema.
-    const lightPosts: BlogCardPost[] = (result.posts || []).map((post: BlogPost) => ({
+    const lightPosts: BlogCardPost[] = pagePosts.map((post: BlogPost) => ({
       id: post.id,
       date: post.date,
       slug: post.slug,
@@ -362,11 +379,11 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       },
     }));
 
-    const props = {
+    const activeCategory = hasMatchingCategoryPosts ? cleanCategory || null : null;
+
+    const props: BlogProps = {
       posts: lightPosts,
-      totalPages: result.pagination.totalPages,
-      currentPage: result.pagination.currentPage,
-      totalPosts: result.pagination.totalPosts || 0,
+      pagination,
       categories,
       tags,
       seoCanonical,
@@ -376,7 +393,21 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
       seoTitle,
       seoDescription,
       seoCategoryIntro,
-      activeCategory: hasMatchingCategoryPosts ? cleanCategory || null : null,
+      // Only filters that ACTUALLY narrow this listing are carried into pagination
+      // hrefs. A parameter the query ignores is not an active filter, and baking
+      // it into every page link would mint a full set of crawlable duplicates of
+      // the same listing (36 pages per ignored value) that all canonicalise away.
+      //
+      //  - category: propagated only when it matched at least one post.
+      //  - tag:      NOT propagated. `?tag=` is currently read for SEO only and
+      //              does not filter the collection, so a tag listing IS the
+      //              unfiltered listing. If real tag filtering is implemented,
+      //              set `tag: cleanTag || null` here and it will be preserved
+      //              across every pagination surface automatically.
+      listingQuery: {
+        category: activeCategory,
+        tag: null,
+      },
     };
 
     console.log('Blog getServerSideProps: Returning props with', props.posts.length, 'posts');
@@ -389,7 +420,19 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async ({ query 
   }
 };
 
-const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, seoCanonical, hreflangSelf, seoNoindex, seoTitle, seoDescription, seoCategoryIntro, activeCategory }: BlogProps) => {
+const Blog = ({ posts, pagination, categories, tags, seoCanonical, hreflangSelf, seoNoindex, seoTitle, seoDescription, seoCategoryIntro, listingQuery }: BlogProps) => {
+  // Every pagination control below reads these — and only these — so Next, Load
+  // More, the numbered controls and the Go-to-page form can never disagree.
+  const {
+    totalItems: totalPosts,
+    pageSize,
+    currentPage,
+    totalPages,
+    remainingItems,
+    hasPreviousPage,
+    hasNextPage,
+  } = pagination;
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
@@ -411,21 +454,8 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
   // Semrush flag the required field as missing). We suppress the ItemList node and
   // its CollectionPage `mainEntity` reference whenever the page has no posts.
   const hasPosts = posts.length > 0;
-  const getBlogPageHref = (pageNumber: number) => {
-    const normalizedPage = Math.max(1, pageNumber);
-    const params = new URLSearchParams();
-
-    if (activeCategory) {
-      params.set('category', activeCategory);
-    }
-
-    if (normalizedPage > 1) {
-      params.set('page', String(normalizedPage));
-    }
-
-    const queryString = params.toString();
-    return queryString ? `/blog?${queryString}` : '/blog';
-  };
+  // Shared href builder — carries every active filter parameter across pages.
+  const getBlogPageHref = (pageNumber: number) => buildBlogPageHref(pageNumber, listingQuery);
 
   const blogHubStructuredData = [
     {
@@ -587,7 +617,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                     <div className="flex items-center justify-between">
                       <div>
                         <h2 className="text-lg font-semibold text-green-900 mb-1">
-                          📚 Blog Articles
+                          Blog Articles
                         </h2>
                         <p className="text-green-700 text-sm">
                           {posts && posts.length > 0 ? (
@@ -601,7 +631,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                         </p>
                         {totalPosts > 100 && (
                           <p className="text-green-600 text-xs mt-1">
-                            💡 Use the pagination below or &quot;Go to Page&quot; to navigate through all {totalPosts} articles
+                            Use the pagination below or &quot;Go to Page&quot; to navigate through all {totalPosts} articles
                           </p>
                         )}
                       </div>
@@ -684,7 +714,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                     ) : (
                       <div className="col-span-full text-center py-12">
                         <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl">📝</span>
+                          <span className="text-2xl"></span>
                         </div>
                         <h3 className="text-xl font-semibold text-foreground mb-2">
                           No blog posts available
@@ -696,8 +726,9 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                     )}
                   </div>
 
-                  {/* Load More Option */}
-                  {currentPage < totalPages && (
+                  {/* Load More Option — rendered only when page currentPage + 1
+                      actually holds at least one article. */}
+                  {hasNextPage && (
                     <div className="text-center mt-8 mb-6">
                       <Link href={getBlogPageHref(currentPage + 1)}>
                         <Button
@@ -705,13 +736,15 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                           size="lg"
                           className="px-8 py-3 text-lg font-medium hover:bg-[#0A3D2A]/10 hover:border-[#0A3D2A]/30 transition-all duration-300"
                         >
-                          📖 Load More Articles
+                          Load More Articles
                           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>
                       </Link>
-                      <p className="text-sm text-muted-foreground mt-2">
-                        Next {Math.min(BLOG_POSTS_PER_PAGE, totalPosts - (currentPage * BLOG_POSTS_PER_PAGE))} articles available
-                      </p>
+                      {remainingItems > 0 && (
+                        <p className="text-sm text-muted-foreground mt-2">
+                          Next {Math.min(pageSize, remainingItems)} articles available
+                        </p>
+                      )}
                     </div>
                   )}
 
@@ -719,130 +752,66 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                   {totalPages > 1 && (
                     <div className="flex items-center justify-center mt-12">
                       <div className="flex items-center gap-2">
-                        {/* Previous Button */}
-                        <Link href={getBlogPageHref(currentPage - 1)}>
+                        {/* Previous — a LINK only when page currentPage - 1 exists.
+                            On page one it is a plain disabled button with no anchor:
+                            a disabled <Button> inside <Link> still emits a crawlable
+                            <a href>, which is exactly how this page came to link to
+                            pages that do not exist. */}
+                        {hasPreviousPage ? (
+                          <Link href={getBlogPageHref(currentPage - 1)}>
+                            <Button variant="outline" size="sm" className="flex items-center gap-2">
+                              ← Previous
+                            </Button>
+                          </Link>
+                        ) : (
                           <Button
                             variant="outline"
                             size="sm"
-                            disabled={currentPage === 1}
+                            disabled
+                            aria-disabled="true"
                             className="flex items-center gap-2"
                           >
                             ← Previous
                           </Button>
-                        </Link>
+                        )}
 
-                        {/* Page Numbers - Smart pagination for large numbers */}
-                        {(() => {
-                          const pages = [];
-                          const maxVisiblePages = 7;
+                        {/* Page Numbers — window is clamped to 1..totalPages. */}
+                        {buildBlogPageWindow(currentPage, totalPages).map((entry, index) =>
+                          entry === 'gap' ? (
+                            <span key={`gap-${index}`} className="px-2 text-muted-foreground">...</span>
+                          ) : (
+                            <Link key={entry} href={getBlogPageHref(entry)}>
+                              <Button
+                                variant={currentPage === entry ? "default" : "outline"}
+                                size="sm"
+                                className="w-10 h-10 p-0"
+                              >
+                                {entry}
+                              </Button>
+                            </Link>
+                          )
+                        )}
 
-                          if (totalPages <= maxVisiblePages) {
-                            // Show all pages if total is small
-                            for (let i = 1; i <= totalPages; i++) {
-                              pages.push(
-                                <Link key={i} href={getBlogPageHref(i)}>
-                                  <Button
-                                    variant={currentPage === i ? "default" : "outline"}
-                                    size="sm"
-                                    className="w-10 h-10 p-0"
-                                  >
-                                    {i}
-                                  </Button>
-                                </Link>
-                              );
-                            }
-                          } else {
-                            // Smart pagination for large numbers
-                            if (currentPage <= 4) {
-                              // Show first 5 pages + ... + last page
-                              for (let i = 1; i <= 5; i++) {
-                                pages.push(
-                                  <Link key={i} href={getBlogPageHref(i)}>
-                                    <Button
-                                      variant={currentPage === i ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-10 h-10 p-0"
-                                    >
-                                      {i}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                              pages.push(<span key="dots1" className="px-2 text-muted-foreground">...</span>);
-                              pages.push(
-                                <Link key={totalPages} href={getBlogPageHref(totalPages)}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">
-                                    {totalPages}
-                                  </Button>
-                                </Link>
-                              );
-                            } else if (currentPage >= totalPages - 3) {
-                              // Show first page + ... + last 5 pages
-                              pages.push(
-                                <Link key={1} href={getBlogPageHref(1)}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">1</Button>
-                                </Link>
-                              );
-                              pages.push(<span key="dots2" className="px-2 text-muted-foreground">...</span>);
-                              for (let i = totalPages - 4; i <= totalPages; i++) {
-                                pages.push(
-                                  <Link key={i} href={getBlogPageHref(i)}>
-                                    <Button
-                                      variant={currentPage === i ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-10 h-10 p-0"
-                                    >
-                                      {i}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                            } else {
-                              // Show first + ... + current-1, current, current+1 + ... + last
-                              pages.push(
-                                <Link key={1} href={getBlogPageHref(1)}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">1</Button>
-                                </Link>
-                              );
-                              pages.push(<span key="dots3" className="px-2 text-muted-foreground">...</span>);
-                              for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-                                pages.push(
-                                  <Link key={i} href={getBlogPageHref(i)}>
-                                    <Button
-                                      variant={currentPage === i ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-10 h-10 p-0"
-                                    >
-                                      {i}
-                                    </Button>
-                                  </Link>
-                                );
-                              }
-                              pages.push(<span key="dots4" className="px-2 text-muted-foreground">...</span>);
-                              pages.push(
-                                <Link key={totalPages} href={getBlogPageHref(totalPages)}>
-                                  <Button variant="outline" size="sm" className="w-10 h-10 p-0">
-                                    {totalPages}
-                                  </Button>
-                                </Link>
-                              );
-                            }
-                          }
-
-                          return pages;
-                        })()}
-
-                        {/* Next Button */}
-                        <Link href={getBlogPageHref(currentPage + 1)}>
+                        {/* Next — a LINK only when page currentPage + 1 holds at
+                            least one article. On the last page it is a plain
+                            disabled button with no anchor. */}
+                        {hasNextPage ? (
+                          <Link href={getBlogPageHref(currentPage + 1)}>
+                            <Button variant="outline" size="sm" className="flex items-center gap-2">
+                              Next →
+                            </Button>
+                          </Link>
+                        ) : (
                           <Button
                             variant="outline"
                             size="sm"
-                            disabled={currentPage === totalPages}
+                            disabled
+                            aria-disabled="true"
                             className="flex items-center gap-2"
                           >
                             Next →
                           </Button>
-                        </Link>
+                        )}
                       </div>
 
                       {/* Page Info */}

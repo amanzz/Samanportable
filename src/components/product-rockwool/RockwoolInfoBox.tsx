@@ -22,7 +22,7 @@ const RockwoolInfoBox = ({ h1, priceMain, priceSubline, shortDescription, hsn }:
     { icon: Ruler, label: 'Size', value: 'Thickness 30–150 mm (made-to-order to 200 mm)' },
     { icon: Layers, label: 'Material', value: 'Non-combustible stone wool core; PPGI / PPGL / SS / aluminium facings' },
     { icon: Truck, label: 'Delivery', value: '3–5 day dispatch (standard thicknesses)' },
-    { icon: MapPin, label: 'Coverage', value: 'Bangalore · Delhi NCR — pan-India' },
+    { icon: MapPin, label: 'Coverage', value: 'Bangalore · Delhi NCR, pan-India' },
     { icon: Building2, label: 'Brand', value: 'SAMAN Portable' },
     { icon: Wrench, label: 'Application', value: 'Fire-rated walls, acoustic enclosures, plant rooms' },
   ];

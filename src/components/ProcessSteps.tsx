@@ -21,7 +21,7 @@ const ProcessSteps = () => {
       icon: Factory,
       step: '03',
       title: 'Factory Manufacturing',
-      description: 'Built at our Bengaluru or Greater Noida facility. Steel cutting, welding, panels, wiring — all under controlled quality conditions.',
+      description: 'Built at our Bengaluru or Greater Noida facility. Steel cutting, welding, panels, wiring, all under controlled quality conditions.',
     },
     {
       icon: Truck,
@@ -39,7 +39,7 @@ const ProcessSteps = () => {
       icon: Wrench,
       step: '06',
       title: 'Ongoing Support',
-      description: '5-year structural warranty begins. If anything needs attention — call us. We respond and resolve. Long-term relationship guaranteed.',
+      description: '5-year structural warranty begins. If anything needs attention, call us. We respond and resolve. Long-term relationship guaranteed.',
     },
   ];
 
@@ -51,7 +51,7 @@ const ProcessSteps = () => {
             Our Methodology
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
-            A Seamless <span className="text-[var(--ds-surface-inverse)]">6-Step Journey</span>
+            Our <span className="text-[var(--ds-surface-inverse)]">6-Step Process</span>
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto font-light">
             We handle the complexity, you handle your business. From initial consultation to final handover.

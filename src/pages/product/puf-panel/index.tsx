@@ -56,10 +56,10 @@ const FAQS = [
   { question: 'What is the core density of a SAMAN PUF panel?', answer: 'Our PUF core is 40 ± 2 kg/m³ with a thermal conductivity of 0.022–0.024 W/m·K. Any tested value beyond this range for a specific order is confirmed at quotation rather than stated as a blanket claim.' },
   { question: 'Do you make both roof and wall panels?', answer: 'Yes. We make roof panels in trapezoidal and ribbed profiles and wall panels in plain, baby-rib and micro-rib profiles, both from 30 mm to 200 mm. Roof and wall panels share the same core but differ in profile and effective width.' },
   { question: 'Are you a manufacturer or a reseller?', answer: 'SAMAN is a manufacturer. We produce PUF panels on our own lines in Bangalore and Greater Noida, which is why we can commit to custom thickness, facing, colour and cold-room joints that a reseller cannot.' },
-  { question: 'How long can a single PUF panel be?', answer: 'Standard lengths run 2–15 m, and custom lengths are possible. The practical limit is transport and site access — a very long panel needs road clearance and offloading space, so we confirm the workable length against your site before production.' },
+  { question: 'How long can a single PUF panel be?', answer: 'Standard lengths run 2–15 m, and custom lengths are possible. The practical limit is transport and site access. A very long panel needs road clearance and offloading space, so we confirm the workable length against your site before production.' },
   { question: 'What is the difference between PUF and PIR panels?', answer: 'Both are polyurethane-based, but PIR uses a modified core with improved fire behaviour and a higher service temperature, at roughly a third more (about 30–35%) cost. PUF suits most cabins, sheds and cold rooms; PIR is chosen where fire or temperature genuinely drives the spec.' },
-  { question: 'Do you supply PUF panels outside Bangalore and Delhi?', answer: 'Yes — we deliver pan-India, dispatching from whichever factory is nearer to your site. Transport is confirmed at quotation, and a 500 m² minimum billing applies to long-distance dispatch.' },
-  { question: 'Is a PUF panel waterproof?', answer: 'The steel facing sheets are weatherproof and the closed-cell PUF core does not absorb water in normal use, which is why the panel resists the moisture and condensation problems of a bare metal sheet. Joint sealing and correct slope on roofs still matter — the panel is only as watertight as its detailing.' },
+  { question: 'Do you supply PUF panels outside Bangalore and Delhi?', answer: 'Yes. We deliver pan-India, dispatching from whichever factory is nearer to your site. Transport is confirmed at quotation, and a 500 m² minimum billing applies to long-distance dispatch.' },
+  { question: 'Is a PUF panel waterproof?', answer: 'The steel facing sheets are weatherproof and the closed-cell PUF core does not absorb water in normal use, which is why the panel resists the moisture and condensation problems of a bare metal sheet. Joint sealing and correct slope on roofs still matter. The panel is only as watertight as its detailing.' },
   { question: 'How does a PUF panel behave in a fire?', answer: 'The core is a closed-cell PUF; where a project needs improved fire performance, PIR offers better fire behaviour than standard PUF. We state this qualitatively and do not publish class codes or hour ratings without independent test data for the specific build.' },
 ];
 
@@ -112,7 +112,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
 );
 
 const INTRO_TEXT =
-  'A PUF panel — often searched as “puff panel” — is an insulated building panel with a rigid polyurethane foam core bonded between two steel facing sheets. SAMAN manufactures each panel on our own lines in Bangalore and Greater Noida, so you buy the finished insulated panel direct from the maker — not through a trader — in the thickness, facing and profile your project drawing calls for.';
+  'A PUF panel, often searched as “puff panel”, is an insulated building panel with a rigid polyurethane foam core bonded between two steel facing sheets. SAMAN manufactures each panel on our own lines in Bangalore and Greater Noida, so you buy the finished insulated panel direct from the maker, not through a trader, in the thickness, facing and profile your project drawing calls for.';
 
 const GALLERY_IMAGES = [
   { src: '/images/puf-panel/cross-section-30mm-800x800.webp', alt: 'Cross-section of a 30 mm PUF panel showing the polyurethane foam core between two steel facings', title: '30 mm PUF panel cross-section' },
@@ -134,13 +134,13 @@ function DescriptionContent() {
           <H2 id="why-buyers-struggle">Why buyers struggle to source PUF panels in India</H2>
           <P>
             Most buyers searching for a PUF panel land on marketplace listings, not manufacturers. The listing
-            shows one price, one photo and no real specification — so you cannot tell a genuine maker from a
+            shows one price, one photo and no real specification: so you cannot tell a genuine maker from a
             reseller repackaging someone else&apos;s stock.
           </P>
           <P>
             The result is avoidable risk. You commit to a panel without knowing the actual core density, the
             facing gauge, or whether the panel length can even reach your site by road. Two &ldquo;50 mm
-            panels&rdquo; from two sellers can differ in facing thickness, foam density and joint type — and the
+            panels&rdquo; from two sellers can differ in facing thickness, foam density and joint type, and the
             cheaper one often hides a thinner facing sheet.
           </P>
           <P>
@@ -152,7 +152,7 @@ function DescriptionContent() {
         <section id="factory-made" className="space-y-3">
           <H2 id="factory-made">Factory-made PUF panels from our Bangalore and Greater Noida lines</H2>
           <P>
-            SAMAN runs two panel factories — one in Bangalore for South India dispatch and one in Greater Noida
+            SAMAN runs two panel factories, one in Bangalore for South India dispatch and one in Greater Noida
             for North India and Delhi NCR. Both are real, owned production lines, not trading yards. Running two
             lines means shorter road distance to most Indian project sites, which matters because long insulated
             panels are transport-sensitive.
@@ -172,15 +172,15 @@ function DescriptionContent() {
         <section id="manufacturing" className="space-y-3">
           <H2 id="manufacturing">How we manufacture and check every PUF panel</H2>
           <P>
-            A panel is not assembled from pre-made parts — it is formed as one continuous process on our line:
+            A panel is not assembled from pre-made parts. It is formed as one continuous process on our line:
           </P>
           <ol className="list-decimal space-y-2 pl-5 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            <li><span className="font-semibold text-foreground">Coil feed</span> — two facing coils (PPGI, PPGL, BGL, stainless steel or aluminium, per your spec) are uncoiled and fed into the line simultaneously, one for each face.</li>
-            <li><span className="font-semibold text-foreground">Forming</span> — each coil passes through roll-forming stations that set the flat, ribbed or trapezoidal profile before the core is added.</li>
-            <li><span className="font-semibold text-foreground">Foaming</span> — liquid polyurethane is injected continuously between the two formed facings as they travel down the line.</li>
-            <li><span className="font-semibold text-foreground">Curing</span> — the foam expands and cures in a heated press, bonding to both facings as it sets. This is what makes the panel one rigid board rather than a sheet with foam glued behind it.</li>
-            <li><span className="font-semibold text-foreground">Tongue-and-groove profiling</span> — the panel edges are cut and profiled for T&amp;G (or cam-lock for cold-room orders) so panels close tight on site.</li>
-            <li><span className="font-semibold text-foreground">Quality checks</span> — every batch is checked for facing gauge, panel thickness, foam density and rise, and facing-to-core adhesion, before the panel is approved for stock.</li>
+            <li><span className="font-semibold text-foreground">Coil feed</span>. Two facing coils (PPGI, PPGL, BGL, stainless steel or aluminium, per your spec) are uncoiled and fed into the line simultaneously, one for each face.</li>
+            <li><span className="font-semibold text-foreground">Forming</span>. Each coil passes through roll-forming stations that set the flat, ribbed or trapezoidal profile before the core is added.</li>
+            <li><span className="font-semibold text-foreground">Foaming</span>. Liquid polyurethane is injected continuously between the two formed facings as they travel down the line.</li>
+            <li><span className="font-semibold text-foreground">Curing</span>. The foam expands and cures in a heated press, bonding to both facings as it sets. This is what makes the panel one rigid board rather than a sheet with foam glued behind it.</li>
+            <li><span className="font-semibold text-foreground">Tongue-and-groove profiling</span>. The panel edges are cut and profiled for T&amp;G (or cam-lock for cold-room orders) so panels close tight on site.</li>
+            <li><span className="font-semibold text-foreground">Quality checks</span>. Every batch is checked for facing gauge, panel thickness, foam density and rise, and facing-to-core adhesion, before the panel is approved for stock.</li>
           </ol>
           <P>
             Panels are then stacked, edge-protected and bundled for dispatch from the nearer of our two
@@ -189,8 +189,7 @@ function DescriptionContent() {
           <div className="rounded-xl border border-accent/40 bg-accent/10 p-4">
             <p className="text-[15px] leading-relaxed text-foreground sm:text-base">
               <span className="font-bold">A common buyer mistake:</span> accepting a panel batch without asking
-              for the density check result. Two panels can look identical and still differ in core density —
-              and a lower-density core insulates worse and is more prone to facing separation over time. Ask
+              for the density check result. Two panels can look identical and still differ in core density, and a lower-density core insulates worse and is more prone to facing separation over time. Ask
               your supplier for the batch density figure before you accept delivery, not after.
             </p>
           </div>
@@ -213,12 +212,12 @@ function DescriptionContent() {
             <P>
               Contractors use these panels as the walls and roof of porta cabins, site offices and prefab rooms
               because the panel arrives finished on both faces. There is no separate insulation, cladding and
-              lining step — one panel does all three, which is why prefab builders standardise on them.
+              lining step. One panel does all three, which is why prefab builders standardise on them.
             </P>
             <P>
               For this use, thickness usually stays modest: 30–50 mm covers most cabin walls and partitions,
               since the building is occupied for working hours rather than holding a fixed internal temperature
-              against the outside. A 50 mm panel is our most common choice here — it adds meaningfully better
+              against the outside. A 50 mm panel is our most common choice here. It adds meaningfully better
               heat control than 30 mm for a small step up in weight and cost, without over-specifying a
               structure that does not need cold-room-level insulation. Where a cabin sits in direct sun for long
               hours, moving up to 50 mm rather than 30 mm is usually the better trade.
@@ -238,7 +237,7 @@ function DescriptionContent() {
               the practical starting point for a genuine cold room, since thinner panels struggle to hold a
               large indoor-outdoor temperature difference without excessive running cost on the refrigeration
               side. Deep-freeze and very low-temperature stores are why we manufacture up to 150 mm
-              freezer-grade — going thinner to save on panel cost usually costs more back in compressor load
+              freezer-grade, going thinner to save on panel cost usually costs more back in compressor load
               over the life of the store.
             </P>
           </div>
@@ -269,11 +268,11 @@ function DescriptionContent() {
         </section>
 
         <section id="puf-vs-pir">
-          <H2 id="puf-vs-pir">PUF vs PIR — which core do you need?</H2>
+          <H2 id="puf-vs-pir">PUF vs PIR: which core do you need?</H2>
           <div className="mt-3">
             <ComparisonBox eyebrow="Information gain" title="The honest PUF vs PIR trade-off">
               <P>
-                PUF and PIR panels look identical from outside — the difference is the core chemistry. PIR is a
+                PUF and PIR panels look identical from outside, the difference is the core chemistry. PIR is a
                 modified formulation that improves fire behaviour and raises the service temperature, at a
                 higher price.
               </P>
@@ -310,11 +309,11 @@ function DescriptionContent() {
               <P>
                 For most cabins, sheds, offices and standard cold rooms, PUF is the right choice. PIR earns its
                 premium only where fire performance or higher service temperature genuinely drives the
-                specification. We manufacture both, so we recommend on the drawing — not on the margin.
+                specification. We manufacture both, so we recommend on the drawing, not on the margin.
               </P>
               <P>
                 The roughly-a-third premium is worth paying when your service temperature will genuinely approach
-                PIR&apos;s higher ceiling — up to +120°C against PUF&apos;s +80°C — such as near hot process
+                PIR&apos;s higher ceiling, up to +120°C against PUF&apos;s +80°C, such as near hot process
                 equipment or in a building code that specifically calls for improved fire performance in the
                 core. If your project sits comfortably within PUF&apos;s −40°C to +80°C range and has no
                 fire-rating requirement beyond standard practice, the premium buys margin you are unlikely to
@@ -353,7 +352,7 @@ function DescriptionContent() {
         <section id="price-factors" className="space-y-3">
           <H2 id="price-factors">What decides your PUF panel quotation</H2>
           <P>
-            A panel&apos;s price is not one number — it moves with the build you choose. The main factors are
+            A panel&apos;s price is not one number, it moves with the build you choose. The main factors are
             thickness (30 mm to 200 mm), facing gauge (0.35–0.80 mm), facing material (PPGI costs less than
             stainless steel), core density, colour, profile, panel length and order size. Delivery distance
             from the nearer of our two factories also affects the landed cost.
@@ -378,7 +377,7 @@ function DescriptionContent() {
           </P>
           <P>
             There is also accountability. If a site query comes up, the factory that made the panel is the one
-            answering — not a middle layer forwarding your question. We have delivered for leading developers
+            answering, not a middle layer forwarding your question. We have delivered for leading developers
             and EPC contractors across Bangalore, Delhi, Mumbai, Bhopal, Chennai and Hyderabad, and in every
             case the specification we quoted is the panel we produced.
           </P>
@@ -474,8 +473,8 @@ function ShippingContent() {
         sellers never state upfront.
       </P>
       <TrustCard
-        deliveryLine="Pan-India delivery; transport confirmed at quotation; 3–5 business day default dispatch — see our"
-        returnsLine="7-day returns on standard products (3-day on custom) — see our"
+        deliveryLine="Pan-India delivery; transport confirmed at quotation; 3–5 business day default dispatch, see our"
+        returnsLine="7-day returns on standard products (3-day on custom), see our"
       />
     </div>
   );
@@ -486,7 +485,7 @@ export default function PufPanelHub() {
     <Layout>
       <UnifiedSEO
         fallbackTitle="PUF Panel Manufacturer in India | Price & Sizes | SAMAN"
-        fallbackDescription="SAMAN manufactures PUF panel systems at our Bangalore and Greater Noida lines — 30–200 mm thickness, PPGI/PPGL/SS facings, roof and wall profiles. Get factory-direct specs and a quotation."
+        fallbackDescription="SAMAN manufactures PUF panel systems at our Bangalore and Greater Noida lines: 30–200 mm thickness, PPGI/PPGL/SS facings, roof and wall profiles. Get factory-direct specs and a quotation."
         fallbackCanonical="https://www.samanportable.com/product/puf-panel"
         keywords="puf panel, puf panel manufacturers in india, puf panel suppliers, puf panel near me"
         author="SAMAN POS India Private Limited"
@@ -530,7 +529,7 @@ export default function PufPanelHub() {
 
             <div className="order-1 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <ProductInfoBox
-                h1="PUF Panel — Factory-Made Insulated Panels by SAMAN"
+                h1="PUF Panel, Factory-Made Insulated Panels by SAMAN"
                 priceMain="From ₹1,050 / sq mt"
                 priceSubline="30mm base spec · ex-GST · final price at quotation"
                 shortDescription={INTRO_TEXT}

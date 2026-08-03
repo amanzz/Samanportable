@@ -37,7 +37,7 @@ const TestimonialsSection = () => {
       name: 'Ashoka A',
       company: 'HAL India, Bengaluru',
       rating: 5,
-      text: 'HAL has strict procurement standards. SAMAN came prepared — full documentation, material specs, and test certificates provided upfront. Eighteen months of use and not one structural complaint.'
+      text: 'HAL has strict procurement standards. SAMAN came prepared: full documentation, material specs, and test certificates provided upfront. Eighteen months of use and not one structural complaint.'
     }
   ];
 

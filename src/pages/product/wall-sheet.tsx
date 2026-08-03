@@ -10,6 +10,7 @@ import ProductReviews from '@/components/ProductReviews';
 import RelatedProductRail from '@/components/product/RelatedProductRail';
 import ProductSummaryLayout from '@/components/product/ProductSummaryLayout';
 import { C16_PANEL_CATALOG, ROOFING_SHEET_HUB, type RelatedRailItem } from '@/lib/c16PanelCatalog';
+import { normaliseContentRecord } from '@/lib/contentNormalization';
 import { CheckCircle, Truck } from 'lucide-react';
 
 const baseImagePath = '/panel-images/wall-sheet/';
@@ -478,7 +479,7 @@ export const getStaticProps: GetStaticProps<WallSheetPageProps> = async () => {
   const schemaBlocks = parseSchemaBlocks(source);
 
   return {
-    props: {
+    props: normaliseContentRecord({
       metaTitle: extractLineValue(source, 'Meta title'),
       metaDescription: extractLineValue(source, 'Meta description'),
       summary: parseSummary(source),
@@ -490,7 +491,7 @@ export const getStaticProps: GetStaticProps<WallSheetPageProps> = async () => {
       certifications: parseCertifications(source),
       productSchema: schemaBlocks[0] || {},
       breadcrumbSchema: schemaBlocks[1] || {},
-    },
+    }),
   };
 };
 

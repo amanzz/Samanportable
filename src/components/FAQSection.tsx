@@ -86,7 +86,7 @@ const FAQSection = () => {
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#0A3D2A]/5 rounded-bl-full pointer-events-none" />
           
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Still have questions?
+            Questions we are asked most
           </h3>
           <p className="text-gray-500 mb-8 font-light">
             Our expert consultants are available for personal assistance from 9 AM to 7 PM.

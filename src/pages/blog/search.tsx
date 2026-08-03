@@ -103,7 +103,7 @@ const BlogSearch = ({ query, posts, totalMatches, totalPosts, categories }: Sear
       {/* Search is a pure UX surface: noindex,follow ALWAYS (with and without q), never
           in the sitemap. Zero crawl noise, zero index bloat. */}
       <UnifiedSEO
-        fallbackTitle="Search — SAMAN Portable Blog"
+        fallbackTitle="Search, SAMAN Portable Blog"
         fallbackDescription="Search SAMAN Portable's library of prefab and portable cabin guides by title."
         canonical={`${siteConfig.url}/blog/search`}
         fallbackCanonical={`${siteConfig.url}/blog/search`}
@@ -144,7 +144,7 @@ const BlogSearch = ({ query, posts, totalMatches, totalPosts, categories }: Sear
               </nav>
 
               <h1 className="text-3xl font-bold tracking-tight text-[var(--ds-color-forest)] md:text-4xl">
-                Search — SAMAN Portable Blog
+                Search: SAMAN Portable Blog
               </h1>
 
               {/* Plain GET form — works with JS disabled. */}

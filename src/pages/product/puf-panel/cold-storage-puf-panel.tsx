@@ -27,15 +27,15 @@ const JUMP_ITEMS = [
 ];
 
 const FAQS = [
-  { question: 'What is a cold storage PUF panel?', answer: 'A cold storage PUF panel is an insulated sandwich panel — steel facing bonded to a rigid polyurethane foam core — built thick enough to hold a temperature difference between a cold room or freezer and the outside air. SAMAN manufactures cold storage grade panels including freezer-grade panels up to 150 mm.' },
-  { question: 'What thickness do I need for a cold room?', answer: 'As general guidance, chiller and standard cold-storage rooms commonly use 80–100 mm; freezer rooms commonly use 120–150 mm. This is a starting reference only — the correct thickness for your project is set from a heat-load calculation at quotation.' },
+  { question: 'What is a cold storage PUF panel?', answer: 'A cold storage PUF panel is an insulated sandwich panel, steel facing bonded to a rigid polyurethane foam core, built thick enough to hold a temperature difference between a cold room or freezer and the outside air. SAMAN manufactures cold storage grade panels including freezer-grade panels up to 150 mm.' },
+  { question: 'What thickness do I need for a cold room?', answer: 'As general guidance, chiller and standard cold-storage rooms commonly use 80–100 mm; freezer rooms commonly use 120–150 mm. This is a starting reference only. The correct thickness for your project is set from a heat-load calculation at quotation.' },
   { question: 'What is the difference between a chiller room panel and a freezer room panel?', answer: 'A chiller room holds produce above freezing and typically uses a thinner panel (80–100 mm guidance); a freezer room holds product below freezing and needs a larger temperature gap, typically using a thicker panel (120–150 mm guidance). Both figures are confirmed against your actual heat load.' },
-  { question: 'Do you manufacture freezer-grade PUF panels?', answer: 'Yes — we manufacture freezer-grade panels up to 150 mm at our own factories in Bangalore and Greater Noida.' },
-  { question: 'How is condensation prevented in a cold storage PUF panel room?', answer: 'Vapour sealing at panel joints, floor/ceiling junctions and door openings is what prevents condensation in a cold room — these are confirmed against your installation drawing rather than treated as a fixed standard detail, since the risk depends on your specific room geometry and access points.' },
+  { question: 'Do you manufacture freezer-grade PUF panels?', answer: 'Yes. We manufacture freezer-grade panels up to 150 mm at our own factories in Bangalore and Greater Noida.' },
+  { question: 'How is condensation prevented in a cold storage PUF panel room?', answer: 'Vapour sealing at panel joints, floor/ceiling junctions and door openings is what prevents condensation in a cold room. These are confirmed against your installation drawing rather than treated as a fixed standard detail, since the risk depends on your specific room geometry and access points.' },
   { question: 'What joint system do cold storage panels use?', answer: 'Panels are supplied with tongue-and-groove or cam-lock joining, selected per project at quotation.' },
-  { question: 'Do you supply floor panels for freezer rooms?', answer: 'Yes — SAMAN also manufactures insulated floor panels for freezer rooms, alongside the wall and ceiling range. Specification and pricing are confirmed at quotation against your room layout.' },
+  { question: 'Do you supply floor panels for freezer rooms?', answer: 'Yes. SAMAN also manufactures insulated floor panels for freezer rooms, alongside the wall and ceiling range. Specification and pricing are confirmed at quotation against your room layout.' },
   { question: 'What is the price of a cold storage PUF panel?', answer: 'There is no single published cold room price, because the rate depends on thickness, room size and finish. Base panel rates by thickness are on our pricing page; a full room quotation is confirmed once we have your dimensions and target temperature.' },
-  { question: 'Do you supply cold storage panels pan-India?', answer: 'Yes — we dispatch from Bangalore for South India and Greater Noida for North India and Delhi NCR, with transport confirmed at quotation.' },
+  { question: 'Do you supply cold storage panels pan-India?', answer: 'Yes. We dispatch from Bangalore for South India and Greater Noida for North India and Delhi NCR, with transport confirmed at quotation.' },
 ];
 
 const PRODUCT_JSONLD = {
@@ -50,7 +50,7 @@ const PRODUCT_JSONLD = {
   material: 'Polyurethane foam core with steel facing sheets',
   additionalProperty: [
     { '@type': 'PropertyValue', name: 'Cold storage thickness', value: '80/100/120/150 mm typical; freezer-grade up to 150 mm' },
-    { '@type': 'PropertyValue', name: 'Facing options', value: 'PPGI, PPGL, BGL, Stainless Steel, Aluminium, Craft Paper — 0.35–0.80 mm' },
+    { '@type': 'PropertyValue', name: 'Facing options', value: 'PPGI, PPGL, BGL, Stainless Steel, Aluminium, Craft Paper: 0.35–0.80 mm' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
   offers: panelAggregateOffer(1050, 'https://www.samanportable.com/product/puf-panel/cold-storage-puf-panel'),
@@ -105,7 +105,7 @@ function DescriptionContent() {
         <section id="thickness-by-use" className="space-y-4">
           <H2 id="thickness-by-use">Recommended thickness by use case</H2>
           <P>
-            Cold storage thickness is not a fixed number — it follows the temperature you need to hold, the
+            Cold storage thickness is not a fixed number. It follows the temperature you need to hold, the
             room size and the local climate, and the final figure is properly set from a heat-load calculation
             at quotation rather than picked off a generic chart. As general industry guidance to start the
             conversation:
@@ -113,8 +113,8 @@ function DescriptionContent() {
 
           <H3>Chiller rooms</H3>
           <P>
-            Chiller and general cold-storage rooms — holding produce, dairy or general perishables above
-            freezing — commonly use panels in the <span className="font-semibold text-foreground">80–100
+            Chiller and general cold-storage rooms, holding produce, dairy or general perishables above
+            freezing, commonly use panels in the <span className="font-semibold text-foreground">80–100
             mm</span> range as a starting reference. This is guidance, not a fixed SAMAN specification; your
             actual room size, door frequency and ambient climate all move the correct thickness, confirmed at
             quotation.
@@ -127,7 +127,7 @@ function DescriptionContent() {
 
           <H3>Freezer rooms</H3>
           <P>
-            Freezer and deep-freeze rooms — holding product below freezing — commonly use panels in the{' '}
+            Freezer and deep-freeze rooms, holding product below freezing, commonly use panels in the{' '}
             <span className="font-semibold text-foreground">120–150 mm</span> range as general guidance, since
             a larger temperature gap needs more core depth to hold efficiently. SAMAN manufactures freezer-grade
             panels up to 150 mm; the exact thickness for your freezer room is still set from your heat-load
@@ -151,7 +151,7 @@ function DescriptionContent() {
             Cold storage panels use the same PUF core and facing range as the rest of our line, scaled to the
             thicker end for cold-chain use. Panels are supplied with tongue-and-groove or cam-lock joining,
             selected per project at quotation. SAMAN also manufactures insulated floor panels for freezer
-            rooms, alongside the wall and ceiling range — specification and pricing confirmed at quotation
+            rooms, alongside the wall and ceiling range: specification and pricing confirmed at quotation
             against your room layout.
           </P>
           <P>
@@ -172,7 +172,7 @@ function DescriptionContent() {
           <H2 id="price-factors">Price and quote factors</H2>
           <P>
             A cold storage PUF panel rate moves with thickness, facing, room size and finish, the same drivers
-            behind every panel rate in our range — there is no single published &ldquo;cold room price&rdquo;
+            behind every panel rate in our range: there is no single published &ldquo;cold room price&rdquo;
             we can quote without your specification, because a genuine cold-chain quote depends on the
             heat-load calculation, not a headline rate. Base panel rates by thickness sit on our{' '}
             <Link href="/product/puf-panel/puf-panel-price" className="font-semibold text-primary hover:underline">
@@ -196,10 +196,10 @@ function DescriptionContent() {
           <ul className="list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
             <li><span className="font-semibold text-foreground">Vapour sealing at joints</span> matters more in a cold room than in a standard wall or roof, because the temperature difference across the panel drives condensation risk if joints and penetrations aren&apos;t properly sealed.</li>
             <li><span className="font-semibold text-foreground">Floor and ceiling junctions</span> need particular attention, since these are common points where cold-side moisture finds a path if not detailed correctly.</li>
-            <li><span className="font-semibold text-foreground">Door and access openings</span> are a frequent condensation point — the framing and seal around a cold-room door is confirmed against your drawing rather than treated as a standard detail.</li>
+            <li><span className="font-semibold text-foreground">Door and access openings</span> are a frequent condensation point: the framing and seal around a cold-room door is confirmed against your drawing rather than treated as a standard detail.</li>
           </ul>
           <P>
-            These are qualitative cautions, not a substitute for a proper installation drawing — we confirm the
+            These are qualitative cautions, not a substitute for a proper installation drawing. We confirm the
             sealing and fixing detail for your specific room at quotation.
           </P>
           <LongImage
@@ -267,14 +267,14 @@ function ShippingContent() {
     <div className="space-y-4">
       <P>
         We dispatch from Bangalore for South India and Greater Noida for North India and Delhi NCR. Pan-India
-        delivery; transport confirmed at quotation; 3–5 business day default dispatch — see our{' '}
+        delivery; transport confirmed at quotation; 3–5 business day default dispatch, see our{' '}
         <Link href="/delivery-policy" className="font-semibold text-primary hover:underline">
           Delivery Policy
         </Link>
         .
       </P>
       <P>
-        Standard products carry 7-day returns (3-day on custom) — see our{' '}
+        Standard products carry 7-day returns (3-day on custom), see our{' '}
         <Link href="/refund-and-return-policy" className="font-semibold text-primary hover:underline">
           Refund &amp; Return Policy
         </Link>
@@ -288,8 +288,8 @@ export default function ColdStoragePufPanel() {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="Cold Storage PUF Panel — Cold Room & Freezer Panels | SAMAN"
-        fallbackDescription="Cold storage PUF panel from SAMAN — insulated cold room and freezer room panels, freezer-grade up to 150 mm, factory-made in Bangalore and Greater Noida. Get a quote."
+        fallbackTitle="Cold Storage PUF Panel, Cold Room & Freezer Panels | SAMAN"
+        fallbackDescription="Cold storage PUF panel from SAMAN: insulated cold room and freezer room panels, freezer-grade up to 150 mm, factory-made in Bangalore and Greater Noida. Get a quote."
         fallbackCanonical="https://www.samanportable.com/product/puf-panel/cold-storage-puf-panel"
         keywords="cold storage puf panel, puf panel for cold storage, cold room puf panel, freezer room panel, cold room panel"
         author="SAMAN POS India Private Limited"

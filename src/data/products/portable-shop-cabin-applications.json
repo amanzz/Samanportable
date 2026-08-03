@@ -1,11 +1,11 @@
 {
   "h2": "Explore every Portable Shop Cabin size & its applications",
-  "intro": "Nine standard sizes, one retail specification — pick the footprint that matches how you'll trade, with fixed base prices and delivery in 7 working days.",
+  "intro": "Nine standard sizes, one retail specification: pick the footprint that matches how you'll trade, with fixed base prices and delivery in 7 working days.",
   "panels": [
     {
       "sizeSlug": "10x10",
-      "h3": "10×10 ft — the single-counter starter shop",
-      "paragraph": "The 10×10 ft is the compact way to open a shop: 100 sq ft with one shopfront, a roller shutter and a sliding display window, and room for one operator behind a service counter. It arrives retail-fitted and trades from day one — and when the pitch changes, the whole shop lifts and moves with you.",
+      "h3": "10×10 ft: the single-counter starter shop",
+      "paragraph": "The 10×10 ft is the compact way to open a shop: 100 sq ft with one shopfront, a roller shutter and a sliding display window, and room for one operator behind a service counter. It arrives retail-fitted and trades from day one, and when the pitch changes, the whole shop lifts and moves with you.",
       "applications": [
         "Standalone retail counters",
         "Mobile recharge and accessories counters",
@@ -15,8 +15,8 @@
     },
     {
       "sizeSlug": "20x8",
-      "h3": "20×8 ft — the slim shopfront",
-      "paragraph": "A narrow 160 sq ft unit that fits where wider cabins cannot — a full-length shopfront with shutter and display window on a slim body that still travels on a standard 20 ft trailer. Right for a service counter or a compact outlet on a tight frontage.",
+      "h3": "20×8 ft: the slim shopfront",
+      "paragraph": "A narrow 160 sq ft unit that fits where wider cabins cannot. A full-length shopfront with shutter and display window on a slim body that still travels on a standard 20 ft trailer. Right for a service counter or a compact outlet on a tight frontage.",
       "applications": [
         "Narrow-frontage retail outlets",
         "Service and enquiry counters",
@@ -26,8 +26,8 @@
     },
     {
       "sizeSlug": "20x10",
-      "h3": "20×10 ft — the everyday retail size",
-      "paragraph": "Our most-ordered shop cabin: 200 sq ft with a proper shopfront, counter and display, room for one to two operators and back-of-counter stock. It is the size most retailers specify first — delivered trading-ready and relocated as one unit when the location changes.",
+      "h3": "20×10 ft: the everyday retail size",
+      "paragraph": "Our most-ordered shop cabin: 200 sq ft with a proper shopfront, counter and display, room for one to two operators and back-of-counter stock. It is the size most retailers specify first, delivered trading-ready and relocated as one unit when the location changes.",
       "applications": [
         "General retail outlets",
         "Mobile and electronics stores",
@@ -37,7 +37,7 @@
     },
     {
       "sizeSlug": "20x12",
-      "h3": "20×12 ft — counter plus stock space",
+      "h3": "20×12 ft: counter plus stock space",
       "paragraph": "Two extra feet of depth turn the everyday shop into a shop-with-storage: the same shopfront and counter up front, with real stock shelving behind. 240 sq ft that keeps fast-moving inventory inside the shop instead of in a separate store.",
       "applications": [
         "Retail outlets with in-shop stock",
@@ -48,8 +48,8 @@
     },
     {
       "sizeSlug": "30x10",
-      "h3": "30×10 ft — the large outlet",
-      "paragraph": "A long 300 sq ft retail floor for a bigger outlet or a clean counter-plus-storeroom split. The extended frontage takes a wider display and a serving line, while the rear holds stock — still one relocatable unit that moves on a 40 ft trailer.",
+      "h3": "30×10 ft: the large outlet",
+      "paragraph": "A long 300 sq ft retail floor for a bigger outlet or a clean counter-plus-storeroom split. The extended frontage takes a wider display and a serving line, while the rear holds stock. Still one relocatable unit that moves on a 40 ft trailer.",
       "applications": [
         "Large retail outlets",
         "Multi-counter shops",
@@ -59,8 +59,8 @@
     },
     {
       "sizeSlug": "40x8",
-      "h3": "40×8 ft — the extended shopfront",
-      "paragraph": "The longest slim format: 320 sq ft of continuous frontage for an arcade-style counter or an extended display run. Where footfall passes along a line — markets, complexes, transit routes — this shape puts the most shopfront in front of it.",
+      "h3": "40×8 ft: the extended shopfront",
+      "paragraph": "The longest slim format: 320 sq ft of continuous frontage for an arcade-style counter or an extended display run. Where footfall passes along a line, markets, complexes, transit routes, this shape puts the most shopfront in front of it.",
       "applications": [
         "Arcade and market-line counters",
         "Extended display frontages",
@@ -70,8 +70,8 @@
     },
     {
       "sizeSlug": "20x20",
-      "h3": "20×20 ft — the wide-front shop",
-      "paragraph": "A near-square 400 sq ft floor with a wide shopfront — space for a broad display, a serving counter and open customer standing room, or a clean shop-plus-store division. Engineered to stay liftable and reusable despite the wider body.",
+      "h3": "20×20 ft: the wide-front shop",
+      "paragraph": "A near-square 400 sq ft floor with a wide shopfront: space for a broad display, a serving counter and open customer standing room, or a clean shop-plus-store division. Engineered to stay liftable and reusable despite the wider body.",
       "applications": [
         "Wide-frontage retail outlets",
         "Display-led showrooms",
@@ -81,8 +81,8 @@
     },
     {
       "sizeSlug": "40x10",
-      "h3": "40×10 ft — the full-length shop",
-      "paragraph": "The full-length standard: 400 sq ft with a long shopfront, generous display and serious stock capacity. It runs as a complete retail floor — counter, display and back-of-shop — and still travels as one unit on a 40 ft open trailer.",
+      "h3": "40×10 ft: the full-length shop",
+      "paragraph": "The full-length standard: 400 sq ft with a long shopfront, generous display and serious stock capacity. It runs as a complete retail floor, counter, display and back-of-shop, and still travels as one unit on a 40 ft open trailer.",
       "applications": [
         "Full-line retail outlets",
         "Showrooms and display floors",
@@ -92,7 +92,7 @@
     },
     {
       "sizeSlug": "40x12",
-      "h3": "40×12 ft — the largest single shop",
+      "h3": "40×12 ft: the largest single shop",
       "paragraph": "The most retail floor you can lift and reuse as one cabin: 480 sq ft with a broad shopfront, full display run, serving counter and a real back store. For retailers who want a permanent-feeling shop that still relocates when the business moves.",
       "applications": [
         "Flagship-format outlets",

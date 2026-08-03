@@ -18,7 +18,7 @@ const CalculatorStrip = () => {
               Know your price in 60 seconds
             </h2>
             <p className="text-base md:text-lg text-white/80 font-light leading-relaxed">
-              Choose your size and specification — instant estimate. No registration, no calls required.
+              Choose your size and specification: instant estimate. No registration, no calls required.
             </p>
           </div>
           <div className="flex flex-shrink-0 flex-col items-center gap-2 md:items-end">

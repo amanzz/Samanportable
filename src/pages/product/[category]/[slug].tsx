@@ -45,6 +45,8 @@ import {
   c01HubReturnAnchorForSlug,
 } from '../../../lib/portaCabinClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { getEmbeddedProductSummary, renderCabinCalculatorSSR } from '../../../lib/cabinCalculatorSSR';
+import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 
@@ -103,7 +105,7 @@ interface ProductDetailsProps {
   variantData?: VariantProductData | null;
 }
 
-export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res, query }) => {
+export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
   try {
     const { category, slug } = params as { category: string; slug: string };
     
@@ -230,21 +232,6 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .catch(() => null)
       : null;
 
-    const colonySlugs = ['labor-sheds', 'labor-hutments', 'prefab-labor-camps'] as const;
-    const colonyProductSlug = categoryLower === 'labor-colony' && colonySlugs.includes(slugLower as typeof colonySlugs[number])
-      ? slugLower as typeof colonySlugs[number]
-      : null;
-    const embeddedCalculatorHtml = colonyProductSlug
-      ? await import('../../../lib/cabinCalculatorSSR').then(({ renderCabinCalculatorSSR }) => renderCabinCalculatorSSR({
-          embedded: true,
-          includeCopy: false,
-          productSlug: colonyProductSlug,
-          query,
-          pageUrl: `/product/${category}/${slug}`,
-          reference: `SP-EST-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${String(Date.now() % 1000).padStart(3, '0')}`,
-        }))
-      : '';
-
     // Event B owns all commercial size/price data when its product JSON exists.
     // Keep the legacy record for its frozen title, descriptions and head data, but
     // do not hydrate obsolete commercial fields that the variant hero never reads.
@@ -268,7 +255,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: `${variantData?.descriptionHtml || productDescription}${embeddedCalculatorHtml}`,
+          description: `${variantData?.descriptionHtml || productDescription}`,
           images: descriptionData?.images?.map((img, index) => ({
             id: index,
             src: img.src,
@@ -314,7 +301,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // responded successfully; the category-mismatch 404 likewise only runs after a
     // successful fetch. Only the error message is logged (no request URL / keys).
     console.error(
-      'Product SSR failed — returning 5xx, not 404:',
+      'Product SSR failed, returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render product');
@@ -451,6 +438,27 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     return built;
   }, [slug, transformedProduct?.slug, transformedRelatedProducts]);
 
+  const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
+  const embeddedCalculatorSummary = useMemo(() => (
+    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId) : null
+  ), [embeddedCalculatorMapping]);
+
+  const embeddedCalculatorSummaryText = useMemo(() => {
+    if (!embeddedCalculatorSummary) return '';
+    return `${embeddedCalculatorSummary.name} | ${embeddedCalculatorSummary.priceLabel}`;
+  }, [embeddedCalculatorSummary]);
+
+  const embeddedCalculatorHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
+    return renderCabinCalculatorSSR({
+      embedded: true,
+      config: {
+        productId: embeddedCalculatorMapping.productId,
+      },
+      pageUrl: makeCalculatorPageUrl(category, slug),
+    });
+  }, [category, slug, embeddedCalculatorMapping]);
+
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
     setIsHydrated(true);
@@ -519,6 +527,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(variantData?.faqSchema || rankMathSEO?.faqSchema) }}
               />
+            </Head>
+          )}
+          {embeddedCalculatorHtml && (
+            <Head>
+              <script defer src="/scripts/cabin-cost-calculator.js" />
             </Head>
           )}
 
@@ -815,6 +828,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               />
               )}
 
+              {embeddedCalculatorHtml && (
+                <section className="mt-4">
+                  <details className="rounded-xl border border-slate-200 bg-white/90 shadow-sm">
+                    <summary className="cursor-pointer list-none px-4 py-3">
+                      <span className="text-lg font-semibold text-foreground">{embeddedCalculatorSummary?.name || 'Estimate this cabin'}</span>
+                      <span className="ml-2 text-sm text-muted-foreground">{embeddedCalculatorSummaryText}</span>
+                    </summary>
+                    <div className="mt-3 px-1 pb-1" dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
+                  </details>
+                </section>
+              )}
+
               {/* Product Tabs */}
               <div className="mt-4">
                 <ProductTabs
@@ -839,7 +864,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                     Porta cabin office or portacabin office?
                   </h3>
                   <p className="m-0 text-sm leading-relaxed text-slate-700">
-                    Buyers write it both ways and mean the same thing: a factory-built cabin fitted out as a working office. We build one product for both spellings — the configuration described on this page, with workstations, storage and an optional manager partition, finished a grade above the plain site cabin. If you searched for a porta cabin office and landed here, you are in the right place; the specification, the nine sizes and the prices above are what you were looking for.
+                    Buyers write it both ways and mean the same thing: a factory-built cabin fitted out as a working office. We build one product for both spellings: the configuration described on this page, with workstations, storage and an optional manager partition, finished a grade above the plain site cabin. If you searched for a porta cabin office and landed here, you are in the right place; the specification, the nine sizes and the prices above are what you were looking for.
                   </p>
                 </section>
               )}
@@ -1022,3 +1047,5 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 };
 
 export default ProductDetails;
+
+
