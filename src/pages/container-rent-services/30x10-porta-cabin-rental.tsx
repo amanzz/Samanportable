@@ -270,7 +270,7 @@ const PortaCabin30x10Rental = () => {
               {/* Buying Option Callout */}
               <div className="bg-gradient-to-r from-gray-900 to-[#0A3D2A] rounded-2xl p-8 md:p-12 text-center text-white shadow-2xl relative overflow-hidden mb-20">
                 <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Looking to Buy Instead of Rent?</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Buying instead of renting</h3>
                   <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg">
                     For clients ready to purchase their own custom porta cabin, explore our premium range of porta cabins for sale, available in multiple sizes and configurations.
                   </p>
@@ -327,7 +327,7 @@ const PortaCabin30x10Rental = () => {
                   { q: "5. What preventive maintenance services are included?", a: "Weekly inspections cover structural, electrical, and ventilation system checks. Repairs or adjustments are performed at no extra charge." },
                   { q: "6. Can I extend or shorten the rental duration?", a: "Flexible rental terms allow contract modifications with 30 days’ notice. Daily and weekly rentals are also available for short-term needs." },
                   { q: "7. Is delivery available to remote or industrial sites?", a: "Absolutely. We serve all major zones around Bangalore, Whitefield, Electronic City, Peenya, Bommasandra, with 24–48 hour delivery windows." },
-                  { q: "8. How is disassembly and relocation handled?", a: "When you’re ready to move, our team dismantles and transports the cabin to your new site within 24 hours, ensuring seamless project transitions." },
+                  { q: "8. How is disassembly and relocation handled?", a: "When you’re ready to move, our team dismantles and transports the cabin to your new site within 24 hours, so the project moves without a gap." },
                   { q: "9. Are security features included?", a: "Standard units feature reinforced doors, lockable windows, and optional CCTV mounts. Alarm systems and access control upgrades can be integrated." },
                   { q: "10. Where can I purchase a new 30×10 porta cabin instead of renting?", a: "Visit our purchase catalog for custom builds, pricing details, and delivery options at samanportable.com/product/porta-cabins." }
                 ].map((faq, i) => (
@@ -395,7 +395,6 @@ export const getStaticProps = async () => {
 };
 
 export default PortaCabin30x10Rental;
-
 
 
 

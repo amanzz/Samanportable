@@ -3946,3 +3946,27 @@ The sample is selected by SHA-256 ordering of changed meta-description routes, s
 ## Handoff
 
 Preview URL and draft PR number are added to the PR description. This branch is intentionally not merged.
+## Phase 3b implementation — Fable 5 rulings applied 03 Aug 2026
+
+Status: **implemented on PR #112; not merged or deployed**. A1, A2, the eight approved B2 template headings, B3 and the actionable B4 table rows were applied. B1 and every remaining B2 row were dismissed.
+
+### Applied-change evidence
+
+- A1: 7 comparison placeholders changed from `—` to `Not covered`.
+- A2: 1 antecedent-restoring sentence inserted verbatim.
+- B2: 281 rendered template-heading occurrences replaced across 277 routes.
+- B3: 58 detector-counted emoji code points removed across 58 visual sequences; 61 review-quoted emoji code points across 61 visual sequences retained verbatim and listed separately.
+- B3 reconciliation: the original 121 flag rows reduce to 119 rendered sequences after removing 2 duplicate heading/text traversal hits; 58 + 61 = 119.
+- B4: 30 approved replacement occurrences applied. Protected legal, technical and quoted-review strings were not changed; the `/world-of-customized-porta-cabin` H1 remains on hold.
+- Full occurrence-level before/after table: [l20-phase3b-before-after-20260803.md](./l20-phase3b-before-after-20260803.md).
+- Emoji removals and review exceptions: [l20-phase3b-emoji-evidence-20260803.md](./l20-phase3b-emoji-evidence-20260803.md).
+
+### Integrity and gates
+
+- Final crawl: 433/433 status 200; 0 em dashes; 0 mojibake; 0 removable emoji.
+- Reviews: 61 rendered emoji sequences retained as quoted-review exceptions.
+- Image alts: 5966 before and 5966 after across 433 routes; 0 mismatched routes. Every alt is unchanged.
+- Word-count gate: 433/433 routes pass; 0 failures; maximum movement 0.5747%. Full table: [l20-phase3b-word-count-gate-20260803.md](./l20-phase3b-word-count-gate-20260803.md).
+- WordPress export: 581 files; SHA-256 `19f083a0a9497690ae57a89503a404b4e6f7a88598a756135ab9586108e928b2` before and after.
+- Deferred section C list: [l20-city-page-alt-rewrite-list-20260803.md](./l20-city-page-alt-rewrite-list-20260803.md) (10 URLs, 20 unique alt strings).
+- Approved content authority: [L20-PHASE-3B-RULINGS-02Aug2026.md](../page-structure/content-drafts/L20-PHASE-3B-RULINGS-02Aug2026.md).

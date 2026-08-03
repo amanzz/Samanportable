@@ -11,6 +11,7 @@ export type CopyContext = 'heading' | 'prose' | 'alt' | 'table' | 'review' | 'sc
 type NormaliseOptions = {
   context?: CopyContext;
   phase3?: boolean;
+  phase3bSource?: string;
 };
 
 const CP1252_SPECIAL = new Map<number, number>([
@@ -137,9 +138,176 @@ function applyPhase3Swaps(value: string): string {
     return caseAware(match, replacement);
   });
 
-  // The catalogue explicitly removes the complete sentence, not only the phrase.
+  // Fable 5 ruling A2: preserve the noun needed by the following reference.
+  text = text.replace(
+    /\blook no further than porta cabins!\s*/gi,
+    'A porta cabin answers all three needs at once. ',
+  );
   text = text.replace(/(?:^|(?<=[.!?]\s))[^.!?]*\blook no further\b[^.!?]*[.!?](?:\s+|$)/gi, '');
   return text;
+}
+
+const APPROVED_HEADING_REPLACEMENTS = new Map<string, string>([
+  ['Enjoyed this article?', 'More on this topic'],
+  ['Still have questions?', 'Questions we are asked most'],
+  ['Ready to Get Started?', 'Start your order'],
+  ['Ready to Work With Us?', 'Work with SAMAN'],
+  ['Looking to Buy Instead?', 'Buying instead of renting'],
+  ['Looking to Buy Instead of Rent?', 'Buying instead of renting'],
+  ['Why Choose Saman Portable?', 'Why buyers choose SAMAN'],
+  ['Why Choose Saman Portable for Your Cabin Needs?', 'Why buyers choose SAMAN'],
+]);
+
+const APPROVED_PHRASE_REPLACEMENTS: ReadonlyArray<readonly [string, string]> = [
+  [
+    "In today's fast-paced world, the demand for versatile and efficient solutions for workspace management has never been greater.",
+    'Demand for flexible workspace has risen sharply as projects move faster and sites change more often.',
+  ],
+  [
+    "The ability to adapt quickly is a key advantage in today's fast-paced work environments.",
+    'Being able to reconfigure a space in days rather than months is the practical advantage.',
+  ],
+  [
+    'Luxury portable cabins have revolutionized the way businesses think about workspace solutions.',
+    'Luxury portable cabins have changed what businesses expect from a temporary workspace.',
+  ],
+  [
+    'The world of container homes is diverse, with various types available to suit different needs and preferences.',
+    'Container homes come in several types, each suited to a different need and budget.',
+  ],
+  [
+    'This can be particularly beneficial for buyers seeking a one-stop solution for their container home acquisition.',
+    'This suits buyers who would rather deal with one supplier from drawing to delivery.',
+  ],
+  [
+    'To find detailed pricing and designs tailored to your needs, visit our porta cabin product page.',
+    'For current pricing and the size ladder, see our porta cabin product page.',
+  ],
+  [
+    'Modular designs have revolutionized the commercial sector',
+    'Modular designs have changed how commercial buildings are procured',
+  ],
+  [
+    'The architecture of pre-engineered buildings in Bangalore is a testament to the limitless possibilities offered by this construction technique.',
+    'Pre-engineered buildings in Bangalore show how far the technique now stretches in span, height and finish.',
+  ],
+  [
+    '(PEBs) are a game-changer in construction, offering top-notch strength and flexibility.',
+    '(PEBs) changed how large spans are built, combining high strength with design flexibility.',
+  ],
+  [
+    'The Portacabin Office is a game-changer for businesses seeking flexibility.',
+    'The Portacabin Office suits businesses that need to move or resize a workspace quickly.',
+  ],
+  [
+    'Our guide dives into the world of portable cabin solutions.',
+    'This guide covers portable cabin options, sizes and prices in Bangalore.',
+  ],
+  [
+    'The world of portable cabins is changing fast.',
+    'Portable cabin design and pricing are changing fast.',
+  ],
+  [
+    'The world of portable solutions is growing fast.',
+    'Demand for portable buildings is growing fast.',
+  ],
+  [
+    'The world of garden storage has changed a lot in recent years.',
+    'Garden storage has changed a lot in recent years.',
+  ],
+  [
+    'not just a sales address, but a service-vehicle dispatch radius that holds the line on warranty SLAs.',
+    'a service-vehicle dispatch radius that holds the line on warranty response times, not merely a sales address.',
+  ],
+  [
+    'We aim to make products that are not just good but also make our users happy.',
+    'We aim to make products that work well and that our customers are glad they bought.',
+  ],
+  [
+    'It makes sure portable cabins are not just useful but also safe and healthy for people.',
+    'It makes sure portable cabins are useful, and safe and healthy to occupy.',
+  ],
+  [
+    'This makes them not just useful but also energy-saving.',
+    'This makes them useful and energy-saving.',
+  ],
+  [
+    'are not just a convenience but a necessity for successful outcomes at outdoor events.',
+    'are a necessity at outdoor events, not merely a convenience.',
+  ],
+  [
+    'are not just a convenience but a necessity for successful outdoor events.',
+    'are a necessity at outdoor events, not merely a convenience.',
+  ],
+  [
+    "Customization ensures container offices meet not just today's needs but tomorrow's challenges.",
+    "Customisation lets a container office meet today's requirement and adapt to the next one.",
+  ],
+  [
+    'ideal for homes, offices, and storage with seamless delivery options.',
+    'ideal for homes, offices and storage, with delivery across RT Nagar.',
+  ],
+];
+
+const APPROVED_SOURCE_BY_PHRASE = new Map<string, string>([
+  [APPROVED_PHRASE_REPLACEMENTS[0][0], 'posts/18-benefits-of-luxury-portable-cabin.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[1][0], 'posts/18-benefits-of-luxury-portable-cabin.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[2][0], 'posts/18-benefits-of-luxury-portable-cabin.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[3][0], 'posts/container-house-price-in-tamil-nadu.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[4][0], 'posts/container-house-price-in-tamil-nadu.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[5][0], 'posts/container-houses-cost-guide-2024.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[6][0], 'posts/pre-engineered-buildings-in-bangalore.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[7][0], 'posts/pre-engineered-buildings-in-bangalore.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[8][0], 'products/pre-engineered-structures.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[9][0], 'products/portacabin-office.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[10][0], 'posts/portable-cabin-price-in-bangalore.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[11][0], 'posts/portable-cabins-in-kr-puram.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[12][0], 'posts/portable-cabins-in-peenya.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[13][0], 'posts/temporary-garden-shed.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[14][0], 'posts/porta-cabins-in-domlur.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[15][0], 'posts/portable-cabins-in-frazer-town.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[16][0], 'posts/portable-cabins-in-hennur.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[17][0], 'posts/portacabins-for-sale-in-frazer-town-2.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[18][0], 'posts/portable-toilets-in-bangalore.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[19][0], 'posts/portable-toilets-in-bangalore.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[20][0], 'posts/types-of-container-offices.json'],
+  [APPROVED_PHRASE_REPLACEMENTS[21][0], 'posts/porta-cabins-in-rt-nagar.json'],
+]);
+
+const EMOJI_SEQUENCE = /(?:[\p{Regional_Indicator}]{2}|[#*0-9]\uFE0F?\u20E3|\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})?(?:\u200D\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})?)*)[ \t]?/gu;
+
+function applyApprovedPhase3bSwaps(value: string, context: CopyContext, source = ''): string {
+  // Fable 5 protected every review quotation and every image alt/title string.
+  if (context === 'review' || context === 'alt') return value;
+
+  let text = value;
+  const normalizedSource = source.replace(/\\/g, '/');
+  if (context === 'heading') {
+    for (const [before, after] of APPROVED_HEADING_REPLACEMENTS) text = text.split(before).join(after);
+  }
+  for (const [before, after] of APPROVED_PHRASE_REPLACEMENTS) {
+    const requiredSource = APPROVED_SOURCE_BY_PHRASE.get(before);
+    if (!requiredSource || normalizedSource.endsWith(requiredSource)) text = text.split(before).join(after);
+  }
+  if (normalizedSource.endsWith('posts/18-benefits-of-luxury-portable-cabin.json')) {
+    text = text.replace(
+      /In today(?:'|’|&#0*8217;|&#x0*2019;)s fast-paced world, the demand for versatile and efficient solutions for workspace management has never been greater\./gi,
+      'Demand for flexible workspace has risen sharply as projects move faster and sites change more often.',
+    ).replace(
+      /The ability to adapt quickly is a key advantage in today(?:'|’|&#0*8217;|&#x0*2019;)s fast-paced work environments\./gi,
+      'Being able to reconfigure a space in days rather than months is the practical advantage.',
+    );
+  }
+  if (normalizedSource.endsWith('posts/types-of-container-offices.json')) {
+    text = text.replace(
+      /Customization ensures container offices meet not just today(?:'|’|&#0*8217;|&#x0*2019;)s needs but tomorrow(?:'|’|&#0*8217;|&#x0*2019;)s challenges\./gi,
+      "Customisation lets a container office meet today's requirement and adapt to the next one.",
+    );
+  }
+  if (/posts\/container-houses-cost-guide-2024\.json$/i.test(normalizedSource)) {
+    text = text.replace(/\brevolutionizing\b/gi, 'changing');
+  }
+  return text.replace(EMOJI_SEQUENCE, '');
 }
 
 function normaliseEmDashes(value: string, context: CopyContext): string {
@@ -186,11 +354,12 @@ export function normaliseCopy(value: string, options: NormaliseOptions = {}): st
     /&(?:mdash|#0*8212|#x0*2014);/gi,
     '\u2014',
   );
-  // A lone em dash in a commercial comparison cell means “not applicable”.
-  // Rule G exempts the value; it is not a separator and must not become a comma.
-  if (context === 'table' && /^\s*\u2014\s*$/.test(text)) return text;
+  // Fable 5 ruling A1: the seven Rule G comparison placeholders must be
+  // explicit for screen readers.
+  if (context === 'table' && /^\s*\u2014\s*$/.test(text)) return 'Not covered';
   text = normaliseEmDashes(text, context);
   if (phase3) text = applyPhase3Swaps(text);
+  text = applyApprovedPhase3bSwaps(text, context, options.phase3bSource);
   return text
     .replace(/[ \t]+([,;:.!?])/g, '$1')
     .replace(/([.!?])\s*,\s*/g, '$1 ');
@@ -234,7 +403,7 @@ function tagClass(token: string): string {
   return token.match(/\bclass=["']([^"']*)["']/i)?.[1] || '';
 }
 
-function normaliseTagAttributes(token: string): string {
+function normaliseTagAttributes(token: string, options: NormaliseOptions = {}): string {
   const name = tagName(token);
   const metaKind = token.match(/\b(?:name|property)=["']([^"']*)["']/i)?.[1]?.toLowerCase() || '';
   return token.replace(
@@ -248,7 +417,7 @@ function normaliseTagAttributes(token: string): string {
             : lower === 'content' ? 'prose'
               : name === 'img' ? 'alt'
                 : 'heading';
-      return `${attribute}=${quote}${normaliseCopy(rawValue, { context })}${quote}`;
+      return `${attribute}=${quote}${normaliseCopy(rawValue, { context, phase3bSource: options.phase3bSource })}${quote}`;
     },
   );
 }
@@ -269,7 +438,7 @@ export function normaliseHtml(html: string, options: NormaliseOptions = {}): str
         const index = stack.map(entry => entry.name).lastIndexOf(name);
         if (index >= 0) stack.splice(index);
       }
-      output += normaliseTagAttributes(token);
+      output += normaliseTagAttributes(token, options);
       if (!closing && !selfClosing) stack.push({ name, className: tagClass(token) });
       continue;
     }
@@ -285,7 +454,11 @@ export function normaliseHtml(html: string, options: NormaliseOptions = {}): str
     const heading = names.some(name => /^h[1-6]$/.test(name));
     const anchor = names.includes('a');
     const context: CopyContext = review ? 'review' : table ? 'table' : heading ? 'heading' : anchor ? 'alt' : (options.context || 'prose');
-    output += normaliseCopy(token, { context, phase3: options.phase3 ?? (!review && !table) });
+    output += normaliseCopy(token, {
+      context,
+      phase3: options.phase3 ?? (!review && !table),
+      phase3bSource: options.phase3bSource,
+    });
   }
   return output
     .replace(
@@ -341,10 +514,14 @@ export function normaliseWpExportRecord<T>(value: T, sourceFile = ''): T {
 
   const record = value as Record<string, any>;
   const htmlField = (container: Record<string, any> | undefined, key: string, options: NormaliseOptions = {}) => {
-    if (container && typeof container[key] === 'string') container[key] = normaliseHtml(container[key], options);
+    if (container && typeof container[key] === 'string') {
+      container[key] = normaliseHtml(container[key], { ...options, phase3bSource: source });
+    }
   };
   const copyField = (container: Record<string, any> | undefined, key: string, options: NormaliseOptions = {}) => {
-    if (container && typeof container[key] === 'string') container[key] = normaliseCopy(container[key], options);
+    if (container && typeof container[key] === 'string') {
+      container[key] = normaliseCopy(container[key], { ...options, phase3bSource: source });
+    }
   };
   const normaliseSeoHead = () => htmlField(record._rank_math_head, 'head');
 

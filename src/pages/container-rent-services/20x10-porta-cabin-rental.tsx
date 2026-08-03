@@ -212,7 +212,7 @@ const PortaCabin20x10Rental = () => {
                   Discover the Ultimate 20×10 Porta Cabin Solution
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Unlock agile workspace flexibility with our 20×10 ft porta cabin: engineered for peak performance in compact spaces. Whether you need a secure site office, a retail kiosk, or a field lab, this 200 sq ft unit empowers small-scale operations.
+                  Unlock agile workspace flexibility with our 20×10 ft porta cabin: engineered for peak performance in compact spaces. Whether you need a secure site office, a retail kiosk, or a field lab, this 200 sq ft unit suits small-scale operations.
                 </p>
               </div>
 
@@ -318,7 +318,7 @@ const PortaCabin20x10Rental = () => {
               <div className="grid gap-4">
                 {[
                   { q: "1. What is the monthly rental rate for a 20×10 porta cabin?", a: "Rental rates start at ₹18,000 per month, varying slightly based on location, duration, and optional upgrades like HVAC or partitions." },
-                  { q: "2. Can the 200 sq ft cabin be fitted with office furniture?", a: "Yes. Choose from modular desks, storage cabinets, and seating options to create a fully equipped workspace tailored to your needs." },
+                  { q: "2. Can the 200 sq ft cabin be fitted with office furniture?", a: "Yes. Choose from modular desks, storage cabinets, and seating options to create a workspace fitted to how your team actually works." },
                   { q: "3. How fast can the cabin be assembled on-site?", a: "Our certified team completes installation and leveling in 4–6 hours using ground placement, no crane required, ensuring minimal project disruption." },
                   { q: "4. Are electrical outlets and lighting included?", a: "Each unit comes pre-wired with multiple power outlets and energy-efficient LED fixtures. You can add additional wiring or specialty lighting upon request." },
                   { q: "5. Do you offer climate control for this cabin size?", a: "Standard ventilation is included; upgrade to a split AC or central HVAC system for reliable temperature control year-round." },
@@ -392,7 +392,6 @@ export const getStaticProps = async () => {
 };
 
 export default PortaCabin20x10Rental;
-
 
 
 

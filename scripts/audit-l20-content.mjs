@@ -72,6 +72,19 @@ const FLAG_TELLS = [
   ['Ready to X? Contact us today!', /\bready to\b[^?]{0,100}\?\s*contact us today!/gi],
 ];
 
+const APPROVED_CTA_HEADINGS = new Set([
+  'Enjoyed this article?',
+  'Still have questions?',
+  'Ready to Get Started?',
+  'Ready to Work With Us?',
+  'Looking to Buy Instead?',
+  'Looking to Buy Instead of Rent?',
+  'Why Choose Saman Portable?',
+  'Why Choose Saman Portable for Your Cabin Needs?',
+]);
+
+const EMOJI_SEQUENCE = /(?:[\p{Regional_Indicator}]{2}|[#*0-9]\uFE0F?\u20E3|\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})?(?:\u200D\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})?)*)/gu;
+
 function getArg(name, fallback) {
   const index = process.argv.indexOf(name);
   return index >= 0 && process.argv[index + 1] ? process.argv[index + 1] : fallback;
@@ -185,13 +198,8 @@ function collectTellMatches({ pathname, surface, text, heading = false, output }
     }
   }
 
-  if (heading && /\?\s*$/.test(normalized)) {
+  if (heading && APPROVED_CTA_HEADINGS.has(normalized)) {
     output.flag.push({ phrase: 'rhetorical question as a heading', pathname, surface, sentence: normalized, match: normalized });
-  }
-  if (/\p{Extended_Pictographic}/u.test(normalized)) {
-    for (const match of normalized.matchAll(/\p{Extended_Pictographic}/gu)) {
-      output.flag.push({ phrase: 'emoji in body copy', pathname, surface, sentence: surroundingSentence(normalized, match.index), match: match[0] });
-    }
   }
 }
 
@@ -201,11 +209,25 @@ function inspectRoute(pathname, html, status) {
   const occurrences = [];
   const mojibake = [];
   const tells = { safe: [], flag: [] };
+  const emoji = { removable: [], reviewExceptions: [], altProtected: [] };
+  const imageAlts = [];
+  const collectEmoji = (surface, text, bucket) => {
+    const normalized = collapse(text);
+    EMOJI_SEQUENCE.lastIndex = 0;
+    for (const match of normalized.matchAll(EMOJI_SEQUENCE)) {
+      const entry = { pathname, surface, emoji: match[0], sentence: surroundingSentence(normalized, match.index) };
+      emoji[bucket].push(entry);
+      if (bucket === 'removable') {
+        tells.flag.push({ phrase: 'emoji in body copy', pathname, surface, sentence: entry.sentence, match: entry.emoji });
+      }
+    }
+  };
   const titleNode = firstElement(document, 'title');
   const title = collapse(nodeText(titleNode));
   counts.seoTitle += countChar(title);
   for (const match of mojibakeMatches(title)) mojibake.push({ surface: 'seoTitle', ...match });
   collectTellMatches({ pathname, surface: 'seoTitle', text: title, output: tells });
+  collectEmoji('seoTitle', title, 'removable');
 
   const metas = descendants(document, node => node.type === 'tag' && node.name === 'meta');
   const metaNode = metas.find(node => String(node.attribs?.name || '').toLowerCase() === 'description');
@@ -213,6 +235,7 @@ function inspectRoute(pathname, html, status) {
   counts.metaDescription += countChar(metaDescription);
   for (const match of mojibakeMatches(metaDescription)) mojibake.push({ surface: 'metaDescription', ...match });
   collectTellMatches({ pathname, surface: 'metaDescription', text: metaDescription, output: tells });
+  collectEmoji('metaDescription', metaDescription, 'removable');
 
   const jsonScripts = descendants(
     document,
@@ -253,11 +276,13 @@ function inspectRoute(pathname, html, status) {
 
     if (node.type === 'tag' && node.name === 'img') {
       const alt = collapse(node.attribs?.alt || '');
+      imageAlts.push({ src: node.attribs?.src || '', alt });
       const dashCount = countChar(alt);
       counts.imageAltText += dashCount;
       if (dashCount) occurrences.push({ surface: 'imageAltText', text: alt, count: dashCount });
       for (const match of mojibakeMatches(alt)) mojibake.push({ surface: 'imageAltText', ...match });
       collectTellMatches({ pathname, surface: 'imageAltText', text: alt, output: tells });
+      collectEmoji('imageAltText', alt, 'altProtected');
     }
 
     if (node.type === 'tag' && /^h[1-6]$/.test(node.name)) {
@@ -296,10 +321,11 @@ function inspectRoute(pathname, html, status) {
                 : 'bodyProse';
       for (const match of mojibakeMatches(text)) mojibake.push({ surface, ...match });
       const reviewContext = ancestors.some(ancestor => {
-        const marker = `${ancestor.name || ''} ${ancestor.attribs?.class || ''} ${ancestor.attribs?.id || ''}`;
-        return ancestor.name === 'blockquote' || /\b(?:review|testimonial|customer-quote)\b/i.test(marker);
+        const marker = `${ancestor.name || ''} ${ancestor.attribs?.class || ''} ${ancestor.attribs?.id || ''} ${ancestor.attribs?.['aria-labelledby'] || ''}`;
+        return ancestor.name === 'blockquote' || /\b(?:reviews?|testimonials?|customer-quote)\b/i.test(marker);
       });
       if (!reviewContext) collectTellMatches({ pathname, surface, text, output: tells });
+      collectEmoji(surface, text, reviewContext ? 'reviewExceptions' : 'removable');
       wordsSeen += wordCount(text);
     }
 
@@ -319,23 +345,6 @@ function inspectRoute(pathname, html, status) {
     });
   }
 
-  const sentences = visibleText.match(/[^.!?]+[.!?]+/g) || [];
-  for (let index = 0; index <= sentences.length - 3; index += 1) {
-    const triad = sentences.slice(index, index + 3).map(sentence => collapse(sentence));
-    const lengths = triad.map(sentence => wordCount(sentence));
-    const openings = triad.map(sentence => (sentence.match(/^[^\p{L}\p{N}]*(\p{L}+)/u)?.[1] || '').toLowerCase());
-    const parallelOpening = openings[0] && openings.every(opening => opening === openings[0]);
-    if (lengths.every(length => length >= 2 && length <= 14) && parallelOpening) {
-      tells.flag.push({
-        phrase: 'three-item rhetorical triad in consecutive sentences',
-        pathname,
-        surface: 'bodyProse',
-        sentence: triad.join(' '),
-        match: openings[0],
-      });
-    }
-  }
-
   const first100Words = (visibleText.match(/[\p{L}\p{N}₹]+(?:[’'./-][\p{L}\p{N}]+)*/gu) || []).slice(0, 100).join(' ');
   return {
     pathname,
@@ -350,6 +359,8 @@ function inspectRoute(pathname, html, status) {
     emDashOccurrences: occurrences,
     mojibake,
     aiTells: tells,
+    emoji,
+    imageAlts,
     headings,
   };
 }
@@ -427,6 +438,31 @@ function sourceInventory() {
   };
 }
 
+function sourceReviewEmojiExceptions() {
+  const directory = path.join(ROOT, 'src', 'data', 'wp-export', 'reviews');
+  const exceptions = [];
+  for (const file of listFiles(directory).filter(value => value.endsWith('.json')).sort()) {
+    const reviews = JSON.parse(fs.readFileSync(file, 'utf8'));
+    for (const review of Array.isArray(reviews) ? reviews : []) {
+      const document = parseDocument(String(review.review || ''), { decodeEntities: true });
+      const text = collapse(nodeText(document));
+      EMOJI_SEQUENCE.lastIndex = 0;
+      for (const match of text.matchAll(EMOJI_SEQUENCE)) {
+        exceptions.push({
+          file: path.relative(ROOT, file).replaceAll('\\', '/'),
+          reviewId: review.id,
+          productId: review.product_id,
+          productName: review.product_name,
+          reviewer: review.reviewer,
+          emoji: match[0],
+          sentence: surroundingSentence(text, match.index),
+        });
+      }
+    }
+  }
+  return exceptions;
+}
+
 function hashDirectory(directory) {
   const files = listFiles(directory).sort();
   const hash = crypto.createHash('sha256');
@@ -446,10 +482,12 @@ function summarize(routes) {
   const aiCounts = { safe: {}, flag: {} };
   let emDashTotal = 0;
   let mojibakeTotal = 0;
+  const emoji = { removable: 0, reviewExceptions: 0, altProtected: 0 };
   for (const route of routes) {
     if (!route || route.error) continue;
     emDashTotal += route.emDashTotal;
     mojibakeTotal += route.mojibake.length;
+    for (const key of Object.keys(emoji)) emoji[key] += route.emoji?.[key]?.length || 0;
     for (const key of CATEGORY_KEYS) counts[key] += route.emDashCounts[key];
     for (const kind of ['safe', 'flag']) {
       for (const item of route.aiTells[kind]) aiCounts[kind][item.phrase] = (aiCounts[kind][item.phrase] || 0) + 1;
@@ -462,6 +500,7 @@ function summarize(routes) {
     emDashTotal,
     emDashCounts: counts,
     mojibakeTotal,
+    emoji,
     aiTellCounts: aiCounts,
   };
 }
@@ -478,6 +517,7 @@ async function main() {
     summary: summarize(routes),
     wpExport: hashDirectory(path.join(ROOT, 'src', 'data', 'wp-export')),
     source: sourceInventory(),
+    sourceReviewEmojiExceptions: sourceReviewEmojiExceptions(),
     routes,
   };
   fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });

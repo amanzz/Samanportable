@@ -526,7 +526,7 @@ const RentalServicesPage = () => {
                 {/* Bangalore City */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:border-[#0A3D2A] transition-colors group">
                   <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl">🏢</div>
+                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl"></div>
                     <h3 className="text-xl font-bold text-gray-900">Bangalore City</h3>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -557,7 +557,7 @@ const RentalServicesPage = () => {
                 {/* Greater Bangalore */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:border-[#0A3D2A] transition-colors group">
                   <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl">🌇</div>
+                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl"></div>
                     <h3 className="text-xl font-bold text-gray-900">Greater Bangalore</h3>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -588,7 +588,7 @@ const RentalServicesPage = () => {
                 {/* Industrial Areas */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:border-[#0A3D2A] transition-colors group">
                   <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl">🏗️</div>
+                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl"></div>
                     <h3 className="text-xl font-bold text-gray-900">Industrial Areas</h3>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -619,7 +619,7 @@ const RentalServicesPage = () => {
                 {/* Delhi NCR - NEW */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:border-[#0A3D2A] transition-colors group">
                   <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl">🏙️</div>
+                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl"></div>
                     <h3 className="text-xl font-bold text-gray-900">Delhi NCR</h3>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -654,7 +654,7 @@ const RentalServicesPage = () => {
           <section className="section-padding bg-[#0A3D2A] text-white">
             <div className="max-w-7xl mx-auto container-padding text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Get Started?
+                Start your order
               </h2>
               <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
                 Contact us today to discuss your rental requirements and get a customized quote for your project.
@@ -683,4 +683,3 @@ const RentalServicesPage = () => {
 };
 
 export default RentalServicesPage;
-

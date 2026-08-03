@@ -304,7 +304,7 @@ const PortaCabin10x10Rental = () => {
               {/* Buying Option Callout */}
               <div className="bg-gradient-to-r from-gray-900 to-[#0A3D2A] rounded-2xl p-8 md:p-12 text-center text-white shadow-2xl relative overflow-hidden mb-8">
                 <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Looking to Buy Instead?</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Buying instead of renting</h3>
                   <p className="text-white/80 max-w-2xl mx-auto mb-8 text-lg">
                     We also offer custom-manufactured 10x10 porta cabins for sale. Perfect for permanent installations or long-term asset acquisition.
                   </p>
@@ -498,7 +498,6 @@ export const getStaticProps = async () => {
 };
 
 export default PortaCabin10x10Rental;
-
 
 
 

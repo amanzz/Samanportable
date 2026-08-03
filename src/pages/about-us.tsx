@@ -179,7 +179,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                 <div className="bg-[#0A3D2A] rounded-2xl p-8 text-white">
                   <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                   <p className="text-lg mb-6 opacity-90">
-                    To design and deliver sustainable, cost-effective, and technology-driven portable construction solutions that empower businesses to grow, adapt, and thrive in a dynamic world.
+                    To design and deliver sustainable, cost-effective, and technology-driven portable construction solutions that help businesses grow and adapt as their sites and teams change.
                   </p>
                   <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
                   <p className="text-lg opacity-90">
@@ -195,7 +195,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
             <div className="max-w-7xl mx-auto container-padding">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Why Choose Saman Portable?
+                  Why buyers choose SAMAN
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                   We stand out in the industry with our commitment to quality, innovation, and customer satisfaction.
@@ -331,7 +331,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-foreground">Partnership First</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    At Saman Portable, we believe great construction begins with great relationships. Every project starts with listening, understanding not just space requirements, but the goals and challenges behind them. That’s how we turn modular design into something more meaningful: a partnership that builds lasting value.
+                    At Saman Portable, we believe great construction begins with great relationships. Every project starts with listening, understanding the space required, and the goals and constraints behind it. That’s how we turn modular design into something more meaningful: a partnership that builds lasting value.
                   </p>
                 </div>
 
@@ -367,7 +367,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
           <section className="section-padding bg-[#0A3D2A] text-white">
             <div className="max-w-7xl mx-auto container-padding text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Work With Us?
+                Work with SAMAN
               </h2>
               <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
                 Join hundreds of satisfied customers who have transformed their business spaces

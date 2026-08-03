@@ -587,7 +587,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                     <div className="flex items-center justify-between">
                       <div>
                         <h2 className="text-lg font-semibold text-green-900 mb-1">
-                          📚 Blog Articles
+                          Blog Articles
                         </h2>
                         <p className="text-green-700 text-sm">
                           {posts && posts.length > 0 ? (
@@ -601,7 +601,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                         </p>
                         {totalPosts > 100 && (
                           <p className="text-green-600 text-xs mt-1">
-                            💡 Use the pagination below or &quot;Go to Page&quot; to navigate through all {totalPosts} articles
+                            Use the pagination below or &quot;Go to Page&quot; to navigate through all {totalPosts} articles
                           </p>
                         )}
                       </div>
@@ -684,7 +684,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                     ) : (
                       <div className="col-span-full text-center py-12">
                         <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-2xl">📝</span>
+                          <span className="text-2xl"></span>
                         </div>
                         <h3 className="text-xl font-semibold text-foreground mb-2">
                           No blog posts available
@@ -705,7 +705,7 @@ const Blog = ({ posts, totalPages, currentPage, totalPosts, categories, tags, se
                           size="lg"
                           className="px-8 py-3 text-lg font-medium hover:bg-[#0A3D2A]/10 hover:border-[#0A3D2A]/30 transition-all duration-300"
                         >
-                          📖 Load More Articles
+                          Load More Articles
                           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>
                       </Link>

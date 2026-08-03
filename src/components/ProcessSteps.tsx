@@ -51,7 +51,7 @@ const ProcessSteps = () => {
             Our Methodology
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
-            A Seamless <span className="text-[var(--ds-surface-inverse)]">6-Step Journey</span>
+            Our <span className="text-[var(--ds-surface-inverse)]">6-Step Process</span>
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto font-light">
             We handle the complexity, you handle your business. From initial consultation to final handover.
