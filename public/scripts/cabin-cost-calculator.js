@@ -4,7 +4,7 @@
 
   const STORAGE_KEY = 'saman-cabin-calculator-v9';
   const THEME_KEY = '__theme';
-  const CONTACT_NAMES = new Set(['fullName', 'mobile', 'email', 'company', 'city', 'state', 'notes', 'website', 'message', 'productName', 'pageUrl', 'returnTo']);
+  const CONTACT_NAMES = new Set(['firstName', 'lastName', 'phone', 'email', 'company', 'city', 'state', 'notes', 'website', 'message', 'productName', 'pageUrl', 'returnTo']);
   const INR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
   const num = (value, fallback = 0) => Number.isFinite(Number(value)) ? Number(value) : fallback;
   const enabled = (field) => !field.matches(':disabled');
@@ -270,18 +270,23 @@
   async function submitEnhanced(event, root, form) {
     event.preventDefault();
     const estimate = calculate(root, form);
-    const fullName = value(form, 'fullName').trim();
-    const mobile = value(form, 'mobile').replace(/\D/g, '');
+    // Field names match the /api/enquiry contract exactly, so the enhanced path
+    // and the no-JavaScript native POST send the same shape. They used to
+    // differ, and only the enhanced path worked.
+    const firstName = value(form, 'firstName').trim();
+    const lastName = value(form, 'lastName').trim();
+    const phone = value(form, 'phone').replace(/\D/g, '');
     const email = value(form, 'email').trim();
-    if (!fullName || !mobile) { notice(root, message(root, 'requiredFields')); return; }
-    if (!/^\d{10}$/.test(mobile)) { notice(root, message(root, 'mobileInvalid')); return; }
+    if (!firstName || !lastName || !phone) { notice(root, message(root, 'requiredFields')); return; }
+    if (!/^\d{10}$/.test(phone)) { notice(root, message(root, 'mobileInvalid')); return; }
     if (!email) { notice(root, message(root, 'emailRequired')); return; }
     if (!estimate.validSize || !form.reportValidity()) return;
     const product = source(chosen(form, 'productId'));
     const payload = {
-      fullName,
+      firstName,
+      lastName,
       email,
-      phone: mobile,
+      phone,
       message: `${summary(form, estimate)}\n\nFull configuration: ${value(form, 'configuration')}\n\n${value(form, 'notes')}`.trim(),
       region: value(form, 'state'),
       productName: product?.dataset.label || product?.value || '',

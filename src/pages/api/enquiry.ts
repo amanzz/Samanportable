@@ -8,59 +8,35 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const contentType = String(req.headers['content-type'] || '');
-  const standardFormPost = String(req.headers.accept || '').includes('text/html') || contentType.includes('application/x-www-form-urlencoded') || contentType.includes('multipart/form-data');
-  const requestedReturnTo = typeof req.body?.returnTo === 'string' ? req.body.returnTo : '/cabin-cost-calculator';
-  const returnTo = requestedReturnTo.startsWith('/') && !requestedReturnTo.startsWith('//') ? requestedReturnTo.split('?')[0] : '/cabin-cost-calculator';
-  const respond = (status: number, body: Record<string, unknown>) => {
-    if (standardFormPost) {
-      res.redirect(303, `${returnTo}?${body.success ? 'submitted' : 'submit_error'}=1`);
-      return;
-    }
-    res.status(status).json(body);
-  };
-
   try {
     const {
-      email, productName, pageUrl,
-      isLabourColony, projectLocation, industry, workerCapacity,
+      firstName, lastName, email, phone, message, region, productName, pageUrl,
+      isLabourColony, companyName, projectLocation, industry, workerCapacity,
       requiredDate, configuration, requirementType, website,
     } = req.body;
-    const phone = String(req.body.phone || req.body.mobile || '').trim();
-    const region = String(req.body.region || req.body.state || '').trim();
-    const companyName = String(req.body.companyName || req.body.company || '').trim();
-    const submittedFullName = String(req.body.fullName || '').trim();
-    let firstName = String(req.body.firstName || '').trim();
-    let lastName = String(req.body.lastName || '').trim();
-    if (submittedFullName) {
-      const splitAt = submittedFullName.lastIndexOf(' ');
-      firstName = splitAt > 0 ? submittedFullName.slice(0, splitAt).trim() : submittedFullName;
-      lastName = splitAt > 0 ? submittedFullName.slice(splitAt + 1).trim() : submittedFullName;
-    }
-    const message = String(standardFormPost ? `Cabin calculator configuration: ${JSON.stringify(req.body)}` : req.body.message || `Cabin calculator configuration: ${JSON.stringify(req.body)}`).slice(0, 12000);
 
     // Honeypot: silently accept bot submissions without creating a lead.
-    if (website) return respond(200, { success: true, ignored: true });
+    if (website) return res.status(200).json({ success: true, ignored: true });
 
     // Strict Backend Validation
     if (!firstName || !email || !phone || !message || (!isLabourColony && !lastName)) {
-      return respond(400, { success: false, message: 'Missing required fields' });
+      return res.status(400).json({ message: 'Missing required fields' });
     }
     if (isLabourColony && (!companyName || !projectLocation || !industry || !workerCapacity || !requiredDate || !configuration || !requirementType)) {
-      return respond(400, { success: false, message: 'Complete all required project fields' });
+      return res.status(400).json({ message: 'Complete all required project fields' });
     }
     
     // Email and Phone Regex Validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return respond(400, { success: false, message: 'Invalid email format' });
+      return res.status(400).json({ message: 'Invalid email format' });
     }
     const phoneRegex = /^\+?[\d\s-]{7,16}$/;
     if (!phoneRegex.test(phone)) {
-      return respond(400, { success: false, message: 'Invalid phone format' });
+      return res.status(400).json({ message: 'Invalid phone format' });
     }
     if (isLabourColony && (!/^\d+$/.test(String(workerCapacity)) || Number(workerCapacity) < 1)) {
-      return respond(400, { success: false, message: 'Enter a valid worker capacity' });
+      return res.status(400).json({ message: 'Enter a valid worker capacity' });
     }
 
     const attribution = {
@@ -101,7 +77,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       zohoAccepted = zohoResponse.ok;
       if (!zohoAccepted) {
         console.error(`[Zoho CRM] Submission failed. Status: ${zohoResponse.status}`);
-        return respond(502, { success: false, message: 'Lead system is temporarily unavailable. Please try again.' });
+        return res.status(502).json({ message: 'Lead system is temporarily unavailable. Please try again.' });
       }
     }
 
@@ -188,14 +164,14 @@ Company: ${COMPANY_INFO.name} | Email: ${COMPANY_INFO.email} | Phone: ${COMPANY_
       console.error('Lead accepted by Zoho, but notification email failed:', mailError instanceof Error ? mailError.message : 'Unknown error');
     }
 
-    return respond(200, {
+    return res.status(200).json({
       success: true, 
       message: 'Enquiry submitted successfully' 
     });
 
   } catch (error) {
     console.error('Enquiry submission error:', error);
-    return respond(500, {
+    return res.status(500).json({
       success: false, 
       message: 'Failed to submit enquiry' 
     });

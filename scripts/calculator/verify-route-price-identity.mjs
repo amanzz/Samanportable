@@ -58,6 +58,20 @@ const ROUTES = [...new Set(
   return { url, category: parts[1], slug: parts[2] };
 }).filter((r) => r.category);
 
+/**
+ * Container-house product JSONs live on origin/agent/c08-container-houses-build-20260802,
+ * which is not merged, so there is no in-repo page ladder to read for these
+ * five routes. Their published authority is the C-08 transcription asserted
+ * exactly by the container-house gate further down. Default size is 20x10.
+ */
+const C08_ROUTE_AUTHORITY = {
+  'container-houses': { sizeSlug: '20x10', label: '20x10 ft', priceExGst: 333400 },
+  'prefab-container-homes': { sizeSlug: '20x10', label: '20x10 ft', priceExGst: 295000 },
+  'shipping-container-homes': { sizeSlug: '20x10', label: '20x10 ft', priceExGst: 414000 },
+  'affordable-container-homes': { sizeSlug: '20x10', label: '20x10 ft', priceExGst: 287600 },
+  'luxury-container-houses': { sizeSlug: '20x10', label: '20x10 ft', priceExGst: 432000 },
+};
+
 const COLONY = new Set(['labour-colony', 'labor-sheds', 'labor-hutments', 'prefab-labor-camps']);
 const INR = (n) => (n === null || n === undefined ? 'quote mode' : '₹' + Number(n).toLocaleString('en-IN'));
 
@@ -79,10 +93,16 @@ for (const { url: route, category, slug } of ROUTES) {
   const productId = mapping.productId;
   const def = PRODUCTS.find((p) => p.id === productId) || null;
 
-  const data = loadLadder(slug || category);
+  const key = slug || category;
+  const data = loadLadder(key);
   const variants = data?.variants || [];
-  const variant =
+  let variant =
     variants.find((v) => v.sizeSlug === data?.defaultVariant) || variants[0] || null;
+  let source = variant ? 'page JSON' : '';
+  if (!variant && C08_ROUTE_AUTHORITY[key]) {
+    variant = C08_ROUTE_AUTHORITY[key];
+    source = 'C-08 transcription';
+  }
   const published = variant?.priceExGst ?? null;
 
   let calculated = null;
@@ -131,7 +151,7 @@ for (const { url: route, category, slug } of ROUTES) {
     calculated,
     diff,
     ok: diff === 0 || bothAbsent,
-    note,
+    note: note || (source === 'C-08 transcription' ? 'published figure from C-08 transcription; product JSON not on this branch' : note),
   });
 }
 

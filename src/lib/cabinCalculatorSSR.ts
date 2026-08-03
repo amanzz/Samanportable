@@ -54,8 +54,17 @@ export interface WindowConfig {
 }
 
 export interface QuoteFields {
-  fullName: string;
-  mobile: string;
+  /**
+   * These three field names are the /api/enquiry contract, which every other
+   * form on the site already posts. The calculator used to post `fullName` and
+   * `mobile`, so a native submit with JavaScript disabled returned HTTP 400
+   * "Missing required fields" and the enquiry was silently lost. Fixed here at
+   * the form rather than at the API, because widening the API would change the
+   * contract those other forms depend on.
+   */
+  firstName: string;
+  lastName: string;
+  phone: string;
   email: string;
   company: string;
   city: string;
@@ -173,27 +182,60 @@ export const PRODUCTS: readonly ProductDefinition[] = [
   { id: 'prefab-labor-camps', name: 'Prefab Labour Camps', subtitle: 'Relocatable worker camp blocks' },
 ] as const;
 
-const PRODUCT_ICON: Record<ProductId, string> = {
-  'porta-cabin': '🏗',
-  'office-cabin': '💼',
-  'security-cabin': '🔐',
-  'toilet-cabin': '🚻',
-  'accommodation-cabin': '🛏',
-  'container-office': '🚚',
-  'site-office': '🏢',
-  'portable-cabin': '📦',
-  'container-houses': '🏠',
-  'prefab-container-homes': '🏡',
-  'shipping-container-homes': '🚧',
-  'affordable-container-homes': '🏠',
-  'luxury-container-houses': '🏙',
-  'prefab-modular-home': '🏬',
-  'container-cafe': '☕',
-  'labour-colony': '👷',
-  'labor-sheds': '🏚',
-  'labor-hutments': '🏘',
-  'prefab-labor-camps': '🏕',
+/**
+ * Decorative line icons for the product step.
+ *
+ * These were emoji glyphs sitting inside the label text until 03 Aug 2026. The
+ * L20 sweep removed emoji site-wide as a generated-content signal and this file
+ * had reintroduced them, so they are now inline SVG: `stroke="currentColor"`,
+ * `fill="none"`, so an icon inherits the card's text colour in both the white
+ * and green modes without a second rule.
+ *
+ * Every icon is aria-hidden and purely decorative — the product name beside it
+ * carries the meaning, so a screen reader loses nothing. One icon per product
+ * family rather than nineteen near-identical building outlines.
+ */
+type IconName = 'cabin' | 'office' | 'house' | 'colony' | 'unit';
+
+const ICON_PATHS: Record<IconName, string> = {
+  // flat-roof cabin on a low plinth
+  cabin: '<path d="M3 9.5 12 5l9 4.5"/><path d="M5 10.5V19h14v-8.5"/><path d="M3 19h18"/><path d="M9.5 19v-4.5h5V19"/>',
+  // office block with window grid
+  office: '<path d="M5 21V4.5h14V21"/><path d="M3 21h18"/><path d="M8.5 8h2M13.5 8h2M8.5 12h2M13.5 12h2"/><path d="M10.5 21v-4h3v4"/>',
+  // pitched-roof home
+  house: '<path d="M4 10.5 12 4l8 6.5"/><path d="M6 10V20h12V10"/><path d="M3 20h18"/><path d="M10 20v-5h4v5"/>',
+  // paired dormitory blocks
+  colony: '<path d="M3 20V11l5-3 5 3v9"/><path d="M13 20v-6l4-2.5 4 2.5V20"/><path d="M2 20h20"/><path d="M6 20v-3.5h4V20"/>',
+  // shipping-form unit with corrugation
+  unit: '<path d="M3 7.5h18v11H3z"/><path d="M7 7.5v11M12 7.5v11M17 7.5v11"/>',
 };
+
+const PRODUCT_ICON: Record<ProductId, IconName> = {
+  'porta-cabin': 'cabin',
+  'office-cabin': 'office',
+  'security-cabin': 'cabin',
+  'toilet-cabin': 'cabin',
+  'accommodation-cabin': 'colony',
+  'container-office': 'unit',
+  'site-office': 'office',
+  'portable-cabin': 'cabin',
+  'container-houses': 'house',
+  'prefab-container-homes': 'house',
+  'shipping-container-homes': 'house',
+  'affordable-container-homes': 'house',
+  'luxury-container-houses': 'house',
+  'prefab-modular-home': 'house',
+  'container-cafe': 'unit',
+  'labour-colony': 'colony',
+  'labor-sheds': 'colony',
+  'labor-hutments': 'colony',
+  'prefab-labor-camps': 'colony',
+};
+
+function productIcon(id: ProductId): string {
+  const paths = ICON_PATHS[PRODUCT_ICON[id] || 'unit'];
+  return `<svg class="choice-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${paths}</svg>`;
+}
 
 export const STRUCTURES = [
   ['MS frame + insulated panel', 0],
@@ -511,7 +553,11 @@ export const CABIN_CALCULATOR_SSR_STYLES = `
 }
 
 .calc-choice .choice-icon{
-  font-size: 1.1rem;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  vertical-align: -0.2em;
+  margin-right: 0.4rem;
 }
 
 .choice-title{
@@ -911,7 +957,7 @@ export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
   installation: false,
   colonyVariant: 0,
   workers: 0,
-  quote: { fullName: '', mobile: '', email: '', company: '', city: '', state: '', notes: '' },
+  quote: { firstName: '', lastName: '', phone: '', email: '', company: '', city: '', state: '', notes: '' },
 };
 
 const money = (value: number): string => `₹${Math.round(value).toLocaleString('en-IN')}`;
@@ -1013,7 +1059,8 @@ function sanitiseConfig(value: unknown): CalculatorConfig {
     colonyVariant: int(source.colonyVariant, 0, 0, Math.max(0, PRODUCT_LADDERS.labourColony.length - 1)),
     workers: int(source.workers, 0, 0, 100000),
     quote: {
-      fullName: text(quoteSource.fullName, 120), mobile: text(quoteSource.mobile, 20), email: text(quoteSource.email, 160),
+      firstName: text(quoteSource.firstName, 60), lastName: text(quoteSource.lastName, 60),
+      phone: text(quoteSource.phone, 20), email: text(quoteSource.email, 160),
       company: text(quoteSource.company, 160), city: text(quoteSource.city, 100), state: text(quoteSource.state, 100), notes: text(quoteSource.notes, 2000),
     },
   };
@@ -1152,7 +1199,7 @@ function radio(name: string, value: string, label: string, isChecked: boolean, d
 }
 
 function productChoice(name: string, item: ProductDefinition, isChecked: boolean): string {
-  return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(item.id)}"${checked(isChecked)} data-product-choice="1"><span><strong class="choice-title"><span class="choice-icon" aria-hidden="true">${PRODUCT_ICON[item.id] || '🏭'}</span>${esc(item.name)}</strong><small class="choice-description">${esc(item.subtitle)}</small><small>${getRouteLadder(item.ladderKey) ? `from ${money(productPriceRows(item)[0]?.ex || 0)} ex-GST` : 'Price on request'}</small></span></label>`;
+  return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(item.id)}"${checked(isChecked)} data-product-choice="1"><span><strong class="choice-title">${productIcon(item.id)}${esc(item.name)}</strong><small class="choice-description">${esc(item.subtitle)}</small><small>${getRouteLadder(item.ladderKey) ? `from ${money(productPriceRows(item)[0]?.ex || 0)} ex-GST` : 'Price on request'}</small></span></label>`;
 }
 
 function renderStepGuidance(key: keyof typeof STEP_GUIDANCE): string {
@@ -1332,7 +1379,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const electricalStep = section(5, `${renderStepGuidance('electrical')}<p>${colony ? 'Quantities are quotation items per building.' : 'Suggested quantities are a starting point and can be changed.'}</p>${ELECTRICAL.map(([label, rate, help]) => quantityRow('electrical', label, rate, config.electrical[label] || 0, help, colony)).join('')}<fieldset><legend>Light appearance</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset><fieldset><legend>Socket placement (no cost impact)</legend><p>Placement changes position only. Plug-point count is already priced above from suggested sizes.</p>${socketPlacement}</fieldset>`);
   const addOnsStep = section(6, `${renderStepGuidance('addons')}${ADD_ONS.map(([label, rate]) => quantityRow('addOns', label, rate, config.addOns[label] || 0, '', colony)).join('')}<fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
   const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label>${renderFreightTable()}<p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);
-  const quotationStep = section(8, `${renderStepGuidance('quotation')}<p>Submit the exact configuration for a fixed, itemised quotation within 48 hours.</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>Full name *<input name="fullName" autocomplete="name" value="${esc(config.quote.fullName)}" required></label><label>Mobile / WhatsApp *<input type="tel" inputmode="numeric" name="mobile" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.mobile)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>Email *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>Company<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>City<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>State<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>Requirement notes<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">Get My Official Quotation</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
+  const quotationStep = section(8, `${renderStepGuidance('quotation')}<p>Submit the exact configuration for a fixed, itemised quotation within 48 hours.</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>First Name *<input name="firstName" autocomplete="given-name" value="${esc(config.quote.firstName)}" required></label><label>Last Name *<input name="lastName" autocomplete="family-name" value="${esc(config.quote.lastName)}" required></label><label>Mobile / WhatsApp *<input type="tel" inputmode="numeric" name="phone" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.phone)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>Email *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>Company<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>City<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>State<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>Requirement notes<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">Get My Official Quotation</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
 
   const allSections = [productStep, sizeStep, structureStep, interiorStep, openingsStep, electricalStep, addOnsStep, deliveryStep, quotationStep];
   const renderedSections = embedded ? allSections.slice(1) : allSections;

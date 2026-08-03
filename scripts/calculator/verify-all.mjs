@@ -6,7 +6,9 @@ const directory = path.dirname(fileURLToPath(import.meta.url));
 const scripts = [
   'verify-route-price-identity.mjs',
   'report-locked-product-names.mjs',
-  'verify-v9-rates.mjs',
+  'verify-no-emoji.mjs',
+  'verify-nojs-post.mjs',
+  'verify-rate-card-diff.mjs',
   'report-product-ladders.mjs',
   'verify-hub-anchors.mjs',
   'verify-ux-static.mjs',

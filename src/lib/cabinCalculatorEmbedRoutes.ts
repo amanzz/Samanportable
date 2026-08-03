@@ -80,6 +80,15 @@ function resolveForLaborColony(category: string, slug?: string): ProductId {
   return 'labour-colony';
 }
 
+function resolveForContainerHouses(category: string, slug?: string): ProductId {
+  const target = normalise(slug || category);
+  if (target.includes('prefab-container-home')) return 'prefab-container-homes';
+  if (target.includes('affordable-container-home')) return 'affordable-container-homes';
+  if (target.includes('shipping-container-home')) return 'shipping-container-homes';
+  if (target.includes('luxury-container-house')) return 'luxury-container-houses';
+  return 'container-houses';
+}
+
 function resolveForContainerOffices(category: string, slug?: string): ProductId {
   const target = normalise(slug || category);
   if (target.includes('site-office') || target.includes('portable-office-container')) return 'site-office';
@@ -128,6 +137,20 @@ export function resolveEmbeddedCalculatorProduct(
       category,
       slug,
       productId: mapped || 'office-cabin',
+      ladderKey: ladderKeyFor(category, slug),
+    };
+  }
+
+  // Ruled 03 Aug 2026: the hub /product/container-houses carries a calculator
+  // on its own six-size ladder. Its subpages each lock to themselves and price
+  // from their own ladder where they publish one; the rest render quote mode.
+  // Only Container House is in the product list — the four sibling house
+  // products are subpages and are excluded from it under the hubs-only rule.
+  if (c === 'container-houses' || c === 'container-house') {
+    return {
+      category,
+      slug,
+      productId: resolveForContainerHouses(category, slug),
       ladderKey: ladderKeyFor(category, slug),
     };
   }
