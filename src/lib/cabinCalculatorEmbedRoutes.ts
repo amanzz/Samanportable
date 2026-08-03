@@ -164,13 +164,13 @@ export function resolveEmbeddedCalculatorProduct(
     };
   }
 
+  // Labour Colony carries no calculator (ruled 03 Aug 2026). It is excluded
+  // from the product step, and five of the nine steps were dead for it anyway:
+  // structure, interior, doors, windows and add-ons never priced on a colony
+  // block. It gets its own configuration flow as a separate event. Its pages
+  // keep the enquiry route in the meantime, so none is left with nothing.
   if (c === 'labor-colony' || c === 'c06' || c === 'labour-colony') {
-    return {
-      category,
-      slug,
-      productId: resolveForLaborColony(category, slug),
-      ladderKey: ladderKeyFor(category, slug),
-    };
+    return null;
   }
 
   return null;

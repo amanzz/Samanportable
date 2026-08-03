@@ -3,7 +3,9 @@ import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { siteConfig } from '@/config/seo';
 
-const title = 'Cabin Cost Calculator │ Instant Price Estimate │ SAMAN';
+import { PAGE_TITLE } from '@/lib/calculatorCopy';
+
+const title = PAGE_TITLE;
 const description = 'Build a live estimate for your portable cabin. Enter any size, choose finishes, doors, electricals and add-ons, and get a fixed quotation within 48 hours.';
 const canonical = `${siteConfig.url}/cabin-cost-calculator`;
 

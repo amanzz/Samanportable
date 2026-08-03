@@ -37,6 +37,7 @@ import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
 import { toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
+import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
@@ -898,8 +899,9 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                 <section className="mt-4">
                   <details className="rounded-xl border border-slate-200 bg-white/90 shadow-sm">
                     <summary className="cursor-pointer list-none px-4 py-3">
-                      <span className="text-lg font-semibold text-foreground">{embeddedCalculatorSummary?.name || 'Estimate this product'}</span>
-                      <span className="ml-2 text-sm text-muted-foreground">{embeddedCalculatorSummaryText}</span>
+                      <span className="text-lg font-semibold text-foreground">{CLOSED_STATE.label}</span>
+                      <span className="ml-2 text-sm text-muted-foreground">{CLOSED_STATE.subLine}</span>
+                      <span className="ml-2 text-sm font-medium underline">{CLOSED_STATE.control}</span>
                     </summary>
                     <div className="mt-3 px-1 pb-1" dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
                   </details>
