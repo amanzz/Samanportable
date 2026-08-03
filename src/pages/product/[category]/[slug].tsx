@@ -45,6 +45,8 @@ import {
   c01HubReturnAnchorForSlug,
 } from '../../../lib/portaCabinClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { getEmbeddedProductSummary, renderCabinCalculatorSSR } from '../../../lib/cabinCalculatorSSR';
+import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 
@@ -436,6 +438,27 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     return built;
   }, [slug, transformedProduct?.slug, transformedRelatedProducts]);
 
+  const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
+  const embeddedCalculatorSummary = useMemo(() => (
+    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId) : null
+  ), [embeddedCalculatorMapping]);
+
+  const embeddedCalculatorSummaryText = useMemo(() => {
+    if (!embeddedCalculatorSummary) return '';
+    return `${embeddedCalculatorSummary.name} | ${embeddedCalculatorSummary.priceLabel}`;
+  }, [embeddedCalculatorSummary]);
+
+  const embeddedCalculatorHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
+    return renderCabinCalculatorSSR({
+      embedded: true,
+      config: {
+        productId: embeddedCalculatorMapping.productId,
+      },
+      pageUrl: makeCalculatorPageUrl(category, slug),
+    });
+  }, [category, slug, embeddedCalculatorMapping]);
+
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
     setIsHydrated(true);
@@ -504,6 +527,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(variantData?.faqSchema || rankMathSEO?.faqSchema) }}
               />
+            </Head>
+          )}
+          {embeddedCalculatorHtml && (
+            <Head>
+              <script defer src="/scripts/cabin-cost-calculator.js" />
             </Head>
           )}
 
@@ -800,6 +828,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               />
               )}
 
+              {embeddedCalculatorHtml && (
+                <section className="mt-4">
+                  <details className="rounded-xl border border-slate-200 bg-white/90 shadow-sm">
+                    <summary className="cursor-pointer list-none px-4 py-3">
+                      <span className="text-lg font-semibold text-foreground">{embeddedCalculatorSummary?.name || 'Estimate this cabin'}</span>
+                      <span className="ml-2 text-sm text-muted-foreground">{embeddedCalculatorSummaryText}</span>
+                    </summary>
+                    <div className="mt-3 px-1 pb-1" dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
+                  </details>
+                </section>
+              )}
+
               {/* Product Tabs */}
               <div className="mt-4">
                 <ProductTabs
@@ -1007,3 +1047,5 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 };
 
 export default ProductDetails;
+
+
