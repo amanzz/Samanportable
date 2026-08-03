@@ -47,6 +47,7 @@ import {
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
+import { removeMonetaryHtml, removeMonetarySentencesDeep } from '../../../lib/monetaryText';
 
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
@@ -77,23 +78,6 @@ const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
 const PENDING_APPROVED_LADDER_SLUGS = new Set([
   'prefabricated-container-house',
 ]);
-
-const MONETARY_TEXT_PATTERN = /(?:₹|Rs\.?\s*)\s*\d[\d,]*(?:\.\d+)?(?:\s*[–-]\s*(?:₹|Rs\.?\s*)?\s*\d[\d,]*(?:\.\d+)?)?\s*(?:lakh|crore|L)?/gi;
-
-function stripMonetaryText(value: string): string {
-  return value.replace(MONETARY_TEXT_PATTERN, '');
-}
-
-function stripMonetaryTextDeep<T>(value: T): T {
-  if (typeof value === 'string') return stripMonetaryText(value) as T;
-  if (Array.isArray(value)) return value.map((item) => stripMonetaryTextDeep(item)) as T;
-  if (value && typeof value === 'object') {
-    return Object.fromEntries(
-      Object.entries(value as Record<string, unknown>).map(([key, item]) => [key, stripMonetaryTextDeep(item)])
-    ) as T;
-  }
-  return value;
-}
 
 // Section 17: exported WordPress records are immutable. Route-specific content
 // corrections are applied to the fetched render string, with the full anchor
@@ -227,7 +211,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       productDescriptionWithHeadingCorrection
     );
     const productDescription = suppressLegacyCommercialSurfaces
-      ? stripMonetaryText(correctedProductDescription)
+      ? removeMonetaryHtml(correctedProductDescription)
       : correctedProductDescription;
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
@@ -247,7 +231,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       console.warn('Failed to fetch Rank Math SEO data:', error);
     }
     if (suppressLegacyCommercialSurfaces && rankMathSEO) {
-      rankMathSEO = stripMonetaryTextDeep(rankMathSEO);
+      rankMathSEO = removeMonetarySentencesDeep(rankMathSEO);
     }
 
     // Public marketing page with no per-user data — safe to edge-cache. Set only
@@ -328,7 +312,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       ] as const) {
         delete productForPageProps[field];
       }
-      productForPageProps.short_description = stripMonetaryText(String(productForPageProps.short_description || ''));
+      delete productForPageProps.short_description;
     }
 
     return {

@@ -27,6 +27,7 @@ import {
 import { decodeHtmlEntities } from '@/lib/utils';
 import { PORTA_CABIN_REDIRECTED_SLUGS } from '@/lib/portaCabinClusterRail';
 import { PORTABLE_OFFICE_REDIRECTED_SLUGS } from '@/lib/portableOfficeCluster';
+import { removeMonetarySentencesDeep } from '@/lib/monetaryText';
 
 const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
 
@@ -70,7 +71,7 @@ const SAFE_SLUG = /^[a-z0-9-]+$/;
 
 function readJson(file: string): any | null {
   try {
-    return JSON.parse(fs.readFileSync(file, 'utf-8'));
+    return trimImageAltWhitespaceDeep(JSON.parse(fs.readFileSync(file, 'utf-8')));
   } catch {
     return null;
   }
@@ -133,6 +134,196 @@ export function rewriteRetiredInternalLinks(html: string): string {
     }
   }
   return rewritten;
+}
+
+// C-08 P0 (SAMAN ruling, 03 Aug 2026): a category archive publishes NO price.
+// Frozen WordPress exports stay read-only; each price-bearing or ruled retired-name
+// section is removed here, heading and body together, without replacement copy.
+// Images inside removed sections are removed with their sections. This also removes
+// the previously preserved container-house ladder image that sat without context.
+const CATEGORY_PRICE_LADDER_REMOVALS = new Map<
+  string,
+  { removeLeading?: boolean; headings: string[] }
+>([
+  [
+    'container-cafe',
+    {
+      removeLeading: true,
+      headings: [
+        'Container cafe types and price bands compared',
+        'How much does a container cafe cost in India?',
+        'Why do container cafe prices range from ₹2 lakh to ₹33 lakh?',
+      ],
+    },
+  ],
+  [
+    'container-houses',
+    {
+      removeLeading: true,
+      headings: [
+        'Which container house fits your budget and family size?',
+        'Container house price range by type',
+        'How much does a container house cost in India?',
+        'How much does a container house cost?',
+        'Where can I buy a container house?',
+        "What's the difference between a prefabricated container home and a prefabricated container house?",
+      ],
+    },
+  ],
+  [
+    'container-offices',
+    {
+      headings: [
+        'Which container office do you need?',
+        'Container office types and sizes compared',
+        'Can container offices be stacked or joined into a larger office?',
+        'Container office range and starting prices',
+        'SAMAN container office vs an IndiaMART listing',
+      ],
+    },
+  ],
+  [
+    'industrial-sheds',
+    {
+      removeLeading: true,
+      headings: [
+        'Industrial shed types, spans and price bands',
+        'What an industrial shed costs in India',
+        "Why buy your shed range from SAMAN's own plants",
+      ],
+    },
+  ],
+  [
+    'peb-constructions',
+    {
+      headings: [
+        'Which PEB structure should you build — warehouse, factory, shed or multi-storey?',
+        'PEB construction range — spans, applications and indicative price bands',
+        "What does PEB construction cost, and what's included in the price?",
+        'What is the cost of PEB construction?',
+      ],
+    },
+  ],
+  [
+    'portable-cabin',
+    {
+      removeLeading: true,
+      headings: [
+        'Portable cabin types, sizes and starting prices compared',
+        'How much does a portable cabin cost?',
+        'Buying your portable cabin range from a manufacturer, not a reseller',
+      ],
+    },
+  ],
+  [
+    'portable-toilet',
+    {
+      removeLeading: true,
+      headings: [
+        "SAMAN's Portable Toilet Range — ₹65,000 to ₹1,05,000, Side by Side",
+        'Why Buyers Order From SAMAN',
+        "What's the price range across SAMAN's portable toilet variants?",
+      ],
+    },
+  ],
+  [
+    'pre-engineered-buildings',
+    {
+      removeLeading: true,
+      headings: [
+        'Which pre-engineered building fits your warehouse, factory or workshop?',
+        'How much does a pre-engineered building cost in India?',
+        'What is the cost of a pre-engineered building in India?',
+      ],
+    },
+  ],
+  [
+    'prefab-buildings',
+    {
+      removeLeading: true,
+      headings: [
+        "How to Choose the Right Prefab Building from SAMAN's Range",
+        'The Full Prefab Building Range — Sizes, Price Bands and What Each Suits',
+        'Questions Buyers Ask Before Choosing a Prefab Building Manufacturer',
+      ],
+    },
+  ],
+  [
+    'prefabricated-houses',
+    {
+      removeLeading: true,
+      headings: [
+        'Which prefabricated house do you need?',
+        'Compare the SAMAN prefabricated house range',
+        "What is SAMAN's price range for prefabricated houses?",
+      ],
+    },
+  ],
+  [
+    'security-cabins',
+    {
+      headings: [
+        'How Much Does a Security Cabin Cost in India?',
+      ],
+    },
+  ],
+]);
+
+const HEADING_TAG = /<(h[23])\b[^>]*>([\s\S]*?)<\/\1>/gi;
+
+function headingTextMatches(rawHeading: string, target: string): boolean {
+  const normalize = (s: string) =>
+    s
+      .replace(/<[^>]+>/g, '')
+      .replace(/&amp;/g, '&')
+      .replace(/&#8217;|&rsquo;|’/g, "'")
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+  return normalize(rawHeading) === normalize(target);
+}
+
+/**
+ * Drops the price-bearing sections from a category description. A section runs from
+ * its heading to the next heading of the same or higher level, so an <h3> inside a
+ * retained <h2> can be removed on its own without disturbing its siblings.
+ */
+export function removeCategoryPriceLadderSections(html: string, slug: string): string {
+  const rule = CATEGORY_PRICE_LADDER_REMOVALS.get(slug);
+  if (!rule || !html) return html;
+
+  // Index every heading with its level and span.
+  const headings: Array<{ level: number; start: number; end: number; text: string }> = [];
+  HEADING_TAG.lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = HEADING_TAG.exec(html))) {
+    headings.push({
+      level: Number(match[1][1]),
+      start: match.index,
+      end: match.index + match[0].length,
+      text: match[2],
+    });
+  }
+
+  const cuts: Array<[number, number]> = [];
+  if (rule.removeLeading && headings[0]?.start) cuts.push([0, headings[0].start]);
+  headings.forEach((heading, index) => {
+    if (!rule.headings.some((target) => headingTextMatches(heading.text, target))) return;
+    // Section ends at the next heading of the same or higher level, else end of input.
+    const next = headings.slice(index + 1).find((h) => h.level <= heading.level);
+    cuts.push([heading.start, next ? next.start : html.length]);
+  });
+
+  // Apply from the end so earlier offsets stay valid.
+  let result = html;
+  for (const [start, end] of cuts.sort((a, b) => b[0] - a[0])) {
+    result = result.slice(0, start) + result.slice(end);
+  }
+
+  return result
+    .replace(/<h([1-6])\b[^>]*>\s*<\/h\1>/gi, '')
+    .replace(/(?:\r\n|\n|\s){3,}/g, '\r\n\r\n')
+    .trim();
 }
 
 const C04_CANONICAL_WARRANTY =
@@ -777,6 +968,40 @@ export async function fetchLightweightProduct(slug: string): Promise<Lightweight
   return p ? toLightweight(p) : null;
 }
 
+// C-08 (Fable 5 ruling, 03 Aug 2026): several exported alt strings carry a leading
+// or trailing space, which screen readers announce as a pause and which breaks
+// byte-comparison against an approved manifest. Trimming the attribute changes only
+// whitespace — no word, no punctuation, no ordering — so it is defect removal, not
+// copy. Empty and whitespace-only alts are left exactly as they are, since a
+// decorative empty alt is meaningful.
+export function trimImageAltWhitespace(html: string): string {
+  if (!html || !html.includes('alt=')) return html;
+  return html.replace(/\balt=(["'])(.*?)\1/gi, (whole, quote: string, value: string) => {
+    const trimmed = value.trim();
+    return trimmed && trimmed !== value ? `alt=${quote}${trimmed}${quote}` : whole;
+  });
+}
+
+export function trimImageAltWhitespaceDeep<T>(value: T, key = ''): T {
+  if (typeof value === 'string') {
+    if (key === 'alt') {
+      const trimmed = value.trim();
+      return (trimmed && trimmed !== value ? trimmed : value) as T;
+    }
+    return trimImageAltWhitespace(value) as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => trimImageAltWhitespaceDeep(item)) as T;
+  }
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>)
+        .map(([childKey, item]) => [childKey, trimImageAltWhitespaceDeep(item, childKey)])
+    ) as T;
+  }
+  return value;
+}
+
 // Mirrors api.fetchProductDescription.
 export async function fetchProductDescription(
   slug: string
@@ -784,14 +1009,20 @@ export async function fetchProductDescription(
   const p = findProductBySlug(slug);
   if (!p) return null;
   return {
-    description: rewriteC04NonL3Punctuation(
-      applyC04GapCloseCopy(
-        rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
+    description: trimImageAltWhitespace(
+      rewriteC04NonL3Punctuation(
+        applyC04GapCloseCopy(
+          rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
+          slug
+        ),
         slug
-      ),
-      slug
+      )
     ),
-    images: p.images || [],
+    images: (p.images || []).map((image: any) =>
+      typeof image?.alt === 'string' && image.alt.trim() && image.alt.trim() !== image.alt
+        ? { ...image, alt: image.alt.trim() }
+        : image
+    ),
     // Optional per-product tab overrides — passed through only when present in the
     // product JSON. Absent on all other products, so their tabs render unchanged.
     ...(p.specificationsHtml ? { specificationsHtml: p.specificationsHtml } : {}),
@@ -886,7 +1117,10 @@ export async function fetchProductCategoryBySlug(slug: string): Promise<ProductC
     id: c.id,
     name: c.name,
     slug: c.slug,
-    description: rewriteRetiredInternalLinks(c.description || ''),
+    description: removeCategoryPriceLadderSections(
+      rewriteRetiredInternalLinks(c.description || ''),
+      slug
+    ),
     extraDescription: '', // category meta_data is not part of the WC category object
     count: c.count || 0,
     image: c.image || null,
@@ -897,7 +1131,20 @@ export async function fetchProductCategoryBySlug(slug: string): Promise<ProductC
 export async function fetchCategoryRankMathSEO(categorySlug: string): Promise<RankMathSEOData | null> {
   if (!SAFE_SLUG.test(categorySlug)) return null;
   const c = getAllCategoriesRaw().find((x) => x.slug === categorySlug);
-  return headToSeo(c);
+  let seo = headToSeo(c);
+  if (CATEGORY_PRICE_LADDER_REMOVALS.has(categorySlug) && seo) {
+    seo = removeMonetarySentencesDeep(seo);
+  }
+  if (categorySlug === 'container-houses') {
+    const description = 'Container house types from SAMAN: prefab, luxury, shipping-form and affordable builds. Compare specifications and sizes, then see prices on each product page.';
+    seo = {
+      ...(seo || {}),
+      description,
+      og_description: description,
+      twitter_description: description,
+    };
+  }
+  return seo;
 }
 
 // Mirrors api.fetchProductAttributes — derived from the exported products

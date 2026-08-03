@@ -206,7 +206,7 @@ Source folder: `luxury-container-houses`
 | Src | New filename | Alt text |
 |---|---|---|
 | E01 | luxury-container-houses-40x8-front-right-hero.webp | Front-right hero view of a 40x8 ft luxury container house, dark brown cladding, on a eucalyptus slope with hydrangea beds |
-| I01 | luxury-container-houses-40x8-entry-living-hall.webp | Entry and living area inside a 40x8 ft luxury container house, with a linen sofa and a low timber table beneath framed artwork. |
+| I01 | luxury-container-houses-40x8-entry-living-hall.webp | Entry and living area inside a 40x8 ft luxury container house, with a sofa with a timber coffee table |
 | E03 | luxury-container-houses-40x8-long-side-elevation.webp | Side elevation of a 40x8 ft luxury container house, dark brown cladding, on a eucalyptus slope with hydrangea beds |
 | E05 | luxury-container-houses-40x8-end-dominant-view.webp | End-on view of a 40x8 ft luxury container house with the gable glazing lit, dark brown cladding, on a eucalyptus slope with hydrangea beds |
 | I02 | luxury-container-houses-40x8-kitchen-dining.webp | Kitchen and dining zone inside a 40x8 ft luxury container house, with a dining table beneath pendant lights |
@@ -379,3 +379,16 @@ Source folder: `affordable-container-homes`
 | E03 | affordable-container-homes-40x12-long-side-elevation.webp | Side elevation of a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind |
 | I02 | affordable-container-homes-40x12-kitchen-dining.webp | Kitchen and dining zone inside a 40x12 ft affordable container home, with a kitchen counter with a long dining table |
 | I04 | affordable-container-homes-40x12-bathroom-reverse.webp | Looking back through a 40x12 ft affordable container home towards a shower room off the corridor |
+
+## Dated amendment — 03 Aug 2026
+
+This amendment supersedes one alt without editing the approved 02 Aug 2026 manifest row in place.
+
+- **Row replaced:** `luxury-container-houses` / `40x8` / `I01`
+- **Filename:** `luxury-container-houses-40x8-entry-living-hall.webp`
+- **Original approved wording retained above:** `Entry and living area inside a 40x8 ft luxury container house, with a sofa with a timber coffee table`
+- **Superseding approved alt:** `Entry and living area inside a 40x8 ft luxury container house, with a linen sofa and a low timber table beneath framed artwork.`
+- **Reason:** resolves the approved seven-gram collision between luxury 40x8 I01 and shipping 40x8 I01.
+- **Effective date:** 03 Aug 2026
+
+<!-- C08_ALT_AMENDMENT {"date":"2026-08-03","slug":"luxury-container-houses","sizeSlug":"40x8","sourceViewToken":"I01","filename":"luxury-container-houses-40x8-entry-living-hall.webp","originalAlt":"Entry and living area inside a 40x8 ft luxury container house, with a sofa with a timber coffee table","supersedingAlt":"Entry and living area inside a 40x8 ft luxury container house, with a linen sofa and a low timber table beneath framed artwork."} -->
