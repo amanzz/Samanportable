@@ -592,7 +592,7 @@ export function PortaCabinVariantHero({
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 text-center p-4">
               <p className="text-sm text-muted-foreground">
-                Photos for the {heroActive.label} {productName} are being finalised — send an enquiry for reference images.
+                Photos for the {heroActive.label} {productName} are being finalised, send an enquiry for reference images.
               </p>
             </div>
           )}
@@ -753,7 +753,7 @@ export function PortaCabinVariantHero({
               incl-GST line. When priceExGst is a number the ORIGINAL two elements
               render unchanged (the fragment is transparent → flagship byte-identity). */}
           {heroActive.priceExGst == null ? (
-            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">Price on request — send enquiry</span>
+            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">Price on request, send enquiry</span>
           ) : (
             <>
               <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
@@ -1161,7 +1161,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   ) : (
                     <div className="flex h-full w-full items-center justify-center p-4 text-center">
                       <p className="text-sm text-[var(--ds-color-steel)]">
-                        Photos for the {v.label} {productName} are being finalised — send an enquiry for reference images.
+                        Photos for the {v.label} {productName} are being finalised, send an enquiry for reference images.
                       </p>
                     </div>
                   )}

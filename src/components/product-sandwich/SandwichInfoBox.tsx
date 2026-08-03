@@ -57,7 +57,7 @@ const SandwichInfoBox = ({ h1, sku, averageRating, ratingCount = 0 }: SandwichIn
       </div>
 
       <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-        A sandwich panel is an insulated building board — two steel facing sheets bonded to an insulating core — used for walls, roofs, cabins and cold rooms. SAMAN manufactures all five cores — PUF, PIR, EPS, Rockwool and Glass Wool — on our own lines in Bangalore and Greater Noida, so you choose the core by your thermal, fire, acoustic or budget need and buy the finished panel factory-direct.
+        A sandwich panel is an insulated building board, two steel facing sheets bonded to an insulating core, used for walls, roofs, cabins and cold rooms. SAMAN manufactures all five cores, PUF, PIR, EPS, Rockwool and Glass Wool, on our own lines in Bangalore and Greater Noida, so you choose the core by your thermal, fire, acoustic or budget need and buy the finished panel factory-direct.
       </p>
 
       <dl className="grid grid-cols-1 gap-3 border-t border-border pt-4 sm:grid-cols-2">

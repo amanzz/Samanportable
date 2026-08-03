@@ -292,7 +292,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // responded successfully; the category-mismatch 404 likewise only runs after a
     // successful fetch. Only the error message is logged (no request URL / keys).
     console.error(
-      'Product SSR failed — returning 5xx, not 404:',
+      'Product SSR failed, returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render product');

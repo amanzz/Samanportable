@@ -58,7 +58,7 @@ const EpsInfoBox = ({ h1, priceMain, priceSubline, intro, sku, hsn }: EpsInfoBox
       </dl>
 
       <ul className="mt-4 space-y-2 border-t border-border pt-4 text-sm text-muted-foreground">
-        <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />Steel-faced EPS sandwich panel — wall and roof profiles</li>
+        <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />Steel-faced EPS sandwich panel, wall and roof profiles</li>
         <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />Standard thickness 30–150 mm (incl. 70/90 mm); 110–200 mm made to order</li>
         <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />EPS core density 16 kg/m³ standard; 20–24 kg/m³ upgrade on request</li>
         <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />Supply-only quotes; <span className="font-semibold text-foreground">panel warranty 5–10 years, confirmed at quotation</span>; transport confirmed at quotation</li>

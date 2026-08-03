@@ -72,7 +72,7 @@ const HeroSection = () => {
               data-homepage-opening
               className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed font-light"
             >
-              SAMAN POS India Private Limited manufactures factory-built modular structures at its own Bangalore and Greater Noida units — ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified, NSIC-enlisted and DPIIT-recognised. You deal with the maker, not a reseller: every unit is fabricated in-house, delivered complete, and installed on your prepared base. Choose your range below — each product line has its own page with sizes, specifications and ex-factory prices — or send your requirement for a written, itemised quotation.
+              SAMAN POS India Private Limited manufactures factory-built modular structures at its own Bangalore and Greater Noida units: ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified, NSIC-enlisted and DPIIT-recognised. You deal with the maker, not a reseller: every unit is fabricated in-house, delivered complete, and installed on your prepared base. Choose your range below, each product line has its own page with sizes, specifications and ex-factory prices, or send your requirement for a written, itemised quotation.
             </p>
 
             {/* CTA Buttons — three CTAs (T2: form removed from hero) */}

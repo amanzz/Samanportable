@@ -94,7 +94,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
         fallbackDescription={pageSEO.about.description}
         fallbackCanonical={pageSEO.about.canonical}
         fallbackOgImage="/about-us-hero.jpg"
-        fallbackOgDescription="Inside Saman Portable—our mission, team, and quality promise."
+        fallbackOgDescription="Inside Saman Portable: our mission, team, and quality promise."
         fallbackTwitterDescription="15+ years of portable cabins and prefab expertise across India."
         keywords={pageSEO.about.keywords}
         author={siteConfig.author}
@@ -117,7 +117,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
               </h2>
               <div className="text-lg md:text-xl max-w-4xl mx-auto opacity-90 space-y-4">
                 <p>
-                  Saman Portable is India’s trusted name in portable cabins, container offices, and prefab buildings. Since 2009, we’ve been transforming the way businesses and communities build — combining speed, sustainability, and modern design in every structure.
+                  Saman Portable is India’s trusted name in portable cabins, container offices, and prefab buildings. Since 2009, we’ve been transforming the way businesses and communities build: combining speed, sustainability, and modern design in every structure.
                 </p>
                 <p>
                   With ISO-certified quality, advanced PUF-panel engineering, and a 7–21 days delivery promise, we help clients across India create durable, ready-to-use spaces that perform beautifully and last for years.
@@ -179,7 +179,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                 <div className="bg-[#0A3D2A] rounded-2xl p-8 text-white">
                   <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                   <p className="text-lg mb-6 opacity-90">
-                    To design and deliver sustainable, cost-effective, and technology-driven portable construction solutions that empower businesses to grow, adapt, and thrive in a dynamic world.
+                    To design and deliver sustainable, cost-effective, and technology-driven portable construction solutions that help businesses grow and adapt as their sites and teams change.
                   </p>
                   <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
                   <p className="text-lg opacity-90">
@@ -195,7 +195,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
             <div className="max-w-7xl mx-auto container-padding">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Why Choose Saman Portable?
+                  Why buyers choose SAMAN
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                   We stand out in the industry with our commitment to quality, innovation, and customer satisfaction.
@@ -291,7 +291,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                   Our Journey
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  From a single workshop to India’s most trusted modular construction brand — here’s how Saman Portable redefined portable space solutions through innovation, technology, and consistency.
+                  From a single workshop to India’s most trusted modular construction brand: here’s how Saman Portable redefined portable space solutions through innovation, technology, and consistency.
                 </p>
               </div>
 
@@ -331,7 +331,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-foreground">Partnership First</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    At Saman Portable, we believe great construction begins with great relationships. Every project starts with listening — understanding not just space requirements, but the goals and challenges behind them. That’s how we turn modular design into something more meaningful: a partnership that builds lasting value.
+                    At Saman Portable, we believe great construction begins with great relationships. Every project starts with listening, understanding the space required, and the goals and constraints behind it. That’s how we turn modular design into something more meaningful: a partnership that builds lasting value.
                   </p>
                 </div>
 
@@ -342,7 +342,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-foreground">Tailored Precision</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Our approach is simple — precision where it matters, and flexibility where it counts. We invest continuously in design research, sustainable materials, and digital fabrication. From startups needing quick workspace solutions to national infrastructure leaders scaling across regions, we tailor every structure to fit their journey.
+                    Our approach is simple, precision where it matters, and flexibility where it counts. We invest continuously in design research, sustainable materials, and digital fabrication. From startups needing quick workspace solutions to national infrastructure leaders scaling across regions, we tailor every structure to fit their journey.
                   </p>
                 </div>
 
@@ -353,7 +353,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-foreground">Future-Ready</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    As India moves toward smarter, greener construction, we’re not just following the shift — we’re shaping it. Saman Portable stands for accountability, innovation, and a promise that every structure we build will strengthen the people and purpose it serves.
+                    As India moves toward smarter, greener construction, we’re not just following the shift, we’re shaping it. Saman Portable stands for accountability, innovation, and a promise that every structure we build will strengthen the people and purpose it serves.
                   </p>
                 </div>
               </div>
@@ -367,7 +367,7 @@ const AboutUs = ({ companyStats }: AboutUsProps) => {
           <section className="section-padding bg-[#0A3D2A] text-white">
             <div className="max-w-7xl mx-auto container-padding text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Work With Us?
+                Work with SAMAN
               </h2>
               <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
                 Join hundreds of satisfied customers who have transformed their business spaces

@@ -53,7 +53,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ featuredProducts = []
               Browse Our Portable Cabins &amp; Container Offices
             </h2>
             <p className="text-base text-muted-foreground max-w-xl leading-relaxed">
-              Prices, specs and photos — pulled directly from our product catalogue. Click any product to get full details and request a quote.
+              Prices, specs and photos, pulled directly from our product catalogue. Click any product to get full details and request a quote.
             </p>
           </div>
 

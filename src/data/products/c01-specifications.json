@@ -316,7 +316,7 @@
           "ratePerSqft": 1375,
           "priceExGst": 137500,
           "priceInclGst": 162250,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x8",
@@ -326,7 +326,7 @@
           "ratePerSqft": 1375,
           "priceExGst": 220000,
           "priceInclGst": 259600,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x10",
@@ -336,7 +336,7 @@
           "ratePerSqft": 1250,
           "priceExGst": 250000,
           "priceInclGst": 295000,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x12",
@@ -346,7 +346,7 @@
           "ratePerSqft": 1200,
           "priceExGst": 288000,
           "priceInclGst": 339840,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "30x10",
@@ -356,7 +356,7 @@
           "ratePerSqft": 1200,
           "priceExGst": 360000,
           "priceInclGst": 424800,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x8",
@@ -366,7 +366,7 @@
           "ratePerSqft": 1175,
           "priceExGst": 376000,
           "priceInclGst": 443680,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x20",
@@ -376,7 +376,7 @@
           "ratePerSqft": 1175,
           "priceExGst": 470000,
           "priceInclGst": 554600,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x10",
@@ -386,7 +386,7 @@
           "ratePerSqft": 1175,
           "priceExGst": 470000,
           "priceInclGst": 554600,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x12",
@@ -396,7 +396,7 @@
           "ratePerSqft": 1150,
           "priceExGst": 552000,
           "priceInclGst": 651360,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         }
       ]
     },
@@ -657,7 +657,7 @@
           "ratePerSqft": 1320,
           "priceExGst": 132000,
           "priceInclGst": 155760,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x8",
@@ -667,7 +667,7 @@
           "ratePerSqft": 1320,
           "priceExGst": 211200,
           "priceInclGst": 249216,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x10",
@@ -677,7 +677,7 @@
           "ratePerSqft": 1200,
           "priceExGst": 240000,
           "priceInclGst": 283200,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x12",
@@ -687,7 +687,7 @@
           "ratePerSqft": 1152,
           "priceExGst": 276480,
           "priceInclGst": 326246,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "30x10",
@@ -697,7 +697,7 @@
           "ratePerSqft": 1152,
           "priceExGst": 345600,
           "priceInclGst": 407808,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x8",
@@ -707,7 +707,7 @@
           "ratePerSqft": 1128,
           "priceExGst": 360960,
           "priceInclGst": 425933,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x20",
@@ -717,7 +717,7 @@
           "ratePerSqft": 1128,
           "priceExGst": 451200,
           "priceInclGst": 532416,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x10",
@@ -727,7 +727,7 @@
           "ratePerSqft": 1128,
           "priceExGst": 451200,
           "priceInclGst": 532416,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x12",
@@ -737,7 +737,7 @@
           "ratePerSqft": 1104,
           "priceExGst": 529920,
           "priceInclGst": 625306,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         }
       ]
     },
@@ -996,7 +996,7 @@
           "ratePerSqft": 2035,
           "priceExGst": 203500,
           "priceInclGst": 240130,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x8",
@@ -1006,7 +1006,7 @@
           "ratePerSqft": 2035,
           "priceExGst": 325600,
           "priceInclGst": 384208,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x10",
@@ -1016,7 +1016,7 @@
           "ratePerSqft": 1850,
           "priceExGst": 370000,
           "priceInclGst": 436600,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x12",
@@ -1026,7 +1026,7 @@
           "ratePerSqft": 1776,
           "priceExGst": 426240,
           "priceInclGst": 502963,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "30x10",
@@ -1036,7 +1036,7 @@
           "ratePerSqft": 1776,
           "priceExGst": 532800,
           "priceInclGst": 628704,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x8",
@@ -1046,7 +1046,7 @@
           "ratePerSqft": 1739,
           "priceExGst": 556480,
           "priceInclGst": 656646,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x20",
@@ -1056,7 +1056,7 @@
           "ratePerSqft": 1739,
           "priceExGst": 695600,
           "priceInclGst": 820808,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x10",
@@ -1066,7 +1066,7 @@
           "ratePerSqft": 1739,
           "priceExGst": 695600,
           "priceInclGst": 820808,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x12",
@@ -1076,7 +1076,7 @@
           "ratePerSqft": 1702,
           "priceExGst": 816960,
           "priceInclGst": 964013,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         }
       ]
     },
@@ -1338,7 +1338,7 @@
           "ratePerSqft": 1320,
           "priceExGst": 132000,
           "priceInclGst": 155760,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x8",
@@ -1348,7 +1348,7 @@
           "ratePerSqft": 1320,
           "priceExGst": 211200,
           "priceInclGst": 249216,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x10",
@@ -1358,7 +1358,7 @@
           "ratePerSqft": 1200,
           "priceExGst": 240000,
           "priceInclGst": 283200,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x12",
@@ -1368,7 +1368,7 @@
           "ratePerSqft": 1152,
           "priceExGst": 276480,
           "priceInclGst": 326246,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         }
       ]
     },
@@ -1632,7 +1632,7 @@
           "ratePerSqft": 1980,
           "priceExGst": 198000,
           "priceInclGst": 233640,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x8",
@@ -1642,7 +1642,7 @@
           "ratePerSqft": 1980,
           "priceExGst": 316800,
           "priceInclGst": 373824,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x10",
@@ -1652,7 +1652,7 @@
           "ratePerSqft": 1800,
           "priceExGst": 360000,
           "priceInclGst": 424800,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x12",
@@ -1662,7 +1662,7 @@
           "ratePerSqft": 1728,
           "priceExGst": 414720,
           "priceInclGst": 489370,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "30x10",
@@ -1672,7 +1672,7 @@
           "ratePerSqft": 1728,
           "priceExGst": 518400,
           "priceInclGst": 611712,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x8",
@@ -1682,7 +1682,7 @@
           "ratePerSqft": 1692,
           "priceExGst": 541440,
           "priceInclGst": 638899,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x20",
@@ -1692,7 +1692,7 @@
           "ratePerSqft": 1692,
           "priceExGst": 676800,
           "priceInclGst": 798624,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x10",
@@ -1702,7 +1702,7 @@
           "ratePerSqft": 1692,
           "priceExGst": 676800,
           "priceInclGst": 798624,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x12",
@@ -1712,7 +1712,7 @@
           "ratePerSqft": 1656,
           "priceExGst": 794880,
           "priceInclGst": 937958,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         }
       ]
     },
@@ -1971,7 +1971,7 @@
           "ratePerSqft": 1540,
           "priceExGst": 154000,
           "priceInclGst": 181720,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x8",
@@ -1981,7 +1981,7 @@
           "ratePerSqft": 1540,
           "priceExGst": 246400,
           "priceInclGst": 290752,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x10",
@@ -1991,7 +1991,7 @@
           "ratePerSqft": 1400,
           "priceExGst": 280000,
           "priceInclGst": 330400,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x12",
@@ -2001,7 +2001,7 @@
           "ratePerSqft": 1344,
           "priceExGst": 322560,
           "priceInclGst": 380621,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "30x10",
@@ -2011,7 +2011,7 @@
           "ratePerSqft": 1344,
           "priceExGst": 403200,
           "priceInclGst": 475776,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x8",
@@ -2021,7 +2021,7 @@
           "ratePerSqft": 1316,
           "priceExGst": 421120,
           "priceInclGst": 496922,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x20",
@@ -2031,7 +2031,7 @@
           "ratePerSqft": 1316,
           "priceExGst": 526400,
           "priceInclGst": 621152,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x10",
@@ -2041,7 +2041,7 @@
           "ratePerSqft": 1316,
           "priceExGst": 526400,
           "priceInclGst": 621152,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x12",
@@ -2051,7 +2051,7 @@
           "ratePerSqft": 1288,
           "priceExGst": 618240,
           "priceInclGst": 729523,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         }
       ]
     },
@@ -2310,7 +2310,7 @@
           "ratePerSqft": 1650,
           "priceExGst": 165000,
           "priceInclGst": 194700,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x8",
@@ -2320,7 +2320,7 @@
           "ratePerSqft": 1650,
           "priceExGst": 264000,
           "priceInclGst": 311520,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x10",
@@ -2330,7 +2330,7 @@
           "ratePerSqft": 1500,
           "priceExGst": 300000,
           "priceInclGst": 354000,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x12",
@@ -2340,7 +2340,7 @@
           "ratePerSqft": 1440,
           "priceExGst": 345600,
           "priceInclGst": 407808,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "30x10",
@@ -2350,7 +2350,7 @@
           "ratePerSqft": 1440,
           "priceExGst": 432000,
           "priceInclGst": 509760,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x8",
@@ -2360,7 +2360,7 @@
           "ratePerSqft": 1410,
           "priceExGst": 451200,
           "priceInclGst": 532416,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x20",
@@ -2370,7 +2370,7 @@
           "ratePerSqft": 1410,
           "priceExGst": 564000,
           "priceInclGst": 665520,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x10",
@@ -2380,7 +2380,7 @@
           "ratePerSqft": 1410,
           "priceExGst": 564000,
           "priceInclGst": 665520,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x12",
@@ -2390,7 +2390,7 @@
           "ratePerSqft": 1380,
           "priceExGst": 662400,
           "priceInclGst": 781632,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         }
       ]
     },
@@ -2649,7 +2649,7 @@
           "ratePerSqft": 1595,
           "priceExGst": 159500,
           "priceInclGst": 188210,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x8",
@@ -2659,7 +2659,7 @@
           "ratePerSqft": 1595,
           "priceExGst": 255200,
           "priceInclGst": 301136,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x10",
@@ -2669,7 +2669,7 @@
           "ratePerSqft": 1450,
           "priceExGst": 290000,
           "priceInclGst": 342200,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x12",
@@ -2679,7 +2679,7 @@
           "ratePerSqft": 1392,
           "priceExGst": 334080,
           "priceInclGst": 394214,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "30x10",
@@ -2689,7 +2689,7 @@
           "ratePerSqft": 1392,
           "priceExGst": 417600,
           "priceInclGst": 492768,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x8",
@@ -2699,7 +2699,7 @@
           "ratePerSqft": 1363,
           "priceExGst": 436160,
           "priceInclGst": 514669,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x20",
@@ -2709,7 +2709,7 @@
           "ratePerSqft": 1363,
           "priceExGst": 545200,
           "priceInclGst": 643336,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x10",
@@ -2719,7 +2719,7 @@
           "ratePerSqft": 1363,
           "priceExGst": 545200,
           "priceInclGst": 643336,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x12",
@@ -2729,7 +2729,7 @@
           "ratePerSqft": 1334,
           "priceExGst": 640320,
           "priceInclGst": 755578,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         }
       ]
     },
@@ -2993,7 +2993,7 @@
           "ratePerSqft": 1980,
           "priceExGst": 198000,
           "priceInclGst": 233640,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x8",
@@ -3003,7 +3003,7 @@
           "ratePerSqft": 1980,
           "priceExGst": 316800,
           "priceInclGst": 373824,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x10",
@@ -3013,7 +3013,7 @@
           "ratePerSqft": 1800,
           "priceExGst": 360000,
           "priceInclGst": 424800,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x12",
@@ -3023,7 +3023,7 @@
           "ratePerSqft": 1728,
           "priceExGst": 414720,
           "priceInclGst": 489370,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "30x10",
@@ -3033,7 +3033,7 @@
           "ratePerSqft": 1728,
           "priceExGst": 518400,
           "priceInclGst": 611712,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x8",
@@ -3043,7 +3043,7 @@
           "ratePerSqft": 1692,
           "priceExGst": 541440,
           "priceInclGst": 638899,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "20x20",
@@ -3053,7 +3053,7 @@
           "ratePerSqft": 1692,
           "priceExGst": 676800,
           "priceInclGst": 798624,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x10",
@@ -3063,7 +3063,7 @@
           "ratePerSqft": 1692,
           "priceExGst": 676800,
           "priceInclGst": 798624,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         },
         {
           "sizeSlug": "40x12",
@@ -3073,7 +3073,7 @@
           "ratePerSqft": 1656,
           "priceExGst": 794880,
           "priceInclGst": 937958,
-          "costingStatus": "Approved — direct source"
+          "costingStatus": "Approved, direct source"
         }
       ]
     }

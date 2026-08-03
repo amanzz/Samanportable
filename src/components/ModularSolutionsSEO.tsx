@@ -106,7 +106,7 @@ const ModularSolutionsSEO = () => {
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Pan-Industry Adaptability</h3>
                 <p className="text-gray-600 leading-relaxed font-light">
-                  From critical healthcare labs to high-traffic retail hubs — our structures are engineered to exceed industry-specific standards and operational requirements.
+                  From critical healthcare labs to high-traffic retail hubs. Our structures are engineered to exceed industry-specific standards and operational requirements.
                 </p>
               </div>
             </div>

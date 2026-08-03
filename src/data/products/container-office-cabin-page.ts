@@ -11,8 +11,8 @@ const TH =
 const TD = 'border-b border-slate-100 px-3 py-2 text-sm text-slate-600';
 
 export const CONTAINER_OFFICE_CABIN_PRICE_HTML =
-  `<h2>Container Office Cabin Price by Size — Ex-Factory Rates</h2>` +
-  `<p>Every container office cabin is priced from one controlled rate card — ₹1,250 per sq ft at the 200 sq ft reference, stepping +10% below 200 sq ft and down in bands as the floor grows. The full ladder is below so you can budget before you enquire. Prices are ex-factory; interior fit-out and freight are quoted separately at confirmation.</p>` +
+  `<h2>Container Office Cabin Price by Size: Ex-Factory Rates</h2>` +
+  `<p>Every container office cabin is priced from one controlled rate card: ₹1,250 per sq ft at the 200 sq ft reference, stepping +10% below 200 sq ft and down in bands as the floor grows. The full ladder is below so you can budget before you enquire. Prices are ex-factory; interior fit-out and freight are quoted separately at confirmation.</p>` +
   `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>` +
   `<th class="${TH}">Size (ft)</th><th class="${TH}">Area</th><th class="${TH}">Rate/sq ft</th><th class="${TH}">ex-GST</th><th class="${TH}">incl-GST</th>` +
   `</tr></thead><tbody>` +

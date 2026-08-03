@@ -45,8 +45,8 @@ const FAQS = [
   { question: 'What is PUF panel roofing?', answer: 'PUF panel roofing is an insulated roof sheet with a trapezoidal or ribbed steel profile and a polyurethane foam core. One sheet provides the roof cover, the insulation and a finished underside, which is why it is used on sheds, factories and site buildings instead of bare metal roofing.' },
   { question: 'How long does a PUF roof last?', answer: 'Service life depends on the facing sheet, coating, slope and how well joints and fasteners are detailed, so we confirm expectations against your drawing rather than quoting a blanket figure. A correctly sloped roof with the right facing and sealed laps is a long-service roof; the panel warranty is 5–10 years, confirmed at quotation.' },
   { question: 'What thickness of PUF panel is best for a roof?', answer: 'It follows the building. 30–50 mm suits site offices and lighter sheds, 60–100 mm suits factory roofs needing stronger heat control, and cold buildings run 100 mm and above. Tell us the use and we advise the thickness before quoting.' },
-  { question: 'Does a PUF roof panel leak at the joints?', answer: 'Not when detailed correctly. The tongue-and-groove side joint closes the sheets together, and end-laps and penetrations are sealed to the drawing. The common causes of leaks are under-sloping and unsealed end-laps — both are decided at the drawing stage, which is why we finalise slope and fastener pattern per project.' },
-  { question: 'Can PUF roofing panels be fixed over an old metal roof?', answer: 'Yes — a single insulated PUF panel can re-roof over an existing structure, replacing separate deck, insulation and lining in one sheet. The span, fixing and slope are confirmed from the existing frame drawing so the new roof seats and sheds correctly.' },
+  { question: 'Does a PUF roof panel leak at the joints?', answer: 'Not when detailed correctly. The tongue-and-groove side joint closes the sheets together, and end-laps and penetrations are sealed to the drawing. The common causes of leaks are under-sloping and unsealed end-laps. Both are decided at the drawing stage, which is why we finalise slope and fastener pattern per project.' },
+  { question: 'Can PUF roofing panels be fixed over an old metal roof?', answer: 'Yes. A single insulated PUF panel can re-roof over an existing structure, replacing separate deck, insulation and lining in one sheet. The span, fixing and slope are confirmed from the existing frame drawing so the new roof seats and sheds correctly.' },
   { question: 'What roof profile and width do you supply?', answer: 'Roof panels are made in trapezoidal and ribbed profiles at 1000 mm effective (1070 mm overall) cover width, from 30 mm to 200 mm thick. Facing sheets run PPGI, PPGL, BGL, aluminium or stainless steel at 0.35–0.80 mm gauge.' },
   { question: 'How is the PUF roofing sheet delivered to site?', answer: 'We dispatch from the nearer of our Bangalore and Greater Noida factories, with transport confirmed at quotation and a 3–5 business day default dispatch. Because roof sheets are long, we confirm the workable panel length against your road access and offloading space before production.' },
   { question: 'What is the minimum slope for a PUF panel roof?', answer: 'There is no single minimum we publish, because the correct slope depends on span, local rainfall and the fastener pattern used. Slope is finalized from the project drawing and confirmed at quotation, so the roof is engineered to shed water on your specific building, not against a generic number.' },
@@ -57,7 +57,7 @@ const PRODUCT_JSONLD = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   '@id': 'https://www.samanportable.com/product/puf-panel/puf-panel-roofing#product',
-  name: 'PUF Panel Roofing — Insulated Roof Sheets',
+  name: 'PUF Panel Roofing: Insulated Roof Sheets',
   description: 'Insulated PUF roof panels by SAMAN in trapezoidal and ribbed profiles, 30–200 mm, 1000 mm effective width, for sheds, factories, site offices and cold buildings. Manufactured in Bangalore and Greater Noida.',
   category: 'Insulated Roof Panel',
   brand: { '@id': 'https://www.samanportable.com/#organization' },
@@ -145,13 +145,13 @@ function DescriptionContent() {
             cases:
           </P>
           <ul className="list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            <li><span className="font-semibold text-foreground">Factory and warehouse roofs</span> — large spans that would otherwise radiate heat all day; the insulated core keeps the floor workable.</li>
-            <li><span className="font-semibold text-foreground">Prefab sheds and site offices</span> — the roof goes on finished, insulated and sealed in one pass over the frame.</li>
-            <li><span className="font-semibold text-foreground">Cold buildings and controlled-temperature rooms</span> — where the roof is part of the thermal envelope, not just cover.</li>
-            <li><span className="font-semibold text-foreground">Re-roofing over old metal</span> — a single insulated sheet replaces separate deck, insulation and lining.</li>
+            <li><span className="font-semibold text-foreground">Factory and warehouse roofs</span>. Large spans that would otherwise radiate heat all day; the insulated core keeps the floor workable.</li>
+            <li><span className="font-semibold text-foreground">Prefab sheds and site offices</span>. The roof goes on finished, insulated and sealed in one pass over the frame.</li>
+            <li><span className="font-semibold text-foreground">Cold buildings and controlled-temperature rooms</span>. Where the roof is part of the thermal envelope, not just cover.</li>
+            <li><span className="font-semibold text-foreground">Re-roofing over old metal</span>. A single insulated sheet replaces separate deck, insulation and lining.</li>
           </ul>
           <P>
-            Because the panel is finished on both faces, the underside reads as a clean ceiling — no separate
+            Because the panel is finished on both faces, the underside reads as a clean ceiling, no separate
             lining trade needed.
           </P>
         </section>
@@ -165,11 +165,11 @@ function DescriptionContent() {
             the joint line is the waterproofing.
           </P>
           <P>
-            Slope, span and fastener pattern are not one-size numbers — they are finalized from the project
+            Slope, span and fastener pattern are not one-size numbers. They are finalized from the project
             drawing and confirmed at quotation, because they depend on your purlin spacing, panel length and
             local conditions. What holds on every job: keep a genuine fall so water runs off, seal end-laps and
             penetrations, and use the correct fastener and washer for the facing. Under-sloping and skipping
-            end-lap sealing are the two most common causes of a leaking insulated roof — both are avoidable at
+            end-lap sealing are the two most common causes of a leaking insulated roof, both are avoidable at
             the drawing stage.
           </P>
         </section>
@@ -187,7 +187,7 @@ function DescriptionContent() {
             The closed-cell PUF core also resists the through-panel moisture path, which is what causes a bare
             metal roof to drip in humid or cold conditions. On fire, the core is a closed-cell PUF; where a
             project needs improved fire performance, PIR offers better fire behaviour than standard PUF. We
-            keep this qualitative — no class code or hour rating is stated without test data.
+            keep this qualitative. No class code or hour rating is stated without test data.
           </P>
           <LongImage
             src="/images/puf-panel/roof-install-70mm-1200x675.webp"
@@ -206,7 +206,7 @@ function DescriptionContent() {
           <P>
             For an accurate roof quote, send the roof plan or at least the covered area, the span and purlin
             spacing, the thickness or heat-control target, the facing and colour, and the site city. With the
-            drawing we finalise slope, panel length and fastener pattern — and price the roof, not just the
+            drawing we finalise slope, panel length and fastener pattern, and price the roof, not just the
             sheet.
           </P>
           <P>
@@ -262,14 +262,13 @@ function ShippingContent() {
         Roof panels are long, so delivery is a real part of the roofing decision, not an afterthought.
         Standard lengths run 2–15 m; a single-length roof sheet avoids end-laps but needs the truck and the
         site to take it. Custom lengths are possible, but a long roof panel needs road clearance to reach
-        site and offloading room to land safely — so we confirm the workable length against your access
+        site and offloading room to land safely, so we confirm the workable length against your access
         before production.
       </P>
       <P>
         We dispatch from Bangalore for South India and Greater Noida for North India and Delhi NCR, which
-        shortens the road run for most sites — an advantage that matters more for long roof panels than for
-        wall panels. Pan-India delivery; transport confirmed at quotation; 3–5 business day default dispatch
-        — see our{' '}
+        shortens the road run for most sites. An advantage that matters more for long roof panels than for
+        wall panels. Pan-India delivery; transport confirmed at quotation; 3–5 business day default dispatch, see our{' '}
         <Link href="/delivery-policy" className="font-semibold text-primary hover:underline">
           Delivery Policy
         </Link>
@@ -297,8 +296,8 @@ export default function PufPanelRoofing() {
   return (
     <Layout>
       <UnifiedSEO
-        fallbackTitle="PUF Panel Roofing Sheet — Insulated Roof Panels | SAMAN"
-        fallbackDescription="PUF panel roofing from SAMAN — insulated roof sheets in trapezoidal and ribbed profiles, 30–200 mm, for sheds, factories and site buildings. Factory-direct from Bangalore and Greater Noida. Get a roof quote."
+        fallbackTitle="PUF Panel Roofing Sheet, Insulated Roof Panels | SAMAN"
+        fallbackDescription="PUF panel roofing from SAMAN: insulated roof sheets in trapezoidal and ribbed profiles, 30–200 mm, for sheds, factories and site buildings. Factory-direct from Bangalore and Greater Noida. Get a roof quote."
         fallbackCanonical="https://www.samanportable.com/product/puf-panel/puf-panel-roofing"
         keywords="puf panel roofing, puf panel roof, puff sheet roofing, puf roofing sheet"
         author="SAMAN POS India Private Limited"
@@ -338,7 +337,7 @@ export default function PufPanelRoofing() {
 
             <div className="order-1 lg:order-3 lg:col-span-4 lg:sticky lg:top-24 lg:max-h-[80vh] lg:overflow-y-auto">
               <ProductInfoBox
-                h1="PUF Panel Roofing — Insulated Roof Sheets for Sheds and Site Buildings"
+                h1="PUF Panel Roofing, Insulated Roof Sheets for Sheds and Site Buildings"
                 priceMain="From ₹1,050 / sq mt"
                 priceSubline="30mm base spec · ex-GST · final price at quotation"
                 shortDescription={SHORT_DESCRIPTION}

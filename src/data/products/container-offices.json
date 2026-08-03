@@ -62,7 +62,7 @@
           "height": 900
         }
       ],
-      "shortDescription": "The compact container office — one supervisor room in a crane-movable steel shell. Drops onto any levelled pad at a plant gate, weighbridge or small site and is working the same day."
+      "shortDescription": "The compact container office, one supervisor room in a crane-movable steel shell. Drops onto any levelled pad at a plant gate, weighbridge or small site and is working the same day."
     },
     {
       "sizeSlug": "20x8",
@@ -118,7 +118,7 @@
           "height": 900
         }
       ],
-      "shortDescription": "The slim site unit — a 20-ft-class module that rides a standard trailer and fits tight laydown areas; one to two workstations with storage."
+      "shortDescription": "The slim site unit: a 20-ft-class module that rides a standard trailer and fits tight laydown areas; one to two workstations with storage."
     },
     {
       "sizeSlug": "20x10",
@@ -174,7 +174,7 @@
           "height": 900
         }
       ],
-      "shortDescription": "The standard project office — the size most site teams specify: 3–4 workstations, files and a visitor chair in one lift-and-place container unit."
+      "shortDescription": "The standard project office. The size most site teams specify: 3–4 workstations, files and a visitor chair in one lift-and-place container unit."
     },
     {
       "sizeSlug": "20x12",
@@ -230,7 +230,7 @@
           "height": 900
         }
       ],
-      "shortDescription": "Extra width for a meeting table beside the workstations — one container module, no site construction."
+      "shortDescription": "Extra width for a meeting table beside the workstations, one container module, no site construction."
     },
     {
       "sizeSlug": "30x10",
@@ -286,7 +286,7 @@
           "height": 900
         }
       ],
-      "shortDescription": "The multi-desk unit — engineer + documentation bays in a single 30-ft steel module, still one crane lift."
+      "shortDescription": "The multi-desk unit: engineer + documentation bays in a single 30-ft steel module, still one crane lift."
     },
     {
       "sizeSlug": "40x8",
@@ -296,7 +296,7 @@
       "priceExGst": 436160,
       "priceInclGst": 514669,
       "capacity": "~5–6 people",
-      "useCase": "Corridor office — ports & yards",
+      "useCase": "Corridor office, ports & yards",
       "sku": "SP-20-CO-2024",
       "images": [
         {
@@ -342,7 +342,7 @@
           "height": 900
         }
       ],
-      "shortDescription": "The 40-ft-class slim office — a corridor-style admin run for ports, yards and linear sites; travels on a 40-ft trailer."
+      "shortDescription": "The 40-ft-class slim office. A corridor-style admin run for ports, yards and linear sites; travels on a 40-ft trailer."
     },
     {
       "sizeSlug": "20x20",
@@ -398,7 +398,7 @@
           "height": 900
         }
       ],
-      "shortDescription": "Twin-module square footprint — a two-bay office floor assembled from container modules, ODC-planned delivery."
+      "shortDescription": "Twin-module square footprint. A two-bay office floor assembled from container modules, ODC-planned delivery."
     },
     {
       "sizeSlug": "40x10",
@@ -454,7 +454,7 @@
           "height": 900
         }
       ],
-      "shortDescription": "The full 40-ft project office — team floor with manager partition option; the standard large-site administration unit."
+      "shortDescription": "The full 40-ft project office, team floor with manager partition option; the standard large-site administration unit."
     },
     {
       "sizeSlug": "40x12",
@@ -510,7 +510,7 @@
           "height": 900
         }
       ],
-      "shortDescription": "The largest single module — 480 sq ft of office in one engineered steel unit before you stack or join modules."
+      "shortDescription": "The largest single module: 480 sq ft of office in one engineered steel unit before you stack or join modules."
     }
   ],
   "explorerImageTemplate": "/images/products/container-offices/{sizeSlug}/container-offices-{sizeSlug}-hero-view.webp"

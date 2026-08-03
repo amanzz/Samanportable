@@ -4,7 +4,7 @@ import {
 } from '@/lib/specsShippingTabs';
 
 const SPECIFICATIONS_INTRO =
-  'A shipping container office starts from marine-grade corrugated container steel — the specification below covers the conversion: structural frame retained, openings framed into the corrugation, insulation and interior built inside the original shell.';
+  'A shipping container office starts from marine-grade corrugated container steel: the specification below covers the conversion: structural frame retained, openings framed into the corrugation, insulation and interior built inside the original shell.';
 
 const SHIPPING_INTRO =
   'A converted shipping container office moves the way containers always have: craned onto an open trailer, hauled, and craned off at site, with the structural frame carrying every lift. The distance-based freight tables below cover both zones; your exact pin code cost is fixed in the quotation.';
@@ -12,7 +12,7 @@ const SHIPPING_INTRO =
 const WARRANTY_LINE = '12-month workmanship warranty, confirmed at quotation.';
 
 const FROZEN_OPENER =
-  '<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Buyers typing "shipping container office" are usually at one of two decision points — choosing between the 20-ft and 40-ft form factor, or confirming whether the unit they are about to receive is a purpose-built office structure or a retrofitted used cargo container. Both decisions affect what you get on site, what documentation comes with it, and how long it lasts.</p>';
+  '<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Buyers typing "shipping container office" are usually at one of two decision points: choosing between the 20-ft and 40-ft form factor, or confirming whether the unit they are about to receive is a purpose-built office structure or a retrofitted used cargo container. Both decisions affect what you get on site, what documentation comes with it, and how long it lasts.</p>';
 
 const escapeHtml = (value: string): string =>
   value
@@ -54,8 +54,8 @@ export const buildShippingContainerOfficeShippingHtml = (): string =>
 
 const PRICE_SECTION =
   '<section id="shipping-container-office-price-by-size">' +
-    '<h2>Shipping Container Office Price by Size — Ex-Factory Rates</h2>' +
-    '<p>Every shipping container office is priced from one controlled rate card — ₹1,800 per sq ft at the 200 sq ft reference, stepping +10% below 200 sq ft and down in bands as the floor grows. The full ladder is below so you can budget before you enquire. Prices are ex-factory; interior fit-out and freight are quoted separately at confirmation.</p>' +
+    '<h2>Shipping Container Office Price by Size: Ex-Factory Rates</h2>' +
+    '<p>Every shipping container office is priced from one controlled rate card: ₹1,800 per sq ft at the 200 sq ft reference, stepping +10% below 200 sq ft and down in bands as the floor grows. The full ladder is below so you can budget before you enquire. Prices are ex-factory; interior fit-out and freight are quoted separately at confirmation.</p>' +
     '<div class="overflow-x-auto">' +
       '<table>' +
         '<thead><tr><th>Size (ft)</th><th>Area</th><th>Rate/sq ft</th><th>ex-GST</th><th>incl-GST</th></tr></thead>' +

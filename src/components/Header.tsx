@@ -208,14 +208,14 @@ const Header = () => {
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between whitespace-nowrap px-4 text-xs sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-2">
-              <span className="text-white/60">South — Bengaluru:</span>
+              <span className="text-white/60">South, Bengaluru:</span>
               <a href="tel:+918861622859" className="font-medium transition-colors hover:text-white">+91 88616 22859</a>
               <span className="text-white/40">·</span>
               <a href="mailto:sales@samanportable.com" className="font-medium transition-colors hover:text-white">sales@samanportable.com</a>
             </span>
             <span className="text-white/30">|</span>
             <span className="flex items-center gap-2">
-              <span className="text-white/60">North — Greater Noida:</span>
+              <span className="text-white/60">North, Greater Noida:</span>
               <a href="tel:+918796039938" className="font-medium transition-colors hover:text-white">+91 87960 39938</a>
               <span className="text-white/40">·</span>
               <a href="mailto:ncr@samanportable.com" className="font-medium transition-colors hover:text-white">ncr@samanportable.com</a>
@@ -452,7 +452,7 @@ const Header = () => {
                   {col.title === 'Panels & Sheets' && (
                     <li className="mt-4 rounded-xl bg-[var(--ds-color-mist)] p-4">
                       <p className="text-sm font-bold text-[var(--ds-color-forest)]">Not sure which fits?</p>
-                      <p className="mt-1 text-xs text-gray-600">Send your size — get a fixed-price quote in 48 hours.</p>
+                      <p className="mt-1 text-xs text-gray-600">Send your size, get a fixed-price quote in 48 hours.</p>
                       <button
                         type="button"
                         onClick={() => {
@@ -561,10 +561,10 @@ const Header = () => {
               {/* Contact block (top) */}
               <div className="mb-2 rounded-lg bg-[var(--ds-color-mist)] p-3">
                 <a href="tel:+918861622859" className="block text-sm font-semibold text-[var(--ds-color-forest)]">
-                  South — Bengaluru: +91 88616 22859
+                  South, Bengaluru: +91 88616 22859
                 </a>
                 <a href="tel:+918796039938" className="mt-1 block text-sm font-semibold text-[var(--ds-color-forest)]">
-                  North — Greater Noida: +91 87960 39938
+                  North, Greater Noida: +91 87960 39938
                 </a>
                 {/* T1.4 — the utility strip is desktop-only, so the GSTINs surface here on mobile. */}
                 <div className="mt-2 border-t border-[var(--ds-color-forest)]/10 pt-2">

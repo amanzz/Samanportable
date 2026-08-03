@@ -299,7 +299,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // responded successfully; the category-mismatch 404 likewise only runs after a
     // successful fetch. Only the error message is logged (no request URL / keys).
     console.error(
-      'Product SSR failed — returning 5xx, not 404:',
+      'Product SSR failed, returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render product');
@@ -824,7 +824,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                     Porta cabin office or portacabin office?
                   </h3>
                   <p className="m-0 text-sm leading-relaxed text-slate-700">
-                    Buyers write it both ways and mean the same thing: a factory-built cabin fitted out as a working office. We build one product for both spellings — the configuration described on this page, with workstations, storage and an optional manager partition, finished a grade above the plain site cabin. If you searched for a porta cabin office and landed here, you are in the right place; the specification, the nine sizes and the prices above are what you were looking for.
+                    Buyers write it both ways and mean the same thing: a factory-built cabin fitted out as a working office. We build one product for both spellings: the configuration described on this page, with workstations, storage and an optional manager partition, finished a grade above the plain site cabin. If you searched for a porta cabin office and landed here, you are in the right place; the specification, the nine sizes and the prices above are what you were looking for.
                   </p>
                 </section>
               )}

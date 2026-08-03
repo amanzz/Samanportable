@@ -68,7 +68,7 @@ const ClientsSection = () => {
       role: 'SM – Purchase',
       project: 'Facility cabins · HAL India · Bengaluru',
       rating: 5,
-      text: 'HAL has strict procurement standards. SAMAN came prepared — full documentation, material specs, and test certificates provided upfront. Eighteen months of use and not one structural complaint.',
+      text: 'HAL has strict procurement standards. SAMAN came prepared: full documentation, material specs, and test certificates provided upfront. Eighteen months of use and not one structural complaint.',
     },
   ];
 
@@ -152,7 +152,7 @@ const ClientsSection = () => {
             <span className="text-[#0A3D2A]">Indian Companies</span>
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto">
-            From construction majors to IT companies — businesses across India rely on Saman Portable for modular space.
+            From construction majors to IT companies, businesses across India rely on Saman Portable for modular space.
           </p>
         </div>
 
@@ -304,7 +304,7 @@ const ClientsSection = () => {
             size="lg"
             className="bg-[#0A3D2A] hover:bg-[#0A3D2A]/90 text-white px-6 md:px-10 py-4 text-sm md:text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:scale-105 font-bold h-auto min-h-[60px] whitespace-normal leading-tight"
           >
-            Join 500+ Happy Clients — Get a Free Quote
+            Join 500+ Happy Clients, Get a Free Quote
           </QuoteFormTrigger>
         </div>
       </div>

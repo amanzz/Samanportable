@@ -42,20 +42,20 @@ export type CategoryDef = {
 };
 
 export const CATEGORIES: CategoryDef[] = [
-  { name: 'Porta Cabins', slug: 'porta-cabins', href: '/product/porta-cabins', icon: Building2, description: 'The standard welded-steel cabin range — site offices and rooms, 9 sizes, delivered in 7–21 working days.' },
-  { name: 'Portable Cabin', slug: 'portable-cabin', href: '/product/portable-cabin', icon: Home, description: 'Cabins engineered to lift, relocate and reuse across sites — choose this when the unit will move.' },
-  { name: 'Portable Office', slug: 'portable-office', href: '/product/portable-office', icon: Briefcase, description: 'Fitted office cabins — workstations, electricals and AC provision, working from day one.' },
+  { name: 'Porta Cabins', slug: 'porta-cabins', href: '/product/porta-cabins', icon: Building2, description: 'The standard welded-steel cabin range: site offices and rooms, 9 sizes, delivered in 7–21 working days.' },
+  { name: 'Portable Cabin', slug: 'portable-cabin', href: '/product/portable-cabin', icon: Home, description: 'Cabins engineered to lift, relocate and reuse across sites, choose this when the unit will move.' },
+  { name: 'Portable Office', slug: 'portable-office', href: '/product/portable-office', icon: Briefcase, description: 'Fitted office cabins: workstations, electricals and AC provision, working from day one.' },
   { name: 'Container Offices', slug: 'container-offices', href: '/product/container-offices', icon: Container, description: 'Container-form and converted ISO offices for industrial duty, yards and hard sites.' },
   { name: 'Container Cafe', slug: 'container-cafe', href: '/product/container-cafe', icon: Coffee, description: 'Cafes, restaurants and food-truck units built for food businesses.' },
-  { name: 'Labour Colony', slug: 'labor-colony', href: '/product/labor-colony', icon: Users, description: 'Workforce housing at project scale — colonies, sheds, hutments and camps.' },
-  { name: 'Container Houses', slug: 'container-houses', href: '/product/container-houses', icon: Warehouse, description: 'Container-format homes — studios to full residences built from container modules.' },
+  { name: 'Labour Colony', slug: 'labor-colony', href: '/product/labor-colony', icon: Users, description: 'Workforce housing at project scale: colonies, sheds, hutments and camps.' },
+  { name: 'Container Houses', slug: 'container-houses', href: '/product/container-houses', icon: Warehouse, description: 'Container-format homes: studios to full residences built from container modules.' },
   { name: 'Security Cabins', slug: 'security-cabins', href: '/product/security-cabins', icon: Shield, description: 'Guard posts and security kiosks.' },
-  { name: 'Portable Toilet', slug: 'portable-toilet', href: '/product/portable-toilet', icon: Droplets, description: 'Standalone sanitation units — single seaters to multi-cubicle blocks.' },
+  { name: 'Portable Toilet', slug: 'portable-toilet', href: '/product/portable-toilet', icon: Droplets, description: 'Standalone sanitation units: single seaters to multi-cubicle blocks.' },
   { name: 'Industrial Sheds', slug: 'industrial-sheds', href: '/product/industrial-sheds', icon: Factory, description: 'Sheds, garden sheds and prefabricated warehouses.' },
   { name: 'PEB Construction', slug: 'peb-constructions', href: '/product/peb-constructions', icon: HardHat, description: 'Design-to-erection pre-engineered building projects, managed end to end by our team.' },
   { name: 'Pre-Engineered Buildings', slug: 'pre-engineered-buildings', href: '/product/pre-engineered-buildings', icon: Building, description: 'Steel-framed factories, warehouses and industrial buildings, engineered to span.' },
-  { name: 'Prefab Building', slug: 'prefab-buildings', href: '/product/prefab-buildings', icon: Blocks, description: 'Modular buildings for schools, offices, healthcare and site facilities — multi-room layouts.' },
-  { name: 'Prefabricated Houses', slug: 'prefabricated-houses', href: '/product/prefabricated-houses', icon: Home, description: 'Panel-built prefab homes and bunkhouses — residential builds that are not container-based.' },
+  { name: 'Prefab Building', slug: 'prefab-buildings', href: '/product/prefab-buildings', icon: Blocks, description: 'Modular buildings for schools, offices, healthcare and site facilities: multi-room layouts.' },
+  { name: 'Prefabricated Houses', slug: 'prefabricated-houses', href: '/product/prefabricated-houses', icon: Home, description: 'Panel-built prefab homes and bunkhouses, residential builds that are not container-based.' },
   { name: 'PUF Panels', slug: 'puf-panel', href: '/product/puf-panel', icon: Layers, description: 'Insulated wall and roof panels from 30mm to 150mm, at factory-direct rates.' },
   { name: 'Sandwich Panels', slug: 'sandwich-panel', href: '/product/sandwich-panel', icon: SquareStack, description: 'EPS, rockwool, glass wool and PIR core panels for walls, roofs and cold rooms.' },
 ];
@@ -78,7 +78,7 @@ const CategoryGrid = ({ counts }: { counts: Record<string, number> }) => {
             data-homepage-router-intro
             className="mx-auto mt-5 max-w-2xl text-lg font-light leading-relaxed text-[var(--ds-text-secondary)]"
           >
-            Every product line below has one definitive page — sizes, specifications and ex-factory prices included. Start where your requirement matches.
+            Every product line below has one definitive page: sizes, specifications and ex-factory prices included. Start where your requirement matches.
           </p>
         </div>
 

@@ -41,7 +41,7 @@ const CERTS: Cert[] = [
     bgAlt: 'Cabin fabrication line at a SAMAN Portable manufacturing facility',
     logo: '/credentials/optimized/msme-udyam.webp',
     title: 'Registered Indian manufacturer',
-    body: "Registered under Udyam with the Ministry of MSME — the Government of India's official registry of manufacturers.",
+    body: "Registered under Udyam with the Ministry of MSME, the Government of India's official registry of manufacturers.",
     cta: 'View Certificate',
     cert: '/homepage/certificates/msme-udyam.webp',
     certAlt: 'Udyam registration certificate for SAMAN POS India Private Limited (verification copy)',
@@ -114,7 +114,7 @@ const CertLightbox = ({ cert, onClose }: { cert: Cert; onClose: () => void }) =>
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={`${cert.title} — certificate`}
+      aria-label={`${cert.title}, certificate`}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 transition-opacity duration-200 motion-reduce:transition-none"
       onClick={onClose}
     >
@@ -233,7 +233,7 @@ const HomepageCertifications = () => {
           </div>
           <h2 className="mb-3 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">Certified. Registered. Verifiable.</h2>
           <p className="text-base font-light leading-relaxed text-gray-600">
-            Every credential below is issued by a Government of India body — open the certificate and check it yourself.
+            Every credential below is issued by a Government of India body, open the certificate and check it yourself.
           </p>
         </div>
 

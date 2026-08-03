@@ -194,7 +194,7 @@ const RentalServicesPage = () => {
                   Why Choose Our Rental Services?
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  We provide portable cabin rental and container office rental solutions that are reliable, flexible, and costeffective. Our goal is to deliver highquality prefabricated structures with outstanding service, making it easy for you to get the space you need — right when you need it.
+                  We provide portable cabin rental and container office rental solutions that are reliable, flexible, and costeffective. Our goal is to deliver highquality prefabricated structures with outstanding service, making it easy for you to get the space you need, right when you need it.
                 </p>
               </div>
 
@@ -319,7 +319,7 @@ const RentalServicesPage = () => {
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Instant availability check from our 50+ unit fleet</li>
                         <li>• Customized cabin recommendations for your site needs</li>
-                        <li>• Transparent pricing — no hidden charges</li>
+                        <li>• Transparent pricing, no hidden charges</li>
                         <li>• Same-day site visit scheduling for complex projects</li>
                       </ul>
                     </div>
@@ -328,7 +328,7 @@ const RentalServicesPage = () => {
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Written quote within 30 minutes via email or WhatsApp</li>
                         <li>• Multiple cabin size options with full specifications</li>
-                        <li>• Flexible rental terms — daily, weekly, or monthly</li>
+                        <li>• Flexible rental terms: daily, weekly, or monthly</li>
                         <li>• Professional advice on layout and placement</li>
                       </ul>
                     </div>
@@ -390,7 +390,7 @@ const RentalServicesPage = () => {
                       <h4 className="font-semibold text-gray-900 mb-2 border-b border-gray-100 pb-1">Simple Digital Process</h4>
                       <ul className="text-sm text-gray-600 space-y-1">
                         <li>• Sign agreement via mobile or email</li>
-                        <li>• Multiple payment options — UPI, bank transfer, or corporate</li>
+                        <li>• Multiple payment options: UPI, bank transfer, or corporate</li>
                         <li>• Insurance and compliance handled automatically</li>
                         <li>• 2-hour delivery window scheduling</li>
                       </ul>
@@ -526,7 +526,7 @@ const RentalServicesPage = () => {
                 {/* Bangalore City */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:border-[#0A3D2A] transition-colors group">
                   <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl">🏢</div>
+                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl"></div>
                     <h3 className="text-xl font-bold text-gray-900">Bangalore City</h3>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -557,7 +557,7 @@ const RentalServicesPage = () => {
                 {/* Greater Bangalore */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:border-[#0A3D2A] transition-colors group">
                   <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl">🌇</div>
+                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl"></div>
                     <h3 className="text-xl font-bold text-gray-900">Greater Bangalore</h3>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -588,7 +588,7 @@ const RentalServicesPage = () => {
                 {/* Industrial Areas */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:border-[#0A3D2A] transition-colors group">
                   <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl">🏗️</div>
+                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl"></div>
                     <h3 className="text-xl font-bold text-gray-900">Industrial Areas</h3>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -619,7 +619,7 @@ const RentalServicesPage = () => {
                 {/* Delhi NCR - NEW */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:border-[#0A3D2A] transition-colors group">
                   <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
-                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl">🏙️</div>
+                    <div className="w-10 h-10 bg-[#0A3D2A]/10 rounded-lg flex items-center justify-center text-xl"></div>
                     <h3 className="text-xl font-bold text-gray-900">Delhi NCR</h3>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -654,7 +654,7 @@ const RentalServicesPage = () => {
           <section className="section-padding bg-[#0A3D2A] text-white">
             <div className="max-w-7xl mx-auto container-padding text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Get Started?
+                Start your order
               </h2>
               <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
                 Contact us today to discuss your rental requirements and get a customized quote for your project.
@@ -683,4 +683,3 @@ const RentalServicesPage = () => {
 };
 
 export default RentalServicesPage;
-

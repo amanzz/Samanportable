@@ -468,7 +468,7 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
     // notFound) and only happens when the backend responded successfully.
     // Only the error message is logged (no request URL), so no secrets are exposed.
     console.error(
-      'Blog post SSR failed — returning 5xx, not 404:',
+      'Blog post SSR failed, returning 5xx, not 404:',
       error instanceof Error ? error.message : 'unknown error'
     );
     throw error instanceof Error ? error : new Error('Failed to render blog post');
@@ -1043,7 +1043,7 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink, siblings }: BlogPostPr
           
                      <div className="bg-gradient-to-br from-slate-50 via-green-50 to-emerald-50 p-8 rounded-3xl border border-slate-200 shadow-lg">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-slate-800 mb-2">Enjoyed this article?</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">More on this topic</h3>
               <p className="text-slate-600">Share it with others or explore more content</p>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

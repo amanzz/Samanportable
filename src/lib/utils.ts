@@ -75,7 +75,7 @@ export function decodeHtmlEntities(str: string): string {
     rdquo: '”',
     ldquo: '“',
     ndash: '–',
-    mdash: '—',
+    mdash: ', ',
     hellip: '…',
     middot: '·',
     nbsp: ' '
