@@ -28,10 +28,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const result = await fetchLightweightProductsByCategory(slug, page, perPage, {
       includeDrafts: shouldShowDraftsInListings(req.headers.host),
     });
-    // C-08 P0: drop price fields only for the container-houses archive so paging
-    // cannot reintroduce a number the server-rendered page deliberately omits.
-    // Every other category remains unchanged pending the sweep ruling.
-    const products = slug === 'container-houses' ? result.products.map((product) => {
+    // Category archives publish no price. Drop price fields here so client-side
+    // pagination cannot reintroduce a number the server-rendered page omits.
+    const products = result.products.map((product) => {
       const {
         price,
         regular_price,
@@ -48,7 +47,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         priceSubline?: string;
       };
       return rest;
-    }) : result.products;
+    });
     // Short cache; this is public catalog data.
     res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
     return res.status(200).json({ ...result, products });
