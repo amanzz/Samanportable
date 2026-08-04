@@ -48,6 +48,7 @@ import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRai
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 import { removeMonetaryHtml, removeMonetarySentencesDeep } from '../../../lib/monetaryText';
+import productOpenerOverrides from '../../../data/product-opener-overrides.json';
 
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
@@ -94,6 +95,23 @@ function applyProductDescriptionAnchorTextCorrection(slug: string, html: string)
   return replacement ? html.replace(replacement.before, replacement.after) : html;
 }
 
+const PRODUCT_OPENER_OVERRIDES = productOpenerOverrides as Record<string, string>;
+
+function removeLeadingOpenerParagraph(html: string, opener: string): string {
+  if (!html || !opener) return html;
+  const leadingParagraph = html.match(/^\s*<p\b[^>]*>([\s\S]*?)<\/p>/i);
+  if (!leadingParagraph) return html;
+  const renderedText = leadingParagraph[1]
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return renderedText === opener
+    ? html.slice(leadingParagraph[0].length).trimStart()
+    : html;
+}
+
 interface ProductDetailsProps {
   product: WooCommerceProduct | null;
   category: string;
@@ -109,6 +127,7 @@ interface ProductDetailsProps {
   // Present only when data/products/{slug}.json exists; every other subpage keeps
   // the generic ProductSummaryLayout hero, byte-for-byte.
   variantData?: VariantProductData | null;
+  opener?: string;
 }
 
 export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
@@ -213,6 +232,8 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     const productDescription = suppressLegacyCommercialSurfaces
       ? removeMonetaryHtml(correctedProductDescription)
       : correctedProductDescription;
+    const opener = PRODUCT_OPENER_OVERRIDES[slugLower] || '';
+    const productDescriptionWithoutOpener = removeLeadingOpenerParagraph(productDescription, opener);
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -319,7 +340,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: variantData?.descriptionHtml || productDescription,
+          description: variantData?.descriptionHtml || productDescriptionWithoutOpener,
           images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
             id: index,
             src: img.src,
@@ -354,6 +375,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         rankMathSEO,
         reviews,
         variantData,
+        opener,
       },
     };
   } catch (error) {
@@ -372,7 +394,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
   }
 };
 
-const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], specificationsHtml = '', shippingHtml = '', variantData = null }: ProductDetailsProps) => {
+const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], specificationsHtml = '', shippingHtml = '', variantData = null, opener = '' }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -772,6 +794,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           <h1 className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">
                             {transformedProduct.title}
                           </h1>
+                          {opener && (
+                            <p className="text-sm leading-relaxed text-muted-foreground">
+                              {opener}
+                            </p>
+                          )}
                           {/* Real ratings only: render stars/review count solely when
                               WooCommerce has genuine reviews (rating_count > 0). No fake stars. */}
                           {product.rating_count > 0 && (

@@ -165,12 +165,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res, req 
     // default no-store so transient failures / new URLs are never cache-poisoned.
     setPublicEdgeCache(res);
 
-    // C-08 P0: the container-houses archive has no approved ladder, so its price
-    // fields are dropped from serialized page data too. Other category archives
-    // remain unchanged pending the owner ruling on the sweep below.
+    // Category archives have no approved ladder of their own, so price fields are
+    // dropped from serialized page data too. Product pages remain the price source.
     // short_description is a price-carrying HTML blob that this page never renders,
     // so it is dropped alongside the price fields rather than shipped in the payload.
-    const productsForPage = slug === 'container-houses' ? productsResponse.products.map((product) => {
+    const productsForPage = productsResponse.products.map((product) => {
       const {
         price,
         regular_price,
@@ -187,7 +186,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res, req 
         priceSubline?: string;
       };
       return rest;
-    }) : productsResponse.products;
+    });
 
     return {
       props: {
@@ -414,8 +413,8 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                         key={product.id}
                         product={product}
                         priority={index === 0}
-                        // C-08 P0 only; the other category archives are report-only.
-                        suppressPrice={initialCategorySlug === 'container-houses'}
+                        // Category archives list and route products; product pages own price.
+                        suppressPrice
                       />
                     ))}
                   </div>
