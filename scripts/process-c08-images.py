@@ -72,12 +72,11 @@ def encode_webp(image: Image.Image) -> tuple[bytes, int]:
 
 
 def parse_manifest() -> list[dict[str, str]]:
-    manifest_text = MANIFEST_PATH.read_text(encoding="utf-8")
     rows: list[dict[str, str]] = []
     slug: str | None = None
     source_folder: str | None = None
     size_slug: str | None = None
-    for line in manifest_text.splitlines():
+    for line in MANIFEST_PATH.read_text(encoding="utf-8").splitlines():
         if line.startswith("## "):
             route = re.search(r"(/product/container-houses(?:/[a-z0-9-]+)?)\s*$", line)
             if route:
@@ -107,29 +106,6 @@ def parse_manifest() -> list[dict[str, str]]:
                     "alt": row.group(3).strip(),
                 }
             )
-    amendments = [
-        json.loads(match.group(1))
-        for match in re.finditer(r"<!-- C08_ALT_AMENDMENT (\{.*?\}) -->", manifest_text)
-    ]
-    for amendment in amendments:
-        matches = [
-            row
-            for row in rows
-            if row["slug"] == amendment["slug"]
-            and row["sizeSlug"] == amendment["sizeSlug"]
-            and row["sourceViewToken"] == amendment["sourceViewToken"]
-            and row["filename"] == amendment["filename"]
-        ]
-        if len(matches) != 1:
-            raise RuntimeError(
-                "Manifest amendment target must resolve once: "
-                f"{amendment['slug']}/{amendment['sizeSlug']}/{amendment['sourceViewToken']}"
-            )
-        if matches[0]["alt"] != amendment["originalAlt"]:
-            raise RuntimeError(
-                f"Manifest amendment original alt does not match the retained row: {amendment['filename']}"
-            )
-        matches[0]["alt"] = amendment["supersedingAlt"]
     return rows
 
 

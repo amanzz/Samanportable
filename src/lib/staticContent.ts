@@ -71,7 +71,7 @@ const SAFE_SLUG = /^[a-z0-9-]+$/;
 
 function readJson(file: string): any | null {
   try {
-    return trimImageAltWhitespaceDeep(JSON.parse(fs.readFileSync(file, 'utf-8')));
+    return JSON.parse(fs.readFileSync(file, 'utf-8'));
   } catch {
     return null;
   }
@@ -146,17 +146,6 @@ const CATEGORY_PRICE_LADDER_REMOVALS = new Map<
   { removeLeading?: boolean; headings: string[] }
 >([
   [
-    'container-cafe',
-    {
-      removeLeading: true,
-      headings: [
-        'Container cafe types and price bands compared',
-        'How much does a container cafe cost in India?',
-        'Why do container cafe prices range from ₹2 lakh to ₹33 lakh?',
-      ],
-    },
-  ],
-  [
     'container-houses',
     {
       removeLeading: true,
@@ -167,103 +156,6 @@ const CATEGORY_PRICE_LADDER_REMOVALS = new Map<
         'How much does a container house cost?',
         'Where can I buy a container house?',
         "What's the difference between a prefabricated container home and a prefabricated container house?",
-      ],
-    },
-  ],
-  [
-    'container-offices',
-    {
-      headings: [
-        'Which container office do you need?',
-        'Container office types and sizes compared',
-        'Can container offices be stacked or joined into a larger office?',
-        'Container office range and starting prices',
-        'SAMAN container office vs an IndiaMART listing',
-      ],
-    },
-  ],
-  [
-    'industrial-sheds',
-    {
-      removeLeading: true,
-      headings: [
-        'Industrial shed types, spans and price bands',
-        'What an industrial shed costs in India',
-        "Why buy your shed range from SAMAN's own plants",
-      ],
-    },
-  ],
-  [
-    'peb-constructions',
-    {
-      headings: [
-        'Which PEB structure should you build — warehouse, factory, shed or multi-storey?',
-        'PEB construction range — spans, applications and indicative price bands',
-        "What does PEB construction cost, and what's included in the price?",
-        'What is the cost of PEB construction?',
-      ],
-    },
-  ],
-  [
-    'portable-cabin',
-    {
-      removeLeading: true,
-      headings: [
-        'Portable cabin types, sizes and starting prices compared',
-        'How much does a portable cabin cost?',
-        'Buying your portable cabin range from a manufacturer, not a reseller',
-      ],
-    },
-  ],
-  [
-    'portable-toilet',
-    {
-      removeLeading: true,
-      headings: [
-        "SAMAN's Portable Toilet Range — ₹65,000 to ₹1,05,000, Side by Side",
-        'Why Buyers Order From SAMAN',
-        "What's the price range across SAMAN's portable toilet variants?",
-      ],
-    },
-  ],
-  [
-    'pre-engineered-buildings',
-    {
-      removeLeading: true,
-      headings: [
-        'Which pre-engineered building fits your warehouse, factory or workshop?',
-        'How much does a pre-engineered building cost in India?',
-        'What is the cost of a pre-engineered building in India?',
-      ],
-    },
-  ],
-  [
-    'prefab-buildings',
-    {
-      removeLeading: true,
-      headings: [
-        "How to Choose the Right Prefab Building from SAMAN's Range",
-        'The Full Prefab Building Range — Sizes, Price Bands and What Each Suits',
-        'Questions Buyers Ask Before Choosing a Prefab Building Manufacturer',
-      ],
-    },
-  ],
-  [
-    'prefabricated-houses',
-    {
-      removeLeading: true,
-      headings: [
-        'Which prefabricated house do you need?',
-        'Compare the SAMAN prefabricated house range',
-        "What is SAMAN's price range for prefabricated houses?",
-      ],
-    },
-  ],
-  [
-    'security-cabins',
-    {
-      headings: [
-        'How Much Does a Security Cabin Cost in India?',
       ],
     },
   ],
@@ -982,26 +874,6 @@ export function trimImageAltWhitespace(html: string): string {
   });
 }
 
-export function trimImageAltWhitespaceDeep<T>(value: T, key = ''): T {
-  if (typeof value === 'string') {
-    if (key === 'alt') {
-      const trimmed = value.trim();
-      return (trimmed && trimmed !== value ? trimmed : value) as T;
-    }
-    return trimImageAltWhitespace(value) as T;
-  }
-  if (Array.isArray(value)) {
-    return value.map((item) => trimImageAltWhitespaceDeep(item)) as T;
-  }
-  if (value && typeof value === 'object') {
-    return Object.fromEntries(
-      Object.entries(value as Record<string, unknown>)
-        .map(([childKey, item]) => [childKey, trimImageAltWhitespaceDeep(item, childKey)])
-    ) as T;
-  }
-  return value;
-}
-
 // Mirrors api.fetchProductDescription.
 export async function fetchProductDescription(
   slug: string
@@ -1009,7 +881,7 @@ export async function fetchProductDescription(
   const p = findProductBySlug(slug);
   if (!p) return null;
   return {
-    description: trimImageAltWhitespace(
+    description: (slug === 'prefabricated-container-house' ? trimImageAltWhitespace : (html: string) => html)(
       rewriteC04NonL3Punctuation(
         applyC04GapCloseCopy(
           rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
@@ -1019,7 +891,8 @@ export async function fetchProductDescription(
       )
     ),
     images: (p.images || []).map((image: any) =>
-      typeof image?.alt === 'string' && image.alt.trim() && image.alt.trim() !== image.alt
+      slug === 'prefabricated-container-house'
+      && typeof image?.alt === 'string' && image.alt.trim() && image.alt.trim() !== image.alt
         ? { ...image, alt: image.alt.trim() }
         : image
     ),
@@ -1134,15 +1007,6 @@ export async function fetchCategoryRankMathSEO(categorySlug: string): Promise<Ra
   let seo = headToSeo(c);
   if (CATEGORY_PRICE_LADDER_REMOVALS.has(categorySlug) && seo) {
     seo = removeMonetarySentencesDeep(seo);
-  }
-  if (categorySlug === 'container-houses') {
-    const description = 'Container house types from SAMAN: prefab, luxury, shipping-form and affordable builds. Compare specifications and sizes, then see prices on each product page.';
-    seo = {
-      ...(seo || {}),
-      description,
-      og_description: description,
-      twitter_description: description,
-    };
   }
   return seo;
 }

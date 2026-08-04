@@ -28,11 +28,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const result = await fetchLightweightProductsByCategory(slug, page, perPage, {
       includeDrafts: shouldShowDraftsInListings(req.headers.host),
     });
-    // This route feeds ONLY the category archive's client-side pagination, and a
-    // category archive publishes no price (Fable 5 ruling, 03 Aug 2026). The price
-    // fields and the price-carrying short_description are dropped so paging to page 2
+    // C-08 P0: drop price fields only for the container-houses archive so paging
     // cannot reintroduce a number the server-rendered page deliberately omits.
-    const products = result.products.map((product) => {
+    // Every other category remains unchanged pending the sweep ruling.
+    const products = slug === 'container-houses' ? result.products.map((product) => {
       const {
         price,
         regular_price,
@@ -49,7 +48,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         priceSubline?: string;
       };
       return rest;
-    });
+    }) : result.products;
     // Short cache; this is public catalog data.
     res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
     return res.status(200).json({ ...result, products });
