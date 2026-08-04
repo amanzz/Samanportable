@@ -63,7 +63,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 6,
             "name": "Container Cafe",
-            "url": "https://www.samanportable.com/product/container-cafe/container-cafe"
+            "url": "https://www.samanportable.com/product/container-cafe"
           },
           {
             "@type": "ListItem",
@@ -444,7 +444,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 12,
             "name": "Container Offices",
-            "url": "https://www.samanportable.com/product/container-offices/container-offices"
+            "url": "https://www.samanportable.com/product/container-offices"
           },
           {
             "@type": "ListItem",
@@ -601,7 +601,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 8,
             "name": "Industrial Sheds",
-            "url": "https://www.samanportable.com/product/industrial-sheds/industrial-sheds"
+            "url": "https://www.samanportable.com/product/industrial-sheds"
           },
           {
             "@type": "ListItem",
@@ -778,7 +778,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 11,
             "name": "Labor Colony",
-            "url": "https://www.samanportable.com/product/labor-colony/labor-colony"
+            "url": "https://www.samanportable.com/product/labor-colony"
           }
         ]
       },
@@ -905,7 +905,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 6,
             "name": "PEB Construction",
-            "url": "https://www.samanportable.com/product/peb-constructions/peb-constructions"
+            "url": "https://www.samanportable.com/product/peb-constructions"
           },
           {
             "@type": "ListItem",
@@ -1137,7 +1137,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 14,
             "name": "Porta Cabin",
-            "url": "https://www.samanportable.com/product/porta-cabins/porta-cabins"
+            "url": "https://www.samanportable.com/product/porta-cabins"
           }
         ]
       },
@@ -1255,7 +1255,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 5,
             "name": "Portable Cabin",
-            "url": "https://www.samanportable.com/product/portable-cabin/portable-cabin"
+            "url": "https://www.samanportable.com/product/portable-cabin"
           },
           {
             "@type": "ListItem",
@@ -1719,7 +1719,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 8,
             "name": "Pre-Engineered Buildings",
-            "url": "https://www.samanportable.com/product/pre-engineered-buildings/pre-engineered-buildings"
+            "url": "https://www.samanportable.com/product/pre-engineered-buildings"
           }
         ]
       },
@@ -1988,7 +1988,7 @@ export const categorySchemas: Record<string, any> = {
             "@type": "ListItem",
             "position": 1,
             "name": "Prefabricated House",
-            "url": "https://www.samanportable.com/product/prefabricated-houses/prefabricated-houses"
+            "url": "https://www.samanportable.com/product/prefabricated-houses"
           },
           {
             "@type": "ListItem",

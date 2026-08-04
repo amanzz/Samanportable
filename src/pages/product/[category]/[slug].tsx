@@ -122,7 +122,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       return {
         redirect: {
           destination: `/product/${category}`,
-          permanent: true,
+          statusCode: 301,
         },
       };
     }
