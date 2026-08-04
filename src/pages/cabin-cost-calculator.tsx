@@ -24,7 +24,7 @@ const structuredData = {
   ],
 };
 
-type Props = { calculatorHtml: string };
+type Props = { calculatorHtml: string; faqHtml: string };
 
 const estimateReference = () => {
   const now = new Date();
@@ -35,7 +35,7 @@ const estimateReference = () => {
 export const config = { unstable_runtimeJS: false };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) => {
-  const { renderCabinCalculatorSSR } = await import('@/lib/cabinCalculatorSSR');
+  const { renderCabinCalculatorSSR, renderCalculatorFaq } = await import('@/lib/cabinCalculatorSSR');
   return {
     props: {
       calculatorHtml: renderCabinCalculatorSSR({
@@ -44,11 +44,15 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) =
         pageUrl: '/cabin-cost-calculator',
         submissionStatus: query.submitted === '1' ? 'success' : query.submit_error === '1' ? 'failure' : undefined,
       }),
+      // The FAQ used to sit INSIDE the calculator section, where its 530px dl
+      // was part of a 1169px block making up 29.4% of the mobile page. It now
+      // renders below the calculator instead.
+      faqHtml: renderCalculatorFaq(),
     },
   };
 };
 
-export default function CabinCostCalculatorPage({ calculatorHtml }: Props) {
+export default function CabinCostCalculatorPage({ calculatorHtml, faqHtml }: Props) {
   return (
     <Layout>
       <Head>
@@ -63,9 +67,10 @@ export default function CabinCostCalculatorPage({ calculatorHtml }: Props) {
         <script defer src="/scripts/cabin-cost-calculator.js" />
       </Head>
       <div className="min-h-screen bg-background text-foreground">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+        <div className="mx-auto max-w-[1280px] py-8">
           <h1 className="mb-5 text-3xl font-bold sm:text-4xl">Cabin Cost Calculator</h1>
           <div dangerouslySetInnerHTML={{ __html: calculatorHtml }} />
+          <div dangerouslySetInnerHTML={{ __html: faqHtml }} />
         </div>
       </div>
     </Layout>

@@ -96,10 +96,12 @@ const EXPECTED = [
   ['estimate: total', copy.ESTIMATE_PANEL.total, standalone],
   ['estimate: fine print', copy.ESTIMATE_PANEL.finePrint, standalone],
   ['quote mode line', copy.QUOTE_MODE, quoteMode],
-  ...copy.PRODUCT_STEP.flatMap((entry) => [
-    [`product name: ${entry.id}`, entry.name, standalone],
-    [`product description: ${entry.id}`, entry.description, standalone],
-  ]),
+  // Product DESCRIPTIONS still come from the copy pack. Seven of the twelve
+  // have none and render name + price only, so nulls are skipped rather than
+  // filled with an invented line.
+  ...copy.PRODUCT_STEP
+    .filter((entry) => entry.description)
+    .map((entry) => [`product description: ${entry.id}`, entry.description, standalone]),
 ];
 
 const diffs = [];
@@ -120,6 +122,37 @@ for (const [name, approved, haystack] of EXPECTED) {
   );
   if (!inPack) diffs.push(`${name}: "${approved.slice(0, 60)}" is not in the copy pack`);
   else if (!inDom) diffs.push(`${name}: approved string does not render — "${approved.slice(0, 60)}"`);
+}
+
+/**
+ * Product NAMES are authored elsewhere.
+ *
+ * Ruled 04 Aug 2026: "the step label uses the product's EXACT approved page
+ * name, never a new coinage." So the authority for a name is that product's
+ * own wp-export record, not the copy pack — checking names against the pack
+ * would fail the seven products the pack never listed, and would push someone
+ * towards coining a pack-friendly name instead of using the real one.
+ */
+const PAGE_RECORD = {
+  'porta-cabin': 'porta-cabins', 'portable-cabin': 'portable-cabin',
+  'office-cabin': 'portable-office', 'container-office': 'container-offices',
+  'site-office': 'site-office-container', 'toilet-cabin': 'porta-cabin-with-toilet',
+  'container-houses': 'container-houses', 'prefab-container-homes': 'prefab-container-homes',
+  'shipping-container-homes': 'shipping-container-homes',
+  'affordable-container-homes': 'affordable-container-homes',
+  'luxury-container-houses': 'luxury-container-houses', 'security-cabin': 'security-cabins',
+};
+console.log('\nPRODUCT NAMES vs THEIR OWN PAGE RECORD');
+for (const entry of copy.PRODUCT_STEP) {
+  const slug = PAGE_RECORD[entry.id];
+  const file = fromRoot('src', 'data', 'wp-export', 'products', `${slug}.json`);
+  const approved = fs.existsSync(file)
+    ? (JSON.parse(fs.readFileSync(file, 'utf8')).name || null) : null;
+  const ok = approved === entry.name;
+  const inDom = standalone.includes(entry.name);
+  console.log(`  ${pad(entry.id, 28)} ${pad(entry.name, 28)} ${ok ? 'matches page' : `PAGE SAYS "${approved}"`}  ${inDom ? 'renders' : 'MISSING FROM DOM'}`);
+  if (!ok) diffs.push(`${entry.id}: step label "${entry.name}" is not the page name "${approved}"`);
+  if (!inDom) diffs.push(`${entry.id}: name does not render`);
 }
 
 // The struck structure options must be gone from the DOM entirely.

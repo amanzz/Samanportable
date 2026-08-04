@@ -996,8 +996,99 @@ fieldset{
 .cabin-calculator-ssr .estimate-card .total,.cabin-calculator-ssr .estimate-card .total *{color:var(--fg-total)}
 .cabin-calculator-ssr .construction-disclosure,.cabin-calculator-ssr .construction-disclosure *{color:var(--fg-card)}
 .calculator-copy,.price-tables,.noscript-content{background:var(--bg-section)}
-.cabin-calculator-ssr .calculator-copy,.cabin-calculator-ssr .calculator-copy p,.cabin-calculator-ssr .calculator-copy h2,.cabin-calculator-ssr .calculator-copy h3,.cabin-calculator-ssr .calculator-copy dt,.cabin-calculator-ssr .calculator-copy dd,.cabin-calculator-ssr .calculator-copy li,.cabin-calculator-ssr .calculator-copy small,.cabin-calculator-ssr .price-tables,.cabin-calculator-ssr .price-tables th,.cabin-calculator-ssr .price-tables td,.cabin-calculator-ssr .price-tables caption,.cabin-calculator-ssr .price-tables summary,.cabin-calculator-ssr .price-tables p,.cabin-calculator-ssr .noscript-content,.cabin-calculator-ssr .noscript-content p,.cabin-calculator-ssr .noscript-content h2{color:var(--fg-section)}
+.cabin-calculator-ssr .calculator-intro,.cabin-calculator-ssr .calculator-intro p,.cabin-calculator-ssr .calculator-intro h2,.cabin-calculator-ssr .calculator-faq,.cabin-calculator-ssr .calculator-faq p,.cabin-calculator-ssr .calculator-faq dt,.cabin-calculator-ssr .calculator-faq dd,.cabin-calculator-ssr .calculator-faq h2,.calculator-faq,.calculator-faq h2,.calculator-faq dt,.calculator-faq dd,.cabin-calculator-ssr .calculator-copy,.cabin-calculator-ssr .calculator-copy p,.cabin-calculator-ssr .calculator-copy h2,.cabin-calculator-ssr .calculator-copy h3,.cabin-calculator-ssr .calculator-copy dt,.cabin-calculator-ssr .calculator-copy dd,.cabin-calculator-ssr .calculator-copy li,.cabin-calculator-ssr .calculator-copy small,.cabin-calculator-ssr .price-tables,.cabin-calculator-ssr .price-tables th,.cabin-calculator-ssr .price-tables td,.cabin-calculator-ssr .price-tables caption,.cabin-calculator-ssr .price-tables summary,.cabin-calculator-ssr .price-tables p,.cabin-calculator-ssr .noscript-content,.cabin-calculator-ssr .noscript-content p,.cabin-calculator-ssr .noscript-content h2{color:var(--fg-section)}
 .cabin-calculator-ssr button.primary,.cabin-calculator-ssr [type="submit"]{color:var(--c-white)}
+/* =========================================================================
+   PARITY LAYER - Fable 5 spec, 04 Aug 2026. Competitor geometry at 100%.
+   Every value here was measured off their live calculator, not chosen.
+   Geometry is theirs; colour stays ours.
+   ========================================================================= */
+
+/* P0: the estimate rendered TWICE on mobile - the aside inline at 523px and
+   the sticky bar at 64px, both display:block. 523px of pure duplication. */
+@media(max-width:1023.98px){.cabin-calculator-ssr .calculator-grid>.estimate-card{display:none}}
+
+/* CLASS 1 - container 1280/32 -> 1216 content; grid 852+24+340 = 1216.
+   The estimate track is FIXED at 340px, so the step panel takes the
+   remainder rather than both being fluid. */
+/* Container maths: 1280 max-width minus 32px padding each side = 1216 content,
+   which is 852 + 24 + 340 exactly. Scoped to the standalone route so the
+   embedded calculator keeps its host page's container. */
+.cabin-calculator-ssr[data-mode="standalone"]{max-width:1280px;margin-left:auto;margin-right:auto;padding-left:32px;padding-right:32px}
+.cabin-calculator-ssr .calculator-grid{grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:stretch}
+/* Their header is one content row plus a pill row inside 127px. Ours was four
+   stacked blocks at 155px because the four utility buttons and the pill row
+   each took a line of their own. */
+.cabin-calculator-ssr .calculator-header{min-height:0;height:auto;border-radius:16px;margin-bottom:24px;padding:12px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"summary total actions" "nav nav nav";align-items:center;column-gap:16px;row-gap:8px}
+.cabin-calculator-ssr .calculator-header>div:nth-child(1){grid-area:summary}
+.cabin-calculator-ssr .calculator-header>div:nth-child(2){grid-area:total;text-align:right}
+.cabin-calculator-ssr .calculator-header-actions{grid-area:actions;display:flex;gap:6px;flex-wrap:nowrap}
+.cabin-calculator-ssr .calculator-header-actions button{position:relative;height:25px;min-height:25px;padding:4px 10px;font-size:11px;font-weight:500;border-radius:9999px;white-space:nowrap;border:none;background:rgba(255,255,255,.14);color:inherit;cursor:pointer}
+.cabin-calculator-ssr .calculator-header-actions button::after{content:"";position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:44px;min-width:44px}
+.cabin-calculator-ssr .calculator-header .step-nav{grid-area:nav}
+/* The pills now sit ON the summary header, so they must contrast with IT, not
+   with the section. In mode W the header is ink, so an ink active pill was ink
+   on ink - the exact green-on-green defect SAMAN rejected. Inside the header
+   the pill tokens invert. */
+.cabin-calculator-ssr[data-theme="light"] .calculator-header .step-nav a{background:rgba(255,255,255,.14);color:var(--c-white)}
+.cabin-calculator-ssr[data-theme="light"] .calculator-header .step-nav a.is-active,.cabin-calculator-ssr[data-theme="light"] .calculator-header .step-nav a[aria-current="step"]{background:var(--c-soft);color:var(--c-ink)}
+.cabin-calculator-ssr[data-theme="green"] .calculator-header .step-nav a{background:var(--c-soft);color:var(--c-ink)}
+.cabin-calculator-ssr[data-theme="green"] .calculator-header .step-nav a.is-active,.cabin-calculator-ssr[data-theme="green"] .calculator-header .step-nav a[aria-current="step"]{background:var(--c-ink);color:var(--c-white)}
+.cabin-calculator-ssr .calculator-header>div{min-width:0}
+.cabin-calculator-ssr .calculator-header>div:first-child{flex:1 1 auto}
+.cabin-calculator-ssr .calculator-header p:first-child{font-size:11px;font-weight:700;margin:0}
+.cabin-calculator-ssr .calculator-header h2{font-size:18px;font-weight:700;margin:2px 0}
+.cabin-calculator-ssr .calculator-header [data-summary-size]{font-size:11px;font-weight:400;margin:0}
+.cabin-calculator-ssr .calculator-header [data-summary-label]{font-size:11px;font-weight:400;margin:0}
+.cabin-calculator-ssr .calculator-header [data-summary-ex]{font-size:18px;font-weight:700}
+.cabin-calculator-ssr .calculator-header [data-summary-incl]{font-size:11px;font-weight:400;display:block}
+.cabin-calculator-ssr .step-card>.calc-step{padding-top:88px}
+
+/* CLASS 2 - step pills. Visual height 25px, but the touch target stays 44px
+   through a pseudo-element, so density and WCAG 2.5.8 both hold. */
+.cabin-calculator-ssr .step-nav{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0}
+.cabin-calculator-ssr .step-nav a{position:relative;height:25px;min-height:25px;padding:4px 10px;font-size:11px;font-weight:500;border-radius:9999px;display:inline-flex;align-items:center;line-height:1}
+.cabin-calculator-ssr .step-nav a::after{content:"";position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:44px;min-width:44px}
+
+/* CLASS 2 - product cards. LANDSCAPE 257x93, icon left / text right. */
+.cabin-calculator-ssr .product-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+/* The label wrapping each card carried 80px of legacy padding and margin, so a
+   93px card occupied 173px. Four rows of that was 320px of dead space at
+   desktop and 960px at mobile. The span IS the card; the label is a wrapper. */
+.cabin-calculator-ssr .product-tiles .calc-choice{display:block;width:100%;padding:0;margin:0;border:none;background:none}
+/* The radio itself sat above the card inside the label, adding 55px per card.
+   Taken out of flow rather than hidden: it stays focusable and stays in the
+   accessibility tree, the label still activates it, and the focus ring moves
+   to the card so keyboard users see the same target a mouse user clicks. */
+.cabin-calculator-ssr .product-tiles .calc-choice>input{position:absolute;width:1px;height:1px;opacity:0;margin:0;pointer-events:none}
+.cabin-calculator-ssr .product-tiles .calc-choice{position:relative}
+.cabin-calculator-ssr .product-tiles .calc-choice>input:focus-visible+span{outline:3px solid var(--c-accent);outline-offset:2px}
+.cabin-calculator-ssr .product-tiles .calc-choice>span{width:100%;box-sizing:border-box;display:grid;grid-template-columns:24px minmax(0,1fr);grid-template-areas:"icon title" "icon desc" "icon price";column-gap:10px;row-gap:1px;align-content:center;height:93px;padding:12px;border-radius:12px;position:relative}
+.cabin-calculator-ssr .product-tiles .choice-icon{grid-area:icon;align-self:start;width:24px;height:24px}
+.cabin-calculator-ssr .product-tiles .choice-icon svg{width:24px;height:24px}
+.cabin-calculator-ssr .product-tiles .choice-title{grid-area:title;font-size:14px;font-weight:600;line-height:1.2;display:block}
+.cabin-calculator-ssr .product-tiles .choice-description{grid-area:desc;font-size:11px;font-weight:400;line-height:1.25}
+.cabin-calculator-ssr .product-tiles .choice-price{grid-area:price;font-size:11px;font-weight:400;line-height:1.25}
+.cabin-calculator-ssr .product-tiles .choice-badge{position:absolute;top:6px;right:6px;font-size:9px;font-weight:700;padding:1px 6px;border-radius:9999px;background:var(--c-accent);color:var(--c-white)}
+
+/* CLASS 2 - estimate panel 340x500, padding 20, radius 16, rows 20-29. */
+.cabin-calculator-ssr .calculator-grid>.estimate-card{width:340px;padding:20px;border-radius:16px}
+.cabin-calculator-ssr .estimate-card h2{font-size:14px;font-weight:700;margin:0 0 8px}
+.cabin-calculator-ssr .estimate-card .estimate-lines>div{min-height:20px;padding:2px 0;font-size:12px;line-height:1.4}
+.cabin-calculator-ssr .estimate-card .estimate-lines dt,.cabin-calculator-ssr .estimate-card .estimate-lines dd{font-size:12px;line-height:1.4;margin:0}
+
+/* MOBILE - intro capped so it cannot regrow into the 1169px block it was. */
+@media(max-width:1023.98px){
+  .cabin-calculator-ssr{padding-left:16px;padding-right:16px}
+  .cabin-calculator-ssr .calculator-grid{grid-template-columns:minmax(0,1fr)}
+  .cabin-calculator-ssr .calculator-header{min-height:0;flex-wrap:wrap}
+  .cabin-calculator-ssr .step-card>.calc-step{padding-top:16px}
+  .cabin-calculator-ssr .product-tiles{grid-template-columns:minmax(0,1fr)}
+}
+.cabin-calculator-ssr .calculator-intro{max-width:768px;margin:0 auto 24px}
+.cabin-calculator-ssr .calculator-intro h2{font-size:18px;font-weight:700;margin:0 0 8px}
+.cabin-calculator-ssr .calculator-intro p{font-size:13px;line-height:1.5;margin:0 0 8px}
+
 
 @media(max-width:600px){.calculator-grid{grid-template-columns:1fr}.mobile-estimate{position:fixed;left:0;right:0;bottom:0;z-index:40;display:block;background:var(--bg-total);color:var(--fg-total);padding:.6rem .9rem;min-height:44px}.mobile-estimate a{color:var(--fg-total);display:flex;justify-content:space-between;align-items:center;min-height:44px;text-decoration:none}.step-card{padding-bottom:4.5rem}}
 `;
@@ -1277,15 +1368,17 @@ function radio(name: string, value: string, label: string, isChecked: boolean, d
  */
 function productChoice(
   name: string,
-  entry: { id: string; name: string; description: string },
+  entry: { id: string; name: string; description: string | null; badge: string | null },
   isChecked: boolean
 ): string {
   const definition = PRODUCTS.find((product) => product.id === entry.id);
   const ladder = definition ? getRouteLadder(definition.ladderKey) : null;
+  // A product with no approved ladder shows no number anywhere. It is not
+  // hidden and it is not given a borrowed price: it renders in quote mode.
   const price = ladder
     ? `from ${money(productPriceRows(definition!, definition!.ladderKey)[0]?.ex || 0)} ex-GST`
-    : QUOTE_MODE;
-  return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(entry.id)}"${checked(isChecked)} data-product-choice="1"><span><strong class="choice-title">${productIcon(entry.id as ProductId)}${esc(entry.name)}</strong><small class="choice-description">${esc(entry.description)}</small><small>${esc(price)}</small></span></label>`;
+    : 'Price on drawing';
+  return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(entry.id)}"${checked(isChecked)} data-product-choice="1"><span>${productIcon(entry.id as ProductId)}<strong class="choice-title">${esc(entry.name)}</strong>${entry.description ? `<small class="choice-description">${esc(entry.description)}</small>` : ''}<small class="choice-price">${esc(price)}</small>${entry.badge ? `<span class="choice-badge">${esc(entry.badge)}</span>` : ''}</span></label>`;
 }
 
 function renderStepGuidance(key: keyof typeof STEP_GUIDANCE): string {
@@ -1295,9 +1388,9 @@ function renderStepGuidance(key: keyof typeof STEP_GUIDANCE): string {
 function renderWallBuildDiagram(insulationLabel: string): string {
   return `<section class="wall-diagram" aria-label="Wall build-up">
       <small>Wall build-up from outside to inside</small>
-      <div class="wall-layer"><span>Weather skin</span><span>${esc(insulationLabel)}</span></div>
+      <div class="wall-layer"><span>Weather skin</span><span data-wall-build-thickness>${esc(insulationLabel)}</span></div>
       <div class="wall-layer"><span>Structural face</span><span>MS frame & panel support</span></div>
-      <div class="wall-layer"><span>Thermal layer</span><span>${esc(insulationLabel)} PUF</span></div>
+      <div class="wall-layer"><span>Thermal layer</span><span><span data-wall-build-thickness>${esc(insulationLabel)}</span> PUF</span></div>
     </section>`;
 }
 
@@ -1306,7 +1399,7 @@ function optionCards(name: string, choices: readonly (readonly [string, number])
 }
 
 function quantityRow(group: 'electrical' | 'addOns', label: string, rate: number, quantity: number, help = '', quotation = false): string {
-  return `<label class="quantity-row"><span><strong>${esc(label)}</strong>${help ? `<small>${esc(help)}</small>` : ''}<small>${quotation ? 'In quotation per building' : `${money(rate)} each, ex-GST`}</small></span><input type="number" inputmode="numeric" min="0" max="50" step="1" name="${group}[${esc(label)}]" value="${quantity}" aria-label="${esc(label)} quantity" data-rate="${rate}" data-rate-basis="each" data-rate-group="${group}"></label>`;
+  return `<label class="quantity-row"><span><strong>${esc(label)}</strong>${help ? `<small>${esc(help)}</small>` : ''}<small>${quotation ? 'In quotation per building' : `${money(rate)} each, ex-GST`}</small></span><input type="number" inputmode="numeric" min="0" max="50" step="1"${group === 'electrical' ? ` data-electrical-item="${esc(label)}"` : ''} name="${group}[${esc(label)}]" value="${quantity}" aria-label="${esc(label)} quantity" data-rate="${rate}" data-rate-basis="each" data-rate-group="${group}"></label>`;
 }
 
 function renderPlan(config: CalculatorConfig): string {
@@ -1324,11 +1417,11 @@ function renderPlan(config: CalculatorConfig): string {
   const partitions = Array.from({ length: Math.max(0, config.rooms - 1) }, (_, index) => `<line x1="${x + planWidth * (index + 1) / config.rooms}" y1="${y}" x2="${x + planWidth * (index + 1) / config.rooms}" y2="${y + planHeight}" class="partition"/>`).join('');
   const doors = config.doors.map((door, index) => {
     const [cx, cy] = wallPoint(door.wall, door.position);
-    return `<circle data-wall="${door.wall}" data-end="${door.end}" data-distance="${door.distance}" data-index="${index}" cx="${cx}" cy="${cy}" r="5" class="door-mark"><title>Door ${index + 1}</title></circle>`;
+    return `<circle data-opening="door" data-opening-index="${index}" data-wall="${door.wall}" data-end="${door.end}" data-distance="${door.distance}" data-index="${index}" cx="${cx}" cy="${cy}" r="5" class="door-mark"><title>Door ${index + 1}</title></circle>`;
   }).join('');
   const windows = config.windows.map((window, index) => {
     const [wx, wy] = wallPoint(window.wall, window.position);
-    return `<rect data-wall="${window.wall}" data-end="${window.end}" data-distance="${window.distance}" data-index="${index}" x="${wx - 5}" y="${wy - 3}" width="10" height="6" class="window-mark"><title>Window ${index + 1}</title></rect>`;
+    return `<rect data-opening="window" data-opening-index="${index}" data-wall="${window.wall}" data-end="${window.end}" data-distance="${window.distance}" data-index="${index}" x="${wx - 5}" y="${wy - 3}" width="10" height="6" class="window-mark"><title>Window ${index + 1}</title></rect>`;
   }).join('');
   const elevationLabels = WALLS.map((wall, index) => {
     const bx = index % 2 === 0 ? 12 : 168;
@@ -1397,14 +1490,27 @@ function renderFreightTable(): string {
   return `<table data-freight-table><caption>Delivery freight ladder, ex-GST</caption><thead><tr><th scope="col">Distance</th><th scope="col">20 ft trailer</th><th scope="col">40 ft trailer</th></tr></thead><tbody><tr><th scope="row">Bangalore city</th><td>Free</td><td>Free</td></tr><tr><th scope="row">Delhi NCR</th><td>Free</td><td>Free</td></tr><tr><th scope="row">Under 100 km</th><td>Confirmed at quotation</td><td>Confirmed at quotation</td></tr>${rows}</tbody></table>`;
 }
 
-function renderCopy(): string {
+/**
+ * The two explainer paragraphs, rendered ABOVE the calculator.
+ *
+ * They used to sit below it inside a 1169px `calculator-copy` block that made
+ * up 29.4% of the mobile page. The competitor carries a 505px intro above
+ * instead, so this is capped to match and the FAQ moves out of the section
+ * entirely (see renderCalculatorFaq, rendered by the page further down).
+ */
+function renderIntro(): string {
+  return `<section class="calculator-intro" aria-labelledby="calculator-copy-title"><h2 id="calculator-copy-title">What this calculator does</h2><p>This tool builds a live estimate for a SAMAN portable cabin from our published price list. Pick the product, enter any size in feet, choose the structure, finishes, doors, windows, electrical items and add-ons, and the estimate updates line by line as you select. Every base price comes from the same price list our product pages publish, transport follows our freight ladder, and branded third-party items are shown at current vendor rates plus a 5 percent handling margin.</p><p>The figure you see is an indicative ex-factory estimate with GST shown separately. It is not a quotation. When you submit your configuration, our sales team verifies it against your drawing and location and returns a fixed, itemised quotation within 48 hours. Delivery runs 7 to 21 working days across India from our Bengaluru and Greater Noida works.</p></section>`;
+}
+
+/** FAQ block. Rendered by the page BELOW the calculator section, not inside it. */
+export function renderCalculatorFaq(): string {
   const faqs = [
     ['Is the calculator price final?', 'No. It is an indicative estimate from our published price list. Your fixed quotation arrives within 48 hours and is the figure we stand behind.'],
     ['Can I price a custom size?', 'Yes. Enter any length and width in feet; the price follows the same published formula that sets our standard nine sizes.'],
     ['Does the price include GST and transport?', 'GST at 18 percent is always shown separately. Transport is estimated from our freight ladder by distance and confirmed in the quotation; Bangalore city and Delhi NCR are free-delivery zones.'],
     ['What warranty applies?', '5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation.'],
   ];
-  return `<section class="calculator-copy" aria-labelledby="calculator-copy-title"><h2 id="calculator-copy-title">What this calculator does</h2><p>This tool builds a live estimate for a SAMAN portable cabin from our published price list. Pick the product, enter any size in feet, choose the structure, finishes, doors, windows, electrical items and add-ons, and the estimate updates line by line as you select. Every base price comes from the same price list our product pages publish, transport follows our freight ladder, and branded third-party items are shown at current vendor rates plus a 5 percent handling margin.</p><h2>What the estimate is and is not</h2><p>The figure you see is an indicative ex-factory estimate with GST shown separately. It is not a quotation. When you submit your configuration, our sales team verifies it against your drawing and location and returns a fixed, itemised quotation within 48 hours. Delivery runs 7 to 21 working days across India from our Bengaluru and Greater Noida works.</p><section aria-labelledby="calculator-faq-title"><h2 id="calculator-faq-title">Cabin cost calculator FAQs</h2><dl>${faqs.map(([question, answer]) => `<div><dt>${esc(question)}</dt><dd>${esc(answer)}</dd></div>`).join('')}</dl></section></section>`;
+  return `<section class="calculator-faq" aria-labelledby="calculator-faq-title"><h2 id="calculator-faq-title">Cabin cost calculator FAQs</h2><dl>${faqs.map(([question, answer]) => `<div><dt>${esc(question)}</dt><dd>${esc(answer)}</dd></div>`).join('')}</dl></section>`;
 }
 
 function renderEstimate(estimate: CalculatorEstimate): string {
@@ -1484,6 +1590,6 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;
   const summarySize = colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`;
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden><div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="theme" aria-label="Switch colour theme">${esc(CONTROLS.theme)}</button><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div></header><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav><section class="construction-disclosure" aria-labelledby="construction-disclosure-title"><h2 id="construction-disclosure-title">${esc(CONSTRUCTION_DISCLOSURE.heading)}</h2><p>${esc(CONSTRUCTION_DISCLOSURE.body)}</p></section><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>${embedded ? 1 : 1}</span> of ${embedded ? 7 : 8}: <span data-step-name>${esc(visibleSteps[0][0])}</span></p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="${embedded ? 7 : 8}" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / (embedded ? 7 : 8))}%"></span></div>${renderedSections.join('')}<div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}${includeCopy ? renderCopy() : ''}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="theme" aria-label="Switch colour theme">${esc(CONTROLS.theme)}</button><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>${embedded ? 1 : 1}</span> of ${embedded ? 7 : 8}: <span data-step-name>${esc(visibleSteps[0][0])}</span></p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="${embedded ? 7 : 8}" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / (embedded ? 7 : 8))}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div><div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><section class="construction-disclosure" aria-labelledby="construction-disclosure-title"><h2 id="construction-disclosure-title">${esc(CONSTRUCTION_DISCLOSURE.heading)}</h2><p>${esc(CONSTRUCTION_DISCLOSURE.body)}</p></section><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
 }
 

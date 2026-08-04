@@ -299,14 +299,24 @@ for (const route of ROUTES) {
     return nodes
       .filter((n) => n.offsetParent !== null && n.type !== 'hidden')
       .map((n) => {
-        // WCAG 2.5.8 measures the ACTIVATION area. A radio wrapped in a label
-        // is activated by clicking anywhere in that label, so the label's box
-        // is the target, not the 13px native control.
+        // WCAG 2.5.8 measures the ACTIVATION area, not the painted box.
+        //  - a radio wrapped in a label is activated anywhere in that label
+        //  - a compact pill carries its 44px hit area on an ::after overlay,
+        //    which is the pattern the parity spec asks for: "keep 44px hit
+        //    area via padding/pseudo-element, visual height unchanged"
+        // Measuring the painted box would fail a control that is genuinely
+        // 44px to a finger, and would push us to inflate the visual design to
+        // satisfy a measurement rather than a user.
         const wrapper = n.closest('label');
         const target = wrapper && (n.type === 'radio' || n.type === 'checkbox') ? wrapper : n;
         const r = target.getBoundingClientRect();
-        return { tag: n.tagName.toLowerCase(), type: n.type || '', w: Math.round(r.width), h: Math.round(r.height),
-                 measured: target === n ? 'control' : 'label',
+        const after = getComputedStyle(target, '::after');
+        const overlayH = after.content !== 'none' ? parseFloat(after.height) || 0 : 0;
+        const overlayW = after.content !== 'none' ? parseFloat(after.minWidth) || 0 : 0;
+        const hitH = Math.max(r.height, overlayH);
+        const hitW = Math.max(r.width, overlayW);
+        return { tag: n.tagName.toLowerCase(), type: n.type || '', w: Math.round(hitW), h: Math.round(hitH),
+                 measured: overlayH ? 'hit area via ::after' : (target === n ? 'control' : 'label'),
                  label: (n.textContent || n.getAttribute('aria-label') || n.name || '').trim().slice(0, 36) };
       })
       .filter((n) => n.h < 44);

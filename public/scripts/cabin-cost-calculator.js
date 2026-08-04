@@ -164,7 +164,41 @@
     return row ? num(row.dataset.priceExGst, NaN) : null;
   }
 
-  function updatePlan(root, length, width, area, planView) {
+  /**
+   * Moves the door and window markers the server drew to the positions the
+   * form currently holds. Previously this only resized the shell, so after any
+   * placement change the drawing contradicted the form until a reload —
+   * measured as planChangedOnDoorMove: false.
+   */
+  function repositionOpenings(svg, form, x, y, planWidth, planHeight) {
+    const point = (wall, pos) => {
+      const ratio = Math.max(0, Math.min(100, pos)) / 100;
+      if (wall === 'Front') return [x + planWidth * ratio, y + planHeight];
+      if (wall === 'Rear') return [x + planWidth * ratio, y];
+      if (wall === 'Left') return [x, y + planHeight * ratio];
+      return [x + planWidth, y + planHeight * ratio];
+    };
+    const place = (kind) => {
+      svg.querySelectorAll('[data-opening="' + kind + '"]').forEach((node) => {
+        const index = num(node.dataset.openingIndex, 0);
+        const wall = value(form, kind + 's[' + index + '][wall]', 'Front');
+        const end = value(form, kind + 's[' + index + '][end]', 'Left');
+        const distance = num(value(form, kind + 's[' + index + '][distance]', 0), 0);
+        const span = (wall === 'Front' || wall === 'Rear')
+          ? num(value(form, 'length', 20), 20)
+          : num(value(form, 'width', 10), 10);
+        const along = end === 'Left' ? distance : Math.max(0, span - distance);
+        const pct = span > 0 ? (along / span) * 100 : 0;
+        const [cx, cy] = point(wall, pct);
+        if (node.tagName === 'circle') { node.setAttribute('cx', String(cx)); node.setAttribute('cy', String(cy)); }
+        else { node.setAttribute('x', String(cx - 4)); node.setAttribute('y', String(cy - 4)); }
+      });
+    };
+    place('door');
+    place('window');
+  }
+
+  function updatePlan(root, length, width, area, planView, form) {
     root.querySelectorAll('[data-floor-plan]').forEach((svg) => {
       svg.querySelectorAll('[data-plan-view]').forEach((viewNode) => {
         viewNode.hidden = viewNode.dataset.planView !== planView;
@@ -181,6 +215,9 @@
       svg.setAttribute('aria-label', `${length} by ${width} foot cabin plan, ${area} square feet`);
       const dimensions = svg.querySelector('[data-plan-dimensions]');
       if (dimensions) dimensions.textContent = `${length} × ${width} ft`;
+      if (form) {
+        repositionOpenings(svg, form, (320 - planWidth) / 2, (190 - planHeight) / 2, planWidth, planHeight);
+      }
     });
   }
 
@@ -258,6 +295,35 @@
         setText(root, '[data-worker-suggestion]', `${label} × ${suggestion.blocks} accommodates at least ${workers.toLocaleString('en-IN')} workers.`);
       }
     }
+    // C3: the wall build-up diagram named a thickness the server rendered and
+    // never changed again. Follow the current choice.
+    const thickness = value(form, 'pufThickness', '50');
+    setText(root, '[data-wall-build-thickness]', `${thickness} mm`);
+
+    /**
+     * C4: electrical quantities derived from the entered floor area.
+     *
+     * Derivation, from the helper text already shipped and unchanged:
+     *   LED Panel Light            ceil(area / 40)
+     *   Ceiling Fan                ceil(area / 100)
+     *   Plug Point                 ceil(area / 50)
+     *   External / Entrance Light  1 per cabin
+     * Applied only to inputs the buyer has not touched, so a typed quantity is
+     * never overwritten. No rate is introduced: these are counts multiplied by
+     * rates already in rate card v2.
+     */
+    const perArea = { 'LED Panel Light': 40, 'Ceiling Fan': 100, 'Plug Point': 50 };
+    root.querySelectorAll('[data-electrical-item]').forEach((input) => {
+      if (input.dataset.userSet === 'true') return;
+      const label = input.dataset.electricalItem;
+      const divisor = perArea[label];
+      const suggested = divisor
+        ? Math.max(1, Math.ceil(area / divisor))
+        : (label === 'External / Entrance Light' ? 1 : null);
+      if (suggested === null) return;
+      if (String(input.value) !== String(suggested)) input.value = String(suggested);
+    });
+
     // The sticky summary header binds to live state. It used to be server-
     // rendered once and never touched, so changing product or size left it
     // reading the value it was born with.
@@ -282,7 +348,7 @@
     if (configuration) configuration.value = JSON.stringify(readConfiguration(form));
     if (estimateField) estimateField.value = JSON.stringify({ areaSqft: area, totalExGst: total, gst, totalInclGst: total + gst, quoteOnly });
     ['length', 'width'].forEach((name) => chosen(form, name)?.setAttribute('aria-invalid', String(!validSize)));
-    updatePlan(root, length, width, area, value(form, 'planView', 'plan'));
+    updatePlan(root, length, width, area, value(form, 'planView', 'plan'), form);
     return { area, total, gst, quoteOnly, validSize };
   }
 
@@ -427,7 +493,13 @@
         }
       }
     });
-    form.addEventListener('input', () => calculate(root, form));
+    form.addEventListener('input', (event) => {
+      // A quantity the buyer typed is theirs. The area-derived suggestion
+      // must never overwrite it afterwards.
+      const target = event.target;
+      if (target && target.dataset && target.dataset.electricalItem) target.dataset.userSet = 'true';
+      calculate(root, form);
+    });
     form.addEventListener('change', () => calculate(root, form));
     form.addEventListener('submit', (event) => submitEnhanced(event, root, form));
   }

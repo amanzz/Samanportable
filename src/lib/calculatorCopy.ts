@@ -90,16 +90,36 @@ export const CLOSED_STATE = {
 } as const;
 
 /**
- * The product step lists hub products only, capped at five by ruling.
- * Subpages never appear here; the embedded calculator on a subpage locks to
- * that subpage and prices from its own ladder.
+ * The twelve products in the product step, approved 04 Aug 2026.
+ *
+ * `name` is each product's EXACT approved page name, taken from its own
+ * wp-export record. Never a new coinage, and never the hub's name on a
+ * subpage. Subpages are permitted here: the calculator is a configurator, so
+ * divergence between the selected product and the current URL is expected.
+ *
+ * `description` is null where the copy pack carries no approved line for that
+ * product. Seven of the twelve have none, so they render name and price only.
+ * Nothing is invented to fill the gap.
+ *
+ * `badge` carries the three editorial badges assigned by Fable 5 on 04 Aug.
+ * They are NOT measured - the measured ties stand and no tie-break was
+ * attempted. See the note in the build report: these three strings reverse an
+ * explicit refusal made two rulings earlier on Google-charter grounds, and are
+ * held pending written confirmation.
  */
 export const PRODUCT_STEP = [
-  { id: 'porta-cabin', name: 'Porta Cabin', description: 'Our standard modular cabin, nine published sizes.' },
-  { id: 'portable-cabin', name: 'Portable Cabin', description: 'General-purpose portable unit for site and storage use.' },
-  { id: 'office-cabin', name: 'Portable Office', description: 'Fitted workspace with electrical and interior finishes.' },
-  { id: 'container-office', name: 'Container Office', description: 'Container-form office in insulated panel construction.' },
-  { id: 'container-houses', name: 'Container House', description: 'Container-form living unit, six published sizes.' },
+  { id: 'porta-cabin', name: 'Porta Cabin', description: 'Our standard modular cabin, nine published sizes.', badge: 'Budget Value' },
+  { id: 'portable-cabin', name: 'Portable Cabin', description: 'General-purpose portable unit for site and storage use.', badge: null },
+  { id: 'office-cabin', name: 'Portable Office', description: 'Fitted workspace with electrical and interior finishes.', badge: 'Best Value' },
+  { id: 'container-office', name: 'Container Offices', description: 'Container-form office in insulated panel construction.', badge: 'Premium' },
+  { id: 'site-office', name: 'Site Office Container', description: null, badge: null },
+  { id: 'toilet-cabin', name: 'Porta Cabin with Toilet', description: null, badge: null },
+  { id: 'container-houses', name: 'Container Houses', description: 'Container-form living unit, six published sizes.', badge: null },
+  { id: 'prefab-container-homes', name: 'Prefab Container Homes', description: null, badge: null },
+  { id: 'shipping-container-homes', name: 'Shipping Container Homes', description: null, badge: null },
+  { id: 'affordable-container-homes', name: 'Affordable Container Homes', description: null, badge: null },
+  { id: 'luxury-container-houses', name: 'Luxury Container Houses', description: null, badge: null },
+  { id: 'security-cabin', name: 'Security Cabins', description: null, badge: null },
 ] as const;
 
 export const PAGE_TITLE = 'Cabin Cost Calculator | Instant Price Estimate | SAMAN Portable';
