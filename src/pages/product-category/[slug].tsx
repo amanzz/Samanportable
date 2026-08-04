@@ -165,12 +165,12 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res, req 
     // default no-store so transient failures / new URLs are never cache-poisoned.
     setPublicEdgeCache(res);
 
-    // A category archive publishes no price, so the price fields are dropped from
-    // the serialized page data too — otherwise __NEXT_DATA__ still ships the number
-    // the rendered card no longer shows.
+    // C-08 P0: the container-houses archive has no approved ladder, so its price
+    // fields are dropped from serialized page data too. Other category archives
+    // remain unchanged pending the owner ruling on the sweep below.
     // short_description is a price-carrying HTML blob that this page never renders,
     // so it is dropped alongside the price fields rather than shipped in the payload.
-    const productsWithoutPrice = productsResponse.products.map((product) => {
+    const productsForPage = slug === 'container-houses' ? productsResponse.products.map((product) => {
       const {
         price,
         regular_price,
@@ -187,11 +187,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res, req 
         priceSubline?: string;
       };
       return rest;
-    });
+    }) : productsResponse.products;
 
     return {
       props: {
-        products: productsWithoutPrice,
+        products: productsForPage,
         categoryName,
         categorySlug: slug,
         categoryDescription: categoryDetail?.description || '',
@@ -414,9 +414,8 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                         key={product.id}
                         product={product}
                         priority={index === 0}
-                        // A category archive has no approved ladder of its own, so it
-                        // publishes no price and lets the product page own the number.
-                        suppressPrice
+                        // C-08 P0 only; the other category archives are report-only.
+                        suppressPrice={initialCategorySlug === 'container-houses'}
                       />
                     ))}
                   </div>
