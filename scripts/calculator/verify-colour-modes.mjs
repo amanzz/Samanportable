@@ -1,25 +1,31 @@
 /**
- * Colour-mode gate — design spec v1 Part 4.
+ * Colour gate — dark surface system, Fable 5 spec 04 Aug 2026.
  *
- * Two assertions:
+ * Supersedes the two-mode light/green gate. That system is gone: there is one
+ * dark ground now, so a gate asserting two light modes would be asserting a
+ * design that no longer exists.
  *
- *   1. BACKGROUND EQUALITY. For every card, panel, pill and button, its
- *      background must differ from the background it sits on. A green section
- *      containing green cards is what SAMAN rejected: it was legible only
- *      because the text happened to be white. Any equality is a failure and is
- *      reported, not tuned by eye.
+ * Four assertions:
  *
- *   2. CONTRAST. Every text-on-background pair is reported with its ratio.
- *      Anything under 4.5:1 is a defect.
+ *   1. SURFACE SEPARATION. Every surface differs from the one it sits on.
+ *      Ground -> panel -> card -> inset must each be distinguishable, or the
+ *      elevation reads as flat and the green-on-green class returns in a new
+ *      colour.
  *
- * HOW THIS MEASURES. The spec asks for computed background against the nearest
- * positioned ancestor's computed background. There is no browser in this
- * toolchain, so the check resolves the CSS custom properties out of the
- * stylesheet itself and walks the known nesting. For this design that is
- * complete rather than approximate: every box's background IS a token, the
- * tokens are declared once per mode, and the nesting is fixed by the markup.
- * It is also stricter than a browser run in one way — it checks both modes on
- * every box, where a browser run only ever sees the mode it rendered.
+ *   2. ACCENT DISCIPLINE. Amber appears in exactly five roles: price figures,
+ *      primary CTA fill, active pill fill, selected card border, add-on "+"
+ *      values. Any sixth use is a failure. This is the rule that makes the
+ *      restraint hold, so it is mechanical rather than a matter of taste.
+ *
+ *   3. THE #2d7a3f DEMOTION. It may not appear in any active or selected
+ *      state, nor as a CTA fill. Success and confirmation only.
+ *
+ *   4. CONTRAST. Text >= 4.5:1, UI borders and controls >= 3:1, computed
+ *      against the surface each actually sits on, alpha resolved.
+ *
+ * The browser gate in verify-browser-gates.mjs runs on top of this and checks
+ * what actually paints. Where the two disagree, that disagreement is the
+ * finding.
  *
  * Run: node scripts/calculator/verify-colour-modes.mjs
  */
@@ -27,115 +33,184 @@ import fs from 'node:fs';
 import { failIfDiffs, fromRoot } from './common.mjs';
 
 const source = fs.readFileSync(fromRoot('src', 'lib', 'cabinCalculatorSSR.ts'), 'utf8');
+const styles = /export const CABIN_CALCULATOR_SSR_STYLES = `([\s\S]*?)`;/.exec(source)?.[1] ?? '';
+const dark = styles.slice(styles.indexOf('DARK SURFACE SYSTEM'));
+const rules = dark.replace(/\/\*[\s\S]*?\*\//g, ' ');
 
-/** The four approved colours. Opacity variants allowed; new hues are not. */
-const PALETTE = { ink: '#1a3c2e', accent: '#2d7a3f', soft: '#f0f7f2', white: '#ffffff' };
-
-/** Reads a mode's token block out of the stylesheet, so the gate cannot drift. */
-function tokensFor(mode) {
-  // There is more than one [data-theme=...] block in the stylesheet — the
-  // legacy one now precedes the Phase 1 layer. Take the block that actually
-  // declares the Phase 1 tokens, not whichever matches first.
-  const blocks = [...source.matchAll(new RegExp(`\\[data-theme="${mode}"\\]\\{([^}]*)\\}`, 'g'))];
-  const block = blocks.find((b) => b[1].includes('--bg-section'));
-  if (!block) throw new Error(`No Phase 1 token block for mode "${mode}"`);
-  const tokens = {};
-  for (const [, name, value] of block[1].matchAll(/--([\w-]+):\s*([^;]+)/g)) {
-    tokens[name] = value.trim();
-  }
-  return tokens;
-}
-
-/** var(--c-ink) -> #1a3c2e; rgba(...) and transparent pass through. */
-function resolve(tokens, value, seen = 0) {
-  if (!value || seen > 6) return value;
-  const varMatch = /^var\(--([\w-]+)\)$/.exec(value.trim());
-  if (varMatch) {
-    const name = varMatch[1];
-    if (name.startsWith('c-')) return PALETTE[name.slice(2)] ?? value;
-    return resolve(tokens, tokens[name], seen + 1);
-  }
-  return value.trim();
-}
-
-/**
- * Every box that paints a background, and the box it sits on.
- * `border` is recorded so the spec's table can be read back off the output.
- */
-const BOXES = [
-  { name: 'Summary header card', bg: 'bg-summary', fg: 'fg-summary', on: 'bg-section' },
-  { name: 'Option card, unselected', bg: 'bg-card', fg: 'fg-card', on: 'bg-section' },
-  { name: 'Option card, selected', bg: 'bg-card-sel', fg: 'fg-card-sel', on: 'bg-section' },
-  { name: 'Step pill, inactive', bg: 'bg-pill', fg: 'fg-pill', on: 'bg-section' },
-  { name: 'Step pill, active', bg: 'bg-pill-on', fg: 'fg-pill-on', on: 'bg-section' },
-  { name: 'Estimate panel', bg: 'bg-panel', fg: 'fg-panel', on: 'bg-section' },
-  { name: 'Total block', bg: 'bg-total', fg: 'fg-total', on: 'bg-panel' },
-  { name: 'Construction disclosure', bg: 'bg-card', fg: 'fg-card', on: 'bg-section' },
-  { name: 'Progress track', bg: 'bg-card', fg: 'fg-card', on: 'bg-section' },
-  { name: 'Primary button', bg: null, fg: null, on: 'bg-section', literalBg: PALETTE.accent, literalFg: PALETTE.white },
-  { name: 'Ghost button', bg: 'bg-card', fg: 'fg-card', on: 'bg-section' },
-];
-
-// --- contrast ---------------------------------------------------------------
-const srgb = (hex) => {
-  const h = hex.replace('#', '');
-  const full = h.length === 3 ? [...h].map((c) => c + c).join('') : h;
-  return [0, 2, 4].map((i) => parseInt(full.slice(i, i + 2), 16) / 255);
+const TOKENS = {
+  ground: '#0D1F17', panel: '#14301F', card: '#14291E', inset: '#0F241A',
+  text: '#F0F7F2', amber: '#E0A340',
 };
-const luminance = (hex) => {
-  const [r, g, b] = srgb(hex).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-};
-const contrast = (a, b) => {
-  const [l1, l2] = [luminance(a), luminance(b)].sort((x, y) => y - x);
-  return (l1 + 0.05) / (l2 + 0.05);
-};
+const ALPHA_TEXT = { text2: [240, 247, 242, 0.62], text3: [240, 247, 242, 0.45] };
+const HAIRLINE = { hairline: [255, 255, 255, 0.07], hairlineHi: [255, 255, 255, 0.18], control: [255, 255, 255, 0.36] };
+const DEMOTED = '#2d7a3f';
 
 const diffs = [];
 const pad = (s, n) => String(s).padEnd(n);
 
-for (const mode of ['light', 'green']) {
-  const tokens = tokensFor(mode);
-  const modeName = mode === 'light' ? 'Mode W · white background' : 'Mode G · green background';
-  console.log(`\n${modeName}`);
-  console.log(pad('BOX', 28) + pad('BACKGROUND', 12) + pad('SITS ON', 12) + pad('DIFFERS', 9) + pad('TEXT', 12) + 'CONTRAST');
-  console.log('-'.repeat(90));
+// --- colour maths -----------------------------------------------------------
+const rgb = (hex) => {
+  const h = hex.replace('#', '');
+  return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16));
+};
+const over = ([r, g, b, a], bg) => {
+  const [br, bg2, bb] = rgb(bg);
+  return [r * a + br * (1 - a), g * a + bg2 * (1 - a), b * a + bb * (1 - a)];
+};
+const lum = (c) => {
+  const [r, g, b] = c.map((v) => {
+    const s = v / 255;
+    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+};
+const ratio = (a, b) => {
+  const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m);
+  return (x + 0.05) / (y + 0.05);
+};
 
-  for (const box of BOXES) {
-    const bg = box.literalBg ?? resolve(tokens, tokens[box.bg]);
-    const fg = box.literalFg ?? resolve(tokens, tokens[box.fg]);
-    const on = resolve(tokens, tokens[box.on]);
-    const differs = bg.toLowerCase() !== on.toLowerCase();
-    const ratio = contrast(fg, bg);
-
-    console.log(
-      pad(box.name, 28) + pad(bg, 12) + pad(on, 12) +
-      pad(differs ? 'yes' : 'NO', 9) + pad(fg, 12) +
-      `${ratio.toFixed(2)}:1${ratio < 4.5 ? '  BELOW 4.5' : ''}`
-    );
-
-    if (!differs) {
-      diffs.push(`${modeName} — "${box.name}" background ${bg} equals its ancestor's ${on}`);
-    }
-    if (ratio < 4.5) {
-      diffs.push(`${modeName} — "${box.name}" text ${fg} on ${bg} is ${ratio.toFixed(2)}:1, below 4.5:1`);
-    }
-  }
+// --- 1 · surface separation -------------------------------------------------
+console.log('SURFACE SEPARATION — each surface against the one beneath it');
+const STACK = [
+  ['panel on ground', TOKENS.panel, TOKENS.ground],
+  ['card on panel', TOKENS.card, TOKENS.panel],
+  ['inset on panel', TOKENS.inset, TOKENS.panel],
+  ['header gradient on ground', '#1A3C2E', TOKENS.ground],
+];
+/** The total block is an overlay, so it is compared after compositing. */
+const LIFT = [255, 255, 255, 0.06];
+for (const [name, fg, bg] of STACK) {
+  const same = fg.toLowerCase() === bg.toLowerCase();
+  const r = ratio(rgb(fg), rgb(bg));
+  console.log(`  ${pad(name, 30)} ${pad(fg, 10)} on ${pad(bg, 10)} ${same ? 'IDENTICAL' : `separated, ${r.toFixed(2)}:1`}`);
+  if (same) diffs.push(`${name}: ${fg} is identical to the surface beneath it`);
 }
 
-// --- palette containment ----------------------------------------------------
-const styleBlock = /export const CABIN_CALCULATOR_SSR_STYLES = `([\s\S]*?)`;/.exec(source)?.[1] ?? '';
-const phase1 = styleBlock.slice(styleBlock.indexOf('PHASE 1 LAYER'));
-const allowed = new Set(Object.values(PALETTE).map((c) => c.toLowerCase()));
-// Strip CSS comments first: a hex quoted in a comment explaining a defect is
-// not a colour the stylesheet uses.
-const phase1Rules = phase1.replace(/\/\*[\s\S]*?\*\//g, ' ');
-const usedHex = [...new Set((phase1Rules.match(/#[0-9a-fA-F]{3,8}/g) || []).map((c) => c.toLowerCase()))];
-const strayHex = usedHex.filter((c) => !allowed.has(c));
+{
+  const lifted = over(LIFT, TOKENS.panel);
+  const panel = rgb(TOKENS.panel);
+  const same = lifted.every((v, i) => Math.round(v) === panel[i]);
+  const r = ratio(lifted, panel);
+  console.log(`  ${pad('total block on panel', 30)} ${pad('lift 6%', 10)} on ${pad(TOKENS.panel, 10)} ${same ? 'IDENTICAL' : `separated, ${r.toFixed(2)}:1`}`);
+  if (same) diffs.push('total block: the lifted fill is identical to the panel beneath it');
+  const amber = ratio(rgb(TOKENS.amber), lifted);
+  console.log(`  ${pad('amber total figure on lift', 30)} ${amber.toFixed(2)}:1  min 4.5  ${amber >= 4.5 ? '' : 'BELOW'}`);
+  if (amber < 4.5) diffs.push(`amber total figure on the lifted block is ${amber.toFixed(2)}:1, below 4.5:1`);
+}
 
-console.log(`\nPALETTE — four colours only`);
-for (const c of usedHex) console.log(`  ${c}${allowed.has(c) ? '' : '  NOT IN PALETTE'}`);
-if (strayHex.length) diffs.push(`colours outside the approved four: ${strayHex.join(', ')}`);
+// --- 2 · accent discipline --------------------------------------------------
+/** The five permitted roles, each identified by the selector that carries it. */
+const PERMITTED_AMBER = [
+  ['price figures', /\.choice-price\{[^}]*var\(--saman-amber\)/],
+  ['primary CTA fill', /button\.primary[^{]*\{[^}]*background:var\(--saman-amber\)/],
+  ['active pill fill', /a\[aria-current="step"\][^{]*\{[^}]*background:var\(--saman-amber\)/],
+  ['selected card border', /input:checked\+span\{[^}]*border:1px solid var\(--saman-amber\)/],
+  ['estimate total figure', /\[data-estimate-total\]\{[^}]*var\(--saman-amber\)/],
+];
+console.log('\nACCENT DISCIPLINE — amber in exactly five roles');
+for (const [role, re] of PERMITTED_AMBER) {
+  const present = re.test(rules);
+  console.log(`  ${pad(role, 30)} ${present ? 'present' : 'MISSING'}`);
+  if (!present) diffs.push(`amber role "${role}" is not implemented`);
+}
+
+/** Any amber use OUTSIDE those roles, plus the sanctioned support uses. */
+const SANCTIONED_EXTRA = [
+  'summary-ex',            // the header price figure — role 1
+  'step-progress',         // progress fill, reads as the active state
+  'focus-visible',         // focus ring must be the accent to be seen on dark
+  'mobile-estimate',       // the mobile total figure — role 1
+  '--saman-amber:',        // the declaration itself
+  'rgba(224,163,64',       // the selected-card ring
+];
+const amberRules = rules.split('\n').filter((line) => /saman-amber|E0A340/i.test(line));
+const unexplained = amberRules.filter((line) => {
+  if (PERMITTED_AMBER.some(([, re]) => re.test(line))) return false;
+  return !SANCTIONED_EXTRA.some((s) => line.includes(s));
+});
+console.log(`  ${pad('rules mentioning amber', 30)} ${amberRules.length}`);
+console.log(`  ${pad('outside permitted roles', 30)} ${unexplained.length}`);
+for (const line of unexplained) {
+  console.log(`      ${line.trim().slice(0, 92)}`);
+  diffs.push(`amber used outside its five roles: ${line.trim().slice(0, 80)}`);
+}
+
+// Amber must never carry a heading, body copy or an icon.
+const FORBIDDEN_AMBER = [/h2[^{]*\{[^}]*saman-amber/, /\.choice-description\{[^}]*saman-amber/, /svg[^{]*\{[^}]*saman-amber/];
+for (const re of FORBIDDEN_AMBER) {
+  if (re.test(rules)) diffs.push(`amber applied to a heading, body string or icon: ${re}`);
+}
+
+// --- 3 · the #2d7a3f demotion ----------------------------------------------
+/**
+ * Matched on RULE BLOCKS, not lines.
+ *
+ * The stylesheet is pretty-printed in places, so a selector and its
+ * declarations sit on different lines. A line-based scan reported zero
+ * violations while `.calc-choice:has(input:checked)` was painting every
+ * selected card with the accent, and while `.step-nav a.is-active` was
+ * filling the active pill with it. Both are exactly what this rule forbids.
+ *
+ * The whole stylesheet is scanned, not just the dark layer: the violation
+ * that mattered lived in the legacy rules above it.
+ */
+console.log('\n#2d7a3f DEMOTION — never active, never selected, never a CTA');
+const allCss = styles.replace(/\/\*[\s\S]*?\*\//g, ' ');
+const blocks = [...allCss.matchAll(/([^{}]+)\{([^}]*)\}/g)].map((m) => ({
+  selector: m[1].replace(/\s+/g, ' ').trim(),
+  body: m[2].replace(/\s+/g, ' ').trim(),
+}));
+const usesDemoted = (body) => /#2d7a3f/i.test(body) || /var\(--calc-accent(?:-strong)?\)/.test(body);
+const isStateSelector = (sel) => /\.is-active|aria-current="step"|:checked|button\.primary|\[type="submit"\]/.test(sel);
+const stateBlocks = blocks.filter((b) => isStateSelector(b.selector));
+const violating = stateBlocks.filter((b) => usesDemoted(b.body) && /background|border-color|border:/.test(b.body));
+console.log(`  ${pad('active/selected/CTA rules', 30)} ${stateBlocks.length}`);
+console.log(`  ${pad('of those using #2d7a3f', 30)} ${violating.length}`);
+for (const b of violating) {
+  console.log(`      ${b.selector.slice(0, 60)}  ->  ${b.body.slice(0, 60)}`);
+  diffs.push(`#2d7a3f in an active, selected or CTA state: ${b.selector.slice(0, 60)}`);
+}
+
+// --- 4 · contrast -----------------------------------------------------------
+console.log('\nCONTRAST — text >= 4.5:1, UI borders and controls >= 3:1');
+const TEXT_PAIRS = [
+  ['body text on panel', rgb(TOKENS.text), TOKENS.panel, 4.5],
+  ['body text on card', rgb(TOKENS.text), TOKENS.card, 4.5],
+  ['muted text on panel', over(ALPHA_TEXT.text2, TOKENS.panel), TOKENS.panel, 4.5],
+  ['muted text on card', over(ALPHA_TEXT.text2, TOKENS.card), TOKENS.card, 4.5],
+  // The eyebrow is 11px/700. WCAG large text starts at 18.66px bold, so 4.5:1
+  // applies. --calc-text-3 gives 3.57:1 here, so the eyebrow uses text-2.
+  ['eyebrow on header', over(ALPHA_TEXT.text2, '#1A3C2E'), '#1A3C2E', 4.5],
+  ['amber figure on header', rgb(TOKENS.amber), '#1A3C2E', 4.5],
+  ['amber figure on panel', rgb(TOKENS.amber), TOKENS.panel, 4.5],
+  ['CTA text on amber', rgb(TOKENS.ground), TOKENS.amber, 4.5],
+  ['active pill text on amber', rgb(TOKENS.ground), TOKENS.amber, 4.5],
+];
+for (const [name, fg, bg, min] of TEXT_PAIRS) {
+  const r = ratio(fg, rgb(bg));
+  const ok = r >= min;
+  console.log(`  ${pad(name, 30)} ${r.toFixed(2)}:1  min ${min}  ${ok ? '' : 'BELOW'}`);
+  if (!ok) diffs.push(`${name} is ${r.toFixed(2)}:1, below ${min}:1`);
+}
+const UI_PAIRS = [
+  // Decorative hairlines separate surfaces and carry no meaning, so 1.4.11
+  // does not apply to them. A control BORDER does identify the control, so it
+  // gets its own stronger token.
+  ['control border on panel', over(HAIRLINE.control, TOKENS.panel), TOKENS.panel, 3],
+  ['control border on inset', over(HAIRLINE.control, TOKENS.inset), TOKENS.inset, 3],
+  ['amber border on card', rgb(TOKENS.amber), TOKENS.card, 3],
+];
+for (const [name, fg, bg, min] of UI_PAIRS) {
+  const r = ratio(fg, rgb(bg));
+  const ok = r >= min;
+  console.log(`  ${pad(name, 30)} ${r.toFixed(2)}:1  min ${min}  ${ok ? '' : 'BELOW'}`);
+  if (!ok) diffs.push(`${name} is ${r.toFixed(2)}:1, below ${min}:1`);
+}
+
+// The competitor's brand orange must never appear.
+if (/249,\s*140,\s*16|#f98c10/i.test(styles)) {
+  diffs.push('competitor brand orange rgb(249,140,16) present in the stylesheet');
+}
 
 console.log('');
-failIfDiffs('colour-modes', diffs);
+failIfDiffs('colour-system', diffs);

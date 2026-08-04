@@ -101,25 +101,31 @@ export const CLOSED_STATE = {
  * product. Seven of the twelve have none, so they render name and price only.
  * Nothing is invented to fill the gap.
  *
- * `badge` carries the three editorial badges assigned by Fable 5 on 04 Aug.
- * They are NOT measured - the measured ties stand and no tie-break was
- * attempted. See the note in the build report: these three strings reverse an
- * explicit refusal made two rulings earlier on Google-charter grounds, and are
- * held pending written confirmation.
+ * `platform` is the L17 construction disclosure, not a superiority badge.
+ * Superiority badges were refused twice: "Budget Value", "Best Value" and
+ * "Premium" are unsupported claims the Google charter forbids, and the two
+ * measured alternatives both tied so neither could be awarded. The slot now
+ * carries a fact instead of a claim.
+ *
+ * Every product reads "Newly fabricated" because that is what the workbook
+ * supports: Sources and Notes states plainly that container office and cafe
+ * products are not converted used ISO shipping containers. Nothing here is
+ * "Container-derived" - if a product ever is, it says so from the workbook,
+ * never from a marketing preference.
  */
 export const PRODUCT_STEP = [
-  { id: 'porta-cabin', name: 'Porta Cabin', description: 'Our standard modular cabin, nine published sizes.', badge: 'Budget Value' },
-  { id: 'portable-cabin', name: 'Portable Cabin', description: 'General-purpose portable unit for site and storage use.', badge: null },
-  { id: 'office-cabin', name: 'Portable Office', description: 'Fitted workspace with electrical and interior finishes.', badge: 'Best Value' },
-  { id: 'container-office', name: 'Container Offices', description: 'Container-form office in insulated panel construction.', badge: 'Premium' },
-  { id: 'site-office', name: 'Site Office Container', description: null, badge: null },
-  { id: 'toilet-cabin', name: 'Porta Cabin with Toilet', description: null, badge: null },
-  { id: 'container-houses', name: 'Container Houses', description: 'Container-form living unit, six published sizes.', badge: null },
-  { id: 'prefab-container-homes', name: 'Prefab Container Homes', description: null, badge: null },
-  { id: 'shipping-container-homes', name: 'Shipping Container Homes', description: null, badge: null },
-  { id: 'affordable-container-homes', name: 'Affordable Container Homes', description: null, badge: null },
-  { id: 'luxury-container-houses', name: 'Luxury Container Houses', description: null, badge: null },
-  { id: 'security-cabin', name: 'Security Cabins', description: null, badge: null },
+  { id: 'porta-cabin', name: 'Porta Cabin', description: 'Our standard modular cabin, nine published sizes.', platform: 'Newly fabricated' },
+  { id: 'portable-cabin', name: 'Portable Cabin', description: 'General-purpose portable unit for site and storage use.', platform: 'Newly fabricated' },
+  { id: 'office-cabin', name: 'Portable Office', description: 'Fitted workspace with electrical and interior finishes.', platform: 'Newly fabricated' },
+  { id: 'container-office', name: 'Container Offices', description: 'Container-form office in insulated panel construction.', platform: 'Newly fabricated' },
+  { id: 'site-office', name: 'Site Office Container', description: null, platform: 'Newly fabricated' },
+  { id: 'toilet-cabin', name: 'Porta Cabin with Toilet', description: null, platform: 'Newly fabricated' },
+  { id: 'container-houses', name: 'Container Houses', description: 'Container-form living unit, six published sizes.', platform: 'Newly fabricated' },
+  { id: 'prefab-container-homes', name: 'Prefab Container Homes', description: null, platform: 'Newly fabricated' },
+  { id: 'shipping-container-homes', name: 'Shipping Container Homes', description: null, platform: 'Newly fabricated' },
+  { id: 'affordable-container-homes', name: 'Affordable Container Homes', description: null, platform: 'Newly fabricated' },
+  { id: 'luxury-container-houses', name: 'Luxury Container Houses', description: null, platform: 'Newly fabricated' },
+  { id: 'security-cabin', name: 'Security Cabins', description: null, platform: 'Newly fabricated' },
 ] as const;
 
 export const PAGE_TITLE = 'Cabin Cost Calculator | Instant Price Estimate | SAMAN Portable';
