@@ -325,49 +325,6 @@ export const CALCULATOR_MESSAGES = {
 } as const;
 
 export const CABIN_CALCULATOR_SSR_STYLES = `
-/* ---------------------------------------------------------------------------
-   PHASE 1 LAYER - design spec v1 Part 4 and Part 5.
-
-   Written compactly and last so it wins the cascade over the earlier rules.
-   Four colours only: #1a3c2e, #2d7a3f, #f0f7f2, #ffffff. Opacity variants of
-   those four are permitted; new hues are not.
-
-   Every box's background differs from the background it sits on. That is the
-   defect SAMAN rejected - a green section containing green cards, legible only
-   because the text happened to be white - and the mechanical gate asserts it.
---------------------------------------------------------------------------- */
-.cabin-calculator-ssr{--c-ink:#1a3c2e;--c-accent:#2d7a3f;--c-soft:#f0f7f2;--c-white:#ffffff}
-.cabin-calculator-ssr[data-theme="light"]{--bg-section:var(--c-white);--fg-section:var(--c-ink);--bg-summary:var(--c-ink);--fg-summary:var(--c-white);--bg-card:var(--c-soft);--fg-card:var(--c-ink);--bd-card:rgba(26,60,46,.2);--bg-card-sel:var(--c-ink);--fg-card-sel:var(--c-white);--bd-card-sel:var(--c-accent);--bg-pill:var(--c-soft);--fg-pill:var(--c-ink);--bg-pill-on:var(--c-ink);--fg-pill-on:var(--c-white);--bd-pill-on:transparent;--bg-panel:var(--c-soft);--fg-panel:var(--c-ink);--bd-panel:rgba(26,60,46,.15);--bg-total:var(--c-ink);--fg-total:var(--c-white);--bd-total:transparent}
-.cabin-calculator-ssr[data-theme="green"]{--bg-section:var(--c-ink);--fg-section:var(--c-white);--bg-summary:var(--c-white);--fg-summary:var(--c-ink);--bg-card:var(--c-white);--fg-card:var(--c-ink);--bd-card:transparent;--bg-card-sel:var(--c-white);--fg-card-sel:var(--c-ink);--bd-card-sel:var(--c-accent);--bg-pill:var(--c-soft);--fg-pill:var(--c-ink);--bg-pill-on:var(--c-white);--fg-pill-on:var(--c-ink);--bd-pill-on:var(--c-accent);--bg-panel:var(--c-white);--fg-panel:var(--c-ink);--bd-panel:transparent;--bg-total:var(--c-soft);--fg-total:var(--c-ink);--bd-total:var(--c-accent)}
-.cabin-calculator-ssr{background:var(--bg-section);color:var(--fg-section)}
-.calculator-header{background:var(--bg-summary);color:var(--fg-summary);border-radius:12px;padding:1rem 1.15rem}
-.calculator-header h2,.calculator-header p,.calculator-header small,.calculator-header strong{color:var(--fg-summary)}
-.calc-choice>span{background:var(--bg-card);color:var(--fg-card);border:1px solid var(--bd-card);border-radius:10px;display:block;padding:.7rem .8rem}
-.calc-choice input:checked+span{background:var(--bg-card-sel);color:var(--fg-card-sel);border:2px solid var(--bd-card-sel)}
-.calc-choice input:checked+span *{color:var(--fg-card-sel)}
-.step-nav a{background:var(--bg-pill);color:var(--fg-pill);border-radius:999px;padding:.45rem .8rem;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;opacity:1}
-.step-nav a.is-active,.step-nav a[aria-current="step"]{background:var(--bg-pill-on);color:var(--fg-pill-on);border:2px solid var(--bd-pill-on);opacity:1}
-.estimate-card{background:var(--bg-panel);color:var(--fg-panel);border:1px solid var(--bd-panel);border-radius:12px;padding:1rem}
-.estimate-card .total{background:var(--bg-total);color:var(--fg-total);border:1px solid var(--bd-total);border-radius:10px;padding:.75rem;display:flex;flex-direction:column;gap:.15rem}
-.estimate-card .total *{color:var(--fg-total)}
-.cabin-calculator-ssr button.primary,.cabin-calculator-ssr [type="submit"]{background:var(--c-accent);color:var(--c-white);border:none;border-radius:8px;min-height:44px;padding:.6rem 1.1rem;font-weight:600;cursor:pointer}
-.cabin-calculator-ssr button.ghost{background:var(--bg-card);color:var(--fg-card);border:1px solid var(--bd-card);border-radius:8px;min-height:44px;padding:.6rem 1rem;cursor:pointer}
-.cabin-calculator-ssr input,.cabin-calculator-ssr select,.cabin-calculator-ssr textarea,.cabin-calculator-ssr button{min-height:44px}
-.cabin-calculator-ssr :focus-visible{outline:3px solid var(--c-accent);outline-offset:2px}
-/* Part 5: no fixed inner height, no internal scrollbar. The panel grows. */
-.calculator-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);gap:1.25rem;align-items:start}
-.step-card{height:auto;overflow:visible}
-.step-counter{margin:0 0 .4rem;font-weight:600}
-.step-progress{background:var(--bg-card);border-radius:999px;height:6px;overflow:hidden;margin-bottom:.85rem}
-.step-progress>span{display:block;height:100%;background:var(--c-accent)}
-.step-actions{display:flex;gap:.6rem;align-items:center;justify-content:space-between;border-top:1px solid var(--bd-card);margin-top:1rem;padding-top:1rem}
-/* All steps render visible. Only the enhanced path hides them. */
-.calc-step{display:block}
-.cabin-calculator-ssr.is-enhanced .calc-step:not(.is-active){display:none}
-.construction-disclosure{background:var(--bg-card);color:var(--fg-card);border:1px solid var(--bd-card);border-radius:10px;padding:.85rem 1rem;margin:.75rem 0}
-.mobile-estimate{display:none}
-@media(max-width:600px){.calculator-grid{grid-template-columns:1fr}.mobile-estimate{position:fixed;left:0;right:0;bottom:0;z-index:40;display:block;background:var(--bg-total);color:var(--fg-total);padding:.6rem .9rem;min-height:44px}.mobile-estimate a{color:var(--fg-total);display:flex;justify-content:space-between;align-items:center;min-height:44px;text-decoration:none}.step-card{padding-bottom:4.5rem}}
-
 .cabin-calculator-ssr{
   --calc-primary: #1a3c2e;
   --calc-secondary: #2d7a3f;
@@ -978,6 +935,71 @@ fieldset{
     position: static;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   PHASE 1 LAYER - design spec v1 Part 4 and Part 5.
+
+   Written compactly and last so it wins the cascade over the earlier rules.
+   Four colours only: #1a3c2e, #2d7a3f, #f0f7f2, #ffffff. Opacity variants of
+   those four are permitted; new hues are not.
+
+   Every box's background differs from the background it sits on. That is the
+   defect SAMAN rejected - a green section containing green cards, legible only
+   because the text happened to be white - and the mechanical gate asserts it.
+--------------------------------------------------------------------------- */
+.cabin-calculator-ssr{--c-ink:#1a3c2e;--c-accent:#2d7a3f;--c-soft:#f0f7f2;--c-white:#ffffff}
+.cabin-calculator-ssr[data-theme="light"]{--bg-section:var(--c-white);--fg-section:var(--c-ink);--bg-summary:var(--c-ink);--fg-summary:var(--c-white);--bg-card:var(--c-soft);--fg-card:var(--c-ink);--bd-card:rgba(26,60,46,.2);--bg-card-sel:var(--c-ink);--fg-card-sel:var(--c-white);--bd-card-sel:var(--c-accent);--bg-pill:var(--c-soft);--fg-pill:var(--c-ink);--bg-pill-on:var(--c-ink);--fg-pill-on:var(--c-white);--bd-pill-on:transparent;--bg-panel:var(--c-soft);--fg-panel:var(--c-ink);--bd-panel:rgba(26,60,46,.15);--bg-total:var(--c-ink);--fg-total:var(--c-white);--bd-total:transparent}
+.cabin-calculator-ssr[data-theme="green"]{--bg-section:var(--c-ink);--fg-section:var(--c-white);--bg-summary:var(--c-white);--fg-summary:var(--c-ink);--bg-card:var(--c-white);--fg-card:var(--c-ink);--bd-card:transparent;--bg-card-sel:var(--c-white);--fg-card-sel:var(--c-ink);--bd-card-sel:var(--c-accent);--bg-pill:var(--c-soft);--fg-pill:var(--c-ink);--bg-pill-on:var(--c-white);--fg-pill-on:var(--c-ink);--bd-pill-on:var(--c-accent);--bg-panel:var(--c-white);--fg-panel:var(--c-ink);--bd-panel:transparent;--bg-total:var(--c-soft);--fg-total:var(--c-ink);--bd-total:var(--c-accent)}
+.cabin-calculator-ssr{background:var(--bg-section);color:var(--fg-section)}
+.calculator-header{background:var(--bg-summary);color:var(--fg-summary);border-radius:12px;padding:1rem 1.15rem}
+.calculator-header h2,.calculator-header p,.calculator-header small,.calculator-header strong{color:var(--fg-summary)}
+.calc-choice>span{background:var(--bg-card);color:var(--fg-card);border:1px solid var(--bd-card);border-radius:10px;display:block;padding:.7rem .8rem}
+.calc-choice input:checked+span{background:var(--bg-card-sel);color:var(--fg-card-sel);border:2px solid var(--bd-card-sel)}
+.calc-choice input:checked+span *{color:var(--fg-card-sel)}
+.step-nav a{background:var(--bg-pill);color:var(--fg-pill);border-radius:999px;padding:.45rem .8rem;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;opacity:1}
+.step-nav a.is-active,.step-nav a[aria-current="step"]{background:var(--bg-pill-on);color:var(--fg-pill-on);border:2px solid var(--bd-pill-on);opacity:1}
+.estimate-card{background:var(--bg-panel);color:var(--fg-panel);border:1px solid var(--bd-panel);border-radius:12px;padding:1rem}
+.estimate-card .total{background:var(--bg-total);color:var(--fg-total);border:1px solid var(--bd-total);border-radius:10px;padding:.75rem;display:flex;flex-direction:column;gap:.15rem}
+.estimate-card .total *{color:var(--fg-total)}
+.cabin-calculator-ssr button.primary,.cabin-calculator-ssr [type="submit"]{background:var(--c-accent);color:var(--c-white);border:none;border-radius:8px;min-height:44px;padding:.6rem 1.1rem;font-weight:600;cursor:pointer}
+.cabin-calculator-ssr button.ghost{background:var(--bg-card);color:var(--fg-card);border:1px solid var(--bd-card);border-radius:8px;min-height:44px;padding:.6rem 1rem;cursor:pointer}
+.cabin-calculator-ssr input,.cabin-calculator-ssr select,.cabin-calculator-ssr textarea,.cabin-calculator-ssr button{min-height:44px}
+.cabin-calculator-ssr :focus-visible{outline:3px solid var(--c-accent);outline-offset:2px}
+/* Part 5: no fixed inner height, no internal scrollbar. The panel grows. */
+.calculator-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);gap:1.25rem;align-items:start}
+/* The step panel is not one of the spec's painted boxes. It must not paint,
+   or the accent primary button ends up sitting on accent. */
+.step-card{height:auto;overflow:visible;background:transparent}
+.cabin-calculator-ssr .estimate-card .total{background:var(--bg-total)}
+.step-counter{margin:0 0 .4rem;font-weight:600}
+.step-progress{background:var(--bg-card);border-radius:999px;height:6px;overflow:hidden;margin-bottom:.85rem}
+.step-progress>span{display:block;height:100%;background:var(--c-accent)}
+.step-actions{display:flex;gap:.6rem;align-items:center;justify-content:space-between;border-top:1px solid var(--bd-card);margin-top:1rem;padding-top:1rem}
+/* All steps render visible. Only the enhanced path hides them. */
+.calc-step{display:block}
+.cabin-calculator-ssr.is-enhanced .calc-step:not(.is-active){display:none}
+.construction-disclosure{background:var(--bg-card);color:var(--fg-card);border:1px solid var(--bd-card);border-radius:10px;padding:.85rem 1rem;margin:.75rem 0}
+.mobile-estimate{display:none}
+/* Contrast fixes found by axe against the real browser, not by eye.
+   1. Legacy .step-nav a[aria-current="false"] carried opacity .65 and is more
+      specific than our .step-nav a rule, dimming #1a3c2e to an effective
+      #6a8077 on #f5faf7 = 4.0:1.
+   2. Muted helper text inherited the SOFT colour as a FOREGROUND: #f0f7f2 on
+      #ffffff = 1.08:1, effectively invisible.
+   3. The copy section and price tables sat on accent, putting #1a3c2e on
+      #2d7a3f = 2.29:1. */
+.step-nav a[aria-current="false"]{opacity:1;color:var(--fg-pill)}
+.cabin-calculator-ssr .step-counter,.cabin-calculator-ssr .step-counter *,.cabin-calculator-ssr [data-step-name],.cabin-calculator-ssr .step-guidance,.cabin-calculator-ssr .step-guidance small,.cabin-calculator-ssr .step-tip,.cabin-calculator-ssr .step-tip small,.cabin-calculator-ssr .calc-step,.cabin-calculator-ssr .calc-step h2,.cabin-calculator-ssr .calc-step legend,.cabin-calculator-ssr .calc-step label,.cabin-calculator-ssr .calc-step p,.cabin-calculator-ssr .calc-step small,.cabin-calculator-ssr .calc-step h3{color:var(--fg-section)}
+.cabin-calculator-ssr .calc-choice>span,.cabin-calculator-ssr .calc-choice>span *{color:var(--fg-card)}
+.cabin-calculator-ssr .calc-choice input:checked+span,.cabin-calculator-ssr .calc-choice input:checked+span *{color:var(--fg-card-sel)}
+.cabin-calculator-ssr .estimate-card,.cabin-calculator-ssr .estimate-card *{color:var(--fg-panel)}
+.cabin-calculator-ssr .estimate-card .total,.cabin-calculator-ssr .estimate-card .total *{color:var(--fg-total)}
+.cabin-calculator-ssr .construction-disclosure,.cabin-calculator-ssr .construction-disclosure *{color:var(--fg-card)}
+.calculator-copy,.price-tables,.noscript-content{background:var(--bg-section)}
+.cabin-calculator-ssr .calculator-copy,.cabin-calculator-ssr .calculator-copy p,.cabin-calculator-ssr .calculator-copy h2,.cabin-calculator-ssr .calculator-copy h3,.cabin-calculator-ssr .calculator-copy dt,.cabin-calculator-ssr .calculator-copy dd,.cabin-calculator-ssr .calculator-copy li,.cabin-calculator-ssr .calculator-copy small,.cabin-calculator-ssr .price-tables,.cabin-calculator-ssr .price-tables th,.cabin-calculator-ssr .price-tables td,.cabin-calculator-ssr .price-tables caption,.cabin-calculator-ssr .price-tables summary,.cabin-calculator-ssr .price-tables p,.cabin-calculator-ssr .noscript-content,.cabin-calculator-ssr .noscript-content p,.cabin-calculator-ssr .noscript-content h2{color:var(--fg-section)}
+.cabin-calculator-ssr button.primary,.cabin-calculator-ssr [type="submit"]{color:var(--c-white)}
+
+@media(max-width:600px){.calculator-grid{grid-template-columns:1fr}.mobile-estimate{position:fixed;left:0;right:0;bottom:0;z-index:40;display:block;background:var(--bg-total);color:var(--fg-total);padding:.6rem .9rem;min-height:44px}.mobile-estimate a{color:var(--fg-total);display:flex;justify-content:space-between;align-items:center;min-height:44px;text-decoration:none}.step-card{padding-bottom:4.5rem}}
 `;
 
 export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {

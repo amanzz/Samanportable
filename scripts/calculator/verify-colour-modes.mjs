@@ -33,8 +33,12 @@ const PALETTE = { ink: '#1a3c2e', accent: '#2d7a3f', soft: '#f0f7f2', white: '#f
 
 /** Reads a mode's token block out of the stylesheet, so the gate cannot drift. */
 function tokensFor(mode) {
-  const block = new RegExp(`\\[data-theme="${mode}"\\]\\{([^}]*)\\}`).exec(source);
-  if (!block) throw new Error(`No token block for mode "${mode}"`);
+  // There is more than one [data-theme=...] block in the stylesheet — the
+  // legacy one now precedes the Phase 1 layer. Take the block that actually
+  // declares the Phase 1 tokens, not whichever matches first.
+  const blocks = [...source.matchAll(new RegExp(`\\[data-theme="${mode}"\\]\\{([^}]*)\\}`, 'g'))];
+  const block = blocks.find((b) => b[1].includes('--bg-section'));
+  if (!block) throw new Error(`No Phase 1 token block for mode "${mode}"`);
   const tokens = {};
   for (const [, name, value] of block[1].matchAll(/--([\w-]+):\s*([^;]+)/g)) {
     tokens[name] = value.trim();
@@ -123,7 +127,10 @@ for (const mode of ['light', 'green']) {
 const styleBlock = /export const CABIN_CALCULATOR_SSR_STYLES = `([\s\S]*?)`;/.exec(source)?.[1] ?? '';
 const phase1 = styleBlock.slice(styleBlock.indexOf('PHASE 1 LAYER'));
 const allowed = new Set(Object.values(PALETTE).map((c) => c.toLowerCase()));
-const usedHex = [...new Set((phase1.match(/#[0-9a-fA-F]{3,8}/g) || []).map((c) => c.toLowerCase()))];
+// Strip CSS comments first: a hex quoted in a comment explaining a defect is
+// not a colour the stylesheet uses.
+const phase1Rules = phase1.replace(/\/\*[\s\S]*?\*\//g, ' ');
+const usedHex = [...new Set((phase1Rules.match(/#[0-9a-fA-F]{3,8}/g) || []).map((c) => c.toLowerCase()))];
 const strayHex = usedHex.filter((c) => !allowed.has(c));
 
 console.log(`\nPALETTE — four colours only`);
