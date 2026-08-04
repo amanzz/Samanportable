@@ -58,8 +58,12 @@ console.log(`phase 1 diff: ${phase1Failures.length ? phase1Failures.join(', ') :
  * Design spec Part 5: the panel grows with its content.
  */
 const forbiddenHeight = [
-  ['fixed step height', /\.step-card\{[^}]*[;{]height:\d/],
-  ['step panel min-height', /\.step-card\{[^}]*min-height:\d/],
+  // The old pattern required a ';' or '{' BEFORE `height`, but `.step-card{`
+  // already consumed the brace, so `.step-card{height:720px` slipped past it.
+  ['fixed step height', /\.step-card\{(?:[^}]*;)?\s*height:\s*(?!0\s*[;}])\d/],
+  // `min-height: 0` REMOVES a minimum, so it is the opposite of the defect.
+  // Only a non-zero value is a fixed height.
+  ['step panel min-height', /\.step-card\{(?:[^}]*;)?\s*min-height:\s*(?!0\s*[;}])\d/],
   ['step panel internal scroll', /\.step-card\{[^}]*overflow-y:\s*(?:auto|scroll)/],
 ];
 const heightViolations = forbiddenHeight.filter(([, re]) => re.test(renderer)).map(([name]) => name);

@@ -85,7 +85,6 @@ const EXPECTED = [
   ['tip: custom size', copy.TIPS.customSize, standalone],
   ['control: start over', copy.CONTROLS.startOver, standalone],
   ['control: get my quotation', copy.CONTROLS.getQuotation, standalone],
-  ['control: theme', copy.CONTROLS.theme, standalone],
   ['control: save design', copy.CONTROLS.saveDesign, standalone],
   ['control: restore design', copy.CONTROLS.restoreDesign, standalone],
   ...Object.entries(copy.FIELD_LABELS).map(([key, label]) => [`field label: ${key}`, label, standalone]),

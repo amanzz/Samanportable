@@ -131,6 +131,13 @@ const ALIASES = {
   'addon: Table without Drawer': 'without drawer',
   'addon: Revolving Chair, Head Rest': 'chair head-rest',
   'addon: Revolving Chair, Back Rest': 'back-rest',
+  'electrical: LED Panel Light': 'LED panel', 'electrical: Tube Light': 'tube light',
+  'electrical: Ceiling Fan': 'fan', 'electrical: Exhaust Fan': 'exhaust',
+  'electrical: Split AC 1 Ton incl. installation': 'split AC 1 ton 3-star installed',
+  'electrical: Plug Point': 'plug point', 'electrical: Pop-up Socket': 'pop-up socket',
+  'electrical: External / Entrance Light': 'external light',
+  'electrical: FR Copper Wire Coil 90 m, 1.5 sq mm': '1.5 sq mm',
+  'electrical: FR Copper Wire Coil 90 m, 2.5 sq mm': '2.5 sq mm',
   'freight: first 20 ft band': '100 to 150 km reads Rs',
   'freight: 40 ft trailer delta': '40 ft trailer adds Rs',
   'tax: GST': 'GST at',
@@ -148,6 +155,11 @@ function appliedRates() {
   for (const [label, delta] of ssr.FLOORING) add('floor', label, delta);
   for (const [label, delta] of (ssr.STRUCTURES || [])) add('structure', label, delta);
   for (const [label, rate] of ssr.ADD_ONS) add('addon', label, rate);
+  // The ELECTRICAL array carries its own rate per row. Reading only
+  // RATE_CARD.marketRates meant a literal typed straight into that array was
+  // never compared against the card: a fixture setting Tube Light to 999
+  // passed. Every rate the step actually applies is checked.
+  for (const [label, rate] of ssr.ELECTRICAL) add('electrical', label, rate);
   for (const [mm, delta] of Object.entries(rates.RATE_CARD.pufThicknessDeltaPerSqft)) {
     add('panel', `${mm} mm PUF`, delta);
   }

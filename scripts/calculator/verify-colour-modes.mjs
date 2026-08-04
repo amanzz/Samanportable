@@ -37,12 +37,36 @@ const styles = /export const CABIN_CALCULATOR_SSR_STYLES = `([\s\S]*?)`;/.exec(s
 const dark = styles.slice(styles.indexOf('DARK SURFACE SYSTEM'));
 const rules = dark.replace(/\/\*[\s\S]*?\*\//g, ' ');
 
+/**
+ * Token values are READ FROM THE STYLESHEET, never hardcoded here.
+ *
+ * They used to be copied into this file, which made the gate blind: a fixture
+ * that set --sd-card to the panel colour, and one that dropped --sd-text-2 to
+ * 0.20 alpha, both passed. The gate was checking its own copy of the palette
+ * rather than the palette that ships.
+ */
+function hexToken(name) {
+  const m = new RegExp(String.raw`--${name}:\s*(#[0-9a-fA-F]{3,8})`).exec(styles);
+  if (!m) throw new Error(`token --${name} not found in the stylesheet`);
+  return m[1];
+}
+function alphaToken(name) {
+  // String.raw, because in a plain template literal \s and \( collapse to s
+  // and ( — the pattern then matched nothing useful and every alpha token
+  // resolved to NaN, which the gate reported as "below 4.5:1".
+  const m = new RegExp(String.raw`--${name}:\s*rgba\(([^)]+)\)`).exec(styles);
+  if (!m) throw new Error(`token --${name} not found in the stylesheet`);
+  return m[1].split(',').map((v) => Number(v.trim()));
+}
 const TOKENS = {
-  ground: '#0D1F17', panel: '#14301F', card: '#14291E', inset: '#0F241A',
-  text: '#F0F7F2', amber: '#E0A340',
+  ground: hexToken('sd-ground'), panel: hexToken('sd-panel'), card: hexToken('sd-card'),
+  inset: hexToken('sd-inset'), text: hexToken('sd-text'), amber: hexToken('saman-amber'),
 };
-const ALPHA_TEXT = { text2: [240, 247, 242, 0.62], text3: [240, 247, 242, 0.45] };
-const HAIRLINE = { hairline: [255, 255, 255, 0.07], hairlineHi: [255, 255, 255, 0.18], control: [255, 255, 255, 0.36] };
+const ALPHA_TEXT = { text2: alphaToken('sd-text-2'), text3: alphaToken('sd-text-3') };
+const HAIRLINE = {
+  hairline: alphaToken('sd-hairline'), hairlineHi: alphaToken('sd-hairline-hi'),
+  control: alphaToken('sd-control-border'),
+};
 const DEMOTED = '#2d7a3f';
 
 const diffs = [];

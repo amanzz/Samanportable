@@ -17,6 +17,10 @@ import { failIfDiffs, fromRoot } from './common.mjs';
 
 const FILES = [
   ['src', 'lib', 'cabinCalculatorSSR.ts'],
+  // calculatorCopy.ts holds every user-facing string, including the twelve
+  // product labels. It was outside this list, so an emoji in a product name
+  // rendered and the gate reported zero.
+  ['src', 'lib', 'calculatorCopy.ts'],
   ['src', 'lib', 'cabinCalculatorEmbedRoutes.ts'],
   ['src', 'lib', 'calculatorLadders.ts'],
   ['src', 'lib', 'calculatorRates.ts'],

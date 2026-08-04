@@ -8,6 +8,7 @@ const scripts = [
   'report-locked-product-names.mjs',
   'verify-copy-pack.mjs',
   'verify-colour-modes.mjs',
+  'verify-gates-catch-violations.mjs',
   'verify-no-bare-fetch.mjs',
   'verify-no-emoji.mjs',
   'verify-nojs-post.mjs',

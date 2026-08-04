@@ -439,9 +439,6 @@
         showStep(root, to, true);
         return;
       }
-      if (action === 'theme') {
-        root.dataset.theme = root.dataset.theme === 'light' ? 'green' : 'light';
-      }
       if (action === 'pdf') {
         track('pdf_download', { page_path: window.location.pathname });
         window.print();
