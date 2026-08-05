@@ -3013,5 +3013,17 @@
    "alt": "",
    "altStatus": "pending-fable-5-manifest"
   }
- ]
+ ],
+ "sourceDefects": [
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E04",
+   "sourceFilename": "194_shipping-container-homes_20x10_E04_rear-right-angle.png",
+   "defect": "Filed as an exterior rear-right-angle; the photograph is an interior.",
+   "handling": "Derivative retains the complete principal interior subject. Source not renamed, moved or re-shot.",
+   "loggedUnder": "C08-E3 ruling 6 (Fable 5, 05 Aug 2026)"
+  }
+ ],
+ "slotRule": "E3 ruling 1: six assets per size — G1..G5 to the product gallery (five), row six (H) reserved for the Section H explorer. Applies to page six and all five siblings."
 }

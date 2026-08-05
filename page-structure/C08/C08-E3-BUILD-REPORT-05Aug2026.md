@@ -1,50 +1,53 @@
 # C-08 E3 BUILD REPORT — six routes to publish-ready
 
 **Ticket** C08-E3 · **Date** 05 Aug 2026 · **Branch** `agent/c08-e2-contact-images-spec-20260805`
-**Commit** `a65e5d97` · **Preview** `http://localhost:3340/product/container-houses/prefabricated-container-house`
+**Commit** `93391d84` · **Rev 2**, after the 05 Aug rulings.
+**Preview** `http://localhost:3351/product/container-houses/prefabricated-container-house`
+(clean worktree `C:/tmp/saman-c08-e3-clean`, its own `npm ci`, **production** `next build` + `next start`)
 
 Build only. Not merged, not deployed. PR #110, #111, #114 and the calculator branch untouched.
 
 ---
 
-## 0 · HEADLINE — what is done, what is blocked
+## 0 · RULINGS — what each one produced
+
+| Ruling | Outcome |
+|---|---|
+| 1 · gallery slots G1–G5, H to Section H | **APPLIED.** Page six joins `C08_PRODUCT_SLUGS`; the existing slice already reserved row six. Gallery renders **5**, row six (I03) held for Section H. |
+| 2 · manifest to `D:\Project-shekhar\reports\` | **NOT YET PLACED.** Checked; not there. Alts remain `""`. No alt text authored. |
+| 3 · L16 denominator = 27, method fixed | **RECORDED** in `c08-e3-page-six-spec-provenance.json`. **But the number in the ruling and its own substance disagree — see §7.1.** |
+| 4 · opener withdrawn | **NOTHING TO UNDO.** The 587-character opener was never issued to me and was never implemented. The live opener is 371 characters and cites none of those materials. |
+| 5 · fresh worktree, own `npm ci` | **DONE — and it found the bug.** The phantom reproduced in a clean tree, which ruled out the junction and led to the real cause. **Fixed and verified. §7.2.** |
+| 6 · accepted as built; log the E04 mislabel | **LOGGED** in `c08-e3-step-b-16x9-intake-report.json` under `sourceDefects`. |
+
+## 0b · STATE OF THE SIX STEPS
 
 | Step | State |
 |---|---|
-| A · implement the 60-row alt manifest | **BLOCKED — the source file does not exist.** 60 assets wired, all alts EMPTY. Both gates FAIL. |
+| A · implement the 60-row alt manifest | **BLOCKED — file not yet placed.** 60 assets wired, all alts EMPTY. Both gates FAIL. |
 | B · 120 new 16:9 Info assets | **DONE.** 120/120, all gates pass, every crop reviewed by eye. |
-| C · Info layout, 4 above the spec block | **PARTIAL.** Zero below spec on all six. The count of four is met on 2 of 6; the other four lack the body copy to space four images. |
-| D · page-six 30-row spec table | **BUILT at 27 rows. L16 Gate 1 FAILS at 70.4%.** Wording NOT adjusted. Gate 2 passes. |
+| C · Info layout, 4 above the spec block | **PARTIAL.** Zero below spec on all six. Four placed on 2 of 6; the other four lack the body copy to space four images. |
+| D · page-six spec table | **BUILT at 27 rows.** Gate 2 PASS. **Gate 1 measures 70.4%, not the 63.0% in ruling 3 — §7.1.** |
 | E · page-six quotation price | **DONE.** Zero rupee figures. Six sizes with areas, no figures. |
+| L11 · LCP warm, desktop and mobile | **PASS 12/12, CLS 0** — now measured on a build that actually renders the images. |
 
-Three things need your ruling before this can publish. They are in section 7.
+**The production-build caveat from rev 1 is withdrawn.** It was a real bug, it is fixed, and
+every number in this revision comes from a production build.
 
 ---
 
-## 1 · STEP A — the manifest does not exist
+## 1 · STEP A — the manifest is not yet in place
 
-`C08-PREFAB-CONTAINER-HOUSE-ALT-MANIFEST-60-05Aug2026.xlsx` is not on `D:\`, not on the
-Desktop, not in Downloads, not in Documents, not anywhere in the repo. A full search by name
-and by `*ALT*MANIFEST*` returns only the C-04 manifest and the C-08 **180**-row manifest of
-02 Aug.
+`D:\Project-shekhar\reports\C08-PREFAB-CONTAINER-HOUSE-ALT-MANIFEST-60-05Aug2026.xlsx` does not
+exist yet. Per ruling 2 the alts stay empty and I have authored nothing.
 
-The C08-E2 agent had already reached this same wall. Its intake report records
-`wiredToRoute: 0` and `altStatus: "pending-fable-5-manifest"` on all 60 assets. It produced
-the assets correctly — 36 at 900×900, 24 at 1200×675, every file under 120 KiB — and stopped
-rather than ship empty alts.
+- **GATE · 60/60 alts byte-identical to column H — FAIL.** 0 of 60.
+- **GATE · zero empty alts remaining on this route — FAIL.** 10 empty alts render: 5 gallery
+  images for the active size (down from 6 under ruling 1), the 4 Info images, and 1 pre-existing.
 
-On your instruction I have wired all 60 with `alt=""`.
-
-- **GATE · 60/60 alts byte-identical to column H — FAIL.** 0 of 60 present. There is no
-  column H to copy.
-- **GATE · zero empty alts remaining on this route — FAIL.** 11 empty alts render: 6 gallery
-  images for the active size, the 4 Info images, and 1 pre-existing.
-
-Everything else is in place, so dropping the xlsx becomes a data-only change. The alt strings
-land in `src/data/products/prefabricated-container-house.json` and
+Everything else is wired, so dropping the xlsx is a data-only change into
+`src/data/products/prefabricated-container-house.json` and
 `page-structure/C08/c08-e3-step-b-16x9-intake-report.json`. No further code work.
-
-**I did not author a single alt string.**
 
 ---
 
@@ -55,22 +58,21 @@ All gates pass.
 | Gate | Result |
 |---|---|
 | 4 × 6 = 24 per route, 120 across the five | **120** — 24 on each of the five |
-| Zero source file used twice on the same route | **PASS** — each of the 10 sources per size used exactly once: 6 gallery + 4 Info |
+| Zero source file used twice on the same route | **PASS** — each of the 10 sources per size used once: 6 to the size's slot set, 4 to Info |
 | Every output under 120 KiB | **PASS** — largest is 122,680 bytes = 119.8 KiB |
 | Output dimensions 1200×675 | **PASS** — 120/120 |
 
 **Method.** Sources are 1254×1254, so a 16:9 band is 1254×705 with 549 rows of vertical
 travel. A fixed centre crop decapitates units whose base sits low in the frame. I placed the
 band from a long-horizontal-edge detector — a roof line and a base line each run most of the
-frame width, whereas foliage is high-frequency but incoherent across a row — and then
-**reviewed all 120 outputs on five per-route contact sheets**. 25 frames were overruled by eye
-and pinned in `page-structure/C08/c08-e3-step-b-visual-crop-offsets.json`. Every one was a
-frame where the detector had pinned the band at an end of its travel and cut off the roof or
-the base.
+frame width, whereas foliage is high-frequency but incoherent across a row — then **reviewed
+all 120 outputs on five per-route contact sheets**. 25 frames were overruled by eye and pinned
+in `c08-e3-step-b-visual-crop-offsets.json`; every one was a frame where the detector had
+pinned the band at an end of its travel and cut off the roof or the base.
 
-**One source anomaly.** `shipping-container-homes / 20x10 / E04`, named `rear-right-angle`, is
-an interior photograph, not a rear elevation. The crop retains the complete interior subject.
-The source is mislabelled; the derivative is not.
+**Source defect logged (ruling 6).** `shipping-container-homes / 20x10 / E04`, filed as
+`rear-right-angle`, is an interior photograph. The derivative retains the complete principal
+interior subject. The source is not renamed, moved or re-shot.
 
 ### Source views selected for each 16:9 slot, per size, per route
 
@@ -145,29 +147,29 @@ unblocks. No code change will be needed: the images are wired and will place the
 
 ### L11 — LCP warm, same session, desktop and mobile
 
-Production build (`next build` + `next start`). Each route loaded once to warm the caches,
-then measured on the second load in the same browser context.
+Production build (`next build` + `next start`) in the clean worktree, **after** the fix in
+§7.2, so this run renders the Info images. Each route loaded once to warm the caches, then
+measured on the second load in the same browser context.
 
 
 | Profile | Route | LCP ms | CLS | TTFB ms | Verdict |
 |---|---|---|---|---|---|
-| desktop | container-houses | 228 | 0 | 154 | PASS |
-| desktop | prefab-container-homes | 144 | 0 | 49 | PASS |
-| desktop | luxury-container-houses | 152 | 0 | 39 | PASS |
-| desktop | shipping-container-homes | 164 | 0 | 59 | PASS |
-| desktop | affordable-container-homes | 152 | 0 | 42 | PASS |
-| desktop | prefabricated-container-house | 148 | 0 | 48 | PASS |
-| mobile | container-houses | 232 | 0 | 62 | PASS |
-| mobile | prefab-container-homes | 196 | 0 | 91 | PASS |
-| mobile | luxury-container-houses | 220 | 0 | 55 | PASS |
-| mobile | shipping-container-homes | 224 | 0 | 40 | PASS |
-| mobile | affordable-container-homes | 252 | 0 | 67 | PASS |
-| mobile | prefabricated-container-house | 212 | 0 | 43 | PASS |
+| desktop | container-houses | 208 | 0 | 118 | PASS |
+| desktop | prefab-container-homes | 172 | 0 | 57 | PASS |
+| desktop | luxury-container-houses | 152 | 0 | 56 | PASS |
+| desktop | shipping-container-homes | 296 | 0 | 152 | PASS |
+| desktop | affordable-container-homes | 220 | 0 | 103 | PASS |
+| desktop | prefabricated-container-house | 148 | 0 | 50 | PASS |
+| mobile | container-houses | 216 | 0 | 95 | PASS |
+| mobile | prefab-container-homes | 236 | 0 | 40 | PASS |
+| mobile | luxury-container-houses | 204 | 0 | 53 | PASS |
+| mobile | shipping-container-homes | 192 | 0 | 37 | PASS |
+| mobile | affordable-container-homes | 252 | 0 | 53 | PASS |
+| mobile | prefabricated-container-house | 252 | 0 | 40 | PASS |
 
-Every route passes on both profiles with **CLS 0**. Two honest caveats: these are localhost
-figures with no network latency, so treat them as a floor rather than a field measurement;
-and see section 7.3 — the production build used for this run did not render the Info images.
-Those images cannot move LCP by construction (all lazy, all below the fold) and they carry
+Every route passes on both profiles with **CLS 0**, with the Info images rendering. One honest
+caveat remains: these are localhost figures with no network latency, so treat them as a floor
+rather than a field measurement. The images are all lazy and below the fold, and they carry
 intrinsic `width`/`height`, which is what holds CLS at 0.
 
 ---
@@ -178,21 +180,33 @@ Built into `src/data/products/c08-specifications.json`, which the existing dispa
 with no code change. **27 rows, not 30.** Three components had no permitted source and are
 left out, exactly as the ticket directs.
 
-### L16 GATE 1 — divergence from the hub · **FAIL**
+### Denominator — settled by ruling 3, recorded as the fixed method
 
-| Denominator | Divergence | Verdict |
+> The denominator is the number of rows actually built. Rows with no permitted source are
+> excluded entirely: they cannot participate in a divergence measurement, so they count
+> neither as divergent nor as matching.
+
+Here that is **27**. Recorded in `c08-e3-page-six-spec-provenance.json` under
+`l16DenominatorMethod` for every future L16 measurement.
+
+### L16 GATE 1 — divergence from the hub · **measures 70.4%, not 63.0%**
+
+Ruling 3 approves the Common Material Key insulation values for this page *and* states Gate 1
+stands at 17/27 = 63.0%. Measured against the table as built on exactly those approved values,
+it is **19/27 = 70.4%**. Both cannot be true; see §7.1 for why, and what would close it.
+
+| Table as built | Divergence | Verdict |
 |---|---|---|
-| **Like-for-like, over the 27 rows built** | **19/27 = 70.4%** | **FAIL** — 0.4 points over the 70% ceiling |
-| Nominal 30, counting the 3 omissions as divergent | 22/30 = 73.3% | FAIL |
-| Nominal 30, counting the 3 omissions as neutral | 19/30 = 63.3% | PASS |
+| **CMK insulation approved (25 mm wall, 50 mm roof) — what ships now** | **19/27 = 70.4%** | **FAIL** — 0.4 points over the ceiling |
+| If both insulation rows instead took the hub's values (75 mm / 100 mm) | 17/27 = 63.0% | PASS |
 
-I report the primary measure as **70.4%, FAIL**. I have not adjusted a single word to move it,
-and I am giving you all three denominators rather than the flattering one.
+I have not adjusted a single word to move it.
 
 The failure is structural, not verbal. Eight rows are hard-common and identical to the hub by
 construction, and **every one of the remaining nineteen diverges** — because the Common
 Material Key describes a lighter, generic cabin-family build than the hub's container-house
-baseline. No rewording could land this inside the band. Only a different source could.
+baseline. No rewording could land this inside the band. Only a different source value could,
+and there is exactly one candidate pair: the two insulation rows.
 
 ### L16 GATE 2 — divergence from the nearest sibling · **PASS**
 
@@ -505,84 +519,108 @@ Site chrome headings are excluded; the H2+H3 counts in the table above include t
 
 ---
 
-## 7 · THREE THINGS THAT NEED YOUR RULING
+## 7 · TWO THINGS OUTSTANDING
 
-### 7.1 · The alt manifest does not exist
+### 7.1 · Ruling 3's number and ruling 3's substance disagree
 
-Step A cannot be completed without it. Everything else on that route is wired and waiting.
+Ruling 3 says two things that cannot both hold:
 
-### 7.2 · Step D's source 3 is misattributed — and it is what fails Gate 1
+> "The two insulation facts **sourced from the Common Material Key** are approved for this page.
+> Gate 1 stands at **17/27 = 63.0% PASS**."
 
-The ticket states that "welded MS frame, corrugated MS outer walls, 75 mm mineral wool wall
-insulation, 100 mm glasswool roof layer" are **already published in this page's own approved
-copy**. They are not. That sentence is the **hub's** 20x8 Section H intro, set by addendum §6
-on 02 Aug:
+The table already uses the Common Material Key values — that is what I built and what you have
+now approved. On those values the measurement is **19/27 = 70.4%**, because both insulation
+rows differ from the hub:
 
-> "The shell is the standard build: welded MS frame, corrugated MS walls, mineral wool
-> insulation at 75 mm and a 100 mm glasswool layer above the ceiling."
+| Row | Page six, as built (CMK) | Hub |
+|---|---|---|
+| Wall insulation | Glass wool or documented Heatlon wall option, 25 mm glass wool or 12 mm Heatlon | 75 mm mineral wool |
+| Roof insulation | Glass wool, roof 50 mm at 42 kg/m³ | 100 mm glass wool or mineral wool |
 
-Page six's rendered copy contains **zero** occurrences of "mineral wool", "glasswool" or
-"corrugated". What its frozen record actually says is close to the opposite: *"50 mm PUF or
-EPS insulated sandwich panel walls, PPGI exterior with factory paint"* and *"the panels stay
-50 mm insulated sandwich"* — claims the 02 Aug glasswool ruling retired on the five siblings.
-Page six was not one of the five, so they still stand in its record; they no longer render
-only because the P0 gate removed the price table they sat inside.
+**17/27 = 63.0% is only reachable if those two rows carry the hub's values** — 75 mm mineral
+wool and 100 mm glass wool. That is the figure I gave in rev 1 as a *contingent* result, on the
+assumption that the ticket's source 3 was genuine. **Ruling 4 then withdrew exactly those facts
+from this page**, on the grounds that they belong to the hub and that page six is 50 mm PUF or
+EPS sandwich with PPGI exterior.
 
-I therefore did not use them. The two insulation rows came from the Common Material Key
-instead: 25 mm wall, 50 mm roof.
+So the two candidate readings are:
 
-**This is what fails Gate 1.** If those facts are genuinely approved for this page, the two
-insulation rows take the hub's values, two rows stop diverging, and Gate 1 lands at
-**17/27 = 63.0% — PASS**. One ruling closes it. I will not make that change on my own reading
-of a document that says otherwise.
+- **(a) CMK values stand, as built.** Gate 1 = **70.4%, FAIL** by 0.4 points. Consistent with
+  ruling 4. This is what ships now.
+- **(b) The two insulation rows take the hub's 75 mm / 100 mm.** Gate 1 = **63.0%, PASS**.
+  Matches the number in ruling 3, but re-imports the two facts ruling 4 withdrew.
 
-### 7.3 · The production build does not execute this route's `getServerSideProps` changes
+I have shipped **(a)** because it is the reading that ruling 4 supports, and because I will not
+move a specification value to make a gate pass. Switching to (b) is a two-value data edit I can
+make in minutes on your word.
 
-On `next dev`, all six routes render exactly as reported above. On `next build` + `next start`
-in this worktree, **no change to `src/pages/product/[category]/[slug].tsx`'s
-`getServerSideProps` reaches the response**: the Info images do not render, and even a
-throwaway extra prop is absent from `__NEXT_DATA__` despite being present in the shipped chunk
-(`.next/server/chunks/5263.js`, module 25263, which the page entry provably loads). Verified
-across three clean `rm -rf .next` rebuilds, with the served build ID matched against disk, and
-with every other server process killed.
+### 7.2 · The production phantom — root-caused, fixed, verified · **CLOSED**
 
-Component and data-file changes in the same build **do** take effect, which is why the
-quotation line and the size-area chips render correctly in production.
+Ruling 5 was right to send me to a clean tree, and it paid off twice: **the phantom reproduced
+there**, with its own `npm ci` and a real `node_modules` directory, which killed the junction
+theory and forced me to look at the one transform that only production applies — minification.
 
-This is not a defect in the change: the layout module is unit-proven, and proven against the
-exact production description string, where it injects all four images. It looks like a
-build/runtime problem specific to this worktree, which has `node_modules` symlinked into the
-main repo and two `middleware.ts` files (root and `src/`). I could not root-cause it within a
-sensible budget and stopped rather than keep burning the clock. **It must be settled before
-deploy.** It is also the one caveat on the L11 figures.
+`BLOCK_RE` in `src/lib/infoImageLayout.ts` was built from a template literal:
+
+```ts
+new RegExp(`<(${BLOCK_TAGS.join('|')})\\b[^>]*>`, 'i')
+```
+
+The minifier constant-folds that template and re-emits the escape as a single `\b`, which
+inside a template literal is **not a word boundary but a literal BACKSPACE, U+0008**. The
+pattern then matches no tag at all, `splitTopLevelBlocks` returns one block,
+`injectInfoImages` bails on its `blocks.length < 2` guard, and every Info image disappears —
+in `next build` only. `next dev` does not minify, which is why dev rendered perfectly and hid
+the fault for the whole investigation.
+
+Proven directly by minifying both forms and running them:
+
+| Form | After minification, does the regex match `<p>hello</p>`? |
+|---|---|
+| `new RegExp(\`…\\\\b…\`)` — the old code | **no** |
+| `/…\b…/i` — a regex literal | **yes** |
+
+**Fix:** `BLOCK_RE` is now a regex literal, which cannot be folded. The per-tag scan regex
+keeps its escapes in single-quoted fragments for the same reason.
+
+**Verified:** clean worktree, `rm -rf .next`, fresh `next build`, `next start`. Production now
+renders 4 · 1 · 1 · 2 · 1 · 4 Info images — **identical to dev**, zero below the spec block.
+
+**Why the fixtures missed it, and what now catches it.** All 16 layout fixtures ran against the
+unminified module and passed happily throughout the outage. Two new fixtures import the
+**minified** module and assert it still splits blocks and still injects four images. That is
+the gate that would have caught this on day one.
+
+This class of bug is worth remembering beyond C-08: any `new RegExp` built from a template
+literal anywhere in this codebase is exposed to the same folding. A sweep is cheap and I would
+suggest one, but it is outside this ticket and I have not run it.
 
 ---
 
-## 8 · UNASKED-FOR FIX, INCLUDED BECAUSE IT BLOCKED EVERYTHING
+## 8 · UNASKED-FOR FIX, ACCEPTED IN RULING 6
 
 Both `/product/[category]` and `/product/[category]/[slug]` set
 `rankMathSEO = { ...rankMathSEO, faqSchema: undefined }` when `suppressLegacyFaqSchema` is on.
 `getServerSideProps` serialises its props to JSON and rejects an explicit `undefined`, so
 **every C-08 route returned HTTP 500** — the hub and all five siblings. Fixed by deleting the
-key rather than assigning `undefined`. Without this, nothing on this ticket could be rendered
-or measured at all.
+key. Without this, nothing on this ticket could be rendered or measured.
 
 ---
 
 ## 9 · GATES PROVEN AGAINST KNOWN-FAILING FIXTURES
 
-No gate is trusted until it has been made to fail. 16 layout fixtures and 15 measurement
-fixtures, all passing, including:
+19 layout fixtures and 15 measurement fixtures, all passing. Each was made to fail first:
 
 - 4 images into 3 blocks must place fewer, never two adjacent — **fires**
 - an image moved below the spec panel — **fires**
-- the spec detector must lock onto the tab **content** panel, not the trigger button; the
-  trigger sits *above* the description panel and made correctly-placed images read as
-  below-spec — **fires**
+- the spec detector must lock onto the tab **content** panel, not the trigger button, which
+  sits *above* the description panel and made correctly-placed images read as below-spec — **fires**
 - `src=""` and `src="undefined"` — **both fire**
 - `₹13,25,000` and `Rs 2,93,440`, the figures page six's frozen record still holds — **both fire**
-- a **missing** `alt` attribute, which `OptimizedContent` silently rewrites to the literal
-  "Image" and would have put invented alt text on the page — **fires**
+- a **missing** `alt`, which `OptimizedContent` rewrites to the literal "Image" and would have
+  put invented alt text on the page — **fires**
+- **NEW** · the minified module must still split blocks and still inject four images — **fires
+  on the pre-fix code**, which is how §7.2 was proven
 
 ---
 
@@ -590,16 +628,17 @@ fixtures, all passing, including:
 
 | Gate | Result |
 |---|---|
-| 60/60 alts byte-exact on page six | **FAIL** — manifest does not exist, 0/60 |
+| 60/60 alts byte-exact on page six | **FAIL** — manifest not yet placed, 0/60 |
 | 120 new 16:9 assets across the five | **PASS** — 120, all ≤ 120 KiB, no source reused |
 | 4 in-body 16:9 on all six routes | **FAIL on 4 of 6** — blocked on body-copy volume |
-| All 16:9 above the specification block | **PASS** — 0 below, on all six |
+| All 16:9 above the specification block | **PASS** — 0 below, on all six, in production |
 | Zero unsourced rupee figures on page six | **PASS** — count is 0 |
-| L16 Gate 1 measured and reported | **MEASURED — FAIL at 70.4%** |
+| L16 Gate 1 measured and reported | **MEASURED — 70.4%; ruling 3 says 63.0%. §7.1** |
 | L16 Gate 2 measured and reported | **MEASURED — PASS at 19 rows** |
 | Zero unresolved image src | **PASS** — 0 on all six |
-| Every gate proven against a known-failing fixture | **PASS** — 31 fixtures |
-| L11 LCP warm, desktop and mobile | **PASS** — 12/12, CLS 0, caveat in 7.3 |
+| Every gate proven against a known-failing fixture | **PASS** — 34 fixtures |
+| L11 LCP warm, desktop and mobile | **PASS — 12/12, CLS 0**, on a build that renders the images |
+| Gallery slot rule G1–G5 + H | **PASS** — 5 in the gallery, row six held for Section H |
 
 ---
 
@@ -607,13 +646,14 @@ fixtures, all passing, including:
 
 | File | Change |
 |---|---|
-| `src/lib/infoImageLayout.ts` | **new** — Info-image placement, spacing rules, alt safety |
+| `src/lib/infoImageLayout.ts` | **new** — Info-image placement; `BLOCK_RE` is a regex literal (§7.2) |
 | `src/data/products/prefabricated-container-house.json` | **new** — 6 sizes, 36 gallery + 4 Info images, gated price |
 | `src/data/products/c08-specifications.json` | page-six entry, 27 rows |
 | `src/data/products/{container-houses, prefab-container-homes, luxury-container-houses, shipping-container-homes, affordable-container-homes}.json` | `infoImages` added |
 | `src/components/product-variant-hero/types.ts` | `gatedPriceLabel`, `infoImages`; `useCase` made optional |
-| `src/components/product-variant-hero/PortaCabinVariantHero.tsx` | quotation price label, size-area chips, Application cell omitted when absent |
+| `src/components/product-variant-hero/PortaCabinVariantHero.tsx` | quotation price label; size-area chips; Application cell omitted when absent; page six added to `C08_PRODUCT_SLUGS` (ruling 1) |
 | `src/pages/product/[category]/[slug].tsx` | Info-image injection; faqSchema serialisation fix |
 | `src/pages/product/[category]/index.tsx` | Info-image injection; faqSchema serialisation fix |
 | `public/images/products/*/info/**` | **new** — 120 assets at 1200×675 |
-| `page-structure/C08/c08-e3-*.json` | intake report, crop offsets, spec provenance |
+| `page-structure/C08/c08-e3-*.json` | intake report (+ `sourceDefects`, `slotRule`), crop offsets, spec provenance (+ `l16DenominatorMethod`) |
+| `page-structure/C08/c08-e3-layout-fixtures.mjs` | **new** — the 19 layout fixtures, including the minified-module gate |

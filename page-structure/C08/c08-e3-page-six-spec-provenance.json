@@ -193,5 +193,14 @@
    "component": "Ventilation / AC",
    "reason": "The key treats AC only as an electrical circuit, not a ventilation specification, and the page's own AC-point line sits inside the price table suppressed by the P0 commercial-truth gate."
   }
- ]
+ ],
+ "l16DenominatorMethod": {
+  "ruling": "C08-E3 ruling 3 (Fable 5, 05 Aug 2026) — FIXED METHOD for every future L16 measurement.",
+  "rule": "The denominator is the number of rows actually built. Rows with no permitted source are excluded entirely: they cannot participate in a divergence measurement, so they count neither as divergent nor as matching.",
+  "appliedHere": {
+   "rowsBuilt": 27,
+   "rowsOmitted": 3,
+   "denominator": 27
+  }
+ }
 }
