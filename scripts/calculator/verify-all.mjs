@@ -20,6 +20,9 @@ const scripts = [
   'report-product-ladders.mjs',
   'verify-hub-anchors.mjs',
   'verify-ux-static.mjs',
+  // Browser gates. Both need PLAYWRIGHT_ROOT and a running preview.
+  'verify-route-parity.mjs',
+  'verify-step-density.mjs',
 ];
 let failed = false;
 

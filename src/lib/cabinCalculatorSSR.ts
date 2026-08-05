@@ -1058,7 +1058,10 @@ fieldset{
 .cabin-calculator-ssr .calculator-header [data-summary-label]{font-size:11px;font-weight:400;margin:0}
 .cabin-calculator-ssr .calculator-header [data-summary-ex]{font-size:18px;font-weight:700}
 .cabin-calculator-ssr .calculator-header [data-summary-incl]{font-size:11px;font-weight:400;display:block}
-.cabin-calculator-ssr .step-card>.calc-step{padding-top:88px}
+/* Was 88px, reserving room for a header that overlaid the card. The header is
+   now a block above the card with its own 24px margin and overlaps nothing, so
+   the reservation was 80px of dead air at the top of all nine steps. */
+.cabin-calculator-ssr .step-card>.calc-step{padding-top:8px}
 
 /* CLASS 2 - step pills. Visual height 25px, but the touch target stays 44px
    through a pseudo-element, so density and WCAG 2.5.8 both hold. */
@@ -1188,6 +1191,266 @@ fieldset{
 
 
 @media(max-width:600px){.calculator-grid{grid-template-columns:1fr}.mobile-estimate{position:fixed;left:0;right:0;bottom:0;z-index:40;display:block;background:var(--bg-total);color:var(--sd-text);padding:.6rem .9rem;min-height:44px}.mobile-estimate a{color:var(--sd-text);display:flex;justify-content:space-between;align-items:center;min-height:44px;text-decoration:none}.step-card{padding-bottom:4.5rem}}
+
+/* =========================================================================
+   THE CHIP - parity spec v1 section 4.
+   Last in the cascade, so it is what actually paints.
+
+   Their density comes from one decision: material and option choices are
+   CHIPS, not rows. A row costs ~44px of vertical space and one per line; a
+   chip costs ~56px and four per line. That is the whole difference between a
+   step that fits a viewport and one that scrolls.
+
+   ZERO visible native radios or checkboxes anywhere in the calculator. The
+   chip IS the control. The input stays in the accessibility tree, visually
+   hidden, and the focus ring moves to the chip so a keyboard user sees the
+   same target a mouse user clicks.
+   ========================================================================= */
+
+/* Every choice input in the calculator, not just the product tiles. The embed
+   was showing six visible radios because the hide was scoped to .product-tiles
+   and its active step was Size, which has roof and mobility radios. */
+.cabin-calculator-ssr .calc-choice > input[type="radio"],
+.cabin-calculator-ssr .calc-choice > input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+}
+.cabin-calculator-ssr .calc-choice { position: relative; display: inline-block; padding: 0; margin: 0; border: none; background: none; }
+.cabin-calculator-ssr .calc-choice > input:focus-visible + span { outline: 3px solid var(--saman-amber); outline-offset: 2px; }
+
+/* The chip itself. Auto-width to content, floor 84, wrapped rows at gap 8. */
+.cabin-calculator-ssr fieldset .calc-choice > span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  min-width: 84px;
+  min-height: 52px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--sd-control-border);
+  background: var(--sd-card);
+  color: var(--sd-text);
+  box-sizing: border-box;
+}
+.cabin-calculator-ssr fieldset .calc-choice > span > strong { font-size: 12px; font-weight: 600; line-height: 1.2; color: var(--sd-text); }
+/* Role 5: the "+₹" delta is one of amber's five permitted roles. */
+.cabin-calculator-ssr fieldset .calc-choice > span > small:first-of-type { font-size: 11px; font-weight: 500; line-height: 1.2; color: var(--saman-amber); }
+.cabin-calculator-ssr fieldset .calc-choice > span > small:not(:first-of-type) { font-size: 10px; font-weight: 400; line-height: 1.2; color: var(--sd-text-2); }
+.cabin-calculator-ssr .calc-choice:hover > span { border-color: var(--sd-hairline-hi); }
+.cabin-calculator-ssr .calc-choice > input:checked + span { border: 1px solid var(--saman-amber); box-shadow: 0 0 0 3px rgba(224,163,64,0.15); }
+
+/* A group is a wrapped row of chips under an uppercase label. */
+.cabin-calculator-ssr .calc-step fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border: none;
+  margin: 0 0 14px;
+  padding: 0;
+}
+.cabin-calculator-ssr .calc-step fieldset > legend {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--sd-text-2);
+  margin-bottom: 8px;
+  padding: 0;
+  float: left;
+  width: 100%;
+}
+
+/* Product tiles keep the landscape card of section 5, not the chip. */
+.cabin-calculator-ssr .product-tiles { display: grid; gap: 12px; }
+.cabin-calculator-ssr .product-tiles .calc-choice { display: block; width: 100%; }
+.cabin-calculator-ssr .product-tiles .calc-choice > span {
+  display: grid;
+  min-height: 0;
+  height: 93px;
+  padding: 12px;
+  border-radius: 12px;
+  gap: 0;
+}
+.cabin-calculator-ssr .product-tiles .calc-choice > span > small:first-of-type { color: var(--sd-text-2); font-size: 11px; }
+
+/* Step heading and helper, section 2 type scale. */
+.cabin-calculator-ssr .calc-step > h2 { font-size: 16px; font-weight: 700; margin: 0 0 4px; }
+.cabin-calculator-ssr .step-guidance { margin: 0 0 12px; }
+.cabin-calculator-ssr .step-guidance small { font-size: 12px; font-weight: 400; line-height: 1.4; }
+
+/* Number and select inputs sit on the chip scale rather than the form scale. */
+.cabin-calculator-ssr .calc-step label { font-size: 12px; }
+.cabin-calculator-ssr .calc-step input[type="number"],
+.cabin-calculator-ssr .calc-step select { font-size: 13px; padding: 6px 10px; }
+
+/* =========================================================================
+   DENSITY LAYER - parity spec v1 sections 5 to 7.
+   Appended last on purpose: the legacy rules above are equally specific, so
+   anything declared before them loses on source order.
+   Step section ids are ONE indexed. #calculator-step-3 is step 3 on screen.
+   ========================================================================= */
+
+/* Chip groups read as a wrapped row of chips under a small uppercase label,
+   in every step that is a set of choices rather than a form. */
+.cabin-calculator-ssr #calculator-step-2 fieldset,
+.cabin-calculator-ssr #calculator-step-3 fieldset,
+.cabin-calculator-ssr #calculator-step-4 fieldset,
+.cabin-calculator-ssr #calculator-step-8 fieldset { gap: 5px; margin: 0 0 6px; }
+.cabin-calculator-ssr #calculator-step-2 fieldset > legend,
+.cabin-calculator-ssr #calculator-step-3 fieldset > legend,
+.cabin-calculator-ssr #calculator-step-4 fieldset > legend,
+.cabin-calculator-ssr #calculator-step-8 fieldset > legend {
+  margin: 0 0 1px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sd-text-2);
+}
+
+/* Step 8 - the eighteen band freight ladder is a reference table, not a
+   decision. It folds; the band that applies is priced live above it. */
+.cabin-calculator-ssr .freight-ladder { margin: 10px 0; font-size: 11px; }
+.cabin-calculator-ssr .freight-ladder > summary {
+  cursor: pointer;
+  padding: 6px 0;
+  color: var(--sd-text-2);
+}
+
+/* Step 9 - the live estimate sits beside the form rather than 430px above it.
+   Measured 1085px before, 869px after. */
+.cabin-calculator-ssr #calculator-step-9 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 0 24px;
+  align-items: start;
+}
+.cabin-calculator-ssr #calculator-step-9 > h2,
+.cabin-calculator-ssr #calculator-step-9 > .step-guidance { grid-column: 1 / -1; }
+.cabin-calculator-ssr #calculator-step-9 > .estimate-card { grid-column: 2; grid-row: 3 / 8; margin: 0; }
+.cabin-calculator-ssr #calculator-step-9 > p,
+.cabin-calculator-ssr #calculator-step-9 > fieldset,
+.cabin-calculator-ssr #calculator-step-9 > button,
+.cabin-calculator-ssr #calculator-step-9 > .required-guidance { grid-column: 1; }
+.cabin-calculator-ssr #calculator-step-9 fieldset > label { margin-bottom: 4px; font-size: 12px; }
+.cabin-calculator-ssr #calculator-step-9 textarea { min-height: 56px; }
+
+/* Four steps below are given a grid. An id selector outranks the
+   .is-enhanced .calc-step:not(.is-active) rule that hides an inactive step, so
+   the hide has to be restated at the same strength or the grid steps render on
+   top of whichever step is active. */
+.cabin-calculator-ssr.is-enhanced #calculator-step-3:not(.is-active),
+.cabin-calculator-ssr.is-enhanced #calculator-step-4:not(.is-active),
+.cabin-calculator-ssr.is-enhanced #calculator-step-7:not(.is-active),
+.cabin-calculator-ssr.is-enhanced #calculator-step-9:not(.is-active) { display: none; }
+
+/* -------------------------------------------------------------------------
+   Desktop only. The 32px chip and the three-column fit-out list are how the
+   1440-wide density targets are met; they must not cost a touch target on a
+   phone, where the 44px control floor stays in force.
+   ------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+
+.cabin-calculator-ssr #calculator-step-3 .calc-choice > span,
+.cabin-calculator-ssr #calculator-step-4 .calc-choice > span {
+  min-height: 32px;
+  min-width: 0;
+  padding: 3px 6px;
+  gap: 0;
+  border-radius: 8px;
+}
+.cabin-calculator-ssr #calculator-step-3 .calc-choice > span > strong,
+.cabin-calculator-ssr #calculator-step-4 .calc-choice > span > strong { font-size: 11px; line-height: 1.15; }
+.cabin-calculator-ssr #calculator-step-3 .calc-choice > span > small,
+.cabin-calculator-ssr #calculator-step-4 .calc-choice > span > small { font-size: 9px; line-height: 1.15; }
+.cabin-calculator-ssr #calculator-step-3 > h2,
+.cabin-calculator-ssr #calculator-step-4 > h2,
+.cabin-calculator-ssr #calculator-step-7 > h2 { margin: 0 0 1px; font-size: 17px; }
+.cabin-calculator-ssr #calculator-step-3 > .step-guidance,
+.cabin-calculator-ssr #calculator-step-4 > .step-guidance,
+.cabin-calculator-ssr #calculator-step-7 > .step-guidance { margin: 0 0 6px; }
+
+/* Step 3 - frame and wall side by side. 732px before, 369px after. */
+.cabin-calculator-ssr #calculator-step-3 {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 0 18px;
+  align-items: start;
+}
+.cabin-calculator-ssr #calculator-step-3 > h2,
+.cabin-calculator-ssr #calculator-step-3 > .step-guidance { grid-column: 1 / -1; }
+
+/* Step 4 - the four finish groups on the left, the wall build-up diagram on
+   the right, which is where the spec puts it. 707px before, 615px after. */
+.cabin-calculator-ssr #calculator-step-4 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 0 14px;
+  align-items: start;
+}
+.cabin-calculator-ssr #calculator-step-4 > h2 { grid-area: 1 / 1 / 2 / -1; }
+.cabin-calculator-ssr #calculator-step-4 > .step-guidance { grid-area: 2 / 1 / 3 / -1; }
+.cabin-calculator-ssr #calculator-step-4 > fieldset:nth-of-type(1) { grid-area: 3 / 1 / 4 / -1; }
+.cabin-calculator-ssr #calculator-step-4 > fieldset:nth-of-type(2) { grid-area: 4 / 1 / 5 / 2; }
+.cabin-calculator-ssr #calculator-step-4 > fieldset:nth-of-type(3) { grid-area: 5 / 1 / 6 / 2; }
+.cabin-calculator-ssr #calculator-step-4 > fieldset:nth-of-type(4) { grid-area: 6 / 1 / 7 / 2; }
+.cabin-calculator-ssr #calculator-step-4 > .wall-diagram { grid-area: 4 / 2 / 7 / 3; margin: 0; font-size: 10px; }
+
+/* Step 7 - three columns, eleven rows, and the furniture position group in the
+   cell the last row leaves empty. 2925px before, 884px after. */
+.cabin-calculator-ssr #calculator-step-7 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 14px;
+  align-items: start;
+}
+.cabin-calculator-ssr #calculator-step-7 > h2,
+.cabin-calculator-ssr #calculator-step-7 > .step-guidance,
+.cabin-calculator-ssr #calculator-step-7 > .step-tip { grid-column: 1 / -1; }
+.cabin-calculator-ssr #calculator-step-7 > fieldset { grid-area: 13 / 3 / 14 / 4; }
+.cabin-calculator-ssr #calculator-step-7 > .quantity-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 50px;
+  align-items: center;
+  gap: 0 6px;
+  margin: 0;
+  padding: 0 6px;
+  border-radius: 7px;
+}
+.cabin-calculator-ssr #calculator-step-7 > .quantity-row > span {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 6px;
+  row-gap: 0;
+  align-items: baseline;
+}
+.cabin-calculator-ssr #calculator-step-7 > .quantity-row > span > strong {
+  grid-area: 1 / 1 / 2 / 2;
+  font-size: 11px;
+  line-height: 1.2;
+}
+.cabin-calculator-ssr #calculator-step-7 > .quantity-row > span > small:last-child {
+  grid-area: 1 / 2 / 2 / 3;
+  font-size: 10px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.cabin-calculator-ssr #calculator-step-7 > .quantity-row > span > small:not(:last-child) {
+  grid-area: 2 / 1 / 3 / 3;
+  font-size: 9px;
+  line-height: 1.2;
+}
+.cabin-calculator-ssr #calculator-step-7 > .quantity-row input {
+  width: 100%;
+  padding: 2px 4px;
+  text-align: center;
+}
+
+}
 `;
 
 export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
@@ -1699,13 +1962,15 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const product = productFor(config.productId);
   const colony = isColonyProduct(config.productId);
   const estimate = computeCalculatorEstimate(config);
-  const active = int(options.activeStep, embedded ? 1 : 0, embedded ? 1 : 0, 8);
+  const active = int(options.activeStep, 0, 0, 8);
   // Eight steps standalone, seven embedded. The structure step was removed on
   // 03 Aug 2026 and became a stated-construction disclosure; a step that offers
   // one option is not a step. Headings are the copy pack's, verbatim.
   const stepDefinitions = STEP_COPY.map((step) => [step.heading, step.key] as const);
-  const visibleSteps = embedded ? stepDefinitions.slice(1) : stepDefinitions;
-  const section = (index: number, body: string): string => `<section class="calc-step${active === index ? ' is-active' : ''}" id="calculator-step-${index + 1}" data-step="${index + 1}" aria-labelledby="calculator-step-title-${index + 1}"><h2 id="calculator-step-title-${index + 1}">Step ${embedded ? index : index + 1} of ${embedded ? 8 : 9}: ${esc(stepDefinitions[index][0])}</h2>${body}</section>`;
+  // Nine steps on both routes. The embed preselects a product; it does not
+  // remove the step that chooses one.
+  const visibleSteps = stepDefinitions;
+  const section = (index: number, body: string): string => `<section class="calc-step${active === index ? ' is-active' : ''}" id="calculator-step-${index + 1}" data-step="${index + 1}" aria-labelledby="calculator-step-title-${index + 1}"><h2 id="calculator-step-title-${index + 1}">Step ${index + 1} of 9: ${esc(stepDefinitions[index][0])}</h2>${body}</section>`;
 
   const productStep = section(0, `${renderStepGuidance('product')}<fieldset><legend>Choose your product</legend><div class="product-tiles">${PRODUCT_STEP.map((entry) => productChoice('productId', entry, entry.id === config.productId)).join('')}</div></fieldset>`);
 
@@ -1718,8 +1983,8 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const roofAndMobility = colony ? '' : `<fieldset><legend>Roof</legend>${radio('roof', 'Sloped', 'Sloped roof', config.roof === 'Sloped', 'Standard, included', ' data-rate="0" data-rate-basis="percent of base"')}${radio('roof', 'Flat / mono-pitch', 'Flat / mono-pitch roof', config.roof === 'Flat / mono-pitch', '+4% of base price', ' data-rate="4" data-rate-basis="percent of base"')}</fieldset><fieldset><legend>Mobility</legend>${radio('mobility', '100% movable', '100% movable', config.mobility === '100% movable')}${radio('mobility', 'Fixed / semi-permanent', 'Fixed / semi-permanent', config.mobility === 'Fixed / semi-permanent')}</fieldset>`;
   const sizeStep = section(1, `${renderStepGuidance('size')}${colony ? colonySize : regularSize}${roofAndMobility}<p class="step-tip"><small>${esc(TIPS.customSize)}</small></p>`);
 
-  const structureStep = section(2, `${renderStepGuidance('structure')}<fieldset><legend>Structural frame</legend>${FRAME_OPTIONS.map((opt) => radio('frame', opt.code, opt.label, opt.code === config.frame, opt.percent === 0 ? 'Base construction, included' : `+${opt.percent}% of the base price`, ` data-rate="${opt.percent}" data-rate-basis="percent of base" data-component-code="${esc(opt.code)}"`)).join('')}</fieldset><fieldset><legend>Wall construction</legend>${WALL_BUILD_OPTIONS.map((opt) => opt.disabled  ? `<label class="calc-choice is-disabled"><input type="radio" name="wallBuild" value="${esc(opt.code)}" disabled><span><strong>${esc(opt.label)}</strong><small>Rate pending</small></span></label>`  : radio('wallBuild', opt.code, opt.label, opt.code === config.wallBuild, 'Base construction, included',      ` data-component-code="${esc(opt.code)}"`)).join('')}${PUF_THICKNESSES.map((thickness) => radio('pufThickness', String(thickness), `PUF panel ${thickness} mm`, config.pufThickness === thickness, thickness === 50 ? 'Standard, included' : `${pufDeltaPerSqft(thickness) > 0 ? '+' : '-'}${money(Math.abs(Math.round(pufDeltaPerSqft(thickness))))} per sq ft of wall and roof`, ` data-rate="${pufDeltaPerSqft(thickness)}" data-rate-basis="per sq ft of wall and roof"`)).join('')}</fieldset><fieldset><legend>Roof</legend>${radio('roof', 'Sloped', 'Sloped roof', config.roof === 'Sloped', 'Standard, included', ' data-rate="0" data-rate-basis="percent of base"')}${radio('roof', 'Flat / mono-pitch', 'Flat / mono-pitch roof', config.roof === 'Flat / mono-pitch', '+4% of base price', ' data-rate="4" data-rate-basis="percent of base"')}</fieldset>${renderWallBuildDiagram(config.pufThickness.toString())}`);
-  const interiorStep = section(3, `${renderStepGuidance('interior')}<fieldset><legend>Internal wall lining, per sq ft of wall</legend>${componentChoices('internalWall', INTERNAL_WALLS, config.internalWall, wallDelta, 'per sq ft of wall')}</fieldset><fieldset><legend>Ceiling, per sq ft of floor</legend>${componentChoices('ceilingCode', CEILINGS_R1, config.ceilingCode, ceilingDelta, 'per sq ft')}</fieldset><fieldset><legend>Flooring, per sq ft of floor</legend>${componentChoices('flooringCode', FLOORINGS_R1, config.flooringCode, floorDelta, 'per sq ft')}</fieldset><fieldset><legend>Added insulation, per sq ft of wall and ceiling</legend>${radio('insulation', 'none', 'No added insulation', config.insulation === 'none', 'Standard, included', ' data-rate="0"')}${INSULATIONS_R1.map((item) => radio('insulation', item.code, item.label, config.insulation === item.code, `+${money(item.rate || 0)} per sq ft`, ` data-rate="${item.rate || 0}" data-rate-basis="per sq ft of wall and ceiling" data-component-code="${esc(item.code)}"`)).join('')}</fieldset>`);
+  const structureStep = section(2, `${renderStepGuidance('structure')}<fieldset><legend>Structural frame</legend>${FRAME_OPTIONS.map((opt) => radio('frame', opt.code, opt.label, opt.code === config.frame, opt.percent === 0 ? 'Base construction, included' : `+${opt.percent}% of the base price`, ` data-rate="${opt.percent}" data-rate-basis="percent of base" data-component-code="${esc(opt.code)}"`)).join('')}</fieldset><fieldset><legend>Wall construction</legend>${WALL_BUILD_OPTIONS.map((opt) => opt.disabled  ? `<label class="calc-choice is-disabled"><input type="radio" name="wallBuild" value="${esc(opt.code)}" disabled><span><strong>${esc(opt.label)}</strong><small>Rate pending</small></span></label>`  : radio('wallBuild', opt.code, opt.label, opt.code === config.wallBuild, 'Base construction, included',      ` data-component-code="${esc(opt.code)}"`)).join('')}${PUF_THICKNESSES.map((thickness) => radio('pufThickness', String(thickness), `PUF panel ${thickness} mm`, config.pufThickness === thickness, thickness === 50 ? 'Standard, included' : `${pufDeltaPerSqft(thickness) > 0 ? '+' : '-'}${money(Math.abs(Math.round(pufDeltaPerSqft(thickness))))} per sq ft of wall and roof`, ` data-rate="${pufDeltaPerSqft(thickness)}" data-rate-basis="per sq ft of wall and roof"`)).join('')}</fieldset>`);
+  const interiorStep = section(3, `${renderStepGuidance('interior')}<fieldset><legend>Internal wall lining, per sq ft of wall</legend>${componentChoices('internalWall', INTERNAL_WALLS, config.internalWall, wallDelta, 'per sq ft of wall')}</fieldset><fieldset><legend>Ceiling, per sq ft of floor</legend>${componentChoices('ceilingCode', CEILINGS_R1, config.ceilingCode, ceilingDelta, 'per sq ft')}</fieldset><fieldset><legend>Flooring, per sq ft of floor</legend>${componentChoices('flooringCode', FLOORINGS_R1, config.flooringCode, floorDelta, 'per sq ft')}</fieldset>${renderWallBuildDiagram(config.pufThickness.toString())}<fieldset><legend>Added insulation, per sq ft of wall and ceiling</legend>${radio('insulation', 'none', 'No added insulation', config.insulation === 'none', 'Standard, included', ' data-rate="0"')}${INSULATIONS_R1.map((item) => radio('insulation', item.code, item.label, config.insulation === item.code, `+${money(item.rate || 0)} per sq ft`, ` data-rate="${item.rate || 0}" data-rate-basis="per sq ft of wall and ceiling" data-component-code="${esc(item.code)}"`)).join('')}</fieldset>`);
 
   const doorSlots = Array.from({ length: Math.max(4, config.doors.length) }, (_, index) => config.doors[index] || DEFAULT_CALCULATOR_CONFIG.doors[0]);
   const windowSlots = Array.from({ length: Math.max(4, config.windows.length) }, (_, index) => config.windows[index] || DEFAULT_CALCULATOR_CONFIG.windows[0]);
@@ -1729,11 +1994,11 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const openingsStep = section(4, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `${renderPlan(config)}<h3>Door placement</h3>${doorCards}<button type="button" data-action="add-door">Add another door</button><h3>Window placement</h3>${windowCards}<button type="button" data-action="add-window">Add another window</button><p class="step-tip"><small>${esc(TIPS.doorOpening)}</small></p><p class="step-tip"><small>${esc(TIPS.windowTrack)}</small></p>`}`);
   const electricalStep = section(5, `${renderStepGuidance('electrical')}<p>${colony ? 'Quantities are quotation items per building.' : 'Suggested quantities are a starting point and can be changed.'}</p>${ELECTRICAL_R1.map((item) => quantityRow('electrical', item.label, item.rate || 0, config.electrical[item.label] || 0, item.specification || '', colony)).join('')}<fieldset><legend>Light appearance</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset><fieldset><legend>Socket placement (no cost impact)</legend><p class="step-tip"><small>${esc(TIPS.socketPlacement)}</small></p>${socketPlacement}</fieldset>`);
   const addOnsStep = section(6, `${renderStepGuidance('addons')}${FITOUT_R1.map((item) => quantityRow('addOns', item.label, item.rate || 0, config.addOns[item.label] || 0, item.specification || '', colony)).join('')}<p class="step-tip"><small>Some fit-out components are being confirmed and show as Quoted separately.</small></p><fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
-  const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label>${renderFreightTable()}<p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);
+  const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label><details class="freight-ladder"><summary>See the full distance ladder</summary>${renderFreightTable()}</details><p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);
   const quotationStep = section(8, `${renderStepGuidance('quotation')}<p>Submit the exact configuration for a fixed, itemised quotation within 48 hours.</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>${esc(FIELD_LABELS.firstName)} *<input name="firstName" autocomplete="given-name" value="${esc(config.quote.firstName)}" required></label><label>${esc(FIELD_LABELS.lastName)} *<input name="lastName" autocomplete="family-name" value="${esc(config.quote.lastName)}" required></label><label>${esc(FIELD_LABELS.phone)} *<input type="tel" inputmode="numeric" name="phone" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.phone)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>${esc(FIELD_LABELS.email)} *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>${esc(FIELD_LABELS.companyName)}<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>${esc(FIELD_LABELS.city)}<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>${esc(FIELD_LABELS.state)}<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>${esc(FIELD_LABELS.notes)}<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">${esc(CONTROLS.getQuotation)}</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
 
   const allSections = [productStep, sizeStep, structureStep, interiorStep, openingsStep, electricalStep, addOnsStep, deliveryStep, quotationStep];
-  const renderedSections = embedded ? allSections.slice(1) : allSections;
+  const renderedSections = allSections;
   const reference = options.reference || 'SP-EST';
   const date = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' });
   const pageUrl = options.pageUrl || '/cabin-cost-calculator';
@@ -1745,6 +2010,6 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;
   const summarySize = colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`;
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>${embedded ? 1 : 1}</span> of ${embedded ? 8 : 9}: <span data-step-name>${esc(visibleSteps[0][0])}</span></p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="${embedded ? 8 : 9}" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / (embedded ? 8 : 9))}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div><div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${index + 1}" data-step-link="${index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>${embedded ? 1 : 1}</span> of 9: <span data-step-name>${esc(visibleSteps[0][0])}</span></p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / 9)}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div><div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
 }
 

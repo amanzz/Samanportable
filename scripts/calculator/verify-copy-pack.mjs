@@ -167,11 +167,12 @@ for (const term of FORBIDDEN) {
 const stepCount = (html) => (html.match(/id="calculator-step-title-/g) || []).length;
 const standaloneSteps = stepCount(rawStandalone);
 const embeddedSteps = stepCount(rawEmbedded);
-// Nine standalone, eight embedded: Step 3 Structure returned as a step in
-// Event 1, now that three frame options carry a rate and a specification.
-console.log(`\nSTEP COUNT   standalone ${standaloneSteps} (expected 9)   embedded ${embeddedSteps} (expected 8)`);
+// Nine on both routes. The embed used to drop a step; parity spec v1 section 1
+// closed that - one component, nine steps everywhere, never eight - and the
+// only permitted difference between the routes is which product is preselected.
+console.log(`\nSTEP COUNT   standalone ${standaloneSteps} (expected 9)   embedded ${embeddedSteps} (expected 9)`);
 if (standaloneSteps !== 9) diffs.push(`standalone renders ${standaloneSteps} steps, expected 9`);
-if (embeddedSteps !== 8) diffs.push(`embedded renders ${embeddedSteps} steps, expected 8`);
+if (embeddedSteps !== 9) diffs.push(`embedded renders ${embeddedSteps} steps, expected 9`);
 
 console.log('');
 failIfDiffs('copy-pack', diffs);
