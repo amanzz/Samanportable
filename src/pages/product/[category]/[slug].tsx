@@ -49,6 +49,7 @@ import { PortaCabinVariantHero } from '../../../components/product-variant-hero/
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 import { removeMonetaryHtml, removeMonetarySentencesDeep } from '../../../lib/monetaryText';
 import productOpenerOverrides from '../../../data/product-opener-overrides.json';
+import { injectInfoImages } from '../../../lib/infoImageLayout';
 
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
@@ -315,7 +316,13 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     }
 
     if (variantData?.suppressLegacyFaqSchema && rankMathSEO) {
-      rankMathSEO = { ...rankMathSEO, faqSchema: undefined };
+      // DELETE the key rather than setting it undefined: getServerSideProps
+      // serialises its props to JSON and rejects an explicit `undefined`
+      // ("cannot be serialized"), which 500'd every C-08 sibling that sets
+      // suppressLegacyFaqSchema. Removing the key suppresses the stale graph
+      // just the same and serialises cleanly.
+      const { faqSchema: _suppressed, ...withoutFaqSchema } = rankMathSEO;
+      rankMathSEO = withoutFaqSchema;
     }
 
     // Event B owns all commercial size/price data when its product JSON exists.
@@ -357,7 +364,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: variantData?.descriptionHtml || productDescriptionWithoutOpener,
+          // C-08 E3 Step C — the 16:9 Info images are spread through the body
+          // copy here rather than being written into the approved description
+          // string, so the copy in the data file stays exactly as approved and
+          // the placement rules stay enforced by code.
+          description: injectInfoImages(
+            variantData?.descriptionHtml || productDescriptionWithoutOpener,
+            variantData?.infoImages
+          ),
           images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
             id: index,
             src: img.src,

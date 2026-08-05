@@ -344,5 +344,35 @@
   "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
   "specPdfHref": "/specs/affordable-container-homes-technical-specification.pdf",
   "suppressLegacySku": true,
-  "suppressLegacyFaqSchema": true
+  "suppressLegacyFaqSchema": true,
+  "infoImages": [
+    {
+      "src": "/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-long-side-elevation.webp",
+      "alt": "",
+      "provenance": "render",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-rear-right-angle.webp",
+      "alt": "",
+      "provenance": "render",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-elevated-three-quarter.webp",
+      "alt": "",
+      "provenance": "render",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-semi-kitchen-dining.webp",
+      "alt": "",
+      "provenance": "render",
+      "width": 1200,
+      "height": 675
+    }
+  ]
 }

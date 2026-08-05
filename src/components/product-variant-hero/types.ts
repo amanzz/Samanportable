@@ -26,7 +26,11 @@ export interface ProductVariant {
       not show a capacity field, so pages matching that design (e.g. portable-shop-cabin)
       omit it. Rendered only in the Applications Explorer data row, when present. */
   capacity?: string;
-  useCase: string;
+  /** Per-size application line for the buy-box "Application" cell. OPTIONAL —
+      the row is omitted entirely when a product has no owner-approved use-case
+      copy, rather than being filled with a generated default (C-08 page six:
+      prefabricated-container-house has no approved per-size application copy). */
+  useCase?: string;
   sku?: string;
   images?: VariantImage[];
   imagesPending?: boolean;
@@ -84,6 +88,16 @@ export interface VariantProductData {
   suppressLegacyFaqSchema?: boolean;
   /** "Download specifications" target. The button is omitted when absent. */
   specPdfHref?: string;
+  /** Replaces the default "Price on request — send enquiry" line wherever a
+      variant's price is GATED (priceExGst null). Absent on every product that
+      supplies none → the deployed wording is unchanged. Set only from approved
+      copy (C-08 page six: the 576 Pricing Matrix holds no row for this product,
+      so it is quoted rather than laddered). */
+  gatedPriceLabel?: string;
+  /** 16:9 (1200×675) images placed INSIDE the Info/Description panel, spaced
+      through the body copy and always above the specification block. Optional;
+      a product that supplies none renders its description byte-identically. */
+  infoImages?: VariantImage[];
   /** ₹/sq ft display strings keyed by sizeSlug. Default: derived per variant as
       round(priceExGst / areaSqft) in en-IN grouping — which reproduces the
       flagship's owner-supplied figures exactly for all 9 sizes. */

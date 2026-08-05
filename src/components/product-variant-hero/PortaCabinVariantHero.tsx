@@ -729,7 +729,11 @@ export function PortaCabinVariantHero({
     { label: 'Delivery', value: data.deliveryLabel || '7–21 Working Days' },
     { label: 'Coverage', value: 'Bangalore · Delhi NCR' },
     { label: 'Brand', value: 'SAMAN Portable' },
-    { label: 'Application', value: rewriteC04VisiblePunctuation(heroActive.useCase, data.productSlug) },
+    // Application: omitted, not defaulted, when the product has no approved
+    // per-size use-case copy. Filtered below so the cell never renders empty.
+    ...(heroActive.useCase
+      ? [{ label: 'Application', value: rewriteC04VisiblePunctuation(heroActive.useCase, data.productSlug) }]
+      : []),
   ];
 
   // INFO-ONLY buy box: no CTA buttons here (owner ruling — desktop conversion
@@ -769,6 +773,13 @@ export function PortaCabinVariantHero({
                 )}
               >
                 {v.label}
+                {/* Quotation-mode products carry no price ladder, so the size
+                    list is the only place the six areas can be read. Rendered
+                    ONLY when gatedPriceLabel is set — every priced product keeps
+                    its original label-only chip, byte-identical. */}
+                {data.gatedPriceLabel && (
+                  <span className="block text-[11px] font-normal opacity-80">{v.areaSqft} sq ft</span>
+                )}
               </button>
             ))}
           </div>
@@ -786,7 +797,7 @@ export function PortaCabinVariantHero({
               incl-GST line. When priceExGst is a number the ORIGINAL two elements
               render unchanged (the fragment is transparent → flagship byte-identity). */}
           {heroActive.priceExGst == null ? (
-            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">Price on request — send enquiry</span>
+            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">{data.gatedPriceLabel || 'Price on request — send enquiry'}</span>
           ) : (
             <>
               <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
@@ -1003,7 +1014,7 @@ export function PortaCabinVariantHero({
         <div className="flex items-center justify-between gap-3 px-4 py-3">
           <div>
             <p className="text-[11px] text-muted-foreground leading-none">{heroActive.label}</p>
-            <p className="text-base font-bold text-primary leading-tight">{heroActive.priceExGst == null ? 'Price on request' : <>{formatIndianPrice(heroActive.priceExGst)} + GST</>}</p>
+            <p className="text-base font-bold text-primary leading-tight">{heroActive.priceExGst == null ? (data.gatedPriceLabel || 'Price on request') : <>{formatIndianPrice(heroActive.priceExGst)} + GST</>}</p>
           </div>
           <Button
             type="button"

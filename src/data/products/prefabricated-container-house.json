@@ -1,0 +1,354 @@
+{
+  "productSlug": "prefabricated-container-house",
+  "variantAxis": "Size",
+  "defaultVariant": "40x12",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": null,
+      "priceInclGst": null,
+      "images": [
+        {
+          "src": "/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-front-right-hero.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-entry-living-hall.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-long-side-elevation.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-elevated-three-quarter.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-kitchen-dining-reverse.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-bedroom-doorway.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": null,
+      "priceInclGst": null,
+      "images": [
+        {
+          "src": "/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-front-right-hero.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-entry-living-hall.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-long-side-elevation.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-elevated-three-quarter.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-kitchen-dining-reverse.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-bedroom-doorway.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": null,
+      "priceInclGst": null,
+      "images": [
+        {
+          "src": "/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-front-right-hero.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-entry-living-hall.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-long-side-elevation.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-elevated-three-quarter.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-kitchen-dining-reverse.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-bedroom-doorway.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": null,
+      "priceInclGst": null,
+      "images": [
+        {
+          "src": "/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-front-right-hero.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-entry-living-hall.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-long-side-elevation.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-elevated-three-quarter.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-kitchen-dining-reverse.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-bedroom-doorway.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": null,
+      "priceInclGst": null,
+      "images": [
+        {
+          "src": "/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-front-right-hero.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-entry-living-hall.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-long-side-elevation.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-elevated-three-quarter.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-kitchen-dining-reverse.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-bedroom-doorway.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": null,
+      "priceInclGst": null,
+      "images": [
+        {
+          "src": "/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-front-right-hero.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-entry-living-hall.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-long-side-elevation.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-elevated-three-quarter.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-kitchen-dining-reverse.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-bedroom-doorway.webp",
+          "alt": "",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    }
+  ],
+  "productName": "Prefabricated Container House",
+  "categoryLabel": "Container Houses",
+  "categoryHref": "/product/container-houses",
+  "gatedPriceLabel": "Price on quotation — fixed-price quote within 48 hours.",
+  "infoImages": [
+    {
+      "src": "/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-front-left-angle.webp",
+      "alt": "",
+      "provenance": "render",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-rear-right-angle.webp",
+      "alt": "",
+      "provenance": "render",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-end-dominant.webp",
+      "alt": "",
+      "provenance": "render",
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-bathroom-reverse.webp",
+      "alt": "",
+      "provenance": "render",
+      "width": 1200,
+      "height": 675
+    }
+  ]
+}

@@ -1,0 +1,3017 @@
+{
+ "ticket": "C08-E3 Step B",
+ "date": "2026-08-05",
+ "assetType": "render",
+ "selectionRule": "Four 16:9 Info derivatives per size, taken only from source views the square gallery does not already use. Each source file is used exactly once per route.",
+ "cropRule": "1254x705 band from the 1254x1254 source, resized to 1200x675. Band position set from a long-horizontal-edge detector, then EVERY output reviewed on a per-route contact sheet; 25 frames overruled by eye and pinned in step-b-offsets.json.",
+ "altPolicy": "No alt text authored. All alt fields empty pending Fable 5 manifests, which this report exists to unblock.",
+ "counts": {
+  "derived": 120,
+  "perRoute": 24,
+  "routes": 5,
+  "overSizeLimit": 0,
+  "manualCrops": 25
+ },
+ "images": [
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 8 × 8.5 ft\\002_container-houses_20x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x8-front-left-angle.webp",
+   "target": "public/images/products/container-houses/info/20x8/container-houses-20x8-front-left-angle.webp",
+   "targetSha256": "37cf5ae677cf906bb41b07e7ea4fce8a520f1f38891b8f0ce54e2fb8ec798850",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113674,
+   "webpQuality": 86,
+   "bandTop": 430,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 8 × 8.5 ft\\004_container-houses_20x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x8-rear-right-angle.webp",
+   "target": "public/images/products/container-houses/info/20x8/container-houses-20x8-rear-right-angle.webp",
+   "targetSha256": "631cc3b58c0bbdd07a48b8bd3eb861c6b275d193d4f923269608d8be53e50489",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115944,
+   "webpQuality": 88,
+   "bandTop": 336,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 8 × 8.5 ft\\005_container-houses_20x8_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x8-end-dominant.webp",
+   "target": "public/images/products/container-houses/info/20x8/container-houses-20x8-end-dominant.webp",
+   "targetSha256": "5f2f817cee4ab327bb139b671ff93164d273b95b0f457dab65ea7aea3abf84b2",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119570,
+   "webpQuality": 88,
+   "bandTop": 281,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 8 × 8.5 ft\\010_container-houses_20x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x8-bathroom-reverse.webp",
+   "target": "public/images/products/container-houses/info/20x8/container-houses-20x8-bathroom-reverse.webp",
+   "targetSha256": "d38057ff774843a300a10a7586fd63be4c442fb5a50cf84d15149c66e591a751",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 89108,
+   "webpQuality": 88,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 10 × 8.5 ft\\013_container-houses_20x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x10-long-side-elevation.webp",
+   "target": "public/images/products/container-houses/info/20x10/container-houses-20x10-long-side-elevation.webp",
+   "targetSha256": "080338c8169d645db0cc60e88a368a63b8c83cee038f1f46c90eff2c87139bcc",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115674,
+   "webpQuality": 82,
+   "bandTop": 316,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 10 × 8.5 ft\\014_container-houses_20x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x10-rear-right-angle.webp",
+   "target": "public/images/products/container-houses/info/20x10/container-houses-20x10-rear-right-angle.webp",
+   "targetSha256": "5c0ce0e6716cfe34ffabd81fb1cc8b14b585bb1f6b53d9215583503f3116f3ec",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115616,
+   "webpQuality": 84,
+   "bandTop": 358,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 10 × 8.5 ft\\016_container-houses_20x10_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x10-elevated-three-quarter.webp",
+   "target": "public/images/products/container-houses/info/20x10/container-houses-20x10-elevated-three-quarter.webp",
+   "targetSha256": "4597254f97cff187f327955005feb4b18e2a38d2f6412971f23905c6e6c54e07",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119930,
+   "webpQuality": 76,
+   "bandTop": 396,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 10 × 8.5 ft\\018_container-houses_20x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/container-houses/info/20x10/container-houses-20x10-semi-kitchen-dining.webp",
+   "targetSha256": "f2ff1cfad642f5b345e77fb7f85c77d8c3aff2bcfcdef3e9591f1d2e5868a9b0",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 112900,
+   "webpQuality": 88,
+   "bandTop": 168,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 12 × 8.5 ft\\022_container-houses_20x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x12-front-left-angle.webp",
+   "target": "public/images/products/container-houses/info/20x12/container-houses-20x12-front-left-angle.webp",
+   "targetSha256": "95af536c74a194a4b4d43d28ee7cf991f6a8f20402b097acedf1d03f8ddde6ca",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117178,
+   "webpQuality": 78,
+   "bandTop": 350,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 12 × 8.5 ft\\023_container-houses_20x12_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x12-long-side-elevation.webp",
+   "target": "public/images/products/container-houses/info/20x12/container-houses-20x12-long-side-elevation.webp",
+   "targetSha256": "21d18c6655c66d0c938a1f9410d0e34fad4f7a456613fd21a4d13cbbc94b3656",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113270,
+   "webpQuality": 80,
+   "bandTop": 416,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 12 × 8.5 ft\\025_container-houses_20x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x12-end-dominant.webp",
+   "target": "public/images/products/container-houses/info/20x12/container-houses-20x12-end-dominant.webp",
+   "targetSha256": "feef44aa0701cdb20212819a889a0561e5a19375ba6f83bcdee13d8fe8c8cc75",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118836,
+   "webpQuality": 88,
+   "bandTop": 334,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\20 × 12 × 8.5 ft\\029_container-houses_20x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-20x12-bedroom-view.webp",
+   "target": "public/images/products/container-houses/info/20x12/container-houses-20x12-bedroom-view.webp",
+   "targetSha256": "bc9f64667da321514b404128a6d411608fe32fa5435cf5649b76915bd50649a3",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113956,
+   "webpQuality": 86,
+   "bandTop": 400,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 8 × 8.5 ft\\032_container-houses_40x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x8-front-left-angle.webp",
+   "target": "public/images/products/container-houses/info/40x8/container-houses-40x8-front-left-angle.webp",
+   "targetSha256": "c2e6b350595d8c2c013d0293ae94ddefbcb2f423f5a4969afacd6f6911c186bf",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116650,
+   "webpQuality": 76,
+   "bandTop": 276,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 8 × 8.5 ft\\034_container-houses_40x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x8-rear-right-angle.webp",
+   "target": "public/images/products/container-houses/info/40x8/container-houses-40x8-rear-right-angle.webp",
+   "targetSha256": "7be6bf80f1a2e7b2b480d80bb3b15a84c80489e53cb5335c1251f7c0741ff399",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 114218,
+   "webpQuality": 84,
+   "bandTop": 329,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 8 × 8.5 ft\\036_container-houses_40x8_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x8-elevated-three-quarter.webp",
+   "target": "public/images/products/container-houses/info/40x8/container-houses-40x8-elevated-three-quarter.webp",
+   "targetSha256": "c06046138da98ae292c3ef26302f9ea3c2dbe02e1b338e695af10a829cade639",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118944,
+   "webpQuality": 78,
+   "bandTop": 396,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 8 × 8.5 ft\\040_container-houses_40x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x8-bathroom-reverse.webp",
+   "target": "public/images/products/container-houses/info/40x8/container-houses-40x8-bathroom-reverse.webp",
+   "targetSha256": "2537e01a51c6d4c84c1966163cf5978c433110a13d70811df4e02b7490b56d65",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 83672,
+   "webpQuality": 88,
+   "bandTop": 216,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 10 × 8.5 ft\\043_container-houses_40x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x10-long-side-elevation.webp",
+   "target": "public/images/products/container-houses/info/40x10/container-houses-40x10-long-side-elevation.webp",
+   "targetSha256": "fadeab41a86c1acf3c9a994caaae89af1ceee1f218aa420f423657d4b2ffe79d",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116796,
+   "webpQuality": 74,
+   "bandTop": 362,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 10 × 8.5 ft\\044_container-houses_40x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x10-rear-right-angle.webp",
+   "target": "public/images/products/container-houses/info/40x10/container-houses-40x10-rear-right-angle.webp",
+   "targetSha256": "94c6873b08870cbfdc817a7560db2efa35bf9cb3810ea2ad73da1d07c9fe4513",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117706,
+   "webpQuality": 84,
+   "bandTop": 286,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 10 × 8.5 ft\\045_container-houses_40x10_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x10-end-dominant.webp",
+   "target": "public/images/products/container-houses/info/40x10/container-houses-40x10-end-dominant.webp",
+   "targetSha256": "5fece3abf7c486b5a86a8b975771f29df318e54cd0db5db8108e93d53b58fb23",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117268,
+   "webpQuality": 82,
+   "bandTop": 396,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 10 × 8.5 ft\\048_container-houses_40x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/container-houses/info/40x10/container-houses-40x10-semi-kitchen-dining.webp",
+   "targetSha256": "8bee342ee71bf54e78717f04bd1ad6b1cdf8b6a44352f84e198de12994cab0af",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 70694,
+   "webpQuality": 88,
+   "bandTop": 187,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 12 × 8.5 ft\\052_container-houses_40x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x12-front-left-angle.webp",
+   "target": "public/images/products/container-houses/info/40x12/container-houses-40x12-front-left-angle.webp",
+   "targetSha256": "dcca7c0d1acbe4729a04c65f1f44a03db71fe9dfc0639fecfaad67bad32726fa",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116342,
+   "webpQuality": 76,
+   "bandTop": 332,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 12 × 8.5 ft\\055_container-houses_40x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x12-end-dominant.webp",
+   "target": "public/images/products/container-houses/info/40x12/container-houses-40x12-end-dominant.webp",
+   "targetSha256": "73221de32366c62be055a0e231165651c69076190d8e1caf7b6e24ccdf467e94",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115588,
+   "webpQuality": 76,
+   "bandTop": 400,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 12 × 8.5 ft\\056_container-houses_40x12_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x12-elevated-three-quarter.webp",
+   "target": "public/images/products/container-houses/info/40x12/container-houses-40x12-elevated-three-quarter.webp",
+   "targetSha256": "66d2f0cd9ad70b2f26abe1ed75b5cc625362df8333f8380a926ca01bab6f1b94",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119636,
+   "webpQuality": 66,
+   "bandTop": 458,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "container-houses",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\container-house\\40 × 12 × 8.5 ft\\059_container-houses_40x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "container-houses-40x12-bedroom-view.webp",
+   "target": "public/images/products/container-houses/info/40x12/container-houses-40x12-bedroom-view.webp",
+   "targetSha256": "72867b882185a882a48ff82d3a6ad90ba9671306bd44bd901a9c763b477b4d18",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 108110,
+   "webpQuality": 88,
+   "bandTop": 418,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 8 × 8.5 ft\\062_prefab-container-homes_20x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x8-front-left-angle.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x8/prefab-container-homes-20x8-front-left-angle.webp",
+   "targetSha256": "0b5243cae14e9649085f5bdcab52f345e41182776b05212d3268ca762d9a1385",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113082,
+   "webpQuality": 86,
+   "bandTop": 339,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 8 × 8.5 ft\\064_prefab-container-homes_20x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x8-rear-right-angle.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x8/prefab-container-homes-20x8-rear-right-angle.webp",
+   "targetSha256": "52dbbb18e596f64599ea5dc4a3cdc28bc60dc65992c56f7f20a0d0d43119b929",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113614,
+   "webpQuality": 84,
+   "bandTop": 291,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 8 × 8.5 ft\\065_prefab-container-homes_20x8_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x8-end-dominant.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x8/prefab-container-homes-20x8-end-dominant.webp",
+   "targetSha256": "76894e1282f170932c9d0de46f69a72e3087ec3996987cea6335e6d4901da95b",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117310,
+   "webpQuality": 86,
+   "bandTop": 272,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 8 × 8.5 ft\\070_prefab-container-homes_20x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x8-bathroom-reverse.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x8/prefab-container-homes-20x8-bathroom-reverse.webp",
+   "targetSha256": "16df49b0c6f9bc70657c6b96dff583c1ad9a95661a41f9623c8ac71a692e5d3d",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 86092,
+   "webpQuality": 88,
+   "bandTop": 462,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 10 × 8.5 ft\\073_prefab-container-homes_20x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x10-long-side-elevation.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x10/prefab-container-homes-20x10-long-side-elevation.webp",
+   "targetSha256": "874ea27b320e24141cef71af3682bba258e1617ed07f1041276e87134e1075a7",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 112250,
+   "webpQuality": 84,
+   "bandTop": 318,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 10 × 8.5 ft\\074_prefab-container-homes_20x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x10-rear-right-angle.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x10/prefab-container-homes-20x10-rear-right-angle.webp",
+   "targetSha256": "a331778e71d3398c5ff8117c6edf30c417dbce7255cb62add9733df88f7bee89",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116666,
+   "webpQuality": 86,
+   "bandTop": 322,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 10 × 8.5 ft\\076_prefab-container-homes_20x10_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x10-elevated-three-quarter.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x10/prefab-container-homes-20x10-elevated-three-quarter.webp",
+   "targetSha256": "3b1db2f45a9837ac388e64a2d0368ed9f254d8df71623ed36bdc7f035d2449e3",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116922,
+   "webpQuality": 80,
+   "bandTop": 431,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 10 × 8.5 ft\\078_prefab-container-homes_20x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x10/prefab-container-homes-20x10-semi-kitchen-dining.webp",
+   "targetSha256": "884131829e998f1a3d5036e5f5dc86f7712b1ae89c61730cf9e51784ca989bda",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 109190,
+   "webpQuality": 88,
+   "bandTop": 288,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 12 × 8.5 ft\\082_prefab-container-homes_20x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x12-front-left-angle.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x12/prefab-container-homes-20x12-front-left-angle.webp",
+   "targetSha256": "4ae575fbf6e537ea4c4203deafc79f51ec6baccdfba9a0b7d3c35741006585d2",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 114476,
+   "webpQuality": 82,
+   "bandTop": 381,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 12 × 8.5 ft\\083_prefab-container-homes_20x12_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x12-long-side-elevation.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x12/prefab-container-homes-20x12-long-side-elevation.webp",
+   "targetSha256": "2fd4c5dde28902c54d40b62a2b5d8f75e6bb6165cd194452908d586187d42b03",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117868,
+   "webpQuality": 78,
+   "bandTop": 406,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 12 × 8.5 ft\\085_prefab-container-homes_20x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x12-end-dominant.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x12/prefab-container-homes-20x12-end-dominant.webp",
+   "targetSha256": "ef0d975530ee8c6a29f2d03af03e96cba6684441dd549ac47737c82ee8894a99",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 111312,
+   "webpQuality": 88,
+   "bandTop": 308,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\20 × 12 × 8.5 ft\\089_prefab-container-homes_20x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-20x12-bedroom-view.webp",
+   "target": "public/images/products/prefab-container-homes/info/20x12/prefab-container-homes-20x12-bedroom-view.webp",
+   "targetSha256": "8545cdffa51b221ac7f683cbe3a54fd110194bffbe20771263719799360066f6",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115320,
+   "webpQuality": 86,
+   "bandTop": 400,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 8 × 8.5 ft\\092_prefab-container-homes_40x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x8-front-left-angle.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x8/prefab-container-homes-40x8-front-left-angle.webp",
+   "targetSha256": "07d209b58bf173a97e3c57d8dbc67a70626a79d6c7285be23ad740b6e78237ad",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 121986,
+   "webpQuality": 56,
+   "bandTop": 215,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 8 × 8.5 ft\\094_prefab-container-homes_40x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x8-rear-right-angle.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x8/prefab-container-homes-40x8-rear-right-angle.webp",
+   "targetSha256": "e43af42fdac814775dc8c174589813d5868eff9ea8c2ae5af2ff25d130f0d61a",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119236,
+   "webpQuality": 84,
+   "bandTop": 298,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 8 × 8.5 ft\\096_prefab-container-homes_40x8_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x8-elevated-three-quarter.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x8/prefab-container-homes-40x8-elevated-three-quarter.webp",
+   "targetSha256": "fc448954c95668bb1444e08d615b404fdd6e563e38051a2cad52d138155015e8",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117540,
+   "webpQuality": 84,
+   "bandTop": 451,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 8 × 8.5 ft\\100_prefab-container-homes_40x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x8-bathroom-reverse.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x8/prefab-container-homes-40x8-bathroom-reverse.webp",
+   "targetSha256": "3b932d65271331fe0acdfe103269a62d574f6fdbfc461af0205c5d1180add220",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 72150,
+   "webpQuality": 88,
+   "bandTop": 210,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 10 × 8.5 ft\\103_prefab-container-homes_40x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x10-long-side-elevation.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x10/prefab-container-homes-40x10-long-side-elevation.webp",
+   "targetSha256": "9a641d01f30d0d27f7e782bfbf22122b2ef6bb51f20c628f005b60a8821774e7",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116438,
+   "webpQuality": 74,
+   "bandTop": 312,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 10 × 8.5 ft\\104_prefab-container-homes_40x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x10-rear-right-angle.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x10/prefab-container-homes-40x10-rear-right-angle.webp",
+   "targetSha256": "fcd614a5c598fbbf5d2ebce3dab4d830aa8c816d513f59cb574d7bb6c4145f1f",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 120438,
+   "webpQuality": 84,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 10 × 8.5 ft\\105_prefab-container-homes_40x10_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x10-end-dominant.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x10/prefab-container-homes-40x10-end-dominant.webp",
+   "targetSha256": "e69610e53a2ae0e1cbcc3f104ae4aaa52a4c92fe84fc934855277fde9d7ba8b6",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113534,
+   "webpQuality": 84,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 10 × 8.5 ft\\108_prefab-container-homes_40x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x10/prefab-container-homes-40x10-semi-kitchen-dining.webp",
+   "targetSha256": "79855092c2e45fc0828d725ee37623b6eb499f6bf4d8fb3db09debabce603df1",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116790,
+   "webpQuality": 88,
+   "bandTop": 274,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 12 × 8.5 ft\\112_prefab-container-homes_40x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x12-front-left-angle.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x12/prefab-container-homes-40x12-front-left-angle.webp",
+   "targetSha256": "07506e7ebbd73cc8343950b2106be5980a600d82719c4ddb1b3fcc8ad5bc2c13",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117692,
+   "webpQuality": 78,
+   "bandTop": 304,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 12 × 8.5 ft\\115_prefab-container-homes_40x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x12-end-dominant.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x12/prefab-container-homes-40x12-end-dominant.webp",
+   "targetSha256": "4def023e5eebce6d6a3031b651b0808dd40e9df350c13424ee094bde0a804e95",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117566,
+   "webpQuality": 84,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 12 × 8.5 ft\\116_prefab-container-homes_40x12_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x12-elevated-three-quarter.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x12/prefab-container-homes-40x12-elevated-three-quarter.webp",
+   "targetSha256": "7889b94ab1ada05b9ba1642ca9916900f61657fcdb4aa0ed9b87a41b5808b6ed",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119224,
+   "webpQuality": 78,
+   "bandTop": 400,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "prefab-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefab-container-homes\\40 × 12 × 8.5 ft\\119_prefab-container-homes_40x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "prefab-container-homes-40x12-bedroom-view.webp",
+   "target": "public/images/products/prefab-container-homes/info/40x12/prefab-container-homes-40x12-bedroom-view.webp",
+   "targetSha256": "0423b59063b81da8ee0c35a2892d8d9a3ce82314bb3bb09ec4f54d909ee7d3cb",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116476,
+   "webpQuality": 86,
+   "bandTop": 400,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 8 × 8.5 ft\\122_luxury-container-houses_20x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x8-front-left-angle.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x8/luxury-container-houses-20x8-front-left-angle.webp",
+   "targetSha256": "830cd37237d8b404c404d0436aeb1a34ecdbfdd35dfe6c95b1660796d483d611",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113302,
+   "webpQuality": 88,
+   "bandTop": 340,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 8 × 8.5 ft\\124_luxury-container-houses_20x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x8-rear-right-angle.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x8/luxury-container-houses-20x8-rear-right-angle.webp",
+   "targetSha256": "da14b104fe2a0d47969a5c3b5f03aac27c6538c9ac184b405525a9acd8b15375",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 103256,
+   "webpQuality": 88,
+   "bandTop": 292,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 8 × 8.5 ft\\125_luxury-container-houses_20x8_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x8-end-dominant.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x8/luxury-container-houses-20x8-end-dominant.webp",
+   "targetSha256": "89a76b71984878a009f4267dfdfd8d656d1d2332a2f10176b4926f8176155d90",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 111280,
+   "webpQuality": 88,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 8 × 8.5 ft\\130_luxury-container-houses_20x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x8-bathroom-reverse.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x8/luxury-container-houses-20x8-bathroom-reverse.webp",
+   "targetSha256": "950101746f9ac2ecf3113cf8f83a5eb4ce302293a3fc513c783bf61c89ab7be1",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 96460,
+   "webpQuality": 88,
+   "bandTop": 364,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 10 × 8.5 ft\\133_luxury-container-houses_20x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x10-long-side-elevation.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x10/luxury-container-houses-20x10-long-side-elevation.webp",
+   "targetSha256": "a6ed8adb64036cb6ac46b090543ae76a28ed0586254a6fc031a02b1b9e1a8a17",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116856,
+   "webpQuality": 82,
+   "bandTop": 270,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 10 × 8.5 ft\\134_luxury-container-houses_20x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x10-rear-right-angle.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x10/luxury-container-houses-20x10-rear-right-angle.webp",
+   "targetSha256": "c28d1a5dad69b00458ff86c1581bac140048eb5987f9270a16f830b29ddf7a38",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118722,
+   "webpQuality": 84,
+   "bandTop": 335,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 10 × 8.5 ft\\136_luxury-container-houses_20x10_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x10-elevated-three-quarter.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x10/luxury-container-houses-20x10-elevated-three-quarter.webp",
+   "targetSha256": "42dbea56cd5325f9f5290b4510b293f80e83a20e75d7b8992fa0270406f9c431",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 114946,
+   "webpQuality": 78,
+   "bandTop": 343,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 10 × 8.5 ft\\138_luxury-container-houses_20x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x10/luxury-container-houses-20x10-semi-kitchen-dining.webp",
+   "targetSha256": "536b2038ba7cfed32e73a393609182b7865f1fcca18c0b792852442b92e6aa52",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 110544,
+   "webpQuality": 88,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 12 × 8.5 ft\\142_luxury-container-houses_20x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x12-front-left-angle.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x12/luxury-container-houses-20x12-front-left-angle.webp",
+   "targetSha256": "1e67efe2d6b3984beca90b7cf10f8ae4f88f7152b4a3e66b603f720a74df88d3",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119056,
+   "webpQuality": 86,
+   "bandTop": 238,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 12 × 8.5 ft\\143_luxury-container-houses_20x12_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x12-long-side-elevation.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x12/luxury-container-houses-20x12-long-side-elevation.webp",
+   "targetSha256": "727228513d6544195b523f7efa5972845b2d4d38cde69ea4c0c18fbed37d0cb3",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117178,
+   "webpQuality": 84,
+   "bandTop": 386,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 12 × 8.5 ft\\145_luxury-container-houses_20x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x12-end-dominant.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x12/luxury-container-houses-20x12-end-dominant.webp",
+   "targetSha256": "5f6bb74f365885c76aae32f8098a1e40e9fd571a55663f6eccac271f6af02067",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 103074,
+   "webpQuality": 88,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\20 × 12 × 8.5 ft\\149_luxury-container-houses_20x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-20x12-bedroom-view.webp",
+   "target": "public/images/products/luxury-container-houses/info/20x12/luxury-container-houses-20x12-bedroom-view.webp",
+   "targetSha256": "eba71067754d2f39c9bb4fba8274cd6ff7272a68a27d619668ddbe10daacb2b1",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116992,
+   "webpQuality": 84,
+   "bandTop": 400,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 8 × 8.5 ft\\152_luxury-container-houses_40x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x8-front-left-angle.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x8/luxury-container-houses-40x8-front-left-angle.webp",
+   "targetSha256": "0ce0f95700cbf069edafb72103fcbbe5574b1381b634fccc1ef5710467d64a51",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116760,
+   "webpQuality": 84,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 8 × 8.5 ft\\154_luxury-container-houses_40x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x8-rear-right-angle.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x8/luxury-container-houses-40x8-rear-right-angle.webp",
+   "targetSha256": "dddcfd88c340bc827a39713ff31c21f53419d38d0ac7920867b2d8a7381bca01",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116666,
+   "webpQuality": 84,
+   "bandTop": 269,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 8 × 8.5 ft\\156_luxury-container-houses_40x8_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x8-elevated-three-quarter.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x8/luxury-container-houses-40x8-elevated-three-quarter.webp",
+   "targetSha256": "ac1a4abd598acfc1b0b95a2ffcae2a5bc447621347b8e30b2e392c37eb5e47ca",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117746,
+   "webpQuality": 82,
+   "bandTop": 430,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 8 × 8.5 ft\\160_luxury-container-houses_40x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x8-bathroom-reverse.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x8/luxury-container-houses-40x8-bathroom-reverse.webp",
+   "targetSha256": "11f43109186bf7ec1c27a74d517995dcbce266f5d164ebe907cead37a4902939",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 72874,
+   "webpQuality": 88,
+   "bandTop": 194,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 10 × 8.5 ft\\163_luxury-container-houses_40x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x10-long-side-elevation.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x10/luxury-container-houses-40x10-long-side-elevation.webp",
+   "targetSha256": "6b03fa52cab22b6197820bbc06db9ce4a2e6a1230f3b629a89e3ac8ba57fc77e",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 120196,
+   "webpQuality": 74,
+   "bandTop": 338,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 10 × 8.5 ft\\164_luxury-container-houses_40x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x10-rear-right-angle.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x10/luxury-container-houses-40x10-rear-right-angle.webp",
+   "targetSha256": "0e97c1112acbedcca8bd81020a78f342d430202933895ba6b43f2dd1f39613c2",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118010,
+   "webpQuality": 80,
+   "bandTop": 208,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 10 × 8.5 ft\\165_luxury-container-houses_40x10_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x10-end-dominant.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x10/luxury-container-houses-40x10-end-dominant.webp",
+   "targetSha256": "aaa1fad912df2781b8963bcb164b64e712c1946a280dea1a0a80b17424214573",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 111126,
+   "webpQuality": 82,
+   "bandTop": 289,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 10 × 8.5 ft\\168_luxury-container-houses_40x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x10/luxury-container-houses-40x10-semi-kitchen-dining.webp",
+   "targetSha256": "3d5cffbfbd6dad09a092d1f42ed5149fa4bb8e41edf106f25ad00e8ac81c0ebb",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 89884,
+   "webpQuality": 88,
+   "bandTop": 250,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 12 × 8.5 ft\\172_luxury-container-houses_40x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x12-front-left-angle.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x12/luxury-container-houses-40x12-front-left-angle.webp",
+   "targetSha256": "36827ec7cbfed65d280612edc166f0c62540ca1c2db8caf95ab56713c0ecb9a9",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115464,
+   "webpQuality": 80,
+   "bandTop": 270,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 12 × 8.5 ft\\175_luxury-container-houses_40x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x12-end-dominant.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x12/luxury-container-houses-40x12-end-dominant.webp",
+   "targetSha256": "90e38a58566c748a4fcfd4634717c077a726473e534b4691462cb067b2860d52",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116664,
+   "webpQuality": 80,
+   "bandTop": 228,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 12 × 8.5 ft\\176_luxury-container-houses_40x12_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x12-elevated-three-quarter.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x12/luxury-container-houses-40x12-elevated-three-quarter.webp",
+   "targetSha256": "3d0ca73ea125e29e8d52955611676f53bdfa58bf463731f62eb27f865b77720d",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115076,
+   "webpQuality": 76,
+   "bandTop": 415,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "luxury-container-houses",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\luxury-container-houses\\40 × 12 × 8.5 ft\\179_luxury-container-houses_40x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "luxury-container-houses-40x12-bedroom-view.webp",
+   "target": "public/images/products/luxury-container-houses/info/40x12/luxury-container-houses-40x12-bedroom-view.webp",
+   "targetSha256": "b33e0de97164b669a631e3cbd684bdf047a83dd000c8782220ec4ef6b8456281",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118880,
+   "webpQuality": 86,
+   "bandTop": 400,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 8 × 8.5 ft\\182_shipping-container-homes_20x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x8-front-left-angle.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x8/shipping-container-homes-20x8-front-left-angle.webp",
+   "targetSha256": "231e90d8bf056e38eea06857938447fde4ce02e187337c9ceea599fabbd34d71",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113100,
+   "webpQuality": 88,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 8 × 8.5 ft\\184_shipping-container-homes_20x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x8-rear-right-angle.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x8/shipping-container-homes-20x8-rear-right-angle.webp",
+   "targetSha256": "56eed379f55885f479457856942aabe5bc4bd4262470dd05039eed991198c39e",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 109438,
+   "webpQuality": 88,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 8 × 8.5 ft\\185_shipping-container-homes_20x8_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x8-end-dominant.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x8/shipping-container-homes-20x8-end-dominant.webp",
+   "targetSha256": "0b024e138c3e784343153c229f48c9bbcc664e5ffd8f8dfffec2c37c8c89b1f2",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115082,
+   "webpQuality": 88,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 8 × 8.5 ft\\190_shipping-container-homes_20x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x8-bathroom-reverse.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x8/shipping-container-homes-20x8-bathroom-reverse.webp",
+   "targetSha256": "25ad54f5b1a490e1ffd80efb971d46d56fce9b167e4064762dfb76b2230cce72",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 87712,
+   "webpQuality": 88,
+   "bandTop": 65,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 10 × 8.5 ft\\193_shipping-container-homes_20x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x10-long-side-elevation.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x10/shipping-container-homes-20x10-long-side-elevation.webp",
+   "targetSha256": "cdef66732b65831df0cc51a4e23ff8a46bbcde9e3863d8370b89ec39361d4014",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115088,
+   "webpQuality": 84,
+   "bandTop": 250,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 10 × 8.5 ft\\194_shipping-container-homes_20x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x10-rear-right-angle.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x10/shipping-container-homes-20x10-rear-right-angle.webp",
+   "targetSha256": "283fff63f6ecf8ec523f6fddc8dfede34a1c57a2d2cdb8114f86d1e3fc58de46",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 111696,
+   "webpQuality": 86,
+   "bandTop": 270,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 10 × 8.5 ft\\196_shipping-container-homes_20x10_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x10-elevated-three-quarter.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x10/shipping-container-homes-20x10-elevated-three-quarter.webp",
+   "targetSha256": "42b58c5586775c56815ea20af8538324b5b7b41d1fd568e60a954b271395c159",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 120164,
+   "webpQuality": 84,
+   "bandTop": 378,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 10 × 8.5 ft\\198_shipping-container-homes_20x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x10/shipping-container-homes-20x10-semi-kitchen-dining.webp",
+   "targetSha256": "5e25264b0046918f14f0137708d2a2325a4ccb35df821295f118dd6395a6c77c",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116410,
+   "webpQuality": 84,
+   "bandTop": 396,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 12 × 8.5 ft\\202_shipping-container-homes_20x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x12-front-left-angle.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x12/shipping-container-homes-20x12-front-left-angle.webp",
+   "targetSha256": "965c7aa4517e46abc6db978aab2268609aceaf8225e7d7ab6cf92a0af8f3dfa0",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 102972,
+   "webpQuality": 88,
+   "bandTop": 324,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 12 × 8.5 ft\\203_shipping-container-homes_20x12_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x12-long-side-elevation.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x12/shipping-container-homes-20x12-long-side-elevation.webp",
+   "targetSha256": "db5dfc77ba883b8eea2374ad1570459a67687d8bd5c53c52f61ff1e0499272ae",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 102050,
+   "webpQuality": 88,
+   "bandTop": 418,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 12 × 8.5 ft\\205_shipping-container-homes_20x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x12-end-dominant.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x12/shipping-container-homes-20x12-end-dominant.webp",
+   "targetSha256": "05d7fafb69cd7401f9bebe40c8437029b80f50acab40f4571a7d06f02f059e28",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 107758,
+   "webpQuality": 88,
+   "bandTop": 333,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\20 × 12 × 8.5 ft\\209_shipping-container-homes_20x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-20x12-bedroom-view.webp",
+   "target": "public/images/products/shipping-container-homes/info/20x12/shipping-container-homes-20x12-bedroom-view.webp",
+   "targetSha256": "51beab2e379ad5d96ac770f774dde12a48764de29037c2974e59d52868130585",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 111322,
+   "webpQuality": 84,
+   "bandTop": 471,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 8 × 8.5 ft\\212_shipping-container-homes_40x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x8-front-left-angle.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x8/shipping-container-homes-40x8-front-left-angle.webp",
+   "targetSha256": "84bc61153170948c7417c62b22c4867810c24dc449ca9ca967965c220566517b",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115324,
+   "webpQuality": 84,
+   "bandTop": 250,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 8 × 8.5 ft\\214_shipping-container-homes_40x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x8-rear-right-angle.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x8/shipping-container-homes-40x8-rear-right-angle.webp",
+   "targetSha256": "73a682578fc2d5c506ee7cdf210228893c49749df0046989f4f5ab06dde803bf",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 122680,
+   "webpQuality": 88,
+   "bandTop": 306,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 8 × 8.5 ft\\216_shipping-container-homes_40x8_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x8-elevated-three-quarter.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x8/shipping-container-homes-40x8-elevated-three-quarter.webp",
+   "targetSha256": "9882391513af2076d8e8506ae0cb1b5f84fcfc80d066be84d57095d30ec07052",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 122132,
+   "webpQuality": 74,
+   "bandTop": 384,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 8 × 8.5 ft\\220_shipping-container-homes_40x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x8-bathroom-reverse.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x8/shipping-container-homes-40x8-bathroom-reverse.webp",
+   "targetSha256": "3ac5ba615a29f8d49d96ad2ef80fae11e8673406cdc0193eabbaf6766728b6d9",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 67436,
+   "webpQuality": 88,
+   "bandTop": 175,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 10 × 8.5 ft\\223_shipping-container-homes_40x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x10-long-side-elevation.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x10/shipping-container-homes-40x10-long-side-elevation.webp",
+   "targetSha256": "46285a1983992cc970c3201533c8661c7648f4437bd60fdd6f538d316c952444",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118156,
+   "webpQuality": 78,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 10 × 8.5 ft\\224_shipping-container-homes_40x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x10-rear-right-angle.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x10/shipping-container-homes-40x10-rear-right-angle.webp",
+   "targetSha256": "1cb32ab721c3439ffe52f6cacf0945ec73973fc60042c85c83bcd9a93628cde3",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 120694,
+   "webpQuality": 82,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 10 × 8.5 ft\\225_shipping-container-homes_40x10_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x10-end-dominant.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x10/shipping-container-homes-40x10-end-dominant.webp",
+   "targetSha256": "14cf5418207cf86c6fb3a30ad8e86112f5df654e80b01760abaa488b92ed264c",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115946,
+   "webpQuality": 86,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 10 × 8.5 ft\\228_shipping-container-homes_40x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x10/shipping-container-homes-40x10-semi-kitchen-dining.webp",
+   "targetSha256": "7b36065bc1abc686a4374514e928a0a309b71152dddca425ac1765d4edec0dad",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 95382,
+   "webpQuality": 88,
+   "bandTop": 326,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 12 × 8.5 ft\\232_shipping-container-homes_40x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x12-front-left-angle.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x12/shipping-container-homes-40x12-front-left-angle.webp",
+   "targetSha256": "ba0037d69b4aa30f9840e939def09c7e5e1a3e44e57b0ee2082637c25c79a306",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113326,
+   "webpQuality": 88,
+   "bandTop": 156,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 12 × 8.5 ft\\235_shipping-container-homes_40x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x12-end-dominant.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x12/shipping-container-homes-40x12-end-dominant.webp",
+   "targetSha256": "34dfafbc45261f0e43d5b951f176d05c157570bbbc894c48e135cc7b00176bb1",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117222,
+   "webpQuality": 86,
+   "bandTop": 488,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 12 × 8.5 ft\\236_shipping-container-homes_40x12_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x12-elevated-three-quarter.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x12/shipping-container-homes-40x12-elevated-three-quarter.webp",
+   "targetSha256": "ebfb2fefbf9b84f5c391d88881ebc64d8b376b6fabd658469d5b6596f0ed8866",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 120282,
+   "webpQuality": 80,
+   "bandTop": 383,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "shipping-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\shipping-container-homes\\40 × 12 × 8.5 ft\\239_shipping-container-homes_40x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "shipping-container-homes-40x12-bedroom-view.webp",
+   "target": "public/images/products/shipping-container-homes/info/40x12/shipping-container-homes-40x12-bedroom-view.webp",
+   "targetSha256": "1f6418e24229d22ba0c247d417c4714887c4dd97cba73b8f50794e9014de0898",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 75638,
+   "webpQuality": 88,
+   "bandTop": 174,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 8 × 8.5 ft\\242_affordable-container-homes_20x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x8-front-left-angle.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x8/affordable-container-homes-20x8-front-left-angle.webp",
+   "targetSha256": "7e8c8d1d53fea428210072d1dff1e1546d57df3d90ea033c3e0b2f4b622271ba",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117768,
+   "webpQuality": 86,
+   "bandTop": 344,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 8 × 8.5 ft\\244_affordable-container-homes_20x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x8-rear-right-angle.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x8/affordable-container-homes-20x8-rear-right-angle.webp",
+   "targetSha256": "6da58540eec9a68fea7c4118aeb7d279dd0ff24d5310d7db37beba9f581f7eea",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119892,
+   "webpQuality": 86,
+   "bandTop": 386,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 8 × 8.5 ft\\245_affordable-container-homes_20x8_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x8-end-dominant.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x8/affordable-container-homes-20x8-end-dominant.webp",
+   "targetSha256": "315639547ce13df56ad93a6de68f5cd9f2a782367247aa21ff098df1043ff397",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117824,
+   "webpQuality": 88,
+   "bandTop": 286,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 8 × 8.5 ft\\250_affordable-container-homes_20x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x8-bathroom-reverse.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x8/affordable-container-homes-20x8-bathroom-reverse.webp",
+   "targetSha256": "ac904a4840daebd261614d48abe700d91a59b8de12392ef644479b4992c0ce55",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 69306,
+   "webpQuality": 88,
+   "bandTop": 412,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 10 × 8.5 ft\\253_affordable-container-homes_20x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x10-long-side-elevation.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-long-side-elevation.webp",
+   "targetSha256": "c06ac676c44347f85f209f6acd1bfd34f5af5723c0cf57481c27704c1f0939ba",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117610,
+   "webpQuality": 84,
+   "bandTop": 354,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 10 × 8.5 ft\\254_affordable-container-homes_20x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x10-rear-right-angle.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-rear-right-angle.webp",
+   "targetSha256": "4656dc7219c7299fbccce8ac1ff64d49d0f406c07aebe83d27ffeb91922ebbb5",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 90592,
+   "webpQuality": 88,
+   "bandTop": 391,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 10 × 8.5 ft\\256_affordable-container-homes_20x10_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x10-elevated-three-quarter.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-elevated-three-quarter.webp",
+   "targetSha256": "788ee84cce62d49e394cc32f0e5943c529518b5042394488c2a74d40ca68a646",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 112956,
+   "webpQuality": 86,
+   "bandTop": 372,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 10 × 8.5 ft\\258_affordable-container-homes_20x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-semi-kitchen-dining.webp",
+   "targetSha256": "9eb96c457662496a20b1c1c2767530fef5a2ea833801060bf03514aea04f0a28",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 114266,
+   "webpQuality": 86,
+   "bandTop": 382,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 12 × 8.5 ft\\262_affordable-container-homes_20x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x12-front-left-angle.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x12/affordable-container-homes-20x12-front-left-angle.webp",
+   "targetSha256": "c8ba3fa29d308fe7b37918aba19bf06240a65587ab0d60d0a5912e948eff41a9",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115306,
+   "webpQuality": 80,
+   "bandTop": 344,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 12 × 8.5 ft\\263_affordable-container-homes_20x12_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x12-long-side-elevation.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x12/affordable-container-homes-20x12-long-side-elevation.webp",
+   "targetSha256": "76c4688bf5ca52590dba03db73a5327b2d57d474a81255f81b0a5b4cdc5a0d28",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 115008,
+   "webpQuality": 86,
+   "bandTop": 404,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 12 × 8.5 ft\\265_affordable-container-homes_20x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x12-end-dominant.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x12/affordable-container-homes-20x12-end-dominant.webp",
+   "targetSha256": "3a45579f702cca1029a6f18d239571cf46ac638a39dc6ed8a8aeed086bedd8d6",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117692,
+   "webpQuality": 86,
+   "bandTop": 402,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\20 × 12 × 8.5 ft\\269_affordable-container-homes_20x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-20x12-bedroom-view.webp",
+   "target": "public/images/products/affordable-container-homes/info/20x12/affordable-container-homes-20x12-bedroom-view.webp",
+   "targetSha256": "63dc11e7d827921524722a3f5c7d01c7ee95e815800bb4d679c8e3fd89b15d7b",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 109118,
+   "webpQuality": 86,
+   "bandTop": 334,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 8 × 8.5 ft\\272_affordable-container-homes_40x8_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x8-front-left-angle.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x8/affordable-container-homes-40x8-front-left-angle.webp",
+   "targetSha256": "3392683cd199e3366e0e8eb7af5d3a2a2169fd648e7e0bec2aa1844fbf12408a",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118968,
+   "webpQuality": 76,
+   "bandTop": 360,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 8 × 8.5 ft\\274_affordable-container-homes_40x8_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x8-rear-right-angle.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x8/affordable-container-homes-40x8-rear-right-angle.webp",
+   "targetSha256": "eb578c403018e0893cb0a9af024b073457310d77c18eabe43c9f035d62b60aba",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117234,
+   "webpQuality": 86,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 8 × 8.5 ft\\276_affordable-container-homes_40x8_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x8-elevated-three-quarter.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x8/affordable-container-homes-40x8-elevated-three-quarter.webp",
+   "targetSha256": "f7dacdf5a756a848289a05f8cd6ceb9b1de9d16184eb4089b50e9c2462451249",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117004,
+   "webpQuality": 76,
+   "bandTop": 388,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "I04",
+   "view": "bathroom-reverse",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 8 × 8.5 ft\\280_affordable-container-homes_40x8_I04_bathroom-reverse.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x8-bathroom-reverse.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x8/affordable-container-homes-40x8-bathroom-reverse.webp",
+   "targetSha256": "413ff6e18f52c5e675eb0382093465f27f2e3c487816d098fbf6cf1042770b78",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 67098,
+   "webpQuality": 88,
+   "bandTop": 204,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E03",
+   "view": "long-side-elevation",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 10 × 8.5 ft\\283_affordable-container-homes_40x10_E03_long-side-elevation.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x10-long-side-elevation.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x10/affordable-container-homes-40x10-long-side-elevation.webp",
+   "targetSha256": "9bb33a83cf2d3186447801163fc8a41cb9d4f2169b9b04f9966f8757e2058a22",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116230,
+   "webpQuality": 76,
+   "bandTop": 318,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E04",
+   "view": "rear-right-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 10 × 8.5 ft\\284_affordable-container-homes_40x10_E04_rear-right-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x10-rear-right-angle.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x10/affordable-container-homes-40x10-rear-right-angle.webp",
+   "targetSha256": "d470f4e45a11de5c3d65133bf58c47e3b32a443d3fcfea8f204d3bcfdcf11754",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119962,
+   "webpQuality": 86,
+   "bandTop": 334,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 10 × 8.5 ft\\285_affordable-container-homes_40x10_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x10-end-dominant.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x10/affordable-container-homes-40x10-end-dominant.webp",
+   "targetSha256": "0b2cda1bd3e95a1bc6b60a887c2ba50be91a2647307b03bf6824bd0a4b03f861",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 121526,
+   "webpQuality": 78,
+   "bandTop": 254,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "I02",
+   "view": "semi-kitchen-dining",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 10 × 8.5 ft\\288_affordable-container-homes_40x10_I02_semi-kitchen-dining.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x10-semi-kitchen-dining.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x10/affordable-container-homes-40x10-semi-kitchen-dining.webp",
+   "targetSha256": "e977f2ff3f74459eb55bb66e9b8a9702d72197dd02a934a220c69270726d5ef5",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 92578,
+   "webpQuality": 88,
+   "bandTop": 428,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E02",
+   "view": "front-left-angle",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 12 × 8.5 ft\\292_affordable-container-homes_40x12_E02_front-left-angle.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x12-front-left-angle.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x12/affordable-container-homes-40x12-front-left-angle.webp",
+   "targetSha256": "18410dd08f97ac97b21642f2aebf9539a70e8914b1231b7699b14637abee7f05",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 120912,
+   "webpQuality": 86,
+   "bandTop": 300,
+   "bandHeight": 705,
+   "cropOrigin": "manual-visual-review",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E05",
+   "view": "end-dominant",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 12 × 8.5 ft\\295_affordable-container-homes_40x12_E05_end-dominant.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x12-end-dominant.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x12/affordable-container-homes-40x12-end-dominant.webp",
+   "targetSha256": "a5f55642ee9a1a72a220e586adc988eedcc5177bbeadaefadf0a004c97c5e318",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116846,
+   "webpQuality": 82,
+   "bandTop": 242,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E06",
+   "view": "elevated-three-quarter",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 12 × 8.5 ft\\296_affordable-container-homes_40x12_E06_elevated-three-quarter.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x12-elevated-three-quarter.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x12/affordable-container-homes-40x12-elevated-three-quarter.webp",
+   "targetSha256": "cd83482555f95d84b3c4a2611ad277c50e4523d2e5d7f4b5ae47dcaca720b9e1",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116950,
+   "webpQuality": 80,
+   "bandTop": 373,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  },
+  {
+   "route": "affordable-container-homes",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "I03",
+   "view": "bedroom-view",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\affordable-container-homes\\40 × 12 × 8.5 ft\\299_affordable-container-homes_40x12_I03_bedroom-view.png",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "filename": "affordable-container-homes-40x12-bedroom-view.webp",
+   "target": "public/images/products/affordable-container-homes/info/40x12/affordable-container-homes-40x12-bedroom-view.webp",
+   "targetSha256": "dc199eb0da28bfc2f90dd5a6546c724965895f5a8d001afb51fbb94e1d421c23",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 97242,
+   "webpQuality": 88,
+   "bandTop": 198,
+   "bandHeight": 705,
+   "cropOrigin": "long-edge-detector",
+   "alt": "",
+   "altStatus": "pending-fable-5-manifest"
+  }
+ ]
+}

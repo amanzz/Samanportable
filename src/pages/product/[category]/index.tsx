@@ -37,6 +37,7 @@ import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
 import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 
@@ -310,7 +311,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     }
 
     if (variantData?.suppressLegacyFaqSchema && rankMathSEO) {
-      rankMathSEO = { ...rankMathSEO, faqSchema: undefined };
+      // DELETE the key, never set it undefined — getServerSideProps serialises
+      // props to JSON and rejects an explicit `undefined`, which 500'd this hub.
+      const { faqSchema: _suppressed, ...withoutFaqSchema } = rankMathSEO;
+      rankMathSEO = withoutFaqSchema;
     }
 
     // Event B owns all commercial size/price data when its product JSON exists.
@@ -343,7 +347,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: variantData?.descriptionHtml || descriptionData?.description || '',
+          // C-08 E3 Step C — same Info-image placement as the sibling route, so
+          // the hub's Description panel carries its 16:9 band on the same rules.
+          description: injectInfoImages(
+            variantData?.descriptionHtml || descriptionData?.description || '',
+            variantData?.infoImages
+          ),
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
           // cluster (null for every other product → the existing overrides/defaults
           // apply unchanged). The flagship page slug `porta-cabins` maps to the
