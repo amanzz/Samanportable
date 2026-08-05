@@ -425,7 +425,7 @@ function normaliseTagAttributes(token: string, options: NormaliseOptions = {}): 
 export function normaliseHtml(html: string, options: NormaliseOptions = {}): string {
   if (!html) return html;
   const prepared = normaliseJsonLdScripts(repairMojibake(html));
-  const stack: Array<{ name: string; className: string }> = [];
+  const stack: Array<{ name: string; className: string; copyVerbatim: boolean }> = [];
   let output = '';
 
   for (const match of prepared.matchAll(/<[^>]+>|[^<]+/g)) {
@@ -439,12 +439,21 @@ export function normaliseHtml(html: string, options: NormaliseOptions = {}): str
         if (index >= 0) stack.splice(index);
       }
       output += normaliseTagAttributes(token, options);
-      if (!closing && !selfClosing) stack.push({ name, className: tagClass(token) });
+      if (!closing && !selfClosing) {
+        stack.push({
+          name,
+          className: tagClass(token),
+          copyVerbatim: /\bdata-copy-verbatim=(?:["']true["']|true)(?:\s|>)/i.test(token),
+        });
+      }
       continue;
     }
 
     const names = stack.map(entry => entry.name);
-    if (names.some(name => name === 'script' || name === 'style' || name === 'code' || name === 'pre')) {
+    if (
+      names.some(name => name === 'script' || name === 'style' || name === 'code' || name === 'pre')
+      || stack.some(entry => entry.copyVerbatim)
+    ) {
       output += token;
       continue;
     }

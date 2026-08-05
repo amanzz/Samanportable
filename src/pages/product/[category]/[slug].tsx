@@ -95,6 +95,19 @@ function applyProductDescriptionAnchorTextCorrection(slug: string, html: string)
   return replacement ? html.replace(replacement.before, replacement.after) : html;
 }
 
+const PREFABRICATED_CONTAINER_HOUSE_LEGACY_CONTACT =
+  'Call <strong>09708989937</strong>, WhatsApp <strong>0970898993</strong>, or email <strong>sales@samanportable.com</strong>.';
+const PREFABRICATED_CONTAINER_HOUSE_CONTACT_OVERRIDE =
+  '</p><p data-copy-verbatim="true">South India — Bengaluru: <a href="tel:+918861622859">+91 88616 22859</a> or <a href="tel:+918088685440">+91 80886 85440</a>,<br /><a href="mailto:sales@samanportable.com">sales@samanportable.com</a><br />North India — Greater Noida: <a href="tel:+918796039938">+91 87960 39938</a> or <a href="tel:+919708989937">+91 97089 89937</a>,<br /><a href="mailto:ncr@samanportable.com">ncr@samanportable.com</a>';
+
+function applyProductDescriptionContactCorrection(slug: string, html: string): string {
+  if (slug !== 'prefabricated-container-house') return html;
+  return html.replace(
+    PREFABRICATED_CONTAINER_HOUSE_LEGACY_CONTACT,
+    PREFABRICATED_CONTAINER_HOUSE_CONTACT_OVERRIDE
+  );
+}
+
 const PRODUCT_OPENER_OVERRIDES = productOpenerOverrides as Record<string, string>;
 
 function removeLeadingOpenerParagraph(html: string, opener: string): string {
@@ -225,9 +238,13 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     const productDescriptionWithHeadingCorrection = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
       ? demoteHtmlH1ToH2(descriptionData?.description || '')
       : descriptionData?.description || '';
-    const correctedProductDescription = applyProductDescriptionAnchorTextCorrection(
+    const anchorCorrectedProductDescription = applyProductDescriptionAnchorTextCorrection(
       slugLower,
       productDescriptionWithHeadingCorrection
+    );
+    const correctedProductDescription = applyProductDescriptionContactCorrection(
+      slugLower,
+      anchorCorrectedProductDescription
     );
     const productDescription = suppressLegacyCommercialSurfaces
       ? removeMonetaryHtml(correctedProductDescription)
@@ -940,7 +957,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   hero — desktop column 1, mobile last — so these cards must appear
                   exactly once. Every other subpage keeps the desktop-only slider
                   unchanged. */}
-              {!variantData && (
+              {!variantData && category.toLowerCase() !== 'container-houses' && (
               <div className="mt-4 hidden lg:block">
                 <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
                   <div className="space-y-4">
