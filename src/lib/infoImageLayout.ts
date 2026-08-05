@@ -24,9 +24,22 @@ export interface InfoImage {
   height: number;
 }
 
-/** Top-level block elements we are willing to insert between. */
+/**
+ * Top-level block elements we are willing to insert between.
+ *
+ * BLOCK_RE is a REGEX LITERAL, deliberately, and must stay one. Written as
+ * `new RegExp(\`<(${'${BLOCK_TAGS.join("|")}'})\\b[^>]*>\`, 'i')` the production
+ * minifier constant-folds the template into a double-quoted string and emits
+ * `"...\\\b..."`, where `\b` is no longer a word boundary but a literal
+ * BACKSPACE (U+0008). The pattern then matches nothing, splitTopLevelBlocks
+ * returns a single block, injectInfoImages bails on its `< 2` guard, and every
+ * Info image silently vanishes in `next build` while working perfectly in
+ * `next dev`. A literal cannot be folded, so it cannot be corrupted.
+ *
+ * Keep this list and the literal in sync by hand; the fixtures assert both.
+ */
 const BLOCK_TAGS = ['p', 'ul', 'ol', 'table', 'blockquote', 'figure', 'h2', 'h3', 'h4', 'div'];
-const BLOCK_RE = new RegExp(`<(${BLOCK_TAGS.join('|')})\\b[^>]*>`, 'i');
+const BLOCK_RE = /<(p|ul|ol|table|blockquote|figure|h2|h3|h4|div)\b[^>]*>/i;
 
 /**
  * Split HTML into top-level blocks, tracking nesting so a closing tag inside a
@@ -48,7 +61,10 @@ export function splitTopLevelBlocks(html: string): string[] {
       continue;
     }
     const tag = open[1].toLowerCase();
-    const scan = new RegExp(`<${tag}\\b[^>]*>|</${tag}\\s*>`, 'gi');
+    // Plain concatenation, not a template literal: `tag` is a runtime value so
+    // this one cannot be constant-folded today, but the escapes are kept in
+    // single-quoted fragments so it stays immune if that ever changes.
+    const scan = new RegExp('<' + tag + '\\b[^>]*>|</' + tag + '\\s*>', 'gi');
     scan.lastIndex = 0;
     let depth = 0;
     let end = -1;

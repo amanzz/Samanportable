@@ -147,6 +147,9 @@ const C08_PRODUCT_SLUGS = new Set([
   'luxury-container-houses',
   'shipping-container-homes',
   'affordable-container-homes',
+  // E3 ruling 1 (Fable 5, 05 Aug): page six follows the same six-per-size slot
+  // rule as its siblings — five in the gallery, row six reserved for Section H.
+  'prefabricated-container-house',
 ]);
 
 const rewriteC04VisiblePunctuation = (
