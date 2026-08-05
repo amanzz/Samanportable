@@ -75,3 +75,14 @@ Container House. Container-form living unit, six published sizes.
 ## Page title, cabin-cost-calculator
 
 Cabin Cost Calculator | Instant Price Estimate | SAMAN Portable
+
+## Addendum · 05 Aug 2026 · Step 3 Frame and wall
+
+Approved by Fable 5 on 05 Aug 2026, when Step 3 returned as a step. The earlier
+build reused the construction disclosure's heading and body for this step; that
+reuse was refused and these two strings replace it. The separate disclosure
+block below the grid stays removed.
+
+Heading: Frame and wall
+
+Help: Choose what the cabin is built from. The frame carries the load, the wall closes it, and both move the price.

@@ -87,6 +87,35 @@ export const INTERIOR_STANDARD = {
   flooring: 'FLR-06',
 } as const;
 
+/**
+ * The three standards as a named, traceable set — each with the authority that
+ * fixes it, so the baseline can be audited without reading this file's prose.
+ *
+ * A choice cheaper than the standard produces a NEGATIVE line and reduces the
+ * total. It is not clamped at zero: specifying down from the standard is a
+ * real saving and the estimate says so.
+ */
+export const INTERIOR_STANDARD_SET = [
+  {
+    surface: 'Internal wall',
+    code: 'INT-01',
+    option: 'Pre-laminated MDF',
+    authority: 'Price-input workbook, tab 1 row 5, note "Marked as the current standard"',
+  },
+  {
+    surface: 'Flooring',
+    code: 'FLR-06',
+    option: 'Vinyl sheet',
+    authority: 'Price-input workbook, tab 1 row 22, note "Standard on the cabin spec"',
+  },
+  {
+    surface: 'Ceiling',
+    code: 'CLG-07',
+    option: 'Pre-laminated MDF',
+    authority: 'Technical workbook sheet 01 row 28, "8 mm pre-laminated MDF ceiling". The price-input workbook marks no ceiling standard.',
+  },
+] as const;
+
 const interiorGroup = (name: string) =>
   usable('interior', (r) => (r.group || '').toLowerCase() === name);
 

@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const scripts = [
+  // Runs first: a white screen scores perfectly on every other gate.
+  'verify-render-health.mjs',
   'verify-route-price-identity.mjs',
   'report-locked-product-names.mjs',
   'verify-copy-pack.mjs',

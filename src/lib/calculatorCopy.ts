@@ -15,10 +15,10 @@
 export const STEP_COPY = [
   { key: 'product', heading: 'Choose your product', help: 'Pick the building closest to what you need. You can change it at any point.' },
   { key: 'size', heading: 'Set the size', help: 'Area and price update as you type. Sizes we publish use our listed price; any other size is estimated from the same rate.' },
-  // Heading and help are CONSTRUCTION_DISCLOSURE's approved strings, reused
-  // rather than newly written. The disclosure block that used to sit below
-  // the grid is removed, so nothing is duplicated.
-  { key: 'structure', heading: 'How your cabin is built', help: 'Every cabin is newly fabricated on an MS structural frame with insulated wall and roof panels. It is not a converted used shipping container. Frame sections, panel thickness and cladding are confirmed on the drawing at quotation.' },
+  // Approved 05 Aug for this step specifically. The earlier build reused
+  // CONSTRUCTION_DISCLOSURE's strings; that reuse was refused, and the
+  // duplicate disclosure block stays removed.
+  { key: 'structure', heading: 'Frame and wall', help: 'Choose what the cabin is built from. The frame carries the load, the wall closes it, and both move the price.' },
   { key: 'interior', heading: 'Choose the interior', help: 'Standard finishes are included. Upgrades and savings are shown per square foot.' },
   { key: 'openings', heading: 'Add doors and windows', help: 'Set the type, the count and where each one sits. The plan updates as you choose.' },
   { key: 'electrical', heading: 'Add electrical fittings', help: 'Tick what you need. Quantities are suggested from the floor area and you can change every one.' },
