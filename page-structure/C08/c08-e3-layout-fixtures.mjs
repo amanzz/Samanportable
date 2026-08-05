@@ -3,7 +3,7 @@
  * green gate means something. A gate that has only ever seen passing input is
  * not evidence.
  */
-import { splitTopLevelBlocks, imageSlots, injectInfoImages, infoImageHtml }
+import { splitTopLevelBlocks, imageSlots, injectInfoImages, infoImageHtml, isCopyBlock, imageCapacity }
   from './infoImageLayout.mjs';
 import { readFileSync } from 'node:fs';
 
@@ -17,6 +17,7 @@ const check = (name, actual, expected) => {
 
 const img = (n) => ({ src: `/i/${n}.webp`, alt: '', width: 1200, height: 675 });
 const paras = (n) => Array.from({ length: n }, (_, i) => `<p>copy ${i}</p>`).join('');
+const paraBlocks = (n) => Array.from({ length: n }, (_, i) => `<p>copy ${i}</p>`);
 
 /* ---- adjacency: the rule the ticket names explicitly -------------------- */
 // KNOWN-FAILING SHAPE: 4 images into 3 blocks. A naive even spread returns
@@ -25,19 +26,19 @@ const tight = injectInfoImages(paras(3), [img(1), img(2), img(3), img(4)]);
 check('4 images into 3 blocks: never emits two adjacent <img>',
   /<\/img>?\s*<img|\/><img/.test(tight), false);
 check('4 images into 3 blocks: places fewer rather than bunching',
-  (tight.match(/<img/g) || []).length, 1);
+  (tight.match(/<img/g) || []).length, 2);
 
 // KNOWN-FAILING SHAPE: enough blocks, but a spread that would trail the panel.
 const trailing = injectInfoImages(paras(6), [img(1), img(2), img(3), img(4)]);
 check('panel never ends on an image', /<img[^>]*>\s*$/.test(trailing), false);
 
 /* ---- spacing maths ------------------------------------------------------ */
-check('9 blocks / 4 images -> evenly spread, gaps >= 1', imageSlots(9, 4), [2, 4, 5, 7]);
-check('3 blocks / 4 images -> only 1 fits', imageSlots(3, 4), [1]);
-check('4 blocks / 4 images -> only 2 fit', imageSlots(4, 4), [1, 2]);
-check('no blocks -> no slots', imageSlots(0, 4), []);
-check('no images -> no slots', imageSlots(9, 0), []);
-const wide = imageSlots(40, 4);
+check('9 paragraphs / 4 images -> evenly spread', imageSlots(paraBlocks(9), 4), [1, 3, 5, 7]);
+check('3 paragraphs / 4 images -> only the 2 legal slots', imageSlots(paraBlocks(3), 4), [0, 1]);
+check('4 paragraphs / 4 images -> only the 3 legal slots', imageSlots(paraBlocks(4), 4), [0, 1, 2]);
+check('no blocks -> no slots', imageSlots([], 4), []);
+check('no images -> no slots', imageSlots(paraBlocks(9), 0), []);
+const wide = imageSlots(paraBlocks(40), 4);
 check('40 blocks / 4 images -> strictly increasing',
   wide.every((s, i) => i === 0 || s > wide[i - 1]), true);
 
@@ -88,6 +89,47 @@ check('MINIFIED module still splits blocks (the production-only failure)',
   min.splitTopLevelBlocks('<p>a</p><p>b</p>').length, 2);
 check('MINIFIED module still injects all four images',
   (min.injectInfoImages(paras(9), [img(1), img(2), img(3), img(4)]).match(/data-c08-info-image/g) || []).length, 4);
+
+
+/* ---- E4 item 2: the HARD adjacency rule --------------------------------- */
+// KNOWN-FAILING SHAPE, and the one that actually shipped: the approved copy
+// already contains its own images. Page six carries four inside WordPress
+// caption wrappers. A "has text" test calls such a block copy and places an
+// injected image straight against it — one adjacent pair, no paragraph between.
+const wpCaption = '<div class="wp-caption"><img src="/wp.webp" alt="x" /><p>caption</p></div>';
+check('a WordPress caption block is NOT copy', isCopyBlock(wpCaption), false);
+check('a plain paragraph IS copy', isCopyBlock('<p>real copy</p>'), true);
+check('an empty paragraph is NOT copy', isCopyBlock('<p>  </p>'), false);
+check('a bare image block is NOT copy', isCopyBlock('<img src="/a.webp" alt="" />'), false);
+
+const mixed = ['<p>a</p>', wpCaption, '<p>b</p>', '<p>c</p>', '<p>d</p>'];
+check('no slot touches either side of an existing image',
+  imageSlots(mixed, 4), [2, 3]);
+const injected = injectInfoImages(mixed.join(''), [img(1), img(2), img(3), img(4)]);
+check('mixed copy: places only what the rule allows',
+  (injected.match(/data-c08-info-image/g) || []).length, 2);
+check('mixed copy: no injected image lands against the existing one',
+  /wp\.webp[\s\S]{0,40}data-c08-info-image|data-c08-info-image[^>]*>\s*<div class="wp-caption"/.test(injected), false);
+
+// Every injected image must have a paragraph immediately before AND after.
+// Re-split the OUTPUT and walk it: an injected <img> is not a block tag, so it
+// comes back as a block of its own, and both neighbours must be copy.
+const around = (html) => {
+  const blocks = splitTopLevelBlocks(html);
+  return blocks.every((b, i) => {
+    if (!/data-c08-info-image/.test(b)) return true;
+    const before = blocks[i - 1];
+    const after = blocks[i + 1];
+    return before !== undefined && isCopyBlock(before)
+      && after !== undefined && isCopyBlock(after);
+  });
+};
+check('every injected image has copy immediately before and after (9 paras)',
+  around(injectInfoImages(paras(9), [img(1), img(2), img(3), img(4)])), true);
+check('every injected image has copy immediately before and after (mixed)',
+  around(injected), true);
+check('imageCapacity reports what the copy can legally hold',
+  [imageCapacity(paraBlocks(3)), imageCapacity(paraBlocks(9)), imageCapacity(mixed)], [2, 8, 2]);
 
 console.log(failures ? `${failures} FIXTURE(S) FAILED` : 'all fixtures pass');
 process.exit(failures ? 1 : 0);

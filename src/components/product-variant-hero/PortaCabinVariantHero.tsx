@@ -152,6 +152,16 @@ const C08_PRODUCT_SLUGS = new Set([
   'prefabricated-container-house',
 ]);
 
+/** Gallery track classes, written out in full so Tailwind's scanner emits them. */
+const GALLERY_TRACK_CLASS: Record<number, string> = {
+  1: 'grid grid-cols-1 gap-2',
+  2: 'grid grid-cols-2 gap-2',
+  3: 'grid grid-cols-3 gap-2',
+  4: 'grid grid-cols-4 gap-2',
+  5: 'grid grid-cols-5 gap-2',
+  6: 'grid grid-cols-6 gap-2',
+};
+
 const rewriteC04VisiblePunctuation = (
   value: string | undefined,
   productSlug: string,
@@ -511,6 +521,15 @@ export function PortaCabinVariantHero({
   };
   const activeVariantImages = imagesForVariant(heroActive);
   const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
+  // Columns in the thumbnail strip: the product's LARGEST thumb count across all
+  // its sizes, plus the video facade thumb when the product has one. Taking the
+  // maximum (not the active size's count) keeps the track constant while the size
+  // chips are used, so the strip never reflows; taking the real count rather than
+  // a fixed 6 means there is never an empty reserved cell.
+  const thumbTrackCount = Math.max(
+    ...data.variants.map((v) => imagesForVariant(v).length),
+    0
+  ) + (video ? 1 : 0);
 
   // Hero chips: change ONLY the hero; write #size-{WxL} (replaceState — no
   // navigation, no scroll, no history entry).
@@ -623,15 +642,17 @@ export function PortaCabinVariantHero({
           )}
         </div>
 
-        {/* T24.1-V — 6 columns: the 5 photo thumbs plus the video facade thumb.
-            Six-up keeps the row a single line, so gallery height, paint order and
-            everything below it are byte-identical in flow to the 5-up build (no
-            reflow, no CLS); only the per-thumb box shrinks.
-            T25 — the video thumb is opt-in, so the track count follows the real
-            number of thumbs: 6 with the video, 5 without. Full class names (not an
-            interpolated `grid-cols-${n}`) so Tailwind's scanner emits both. */}
+        {/* The track sizes to its CONTENTS — never a reserved slot.
+            E4 item 1: C-08 was pinned to 6 columns while its gallery is 5 (row six
+            of the manifest is the Section H image, not a thumbnail), which left a
+            visible empty cell after the fifth thumb.
+            The count is the product's MAXIMUM thumb count, not the active size's,
+            so switching size chips can never change the column count and reflow
+            the strip — the row keeps a constant height and CLS stays 0.
+            Full class names (never an interpolated `grid-cols-${n}`) so Tailwind's
+            scanner emits them. */}
         {heroImages && (
-          <div className={video || isC04Product || isC08Product ? 'grid grid-cols-6 gap-2' : 'grid grid-cols-5 gap-2'}>
+          <div className={GALLERY_TRACK_CLASS[thumbTrackCount] || 'grid grid-cols-5 gap-2'}>
             {heroImages.map((img, i) => (
               <button
                 key={img.src}

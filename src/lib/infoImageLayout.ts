@@ -87,39 +87,71 @@ export function splitTopLevelBlocks(html: string): string[] {
 }
 
 /**
- * Slots (block indices to insert AFTER) for `count` images across `blockCount`
- * blocks, spread evenly.
+ * Is this block a paragraph of COPY, as opposed to a picture?
  *
- * Two constraints, both structural:
- *   · consecutive slots differ by at least 1, so at least one block of copy
- *     always sits between two images — images are never adjacent;
- *   · the last usable slot is blockCount - 2, so copy always follows the final
- *     image and the panel never ends on a picture.
- *
- * Returns FEWER slots than requested when the copy cannot hold them all rather
- * than bunching images up. Spacing wins over count: a route whose body copy is
- * too short to space its images reports a shortfall instead of breaking the
- * adjacency rule.
+ * A block counts as copy only if it carries visible text AND contains no image.
+ * The distinction matters because the approved description on some routes already
+ * contains its own images — page six ships four inside a WordPress caption
+ * wrapper (`<div class="wp-caption"><img>…<p>caption</p></div>`). Such a block
+ * has text in it, so a naive "has text" test would call it copy and happily place
+ * an injected image directly against it, producing exactly the adjacent pair the
+ * E4 gate forbids.
  */
-export function imageSlots(blockCount: number, count: number): number[] {
-  if (count <= 0 || blockCount <= 0) return [];
-  const lastUsable = blockCount - 2;
-  const slots: number[] = [];
-  let previous = -1;
-  for (let i = 0; i < count; i += 1) {
-    let slot = Math.round(((i + 1) * blockCount) / (count + 1));
-    slot = Math.max(slot, previous + 1);
-    slot = Math.min(slot, lastUsable);
-    if (slot <= previous || slot < 0) return slots;
-    slots.push(slot);
-    previous = slot;
-  }
-  return slots;
+export function isCopyBlock(block: string): boolean {
+  if (/<img\b/i.test(block)) return false;
+  const text = block.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').trim();
+  return text.length > 0;
 }
 
-/** Blocks of copy a panel needs before `count` images can be spaced through it. */
-export function blocksRequiredFor(count: number): number {
-  return count <= 0 ? 0 : count + 2;
+/**
+ * Slots (block indices to insert AFTER) for `count` images across `blocks`.
+ *
+ * THE HARD RULE (E4 item 2): every injected image must have a full paragraph of
+ * copy immediately before AND immediately after it. A slot `i` is therefore legal
+ * only when `blocks[i]` and `blocks[i + 1]` are both copy blocks. That single
+ * condition delivers all of it:
+ *   · copy immediately before  — blocks[i];
+ *   · copy immediately after   — blocks[i + 1];
+ *   · never two images adjacent — between images at slots i < j lies at least
+ *     blocks[i + 1], which is copy by the same condition;
+ *   · never against an image already in the approved copy — those blocks are not
+ *     copy blocks, so neither side of one is ever a legal slot;
+ *   · never trailing the panel  — slot i requires blocks[i + 1] to exist.
+ *
+ * Returns FEWER slots than requested when the copy cannot hold them. Spacing wins
+ * over count, always: a route short of paragraphs renders fewer images and the
+ * shortfall is reported rather than hidden by bunching images together.
+ */
+export function imageSlots(blocks: string[], count: number): number[] {
+  if (count <= 0 || !blocks.length) return [];
+  const copy = blocks.map(isCopyBlock);
+  const legal: number[] = [];
+  for (let i = 0; i < blocks.length - 1; i += 1) {
+    if (copy[i] && copy[i + 1]) legal.push(i);
+  }
+  if (!legal.length) return [];
+  if (count >= legal.length) return legal;
+
+  // Spread the chosen slots evenly through the legal ones. Midpoint sampling
+  // (j + 0.5) divides the legal range into `count` equal bands and takes the
+  // centre of each, which spaces the images evenly and leaves balanced copy at
+  // both ends. Rounding the band EDGES instead bunches them toward the start.
+  const chosen: number[] = [];
+  let previous = -1;
+  for (let j = 0; j < count; j += 1) {
+    let pick = Math.floor(((j + 0.5) * legal.length) / count);
+    pick = Math.max(pick, previous + 1);
+    pick = Math.min(pick, legal.length - 1);
+    if (pick <= previous) break;
+    chosen.push(legal[pick]);
+    previous = pick;
+  }
+  return chosen;
+}
+
+/** How many images a panel's blocks can legally hold under the adjacency rule. */
+export function imageCapacity(blocks: string[]): number {
+  return imageSlots(blocks, Number.MAX_SAFE_INTEGER).length;
 }
 
 const escapeAttr = (value: string): string =>
@@ -144,7 +176,7 @@ export function injectInfoImages(html: string, images: InfoImage[] | undefined):
   if (!html || !images || !images.length) return html;
   const blocks = splitTopLevelBlocks(html);
   if (blocks.length < 2) return html;
-  const slots = imageSlots(blocks.length, images.length);
+  const slots = imageSlots(blocks, images.length);
   if (!slots.length) return html;
 
   const bySlot = new Map<number, string>();
