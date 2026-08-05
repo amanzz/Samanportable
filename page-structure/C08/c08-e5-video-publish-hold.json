@@ -1,0 +1,27 @@
+{
+ "ticket": "C08-E5 item 4",
+ "date": "2026-08-05",
+ "video": {
+  "id": "M9MsHw2_CCc",
+  "page": "/product/container-houses",
+  "url": "https://youtu.be/M9MsHw2_CCc"
+ },
+ "status": "BUILT — PUBLISH HELD",
+ "reason": "L18 requires an on-page transcript with every video. None exists for this video and SAMAN has not ruled. No transcript was generated, paraphrased, summarised or auto-captioned.",
+ "whatIsBuilt": [
+  "Facade only: local WebP poster plus a CSS play badge. No iframe in the initial DOM.",
+  "youtube-nocookie.com embed, injected on click only.",
+  "Poster served same-origin: /images/container-house-product-video-poster.webp, 1280x720, 113.4 KiB, the video own frame unaltered.",
+  "Preconnect fires on pointer-enter and focus only, never on load.",
+  "VideoObject emitted on the hub only; zero on the five subpages.",
+  "Every VideoObject value read from YouTube; see c08-e4-youtube-metadata-extract.json.",
+  "schemaDescription is the COMPLETE YouTube description field, byte-identical (E5 item 5)."
+ ],
+ "whatIsMissing": [
+  "transcriptHeading",
+  "transcript"
+ ],
+ "toRelease": "Add transcriptHeading and transcript to the container-houses preset in src/components/product-variant-hero/presets.ts. Data-only; no code change.",
+ "visibleOnPreview": true,
+ "deployBlocked": true
+}

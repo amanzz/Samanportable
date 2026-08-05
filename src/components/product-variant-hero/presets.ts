@@ -107,12 +107,11 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
   // none is estimated. Provenance, field by field:
   //   title      meta[name=title] / meta[property=og:title], and the oEmbed
   //              endpoint's `title` — all three agree.
-  //   description ytInitialPlayerResponse.videoDetails.shortDescription — its
-  //              FIRST PARAGRAPH, copied verbatim, not a word changed and nothing
-  //              paraphrased. The rest of that field is chapter timestamps,
-  //              contact lines, two URLs and hashtags, which do not belong in a
-  //              schema description. Taking a contiguous unedited span is still
-  //              extraction; rewriting one would not be. Flagged for ruling.
+  //   description ytInitialPlayerResponse.videoDetails.shortDescription — the
+  //              COMPLETE field, byte-identical, chapter timestamps, contact
+  //              lines, URLs, hashtags and all (E5 item 5). Copied from the
+  //              extract in page-structure/C08/c08-e4-youtube-metadata-extract.json
+  //              rather than retyped, so no transcription error is possible.
   //   uploadDate meta[itemprop=datePublished], which matches
   //              microformat.playerMicroformatRenderer.uploadDate exactly.
   //   duration   meta[itemprop=duration] — YouTube's own ISO 8601 value. Note
@@ -129,7 +128,7 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
       posterAlt: 'Container House in India | Full Home Tour | SAMAN Portable',
       title: 'Container House in India | Full Home Tour | SAMAN Portable',
       schemaDescription:
-        'Tour a modern container house in India by SAMAN Portable. See the landscaped exterior, bright living room, dining area, open kitchen, bedroom, bathroom, utility space and a customizable double-storey concept with a rooftop terrace.',
+        'Tour a modern container house in India by SAMAN Portable. See the landscaped exterior, bright living room, dining area, open kitchen, bedroom, bathroom, utility space and a customizable double-storey concept with a rooftop terrace.\n\nThis residential container house design is planned for buyers considering a farmhouse, weekend home, holiday stay or compact family home. Large windows bring in natural light, while the open living, dining and kitchen layout makes the interior feel welcoming and practical. The video also shows built-in storage, a comfortable bedroom and a thoughtfully planned bathroom and utility area.\n\nWhat you will see in this container house tour:\n• Red corrugated-steel exterior with large glazed openings\n• Landscaped courtyard and outdoor family space\n• Open living room, dining area and modern kitchen\n• Practical kitchen storage and everyday work space\n• Bedroom, bathroom and utility-area planning\n• Custom double-storey and rooftop-terrace concept\n• Factory-built approach for a faster, controlled build process\n\nSAMAN Portable manufactures container houses with layouts, insulation, electrical, plumbing and finish options selected for the buyer\'s project. The 21-day timeline mentioned in the video is the featured concept timeline; actual price, materials, site work, transport and delivery schedule are confirmed after the size, location and specifications are finalized.\n\nExplore container house designs, sizes and build options:\nhttps://www.samanportable.com/product/container-houses\n\nRequest a quotation:\nSouth / Bengaluru: +91 88616 22859 | sales@samanportable.com\nNorth / Greater Noida: +91 87960 39938 | ncr@samanportable.com\nWebsite: https://www.samanportable.com/product/container-houses\n\nCHAPTERS\n00:00 Welcome to SAMAN Portable\n00:04 Container house exterior and featured timeline\n00:10 Farmhouse, weekend-home and holiday-stay use\n00:20 Living, kitchen and bedroom layout\n00:30 Natural light and open interior\n00:40 Courtyard and landscaped garden\n00:50 Living room, dining area and open kitchen\n01:00 Modular kitchen and practical storage\n01:12 Double-storey and rooftop-terrace option\n01:20 Bedroom and storage\n01:30 Bathroom and utility area\n01:40 Factory-built container house\n01:50 Contact SAMAN Portable\n\n#ContainerHouse #ContainerHome #ContainerHouseIndia #ContainerHouseManufacturer #ModernContainerHome #SAMANPortable',
       schemaThumbnailUrl: 'https://i.ytimg.com/vi/M9MsHw2_CCc/maxresdefault.jpg',
       uploadDate: '2026-08-04T01:12:03-07:00',
       duration: 'PT1M56S',
