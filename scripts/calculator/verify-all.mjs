@@ -6,6 +6,10 @@ const directory = path.dirname(fileURLToPath(import.meta.url));
 const scripts = [
   // Runs first: a white screen scores perfectly on every other gate.
   'verify-render-health.mjs',
+  // Spec §7. Ranks above every other gate: sixteen of them passed on a
+  // calculator where nothing priced, because not one of them clicked anything.
+  'verify-functional.mjs',
+  'verify-functional-fixture.mjs',
   'verify-route-price-identity.mjs',
   'report-locked-product-names.mjs',
   'verify-copy-pack.mjs',
@@ -22,6 +26,7 @@ const scripts = [
   'verify-ux-static.mjs',
   // Browser gates. Both need PLAYWRIGHT_ROOT and a running preview.
   'verify-route-parity.mjs',
+  'verify-drawing.mjs',
   'verify-step-density.mjs',
 ];
 let failed = false;

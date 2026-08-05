@@ -14,6 +14,51 @@
   const value = (form, name, fallback = '') => chosen(form, name)?.value ?? fallback;
   const dataNumber = (field, key, fallback = 0) => num(source(field)?.dataset[key], fallback);
   const setText = (root, selector, text) => root.querySelectorAll(selector).forEach((node) => { node.textContent = text; });
+  /** A control's own visible name, used when it declares no line label. */
+  const labelOf = (field) => {
+    if (!field) return '';
+    if (field.tagName === 'OPTION') return field.textContent.trim();
+    const own = field.closest('label');
+    return (own?.querySelector('strong') || own?.querySelector('.choice-title'))?.textContent?.trim() || '';
+  };
+  const chosenProductField = (form) => chosen(form, 'productId');
+  const productLabelOf = (field) => source(field)?.dataset?.label || labelOf(field) || 'Cabin';
+
+  /**
+   * Repaint the itemised estimate.
+   *
+   * The panel used to be server-rendered once and never touched: only the two
+   * total figures moved, so a buyer could add four fittings and watch the list
+   * below them stay exactly as it was at page load. The subtotal and GST labels
+   * are read from the markup the server produced, never authored here.
+   */
+  const LINE_LABELS = new WeakMap();
+  function renderEstimateLines(root, lines, transportNote, total, gst, quoteOnly) {
+    const list = root.querySelector('[data-estimate-lines]');
+    if (!list) return;
+    if (!LINE_LABELS.has(list)) {
+      const tails = Array.from(list.children).slice(-2).map((row) => row.querySelector('dt')?.textContent || '');
+      LINE_LABELS.set(list, { subtotal: tails[0] || '', gst: tails[1] || '' });
+    }
+    const { subtotal, gst: gstLabel } = LINE_LABELS.get(list);
+    const money = (amount) => (amount === null ? 'in quotation' : INR.format(amount));
+    const row = (label, text, marker) => {
+      const div = document.createElement('div');
+      if (marker) div.setAttribute('data-estimate-line', '');
+      const dt = document.createElement('dt');
+      dt.textContent = label;
+      const dd = document.createElement('dd');
+      dd.textContent = text;
+      div.append(dt, dd);
+      return div;
+    };
+    const next = document.createDocumentFragment();
+    lines.forEach((line) => next.append(row(line.label, money(line.amount), true)));
+    if (transportNote) next.append(row('Transport', transportNote, false));
+    next.append(row(subtotal, quoteOnly ? 'in quotation' : INR.format(total), false));
+    next.append(row(gstLabel, quoteOnly ? 'in quotation' : INR.format(gst), false));
+    list.replaceChildren(next);
+  }
   const track = (event, params = {}) => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event, ...params });
@@ -130,8 +175,8 @@
     const position = available.indexOf(target) + 1;
     const totalSteps = available.length;
     setText(root, '[data-step-current]', String(position));
-    const activeName = activeSection?.querySelector('h2')?.textContent || '';
-    setText(root, '[data-step-name]', activeName.replace(/^Step \d+ of \d+:\s*/, ''));
+    // The counter reads "Step 3 of 9" and nothing else. It used to repeat the
+    // step name, word for word, one line above the step's own heading.
     const progress = root.querySelector('[data-step-progress]');
     if (progress) {
       progress.setAttribute('aria-valuenow', String(position));
@@ -198,27 +243,229 @@
     place('window');
   }
 
-  function updatePlan(root, length, width, area, planView, form) {
-    root.querySelectorAll('[data-floor-plan]').forEach((svg) => {
-      svg.querySelectorAll('[data-plan-view]').forEach((viewNode) => {
-        viewNode.hidden = viewNode.dataset.planView !== planView;
+  /* ===================== EVENT 3 · the drawing engine =====================
+   *
+   * Three views off one geometry, redrawn from scratch on every change. The
+   * previous version moved one rectangle and left the four elevations as empty
+   * grey boxes, which is what "the elevations are broken" meant: they had never
+   * been drawn at all.
+   *
+   * The numbers here are the same ones drawGeometry() computes on the server,
+   * and verify-drawing.mjs compares a browser redraw against a fresh server
+   * render of the same configuration - so this cannot quietly drift the way the
+   * pricing maths did.
+   */
+  const VIEW_W = 420;
+  const VIEW_H = 260;
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+  const WALL_ORDER = ['Front', 'Rear', 'Left', 'Right'];
+
+  const feetInches = (v) => {
+    const whole = Math.floor(v);
+    const inches = Math.round((v - whole) * 12);
+    return inches === 12 ? `${whole + 1}' 0"` : `${whole}' ${inches}"`;
+  };
+
+  const svgEl = (name, attrs, text) => {
+    const node = document.createElementNS(SVG_NS, name);
+    Object.keys(attrs || {}).forEach((key) => node.setAttribute(key, String(attrs[key])));
+    if (text !== undefined) node.textContent = String(text);
+    return node;
+  };
+
+  /** Read the whole drawing's inputs out of the form, once. */
+  function readGeometry(form) {
+    const length = num(value(form, 'length', 20), 20);
+    const width = num(value(form, 'width', 10), 10);
+    const height = num(value(form, 'height', 8.5), 8.5);
+    const rooms = Math.max(1, num(value(form, 'rooms', 1), 1));
+    const supplied = Array.from(form.querySelectorAll('[data-room-length]'))
+      .slice(0, rooms).map((el) => num(el.value, 0)).filter((n) => n > 0);
+    const equal = length / rooms;
+    const lengths = supplied.length === rooms ? supplied : Array.from({ length: rooms }, () => equal);
+    const sum = lengths.reduce((a, b) => a + b, 0) || length;
+    const roomLengths = lengths.map((n) => (n / sum) * length);
+    const openings = (kind) => Array.from(form.querySelectorAll(`[name^="${kind}s["][name$="[wall]"]`))
+      .filter(enabled).map((wallField, index) => {
+        const wall = wallField.value || 'Front';
+        const end = value(form, `${kind}s[${index}][end]`, 'Left');
+        const distance = num(value(form, `${kind}s[${index}][distance]`, 0), 0);
+        const span = wall === 'Front' || wall === 'Rear' ? length : width;
+        const along = end === 'Left' ? distance : Math.max(0, span - distance);
+        return {
+          index,
+          code: `${kind === 'door' ? 'D' : 'W'}${index + 1}`,
+          wall,
+          position: span > 0 ? (along / span) * 100 : 0,
+          width: num(value(form, `${kind}s[${index}][width]`, 3), 3),
+          height: num(value(form, `${kind}s[${index}][height]`, 3), 3),
+        };
       });
-      const shell = svg.querySelector('[data-plan-view="plan"] .shell');
-      if (!shell) return;
-      const scale = Math.min(260 / Math.max(6, length), 130 / Math.max(6, width));
-      const planWidth = length * scale;
-      const planHeight = width * scale;
-      shell.setAttribute('x', String((320 - planWidth) / 2));
-      shell.setAttribute('y', String((190 - planHeight) / 2));
-      shell.setAttribute('width', String(planWidth));
-      shell.setAttribute('height', String(planHeight));
-      svg.setAttribute('aria-label', `${length} by ${width} foot cabin plan, ${area} square feet`);
-      const dimensions = svg.querySelector('[data-plan-dimensions]');
-      if (dimensions) dimensions.textContent = `${length} × ${width} ft`;
-      if (form) {
-        repositionOpenings(svg, form, (320 - planWidth) / 2, (190 - planHeight) / 2, planWidth, planHeight);
-      }
+    return {
+      length,
+      width,
+      height,
+      rooms,
+      roomLengths,
+      carpetAreaSqft: Math.max(0, length * width - (rooms - 1) * 0.25 * width),
+      doors: openings('door'),
+      windows: openings('window'),
+      roof: value(form, 'roof', 'Sloped'),
+    };
+  }
+
+  const planFrame = (g, pad) => {
+    const scale = Math.min((VIEW_W - pad * 2) / Math.max(6, g.length), (VIEW_H - pad * 2) / Math.max(6, g.width));
+    const w = g.length * scale;
+    const h = g.width * scale;
+    return { scale, w, h, x: (VIEW_W - w) / 2, y: (VIEW_H - h) / 2 };
+  };
+  const wallPointAt = (f, wall, position) => {
+    const r = Math.min(1, Math.max(0, position / 100));
+    if (wall === 'Front') return [f.x + f.w * r, f.y + f.h];
+    if (wall === 'Rear') return [f.x + f.w * r, f.y];
+    if (wall === 'Left') return [f.x, f.y + f.h * r];
+    return [f.x + f.w, f.y + f.h * r];
+  };
+
+  function drawPlanView(group, g) {
+    const f = planFrame(g, 46);
+    const next = document.createDocumentFragment();
+    next.append(svgEl('rect', { x: f.x, y: f.y, width: f.w, height: f.h, class: 'dw-shell' }));
+    let run = 0;
+    g.roomLengths.slice(0, -1).forEach((roomLength) => {
+      run += roomLength;
+      const at = f.x + (run / g.length) * f.w;
+      next.append(svgEl('line', { x1: at, y1: f.y, x2: at, y2: f.y + f.h, class: 'dw-partition' }));
     });
+    g.doors.concat(g.windows).forEach((item, i) => {
+      const isDoor = i < g.doors.length;
+      const [cx, cy] = wallPointAt(f, item.wall, item.position);
+      next.append(isDoor
+        ? svgEl('circle', { cx, cy, r: 5, class: 'dw-door' })
+        : svgEl('rect', { x: cx - 6, y: cy - 3, width: 12, height: 6, class: 'dw-window' }));
+      const lx = item.wall === 'Left' ? cx - 12 : item.wall === 'Right' ? cx + 12 : cx;
+      const ly = item.wall === 'Rear' ? cy - 8 : item.wall === 'Front' ? cy + 14 : cy - 8;
+      next.append(svgEl('text', { x: lx, y: ly, class: 'dw-code' }, item.code));
+    });
+    const dimY = f.y + f.h + 24;
+    const dimX = f.x - 26;
+    next.append(svgEl('line', { x1: f.x, y1: dimY, x2: f.x + f.w, y2: dimY, class: 'dw-dim' }));
+    next.append(svgEl('text', { x: f.x + f.w / 2, y: dimY - 5, class: 'dw-dim-text', 'data-dim-length': '' }, feetInches(g.length)));
+    next.append(svgEl('line', { x1: dimX, y1: f.y, x2: dimX, y2: f.y + f.h, class: 'dw-dim' }));
+    next.append(svgEl('text', { x: dimX - 4, y: f.y + f.h / 2, class: 'dw-dim-text dw-dim-vertical', 'data-dim-width': '' }, feetInches(g.width)));
+    next.append(svgEl('text', { x: VIEW_W / 2, y: 18, class: 'dw-title' }, '2D Plan'));
+    group.replaceChildren(next);
+  }
+
+  function drawFloorView(group, g) {
+    const f = planFrame(g, 40);
+    const next = document.createDocumentFragment();
+    next.append(svgEl('rect', { x: f.x, y: f.y, width: f.w, height: f.h, class: 'dw-shell' }));
+    let run = 0;
+    g.roomLengths.forEach((roomLength, index) => {
+      const bx = f.x + (run / g.length) * f.w;
+      const bw = (roomLength / g.length) * f.w;
+      run += roomLength;
+      const room = svgEl('g', { class: 'dw-room', 'data-room': index + 1 });
+      room.append(svgEl('rect', { x: bx + 2, y: f.y + 2, width: Math.max(0, bw - 4), height: f.h - 4, class: 'dw-room-fill' }));
+      room.append(svgEl('text', { x: bx + bw / 2, y: f.y + f.h / 2 - 4, class: 'dw-room-code' }, `R${index + 1}`));
+      room.append(svgEl('text', { x: bx + bw / 2, y: f.y + f.h / 2 + 10, class: 'dw-room-size' },
+        `${feetInches(roomLength)} × ${feetInches(g.width)}`));
+      next.append(room);
+    });
+    next.append(svgEl('text', { x: VIEW_W / 2, y: 18, class: 'dw-title' }, 'Floor Plan'));
+    group.replaceChildren(next);
+  }
+
+  function drawElevationsView(group, g) {
+    const cellW = 186;
+    const cellH = 100;
+    const next = document.createDocumentFragment();
+    WALL_ORDER.forEach((wall, i) => {
+      const col = i % 2;
+      const row = i < 2 ? 0 : 1;
+      const ox = 18 + col * (cellW + 22);
+      const oy = 30 + row * (cellH + 34);
+      const spanFt = wall === 'Front' || wall === 'Rear' ? g.length : g.width;
+      const scale = Math.min(cellW / Math.max(6, spanFt), cellH / Math.max(6, g.height));
+      const w = spanFt * scale;
+      const h = g.height * scale;
+      const x = ox + (cellW - w) / 2;
+      const y = oy + (cellH - h);
+      const cell = svgEl('g', { class: 'dw-elevation', 'data-elevation': wall });
+      cell.append(svgEl('rect', { x, y, width: w, height: h, class: 'dw-shell' }));
+      cell.append(g.roof === 'Sloped'
+        ? svgEl('polyline', { points: `${x},${y} ${x + w / 2},${y - 10} ${x + w},${y}`, class: 'dw-roof' })
+        : svgEl('line', { x1: x, y1: y - 4, x2: x + w, y2: y - 7, class: 'dw-roof' }));
+      g.doors.filter((d) => d.wall === wall).forEach((d) => {
+        const cx = x + w * (d.position / 100);
+        const dh = Math.min(h * 0.82, 7 * scale);
+        cell.append(svgEl('rect', { x: cx - 1.6 * scale, y: y + h - dh, width: 3.2 * scale, height: dh, class: 'dw-door' }));
+        cell.append(svgEl('text', { x: cx, y: y + h - dh - 3, class: 'dw-code' }, d.code));
+      });
+      g.windows.filter((item) => item.wall === wall).forEach((item) => {
+        const cx = x + w * (item.position / 100);
+        const ww = item.width * scale;
+        const wh = item.height * scale;
+        const wy = y + h - wh - Math.min(h * 0.3, 3 * scale);
+        cell.append(svgEl('rect', { x: cx - ww / 2, y: wy, width: ww, height: wh, class: 'dw-window' }));
+        cell.append(svgEl('text', { x: cx, y: wy - 3, class: 'dw-code' }, item.code));
+      });
+      cell.append(svgEl('text', { x: ox + cellW / 2, y: oy + cellH + 16, class: 'dw-elevation-label' }, `${wall} elevation`));
+      next.append(cell);
+    });
+    next.append(svgEl('text', { x: VIEW_W / 2, y: 18, class: 'dw-title' }, '4 Elevations'));
+    group.replaceChildren(next);
+  }
+
+  /** Keep one length box per room, so changing the room count changes the form. */
+  function syncRoomLengthInputs(root, form, g) {
+    root.querySelectorAll('[data-room-lengths]').forEach((holder) => {
+      const boxes = Array.from(holder.querySelectorAll('[data-room-length]'));
+      if (boxes.length === g.rooms) return;
+      const button = holder.querySelector('[data-action="distribute-rooms"]');
+      holder.querySelectorAll('label').forEach((label) => label.remove());
+      const next = document.createDocumentFragment();
+      for (let i = 0; i < g.rooms; i += 1) {
+        const label = document.createElement('label');
+        label.append(document.createTextNode(`R${i + 1} length in ft`));
+        const input = document.createElement('input');
+        input.type = 'number';
+        input.inputMode = 'decimal';
+        // step="any". An equal split of 20 ft across 6 rooms is 3.33 ft, and a
+        // half-foot step made every such box invalid - which made the whole
+        // form invalid, so the quotation could not be submitted at all.
+        input.min = '0';
+        input.max = '60';
+        input.step = 'any';
+        input.name = `roomLengths[${i}]`;
+        input.dataset.roomLength = String(i);
+        input.value = (g.roomLengths[i] || 0).toFixed(1);
+        label.append(input);
+        next.append(label);
+      }
+      holder.insertBefore(next, button || null);
+    });
+  }
+
+  function updatePlan(root, length, width, area, planView, form) {
+    if (!form) return null;
+    const g = readGeometry(form);
+    syncRoomLengthInputs(root, form, g);
+    root.querySelectorAll('[data-floor-plan]').forEach((svg) => {
+      svg.dataset.view = planView;
+      svg.setAttribute('aria-label',
+        `Cabin drawing, ${length} by ${width} feet, ${area} square feet: 2D plan, floor plan and four elevations`);
+      svg.querySelectorAll('[data-plan-view]').forEach((group) => {
+        group.hidden = group.dataset.planView !== planView;
+        if (group.dataset.planView === 'plan') drawPlanView(group, g);
+        else if (group.dataset.planView === 'floor') drawFloorView(group, g);
+        else drawElevationsView(group, g);
+      });
+    });
+    setText(root, '[data-carpet-area]', `${Math.round(g.carpetAreaSqft).toLocaleString('en-IN')} sq ft`);
+    return g;
   }
 
   function calculate(root, form) {
@@ -241,18 +488,79 @@
     let total = base;
     const wallArea = 2 * (length + width) * height;
 
+    const lines = [];
+    const addLine = (label, amount) => {
+      lines.push({ label, amount });
+      if (amount !== null) total += amount;
+    };
+    lines.push({
+      label: quoteOnly
+        ? `${productLabelOf(chosenProductField(form))} base`
+        : colony
+          ? `${labelOf(colonyVariant)} × ${quantity}`
+          : `Base cabin ${length}×${width} ft${quantity > 1 ? ` × ${quantity}` : ''}`,
+      amount: quoteOnly ? null : base,
+    });
+
     if (!colony && !quoteOnly) {
-      if (height > 8.5) total += Math.round((base / quantity) * num(root.dataset.heightRatePerFoot) * (height - 8.5)) * quantity;
-      total += Math.round(base * dataNumber(chosen(form, 'roof'), 'rate') / 100);
+      if (height > 8.5) {
+        addLine(`Height ${height} ft`,
+          Math.round((base / quantity) * num(root.dataset.heightRatePerFoot) * (height - 8.5)) * quantity);
+      }
       const rooms = Math.max(1, num(value(form, 'rooms', 1), 1));
-      if (rooms > 1) total += Math.round((rooms - 1) * width * 8.5 * num(root.dataset.partitionRate) * quantity);
-      total += Math.round(dataNumber(chosen(form, 'wallFinish'), 'rate') * wallArea * quantity);
-      total += Math.round(dataNumber(chosen(form, 'ceiling'), 'rate') * area * quantity);
-      total += Math.round(dataNumber(chosen(form, 'flooring'), 'rate') * area * quantity);
-      total += Math.round(dataNumber(chosen(form, 'pufThickness'), 'rate') * (wallArea + area) * quantity);
+      if (rooms > 1) {
+        addLine(`${rooms} rooms, ${rooms - 1} partitions`,
+          Math.round((rooms - 1) * width * 8.5 * num(root.dataset.partitionRate) * quantity));
+      }
+
+      /*
+       * Every priced control, priced from what it declares about itself.
+       *
+       * This replaced six hard-coded control names. Those names had drifted
+       * from the renderer - wallFinish, ceiling and flooring no longer existed,
+       * and frame, wallBuild and insulation had never been added - so six
+       * groups of chips selected correctly and were then never priced. Naming
+       * controls here is what made that possible, so the script stops doing it.
+       *
+       * A control is priced if it carries data-rate and data-rate-basis. It is
+       * counted when it is the checked radio, the selected option, or a
+       * quantity above zero. Openings are excluded because a window's rate
+       * multiplies by its own width, height and track, which no basis can
+       * express; that block is directly below and stays bespoke.
+       */
+      const BASIS_AREA = {
+        'per sq ft': area,
+        'per sq ft of wall': wallArea,
+        'per sq ft of wall and roof': wallArea + area,
+        'per sq ft of wall and ceiling': wallArea + area,
+      };
+      Array.from(form.querySelectorAll('[data-rate][data-rate-basis]')).forEach((field) => {
+        if (field.closest('.opening-card')) return;
+        if (!enabled(field)) return;
+        const basis = field.dataset.rateBasis;
+        const rate = num(field.dataset.rate);
+        let count = 0;
+        if (field.tagName === 'OPTION') count = field.selected ? 1 : 0;
+        else if (field.type === 'radio' || field.type === 'checkbox') count = field.checked ? 1 : 0;
+        else count = Math.max(0, num(field.value));
+        if (!count || !rate) return;
+        const label = field.dataset.lineLabel || labelOf(field) || basis;
+        if (basis === 'percent of base') {
+          addLine(label, Math.round(base * (rate / 100)));
+        } else if (basis === 'each') {
+          addLine(field.dataset.lineQuantified ? `${count} × ${label}` : label, rate * count * quantity);
+        } else if (BASIS_AREA[basis] !== undefined) {
+          addLine(label, Math.round(rate * BASIS_AREA[basis] * count * quantity));
+        } else {
+          // A basis nobody taught this script. Priced at the plain rate and
+          // named, so it shows up as wrong rather than vanishing.
+          addLine(label, Math.round(rate * count * quantity));
+        }
+      });
 
       Array.from(form.querySelectorAll('input[name^="doors["][name$="[type]"]:checked')).filter(enabled).forEach((door, index) => {
-        if (!(index === 0 && door.value === 'Steel door')) total += dataNumber(door, 'rate') * quantity;
+        if (index === 0 && door.value === 'Steel door') return;
+        addLine(`Door ${index + 1}: ${door.value}`, dataNumber(door, 'rate') * quantity);
       });
       Array.from(form.querySelectorAll('select[name^="windows["][name$="[type]"]')).filter(enabled).forEach((type) => {
         const match = type.name.match(/^windows\[(\d+)\]/);
@@ -260,26 +568,30 @@
         const index = match[1];
         const windowWidth = num(value(form, `windows[${index}][width]`, 0));
         const windowHeight = num(value(form, `windows[${index}][height]`, 0));
-        const trackFactor = dataNumber(chosen(form, `windows[${index}][track]`), 'rateMultiplier');
-        total += Math.round(dataNumber(type, 'rate') * windowWidth * windowHeight * trackFactor * quantity);
-      });
-      form.querySelectorAll('input[name^="electrical["],input[name^="addOns["]').forEach((field) => {
-        total += dataNumber(field, 'rate') * Math.max(0, num(field.value)) * quantity;
+        const trackFactor = dataNumber(chosen(form, `windows[${index}][track]`), 'rateMultiplier') || 1;
+        addLine(`Window ${Number(index) + 1}: ${type.value} ${windowWidth}×${windowHeight} ft`,
+          Math.round(dataNumber(type, 'rate') * windowWidth * windowHeight * trackFactor * quantity));
       });
     }
 
     const deliveryZone = value(form, 'deliveryZone');
     const distance = num(value(form, 'distanceKm'));
-    if (deliveryZone === 'Other' && distance >= 100) {
+    let transportNote = '';
+    if (deliveryZone === 'Bangalore city' || deliveryZone === 'Delhi NCR') transportNote = 'Free delivery zone';
+    else if (distance > 0 && distance < 100) transportNote = 'Under 100 km: confirmed at quotation';
+    else if (deliveryZone === 'Other' && distance >= 100) {
       const bands = (root.dataset.freightBands || '').split(',').map(Number).filter(Number.isFinite);
       const band = Math.min(bands.length - 1, Math.max(0, Math.ceil((distance - 100) / 50) - 1));
       if (bands[band] !== undefined) {
         const longTrailer = length > 20 || colony ? num(root.dataset.freight40Delta) : 0;
-        total += (bands[band] + longTrailer) * quantity;
+        addLine(`Transport ${distance} km`, (bands[band] + longTrailer) * quantity);
       }
     }
+    // IN-01 is on the hold list. It carries no figure and says so.
+    if (chosen(form, 'installation')?.checked) addLine('Installation and fixing (IN-01)', null);
 
     const gst = Math.round(total * num(root.dataset.gstRate));
+    renderEstimateLines(root, lines, transportNote, total, gst, quoteOnly);
     const validSize = colony || (length >= 6 && length <= 60 && width >= 6 && width <= 60);
     if (colony) {
       const workers = Math.max(0, num(value(form, 'workers')));
@@ -340,8 +652,18 @@
     }
     setText(root, '[data-summary-ex]', quoteOnly ? 'Price on request' : INR.format(total));
     setText(root, '[data-summary-incl]', quoteOnly ? 'Fixed quotation within 48 hours' : `${INR.format(total + gst)} incl. GST`);
+    // The estimate card's own figure. It was never in this list, so the card
+    // kept the number it was born with while the header above it moved.
+    setText(root, '[data-estimate-total]', quoteOnly ? 'Price on request' : INR.format(total));
     setText(root, '[data-estimate-ex-gst]', quoteOnly ? 'Price on request' : INR.format(total));
     setText(root, '[data-estimate-incl-gst]', quoteOnly ? 'Fixed quotation within 48 hours' : `${INR.format(total + gst)} incl. 18% GST`);
+    // "Show GST as a line item" did nothing once the page was enhanced: the
+    // server honours it, the script had never read it. Same wording as the
+    // server's, so the toggle reads the same with and without JavaScript.
+    const includeGst = form.querySelector('[name="includeGst"]')?.checked !== false;
+    setText(root, '[data-estimate-total-note]', quoteOnly
+      ? 'Fixed quotation within 48 hours'
+      : (includeGst ? `${INR.format(total + gst)} incl. 18% GST` : 'GST line shown above'));
     setText(root, '[data-mobile-estimate]', quoteOnly ? 'On request' : INR.format(total));
     const configuration = form.querySelector('input[name="configuration"]');
     const estimateField = form.querySelector('input[name="estimate"]');
@@ -349,6 +671,8 @@
     if (estimateField) estimateField.value = JSON.stringify({ areaSqft: area, totalExGst: total, gst, totalInclGst: total + gst, quoteOnly });
     ['length', 'width'].forEach((name) => chosen(form, name)?.setAttribute('aria-invalid', String(!validSize)));
     updatePlan(root, length, width, area, value(form, 'planView', 'plan'), form);
+    // The Base Price tile shows the same figure as the estimate's first line.
+    setText(root, '[data-base-price]', quoteOnly ? 'Quoted separately' : INR.format(base));
     return { area, total, gst, quoteOnly, validSize };
   }
 
@@ -437,6 +761,18 @@
         const at = steps.indexOf(num(root.dataset.currentStep, steps[0]));
         const to = steps[Math.min(steps.length - 1, Math.max(0, at + (action === 'next' ? 1 : -1)))];
         showStep(root, to, true);
+        return;
+      }
+      if (action === 'distribute-rooms') {
+        // Clear the boxes rather than writing equal numbers into them: empty
+        // means "not chosen", and the geometry already divides equally then.
+        // Writing the numbers in would make an untouched cabin look edited.
+        const form = root.querySelector('form');
+        root.querySelectorAll('[data-room-length]').forEach((input) => { input.value = ''; });
+        const rooms = Math.max(1, num(value(form, 'rooms', 1), 1));
+        const each = num(value(form, 'length', 20), 20) / rooms;
+        root.querySelectorAll('[data-room-length]').forEach((input) => { input.value = each.toFixed(1); });
+        calculate(root, form);
         return;
       }
       if (action === 'pdf') {

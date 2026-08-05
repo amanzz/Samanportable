@@ -93,7 +93,11 @@ export interface CalculatorConfig {
   width: number;
   height: number;
   quantity: number;
-  planView: 'plan' | 'elevations';
+  planView: 'plan' | 'floor' | 'elevations';
+  /** Length of each room along the cabin's length, in feet. Sums to length. */
+  roomLengths: number[];
+  /** Doors cut into the partitions, priced as steel doors. */
+  partitionDoors: number;
   rooms: number;
   roof: 'Sloped' | 'Flat / mono-pitch';
   /** Event 1 Step 3. Codes from SAMAN's price-input workbook. */
@@ -1140,9 +1144,25 @@ fieldset{
    state, never a selected state, never a CTA. That demotion is what removes
    the green-on-green defect class at the root rather than patching it.
    ========================================================================= */
-.cabin-calculator-ssr{--sd-ground:#0D1F17;--sd-panel:#14301F;--sd-card:#14291E;--sd-inset:#0F241A;--sd-hairline:rgba(255,255,255,0.07);--sd-hairline-hi:rgba(255,255,255,0.18);--sd-control-border:rgba(255,255,255,0.36);--sd-lift:rgba(255,255,255,0.06);--sd-text:#F0F7F2;--sd-text-2:rgba(240,247,242,0.62);--sd-text-3:rgba(240,247,242,0.45);--saman-amber:#E0A340}
+/* §2 revised, 05 Aug. The ground is no longer derived from brand green.
+   The --calc-* names are the spec's; the --sd-* names are what every rule in
+   this stylesheet already reads, so they alias the same values rather than
+   being replaced. Both are declared here, in one place, from one set of
+   literals - a second declaration site is how --calc-card came to mean two
+   different colours at two different specificities once before. */
+/* The selector list matches the theme blocks near the top of this stylesheet,
+   which redeclare --calc-card and --calc-text at [data-theme="light"] strength.
+   A plain .cabin-calculator-ssr rule loses to them, and the root carries
+   data-theme="light" - that is exactly how --calc-card once meant two colours
+   at once and painted every selected card green. Same specificity, declared
+   later, so these values win outright. Literals on both sets: --sd-* does not
+   alias --calc-*, so neither can be pulled out from under the other. */
+.cabin-calculator-ssr,.cabin-calculator-ssr[data-theme="light"],.cabin-calculator-ssr[data-theme="green"]{--calc-ground:#0E1729;--calc-panel:#16223A;--calc-card:#1B2942;--calc-inset:#121C31;--calc-hairline:rgba(255,255,255,0.08);--calc-hairline-hi:rgba(255,255,255,0.20);--calc-control-border:rgba(255,255,255,0.34);--calc-text:#EAF0F7;--calc-text-2:rgba(234,240,247,0.64);--calc-text-3:rgba(234,240,247,0.46);--saman-amber:#E0A340;--saman-green:#2d7a3f;--sd-ground:#0E1729;--sd-panel:#16223A;--sd-card:#1B2942;--sd-inset:#121C31;--sd-hairline:rgba(255,255,255,0.08);--sd-hairline-hi:rgba(255,255,255,0.20);--sd-control-border:rgba(255,255,255,0.34);--sd-lift:rgba(255,255,255,0.06);--sd-text:#EAF0F7;--sd-text-2:rgba(234,240,247,0.64);--sd-text-3:rgba(234,240,247,0.46)}
 .cabin-calculator-ssr,.cabin-calculator-ssr[data-theme="light"],.cabin-calculator-ssr[data-theme="green"]{background:var(--sd-ground);color:var(--sd-text);border-radius:20px;margin-top:24px;margin-bottom:24px;padding-top:28px;padding-bottom:28px}
-.cabin-calculator-ssr .calculator-header{background:linear-gradient(135deg,#1A3C2E,#14302A);border:1px solid var(--sd-hairline);border-radius:16px}
+/* The brand still opens the module: green on the left, the new ground on the
+   right, so the header hands off to the panel below it rather than sitting on
+   a colour nothing else uses. */
+.cabin-calculator-ssr .calculator-header{background:linear-gradient(135deg,#1A3C2E,#16223A);border:1px solid var(--sd-hairline);border-radius:16px}
 .cabin-calculator-ssr .step-card,.cabin-calculator-ssr .calculator-grid>.estimate-card{background:var(--sd-panel);border:1px solid var(--sd-hairline);border-radius:16px;padding:20px}
 .cabin-calculator-ssr .estimate-card .estimate-lines{background:var(--sd-inset);border-radius:16px;padding:20px;margin:0}
 .cabin-calculator-ssr .construction-disclosure,.cabin-calculator-ssr .calculator-intro{background:var(--sd-panel);border:1px solid var(--sd-hairline);border-radius:16px;padding:16px 20px;color:var(--sd-text)}
@@ -1174,8 +1194,8 @@ fieldset{
 .cabin-calculator-ssr .estimate-card p,.cabin-calculator-ssr .estimate-card p span{color:var(--sd-text-2)}
 .cabin-calculator-ssr .choice-platform{position:absolute;top:6px;right:6px;font-size:9px;font-weight:700;padding:1px 6px;border-radius:9999px;background:none;border:1px solid var(--sd-hairline-hi);color:var(--sd-text-2)}
 .cabin-calculator-ssr .step-nav a,.cabin-calculator-ssr[data-theme="light"] .calculator-header .step-nav a,.cabin-calculator-ssr[data-theme="green"] .calculator-header .step-nav a{background:rgba(255,255,255,.08);color:var(--sd-text);font-size:11px;font-weight:500}
-.cabin-calculator-ssr .step-nav a.is-active,.cabin-calculator-ssr .step-nav a[aria-current="step"],.cabin-calculator-ssr[data-theme="light"] .calculator-header .step-nav a.is-active,.cabin-calculator-ssr[data-theme="green"] .calculator-header .step-nav a.is-active,.cabin-calculator-ssr[data-theme="light"] .calculator-header .step-nav a[aria-current="step"],.cabin-calculator-ssr[data-theme="green"] .calculator-header .step-nav a[aria-current="step"]{background:var(--saman-amber);color:#0D1F17;font-weight:600}
-.cabin-calculator-ssr button.primary,.cabin-calculator-ssr [type="submit"]{background:var(--saman-amber);color:#0D1F17;border:none;border-radius:8px;height:46px;min-height:46px;font-weight:700}
+.cabin-calculator-ssr .step-nav a.is-active,.cabin-calculator-ssr .step-nav a[aria-current="step"],.cabin-calculator-ssr[data-theme="light"] .calculator-header .step-nav a.is-active,.cabin-calculator-ssr[data-theme="green"] .calculator-header .step-nav a.is-active,.cabin-calculator-ssr[data-theme="light"] .calculator-header .step-nav a[aria-current="step"],.cabin-calculator-ssr[data-theme="green"] .calculator-header .step-nav a[aria-current="step"]{background:var(--saman-amber);color:#0E1729;font-weight:600}
+.cabin-calculator-ssr button.primary,.cabin-calculator-ssr [type="submit"]{background:var(--saman-amber);color:#0E1729;border:none;border-radius:8px;height:46px;min-height:46px;font-weight:700}
 .cabin-calculator-ssr button.ghost,.cabin-calculator-ssr .calculator-header-actions button{background:transparent;border:1px solid var(--sd-control-border);color:var(--sd-text);border-radius:8px}
 .cabin-calculator-ssr .calculator-header-actions button{border-radius:9999px}
 .cabin-calculator-ssr input,.cabin-calculator-ssr select,.cabin-calculator-ssr textarea{background:var(--sd-inset);border:1px solid var(--sd-control-border);color:var(--sd-text);border-radius:8px}
@@ -1343,6 +1363,7 @@ fieldset{
    .is-enhanced .calc-step:not(.is-active) rule that hides an inactive step, so
    the hide has to be restated at the same strength or the grid steps render on
    top of whichever step is active. */
+.cabin-calculator-ssr.is-enhanced #calculator-step-2:not(.is-active),
 .cabin-calculator-ssr.is-enhanced #calculator-step-3:not(.is-active),
 .cabin-calculator-ssr.is-enhanced #calculator-step-4:not(.is-active),
 .cabin-calculator-ssr.is-enhanced #calculator-step-7:not(.is-active),
@@ -1451,6 +1472,56 @@ fieldset{
 }
 
 }
+
+/* ===== EVENT 3 - the drawing viewer ===================================== */
+.cabin-calculator-ssr .drawing-viewer { margin: 10px 0 4px; }
+.cabin-calculator-ssr .drawing-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; padding: 0; border: 0; }
+.cabin-calculator-ssr .drawing-tabs > legend { flex: 1 0 100%; margin: 0 0 3px; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--calc-text-2); }
+.cabin-calculator-ssr .floor-plan { width: 100%; height: auto; background: var(--calc-inset); border: 1px solid var(--calc-hairline); border-radius: 12px; }
+.cabin-calculator-ssr .dw-shell { fill: none; stroke: var(--calc-text); stroke-width: 1.6; }
+.cabin-calculator-ssr .dw-partition { stroke: var(--calc-text-2); stroke-width: 1.2; stroke-dasharray: 5 3; }
+.cabin-calculator-ssr .dw-door { fill: var(--saman-amber); stroke: none; }
+.cabin-calculator-ssr .dw-window { fill: none; stroke: var(--calc-text); stroke-width: 1.4; }
+.cabin-calculator-ssr .dw-roof { fill: none; stroke: var(--calc-text-2); stroke-width: 1.4; }
+.cabin-calculator-ssr .dw-dim { stroke: var(--calc-text-3); stroke-width: 1; }
+.cabin-calculator-ssr .dw-dim-text { fill: var(--calc-text-2); font-size: 11px; text-anchor: middle; }
+.cabin-calculator-ssr .dw-dim-vertical { text-anchor: end; dominant-baseline: middle; }
+.cabin-calculator-ssr .dw-title { fill: var(--calc-text-2); font-size: 11px; letter-spacing: 0.06em; text-anchor: middle; text-transform: uppercase; }
+.cabin-calculator-ssr .dw-code { fill: var(--calc-text-2); font-size: 9px; text-anchor: middle; }
+.cabin-calculator-ssr .dw-room-fill { fill: var(--calc-card); stroke: var(--calc-hairline-hi); stroke-width: 1; }
+.cabin-calculator-ssr .dw-room-code { fill: var(--calc-text); font-size: 13px; font-weight: 700; text-anchor: middle; }
+.cabin-calculator-ssr .dw-room-size { fill: var(--calc-text-2); font-size: 9px; text-anchor: middle; }
+.cabin-calculator-ssr .dw-elevation-label { fill: var(--calc-text-2); font-size: 10px; text-anchor: middle; }
+.cabin-calculator-ssr .drawing-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+.cabin-calculator-ssr .drawing-tile { background: var(--calc-card); border: 1px solid var(--calc-hairline); border-radius: 10px; padding: 8px 12px; }
+.cabin-calculator-ssr .drawing-tile small { display: block; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--calc-text-2); }
+.cabin-calculator-ssr .drawing-tile strong { font-size: 16px; color: var(--calc-text); }
+.cabin-calculator-ssr .room-lengths { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin: 8px 0; }
+.cabin-calculator-ssr .room-lengths label { display: flex; flex-direction: column; gap: 2px; font-size: 11px; max-width: 132px; }
+.cabin-calculator-ssr .room-chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 8px; padding: 0; border: 0; }
+.cabin-calculator-ssr .room-chips > legend { flex: 1 0 100%; margin: 0 0 3px; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--calc-text-2); }
+
+@media (min-width: 1024px) {
+  /* Step 2 puts the controls on the left and the drawing on the right, so a
+     size change and the drawing it produces are in view at the same time. */
+  .cabin-calculator-ssr #calculator-step-2 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    gap: 0 20px;
+    align-items: start;
+  }
+  .cabin-calculator-ssr #calculator-step-2 > h2,
+  .cabin-calculator-ssr #calculator-step-2 > .step-guidance { grid-column: 1 / -1; }
+  .cabin-calculator-ssr #calculator-step-2 > .drawing-viewer { grid-column: 2; grid-row: 3 / 12; }
+  .cabin-calculator-ssr #calculator-step-2 > .field-grid,
+  .cabin-calculator-ssr #calculator-step-2 > fieldset,
+  .cabin-calculator-ssr #calculator-step-2 > label,
+  .cabin-calculator-ssr #calculator-step-2 > p,
+  .cabin-calculator-ssr #calculator-step-2 > .room-lengths { grid-column: 1; }
+  .cabin-calculator-ssr #calculator-step-2 .calc-choice > span { min-height: 32px; padding: 3px 8px; }
+  .cabin-calculator-ssr #calculator-step-2 .calc-choice > span > strong { font-size: 11px; line-height: 1.15; }
+  .cabin-calculator-ssr #calculator-step-2 .calc-choice > span > small { font-size: 9px; line-height: 1.15; }
+}
 `;
 
 export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
@@ -1461,6 +1532,9 @@ export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
   quantity: 1,
   planView: 'plan',
   rooms: 1,
+  // Empty means "not chosen", and drawGeometry divides the length equally.
+  roomLengths: [],
+  partitionDoors: 0,
   roof: 'Sloped',
   frame: 'FR-MS',
   wallBuild: 'WB-MS',
@@ -1568,8 +1642,12 @@ function sanitiseConfig(value: unknown): CalculatorConfig {
     width: finite(source.width, 10, -10000, 10000),
     height: finite(source.height, 8.5, -10000, 10000),
     quantity: int(source.quantity, 1, 1, 50),
-    planView: member(source.planView, ['plan', 'elevations'] as const, 'plan'),
+    planView: member(source.planView, ['plan', 'floor', 'elevations'] as const, 'plan'),
     rooms: int(source.rooms, 1, 1, 12),
+    partitionDoors: int(source.partitionDoors, 0, 0, 5),
+    roomLengths: Array.isArray(source.roomLengths)
+      ? source.roomLengths.map((entry: unknown) => Math.max(0, Number(entry) || 0))
+      : [],
     roof: member(source.roof, ['Sloped', 'Flat / mono-pitch'] as const, 'Sloped'),
     frame: member(source.frame, FRAME_OPTIONS.filter((o) => !o.disabled).map((o) => o.code), 'FR-MS'),
     wallBuild: member(source.wallBuild, WALL_BUILD_OPTIONS.filter((o) => !o.disabled).map((o) => o.code), 'WB-MS'),
@@ -1625,6 +1703,15 @@ export function parseCalculatorQuery(query: CalculatorQuery = {}): CalculatorCon
     const value = one(query[key]);
     if (value !== undefined) (direct as Record<string, unknown>)[key] = value;
   }
+  // Roof, frame and the three view names round-trip too. A shared link that
+  // dropped them came back as a different cabin from the one that was shared;
+  // the sanitiser rejects anything that is not an approved value.
+  const roof = one(query.roof);
+  if (roof) direct.roof = roof as CalculatorConfig['roof'];
+  const planView = one(query.planView);
+  if (planView) direct.planView = planView as CalculatorConfig['planView'];
+  const frame = one(query.frame);
+  if (frame) direct.frame = frame;
   const zone = one(query.deliveryZone);
   if (zone) direct.deliveryZone = zone as CalculatorConfig['deliveryZone'];
   const includeGst = one(query.includeGst);
@@ -1773,7 +1860,17 @@ function productChoice(
   const price = ladder
     ? `from ${money(productPriceRows(definition!, definition!.ladderKey)[0]?.ex || 0)} ex-GST`
     : 'Price on drawing';
-  return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(entry.id)}"${checked(isChecked)} data-product-choice="1"><span>${productIcon(entry.id as ProductId)}<strong class="choice-title">${esc(entry.name)}</strong>${entry.description ? `<small class="choice-description">${esc(entry.description)}</small>` : ''}<small class="choice-price">${esc(price)}</small>${entry.platform ? `<span class="choice-platform">${esc(entry.platform)}</span>` : ''}</span></label>`;
+  // P0, 05 Aug. These four carried nothing but data-product-choice, so the
+  // browser had no anchor rate to price an unpublished size with: it multiplied
+  // by an undefined rate, got zero, and showed a base cabin at nothing at all
+  // for every size not in the ladder. The embedded route's hidden product field
+  // has always carried them; the twelve tiles never did.
+  const productAttributes = definition
+    ? ` data-label="${esc(entry.name)}" data-reference-rate="${effectiveReferenceRate(definition, definition.ladderKey)}"`
+      + ` data-quote-only="${definition.quoteOnly ? 'true' : 'false'}"`
+      + ` data-ladder="${esc(definition.ladderKey || (isColonyProduct(definition.id) ? definition.id : 'none'))}"`
+    : '';
+  return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(entry.id)}"${checked(isChecked)} data-product-choice="1"${productAttributes}><span>${productIcon(entry.id as ProductId)}<strong class="choice-title">${esc(entry.name)}</strong>${entry.description ? `<small class="choice-description">${esc(entry.description)}</small>` : ''}<small class="choice-price">${esc(price)}</small>${entry.platform ? `<span class="choice-platform">${esc(entry.platform)}</span>` : ''}</span></label>`;
 }
 
 /**
@@ -1786,7 +1883,8 @@ function componentChoices(
   list: readonly { code: string; label: string; specification: string | null }[],
   current: string,
   delta: (code: string) => number,
-  suffix: string
+  suffix: string,
+  lineGroup: string
 ): string {
   return list.map((item) => {
     const rate = delta(item.code);
@@ -1794,7 +1892,7 @@ function componentChoices(
       ? 'Standard, included'
       : `${rate > 0 ? '+' : '-'}${money(Math.abs(Math.round(rate)))} ${suffix}`;
     return radio(name, item.code, item.label, item.code === current, detail,
-      ` data-rate="${rate}" data-rate-basis="${esc(suffix)}" data-component-code="${esc(item.code)}"`);
+      ` data-rate="${rate}" data-rate-basis="${esc(suffix)}" data-component-code="${esc(item.code)}" data-line-label="${esc(`${lineGroup}: ${item.label}`)}"`);
   }).join('');
 }
 
@@ -1816,37 +1914,204 @@ function optionCards(name: string, choices: readonly (readonly [string, number])
 }
 
 function quantityRow(group: 'electrical' | 'addOns', label: string, rate: number, quantity: number, help = '', quotation = false): string {
-  return `<label class="quantity-row"><span><strong>${esc(label)}</strong>${help ? `<small>${esc(help)}</small>` : ''}<small>${quotation ? 'In quotation per building' : `${money(rate)} each, ex-GST`}</small></span><input type="number" inputmode="numeric" min="0" max="50" step="1"${group === 'electrical' ? ` data-electrical-item="${esc(label)}"` : ''} name="${group}[${esc(label)}]" value="${quantity}" aria-label="${esc(label)} quantity" data-rate="${rate}" data-rate-basis="each" data-rate-group="${group}"></label>`;
+  return `<label class="quantity-row"><span><strong>${esc(label)}</strong>${help ? `<small>${esc(help)}</small>` : ''}<small>${quotation ? 'In quotation per building' : `${money(rate)} each, ex-GST`}</small></span><input type="number" inputmode="numeric" min="0" max="50" step="1"${group === 'electrical' ? ` data-electrical-item="${esc(label)}"` : ''} name="${group}[${esc(label)}]" value="${quantity}" aria-label="${esc(label)} quantity" data-rate="${rate}" data-rate-basis="each" data-rate-group="${group}" data-line-label="${esc(label)}" data-line-quantified="true"></label>`;
 }
 
-function renderPlan(config: CalculatorConfig): string {
-  const width = 320, height = 190, pad = 30;
-  const scale = Math.min((width - pad * 2) / Math.max(6, config.length), (height - pad * 2) / Math.max(6, config.width));
-  const planWidth = config.length * scale, planHeight = config.width * scale;
-  const x = (width - planWidth) / 2, y = (height - planHeight) / 2;
-  const wallPoint = (wall: Wall, position: number): [number, number] => {
-    const ratio = position / 100;
-    if (wall === 'Front') return [x + planWidth * ratio, y + planHeight];
-    if (wall === 'Rear') return [x + planWidth * ratio, y];
-    if (wall === 'Left') return [x, y + planHeight * ratio];
-    return [x + planWidth, y + planHeight * ratio];
-  };
-  const partitions = Array.from({ length: Math.max(0, config.rooms - 1) }, (_, index) => `<line x1="${x + planWidth * (index + 1) / config.rooms}" y1="${y}" x2="${x + planWidth * (index + 1) / config.rooms}" y2="${y + planHeight}" class="partition"/>`).join('');
-  const doors = config.doors.map((door, index) => {
-    const [cx, cy] = wallPoint(door.wall, door.position);
-    return `<circle data-opening="door" data-opening-index="${index}" data-wall="${door.wall}" data-end="${door.end}" data-distance="${door.distance}" data-index="${index}" cx="${cx}" cy="${cy}" r="5" class="door-mark"><title>Door ${index + 1}</title></circle>`;
-  }).join('');
-  const windows = config.windows.map((window, index) => {
-    const [wx, wy] = wallPoint(window.wall, window.position);
-    return `<rect data-opening="window" data-opening-index="${index}" data-wall="${window.wall}" data-end="${window.end}" data-distance="${window.distance}" data-index="${index}" x="${wx - 5}" y="${wy - 3}" width="10" height="6" class="window-mark"><title>Window ${index + 1}</title></rect>`;
-  }).join('');
-  const elevationLabels = WALLS.map((wall, index) => {
-    const bx = index % 2 === 0 ? 12 : 168;
-    const by = index < 2 ? 16 : 106;
-    return `<g><rect x="${bx}" y="${by}" width="140" height="55" class="shell"/><text x="${bx + 70}" y="${by + 70}">${wall} elevation</text></g>`;
-  }).join('');
-  return `<svg class="floor-plan" viewBox="0 0 320 190" role="img" aria-label="Cabin floor plan and four elevations" data-floor-plan><g data-plan-view="plan"${config.planView === 'plan' ? '' : ' hidden'}><rect x="${x}" y="${y}" width="${planWidth}" height="${planHeight}" class="shell"/>${partitions}${doors}${windows}<text x="160" y="184">Yellow: doors · Blue: windows</text></g><g data-plan-view="elevations"${config.planView === 'elevations' ? '' : ' hidden'}>${elevationLabels}</g></svg>`;
+/**
+ * One geometry for all three views.
+ *
+ * Everything downstream - the dimensioned plan, the filled floor plan, the four
+ * elevations, the carpet area tile - reads these numbers and nothing else, so
+ * the three drawings can never disagree about where a wall is.
+ *
+ * Room lengths that do not sum to the cabin length are distributed equally.
+ * A buyer who has not touched them has none, and equal is the right answer.
+ */
+export interface DrawGeometry {
+  length: number;
+  width: number;
+  height: number;
+  rooms: number;
+  roomLengths: number[];
+  carpetAreaSqft: number;
+  doors: Array<{ index: number; code: string; wall: Wall; position: number; type: string }>;
+  windows: Array<{ index: number; code: string; wall: Wall; position: number; width: number; height: number; type: string }>;
+  roof: string;
 }
+
+export function drawGeometry(config: CalculatorConfig): DrawGeometry {
+  const rooms = Math.max(1, config.rooms);
+  const supplied = (config.roomLengths || []).slice(0, rooms).filter((n) => n > 0);
+  const equal = config.length / rooms;
+  const lengths = supplied.length === rooms
+    ? supplied
+    : Array.from({ length: rooms }, () => equal);
+  const sum = lengths.reduce((a, b) => a + b, 0) || config.length;
+  const scaled = lengths.map((n) => (n / sum) * config.length);
+  return {
+    length: config.length,
+    width: config.width,
+    height: config.height,
+    rooms,
+    roomLengths: scaled,
+    // Carpet area is the floor inside the walls. Partitions are 3 inches, so
+    // each one takes a quarter foot of width off the usable floor.
+    carpetAreaSqft: Math.max(0, config.length * config.width - (rooms - 1) * 0.25 * config.width),
+    doors: config.doors.map((door, index) => ({
+      index, code: `D${index + 1}`, wall: door.wall, position: door.position, type: door.type,
+    })),
+    windows: config.windows.map((item, index) => ({
+      index, code: `W${index + 1}`, wall: item.wall, position: item.position,
+      width: item.width, height: item.height, type: item.type,
+    })),
+    roof: config.roof,
+  };
+}
+
+/** 20.5 ft reads as 20' 6". A drawing gives feet and inches, not decimals. */
+export function feetInches(value: number): string {
+  const whole = Math.floor(value);
+  const inches = Math.round((value - whole) * 12);
+  if (inches === 12) return `${whole + 1}' 0"`;
+  return `${whole}' ${inches}"`;
+}
+
+const VIEW_W = 420;
+const VIEW_H = 260;
+
+function planFrame(g: DrawGeometry, pad: number) {
+  const scale = Math.min((VIEW_W - pad * 2) / Math.max(6, g.length), (VIEW_H - pad * 2) / Math.max(6, g.width));
+  const w = g.length * scale;
+  const h = g.width * scale;
+  return { scale, w, h, x: (VIEW_W - w) / 2, y: (VIEW_H - h) / 2 };
+}
+
+function wallPointAt(frame: { x: number; y: number; w: number; h: number }, wall: Wall, position: number): [number, number] {
+  const ratio = Math.min(1, Math.max(0, position / 100));
+  if (wall === 'Front') return [frame.x + frame.w * ratio, frame.y + frame.h];
+  if (wall === 'Rear') return [frame.x + frame.w * ratio, frame.y];
+  if (wall === 'Left') return [frame.x, frame.y + frame.h * ratio];
+  return [frame.x + frame.w, frame.y + frame.h * ratio];
+}
+
+/** VIEW 1 - the dimensioned plan. Outline, overall dimensions, named openings. */
+function renderPlanView(g: DrawGeometry): string {
+  const f = planFrame(g, 46);
+  const partitions = g.roomLengths.slice(0, -1).map((_, index) => {
+    const at = f.x + (g.roomLengths.slice(0, index + 1).reduce((a, b) => a + b, 0) / g.length) * f.w;
+    return `<line x1="${at.toFixed(1)}" y1="${f.y}" x2="${at.toFixed(1)}" y2="${f.y + f.h}" class="dw-partition"/>`;
+  }).join('');
+  const openings = [
+    ...g.doors.map((d) => ({ ...d, kind: 'door' as const })),
+    ...g.windows.map((w) => ({ ...w, kind: 'window' as const })),
+  ].map((item) => {
+    const [cx, cy] = wallPointAt(f, item.wall, item.position);
+    const mark = item.kind === 'door'
+      ? `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="5" class="dw-door"/>`
+      : `<rect x="${(cx - 6).toFixed(1)}" y="${(cy - 3).toFixed(1)}" width="12" height="6" class="dw-window"/>`;
+    const lx = item.wall === 'Left' ? cx - 12 : item.wall === 'Right' ? cx + 12 : cx;
+    const ly = item.wall === 'Rear' ? cy - 8 : item.wall === 'Front' ? cy + 14 : cy - 8;
+    return `${mark}<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="dw-code">${esc(item.code)}</text>`;
+  }).join('');
+  const dimY = f.y + f.h + 24;
+  const dimX = f.x - 26;
+  return `<g data-plan-view="plan" data-view-name="2D Plan">`
+    + `<rect x="${f.x}" y="${f.y}" width="${f.w}" height="${f.h}" class="dw-shell"/>${partitions}${openings}`
+    + `<line x1="${f.x}" y1="${dimY}" x2="${f.x + f.w}" y2="${dimY}" class="dw-dim"/>`
+    + `<text x="${f.x + f.w / 2}" y="${dimY - 5}" class="dw-dim-text" data-dim-length>${esc(feetInches(g.length))}</text>`
+    + `<line x1="${dimX}" y1="${f.y}" x2="${dimX}" y2="${f.y + f.h}" class="dw-dim"/>`
+    + `<text x="${dimX - 4}" y="${f.y + f.h / 2}" class="dw-dim-text dw-dim-vertical" data-dim-width>${esc(feetInches(g.width))}</text>`
+    + `<text x="${VIEW_W / 2}" y="18" class="dw-title">2D Plan</text>`
+    + `</g>`;
+}
+
+/** VIEW 2 - filled room blocks, each with its code and its own length. */
+function renderFloorView(g: DrawGeometry): string {
+  const f = planFrame(g, 40);
+  let run = 0;
+  const blocks = g.roomLengths.map((roomLength, index) => {
+    const bx = f.x + (run / g.length) * f.w;
+    const bw = (roomLength / g.length) * f.w;
+    run += roomLength;
+    return `<g class="dw-room" data-room="${index + 1}">`
+      + `<rect x="${(bx + 2).toFixed(1)}" y="${(f.y + 2).toFixed(1)}" width="${Math.max(0, bw - 4).toFixed(1)}" height="${(f.h - 4).toFixed(1)}" class="dw-room-fill"/>`
+      + `<text x="${(bx + bw / 2).toFixed(1)}" y="${(f.y + f.h / 2 - 4).toFixed(1)}" class="dw-room-code">R${index + 1}</text>`
+      + `<text x="${(bx + bw / 2).toFixed(1)}" y="${(f.y + f.h / 2 + 10).toFixed(1)}" class="dw-room-size">${esc(feetInches(roomLength))} × ${esc(feetInches(g.width))}</text>`
+      + `</g>`;
+  }).join('');
+  return `<g data-plan-view="floor" data-view-name="Floor Plan" hidden>`
+    + `<rect x="${f.x}" y="${f.y}" width="${f.w}" height="${f.h}" class="dw-shell"/>${blocks}`
+    + `<text x="${VIEW_W / 2}" y="18" class="dw-title">Floor Plan</text>`
+    + `</g>`;
+}
+
+/** VIEW 3 - front, rear, left and right in a 2x2 grid, each with its openings. */
+function renderElevationsView(g: DrawGeometry): string {
+  const cells: Array<{ wall: Wall; col: number; row: number }> = [
+    { wall: 'Front', col: 0, row: 0 },
+    { wall: 'Rear', col: 1, row: 0 },
+    { wall: 'Left', col: 0, row: 1 },
+    { wall: 'Right', col: 1, row: 1 },
+  ];
+  const cellW = 186, cellH = 100;
+  const body = cells.map(({ wall, col, row }) => {
+    const ox = 18 + col * (cellW + 22);
+    const oy = 30 + row * (cellH + 34);
+    const spanFt = wall === 'Front' || wall === 'Rear' ? g.length : g.width;
+    const scale = Math.min(cellW / Math.max(6, spanFt), cellH / Math.max(6, g.height));
+    const w = spanFt * scale;
+    const h = g.height * scale;
+    const x = ox + (cellW - w) / 2;
+    const y = oy + (cellH - h);
+    const marks = [
+      ...g.doors.filter((d) => d.wall === wall).map((d) => {
+        const cx = x + w * (d.position / 100);
+        const dh = Math.min(h * 0.82, 7 * scale);
+        return `<rect x="${(cx - 1.6 * scale).toFixed(1)}" y="${(y + h - dh).toFixed(1)}" width="${(3.2 * scale).toFixed(1)}" height="${dh.toFixed(1)}" class="dw-door"/>`
+          + `<text x="${cx.toFixed(1)}" y="${(y + h - dh - 3).toFixed(1)}" class="dw-code">${esc(d.code)}</text>`;
+      }),
+      ...g.windows.filter((item) => item.wall === wall).map((item) => {
+        const cx = x + w * (item.position / 100);
+        const ww = item.width * scale;
+        const wh = item.height * scale;
+        const wy = y + h - wh - Math.min(h * 0.3, 3 * scale);
+        return `<rect x="${(cx - ww / 2).toFixed(1)}" y="${wy.toFixed(1)}" width="${ww.toFixed(1)}" height="${wh.toFixed(1)}" class="dw-window"/>`
+          + `<text x="${cx.toFixed(1)}" y="${(wy - 3).toFixed(1)}" class="dw-code">${esc(item.code)}</text>`;
+      }),
+    ].join('');
+    const roofLine = g.roof === 'Sloped'
+      ? `<polyline points="${x.toFixed(1)},${y.toFixed(1)} ${(x + w / 2).toFixed(1)},${(y - 10).toFixed(1)} ${(x + w).toFixed(1)},${y.toFixed(1)}" class="dw-roof"/>`
+      : `<line x1="${x.toFixed(1)}" y1="${(y - 4).toFixed(1)}" x2="${(x + w).toFixed(1)}" y2="${(y - 7).toFixed(1)}" class="dw-roof"/>`;
+    return `<g class="dw-elevation" data-elevation="${wall}">`
+      + `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" class="dw-shell"/>`
+      + `${roofLine}${marks}`
+      + `<text x="${(ox + cellW / 2).toFixed(1)}" y="${(oy + cellH + 16).toFixed(1)}" class="dw-elevation-label">${wall} elevation</text>`
+      + `</g>`;
+  }).join('');
+  return `<g data-plan-view="elevations" data-view-name="4 Elevations" hidden>${body}`
+    + `<text x="${VIEW_W / 2}" y="18" class="dw-title">4 Elevations</text></g>`;
+}
+
+/**
+ * The viewer: three tab-switched views, then the Carpet Area and Base Price
+ * tiles. Without JavaScript the tabs are radio buttons that still change which
+ * view the server renders, so all three remain reachable.
+ */
+function renderDrawing(config: CalculatorConfig, basePrice: number | null): string {
+  const g = drawGeometry(config);
+  const tab = (value: string, label: string) =>
+    radio('planView', value, label, config.planView === value, '', ' data-view-tab');
+  return `<div class="drawing-viewer" data-drawing-viewer>`
+    + `<fieldset class="drawing-tabs"><legend>Drawing view</legend>${tab('plan', '2D Plan')}${tab('floor', 'Floor Plan')}${tab('elevations', '4 Elevations')}</fieldset>`
+    + `<svg class="floor-plan" viewBox="0 0 ${VIEW_W} ${VIEW_H}" role="img" aria-label="Cabin drawing: 2D plan, floor plan and four elevations" data-floor-plan data-view="${esc(config.planView)}">`
+    + `${renderPlanView(g)}${renderFloorView(g)}${renderElevationsView(g)}`
+    + `</svg>`
+    + `<div class="drawing-tiles">`
+    + `<div class="drawing-tile"><small>Carpet Area</small><strong data-carpet-area>${g.carpetAreaSqft.toLocaleString('en-IN', { maximumFractionDigits: 0 })} sq ft</strong></div>`
+    + `<div class="drawing-tile"><small>Base Price</small><strong data-base-price>${basePrice === null ? 'Quoted separately' : money(basePrice)}</strong></div>`
+    + `</div></div>`;
+}
+
 
 function productPriceRows(
   product: ProductDefinition,
@@ -1934,7 +2199,7 @@ function renderEstimate(estimate: CalculatorEstimate): string {
   const totalWithGST = estimate.quoteOnly
     ? 'Fixed quotation within 48 hours'
     : (estimate.includeGst ? `${money(estimate.totalInclGst)} incl. 18% GST` : 'GST line shown above');
-  return `<aside class="estimate-card" aria-label="Live itemised estimate"><h2>${esc(ESTIMATE_PANEL.heading)}</h2><p><span>${esc(ESTIMATE_PANEL.floorArea)}</span> ${estimate.areaSqft.toLocaleString('en-IN')} sq ft</p><dl class="estimate-lines">${estimate.lines.map((line) => `<div><dt>${esc(line.label)}</dt><dd>${line.amount === null ? 'in quotation' : money(line.amount)}</dd></div>`).join('')}${estimate.transportNote ? `<div><dt>Transport</dt><dd>${esc(estimate.transportNote)}</dd></div>` : ''}<div><dt>${esc(ESTIMATE_PANEL.subtotal)}</dt><dd>${estimate.quoteOnly ? 'in quotation' : money(estimate.totalExGst)}</dd></div><div><dt>${esc(ESTIMATE_PANEL.gst)}</dt><dd>${estimate.quoteOnly ? 'in quotation' : money(estimate.gst)}</dd></div></dl><div class="total"><small>${esc(ESTIMATE_PANEL.total)}</small><strong data-estimate-total>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small>${esc(totalWithGST)}</small></div>${estimate.quoteOnly ? `<p class="quote-mode">${esc(QUOTE_MODE)}</p>` : ''}<p class="estimate-fine-print"><small>${esc(ESTIMATE_PANEL.finePrint)}</small></p></aside>`;
+  return `<aside class="estimate-card" aria-label="Live itemised estimate"><h2>${esc(ESTIMATE_PANEL.heading)}</h2><p><span>${esc(ESTIMATE_PANEL.floorArea)}</span> ${estimate.areaSqft.toLocaleString('en-IN')} sq ft</p><dl class="estimate-lines" data-estimate-lines>${estimate.lines.map((line) => `<div data-estimate-line><dt>${esc(line.label)}</dt><dd>${line.amount === null ? 'in quotation' : money(line.amount)}</dd></div>`).join('')}${estimate.transportNote ? `<div><dt>Transport</dt><dd>${esc(estimate.transportNote)}</dd></div>` : ''}<div><dt>${esc(ESTIMATE_PANEL.subtotal)}</dt><dd>${estimate.quoteOnly ? 'in quotation' : money(estimate.totalExGst)}</dd></div><div><dt>${esc(ESTIMATE_PANEL.gst)}</dt><dd>${estimate.quoteOnly ? 'in quotation' : money(estimate.gst)}</dd></div></dl><div class="total"><small>${esc(ESTIMATE_PANEL.total)}</small><strong data-estimate-total>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-estimate-total-note>${esc(totalWithGST)}</small></div>${estimate.quoteOnly ? `<p class="quote-mode">${esc(QUOTE_MODE)}</p>` : ''}<p class="estimate-fine-print"><small>${esc(ESTIMATE_PANEL.finePrint)}</small></p></aside>`;
 }
 
 function renderDoorCard(door: DoorConfig, index: number, reserved: boolean): string {
@@ -1977,21 +2242,23 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const selectedColony = colonyLadder(config.productId)[config.colonyVariant];
   const suggestedQuantity = config.workers > 0 && selectedColony?.capacityMax ? Math.ceil(config.workers / selectedColony.capacityMax) : config.quantity;
   const colonySize = `<label>Workers to accommodate<input type="number" inputmode="numeric" min="1" max="100000" name="workers" value="${config.workers || ''}" data-workers></label><p data-worker-suggestion>${config.workers > 0 && selectedColony ? `${selectedColony.label} × ${suggestedQuantity} accommodates at least ${config.workers.toLocaleString('en-IN')} workers.` : 'Enter the worker headcount to see the smallest sufficient configuration and quantity.'}</p><fieldset><legend>Approved building configuration</legend>${colonyLadder(config.productId).map((item, index) => radio('colonyVariant', String(index), `${item.label}, ${item.areaSqft.toLocaleString('en-IN')} sq ft`, index === config.colonyVariant, `${item.capacity || 'Capacity confirmed at quotation'} · ${money(item.priceExGst)} ex-GST`, ` data-price="${item.priceExGst}" data-area="${item.areaSqft}" data-capacity-max="${item.capacityMax || 0}"`)).join('')}</fieldset><label>Building quantity<input type="number" inputmode="numeric" min="1" max="50" name="quantity" value="${config.quantity}"></label>`;
-  const regularSize = `<div class="field-grid"><label>Length in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="length" value="${config.length}" required aria-describedby="size-guidance"></label><label>Width in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="width" value="${config.width}" required aria-describedby="size-guidance"></label><label>Height in ft<input type="number" inputmode="decimal" min="7" max="16" step="0.5" name="height" value="${config.height}"></label><label>Cabin quantity<input type="number" inputmode="numeric" min="1" max="50" step="1" name="quantity" value="${config.quantity}"></label></div><p id="size-guidance">${SIZE_ERROR}</p><fieldset><legend>Plan view</legend>${radio('planView', 'plan', 'Floor plan', config.planView === 'plan')}${radio('planView', 'elevations', 'Four elevations', config.planView === 'elevations')}</fieldset><label>Rooms<input type="number" inputmode="numeric" min="1" max="12" name="rooms" value="${config.rooms}"></label>${renderPlan(config)}`;
+  // The tile shows the same base the estimate's first line shows.
+  const basePriceForDrawing = estimate.lines[0]?.amount ?? null;
+  const regularSize = `<div class="field-grid"><label>Length in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="length" value="${config.length}" required aria-describedby="size-guidance"></label><label>Width in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="width" value="${config.width}" required aria-describedby="size-guidance"></label><label>Height in ft<input type="number" inputmode="decimal" min="7" max="16" step="0.5" name="height" value="${config.height}"></label><label>Cabin quantity<input type="number" inputmode="numeric" min="1" max="50" step="1" name="quantity" value="${config.quantity}"></label></div><p id="size-guidance">${SIZE_ERROR}</p><fieldset class="room-chips"><legend>Rooms and partitions</legend>${[1, 2, 3, 4, 5, 6].map((count) => radio('rooms', String(count), count === 1 ? '1 room, no partition' : `${count} rooms, ${count - 1} partitions`, config.rooms === count, '', ' data-room-count')).join('')}</fieldset><div class="room-lengths" data-room-lengths>${Array.from({ length: config.rooms }, (unused, index) => `<label>R${index + 1} length in ft<input type="number" inputmode="decimal" min="0" max="60" step="any" name="roomLengths[${index}]" value="${(drawGeometry(config).roomLengths[index] || 0).toFixed(1)}" data-room-length="${index}"></label>`).join('')}<button type="button" data-action="distribute-rooms" class="ghost">Distribute equally</button></div><fieldset><legend>Partition doors</legend>${[0, 1, 2, 3, 4, 5].slice(0, Math.max(1, config.rooms)).map((count) => radio('partitionDoors', String(count), count === 0 ? 'No partition door' : `${count} partition door${count > 1 ? 's' : ''}`, config.partitionDoors === count, count === 0 ? 'Included' : `${money(RATE_CARD.marketRates.steelDoor)} each, ex-GST`, ` data-rate="${count === 0 ? 0 : RATE_CARD.marketRates.steelDoor * count}" data-rate-basis="each" data-line-label="${count} partition door${count > 1 ? 's' : ''}"`)).join('')}</fieldset>${renderDrawing(config, basePriceForDrawing)}`;
   // Roof and mobility used to sit in the structure step. That step is gone, so
   // they move here, next to the other size and form decisions.
-  const roofAndMobility = colony ? '' : `<fieldset><legend>Roof</legend>${radio('roof', 'Sloped', 'Sloped roof', config.roof === 'Sloped', 'Standard, included', ' data-rate="0" data-rate-basis="percent of base"')}${radio('roof', 'Flat / mono-pitch', 'Flat / mono-pitch roof', config.roof === 'Flat / mono-pitch', '+4% of base price', ' data-rate="4" data-rate-basis="percent of base"')}</fieldset><fieldset><legend>Mobility</legend>${radio('mobility', '100% movable', '100% movable', config.mobility === '100% movable')}${radio('mobility', 'Fixed / semi-permanent', 'Fixed / semi-permanent', config.mobility === 'Fixed / semi-permanent')}</fieldset>`;
+  const roofAndMobility = colony ? '' : `<fieldset><legend>Roof</legend>${radio('roof', 'Sloped', 'Sloped roof', config.roof === 'Sloped', 'Standard, included', ' data-rate="0" data-rate-basis="percent of base"')}${radio('roof', 'Flat / mono-pitch', 'Flat / mono-pitch roof', config.roof === 'Flat / mono-pitch', '+4% of base price', ' data-rate="4" data-rate-basis="percent of base" data-line-label="Flat / mono-pitch roof"')}</fieldset><fieldset><legend>Mobility</legend>${radio('mobility', '100% movable', '100% movable', config.mobility === '100% movable')}${radio('mobility', 'Fixed / semi-permanent', 'Fixed / semi-permanent', config.mobility === 'Fixed / semi-permanent')}</fieldset>`;
   const sizeStep = section(1, `${renderStepGuidance('size')}${colony ? colonySize : regularSize}${roofAndMobility}<p class="step-tip"><small>${esc(TIPS.customSize)}</small></p>`);
 
-  const structureStep = section(2, `${renderStepGuidance('structure')}<fieldset><legend>Structural frame</legend>${FRAME_OPTIONS.map((opt) => radio('frame', opt.code, opt.label, opt.code === config.frame, opt.percent === 0 ? 'Base construction, included' : `+${opt.percent}% of the base price`, ` data-rate="${opt.percent}" data-rate-basis="percent of base" data-component-code="${esc(opt.code)}"`)).join('')}</fieldset><fieldset><legend>Wall construction</legend>${WALL_BUILD_OPTIONS.map((opt) => opt.disabled  ? `<label class="calc-choice is-disabled"><input type="radio" name="wallBuild" value="${esc(opt.code)}" disabled><span><strong>${esc(opt.label)}</strong><small>Rate pending</small></span></label>`  : radio('wallBuild', opt.code, opt.label, opt.code === config.wallBuild, 'Base construction, included',      ` data-component-code="${esc(opt.code)}"`)).join('')}${PUF_THICKNESSES.map((thickness) => radio('pufThickness', String(thickness), `PUF panel ${thickness} mm`, config.pufThickness === thickness, thickness === 50 ? 'Standard, included' : `${pufDeltaPerSqft(thickness) > 0 ? '+' : '-'}${money(Math.abs(Math.round(pufDeltaPerSqft(thickness))))} per sq ft of wall and roof`, ` data-rate="${pufDeltaPerSqft(thickness)}" data-rate-basis="per sq ft of wall and roof"`)).join('')}</fieldset>`);
-  const interiorStep = section(3, `${renderStepGuidance('interior')}<fieldset><legend>Internal wall lining, per sq ft of wall</legend>${componentChoices('internalWall', INTERNAL_WALLS, config.internalWall, wallDelta, 'per sq ft of wall')}</fieldset><fieldset><legend>Ceiling, per sq ft of floor</legend>${componentChoices('ceilingCode', CEILINGS_R1, config.ceilingCode, ceilingDelta, 'per sq ft')}</fieldset><fieldset><legend>Flooring, per sq ft of floor</legend>${componentChoices('flooringCode', FLOORINGS_R1, config.flooringCode, floorDelta, 'per sq ft')}</fieldset>${renderWallBuildDiagram(config.pufThickness.toString())}<fieldset><legend>Added insulation, per sq ft of wall and ceiling</legend>${radio('insulation', 'none', 'No added insulation', config.insulation === 'none', 'Standard, included', ' data-rate="0"')}${INSULATIONS_R1.map((item) => radio('insulation', item.code, item.label, config.insulation === item.code, `+${money(item.rate || 0)} per sq ft`, ` data-rate="${item.rate || 0}" data-rate-basis="per sq ft of wall and ceiling" data-component-code="${esc(item.code)}"`)).join('')}</fieldset>`);
+  const structureStep = section(2, `${renderStepGuidance('structure')}<fieldset><legend>Structural frame</legend>${FRAME_OPTIONS.map((opt) => radio('frame', opt.code, opt.label, opt.code === config.frame, opt.percent === 0 ? 'Base construction, included' : `+${opt.percent}% of the base price`, ` data-rate="${opt.percent}" data-rate-basis="percent of base" data-component-code="${esc(opt.code)}" data-line-label="${esc(`${opt.label}, +${opt.percent}%`)}"`)).join('')}</fieldset><fieldset><legend>Wall construction</legend>${WALL_BUILD_OPTIONS.map((opt) => opt.disabled  ? `<label class="calc-choice is-disabled"><input type="radio" name="wallBuild" value="${esc(opt.code)}" disabled><span><strong>${esc(opt.label)}</strong><small>Rate pending</small></span></label>`  : radio('wallBuild', opt.code, opt.label, opt.code === config.wallBuild, 'Base construction, included',      ` data-component-code="${esc(opt.code)}"`)).join('')}${PUF_THICKNESSES.map((thickness) => radio('pufThickness', String(thickness), `PUF panel ${thickness} mm`, config.pufThickness === thickness, thickness === 50 ? 'Standard, included' : `${pufDeltaPerSqft(thickness) > 0 ? '+' : '-'}${money(Math.abs(Math.round(pufDeltaPerSqft(thickness))))} per sq ft of wall and roof`, ` data-rate="${pufDeltaPerSqft(thickness)}" data-rate-basis="per sq ft of wall and roof" data-line-label="${thickness} mm PUF panels"`)).join('')}</fieldset>`);
+  const interiorStep = section(3, `${renderStepGuidance('interior')}<fieldset><legend>Internal wall lining, per sq ft of wall</legend>${componentChoices('internalWall', INTERNAL_WALLS, config.internalWall, wallDelta, 'per sq ft of wall', 'Internal wall')}</fieldset><fieldset><legend>Ceiling, per sq ft of floor</legend>${componentChoices('ceilingCode', CEILINGS_R1, config.ceilingCode, ceilingDelta, 'per sq ft', 'Ceiling')}</fieldset><fieldset><legend>Flooring, per sq ft of floor</legend>${componentChoices('flooringCode', FLOORINGS_R1, config.flooringCode, floorDelta, 'per sq ft', 'Flooring')}</fieldset>${renderWallBuildDiagram(config.pufThickness.toString())}<fieldset><legend>Added insulation, per sq ft of wall and ceiling</legend>${radio('insulation', 'none', 'No added insulation', config.insulation === 'none', 'Standard, included', ' data-rate="0"')}${INSULATIONS_R1.map((item) => radio('insulation', item.code, item.label, config.insulation === item.code, `+${money(item.rate || 0)} per sq ft`, ` data-rate="${item.rate || 0}" data-rate-basis="per sq ft of wall and ceiling" data-component-code="${esc(item.code)}" data-line-label="${esc(`Insulation: ${item.label}`)}"`)).join('')}</fieldset>`);
 
   const doorSlots = Array.from({ length: Math.max(4, config.doors.length) }, (_, index) => config.doors[index] || DEFAULT_CALCULATOR_CONFIG.doors[0]);
   const windowSlots = Array.from({ length: Math.max(4, config.windows.length) }, (_, index) => config.windows[index] || DEFAULT_CALCULATOR_CONFIG.windows[0]);
   const doorCards = doorSlots.map((door, index) => renderDoorCard(door, index, index >= config.doors.length)).join('');
   const windowCards = windowSlots.map((window, index) => renderWindowCard(window, index, index >= config.windows.length)).join('');
   const socketPlacement = ROOM_TYPES.map((room) => `<fieldset><legend>${esc(room)} socket layout</legend><label>Wall placement<select name="socket-${esc(room.toLowerCase())}-wall">${WALLS.map((wall) => `<option>${wall}</option>`).join('')}</select><label>Front wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-front" value="0"></label><label>Rear wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-rear" value="0"></label><label>Left wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-left" value="0"></label><label>Right wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-right" value="0"></label></fieldset>`).join('');
-  const openingsStep = section(4, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `${renderPlan(config)}<h3>Door placement</h3>${doorCards}<button type="button" data-action="add-door">Add another door</button><h3>Window placement</h3>${windowCards}<button type="button" data-action="add-window">Add another window</button><p class="step-tip"><small>${esc(TIPS.doorOpening)}</small></p><p class="step-tip"><small>${esc(TIPS.windowTrack)}</small></p>`}`);
+  const openingsStep = section(4, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `${renderDrawing(config, basePriceForDrawing)}<h3>Door placement</h3>${doorCards}<button type="button" data-action="add-door">Add another door</button><h3>Window placement</h3>${windowCards}<button type="button" data-action="add-window">Add another window</button><p class="step-tip"><small>${esc(TIPS.doorOpening)}</small></p><p class="step-tip"><small>${esc(TIPS.windowTrack)}</small></p>`}`);
   const electricalStep = section(5, `${renderStepGuidance('electrical')}<p>${colony ? 'Quantities are quotation items per building.' : 'Suggested quantities are a starting point and can be changed.'}</p>${ELECTRICAL_R1.map((item) => quantityRow('electrical', item.label, item.rate || 0, config.electrical[item.label] || 0, item.specification || '', colony)).join('')}<fieldset><legend>Light appearance</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset><fieldset><legend>Socket placement (no cost impact)</legend><p class="step-tip"><small>${esc(TIPS.socketPlacement)}</small></p>${socketPlacement}</fieldset>`);
   const addOnsStep = section(6, `${renderStepGuidance('addons')}${FITOUT_R1.map((item) => quantityRow('addOns', item.label, item.rate || 0, config.addOns[item.label] || 0, item.specification || '', colony)).join('')}<p class="step-tip"><small>Some fit-out components are being confirmed and show as Quoted separately.</small></p><fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
   const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label><details class="freight-ladder"><summary>See the full distance ladder</summary>${renderFreightTable()}</details><p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);
@@ -2010,6 +2277,6 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;
   const summarySize = colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`;
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${index + 1}" data-step-link="${index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>${embedded ? 1 : 1}</span> of 9: <span data-step-name>${esc(visibleSteps[0][0])}</span></p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / 9)}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div><div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${index + 1}" data-step-link="${index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>1</span> of ${visibleSteps.length}</p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / 9)}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div><div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
 }
 

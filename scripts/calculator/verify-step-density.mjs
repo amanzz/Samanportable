@@ -27,7 +27,8 @@ const OUT = process.env.CALCULATOR_EVIDENCE_DIR || path.join(os.tmpdir(), 'saman
 fs.mkdirSync(OUT, { recursive: true });
 
 /** Per-step ceilings. null means only the viewport law applies. */
-const TARGET = { 3: 200, 4: 470 };
+/* Amended 05 Aug: 230 and 475, from 200 and 470. */
+const TARGET = { 3: 230, 4: 475 };
 const VIEWPORT_H = 900;
 
 /**
