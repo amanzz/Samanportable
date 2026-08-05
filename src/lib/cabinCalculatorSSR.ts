@@ -6,6 +6,11 @@ import {
 } from '@/lib/calculatorRates';
 import { getRouteLadder, ladderAnchorRate, ladderPriceFor } from '@/lib/calculatorLadders';
 import {
+  CEILINGS_R1, ELECTRICAL_R1, FITOUT_R1, FLOORINGS_R1, FRAME_OPTIONS,
+  INSULATIONS_R1, INTERIOR_STANDARD, INTERNAL_WALLS, WALL_BUILD_OPTIONS,
+  ceilingDelta, floorDelta, insulationRate, pufDeltaPerSqft, wallDelta,
+} from '@/lib/calculatorComponentRates';
+import {
   CONSTRUCTION_DISCLOSURE, CONTROLS, ESTIMATE_PANEL, FIELD_LABELS,
   PRODUCT_STEP, QUOTE_MODE, STEP_COPY, TIPS,
 } from '@/lib/calculatorCopy';
@@ -91,6 +96,14 @@ export interface CalculatorConfig {
   planView: 'plan' | 'elevations';
   rooms: number;
   roof: 'Sloped' | 'Flat / mono-pitch';
+  /** Event 1 Step 3. Codes from SAMAN's price-input workbook. */
+  frame: string;
+  wallBuild: string;
+  /** Event 2 Step 4. Interior codes, not free text. */
+  internalWall: string;
+  ceilingCode: string;
+  flooringCode: string;
+  insulation: string;
   wallFinish: string;
   ceiling: string;
   flooring: string;
@@ -1186,6 +1199,12 @@ export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
   planView: 'plan',
   rooms: 1,
   roof: 'Sloped',
+  frame: 'FR-MS',
+  wallBuild: 'WB-MS',
+  internalWall: INTERIOR_STANDARD.wall,
+  ceilingCode: INTERIOR_STANDARD.ceiling,
+  flooringCode: INTERIOR_STANDARD.flooring,
+  insulation: 'none',
   wallFinish: WALL_FINISHES[0][0],
   ceiling: CEILINGS[0][0],
   flooring: FLOORING[0][0],
@@ -1289,6 +1308,12 @@ function sanitiseConfig(value: unknown): CalculatorConfig {
     planView: member(source.planView, ['plan', 'elevations'] as const, 'plan'),
     rooms: int(source.rooms, 1, 1, 12),
     roof: member(source.roof, ['Sloped', 'Flat / mono-pitch'] as const, 'Sloped'),
+    frame: member(source.frame, FRAME_OPTIONS.filter((o) => !o.disabled).map((o) => o.code), 'FR-MS'),
+    wallBuild: member(source.wallBuild, WALL_BUILD_OPTIONS.filter((o) => !o.disabled).map((o) => o.code), 'WB-MS'),
+    internalWall: member(source.internalWall, INTERNAL_WALLS.map((o) => o.code), INTERIOR_STANDARD.wall),
+    ceilingCode: member(source.ceilingCode, CEILINGS_R1.map((o) => o.code), INTERIOR_STANDARD.ceiling),
+    flooringCode: member(source.flooringCode, FLOORINGS_R1.map((o) => o.code), INTERIOR_STANDARD.flooring),
+    insulation: member(source.insulation, ['none', ...INSULATIONS_R1.map((o) => o.code)], 'none'),
     wallFinish: member(source.wallFinish, WALL_FINISHES.map((entry) => entry[0]), WALL_FINISHES[0][0]),
     ceiling: member(source.ceiling, CEILINGS.map((entry) => entry[0]), CEILINGS[0][0]),
     flooring: member(source.flooring, FLOORING.map((entry) => entry[0]), FLOORING[0][0]),
@@ -1401,16 +1426,29 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
   if (!colony && basePrice !== null) {
     if (config.height > 8.5) addLine(`Height ${config.height} ft`, Math.round((basePrice / config.quantity) * 0.06 * (config.height - 8.5)) * config.quantity, 'market');
     if (config.roof === 'Flat / mono-pitch') addLine('Flat / mono-pitch roof', Math.round(basePrice * 0.04), 'market');
+    const frame = FRAME_OPTIONS.find((o) => o.code === config.frame);
+    if (frame && frame.percent) {
+      addLine(`${frame.label}, +${frame.percent}%`, Math.round(basePrice * (frame.percent / 100)), 'published');
+    }
     if (config.rooms > 1) addLine(`${config.rooms} rooms, ${config.rooms - 1} partitions`, Math.round((config.rooms - 1) * config.width * 8.5 * 300 * config.quantity), 'market');
     const wallArea = 2 * (config.length + config.width) * config.height;
-    const surfaces: Array<[string, readonly (readonly [string, number])[], string, number]> = [
-      ['Wall finish', WALL_FINISHES, config.wallFinish, wallArea], ['Ceiling', CEILINGS, config.ceiling, area], ['Flooring', FLOORING, config.flooring, area],
+    const surfaceChoices: Array<[string, string, number, (code: string) => number, readonly { code: string; label: string }[]]> = [
+      ['Internal wall', config.internalWall, wallArea, wallDelta, INTERNAL_WALLS],
+      ['Ceiling', config.ceilingCode, area, ceilingDelta, CEILINGS_R1],
+      ['Flooring', config.flooringCode, area, floorDelta, FLOORINGS_R1],
     ];
-    surfaces.forEach(([label, options, choice, surfaceArea]) => {
-      const rate = options.find(([name]) => name === choice)?.[1] || 0;
-      if (rate) addLine(`${label}: ${choice}`, Math.round(rate * surfaceArea * config.quantity), 'market');
+    surfaceChoices.forEach(([label, code, surfaceArea, delta, list]) => {
+      const rate = delta(code);
+      if (!rate) return;
+      const name = list.find((o) => o.code === code)?.label || code;
+      addLine(`${label}: ${name}`, Math.round(rate * surfaceArea * config.quantity), 'published');
     });
-    const thicknessRate = RATE_CARD.pufThicknessDeltaPerSqft[config.pufThickness];
+    if (config.insulation !== 'none') {
+      const rate = insulationRate(config.insulation);
+      const name = INSULATIONS_R1.find((o) => o.code === config.insulation)?.label || config.insulation;
+      if (rate) addLine(`Insulation: ${name}`, Math.round(rate * (wallArea + area) * config.quantity), 'published');
+    }
+    const thicknessRate = pufDeltaPerSqft(config.pufThickness);
     if (thicknessRate) addLine(`${config.pufThickness} mm PUF panels`, Math.round(thicknessRate * (wallArea + area) * config.quantity), 'published');
     config.doors.forEach((door, index) => {
       if (index === 0 && door.type === 'Steel door') return;
@@ -1418,8 +1456,16 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
     });
     config.windows.forEach((window, index) => addLine(`Window ${index + 1}: ${window.type} ${window.width}×${window.height} ft`, Math.round(WINDOW_RATES[window.type] * window.width * window.height * (window.track === '2.5 Track' ? 1.12 : 1) * config.quantity), 'market'));
   }
-  ELECTRICAL.forEach(([label, rate]) => { const quantity = config.electrical[label] || 0; if (quantity) addLine(`${quantity} × ${label}`, colony ? null : rate * quantity * config.quantity, colony ? 'quotation' : 'market'); });
-  ADD_ONS.forEach(([label, rate]) => { const quantity = config.addOns[label] || 0; if (quantity) addLine(`${quantity} × ${label}`, colony ? null : rate * quantity * config.quantity, colony ? 'quotation' : 'market'); });
+  ELECTRICAL_R1.forEach((item) => {
+    const quantity = config.electrical[item.label] || 0;
+    if (!quantity) return;
+    addLine(`${quantity} × ${item.label}`, colony ? null : (item.rate || 0) * quantity * config.quantity, colony ? 'quotation' : 'published');
+  });
+  FITOUT_R1.forEach((item) => {
+    const quantity = config.addOns[item.label] || 0;
+    if (!quantity) return;
+    addLine(`${quantity} × ${item.label}`, colony ? null : (item.rate || 0) * quantity * config.quantity, colony ? 'quotation' : 'published');
+  });
   let transportNote = '';
   if (config.deliveryZone === 'Bangalore city' || config.deliveryZone === 'Delhi NCR') transportNote = 'Free delivery zone';
   else if (config.distanceKm > 0 && config.distanceKm < 100) transportNote = 'Under 100 km: confirmed at quotation';
@@ -1427,7 +1473,9 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
     const bandIndex = Math.min(RATE_CARD.freight.bands20ft.length - 1, Math.max(0, Math.ceil((config.distanceKm - 100) / 50) - 1));
     addLine(`Transport ${config.distanceKm} km`, (RATE_CARD.freight.bands20ft[bandIndex] + (config.length > 20 || colony ? RATE_CARD.freight.trailer40ftDelta : 0)) * config.quantity, 'published');
   }
-  if (config.installation) addLine('Installation', null, 'quotation');
+  // IN-01 is on the hold list and the workbook records only "Depends upon
+  // location". It carries no figure and says so.
+  if (config.installation) addLine('Installation and fixing (IN-01)', null, 'quotation');
   const gst = Math.round(total * GST_RATE);
   return {
     areaSqft: area,
@@ -1463,6 +1511,28 @@ function productChoice(
     ? `from ${money(productPriceRows(definition!, definition!.ladderKey)[0]?.ex || 0)} ex-GST`
     : 'Price on drawing';
   return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(entry.id)}"${checked(isChecked)} data-product-choice="1"><span>${productIcon(entry.id as ProductId)}<strong class="choice-title">${esc(entry.name)}</strong>${entry.description ? `<small class="choice-description">${esc(entry.description)}</small>` : ''}<small class="choice-price">${esc(price)}</small>${entry.platform ? `<span class="choice-platform">${esc(entry.platform)}</span>` : ''}</span></label>`;
+}
+
+/**
+ * A radio list built from workbook rows. The rate shown is the DIFFERENCE
+ * from the standard already in the base price, so a buyer is never charged
+ * twice for a surface the cabin already has.
+ */
+function componentChoices(
+  name: string,
+  list: readonly { code: string; label: string; specification: string | null }[],
+  current: string,
+  delta: (code: string) => number,
+  suffix: string
+): string {
+  return list.map((item) => {
+    const rate = delta(item.code);
+    const detail = rate === 0
+      ? 'Standard, included'
+      : `${rate > 0 ? '+' : '-'}${money(Math.abs(Math.round(rate)))} ${suffix}`;
+    return radio(name, item.code, item.label, item.code === current, detail,
+      ` data-rate="${rate}" data-rate-basis="${esc(suffix)}" data-component-code="${esc(item.code)}"`);
+  }).join('');
 }
 
 function renderStepGuidance(key: keyof typeof STEP_GUIDANCE): string {
@@ -1629,13 +1699,13 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const product = productFor(config.productId);
   const colony = isColonyProduct(config.productId);
   const estimate = computeCalculatorEstimate(config);
-  const active = int(options.activeStep, embedded ? 1 : 0, embedded ? 1 : 0, 7);
+  const active = int(options.activeStep, embedded ? 1 : 0, embedded ? 1 : 0, 8);
   // Eight steps standalone, seven embedded. The structure step was removed on
   // 03 Aug 2026 and became a stated-construction disclosure; a step that offers
   // one option is not a step. Headings are the copy pack's, verbatim.
   const stepDefinitions = STEP_COPY.map((step) => [step.heading, step.key] as const);
   const visibleSteps = embedded ? stepDefinitions.slice(1) : stepDefinitions;
-  const section = (index: number, body: string): string => `<section class="calc-step${active === index ? ' is-active' : ''}" id="calculator-step-${index + 1}" data-step="${index + 1}" aria-labelledby="calculator-step-title-${index + 1}"><h2 id="calculator-step-title-${index + 1}">Step ${embedded ? index : index + 1} of ${embedded ? 7 : 8}: ${esc(stepDefinitions[index][0])}</h2>${body}</section>`;
+  const section = (index: number, body: string): string => `<section class="calc-step${active === index ? ' is-active' : ''}" id="calculator-step-${index + 1}" data-step="${index + 1}" aria-labelledby="calculator-step-title-${index + 1}"><h2 id="calculator-step-title-${index + 1}">Step ${embedded ? index : index + 1} of ${embedded ? 8 : 9}: ${esc(stepDefinitions[index][0])}</h2>${body}</section>`;
 
   const productStep = section(0, `${renderStepGuidance('product')}<fieldset><legend>Choose your product</legend><div class="product-tiles">${PRODUCT_STEP.map((entry) => productChoice('productId', entry, entry.id === config.productId)).join('')}</div></fieldset>`);
 
@@ -1648,20 +1718,21 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const roofAndMobility = colony ? '' : `<fieldset><legend>Roof</legend>${radio('roof', 'Sloped', 'Sloped roof', config.roof === 'Sloped', 'Standard, included', ' data-rate="0" data-rate-basis="percent of base"')}${radio('roof', 'Flat / mono-pitch', 'Flat / mono-pitch roof', config.roof === 'Flat / mono-pitch', '+4% of base price', ' data-rate="4" data-rate-basis="percent of base"')}</fieldset><fieldset><legend>Mobility</legend>${radio('mobility', '100% movable', '100% movable', config.mobility === '100% movable')}${radio('mobility', 'Fixed / semi-permanent', 'Fixed / semi-permanent', config.mobility === 'Fixed / semi-permanent')}</fieldset>`;
   const sizeStep = section(1, `${renderStepGuidance('size')}${colony ? colonySize : regularSize}${roofAndMobility}<p class="step-tip"><small>${esc(TIPS.customSize)}</small></p>`);
 
-  const interiorStep = section(2, `${renderStepGuidance('interior')}<fieldset><legend>Wall finish, rate per sq ft of wall</legend>${optionCards('wallFinish', WALL_FINISHES, config.wallFinish, 'per sq ft of wall')}</fieldset><fieldset><legend>Ceiling, rate per sq ft</legend>${optionCards('ceiling', CEILINGS, config.ceiling)}</fieldset><fieldset><legend>Flooring, rate per sq ft</legend>${optionCards('flooring', FLOORING, config.flooring)}</fieldset><fieldset><legend>PUF panel thickness, delta per sq ft of wall and roof</legend>${PUF_THICKNESSES.map((thickness) => radio('pufThickness', String(thickness), `${thickness} mm`, config.pufThickness === thickness, thickness === 50 ? 'Standard, included' : `${RATE_CARD.pufThicknessDeltaPerSqft[thickness] > 0 ? '+' : '-'}${money(Math.abs(RATE_CARD.pufThicknessDeltaPerSqft[thickness]))} per sq ft`, ` data-rate="${RATE_CARD.pufThicknessDeltaPerSqft[thickness]}" data-rate-basis="per sq ft of wall and roof"`)).join('')}</fieldset>${renderWallBuildDiagram(config.pufThickness.toString())}`);
+  const structureStep = section(2, `${renderStepGuidance('structure')}<fieldset><legend>Structural frame</legend>${FRAME_OPTIONS.map((opt) => radio('frame', opt.code, opt.label, opt.code === config.frame, opt.percent === 0 ? 'Base construction, included' : `+${opt.percent}% of the base price`, ` data-rate="${opt.percent}" data-rate-basis="percent of base" data-component-code="${esc(opt.code)}"`)).join('')}</fieldset><fieldset><legend>Wall construction</legend>${WALL_BUILD_OPTIONS.map((opt) => opt.disabled  ? `<label class="calc-choice is-disabled"><input type="radio" name="wallBuild" value="${esc(opt.code)}" disabled><span><strong>${esc(opt.label)}</strong><small>Rate pending</small></span></label>`  : radio('wallBuild', opt.code, opt.label, opt.code === config.wallBuild, 'Base construction, included',      ` data-component-code="${esc(opt.code)}"`)).join('')}${PUF_THICKNESSES.map((thickness) => radio('pufThickness', String(thickness), `PUF panel ${thickness} mm`, config.pufThickness === thickness, thickness === 50 ? 'Standard, included' : `${pufDeltaPerSqft(thickness) > 0 ? '+' : '-'}${money(Math.abs(Math.round(pufDeltaPerSqft(thickness))))} per sq ft of wall and roof`, ` data-rate="${pufDeltaPerSqft(thickness)}" data-rate-basis="per sq ft of wall and roof"`)).join('')}</fieldset><fieldset><legend>Roof</legend>${radio('roof', 'Sloped', 'Sloped roof', config.roof === 'Sloped', 'Standard, included', ' data-rate="0" data-rate-basis="percent of base"')}${radio('roof', 'Flat / mono-pitch', 'Flat / mono-pitch roof', config.roof === 'Flat / mono-pitch', '+4% of base price', ' data-rate="4" data-rate-basis="percent of base"')}</fieldset>${renderWallBuildDiagram(config.pufThickness.toString())}`);
+  const interiorStep = section(3, `${renderStepGuidance('interior')}<fieldset><legend>Internal wall lining, per sq ft of wall</legend>${componentChoices('internalWall', INTERNAL_WALLS, config.internalWall, wallDelta, 'per sq ft of wall')}</fieldset><fieldset><legend>Ceiling, per sq ft of floor</legend>${componentChoices('ceilingCode', CEILINGS_R1, config.ceilingCode, ceilingDelta, 'per sq ft')}</fieldset><fieldset><legend>Flooring, per sq ft of floor</legend>${componentChoices('flooringCode', FLOORINGS_R1, config.flooringCode, floorDelta, 'per sq ft')}</fieldset><fieldset><legend>Added insulation, per sq ft of wall and ceiling</legend>${radio('insulation', 'none', 'No added insulation', config.insulation === 'none', 'Standard, included', ' data-rate="0"')}${INSULATIONS_R1.map((item) => radio('insulation', item.code, item.label, config.insulation === item.code, `+${money(item.rate || 0)} per sq ft`, ` data-rate="${item.rate || 0}" data-rate-basis="per sq ft of wall and ceiling" data-component-code="${esc(item.code)}"`)).join('')}</fieldset>`);
 
   const doorSlots = Array.from({ length: Math.max(4, config.doors.length) }, (_, index) => config.doors[index] || DEFAULT_CALCULATOR_CONFIG.doors[0]);
   const windowSlots = Array.from({ length: Math.max(4, config.windows.length) }, (_, index) => config.windows[index] || DEFAULT_CALCULATOR_CONFIG.windows[0]);
   const doorCards = doorSlots.map((door, index) => renderDoorCard(door, index, index >= config.doors.length)).join('');
   const windowCards = windowSlots.map((window, index) => renderWindowCard(window, index, index >= config.windows.length)).join('');
   const socketPlacement = ROOM_TYPES.map((room) => `<fieldset><legend>${esc(room)} socket layout</legend><label>Wall placement<select name="socket-${esc(room.toLowerCase())}-wall">${WALLS.map((wall) => `<option>${wall}</option>`).join('')}</select><label>Front wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-front" value="0"></label><label>Rear wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-rear" value="0"></label><label>Left wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-left" value="0"></label><label>Right wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-right" value="0"></label></fieldset>`).join('');
-  const openingsStep = section(3, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `${renderPlan(config)}<h3>Door placement</h3>${doorCards}<button type="button" data-action="add-door">Add another door</button><h3>Window placement</h3>${windowCards}<button type="button" data-action="add-window">Add another window</button><p class="step-tip"><small>${esc(TIPS.doorOpening)}</small></p><p class="step-tip"><small>${esc(TIPS.windowTrack)}</small></p>`}`);
-  const electricalStep = section(4, `${renderStepGuidance('electrical')}<p>${colony ? 'Quantities are quotation items per building.' : 'Suggested quantities are a starting point and can be changed.'}</p>${ELECTRICAL.map(([label, rate, help]) => quantityRow('electrical', label, rate, config.electrical[label] || 0, help, colony)).join('')}<fieldset><legend>Light appearance</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset><fieldset><legend>Socket placement (no cost impact)</legend><p class="step-tip"><small>${esc(TIPS.socketPlacement)}</small></p>${socketPlacement}</fieldset>`);
-  const addOnsStep = section(5, `${renderStepGuidance('addons')}${ADD_ONS.map(([label, rate]) => quantityRow('addOns', label, rate, config.addOns[label] || 0, '', colony)).join('')}<fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
-  const deliveryStep = section(6, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label>${renderFreightTable()}<p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);
-  const quotationStep = section(7, `${renderStepGuidance('quotation')}<p>Submit the exact configuration for a fixed, itemised quotation within 48 hours.</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>${esc(FIELD_LABELS.firstName)} *<input name="firstName" autocomplete="given-name" value="${esc(config.quote.firstName)}" required></label><label>${esc(FIELD_LABELS.lastName)} *<input name="lastName" autocomplete="family-name" value="${esc(config.quote.lastName)}" required></label><label>${esc(FIELD_LABELS.phone)} *<input type="tel" inputmode="numeric" name="phone" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.phone)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>${esc(FIELD_LABELS.email)} *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>${esc(FIELD_LABELS.companyName)}<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>${esc(FIELD_LABELS.city)}<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>${esc(FIELD_LABELS.state)}<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>${esc(FIELD_LABELS.notes)}<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">${esc(CONTROLS.getQuotation)}</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
+  const openingsStep = section(4, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `${renderPlan(config)}<h3>Door placement</h3>${doorCards}<button type="button" data-action="add-door">Add another door</button><h3>Window placement</h3>${windowCards}<button type="button" data-action="add-window">Add another window</button><p class="step-tip"><small>${esc(TIPS.doorOpening)}</small></p><p class="step-tip"><small>${esc(TIPS.windowTrack)}</small></p>`}`);
+  const electricalStep = section(5, `${renderStepGuidance('electrical')}<p>${colony ? 'Quantities are quotation items per building.' : 'Suggested quantities are a starting point and can be changed.'}</p>${ELECTRICAL_R1.map((item) => quantityRow('electrical', item.label, item.rate || 0, config.electrical[item.label] || 0, item.specification || '', colony)).join('')}<fieldset><legend>Light appearance</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset><fieldset><legend>Socket placement (no cost impact)</legend><p class="step-tip"><small>${esc(TIPS.socketPlacement)}</small></p>${socketPlacement}</fieldset>`);
+  const addOnsStep = section(6, `${renderStepGuidance('addons')}${FITOUT_R1.map((item) => quantityRow('addOns', item.label, item.rate || 0, config.addOns[item.label] || 0, item.specification || '', colony)).join('')}<p class="step-tip"><small>Some fit-out components are being confirmed and show as Quoted separately.</small></p><fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
+  const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label>${renderFreightTable()}<p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);
+  const quotationStep = section(8, `${renderStepGuidance('quotation')}<p>Submit the exact configuration for a fixed, itemised quotation within 48 hours.</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>${esc(FIELD_LABELS.firstName)} *<input name="firstName" autocomplete="given-name" value="${esc(config.quote.firstName)}" required></label><label>${esc(FIELD_LABELS.lastName)} *<input name="lastName" autocomplete="family-name" value="${esc(config.quote.lastName)}" required></label><label>${esc(FIELD_LABELS.phone)} *<input type="tel" inputmode="numeric" name="phone" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.phone)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>${esc(FIELD_LABELS.email)} *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>${esc(FIELD_LABELS.companyName)}<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>${esc(FIELD_LABELS.city)}<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>${esc(FIELD_LABELS.state)}<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>${esc(FIELD_LABELS.notes)}<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">${esc(CONTROLS.getQuotation)}</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
 
-  const allSections = [productStep, sizeStep, interiorStep, openingsStep, electricalStep, addOnsStep, deliveryStep, quotationStep];
+  const allSections = [productStep, sizeStep, structureStep, interiorStep, openingsStep, electricalStep, addOnsStep, deliveryStep, quotationStep];
   const renderedSections = embedded ? allSections.slice(1) : allSections;
   const reference = options.reference || 'SP-EST';
   const date = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' });
@@ -1674,6 +1745,6 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;
   const summarySize = colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`;
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>${embedded ? 1 : 1}</span> of ${embedded ? 7 : 8}: <span data-step-name>${esc(visibleSteps[0][0])}</span></p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="${embedded ? 7 : 8}" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / (embedded ? 7 : 8))}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div><div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><section class="construction-disclosure" aria-labelledby="construction-disclosure-title"><h2 id="construction-disclosure-title">${esc(CONSTRUCTION_DISCLOSURE.heading)}</h2><p>${esc(CONSTRUCTION_DISCLOSURE.body)}</p></section><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${embedded ? index + 2 : index + 1}" data-step-link="${embedded ? index + 2 : index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>${embedded ? 1 : 1}</span> of ${embedded ? 8 : 9}: <span data-step-name>${esc(visibleSteps[0][0])}</span></p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="${embedded ? 8 : 9}" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / (embedded ? 8 : 9))}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div><div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
 }
 
