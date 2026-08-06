@@ -2582,7 +2582,13 @@ export const CALCULATOR_ENTRY_STYLES = `
   position: absolute;
   inset: 0;
   /* Rotated to 180deg below 1024 so it darkens from the bottom. */
-  background: linear-gradient(180deg, rgba(14,23,41,0.35) 0%, rgba(14,23,41,0.72) 45%, rgba(14,23,41,0.95) 100%);
+  /* Mobile is the 180deg rotation, deepened at the top under the authorised
+     cap of 0.98 / 0.95 on the first two stops.
+     Measured at 390 with the original 0.35/0.72 stops: the copy sits in the
+     upper third, which is exactly where a bottom-up gradient is thinnest, and
+     the amber price came out at 2.91:1 on rgb(88,95,107). The headline passed
+     at 5.61:1 - amber is the tighter of the two and it is what set this. */
+  background: linear-gradient(180deg, rgba(14,23,41,0.88) 0%, rgba(14,23,41,0.93) 45%, rgba(14,23,41,0.97) 100%);
 }
 .calc-entry-inner {
   position: relative;
@@ -2593,6 +2599,19 @@ export const CALCULATOR_ENTRY_STYLES = `
   align-items: center;
 }
 .calc-entry-copy { max-width: 600px; }
+/* The wordmark is near-black and so is the band under the left scrim, so
+   the logo sits on a white chip rather than on the photograph. That also
+   keeps the mark in its designed colours instead of inventing a knockout.
+   Source is 981x500 rendering at 56px tall - downscaled 8.9x, never up. */
+.calc-entry-chip {
+  display: inline-block;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 0 0 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.calc-entry-chip img { display: block; height: 56px; width: auto; }
 .calc-entry-eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #E0A340; }
 .calc-entry-headline { margin: 0 0 10px; font-size: 30px; line-height: 1.18; font-weight: 700; color: #EAF0F7; }
 .calc-entry-price { color: #E0A340; }
@@ -2607,6 +2626,11 @@ export const CALCULATOR_ENTRY_STYLES = `
 .calc-entry-cta:hover, .calc-entry-cta:focus { background: #E0A340; color: #0E1729; }
 .calc-entry-trust { margin: 12px 0 0; font-size: 12px; font-weight: 400; color: rgba(234,240,247,0.56); }
 
+@media (max-width: 767px) {
+  .calc-entry-chip { padding: 10px 12px; margin-bottom: 16px; }
+  .calc-entry-chip img { height: 44px; }
+}
+
 @media (min-width: 1024px) {
   .calc-entry-scrim {
     background: linear-gradient(90deg,
@@ -2616,6 +2640,8 @@ export const CALCULATOR_ENTRY_STYLES = `
       rgba(14,23,41,0.15) 100%);
   }
   .calc-entry-inner { min-height: 420px; padding: 0 20px; }
+  .calc-entry-chip { padding: 12px 14px; margin-bottom: 20px; }
+  .calc-entry-chip img { height: 56px; }
   .calc-entry-headline { font-size: 34px; }
 }
 `;
@@ -2661,12 +2687,13 @@ export function renderCalculatorEntrySection(options: {
   return `<style>${CALCULATOR_ENTRY_STYLES}</style>`
     + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
     + `<picture class="calc-entry-photo">`
-    + `<source srcset="/credentials/optimized/calculator-background-banner.webp" type="image/webp">`
-    + `<img src="/credentials/optimized/calculator-background-banner.jpg" alt="" width="1024" height="434" loading="lazy" decoding="async">`
+    + `<source type="image/webp" sizes="100vw" srcset="/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w">`
+    + `<img src="/credentials/optimized/calculator-band-v1-1926.jpg" sizes="100vw" srcset="/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w" alt="" width="1926" height="817" loading="lazy" decoding="async">`
     + `</picture>`
     + `<div class="calc-entry-scrim" aria-hidden="true"></div>`
     + `<div class="calc-entry-inner">`
     + `<div class="calc-entry-copy">`
+    + `<span class="calc-entry-chip"><img src="/credentials/optimized/saman-logo-band-cropped.png" alt="SAMAN Portable" width="110" height="56" loading="lazy" decoding="async"></span>`
     + `<p class="calc-entry-eyebrow" data-copy-slot="eyebrow">PRICE IT YOURSELF</p>`
     + `<h2 id="calc-entry-title" class="calc-entry-headline" data-copy-slot="headline">`
     + `${entry ? `Your ${esc(options.productName)} from <span class="calc-entry-price">${money(entry.ex as number)}</span>` : `Design your ${esc(options.productName)}`}</h2>`
