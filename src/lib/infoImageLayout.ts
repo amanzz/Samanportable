@@ -174,6 +174,10 @@ export function infoImageHtml(image: InfoImage): string {
 /** Inject the Info images into the description HTML at the chosen slots. */
 export function injectInfoImages(html: string, images: InfoImage[] | undefined): string {
   if (!html || !images || !images.length) return html;
+  // Approved copy may place its own Info images at author-marked slots (C-08
+  // pages 1 and 2). When it does, automatic placement must stand down or the
+  // page renders two sets — the author's four plus four more.
+  if (/data-c08-info-image|<img[^>]+\/info\//i.test(html)) return html;
   const blocks = splitTopLevelBlocks(html);
   if (blocks.length < 2) return html;
   const slots = imageSlots(blocks, images.length);
