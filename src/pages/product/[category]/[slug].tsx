@@ -848,16 +848,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
               )}
 
+              {/* One entry point per page: the dark band above is it. The white
+                  "Estimate your cabin cost / Open the calculator" strip that used
+                  to sit here was the entry point the band replaced, so it is gone.
+                  The calculator itself is unchanged and still lives here. */}
               {embeddedCalculatorHtml && (
                 <section className="mt-4" id="cabin-calculator">
-                  <details className="rounded-xl border border-slate-200 bg-white/90 shadow-sm">
-                    <summary className="cursor-pointer list-none px-4 py-3">
-                      <span className="text-lg font-semibold text-foreground">{CLOSED_STATE.label}</span>
-                      <span className="ml-2 text-sm text-muted-foreground">{CLOSED_STATE.subLine}</span>
-                      <span className="ml-2 text-sm font-medium underline">{CLOSED_STATE.control}</span>
-                    </summary>
-                    <div className="mt-3 px-1 pb-1" dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
-                  </details>
+                  <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
                 </section>
               )}
 

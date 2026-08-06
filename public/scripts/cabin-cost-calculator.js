@@ -171,7 +171,11 @@
     const target = document.getElementById(id);
     if (!target) return;
     event.preventDefault();
-    const holder = target.closest('details') || target.querySelector('details');
+    // Open only a details that actually WRAPS the calculator. A blind
+    // querySelector('details') would find the freight ladder inside the
+    // calculator and force that open instead.
+    const holder = target.closest('details')
+      || Array.from(target.querySelectorAll('details')).find((d) => d.querySelector('[data-cabin-calculator]'));
     if (holder) holder.open = true;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
