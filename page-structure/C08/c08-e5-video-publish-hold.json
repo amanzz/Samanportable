@@ -6,8 +6,8 @@
   "page": "/product/container-houses",
   "url": "https://youtu.be/M9MsHw2_CCc"
  },
- "status": "BUILT — PUBLISH HELD",
- "reason": "L18 requires an on-page transcript with every video. None exists for this video and SAMAN has not ruled. No transcript was generated, paraphrased, summarised or auto-captioned.",
+ "status": "RELEASED — CLEARED FOR PUBLICATION",
+ "reason": "L18 requires an on-page transcript and none exists. Fable 5 authorises publication without one as a DOCUMENTED EXCEPTION: the page carries 2,268 words covering the same material, the video is a product tour rather than instructional content, and a transcript is a later two-field addition needing no rebuild. SAMAN is enabling YouTube auto-captions as the interim measure and will supply the transcript when YouTube returns it.",
  "whatIsBuilt": [
   "Facade only: local WebP poster plus a CSS play badge. No iframe in the initial DOM.",
   "youtube-nocookie.com embed, injected on click only.",
@@ -17,11 +17,13 @@
   "Every VideoObject value read from YouTube; see c08-e4-youtube-metadata-extract.json.",
   "schemaDescription is the COMPLETE YouTube description field, byte-identical (E5 item 5)."
  ],
- "whatIsMissing": [
-  "transcriptHeading",
-  "transcript"
- ],
  "toRelease": "Add transcriptHeading and transcript to the container-houses preset in src/components/product-variant-hero/presets.ts. Data-only; no code change.",
  "visibleOnPreview": true,
- "deployBlocked": true
+ "deployBlocked": false,
+ "releasedBy": "Fable 5, C-08 CLOSE-OUT ruling, 06 Aug 2026",
+ "openItem": "on-page transcript for M9MsHw2_CCc — supply transcriptHeading and transcript in the container-houses preset when YouTube returns it. Data-only, no rebuild.",
+ "stillMissing": [
+  "transcriptHeading",
+  "transcript"
+ ]
 }
