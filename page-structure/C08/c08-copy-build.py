@@ -25,7 +25,7 @@ REPORTS = r'D:\Project-shekhar\reports'
 # exist; see the report for the one deviation and why it was unavoidable.
 PAGES = {
     'container-houses': {
-        'file': 'C08-COPY-01-container-houses-hub-05Aug2026.md',
+        'file': 'C08-HUB-V2-06Aug2026.md',
         'slots': [
             ('40x12', 'E06'),   # 1 exterior hero, 40x10 or 40x12
             ('40x10', 'I02'),   # 2 interior, living or kitchen, larger size
@@ -43,7 +43,7 @@ PAGES = {
         ],
     },
     'luxury-container-houses': {
-        'file': 'C08-COPY-03-luxury-container-houses-06Aug2026.md',
+        'file': 'C08-LUXURY-V2-06Aug2026.md',
         'slots': [
             ('40x12', 'E06'),   # 1 exterior hero, 40x12 as instructed
             ('20x10', 'I02'),   # 2 interior kitchen/dining, 20x10 as instructed
@@ -52,7 +52,7 @@ PAGES = {
         ],
     },
     'shipping-container-homes': {
-        'file': 'C08-COPY-04-shipping-container-homes-06Aug2026.md',
+        'file': 'C08-SHIPPING-V2-06Aug2026.md',
         'slots': [
             ('40x10', 'E04'),   # 1 exterior rear view, 40x10 as instructed
             ('20x10', 'I02'),   # 2 interior "living or entry" — SIZE AND FAMILY DEVIATE, see report
@@ -61,7 +61,7 @@ PAGES = {
         ],
     },
     'affordable-container-homes': {
-        'file': 'C08-COPY-05-affordable-container-homes-06Aug2026.md',
+        'file': 'C08-AFFORDABLE-V2-06Aug2026.md',
         'slots': [
             ('20x10', 'E06'),   # 1 exterior hero, 20x10 as instructed
             ('40x10', 'I02'),   # 2 interior kitchen/dining — SIZE DEVIATES, see report

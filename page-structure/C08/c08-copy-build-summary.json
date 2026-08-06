@@ -1,14 +1,14 @@
 {
  "container-houses": {
-  "sourceFile": "C08-COPY-01-container-houses-hub-05Aug2026.md",
+  "sourceFile": "C08-HUB-V2-06Aug2026.md",
   "blocks": {
    "h2": 8,
    "h3": 0,
-   "p": 39,
+   "p": 40,
    "image": 4
   },
-  "htmlChars": 15083,
-  "renderedWords": 2383,
+  "htmlChars": 15521,
+  "renderedWords": 2448,
   "anchors": [
    {
     "anchor": "repeatable prefab module line",
@@ -29,6 +29,10 @@
    {
     "anchor": "the fully fitted route",
     "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "prefabricated houses range",
+    "href": "/product/prefabricated-houses"
    },
    {
     "anchor": "portable cabin",
@@ -134,7 +138,7 @@
   ]
  },
  "luxury-container-houses": {
-  "sourceFile": "C08-COPY-03-luxury-container-houses-06Aug2026.md",
+  "sourceFile": "C08-LUXURY-V2-06Aug2026.md",
   "blocks": {
    "h2": 10,
    "h3": 5,
@@ -197,15 +201,15 @@
   ]
  },
  "shipping-container-homes": {
-  "sourceFile": "C08-COPY-04-shipping-container-homes-06Aug2026.md",
+  "sourceFile": "C08-SHIPPING-V2-06Aug2026.md",
   "blocks": {
-   "h2": 10,
+   "h2": 12,
    "h3": 5,
-   "p": 46,
+   "p": 55,
    "image": 4
   },
-  "htmlChars": 14001,
-  "renderedWords": 2116,
+  "htmlChars": 16768,
+  "renderedWords": 2588,
   "anchors": [
    {
     "anchor": "the villa-grade interior specification",
@@ -260,15 +264,15 @@
   ]
  },
  "affordable-container-homes": {
-  "sourceFile": "C08-COPY-05-affordable-container-homes-06Aug2026.md",
+  "sourceFile": "C08-AFFORDABLE-V2-06Aug2026.md",
   "blocks": {
-   "h2": 10,
+   "h2": 11,
    "h3": 5,
-   "p": 48,
+   "p": 54,
    "image": 4
   },
-  "htmlChars": 13915,
-  "renderedWords": 2150,
+  "htmlChars": 15324,
+  "renderedWords": 2381,
   "anchors": [
    {
     "anchor": "the hospitality-grade finish",

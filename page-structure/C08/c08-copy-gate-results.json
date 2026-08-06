@@ -1,6 +1,6 @@
 {
  "container-houses": {
-  "renderedWordsL23": 2357,
+  "renderedWordsL23": 2422,
   "h2": 8,
   "h3": 0,
   "h1Page": 1,
@@ -27,6 +27,10 @@
    {
     "anchor": "the fully fitted route",
     "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "prefabricated houses range",
+    "href": "/product/prefabricated-houses"
    },
    {
     "anchor": "portable cabin",
@@ -108,13 +112,7 @@
   "h1Page": 1,
   "h1Panel": 0,
   "images": 4,
-  "badAdjacency": [
-   [
-    27,
-    "p",
-    "h2"
-   ]
-  ],
+  "badAdjacency": [],
   "anchors": [
    {
     "anchor": "modules repeated to one drawing",
@@ -158,29 +156,13 @@
   ]
  },
  "shipping-container-homes": {
-  "renderedWordsL23": 2104,
-  "h2": 10,
+  "renderedWordsL23": 2573,
+  "h2": 12,
   "h3": 5,
   "h1Page": 1,
   "h1Panel": 0,
   "images": 4,
-  "badAdjacency": [
-   [
-    20,
-    "p",
-    "h2"
-   ],
-   [
-    31,
-    "p",
-    "h2"
-   ],
-   [
-    42,
-    "p",
-    "h2"
-   ]
-  ],
+  "badAdjacency": [],
   "anchors": [
    {
     "anchor": "the villa-grade interior specification",
@@ -210,6 +192,8 @@
    "What is actually reinforced, and why",
    "Six sizes, and how reinforcement changes each",
    "Coastal and industrial exposure",
+   "Who actually buys the reinforced build",
+   "Foundations for a building that will move",
    "Where this sits against the rest of the range",
    "What the price includes, and what it does not",
    "Delivery, relocation and installation",
@@ -224,24 +208,13 @@
   ]
  },
  "affordable-container-homes": {
-  "renderedWordsL23": 2130,
-  "h2": 10,
+  "renderedWordsL23": 2360,
+  "h2": 11,
   "h3": 5,
   "h1Page": 1,
   "h1Panel": 0,
   "images": 4,
-  "badAdjacency": [
-   [
-    16,
-    "p",
-    "h2"
-   ],
-   [
-    28,
-    "p",
-    "h2"
-   ]
-  ],
+  "badAdjacency": [],
   "anchors": [
    {
     "anchor": "the hospitality-grade finish",
@@ -270,6 +243,7 @@
    "How the price comes down, and where it does not",
    "The six fixed plans",
    "What is optional, and priced separately",
+   "What a fixed plan actually saves, in order",
    "Where this sits against the rest of the range",
    "Who this build is genuinely right for",
    "Delivery, site readiness and installation",
