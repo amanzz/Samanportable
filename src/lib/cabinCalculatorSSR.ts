@@ -2554,20 +2554,30 @@ function renderWindowCard(window: WindowConfig, index: number, reserved: boolean
 export const CALCULATOR_ENTRY_STYLES = `
 /* ===== THE CALCULATOR ENTRY BAND ON PRODUCT PAGES ======================= */
 .calc-entry {
-  /* Full bleed. The photograph IS the band.
-     The source is 1024x434, so at 1440 it upscales 1.41x and at 1920, 1.88x.
-     That softening is accepted: the scrim covers the left 60% where an edge
-     would show it, and the visible right third is foliage already thrown out
-     of focus, which carries an upscale far better than a hard edge. The file
-     on disk is untouched - the browser does the scaling. */
+  /* A contained feature card in the same column as its siblings, not a
+     full-bleed band. Measured on the page: the column is 1216px wide at both
+     1440 and 1920, and this element's parent IS that column - so the width is
+     inherited rather than declared and cannot drift from the sibling cards by
+     a pixel.
+     Radius 8px, read off the Product Details card. The ticket guessed ~16;
+     the measured value is 8, and matching the sibling matters more than the
+     guess. overflow:hidden clips the photograph to it.
+     Three devices mark it out and no more: a step more elevation than the
+     sibling cards, a 1px amber keyline, and the pulsing eyebrow dot. */
   position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  margin: 16px 0;
   background-color: #0E1729;
   color: #EAF0F7;
+  /* outline, not border. A 1px border is part of the box, so the card came out
+     422px against a specified 420. An outline with a negative offset draws the
+     same keyline just inside the edge, follows the radius, and occupies no
+     layout at all. */
+  outline: 1px solid rgba(224,163,64,0.35);
+  outline-offset: -1px;
+  border-radius: 8px;
   overflow: hidden;
   isolation: isolate;
+  box-shadow: 0 12px 32px rgba(14,23,41,0.22), 0 2px 8px rgba(14,23,41,0.12);
 }
 .calc-entry-photo,
 .calc-entry-photo img {
@@ -2592,9 +2602,7 @@ export const CALCULATOR_ENTRY_STYLES = `
 }
 .calc-entry-inner {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 48px 20px;
+  padding: 48px 40px;
   display: flex;
   align-items: center;
 }
@@ -2612,6 +2620,22 @@ export const CALCULATOR_ENTRY_STYLES = `
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 .calc-entry-chip img { display: block; height: 56px; width: auto; }
+/* The only motion on the band. Opacity only - no transform and no size
+   change - so it cannot shift layout, and it stops entirely for anyone
+   who has asked for reduced motion. */
+.calc-entry-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #E0A340;
+  vertical-align: middle;
+  animation: calc-entry-pulse 2.5s ease-in-out infinite;
+}
+@keyframes calc-entry-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) {
+  .calc-entry-dot { animation: none; }
+}
 .calc-entry-eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #E0A340; }
 .calc-entry-headline { margin: 0 0 10px; font-size: 30px; line-height: 1.18; font-weight: 700; color: #EAF0F7; }
 .calc-entry-price { color: #E0A340; }
@@ -2639,7 +2663,7 @@ export const CALCULATOR_ENTRY_STYLES = `
       rgba(14,23,41,0.55) 62%,
       rgba(14,23,41,0.15) 100%);
   }
-  .calc-entry-inner { min-height: 420px; padding: 0 20px; }
+  .calc-entry-inner { min-height: 420px; padding: 0 48px; }
   .calc-entry-chip { padding: 12px 14px; margin-bottom: 20px; }
   .calc-entry-chip img { height: 56px; }
   .calc-entry-headline { font-size: 34px; }
@@ -2687,14 +2711,14 @@ export function renderCalculatorEntrySection(options: {
   return `<style>${CALCULATOR_ENTRY_STYLES}</style>`
     + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
     + `<picture class="calc-entry-photo">`
-    + `<source type="image/webp" sizes="100vw" srcset="/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w">`
-    + `<img src="/credentials/optimized/calculator-band-v1-1926.jpg" sizes="100vw" srcset="/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w" alt="" width="1926" height="817" loading="lazy" decoding="async">`
+    + `<source type="image/webp" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w">`
+    + `<img src="/credentials/optimized/calculator-band-v1-1926.jpg" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w" alt="" width="1926" height="817" loading="lazy" decoding="async">`
     + `</picture>`
     + `<div class="calc-entry-scrim" aria-hidden="true"></div>`
     + `<div class="calc-entry-inner">`
     + `<div class="calc-entry-copy">`
     + `<span class="calc-entry-chip"><img src="/credentials/optimized/saman-logo-band-cropped.png" alt="SAMAN Portable" width="110" height="56" loading="lazy" decoding="async"></span>`
-    + `<p class="calc-entry-eyebrow" data-copy-slot="eyebrow">PRICE IT YOURSELF</p>`
+    + `<p class="calc-entry-eyebrow" data-copy-slot="eyebrow"><span class="calc-entry-dot" aria-hidden="true"></span>PRICE IT YOURSELF</p>`
     + `<h2 id="calc-entry-title" class="calc-entry-headline" data-copy-slot="headline">`
     + `${entry ? `Your ${esc(options.productName)} from <span class="calc-entry-price">${money(entry.ex as number)}</span>` : `Design your ${esc(options.productName)}`}</h2>`
     + `<p class="calc-entry-line" data-copy-slot="subline">`
