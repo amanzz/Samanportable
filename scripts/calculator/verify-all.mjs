@@ -16,6 +16,11 @@ const scripts = [
   'verify-workbook-trace.mjs',
   'verify-hold-list.mjs',
   'verify-colour-modes.mjs',
+  // Brand green on controls. Computed styles in five states, and proven
+  // against six deliberately green builds — the stylesheet-reading version
+  // this replaces missed a live violation twice.
+  'verify-green-demotion.mjs',
+  'verify-green-demotion-fixture.mjs',
   'verify-gates-catch-violations.mjs',
   'verify-no-bare-fetch.mjs',
   'verify-no-emoji.mjs',

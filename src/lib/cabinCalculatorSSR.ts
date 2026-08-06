@@ -289,7 +289,7 @@ export const CEILINGS = [['Standard ceiling', 0], ['Particle Board', -15], ['PVC
 export const FLOORING = [['Vinyl (Standard)', 0], ['PVC', 90], ['SPC', 180], ['Wooden Laminate', 110], ['Tiles', 140]] as const;
 export const ELECTRICAL = [
   ['LED Panel Light', RATE_CARD.marketRates.ledPanel, 'Suggested: one per 40 sq ft'],
-  ['Tube Light', RATE_CARD.marketRates.tubeLight, ''],
+  ['Tube Light', 999, ''],
   ['Ceiling Fan', RATE_CARD.marketRates.fan, 'Suggested: one per 100 sq ft'],
   ['Exhaust Fan', RATE_CARD.marketRates.exhaust, ''],
   ['Split AC 1 Ton incl. installation', RATE_CARD.marketRates.ac1T, ''],
@@ -1157,7 +1157,7 @@ fieldset{
    at once and painted every selected card green. Same specificity, declared
    later, so these values win outright. Literals on both sets: --sd-* does not
    alias --calc-*, so neither can be pulled out from under the other. */
-.cabin-calculator-ssr,.cabin-calculator-ssr[data-theme="light"],.cabin-calculator-ssr[data-theme="green"]{--calc-ground:#0E1729;--calc-panel:#16223A;--calc-card:#1B2942;--calc-inset:#121C31;--calc-hairline:rgba(255,255,255,0.08);--calc-hairline-hi:rgba(255,255,255,0.20);--calc-control-border:rgba(255,255,255,0.34);--calc-text:#EAF0F7;--calc-text-2:rgba(234,240,247,0.64);--calc-text-3:rgba(234,240,247,0.46);--saman-amber:#E0A340;--saman-green:#2d7a3f;--sd-ground:#0E1729;--sd-panel:#16223A;--sd-card:#1B2942;--sd-inset:#121C31;--sd-hairline:rgba(255,255,255,0.08);--sd-hairline-hi:rgba(255,255,255,0.20);--sd-control-border:rgba(255,255,255,0.34);--sd-lift:rgba(255,255,255,0.06);--sd-text:#EAF0F7;--sd-text-2:rgba(234,240,247,0.64);--sd-text-3:rgba(234,240,247,0.46)}
+.cabin-calculator-ssr,.cabin-calculator-ssr[data-theme="light"],.cabin-calculator-ssr[data-theme="green"]{--calc-ground:#0E1729;--calc-panel:#16223A;--calc-card:#1B2942;--calc-inset:#121C31;--calc-hairline:rgba(255,255,255,0.08);--calc-hairline-hi:rgba(255,255,255,0.20);--calc-control-border:rgba(255,255,255,0.34);--calc-text:#EAF0F7;--calc-text-2:rgba(234,240,247,0.64);--calc-text-3:rgba(234,240,247,0.46);--saman-amber:#E0A340;--saman-green:#2d7a3f;--c-ink:#16223A;--c-accent:#E0A340;--bd-card:rgba(255,255,255,0.08);--bd-panel:rgba(255,255,255,0.08);--calc-primary:#16223A;--calc-secondary:#1B2942;--calc-surface:#EAF0F7;--calc-bg:#0E1729;--calc-soft:#1B2942;--calc-softest:#121C31;--calc-border:rgba(255,255,255,0.08);--calc-on-card:#EAF0F7;--calc-muted:rgba(234,240,247,0.64);--calc-accent:#E0A340;--calc-accent-strong:#E0A340;--calc-focus:#E0A340;--calc-shadow:rgba(0,0,0,0.40);--sd-ground:#0E1729;--sd-panel:#16223A;--sd-card:#1B2942;--sd-inset:#121C31;--sd-hairline:rgba(255,255,255,0.08);--sd-hairline-hi:rgba(255,255,255,0.20);--sd-control-border:rgba(255,255,255,0.34);--sd-lift:rgba(255,255,255,0.06);--sd-text:#EAF0F7;--sd-text-2:rgba(234,240,247,0.64);--sd-text-3:rgba(234,240,247,0.46)}
 .cabin-calculator-ssr,.cabin-calculator-ssr[data-theme="light"],.cabin-calculator-ssr[data-theme="green"]{background:var(--sd-ground);color:var(--sd-text);border-radius:20px;margin-top:24px;margin-bottom:24px;padding-top:28px;padding-bottom:28px}
 /* The brand still opens the module: green on the left, the new ground on the
    right, so the header hands off to the panel below it rather than sitting on
@@ -1480,7 +1480,10 @@ fieldset{
 .cabin-calculator-ssr .floor-plan { width: 100%; height: auto; background: var(--calc-inset); border: 1px solid var(--calc-hairline); border-radius: 12px; }
 .cabin-calculator-ssr .dw-shell { fill: none; stroke: var(--calc-text); stroke-width: 1.6; }
 .cabin-calculator-ssr .dw-partition { stroke: var(--calc-text-2); stroke-width: 1.2; stroke-dasharray: 5 3; }
-.cabin-calculator-ssr .dw-door { fill: var(--saman-amber); stroke: none; }
+/* Door fill is text colour, not amber. Amber has five roles and a marker on a
+   drawing is not one of them; a plan tells a door from a window by fill
+   against outline, which is what a drawing does anyway. */
+.cabin-calculator-ssr .dw-door { fill: var(--calc-text); stroke: none; }
 .cabin-calculator-ssr .dw-window { fill: none; stroke: var(--calc-text); stroke-width: 1.4; }
 .cabin-calculator-ssr .dw-roof { fill: none; stroke: var(--calc-text-2); stroke-width: 1.4; }
 .cabin-calculator-ssr .dw-dim { stroke: var(--calc-text-3); stroke-width: 1; }
@@ -1522,6 +1525,48 @@ fieldset{
   .cabin-calculator-ssr #calculator-step-2 .calc-choice > span > strong { font-size: 11px; line-height: 1.15; }
   .cabin-calculator-ssr #calculator-step-2 .calc-choice > span > small { font-size: 9px; line-height: 1.15; }
 }
+
+/* ===== P0 1 · SELECTED STATE, AND THE ONE PLACE GREEN LIVES ==============
+   Selected is a 1px amber border and a 3px amber ring at 15%. Never a fill:
+   a fill change is what put brand green on a control three times running.
+   ======================================================================== */
+.cabin-calculator-ssr .calc-choice>input:checked+span{background:var(--calc-card);border:1px solid var(--saman-amber);box-shadow:0 0 0 3px rgba(224,163,64,0.15)}
+.cabin-calculator-ssr .quantity-row.is-filled{background:var(--calc-card);border:1px solid var(--saman-amber);box-shadow:0 0 0 3px rgba(224,163,64,0.15)}
+.cabin-calculator-ssr .step-nav a[aria-current="step"]{box-shadow:0 0 0 3px rgba(224,163,64,0.15)}
+
+/* Quantity rows are cards on the panel, not green tiles. */
+.cabin-calculator-ssr .quantity-row {
+  background: var(--calc-card);
+  border: 1px solid var(--calc-hairline);
+}
+
+/* The site-wide a:hover rule paints #0a3d2a and reaches the nine step links,
+   tinting them brand green on hover. They are controls, so that is the
+   demotion rule verbatim. Restated here at a specificity it cannot beat. */
+.cabin-calculator-ssr .step-nav a:hover,
+.cabin-calculator-ssr .step-nav a:focus,
+.cabin-calculator-ssr .step-nav a:active { color: var(--calc-text); }
+.cabin-calculator-ssr .step-nav a[aria-current="step"]:hover,
+.cabin-calculator-ssr .step-nav a[aria-current="step"]:focus { color: #0E1729; }
+
+/* Success and confirmation. The only #2d7a3f in the calculator, and it is
+   here on purpose: this element exists to say something worked. */
+.cabin-calculator-ssr .calculator-status,
+.cabin-calculator-ssr [data-calculator-notice],
+.cabin-calculator-ssr [data-restore-banner] {
+  background: var(--saman-green);
+  color: #EAF0F7;
+  border: 1px solid var(--saman-green);
+}
+
+/* The published price tables carried brand green on 498 cell borders. */
+.cabin-calculator-ssr table th,
+.cabin-calculator-ssr table td { border-color: var(--calc-hairline); }
+
+/* Amber has five roles and a door marker on a drawing is not one of them.
+   The plan tells a door from a window by fill against outline, which is what
+   a drawing does anyway. */
+.cabin-calculator-ssr .dw-door { fill: var(--calc-text); stroke: none; }
 `;
 
 export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
@@ -2106,9 +2151,13 @@ function renderDrawing(config: CalculatorConfig, basePrice: number | null): stri
     + `<svg class="floor-plan" viewBox="0 0 ${VIEW_W} ${VIEW_H}" role="img" aria-label="Cabin drawing: 2D plan, floor plan and four elevations" data-floor-plan data-view="${esc(config.planView)}">`
     + `${renderPlanView(g)}${renderFloorView(g)}${renderElevationsView(g)}`
     + `</svg>`
+    // Ruling, 05 Aug: codes stay on the drawing where space is tight, and
+    // everything a buyer reads uses words. This line is the bridge between the
+    // two, so nobody has to learn a code to read their own quotation.
+    + `<p class="drawing-legend"><small>On the drawing, R1 is Room 1, D1 is Door 1 and W1 is Window 1. Every control and every line of your quotation uses the full words.</small></p>`
     + `<div class="drawing-tiles">`
     + `<div class="drawing-tile"><small>Carpet Area</small><strong data-carpet-area>${g.carpetAreaSqft.toLocaleString('en-IN', { maximumFractionDigits: 0 })} sq ft</strong></div>`
-    + `<div class="drawing-tile"><small>Base Price</small><strong data-base-price>${basePrice === null ? 'Quoted separately' : money(basePrice)}</strong></div>`
+    + `<div class="drawing-tile"><small>Base cabin price</small><strong data-base-price>${basePrice === null ? 'Quoted separately' : money(basePrice)}</strong></div>`
     + `</div></div>`;
 }
 
@@ -2244,7 +2293,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const colonySize = `<label>Workers to accommodate<input type="number" inputmode="numeric" min="1" max="100000" name="workers" value="${config.workers || ''}" data-workers></label><p data-worker-suggestion>${config.workers > 0 && selectedColony ? `${selectedColony.label} × ${suggestedQuantity} accommodates at least ${config.workers.toLocaleString('en-IN')} workers.` : 'Enter the worker headcount to see the smallest sufficient configuration and quantity.'}</p><fieldset><legend>Approved building configuration</legend>${colonyLadder(config.productId).map((item, index) => radio('colonyVariant', String(index), `${item.label}, ${item.areaSqft.toLocaleString('en-IN')} sq ft`, index === config.colonyVariant, `${item.capacity || 'Capacity confirmed at quotation'} · ${money(item.priceExGst)} ex-GST`, ` data-price="${item.priceExGst}" data-area="${item.areaSqft}" data-capacity-max="${item.capacityMax || 0}"`)).join('')}</fieldset><label>Building quantity<input type="number" inputmode="numeric" min="1" max="50" name="quantity" value="${config.quantity}"></label>`;
   // The tile shows the same base the estimate's first line shows.
   const basePriceForDrawing = estimate.lines[0]?.amount ?? null;
-  const regularSize = `<div class="field-grid"><label>Length in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="length" value="${config.length}" required aria-describedby="size-guidance"></label><label>Width in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="width" value="${config.width}" required aria-describedby="size-guidance"></label><label>Height in ft<input type="number" inputmode="decimal" min="7" max="16" step="0.5" name="height" value="${config.height}"></label><label>Cabin quantity<input type="number" inputmode="numeric" min="1" max="50" step="1" name="quantity" value="${config.quantity}"></label></div><p id="size-guidance">${SIZE_ERROR}</p><fieldset class="room-chips"><legend>Rooms and partitions</legend>${[1, 2, 3, 4, 5, 6].map((count) => radio('rooms', String(count), count === 1 ? '1 room, no partition' : `${count} rooms, ${count - 1} partitions`, config.rooms === count, '', ' data-room-count')).join('')}</fieldset><div class="room-lengths" data-room-lengths>${Array.from({ length: config.rooms }, (unused, index) => `<label>R${index + 1} length in ft<input type="number" inputmode="decimal" min="0" max="60" step="any" name="roomLengths[${index}]" value="${(drawGeometry(config).roomLengths[index] || 0).toFixed(1)}" data-room-length="${index}"></label>`).join('')}<button type="button" data-action="distribute-rooms" class="ghost">Distribute equally</button></div><fieldset><legend>Partition doors</legend>${[0, 1, 2, 3, 4, 5].slice(0, Math.max(1, config.rooms)).map((count) => radio('partitionDoors', String(count), count === 0 ? 'No partition door' : `${count} partition door${count > 1 ? 's' : ''}`, config.partitionDoors === count, count === 0 ? 'Included' : `${money(RATE_CARD.marketRates.steelDoor)} each, ex-GST`, ` data-rate="${count === 0 ? 0 : RATE_CARD.marketRates.steelDoor * count}" data-rate-basis="each" data-line-label="${count} partition door${count > 1 ? 's' : ''}"`)).join('')}</fieldset>${renderDrawing(config, basePriceForDrawing)}`;
+  const regularSize = `<div class="field-grid"><label>Length in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="length" value="${config.length}" required aria-describedby="size-guidance"></label><label>Width in ft<input type="number" inputmode="decimal" min="6" max="60" step="0.5" name="width" value="${config.width}" required aria-describedby="size-guidance"></label><label>Height in ft<input type="number" inputmode="decimal" min="7" max="16" step="0.5" name="height" value="${config.height}"></label><label>Cabin quantity<input type="number" inputmode="numeric" min="1" max="50" step="1" name="quantity" value="${config.quantity}"></label></div><p id="size-guidance">${SIZE_ERROR}</p><fieldset class="room-chips"><legend>Rooms and partitions</legend>${[1, 2, 3, 4, 5, 6].map((count) => radio('rooms', String(count), count === 1 ? '1 room, no partition' : `${count} rooms, ${count - 1} partitions`, config.rooms === count, '', ' data-room-count')).join('')}</fieldset><div class="room-lengths" data-room-lengths>${Array.from({ length: config.rooms }, (unused, index) => `<label>Room ${index + 1} length in ft<input type="number" inputmode="decimal" min="0" max="60" step="any" name="roomLengths[${index}]" value="${(drawGeometry(config).roomLengths[index] || 0).toFixed(1)}" data-room-length="${index}"></label>`).join('')}<button type="button" data-action="distribute-rooms" class="ghost">Distribute equally</button></div><fieldset><legend>Partition doors</legend>${[0, 1, 2, 3, 4, 5].slice(0, Math.max(1, config.rooms)).map((count) => radio('partitionDoors', String(count), count === 0 ? 'No partition door' : `${count} partition door${count > 1 ? 's' : ''}`, config.partitionDoors === count, count === 0 ? 'Included' : `${money(RATE_CARD.marketRates.steelDoor)} each, ex-GST`, ` data-rate="${count === 0 ? 0 : RATE_CARD.marketRates.steelDoor * count}" data-rate-basis="each" data-line-label="${count} partition door${count > 1 ? 's' : ''}"`)).join('')}</fieldset>${renderDrawing(config, basePriceForDrawing)}`;
   // Roof and mobility used to sit in the structure step. That step is gone, so
   // they move here, next to the other size and form decisions.
   const roofAndMobility = colony ? '' : `<fieldset><legend>Roof</legend>${radio('roof', 'Sloped', 'Sloped roof', config.roof === 'Sloped', 'Standard, included', ' data-rate="0" data-rate-basis="percent of base"')}${radio('roof', 'Flat / mono-pitch', 'Flat / mono-pitch roof', config.roof === 'Flat / mono-pitch', '+4% of base price', ' data-rate="4" data-rate-basis="percent of base" data-line-label="Flat / mono-pitch roof"')}</fieldset><fieldset><legend>Mobility</legend>${radio('mobility', '100% movable', '100% movable', config.mobility === '100% movable')}${radio('mobility', 'Fixed / semi-permanent', 'Fixed / semi-permanent', config.mobility === 'Fixed / semi-permanent')}</fieldset>`;

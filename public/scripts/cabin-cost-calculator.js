@@ -429,7 +429,7 @@
       const next = document.createDocumentFragment();
       for (let i = 0; i < g.rooms; i += 1) {
         const label = document.createElement('label');
-        label.append(document.createTextNode(`R${i + 1} length in ft`));
+        label.append(document.createTextNode(`Room ${i + 1} length in ft`));
         const input = document.createElement('input');
         input.type = 'number';
         input.inputMode = 'decimal';
