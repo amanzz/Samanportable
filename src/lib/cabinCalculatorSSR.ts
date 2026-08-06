@@ -1709,6 +1709,65 @@ fieldset{
 .cabin-calculator-ssr .dw-break { stroke: var(--calc-inset); stroke-width: 3.2; }
 
 .cabin-calculator-ssr .drawing-key { margin: 6px 0 0; font-size: 10px; letter-spacing: 0.04em; color: var(--calc-text-3); }
+
+/* ===== STEP 5 - two columns, opening cards in a grid ==================== */
+.cabin-calculator-ssr .op-left { min-width: 0; }
+.cabin-calculator-ssr .op-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; align-items: start; }
+.cabin-calculator-ssr #calculator-step-5 .opening-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px;
+  margin: 0;
+  padding: 8px;
+  background: var(--calc-card);
+  border: 1px solid var(--calc-hairline);
+  border-radius: 8px;
+}
+.cabin-calculator-ssr .op-cards .opening-card > legend {
+  padding: 0; margin: 0 0 2px;
+  font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--calc-text-2);
+}
+/* Controls sit on a row, not stacked with a label above each. */
+.cabin-calculator-ssr #calculator-step-5 .opening-card > label {
+  display: grid; grid-template-columns: minmax(0, 1fr) 96px;
+  align-items: center; gap: 0 6px; margin: 0; font-size: 11px;
+}
+.cabin-calculator-ssr #calculator-step-5 .opening-card > label > select,
+.cabin-calculator-ssr #calculator-step-5 .opening-card > label > input { height: 26px; min-height: 26px; padding: 0 4px; font-size: 11px; }
+/* Nested groups - type, hinge, opening, track - are chip rows. */
+.cabin-calculator-ssr #calculator-step-5 .opening-card fieldset {
+  display: flex; flex-wrap: wrap; gap: 4px; margin: 2px 0; padding: 0; border: 0;
+}
+.cabin-calculator-ssr .op-cards .opening-card fieldset > legend {
+  flex: 1 0 100%; margin: 0; font-size: 9px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--calc-text-3);
+}
+.cabin-calculator-ssr .op-cards .opening-card .calc-choice > span { min-height: 26px; padding: 2px 7px; }
+.cabin-calculator-ssr .op-cards .opening-card .calc-choice > span > strong { font-size: 10px; line-height: 1.15; }
+.cabin-calculator-ssr .op-cards .opening-card .calc-choice > span > small { font-size: 9px; line-height: 1.15; }
+/* The long per-card note is a tip, not a control. It lives in the step tip. */
+.cabin-calculator-ssr #calculator-step-5 .opening-card > small { display: none; }
+
+@media (min-width: 1024px) {
+  .cabin-calculator-ssr #calculator-step-5 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    gap: 0 20px;
+    align-items: start;
+  }
+  .cabin-calculator-ssr #calculator-step-5 > h2,
+  .cabin-calculator-ssr #calculator-step-5 > .step-guidance,
+  .cabin-calculator-ssr #calculator-step-5 > .scope-note { grid-column: 1 / -1; }
+  .cabin-calculator-ssr #calculator-step-5 > .op-left { grid-column: 1; }
+  .cabin-calculator-ssr #calculator-step-5 > .op-right { grid-column: 2; }
+  .cabin-calculator-ssr #calculator-step-5 .floor-plan { max-height: 210px; }
+  /* The legend sentence repeats under every viewer. The short key carries it
+     inside the steps; the sentence stays where there is room for it. */
+  .cabin-calculator-ssr #calculator-step-2 .drawing-legend,
+  .cabin-calculator-ssr #calculator-step-5 .drawing-legend { display: none; }
+}
+
+/* A grid on an id outranks the rule that hides an inactive step. */
+.cabin-calculator-ssr.is-enhanced #calculator-step-5:not(.is-active) { display: none; }
 `;
 
 export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
@@ -2563,7 +2622,11 @@ export function renderCalculatorEntrySection(options: {
   const rows = productPriceRows(product, options.ladderKey ?? product.ladderKey);
   const entry = rows.find((row) => row.ex !== null && row.ex !== undefined);
   const size = defaultSizeFor(product, options.ladderKey);
-  const href = options.href || `/cabin-cost-calculator?product=${encodeURIComponent(options.productId)}`;
+    // An in-page anchor, not a route. The whole calculator is already embedded
+  // further down this page; sending the buyer to /cabin-cost-calculator threw
+  // away the product context and the scroll position. The standalone route
+  // stays exactly as it is for direct traffic.
+  const href = options.href || '#cabin-calculator';
   return `<style>${CALCULATOR_ENTRY_STYLES}</style>`
     + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
     + `<div class="calc-entry-inner">`
@@ -2630,7 +2693,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const windowCards = windowSlots.map((window, index) => renderWindowCard(window, index, index >= config.windows.length)).join('');
   const socketRoomChips = ROOM_TYPES.map((room, index) => radio('socketRoom', String(index), room, index === 0, '', ' data-socket-room')).join('');
   const socketPanels = ROOM_TYPES.map((room, index) => `<div class="socket-panel" data-socket-panel="${index}"${index === 0 ? '' : ' hidden'}><div class="socket-walls">${WALLS.map((wall) => socketWallRow(esc(room.toLowerCase()), wall)).join('')}</div></div>`).join('');
-  const openingsStep = section(4, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `${renderDrawing(config, basePriceForDrawing)}<h3>Door placement</h3>${doorCards}<button type="button" data-action="add-door">Add another door</button><h3>Window placement</h3>${windowCards}<button type="button" data-action="add-window">Add another window</button><p class="step-tip"><small>${esc(TIPS.doorOpening)}</small></p><p class="step-tip"><small>${esc(TIPS.windowTrack)}</small></p>`}`);
+  const openingsStep = section(4, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `<div class="op-left"><h3>Door placement</h3><div class="op-cards">${doorCards}</div><button type="button" data-action="add-door" class="ghost">Add another door</button><h3>Window placement</h3><div class="op-cards">${windowCards}</div><button type="button" data-action="add-window" class="ghost">Add another window</button><p class="step-tip"><small>${esc(TIPS.doorOpening)}</small></p><p class="step-tip"><small>${esc(TIPS.windowTrack)}</small></p></div><div class="op-right">${renderDrawing(config, basePriceForDrawing)}</div>`}`);
   const electricalStep = section(5, `${renderStepGuidance('electrical')}${colony ? '<p class="scope-note">Quantities are quotation items per building.</p>' : ''}<div class="ec-left"><div class="ec-cards">${ELECTRICAL_R1.map((item) => electricalCard(item, config.electrical[item.label] || 0, colony)).join('')}</div><div class="ec-chip-groups"><fieldset><legend>Light colour</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}</fieldset><fieldset><legend>LED shape</legend>${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset></div></div><div class="ec-right"><fieldset class="socket-rooms"><legend>Socket placement, no cost impact</legend>${socketRoomChips}</fieldset><p class="step-tip"><small>${esc(TIPS.socketPlacement)}</small></p>${socketPanels}${renderDrawing(config, basePriceForDrawing)}</div>`);
   const addOnsStep = section(6, `${renderStepGuidance('addons')}${FITOUT_R1.map((item) => quantityRow('addOns', item.label, item.rate || 0, config.addOns[item.label] || 0, item.specification || '', colony)).join('')}<p class="step-tip"><small>Some fit-out components are being confirmed and show as Quoted separately.</small></p><fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
   const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label><details class="freight-ladder"><summary>See the full distance ladder</summary>${renderFreightTable()}</details><p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);

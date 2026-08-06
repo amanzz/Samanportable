@@ -842,7 +842,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               )}
 
               {embeddedCalculatorHtml && (
-                <section className="mt-4">
+                <section className="mt-4" id="cabin-calculator">
                   <details className="rounded-xl border border-slate-200 bg-white/90 shadow-sm">
                     <summary className="cursor-pointer list-none px-4 py-3">
                       <span className="text-lg font-semibold text-foreground">{CLOSED_STATE.label}</span>

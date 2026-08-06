@@ -153,6 +153,55 @@
     return url.toString();
   }
 
+  /*
+   * The band's CTA scrolls to the calculator already on this page. It never
+   * navigates: sending the buyer to /cabin-cost-calculator threw away the
+   * product context and their scroll position, and the back button then landed
+   * them at the top of the product page rather than where they left it.
+   *
+   * The embed lives inside a <details>, so it has to be opened before the
+   * scroll or the target has no height and the page jumps to the wrong place.
+   * The hash is pushed so the position is shareable and back-button safe, and
+   * focus lands on the first control so the keyboard follows the eye.
+   */
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('[data-calculator-entry] a[href^="#"]');
+    if (!link) return;
+    const id = link.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+    event.preventDefault();
+    const holder = target.closest('details') || target.querySelector('details');
+    if (holder) holder.open = true;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    if (window.history && window.history.pushState) {
+      window.history.pushState(null, '', `#${id}`);
+    } else {
+      window.location.hash = id;
+    }
+    const settle = reduced ? 0 : 420;
+    window.setTimeout(() => {
+      /*
+       * The first control a keyboard would reach, and the calculator itself if
+       * there is none. Querying only for inputs inside the active step landed
+       * on nothing and left focus on <body>: on this route the calculator sits
+       * in a <details> that has only just been opened, and its first controls
+       * are visually-hidden radios that a plain `input` query walked straight
+       * past when the step had not been marked active yet.
+       */
+      const calc = target.querySelector('[data-cabin-calculator]') || target;
+      const first = Array.from(calc.querySelectorAll('input, select, textarea, button, a[href]'))
+        .find((el) => !el.disabled && el.getClientRects().length + (el.type === 'radio' ? 1 : 0) > 0);
+      if (first) {
+        first.focus({ preventScroll: true });
+      } else if (calc) {
+        if (!calc.hasAttribute('tabindex')) calc.setAttribute('tabindex', '-1');
+        calc.focus({ preventScroll: true });
+      }
+    }, settle);
+  });
+
   function showStep(root, step, focus) {
     const sections = Array.from(root.querySelectorAll('[data-step]'));
     const available = sections.map((section) => num(section.dataset.step));
