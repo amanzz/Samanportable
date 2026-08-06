@@ -1,1515 +1,1515 @@
 {
-  "sourceRoot": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house",
-  "assetType": "render",
-  "selectionRule": "Each source is used exactly once: six square gallery and four 16:9 Info derivatives per size.",
-  "altPolicy": "No alt text authored; all alt fields remain empty pending Fable 5's byte-exact manifest.",
-  "visualCropReview": "Passed for all 24 Info derivatives; complete exterior building or principal interior subject retained.",
-  "processed": 60,
-  "uniqueSources": 60,
-  "uniqueFilenames": 60,
-  "gallery": 36,
-  "info": 24,
-  "wiredToRoute": 0,
-  "images": [
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "E01",
-      "sourceFilename": "E01_front-right-hero.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E01_front-right-hero.png",
-      "sourceSha256": "6e2e617d190480f9f77dff5dbe4c6f318ad4ac66dd05c323c77e1659deae8c25",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x8-front-right-hero.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-front-right-hero.webp",
-      "targetSha256": "3d871d1a959bd6ea90ae615779c8ffba165308ebaa380968afaab7817a725575",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 120586,
-      "webpQuality": 88,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "E02",
-      "sourceFilename": "E02_front-left-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E02_front-left-angle.png",
-      "sourceSha256": "a6bbab64b46ddfd5d9b7ca25964da0e611e64819afcbdc987acde4a1399f9515",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x8-front-left-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x8/prefabricated-container-house-20x8-front-left-angle.webp",
-      "targetSha256": "0ec1fd67554c49f26c1622304043d4c28385ed24b28afff53ef6953c767ddd8c",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 119584,
-      "webpQuality": 86,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "E03",
-      "sourceFilename": "E03_long-side-elevation.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E03_long-side-elevation.png",
-      "sourceSha256": "f3637d53c653746a81a40f1a24eed8785f965eb5e5c3c3b148eed2c0d896222f",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x8-long-side-elevation.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-long-side-elevation.webp",
-      "targetSha256": "6dae80254f35e8ad12ac6e78665c01c34216ad9308d0fa883dc5517b91202548",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122508,
-      "webpQuality": 88,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "E04",
-      "sourceFilename": "E04_rear-right-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E04_rear-right-angle.png",
-      "sourceSha256": "cefe99afe75372ef3070bd01a92967c5bc85070911651ebe823e11e14a7bf7e3",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x8-rear-right-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x8/prefabricated-container-house-20x8-rear-right-angle.webp",
-      "targetSha256": "f588454a6a4fef9725b8d643704a278009f01775452216506a1a0f855d285108",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 118952,
-      "webpQuality": 90,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "E05",
-      "sourceFilename": "E05_end-dominant.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E05_end-dominant.png",
-      "sourceSha256": "d226ea60f9234388c6377aacc3d7dd57d61d55cdb250357f17e1cc49db34941e",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x8-end-dominant.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x8/prefabricated-container-house-20x8-end-dominant.webp",
-      "targetSha256": "73e44f64b85709960c4b7fa57cf09bfca47e9e27cafd35999257550a34442ef9",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 120642,
-      "webpQuality": 87,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "E06",
-      "sourceFilename": "E06_elevated-three-quarter.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E06_elevated-three-quarter.png",
-      "sourceSha256": "178610b0a504070f91111831b7fbc9d1ac9cfdabddfd68d4f9b354da2292a79c",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x8-elevated-three-quarter.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-elevated-three-quarter.webp",
-      "targetSha256": "2f4bbbfba7f405c25e667469a335d081e9f7597d2702b800eec6d3d314c735f6",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 117798,
-      "webpQuality": 75,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "I01",
-      "sourceFilename": "I01_entry-living-hall.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\I01_entry-living-hall.png",
-      "sourceSha256": "674a20bc625c2bcbefc2622818a346a1cde0d4ae8095b80bfcb9ab388541fc60",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x8-entry-living-hall.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-entry-living-hall.webp",
-      "targetSha256": "c3579c142ea0b9d8783bd9bcf7f6f056f2ab5a8c2dac69e6adb993c6db304aac",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 115938,
-      "webpQuality": 88,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "I02",
-      "sourceFilename": "I02_kitchen-dining-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\I02_kitchen-dining-reverse.png",
-      "sourceSha256": "8c19de88419f25db048e94fa27c83588a708063920ce9d44d47c229bc0c05809",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x8-kitchen-dining-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-kitchen-dining-reverse.webp",
-      "targetSha256": "5bd192a594ed87811543c9c343740a9751c22d39eeff3f2a24d8201f3c527c8f",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 121774,
-      "webpQuality": 89,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "I03",
-      "sourceFilename": "I03_bedroom-doorway.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\I03_bedroom-doorway.png",
-      "sourceSha256": "7d16d690e081000b42e2987a6619b42b70fc9523863ea806832884cfd3d4a077",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x8-bedroom-doorway.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-bedroom-doorway.webp",
-      "targetSha256": "4a8067c783c170f227893791a3725d19f4eaff786e7d1abb6a3ccc4dd2fb59e2",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 114144,
-      "webpQuality": 88,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x8",
-      "sourceViewToken": "I04",
-      "sourceFilename": "I04_bathroom-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\I04_bathroom-reverse.png",
-      "sourceSha256": "1a28091a3471231e1b0b7671635e461b6b5e3fa25eb5b2f11b151145063222d3",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x8-bathroom-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x8/prefabricated-container-house-20x8-bathroom-reverse.webp",
-      "targetSha256": "ab14ec13b7912495f5f42c4df8b114624b8ff22ceef69391ae98a2bacf6a7f9c",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 113294,
-      "webpQuality": 92,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "E01",
-      "sourceFilename": "E01_front-right-hero.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E01_front-right-hero.png",
-      "sourceSha256": "ad80e65c544ba287f17775dee569404255ee301faa4e796546b719d495e63809",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x10-front-right-hero.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-front-right-hero.webp",
-      "targetSha256": "b4a5585bfb494d173ab3f332096aa7ddd9c81e219ec0cd4c71e9bf31cf75fb4f",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122764,
-      "webpQuality": 65,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "E02",
-      "sourceFilename": "E02_front-left-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E02_front-left-angle.png",
-      "sourceSha256": "64f6512c9b9c86d71515b86bfe9776b01d901e956b09e9cfae0efa2cfffca8a6",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x10-front-left-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x10/prefabricated-container-house-20x10-front-left-angle.webp",
-      "targetSha256": "7fd8fef08085bcde26b4c049025d7c223544ca2fbc634d3ba762562e6bc84abd",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 120458,
-      "webpQuality": 80,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "E03",
-      "sourceFilename": "E03_long-side-elevation.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E03_long-side-elevation.png",
-      "sourceSha256": "9237ff043182d084944449b372551dcb49209dd3faeca0e0879a21f79ac94d38",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x10-long-side-elevation.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-long-side-elevation.webp",
-      "targetSha256": "0352a9eb0425a01974a24dcb455271e74b48f48d061e836f083b1722b8ef4280",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 121976,
-      "webpQuality": 76,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "E04",
-      "sourceFilename": "E04_rear-right-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E04_rear-right-angle.png",
-      "sourceSha256": "5f30777eea2371bfabc52cf5ebcb78cfc102f3e23329dec10aeee70929e472b0",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x10-rear-right-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x10/prefabricated-container-house-20x10-rear-right-angle.webp",
-      "targetSha256": "9dd30eb78d411bf913842927c99554d9ff6857b6398c6a7e3996f0a8173f6374",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 120148,
-      "webpQuality": 88,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "E05",
-      "sourceFilename": "E05_end-dominant.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E05_end-dominant.png",
-      "sourceSha256": "494636fe432debd9ba8eb704459aef7f2d7fb07f148ab996e0568971949dff3b",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x10-end-dominant.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x10/prefabricated-container-house-20x10-end-dominant.webp",
-      "targetSha256": "d0a61c582f1cad1841d40387c37cabf1d713902f5968a3b766582b7547f7fb7c",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 119190,
-      "webpQuality": 79,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "E06",
-      "sourceFilename": "E06_elevated-three-quarter.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E06_elevated-three-quarter.png",
-      "sourceSha256": "08bc9de72eb87790e9a3024feb9d2ec4b5de951243cbae0907f320788e66bd45",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x10-elevated-three-quarter.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-elevated-three-quarter.webp",
-      "targetSha256": "692c852c10c44d2a2bd1abfb3cfa8e99e02f69b6651ce2c557a568f43d2a53c4",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 121732,
-      "webpQuality": 77,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "I01",
-      "sourceFilename": "I01_entry-living-hall.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\I01_entry-living-hall.png",
-      "sourceSha256": "b895e71acdc850dc563b18173f31a047362224e6ac220dbba974b925fa7a9d95",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x10-entry-living-hall.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-entry-living-hall.webp",
-      "targetSha256": "8d47306d25be9567e900dcc12928b0177e6ee59faf2ea549d4b1cda5865caac8",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 115354,
-      "webpQuality": 85,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "I02",
-      "sourceFilename": "I02_kitchen-dining-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\I02_kitchen-dining-reverse.png",
-      "sourceSha256": "739ffbd2b6b119b71f47840fc2bbae6ef78e838356dc29972b46fa2c6b3030bd",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x10-kitchen-dining-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-kitchen-dining-reverse.webp",
-      "targetSha256": "9e6e3cb8d167c595c346823e228dd5aa2027565284de5c574c7ff79ae57db582",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122062,
-      "webpQuality": 86,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "I03",
-      "sourceFilename": "I03_bedroom-doorway.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\I03_bedroom-doorway.png",
-      "sourceSha256": "acf461b359a0335dec51f7b5a016034b4af573c5914ae8917f1c67176d252db7",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x10-bedroom-doorway.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-bedroom-doorway.webp",
-      "targetSha256": "c356dc7ac2dacf860da1343ae286f3138a8e5dc2ce42db3e4cf5ebfafe9334bb",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 115502,
-      "webpQuality": 87,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x10",
-      "sourceViewToken": "I04",
-      "sourceFilename": "I04_bathroom-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\I04_bathroom-reverse.png",
-      "sourceSha256": "11ff41edece33c72fc24289a96db4b781fc5cd6cbfb306d9845e844a40ac6103",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x10-bathroom-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x10/prefabricated-container-house-20x10-bathroom-reverse.webp",
-      "targetSha256": "cfb1cba5cfffb236207cc91f894cad35c89017e7d80c63500eaa8c08917cd485",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 108830,
-      "webpQuality": 92,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "E01",
-      "sourceFilename": "E01_front-right-hero.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E01_front-right-hero.png",
-      "sourceSha256": "f39913df4fc64d43d3c32c055c864f5e4c1ef396d4a0053b18c32151a90fba2e",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x12-front-right-hero.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-front-right-hero.webp",
-      "targetSha256": "7ea536902c89434c88264a347bc822a48ae608621d41321c907def05400c40fc",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122502,
-      "webpQuality": 61,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "E02",
-      "sourceFilename": "E02_front-left-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E02_front-left-angle.png",
-      "sourceSha256": "518e83596f9e233b7e9556d4e8eb3b7dac145e8f87cd2c960d39637f5850224e",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x12-front-left-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x12/prefabricated-container-house-20x12-front-left-angle.webp",
-      "targetSha256": "de685337cffc216d30fa874eb1710d60826dec00c33146e2ad94947c3653087a",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 122636,
-      "webpQuality": 78,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "E03",
-      "sourceFilename": "E03_long-side-elevation.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E03_long-side-elevation.png",
-      "sourceSha256": "490395e87208d60f6d20d3a41e0a728afdfc22fcf5ded0835e11b38a0cabba2b",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x12-long-side-elevation.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-long-side-elevation.webp",
-      "targetSha256": "bf427618d7f10d3bb87cb498f5c1c9c3b6db194543b60719fc3881228edad434",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 120136,
-      "webpQuality": 77,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "E04",
-      "sourceFilename": "E04_rear-right-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E04_rear-right-angle.png",
-      "sourceSha256": "d342414827097ba367282bfe6d1285784791df802c2098222f64604a41f27e00",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x12-rear-right-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x12/prefabricated-container-house-20x12-rear-right-angle.webp",
-      "targetSha256": "8a4fa546476d97fa6719fa53b6cfe38034577614a812d034e571fc9c1815d025",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 116246,
-      "webpQuality": 81,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "E05",
-      "sourceFilename": "E05_end-dominant.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E05_end-dominant.png",
-      "sourceSha256": "046d18d3dc7f6b27d24202762f83963e9ea0aacfd55acb0977974d6709e7a689",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x12-end-dominant.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x12/prefabricated-container-house-20x12-end-dominant.webp",
-      "targetSha256": "ee3a517aa0eb9239dda1eeaa14c49f483e21456ca6d88e43e3084fef46cef2b1",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 119890,
-      "webpQuality": 83,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "E06",
-      "sourceFilename": "E06_elevated-three-quarter.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E06_elevated-three-quarter.png",
-      "sourceSha256": "799ec87a25e62adf7465524463f9cac47caa108f2ef4da51f3a8ea2cb0b880ff",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x12-elevated-three-quarter.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-elevated-three-quarter.webp",
-      "targetSha256": "a5f3789bed091629324ab3ae976f7733278d0e52c62620273ade72b7e4da21f6",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 120572,
-      "webpQuality": 70,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "I01",
-      "sourceFilename": "I01_entry-living-hall.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\I01_entry-living-hall.png",
-      "sourceSha256": "cec6cc179f7d4e6272e8281fa982df44e70bc3bda276e43e05109ee8f548e6b5",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x12-entry-living-hall.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-entry-living-hall.webp",
-      "targetSha256": "c3f0f18b5893601af6080d50cc819bf116192e70150fad8b06257c863b84b57a",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 116430,
-      "webpQuality": 85,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "I02",
-      "sourceFilename": "I02_kitchen-dining-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\I02_kitchen-dining-reverse.png",
-      "sourceSha256": "b8a5dcc653148e83c29c9bcc969f8d0a5f8ecad4b667debe72a29580524a79d7",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x12-kitchen-dining-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-kitchen-dining-reverse.webp",
-      "targetSha256": "4d38b53edca599e05625e4b99fcb3b646f2986260e6a32e4b61c04bed0bb8263",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122670,
-      "webpQuality": 86,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "I03",
-      "sourceFilename": "I03_bedroom-doorway.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\I03_bedroom-doorway.png",
-      "sourceSha256": "47785e380cd8007ad20226863d26b233cb099903c27d32992d8f5c4393767b30",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-20x12-bedroom-doorway.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-bedroom-doorway.webp",
-      "targetSha256": "7ce7b25d773d766c403c9e5c81dc10636ce0b5457ab872edd4f72a5727c51721",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122762,
-      "webpQuality": 88,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "20x12",
-      "sourceViewToken": "I04",
-      "sourceFilename": "I04_bathroom-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\I04_bathroom-reverse.png",
-      "sourceSha256": "d6474a231f77e0cb0ec65b2ccf02a9533a86d2dc7ef90110fedde6b5a8ef29c1",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-20x12-bathroom-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/20x12/prefabricated-container-house-20x12-bathroom-reverse.webp",
-      "targetSha256": "e598ec2c041a803dacba1085cbc74f8e327a94f330c5dcfd89fa7f2236652bb7",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 116124,
-      "webpQuality": 93,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "E01",
-      "sourceFilename": "E01_front-right-hero.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E01_front-right-hero.png",
-      "sourceSha256": "190a747bff1ff6008f3c47d9aec3710a79228c8312ead5b4c1fd90a0d92e41e8",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x8-front-right-hero.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-front-right-hero.webp",
-      "targetSha256": "5a24d72b9684122568668c3e424b3c2fae76ea7410c383ac08aea662d0750260",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122846,
-      "webpQuality": 77,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "E02",
-      "sourceFilename": "E02_front-left-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E02_front-left-angle.png",
-      "sourceSha256": "057cfe1e50795a35e99233063ffbe94872d88aaa74a2488064dba44edda6034d",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x8-front-left-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x8/prefabricated-container-house-40x8-front-left-angle.webp",
-      "targetSha256": "f4432116604ec88d87d1b68eec04e7bb34c540d5efe654186d2f5ed074c11311",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 117502,
-      "webpQuality": 83,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "E03",
-      "sourceFilename": "E03_long-side-elevation.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E03_long-side-elevation.png",
-      "sourceSha256": "504dbf2105de1eb7c409b05923d6d37d2bc0570fb394f382bd4065487a12f7f4",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x8-long-side-elevation.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-long-side-elevation.webp",
-      "targetSha256": "1f253bfc892247a03b6f90c2c3ac48adf256dc9d44c02054d91e5cb585c7128b",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 121178,
-      "webpQuality": 75,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "E04",
-      "sourceFilename": "E04_rear-right-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E04_rear-right-angle.png",
-      "sourceSha256": "02e447e42524487f4775811f082e4a46f2e29f467b10791539442a9f675c84d1",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x8-rear-right-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x8/prefabricated-container-house-40x8-rear-right-angle.webp",
-      "targetSha256": "f238b7a6aefb59943d2c898341404e143506df8d031394818d4f97a484c9844e",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 119274,
-      "webpQuality": 84,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "E05",
-      "sourceFilename": "E05_end-dominant.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E05_end-dominant.png",
-      "sourceSha256": "7e5f7fde2cc9ee7a6458d31feaec1bfa19fe5aaf02f7eb03ef564ffc6875bccc",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x8-end-dominant.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x8/prefabricated-container-house-40x8-end-dominant.webp",
-      "targetSha256": "93fdcdfdf05aa7268c4a70fe5317bc2e5aca5588f3d5a83d93ac524f43c363b7",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 118838,
-      "webpQuality": 77,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "E06",
-      "sourceFilename": "E06_elevated-three-quarter.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E06_elevated-three-quarter.png",
-      "sourceSha256": "9ec1e7007004ef33274265e7106c3457324517c4431828c4d9194509584a84a9",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x8-elevated-three-quarter.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-elevated-three-quarter.webp",
-      "targetSha256": "ffab1c5b1ec9659625c068f71d33c948eabd1873c1412f9ed9f7eccd9413018b",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122394,
-      "webpQuality": 72,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "I01",
-      "sourceFilename": "I01_entry-living-hall.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\I01_entry-living-hall.png",
-      "sourceSha256": "1c68b6a864a20ff7718e4509735a97bfb25006a81c9d06d4e5ce53d0063ce105",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x8-entry-living-hall.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-entry-living-hall.webp",
-      "targetSha256": "e55a25bdae4752a2debf85233302e93f046b8647745b6ec3b104fd912b01d7cf",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122372,
-      "webpQuality": 88,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "I02",
-      "sourceFilename": "I02_kitchen-dining-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\I02_kitchen-dining-reverse.png",
-      "sourceSha256": "236150cf6cc74da67aeb6c8d44f383d2c01e5eaaa937be991f642842d3418e7a",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x8-kitchen-dining-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-kitchen-dining-reverse.webp",
-      "targetSha256": "d9d5184cf7ecd907c9032a9d1676905f5e1d874b069bb0564017267a61b5c48b",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122852,
-      "webpQuality": 87,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "I03",
-      "sourceFilename": "I03_bedroom-doorway.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\I03_bedroom-doorway.png",
-      "sourceSha256": "94d166055d8be891f6445d3602bb15433138a568546cf736fcf130f5d012af26",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x8-bedroom-doorway.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-bedroom-doorway.webp",
-      "targetSha256": "716934e3c6979c9449a2c186635da06ba55e62932f3d559e6110fd478fa4d2fb",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122040,
-      "webpQuality": 87,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x8",
-      "sourceViewToken": "I04",
-      "sourceFilename": "I04_bathroom-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\I04_bathroom-reverse.png",
-      "sourceSha256": "8a8da0d266a657bdf5016042ca14d2b5affafd7ea2ef0d23695b5b82469bb60c",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x8-bathroom-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x8/prefabricated-container-house-40x8-bathroom-reverse.webp",
-      "targetSha256": "6e1be7396847bd8f82a683ff1dbacb8426cca405dff0a00434134d8e2025a463",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 111760,
-      "webpQuality": 92,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "E01",
-      "sourceFilename": "E01_front-right-hero.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E01_front-right-hero.png",
-      "sourceSha256": "f4ec245456809610a3a6e4f9e3a83fae3f1c19a3b16402b0105ccc8a5b16e626",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x10-front-right-hero.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-front-right-hero.webp",
-      "targetSha256": "e981e2e78085cbbe4f9d729f9114ef5911b03280ad64f5ef6e3666dda9ef9f1d",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 121388,
-      "webpQuality": 72,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "E02",
-      "sourceFilename": "E02_front-left-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E02_front-left-angle.png",
-      "sourceSha256": "0a9c32d86ce3c887509ab31e35a14515fe0cd90723444df196737a96eccb86fe",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x10-front-left-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x10/prefabricated-container-house-40x10-front-left-angle.webp",
-      "targetSha256": "5c146501797aeb254bf4821783e73d5864a22a2f7d4887b692a6c8b6d8cd1db5",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 122320,
-      "webpQuality": 76,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "E03",
-      "sourceFilename": "E03_long-side-elevation.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E03_long-side-elevation.png",
-      "sourceSha256": "0582a88bca28da3074a91d0ef3cfc397a352fc75f1636b184afd36ca51aaf3bc",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x10-long-side-elevation.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-long-side-elevation.webp",
-      "targetSha256": "393d1bedd0b038323305e31c34eb2d63faa5111e94f0f51da6d66378c8a222c9",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122470,
-      "webpQuality": 75,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "E04",
-      "sourceFilename": "E04_rear-right-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E04_rear-right-angle.png",
-      "sourceSha256": "9792ddb5453ddaff070f255517267963b93513f4a9bbb786c76186a9f64ed411",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x10-rear-right-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x10/prefabricated-container-house-40x10-rear-right-angle.webp",
-      "targetSha256": "05d4d7c03949331d6b95a566b8b0d532a060511b513e59326e7ce73cdb0abab9",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 121702,
-      "webpQuality": 81,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "E05",
-      "sourceFilename": "E05_end-dominant.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E05_end-dominant.png",
-      "sourceSha256": "48b6fa2468b5cc701bd896a0577dac7cf3b9c1b253636a77baf7de19e7085023",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x10-end-dominant.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x10/prefabricated-container-house-40x10-end-dominant.webp",
-      "targetSha256": "d77002522b970cce9bd9206f5f28986229b8215bae80aeab9835ef8354b18562",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 119690,
-      "webpQuality": 79,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "E06",
-      "sourceFilename": "E06_elevated-three-quarter.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E06_elevated-three-quarter.png",
-      "sourceSha256": "e4e968c55a7c5f3b3cd98e21d5eb7f222bfa1290f461be48907cfb089554c929",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x10-elevated-three-quarter.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-elevated-three-quarter.webp",
-      "targetSha256": "d68c953057c4098c2ad92289d95b5308deb73f1b44384b186a4368e52c1a1755",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122592,
-      "webpQuality": 72,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "I01",
-      "sourceFilename": "I01_entry-living-hall.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\I01_entry-living-hall.png",
-      "sourceSha256": "f874f74aae83543a7aba038b79eeedebf3098da06a1be8325623b0c53c078c06",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x10-entry-living-hall.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-entry-living-hall.webp",
-      "targetSha256": "7709311c8b3a7535bfabbfcb80b0b53d7faa619fa82ec60e1d178cfe64b24e5c",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122842,
-      "webpQuality": 87,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "I02",
-      "sourceFilename": "I02_kitchen-dining-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\I02_kitchen-dining-reverse.png",
-      "sourceSha256": "a83b689621208f8a744a587b3f17bb2cfd488703240cc015d75035ca14459cbb",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x10-kitchen-dining-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-kitchen-dining-reverse.webp",
-      "targetSha256": "48d85cb820a8addcd200de268713b5faca762bea0205d41648d19b3f98d5daf0",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 120320,
-      "webpQuality": 87,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "I03",
-      "sourceFilename": "I03_bedroom-doorway.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\I03_bedroom-doorway.png",
-      "sourceSha256": "82eba13cf0cccf6069a52abf4feafc5cfa8d604eb078fe7526486d5195fb6cfc",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x10-bedroom-doorway.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-bedroom-doorway.webp",
-      "targetSha256": "f829d93f285afe2c3af5a7753944cdbad52b787e463fca172b21ad2161ef7eb2",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 121152,
-      "webpQuality": 89,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x10",
-      "sourceViewToken": "I04",
-      "sourceFilename": "I04_bathroom-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\I04_bathroom-reverse.png",
-      "sourceSha256": "b46d047cdf0ca16d535fd3f9a818f7a049d611b7e13ff9f95f5ab9dc8a9d223c",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x10-bathroom-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x10/prefabricated-container-house-40x10-bathroom-reverse.webp",
-      "targetSha256": "ed2ead1db723510537de38cf71671856eab018cc21e5538e584a6fcdbe26fb3c",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 116620,
-      "webpQuality": 89,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "E01",
-      "sourceFilename": "E01_front-right-hero.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E01_front-right-hero.png",
-      "sourceSha256": "6ee65190e0fb4f180659508b3825c42b5b671de48a8d933701f98d975a199db2",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x12-front-right-hero.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-front-right-hero.webp",
-      "targetSha256": "c85769e75be6c3a92701a8b8a258c37ce640b3e7d4cf9ab83553a36d590c7939",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 121056,
-      "webpQuality": 75,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "E02",
-      "sourceFilename": "E02_front-left-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E02_front-left-angle.png",
-      "sourceSha256": "e6c21a1c6678c5a956c14ae1aceeafcc08612c38b05c45bd0377ef83b20e72c1",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x12-front-left-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-front-left-angle.webp",
-      "targetSha256": "c660f60d00acc96ca0ad17cdf26a49b057cbb9caaaba3eafe18a631ac6bb1f9a",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 118942,
-      "webpQuality": 76,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "E03",
-      "sourceFilename": "E03_long-side-elevation.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E03_long-side-elevation.png",
-      "sourceSha256": "88572e9a818dc9bfea6f88816b41b23a154d0a9a1169e41a8cb5144ae359ac94",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x12-long-side-elevation.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-long-side-elevation.webp",
-      "targetSha256": "fafe5673ccfb277fb282f5103925884a9f048642ddcc9f09f7551899de5a2830",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 122140,
-      "webpQuality": 81,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "E04",
-      "sourceFilename": "E04_rear-right-angle.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E04_rear-right-angle.png",
-      "sourceSha256": "2ee05289b83a1b659f9ac95cabd11a3fb901ce046eba9174d994d037fa31eb0c",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x12-rear-right-angle.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-rear-right-angle.webp",
-      "targetSha256": "39b7363b67c32ebd41799549292e00968769c2cf36cc30218b06be065c4bf98f",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 117654,
-      "webpQuality": 84,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "E05",
-      "sourceFilename": "E05_end-dominant.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E05_end-dominant.png",
-      "sourceSha256": "16f3bea56887f2cbddefc9f1a12ae20b1feeacb8a7863bf50f004d772cb64b63",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x12-end-dominant.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-end-dominant.webp",
-      "targetSha256": "1870090cccd50e777bb3d782455b1e67971b32038aa269dcbfd566eb401a300d",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 121546,
-      "webpQuality": 81,
-      "crop": "visual-review-approved-center-16:9"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "E06",
-      "sourceFilename": "E06_elevated-three-quarter.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E06_elevated-three-quarter.png",
-      "sourceSha256": "3ffcaf552c1fbae0a63c1a176598681b6f17dc684c54ac04f6323439b5cec4cb",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x12-elevated-three-quarter.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-elevated-three-quarter.webp",
-      "targetSha256": "fb91837daddd8b9d49849a5ec89f7486b82d0bec7fe7cdca2a3741622ebe896e",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 120648,
-      "webpQuality": 51,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "I01",
-      "sourceFilename": "I01_entry-living-hall.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\I01_entry-living-hall.png",
-      "sourceSha256": "ef6dfb5cbadc4ac47bd8c66b704e83a2c4c835a8c8364a670c21a624f809bc9f",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x12-entry-living-hall.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-entry-living-hall.webp",
-      "targetSha256": "487f161d0b7303d57067a66de98ecfa9e0dff3a7232a286c6e3fcf1fda22c969",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 119586,
-      "webpQuality": 84,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "I02",
-      "sourceFilename": "I02_kitchen-dining-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\I02_kitchen-dining-reverse.png",
-      "sourceSha256": "bc0a4b47a0234271bf506c78ee02bd6ed96ef03c0971387ae2332d6ff7e35e76",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x12-kitchen-dining-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-kitchen-dining-reverse.webp",
-      "targetSha256": "30bf91ec55470d16a92833256ccbd5bbf196a129a700239b5c6bb9d2199abbd6",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 121654,
-      "webpQuality": 85,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "I03",
-      "sourceFilename": "I03_bedroom-doorway.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\I03_bedroom-doorway.png",
-      "sourceSha256": "3992a1b149efb53f3827a2ee12a84e254a5cafa9a114aa72d13caddcdb9263ed",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "gallery",
-      "filename": "prefabricated-container-house-40x12-bedroom-doorway.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-bedroom-doorway.webp",
-      "targetSha256": "1306bc749fdb516f44a7da64206e1d8d1e00f8d41d1138426f5112f931ff3d93",
-      "targetDimensions": [
-        900,
-        900
-      ],
-      "targetBytes": 116818,
-      "webpQuality": 85,
-      "crop": "none"
-    },
-    {
-      "assetType": "render",
-      "sizeSlug": "40x12",
-      "sourceViewToken": "I04",
-      "sourceFilename": "I04_bathroom-reverse.png",
-      "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\I04_bathroom-reverse.png",
-      "sourceSha256": "31e7fed1d0db6827d08c24cf4d524692e5520fb9c9db70dd49338e4c51aaf121",
-      "sourceDimensions": [
-        1254,
-        1254
-      ],
-      "derivative": "info",
-      "filename": "prefabricated-container-house-40x12-bathroom-reverse.webp",
-      "alt": "",
-      "altStatus": "pending-fable-5-manifest",
-      "target": "public/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-bathroom-reverse.webp",
-      "targetSha256": "893ab2b216661fc43e857b15c19a1434100edbc9198e2aa6559354292150237b",
-      "targetDimensions": [
-        1200,
-        675
-      ],
-      "targetBytes": 114424,
-      "webpQuality": 92,
-      "crop": "visual-review-approved-center-16:9"
-    }
-  ]
+ "sourceRoot": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house",
+ "assetType": "render",
+ "selectionRule": "Each source is used exactly once: six square gallery and four 16:9 Info derivatives per size.",
+ "altPolicy": "Column H of C08-PREFAB-CONTAINER-HOUSE-ALT-MANIFEST-60-05Aug2026.xlsx implemented byte-identically on all 60 assets.",
+ "visualCropReview": "Passed for all 24 Info derivatives; complete exterior building or principal interior subject retained.",
+ "processed": 60,
+ "uniqueSources": 60,
+ "uniqueFilenames": 60,
+ "gallery": 36,
+ "info": 24,
+ "wiredToRoute": 60,
+ "images": [
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E01",
+   "sourceFilename": "E01_front-right-hero.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E01_front-right-hero.png",
+   "sourceSha256": "6e2e617d190480f9f77dff5dbe4c6f318ad4ac66dd05c323c77e1659deae8c25",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x8-front-right-hero.webp",
+   "alt": "Prefabricated container house at 20 by 8 ft, viewed from the front right with the entrance elevation facing the camera",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-front-right-hero.webp",
+   "targetSha256": "3d871d1a959bd6ea90ae615779c8ffba165308ebaa380968afaab7817a725575",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 120586,
+   "webpQuality": 88,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E02",
+   "sourceFilename": "E02_front-left-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E02_front-left-angle.png",
+   "sourceSha256": "a6bbab64b46ddfd5d9b7ca25964da0e611e64819afcbdc987acde4a1399f9515",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x8-front-left-angle.webp",
+   "alt": "Front-left angle on a 20 by 8 ft prefabricated container house, entrance and short end wall both in frame",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x8/prefabricated-container-house-20x8-front-left-angle.webp",
+   "targetSha256": "0ec1fd67554c49f26c1622304043d4c28385ed24b28afff53ef6953c767ddd8c",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119584,
+   "webpQuality": 86,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E03",
+   "sourceFilename": "E03_long-side-elevation.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E03_long-side-elevation.png",
+   "sourceSha256": "f3637d53c653746a81a40f1a24eed8785f965eb5e5c3c3b148eed2c0d896222f",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x8-long-side-elevation.webp",
+   "alt": "Long side elevation of a 20 by 8 ft prefabricated container house with its complete window run visible",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-long-side-elevation.webp",
+   "targetSha256": "6dae80254f35e8ad12ac6e78665c01c34216ad9308d0fa883dc5517b91202548",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122508,
+   "webpQuality": 88,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E04",
+   "sourceFilename": "E04_rear-right-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E04_rear-right-angle.png",
+   "sourceSha256": "cefe99afe75372ef3070bd01a92967c5bc85070911651ebe823e11e14a7bf7e3",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x8-rear-right-angle.webp",
+   "alt": "Rear-right angle on a 20 by 8 ft prefabricated container house, back wall and service side in view",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x8/prefabricated-container-house-20x8-rear-right-angle.webp",
+   "targetSha256": "f588454a6a4fef9725b8d643704a278009f01775452216506a1a0f855d285108",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118952,
+   "webpQuality": 90,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E05",
+   "sourceFilename": "E05_end-dominant.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E05_end-dominant.png",
+   "sourceSha256": "d226ea60f9234388c6377aacc3d7dd57d61d55cdb250357f17e1cc49db34941e",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x8-end-dominant.webp",
+   "alt": "End-on view of a 20 by 8 ft prefabricated container house, the eight foot gable filling the frame",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x8/prefabricated-container-house-20x8-end-dominant.webp",
+   "targetSha256": "73e44f64b85709960c4b7fa57cf09bfca47e9e27cafd35999257550a34442ef9",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 120642,
+   "webpQuality": 87,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "E06",
+   "sourceFilename": "E06_elevated-three-quarter.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\E06_elevated-three-quarter.png",
+   "sourceSha256": "178610b0a504070f91111831b7fbc9d1ac9cfdabddfd68d4f9b354da2292a79c",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x8-elevated-three-quarter.webp",
+   "alt": "Elevated three-quarter view over a 20 by 8 ft prefabricated container house, roof and two walls together",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-elevated-three-quarter.webp",
+   "targetSha256": "2f4bbbfba7f405c25e667469a335d081e9f7597d2702b800eec6d3d314c735f6",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 117798,
+   "webpQuality": 75,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "I01",
+   "sourceFilename": "I01_entry-living-hall.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\I01_entry-living-hall.png",
+   "sourceSha256": "674a20bc625c2bcbefc2622818a346a1cde0d4ae8095b80bfcb9ab388541fc60",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x8-entry-living-hall.webp",
+   "alt": "Entry and living area inside a 20 by 8 ft prefabricated container house, finished and furnished before delivery",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-entry-living-hall.webp",
+   "targetSha256": "c3579c142ea0b9d8783bd9bcf7f6f056f2ab5a8c2dac69e6adb993c6db304aac",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 115938,
+   "webpQuality": 88,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "I02",
+   "sourceFilename": "I02_kitchen-dining-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\I02_kitchen-dining-reverse.png",
+   "sourceSha256": "8c19de88419f25db048e94fa27c83588a708063920ce9d44d47c229bc0c05809",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x8-kitchen-dining-reverse.webp",
+   "alt": "Kitchen and dining zone inside a 20 by 8 ft prefabricated container house, looking back towards the entrance",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-kitchen-dining-reverse.webp",
+   "targetSha256": "5bd192a594ed87811543c9c343740a9751c22d39eeff3f2a24d8201f3c527c8f",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 121774,
+   "webpQuality": 89,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "I03",
+   "sourceFilename": "I03_bedroom-doorway.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\I03_bedroom-doorway.png",
+   "sourceSha256": "7d16d690e081000b42e2987a6619b42b70fc9523863ea806832884cfd3d4a077",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x8-bedroom-doorway.webp",
+   "alt": "Bedroom doorway in a 20 by 8 ft prefabricated container house, the sleeping area fitted at the factory",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-bedroom-doorway.webp",
+   "targetSha256": "4a8067c783c170f227893791a3725d19f4eaff786e7d1abb6a3ccc4dd2fb59e2",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 114144,
+   "webpQuality": 88,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x8",
+   "sourceViewToken": "I04",
+   "sourceFilename": "I04_bathroom-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x8x8.5ft\\I04_bathroom-reverse.png",
+   "sourceSha256": "1a28091a3471231e1b0b7671635e461b6b5e3fa25eb5b2f11b151145063222d3",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x8-bathroom-reverse.webp",
+   "alt": "Looking back towards the bathroom of a 20 by 8 ft prefabricated container house, fittings installed before dispatch",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x8/prefabricated-container-house-20x8-bathroom-reverse.webp",
+   "targetSha256": "ab14ec13b7912495f5f42c4df8b114624b8ff22ceef69391ae98a2bacf6a7f9c",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 113294,
+   "webpQuality": 92,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E01",
+   "sourceFilename": "E01_front-right-hero.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E01_front-right-hero.png",
+   "sourceSha256": "ad80e65c544ba287f17775dee569404255ee301faa4e796546b719d495e63809",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x10-front-right-hero.webp",
+   "alt": "Front-right view of a 20 by 10 ft prefabricated container house covering 200 square feet in one delivered unit",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-front-right-hero.webp",
+   "targetSha256": "b4a5585bfb494d173ab3f332096aa7ddd9c81e219ec0cd4c71e9bf31cf75fb4f",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122764,
+   "webpQuality": 65,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E02",
+   "sourceFilename": "E02_front-left-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E02_front-left-angle.png",
+   "sourceSha256": "64f6512c9b9c86d71515b86bfe9776b01d901e956b09e9cfae0efa2cfffca8a6",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x10-front-left-angle.webp",
+   "alt": "A 20 by 10 ft prefabricated container house from the front left, showing how the door sits within the long wall",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x10/prefabricated-container-house-20x10-front-left-angle.webp",
+   "targetSha256": "7fd8fef08085bcde26b4c049025d7c223544ca2fbc634d3ba762562e6bc84abd",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 120458,
+   "webpQuality": 80,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E03",
+   "sourceFilename": "E03_long-side-elevation.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E03_long-side-elevation.png",
+   "sourceSha256": "9237ff043182d084944449b372551dcb49209dd3faeca0e0879a21f79ac94d38",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x10-long-side-elevation.webp",
+   "alt": "Side elevation across a 20 by 10 ft prefabricated container house, openings spaced along the twenty foot wall",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-long-side-elevation.webp",
+   "targetSha256": "0352a9eb0425a01974a24dcb455271e74b48f48d061e836f083b1722b8ef4280",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 121976,
+   "webpQuality": 76,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E04",
+   "sourceFilename": "E04_rear-right-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E04_rear-right-angle.png",
+   "sourceSha256": "5f30777eea2371bfabc52cf5ebcb78cfc102f3e23329dec10aeee70929e472b0",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x10-rear-right-angle.webp",
+   "alt": "The rear right corner of a 20 by 10 ft prefabricated container house, opposite the entrance elevation",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x10/prefabricated-container-house-20x10-rear-right-angle.webp",
+   "targetSha256": "9dd30eb78d411bf913842927c99554d9ff6857b6398c6a7e3996f0a8173f6374",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 120148,
+   "webpQuality": 88,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E05",
+   "sourceFilename": "E05_end-dominant.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E05_end-dominant.png",
+   "sourceSha256": "494636fe432debd9ba8eb704459aef7f2d7fb07f148ab996e0568971949dff3b",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x10-end-dominant.webp",
+   "alt": "A 20 by 10 ft prefabricated container house seen end on, showing the ten foot width and roof pitch",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x10/prefabricated-container-house-20x10-end-dominant.webp",
+   "targetSha256": "d0a61c582f1cad1841d40387c37cabf1d713902f5968a3b766582b7547f7fb7c",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119190,
+   "webpQuality": 79,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "E06",
+   "sourceFilename": "E06_elevated-three-quarter.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\E06_elevated-three-quarter.png",
+   "sourceSha256": "08bc9de72eb87790e9a3024feb9d2ec4b5de951243cbae0907f320788e66bd45",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x10-elevated-three-quarter.webp",
+   "alt": "Raised three-quarter view of a 20 by 10 ft prefabricated container house showing roof drainage and both elevations",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-elevated-three-quarter.webp",
+   "targetSha256": "692c852c10c44d2a2bd1abfb3cfa8e99e02f69b6651ce2c557a568f43d2a53c4",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 121732,
+   "webpQuality": 77,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "I01",
+   "sourceFilename": "I01_entry-living-hall.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\I01_entry-living-hall.png",
+   "sourceSha256": "b895e71acdc850dc563b18173f31a047362224e6ac220dbba974b925fa7a9d95",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x10-entry-living-hall.webp",
+   "alt": "The living space of a 20 by 10 ft prefabricated container house looking in from the entrance door",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-entry-living-hall.webp",
+   "targetSha256": "8d47306d25be9567e900dcc12928b0177e6ee59faf2ea549d4b1cda5865caac8",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 115354,
+   "webpQuality": 85,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "I02",
+   "sourceFilename": "I02_kitchen-dining-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\I02_kitchen-dining-reverse.png",
+   "sourceSha256": "739ffbd2b6b119b71f47840fc2bbae6ef78e838356dc29972b46fa2c6b3030bd",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x10-kitchen-dining-reverse.webp",
+   "alt": "Reverse view of the kitchen and dining area in a 20 by 10 ft prefabricated container house",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-kitchen-dining-reverse.webp",
+   "targetSha256": "9e6e3cb8d167c595c346823e228dd5aa2027565284de5c574c7ff79ae57db582",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122062,
+   "webpQuality": 86,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "I03",
+   "sourceFilename": "I03_bedroom-doorway.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\I03_bedroom-doorway.png",
+   "sourceSha256": "acf461b359a0335dec51f7b5a016034b4af573c5914ae8917f1c67176d252db7",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x10-bedroom-doorway.webp",
+   "alt": "Through the bedroom door of a 20 by 10 ft prefabricated container house to the bed and wall finish beyond",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-bedroom-doorway.webp",
+   "targetSha256": "c356dc7ac2dacf860da1343ae286f3138a8e5dc2ce42db3e4cf5ebfafe9334bb",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 115502,
+   "webpQuality": 87,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x10",
+   "sourceViewToken": "I04",
+   "sourceFilename": "I04_bathroom-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x10x8.5ft\\I04_bathroom-reverse.png",
+   "sourceSha256": "11ff41edece33c72fc24289a96db4b781fc5cd6cbfb306d9845e844a40ac6103",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x10-bathroom-reverse.webp",
+   "alt": "Reverse view to the bathroom in a 20 by 10 ft prefabricated container house, plumbing run at the works",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x10/prefabricated-container-house-20x10-bathroom-reverse.webp",
+   "targetSha256": "cfb1cba5cfffb236207cc91f894cad35c89017e7d80c63500eaa8c08917cd485",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 108830,
+   "webpQuality": 92,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E01",
+   "sourceFilename": "E01_front-right-hero.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E01_front-right-hero.png",
+   "sourceSha256": "f39913df4fc64d43d3c32c055c864f5e4c1ef396d4a0053b18c32151a90fba2e",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x12-front-right-hero.webp",
+   "alt": "A 20 by 12 ft prefabricated container house seen from its front right corner, the widest of the short-body sizes",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-front-right-hero.webp",
+   "targetSha256": "7ea536902c89434c88264a347bc822a48ae608621d41321c907def05400c40fc",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122502,
+   "webpQuality": 61,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E02",
+   "sourceFilename": "E02_front-left-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E02_front-left-angle.png",
+   "sourceSha256": "518e83596f9e233b7e9556d4e8eb3b7dac145e8f87cd2c960d39637f5850224e",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x12-front-left-angle.webp",
+   "alt": "Front-left view of the 20 by 12 ft prefabricated container house, its deeper body visible behind the entrance side",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x12/prefabricated-container-house-20x12-front-left-angle.webp",
+   "targetSha256": "de685337cffc216d30fa874eb1710d60826dec00c33146e2ad94947c3653087a",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 122636,
+   "webpQuality": 78,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E03",
+   "sourceFilename": "E03_long-side-elevation.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E03_long-side-elevation.png",
+   "sourceSha256": "490395e87208d60f6d20d3a41e0a728afdfc22fcf5ded0835e11b38a0cabba2b",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x12-long-side-elevation.webp",
+   "alt": "The 20 by 12 ft prefabricated container house in side elevation, wall height and window line shown square on",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-long-side-elevation.webp",
+   "targetSha256": "bf427618d7f10d3bb87cb498f5c1c9c3b6db194543b60719fc3881228edad434",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 120136,
+   "webpQuality": 77,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E04",
+   "sourceFilename": "E04_rear-right-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E04_rear-right-angle.png",
+   "sourceSha256": "d342414827097ba367282bfe6d1285784791df802c2098222f64604a41f27e00",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x12-rear-right-angle.webp",
+   "alt": "Rear-right view of a 20 by 12 ft prefabricated container house showing the back of the unit and its roof edge",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x12/prefabricated-container-house-20x12-rear-right-angle.webp",
+   "targetSha256": "8a4fa546476d97fa6719fa53b6cfe38034577614a812d034e571fc9c1815d025",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116246,
+   "webpQuality": 81,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E05",
+   "sourceFilename": "E05_end-dominant.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E05_end-dominant.png",
+   "sourceSha256": "046d18d3dc7f6b27d24202762f83963e9ea0aacfd55acb0977974d6709e7a689",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x12-end-dominant.webp",
+   "alt": "End elevation of the 20 by 12 ft prefabricated container house, its twelve foot span shown head on",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x12/prefabricated-container-house-20x12-end-dominant.webp",
+   "targetSha256": "ee3a517aa0eb9239dda1eeaa14c49f483e21456ca6d88e43e3084fef46cef2b1",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119890,
+   "webpQuality": 83,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "E06",
+   "sourceFilename": "E06_elevated-three-quarter.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\E06_elevated-three-quarter.png",
+   "sourceSha256": "799ec87a25e62adf7465524463f9cac47caa108f2ef4da51f3a8ea2cb0b880ff",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x12-elevated-three-quarter.webp",
+   "alt": "Looking down on a 20 by 12 ft prefabricated container house from three quarters, roof plane clearly visible",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-elevated-three-quarter.webp",
+   "targetSha256": "a5f3789bed091629324ab3ae976f7733278d0e52c62620273ade72b7e4da21f6",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 120572,
+   "webpQuality": 70,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "I01",
+   "sourceFilename": "I01_entry-living-hall.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\I01_entry-living-hall.png",
+   "sourceSha256": "cec6cc179f7d4e6272e8281fa982df44e70bc3bda276e43e05109ee8f548e6b5",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x12-entry-living-hall.webp",
+   "alt": "Entry into the living area of a 20 by 12 ft prefabricated container house, the extra depth giving a wider seating run",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-entry-living-hall.webp",
+   "targetSha256": "c3f0f18b5893601af6080d50cc819bf116192e70150fad8b06257c863b84b57a",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 116430,
+   "webpQuality": 85,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "I02",
+   "sourceFilename": "I02_kitchen-dining-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\I02_kitchen-dining-reverse.png",
+   "sourceSha256": "b8a5dcc653148e83c29c9bcc969f8d0a5f8ecad4b667debe72a29580524a79d7",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x12-kitchen-dining-reverse.webp",
+   "alt": "Kitchen and dining end of a 20 by 12 ft prefabricated container house, seen looking back through the unit",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-kitchen-dining-reverse.webp",
+   "targetSha256": "4d38b53edca599e05625e4b99fcb3b646f2986260e6a32e4b61c04bed0bb8263",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122670,
+   "webpQuality": 86,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "I03",
+   "sourceFilename": "I03_bedroom-doorway.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\I03_bedroom-doorway.png",
+   "sourceSha256": "47785e380cd8007ad20226863d26b233cb099903c27d32992d8f5c4393767b30",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-20x12-bedroom-doorway.webp",
+   "alt": "Bedroom seen from its doorway in a 20 by 12 ft prefabricated container house, wider than the eight foot bodies",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-bedroom-doorway.webp",
+   "targetSha256": "7ce7b25d773d766c403c9e5c81dc10636ce0b5457ab872edd4f72a5727c51721",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122762,
+   "webpQuality": 88,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "20x12",
+   "sourceViewToken": "I04",
+   "sourceFilename": "I04_bathroom-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\20x12x8.5ft\\I04_bathroom-reverse.png",
+   "sourceSha256": "d6474a231f77e0cb0ec65b2ccf02a9533a86d2dc7ef90110fedde6b5a8ef29c1",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-20x12-bathroom-reverse.webp",
+   "alt": "The bathroom of a 20 by 12 ft prefabricated container house seen looking back through the interior",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/20x12/prefabricated-container-house-20x12-bathroom-reverse.webp",
+   "targetSha256": "e598ec2c041a803dacba1085cbc74f8e327a94f330c5dcfd89fa7f2236652bb7",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116124,
+   "webpQuality": 93,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E01",
+   "sourceFilename": "E01_front-right-hero.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E01_front-right-hero.png",
+   "sourceSha256": "190a747bff1ff6008f3c47d9aec3710a79228c8312ead5b4c1fd90a0d92e41e8",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x8-front-right-hero.webp",
+   "alt": "Front-right hero view along a 40 by 8 ft prefabricated container house, a long narrow body on a single chassis",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-front-right-hero.webp",
+   "targetSha256": "5a24d72b9684122568668c3e424b3c2fae76ea7410c383ac08aea662d0750260",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122846,
+   "webpQuality": 77,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E02",
+   "sourceFilename": "E02_front-left-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E02_front-left-angle.png",
+   "sourceSha256": "057cfe1e50795a35e99233063ffbe94872d88aaa74a2488064dba44edda6034d",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x8-front-left-angle.webp",
+   "alt": "Prefabricated container house at 40 by 8 ft seen from the front left, the full length running to the far end wall",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x8/prefabricated-container-house-40x8-front-left-angle.webp",
+   "targetSha256": "f4432116604ec88d87d1b68eec04e7bb34c540d5efe654186d2f5ed074c11311",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117502,
+   "webpQuality": 83,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E03",
+   "sourceFilename": "E03_long-side-elevation.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E03_long-side-elevation.png",
+   "sourceSha256": "504dbf2105de1eb7c409b05923d6d37d2bc0570fb394f382bd4065487a12f7f4",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x8-long-side-elevation.webp",
+   "alt": "Full side elevation of a 40 by 8 ft prefabricated container house across all forty feet of its longest wall",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-long-side-elevation.webp",
+   "targetSha256": "1f253bfc892247a03b6f90c2c3ac48adf256dc9d44c02054d91e5cb585c7128b",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 121178,
+   "webpQuality": 75,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E04",
+   "sourceFilename": "E04_rear-right-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E04_rear-right-angle.png",
+   "sourceSha256": "02e447e42524487f4775811f082e4a46f2e29f467b10791539442a9f675c84d1",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x8-rear-right-angle.webp",
+   "alt": "A 40 by 8 ft prefabricated container house from the rear right, its long body seen from behind",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x8/prefabricated-container-house-40x8-rear-right-angle.webp",
+   "targetSha256": "f238b7a6aefb59943d2c898341404e143506df8d031394818d4f97a484c9844e",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119274,
+   "webpQuality": 84,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E05",
+   "sourceFilename": "E05_end-dominant.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E05_end-dominant.png",
+   "sourceSha256": "7e5f7fde2cc9ee7a6458d31feaec1bfa19fe5aaf02f7eb03ef564ffc6875bccc",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x8-end-dominant.webp",
+   "alt": "The narrow end of a 40 by 8 ft prefabricated container house with the long body receding behind it",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x8/prefabricated-container-house-40x8-end-dominant.webp",
+   "targetSha256": "93fdcdfdf05aa7268c4a70fe5317bc2e5aca5588f3d5a83d93ac524f43c363b7",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118838,
+   "webpQuality": 77,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "E06",
+   "sourceFilename": "E06_elevated-three-quarter.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\E06_elevated-three-quarter.png",
+   "sourceSha256": "9ec1e7007004ef33274265e7106c3457324517c4431828c4d9194509584a84a9",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x8-elevated-three-quarter.webp",
+   "alt": "Elevated three quarters over a 40 by 8 ft prefabricated container house, full roof length in view",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-elevated-three-quarter.webp",
+   "targetSha256": "ffab1c5b1ec9659625c068f71d33c948eabd1873c1412f9ed9f7eccd9413018b",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122394,
+   "webpQuality": 72,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "I01",
+   "sourceFilename": "I01_entry-living-hall.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\I01_entry-living-hall.png",
+   "sourceSha256": "1c68b6a864a20ff7718e4509735a97bfb25006a81c9d06d4e5ce53d0063ce105",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x8-entry-living-hall.webp",
+   "alt": "Living area inside a 40 by 8 ft prefabricated container house, the room reading long and narrow from the door",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-entry-living-hall.webp",
+   "targetSha256": "e55a25bdae4752a2debf85233302e93f046b8647745b6ec3b104fd912b01d7cf",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122372,
+   "webpQuality": 88,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "I02",
+   "sourceFilename": "I02_kitchen-dining-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\I02_kitchen-dining-reverse.png",
+   "sourceSha256": "236150cf6cc74da67aeb6c8d44f383d2c01e5eaaa937be991f642842d3418e7a",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x8-kitchen-dining-reverse.webp",
+   "alt": "The kitchen run in a 40 by 8 ft prefabricated container house, viewed back along the length of the home",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-kitchen-dining-reverse.webp",
+   "targetSha256": "d9d5184cf7ecd907c9032a9d1676905f5e1d874b069bb0564017267a61b5c48b",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122852,
+   "webpQuality": 87,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "I03",
+   "sourceFilename": "I03_bedroom-doorway.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\I03_bedroom-doorway.png",
+   "sourceSha256": "94d166055d8be891f6445d3602bb15433138a568546cf736fcf130f5d012af26",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x8-bedroom-doorway.webp",
+   "alt": "The bedroom door of a 40 by 8 ft prefabricated container house, sleeping area set at one end of the unit",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-bedroom-doorway.webp",
+   "targetSha256": "716934e3c6979c9449a2c186635da06ba55e62932f3d559e6110fd478fa4d2fb",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122040,
+   "webpQuality": 87,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x8",
+   "sourceViewToken": "I04",
+   "sourceFilename": "I04_bathroom-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x8x8.5ft\\I04_bathroom-reverse.png",
+   "sourceSha256": "8a8da0d266a657bdf5016042ca14d2b5affafd7ea2ef0d23695b5b82469bb60c",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x8-bathroom-reverse.webp",
+   "alt": "Bathroom at the end of a 40 by 8 ft prefabricated container house, viewed back down the length of the home",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x8/prefabricated-container-house-40x8-bathroom-reverse.webp",
+   "targetSha256": "6e1be7396847bd8f82a683ff1dbacb8426cca405dff0a00434134d8e2025a463",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 111760,
+   "webpQuality": 92,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E01",
+   "sourceFilename": "E01_front-right-hero.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E01_front-right-hero.png",
+   "sourceSha256": "f4ec245456809610a3a6e4f9e3a83fae3f1c19a3b16402b0105ccc8a5b16e626",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x10-front-right-hero.webp",
+   "alt": "Prefabricated container house measuring 40 by 10 ft, photographed front right across its full 400 square foot footprint",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-front-right-hero.webp",
+   "targetSha256": "e981e2e78085cbbe4f9d729f9114ef5911b03280ad64f5ef6e3666dda9ef9f1d",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 121388,
+   "webpQuality": 72,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E02",
+   "sourceFilename": "E02_front-left-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E02_front-left-angle.png",
+   "sourceSha256": "0a9c32d86ce3c887509ab31e35a14515fe0cd90723444df196737a96eccb86fe",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x10-front-left-angle.webp",
+   "alt": "Front left of a 40 by 10 ft prefabricated container house, entrance wall and long flank together in one view",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x10/prefabricated-container-house-40x10-front-left-angle.webp",
+   "targetSha256": "5c146501797aeb254bf4821783e73d5864a22a2f7d4887b692a6c8b6d8cd1db5",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 122320,
+   "webpQuality": 76,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E03",
+   "sourceFilename": "E03_long-side-elevation.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E03_long-side-elevation.png",
+   "sourceSha256": "0582a88bca28da3074a91d0ef3cfc397a352fc75f1636b184afd36ca51aaf3bc",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x10-long-side-elevation.webp",
+   "alt": "Side elevation of a 40 by 10 ft prefabricated container house, the entire window sequence in a single view",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-long-side-elevation.webp",
+   "targetSha256": "393d1bedd0b038323305e31c34eb2d63faa5111e94f0f51da6d66378c8a222c9",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122470,
+   "webpQuality": 75,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E04",
+   "sourceFilename": "E04_rear-right-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E04_rear-right-angle.png",
+   "sourceSha256": "9792ddb5453ddaff070f255517267963b93513f4a9bbb786c76186a9f64ed411",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x10-rear-right-angle.webp",
+   "alt": "Rear right of a 40 by 10 ft prefabricated container house, back wall and full flank in one frame",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x10/prefabricated-container-house-40x10-rear-right-angle.webp",
+   "targetSha256": "05d4d7c03949331d6b95a566b8b0d532a060511b513e59326e7ce73cdb0abab9",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 121702,
+   "webpQuality": 81,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E05",
+   "sourceFilename": "E05_end-dominant.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E05_end-dominant.png",
+   "sourceSha256": "48b6fa2468b5cc701bd896a0577dac7cf3b9c1b253636a77baf7de19e7085023",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x10-end-dominant.webp",
+   "alt": "End-dominant view of a 40 by 10 ft prefabricated container house, width and roof line square to the camera",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x10/prefabricated-container-house-40x10-end-dominant.webp",
+   "targetSha256": "d77002522b970cce9bd9206f5f28986229b8215bae80aeab9835ef8354b18562",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 119690,
+   "webpQuality": 79,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "E06",
+   "sourceFilename": "E06_elevated-three-quarter.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\E06_elevated-three-quarter.png",
+   "sourceSha256": "e4e968c55a7c5f3b3cd98e21d5eb7f222bfa1290f461be48907cfb089554c929",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x10-elevated-three-quarter.webp",
+   "alt": "A 40 by 10 ft prefabricated container house from an elevated three-quarter position, roof and long wall in frame",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-elevated-three-quarter.webp",
+   "targetSha256": "d68c953057c4098c2ad92289d95b5308deb73f1b44384b186a4368e52c1a1755",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122592,
+   "webpQuality": 72,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "I01",
+   "sourceFilename": "I01_entry-living-hall.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\I01_entry-living-hall.png",
+   "sourceSha256": "f874f74aae83543a7aba038b79eeedebf3098da06a1be8325623b0c53c078c06",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x10-entry-living-hall.webp",
+   "alt": "Entrance and living zone within a 40 by 10 ft prefabricated container house, factory fitted before dispatch",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-entry-living-hall.webp",
+   "targetSha256": "7709311c8b3a7535bfabbfcb80b0b53d7faa619fa82ec60e1d178cfe64b24e5c",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122842,
+   "webpQuality": 87,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "I02",
+   "sourceFilename": "I02_kitchen-dining-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\I02_kitchen-dining-reverse.png",
+   "sourceSha256": "a83b689621208f8a744a587b3f17bb2cfd488703240cc015d75035ca14459cbb",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x10-kitchen-dining-reverse.webp",
+   "alt": "Kitchen and dining area of a 40 by 10 ft prefabricated container house from the far end of the room",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-kitchen-dining-reverse.webp",
+   "targetSha256": "48d85cb820a8addcd200de268713b5faca762bea0205d41648d19b3f98d5daf0",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 120320,
+   "webpQuality": 87,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "I03",
+   "sourceFilename": "I03_bedroom-doorway.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\I03_bedroom-doorway.png",
+   "sourceSha256": "82eba13cf0cccf6069a52abf4feafc5cfa8d604eb078fe7526486d5195fb6cfc",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x10-bedroom-doorway.webp",
+   "alt": "Bedroom doorway within a 40 by 10 ft prefabricated container house, room and finishes complete on arrival",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-bedroom-doorway.webp",
+   "targetSha256": "f829d93f285afe2c3af5a7753944cdbad52b787e463fca172b21ad2161ef7eb2",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 121152,
+   "webpQuality": 89,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x10",
+   "sourceViewToken": "I04",
+   "sourceFilename": "I04_bathroom-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x10x8.5ft\\I04_bathroom-reverse.png",
+   "sourceSha256": "b46d047cdf0ca16d535fd3f9a818f7a049d611b7e13ff9f95f5ab9dc8a9d223c",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x10-bathroom-reverse.webp",
+   "alt": "Looking back to the bathroom in a 40 by 10 ft prefabricated container house, sanitary fittings already in place",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x10/prefabricated-container-house-40x10-bathroom-reverse.webp",
+   "targetSha256": "ed2ead1db723510537de38cf71671856eab018cc21e5538e584a6fcdbe26fb3c",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 116620,
+   "webpQuality": 89,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E01",
+   "sourceFilename": "E01_front-right-hero.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E01_front-right-hero.png",
+   "sourceSha256": "6ee65190e0fb4f180659508b3825c42b5b671de48a8d933701f98d975a199db2",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x12-front-right-hero.webp",
+   "alt": "The largest prefabricated container house at 40 by 12 ft, front right, 480 square feet arriving as one finished unit",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-front-right-hero.webp",
+   "targetSha256": "c85769e75be6c3a92701a8b8a258c37ce640b3e7d4cf9ab83553a36d590c7939",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 121056,
+   "webpQuality": 75,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E02",
+   "sourceFilename": "E02_front-left-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E02_front-left-angle.png",
+   "sourceSha256": "e6c21a1c6678c5a956c14ae1aceeafcc08612c38b05c45bd0377ef83b20e72c1",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x12-front-left-angle.webp",
+   "alt": "A 40 by 12 ft prefabricated container house from the front left, the largest body in the range at full length",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-front-left-angle.webp",
+   "targetSha256": "c660f60d00acc96ca0ad17cdf26a49b057cbb9caaaba3eafe18a631ac6bb1f9a",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 118942,
+   "webpQuality": 76,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E03",
+   "sourceFilename": "E03_long-side-elevation.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E03_long-side-elevation.png",
+   "sourceSha256": "88572e9a818dc9bfea6f88816b41b23a154d0a9a1169e41a8cb5144ae359ac94",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x12-long-side-elevation.webp",
+   "alt": "A 40 by 12 ft prefabricated container house shown square on in side elevation at its greatest wall length",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-long-side-elevation.webp",
+   "targetSha256": "fafe5673ccfb277fb282f5103925884a9f048642ddcc9f09f7551899de5a2830",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 122140,
+   "webpQuality": 81,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E04",
+   "sourceFilename": "E04_rear-right-angle.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E04_rear-right-angle.png",
+   "sourceSha256": "2ee05289b83a1b659f9ac95cabd11a3fb901ce046eba9174d994d037fa31eb0c",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x12-rear-right-angle.webp",
+   "alt": "The 40 by 12 ft prefabricated container house viewed from its rear right corner at maximum width",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-rear-right-angle.webp",
+   "targetSha256": "39b7363b67c32ebd41799549292e00968769c2cf36cc30218b06be065c4bf98f",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 117654,
+   "webpQuality": 84,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E05",
+   "sourceFilename": "E05_end-dominant.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E05_end-dominant.png",
+   "sourceSha256": "16f3bea56887f2cbddefc9f1a12ae20b1feeacb8a7863bf50f004d772cb64b63",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x12-end-dominant.webp",
+   "alt": "A 40 by 12 ft prefabricated container house viewed end on, the widest gable in the six size range",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-end-dominant.webp",
+   "targetSha256": "1870090cccd50e777bb3d782455b1e67971b32038aa269dcbfd566eb401a300d",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 121546,
+   "webpQuality": 81,
+   "crop": "visual-review-approved-center-16:9"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "E06",
+   "sourceFilename": "E06_elevated-three-quarter.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\E06_elevated-three-quarter.png",
+   "sourceSha256": "3ffcaf552c1fbae0a63c1a176598681b6f17dc684c54ac04f6323439b5cec4cb",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x12-elevated-three-quarter.webp",
+   "alt": "Raised three-quarter view across the roof of a 40 by 12 ft prefabricated container house, the largest unit built",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-elevated-three-quarter.webp",
+   "targetSha256": "fb91837daddd8b9d49849a5ec89f7486b82d0bec7fe7cdca2a3741622ebe896e",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 120648,
+   "webpQuality": 51,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "I01",
+   "sourceFilename": "I01_entry-living-hall.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\I01_entry-living-hall.png",
+   "sourceSha256": "ef6dfb5cbadc4ac47bd8c66b704e83a2c4c835a8c8364a670c21a624f809bc9f",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x12-entry-living-hall.webp",
+   "alt": "Living area of a 40 by 12 ft prefabricated container house, the most generous floor plate in the range",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-entry-living-hall.webp",
+   "targetSha256": "487f161d0b7303d57067a66de98ecfa9e0dff3a7232a286c6e3fcf1fda22c969",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 119586,
+   "webpQuality": 84,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "I02",
+   "sourceFilename": "I02_kitchen-dining-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\I02_kitchen-dining-reverse.png",
+   "sourceSha256": "bc0a4b47a0234271bf506c78ee02bd6ed96ef03c0971387ae2332d6ff7e35e76",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x12-kitchen-dining-reverse.webp",
+   "alt": "Looking back across the kitchen and dining zone of a 40 by 12 ft prefabricated container house",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-kitchen-dining-reverse.webp",
+   "targetSha256": "30bf91ec55470d16a92833256ccbd5bbf196a129a700239b5c6bb9d2199abbd6",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 121654,
+   "webpQuality": 85,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "I03",
+   "sourceFilename": "I03_bedroom-doorway.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\I03_bedroom-doorway.png",
+   "sourceSha256": "3992a1b149efb53f3827a2ee12a84e254a5cafa9a114aa72d13caddcdb9263ed",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "gallery",
+   "filename": "prefabricated-container-house-40x12-bedroom-doorway.webp",
+   "alt": "Looking into the bedroom of a 40 by 12 ft prefabricated container house through its internal doorway",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-bedroom-doorway.webp",
+   "targetSha256": "1306bc749fdb516f44a7da64206e1d8d1e00f8d41d1138426f5112f931ff3d93",
+   "targetDimensions": [
+    900,
+    900
+   ],
+   "targetBytes": 116818,
+   "webpQuality": 85,
+   "crop": "none"
+  },
+  {
+   "assetType": "render",
+   "sizeSlug": "40x12",
+   "sourceViewToken": "I04",
+   "sourceFilename": "I04_bathroom-reverse.png",
+   "sourcePath": "D:\\Project-shekhar\\all-product-images\\C-08\\prefabricated-container-house\\40x12x8.5ft\\I04_bathroom-reverse.png",
+   "sourceSha256": "31e7fed1d0db6827d08c24cf4d524692e5520fb9c9db70dd49338e4c51aaf121",
+   "sourceDimensions": [
+    1254,
+    1254
+   ],
+   "derivative": "info",
+   "filename": "prefabricated-container-house-40x12-bathroom-reverse.webp",
+   "alt": "The bathroom of a 40 by 12 ft prefabricated container house, reached past the living area and fitted at the factory",
+   "altStatus": "implemented-verbatim-from-manifest-column-H",
+   "target": "public/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-bathroom-reverse.webp",
+   "targetSha256": "893ab2b216661fc43e857b15c19a1434100edbc9198e2aa6559354292150237b",
+   "targetDimensions": [
+    1200,
+    675
+   ],
+   "targetBytes": 114424,
+   "webpQuality": 92,
+   "crop": "visual-review-approved-center-16:9"
+  }
+ ]
 }

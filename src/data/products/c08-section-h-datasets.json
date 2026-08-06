@@ -348,5 +348,81 @@
         "Rental duplex base unit"
       ]
     }
+  },
+  "prefabricated-container-house": {
+    "h2": "Size and applications for a fully fitted container house",
+    "guidanceLine": "Six sizes, each delivered complete. Pick the one whose usable area matches how the building will actually be lived in.",
+    "20x8": {
+      "h2": "20 × 8 ft — the smallest complete home we deliver",
+      "intro": "At 160 square feet the plan runs on one axis: sleeping at one end, a combined living and cooking run along the opposite wall, a fitted bathroom closing the far end. Eight feet of width admits no corridor, so every space is entered through the one before it and the layout is designed around that rather than fighting it. Because the unit arrives finished, the compactness never feels temporary — the counter is in, the bathroom works, and the room is ready the day the crane leaves. Nothing is left for a site team to complete.",
+      "h3": "Where a 20 × 8 ft unit earns its place",
+      "applications": [
+        "Single-occupant staff residence",
+        "Guest annexe on an existing plot",
+        "Estate or farm caretaker housing",
+        "Tight access where longer will not turn"
+      ],
+      "tab": "20 × 8 ft — 160 sq ft fitted single unit"
+    },
+    "20x10": {
+      "h2": "20 × 10 ft — where a fitted cabin becomes a small home",
+      "intro": "Two extra feet across change the plan more than the number suggests. Furniture sits against both long walls with a walking route between them, so the living area stops behaving like a passage and starts behaving like a room. A partition closes off the sleeping zone properly rather than merely suggesting it. This is the most common first purchase among couples and small families, and the size most often ordered in pairs where two independent households are wanted instead of one shared building. The finish schedule is identical to every larger size in the range.",
+      "h3": "Who chooses 200 square feet",
+      "applications": [
+        "A couple taking a first factory home",
+        "Paired units for two households",
+        "Site supervisor accommodation",
+        "Rental unit on a family plot"
+      ],
+      "tab": "20 × 10 ft — 200 sq ft with a partitioned bedroom"
+    },
+    "20x12": {
+      "h2": "20 × 12 ft — a closed bedroom and a proper lobby",
+      "intro": "Twelve feet of width buys separation. The bedroom closes behind a door, the living space seats a family rather than a couple, and the bathroom gains a small lobby instead of opening straight onto the sofa. That lobby is the detail owners notice most, because it is what stops a compact dwelling reading as accommodation. Everything is fitted before dispatch, so the distinction holds from the first evening rather than arriving after months of finishing work. Services are set out at the works, so connection day is short.",
+      "h3": "Typical uses at 240 square feet",
+      "applications": [
+        "Permanent second dwelling",
+        "Parents' annexe beside a main house",
+        "Resident manager on a working site",
+        "Compact clinic or consulting room"
+      ],
+      "tab": "20 × 12 ft — 240 sq ft with a separated bathroom lobby"
+    },
+    "40x8": {
+      "h2": "40 × 8 ft — length where width is impossible",
+      "intro": "Forty feet of run on eight feet of beam suits sites a wider building simply cannot reach. Sleeping zones sit at opposite ends with living and cooking between them, which is the only arrangement that works at this proportion. Hill roads, estate tracks and constrained urban lanes are where the shape pays for itself. Worth knowing before ordering: a fully fitted unit weighs more than an empty shell, so the approach and turning radius deserve measuring rather than estimating. Craneage needs the same forethought as the road that brought it.",
+      "h3": "When the long narrow plan is right",
+      "applications": [
+        "Hill or plantation access roads",
+        "Narrow urban side plots",
+        "Two sleeping zones, shared centre",
+        "Sites with a hard width limit"
+      ],
+      "tab": "40 × 8 ft — 320 sq ft for constrained access"
+    },
+    "40x10": {
+      "h2": "40 × 10 ft — the size that replaces a build",
+      "intro": "Four hundred square feet arriving complete is where this build most obviously beats conventional construction. Two closed bedrooms, a living area that holds a household, a kitchen with genuine counter length, a bathroom that needed no compromise. Built on site the same accommodation means several trades across several months; delivered this way it means a crane, an afternoon, and an electrician to make the final connections. Families choose it for permanence rather than for speed. Handover is a single day rather than a phased programme.",
+      "h3": "Who orders 400 square feet",
+      "applications": [
+        "Family home on owned land",
+        "Managerial housing with family",
+        "Leased plot needing a movable home",
+        "Farmhouse or weekend residence"
+      ],
+      "tab": "40 × 10 ft — 400 sq ft, two bedrooms, fitted"
+    },
+    "40x12": {
+      "h2": "40 × 12 ft — the most building on one trailer",
+      "intro": "This is the ceiling for a single movement. Two bedrooms with wardrobes, living and dining held apart, a full kitchen and a bathroom with its own lobby. Above this size the sensible route is two units joined rather than one wider building, because width beyond twelve feet leaves standard transport behind and the haulage cost climbs faster than the floor area. Everything is fitted at the works, which at this scale saves considerably more time than it does at the small end of the range. Joining is planned on the drawing, never improvised on site.",
+      "h3": "Where the largest fitted unit belongs",
+      "applications": [
+        "Full family residence",
+        "Guest villa on a resort property",
+        "Senior staff housing on a project",
+        "Base for a future two-unit layout"
+      ],
+      "tab": "40 × 12 ft — 480 sq ft, the largest single unit"
+    }
   }
 }

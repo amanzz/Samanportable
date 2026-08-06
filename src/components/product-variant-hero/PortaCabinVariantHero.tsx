@@ -53,6 +53,9 @@ interface ApplicationPanel {
   /** Optional owner-approved image for this explorer panel. It does not populate
       the product gallery and is used only in the active size tab. */
   image?: VariantImage;
+  /** Visible tab-strip label from the copy pack. Falls back to the variant's own
+      size label when the pack supplies none. */
+  tabLabel?: string;
 }
 interface ApplicationsData {
   /** Section-level heading + intro. The flagship dataset carries them; the T25
@@ -79,6 +82,10 @@ type SectionHPanel = {
   h3: string;
   applications: string[];
   imageAlt?: string;
+  /** Visible tab-strip label. Optional: a pack that supplies one has written it
+      to its own L13 band, so it is used verbatim; a pack that supplies none
+      keeps the variant's own size label and renders byte-identically. */
+  tab?: string;
 };
 type SectionHDataset = Record<string, SectionHPanel | string>;
 const fromSectionHDrop = (dataset: SectionHDataset): ApplicationsData => ({
@@ -94,6 +101,7 @@ const fromSectionHDrop = (dataset: SectionHDataset): ApplicationsData => ({
           applications: panel.applications,
           applicationsHeading: panel.h3,
           ...(panel.imageAlt ? { imageAlt: panel.imageAlt } : {}),
+          ...(panel.tab ? { tabLabel: panel.tab } : {}),
         }]
   ),
 });
@@ -1140,7 +1148,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   : 'border-transparent text-[var(--ds-color-steel)] hover:text-[var(--ds-color-forest)]'
               )}
             >
-              {v.label}
+              {panelBySlug.get(v.sizeSlug)?.tabLabel || v.label}
             </button>
           );
         })}
