@@ -353,7 +353,7 @@ const Products = ({ products, pagination, categories, attributes, rankMathSEO }:
         "@type": "ListItem",
         "position": index + 1,
         "name": product.name,
-        "url": `https://www.samanportable.com/product/${product.categories?.[0]?.slug || 'uncategorized'}/${product.slug}`
+        "url": `https://www.samanportable.com${productPath(product)}`
       }))
     },
     {
