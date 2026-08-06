@@ -34,6 +34,7 @@ import containerOfficesApplications from '@/data/products/container-offices-appl
 import portableOfficeApplications from '@/data/products/portable-office-applications.json';
 import portableCabinWithToiletApplications from '@/data/products/portable-cabin-with-toilet-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
+import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
 import RightToExist, { hasRightToExistEntry } from './RightToExist';
 
@@ -52,6 +53,9 @@ interface ApplicationPanel {
   /** Optional owner-approved image for this explorer panel. It does not populate
       the product gallery and is used only in the active size tab. */
   image?: VariantImage;
+  /** Visible tab-strip label from the copy pack. Falls back to the variant's own
+      size label when the pack supplies none. */
+  tabLabel?: string;
 }
 interface ApplicationsData {
   /** Section-level heading + intro. The flagship dataset carries them; the T25
@@ -78,6 +82,10 @@ type SectionHPanel = {
   h3: string;
   applications: string[];
   imageAlt?: string;
+  /** Visible tab-strip label. Optional: a pack that supplies one has written it
+      to its own L13 band, so it is used verbatim; a pack that supplies none
+      keeps the variant's own size label and renders byte-identically. */
+  tab?: string;
 };
 type SectionHDataset = Record<string, SectionHPanel | string>;
 const fromSectionHDrop = (dataset: SectionHDataset): ApplicationsData => ({
@@ -93,6 +101,7 @@ const fromSectionHDrop = (dataset: SectionHDataset): ApplicationsData => ({
           applications: panel.applications,
           applicationsHeading: panel.h3,
           ...(panel.imageAlt ? { imageAlt: panel.imageAlt } : {}),
+          ...(panel.tab ? { tabLabel: panel.tab } : {}),
         }]
   ),
 });
@@ -126,6 +135,11 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
       ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
     )
   ),
+  ...Object.fromEntries(
+    Object.entries(c08SectionHDatasets as Record<string, SectionHDataset>).map(
+      ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
+    )
+  ),
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -134,6 +148,27 @@ const C04_PRODUCT_SLUGS = new Set([
   'shipping-container-office',
   'site-office-container',
 ]);
+
+const C08_PRODUCT_SLUGS = new Set([
+  'container-houses',
+  'prefab-container-homes',
+  'luxury-container-houses',
+  'shipping-container-homes',
+  'affordable-container-homes',
+  // E3 ruling 1 (Fable 5, 05 Aug): page six follows the same six-per-size slot
+  // rule as its siblings — five in the gallery, row six reserved for Section H.
+  'prefabricated-container-house',
+]);
+
+/** Gallery track classes, written out in full so Tailwind's scanner emits them. */
+const GALLERY_TRACK_CLASS: Record<number, string> = {
+  1: 'grid grid-cols-1 gap-2',
+  2: 'grid grid-cols-2 gap-2',
+  3: 'grid grid-cols-3 gap-2',
+  4: 'grid grid-cols-4 gap-2',
+  5: 'grid grid-cols-5 gap-2',
+  6: 'grid grid-cols-6 gap-2',
+};
 
 const rewriteC04VisiblePunctuation = (
   value: string | undefined,
@@ -479,13 +514,30 @@ export function PortaCabinVariantHero({
   const specPdfHref = data.specPdfHref || preset.specPdfHref;
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
   const isC04Product = C04_PRODUCT_SLUGS.has(data.productSlug);
+  const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
   // not rendered at all (never another product's copy).
   const applications = APPLICATIONS_DATASETS[data.applicationsDataset || preset.applicationsDataset || data.productSlug];
   const heroActive = data.variants[heroIndex];
-  const heroImages = heroActive.images.length > 0 ? heroActive.images : null;
+  const imagesForVariant = (variant: typeof heroActive) => {
+    const images = variant.images?.length ? variant.images : (data.galleryImages || []);
+    // C-08 reserves manifest row six for the independent Section H image slot.
+    // Rows one to five remain the Section 2 image set (hero plus thumbnails).
+    return isC08Product && images.length === 6 ? images.slice(0, 5) : images;
+  };
+  const activeVariantImages = imagesForVariant(heroActive);
+  const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
+  // Columns in the thumbnail strip: the product's LARGEST thumb count across all
+  // its sizes, plus the video facade thumb when the product has one. Taking the
+  // maximum (not the active size's count) keeps the track constant while the size
+  // chips are used, so the strip never reflows; taking the real count rather than
+  // a fixed 6 means there is never an empty reserved cell.
+  const thumbTrackCount = Math.max(
+    ...data.variants.map((v) => imagesForVariant(v).length),
+    0
+  ) + (video ? 1 : 0);
 
   // Hero chips: change ONLY the hero; write #size-{WxL} (replaceState — no
   // navigation, no scroll, no history entry).
@@ -592,21 +644,23 @@ export function PortaCabinVariantHero({
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 text-center p-4">
               <p className="text-sm text-muted-foreground">
-                Photos for the {heroActive.label} {productName} are being finalised, send an enquiry for reference images.
+                Reference photographs for this size are available on request. Send an enquiry and we will share them.
               </p>
             </div>
           )}
         </div>
 
-        {/* T24.1-V — 6 columns: the 5 photo thumbs plus the video facade thumb.
-            Six-up keeps the row a single line, so gallery height, paint order and
-            everything below it are byte-identical in flow to the 5-up build (no
-            reflow, no CLS); only the per-thumb box shrinks.
-            T25 — the video thumb is opt-in, so the track count follows the real
-            number of thumbs: 6 with the video, 5 without. Full class names (not an
-            interpolated `grid-cols-${n}`) so Tailwind's scanner emits both. */}
+        {/* The track sizes to its CONTENTS — never a reserved slot.
+            E4 item 1: C-08 was pinned to 6 columns while its gallery is 5 (row six
+            of the manifest is the Section H image, not a thumbnail), which left a
+            visible empty cell after the fifth thumb.
+            The count is the product's MAXIMUM thumb count, not the active size's,
+            so switching size chips can never change the column count and reflow
+            the strip — the row keeps a constant height and CLS stays 0.
+            Full class names (never an interpolated `grid-cols-${n}`) so Tailwind's
+            scanner emits them. */}
         {heroImages && (
-          <div className={video || isC04Product ? 'grid grid-cols-6 gap-2' : 'grid grid-cols-5 gap-2'}>
+          <div className={GALLERY_TRACK_CLASS[thumbTrackCount] || 'grid grid-cols-5 gap-2'}>
             {heroImages.map((img, i) => (
               <button
                 key={img.src}
@@ -628,7 +682,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={isC04Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt)} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt)} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
               </button>
             ))}
 
@@ -680,8 +734,19 @@ export function PortaCabinVariantHero({
         {/* Zone contact cards directly under the thumbnails — the desktop
             conversion path (Call / Send Enquiry). lg:flex-1 stretches them to
             absorb remaining column height (T28.4 equal-bottom-edge rule). */}
-        <div className="pt-1 md:pt-2 lg:flex lg:flex-1">
+        <div className="pt-1 md:pt-2 lg:flex lg:flex-1 lg:flex-col lg:gap-2">
           <ProductZoneCtas variant="strip" className="w-full" stretch />
+          {isC08Product && specPdfHref && (
+          <a
+            href={specPdfHref}
+            download
+            onClick={() => pushDataLayer('file_download', { product_slug: data.productSlug })}
+            className="flex w-full items-center justify-center gap-2 rounded-md border border-[var(--ds-color-leaf)] bg-white px-4 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:bg-[var(--ds-color-mist)]"
+          >
+            <Download className="h-4 w-4" aria-hidden="true" />
+            Download Specification PDF
+          </a>
+          )}
         </div>
 
       </div>
@@ -696,7 +761,11 @@ export function PortaCabinVariantHero({
     { label: 'Delivery', value: data.deliveryLabel || '7–21 Working Days' },
     { label: 'Coverage', value: 'Bangalore · Delhi NCR' },
     { label: 'Brand', value: 'SAMAN Portable' },
-    { label: 'Application', value: rewriteC04VisiblePunctuation(heroActive.useCase, data.productSlug) },
+    // Application: omitted, not defaulted, when the product has no approved
+    // per-size use-case copy. Filtered below so the cell never renders empty.
+    ...(heroActive.useCase
+      ? [{ label: 'Application', value: rewriteC04VisiblePunctuation(heroActive.useCase, data.productSlug) }]
+      : []),
   ];
 
   // INFO-ONLY buy box: no CTA buttons here (owner ruling — desktop conversion
@@ -736,6 +805,13 @@ export function PortaCabinVariantHero({
                 )}
               >
                 {v.label}
+                {/* Quotation-mode products carry no price ladder, so the size
+                    list is the only place the six areas can be read. Rendered
+                    ONLY when gatedPriceLabel is set — every priced product keeps
+                    its original label-only chip, byte-identical. */}
+                {data.gatedPriceLabel && (
+                  <span className="block text-[11px] font-normal opacity-80">{v.areaSqft} sq ft</span>
+                )}
               </button>
             ))}
           </div>
@@ -753,7 +829,7 @@ export function PortaCabinVariantHero({
               incl-GST line. When priceExGst is a number the ORIGINAL two elements
               render unchanged (the fragment is transparent → flagship byte-identity). */}
           {heroActive.priceExGst == null ? (
-            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">Price on request, send enquiry</span>
+            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">{data.gatedPriceLabel || 'Price on request — send enquiry'}</span>
           ) : (
             <>
               <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
@@ -844,7 +920,7 @@ export function PortaCabinVariantHero({
 
         {/* Trust row — anchored at the card bottom (mt-auto within the
             full-height flex column). */}
-        {specPdfHref && (
+        {specPdfHref && !isC08Product && (
         <a
           href={specPdfHref}
           download
@@ -859,7 +935,9 @@ export function PortaCabinVariantHero({
         <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">
           {isC04Product
             ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
-            : <>GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery</>}
+            : isC08Product
+              ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
+              : <>GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery</>}
         </p>
       </div>
     </Card>
@@ -968,7 +1046,7 @@ export function PortaCabinVariantHero({
         <div className="flex items-center justify-between gap-3 px-4 py-3">
           <div>
             <p className="text-[11px] text-muted-foreground leading-none">{heroActive.label}</p>
-            <p className="text-base font-bold text-primary leading-tight">{heroActive.priceExGst == null ? 'Price on request' : <>{formatIndianPrice(heroActive.priceExGst)} + GST</>}</p>
+            <p className="text-base font-bold text-primary leading-tight">{heroActive.priceExGst == null ? (data.gatedPriceLabel || 'Price on request') : <>{formatIndianPrice(heroActive.priceExGst)} + GST</>}</p>
           </div>
           <Button
             type="button"
@@ -1019,6 +1097,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
 
   const preset = getVariantPreset(data);
   const productNameLower = productName.toLowerCase();
+  const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
   const explorerTemplate = data.explorerImageTemplate || preset.explorerImageTemplate;
   const explorerShot = data.explorerImageShot || preset.explorerImageShot || 'elevated-view';
 
@@ -1069,7 +1148,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   : 'border-transparent text-[var(--ds-color-steel)] hover:text-[var(--ds-color-forest)]'
               )}
             >
-              {v.label}
+              {panelBySlug.get(v.sizeSlug)?.tabLabel || v.label}
             </button>
           );
         })}
@@ -1085,30 +1164,34 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
         {data.variants.map((v, i) => {
           const panel = panelBySlug.get(v.sizeSlug);
           if (!panel) return null;
-          // Panel photo = that size's ELEVATED-VIEW shot (a different file from the
-          // gallery's hero-view, so no image repeats on the page). 40x8 has no
-          // real photos yet → placeholder.
-          const hasPhotos = v.images.length > 0;
+          const variantImages = v.images?.length ? v.images : (data.galleryImages || []);
+          // C-08 manifest row six is the dedicated Section H image. Other clusters
+          // retain the explicit-image/template/derived-shot resolution order.
+          const c08ExplorerImage = isC08Product && variantImages.length === 6
+            ? variantImages[5]
+            : undefined;
+          const hasPhotos = variantImages.length > 0;
           const panelSrc =
             panel.image?.src ||
+            c08ExplorerImage?.src ||
             (hasPhotos
-              ? explorerImageSrc(explorerTemplate, explorerShot, v.sizeSlug, v.images[0]?.src)
+              ? explorerImageSrc(explorerTemplate, explorerShot, v.sizeSlug, variantImages[0]?.src)
               : null);
+          const manifestImage = variantImages.find((image) => image.src === panelSrc);
           const panelImage = panelSrc
             ? {
                 src: panelSrc,
-                // When the Explorer reuses this size's gallery HERO shot (panelSrc equals
-                // the first gallery image — e.g. the C-02 shop cabin, which ships no
-                // separate elevated-view per the FIX-PACKET), carry that image's own §E
-                // alt. Products whose Explorer uses a DISTINCT shot (porta-cabins →
-                // elevated-view) keep the derived application alt, byte-identical.
+                // When the Explorer resolves to a manifest image, carry that image's
+                // approved alt. Products whose Explorer uses a derived application shot
+                // retain the established application-alt fallback, byte-identical.
                 // An owner-authored panel alt (C-02 with-toilet §H) wins outright;
                 // otherwise the existing two-branch behaviour is unchanged.
                 alt:
                   panel.image?.alt ||
                   panel.imageAlt ||
-                  (panelSrc === v.images[0]?.src && v.images[0]?.alt
-                    ? v.images[0].alt
+                  manifestImage?.alt ||
+                  (panelSrc === variantImages[0]?.src && variantImages[0]?.alt
+                    ? variantImages[0].alt
                     : applicationAlt(v.label, panel.applications[0], productNameLower)),
               }
             : null;
@@ -1125,7 +1208,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 i === activeIndex ? 'visible' : 'invisible pointer-events-none'
               )}
             >
-              {/* LEFT — that size's elevated-view photo (or the honest placeholder
+              {/* LEFT — that size's dedicated Explorer photo (or the honest placeholder
                   when a size has no photos). The aspect-[4/3] box always reserves
                   space (zero CLS, grid-stack). V7: only the ACTIVE panel renders an
                   <img>, so INACTIVE panels issue ZERO network requests at initial
@@ -1150,8 +1233,8 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                         src={panelImage.src}
                         unoptimized={shouldBypassOptimizer(panelImage.src)}
                         alt={panelImage.alt}
-                        width={panel.image?.width || 1254}
-                        height={panel.image?.height || 1254}
+                        width={panel.image?.width || manifestImage?.width || 1254}
+                        height={panel.image?.height || manifestImage?.height || 1254}
                         className="w-full h-full object-cover"
                         sizes="(max-width: 1023px) calc(100vw - 34px), 500px"
                         loading="lazy"
@@ -1161,7 +1244,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   ) : (
                     <div className="flex h-full w-full items-center justify-center p-4 text-center">
                       <p className="text-sm text-[var(--ds-color-steel)]">
-                        Photos for the {v.label} {productName} are being finalised, send an enquiry for reference images.
+                        Reference photographs for this size are available on request. Send an enquiry and we will share them.
                       </p>
                     </div>
                   )}

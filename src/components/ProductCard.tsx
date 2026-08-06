@@ -35,6 +35,13 @@ interface ProductCardProps {
   };
   priority?: boolean;
   variant?: 'default' | 'compact' | 'featured';
+  /**
+   * C-08 P0 (Fable 5 ruling, 03 Aug 2026): a category archive publishes no price.
+   * It lists products, links to them, and lets the product page own the number.
+   * Opt-in per surface, so /product, related rails and every other consumer of this
+   * card keep their current price display byte-for-byte.
+   */
+  suppressPrice?: boolean;
 }
 
 const PUF_PANEL_CATEGORY_SLUG = 'puf-panel';
@@ -56,9 +63,10 @@ const isPufPanelProduct = (product: ProductCardProps['product']) =>
   product.categories?.some((category) => category.slug === PUF_PANEL_CATEGORY_SLUG);
 
 const ProductCard: React.FC<ProductCardProps> = ({ 
-  product, 
-  priority = false, 
-  variant = 'default' 
+  product,
+  priority = false,
+  variant = 'default',
+  suppressPrice = false
 }) => {
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
@@ -200,7 +208,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </div>
           )}
 
-          {/* Price */}
+          {/* Price. Suppressed outright on surfaces with no approved ladder of
+              their own — nothing is substituted in its place. */}
+          {!suppressPrice && (
           <div className={`${variant === 'compact' ? 'mb-4' : 'mb-6'}`}>
             {isOnSale ? (
               <div className="flex items-center gap-3">
@@ -228,6 +238,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               </p>
             )}
           </div>
+          )}
 
           {/* Action Buttons */}
           <div className="flex flex-col gap-2.5">

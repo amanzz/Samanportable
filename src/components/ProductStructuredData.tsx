@@ -18,9 +18,12 @@ interface ProductStructuredDataProps {
   // Variant pages use this approved price ladder for the primary Product's
   // AggregateOffer; individual selector options do not become Product entities.
   variantData?: VariantProductData;
+  // Commercial-truth gate for a live route awaiting an owner-approved ladder.
+  // ItemPage/BreadcrumbList may remain, but Product and Offer must not emit.
+  suppressProductEntity?: boolean;
 }
 
-export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData }: ProductStructuredDataProps) {
+export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData, suppressProductEntity = false }: ProductStructuredDataProps) {
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
@@ -225,7 +228,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
   // Generate structured data for Product only when it has real Product-snippet
   // evidence. Quote-only/unrated products must not emit an ineligible Product
   // node with no offers, aggregateRating, or review.
-  const productStructuredData = hasProductRichResultEvidence ? {
+  const productStructuredData = !suppressProductEntity && hasProductRichResultEvidence ? {
     '@context': 'https://schema.org/',
     '@type': 'Product',
     '@id': `${productUrl}#product`,

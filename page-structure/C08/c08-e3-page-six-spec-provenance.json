@@ -1,0 +1,213 @@
+{
+ "ticket": "C08-E3 Step D",
+ "date": "2026-08-05",
+ "l16": {
+  "rows": 27,
+  "divergeHub": 19,
+  "divergeHubPct": 70.4,
+  "gate1Pass": false,
+  "nearestSibling": "prefab-container-homes",
+  "nearestSiblingRowsDiffering": 19,
+  "gate2Pass": true,
+  "perSibling": {
+   "prefab-container-homes": 19,
+   "luxury-container-houses": 19,
+   "shipping-container-homes": 19,
+   "affordable-container-homes": 19
+  }
+ },
+ "provenance": [
+  {
+   "component": "Bottom frame",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Top frame",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Roof stiffeners",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Corner posts / walls",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Lifting / handling",
+   "source": "S1",
+   "note": "byte-identical on all five siblings and named \"never edited\" in the 02 Aug spec assignment; carried as hard-common",
+   "differsFromHub": false
+  },
+  {
+   "component": "Welding & fabrication",
+   "source": "S1",
+   "note": "one of the six hard-common rows named in the ticket",
+   "differsFromHub": false
+  },
+  {
+   "component": "Exterior walls",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Roof",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Interior walls",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Ceiling",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Floor base",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Floor finish",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Wall insulation",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Roof insulation",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Decorative / external finish",
+   "source": "S3",
+   "note": "quoted from this page's rendered copy",
+   "differsFromHub": true
+  },
+  {
+   "component": "Fasteners & sealing",
+   "source": "S1",
+   "note": "one of the six hard-common rows named in the ticket",
+   "differsFromHub": false
+  },
+  {
+   "component": "Main door / service door",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Windows / service opening",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Grills / mosquito mesh",
+   "source": "S1",
+   "note": "one of the six hard-common rows named in the ticket",
+   "differsFromHub": false
+  },
+  {
+   "component": "Electrical wiring",
+   "source": "S1",
+   "note": "one of the six hard-common rows named in the ticket",
+   "differsFromHub": false
+  },
+  {
+   "component": "Electrical protection",
+   "source": "S1",
+   "note": "one of the six hard-common rows named in the ticket",
+   "differsFromHub": false
+  },
+  {
+   "component": "Electrical fittings",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Plumbing / sanitary",
+   "source": "S3",
+   "note": "quoted from this page's rendered copy",
+   "differsFromHub": true
+  },
+  {
+   "component": "Layout / configuration",
+   "source": "S3",
+   "note": "quoted from this page's rendered copy",
+   "differsFromHub": true
+  },
+  {
+   "component": "Painting / coating",
+   "source": "S2",
+   "note": "Common Material Key, quoted from its own columns",
+   "differsFromHub": true
+  },
+  {
+   "component": "Quality checks",
+   "source": "S1",
+   "note": "byte-identical on all five siblings and named \"never edited\" in the 02 Aug spec assignment; carried as hard-common",
+   "differsFromHub": false
+  },
+  {
+   "component": "Warranty",
+   "source": "S1",
+   "note": "one of the six hard-common rows named in the ticket",
+   "differsFromHub": false
+  }
+ ],
+ "omitted": [
+  {
+   "component": "Bottom stiffeners",
+   "reason": "The key specifies the base frame as one chassis and lists no separate stiffener member; the page publishes none."
+  },
+  {
+   "component": "Floor frame",
+   "reason": "The key covers the load-bearing base and the floor board deck, but no floor framing members; the page publishes none."
+  },
+  {
+   "component": "Ventilation / AC",
+   "reason": "The key treats AC only as an electrical circuit, not a ventilation specification, and the page's own AC-point line sits inside the price table suppressed by the P0 commercial-truth gate."
+  }
+ ],
+ "l16DenominatorMethod": {
+  "ruling": "C08 CLOSE-OUT reissue (Fable 5, 06 Aug 2026). FIXED METHOD for every future L16 measurement on any cluster.",
+  "rule": "The denominator is the number of rows actually built. Rows with no permitted source cannot participate in a divergence measurement, so they count neither as divergent nor as matching and do not count against the page.",
+  "appliedHere": {
+   "rowsBuilt": 27,
+   "rowsOmitted": 3,
+   "denominator": 27
+  },
+  "gate1Ruling": "The two insulation facts sourced from the Common Material Key are APPROVED for page six. Ruling states Gate 1 stands at 17/27 = 63.0% PASS.",
+  "measuredAsBuilt": {
+   "divergingRows": 19,
+   "denominator": 27,
+   "percent": 70.4,
+   "note": "Measured against the table as built on the approved Common Material Key values. 17/27 is only reachable if the two insulation rows carry the hub values (75 mm mineral wool / 100 mm glass wool) instead of the CMK values (25 mm / 50 mm). Reported, not adjusted: no specification value was moved to make a gate pass."
+  }
+ }
+}

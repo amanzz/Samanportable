@@ -1,0 +1,4172 @@
+{
+  "manifest": "page-structure/content-drafts/C08-IMAGE-ALT-MANIFEST-180-02Aug2026.md",
+  "manifestSha256": "0c0ee893b5cd9cd5d6e4242bab77987645e525cb537ebe0c1818cc177f84be85",
+  "sourceRoot": "D:\\Project-shekhar\\all-product-images\\C-08",
+  "destinationConvention": "public/images/products/<product-slug>/<size>/<manifest-filename>",
+  "targetDimensions": [
+    900,
+    900
+  ],
+  "published": 180,
+  "pages": 5,
+  "sizesPerPage": 6,
+  "imagesPerPage": 36,
+  "imagesPerSize": 6,
+  "exteriorPerSize": 3,
+  "interiorPerSize": 3,
+  "uniqueFilenames": 180,
+  "uniqueAlts": 180,
+  "uniqueStrippedDescriptionsSitewide": 179,
+  "uniqueStrippedDescriptionsByPage": {
+    "affordable-container-homes": 36,
+    "container-houses": 36,
+    "luxury-container-houses": 36,
+    "prefab-container-homes": 36,
+    "shipping-container-homes": 36
+  },
+  "filenameCollisionCount": 0,
+  "below80KiB": 0,
+  "above120KiB": 0,
+  "images": [
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E01",
+      "filename": "container-houses-20x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x8 ft container house, white steel cladding, on a paved court in a hillside garden",
+      "manifestPosition": 1,
+      "sourceFilename": "001_container-houses_20x8_E01_front-right-hero.png",
+      "sourceSha256": "8b4e1ce3b77b44e1dd11e71095acd572a108e363c81eeabdd620f5d9238f9f98",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp",
+      "targetSha256": "6e51b8cceb738b032009bd535798914cb4e4aa751060ebce70fc7456058214e1",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116044,
+      "webpQuality": 81
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I01",
+      "filename": "container-houses-20x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x8 ft container house, with a compact living seat and dining nook",
+      "manifestPosition": 2,
+      "sourceFilename": "007_container-houses_20x8_I01_entry-living-hall.png",
+      "sourceSha256": "e730a7322c36179a15a8005d4268ae7521190784bbc4902c55c75fa02faeb3e5",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x8/container-houses-20x8-entry-living-hall.webp",
+      "targetSha256": "9eaf2a6ece2ccefa434d461ea2c7fffb7f15749aad511c8c4dac79ef5036a456",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 114188,
+      "webpQuality": 89
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E03",
+      "filename": "container-houses-20x8-long-side-elevation.webp",
+      "alt": "Long side elevation of a 20x8 ft container house showing the full window run, white steel cladding, on a paved court in a hillside garden",
+      "manifestPosition": 3,
+      "sourceFilename": "003_container-houses_20x8_E03_long-side-elevation.png",
+      "sourceSha256": "c231d8b412b20a33468f86360b343dbef7f705f712dc4bbdbe66738fd1fee167",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x8/container-houses-20x8-long-side-elevation.webp",
+      "targetSha256": "78a6e09827afb444bca789a7cac4eb8dc0dfa05ce6531b4698a7208f4c51d6fa",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121942,
+      "webpQuality": 78
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E06",
+      "filename": "container-houses-20x8-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x8 ft container house, white steel cladding, on a paved court in a hillside garden",
+      "manifestPosition": 4,
+      "sourceFilename": "006_container-houses_20x8_E06_elevated-three-quarter.png",
+      "sourceSha256": "144fbad496c2bd0ef4a6f345893defd24f99dd032a2181493f4c6efa2d5dd7c4",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x8/container-houses-20x8-elevated-three-quarter.webp",
+      "targetSha256": "41096cb79cd557c01a3c6444e5b4c763fb7c87eae852ec1fc3383aa5e7cff3d3",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121768,
+      "webpQuality": 76
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I02",
+      "filename": "container-houses-20x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x8 ft container house, with a galley kitchen running to a dining table",
+      "manifestPosition": 5,
+      "sourceFilename": "008_container-houses_20x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "ca09cf94a1eb6ba632ea79ff8d1afed288df46402476ad67af323f98e631b2c7",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x8/container-houses-20x8-kitchen-dining.webp",
+      "targetSha256": "1b535946829d822cd7188e33a6e5f9582f0c39083df7f995e29366d2442d3daa",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 114306,
+      "webpQuality": 91
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I03",
+      "filename": "container-houses-20x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x8 ft container house, with a bed against timber-panelled wall",
+      "manifestPosition": 6,
+      "sourceFilename": "009_container-houses_20x8_I03_bedroom-view.png",
+      "sourceSha256": "cdde48bb177ce2c2eb966d9d2136dd9443052933b36cd2d5caf67a566881b0d2",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x8/container-houses-20x8-bedroom-view.webp",
+      "targetSha256": "2bd6032fa643edc342070e6fb8c0da638b058d6ebfc26f20fb6bee37150eebca",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118280,
+      "webpQuality": 89
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E01",
+      "filename": "container-houses-20x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x10 ft container house, cream cladding with a pale base, on paving with planted borders and mountains behind",
+      "manifestPosition": 7,
+      "sourceFilename": "011_container-houses_20x10_E01_front-right-hero.png",
+      "sourceSha256": "7c21d192b949bd0dbef24542da080eff02feb6258086be90f476c474e766e886",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x10/container-houses-20x10-front-right-hero.webp",
+      "targetSha256": "af8f6165709bdff8274e294f80102c4eee1906c286c5dcaaf619873ae25253ac",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119930,
+      "webpQuality": 78
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I01",
+      "filename": "container-houses-20x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x10 ft container house, with a long living run with a low TV console",
+      "manifestPosition": 8,
+      "sourceFilename": "017_container-houses_20x10_I01_entry-living-hall.png",
+      "sourceSha256": "c0955aacd332cf61b55f1d10718385ddceb9614ddff5e2c4d384fe69cecc92b3",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x10/container-houses-20x10-entry-living-hall.webp",
+      "targetSha256": "31d3962a9fa7a33ea289322885eb8b7028bb31bb11734f93d945286030b8272e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122280,
+      "webpQuality": 89
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E02",
+      "filename": "container-houses-20x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 20x10 ft container house in cream cladding with a pale base, on paving with planted borders and mountains behind",
+      "manifestPosition": 9,
+      "sourceFilename": "012_container-houses_20x10_E02_front-left-angle.png",
+      "sourceSha256": "54115b3f40fef1c5ea17c21417afc3b07928419d5223c6f8bc76d7c13a9f50bb",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x10/container-houses-20x10-front-left-angle.webp",
+      "targetSha256": "3fe8ddffb3f7cb1db9b6061bee4b7fb32ad4a486d803af05fb8a99eafc607e29",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120394,
+      "webpQuality": 81
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E05",
+      "filename": "container-houses-20x10-end-dominant-view.webp",
+      "alt": "End view of a 20x10 ft container house, cream cladding with a pale base, on paving with planted borders and mountains behind",
+      "manifestPosition": 10,
+      "sourceFilename": "015_container-houses_20x10_E05_end-dominant.png",
+      "sourceSha256": "45707a6ca0d828bbdd13ed7c40770f020213d93728bddf3d4aca826d2913d0ea",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x10/container-houses-20x10-end-dominant-view.webp",
+      "targetSha256": "a3b97f6726c3109a9aed6f4446c48dad82b56dec6b5374d6696aa2f40e5d23a5",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121738,
+      "webpQuality": 81
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I03",
+      "filename": "container-houses-20x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x10 ft container house, with a curtained bedroom with a window seat",
+      "manifestPosition": 11,
+      "sourceFilename": "019_container-houses_20x10_I03_bedroom-view.png",
+      "sourceSha256": "b68727711d51244921b24898f1724d2da0730f62410509dde2465a21e4224075",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x10/container-houses-20x10-bedroom-view.webp",
+      "targetSha256": "f6fd4dc80296a62a5f09a8ca6f4f5492cba60dfd9582c9338150cadf9a121b78",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121606,
+      "webpQuality": 88
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I04",
+      "filename": "container-houses-20x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x10 ft container house towards a WC and basin beyond the sliding door",
+      "manifestPosition": 12,
+      "sourceFilename": "020_container-houses_20x10_I04_bathroom-reverse.png",
+      "sourceSha256": "74d6a23b07ed7a8e39f19b8359e40926bb3f960a1f25b646c463620ffafdc4f7",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x10/container-houses-20x10-bathroom-reverse.webp",
+      "targetSha256": "402c9aa9567cc817c1287b3a45cfc25bb56fdf39faa16719371e79c451dc4f28",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116878,
+      "webpQuality": 88
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E01",
+      "filename": "container-houses-20x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x12 ft container house, sage green cladding, on a lawn edge below a rocky ridge",
+      "manifestPosition": 13,
+      "sourceFilename": "021_container-houses_20x12_E01_front-right-hero.png",
+      "sourceSha256": "fc5bd9606f56c4330b8b6bbdadddc7e90ba361c28e68c9943a1f095b9d4ee045",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x12/container-houses-20x12-front-right-hero.webp",
+      "targetSha256": "c40441c6b81a8295764c39e29b3974a47a2f8d4883460aa507aca56be315675c",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120238,
+      "webpQuality": 81
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I01",
+      "filename": "container-houses-20x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x12 ft container house, with a sofa facing a wall-mounted screen",
+      "manifestPosition": 14,
+      "sourceFilename": "027_container-houses_20x12_I01_entry-living-hall.png",
+      "sourceSha256": "e6aab5b403b99cce418ab49f187d27518fc502ea7fecb16219225512da61716b",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x12/container-houses-20x12-entry-living-hall.webp",
+      "targetSha256": "c85adaefac1e906ea661139a79a6d8c9646cfc52d28ec2cc92fccb92cf307682",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122044,
+      "webpQuality": 88
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E04",
+      "filename": "container-houses-20x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 20x12 ft container house, sage green cladding, on a lawn edge below a rocky ridge",
+      "manifestPosition": 15,
+      "sourceFilename": "024_container-houses_20x12_E04_rear-right-angle.png",
+      "sourceSha256": "c7ae8de00aeb6a821a8b53c8d3339811c1456270c8532e59e7744c5d6da7960e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x12/container-houses-20x12-rear-right-angle.webp",
+      "targetSha256": "eaaca9f68123c541c36ed9986e41ebf3d71e58bb3784ce6025abf2c16a6b4933",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118238,
+      "webpQuality": 79
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E06",
+      "filename": "container-houses-20x12-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x12 ft container house, sage green cladding, on a lawn edge below a rocky ridge",
+      "manifestPosition": 16,
+      "sourceFilename": "026_container-houses_20x12_E06_elevated-three-quarter.png",
+      "sourceSha256": "678f094bcc98a815d0e4ad77dcc19f384989a3188d405333e138c6e69b7d992b",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x12/container-houses-20x12-elevated-three-quarter.webp",
+      "targetSha256": "95f968b2ba742cd0d0e29e0437a71e52e02fe10d1364a8135fb0f7bda2edfac3",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121942,
+      "webpQuality": 54
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I02",
+      "filename": "container-houses-20x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x12 ft container house, with an open kitchen with a round dining table",
+      "manifestPosition": 17,
+      "sourceFilename": "028_container-houses_20x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "9bef229dcca1db32e752eec36498fac7ad214f49280e1737cfcb73ffd407f6b7",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x12/container-houses-20x12-kitchen-dining.webp",
+      "targetSha256": "79174c0107626cad4a3e597c47e9fc804dc8fe165c865f05bfc5c9a2b3163025",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120120,
+      "webpQuality": 89
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I04",
+      "filename": "container-houses-20x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x12 ft container house towards a shower room reached past the dining area",
+      "manifestPosition": 18,
+      "sourceFilename": "030_container-houses_20x12_I04_bathroom-reverse.png",
+      "sourceSha256": "4afc898f8f38d2e94c77dd68f21418c25128a43ec4d1c8e7a770808f689d9c50",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/20x12/container-houses-20x12-bathroom-reverse.webp",
+      "targetSha256": "ac3ba09750819fde48771925d83f634f9a99c9c30e3c8d02905637c1a9775539",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120862,
+      "webpQuality": 90
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E01",
+      "filename": "container-houses-40x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x8 ft container house, blue-grey cladding, on red-earth paving in a tropical garden",
+      "manifestPosition": 19,
+      "sourceFilename": "031_container-houses_40x8_E01_front-right-hero.png",
+      "sourceSha256": "9df66968cea183765bba60586ec36ba298dc3a0e0353caf0d9edf47cf2ab5aac",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x8/container-houses-40x8-front-right-hero.webp",
+      "targetSha256": "a8a5bbb16782cbab69d081094ccbab9a14ba5d50079f28685a93e321d40cacf3",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121220,
+      "webpQuality": 70
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I01",
+      "filename": "container-houses-40x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x8 ft container house, with a living seat under recessed lighting",
+      "manifestPosition": 20,
+      "sourceFilename": "037_container-houses_40x8_I01_entry-living-hall.png",
+      "sourceSha256": "1fca01c2e9577321dd9412765893d2f6ad55e38916e5c23b9680dda832184f09",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x8/container-houses-40x8-entry-living-hall.webp",
+      "targetSha256": "6a7e1ae600c72d27496ab5528da605fc9e85266e70fbe707d712bf983b91d701",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116142,
+      "webpQuality": 87
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E03",
+      "filename": "container-houses-40x8-long-side-elevation.webp",
+      "alt": "Long side elevation of a 40x8 ft container house showing the full window run, blue-grey cladding, on red-earth paving in a tropical garden",
+      "manifestPosition": 21,
+      "sourceFilename": "033_container-houses_40x8_E03_long-side-elevation.png",
+      "sourceSha256": "83b6f3f3f8f1ea0b1198ada5fc75ede8561b8cb8f1728b57d1ee75f6aa5c8803",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x8/container-houses-40x8-long-side-elevation.webp",
+      "targetSha256": "1a34f479ec7a01ca65c8f27b7ebe7e9bb3c10609b1979ac24bf8cedb1f4adb72",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122378,
+      "webpQuality": 55
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E05",
+      "filename": "container-houses-40x8-end-dominant-view.webp",
+      "alt": "End-on view of a 40x8 ft container house with the gable glazing lit, blue-grey cladding, on red-earth paving in a tropical garden",
+      "manifestPosition": 22,
+      "sourceFilename": "035_container-houses_40x8_E05_end-dominant.png",
+      "sourceSha256": "52906aa546e22169798b021bf7865dc7308fe2aa6b889699f5c2005132a0b08a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x8/container-houses-40x8-end-dominant-view.webp",
+      "targetSha256": "dd5934f61e7bc6c4df8ddda6ccd8efb883e4c62e37c412542f31e1bfcb7ea265",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121256,
+      "webpQuality": 75
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I02",
+      "filename": "container-houses-40x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x8 ft container house, with a kitchen bar with upholstered dining chairs",
+      "manifestPosition": 23,
+      "sourceFilename": "038_container-houses_40x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "0c0de8f60a76bbc48c9b8c4fa96a03fd77dd797fc4fa07aea0f63587e7eb8684",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x8/container-houses-40x8-kitchen-dining.webp",
+      "targetSha256": "6fbbd4393a31082948a87552f664633565d2ac3b910437ce6a16b7e070fe0843",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121820,
+      "webpQuality": 89
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I03",
+      "filename": "container-houses-40x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x8 ft container house, with a bed under a slim high-level window",
+      "manifestPosition": 24,
+      "sourceFilename": "039_container-houses_40x8_I03_bedroom-view.png",
+      "sourceSha256": "78fdb6a5c0724d863b31e6c8a2ac76c9860ad11b5438ebce2a0ea27a36fb00f9",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x8/container-houses-40x8-bedroom-view.webp",
+      "targetSha256": "f62c94b901396efbf0df80019be51a75ed8c704a1a425778c05574f144d09027",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120198,
+      "webpQuality": 86
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E01",
+      "filename": "container-houses-40x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x10 ft container house, charcoal cladding, on stone paving cut into a wooded slope",
+      "manifestPosition": 25,
+      "sourceFilename": "041_container-houses_40x10_E01_front-right-hero.png",
+      "sourceSha256": "26ae79834c5b47046eed2cf5c57d3c4753f4f5f27a3eac44b8358c110bd14c9d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x10/container-houses-40x10-front-right-hero.webp",
+      "targetSha256": "35d687c7399fb022b55dd2925197138227aea084b902e3dbca7bc3dc65146240",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120982,
+      "webpQuality": 68
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I01",
+      "filename": "container-houses-40x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x10 ft container house, with a lounge opening onto a full-height glazed wall",
+      "manifestPosition": 26,
+      "sourceFilename": "047_container-houses_40x10_I01_entry-living-hall.png",
+      "sourceSha256": "3915d4abc5c185f963e1cc08f824f0c8637f186876d589948f2e857099f84f27",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x10/container-houses-40x10-entry-living-hall.webp",
+      "targetSha256": "b41682f4ca080be800b85b5184b3487419ffba2292eaf17d31e1c279a00ad5ee",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118136,
+      "webpQuality": 85
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E02",
+      "filename": "container-houses-40x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 40x10 ft container house in charcoal cladding, on stone paving cut into a wooded slope",
+      "manifestPosition": 27,
+      "sourceFilename": "042_container-houses_40x10_E02_front-left-angle.png",
+      "sourceSha256": "d59f0eab73f357fdfc28dbf6441466e012cbcc430a3179618cbb8864c05a8270",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x10/container-houses-40x10-front-left-angle.webp",
+      "targetSha256": "0643eb245f732360a3952d3c9b6054a6ab00d30748f5653de03d4734e13db7d7",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122068,
+      "webpQuality": 50
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E06",
+      "filename": "container-houses-40x10-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 40x10 ft container house, charcoal cladding, on stone paving cut into a wooded slope",
+      "manifestPosition": 28,
+      "sourceFilename": "046_container-houses_40x10_E06_elevated-three-quarter.png",
+      "sourceSha256": "030fb04043ed380fb8f6d7930e96884980f6b979f8341644944df541be8d5d49",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x10/container-houses-40x10-elevated-three-quarter.webp",
+      "targetSha256": "dbcf07ce53ac28cbf89bd9113b7e52fe6e04a894902562cf7b8d979e96a65ecd",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119958,
+      "webpQuality": 70
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I03",
+      "filename": "container-houses-40x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x10 ft container house, with a bedroom with wardrobes and a corner window",
+      "manifestPosition": 29,
+      "sourceFilename": "049_container-houses_40x10_I03_bedroom-view.png",
+      "sourceSha256": "90b4eccf01e8d52daca0a0a375d1f6097887d03dda8c8d1f3c985d36eff70927",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x10/container-houses-40x10-bedroom-view.webp",
+      "targetSha256": "c3f5bd1137c70c7c57cec15929f2177d77a53a3938af6f3b39b554fddab75bb6",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121976,
+      "webpQuality": 92
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I04",
+      "filename": "container-houses-40x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x10 ft container house towards a WC with a laundry appliance recessed opposite",
+      "manifestPosition": 30,
+      "sourceFilename": "050_container-houses_40x10_I04_bathroom-reverse.png",
+      "sourceSha256": "ed77df14aac4f0d7abea59c3a565e8d67b0f16b16e6aeebd9649323886a8685d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x10/container-houses-40x10-bathroom-reverse.webp",
+      "targetSha256": "598112a07f64a49ea7c9050430ca21cf6c7a4cab13d142a8cf9fba94c604c9a9",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 110238,
+      "webpQuality": 92
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E01",
+      "filename": "container-houses-40x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x12 ft container house, sand-toned cladding, on gravel among vineyard hills in jacaranda bloom",
+      "manifestPosition": 31,
+      "sourceFilename": "051_container-houses_40x12_E01_front-right-hero.png",
+      "sourceSha256": "aa863d76958b9de9512f826a7dcf542134275899db0ad5b4052dd54322b7cdf3",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x12/container-houses-40x12-front-right-hero.webp",
+      "targetSha256": "93a93f3a3faf08ff65d2668d9c3d3b509a053689585d4fae10a02838bfea5b6b",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121018,
+      "webpQuality": 77
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I01",
+      "filename": "container-houses-40x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x12 ft container house, with a lounge with a rug and full-width glazing",
+      "manifestPosition": 32,
+      "sourceFilename": "057_container-houses_40x12_I01_entry-living-hall.png",
+      "sourceSha256": "f2ca2318b1b18a23daa6273f7b09ea5e92deea947e4c283ca5be986516054652",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x12/container-houses-40x12-entry-living-hall.webp",
+      "targetSha256": "0fa7531081cc4d42d5b0b74fc6854450aeafb35768f6b4d190c8eb425008703b",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120964,
+      "webpQuality": 87
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E04",
+      "filename": "container-houses-40x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 40x12 ft container house, sand-toned cladding, on gravel among vineyard hills in jacaranda bloom",
+      "manifestPosition": 33,
+      "sourceFilename": "054_container-houses_40x12_E04_rear-right-angle.png",
+      "sourceSha256": "9edac1d2e441d214645aa088fe9048d17461874f97b6bfd3ee9ec3729667bf99",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x12/container-houses-40x12-rear-right-angle.webp",
+      "targetSha256": "00760c58200b17008972601852b0da1cb2335f540ad8fa82ec686d87d1c63d85",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122204,
+      "webpQuality": 64
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E03",
+      "filename": "container-houses-40x12-long-side-elevation.webp",
+      "alt": "Side elevation of a 40x12 ft container house, sand-toned cladding, on gravel among vineyard hills in jacaranda bloom",
+      "manifestPosition": 34,
+      "sourceFilename": "053_container-houses_40x12_E03_long-side-elevation.png",
+      "sourceSha256": "69487948bbecaff8e8df8b7372906e14f7b588332f8ff3e4cf886119b511712c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x12/container-houses-40x12-long-side-elevation.webp",
+      "targetSha256": "f144d04487ce765b22f5649a79a124ec671ef4de675ceb6db7e317dfc3875a24",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122792,
+      "webpQuality": 75
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I02",
+      "filename": "container-houses-40x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x12 ft container house, with a dining table under pendant lighting",
+      "manifestPosition": 35,
+      "sourceFilename": "058_container-houses_40x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "808cdaaeef1bf1c61c3673a16eb018896f1ba64f68325db2f11238f2e53c02fe",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x12/container-houses-40x12-kitchen-dining.webp",
+      "targetSha256": "c4a198142c613077079c5f63728d43be8c3a60ef031319419900fdf617452597",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 110332,
+      "webpQuality": 88
+    },
+    {
+      "slug": "container-houses",
+      "sourceFolder": "container-house",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I04",
+      "filename": "container-houses-40x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x12 ft container house towards a bathroom with a laundry recess alongside",
+      "manifestPosition": 36,
+      "sourceFilename": "060_container-houses_40x12_I04_bathroom-reverse.png",
+      "sourceSha256": "2f827ce0fa9861d798946ac548e5945798a4e3546170d2b65ccbbfbc66b67bb0",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/container-houses/40x12/container-houses-40x12-bathroom-reverse.webp",
+      "targetSha256": "bf54acd967122e4a7b72dde0cd515921fe163d45f0e0bca09753bfba81b632aa",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120254,
+      "webpQuality": 93
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E01",
+      "filename": "prefab-container-homes-20x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x8 ft prefab container home, pale silver-grey cladding, on a clipped formal lawn with a paved grid court",
+      "manifestPosition": 37,
+      "sourceFilename": "061_prefab-container-homes_20x8_E01_front-right-hero.png",
+      "sourceSha256": "90c30ed401ac187865e45af4bf38e95bb076275431c7cef98493cec51e8d00df",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-front-right-hero.webp",
+      "targetSha256": "6ae525d5d99b67fe55ff8458af52e9ff25fe7e80ae9ee487cc08d8485263bf4d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122836,
+      "webpQuality": 65
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I01",
+      "filename": "prefab-container-homes-20x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x8 ft prefab container home, with a compact sofa with a folding dining table",
+      "manifestPosition": 38,
+      "sourceFilename": "067_prefab-container-homes_20x8_I01_entry-living-hall.png",
+      "sourceSha256": "c33a5f09c6843a11acdcd5d952e95c4c200ca59f43a56324d6180d714975659e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-entry-living-hall.webp",
+      "targetSha256": "334e2f83df8b2c66a974367b534ff40ecca1a3ba59d590104c62fbbd8a20910b",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121974,
+      "webpQuality": 92
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E03",
+      "filename": "prefab-container-homes-20x8-long-side-elevation.webp",
+      "alt": "Side elevation of a 20x8 ft prefab container home, pale silver-grey cladding, on a clipped formal lawn with a paved grid court",
+      "manifestPosition": 39,
+      "sourceFilename": "063_prefab-container-homes_20x8_E03_long-side-elevation.png",
+      "sourceSha256": "33a5b17b4c11dad61f6277e2492814ff7ea8b180f450508c4989bc62b95ffa89",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-long-side-elevation.webp",
+      "targetSha256": "62b34cc374fd402dba30d99a2dd50264397e84c10c6abd86d15443f8aa802e36",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122776,
+      "webpQuality": 47
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E06",
+      "filename": "prefab-container-homes-20x8-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x8 ft prefab container home, pale silver-grey cladding, on a clipped formal lawn with a paved grid court",
+      "manifestPosition": 40,
+      "sourceFilename": "066_prefab-container-homes_20x8_E06_elevated-three-quarter.png",
+      "sourceSha256": "2d5076d7ac81973e21d930313acf01cf6aff7a33b9ac04eb6c24853a96456ce1",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-elevated-three-quarter.webp",
+      "targetSha256": "1109491f65670510fde418443ed0c1018e23d490ef4d57032da5833d1ae2cd64",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121966,
+      "webpQuality": 59
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I02",
+      "filename": "prefab-container-homes-20x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x8 ft prefab container home, with a kitchenette facing a two-seat dining set",
+      "manifestPosition": 41,
+      "sourceFilename": "068_prefab-container-homes_20x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "cd1508ca2f73c0166807cc3e7a72a6ba705e64a27d5776ccfa71161618601f61",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-kitchen-dining.webp",
+      "targetSha256": "67817fbbf822284c9155a6d52ca29810c89dbf6218e3cd3c3c1871c6ca7b611d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121894,
+      "webpQuality": 89
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I03",
+      "filename": "prefab-container-homes-20x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x8 ft prefab container home, with a bed with blue linen under a high window",
+      "manifestPosition": 42,
+      "sourceFilename": "069_prefab-container-homes_20x8_I03_bedroom-view.png",
+      "sourceSha256": "ad5b768b683ba75f2bbbdf6fd61cb44d2da627627972d6da093805968820afd4",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-bedroom-view.webp",
+      "targetSha256": "c90523ded9a067b4d453855281bbc1820f7e9711d71d9dd83bee3671c04c24bf",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122160,
+      "webpQuality": 86
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E01",
+      "filename": "prefab-container-homes-20x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x10 ft prefab container home, olive green cladding, on red-earth borders under flowering trees",
+      "manifestPosition": 43,
+      "sourceFilename": "071_prefab-container-homes_20x10_E01_front-right-hero.png",
+      "sourceSha256": "5fc5acc1488393f8a632c59e5b0cadf09c6e21a0ec55128635ef99fb2b65814d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-front-right-hero.webp",
+      "targetSha256": "5fcc773f1843df408b3135ecba793105712b34f28adfaf7cbf02b3cddc803dc5",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121812,
+      "webpQuality": 60
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I01",
+      "filename": "prefab-container-homes-20x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x10 ft prefab container home, with a living run with a low media unit",
+      "manifestPosition": 44,
+      "sourceFilename": "077_prefab-container-homes_20x10_I01_entry-living-hall.png",
+      "sourceSha256": "445fe325b5c34b0137020b2d0058be01203f23a3d6addcf449273078135e4487",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-entry-living-hall.webp",
+      "targetSha256": "a1f59f5c743c75a99bcb35aca7f6480742bafb730a4b14a6fa40fced4bf90b72",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117744,
+      "webpQuality": 89
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E02",
+      "filename": "prefab-container-homes-20x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 20x10 ft prefab container home in olive green cladding, on red-earth borders under flowering trees",
+      "manifestPosition": 45,
+      "sourceFilename": "072_prefab-container-homes_20x10_E02_front-left-angle.png",
+      "sourceSha256": "b65484bfe86b306191bde76b1bad11111e95928deda0e0e6a1e2944ca20a8314",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-front-left-angle.webp",
+      "targetSha256": "ab6e5ac84c4ef96adf96ff70a252c63d785daa214aea64e7039dd5127aba3cb0",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120654,
+      "webpQuality": 76
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E05",
+      "filename": "prefab-container-homes-20x10-end-dominant-view.webp",
+      "alt": "End-on view of a 20x10 ft prefab container home with the gable glazing lit, olive green cladding, on red-earth borders under flowering trees",
+      "manifestPosition": 46,
+      "sourceFilename": "075_prefab-container-homes_20x10_E05_end-dominant.png",
+      "sourceSha256": "d095df9ccb2763528213f49dbd91bea2372e1c7bb26d15df1a9cc5c546f46cb8",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-end-dominant-view.webp",
+      "targetSha256": "ea89602a68228619411c2bdd97de257de2417060fb5286376726dcaae375e7db",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122178,
+      "webpQuality": 81
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I03",
+      "filename": "prefab-container-homes-20x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x10 ft prefab container home, with a bedroom with fitted timber wardrobes",
+      "manifestPosition": 47,
+      "sourceFilename": "079_prefab-container-homes_20x10_I03_bedroom-view.png",
+      "sourceSha256": "0f302b46c2c7d7838b93b9ee1d82e95690471f786b11676fd33d36059d41be3b",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-bedroom-view.webp",
+      "targetSha256": "54b469ea2c2e5971ab6100dfce83ead2bb726997eea11157ebffa7066e1547e1",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 115400,
+      "webpQuality": 85
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I04",
+      "filename": "prefab-container-homes-20x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x10 ft prefab container home towards a WC and basin beside the wardrobe wall",
+      "manifestPosition": 48,
+      "sourceFilename": "080_prefab-container-homes_20x10_I04_bathroom-reverse.png",
+      "sourceSha256": "e73192b02dbbd7914249b36ec9cbd350ea2bb4804d9f496f3d5118aba32b7d51",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-bathroom-reverse.webp",
+      "targetSha256": "5f247e1a84f83cda70c137383745bf6162d54615941b77790d8c3ada2e8f3e47",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 115192,
+      "webpQuality": 90
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E01",
+      "filename": "prefab-container-homes-20x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x12 ft prefab container home, terracotta cladding, on lawn edging a paved villa court",
+      "manifestPosition": 49,
+      "sourceFilename": "081_prefab-container-homes_20x12_E01_front-right-hero.png",
+      "sourceSha256": "81bf43a743f79d7545b0a09f22461fb95264209066ae5f613495b2734103e61a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-front-right-hero.webp",
+      "targetSha256": "1b0d5a2a777b15947005e620fa2a40a83491512139ac395b57025f2bc425f724",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122754,
+      "webpQuality": 57
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I01",
+      "filename": "prefab-container-homes-20x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x12 ft prefab container home, with a long sofa facing a wall screen",
+      "manifestPosition": 50,
+      "sourceFilename": "087_prefab-container-homes_20x12_I01_entry-living-hall.png",
+      "sourceSha256": "87bea9920b513952c42518d8e03bd37c0d2d43174f30c7ac482f3a2224f0fd2d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-entry-living-hall.webp",
+      "targetSha256": "2f52a762aecf8d41322b7e39cfa5fb8f47e655756d2a91ece8b271b71b9f7ad3",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121176,
+      "webpQuality": 86
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E04",
+      "filename": "prefab-container-homes-20x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 20x12 ft prefab container home, terracotta cladding, on lawn edging a paved villa court",
+      "manifestPosition": 51,
+      "sourceFilename": "084_prefab-container-homes_20x12_E04_rear-right-angle.png",
+      "sourceSha256": "f5e977e4b6ae0530bdaf06177d4c19cde1ded5a7708a5f72b65c230fa5f375c6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-rear-right-angle.webp",
+      "targetSha256": "cc32b8f444a5a0bcefed062ef9dd74ed85182d0dbb5cf09c0045f033580f5ac0",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121856,
+      "webpQuality": 72
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E06",
+      "filename": "prefab-container-homes-20x12-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x12 ft prefab container home, terracotta cladding, on lawn edging a paved villa court",
+      "manifestPosition": 52,
+      "sourceFilename": "086_prefab-container-homes_20x12_E06_elevated-three-quarter.png",
+      "sourceSha256": "ce29d18b087038407be58c8c140de0d1076cb9cd4ea8a8075acb06af574981bd",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-elevated-three-quarter.webp",
+      "targetSha256": "87563e38b237135b18ece2675add683cfcb39ce14c4125cc75ed5a73d82b18aa",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120506,
+      "webpQuality": 57
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I02",
+      "filename": "prefab-container-homes-20x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x12 ft prefab container home, with an open kitchen island with dining seating",
+      "manifestPosition": 53,
+      "sourceFilename": "088_prefab-container-homes_20x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "9ce8c2fbcbbd2739dc664d4212801c67c041aba8616b131b92728edc47eaf208",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-kitchen-dining.webp",
+      "targetSha256": "7e9407d7a61eaed824ae7a59b0d0111e039ed5b2740e739478a21b3252312520",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 114962,
+      "webpQuality": 87
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I04",
+      "filename": "prefab-container-homes-20x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x12 ft prefab container home towards a shower room off the dining end",
+      "manifestPosition": 54,
+      "sourceFilename": "090_prefab-container-homes_20x12_I04_bathroom-reverse.png",
+      "sourceSha256": "41e42ab9022702f04d7df44c7815a317a892a0546cf3f182b7048b183eb782b4",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/20x12/prefab-container-homes-20x12-bathroom-reverse.webp",
+      "targetSha256": "a5562e20629bcd24d37e2b6e8f672b6cd303b2f7e357506087c3ef17d223bc60",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121094,
+      "webpQuality": 91
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E01",
+      "filename": "prefab-container-homes-40x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x8 ft prefab container home, teal cladding, on paving beside clipped hedges and roses",
+      "manifestPosition": 55,
+      "sourceFilename": "091_prefab-container-homes_40x8_E01_front-right-hero.png",
+      "sourceSha256": "383d2d40571707d065130c8a86412803bd1c6c21025ab5b914ab927e1a09b920",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-front-right-hero.webp",
+      "targetSha256": "b9f79241f24a0da8a6231f3dd5d9c26ff54f14c5d82043b58f9f36c8f45a8e7a",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121954,
+      "webpQuality": 33
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I01",
+      "filename": "prefab-container-homes-40x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x8 ft prefab container home, with a sofa with a coffee table on timber flooring",
+      "manifestPosition": 56,
+      "sourceFilename": "097_prefab-container-homes_40x8_I01_entry-living-hall.png",
+      "sourceSha256": "a1f5b379ae0e3e03a4ff6a9113248f1cae8e8e9ce341490eb29e0a19a818d8e3",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-entry-living-hall.webp",
+      "targetSha256": "a0371bc16168eeaab80ae67144e7907374a381c407cb3665f545203b752d170c",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 113490,
+      "webpQuality": 88
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E03",
+      "filename": "prefab-container-homes-40x8-long-side-elevation.webp",
+      "alt": "Long side elevation of a 40x8 ft prefab container home showing the full window run, teal cladding, on paving beside clipped hedges and roses",
+      "manifestPosition": 57,
+      "sourceFilename": "093_prefab-container-homes_40x8_E03_long-side-elevation.png",
+      "sourceSha256": "dcf5dc1839887f8f0a0d6236903b852a9da5d53aba94328385f848972cbb98ec",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-long-side-elevation.webp",
+      "targetSha256": "d5f7be33e9d1139e0945523a16a25100449b8d3d6c699a6f40171110140cdbd6",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120686,
+      "webpQuality": 46
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E05",
+      "filename": "prefab-container-homes-40x8-end-dominant-view.webp",
+      "alt": "End-on view of a 40x8 ft prefab container home with the gable glazing lit, teal cladding, on paving beside clipped hedges and roses",
+      "manifestPosition": 58,
+      "sourceFilename": "095_prefab-container-homes_40x8_E05_end-dominant.png",
+      "sourceSha256": "37b692860d933ce12154259f4c78dbbcc5c5c3b05fc455d0a9fbe0c2c80975ef",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-end-dominant-view.webp",
+      "targetSha256": "af33f07a5a73851cf6cc3634d93e62d6bb882edd775f80a72d46f7883659358b",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122362,
+      "webpQuality": 66
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I02",
+      "filename": "prefab-container-homes-40x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x8 ft prefab container home, with a kitchen with a solid timber dining table",
+      "manifestPosition": 59,
+      "sourceFilename": "098_prefab-container-homes_40x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "0d6068a75c8fb817455b4af1ae4e0a4dd46cfe6f0001f98f20a32d719112b1bb",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-kitchen-dining.webp",
+      "targetSha256": "925fec357aeaae73adc69fba3681ead5a81f675a6eb4920aa092fbb16809771e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120376,
+      "webpQuality": 89
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I03",
+      "filename": "prefab-container-homes-40x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x8 ft prefab container home, with a bed under a narrow ribbon window",
+      "manifestPosition": 60,
+      "sourceFilename": "099_prefab-container-homes_40x8_I03_bedroom-view.png",
+      "sourceSha256": "9c5880b2696cddfa432150f0f3a312ac87b7198788eb1c903303074dc813c09c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-bedroom-view.webp",
+      "targetSha256": "03e35d9e785f6d3bcdacdff1fc0c5b3428b0f4eea680f68fdd04db9a2f6ea9f9",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118946,
+      "webpQuality": 91
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E01",
+      "filename": "prefab-container-homes-40x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x10 ft prefab container home, slate blue cladding, on wet stone paving on a forested hillside",
+      "manifestPosition": 61,
+      "sourceFilename": "101_prefab-container-homes_40x10_E01_front-right-hero.png",
+      "sourceSha256": "72b54bf39c01448a4e1b36cec661f656170cd3998be14cd96c2d0fce5d693123",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-front-right-hero.webp",
+      "targetSha256": "f25aa14cf9014527d90b6db4c6cf530f42a8762bfae1295ae9be1964e033d5cb",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122348,
+      "webpQuality": 53
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I01",
+      "filename": "prefab-container-homes-40x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x10 ft prefab container home, with a lounge with a low bench and sliding doors",
+      "manifestPosition": 62,
+      "sourceFilename": "107_prefab-container-homes_40x10_I01_entry-living-hall.png",
+      "sourceSha256": "70f327ee7d6565694991bb2bb4c3b76f4052a170013badfa80c28f2e436eb7ad",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-entry-living-hall.webp",
+      "targetSha256": "77f3afb3bacbf50c3409b9e60bb15e26087bafb8c0ca24d093ce77ec0152b8c3",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119168,
+      "webpQuality": 86
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E02",
+      "filename": "prefab-container-homes-40x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 40x10 ft prefab container home in slate blue cladding, on wet stone paving on a forested hillside",
+      "manifestPosition": 63,
+      "sourceFilename": "102_prefab-container-homes_40x10_E02_front-left-angle.png",
+      "sourceSha256": "1821216bd7944bf3e179f08a38f9c619250ff2be247b90a3b266c34ee7a446ca",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-front-left-angle.webp",
+      "targetSha256": "4ee1d5bf2735f22ad70181f24eb5cb44c57549e95dc9927f9b76a707590e751e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120756,
+      "webpQuality": 59
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E06",
+      "filename": "prefab-container-homes-40x10-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 40x10 ft prefab container home, slate blue cladding, on wet stone paving on a forested hillside",
+      "manifestPosition": 64,
+      "sourceFilename": "106_prefab-container-homes_40x10_E06_elevated-three-quarter.png",
+      "sourceSha256": "31b0f0d8faf058cad57189acfca580f484b7396b52e792df1cf0cf8e4305e8f5",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-elevated-three-quarter.webp",
+      "targetSha256": "626e8acabcfae22c87e7e30669f2351bc5b579acc8903d8531b7037354fb4a5d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121794,
+      "webpQuality": 51
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I03",
+      "filename": "prefab-container-homes-40x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x10 ft prefab container home, with a bedroom with a timber wardrobe wall",
+      "manifestPosition": 65,
+      "sourceFilename": "109_prefab-container-homes_40x10_I03_bedroom-view.png",
+      "sourceSha256": "f56261a9cab1255f427bc56888a3642aa803563ed60c41e8471f42c5a19cc444",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-bedroom-view.webp",
+      "targetSha256": "b63388f6e5e66db09ba3a7d9ed47e5daa3ad855847c8d85ba4b56c547218f410",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119384,
+      "webpQuality": 87
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I04",
+      "filename": "prefab-container-homes-40x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x10 ft prefab container home towards a shower and WC facing a laundry recess",
+      "manifestPosition": 66,
+      "sourceFilename": "110_prefab-container-homes_40x10_I04_bathroom-reverse.png",
+      "sourceSha256": "36932874f2859f182e48240aee829f79b22872202da68ccdb64019413c9a7229",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x10/prefab-container-homes-40x10-bathroom-reverse.webp",
+      "targetSha256": "4f4261ef69a940d2a463ebcd850a1867d114ab24812d0d90fe61a53c625e8750",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117796,
+      "webpQuality": 92
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E01",
+      "filename": "prefab-container-homes-40x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x12 ft prefab container home, dark bronze cladding, on paving with a timber deck under mountains",
+      "manifestPosition": 67,
+      "sourceFilename": "111_prefab-container-homes_40x12_E01_front-right-hero.png",
+      "sourceSha256": "c286f68e841d531f7b53c0f605e2195e62c1fc08b2a27718763188033af85789",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-front-right-hero.webp",
+      "targetSha256": "1b965deebdfbea9dc9230641de2c0a751e04e51d405c395f0b1c923d3aab6a8d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120866,
+      "webpQuality": 73
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I01",
+      "filename": "prefab-container-homes-40x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x12 ft prefab container home, with a lounge with sliding doors to the deck",
+      "manifestPosition": 68,
+      "sourceFilename": "117_prefab-container-homes_40x12_I01_entry-living-hall.png",
+      "sourceSha256": "1f9a8189cc5f81b4a10bbb6e0f33e82424b39ac7823bb599a912c4627daf2289",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-entry-living-hall.webp",
+      "targetSha256": "10ed51d01ba27a3623765fce0399864e67720c605325d6b807c99b4589c150b8",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122192,
+      "webpQuality": 81
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E04",
+      "filename": "prefab-container-homes-40x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 40x12 ft prefab container home, dark bronze cladding, on paving with a timber deck under mountains",
+      "manifestPosition": 69,
+      "sourceFilename": "114_prefab-container-homes_40x12_E04_rear-right-angle.png",
+      "sourceSha256": "a7baa1a32385224188908f4c7cd9feee87545b4c3f8ea75b6012f4d8ae32c7ce",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-rear-right-angle.webp",
+      "targetSha256": "b1f6bef9b8019a7bc85bc6020e3e16a36e2abd5479e3b9de3ba210109e0fcf2d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120812,
+      "webpQuality": 75
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E03",
+      "filename": "prefab-container-homes-40x12-long-side-elevation.webp",
+      "alt": "Side elevation of a 40x12 ft prefab container home, dark bronze cladding, on paving with a timber deck under mountains",
+      "manifestPosition": 70,
+      "sourceFilename": "113_prefab-container-homes_40x12_E03_long-side-elevation.png",
+      "sourceSha256": "65a96186637876a84269d348fb55413d979f6a3c2139d39af023c411471d48ae",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-long-side-elevation.webp",
+      "targetSha256": "e550471287894b9acc015c5a371a2df69417a5c64e3013e4fa0b4f8b01576048",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120692,
+      "webpQuality": 41
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I02",
+      "filename": "prefab-container-homes-40x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x12 ft prefab container home, with an island kitchen with a timber dining table",
+      "manifestPosition": 71,
+      "sourceFilename": "118_prefab-container-homes_40x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "6465f28d7e3050d1feffc1d5bccc6fffd8b12a140099896094814aa88def3220",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-kitchen-dining.webp",
+      "targetSha256": "3ffa65ffe5c24b1053ec1c9925eac7577abb5f090d696382de9da696c7a45df3",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118612,
+      "webpQuality": 85
+    },
+    {
+      "slug": "prefab-container-homes",
+      "sourceFolder": "prefab-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I04",
+      "filename": "prefab-container-homes-40x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x12 ft prefab container home towards a bathroom with laundry appliances alongside",
+      "manifestPosition": 72,
+      "sourceFilename": "120_prefab-container-homes_40x12_I04_bathroom-reverse.png",
+      "sourceSha256": "e4bd03a20457c82f4a414bae37404928ec90f60b5db9fb275a03fc71af3780f6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/prefab-container-homes/40x12/prefab-container-homes-40x12-bathroom-reverse.webp",
+      "targetSha256": "ee0980d7f8f9c5a6760c82843be9f8390082dc5877b2aa81819bb7d50fd8e13b",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119352,
+      "webpQuality": 90
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E01",
+      "filename": "luxury-container-houses-20x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x8 ft luxury container house, white cladding with a dark plinth, on red laterite ground among coastal palms",
+      "manifestPosition": 73,
+      "sourceFilename": "121_luxury-container-houses_20x8_E01_front-right-hero.png",
+      "sourceSha256": "40d30e53a9543eb6de0b50dfe91529dc6a3232f8e048b35ba48fe130ab5252db",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-front-right-hero.webp",
+      "targetSha256": "d0851d763db4c822369fced60572eb786dc9110edcfdbb6a7168b1e8cc209702",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121676,
+      "webpQuality": 82
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I01",
+      "filename": "luxury-container-houses-20x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x8 ft luxury container house, with a linen sofa with a compact dining table",
+      "manifestPosition": 74,
+      "sourceFilename": "127_luxury-container-houses_20x8_I01_entry-living-hall.png",
+      "sourceSha256": "d430f8df234239f5ed5bee582a5c5a39b5e881e9bae49ba77fc1c060475640db",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-entry-living-hall.webp",
+      "targetSha256": "f6e6e1a4bae51f9ad4ae1b05d92f68c71eaa4b2845864127c4e736f67648a612",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118640,
+      "webpQuality": 90
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E03",
+      "filename": "luxury-container-houses-20x8-long-side-elevation.webp",
+      "alt": "Side elevation of a 20x8 ft luxury container house, white cladding with a dark plinth, on red laterite ground among coastal palms",
+      "manifestPosition": 75,
+      "sourceFilename": "123_luxury-container-houses_20x8_E03_long-side-elevation.png",
+      "sourceSha256": "b89bfbc1bfd0543373343aee79916dafee432004230ebf2f17597344196f3873",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-long-side-elevation.webp",
+      "targetSha256": "34118f306f0181db6dcb56ebd478848550f63214291756c36305c4463bdd2bbd",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121514,
+      "webpQuality": 68
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E06",
+      "filename": "luxury-container-houses-20x8-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x8 ft luxury container house, white cladding with a dark plinth, on red laterite ground among coastal palms",
+      "manifestPosition": 76,
+      "sourceFilename": "126_luxury-container-houses_20x8_E06_elevated-three-quarter.png",
+      "sourceSha256": "5975fc75f1fdc4eacba617d027d44e564f2b3e93b1e2ff3ab10a631facd55948",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-elevated-three-quarter.webp",
+      "targetSha256": "de2d1b3ae9f0cd45848a0c2f490776a259c1a83b747411a84a9c06c1aa0fdbc7",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119902,
+      "webpQuality": 76
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I02",
+      "filename": "luxury-container-houses-20x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x8 ft luxury container house, with a slim work counter facing built-in shelving",
+      "manifestPosition": 77,
+      "sourceFilename": "128_luxury-container-houses_20x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "7556b619d9b2179403259fcd951f43db45c56242c1a166ac887f6c2ab797fea6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-kitchen-dining.webp",
+      "targetSha256": "d2623c6270d7d5af6b2906c31a88e81c1578de2e581f5cc34e9a5996f4b46405",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119178,
+      "webpQuality": 87
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I03",
+      "filename": "luxury-container-houses-20x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x8 ft luxury container house, with a bed with a padded headboard and reading lights",
+      "manifestPosition": 78,
+      "sourceFilename": "129_luxury-container-houses_20x8_I03_bedroom-view.png",
+      "sourceSha256": "61c9a59b7792ea7d89c1ba8b6f5a36a9e8afb067f8094b2cf0da24d084714478",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-bedroom-view.webp",
+      "targetSha256": "d2531a8ae6f75e15aa8427e014998d394ebdf4caf930220a8fd6bb3f132db23e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118570,
+      "webpQuality": 90
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E01",
+      "filename": "luxury-container-houses-20x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x10 ft luxury container house, mid-grey cladding, on a paved terrace beside a backwater lagoon",
+      "manifestPosition": 79,
+      "sourceFilename": "131_luxury-container-houses_20x10_E01_front-right-hero.png",
+      "sourceSha256": "9c028c0b5bd0e99ad9a1d9798af784c3b7d2a4e87830e95ee9085c29ae6400d6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-front-right-hero.webp",
+      "targetSha256": "c79322feefcae5a0df2136f0bb8ed16f56ea2143ae89449f0bf1994522e55829",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122736,
+      "webpQuality": 80
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I01",
+      "filename": "luxury-container-houses-20x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x10 ft luxury container house, with a lounge with a media wall and sliding doors",
+      "manifestPosition": 80,
+      "sourceFilename": "137_luxury-container-houses_20x10_I01_entry-living-hall.png",
+      "sourceSha256": "183942c626022a297564c1bc8223f80c26b08c9e1fefae13b9738311a130364d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-entry-living-hall.webp",
+      "targetSha256": "53846878d13127173dc363c0419e612f1babb2d418a82354595a09d2a32258a3",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116612,
+      "webpQuality": 90
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E02",
+      "filename": "luxury-container-houses-20x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 20x10 ft luxury container house in mid-grey cladding, on a paved terrace beside a backwater lagoon",
+      "manifestPosition": 81,
+      "sourceFilename": "132_luxury-container-houses_20x10_E02_front-left-angle.png",
+      "sourceSha256": "beaa5a9bf14c422d18eb20c614c6c6b0944bc784b61e8a83486cce09222322d9",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-front-left-angle.webp",
+      "targetSha256": "ec7aad79d479bd99cb1ee5fa8574266abf07d7589faecfd4a3d2300b73f9e723",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121824,
+      "webpQuality": 76
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E05",
+      "filename": "luxury-container-houses-20x10-end-dominant-view.webp",
+      "alt": "End-on view of a 20x10 ft luxury container house with the gable glazing lit, mid-grey cladding, on a paved terrace beside a backwater lagoon",
+      "manifestPosition": 82,
+      "sourceFilename": "135_luxury-container-houses_20x10_E05_end-dominant.png",
+      "sourceSha256": "86eddd8698e195b83b8f8781a8dd6a8d083952d830e5e24598490515bd977b76",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-end-dominant-view.webp",
+      "targetSha256": "ca17338d32d61ee286cde92fe2aa743e08df62fef4048bab69fca15c134b38f3",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117718,
+      "webpQuality": 83
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I03",
+      "filename": "luxury-container-houses-20x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x10 ft luxury container house, with a bedroom with wardrobes and a garden window",
+      "manifestPosition": 83,
+      "sourceFilename": "139_luxury-container-houses_20x10_I03_bedroom-view.png",
+      "sourceSha256": "cfa0bd4ea3e8979fc2371952a49edb1c9a900a955ecb52032aefc5fa9d3d3c85",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-bedroom-view.webp",
+      "targetSha256": "68dd4fae7674ed0a0eebd79d9a01c1b7947f2165c22bdc45bca3d74eb972d11c",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118260,
+      "webpQuality": 89
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I04",
+      "filename": "luxury-container-houses-20x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x10 ft luxury container house towards a bathroom with a vanity mirror wall",
+      "manifestPosition": 84,
+      "sourceFilename": "140_luxury-container-houses_20x10_I04_bathroom-reverse.png",
+      "sourceSha256": "353c6bbbafed1f59131632605daabc58242d88f8b4ed914a5b965925a9187114",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-bathroom-reverse.webp",
+      "targetSha256": "2ba28ec92f9f5ff7cba22abd8b6fb62e7bd492b13a5b95379ccf5a7b697a42dd",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 115986,
+      "webpQuality": 90
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E01",
+      "filename": "luxury-container-houses-20x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x12 ft luxury container house, near-black cladding, on a terrace above a bay with bougainvillea",
+      "manifestPosition": 85,
+      "sourceFilename": "141_luxury-container-houses_20x12_E01_front-right-hero.png",
+      "sourceSha256": "1de56bf57e25970afa804eccff839ecf78d6f3aa20cb28844b4f3e107335a749",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-front-right-hero.webp",
+      "targetSha256": "48c9002210487ba5382e454ee800ac6ff6ca62e96bb96abaa28af421e9766a1d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122390,
+      "webpQuality": 74
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I01",
+      "filename": "luxury-container-houses-20x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x12 ft luxury container house, with a lounge with an armchair and rug",
+      "manifestPosition": 86,
+      "sourceFilename": "147_luxury-container-houses_20x12_I01_entry-living-hall.png",
+      "sourceSha256": "f846e1783540c1faf64e8607fa736286cd99594a5fe3a8112312cd34eacc71f7",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-entry-living-hall.webp",
+      "targetSha256": "3798168d567c22c13071493a67bdae7f4c03666c649d96864b4dde5f7738bf97",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118470,
+      "webpQuality": 88
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E04",
+      "filename": "luxury-container-houses-20x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 20x12 ft luxury container house, near-black cladding, on a terrace above a bay with bougainvillea",
+      "manifestPosition": 87,
+      "sourceFilename": "144_luxury-container-houses_20x12_E04_rear-right-angle.png",
+      "sourceSha256": "b544d54be9efed7d68fa5acb29e9179cb0c485fa50d94eb663b0887e68f74db3",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-rear-right-angle.webp",
+      "targetSha256": "6856fb09aca1153b8e38d5cc04e5386b4a4dc7ca1165100b05ec96439f232971",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119880,
+      "webpQuality": 79
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E06",
+      "filename": "luxury-container-houses-20x12-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x12 ft luxury container house, near-black cladding, on a terrace above a bay with bougainvillea",
+      "manifestPosition": 88,
+      "sourceFilename": "146_luxury-container-houses_20x12_E06_elevated-three-quarter.png",
+      "sourceSha256": "5c72b7d46a37d7bafd8f5640fc618de4d793f0b580a4735330e56eecc1d7c1d8",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-elevated-three-quarter.webp",
+      "targetSha256": "6c1e42cb38c8a3924d59b4bcd3b2b7f4a72873c8127cfefe951648226fc91bfd",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121536,
+      "webpQuality": 62
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I02",
+      "filename": "luxury-container-houses-20x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x12 ft luxury container house, with a dining table beside a dark timber kitchen",
+      "manifestPosition": 89,
+      "sourceFilename": "148_luxury-container-houses_20x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "bc947f6e641582eaf137403bf050e7d0ee6962c6a187cb69ce4019d78d847836",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-kitchen-dining.webp",
+      "targetSha256": "db0fbfe66df041f0aa3511b15cd22b2244d812cbba19d652e005237a378e9a3a",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120962,
+      "webpQuality": 87
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I04",
+      "filename": "luxury-container-houses-20x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x12 ft luxury container house towards a mirrored bathroom off the living end",
+      "manifestPosition": 90,
+      "sourceFilename": "150_luxury-container-houses_20x12_I04_bathroom-reverse.png",
+      "sourceSha256": "9e7eb8e94a8de7f451aa737809c42796c8381d73ae6978722441f4c4d2be3cd5",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/20x12/luxury-container-houses-20x12-bathroom-reverse.webp",
+      "targetSha256": "f4ef6b6f02c4fa4d0d8464217f997887a4eec132fe2f5398b53a06258c66821a",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116902,
+      "webpQuality": 90
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E01",
+      "filename": "luxury-container-houses-40x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x8 ft luxury container house, dark brown cladding, on a eucalyptus slope with hydrangea beds",
+      "manifestPosition": 91,
+      "sourceFilename": "151_luxury-container-houses_40x8_E01_front-right-hero.png",
+      "sourceSha256": "cffc64eaf7b264854449badabdd1eb5ce6b46317594d1e71329fe75ba69c828a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-front-right-hero.webp",
+      "targetSha256": "8fca20bc620e62fd62e338b7aa67519619c54933e0d8ed0722f8ce5e63beb7bc",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120268,
+      "webpQuality": 64
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I01",
+      "filename": "luxury-container-houses-40x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x8 ft luxury container house, with a sofa with a timber coffee table",
+      "manifestPosition": 92,
+      "sourceFilename": "157_luxury-container-houses_40x8_I01_entry-living-hall.png",
+      "sourceSha256": "474a993b71e5514db032d64eec782ba51790fa407d2e6585788b01b627dfe2f7",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-entry-living-hall.webp",
+      "targetSha256": "2f8e56c90d7dd7257c19ea21dfd1945a9d3efc2bc959de8c268f69e133e3e19d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121298,
+      "webpQuality": 92
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E03",
+      "filename": "luxury-container-houses-40x8-long-side-elevation.webp",
+      "alt": "Side elevation of a 40x8 ft luxury container house, dark brown cladding, on a eucalyptus slope with hydrangea beds",
+      "manifestPosition": 93,
+      "sourceFilename": "153_luxury-container-houses_40x8_E03_long-side-elevation.png",
+      "sourceSha256": "a96794c593f37882578aace03ab02bdf3b2da504e26305ae6a8002d823e1b739",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-long-side-elevation.webp",
+      "targetSha256": "39b9f87f86e6bf2f26851aadc543986a7a597c70228c0a133d78ec915b745e80",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122382,
+      "webpQuality": 51
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E05",
+      "filename": "luxury-container-houses-40x8-end-dominant-view.webp",
+      "alt": "End-on view of a 40x8 ft luxury container house with the gable glazing lit, dark brown cladding, on a eucalyptus slope with hydrangea beds",
+      "manifestPosition": 94,
+      "sourceFilename": "155_luxury-container-houses_40x8_E05_end-dominant.png",
+      "sourceSha256": "020cdd4d644d8063aa7cd5d0c5014448e6fcdfb22a9bac91de275214d549184e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-end-dominant-view.webp",
+      "targetSha256": "d708d8707f2a89ce22970b1ded812b273a5ff018d8f68697770acb98f9d4c7f6",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119180,
+      "webpQuality": 62
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I02",
+      "filename": "luxury-container-houses-40x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x8 ft luxury container house, with a dining table beneath pendant lights",
+      "manifestPosition": 95,
+      "sourceFilename": "158_luxury-container-houses_40x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "7995381ec0eb98042dd5acc58bf02d53dd0afcc9e0256029b04aaa326d28badf",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-kitchen-dining.webp",
+      "targetSha256": "ebacf1609453fafd4fedc0691d3e9a65916abc4702c4a4e6ef7ad0fbee546f61",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119410,
+      "webpQuality": 88
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I03",
+      "filename": "luxury-container-houses-40x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x8 ft luxury container house, with a bed under a slim window with a bedside lamp",
+      "manifestPosition": 96,
+      "sourceFilename": "159_luxury-container-houses_40x8_I03_bedroom-view.png",
+      "sourceSha256": "4391ff1dd4a2862b26ab3e7f1f790369b4689f53f84f90a5d19d12ddf8f266da",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-bedroom-view.webp",
+      "targetSha256": "71fffbb21c71c15d0ddb8eb37a874a7bf2cd41ca54e3d4fa88a8f3cf3cb641f7",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119340,
+      "webpQuality": 92
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E01",
+      "filename": "luxury-container-houses-40x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x10 ft luxury container house, powder blue cladding, on a misty pine hillside",
+      "manifestPosition": 97,
+      "sourceFilename": "161_luxury-container-houses_40x10_E01_front-right-hero.png",
+      "sourceSha256": "cec3a3cd408decc456223f8287b5c13ed9ffcd271308f960393d66af7e00c4fa",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-front-right-hero.webp",
+      "targetSha256": "99539d1cf79a42aa0fb5bb52f18957cbbeb9edcb2036687ae79c619d2f9c6346",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122210,
+      "webpQuality": 51
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I01",
+      "filename": "luxury-container-houses-40x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x10 ft luxury container house, with a corner sofa opening to a glazed wall",
+      "manifestPosition": 98,
+      "sourceFilename": "167_luxury-container-houses_40x10_I01_entry-living-hall.png",
+      "sourceSha256": "c561dfd588805e8e5cc183e051b8bb7f1b06a43e2810cf246ec2908d7746256d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-entry-living-hall.webp",
+      "targetSha256": "a0b0a9b170fc6b46bfabd6dfa64aab9893de04677a784b87c0491d4bbdb952c8",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120228,
+      "webpQuality": 86
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E02",
+      "filename": "luxury-container-houses-40x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 40x10 ft luxury container house in powder blue cladding, on a misty pine hillside",
+      "manifestPosition": 99,
+      "sourceFilename": "162_luxury-container-houses_40x10_E02_front-left-angle.png",
+      "sourceSha256": "1b256c9612ac043f64c5ef35790656e335a08ee9b3d703b4ef873b30494f7358",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-front-left-angle.webp",
+      "targetSha256": "505884a6bb2c173e89594eab1fa45f7a58999a91827a8e974df64b0343f2a81e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121742,
+      "webpQuality": 64
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E06",
+      "filename": "luxury-container-houses-40x10-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 40x10 ft luxury container house, powder blue cladding, on a misty pine hillside",
+      "manifestPosition": 100,
+      "sourceFilename": "166_luxury-container-houses_40x10_E06_elevated-three-quarter.png",
+      "sourceSha256": "a8bdfef2edc7bb8200c13fc4fb8525b35cfc940a847656dc48c247051a310030",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-elevated-three-quarter.webp",
+      "targetSha256": "6b5ce3f321a95b56e29c37f06c56567a40d0a1d15d5f3dd9b9876842a3bf756e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122868,
+      "webpQuality": 51
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I03",
+      "filename": "luxury-container-houses-40x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x10 ft luxury container house, with a bedroom with soft blue bedding",
+      "manifestPosition": 101,
+      "sourceFilename": "169_luxury-container-houses_40x10_I03_bedroom-view.png",
+      "sourceSha256": "3ef759555d9bb727d5d7c5f5cafc3f9bf5128b839eae46228ebdf4c18cc965f3",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-bedroom-view.webp",
+      "targetSha256": "d5fbbb684b39a8b2f316cd792a23c94555cc2026547f01bb075dc0d22245a2ad",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120780,
+      "webpQuality": 89
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I04",
+      "filename": "luxury-container-houses-40x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x10 ft luxury container house towards a shower and WC with shelving beside them",
+      "manifestPosition": 102,
+      "sourceFilename": "170_luxury-container-houses_40x10_I04_bathroom-reverse.png",
+      "sourceSha256": "527734b787a9281de6665b68ae3b2a353eccefb6b96dbbbd42694264c1f906c8",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x10/luxury-container-houses-40x10-bathroom-reverse.webp",
+      "targetSha256": "0954e333c477a551545597b56c15b65bd318193f17687edba8b28c3ab1a9870c",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117220,
+      "webpQuality": 90
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E01",
+      "filename": "luxury-container-houses-40x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x12 ft luxury container house, steel blue cladding with a blue roof, on a tea-estate slope framed by pines",
+      "manifestPosition": 103,
+      "sourceFilename": "171_luxury-container-houses_40x12_E01_front-right-hero.png",
+      "sourceSha256": "1ee11789af478a401a553a9f2422fa1ade3a4ed2195a1fe6b59cc3fccb679c9b",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-front-right-hero.webp",
+      "targetSha256": "ea41b1f7c39c172b43f4dcbe23a6e9269954bc47f022cf5903529999aa9a8204",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121988,
+      "webpQuality": 46
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I01",
+      "filename": "luxury-container-houses-40x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x12 ft luxury container house, with a lounge with a rug and armchairs",
+      "manifestPosition": 104,
+      "sourceFilename": "177_luxury-container-houses_40x12_I01_entry-living-hall.png",
+      "sourceSha256": "dc1cbd7c9872c5c14999e983fb8339beef0de8401a7f87cf8f70c66ab9d26298",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-entry-living-hall.webp",
+      "targetSha256": "89671249507f0b73c83187c47b23d9d60f0b8cfbb256654fe0a38e63a60d28f6",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 114482,
+      "webpQuality": 85
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E04",
+      "filename": "luxury-container-houses-40x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 40x12 ft luxury container house, steel blue cladding with a blue roof, on a tea-estate slope framed by pines",
+      "manifestPosition": 105,
+      "sourceFilename": "174_luxury-container-houses_40x12_E04_rear-right-angle.png",
+      "sourceSha256": "e07f9bfc0140faa6e1ea1941f819613e81bcad40d9d7d1833dae4a2ccecc1992",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-rear-right-angle.webp",
+      "targetSha256": "5f917066d87bd97477770833376f42b877b13662b682702dd7af13fa4b18e2ad",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121560,
+      "webpQuality": 45
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E03",
+      "filename": "luxury-container-houses-40x12-long-side-elevation.webp",
+      "alt": "Side elevation of a 40x12 ft luxury container house, steel blue cladding with a blue roof, on a tea-estate slope framed by pines",
+      "manifestPosition": 106,
+      "sourceFilename": "173_luxury-container-houses_40x12_E03_long-side-elevation.png",
+      "sourceSha256": "d4a95fbde6feb4ad09d8da3119cf36ea149da6bde1ea9e9d150719ac93c28567",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-long-side-elevation.webp",
+      "targetSha256": "0cc8c4f27500ba03d012707db2b5dc3595514e9dfb446c893f5a6f9bc2c7e688",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121184,
+      "webpQuality": 41
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I02",
+      "filename": "luxury-container-houses-40x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x12 ft luxury container house, with a navy island kitchen with a dining table",
+      "manifestPosition": 107,
+      "sourceFilename": "178_luxury-container-houses_40x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "25a01f84df97f580b39029ebd242a15a065ecf9687f116130880ce122ddf662e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-kitchen-dining.webp",
+      "targetSha256": "8300905f49660e745c75c47ab1d9142bb42b63ef973a4c9c27974ce1b6b948e1",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116510,
+      "webpQuality": 88
+    },
+    {
+      "slug": "luxury-container-houses",
+      "sourceFolder": "luxury-container-houses",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I04",
+      "filename": "luxury-container-houses-40x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x12 ft luxury container house towards a bathroom with laundry appliances built in",
+      "manifestPosition": 108,
+      "sourceFilename": "180_luxury-container-houses_40x12_I04_bathroom-reverse.png",
+      "sourceSha256": "56054ab9774548e1d6d7b22e3f796e9597e65de29b0c36d1d0484ee8a7659742",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/luxury-container-houses/40x12/luxury-container-houses-40x12-bathroom-reverse.webp",
+      "targetSha256": "97f9145bf20921db556fc99d80c316c5b5f1d6a8b7e3f65dee25110094a1d5f1",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 115666,
+      "webpQuality": 90
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E01",
+      "filename": "shipping-container-homes-20x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x8 ft shipping container home, dark green cladding, on a coastal hillside above the sea",
+      "manifestPosition": 109,
+      "sourceFilename": "181_shipping-container-homes_20x8_E01_front-right-hero.png",
+      "sourceSha256": "dea578d124a99f2aa411380f0660a3e869e98993fff7c0c030c462ea05b0d8b2",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-front-right-hero.webp",
+      "targetSha256": "1a44de0e3a2f5abf1be33d2aa4c01c076edbdc34852a6a26e1dfebc2a7787ded",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122506,
+      "webpQuality": 84
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I01",
+      "filename": "shipping-container-homes-20x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x8 ft shipping container home, with a sofa with a round side table",
+      "manifestPosition": 110,
+      "sourceFilename": "187_shipping-container-homes_20x8_I01_entry-living-hall.png",
+      "sourceSha256": "c71542cf190c5d415ad6aa682c24ca194630c0bd84fa7ca82076c25ed16fca60",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-entry-living-hall.webp",
+      "targetSha256": "e9416fc9281e863a21e738e1c7aacbdf08b1fe99731b95911cbd8ed596de8cbe",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122740,
+      "webpQuality": 89
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E03",
+      "filename": "shipping-container-homes-20x8-long-side-elevation.webp",
+      "alt": "Long side elevation of a 20x8 ft shipping container home showing the full window run, dark green cladding, on a coastal hillside above the sea",
+      "manifestPosition": 111,
+      "sourceFilename": "183_shipping-container-homes_20x8_E03_long-side-elevation.png",
+      "sourceSha256": "5bebeb6fe0c5e9d1831c4e50821713cd149ead652bea1cd8d0905be483692b88",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-long-side-elevation.webp",
+      "targetSha256": "25a5609066d0b0ee8f8a758cf4de8b21815a4cad327833ad16de6cca4813752a",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121616,
+      "webpQuality": 77
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E06",
+      "filename": "shipping-container-homes-20x8-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x8 ft shipping container home, dark green cladding, on a coastal hillside above the sea",
+      "manifestPosition": 112,
+      "sourceFilename": "186_shipping-container-homes_20x8_E06_elevated-three-quarter.png",
+      "sourceSha256": "ca006503512b868a98b392101b7522f2ba65dab5dbfcc9936891f1de14058afd",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-elevated-three-quarter.webp",
+      "targetSha256": "e42da7025842bed8c97ed635b354d57b54d629191e0267c1e589483f963e0df8",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119302,
+      "webpQuality": 78
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I02",
+      "filename": "shipping-container-homes-20x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x8 ft shipping container home, with a kitchen island with two stools",
+      "manifestPosition": 113,
+      "sourceFilename": "188_shipping-container-homes_20x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "0d13d9c255275ba51a9ab052c5608cb6dc6d7327ded62fd67156a0feae1d2b2f",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-kitchen-dining.webp",
+      "targetSha256": "8413fc91465c7886c77e49dafdf7536f4b0cf927f214658bf3917faecb2909bf",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117866,
+      "webpQuality": 85
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I03",
+      "filename": "shipping-container-homes-20x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x8 ft shipping container home, with a bed with a green throw under a garden window",
+      "manifestPosition": 114,
+      "sourceFilename": "189_shipping-container-homes_20x8_I03_bedroom-view.png",
+      "sourceSha256": "438d0ba41100a546a9023593ffbfe0e3671641d81e5a29f4b6e6cefbc3a45d2c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-bedroom-view.webp",
+      "targetSha256": "20835b73f57b16ea16c104c82c318ef20908d24f6e1ee37dbde8b3d8bb757097",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122500,
+      "webpQuality": 88
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E01",
+      "filename": "shipping-container-homes-20x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x10 ft shipping container home, sand-toned cladding, on a paved suburban court behind low hedges",
+      "manifestPosition": 115,
+      "sourceFilename": "191_shipping-container-homes_20x10_E01_front-right-hero.png",
+      "sourceSha256": "8473e8f4657d2e20bdd8c6e9019adf252713e34357d8d98f2c277364b56e0125",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-front-right-hero.webp",
+      "targetSha256": "5aeca6617596dec14fde4606fcf36098206fa552fb4c3c58344169cf0e1bf283",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121518,
+      "webpQuality": 76
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I01",
+      "filename": "shipping-container-homes-20x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x10 ft shipping container home, with a rust-red sofa facing a media wall",
+      "manifestPosition": 116,
+      "sourceFilename": "197_shipping-container-homes_20x10_I01_entry-living-hall.png",
+      "sourceSha256": "97bb916a02874a334c06875789f447095805b876a0d3c5bdee84d5b83869aeac",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-entry-living-hall.webp",
+      "targetSha256": "a693372de55c1fc54b587eb415d1e1e24a033b53379bda0d1154d5df7ef4b820",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118168,
+      "webpQuality": 88
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E02",
+      "filename": "shipping-container-homes-20x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 20x10 ft shipping container home in sand-toned cladding, on a paved suburban court behind low hedges",
+      "manifestPosition": 117,
+      "sourceFilename": "192_shipping-container-homes_20x10_E02_front-left-angle.png",
+      "sourceSha256": "a2b991a779b51104f88b631110cc843d86f00622fdf89a4fb252423aa5b63bfc",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-front-left-angle.webp",
+      "targetSha256": "e8d2c6651f545e0b35ccec1a7232cf56405ce67a90d2935a43e74d9966148a08",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122754,
+      "webpQuality": 82
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E05",
+      "filename": "shipping-container-homes-20x10-end-dominant-view.webp",
+      "alt": "End-on view of a 20x10 ft shipping container home with the gable glazing lit, sand-toned cladding, on a paved suburban court behind low hedges",
+      "manifestPosition": 118,
+      "sourceFilename": "195_shipping-container-homes_20x10_E05_end-dominant.png",
+      "sourceSha256": "f23f3c3323d1361f4740d9faefe36b64da74501424229b9d0381c1d38d6a1b4a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-end-dominant-view.webp",
+      "targetSha256": "c9d18a61abcea88c9e309dc137088b5feb7af4811ed9a188a0d7d7a2be0b703e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121810,
+      "webpQuality": 77
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I03",
+      "filename": "shipping-container-homes-20x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x10 ft shipping container home, with a bedroom with a terracotta throw",
+      "manifestPosition": 119,
+      "sourceFilename": "199_shipping-container-homes_20x10_I03_bedroom-view.png",
+      "sourceSha256": "7890214249fd5a533c9aa8c55f1bc05e5871f56b31079adc5ba9fd53d50691a6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-bedroom-view.webp",
+      "targetSha256": "2fd8e64ffd7edfbd5318a3aa9f54d1b67430a80229b4119370a29496cdaac713",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116260,
+      "webpQuality": 90
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I04",
+      "filename": "shipping-container-homes-20x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x10 ft shipping container home towards a shower room with a fitted vanity",
+      "manifestPosition": 120,
+      "sourceFilename": "200_shipping-container-homes_20x10_I04_bathroom-reverse.png",
+      "sourceSha256": "d34d16851275786eb66d7d902cadfe96008c52780db0d6857e57ee1c3346fcf0",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-bathroom-reverse.webp",
+      "targetSha256": "cc9f44b6f0295ca52251e8aa971f59eb2050add610934f2d0237a23341d5b82e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118060,
+      "webpQuality": 93
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E01",
+      "filename": "shipping-container-homes-20x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x12 ft shipping container home, dark grey cladding, on paving with planters below apartment blocks",
+      "manifestPosition": 121,
+      "sourceFilename": "201_shipping-container-homes_20x12_E01_front-right-hero.png",
+      "sourceSha256": "d4dbe4d82bb9c0746c6b0d64f49addae50102422b82d567e3d534aa14ae7a6fb",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-front-right-hero.webp",
+      "targetSha256": "6e609d6cc1e1a53562c33f546ebd4ab012090cc88bda36aca288559c012ad14e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119502,
+      "webpQuality": 78
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I01",
+      "filename": "shipping-container-homes-20x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x12 ft shipping container home, with a sofa and low table on pale flooring",
+      "manifestPosition": 122,
+      "sourceFilename": "207_shipping-container-homes_20x12_I01_entry-living-hall.png",
+      "sourceSha256": "c84f6d9fbf82a49ceb58f872a1b78bfdc68e9115fa572c119ccf7afcaaf636eb",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-entry-living-hall.webp",
+      "targetSha256": "ba38e1a0e776a233d93b5076100246eb18f0a681dfc354ae7e94ee4b00d32a37",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116742,
+      "webpQuality": 88
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E04",
+      "filename": "shipping-container-homes-20x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 20x12 ft shipping container home, dark grey cladding, on paving with planters below apartment blocks",
+      "manifestPosition": 123,
+      "sourceFilename": "204_shipping-container-homes_20x12_E04_rear-right-angle.png",
+      "sourceSha256": "93a06fd09042f4ee0c30f6253bccd12ccd36a6b75103d31d85ac5dd2893ca477",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-rear-right-angle.webp",
+      "targetSha256": "62cc9b974e1de53b79a3c3ebeb68ada41b4906c61585c2661eaedb9ce5e1fa64",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122160,
+      "webpQuality": 87
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E06",
+      "filename": "shipping-container-homes-20x12-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x12 ft shipping container home, dark grey cladding, on paving with planters below apartment blocks",
+      "manifestPosition": 124,
+      "sourceFilename": "206_shipping-container-homes_20x12_E06_elevated-three-quarter.png",
+      "sourceSha256": "bf2d762147e87dc2f63390c3b0420622404368ed9d23589877ccc7a41f0ff807",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-elevated-three-quarter.webp",
+      "targetSha256": "88d76b2b8407a98e896b594416a1cab0e7128507d48adcbfeda0f3e6705d3bde",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121122,
+      "webpQuality": 80
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I02",
+      "filename": "shipping-container-homes-20x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x12 ft shipping container home, with a kitchen with a four-seat dining table",
+      "manifestPosition": 125,
+      "sourceFilename": "208_shipping-container-homes_20x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "21a4e5a90fddffa7c9f784fbb3984b45bfef8f5781e736ad07e72ab684d29307",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-kitchen-dining.webp",
+      "targetSha256": "949d80c659abfcdaddc87438a6f5ac2e24aa7ac568b81c1bcbad079118bbe854",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119286,
+      "webpQuality": 91
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I04",
+      "filename": "shipping-container-homes-20x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x12 ft shipping container home towards a bathroom with a glazed shower screen",
+      "manifestPosition": 126,
+      "sourceFilename": "210_shipping-container-homes_20x12_I04_bathroom-reverse.png",
+      "sourceSha256": "2d5a6219f07f2d62199481f826f888f4cc65f949ed87253c3f4a670b7d15b94a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/20x12/shipping-container-homes-20x12-bathroom-reverse.webp",
+      "targetSha256": "f0cb624e13570867ebddb9d4c0b18ada8be92642c6723ee16369ad8470bd3fa1",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 113226,
+      "webpQuality": 95
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E01",
+      "filename": "shipping-container-homes-40x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x8 ft shipping container home, rust-brown cladding, on wet paving below a waterfall ridge",
+      "manifestPosition": 127,
+      "sourceFilename": "211_shipping-container-homes_40x8_E01_front-right-hero.png",
+      "sourceSha256": "691b2b2ae88c58025c160200a1fdd360495312bbb6d0f1b352bfb90e837a4417",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-front-right-hero.webp",
+      "targetSha256": "b8f210342c37fd0c510118a47b9646175230f8531b10f0d1cd5e339a220a706c",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122612,
+      "webpQuality": 71
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I01",
+      "filename": "shipping-container-homes-40x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x8 ft shipping container home, with a sofa with a timber coffee table",
+      "manifestPosition": 128,
+      "sourceFilename": "217_shipping-container-homes_40x8_I01_entry-living-hall.png",
+      "sourceSha256": "d1618fc8f863e9b0867402484d4520607d2c35994330d7240bcf49ebb632e4a0",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-entry-living-hall.webp",
+      "targetSha256": "02e6ac2cdaa14143f9c391a5394acc7d4eb4c6a3b87176f5346b26825d67c0c0",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117034,
+      "webpQuality": 85
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E03",
+      "filename": "shipping-container-homes-40x8-long-side-elevation.webp",
+      "alt": "Long side elevation of a 40x8 ft shipping container home showing the full window run, rust-brown cladding, on wet paving below a waterfall ridge",
+      "manifestPosition": 129,
+      "sourceFilename": "213_shipping-container-homes_40x8_E03_long-side-elevation.png",
+      "sourceSha256": "bd9d233c58737d50c91bd081feb7da4a982ff7c45f5761821ccd1f7be1e2cd4c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-long-side-elevation.webp",
+      "targetSha256": "edeab3c7edfa95de688ee055c785f9c4e385a52028e094f734ecf961b884b6b5",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122844,
+      "webpQuality": 75
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E05",
+      "filename": "shipping-container-homes-40x8-end-dominant-view.webp",
+      "alt": "End-on view of a 40x8 ft shipping container home with the gable glazing lit, rust-brown cladding, on wet paving below a waterfall ridge",
+      "manifestPosition": 130,
+      "sourceFilename": "215_shipping-container-homes_40x8_E05_end-dominant.png",
+      "sourceSha256": "69c2136051d2ab6efece701450ad588d215b3f25d44447cf0b343923fd788165",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-end-dominant-view.webp",
+      "targetSha256": "806519f5e7fc74a17af0d0ddb3051cbd91764824fc26c21714d9dce1518f979a",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122406,
+      "webpQuality": 84
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I02",
+      "filename": "shipping-container-homes-40x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x8 ft shipping container home, with a kitchen counter with a dining set",
+      "manifestPosition": 131,
+      "sourceFilename": "218_shipping-container-homes_40x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "38b137885cb0ac5bef278cbc362142036014c75bc18984191745f05e0d4b9314",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-kitchen-dining.webp",
+      "targetSha256": "b143fcf5500c0d2094e2a3c811ca87e7d82093c8b5b27095af4158d23728837d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116364,
+      "webpQuality": 90
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I03",
+      "filename": "shipping-container-homes-40x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x8 ft shipping container home, with a bed beside a slim corner window",
+      "manifestPosition": 132,
+      "sourceFilename": "219_shipping-container-homes_40x8_I03_bedroom-view.png",
+      "sourceSha256": "d66599770d2316728b3657755458d36b2b4931d1e24b13815ebc805b436b0e77",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-bedroom-view.webp",
+      "targetSha256": "7c0b755af89cf0e1936366857212af1ea16811a78807d00c554de60803699fec",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116808,
+      "webpQuality": 88
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E01",
+      "filename": "shipping-container-homes-40x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x10 ft shipping container home, white cladding, on gravel among tea-covered hills and palms",
+      "manifestPosition": 133,
+      "sourceFilename": "221_shipping-container-homes_40x10_E01_front-right-hero.png",
+      "sourceSha256": "01f6c5227561e4b2c9076505a89b8f37b80fda5c784772c889c30b0d5fda8ec3",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-front-right-hero.webp",
+      "targetSha256": "2086bdb213fdb3163aaae44fc88fe616df061a49e22cb71f92e89704fd0437e6",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122082,
+      "webpQuality": 71
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I01",
+      "filename": "shipping-container-homes-40x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x10 ft shipping container home, with a corner sofa facing a long media wall",
+      "manifestPosition": 134,
+      "sourceFilename": "227_shipping-container-homes_40x10_I01_entry-living-hall.png",
+      "sourceSha256": "24bb16ff09c37294b9da0d63b069d0fbd088363a17a8d51bcdb63b435222e7fc",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-entry-living-hall.webp",
+      "targetSha256": "58b4c2cb222111e2fe7db330293fe402668d3363bf491be02d0adaba8b8b33d6",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117226,
+      "webpQuality": 90
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E02",
+      "filename": "shipping-container-homes-40x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 40x10 ft shipping container home in white cladding, on gravel among tea-covered hills and palms",
+      "manifestPosition": 135,
+      "sourceFilename": "222_shipping-container-homes_40x10_E02_front-left-angle.png",
+      "sourceSha256": "272b0cec86086593626875a3e6b5dc3acc2d4eb93f929dcf7e606b98f71555ab",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-front-left-angle.webp",
+      "targetSha256": "d2d4c87e94659c88f32aec0bd5617140d5fe8ab4152a96e4ac79f37cbe979c0d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122658,
+      "webpQuality": 67
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E06",
+      "filename": "shipping-container-homes-40x10-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 40x10 ft shipping container home, white cladding, on gravel among tea-covered hills and palms",
+      "manifestPosition": 136,
+      "sourceFilename": "226_shipping-container-homes_40x10_E06_elevated-three-quarter.png",
+      "sourceSha256": "8e7cfb810279ce50431a1d505ebac30993a19a56791d0a2973b4a3665a0842b8",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-elevated-three-quarter.webp",
+      "targetSha256": "b88c4adbdf645e09271038a96a1c6b55652d4395ce7e3370fd204013d897af70",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121346,
+      "webpQuality": 63
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I03",
+      "filename": "shipping-container-homes-40x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x10 ft shipping container home, with a bedroom with a timber panel wall",
+      "manifestPosition": 137,
+      "sourceFilename": "229_shipping-container-homes_40x10_I03_bedroom-view.png",
+      "sourceSha256": "1aa1aab71e3a5227838b086e2786eb3e0566c751d6fc26ad286a49d5dc22e795",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-bedroom-view.webp",
+      "targetSha256": "88d6bd1be9e68e3a5c086e90ca77ee85cd072147741e614421c45281a7a36ba5",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118680,
+      "webpQuality": 88
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I04",
+      "filename": "shipping-container-homes-40x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x10 ft shipping container home towards a WC with a laundry recess opposite",
+      "manifestPosition": 138,
+      "sourceFilename": "230_shipping-container-homes_40x10_I04_bathroom-reverse.png",
+      "sourceSha256": "ca95ffac821364baf5db62260afa3f5865ac686edfb9755c65540a65d9dfe267",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x10/shipping-container-homes-40x10-bathroom-reverse.webp",
+      "targetSha256": "9ffe1744b4134e9479fb9044287056724537cc012407c23d1f9635f5a2345c7a",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 107074,
+      "webpQuality": 92
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E01",
+      "filename": "shipping-container-homes-40x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x12 ft shipping container home, navy cladding, on stone paving in an arid hill village",
+      "manifestPosition": 139,
+      "sourceFilename": "231_shipping-container-homes_40x12_E01_front-right-hero.png",
+      "sourceSha256": "4ed5a16e1ddbf3b47a34a3416381f281d9c77b56c0d2d56456c7190812f5d84d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-front-right-hero.webp",
+      "targetSha256": "bb82c33409a6d92cca25cf4e10b1c87f102cb4c7e46d7c48c30f6b849a87e479",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117240,
+      "webpQuality": 81
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I01",
+      "filename": "shipping-container-homes-40x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x12 ft shipping container home, with a lounge with a sectional sofa and rug",
+      "manifestPosition": 140,
+      "sourceFilename": "237_shipping-container-homes_40x12_I01_entry-living-hall.png",
+      "sourceSha256": "1c325990b540b8c55d7cf788d012b5e0ba737b15029f439a219801699bf12789",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-entry-living-hall.webp",
+      "targetSha256": "96aef349e0a1c55eb1ce613ff333ccd23bb235092b990b7b84d43312959ad169",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 114786,
+      "webpQuality": 88
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E04",
+      "filename": "shipping-container-homes-40x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 40x12 ft shipping container home, navy cladding, on stone paving in an arid hill village",
+      "manifestPosition": 141,
+      "sourceFilename": "234_shipping-container-homes_40x12_E04_rear-right-angle.png",
+      "sourceSha256": "19576404a82e7208542492bcfd34af0a78bae1b6dd6893475b747bf555ae9c6c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-rear-right-angle.webp",
+      "targetSha256": "b74a6566b3ec6fc38e9a403bf84d90899121d1ac2778e1cac570a54c57707dbf",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121552,
+      "webpQuality": 79
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E03",
+      "filename": "shipping-container-homes-40x12-long-side-elevation.webp",
+      "alt": "Long side elevation of a 40x12 ft shipping container home showing the full window run, navy cladding, on stone paving in an arid hill village",
+      "manifestPosition": 142,
+      "sourceFilename": "233_shipping-container-homes_40x12_E03_long-side-elevation.png",
+      "sourceSha256": "e7f26b361b9c427fb688bbce39a1afa0fa2c05adb04ccc4736254108dce6ee6b",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-long-side-elevation.webp",
+      "targetSha256": "fd4f0eedcd2af5b207e40dc5e2a97628a3a5a7c429c69fc46472f953862ea6fa",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119670,
+      "webpQuality": 78
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I02",
+      "filename": "shipping-container-homes-40x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x12 ft shipping container home, with a kitchen run with a timber dining table",
+      "manifestPosition": 143,
+      "sourceFilename": "238_shipping-container-homes_40x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "30a2778c30f2c01ee84dd316ac13d7ac715e2b18d9991df590b4cc720ffff57b",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-kitchen-dining.webp",
+      "targetSha256": "e1d3e55620c07676a3553cf687a39c532639409c45e46dd243455a9db7a67b6c",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117638,
+      "webpQuality": 89
+    },
+    {
+      "slug": "shipping-container-homes",
+      "sourceFolder": "shipping-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I04",
+      "filename": "shipping-container-homes-40x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x12 ft shipping container home towards a bathroom with a shower and laundry stack",
+      "manifestPosition": 144,
+      "sourceFilename": "240_shipping-container-homes_40x12_I04_bathroom-reverse.png",
+      "sourceSha256": "d234460ef62a862d2af4e76dd47f2c1bbb3f77e3afe45fcfe6f521d1c8c0333a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/shipping-container-homes/40x12/shipping-container-homes-40x12-bathroom-reverse.webp",
+      "targetSha256": "c39b19cbcc25b21b39ef23a2a17c7f30f7d67579acf74e155d34b4892f97c3f9",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121568,
+      "webpQuality": 90
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E01",
+      "filename": "affordable-container-homes-20x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x8 ft affordable container home, light grey cladding, on grass at the edge of an orchard",
+      "manifestPosition": 145,
+      "sourceFilename": "241_affordable-container-homes_20x8_E01_front-right-hero.png",
+      "sourceSha256": "ca98a4b44a0408ac9f6ffb0b9855b296edaa5c011b119014d36a4b2d1d29c0e6",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-front-right-hero.webp",
+      "targetSha256": "6981cf06ce89abcdb6fd1c3e190d31f5ae3b7a378f6e25fa73e3011be4533fc8",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117518,
+      "webpQuality": 81
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I01",
+      "filename": "affordable-container-homes-20x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x8 ft affordable container home, with a compact sofa with a low table",
+      "manifestPosition": 146,
+      "sourceFilename": "247_affordable-container-homes_20x8_I01_entry-living-hall.png",
+      "sourceSha256": "4f3d3edcac4ebf60ad19e3a267e7b789badc9bd281cd1bc8e67df20b3e037538",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-entry-living-hall.webp",
+      "targetSha256": "3249a387009e0a4bf361fc4bffad5720c3580ce4628bcb482127fb26e33fa0ca",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 111960,
+      "webpQuality": 92
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E03",
+      "filename": "affordable-container-homes-20x8-long-side-elevation.webp",
+      "alt": "Long side elevation of a 20x8 ft affordable container home showing the full window run, light grey cladding, on grass at the edge of an orchard",
+      "manifestPosition": 147,
+      "sourceFilename": "243_affordable-container-homes_20x8_E03_long-side-elevation.png",
+      "sourceSha256": "d9934190f4bf7dbb76157d07e6cb6fdefabc955d5b4138597589ac6b9d3b0851",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-long-side-elevation.webp",
+      "targetSha256": "c075f27204b6f76a6966b76a08fc3ff12c7af70c26a81b69bf23811928b6cea9",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121844,
+      "webpQuality": 73
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "E06",
+      "filename": "affordable-container-homes-20x8-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x8 ft affordable container home, light grey cladding, on grass at the edge of an orchard",
+      "manifestPosition": 148,
+      "sourceFilename": "246_affordable-container-homes_20x8_E06_elevated-three-quarter.png",
+      "sourceSha256": "8ea7ba64189f6d12e1d2b18bb456bf976a1752f59eefd91531e2ea5c127e0913",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-elevated-three-quarter.webp",
+      "targetSha256": "9480d97046ec0d0be05e7850c9dcda4997393bec78ea150950761fbb68af0fa7",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121504,
+      "webpQuality": 79
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I02",
+      "filename": "affordable-container-homes-20x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x8 ft affordable container home, with a kitchen counter with a breakfast bar",
+      "manifestPosition": 149,
+      "sourceFilename": "248_affordable-container-homes_20x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "3fe43eebeb864bd5135df2e62c4b218e783ecbda7d16d993cc70833532f192e9",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-kitchen-dining.webp",
+      "targetSha256": "19943a607dd64b06b0311b48e144d89c4b24e673d94959525ed8792d20ffcbbb",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 113862,
+      "webpQuality": 88
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x8",
+      "sourceViewToken": "I03",
+      "filename": "affordable-container-homes-20x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x8 ft affordable container home, with a bed with grey linen beside a wardrobe",
+      "manifestPosition": 150,
+      "sourceFilename": "249_affordable-container-homes_20x8_I03_bedroom-view.png",
+      "sourceSha256": "fb4260b7b49fe708a5c072c36dae43fadfe126a8412438b46ecfc41c0bc32095",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-bedroom-view.webp",
+      "targetSha256": "d71c5eee5f9d69f3d0c2c67f717e79c4127269ed3f371d242dc8e5238987b419",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120268,
+      "webpQuality": 85
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E01",
+      "filename": "affordable-container-homes-20x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x10 ft affordable container home, teal cladding, on a paved plot in a coastal palm village",
+      "manifestPosition": 151,
+      "sourceFilename": "251_affordable-container-homes_20x10_E01_front-right-hero.png",
+      "sourceSha256": "4b4120eb046c4d736f8989995b0b70710626b0fa2a7e705a0aff3270b4a82c18",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-front-right-hero.webp",
+      "targetSha256": "7080c1b735471fbeb7c264e7c0e5a10e2223cff8bebecfab301cae60fbb329a4",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118548,
+      "webpQuality": 76
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I01",
+      "filename": "affordable-container-homes-20x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x10 ft affordable container home, with a sofa facing a media unit",
+      "manifestPosition": 152,
+      "sourceFilename": "257_affordable-container-homes_20x10_I01_entry-living-hall.png",
+      "sourceSha256": "a4359965730bbb82f6851f680799f266f562d80e13b12810e6d52edefdab82e2",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-entry-living-hall.webp",
+      "targetSha256": "ac13da4bfdc09a1a7bfe0c486cc2a6cb72f7d56df98506be554512441662a016",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121530,
+      "webpQuality": 83
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E02",
+      "filename": "affordable-container-homes-20x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 20x10 ft affordable container home in teal cladding, on a paved plot in a coastal palm village",
+      "manifestPosition": 153,
+      "sourceFilename": "252_affordable-container-homes_20x10_E02_front-left-angle.png",
+      "sourceSha256": "1a3cb46785d9763e24fed4d4affb9bc1c027b3a2da1cf6fe8bf136428c4e43df",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-front-left-angle.webp",
+      "targetSha256": "f45dca43d311fa8397c09381aade7cc29d732fdeedc7e201132a43d733467d1c",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121924,
+      "webpQuality": 71
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "E05",
+      "filename": "affordable-container-homes-20x10-end-dominant-view.webp",
+      "alt": "End-on view of a 20x10 ft affordable container home with the gable glazing lit, teal cladding, on a paved plot in a coastal palm village",
+      "manifestPosition": 154,
+      "sourceFilename": "255_affordable-container-homes_20x10_E05_end-dominant.png",
+      "sourceSha256": "2ea72fb4a95968b9f68549f237253ef07a7a442469d1870fbfe19cab1591270c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-end-dominant-view.webp",
+      "targetSha256": "080c04bb9c2bd3fb4bc6a1bea7e3761b8928388787dd2157d1f03772579a6139",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120646,
+      "webpQuality": 84
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I03",
+      "filename": "affordable-container-homes-20x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 20x10 ft affordable container home, with a bedroom with fitted wardrobes",
+      "manifestPosition": 155,
+      "sourceFilename": "259_affordable-container-homes_20x10_I03_bedroom-view.png",
+      "sourceSha256": "6d05cee90d8cb5583dd73a6cd866cc0cd2bc3423419449c9c24044cbfbdc254f",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-bedroom-view.webp",
+      "targetSha256": "fa4016413605ba58e6233f4698fd38bea26ac16fb309e7699f47c0282e9ffcfe",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117332,
+      "webpQuality": 87
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x10",
+      "sourceViewToken": "I04",
+      "filename": "affordable-container-homes-20x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x10 ft affordable container home towards a shower room with a basin and mirror",
+      "manifestPosition": 156,
+      "sourceFilename": "260_affordable-container-homes_20x10_I04_bathroom-reverse.png",
+      "sourceSha256": "5c81e75549956dc5259f2db638b440f81877f40f09d1c4a14e4b89b9a5fa259e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-bathroom-reverse.webp",
+      "targetSha256": "b7ff2a85c00445d294656f0821b9f019d60a5e9e8ce7d4c887d79c068cee086a",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120846,
+      "webpQuality": 93
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E01",
+      "filename": "affordable-container-homes-20x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 20x12 ft affordable container home, brown cladding, on stone paving above a river gorge",
+      "manifestPosition": 157,
+      "sourceFilename": "261_affordable-container-homes_20x12_E01_front-right-hero.png",
+      "sourceSha256": "d62d64c3483ffa0b704893a48c34f2c48837275fd2c3c8100c1538479a76a5ea",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-front-right-hero.webp",
+      "targetSha256": "4b8f9e32e4dc0291b28b398b97a73365fba7c79880b9c36aaf5f3d54c82f2a5d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121486,
+      "webpQuality": 61
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I01",
+      "filename": "affordable-container-homes-20x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 20x12 ft affordable container home, with a sofa with a rug and side lamp",
+      "manifestPosition": 158,
+      "sourceFilename": "267_affordable-container-homes_20x12_I01_entry-living-hall.png",
+      "sourceSha256": "756b4d31ed2a5d984a0568eb7b6f00066ae92643adecbf26972cf09dfc5f806d",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-entry-living-hall.webp",
+      "targetSha256": "70edc4ff6d03077f2087809f0f426d8208b33855f06cd6baf2d9c7278bc846ba",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118816,
+      "webpQuality": 88
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E04",
+      "filename": "affordable-container-homes-20x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 20x12 ft affordable container home, brown cladding, on stone paving above a river gorge",
+      "manifestPosition": 159,
+      "sourceFilename": "264_affordable-container-homes_20x12_E04_rear-right-angle.png",
+      "sourceSha256": "d5f3277a871c87a016ace1a0436cd01a6afdb7c5e830294c12d29795cf562e2a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-rear-right-angle.webp",
+      "targetSha256": "3517e4bf192727b064fff6bdee917e30d10ffe5918e62577bea622c0b154fb2d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119454,
+      "webpQuality": 76
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "E06",
+      "filename": "affordable-container-homes-20x12-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 20x12 ft affordable container home, brown cladding, on stone paving above a river gorge",
+      "manifestPosition": 160,
+      "sourceFilename": "266_affordable-container-homes_20x12_E06_elevated-three-quarter.png",
+      "sourceSha256": "a6fd06f2d56f8ce0f2d05e2b8a492d173a2901df155de1bba1a8903741669e44",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-elevated-three-quarter.webp",
+      "targetSha256": "d4babc5301d15e4db2cdfdac60febc16609ea7ab1203e678ac2a02ddd4c56535",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121588,
+      "webpQuality": 72
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I02",
+      "filename": "affordable-container-homes-20x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 20x12 ft affordable container home, with a kitchen with a dining table beside the window",
+      "manifestPosition": 161,
+      "sourceFilename": "268_affordable-container-homes_20x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "5ff82ca888eb145258c4c39a10e5bbd3395a0ef49a52fa87af4771c9302d2bd7",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-kitchen-dining.webp",
+      "targetSha256": "0300909fc6026192fca724d0f03276c8a6f6991d10ecf53709d0432c5b6342c4",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 117266,
+      "webpQuality": 91
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "20x12",
+      "sourceViewToken": "I04",
+      "filename": "affordable-container-homes-20x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 20x12 ft affordable container home towards a WC and basin off the corridor",
+      "manifestPosition": 162,
+      "sourceFilename": "270_affordable-container-homes_20x12_I04_bathroom-reverse.png",
+      "sourceSha256": "01c2822adca5ca8392876a50ffeb755157739b5e03b22869bea96abd60405e3c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-bathroom-reverse.webp",
+      "targetSha256": "c8d8016b4373111b0aa9216976ce707e427973d04bdb98c094a7847257fa1a6d",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118582,
+      "webpQuality": 93
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E01",
+      "filename": "affordable-container-homes-40x8-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x8 ft affordable container home, khaki cladding, on desert scrub among agave planting",
+      "manifestPosition": 163,
+      "sourceFilename": "271_affordable-container-homes_40x8_E01_front-right-hero.png",
+      "sourceSha256": "dc69798b924cfb4191067cee855b1397a250210362a39c1e4ba2b82f8d87a7f4",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-front-right-hero.webp",
+      "targetSha256": "d076608265b3daf991a2b4825e0c7fa89d3d30f56c3c647a17ceb35705a4ad3c",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121926,
+      "webpQuality": 63
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I01",
+      "filename": "affordable-container-homes-40x8-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x8 ft affordable container home, with a bench seat with a slim dining counter",
+      "manifestPosition": 164,
+      "sourceFilename": "277_affordable-container-homes_40x8_I01_entry-living-hall.png",
+      "sourceSha256": "7c41e7e5d42daf06385dba4d691168dd3963c79917592c709863c2d6f4ba5e08",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-entry-living-hall.webp",
+      "targetSha256": "350838a565e13a74faf1032be5588a81866d3fb648c8b3ae83d5b984263d408b",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 120602,
+      "webpQuality": 89
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E03",
+      "filename": "affordable-container-homes-40x8-long-side-elevation.webp",
+      "alt": "Long side elevation of a 40x8 ft affordable container home showing the full window run, khaki cladding, on desert scrub among agave planting",
+      "manifestPosition": 165,
+      "sourceFilename": "273_affordable-container-homes_40x8_E03_long-side-elevation.png",
+      "sourceSha256": "b4dbeaa2f249cc853b65edceedf850f4507522483f985809cfe1aa1934f609ab",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-long-side-elevation.webp",
+      "targetSha256": "89cec1368c18bd7149cdbce3c2779fab32272317641dbedab54530a6e6af4d5e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121124,
+      "webpQuality": 78
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "E05",
+      "filename": "affordable-container-homes-40x8-end-dominant-view.webp",
+      "alt": "End-on view of a 40x8 ft affordable container home with the gable glazing lit, khaki cladding, on desert scrub among agave planting",
+      "manifestPosition": 166,
+      "sourceFilename": "275_affordable-container-homes_40x8_E05_end-dominant.png",
+      "sourceSha256": "a4faba493c0f47540bc63e32341d4a08c2e2546ffc737edeb66fea522dacf75c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-end-dominant-view.webp",
+      "targetSha256": "27aed22cfc5d96a148bfb54ccf377aff46ddd8fad8ffb5ffa745e7cd8af09380",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119240,
+      "webpQuality": 75
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I02",
+      "filename": "affordable-container-homes-40x8-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x8 ft affordable container home, with a kitchen with a mustard dining chair set",
+      "manifestPosition": 167,
+      "sourceFilename": "278_affordable-container-homes_40x8_I02_semi-kitchen-dining.png",
+      "sourceSha256": "a7edf3fb1acb95f583fb6b4e3fbfddb11d608e856b73528e1c4b389bd3b65da4",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-kitchen-dining.webp",
+      "targetSha256": "6cb9a42b2c7803f00df6092600cce4ee4a22ce5cc2ea88b6345a28b8bf495d86",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 116398,
+      "webpQuality": 90
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x8",
+      "sourceViewToken": "I03",
+      "filename": "affordable-container-homes-40x8-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x8 ft affordable container home, with a bed with a mustard throw",
+      "manifestPosition": 168,
+      "sourceFilename": "279_affordable-container-homes_40x8_I03_bedroom-view.png",
+      "sourceSha256": "bd9f8ca1c76a8e6982e3d3374d47e046d68feec89f66180ffdf28dbbd48f9e5e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-bedroom-view.webp",
+      "targetSha256": "efb775bcc53f65fe27ea99f182fcdfa876533920f55431c2f8baa5aaf4b12665",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 118044,
+      "webpQuality": 90
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E01",
+      "filename": "affordable-container-homes-40x10-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x10 ft affordable container home, pale grey cladding, on gravel in a forested valley",
+      "manifestPosition": 169,
+      "sourceFilename": "281_affordable-container-homes_40x10_E01_front-right-hero.png",
+      "sourceSha256": "a139f21e0c6301548a6bb90b4487d6569964d2c32c08264ca504e6a3e0eb1497",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-front-right-hero.webp",
+      "targetSha256": "78aa99421518684511508dcf1be4c2143ef4a771558184a3c5368e389527786f",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121068,
+      "webpQuality": 49
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I01",
+      "filename": "affordable-container-homes-40x10-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x10 ft affordable container home, with a sofa and coffee table on timber flooring",
+      "manifestPosition": 170,
+      "sourceFilename": "287_affordable-container-homes_40x10_I01_entry-living-hall.png",
+      "sourceSha256": "8fa52470683e29c2bd7b6bbe280407bf6cad7b33d9aa0491cc0f41975d3b8e13",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-entry-living-hall.webp",
+      "targetSha256": "1b95ee41857de7271b462cfdaf732eb876d9f00677e09fb269bc6311dc90f687",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122472,
+      "webpQuality": 88
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E02",
+      "filename": "affordable-container-homes-40x10-front-left-angle.webp",
+      "alt": "Front-left angle on a 40x10 ft affordable container home in pale grey cladding, on gravel in a forested valley",
+      "manifestPosition": 171,
+      "sourceFilename": "282_affordable-container-homes_40x10_E02_front-left-angle.png",
+      "sourceSha256": "3c624495a33c244b83462fdef4a53607a440e3799675cf3e4da7d3b39259d1bd",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-front-left-angle.webp",
+      "targetSha256": "a7d4e53626a5f9718b76f9b5f76859505037e3e36a567a7881231c758d247de7",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121274,
+      "webpQuality": 50
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "E06",
+      "filename": "affordable-container-homes-40x10-elevated-three-quarter.webp",
+      "alt": "Elevated three-quarter view over a 40x10 ft affordable container home, pale grey cladding, on gravel in a forested valley",
+      "manifestPosition": 172,
+      "sourceFilename": "286_affordable-container-homes_40x10_E06_elevated-three-quarter.png",
+      "sourceSha256": "6b4be332989f5df7353ca0902292afc6a8117d7583a247c0becfee6f2176ffd9",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-elevated-three-quarter.webp",
+      "targetSha256": "eaddc6aff773aaa072f6f3a25f35a6088a2cb53e5722291a48598794c75d8260",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122400,
+      "webpQuality": 66
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I03",
+      "filename": "affordable-container-homes-40x10-bedroom-view.webp",
+      "alt": "Bedroom inside a 40x10 ft affordable container home, with a bedroom with a corner window",
+      "manifestPosition": 173,
+      "sourceFilename": "289_affordable-container-homes_40x10_I03_bedroom-view.png",
+      "sourceSha256": "fdeff263ecebf60fc131b7e58b797e3fe5bf58c2c797c0340b44e8363256a7bc",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-bedroom-view.webp",
+      "targetSha256": "b8b456d7f670501cdea1fb5ae96da858afbf726c65b3dab109ac9d7a761666f6",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 113244,
+      "webpQuality": 92
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x10",
+      "sourceViewToken": "I04",
+      "filename": "affordable-container-homes-40x10-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x10 ft affordable container home towards a WC and basin with laundry opposite",
+      "manifestPosition": 174,
+      "sourceFilename": "290_affordable-container-homes_40x10_I04_bathroom-reverse.png",
+      "sourceSha256": "140e2e6662a3ba7967223c3a6e717557079e7e0b22b0bf86d1337f1bad4b6acc",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-bathroom-reverse.webp",
+      "targetSha256": "2f2b657a96d56358a485f364c2b68e4af5a2dbc1785a44d1c687781078e422ac",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 111600,
+      "webpQuality": 92
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E01",
+      "filename": "affordable-container-homes-40x12-front-right-hero.webp",
+      "alt": "Front-right hero view of a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind",
+      "manifestPosition": 175,
+      "sourceFilename": "291_affordable-container-homes_40x12_E01_front-right-hero.png",
+      "sourceSha256": "f264c934a80a8770daad7995962d6c6276204a48d8ec3dc6f9b7f5ab444325c3",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-front-right-hero.webp",
+      "targetSha256": "bb7c2ef415d022bf0ba89673f7ba711f6cd4566992617158d7f0c232c6b9ccdd",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 121754,
+      "webpQuality": 82
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I01",
+      "filename": "affordable-container-homes-40x12-entry-living-hall.webp",
+      "alt": "Entry and living area inside a 40x12 ft affordable container home, with a lounge with a pink throw and media unit",
+      "manifestPosition": 176,
+      "sourceFilename": "297_affordable-container-homes_40x12_I01_entry-living-hall.png",
+      "sourceSha256": "5e5baf1fbe18fb4a2437408e0ede2bb6c0ac5445d0e4ec9a312e93a908aa2b59",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-entry-living-hall.webp",
+      "targetSha256": "8079462c4a8f191847526790991e0395320001a1c2305165ec01bccc9ba9222e",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122644,
+      "webpQuality": 86
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E04",
+      "filename": "affordable-container-homes-40x12-rear-right-angle.webp",
+      "alt": "Rear-right angle on a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind",
+      "manifestPosition": 177,
+      "sourceFilename": "294_affordable-container-homes_40x12_E04_rear-right-angle.png",
+      "sourceSha256": "b8f181fb79c7da43d8bf79abcd4ac040afa8efde43dc0306c182ef76a01a4625",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-rear-right-angle.webp",
+      "targetSha256": "c2442123b89b2a9687f9dda173f02f078ec4f476aea8e83637de2fa8bf6e86ce",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 119888,
+      "webpQuality": 87
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "E03",
+      "filename": "affordable-container-homes-40x12-long-side-elevation.webp",
+      "alt": "Side elevation of a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind",
+      "manifestPosition": 178,
+      "sourceFilename": "293_affordable-container-homes_40x12_E03_long-side-elevation.png",
+      "sourceSha256": "3fdccc933c3aa4070bc74111789a1edfc5eeb67a189c4f675f651e71510c723c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-long-side-elevation.webp",
+      "targetSha256": "2407dc900073d429a0730cf6e1bbe09a2f8aad8850736822f07cb2681c79e7cf",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 122580,
+      "webpQuality": 82
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I02",
+      "filename": "affordable-container-homes-40x12-kitchen-dining.webp",
+      "alt": "Kitchen and dining zone inside a 40x12 ft affordable container home, with a kitchen counter with a long dining table",
+      "manifestPosition": 179,
+      "sourceFilename": "298_affordable-container-homes_40x12_I02_semi-kitchen-dining.png",
+      "sourceSha256": "20c8f559e6883aa35df15f0a4dbd8163adeb33398619bf99ce8f6caa58cc05f3",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-kitchen-dining.webp",
+      "targetSha256": "7982968b81dc324bafd6bc881859dee1839e6020b2d45c9fe95eaec2b491d6d9",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 115108,
+      "webpQuality": 90
+    },
+    {
+      "slug": "affordable-container-homes",
+      "sourceFolder": "affordable-container-homes",
+      "sizeSlug": "40x12",
+      "sourceViewToken": "I04",
+      "filename": "affordable-container-homes-40x12-bathroom-reverse.webp",
+      "alt": "Looking back through a 40x12 ft affordable container home towards a shower room off the corridor",
+      "manifestPosition": 180,
+      "sourceFilename": "300_affordable-container-homes_40x12_I04_bathroom-reverse.png",
+      "sourceSha256": "89ef057d116781516eeb41f996efcbc944f7b689427572de95d19b8701bdc480",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "target": "public/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-bathroom-reverse.webp",
+      "targetSha256": "974a01a3cd8317e7b102840021942e8004a804c1bbc7a7b60f8afdd1bd8423ad",
+      "targetDimensions": [
+        900,
+        900
+      ],
+      "targetBytes": 115730,
+      "webpQuality": 90
+    }
+  ]
+}

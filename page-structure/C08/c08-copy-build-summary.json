@@ -1,0 +1,329 @@
+{
+ "container-houses": {
+  "sourceFile": "C08-HUB-V2-06Aug2026.md",
+  "blocks": {
+   "h2": 8,
+   "h3": 0,
+   "p": 40,
+   "image": 4
+  },
+  "htmlChars": 15521,
+  "renderedWords": 2448,
+  "anchors": [
+   {
+    "anchor": "repeatable prefab module line",
+    "href": "/product/container-houses/prefab-container-homes"
+   },
+   {
+    "anchor": "villa-grade luxury build",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "the reinforced shipping-form build",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "the fixed-plan affordable build",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "the fully fitted route",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "prefabricated houses range",
+    "href": "/product/prefabricated-houses"
+   },
+   {
+    "anchor": "portable cabin",
+    "href": "/product/portable-cabin"
+   }
+  ],
+  "images": [
+   {
+    "slot": 1,
+    "size": "40x12",
+    "token": "E06",
+    "view": "elevated-three-quarter",
+    "filename": "container-houses-40x12-elevated-three-quarter.webp"
+   },
+   {
+    "slot": 2,
+    "size": "40x10",
+    "token": "I02",
+    "view": "semi-kitchen-dining",
+    "filename": "container-houses-40x10-semi-kitchen-dining.webp"
+   },
+   {
+    "slot": 3,
+    "size": "20x12",
+    "token": "E03",
+    "view": "long-side-elevation",
+    "filename": "container-houses-20x12-long-side-elevation.webp"
+   },
+   {
+    "slot": 4,
+    "size": "20x8",
+    "token": "I04",
+    "view": "bathroom-reverse",
+    "filename": "container-houses-20x8-bathroom-reverse.webp"
+   }
+  ]
+ },
+ "prefab-container-homes": {
+  "sourceFile": "C08-COPY-02-prefab-container-homes-05Aug2026.md",
+  "blocks": {
+   "h2": 10,
+   "h3": 6,
+   "p": 43,
+   "image": 4
+  },
+  "htmlChars": 15090,
+  "renderedWords": 2371,
+  "anchors": [
+   {
+    "anchor": "luxury container house range",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "reinforced shipping-form build",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "lowest rate in the range starts at ₹1,438 per sq ft",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "quoted on your drawing rather than sold from a ladder",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "container houses hub",
+    "href": "/product/container-houses"
+   },
+   {
+    "anchor": "labour colony work",
+    "href": "/product/labor-colony"
+   }
+  ],
+  "images": [
+   {
+    "slot": 1,
+    "size": "40x10",
+    "token": "E03",
+    "view": "long-side-elevation",
+    "filename": "prefab-container-homes-40x10-long-side-elevation.webp"
+   },
+   {
+    "slot": 2,
+    "size": "20x10",
+    "token": "I02",
+    "view": "semi-kitchen-dining",
+    "filename": "prefab-container-homes-20x10-semi-kitchen-dining.webp"
+   },
+   {
+    "slot": 3,
+    "size": "20x8",
+    "token": "E02",
+    "view": "front-left-angle",
+    "filename": "prefab-container-homes-20x8-front-left-angle.webp"
+   },
+   {
+    "slot": 4,
+    "size": "40x12",
+    "token": "I03",
+    "view": "bedroom-view",
+    "filename": "prefab-container-homes-40x12-bedroom-view.webp"
+   }
+  ]
+ },
+ "luxury-container-houses": {
+  "sourceFile": "C08-LUXURY-V2-06Aug2026.md",
+  "blocks": {
+   "h2": 10,
+   "h3": 5,
+   "p": 48,
+   "image": 4
+  },
+  "htmlChars": 15741,
+  "renderedWords": 2437,
+  "anchors": [
+   {
+    "anchor": "modules repeated to one drawing",
+    "href": "/product/container-houses/prefab-container-homes"
+   },
+   {
+    "anchor": "built for relocation and coastal duty",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "one efficient plan per size",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "delivered as a single completed unit",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "the full container house range",
+    "href": "/product/container-houses"
+   }
+  ],
+  "images": [
+   {
+    "slot": 1,
+    "size": "40x12",
+    "token": "E06",
+    "view": "elevated-three-quarter",
+    "filename": "luxury-container-houses-40x12-elevated-three-quarter.webp"
+   },
+   {
+    "slot": 2,
+    "size": "20x10",
+    "token": "I02",
+    "view": "semi-kitchen-dining",
+    "filename": "luxury-container-houses-20x10-semi-kitchen-dining.webp"
+   },
+   {
+    "slot": 3,
+    "size": "20x12",
+    "token": "E03",
+    "view": "long-side-elevation",
+    "filename": "luxury-container-houses-20x12-long-side-elevation.webp"
+   },
+   {
+    "slot": 4,
+    "size": "40x8",
+    "token": "I04",
+    "view": "bathroom-reverse",
+    "filename": "luxury-container-houses-40x8-bathroom-reverse.webp"
+   }
+  ]
+ },
+ "shipping-container-homes": {
+  "sourceFile": "C08-SHIPPING-V2-06Aug2026.md",
+  "blocks": {
+   "h2": 12,
+   "h3": 5,
+   "p": 55,
+   "image": 4
+  },
+  "htmlChars": 16768,
+  "renderedWords": 2588,
+  "anchors": [
+   {
+    "anchor": "the villa-grade interior specification",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "identical factory modules",
+    "href": "/product/container-houses/prefab-container-homes"
+   },
+   {
+    "anchor": "the lowest per-square-foot rate we publish",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "a unit that arrives finished and needs no site team at all",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "our container house range",
+    "href": "/product/container-houses"
+   }
+  ],
+  "images": [
+   {
+    "slot": 1,
+    "size": "40x10",
+    "token": "E04",
+    "view": "rear-right-angle",
+    "filename": "shipping-container-homes-40x10-rear-right-angle.webp"
+   },
+   {
+    "slot": 2,
+    "size": "20x10",
+    "token": "I02",
+    "view": "semi-kitchen-dining",
+    "filename": "shipping-container-homes-20x10-semi-kitchen-dining.webp"
+   },
+   {
+    "slot": 3,
+    "size": "40x12",
+    "token": "E06",
+    "view": "elevated-three-quarter",
+    "filename": "shipping-container-homes-40x12-elevated-three-quarter.webp"
+   },
+   {
+    "slot": 4,
+    "size": "20x12",
+    "token": "I03",
+    "view": "bedroom-view",
+    "filename": "shipping-container-homes-20x12-bedroom-view.webp"
+   }
+  ]
+ },
+ "affordable-container-homes": {
+  "sourceFile": "C08-AFFORDABLE-V2-06Aug2026.md",
+  "blocks": {
+   "h2": 11,
+   "h3": 5,
+   "p": 54,
+   "image": 4
+  },
+  "htmlChars": 15324,
+  "renderedWords": 2381,
+  "anchors": [
+   {
+    "anchor": "the hospitality-grade finish",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "a heavier shell engineered for relocation",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "repeatable modules for colony work",
+    "href": "/product/container-houses/prefab-container-homes"
+   },
+   {
+    "anchor": "the fitted single-unit route",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "every container house we build",
+    "href": "/product/container-houses"
+   }
+  ],
+  "images": [
+   {
+    "slot": 1,
+    "size": "20x10",
+    "token": "E06",
+    "view": "elevated-three-quarter",
+    "filename": "affordable-container-homes-20x10-elevated-three-quarter.webp"
+   },
+   {
+    "slot": 2,
+    "size": "40x10",
+    "token": "I02",
+    "view": "semi-kitchen-dining",
+    "filename": "affordable-container-homes-40x10-semi-kitchen-dining.webp"
+   },
+   {
+    "slot": 3,
+    "size": "40x12",
+    "token": "E05",
+    "view": "end-dominant",
+    "filename": "affordable-container-homes-40x12-end-dominant.webp"
+   },
+   {
+    "slot": 4,
+    "size": "20x8",
+    "token": "I04",
+    "view": "bathroom-reverse",
+    "filename": "affordable-container-homes-20x8-bathroom-reverse.webp"
+   }
+  ]
+ }
+}
