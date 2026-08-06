@@ -164,6 +164,40 @@
    * The hash is pushed so the position is shareable and back-button safe, and
    * focus lands on the first control so the keyboard follows the eye.
    */
+  /*
+   * The calculator is revealed by the CTA, not merely scrolled to.
+   *
+   * The SERVER renders it open, so a reader without JavaScript gets the whole
+   * working calculator and the anchor still jumps to it. This script collapses
+   * it on load instead - which means the closed state only ever exists where
+   * there is something able to open it again.
+   *
+   * Arriving with #cabin-calculator in the URL opens it immediately, so a
+   * shared link lands on an open designer.
+   */
+  const CLOSE_LABEL = 'Close the designer';
+
+  function calculatorToggle() {
+    const section = document.getElementById('cabin-calculator');
+    const cta = document.querySelector('[data-calculator-entry] [data-copy-slot="cta"]');
+    return section ? { section, cta } : null;
+  }
+
+  function setCalculatorOpen(open) {
+    const parts = calculatorToggle();
+    if (!parts) return;
+    const { section, cta } = parts;
+    if (open) section.removeAttribute('hidden');
+    else section.setAttribute('hidden', '');
+    if (!cta) return;
+    cta.setAttribute('aria-expanded', String(open));
+    if (!cta.dataset.openLabel) cta.dataset.openLabel = cta.textContent.trim();
+    cta.textContent = open ? CLOSE_LABEL : cta.dataset.openLabel;
+  }
+
+  // Collapse on load unless the URL asks for it open.
+  if (calculatorToggle()) setCalculatorOpen(window.location.hash === '#cabin-calculator');
+
   document.addEventListener('click', (event) => {
     const link = event.target.closest('[data-calculator-entry] a[href^="#"]');
     if (!link) return;
@@ -171,6 +205,19 @@
     const target = document.getElementById(id);
     if (!target) return;
     event.preventDefault();
+
+    // Second click closes it again, and takes the hash back off so the URL
+    // never claims a state the page is not in.
+    if (!target.hasAttribute('hidden') && link.getAttribute('aria-expanded') === 'true') {
+      setCalculatorOpen(false);
+      if (window.history && window.history.pushState) {
+        window.history.pushState(null, '', window.location.pathname + window.location.search);
+      }
+      link.focus({ preventScroll: true });
+      return;
+    }
+
+    setCalculatorOpen(true);
     // Open only a details that actually WRAPS the calculator. A blind
     // querySelector('details') would find the freight ladder inside the
     // calculator and force that open instead.

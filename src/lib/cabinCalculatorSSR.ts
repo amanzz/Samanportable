@@ -1712,6 +1712,8 @@ fieldset{
 
 /* ===== STEP 5 - two columns, opening cards in a grid ==================== */
 .cabin-calculator-ssr .op-left { min-width: 0; }
+/* Two cards across, never four. At four the labels - "Distance from selected
+   end (ft)" among them - had no width left and clipped. */
 .cabin-calculator-ssr .op-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; align-items: start; }
 .cabin-calculator-ssr #calculator-step-5 .opening-card {
   display: grid;
@@ -1729,9 +1731,18 @@ fieldset{
 }
 /* Controls sit on a row, not stacked with a label above each. */
 .cabin-calculator-ssr #calculator-step-5 .opening-card > label {
-  display: grid; grid-template-columns: minmax(0, 1fr) 96px;
-  align-items: center; gap: 0 6px; margin: 0; font-size: 11px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 92px;
+  align-items: center; gap: 2px 8px; margin: 0;
+  font-size: 11px; line-height: 1.35;
+  /* No height and no clipping: the label wraps and the row grows with it. */
+  min-height: 0; height: auto; overflow: visible;
+  overflow-wrap: break-word; hyphens: auto; padding: 2px 0;
 }
+.cabin-calculator-ssr #calculator-step-5 .opening-card > label > select,
+.cabin-calculator-ssr #calculator-step-5 .opening-card > label > input { align-self: center; }
+.cabin-calculator-ssr #calculator-step-5 .opening-card fieldset > legend,
+.cabin-calculator-ssr #calculator-step-5 .opening-card > legend { overflow: visible; white-space: normal; }
+.cabin-calculator-ssr #calculator-step-5 .opening-card .calc-choice > span { white-space: normal; }
 .cabin-calculator-ssr #calculator-step-5 .opening-card > label > select,
 .cabin-calculator-ssr #calculator-step-5 .opening-card > label > input { height: 26px; min-height: 26px; padding: 0 4px; font-size: 11px; }
 /* Nested groups - type, hinge, opening, track - are chip rows. */
@@ -2543,24 +2554,27 @@ function renderWindowCard(window: WindowConfig, index: number, reserved: boolean
 export const CALCULATOR_ENTRY_STYLES = `
 /* ===== THE CALCULATOR ENTRY BAND ON PRODUCT PAGES ======================= */
 .calc-entry {
-  /* Full bleed: it interrupts the page rather than sitting inside it. */
+  /* Not full bleed. The image is 1024 wide and a 1440 band would upscale it
+     1.41x and crop 43% of its height, so the image is a contained column
+     instead and the band keeps the ground colour behind the words. */
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  /* The gradient is already here so a confirmed background image drops in
-     behind it without touching the layout. No image is used yet: the only
-     folder offered holds 480x480 certification marks. */
-  background-color: #0E1729;
-  background-image: linear-gradient(90deg, rgba(14,23,41,0.94) 0%, rgba(14,23,41,0.72) 55%, rgba(14,23,41,0.35) 100%);
-  background-size: cover;
-  background-position: center;
+  background: #0E1729;
   color: #EAF0F7;
-  padding: 28px 0;
+  padding: 0;
 }
-.calc-entry-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr; gap: 20px; }
-.calc-entry-copy { max-width: 700px; }
+.calc-entry-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+.calc-entry-copy { max-width: 700px; padding: 28px 20px; }
 .calc-entry-eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #E0A340; }
-.calc-entry-headline { margin: 0 0 10px; font-size: 34px; line-height: 1.18; font-weight: 700; color: #EAF0F7; }
+.calc-entry-headline { margin: 0 0 10px; font-size: 30px; line-height: 1.18; font-weight: 700; color: #EAF0F7; }
 .calc-entry-price { color: #E0A340; }
 .calc-entry-line { margin: 0 0 16px; font-size: 15px; font-weight: 400; line-height: 1.45; color: rgba(234,240,247,0.64); }
 .calc-entry-cta {
@@ -2568,24 +2582,64 @@ export const CALCULATOR_ENTRY_STYLES = `
   height: 46px; min-height: 46px; padding: 0 22px;
   background: #E0A340; color: #0E1729;
   font-size: 15px; font-weight: 700; text-decoration: none; border-radius: 8px;
+  border: none; cursor: pointer;
 }
 .calc-entry-cta:hover, .calc-entry-cta:focus { background: #E0A340; color: #0E1729; }
 .calc-entry-trust { margin: 12px 0 0; font-size: 12px; font-weight: 400; color: rgba(234,240,247,0.46); }
-.calc-entry-preview { background: #121C31; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px; }
-.calc-entry-preview .entry-plan { width: 100%; height: auto; display: block; background: none; border: 0; }
-.calc-entry-caption { margin: 6px 0 0; font-size: 11px; text-align: center; color: rgba(234,240,247,0.46); }
+
+/* The visual column: the photograph, with the drawing floating over it.
+   Below 1024 it comes FIRST - image above, text below, drawing card inline -
+   and the photograph keeps its own 1024x434 aspect rather than being stretched
+   to a column height that only exists on desktop. */
+.calc-entry-visual { position: relative; order: -1; }
+.calc-entry-photo { display: block; }
+.calc-entry-photo img { aspect-ratio: 1024 / 434; height: auto; }
+.calc-entry-photo img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  border-radius: 16px;
+}
+.calc-entry-plancard {
+  position: relative;
+  margin: 12px 16px 16px;
+  background: rgba(18,28,49,0.92);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.42);
+}
+.calc-entry-plancard .entry-plan { width: 100%; height: auto; display: block; background: none; border: 0; }
+.calc-entry-caption { margin: 4px 0 0; font-size: 11px; text-align: center; color: rgba(234,240,247,0.46); }
 .calc-entry .dw-shell { fill: none; stroke: #EAF0F7; stroke-width: 1.6; }
 .calc-entry .dw-partition { stroke: rgba(234,240,247,0.64); stroke-width: 1.2; stroke-dasharray: 5 3; }
 .calc-entry .dw-door { fill: #EAF0F7; stroke: none; }
+.calc-entry .dw-door-leaf { stroke: #EAF0F7; stroke-width: 1.6; }
+.calc-entry .dw-swing { fill: none; stroke: rgba(234,240,247,0.64); stroke-width: 1; stroke-dasharray: 3 2; }
+.calc-entry .dw-break { stroke: #121C31; stroke-width: 3.2; }
 .calc-entry .dw-window { fill: none; stroke: #EAF0F7; stroke-width: 1.4; }
 .calc-entry .dw-dim { stroke: rgba(234,240,247,0.46); stroke-width: 1; }
-.calc-entry .dw-dim-text { fill: rgba(234,240,247,0.64); font-size: 11px; text-anchor: middle; }
-.calc-entry .dw-dim-vertical { text-anchor: end; dominant-baseline: middle; }
+.calc-entry .dw-dim-text { fill: rgba(234,240,247,0.64); font-size: 11px; text-anchor: middle; font-weight: 400; }
 .calc-entry .dw-title { fill: rgba(234,240,247,0.64); font-size: 11px; letter-spacing: 0.06em; text-anchor: middle; text-transform: uppercase; }
 .calc-entry .dw-code { fill: rgba(234,240,247,0.64); font-size: 9px; text-anchor: middle; }
+
 @media (min-width: 1024px) {
-  .calc-entry-inner { grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; align-items: center; }
-  .calc-entry-headline { font-size: 30px; }
+  /* 46 / 54, with a hairline down the seam. Band about 420px tall. */
+  .calc-entry-inner { grid-template-columns: 46% 54%; }
+  .calc-entry-copy {
+    align-self: center;
+    padding: 40px 40px 40px 20px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .calc-entry-headline { font-size: 34px; }
+  .calc-entry-visual { order: 0; min-height: 420px; padding: 20px 20px 20px 24px; }
+  .calc-entry-photo { position: absolute; inset: 20px 20px 20px 24px; }
+  .calc-entry-photo img { aspect-ratio: auto; height: 100%; }
+  /* Bottom right, 24px in from both edges of the photograph. */
+  .calc-entry-plancard {
+    position: absolute; right: 44px; bottom: 44px;
+    width: 300px; margin: 0;
+  }
+}
 `;
 
 function defaultSizeFor(product: ProductDefinition, ladderKey?: string | null): { length: number; width: number } {
@@ -2636,12 +2690,18 @@ export function renderCalculatorEntrySection(options: {
     + `${entry ? `Your ${esc(options.productName)} from <span class="calc-entry-price">${money(entry.ex as number)}</span>` : `Design your ${esc(options.productName)}`}</h2>`
     + `<p class="calc-entry-line" data-copy-slot="subline">`
     + `Set the size, choose the finish, watch the price move as you go.</p>`
-    + `<a class="calc-entry-cta" href="${esc(href)}" data-copy-slot="cta">Start your design</a>`
+    + `<a class="calc-entry-cta" href="${esc(href)}" data-copy-slot="cta" aria-controls="cabin-calculator" aria-expanded="true">Start your design</a>`
     + `<p class="calc-entry-trust" data-copy-slot="trust">Fixed-price quote within 48 hours. Built in our own works.</p>`
     + `</div>`
-    + `<div class="calc-entry-preview" aria-hidden="false">`
+    + `<div class="calc-entry-visual">`
+    + `<picture class="calc-entry-photo">`
+    + `<source srcset="/credentials/optimized/calculator-background-banner.webp" type="image/webp">`
+    + `<img src="/credentials/optimized/calculator-background-banner.jpg" alt="" width="1024" height="434" loading="lazy" decoding="async">`
+    + `</picture>`
+    + `<div class="calc-entry-plancard">`
     + `${renderProductPlanPreview(options.productId, options.ladderKey)}`
     + `<p class="calc-entry-caption" data-copy-slot="caption">${size.length} x ${size.width} ft shown - your size redraws it</p>`
+    + `</div>`
     + `</div>`
     + `</div></section>`;
 }

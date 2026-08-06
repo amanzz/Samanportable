@@ -173,5 +173,13 @@ export function resolveEmbeddedCalculatorProduct(
     return null;
   }
 
+  // Security Cabins has no published ladder, so it prices on drawing. That is a
+  // reason for the calculator to render in quote mode, not a reason for the
+  // route to be the only one of twelve with no calculator section at all - on a
+  // site where the other eleven have one, its absence reads as an oversight.
+  if (c === 'security-cabins' || c === 'security-cabin') {
+    return { category, slug, productId: 'security-cabin', ladderKey: ladderKeyFor(category, slug) };
+  }
+
   return null;
 }
