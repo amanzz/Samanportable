@@ -465,6 +465,19 @@
       });
     });
     setText(root, '[data-carpet-area]', `${Math.round(g.carpetAreaSqft).toLocaleString('en-IN')} sq ft`);
+
+    // Only the chosen room's socket panel renders. Eight panels stacked was
+    // most of what made this step a pole.
+    const activeRoom = value(form, 'socketRoom', '0');
+    root.querySelectorAll('[data-socket-panel]').forEach((panel) => {
+      panel.hidden = panel.dataset.socketPanel !== String(activeRoom);
+    });
+    // A card with a quantity above zero reads as chosen, on the amber border
+    // the rest of the calculator uses. Never a fill.
+    root.querySelectorAll('.ec-card').forEach((card) => {
+      const field = card.querySelector('input[type="number"]');
+      card.classList.toggle('is-filled', Number(field?.value) > 0);
+    });
     return g;
   }
 
@@ -761,6 +774,23 @@
         const at = steps.indexOf(num(root.dataset.currentStep, steps[0]));
         const to = steps[Math.min(steps.length - 1, Math.max(0, at + (action === 'next' ? 1 : -1)))];
         showStep(root, to, true);
+        return;
+      }
+      if (action === 'qty-up' || action === 'qty-down') {
+        // Inline steppers on the electrical cards and the socket walls.
+        const form = root.querySelector('form');
+        const field = form?.querySelector(`[name="${CSS.escape(control.dataset.qtyTarget || '')}"]`);
+        if (!field) return;
+        const min = field.min === '' ? 0 : Number(field.min);
+        const max = field.max === '' ? Infinity : Number(field.max);
+        const step = Number(field.step) || 1;
+        const next = Math.min(max, Math.max(min, (Number(field.value) || 0) + (action === 'qty-up' ? step : -step)));
+        field.value = String(next);
+        // A typed quantity is never overwritten by the area-derived suggestion,
+        // and pressing a stepper counts as typing one.
+        if (field.dataset.electricalItem) field.dataset.userSet = 'true';
+        field.dispatchEvent(new Event('input', { bubbles: true }));
+        field.dispatchEvent(new Event('change', { bubbles: true }));
         return;
       }
       if (action === 'distribute-rooms') {

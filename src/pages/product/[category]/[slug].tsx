@@ -45,7 +45,7 @@ import {
   c01HubReturnAnchorForSlug,
 } from '../../../lib/portaCabinClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
-import { getEmbeddedProductSummary, renderCabinCalculatorSSR } from '../../../lib/cabinCalculatorSSR';
+import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
@@ -463,6 +463,17 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     });
   }, [category, slug, embeddedCalculatorMapping]);
 
+  // The calculator entry band. Sits between the buy box and the description
+  // tabs so a buyer cannot scroll past the tool without meeting it.
+  const calculatorEntryHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
+    return renderCalculatorEntrySection({
+      productId: embeddedCalculatorMapping.productId,
+      productName: product?.name || embeddedCalculatorSummary?.name || '',
+      ladderKey: embeddedCalculatorMapping.ladderKey,
+    });
+  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name]);
+
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
     setIsHydrated(true);
@@ -830,6 +841,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   <RelatedProductRail items={relatedRailItems} currentHref={`/product/${category}/${slug}`} />
                 }
               />
+              )}
+
+              {/* The entry band: after the buy box, before the description tabs. */}
+              {calculatorEntryHtml && (
+                <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
               )}
 
               {embeddedCalculatorHtml && (

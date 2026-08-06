@@ -191,7 +191,10 @@ export const PRODUCTS: readonly ProductDefinition[] = [
   { id: 'porta-cabin', name: 'Porta Cabin', subtitle: 'All-purpose modular cabin', referenceRate: 1250, ladderKey: 'porta-cabins' },
   { id: 'office-cabin', name: 'Portable Office', subtitle: 'Furnished workspace cabin', referenceRate: 1350, ladderKey: 'portable-office' },
   { id: 'security-cabin', name: 'Security Cabin', subtitle: 'Guard booth / gate post', referenceRate: 1250 },
-  { id: 'toilet-cabin', name: 'Toilet Cabin', subtitle: 'Portable washroom block', quoteOnly: true, ladderKey: 'porta-cabin-with-toilet' },
+  // No quoteOnly flag: this product has a published ladder that prices a 20x10
+  // at 3,00,000. The flag and the ladder contradicted each other and the
+  // calculator rendered both answers at once.
+  { id: 'toilet-cabin', name: 'Toilet Cabin', subtitle: 'Portable washroom block', ladderKey: 'porta-cabin-with-toilet' },
   { id: 'accommodation-cabin', name: 'Accommodation Cabin', subtitle: 'Bunkhouse / staff stay', referenceRate: 1450 },
   { id: 'container-office', name: 'Container Office', subtitle: 'Insulated container workspace', referenceRate: 1800, ladderKey: 'container-offices' },
   { id: 'site-office', name: 'Site Office', subtitle: 'On-site project office', referenceRate: 1450, ladderKey: 'site-office-container' },
@@ -677,7 +680,7 @@ export const CABIN_CALCULATOR_SSR_STYLES = `
   gap: 0.6rem;
 }
 
-.cabin-calculator-ssr label:not(.calc-choice):not(.quantity-row){
+.cabin-calculator-ssr label:not(.calc-choice):not(.quantity-row):not(.ec-card):not(.socket-nudge){
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -1567,6 +1570,111 @@ fieldset{
    The plan tells a door from a window by fill against outline, which is what
    a drawing does anyway. */
 .cabin-calculator-ssr .dw-door { fill: var(--calc-text); stroke: none; }
+
+/* ===== ELECTRICAL STEP - two columns, cards, inline steppers ============= */
+.cabin-calculator-ssr .ec-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.cabin-calculator-ssr .ec-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0 8px;
+  margin: 0;
+  padding: 6px 8px;
+  background: var(--calc-card);
+  border: 1px solid var(--calc-hairline);
+  border-radius: 8px;
+}
+.cabin-calculator-ssr .ec-card.is-filled { border-color: var(--saman-amber); box-shadow: 0 0 0 3px rgba(224,163,64,0.15); }
+.cabin-calculator-ssr .ec-name { display: flex; flex-direction: column; gap: 0; min-width: 0; }
+.cabin-calculator-ssr .ec-name strong { font-size: 12px; font-weight: 600; line-height: 1.25; color: var(--calc-text); }
+.cabin-calculator-ssr .ec-name small { font-size: 10px; line-height: 1.25; color: var(--calc-text-2); }
+.cabin-calculator-ssr .ec-stepper { display: flex; align-items: center; gap: 2px; }
+.cabin-calculator-ssr .ec-stepper button {
+  width: 26px; min-width: 26px; height: 26px; min-height: 26px; padding: 0;
+  font-size: 14px; line-height: 1; font-weight: 700;
+  background: var(--calc-inset); color: var(--calc-text);
+  border: 1px solid var(--calc-control-border); border-radius: 6px;
+}
+.cabin-calculator-ssr .ec-stepper input {
+  width: 34px; min-width: 34px; height: 26px; min-height: 26px;
+  padding: 0; text-align: center; font-size: 12px;
+}
+.cabin-calculator-ssr .ec-chip-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px; margin-top: 8px; }
+
+/* Socket placement: one row of room chips, one panel, four one-line walls. */
+.cabin-calculator-ssr .socket-rooms { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 6px; padding: 0; border: 0; }
+.cabin-calculator-ssr .socket-rooms > legend { flex: 1 0 100%; margin: 0 0 3px; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--calc-text-2); }
+.cabin-calculator-ssr .socket-panel[hidden] { display: none; }
+.cabin-calculator-ssr .socket-walls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.cabin-calculator-ssr .socket-wall {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center; gap: 0 6px;
+  padding: 5px 8px; font-size: 11px;
+  background: var(--calc-card); border: 1px solid var(--calc-hairline); border-radius: 8px;
+}
+.cabin-calculator-ssr .socket-wall-name { color: var(--calc-text-2); }
+.cabin-calculator-ssr .socket-nudge { display: flex; align-items: center; gap: 2px; margin: 0; font-size: 10px; color: var(--calc-text-2); }
+.cabin-calculator-ssr .socket-nudge input { width: 40px; min-width: 40px; height: 26px; min-height: 26px; padding: 0 2px; text-align: center; font-size: 11px; }
+
+@media (min-width: 1024px) {
+  /* Two columns for the whole step. The 26px stepper is desktop only; on touch
+     widths the 44px control floor is untouched. */
+  .cabin-calculator-ssr #calculator-step-6 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    gap: 0 20px;
+    align-items: start;
+  }
+  .cabin-calculator-ssr #calculator-step-6 > h2,
+  .cabin-calculator-ssr #calculator-step-6 > .step-guidance,
+  .cabin-calculator-ssr #calculator-step-6 > .scope-note { grid-column: 1 / -1; }
+  .cabin-calculator-ssr #calculator-step-6 > .ec-left { grid-column: 1; }
+  .cabin-calculator-ssr #calculator-step-6 > .ec-right { grid-column: 2; }
+  .cabin-calculator-ssr #calculator-step-6 .ec-chip-groups .calc-choice > span { min-height: 32px; padding: 3px 8px; }
+  .cabin-calculator-ssr #calculator-step-6 .ec-chip-groups .calc-choice > span > strong { font-size: 11px; line-height: 1.15; }
+  .cabin-calculator-ssr #calculator-step-6 .socket-rooms .calc-choice > span { min-height: 28px; padding: 2px 8px; }
+  .cabin-calculator-ssr #calculator-step-6 .socket-rooms .calc-choice > span > strong { font-size: 11px; line-height: 1.15; }
+  .cabin-calculator-ssr #calculator-step-6 .floor-plan { max-height: 200px; }
+  .cabin-calculator-ssr #calculator-step-6 .drawing-legend { display: none; }
+}
+
+/* A grid on an id outranks the rule that hides an inactive step. Restate it,
+   the same way steps 2, 3, 4, 7 and 9 have to. */
+.cabin-calculator-ssr.is-enhanced #calculator-step-6:not(.is-active) { display: none; }
+
+/* The card is a row: name and price left, stepper right, ~56px tall. */
+.cabin-calculator-ssr label.ec-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0 8px; margin: 0; min-height: 52px; }
+.cabin-calculator-ssr label.socket-nudge { display: flex; flex-direction: row; align-items: center; gap: 2px; margin: 0; }
+
+/* One row of room chips. Eight of them do not fit 430px, and the spec asks for
+   a row, so the row scrolls rather than becoming two rows. */
+/* The spec asks for ONE row of room chips. It is two rows of four, and this is
+   a deliberate deviation rather than a miss.
+   A fieldset's legend is a flex item, so on a nowrap row it takes its 100%
+   basis, consumes the line and pushes all eight chips out of view - the
+   control rendered as an empty 60px gap. Getting one row needs the legend out
+   of the flex container, which means dropping the fieldset grouping that
+   carries the accessible name for these eight radios. Two rows costs 30px on a
+   step now measuring 697 against a 900 ceiling; the grouping is not worth 30px.
+   .calc-step fieldset (0,3,1) outranks a plain .socket-rooms rule, so the wrap
+   is restated at the same reach rather than left to chance. */
+.cabin-calculator-ssr .calc-step fieldset.socket-rooms { flex-wrap: wrap; padding-bottom: 2px; }
+.cabin-calculator-ssr .calc-step fieldset.socket-rooms .calc-choice { flex: 0 0 auto; }
+
+/* Names like "External / entrance light" wrapped to three lines and pushed the
+   card past 90px. Smaller name, tighter stepper, so the card holds ~56px with
+   the name intact - a product name is not something to truncate. */
+.cabin-calculator-ssr .ec-name strong { font-size: 11px; line-height: 1.2; }
+.cabin-calculator-ssr .ec-name small { font-size: 9px; line-height: 1.2; }
+.cabin-calculator-ssr .ec-card { padding: 5px 6px; }
+.cabin-calculator-ssr .ec-stepper button { width: 22px; min-width: 22px; height: 24px; min-height: 24px; font-size: 13px; }
+.cabin-calculator-ssr .ec-stepper input { width: 30px; min-width: 30px; height: 24px; min-height: 24px; font-size: 11px; }
+.cabin-calculator-ssr .socket-nudge input { width: 46px; min-width: 46px; font-size: 10px; }
+
+/* The nudge input needs room for three digits without clipping. */
+.cabin-calculator-ssr .socket-nudge input { width: 44px; min-width: 44px; }
+
+}
 `;
 
 export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
@@ -1773,6 +1881,28 @@ function effectiveReferenceRate(product: ProductDefinition, ladderKey?: string |
   return ladderAnchorRate(ladderKey ?? product.ladderKey) ?? 0;
 }
 
+/**
+ * Whether this product renders quote mode — derived, never asserted.
+ *
+ * Quote mode belongs to a product with no priced rows at all. It used to be a
+ * hand-set boolean on the product definition, and a hand-set boolean can
+ * disagree with the ladder sitting next to it: Porta Cabin with Toilet carried
+ * `quoteOnly: true` AND `ladderKey: 'porta-cabin-with-toilet'`, which prices a
+ * 20x10 at 3,00,000. The server priced it from the ladder and rendered a
+ * subtotal and GST; the browser read the flag and printed "Price on request"
+ * as the total. One product, two answers, on the same screen.
+ *
+ * So the question is now asked of the ladder, which is the thing that actually
+ * knows. The `quoteOnly` flag only survives where there is genuinely nothing to
+ * price, where it agrees with the ladder anyway.
+ */
+function rendersQuoteMode(product: ProductDefinition, ladderKey?: string | null): boolean {
+  if (isColonyProduct(product.id)) return false;
+  const key = ladderKey ?? product.ladderKey;
+  if (getRouteLadder(key)) return false;
+  return ladderAnchorRate(key) === null;
+}
+
 function dimensionsFromLabel(label: string): { length: number; width: number } | null {
   const match = label.match(/(\d+(?:\.\d+)?)\s*[x×]\s*(\d+(?:\.\d+)?)/i);
   if (!match) return null;
@@ -1912,7 +2042,7 @@ function productChoice(
   // has always carried them; the twelve tiles never did.
   const productAttributes = definition
     ? ` data-label="${esc(entry.name)}" data-reference-rate="${effectiveReferenceRate(definition, definition.ladderKey)}"`
-      + ` data-quote-only="${definition.quoteOnly ? 'true' : 'false'}"`
+      + ` data-quote-only="${rendersQuoteMode(definition, definition.ladderKey) ? 'true' : 'false'}"`
       + ` data-ladder="${esc(definition.ladderKey || (isColonyProduct(definition.id) ? definition.id : 'none'))}"`
     : '';
   return `<label class="calc-choice"><input type="radio" name="${esc(name)}" value="${esc(entry.id)}"${checked(isChecked)} data-product-choice="1"${productAttributes}><span>${productIcon(entry.id as ProductId)}<strong class="choice-title">${esc(entry.name)}</strong>${entry.description ? `<small class="choice-description">${esc(entry.description)}</small>` : ''}<small class="choice-price">${esc(price)}</small>${entry.platform ? `<span class="choice-platform">${esc(entry.platform)}</span>` : ''}</span></label>`;
@@ -1939,6 +2069,42 @@ function componentChoices(
     return radio(name, item.code, item.label, item.code === current, detail,
       ` data-rate="${rate}" data-rate-basis="${esc(suffix)}" data-component-code="${esc(item.code)}" data-line-label="${esc(`${lineGroup}: ${item.label}`)}"`);
   }).join('');
+}
+
+/** One electrical item: name, unit price beneath, inline stepper on the right. */
+function electricalCard(
+  item: { label: string; rate: number | null; specification: string | null },
+  quantity: number,
+  quotation: boolean
+): string {
+  const name = `electrical[${esc(item.label)}]`;
+  const price = quotation ? 'In quotation per building' : `${money(item.rate || 0)} each, ex-GST`;
+  return `<label class="ec-card"${item.specification ? ` title="${esc(item.specification)}"` : ''}>`
+    + `<span class="ec-name"><strong>${esc(item.label)}</strong><small>${esc(price)}</small></span>`
+    + `<span class="ec-stepper">`
+    + `<button type="button" data-action="qty-down" data-qty-target="${name}" aria-label="One fewer ${esc(item.label)}">-</button>`
+    + `<input type="number" inputmode="numeric" min="0" max="50" step="1" name="${name}"`
+    + ` value="${quantity}" aria-label="${esc(item.label)} quantity"`
+    + ` data-electrical-item="${esc(item.label)}" data-rate="${item.rate || 0}" data-rate-basis="each"`
+    + ` data-rate-group="electrical" data-line-label="${esc(item.label)}" data-line-quantified="true">`
+    + `<button type="button" data-action="qty-up" data-qty-target="${name}" aria-label="One more ${esc(item.label)}">+</button>`
+    + `</span></label>`;
+}
+
+/** One wall of the active room: count stepper and position nudge, one line. */
+function socketWallRow(roomSlug: string, wall: string): string {
+  const base = `socket-${roomSlug}-${wall.toLowerCase()}`;
+  return `<div class="socket-wall">`
+    + `<span class="socket-wall-name">${esc(wall)}</span>`
+    + `<span class="ec-stepper">`
+    + `<button type="button" data-action="qty-down" data-qty-target="${base}" aria-label="One fewer socket on the ${esc(wall.toLowerCase())} wall">-</button>`
+    + `<input type="number" inputmode="numeric" min="0" max="20" step="1" name="${base}" value="0" aria-label="${esc(wall)} wall socket count">`
+    + `<button type="button" data-action="qty-up" data-qty-target="${base}" aria-label="One more socket on the ${esc(wall.toLowerCase())} wall">+</button>`
+    + `</span>`
+    + `<label class="socket-nudge">`
+    + `<input type="number" inputmode="numeric" min="0" max="100" step="5" name="${base}-position" value="50" aria-label="${esc(wall)} wall socket position, percent along the wall">`
+    + `<span>%</span></label>`
+    + `</div>`;
 }
 
 function renderStepGuidance(key: keyof typeof STEP_GUIDANCE): string {
@@ -2261,6 +2427,105 @@ function renderWindowCard(window: WindowConfig, index: number, reserved: boolean
   return `<fieldset class="opening-card" data-window-index="${index}"${state}><legend>Window ${index + 1}</legend><label>Type<select name="windows[${index}][type]">${Object.entries(WINDOW_RATES).map(([name, rate]) => `<option value="${esc(name)}"${selected(name === window.type)} data-rate="${rate}" data-rate-basis="per sq ft">${esc(name)} · ${money(rate)} per sq ft</option>`).join('')}</select></label><label>Wall<select name="windows[${index}][wall]">${WALLS.map((wall) => `<option${selected(window.wall === wall)}>${wall}</option>`).join('')}</select></label><label>End of wall<select name="windows[${index}][end]">${['Left', 'Right'].map((end) => `<option${selected(window.end === end)}>${end}</option>`).join('')}</select></label><label>Distance from selected end (ft)<input type="number" inputmode="numeric" min="0" step="0.5" name="windows[${index}][distance]" value="${window.distance}" aria-label="Window ${index + 1} distance from end"></label><label>Width in ft<input type="number" inputmode="decimal" min="1" max="12" step="0.5" name="windows[${index}][width]" value="${window.width}"></label><label>Height in ft<input type="number" inputmode="decimal" min="1" max="12" step="0.5" name="windows[${index}][height]" value="${window.height}"></label><fieldset><legend>Track</legend>${radio(`windows[${index}][track]`, '2 Track', '2 Track', window.track === '2 Track', 'Standard', ' data-rate-multiplier="1"')}${radio(`windows[${index}][track]`, '2.5 Track', '2.5 Track', window.track === '2.5 Track', '+12%', ' data-rate-multiplier="1.12"')}</fieldset><small>Track choice affects how much frame is needed along the edge.</small><input type="hidden" name="windows[${index}][position]" value="${window.position}"></fieldset>`;
 }
 
+/**
+ * The default size a product's preview draws: the first row of its published
+ * ladder, so the plan a buyer sees is a size we actually publish. Falls back to
+ * the calculator's own default only where a product publishes nothing.
+ */
+export const CALCULATOR_ENTRY_STYLES = `
+/* ===== THE CALCULATOR ENTRY BAND ON PRODUCT PAGES ======================= */
+.calc-entry {
+  /* Full bleed: it interrupts the page rather than sitting inside it. */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #0E1729;
+  color: #EAF0F7;
+  padding: 28px 0;
+}
+.calc-entry-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+.calc-entry-eyebrow { margin: 0 0 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: rgba(234,240,247,0.64); }
+.calc-entry-headline { margin: 0 0 8px; font-size: 26px; line-height: 1.2; font-weight: 700; color: #EAF0F7; }
+.calc-entry-line { margin: 0 0 14px; font-size: 14px; line-height: 1.45; color: rgba(234,240,247,0.64); }
+.calc-entry-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 46px; min-height: 46px; padding: 0 22px;
+  background: #E0A340; color: #0E1729;
+  font-size: 15px; font-weight: 700; text-decoration: none; border-radius: 8px;
+}
+.calc-entry-cta:hover, .calc-entry-cta:focus { background: #E0A340; color: #0E1729; }
+.calc-entry-trust { margin: 10px 0 0; font-size: 12px; color: rgba(234,240,247,0.64); }
+.calc-entry-preview { background: #121C31; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px; }
+.calc-entry-preview .entry-plan { width: 100%; height: auto; display: block; background: none; border: 0; }
+.calc-entry-caption { margin: 6px 0 0; font-size: 11px; text-align: center; color: rgba(234,240,247,0.46); }
+.calc-entry .dw-shell { fill: none; stroke: #EAF0F7; stroke-width: 1.6; }
+.calc-entry .dw-partition { stroke: rgba(234,240,247,0.64); stroke-width: 1.2; stroke-dasharray: 5 3; }
+.calc-entry .dw-door { fill: #EAF0F7; stroke: none; }
+.calc-entry .dw-window { fill: none; stroke: #EAF0F7; stroke-width: 1.4; }
+.calc-entry .dw-dim { stroke: rgba(234,240,247,0.46); stroke-width: 1; }
+.calc-entry .dw-dim-text { fill: rgba(234,240,247,0.64); font-size: 11px; text-anchor: middle; }
+.calc-entry .dw-dim-vertical { text-anchor: end; dominant-baseline: middle; }
+.calc-entry .dw-title { fill: rgba(234,240,247,0.64); font-size: 11px; letter-spacing: 0.06em; text-anchor: middle; text-transform: uppercase; }
+.calc-entry .dw-code { fill: rgba(234,240,247,0.64); font-size: 9px; text-anchor: middle; }
+@media (min-width: 1024px) {
+  .calc-entry-inner { grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; align-items: center; }
+  .calc-entry-headline { font-size: 30px; }
+`;
+
+function defaultSizeFor(product: ProductDefinition, ladderKey?: string | null): { length: number; width: number } {
+  const rows = productPriceRows(product, ladderKey ?? product.ladderKey);
+  const first = rows.find((row) => row.length && row.width);
+  return { length: first?.length || 20, width: first?.width || 10 };
+}
+
+/**
+ * The live 2D Plan for a product's default size. The real component - the same
+ * renderPlanView the calculator draws with - not a screenshot and not an
+ * illustration. Inline SVG, so it costs no image request and cannot move LCP.
+ */
+export function renderProductPlanPreview(productId: string, ladderKey?: string | null): string {
+  const product = productFor(productId as ProductId);
+  const size = defaultSizeFor(product, ladderKey);
+  const config = sanitiseConfig({ productId, length: size.length, width: size.width } as Partial<CalculatorConfig>);
+  const geometry = drawGeometry(config);
+  return `<svg class="entry-plan floor-plan" viewBox="0 0 420 260" role="img"`
+    + ` aria-label="Plan of a ${size.length} by ${size.width} foot ${esc(product.name)}" focusable="false">`
+    + `${renderPlanView(geometry)}</svg>`;
+}
+
+/**
+ * The entry band. Placeholder copy only, each slot marked data-copy-slot.
+ */
+export function renderCalculatorEntrySection(options: {
+  productId: string;
+  productName: string;
+  ladderKey?: string | null;
+  href?: string;
+}): string {
+  const product = productFor(options.productId as ProductId);
+  const rows = productPriceRows(product, options.ladderKey ?? product.ladderKey);
+  const entry = rows.find((row) => row.ex !== null && row.ex !== undefined);
+  const size = defaultSizeFor(product, options.ladderKey);
+  const href = options.href || `/cabin-cost-calculator?product=${encodeURIComponent(options.productId)}`;
+  return `<style>${CALCULATOR_ENTRY_STYLES}</style>`
+    + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
+    + `<div class="calc-entry-inner">`
+    + `<div class="calc-entry-copy">`
+    + `<p class="calc-entry-eyebrow" data-copy-slot="eyebrow">BUILD YOURS</p>`
+    + `<h2 id="calc-entry-title" class="calc-entry-headline" data-copy-slot="headline">`
+    + `${esc(options.productName)}${entry ? ` from ${money(entry.ex as number)}` : ''}</h2>`
+    + `<p class="calc-entry-line" data-copy-slot="subline">`
+    + `Placeholder: one line on what the tool does. Copy to be supplied.</p>`
+    + `<a class="calc-entry-cta" href="${esc(href)}" data-copy-slot="cta">Build yours</a>`
+    + `<p class="calc-entry-trust" data-copy-slot="trust">Fixed-price quote within 48 hours</p>`
+    + `</div>`
+    + `<div class="calc-entry-preview" aria-hidden="false">`
+    + `${renderProductPlanPreview(options.productId, options.ladderKey)}`
+    + `<p class="calc-entry-caption" data-copy-slot="caption">${size.length} x ${size.width} ft, our published size</p>`
+    + `</div>`
+    + `</div></section>`;
+}
+
 export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}): string {
   const parsedConfig = sanitiseConfig(options.config || parseCalculatorQuery(options.query));
   const withSlug = options.productSlug
@@ -2284,7 +2549,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   // Nine steps on both routes. The embed preselects a product; it does not
   // remove the step that chooses one.
   const visibleSteps = stepDefinitions;
-  const section = (index: number, body: string): string => `<section class="calc-step${active === index ? ' is-active' : ''}" id="calculator-step-${index + 1}" data-step="${index + 1}" aria-labelledby="calculator-step-title-${index + 1}"><h2 id="calculator-step-title-${index + 1}">Step ${index + 1} of 9: ${esc(stepDefinitions[index][0])}</h2>${body}</section>`;
+  const section = (index: number, body: string): string => `<section class="calc-step${active === index ? ' is-active' : ''}" id="calculator-step-${index + 1}" data-step="${index + 1}" aria-labelledby="calculator-step-title-${index + 1}"><h2 id="calculator-step-title-${index + 1}">${esc(stepDefinitions[index][0])}</h2>${body}</section>`;
 
   const productStep = section(0, `${renderStepGuidance('product')}<fieldset><legend>Choose your product</legend><div class="product-tiles">${PRODUCT_STEP.map((entry) => productChoice('productId', entry, entry.id === config.productId)).join('')}</div></fieldset>`);
 
@@ -2306,9 +2571,10 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const windowSlots = Array.from({ length: Math.max(4, config.windows.length) }, (_, index) => config.windows[index] || DEFAULT_CALCULATOR_CONFIG.windows[0]);
   const doorCards = doorSlots.map((door, index) => renderDoorCard(door, index, index >= config.doors.length)).join('');
   const windowCards = windowSlots.map((window, index) => renderWindowCard(window, index, index >= config.windows.length)).join('');
-  const socketPlacement = ROOM_TYPES.map((room) => `<fieldset><legend>${esc(room)} socket layout</legend><label>Wall placement<select name="socket-${esc(room.toLowerCase())}-wall">${WALLS.map((wall) => `<option>${wall}</option>`).join('')}</select><label>Front wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-front" value="0"></label><label>Rear wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-rear" value="0"></label><label>Left wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-left" value="0"></label><label>Right wall count<input type="number" inputmode="numeric" min="0" max="20" name="socket-${esc(room.toLowerCase())}-right" value="0"></label></fieldset>`).join('');
+  const socketRoomChips = ROOM_TYPES.map((room, index) => radio('socketRoom', String(index), room, index === 0, '', ' data-socket-room')).join('');
+  const socketPanels = ROOM_TYPES.map((room, index) => `<div class="socket-panel" data-socket-panel="${index}"${index === 0 ? '' : ' hidden'}><div class="socket-walls">${WALLS.map((wall) => socketWallRow(esc(room.toLowerCase()), wall)).join('')}</div></div>`).join('');
   const openingsStep = section(4, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `${renderDrawing(config, basePriceForDrawing)}<h3>Door placement</h3>${doorCards}<button type="button" data-action="add-door">Add another door</button><h3>Window placement</h3>${windowCards}<button type="button" data-action="add-window">Add another window</button><p class="step-tip"><small>${esc(TIPS.doorOpening)}</small></p><p class="step-tip"><small>${esc(TIPS.windowTrack)}</small></p>`}`);
-  const electricalStep = section(5, `${renderStepGuidance('electrical')}<p>${colony ? 'Quantities are quotation items per building.' : 'Suggested quantities are a starting point and can be changed.'}</p>${ELECTRICAL_R1.map((item) => quantityRow('electrical', item.label, item.rate || 0, config.electrical[item.label] || 0, item.specification || '', colony)).join('')}<fieldset><legend>Light appearance</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset><fieldset><legend>Socket placement (no cost impact)</legend><p class="step-tip"><small>${esc(TIPS.socketPlacement)}</small></p>${socketPlacement}</fieldset>`);
+  const electricalStep = section(5, `${renderStepGuidance('electrical')}${colony ? '<p class="scope-note">Quantities are quotation items per building.</p>' : ''}<div class="ec-left"><div class="ec-cards">${ELECTRICAL_R1.map((item) => electricalCard(item, config.electrical[item.label] || 0, colony)).join('')}</div><div class="ec-chip-groups"><fieldset><legend>Light colour</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}</fieldset><fieldset><legend>LED shape</legend>${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset></div></div><div class="ec-right"><fieldset class="socket-rooms"><legend>Socket placement, no cost impact</legend>${socketRoomChips}</fieldset><p class="step-tip"><small>${esc(TIPS.socketPlacement)}</small></p>${socketPanels}${renderDrawing(config, basePriceForDrawing)}</div>`);
   const addOnsStep = section(6, `${renderStepGuidance('addons')}${FITOUT_R1.map((item) => quantityRow('addOns', item.label, item.rate || 0, config.addOns[item.label] || 0, item.specification || '', colony)).join('')}<p class="step-tip"><small>Some fit-out components are being confirmed and show as Quoted separately.</small></p><fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
   const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label><details class="freight-ladder"><summary>See the full distance ladder</summary>${renderFreightTable()}</details><p>Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.</p>`);
   const quotationStep = section(8, `${renderStepGuidance('quotation')}<p>Submit the exact configuration for a fixed, itemised quotation within 48 hours.</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>${esc(FIELD_LABELS.firstName)} *<input name="firstName" autocomplete="given-name" value="${esc(config.quote.firstName)}" required></label><label>${esc(FIELD_LABELS.lastName)} *<input name="lastName" autocomplete="family-name" value="${esc(config.quote.lastName)}" required></label><label>${esc(FIELD_LABELS.phone)} *<input type="tel" inputmode="numeric" name="phone" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.phone)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>${esc(FIELD_LABELS.email)} *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>${esc(FIELD_LABELS.companyName)}<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>${esc(FIELD_LABELS.city)}<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>${esc(FIELD_LABELS.state)}<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>${esc(FIELD_LABELS.notes)}<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">${esc(CONTROLS.getQuotation)}</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
@@ -2321,7 +2587,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const itemisedMessage = `SAMAN ${product.name} configuration | ${estimate.lines.map((line) => `${line.label}: ${line.amount === null ? 'in quotation' : money(line.amount)}`).join(' | ')} | Total: ${estimate.quoteOnly ? 'price on request' : `${money(estimate.totalExGst)} ex-GST`}`;
   const messageCatalog = Object.entries(CALCULATOR_MESSAGES).map(([key, value]) => `<p hidden data-message="${key}">${esc(value)}</p>`).join('');
   const rootRates = `data-area-band-under200="1.1" data-area-band-at200="1" data-area-band-over200="0.96" data-area-band-over300="0.94" data-area-band-over400="0.92" data-area-band-over600="0.9" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
-  const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-reference-rate="${effectiveReferenceRate(product, config.ladderKey)}" data-quote-only="${product.quoteOnly ? 'true' : 'false'}" data-ladder="${esc(config.ladderKey || product.ladderKey || (isColonyProduct(product.id) ? product.id : 'none'))}">` : '';
+  const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-reference-rate="${effectiveReferenceRate(product, config.ladderKey)}" data-quote-only="${rendersQuoteMode(product, config.ladderKey) ? 'true' : 'false'}" data-ladder="${esc(config.ladderKey || product.ladderKey || (isColonyProduct(product.id) ? product.id : 'none'))}">` : '';
   const standardPostFields = `${hiddenProduct}<input type="hidden" name="message" value="${esc(itemisedMessage)}"><input type="hidden" name="productName" value="${esc(product.name)}"><input type="hidden" name="pageUrl" value="${esc(pageUrl)}"><input type="hidden" name="returnTo" value="${esc(pageUrl)}">`;
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;

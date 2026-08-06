@@ -36,7 +36,7 @@ const VIEWPORT_H = 900;
  * are measured and printed like every other step - a deferral that hides its
  * own number is just a silent cap - but they do not fail this build.
  */
-const DEFERRED = { 2: 'Event 3, drawing engine', 5: 'Event 4, openings', 6: 'Event 4, sockets' };
+const DEFERRED = { 2: 'Event 3, drawing engine', 5: 'Event 4, openings' };
 
 const browser = await chromium.launch();
 const context = await browser.newContext({ viewport: { width: 1440, height: VIEWPORT_H }, deviceScaleFactor: 1 });
