@@ -1,0 +1,132 @@
+{
+ "container-houses": {
+  "sourceFile": "C08-COPY-01-container-houses-hub-05Aug2026.md",
+  "blocks": {
+   "h2": 8,
+   "h3": 0,
+   "p": 39,
+   "image": 4
+  },
+  "htmlChars": 15083,
+  "renderedWords": 2383,
+  "anchors": [
+   {
+    "anchor": "repeatable prefab module line",
+    "href": "/product/container-houses/prefab-container-homes"
+   },
+   {
+    "anchor": "villa-grade luxury build",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "the reinforced shipping-form build",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "the fixed-plan affordable build",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "the fully fitted route",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "portable cabin",
+    "href": "/product/portable-cabin"
+   }
+  ],
+  "images": [
+   {
+    "slot": 1,
+    "size": "40x12",
+    "token": "E06",
+    "view": "elevated-three-quarter",
+    "filename": "container-houses-40x12-elevated-three-quarter.webp"
+   },
+   {
+    "slot": 2,
+    "size": "40x10",
+    "token": "I02",
+    "view": "semi-kitchen-dining",
+    "filename": "container-houses-40x10-semi-kitchen-dining.webp"
+   },
+   {
+    "slot": 3,
+    "size": "20x12",
+    "token": "E03",
+    "view": "long-side-elevation",
+    "filename": "container-houses-20x12-long-side-elevation.webp"
+   },
+   {
+    "slot": 4,
+    "size": "20x8",
+    "token": "I04",
+    "view": "bathroom-reverse",
+    "filename": "container-houses-20x8-bathroom-reverse.webp"
+   }
+  ]
+ },
+ "prefab-container-homes": {
+  "sourceFile": "C08-COPY-02-prefab-container-homes-05Aug2026.md",
+  "blocks": {
+   "h2": 8,
+   "h3": 4,
+   "p": 31,
+   "image": 4
+  },
+  "htmlChars": 10838,
+  "renderedWords": 1659,
+  "anchors": [
+   {
+    "anchor": "luxury container house range",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "reinforced shipping-form build",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "lowest rate in the range starts at ₹1,438 per sq ft",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "quoted on your drawing rather than sold from a ladder",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "container houses hub",
+    "href": "/product/container-houses"
+   }
+  ],
+  "images": [
+   {
+    "slot": 1,
+    "size": "40x10",
+    "token": "E03",
+    "view": "long-side-elevation",
+    "filename": "prefab-container-homes-40x10-long-side-elevation.webp"
+   },
+   {
+    "slot": 2,
+    "size": "20x10",
+    "token": "I02",
+    "view": "semi-kitchen-dining",
+    "filename": "prefab-container-homes-20x10-semi-kitchen-dining.webp"
+   },
+   {
+    "slot": 3,
+    "size": "20x8",
+    "token": "E02",
+    "view": "front-left-angle",
+    "filename": "prefab-container-homes-20x8-front-left-angle.webp"
+   },
+   {
+    "slot": 4,
+    "size": "40x12",
+    "token": "I03",
+    "view": "bedroom-view",
+    "filename": "prefab-container-homes-40x12-bedroom-view.webp"
+   }
+  ]
+ }
+}

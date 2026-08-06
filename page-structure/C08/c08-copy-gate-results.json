@@ -1,0 +1,268 @@
+{
+ "container-houses": {
+  "renderedWordsL23": 2357,
+  "h2": 8,
+  "h3": 0,
+  "h1Page": 1,
+  "h1Panel": 0,
+  "images": 4,
+  "badAdjacency": [],
+  "anchors": [
+   {
+    "anchor": "repeatable prefab module line",
+    "href": "/product/container-houses/prefab-container-homes"
+   },
+   {
+    "anchor": "villa-grade luxury build",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "the reinforced shipping-form build",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "the fixed-plan affordable build",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "the fully fitted route",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "portable cabin",
+    "href": "/product/portable-cabin"
+   }
+  ],
+  "lonelyLinks": [],
+  "imageThenLinkOnly": 0,
+  "headings": [
+   "What a container house from SAMAN actually is",
+   "The six sizes, and what each one is honestly for",
+   "How it is built, and why that matters to you",
+   "Five build styles, and how to choose between them",
+   "What it costs, and what the price includes",
+   "Delivery, site readiness and installation",
+   "Warranty, service life and what happens afterwards",
+   "Questions buyers ask before ordering"
+  ]
+ },
+ "prefab-container-homes": {
+  "renderedWordsL23": 1647,
+  "h2": 8,
+  "h3": 4,
+  "h1Page": 1,
+  "h1Panel": 0,
+  "images": 4,
+  "badAdjacency": [
+   [
+    33,
+    "p",
+    "h2"
+   ]
+  ],
+  "anchors": [
+   {
+    "anchor": "luxury container house range",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "reinforced shipping-form build",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "lowest rate in the range starts at ₹1,438 per sq ft",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "quoted on your drawing rather than sold from a ladder",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "container houses hub",
+    "href": "/product/container-houses"
+   }
+  ],
+  "lonelyLinks": [],
+  "imageThenLinkOnly": 0,
+  "headings": [
+   "What \"prefab\" actually changes about a container home",
+   "Six sizes, and how each behaves as a repeated module",
+   "How the module is built",
+   "Colony and multi-unit work",
+   "Where this sits against the rest of the range",
+   "Delivery, site readiness and installation",
+   "Warranty and service life",
+   "Questions buyers ask about modules",
+   "Can I order one now and more later?",
+   "Do two modules actually join, or just sit next to each other?",
+   "Is a module cheaper than a one-off?",
+   "What is the largest colony you have delivered?"
+  ]
+ },
+ "luxury-container-houses": {
+  "renderedWordsL23": 68,
+  "h2": 0,
+  "h3": 0,
+  "h1Page": 1,
+  "h1Panel": 0,
+  "images": 2,
+  "badAdjacency": [],
+  "anchors": [
+   {
+    "anchor": "every build style compared",
+    "href": "/product/container-houses"
+   }
+  ],
+  "lonelyLinks": [
+   {
+    "anchor": "every build style compared",
+    "textBefore": "",
+    "textAfter": ""
+   },
+   {
+    "anchor": "every build style compared",
+    "wholeParagraphIsTheLink": true
+   }
+  ],
+  "imageThenLinkOnly": 1,
+  "headings": []
+ },
+ "shipping-container-homes": {
+  "renderedWordsL23": 76,
+  "h2": 0,
+  "h3": 0,
+  "h1Page": 1,
+  "h1Panel": 0,
+  "images": 3,
+  "badAdjacency": [],
+  "anchors": [
+   {
+    "anchor": "the six-size range page",
+    "href": "/product/container-houses"
+   },
+   {
+    "anchor": "the finished building, not the container",
+    "href": "/ship-container-price-in-india"
+   }
+  ],
+  "lonelyLinks": [
+   {
+    "anchor": "the six-size range page",
+    "textBefore": "",
+    "textAfter": ""
+   },
+   {
+    "anchor": "the finished building, not the container",
+    "textBefore": "",
+    "textAfter": ""
+   },
+   {
+    "anchor": "the six-size range page",
+    "wholeParagraphIsTheLink": true
+   },
+   {
+    "anchor": "the finished building, not the container",
+    "wholeParagraphIsTheLink": true
+   }
+  ],
+  "imageThenLinkOnly": 2,
+  "headings": []
+ },
+ "affordable-container-homes": {
+  "renderedWordsL23": 74,
+  "h2": 0,
+  "h3": 0,
+  "h1Page": 1,
+  "h1Panel": 0,
+  "images": 2,
+  "badAdjacency": [],
+  "anchors": [
+   {
+    "anchor": "all five container home builds",
+    "href": "/product/container-houses"
+   }
+  ],
+  "lonelyLinks": [
+   {
+    "anchor": "all five container home builds",
+    "textBefore": "",
+    "textAfter": ""
+   },
+   {
+    "anchor": "all five container home builds",
+    "wholeParagraphIsTheLink": true
+   }
+  ],
+  "imageThenLinkOnly": 1,
+  "headings": []
+ },
+ "prefabricated-container-house": {
+  "renderedWordsL23": 2054,
+  "h2": 8,
+  "h3": 4,
+  "h1Page": 1,
+  "h1Panel": 0,
+  "images": 8,
+  "badAdjacency": [],
+  "anchors": [
+   {
+    "anchor": "container house overview",
+    "href": "https://www.samanportable.com/product/container-houses"
+   },
+   {
+    "anchor": "luxury container house range",
+    "href": "https://www.samanportable.com/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "+91 88616 22859",
+    "href": "tel:+918861622859"
+   },
+   {
+    "anchor": "+91 80886 85440",
+    "href": "tel:+918088685440"
+   },
+   {
+    "anchor": "sales@samanportable.com",
+    "href": "mailto:sales@samanportable.com"
+   },
+   {
+    "anchor": "+91 87960 39938",
+    "href": "tel:+918796039938"
+   },
+   {
+    "anchor": "+91 97089 89937",
+    "href": "tel:+919708989937"
+   },
+   {
+    "anchor": "ncr@samanportable.com",
+    "href": "mailto:ncr@samanportable.com"
+   },
+   {
+    "anchor": "container houses",
+    "href": "https://www.samanportable.com/product/container-houses"
+   }
+  ],
+  "lonelyLinks": [
+   {
+    "anchor": "ncr@samanportable.com",
+    "textBefore": "da: +91 87960 39938 or +91 97089 89937 ,",
+    "textAfter": ""
+   }
+  ],
+  "imageThenLinkOnly": 0,
+  "headings": [
+   "What's inside a SAMAN prefabricated container house when the trailer arrives",
+   "The difference between a prefabricated container house and a prefab container home, explained",
+   "Order day to handover day: what each week between looks like",
+   "Site readiness for a 40 ft fully fitted unit",
+   "Who orders a prefabricated container house: buyer types and use cases",
+   "Frequently asked questions",
+   "How much does a fully-fitted prefabricated container house cost in India?",
+   "What is the difference between a prefabricated container house and a prefab container home?",
+   "How long does it take from order to move-in for a prefabricated container house?",
+   "Can a prefabricated container house be customised, or is it fixed configuration?",
+   "Configure your prefabricated container house",
+   "Certifications and Manufacturer Credentials"
+  ]
+ }
+}
