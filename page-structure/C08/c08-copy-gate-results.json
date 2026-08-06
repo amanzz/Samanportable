@@ -102,101 +102,187 @@
   ]
  },
  "luxury-container-houses": {
-  "renderedWordsL23": 68,
-  "h2": 0,
-  "h3": 0,
+  "renderedWordsL23": 2420,
+  "h2": 10,
+  "h3": 5,
   "h1Page": 1,
   "h1Panel": 0,
-  "images": 2,
-  "badAdjacency": [],
+  "images": 4,
+  "badAdjacency": [
+   [
+    27,
+    "p",
+    "h2"
+   ]
+  ],
   "anchors": [
    {
-    "anchor": "every build style compared",
+    "anchor": "modules repeated to one drawing",
+    "href": "/product/container-houses/prefab-container-homes"
+   },
+   {
+    "anchor": "built for relocation and coastal duty",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "one efficient plan per size",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "delivered as a single completed unit",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "the full container house range",
     "href": "/product/container-houses"
    }
   ],
-  "lonelyLinks": [
-   {
-    "anchor": "every build style compared",
-    "textBefore": "",
-    "textAfter": ""
-   },
-   {
-    "anchor": "every build style compared",
-    "wholeParagraphIsTheLink": true
-   }
-  ],
-  "imageThenLinkOnly": 1,
-  "headings": []
+  "lonelyLinks": [],
+  "imageThenLinkOnly": 0,
+  "headings": [
+   "What makes a container house a luxury one",
+   "Six sizes, and what the finish does to each",
+   "The finish schedule, item by item",
+   "Where this sits against the rest of the range",
+   "What the price includes, and what it does not",
+   "Lighting, power and the things decided before fabrication",
+   "How to brief this build well",
+   "Delivery, site readiness and installation",
+   "Warranty, service life and maintenance",
+   "Questions buyers ask about the luxury build",
+   "Is the structure stronger than the standard container house?",
+   "Can I specify my own finishes?",
+   "How much quieter is the acoustic insulation, really?",
+   "Does full-height glazing make it hot?",
+   "Is it suitable as a permanent home?"
+  ]
  },
  "shipping-container-homes": {
-  "renderedWordsL23": 76,
-  "h2": 0,
-  "h3": 0,
+  "renderedWordsL23": 2104,
+  "h2": 10,
+  "h3": 5,
   "h1Page": 1,
   "h1Panel": 0,
-  "images": 3,
-  "badAdjacency": [],
+  "images": 4,
+  "badAdjacency": [
+   [
+    20,
+    "p",
+    "h2"
+   ],
+   [
+    31,
+    "p",
+    "h2"
+   ],
+   [
+    42,
+    "p",
+    "h2"
+   ]
+  ],
   "anchors": [
    {
-    "anchor": "the six-size range page",
+    "anchor": "the villa-grade interior specification",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "identical factory modules",
+    "href": "/product/container-houses/prefab-container-homes"
+   },
+   {
+    "anchor": "the lowest per-square-foot rate we publish",
+    "href": "/product/container-houses/affordable-container-homes"
+   },
+   {
+    "anchor": "a unit that arrives finished and needs no site team at all",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "our container house range",
     "href": "/product/container-houses"
-   },
-   {
-    "anchor": "the finished building, not the container",
-    "href": "/ship-container-price-in-india"
    }
   ],
-  "lonelyLinks": [
-   {
-    "anchor": "the six-size range page",
-    "textBefore": "",
-    "textAfter": ""
-   },
-   {
-    "anchor": "the finished building, not the container",
-    "textBefore": "",
-    "textAfter": ""
-   },
-   {
-    "anchor": "the six-size range page",
-    "wholeParagraphIsTheLink": true
-   },
-   {
-    "anchor": "the finished building, not the container",
-    "wholeParagraphIsTheLink": true
-   }
-  ],
-  "imageThenLinkOnly": 2,
-  "headings": []
+  "lonelyLinks": [],
+  "imageThenLinkOnly": 0,
+  "headings": [
+   "What \"shipping container home\" means here, and what it does not",
+   "What is actually reinforced, and why",
+   "Six sizes, and how reinforcement changes each",
+   "Coastal and industrial exposure",
+   "Where this sits against the rest of the range",
+   "What the price includes, and what it does not",
+   "Delivery, relocation and installation",
+   "Transport, permits and what to check on arrival",
+   "Warranty, service life and maintenance",
+   "Questions buyers ask about the reinforced build",
+   "Is this made from a real shipping container?",
+   "How many times can it be relocated?",
+   "Do I need this build if I am near the sea but never moving it?",
+   "Can the reinforcement be added to a standard unit later?",
+   "Is it heavier to transport?"
+  ]
  },
  "affordable-container-homes": {
-  "renderedWordsL23": 74,
-  "h2": 0,
-  "h3": 0,
+  "renderedWordsL23": 2130,
+  "h2": 10,
+  "h3": 5,
   "h1Page": 1,
   "h1Panel": 0,
-  "images": 2,
-  "badAdjacency": [],
+  "images": 4,
+  "badAdjacency": [
+   [
+    16,
+    "p",
+    "h2"
+   ],
+   [
+    28,
+    "p",
+    "h2"
+   ]
+  ],
   "anchors": [
    {
-    "anchor": "all five container home builds",
+    "anchor": "the hospitality-grade finish",
+    "href": "/product/container-houses/luxury-container-houses"
+   },
+   {
+    "anchor": "a heavier shell engineered for relocation",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "anchor": "repeatable modules for colony work",
+    "href": "/product/container-houses/prefab-container-homes"
+   },
+   {
+    "anchor": "the fitted single-unit route",
+    "href": "/product/container-houses/prefabricated-container-house"
+   },
+   {
+    "anchor": "every container house we build",
     "href": "/product/container-houses"
    }
   ],
-  "lonelyLinks": [
-   {
-    "anchor": "all five container home builds",
-    "textBefore": "",
-    "textAfter": ""
-   },
-   {
-    "anchor": "all five container home builds",
-    "wholeParagraphIsTheLink": true
-   }
-  ],
-  "imageThenLinkOnly": 1,
-  "headings": []
+  "lonelyLinks": [],
+  "imageThenLinkOnly": 0,
+  "headings": [
+   "How the price comes down, and where it does not",
+   "The six fixed plans",
+   "What is optional, and priced separately",
+   "Where this sits against the rest of the range",
+   "Who this build is genuinely right for",
+   "Delivery, site readiness and installation",
+   "How this compares with building conventionally",
+   "Phasing a purchase",
+   "Warranty and service life",
+   "Questions buyers ask about the fixed-plan build",
+   "Is anything structurally cheaper about this build?",
+   "Can I move a window?",
+   "Why is the kitchen not included?",
+   "Is the warranty shorter?",
+   "Can I upgrade the finishes later?"
+  ]
  },
  "prefabricated-container-house": {
   "renderedWordsL23": 2054,

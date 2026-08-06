@@ -42,6 +42,33 @@ PAGES = {
             ('40x12', 'I03'),   # 4 interior bedroom, 40x12 as instructed
         ],
     },
+    'luxury-container-houses': {
+        'file': 'C08-COPY-03-luxury-container-houses-06Aug2026.md',
+        'slots': [
+            ('40x12', 'E06'),   # 1 exterior hero, 40x12 as instructed
+            ('20x10', 'I02'),   # 2 interior kitchen/dining, 20x10 as instructed
+            ('20x12', 'E03'),   # 3 exterior different angle, 20x12 as instructed
+            ('40x8', 'I04'),    # 4 interior bathroom, 40x8 as instructed
+        ],
+    },
+    'shipping-container-homes': {
+        'file': 'C08-COPY-04-shipping-container-homes-06Aug2026.md',
+        'slots': [
+            ('40x10', 'E04'),   # 1 exterior rear view, 40x10 as instructed
+            ('20x10', 'I02'),   # 2 interior "living or entry" — SIZE AND FAMILY DEVIATE, see report
+            ('40x12', 'E06'),   # 3 exterior elevated/three-quarter, 40x12 as instructed
+            ('20x12', 'I03'),   # 4 interior bedroom, 20x12 as instructed
+        ],
+    },
+    'affordable-container-homes': {
+        'file': 'C08-COPY-05-affordable-container-homes-06Aug2026.md',
+        'slots': [
+            ('20x10', 'E06'),   # 1 exterior hero, 20x10 as instructed
+            ('40x10', 'I02'),   # 2 interior kitchen/dining — SIZE DEVIATES, see report
+            ('40x12', 'E05'),   # 3 exterior "end" view — SIZE DEVIATES, see report
+            ('20x8', 'I04'),    # 4 interior bathroom, 20x8 as instructed
+        ],
+    },
 }
 
 IMAGE_MARKER = re.compile(r'^\*\*\[IMAGE (\d)[^\]]*\]\*\*$')
