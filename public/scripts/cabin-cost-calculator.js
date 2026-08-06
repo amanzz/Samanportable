@@ -329,7 +329,7 @@
   };
 
   function drawPlanView(group, g) {
-    const f = planFrame(g, 46);
+    const f = planFrame(g, 54);
     const next = document.createDocumentFragment();
     next.append(svgEl('rect', { x: f.x, y: f.y, width: f.w, height: f.h, class: 'dw-shell' }));
     let run = 0;
@@ -341,9 +341,28 @@
     g.doors.concat(g.windows).forEach((item, i) => {
       const isDoor = i < g.doors.length;
       const [cx, cy] = wallPointAt(f, item.wall, item.position);
-      next.append(isDoor
-        ? svgEl('circle', { cx, cy, r: 5, class: 'dw-door' })
-        : svgEl('rect', { x: cx - 6, y: cy - 3, width: 12, height: 6, class: 'dw-window' }));
+      // A real break in the wall, with a swing arc on a door. The browser draws
+      // what the server draws; a circle sitting on the line is not a plan.
+      const horizontal = item.wall === 'Front' || item.wall === 'Rear';
+      const half = isDoor ? 7 : 8;
+      const inward = item.wall === 'Front' ? -1 : item.wall === 'Rear' ? 1 : 0;
+      const inwardX = item.wall === 'Left' ? 1 : item.wall === 'Right' ? -1 : 0;
+      next.append(horizontal
+        ? svgEl('line', { x1: cx - half, y1: cy, x2: cx + half, y2: cy, class: 'dw-break' })
+        : svgEl('line', { x1: cx, y1: cy - half, x2: cx, y2: cy + half, class: 'dw-break' }));
+      if (isDoor) {
+        const ex = cx - half + inwardX * half * 2;
+        const ey = cy + inward * half * 2;
+        next.append(svgEl('path', {
+          d: `M ${cx - half} ${cy} A ${half * 2} ${half * 2} 0 0 1 ${inwardX ? ex : cx + half} ${inwardX ? ey : ey}`,
+          class: 'dw-swing',
+        }));
+        next.append(svgEl('line', { x1: cx - half, y1: cy, x2: ex, y2: ey, class: 'dw-door-leaf' }));
+      } else {
+        next.append(horizontal
+          ? svgEl('line', { x1: cx - half, y1: cy, x2: cx + half, y2: cy, class: 'dw-window' })
+          : svgEl('line', { x1: cx, y1: cy - half, x2: cx, y2: cy + half, class: 'dw-window' }));
+      }
       const lx = item.wall === 'Left' ? cx - 12 : item.wall === 'Right' ? cx + 12 : cx;
       const ly = item.wall === 'Rear' ? cy - 8 : item.wall === 'Front' ? cy + 14 : cy - 8;
       next.append(svgEl('text', { x: lx, y: ly, class: 'dw-code' }, item.code));
@@ -353,7 +372,12 @@
     next.append(svgEl('line', { x1: f.x, y1: dimY, x2: f.x + f.w, y2: dimY, class: 'dw-dim' }));
     next.append(svgEl('text', { x: f.x + f.w / 2, y: dimY - 5, class: 'dw-dim-text', 'data-dim-length': '' }, feetInches(g.length)));
     next.append(svgEl('line', { x1: dimX, y1: f.y, x2: dimX, y2: f.y + f.h, class: 'dw-dim' }));
-    next.append(svgEl('text', { x: dimX - 4, y: f.y + f.h / 2, class: 'dw-dim-text dw-dim-vertical', 'data-dim-width': '' }, feetInches(g.width)));
+    // Rotated, not right-aligned into the margin: at anchor end it ran off
+    // the left of the viewBox and the width read as a clipped stub.
+    next.append(svgEl('text', {
+      x: dimX - 6, y: f.y + f.h / 2, class: 'dw-dim-text',
+      transform: `rotate(-90  )`, 'data-dim-width': '',
+    }, feetInches(g.width)));
     next.append(svgEl('text', { x: VIEW_W / 2, y: 18, class: 'dw-title' }, '2D Plan'));
     group.replaceChildren(next);
   }
@@ -370,8 +394,10 @@
       const room = svgEl('g', { class: 'dw-room', 'data-room': index + 1 });
       room.append(svgEl('rect', { x: bx + 2, y: f.y + 2, width: Math.max(0, bw - 4), height: f.h - 4, class: 'dw-room-fill' }));
       room.append(svgEl('text', { x: bx + bw / 2, y: f.y + f.h / 2 - 4, class: 'dw-room-code' }, `R${index + 1}`));
-      room.append(svgEl('text', { x: bx + bw / 2, y: f.y + f.h / 2 + 10, class: 'dw-room-size' },
-        `${feetInches(roomLength)} × ${feetInches(g.width)}`));
+      // Short label, never a dimension string. Dimensions belong to the 2D
+      // Plan; repeating them here made the two views read as the same drawing
+      // with different fills.
+      room.append(svgEl('text', { x: bx + bw / 2, y: f.y + f.h / 2 + 11, class: 'dw-room-size' }, `Room ${index + 1}`));
       next.append(room);
     });
     next.append(svgEl('text', { x: VIEW_W / 2, y: 18, class: 'dw-title' }, 'Floor Plan'));
@@ -453,12 +479,35 @@
     if (!form) return null;
     const g = readGeometry(form);
     syncRoomLengthInputs(root, form, g);
+    /*
+     * The drawing renders in three places - step 2, step 5 and step 6 - and all
+     * nine tabs share the radio name "planView". That makes them one radio
+     * group, so only one of the nine was ever checked: the other two viewers
+     * showed no tab selected at all, and clicking one silently deselected
+     * another. One preference across all three viewers is the right behaviour,
+     * so the preference is kept and every viewer is shown holding it.
+     */
+    root.querySelectorAll('[name="planView"]').forEach((radio) => {
+      radio.checked = radio.value === planView;
+    });
     root.querySelectorAll('[data-floor-plan]').forEach((svg) => {
       svg.dataset.view = planView;
       svg.setAttribute('aria-label',
         `Cabin drawing, ${length} by ${width} feet, ${area} square feet: 2D plan, floor plan and four elevations`);
       svg.querySelectorAll('[data-plan-view]').forEach((group) => {
-        group.hidden = group.dataset.planView !== planView;
+        /*
+         * setAttribute, not `.hidden`.
+         *
+         * `hidden` is an IDL attribute of HTMLElement. These groups are SVG
+         * elements, so `group.hidden = true` set a plain JS property on them
+         * and changed nothing on screen. The server-rendered `hidden` content
+         * attribute was the only thing controlling display, and it was never
+         * touched again - so the 2D Plan stayed visible and the other two
+         * stayed hidden no matter which tab was clicked. The tab did change
+         * the radio, the dataset and the redraw; the picture could not follow.
+         */
+        if (group.dataset.planView === planView) group.removeAttribute('hidden');
+        else group.setAttribute('hidden', '');
         if (group.dataset.planView === 'plan') drawPlanView(group, g);
         else if (group.dataset.planView === 'floor') drawFloorView(group, g);
         else drawElevationsView(group, g);

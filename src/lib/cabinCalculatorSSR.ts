@@ -1675,6 +1675,40 @@ fieldset{
 .cabin-calculator-ssr .socket-nudge input { width: 44px; min-width: 44px; }
 
 }
+
+/* ===== ONE STEP OF ELEVATION, AND NO MORE ==============================
+   Panels lift off the ground with a 1px top highlight above the hairline.
+   The drawing sits one step darker than the panel it is on. The estimate
+   total comes down from 30px: it was the loudest thing on the screen.
+   No gradient anywhere except the summary header bar.
+   ====================================================================== */
+.cabin-calculator-ssr .step-card,
+.cabin-calculator-ssr .calculator-grid > .estimate-card,
+.cabin-calculator-ssr .calculator-intro,
+.cabin-calculator-ssr .construction-disclosure {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.cabin-calculator-ssr .drawing-viewer .floor-plan,
+.cabin-calculator-ssr .entry-plan {
+  background: var(--calc-inset);
+  border: 1px solid var(--calc-hairline);
+  border-radius: 16px;
+}
+.cabin-calculator-ssr .estimate-card .total strong { font-size: 26px; }
+
+/* Alternating room tints, so adjacent rooms read apart without colour. */
+.cabin-calculator-ssr .dw-room:nth-child(odd) .dw-room-fill { fill: var(--calc-panel); }
+.cabin-calculator-ssr .dw-room:nth-child(even) .dw-room-fill { fill: var(--calc-card); }
+
+/* Dimension strings sit lighter than the outline they measure. */
+.cabin-calculator-ssr .dw-dim-text { font-weight: 400; }
+.cabin-calculator-ssr .dw-ext { stroke: var(--calc-text-3); stroke-width: 0.8; }
+.cabin-calculator-ssr .dw-tick { stroke: var(--calc-text-3); stroke-width: 1.2; }
+.cabin-calculator-ssr .dw-swing { fill: none; stroke: var(--calc-text-2); stroke-width: 1; stroke-dasharray: 3 2; }
+.cabin-calculator-ssr .dw-door-leaf { stroke: var(--calc-text); stroke-width: 1.6; }
+.cabin-calculator-ssr .dw-break { stroke: var(--calc-inset); stroke-width: 3.2; }
+
+.cabin-calculator-ssr .drawing-key { margin: 6px 0 0; font-size: 10px; letter-spacing: 0.04em; color: var(--calc-text-3); }
 `;
 
 export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
@@ -2207,7 +2241,7 @@ function wallPointAt(frame: { x: number; y: number; w: number; h: number }, wall
 
 /** VIEW 1 - the dimensioned plan. Outline, overall dimensions, named openings. */
 function renderPlanView(g: DrawGeometry): string {
-  const f = planFrame(g, 46);
+  const f = planFrame(g, 54);
   const partitions = g.roomLengths.slice(0, -1).map((_, index) => {
     const at = f.x + (g.roomLengths.slice(0, index + 1).reduce((a, b) => a + b, 0) / g.length) * f.w;
     return `<line x1="${at.toFixed(1)}" y1="${f.y}" x2="${at.toFixed(1)}" y2="${f.y + f.h}" class="dw-partition"/>`;
@@ -2217,9 +2251,18 @@ function renderPlanView(g: DrawGeometry): string {
     ...g.windows.map((w) => ({ ...w, kind: 'window' as const })),
   ].map((item) => {
     const [cx, cy] = wallPointAt(f, item.wall, item.position);
+    // A real break in the wall, with a swing arc on a door. Not a shape
+    // sitting on top of the line.
+    const horizontal = item.wall === 'Front' || item.wall === 'Rear';
+    const half = item.kind === 'door' ? 7 : 8;
+    const breakLine = horizontal
+      ? `<line x1="${(cx - half).toFixed(1)}" y1="${cy.toFixed(1)}" x2="${(cx + half).toFixed(1)}" y2="${cy.toFixed(1)}" class="dw-break"/>`
+      : `<line x1="${cx.toFixed(1)}" y1="${(cy - half).toFixed(1)}" x2="${cx.toFixed(1)}" y2="${(cy + half).toFixed(1)}" class="dw-break"/>`;
+    const inward = item.wall === 'Front' ? -1 : item.wall === 'Rear' ? 1 : 0;
+    const inwardX = item.wall === 'Left' ? 1 : item.wall === 'Right' ? -1 : 0;
     const mark = item.kind === 'door'
-      ? `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="5" class="dw-door"/>`
-      : `<rect x="${(cx - 6).toFixed(1)}" y="${(cy - 3).toFixed(1)}" width="12" height="6" class="dw-window"/>`;
+      ? `${breakLine}<path d="M ${(cx - half).toFixed(1)} ${cy.toFixed(1)} A ${(half * 2).toFixed(1)} ${(half * 2).toFixed(1)} 0 0 1 ${(cx + inwardX * half * 2 - (inwardX ? 0 : half)).toFixed(1)} ${(cy + inward * half * 2).toFixed(1)}" class="dw-swing"/><line x1="${(cx - half).toFixed(1)}" y1="${cy.toFixed(1)}" x2="${(cx - half + inwardX * half * 2).toFixed(1)}" y2="${(cy + inward * half * 2).toFixed(1)}" class="dw-door-leaf"/>`
+      : `${breakLine}${horizontal ? `<line x1="${(cx - half).toFixed(1)}" y1="${cy.toFixed(1)}" x2="${(cx + half).toFixed(1)}" y2="${cy.toFixed(1)}" class="dw-window"/>` : `<line x1="${cx.toFixed(1)}" y1="${(cy - half).toFixed(1)}" x2="${cx.toFixed(1)}" y2="${(cy + half).toFixed(1)}" class="dw-window"/>`}`;
     const lx = item.wall === 'Left' ? cx - 12 : item.wall === 'Right' ? cx + 12 : cx;
     const ly = item.wall === 'Rear' ? cy - 8 : item.wall === 'Front' ? cy + 14 : cy - 8;
     return `${mark}<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="dw-code">${esc(item.code)}</text>`;
@@ -2231,7 +2274,9 @@ function renderPlanView(g: DrawGeometry): string {
     + `<line x1="${f.x}" y1="${dimY}" x2="${f.x + f.w}" y2="${dimY}" class="dw-dim"/>`
     + `<text x="${f.x + f.w / 2}" y="${dimY - 5}" class="dw-dim-text" data-dim-length>${esc(feetInches(g.length))}</text>`
     + `<line x1="${dimX}" y1="${f.y}" x2="${dimX}" y2="${f.y + f.h}" class="dw-dim"/>`
-    + `<text x="${dimX - 4}" y="${f.y + f.h / 2}" class="dw-dim-text dw-dim-vertical" data-dim-width>${esc(feetInches(g.width))}</text>`
+    // Rotated, not right-aligned into the margin: at anchor end it ran off the
+    // left of the viewBox and the width read as a clipped stub.
+    + `<text x="${dimX - 6}" y="${f.y + f.h / 2}" class="dw-dim-text" transform="rotate(-90 ${dimX - 6} ${f.y + f.h / 2})" data-dim-width>${esc(feetInches(g.width))}</text>`
     + `<text x="${VIEW_W / 2}" y="18" class="dw-title">2D Plan</text>`
     + `</g>`;
 }
@@ -2247,7 +2292,10 @@ function renderFloorView(g: DrawGeometry): string {
     return `<g class="dw-room" data-room="${index + 1}">`
       + `<rect x="${(bx + 2).toFixed(1)}" y="${(f.y + 2).toFixed(1)}" width="${Math.max(0, bw - 4).toFixed(1)}" height="${(f.h - 4).toFixed(1)}" class="dw-room-fill"/>`
       + `<text x="${(bx + bw / 2).toFixed(1)}" y="${(f.y + f.h / 2 - 4).toFixed(1)}" class="dw-room-code">R${index + 1}</text>`
-      + `<text x="${(bx + bw / 2).toFixed(1)}" y="${(f.y + f.h / 2 + 10).toFixed(1)}" class="dw-room-size">${esc(feetInches(roomLength))} × ${esc(feetInches(g.width))}</text>`
+      // Short label, never a dimension string. Dimensions belong to the 2D
+      // Plan; repeating them here made the two views read as the same drawing
+      // with different fills.
+      + `<text x="${(bx + bw / 2).toFixed(1)}" y="${(f.y + f.h / 2 + 11).toFixed(1)}" class="dw-room-size">Room ${index + 1}</text>`
       + `</g>`;
   }).join('');
   return `<g data-plan-view="floor" data-view-name="Floor Plan" hidden>`
@@ -2320,6 +2368,7 @@ function renderDrawing(config: CalculatorConfig, basePrice: number | null): stri
     // Ruling, 05 Aug: codes stay on the drawing where space is tight, and
     // everything a buyer reads uses words. This line is the bridge between the
     // two, so nobody has to learn a code to read their own quotation.
+    + `<p class="drawing-key">R = room &middot; D = door &middot; W = window</p>`
     + `<p class="drawing-legend"><small>On the drawing, R1 is Room 1, D1 is Door 1 and W1 is Window 1. Every control and every line of your quotation uses the full words.</small></p>`
     + `<div class="drawing-tiles">`
     + `<div class="drawing-tile"><small>Carpet Area</small><strong data-carpet-area>${g.carpetAreaSqft.toLocaleString('en-IN', { maximumFractionDigits: 0 })} sq ft</strong></div>`
@@ -2439,14 +2488,22 @@ export const CALCULATOR_ENTRY_STYLES = `
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: #0E1729;
+  /* The gradient is already here so a confirmed background image drops in
+     behind it without touching the layout. No image is used yet: the only
+     folder offered holds 480x480 certification marks. */
+  background-color: #0E1729;
+  background-image: linear-gradient(90deg, rgba(14,23,41,0.94) 0%, rgba(14,23,41,0.72) 55%, rgba(14,23,41,0.35) 100%);
+  background-size: cover;
+  background-position: center;
   color: #EAF0F7;
   padding: 28px 0;
 }
 .calc-entry-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr; gap: 20px; }
-.calc-entry-eyebrow { margin: 0 0 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: rgba(234,240,247,0.64); }
-.calc-entry-headline { margin: 0 0 8px; font-size: 26px; line-height: 1.2; font-weight: 700; color: #EAF0F7; }
-.calc-entry-line { margin: 0 0 14px; font-size: 14px; line-height: 1.45; color: rgba(234,240,247,0.64); }
+.calc-entry-copy { max-width: 700px; }
+.calc-entry-eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #E0A340; }
+.calc-entry-headline { margin: 0 0 10px; font-size: 34px; line-height: 1.18; font-weight: 700; color: #EAF0F7; }
+.calc-entry-price { color: #E0A340; }
+.calc-entry-line { margin: 0 0 16px; font-size: 15px; font-weight: 400; line-height: 1.45; color: rgba(234,240,247,0.64); }
 .calc-entry-cta {
   display: inline-flex; align-items: center; justify-content: center;
   height: 46px; min-height: 46px; padding: 0 22px;
@@ -2454,7 +2511,7 @@ export const CALCULATOR_ENTRY_STYLES = `
   font-size: 15px; font-weight: 700; text-decoration: none; border-radius: 8px;
 }
 .calc-entry-cta:hover, .calc-entry-cta:focus { background: #E0A340; color: #0E1729; }
-.calc-entry-trust { margin: 10px 0 0; font-size: 12px; color: rgba(234,240,247,0.64); }
+.calc-entry-trust { margin: 12px 0 0; font-size: 12px; font-weight: 400; color: rgba(234,240,247,0.46); }
 .calc-entry-preview { background: #121C31; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px; }
 .calc-entry-preview .entry-plan { width: 100%; height: auto; display: block; background: none; border: 0; }
 .calc-entry-caption { margin: 6px 0 0; font-size: 11px; text-align: center; color: rgba(234,240,247,0.46); }
@@ -2511,17 +2568,17 @@ export function renderCalculatorEntrySection(options: {
     + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
     + `<div class="calc-entry-inner">`
     + `<div class="calc-entry-copy">`
-    + `<p class="calc-entry-eyebrow" data-copy-slot="eyebrow">BUILD YOURS</p>`
+    + `<p class="calc-entry-eyebrow" data-copy-slot="eyebrow">PRICE IT YOURSELF</p>`
     + `<h2 id="calc-entry-title" class="calc-entry-headline" data-copy-slot="headline">`
-    + `${esc(options.productName)}${entry ? ` from ${money(entry.ex as number)}` : ''}</h2>`
+    + `${entry ? `Your ${esc(options.productName)} from <span class="calc-entry-price">${money(entry.ex as number)}</span>` : `Design your ${esc(options.productName)}`}</h2>`
     + `<p class="calc-entry-line" data-copy-slot="subline">`
-    + `Placeholder: one line on what the tool does. Copy to be supplied.</p>`
-    + `<a class="calc-entry-cta" href="${esc(href)}" data-copy-slot="cta">Build yours</a>`
-    + `<p class="calc-entry-trust" data-copy-slot="trust">Fixed-price quote within 48 hours</p>`
+    + `Set the size, choose the finish, watch the price move as you go.</p>`
+    + `<a class="calc-entry-cta" href="${esc(href)}" data-copy-slot="cta">Start your design</a>`
+    + `<p class="calc-entry-trust" data-copy-slot="trust">Fixed-price quote within 48 hours. Built in our own works.</p>`
     + `</div>`
     + `<div class="calc-entry-preview" aria-hidden="false">`
     + `${renderProductPlanPreview(options.productId, options.ladderKey)}`
-    + `<p class="calc-entry-caption" data-copy-slot="caption">${size.length} x ${size.width} ft, our published size</p>`
+    + `<p class="calc-entry-caption" data-copy-slot="caption">${size.length} x ${size.width} ft shown - your size redraws it</p>`
     + `</div>`
     + `</div></section>`;
 }
