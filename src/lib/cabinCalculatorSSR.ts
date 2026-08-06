@@ -2554,29 +2554,49 @@ function renderWindowCard(window: WindowConfig, index: number, reserved: boolean
 export const CALCULATOR_ENTRY_STYLES = `
 /* ===== THE CALCULATOR ENTRY BAND ON PRODUCT PAGES ======================= */
 .calc-entry {
-  /* Not full bleed. The image is 1024 wide and a 1440 band would upscale it
-     1.41x and crop 43% of its height, so the image is a contained column
-     instead and the band keeps the ground colour behind the words. */
+  /* Full bleed. The photograph IS the band.
+     The source is 1024x434, so at 1440 it upscales 1.41x and at 1920, 1.88x.
+     That softening is accepted: the scrim covers the left 60% where an edge
+     would show it, and the visible right third is foliage already thrown out
+     of focus, which carries an upscale far better than a hard edge. The file
+     on disk is untouched - the browser does the scaling. */
+  position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: #0E1729;
+  background-color: #0E1729;
   color: #EAF0F7;
-  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.calc-entry-photo,
+.calc-entry-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.calc-entry-photo img { object-fit: cover; object-position: center right; }
+.calc-entry-scrim {
+  position: absolute;
+  inset: 0;
+  /* Rotated to 180deg below 1024 so it darkens from the bottom. */
+  background: linear-gradient(180deg, rgba(14,23,41,0.35) 0%, rgba(14,23,41,0.72) 45%, rgba(14,23,41,0.95) 100%);
 }
 .calc-entry-inner {
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  align-items: stretch;
+  padding: 48px 20px;
+  display: flex;
+  align-items: center;
 }
-.calc-entry-copy { max-width: 700px; padding: 28px 20px; }
+.calc-entry-copy { max-width: 600px; }
 .calc-entry-eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #E0A340; }
 .calc-entry-headline { margin: 0 0 10px; font-size: 30px; line-height: 1.18; font-weight: 700; color: #EAF0F7; }
 .calc-entry-price { color: #E0A340; }
-.calc-entry-line { margin: 0 0 16px; font-size: 15px; font-weight: 400; line-height: 1.45; color: rgba(234,240,247,0.64); }
+.calc-entry-line { margin: 0 0 16px; font-size: 15px; font-weight: 400; line-height: 1.45; color: rgba(234,240,247,0.72); }
 .calc-entry-cta {
   display: inline-flex; align-items: center; justify-content: center;
   height: 46px; min-height: 46px; padding: 0 22px;
@@ -2585,60 +2605,18 @@ export const CALCULATOR_ENTRY_STYLES = `
   border: none; cursor: pointer;
 }
 .calc-entry-cta:hover, .calc-entry-cta:focus { background: #E0A340; color: #0E1729; }
-.calc-entry-trust { margin: 12px 0 0; font-size: 12px; font-weight: 400; color: rgba(234,240,247,0.46); }
-
-/* The visual column: the photograph, with the drawing floating over it.
-   Below 1024 it comes FIRST - image above, text below, drawing card inline -
-   and the photograph keeps its own 1024x434 aspect rather than being stretched
-   to a column height that only exists on desktop. */
-.calc-entry-visual { position: relative; order: -1; }
-.calc-entry-photo { display: block; }
-.calc-entry-photo img { aspect-ratio: 1024 / 434; height: auto; }
-.calc-entry-photo img {
-  display: block; width: 100%; height: 100%;
-  object-fit: cover; object-position: center;
-  border-radius: 16px;
-}
-.calc-entry-plancard {
-  position: relative;
-  margin: 12px 16px 16px;
-  background: rgba(18,28,49,0.92);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 8px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.42);
-}
-.calc-entry-plancard .entry-plan { width: 100%; height: auto; display: block; background: none; border: 0; }
-.calc-entry-caption { margin: 4px 0 0; font-size: 11px; text-align: center; color: rgba(234,240,247,0.46); }
-.calc-entry .dw-shell { fill: none; stroke: #EAF0F7; stroke-width: 1.6; }
-.calc-entry .dw-partition { stroke: rgba(234,240,247,0.64); stroke-width: 1.2; stroke-dasharray: 5 3; }
-.calc-entry .dw-door { fill: #EAF0F7; stroke: none; }
-.calc-entry .dw-door-leaf { stroke: #EAF0F7; stroke-width: 1.6; }
-.calc-entry .dw-swing { fill: none; stroke: rgba(234,240,247,0.64); stroke-width: 1; stroke-dasharray: 3 2; }
-.calc-entry .dw-break { stroke: #121C31; stroke-width: 3.2; }
-.calc-entry .dw-window { fill: none; stroke: #EAF0F7; stroke-width: 1.4; }
-.calc-entry .dw-dim { stroke: rgba(234,240,247,0.46); stroke-width: 1; }
-.calc-entry .dw-dim-text { fill: rgba(234,240,247,0.64); font-size: 11px; text-anchor: middle; font-weight: 400; }
-.calc-entry .dw-title { fill: rgba(234,240,247,0.64); font-size: 11px; letter-spacing: 0.06em; text-anchor: middle; text-transform: uppercase; }
-.calc-entry .dw-code { fill: rgba(234,240,247,0.64); font-size: 9px; text-anchor: middle; }
+.calc-entry-trust { margin: 12px 0 0; font-size: 12px; font-weight: 400; color: rgba(234,240,247,0.56); }
 
 @media (min-width: 1024px) {
-  /* 46 / 54, with a hairline down the seam. Band about 420px tall. */
-  .calc-entry-inner { grid-template-columns: 46% 54%; }
-  .calc-entry-copy {
-    align-self: center;
-    padding: 40px 40px 40px 20px;
-    border-right: 1px solid rgba(255,255,255,0.08);
+  .calc-entry-scrim {
+    background: linear-gradient(90deg,
+      rgba(14,23,41,0.97) 0%,
+      rgba(14,23,41,0.92) 38%,
+      rgba(14,23,41,0.55) 62%,
+      rgba(14,23,41,0.15) 100%);
   }
+  .calc-entry-inner { min-height: 420px; padding: 0 20px; }
   .calc-entry-headline { font-size: 34px; }
-  .calc-entry-visual { order: 0; min-height: 420px; padding: 20px 20px 20px 24px; }
-  .calc-entry-photo { position: absolute; inset: 20px 20px 20px 24px; }
-  .calc-entry-photo img { aspect-ratio: auto; height: 100%; }
-  /* Bottom right, 24px in from both edges of the photograph. */
-  .calc-entry-plancard {
-    position: absolute; right: 44px; bottom: 44px;
-    width: 300px; margin: 0;
-  }
 }
 `;
 
@@ -2675,7 +2653,6 @@ export function renderCalculatorEntrySection(options: {
   const product = productFor(options.productId as ProductId);
   const rows = productPriceRows(product, options.ladderKey ?? product.ladderKey);
   const entry = rows.find((row) => row.ex !== null && row.ex !== undefined);
-  const size = defaultSizeFor(product, options.ladderKey);
     // An in-page anchor, not a route. The whole calculator is already embedded
   // further down this page; sending the buyer to /cabin-cost-calculator threw
   // away the product context and the scroll position. The standalone route
@@ -2683,6 +2660,11 @@ export function renderCalculatorEntrySection(options: {
   const href = options.href || '#cabin-calculator';
   return `<style>${CALCULATOR_ENTRY_STYLES}</style>`
     + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
+    + `<picture class="calc-entry-photo">`
+    + `<source srcset="/credentials/optimized/calculator-background-banner.webp" type="image/webp">`
+    + `<img src="/credentials/optimized/calculator-background-banner.jpg" alt="" width="1024" height="434" loading="lazy" decoding="async">`
+    + `</picture>`
+    + `<div class="calc-entry-scrim" aria-hidden="true"></div>`
     + `<div class="calc-entry-inner">`
     + `<div class="calc-entry-copy">`
     + `<p class="calc-entry-eyebrow" data-copy-slot="eyebrow">PRICE IT YOURSELF</p>`
@@ -2692,18 +2674,7 @@ export function renderCalculatorEntrySection(options: {
     + `Set the size, choose the finish, watch the price move as you go.</p>`
     + `<a class="calc-entry-cta" href="${esc(href)}" data-copy-slot="cta" aria-controls="cabin-calculator" aria-expanded="true">Start your design</a>`
     + `<p class="calc-entry-trust" data-copy-slot="trust">Fixed-price quote within 48 hours. Built in our own works.</p>`
-    + `</div>`
-    + `<div class="calc-entry-visual">`
-    + `<picture class="calc-entry-photo">`
-    + `<source srcset="/credentials/optimized/calculator-background-banner.webp" type="image/webp">`
-    + `<img src="/credentials/optimized/calculator-background-banner.jpg" alt="" width="1024" height="434" loading="lazy" decoding="async">`
-    + `</picture>`
-    + `<div class="calc-entry-plancard">`
-    + `${renderProductPlanPreview(options.productId, options.ladderKey)}`
-    + `<p class="calc-entry-caption" data-copy-slot="caption">${size.length} x ${size.width} ft shown - your size redraws it</p>`
-    + `</div>`
-    + `</div>`
-    + `</div></section>`;
+    + `</div></div></section>`;
 }
 
 export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}): string {
