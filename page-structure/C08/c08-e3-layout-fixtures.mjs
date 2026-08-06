@@ -131,5 +131,13 @@ check('every injected image has copy immediately before and after (mixed)',
 check('imageCapacity reports what the copy can legally hold',
   [imageCapacity(paraBlocks(3)), imageCapacity(paraBlocks(9)), imageCapacity(mixed)], [2, 8, 2]);
 
+
+// E6: a copy block must be a PARAGRAPH. A heading is text, and the looser test
+// let an image land between an FAQ question and its answer on page six.
+check('a heading is NOT a copy block', isCopyBlock('<h3>Question?</h3>'), false);
+check('an h2 is NOT a copy block', isCopyBlock('<h2>Section</h2>'), false);
+const faq = ['<p>lead</p>', '<h3>Q?</h3>', '<p>A.</p>', '<p>more</p>', '<p>tail</p>'];
+check('no slot splits a question from its answer', imageSlots(faq, 4), [2, 3]);
+
 console.log(failures ? `${failures} FIXTURE(S) FAILED` : 'all fixtures pass');
 process.exit(failures ? 1 : 0);

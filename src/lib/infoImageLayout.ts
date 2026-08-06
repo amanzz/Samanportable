@@ -99,6 +99,11 @@ export function splitTopLevelBlocks(html: string): string[] {
  */
 export function isCopyBlock(block: string): boolean {
   if (/<img\b/i.test(block)) return false;
+  // A PARAGRAPH, not merely a block with words in it. A heading is text too, and
+  // the looser test let an image land between an FAQ question and its answer on
+  // page six — the image split the pair. Requiring <p> on both sides also keeps
+  // an image from being wedged between a heading and the section it introduces.
+  if (!/^\s*<p\b/i.test(block)) return false;
   const text = block.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').trim();
   return text.length > 0;
 }
