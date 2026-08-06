@@ -47,19 +47,13 @@
   ]
  },
  "prefab-container-homes": {
-  "renderedWordsL23": 1647,
-  "h2": 8,
-  "h3": 4,
+  "renderedWordsL23": 2359,
+  "h2": 10,
+  "h3": 6,
   "h1Page": 1,
   "h1Panel": 0,
   "images": 4,
-  "badAdjacency": [
-   [
-    33,
-    "p",
-    "h2"
-   ]
-  ],
+  "badAdjacency": [],
   "anchors": [
    {
     "anchor": "luxury container house range",
@@ -80,6 +74,10 @@
    {
     "anchor": "container houses hub",
     "href": "/product/container-houses"
+   },
+   {
+    "anchor": "labour colony work",
+    "href": "/product/labor-colony"
    }
   ],
   "lonelyLinks": [],
@@ -89,6 +87,8 @@
    "Six sizes, and how each behaves as a repeated module",
    "How the module is built",
    "Colony and multi-unit work",
+   "What the price includes, and what it does not",
+   "What a repeat order actually looks like",
    "Where this sits against the rest of the range",
    "Delivery, site readiness and installation",
    "Warranty and service life",
@@ -96,6 +96,8 @@
    "Can I order one now and more later?",
    "Do two modules actually join, or just sit next to each other?",
    "Is a module cheaper than a one-off?",
+   "Can modules be used for workforce accommodation rather than family housing?",
+   "How long does a module last?",
    "What is the largest colony you have delivered?"
   ]
  },

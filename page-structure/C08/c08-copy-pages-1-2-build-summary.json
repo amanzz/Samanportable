@@ -69,13 +69,13 @@
  "prefab-container-homes": {
   "sourceFile": "C08-COPY-02-prefab-container-homes-05Aug2026.md",
   "blocks": {
-   "h2": 8,
-   "h3": 4,
-   "p": 31,
+   "h2": 10,
+   "h3": 6,
+   "p": 43,
    "image": 4
   },
-  "htmlChars": 10838,
-  "renderedWords": 1659,
+  "htmlChars": 15090,
+  "renderedWords": 2371,
   "anchors": [
    {
     "anchor": "luxury container house range",
@@ -96,6 +96,10 @@
    {
     "anchor": "container houses hub",
     "href": "/product/container-houses"
+   },
+   {
+    "anchor": "labour colony work",
+    "href": "/product/labor-colony"
    }
   ],
   "images": [
