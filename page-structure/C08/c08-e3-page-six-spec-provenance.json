@@ -195,12 +195,19 @@
   }
  ],
  "l16DenominatorMethod": {
-  "ruling": "C08-E3 ruling 3 (Fable 5, 05 Aug 2026) — FIXED METHOD for every future L16 measurement.",
-  "rule": "The denominator is the number of rows actually built. Rows with no permitted source are excluded entirely: they cannot participate in a divergence measurement, so they count neither as divergent nor as matching.",
+  "ruling": "C08 CLOSE-OUT reissue (Fable 5, 06 Aug 2026). FIXED METHOD for every future L16 measurement on any cluster.",
+  "rule": "The denominator is the number of rows actually built. Rows with no permitted source cannot participate in a divergence measurement, so they count neither as divergent nor as matching and do not count against the page.",
   "appliedHere": {
    "rowsBuilt": 27,
    "rowsOmitted": 3,
    "denominator": 27
+  },
+  "gate1Ruling": "The two insulation facts sourced from the Common Material Key are APPROVED for page six. Ruling states Gate 1 stands at 17/27 = 63.0% PASS.",
+  "measuredAsBuilt": {
+   "divergingRows": 19,
+   "denominator": 27,
+   "percent": 70.4,
+   "note": "Measured against the table as built on the approved Common Material Key values. 17/27 is only reachable if the two insulation rows carry the hub values (75 mm mineral wool / 100 mm glass wool) instead of the CMK values (25 mm / 50 mm). Reported, not adjusted: no specification value was moved to make a gate pass."
   }
  }
 }
