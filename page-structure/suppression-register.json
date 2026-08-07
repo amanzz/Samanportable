@@ -17,8 +17,8 @@
     "plan": "T3 excludes these items by reconciliation against the approved matrix instead of by caption token, then reverts every priceSubline edit listed below.",
     "ruling": "R5-5"
   },
-  "entry_count": 13,
-  "entry_count_note": "Ruling R5-5 specified twelve — the six porta-cabins from T1 plus the six C-05 items from R1. Retiring ms-porta-cabin under R5-4 in ticket T2b adds a thirteenth by the same mechanism, so the register is 13 as built. Reported to Fable 5.",
+  "entry_count": 14,
+  "entry_count_note": "Ruling R5-5 specified twelve — the six porta-cabins from T1 plus the six C-05 items from R1. Retiring ms-porta-cabin under R5-4 (ticket T2b) added a thirteenth, and retiring mini-porta-cabin under ticket T2d — unblocked once R6-0 withdrew the R5-3 quarantine — adds a fourteenth. Each was added by the same mechanism.",
   "entries": [
     {
       "route": "/product/porta-cabins",
@@ -122,8 +122,24 @@
       "basis_if_unsuppressed": "ex-GST (stale — approved ex-GST for 20x10 is 360000)",
       "authorising_ruling": "R5-4",
       "ticket": "T2b",
-      "commit": "pending",
+      "commit": "29f1f0ad",
       "date": "2026-08-06"
+    },
+    {
+      "route": "/product/porta-cabins/mini-porta-cabin",
+      "slug": "mini-porta-cabin",
+      "item_id": "1326",
+      "field": "priceSubline",
+      "source_path": "src/data/wp-export/products/mini-porta-cabin.json",
+      "source_value": "(field absent)",
+      "corrective_value": "Ex-factory, ex-GST.",
+      "submitted_price_if_unsuppressed": "134000.00 INR",
+      "basis_if_unsuppressed": "ex-GST (stale — approved ex-GST for 10x10 is 132000)",
+      "authorising_ruling": "T2d, unblocked by R6-0 withdrawing the R5-3 quarantine",
+      "ticket": "T2d",
+      "commit": "see T2d report — this ticket",
+      "date": "2026-08-07",
+      "note": "Catalogue row only. The variant items (mini-porta-cabin-10x10/20x8/20x10/20x12) and src/data/products/mini-porta-cabin.json are correct per R6-0 and are NOT suppressed."
     },
     {
       "route": "/product/container-cafe",
@@ -218,11 +234,11 @@
   ],
   "verification": {
     "how_to_check": "Run the merchant feed build and confirm every slug below appears in the skipped list with reason tax_exclusive_price_not_merchant_safe. If any entry is missing from that list, its priceSubline has been lost and the item is live in the feed at an ex-GST price.",
-    "expected_skipped_count_from_this_register": 13,
+    "expected_skipped_count_from_this_register": 14,
     "other_expected_skips_not_in_this_register": [
       { "slug": "sandwich-panel", "id": "990018", "reason": "tax_exclusive_price_not_merchant_safe", "note": "pre-existing, predates this register" },
       { "slug": "frp-security-cabin", "id": "900010", "reason": "missing_visible_price", "note": "empty price; quote-mode question open under R2-5" }
     ],
-    "expected_total_skipped": 15
+    "expected_total_skipped": 16
   }
 }
