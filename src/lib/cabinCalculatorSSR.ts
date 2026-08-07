@@ -2,9 +2,9 @@ import {
   GST_RATE,
   PRODUCT_LADDERS,
   RATE_CARD,
-  calculateAreaBandBase,
 } from '@/lib/calculatorRates';
-import { getRouteLadder, ladderAnchorRate, ladderPriceFor } from '@/lib/calculatorLadders';
+import { getRouteLadder, ladderAnchorRate } from '@/lib/calculatorLadders';
+import { BASE_CABIN_RATE_CARD_DATASET, baseCabinRate } from '@/lib/baseCabinRateCard';
 import {
   CEILINGS_R1, ELECTRICAL_R1, FITOUT_R1, FLOORINGS_R1, FRAME_OPTIONS,
   INSULATIONS_R1, INTERIOR_STANDARD, INTERNAL_WALLS, WALL_BUILD_OPTIONS,
@@ -152,7 +152,12 @@ interface ProductDefinition {
   id: ProductId;
   name: string;
   subtitle: string;
-  referenceRate?: number;
+  /**
+   * `referenceRate` removed 07 Aug 2026. Eight per-product per-sq-ft constants
+   * lived here and priced nothing after the base-cabin rate card landed: the
+   * base is floor area x SAMAN's card, identical for every product. A dead
+   * price constant beside a live one is how the last drift started.
+   */
   quoteOnly?: boolean;
   /** Ladder this product prices from when chosen on the standalone route. */
   ladderKey?: string;
@@ -188,24 +193,24 @@ export interface EmbeddedProductSummary {
 }
 
 export const PRODUCTS: readonly ProductDefinition[] = [
-  { id: 'porta-cabin', name: 'Porta Cabin', subtitle: 'All-purpose modular cabin', referenceRate: 1250, ladderKey: 'porta-cabins' },
-  { id: 'office-cabin', name: 'Portable Office', subtitle: 'Furnished workspace cabin', referenceRate: 1350, ladderKey: 'portable-office' },
-  { id: 'security-cabin', name: 'Security Cabin', subtitle: 'Guard booth / gate post', referenceRate: 1250 },
+  { id: 'porta-cabin', name: 'Porta Cabin', subtitle: 'All-purpose modular cabin', ladderKey: 'porta-cabins' },
+  { id: 'office-cabin', name: 'Portable Office', subtitle: 'Furnished workspace cabin', ladderKey: 'portable-office' },
+  { id: 'security-cabin', name: 'Security Cabin', subtitle: 'Guard booth / gate post' },
   // No quoteOnly flag: this product has a published ladder that prices a 20x10
   // at 3,00,000. The flag and the ladder contradicted each other and the
   // calculator rendered both answers at once.
   { id: 'toilet-cabin', name: 'Toilet Cabin', subtitle: 'Portable washroom block', ladderKey: 'porta-cabin-with-toilet' },
-  { id: 'accommodation-cabin', name: 'Accommodation Cabin', subtitle: 'Bunkhouse / staff stay', referenceRate: 1450 },
-  { id: 'container-office', name: 'Container Office', subtitle: 'Insulated container workspace', referenceRate: 1800, ladderKey: 'container-offices' },
-  { id: 'site-office', name: 'Site Office', subtitle: 'On-site project office', referenceRate: 1450, ladderKey: 'site-office-container' },
-  { id: 'portable-cabin', name: 'Portable Cabin', subtitle: 'General-purpose portable cabin', referenceRate: 1250, ladderKey: 'portable-cabin' },
+  { id: 'accommodation-cabin', name: 'Accommodation Cabin', subtitle: 'Bunkhouse / staff stay' },
+  { id: 'container-office', name: 'Container Office', subtitle: 'Insulated container workspace', ladderKey: 'container-offices' },
+  { id: 'site-office', name: 'Site Office', subtitle: 'On-site project office', ladderKey: 'site-office-container' },
+  { id: 'portable-cabin', name: 'Portable Cabin', subtitle: 'General-purpose portable cabin', ladderKey: 'portable-cabin' },
   { id: 'container-houses', name: 'Container House', subtitle: 'Standard container home', ladderKey: 'container-houses' },
   { id: 'prefab-container-homes', name: 'Prefab Container Home', subtitle: 'Prefab home specification', ladderKey: 'prefab-container-homes' },
   { id: 'shipping-container-homes', name: 'Shipping Container Home', subtitle: 'Shipping-grade shell', ladderKey: 'shipping-container-homes' },
   { id: 'affordable-container-homes', name: 'Affordable Container Home', subtitle: 'Lowest-rate home ladder', ladderKey: 'affordable-container-homes' },
   { id: 'luxury-container-houses', name: 'Luxury Container House', subtitle: 'Highest-rate luxury ladder', ladderKey: 'luxury-container-houses' },
-  { id: 'prefab-modular-home', name: 'Prefab Modular Home', subtitle: 'Turnkey modular living space', referenceRate: 1650 },
-  { id: 'container-cafe', name: 'Container Cafe', subtitle: 'Cafe and restaurant unit', referenceRate: 1850 },
+  { id: 'prefab-modular-home', name: 'Prefab Modular Home', subtitle: 'Turnkey modular living space' },
+  { id: 'container-cafe', name: 'Container Cafe', subtitle: 'Cafe and restaurant unit' },
   { id: 'labour-colony', name: 'Labour Colony', subtitle: 'Worker housing blocks' },
   { id: 'labor-sheds', name: 'Labour Sheds', subtitle: 'Open-hall worker dormitories' },
   { id: 'labor-hutments', name: 'Labour Hutments', subtitle: 'Room-based worker housing' },
@@ -1989,13 +1994,14 @@ export function parseCalculatorQuery(query: CalculatorQuery = {}): CalculatorCon
 }
 
 /**
- * Rate published to the client enhancer for custom sizes. Taken from the
- * route's own ladder so the browser can never derive a figure from a rate the
- * page does not publish.
+ * Removed 07 Aug 2026: effectiveReferenceRate.
+ *
+ * It published each route's own ladder anchor rate to the browser so a custom
+ * size could be derived from it. Under SAMAN's base-cabin rate card there is
+ * one card for every product and the rate comes from floor area, not from the
+ * route — so a per-route rate on the element is a second source of truth with
+ * nothing left to be true about. See BASE_CABIN_RATE_CARD_DATASET.
  */
-function effectiveReferenceRate(product: ProductDefinition, ladderKey?: string | null): number {
-  return ladderAnchorRate(ladderKey ?? product.ladderKey) ?? 0;
-}
 
 /**
  * Whether this product renders quote mode — derived, never asserted.
@@ -2034,21 +2040,36 @@ function ladderKeyFor(config: CalculatorConfig): string | null {
   return config.ladderKey ?? productFor(config.productId).ladderKey ?? null;
 }
 
-function calculateBase(config: CalculatorConfig, area: number): number | null {
+/**
+ * The BASE CABIN figure — a bare cabin, from SAMAN's rate card of 06 Aug 2026.
+ *
+ * What changed, and why the ladder is no longer the source here:
+ *
+ *   Until this ruling the base line was the route's own PUBLISHED price, which
+ *   is the finished product with every fitting in it. The estimate therefore
+ *   opened at the finished price and then charged for the fittings again as the
+ *   buyer added them. SAMAN's two-price doctrine separates the two: the page
+ *   and the band headline keep the finished price, and the calculator opens at
+ *   the bare cabin and grows.
+ *
+ *   So the ladder is still read — but only to decide whether this route prices
+ *   at all (see rendersQuoteMode). It no longer supplies the number.
+ *
+ * Returning null means SAMAN has stated no rate for this size. It is not zero
+ * and it is not "close enough": the calculator renders quote mode and asks.
+ */
+function calculateBase(config: CalculatorConfig): number | null {
   if (isColonyProduct(config.productId)) {
     return (colonyLadder(config.productId)[config.colonyVariant]?.priceExGst || 0) * config.quantity;
   }
-  const key = ladderKeyFor(config);
 
-  // A published size is a lookup and is never recalculated.
-  const published = ladderPriceFor(key, config.length, config.width);
-  if (published !== null) return published * config.quantity;
+  // A route with no ladder of its own prices on drawing — Security Cabins is
+  // the ruled example. The rate card does not override that.
+  if (rendersQuoteMode(productFor(config.productId), ladderKeyFor(config))) return null;
 
-  // A size this route does not publish is derived from this route's own anchor
-  // rate. A route with no ladder at all returns null and renders quote mode.
-  const rate = ladderAnchorRate(key);
+  const rate = baseCabinRate(config.length, config.width);
   if (rate === null) return null;
-  return calculateAreaBandBase(area, rate) * config.quantity;
+  return rate.basePriceExGst * config.quantity;
 }
 
 export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEstimate {
@@ -2056,7 +2077,7 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
   const colony = isColonyProduct(config.productId);
   const product = productFor(config.productId);
   const area = colony ? (colonyLadder(config.productId)[config.colonyVariant]?.areaSqft || 0) : config.length * config.width;
-  const basePrice = calculateBase(config, area);
+  const basePrice = calculateBase(config);
   const lines: EstimateLine[] = [{
     label: basePrice === null ? `${product.name} base` : colony ? `${colonyLadder(config.productId)[config.colonyVariant]?.label || 'Colony block'} × ${config.quantity}` : `Base cabin ${config.length}×${config.width} ft${config.quantity > 1 ? ` × ${config.quantity}` : ''}`,
     amount: basePrice,
@@ -2156,8 +2177,13 @@ function productChoice(
   // by an undefined rate, got zero, and showed a base cabin at nothing at all
   // for every size not in the ladder. The embedded route's hidden product field
   // has always carried them; the twelve tiles never did.
+  //
+  // The per-product rate is gone as of the 06 Aug rate-card ruling: the base
+  // cabin is priced from floor area on ONE card for every product, published on
+  // the root element, so a tile can no longer carry a rate of its own that
+  // disagrees with it. What survives here is quote mode and the ladder key.
   const productAttributes = definition
-    ? ` data-label="${esc(entry.name)}" data-reference-rate="${effectiveReferenceRate(definition, definition.ladderKey)}"`
+    ? ` data-label="${esc(entry.name)}"`
       + ` data-quote-only="${rendersQuoteMode(definition, definition.ladderKey) ? 'true' : 'false'}"`
       + ` data-ladder="${esc(definition.ladderKey || (isColonyProduct(definition.id) ? definition.id : 'none'))}"`
     : '';
@@ -2802,8 +2828,11 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const pageUrl = options.pageUrl || '/cabin-cost-calculator';
   const itemisedMessage = `SAMAN ${product.name} configuration | ${estimate.lines.map((line) => `${line.label}: ${line.amount === null ? 'in quotation' : money(line.amount)}`).join(' | ')} | Total: ${estimate.quoteOnly ? 'price on request' : `${money(estimate.totalExGst)} ex-GST`}`;
   const messageCatalog = Object.entries(CALCULATOR_MESSAGES).map(([key, value]) => `<p hidden data-message="${key}">${esc(value)}</p>`).join('');
-  const rootRates = `data-area-band-under200="1.1" data-area-band-at200="1" data-area-band-over200="0.96" data-area-band-over300="0.94" data-area-band-over400="0.92" data-area-band-over600="0.9" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
-  const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-reference-rate="${effectiveReferenceRate(product, config.ladderKey)}" data-quote-only="${rendersQuoteMode(product, config.ladderKey) ? 'true' : 'false'}" data-ladder="${esc(config.ladderKey || product.ladderKey || (isColonyProduct(product.id) ? product.id : 'none'))}">` : '';
+  // SAMAN's base-cabin rate card, published once on the root so the browser
+  // prices from the same numbers the server did. The six area-band multipliers
+  // that used to sit here are gone with the formula they belonged to.
+  const rootRates = `data-base-fixed="${esc(BASE_CABIN_RATE_CARD_DATASET.fixed)}" data-base-bands="${esc(BASE_CABIN_RATE_CARD_DATASET.bands)}" data-base-band-top="${esc(BASE_CABIN_RATE_CARD_DATASET.top)}" data-base-unrated-ceiling="${esc(BASE_CABIN_RATE_CARD_DATASET.floor)}" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
+  const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-quote-only="${rendersQuoteMode(product, config.ladderKey) ? 'true' : 'false'}" data-ladder="${esc(config.ladderKey || product.ladderKey || (isColonyProduct(product.id) ? product.id : 'none'))}">` : '';
   const standardPostFields = `${hiddenProduct}<input type="hidden" name="message" value="${esc(itemisedMessage)}"><input type="hidden" name="productName" value="${esc(product.name)}"><input type="hidden" name="pageUrl" value="${esc(pageUrl)}"><input type="hidden" name="returnTo" value="${esc(pageUrl)}">`;
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;

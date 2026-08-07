@@ -290,23 +290,48 @@
     track('step_view', { step_number: target, step_name: activeSection?.querySelector('h2')?.textContent || '' });
   }
 
-  function areaBand(root, area) {
-    if (area < 200) return num(root.dataset.areaBandUnder200);
-    if (area > 600) return num(root.dataset.areaBandOver600);
-    if (area > 400) return num(root.dataset.areaBandOver400);
-    if (area > 300) return num(root.dataset.areaBandOver300);
-    if (area > 200) return num(root.dataset.areaBandOver200);
-    return num(root.dataset.areaBandAt200);
+  /**
+   * SAMAN's base-cabin rate card, read from the root element the server wrote
+   * it on. Ruling of 06 Aug 2026; the implementation it mirrors is
+   * src/lib/baseCabinRateCard.ts and the two must never be edited apart.
+   *
+   *   base cabin price = floor area (L x W) x per-sq-ft rate, ex-GST
+   *
+   * Returns null where SAMAN has stated no rate — a floor area at or under
+   * 50 sq ft that is not one of the five fixed sizes. Null means the estimate
+   * asks; it never means zero and it never means "interpolate".
+   *
+   * This replaced two things at once: the six area-band multipliers, and
+   * publishedPrice(), which read the base off the page's own price table. That
+   * table publishes the FINISHED product with every fitting in it, so the
+   * estimate opened at the finished price and then charged for the fittings a
+   * second time as the buyer added them. The table still renders; it is no
+   * longer the base.
+   */
+  function pairs(text) {
+    return String(text || '').split(';').filter(Boolean).map((entry) => {
+      const [key, value] = entry.split('=');
+      return [key, Number(value)];
+    });
   }
 
-  function publishedPrice(root, productId, length, width) {
-    const table = Array.from(root.querySelectorAll('[data-product-price-table]'))
-      .find((item) => item.dataset.productPriceTable === productId);
-    if (!table) return null;
-    const row = Array.from(table.querySelectorAll('[data-published-size]')).find((item) => (
-      num(item.dataset.length, NaN) === length && num(item.dataset.width, NaN) === width
-    ));
-    return row ? num(row.dataset.priceExGst, NaN) : null;
+  function baseCabinRate(root, length, width) {
+    if (!(length > 0) || !(width > 0)) return null;
+    const fixed = pairs(root.dataset.baseFixed);
+    const match = fixed.find(([key]) => {
+      const [l, w] = key.split('x').map(Number);
+      return (l === length && w === width) || (l === width && w === length);
+    });
+    if (match) return { rate: match[1], base: length * width * match[1] };
+
+    const area = length * width;
+    if (area <= num(root.dataset.baseUnratedCeiling, 50)) return null;
+    // Exclusive upper edges: SAMAN ruled that the edge takes the CHEAPER rate,
+    // so exactly 70 sq ft is priced at 1150 and never at 1200.
+    const band = pairs(root.dataset.baseBands).find(([edge]) => area < Number(edge));
+    const rate = band ? band[1] : num(root.dataset.baseBandTop);
+    if (!rate) return null;
+    return { rate, base: Math.round(area * rate) };
   }
 
   /**
@@ -657,12 +682,16 @@
     const quantity = Math.max(1, num(value(form, 'quantity', 1), 1));
     const colonyVariant = chosen(form, 'colonyVariant');
     const area = colony ? dataNumber(colonyVariant, 'area', dataNumber(colonyVariant, 'areaSqft')) : length * width;
-    const quoteOnly = source(product)?.dataset.quoteOnly === 'true';
-    const referenceRate = dataNumber(product, 'referenceRate');
-    const ladderPrice = colony ? null : publishedPrice(root, productId, length, width);
+    // Two ways an estimate carries no number, and they are different things:
+    // the PRODUCT prices on drawing (Security Cabins), or the SIZE has no rate
+    // in SAMAN's card (a floor area at or under 50 sq ft that is not one of the
+    // five fixed sizes). Both render quote mode; neither invents a figure.
+    const quoteProduct = source(product)?.dataset.quoteOnly === 'true';
+    const rateCard = colony ? null : baseCabinRate(root, length, width);
+    const quoteOnly = quoteProduct || (!colony && rateCard === null);
     let base = colony
       ? dataNumber(colonyVariant, 'price', dataNumber(colonyVariant, 'priceExGst')) * quantity
-      : (ladderPrice === null ? Math.round(area * referenceRate * areaBand(root, area)) : ladderPrice) * quantity;
+      : (rateCard ? rateCard.base * quantity : 0);
     if (quoteOnly) base = 0;
     let total = base;
     const wallArea = 2 * (length + width) * height;

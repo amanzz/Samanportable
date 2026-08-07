@@ -10,6 +10,10 @@ const scripts = [
   // calculator where nothing priced, because not one of them clicked anything.
   'verify-functional.mjs',
   'verify-functional-fixture.mjs',
+  // SAMAN's base-cabin rate card (ruling 06 Aug 2026). Gates the calculator's
+  // OPENING figure. Runs before the published-price gate because that gate now
+  // only proves the finished ladder did not move.
+  'verify-base-cabin-rate-card.mjs',
   'verify-route-price-identity.mjs',
   'report-locked-product-names.mjs',
   'verify-copy-pack.mjs',
