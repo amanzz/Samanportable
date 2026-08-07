@@ -336,9 +336,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       content: product.short_description || '',
       description: product.description || '',
       featured_image: product.images?.[0]?.src || '/placeholder.svg',
-      price: product.price || 'Contact for pricing',
-      regular_price: product.regular_price || product.price || 'Contact for pricing',
-      sale_price: product.sale_price || product.price || 'Contact for pricing',
+      // C-05 R1: no generic pricing fallback. 'Contact for pricing' is banned
+      // site-wide; a product with no approved price renders no price block.
+      price: product.price || '',
+      regular_price: product.regular_price || product.price || '',
+      sale_price: product.sale_price || product.price || '',
       on_sale: product.on_sale || false,
       features: ['Professional Design', 'High Quality', 'Durable', 'Customizable', 'Weather Resistant'],
       category: product.categories?.[0]?.name || 'Uncategorized',
@@ -744,23 +746,38 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           )}
                         </div>
                         
-                        {transformedProduct.on_sale && transformedProduct.sale_price ? (
-                          <div className="space-y-2">
-                            <div className="flex items-center space-x-3 flex-wrap gap-y-2">
-                              <span className="text-2xl md:text-3xl font-bold text-primary break-words">{formatPriceWithCurrency(parseFloat(transformedProduct.sale_price))}</span>
-                              <span className="text-lg md:text-xl text-muted-foreground line-through break-words">{formatPriceWithCurrency(parseFloat(transformedProduct.regular_price))}</span>
-                              {/* Sale badge removed */}
+                        {/* C-05 R1 — price basis line. Products that carry a
+                            `priceSubline` state their own basis; every other product
+                            keeps the existing site-wide caption, byte-for-byte. */}
+                        {(() => {
+                          const priceNote = (product as any).priceSubline || 'Inclusive of all taxes';
+                          const saleValue = parseFloat(transformedProduct.sale_price);
+                          const baseValue = parseFloat(transformedProduct.price);
+
+                          if (transformedProduct.on_sale && Number.isFinite(saleValue)) {
+                            return (
+                              <div className="space-y-2">
+                                <div className="flex items-center space-x-3 flex-wrap gap-y-2">
+                                  <span className="text-2xl md:text-3xl font-bold text-primary break-words">{formatPriceWithCurrency(saleValue)}</span>
+                                  <span className="text-lg md:text-xl text-muted-foreground line-through break-words">{formatPriceWithCurrency(parseFloat(transformedProduct.regular_price))}</span>
+                                  {/* Sale badge removed */}
+                                </div>
+                                <p className="text-sm text-muted-foreground">{priceNote}</p>
+                              </div>
+                            );
+                          }
+
+                          // No approved price on file → render no price block at all.
+                          // Never a generic fallback string, never NaN.
+                          if (!Number.isFinite(baseValue)) return null;
+
+                          return (
+                            <div className="space-y-2">
+                              <span className="text-2xl md:text-3xl font-bold text-primary break-words">{formatPriceWithCurrency(baseValue)}</span>
+                              <p className="text-sm text-muted-foreground">{priceNote}</p>
                             </div>
-                            <p className="text-sm text-muted-foreground">Inclusive of all taxes</p>
-                          </div>
-                        ) : (
-                          <div className="space-y-2">
-                            <span className="text-2xl md:text-3xl font-bold text-primary break-words">
-                              {transformedProduct.price === 'Contact for pricing' ? 'Contact for pricing' : formatPriceWithCurrency(parseFloat(transformedProduct.price))}
-                            </span>
-                            <p className="text-sm text-muted-foreground">Inclusive of all taxes</p>
-                          </div>
-                        )}
+                          );
+                        })()}
                       </div>
 
                           {/* Short Description */}
