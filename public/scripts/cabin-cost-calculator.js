@@ -34,13 +34,25 @@
    */
   const LINE_LABELS = new WeakMap();
   function renderEstimateLines(root, lines, transportNote, total, gst, quoteOnly) {
-    const list = root.querySelector('[data-estimate-lines]');
-    if (!list) return;
-    if (!LINE_LABELS.has(list)) {
-      const tails = Array.from(list.children).slice(-2).map((row) => row.querySelector('dt')?.textContent || '');
-      LINE_LABELS.set(list, { subtotal: tails[0] || '', gst: tails[1] || '' });
-    }
-    const { subtotal, gst: gstLabel } = LINE_LABELS.get(list);
+    // EVERY itemised list, not the first one.
+    //
+    // This was querySelector, singular. The page renders two estimate panels -
+    // the sidebar, which is the one a buyer looks at through steps 1 to 8, and
+    // a second copy inside step 9. The sidebar comes SECOND in the DOM, so the
+    // singular selector updated the hidden panel and left the visible one at
+    // whatever the server rendered at page load.
+    //
+    // What that looked like on screen: set the size to 8x6 and the sidebar
+    // showed the line "Base cabin 20x10 ft  Rs 2,00,000" directly above its own
+    // total of Rs 70,980. The totals were right - setText has always used
+    // querySelectorAll - so the panel contradicted itself by Rs 1,29,020, and
+    // its printed subtotal disagreed with the total two rows below it.
+    //
+    // Every estimate surface now repaints from this one call. LINE_LABELS is
+    // keyed by the list element, so each panel keeps its own server-rendered
+    // subtotal and GST labels rather than borrowing the other panel's.
+    const lists = root.querySelectorAll('[data-estimate-lines]');
+    if (!lists.length) return;
     const money = (amount) => (amount === null ? 'in quotation' : INR.format(amount));
     const row = (label, text, marker) => {
       const div = document.createElement('div');
@@ -52,12 +64,19 @@
       div.append(dt, dd);
       return div;
     };
-    const next = document.createDocumentFragment();
-    lines.forEach((line) => next.append(row(line.label, money(line.amount), true)));
-    if (transportNote) next.append(row('Transport', transportNote, false));
-    next.append(row(subtotal, quoteOnly ? 'in quotation' : INR.format(total), false));
-    next.append(row(gstLabel, quoteOnly ? 'in quotation' : INR.format(gst), false));
-    list.replaceChildren(next);
+    lists.forEach((list) => {
+      if (!LINE_LABELS.has(list)) {
+        const tails = Array.from(list.children).slice(-2).map((item) => item.querySelector('dt')?.textContent || '');
+        LINE_LABELS.set(list, { subtotal: tails[0] || '', gst: tails[1] || '' });
+      }
+      const { subtotal, gst: gstLabel } = LINE_LABELS.get(list);
+      const next = document.createDocumentFragment();
+      lines.forEach((line) => next.append(row(line.label, money(line.amount), true)));
+      if (transportNote) next.append(row('Transport', transportNote, false));
+      next.append(row(subtotal, quoteOnly ? 'in quotation' : INR.format(total), false));
+      next.append(row(gstLabel, quoteOnly ? 'in quotation' : INR.format(gst), false));
+      list.replaceChildren(next);
+    });
   }
   const track = (event, params = {}) => {
     window.dataLayer = window.dataLayer || [];

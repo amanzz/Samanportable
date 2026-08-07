@@ -14,6 +14,11 @@ const scripts = [
   // OPENING figure. Runs before the published-price gate because that gate now
   // only proves the finished ladder did not move.
   'verify-base-cabin-rate-card.mjs',
+  // Every estimate surface repaints, and the server prices the quantities a
+  // buyer selected. Both were silent failures: one showed a stale itemisation
+  // beside a live total, the other under-quoted by discarding every electrical
+  // and fit-out item before the estimate saw it.
+  'verify-estimate-surfaces.mjs',
   'verify-route-price-identity.mjs',
   'report-locked-product-names.mjs',
   'verify-copy-pack.mjs',

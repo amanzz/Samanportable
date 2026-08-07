@@ -295,6 +295,17 @@ const STEP_GUIDANCE = Object.fromEntries(
 export const WALL_FINISHES = [['Pre-painted steel skin', 0], ['Particle Board', -15], ['PVC', 70], ['HDHMR', 60], ['Gypsum', 85], ['WPC', 140], ['SPC', 170], ['UV Sheet', 350], ['ACP', 260]] as const;
 export const CEILINGS = [['Standard ceiling', 0], ['Particle Board', -15], ['PVC', 65], ['HDHMR', 60], ['Gypsum', 85], ['WPC', 140], ['SPC', 170], ['UV Sheet', 350], ['ACP', 260]] as const;
 export const FLOORING = [['Vinyl (Standard)', 0], ['PVC', 90], ['SPC', 180], ['Wooden Laminate', 110], ['Tiles', 140]] as const;
+/**
+ * ELECTRICAL and ADD_ONS are the LEGACY rate rows, kept for one reader only:
+ * scripts/calculator/verify-rate-card-diff.mjs, which walks them to compare the
+ * rates the calculator applies against rate card v2.
+ *
+ * They are NOT the control set and must never be used to validate a posted
+ * quantity again. The step renders from ELECTRICAL_R1 / FITOUT_R1 and the
+ * estimate prices from ELECTRICAL_R1 / FITOUT_R1; sanitising against these
+ * arrays instead is what silently dropped every electrical and fit-out item a
+ * buyer selected, because "LED Panel Light" is not "LED panel light".
+ */
 export const ELECTRICAL = [
   ['LED Panel Light', RATE_CARD.marketRates.ledPanel, 'Suggested: one per 40 sq ft'],
   ['Tube Light', 999, ''],
@@ -1825,7 +1836,24 @@ export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
     { type: 'uPVC Sliding', wall: 'Front', end: 'Left', distance: 1.5, position: 35, width: 3, height: 3, track: '2 Track' },
     { type: 'uPVC Sliding', wall: 'Rear', end: 'Right', distance: 1.5, position: 70, width: 3, height: 3, track: '2 Track' },
   ],
-  electrical: { 'LED Panel Light': 5, 'Ceiling Fan': 2, 'Plug Point': 4, 'External / Entrance Light': 1 },
+  /**
+   * Empty, because empty is what the calculator has always actually rendered.
+   *
+   * This carried { 'LED Panel Light': 5, 'Ceiling Fan': 2, 'Plug Point': 4,
+   * 'External / Entrance Light': 1 } — legacy labels. The step renders its
+   * controls from ELECTRICAL_R1 ("LED panel light"), so `config.electrical[label]`
+   * missed on every one and all ten controls rendered at 0. The defaults have
+   * never reached a buyer's screen or a buyer's price.
+   *
+   * Normalising the key comparison would have quietly revived three of the four
+   * and raised the opening estimate on every priced route, while the fourth,
+   * 'Plug Point', has no single R1 counterpart — ELECTRICAL_R1 splits it into
+   * 'Plug point (6A)' and 'Plug point (16A)', and choosing between them is a
+   * pricing decision, not a spelling one. Reviving a default quantity is a
+   * change to the opening price and needs a ruling, so this preserves exactly
+   * what ships today and the question goes in the report instead.
+   */
+  electrical: {},
   lightColour: 'White',
   lightShape: 'Square',
   addOns: {},
@@ -1862,12 +1890,34 @@ const productIdForSlug = (slug: ColonyProductSlug): ProductId => slug === 'labor
 const checked = (condition: boolean): string => condition ? ' checked' : '';
 const selected = (condition: boolean): string => condition ? ' selected' : '';
 
-function cleanQuantities(value: unknown, allowed: readonly (readonly [string, number, ...unknown[]])[]): QuantityMap {
+/**
+ * Case-folded, whitespace-collapsed quantity key.
+ *
+ * The comparison is normalised on BOTH sides so that a difference of case or
+ * spacing between a stored key and a control's label can never again silently
+ * drop a priced quantity. Matching on the raw string is what broke: the
+ * sanitiser validated posted quantities against the legacy ELECTRICAL array
+ * ("LED Panel Light") while the step rendered its controls from ELECTRICAL_R1
+ * ("LED panel light") and the estimate priced from ELECTRICAL_R1 too. One
+ * capital P, and every electrical and fit-out item a buyer selected was
+ * discarded by the server before it reached the estimate.
+ */
+const quantityKey = (label: string): string => String(label).toLowerCase().replace(/\s+/g, ' ').trim();
+
+/**
+ * `allowed` is the list the STEP RENDERS and the estimate PRICES — never a
+ * parallel list that only the sanitiser knows about. Quantities come back
+ * under the canonical label from that list, so everything downstream reads one
+ * spelling.
+ */
+function cleanQuantities(value: unknown, allowed: readonly string[]): QuantityMap {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
   const source = value as Record<string, unknown>;
+  const posted = new Map<string, unknown>();
+  Object.entries(source).forEach(([key, entry]) => posted.set(quantityKey(key), entry));
   const quantities: QuantityMap = {};
-  allowed.forEach(([label]) => {
-    const quantity = int(source[label], 0, 0, 50);
+  allowed.forEach((label) => {
+    const quantity = int(posted.get(quantityKey(label)), 0, 0, 50);
     if (quantity > 0) quantities[label] = quantity;
   });
   return quantities;
@@ -1935,10 +1985,10 @@ function sanitiseConfig(value: unknown): CalculatorConfig {
     pufThickness: PUF_THICKNESSES.includes(source.pufThickness as typeof PUF_THICKNESSES[number]) ? source.pufThickness as CalculatorConfig['pufThickness'] : 50,
     doors: doors.length ? doors : DEFAULT_CALCULATOR_CONFIG.doors,
     windows,
-    electrical: cleanQuantities(source.electrical, ELECTRICAL),
+    electrical: cleanQuantities(source.electrical, ELECTRICAL_R1.map((item) => item.label)),
     lightColour: member(source.lightColour, ['White', 'Warm'] as const, 'White'),
     lightShape: member(source.lightShape, ['Square', 'Round'] as const, 'Square'),
-    addOns: cleanQuantities(source.addOns, ADD_ONS),
+    addOns: cleanQuantities(source.addOns, FITOUT_R1.map((item) => item.label)),
     furniturePosition: member(source.furniturePosition, ['Wall attached', 'Centre'] as const, 'Wall attached'),
     mobility: member(source.mobility, ['100% movable', 'Fixed / semi-permanent'] as const, '100% movable'),
     deliveryZone: member(source.deliveryZone, ['Bangalore city', 'Delhi NCR', 'Other'] as const, 'Other'),
