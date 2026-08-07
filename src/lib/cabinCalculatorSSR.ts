@@ -346,7 +346,7 @@ const WALLS: readonly Wall[] = ['Front', 'Rear', 'Left', 'Right'];
 const PUF_THICKNESSES = [30, 40, 50, 60, 80] as const;
 const ROOM_TYPES = ['Reception', 'Bedroom', 'Workspace', 'Kitchen', 'Toilet', 'Storage', 'Hall', 'Other'] as const;
 const SCOPE_NOTE = 'Colony buildings are configured as complete blocks. Doors, windows, electrical points and fittings follow the approved building drawing for the configuration you select, and any change you need is itemised in your fixed quotation.';
-const SIZE_ERROR = 'Enter a length and width between 6 and 60 ft. For larger buildings, request a quotation and we will size it with you.';
+const SIZE_ERROR = 'Enter a length and width between 4 and 60 ft. For larger buildings, request a quotation and we will size it with you.';
 
 export const CALCULATOR_MESSAGES = {
   sizeInvalid: SIZE_ERROR,
@@ -2611,7 +2611,7 @@ function renderIntro(): string {
 /** FAQ block. Rendered by the page BELOW the calculator section, not inside it. */
 export function renderCalculatorFaq(): string {
   const faqs = [
-    ['Is the calculator price final?', 'No. It is an indicative estimate from our published price list. Your fixed quotation arrives within 48 hours and is the figure we stand behind.'],
+    ['Is the calculator price final?', 'No. It is an indicative estimate from our base-cabin rate card. Your fixed quotation arrives within 48 hours and is the figure we stand behind.'],
     ['Can I price a custom size?', 'Yes. Enter any length and width in feet. The base cabin prices from our rate card by floor area, at a lower rate per square foot as the cabin gets larger.'],
     ['Does the price include GST and transport?', 'GST at 18 percent is always shown separately. Transport is estimated from our freight ladder by distance and confirmed in the quotation; Bangalore city and Delhi NCR are free-delivery zones.'],
     ['What warranty applies?', '5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation.'],
@@ -2881,7 +2881,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   // SAMAN's base-cabin rate card, published once on the root so the browser
   // prices from the same numbers the server did. The six area-band multipliers
   // that used to sit here are gone with the formula they belonged to.
-  const rootRates = `data-base-fixed="${esc(BASE_CABIN_RATE_CARD_DATASET.fixed)}" data-base-bands="${esc(BASE_CABIN_RATE_CARD_DATASET.bands)}" data-base-band-top="${esc(BASE_CABIN_RATE_CARD_DATASET.top)}" data-base-slide="${esc(BASE_CABIN_RATE_CARD_DATASET.slide)}" data-base-unrated-ceiling="${esc(BASE_CABIN_RATE_CARD_DATASET.floor)}" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
+  const rootRates = `data-base-fixed="${esc(BASE_CABIN_RATE_CARD_DATASET.fixed)}" data-base-bands="${esc(BASE_CABIN_RATE_CARD_DATASET.bands)}" data-base-band-top="${esc(BASE_CABIN_RATE_CARD_DATASET.top)}" data-base-slide="${esc(BASE_CABIN_RATE_CARD_DATASET.slide)}" data-base-cap="${esc(BASE_CABIN_RATE_CARD_DATASET.cap)}" data-base-unrated-ceiling="${esc(BASE_CABIN_RATE_CARD_DATASET.floor)}" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
   const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-quote-only="${rendersQuoteMode(product, config.ladderKey) ? 'true' : 'false'}" data-ladder="${esc(config.ladderKey || product.ladderKey || (isColonyProduct(product.id) ? product.id : 'none'))}">` : '';
   const standardPostFields = `${hiddenProduct}<input type="hidden" name="message" value="${esc(itemisedMessage)}"><input type="hidden" name="productName" value="${esc(product.name)}"><input type="hidden" name="pageUrl" value="${esc(pageUrl)}"><input type="hidden" name="returnTo" value="${esc(pageUrl)}">`;
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';

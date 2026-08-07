@@ -66,6 +66,13 @@ function expectedBase(length, width) {
   if (fixed !== undefined) return { rate: fixed, base: length * width * fixed, why: 'fixed' };
 
   const area = length * width;
+  const raw = rawExpected(area);
+  if (raw === null) return null;
+  return { rate: raw.rate, base: Math.min(raw.base, expectedCeiling(area)), why: raw.why };
+}
+
+/** The card before the cap, written from the ruling. */
+function rawExpected(area) {
   // v2 §3: below 36 sq ft only the fixed sizes exist — no rate, STOP.
   if (area < 36) return null;
   // v2 §3: the 36-50 slide, between SAMAN's own anchors. Rate un-rounded.
@@ -84,6 +91,17 @@ function expectedBase(length, width) {
         : area < 200 ? 1050
           : 1000;
   return { rate, base: Math.round(area * rate), why: `band ${rate}` };
+}
+
+/**
+ * The monotonic cap, written independently from the ruling of 07 Aug:
+ * price(a) = min(raw(a), raw(e) for every anchor e >= a), anchors 50/70/90/150/200.
+ */
+const CAP_ANCHORS = [50, 70, 90, 150, 200];
+function expectedCeiling(area) {
+  return CAP_ANCHORS
+    .filter((anchor) => anchor >= area)
+    .reduce((lowest, anchor) => Math.min(lowest, rawExpected(anchor)?.base ?? Infinity), Infinity);
 }
 
 const INR = (n) => (n === null || n === undefined ? '—' : '₹' + Number(n).toLocaleString('en-IN'));
@@ -262,30 +280,39 @@ if (!securityRoutes.length) console.log('  (no security-cabin route resolved fro
 // GATE 5 — THE 36-50 SLIDE. The seven sizes SAMAN ruled on, exact.
 // Rate to the paisa, total to the rupee.
 // ---------------------------------------------------------------------------
+// `base` is the figure after the monotonic cap of 07 Aug. `l2dTicket` is the
+// figure the CALC-L2d ticket tabulated: it differs by Rs 1 on exactly the two
+// sizes whose total lands on an exact half-rupee, which is a rounding-convention
+// question rather than a cap question. Both are printed so the difference cannot
+// hide. The assertion follows the AUTHORITY file, rate card v2 §3.
 const RULED_SLIDE = [
-  { label: '6.5x6', length: 6.5, width: 6, area: 39.00, rate: 1437.50, base: 56063 },
-  { label: '7x6', length: 7, width: 6, area: 42.00, rate: 1375.00, base: 57750 },
-  { label: '6.5x6.5', length: 6.5, width: 6.5, area: 42.25, rate: 1369.79, base: 57874 },
-  { label: '7.5x6', length: 7.5, width: 6, area: 45.00, rate: 1312.50, base: 59063 },
-  { label: '7x6.5', length: 7, width: 6.5, area: 45.50, rate: 1302.08, base: 59245 },
-  { label: '7.5x6.5', length: 7.5, width: 6.5, area: 48.75, rate: 1231.25, base: 60023 },
-  { label: '7x7', length: 7, width: 7, area: 49.00, rate: 1225.00, base: 60025 },
+  { label: '6.5x6', length: 6.5, width: 6, area: 39.00, rate: 1437.50, base: 56063, l2dTicket: 56062, capped: false },
+  { label: '7x6', length: 7, width: 6, area: 42.00, rate: 1375.00, base: 57750, l2dTicket: 57750, capped: false },
+  { label: '6.5x6.5', length: 6.5, width: 6.5, area: 42.25, rate: 1369.79, base: 57874, l2dTicket: 57874, capped: false },
+  { label: '7.5x6', length: 7.5, width: 6, area: 45.00, rate: 1312.50, base: 59063, l2dTicket: 59062, capped: false },
+  { label: '7x6.5', length: 7, width: 6.5, area: 45.50, rate: 1302.08, base: 59245, l2dTicket: 59245, capped: false },
+  { label: '7.5x6.5', length: 7.5, width: 6.5, area: 48.75, rate: 1231.25, base: 60000, l2dTicket: 60000, capped: true },
+  { label: '7x7', length: 7, width: 7, area: 49.00, rate: 1225.00, base: 60000, l2dTicket: 60000, capped: true },
 ];
-console.log('\n36-50 SQ FT SLIDE — the seven sizes SAMAN ruled on 07 Aug');
-console.log(pad('SIZE', 12) + padL('AREA', 8) + padL('RATE', 12) + padL('RULED RATE', 12) + padL('BASE', 12) + padL('RULED BASE', 12) + '  STATUS');
+console.log('\n36-50 SQ FT SLIDE — the seven ruled sizes, after the monotonic cap');
+console.log(pad('SIZE', 10) + padL('AREA', 7) + padL('RATE', 11) + padL('RAW', 11) + padL('PRICE', 11) + padL('EXPECTED', 11) + padL('L2D TKT', 10) + '  STATUS');
 const slideFailures = [];
+const roundingConflicts = [];
 for (const row of RULED_SLIDE) {
   const got = baseCabinRate(row.length, row.width);
-  // The ruling prints the rate to two decimals; compare at that precision, and
-  // the total to the rupee exactly.
   const rateOk = got && Math.abs(Number(got.ratePerSqft.toFixed(2)) - row.rate) < 0.005;
   const baseOk = got && got.basePriceExGst === row.base;
-  if (!rateOk || !baseOk) slideFailures.push(row.label);
+  const capOk = got && got.capped === row.capped;
+  if (!rateOk || !baseOk || !capOk) slideFailures.push(row.label);
+  if (row.base !== row.l2dTicket) roundingConflicts.push(row);
   console.log(
-    pad(row.label, 12) + padL(row.area.toFixed(2), 8)
-    + padL(got ? got.ratePerSqft.toFixed(2) : '—', 12) + padL(row.rate.toFixed(2), 12)
-    + padL(got ? INR(got.basePriceExGst) : '—', 12) + padL(INR(row.base), 12)
-    + (rateOk && baseOk ? '  ok' : '  *** MISMATCH ***')
+    pad(row.label, 10) + padL(row.area.toFixed(2), 7)
+    + padL(got ? got.ratePerSqft.toFixed(2) : '—', 11)
+    + padL(got ? INR(got.rawPriceExGst) : '—', 11)
+    + padL(got ? INR(got.basePriceExGst) : '—', 11) + padL(INR(row.base), 11)
+    + padL(INR(row.l2dTicket), 10)
+    + (rateOk && baseOk && capOk ? (row.capped ? '  ok, capped' : '  ok') : '  *** MISMATCH ***')
+    + (row.base !== row.l2dTicket ? '  <- ticket differs by Rs 1' : '')
   );
 }
 
@@ -307,6 +334,55 @@ for (const row of RULED_SLIDE) {
 // both are reported, because reporting only the one that passes would be the
 // same failure mode as the old "342 rows, 0 mismatches" check.
 // ---------------------------------------------------------------------------
+// THE STATED POINTS. The cap must be a no-op on every figure SAMAN stated.
+const STATED_POINTS = [
+  { label: '4x4x7 fixed', length: 4, width: 4, price: 38400 },
+  { label: '6x4x8 fixed', length: 6, width: 4, price: 46800 },
+  { label: '5x5x7 fixed', length: 5, width: 5, price: 53750 },
+  { label: '6x6x8 fixed', length: 6, width: 6, price: 54000 },
+  { label: '8x6x8 fixed', length: 8, width: 6, price: 60000 },
+  { label: '50 sq ft anchor', length: 10, width: 5, price: 60000 },
+  { label: '70 sq ft anchor', length: 10, width: 7, price: 80500 },
+  { label: '90 sq ft anchor', length: 10, width: 9, price: 99000 },
+  { label: '150 sq ft anchor', length: 15, width: 10, price: 157500 },
+  { label: '200 sq ft anchor', length: 20, width: 10, price: 200000 },
+  { label: '400 sq ft (40x10)', length: 40, width: 10, price: 400000 },
+];
+console.log('\nSTATED POINTS — the cap must never touch one');
+console.log(pad('POINT', 20) + pad('SIZE', 10) + padL('RAW', 12) + padL('PRICE', 12) + padL('STATED', 12) + '  STATUS');
+const statedFailures = [];
+for (const point of STATED_POINTS) {
+  const got = baseCabinRate(point.length, point.width);
+  const ok = got && got.basePriceExGst === point.price && got.capped === false;
+  if (!ok) statedFailures.push(point.label);
+  console.log(
+    pad(point.label, 20) + pad(`${point.length}x${point.width}`, 10)
+    + padL(got ? INR(got.rawPriceExGst) : '—', 12)
+    + padL(got ? INR(got.basePriceExGst) : '—', 12) + padL(INR(point.price), 12)
+    + (ok ? '  ok, untouched' : `  *** ${got && got.capped ? 'CAP MOVED A STATED POINT' : 'MISMATCH'} ***`)
+  );
+}
+
+// THE FULL SWEEP the ruling was verified over: 36 to 400 sq ft at 0.25 steps.
+// Area-driven, so it covers areas no length x width pair on the 0.5 ft grid can
+// reach — a stricter test than the selectable grid alone.
+const sweepInversions = [];
+let sweepPrevious = null;
+for (let a = 36; a <= 400 + 1e-9; a += 0.25) {
+  const area = Number(a.toFixed(2));
+  const raw = rawExpected(area);
+  if (!raw) continue;
+  const price = Math.min(raw.base, expectedCeiling(area));
+  if (sweepPrevious && price < sweepPrevious.price) {
+    sweepInversions.push({ previous: sweepPrevious, current: { area, price }, drop: sweepPrevious.price - price });
+  }
+  sweepPrevious = { area, price };
+}
+console.log(`\nFULL SWEEP — 36 to 400 sq ft at 0.25 steps: ${sweepInversions.length === 0 ? 'ZERO non-monotonic points' : `*** ${sweepInversions.length} INVERSION(S) ***`}`);
+for (const item of sweepInversions.slice(0, 8)) {
+  console.log(`    ${item.previous.area} sq ft ${INR(item.previous.price)} -> ${item.current.area} sq ft ${INR(item.current.price)}  (-${item.drop})`);
+}
+
 const priced = [];
 for (let l = SIZE_MIN; l <= SIZE_MAX + 1e-9; l += SIZE_STEP) {
   for (let w = SIZE_MIN; w <= l + 1e-9; w += SIZE_STEP) {
@@ -425,7 +501,9 @@ console.log(`GATE 2 boundary proof:  ${BOUNDARIES.length - boundaryFailures.leng
 console.log(`GATE 3 fixed sizes:     ${FIXED_RATE_SIZES.length - fixedFailures.length} of ${FIXED_RATE_SIZES.length} exact to the rupee.`);
 console.log(`GATE 4 security cabins: ${securityRoutes.length - securityFailures.length} of ${securityRoutes.length} in quote mode with no number.`);
 console.log(`GATE 5 36-50 slide:     ${RULED_SLIDE.length - slideFailures.length} of ${RULED_SLIDE.length} exact — rate to the paisa, total to the rupee.`);
-console.log(`GATE 6 monotonicity:    rate ${rateInversions.length === 0 ? 'HOLDS' : `FAILS (${rateInversions.length})`} · total ${totalInversions.length === 0 ? 'HOLDS' : `FAILS (${totalInversions.length})`} across ${ladderRows.length} priced areas.`);
+console.log(`GATE 6 monotonicity:    TOTAL ${totalInversions.length === 0 ? 'HOLDS' : `FAILS (${totalInversions.length})`} across ${ladderRows.length} selectable areas · full sweep 36-400 @0.25 ${sweepInversions.length === 0 ? 'HOLDS' : `FAILS (${sweepInversions.length})`}.`);
+console.log(`       rate monotonicity: ${rateInversions.length === 0 ? 'holds' : `${rateInversions.length} inversion(s)`} — reported, NOT a gate (ruled 07 Aug: two products may carry different per-sq-ft rates).`);
+console.log(`GATE 9 stated points:   ${STATED_POINTS.length - statedFailures.length} of ${STATED_POINTS.length} untouched by the cap.`);
 console.log(`GATE 7 stop list:       ${sweep.length} selectable sizes with no rate — reported for SAMAN, not priced.`);
 console.log(`GATE 8 rate-card copy:  ${phraseHits.length === 0 ? 'clean' : `*** ${phraseHits.reduce((n, h) => n + h.count, 0)} occurrence(s) of the published-price-list model remain ***`}`);
 if (mismatches.length) {
@@ -443,9 +521,19 @@ if (phraseHits.length) {
   console.log('\nSTOP: copy still asserting the published-price-list model:');
   for (const hit of phraseHits) console.log(`      "${hit.phrase}" x${hit.count} in ${hit.where}`);
 }
+if (roundingConflicts.length) {
+  console.log('\nNOTE — rounding convention, needs one word from the ruling author:');
+  for (const row of roundingConflicts) {
+    console.log(`      ${row.label} ${row.area} sq ft x ${row.rate} = ${(row.area * row.rate).toFixed(2)} exactly.`);
+    console.log(`        rate card v2 table: ${INR(row.base)}   ·   CALC-L2d ticket table: ${INR(row.l2dTicket)}`);
+  }
+  console.log('      Both land on an exact half-rupee. The build follows v2, the authority file.');
+}
+// Rate monotonicity is reported, not gated: ruled 07 Aug that two distinct
+// products may carry different per-sq-ft rates. Only TOTAL monotonicity gates.
 process.exit(
   mismatches.length || boundaryFailures.length || fixedFailures.length
-  || securityFailures.length || slideFailures.length
-  || rateInversions.length || totalInversions.length || phraseHits.length
+  || securityFailures.length || slideFailures.length || statedFailures.length
+  || totalInversions.length || sweepInversions.length || phraseHits.length
     ? 1 : 0
 );

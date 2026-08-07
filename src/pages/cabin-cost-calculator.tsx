@@ -10,7 +10,7 @@ const description = 'Build a live estimate for your portable cabin. Enter any si
 const canonical = `${siteConfig.url}/cabin-cost-calculator`;
 
 const faqs = [
-  ['Is the calculator price final?', 'No. It is an indicative estimate from our published price list. Your fixed quotation arrives within 48 hours and is the figure we stand behind.'],
+  ['Is the calculator price final?', 'No. It is an indicative estimate from our base-cabin rate card. Your fixed quotation arrives within 48 hours and is the figure we stand behind.'],
   ['Can I price a custom size?', 'Yes. Enter any length and width in feet. The base cabin prices from our rate card by floor area, at a lower rate per square foot as the cabin gets larger.'],
   ['Does the price include GST and transport?', 'GST at 18 percent is always shown separately. Transport is estimated from our freight ladder by distance and confirmed in the quotation; Bangalore city and Delhi NCR are free-delivery zones.'],
   ['What warranty applies?', '5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation.'],

@@ -334,6 +334,23 @@
     });
   }
 
+  /**
+   * The monotonic cap: no cabin may cost more than a larger cabin.
+   *
+   *   price(a) = min( raw(a), raw(e) for every anchor e >= a )
+   *
+   * The anchor prices arrive already resolved from the server
+   * (50=60000;70=80500;...) so the arithmetic that decides them lives in one
+   * place. The cap only ever lowers a figure, so it cannot create an overcharge.
+   */
+  function applyCap(root, area, rawBase) {
+    let ceiling = Infinity;
+    pairs(root.dataset.baseCap).forEach(([anchor, price]) => {
+      if (Number(anchor) >= area) ceiling = Math.min(ceiling, price);
+    });
+    return Math.min(rawBase, ceiling);
+  }
+
   function baseCabinRate(root, length, width) {
     if (!(length > 0) || !(width > 0)) return null;
     const fixed = pairs(root.dataset.baseFixed);
@@ -341,7 +358,10 @@
       const [l, w] = key.split('x').map(Number);
       return (l === length && w === width) || (l === width && w === length);
     });
-    if (match) return { rate: match[1], base: Math.round(length * width * match[1]) };
+    if (match) {
+      const fixedArea = length * width;
+      return { rate: match[1], base: applyCap(root, fixedArea, Math.round(fixedArea * match[1])) };
+    }
 
     const area = length * width;
     const floor = num(root.dataset.baseUnratedCeiling, 36);
@@ -362,12 +382,12 @@
     if (slide) {
       const rate = slide.fromRate
         + (area - slide.fromArea) * ((slide.toRate - slide.fromRate) / (slide.toArea - slide.fromArea));
-      return { rate, base: Math.round(area * rate) };
+      return { rate, base: applyCap(root, area, Math.round(area * rate)) };
     }
     // Exactly at the floor with dimensions other than the fixed size's.
     if (area === floor) {
       const anchor = num(String(root.dataset.baseSlide || '').split('=')[1]?.split(':')[0]);
-      if (anchor) return { rate: anchor, base: Math.round(area * anchor) };
+      if (anchor) return { rate: anchor, base: applyCap(root, area, Math.round(area * anchor)) };
     }
 
     // Exclusive upper edges: SAMAN ruled that the edge takes the CHEAPER rate,
@@ -375,7 +395,7 @@
     const band = pairs(root.dataset.baseBands).find(([edge]) => area < Number(edge));
     const rate = band ? band[1] : num(root.dataset.baseBandTop);
     if (!rate) return null;
-    return { rate, base: Math.round(area * rate) };
+    return { rate, base: applyCap(root, area, Math.round(area * rate)) };
   }
 
   /**

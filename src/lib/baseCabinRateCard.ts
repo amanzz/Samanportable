@@ -151,12 +151,46 @@ export interface BaseCabinRate {
   readonly areaSqft: number;
   /** Full precision. Never rounded — see RATE_INTERPOLATION_SEGMENTS. */
   readonly ratePerSqft: number;
-  /** area x rate, rounded to the rupee. The only rounding the card does. */
+  /** The final price: area x rate, rounded to the rupee, then capped. */
   readonly basePriceExGst: number;
   readonly source: 'fixed' | 'band' | 'interpolated';
   /** The fixed size's label, the band's label, or the slide segment's. */
   readonly sourceLabel: string;
+  /** The uncapped figure, kept so a gate can show what the cap did. */
+  readonly rawPriceExGst: number;
+  /** True where the monotonic cap lowered this size's price. */
+  readonly capped: boolean;
 }
+
+/**
+ * THE MONOTONIC CAP — ruled 07 Aug 2026, closing the defect the monotonicity
+ * gate found in rate card v2.
+ *
+ *   No cabin may cost more than a larger cabin. Where the card would charge
+ *   more, it charges the larger cabin's price.
+ *
+ *   price(a) = min( raw(a), raw(e) for every anchor e >= a )
+ *
+ * WHY THE CARD NEEDED IT, in one line each:
+ *
+ *   A whole-area band card with "the edge takes the cheaper rate" MUST invert at
+ *   every edge, because the cheaper rate applies to every square foot at once
+ *   rather than only to the marginal ones. 69.75 sq ft x 1200 = Rs 83,700, but
+ *   70 sq ft x 1150 = Rs 80,500 — a quarter of a square foot larger and
+ *   Rs 3,200 cheaper. Worst case was at 200 sq ft: Rs 2,09,738 -> Rs 2,00,000.
+ *
+ *   The 48-50 slide is quadratic, not linear: with a linear RATE the total is
+ *   a x (2450 - 25a), which peaks at exactly a = 49 and falls away either side.
+ *   v2's own published table carried the inversion — 7x7 at Rs 60,025 sitting
+ *   above the 50 sq ft price of Rs 60,000.
+ *
+ * WHAT THE CAP CANNOT DO: raise a price. It is a `min`, so it only ever lowers,
+ * and no buyer can be quoted more than the card's stated figure for any size.
+ * Every rate SAMAN stated is preserved exactly — the anchors are the stated
+ * points themselves, so `raw(e)` at an anchor is its own value and the cap is a
+ * no-op there.
+ */
+export const MONOTONIC_CAP_ANCHORS: readonly number[] = [50, 70, 90, 150, 200];
 
 const sameSize = (size: FixedRateSize, length: number, width: number): boolean =>
   (size.lengthFt === length && size.widthFt === width)
@@ -180,60 +214,86 @@ export function fixedRateSizeFor(length: number, width: number): FixedRateSize |
  * is matched first and by dimensions rather than by area. 8x6 is Rs 60,000
  * because SAMAN said so, not because 48 x 1250 happens to agree.
  */
+type RawRate = { rate: number; source: BaseCabinRate['source']; label: string };
+
+/**
+ * The card BEFORE the monotonic cap: the rate an area attracts on its own.
+ * Keyed on area alone — fixed sizes are matched by dimension in the caller,
+ * because a stated price belongs to a size, not to an area.
+ */
+function rawRateForArea(areaSqft: number): RawRate | null {
+  if (!Number.isFinite(areaSqft) || areaSqft <= 0) return null;
+  if (areaSqft < INTERPOLATION_FLOOR_SQFT) return null;
+
+  const slide = interpolatedRateFor(areaSqft);
+  if (slide) return { rate: slide.rate, source: 'interpolated', label: slide.label };
+
+  // Exactly 36 sq ft with dimensions other than 6x6 — 9x4, 4.5x8 and so on. The
+  // slide's lower anchor is stated by AREA, so the rate applies to the area
+  // even where the dimensions are not the fixed size's.
+  if (areaSqft === INTERPOLATION_FLOOR_SQFT) {
+    return { rate: RATE_INTERPOLATION_SEGMENTS[0].fromRate, source: 'interpolated', label: '36 sq ft anchor' };
+  }
+
+  const band = AREA_BANDS.find((entry) => entry.maxAreaSqft === null || areaSqft < entry.maxAreaSqft);
+  return band ? { rate: band.ratePerSqft, source: 'band', label: band.label } : null;
+}
+
+/** Uncapped price for an area, to the rupee. */
+function rawPriceForArea(areaSqft: number): number | null {
+  const raw = rawRateForArea(areaSqft);
+  return raw === null ? null : Math.round(areaSqft * raw.rate);
+}
+
+/**
+ * The cap: the cheapest price any cabin at least this large can be charged.
+ * `Infinity` above the top anchor, where nothing larger constrains it.
+ */
+function ceilingForArea(areaSqft: number): number {
+  return MONOTONIC_CAP_ANCHORS
+    .filter((anchor) => anchor >= areaSqft)
+    .reduce((lowest, anchor) => Math.min(lowest, rawPriceForArea(anchor) ?? Infinity), Infinity);
+}
+
+/**
+ * The base cabin price for a size, or `null` where SAMAN has stated no rate.
+ *
+ * `null` means STOP, not zero and not "derive something close". Under rate card
+ * v2 the only sizes that return null are floor areas UNDER 36 sq ft that are
+ * not one of the fixed sizes — the ruling is explicit that below 36 sq ft only
+ * the fixed sizes exist. The 36-50 gap that used to return null is covered by
+ * SAMAN's linear slide.
+ *
+ * Order matters: a fixed size is a stated price and is never recomputed, so it
+ * is matched first and by dimensions rather than by area. 8x6 is Rs 60,000
+ * because SAMAN said so, not because 48 x 1250 happens to agree.
+ *
+ * The monotonic cap is applied last and to every path, including the fixed
+ * sizes. It is a no-op on all five of them — each already prices below the
+ * ceiling its area faces — and applying it uniformly rather than exempting them
+ * means there is no path through this function that can escape monotonicity.
+ */
 export function baseCabinRate(length: number, width: number): BaseCabinRate | null {
   if (!Number.isFinite(length) || !Number.isFinite(width) || length <= 0 || width <= 0) return null;
 
   const fixed = fixedRateSizeFor(length, width);
-  if (fixed) {
-    return {
-      areaSqft: fixed.areaSqft,
-      ratePerSqft: fixed.ratePerSqft,
-      basePriceExGst: fixed.basePriceExGst,
-      source: 'fixed',
-      sourceLabel: fixed.sizeLabel,
-    };
-  }
+  const areaSqft = fixed ? fixed.areaSqft : length * width;
+  const raw: RawRate | null = fixed
+    ? { rate: fixed.ratePerSqft, source: 'fixed', label: fixed.sizeLabel }
+    : rawRateForArea(areaSqft);
+  if (!raw) return null;
 
-  const areaSqft = length * width;
-
-  // Under 36 sq ft only the fixed sizes exist. Everything else stops and asks.
-  if (areaSqft < INTERPOLATION_FLOOR_SQFT) return null;
-
-  // The 36-50 gap: SAMAN's slide. Rate at full precision, total to the rupee.
-  const slide = interpolatedRateFor(areaSqft);
-  if (slide) {
-    return {
-      areaSqft,
-      ratePerSqft: slide.rate,
-      basePriceExGst: Math.round(areaSqft * slide.rate),
-      source: 'interpolated',
-      sourceLabel: slide.label,
-    };
-  }
-
-  // Exactly 36 sq ft with dimensions other than 6x6 — 4x9, 4.5x8, 12x3 and so
-  // on. The slide's lower anchor is the 6x6 rate, so the area carries a stated
-  // rate even where the dimensions are not the fixed size's.
-  if (areaSqft === INTERPOLATION_FLOOR_SQFT) {
-    const anchor = RATE_INTERPOLATION_SEGMENTS[0].fromRate;
-    return {
-      areaSqft,
-      ratePerSqft: anchor,
-      basePriceExGst: Math.round(areaSqft * anchor),
-      source: 'interpolated',
-      sourceLabel: '36 sq ft anchor',
-    };
-  }
-
-  const band = AREA_BANDS.find((entry) => entry.maxAreaSqft === null || areaSqft < entry.maxAreaSqft);
-  if (!band) return null;
+  const rawPriceExGst = fixed ? fixed.basePriceExGst : Math.round(areaSqft * raw.rate);
+  const basePriceExGst = Math.min(rawPriceExGst, ceilingForArea(areaSqft));
 
   return {
     areaSqft,
-    ratePerSqft: band.ratePerSqft,
-    basePriceExGst: Math.round(areaSqft * band.ratePerSqft),
-    source: 'band',
-    sourceLabel: band.label,
+    ratePerSqft: raw.rate,
+    basePriceExGst,
+    source: raw.source,
+    sourceLabel: raw.label,
+    rawPriceExGst,
+    capped: basePriceExGst < rawPriceExGst,
   };
 }
 
@@ -256,4 +316,11 @@ export const BASE_CABIN_RATE_CARD_DATASET = {
   slide: RATE_INTERPOLATION_SEGMENTS
     .map((s) => `${s.fromAreaSqft}:${s.toAreaSqft}=${s.fromRate}:${s.toRate}`).join(';'),
   floor: String(INTERPOLATION_FLOOR_SQFT),
+  /**
+   * The monotonic cap, serialised as "area=price" pairs the browser can read
+   * without re-deriving anything: 50=60000;70=80500;90=99000;150=157500;200=200000.
+   * Sending the resolved prices rather than the anchor areas keeps one arithmetic
+   * implementation on the server, where the ruling lives.
+   */
+  cap: MONOTONIC_CAP_ANCHORS.map((anchor) => `${anchor}=${rawPriceForArea(anchor)}`).join(';'),
 } as const;

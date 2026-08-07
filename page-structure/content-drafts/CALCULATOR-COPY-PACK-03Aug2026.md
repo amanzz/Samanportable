@@ -6,7 +6,7 @@ Approved by Fable 5. Implement verbatim under L4. No string is taken from any co
 
 Product. Heading: Choose your product. Help: Pick the building closest to what you need. You can change it at any point.
 
-Size. Heading: Set the size. Help: Area and price update as you type. Sizes we publish use our listed price; any other size is estimated from the same rate.
+Size. Heading: Set the size. Help: Area and price update as you type. Every size prices from our base-cabin rate card — the larger the floor area, the lower the rate per square foot.
 
 Interior. Heading: Choose the interior. Help: Standard finishes are included. Upgrades and savings are shown per square foot.
 
@@ -34,7 +34,7 @@ Window track: A 2.5 track slides more smoothly and costs more than a 2 track. Th
 
 Socket placement: Placement moves a socket, it does not add one. The charge is the plug point count above, and moving a socket costs nothing.
 
-Custom size: Sizes we publish carry our listed price. Any other size is estimated from the same rate and confirmed on the drawing.
+Custom size: Enter any size you need. All sizes price from the same base-cabin rate card, and your figure is confirmed on the drawing.
 
 ## Controls
 
@@ -50,7 +50,7 @@ First Name, Last Name, Mobile Number and Email Address are required. Company Nam
 
 Heading: Live estimate. Row labels: Floor area. Base cabin. Subtotal. GST at 18%. Total block label: Estimated total.
 
-Fine print: Indicative estimate from our published price list, ex-factory and ex-GST. Your fixed price is confirmed on the drawing within 48 hours.
+Fine print: Indicative estimate from our base-cabin rate card, ex-factory and ex-GST. Fittings are added as you choose them. Your fixed price is confirmed on the drawing within 48 hours.
 
 ## Quote mode, where a route has no approved ladder
 
