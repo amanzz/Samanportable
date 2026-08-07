@@ -36,7 +36,7 @@ import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
 import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
-import { toRelatedProductSummary } from '../../../lib/relatedProductSummary';
+import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import {
   isPortaCabinStripSlug,
@@ -50,6 +50,9 @@ import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../.
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
+import { removeMonetaryHtml, removeMonetarySentencesDeep } from '../../../lib/monetaryText';
+import productOpenerOverrides from '../../../data/product-opener-overrides.json';
+import { injectInfoImages } from '../../../lib/infoImageLayout';
 
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
@@ -74,6 +77,13 @@ const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
   'portable-office-cabin',
 ]);
 
+// P0 commercial-truth gate (SAMAN, 03 Aug 2026): this retained route has no
+// approved ladder yet. The frozen WordPress export remains untouched; all
+// monetary strings and legacy commercial entities are suppressed at render time.
+const PENDING_APPROVED_LADDER_SLUGS = new Set([
+  'prefabricated-container-house',
+]);
+
 // Section 17: exported WordPress records are immutable. Route-specific content
 // corrections are applied to the fetched render string, with the full anchor
 // matched so neither unrelated copy nor the destination can change.
@@ -87,6 +97,36 @@ const PRODUCT_DESCRIPTION_ANCHOR_TEXT_REPLACEMENTS: Record<string, { before: str
 function applyProductDescriptionAnchorTextCorrection(slug: string, html: string): string {
   const replacement = PRODUCT_DESCRIPTION_ANCHOR_TEXT_REPLACEMENTS[slug];
   return replacement ? html.replace(replacement.before, replacement.after) : html;
+}
+
+const PREFABRICATED_CONTAINER_HOUSE_LEGACY_CONTACT =
+  'Call <strong>09708989937</strong>, WhatsApp <strong>0970898993</strong>, or email <strong>sales@samanportable.com</strong>.';
+const PREFABRICATED_CONTAINER_HOUSE_CONTACT_OVERRIDE =
+  '</p><p data-copy-verbatim="true">South India — Bengaluru: <a href="tel:+918861622859">+91 88616 22859</a> or <a href="tel:+918088685440">+91 80886 85440</a>,<br /><a href="mailto:sales@samanportable.com">sales@samanportable.com</a><br />North India — Greater Noida: <a href="tel:+918796039938">+91 87960 39938</a> or <a href="tel:+919708989937">+91 97089 89937</a>,<br /><a href="mailto:ncr@samanportable.com">ncr@samanportable.com</a>';
+
+function applyProductDescriptionContactCorrection(slug: string, html: string): string {
+  if (slug !== 'prefabricated-container-house') return html;
+  return html.replace(
+    PREFABRICATED_CONTAINER_HOUSE_LEGACY_CONTACT,
+    PREFABRICATED_CONTAINER_HOUSE_CONTACT_OVERRIDE
+  );
+}
+
+const PRODUCT_OPENER_OVERRIDES = productOpenerOverrides as Record<string, string>;
+
+function removeLeadingOpenerParagraph(html: string, opener: string): string {
+  if (!html || !opener) return html;
+  const leadingParagraph = html.match(/^\s*<p\b[^>]*>([\s\S]*?)<\/p>/i);
+  if (!leadingParagraph) return html;
+  const renderedText = leadingParagraph[1]
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return renderedText === opener
+    ? html.slice(leadingParagraph[0].length).trimStart()
+    : html;
 }
 
 interface ProductDetailsProps {
@@ -104,6 +144,7 @@ interface ProductDetailsProps {
   // Present only when data/products/{slug}.json exists; every other subpage keeps
   // the generic ProductSummaryLayout hero, byte-for-byte.
   variantData?: VariantProductData | null;
+  opener?: string;
 }
 
 export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
@@ -119,13 +160,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // Check if category and slug are the same (case-insensitive)
     const categoryLower = decodeURIComponent(category).toLowerCase();
     const slugLower = decodeURIComponent(slug).toLowerCase();
+    const suppressLegacyCommercialSurfaces = PENDING_APPROVED_LADDER_SLUGS.has(slugLower);
     
     if (categoryLower === slugLower) {
       // Redirect to the shorter URL format
       return {
         redirect: {
           destination: `/product/${category}`,
-          permanent: true,
+          statusCode: 301,
         },
       };
     }
@@ -188,6 +230,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       if (urlCategory === 'container-offices') {
         relatedProducts = orderContainerOfficeRail(slug, relatedProducts);
       }
+      if (urlCategory === 'container-houses') {
+        relatedProducts = relatedProducts.map(sanitizeC08RelatedProductSummary);
+      }
     } catch (error) {
       // Silent error handling for production
     }
@@ -197,10 +242,19 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     const productDescriptionWithHeadingCorrection = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
       ? demoteHtmlH1ToH2(descriptionData?.description || '')
       : descriptionData?.description || '';
-    const productDescription = applyProductDescriptionAnchorTextCorrection(
+    const anchorCorrectedProductDescription = applyProductDescriptionAnchorTextCorrection(
       slugLower,
       productDescriptionWithHeadingCorrection
     );
+    const correctedProductDescription = applyProductDescriptionContactCorrection(
+      slugLower,
+      anchorCorrectedProductDescription
+    );
+    const productDescription = suppressLegacyCommercialSurfaces
+      ? removeMonetaryHtml(correctedProductDescription)
+      : correctedProductDescription;
+    const opener = PRODUCT_OPENER_OVERRIDES[slugLower] || '';
+    const productDescriptionWithoutOpener = removeLeadingOpenerParagraph(productDescription, opener);
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -218,6 +272,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data:', error);
     }
+    if (suppressLegacyCommercialSurfaces && rankMathSEO) {
+      rankMathSEO = removeMonetarySentencesDeep(rankMathSEO);
+    }
 
     // Public marketing page with no per-user data — safe to edge-cache. Set only
     // on the success path so the 404s/redirects above keep Next's default no-store
@@ -232,6 +289,44 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .then((mod: { default?: VariantProductData }) => mod.default || null)
           .catch(() => null)
       : null;
+    const variantImages = variantData?.variants.flatMap((variant) => variant.images || []) || [];
+    const defaultVariantHero = variantData
+      ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
+        || variantImages[0]
+      : undefined;
+    const variantSocialImage = defaultVariantHero?.src
+      ? `https://www.samanportable.com${defaultVariantHero.src}`
+      : undefined;
+
+    if (variantData?.seoTitle || variantData?.metaDescription) {
+      const seoTitle = variantData.seoTitle || rankMathSEO?.title;
+      const metaDescription = variantData.metaDescription || rankMathSEO?.description;
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        ...(seoTitle ? { title: seoTitle, og_title: seoTitle, twitter_title: seoTitle } : {}),
+        ...(metaDescription
+          ? {
+              description: metaDescription,
+              og_description: metaDescription,
+              twitter_description: metaDescription,
+            }
+          : {}),
+        ...(variantSocialImage
+          ? { og_image: variantSocialImage, twitter_image: variantSocialImage }
+          : {}),
+        canonical: `https://www.samanportable.com/product/${category}/${slug}`,
+      };
+    }
+
+    if (variantData?.suppressLegacyFaqSchema && rankMathSEO) {
+      // DELETE the key rather than setting it undefined: getServerSideProps
+      // serialises its props to JSON and rejects an explicit `undefined`
+      // ("cannot be serialized"), which 500'd every C-08 sibling that sets
+      // suppressLegacyFaqSchema. Removing the key suppresses the stale graph
+      // just the same and serialises cleanly.
+      const { faqSchema: _suppressed, ...withoutFaqSchema } = rankMathSEO;
+      rankMathSEO = withoutFaqSchema;
+    }
 
     // Event B owns all commercial size/price data when its product JSON exists.
     // Keep the legacy record for its frozen title, descriptions and head data, but
@@ -250,19 +345,42 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       ] as const) {
         delete productForPageProps[field];
       }
+      if (variantData.productSku) productForPageProps.sku = variantData.productSku;
+      else if (variantData.suppressLegacySku) delete productForPageProps.sku;
+      if (defaultVariantHero) productForPageProps.featured_image = defaultVariantHero.src;
+    }
+    if (suppressLegacyCommercialSurfaces) {
+      for (const field of [
+        'price',
+        'regular_price',
+        'sale_price',
+        'price_html',
+        'priceDisplay',
+        'priceSubline',
+      ] as const) {
+        delete productForPageProps[field];
+      }
+      delete productForPageProps.short_description;
     }
 
     return {
       props: {
         product: {
           ...productForPageProps,
-          description: `${variantData?.descriptionHtml || productDescription}`,
-          images: descriptionData?.images?.map((img, index) => ({
+          // C-08 E3 Step C — the 16:9 Info images are spread through the body
+          // copy here rather than being written into the approved description
+          // string, so the copy in the data file stays exactly as approved and
+          // the placement rules stay enforced by code.
+          description: injectInfoImages(
+            variantData?.descriptionHtml || productDescriptionWithoutOpener,
+            variantData?.infoImages
+          ),
+          images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
             id: index,
             src: img.src,
             alt: img.alt,
             name: img.alt || `Image ${index + 1}`
-          })) || [],
+          })),
           categories: [
             {
               id: 0,
@@ -291,6 +409,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         rankMathSEO,
         reviews,
         variantData,
+        opener,
       },
     };
   } catch (error) {
@@ -309,11 +428,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
   }
 };
 
-const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], specificationsHtml = '', shippingHtml = '', variantData = null }: ProductDetailsProps) => {
+const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], specificationsHtml = '', shippingHtml = '', variantData = null, opener = '' }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
+  const suppressLegacyCommercialSurfaces = PENDING_APPROVED_LADDER_SLUGS.has(slug.toLowerCase());
 
   // Parse short description table data
   const shortDescriptionData = useMemo(() => {
@@ -523,7 +643,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} />
+          <ProductStructuredData
+            product={product}
+            category={category}
+            reviews={reviews}
+            breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
+            variantData={variantData || undefined}
+            suppressProductEntity={suppressLegacyCommercialSurfaces}
+          />
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered
               FAQs; legacy products continue to use RankMath. */}
@@ -732,6 +859,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                           <h1 className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">
                             {transformedProduct.title}
                           </h1>
+                          {opener && (
+                            <p className="text-sm leading-relaxed text-muted-foreground">
+                              {opener}
+                            </p>
+                          )}
                           {/* Real ratings only: render stars/review count solely when
                               WooCommerce has genuine reviews (rating_count > 0). No fake stars. */}
                           {product.rating_count > 0 && (
@@ -748,8 +880,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                         
                         {/* C-05 R1 — price basis line. Products that carry a
                             `priceSubline` state their own basis; every other product
-                            keeps the existing site-wide caption, byte-for-byte. */}
-                        {(() => {
+                            keeps the existing site-wide caption, byte-for-byte.
+                            C-08 — the whole block is gated by suppressLegacyCommercialSurfaces,
+                            so a pending-approval ladder slug renders no commercial
+                            surface at all. Both features, one block. */}
+                        {!suppressLegacyCommercialSurfaces && (() => {
                           const priceNote = (product as any).priceSubline || 'Inclusive of all taxes';
                           const saleValue = parseFloat(transformedProduct.sale_price);
                           const baseValue = parseFloat(transformedProduct.price);
@@ -901,7 +1036,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   hero — desktop column 1, mobile last — so these cards must appear
                   exactly once. Every other subpage keeps the desktop-only slider
                   unchanged. */}
-              {!variantData && (
+              {!variantData && category.toLowerCase() !== 'container-houses' && (
               <div className="mt-4 hidden lg:block">
                 <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
                   <div className="space-y-4">

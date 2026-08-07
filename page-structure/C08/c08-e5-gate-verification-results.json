@@ -1,0 +1,122 @@
+{
+ "container-houses": {
+  "cols": 6,
+  "thumbs": 6,
+  "thumbImgs": 6,
+  "emptyCells": 0,
+  "panelImages": 4,
+  "injected": 4,
+  "adjacentPairs": 0,
+  "paragraphs": 9,
+  "iframes": 0,
+  "videoObject": 1,
+  "ytRefs": 1,
+  "preconnectOnLoad": 0,
+  "gtmIframes": 1,
+  "h1Count": 1,
+  "h1Text": [
+   "Container Houses"
+  ],
+  "h1InDescriptionPanel": 0
+ },
+ "prefab-container-homes": {
+  "cols": 5,
+  "thumbs": 5,
+  "thumbImgs": 5,
+  "emptyCells": 0,
+  "panelImages": 2,
+  "injected": 2,
+  "adjacentPairs": 0,
+  "paragraphs": 3,
+  "iframes": 0,
+  "videoObject": 0,
+  "ytRefs": 0,
+  "preconnectOnLoad": 0,
+  "gtmIframes": 1,
+  "h1Count": 1,
+  "h1Text": [
+   "Prefab Container Homes"
+  ],
+  "h1InDescriptionPanel": 0
+ },
+ "luxury-container-houses": {
+  "cols": 5,
+  "thumbs": 5,
+  "thumbImgs": 5,
+  "emptyCells": 0,
+  "panelImages": 2,
+  "injected": 2,
+  "adjacentPairs": 0,
+  "paragraphs": 3,
+  "iframes": 0,
+  "videoObject": 0,
+  "ytRefs": 0,
+  "preconnectOnLoad": 0,
+  "gtmIframes": 1,
+  "h1Count": 1,
+  "h1Text": [
+   "Luxury Container Houses"
+  ],
+  "h1InDescriptionPanel": 0
+ },
+ "shipping-container-homes": {
+  "cols": 5,
+  "thumbs": 5,
+  "thumbImgs": 5,
+  "emptyCells": 0,
+  "panelImages": 3,
+  "injected": 3,
+  "adjacentPairs": 0,
+  "paragraphs": 4,
+  "iframes": 0,
+  "videoObject": 0,
+  "ytRefs": 0,
+  "preconnectOnLoad": 0,
+  "gtmIframes": 1,
+  "h1Count": 1,
+  "h1Text": [
+   "Shipping Container Homes"
+  ],
+  "h1InDescriptionPanel": 0
+ },
+ "affordable-container-homes": {
+  "cols": 5,
+  "thumbs": 5,
+  "thumbImgs": 5,
+  "emptyCells": 0,
+  "panelImages": 2,
+  "injected": 2,
+  "adjacentPairs": 0,
+  "paragraphs": 3,
+  "iframes": 0,
+  "videoObject": 0,
+  "ytRefs": 0,
+  "preconnectOnLoad": 0,
+  "gtmIframes": 1,
+  "h1Count": 1,
+  "h1Text": [
+   "Affordable Container Homes"
+  ],
+  "h1InDescriptionPanel": 0
+ },
+ "prefabricated-container-house": {
+  "cols": 5,
+  "thumbs": 5,
+  "thumbImgs": 5,
+  "emptyCells": 0,
+  "panelImages": 8,
+  "injected": 4,
+  "adjacentPairs": 0,
+  "paragraphs": 35,
+  "iframes": 0,
+  "videoObject": 0,
+  "ytRefs": 0,
+  "preconnectOnLoad": 0,
+  "gtmIframes": 1,
+  "h1Count": 1,
+  "h1Text": [
+   "Prefabricated Container House"
+  ],
+  "h1InDescriptionPanel": 0
+ }
+}

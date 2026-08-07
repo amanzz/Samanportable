@@ -1,0 +1,348 @@
+{
+  "productSlug": "affordable-container-homes",
+  "variantAxis": "Size",
+  "defaultVariant": "20x10",
+  "gstPercent": 18,
+  "variants": [
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 252960,
+      "priceInclGst": 298493,
+      "useCase": "First steel home on a budget",
+      "sku": "SP-ACH-2026-20X8",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x8 ft affordable container home, light grey cladding, on grass at the edge of an orchard",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x8 ft affordable container home, with a compact sofa with a low table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-long-side-elevation.webp",
+          "alt": "Long side elevation of a 20x8 ft affordable container home showing the full window run, light grey cladding, on grass at the edge of an orchard",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x8 ft affordable container home, light grey cladding, on grass at the edge of an orchard",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x8 ft affordable container home, with a kitchen counter with a breakfast bar",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x8 ft affordable container home, with a bed with grey linen beside a wardrobe",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 287600,
+      "priceInclGst": 339368,
+      "useCase": "Value one-room family start",
+      "sku": "SP-ACH-2026-20X10",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x10 ft affordable container home, teal cladding, on a paved plot in a coastal palm village",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x10 ft affordable container home, with a sofa facing a media unit",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 20x10 ft affordable container home in teal cladding, on a paved plot in a coastal palm village",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-end-dominant-view.webp",
+          "alt": "End-on view of a 20x10 ft affordable container home with the gable glazing lit, teal cladding, on a paved plot in a coastal palm village",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 20x10 ft affordable container home, with a bedroom with fitted wardrobes",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x10 ft affordable container home towards a shower room with a basin and mirror",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 331200,
+      "priceInclGst": 390816,
+      "useCase": "Permanent economy family home",
+      "sku": "SP-ACH-2026-20X12",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 20x12 ft affordable container home, brown cladding, on stone paving above a river gorge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 20x12 ft affordable container home, with a sofa with a rug and side lamp",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 20x12 ft affordable container home, brown cladding, on stone paving above a river gorge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 20x12 ft affordable container home, brown cladding, on stone paving above a river gorge",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 20x12 ft affordable container home, with a kitchen with a dining table beside the window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/20x12/affordable-container-homes-20x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 20x12 ft affordable container home towards a WC and basin off the corridor",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 432320,
+      "priceInclGst": 510138,
+      "useCase": "Narrow-plot budget home",
+      "sku": "SP-ACH-2026-40X8",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x8 ft affordable container home, khaki cladding, on desert scrub among agave planting",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x8 ft affordable container home, with a bench seat with a slim dining counter",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-long-side-elevation.webp",
+          "alt": "Long side elevation of a 40x8 ft affordable container home showing the full window run, khaki cladding, on desert scrub among agave planting",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-end-dominant-view.webp",
+          "alt": "End-on view of a 40x8 ft affordable container home with the gable glazing lit, khaki cladding, on desert scrub among agave planting",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x8 ft affordable container home, with a kitchen with a mustard dining chair set",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x8 ft affordable container home, with a bed with a mustard throw",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 540400,
+      "priceInclGst": 637672,
+      "useCase": "Family home at lowest rate",
+      "sku": "SP-ACH-2026-40X10",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x10 ft affordable container home, pale grey cladding, on gravel in a forested valley",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x10 ft affordable container home, with a sofa and coffee table on timber flooring",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-front-left-angle.webp",
+          "alt": "Front-left angle on a 40x10 ft affordable container home in pale grey cladding, on gravel in a forested valley",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-elevated-three-quarter.webp",
+          "alt": "Elevated three-quarter view over a 40x10 ft affordable container home, pale grey cladding, on gravel in a forested valley",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-bedroom-view.webp",
+          "alt": "Bedroom inside a 40x10 ft affordable container home, with a bedroom with a corner window",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x10/affordable-container-homes-40x10-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x10 ft affordable container home towards a WC and basin with laundry opposite",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 634560,
+      "priceInclGst": 748781,
+      "useCase": "Largest budget family home",
+      "sku": "SP-ACH-2026-40X12",
+      "images": [
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-front-right-hero.webp",
+          "alt": "Front-right hero view of a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-entry-living-hall.webp",
+          "alt": "Entry and living area inside a 40x12 ft affordable container home, with a lounge with a pink throw and media unit",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-rear-right-angle.webp",
+          "alt": "Rear-right angle on a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-long-side-elevation.webp",
+          "alt": "Side elevation of a 40x12 ft affordable container home, red-oxide cladding, on open rural ground with fields behind",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-kitchen-dining.webp",
+          "alt": "Kitchen and dining zone inside a 40x12 ft affordable container home, with a kitchen counter with a long dining table",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/products/affordable-container-homes/40x12/affordable-container-homes-40x12-bathroom-reverse.webp",
+          "alt": "Looking back through a 40x12 ft affordable container home towards a shower room off the corridor",
+          "provenance": "unknown",
+          "width": 900,
+          "height": 900
+        }
+      ]
+    }
+  ],
+  "productName": "Affordable Container Homes",
+  "seoTitle": "Affordable Container Homes │ Pre-Built │ SAMAN",
+  "metaDescription": "Affordable container homes from Rs 2.52 lakh ex-GST, the lowest rates in our range. One efficient plan per size, six sizes, factory-built, pan-India delivery.",
+  "opener": "Affordable container homes from SAMAN carry the lowest rates in our container house range, from Rs 1,438 per sq ft, by fixing one efficient plan per size and spending the budget where it is felt: the same welded MS frame, corrugated MS walls and mineral wool insulation as every home we build. What changes is choice, not construction; finishes are standard, glazing is modest, and kitchen or toilet work is a clearly separated option you add only if you need it. Six sizes run from Rs 2,52,960 ex-GST at 20x8 ft to Rs 6,34,560 at 40x12 ft.",
+  "descriptionHtml": "<h2>How the price comes down, and where it does not</h2><p>From ₹1,438 per square foot, which is the lowest rate we publish. It is worth being precise about how that figure is reached, because \"affordable\" is a word that usually means something has been quietly removed.</p><p>Nothing structural has been removed. The chassis is the same welded mild steel. The framing is the same MS section with reinforced openings. The cladding is the same 1.2 mm corrugated MS under the same 1.4 mm roof. The walls carry the same 75 mm of mineral wool and the ceiling the same 100 mm of glasswool. The electrical installation is the same concealed copper on the same distribution board with the same MCBs, RCCB and earth. The corrosion system is the same prepared steel, red-oxide primer and two coats of enamel.</p><p>What has been removed is choice.</p><p>Each size has one plan. Not a starting plan you adjust — one plan. The window positions are fixed, the door is fixed, the bathroom is where it is. Finishes are the standard schedule with no upgrade path offered on this page. Glazing is modest and stays modest.</p><img src=\"/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-elevated-three-quarter.webp\" alt=\"\" width=\"1200\" height=\"675\" data-c08-info-image=\"true\" /><p>That is the entire mechanism. A building made repeatedly to one unchanging drawing costs less than the same building made to a drawing that moves, because the expensive parts of construction are decision-making, setting-out and rework — not steel. Fixing the plan removes all three.</p><p>Prices run from ₹2,52,960 ex-GST at 20 × 8 ft to ₹6,34,560 at 40 × 12 ft.</p><h2>The six fixed plans</h2><p>Each of these is a single layout. Read them as descriptions of what you will receive rather than as starting points.</p><p><strong>20 × 8 ft — 160 sq ft.</strong> One sleeping area, a combined living and kitchen run along the opposite wall, and a bathroom at one end. Door on the long wall, two windows. The plan works because it does not attempt a corridor — every space is reached from the one before it, which at eight feet of width is the only honest arrangement.</p><p><strong>20 × 10 ft — 200 sq ft.</strong> The same three functions with enough width to place furniture against both long walls. Sleeping is separated by a partition rather than by arrangement, which is the first size where a closed bedroom door is possible. Two windows and a door, positions fixed.</p><p><strong>20 × 12 ft — 240 sq ft.</strong> A closed bedroom, a living area that seats a family, a kitchen run and a bathroom with a small lobby rather than a door opening directly into the living space. Three windows. The most-ordered plan on this page for permanent family use.</p><p><strong>40 × 8 ft — 320 sq ft.</strong> Two sleeping areas at opposite ends with living and kitchen between them, which is the only way forty feet by eight feet works as a family plan. Four windows spaced along the long wall. Circulation runs through rooms because the width leaves no alternative, and the plan is designed around that rather than fighting it.</p><p><strong>40 × 10 ft — 400 sq ft.</strong> Two closed bedrooms, a living area, a kitchen with real counter length, one bathroom. This is the plan that competes directly with conventional low-cost construction, and at ₹1,438 per square foot it does so on price as well as on delivery time.</p><p><strong>40 × 12 ft — 480 sq ft.</strong> Two bedrooms with wardrobe recesses, separate living and dining zones, a kitchen and a bathroom with a lobby. The largest fixed plan and the best value per square foot in the range, because the fixed-plan saving scales with area while the setting-out cost does not.</p><h2>What is optional, and priced separately</h2><p>Two things are deliberately kept outside the base price rather than bundled into it, and the reason is honesty about who needs them.</p><p><strong>Kitchen fit-out.</strong> The base building includes the electrical points, the plumbing provision and the wall finish for a kitchen. It does not include counters, cabinets or appliances. A large proportion of buyers on this page already own kitchen furniture, or intend to build in locally at a lower cost than we could supply. Bundling it would mean charging everyone for something many do not want.</p><img src=\"/images/products/affordable-container-homes/info/40x10/affordable-container-homes-40x10-semi-kitchen-dining.webp\" alt=\"\" width=\"1200\" height=\"675\" data-c08-info-image=\"true\" /><p><strong>Toilet fit-out beyond the basic.</strong> The bathroom is delivered complete and working — waterproof lining, anti-skid floor, sanitary fittings, plumbing. What is not included is upgraded sanitaryware or a shower enclosure. Again, this is a choice about who is paying for what.</p><p>Both are quoted separately and clearly on your quotation, as line items rather than as a bundled total. If you want them, ask; if you do not, you are not paying for them.</p><p>Everything else — the building, the envelope, the insulation, the electrical work, the finished bathroom — is in the price on this page.</p><h2>What a fixed plan actually saves, in order</h2><p>It is worth setting out where the money goes, because \"affordable\" without an explanation is only a word.</p><p><strong>Design and setting-out.</strong> A one-off building is drawn, checked, marked out and first-articled once, for a single unit. A fixed plan pays that cost once and spreads it across every unit built to it. This is the largest single saving and it is entirely invisible in the finished building.</p><p><strong>Decision time.</strong> Every choice a buyer makes carries an administrative cost — a conversation, a revised drawing, a confirmation, a change to the cutting list. Fixing the plan removes all of it. That is why we do not offer a small change for a small fee: the fee would have to cover the whole chain rather than the change.</p><p><strong>Rework.</strong> A drawing that has been built forty times has had its mistakes found. A new drawing has not. Rework on a first article is normal, and it is priced into every one-off building whether or not it happens on yours.</p><p><strong>Material efficiency.</strong> Fixed openings in fixed positions mean fixed cutting, and fixed cutting means known offcuts. Wastage on a repeated plan is a fraction of wastage on a bespoke one.</p><p>None of those four touches the specification. That is the whole point, and it is why the warranty is identical to every other build we make.</p><h2>Where this sits against the rest of the range</h2><p>The five container-house builds differ in what they optimise for, and the fixed plan on this page is the only one that trades flexibility for price.</p><p>If the interior matters more than the invoice, <a href=\"/product/container-houses/luxury-container-houses\">the hospitality-grade finish</a> carries acoustic insulation, coffered ceilings, engineered wood and feature glazing on the same structure. If the unit will be relocated or will stand in a coastal or industrial exposure, <a href=\"/product/container-houses/shipping-container-homes\">a heavier shell engineered for relocation</a> uses reinforced corner posts, a 1.6 mm skin and zinc-rich primer, and no amount of interior specification substitutes for it. If you need the same home more than once — staff housing, a colony, a phased family plot — then <a href=\"/product/container-houses/prefab-container-homes\">repeatable modules for colony work</a> reach a similar economy by repetition rather than by fixing the plan, and they keep the expansion-ready end wall this build does not have.</p><p>If you want a unit delivered with every room already fitted and nothing left for site, <a href=\"/product/container-houses/prefabricated-container-house\">the fitted single-unit route</a> is quoted against your drawing.</p><p>Construction detail shared by all five sits on <a href=\"/product/container-houses\">every container house we build</a>.</p><h2>Who this build is genuinely right for</h2><p>It is worth being direct about this, because the cheapest option in a range attracts people it does not suit.</p><p>This build is right for you if the fixed plan works. If you look at the layout for your size and it does what you need, you are getting the same construction as the rest of the range at the lowest rate we publish, and there is no reason to spend more.</p><p>It is wrong for you if you have a specific layout in mind. Every change to a fixed plan removes the saving that made it cheap, and at that point you are paying standard-build prices for a page that was never designed to be customised. If you know you want the bathroom somewhere else, start from the standard range instead — you will end up in the same place with less friction.</p><img src=\"/images/products/affordable-container-homes/info/40x12/affordable-container-homes-40x12-end-dominant.webp\" alt=\"\" width=\"1200\" height=\"675\" data-c08-info-image=\"true\" /><p>It is also wrong for a coastal site. The standard coating system is genuinely adequate inland and genuinely inadequate within a few kilometres of saltwater, and choosing on price in that situation costs more within five years than the reinforced build would have cost today.</p><h2>Delivery, site readiness and installation</h2><p>Seven to twenty-one working days from confirmed order. Fixed-plan units sit at the short end of that range more often than any other build, because there is no drawing cycle — the drawing already exists and has been built before.</p><p>Your site needs a level, cured concrete plinth sized to the unit, trailer and crane access with the turning radius measured rather than assumed, and water and power brought to a point near the connection side.</p><p>Delivery is free inside Bengaluru city and across Delhi NCR including Ghaziabad, Gurugram, Faridabad, Noida and Greater Noida. Beyond those zones the freight band is charged by distance and trailer size and confirmed with your quotation.</p><img src=\"/images/products/affordable-container-homes/info/20x8/affordable-container-homes-20x8-bathroom-reverse.webp\" alt=\"\" width=\"1200\" height=\"675\" data-c08-info-image=\"true\" /><p>Installation is a single day. Because the plan is fixed, the connection points are in known positions on every unit, which makes site preparation simpler here than anywhere else in the range — we can tell you exactly where the services need to arrive before the unit is built.</p><h2>How this compares with building conventionally</h2><p>Most buyers on this page are not choosing between our builds. They are choosing between a factory-made home and putting up a small structure on site, and the comparison deserves honest numbers rather than a sales line.</p><p>On cost, conventional low-cost construction can be cheaper per square foot in some regions, particularly where labour is inexpensive and materials are local. Where it stops being cheaper is in the things that do not appear in the estimate: the site supervision across three or four months, the material wastage, the rework when a trade gets something wrong, and the cost of the delay itself if the building is holding up something else. A fixed-plan factory home has one price and one date.</p><p>On time, there is no comparison. Seven to twenty-one working days against three to six months is not a marginal difference, and for anyone housing staff, opening a site office or needing a family member accommodated, the time is often worth more than the money.</p><p>On predictability, the factory wins for a structural reason rather than a commercial one. A building assembled indoors by the same team to a drawing that has been built before has very few ways to go wrong. A building assembled outdoors by trades arriving in sequence has many, and monsoon is one of them.</p><p>On resale and relocation, conventional construction stays where it is. A container home can be lifted and moved, which matters if the land is leased rather than owned — and leased land is the situation a large share of our buyers are actually in.</p><p>Where conventional construction genuinely wins is on a plot whose shape does not suit a rectangle of these proportions, and on any building above 480 square feet as a single volume. We will say so rather than sell around it.</p><h2>Phasing a purchase</h2><p>If the full size you want is beyond your budget today, there are two sensible routes and one that is not.</p><p>The sensible ones are to buy a smaller size now, or to buy the size you need and defer the kitchen and toilet upgrades, which are quoted as separate lines precisely so they can be deferred. Both leave you with a complete, warranted, weatherproof home.</p><p>The route that is not sensible is asking for the specification to be thinned. There is nothing in this build that can be removed without removing something that matters — the insulation, the coating, the electrical protection or the floor deck are not optional extras, and a supplier willing to take them out is telling you something about how they build everything else.</p><h2>Warranty and service life</h2><p>5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation.</p><p>The warranty is identical to every other build in the range. That is worth stating plainly, because buyers reasonably assume the cheapest option carries a shorter one. It does not. The construction is the same, so the cover is the same.</p><p>Service life under proper use and maintenance is 20 to 25 years, which is an engineering expectation rather than a warranty period. Coating maintenance decides where a given unit lands in that range, and on this build it is the single most valuable thing you can do — the saving you made at purchase is easily lost by letting the enamel go.</p><p>We manufacture rather than resell. SAMAN POS India Private Limited has been building since 2009, incorporated in 2019, with over 15 years behind the work, more than 500 projects delivered, and our own facilities in Bengaluru and Greater Noida.</p><h2>Questions buyers ask about the fixed-plan build</h2><h3>Is anything structurally cheaper about this build?</h3><p>No. Chassis, framing, cladding gauge, roof, insulation, electrical installation and corrosion system are identical to the standard container house. The saving comes from fixing the plan and from not bundling kitchen and upgraded toilet fit-out. If you find a competitor selling cheaper, ask them which of those things they have changed.</p><h3>Can I move a window?</h3><p>Not on this page. A moved window is a changed drawing, and a changed drawing is a standard-build order. We will happily quote it as one.</p><h3>Why is the kitchen not included?</h3><p>Because many buyers at this price already have kitchen furniture or will build in locally for less than we can supply. It is quoted as a separate line if you want it.</p><h3>Is the warranty shorter?</h3><p>No. Identical to every build in the range.</p><h3>Can I upgrade the finishes later?</h3><p>Flooring and wall finishes can be changed by you at any point after handover — they are not structural. What cannot be changed later is anything set at fabrication: window positions, door position, insulation, and the coating system.</p>",
+  "categoryLabel": "Container Houses",
+  "categoryHref": "/product/container-houses",
+  "applicationsDataset": "affordable-container-homes",
+  "materialLabel": "the same welded MS frame, corrugated MS walls and mineral wool insulation",
+  "emitAggregateOffer": true,
+  "productSku": "SP-ACH-2026",
+  "priceCaption": "Published prices are ex-factory for the unit as specified, exclusive of GST. Foundation, site levelling, water and drainage connection and the electrical service point are arranged at your site and are quoted separately.",
+  "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
+  "specPdfHref": "/specs/affordable-container-homes-technical-specification.pdf",
+  "suppressLegacySku": true,
+  "suppressLegacyFaqSchema": true
+}

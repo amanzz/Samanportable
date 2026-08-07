@@ -165,9 +165,32 @@ export const getServerSideProps: GetServerSideProps = async ({ params, res, req 
     // default no-store so transient failures / new URLs are never cache-poisoned.
     setPublicEdgeCache(res);
 
+    // Category archives have no approved ladder of their own, so price fields are
+    // dropped from serialized page data too. Product pages remain the price source.
+    // short_description is a price-carrying HTML blob that this page never renders,
+    // so it is dropped alongside the price fields rather than shipped in the payload.
+    const productsForPage = productsResponse.products.map((product) => {
+      const {
+        price,
+        regular_price,
+        sale_price,
+        price_html,
+        on_sale,
+        priceDisplay,
+        priceSubline,
+        short_description,
+        ...rest
+      } = product as typeof product & {
+        price_html?: string;
+        priceDisplay?: string;
+        priceSubline?: string;
+      };
+      return rest;
+    });
+
     return {
       props: {
-        products: productsResponse.products,
+        products: productsForPage,
         categoryName,
         categorySlug: slug,
         categoryDescription: categoryDetail?.description || '',
@@ -386,10 +409,12 @@ const ProductCategoryPage: React.FC<ProductCategoryPageProps> = ({
                 <>
                   <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                     {products.map((product, index) => (
-                      <ProductCard 
-                        key={product.id} 
-                        product={product} 
+                      <ProductCard
+                        key={product.id}
+                        product={product}
                         priority={index === 0}
+                        // Category archives list and route products; product pages own price.
+                        suppressPrice
                       />
                     ))}
                   </div>

@@ -7,15 +7,12 @@ import { NextRequest, NextResponse } from 'next/server';
 // or optimizer responses.
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname.replace(/\/+$/, '') || '/';
-  const parts = pathname.split('/').filter(Boolean);
-  const isSelfSlug = parts.length === 3 && parts[0] === 'product' && parts[1] === parts[2];
   const isObsoleteJunk =
     pathname === '/find-out-how-i-cured-my-easter-weekend-in-2-days' ||
     pathname === '/feed' ||
     /^\/(?:product-tag|tag|author)(?:\/|$)/.test(pathname) ||
     /^\/page\/\d+$/.test(pathname) ||
-    /^\/\d+$/.test(pathname) ||
-    isSelfSlug;
+    /^\/\d+$/.test(pathname);
 
   if (isObsoleteJunk) {
     return new NextResponse(null, {

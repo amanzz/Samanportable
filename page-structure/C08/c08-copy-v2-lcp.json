@@ -1,0 +1,134 @@
+[
+ {
+  "profile": "desktop",
+  "slug": "container-houses",
+  "path": "/product/container-houses",
+  "lcpMs": 156,
+  "clsScore": 0,
+  "ttfbMs": 59,
+  "lcpElement": "http://localhost:3410/images/products/container-houses/20x10/container-houses-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "desktop",
+  "slug": "prefab-container-homes",
+  "path": "/product/container-houses/prefab-container-homes",
+  "lcpMs": 168,
+  "clsScore": 0,
+  "ttfbMs": 52,
+  "lcpElement": "http://localhost:3410/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "desktop",
+  "slug": "luxury-container-houses",
+  "path": "/product/container-houses/luxury-container-houses",
+  "lcpMs": 168,
+  "clsScore": 0,
+  "ttfbMs": 47,
+  "lcpElement": "http://localhost:3410/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "desktop",
+  "slug": "shipping-container-homes",
+  "path": "/product/container-houses/shipping-container-homes",
+  "lcpMs": 200,
+  "clsScore": 0,
+  "ttfbMs": 80,
+  "lcpElement": "http://localhost:3410/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "desktop",
+  "slug": "affordable-container-homes",
+  "path": "/product/container-houses/affordable-container-homes",
+  "lcpMs": 204,
+  "clsScore": 0,
+  "ttfbMs": 85,
+  "lcpElement": "http://localhost:3410/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "desktop",
+  "slug": "prefabricated-container-house",
+  "path": "/product/container-houses/prefabricated-container-house",
+  "lcpMs": 188,
+  "clsScore": 0,
+  "ttfbMs": 93,
+  "lcpElement": "http://localhost:3410/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "mobile",
+  "slug": "container-houses",
+  "path": "/product/container-houses",
+  "lcpMs": 252,
+  "clsScore": 0,
+  "ttfbMs": 89,
+  "lcpElement": "http://localhost:3410/images/products/container-houses/20x10/container-houses-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "mobile",
+  "slug": "prefab-container-homes",
+  "path": "/product/container-houses/prefab-container-homes",
+  "lcpMs": 260,
+  "clsScore": 0,
+  "ttfbMs": 66,
+  "lcpElement": "http://localhost:3410/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "mobile",
+  "slug": "luxury-container-houses",
+  "path": "/product/container-houses/luxury-container-houses",
+  "lcpMs": 188,
+  "clsScore": 0,
+  "ttfbMs": 60,
+  "lcpElement": "http://localhost:3410/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "mobile",
+  "slug": "shipping-container-homes",
+  "path": "/product/container-houses/shipping-container-homes",
+  "lcpMs": 160,
+  "clsScore": 0,
+  "ttfbMs": 45,
+  "lcpElement": "http://localhost:3410/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "mobile",
+  "slug": "affordable-container-homes",
+  "path": "/product/container-houses/affordable-container-homes",
+  "lcpMs": 164,
+  "clsScore": 0,
+  "ttfbMs": 50,
+  "lcpElement": "http://localhost:3410/images/products/affordable-container-homes/20x10/affordable-container-homes-20x10-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ },
+ {
+  "profile": "mobile",
+  "slug": "prefabricated-container-house",
+  "path": "/product/container-houses/prefabricated-container-house",
+  "lcpMs": 268,
+  "clsScore": 0,
+  "ttfbMs": 75,
+  "lcpElement": "http://localhost:3410/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-front-right-hero.webp",
+  "lcpPass": true,
+  "clsPass": true
+ }
+]

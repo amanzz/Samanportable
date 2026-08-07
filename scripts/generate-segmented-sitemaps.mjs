@@ -67,7 +67,7 @@ const candidates = remaining.filter(pathname => locationPattern.test(pathname));
 const locations = candidates.slice(0, 213);
 const editorial = remaining.filter(pathname => !locations.includes(pathname));
 const unfilteredSegments = { products, locations, projects, editorial };
-const expectedSegments = { products: 159, locations: 213, projects: 1, editorial: 78 };
+const expectedSegments = { products: 158, locations: 213, projects: 1, editorial: 79 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries

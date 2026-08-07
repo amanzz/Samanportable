@@ -21,6 +21,7 @@ import specsDataset from '@/data/products/specs-tab-dataset.json';
 import c01Specifications from '@/data/products/c01-specifications.json';
 import c06Specifications from '@/data/products/c06-specifications.json';
 import c04Specifications from '@/data/products/c04-specifications.json';
+import c08Specifications from '@/data/products/c08-specifications.json';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -51,6 +52,9 @@ const C06_DATASET = c06Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
 const C04_DATASET = c04Specifications as unknown as {
+  products: Record<string, C01SpecificationEntry>;
+};
+const C08_DATASET = c08Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
 
@@ -134,6 +138,14 @@ export function buildC04SpecificationsHtml(pageSlug: string): string {
   const entry = C04_DATASET.products[pageSlug];
   if (!entry) {
     throw new Error(`Missing C-04 specification dataset for ${pageSlug}`);
+  }
+  return buildC01SpecificationsHtml(entry);
+}
+
+export function buildC08SpecificationsHtml(pageSlug: string): string {
+  const entry = C08_DATASET.products[pageSlug];
+  if (!entry) {
+    throw new Error(`Missing C-08 specification dataset for ${pageSlug}`);
   }
   return buildC01SpecificationsHtml(entry);
 }
@@ -643,6 +655,12 @@ export function getProductTabsHtml(
     return {
       specificationsHtml: buildC04SpecificationsHtml(pageSlug),
       shippingHtml: buildContainerOfficesShippingHtml(),
+    };
+  }
+  if (pageSlug && C08_DATASET.products[pageSlug]) {
+    return {
+      specificationsHtml: buildC08SpecificationsHtml(pageSlug),
+      shippingHtml: '',
     };
   }
   // C-02 portable shop cabin — flat spec table + shared shipping.

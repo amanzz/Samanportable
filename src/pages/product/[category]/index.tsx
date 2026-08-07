@@ -34,12 +34,13 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
-import { toRelatedProductSummary } from '../../../lib/relatedProductSummary';
+import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 
@@ -203,6 +204,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // WooCommerce objects here duplicated long descriptions in __NEXT_DATA__ on
     // every product hub without adding any visible content.
     relatedProducts = relatedProducts.map(toRelatedProductSummary);
+    if (category === 'container-houses') {
+      relatedProducts = relatedProducts.map(sanitizeC08RelatedProductSummary);
+    }
 
     // Fetch full description and images separately
     const descriptionData = await staticContent.fetchProductDescription(category);
@@ -280,6 +284,41 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .then((mod: { default?: VariantProductData }) => mod.default || null)
           .catch(() => null)
       : null;
+    const variantImages = variantData?.variants.flatMap((variant) => variant.images || []) || [];
+    const defaultVariantHero = variantData
+      ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
+        || variantImages[0]
+      : undefined;
+    const variantSocialImage = defaultVariantHero?.src
+      ? `https://www.samanportable.com${defaultVariantHero.src}`
+      : undefined;
+
+    if (variantData?.seoTitle || variantData?.metaDescription) {
+      const seoTitle = variantData.seoTitle || rankMathSEO?.title;
+      const metaDescription = variantData.metaDescription || rankMathSEO?.description;
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        ...(seoTitle ? { title: seoTitle, og_title: seoTitle, twitter_title: seoTitle } : {}),
+        ...(metaDescription
+          ? {
+              description: metaDescription,
+              og_description: metaDescription,
+              twitter_description: metaDescription,
+            }
+          : {}),
+        ...(variantSocialImage
+          ? { og_image: variantSocialImage, twitter_image: variantSocialImage }
+          : {}),
+        canonical: `https://www.samanportable.com/product/${category}`,
+      };
+    }
+
+    if (variantData?.suppressLegacyFaqSchema && rankMathSEO) {
+      // DELETE the key, never set it undefined — getServerSideProps serialises
+      // props to JSON and rejects an explicit `undefined`, which 500'd this hub.
+      const { faqSchema: _suppressed, ...withoutFaqSchema } = rankMathSEO;
+      rankMathSEO = withoutFaqSchema;
+    }
 
     // Event B owns all commercial size/price data when its product JSON exists.
     // Keep the legacy record for its frozen title, descriptions and head data, but
@@ -298,6 +337,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       ] as const) {
         delete productForPageProps[field];
       }
+      if (variantData.productSku) productForPageProps.sku = variantData.productSku;
+      else if (variantData.suppressLegacySku) delete productForPageProps.sku;
+      if (defaultVariantHero) productForPageProps.featured_image = defaultVariantHero.src;
     }
 
     // T31 — resolve the real Specifications + shared Shipping tab HTML for the
@@ -308,19 +350,24 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       props: {
         product: {
           ...productForPageProps,
-          description: `${variantData?.descriptionHtml || descriptionData?.description || ''}`,
+          // C-08 E3 Step C — same Info-image placement as the sibling route, so
+          // the hub's Description panel carries its 16:9 band on the same rules.
+          description: injectInfoImages(
+            variantData?.descriptionHtml || descriptionData?.description || '',
+            variantData?.infoImages
+          ),
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
           // cluster (null for every other product → the existing overrides/defaults
           // apply unchanged). The flagship page slug `porta-cabins` maps to the
           // `porta-cabin` dataset key inside getProductTabsHtml.
           specificationsHtml: t31Tabs?.specificationsHtml || descriptionData?.specificationsHtml || '',
           shippingHtml: t31Tabs?.shippingHtml || descriptionData?.shippingHtml || '',
-          images: descriptionData?.images?.map((img, index) => ({
+          images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
             id: index,
             src: img.src,
             alt: img.alt,
             name: img.alt || `Image ${index + 1}`
-          })) || [],
+          })),
           // Preserve category info so UI doesn't fall back to "Uncategorized"
           categories: [
             {
@@ -343,10 +390,6 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         } as unknown as WooCommerceProduct,
         category,
         relatedProducts,
-        // `|| []` guard: when the description fetch fails, descriptionData is null and
-        // `?.images` is `undefined`, which Next.js cannot serialize as a prop → 500.
-        // An empty array is serializable (the prop is optional and unused downstream).
-        productImages: descriptionData?.images || [],
         rankMathSEO,
         reviews,
         variantData,

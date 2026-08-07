@@ -151,7 +151,7 @@ function SiteOfficeApplicationsExplorer({ data }: { data: VariantProductData }) 
           const panel = panelBySlug.get(variant.sizeSlug);
           if (!panel) return null;
           const rate = data.pricePerSqft?.[variant.sizeSlug];
-          const image = variant.images[0];
+          const image = variant.images?.[0];
 
           return (
             <div
