@@ -627,6 +627,23 @@
       const field = card.querySelector('input[type="number"]');
       card.classList.toggle('is-filled', Number(field?.value) > 0);
     });
+    // A stepper at its limit says so. Without this the button still depresses
+    // and nothing happens, which reads as the control being broken.
+    root.querySelectorAll('.ec-stepper').forEach((stepper) => {
+      const field = stepper.querySelector('input[type="number"]');
+      if (!field) return;
+      const value = Number(field.value) || 0;
+      const min = field.min === '' ? -Infinity : Number(field.min);
+      const max = field.max === '' ? Infinity : Number(field.max);
+      const down = stepper.querySelector('[data-action="qty-down"]');
+      const up = stepper.querySelector('[data-action="qty-up"]');
+      if (down) down.disabled = value <= min;
+      if (up) up.disabled = value >= max;
+    });
+    root.querySelectorAll('.quantity-row').forEach((row) => {
+      const field = row.querySelector('input[type="number"]');
+      row.classList.toggle('is-filled', Number(field?.value) > 0);
+    });
     return g;
   }
 

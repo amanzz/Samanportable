@@ -1436,9 +1436,14 @@ fieldset{
 .cabin-calculator-ssr #calculator-step-7 > .step-guidance,
 .cabin-calculator-ssr #calculator-step-7 > .step-tip { grid-column: 1 / -1; }
 .cabin-calculator-ssr #calculator-step-7 > fieldset { grid-area: 13 / 3 / 14 / 4; }
+/* CALC-L1b. Step 7's 32 counted items had a bare number input and no +/-, so
+   the only affordance was the native spinner: invisible until hover and
+   unusable on touch. The column widens from 50px to hold the stepper the
+   electrical cards already use - same component, same clamping, one code path
+   in quantityRow(). */
 .cabin-calculator-ssr #calculator-step-7 > .quantity-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 50px;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 0 6px;
   margin: 0;
@@ -1469,7 +1474,7 @@ fieldset{
   line-height: 1.2;
 }
 .cabin-calculator-ssr #calculator-step-7 > .quantity-row input {
-  width: 100%;
+  width: 30px; min-width: 30px;
   padding: 2px 4px;
   text-align: center;
 }
@@ -1779,7 +1784,14 @@ fieldset{
 
 /* A grid on an id outranks the rule that hides an inactive step. */
 .cabin-calculator-ssr.is-enhanced #calculator-step-5:not(.is-active) { display: none; }
-`;
+
+/* Touch targets. 44x44 below 1024 for both the fit-out and electrical
+   steppers; the compact size is desktop-only, where the pointer is fine. */
+@media (max-width: 1023px) {
+  .cabin-calculator-ssr .ec-stepper button { width: 44px; min-width: 44px; height: 44px; min-height: 44px; font-size: 16px; }
+  .cabin-calculator-ssr .ec-stepper input { height: 44px; min-height: 44px; width: 46px; min-width: 46px; font-size: 14px; }
+}
+.cabin-calculator-ssr .ec-stepper button:disabled { opacity: 0.35; cursor: default; }`;
 
 export const DEFAULT_CALCULATOR_CONFIG: CalculatorConfig = {
   productId: 'porta-cabin',
@@ -2229,7 +2241,9 @@ function optionCards(name: string, choices: readonly (readonly [string, number])
 }
 
 function quantityRow(group: 'electrical' | 'addOns', label: string, rate: number, quantity: number, help = '', quotation = false): string {
-  return `<label class="quantity-row"><span><strong>${esc(label)}</strong>${help ? `<small>${esc(help)}</small>` : ''}<small>${quotation ? 'In quotation per building' : `${money(rate)} each, ex-GST`}</small></span><input type="number" inputmode="numeric" min="0" max="50" step="1"${group === 'electrical' ? ` data-electrical-item="${esc(label)}"` : ''} name="${group}[${esc(label)}]" value="${quantity}" aria-label="${esc(label)} quantity" data-rate="${rate}" data-rate-basis="each" data-rate-group="${group}" data-line-label="${esc(label)}" data-line-quantified="true"></label>`;
+  return `<label class="quantity-row"><span><strong>${esc(label)}</strong>${help ? `<small>${esc(help)}</small>` : ''}<small>${quotation ? 'In quotation per building' : `${money(rate)} each, ex-GST`}</small></span><span class="ec-stepper"><button type="button" data-action="qty-down" data-qty-target="${group}[${esc(label)}]" aria-label="One fewer ${esc(label)}">-</button><input type="number" inputmode="numeric" min="0" max="50" step="1"${group === 'electrical' ? ` data-electrical-item="${esc(label)}"` : ''} name="${group}[${esc(label)}]" value="${quantity}" aria-label="${esc(label)} quantity" data-rate="${rate}" data-rate-basis="each" data-rate-group="${group}" data-line-label="${esc(label)}" data-line-quantified="true">`
+    + `<button type="button" data-action="qty-up" data-qty-target="${group}[${esc(label)}]" aria-label="One more ${esc(label)}">+</button>`
+    + `</span></label>`;
 }
 
 /**
