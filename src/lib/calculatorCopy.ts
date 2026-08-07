@@ -14,7 +14,7 @@
 /** Step headings and their one-line help, in render order. */
 export const STEP_COPY = [
   { key: 'product', heading: 'Choose your product', help: 'Pick the building closest to what you need. You can change it at any point.' },
-  { key: 'size', heading: 'Set the size', help: 'Area and price update as you type. Sizes we publish use our listed price; any other size is estimated from the same rate.' },
+  { key: 'size', heading: 'Set the size', help: 'Area and price update as you type. Every size prices from our base-cabin rate card — the larger the floor area, the lower the rate per square foot.' },
   // Approved 05 Aug for this step specifically. The earlier build reused
   // CONSTRUCTION_DISCLOSURE's strings; that reuse was refused, and the
   // duplicate disclosure block stays removed.
@@ -43,7 +43,7 @@ export const TIPS = {
   doorOpening: 'If the entrance sits under a shed or a covered walkway, choose opens in, so rain does not blow through the doorway. On an open site choose opens out, because the door seals tighter against wind. Hinge left and hinge right set which side the handle falls on.',
   windowTrack: 'A 2.5 track slides more smoothly and costs more than a 2 track. The difference scales with the size of the window.',
   socketPlacement: 'Placement moves a socket, it does not add one. The charge is the plug point count above, and moving a socket costs nothing.',
-  customSize: 'Sizes we publish carry our listed price. Any other size is estimated from the same rate and confirmed on the drawing.',
+  customSize: 'Enter any size you need. All sizes price from the same base-cabin rate card, and your figure is confirmed on the drawing.',
 } as const;
 
 export const CONTROLS = {
@@ -80,7 +80,7 @@ export const ESTIMATE_PANEL = {
   subtotal: 'Subtotal',
   gst: 'GST at 18%',
   total: 'Estimated total',
-  finePrint: 'Indicative estimate from our published price list, ex-factory and ex-GST. Your fixed price is confirmed on the drawing within 48 hours.',
+  finePrint: 'Indicative estimate from our base-cabin rate card, ex-factory and ex-GST. Fittings are added as you choose them. Your fixed price is confirmed on the drawing within 48 hours.',
 } as const;
 
 /** Shown wherever a route has no approved ladder. Carries no number. */

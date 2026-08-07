@@ -45,7 +45,7 @@ const embed = jiti('./src/lib/cabinCalculatorEmbedRoutes.ts');
 const ladders = jiti('./src/lib/calculatorLadders.ts');
 
 const { baseCabinRate, FIXED_RATE_SIZES } = card;
-const { computeCalculatorEstimate, DEFAULT_CALCULATOR_CONFIG } = ssr;
+const { computeCalculatorEstimate, DEFAULT_CALCULATOR_CONFIG, renderCabinCalculatorSSR } = ssr;
 const { resolveEmbeddedCalculatorProduct } = embed;
 const { getRouteLadder } = ladders;
 
@@ -66,7 +66,17 @@ function expectedBase(length, width) {
   if (fixed !== undefined) return { rate: fixed, base: length * width * fixed, why: 'fixed' };
 
   const area = length * width;
-  if (area <= 50) return null;          // no rate stated — STOP
+  // v2 §3: below 36 sq ft only the fixed sizes exist — no rate, STOP.
+  if (area < 36) return null;
+  // v2 §3: the 36-50 slide, between SAMAN's own anchors. Rate un-rounded.
+  if (area <= 48) {
+    const rate = 1500 + (area - 36) * ((1250 - 1500) / 12);
+    return { rate, base: Math.round(area * rate), why: 'slide 36-48' };
+  }
+  if (area <= 50) {
+    const rate = 1250 + (area - 48) * ((1200 - 1250) / 2);
+    return { rate, base: Math.round(area * rate), why: 'slide 48-50' };
+  }
   // Edge takes the cheaper rate, so every comparison is strict "<".
   const rate = area < 70 ? 1200
     : area < 90 ? 1150
@@ -95,9 +105,22 @@ const ROUTES = [...new Set(
   .map((r) => ({ ...r, mapping: resolveEmbeddedCalculatorProduct(r.category, r.slug) }))
   .filter((r) => r.mapping);
 
-// The size inputs the buyer actually drives: length and width, 6 to 60 ft in
-// 0.5 ft steps (min/max/step declared on the number fields in step 2).
-const SIZE_MIN = 6, SIZE_MAX = 60, SIZE_STEP = 0.5;
+// The size inputs the buyer actually drives: length and width, 4 to 60 ft in
+// 0.5 ft steps. The floor dropped from 6 to 4 under rate card v2 §4 so that all
+// five fixed sizes become selectable — 4x4x7, 5x5x7 and 6x4x8 carried stated
+// rates that no buyer could reach. Read from the shipped markup rather than
+// hard-coded, so this gate cannot drift from the control it is describing.
+const SIZE_STEP = 0.5;
+const sizeMarkup = renderCabinCalculatorSSR({ reference: 'GATE', pageUrl: '/gate' });
+const lengthField = sizeMarkup.match(/min="(\d+(?:\.\d+)?)" max="(\d+(?:\.\d+)?)" step="0\.5" name="length"/);
+const widthField = sizeMarkup.match(/min="(\d+(?:\.\d+)?)" max="(\d+(?:\.\d+)?)" step="0\.5" name="width"/);
+if (!lengthField || !widthField) {
+  console.error('Could not read the length/width input range from the rendered markup.');
+  process.exit(1);
+}
+const SIZE_MIN = Math.max(Number(lengthField[1]), Number(widthField[1]));
+const SIZE_MAX = Math.min(Number(lengthField[2]), Number(widthField[2]));
+console.log(`Size inputs read from the shipped markup: ${SIZE_MIN} to ${SIZE_MAX} ft in ${SIZE_STEP} ft steps.\n`);
 
 /**
  * The named sizes on a route: every row of that route's own published ladder
@@ -236,30 +259,164 @@ for (const route of securityRoutes) {
 if (!securityRoutes.length) console.log('  (no security-cabin route resolved from the sitemap)');
 
 // ---------------------------------------------------------------------------
-// GATE 5 — STOP LIST. Every selectable size at or under 50 sq ft that is not
-// one of the five fixed sizes. Reported, never priced, never interpolated.
+// GATE 5 — THE 36-50 SLIDE. The seven sizes SAMAN ruled on, exact.
+// Rate to the paisa, total to the rupee.
 // ---------------------------------------------------------------------------
-const sweep = [];
-for (let l = SIZE_MIN; l <= SIZE_MAX; l += SIZE_STEP) {
-  for (let w = SIZE_MIN; w <= l; w += SIZE_STEP) {
-    const area = Number((l * w).toFixed(2));
-    if (area > 50) continue;
-    if (baseCabinRate(l, w) !== null) continue;
-    sweep.push({ length: l, width: w, area });
+const RULED_SLIDE = [
+  { label: '6.5x6', length: 6.5, width: 6, area: 39.00, rate: 1437.50, base: 56063 },
+  { label: '7x6', length: 7, width: 6, area: 42.00, rate: 1375.00, base: 57750 },
+  { label: '6.5x6.5', length: 6.5, width: 6.5, area: 42.25, rate: 1369.79, base: 57874 },
+  { label: '7.5x6', length: 7.5, width: 6, area: 45.00, rate: 1312.50, base: 59063 },
+  { label: '7x6.5', length: 7, width: 6.5, area: 45.50, rate: 1302.08, base: 59245 },
+  { label: '7.5x6.5', length: 7.5, width: 6.5, area: 48.75, rate: 1231.25, base: 60023 },
+  { label: '7x7', length: 7, width: 7, area: 49.00, rate: 1225.00, base: 60025 },
+];
+console.log('\n36-50 SQ FT SLIDE — the seven sizes SAMAN ruled on 07 Aug');
+console.log(pad('SIZE', 12) + padL('AREA', 8) + padL('RATE', 12) + padL('RULED RATE', 12) + padL('BASE', 12) + padL('RULED BASE', 12) + '  STATUS');
+const slideFailures = [];
+for (const row of RULED_SLIDE) {
+  const got = baseCabinRate(row.length, row.width);
+  // The ruling prints the rate to two decimals; compare at that precision, and
+  // the total to the rupee exactly.
+  const rateOk = got && Math.abs(Number(got.ratePerSqft.toFixed(2)) - row.rate) < 0.005;
+  const baseOk = got && got.basePriceExGst === row.base;
+  if (!rateOk || !baseOk) slideFailures.push(row.label);
+  console.log(
+    pad(row.label, 12) + padL(row.area.toFixed(2), 8)
+    + padL(got ? got.ratePerSqft.toFixed(2) : '—', 12) + padL(row.rate.toFixed(2), 12)
+    + padL(got ? INR(got.basePriceExGst) : '—', 12) + padL(INR(row.base), 12)
+    + (rateOk && baseOk ? '  ok' : '  *** MISMATCH ***')
+  );
+}
+
+// ---------------------------------------------------------------------------
+// GATE 6 — MONOTONICITY across the entire selectable range.
+//
+// Two different claims live here and the difference matters:
+//
+//   RATE monotonicity  — the rate per sq ft never rises as the cabin grows.
+//                        This is SAMAN's stated invariant in v1: "the larger
+//                        cabin never pays more per square foot".
+//   TOTAL monotonicity — no size costs less in rupees than a smaller one.
+//                        This is what rate card v2 §64 asserts and what this
+//                        ticket gates on.
+//
+// They are not the same claim, and a banded card can satisfy the first while
+// failing the second: at a band edge the rate drops for the WHOLE area at once,
+// so the total falls even though the cabin got bigger. Both are measured and
+// both are reported, because reporting only the one that passes would be the
+// same failure mode as the old "342 rows, 0 mismatches" check.
+// ---------------------------------------------------------------------------
+const priced = [];
+for (let l = SIZE_MIN; l <= SIZE_MAX + 1e-9; l += SIZE_STEP) {
+  for (let w = SIZE_MIN; w <= l + 1e-9; w += SIZE_STEP) {
+    const length = Number(l.toFixed(1));
+    const width = Number(w.toFixed(1));
+    const rate = baseCabinRate(length, width);
+    if (!rate) continue;
+    priced.push({ length, width, area: Number((length * width).toFixed(4)), rate: rate.ratePerSqft, base: rate.basePriceExGst, source: rate.source });
   }
 }
-console.log('\nSTOP LIST — selectable sizes at or under 50 sq ft with NO rate from SAMAN');
-console.log('The size inputs accept 6 to 60 ft in 0.5 ft steps. These combinations land at or under 50 sq ft');
-console.log('and are not one of the five fixed sizes, so the ruling forbids pricing them. Interpolation refused.\n');
-console.log(pad('L x W (ft)', 16) + padL('AREA', 9) + '   RULING');
-for (const s of sweep) {
-  console.log(pad(`${s.length} x ${s.width}`, 16) + padL(s.area, 9) + '   no rate stated — STOP and ask');
+// One row per distinct area — the cheapest reading of that area, which is what a
+// buyer could actually pay for it.
+const byArea = new Map();
+for (const row of priced) {
+  const seen = byArea.get(row.area);
+  if (!seen || row.base < seen.base) byArea.set(row.area, row);
 }
-console.log(`\n  ${sweep.length} selectable size${sweep.length === 1 ? '' : 's'} at or under 50 sq ft carry no rate.`);
+const ladderRows = [...byArea.values()].sort((a, b) => a.area - b.area);
+
+const rateInversions = [];
+const totalInversions = [];
+for (let i = 1; i < ladderRows.length; i += 1) {
+  const previous = ladderRows[i - 1];
+  const current = ladderRows[i];
+  if (current.rate > previous.rate + 1e-9) rateInversions.push({ previous, current });
+  if (current.base < previous.base) totalInversions.push({ previous, current, drop: previous.base - current.base });
+}
+
+console.log(`\nMONOTONICITY — ${ladderRows.length} distinct priced areas from ${SIZE_MIN} to ${SIZE_MAX} ft`);
+console.log(`  RATE per sq ft never rises with area:  ${rateInversions.length === 0 ? 'HOLDS' : `*** ${rateInversions.length} VIOLATION(S) ***`}`);
+console.log(`  TOTAL never falls as area grows:       ${totalInversions.length === 0 ? 'HOLDS' : `*** ${totalInversions.length} VIOLATION(S) ***`}`);
+for (const item of rateInversions.slice(0, 10)) {
+  console.log(`    rate rises: ${item.previous.area} sq ft @${item.previous.rate} -> ${item.current.area} sq ft @${item.current.rate}`);
+}
+if (totalInversions.length) {
+  console.log('\n  TOTAL INVERSIONS — a larger cabin costing less than a smaller one:');
+  console.log('  ' + pad('SMALLER', 22) + pad('LARGER', 22) + padL('DROP', 12) + '  WHERE');
+  const worst = [...totalInversions].sort((a, b) => b.drop - a.drop);
+  for (const item of worst.slice(0, 12)) {
+    console.log('  '
+      + pad(`${item.previous.area} sq ft ${INR(item.previous.base)}`, 22)
+      + pad(`${item.current.area} sq ft ${INR(item.current.base)}`, 22)
+      + padL('-' + item.drop.toLocaleString('en-IN'), 12)
+      + `  ${item.previous.source} -> ${item.current.source}`);
+  }
+  if (worst.length > 12) console.log(`  ... and ${worst.length - 12} more`);
+}
+
+// ---------------------------------------------------------------------------
+// GATE 7 — STOP LIST. Selectable sizes UNDER 36 sq ft that are not fixed sizes.
+// v2 §3: below 36 sq ft only the fixed sizes exist. Reported, never priced.
+// ---------------------------------------------------------------------------
+const sweep = [];
+for (let l = SIZE_MIN; l <= SIZE_MAX + 1e-9; l += SIZE_STEP) {
+  for (let w = SIZE_MIN; w <= l + 1e-9; w += SIZE_STEP) {
+    const length = Number(l.toFixed(1));
+    const width = Number(w.toFixed(1));
+    const area = Number((length * width).toFixed(2));
+    if (area > 50) continue;
+    if (baseCabinRate(length, width) !== null) continue;
+    sweep.push({ length, width, area });
+  }
+}
+console.log('\nSTOP LIST — selectable sizes with NO rate (under 36 sq ft, not a fixed size)');
+console.log(`The size inputs accept ${SIZE_MIN} to ${SIZE_MAX} ft in ${SIZE_STEP} ft steps. Below 36 sq ft the ruling states`);
+console.log('only the fixed sizes exist, so these render quote mode. Interpolation refused outside 36-50.\n');
+console.log(pad('L x W (ft)', 16) + padL('AREA', 9) + '   RULING');
+for (const s of sweep.sort((a, b) => a.area - b.area)) {
+  console.log(pad(`${s.length} x ${s.width}`, 16) + padL(s.area, 9) + '   no rate stated — quote mode');
+}
+console.log(`\n  ${sweep.length} selectable size${sweep.length === 1 ? '' : 's'} carry no rate.`);
 console.log('  Reachable fixed sizes on these inputs: '
   + FIXED_RATE_SIZES.filter((s) => Math.min(s.lengthFt, s.widthFt) >= SIZE_MIN).map((s) => s.sizeLabel).join(', '));
-console.log('  UNREACHABLE fixed sizes (a width below the 6 ft input minimum): '
+console.log('  UNREACHABLE fixed sizes (a side below the input minimum): '
   + (FIXED_RATE_SIZES.filter((s) => Math.min(s.lengthFt, s.widthFt) < SIZE_MIN).map((s) => s.sizeLabel).join(', ') || 'none'));
+
+// ---------------------------------------------------------------------------
+// GATE 8 — the copy describes the rate card, not a published price list.
+//
+// Every phrase below asserts the model SAMAN's ruling replaced: that the base
+// price comes from the published product ladder. Under the two-price doctrine
+// it does not, so a surviving occurrence is a factual error on the page, not a
+// wording preference. Scanned in three places because the same sentence can
+// exist three times: the copy module, the rendered SSR output, and the FAQPage
+// JSON-LD on the page, which is a SECOND hand-maintained copy of the FAQ.
+// ---------------------------------------------------------------------------
+const BANNED_PHRASES = ['published price list', 'listed price', 'published formula', 'standard nine sizes'];
+const copySources = [
+  ['src/lib/calculatorCopy.ts', fs.readFileSync(path.join(process.cwd(), 'src/lib/calculatorCopy.ts'), 'utf8')],
+  ['src/pages/cabin-cost-calculator.tsx (FAQPage JSON-LD)', fs.readFileSync(path.join(process.cwd(), 'src/pages/cabin-cost-calculator.tsx'), 'utf8')],
+  ['rendered SSR output', renderCabinCalculatorSSR({ reference: 'GATE', pageUrl: '/gate' })],
+  ['rendered FAQ output', ssr.renderCalculatorFaq()],
+];
+console.log('\nRATE-CARD COPY — zero occurrences of the published-price-list model');
+const phraseHits = [];
+for (const [where, text] of copySources) {
+  for (const phrase of BANNED_PHRASES) {
+    const count = text.split(phrase).length - 1;
+    if (count > 0) phraseHits.push({ where, phrase, count });
+  }
+}
+console.log(pad('PHRASE', 26) + pad('WHERE', 46) + 'COUNT');
+for (const phrase of BANNED_PHRASES) {
+  const hits = phraseHits.filter((h) => h.phrase === phrase);
+  if (!hits.length) {
+    console.log(pad(phrase, 26) + pad('—', 46) + '0  ok');
+  } else {
+    for (const hit of hits) console.log(pad(hit.phrase, 26) + pad(hit.where, 46) + `${hit.count}  *** STILL PRESENT ***`);
+  }
+}
 
 // ---------------------------------------------------------------------------
 console.log('\n' + '='.repeat(133));
@@ -267,9 +424,28 @@ console.log(`GATE 1 price table:     ${rowCount - mismatches.length} of ${rowCou
 console.log(`GATE 2 boundary proof:  ${BOUNDARIES.length - boundaryFailures.length} of ${BOUNDARIES.length} edges take the cheaper rate.`);
 console.log(`GATE 3 fixed sizes:     ${FIXED_RATE_SIZES.length - fixedFailures.length} of ${FIXED_RATE_SIZES.length} exact to the rupee.`);
 console.log(`GATE 4 security cabins: ${securityRoutes.length - securityFailures.length} of ${securityRoutes.length} in quote mode with no number.`);
-console.log(`GATE 5 stop list:       ${sweep.length} selectable sizes with no rate — reported for SAMAN, not priced.`);
+console.log(`GATE 5 36-50 slide:     ${RULED_SLIDE.length - slideFailures.length} of ${RULED_SLIDE.length} exact — rate to the paisa, total to the rupee.`);
+console.log(`GATE 6 monotonicity:    rate ${rateInversions.length === 0 ? 'HOLDS' : `FAILS (${rateInversions.length})`} · total ${totalInversions.length === 0 ? 'HOLDS' : `FAILS (${totalInversions.length})`} across ${ladderRows.length} priced areas.`);
+console.log(`GATE 7 stop list:       ${sweep.length} selectable sizes with no rate — reported for SAMAN, not priced.`);
+console.log(`GATE 8 rate-card copy:  ${phraseHits.length === 0 ? 'clean' : `*** ${phraseHits.reduce((n, h) => n + h.count, 0)} occurrence(s) of the published-price-list model remain ***`}`);
 if (mismatches.length) {
   console.log('\nMISMATCHES:');
   for (const m of mismatches) console.log(`  ${m.route}  ${m.size.length}x${m.size.width}  ${m.why}`);
 }
-process.exit(mismatches.length || boundaryFailures.length || fixedFailures.length || securityFailures.length ? 1 : 0);
+if (totalInversions.length) {
+  const worst = Math.max(...totalInversions.map((i) => i.drop));
+  console.log(`\nSTOP: total monotonicity is violated at ${totalInversions.length} step(s), worst ${INR(worst)}.`);
+  console.log('      Rate card v2 asserts totals are monotonic across the whole range. They are not, and the');
+  console.log('      cause is structural, not a coding error: the bands apply their rate to the WHOLE area, so');
+  console.log('      at every band edge the total drops even though the cabin grew. Needs a ruling.');
+}
+if (phraseHits.length) {
+  console.log('\nSTOP: copy still asserting the published-price-list model:');
+  for (const hit of phraseHits) console.log(`      "${hit.phrase}" x${hit.count} in ${hit.where}`);
+}
+process.exit(
+  mismatches.length || boundaryFailures.length || fixedFailures.length
+  || securityFailures.length || slideFailures.length
+  || rateInversions.length || totalInversions.length || phraseHits.length
+    ? 1 : 0
+);

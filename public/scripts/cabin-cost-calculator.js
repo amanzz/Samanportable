@@ -341,10 +341,35 @@
       const [l, w] = key.split('x').map(Number);
       return (l === length && w === width) || (l === width && w === length);
     });
-    if (match) return { rate: match[1], base: length * width * match[1] };
+    if (match) return { rate: match[1], base: Math.round(length * width * match[1]) };
 
     const area = length * width;
-    if (area <= num(root.dataset.baseUnratedCeiling, 50)) return null;
+    const floor = num(root.dataset.baseUnratedCeiling, 36);
+    // Below the floor only the fixed sizes exist. Everything else asks.
+    if (area < floor) return null;
+
+    // The 36-50 slide (rate card v2). The rate is carried at full precision and
+    // only the total is rounded — rounding the rate re-introduces the very
+    // inversions the slide exists to remove.
+    const slide = String(root.dataset.baseSlide || '').split(';').filter(Boolean)
+      .map((entry) => {
+        const [span, rates] = entry.split('=');
+        const [fromArea, toArea] = span.split(':').map(Number);
+        const [fromRate, toRate] = rates.split(':').map(Number);
+        return { fromArea, toArea, fromRate, toRate };
+      })
+      .find((s) => area > s.fromArea && area <= s.toArea);
+    if (slide) {
+      const rate = slide.fromRate
+        + (area - slide.fromArea) * ((slide.toRate - slide.fromRate) / (slide.toArea - slide.fromArea));
+      return { rate, base: Math.round(area * rate) };
+    }
+    // Exactly at the floor with dimensions other than the fixed size's.
+    if (area === floor) {
+      const anchor = num(String(root.dataset.baseSlide || '').split('=')[1]?.split(':')[0]);
+      if (anchor) return { rate: anchor, base: Math.round(area * anchor) };
+    }
+
     // Exclusive upper edges: SAMAN ruled that the edge takes the CHEAPER rate,
     // so exactly 70 sq ft is priced at 1150 and never at 1200.
     const band = pairs(root.dataset.baseBands).find(([edge]) => area < Number(edge));
