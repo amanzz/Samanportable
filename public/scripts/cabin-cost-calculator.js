@@ -882,6 +882,13 @@
     // The estimate card's own figure. It was never in this list, so the card
     // kept the number it was born with while the header above it moved.
     setText(root, '[data-estimate-total]', quoteOnly ? 'Price on request' : INR.format(total));
+    // The card's floor-area line. It had no hook at all until the L2b sweep, so
+    // it kept the server's figure through every size change: a cabin set to 8x6
+    // read "Floor area 200 sq ft" directly above a base cabin line that
+    // correctly said 8x6. Same defect class as the stale itemisation, one
+    // paragraph higher, and invisible to an attribute sweep because it had no
+    // attribute to find.
+    setText(root, '[data-estimate-area]', `${area.toLocaleString('en-IN')} sq ft`);
     setText(root, '[data-estimate-ex-gst]', quoteOnly ? 'Price on request' : INR.format(total));
     setText(root, '[data-estimate-incl-gst]', quoteOnly ? 'Fixed quotation within 48 hours' : `${INR.format(total + gst)} incl. 18% GST`);
     // "Show GST as a line item" did nothing once the page was enhanced: the

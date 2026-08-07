@@ -63,6 +63,19 @@ opening.forEach((line, index) => console.log(`    list ${index}: ${line}`));
 check(new Set(opening).size === 1, `the server rendered different opening lines into different panels: ${opening.join(' vs ')}`);
 check(opening[0].startsWith('Base cabin'), `the estimate does not open on a Base cabin line: "${opening[0]}"`);
 
+// The panel's floor-area figure needs a hook of its own, and one per panel.
+//
+// It had none. The words came from the copy pack and the number was baked
+// straight into the paragraph, so the enhancer could not reach it: a cabin set
+// to 8x6 read "Floor area 200 sq ft" directly above a base cabin line that
+// correctly said 8x6. The attribute sweep below did not find it either — it had
+// no attribute to find — which is why it is asserted by count against the panels.
+const areaHooks = html.split('data-estimate-area').length - 1;
+console.log(`\n  floor-area hooks: ${areaHooks} for ${lists.length} panel(s)`);
+check(areaHooks === lists.length, `every estimate panel needs its own data-estimate-area: ${areaHooks} hooks for ${lists.length} panels`);
+const enhancerSource = fs.readFileSync(path.join(process.cwd(), 'public', 'scripts', 'cabin-cost-calculator.js'), 'utf8');
+check(/setText\(\s*root,\s*'\[data-estimate-area\]'/.test(enhancerSource), 'the enhancer never repaints [data-estimate-area]');
+
 // Other surfaces that carry a figure, so a future one is not forgotten.
 const surfaces = [
   ['data-estimate-total', 'panel total'],
@@ -86,8 +99,7 @@ for (const [attribute, name] of surfaces) {
 // was one word, `querySelector` where `querySelectorAll` was meant, and a test
 // that cannot see that word cannot see the defect.
 // ---------------------------------------------------------------------------
-const enhancer = fs.readFileSync(path.join(process.cwd(), 'public', 'scripts', 'cabin-cost-calculator.js'), 'utf8');
-const body = enhancer.slice(enhancer.indexOf('function renderEstimateLines'));
+const body = enhancerSource.slice(enhancerSource.indexOf('function renderEstimateLines'));
 const fn = body.slice(0, body.indexOf('\n  }') + 4);
 console.log('\nENHANCER REPAINT PATH');
 const singular = /querySelector\(\s*'\[data-estimate-lines\]'\s*\)/.test(fn);
