@@ -2,10 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.samanportable.com/</loc>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/dpiit-startup.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/msme-udyam.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/nsic.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/zed-bronze.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore-640.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore-clean.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp</image:loc></image:image>
@@ -117,6 +113,10 @@
   <url>
     <loc>https://www.samanportable.com/build-a-prefabricated-modular-houses</loc>
     <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2021/03/What-are-Some-Considerations-for-Buying-Land-to-Build-a-Prefabricated-Modular-Houses-.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.samanportable.com/cabin-cost-calculator</loc>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>

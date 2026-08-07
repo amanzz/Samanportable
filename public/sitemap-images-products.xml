@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.samanportable.com/cabin-cost-calculator</loc>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://www.samanportable.com/container-rent-services/10x10-porta-cabin-rental</loc>
     <image:image><image:loc>https://www.samanportable.com/10x10-porta-cabin-rental-bangalore.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp</image:loc></image:image>
@@ -504,7 +500,9 @@
   </url>
   <url>
     <loc>https://www.samanportable.com/product/container-houses</loc>
+    <image:image><image:loc>https://www.samanportable.com/images/container-house-product-video-poster.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-houses/prefabricated-container-house-hero-bangalore-plot.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x10/container-houses-20x10-bathroom-reverse.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x10/container-houses-20x10-bedroom-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x10/container-houses-20x10-end-dominant-view.webp</image:loc></image:image>
@@ -541,6 +539,13 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/40x8/container-houses-40x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/40x8/container-houses-40x8-kitchen-dining.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/40x8/container-houses-40x8-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/info/20x12/container-houses-20x12-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/info/20x8/container-houses-20x8-bathroom-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/info/40x10/container-houses-40x10-semi-kitchen-dining.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/info/40x12/container-houses-40x12-elevated-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -582,11 +587,21 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-kitchen-dining.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/40x8/affordable-container-homes-40x8-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/info/20x10/affordable-container-homes-20x10-elevated-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/info/20x8/affordable-container-homes-20x8-bathroom-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/info/40x10/affordable-container-homes-40x10-semi-kitchen-dining.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/info/40x12/affordable-container-homes-40x12-end-dominant.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/container-houses/luxury-container-houses</loc>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-houses/prefabricated-container-house-hero-bangalore-plot.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-bathroom-reverse.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-bedroom-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-end-dominant-view.webp</image:loc></image:image>
@@ -623,11 +638,20 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-kitchen-dining.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/40x8/luxury-container-houses-40x8-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/info/20x10/luxury-container-houses-20x10-semi-kitchen-dining.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/info/20x12/luxury-container-houses-20x12-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/info/40x12/luxury-container-houses-40x12-elevated-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/info/40x8/luxury-container-houses-40x8-bathroom-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/container-houses/prefab-container-homes</loc>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-houses/prefabricated-container-house-hero-bangalore-plot.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-bathroom-reverse.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-bedroom-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/20x10/prefab-container-homes-20x10-end-dominant-view.webp</image:loc></image:image>
@@ -664,24 +688,69 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-kitchen-dining.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/40x8/prefab-container-homes-40x8-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/info/20x10/prefab-container-homes-20x10-semi-kitchen-dining.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/info/20x8/prefab-container-homes-20x8-front-left-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/info/40x10/prefab-container-homes-40x10-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/info/40x12/prefab-container-homes-40x12-bedroom-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/container-houses/prefabricated-container-house</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-container-house-floorplan.webp</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-container-house-crane-installation-plinth.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-container-house-factory-transport-route.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-container-house-family-evening-residential.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-container-house-four-zone-interior-overview.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-container-house-front-view-patio.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-container-house-living-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-container-house-side-elevation.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-houses/prefabricated-container-house-hero-bangalore-plot.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-bedroom-doorway.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-elevated-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-entry-living-hall.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-kitchen-dining-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x10/prefabricated-container-house-20x10-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-bedroom-doorway.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-elevated-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-entry-living-hall.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-kitchen-dining-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x12/prefabricated-container-house-20x12-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-bedroom-doorway.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-elevated-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-entry-living-hall.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-kitchen-dining-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/20x8/prefabricated-container-house-20x8-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-bedroom-doorway.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-elevated-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-entry-living-hall.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-kitchen-dining-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x10/prefabricated-container-house-40x10-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-bedroom-doorway.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-elevated-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-entry-living-hall.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-kitchen-dining-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x12/prefabricated-container-house-40x12-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-bedroom-doorway.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-elevated-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-entry-living-hall.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-kitchen-dining-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/40x8/prefabricated-container-house-40x8-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/info/20x10/prefabricated-container-house-20x10-rear-right-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/info/20x12/prefabricated-container-house-20x12-end-dominant.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/info/40x10/prefabricated-container-house-40x10-bathroom-reverse.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefabricated-container-house/info/40x12/prefabricated-container-house-40x12-front-left-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/20x8/shipping-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/container-houses/shipping-container-homes</loc>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-houses/prefabricated-container-house-hero-bangalore-plot.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/affordable-container-homes/20x8/affordable-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-bathroom-reverse.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-bedroom-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-end-dominant-view.webp</image:loc></image:image>
@@ -718,6 +787,10 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-kitchen-dining.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/40x8/shipping-container-homes-40x8-long-side-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/info/20x10/shipping-container-homes-20x10-semi-kitchen-dining.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/info/20x12/shipping-container-homes-20x12-bedroom-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/info/40x10/shipping-container-homes-40x10-rear-right-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/info/40x12/shipping-container-homes-40x12-elevated-three-quarter.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -850,72 +923,6 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-meeting-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-side-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/container-offices/shipping-container-office</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-bridge-construction-site-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-metro-rail-construction-site-india-1.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-nhai-highway-project-site-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-thermal-power-plant-site-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-warehouse-factory-delivery-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-container-site-office-exterior-front.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-corridor-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-lounge-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-lounge-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-corridor-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-workspace-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
