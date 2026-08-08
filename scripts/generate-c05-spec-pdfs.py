@@ -39,6 +39,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SPEC_PATHS = (
     ROOT / "src/data/products/c05-specifications.json",
     ROOT / "src/data/products/c05-subpage-specifications.json",
+    ROOT / "src/data/products/c05-subpage-specifications-2.json",
 )
 OUTPUT_DIR = ROOT / "public/specs"
 PRODUCTS = {
@@ -50,6 +51,18 @@ PRODUCTS = {
     "food-truck-containers": (
         "Food Truck Containers",
         "https://www.samanportable.com/product/container-cafe/food-truck-containers",
+    ),
+    "container-hotel": (
+        "Container Hotel",
+        "https://www.samanportable.com/product/container-cafe/container-hotel",
+    ),
+    "modular-container-cafe": (
+        "Modular Container Cafe",
+        "https://www.samanportable.com/product/container-cafe/modular-container-cafe",
+    ),
+    "container-coffee-shop": (
+        "Container Coffee Shop",
+        "https://www.samanportable.com/product/container-cafe/container-coffee-shop",
     ),
 }
 GROUPS = ("Steel Structure", "Walls, Roof, Floor & Insulation", "Doors, Windows, Electrical & Services")
@@ -140,29 +153,42 @@ def build(slug: str, spec: dict[str, Any], product: dict[str, Any], output: Path
         Spacer(1, 2 * mm),
         Paragraph("Six approved sizes and prices", h2),
     ]
-    rows = [[
-        Paragraph("SIZE", header),
-        Paragraph("AREA (SQ FT)", header),
-        Paragraph("COVERS", header),
-        Paragraph("RATE EX-GST", header),
-        Paragraph("EX-GST", header),
-        Paragraph("INCL. 18% GST", header),
-    ]]
+    has_capacity = any(v.get("capacity") for v in product["variants"])
+    head_cells = [Paragraph("SIZE", header), Paragraph("AREA (SQ FT)", header)]
+    if has_capacity:
+        head_cells.append(Paragraph("COVERS", header))
+    head_cells += [Paragraph("RATE EX-GST", header), Paragraph("EX-GST", header),
+                   Paragraph("INCL. 18% GST", header)]
+    rows = [head_cells]
     for variant in product["variants"]:
         rate = round(variant["priceExGst"] / variant["areaSqft"])
-        rows.append([
-            Paragraph(escape(variant["dims"]), cell_bold),
-            Paragraph(indian(variant["areaSqft"]), cell),
-            Paragraph(escape(variant["capacity"]), cell),
-            Paragraph(f"INR {indian(rate)}/sq ft", cell),
-            Paragraph(f"INR {indian(variant['priceExGst'])}", cell),
-            Paragraph(f"INR {indian(variant['priceInclGst'])}", cell),
-        ])
-    table = Table(rows, colWidths=[30 * mm, 24 * mm, 22 * mm, 32 * mm, 33 * mm, 33 * mm], repeatRows=1)
+        row_cells = [Paragraph(escape(variant["dims"]), cell_bold),
+                     Paragraph(indian(variant["areaSqft"]), cell)]
+        if has_capacity:
+            row_cells.append(Paragraph(escape(variant.get("capacity", "")), cell))
+        row_cells += [Paragraph(f"INR {indian(rate)}/sq ft", cell),
+                      Paragraph(f"INR {indian(variant['priceExGst'])}", cell),
+                      Paragraph(f"INR {indian(variant['priceInclGst'])}", cell)]
+        rows.append(row_cells)
+    widths = ([30, 24, 22, 32, 33, 33] if has_capacity else [34, 30, 36, 37, 37])
+    table = Table(rows, colWidths=[w * mm for w in widths], repeatRows=1)
     table.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, 0), forest), ("GRID", (0, 0), (-1, -1), 0.35, line), ("VALIGN", (0, 0), (-1, -1), "TOP"), ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, pale]), ("PADDING", (0, 0), (-1, -1), 4)]))
     story.extend([table, Paragraph(escape(PRICE_CAPTION), small)])
 
-    for group in GROUPS:
+    if spec.get("exemptClass"):
+        story.append(Paragraph("Coffee shop fit-out", h2))
+        rows = [[Paragraph("ITEM", header), Paragraph("DETAIL", header)]]
+        for row in spec["summary"]:
+            rows.append([Paragraph(escape(row["item"]), cell_bold),
+                         Paragraph(escape(row["detail"]), cell)])
+        table = Table(rows, colWidths=[48 * mm, 126 * mm], repeatRows=1)
+        table.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, 0), forest), ("GRID", (0, 0), (-1, -1), 0.35, line), ("VALIGN", (0, 0), (-1, -1), "TOP"), ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, pale]), ("PADDING", (0, 0), (-1, -1), 4)]))
+        story.append(table)
+        story.append(Paragraph(
+            "This unit is built on the standard cafe shell. The full 30-row structural "
+            "specification is published on the container cafe hub at "
+            "https://www.samanportable.com/product/container-cafe", small))
+    for group in (() if spec.get("exemptClass") else GROUPS):
         story.append(Paragraph(escape(group), h2))
         rows = [[Paragraph("COMPONENT", header), Paragraph("DETAIL", header)]]
         for row in (item for item in spec["specifications"] if item["group"] == group):
@@ -188,9 +214,14 @@ def main() -> None:
     for slug, (name, canonical) in PRODUCTS.items():
         spec = specs[slug]
         product = json.loads((ROOT / f"src/data/products/{slug}.json").read_text(encoding="utf-8"))
-        assert len(spec["specifications"]) == 30, len(spec["specifications"])
+        exempt = bool(spec.get("exemptClass"))
+        if exempt:
+            assert len(spec["summary"]) == 6, len(spec["summary"])
+            assert next(r["detail"] for r in spec["summary"] if r["item"] == "Warranty") == WARRANTY
+        else:
+            assert len(spec["specifications"]) == 30, len(spec["specifications"])
+            assert next(row["detail"] for row in spec["specifications"] if row["component"] == "Warranty") == WARRANTY
         assert len(product["variants"]) == 6, len(product["variants"])
-        assert next(row["detail"] for row in spec["specifications"] if row["component"] == "Warranty") == WARRANTY
         output = OUTPUT_DIR / f"{slug}-technical-specification.pdf"
         build(slug, spec, product, output)
         assert output.stat().st_size < 400_000, output.stat().st_size
@@ -205,11 +236,16 @@ def main() -> None:
         banned_route = {
             "container-restaurant": ("15,55,000", "16,95,000", "11,85,000"),
             "food-truck-containers": ("4,55,000", "4,95,000", "6,40,000"),
+            "container-hotel": ("8,25,000",),
+            "modular-container-cafe": ("32,55,000",),
+            "container-coffee-shop": ("2,85,000",),
         }.get(slug, ())
         for banned in banned_common + banned_route:
             assert banned not in extracted, f"{slug}: banned string present: {banned}"
-        for row in spec["specifications"]:
-            assert re.sub(r"\s+", " ", row["detail"]) in extracted, f"{slug}: missing {row['component']}"
+        checks = (spec["summary"] if exempt else spec["specifications"])
+        for row in checks:
+            label = row.get("item") or row.get("component")
+            assert re.sub(r"\s+", " ", row["detail"]) in extracted, f"{slug}: missing {label}"
         print(f"{slug}: {len(reader.pages)} pages | {output.stat().st_size} bytes | sha256 {digest}")
 
 

@@ -229,6 +229,18 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     categoryLabel: 'Container Cafe',
     categoryHref: '/product/container-cafe',
   },
+  'container-hotel': {
+    categoryLabel: 'Container Cafe',
+    categoryHref: '/product/container-cafe',
+  },
+  'modular-container-cafe': {
+    categoryLabel: 'Container Cafe',
+    categoryHref: '/product/container-cafe',
+  },
+  'container-coffee-shop': {
+    categoryLabel: 'Container Cafe',
+    categoryHref: '/product/container-cafe',
+  },
   ...subpagePresets(),
 };
 

@@ -69,6 +69,47 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  // C-05 last three subpages — section 2 of their 08 Aug drafts of record, verbatim.
+  // Each carries exactly one link, the section 6 back-link to the hub.
+  'container-hotel': {
+    heading: 'Why choose the SAMAN Container Hotel module',
+    body: (
+      <>
+        The hotel module is the only page in this range built for guests to sleep in rather than eat in. It replaces food-service surfaces with 12 mm laminate and HPL room lining, 12.5 mm gypsum ceiling, 5 to 6 mm SPC flooring and an attached bathroom carrying WC, shower, basin and floor drains. Choose it for keyed accommodation on resort, site or tourism land; anything selling food belongs on the cafe range.
+      </>
+    ),
+    comparison: (
+      <>
+        Building hospitality rather than a kitchen? Start from the <Link className={linkClass} href={CONTAINER_CAFE_HREF}>container cafe range</Link> if guests will be buying food rather than sleeping.
+      </>
+    ),
+  },
+  'modular-container-cafe': {
+    heading: 'Why choose the Modular Container Cafe system',
+    body: (
+      <>
+        The modular system is the only cafe format designed around joining, so growth becomes an ordering decision rather than a rebuild. Its joint faces, aligned counter line, coordinated facade panels and expandable service runs are engineered before the first module ships, which single-unit formats do not carry. Choose it when the site plan is phased; with a fixed footprint, one container cafe unit costs less per square foot.
+      </>
+    ),
+    comparison: (
+      <>
+        Know your final footprint already? A single unit from the <Link className={linkClass} href={CONTAINER_CAFE_HREF}>container cafe range</Link> will cost less per square foot than joining modules.
+      </>
+    ),
+  },
+  'container-coffee-shop': {
+    heading: 'Why the Container Coffee Shop is its own page',
+    body: (
+      <>
+        The coffee shop is not a different building from the container cafe; it is the same shell with a fit-out planned around one workflow. Its electrical schedule carries dedicated espresso and grinder circuits, its plumbing adds a treated water feed and under-counter waste, and its counter face is glazed for display and set for pickup. Read this page for the fit-out; read the container cafe range for the shell specification.
+      </>
+    ),
+    comparison: (
+      <>
+        Serving more than coffee? The <Link className={linkClass} href={CONTAINER_CAFE_HREF}>container cafe range</Link> covers the same shell fitted for general food service and full menus.
+      </>
+    ),
+  },
   'container-houses': {
     heading: 'Why the range page instead of one home model',
     body: (

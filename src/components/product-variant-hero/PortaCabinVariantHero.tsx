@@ -36,6 +36,9 @@ import portableCabinWithToiletApplications from '@/data/products/portable-cabin-
 import containerCafeApplications from '@/data/products/container-cafe-applications.json';
 import containerRestaurantApplications from '@/data/products/container-restaurant-applications.json';
 import foodTruckContainersApplications from '@/data/products/food-truck-containers-applications.json';
+import containerHotelApplications from '@/data/products/container-hotel-applications.json';
+import modularContainerCafeApplications from '@/data/products/modular-container-cafe-applications.json';
+import containerCoffeeShopApplications from '@/data/products/container-coffee-shop-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
@@ -145,6 +148,9 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // carry no images and fall to the component's existing on-request placeholder.
   'container-restaurant': containerRestaurantApplications as ApplicationsData,
   'food-truck-containers': foodTruckContainersApplications as ApplicationsData,
+  'container-hotel': containerHotelApplications as ApplicationsData,
+  'modular-container-cafe': modularContainerCafeApplications as ApplicationsData,
+  'container-coffee-shop': containerCoffeeShopApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, SectionHDataset>).map(
       ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]

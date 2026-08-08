@@ -360,7 +360,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // C-08 E3 Step C — same Info-image placement as the sibling route, so
           // the hub's Description panel carries its 16:9 band on the same rules.
           description: injectInfoImages(
-            variantData?.descriptionHtml || descriptionData?.description || '',
+            // Same empty-safe hold as the subpage route (C-05 close-out Part 2).
+            variantData?.descriptionHtml
+              || (variantData?.suppressLegacyDescription ? '' : descriptionData?.description)
+              || '',
             variantData?.infoImages
           ),
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin

@@ -1,0 +1,71 @@
+{
+  "h2": "Container hotel module sizes, 100 to 400 sq ft of guest room",
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10x8.5 ft single-room module, 100 sq ft",
+      "paragraph": "The entry module puts a complete keyed room on 100 sq ft: sleeping zone, storage recess and a compact attached bathroom with WC, shower and basin. Room lining is 12 mm plywood with laminate, stepping to fibre-cement and tile inside the wet zone where water reaches the wall. A premium room door with closer fronts it, and a waterproof bathroom door separates the services. At this footprint operators typically buy in runs, placing several modules on one prepared pad so a small property opens in a single delivery cycle rather than a construction season.",
+      "applications": [
+        "Resort expansion room",
+        "Wildlife lodge unit",
+        "Site manager quarters",
+        "Highway motel key"
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8x8.5 ft narrow room module, 160 sq ft",
+      "paragraph": "Holding 8 ft of width keeps this module inside ordinary transport limits while the 20 ft length gives a proper linear room plan: bed head at one end, storage midway, bathroom at the far end. That layout suits terraces and hill plots where depth is the constraint and length is not. Tinted 6 mm aluminium glazing with optional blinds handles privacy on the long elevation. Because the width never triggers oversize permissions, a property adding rooms across several states pays ordinary freight on every leg rather than route-by-route clearance.",
+      "applications": [
+        "Hill-slope room terrace",
+        "Narrow resort plot",
+        "Multi-state room rollout",
+        "Riverside cabin row"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10x8.5 ft standard hotel room, 200 sq ft",
+      "paragraph": "This is the cluster's reference footprint, and the point at which the rate settles to ₹1,850 per sq ft. Two hundred square feet holds a full double room with a separated bathroom and genuine circulation space beside the bed rather than a corridor past it. Bedside sockets, data and TV points, a geyser point and a dedicated AC circuit are all part of the base electrical fit. Properties usually cost this module before any other, since it is the smallest one a paying guest reads as a hotel room rather than a cabin.",
+      "applications": [
+        "Standard double key",
+        "Boutique resort room",
+        "Corporate guest suite",
+        "Wellness retreat room"
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12x8.5 ft wide room with seating, 240 sq ft",
+      "paragraph": "Twelve feet of width converts the plan from a room into a small suite: the extra 40 sq ft absorbs a seating corner or a work desk without pushing the bed against the glazing. The premium HPL, WPC or wood-finish facade carries through, and the gypsum ceiling gives the flat plane that hospitality photography needs. Split-AC provision and bathroom exhaust are already positioned for the wider ceiling void. Properties charging a premium tariff choose this width when the room has to hold a guest for several days rather than one night.",
+      "applications": [
+        "Premium tariff suite",
+        "Extended-stay room",
+        "Work-and-stay unit",
+        "Spa treatment room"
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10x8.5 ft two-zone guest module, 300 sq ft",
+      "paragraph": "Three hundred square feet is enough to plan two distinct zones behind one door, most often a bedroom and a living area, or two smaller keys sharing a service wall. The 100 mm mineral wool roof layer and 75 mm wall layer matter more at this span because the volume of air being conditioned rises with it. Partition and facade supports are already framed into the 60 by 60 by 3 mm corner posts, so an internal wall is a fit-out decision rather than a structural one. Family accommodation and twin-key economics both live here.",
+      "applications": [
+        "Family room module",
+        "Twin-key service wall",
+        "Living and sleeping split",
+        "Manager residence"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10x8.5 ft multi-key room block, 400 sq ft",
+      "paragraph": "The largest module carries 400 sq ft at ₹1,739 per sq ft, the cheapest rate this ladder reaches, and is normally planned as a small block of keys rather than one enormous room. Movement needs a long-bed trailer cleared for oversize carriage, with a crane setting it down before services plug in. Partitioning several rooms inside one shell shares the bathroom stack and the electrical distribution board, which is where the per-key saving actually comes from. Operators building out a property in phases order these as complete wings.",
+      "applications": [
+        "Phased property wing",
+        "Shared bathroom stack",
+        "Three-key block",
+        "Staff accommodation block"
+      ]
+    }
+  ]
+}

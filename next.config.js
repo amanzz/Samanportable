@@ -1141,7 +1141,7 @@ const nextConfig = {
       },
       {
         source: '/product/mobile-container-cafe',
-        destination: 'https://www.samanportable.com/product/container-cafe/mobile-container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
         permanent: true,
       },
       {
@@ -1344,7 +1344,7 @@ const nextConfig = {
       },
       {
         source: '/product/restaurant-food-containers',
-        destination: 'https://www.samanportable.com/product/container-cafe/restaurant-food-containers',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
         permanent: true,
       },
       {
@@ -1374,7 +1374,7 @@ const nextConfig = {
       },
       {
         source: '/product/shipping-container-restaurant',
-        destination: 'https://www.samanportable.com/product/container-cafe/shipping-container-restaurant',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
         permanent: true,
       },
       {
@@ -1916,38 +1916,66 @@ const nextConfig = {
         permanent: true,
       },
 
-      /* WAVE 2 — uncomment the moment Part B (container-restaurant and
-       * food-truck-containers) is merged and both destinations verify 200 at
-       * 0 hops. Rows 3-5 into food-truck-containers, rows 6-8 into
-       * container-restaurant. NOTE: rows 3, 5, 6, 7 and 8 have pre-existing
-       * flat-to-nested entries elsewhere in this file; those must be REPLACED
-       * in place at uncomment time, not stacked.
-       *
-       * // row 3 · mobile-container-cafe (292 clicks) -> food-truck-containers
-       * { source: '/product/mobile-container-cafe',                        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers', permanent: true },
-       * { source: '/product/container-cafe/mobile-container-cafe',         destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers', permanent: true },
-       * // row 4 · mobile-cafe (146 clicks) -> food-truck-containers
-       * { source: '/product/mobile-cafe',                                  destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers', permanent: true },
-       * { source: '/product/container-cafe/mobile-cafe',                   destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers', permanent: true },
-       * // row 5 · pop-up-restaurants (35 clicks) -> food-truck-containers
-       * { source: '/product/pop-up-restaurants',                           destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers', permanent: true },
-       * { source: '/product/container-cafe/pop-up-restaurants',            destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers', permanent: true },
-       * // row 6 · mobile-restaurants (124 clicks) -> container-restaurant
-       * { source: '/product/mobile-restaurants',                           destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant', permanent: true },
-       * { source: '/product/container-cafe/mobile-restaurants',            destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant', permanent: true },
-       * // row 7 · shipping-container-restaurant (113 clicks) -> container-restaurant
-       * { source: '/product/shipping-container-restaurant',                destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant', permanent: true },
-       * { source: '/product/container-cafe/shipping-container-restaurant', destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant', permanent: true },
-       * // row 8 · restaurant-food-containers (188 clicks) -> container-restaurant
-       * { source: '/product/restaurant-food-containers',                   destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant', permanent: true },
-       * { source: '/product/container-cafe/restaurant-food-containers',    destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant', permanent: true },
-       */
-
-      /* WAVE 3 — uncomment once container-hotel is rebuilt and live.
-       * // row 9 · shipping-container-hotel (65 clicks) -> container-hotel
-       * { source: '/product/shipping-container-hotel',                     destination: 'https://www.samanportable.com/product/container-cafe/container-hotel', permanent: true },
-       * { source: '/product/container-cafe/shipping-container-hotel',      destination: 'https://www.samanportable.com/product/container-cafe/container-hotel', permanent: true },
-       */
+      /* C-05 CONSOLIDATION WAVES 2 AND 3 — ACTIVATED.
+       * Staging condition of Part C1 is met inside this PR: all six winner
+       * pages are built on this branch and every destination below measures
+       * 200 at 0 hops on this build. Pre-existing flat-to-nested entries for
+       * these slugs were REPLACED in place above, never stacked. */
+      {
+        source: '/product/container-cafe/mobile-container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/mobile-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/mobile-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/pop-up-restaurants',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/pop-up-restaurants',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/mobile-restaurants',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/mobile-restaurants',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/shipping-container-restaurant',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/restaurant-food-containers',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/shipping-container-hotel',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-hotel',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/shipping-container-hotel',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-hotel',
+        permanent: true,
+      },
 
       ...csvRedirects,
     ];
