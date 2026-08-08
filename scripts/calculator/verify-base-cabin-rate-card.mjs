@@ -285,6 +285,14 @@ if (!securityRoutes.length) console.log('  (no security-cabin route resolved fro
 // sizes whose total lands on an exact half-rupee, which is a rounding-convention
 // question rather than a cap question. Both are printed so the difference cannot
 // hide. The assertion follows the AUTHORITY file, rate card v2 §3.
+//
+// RULED 07 Aug 2026, CALC-L3 §1: ROUND HALF UP. Rs 56,063 and Rs 59,063 stand,
+// rate card v2 is correct, and the L2d ticket table is the side that is out by
+// Rs 1. Math.round already rounds half toward +Infinity for positive values on
+// both the server (baseCabinRateCard.ts) and the browser enhancer, so no
+// arithmetic changed under this ruling — only the question closed. The dual
+// column is deliberately KEPT: it is what surfaced the half-rupee at all, and a
+// future change that starts moving either figure should still be made to say so.
 const RULED_SLIDE = [
   { label: '6.5x6', length: 6.5, width: 6, area: 39.00, rate: 1437.50, base: 56063, l2dTicket: 56062, capped: false },
   { label: '7x6', length: 7, width: 6, area: 42.00, rate: 1375.00, base: 57750, l2dTicket: 57750, capped: false },
@@ -522,12 +530,14 @@ if (phraseHits.length) {
   for (const hit of phraseHits) console.log(`      "${hit.phrase}" x${hit.count} in ${hit.where}`);
 }
 if (roundingConflicts.length) {
-  console.log('\nNOTE — rounding convention, needs one word from the ruling author:');
+  console.log('\nNOTE — rounding convention, RULED 07 Aug 2026 (CALC-L3 §1): round half up.');
   for (const row of roundingConflicts) {
     console.log(`      ${row.label} ${row.area} sq ft x ${row.rate} = ${(row.area * row.rate).toFixed(2)} exactly.`);
     console.log(`        rate card v2 table: ${INR(row.base)}   ·   CALC-L2d ticket table: ${INR(row.l2dTicket)}`);
   }
-  console.log('      Both land on an exact half-rupee. The build follows v2, the authority file.');
+  console.log('      Both land on an exact half-rupee. Ruled: round half up, so v2 stands and the');
+  console.log('      L2d ticket table is the one that is out by Rs 1. The build already follows v2.');
+  console.log('      The dual column stays: it caught this and it keeps watching.');
 }
 // Rate monotonicity is reported, not gated: ruled 07 Aug that two distinct
 // products may carry different per-sq-ft rates. Only TOTAL monotonicity gates.

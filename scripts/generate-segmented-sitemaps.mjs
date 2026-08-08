@@ -109,8 +109,12 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
     throw new Error(`Page sitemap ${name} changed from ${expected} to ${unfilteredSegments[name].length}`);
   }
 }
-if (all.length !== 451) {
-  throw new Error(`Page sitemap total changed from 451 to ${all.length}`);
+// 452 = 450 at the merge base, +1 for /cabin-cost-calculator (this branch) and
+// +1 for the page origin/static-migration added. Both sides independently wrote
+// 451 here for different pages, so git merged the literal cleanly and silently
+// left it one short — the segment gates above are what caught it.
+if (all.length !== 452) {
+  throw new Error(`Page sitemap total changed from 452 to ${all.length}`);
 }
 
 const pageMap = new Map();
