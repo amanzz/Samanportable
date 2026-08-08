@@ -9,6 +9,8 @@ const CONTAINER_OFFICES_HREF = '/product/container-offices';
 const containerOfficeHref = (slug: string) => `${CONTAINER_OFFICES_HREF}/${slug}`;
 const CONTAINER_HOUSES_HREF = '/product/container-houses';
 const containerHouseHref = (slug: string) => `${CONTAINER_HOUSES_HREF}/${slug}`;
+const CONTAINER_CAFE_HREF = '/product/container-cafe';
+const containerCafeHref = (slug: string) => `${CONTAINER_CAFE_HREF}/${slug}`;
 
 const bodyClass = 'text-sm leading-relaxed text-slate-700';
 const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline-offset-2';
@@ -21,6 +23,22 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  // C-05 container-cafe HUB — §5 of the 08 Aug draft of record, verbatim. The
+  // comparison line's anchor is exactly the ruled §9 string; it is neither
+  // extended nor shortened. No `appendix`: the draft supplies none.
+  'container-cafe': {
+    heading: 'Why this page, and not one of the five below',
+    body: (
+      <>
+        This hub is where you compare the whole container cafe range and settle on a size before you narrow down to a use. It carries the six published sizes, the rate at each of them, and the specification that every unit in this cluster is built from. If you already know the trade you are opening, one of the five pages below will answer you faster than this one.
+      </>
+    ),
+    comparison: (
+      <>
+        Opening a full-service kitchen with table seating? <Link className={linkClass} href={containerCafeHref('container-restaurant')}>Container Restaurant carries the heavier ladder and larger covers</Link>.
+      </>
+    ),
+  },
   'container-houses': {
     heading: 'Why the range page instead of one home model',
     body: (

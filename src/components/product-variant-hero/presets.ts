@@ -201,6 +201,21 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     trustWarranty: 'ISO 9001:2015 certified manufacturer',
     materialLabel: 'MS structural frame + insulated panel build',
   },
+  // C-05 CONTAINER CAFE hub (/product/container-cafe). Its own
+  // data/products/container-cafe.json supplies the six variants (§7 ex/incl-GST ladder,
+  // emitAggregateOffer, specPdfHref, L3 meta + opener) and the per-size explorer image
+  // map. This preset supplies only the derived surfaces: the singular product noun and
+  // the Category row. Deliberately absent: `productSku` (the wp-export SKU
+  // `SP-CC-40-2024` does not match CLAUDE.md's SP-{cluster}-{code}-2026 pattern and the
+  // replacement is not ruled — the row resolves from the legacy record rather than an
+  // invented value), `video` (none exists), and `trustWarranty`/`materialLabel` (the
+  // draft rules neither, so the deployed literals stand).
+  'container-cafe': {
+    productName: 'Container Cafe',
+    categoryLabel: 'Container Cafe',
+    categoryHref: '/product/container-cafe',
+    applicationsDataset: 'container-cafe',
+  },
   ...subpagePresets(),
 };
 

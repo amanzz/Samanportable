@@ -22,6 +22,7 @@ import c01Specifications from '@/data/products/c01-specifications.json';
 import c06Specifications from '@/data/products/c06-specifications.json';
 import c04Specifications from '@/data/products/c04-specifications.json';
 import c08Specifications from '@/data/products/c08-specifications.json';
+import c05Specifications from '@/data/products/c05-specifications.json';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -55,6 +56,12 @@ const C04_DATASET = c04Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
 const C08_DATASET = c08Specifications as unknown as {
+  products: Record<string, C01SpecificationEntry>;
+};
+// C-05 — the 30 publishable Platform Common Specs rows for slug `container-cafe`,
+// transcribed byte-exact from the SSOT in sheet order, EXCEPT row 30 (Warranty),
+// which carries the draft's §8 override for this route only.
+const C05_DATASET = c05Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
 
@@ -146,6 +153,14 @@ export function buildC08SpecificationsHtml(pageSlug: string): string {
   const entry = C08_DATASET.products[pageSlug];
   if (!entry) {
     throw new Error(`Missing C-08 specification dataset for ${pageSlug}`);
+  }
+  return buildC01SpecificationsHtml(entry);
+}
+
+export function buildC05SpecificationsHtml(pageSlug: string): string {
+  const entry = C05_DATASET.products[pageSlug];
+  if (!entry) {
+    throw new Error(`Missing C-05 specification dataset for ${pageSlug}`);
   }
   return buildC01SpecificationsHtml(entry);
 }
@@ -660,6 +675,15 @@ export function getProductTabsHtml(
   if (pageSlug && C08_DATASET.products[pageSlug]) {
     return {
       specificationsHtml: buildC08SpecificationsHtml(pageSlug),
+      shippingHtml: '',
+    };
+  }
+  // C-05 container cafe — 30-row platform spec table. The draft rules no Shipping
+  // tab copy for this event, so '' is returned and the caller keeps whatever the
+  // exported record already carries (unchanged behaviour, nothing invented).
+  if (pageSlug && C05_DATASET.products[pageSlug]) {
+    return {
+      specificationsHtml: buildC05SpecificationsHtml(pageSlug),
       shippingHtml: '',
     };
   }

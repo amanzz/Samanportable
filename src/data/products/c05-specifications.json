@@ -1,0 +1,190 @@
+{
+  "products": {
+    "container-cafe": {
+      "name": "Container Cafe",
+      "sourceSheet": "Platform Common Specs (SSOT 05Aug2026) - slug container-cafe",
+      "specifications": [
+        {
+          "group": "Steel Structure",
+          "component": "Bottom frame",
+          "detail": "125×75×4 mm or 150×75×5 mm MS C-channel",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Bottom stiffeners",
+          "detail": "100×50×3–4 mm channels with counter and equipment reinforcement",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "detail": "80×40×3 mm or 100×50×3 mm primary floor supports",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Top frame",
+          "detail": "80×40×3 mm MS top perimeter",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "detail": "60×40×2.5 mm roof members with exhaust and signage supports",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "detail": "60×60×3 mm posts with façade and counter framing",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Exterior walls",
+          "detail": "1.2–1.6 mm corrugated MS structural sheet with decorative over-cladding",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof",
+          "detail": "1.4–1.6 mm corrugated MS sheet",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Interior walls",
+          "detail": "8–10 mm fibre-cement board, HPL or stainless-steel lining in food-service zones",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Ceiling",
+          "detail": "Washable fibre-cement, ACP, PVC or metal-liner ceiling",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "detail": "18–24 mm cement fibre board with waterproof treatment",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "detail": "Anti-skid tile, 3–4 mm PU/epoxy or 2.5 mm safety vinyl",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "detail": "50–75 mm mineral wool",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "detail": "75–100 mm mineral wool",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "detail": "4 mm ACP, 6–8 mm HPL, WPC or wooden-finish metal over-cladding above the mandatory corrugated MS structural shell.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "detail": "Staff/customer door plus lockable service counter or shutter.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "detail": "Large aluminium service glazing with lockable counter opening.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "detail": "LED lighting, signage supply, multiple 6A/16A appliance sockets, dedicated equipment circuits and DB/MCB protection.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "detail": "Exhaust-hood/duct provision, fresh-air opening and optional AC for the customer zone.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "detail": "Sink/handwash, CPVC water supply, UPVC waste and equipment connection points according to layout.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "detail": "Front service counter with separate staff preparation and storage zones.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "differsFromHub": false
+        }
+      ]
+    }
+  }
+}

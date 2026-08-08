@@ -1,0 +1,76 @@
+{
+  "productSlug": "container-cafe",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "specPdfHref": "/specs/container-cafe-technical-specification.pdf",
+  "metaDescription": "Container cafe units fabricated in container form at our own works. Six sizes, 100 to 400 sq ft, from Rs 2,03,500 ex-GST. Delivered ready to trade in 7-21 days.",
+  "opener": "A container cafe from SAMAN is a food-service unit built in container form at our Bengaluru and Greater Noida works, then delivered ready to trade. Every unit is newly fabricated on a corrugated MS structural shell rather than converted from a used shipping container, so the counter line, the service opening and the equipment loads are set before the steel is cut. Six sizes are published, from a 100 sq ft single-counter kiosk to a 400 sq ft unit seating 33. The 20x10 ft reference size is Rs 3,70,000 ex-GST.",
+  "priceCaption": "Base specification price - customisations quoted separately. Ex-factory, ex-GST.",
+  "suppressLegacyFaqSchema": true,
+  "_imagesBlockedNote": "The 50 converted C-05 WebP files for this hub are placed at public/images/products/container-cafe/{sizeSlug}/ (five sizes x 10 views; no 20x8 render exists - Fable 5 Ruling 2, Option B). They are NOT wired into `variants[].images` or `explorerImageTemplate` because the draft of record supplies the ALT RULE (section 10) but no alt strings, and CLAUDE.md Hard Gate 4 names alt text as a HALT condition. Nothing here may invent them. When the 50-string alt manifest lands, add `images` to each variant and re-add `explorerImageTemplate` as a per-size map to that size's `-front-left-hero.webp`. Until then no image is advertised that the page does not render.",
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 203500,
+      "priceInclGst": 240130,
+      "capacity": "8 diners",
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 325600,
+      "priceInclGst": 384208,
+      "capacity": "13 diners",
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 370000,
+      "priceInclGst": 436600,
+      "capacity": "17 diners",
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 426240,
+      "priceInclGst": 502963,
+      "capacity": "20 diners",
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 532800,
+      "priceInclGst": 628704,
+      "capacity": "25 diners",
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 695600,
+      "priceInclGst": 820808,
+      "capacity": "33 diners",
+      "imagesPending": true
+    }
+  ]
+}

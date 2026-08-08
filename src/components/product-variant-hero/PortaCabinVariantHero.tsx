@@ -33,6 +33,7 @@ import portableCabinApplications from '@/data/products/portable-cabin-applicatio
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
 import portableOfficeApplications from '@/data/products/portable-office-applications.json';
 import portableCabinWithToiletApplications from '@/data/products/portable-cabin-with-toilet-applications.json';
+import containerCafeApplications from '@/data/products/container-cafe-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
@@ -130,6 +131,13 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // C-02 portable-cabin-with-toilet — §H drop (Fable 5, 25 Jul), same dataset shape
   // → identical SizeApplicationsExplorer. Resolves via productSlug; additive.
   'portable-cabin-with-toilet': portableCabinWithToiletApplications as ApplicationsData,
+  // C-05 container-cafe HUB — §6 of the 08 Aug draft of record, same dataset shape
+  // → identical SizeApplicationsExplorer. Resolves via the preset's
+  // applicationsDataset key; additive, so every other product's explorer is
+  // unaffected. Six panels, one per published size. The 20x8 panel carries no
+  // image (Fable 5 Ruling 2, Option B: no 20x8 render exists in the converted C-05
+  // set), so it renders the component's existing on-request placeholder.
+  'container-cafe': containerCafeApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, SectionHDataset>).map(
       ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]

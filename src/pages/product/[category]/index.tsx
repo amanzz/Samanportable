@@ -37,6 +37,7 @@ import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
 import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { restrictContainerCafeRail } from '../../../lib/containerCafeClusterRail';
 import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
@@ -195,6 +196,15 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
 
     if (category === 'container-offices') {
       relatedProducts = orderContainerOfficeRail(category, relatedProducts);
+    }
+
+    // C-05 Ruling 3 (Fable 5, 08 Aug 2026) — the container cafe hub's rail is
+    // restricted to the five CI9 subpages, in §9 order, so the §5 right-to-exist
+    // copy ("one of the five pages below") is true on the rendered page and the
+    // legacy children awaiting consolidation are not introduced by the cluster's
+    // strongest page. Hub route only; no other rail on the site changes.
+    if (category === 'container-cafe') {
+      relatedProducts = restrictContainerCafeRail(category, relatedProducts);
     }
 
     // Related rails/cards render only this compact catalog projection. Keeping full
