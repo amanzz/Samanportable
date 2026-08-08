@@ -14,6 +14,8 @@
 import { getPortaCabinVariantData, getSubpageVariantData } from '@/lib/staticContent';
 import {
   buildAllVariantItems,
+  buildC08VariantItems,
+  C08_VARIANT_CONFIGS,
   SUBPAGE_VARIANT_CONFIGS,
   MERCHANT_BASE_URL,
   type MerchantProduct,
@@ -21,9 +23,14 @@ import {
 
 /** Flagship's nine variant items + nine for each of the eleven T25 subpages. */
 export function getAllVariantFeedItems(baseUrl = MERCHANT_BASE_URL): MerchantProduct[] {
-  return buildAllVariantItems(
+  const items = buildAllVariantItems(
     getPortaCabinVariantData(),
     getSubpageVariantData(SUBPAGE_VARIANT_CONFIGS.map((c) => c.slug)),
     baseUrl
   );
+  const c08Data = getSubpageVariantData(C08_VARIANT_CONFIGS.map((c) => c.slug));
+  for (const config of C08_VARIANT_CONFIGS) {
+    items.push(...buildC08VariantItems(config, c08Data[config.slug], baseUrl));
+  }
+  return items;
 }

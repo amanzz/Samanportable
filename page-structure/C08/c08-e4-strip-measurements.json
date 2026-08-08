@@ -1,0 +1,98 @@
+[
+ {
+  "slug": "container-houses",
+  "path": "/product/container-houses",
+  "strip": {
+   "templateColumns": "68.5312px 68.5312px 68.5312px 68.5312px 68.5312px 68.5312px",
+   "columnCount": 6,
+   "gap": "8px",
+   "stripWidth": 451,
+   "stripRight": 887,
+   "children": 6,
+   "childrenWithImage": 6,
+   "lastChildRight": 887,
+   "trailingWhitespacePx": 0,
+   "thumbWidthPx": 69
+  }
+ },
+ {
+  "slug": "prefab-container-homes",
+  "path": "/product/container-houses/prefab-container-homes",
+  "strip": {
+   "templateColumns": "83.8281px 83.8438px 83.8281px 83.8438px 83.8438px",
+   "columnCount": 5,
+   "gap": "8px",
+   "stripWidth": 451,
+   "stripRight": 887,
+   "children": 5,
+   "childrenWithImage": 5,
+   "lastChildRight": 887,
+   "trailingWhitespacePx": 0,
+   "thumbWidthPx": 84
+  }
+ },
+ {
+  "slug": "luxury-container-houses",
+  "path": "/product/container-houses/luxury-container-houses",
+  "strip": {
+   "templateColumns": "83.8281px 83.8438px 83.8281px 83.8438px 83.8438px",
+   "columnCount": 5,
+   "gap": "8px",
+   "stripWidth": 451,
+   "stripRight": 887,
+   "children": 5,
+   "childrenWithImage": 5,
+   "lastChildRight": 887,
+   "trailingWhitespacePx": 0,
+   "thumbWidthPx": 84
+  }
+ },
+ {
+  "slug": "shipping-container-homes",
+  "path": "/product/container-houses/shipping-container-homes",
+  "strip": {
+   "templateColumns": "83.8281px 83.8438px 83.8281px 83.8438px 83.8438px",
+   "columnCount": 5,
+   "gap": "8px",
+   "stripWidth": 451,
+   "stripRight": 887,
+   "children": 5,
+   "childrenWithImage": 5,
+   "lastChildRight": 887,
+   "trailingWhitespacePx": 0,
+   "thumbWidthPx": 84
+  }
+ },
+ {
+  "slug": "affordable-container-homes",
+  "path": "/product/container-houses/affordable-container-homes",
+  "strip": {
+   "templateColumns": "83.8281px 83.8438px 83.8281px 83.8438px 83.8438px",
+   "columnCount": 5,
+   "gap": "8px",
+   "stripWidth": 451,
+   "stripRight": 887,
+   "children": 5,
+   "childrenWithImage": 5,
+   "lastChildRight": 887,
+   "trailingWhitespacePx": 0,
+   "thumbWidthPx": 84
+  }
+ },
+ {
+  "slug": "prefabricated-container-house",
+  "path": "/product/container-houses/prefabricated-container-house",
+  "strip": {
+   "templateColumns": "83.8281px 83.8438px 83.8281px 83.8438px 83.8438px",
+   "columnCount": 5,
+   "gap": "8px",
+   "stripWidth": 451,
+   "stripRight": 887,
+   "children": 5,
+   "childrenWithImage": 5,
+   "lastChildRight": 887,
+   "trailingWhitespacePx": 0,
+   "thumbWidthPx": 84
+  }
+ }
+]

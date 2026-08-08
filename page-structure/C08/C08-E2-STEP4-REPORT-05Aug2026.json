@@ -1,0 +1,1530 @@
+{
+  "generatedFromPreview": "http://127.0.0.1:3042",
+  "pricingMatrix": {
+    "sourceWorkbook": "D:\\Project-shekhar\\all-technical-specifications\\00-FINAL-FILES\\SAMAN_MASTER_64_Products_Detailed_Technical_Specs_9_Sizes_Report-with-price- PR.xlsx",
+    "sourceBytes": 679988,
+    "sourceMd5": "2bb681dff71ae744ea4d44418a09476a",
+    "sheet": "576 Pricing Matrix",
+    "exactProductName": "Prefabricated Container House",
+    "exactRowCount": 0,
+    "rows": [],
+    "conclusion": "No priced rows exist for prefabricated-container-house; no sibling prices may be mapped."
+  },
+  "componentTables": [
+    {
+      "route": "/product/container-houses",
+      "source": "src/data/products/c08-specifications.json",
+      "rowCount": 30,
+      "rows": [
+        {
+          "component": "Bottom frame",
+          "detail": "150×75×5 mm MS C-channel"
+        },
+        {
+          "component": "Bottom stiffeners",
+          "detail": "100×50×4 mm channels and 80×40×3 mm MS tubular members"
+        },
+        {
+          "component": "Floor frame",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members"
+        },
+        {
+          "component": "Top frame",
+          "detail": "80×40×3 mm MS top perimeter"
+        },
+        {
+          "component": "Roof stiffeners",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins"
+        },
+        {
+          "component": "Corner posts / walls",
+          "detail": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts"
+        },
+        {
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing."
+        },
+        {
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch."
+        },
+        {
+          "component": "Exterior walls",
+          "detail": "1.25–1.6 mm corrugated MS sheet"
+        },
+        {
+          "component": "Roof",
+          "detail": "1.6 mm corrugated MS sheet"
+        },
+        {
+          "component": "Interior walls",
+          "detail": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels"
+        },
+        {
+          "component": "Ceiling",
+          "detail": "12.5 mm gypsum or premium laminated ceiling"
+        },
+        {
+          "component": "Floor base",
+          "detail": "19 mm marine-grade plywood or 18 mm Bison panel"
+        },
+        {
+          "component": "Floor finish",
+          "detail": "5–6 mm SPC or 3–4 mm LVT flooring"
+        },
+        {
+          "component": "Wall insulation",
+          "detail": "75 mm mineral wool"
+        },
+        {
+          "component": "Roof insulation",
+          "detail": "100 mm glass wool or mineral wool"
+        },
+        {
+          "component": "Decorative / external finish",
+          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination."
+        },
+        {
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Main door / service door",
+          "detail": "Premium insulated/laminated door with closer and upgraded lockset"
+        },
+        {
+          "component": "Windows / service opening",
+          "detail": "Large powder-coated aluminium windows with 6 mm tinted glass"
+        },
+        {
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule."
+        },
+        {
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing."
+        },
+        {
+          "component": "Electrical fittings",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit."
+        },
+        {
+          "component": "Ventilation / AC",
+          "detail": "Residential daylight, cross-ventilation, exhaust and optional AC are coordinated to the room plan without changing the common Container Office construction baseline."
+        },
+        {
+          "component": "Plumbing / sanitary",
+          "detail": "Container Office base services adapted only where the approved residential plan includes kitchen, basin, shower or WC connections; supply, waste, vent and external utility interfaces remain quotation-controlled."
+        },
+        {
+          "component": "Layout / configuration",
+          "detail": "Residential configuration on the exact Container Office structural and material baseline: Residential room planning, privacy, thermal comfort, wet-service zones, storage and external utility connections adapt the portable-cabin structure for daily living. Room zoning, privacy, storage, kitchen or bathroom interfaces are fixed only on the approved house drawing."
+        },
+        {
+          "component": "Painting / coating",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system."
+        },
+        {
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation."
+        },
+        {
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard"
+        }
+      ],
+      "note": null
+    },
+    {
+      "route": "/product/container-houses/prefab-container-homes",
+      "source": "src/data/products/c08-specifications.json",
+      "rowCount": 30,
+      "rows": [
+        {
+          "component": "Bottom frame",
+          "detail": "150×75×5 mm MS C-channel"
+        },
+        {
+          "component": "Bottom stiffeners",
+          "detail": "100x50x4 mm channels with bolted inter-module connection plates at the mating edge"
+        },
+        {
+          "component": "Floor frame",
+          "detail": "100x50x3 mm primary with pier-block bearing plates at standard module points"
+        },
+        {
+          "component": "Top frame",
+          "detail": "80x40x3 mm perimeter with sealed module-joint capping profile"
+        },
+        {
+          "component": "Roof stiffeners",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins"
+        },
+        {
+          "component": "Corner posts / walls",
+          "detail": "60x60x3 mm corners with paired jamb posts at the expansion-side end wall"
+        },
+        {
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing."
+        },
+        {
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch."
+        },
+        {
+          "component": "Exterior walls",
+          "detail": "1.25–1.6 mm corrugated MS sheet"
+        },
+        {
+          "component": "Roof",
+          "detail": "1.6 mm corrugated MS sheet"
+        },
+        {
+          "component": "Interior walls",
+          "detail": "8 mm pre-laminated board on module grid, identical panel sizes for repeat production"
+        },
+        {
+          "component": "Ceiling",
+          "detail": "PVC laminated ceiling panels, washable, module-length runs"
+        },
+        {
+          "component": "Floor base",
+          "detail": "19 mm marine-grade plywood or 18 mm Bison panel"
+        },
+        {
+          "component": "Floor finish",
+          "detail": "2 mm homogeneous vinyl sheet, welded seams at module joints"
+        },
+        {
+          "component": "Wall insulation",
+          "detail": "75 mm mineral wool"
+        },
+        {
+          "component": "Roof insulation",
+          "detail": "100 mm glass wool or mineral wool"
+        },
+        {
+          "component": "Decorative / external finish",
+          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination."
+        },
+        {
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Main door / service door",
+          "detail": "flush steel door with standard lockset, one per module"
+        },
+        {
+          "component": "Windows / service opening",
+          "detail": "uPVC sliding windows in the standard module aperture"
+        },
+        {
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule."
+        },
+        {
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing."
+        },
+        {
+          "component": "Electrical fittings",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit."
+        },
+        {
+          "component": "Ventilation / AC",
+          "detail": "exhaust to kitchen and bathroom zones ducted on the standard service route"
+        },
+        {
+          "component": "Plumbing / sanitary",
+          "detail": "kitchen and bathroom supply and drainage risers on the sealed standard route, one site connection per module"
+        },
+        {
+          "component": "Layout / configuration",
+          "detail": "repeatable 1 BHK / 2 BHK module plans, colony-ready, expansion joint on one gable end"
+        },
+        {
+          "component": "Painting / coating",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system."
+        },
+        {
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation."
+        },
+        {
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard"
+        }
+      ],
+      "note": null
+    },
+    {
+      "route": "/product/container-houses/luxury-container-houses",
+      "source": "src/data/products/c08-specifications.json",
+      "rowCount": 30,
+      "rows": [
+        {
+          "component": "Bottom frame",
+          "detail": "150×75×5 mm MS C-channel"
+        },
+        {
+          "component": "Bottom stiffeners",
+          "detail": "100×50×4 mm channels and 80×40×3 mm MS tubular members"
+        },
+        {
+          "component": "Floor frame",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members"
+        },
+        {
+          "component": "Top frame",
+          "detail": "80×40×3 mm MS top perimeter"
+        },
+        {
+          "component": "Roof stiffeners",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins"
+        },
+        {
+          "component": "Corner posts / walls",
+          "detail": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts"
+        },
+        {
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing."
+        },
+        {
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch."
+        },
+        {
+          "component": "Exterior walls",
+          "detail": "1.25–1.6 mm corrugated MS sheet"
+        },
+        {
+          "component": "Roof",
+          "detail": "1.6 mm corrugated MS sheet"
+        },
+        {
+          "component": "Interior walls",
+          "detail": "12 mm plywood with veneer and HPL feature walls, hospitality grade"
+        },
+        {
+          "component": "Ceiling",
+          "detail": "coffered gypsum ceiling with coordinated concealed lighting"
+        },
+        {
+          "component": "Floor base",
+          "detail": "19 mm marine-grade plywood with acoustic underlay"
+        },
+        {
+          "component": "Floor finish",
+          "detail": "engineered wood plank with skirting-matched trim"
+        },
+        {
+          "component": "Wall insulation",
+          "detail": "100 mm mineral wool with acoustic-grade density"
+        },
+        {
+          "component": "Roof insulation",
+          "detail": "100 mm glass wool or mineral wool"
+        },
+        {
+          "component": "Decorative / external finish",
+          "detail": "enamel system with PU topcoat in designer palette"
+        },
+        {
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Main door / service door",
+          "detail": "premium insulated door with smart lock and closer"
+        },
+        {
+          "component": "Windows / service opening",
+          "detail": "full-height powder-coated aluminium feature glazing, 6 mm laminated tinted glass"
+        },
+        {
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule."
+        },
+        {
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing."
+        },
+        {
+          "component": "Electrical fittings",
+          "detail": "layered lighting circuits, bedside and wardrobe points, dimmer provision"
+        },
+        {
+          "component": "Ventilation / AC",
+          "detail": "split AC provision per habitable room, concealed drainage"
+        },
+        {
+          "component": "Plumbing / sanitary",
+          "detail": "attached bathroom with concealed CPVC/UPVC runs and hot-water line"
+        },
+        {
+          "component": "Layout / configuration",
+          "detail": "villa-grade suites with attached bath, wardrobe zone and lighting plan"
+        },
+        {
+          "component": "Painting / coating",
+          "detail": "red-oxide primer with two enamel coats plus PU finish coat"
+        },
+        {
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation."
+        },
+        {
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard"
+        }
+      ],
+      "note": null
+    },
+    {
+      "route": "/product/container-houses/shipping-container-homes",
+      "source": "src/data/products/c08-specifications.json",
+      "rowCount": 30,
+      "rows": [
+        {
+          "component": "Bottom frame",
+          "detail": "150x75x5 mm MS C-channel with additional cross-members at lifting zones"
+        },
+        {
+          "component": "Bottom stiffeners",
+          "detail": "100x50x4 mm channels with relocation skid provision"
+        },
+        {
+          "component": "Floor frame",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members"
+        },
+        {
+          "component": "Top frame",
+          "detail": "80×40×3 mm MS top perimeter"
+        },
+        {
+          "component": "Roof stiffeners",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins"
+        },
+        {
+          "component": "Corner posts / walls",
+          "detail": "75x75x3 mm corner posts with reinforced door and window surrounds"
+        },
+        {
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing."
+        },
+        {
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch."
+        },
+        {
+          "component": "Exterior walls",
+          "detail": "1.6 mm corrugated MS sheet, full-height continuous profile"
+        },
+        {
+          "component": "Roof",
+          "detail": "1.6 mm corrugated MS with continuous ridge and edge sealing"
+        },
+        {
+          "component": "Interior walls",
+          "detail": "12 mm plywood with 0.8–1.0 mm laminate and selected HPL feature panels"
+        },
+        {
+          "component": "Ceiling",
+          "detail": "12.5 mm gypsum or premium laminated ceiling"
+        },
+        {
+          "component": "Floor base",
+          "detail": "18 mm Bison panel on sealed floor frame"
+        },
+        {
+          "component": "Floor finish",
+          "detail": "5–6 mm SPC or 3–4 mm LVT flooring"
+        },
+        {
+          "component": "Wall insulation",
+          "detail": "75 mm mineral wool"
+        },
+        {
+          "component": "Roof insulation",
+          "detail": "100 mm glass wool or mineral wool"
+        },
+        {
+          "component": "Decorative / external finish",
+          "detail": "zinc-rich primer with anti-rust enamel, coastal-duty build"
+        },
+        {
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Main door / service door",
+          "detail": "reinforced insulated door in a welded surround frame"
+        },
+        {
+          "component": "Windows / service opening",
+          "detail": "powder-coated aluminium windows with weatherproof hoods and sealed penetrations"
+        },
+        {
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule."
+        },
+        {
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing."
+        },
+        {
+          "component": "Electrical fittings",
+          "detail": "LED lights, computer/data points, UPS provision, multiple 6A/16A sockets, fan points and dedicated AC circuit."
+        },
+        {
+          "component": "Ventilation / AC",
+          "detail": "Residential daylight, cross-ventilation, exhaust and optional AC are coordinated to the room plan without changing the common Container Office construction baseline."
+        },
+        {
+          "component": "Plumbing / sanitary",
+          "detail": "Container Office base services adapted only where the approved residential plan includes kitchen, basin, shower or WC connections; supply, waste, vent and external utility interfaces remain quotation-controlled."
+        },
+        {
+          "component": "Layout / configuration",
+          "detail": "reinforced container-form shell planned for repeat relocation; ISO cargo-container reuse is not implied"
+        },
+        {
+          "component": "Painting / coating",
+          "detail": "zinc-rich primer coat followed by two anti-rust enamel coats"
+        },
+        {
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation."
+        },
+        {
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard"
+        }
+      ],
+      "note": null
+    },
+    {
+      "route": "/product/container-houses/affordable-container-homes",
+      "source": "src/data/products/c08-specifications.json",
+      "rowCount": 30,
+      "rows": [
+        {
+          "component": "Bottom frame",
+          "detail": "150×75×5 mm MS C-channel"
+        },
+        {
+          "component": "Bottom stiffeners",
+          "detail": "100×50×4 mm channels and 80×40×3 mm MS tubular members"
+        },
+        {
+          "component": "Floor frame",
+          "detail": "100×50×3 mm primary and 80×40×3 mm secondary floor members"
+        },
+        {
+          "component": "Top frame",
+          "detail": "80×40×3 mm MS top perimeter"
+        },
+        {
+          "component": "Roof stiffeners",
+          "detail": "60×40×2.5 mm rafters and 50×50×2.5 mm purlins"
+        },
+        {
+          "component": "Corner posts / walls",
+          "detail": "60×60×3 mm corner posts and 50×50×3 mm intermediate posts"
+        },
+        {
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing."
+        },
+        {
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch."
+        },
+        {
+          "component": "Exterior walls",
+          "detail": "1.25–1.6 mm corrugated MS sheet"
+        },
+        {
+          "component": "Roof",
+          "detail": "1.6 mm corrugated MS sheet"
+        },
+        {
+          "component": "Interior walls",
+          "detail": "8 mm pre-laminated board throughout"
+        },
+        {
+          "component": "Ceiling",
+          "detail": "PVC ceiling panels"
+        },
+        {
+          "component": "Floor base",
+          "detail": "19 mm marine-grade plywood or 18 mm Bison panel"
+        },
+        {
+          "component": "Floor finish",
+          "detail": "2 mm vinyl sheet flooring"
+        },
+        {
+          "component": "Wall insulation",
+          "detail": "75 mm mineral wool"
+        },
+        {
+          "component": "Roof insulation",
+          "detail": "100 mm glass wool or mineral wool"
+        },
+        {
+          "component": "Decorative / external finish",
+          "detail": "standard anti-rust enamel in two standard colours"
+        },
+        {
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Main door / service door",
+          "detail": "powder-coated steel door with standard lockset"
+        },
+        {
+          "component": "Windows / service opening",
+          "detail": "uPVC sliding windows, modest glazing schedule (two per room plan)"
+        },
+        {
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
+        },
+        {
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule."
+        },
+        {
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing."
+        },
+        {
+          "component": "Electrical fittings",
+          "detail": "essential LED, fan and 6A/16A socket set to the single plan"
+        },
+        {
+          "component": "Ventilation / AC",
+          "detail": "cross-ventilation openings with exhaust provision; AC as optional add-on"
+        },
+        {
+          "component": "Plumbing / sanitary",
+          "detail": "optional kitchen and toilet work clearly separated and quoted on selection"
+        },
+        {
+          "component": "Layout / configuration",
+          "detail": "one efficient fixed room plan per size, options quoted separately"
+        },
+        {
+          "component": "Painting / coating",
+          "detail": "one red-oxide primer coat with two standard enamel coats"
+        },
+        {
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation."
+        },
+        {
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard"
+        }
+      ],
+      "note": null
+    },
+    {
+      "route": "/product/container-houses/prefabricated-container-house",
+      "source": null,
+      "rowCount": 0,
+      "rows": [],
+      "note": "No C-08 30-row specification table exists for this route."
+    }
+  ],
+  "hardCommonRows": {
+    "expected": [
+      "Electrical protection",
+      "Electrical wiring",
+      "Fasteners & sealing",
+      "Grills / mosquito mesh",
+      "Warranty",
+      "Welding & fabrication"
+    ],
+    "proof": [
+      {
+        "component": "Electrical protection",
+        "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+        "fiveGeneratedRoutesByteIdentical": true,
+        "prefabricatedContainerHouseHasRow": false
+      },
+      {
+        "component": "Electrical wiring",
+        "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+        "fiveGeneratedRoutesByteIdentical": true,
+        "prefabricatedContainerHouseHasRow": false
+      },
+      {
+        "component": "Fasteners & sealing",
+        "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+        "fiveGeneratedRoutesByteIdentical": true,
+        "prefabricatedContainerHouseHasRow": false
+      },
+      {
+        "component": "Grills / mosquito mesh",
+        "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+        "fiveGeneratedRoutesByteIdentical": true,
+        "prefabricatedContainerHouseHasRow": false
+      },
+      {
+        "component": "Warranty",
+        "detail": "5-year structural warranty and 1-year finishing warranty as standard",
+        "fiveGeneratedRoutesByteIdentical": true,
+        "prefabricatedContainerHouseHasRow": false
+      },
+      {
+        "component": "Welding & fabrication",
+        "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+        "fiveGeneratedRoutesByteIdentical": true,
+        "prefabricatedContainerHouseHasRow": false
+      }
+    ],
+    "allFiveGeneratedRoutesByteIdentical": true,
+    "allSixRoutesByteIdentical": false,
+    "reason": "prefabricated-container-house has no C-08 30-row specification table, so six-route identity cannot be asserted."
+  },
+  "headings": [
+    {
+      "route": "/product/container-houses",
+      "status": 200,
+      "h2": [
+        "Explore the Range",
+        "Why the range page instead of one home model",
+        "Six container house sizes and what each one lives like",
+        "Product Details",
+        "Customer Reviews",
+        "Popular Portable Cabin Resources"
+      ],
+      "fullHeadingStructure": [
+        {
+          "level": "H3",
+          "text": "Cabins & Offices"
+        },
+        {
+          "level": "H3",
+          "text": "Accommodation & Site"
+        },
+        {
+          "level": "H3",
+          "text": "Structures & Buildings"
+        },
+        {
+          "level": "H3",
+          "text": "Panels & Sheets"
+        },
+        {
+          "level": "H3",
+          "text": "Porta Cabin Rentals"
+        },
+        {
+          "level": "H3",
+          "text": "Container Office Rentals"
+        },
+        {
+          "level": "H1",
+          "text": "Container Houses"
+        },
+        {
+          "level": "H3",
+          "text": "Product Information"
+        },
+        {
+          "level": "H2",
+          "text": "Explore the Range"
+        },
+        {
+          "level": "H2",
+          "text": "Why the range page instead of one home model"
+        },
+        {
+          "level": "H2",
+          "text": "Six container house sizes and what each one lives like"
+        },
+        {
+          "level": "H3",
+          "text": "20x8 ft container house: the 160 sq ft compact start"
+        },
+        {
+          "level": "H3",
+          "text": "20x10 ft container house: the 200 sq ft reference home"
+        },
+        {
+          "level": "H3",
+          "text": "20x12 ft container house: 240 sq ft with a real bedroom"
+        },
+        {
+          "level": "H3",
+          "text": "40x8 ft container house: the 320 sq ft linear home"
+        },
+        {
+          "level": "H3",
+          "text": "40x10 ft container house: 400 sq ft family-ready space"
+        },
+        {
+          "level": "H3",
+          "text": "40x12 ft container house: the 480 sq ft flagship single"
+        },
+        {
+          "level": "H2",
+          "text": "Product Details"
+        },
+        {
+          "level": "H3",
+          "text": "Product Overview"
+        },
+        {
+          "level": "H3",
+          "text": "Technical Specifications"
+        },
+        {
+          "level": "H4",
+          "text": "Steel Structure"
+        },
+        {
+          "level": "H4",
+          "text": "Walls, Roof, Floor & Insulation"
+        },
+        {
+          "level": "H4",
+          "text": "Doors, Windows, Electrical & Services"
+        },
+        {
+          "level": "H2",
+          "text": "Customer Reviews"
+        },
+        {
+          "level": "H3",
+          "text": "Write a Review for Container Houses"
+        },
+        {
+          "level": "H2",
+          "text": "Popular Portable Cabin Resources"
+        },
+        {
+          "level": "H3",
+          "text": "Useful Links"
+        },
+        {
+          "level": "H3",
+          "text": "Product Categories"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 1"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 2"
+        }
+      ]
+    },
+    {
+      "route": "/product/container-houses/prefab-container-homes",
+      "status": 200,
+      "h2": [
+        "Explore the Range",
+        "Why the prefab module instead of the range page",
+        "Prefab container home modules across the six sizes",
+        "Product Details",
+        "Customer Reviews",
+        "Popular Portable Cabin Resources"
+      ],
+      "fullHeadingStructure": [
+        {
+          "level": "H3",
+          "text": "Cabins & Offices"
+        },
+        {
+          "level": "H3",
+          "text": "Accommodation & Site"
+        },
+        {
+          "level": "H3",
+          "text": "Structures & Buildings"
+        },
+        {
+          "level": "H3",
+          "text": "Panels & Sheets"
+        },
+        {
+          "level": "H3",
+          "text": "Porta Cabin Rentals"
+        },
+        {
+          "level": "H3",
+          "text": "Container Office Rentals"
+        },
+        {
+          "level": "H1",
+          "text": "Prefab Container Homes"
+        },
+        {
+          "level": "H3",
+          "text": "Product Information"
+        },
+        {
+          "level": "H2",
+          "text": "Explore the Range"
+        },
+        {
+          "level": "H2",
+          "text": "Why the prefab module instead of the range page"
+        },
+        {
+          "level": "H2",
+          "text": "Prefab container home modules across the six sizes"
+        },
+        {
+          "level": "H3",
+          "text": "20x8 ft prefab module: the 160 sq ft colony unit"
+        },
+        {
+          "level": "H3",
+          "text": "20x10 ft prefab module: the standard 1 BHK unit"
+        },
+        {
+          "level": "H3",
+          "text": "20x12 ft prefab module: width for the family plan"
+        },
+        {
+          "level": "H3",
+          "text": "40x8 ft prefab module: the 320 sq ft linear twin"
+        },
+        {
+          "level": "H3",
+          "text": "40x10 ft prefab module: the 400 sq ft family standard"
+        },
+        {
+          "level": "H3",
+          "text": "40x12 ft prefab module: the flagship 480 sq ft unit"
+        },
+        {
+          "level": "H2",
+          "text": "Product Details"
+        },
+        {
+          "level": "H3",
+          "text": "Product Overview"
+        },
+        {
+          "level": "H3",
+          "text": "Technical Specifications"
+        },
+        {
+          "level": "H4",
+          "text": "Steel Structure"
+        },
+        {
+          "level": "H4",
+          "text": "Walls, Roof, Floor & Insulation"
+        },
+        {
+          "level": "H4",
+          "text": "Doors, Windows, Electrical & Services"
+        },
+        {
+          "level": "H2",
+          "text": "Customer Reviews"
+        },
+        {
+          "level": "H3",
+          "text": "Write a Review for Prefab Container Homes"
+        },
+        {
+          "level": "H2",
+          "text": "Popular Portable Cabin Resources"
+        },
+        {
+          "level": "H3",
+          "text": "Useful Links"
+        },
+        {
+          "level": "H3",
+          "text": "Product Categories"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 1"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 2"
+        }
+      ]
+    },
+    {
+      "route": "/product/container-houses/luxury-container-houses",
+      "status": 200,
+      "h2": [
+        "Explore the Range",
+        "Why the luxury build instead of the prefab line",
+        "Luxury container house sizes from suite to villa",
+        "Product Details",
+        "Customer Reviews",
+        "Popular Portable Cabin Resources"
+      ],
+      "fullHeadingStructure": [
+        {
+          "level": "H3",
+          "text": "Cabins & Offices"
+        },
+        {
+          "level": "H3",
+          "text": "Accommodation & Site"
+        },
+        {
+          "level": "H3",
+          "text": "Structures & Buildings"
+        },
+        {
+          "level": "H3",
+          "text": "Panels & Sheets"
+        },
+        {
+          "level": "H3",
+          "text": "Porta Cabin Rentals"
+        },
+        {
+          "level": "H3",
+          "text": "Container Office Rentals"
+        },
+        {
+          "level": "H1",
+          "text": "Luxury Container Houses"
+        },
+        {
+          "level": "H3",
+          "text": "Product Information"
+        },
+        {
+          "level": "H2",
+          "text": "Explore the Range"
+        },
+        {
+          "level": "H2",
+          "text": "Why the luxury build instead of the prefab line"
+        },
+        {
+          "level": "H2",
+          "text": "Luxury container house sizes from suite to villa"
+        },
+        {
+          "level": "H3",
+          "text": "20x8 ft luxury container house: the 160 sq ft suite"
+        },
+        {
+          "level": "H3",
+          "text": "20x10 ft luxury container house: the honeymoon unit"
+        },
+        {
+          "level": "H3",
+          "text": "20x12 ft luxury container house: suite with a lounge"
+        },
+        {
+          "level": "H3",
+          "text": "40x8 ft luxury container house: the linear villa room"
+        },
+        {
+          "level": "H3",
+          "text": "40x10 ft luxury container house: the one-bed villa"
+        },
+        {
+          "level": "H3",
+          "text": "40x12 ft luxury container house: the villa flagship"
+        },
+        {
+          "level": "H2",
+          "text": "Product Details"
+        },
+        {
+          "level": "H3",
+          "text": "Product Overview"
+        },
+        {
+          "level": "H3",
+          "text": "Technical Specifications"
+        },
+        {
+          "level": "H4",
+          "text": "Steel Structure"
+        },
+        {
+          "level": "H4",
+          "text": "Walls, Roof, Floor & Insulation"
+        },
+        {
+          "level": "H4",
+          "text": "Doors, Windows, Electrical & Services"
+        },
+        {
+          "level": "H2",
+          "text": "Customer Reviews"
+        },
+        {
+          "level": "H3",
+          "text": "Write a Review for Luxury Container Houses"
+        },
+        {
+          "level": "H2",
+          "text": "Popular Portable Cabin Resources"
+        },
+        {
+          "level": "H3",
+          "text": "Useful Links"
+        },
+        {
+          "level": "H3",
+          "text": "Product Categories"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 1"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 2"
+        }
+      ]
+    },
+    {
+      "route": "/product/container-houses/shipping-container-homes",
+      "status": 200,
+      "h2": [
+        "Explore the Range",
+        "Why the shipping-form build instead of the hub range",
+        "Shipping container home sizes built for hard duty",
+        "Product Details",
+        "Customer Reviews",
+        "Popular Portable Cabin Resources"
+      ],
+      "fullHeadingStructure": [
+        {
+          "level": "H3",
+          "text": "Cabins & Offices"
+        },
+        {
+          "level": "H3",
+          "text": "Accommodation & Site"
+        },
+        {
+          "level": "H3",
+          "text": "Structures & Buildings"
+        },
+        {
+          "level": "H3",
+          "text": "Panels & Sheets"
+        },
+        {
+          "level": "H3",
+          "text": "Porta Cabin Rentals"
+        },
+        {
+          "level": "H3",
+          "text": "Container Office Rentals"
+        },
+        {
+          "level": "H1",
+          "text": "Shipping Container Homes"
+        },
+        {
+          "level": "H3",
+          "text": "Product Information"
+        },
+        {
+          "level": "H2",
+          "text": "Explore the Range"
+        },
+        {
+          "level": "H2",
+          "text": "Why the shipping-form build instead of the hub range"
+        },
+        {
+          "level": "H2",
+          "text": "Shipping container home sizes built for hard duty"
+        },
+        {
+          "level": "H3",
+          "text": "20x8 ft shipping container home: the movable base"
+        },
+        {
+          "level": "H3",
+          "text": "20x10 ft shipping container home: the coastal standard"
+        },
+        {
+          "level": "H3",
+          "text": "20x12 ft shipping container home: armoured and wide"
+        },
+        {
+          "level": "H3",
+          "text": "40x8 ft shipping container home: the long hauler"
+        },
+        {
+          "level": "H3",
+          "text": "40x10 ft shipping container home: the family mover"
+        },
+        {
+          "level": "H3",
+          "text": "40x12 ft shipping container home: the flagship shell"
+        },
+        {
+          "level": "H2",
+          "text": "Product Details"
+        },
+        {
+          "level": "H3",
+          "text": "Product Overview"
+        },
+        {
+          "level": "H3",
+          "text": "Technical Specifications"
+        },
+        {
+          "level": "H4",
+          "text": "Steel Structure"
+        },
+        {
+          "level": "H4",
+          "text": "Walls, Roof, Floor & Insulation"
+        },
+        {
+          "level": "H4",
+          "text": "Doors, Windows, Electrical & Services"
+        },
+        {
+          "level": "H2",
+          "text": "Customer Reviews"
+        },
+        {
+          "level": "H3",
+          "text": "Write a Review for Shipping Container Homes"
+        },
+        {
+          "level": "H2",
+          "text": "Popular Portable Cabin Resources"
+        },
+        {
+          "level": "H3",
+          "text": "Useful Links"
+        },
+        {
+          "level": "H3",
+          "text": "Product Categories"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 1"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 2"
+        }
+      ]
+    },
+    {
+      "route": "/product/container-houses/affordable-container-homes",
+      "status": 200,
+      "h2": [
+        "Explore the Range",
+        "Why the affordable build instead of prefab modules",
+        "Affordable container home sizes at the range floor",
+        "Product Details",
+        "Customer Reviews",
+        "Popular Portable Cabin Resources"
+      ],
+      "fullHeadingStructure": [
+        {
+          "level": "H3",
+          "text": "Cabins & Offices"
+        },
+        {
+          "level": "H3",
+          "text": "Accommodation & Site"
+        },
+        {
+          "level": "H3",
+          "text": "Structures & Buildings"
+        },
+        {
+          "level": "H3",
+          "text": "Panels & Sheets"
+        },
+        {
+          "level": "H3",
+          "text": "Porta Cabin Rentals"
+        },
+        {
+          "level": "H3",
+          "text": "Container Office Rentals"
+        },
+        {
+          "level": "H1",
+          "text": "Affordable Container Homes"
+        },
+        {
+          "level": "H3",
+          "text": "Product Information"
+        },
+        {
+          "level": "H2",
+          "text": "Explore the Range"
+        },
+        {
+          "level": "H2",
+          "text": "Why the affordable build instead of prefab modules"
+        },
+        {
+          "level": "H2",
+          "text": "Affordable container home sizes at the range floor"
+        },
+        {
+          "level": "H3",
+          "text": "20x8 ft affordable container home: the range floor"
+        },
+        {
+          "level": "H3",
+          "text": "20x10 ft affordable container home: the value 200"
+        },
+        {
+          "level": "H3",
+          "text": "20x12 ft affordable container home: fixed-plan comfort"
+        },
+        {
+          "level": "H3",
+          "text": "40x8 ft affordable container home: the economy line"
+        },
+        {
+          "level": "H3",
+          "text": "40x10 ft affordable container home: the family floor"
+        },
+        {
+          "level": "H3",
+          "text": "40x12 ft affordable container home: most home per rupee"
+        },
+        {
+          "level": "H2",
+          "text": "Product Details"
+        },
+        {
+          "level": "H3",
+          "text": "Product Overview"
+        },
+        {
+          "level": "H3",
+          "text": "Technical Specifications"
+        },
+        {
+          "level": "H4",
+          "text": "Steel Structure"
+        },
+        {
+          "level": "H4",
+          "text": "Walls, Roof, Floor & Insulation"
+        },
+        {
+          "level": "H4",
+          "text": "Doors, Windows, Electrical & Services"
+        },
+        {
+          "level": "H2",
+          "text": "Customer Reviews"
+        },
+        {
+          "level": "H3",
+          "text": "Write a Review for Affordable Container Homes"
+        },
+        {
+          "level": "H2",
+          "text": "Popular Portable Cabin Resources"
+        },
+        {
+          "level": "H3",
+          "text": "Useful Links"
+        },
+        {
+          "level": "H3",
+          "text": "Product Categories"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 1"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 2"
+        }
+      ]
+    },
+    {
+      "route": "/product/container-houses/prefabricated-container-house",
+      "status": 200,
+      "h2": [
+        "Explore the Range",
+        "Explore the Range",
+        "Product Details",
+        "What's inside a SAMAN prefabricated container house when the trailer arrives",
+        "The difference between a prefabricated container house and a prefab container home, explained",
+        "Order day to handover day: what each week between looks like",
+        "Site readiness for a 40 ft fully fitted unit",
+        "Who orders a prefabricated container house: buyer types and use cases",
+        "Frequently asked questions",
+        "Configure your prefabricated container house",
+        "Certifications and Manufacturer Credentials",
+        "Customer Reviews",
+        "Popular Portable Cabin Resources"
+      ],
+      "fullHeadingStructure": [
+        {
+          "level": "H3",
+          "text": "Cabins & Offices"
+        },
+        {
+          "level": "H3",
+          "text": "Accommodation & Site"
+        },
+        {
+          "level": "H3",
+          "text": "Structures & Buildings"
+        },
+        {
+          "level": "H3",
+          "text": "Panels & Sheets"
+        },
+        {
+          "level": "H3",
+          "text": "Porta Cabin Rentals"
+        },
+        {
+          "level": "H3",
+          "text": "Container Office Rentals"
+        },
+        {
+          "level": "H2",
+          "text": "Explore the Range"
+        },
+        {
+          "level": "H1",
+          "text": "Prefabricated Container House"
+        },
+        {
+          "level": "H3",
+          "text": "Product Information"
+        },
+        {
+          "level": "H2",
+          "text": "Explore the Range"
+        },
+        {
+          "level": "H2",
+          "text": "Product Details"
+        },
+        {
+          "level": "H3",
+          "text": "Product Overview"
+        },
+        {
+          "level": "H2",
+          "text": "What's inside a SAMAN prefabricated container house when the trailer arrives"
+        },
+        {
+          "level": "H2",
+          "text": "The difference between a prefabricated container house and a prefab container home, explained"
+        },
+        {
+          "level": "H2",
+          "text": "Order day to handover day: what each week between looks like"
+        },
+        {
+          "level": "H2",
+          "text": "Site readiness for a 40 ft fully fitted unit"
+        },
+        {
+          "level": "H2",
+          "text": "Who orders a prefabricated container house: buyer types and use cases"
+        },
+        {
+          "level": "H2",
+          "text": "Frequently asked questions"
+        },
+        {
+          "level": "H3",
+          "text": "How much does a fully-fitted prefabricated container house cost in India?"
+        },
+        {
+          "level": "H3",
+          "text": "What is the difference between a prefabricated container house and a prefab container home?"
+        },
+        {
+          "level": "H3",
+          "text": "How long does it take from order to move-in for a prefabricated container house?"
+        },
+        {
+          "level": "H3",
+          "text": "Can a prefabricated container house be customised, or is it fixed configuration?"
+        },
+        {
+          "level": "H2",
+          "text": "Configure your prefabricated container house"
+        },
+        {
+          "level": "H2",
+          "text": "Certifications and Manufacturer Credentials"
+        },
+        {
+          "level": "H2",
+          "text": "Customer Reviews"
+        },
+        {
+          "level": "H3",
+          "text": "Write a Review for Prefabricated Container House"
+        },
+        {
+          "level": "H2",
+          "text": "Popular Portable Cabin Resources"
+        },
+        {
+          "level": "H3",
+          "text": "Useful Links"
+        },
+        {
+          "level": "H3",
+          "text": "Product Categories"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 1"
+        },
+        {
+          "level": "H3",
+          "text": "Manufacturing Unit - 2"
+        }
+      ]
+    }
+  ]
+}

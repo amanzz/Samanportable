@@ -1,0 +1,428 @@
+{
+  "container-houses": {
+    "h2": "Six container house sizes and what each one lives like",
+    "guidanceLine": "Pick the footprint closest to your plot and headcount; every size below shows its published ex-GST price.",
+    "20x8": {
+      "h2": "20x8 ft container house: the 160 sq ft compact start",
+      "intro": "The 20x8 ft container house is the narrowest home in the range, 160 sq ft arranged as one room with a corner wet zone. Its slim width rides a single trailer lane, which keeps transport simple for farm tracks and hill plots. The shell is the standard build: welded MS frame, corrugated MS walls, mineral wool insulation at 75 mm and a 100 mm glasswool layer above the ceiling. Buyers use it as a caretaker home or a first weekend unit rather than a family residence. It is published at Rs 2,93,440 ex-GST, the lowest entry into the range.",
+      "h3": "Use-cases",
+      "applications": [
+        "Caretaker home on a farm plot",
+        "First weekend unit on new land",
+        "Single-occupant staff residence",
+        "Guard-plus-stay unit for estates"
+      ]
+    },
+    "20x10": {
+      "h2": "20x10 ft container house: the 200 sq ft reference home",
+      "intro": "The 20x10 ft container house is the reference unit the rest of the ladder is priced around, 200 sq ft that takes a bed, a living corner and a bathroom without crowding. Ten feet of width changes how the room plans compared with the 20x8; a proper corridor-free layout becomes possible. Insulation follows the range standard, mineral wool walls under the corrugated MS skin, so afternoon heat arrives late and leaves early. It suits a couple on a holiday plot or a rental cabin operator. The published price is Rs 3,33,400 ex-GST.",
+      "h3": "Use-cases",
+      "applications": [
+        "Couple's holiday plot home",
+        "Farm stay rental cabin",
+        "Parents' annexe beside a house",
+        "Plot office that becomes a home"
+      ]
+    },
+    "20x12": {
+      "h2": "20x12 ft container house: 240 sq ft with a real bedroom",
+      "intro": "At 20x12 ft the container house reaches 240 sq ft, and the extra two feet of width is what separates a partitioned bedroom from a curtained corner. The build carries the same glasswool-insulated roof and mineral wool walls as every unit in the range, on the welded MS frame. This is the smallest size we recommend for full-time living rather than weekend use. A one-bedroom plan with a separate kitchenette line fits comfortably. It is published at Rs 3,84,240 ex-GST, and the 40 ft sizes take over where families need two rooms.",
+      "h3": "Use-cases",
+      "applications": [
+        "Full-time single-bedroom home",
+        "Long-stay site residence",
+        "Homestay unit with real privacy",
+        "Retired couple's compact home"
+      ]
+    },
+    "40x8": {
+      "h2": "40x8 ft container house: the 320 sq ft linear home",
+      "intro": "The 40x8 ft container house runs long and narrow, 320 sq ft in a line, which suits boundary walls and slim plots where width is the constraint. The length allows a genuine room sequence: living space, sleeping space, then the wet zone at the far end. Structure and insulation stay on the range standard, corrugated MS over mineral wool, with the 100 mm glasswool roof layer doing the heavy work in summer. Delivery uses a 40 ft trailer, so confirm approach-road access early. The published price is Rs 5,01,440 ex-GST.",
+      "h3": "Use-cases",
+      "applications": [
+        "Slim-plot boundary home",
+        "Linear farmhouse annexe",
+        "Row-format resort unit",
+        "Long caretaker quarters"
+      ]
+    },
+    "40x10": {
+      "h2": "40x10 ft container house: 400 sq ft family-ready space",
+      "intro": "The 40x10 ft container house delivers 400 sq ft, the point where a small family stops compromising: one bedroom, a living room, a kitchen line and a full bathroom in one factory-built unit. Ten-foot width with forty feet of length gives the most flexible single-module plan in the range. The shell keeps the standard build, and window positions are set on your drawing before fabrication. Most buyers at this size are replacing a small brick build and arriving months earlier. It is published at Rs 6,26,800 ex-GST.",
+      "h3": "Use-cases",
+      "applications": [
+        "Small family's first home",
+        "Farmhouse main residence",
+        "Resort family cottage unit",
+        "Manager's on-estate residence"
+      ]
+    },
+    "40x12": {
+      "h2": "40x12 ft container house: the 480 sq ft flagship single",
+      "intro": "The 40x12 ft container house is the largest single module in the range at 480 sq ft, and it plans like a compact apartment: two sleeping zones, a living area and a serviced kitchen and bathroom wall. Everything rides one trailer and lands in one crane lift, which is the practical limit before multi-module joins. The build is unchanged from the range standard, with the glasswool roof layer sized for Indian summer load. Families choosing between this and a joined two-module build usually start here. Published at Rs 7,36,320 ex-GST.",
+      "h3": "Use-cases",
+      "applications": [
+        "Two-bedroom compact home",
+        "Full-time family residence",
+        "Premium farm stay build",
+        "Base for a future joined home"
+      ]
+    }
+  },
+  "prefab-container-homes": {
+    "h2": "Prefab container home modules across the six sizes",
+    "guidanceLine": "Every module below repeats without redesign; prices are published ex-GST per single module.",
+    "20x8": {
+      "h2": "20x8 ft prefab module: the 160 sq ft colony unit",
+      "intro": "The 20x8 ft prefab container home is the module colonies are built from: 160 sq ft with a flush steel door, a uPVC sliding window in the standard aperture and welded vinyl-sheet flooring that repeats identically across every unit. Pier-block bearing plates sit at standard points, so foundations are marked once and repeated down the row. As a single home it works for staff or caretaker use. Twenty of them become a housing line in weeks. Published at Rs 2,59,520 ex-GST per module. Colony quantities are quoted on one drawing.",
+      "h3": "Use-cases",
+      "applications": [
+        "Colony row for project staff",
+        "Campus guest unit repeated",
+        "Caretaker module on plots",
+        "Rental line for a site owner"
+      ]
+    },
+    "20x10": {
+      "h2": "20x10 ft prefab module: the standard 1 BHK unit",
+      "intro": "At 20x10 ft the prefab module carries the standard 1 BHK plan: sleeping zone, living strip and the bathroom on the sealed service route that every module shares. Because the kitchen and bathroom risers land in the same place on every unit, site plumbing becomes one repeated connection instead of twenty custom ones. The module suits a young family as a single home and scales cleanly into staff housing. It is published at Rs 2,95,000 ex-GST, and the drawing you approve is the drawing every repeat follows.",
+      "h3": "Use-cases",
+      "applications": [
+        "Single-family 1 BHK home",
+        "Staff housing standard unit",
+        "Plantation manager module",
+        "Twin-unit family compound"
+      ]
+    },
+    "20x12": {
+      "h2": "20x12 ft prefab module: width for the family plan",
+      "intro": "The 20x12 ft prefab container home uses its 240 sq ft to widen the 1 BHK into a family plan with a separate childrens sleeping corner. Module discipline holds: identical pre-laminated interior panels, PVC ceiling runs the module length, and the expansion end wall accepts a second unit later without cutting steel. This is the size families pick when a colony build doubles as long-term housing. Published at Rs 3,39,840 ex-GST per module, with multi-unit pricing quoted on the colony drawing. The module repeats without redesign, which is the entire economics.",
+      "h3": "Use-cases",
+      "applications": [
+        "Family colony housing unit",
+        "Extended 1 BHK single home",
+        "Warden's unit at a hostel line",
+        "Future-expansion starter home"
+      ]
+    },
+    "40x8": {
+      "h2": "40x8 ft prefab module: the 320 sq ft linear twin",
+      "intro": "The 40x8 ft prefab module runs two room bays in a line, 320 sq ft that plans as a 2 BHK strip or as paired staff quarters with separate entries. Its bolted connection plates let two modules join long-edge to long-edge into a square family home later, which is the expansion path most colony operators choose. Services stay on the standard route, one riser per module. Published at Rs 4,43,520 ex-GST, it is the value length in the prefab line. Colony operators favour it for phased budgets and phased ground work.",
+      "h3": "Use-cases",
+      "applications": [
+        "Paired staff quarters unit",
+        "Linear 2 BHK module home",
+        "Hostel row building block",
+        "Join-later family module"
+      ]
+    },
+    "40x10": {
+      "h2": "40x10 ft prefab module: the 400 sq ft family standard",
+      "intro": "At 40x10 ft the prefab container home reaches the family standard: 400 sq ft carrying a full 2 BHK plan with the kitchen and bathroom stacked on one service wall. Repeatability still governs every choice, from the identical window apertures to the welded vinyl seams at module joints, so a ten-home colony is ten identical drawings. As a single residence it competes directly with a small brick build and arrives months sooner. The published module price is Rs 5,54,400 ex-GST. Ten of them make a settled street.",
+      "h3": "Use-cases",
+      "applications": [
+        "2 BHK family module home",
+        "Officer housing at a project",
+        "Ten-unit colony standard",
+        "Brick-build replacement home"
+      ]
+    },
+    "40x12": {
+      "h2": "40x12 ft prefab module: the flagship 480 sq ft unit",
+      "intro": "The 40x12 ft prefab module is the largest repeatable unit, 480 sq ft planned as a full 2 BHK with a dining strip, still on the standard sealed service route. It is the module chosen when a colony must house families rather than crews, or when a single buyer wants the biggest one-lift home in the prefab line. The expansion gable remains standard, so even the flagship can grow. Published at Rs 6,51,360 ex-GST per module, colony quantities quoted on the drawing. It still travels as one trailer load and lands in one lift.",
+      "h3": "Use-cases",
+      "applications": [
+        "Family colony flagship unit",
+        "Large single prefab home",
+        "Township pilot home module",
+        "Manager family residence"
+      ]
+    }
+  },
+  "luxury-container-houses": {
+    "h2": "Luxury container house sizes from suite to villa",
+    "guidanceLine": "Each size below is finished to the same villa grade; the footprint decides how many rooms enjoy it.",
+    "20x8": {
+      "h2": "20x8 ft luxury container house: the 160 sq ft suite",
+      "intro": "The 20x8 ft luxury container house is a finished suite: one room and an attached bath dressed in veneer feature walls, engineered wood flooring and a lighting plan with dimmer provision. Resorts buy it as a rentable room that arrives complete; private buyers use it as a garden studio beside a main house. The 100 mm acoustic mineral wool keeps rain noise off the corrugated roof out of the guest experience. Feature glazing fills one long wall. Published at Rs 3,80,160 ex-GST. Housekeeping-friendly finishes keep turnover simple.",
+      "h3": "Use-cases",
+      "applications": [
+        "Resort rentable suite room",
+        "Garden studio with bath",
+        "Writer's retreat cabin room",
+        "Premium guest room on plots"
+      ]
+    },
+    "20x10": {
+      "h2": "20x10 ft luxury container house: the honeymoon unit",
+      "intro": "At 20x10 ft the luxury build becomes the classic honeymoon-suite format resorts specify: a full bed wall, a sitting corner against the feature glazing and the attached bathroom with hot-water line concealed in the service wall. The coffered ceiling carries layered lighting rather than a single fixture, which changes the room after dark. Wardrobes are built into the plan, not added later. It is published at Rs 4,32,000 ex-GST, finished and photographed-ready on delivery. Resorts photograph it the week it lands.",
+      "h3": "Use-cases",
+      "applications": [
+        "Honeymoon suite for resorts",
+        "Boutique homestay hero room",
+        "Designer plot second home",
+        "Wellness retreat private unit"
+      ]
+    },
+    "20x12": {
+      "h2": "20x12 ft luxury container house: suite with a lounge",
+      "intro": "The 20x12 ft luxury container house uses its extra width to add a genuine lounge zone to the suite plan, so the room divides into sleeping and sitting without partitions. Acoustic-density insulation matters most at this size, which is bought for stays measured in weeks rather than nights. The finish schedule is unchanged: engineered wood, veneer walls, layered light. A kitchenette line can replace the lounge wall on your drawing. Published at Rs 4,97,760 ex-GST. Weekly guests notice the quiet before the finish.",
+      "h3": "Use-cases",
+      "applications": [
+        "Long-stay premium suite",
+        "Farmhouse master annexe",
+        "Suite with kitchenette plan",
+        "Artist residency premium unit"
+      ]
+    },
+    "40x8": {
+      "h2": "40x8 ft luxury container house: the linear villa room",
+      "intro": "The 40x8 ft luxury unit plans as a linear villa: entry lounge, bedroom, then the attached bath at the quiet end, each zone lit on its own circuit. The narrow width suits view plots, one long glazed wall facing the valley or the water, with the corridor of rooms behind it. Structure remains the welded MS range standard beneath the finish. Resorts run rows of them as river-facing or ridge-facing keys. It is published at Rs 6,49,600 ex-GST. Each key arrives finished, so a landscaped site can let it the same week.",
+      "h3": "Use-cases",
+      "applications": [
+        "View-facing resort key unit",
+        "Ridge plot linear villa",
+        "Riverside boutique room",
+        "Glamping upgrade permanent"
+      ]
+    },
+    "40x10": {
+      "h2": "40x10 ft luxury container house: the one-bed villa",
+      "intro": "At 40x10 ft the luxury container house is a complete one-bedroom villa: living room, bedroom with wardrobe wall, attached bath and a serviced kitchen line, all inside 400 finished square feet. This is the size private buyers choose for a second home that does not feel like a compromise, and the size premium resorts brand as their pool villa. Split AC provision is fitted per room with concealed drainage. Published at Rs 8,12,000 ex-GST. The kitchen line is specified on your drawing, not improvised on site.",
+      "h3": "Use-cases",
+      "applications": [
+        "Pool villa key for resorts",
+        "Second home without compromise",
+        "Vineyard or estate villa",
+        "Premium farmhouse residence"
+      ]
+    },
+    "40x12": {
+      "h2": "40x12 ft luxury container house: the villa flagship",
+      "intro": "The 40x12 ft luxury flagship carries the full villa programme in one module: bedroom suite, lounge, dining strip, serviced kitchen wall and the attached bath, finished to the same hospitality grade as every unit on this page. At 480 sq ft it is the largest single-lift luxury build we make before multi-module villas take over. Feature glazing runs the long elevation; the coffered ceiling ties the zones together. Published at Rs 9,53,760 ex-GST. Developers use it as the show unit that sells the next ten.",
+      "h3": "Use-cases",
+      "applications": [
+        "Flagship villa in one lift",
+        "Designer weekend residence",
+        "Resort presidential key",
+        "Show unit for developers"
+      ]
+    }
+  },
+  "shipping-container-homes": {
+    "h2": "Shipping container home sizes built for hard duty",
+    "guidanceLine": "Every size below carries the reinforced shell; pick by rooms needed and how often it will move.",
+    "20x8": {
+      "h2": "20x8 ft shipping container home: the movable base",
+      "intro": "The 20x8 ft shipping container home is the unit that moves the most: 160 sq ft on a cross-membered base with relocation skids, lifted and re-set without ceremony. Project owners rotate it between sites as a lived-in quarters; coastal buyers park it where standard sheet metal quietly rusts. The reinforced door surround and hooded windows take the abuse that travel deals out. It is published at Rs 3,64,320 ex-GST and holds its shape through every move. Each move needs only a crane day and a service morning.",
+      "h3": "Use-cases",
+      "applications": [
+        "Rotating project quarters",
+        "Coastal plot first home",
+        "Relocatable fishing base",
+        "Island or jetty side unit"
+      ]
+    },
+    "20x10": {
+      "h2": "20x10 ft shipping container home: the coastal standard",
+      "intro": "At 20x10 ft the shipping-form home reaches the coastal standard: a 200 sq ft one-room home whose zinc-rich primer system and sealed penetrations are specified for salt air. The full-height 1.6 mm corrugated shell resists the dents that lighter builds collect in transit. Inside, the plan matches the range reference unit, so nothing about daily living changes; only the armour does. Published at Rs 4,14,000 ex-GST for buyers whose address includes weather. Coating thickness is inspected and recorded before dispatch.",
+      "h3": "Use-cases",
+      "applications": [
+        "Beachside weekend home unit",
+        "Salt-air estate quarters",
+        "Storm-belt farm residence",
+        "Harbour work-and-stay unit"
+      ]
+    },
+    "20x12": {
+      "h2": "20x12 ft shipping container home: armoured and wide",
+      "intro": "The 20x12 ft shipping container home pairs the reinforced shell with a family-capable 240 sq ft plan, a partitioned bedroom behind the hooded windows. It is the size chosen for long postings in hard climates, where the home must survive both the weather and a future transfer. Corner posts at 75x75 mm carry stacking and craning without complaint. The interior stays warm-blooded: lined, insulated and serviced like every home in the range. Published at Rs 4,76,880 ex-GST. It answers postings that other builds politely decline.",
+      "h3": "Use-cases",
+      "applications": [
+        "Hard-climate posting home",
+        "Mining belt family quarters",
+        "Transfer-ready residence",
+        "High-wind district home"
+      ]
+    },
+    "40x8": {
+      "h2": "40x8 ft shipping container home: the long hauler",
+      "intro": "The 40x8 ft shipping-form home is the long hauler: 320 sq ft in a reinforced line that rides a 40 ft trailer to wherever the work went. Its room sequence, living, sleeping, wet zone, matches the standard linear build, but the base cross-members and skids are sized for repeat lifts. Owners who relocate annually amortise the reinforcement inside two moves alone. Published at Rs 6,22,720 ex-GST, it is the working horse of the shipping line. Base skids double as levelling rails on rough hardstanding pads.",
+      "h3": "Use-cases",
+      "applications": [
+        "Annual-relocation residence",
+        "Pipeline crew family unit",
+        "Long coastal boundary home",
+        "Fleet housing for contractors"
+      ]
+    },
+    "40x10": {
+      "h2": "40x10 ft shipping container home: the family mover",
+      "intro": "At 40x10 ft the shipping container home carries a full family plan inside the reinforced shell: bedroom, living room, kitchen line and bath across 400 sq ft. This is the unit for families who follow multi-year projects, because it moves as one piece with the furniture inside and the crockery wrapped. Weatherproof service penetrations mean the site hookup is one morning's work at each new address. It is published at Rs 7,78,400 ex-GST. Postings change; with this unit the family's address book does not.",
+      "h3": "Use-cases",
+      "applications": [
+        "Project-following family home",
+        "Coastal family residence",
+        "Estate manager mover home",
+        "Multi-year posting quarters"
+      ]
+    },
+    "40x12": {
+      "h2": "40x12 ft shipping container home: the flagship shell",
+      "intro": "The 40x12 ft flagship pairs the biggest single-module plan in the range with the heaviest shell we build: 480 sq ft, two sleeping zones and full services, wrapped in reinforced steel and marine-duty coating. It exists for the buyer who wants the flagship footprint but cannot promise it a quiet life. Craning points are engineered into the frame, not welded on later. Published at Rs 9,13,920 ex-GST, it is the range's most travelled address. The paint system is specified for salt years, not show years.",
+      "h3": "Use-cases",
+      "applications": [
+        "Flagship home that relocates",
+        "Coastal estate main house",
+        "Resort key in cyclone belts",
+        "Two-room hard-duty residence"
+      ]
+    }
+  },
+  "affordable-container-homes": {
+    "h2": "Affordable container home sizes at the range floor",
+    "guidanceLine": "One efficient fixed plan per size below; every price shown is the published range floor, ex-GST.",
+    "20x8": {
+      "h2": "20x8 ft affordable container home: the range floor",
+      "intro": "The 20x8 ft affordable container home is the least expensive home we publish, Rs 2,52,960 ex-GST for 160 sq ft on the full welded MS frame. The fixed plan gives one room, a window on each long wall and a door at the gable, with the wet zone left as a separated option most guard-and-stay buyers skip. Insulation is not where the price was found; the mineral wool walls stay. It is the honest floor of the range, priced for first steel homes. Every option stays listed, visible and easy to decline at order.",
+      "h3": "Use-cases",
+      "applications": [
+        "First steel home on a budget",
+        "Guard-and-stay economy unit",
+        "Field quarters at floor price",
+        "Starter unit for young buyers"
+      ]
+    },
+    "20x10": {
+      "h2": "20x10 ft affordable container home: the value 200",
+      "intro": "At 20x10 ft the affordable build delivers the range's reference footprint for Rs 2,87,600 ex-GST, a 200 sq ft one-room home on the single fixed plan. Two uPVC sliding windows and the standard LED-and-fan electrical set are included; the toilet package is a listed option you add when the site lacks facilities. Buyers comparing this against the hub's 20x10 are paying the difference for configuration choice they may not need. The construction underneath is identical. The saved difference typically funds the toilet package outright.",
+      "h3": "Use-cases",
+      "applications": [
+        "Value one-room family start",
+        "Farm labour family home",
+        "Budget homestay starter unit",
+        "Rural plot economy home"
+      ]
+    },
+    "20x12": {
+      "h2": "20x12 ft affordable container home: fixed-plan comfort",
+      "intro": "The 20x12 ft affordable container home widens the fixed plan into real comfort: a partitioned sleeping area, 240 sq ft of vinyl-floored space and the modest two-window schedule that keeps the rate at Rs 1,380 per sq ft. Published at Rs 3,31,200 ex-GST, it undercuts the equivalent hub unit by holding the plan constant instead of trimming steel. Families use it as a permanent economy home; estates use it as senior staff quarters. The fixed plan is published with the price, so nothing needs negotiating.",
+      "h3": "Use-cases",
+      "applications": [
+        "Permanent economy family home",
+        "Senior staff quarters build",
+        "Village clinic staff housing",
+        "Budget bedroom-partition home"
+      ]
+    },
+    "40x8": {
+      "h2": "40x8 ft affordable container home: the economy line",
+      "intro": "The 40x8 ft affordable container home stretches the fixed plan into a line: 320 sq ft with living space forward, sleeping space aft and the optional wet package at the end wall if selected. At Rs 4,32,320 ex-GST it is the cheapest 40 ft home in the range, aimed at buyers who need length on a narrow budget and a narrow plot at once. The shell is uncompromised; the savings live entirely in the fixed choices. Estates buy it in pairs as workers' family rows, and the optional packages stay separately listed at order.",
+      "h3": "Use-cases",
+      "applications": [
+        "Narrow-plot budget home",
+        "Economy linear residence",
+        "Workers' family row unit",
+        "Long home at the range floor"
+      ]
+    },
+    "40x10": {
+      "h2": "40x10 ft affordable container home: the family floor",
+      "intro": "At 40x10 ft the affordable build gives a family 400 sq ft for Rs 5,40,400 ex-GST, the lowest published price at this footprint in our range. The fixed plan carries two rooms, the standard electrical set and the modest glazing schedule; the kitchen line and toilet package remain listed options so the base price stays readable. It is the size where the affordable line stops being a compromise and becomes simply the sensible column. Two finished rooms at this price is the entire argument for the line.",
+      "h3": "Use-cases",
+      "applications": [
+        "Family home at lowest rate",
+        "Two-room economy residence",
+        "Resettlement housing unit",
+        "Budget farmhouse dwelling"
+      ]
+    },
+    "40x12": {
+      "h2": "40x12 ft affordable container home: most home per rupee",
+      "intro": "The 40x12 ft affordable container home is the most home per rupee we publish: 480 sq ft at Rs 6,34,560 ex-GST, Rs 1,322 per square foot on the flagship footprint. The single fixed plan divides it into two sleeping zones and a living area, with options quoted separately and visibly. Buyers weighing it against the hub flagship save Rs 1,01,760 by accepting the fixed plan. For many families that is the entire bathroom fit-out, funded by restraint. Restraint, honestly priced, is what luxury looks like at the floor.",
+      "h3": "Use-cases",
+      "applications": [
+        "Largest budget family home",
+        "Flagship space, floor price",
+        "Joint-family economy build",
+        "Rental duplex base unit"
+      ]
+    }
+  },
+  "prefabricated-container-house": {
+    "h2": "Size and applications for a fully fitted container house",
+    "guidanceLine": "Six sizes, each delivered complete. Pick the one whose usable area matches how the building will actually be lived in.",
+    "20x8": {
+      "h2": "20 × 8 ft — the smallest complete home we deliver",
+      "intro": "At 160 square feet the plan runs on one axis: sleeping at one end, a combined living and cooking run along the opposite wall, a fitted bathroom closing the far end. Eight feet of width admits no corridor, so every space is entered through the one before it and the layout is designed around that rather than fighting it. Because the unit arrives finished, the compactness never feels temporary — the counter is in, the bathroom works, and the room is ready the day the crane leaves. Nothing is left for a site team to complete.",
+      "h3": "Where a 20 × 8 ft unit earns its place",
+      "applications": [
+        "Single-occupant staff residence",
+        "Guest annexe on an existing plot",
+        "Estate or farm caretaker housing",
+        "Tight access where longer will not turn"
+      ],
+      "tab": "20 × 8 ft — 160 sq ft fitted single unit"
+    },
+    "20x10": {
+      "h2": "20 × 10 ft — where a fitted cabin becomes a small home",
+      "intro": "Two extra feet across change the plan more than the number suggests. Furniture sits against both long walls with a walking route between them, so the living area stops behaving like a passage and starts behaving like a room. A partition closes off the sleeping zone properly rather than merely suggesting it. This is the most common first purchase among couples and small families, and the size most often ordered in pairs where two independent households are wanted instead of one shared building. The finish schedule is identical to every larger size in the range.",
+      "h3": "Who chooses 200 square feet",
+      "applications": [
+        "A couple taking a first factory home",
+        "Paired units for two households",
+        "Site supervisor accommodation",
+        "Rental unit on a family plot"
+      ],
+      "tab": "20 × 10 ft — 200 sq ft with a partitioned bedroom"
+    },
+    "20x12": {
+      "h2": "20 × 12 ft — a closed bedroom and a proper lobby",
+      "intro": "Twelve feet of width buys separation. The bedroom closes behind a door, the living space seats a family rather than a couple, and the bathroom gains a small lobby instead of opening straight onto the sofa. That lobby is the detail owners notice most, because it is what stops a compact dwelling reading as accommodation. Everything is fitted before dispatch, so the distinction holds from the first evening rather than arriving after months of finishing work. Services are set out at the works, so connection day is short.",
+      "h3": "Typical uses at 240 square feet",
+      "applications": [
+        "Permanent second dwelling",
+        "Parents' annexe beside a main house",
+        "Resident manager on a working site",
+        "Compact clinic or consulting room"
+      ],
+      "tab": "20 × 12 ft — 240 sq ft with a separated bathroom lobby"
+    },
+    "40x8": {
+      "h2": "40 × 8 ft — length where width is impossible",
+      "intro": "Forty feet of run on eight feet of beam suits sites a wider building simply cannot reach. Sleeping zones sit at opposite ends with living and cooking between them, which is the only arrangement that works at this proportion. Hill roads, estate tracks and constrained urban lanes are where the shape pays for itself. Worth knowing before ordering: a fully fitted unit weighs more than an empty shell, so the approach and turning radius deserve measuring rather than estimating. Craneage needs the same forethought as the road that brought it.",
+      "h3": "When the long narrow plan is right",
+      "applications": [
+        "Hill or plantation access roads",
+        "Narrow urban side plots",
+        "Two sleeping zones, shared centre",
+        "Sites with a hard width limit"
+      ],
+      "tab": "40 × 8 ft — 320 sq ft for constrained access"
+    },
+    "40x10": {
+      "h2": "40 × 10 ft — the size that replaces a build",
+      "intro": "Four hundred square feet arriving complete is where this build most obviously beats conventional construction. Two closed bedrooms, a living area that holds a household, a kitchen with genuine counter length, a bathroom that needed no compromise. Built on site the same accommodation means several trades across several months; delivered this way it means a crane, an afternoon, and an electrician to make the final connections. Families choose it for permanence rather than for speed. Handover is a single day rather than a phased programme.",
+      "h3": "Who orders 400 square feet",
+      "applications": [
+        "Family home on owned land",
+        "Managerial housing with family",
+        "Leased plot needing a movable home",
+        "Farmhouse or weekend residence"
+      ],
+      "tab": "40 × 10 ft — 400 sq ft, two bedrooms, fitted"
+    },
+    "40x12": {
+      "h2": "40 × 12 ft — the most building on one trailer",
+      "intro": "This is the ceiling for a single movement. Two bedrooms with wardrobes, living and dining held apart, a full kitchen and a bathroom with its own lobby. Above this size the sensible route is two units joined rather than one wider building, because width beyond twelve feet leaves standard transport behind and the haulage cost climbs faster than the floor area. Everything is fitted at the works, which at this scale saves considerably more time than it does at the small end of the range. Joining is planned on the drawing, never improvised on site.",
+      "h3": "Where the largest fitted unit belongs",
+      "applications": [
+        "Full family residence",
+        "Guest villa on a resort property",
+        "Senior staff housing on a project",
+        "Base for a future two-unit layout"
+      ],
+      "tab": "40 × 12 ft — 480 sq ft, the largest single unit"
+    }
+  }
+}

@@ -267,6 +267,19 @@ const nextConfig = {
       { source: '/why-you-need-to-consider-a-container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
       { source: '/container-office-rental-is-perfect-solution', destination: 'https://www.samanportable.com/rental-services', statusCode: 301 },
 
+      // C08 container-house loser pages (SAMAN rulings, 02 Aug 2026).
+      // prefabricated-container-home is retired to the hub on query evidence.
+      // prefabricated-container-house remains a live 200 and is intentionally absent.
+      { source: '/product/container-houses/prefabricated-container-home', destination: 'https://www.samanportable.com/product/container-houses', statusCode: 301 },
+      { source: '/product/container-houses/prebuilt-container-homes', destination: 'https://www.samanportable.com/product/container-houses/prefab-container-homes', statusCode: 301 },
+      { source: '/product/container-houses/cargo-container-house', destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes', statusCode: 301 },
+      { source: '/product/container-houses/storage-container-house', destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes', statusCode: 301 },
+      { source: '/product/container-houses/tiny-container-homes', destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes', statusCode: 301 },
+      { source: '/product/container-houses/shipping-container-tiny-house', destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes', statusCode: 301 },
+      { source: '/product/container-houses/inexpensive-container-homes', destination: 'https://www.samanportable.com/product/container-houses/affordable-container-homes', statusCode: 301 },
+      { source: '/product/container-houses/modern-container-home', destination: 'https://www.samanportable.com/product/container-houses', statusCode: 301 },
+      { source: '/container-houses-cost-guide-2024', destination: 'https://www.samanportable.com/product/container-houses', statusCode: 301 },
+
       // Product singular-to-canonical plural redirects (owner-approved 2026-07-01).
       // Absolute destinations keep these migration URLs single-hop.
       { source: '/product/container-office', destination: 'https://www.samanportable.com/product/container-offices', statusCode: 301 },
@@ -1276,7 +1289,7 @@ const nextConfig = {
       },
       {
         source: '/product/prefabricated-container-home',
-        destination: 'https://www.samanportable.com/product/container-houses/prefabricated-container-home',
+        destination: 'https://www.samanportable.com/product/container-houses',
         permanent: true,
       },
       {
