@@ -23,6 +23,7 @@ import c06Specifications from '@/data/products/c06-specifications.json';
 import c04Specifications from '@/data/products/c04-specifications.json';
 import c08Specifications from '@/data/products/c08-specifications.json';
 import c05Specifications from '@/data/products/c05-specifications.json';
+import c05SubpageSpecifications from '@/data/products/c05-subpage-specifications.json';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -62,6 +63,11 @@ const C08_DATASET = c08Specifications as unknown as {
 // transcribed byte-exact from the SSOT in sheet order, EXCEPT row 30 (Warranty),
 // which carries the draft's §8 override for this route only.
 const C05_DATASET = c05Specifications as unknown as {
+  products: Record<string, C01SpecificationEntry>;
+};
+// C-05 subpages — same construction as the hub: the 30 publishable Platform Common
+// Specs rows for each slug, in sheet order, with the row-30 warranty override.
+const C05_SUBPAGE_DATASET = c05SubpageSpecifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
 
@@ -684,6 +690,12 @@ export function getProductTabsHtml(
   if (pageSlug && C05_DATASET.products[pageSlug]) {
     return {
       specificationsHtml: buildC05SpecificationsHtml(pageSlug),
+      shippingHtml: '',
+    };
+  }
+  if (pageSlug && C05_SUBPAGE_DATASET.products[pageSlug]) {
+    return {
+      specificationsHtml: buildC01SpecificationsHtml(C05_SUBPAGE_DATASET.products[pageSlug]),
       shippingHtml: '',
     };
   }

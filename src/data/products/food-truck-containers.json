@@ -1,0 +1,300 @@
+{
+  "productSlug": "food-truck-containers",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "specPdfHref": "/specs/food-truck-containers-technical-specification.pdf",
+  "productName": "Food Truck Container",
+  "h1": "Food Truck Containers: Six Road-Ready Sizes",
+  "seoTitle": "Food Truck Container Price & Sizes, From ₹1,76,000 | SAMAN",
+  "metaDescription": "Road-transportable food truck container in six sizes, 100 to 400 sq ft. From ₹1,76,000 ex-GST with transport locking throughout, delivered in 7-21 working days.",
+  "opener": "A SAMAN food truck container is a road-transportable counter-service unit fabricated new on a reinforced 150×75×5 mm MS base with corner gussets, extra lifting support in the top frame and transport locking on every opening, so it moves between pitches without rebuild work. Six sizes cover 100 to 400 sq ft, priced from ₹1,76,000 ex-factory, ex-GST at base specification. It is not a converted used shipping container and not a motorised vehicle: it travels by truck or trailer, places by hydra or crane, and opens for service the same day with plug-in connections.",
+  "priceCaption": "Base specification price - customisations quoted separately.",
+  "suppressLegacyFaqSchema": true,
+  "explorerImageTemplate": {
+    "10x10": "/images/products/food-truck-containers/10x10/food-truck-containers-10x10x8-5-ft-front-left-hero.webp",
+    "20x10": "/images/products/food-truck-containers/20x10/food-truck-containers-20x10x8-5-ft-front-left-hero.webp",
+    "20x12": "/images/products/food-truck-containers/20x12/food-truck-containers-20x12x8-5-ft-front-left-hero.webp",
+    "30x10": "/images/products/food-truck-containers/30x10/food-truck-containers-30x10x8-5-ft-front-left-hero.webp",
+    "40x10": "/images/products/food-truck-containers/40x10/food-truck-containers-40x10x8-5-ft-front-left-hero.webp"
+  },
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 176000,
+      "priceInclGst": 207680,
+      "capacity": "8 covers",
+      "images": [
+        {
+          "src": "/images/products/food-truck-containers/10x10/food-truck-containers-10x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN food truck container 10x10x8.5 ft, front left three-quarter hero view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/10x10/food-truck-containers-10x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN food truck container 10x10x8.5 ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/10x10/food-truck-containers-10x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN food truck container 10x10x8.5 ft, elevated front right view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/10x10/food-truck-containers-10x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN food truck container 10x10x8.5 ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/10x10/food-truck-containers-10x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN food truck container 10x10x8.5 ft, interior along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/10x10/food-truck-containers-10x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN food truck container 10x10x8.5 ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 281600,
+      "priceInclGst": 332288,
+      "capacity": "13 covers",
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 320000,
+      "priceInclGst": 377600,
+      "capacity": "17 covers",
+      "images": [
+        {
+          "src": "/images/products/food-truck-containers/20x10/food-truck-containers-20x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN food truck container 20x10x8.5 ft, front left three-quarter hero view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x10/food-truck-containers-20x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN food truck container 20x10x8.5 ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x10/food-truck-containers-20x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN food truck container 20x10x8.5 ft, elevated front right view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x10/food-truck-containers-20x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN food truck container 20x10x8.5 ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x10/food-truck-containers-20x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN food truck container 20x10x8.5 ft, interior along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x10/food-truck-containers-20x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN food truck container 20x10x8.5 ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 368640,
+      "priceInclGst": 434995,
+      "capacity": "20 covers",
+      "images": [
+        {
+          "src": "/images/products/food-truck-containers/20x12/food-truck-containers-20x12x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN food truck container 20x12x8.5 ft, front left three-quarter hero view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x12/food-truck-containers-20x12x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN food truck container 20x12x8.5 ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x12/food-truck-containers-20x12x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN food truck container 20x12x8.5 ft, elevated front right view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x12/food-truck-containers-20x12x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN food truck container 20x12x8.5 ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x12/food-truck-containers-20x12x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN food truck container 20x12x8.5 ft, interior along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/20x12/food-truck-containers-20x12x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN food truck container 20x12x8.5 ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 460800,
+      "priceInclGst": 543744,
+      "capacity": "25 covers",
+      "images": [
+        {
+          "src": "/images/products/food-truck-containers/30x10/food-truck-containers-30x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN food truck container 30x10x8.5 ft, front left three-quarter hero view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/30x10/food-truck-containers-30x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN food truck container 30x10x8.5 ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/30x10/food-truck-containers-30x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN food truck container 30x10x8.5 ft, elevated front right view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/30x10/food-truck-containers-30x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN food truck container 30x10x8.5 ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/30x10/food-truck-containers-30x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN food truck container 30x10x8.5 ft, interior along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/30x10/food-truck-containers-30x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN food truck container 30x10x8.5 ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 601600,
+      "priceInclGst": 709888,
+      "capacity": "33 covers",
+      "images": [
+        {
+          "src": "/images/products/food-truck-containers/40x10/food-truck-containers-40x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN food truck container 40x10x8.5 ft, front left three-quarter hero view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/40x10/food-truck-containers-40x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN food truck container 40x10x8.5 ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/40x10/food-truck-containers-40x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN food truck container 40x10x8.5 ft, elevated front right view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/40x10/food-truck-containers-40x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN food truck container 40x10x8.5 ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/40x10/food-truck-containers-40x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN food truck container 40x10x8.5 ft, interior along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/food-truck-containers/40x10/food-truck-containers-40x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN food truck container 40x10x8.5 ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ]
+}

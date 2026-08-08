@@ -36,10 +36,21 @@ from reportlab.platypus import BaseDocTemplate, Frame, PageTemplate, Paragraph, 
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC_PATH = ROOT / "src/data/products/c05-specifications.json"
+SPEC_PATHS = (
+    ROOT / "src/data/products/c05-specifications.json",
+    ROOT / "src/data/products/c05-subpage-specifications.json",
+)
 OUTPUT_DIR = ROOT / "public/specs"
 PRODUCTS = {
     "container-cafe": ("Container Cafe", "https://www.samanportable.com/product/container-cafe"),
+    "container-restaurant": (
+        "Container Restaurant",
+        "https://www.samanportable.com/product/container-cafe/container-restaurant",
+    ),
+    "food-truck-containers": (
+        "Food Truck Containers",
+        "https://www.samanportable.com/product/container-cafe/food-truck-containers",
+    ),
 }
 GROUPS = ("Steel Structure", "Walls, Roof, Floor & Insulation", "Doors, Windows, Electrical & Services")
 # Draft of record §8, row 30. Scoped to this route in this event.
@@ -170,7 +181,9 @@ def build(slug: str, spec: dict[str, Any], product: dict[str, Any], output: Path
 
 
 def main() -> None:
-    specs = json.loads(SPEC_PATH.read_text(encoding="utf-8"))["products"]
+    specs = {}
+    for path in SPEC_PATHS:
+        specs.update(json.loads(path.read_text(encoding="utf-8"))["products"])
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     for slug, (name, canonical) in PRODUCTS.items():
         spec = specs[slug]
@@ -187,7 +200,13 @@ def main() -> None:
         for required in (name, canonical, WARRANTY, PRICE_CAPTION, *CONTACTS):
             assert re.sub(r"\s+", " ", required) in extracted, f"{slug}: missing {required}"
         # Retired strings must not reach the sheet (draft §11 gate 10).
-        for banned in ("+91 62009 09435", "8,50,000", "9,15,000", "24/7", "12-month workmanship warranty"):
+        banned_common = ("+91 62009 09435", "8,50,000", "9,15,000", "24/7",
+                         "12-month workmanship warranty")
+        banned_route = {
+            "container-restaurant": ("15,55,000", "16,95,000", "11,85,000"),
+            "food-truck-containers": ("4,55,000", "4,95,000", "6,40,000"),
+        }.get(slug, ())
+        for banned in banned_common + banned_route:
             assert banned not in extracted, f"{slug}: banned string present: {banned}"
         for row in spec["specifications"]:
             assert re.sub(r"\s+", " ", row["detail"]) in extracted, f"{slug}: missing {row['component']}"

@@ -39,6 +39,36 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  // C-05 subpages — section 2 of their 08 Aug drafts of record, verbatim. The two
+  // anchors in each comparison line are exactly the section 6 link plan: one
+  // back-link to the hub, one sideways link, both inside the sentence that explains
+  // the difference. No other links on either page.
+  'container-restaurant': {
+    heading: 'Why choose the SAMAN Container Restaurant',
+    body: (
+      <>
+        The container restaurant is the heaviest build in the container cafe range, engineered for seated dine-in service backed by a production kitchen. It carries a 150×75×5 mm MS base frame, 24 mm waterproofed cement board flooring and 100 mm mineral wool roof insulation that the lighter cafe units do not. Fix on it for seated venues of 8 to 40 diners; for takeaway counters the standard cafe format costs less per unit.
+      </>
+    ),
+    comparison: (
+      <>
+        Choosing between formats? Compare the <Link className={linkClass} href={containerCafeHref('food-truck-containers')}>road-mobile food truck unit</Link> and the <Link className={linkClass} href={CONTAINER_CAFE_HREF}>counter-service cafe range</Link> before fixing your layout.
+      </>
+    ),
+  },
+  'food-truck-containers': {
+    heading: 'Why choose the SAMAN Food Truck Container',
+    body: (
+      <>
+        The food truck container is the relocation specialist of the container cafe range, built to earn at one pitch and move to the next. Against the static units it adds corner gussets on a 150×75×5 mm base, additional lifting support in the top frame and transport locking across all loose items and openings. Pick it for seasonal or roaming trade; for one fixed location the dine-in container restaurant build seats far more.
+      </>
+    ),
+    comparison: (
+      <>
+        Not planning to relocate? See the <Link className={linkClass} href={CONTAINER_CAFE_HREF}>static cafe sizes and prices</Link>, or the <Link className={linkClass} href={containerCafeHref('container-restaurant')}>dine-in restaurant floors</Link>, before you commit.
+      </>
+    ),
+  },
   'container-houses': {
     heading: 'Why the range page instead of one home model',
     body: (

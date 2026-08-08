@@ -216,6 +216,19 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     categoryHref: '/product/container-cafe',
     applicationsDataset: 'container-cafe',
   },
+  // C-05 subpages. Their own data files supply the six variants, the L3 zone and the
+  // per-size explorer image map; these presets supply only the Category row. The
+  // page-level SKU is deliberately absent on both: the wp-export values
+  // (SP-CR-20-2023, SP-12-FTC-2024) do not match CLAUDE.md's SP-{cluster}-{code}-2026
+  // pattern and no replacement is ruled, so nothing is invented.
+  'container-restaurant': {
+    categoryLabel: 'Container Cafe',
+    categoryHref: '/product/container-cafe',
+  },
+  'food-truck-containers': {
+    categoryLabel: 'Container Cafe',
+    categoryHref: '/product/container-cafe',
+  },
   ...subpagePresets(),
 };
 
