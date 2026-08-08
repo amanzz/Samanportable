@@ -317,7 +317,7 @@ const csvRedirects = [
   { source: '/porta-cabin-containers', destination: 'https://www.samanportable.com/product/container-houses', permanent: true },
   { source: '/portable-container-house', destination: 'https://www.samanportable.com/product/container-houses', permanent: true },
   { source: '/prefab-container-homes', destination: 'https://www.samanportable.com/product/container-houses/prefab-container-homes', permanent: true },
-  { source: '/restaurant-food-containers', destination: 'https://www.samanportable.com/product/container-houses', permanent: true },
+  { source: '/restaurant-food-containers', destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant', permanent: true },
   { source: '/shipping-container-apartments-design-guide', destination: 'https://www.samanportable.com/product/container-houses', permanent: true },
   { source: '/shipping-container-architecture', destination: 'https://www.samanportable.com/product/container-houses', permanent: true },
   { source: '/shipping-container-architecture-designs', destination: 'https://www.samanportable.com/product/container-houses', permanent: true },
