@@ -217,7 +217,45 @@ Recorded here so the draft of record matches what is built. The content strings 
 
 ---
 
-## NOT BUILT — THREE SURFACES AWAIT COPY THAT THIS DRAFT DOES NOT CARRY
+## AMENDMENTS — CC-TICKET-C05-GO-4-RULINGS, 08 Aug 2026
+
+**Ruling 1 · Gallery depth = 6 per size, cluster standard.** 4 exterior
+(`front-left-hero`, `front-elevation`, `front-right-aerial`, `left-side-elevation`) + 2
+interior (`entrance-axis-interior`, `service-zone-interior`), hero first. 30 attached on
+this hub. All 50 converted files stay committed; the unattached 20 ship nothing. Measured
+basis: 6/size = LCP 7.0 s (+7.7% vs the porta-cabins peer, inside the L11 band); 9/size =
+7.9 s (+21.5%, outside it).
+
+**Ruling 2 · Corrected alt for the `*-primary-zone-interior.webp` view** (the vision check
+found the original caption asserted seating the renders do not show):
+
+```
+SAMAN container cafe {dims}, {area} sq ft, interior of the main kitchen line and service counter zone
+```
+
+Same `{dims}` / `{area}` substitution as the other 45. The full 50-alt manifest is now
+correct. Under Ruling 1 this view is not among the 6 attached per size, so it ships
+nothing today; the line is recorded here so it is ready if the selection changes.
+
+**Ruling 3 · The 15-day claim, retired as a commitment and kept as detail.**
+
+- Title (L3 lock lifted for this one string on this route; SAMAN's merge of the PR is the
+  written authorisation): `Kitchen-Ready in 15 Days` → `Kitchen-Ready Before Dispatch`.
+- Inserted verbatim directly above the four-step schedule:
+  `The schedule below is a typical 15-working-day build; our commitment is delivery in 7 to 21 working days, fixed in your quotation.`
+- Appended verbatim to the FAQ that decomposes 15 as 2 + 10 + 3:
+  `This is the typical path; the committed window is 7 to 21 working days, confirmed in your quotation.`
+- Remaining delivery commitments moved to `7 to 21 working days` (both intro sentences,
+  the short-description strip, the meta description and its head copies).
+- **Unchanged by instruction:** the four step labels (`Days 1–2` / `Days 3–12` /
+  `Days 13–14` / `Day 15`) and the H3 outline. The H3 keeps "15 Days" because the
+  pattern-2 qualifier sits directly beneath it, so the claim is no longer unqualified.
+- **Held and reported, does not fit patterns 1–4:** `Days 3 to 12 of the 15-day timeline`
+  — it states when a build step falls inside the schedule, not a delivery commitment.
+
+---
+
+## NOT BUILT — SURFACES AWAITING COPY THIS DRAFT DOES NOT CARRY
 
 Recorded here so the draft of record states plainly what it does and does not supply.
 Each is a CLAUDE.md Hard Gate 4 item ("zero-invention"); none was filled with a default.
