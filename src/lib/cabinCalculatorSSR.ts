@@ -2641,6 +2641,33 @@ function renderWindowCard(window: WindowConfig, index: number, reserved: boolean
  * ladder, so the plan a buyer sees is a size we actually publish. Falls back to
  * the calculator's own default only where a product publishes nothing.
  */
+
+/**
+ * THE BAND'S RADIUS, RE-VERIFIED 08 Aug 2026 — CALC-L3 §2.
+ *
+ * Written here rather than inside CALCULATOR_ENTRY_STYLES below, because that
+ * template literal is emitted verbatim into a <style> tag on every product page
+ * carrying the band. A comment in there is shipped to 41 pages; a comment here
+ * costs nothing.
+ *
+ * The ticket expected the product-page redesign to have landed and every
+ * section card to have become radius 16 on a #F3F6F4 ground with a #E3EAE5
+ * border and a 64px rhythm, and instructed a fix if the band no longer matched
+ * its siblings. It was re-checked after merging origin/static-migration
+ * (a996515b) into this branch.
+ *
+ * IT STILL MATCHES AT 8px, so nothing was changed. Measured on the merged
+ * production build across 41 routes at 1440 / 1920 / 390: every sibling section
+ * card computes to 8px, because `--radius` is still 0.5rem and the shared Card
+ * is still `rounded-lg`. Neither #E3EAE5 nor #F3F6F4 occurs anywhere in the
+ * merged tree.
+ *
+ * The redesign is real but UNMERGED. It lives on
+ * agent/pp-t1-section-framing-20260806 (50a79ca9, src/styles/pp-sections.css)
+ * and is not an ancestor of origin/static-migration. When that branch lands,
+ * this radius must move to 16 in the same change — the band cannot detect the
+ * section system for itself, which is exactly why this is written down.
+ */
 export const CALCULATOR_ENTRY_STYLES = `
 /* ===== THE CALCULATOR ENTRY BAND ON PRODUCT PAGES ======================= */
 .calc-entry {
