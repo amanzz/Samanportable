@@ -5,11 +5,53 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown, Phone, User, LogOut, Package, ArrowRight, Building2, Container, BadgeCheck } from 'lucide-react';
+import { PRICE_CALCULATOR_H1, PRICE_CALCULATOR_ROUTE } from '@/lib/priceCalculatorRouteCopy';
+
 import { useAuth } from '@/contexts/AuthContext';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 import { dsCssVariables } from '@/components/ds/tokens';
 import { GST_REGISTRATIONS } from '@/data/certifications';
 import { cn } from '@/lib/utils';
+
+/**
+ * The price calculator icon, CALC-L7 §2.3.
+ *
+ * Written as literal inline SVG rather than pulled from an icon set: the ruling
+ * is no icon font, no sprite and no new network request, and this ships inside
+ * the markup that is already being sent.
+ *
+ * Geometry is matched to the Phone icon it sits beside rather than eyeballed -
+ * 24x24 viewBox, strokeWidth 2, round caps and joins, which is what lucide
+ * renders at h-5 w-5. `currentColor` on stroke and `none` on fill so it inherits
+ * the header's colour in every state and cannot vanish the way the stepper
+ * values did when a rule stopped applying to them.
+ *
+ * A calculator, drawn as one: body, display bar, and a keypad grid.
+ */
+function CalculatorIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <rect x="4" y="2" width="16" height="20" rx="2" />
+      <rect x="7" y="5" width="10" height="4" rx="1" />
+      <line x1="8" y1="13" x2="8" y2="13" />
+      <line x1="12" y1="13" x2="12" y2="13" />
+      <line x1="16" y1="13" x2="16" y2="13" />
+      <line x1="8" y1="17" x2="8" y2="17" />
+      <line x1="12" y1="17" x2="12" y2="17" />
+      <line x1="16" y1="17" x2="16" y2="17" />
+    </svg>
+  );
+}
 
 const LoginModal = dynamic(() => import('@/components/LoginModal'), { ssr: false });
 const EnquiryDialog = dynamic(() => import('@/components/EnquiryDialog'), { ssr: false });
@@ -353,6 +395,14 @@ const Header = () => {
             >
               <Phone className="h-5 w-5" />
             </a>
+            {/* CALC-L7 2.3: order is call link, then calculator, then Get Quote. */}
+            <a
+              href={PRICE_CALCULATOR_ROUTE}
+              aria-label={PRICE_CALCULATOR_H1}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--ds-color-forest)_20%,transparent)] text-[var(--ds-color-forest)] transition-colors hover:bg-[var(--ds-color-mist)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ds-color-forest)]"
+            >
+              <CalculatorIcon className="h-5 w-5" />
+            </a>
             <button
               type="button"
               onClick={() => setShowEnquiry(true)}
@@ -406,6 +456,14 @@ const Header = () => {
               className="flex h-10 w-10 items-center justify-center rounded-full text-[var(--ds-color-forest)]"
             >
               <Phone className="h-5 w-5" />
+            </a>
+            {/* CALC-L7 2.3: present at every breakpoint, not desktop only. */}
+            <a
+              href={PRICE_CALCULATOR_ROUTE}
+              aria-label={PRICE_CALCULATOR_H1}
+              className="flex h-10 w-10 items-center justify-center rounded-full text-[var(--ds-color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ds-color-forest)]"
+            >
+              <CalculatorIcon className="h-5 w-5" />
             </a>
             <button
               className="rounded-full border border-border bg-gray-50 p-2"
@@ -565,6 +623,17 @@ const Header = () => {
                 </a>
                 <a href="tel:+918796039938" className="mt-1 block text-sm font-semibold text-[var(--ds-color-forest)]">
                   North, Greater Noida: +91 87960 39938
+                </a>
+                {/* CALC-L7 2.3: the calculator entry point inside the mobile menu,
+                    not only on the collapsed action bar. */}
+                <a
+                  href={PRICE_CALCULATOR_ROUTE}
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-label={PRICE_CALCULATOR_H1}
+                  className="mt-2 flex min-h-[44px] items-center gap-2 text-sm font-semibold text-[var(--ds-color-forest)]"
+                >
+                  <CalculatorIcon className="h-5 w-5 flex-shrink-0" />
+                  {PRICE_CALCULATOR_H1}
                 </a>
                 {/* T1.4 — the utility strip is desktop-only, so the GSTINs surface here on mobile. */}
                 <div className="mt-2 border-t border-[var(--ds-color-forest)]/10 pt-2">

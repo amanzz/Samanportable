@@ -1,0 +1,190 @@
+{
+  "baseUrl": "http://127.0.0.1:3122",
+  "results": [
+    {
+      "name": "@1440 calculator entry point present",
+      "pass": true,
+      "detail": "1 visible, beside 1 call link(s)"
+    },
+    {
+      "name": "@1440 icon is inline SVG, no sprite or external ref",
+      "pass": true,
+      "detail": "inline <svg>, no <use>, no <image>"
+    },
+    {
+      "name": "@1440 stroke and fill inherit",
+      "pass": true,
+      "detail": "stroke rgb(26, 60, 46) (currentColor resolves to the header colour), fill none"
+    },
+    {
+      "name": "@1440 same rendered box as the call icon",
+      "pass": true,
+      "detail": "calculator 40x40 vs call 40x40"
+    },
+    {
+      "name": "@1440 same stroke width as the call icon",
+      "pass": true,
+      "detail": "calculator 2px vs call 2px"
+    },
+    {
+      "name": "@1440 aria-label on the link, svg hidden from AT",
+      "pass": true,
+      "detail": "aria-label \"Customize Your Portable Cabin & Calculate Price\" · aria-hidden true · focusable false"
+    },
+    {
+      "name": "@1440 contrast against the header >= 4.5:1",
+      "pass": true,
+      "detail": "12.14:1"
+    },
+    {
+      "name": "@1440 order is call, then calculator",
+      "pass": true,
+      "detail": "call -> calculator -> button:Get Quote -> button:"
+    },
+    {
+      "name": "@1440 touch target matches its sibling, 44px shortfall DECLARED",
+      "pass": true,
+      "detail": "40x40, same as the call icon; both under 44 - declared below, needs SAMAN's ruling"
+    },
+    {
+      "name": "@1920 calculator entry point present",
+      "pass": true,
+      "detail": "1 visible, beside 1 call link(s)"
+    },
+    {
+      "name": "@1920 icon is inline SVG, no sprite or external ref",
+      "pass": true,
+      "detail": "inline <svg>, no <use>, no <image>"
+    },
+    {
+      "name": "@1920 stroke and fill inherit",
+      "pass": true,
+      "detail": "stroke rgb(26, 60, 46) (currentColor resolves to the header colour), fill none"
+    },
+    {
+      "name": "@1920 same rendered box as the call icon",
+      "pass": true,
+      "detail": "calculator 40x40 vs call 40x40"
+    },
+    {
+      "name": "@1920 same stroke width as the call icon",
+      "pass": true,
+      "detail": "calculator 2px vs call 2px"
+    },
+    {
+      "name": "@1920 aria-label on the link, svg hidden from AT",
+      "pass": true,
+      "detail": "aria-label \"Customize Your Portable Cabin & Calculate Price\" · aria-hidden true · focusable false"
+    },
+    {
+      "name": "@1920 contrast against the header >= 4.5:1",
+      "pass": true,
+      "detail": "12.14:1"
+    },
+    {
+      "name": "@1920 order is call, then calculator",
+      "pass": true,
+      "detail": "call -> calculator -> button:Get Quote -> button:"
+    },
+    {
+      "name": "@1920 touch target matches its sibling, 44px shortfall DECLARED",
+      "pass": true,
+      "detail": "40x40, same as the call icon; both under 44 - declared below, needs SAMAN's ruling"
+    },
+    {
+      "name": "@390 calculator entry point present",
+      "pass": true,
+      "detail": "1 visible, beside 1 call link(s)"
+    },
+    {
+      "name": "@390 icon is inline SVG, no sprite or external ref",
+      "pass": true,
+      "detail": "inline <svg>, no <use>, no <image>"
+    },
+    {
+      "name": "@390 stroke and fill inherit",
+      "pass": true,
+      "detail": "stroke rgb(26, 60, 46) (currentColor resolves to the header colour), fill none"
+    },
+    {
+      "name": "@390 same rendered box as the call icon",
+      "pass": true,
+      "detail": "calculator 40x40 vs call 40x40"
+    },
+    {
+      "name": "@390 same stroke width as the call icon",
+      "pass": true,
+      "detail": "calculator 2px vs call 2px"
+    },
+    {
+      "name": "@390 aria-label on the link, svg hidden from AT",
+      "pass": true,
+      "detail": "aria-label \"Customize Your Portable Cabin & Calculate Price\" · aria-hidden true · focusable false"
+    },
+    {
+      "name": "@390 contrast against the header >= 4.5:1",
+      "pass": true,
+      "detail": "12.14:1"
+    },
+    {
+      "name": "@390 order is call, then calculator",
+      "pass": true,
+      "detail": "call -> calculator -> button:"
+    },
+    {
+      "name": "@390 touch target matches its sibling, 44px shortfall DECLARED",
+      "pass": true,
+      "detail": "40x40, same as the call icon; both under 44 - declared below, needs SAMAN's ruling"
+    },
+    {
+      "name": "@390 calculator entry inside the mobile MENU panel",
+      "pass": true,
+      "detail": "\"Customize Your Portable Cabin & Calculate Price\" · 44px tall"
+    },
+    {
+      "name": "@390 menu entry touch target >= 44px",
+      "pass": true,
+      "detail": "44px"
+    },
+    {
+      "name": "@1440 Back/Next on screen through step 6",
+      "pass": true,
+      "detail": "4 of 4 scroll positions [y y y y]  (CALC-L4 before: 3 of 4 at 1440)"
+    },
+    {
+      "name": "@1440 nav and estimate card share ONE column",
+      "pass": true,
+      "detail": ".calculator-side exists=true, nav inside=true, grid children=2 (2 = no third auto-placed row)"
+    },
+    {
+      "name": "@1440 nav positioning",
+      "pass": true,
+      "detail": "column position: sticky, nav rides inside it (static)"
+    },
+    {
+      "name": "_docHeight@1440",
+      "pass": true,
+      "detail": "3129"
+    },
+    {
+      "name": "@390 Back/Next on screen through step 6",
+      "pass": true,
+      "detail": "4 of 4 scroll positions [y y y y]  (CALC-L4 before: 3 of 4 at 1440)"
+    },
+    {
+      "name": "@390 nav and estimate card share ONE column",
+      "pass": true,
+      "detail": ".calculator-side exists=true, nav inside=true, grid children=2 (2 = no third auto-placed row)"
+    },
+    {
+      "name": "@390 nav positioning",
+      "pass": true,
+      "detail": "nav position: fixed (fixed footer bar)"
+    },
+    {
+      "name": "_docHeight@390",
+      "pass": true,
+      "detail": "7286"
+    }
+  ]
+}
