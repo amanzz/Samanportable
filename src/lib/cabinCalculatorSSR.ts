@@ -2306,7 +2306,25 @@ function electricalCard(
     + `</span></label>`;
 }
 
-/** One wall of the active room: count stepper and position nudge, one line. */
+/**
+ * One wall of the active room: count stepper and position nudge, one line.
+ *
+ * DO NOT DELETE THESE AS DEAD CODE. Nothing reads `socket-{room}-{wall}` or
+ * `socket-{room}-{wall}-position` today - not the estimate, not the drawing -
+ * and a dead-code sweep will therefore find them and be wrong. They are
+ * PLACEMENT inputs, not priced quantities: the priced item is the
+ * "Plug point (6A)" electrical card at Rs 1,100, and the gate
+ * verify-every-stepper-all-states.mjs asserts these four controls do NOT move
+ * the estimate precisely so a future double count is caught.
+ *
+ * THEIR CONSUMER IS CALC-L7 C2, in Merge 4: every placed electrical item gets a
+ * standard symbol in the 2D plan, positioned by the wall and the percent-along-
+ * the-wall these fields already capture. Ruled 09 Aug: C2 consumes this data and
+ * no second position model is built alongside it.
+ *
+ * Same class as the orphaned FROZEN_OPENER anchor - a value that looks unused
+ * right up until something needs it.
+ */
 function socketWallRow(roomSlug: string, wall: string): string {
   const base = `socket-${roomSlug}-${wall.toLowerCase()}`;
   return `<div class="socket-wall">`
