@@ -626,6 +626,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
             variantData={variantData || undefined}
             suppressProductEntity={suppressLegacyCommercialSurfaces}
+            metaDescription={rankMathSEO?.description}
           />
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered

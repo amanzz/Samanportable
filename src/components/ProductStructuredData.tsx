@@ -21,9 +21,12 @@ interface ProductStructuredDataProps {
   // Commercial-truth gate for a live route awaiting an owner-approved ladder.
   // ItemPage/BreadcrumbList may remain, but Product and Offer must not emit.
   suppressProductEntity?: boolean;
+  /** The page's approved meta description. Becomes the schema `description` so the
+      Product node carries a concise summary rather than a slice of the body. */
+  metaDescription?: string;
 }
 
-export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData, suppressProductEntity = false }: ProductStructuredDataProps) {
+export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData, suppressProductEntity = false, metaDescription }: ProductStructuredDataProps) {
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
@@ -52,7 +55,13 @@ export default function ProductStructuredData({ product, category, reviews, brea
       .trim();
   const backendShort = stripHtml(product.short_description);
   const backendFull = stripHtml(product.description);
-  const description = backendShort || (backendFull ? backendFull.slice(0, 5000) : '');
+  // Schema `description` is a PRODUCT SUMMARY, not the sales document. It takes the
+  // page's approved meta description first; only where a route has none does it fall
+  // back to the old behaviour, so nothing regresses on pages without approved meta.
+  // Long-form bodies made the old fallback visible: a 2,500-word description was being
+  // sliced to 5,000 chars and emitted twice, inflating every byte served for no gain.
+  const approvedMeta = stripHtml(metaDescription || variantData?.metaDescription || '');
+  const description = approvedMeta || backendShort || (backendFull ? backendFull.slice(0, 5000) : '');
 
   // Only REAL WooCommerce attributes become additionalProperty; omit entirely if none
   // (no invented Material/Usage/Customization values).
@@ -287,7 +296,9 @@ export default function ProductStructuredData({ product, category, reviews, brea
     '@context': 'https://schema.org',
     '@type': 'ItemPage',
     name: product.name,
-    ...(description ? { description } : {}),
+    // No `description` here. It belongs on the Product node nested below as
+    // mainEntity, and emitting it on both duplicated the whole string in every
+    // document. One copy, on the entity the field actually describes.
     url: productUrl,
     ...(productStructuredData ? { mainEntity: productStructuredData } : {}),
     breadcrumb: breadcrumbStructuredData
