@@ -11,8 +11,28 @@ const SHIPPING_INTRO =
 
 const WARRANTY_LINE = '12-month workmanship warranty, confirmed at quotation.';
 
+/**
+ * A MATCHING KEY, NOT COPY. Never rendered — its only use is the `includes`
+ * check in appendShippingContainerOfficePriceSection below, which refuses to
+ * append the price section unless the approved opener is present.
+ *
+ * It must therefore stay byte-for-byte identical to the opener paragraph in
+ * src/data/wp-export/products/shipping-container-office.json, which is frozen
+ * export content. DO NOT normalise punctuation here. The em dash below is not
+ * an AI tell to be swept — it is the character the frozen copy contains, and
+ * changing it does not change one pixel of the page, it only stops this string
+ * matching.
+ *
+ * That is exactly what happened: 13599402 ("enforce sitewide L20 copy
+ * normalization") rewrote this em dash to a colon without touching the frozen
+ * JSON, the `includes` failed, the throw below fired inside getServerSideProps,
+ * and /product/container-offices/shipping-container-office served a 500 in
+ * production until 08 Aug 2026. The sibling module names its equivalent
+ * FROZEN_OPENER_ANCHOR, which is the clearer name and the reason the sweep left
+ * that one alone.
+ */
 const FROZEN_OPENER =
-  '<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Buyers typing "shipping container office" are usually at one of two decision points: choosing between the 20-ft and 40-ft form factor, or confirming whether the unit they are about to receive is a purpose-built office structure or a retrofitted used cargo container. Both decisions affect what you get on site, what documentation comes with it, and how long it lasts.</p>';
+  '<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Buyers typing "shipping container office" are usually at one of two decision points — choosing between the 20-ft and 40-ft form factor, or confirming whether the unit they are about to receive is a purpose-built office structure or a retrofitted used cargo container. Both decisions affect what you get on site, what documentation comes with it, and how long it lasts.</p>';
 
 const escapeHtml = (value: string): string =>
   value
