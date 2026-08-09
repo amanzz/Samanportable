@@ -80,7 +80,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
     comparison: (
       <>
-        Building hospitality rather than a kitchen? Start from the <Link className={linkClass} href={CONTAINER_CAFE_HREF}>container cafe range</Link> if guests will be buying food rather than sleeping.
+        Building hospitality rather than a kitchen? Start from the <Link className={linkClass} href={CONTAINER_CAFE_HREF}>container cafe hub</Link> if guests will be buying food rather than sleeping.
       </>
     ),
   },
@@ -93,7 +93,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
     comparison: (
       <>
-        Know your final footprint already? A single unit from the <Link className={linkClass} href={CONTAINER_CAFE_HREF}>container cafe range</Link> will cost less per square foot than joining modules.
+        Know your final footprint already? A single unit from the <Link className={linkClass} href={CONTAINER_CAFE_HREF}>standard cafe range</Link> will cost less per square foot than joining modules.
       </>
     ),
   },
