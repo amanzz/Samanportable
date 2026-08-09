@@ -1,0 +1,294 @@
+{
+  "productSlug": "container-hotel",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "specPdfHref": "/specs/container-hotel-technical-specification.pdf",
+  "productName": "Container Hotel",
+  "h1": "Container Hotel: Six Guest-Room Module Sizes",
+  "seoTitle": "Container Hotel Room Modules, From ₹2,03,500 | SAMAN",
+  "metaDescription": "Factory-built container hotel room modules in six sizes, 100 to 400 sq ft, with attached wet services and hotel-grade finishes. From ₹2,03,500 ex-GST.",
+  "opener": "A SAMAN container hotel module is a factory-built guest room with sleeping, storage and attached bathroom zones, finished to hotel grade with 12 mm laminated plywood lining, 12.5 mm gypsum ceiling and 5 to 6 mm SPC flooring over 19 mm marine ply. Six sizes span 100 to 400 sq ft, from ₹2,03,500 ex-factory, ex-GST at base specification. Rooms are fabricated new at Bengaluru and Greater Noida, not converted from used shipping containers, and arrive with bedside power, split-AC provision and bathroom exhaust already wired to the approved load schedule.",
+  "priceCaption": "Base specification price - customisations quoted separately.",
+  "suppressLegacyFaqSchema": true,
+  "explorerImageTemplate": {
+    "10x10": "/images/products/container-hotel/10x10/container-hotel-10x10x8-5-ft-front-left-hero.webp",
+    "20x10": "/images/products/container-hotel/20x10/container-hotel-20x10x8-5-ft-front-left-hero.webp",
+    "20x12": "/images/products/container-hotel/20x12/container-hotel-20x12x8-5-ft-front-left-hero.webp",
+    "30x10": "/images/products/container-hotel/30x10/container-hotel-30x10x8-5-ft-front-left-hero.webp",
+    "40x10": "/images/products/container-hotel/40x10/container-hotel-40x10x8-5-ft-front-left-hero.webp"
+  },
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 203500,
+      "priceInclGst": 240130,
+      "images": [
+        {
+          "src": "/images/products/container-hotel/10x10/container-hotel-10x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container hotel module 10x10x8.5 ft, 100 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/10x10/container-hotel-10x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container hotel module 10x10x8.5 ft, 100 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/10x10/container-hotel-10x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container hotel module 10x10x8.5 ft, 100 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/10x10/container-hotel-10x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container hotel module 10x10x8.5 ft, 100 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/10x10/container-hotel-10x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container hotel module 10x10x8.5 ft, 100 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/10x10/container-hotel-10x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container hotel module 10x10x8.5 ft, 100 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 325600,
+      "priceInclGst": 384208,
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 370000,
+      "priceInclGst": 436600,
+      "images": [
+        {
+          "src": "/images/products/container-hotel/20x10/container-hotel-20x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container hotel module 20x10x8.5 ft, 200 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x10/container-hotel-20x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container hotel module 20x10x8.5 ft, 200 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x10/container-hotel-20x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container hotel module 20x10x8.5 ft, 200 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x10/container-hotel-20x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container hotel module 20x10x8.5 ft, 200 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x10/container-hotel-20x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container hotel module 20x10x8.5 ft, 200 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x10/container-hotel-20x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container hotel module 20x10x8.5 ft, 200 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 426240,
+      "priceInclGst": 502963,
+      "images": [
+        {
+          "src": "/images/products/container-hotel/20x12/container-hotel-20x12x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container hotel module 20x12x8.5 ft, 240 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x12/container-hotel-20x12x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container hotel module 20x12x8.5 ft, 240 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x12/container-hotel-20x12x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container hotel module 20x12x8.5 ft, 240 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x12/container-hotel-20x12x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container hotel module 20x12x8.5 ft, 240 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x12/container-hotel-20x12x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container hotel module 20x12x8.5 ft, 240 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/20x12/container-hotel-20x12x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container hotel module 20x12x8.5 ft, 240 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 532800,
+      "priceInclGst": 628704,
+      "images": [
+        {
+          "src": "/images/products/container-hotel/30x10/container-hotel-30x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container hotel module 30x10x8.5 ft, 300 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/30x10/container-hotel-30x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container hotel module 30x10x8.5 ft, 300 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/30x10/container-hotel-30x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container hotel module 30x10x8.5 ft, 300 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/30x10/container-hotel-30x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container hotel module 30x10x8.5 ft, 300 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/30x10/container-hotel-30x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container hotel module 30x10x8.5 ft, 300 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/30x10/container-hotel-30x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container hotel module 30x10x8.5 ft, 300 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 695600,
+      "priceInclGst": 820808,
+      "images": [
+        {
+          "src": "/images/products/container-hotel/40x10/container-hotel-40x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container hotel module 40x10x8.5 ft, 400 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/40x10/container-hotel-40x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container hotel module 40x10x8.5 ft, 400 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/40x10/container-hotel-40x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container hotel module 40x10x8.5 ft, 400 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/40x10/container-hotel-40x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container hotel module 40x10x8.5 ft, 400 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/40x10/container-hotel-40x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container hotel module 40x10x8.5 ft, 400 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-hotel/40x10/container-hotel-40x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container hotel module 40x10x8.5 ft, 400 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ]
+}

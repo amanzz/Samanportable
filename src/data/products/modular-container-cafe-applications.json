@@ -1,0 +1,71 @@
+{
+  "h2": "Modular container cafe sizes and per-module prices",
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10x8.5 ft starter module, joins on any face",
+      "paragraph": "At 100 sq ft this is the cheapest way into the system and the module most often bought first. It works alone as a service counter and it accepts a joint on any face later, so the direction a site grows in does not have to be decided on day one. Utilities are run to the module edge rather than terminated inside it, which is what makes the second unit a connection job instead of a rewire. Operators testing a location commonly start here and add preparation space once the trade is proven and the lease is worth extending.",
+      "applications": [
+        "First module on a new site",
+        "Counter-only opening",
+        "Growth direction undecided",
+        "Proof-of-trade pilot"
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8x8.5 ft linear module for side-by-side rows",
+      "paragraph": "The 8 ft width makes this the module that lines up in rows without any single unit becoming an oversize load. Joined along its long face, three of these produce a continuous 24 ft frontage on a plot that could never receive a single 24 ft shell by road. Each unit keeps its own distribution board while sharing the water run, so one module can be taken off site for a refit while the rest keep trading. Food courts and market rows are built this way far more often than they are built as one large box.",
+      "applications": [
+        "Continuous market frontage",
+        "Row-format food court",
+        "Refit one, trade on",
+        "Restricted-access plot"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10x8.5 ft reference module at ₹1,350 per sq ft",
+      "paragraph": "Two hundred square feet is the costing reference for the range and the rung where the rate falls to ₹1,350 per sq ft, the lowest entry rate anywhere in the container cafe cluster. One module of this size runs a full counter with preparation behind it; two joined give a service module and a seating module sharing a sealed junction and a single facade line. This is the size most phased projects standardise on, because ordering identical modules keeps the joint detail and the spare parts list to one specification.",
+      "applications": [
+        "Standard phased module",
+        "Service plus seating pair",
+        "Single specification fleet",
+        "Campus food kiosk"
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12x8.5 ft wide module for a working back line",
+      "paragraph": "The extra two feet of width buys a back-of-house lane behind the counter, so staff movement stops crossing the customer line inside a single module. Joined to a narrower unit it makes an L-shaped plan around a seating deck, which is the arrangement most rooftop and courtyard sites end up with. Coordinated facade panels mean the two widths still read as one building rather than two containers pushed together. Operators who cook rather than assemble usually specify at least one module at this width.",
+      "applications": [
+        "Back-of-house lane",
+        "L-shaped courtyard plan",
+        "Cook-to-order module",
+        "Rooftop cafe wing"
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10x8.5 ft long module, one joint instead of two",
+      "paragraph": "Thirty feet delivers 300 sq ft in a single shell, which removes a joint compared with reaching the same area from two smaller units. Fewer joints mean less sealing to maintain and a cleaner interior ceiling line, and the trade-off is that the module is no longer easy to reposition alone. It still carries full joint faces, so a further unit can be added at either end. Sites that know they want roughly 300 sq ft now and possibly 500 later tend to buy this single shell rather than a pair of twenty-foot modules.",
+      "applications": [
+        "Fewer joints to maintain",
+        "Single-shell 300 sq ft",
+        "End-extendable layout",
+        "Permanent anchor module"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10x8.5 ft anchor module at the lowest rate",
+      "paragraph": "Four hundred square feet at ₹1,269 per sq ft is the cheapest floor area in the modular range, and it is normally specified as the anchor that smaller modules attach to. Delivery books a long-bed trailer under oversize clearance plus a crane lift onto the pad, so this is a planned move rather than a routine one. Inside, the span allows a full kitchen line, a service counter and covered seating without any internal joint interrupting the ceiling. Larger projects place one of these first and grow outward from its two end faces.",
+      "applications": [
+        "Anchor for smaller modules",
+        "Uninterrupted kitchen line",
+        "Lowest rate per sq ft",
+        "Two-face expansion point"
+      ]
+    }
+  ]
+}

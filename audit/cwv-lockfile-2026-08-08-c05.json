@@ -1,0 +1,191 @@
+{
+  "$comment": "Core Web Vitals baseline for the six rebuilt C-05 routes, captured at final page state: all six Description tabs filled, galleries at the ruled 6 per size. The 20x8 placeholder tab is PART of this state and re-baselines in the swap event when the outstanding renders arrive.",
+  "schema": "saman-cwv-lockfile-ruling-v3",
+  "date": "2026-08-08",
+  "commit": "cdce5d80afc63b4ad9898d65a8658f70fccd0987",
+  "branch": "agent/c05-hub-container-cafe-20260808",
+  "measurement": {
+    "tool": "Lighthouse 13.4.1 CLI",
+    "build": "npm run build, next start on :3090; each route warmed with one request before measurement so SSR is not in the sample",
+    "form_factor": "mobile, simulated throttling, screenEmulation.mobile",
+    "runs_per_route": 5,
+    "statistic": "median of 5 for LCP/TBT/performance; CLS reported as the worst run",
+    "gates": {
+      "cls_max": 0.02,
+      "mobile_lcp": "target median <= baseline median + max(100ms, 2%)"
+    },
+    "note": "Lighthouse 13.4.x no longer emits the largest-contentful-paint-element audit, so the LCP element is identified from the render path: the default variant's images[0] is the only image carrying priority/fetchpriority=high, confirmed in the rendered DOM of each route."
+  },
+  "routes": {
+    "/product/container-cafe": {
+      "mobile": {
+        "performance": 74,
+        "lcp_ms": 7059,
+        "cls": 0,
+        "tbt_ms": 116,
+        "runs": {
+          "lcps": "8582,7158,6597,7059,7034",
+          "cls": "0,0,0,0,0",
+          "scores": "74,74,77,74,76"
+        }
+      },
+      "lcp_element": {
+        "type": "img",
+        "selector": "variant hero, default size, images[0] (priority + fetchpriority=high)",
+        "filename": "/images/products/container-cafe/20x10/container-cafe-20x10x8-5-ft-front-left-hero.webp",
+        "bytes": 122450,
+        "over_119kb_ceiling": true
+      },
+      "page_state": {
+        "gallery_images_per_size": 6,
+        "images_attached": 30,
+        "placeholder_tabs": [
+          "20x8"
+        ],
+        "image_transfer_bytes": 748899
+      }
+    },
+    "/product/container-cafe/container-restaurant": {
+      "mobile": {
+        "performance": 75,
+        "lcp_ms": 6968,
+        "cls": 0,
+        "tbt_ms": 114,
+        "runs": {
+          "lcps": "7027,6919,7070,6953,6968",
+          "cls": "0,0,0,0,0",
+          "scores": "71,75,69,75,75"
+        }
+      },
+      "lcp_element": {
+        "type": "img",
+        "selector": "variant hero, default size, images[0] (priority + fetchpriority=high)",
+        "filename": "/images/products/container-restaurant/20x10/container-restaurant-20x10x8-5-ft-front-left-hero.webp",
+        "bytes": 131832,
+        "over_119kb_ceiling": true
+      },
+      "page_state": {
+        "gallery_images_per_size": 6,
+        "images_attached": 18,
+        "placeholder_tabs": [
+          "20x8",
+          "40x8",
+          "40x12"
+        ],
+        "image_transfer_bytes": 737276
+      }
+    },
+    "/product/container-cafe/food-truck-containers": {
+      "mobile": {
+        "performance": 75,
+        "lcp_ms": 6989,
+        "cls": 0,
+        "tbt_ms": 90,
+        "runs": {
+          "lcps": "6989,6629,7001,7020,6989",
+          "cls": "0,0,0,0,0",
+          "scores": "75,77,76,75,75"
+        }
+      },
+      "lcp_element": {
+        "type": "img",
+        "selector": "variant hero, default size, images[0] (priority + fetchpriority=high)",
+        "filename": "/images/products/food-truck-containers/20x10/food-truck-containers-20x10x8-5-ft-front-left-hero.webp",
+        "bytes": 119382,
+        "over_119kb_ceiling": false
+      },
+      "page_state": {
+        "gallery_images_per_size": 6,
+        "images_attached": 30,
+        "placeholder_tabs": [
+          "20x8"
+        ],
+        "image_transfer_bytes": 751024
+      }
+    },
+    "/product/container-cafe/container-hotel": {
+      "mobile": {
+        "performance": 74,
+        "lcp_ms": 6887,
+        "cls": 0,
+        "tbt_ms": 138,
+        "runs": {
+          "lcps": "6612,6887,6905,6891,6878",
+          "cls": "0,0,0,0,0",
+          "scores": "76,74,73,74,75"
+        }
+      },
+      "lcp_element": {
+        "type": "img",
+        "selector": "variant hero, default size, images[0] (priority + fetchpriority=high)",
+        "filename": "/images/products/container-hotel/20x10/container-hotel-20x10x8-5-ft-front-left-hero.webp",
+        "bytes": 112752,
+        "over_119kb_ceiling": false
+      },
+      "page_state": {
+        "gallery_images_per_size": 6,
+        "images_attached": 30,
+        "placeholder_tabs": [
+          "20x8"
+        ],
+        "image_transfer_bytes": 710042
+      }
+    },
+    "/product/container-cafe/modular-container-cafe": {
+      "mobile": {
+        "performance": 75,
+        "lcp_ms": 6934,
+        "cls": 0,
+        "tbt_ms": 112,
+        "runs": {
+          "lcps": "6947,6934,6937,6619,6658",
+          "cls": "0,0,0,0,0",
+          "scores": "75,75,75,77,76"
+        }
+      },
+      "lcp_element": {
+        "type": "img",
+        "selector": "variant hero, default size, images[0] (priority + fetchpriority=high)",
+        "filename": "/images/products/modular-container-cafe/20x10/modular-container-cafe-20x10x8-5-ft-front-left-hero.webp",
+        "bytes": 112816,
+        "over_119kb_ceiling": false
+      },
+      "page_state": {
+        "gallery_images_per_size": 6,
+        "images_attached": 30,
+        "placeholder_tabs": [
+          "20x8"
+        ],
+        "image_transfer_bytes": 713724
+      }
+    },
+    "/product/container-cafe/container-coffee-shop": {
+      "mobile": {
+        "performance": 77,
+        "lcp_ms": 6597,
+        "cls": 0,
+        "tbt_ms": 70,
+        "runs": {
+          "lcps": "6816,6865,6580,6590,6597",
+          "cls": "0,0,0,0,0",
+          "scores": "76,75,77,77,77"
+        }
+      },
+      "lcp_element": {
+        "type": "img",
+        "selector": "variant hero, default size, images[0] (priority + fetchpriority=high)",
+        "filename": "/images/products/container-coffee-shop/20x10/container-coffee-shop-20x10x8-5-ft-front-left-hero.webp",
+        "bytes": 113688,
+        "over_119kb_ceiling": false
+      },
+      "page_state": {
+        "gallery_images_per_size": 6,
+        "images_attached": 30,
+        "placeholder_tabs": [
+          "20x8"
+        ],
+        "image_transfer_bytes": 713407
+      }
+    }
+  }
+}

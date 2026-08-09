@@ -1,0 +1,71 @@
+{
+  "h2": "Food truck container sizes: six road-ready floors to 400 sq ft",
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10x8.5 ft lightest roaming unit, 550 kg loaded out",
+      "paragraph": "At roughly 550 kg this is the lightest body in SAMAN's food-service line, sized so a standard truck and a hydra can reposition it between pitches in a single morning. Its 100 sq ft floor runs a one-person counter serving 8 covers, with a fan, 2 sockets and 3 LED points on an estimated 0.7 kW, low enough for a basic site connection at most venues. Four 8x4 ft floor panels and 340 sq ft of insulated wall keep the shell light without giving up summer working comfort. Any 14x14 ft patch of level ground is a pitch, which is exactly what weekend markets and festival grounds rent out.",
+      "applications": [
+        "Weekend market pitches",
+        "Festival ground service",
+        "Beach shack season unit",
+        "Metro station tea counter"
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8x8.5 ft transport-width service galley, 160 sq ft",
+      "paragraph": "Holding the classic 8 ft transport width, this 20 ft galley rides on any standard flatbed with no oversize paperwork, which makes it the cheapest of the six to keep moving. The long counter face serves 13 covers across 160 sq ft, backed by two sliding windows, 4 LED points and 4 sockets on about 1.3 kW. It sits on five 8x4 ft floor panels at near 880 kg, and same-day placement plus hook-up is the norm. Operators who tour a fixed circuit of sites in one state pick this width because every leg of the journey books as normal freight.",
+      "applications": [
+        "Touring food circuit unit",
+        "Standard-freight relocation",
+        "Roadside chaat counter",
+        "Company gate canteen"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10x8.5 ft flagship food truck floor at ₹3,20,000",
+      "paragraph": "The 20x10 ft floor is where the food truck rate drops to ₹1,600 per sq ft and the layout gains a genuine prep line behind the counter. 200 sq ft carries a 17-cover service front on seven floor panels, wired with 5 LED points, 4 sockets and 2 fans against a 1.4 kW estimate. At about 1,100 kg it stays a one-truck, one-hydra move with hook-up the same day. This is the size that competes head-on with a TATA Ace class vehicle-mount truck on price while giving nearly four times the working floor, and it is the volume seller of the six for that reason.",
+      "applications": [
+        "City food park anchor",
+        "Vehicle-truck alternative",
+        "Multi-brand cloud counter",
+        "IT park lunch service"
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12x8.5 ft wide-body kitchen, 240 sq ft of prep room",
+      "paragraph": "Twelve feet of width turns the galley into a working kitchen: 240 sq ft with room for parallel prep and service lanes, rated for 20 covers at the hatch. The envelope carries 544 sq ft of insulated wall plus a 259 sq ft insulated roof, with 6 LED points, 5 sockets and 3 fan points drawing an estimated 1.7 kW. Weight rises to about 1,320 kg on eight floor panels, so placement books one day with plug-in services after the trailer run. The extra 2 ft over the flagship size is bought for one reason: two cooks working simultaneously without crossing each other.",
+      "applications": [
+        "Two-cook parallel lines",
+        "High-volume event kitchen",
+        "Biryani production counter",
+        "Franchise satellite kitchen"
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10x8.5 ft mid-length counter, 25 covers on 300 sq ft",
+      "paragraph": "The 30 ft length splits the difference between the nimble 20 ft bodies and the 40 ft flagship: 300 sq ft, 25 covers and a full cooking line, still light enough at about 1,650 kg for hydra placement on most sites. Ten 8x4 ft floor panels deck it out, 680 sq ft of wall insulation lines it, and the electrical base of 8 LED points, 6 sockets and 3 fans draws near 2 kW. It wants a 34x14 ft cleared pitch and one day for placement and plug-in. Caterers who follow the wedding and exhibition calendar run this size as their standard mobile kitchen.",
+      "applications": [
+        "Wedding season catering",
+        "Exhibition service kitchen",
+        "District fair main stall",
+        "Sports ground concession"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10x8.5 ft maximum mobile floor, 400 sq ft of service",
+      "paragraph": "The biggest floor that still relocates: 400 sq ft serving 33 covers at the lowest rate on the ladder, ₹1,504 per sq ft. Moving it is a planned operation rather than a morning job, with a 40 ft open trailer, an ODC check and crane unloading into a 44x14 ft area, closed out in one day with plug-in services. Thirteen floor panels take the load at about 2,200 kg, while 850 sq ft of insulated wall wraps the room and 8 sockets, 4 fans and 10 LED points run on 2.7 kW inside. Operators anchoring a venue for a full season, then moving on, get fixed-restaurant capacity without surrendering mobility.",
+      "applications": [
+        "Season-long venue anchor",
+        "Stadium concession major",
+        "Large festival food court",
+        "Relocating flagship outlet"
+      ]
+    }
+  ]
+}

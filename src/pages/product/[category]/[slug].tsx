@@ -372,7 +372,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // string, so the copy in the data file stays exactly as approved and
           // the placement rules stay enforced by code.
           description: injectInfoImages(
-            variantData?.descriptionHtml || productDescriptionWithoutOpener,
+            // C-05 close-out Part 2: a page whose legacy body contradicts the rebuilt
+            // page HOLDS the tab empty rather than shipping the contradiction. An empty
+            // descriptionHtml cannot express that (it is falsy and falls through), so
+            // the suppression is an explicit flag.
+            variantData?.descriptionHtml
+              || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
             variantData?.infoImages
           ),
           images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
@@ -659,6 +664,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
             variantData={variantData || undefined}
             suppressProductEntity={suppressLegacyCommercialSurfaces}
+            metaDescription={rankMathSEO?.description}
           />
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered

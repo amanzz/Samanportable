@@ -40,6 +40,7 @@ import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../.
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { restrictContainerCafeRail } from '../../../lib/containerCafeClusterRail';
 import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
@@ -200,6 +201,15 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       relatedProducts = orderContainerOfficeRail(category, relatedProducts);
     }
 
+    // C-05 Ruling 3 (Fable 5, 08 Aug 2026) — the container cafe hub's rail is
+    // restricted to the five CI9 subpages, in §9 order, so the §5 right-to-exist
+    // copy ("one of the five pages below") is true on the rendered page and the
+    // legacy children awaiting consolidation are not introduced by the cluster's
+    // strongest page. Hub route only; no other rail on the site changes.
+    if (category === 'container-cafe') {
+      relatedProducts = restrictContainerCafeRail(category, relatedProducts);
+    }
+
     // Related rails/cards render only this compact catalog projection. Keeping full
     // WooCommerce objects here duplicated long descriptions in __NEXT_DATA__ on
     // every product hub without adding any visible content.
@@ -353,7 +363,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // C-08 E3 Step C — same Info-image placement as the sibling route, so
           // the hub's Description panel carries its 16:9 band on the same rules.
           description: injectInfoImages(
-            variantData?.descriptionHtml || descriptionData?.description || '',
+            // Same empty-safe hold as the subpage route (C-05 close-out Part 2).
+            variantData?.descriptionHtml
+              || (variantData?.suppressLegacyDescription ? '' : descriptionData?.description)
+              || '',
             variantData?.infoImages
           ),
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
@@ -629,7 +642,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} />
+          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} metaDescription={rankMathSEO?.description} />
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered
               FAQs; legacy products continue to use RankMath. */}

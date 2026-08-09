@@ -1,0 +1,71 @@
+{
+  "h2": "Container restaurant sizes: 100 to 480 sq ft, 8 to 40 diners",
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10x8.5 ft compact dine-in unit for 8 covers",
+      "paragraph": "The smallest dine-in format in the range seats 8 diners on 100 sq ft and weighs roughly 550 kg, so a single truck delivers it and a hydra places it the same day. Inside, 340 sq ft of insulated wall and a 108 sq ft insulated roof keep the dining zone workable through summer service hours. The base electrical fit covers 3 LED points, 2 sockets and a fan point on an estimated 0.7 kW connected load. It asks only for a 14x14 ft levelled pad, which is why first-time operators put it on leased corner plots where a built dining hall would never clear approval.",
+      "applications": [
+        "Leased corner-plot diner",
+        "Resort breakfast annexe",
+        "Trial outlet before a long lease",
+        "Farm-stay dining room"
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8x8.5 ft narrow-frontage restaurant, 13 covers",
+      "paragraph": "A 20 ft shell held to 8 ft width, this unit slides onto narrow road-facing plots that a 10 ft wide body cannot enter. The 160 sq ft floor takes 13 covers in a single-row layout served through two aluminium sliding windows. Weight stays near 880 kg on five 8x4 ft floor panels, and placement plus hook-up finishes on the day the truck arrives. Wiring is sized for 4 LED points, 4 sockets and 2 fan points on about 1.3 kW, with 476 sq ft of wall insulation behind the lining. A 24x12 ft cleared strip is the practical minimum, which suits highway frontage where depth is what the landlord charges for.",
+      "applications": [
+        "Highway frontage dining",
+        "Fuel-station food stop",
+        "Narrow-plot cafe upgrade",
+        "Single-row seating outlet"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10x8.5 ft reference restaurant size, 17 covers",
+      "paragraph": "The 20x10 ft floor is the costing reference for the whole cluster and the rung where the rate steps down to ₹2,000 per sq ft. Its 200 sq ft plan splits cleanly into a service counter and a 17-cover dining zone laid over seven 8x4 ft floor panels. At about 1,100 kg it still travels on one truck and is hooked up the same day it lands. The package wires 5 LED points, 2 fan points and 4 sockets against a 1.4 kW estimated load, and 510 sq ft of wall insulation holds the room stable through service. Most buyers price this size first, then decide whether the 40 ft bodies earn their extra covers.",
+      "applications": [
+        "First full-service outlet",
+        "Food court anchor unit",
+        "Cloud kitchen with seating",
+        "Campus dining counter"
+      ]
+    },
+    {
+      "sizeSlug": "40x8",
+      "h3": "40x8x8.5 ft slim 40-foot dining run, 27 covers",
+      "paragraph": "Stretching to 40 ft while holding 8 ft width, this format lines 27 covers along 320 sq ft without crossing into oversize-width transport. It moves on a 40 ft open trailer after an ODC check, and a crane sets it in one working day before services simply plug in. Ten floor panels carry the dining run, four sliding windows ventilate it, and the electrical base steps up to 8 LED points and 7 sockets on roughly 2.4 kW. Wall insulation reaches 816 sq ft over the full length. A 44x12 ft cleared strip is enough ground, so long thin plots beside fuel stations and food courts are its natural home.",
+      "applications": [
+        "Fuel-station restaurant strip",
+        "Industrial canteen row",
+        "Event-ground dining line",
+        "Roadside thali restaurant"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10x8.5 ft full-restaurant workhorse, 33 covers",
+      "paragraph": "The 40x10 ft body is the full-restaurant workhorse of the ladder: 400 sq ft, 33 covers and depth enough for a separated production kitchen behind the counter. It ships on a 40 ft open trailer with an ODC check, and crane placement plus plug-in services closes out inside one working day. Thirteen 8x4 ft floor panels form the deck, 850 sq ft of wall insulation quiets the dining room, and the electrical base runs 10 LED points, 8 sockets and 4 fan points on an estimated 2.7 kW. Operators planning a full menu and table service usually land here after pricing the 20 ft sizes against their covers target.",
+      "applications": [
+        "Destination highway restaurant",
+        "Full-menu family dining",
+        "Brewery taproom kitchen",
+        "Banquet overflow dining"
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "h3": "40x12x8.5 ft two-door flagship floor, 40 covers",
+      "paragraph": "The largest rung reaches 480 sq ft and 40 covers on a 12 ft width, and it is the only size fitted with two 7x3 ft MS-framed doors as standard, letting guest entry and kitchen service traffic separate completely. Fifteen floor panels, 884 sq ft of wall insulation and a 518 sq ft insulated roof make up the envelope, wired for 12 LED points, 10 sockets and 5 fan points on about 3.4 kW. Transport is a 40 ft open trailer with ODC clearance and crane unloading into a 44x16 ft prepared area. Full-menu operators specify this floor when 33 covers stop being enough at weekend peaks.",
+      "applications": [
+        "Two-door flagship restaurant",
+        "Separated kitchen circulation",
+        "40-cover main dining hall",
+        "Franchise flagship outlet"
+      ]
+    }
+  ]
+}
