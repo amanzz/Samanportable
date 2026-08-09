@@ -1,0 +1,75 @@
+{
+  "baseUrl": "http://127.0.0.1:3121",
+  "results": [
+    {
+      "name": "CTA present on /product/container-offices",
+      "pass": true,
+      "detail": "1 entry CTA(s) found"
+    },
+    {
+      "name": "CTA is a real link with an accessible target",
+      "pass": true,
+      "detail": "label \"Start your design\" href \"#cabin-calculator\" aria-controls \"cabin-calculator\""
+    },
+    {
+      "name": "CTA touch target >= 44px",
+      "pass": true,
+      "detail": "171x46"
+    },
+    {
+      "name": "CTA reveals the calculator it declares in aria-controls",
+      "pass": true,
+      "detail": "#cabin-calculator exists=true visible=true"
+    },
+    {
+      "name": "calculator is in the viewport after the click",
+      "pass": true,
+      "detail": "scrolled into view: true"
+    },
+    {
+      "name": "revealed calculator carries its controls and its form",
+      "pass": true,
+      "detail": "74 stepper inputs, 1 enquiry form"
+    },
+    {
+      "name": "submit control exists on the quotation step",
+      "pass": true,
+      "detail": "1 submit button(s)"
+    },
+    {
+      "name": "browser issued a real POST to /api/enquiry",
+      "pass": true,
+      "detail": "method POST"
+    },
+    {
+      "name": "payload carries every field /api/enquiry requires",
+      "pass": true,
+      "detail": "firstName, lastName, email, phone, message all present"
+    },
+    {
+      "name": "handler accepted the payload through validation (not a 400)",
+      "pass": true,
+      "detail": "HTTP 502 - reached the Zoho boundary and stopped there, which is the credential-less signature"
+    },
+    {
+      "name": "UI rendered a notice for the outcome",
+      "pass": true,
+      "detail": "\"We could not submit right now. Please try again, or WhatsApp us at +91 88616 22859 and we will take it from there.\""
+    },
+    {
+      "name": "_realRun",
+      "pass": true,
+      "detail": "{\"status\":502,\"notice\":\"We could not submit right now. Please try again, or WhatsApp us at +91 88616 22859 and we will take it from there.\"}"
+    },
+    {
+      "name": "UI success branch renders on a 200 (STUBBED response, no lead created)",
+      "pass": true,
+      "detail": "\"Configuration received. Our sales team will send your fixed, itemised quotation within 48 hours.\""
+    },
+    {
+      "name": "UI failure branch renders on a 502 (STUBBED response)",
+      "pass": true,
+      "detail": "\"We could not submit right now. Please try again, or WhatsApp us at +91 88616 22859 and we will take it from there.\""
+    }
+  ]
+}

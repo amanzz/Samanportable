@@ -1,0 +1,76 @@
+[
+  {
+    "viewport": "1440",
+    "found": true,
+    "cardBg": "rgb(22, 34, 58)",
+    "items": {
+      "heading": {
+        "present": true,
+        "text": "Live estimate",
+        "color": "rgb(234, 240, 247)",
+        "alpha": 1,
+        "compositedColor": "rgb(234, 240, 247)",
+        "background": "rgb(22, 34, 58)",
+        "backgroundFrom": "estimate-card",
+        "ratio": 13.83
+      },
+      "floorArea": {
+        "present": true,
+        "text": "200 sq ft",
+        "color": "rgba(234, 240, 247, 0.64)",
+        "alpha": 0.64,
+        "compositedColor": "rgb(158, 166, 179)",
+        "background": "rgb(22, 34, 58)",
+        "backgroundFrom": "estimate-card",
+        "ratio": 6.45
+      },
+      "total": {
+        "present": true,
+        "text": "₹2,10,980",
+        "color": "rgb(224, 163, 64)",
+        "alpha": 1,
+        "compositedColor": "rgb(224, 163, 64)",
+        "background": "rgb(22, 34, 58)",
+        "backgroundFrom": "estimate-card",
+        "ratio": 7.16
+      }
+    }
+  },
+  {
+    "viewport": "390",
+    "found": true,
+    "cardBg": "rgb(22, 34, 58)",
+    "items": {
+      "heading": {
+        "present": true,
+        "text": "Live estimate",
+        "color": "rgb(234, 240, 247)",
+        "alpha": 1,
+        "compositedColor": "rgb(234, 240, 247)",
+        "background": "rgb(22, 34, 58)",
+        "backgroundFrom": "estimate-card",
+        "ratio": 13.83
+      },
+      "floorArea": {
+        "present": true,
+        "text": "200 sq ft",
+        "color": "rgba(234, 240, 247, 0.64)",
+        "alpha": 0.64,
+        "compositedColor": "rgb(158, 166, 179)",
+        "background": "rgb(22, 34, 58)",
+        "backgroundFrom": "estimate-card",
+        "ratio": 6.45
+      },
+      "total": {
+        "present": true,
+        "text": "₹2,10,980",
+        "color": "rgb(224, 163, 64)",
+        "alpha": 1,
+        "compositedColor": "rgb(224, 163, 64)",
+        "background": "rgb(22, 34, 58)",
+        "backgroundFrom": "estimate-card",
+        "ratio": 7.16
+      }
+    }
+  }
+]
