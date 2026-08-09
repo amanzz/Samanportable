@@ -19,7 +19,6 @@ const { chromium } = await import(pathToFileURL(path.join(playwrightRoot, 'playw
 await mkdir(outputDir, { recursive: true });
 
 const results = [];
-const declared = [];
 const record = (name, pass, detail) => {
   results.push({ name, pass, detail });
   console.log((pass ? 'PASS  ' : 'FAIL  ') + name + '  -  ' + detail);
@@ -117,6 +116,14 @@ for (const vp of VIEWPORTS) {
       svgFocusable: calcSvg.getAttribute('focusable'),
       contrast: Math.round(ratio(fg, bg) * 100) / 100,
       order,
+      hitArea: (() => {
+        const cs2 = getComputedStyle(calc, '::after');
+        const r = calc.getBoundingClientRect();
+        const inset = parseFloat(cs2.top) || 0; // negative when it overhangs
+        const w = Math.round((r.width - 2 * inset) * 100) / 100;
+        const h = Math.round((r.height - 2 * inset) * 100) / 100;
+        return { w, h, position: cs2.position, outOfFlow: cs2.position === 'absolute' };
+      })(),
       // No new network request: the icon must be inline markup.
       inlineSvg: calcSvg.tagName.toLowerCase() === 'svg' && !calcSvg.querySelector('use') && !calcSvg.querySelector('image'),
     };
@@ -144,22 +151,23 @@ for (const vp of VIEWPORTS) {
     measured.order.indexOf('call') !== -1 && measured.order.indexOf('call') < measured.order.indexOf('calculator'),
     measured.order.join(' -> '));
 
-  // TOUCH TARGET - a DECLARED EXCEPTION, not a silent pass.
+  // TOUCH TARGET - RULED 09 Aug: 40x40 matching the sibling is the standard for
+  // a header icon. The 44px figure was written for the wizard's steppers, where
+  // a mis-tap costs the customer a wrong quantity; an icon that does not match
+  // the control beside it is a visible defect where four pixels of hit area is
+  // not. The exception is CLOSED, not carried.
   //
-  // CALC-L7 2.3 asks for two things that cannot both hold: "same rendered box as
-  // the existing call icon" and "touch target 44x44 or more". The call icon is
-  // 40x40. Matching it means 40x40; reaching 44 means the header's two icon
-  // buttons are different sizes.
-  //
-  // Built to match the sibling, because that is the instruction that names a
-  // measurement. The 44px shortfall is printed on EVERY run and carried in the
-  // report until SAMAN rules - raising both icons to 44 changes the existing
-  // call button, which is outside this ticket.
+  // The HIT AREA is separately extended to 44x44 on both icons by an absolutely
+  // positioned pseudo-element, which is out of flow and therefore cannot move
+  // the visual box or the header's spacing. Both are asserted: the visual box
+  // matches the sibling, and the layout did not move.
   const t = measured.calcBox;
   const matchesSibling = Boolean(measured.callBox) && t.w === measured.callBox.w && t.h === measured.callBox.h;
-  declared.push(`${tag} touch target ${t.w}x${t.h}, under the 44px rule - identical to the call icon beside it (${measured.callBox ? measured.callBox.w + 'x' + measured.callBox.h : 'n/a'}), which is also under 44`);
-  record(`${tag} touch target matches its sibling, 44px shortfall DECLARED`, matchesSibling,
-    `${t.w}x${t.h}, same as the call icon; both under 44 - declared below, needs SAMAN's ruling`);
+  record(`${tag} visual box 40x40, matching the call icon`, matchesSibling && t.w === 40 && t.h === 40,
+    `calculator ${t.w}x${t.h} vs call ${measured.callBox ? measured.callBox.w + 'x' + measured.callBox.h : 'n/a'}`);
+  record(`${tag} hit area extended to 44x44 without moving the box`,
+    measured.hitArea.w >= 44 && measured.hitArea.h >= 44 && measured.hitArea.outOfFlow,
+    `hit ${measured.hitArea.w}x${measured.hitArea.h} via ::after (position ${measured.hitArea.position}), visual box still ${t.w}x${t.h}`);
 
   await page.screenshot({ path: path.join(outputDir, `header-calculator-icon-${vp.label}.png`), clip: { x: 0, y: 0, width: vp.width, height: Math.min(140, vp.height) } });
   await page.close();
@@ -266,9 +274,5 @@ await writeFile(path.join(outputDir, 'header-icon-and-layout-move.json'), JSON.s
 
 const failed = results.filter((r) => !r.pass && !r.name.startsWith('_'));
 console.log('');
-console.log('DECLARED EXCEPTIONS - printed every run, not silently accepted:');
-for (const d of declared) console.log('  - ' + d);
-console.log('  These need a ruling from SAMAN: raising the calculator icon alone breaks the');
-console.log('  match with the call icon; raising both changes an existing control.');
 console.log(failed.length === 0 ? 'PASS: header icon and layout move both verified.' : `FAIL: ${failed.length} assertion(s).`);
 process.exit(failed.length === 0 ? 0 : 1);

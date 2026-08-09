@@ -391,7 +391,7 @@ const Header = () => {
             <a
               href="tel:+918861622859"
               aria-label="Call SAMAN Portable, Bengaluru"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--ds-color-forest)_20%,transparent)] text-[var(--ds-color-forest)] transition-colors hover:bg-[var(--ds-color-mist)]"
+              className="relative after:absolute after:-inset-0.5 after:content-[''] flex h-10 w-10 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--ds-color-forest)_20%,transparent)] text-[var(--ds-color-forest)] transition-colors hover:bg-[var(--ds-color-mist)]"
             >
               <Phone className="h-5 w-5" />
             </a>
@@ -399,7 +399,7 @@ const Header = () => {
             <a
               href={PRICE_CALCULATOR_ROUTE}
               aria-label={PRICE_CALCULATOR_H1}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--ds-color-forest)_20%,transparent)] text-[var(--ds-color-forest)] transition-colors hover:bg-[var(--ds-color-mist)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ds-color-forest)]"
+              className="relative after:absolute after:-inset-0.5 after:content-[''] flex h-10 w-10 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--ds-color-forest)_20%,transparent)] text-[var(--ds-color-forest)] transition-colors hover:bg-[var(--ds-color-mist)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ds-color-forest)]"
             >
               <CalculatorIcon className="h-5 w-5" />
             </a>
@@ -453,7 +453,7 @@ const Header = () => {
             <a
               href="tel:+918861622859"
               aria-label="Call SAMAN Portable, Bengaluru"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-[var(--ds-color-forest)]"
+              className="relative after:absolute after:-inset-0.5 after:content-[''] flex h-10 w-10 items-center justify-center rounded-full text-[var(--ds-color-forest)]"
             >
               <Phone className="h-5 w-5" />
             </a>
@@ -461,7 +461,7 @@ const Header = () => {
             <a
               href={PRICE_CALCULATOR_ROUTE}
               aria-label={PRICE_CALCULATOR_H1}
-              className="flex h-10 w-10 items-center justify-center rounded-full text-[var(--ds-color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ds-color-forest)]"
+              className="relative after:absolute after:-inset-0.5 after:content-[''] flex h-10 w-10 items-center justify-center rounded-full text-[var(--ds-color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ds-color-forest)]"
             >
               <CalculatorIcon className="h-5 w-5" />
             </a>

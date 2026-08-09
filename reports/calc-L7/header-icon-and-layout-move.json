@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://127.0.0.1:3122",
+  "baseUrl": "http://127.0.0.1:3123",
   "results": [
     {
       "name": "@1440 calculator entry point present",
@@ -42,9 +42,14 @@
       "detail": "call -> calculator -> button:Get Quote -> button:"
     },
     {
-      "name": "@1440 touch target matches its sibling, 44px shortfall DECLARED",
+      "name": "@1440 visual box 40x40, matching the call icon",
       "pass": true,
-      "detail": "40x40, same as the call icon; both under 44 - declared below, needs SAMAN's ruling"
+      "detail": "calculator 40x40 vs call 40x40"
+    },
+    {
+      "name": "@1440 hit area extended to 44x44 without moving the box",
+      "pass": true,
+      "detail": "hit 44x44 via ::after (position absolute), visual box still 40x40"
     },
     {
       "name": "@1920 calculator entry point present",
@@ -87,9 +92,14 @@
       "detail": "call -> calculator -> button:Get Quote -> button:"
     },
     {
-      "name": "@1920 touch target matches its sibling, 44px shortfall DECLARED",
+      "name": "@1920 visual box 40x40, matching the call icon",
       "pass": true,
-      "detail": "40x40, same as the call icon; both under 44 - declared below, needs SAMAN's ruling"
+      "detail": "calculator 40x40 vs call 40x40"
+    },
+    {
+      "name": "@1920 hit area extended to 44x44 without moving the box",
+      "pass": true,
+      "detail": "hit 44x44 via ::after (position absolute), visual box still 40x40"
     },
     {
       "name": "@390 calculator entry point present",
@@ -132,9 +142,14 @@
       "detail": "call -> calculator -> button:"
     },
     {
-      "name": "@390 touch target matches its sibling, 44px shortfall DECLARED",
+      "name": "@390 visual box 40x40, matching the call icon",
       "pass": true,
-      "detail": "40x40, same as the call icon; both under 44 - declared below, needs SAMAN's ruling"
+      "detail": "calculator 40x40 vs call 40x40"
+    },
+    {
+      "name": "@390 hit area extended to 44x44 without moving the box",
+      "pass": true,
+      "detail": "hit 44x44 via ::after (position absolute), visual box still 40x40"
     },
     {
       "name": "@390 calculator entry inside the mobile MENU panel",
