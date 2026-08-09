@@ -1,0 +1,182 @@
+{
+  "generatedAt": "2026-08-03T04:33:28.099Z",
+  "baseUrl": "http://127.0.0.1:3119",
+  "chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "screenshots": [
+    "standalone-light-360-step-1.jpg",
+    "standalone-light-360-step-2.jpg",
+    "standalone-light-360-step-5.jpg",
+    "standalone-light-360-step-9.jpg",
+    "standalone-dark-360-step-1.jpg",
+    "standalone-dark-360-step-2.jpg",
+    "standalone-dark-360-step-5.jpg",
+    "standalone-dark-360-step-9.jpg",
+    "standalone-light-768-step-1.jpg",
+    "standalone-light-768-step-2.jpg",
+    "standalone-light-768-step-5.jpg",
+    "standalone-light-768-step-9.jpg",
+    "standalone-dark-768-step-1.jpg",
+    "standalone-dark-768-step-2.jpg",
+    "standalone-dark-768-step-5.jpg",
+    "standalone-dark-768-step-9.jpg",
+    "standalone-light-1440-step-1.jpg",
+    "standalone-light-1440-step-2.jpg",
+    "standalone-light-1440-step-5.jpg",
+    "standalone-light-1440-step-9.jpg",
+    "standalone-dark-1440-step-1.jpg",
+    "standalone-dark-1440-step-2.jpg",
+    "standalone-dark-1440-step-5.jpg",
+    "standalone-dark-1440-step-9.jpg",
+    "mobile-sticky-light-360.png",
+    "mobile-sticky-dark-360.png",
+    "no-js-standalone-full-page.jpg",
+    "no-js-standalone-enquiry-form.png",
+    "no-js-standalone-price-table.png",
+    "no-js-embedded-full-page.jpg",
+    "no-js-embedded-enquiry-form.png",
+    "no-js-embedded-price-table.png",
+    "no-js-form-post-result.png"
+  ],
+  "noJavaScript": {
+    "standalone": {
+      "steps": 9,
+      "tables": 19,
+      "forms": 1,
+      "enhancerLoaded": false
+    },
+    "embedded": {
+      "steps": 8,
+      "tables": 1,
+      "forms": 1,
+      "enhancerLoaded": false
+    },
+    "formSubmission": {
+      "interceptedRequest": {
+        "method": "POST",
+        "contentType": "application/x-www-form-urlencoded",
+        "bodyBytes": 3345,
+        "fullName": "Headless Audit",
+        "mobile": "9876543210",
+        "email": "audit@example.com",
+        "configurationPresent": true,
+        "estimatePresent": true
+      },
+      "nativeValidity": {
+        "valid": true,
+        "submitButtonAssociated": true,
+        "method": "post",
+        "action": "http://127.0.0.1:3119/api/enquiry",
+        "invalidFields": []
+      },
+      "resultUrl": "http://127.0.0.1:3119/cabin-cost-calculator?submitted=1",
+      "resultMessage": "Configuration received. Our sales team will send your fixed, itemised quotation within 48 hours.",
+      "externalLeadSent": false
+    }
+  },
+  "axe": {
+    "documentViolations": [],
+    "calculatorViolations": [],
+    "documentViolationCount": 0,
+    "calculatorViolationCount": 0
+  },
+  "interactionCls": {
+    "value": 0,
+    "entries": []
+  },
+  "tapTargets": {
+    "audited": 396,
+    "minimumWidth": 54.28,
+    "minimumHeight": 44,
+    "failures": []
+  },
+  "network": {
+    "xhrOrFetchCount": 0,
+    "pricingRequestCount": 0,
+    "requests": []
+  },
+  "lighthouse": {
+    "standalone": {
+      "runs": [
+        {
+          "run": 1,
+          "performance": 96,
+          "LCP_ms": 2088,
+          "CLS": 0,
+          "TBT_ms": 183
+        },
+        {
+          "run": 2,
+          "performance": 97,
+          "LCP_ms": 2388,
+          "CLS": 0,
+          "TBT_ms": 132
+        },
+        {
+          "run": 3,
+          "performance": 100,
+          "LCP_ms": 1816,
+          "CLS": 0,
+          "TBT_ms": 0
+        }
+      ],
+      "median": {
+        "performance": 97,
+        "LCP_ms": 2088,
+        "CLS": 0,
+        "TBT_ms": 132
+      }
+    },
+    "productLaborColony": {
+      "runs": [
+        {
+          "run": 1,
+          "performance": 82,
+          "LCP_ms": 4912,
+          "CLS": 0,
+          "TBT_ms": 82
+        },
+        {
+          "run": 2,
+          "performance": 82,
+          "LCP_ms": 4942,
+          "CLS": 0,
+          "TBT_ms": 82
+        },
+        {
+          "run": 3,
+          "performance": 81,
+          "LCP_ms": 4907,
+          "CLS": 0,
+          "TBT_ms": 128
+        }
+      ],
+      "median": {
+        "performance": 82,
+        "LCP_ms": 4912,
+        "CLS": 0,
+        "TBT_ms": 82
+      },
+      "lockfile": {
+        "url": "https://www.samanportable.com/product/labor-colony",
+        "status": 200,
+        "LCP_ms": 7487,
+        "INP_ms": null,
+        "TBT_ms": 389,
+        "CLS": 0,
+        "lighthouse_perf": 65
+      },
+      "delta": {
+        "performance": 17,
+        "LCP_ms": -2575,
+        "CLS": 0,
+        "TBT_ms": -307
+      }
+    },
+    "cleanupWarning": "EPERM, Permission denied: \\\\?\\C:\\Users\\SAMANP~1\\AppData\\Local\\Temp\\lighthouse.26123319 '\\\\?\\C:\\Users\\SAMANP~1\\AppData\\Local\\Temp\\lighthouse.26123319'"
+  },
+  "runtimeEstimate": {
+    "initialSsrTotal": "₹2,60,980",
+    "initialEnhancedTotal": "₹2,60,980",
+    "match": true
+  }
+}

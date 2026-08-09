@@ -63,6 +63,13 @@ export interface VariantProductData {
   /** Singular product noun ("Porta Cabin") used in hero copy, image alts, the
       aria-labels and the enquiry prefill. Default: preset, else the page title. */
   productName?: string;
+  /** Owner-approved H1 for the page, when the draft's L3 zone rules one that is not
+      the product noun (C-05 subpages: "Container Restaurant: Six Factory-Fitted
+      Dining Sizes"). Rendered ONLY as the visible heading — `productName` still
+      drives alts, aria-labels and the enquiry prefill, so a long marketing H1 never
+      leaks into them. Absent on every product that supplies none, so their heading
+      is byte-identical. */
+  h1?: string;
   /** Owner-approved SEO title and meta description for runtime replacement of
       stale WordPress head fields. */
   seoTitle?: string;
@@ -72,6 +79,12 @@ export interface VariantProductData {
   opener?: string;
   /** Owner-approved replacement for the legacy Description-tab HTML. */
   descriptionHtml?: string;
+  /** HOLD the Description tab empty-safe. An empty `descriptionHtml` cannot express
+      this, because the route falls through to the legacy body on any falsy value.
+      Set true only where the legacy body contradicts the rebuilt page and approved
+      replacement copy has not landed yet (C-05 close-out, Part 2): shipping nothing
+      is safer than shipping a contradiction. Cleared the moment the copy arrives. */
+  suppressLegacyDescription?: boolean;
   /** FAQPage JSON-LD that mirrors FAQs rendered in `descriptionHtml`. */
   faqSchema?: Record<string, unknown>;
   /** Visible text of the "Category" row in the Product Information block. */

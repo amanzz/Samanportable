@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sendToAllRecipients, formatFormDataForEmail } from '@/lib/mailer';
 import { EMAIL_TEMPLATES, COMPANY_INFO } from '@/config/emails';
-import { upsertLabourColonyLead } from '@/lib/zohoCrm';
+import { submitPublicFormLead, upsertLabourColonyLead } from '@/lib/zohoCrm';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -62,17 +62,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     let zohoAccepted = isLabourColony ? await upsertLabourColonyLead(req.body) : false;
     if (!zohoAccepted) {
-      const zohoData = new URLSearchParams();
-      zohoData.append('Name_First', firstName || '-');
-      zohoData.append('Name_Last', lastName || '-');
-      zohoData.append('PhoneNumber_countrycode', phone || '');
-      zohoData.append('Email', email || '');
-      zohoData.append('Dropdown1', isLabourColony ? 'Prefab Labor Colony' : (productName || 'MS Porta Cabin'));
-      zohoData.append('Dropdown', region || '-Select-');
-      zohoData.append('SingleLine', crmContext);
-
-      const zohoResponse = await fetch('https://forms.zohopublic.com/samanportable1/form/GetQuoteForm/formperma/-RQ6B5h5-oglLK1XIN6BcUhddk3Z4msxkoTE5r7OBok/htmlRecords/submit', {
-        method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: zohoData.toString()
+      // Single outbound boundary: see submitPublicFormLead in @/lib/zohoCrm.
+      const zohoResponse = await submitPublicFormLead({
+        firstName, lastName, phone, email,
+        category: isLabourColony ? 'Prefab Labor Colony' : (productName || 'MS Porta Cabin'),
+        region, context: crmContext,
       });
       zohoAccepted = zohoResponse.ok;
       if (!zohoAccepted) {

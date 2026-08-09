@@ -45,6 +45,9 @@ import {
   c01HubReturnAnchorForSlug,
 } from '../../../lib/portaCabinClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
+import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
+import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 import { removeMonetaryHtml, removeMonetarySentencesDeep } from '../../../lib/monetaryText';
@@ -369,7 +372,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // string, so the copy in the data file stays exactly as approved and
           // the placement rules stay enforced by code.
           description: injectInfoImages(
-            variantData?.descriptionHtml || productDescriptionWithoutOpener,
+            // C-05 close-out Part 2: a page whose legacy body contradicts the rebuilt
+            // page HOLDS the tab empty rather than shipping the contradiction. An empty
+            // descriptionHtml cannot express that (it is falsy and falls through), so
+            // the suppression is an explicit flag.
+            variantData?.descriptionHtml
+              || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
             variantData?.infoImages
           ),
           images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
@@ -556,6 +564,41 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     return built;
   }, [slug, transformedProduct?.slug, transformedRelatedProducts]);
 
+  const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
+  const embeddedCalculatorSummary = useMemo(() => (
+    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
+  ), [embeddedCalculatorMapping]);
+
+  const embeddedCalculatorSummaryText = useMemo(() => {
+    if (!embeddedCalculatorSummary) return '';
+    return `${embeddedCalculatorSummary.name} | ${embeddedCalculatorSummary.priceLabel}`;
+  }, [embeddedCalculatorSummary]);
+
+  const embeddedCalculatorHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
+    return renderCabinCalculatorSSR({
+      embedded: true,
+      config: {
+        productId: embeddedCalculatorMapping.productId,
+      },
+      ladderKey: embeddedCalculatorMapping.ladderKey,
+      // This page's own approved product name, never its hub's.
+      productName: product?.name,
+      pageUrl: makeCalculatorPageUrl(category, slug),
+    });
+  }, [category, slug, embeddedCalculatorMapping]);
+
+  // The calculator entry band. Sits between the buy box and the description
+  // tabs so a buyer cannot scroll past the tool without meeting it.
+  const calculatorEntryHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
+    return renderCalculatorEntrySection({
+      productId: embeddedCalculatorMapping.productId,
+      productName: product?.name || embeddedCalculatorSummary?.name || '',
+      ladderKey: embeddedCalculatorMapping.ladderKey,
+    });
+  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name]);
+
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
     setIsHydrated(true);
@@ -621,6 +664,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
             variantData={variantData || undefined}
             suppressProductEntity={suppressLegacyCommercialSurfaces}
+            metaDescription={rankMathSEO?.description}
           />
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered
@@ -631,6 +675,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(variantData?.faqSchema || rankMathSEO?.faqSchema) }}
               />
+            </Head>
+          )}
+          {embeddedCalculatorHtml && (
+            <Head>
+              <script defer src="/scripts/cabin-cost-calculator.js" />
             </Head>
           )}
 
@@ -932,6 +981,21 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               />
               )}
 
+              {/* The entry band: after the buy box, before the description tabs. */}
+              {calculatorEntryHtml && (
+                <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
+              )}
+
+              {/* One entry point per page: the dark band above is it. The white
+                  "Estimate your cabin cost / Open the calculator" strip that used
+                  to sit here was the entry point the band replaced, so it is gone.
+                  The calculator itself is unchanged and still lives here. */}
+              {embeddedCalculatorHtml && (
+                <section className="mt-4" id="cabin-calculator">
+                  <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
+                </section>
+              )}
+
               {/* Product Tabs */}
               <div className="mt-4">
                 <ProductTabs
@@ -1139,3 +1203,5 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 };
 
 export default ProductDetails;
+
+

@@ -83,6 +83,7 @@ export default function App({ Component, pageProps }: AppProps) {
     '/terms-and-conditions',
     '/prefab-solutions',
     '/my-orders',
+    '/cabin-cost-calculator',
     '/404',
     '/410',
   ]);

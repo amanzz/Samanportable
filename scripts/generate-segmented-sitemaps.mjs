@@ -50,6 +50,7 @@ const all = [...new Set([...canonicalPaths, '/product-category/container-offices
 const productSupplement = new Set([
   '/rental-services',
   '/portable-cabin-price-calculator',
+  '/cabin-cost-calculator',
   ...all.filter(pathname => pathname.startsWith('/container-rent-services/')),
 ]);
 const products = all.filter(pathname =>
@@ -66,7 +67,7 @@ const candidates = remaining.filter(pathname => locationPattern.test(pathname));
 const locations = candidates.slice(0, 213);
 const editorial = remaining.filter(pathname => !locations.includes(pathname));
 const unfilteredSegments = { products, locations, projects, editorial };
-const expectedSegments = { products: 158, locations: 213, projects: 1, editorial: 79 };
+const expectedSegments = { products: 159, locations: 213, projects: 1, editorial: 79 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -108,8 +109,12 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
     throw new Error(`Page sitemap ${name} changed from ${expected} to ${unfilteredSegments[name].length}`);
   }
 }
-if (all.length !== 451) {
-  throw new Error(`Page sitemap total changed from 451 to ${all.length}`);
+// 452 = 450 at the merge base, +1 for /cabin-cost-calculator (this branch) and
+// +1 for the page origin/static-migration added. Both sides independently wrote
+// 451 here for different pages, so git merged the literal cleanly and silently
+// left it one short — the segment gates above are what caught it.
+if (all.length !== 452) {
+  throw new Error(`Page sitemap total changed from 452 to ${all.length}`);
 }
 
 const pageMap = new Map();

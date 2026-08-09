@@ -93,3 +93,21 @@ jspm_packages/
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+
+# Scratch working directory. Held 8.8 GB on 03 Aug 2026 and was one
+# `git add -A` away from becoming permanent history.
+/tmp/
+
+# Standing rule (Fable 5, 03 Aug 2026): evidence artifacts are never
+# committed. They live beside the preview and are referenced by path in
+# the report. Anything needing a history rewrite to undo does not go in.
+/reports/*.json
+
+# Blog pagination / sidebar working reports. Different event; lifted out
+# of PR #110 on 03 Aug 2026. Files remain on disk, untracked.
+/new-issue/blog-pagination-fix-production-report-20260802.md
+/new-issue/blog-sidebar-fix-local-report-20260803.md
+/new-issue/blog-sidebar-taxonomy-draft-20260803.md
+
+# Transient lock held by verify-functional-fixture.mjs --write
+scripts/calculator/.fixture-write.lock

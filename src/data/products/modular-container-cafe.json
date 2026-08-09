@@ -1,0 +1,294 @@
+{
+  "productSlug": "modular-container-cafe",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "specPdfHref": "/specs/modular-container-cafe-technical-specification.pdf",
+  "productName": "Modular Container Cafe",
+  "h1": "Modular Container Cafe: Six Joinable Module Sizes",
+  "seoTitle": "Modular Container Cafe, Joinable Units From ₹1,48,500 | SAMAN",
+  "metaDescription": "Modular container cafe units engineered to join, six sizes from 100 to 400 sq ft. From ₹1,48,500 ex-GST with sealed inter-module joints and expandable utilities.",
+  "opener": "A SAMAN modular container cafe is a single-storey food-service module engineered from the outset to join to further modules, with sealed inter-module joints, counters aligned across the junction, coordinated facade panels and utilities sized for expansion. Six sizes run from 100 to 400 sq ft, from ₹1,48,500 ex-factory, ex-GST at base specification. Every module is fabricated new at Bengaluru and Greater Noida rather than converted from a used shipping container. Buy one module now and add a second or third later without rebuilding the first, because the joint detail and the service runs are designed before the first unit ships.",
+  "priceCaption": "Base specification price - customisations quoted separately.",
+  "suppressLegacyFaqSchema": true,
+  "explorerImageTemplate": {
+    "10x10": "/images/products/modular-container-cafe/10x10/modular-container-cafe-10x10x8-5-ft-front-left-hero.webp",
+    "20x10": "/images/products/modular-container-cafe/20x10/modular-container-cafe-20x10x8-5-ft-front-left-hero.webp",
+    "20x12": "/images/products/modular-container-cafe/20x12/modular-container-cafe-20x12x8-5-ft-front-left-hero.webp",
+    "30x10": "/images/products/modular-container-cafe/30x10/modular-container-cafe-30x10x8-5-ft-front-left-hero.webp",
+    "40x10": "/images/products/modular-container-cafe/40x10/modular-container-cafe-40x10x8-5-ft-front-left-hero.webp"
+  },
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 148500,
+      "priceInclGst": 175230,
+      "images": [
+        {
+          "src": "/images/products/modular-container-cafe/10x10/modular-container-cafe-10x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN modular container cafe module 10x10x8.5 ft, 100 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/10x10/modular-container-cafe-10x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN modular container cafe module 10x10x8.5 ft, 100 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/10x10/modular-container-cafe-10x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN modular container cafe module 10x10x8.5 ft, 100 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/10x10/modular-container-cafe-10x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN modular container cafe module 10x10x8.5 ft, 100 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/10x10/modular-container-cafe-10x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN modular container cafe module 10x10x8.5 ft, 100 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/10x10/modular-container-cafe-10x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN modular container cafe module 10x10x8.5 ft, 100 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 237600,
+      "priceInclGst": 280368,
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 270000,
+      "priceInclGst": 318600,
+      "images": [
+        {
+          "src": "/images/products/modular-container-cafe/20x10/modular-container-cafe-20x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN modular container cafe module 20x10x8.5 ft, 200 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x10/modular-container-cafe-20x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN modular container cafe module 20x10x8.5 ft, 200 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x10/modular-container-cafe-20x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN modular container cafe module 20x10x8.5 ft, 200 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x10/modular-container-cafe-20x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN modular container cafe module 20x10x8.5 ft, 200 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x10/modular-container-cafe-20x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN modular container cafe module 20x10x8.5 ft, 200 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x10/modular-container-cafe-20x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN modular container cafe module 20x10x8.5 ft, 200 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 311040,
+      "priceInclGst": 367027,
+      "images": [
+        {
+          "src": "/images/products/modular-container-cafe/20x12/modular-container-cafe-20x12x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN modular container cafe module 20x12x8.5 ft, 240 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x12/modular-container-cafe-20x12x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN modular container cafe module 20x12x8.5 ft, 240 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x12/modular-container-cafe-20x12x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN modular container cafe module 20x12x8.5 ft, 240 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x12/modular-container-cafe-20x12x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN modular container cafe module 20x12x8.5 ft, 240 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x12/modular-container-cafe-20x12x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN modular container cafe module 20x12x8.5 ft, 240 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/20x12/modular-container-cafe-20x12x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN modular container cafe module 20x12x8.5 ft, 240 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 388800,
+      "priceInclGst": 458784,
+      "images": [
+        {
+          "src": "/images/products/modular-container-cafe/30x10/modular-container-cafe-30x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN modular container cafe module 30x10x8.5 ft, 300 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/30x10/modular-container-cafe-30x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN modular container cafe module 30x10x8.5 ft, 300 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/30x10/modular-container-cafe-30x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN modular container cafe module 30x10x8.5 ft, 300 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/30x10/modular-container-cafe-30x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN modular container cafe module 30x10x8.5 ft, 300 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/30x10/modular-container-cafe-30x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN modular container cafe module 30x10x8.5 ft, 300 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/30x10/modular-container-cafe-30x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN modular container cafe module 30x10x8.5 ft, 300 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 507600,
+      "priceInclGst": 598968,
+      "images": [
+        {
+          "src": "/images/products/modular-container-cafe/40x10/modular-container-cafe-40x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN modular container cafe module 40x10x8.5 ft, 400 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/40x10/modular-container-cafe-40x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN modular container cafe module 40x10x8.5 ft, 400 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/40x10/modular-container-cafe-40x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN modular container cafe module 40x10x8.5 ft, 400 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/40x10/modular-container-cafe-40x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN modular container cafe module 40x10x8.5 ft, 400 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/40x10/modular-container-cafe-40x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN modular container cafe module 40x10x8.5 ft, 400 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/modular-container-cafe/40x10/modular-container-cafe-40x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN modular container cafe module 40x10x8.5 ft, 400 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ]
+}
