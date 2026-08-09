@@ -225,7 +225,18 @@ for (const [key, expected] of Object.entries(C08_PUBLISHED)) {
 // Gate 3 — a product with no ladder of its own renders quote mode with no
 // number. It must not inherit a rate from a parent, sibling or reference row.
 // ---------------------------------------------------------------------------
-const NO_LADDER = ['security-cabin', 'accommodation-cabin', 'prefab-modular-home', 'container-cafe'];
+// Derived, not hand-listed. This was a literal array until CALC-L4 (09 Aug
+// 2026), when container-cafe gained the six-row ladder its own pages publish
+// and the stale entry then failed the gate for having stopped being true.
+// A list of "products with no ladder" that does not ask the ladder table is a
+// second source of truth about the thing the ladder table already knows.
+// Colony products are excluded: they price from a block ladder chosen by index,
+// not from a length x width row, so they are not quote-mode products.
+const COLONY_PRODUCT_IDS = new Set(['labour-colony', 'labor-sheds', 'labor-hutments', 'prefab-labor-camps']);
+const NO_LADDER = PRODUCTS
+  .filter((product) => !COLONY_PRODUCT_IDS.has(product.id))
+  .filter((product) => !ladders.getRouteLadder(product.ladderKey))
+  .map((product) => product.id);
 const quoteFailures = [];
 console.log('\nNO-LADDER PRODUCTS — must render quote mode with no number');
 for (const productId of NO_LADDER) {

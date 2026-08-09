@@ -210,7 +210,10 @@ export const PRODUCTS: readonly ProductDefinition[] = [
   { id: 'affordable-container-homes', name: 'Affordable Container Home', subtitle: 'Lowest-rate home ladder', ladderKey: 'affordable-container-homes' },
   { id: 'luxury-container-houses', name: 'Luxury Container House', subtitle: 'Highest-rate luxury ladder', ladderKey: 'luxury-container-houses' },
   { id: 'prefab-modular-home', name: 'Prefab Modular Home', subtitle: 'Turnkey modular living space' },
-  { id: 'container-cafe', name: 'Container Cafe', subtitle: 'Cafe and restaurant unit' },
+  // ladderKey added in CALC-L4: the hub publishes a six-row ladder of its own,
+  // so this product prices from it instead of falling to quote mode. Each of
+  // the five subpages overrides this with its own key at the route.
+  { id: 'container-cafe', name: 'Container Cafe', subtitle: 'Cafe and restaurant unit', ladderKey: 'container-cafe' },
   { id: 'labour-colony', name: 'Labour Colony', subtitle: 'Worker housing blocks' },
   { id: 'labor-sheds', name: 'Labour Sheds', subtitle: 'Open-hall worker dormitories' },
   { id: 'labor-hutments', name: 'Labour Hutments', subtitle: 'Room-based worker housing' },
