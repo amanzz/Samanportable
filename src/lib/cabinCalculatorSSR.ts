@@ -2828,13 +2828,13 @@ export function renderCalculatorEntrySection(options: {
   return `<style>${CALCULATOR_ENTRY_STYLES}</style>`
     + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
     + `<picture class="calc-entry-photo">`
-    + `<source type="image/webp" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w">`
-    + `<img src="/credentials/optimized/calculator-band-v1-1926.jpg" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w" alt="" width="1926" height="817" loading="lazy" decoding="async">`
+    + `<source type="image/webp" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1216.webp 1216w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w">`
+    + `<img src="/credentials/optimized/calculator-band-v1-1926.jpg" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1216.jpg 1216w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w" alt="" width="1926" height="817" loading="lazy" decoding="async">`
     + `</picture>`
     + `<div class="calc-entry-scrim" aria-hidden="true"></div>`
     + `<div class="calc-entry-inner">`
     + `<div class="calc-entry-copy">`
-    + `<span class="calc-entry-chip"><img src="/credentials/optimized/saman-logo-band-cropped.png" alt="SAMAN Portable" width="110" height="56" loading="lazy" decoding="async"></span>`
+    + `<span class="calc-entry-chip"><img src="/credentials/optimized/saman-logo-band-cropped.webp" alt="SAMAN Portable" width="110" height="56" loading="lazy" decoding="async"></span>`
     + `<p class="calc-entry-eyebrow" data-copy-slot="eyebrow"><span class="calc-entry-dot" aria-hidden="true"></span>PRICE IT YOURSELF</p>`
     + `<h2 id="calc-entry-title" class="calc-entry-headline" data-copy-slot="headline">`
     + `${entry ? `Your ${esc(options.productName)} from <span class="calc-entry-price">${money(entry.ex as number)}</span>` : `Design your ${esc(options.productName)}`}</h2>`
