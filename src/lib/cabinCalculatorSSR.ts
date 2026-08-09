@@ -1183,6 +1183,16 @@ fieldset{
    a colour nothing else uses. */
 .cabin-calculator-ssr .calculator-header{background:linear-gradient(135deg,#1A3C2E,#16223A);border:1px solid var(--sd-hairline);border-radius:16px}
 .cabin-calculator-ssr .step-card,.cabin-calculator-ssr .calculator-grid>.estimate-card{background:var(--sd-panel);border:1px solid var(--sd-hairline);border-radius:16px;padding:20px}
+/* The line above only reaches .calculator-grid > .estimate-card - the sidebar
+   copy. Step 9 renders a SECOND estimate card inside the form, at
+   #calculator-step-9 > .estimate-card, which is not a .calculator-grid child.
+   It therefore missed the dark override and kept .estimate-card{background:
+   var(--bg-panel)}, and --bg-panel is #f0f7f2 - light mint left over from the
+   retired light/green palette. Near-white --calc-text on light mint measured
+   1.03:1 on production: the "Live estimate" heading, the floor area and the
+   total read as blank space on the quotation step. Background only here, no
+   padding, so nothing moves and the interaction stays CLS-free. */
+.cabin-calculator-ssr .estimate-card{background:var(--sd-panel);border-color:var(--sd-hairline)}
 .cabin-calculator-ssr .estimate-card .estimate-lines{background:var(--sd-inset);border-radius:16px;padding:20px;margin:0}
 .cabin-calculator-ssr .construction-disclosure,.cabin-calculator-ssr .calculator-intro{background:var(--sd-panel);border:1px solid var(--sd-hairline);border-radius:16px;padding:16px 20px;color:var(--sd-text)}
 .cabin-calculator-ssr .product-tiles .calc-choice>span,.cabin-calculator-ssr .calc-choice>span{background:var(--sd-card);border:1px solid var(--sd-hairline);border-radius:12px;color:var(--sd-text)}
@@ -1616,7 +1626,17 @@ fieldset{
   background: var(--calc-inset); color: var(--calc-text);
   border: 1px solid var(--calc-control-border); border-radius: 6px;
 }
-.cabin-calculator-ssr .ec-stepper input {
+/* The [type="number"] is load-bearing, not decoration. The density rule
+   .cabin-calculator-ssr .calc-step input[type="number"] { padding: 6px 10px }
+   is (0,3,1); a plain .ec-stepper input is (0,2,1) and LOSES to it. That put
+   20px of horizontal padding inside a 30px border-box control, leaving an 8px
+   content box for a digit needing 8.1px, so the value painted zero pixels and
+   the field read as an empty box between - and +. Matching the attribute here
+   reaches (0,3,1) and wins on source order. Step 7 never showed the bug only
+   because #calculator-step-7 > .quantity-row input is (1,2,1) and outranks the
+   density rule by an id; step 6 had no such escape hatch. Do not drop the
+   attribute selector from this rule or from the two overrides below. */
+.cabin-calculator-ssr .ec-stepper input[type="number"] {
   width: 34px; min-width: 34px; height: 26px; min-height: 26px;
   padding: 0; text-align: center; font-size: 12px;
 }
@@ -1689,7 +1709,7 @@ fieldset{
 .cabin-calculator-ssr .ec-name small { font-size: 9px; line-height: 1.2; }
 .cabin-calculator-ssr .ec-card { padding: 5px 6px; }
 .cabin-calculator-ssr .ec-stepper button { width: 22px; min-width: 22px; height: 24px; min-height: 24px; font-size: 13px; }
-.cabin-calculator-ssr .ec-stepper input { width: 30px; min-width: 30px; height: 24px; min-height: 24px; font-size: 11px; }
+.cabin-calculator-ssr .ec-stepper input[type="number"] { width: 30px; min-width: 30px; height: 24px; min-height: 24px; font-size: 11px; }
 .cabin-calculator-ssr .socket-nudge input { width: 46px; min-width: 46px; font-size: 10px; }
 
 /* The nudge input needs room for three digits without clipping. */
@@ -1805,7 +1825,7 @@ fieldset{
    steppers; the compact size is desktop-only, where the pointer is fine. */
 @media (max-width: 1023px) {
   .cabin-calculator-ssr .ec-stepper button { width: 44px; min-width: 44px; height: 44px; min-height: 44px; font-size: 16px; }
-  .cabin-calculator-ssr .ec-stepper input { height: 44px; min-height: 44px; width: 46px; min-width: 46px; font-size: 14px; }
+  .cabin-calculator-ssr .ec-stepper input[type="number"] { height: 44px; min-height: 44px; width: 46px; min-width: 46px; font-size: 14px; }
 }
 .cabin-calculator-ssr .ec-stepper button:disabled { opacity: 0.35; cursor: default; }`;
 
