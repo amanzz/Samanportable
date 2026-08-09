@@ -33,8 +33,10 @@
  *   sizes and the calculator renders quote mode rather than a derived number.
  */
 
-/** GST is 18% wherever the estimate shows a tax-inclusive figure. */
-export const BASE_CABIN_GST_RATE = 0.18;
+/** GST wherever the estimate shows a tax-inclusive figure. Not a second rate:
+ *  the one statutory value from taxRates.ts, re-exported under the name this
+ *  module already published. */
+export { GST_RATE as BASE_CABIN_GST_RATE } from '@/lib/taxRates';
 
 export interface FixedRateSize {
   /** Size as SAMAN wrote it, e.g. "4x4x7". */

@@ -1,0 +1,61 @@
+{
+  "gstRateConstant": 0.18,
+  "measuredAt": null,
+  "rows": [
+    {
+      "n": 1,
+      "label": "Porta cabin 20x10 ft, qty 1",
+      "exGstTypical": 210000,
+      "inclusiveTypical": 221000,
+      "inclusiveLow": 194000,
+      "inclusiveHigh": 247000,
+      "arithmeticallyCorrectInclusive": 247800,
+      "gapToCorrect": 26800,
+      "impliedGstRate": 0.05238095238095242
+    },
+    {
+      "n": 2,
+      "label": "Container office 20x8 ft, qty 1",
+      "exGstTypical": 168000,
+      "inclusiveTypical": 176000,
+      "inclusiveLow": 155000,
+      "inclusiveHigh": 198000,
+      "arithmeticallyCorrectInclusive": 198240,
+      "gapToCorrect": 22240,
+      "impliedGstRate": 0.04761904761904767
+    },
+    {
+      "n": 3,
+      "label": "Portable cabin 40x10 ft, qty 1",
+      "exGstTypical": 420000,
+      "inclusiveTypical": 441000,
+      "inclusiveLow": 388000,
+      "inclusiveHigh": 494000,
+      "arithmeticallyCorrectInclusive": 495600,
+      "gapToCorrect": 54600,
+      "impliedGstRate": 0.050000000000000044
+    },
+    {
+      "n": 4,
+      "label": "Porta cabin 20x10 ft + 1 attached toilet",
+      "exGstTypical": 250000,
+      "inclusiveTypical": 261000,
+      "inclusiveLow": 229000,
+      "inclusiveHigh": 292000,
+      "arithmeticallyCorrectInclusive": 295000,
+      "gapToCorrect": 34000,
+      "impliedGstRate": 0.04400000000000004
+    },
+    {
+      "n": 5,
+      "label": "Container office 20x8 ft + 4 workstations + 4 chairs",
+      "exGstTypical": 224000,
+      "inclusiveTypical": 232000,
+      "inclusiveLow": 203000,
+      "inclusiveHigh": 260000,
+      "arithmeticallyCorrectInclusive": 264320,
+      "gapToCorrect": 32320,
+      "impliedGstRate": 0.03571428571428581
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "gstRateConstant": 0.18,
+  "measuredAt": null,
+  "rows": [
+    {
+      "n": 1,
+      "label": "Porta cabin 20x10 ft, qty 1",
+      "exGstTypical": 210000,
+      "inclusiveTypical": 248000,
+      "inclusiveLow": 218000,
+      "inclusiveHigh": 278000,
+      "arithmeticallyCorrectInclusive": 247800,
+      "gapToCorrect": -200,
+      "impliedGstRate": 0.18095238095238098,
+      "addOnTypicalUntaxed": 0,
+      "gstForegoneOnAddOns": 0
+    },
+    {
+      "n": 2,
+      "label": "Container office 20x8 ft, qty 1",
+      "exGstTypical": 168000,
+      "inclusiveTypical": 198000,
+      "inclusiveLow": 174000,
+      "inclusiveHigh": 222000,
+      "arithmeticallyCorrectInclusive": 198240,
+      "gapToCorrect": 240,
+      "impliedGstRate": 0.1785714285714286,
+      "addOnTypicalUntaxed": 0,
+      "gstForegoneOnAddOns": 0
+    },
+    {
+      "n": 3,
+      "label": "Portable cabin 40x10 ft, qty 1",
+      "exGstTypical": 420000,
+      "inclusiveTypical": 496000,
+      "inclusiveLow": 436000,
+      "inclusiveHigh": 555000,
+      "arithmeticallyCorrectInclusive": 495600,
+      "gapToCorrect": -400,
+      "impliedGstRate": 0.18095238095238098,
+      "addOnTypicalUntaxed": 0,
+      "gstForegoneOnAddOns": 0
+    },
+    {
+      "n": 4,
+      "label": "Porta cabin 20x10 ft + 1 attached toilet",
+      "exGstTypical": 250000,
+      "inclusiveTypical": 288000,
+      "inclusiveLow": 253000,
+      "inclusiveHigh": 323000,
+      "arithmeticallyCorrectInclusive": 295000,
+      "gapToCorrect": 7000,
+      "impliedGstRate": 0.1519999999999999,
+      "addOnTypicalUntaxed": 40000,
+      "gstForegoneOnAddOns": 7200
+    },
+    {
+      "n": 5,
+      "label": "Container office 20x8 ft + 4 workstations + 4 chairs",
+      "exGstTypical": 224000,
+      "inclusiveTypical": 254000,
+      "inclusiveLow": 222000,
+      "inclusiveHigh": 284000,
+      "arithmeticallyCorrectInclusive": 264320,
+      "gapToCorrect": 10320,
+      "impliedGstRate": 0.1339285714285714,
+      "addOnTypicalUntaxed": 56000,
+      "gstForegoneOnAddOns": 10080
+    }
+  ]
+}
