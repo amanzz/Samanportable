@@ -1,0 +1,611 @@
+{
+  "step6": {
+    "tag": "step6 electrical stepper",
+    "name": "electrical[LED panel light]",
+    "computed": {
+      "width": "30px",
+      "minWidth": "30px",
+      "paddingLeft": "10px",
+      "paddingRight": "10px",
+      "fontSize": "13px",
+      "boxSizing": "border-box",
+      "color": "rgb(234, 240, 247)",
+      "backgroundColor": "rgb(18, 28, 49)",
+      "textAlign": "center",
+      "borderLeftWidth": "1px",
+      "borderRightWidth": "1px"
+    },
+    "box": {
+      "w": 30,
+      "h": 24
+    },
+    "contentWidth": 8,
+    "requiredTextWidth": 8.1,
+    "rules": [
+      {
+        "selector": "*",
+        "media": null,
+        "specificity": [
+          0,
+          0,
+          0
+        ],
+        "order": 8,
+        "declarations": {
+          "box-sizing": "border-box"
+        }
+      },
+      {
+        "selector": "input",
+        "media": null,
+        "specificity": [
+          0,
+          0,
+          1
+        ],
+        "order": 23,
+        "declarations": {
+          "padding": "0px",
+          "padding-left": "0px",
+          "padding-right": "0px",
+          "font-size": "100%",
+          "color": "inherit"
+        }
+      },
+      {
+        "selector": "input",
+        "media": null,
+        "specificity": [
+          0,
+          0,
+          1
+        ],
+        "order": 58,
+        "declarations": {
+          "font-size": "inherit"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr *",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          0
+        ],
+        "order": 1937,
+        "declarations": {
+          "box-sizing": "border-box"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1938,
+        "declarations": {
+          "font-size": "inherit"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1939,
+        "declarations": {
+          "color": "var(--calc-text)",
+          "background": "var(--calc-card)"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1981,
+        "declarations": {
+          "padding": "0.55rem 0.7rem",
+          "padding-left": "0.7rem",
+          "padding-right": "0.7rem",
+          "width": "100%"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 2129,
+        "declarations": {
+          "color": "var(--sd-text)",
+          "background": "var(--sd-inset)"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .calc-step input[type=\"number\"]",
+        "media": null,
+        "specificity": [
+          0,
+          3,
+          1
+        ],
+        "order": 2157,
+        "declarations": {
+          "padding": "6px 10px",
+          "padding-left": "10px",
+          "padding-right": "10px",
+          "font-size": "13px"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .ec-stepper input",
+        "media": null,
+        "specificity": [
+          0,
+          2,
+          1
+        ],
+        "order": 2243,
+        "declarations": {
+          "padding": "0px",
+          "padding-left": "0px",
+          "padding-right": "0px",
+          "width": "34px",
+          "min-width": "34px",
+          "font-size": "12px",
+          "text-align": "center"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .ec-stepper input",
+        "media": null,
+        "specificity": [
+          0,
+          2,
+          1
+        ],
+        "order": 2272,
+        "declarations": {
+          "width": "30px",
+          "min-width": "30px",
+          "font-size": "11px"
+        }
+      }
+    ]
+  },
+  "step7": {
+    "tag": "step7 addOns stepper",
+    "name": "addOns[Full-Height Dry Partition]",
+    "computed": {
+      "width": "30px",
+      "minWidth": "30px",
+      "paddingLeft": "4px",
+      "paddingRight": "4px",
+      "fontSize": "13px",
+      "boxSizing": "border-box",
+      "color": "rgb(234, 240, 247)",
+      "backgroundColor": "rgb(18, 28, 49)",
+      "textAlign": "center",
+      "borderLeftWidth": "1px",
+      "borderRightWidth": "1px"
+    },
+    "box": {
+      "w": 30,
+      "h": 24
+    },
+    "contentWidth": 20,
+    "requiredTextWidth": 8.1,
+    "rules": [
+      {
+        "selector": "*",
+        "media": null,
+        "specificity": [
+          0,
+          0,
+          0
+        ],
+        "order": 8,
+        "declarations": {
+          "box-sizing": "border-box"
+        }
+      },
+      {
+        "selector": "input",
+        "media": null,
+        "specificity": [
+          0,
+          0,
+          1
+        ],
+        "order": 23,
+        "declarations": {
+          "padding": "0px",
+          "padding-left": "0px",
+          "padding-right": "0px",
+          "font-size": "100%",
+          "color": "inherit"
+        }
+      },
+      {
+        "selector": "input",
+        "media": null,
+        "specificity": [
+          0,
+          0,
+          1
+        ],
+        "order": 58,
+        "declarations": {
+          "font-size": "inherit"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr *",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          0
+        ],
+        "order": 1937,
+        "declarations": {
+          "box-sizing": "border-box"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1938,
+        "declarations": {
+          "font-size": "inherit"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1939,
+        "declarations": {
+          "color": "var(--calc-text)",
+          "background": "var(--calc-card)"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1981,
+        "declarations": {
+          "padding": "0.55rem 0.7rem",
+          "padding-left": "0.7rem",
+          "padding-right": "0.7rem",
+          "width": "100%"
+        }
+      },
+      {
+        "selector": ".quantity-row input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1993,
+        "declarations": {
+          "width": "5.2rem"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 2129,
+        "declarations": {
+          "color": "var(--sd-text)",
+          "background": "var(--sd-inset)"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .calc-step input[type=\"number\"]",
+        "media": null,
+        "specificity": [
+          0,
+          3,
+          1
+        ],
+        "order": 2157,
+        "declarations": {
+          "padding": "6px 10px",
+          "padding-left": "10px",
+          "padding-right": "10px",
+          "font-size": "13px"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr #calculator-step-7 > .quantity-row input",
+        "media": "(min-width: 1024px)",
+        "specificity": [
+          1,
+          2,
+          1
+        ],
+        "order": 2192,
+        "declarations": {
+          "padding": "2px 4px",
+          "padding-left": "4px",
+          "padding-right": "4px",
+          "width": "30px",
+          "min-width": "30px",
+          "text-align": "center"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .ec-stepper input",
+        "media": null,
+        "specificity": [
+          0,
+          2,
+          1
+        ],
+        "order": 2243,
+        "declarations": {
+          "padding": "0px",
+          "padding-left": "0px",
+          "padding-right": "0px",
+          "width": "34px",
+          "min-width": "34px",
+          "font-size": "12px",
+          "text-align": "center"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .ec-stepper input",
+        "media": null,
+        "specificity": [
+          0,
+          2,
+          1
+        ],
+        "order": 2272,
+        "declarations": {
+          "width": "30px",
+          "min-width": "30px",
+          "font-size": "11px"
+        }
+      }
+    ]
+  },
+  "socketPct": {
+    "tag": "step6 wall percentage",
+    "name": "socket-reception-front-position",
+    "computed": {
+      "width": "44px",
+      "minWidth": "44px",
+      "paddingLeft": "10px",
+      "paddingRight": "10px",
+      "fontSize": "13px",
+      "boxSizing": "border-box",
+      "color": "rgb(234, 240, 247)",
+      "backgroundColor": "rgb(18, 28, 49)",
+      "textAlign": "center",
+      "borderLeftWidth": "1px",
+      "borderRightWidth": "1px"
+    },
+    "box": {
+      "w": 44,
+      "h": 26
+    },
+    "contentWidth": 22,
+    "requiredTextWidth": 16,
+    "rules": [
+      {
+        "selector": "*",
+        "media": null,
+        "specificity": [
+          0,
+          0,
+          0
+        ],
+        "order": 8,
+        "declarations": {
+          "box-sizing": "border-box"
+        }
+      },
+      {
+        "selector": "input",
+        "media": null,
+        "specificity": [
+          0,
+          0,
+          1
+        ],
+        "order": 23,
+        "declarations": {
+          "padding": "0px",
+          "padding-left": "0px",
+          "padding-right": "0px",
+          "font-size": "100%",
+          "color": "inherit"
+        }
+      },
+      {
+        "selector": "input",
+        "media": null,
+        "specificity": [
+          0,
+          0,
+          1
+        ],
+        "order": 58,
+        "declarations": {
+          "font-size": "inherit"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr *",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          0
+        ],
+        "order": 1937,
+        "declarations": {
+          "box-sizing": "border-box"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1938,
+        "declarations": {
+          "font-size": "inherit"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1939,
+        "declarations": {
+          "color": "var(--calc-text)",
+          "background": "var(--calc-card)"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 1981,
+        "declarations": {
+          "padding": "0.55rem 0.7rem",
+          "padding-left": "0.7rem",
+          "padding-right": "0.7rem",
+          "width": "100%"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr input",
+        "media": null,
+        "specificity": [
+          0,
+          1,
+          1
+        ],
+        "order": 2129,
+        "declarations": {
+          "color": "var(--sd-text)",
+          "background": "var(--sd-inset)"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .calc-step input[type=\"number\"]",
+        "media": null,
+        "specificity": [
+          0,
+          3,
+          1
+        ],
+        "order": 2157,
+        "declarations": {
+          "padding": "6px 10px",
+          "padding-left": "10px",
+          "padding-right": "10px",
+          "font-size": "13px"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .socket-nudge input",
+        "media": null,
+        "specificity": [
+          0,
+          2,
+          1
+        ],
+        "order": 2252,
+        "declarations": {
+          "padding": "0px 2px",
+          "padding-left": "2px",
+          "padding-right": "2px",
+          "width": "40px",
+          "min-width": "40px",
+          "font-size": "11px",
+          "text-align": "center"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .socket-nudge input",
+        "media": null,
+        "specificity": [
+          0,
+          2,
+          1
+        ],
+        "order": 2273,
+        "declarations": {
+          "width": "46px",
+          "min-width": "46px",
+          "font-size": "10px"
+        }
+      },
+      {
+        "selector": ".cabin-calculator-ssr .socket-nudge input",
+        "media": null,
+        "specificity": [
+          0,
+          2,
+          1
+        ],
+        "order": 2274,
+        "declarations": {
+          "width": "44px",
+          "min-width": "44px"
+        }
+      }
+    ]
+  }
+}

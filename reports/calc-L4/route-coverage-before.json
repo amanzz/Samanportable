@@ -1,0 +1,1238 @@
+{
+  "total": 123,
+  "withCalculator": 48,
+  "withoutCalculator": 75,
+  "calculatorButNoLadder": 21,
+  "rows": [
+    {
+      "route": "/product/container-cafe",
+      "category": "container-cafe",
+      "slug": null,
+      "hasCalculator": true,
+      "productId": "container-cafe",
+      "ladderKey": "container-cafe",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/container-cafe/container-coffee-shop",
+      "category": "container-cafe",
+      "slug": "container-coffee-shop",
+      "hasCalculator": true,
+      "productId": "container-cafe",
+      "ladderKey": "container-coffee-shop",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/container-cafe/container-hotel",
+      "category": "container-cafe",
+      "slug": "container-hotel",
+      "hasCalculator": true,
+      "productId": "container-cafe",
+      "ladderKey": "container-hotel",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/container-cafe/container-restaurant",
+      "category": "container-cafe",
+      "slug": "container-restaurant",
+      "hasCalculator": true,
+      "productId": "container-cafe",
+      "ladderKey": "container-restaurant",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/container-cafe/food-truck-containers",
+      "category": "container-cafe",
+      "slug": "food-truck-containers",
+      "hasCalculator": true,
+      "productId": "container-cafe",
+      "ladderKey": "food-truck-containers",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/container-cafe/modular-container-cafe",
+      "category": "container-cafe",
+      "slug": "modular-container-cafe",
+      "hasCalculator": true,
+      "productId": "container-cafe",
+      "ladderKey": "modular-container-cafe",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/container-houses",
+      "category": "container-houses",
+      "slug": null,
+      "hasCalculator": true,
+      "productId": "container-houses",
+      "ladderKey": "container-houses",
+      "ladderRows": 6,
+      "behaviour": "priced from own ladder (6 rows)"
+    },
+    {
+      "route": "/product/container-houses/affordable-container-homes",
+      "category": "container-houses",
+      "slug": "affordable-container-homes",
+      "hasCalculator": true,
+      "productId": "affordable-container-homes",
+      "ladderKey": "affordable-container-homes",
+      "ladderRows": 6,
+      "behaviour": "priced from own ladder (6 rows)"
+    },
+    {
+      "route": "/product/container-houses/luxury-container-houses",
+      "category": "container-houses",
+      "slug": "luxury-container-houses",
+      "hasCalculator": true,
+      "productId": "luxury-container-houses",
+      "ladderKey": "luxury-container-houses",
+      "ladderRows": 6,
+      "behaviour": "priced from own ladder (6 rows)"
+    },
+    {
+      "route": "/product/container-houses/prefab-container-homes",
+      "category": "container-houses",
+      "slug": "prefab-container-homes",
+      "hasCalculator": true,
+      "productId": "prefab-container-homes",
+      "ladderKey": "prefab-container-homes",
+      "ladderRows": 6,
+      "behaviour": "priced from own ladder (6 rows)"
+    },
+    {
+      "route": "/product/container-houses/prefabricated-container-house",
+      "category": "container-houses",
+      "slug": "prefabricated-container-house",
+      "hasCalculator": true,
+      "productId": "container-houses",
+      "ladderKey": "prefabricated-container-house",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/container-houses/shipping-container-homes",
+      "category": "container-houses",
+      "slug": "shipping-container-homes",
+      "hasCalculator": true,
+      "productId": "shipping-container-homes",
+      "ladderKey": "shipping-container-homes",
+      "ladderRows": 6,
+      "behaviour": "priced from own ladder (6 rows)"
+    },
+    {
+      "route": "/product/container-offices",
+      "category": "container-offices",
+      "slug": null,
+      "hasCalculator": true,
+      "productId": "container-office",
+      "ladderKey": "container-offices",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/container-offices/container-office-cabin",
+      "category": "container-offices",
+      "slug": "container-office-cabin",
+      "hasCalculator": true,
+      "productId": "container-office",
+      "ladderKey": "container-office-cabin",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/container-offices/shipping-container-office",
+      "category": "container-offices",
+      "slug": "shipping-container-office",
+      "hasCalculator": true,
+      "productId": "container-office",
+      "ladderKey": "shipping-container-office",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/container-offices/site-office-container",
+      "category": "container-offices",
+      "slug": "site-office-container",
+      "hasCalculator": true,
+      "productId": "site-office",
+      "ladderKey": "site-office-container",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/eps-panel",
+      "category": "eps-panel",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/glass-wool-panel",
+      "category": "glass-wool-panel",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/industrial-sheds",
+      "category": "industrial-sheds",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/industrial-sheds/commercial-sheds",
+      "category": "industrial-sheds",
+      "slug": "commercial-sheds",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/industrial-sheds/garden-sheds",
+      "category": "industrial-sheds",
+      "slug": "garden-sheds",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/industrial-sheds/portable-sheds",
+      "category": "industrial-sheds",
+      "slug": "portable-sheds",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/industrial-sheds/prefab-steel-house",
+      "category": "industrial-sheds",
+      "slug": "prefab-steel-house",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/industrial-sheds/prefabricated-industrial-shed",
+      "category": "industrial-sheds",
+      "slug": "prefabricated-industrial-shed",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/industrial-sheds/prefabricated-warehouses",
+      "category": "industrial-sheds",
+      "slug": "prefabricated-warehouses",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/industrial-sheds/steel-sheds",
+      "category": "industrial-sheds",
+      "slug": "steel-sheds",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/industrial-sheds/storage-sheds",
+      "category": "industrial-sheds",
+      "slug": "storage-sheds",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/labor-colony",
+      "category": "labor-colony",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/labor-colony/labor-hutments",
+      "category": "labor-colony",
+      "slug": "labor-hutments",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/labor-colony/labor-sheds",
+      "category": "labor-colony",
+      "slug": "labor-sheds",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/labor-colony/prefab-labor-camps",
+      "category": "labor-colony",
+      "slug": "prefab-labor-camps",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions",
+      "category": "peb-constructions",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/construction-prefabricated-buildings",
+      "category": "peb-constructions",
+      "slug": "construction-prefabricated-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/engineered-buildings",
+      "category": "peb-constructions",
+      "slug": "engineered-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/engineered-steel-structures",
+      "category": "peb-constructions",
+      "slug": "engineered-steel-structures",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/peb-building-manufacturers",
+      "category": "peb-constructions",
+      "slug": "peb-building-manufacturers",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/peb-steel-structure",
+      "category": "peb-constructions",
+      "slug": "peb-steel-structure",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/pre-engineered-building-suppliers",
+      "category": "peb-constructions",
+      "slug": "pre-engineered-building-suppliers",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/pre-engineered-structures",
+      "category": "peb-constructions",
+      "slug": "pre-engineered-structures",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/pre-engineering-structures",
+      "category": "peb-constructions",
+      "slug": "pre-engineering-structures",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/prefab-building-construction",
+      "category": "peb-constructions",
+      "slug": "prefab-building-construction",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/prefab-modular-construction",
+      "category": "peb-constructions",
+      "slug": "prefab-modular-construction",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/peb-constructions/prefabricated-construction",
+      "category": "peb-constructions",
+      "slug": "prefabricated-construction",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/pir-panel",
+      "category": "pir-panel",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/porta-cabins",
+      "category": "porta-cabins",
+      "slug": null,
+      "hasCalculator": true,
+      "productId": "porta-cabin",
+      "ladderKey": "porta-cabins",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/porta-cabins/low-cost-porta-cabin",
+      "category": "porta-cabins",
+      "slug": "low-cost-porta-cabin",
+      "hasCalculator": true,
+      "productId": "porta-cabin",
+      "ladderKey": "low-cost-porta-cabin",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/porta-cabins/luxury-porta-cabin",
+      "category": "porta-cabins",
+      "slug": "luxury-porta-cabin",
+      "hasCalculator": true,
+      "productId": "porta-cabin",
+      "ladderKey": "luxury-porta-cabin",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/porta-cabins/mini-porta-cabin",
+      "category": "porta-cabins",
+      "slug": "mini-porta-cabin",
+      "hasCalculator": true,
+      "productId": "porta-cabin",
+      "ladderKey": "mini-porta-cabin",
+      "ladderRows": 4,
+      "behaviour": "priced from own ladder (4 rows)"
+    },
+    {
+      "route": "/product/porta-cabins/ms-porta-cabin",
+      "category": "porta-cabins",
+      "slug": "ms-porta-cabin",
+      "hasCalculator": true,
+      "productId": "porta-cabin",
+      "ladderKey": "ms-porta-cabin",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/porta-cabins/porta-cabin-shop",
+      "category": "porta-cabins",
+      "slug": "porta-cabin-shop",
+      "hasCalculator": true,
+      "productId": "porta-cabin",
+      "ladderKey": "porta-cabin-shop",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/porta-cabins/porta-cabin-with-toilet",
+      "category": "porta-cabins",
+      "slug": "porta-cabin-with-toilet",
+      "hasCalculator": true,
+      "productId": "toilet-cabin",
+      "ladderKey": "porta-cabin-with-toilet",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/porta-cabins/portacabin-office",
+      "category": "porta-cabins",
+      "slug": "portacabin-office",
+      "hasCalculator": true,
+      "productId": "office-cabin",
+      "ladderKey": "portacabin-office",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/porta-cabins/steel-porta-cabin",
+      "category": "porta-cabins",
+      "slug": "steel-porta-cabin",
+      "hasCalculator": true,
+      "productId": "porta-cabin",
+      "ladderKey": "steel-porta-cabin",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/portable-cabin",
+      "category": "portable-cabin",
+      "slug": null,
+      "hasCalculator": true,
+      "productId": "portable-cabin",
+      "ladderKey": "portable-cabin",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/portable-cabin/buy-portable-cabin",
+      "category": "portable-cabin",
+      "slug": "buy-portable-cabin",
+      "hasCalculator": true,
+      "productId": "portable-cabin",
+      "ladderKey": "buy-portable-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/portable-cabin/container-portable-cabin",
+      "category": "portable-cabin",
+      "slug": "container-portable-cabin",
+      "hasCalculator": true,
+      "productId": "portable-cabin",
+      "ladderKey": "container-portable-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/portable-cabin/modular-portable-cabin",
+      "category": "portable-cabin",
+      "slug": "modular-portable-cabin",
+      "hasCalculator": true,
+      "productId": "portable-cabin",
+      "ladderKey": "modular-portable-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/portable-cabin/ms-portable-cabin",
+      "category": "portable-cabin",
+      "slug": "ms-portable-cabin",
+      "hasCalculator": true,
+      "productId": "portable-cabin",
+      "ladderKey": "ms-portable-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/portable-cabin/office-portable-cabin",
+      "category": "portable-cabin",
+      "slug": "office-portable-cabin",
+      "hasCalculator": true,
+      "productId": "office-cabin",
+      "ladderKey": "office-portable-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/portable-cabin/portable-cabin-building",
+      "category": "portable-cabin",
+      "slug": "portable-cabin-building",
+      "hasCalculator": true,
+      "productId": "portable-cabin",
+      "ladderKey": "portable-cabin-building",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/portable-cabin/portable-cabin-with-toilet",
+      "category": "portable-cabin",
+      "slug": "portable-cabin-with-toilet",
+      "hasCalculator": true,
+      "productId": "toilet-cabin",
+      "ladderKey": "portable-cabin-with-toilet",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/portable-cabin/portable-shop-cabin",
+      "category": "portable-cabin",
+      "slug": "portable-shop-cabin",
+      "hasCalculator": true,
+      "productId": "portable-cabin",
+      "ladderKey": "portable-shop-cabin",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/portable-cabin/prefabricated-portable-cabin",
+      "category": "portable-cabin",
+      "slug": "prefabricated-portable-cabin",
+      "hasCalculator": true,
+      "productId": "portable-cabin",
+      "ladderKey": "prefabricated-portable-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/portable-cabin/small-portable-cabin",
+      "category": "portable-cabin",
+      "slug": "small-portable-cabin",
+      "hasCalculator": true,
+      "productId": "portable-cabin",
+      "ladderKey": "small-portable-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/portable-office",
+      "category": "portable-office",
+      "slug": null,
+      "hasCalculator": true,
+      "productId": "office-cabin",
+      "ladderKey": "portable-office",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/portable-office/modern-office-cabin",
+      "category": "portable-office",
+      "slug": "modern-office-cabin",
+      "hasCalculator": true,
+      "productId": "office-cabin",
+      "ladderKey": "modern-office-cabin",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/portable-office/portable-office-container",
+      "category": "portable-office",
+      "slug": "portable-office-container",
+      "hasCalculator": true,
+      "productId": "site-office",
+      "ladderKey": "portable-office-container",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/portable-office/prefabricated-office-cabins",
+      "category": "portable-office",
+      "slug": "prefabricated-office-cabins",
+      "hasCalculator": true,
+      "productId": "office-cabin",
+      "ladderKey": "prefabricated-office-cabins",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/portable-office/readymade-office-cabin",
+      "category": "portable-office",
+      "slug": "readymade-office-cabin",
+      "hasCalculator": true,
+      "productId": "office-cabin",
+      "ladderKey": "readymade-office-cabin",
+      "ladderRows": 9,
+      "behaviour": "priced from own ladder (9 rows)"
+    },
+    {
+      "route": "/product/portable-office/small-office-cabin",
+      "category": "portable-office",
+      "slug": "small-office-cabin",
+      "hasCalculator": true,
+      "productId": "office-cabin",
+      "ladderKey": "small-office-cabin",
+      "ladderRows": 3,
+      "behaviour": "priced from own ladder (3 rows)"
+    },
+    {
+      "route": "/product/portable-toilet",
+      "category": "portable-toilet",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/portable-toilet/mobile-toilet",
+      "category": "portable-toilet",
+      "slug": "mobile-toilet",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/portable-toilet/mobile-toilet-cabin",
+      "category": "portable-toilet",
+      "slug": "mobile-toilet-cabin",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/portable-toilet/movable-toilet-cabin",
+      "category": "portable-toilet",
+      "slug": "movable-toilet-cabin",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/portable-toilet/portable-toilet-cabin",
+      "category": "portable-toilet",
+      "slug": "portable-toilet-cabin",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/portable-toilet/prefabricated-toilet",
+      "category": "portable-toilet",
+      "slug": "prefabricated-toilet",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/portable-toilet/readymade-toilet-cabin",
+      "category": "portable-toilet",
+      "slug": "readymade-toilet-cabin",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/pre-engineered-buildings",
+      "category": "pre-engineered-buildings",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/pre-engineered-buildings/engineered-metal-buildings",
+      "category": "pre-engineered-buildings",
+      "slug": "engineered-metal-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/pre-engineered-buildings/engineered-steel-buildings",
+      "category": "pre-engineered-buildings",
+      "slug": "engineered-steel-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/pre-engineered-buildings/pre-engineered-building-manufacturers",
+      "category": "pre-engineered-buildings",
+      "slug": "pre-engineered-building-manufacturers",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/pre-engineered-buildings/pre-engineered-building-structures",
+      "category": "pre-engineered-buildings",
+      "slug": "pre-engineered-building-structures",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/pre-engineered-buildings/pre-engineered-metal-building-manufacturers",
+      "category": "pre-engineered-buildings",
+      "slug": "pre-engineered-metal-building-manufacturers",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/pre-engineered-buildings/pre-engineered-steel-building-manufacturers",
+      "category": "pre-engineered-buildings",
+      "slug": "pre-engineered-steel-building-manufacturers",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/pre-engineered-buildings/prefab-building-manufacturers",
+      "category": "pre-engineered-buildings",
+      "slug": "prefab-building-manufacturers",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings",
+      "category": "prefab-buildings",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings/buy-container-buildings",
+      "category": "prefab-buildings",
+      "slug": "buy-container-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings/buy-prefabricated-buildings",
+      "category": "prefab-buildings",
+      "slug": "buy-prefabricated-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings/modular-office-buildings",
+      "category": "prefab-buildings",
+      "slug": "modular-office-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings/prefab-commercial-buildings",
+      "category": "prefab-buildings",
+      "slug": "prefab-commercial-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings/prefab-industrial-buildings",
+      "category": "prefab-buildings",
+      "slug": "prefab-industrial-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings/prefab-manufacturing-buildings",
+      "category": "prefab-buildings",
+      "slug": "prefab-manufacturing-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings/prefab-office-buildings",
+      "category": "prefab-buildings",
+      "slug": "prefab-office-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings/prefabricated-steel-buildings",
+      "category": "prefab-buildings",
+      "slug": "prefabricated-steel-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefab-buildings/steel-prefab-buildings",
+      "category": "prefab-buildings",
+      "slug": "steel-prefab-buildings",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefabricated-houses",
+      "category": "prefabricated-houses",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefabricated-houses/bunkhouse-cabin",
+      "category": "prefabricated-houses",
+      "slug": "bunkhouse-cabin",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefabricated-houses/porta-cabin-house",
+      "category": "prefabricated-houses",
+      "slug": "porta-cabin-house",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefabricated-houses/portable-cabin-house",
+      "category": "prefabricated-houses",
+      "slug": "portable-cabin-house",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefabricated-houses/prefab-site-office",
+      "category": "prefabricated-houses",
+      "slug": "prefab-site-office",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefabricated-houses/prefabricated-bunkhouse",
+      "category": "prefabricated-houses",
+      "slug": "prefabricated-bunkhouse",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/prefabricated-houses/saman-prefab-office",
+      "category": "prefabricated-houses",
+      "slug": "saman-prefab-office",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/puf-panel",
+      "category": "puf-panel",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/puf-panel/cold-storage-puf-panel",
+      "category": "puf-panel",
+      "slug": "cold-storage-puf-panel",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/puf-panel/puf-panel-house",
+      "category": "puf-panel",
+      "slug": "puf-panel-house",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/puf-panel/puf-panel-price",
+      "category": "puf-panel",
+      "slug": "puf-panel-price",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/puf-panel/puf-panel-roofing",
+      "category": "puf-panel",
+      "slug": "puf-panel-roofing",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/puf-panel/puf-panel-specification",
+      "category": "puf-panel",
+      "slug": "puf-panel-specification",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/puf-panel/puf-sandwich-panel",
+      "category": "puf-panel",
+      "slug": "puf-sandwich-panel",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/puf-panel/puf-wall-panel",
+      "category": "puf-panel",
+      "slug": "puf-wall-panel",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/rockwool-panel",
+      "category": "rockwool-panel",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/roofing-sheet",
+      "category": "roofing-sheet",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/roofing-sheet/metal-roofing-sheet",
+      "category": "roofing-sheet",
+      "slug": "metal-roofing-sheet",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/roofing-sheet/polycarbonate-roofing-sheet",
+      "category": "roofing-sheet",
+      "slug": "polycarbonate-roofing-sheet",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/roofing-sheet/pvc-roofing-sheet",
+      "category": "roofing-sheet",
+      "slug": "pvc-roofing-sheet",
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/sandwich-panel",
+      "category": "sandwich-panel",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    },
+    {
+      "route": "/product/security-cabins",
+      "category": "security-cabins",
+      "slug": null,
+      "hasCalculator": true,
+      "productId": "security-cabin",
+      "ladderKey": "security-cabins",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/security-cabins/frp-security-cabin",
+      "category": "security-cabins",
+      "slug": "frp-security-cabin",
+      "hasCalculator": true,
+      "productId": "security-cabin",
+      "ladderKey": "frp-security-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/security-cabins/portable-security-cabin",
+      "category": "security-cabins",
+      "slug": "portable-security-cabin",
+      "hasCalculator": true,
+      "productId": "security-cabin",
+      "ladderKey": "portable-security-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/security-cabins/prefabricated-security-cabin",
+      "category": "security-cabins",
+      "slug": "prefabricated-security-cabin",
+      "hasCalculator": true,
+      "productId": "security-cabin",
+      "ladderKey": "prefabricated-security-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/security-cabins/readymade-security-cabin",
+      "category": "security-cabins",
+      "slug": "readymade-security-cabin",
+      "hasCalculator": true,
+      "productId": "security-cabin",
+      "ladderKey": "readymade-security-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/security-cabins/security-guard-cabin",
+      "category": "security-cabins",
+      "slug": "security-guard-cabin",
+      "hasCalculator": true,
+      "productId": "security-cabin",
+      "ladderKey": "security-guard-cabin",
+      "ladderRows": 0,
+      "behaviour": "no-ladder \"Design your {product}\""
+    },
+    {
+      "route": "/product/wall-sheet",
+      "category": "wall-sheet",
+      "slug": null,
+      "hasCalculator": false,
+      "productId": null,
+      "ladderKey": null,
+      "ladderRows": 0,
+      "behaviour": "NO CALCULATOR"
+    }
+  ]
+}
