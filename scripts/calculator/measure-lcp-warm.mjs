@@ -21,7 +21,7 @@ const routes = (process.env.LCP_ROUTES || [
   '/product/container-cafe/container-coffee-shop',
 ].join(',')).split(',');
 const runs = Number(process.env.LCP_RUNS || 5);
-const outputDir = path.resolve('reports/calc-L4');
+const outputDir = path.resolve(process.env.LCP_OUTPUT_DIR || 'reports/calc-L4');
 const playwrightRoot = process.env.PLAYWRIGHT_PACKAGE_ROOT;
 const { chromium } = await import(pathToFileURL(path.join(playwrightRoot, 'playwright/index.mjs')).href);
 await mkdir(outputDir, { recursive: true });
@@ -42,29 +42,38 @@ const measure = async (url) => {
   });
   await client.send('Emulation.setCPUThrottlingRate', { rate: 4 });
   await page.goto(url, { waitUntil: 'load', timeout: 90_000 });
-  const lcp = await page.evaluate(() => new Promise((resolve) => {
-    let value = 0;
-    new PerformanceObserver((list) => { for (const e of list.getEntries()) value = e.startTime; })
+  const reading = await page.evaluate(() => new Promise((resolve) => {
+    let lcp = 0;
+    let cls = 0;
+    new PerformanceObserver((list) => { for (const e of list.getEntries()) lcp = e.startTime; })
       .observe({ type: 'largest-contentful-paint', buffered: true });
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (!entry.hadRecentInput) cls += entry.value;
+      }
+    }).observe({ type: 'layout-shift', buffered: true });
     // give late images a chance, then settle
-    setTimeout(() => resolve(Math.round(value)), 2500);
+    setTimeout(() => resolve({ lcp: Math.round(lcp), cls: Number(cls.toFixed(4)) }), 2500);
   }));
   await page.close();
-  return lcp;
+  return reading;
 };
 
 const results = [];
 for (const route of routes) {
   const url = baseUrl + route;
   await measure(url); // warm-up, discarded
-  const samples = [];
-  for (let i = 0; i < runs; i += 1) samples.push(await measure(url));
-  const med = median(samples);
-  results.push({ route, samples, median: med });
-  console.log(`${route.padEnd(50)} runs=[${samples.join(', ')}] median=${med}ms ${med <= 2500 ? 'PASS <=2500' : 'OVER 2500'}`);
+  const readings = [];
+  for (let i = 0; i < runs; i += 1) readings.push(await measure(url));
+  const lcpSamples = readings.map((reading) => reading.lcp);
+  const clsSamples = readings.map((reading) => reading.cls);
+  const lcpMedian = median(lcpSamples);
+  const clsWorst = Math.max(...clsSamples);
+  results.push({ route, lcpSamples, lcpMedian, clsSamples, clsWorst });
+  console.log(`${route.padEnd(50)} LCP=[${lcpSamples.join(', ')}] median=${lcpMedian}ms ${lcpMedian <= 2500 ? 'PASS <=2500' : 'OVER 2500'} CLS=[${clsSamples.join(', ')}] worst=${clsWorst}`);
 }
 await browser.close();
 
 await writeFile(path.join(outputDir, `lcp-${label}.json`), JSON.stringify({ baseUrl, label, runs, results }, null, 2));
-const worst = Math.max(...results.map((r) => r.median));
+const worst = Math.max(...results.map((r) => r.lcpMedian));
 console.log(`\n${label}: worst median LCP ${worst}ms across ${routes.length} routes`);

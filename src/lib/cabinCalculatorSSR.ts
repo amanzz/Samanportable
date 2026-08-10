@@ -14,6 +14,7 @@ import {
   CONSTRUCTION_DISCLOSURE, CONTROLS, ESTIMATE_PANEL, FIELD_LABELS,
   PRODUCT_STEP, QUOTE_MODE, STEP_COPY, TIPS,
 } from '@/lib/calculatorCopy';
+import { CABIN_CALCULATOR_SCOPED_STYLES } from '@/lib/cabinCalculatorScopedStyles.generated';
 
 export type ProductId =
   | 'porta-cabin'
@@ -1048,7 +1049,7 @@ fieldset{
 
 /* P0: the estimate rendered TWICE on mobile - the aside inline at 523px and
    the sticky bar at 64px, both display:block. 523px of pure duplication. */
-@media(max-width:1023.98px){.cabin-calculator-ssr .calculator-grid>.estimate-card{display:none}}
+@media(max-width:1023.98px){.cabin-calculator-ssr .calculator-side>.estimate-card{display:none}}
 
 /* CLASS 1 - container 1280/32 -> 1216 content; grid 852+24+340 = 1216.
    The estimate track is FIXED at 340px, so the step panel takes the
@@ -1117,7 +1118,7 @@ fieldset{
 .cabin-calculator-ssr .product-tiles .choice-badge{position:absolute;top:6px;right:6px;font-size:9px;font-weight:700;padding:1px 6px;border-radius:9999px;background:var(--c-accent);color:var(--c-white)}
 
 /* CLASS 2 - estimate panel 340x500, padding 20, radius 16, rows 20-29. */
-.cabin-calculator-ssr .calculator-grid>.estimate-card{width:340px;padding:20px;border-radius:16px}
+.cabin-calculator-ssr .calculator-side>.estimate-card{width:340px;padding:20px;border-radius:16px}
 .cabin-calculator-ssr .estimate-card h2{font-size:14px;font-weight:700;margin:0 0 8px}
 .cabin-calculator-ssr .estimate-card .estimate-lines>div{min-height:20px;padding:2px 0;font-size:12px;line-height:1.4}
 .cabin-calculator-ssr .estimate-card .estimate-lines dt,.cabin-calculator-ssr .estimate-card .estimate-lines dd{font-size:12px;line-height:1.4;margin:0}
@@ -1185,8 +1186,8 @@ fieldset{
    right, so the header hands off to the panel below it rather than sitting on
    a colour nothing else uses. */
 .cabin-calculator-ssr .calculator-header{background:linear-gradient(135deg,#1A3C2E,#16223A);border:1px solid var(--sd-hairline);border-radius:16px}
-.cabin-calculator-ssr .step-card,.cabin-calculator-ssr .calculator-grid>.estimate-card{background:var(--sd-panel);border:1px solid var(--sd-hairline);border-radius:16px;padding:20px}
-/* The line above only reaches .calculator-grid > .estimate-card - the sidebar
+.cabin-calculator-ssr .step-card,.cabin-calculator-ssr .calculator-side>.estimate-card{background:var(--sd-panel);border:1px solid var(--sd-hairline);border-radius:16px;padding:20px}
+/* The line above only reaches .calculator-side > .estimate-card - the sidebar
    copy. Step 9 renders a SECOND estimate card inside the form, at
    #calculator-step-9 > .estimate-card, which is not a .calculator-grid child.
    It therefore missed the dark override and kept .estimate-card{background:
@@ -1234,6 +1235,39 @@ fieldset{
 .cabin-calculator-ssr .step-progress{background:rgba(255,255,255,.08)}
 .cabin-calculator-ssr .step-progress>span{background:var(--saman-amber)}
 .cabin-calculator-ssr .step-actions{border-top:1px solid var(--sd-hairline)}
+/* CALC-L7 2.2 - the button section moves out of the tail of the step card and
+   into the column beside it, authorised on CALC-L4's corrected mockup.
+   MEASURED BEFORE: Back and Next sat at y~1631px at 1440 step 6, against a
+   900px fold - on screen at 3 of 4 scroll positions. At 390 they sat at
+   y~2976px, so a phone user scrolled the whole step to reach Next.
+   CALC-L4's FIRST mockup made it worse: appending to .calculator-grid created a
+   third grid item that auto-placed on a new row and pushed the buttons 116px
+   FURTHER down. The correction, and what ships here, is that the estimate card
+   and the nav share ONE column - .calculator-side - so no new row is created
+   and the document height is unchanged. */
+.cabin-calculator-ssr .calculator-side{display:flex;flex-direction:column;gap:16px;min-width:0}
+@media(min-width:1024px){
+  /* Sticky under the estimate card, inside the column, so the nav follows the
+     reader down the step without ever leaving its own track. */
+  .cabin-calculator-ssr .calculator-side{position:sticky;top:16px;align-self:start}
+  .cabin-calculator-ssr .step-actions{border-top:0;display:flex;gap:8px;flex-wrap:wrap}
+}
+@media(max-width:1023.98px){
+  /* No second column on a phone, so the nav becomes a footer bar instead.
+     padding-bottom on the module reserves exactly the bar's height, so the bar
+     cannot overlay the last control and nothing shifts when it appears - the
+     bar is present from first paint, not revealed on scroll. */
+  .cabin-calculator-ssr{padding-bottom:76px}
+  .cabin-calculator-ssr .step-actions{
+    position:fixed;left:0;right:0;bottom:0;z-index:40;
+    display:flex;gap:8px;align-items:center;
+    margin:0;padding:12px 16px;
+    background:var(--sd-panel);border-top:1px solid var(--sd-hairline);
+    box-shadow:0 -2px 12px rgba(0,0,0,0.35);
+  }
+  .cabin-calculator-ssr .step-actions button{min-height:44px}
+  .cabin-calculator-ssr .step-actions [data-action="next"]{margin-left:auto}
+}
 .cabin-calculator-ssr :focus-visible{outline:3px solid var(--saman-amber);outline-offset:2px}
 .cabin-calculator-ssr .mobile-estimate{background:var(--sd-panel);border-top:1px solid var(--sd-hairline-hi)}
 .cabin-calculator-ssr .mobile-estimate a{color:var(--sd-text)}
@@ -1718,8 +1752,6 @@ fieldset{
 /* The nudge input needs room for three digits without clipping. */
 .cabin-calculator-ssr .socket-nudge input { width: 44px; min-width: 44px; }
 
-}
-
 /* ===== ONE STEP OF ELEVATION, AND NO MORE ==============================
    Panels lift off the ground with a 1px top highlight above the hairline.
    The drawing sits one step darker than the panel it is on. The estimate
@@ -1727,7 +1759,7 @@ fieldset{
    No gradient anywhere except the summary header bar.
    ====================================================================== */
 .cabin-calculator-ssr .step-card,
-.cabin-calculator-ssr .calculator-grid > .estimate-card,
+.cabin-calculator-ssr .calculator-side > .estimate-card,
 .cabin-calculator-ssr .calculator-intro,
 .cabin-calculator-ssr .construction-disclosure {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
@@ -2306,7 +2338,25 @@ function electricalCard(
     + `</span></label>`;
 }
 
-/** One wall of the active room: count stepper and position nudge, one line. */
+/**
+ * One wall of the active room: count stepper and position nudge, one line.
+ *
+ * DO NOT DELETE THESE AS DEAD CODE. Nothing reads `socket-{room}-{wall}` or
+ * `socket-{room}-{wall}-position` today - not the estimate, not the drawing -
+ * and a dead-code sweep will therefore find them and be wrong. They are
+ * PLACEMENT inputs, not priced quantities: the priced item is the
+ * "Plug point (6A)" electrical card at Rs 1,100, and the gate
+ * verify-every-stepper-all-states.mjs asserts these four controls do NOT move
+ * the estimate precisely so a future double count is caught.
+ *
+ * THEIR CONSUMER IS CALC-L7 C2, in Merge 4: every placed electrical item gets a
+ * standard symbol in the 2D plan, positioned by the wall and the percent-along-
+ * the-wall these fields already capture. Ruled 09 Aug: C2 consumes this data and
+ * no second position model is built alongside it.
+ *
+ * Same class as the orphaned FROZEN_OPENER anchor - a value that looks unused
+ * right up until something needs it.
+ */
 function socketWallRow(roomSlug: string, wall: string): string {
   const base = `socket-${roomSlug}-${wall.toLowerCase()}`;
   return `<div class="socket-wall">`
@@ -2927,7 +2977,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const date = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' });
   const pageUrl = options.pageUrl || '/cabin-cost-calculator';
   const itemisedMessage = `SAMAN ${product.name} configuration | ${estimate.lines.map((line) => `${line.label}: ${line.amount === null ? 'in quotation' : money(line.amount)}`).join(' | ')} | Total: ${estimate.quoteOnly ? 'price on request' : `${money(estimate.totalExGst)} ex-GST`}`;
-  const messageCatalog = Object.entries(CALCULATOR_MESSAGES).map(([key, value]) => `<p hidden data-message="${key}">${esc(value)}</p>`).join('');
+  const messageCatalog = `<style>${CABIN_CALCULATOR_SCOPED_STYLES}</style>${Object.entries(CALCULATOR_MESSAGES).map(([key, value]) => `<p hidden data-message="${key}">${esc(value)}</p>`).join('')}`;
   // SAMAN's base-cabin rate card, published once on the root so the browser
   // prices from the same numbers the server did. The six area-band multipliers
   // that used to sit here are gone with the formula they belonged to.
@@ -2937,6 +2987,5 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;
   const summarySize = colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`;
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}><style>${CABIN_CALCULATOR_SSR_STYLES}</style>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${index + 1}" data-step-link="${index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>1</span> of ${visibleSteps.length}</p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / 9)}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div><div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div>${renderEstimate(estimate)}</div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${index + 1}" data-step-link="${index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>1</span> of ${visibleSteps.length}</p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / 9)}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div></div><div class="calculator-side">${renderEstimate(estimate)}<div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div></div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
 }
-

@@ -1,0 +1,79 @@
+{
+  "baseUrl": "http://127.0.0.1:3124",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "routes": [
+    {
+      "url": "/product/industrial-sheds",
+      "status": 200,
+      "h1": "Industrial Sheds",
+      "calculatorCount": 1,
+      "entryBandPresent": false,
+      "calculatorProduct": "Porta Cabin",
+      "calculatorTotal": "₹2,10,980",
+      "screenshot": "reports/calc-L7/no-prefill-visual-industrial-sheds.png"
+    },
+    {
+      "url": "/product/peb-constructions/peb-steel-structure",
+      "status": 200,
+      "h1": "Peb Steel Structure",
+      "calculatorCount": 1,
+      "entryBandPresent": false,
+      "calculatorProduct": "Porta Cabin",
+      "calculatorTotal": "₹2,10,980",
+      "screenshot": "reports/calc-L7/no-prefill-visual-peb-constructions-peb-steel-structure.png"
+    },
+    {
+      "url": "/product/portable-toilet/mobile-toilet",
+      "status": 200,
+      "h1": "Mobile Toilet",
+      "calculatorCount": 1,
+      "entryBandPresent": false,
+      "calculatorProduct": "Porta Cabin",
+      "calculatorTotal": "₹2,10,980",
+      "screenshot": "reports/calc-L7/no-prefill-visual-portable-toilet-mobile-toilet.png"
+    },
+    {
+      "url": "/product/pre-engineered-buildings",
+      "status": 200,
+      "h1": "Pre-Engineered Buildings",
+      "calculatorCount": 1,
+      "entryBandPresent": false,
+      "calculatorProduct": "Porta Cabin",
+      "calculatorTotal": "₹2,10,980",
+      "screenshot": "reports/calc-L7/no-prefill-visual-pre-engineered-buildings.png"
+    },
+    {
+      "url": "/product/prefab-buildings/modular-office-buildings",
+      "status": 200,
+      "h1": "Modular Office Buildings",
+      "calculatorCount": 1,
+      "entryBandPresent": false,
+      "calculatorProduct": "Porta Cabin",
+      "calculatorTotal": "₹2,10,980",
+      "screenshot": "reports/calc-L7/no-prefill-visual-prefab-buildings-modular-office-buildings.png"
+    },
+    {
+      "url": "/product/prefabricated-houses/porta-cabin-house",
+      "status": 200,
+      "h1": "Porta Cabin House",
+      "calculatorCount": 1,
+      "entryBandPresent": false,
+      "calculatorProduct": "Porta Cabin",
+      "calculatorTotal": "₹2,10,980",
+      "screenshot": "reports/calc-L7/no-prefill-visual-prefabricated-houses-porta-cabin-house.png"
+    },
+    {
+      "url": "/product/puf-panel/puf-panel-house",
+      "status": 200,
+      "h1": "PUF Panel House, Price, Design and Residential Use in India",
+      "calculatorCount": 1,
+      "entryBandPresent": false,
+      "calculatorProduct": "Porta Cabin",
+      "calculatorTotal": "₹2,10,980",
+      "screenshot": "reports/calc-L7/no-prefill-visual-puf-panel-puf-panel-house.png"
+    }
+  ]
+}

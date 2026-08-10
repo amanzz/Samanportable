@@ -566,7 +566,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
   const embeddedCalculatorSummary = useMemo(() => (
-    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
+    embeddedCalculatorMapping && embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
   ), [embeddedCalculatorMapping]);
 
   const embeddedCalculatorSummaryText = useMemo(() => {
@@ -578,12 +578,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (!embeddedCalculatorMapping) return null;
     return renderCabinCalculatorSSR({
       embedded: true,
-      config: {
-        productId: embeddedCalculatorMapping.productId,
-      },
-      ladderKey: embeddedCalculatorMapping.ladderKey,
-      // This page's own approved product name, never its hub's.
-      productName: product?.name,
+      // A NO-PREFILL route mounts the general cabin calculator, exactly as at
+      // /cabin-cost-calculator: no product, no ladder, no product name. It must
+      // not claim to price what this page sells.
+      ...(embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId
+        ? { config: { productId: embeddedCalculatorMapping.productId }, ladderKey: embeddedCalculatorMapping.ladderKey, productName: product?.name }
+        : {}),
       pageUrl: makeCalculatorPageUrl(category, slug),
     });
   }, [category, slug, embeddedCalculatorMapping]);
@@ -591,7 +591,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // The calculator entry band. Sits between the buy box and the description
   // tabs so a buyer cannot scroll past the tool without meeting it.
   const calculatorEntryHtml = useMemo(() => {
-    if (!embeddedCalculatorMapping) return null;
+    // The entry band names the product and prints its price, so a no-prefill
+    // route gets no band at all rather than a band claiming to price a panel.
+    if (!embeddedCalculatorMapping || !embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) return null;
     return renderCalculatorEntrySection({
       productId: embeddedCalculatorMapping.productId,
       productName: product?.name || embeddedCalculatorSummary?.name || '',

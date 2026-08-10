@@ -1,0 +1,152 @@
+{
+  "g20": true,
+  "g21Breaches": 0,
+  "probe": [
+    {
+      "a": 50,
+      "diskPrice": 60000,
+      "floorPrice": 60000,
+      "delta": 0
+    },
+    {
+      "a": 69.75,
+      "diskPrice": 80500,
+      "floorPrice": 83700,
+      "delta": 3200
+    },
+    {
+      "a": 70,
+      "diskPrice": 80500,
+      "floorPrice": 84000,
+      "delta": 3500
+    },
+    {
+      "a": 73,
+      "diskPrice": 83950,
+      "floorPrice": 84000,
+      "delta": 50
+    },
+    {
+      "a": 73.04,
+      "diskPrice": 83996,
+      "floorPrice": 84000,
+      "delta": 4
+    },
+    {
+      "a": 75,
+      "diskPrice": 86250,
+      "floorPrice": 86250,
+      "delta": 0
+    },
+    {
+      "a": 89.75,
+      "diskPrice": 99000,
+      "floorPrice": 103213,
+      "delta": 4213
+    },
+    {
+      "a": 90,
+      "diskPrice": 99000,
+      "floorPrice": 103500,
+      "delta": 4500
+    },
+    {
+      "a": 94,
+      "diskPrice": 103400,
+      "floorPrice": 103500,
+      "delta": 100
+    },
+    {
+      "a": 94.09,
+      "diskPrice": 103499,
+      "floorPrice": 103500,
+      "delta": 1
+    },
+    {
+      "a": 100,
+      "diskPrice": 110000,
+      "floorPrice": 110000,
+      "delta": 0
+    },
+    {
+      "a": 149.75,
+      "diskPrice": 157500,
+      "floorPrice": 164725,
+      "delta": 7225
+    },
+    {
+      "a": 150,
+      "diskPrice": 157500,
+      "floorPrice": 165000,
+      "delta": 7500
+    },
+    {
+      "a": 157,
+      "diskPrice": 164850,
+      "floorPrice": 165000,
+      "delta": 150
+    },
+    {
+      "a": 157.14,
+      "diskPrice": 164997,
+      "floorPrice": 165000,
+      "delta": 3
+    },
+    {
+      "a": 175,
+      "diskPrice": 183750,
+      "floorPrice": 183750,
+      "delta": 0
+    },
+    {
+      "a": 199.75,
+      "diskPrice": 200000,
+      "floorPrice": 209738,
+      "delta": 9738
+    },
+    {
+      "a": 200,
+      "diskPrice": 200000,
+      "floorPrice": 210000,
+      "delta": 10000
+    },
+    {
+      "a": 205,
+      "diskPrice": 205000,
+      "floorPrice": 210000,
+      "delta": 5000
+    },
+    {
+      "a": 210,
+      "diskPrice": 210000,
+      "floorPrice": 210000,
+      "delta": 0
+    },
+    {
+      "a": 250,
+      "diskPrice": 250000,
+      "floorPrice": 250000,
+      "delta": 0
+    },
+    {
+      "a": 300,
+      "diskPrice": 300000,
+      "floorPrice": 300000,
+      "delta": 0
+    },
+    {
+      "a": 400,
+      "diskPrice": 400000,
+      "floorPrice": 400000,
+      "delta": 0
+    }
+  ],
+  "sweepDisagree": 190,
+  "higherUnderFloor": 190,
+  "sweepWorst": {
+    "a": 200,
+    "d": 200000,
+    "f": 210000,
+    "delta": 10000
+  }
+}
