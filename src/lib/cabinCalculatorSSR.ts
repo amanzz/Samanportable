@@ -15,6 +15,7 @@ import {
   PRODUCT_STEP, QUOTE_MODE, STEP_COPY, TIPS,
 } from '@/lib/calculatorCopy';
 import { CABIN_CALCULATOR_SCOPED_STYLES } from '@/lib/cabinCalculatorScopedStyles.generated';
+import { GENERAL_ESTIMATE_DISCLOSURE } from '@/lib/cabinEstimateCopy';
 
 export type ProductId =
   | 'porta-cabin'
@@ -134,6 +135,14 @@ export interface EstimateLine {
   label: string;
   amount: number | null;
   source: 'published' | 'market' | 'quotation';
+  /** Plain item name for retained documents; the screen label may include quantity. */
+  documentLabel?: string;
+  /** Quantity priced by this line, including cabin quantity where applicable. */
+  quantity?: number;
+  /** Unit rate that produced the line. Null means confirmed in quotation. */
+  unitRate?: number | null;
+  /** Human-readable unit for the retained estimate document. */
+  rateBasis?: 'each' | 'sq ft' | 'configuration' | 'cabin';
 }
 
 export interface CalculatorEstimate {
@@ -1207,6 +1216,7 @@ fieldset{
 .cabin-calculator-ssr .calculator-header [data-summary-size],.cabin-calculator-ssr .calculator-header [data-summary-label]{font-size:11px;font-weight:400;color:var(--sd-text-2)}
 .cabin-calculator-ssr .calculator-header [data-summary-ex]{font-size:30px;font-weight:700;color:var(--saman-amber);line-height:1.1}
 .cabin-calculator-ssr .calculator-header [data-summary-incl]{font-size:11px;font-weight:400;color:var(--sd-text-2)}
+.cabin-calculator-ssr .calculator-header [data-general-estimate-disclosure]{display:block;font-size:11px;font-weight:400;line-height:1.35;color:var(--sd-text-2);margin-top:4px;max-width:320px}
 .cabin-calculator-ssr .estimate-card h2{font-size:14px;font-weight:700;color:var(--sd-text)}
 .cabin-calculator-ssr .estimate-lines dt{font-size:11px;font-weight:400;color:var(--sd-text-2)}
 .cabin-calculator-ssr .estimate-lines dd{font-size:11px;font-weight:600;color:var(--sd-text)}
@@ -1933,6 +1943,7 @@ const finite = (value: unknown, fallback: number, min: number, max: number): num
 const int = (value: unknown, fallback: number, min: number, max: number): number => Math.round(finite(value, fallback, min, max));
 const member = <T extends string>(value: unknown, allowed: readonly T[], fallback: T): T => allowed.includes(value as T) ? value as T : fallback;
 const productFor = (id: ProductId): ProductDefinition => PRODUCTS.find((product) => product.id === id) || PRODUCTS[0];
+export const getCalculatorProductName = (id: ProductId): string => productFor(id).name;
 const isColonyProduct = (id: ProductId): boolean => ['labour-colony', 'labor-sheds', 'labor-hutments', 'prefab-labor-camps'].includes(id);
 const colonyLadder = (id: ProductId) => id === 'labor-sheds'
   ? PRODUCT_LADDERS.labourSheds
@@ -2007,7 +2018,7 @@ function cleanWindow(value: unknown): WindowConfig | null {
   };
 }
 
-function sanitiseConfig(value: unknown): CalculatorConfig {
+export function normaliseCalculatorConfig(value: unknown): CalculatorConfig {
   const source = value && typeof value === 'object' && !Array.isArray(value) ? value as Partial<CalculatorConfig> : {};
   const productIds = PRODUCTS.map((product) => product.id);
   const quoteSource = source.quote && typeof source.quote === 'object' ? source.quote : {} as Partial<QuoteFields>;
@@ -2095,7 +2106,7 @@ export function parseCalculatorQuery(query: CalculatorQuery = {}): CalculatorCon
   if (zone) direct.deliveryZone = zone as CalculatorConfig['deliveryZone'];
   const includeGst = one(query.includeGst);
   if (includeGst !== undefined) direct.includeGst = includeGst === '1' || includeGst.toLowerCase() === 'true';
-  return sanitiseConfig(direct);
+  return normaliseCalculatorConfig(direct);
 }
 
 /**
@@ -2178,7 +2189,7 @@ function calculateBase(config: CalculatorConfig): number | null {
 }
 
 export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEstimate {
-  const config = sanitiseConfig(input);
+  const config = normaliseCalculatorConfig(input);
   const colony = isColonyProduct(config.productId);
   const product = productFor(config.productId);
   const area = colony ? (colonyLadder(config.productId)[config.colonyVariant]?.areaSqft || 0) : config.length * config.width;
@@ -2187,9 +2198,29 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
     label: basePrice === null ? `${product.name} base` : colony ? `${colonyLadder(config.productId)[config.colonyVariant]?.label || 'Colony block'} × ${config.quantity}` : `Base cabin ${config.length}×${config.width} ft${config.quantity > 1 ? ` × ${config.quantity}` : ''}`,
     amount: basePrice,
     source: basePrice === null ? 'quotation' : 'published',
+    documentLabel: basePrice === null ? `${product.name} base` : colony ? `${colonyLadder(config.productId)[config.colonyVariant]?.label || 'Colony block'} base` : `Base cabin ${config.length} x ${config.width} ft`,
+    quantity: config.quantity,
+    unitRate: basePrice === null ? null : Math.round(basePrice / config.quantity),
+    rateBasis: 'cabin',
   }];
   let total = basePrice || 0;
-  const addLine = (label: string, amount: number | null, source: EstimateLine['source']) => { lines.push({ label, amount, source }); if (amount !== null) total += amount; };
+  const addLine = (
+    label: string,
+    amount: number | null,
+    source: EstimateLine['source'],
+    detail: Pick<EstimateLine, 'documentLabel' | 'quantity' | 'unitRate' | 'rateBasis'> = {},
+  ) => {
+    lines.push({
+      label,
+      amount,
+      source,
+      documentLabel: detail.documentLabel || label,
+      quantity: detail.quantity ?? 1,
+      unitRate: detail.unitRate === undefined ? amount : detail.unitRate,
+      rateBasis: detail.rateBasis || 'configuration',
+    });
+    if (amount !== null) total += amount;
+  };
   if (!colony && basePrice !== null) {
     if (config.height > 8.5) addLine(`Height ${config.height} ft`, Math.round((basePrice / config.quantity) * 0.06 * (config.height - 8.5)) * config.quantity, 'market');
     if (config.roof === 'Flat / mono-pitch') addLine('Flat / mono-pitch roof', Math.round(basePrice * 0.04), 'market');
@@ -2197,7 +2228,12 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
     if (frame && frame.percent) {
       addLine(`${frame.label}, +${frame.percent}%`, Math.round(basePrice * (frame.percent / 100)), 'published');
     }
-    if (config.rooms > 1) addLine(`${config.rooms} rooms, ${config.rooms - 1} partitions`, Math.round((config.rooms - 1) * config.width * 8.5 * 300 * config.quantity), 'market');
+    if (config.rooms > 1) addLine(
+      `${config.rooms} rooms, ${config.rooms - 1} partitions`,
+      Math.round((config.rooms - 1) * config.width * 8.5 * 300 * config.quantity),
+      'market',
+      { quantity: (config.rooms - 1) * config.quantity, unitRate: Math.round(config.width * 8.5 * 300), rateBasis: 'each' },
+    );
     const wallArea = 2 * (config.length + config.width) * config.height;
     const surfaceChoices: Array<[string, string, number, (code: string) => number, readonly { code: string; label: string }[]]> = [
       ['Internal wall', config.internalWall, wallArea, wallDelta, INTERNAL_WALLS],
@@ -2208,41 +2244,84 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
       const rate = delta(code);
       if (!rate) return;
       const name = list.find((o) => o.code === code)?.label || code;
-      addLine(`${label}: ${name}`, Math.round(rate * surfaceArea * config.quantity), 'published');
+      addLine(`${label}: ${name}`, Math.round(rate * surfaceArea * config.quantity), 'published', {
+        quantity: surfaceArea * config.quantity,
+        unitRate: rate,
+        rateBasis: 'sq ft',
+      });
     });
     if (config.insulation !== 'none') {
       const rate = insulationRate(config.insulation);
       const name = INSULATIONS_R1.find((o) => o.code === config.insulation)?.label || config.insulation;
-      if (rate) addLine(`Insulation: ${name}`, Math.round(rate * (wallArea + area) * config.quantity), 'published');
+      if (rate) addLine(`Insulation: ${name}`, Math.round(rate * (wallArea + area) * config.quantity), 'published', {
+        quantity: (wallArea + area) * config.quantity,
+        unitRate: rate,
+        rateBasis: 'sq ft',
+      });
     }
     const thicknessRate = pufDeltaPerSqft(config.pufThickness);
-    if (thicknessRate) addLine(`${config.pufThickness} mm PUF panels`, Math.round(thicknessRate * (wallArea + area) * config.quantity), 'published');
+    if (thicknessRate) addLine(`${config.pufThickness} mm PUF panels`, Math.round(thicknessRate * (wallArea + area) * config.quantity), 'published', {
+      quantity: (wallArea + area) * config.quantity,
+      unitRate: thicknessRate,
+      rateBasis: 'sq ft',
+    });
     config.doors.forEach((door, index) => {
       if (index === 0 && door.type === 'Steel door') return;
-      addLine(`Door ${index + 1}: ${door.type}`, (door.type === 'Steel door' ? RATE_CARD.marketRates.steelDoor : RATE_CARD.marketRates.upvcGlassDoor) * config.quantity, 'market');
+      const rate = door.type === 'Steel door' ? RATE_CARD.marketRates.steelDoor : RATE_CARD.marketRates.upvcGlassDoor;
+      addLine(`Door ${index + 1}: ${door.type}`, rate * config.quantity, 'market', {
+        quantity: config.quantity,
+        unitRate: rate,
+        rateBasis: 'each',
+      });
     });
-    config.windows.forEach((window, index) => addLine(`Window ${index + 1}: ${window.type} ${window.width}×${window.height} ft`, Math.round(WINDOW_RATES[window.type] * window.width * window.height * (window.track === '2.5 Track' ? 1.12 : 1) * config.quantity), 'market'));
+    config.windows.forEach((window, index) => {
+      const rate = Math.round(WINDOW_RATES[window.type] * window.width * window.height * (window.track === '2.5 Track' ? 1.12 : 1));
+      addLine(`Window ${index + 1}: ${window.type} ${window.width}×${window.height} ft`, rate * config.quantity, 'market', {
+        quantity: config.quantity,
+        unitRate: rate,
+        rateBasis: 'each',
+      });
+    });
   }
   ELECTRICAL_R1.forEach((item) => {
     const quantity = config.electrical[item.label] || 0;
     if (!quantity) return;
-    addLine(`${quantity} × ${item.label}`, colony ? null : (item.rate || 0) * quantity * config.quantity, colony ? 'quotation' : 'published');
+    addLine(`${quantity} × ${item.label}`, colony ? null : (item.rate || 0) * quantity * config.quantity, colony ? 'quotation' : 'published', {
+      documentLabel: item.label,
+      quantity: quantity * config.quantity,
+      unitRate: colony ? null : item.rate || 0,
+      rateBasis: 'each',
+    });
   });
   FITOUT_R1.forEach((item) => {
     const quantity = config.addOns[item.label] || 0;
     if (!quantity) return;
-    addLine(`${quantity} × ${item.label}`, colony ? null : (item.rate || 0) * quantity * config.quantity, colony ? 'quotation' : 'published');
+    addLine(`${quantity} × ${item.label}`, colony ? null : (item.rate || 0) * quantity * config.quantity, colony ? 'quotation' : 'published', {
+      documentLabel: item.label,
+      quantity: quantity * config.quantity,
+      unitRate: colony ? null : item.rate || 0,
+      rateBasis: 'each',
+    });
   });
   let transportNote = '';
   if (config.deliveryZone === 'Bangalore city' || config.deliveryZone === 'Delhi NCR') transportNote = 'Free delivery zone';
   else if (config.distanceKm > 0 && config.distanceKm < 100) transportNote = 'Under 100 km: confirmed at quotation';
   else if (config.distanceKm >= 100) {
     const bandIndex = Math.min(RATE_CARD.freight.bands20ft.length - 1, Math.max(0, Math.ceil((config.distanceKm - 100) / 50) - 1));
-    addLine(`Transport ${config.distanceKm} km`, (RATE_CARD.freight.bands20ft[bandIndex] + (config.length > 20 || colony ? RATE_CARD.freight.trailer40ftDelta : 0)) * config.quantity, 'published');
+    const rate = RATE_CARD.freight.bands20ft[bandIndex] + (config.length > 20 || colony ? RATE_CARD.freight.trailer40ftDelta : 0);
+    addLine(`Transport ${config.distanceKm} km`, rate * config.quantity, 'published', {
+      quantity: config.quantity,
+      unitRate: rate,
+      rateBasis: 'each',
+    });
   }
   // IN-01 is on the hold list and the workbook records only "Depends upon
   // location". It carries no figure and says so.
-  if (config.installation) addLine('Installation and fixing (IN-01)', null, 'quotation');
+  if (config.installation) addLine('Installation and fixing (IN-01)', null, 'quotation', {
+    quantity: config.quantity,
+    unitRate: null,
+    rateBasis: 'each',
+  });
   const gst = Math.round(total * GST_RATE);
   return {
     areaSqft: area,
@@ -2874,7 +2953,7 @@ function defaultSizeFor(product: ProductDefinition, ladderKey?: string | null): 
 export function renderProductPlanPreview(productId: string, ladderKey?: string | null): string {
   const product = productFor(productId as ProductId);
   const size = defaultSizeFor(product, ladderKey);
-  const config = sanitiseConfig({ productId, length: size.length, width: size.width } as Partial<CalculatorConfig>);
+  const config = normaliseCalculatorConfig({ productId, length: size.length, width: size.width } as Partial<CalculatorConfig>);
   const geometry = drawGeometry(config);
   return `<svg class="entry-plan floor-plan" viewBox="0 0 420 260" role="img"`
     + ` aria-label="Plan of a ${size.length} by ${size.width} foot ${esc(product.name)}" focusable="false">`
@@ -2919,9 +2998,9 @@ export function renderCalculatorEntrySection(options: {
 }
 
 export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}): string {
-  const parsedConfig = sanitiseConfig(options.config || parseCalculatorQuery(options.query));
+  const parsedConfig = normaliseCalculatorConfig(options.config || parseCalculatorQuery(options.query));
   const withSlug = options.productSlug
-    ? sanitiseConfig({ ...parsedConfig, productId: productIdForSlug(options.productSlug) })
+    ? normaliseCalculatorConfig({ ...parsedConfig, productId: productIdForSlug(options.productSlug) })
     : parsedConfig;
   // The embedding route's ladder wins over anything supplied in the query, so a
   // page can never be talked into pricing from a different route's ladder.
@@ -2930,6 +3009,12 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
     : withSlug;
   const embedded = options.embedded === true;
   const includeCopy = options.includeCopy ?? !embedded;
+  // A no-prefill mount deliberately opens the general cabin calculator. The
+  // default ProductId still drives that calculator internally, but it must not
+  // be represented as the host page's product in the retained document.
+  const documentProductMode = embedded && !options.productSlug && !options.config?.productId && !one(options.query?.productId)
+    ? 'general'
+    : 'selected';
   const product = productFor(config.productId);
   const colony = isColonyProduct(config.productId);
   const estimate = computeCalculatorEstimate(config);
@@ -2987,5 +3072,8 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
   const tableProducts = embedded ? [product] : PRODUCTS;
   const summarySize = colony ? `${esc(colonyLadder(config.productId)[config.colonyVariant]?.label || '')} · quantity ${config.quantity}` : `${config.length}×${config.width} ft · ${estimate.areaSqft.toLocaleString('en-IN')} sq ft`;
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small></p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${index + 1}" data-step-link="${index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>1</span> of ${visibleSteps.length}</p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / 9)}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div></div><div class="calculator-side">${renderEstimate(estimate)}<div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div></div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  const generalDisclosure = documentProductMode === 'general'
+    ? `<small data-general-estimate-disclosure>${esc(GENERAL_ESTIMATE_DISCLOSURE)}</small>`
+    : '';
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-document-product-mode="${documentProductMode}" data-initial-document-product-mode="${documentProductMode}" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small>${generalDisclosure}</p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${index + 1}" data-step-link="${index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>1</span> of ${visibleSteps.length}</p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / 9)}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div></div><div class="calculator-side">${renderEstimate(estimate)}<div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div></div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
 }

@@ -8,6 +8,7 @@
 
   const STORAGE_KEY = 'saman-cabin-calculator-v9';
   const THEME_KEY = '__theme';
+  const DOCUMENT_PRODUCT_MODE_KEY = '__documentProductMode';
   const CONTACT_NAMES = new Set(['firstName', 'lastName', 'phone', 'email', 'company', 'city', 'state', 'notes', 'website', 'message', 'productName', 'pageUrl', 'returnTo']);
   const INR = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
   const num = (value, fallback = 0) => Number.isFinite(Number(value)) ? Number(value) : fallback;
@@ -129,6 +130,7 @@
     return {
       ...readConfiguration(form),
       [THEME_KEY]: root?.dataset?.theme || 'light',
+      [DOCUMENT_PRODUCT_MODE_KEY]: root?.dataset?.documentProductMode || 'selected',
     };
   }
 
@@ -137,6 +139,11 @@
     if (candidate === 'light' || candidate === 'green') {
       root.dataset.theme = candidate;
     }
+  }
+
+  function applySavedDocumentProductMode(root, saved) {
+    const candidate = saved?.[DOCUMENT_PRODUCT_MODE_KEY];
+    root.dataset.documentProductMode = candidate === 'general' ? 'general' : 'selected';
   }
 
   function applyConfiguration(form, saved) {
@@ -1079,8 +1086,42 @@
         return;
       }
       if (action === 'pdf') {
-        track('pdf_download', { page_path: window.location.pathname });
-        window.print();
+        control.disabled = true;
+        try {
+          const configuration = {
+            ...readConfiguration(form),
+            ladderKey: source(chosenProductField(form))?.dataset?.ladder || null,
+          };
+          const response = await fetch('/api/cabin-estimate-pdf', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              configuration,
+              documentProductMode: root.dataset.documentProductMode || 'selected',
+              showGeneralDisclosure: Boolean(root.querySelector('[data-general-estimate-disclosure]')),
+            }),
+          });
+          if (!response.ok) throw new Error(`PDF request failed with ${response.status}`);
+          const disposition = response.headers.get('Content-Disposition') || '';
+          const named = disposition.match(/filename="([^"]+)"/i)?.[1];
+          const product = String(configuration.productId || 'general-cabin').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase();
+          const size = `${configuration.length || '0'}x${configuration.width || '0'}-ft`;
+          const fallbackName = `saman-estimate-${product}-${size}-${new Date().toISOString().slice(0, 10)}.pdf`;
+          const url = URL.createObjectURL(await response.blob());
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = named || fallbackName;
+          document.body.append(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(url);
+          track('pdf_download', { page_path: window.location.pathname });
+        } catch (error) {
+          console.error(error);
+        } finally {
+          control.disabled = false;
+        }
+        return;
       }
       if (action === 'save') {
         try {
@@ -1093,6 +1134,7 @@
           const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
           if (saved) {
             applySavedTheme(root, saved);
+            applySavedDocumentProductMode(root, saved);
             applyConfiguration(form, saved);
             calculate(root, form);
             notice(root, message(root, 'restored'), true);
@@ -1101,6 +1143,7 @@
       }
       if (action === 'start-over') {
         form.reset();
+        root.dataset.documentProductMode = root.dataset.initialDocumentProductMode || 'selected';
         calculate(root, form);
         showStep(root, firstStep, true);
       }
@@ -1136,7 +1179,10 @@
       if (target && target.dataset && target.dataset.electricalItem) target.dataset.userSet = 'true';
       calculate(root, form);
     });
-    form.addEventListener('change', () => calculate(root, form));
+    form.addEventListener('change', (event) => {
+      if (event.target?.name === 'productId') root.dataset.documentProductMode = 'selected';
+      calculate(root, form);
+    });
     form.addEventListener('submit', (event) => submitEnhanced(event, root, form));
   }
 
