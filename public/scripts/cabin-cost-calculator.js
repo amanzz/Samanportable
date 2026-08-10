@@ -2,6 +2,10 @@
 (() => {
   'use strict';
 
+  const RUNTIME_KEY = '__samanCabinCalculatorRuntime';
+  if (window[RUNTIME_KEY]) return;
+  window[RUNTIME_KEY] = true;
+
   const STORAGE_KEY = 'saman-cabin-calculator-v9';
   const THEME_KEY = '__theme';
   const CONTACT_NAMES = new Set(['firstName', 'lastName', 'phone', 'email', 'company', 'city', 'state', 'notes', 'website', 'message', 'productName', 'pageUrl', 'returnTo']);
@@ -199,7 +203,10 @@
   function calculatorToggle() {
     const section = document.getElementById('cabin-calculator');
     const cta = document.querySelector('[data-calculator-entry] [data-copy-slot="cta"]');
-    return section ? { section, cta } : null;
+    // No-prefill product pages deliberately have no entry band. With no CTA
+    // there is nothing that can reopen a collapsed calculator, so those pages
+    // retain the server-rendered open state.
+    return section && cta ? { section, cta } : null;
   }
 
   function setCalculatorOpen(open) {
@@ -1134,4 +1141,15 @@
   }
 
   document.querySelectorAll('[data-cabin-calculator]').forEach(enhance);
+  // Next.js can replace a product page without a full document navigation.
+  // Keep the single delegated runtime and enhance only calculators added by
+  // that route change, rather than loading a second copy of every listener.
+  const observer = new MutationObserver((records) => {
+    records.forEach((record) => record.addedNodes.forEach((node) => {
+      if (!(node instanceof Element)) return;
+      if (node.matches('[data-cabin-calculator]')) enhance(node);
+      node.querySelectorAll('[data-cabin-calculator]').forEach(enhance);
+    }));
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 })();

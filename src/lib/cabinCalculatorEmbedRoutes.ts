@@ -140,14 +140,29 @@ const MATERIAL_CLUSTERS = new Set([
   'eps-panel', 'glass-wool-panel', 'pir-panel', 'puf-panel', 'rockwool-panel',
   'sandwich-panel', 'wall-sheet', 'roofing-sheet',
 ]);
+const UNVERIFIED_PRODUCT_ID_CLUSTERS = new Set([
+  'industrial-sheds', 'peb-constructions', 'portable-toilet',
+  'pre-engineered-buildings', 'prefab-buildings', 'prefabricated-houses',
+]);
 const STRUCTURE_WORDS = /(house|home|cabin|office|room|shed|building|toilet|colony|camp|hutment|bunk|warehouse|shop|cafe|store)/;
 const MATERIAL_WORDS = /(panel|sheet|profile|coil|insulation)/;
 
 export function classifyCalculatorRoute(category: string, slug?: string): { prefill: boolean; why: string } {
+  const cluster = normalise(category);
   const key = normalise(slug || category);
-  const inMaterialCluster = MATERIAL_CLUSTERS.has(normalise(category));
+  const inMaterialCluster = MATERIAL_CLUSTERS.has(cluster);
   const looksStructural = STRUCTURE_WORDS.test(key);
   const looksMaterial = MATERIAL_WORDS.test(key);
+
+  // Ruling 09 Aug 2026: these six clusters, plus puf-panel-house below, have
+  // no verified identity in the calculator's closed ProductId set. They still
+  // mount the general calculator, but it attributes no figure to the page.
+  if (UNVERIFIED_PRODUCT_ID_CLUSTERS.has(cluster)) {
+    return { prefill: false, why: 'calculator product identity not yet verified' };
+  }
+  if (cluster === 'puf-panel' && key === 'puf-panel-house') {
+    return { prefill: false, why: 'calculator product identity not yet verified' };
+  }
 
   if (inMaterialCluster) {
     if (looksStructural && !looksMaterial) return { prefill: true, why: 'enclosed structure inside a material cluster' };

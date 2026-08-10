@@ -1,7 +1,7 @@
 /**
  * CALC-L7 §2.1 — the route extension, verified by a DECLARED SAMPLE.
  *
- * The reporting standard on this programme: a stated sample of 15 outranks an
+ * The reporting standard on this programme: a stated sample of 16 outranks an
  * unverifiable claim of 123. This drives a fixed, named sample in a real browser
  * and states exactly what it covers; the remaining routes are covered
  * mechanically by two gates that read every route:
@@ -21,9 +21,11 @@
  * Run: node scripts/calculator/verify-route-extension-sample.mjs
  * Exit: 0 when every sampled route behaves as its class requires.
  */
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import Module from 'node:module';
+import jitiPkg from 'jiti';
 
 const baseUrl = process.env.EXT_BASE_URL || 'http://127.0.0.1:3124';
 const outputDir = path.resolve('reports/calc-L7');
@@ -31,33 +33,73 @@ const playwrightRoot = process.env.PLAYWRIGHT_PACKAGE_ROOT;
 const { chromium } = await import(pathToFileURL(path.join(playwrightRoot, 'playwright/index.mjs')).href);
 await mkdir(outputDir, { recursive: true });
 
+const SRC = path.join(process.cwd(), 'src');
+const resolveFilename = Module._resolveFilename;
+Module._resolveFilename = function (request, ...rest) {
+  if (typeof request === 'string' && request.startsWith('@/')) request = path.join(SRC, request.slice(2));
+  return resolveFilename.call(this, request, ...rest);
+};
+const jiti = (jitiPkg.default || jitiPkg)(path.join(process.cwd(), 'noop.js'), { esmResolve: true });
+const { classifyCalculatorRoute } = jiti('./src/lib/cabinCalculatorEmbedRoutes.ts');
+
 /**
- * THE DECLARED SAMPLE: 15 routes.
+ * THE DECLARED SAMPLE: 16 routes.
  *   8 no-prefill, spanning all 8 material clusters (every one represented)
- *   6 prefill, spanning newly extended structure clusters
- *   1 prefill, the tie-breaker route that names both a material and a structure
+ *   6 routes that exposed the unresolved ProductId class
+ *   1 known configured prefill route
+ *   1 puf-panel-house route that exposed the missing mount
+ *
+ * Expected behaviour is imported from the production classifier. It is never
+ * copied into this gate, so a ruled reclassification changes both together.
  */
-const SAMPLE = [
+const DISCOVERY_SAMPLE_URLS = [
   // no-prefill - one per material cluster, all eight
-  { url: '/product/eps-panel', cls: 'no-prefill' },
-  { url: '/product/glass-wool-panel', cls: 'no-prefill' },
-  { url: '/product/pir-panel', cls: 'no-prefill' },
-  { url: '/product/rockwool-panel', cls: 'no-prefill' },
-  { url: '/product/sandwich-panel', cls: 'no-prefill' },
-  { url: '/product/wall-sheet', cls: 'no-prefill' },
-  { url: '/product/puf-panel', cls: 'no-prefill' },
-  { url: '/product/roofing-sheet/metal-roofing-sheet', cls: 'no-prefill' },
-  // prefill - newly extended structure clusters
-  { url: '/product/industrial-sheds', cls: 'prefill' },
-  { url: '/product/peb-constructions/peb-steel-structure', cls: 'prefill' },
-  { url: '/product/pre-engineered-buildings', cls: 'prefill' },
-  { url: '/product/prefab-buildings/modular-office-buildings', cls: 'prefill' },
-  { url: '/product/prefabricated-houses/porta-cabin-house', cls: 'prefill' },
-  { url: '/product/portable-toilet/mobile-toilet', cls: 'prefill' },
-  { url: '/product/labor-colony', cls: 'prefill' },
-  // the tie-breaker: names both, structure governs
-  { url: '/product/puf-panel/puf-panel-house', cls: 'prefill' },
+  '/product/eps-panel',
+  '/product/glass-wool-panel',
+  '/product/pir-panel',
+  '/product/rockwool-panel',
+  '/product/sandwich-panel',
+  '/product/wall-sheet',
+  '/product/puf-panel',
+  '/product/roofing-sheet/metal-roofing-sheet',
+  // the six routes whose sample exposed the unresolved ProductId class
+  '/product/industrial-sheds',
+  '/product/peb-constructions/peb-steel-structure',
+  '/product/pre-engineered-buildings',
+  '/product/prefab-buildings/modular-office-buildings',
+  '/product/prefabricated-houses/porta-cabin-house',
+  '/product/portable-toilet/mobile-toilet',
+  // a configured prefill control and the previously unmounted house route
+  '/product/labor-colony',
+  '/product/puf-panel/puf-panel-house',
 ];
+const FRESH_CLUSTER_ROUTES = [
+  '/product/container-cafe',
+  '/product/container-houses',
+  '/product/container-offices/shipping-container-office',
+  '/product/porta-cabins',
+  '/product/portable-cabin',
+  '/product/portable-office',
+  '/product/security-cabins',
+];
+const expanded = process.env.EXT_SAMPLE === 'expanded';
+const full = process.env.EXT_SAMPLE === 'full';
+const sitemapXml = full ? await readFile(path.join('public', 'sitemap-products.xml'), 'utf8') : '';
+const FULL_ROUTE_URLS = full
+  ? [...new Set([...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)]
+      .map((match) => match[1].split('samanportable.com')[1] || '')
+      .filter((url) => url.startsWith('/product/')))].sort()
+  : [];
+const SAMPLE_URLS = full
+  ? FULL_ROUTE_URLS
+  : expanded
+    ? [...DISCOVERY_SAMPLE_URLS, ...FRESH_CLUSTER_ROUTES]
+    : DISCOVERY_SAMPLE_URLS;
+const SAMPLE = SAMPLE_URLS.map((url) => {
+  const parts = url.split('/').filter(Boolean);
+  const classification = classifyCalculatorRoute(parts[1], parts[2]);
+  return { url, cls: classification.prefill ? 'prefill' : 'no-prefill' };
+});
 
 const browser = await chromium.launch({ channel: 'chrome' });
 const rows = [];
@@ -66,7 +108,12 @@ let failures = 0;
 for (const s of SAMPLE) {
   const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
   const status = (await page.goto(baseUrl + s.url, { waitUntil: 'domcontentloaded', timeout: 60_000 }))?.status();
-  await page.waitForTimeout(900);
+  await page.waitForSelector('.cabin-calculator-ssr', { state: 'attached', timeout: 10_000 }).catch(() => null);
+  await page.waitForSelector('.cabin-calculator-ssr.is-enhanced', { state: 'attached', timeout: 10_000 }).catch(() => null);
+  if (s.cls === 'prefill') {
+    const opener = page.locator('[data-calculator-entry] [data-copy-slot="cta"]');
+    if (await opener.count()) await opener.click();
+  }
 
   // A product route mounts the calculator inside a container the entry CTA
   // expands, so presence is read from the DOM rather than from visibility.
@@ -77,7 +124,9 @@ for (const s of SAMPLE) {
     const summaryEx = document.querySelector('.cabin-calculator-ssr [data-summary-ex]');
     const bandHeadline = document.querySelector('.calc-entry-headline');
     return {
+      calculatorCount: document.querySelectorAll('.cabin-calculator-ssr').length,
       calculatorPresent: Boolean(calc),
+      calculatorVisible: Boolean(calc && calc.getClientRects().length && !calc.closest('[hidden]')),
       productSlug: calc ? calc.getAttribute('data-product-slug') : null,
       entryBandPresent: Boolean(band),
       entryHeadline: bandHeadline ? (bandHeadline.textContent || '').trim().slice(0, 80) : null,
@@ -89,6 +138,8 @@ for (const s of SAMPLE) {
   const problems = [];
   if (status !== 200) problems.push(`HTTP ${status}`);
   if (!m.calculatorPresent) problems.push('no calculator mounted');
+  if (m.calculatorCount !== 1) problems.push(`expected one calculator, found ${m.calculatorCount}`);
+  if (!m.calculatorVisible) problems.push('calculator mounted but not visible or openable');
 
   if (s.cls === 'no-prefill') {
     // The whole point of the class: nothing may attribute a price to the material.
@@ -112,13 +163,22 @@ for (const s of SAMPLE) {
 }
 
 await browser.close();
-await writeFile(path.join(outputDir, 'route-extension-sample.json'), JSON.stringify({ baseUrl, sample: rows }, null, 2));
+const reportName = full
+  ? 'route-extension-full-browser.json'
+  : expanded
+    ? 'route-extension-expanded-sample.json'
+    : 'route-extension-sample.json';
+await writeFile(path.join(outputDir, reportName), JSON.stringify({ baseUrl, sample: rows }, null, 2));
 
 console.log('');
 console.log(`DECLARED SAMPLE: ${SAMPLE.length} routes of 123.`);
-console.log(`  no-prefill 8 - one from EVERY one of the 8 material clusters`);
-console.log(`  prefill    7 - newly extended structure clusters, incl. the tie-breaker route`);
-console.log('  The other 108 routes are covered mechanically by report-route-extension-coverage');
+const noPrefillCount = SAMPLE.filter((route) => route.cls === 'no-prefill').length;
+const prefillCount = SAMPLE.length - noPrefillCount;
+console.log(`  no-prefill ${noPrefillCount} - every material cluster plus the ruled unresolved-identity routes`);
+console.log(`  prefill    ${prefillCount} - configured control route(s)`);
+if (expanded) console.log(`  fresh      ${FRESH_CLUSTER_ROUTES.length} - one route from every cluster absent from the discovery sample`);
+if (full) console.log('  full set   every product route read from sitemap-products.xml');
+console.log(`  The other ${123 - SAMPLE.length} routes are covered mechanically by report-route-extension-coverage`);
 console.log('  (resolution, classification, readable name) and verify-route-price-identity');
 console.log('  (123 of 123 publish what their page publishes). They were NOT hand-checked.');
 console.log('');
