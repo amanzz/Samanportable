@@ -1,0 +1,229 @@
+{
+  "baseUrl": "http://127.0.0.1:3124",
+  "sample": [
+    {
+      "url": "/product/eps-panel",
+      "cls": "no-prefill",
+      "status": 200,
+      "calculatorPresent": false,
+      "productSlug": null,
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": null,
+      "calcHeaderTotal": null,
+      "problems": [
+        "no calculator mounted"
+      ]
+    },
+    {
+      "url": "/product/glass-wool-panel",
+      "cls": "no-prefill",
+      "status": 200,
+      "calculatorPresent": false,
+      "productSlug": null,
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": null,
+      "calcHeaderTotal": null,
+      "problems": [
+        "no calculator mounted"
+      ]
+    },
+    {
+      "url": "/product/pir-panel",
+      "cls": "no-prefill",
+      "status": 200,
+      "calculatorPresent": false,
+      "productSlug": null,
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": null,
+      "calcHeaderTotal": null,
+      "problems": [
+        "no calculator mounted"
+      ]
+    },
+    {
+      "url": "/product/rockwool-panel",
+      "cls": "no-prefill",
+      "status": 200,
+      "calculatorPresent": false,
+      "productSlug": null,
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": null,
+      "calcHeaderTotal": null,
+      "problems": [
+        "no calculator mounted"
+      ]
+    },
+    {
+      "url": "/product/sandwich-panel",
+      "cls": "no-prefill",
+      "status": 200,
+      "calculatorPresent": false,
+      "productSlug": null,
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": null,
+      "calcHeaderTotal": null,
+      "problems": [
+        "no calculator mounted"
+      ]
+    },
+    {
+      "url": "/product/wall-sheet",
+      "cls": "no-prefill",
+      "status": 200,
+      "calculatorPresent": false,
+      "productSlug": null,
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": null,
+      "calcHeaderTotal": null,
+      "problems": [
+        "no calculator mounted"
+      ]
+    },
+    {
+      "url": "/product/puf-panel",
+      "cls": "no-prefill",
+      "status": 200,
+      "calculatorPresent": false,
+      "productSlug": null,
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": null,
+      "calcHeaderTotal": null,
+      "problems": [
+        "no calculator mounted"
+      ]
+    },
+    {
+      "url": "/product/roofing-sheet/metal-roofing-sheet",
+      "cls": "no-prefill",
+      "status": 200,
+      "calculatorPresent": false,
+      "productSlug": null,
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": null,
+      "calcHeaderTotal": null,
+      "problems": [
+        "no calculator mounted"
+      ]
+    },
+    {
+      "url": "/product/industrial-sheds",
+      "cls": "prefill",
+      "status": 200,
+      "calculatorPresent": true,
+      "productSlug": "porta-cabin",
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": "Porta Cabin",
+      "calcHeaderTotal": "₹2,10,980",
+      "problems": [
+        "prefill route has no entry band"
+      ]
+    },
+    {
+      "url": "/product/peb-constructions/peb-steel-structure",
+      "cls": "prefill",
+      "status": 200,
+      "calculatorPresent": true,
+      "productSlug": "porta-cabin",
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": "Porta Cabin",
+      "calcHeaderTotal": "₹2,10,980",
+      "problems": [
+        "prefill route has no entry band"
+      ]
+    },
+    {
+      "url": "/product/pre-engineered-buildings",
+      "cls": "prefill",
+      "status": 200,
+      "calculatorPresent": true,
+      "productSlug": "porta-cabin",
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": "Porta Cabin",
+      "calcHeaderTotal": "₹2,10,980",
+      "problems": [
+        "prefill route has no entry band"
+      ]
+    },
+    {
+      "url": "/product/prefab-buildings/modular-office-buildings",
+      "cls": "prefill",
+      "status": 200,
+      "calculatorPresent": true,
+      "productSlug": "porta-cabin",
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": "Porta Cabin",
+      "calcHeaderTotal": "₹2,10,980",
+      "problems": [
+        "prefill route has no entry band"
+      ]
+    },
+    {
+      "url": "/product/prefabricated-houses/porta-cabin-house",
+      "cls": "prefill",
+      "status": 200,
+      "calculatorPresent": true,
+      "productSlug": "porta-cabin",
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": "Porta Cabin",
+      "calcHeaderTotal": "₹2,10,980",
+      "problems": [
+        "prefill route has no entry band"
+      ]
+    },
+    {
+      "url": "/product/portable-toilet/mobile-toilet",
+      "cls": "prefill",
+      "status": 200,
+      "calculatorPresent": true,
+      "productSlug": "porta-cabin",
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": "Porta Cabin",
+      "calcHeaderTotal": "₹2,10,980",
+      "problems": [
+        "prefill route has no entry band"
+      ]
+    },
+    {
+      "url": "/product/labor-colony",
+      "cls": "prefill",
+      "status": 200,
+      "calculatorPresent": true,
+      "productSlug": "labor-colony",
+      "entryBandPresent": true,
+      "entryHeadline": "Your Labour Colony (Labor Colony) from ₹19,44,000",
+      "calcHeaderProduct": "Labour Colony",
+      "calcHeaderTotal": "₹19,44,000",
+      "problems": []
+    },
+    {
+      "url": "/product/puf-panel/puf-panel-house",
+      "cls": "prefill",
+      "status": 200,
+      "calculatorPresent": false,
+      "productSlug": null,
+      "entryBandPresent": false,
+      "entryHeadline": null,
+      "calcHeaderProduct": null,
+      "calcHeaderTotal": null,
+      "problems": [
+        "no calculator mounted",
+        "prefill route has no entry band",
+        "prefill route shows no product in the calculator header"
+      ]
+    }
+  ]
+}

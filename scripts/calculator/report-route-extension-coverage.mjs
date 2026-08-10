@@ -32,56 +32,11 @@ Module._resolveFilename = function (request, ...rest) {
 const jiti = (jitiPkg.default || jitiPkg)(path.join(process.cwd(), 'noop.js'), { esmResolve: true });
 const { resolveEmbeddedCalculatorProduct } = jiti('./src/lib/cabinCalculatorEmbedRoutes.ts');
 
-/**
- * THE CLASSIFICATION RULE, ruled 09 Aug 2026, applied PER ROUTE and not per
- * cluster because a cluster holds both kinds - puf-panel/puf-panel-house is an
- * enclosed structure sitting inside a panel cluster.
- *
- *   PREFILL     the product is an enclosed structure the wizard can configure:
- *               it has a floor area, walls, a door, and can carry electricals
- *               and fittings. Cabins, offices, bunkhouses, cafes, homes,
- *               toilets, security cabins.
- *
- *   NO PREFILL  the product is a component or material sold by area or by
- *               length, where "how many rooms" is not a question the buyer can
- *               answer. Panels, roofing and wall sheets. The wizard opens as the
- *               general cabin calculator, prints no figure attributed to that
- *               page's product, and nothing around it implies otherwise.
- *
- * Any route these two tests cannot separate is listed and stopped INDIVIDUALLY,
- * never by stopping the batch.
- */
-const MATERIAL_CLUSTERS = new Set([
-  'eps-panel', 'glass-wool-panel', 'pir-panel', 'puf-panel', 'rockwool-panel',
-  'sandwich-panel', 'wall-sheet', 'roofing-sheet',
-]);
-/** Words that make a route an enclosed structure even inside a material cluster. */
-const STRUCTURE_WORDS = /(house|home|cabin|office|room|shed|building|toilet|colony|camp|hutment|bunk|warehouse|shop|cafe|store)/;
-/** Words that make a route a material even outside a material cluster.
- *  "structure" is deliberately NOT here. A first cut included it and
- *  misclassified four PEB routes - peb-steel-structure, pre-engineered-
- *  structures, pre-engineering-structures, engineered-steel-structures - as
- *  materials. A pre-engineered steel STRUCTURE is an enclosed building with a
- *  floor area, walls and a door; it is the thing the wizard configures, not a
- *  component sold by the square foot. */
-const MATERIAL_WORDS = /(panel|sheet|profile|coil|insulation)/;
-
-function classifyRoute(category, slug) {
-  const key = (slug || category).toLowerCase();
-  const inMaterialCluster = MATERIAL_CLUSTERS.has(category);
-  const looksStructural = STRUCTURE_WORDS.test(key);
-  const looksMaterial = MATERIAL_WORDS.test(key);
-
-  if (inMaterialCluster) {
-    // The exception that makes this per-route: a house inside a panel cluster.
-    if (looksStructural && !looksMaterial) return { cls: 'prefill', why: 'enclosed structure inside a material cluster' };
-    if (looksStructural && looksMaterial) return { cls: 'unclassified', why: 'names both a structure and a material' };
-    return { cls: 'no-prefill', why: 'material sold by area or length' };
-  }
-  if (looksMaterial && !looksStructural) return { cls: 'no-prefill', why: 'material named outside a material cluster' };
-  if (looksStructural || !looksMaterial) return { cls: 'prefill', why: 'enclosed structure the wizard can configure' };
-  return { cls: 'unclassified', why: 'neither test separates it' };
-}
+// The classification rule lives in the lib and is imported, NOT copied. The
+// table a reviewer reads and the behaviour a customer meets come from one
+// function, so they cannot drift - the same rule GST and the calculator H1 now
+// follow.
+const { classifyCalculatorRoute } = jiti('./src/lib/cabinCalculatorEmbedRoutes.ts');
 
 const PRODUCTS_DIR = path.join('src', 'data', 'products');
 const WP_DIR = path.join('src', 'data', 'wp-export', 'products');
@@ -116,11 +71,14 @@ const uncovered = [];
 for (const r of routes) {
   (resolveEmbeddedCalculatorProduct(r.category, r.slug) ? covered : uncovered).push(r);
 }
+// Every route now resolves, so the table covers all of them rather than only
+// the ones that used to fall through.
+const classified = routes;
 
 const clusters = new Map();
 const unreadable = [];
 const unclassified = [];
-for (const r of uncovered) {
+for (const r of classified) {
   const key = r.slug || r.category;
   const copy = approvedCopyFor(key);
   if (!copy) unreadable.push(r.url);
@@ -129,19 +87,17 @@ for (const r of uncovered) {
   c.routes += 1;
   if (copy) { c.named += 1; c.sources.add(copy.source); }
   if (copy && copy.subtitle) c.subtitled += 1;
-  const k = classifyRoute(r.category, r.slug);
-  r.cls = k.cls; r.why = k.why;
-  if (k.cls === 'prefill') c.prefill += 1;
-  else if (k.cls === 'no-prefill') c.noPrefill += 1;
-  else { c.unclassified += 1; unclassified.push(`${r.url} - ${k.why}`); }
+  const k = classifyCalculatorRoute(r.category, r.slug);
+  r.cls = k.prefill ? 'prefill' : 'no-prefill'; r.why = k.why;
+  if (k.prefill) c.prefill += 1; else c.noPrefill += 1;
 }
 
 console.log('CALC-L7 route extension - discovery');
 console.log('');
 console.log(`product routes in sitemap-products.xml : ${routes.length}`);
 console.log(`carrying the calculator today          : ${covered.length}`);
-console.log(`to be extended                         : ${uncovered.length}`);
-console.log(`clusters to be extended                : ${clusters.size}`);
+console.log(`still resolving to NO calculator        : ${uncovered.length}`);
+console.log(`clusters listed                        : ${clusters.size}`);
 console.log('');
 console.log('G29 CLUSTER COVERAGE');
 console.log('cluster'.padEnd(28) + 'routes'.padStart(7) + 'name'.padStart(6) + 'sub'.padStart(5) + 'prefill'.padStart(9) + 'no-pre'.padStart(8) + '  ??'.padStart(5) + '   source');
@@ -162,8 +118,8 @@ if (unclassified.length) {
   for (const u of unclassified) console.log('  ' + u);
 }
 console.log('');
-console.log(`approved NAME readable    : ${uncovered.length - unreadable.length} of ${uncovered.length}`);
-console.log(`approved SUBTITLE present : ${[...clusters.values()].reduce((a, c) => a + c.subtitled, 0)} of ${uncovered.length}`);
+console.log(`approved NAME readable    : ${classified.length - unreadable.length} of ${classified.length}`);
+console.log(`approved SUBTITLE present : ${[...clusters.values()].reduce((a, c) => a + c.subtitled, 0)} of ${classified.length}`);
 console.log('  Where no approved subtitle exists the field is emitted BLANK.');
 console.log('  A composed subtitle would be invention; a blank one is correct.');
 console.log('');

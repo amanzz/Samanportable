@@ -6,7 +6,16 @@ type ProductSlug = string;
 export interface EmbeddedCalculatorProduct {
   category: string;
   slug?: string;
-  productId: ProductId;
+  /**
+   * Absent on a NO-PREFILL mount. The wizard opens as the general cabin
+   * calculator and claims to price nothing on that page.
+   */
+  productId?: ProductId;
+  /**
+   * false = the page sells a component or material, so the calculator carries
+   * no product, no ladder and no entry band naming the product.
+   */
+  prefill: boolean;
   /**
    * Product JSON slug whose published ladder this route renders. The calculator
    * prices from this and nothing else, so a subpage can never show its parent's
@@ -100,6 +109,55 @@ function resolveForContainerOffices(category: string, slug?: string): ProductId 
   return 'container-office';
 }
 
+
+/**
+ * THE CLASSIFICATION RULE — CALC-L7 §2.1, ruled 09 Aug 2026. ONE definition
+ * site: the runtime resolver below and the G29 coverage gate both read it, so
+ * the table a reviewer checks and the behaviour a customer meets cannot drift.
+ *
+ *   PREFILL     an enclosed structure the wizard can configure: floor area,
+ *               walls, a door, and the capacity to carry electricals and
+ *               fittings. Cabins, offices, bunkhouses, cafes, homes, toilets,
+ *               sheds, PEB and pre-engineered buildings.
+ *
+ *   NO PREFILL  a component or material sold by area or by length, where "how
+ *               many rooms" is not a question the buyer can answer. Panels,
+ *               roofing and wall sheets. The wizard opens as the general cabin
+ *               calculator, prints no figure attributed to that page's product,
+ *               and carries no entry band naming it.
+ *
+ * Applied PER ROUTE, never per cluster: a cluster holds both kinds.
+ *
+ * TIE-BREAKER: when a slug names BOTH, the STRUCTURE governs. The material is
+ * what the thing is made from; the structure is what is sold. `puf-panel-house`
+ * is a house, `puf-panel` is a panel.
+ *
+ * "structure" is deliberately NOT a material word. A first cut included it and
+ * put peb-steel-structure and three siblings in the no-prefill class. A
+ * pre-engineered steel structure is an enclosed building, not a component.
+ */
+const MATERIAL_CLUSTERS = new Set([
+  'eps-panel', 'glass-wool-panel', 'pir-panel', 'puf-panel', 'rockwool-panel',
+  'sandwich-panel', 'wall-sheet', 'roofing-sheet',
+]);
+const STRUCTURE_WORDS = /(house|home|cabin|office|room|shed|building|toilet|colony|camp|hutment|bunk|warehouse|shop|cafe|store)/;
+const MATERIAL_WORDS = /(panel|sheet|profile|coil|insulation)/;
+
+export function classifyCalculatorRoute(category: string, slug?: string): { prefill: boolean; why: string } {
+  const key = normalise(slug || category);
+  const inMaterialCluster = MATERIAL_CLUSTERS.has(normalise(category));
+  const looksStructural = STRUCTURE_WORDS.test(key);
+  const looksMaterial = MATERIAL_WORDS.test(key);
+
+  if (inMaterialCluster) {
+    if (looksStructural && !looksMaterial) return { prefill: true, why: 'enclosed structure inside a material cluster' };
+    if (looksStructural && looksMaterial) return { prefill: true, why: 'names both; the structure governs the material' };
+    return { prefill: false, why: 'material sold by area or length' };
+  }
+  if (looksMaterial && !looksStructural) return { prefill: false, why: 'material named outside a material cluster' };
+  return { prefill: true, why: 'enclosed structure the wizard can configure' };
+}
+
 export function resolveEmbeddedCalculatorProduct(
   category: CategorySlug,
   slug?: ProductSlug
@@ -112,6 +170,7 @@ export function resolveEmbeddedCalculatorProduct(
     return {
       category,
       slug,
+      prefill: true,
       productId: resolveForPortaCabins(category, slug),
       ladderKey: ladderKeyFor(category, slug),
     };
@@ -125,7 +184,8 @@ export function resolveEmbeddedCalculatorProduct(
         : target.includes('security') ? 'security-cabin'
           : target.includes('toilet') ? 'toilet-cabin'
             : 'portable-cabin');
-    return { category, slug, productId, ladderKey: ladderKeyFor(category, slug) };
+    return { category, slug,
+      prefill: true, productId, ladderKey: ladderKeyFor(category, slug) };
   }
 
   if (c === 'portable-office') {
@@ -136,6 +196,7 @@ export function resolveEmbeddedCalculatorProduct(
     return {
       category,
       slug,
+      prefill: true,
       productId: mapped || 'office-cabin',
       ladderKey: ladderKeyFor(category, slug),
     };
@@ -150,6 +211,7 @@ export function resolveEmbeddedCalculatorProduct(
     return {
       category,
       slug,
+      prefill: true,
       productId: resolveForContainerHouses(category, slug),
       ladderKey: ladderKeyFor(category, slug),
     };
@@ -159,6 +221,7 @@ export function resolveEmbeddedCalculatorProduct(
     return {
       category,
       slug,
+      prefill: true,
       productId: resolveForContainerOffices(category, slug),
       ladderKey: ladderKeyFor(category, slug),
     };
@@ -181,27 +244,63 @@ export function resolveEmbeddedCalculatorProduct(
     return {
       category,
       slug,
+      prefill: true,
       productId: 'container-cafe',
       ladderKey: ladderKeyFor(category, slug),
     };
   }
 
-  // Labour Colony carries no calculator (ruled 03 Aug 2026). It is excluded
-  // from the product step, and five of the nine steps were dead for it anyway:
-  // structure, interior, doors, windows and add-ons never priced on a colony
-  // block. It gets its own configuration flow as a separate event. Its pages
-  // keep the enquiry route in the meantime, so none is left with nothing.
+  // Labour Colony was excluded on 03 Aug 2026 because five of the nine steps
+  // were dead for a colony block. CALC-L7 SUPERSEDES that exclusion by SAMAN's
+  // own instruction: the calculator goes on every product page.
+  //
+  // These four route through resolveForLaborColony rather than the generic
+  // classifier below, because the wizard ALREADY prices colonies - isColonyProduct
+  // and colonyLadder in cabinCalculatorSSR read a per-variant colony ladder. That
+  // code was unreachable while this branch returned null.
+  //
+  // Routing them generically instead would have left them with no ProductId, and
+  // verify-route-price-identity caught exactly that: all four pages publish real
+  // prices (Rs 38,88,000 and up) while the calculator beside them rendered quote
+  // mode, contradicting the page in the same direction the C-05 six did.
   if (c === 'labor-colony' || c === 'c06' || c === 'labour-colony') {
-    return null;
+    return {
+      category,
+      slug,
+      prefill: true,
+      productId: resolveForLaborColony(category, slug),
+      ladderKey: ladderKeyFor(category, slug),
+    };
   }
+
 
   // Security Cabins has no published ladder, so it prices on drawing. That is a
   // reason for the calculator to render in quote mode, not a reason for the
   // route to be the only one of twelve with no calculator section at all - on a
   // site where the other eleven have one, its absence reads as an oversight.
   if (c === 'security-cabins' || c === 'security-cabin') {
-    return { category, slug, productId: 'security-cabin', ladderKey: ladderKeyFor(category, slug) };
+    return { category, slug,
+      prefill: true, productId: 'security-cabin', ladderKey: ladderKeyFor(category, slug) };
   }
 
-  return null;
+  /**
+   * CALC-L7 §2.1 — every remaining product route. Before this, the resolver
+   * fell through to `return null` and 75 of 123 routes carried no calculator.
+   *
+   * NO NEW COPY IS WRITTEN HERE. A prefilled route renders the approved product
+   * name the page already publishes, read by the caller from that route's own
+   * record; a no-prefill route renders no product name at all. The old blocker
+   * was that these routes have no ProductId — the answer is that a no-prefill
+   * mount does not need one, and a prefilled mount reuses the page's own name.
+   */
+  const klass = classifyCalculatorRoute(category, slug);
+  return {
+    category,
+    slug,
+    prefill: klass.prefill,
+    // Undefined on a no-prefill mount: the wizard opens general, exactly as at
+    // /cabin-cost-calculator, and attributes nothing to this page's product.
+    productId: undefined,
+    ladderKey: klass.prefill ? ladderKeyFor(category, slug) : '',
+  };
 }
