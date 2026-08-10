@@ -1,0 +1,26 @@
+{
+  "baseUrl": "http://127.0.0.1:3124",
+  "label": "mount-after-puf-check",
+  "runs": 5,
+  "results": [
+    {
+      "route": "/product/puf-panel/puf-panel-house",
+      "lcpSamples": [
+        560,
+        768,
+        528,
+        488,
+        580
+      ],
+      "lcpMedian": 560,
+      "clsSamples": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "clsWorst": 0
+    }
+  ]
+}
