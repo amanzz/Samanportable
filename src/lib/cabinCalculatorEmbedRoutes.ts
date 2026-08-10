@@ -164,6 +164,28 @@ export function resolveEmbeddedCalculatorProduct(
     };
   }
 
+  // C-05 container cafe cluster — the hub plus its five subpages. SAMAN named
+  // /product/container-cafe in CALC-L4 (09 Aug 2026).
+  //
+  // None of the six publishes a price ladder, so getRouteLadder() returns null
+  // for every one of them and all six render the existing no-ladder
+  // "Design your {product}" behaviour that already ships on fifteen routes.
+  // That is deliberate: no rate is invented to make a route work, and with no
+  // figure rendered there is nothing that can contradict the page's own ladder.
+  // Each route still locks to its OWN ladderKey, so the day one of these pages
+  // publishes a ladder it prices from that and never from a sibling's.
+  //
+  // The 'container-cafe' product id and its approved name already exist in
+  // PRODUCTS; no new product copy is written here.
+  if (c === 'container-cafe') {
+    return {
+      category,
+      slug,
+      productId: 'container-cafe',
+      ladderKey: ladderKeyFor(category, slug),
+    };
+  }
+
   // Labour Colony carries no calculator (ruled 03 Aug 2026). It is excluded
   // from the product step, and five of the nine steps were dead for it anyway:
   // structure, interior, doors, windows and add-ons never priced on a colony

@@ -6,7 +6,9 @@ import labourSheds from '@/data/products/labor-sheds.json';
 import labourHutments from '@/data/products/labor-hutments.json';
 import prefabLabourCamps from '@/data/products/prefab-labor-camps.json';
 
-export const GST_RATE = 0.18;
+/** GST is defined once, in taxRates.ts, and imported by both pricing engines.
+ *  Re-exported here so the wizard's existing importers are unchanged. */
+export { GST_RATE } from '@/lib/taxRates';
 
 export const AREA_BAND_FORMULA = {
   referenceAreaSqft: 200,

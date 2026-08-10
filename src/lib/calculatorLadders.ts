@@ -38,6 +38,19 @@ import siteOfficeContainer from '@/data/products/site-office-container.json';
 import portableCabin from '@/data/products/portable-cabin.json';
 import portableCabinWithToilet from '@/data/products/portable-cabin-with-toilet.json';
 import portableShopCabin from '@/data/products/portable-shop-cabin.json';
+// C-05 container cafe cluster, added in CALC-L4 (09 Aug 2026). Each of the six
+// routes publishes its own six-row ladder on its own page; these read that JSON
+// and nothing else, so the cluster follows the same route-owns-its-ladder rule
+// as everything above. The four distinct price points here are real, not a
+// shared reference row: 20x10 is ₹4,00,000 on container-restaurant, ₹3,70,000
+// on the hub, ₹3,20,000 on food-truck-containers and ₹2,70,000 on
+// modular-container-cafe.
+import containerCafe from '@/data/products/container-cafe.json';
+import containerCoffeeShop from '@/data/products/container-coffee-shop.json';
+import containerHotel from '@/data/products/container-hotel.json';
+import containerRestaurant from '@/data/products/container-restaurant.json';
+import foodTruckContainers from '@/data/products/food-truck-containers.json';
+import modularContainerCafe from '@/data/products/modular-container-cafe.json';
 
 export interface LadderRow {
   sizeSlug: string;
@@ -161,6 +174,12 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'portable-cabin': toRows(portableCabin),
   'portable-cabin-with-toilet': toRows(portableCabinWithToilet),
   'portable-shop-cabin': toRows(portableShopCabin),
+  'container-cafe': toRows(containerCafe),
+  'container-coffee-shop': toRows(containerCoffeeShop),
+  'container-hotel': toRows(containerHotel),
+  'container-restaurant': toRows(containerRestaurant),
+  'food-truck-containers': toRows(foodTruckContainers),
+  'modular-container-cafe': toRows(modularContainerCafe),
   'container-houses': containerHouseLadder('container-houses'),
   'prefab-container-homes': containerHouseLadder('prefab-container-homes'),
   'shipping-container-homes': containerHouseLadder('shipping-container-homes'),

@@ -1,0 +1,56 @@
+{
+  "worked": [
+    {
+      "label": "LED panel light",
+      "rate": 1250,
+      "quantityBefore": 0,
+      "quantityAfter": 3,
+      "clicks": 3,
+      "totalBefore": 210980,
+      "totalAfter": 214730,
+      "observedDelta": 3750,
+      "expectedDelta": 3750,
+      "renderedValue": "3"
+    },
+    {
+      "label": "Tube light",
+      "rate": 900,
+      "quantityBefore": 0,
+      "quantityAfter": 3,
+      "clicks": 3,
+      "totalBefore": 210980,
+      "totalAfter": 213680,
+      "observedDelta": 2700,
+      "expectedDelta": 2700,
+      "renderedValue": "3"
+    },
+    {
+      "label": "External / entrance light",
+      "rate": 1200,
+      "quantityBefore": 0,
+      "quantityAfter": 3,
+      "clicks": 3,
+      "totalBefore": 210980,
+      "totalAfter": 214580,
+      "observedDelta": 3600,
+      "expectedDelta": 3600,
+      "renderedValue": "3"
+    }
+  ],
+  "cls": {
+    "shift": 0,
+    "rawShift": 0.00089,
+    "distinctBoxSizes": [
+      "30x24"
+    ],
+    "finalValue": "0"
+  },
+  "targets": {
+    "count": 28,
+    "hiddenNotCounted": 120,
+    "distinct": [
+      "44x44"
+    ],
+    "under": 0
+  }
+}

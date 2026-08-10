@@ -1,0 +1,101 @@
+[
+  {
+    "step": 1,
+    "heading": "Choose your product",
+    "sectionVisible": true,
+    "estimateCardVisible": false,
+    "estimateCardBackground": "rgb(240, 247, 242)",
+    "estimateCardColor": "rgb(234, 240, 247)",
+    "mobileEstimateVisible": false,
+    "numericControlsVisible": 0,
+    "navigatedVia": "step-nav"
+  },
+  {
+    "step": 2,
+    "heading": "Set the size",
+    "sectionVisible": true,
+    "estimateCardVisible": false,
+    "estimateCardBackground": "rgb(240, 247, 242)",
+    "estimateCardColor": "rgb(234, 240, 247)",
+    "mobileEstimateVisible": false,
+    "numericControlsVisible": 5,
+    "navigatedVia": "step-nav"
+  },
+  {
+    "step": 3,
+    "heading": "Frame and wall",
+    "sectionVisible": true,
+    "estimateCardVisible": false,
+    "estimateCardBackground": "rgb(240, 247, 242)",
+    "estimateCardColor": "rgb(234, 240, 247)",
+    "mobileEstimateVisible": false,
+    "numericControlsVisible": 0,
+    "navigatedVia": "step-nav"
+  },
+  {
+    "step": 4,
+    "heading": "Choose the interior",
+    "sectionVisible": true,
+    "estimateCardVisible": false,
+    "estimateCardBackground": "rgb(240, 247, 242)",
+    "estimateCardColor": "rgb(234, 240, 247)",
+    "mobileEstimateVisible": false,
+    "numericControlsVisible": 0,
+    "navigatedVia": "step-nav"
+  },
+  {
+    "step": 5,
+    "heading": "Add doors and windows",
+    "sectionVisible": true,
+    "estimateCardVisible": false,
+    "estimateCardBackground": "rgb(240, 247, 242)",
+    "estimateCardColor": "rgb(234, 240, 247)",
+    "mobileEstimateVisible": false,
+    "numericControlsVisible": 16,
+    "navigatedVia": "step-nav"
+  },
+  {
+    "step": 6,
+    "heading": "Add electrical fittings",
+    "sectionVisible": true,
+    "estimateCardVisible": false,
+    "estimateCardBackground": "rgb(240, 247, 242)",
+    "estimateCardColor": "rgb(234, 240, 247)",
+    "mobileEstimateVisible": false,
+    "numericControlsVisible": 18,
+    "navigatedVia": "step-nav"
+  },
+  {
+    "step": 7,
+    "heading": "Add furniture and fittings",
+    "sectionVisible": true,
+    "estimateCardVisible": false,
+    "estimateCardBackground": "rgb(240, 247, 242)",
+    "estimateCardColor": "rgb(234, 240, 247)",
+    "mobileEstimateVisible": false,
+    "numericControlsVisible": 32,
+    "navigatedVia": "step-nav"
+  },
+  {
+    "step": 8,
+    "heading": "Delivery and taxes",
+    "sectionVisible": true,
+    "estimateCardVisible": false,
+    "estimateCardBackground": "rgb(240, 247, 242)",
+    "estimateCardColor": "rgb(234, 240, 247)",
+    "mobileEstimateVisible": false,
+    "numericControlsVisible": 1,
+    "navigatedVia": "step-nav"
+  },
+  {
+    "step": 9,
+    "heading": "Get your quotation",
+    "sectionVisible": true,
+    "estimateCardVisible": true,
+    "estimateCardBackground": "rgb(240, 247, 242)",
+    "estimateCardColor": "rgb(234, 240, 247)",
+    "mobileEstimateVisible": false,
+    "numericControlsVisible": 0,
+    "navigatedVia": "step-nav"
+  }
+]

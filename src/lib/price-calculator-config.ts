@@ -1,3 +1,5 @@
+import { GST_RATE } from "@/lib/taxRates";
+
 export type PriceCalculatorZone = "South" | "North" | "";
 
 export type TransportOption =
@@ -775,9 +777,18 @@ const BASED_INSTALLATION_MULTIPLIERS: Record<InstallationOption, number> = {
   "Discuss with SAMAN": 1.03,
 };
 
+/**
+ * "GST included guidance" multiplied by 1.05 — a 5% tax on a figure the rest of
+ * the codebase taxes at GST_RATE (18%). A buyer selecting it was shown a
+ * "tax-inclusive" price understating GST by roughly 13 percentage points.
+ *
+ * The rate is imported from taxRates.ts, the single definition site both
+ * engines read, so this option can never drift from statutory GST again. The
+ * other two options are 1.0 because they add no tax to the figure shown.
+ */
 const BASED_GST_MULTIPLIERS: Record<GstOption, number> = {
   "GST extra": 1.0,
-  "GST included guidance": 1.05,
+  "GST included guidance": 1 + GST_RATE,
   "Discuss with SAMAN": 1.0,
 };
 
