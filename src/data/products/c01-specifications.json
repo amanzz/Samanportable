@@ -2034,7 +2034,14 @@
           "component": "Warranty",
           "detail": "Warranty period and exclusions confirmed in the final quotation; published standard: 5-year structural warranty and 1-year finishing warranty, finishing extendable to 2 years on request"
         }
-      ]
+      ],
+      "diagram": {
+        "src": "/images/products/porta-cabin-with-toilet/diagrams/porta-cabin-with-toilet-diagram-1.webp",
+        "alt": "Cutaway diagram of a porta cabin with toilet labelling the MS chassis, corrugated wall and roof sheet, fibre-cement lining and ceiling, mineral wool insulation, cement board floor base and anti-skid vinyl finish, with separated toilet, urinal and washbasin zones",
+        "caption": "Porta Cabin with Toilet wet-area construction anatomy, 20x10x8.5 ft. Illustrative - not for construction. Drawing SP-PC-WC-05-DWG-R1.",
+        "width": 1672,
+        "height": 941
+      }
     },
     "portacabin-office": {
       "name": "Portacabin Office",

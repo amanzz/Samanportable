@@ -20,6 +20,11 @@ export interface RightToExistEntry {
   body: ReactNode;
   comparison: ReactNode;
   appendix?: ReactNode;
+  /** PC-04 (v1.3, 14 Aug 2026) — render the second Section-2 paragraph at body
+      weight instead of the deployed semibold. Set only where the approved copy
+      makes that paragraph body copy rather than emphasis; absent everywhere else,
+      so every other entry keeps its current styling byte-for-byte. */
+  uniformParagraphWeight?: boolean;
   /** R15 (v1.4, 14 Aug 2026) — optional image-left / content-right split card
       rendered below the lead paragraphs. Present only on the porta-cabins hub;
       every other entry renders byte-identically to before. */
@@ -346,6 +351,23 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
         The porta cabin with toilet suits gate offices, supervisor cabins and crew facilities where people work through the day and the washroom must stay inside the same footprint. Share your size, seat count and site location, and <Link className={linkClass} href="/contact">request a fixed quotation</Link> from our team; we return it within 48 hours.
       </>
     ),
+    // v1.3 §1.1 — both Section-2 paragraphs are body copy, so the second one drops
+    // the emphasis weight. Opt-in: every other entry keeps the deployed styling.
+    uniformParagraphWeight: true,
+    // v1.3 §1.1 — premium split card. Copy verbatim from the ticket. The image is
+    // the 20x10 corner-interior shot, used by no gallery or Description slot, so
+    // page-wide file uniqueness holds. CTA target taken from the live main
+    // navigation (Header.tsx: Gallery -> /gallery), not guessed.
+    splitCard: {
+      imageSrc: '/images/products/porta-cabin-with-toilet/section2/porta-cabin-with-toilet-20x10-corner-interior.webp',
+      imageAlt: 'Cubicle row with washbasin counter and mirror inside the 20x10 unit',
+      imageWidth: 1280,
+      imageHeight: 720,
+      subheading: 'See the wet-zone finish before you commit',
+      body: 'Look at completed SAMAN cabins from our Bengaluru and Greater Noida factories: the lining, the sealed vinyl floor, the door hardware and the openings. Judge the finish on real deliveries, then settle your size and seat count with confidence.',
+      ctaLabel: 'Explore the project gallery',
+      ctaHref: '/gallery',
+    },
   },
   'portacabin-office': {
     heading: 'Why choose the Portacabin Office',

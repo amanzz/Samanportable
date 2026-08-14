@@ -28,7 +28,13 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         {entry.heading}
       </h2>
       <p className="text-sm leading-relaxed text-slate-700">{entry.body}</p>
-      <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">
+      <p
+        className={
+          entry.uniformParagraphWeight
+            ? 'mt-3 text-sm leading-relaxed text-slate-700'
+            : 'mt-3 text-sm font-semibold leading-relaxed text-slate-800'
+        }
+      >
         {entry.comparison}
         {entry.appendix}
       </p>
