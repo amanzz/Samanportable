@@ -36,16 +36,26 @@ PAGES = [
 ]
 
 
-def normalise(h):
-    """Strip everything that changes between two builds of identical source: the
-    buildId and every content-hashed asset filename under /_next/static (chunks, css,
-    fonts). What survives is the rendered markup and copy, which is what 11.8 is
-    about."""
+def normalise(h, drop_next_data=False):
+    """Strip what is build-artefact noise rather than rendered content:
+
+      - the Next.js buildId;
+      - every asset filename under /_next/static. Both the content hash AND the webpack
+        chunk NUMBER move when the module graph changes, and adding a page changes the
+        graph, so `1540-<hash>.js` becoming `6652-<hash>.js` on an untouched page is
+        bundler bookkeeping, not a change to that page;
+      - Radix `useId` values (`radix-:R2bbl6:`), which are derived from React tree
+        position and are internally self-consistent on each render.
+
+    With `drop_next_data`, the serialised __NEXT_DATA__ island is removed too, leaving
+    only the server-rendered markup a user or crawler actually sees."""
     h = re.sub(r'"buildId":"[^"]*"', '"buildId":"BUILDID"', h)
-    # /_next/static/<hash>/... (buildId path segment)
     h = re.sub(r'/_next/static/[A-Za-z0-9_\-]{8,}/', '/_next/static/BUILDID/', h)
-    # any content-hashed asset filename: name-<hex>.ext  or  <hex>.ext
-    h = re.sub(r'(/_next/static/[^"\']*?)[-.]?[0-9a-f]{8,}(\.[a-z0-9]+)', r'\1HASH\2', h)
+    h = re.sub(r'/_next/static/chunks/[^"]+\.js', '/_next/static/chunks/CHUNK.js', h)
+    h = re.sub(r'/_next/static/(css|media)/[^"]+', r'/_next/static/\1/ASSET', h)
+    h = re.sub(r'radix-:[A-Za-z0-9]+:', 'radix-:ID:', h)
+    if drop_next_data:
+        h = re.sub(r'<script id="__NEXT_DATA__".*?</script>', '', h, flags=re.S)
     return h
 
 
@@ -54,11 +64,14 @@ for p in PAGES:
     try:
         req = urllib.request.Request(BASE + p, headers={'User-Agent': 'pc02-hash'})
         body = urllib.request.urlopen(req, timeout=120).read().decode('utf-8', 'replace')
-        out[p] = {'sha': hashlib.sha256(normalise(body).encode('utf-8')).hexdigest()[:16],
-                  'bytes': len(body)}
+        out[p] = {
+            'sha': hashlib.sha256(normalise(body).encode('utf-8')).hexdigest()[:16],
+            'markup': hashlib.sha256(normalise(body, True).encode('utf-8')).hexdigest()[:16],
+            'bytes': len(body),
+        }
     except Exception as e:
-        out[p] = {'sha': 'ERROR', 'bytes': 0, 'error': str(e)[:120]}
-    print('%-52s %s  %d bytes' % (p, out[p]['sha'], out[p]['bytes']))
+        out[p] = {'sha': 'ERROR', 'markup': 'ERROR', 'bytes': 0, 'error': str(e)[:120]}
+    print('%-48s full %s  markup %s  %d B' % (p, out[p]['sha'], out[p]['markup'], out[p]['bytes']))
 
 path = os.path.join(HERE, 'pc02-sibling-hashes-%s.json' % LABEL)
 json.dump(out, io.open(path, 'w', encoding='utf-8'), indent=1)
