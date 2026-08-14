@@ -28,8 +28,12 @@ export interface RightToExistEntry {
     imageAlt: string;
     imageWidth: number;
     imageHeight: number;
-    subheading: string;
-    body: string;
+    /** PC-02 revision v1.2 (14 Aug 2026) — optional. The split layout is a mandatory
+        cluster design, but a page whose approved copy supplies no card sub-heading or
+        card body must render the panel without them rather than invent either. The hub
+        supplies both, so its markup is unchanged. */
+    subheading?: string;
+    body?: string;
     ctaLabel: string;
     ctaHref: string;
   };
@@ -42,10 +46,11 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
   // link map and nothing else; the anchor TEXT is the approved bracket content
   // unchanged, so the rendered sentence reads word for word as approved.
   //
-  // No `splitCard`: the R15 split layout is an opt-in cluster amendment, and the
-  // approved GI copy supplies no sub-heading, card body or CTA label for it. An
-  // invented card would breach the zero-invention rule, so the section renders
-  // with its two paragraphs exactly as the copy is written.
+  // Revision v1.2 R2 — the R15 split layout is MANDATORY on cluster subpages, so the
+  // card is built. It carries only what approved copy exists: an approved GI gallery
+  // image with its approved alt, and the section 6 link-map row 2 CTA. No card
+  // sub-heading and no card body are emitted, because the approved copy supplies
+  // neither and the builder does not write them.
   'gi-porta-cabin': {
     heading: 'When a GI Porta Cabin Beats Painted Steel on Real Sites',
     body: (
@@ -58,6 +63,20 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
         If your site is dry and inland, the <Link className={linkClass} href="https://www.samanportable.com/product/porta-cabins/ms-porta-cabin">MS porta cabin</Link> usually serves the same office duty at a lower rate. Its IS 2062 frame carries the same platform electricals and QA. Compare the two ladders, then send your site pin, exposure notes and headcount to our engineering team for a fixed 48-hour quotation. <Link className={linkClass} href="https://www.samanportable.com/contact">Get a GI cabin quote</Link>
       </>
     ),
+    // Image: an approved GI gallery file carrying its own approved alt. R2 asks for one
+    // "not already consumed by another slot on this page", which is not satisfiable —
+    // all 36 approved gallery files are consumed by the six size galleries and there is
+    // no 37th file with an approved alt. Re-using an approved image with its approved
+    // alt keeps Gate 4 intact; GAP-reported. The 20x10 reference size's front-elevation
+    // shot is chosen because it is an exterior and is not any panel's lead image.
+    splitCard: {
+      imageSrc: '/images/products/gi-porta-cabin/20x10/gi-porta-cabin-20x10-tan-green-front-elevation.webp',
+      imageAlt: 'Cream and green two-tone 20x10 ft GI porta cabin, angled long-wall view',
+      imageWidth: 1254,
+      imageHeight: 1254,
+      ctaLabel: 'Get a GI cabin quote',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   // C-05 container-cafe HUB — §5 of the 08 Aug draft of record, verbatim. The
   // comparison line's anchor is exactly the ruled §9 string; it is neither

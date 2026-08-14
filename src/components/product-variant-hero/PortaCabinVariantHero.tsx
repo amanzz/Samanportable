@@ -50,6 +50,12 @@ interface ApplicationPanel {
   sizeSlug: string;
   h3: string;
   paragraph: string;
+  /** PC-02 revision v1.2 (14 Aug 2026) — second body paragraph, for the owner's
+      Shape A variant section (H2 + two paragraphs). Absent on every dataset that
+      predates the rule, so their panels render one paragraph exactly as before.
+      Shape B (H2 + one paragraph + 3 to 5 bullets) leaves this unset and uses
+      `applications` instead. */
+  paragraph2?: string;
   applications: string[];
   /** Sub-heading above the applications list. Present only in the T25 Section H
       drop (its per-panel `h3`); the flagship dataset has no equivalent. */
@@ -1313,9 +1319,10 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
             ? variantImages[5]
             : undefined;
           const hasPhotos = variantImages.length > 0;
-          // PC-02: `hidePanelImages` short-circuits the whole resolution order, so a
-          // product whose approved manifest has no Explorer image renders copy-only
-          // instead of repeating a gallery file under a derived alt.
+          // PC-02 revision v1.2: `hidePanelImages` is retained but is no longer used by
+          // any product. R3/R4 ruled that a panel must never fall through to the
+          // component's "Reference photographs … on request" placeholder, so the GI page
+          // supplies a real per-panel image instead of suppressing the slot.
           const panelSrc = hidePanelImages
             ? null
             : panel.image?.src ||
@@ -1420,6 +1427,11 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{rewriteC04VisiblePunctuation(panel.h3, data.productSlug, true)}</h3>
                 )}
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph, data.productSlug)}</p>
+                {/* PC-02 revision v1.2 — Shape A second paragraph. Same class string as
+                    the first, so a dataset that supplies none is byte-identical. */}
+                {panel.paragraph2 && (
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph2, data.productSlug)}</p>
+                )}
 
                 {/* Sub-heading above the applications list — T25 Section H drop only. */}
                 {panel.applicationsHeading && (

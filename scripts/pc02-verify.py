@@ -114,6 +114,51 @@ h2s = [norm(strip_tags(x)) for x in re.findall(r'<h2\b[^>]*>(.*?)</h2>', raw, fl
 variant_h2 = [t for f, (w, t) in EXPECT.items() if f.endswith('_H2') and f.startswith('V')]
 found = [t for t in variant_h2 if t in h2s]
 check('11.4 six variant H2s present', len(found) == 6, '%d/6' % len(found))
+
+# ── revision v1.2 acceptance additions ───────────────────────────────────────
+V3 = json.load(io.open(os.path.join(HERE, 'pc02-v3-variants.json'), encoding='utf-8'))
+for i, v in enumerate(V3, 1):
+    if v['shape'] == 'A':
+        ok = bool(v['p2']) and norm(v['p1']) in visible and norm(v['p2']) in visible and not v['bullets']
+        check('R1 V%d Shape A: two paragraphs' % i, ok, v['slug'])
+    else:
+        nb = len(v['bullets'])
+        ok = (not v['p2']) and norm(v['p1']) in visible and 3 <= nb <= 5 \
+            and all(norm(b) in visible for b in v['bullets'])
+        check('R1 V%d Shape B: one para + %d bullets' % (i, nb), ok, v['slug'])
+    n = len(v['p1']) + (len(v['p2']) or 0 if v['p2'] else 0)
+    check('R1 V%d prose %d chars in 400-500' % (i, n), 400 <= n <= 500, '')
+check('R1 no single-paragraph variant',
+      all((v['shape'] == 'A' and v['p2']) or (v['shape'] == 'B' and v['bullets']) for v in V3), '')
+
+PLACEHOLDER = 'Reference photographs for this size are available on request'
+check('R3 invented placeholder sentence absent', PLACEHOLDER not in raw,
+      '%d occurrence(s)' % raw.count(PLACEHOLDER))
+
+for size in ['10x10', '20x8', '20x10', '20x12', '40x8', '40x10']:
+    files = set(re.findall(r'gi-porta-cabin/%s/[a-z0-9-]+\.webp' % size, raw))
+    check('R4 %s renders its six images' % size, len(files) == 6, '%d unique' % len(files))
+
+check('R2 Section 2 split card renders', 'saman-s2-split' in raw, '')
+check('R2 split card has media + CTA',
+      'saman-s2-split-media' in raw and 'saman-s2-split-cta' in raw, '')
+check('R2 split card invents no sub-heading or body',
+      'saman-s2-split-subheading' not in raw and 'saman-s2-split-text' not in raw, '')
+
+# Full strings, not substrings: "door and two windows" also occurs inside the untouched
+# and correct 20x10 exterior alt, which does show a door and two windows.
+R5_OLD = [
+    'Empty lined interior of a 20x8 ft GI cabin with door and two windows',
+    'Cream and red two-tone 20x10 ft GI cabin, front elevation with door and windows',
+]
+R5_NEW = [
+    'Empty lined interior of a 20x8 ft GI cabin with a door and three windows',
+    'Cream and red two-tone 20x10 ft GI cabin, end elevation with a single window',
+]
+for old in R5_OLD:
+    check('R5 superseded alt gone: "%s…"' % old[:30], old not in raw, '')
+for new in R5_NEW:
+    check('R5 corrected alt present: "%s…"' % new[:30], new in raw, '')
 for cell in ['Material', 'Delivery', 'Coverage', 'Brand', 'Application', 'Size']:
     check('11.4 FEATURE_CELLS "%s"' % cell, cell in visible, '')
 check('11.4 Coverage value is the approved line', 'Pan-India, 15+ states' in visible, '')
@@ -151,11 +196,22 @@ body_anchors = re.findall(r'<a[^>]+href="(https://www\.samanportable\.com[^"]*)"
 approved = [(h, norm(strip_tags(t))) for h, t in body_anchors]
 for href, anchor in LINKS.items():
     hit = [a for a in approved if a[0] == href and a[1] == anchor]
-    check('11.6 link "%s"' % anchor, len(hit) == 1, '%d occurrence(s)' % len(hit))
+    # The contact CTA is the one approved anchor that legitimately appears twice from
+    # revision v1.2 R2: once inline in Section 2 paragraph 2 (checksum-bearing) and once
+    # as the mandatory split-card CTA. Same anchor text, same approved destination.
+    want = 2 if href.endswith('/contact') else 1
+    check('11.6 link "%s"' % anchor, len(hit) == want,
+          '%d occurrence(s), expected %d' % (len(hit), want))
 extra = [a for a in approved if (a[0], a[1]) not in LINKS.items()]
 check('11.6 no unapproved absolute internal links', not extra, str(extra[:2]))
+check('11.6 exactly 4 approved destinations', len({a[0] for a in approved}) == 4,
+      '%d unique' % len({a[0] for a in approved}))
+# Revision v1.2 R2 adds the mandatory split-card CTA, which is the same approved anchor
+# and the same approved destination as the section 6 row-2 link, so /contact now appears
+# twice as an anchor while the page still carries only the four approved destinations.
 contact = [a for a in approved if a[0].endswith('/contact')]
-check('11.6 contact URL appears once', len(contact) == 1, '%d' % len(contact))
+check('11.6 contact anchor: inline + split-card CTA', len(contact) == 2,
+      '%d occurrence(s), both the approved anchor text' % len(contact))
 
 # ── 11.7 calculator ──────────────────────────────────────────────────────────
 check('11.7 calc-entry band present', 'calc-entry' in raw and 'data-calculator-entry' in raw, '')

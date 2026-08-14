@@ -105,14 +105,36 @@ product = {
 }
 
 # ── src/data/products/gi-porta-cabin-applications.json ───────────────────────
-# Section 3 of the build prompt: six H2s and six bodies, no application bullets and no
-# section heading or intro in the approved copy, so none is invented.
-applications = {
-    "panels": [
-        {"sizeSlug": v['slug'], "h3": v['h2'], "paragraph": v['body'], "applications": []}
-        for v in LADDER
-    ]
-}
+# Section 3, DRAFT V3 (revision ticket v1.2, Section A). Every panel is either the
+# owner's Shape A (H2 + two paragraphs) or Shape B (H2 + one paragraph + five bullets);
+# never a lone paragraph. Copy is verbatim and gated by pc02-v3-copy.py against the
+# 30 checksums in the ticket's Section B.
+#
+# R4: each panel carries that size's lead gallery image. The approved manifest holds
+# exactly 36 gallery + 6 description files and supplies no seventh image per size, so
+# the panel re-uses the size's own image[0] and inherits its approved alt through
+# `manifestImage`. Nothing is invented, and no panel can fall through to the shared
+# component's "Reference photographs … on request" placeholder (R3).
+#
+# The approved copy supplies no section heading and no intro, so neither is emitted.
+V3 = json.load(open(os.path.join(HERE, 'pc02-v3-variants.json'), encoding='utf-8'))
+by_slug = {v['slug']: v for v in V3}
+
+panels = []
+for v in LADDER:
+    src = by_slug[v['slug']]
+    panel = {
+        "sizeSlug": v['slug'],
+        "h3": src['h2'],
+        "paragraph": src['p1'],
+        "applications": src['bullets'],
+        "image": {k: gallery[v['slug']][0][k] for k in ('src', 'alt', 'width', 'height')},
+    }
+    if src['p2']:
+        panel["paragraph2"] = src['p2']
+    panels.append(panel)
+
+applications = {"panels": panels}
 
 # ── src/data/wp-export/products/gi-porta-cabin.json ──────────────────────────
 # Ruling 3: local static-content record. No WooCommerce product exists, so

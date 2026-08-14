@@ -737,7 +737,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   showSectionDividers={slug === 'ms-porta-cabin' || slug === 'gi-porta-cabin'}
                   usePremiumSizeTabs={slug === 'ms-porta-cabin' || slug === 'gi-porta-cabin'}
                   explorerPanelHeadingAsH2={slug === 'ms-porta-cabin' || slug === 'gi-porta-cabin'}
-                  explorerHidePanelImages={slug === 'gi-porta-cabin'}
                 />
               ) : (
               <ProductSummaryLayout

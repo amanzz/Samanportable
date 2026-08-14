@@ -49,8 +49,11 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
             />
           </div>
           <div className="saman-s2-split-body">
-            <h3 className="saman-s2-split-subheading">{card.subheading}</h3>
-            <p className="saman-s2-split-text">{card.body}</p>
+            {/* PC-02 revision v1.2 — both are optional now. A page whose approved copy
+                supplies no card sub-heading or body renders the panel without them
+                instead of inventing either; the hub supplies both and is unchanged. */}
+            {card.subheading && <h3 className="saman-s2-split-subheading">{card.subheading}</h3>}
+            {card.body && <p className="saman-s2-split-text">{card.body}</p>}
             <Link className="saman-s2-split-cta" href={card.ctaHref}>
               {card.ctaLabel}
             </Link>
