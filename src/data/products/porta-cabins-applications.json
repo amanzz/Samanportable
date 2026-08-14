@@ -11,7 +11,8 @@
         "Ticket, toll and payment counters",
         "Sales kiosks and enquiry booths",
         "Rooftop or terrace utility rooms"
-      ]
+      ],
+      "imageAlt": "Turquoise 10x10 ft porta cabin from a raised angle, door and sliding windows on the corrugated face"
     },
     {
       "sizeSlug": "20x8",
@@ -22,7 +23,8 @@
         "Secure tool and material stores",
         "Supervisor and timekeeper cabins",
         "Weighbridge and dispatch offices"
-      ]
+      ],
+      "imageAlt": "Tan and grey 20x8 ft porta cabin from a raised angle, door set between two sliding windows"
     },
     {
       "sizeSlug": "20x10",
@@ -33,7 +35,8 @@
         "Sales and marketing offices at project sites",
         "Clinics, labs and consultation rooms",
         "Accounts and documentation offices"
-      ]
+      ],
+      "imageAlt": "Dark green 20x10 ft porta cabin seen straight on, door centred between two sliding windows"
     },
     {
       "sizeSlug": "20x12",
@@ -44,7 +47,8 @@
         "Consultant and engineer cabins with meeting space",
         "Interview and HR cabins at large sites",
         "Site offices with records storage"
-      ]
+      ],
+      "imageAlt": "Pink and teal 20x12 ft porta cabin from a raised angle showing the roof and window line"
     },
     {
       "sizeSlug": "30x10",
@@ -55,7 +59,8 @@
         "Engineering and consultant team offices",
         "Site training and induction rooms",
         "Document control and QA offices"
-      ]
+      ],
+      "imageAlt": "Light blue 30x10 ft porta cabin at an angle, three sliding windows along the long wall beside the door"
     },
     {
       "sizeSlug": "40x10",
@@ -66,7 +71,8 @@
         "Training rooms and classrooms",
         "Multi-team engineering offices",
         "Banking and enrolment outposts"
-      ]
+      ],
+      "imageAlt": "White and maroon 40x10 ft porta cabin at an angle, window row running the full length beside the door"
     }
   ]
 }

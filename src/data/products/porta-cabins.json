@@ -429,5 +429,13 @@
   },
   "specPdfHref": "/specs/saman-porta-cabins-technical-specification.pdf",
   "specPdfButtonLabel": "Download technical specification (PDF)",
-  "hasProductVideo": false
+  "hasProductVideo": false,
+  "explorerImageTemplate": {
+    "10x10": "/images/products/porta-cabins/explorer/saman-porta-cabin-10x10-explorer.webp",
+    "20x8": "/images/products/porta-cabins/explorer/saman-porta-cabin-20x8-explorer.webp",
+    "20x10": "/images/products/porta-cabins/explorer/saman-porta-cabin-20x10-explorer.webp",
+    "20x12": "/images/products/porta-cabins/explorer/saman-porta-cabin-20x12-explorer.webp",
+    "30x10": "/images/products/porta-cabins/explorer/saman-porta-cabin-30x10-explorer.webp",
+    "40x10": "/images/products/porta-cabins/explorer/saman-porta-cabin-40x10-explorer.webp"
+  }
 }

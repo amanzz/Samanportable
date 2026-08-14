@@ -855,9 +855,45 @@
   }
 }
 
-/* R12 (v1.4, 14 Aug 2026) — SAP-style size tab strip. Replaces the v1.3 pill
-   chips, which wrapped to three rows. White ground, brand-green active label
-   with an underline; one row on desktop, exactly two rows of three below 520px.
+/* R20a (v1.5, 14 Aug 2026) — HERO buy-box size selector: the premium chip
+   (pill) design, compacted so six chips fit in at most two rows inside the
+   ~400px buy-box column. Opt-in (usePremiumSizeTabs), hub-only. The SAP
+   underline strip below is a DIFFERENT selector (Section 3 explorer). */
+.saman-size-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  background: var(--ds-color-mist, #f0f7f2);
+  border-radius: 14px;
+}
+.saman-size-chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1.5px solid var(--ds-color-leaf, #2d7a3f);
+  background: #fff;
+  color: var(--ds-color-forest, #1a3c2e);
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+.saman-size-chip:hover {
+  background: color-mix(in srgb, var(--ds-color-leaf, #2d7a3f) 8%, transparent);
+}
+.saman-size-chip[aria-pressed='true'],
+.saman-size-chip.active {
+  background: linear-gradient(135deg, var(--ds-color-leaf, #2d7a3f), var(--ds-color-forest, #1a3c2e));
+  color: #fff;
+  border-color: var(--ds-color-forest, #1a3c2e);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--ds-color-leaf, #2d7a3f) 35%, transparent);
+}
+
+/* R12 (v1.4) / R20b (v1.5) — SAP-style tab strip. In v1.5 this belongs to the
+   Section 3 "Explore every Porta Cabin size" strip, which is full-page-width, so
+   all six tabs sit in one row on desktop; the 3-column grid below 520px keeps it
+   to two rows. White ground, brand-green active label with an underline.
    Opt-in (usePremiumSizeTabs), hub-only. */
 .saman-size-tabs {
   display: flex;

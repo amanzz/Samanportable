@@ -833,8 +833,11 @@ export function PortaCabinVariantHero({
           ) : (
             <p className="text-sm font-semibold text-foreground">Choose size</p>
           )}
+          {/* R20a (v1.5) — the HERO buy-box selector is the premium CHIP design
+              (pills). The SAP underline strip belongs to the Section 3 explorer,
+              not here; v1.4 had applied it to the wrong selector. */}
           <div
-            className={usePremiumSizeTabs ? 'saman-size-tabs' : 'grid grid-cols-3 gap-2'}
+            className={usePremiumSizeTabs ? 'saman-size-chips' : 'grid grid-cols-3 gap-2'}
             role="group"
             aria-label={`Choose ${productNameLower} size`}
           >
@@ -843,10 +846,9 @@ export function PortaCabinVariantHero({
                 key={v.sizeSlug}
                 type="button"
                 aria-pressed={i === heroIndex}
-                aria-selected={usePremiumSizeTabs ? (i === heroIndex) : undefined}
                 onClick={() => selectHero(i)}
                 className={usePremiumSizeTabs
-                  ? cn('saman-size-tab', i === heroIndex && 'active')
+                  ? cn('saman-size-chip', i === heroIndex && 'active')
                   : cn(
                       'min-h-11 rounded-lg border px-2 py-2 text-sm font-semibold transition-colors',
                       i === heroIndex
@@ -1114,6 +1116,7 @@ export function PortaCabinVariantHero({
             activeIndex={explorerIndex}
             onSelectTab={selectExplorer}
             onGetQuote={openQuote}
+            usePremiumSizeTabs={usePremiumSizeTabs}
           />
         </div>
         )}
@@ -1167,9 +1170,12 @@ interface SizeApplicationsExplorerProps {
   activeIndex: number;
   onSelectTab: (index: number) => void;
   onGetQuote: (index: number) => void;
+  /** R20b (v1.5) — opt-in SAP-style tab strip for this section. Default false
+      keeps every other product's strip byte-identical. */
+  usePremiumSizeTabs?: boolean;
 }
 
-function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote }: SizeApplicationsExplorerProps) {
+function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false }: SizeApplicationsExplorerProps) {
   // T25 — HARD NULL. The per-slug applications copy is owner-authored; when a
   // product has none this section renders NOTHING. It must never fall back to the
   // porta-cabins copy.
@@ -1208,8 +1214,17 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
       )}
 
       {/* Tab strip — horizontal, scrollable on mobile; selected = leaf underline
-          + forest text (homepage PopularSizes design language). */}
-      <div role="tablist" aria-label={`${sentenceCase(productName)} sizes`} className="flex gap-1 overflow-x-auto border-b border-[var(--ds-color-border)]">
+          + forest text (homepage PopularSizes design language).
+          R20b (v1.5): opt-in SAP-style strip (white ground, brand-green label,
+          3px green underline). This section is full-page-width, so all six tabs
+          sit in one row on desktop. Keyboard/ARIA behaviour is unchanged. */}
+      <div
+        role="tablist"
+        aria-label={`${sentenceCase(productName)} sizes`}
+        className={usePremiumSizeTabs
+          ? 'saman-size-tabs'
+          : 'flex gap-1 overflow-x-auto border-b border-[var(--ds-color-border)]'}
+      >
         {data.variants.map((v, i) => {
           const selected = i === activeIndex;
           return (
@@ -1221,12 +1236,14 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               aria-controls={`app-panel-${v.sizeSlug}`}
               id={`app-tab-${v.sizeSlug}`}
               onClick={() => onSelectTab(i)}
-              className={cn(
-                '-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition-colors',
-                selected
-                  ? 'border-[var(--ds-color-leaf)] text-[var(--ds-color-forest)]'
-                  : 'border-transparent text-[var(--ds-color-steel)] hover:text-[var(--ds-color-forest)]'
-              )}
+              className={usePremiumSizeTabs
+                ? cn('saman-size-tab', selected && 'active')
+                : cn(
+                    '-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition-colors',
+                    selected
+                      ? 'border-[var(--ds-color-leaf)] text-[var(--ds-color-forest)]'
+                      : 'border-transparent text-[var(--ds-color-steel)] hover:text-[var(--ds-color-forest)]'
+                  )}
             >
               {panelBySlug.get(v.sizeSlug)?.tabLabel || v.label}
             </button>
