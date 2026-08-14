@@ -4,448 +4,404 @@
   "defaultVariant": "20x10",
   "hsn": "9406",
   "gstPercent": 18,
+  "h1": "Porta Cabin with Toilet: Work Room and Washroom in One",
+  "seoTitle": "Porta Cabin with Toilet: Sizes, Prices and Specs | SAMAN",
+  "metaDescription": "Porta cabin with toilet from SAMAN: an MS cabin with a factory-plumbed wet zone. Six sizes from Rs 1,66,750 ex-GST, delivered pan-India in 7-21 working days.",
+  "opener": "The SAMAN porta cabin with toilet is one factory-built MS cabin that carries its own washroom. Your site gets working space and sanitation in a single delivery. The dry room uses our standard porta cabin shell. The wet zone adds fibre-cement lining, an 18-24 mm cement-board floor with waterproof membrane, anti-skid vinyl and mechanical exhaust.\n\nCPVC supply and UPVC waste lines, traps and floor drains are routed at the factory to match your layout. Choose from six sizes between 10x10 ft and 40x10 ft, priced from Rs 1,66,750 ex-GST. Delivery takes 7-21 working days, with a 5-year structural warranty and 1-year finishing warranty as standard on every unit.",
+  "materialLabel": "MS frame and corrugated shell; wet-zone fibre-cement lining",
+  "deliveryLabel": "7-21 working days",
+  "coverageLabel": "Pan-India from Bengaluru and Greater Noida",
+  "priceCaption": "Base specification price - customisations quoted separately.",
+  "pricePerSqft": {
+    "10x10": "1,667.50",
+    "20x8": "1,595.00",
+    "20x10": "1,450.00",
+    "20x12": "1,392.00",
+    "30x10": "1,392.00",
+    "40x10": "1,377.50"
+  },
+  "applicationsDataset": "porta-cabin-with-toilet",
+  "explorerImageTemplate": "/images/products/porta-cabin-with-toilet/{sizeSlug}/porta-cabin-with-toilet-{sizeSlug}-front-angle.webp",
   "variants": [
     {
       "sizeSlug": "10x10",
       "label": "10x10 ft",
       "dims": "10x10x8.5 ft",
       "areaSqft": 100,
-      "priceExGst": 165000,
-      "capacity": "2–3 people",
-      "useCase": "Guard Post + Toilet",
+      "priceExGst": 166750,
+      "priceInclGst": 196765,
+      "useCase": "Gate duty room with WC zone",
       "sku": "SP-PCT-10x10",
       "images": [
         {
           "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-hero-view.webp",
-          "alt": "Porta cabin with toilet 10×10 ft, combined office and sanitation unit by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Cream 10x10 ft porta cabin with toilet with panel door and twin louvre ventilators",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-front-angle.webp",
-          "alt": "10×10 ft porta cabin with toilet, front view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "alt": "White and black 10x10 toilet cabin with reinforced door and louvre vents",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-side-elevation.webp",
-          "alt": "10×10 ft porta cabin with toilet, side view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-rear-angle.webp",
+          "alt": "Grey and navy 10x10 cabin with white service door and twin louvres",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-workspace-interior.webp",
-          "alt": "Inside a 10×10 ft porta cabin with toilet, workspace and plumbed sanitation area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-end-elevation.webp",
+          "alt": "Teal 10x10 toilet cabin end wall with two ventilator grilles and service door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-corner-interior.webp",
+          "alt": "Washroom corner with cubicles, wall mirror and counter basin inside the 10x10 unit",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-entrance-interior.webp",
-          "alt": "Inside a 10×10 ft porta cabin with toilet, entrance and plumbed sanitation area",
-          "provenance": "unknown",
+          "alt": "Entrance view with washbasin, urinal and WC cubicle in the 10x10 wet zone",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "A compact cabin with an attached toilet for guard posts and single-occupant sites that still need on-site sanitation.",
-      "priceInclGst": 194700
+      ]
     },
     {
       "sizeSlug": "20x8",
       "label": "20x8 ft",
       "dims": "20x8x8.5 ft",
       "areaSqft": 160,
-      "priceExGst": 264000,
-      "capacity": "3–4 people",
-      "useCase": "Narrow Office + Toilet",
+      "priceExGst": 255200,
+      "priceInclGst": 301136,
+      "useCase": "Narrow-frontage washroom strip",
       "sku": "SP-PCT-20x8",
       "images": [
         {
           "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-hero-view.webp",
-          "alt": "Porta cabin with toilet 20×8 ft, combined office and sanitation unit by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Sage green and charcoal 20x8 slim toilet cabin with in-line ventilated doors",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-front-angle.webp",
-          "alt": "20×8 ft porta cabin with toilet, front view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "alt": "Yellow 20x8 cabin with louvre vents and service doors along the long wall",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-side-elevation.webp",
-          "alt": "20×8 ft porta cabin with toilet, side view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-rear-angle.webp",
+          "alt": "Red 20x8 cabin with multiple ventilated doors on a tree-lined road",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-end-elevation.webp",
+          "alt": "Olive and tan 20x8 cabin end wall with louvre vent and steel door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-corner-interior.webp",
+          "alt": "Basin counter with mirrors facing the cubicle row inside the 20x8 unit",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-workspace-interior.webp",
-          "alt": "Inside a 20×8 ft porta cabin with toilet, workspace and plumbed sanitation area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-entrance-interior.webp",
-          "alt": "Inside a 20×8 ft porta cabin with toilet, entrance and plumbed sanitation area",
-          "provenance": "unknown",
+          "alt": "Twin urinals, washbasin and cubicle bank in the 20x8 washroom strip",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "A narrow-plot office-plus-toilet unit for boundary-wall placement where a separate toilet block won't fit.",
-      "priceInclGst": 311520
+      ]
     },
     {
       "sizeSlug": "20x10",
       "label": "20x10 ft",
       "dims": "20x10x8.5 ft",
       "areaSqft": 200,
-      "priceExGst": 300000,
-      "capacity": "4–6 people",
-      "useCase": "Site Office + Toilet",
+      "priceExGst": 290000,
+      "priceInclGst": 342200,
+      "useCase": "Site office with WC compartment",
       "sku": "SP-PCT-20x10",
       "images": [
         {
           "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-hero-view.webp",
-          "alt": "Porta cabin with toilet 20×10 ft, combined office and sanitation unit by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Tan and green 20x10 porta cabin with toilet with central door and window row",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-front-angle.webp",
-          "alt": "20×10 ft porta cabin with toilet, front view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "alt": "Charcoal 20x10 cabin with five ventilated doors in a paved compound",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-side-elevation.webp",
-          "alt": "20×10 ft porta cabin with toilet, side view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-elevated-view.webp",
+          "alt": "White 20x10 toilet cabin with central panel door and end windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-end-elevation.webp",
+          "alt": "Light blue and green 20x10 cabin end wall with door and ventilators",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-workspace-interior.webp",
-          "alt": "Inside a 20×10 ft porta cabin with toilet, workspace and plumbed sanitation area",
-          "provenance": "unknown",
+          "alt": "Furnished office room with desk, chair and storage inside the 20x10 unit",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-entrance-interior.webp",
-          "alt": "Inside a 20×10 ft porta cabin with toilet, entrance and plumbed sanitation area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-rear-interior.webp",
+          "alt": "Urinal screens, WC cubicles and twin basins inside the 20x10 wet zone",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "The standard site office with attached toilet, desk space for a small team plus a factory-plumbed sanitation section.",
-      "priceInclGst": 354000
+      ]
     },
     {
       "sizeSlug": "20x12",
       "label": "20x12 ft",
       "dims": "20x12x8.5 ft",
       "areaSqft": 240,
-      "priceExGst": 345600,
-      "capacity": "5–7 people",
-      "useCase": "Wide Office + Toilet",
+      "priceExGst": 334080,
+      "priceInclGst": 394214,
+      "useCase": "Wide washroom, separated zones",
       "sku": "SP-PCT-20x12",
       "images": [
         {
           "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-hero-view.webp",
-          "alt": "Porta cabin with toilet 20×12 ft, combined office and sanitation unit by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Cream and charcoal 20x12 toilet cabin with door and window band",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-front-angle.webp",
-          "alt": "20×12 ft porta cabin with toilet, front view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "alt": "Beige 20x12 cabin with six ventilated cubicle doors under a plant shed",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-rear-angle.webp",
+          "alt": "Dark grey 20x12 cabin with louvred doors and end service door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-side-elevation.webp",
-          "alt": "20×12 ft porta cabin with toilet, side view showing cabin and attached toilet section",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-workspace-interior.webp",
-          "alt": "Inside a 20×12 ft porta cabin with toilet, workspace and plumbed sanitation area",
-          "provenance": "unknown",
+          "alt": "Grey and blue 20x12 cabin long wall with four ventilated doors on lawn",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-entrance-interior.webp",
-          "alt": "Inside a 20×12 ft porta cabin with toilet, entrance and plumbed sanitation area",
-          "provenance": "unknown",
+          "alt": "Basin run with mirrors and cubicle doors along the 20x12 washroom",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-rear-interior.webp",
+          "alt": "Cubicle bank, urinal and twin basins with ventilators in the 20x12 unit",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "Extra width to keep a full working area alongside the toilet partition.",
-      "priceInclGst": 407808
+      ]
     },
     {
       "sizeSlug": "30x10",
       "label": "30x10 ft",
       "dims": "30x10x8.5 ft",
       "areaSqft": 300,
-      "priceExGst": 432000,
-      "capacity": "6–8 people",
-      "useCase": "Office + Toilet & Utility",
+      "priceExGst": 417600,
+      "priceInclGst": 492768,
+      "useCase": "Two-zone supervisor and crew unit",
       "sku": "SP-PCT-30x10",
       "images": [
         {
           "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-hero-view.webp",
-          "alt": "Porta cabin with toilet 30×10 ft, combined office and sanitation unit by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Sand-coloured 30x10 porta cabin with toilet with central door and windows",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-front-angle.webp",
-          "alt": "30×10 ft porta cabin with toilet, front view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "alt": "Green and charcoal 30x10 cabin with seven ventilated doors beside a lawn",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-side-elevation.webp",
-          "alt": "30×10 ft porta cabin with toilet, side view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-rear-angle.webp",
+          "alt": "Blue-grey 30x10 cabin with a ventilated door row on a paved plaza",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-workspace-interior.webp",
-          "alt": "Inside a 30×10 ft porta cabin with toilet, workspace and plumbed sanitation area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-elevated-view.webp",
+          "alt": "Olive and tan 30x10 cabin with window band in a hillside compound",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-entrance-interior.webp",
-          "alt": "Inside a 30×10 ft porta cabin with toilet, entrance and plumbed sanitation area",
-          "provenance": "unknown",
+          "alt": "Long basin run facing the cubicle row inside the 30x10 washroom",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-workspace-interior.webp",
+          "alt": "White 30x10 interior with urinals, cubicles and twin washbasins",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "A two-zone unit, office at one end, toilet and utility at the other, for longer site deployments.",
-      "priceInclGst": 509760
-    },
-    {
-      "sizeSlug": "40x8",
-      "label": "40x8 ft",
-      "dims": "40x8x8.5 ft",
-      "areaSqft": 320,
-      "priceExGst": 451200,
-      "capacity": "7–9 people",
-      "useCase": "Bunkhouse + Toilet Run",
-      "sku": "SP-PCT-40x8",
-      "images": [
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-hero-view.webp",
-          "alt": "Porta cabin with toilet 40×8 ft, combined office and sanitation unit by SAMAN Portable",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-front-angle.webp",
-          "alt": "40×8 ft porta cabin with toilet, front view showing cabin and attached toilet section",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-side-elevation.webp",
-          "alt": "40×8 ft porta cabin with toilet, side view showing cabin and attached toilet section",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-workspace-interior.webp",
-          "alt": "Inside a 40×8 ft porta cabin with toilet, workspace and plumbed sanitation area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x8/porta-cabin-with-toilet-40x8-entrance-interior.webp",
-          "alt": "Inside a 40×8 ft porta cabin with toilet, entrance and plumbed sanitation area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "A linear office-plus-toilet run for bunkhouse or in-line site use.",
-      "priceInclGst": 532416
-    },
-    {
-      "sizeSlug": "20x20",
-      "label": "20x20 ft",
-      "dims": "20x20x8.5 ft",
-      "areaSqft": 400,
-      "priceExGst": 564000,
-      "capacity": "8–10 people",
-      "useCase": "Open Office + Internal Toilet",
-      "sku": "SP-PCT-20x20",
-      "images": [
-        {
-          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-hero-view.webp",
-          "alt": "Porta cabin with toilet 20×20 ft, combined office and sanitation unit by SAMAN Portable",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-front-angle.webp",
-          "alt": "20×20 ft porta cabin with toilet, front view showing cabin and attached toilet section",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-side-elevation.webp",
-          "alt": "20×20 ft porta cabin with toilet, side view showing cabin and attached toilet section",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-workspace-interior.webp",
-          "alt": "Inside a 20×20 ft porta cabin with toilet, workspace and plumbed sanitation area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/20x20/porta-cabin-with-toilet-20x20-entrance-interior.webp",
-          "alt": "Inside a 20×20 ft porta cabin with toilet, entrance and plumbed sanitation area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "A large square unit with room for an open office and a separated internal toilet zone.",
-      "priceInclGst": 665520
+      ]
     },
     {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
       "dims": "40x10x8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 564000,
-      "capacity": "8–10 people",
-      "useCase": "Large Office + Toilet",
+      "priceExGst": 551000,
+      "priceInclGst": 650180,
+      "useCase": "Full crew sanitation facility",
       "sku": "SP-PCT-40x10",
       "images": [
         {
           "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-hero-view.webp",
-          "alt": "Porta cabin with toilet 40×10 ft, combined office and sanitation unit by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Beige and green 40x10 toilet cabin with two door sets and window band",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-front-angle.webp",
-          "alt": "40×10 ft porta cabin with toilet, front view showing cabin and attached toilet section",
-          "provenance": "unknown",
+          "alt": "White 40x10 cabin with eight ventilated doors on a concrete apron",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-rear-angle.webp",
+          "alt": "Blue 40x10 cabin with a ventilated door row outside an industrial shed",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-side-elevation.webp",
-          "alt": "40×10 ft porta cabin with toilet, side view showing cabin and attached toilet section",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-workspace-interior.webp",
-          "alt": "Inside a 40×10 ft porta cabin with toilet, workspace and plumbed sanitation area",
-          "provenance": "unknown",
+          "alt": "Cream and terracotta 40x10 cabin long wall with ventilated doors",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-entrance-interior.webp",
-          "alt": "Inside a 40×10 ft porta cabin with toilet, entrance and plumbed sanitation area",
-          "provenance": "unknown",
+          "alt": "Cubicle bank and long basin counter inside the 40x10 facility",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-rear-interior.webp",
+          "alt": "Vanity run with mirrors facing the cubicle doors in the 40x10 unit",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "A large single-module office with attached toilet, delivered as one plumbed unit.",
-      "priceInclGst": 665520
-    },
-    {
-      "sizeSlug": "40x12",
-      "label": "40x12 ft",
-      "dims": "40x12x8.5 ft",
-      "areaSqft": 480,
-      "priceExGst": 662400,
-      "capacity": "10–12 people",
-      "useCase": "Multi-Room Office + Sanitation",
-      "sku": "SP-PCT-40x12",
-      "images": [
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-hero-view.webp",
-          "alt": "Porta cabin with toilet 40×12 ft, combined office and sanitation unit by SAMAN Portable",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-front-angle.webp",
-          "alt": "40×12 ft porta cabin with toilet, front view showing cabin and attached toilet section",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-side-elevation.webp",
-          "alt": "40×12 ft porta cabin with toilet, side view showing cabin and attached toilet section",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-workspace-interior.webp",
-          "alt": "Inside a 40×12 ft porta cabin with toilet, workspace and plumbed sanitation area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-with-toilet/40x12/porta-cabin-with-toilet-40x12-entrance-interior.webp",
-          "alt": "Inside a 40×12 ft porta cabin with toilet, entrance and plumbed sanitation area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "The flagship combined unit: full multi-room office with an integrated sanitation section.",
-      "priceInclGst": 781632
+      ]
     }
   ],
-  "specPdfHref": "/specs/porta-cabin-with-toilet-technical-specification.pdf"
+  "descriptionHtml": "<h2>What a Porta Cabin with Toilet Is, and Who Orders One</h2><p>A porta cabin with toilet is one steel cabin with two jobs. The main body works as a duty room, gate office or crew space. A built-in wet zone carries the WC, urinal and washbasin fittings your layout calls for. SAMAN builds the shell as a standard MS porta cabin and upgrades the wet zone with moisture-tolerant materials, factory plumbing and forced ventilation. You order one unit, receive one delivery, and connect one set of services.</p><p>Contractors buy this cabin for construction gates and plant entries. Project owners place it where a small team works a full shift away from permanent buildings. Facility and event teams use the larger sizes as a combined duty room and washroom block. Site welfare rules in most Indian projects expect working sanitation near the workforce, and a factory-plumbed unit is the fastest way to put it there. In every case the buyer problem is the same: people need a place to work and a clean toilet, and the site cannot wait for civil construction.</p><p>Many buyers search for this same unit as a portable cabin with toilet. At SAMAN the two names describe one product: the same MS shell, the same wet zone, the same published ladder. Whichever term brought you here, the sections below answer the same set of decisions.</p><img src=\"/images/products/porta-cabin-with-toilet/description/porta-cabin-with-toilet-navy-blue-exterior.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Navy blue corrugated steel porta cabin with toilet, MS door and grille-protected sliding window in a factory yard\"><h2>Plan the Layout by Seat Count, Not by Guesswork</h2><p>Inside the shell, SAMAN plans separated toilet, urinal and washbasin zones according to the seat count you select. A small unit carries one WC zone beside the duty room. Mid sizes add a basin run and a urinal line. The largest sizes carry full cubicle banks with the washbasins placed clear of the door swings. This is the detail that decides daily comfort, so settle it before fabrication, not after delivery.</p><p>The working room follows the same logic. A 20x10 ft unit can hold a furnished office room with an internal WC compartment behind a flush door. Where the whole cabin serves a larger crew as a washroom block, the floor gives way to cubicles and circulation space instead. Doors and door swings matter here: waterproof flush doors with privacy fittings close each wet zone, so the working room stays dry and private.</p><p>Tell us how many people use the unit on a normal day and what they use it for. The layout drawing comes back with zones marked before you confirm the order, and fabrication follows that approved drawing. Changing a partition on paper costs nothing; moving one after delivery costs time and money.</p><img src=\"/images/products/porta-cabin-with-toilet/description/porta-cabin-with-toilet-office-interior.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Office room inside a porta cabin with toilet: white panelled walls, vinyl plank floor and internal WC compartment\"><h2>The Wet Zone Is Built Differently From the Dry Room</h2><p>Water destroys ordinary cabin interiors, so the wet zone uses its own material set. Walls carry 10-12 mm fibre-cement board with a moisture-tolerant lining and a hygienic finish. The floor starts as an 18-24 mm cement board and takes a waterproof membrane. It finishes in 2.5-3 mm anti-skid safety vinyl with sealed joints, so wash water stays above the membrane and off the steel. The ceiling uses 8-10 mm fibre-cement or washable PVC, which wipes clean and shrugs off humidity.</p><p>The dry room keeps the standard porta cabin build: corrugated MS shell outside, insulated cavity, and a clean panel finish inside. Wall insulation is 50 mm mineral wool where required. The roof carries 75 mm glass or mineral wool, which keeps the afternoon heat load down. Both zones sit on one welded MS chassis, so the cabin still lifts, travels and places as a single piece.</p><img src=\"/images/products/porta-cabin-with-toilet/description/porta-cabin-with-toilet-wc-washbasin.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Wet zone with western WC, wall-hung washbasin, health faucet, frosted ventilator window and exhaust fan\"><h2>Factory Plumbing: What Arrives Fitted, What Your Site Connects</h2><p>Every wet line is routed at the factory. CPVC pipes feed the fixtures. UPVC lines carry waste to a single outlet point, with traps and floor drains set under the finished floor. Fixtures follow your layout: an EWC or Indian WC in each cubicle, urinals and washbasins where the seat count calls for them, with flushing fitted. A mechanical exhaust fan is standard in the wet zone, supported by frosted aluminium ventilators, so moisture leaves the cabin instead of soaking into it.</p><p>Your site keeps a short, clear scope. Bring a water supply line to the cabin, take the waste outlet onward to your septic tank or drainage, and give the cabin a power connection. The table below draws the line exactly, because handover disputes start where scopes blur.</p><table class=\"saman-table\"><thead><tr><th>Fitted at the factory</th><th>Arranged by your site</th></tr></thead><tbody><tr><td>CPVC supply runs to every fixture</td><td>Water supply line up to the cabin connection</td></tr><tr><td>UPVC waste piping, traps and floor drains</td><td>Onward drainage to septic tank or sewer point</td></tr><tr><td>WC, urinal and washbasin fixtures with flushing</td><td>Water storage and any pressure boosting</td></tr><tr><td>Mechanical exhaust and frosted ventilators</td><td>Power supply to the cabin distribution board</td></tr><tr><td>Waterproofed wet-zone floor and lining</td><td>Level base and placement access</td></tr></tbody></table><img src=\"/images/products/porta-cabin-with-toilet/description/porta-cabin-with-toilet-double-wc-compartment.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Two partitioned WC compartments with washbasins, exhaust fans and open flush doors inside a porta cabin\"><h2>Six Sizes, One Published Price Ladder</h2><p>SAMAN publishes the complete ladder, so you can budget before you call. The base rate is Rs 1,450 per sq ft at the 200 sq ft reference size. Every other size follows a published area-band rule: smaller floors pay a premium per square foot, larger floors earn a reduction. Prices cover the base cabin specification. Interior fit-out, optional add-ons, transport and foundations are quoted separately.</p><table class=\"saman-table\"><thead><tr><th>Size</th><th>Floor area</th><th>Price ex-GST</th><th>Incl. 18% GST</th></tr></thead><tbody><tr><td>10x10x8.5 ft</td><td>100 sq ft</td><td>Rs 1,66,750</td><td>Rs 1,96,765</td></tr><tr><td>20x8x8.5 ft</td><td>160 sq ft</td><td>Rs 2,55,200</td><td>Rs 3,01,136</td></tr><tr><td>20x10x8.5 ft</td><td>200 sq ft</td><td>Rs 2,90,000</td><td>Rs 3,42,200</td></tr><tr><td>20x12x8.5 ft</td><td>240 sq ft</td><td>Rs 3,34,080</td><td>Rs 3,94,214</td></tr><tr><td>30x10x8.5 ft</td><td>300 sq ft</td><td>Rs 4,17,600</td><td>Rs 4,92,768</td></tr><tr><td>40x10x8.5 ft</td><td>400 sq ft</td><td>Rs 5,51,000</td><td>Rs 6,50,180</td></tr></tbody></table><p>Reading the ladder is simple. If your seat count fits a 20x10, the reference rate gives strong value among the small and mid sizes. Stepping up to 30x10 or 40x10 lowers the rate per square foot while adding zones. That is why crew facilities usually land on the two largest sizes. The <a href=\"https://www.samanportable.com/product/porta-cabins\">porta cabins range</a> follows the same published-ladder approach across every configuration, so cross-checking budgets between products takes minutes.</p><h2>Built on the Same Frame as Our Site Cabins</h2><p>The structure below the finishes is the proven SAMAN platform. A 100x50x3 mm MS C-channel base frame carries the floor grid. Corner and wall posts run 50x50x2 mm square pipe. The roof frame uses 50x50x1.6 mm perimeter members with 1.2 mm stiffeners. The shell is 1.2-1.6 mm corrugated MS sheet on the walls and 1.4-1.6 mm on the roof. Engineered lifting points are part of the build. Structural connections are welded or bolted to approved shop drawings and inspected before the panels close.</p><p>If your site needs a dry cabin without a wet zone, the <a href=\"https://www.samanportable.com/product/porta-cabins/ms-porta-cabin\">MS porta cabin</a> delivers the same frame and shell at a lower rate, and you can pair it with sanitation separately. Full member-by-member details for this product sit in the Specifications tab above, including the wet-zone build-up.</p><h2>Attended Posts and Longer Stays, Not Just Construction</h2><p>A portable cabin with toilet earns its keep wherever one or two people hold a post through the day and cannot leave it to find a washroom. Caretaker and watchman posts, estate gates, parking and yard control points, and remote duty points all run on the same logic: the washroom serves the room it is attached to, so the post stays staffed. The smaller sizes carry exactly this arrangement, a duty room beside its own WC zone.</p><p>The unit also moves with the work. It travels as one piece on its engineered lifting points, always to the approved transport drawing. Before a move, your site isolates and drains the water line, disconnects the waste outlet and caps the service points. After re-levelling on the prepared base at the next location, reconnect water, waste and power, and the cabin is back in service. One caution keeps expectations honest: the base cabin is a working unit, not a furnished residence. Beds, kitchens and interior fit-out sit outside the base specification and are quoted separately when you need them.</p><figure><img src=\"/images/products/porta-cabin-with-toilet/description/porta-cabin-with-toilet-truck-transport.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Porta cabin with toilet loaded on a flatbed truck for delivery, louvre ventilator on the end wall\"><figcaption>Transport is quoted separately per the distance-band freight ladder.</figcaption></figure><h2>Delivery, Placement and Site Readiness</h2><p>Standard delivery runs 7-21 working days from order confirmation, dispatched from our Bengaluru and Greater Noida units. Delivery is free within Bangalore city and Delhi NCR (Ghaziabad, Gurugram, Faridabad, Noida and Greater Noida). Other destinations follow the published distance-band freight ladder in the Shipping tab. Smaller bodies travel on a 20 ft open trailer. The 30 ft and 40 ft bodies use a 32-40 ft open trailer with crane unloading, and the 40 ft size carries an ODC route check. Freight stays tentative until the delivery location and order are confirmed, and can move with route and vehicle return.</p><p>Site readiness decides how smooth day one goes. Keep a level base ready with clear access for the trailer, plus the working margin listed for your size in the section above. Have the water point, drainage route and power connection identified before the cabin arrives. Lifting uses the engineered points built into the frame, with unloading equipment arranged at the site.</p><figure><img src=\"/images/products/porta-cabin-with-toilet/description/porta-cabin-with-toilet-crane-lifting.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Porta cabin with toilet lifted on slings during placement in a factory yard\"><figcaption>Unloading equipment is arranged at the site; lifting uses the engineered points in the frame.</figcaption></figure><h2>Quality Checks Before Dispatch, Documents With the Unit</h2><p>Every unit passes a pre-dispatch inspection before it leaves the factory. The checks cover dimensions, member and panel identification, connections, coating, roof drainage and weather sealing. Doors and windows are cycled, electrical continuity is tested, and the wet-zone services get a functional check. Cut edges are protected and panels close only after the frame inspection passes.</p><p>You also get the paperwork a project team needs. A versioned technical specification PDF for this product is available from the panel above, carrying the specification version, inclusions, options, exclusions and quotation inputs. Use it to brief consultants or attach it to an internal approval note. SAMAN POS India Private Limited is ISO 9001:2015 certified and GST registered, and manufactures from Bengaluru and Greater Noida.</p><h2>Keeping the Unit Clean and in Service</h2><p>Daily care stays simple because the wet zone is built for washing down. The vinyl floor has sealed joints, the lining wipes clean, and the floor drains carry wash water out through the trapped outlet. Run the exhaust fan during and after peak use, and keep the ventilators clear, so the cabin dries between shifts. Check the waste outlet connection and the door hardware on a normal site maintenance cycle; both are reachable without opening any panel.</p><p>Treated this way, SAMAN cabins give a service life of 20-25 years under proper use and maintenance. That figure describes expected service life, not a warranty period. The warranty itself stays as published: 5-year structural and 1-year finishing as standard, with the finishing cover extendable to 2 years on request, confirmed at quotation.</p><h2>What Is Standard, Optional, Custom and Excluded</h2><p>Scope clarity saves quotation rounds, so read this list before you enquire.</p><ul><li>STANDARD: MS structure and corrugated shell, wet-zone lining and waterproofed floor, factory plumbing with fixtures to layout, mechanical exhaust and ventilators, waterproof flush doors with privacy fittings, electrical wiring with protected circuits to the approved drawing.</li><li>OPTIONAL: air-conditioning provision, additional protected openings with grills or mesh where the schedule requires, finishing warranty extension to 2 years confirmed at quotation.</li><li>CUSTOM: seat count and zone layout, fixture selection (EWC or Indian WC), colour and coating system, opening positions to suit your placement.</li><li>EXCLUDED: interior fit-out and furniture, transport and installation, foundations and site civil work, water storage and onward drainage, statutory approvals at the site.</li></ul><h2>What to Send With Your Enquiry</h2><p>A complete enquiry comes back as a fixed-price quotation within 48 hours. Send the size or floor area you have shortlisted, the seat count and fixture preference, and the working-room use if you need one. Add the site district or PIN code for the freight band, and the water and power points you already have. Our team confirms the layout drawing, the price basis and the delivery window in writing. Prices shown here are base specification prices; customisations are quoted separately.</p><h2>Frequently Asked Questions</h2><p><strong>Is the toilet section inside the cabin or attached outside?</strong> The wet zone is built inside the cabin shell as a partitioned zone with its own flush door and ventilation. Zone positions follow the layout drawing you approve before fabrication.</p><p><strong>Which pan types can be fitted?</strong> Each cubicle takes an EWC or an Indian WC, confirmed per your layout. Urinals and washbasins are added according to the seat count you select.</p><p><strong>How is this different from a standalone portable toilet?</strong> A standalone unit is sanitation only. This product pairs a working room and a washroom inside one shell, so it replaces two deliveries, two bases and two service hook-ups with one of each.</p><p><strong>What does my site have to arrange before delivery?</strong> A level base with trailer access, a water supply line to the cabin, onward drainage from the single waste outlet, and a power connection to the distribution board. Everything inside the shell arrives factory-fitted.</p><p><strong>Do the published prices include GST and transport?</strong> Prices are listed ex-GST with the 18% GST figure shown alongside. Transport, installation, foundations and interior fit-out are quoted separately once your location and layout are confirmed.</p><p><strong>What warranty applies to this cabin?</strong> A 5-year structural warranty and 1-year finishing warranty as standard; the finishing warranty is extendable to 2 years on request, confirmed at quotation.</p>",
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the toilet section inside the cabin or attached outside?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The wet zone is built inside the cabin shell as a partitioned zone with its own flush door and ventilation. Zone positions follow the layout drawing you approve before fabrication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which pan types can be fitted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each cubicle takes an EWC or an Indian WC, confirmed per your layout. Urinals and washbasins are added according to the seat count you select."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from a standalone portable toilet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standalone unit is sanitation only. This product pairs a working room and a washroom inside one shell, so it replaces two deliveries, two bases and two service hook-ups with one of each."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does my site have to arrange before delivery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A level base with trailer access, a water supply line to the cabin, onward drainage from the single waste outlet, and a power connection to the distribution board. Everything inside the shell arrives factory-fitted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do the published prices include GST and transport?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prices are listed ex-GST with the 18% GST figure shown alongside. Transport, installation, foundations and interior fit-out are quoted separately once your location and layout are confirmed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What warranty applies to this cabin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 5-year structural warranty and 1-year finishing warranty as standard; the finishing warranty is extendable to 2 years on request, confirmed at quotation."
+        }
+      }
+    ]
+  },
+  "suppressLegacyFaqSchema": true
 }

@@ -1,0 +1,58 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft Porta Cabin with Toilet: Compact Gate Unit",
+      "paragraph": "The 100 sq ft module is the smallest footprint in this range and needs a 14x14 ft level working area on site. It suits a gate or security point where one or two people hold a duty room beside a single WC zone. Every service run stays short, so this size connects fastest once your water and drainage points are ready. It also travels on one truck with hydra unloading, which keeps placement simple inside tight compounds.",
+      "applications": [
+        "Occupancy basis: 2 persons",
+        "Site clearance: 14x14 ft level ground including working margin"
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8 ft Porta Cabin with Toilet: Slim Boundary Unit",
+      "paragraph": "Choose the 160 sq ft strip when the cabin must run along a compound wall or a narrow service lane. At 8 ft wide it places where a 10 ft or 12 ft body will not fit. It also keeps the doorway line clear of moving plant. Zones sit in line, entry first, washbasins next, cubicles at the far end, so users pass through without crossing each other. The area-band rule prices this size at Rs 1,595 per sq ft.",
+      "applications": [
+        "Best fit: narrow frontages and boundary placements",
+        "Layout: in-line zones planned to your seat count"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft Porta Cabin with Toilet: Standard Site Unit",
+      "paragraph": "Most orders settle on 200 sq ft because it balances room and cost at the reference rate of Rs 1,450 per sq ft. The 10 ft width takes a proper working room with its own WC compartment. When the unit serves a full crew, the same floor takes a separated toilet and washbasin bank instead. Plan a 24x14 ft level area for placement. If you are unsure where to start, price this size first; the rest of the ladder moves around it.",
+      "applications": [
+        "Occupancy basis: 4 persons",
+        "Reference size: Rs 1,450 per sq ft base rate"
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12 ft Porta Cabin with Toilet: Wide Washroom Unit",
+      "paragraph": "The extra 2 ft of width over the 20x10 changes how the wet zone works. A 240 sq ft floor lets the washbasin run sit clear of the cubicle doors. A urinal zone can stand separate from the WC line, so peak-hour queues do not block each other. Pick this size when office staff and field crew share one unit, or when your seat count outgrows a 10 ft width. Placement needs a 24x16 ft level area with working margin.",
+      "applications": [
+        "Occupancy basis: 5 persons",
+        "Layout gain: separated basin and urinal zones"
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft Porta Cabin with Toilet: Two-Zone Crew Unit",
+      "paragraph": "At 300 sq ft the cabin divides cleanly into two working zones. Run a supervisor room at one end and a multi-seat washroom at the other. Where site rules require it, split the wet area into two separated zones instead. The 30 ft body moves on a 32-40 ft open trailer with crane unloading at site. Plan the placement early: a 34x14 ft level area with clear access lets the unit set down and connect in one working day.",
+      "applications": [
+        "Occupancy basis: 7 persons",
+        "Layout gain: two zones inside one delivered shell"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft Porta Cabin with Toilet: Full Facility Unit",
+      "paragraph": "The 400 sq ft flagship carries the full separated set: WC cubicles, a urinal bank and a washbasin run, planned to your seat count. It works as the single sanitation and duty block for a larger workforce. One connection point replaces a scatter of small units, which makes daily cleaning and maintenance simpler. Transport uses a 40 ft open trailer with an ODC route check and crane unloading, so confirm access and the freight band before ordering.",
+      "applications": [
+        "Occupancy basis: 9 persons",
+        "Transport: 40 ft open trailer, freight per distance band"
+      ]
+    }
+  ]
+}

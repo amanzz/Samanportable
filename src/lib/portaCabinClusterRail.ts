@@ -154,6 +154,39 @@ export const PORTA_CABIN_MS_RAIL: import('./c16PanelCatalog').RelatedRailItem[] 
 ];
 
 /**
+ * PC-04 (14 Aug 2026) — the with-toilet page's Column 3, exactly the three tabs and
+ * the three buyer-comparison reasons in §1 of the approved draft v2. Not the
+ * full-cluster strip, so it is scoped to this one slug in the route.
+ *
+ * Only the MS entry carries card art: `children/` holds no card for the portable
+ * toilet hub or the porta cabins hub, and no product is ever shown under another
+ * product's image. The two without art render the rail's own icon fallback. None
+ * sets `imageAlt`: the rail falls back to `title`, so no alt text is authored here
+ * (the approved draft supplies none) and no em dash enters this page's markup.
+ */
+export const PORTA_CABIN_WITH_TOILET_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
+  {
+    title: 'MS Porta Cabin',
+    href: '/product/porta-cabins/ms-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Same frame and shell without the wet zone, lower rate',
+    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
+  },
+  {
+    title: 'Portable Toilet',
+    href: '/product/portable-toilet',
+    category: 'Portable Toilet',
+    blurb: 'Sanitation-only alternative when no working room is needed',
+  },
+  {
+    title: 'Porta Cabins Range',
+    href: '/product/porta-cabins',
+    category: 'Porta Cabins',
+    blurb: 'Compare every cabin configuration and the full ladder',
+  },
+];
+
+/**
  * PC-01 — "You may also like" on the MS page lists the cluster's other nine
  * configuration children (the hub rail minus this page itself), reusing the hub's
  * exact R16 card images and blurbs. Navigation component: no prices on cards.

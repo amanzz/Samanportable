@@ -329,16 +329,21 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  // PC-04 (14 Aug 2026) — Section 2 "buyer orientation" copy from the approved
+  // draft v2, verbatim, mapped onto this existing heading/body/comparison card.
+  // The approved §6 link map carries exactly two S2 body links: the portable-toilet
+  // hub and /contact. The previous entry's wet-zone spec sentence is gone — that
+  // material detail now lives in the Description and Specifications tabs.
   'porta-cabin-with-toilet': {
-    heading: 'Why choose the Porta Cabin with Toilet',
+    heading: 'Choose One Combined Unit Instead of Two Separate Deliveries',
     body: (
       <>
-        A working cabin with its own attached toilet in one newly fabricated unit: one delivery, one base, one drainage connection, no separate sanitary block. The wet zone uses 10–12 mm moisture-tolerant fibre-cement lining, an 18–24 mm cement board deck with waterproof membrane, and 2.5–3 mm anti-skid safety vinyl with sealed joints. Choose it wherever staff work and need facilities on the spot rather than at the far end of a site.
+        Buyers usually reach this page with one decision to make: order a cabin and a toilet as separate units, or take both inside one shell. A combined unit needs one transport slot, one level base and one plumbing hook-up. Its wet zone arrives lined, waterproofed and piped from the factory. Separate units make sense when the toilet must sit away from the work area, or when several crews share one facility. If you need sanitation alone, without a working room, a <Link className={linkClass} href="/product/portable-toilet">standalone portable toilet</Link> is the better fit and costs less.
       </>
     ),
     comparison: (
       <>
-        Need a standalone sanitary unit with no working space? The <Link className={linkClass} href="/product/portable-toilet">portable toilet range</Link> is sized by model, not by cabin.
+        The porta cabin with toilet suits gate offices, supervisor cabins and crew facilities where people work through the day and the washroom must stay inside the same footprint. Share your size, seat count and site location, and <Link className={linkClass} href="/contact">request a fixed quotation</Link> from our team; we return it within 48 hours.
       </>
     ),
   },

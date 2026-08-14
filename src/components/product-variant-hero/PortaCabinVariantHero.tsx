@@ -29,6 +29,7 @@ import { formatIndianPrice } from './types';
 import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
 import msPortaCabinApplications from '@/data/products/ms-porta-cabin-applications.json';
+import portaCabinWithToiletApplications from '@/data/products/porta-cabin-with-toilet-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -173,6 +174,17 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // which is exactly what happened on the first build of this page. Only this slug
   // is re-bound, so every other Section-H page keeps its drop.
   'ms-porta-cabin': msPortaCabinApplications as ApplicationsData,
+  // PC-04 porta-cabin-with-toilet — Section 3 of the approved draft v2. Six panels,
+  // one per published size. The approved copy supplies no section heading or intro,
+  // so neither is invented. Panels carry no explicit image: the product data file's
+  // `explorerImageTemplate` points each panel at that size's Block E front-angle
+  // slot, so the panel alt resolves to that image's approved Block E alt.
+  //
+  // Registered AFTER the two Section-H spreads for the same reason as the MS key
+  // above: `section-h-datasets.json` still carries a stale `porta-cabin-with-toilet`
+  // drop written against the retired nine-size ladder, and an earlier key would be
+  // silently overwritten by that spread.
+  'porta-cabin-with-toilet': portaCabinWithToiletApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -266,6 +278,14 @@ interface PortaCabinVariantHeroProps {
       and the section itself carries no H2 of its own (ms-porta-cabin). Default
       false keeps every other page's heading level byte-identical. */
   explorerPanelHeadingAsH2?: boolean;
+  /** PC-04 (14 Aug 2026) — opt-in override for the premium size-selector eyebrow.
+      Absent (the default) renders the deployed literal below, which contains an
+      em dash, so every other page using `usePremiumSizeTabs` stays byte-identical.
+      Set ONLY from a page whose approved copy states a different eyebrow: PC-04's
+      draft specifies a hyphen, and its acceptance gate requires zero U+2014 in the
+      page's own copy. Fixing the shared literal in place would change the hub and
+      the MS page too, so the string is opted into, not edited. */
+  sizeEyebrowText?: string;
 }
 
 // Star row for the review badge (Amendment G v2 — real rating: 4.6 from the 5
@@ -535,6 +555,7 @@ export function PortaCabinVariantHero({
   showSectionDividers = false,
   usePremiumSizeTabs = false,
   explorerPanelHeadingAsH2 = false,
+  sizeEyebrowText,
 }: PortaCabinVariantHeroProps) {
   const defaultIndex = Math.max(
     0,
@@ -850,7 +871,7 @@ export function PortaCabinVariantHero({
 
         <div className="space-y-2">
           {usePremiumSizeTabs ? (
-            <p className="text-sm font-semibold text-foreground">Choose your size — six factory-built options</p>
+            <p className="text-sm font-semibold text-foreground">{sizeEyebrowText || 'Choose your size — six factory-built options'}</p>
           ) : (
             <p className="text-sm font-semibold text-foreground">Choose size</p>
           )}
