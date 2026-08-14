@@ -63,6 +63,14 @@ export interface VariantProductData {
   /** Singular product noun ("Porta Cabin") used in hero copy, image alts, the
       aria-labels and the enquiry prefill. Default: preset, else the page title. */
   productName?: string;
+  /** PC-00 (14 Aug 2026) — SEO-authored H1 override, rendered ONLY at the buy-box
+      H1 (does not touch `productName`, which stays the short noun used in
+      aria-labels/sentences). Absent on every product except porta-cabins hub →
+      byte-identical elsewhere. */
+  heroH1?: string;
+  /** PC-00 — overrides the "Download Specification PDF" / "Download specifications"
+      button label. Absent → deployed literal, byte-identical everywhere else. */
+  specPdfButtonLabel?: string;
   /** Owner-approved SEO title and meta description for runtime replacement of
       stale WordPress head fields. */
   seoTitle?: string;

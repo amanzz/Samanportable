@@ -4,56 +4,66 @@
   "defaultVariant": "20x10",
   "hsn": "9406",
   "gstPercent": 18,
-  "hasProductVideo": true,
+  "heroH1": "Porta Cabin & Portable Cabin Manufacturer in India",
+  "seoTitle": "Porta Cabin & Portable Cabin Manufacturer in India | SAMAN",
+  "metaDescription": "SAMAN manufactures porta cabins (portable cabins) in India. Six published sizes from ₹1,43,750 ex-GST, exact MS steel specs, delivery in 7–21 working days.",
+  "opener": "SAMAN manufactures porta cabins — the same product many buyers call portable cabins — at its own factories in Bengaluru and Greater Noida, and delivers across India. You get a factory-built steel cabin for a site office, guard room, retail counter or project room, without months of civil work.\n\nEvery cabin uses a welded MS chassis, a corrugated MS enclosure, insulated lining and protected copper electricals. The full specification is published, and you can download it below. Six workbook-controlled sizes run from 10x10 ft at ₹1,43,750 to 40x10 ft at ₹4,75,000 ex-GST. Your fixed-price quotation arrives within 48 hours. Standard delivery takes 7–21 working days.",
   "variants": [
     {
       "sizeSlug": "10x10",
       "label": "10x10 ft",
       "dims": "10x10x8.5 ft",
       "areaSqft": 100,
-      "priceExGst": 137500,
+      "priceExGst": 143750,
       "capacity": "2–3 people",
       "useCase": "guard room, kiosk, small site office",
       "sku": "SP-PC-10x10",
       "images": [
         {
-          "src": "/images/products/porta-cabins/10x10/porta-cabin-10x10-hero-view.webp",
-          "alt": "10x10 ft porta cabin: exterior view, MS steel frame with insulated wall panels",
+          "src": "/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-hero-view.webp",
+          "alt": "10x10 ft SAMAN porta cabin exterior with corrugated MS walls and sliding windows",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/10x10/porta-cabin-10x10-front-angle.webp",
-          "alt": "Front angle of 10x10 ft porta cabin showing entrance door and windows",
+          "src": "/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-front-angle.webp",
+          "alt": "Front angle of 10x10 ft porta cabin showing door and window placement",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/10x10/porta-cabin-10x10-side-elevation.webp",
-          "alt": "Side elevation of 10x10 ft porta cabin, corrugated steel cladding",
+          "src": "/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-side-elevation.webp",
+          "alt": "Side elevation of 10x10 ft porta cabin along the long wall",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/10x10/porta-cabin-10x10-workspace-interior.webp",
-          "alt": "Interior of 10x10 ft porta cabin set up as site office workspace",
+          "src": "/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-end-elevation.webp",
+          "alt": "End elevation of 10x10 ft porta cabin showing the short wall",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/10x10/porta-cabin-10x10-entrance-interior.webp",
-          "alt": "Entrance and interior finish of 10x10 ft porta cabin",
+          "src": "/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-workspace-interior.webp",
+          "alt": "Interior of 10x10 ft porta cabin with lined walls, vinyl floor and workspace",
+          "provenance": "unknown",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-entrance-interior.webp",
+          "alt": "Entrance view into 10x10 ft porta cabin interior",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         }
       ],
       "shortDescription": "A compact square cabin that fits where nothing else does: guard posts, ticket counters, gate offices and small kiosks. Light enough for the tightest sites, and often positioned without a crane.",
-      "priceInclGst": 162250
+      "priceInclGst": 169625
     },
     {
       "sizeSlug": "20x8",
@@ -66,36 +76,43 @@
       "sku": "SP-PC-20x8",
       "images": [
         {
-          "src": "/images/products/porta-cabins/20x8/porta-cabin-20x8-hero-view.webp",
-          "alt": "20x8 ft porta cabin: exterior view, MS steel frame with insulated wall panels",
+          "src": "/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-hero-view.webp",
+          "alt": "20x8 ft SAMAN porta cabin exterior with corrugated MS walls and sliding windows",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x8/porta-cabin-20x8-front-angle.webp",
-          "alt": "Front angle of 20x8 ft porta cabin showing entrance door and windows",
+          "src": "/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-end-elevation.webp",
+          "alt": "End elevation of 20x8 ft porta cabin showing the short wall",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x8/porta-cabin-20x8-side-elevation.webp",
-          "alt": "Side elevation of 20x8 ft porta cabin, corrugated steel cladding",
+          "src": "/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-side-elevation.webp",
+          "alt": "Side elevation of 20x8 ft porta cabin along the long wall",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x8/porta-cabin-20x8-workspace-interior.webp",
-          "alt": "Interior of 20x8 ft porta cabin set up as site office workspace",
+          "src": "/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-rear-angle.webp",
+          "alt": "Rear angle of 20x8 ft porta cabin showing corrugated MS cladding",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x8/porta-cabin-20x8-entrance-interior.webp",
-          "alt": "Entrance and interior finish of 20x8 ft porta cabin",
+          "src": "/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-workspace-interior.webp",
+          "alt": "Interior of 20x8 ft porta cabin with lined walls, vinyl floor and workspace",
+          "provenance": "unknown",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-entrance-interior.webp",
+          "alt": "Entrance view into 20x8 ft porta cabin interior",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
@@ -115,36 +132,43 @@
       "sku": "SP-PC-20x10",
       "images": [
         {
-          "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-hero-view.webp",
-          "alt": "20x10 ft porta cabin: exterior view, MS steel frame with insulated wall panels",
+          "src": "/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-hero-view.webp",
+          "alt": "20x10 ft SAMAN porta cabin exterior with corrugated MS walls and sliding windows",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-front-angle.webp",
-          "alt": "Front angle of 20x10 ft porta cabin showing entrance door and windows",
+          "src": "/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-front-angle.webp",
+          "alt": "Front angle of 20x10 ft porta cabin showing door and window placement",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-side-elevation.webp",
-          "alt": "Side elevation of 20x10 ft porta cabin, corrugated steel cladding",
+          "src": "/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-side-elevation.webp",
+          "alt": "Side elevation of 20x10 ft porta cabin along the long wall",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-workspace-interior.webp",
-          "alt": "Interior of 20x10 ft porta cabin set up as site office workspace",
+          "src": "/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-rear-angle.webp",
+          "alt": "Angled exterior view of 20x10 ft porta cabin showing door and window placement",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x10/porta-cabin-20x10-entrance-interior.webp",
-          "alt": "Entrance and interior finish of 20x10 ft porta cabin",
+          "src": "/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-workspace-interior.webp",
+          "alt": "Interior of 20x10 ft porta cabin with lined walls, vinyl floor and workspace",
+          "provenance": "unknown",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-entrance-interior.webp",
+          "alt": "Entrance view into 20x10 ft porta cabin interior",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
@@ -164,36 +188,43 @@
       "sku": "SP-PC-20x12",
       "images": [
         {
-          "src": "/images/products/porta-cabins/20x12/porta-cabin-20x12-hero-view.webp",
-          "alt": "20x12 ft porta cabin: exterior view, MS steel frame with insulated wall panels",
+          "src": "/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-hero-view.webp",
+          "alt": "20x12 ft SAMAN porta cabin exterior with corrugated MS walls and sliding windows",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x12/porta-cabin-20x12-front-angle.webp",
-          "alt": "Front angle of 20x12 ft porta cabin showing entrance door and windows",
+          "src": "/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-front-angle.webp",
+          "alt": "Front angle of 20x12 ft porta cabin showing door and window placement",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x12/porta-cabin-20x12-side-elevation.webp",
-          "alt": "Side elevation of 20x12 ft porta cabin, corrugated steel cladding",
+          "src": "/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-side-elevation.webp",
+          "alt": "Side elevation of 20x12 ft porta cabin along the long wall",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x12/porta-cabin-20x12-workspace-interior.webp",
-          "alt": "Interior of 20x12 ft porta cabin set up as site office workspace",
+          "src": "/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-rear-angle.webp",
+          "alt": "Rear angle of 20x12 ft porta cabin showing corrugated MS cladding",
           "provenance": "unknown",
-          "width": 1150,
-          "height": 1150
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/20x12/porta-cabin-20x12-entrance-interior.webp",
-          "alt": "Entrance and interior finish of 20x12 ft porta cabin",
+          "src": "/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-workspace-interior.webp",
+          "alt": "Interior of 20x12 ft porta cabin with lined walls and vinyl floor",
+          "provenance": "unknown",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-entrance-interior.webp",
+          "alt": "Entrance view into 20x12 ft porta cabin interior",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
@@ -213,36 +244,43 @@
       "sku": "SP-PC-30x10",
       "images": [
         {
-          "src": "/images/products/porta-cabins/30x10/porta-cabin-30x10-hero-view.webp",
-          "alt": "30x10 ft porta cabin: exterior view, MS steel frame with insulated wall panels",
+          "src": "/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-hero-view.webp",
+          "alt": "30x10 ft SAMAN porta cabin exterior with corrugated MS walls and sliding windows",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/30x10/porta-cabin-30x10-front-angle.webp",
-          "alt": "Front angle of 30x10 ft porta cabin showing entrance door and windows",
+          "src": "/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-front-angle.webp",
+          "alt": "Front angle of 30x10 ft porta cabin showing door and window placement",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/30x10/porta-cabin-30x10-side-elevation.webp",
-          "alt": "Side elevation of 30x10 ft porta cabin, corrugated steel cladding",
+          "src": "/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-side-elevation.webp",
+          "alt": "Side elevation of 30x10 ft porta cabin along the long wall",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/30x10/porta-cabin-30x10-workspace-interior.webp",
-          "alt": "Interior of 30x10 ft porta cabin set up as site office workspace",
+          "src": "/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-rear-angle.webp",
+          "alt": "Rear angle of 30x10 ft porta cabin showing corrugated MS cladding",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/30x10/porta-cabin-30x10-entrance-interior.webp",
-          "alt": "Entrance and interior finish of 30x10 ft porta cabin",
+          "src": "/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-workspace-interior.webp",
+          "alt": "Interior of 30x10 ft porta cabin with lined walls, vinyl floor and workspace",
+          "provenance": "unknown",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-entrance-interior.webp",
+          "alt": "Entrance view into 30x10 ft porta cabin interior",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
@@ -252,201 +290,144 @@
       "priceInclGst": 424800
     },
     {
-      "sizeSlug": "40x8",
-      "label": "40x8 ft",
-      "dims": "40x8x8.5 ft",
-      "areaSqft": 320,
-      "priceExGst": 376000,
-      "capacity": "7–9 people",
-      "useCase": "linear site office, bunkhouse",
-      "sku": "SP-PC-40x8",
-      "images": [
-        {
-          "src": "/images/products/porta-cabins/40x8/porta-cabin-40x8-hero-view.webp",
-          "alt": "40x8 ft porta cabin: exterior view, MS steel frame with insulated wall panels",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/40x8/porta-cabin-40x8-front-angle.webp",
-          "alt": "Front angle of 40x8 ft porta cabin showing entrance door and windows",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/40x8/porta-cabin-40x8-side-elevation.webp",
-          "alt": "Side elevation of 40x8 ft porta cabin, corrugated steel cladding",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/40x8/porta-cabin-40x8-workspace-interior.webp",
-          "alt": "Interior of 40x8 ft porta cabin set up as site office workspace",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/40x8/porta-cabin-40x8-entrance-interior.webp",
-          "alt": "Entrance and interior finish of 40x8 ft porta cabin",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "A long, linear layout suited to bunkhouses, worker rest rooms and in-line site offices where the space runs along a wall, fence or platform edge.",
-      "priceInclGst": 443680
-    },
-    {
-      "sizeSlug": "20x20",
-      "label": "20x20 ft",
-      "dims": "20x20x8.5 ft",
-      "areaSqft": 400,
-      "priceExGst": 470000,
-      "capacity": "8–10 people",
-      "useCase": "twin-module office",
-      "sku": "SP-PC-20x20",
-      "images": [
-        {
-          "src": "/images/products/porta-cabins/20x20/porta-cabin-20x20-hero-view.webp",
-          "alt": "20x20 ft porta cabin: exterior view, MS steel frame with insulated wall panels",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/20x20/porta-cabin-20x20-front-angle.webp",
-          "alt": "Front angle of 20x20 ft porta cabin showing entrance door and windows",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/20x20/porta-cabin-20x20-side-elevation.webp",
-          "alt": "Side elevation of 20x20 ft porta cabin, corrugated steel cladding",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/20x20/porta-cabin-20x20-workspace-interior.webp",
-          "alt": "Interior of 20x20 ft porta cabin set up as site office workspace",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/20x20/porta-cabin-20x20-entrance-interior.webp",
-          "alt": "Entrance and interior finish of 20x20 ft porta cabin",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "A square twin-module unit with a wide-open floor. The choice for showrooms, training halls and site command rooms where a corridor layout won't work.",
-      "priceInclGst": 554600
-    },
-    {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
       "dims": "40x10x8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 470000,
+      "priceExGst": 475000,
       "capacity": "8–10 people",
       "useCase": "large site office, training room",
       "sku": "SP-PC-40x10",
       "images": [
         {
-          "src": "/images/products/porta-cabins/40x10/porta-cabin-40x10-hero-view.webp",
-          "alt": "40x10 ft porta cabin: exterior view, MS steel frame with insulated wall panels",
+          "src": "/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-hero-view.webp",
+          "alt": "40x10 ft SAMAN porta cabin exterior with corrugated MS walls and sliding windows",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/40x10/porta-cabin-40x10-front-angle.webp",
-          "alt": "Front angle of 40x10 ft porta cabin showing entrance door and windows",
+          "src": "/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-front-angle.webp",
+          "alt": "Front angle of 40x10 ft porta cabin showing door and window placement",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/40x10/porta-cabin-40x10-side-elevation.webp",
-          "alt": "Side elevation of 40x10 ft porta cabin, corrugated steel cladding",
+          "src": "/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-side-elevation.webp",
+          "alt": "Side elevation of 40x10 ft porta cabin along the long wall",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/40x10/porta-cabin-40x10-workspace-interior.webp",
-          "alt": "Interior of 40x10 ft porta cabin set up as site office workspace",
+          "src": "/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-rear-angle.webp",
+          "alt": "Angled exterior view of 40x10 ft porta cabin showing door and window placement",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabins/40x10/porta-cabin-40x10-entrance-interior.webp",
-          "alt": "Entrance and interior finish of 40x10 ft porta cabin",
+          "src": "/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-workspace-interior.webp",
+          "alt": "Interior of 40x10 ft porta cabin with lined walls, vinyl floor and workspace",
+          "provenance": "unknown",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-entrance-interior.webp",
+          "alt": "Entrance view into 40x10 ft porta cabin interior",
           "provenance": "unknown",
           "width": 1254,
           "height": 1254
         }
       ],
       "shortDescription": "Our largest single-module office floor: space for eight to ten staff, or a full training room, delivered and craned into place as one unit.",
-      "priceInclGst": 554600
-    },
-    {
-      "sizeSlug": "40x12",
-      "label": "40x12 ft",
-      "dims": "40x12x8.5 ft",
-      "areaSqft": 480,
-      "priceExGst": 552000,
-      "capacity": "10–12 people",
-      "useCase": "multi-room office complex",
-      "sku": "SP-PC-40x12",
-      "images": [
-        {
-          "src": "/images/products/porta-cabins/40x12/porta-cabin-40x12-hero-view.webp",
-          "alt": "40x12 ft porta cabin: exterior view, MS steel frame with insulated wall panels",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/40x12/porta-cabin-40x12-front-angle.webp",
-          "alt": "Front angle of 40x12 ft porta cabin showing entrance door and windows",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/40x12/porta-cabin-40x12-side-elevation.webp",
-          "alt": "Side elevation of 40x12 ft porta cabin, corrugated steel cladding",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/40x12/porta-cabin-40x12-workspace-interior.webp",
-          "alt": "Interior of 40x12 ft porta cabin set up as site office workspace",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabins/40x12/porta-cabin-40x12-entrance-interior.webp",
-          "alt": "Entrance and interior finish of 40x12 ft porta cabin",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "The flagship. Nearly 500 sq ft that plans out as a genuine multi-room office complex, reception, manager cabin and open work area under one factory-built roof.",
-      "priceInclGst": 651360
+      "priceInclGst": 560500
     }
   ],
-  "specPdfHref": "/specs/porta-cabins-technical-specification.pdf"
+  "descriptionHtml": "<h2>Porta Cabin and Portable Cabin: One Product, Two Names</h2><p>Porta cabin and portable cabin are two names for the same factory-built steel cabin. Construction buyers, contractors and government tenders in India mostly write porta cabin. Corporate and residential buyers often search portable cabin instead. The product underneath does not change. It is a welded mild-steel chassis with an insulated enclosure, a finished interior and protected electricals. We build it in a factory and deliver it to your site as one module. SAMAN therefore publishes one specification, one price ladder and one quotation process for both names, on this single page.</p><p>This matters for more than vocabulary. Some suppliers keep separate porta cabin and portable cabin pages with different claims. Buyers then compare two versions of the same product with mismatched numbers. Our approach is the opposite. Every figure on this page traces to one controlled costing and specification workbook. The downloadable PDF in the hero carries the same numbers, with a document ID and revision date you can hold us to.</p><h2>How SAMAN Builds Every Porta Cabin</h2><img src=\"/images/products/porta-cabins/description/saman-porta-cabin-20x8-narrow-office.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Narrow SAMAN porta cabin with corrugated MS walls, sliding windows and outward-opening door on the long face\"><p>Every cabin starts as a welded chassis of 100x50x3 mm MS C-channel with cross stiffeners. The floor is what a cabin lives or dies by, so the chassis gets the heaviest steel. Onto that frame we fix an 18 mm Bison cement-fibre floor board. A 1.3 mm vinyl layer finishes the walking surface. The wall frame uses 50x50 mm MS square pipe with an approximately 60 mm cavity. Outside, the walls carry 1.2 mm specially corrugated MS sheet. Inside, they carry 8 mm pre-laminated MDF lining. The roof runs 1.4 mm corrugated MS sheet over its own stiffener grid.</p><p>Insulation is standard, not an upsell. Walls take 25 mm glass wool or 12 mm Heatlon. The roof takes 50 mm glass wool at 42 kg/m³ nominal density, because that is where Indian sun load actually hits. The 7x3 ft MS-framed main door opens outward. Two-track powder-coated aluminium sliding windows carry 4 mm glass. Electricals run in concealed or protected copper wiring on a 1.5/2.5/4 sq.mm schedule. A distribution board with MCB/RCCB protection and earthing controls the circuits. Ventilation is natural cross-flow, with fan, exhaust and AC provisions as scheduled. Plumbing is not included unless your approved scope states it.</p><p>Two build facts deserve honest emphasis. First, engineered lifting points are part of the structure. The cabin is designed to be moved, and that is what makes it genuinely portable rather than merely prefabricated. Second, the final colour, openings and fit-out follow your approved drawing. The photographs on this page show representative builds, not a fixed appearance. The complete line-by-line specification sits in the Specifications tab and in the versioned PDF.</p><h2>Choose Your Configuration: The Full SAMAN Porta Cabin Range</h2><p>This page covers the standard porta cabin and its six sizes. Ten specialised configurations sit under it. Each one keeps the same chassis platform and changes one thing deliberately. The table below gives a buyer choosing between eleven builds the side-by-side routing view that prose cannot give — every configuration is one click away.</p><div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Configuration</th><th>Built for</th></tr></thead><tbody><tr><td>Standard porta cabin (this page)</td><td>General site offices, rooms and service use</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/ms-porta-cabin\">MS Porta Cabin</a></td><td>Heavy industrial duty in a thicker mild-steel build</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/gi-porta-cabin\">GI (Galvanized Iron) Porta Cabin</a></td><td>Coastal and high-corrosion sites</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/puf-porta-cabin\">PUF Porta Cabin</a></td><td>Higher thermal insulation duty</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/double-story-porta-cabin\">Double Story (G+1) Porta Cabin</a></td><td>Two floors on one footprint</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/skid-mounted-porta-cabin\">Skid-Mounted Porta Cabin</a></td><td>Repeated relocation on a heavy skid base</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/knock-down-porta-cabin\">Knock-Down Porta Cabin</a></td><td>Flat-pack, bolt-together assembly on site</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/fire-rated-porta-cabin\">Fire-Rated Porta Cabin</a></td><td>Sites with fire-performance requirements</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/soundproof-porta-cabin\">Soundproof Porta Cabin</a></td><td>Acoustic-controlled rooms near noise</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet\">Porta Cabin with Toilet</a></td><td>Office or room with attached sanitation</td></tr><tr><td><a href=\"https://www.samanportable.com/product/porta-cabins/porta-cabin-shop\">Porta Cabin Shop &amp; Kiosk</a></td><td>Retail counters, kiosks and shopfronts</td></tr></tbody></table></div><p>Is your requirement a cabin to live in rather than work from? Then the <a href=\"https://www.samanportable.com/product/prefabricated-houses/porta-cabin-house\">porta cabin house</a> page covers residential layouts. It is the right destination for home-use enquiries.</p><h2>Porta Cabin Price in India: The Published Ladder</h2><p>Most manufacturers in this market publish no prices at all. You receive a number only after a sales call. SAMAN publishes the ladder instead. A buyer who can see the price logic negotiates faster and trusts the quotation more. The table below lets you compare all six sizes at once — the single most requested comparison on this page.</p><div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Size (L×W×H)</th><th>Area</th><th>Price ex-GST</th><th>Incl. 18% GST</th></tr></thead><tbody><tr><td>10x10x8.5 ft</td><td>100 sq ft</td><td>₹1,43,750</td><td>₹1,69,625</td></tr><tr><td>20x8x8.5 ft</td><td>160 sq ft</td><td>₹2,20,000</td><td>₹2,59,600</td></tr><tr><td>20x10x8.5 ft</td><td>200 sq ft</td><td>₹2,50,000</td><td>₹2,95,000</td></tr><tr><td>20x12x8.5 ft</td><td>240 sq ft</td><td>₹2,88,000</td><td>₹3,39,840</td></tr><tr><td>30x10x8.5 ft</td><td>300 sq ft</td><td>₹3,60,000</td><td>₹4,24,800</td></tr><tr><td>40x10x8.5 ft</td><td>400 sq ft</td><td>₹4,75,000</td><td>₹5,60,500</td></tr></tbody></table></div><p>These are base-specification supply prices. Customisations are quoted separately. The rate logic is simple and published. The 20x10 ft cabin at ₹1,250 per sq ft is the anchor. Smaller cabins carry a premium band, because the chassis, door and electricals cost the same regardless of size. Larger cabins earn a discount band.</p><p>Four factors move a final quote away from the ladder. Interior fit-out adds partitions, furniture and AC. Optional additions include an attached toilet module. Transport cost follows distance, per the Shipping tab. Finally, site conditions at unloading can change the last leg. GST applies at 18% under HSN 9406 for prefabricated buildings.</p><h2>Porta Cabin or Container Office: Which One Do You Need?</h2><p>Buyers often shortlist a porta cabin against a container office. The two are different structures, however, and the difference decides the price and the feel. A porta cabin is purpose-built on an MS C-channel chassis with a ~60 mm insulated wall cavity. It is lighter, arrives in more size options, and starts at a lower price point. A container office, in contrast, starts from a much heavier corten-steel shipping-container shell. That shell suits brutal handling, stacking and long outdoor service, and it carries a higher starting price.</p><p>Choose the porta cabin when you need an economical, well-insulated room fast, in a size matched to your plot. Consider a container office instead when the structure will be lifted repeatedly, stacked, or left in aggressive outdoor conditions for years. SAMAN manufactures both families in the same factories. If your enquiry fits the container side better, tell us the duty in your message. We will quote the right platform rather than force this one.</p><h2>What Buyers Use Porta Cabins For</h2><img src=\"/images/products/porta-cabins/description/saman-porta-cabin-40x10-multiroom-interior.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Long interior of a 40x10 ft porta cabin with lined walls, window row and desks arranged as work zones\"><p>Site and project offices are the largest use. A contractor orders the cabin with the work order, and the office lands before the first excavation. General-purpose rooms come next: security points, drivers' rooms, first-aid rooms, storage and sample rooms. Retail and service use covers shops, kiosks, ticket counters and reception units, usually in the shop configuration. Sanitation and project-support configurations round out the family, from toilet-fitted cabins to stores.</p><p>The common thread is time. Civil construction of a 200 sq ft room takes months and leaves debris. A porta cabin arrives finished, works the same day it is placed, and moves to the next site when the project ends. That reuse is also why buyers who once rented often switch to owning.</p><h2>Porta Cabin on Terrace and Rooftop</h2><p>Rooftop placement is one of the most asked questions on this page. It often works, because the module weighs far less than an equivalent masonry room. Two checks decide feasibility. First, your structural engineer must confirm the slab can carry the cabin at the planned position. Second, there must be crane or lifting access to the roof level.</p><p>Share the building height, slab details and access photos with your enquiry. We then advise on the lift plan and quote accordingly. However, never place a cabin on a roof without the engineer's confirmation. That check is the buyer's responsibility, and we state it plainly.</p><h2>Customisation Options</h2><img src=\"/images/products/porta-cabins/description/saman-porta-cabin-20x12-partition-interior.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Interior of a 20x12 ft porta cabin with lined walls, vinyl floor, office desk and internal door\"><p>The published price buys the standard open-room specification. Almost everything else is configurable. STANDARD scope covers the shell, insulation, floor, one door, windows and the electrical baseline. OPTIONAL additions include partitions, furniture packages, AC provision and units, attached toilet modules, extra doors and windows, and grills or mesh.</p><p>CUSTOM work covers layouts, colours and openings, which follow your approved drawing. EXCLUDED items are plumbing (unless the approved scope states it), foundations, transport and installation, which are quoted separately. Every option is priced as a line item on the quote. So you can add or remove scope and see the effect immediately.</p><h2>Delivery, Installation and Site Readiness</h2><img src=\"/images/products/porta-cabins/description/saman-porta-cabin-10x10-compact-site.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Compact grey porta cabin in a factory yard with corrugated cladding, sliding windows and steel base frame\"><p>Standard delivery takes 7–21 working days from confirmed order. Your fixed-price quotation arrives within 48 hours of sharing requirements. Cabins dispatch from the nearer factory: Bengaluru for the South, Greater Noida for the North. Transport runs on 20 ft or 40 ft open trailers, priced by the distance ladder in the Shipping tab. Delivery within Bangalore city and Delhi NCR (Ghaziabad, Gurugram, Faridabad, Noida, Greater Noida) is free.</p><p>Prepare these before the trailer arrives, and installation day stays short:</p><ul><li>A level, load-bearing base — compacted ground, plinth or columns per your approved drawing</li><li>Clear vehicle approach and turning room for a 20 ft or 40 ft trailer</li><li>Unloading arrangement as confirmed in your delivery quotation</li><li>A power supply point for hook-up to the cabin's distribution board</li><li>The person authorised to sign delivery and placement acceptance</li></ul><h2>How to Compare Porta Cabin Quotations</h2><p>Cheap quotes usually hide in the specification, not the price. Compare line items, and the differences surface fast. Ask every vendor for the same five numbers:</p><ul><li>Chassis section and thickness (ours: 100x50x3 mm MS C-channel)</li><li>Wall and roof sheet thickness (ours: 1.2 mm and 1.4 mm corrugated MS)</li><li>Insulation type and thickness in walls and roof</li><li>Electrical protection (DB with MCB/RCCB and earthing, or a bare board)</li><li>What the price excludes — transport, installation, foundations, plumbing</li></ul><p>A quotation that cannot state these numbers is not comparable. Ours are printed in the Specifications tab and in the versioned PDF, so you can check delivery against the promise, line by line.</p><h2>Quality Checks, Warranty and Honest Scope</h2><p>Every cabin passes pre-dispatch QA before it leaves the factory. The checks cover dimensions, member and panel condition, enclosure sealing, and service function tests. You get a 5-year structural warranty and a 1-year finishing warranty as standard. The finishing warranty is extendable to 2 years on request. Under proper use and maintenance, the service life is 20–25 years. That is a design-life statement, not a warranty period, and the distinction matters when you compare vendors.</p><p>Scope honesty, in one place: the published price includes the structural shell, enclosure, insulation, floor, standard door and windows, and the electrical baseline. It excludes interior fit-out, optional add-ons, transport, installation, foundations and project-specific engineering, unless your quotation states them. Plumbing appears only when your approved scope includes it. Standard returns cover a 7-day non-defective window for new and unused stock items. Custom and site-specific builds are not returnable, and defects must be reported within 3 days.</p><h2>Why Buy From SAMAN</h2><p>SAMAN POS India Private Limited — brand SAMAN Portable — was founded in 2009 and incorporated in 2019. That is over 15 years of manufacturing experience. Two owned factory units, in Bengaluru and Greater Noida, mean you buy from the manufacturer, not a reseller, in both halves of the country. The delivery record stands at 500+ projects for 3,000+ customers across 15+ states, executed by a 200+ member team. Certifications: ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018, with NSIC SPRS registration. Working hours are Monday to Saturday, 09:00–20:00 IST.</p><h2>Porta Cabin FAQs</h2><h4><strong>What does a porta cabin cost per square foot?</strong></h4><p>The published band runs from ₹1,187.50 to ₹1,437.50 per sq ft ex-GST, depending on size. The anchor is ₹1,250 for the 20x10 ft reference cabin. Smaller cabins sit higher because fixed components dominate their cost.</p><h4><strong>What sizes does a porta cabin come in?</strong></h4><p>Six published sizes: 10x10, 20x8, 20x10, 20x12, 30x10 and 40x10 ft, all 8.5 ft high. Custom dimensions are possible against an approved drawing and quotation.</p><h4><strong>Can a porta cabin be installed on a terrace or rooftop?</strong></h4><p>Often yes, because the module is far lighter than masonry. Your structural engineer must confirm the slab first, and lifting access decides feasibility. See the terrace section above.</p><h4><strong>Do I need a foundation?</strong></h4><p>You need a level, load-bearing base: compacted ground, a plinth or columns per the approved drawing. Full civil foundations are usually unnecessary, and any base work is outside the published price.</p><h4><strong>How long does delivery take?</strong></h4><p>7–21 working days as standard after order confirmation, plus transit per the Shipping tab ladder. Your quotation states the committed schedule.</p><h4><strong>Is GST included in the published prices?</strong></h4><p>Prices are shown ex-GST with the 18% inclusive figure alongside, under HSN 9406 for prefabricated buildings.</p><h4><strong>How long does a porta cabin last?</strong></h4><p>20–25 years under proper use and maintenance. The warranty itself is 5 years structural and 1 year finishing, extendable to 2.</p><h4><strong>Should I rent or buy?</strong></h4><p>Buy when the requirement crosses roughly a year, or when the cabin must be customised. Rent for short projects. Ask our team about monthly rental options when you send your enquiry.</p><h4><strong>Can I customise the layout?</strong></h4><p>Yes. Partitions, furniture packages, AC provision, attached toilet modules, colours and openings all follow your approved drawing. Each appears as a separate line on the quote, above the base price.</p>",
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.samanportable.com/product/porta-cabins#faq",
+    "url": "https://www.samanportable.com/product/porta-cabins",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a porta cabin cost per square foot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The published band runs from ₹1,187.50 to ₹1,437.50 per sq ft ex-GST, depending on size. The anchor is ₹1,250 for the 20x10 ft reference cabin. Smaller cabins sit higher because fixed components dominate their cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What sizes does a porta cabin come in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Six published sizes: 10x10, 20x8, 20x10, 20x12, 30x10 and 40x10 ft, all 8.5 ft high. Custom dimensions are possible against an approved drawing and quotation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a porta cabin be installed on a terrace or rooftop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Often yes, because the module is far lighter than masonry. Your structural engineer must confirm the slab first, and lifting access decides feasibility. See the terrace section above."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a foundation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need a level, load-bearing base: compacted ground, a plinth or columns per the approved drawing. Full civil foundations are usually unnecessary, and any base work is outside the published price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does delivery take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "7–21 working days as standard after order confirmation, plus transit per the Shipping tab ladder. Your quotation states the committed schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GST included in the published prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prices are shown ex-GST with the 18% inclusive figure alongside, under HSN 9406 for prefabricated buildings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a porta cabin last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "20–25 years under proper use and maintenance. The warranty itself is 5 years structural and 1 year finishing, extendable to 2."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I rent or buy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Buy when the requirement crosses roughly a year, or when the cabin must be customised. Rent for short projects. Ask our team about monthly rental options when you send your enquiry."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customise the layout?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Partitions, furniture packages, AC provision, attached toilet modules, colours and openings all follow your approved drawing. Each appears as a separate line on the quote, above the base price."
+        }
+      }
+    ]
+  },
+  "specPdfHref": "/specs/saman-porta-cabins-technical-specification.pdf",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "hasProductVideo": false
 }

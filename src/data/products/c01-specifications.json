@@ -67,7 +67,7 @@
       "canonical": "https://www.samanportable.com/product/porta-cabins",
       "specifications": [
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Bottom frame",
           "detail": "100×50×3 mm MS C-channel primary base frame, ISI-standard or approved equivalent, fabricated as the load-bearing chassis.",
           "sourceSheet": "01 Porta Cabins",
@@ -75,7 +75,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Bottom stiffeners",
           "detail": "100×50 mm C-channels, 50×50 mm MS angles, 75×40 mm channels and approved square-pipe supports, typically coordinated at about 4 ft intervals to the final floor load and lifting design.",
           "sourceSheet": "01 Porta Cabins",
@@ -83,7 +83,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Floor frame",
           "detail": "MS base and cross-member grid supporting an 18 mm Bison/cement-fibre floor board fixed with approved self-tapping fasteners; spacing follows the final drawing and design load.",
           "sourceSheet": "01 Porta Cabins",
@@ -91,7 +91,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Top frame",
           "detail": "50×50×1.6 mm MS square-pipe top perimeter frame of approved make or equivalent.",
           "sourceSheet": "01 Porta Cabins",
@@ -99,7 +99,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Roof stiffeners",
           "detail": "50×50×1.2 mm MS square-pipe roof stiffeners with 50×40, 40×40, 50×25 or 25×25 mm secondary members where required by span, ceiling support and drainage slope.",
           "sourceSheet": "01 Porta Cabins",
@@ -107,7 +107,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Corner posts / walls",
           "detail": "50×50×2 mm MS square-pipe corner and wall posts or approved 60×60 mm MS-angle alternative, with reinforced door and window openings and an approximately 60 mm wall cavity.",
           "sourceSheet": "01 Porta Cabins",
@@ -115,7 +115,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Lifting / handling",
           "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
           "sourceSheet": "01 Porta Cabins",
@@ -123,7 +123,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Welding & fabrication",
           "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
           "sourceSheet": "01 Porta Cabins",
@@ -131,7 +131,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Exterior walls",
           "detail": "1.2 mm specially corrugated MS sheet",
           "sourceSheet": "01 Porta Cabins",
@@ -139,7 +139,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Roof",
           "detail": "1.4 mm corrugated MS sheet",
           "sourceSheet": "01 Porta Cabins",
@@ -147,7 +147,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Interior walls",
           "detail": "8 mm pre-laminated MDF board with aluminium joint sections",
           "sourceSheet": "01 Porta Cabins",
@@ -155,7 +155,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Ceiling",
           "detail": "8 mm pre-laminated MDF ceiling",
           "sourceSheet": "01 Porta Cabins",
@@ -163,7 +163,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Floor base",
           "detail": "18 mm Bison panel",
           "sourceSheet": "01 Porta Cabins",
@@ -171,7 +171,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Floor finish",
           "detail": "1.3 mm vinyl flooring",
           "sourceSheet": "01 Porta Cabins",
@@ -179,7 +179,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Wall insulation",
           "detail": "25 mm glass wool or 12 mm heatlon",
           "sourceSheet": "01 Porta Cabins",
@@ -187,7 +187,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Roof insulation",
           "detail": "50 mm glass wool, nominal density 42 kg/m³",
           "sourceSheet": "01 Porta Cabins",
@@ -195,7 +195,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Decorative / external finish",
           "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
           "sourceSheet": "01 Porta Cabins",
@@ -203,7 +203,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Fasteners & sealing",
           "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
           "sourceSheet": "01 Porta Cabins",
@@ -211,7 +211,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Main door / service door",
           "detail": "7×3 ft externally opening MS-framed door using 30×30 mm MS tubular sections",
           "sourceSheet": "01 Porta Cabins",
@@ -219,7 +219,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Windows / service opening",
           "detail": "Two-track powder-coated aluminium sliding windows with 4 mm glass",
           "sourceSheet": "01 Porta Cabins",
@@ -227,7 +227,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Grills / mosquito mesh",
           "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
           "sourceSheet": "01 Porta Cabins",
@@ -235,7 +235,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Electrical wiring",
           "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
           "sourceSheet": "01 Porta Cabins",
@@ -243,7 +243,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Electrical protection",
           "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
           "sourceSheet": "01 Porta Cabins",
@@ -251,7 +251,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Electrical fittings",
           "detail": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
           "sourceSheet": "01 Porta Cabins",
@@ -259,7 +259,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Ventilation / AC",
           "detail": "Natural cross ventilation with fan, exhaust and AC provision as required.",
           "sourceSheet": "01 Porta Cabins",
@@ -267,7 +267,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Plumbing / sanitary",
           "detail": "Not included unless shown in the approved scope.",
           "sourceSheet": "01 Porta Cabins",
@@ -275,7 +275,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Layout / configuration",
           "detail": "Open single-room layout with furniture and partitions finalized by approved drawing.",
           "sourceSheet": "01 Porta Cabins",
@@ -283,7 +283,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Painting / coating",
           "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
           "sourceSheet": "01 Porta Cabins",
@@ -291,7 +291,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Quality checks",
           "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
           "sourceSheet": "01 Porta Cabins",
@@ -299,7 +299,7 @@
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Warranty",
           "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
           "sourceSheet": "01 Porta Cabins",
@@ -398,7 +398,16 @@
           "priceInclGst": 651360,
           "costingStatus": "Approved, direct source"
         }
-      ]
+      ],
+      "narrative": "This specification is what you are actually buying, line by line. Nineteen of the thirty lines are product-specific to this cabin; eleven are SAMAN platform standards shared across the family. Use the tables to compare quotations item by item — frame section, sheet thickness, insulation density — rather than by total price alone. Final openings, colours, service loads and fit-out follow your approved drawing and quotation.",
+      "diagram": {
+        "src": "/images/products/porta-cabins/diagrams/saman-porta-cabin-build-anatomy.webp",
+        "alt": "Exploded diagram of porta cabin layers from MS chassis to corrugated roof with labelled thicknesses",
+        "caption": "SAMAN porta cabin build anatomy — Illustrative, not for construction. Source: SP-PC-HUB-01-TS-R1.",
+        "width": 1672,
+        "height": 941
+      },
+      "premiumTables": true
     },
     "low-cost-porta-cabin": {
       "name": "Low Cost Porta Cabin",
