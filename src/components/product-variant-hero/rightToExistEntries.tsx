@@ -34,6 +34,11 @@ export interface RightToExistEntry {
         supplies both, so its markup is unchanged. */
     subheading?: string;
     body?: string;
+    /** PC-02 rulings v1.3 follow-up (14 Aug 2026) — render the section's two approved
+        paragraphs INSIDE the card's copy column, beside the image and above the CTA,
+        instead of full-width above the card. Default (absent) keeps the hub's deployed
+        stacking: paragraphs above, then the card. Layout only; not a word changes. */
+    copyInPanel?: boolean;
     ctaLabel: string;
     ctaHref: string;
   };
@@ -77,6 +82,9 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       imageAlt: 'Dark grey corrugated GI porta cabin 20x10 ft with a central door and three sliding windows in a factory yard',
       imageWidth: 1254,
       imageHeight: 1254,
+      // Owner review of the v1.3 preview: both paragraphs belong beside the image and
+      // above the CTA, not stacked full-width on top of it.
+      copyInPanel: true,
       ctaLabel: 'Get a GI cabin quote',
       ctaHref: 'https://www.samanportable.com/contact',
     },

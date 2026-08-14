@@ -156,6 +156,20 @@ check('D1 split card no longer re-uses a gallery file',
       and 'section2/gi-porta-cabin-20x10-dark-grey-exterior.webp' in _split, '')
 check('R2 split card has media + CTA',
       'saman-s2-split-media' in raw and 'saman-s2-split-cta' in raw, '')
+
+# Owner review of the v1.3 preview: both paragraphs sit beside the image, above the CTA,
+# not stacked full-width on top of the card.
+_s2 = raw[raw.find('saman-s2-split'):]
+_body = _s2[_s2.find('saman-s2-split-body'):_s2.find('saman-s2-split-cta')]
+_above = raw[:raw.find('saman-s2-split')]
+_body_txt = norm(strip_tags(_body[_body.find('>') + 1:]))
+check('S2 layout: both paragraphs inside the copy column',
+      _body_txt.startswith('Choose this cabin by exposure')
+      and 'If your site is dry and inland' in _body_txt, '')
+check('S2 layout: CTA follows the paragraphs',
+      _s2.find('saman-s2-split-cta') > _s2.find('If your site is dry and inland'), '')
+check('S2 layout: no paragraph left above the card',
+      'Choose this cabin by exposure' not in _above, '')
 check('R2 split card invents no sub-heading or body',
       'saman-s2-split-subheading' not in raw and 'saman-s2-split-text' not in raw, '')
 

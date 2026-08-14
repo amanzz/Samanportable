@@ -15,6 +15,20 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
 
   const headingId = getRightToExistHeadingId(productSlug);
   const card = entry.splitCard;
+  // PC-02 rulings v1.3 follow-up — `copyInPanel` relocates these two paragraphs into the
+  // card's copy column, beside the image and above the CTA. The markup and classes are
+  // identical in both positions, so this is placement only, never a copy change. Default
+  // false → the hub keeps paragraphs-above-card byte-identically.
+  const copyInPanel = Boolean(card?.copyInPanel);
+  const paragraphs = (
+    <>
+      <p className="text-sm leading-relaxed text-slate-700">{entry.body}</p>
+      <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">
+        {entry.comparison}
+        {entry.appendix}
+      </p>
+    </>
+  );
 
   return (
     <section
@@ -27,11 +41,7 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
       >
         {entry.heading}
       </h2>
-      <p className="text-sm leading-relaxed text-slate-700">{entry.body}</p>
-      <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">
-        {entry.comparison}
-        {entry.appendix}
-      </p>
+      {!copyInPanel && paragraphs}
 
       {/* R15 (v1.4) — image-left / content-right split card. Rendered only for
           entries that supply one, so every other product page is unchanged. */}
@@ -54,7 +64,11 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
                 instead of inventing either; the hub supplies both and is unchanged. */}
             {card.subheading && <h3 className="saman-s2-split-subheading">{card.subheading}</h3>}
             {card.body && <p className="saman-s2-split-text">{card.body}</p>}
-            <Link className="saman-s2-split-cta" href={card.ctaHref}>
+            {copyInPanel && paragraphs}
+            <Link
+              className={copyInPanel ? 'saman-s2-split-cta mt-4' : 'saman-s2-split-cta'}
+              href={card.ctaHref}
+            >
               {card.ctaLabel}
             </Link>
           </div>
