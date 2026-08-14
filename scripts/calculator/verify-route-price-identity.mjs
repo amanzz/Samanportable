@@ -1,18 +1,32 @@
 /**
- * Route-level price identity test.
+ * Route-level PUBLISHED PRICE test — what survives of the 03 Aug identity gate.
  *
- * The gate: for every route carrying a calculator, the calculator's BASE price
- * at that page's default size equals the price that page publishes, to the
- * rupee. Zero tolerance.
+ * RETIRED, 06 Aug 2026, by SAMAN's base-cabin rate card ruling:
  *
- * This replaces the "342 rows, 0 mismatches" check in calculatorRates.ts, which
- * compared the area-band formula against the three ladders the formula was
- * derived from and therefore could not fail. This test compares each route
- * against the ladder that route's own page publishes, which is the thing a
- * buyer actually sees.
+ *   The old gate 1 asserted "the calculator's base at a page's default size
+ *   equals that page's published price, to the rupee." SAMAN's two-price
+ *   doctrine makes that assertion false BY DESIGN. The page publishes the
+ *   FINISHED product with every fitting in it; the calculator now opens at the
+ *   BARE cabin from the rate card and grows as the buyer adds fittings. The
+ *   opening figure is deliberately lower. Asserting they are equal would now
+ *   re-introduce the defect the ruling was written to remove — an estimate that
+ *   starts at the finished price and then charges for the fittings again.
+ *
+ * What survives, and is asserted below:
+ *
+ *   1. The PUBLISHED ladder is unchanged. Each route's ladder row still equals
+ *      that route's own page JSON, to the rupee, so the page, the band headline,
+ *      the feed and the PDF are untouched by the calculator work. The
+ *      calculator's base is printed beside it and is EXPECTED to differ — the
+ *      column is there so a reviewer can see the gap the doctrine creates.
+ *   2. Container House ladders equal the published C-08 values exactly.
+ *   3. A product with no ladder of its own renders quote mode with no number.
+ *
+ * The calculator's base figure is gated separately and in full by
+ * scripts/calculator/verify-base-cabin-rate-card.mjs.
  *
  * Run: node scripts/calculator/verify-route-price-identity.mjs
- * Exit: 0 when every route matches, 1 otherwise.
+ * Exit: 0 when every published ladder still matches its page, 1 otherwise.
  */
 import jitiPkg from 'jiti';
 import fs from 'fs';
@@ -35,6 +49,7 @@ Module._resolveFilename = function (request, ...rest) {
 const jiti = (jitiPkg.default || jitiPkg)(path.join(process.cwd(), 'noop.js'), { esmResolve: true });
 const ssr = jiti('./src/lib/cabinCalculatorSSR.ts');
 const embed = jiti('./src/lib/cabinCalculatorEmbedRoutes.ts');
+const ladders = jiti('./src/lib/calculatorLadders.ts');
 
 const { computeCalculatorEstimate, DEFAULT_CALCULATOR_CONFIG, PRODUCTS } = ssr;
 const { resolveEmbeddedCalculatorProduct } = embed;
@@ -45,7 +60,7 @@ const { resolveEmbeddedCalculatorProduct } = embed;
  * later cannot silently escape the gate.
  *
  * The invariant is two-sided:
- *   page publishes a ladder  -> calculator base must equal it, to the rupee
+ *   page publishes a ladder  -> the shipped ladder must equal it, to the rupee
  *   page publishes no ladder -> calculator must be in quote mode, no number
  */
 const sitemap = fs.readFileSync(path.join(process.cwd(), 'public', 'sitemap-products.xml'), 'utf8');
@@ -136,10 +151,17 @@ for (const { url: route, category, slug } of ROUTES) {
     ? 'colony block ladder'
     : calculated === null
       ? 'no ladder (quote mode)'
-      : `ladder ${mapping.ladderKey || def?.ladderKey}`;
+      : 'base-cabin rate card';
 
-  const diff = published !== null && calculated !== null ? calculated - published : null;
-  // Two-sided invariant: no published ladder must mean no calculated number.
+  // THE ASSERTION. Not "calculator == page" any more, but "the ladder the site
+  // publishes still equals the page's own data". The calculator's base is
+  // carried alongside as information, and is expected to sit below it.
+  const d = variant ? dims(variant.sizeSlug) : null;
+  const laddered = COLONY.has(productId) || !d
+    ? published
+    : ladders.ladderPriceFor(mapping.ladderKey ?? def?.ladderKey, d.length, d.width);
+
+  const gap = published !== null && calculated !== null ? calculated - published : null;
   const bothAbsent = published === null && calculated === null;
   if (bothAbsent) note = 'page publishes no ladder; calculator in quote mode';
   rows.push({
@@ -148,9 +170,10 @@ for (const { url: route, category, slug } of ROUTES) {
     productId,
     rate,
     published,
+    laddered,
     calculated,
-    diff,
-    ok: diff === 0 || bothAbsent,
+    gap,
+    ok: bothAbsent || laddered === published,
     note: note || (source === 'C-08 transcription' ? 'published figure from C-08 transcription; product JSON not on this branch' : note),
   });
 }
@@ -158,19 +181,19 @@ for (const { url: route, category, slug } of ROUTES) {
 const pad = (s, n) => String(s).padEnd(n);
 const padL = (s, n) => String(s).padStart(n);
 
-console.log('ROUTE-LEVEL PRICE IDENTITY TEST');
-console.log('Base price at each page\'s default size. Zero tolerance.\n');
+console.log('PUBLISHED LADDER UNCHANGED — the finished-product price the page, band headline, feed and PDF carry');
+console.log('Gated: PAGE == LADDER, zero tolerance. Shown: the calculator base, which the two-price doctrine puts BELOW it.\n');
 console.log(
-  pad('ROUTE', 54) + pad('SIZE', 15) + pad('RATE USED', 24) +
-  padL('PUBLISHED', 14) + padL('CALCULATED', 14) + padL('DIFF', 13) + '  '
+  pad('ROUTE', 54) + pad('SIZE', 15) + pad('CALC BASE FROM', 22) +
+  padL('PAGE', 13) + padL('LADDER', 13) + padL('CALC BASE', 13) + padL('GAP', 13) + '  '
 );
-console.log('-'.repeat(138));
+console.log('-'.repeat(146));
 for (const r of rows) {
   console.log(
-    pad(r.route, 54) + pad(r.size, 15) + pad(r.rate, 24) +
-    padL(INR(r.published), 14) + padL(INR(r.calculated), 14) +
-    padL(r.diff === null ? 'n/a' : (r.diff === 0 ? '0' : (r.diff > 0 ? '+' : '') + r.diff.toLocaleString('en-IN')), 13) +
-    '  ' + (r.ok ? 'ok' : '*** MISMATCH ***') + (r.note ? '  ' + r.note : '')
+    pad(r.route, 54) + pad(r.size, 15) + pad(r.rate, 22) +
+    padL(INR(r.published), 13) + padL(INR(r.laddered), 13) + padL(INR(r.calculated), 13) +
+    padL(r.gap === null ? 'n/a' : (r.gap === 0 ? '0' : (r.gap > 0 ? '+' : '') + r.gap.toLocaleString('en-IN')), 13) +
+    '  ' + (r.ok ? 'ok' : '*** PUBLISHED PRICE MOVED ***') + (r.note ? '  ' + r.note : '')
   );
 }
 
@@ -185,7 +208,6 @@ const C08_PUBLISHED = {
   'affordable-container-homes': [252960, 287600, 331200, 432320, 540400, 634560],
   'luxury-container-houses': [380160, 432000, 497760, 649600, 812000, 953760],
 };
-const ladders = jiti('./src/lib/calculatorLadders.ts');
 const houseFailures = [];
 console.log('\nCONTAINER HOUSE LADDERS — stored values vs published C-08 values');
 for (const [key, expected] of Object.entries(C08_PUBLISHED)) {
@@ -203,7 +225,18 @@ for (const [key, expected] of Object.entries(C08_PUBLISHED)) {
 // Gate 3 — a product with no ladder of its own renders quote mode with no
 // number. It must not inherit a rate from a parent, sibling or reference row.
 // ---------------------------------------------------------------------------
-const NO_LADDER = ['security-cabin', 'accommodation-cabin', 'prefab-modular-home', 'container-cafe'];
+// Derived, not hand-listed. This was a literal array until CALC-L4 (09 Aug
+// 2026), when container-cafe gained the six-row ladder its own pages publish
+// and the stale entry then failed the gate for having stopped being true.
+// A list of "products with no ladder" that does not ask the ladder table is a
+// second source of truth about the thing the ladder table already knows.
+// Colony products are excluded: they price from a block ladder chosen by index,
+// not from a length x width row, so they are not quote-mode products.
+const COLONY_PRODUCT_IDS = new Set(['labour-colony', 'labor-sheds', 'labor-hutments', 'prefab-labor-camps']);
+const NO_LADDER = PRODUCTS
+  .filter((product) => !COLONY_PRODUCT_IDS.has(product.id))
+  .filter((product) => !ladders.getRouteLadder(product.ladderKey))
+  .map((product) => product.id);
 const quoteFailures = [];
 console.log('\nNO-LADDER PRODUCTS — must render quote mode with no number');
 for (const productId of NO_LADDER) {
@@ -220,17 +253,23 @@ for (const productId of NO_LADDER) {
 }
 
 const failed = rows.filter((r) => !r.ok);
-console.log('\n' + '='.repeat(138));
-console.log(`RESULT: ${rows.length - failed.length} of ${rows.length} routes at zero difference.`);
+const gaps = rows.filter((r) => r.gap !== null);
+const above = gaps.filter((r) => r.gap > 0);
+console.log('\n' + '='.repeat(146));
+console.log(`RESULT: ${rows.length - failed.length} of ${rows.length} routes still publish exactly what their page publishes.`);
 console.log(`        ${Object.keys(C08_PUBLISHED).length - houseFailures.length} of ${Object.keys(C08_PUBLISHED).length} container-house ladders exact to the rupee.`);
 console.log(`        ${NO_LADDER.length - quoteFailures.length} of ${NO_LADDER.length} no-ladder products in quote mode with no number.`);
+if (gaps.length) {
+  const worst = Math.abs(Math.min(...gaps.map((r) => r.gap)));
+  console.log(`\nTWO-PRICE DOCTRINE, observed: the calculator base sits below the published finished price on`);
+  console.log(`        ${gaps.length - above.length} of ${gaps.length} priced routes (widest gap -₹${worst.toLocaleString('en-IN')}).`);
+  if (above.length) {
+    console.log(`        *** ${above.length} route(s) open ABOVE the published finished price, which inverts the doctrine:`);
+    for (const r of above) console.log(`            ${r.route}  ${r.size}  page ${INR(r.published)} -> base ${INR(r.calculated)}`);
+  }
+}
 if (failed.length) {
-  const over = failed.filter((r) => r.diff > 0);
-  const under = failed.filter((r) => r.diff < 0);
-  const quote = failed.filter((r) => r.diff === null);
-  console.log(`FAILED: ${failed.length} routes.`);
-  if (over.length) console.log(`  overpriced vs published: ${over.length} (worst +₹${Math.max(...over.map((r) => r.diff)).toLocaleString('en-IN')})`);
-  if (under.length) console.log(`  underpriced vs published: ${under.length} (worst -₹${Math.abs(Math.min(...under.map((r) => r.diff))).toLocaleString('en-IN')})`);
-  if (quote.length) console.log(`  no comparable number: ${quote.length}`);
+  console.log(`FAILED: ${failed.length} routes whose published price no longer matches their page.`);
+  for (const r of failed) console.log(`  ${r.route}  page ${INR(r.published)} vs ladder ${INR(r.laddered)}`);
 }
 process.exit(failed.length || houseFailures.length || quoteFailures.length ? 1 : 0);

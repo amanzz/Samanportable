@@ -63,11 +63,17 @@ export interface VariantProductData {
   /** Singular product noun ("Porta Cabin") used in hero copy, image alts, the
       aria-labels and the enquiry prefill. Default: preset, else the page title. */
   productName?: string;
-  /** PC-00 (14 Aug 2026) — SEO-authored H1 override, rendered ONLY at the buy-box
-      H1 (does not touch `productName`, which stays the short noun used in
-      aria-labels/sentences). Absent on every product except porta-cabins hub →
-      byte-identical elsewhere. */
-  heroH1?: string;
+  /** Owner-approved H1 for the page, when the draft's L3 zone rules one that is not
+      the product noun (C-05 subpages: "Container Restaurant: Six Factory-Fitted
+      Dining Sizes"). Rendered ONLY as the visible heading — `productName` still
+      drives alts, aria-labels and the enquiry prefill, so a long marketing H1 never
+      leaks into them. Absent on every product that supplies none, so their heading
+      is byte-identical.
+      PC-00 (v1.5 merge, 14 Aug 2026): the porta-cabins hub's SEO H1 uses THIS field.
+      The hub build had introduced a duplicate `heroH1` for the same purpose before
+      this branch caught up with production; that duplicate is dropped in favour of
+      the established field, so there is exactly one page-heading override. */
+  h1?: string;
   /** PC-00 — overrides the "Download Specification PDF" / "Download specifications"
       button label. Absent → deployed literal, byte-identical everywhere else. */
   specPdfButtonLabel?: string;
@@ -80,6 +86,12 @@ export interface VariantProductData {
   opener?: string;
   /** Owner-approved replacement for the legacy Description-tab HTML. */
   descriptionHtml?: string;
+  /** HOLD the Description tab empty-safe. An empty `descriptionHtml` cannot express
+      this, because the route falls through to the legacy body on any falsy value.
+      Set true only where the legacy body contradicts the rebuilt page and approved
+      replacement copy has not landed yet (C-05 close-out, Part 2): shipping nothing
+      is safer than shipping a contradiction. Cleared the moment the copy arrives. */
+  suppressLegacyDescription?: boolean;
   /** FAQPage JSON-LD that mirrors FAQs rendered in `descriptionHtml`. */
   faqSchema?: Record<string, unknown>;
   /** Visible text of the "Category" row in the Product Information block. */

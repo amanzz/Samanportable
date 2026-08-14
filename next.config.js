@@ -1141,7 +1141,7 @@ const nextConfig = {
       },
       {
         source: '/product/mobile-container-cafe',
-        destination: 'https://www.samanportable.com/product/container-cafe/mobile-container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
         permanent: true,
       },
       {
@@ -1344,7 +1344,7 @@ const nextConfig = {
       },
       {
         source: '/product/restaurant-food-containers',
-        destination: 'https://www.samanportable.com/product/container-cafe/restaurant-food-containers',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
         permanent: true,
       },
       {
@@ -1352,9 +1352,14 @@ const nextConfig = {
         destination: 'https://www.samanportable.com/product/prefabricated-houses/saman-prefab-office',
         permanent: true,
       },
+      // C-05 consolidation, wave 1 (CC-TICKET-C05-CLOSE-OUT, 08 Aug 2026, Part C).
+      // REPLACED, not stacked: this entry used to point at the nested legacy page.
+      // The legacy child is retired into the hub, so the flat form now goes straight
+      // to the hub and the nested form is retired alongside it (immediately below).
+      // Stacking would have created /product/shipping-container-cafe -> nested -> hub.
       {
         source: '/product/shipping-container-cafe',
-        destination: 'https://www.samanportable.com/product/container-cafe/shipping-container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
         permanent: true,
       },
       {
@@ -1369,7 +1374,7 @@ const nextConfig = {
       },
       {
         source: '/product/shipping-container-restaurant',
-        destination: 'https://www.samanportable.com/product/container-cafe/shipping-container-restaurant',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
         permanent: true,
       },
       {
@@ -1869,6 +1874,108 @@ const nextConfig = {
       { source: '/product/portable-office/prefabricated-portable-office-cabin', destination: 'https://www.samanportable.com/product/portable-office/prefabricated-office-cabins', statusCode: 301 },
       { source: '/product/portable-office/ms-portable-office-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
       { source: '/product/prefabricated-houses/prefabricated-site-office', destination: 'https://www.samanportable.com/product/prefabricated-houses/prefab-site-office', statusCode: 301 },
+
+      /* ------------------------------------------------------------------ *
+       * C-05 CONSOLIDATION — nine legacy children into the six winners.
+       * Ticket: CC-TICKET-C05-CLOSE-OUT-hub-shippable-5-pages-9-redirects,
+       * 08 Aug 2026, Part C. Map is final; TIMING is per target (C1):
+       * a redirect ships only once its destination page is rebuilt and live,
+       * because 1,071 clicks sit on these URLs (SOP §4).
+       *
+       *   WAVE 1 — into the hub. LIVE BELOW: the hub is built.
+       *   WAVE 2 — into food-truck-containers and container-restaurant.
+       *            COMMENTED OUT until Part B is merged; then uncomment.
+       *   WAVE 3 — into container-hotel. COMMENTED OUT until that page is
+       *            rebuilt; then uncomment.
+       *
+       * Both source shapes are retired together for every row: the flat
+       * /product/{slug} and the nested /product/container-cafe/{slug}. Any
+       * pre-existing flat-to-nested entry is REPLACED in place, never stacked,
+       * or the flat form becomes a two-hop chain.
+       * ------------------------------------------------------------------ */
+
+      // WAVE 1 · row 1 · shipping-container-cafe (39 clicks) -> hub.
+      // Two joined 20-ft units, static cafe: a larger configuration of the hub
+      // product, not a different one. The flat source is replaced above.
+      {
+        source: '/product/container-cafe/shipping-container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
+        permanent: true,
+      },
+      // WAVE 1 · row 2 · portable-cafe-container (69 clicks) -> hub.
+      // 30x20 static. Its own copy says portable is a build category, not a
+      // behaviour. No pre-existing entry for either source shape.
+      {
+        source: '/product/portable-cafe-container',
+        destination: 'https://www.samanportable.com/product/container-cafe',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/portable-cafe-container',
+        destination: 'https://www.samanportable.com/product/container-cafe',
+        permanent: true,
+      },
+
+      /* C-05 CONSOLIDATION WAVES 2 AND 3 — ACTIVATED.
+       * Staging condition of Part C1 is met inside this PR: all six winner
+       * pages are built on this branch and every destination below measures
+       * 200 at 0 hops on this build. Pre-existing flat-to-nested entries for
+       * these slugs were REPLACED in place above, never stacked. */
+      {
+        source: '/product/container-cafe/mobile-container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/mobile-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/mobile-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/pop-up-restaurants',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/pop-up-restaurants',
+        destination: 'https://www.samanportable.com/product/container-cafe/food-truck-containers',
+        permanent: true,
+      },
+      {
+        source: '/product/mobile-restaurants',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/mobile-restaurants',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/shipping-container-restaurant',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/restaurant-food-containers',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
+        permanent: true,
+      },
+      {
+        source: '/product/shipping-container-hotel',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-hotel',
+        permanent: true,
+      },
+      {
+        source: '/product/container-cafe/shipping-container-hotel',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-hotel',
+        permanent: true,
+      },
 
       ...csvRedirects,
     ];

@@ -1,0 +1,73 @@
+{
+  "baseUrl": "http://127.0.0.1:3119",
+  "label": "after",
+  "runs": 5,
+  "results": [
+    {
+      "route": "/product/container-cafe",
+      "samples": [
+        468,
+        408,
+        1320,
+        608,
+        648
+      ],
+      "median": 608
+    },
+    {
+      "route": "/product/container-cafe/container-restaurant",
+      "samples": [
+        1056,
+        660,
+        484,
+        872,
+        328
+      ],
+      "median": 660
+    },
+    {
+      "route": "/product/container-cafe/food-truck-containers",
+      "samples": [
+        796,
+        560,
+        620,
+        872,
+        316
+      ],
+      "median": 620
+    },
+    {
+      "route": "/product/container-cafe/container-hotel",
+      "samples": [
+        480,
+        828,
+        796,
+        772,
+        396
+      ],
+      "median": 772
+    },
+    {
+      "route": "/product/container-cafe/modular-container-cafe",
+      "samples": [
+        308,
+        448,
+        556,
+        388,
+        532
+      ],
+      "median": 448
+    },
+    {
+      "route": "/product/container-cafe/container-coffee-shop",
+      "samples": [
+        472,
+        244,
+        352,
+        500,
+        308
+      ],
+      "median": 352
+    }
+  ]
+}

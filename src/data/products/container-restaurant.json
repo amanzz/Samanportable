@@ -1,0 +1,212 @@
+{
+  "productSlug": "container-restaurant",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "specPdfHref": "/specs/container-restaurant-technical-specification.pdf",
+  "productName": "Container Restaurant",
+  "h1": "Container Restaurant: Six Factory-Fitted Dining Sizes",
+  "seoTitle": "Container Restaurant Price & Sizes, From ₹2,20,000 | SAMAN",
+  "metaDescription": "Factory-fitted container restaurant in six sizes, 100 to 480 sq ft seating 8 to 40 diners. From ₹2,20,000 ex-GST, delivered across India in 7-21 working days.",
+  "opener": "A SAMAN container restaurant is a factory-fitted dining and kitchen unit built on a welded MS steel frame with 1.6 mm corrugated sheet walls, stainless-steel kitchen-zone lining and 75 mm mineral wool insulation. Six sizes run from 100 to 480 sq ft, seating 8 to 40 diners, priced from ₹2,20,000 ex-factory, ex-GST at base specification. Every unit is fabricated new at our Bengaluru and Greater Noida plants, not converted from a used shipping container, delivered in 7-21 working days and placed in a single day with plug-in electrical and plumbing connections.",
+  "priceCaption": "Base specification price - customisations quoted separately.",
+  "suppressLegacyFaqSchema": true,
+  "explorerImageTemplate": {
+    "10x10": "/images/products/container-restaurant/10x10/container-restaurant-10x10x8-5-ft-front-left-hero.webp",
+    "20x10": "/images/products/container-restaurant/20x10/container-restaurant-20x10x8-5-ft-front-left-hero.webp",
+    "40x10": "/images/products/container-restaurant/40x10/container-restaurant-40x10x8-5-ft-front-left-hero.webp"
+  },
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 220000,
+      "priceInclGst": 259600,
+      "capacity": "8 diners",
+      "images": [
+        {
+          "src": "/images/products/container-restaurant/10x10/container-restaurant-10x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container restaurant 10x10x8.5 ft, front left three-quarter hero view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/10x10/container-restaurant-10x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container restaurant 10x10x8.5 ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/10x10/container-restaurant-10x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container restaurant 10x10x8.5 ft, elevated front right view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/10x10/container-restaurant-10x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container restaurant 10x10x8.5 ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/10x10/container-restaurant-10x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container restaurant 10x10x8.5 ft, interior along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/10x10/container-restaurant-10x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container restaurant 10x10x8.5 ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 352000,
+      "priceInclGst": 415360,
+      "capacity": "13 diners",
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 400000,
+      "priceInclGst": 472000,
+      "capacity": "17 diners",
+      "images": [
+        {
+          "src": "/images/products/container-restaurant/20x10/container-restaurant-20x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container restaurant 20x10x8.5 ft, front left three-quarter hero view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/20x10/container-restaurant-20x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container restaurant 20x10x8.5 ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/20x10/container-restaurant-20x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container restaurant 20x10x8.5 ft, elevated front right view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/20x10/container-restaurant-20x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container restaurant 20x10x8.5 ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/20x10/container-restaurant-20x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container restaurant 20x10x8.5 ft, interior along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/20x10/container-restaurant-20x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container restaurant 20x10x8.5 ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40x8 ft",
+      "dims": "40x8x8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 601600,
+      "priceInclGst": 709888,
+      "capacity": "27 diners",
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 752000,
+      "priceInclGst": 887360,
+      "capacity": "33 diners",
+      "images": [
+        {
+          "src": "/images/products/container-restaurant/40x10/container-restaurant-40x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container restaurant 40x10x8.5 ft, front left three-quarter hero view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/40x10/container-restaurant-40x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container restaurant 40x10x8.5 ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/40x10/container-restaurant-40x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container restaurant 40x10x8.5 ft, elevated front right view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/40x10/container-restaurant-40x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container restaurant 40x10x8.5 ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/40x10/container-restaurant-40x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container restaurant 40x10x8.5 ft, interior along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-restaurant/40x10/container-restaurant-40x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container restaurant 40x10x8.5 ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 883200,
+      "priceInclGst": 1042176,
+      "capacity": "40 diners",
+      "imagesPending": true
+    }
+  ]
+}

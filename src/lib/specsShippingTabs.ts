@@ -22,6 +22,9 @@ import c01Specifications from '@/data/products/c01-specifications.json';
 import c06Specifications from '@/data/products/c06-specifications.json';
 import c04Specifications from '@/data/products/c04-specifications.json';
 import c08Specifications from '@/data/products/c08-specifications.json';
+import c05Specifications from '@/data/products/c05-specifications.json';
+import c05SubpageSpecifications from '@/data/products/c05-subpage-specifications.json';
+import c05SubpageSpecifications2 from '@/data/products/c05-subpage-specifications-2.json';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -67,6 +70,35 @@ const C04_DATASET = c04Specifications as unknown as {
 const C08_DATASET = c08Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
+// C-05 — the 30 publishable Platform Common Specs rows for slug `container-cafe`,
+// transcribed byte-exact from the SSOT in sheet order, EXCEPT row 30 (Warranty),
+// which carries the draft's §8 override for this route only.
+const C05_DATASET = c05Specifications as unknown as {
+  products: Record<string, C01SpecificationEntry>;
+};
+// C-05 subpages — same construction as the hub: the 30 publishable Platform Common
+// Specs rows for each slug, in sheet order, with the row-30 warranty override.
+const C05_SUBPAGE_DATASET = c05SubpageSpecifications as unknown as {
+  products: Record<string, C01SpecificationEntry>;
+};
+
+/** C-05 exempt-class page (L16-3). `container-coffee-shop` measures 0/30 divergence
+    against the hub and shares its price ladder byte for byte, so it deliberately
+    carries NO 30-row table: six buyer-facing summary rows plus a link to the hub's
+    full specification. Falling back to the 30-row component table here would
+    re-create exactly the duplication the ruling exists to remove. */
+interface C05ExemptEntry {
+  name: string;
+  exemptClass: true;
+  hubHref: string;
+  hubAnchor: string;
+  summary: { item: string; detail: string }[];
+}
+const C05_SUBPAGE_DATASET_2 = c05SubpageSpecifications2 as unknown as {
+  products: Record<string, C01SpecificationEntry | C05ExemptEntry>;
+};
+const isExempt = (e: C01SpecificationEntry | C05ExemptEntry): e is C05ExemptEntry =>
+  (e as C05ExemptEntry).exemptClass === true;
 
 // Live page slug → dataset key. Everything else maps to itself.
 const PAGE_SLUG_TO_DATASET_KEY: Record<string, string> = {
@@ -178,6 +210,45 @@ export function buildC08SpecificationsHtml(pageSlug: string): string {
   const entry = C08_DATASET.products[pageSlug];
   if (!entry) {
     throw new Error(`Missing C-08 specification dataset for ${pageSlug}`);
+  }
+  return buildC01SpecificationsHtml(entry);
+}
+
+/** Six-row buyer-facing summary + hub specification link, for the L16-3 exempt-class
+    page. Same card/table chrome as every other specifications tab. */
+function buildC05ExemptSpecificationsHtml(entry: C05ExemptEntry): string {
+  const rows = entry.summary
+    .map(
+      (row) =>
+        `<tr>` +
+          `<td class="${TD} font-semibold text-slate-700">${esc(row.item)}</td>` +
+          `<td class="${TD}">${esc(row.detail)}</td>` +
+        `</tr>`
+    )
+    .join('');
+  return (
+    `<div class="not-prose">` +
+      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">Coffee shop fit-out</h4>` +
+        `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>` +
+          `<th class="${TH}">Item</th><th class="${TH}">Detail</th>` +
+        `</tr></thead><tbody>${rows}</tbody></table></div>` +
+      `</section>` +
+      `<section class="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-5">` +
+        `<p class="m-0 text-sm leading-relaxed text-emerald-800">` +
+          `This unit is built on the standard cafe shell. The full 30-row structural ` +
+          `specification is published on the ` +
+          `<a class="font-semibold underline underline-offset-2" href="${esc(entry.hubHref)}">${esc(entry.hubAnchor)}</a>.` +
+        `</p>` +
+      `</section>` +
+    `</div>`
+  );
+}
+
+export function buildC05SpecificationsHtml(pageSlug: string): string {
+  const entry = C05_DATASET.products[pageSlug];
+  if (!entry) {
+    throw new Error(`Missing C-05 specification dataset for ${pageSlug}`);
   }
   return buildC01SpecificationsHtml(entry);
 }
@@ -692,6 +763,30 @@ export function getProductTabsHtml(
   if (pageSlug && C08_DATASET.products[pageSlug]) {
     return {
       specificationsHtml: buildC08SpecificationsHtml(pageSlug),
+      shippingHtml: '',
+    };
+  }
+  // C-05 container cafe — 30-row platform spec table. The draft rules no Shipping
+  // tab copy for this event, so '' is returned and the caller keeps whatever the
+  // exported record already carries (unchanged behaviour, nothing invented).
+  if (pageSlug && C05_DATASET.products[pageSlug]) {
+    return {
+      specificationsHtml: buildC05SpecificationsHtml(pageSlug),
+      shippingHtml: '',
+    };
+  }
+  if (pageSlug && C05_SUBPAGE_DATASET.products[pageSlug]) {
+    return {
+      specificationsHtml: buildC01SpecificationsHtml(C05_SUBPAGE_DATASET.products[pageSlug]),
+      shippingHtml: '',
+    };
+  }
+  if (pageSlug && C05_SUBPAGE_DATASET_2.products[pageSlug]) {
+    const entry = C05_SUBPAGE_DATASET_2.products[pageSlug];
+    return {
+      specificationsHtml: isExempt(entry)
+        ? buildC05ExemptSpecificationsHtml(entry)
+        : buildC01SpecificationsHtml(entry),
       shippingHtml: '',
     };
   }

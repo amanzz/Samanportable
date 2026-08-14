@@ -35,11 +35,12 @@ import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
 import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
-import { getEmbeddedProductSummary, renderCabinCalculatorSSR } from '../../../lib/cabinCalculatorSSR';
+import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { restrictContainerCafeRail } from '../../../lib/containerCafeClusterRail';
 import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
@@ -202,6 +203,15 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       relatedProducts = orderContainerOfficeRail(category, relatedProducts);
     }
 
+    // C-05 Ruling 3 (Fable 5, 08 Aug 2026) — the container cafe hub's rail is
+    // restricted to the five CI9 subpages, in §9 order, so the §5 right-to-exist
+    // copy ("one of the five pages below") is true on the rendered page and the
+    // legacy children awaiting consolidation are not introduced by the cluster's
+    // strongest page. Hub route only; no other rail on the site changes.
+    if (category === 'container-cafe') {
+      relatedProducts = restrictContainerCafeRail(category, relatedProducts);
+    }
+
     // Related rails/cards render only this compact catalog projection. Keeping full
     // WooCommerce objects here duplicated long descriptions in __NEXT_DATA__ on
     // every product hub without adding any visible content.
@@ -355,7 +365,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // C-08 E3 Step C — same Info-image placement as the sibling route, so
           // the hub's Description panel carries its 16:9 band on the same rules.
           description: injectInfoImages(
-            variantData?.descriptionHtml || descriptionData?.description || '',
+            // Same empty-safe hold as the subpage route (C-05 close-out Part 2).
+            variantData?.descriptionHtml
+              || (variantData?.suppressLegacyDescription ? '' : descriptionData?.description)
+              || '',
             variantData?.infoImages
           ),
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
@@ -559,7 +572,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
 
   const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category), [category]);
   const embeddedCalculatorSummary = useMemo(() => (
-    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
+    embeddedCalculatorMapping && embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
   ), [embeddedCalculatorMapping]);
 
   const embeddedCalculatorSummaryText = useMemo(() => {
@@ -571,15 +584,28 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
     if (!embeddedCalculatorMapping) return null;
     return renderCabinCalculatorSSR({
       embedded: true,
-      config: {
-        productId: embeddedCalculatorMapping.productId,
-      },
-      ladderKey: embeddedCalculatorMapping.ladderKey,
-      // This page's own approved product name, never its hub's.
-      productName: product?.name,
+      // A NO-PREFILL route mounts the general cabin calculator, exactly as at
+      // /cabin-cost-calculator: no product, no ladder, no product name. It must
+      // not claim to price what this page sells.
+      ...(embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId
+        ? { config: { productId: embeddedCalculatorMapping.productId }, ladderKey: embeddedCalculatorMapping.ladderKey, productName: product?.name }
+        : {}),
       pageUrl: makeCalculatorPageUrl(category),
     });
   }, [category, embeddedCalculatorMapping]);
+
+  // The calculator entry band. Sits between the buy box and the description
+  // tabs so a buyer cannot scroll past the tool without meeting it.
+  const calculatorEntryHtml = useMemo(() => {
+    // The entry band names the product and prints its price, so a no-prefill
+    // route gets no band at all rather than a band claiming to price a panel.
+    if (!embeddedCalculatorMapping || !embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) return null;
+    return renderCalculatorEntrySection({
+      productId: embeddedCalculatorMapping.productId,
+      productName: product?.name || embeddedCalculatorSummary?.name || '',
+      ladderKey: embeddedCalculatorMapping.ladderKey,
+    });
+  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name]);
 
   if (!product) {
     return (
@@ -626,7 +652,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} />
+          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} metaDescription={rankMathSEO?.description} />
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered
               FAQs; legacy products continue to use RankMath. */}
@@ -955,21 +981,25 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               )}
 
               {/* PC-00 (14 Aug 2026) — divider 3, Section 3 → Section 4 (calculator),
-                  outside the calculator's own container. Hub page only. */}
-              {category === 'porta-cabins' && embeddedCalculatorHtml && (
+                  outside the calculator's own container and now placed above the
+                  production entry band, which is the calculator's entry point.
+                  Hub page only. */}
+              {category === 'porta-cabins' && (calculatorEntryHtml || embeddedCalculatorHtml) && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
+              {/* The entry band: after the buy box, before the description tabs. */}
+              {calculatorEntryHtml && (
+                <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
+              )}
+
+              {/* One entry point per page: the dark band above is it. The white
+                  "Estimate your cabin cost / Open the calculator" strip that used
+                  to sit here was the entry point the band replaced, so it is gone.
+                  The calculator itself is unchanged and still lives here. */}
               {embeddedCalculatorHtml && (
-                <section className="mt-4">
-                  <details className="rounded-xl border border-slate-200 bg-white/90 shadow-sm">
-                    <summary className="cursor-pointer list-none px-4 py-3">
-                      <span className="text-lg font-semibold text-foreground">{CLOSED_STATE.label}</span>
-                      <span className="ml-2 text-sm text-muted-foreground">{CLOSED_STATE.subLine}</span>
-                      <span className="ml-2 text-sm font-medium underline">{CLOSED_STATE.control}</span>
-                    </summary>
-                    <div className="mt-3 px-1 pb-1" dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
-                  </details>
+                <section className="mt-4" id="cabin-calculator">
+                  <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
                 </section>
               )}
 

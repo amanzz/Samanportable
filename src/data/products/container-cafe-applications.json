@@ -1,0 +1,72 @@
+{
+  "h2": "Compare all six container cafe sizes and what each one trades as",
+  "intro": "Six sizes, 100 to 400 sq ft, eight covers to thirty-three - one delivered unit in every case, on one base, with one connection.",
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft - the single-counter kiosk, hydra-set",
+      "paragraph": "The smallest unit we publish, and the one that trades entirely through a single service opening rather than seating anybody inside. One operator works it comfortably and eight customers can stand and eat around it. At 550 kg it lifts on a hydra and lands on any level 14 by 14 ft patch, which is why it suits mall forecourts, campus corners and event grounds where the pitch is borrowed rather than owned. Its 0.7 kW load runs off a domestic-grade supply, so no separate sanction is needed before you open.",
+      "applications": [
+        "Mall and forecourt kiosks",
+        "Campus and hospital corners",
+        "Weekend event pitches",
+        "First outlet, low capital"
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8 ft - true container width, two-staff bar",
+      "paragraph": "Eight feet of width is the real container dimension, and this is the size buyers ask for when the unit has to read as a shipping container on sight. That narrow span puts the serving counter and the back bar on opposite walls with one working aisle between them, which two staff can hold through a rush without crossing each other. Thirteen covers. It carries the same Rs 2,035 rate as the smallest unit, because width rather than length is what drives the fabrication cost, and the frame section does not change between the two.",
+      "applications": [
+        "Brand-led container builds",
+        "Two-staff service bars",
+        "Narrow street frontages",
+        "Franchise pilot units"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft - our reference size, customers indoors",
+      "paragraph": "Our reference size, and the one both the published price and the specification sheet are written against. Two more feet of width turn a working aisle into a room, so seventeen people can come inside and sit rather than queue at a hatch. The rate drops to Rs 1,850 here, the first fall anywhere on this ladder, because the frame spans further without needing heavier steel. Operators who intend to trade daily rather than seasonally usually start here, and it is the size we hold standing specification drawings for.",
+      "applications": [
+        "Everyday high-street cafes",
+        "Seated indoor service",
+        "Standard specification base",
+        "Daily-trade operators"
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12 ft - a full kitchen line behind the pass",
+      "paragraph": "Twelve feet of width is where a proper kitchen line becomes possible behind the counter, with the pass, the prep bench and the cold side all reachable without anyone stepping back into the customer zone. Twenty covers, and the first size here where three staff are not in each other's way. It is also the first that takes a full day to place rather than an afternoon, because the services are plumbed in rather than plugged in. The rate settles at Rs 1,776 and holds through the next size up, so the added width costs nothing per square foot.",
+      "applications": [
+        "Cooked-to-order menus",
+        "Three-staff kitchen lines",
+        "Twenty-cover dining rooms",
+        "Full prep and cold side"
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft - ordering end and sitting end, split",
+      "paragraph": "Length rather than width, which keeps the unit road-friendly while adding a genuine seating section beyond the counter. Twenty-five covers divide naturally into an ordering end and a sitting end, so a queue stops blocking the people who have already been served. This is the first size that needs a crane instead of a hydra and a 32 to 40 ft open trailer, so confirm your approach road and the standing space for lifting plant before ordering. Same Rs 1,776 rate as the 20x12, for a hundred more square feet.",
+      "applications": [
+        "Queue and seating separated",
+        "Highway and dhaba sites",
+        "Twenty-five-cover rooms",
+        "Crane-access locations"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft - the largest we deliver in one piece",
+      "paragraph": "The biggest cafe we deliver as a single piece, and the only one here that carries an ODC check before dispatch, because a 40 ft bed on Indian roads needs its route confirmed first. Thirty-three covers, four windows and eight socket positions, which is enough to run a full menu, a dessert counter and a till station without anything sharing a circuit. Its Rs 1,739 rate is the lowest we quote anywhere on this ladder. Beyond it, units are joined on site, and that junction is detailed at quotation against your frontage.",
+      "applications": [
+        "Largest single-piece unit",
+        "Full-menu operations",
+        "Dessert and till stations",
+        "Destination cafe sites"
+      ]
+    }
+  ]
+}

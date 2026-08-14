@@ -42,7 +42,7 @@ import {
   slugFromProductHref,
 } from '../../../lib/portaCabinClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
-import { getEmbeddedProductSummary, renderCabinCalculatorSSR } from '../../../lib/cabinCalculatorSSR';
+import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
@@ -434,7 +434,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
   const embeddedCalculatorSummary = useMemo(() => (
-    embeddedCalculatorMapping ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
+    embeddedCalculatorMapping && embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
   ), [embeddedCalculatorMapping]);
 
   const embeddedCalculatorSummaryText = useMemo(() => {
@@ -446,15 +446,28 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (!embeddedCalculatorMapping) return null;
     return renderCabinCalculatorSSR({
       embedded: true,
-      config: {
-        productId: embeddedCalculatorMapping.productId,
-      },
-      ladderKey: embeddedCalculatorMapping.ladderKey,
-      // This page's own approved product name, never its hub's.
-      productName: product?.name,
+      // A NO-PREFILL route mounts the general cabin calculator, exactly as at
+      // /cabin-cost-calculator: no product, no ladder, no product name. It must
+      // not claim to price what this page sells.
+      ...(embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId
+        ? { config: { productId: embeddedCalculatorMapping.productId }, ladderKey: embeddedCalculatorMapping.ladderKey, productName: product?.name }
+        : {}),
       pageUrl: makeCalculatorPageUrl(category, slug),
     });
   }, [category, slug, embeddedCalculatorMapping]);
+
+  // The calculator entry band. Sits between the buy box and the description
+  // tabs so a buyer cannot scroll past the tool without meeting it.
+  const calculatorEntryHtml = useMemo(() => {
+    // The entry band names the product and prints its price, so a no-prefill
+    // route gets no band at all rather than a band claiming to price a panel.
+    if (!embeddedCalculatorMapping || !embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) return null;
+    return renderCalculatorEntrySection({
+      productId: embeddedCalculatorMapping.productId,
+      productName: product?.name || embeddedCalculatorSummary?.name || '',
+      ladderKey: embeddedCalculatorMapping.ladderKey,
+    });
+  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
@@ -825,16 +838,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               />
               )}
 
+              {/* The entry band: after the buy box, before the description tabs. */}
+              {calculatorEntryHtml && (
+                <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
+              )}
+
+              {/* One entry point per page: the dark band above is it. The white
+                  "Estimate your cabin cost / Open the calculator" strip that used
+                  to sit here was the entry point the band replaced, so it is gone.
+                  The calculator itself is unchanged and still lives here. */}
               {embeddedCalculatorHtml && (
-                <section className="mt-4">
-                  <details className="rounded-xl border border-slate-200 bg-white/90 shadow-sm">
-                    <summary className="cursor-pointer list-none px-4 py-3">
-                      <span className="text-lg font-semibold text-foreground">{CLOSED_STATE.label}</span>
-                      <span className="ml-2 text-sm text-muted-foreground">{CLOSED_STATE.subLine}</span>
-                      <span className="ml-2 text-sm font-medium underline">{CLOSED_STATE.control}</span>
-                    </summary>
-                    <div className="mt-3 px-1 pb-1" dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
-                  </details>
+                <section className="mt-4" id="cabin-calculator">
+                  <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
                 </section>
               )}
 

@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* The calculator renderer is loaded after hydration only on audited bespoke
+   product templates. Reserve its measured enhanced height so the shared
+   footer never moves when the tool fills this Layout slot. */
+.calculator-layout-fallback { min-height: 1400px; }
+@media (min-width: 640px) {
+  .calculator-layout-fallback { min-height: 1250px; }
+}
+@media (min-width: 1024px) {
+  .calculator-layout-fallback { min-height: 1000px; }
+}
+
 /* Keep the server-rendered homepage content intact while allowing Chromium to
    skip layout and paint work for sections below the initial mobile viewport. */
 .homepage-below-fold {

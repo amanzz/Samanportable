@@ -146,6 +146,11 @@ const SANCTIONED_EXTRA = [
   'mobile-estimate',       // the mobile total figure — role 1
   '--saman-amber:',        // the declaration itself
   'rgba(224,163,64',       // the selected-card ring
+  // The chip's "+₹" delta. This is role 1, a price figure, on a chip rather
+  // than a product tile - the tile carries .choice-price, the chip carries the
+  // delta as its first small. Same role, different element, so it is named
+  // here rather than added to the five, which stay exactly five.
+  'span > small:first-of-type',
 ];
 const amberRules = rules.split('\n').filter((line) => /saman-amber|E0A340/i.test(line));
 const unexplained = amberRules.filter((line) => {

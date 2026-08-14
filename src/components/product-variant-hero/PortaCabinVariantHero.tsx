@@ -33,6 +33,12 @@ import portableCabinApplications from '@/data/products/portable-cabin-applicatio
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
 import portableOfficeApplications from '@/data/products/portable-office-applications.json';
 import portableCabinWithToiletApplications from '@/data/products/portable-cabin-with-toilet-applications.json';
+import containerCafeApplications from '@/data/products/container-cafe-applications.json';
+import containerRestaurantApplications from '@/data/products/container-restaurant-applications.json';
+import foodTruckContainersApplications from '@/data/products/food-truck-containers-applications.json';
+import containerHotelApplications from '@/data/products/container-hotel-applications.json';
+import modularContainerCafeApplications from '@/data/products/modular-container-cafe-applications.json';
+import containerCoffeeShopApplications from '@/data/products/container-coffee-shop-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
@@ -130,6 +136,21 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // C-02 portable-cabin-with-toilet — §H drop (Fable 5, 25 Jul), same dataset shape
   // → identical SizeApplicationsExplorer. Resolves via productSlug; additive.
   'portable-cabin-with-toilet': portableCabinWithToiletApplications as ApplicationsData,
+  // C-05 container-cafe HUB — §6 of the 08 Aug draft of record, same dataset shape
+  // → identical SizeApplicationsExplorer. Resolves via the preset's
+  // applicationsDataset key; additive, so every other product's explorer is
+  // unaffected. Six panels, one per published size. The 20x8 panel carries no
+  // image (Fable 5 Ruling 2, Option B: no 20x8 render exists in the converted C-05
+  // set), so it renders the component's existing on-request placeholder.
+  'container-cafe': containerCafeApplications as ApplicationsData,
+  // C-05 subpages — section 3 of their 08 Aug drafts of record. Same dataset shape as
+  // the hub. Sizes with no renders (restaurant: 20x8 / 40x8 / 40x12; food truck: 20x8)
+  // carry no images and fall to the component's existing on-request placeholder.
+  'container-restaurant': containerRestaurantApplications as ApplicationsData,
+  'food-truck-containers': foodTruckContainersApplications as ApplicationsData,
+  'container-hotel': containerHotelApplications as ApplicationsData,
+  'modular-container-cafe': modularContainerCafeApplications as ApplicationsData,
+  'container-coffee-shop': containerCoffeeShopApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, SectionHDataset>).map(
       ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
@@ -786,7 +807,13 @@ export function PortaCabinVariantHero({
     <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:h-full lg:overflow-visible lg:flex lg:flex-col">
       <div className="space-y-3 lg:flex lg:flex-1 lg:flex-col">
         <div className="space-y-1">
-          <Heading className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">{data.heroH1 || data.productName || productTitle}</Heading>
+          {/* `h1` is the owner-approved page heading when the draft's L3 zone rules one
+              that is not the product noun. It is deliberately NOT `productName`: that
+              value also feeds alts, aria-labels and the enquiry prefill, so a long
+              marketing heading must not be routed through it. Absent everywhere today
+              except the C-05 subpages and the porta-cabins hub, so every other product
+              renders byte-identically. */}
+          <Heading className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">{data.h1 || data.productName || productTitle}</Heading>
           {/* Amendment G v2 — real rating badge: the computed 4.6 average of the 5
               SAMAN-verified reviews only (ratingCount 5). Matches the JSON-LD
               aggregateRating + the Reviews tab. Renders only when ratingCount > 0. */}

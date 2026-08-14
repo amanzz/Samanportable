@@ -1,0 +1,71 @@
+{
+  "h2": "Coffee shop sizes and what the barista fit-out adds at each",
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10x8.5 ft single-barista pickup window",
+      "paragraph": "One hundred square feet supports one barista working a single machine with a pickup window and no interior queue at all. Everything is reachable without stepping: grinder, machine, milk fridge and waste all sit on one run of counter. The treated water point matters more here than anywhere else, because a compact bar has no room for a second machine when scale ruins the first. Sites choose this size where footfall passes rather than gathers, so the queue forms outside on a pavement or a concourse instead of inside the unit.",
+      "applications": [
+        "Pavement pickup window",
+        "Office lobby bar",
+        "Campus grab-and-go",
+        "Transit concourse kiosk"
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8x8.5 ft split bar and pickup separation",
+      "paragraph": "The 20 ft length lets ordering and collection separate along the counter, which is the single change that stops a morning rush jamming at one point. Espresso and grinder circuits are positioned toward the order end and the milk station toward collection, so two staff work without crossing. Narrow width keeps freight ordinary rather than oversize. Operators running a commuter peak, where most of the day's cups are sold inside ninety minutes, usually name this separation as the reason they moved up from the smallest unit.",
+      "applications": [
+        "Commuter peak trade",
+        "Order and collect split",
+        "Two-barista shift",
+        "Ordinary freight width"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10x8.5 ft standard shop with seated corner",
+      "paragraph": "Two hundred square feet is the reference footprint, and the first size where a small seated corner fits behind the working bar rather than competing with it. Display glazing across the counter face carries the pastry and merchandise line that lifts average ticket beyond the cup. Under-counter waste keeps the bin out of the customer view, which matters once people are sitting rather than passing. Most independent coffee brands price this size first, because it is the smallest unit that supports both a takeaway queue and a reason to stay.",
+      "applications": [
+        "Independent brand flagship",
+        "Takeaway plus seating",
+        "Pastry display line",
+        "Neighbourhood coffee bar"
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12x8.5 ft twin-group bar with back lane",
+      "paragraph": "Twelve feet of width opens a lane behind the bar, which is what a twin-group machine actually needs once two baristas are working through a rush together. The extra depth also takes a second under-counter fridge and a larger treated water reserve without shortening the customer-facing counter. Branded frontage stays the full length of the unit. Roasters and multi-outlet brands tend to specify this width for their busiest site while running narrower units elsewhere, because only one location usually justifies the second group head.",
+      "applications": [
+        "Twin-group machine bar",
+        "Two baristas in a rush",
+        "Second under-counter fridge",
+        "Busiest site in a group"
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10x8.5 ft roastery-style shop with seating",
+      "paragraph": "Three hundred square feet separates the bar from the seating properly, so grinder noise and steam stop dominating the room where people are sitting. The additional length carries a merchandising wall for beans and equipment, which is the margin most specialty operators actually build the shop around. Electrical capacity supports a sample roaster or a batch brewer alongside the espresso circuits. Brands using the shop as a showroom for their coffee rather than only a place to buy a cup start at this size.",
+      "applications": [
+        "Specialty coffee showroom",
+        "Bean and kit retail wall",
+        "Batch brew alongside bar",
+        "Seating away from steam"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10x8.5 ft destination coffee shop, 400 sq ft",
+      "paragraph": "The biggest shell offers 400 square feet at the ladder's floor rate and is planned as a destination rather than a stop: full bar, seated room, retail wall and a service area that can absorb a queue indoors in bad weather. Getting it to site means an over-dimension permit, a low-bed carrier and a crane lift. At this size the fit-out decisions that matter shift from bar layout to how the room sounds and lights once forty people are inside it. Groups opening a flagship alongside smaller satellite units choose this shell for the flagship.",
+      "applications": [
+        "Flagship destination store",
+        "Indoor queue in monsoon",
+        "Full seated coffee room",
+        "Retail wall and bar"
+      ]
+    }
+  ]
+}

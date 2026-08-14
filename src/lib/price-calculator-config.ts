@@ -1,3 +1,5 @@
+import { GST_RATE } from "@/lib/taxRates";
+
 export type PriceCalculatorZone = "South" | "North" | "";
 
 export type TransportOption =
@@ -749,6 +751,53 @@ export const calculateAddOnBudgetSummary = (
   };
 };
 
+/**
+ * Apply the GST multiplier to an add-on summary.
+ *
+ * WHY THIS EXISTS. Every estimate path used to read
+ *
+ *     lowRange = baseLowRange + addOnSummary.lowRange
+ *
+ * where `baseLowRange` had already been through `gstMultiplier` and the add-on
+ * total had not. Add-ons therefore carried NO tax at any multiplier value: on a
+ * container office with four workstations and four chairs, Rs 56,000 of add-ons
+ * went untaxed and Rs 10,080 of GST was never charged. Correcting the multiplier
+ * from 1.05 to GST_RATE in CALC-L7 Merge 1 made that worse rather than better,
+ * because the base half became correct while the add-on half stayed wrong.
+ *
+ * The rates are scaled alongside the ranges, not just the totals, so a
+ * tax-inclusive estimate itemises tax-inclusive lines and `rate x quantity`
+ * still equals the line's range. A breakdown that does not sum to its own total
+ * is the next defect after this one.
+ *
+ * Ex-GST is untouched by construction: "GST extra" and "Discuss with SAMAN" are
+ * multiplier 1.0, so this returns the summary unchanged and every ex-GST figure
+ * is byte-identical to before.
+ */
+const applyGstToAddOnSummary = (
+  summary: AddOnBudgetSummary,
+  gstMultiplier: number,
+): AddOnBudgetSummary => {
+  if (!Number.isFinite(gstMultiplier) || gstMultiplier === 1) {
+    return summary;
+  }
+  return {
+    items: summary.items.map((item) => ({
+      ...item,
+      unitRate: item.unitRate * gstMultiplier,
+      lowRate: item.lowRate * gstMultiplier,
+      typicalRate: item.typicalRate * gstMultiplier,
+      highRate: item.highRate * gstMultiplier,
+      lowRange: item.lowRange * gstMultiplier,
+      typicalRange: item.typicalRange * gstMultiplier,
+      highRange: item.highRange * gstMultiplier,
+    })),
+    lowRange: summary.lowRange * gstMultiplier,
+    typicalRange: summary.typicalRange * gstMultiplier,
+    highRange: summary.highRange * gstMultiplier,
+  };
+};
+
 export const buildOptionalAddOnBudgetLabel = (entry: AddOnBudgetLine): string => {
   const totalQty = entry.quantity;
   if (!totalQty) {
@@ -775,9 +824,18 @@ const BASED_INSTALLATION_MULTIPLIERS: Record<InstallationOption, number> = {
   "Discuss with SAMAN": 1.03,
 };
 
+/**
+ * "GST included guidance" multiplied by 1.05 — a 5% tax on a figure the rest of
+ * the codebase taxes at GST_RATE (18%). A buyer selecting it was shown a
+ * "tax-inclusive" price understating GST by roughly 13 percentage points.
+ *
+ * The rate is imported from taxRates.ts, the single definition site both
+ * engines read, so this option can never drift from statutory GST again. The
+ * other two options are 1.0 because they add no tax to the figure shown.
+ */
 const BASED_GST_MULTIPLIERS: Record<GstOption, number> = {
   "GST extra": 1.0,
-  "GST included guidance": 1.05,
+  "GST included guidance": 1 + GST_RATE,
   "Discuss with SAMAN": 1.0,
 };
 
@@ -991,7 +1049,11 @@ export const calculateCabinEstimate = (
   const baseLowRange = roundStep(baseValue * (fixedSizeBasePrice ? 1 : 0.88));
   const baseTypicalRange = roundStep(baseValue);
   const baseHighRange = roundStep(baseValue * (fixedSizeBasePrice ? 1 : 1.12));
-  const addOnSummary = calculateAddOnBudgetSummary(input.productId, input.selectedAddOns);
+  // Taxed on the same terms as the base. See applyGstToAddOnSummary.
+  const addOnSummary = applyGstToAddOnSummary(
+    calculateAddOnBudgetSummary(input.productId, input.selectedAddOns),
+    gstMultiplier,
+  );
 
   const lowRange = baseLowRange + addOnSummary.lowRange;
   const typicalRange = baseTypicalRange + addOnSummary.typicalRange;
@@ -1086,7 +1148,11 @@ export const calculatePanelEstimate = (
   const baseLowRange = roundStep(base * option.rangeMin);
   const baseTypicalRange = roundStep(base * option.defaultRate);
   const baseHighRange = roundStep(base * option.rangeMax);
-  const addOnSummary = calculateAddOnBudgetSummary(input.productId, input.selectedAddOns);
+  // Taxed on the same terms as the base. See applyGstToAddOnSummary.
+  const addOnSummary = applyGstToAddOnSummary(
+    calculateAddOnBudgetSummary(input.productId, input.selectedAddOns),
+    gstMultiplier,
+  );
 
   const lowRange = baseLowRange + addOnSummary.lowRange;
   const typicalRange = baseTypicalRange + addOnSummary.typicalRange;
@@ -1177,7 +1243,11 @@ export const calculateSpecialEstimate = (input: {
   const baseLowRange = roundStep(baseValue * 0.88);
   const baseTypicalRange = roundStep(baseValue);
   const baseHighRange = roundStep(baseValue * 1.12);
-  const addOnSummary = calculateAddOnBudgetSummary(input.productId, input.selectedAddOns);
+  // Taxed on the same terms as the base. See applyGstToAddOnSummary.
+  const addOnSummary = applyGstToAddOnSummary(
+    calculateAddOnBudgetSummary(input.productId, input.selectedAddOns),
+    gstMultiplier,
+  );
 
   const lowRange = baseLowRange + addOnSummary.lowRange;
   const typicalRange = baseTypicalRange + addOnSummary.typicalRange;

@@ -1,0 +1,102 @@
+{
+  "baseUrl": "http://127.0.0.1:3124",
+  "label": "mount-after",
+  "runs": 5,
+  "results": [
+    {
+      "route": "/product/eps-panel",
+      "lcpSamples": [
+        748,
+        1192,
+        624,
+        860,
+        548
+      ],
+      "lcpMedian": 748,
+      "clsSamples": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "clsWorst": 0
+    },
+    {
+      "route": "/product/glass-wool-panel",
+      "lcpSamples": [
+        688,
+        792,
+        576,
+        824,
+        720
+      ],
+      "lcpMedian": 720,
+      "clsSamples": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "clsWorst": 0
+    },
+    {
+      "route": "/product/sandwich-panel",
+      "lcpSamples": [
+        596,
+        616,
+        372,
+        748,
+        764
+      ],
+      "lcpMedian": 616,
+      "clsSamples": [
+        0,
+        0,
+        0,
+        0.0011,
+        0
+      ],
+      "clsWorst": 0.0011
+    },
+    {
+      "route": "/product/roofing-sheet/metal-roofing-sheet",
+      "lcpSamples": [
+        1420,
+        396,
+        480,
+        588,
+        524
+      ],
+      "lcpMedian": 524,
+      "clsSamples": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "clsWorst": 0
+    },
+    {
+      "route": "/product/puf-panel/puf-panel-house",
+      "lcpSamples": [
+        628,
+        784,
+        824,
+        688,
+        912
+      ],
+      "lcpMedian": 784,
+      "clsSamples": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "clsWorst": 0
+    }
+  ]
+}

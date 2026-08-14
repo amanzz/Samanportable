@@ -1,0 +1,294 @@
+{
+  "productSlug": "container-coffee-shop",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "specPdfHref": "/specs/container-coffee-shop-technical-specification.pdf",
+  "productName": "Container Coffee Shop",
+  "h1": "Container Coffee Shop: Barista Fit-Out on the Cafe Shell",
+  "seoTitle": "Container Coffee Shop Fit-Out & Price | SAMAN Portable",
+  "metaDescription": "Container coffee shop built on the standard cafe shell with espresso circuits, water treatment and pickup-window fit-out. From ₹2,03,500 ex-GST.",
+  "opener": "A SAMAN container coffee shop is the standard container cafe shell fitted out for coffee: dedicated espresso and grinder circuits, a treated water point feeding the machine, under-counter waste, display glazing at the counter face and a branded frontage planned around pickup speed. The shell, the steel and the insulation are the same as the container cafe range, and the price ladder is the same, from ₹2,03,500 ex-factory, ex-GST. What differs is everything a barista touches, which is why this page covers the fit-out and workflow rather than repeating the structural specification.",
+  "priceCaption": "Base specification price - customisations quoted separately.",
+  "suppressLegacyFaqSchema": true,
+  "explorerImageTemplate": {
+    "10x10": "/images/products/container-coffee-shop/10x10/container-coffee-shop-10x10x8-5-ft-front-left-hero.webp",
+    "20x10": "/images/products/container-coffee-shop/20x10/container-coffee-shop-20x10x8-5-ft-front-left-hero.webp",
+    "20x12": "/images/products/container-coffee-shop/20x12/container-coffee-shop-20x12x8-5-ft-front-left-hero.webp",
+    "30x10": "/images/products/container-coffee-shop/30x10/container-coffee-shop-30x10x8-5-ft-front-left-hero.webp",
+    "40x10": "/images/products/container-coffee-shop/40x10/container-coffee-shop-40x10x8-5-ft-front-left-hero.webp"
+  },
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 203500,
+      "priceInclGst": 240130,
+      "images": [
+        {
+          "src": "/images/products/container-coffee-shop/10x10/container-coffee-shop-10x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container coffee shop 10x10x8.5 ft, 100 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/10x10/container-coffee-shop-10x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container coffee shop 10x10x8.5 ft, 100 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/10x10/container-coffee-shop-10x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container coffee shop 10x10x8.5 ft, 100 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/10x10/container-coffee-shop-10x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container coffee shop 10x10x8.5 ft, 100 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/10x10/container-coffee-shop-10x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container coffee shop 10x10x8.5 ft, 100 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/10x10/container-coffee-shop-10x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container coffee shop 10x10x8.5 ft, 100 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 325600,
+      "priceInclGst": 384208,
+      "imagesPending": true
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 370000,
+      "priceInclGst": 436600,
+      "images": [
+        {
+          "src": "/images/products/container-coffee-shop/20x10/container-coffee-shop-20x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container coffee shop 20x10x8.5 ft, 200 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x10/container-coffee-shop-20x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container coffee shop 20x10x8.5 ft, 200 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x10/container-coffee-shop-20x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container coffee shop 20x10x8.5 ft, 200 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x10/container-coffee-shop-20x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container coffee shop 20x10x8.5 ft, 200 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x10/container-coffee-shop-20x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container coffee shop 20x10x8.5 ft, 200 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x10/container-coffee-shop-20x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container coffee shop 20x10x8.5 ft, 200 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 426240,
+      "priceInclGst": 502963,
+      "images": [
+        {
+          "src": "/images/products/container-coffee-shop/20x12/container-coffee-shop-20x12x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container coffee shop 20x12x8.5 ft, 240 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x12/container-coffee-shop-20x12x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container coffee shop 20x12x8.5 ft, 240 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x12/container-coffee-shop-20x12x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container coffee shop 20x12x8.5 ft, 240 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x12/container-coffee-shop-20x12x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container coffee shop 20x12x8.5 ft, 240 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x12/container-coffee-shop-20x12x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container coffee shop 20x12x8.5 ft, 240 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/20x12/container-coffee-shop-20x12x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container coffee shop 20x12x8.5 ft, 240 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 532800,
+      "priceInclGst": 628704,
+      "images": [
+        {
+          "src": "/images/products/container-coffee-shop/30x10/container-coffee-shop-30x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container coffee shop 30x10x8.5 ft, 300 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/30x10/container-coffee-shop-30x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container coffee shop 30x10x8.5 ft, 300 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/30x10/container-coffee-shop-30x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container coffee shop 30x10x8.5 ft, 300 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/30x10/container-coffee-shop-30x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container coffee shop 30x10x8.5 ft, 300 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/30x10/container-coffee-shop-30x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container coffee shop 30x10x8.5 ft, 300 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/30x10/container-coffee-shop-30x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container coffee shop 30x10x8.5 ft, 300 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 695600,
+      "priceInclGst": 820808,
+      "images": [
+        {
+          "src": "/images/products/container-coffee-shop/40x10/container-coffee-shop-40x10x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container coffee shop 40x10x8.5 ft, 400 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/40x10/container-coffee-shop-40x10x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container coffee shop 40x10x8.5 ft, 400 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/40x10/container-coffee-shop-40x10x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container coffee shop 40x10x8.5 ft, 400 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/40x10/container-coffee-shop-40x10x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container coffee shop 40x10x8.5 ft, 400 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/40x10/container-coffee-shop-40x10x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container coffee shop 40x10x8.5 ft, 400 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-coffee-shop/40x10/container-coffee-shop-40x10x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container coffee shop 40x10x8.5 ft, 400 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ]
+}

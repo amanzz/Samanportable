@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import { UnifiedSEO } from '@/components/UnifiedSEO';
 import { RankMathSEOData } from '@/config/api';
 import { siteConfig } from '@/config/seo';
+import { PRICE_CALCULATOR_H1 } from '@/lib/priceCalculatorRouteCopy';
 import {
   CABIN_CEILING_OPTIONS,
   CABIN_FLOORING_OPTIONS,
@@ -45,7 +46,9 @@ type Zone = 'South' | 'North';
 type ViewMode = 'idle' | 'ready' | 'custom' | 'error';
 
 const CALCULATOR_TITLE = 'Portable Cabin Price Calculator | Customize & Price | SAMAN';
-const CALCULATOR_H1 = 'Customize Your Portable Cabin & Calculate Price';
+// L3-locked H1. Defined once in priceCalculatorRouteCopy so the header entry
+// point renders the same approved string rather than a second copy of it.
+const CALCULATOR_H1 = PRICE_CALCULATOR_H1;
 const CALCULATOR_DESCRIPTION =
   'Estimate your SAMAN cabin, container office, labor colony, prefab and panel budget range using your selected specification and commercial inputs.';
 const TRUST_BADGES = [
