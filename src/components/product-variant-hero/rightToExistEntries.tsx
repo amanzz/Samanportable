@@ -63,15 +63,18 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
         If your site is dry and inland, the <Link className={linkClass} href="https://www.samanportable.com/product/porta-cabins/ms-porta-cabin">MS porta cabin</Link> usually serves the same office duty at a lower rate. Its IS 2062 frame carries the same platform electricals and QA. Compare the two ladders, then send your site pin, exposure notes and headcount to our engineering team for a fixed 48-hour quotation. <Link className={linkClass} href="https://www.samanportable.com/contact">Get a GI cabin quote</Link>
       </>
     ),
-    // Image: an approved GI gallery file carrying its own approved alt. R2 asks for one
-    // "not already consumed by another slot on this page", which is not satisfiable —
-    // all 36 approved gallery files are consumed by the six size galleries and there is
-    // no 37th file with an approved alt. Re-using an approved image with its approved
-    // alt keeps Gate 4 intact; GAP-reported. The 20x10 reference size's front-elevation
-    // shot is chosen because it is an exterior and is not any panel's lead image.
+    // Rulings v1.3 D1 — the split card's own image, no longer a re-used gallery file.
+    // A previously unselected 20x10 source, renamed at build, with the owner-written
+    // alt (checksum 979aa00ef7623d2a) carried verbatim. This is the page's 43rd image
+    // slot and it is hash-unique against the other 42.
+    //
+    // D2 — the CTA is the section 6 row-2 link. The inline anchor at the end of Section
+    // 2 paragraph 2 stays too: the writing standard allows the contact URL twice where
+    // the locked template has a separate fixed CTA, which this card is. Copy column and
+    // media panel, so they do not read as a doubled call to action.
     splitCard: {
-      imageSrc: '/images/products/gi-porta-cabin/20x10/gi-porta-cabin-20x10-tan-green-front-elevation.webp',
-      imageAlt: 'Cream and green two-tone 20x10 ft GI porta cabin, angled long-wall view',
+      imageSrc: '/images/products/gi-porta-cabin/section2/gi-porta-cabin-20x10-dark-grey-exterior.webp',
+      imageAlt: 'Dark grey corrugated GI porta cabin 20x10 ft with a central door and three sliding windows in a factory yard',
       imageWidth: 1254,
       imageHeight: 1254,
       ctaLabel: 'Get a GI cabin quote',

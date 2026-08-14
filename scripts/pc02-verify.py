@@ -140,6 +140,20 @@ for size in ['10x10', '20x8', '20x10', '20x12', '40x8', '40x10']:
     check('R4 %s renders its six images' % size, len(files) == 6, '%d unique' % len(files))
 
 check('R2 Section 2 split card renders', 'saman-s2-split' in raw, '')
+D1_SRC = '/images/products/gi-porta-cabin/section2/gi-porta-cabin-20x10-dark-grey-exterior.webp'
+D1_ALT = ('Dark grey corrugated GI porta cabin 20x10 ft with a central door and '
+          'three sliding windows in a factory yard')
+check('D1 split card uses its own 43rd-slot image', D1_SRC in raw, '')
+check('D1 approved alt verbatim (sha 979aa00ef7623d2a)',
+      D1_ALT in raw and sha16(D1_ALT) == '979aa00ef7623d2a',
+      'len %d, sha %s' % (len(D1_ALT), sha16(D1_ALT)))
+# Scope this to the split card's own markup. The previously re-used file is a normal
+# member of the 20x10 gallery, so it legitimately appears several times page-wide (main
+# image, thumbnail, __NEXT_DATA__); what matters is that the card no longer points at it.
+_split = raw[raw.find('saman-s2-split'):raw.find('saman-s2-split') + 2000]
+check('D1 split card no longer re-uses a gallery file',
+      'gi-porta-cabin-20x10-tan-green-front-elevation.webp' not in _split
+      and 'section2/gi-porta-cabin-20x10-dark-grey-exterior.webp' in _split, '')
 check('R2 split card has media + CTA',
       'saman-s2-split-media' in raw and 'saman-s2-split-cta' in raw, '')
 check('R2 split card invents no sub-heading or body',
@@ -167,14 +181,14 @@ check('11.4 Delivery value is lower-case', '7–21 working days' in visible,
 
 # ── 11.5 images ──────────────────────────────────────────────────────────────
 report = json.load(io.open(os.path.join(HERE, 'pc02-image-report.json'), encoding='utf-8'))
-check('11.5 manifest is 42 slots', len(report) == 42, '%d' % len(report))
-check('11.5 42 hash-unique files', len({r['sha'] for r in report}) == 42,
+check('11.5 manifest is 43 slots', len(report) == 43, '%d' % len(report))
+check('11.5 43 hash-unique files', len({r['sha'] for r in report}) == 43,
       '%d unique' % len({r['sha'] for r in report}))
-check('11.5 42 unique alts', len({r['alt'] for r in report}) == 42, '')
+check('11.5 43 unique alts', len({r['alt'] for r in report}) == 43, '')
 missing = [r['out'] for r in report if r['out'] not in raw]
-check('11.5 all 42 wired into the page', not missing, '%d missing: %s' % (len(missing), missing[:2]))
+check('11.5 all 43 wired into the page', not missing, '%d missing: %s' % (len(missing), missing[:2]))
 alt_missing = [r['alt'] for r in report if r['alt'] not in raw and htmllib.escape(r['alt'], quote=True) not in raw]
-check('11.5 all 42 approved alts rendered', not alt_missing,
+check('11.5 all 43 approved alts rendered', not alt_missing,
       '%d missing: %s' % (len(alt_missing), alt_missing[:1]))
 end_elev = [p for p, _d, fs in os.walk(os.path.join(ROOT, 'public'))
             for f in fs if 'gi-porta-cabin' in p and '40x8-end-elevation' in f] if False else []

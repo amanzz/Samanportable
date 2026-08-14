@@ -396,6 +396,17 @@
   "sha": "99140f7885ea94c785d71d28ff80122fe4ad28eca33e14c1424b1966aba703d8"
  },
  {
+  "slot": "section2",
+  "size": "20x10",
+  "src": "galvanized-iron-prefab-cabin-20x10-dark-grey-saman-portable.png",
+  "out": "/images/products/gi-porta-cabin/section2/gi-porta-cabin-20x10-dark-grey-exterior.webp",
+  "alt": "Dark grey corrugated GI porta cabin 20x10 ft with a central door and three sliding windows in a factory yard",
+  "w": 1254,
+  "h": 1254,
+  "kb": 104.2,
+  "sha": "3086fb1c71f37aaa08ee6da67eaf9f0fbb47f8956ae963b1072e76bb5d7923da"
+ },
+ {
   "slot": "description",
   "size": "-",
   "src": "gi-porta-cabin-corrugated-exterior-door-barred-windows.webp",

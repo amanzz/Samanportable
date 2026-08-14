@@ -61,6 +61,32 @@ for size, items in MAN['gallery'].items():
             'sha': sha(out),
         })
 
+# ---- section 2 split-card media: 1 slot (rulings v1.3 D1) --------------------
+# A previously unselected 20x10 source, so the split card no longer re-uses a gallery
+# file. Same 1254x1254 production dimension as the gallery set; the served asset is
+# WebP like every other slot, and the stem is the ruled rename.
+for src_name, out_name, alt, src_dir in MAN.get('section2', []):
+    outdir = os.path.join(OUT_ROOT, 'section2')
+    os.makedirs(outdir, exist_ok=True)
+    src = os.path.join(SRC_ROOT, src_dir, src_name)
+    if not os.path.exists(src):
+        errors.append('MISSING SOURCE: ' + src)
+        continue
+    im = Image.open(src)
+    if im.mode not in ('RGB', 'RGBA'):
+        im = im.convert('RGB')
+    if (im.width, im.height) != (GALLERY_W, GALLERY_H):
+        errors.append('UNEXPECTED SOURCE SIZE %dx%d for %s' % (im.width, im.height, src_name))
+        im = im.resize((GALLERY_W, GALLERY_H), Image.LANCZOS)
+    out = os.path.join(outdir, out_name)
+    im.save(out, 'WEBP', quality=QUALITY, method=6)
+    rows.append({
+        'slot': 'section2', 'size': '20x10', 'src': src_name,
+        'out': '/images/products/gi-porta-cabin/section2/%s' % out_name,
+        'alt': alt, 'w': GALLERY_W, 'h': GALLERY_H,
+        'kb': round(os.path.getsize(out) / 1024, 1), 'sha': sha(out),
+    })
+
 # ---- description: 6 slots ----------------------------------------------------
 outdir = os.path.join(OUT_ROOT, 'description')
 os.makedirs(outdir, exist_ok=True)
@@ -86,7 +112,7 @@ for name, alt in MAN['description']:
 # ---- report ------------------------------------------------------------------
 json.dump(rows, open(os.path.join(HERE, 'pc02-image-report.json'), 'w', encoding='utf-8'), indent=1)
 
-print('slots written: %d (expected 42)' % len(rows))
+print('slots written: %d (expected 43)' % len(rows))
 hashes = {}
 for r in rows:
     hashes.setdefault(r['sha'], []).append(r['out'])
