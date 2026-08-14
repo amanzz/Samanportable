@@ -1383,347 +1383,162 @@
     },
     "ms-porta-cabin": {
       "name": "MS Porta Cabin",
-      "sheet": "06 MS Porta Cabin",
-      "canonical": "https://www.samanportable.com/product/porta-cabins/ms-porta-cabin",
+      "narrative": "This is the heavy end of the porta cabin range, stated line by line. Nineteen of the thirty lines are specific to the MS industrial build — the thicker shell, the fibre-cement lining, the mineral-wool insulation — and eleven are SAMAN platform standards shared across the family. Use the tables to compare quotations item by item, because the difference between a 1.6 mm and a 1.2 mm shell never shows in a price total. Final openings, colours, loads and fit-out follow your approved drawing and quotation.",
+      "premiumTables": true,
       "specifications": [
         {
-          "group": "Steel Structure",
-          "component": "Bottom frame",
-          "detail": "100×50×3 mm MS C-channel primary base frame, ISI-standard or approved equivalent, fabricated as the load-bearing chassis.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 14,
-          "differsFromHub": false
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Published sizes (L×W×H)",
+          "detail": "10x10, 20x8, 20x10, 20x12, 30x10, 40x10 — all × 8.5 ft height"
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Bottom frame (chassis)",
+          "detail": "100×50×3 mm MS C-channel primary base frame, ISI-standard or approved equivalent, load-bearing"
+        },
+        {
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Bottom stiffeners",
-          "detail": "100×50 mm C-channels, 50×50 mm MS angles, 75×40 mm channels and approved square-pipe supports, typically coordinated at about 4 ft intervals to the final floor load and lifting design.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 15,
-          "differsFromHub": false
+          "detail": "100×50 mm C-channels, 50×50 mm MS angles, 75×40 mm channels and approved square-pipe supports, ~4 ft intervals to final floor load and lifting design"
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Floor frame",
-          "detail": "MS base and cross-member grid supporting an 18 mm Bison/cement-fibre floor board fixed with approved self-tapping fasteners; spacing follows the final drawing and design load.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 16,
-          "differsFromHub": false
+          "detail": "MS base and cross-member grid supporting 18 mm cement-fibre floor board, approved self-tapping fasteners"
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Top frame",
-          "detail": "50×50×1.6 mm MS square-pipe top perimeter frame of approved make or equivalent.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 17,
-          "differsFromHub": false
+          "detail": "50×50×1.6 mm MS square-pipe top perimeter frame"
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Roof stiffeners",
-          "detail": "50×50×1.2 mm MS square-pipe roof stiffeners with 50×40, 40×40, 50×25 or 25×25 mm secondary members where required by span, ceiling support and drainage slope.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 18,
-          "differsFromHub": false
+          "detail": "50×50×1.2 mm MS square-pipe with 50×40 / 40×40 / 50×25 / 25×25 mm secondary members by span"
         },
         {
-          "group": "Steel Structure",
-          "component": "Corner posts / walls",
-          "detail": "50×50×2 mm MS square-pipe corner and wall posts or approved 60×60 mm MS-angle alternative, with reinforced door and window openings and an approximately 60 mm wall cavity.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 19,
-          "differsFromHub": false
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Corner posts / wall frame",
+          "detail": "50×50×2 mm MS square-pipe posts (or approved 60×60 mm MS-angle alternative), reinforced openings, ~60 mm wall cavity"
         },
         {
-          "group": "Steel Structure",
-          "component": "Lifting / handling",
-          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 20,
-          "differsFromHub": false
-        },
-        {
-          "group": "Steel Structure",
-          "component": "Welding & fabrication",
-          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 21,
-          "differsFromHub": false
-        },
-        {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Exterior walls",
-          "detail": "1.6 mm corrugated MS sheet",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 25,
-          "differsFromHub": true
+          "detail": "1.6 mm corrugated MS sheet"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Roof",
-          "detail": "1.6 mm corrugated MS sheet",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 26,
-          "differsFromHub": true
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Roof sheet",
+          "detail": "1.6 mm corrugated MS sheet"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Interior walls",
-          "detail": "8–10 mm fibre-cement board",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 27,
-          "selectionSource": "L16 amendment §4.1",
-          "differsFromHub": true
-        },
-        {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Ceiling",
-          "detail": "8 mm fibre-cement ceiling",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 28,
-          "selectionSource": "L16 amendment §4.1",
-          "differsFromHub": true
-        },
-        {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Floor base",
-          "detail": "24 mm cement board",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 29,
-          "selectionSource": "L16 amendment §4.1",
-          "differsFromHub": true
+          "detail": "24 mm cement board or heavy MS floor plate"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Floor finish",
-          "detail": "2–3 mm commercial PVC or epoxy",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 30,
-          "selectionSource": "L16 amendment §4.1",
-          "differsFromHub": true
+          "detail": "2–3 mm commercial PVC, epoxy or 3 mm chequered plate"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Lifting / handling",
+          "detail": "Engineered lifting and support points on every transportable module"
+        },
+        {
+          "group": "Table 1 — Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Welding & fabrication",
+          "detail": "Welded/bolted connections by qualified fabrication to approved shop drawings"
+        },
+        {
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Wall insulation",
-          "detail": "50–75 mm mineral wool",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 31,
-          "differsFromHub": true
+          "detail": "50–75 mm mineral wool"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Roof insulation",
-          "detail": "75–100 mm mineral wool",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 32,
-          "differsFromHub": true
+          "detail": "75–100 mm mineral wool"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Decorative / external finish",
-          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 33,
-          "differsFromHub": false
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
+          "component": "Interior wall lining",
+          "detail": "8–10 mm fibre-cement board or 0.50 mm pre-painted metal liner"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Fasteners & sealing",
-          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 34,
-          "differsFromHub": false
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
+          "component": "Ceiling",
+          "detail": "8 mm fibre-cement or 0.50 mm metal liner"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Main door / service door",
-          "detail": "Heavy single-leaf MS door with industrial lockset",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 38,
-          "selectionSource": "L16 amendment §4.1",
-          "differsFromHub": true
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
+          "component": "Main door",
+          "detail": "Heavy single or double-leaf MS door with industrial lockset"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Windows / service opening",
-          "detail": "Reduced-size aluminium windows or louvered ventilators with 5 mm glass where used",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 39,
-          "differsFromHub": true
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
+          "component": "Windows",
+          "detail": "Reduced-size aluminium windows or louvered ventilators, 5 mm glass where used"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Grills / mosquito mesh",
-          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 40,
-          "differsFromHub": false
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
+          "component": "Grills / mesh",
+          "detail": "Security grill, mosquito mesh, guard or louver as scheduled"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Electrical wiring",
-          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 41,
-          "differsFromHub": false
+          "detail": "Concealed/protected copper wiring, 1.5 / 2.5 / 4 sq.mm starting schedule"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Electrical protection",
-          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 42,
-          "differsFromHub": false
+          "detail": "Distribution board with MCB/RCCB protection and earthing"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Electrical fittings",
-          "detail": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision according to the approved layout.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 43,
-          "differsFromHub": false
+          "detail": "LED lights, modular switches, 6A/16A sockets, fan and AC points as scheduled"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Ventilation / AC",
-          "detail": "Natural cross ventilation with fan, exhaust and AC provision as required.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 44,
-          "differsFromHub": false
+          "detail": "Natural cross ventilation with fan, exhaust and AC provision as required"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Plumbing / sanitary",
-          "detail": "Not included unless shown in the approved scope.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 45,
-          "differsFromHub": false
+          "detail": "EXCLUDED unless shown in the approved scope"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Layout / configuration",
-          "detail": "Open single-room layout with furniture and partitions finalized by approved drawing.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 46,
-          "differsFromHub": false
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
+          "component": "Layout",
+          "detail": "Open single-room layout; partitions and furniture per approved drawing (CUSTOM)"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Painting / coating",
-          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 47,
-          "differsFromHub": false
+          "detail": "Prepared MS receives approved primer/topcoat system; project-selected final colour"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Quality checks",
-          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 48,
-          "differsFromHub": false
+          "detail": "Pre-dispatch dimensional, enclosure, sealing, electrical and functional tests"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 — Insulation, interior, openings, electrical, services and scope",
           "component": "Warranty",
-          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
-          "sourceSheet": "06 MS Porta Cabin",
-          "sourceRow": 49,
-          "differsFromHub": false
+          "detail": "5-year structural + 1-year finishing standard; final quotation governs scope and exclusions"
         }
       ],
-      "prices": [
-        {
-          "sizeSlug": "10x10",
-          "variantSku": "S64-06-SZ-01",
-          "publishedSize": "10x10x8.5 ft",
-          "areaSqft": 100,
-          "ratePerSqft": 1980,
-          "priceExGst": 198000,
-          "priceInclGst": 233640,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x8",
-          "variantSku": "S64-06-SZ-08",
-          "publishedSize": "20x8x8.5 ft",
-          "areaSqft": 160,
-          "ratePerSqft": 1980,
-          "priceExGst": 316800,
-          "priceInclGst": 373824,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x10",
-          "variantSku": "S64-06-SZ-02",
-          "publishedSize": "20x10x8.5 ft",
-          "areaSqft": 200,
-          "ratePerSqft": 1800,
-          "priceExGst": 360000,
-          "priceInclGst": 424800,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x12",
-          "variantSku": "S64-06-SZ-06",
-          "publishedSize": "20x12x8.5 ft",
-          "areaSqft": 240,
-          "ratePerSqft": 1728,
-          "priceExGst": 414720,
-          "priceInclGst": 489370,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "30x10",
-          "variantSku": "S64-06-SZ-03",
-          "publishedSize": "30x10x8.5 ft",
-          "areaSqft": 300,
-          "ratePerSqft": 1728,
-          "priceExGst": 518400,
-          "priceInclGst": 611712,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "40x8",
-          "variantSku": "S64-06-SZ-09",
-          "publishedSize": "40x8x8.5 ft",
-          "areaSqft": 320,
-          "ratePerSqft": 1692,
-          "priceExGst": 541440,
-          "priceInclGst": 638899,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x20",
-          "variantSku": "S64-06-SZ-05",
-          "publishedSize": "20x20x8.5 ft",
-          "areaSqft": 400,
-          "ratePerSqft": 1692,
-          "priceExGst": 676800,
-          "priceInclGst": 798624,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "40x10",
-          "variantSku": "S64-06-SZ-04",
-          "publishedSize": "40x10x8.5 ft",
-          "areaSqft": 400,
-          "ratePerSqft": 1692,
-          "priceExGst": 676800,
-          "priceInclGst": 798624,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "40x12",
-          "variantSku": "S64-06-SZ-07",
-          "publishedSize": "40x12x8.5 ft",
-          "areaSqft": 480,
-          "ratePerSqft": 1656,
-          "priceExGst": 794880,
-          "priceInclGst": 937958,
-          "costingStatus": "Approved, direct source"
-        }
-      ]
+      "diagram": {
+        "src": "/images/products/ms-porta-cabin/diagrams/ms-porta-cabin-heavy-duty-structural-system.webp",
+        "alt": "Cutaway diagram of an MS porta cabin labelling the corrugated shell, mineral wool, C-channel chassis, lined interior and floor build-up",
+        "caption": "MS Porta Cabin heavy-duty structural system — Illustrative, not for construction. Source: SP-PC-MS-02-TS-R1.",
+        "width": 1672,
+        "height": 941
+      }
     },
     "porta-cabin-shop": {
       "name": "Porta Cabin Shop",

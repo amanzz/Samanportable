@@ -1,0 +1,82 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft MS Porta Cabin: Compact 100 sq ft Plant Room",
+      "paragraph": "The 10x10 ft build puts the full industrial specification into a 100 sq ft square room for ₹1,29,375 ex-GST. It suits gate security at plant entries, sampling rooms and instrument or panel rooms that need a tough shell more than floor area. The square plan sits close to walls and equipment where longer bodies cannot reach. Fixed components dominate small cabins, so the rate is the ladder's highest at ₹1,293.75 per sq ft.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/ms-porta-cabin/explorer/ms-porta-cabin-10x10-explorer.webp",
+        "alt": "Cream and charcoal 10x10 ft MS porta cabin from a raised angle, corrugated walls, double door and two windows",
+        "provenance": "render",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8 ft MS Porta Cabin: Slim 160 sq ft Control Cabin",
+      "paragraph": "At 20x8 ft you get 160 sq ft in a slim body for ₹1,98,000 ex-GST. The 8 ft width tracks weighbridge platforms, conveyor lines and boundary strips where a 10 ft cabin obstructs vehicle movement. Operators use it for weighbridge control, dispatch desks and shift supervision along the long wall. Openings sit on the long face, positioned by your approved drawing, and the rate eases to ₹1,237.50 per sq ft.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/ms-porta-cabin/explorer/ms-porta-cabin-20x8-explorer.webp",
+        "alt": "Olive green 20x8 ft MS porta cabin from a raised angle, corrugated walls with three windows and a door",
+        "provenance": "render",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft MS Porta Cabin: The 200 sq ft EPC Reference",
+      "paragraph": "The 20x10 ft cabin is the reference configuration behind this page's costing: 200 sq ft at ₹2,25,000 ex-GST, or ₹1,125 per sq ft. It is the size EPC and plant contracts most often specify for a resident site office. It holds a working desk zone with a meeting corner. Every other size on the ladder prices from this rate. Compare rival quotations at this size first, line item against line item, using the published specification.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/ms-porta-cabin/explorer/ms-porta-cabin-20x10-explorer.webp",
+        "alt": "Cream and slate 20x10 ft MS porta cabin seen square on its short wall, single louvered window in corrugated steel",
+        "provenance": "render",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12 ft MS Porta Cabin: Wide 240 sq ft Split Office",
+      "paragraph": "Choosing 20x12 ft adds usable width: 240 sq ft for ₹2,59,200 ex-GST at a reduced ₹1,080 per sq ft. The extra two feet is what lets a partition create a genuinely workable engineer's cabin beside a document and drawing bay. Site teams running quality records, approvals and daily coordination from one room pick this size. The wider body can attract over-dimension transport conditions, which your delivery quotation confirms.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/ms-porta-cabin/explorer/ms-porta-cabin-20x12-explorer.webp",
+        "alt": "Light grey 20x12 ft MS porta cabin from a raised angle, corrugated walls with three windows and a door",
+        "provenance": "render",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft MS Porta Cabin: 300 sq ft Two-Room Module",
+      "paragraph": "The 30x10 ft body delivers 300 sq ft for ₹3,24,000 ex-GST, holding the ₹1,080 per sq ft band. The length divides naturally into two full rooms. A supervisors' office takes one end, and a secure store or testing room takes the other, each with its own door where the drawing requires. It remains one factory-finished module with engineered lifting points, so it still places in a single crane lift on a prepared base.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/ms-porta-cabin/explorer/ms-porta-cabin-30x10-explorer.webp",
+        "alt": "Light blue and charcoal 30x10 ft MS porta cabin from a raised angle, corrugated long wall with four windows",
+        "provenance": "render",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft MS Porta Cabin: 400 sq ft Multi-Bay Module",
+      "paragraph": "At 40x10 ft the ladder reaches 400 sq ft for ₹4,27,500 ex-GST, the lowest rate at ₹1,068.75 per sq ft. Long-deployment projects use the 40 ft body as a combined site establishment: reception, project office and records bay in one module. Freight follows the 40 ft trailer ladder in the Shipping tab, and route access needs early checking. Share your location with the enquiry, and the delivery plan is confirmed with the quotation.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/ms-porta-cabin/explorer/ms-porta-cabin-40x10-explorer.webp",
+        "alt": "Cream and green 40x10 ft MS porta cabin from a raised angle, corrugated long wall with four windows and a door",
+        "provenance": "render",
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ]
+}
