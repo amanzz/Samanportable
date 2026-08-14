@@ -47,6 +47,16 @@ interface C01SpecificationRow {
 interface C01SpecificationEntry {
   name: string;
   specifications: C01SpecificationRow[];
+  /** PC-00 (14 Aug 2026) — optional narrative shown above the group cards.
+      Absent on every entry except porta-cabins → byte-identical elsewhere. */
+  narrative?: string;
+  /** PC-00 — optional technical diagram rendered after the group cards, with
+      its mandatory illustrative-only caption. Absent everywhere else. */
+  diagram?: { src: string; alt: string; caption: string; width: number; height: number };
+  /** R4 (14 Aug 2026) — opt-in premium `.saman-table` styling on this entry's
+      group tables. Absent/false on every entry except porta-cabins → the
+      existing plain table markup is byte-identical elsewhere. */
+  premiumTables?: boolean;
 }
 const C01_DATASET = c01Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
@@ -154,16 +164,38 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
         );
       })
       .join('');
+    // R4 (14 Aug 2026) — opt-in premium table styling (entry.premiumTables).
+    // Absent/false everywhere except porta-cabins → identical plain markup.
+    const tableOpen = entry.premiumTables
+      ? `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>`
+      : `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>`;
+    const th = entry.premiumTables ? '' : ` class="${TH}"`;
     return (
       `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
         `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group)}</h4>` +
-        `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>` +
-          `<th class="${TH}">Component</th><th class="${TH}">Detail</th>` +
+        tableOpen +
+          `<th${th}>Component</th><th${th}>Detail</th>` +
         `</tr></thead><tbody>${rows}</tbody></table></div>` +
       `</section>`
     );
   }).join('');
-  return `<div class="not-prose">${cards}</div>`;
+
+  // PC-00 (14 Aug 2026) — optional narrative above the cards and optional
+  // diagram (with its mandatory illustrative-only caption) below them. Both
+  // absent on every C01 entry except porta-cabins → byte-identical elsewhere.
+  const narrative = entry.narrative
+    ? `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(entry.narrative)}</p>`
+    : '';
+  const diagram = entry.diagram
+    ? `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(entry.diagram.src)}" alt="${esc(entry.diagram.alt)}" ` +
+        `width="${entry.diagram.width}" height="${entry.diagram.height}" loading="lazy" ` +
+        `class="w-full h-auto rounded-lg" />` +
+        `<figcaption class="mt-2 text-xs italic text-slate-500">${esc(entry.diagram.caption)}</figcaption>` +
+      `</figure>`
+    : '';
+
+  return `<div class="not-prose">${narrative}${cards}${diagram}</div>`;
 }
 
 export function buildC04SpecificationsHtml(pageSlug: string): string {

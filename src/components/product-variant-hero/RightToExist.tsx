@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import {
   getRightToExistEntry,
   getRightToExistHeadingId,
@@ -11,6 +14,7 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
   if (!entry) return null;
 
   const headingId = getRightToExistHeadingId(productSlug);
+  const card = entry.splitCard;
 
   return (
     <section
@@ -28,6 +32,31 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         {entry.comparison}
         {entry.appendix}
       </p>
+
+      {/* R15 (v1.4) — image-left / content-right split card. Rendered only for
+          entries that supply one, so every other product page is unchanged. */}
+      {card && (
+        <div className="saman-s2-split">
+          <div className="saman-s2-split-media">
+            <Image
+              src={card.imageSrc}
+              unoptimized={shouldBypassOptimizer(card.imageSrc)}
+              alt={card.imageAlt}
+              width={card.imageWidth}
+              height={card.imageHeight}
+              loading="lazy"
+              sizes="(max-width: 767px) 100vw, 45vw"
+            />
+          </div>
+          <div className="saman-s2-split-body">
+            <h3 className="saman-s2-split-subheading">{card.subheading}</h3>
+            <p className="saman-s2-split-text">{card.body}</p>
+            <Link className="saman-s2-split-cta" href={card.ctaHref}>
+              {card.ctaLabel}
+            </Link>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

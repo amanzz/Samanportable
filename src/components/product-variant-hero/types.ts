@@ -68,8 +68,15 @@ export interface VariantProductData {
       Dining Sizes"). Rendered ONLY as the visible heading — `productName` still
       drives alts, aria-labels and the enquiry prefill, so a long marketing H1 never
       leaks into them. Absent on every product that supplies none, so their heading
-      is byte-identical. */
+      is byte-identical.
+      PC-00 (v1.5 merge, 14 Aug 2026): the porta-cabins hub's SEO H1 uses THIS field.
+      The hub build had introduced a duplicate `heroH1` for the same purpose before
+      this branch caught up with production; that duplicate is dropped in favour of
+      the established field, so there is exactly one page-heading override. */
   h1?: string;
+  /** PC-00 — overrides the "Download Specification PDF" / "Download specifications"
+      button label. Absent → deployed literal, byte-identical everywhere else. */
+  specPdfButtonLabel?: string;
   /** Owner-approved SEO title and meta description for runtime replacement of
       stale WordPress head fields. */
   seoTitle?: string;

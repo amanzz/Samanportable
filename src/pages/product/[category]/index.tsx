@@ -44,6 +44,8 @@ import { restrictContainerCafeRail } from '../../../lib/containerCafeClusterRail
 import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
+import { PORTA_CABIN_HUB_RAIL } from '../../../lib/portaCabinClusterRail';
+import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 
@@ -551,6 +553,12 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
     if (isC16PanelSlug(currentSlug)) {
       return getC16PanelSiblingRail(currentSlug);
     }
+    // R1a (PC-00-revision-v1.3, 14 Aug 2026) — the porta-cabins hub's own rail
+    // lists all 10 configuration children by owner ruling, not the live-product
+    // related-products list (7 of the 10 are not yet live pages).
+    if (category === 'porta-cabins') {
+      return PORTA_CABIN_HUB_RAIL;
+    }
 
     return transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
@@ -688,6 +696,12 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   ratingCount={product.rating_count}
                   railItems={relatedRailItems}
                   currentHref={`/product/${category}`}
+                  // PC-00 (14 Aug 2026) — divider rollout scoped to the porta-cabins
+                  // hub only; every other page using this shared hero (its own
+                  // siblings included) keeps the default false / byte-identical.
+                  showSectionDividers={category === 'porta-cabins'}
+                  // R3 (14 Aug 2026) — same hub-only scoping as the dividers.
+                  usePremiumSizeTabs={category === 'porta-cabins'}
                 />
               ) : (
               <ProductSummaryLayout
@@ -966,6 +980,14 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               />
               )}
 
+              {/* PC-00 (14 Aug 2026) — divider 3, Section 3 → Section 4 (calculator),
+                  outside the calculator's own container and now placed above the
+                  production entry band, which is the calculator's entry point.
+                  Hub page only. */}
+              {category === 'porta-cabins' && (calculatorEntryHtml || embeddedCalculatorHtml) && (
+                <hr className="saman-section-divider" aria-hidden="true" />
+              )}
+
               {/* The entry band: after the buy box, before the description tabs. */}
               {calculatorEntryHtml && (
                 <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
@@ -979,6 +1001,18 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                 <section className="mt-4" id="cabin-calculator">
                   <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
                 </section>
+              )}
+
+              {/* R11 (14 Aug 2026) — "You may also like" grid, calculator → tabs,
+                  hub page only. Reuses the same 10-item list as the hero rail. */}
+              {category === 'porta-cabins' && (
+                <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_HUB_RAIL} />
+              )}
+
+              {/* PC-00 (14 Aug 2026) — divider 4, now between the "You may also
+                  like" grid and Section 5 (Product Details tabs). Hub page only. */}
+              {category === 'porta-cabins' && (
+                <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
               {/* Product Tabs */}

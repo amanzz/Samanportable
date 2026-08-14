@@ -20,6 +20,19 @@ export interface RightToExistEntry {
   body: ReactNode;
   comparison: ReactNode;
   appendix?: ReactNode;
+  /** R15 (v1.4, 14 Aug 2026) — optional image-left / content-right split card
+      rendered below the lead paragraphs. Present only on the porta-cabins hub;
+      every other entry renders byte-identically to before. */
+  splitCard?: {
+    imageSrc: string;
+    imageAlt: string;
+    imageWidth: number;
+    imageHeight: number;
+    subheading: string;
+    body: string;
+    ctaLabel: string;
+    ctaHref: string;
+  };
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
@@ -191,21 +204,36 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>Need the same module hardened for repeated lifts between projects? The <Link className={linkClass} href={containerOfficeHref('shipping-container-office')}>shipping-form office build</Link> carries that duty.</>
     ),
   },
+  // PC-00 (14 Aug 2026) — Section 2 "buyer orientation" copy from the approved
+  // hub draft, mapped onto this existing heading/body/comparison card (no new
+  // page section added; Template Lock forbids that). appendix removed: the
+  // draft's approved link plan (Block G) does not include the value/luxury/
+  // mini/steel-porta-cabin/portacabin-office links the old copy carried.
   'porta-cabins': {
-    heading: 'The SAMAN porta cabin range at a glance',
+    heading: 'Which Porta Cabin Should You Buy? Match the Cabin to the Job',
     body: (
       <>
-        Every porta cabin here is newly fabricated at our own works from MS sheet, MS pipe framing and aluminium sections, not a converted shipping container. The reference build carries a 1.2 mm corrugated exterior, a 1.4 mm roof, 8 mm pre-laminated interior lining and an 18 mm Bison floor panel, in nine standard sizes. The range then splits by grade, size band and fit-out; the eight pages below cover each configuration in full.
+        Start with the job the cabin must do. A single office, room or guard point fits the standard build on this page, so you only pick the size below. Move to a configuration page when one condition dominates. Heavy industrial duty points to the MS build. Daily wet use needs the toilet-fitted cabin. Customer-facing retail suits the shop and kiosk format. Every configuration shares one chassis platform, so the order stays simple: duty first, then size, then fit-out.
       </>
     ),
     comparison: (
       <>
-        Not sure which grade fits? Compare the <Link className={linkClass} href={href('low-cost-porta-cabin')}>value line</Link>, the <Link className={linkClass} href={href('portacabin-office')}>upgraded office build</Link> and the <Link className={linkClass} href={href('ms-porta-cabin')}>heavy industrial build</Link>.
+        Next, fix the budget against published numbers. Prices here are base-specification, ex-GST figures from our costing workbook. Customisations are quoted separately. Our <Link className={linkClass} href="/porta-cabin-price-a-complete-guide-2025">porta cabin price guide</Link> explains how size bands, interiors and transport change the final amount. When your shortlist is ready, share your site pin code and use-case, and <Link className={linkClass} href="/contact">request a fixed 48-hour quotation</Link>.
       </>
     ),
-    appendix: (
-      <> Beyond those, the <Link className={linkClass} href={href('luxury-porta-cabin')}>Luxury Porta Cabin</Link> covers client-facing rooms, the <Link className={linkClass} href={href('mini-porta-cabin')}>Mini Porta Cabin</Link> the four compact sizes, the <Link className={linkClass} href={href('steel-porta-cabin')}>Steel Porta Cabin</Link> units lifted between sites, the <Link className={linkClass} href={href('porta-cabin-shop')}>Porta Cabin Shop</Link> retail counters, and the <Link className={linkClass} href={href('porta-cabin-with-toilet')}>Porta Cabin with Toilet</Link> cabins that need their own facilities.</>
-    ),
+    // R15 (v1.4) — split card copy is verbatim from the revision ticket; the
+    // CTA destination is the site's existing Gallery page, taken from the live
+    // main navigation and verified 200.
+    splitCard: {
+      imageSrc: '/images/products/porta-cabins/section2/saman-porta-cabin-20x10-elevated.webp',
+      imageAlt: 'Elevated view of a 20x10 ft SAMAN porta cabin exterior',
+      imageWidth: 1280,
+      imageHeight: 720,
+      subheading: 'See finished SAMAN cabins before you decide',
+      body: 'Browse completed porta cabin projects from our Bengaluru and Greater Noida factories — site offices, guard rooms, retail units and interiors. Judge the finish, the openings and the build quality on real deliveries, then shortlist your size with confidence.',
+      ctaLabel: 'Explore the project gallery',
+      ctaHref: '/gallery',
+    },
   },
   'low-cost-porta-cabin': {
     heading: 'Why choose the Low Cost Porta Cabin',
