@@ -37,10 +37,15 @@ PAGES = [
 
 
 def normalise(h):
-    h = re.sub(r'/_next/static/[^/"]+/', '/_next/static/BUILDID/', h)
+    """Strip everything that changes between two builds of identical source: the
+    buildId and every content-hashed asset filename under /_next/static (chunks, css,
+    fonts). What survives is the rendered markup and copy, which is what 11.8 is
+    about."""
     h = re.sub(r'"buildId":"[^"]*"', '"buildId":"BUILDID"', h)
-    h = re.sub(r'/_next/static/chunks/[^"]*?\.js', '/_next/static/chunks/CHUNK.js', h)
-    h = re.sub(r'/_next/static/css/[^"]*?\.css', '/_next/static/css/CHUNK.css', h)
+    # /_next/static/<hash>/... (buildId path segment)
+    h = re.sub(r'/_next/static/[A-Za-z0-9_\-]{8,}/', '/_next/static/BUILDID/', h)
+    # any content-hashed asset filename: name-<hex>.ext  or  <hex>.ext
+    h = re.sub(r'(/_next/static/[^"\']*?)[-.]?[0-9a-f]{8,}(\.[a-z0-9]+)', r'\1HASH\2', h)
     return h
 
 
