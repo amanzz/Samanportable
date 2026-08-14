@@ -747,6 +747,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   showSectionDividers={PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug)}
                   usePremiumSizeTabs={PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug)}
                   explorerPanelHeadingAsH2={PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug)}
+                  // Ad-hoc revision (14 Aug 2026, owner screenshots) — mobile
+                  // divider gap fix, scoped to this page only per the
+                  // component-level comment; every other cluster-design page
+                  // (currently ms-porta-cabin) keeps the default 40px margin.
+                  compactMobileDividers={slug === 'fire-rated-porta-cabin'}
                 />
               ) : (
               <ProductSummaryLayout

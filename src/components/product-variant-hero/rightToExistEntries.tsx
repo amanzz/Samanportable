@@ -32,6 +32,13 @@ export interface RightToExistEntry {
     body: string;
     ctaLabel: string;
     ctaHref: string;
+    /** PC-05 revision v1.3 (14 Aug 2026) — opt-in placement. Omitted (default)
+        renders the card after both lead paragraphs, unchanged for every
+        existing entry. 'betweenParagraphs' renders it between `body` and
+        `comparison`. 'comparisonInsideCard' (ad-hoc revision, 15 Aug 2026)
+        nests `comparison` inside the card itself, as its second paragraph
+        between `body` and the CTA — set only on fire-rated-porta-cabin. */
+    position?: 'end' | 'betweenParagraphs' | 'comparisonInsideCard';
   };
 }
 
@@ -313,6 +320,9 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
   // added, copy verbatim from copy pack v3 SPLIT_CARD_H3/BODY/CTA. CTA href is
   // literally the hub's own splitCard.ctaHref ('/gallery'), read from the hub
   // entry above rather than invented, per the ticket's explicit instruction.
+  // Ad-hoc revision (14 Aug 2026, owner screenshots) — `position:
+  // 'betweenParagraphs'` moves the card between body and comparison; every
+  // other entry above/below is untouched and keeps the default end position.
   'fire-rated-porta-cabin': {
     heading: 'When Your Project Fire Strategy Demands a Fire-Rated Cabin',
     body: (
@@ -334,6 +344,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       body: 'The fire-rated configuration sits on the same chassis, factory process and quality checks as every other SAMAN porta cabin. Browse completed projects from our Bengaluru and Greater Noida units to judge steelwork, openings and finish on real deliveries. Then bring your fire criteria to the quotation, where the tested systems are named.',
       ctaLabel: 'Explore the project gallery',
       ctaHref: '/gallery',
+      position: 'comparisonInsideCard',
     },
   },
   'steel-porta-cabin': {

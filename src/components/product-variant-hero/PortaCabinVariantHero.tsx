@@ -272,6 +272,16 @@ interface PortaCabinVariantHeroProps {
       and the section itself carries no H2 of its own (ms-porta-cabin). Default
       false keeps every other page's heading level byte-identical. */
   explorerPanelHeadingAsH2?: boolean;
+  /** Ad-hoc revision (14 Aug 2026, owner screenshots) — halves the mobile
+      (<1024px) top/bottom margin on the two `.saman-section-divider` rules
+      this component renders, from the global 40px to 20px. The global rule
+      (and every other page that renders `.saman-section-divider`) is
+      untouched; this only overrides the two dividers inside THIS component's
+      own `.pc-hero-grid` scope, and only when the flag is on. Default false
+      keeps every existing page (including ms-porta-cabin, which already has
+      showSectionDividers on) byte-identical; pass true only for
+      fire-rated-porta-cabin. */
+  compactMobileDividers?: boolean;
 }
 
 // Star row for the review badge (Amendment G v2 — real rating: 4.6 from the 5
@@ -541,6 +551,7 @@ export function PortaCabinVariantHero({
   showSectionDividers = false,
   usePremiumSizeTabs = false,
   explorerPanelHeadingAsH2 = false,
+  compactMobileDividers = false,
 }: PortaCabinVariantHeroProps) {
   const defaultIndex = Math.max(
     0,
@@ -1058,6 +1069,12 @@ export function PortaCabinVariantHero({
       <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}`
         + `.pc-hero-grid{display:block;}`
         + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-transcript{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rte{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
+        // Ad-hoc revision (14 Aug 2026) — compactMobileDividers halves the
+        // global 40px mobile divider margin to 20px, ONLY for this
+        // component's own .pc-divider1/.pc-divider2 elements, ONLY below the
+        // 1024px breakpoint (the desktop rule below already sets margin:0 and
+        // wins at >=1024px regardless), and ONLY when the flag is on.
+        + (compactMobileDividers ? `.pc-hero-grid>.pc-divider1,.pc-hero-grid>.pc-divider2{margin:20px auto;}` : ``)
         // PC-00 divider rows are inserted into grid-template-areas ONLY when
         // showSectionDividers is on, so the areas string (and every sibling
         // page that never sets the prop) stays byte-identical to before.
