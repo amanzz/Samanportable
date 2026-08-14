@@ -90,17 +90,23 @@ em_meta = (title_txt + ' ' + md_txt).count('—')
 # `usePremiumSizeTabs`, so editing it breaks sibling byte-identity) and one line of
 # calculator copy (section 4: calculator UNTOUCHED). Both are reported as GAPs rather
 # than silently fixed. Everything else must be clean.
-SHARED_EM_DASH_EXCEPTIONS = [
+OWNER_SUPPLIED_EM_DASH = [
+    'the conditions it will face—not simply out of habit',
+]
+SHARED_EM_DASH_EXCEPTIONS = OWNER_SUPPLIED_EM_DASH + [
     'Choose your size — six factory-built options',
     'Every size prices from our base-cabin rate card — the larger the floor area, the lower the rate per square foot.',
 ]
 scrubbed = visible
 for line in SHARED_EM_DASH_EXCEPTIONS:
     scrubbed = scrubbed.replace(line, '')
-check('11.3 zero em dash in PC-02 approved copy', scrubbed.count('—') == 0,
-      '%d found outside the 2 known shared literals' % scrubbed.count('—'))
+check('11.3 zero em dash outside the 3 known cases', scrubbed.count('—') == 0,
+      '%d unexpected' % scrubbed.count('—'))
+check('11.3 owner-supplied em dash in S2 P1 (verbatim, GAP)',
+      visible.count('the conditions it will face—not simply out of habit') == 1,
+      'wired verbatim, 1-char ruling requested')
 check('11.3 zero em dash in rendered copy (incl. shared)', em_vis == 0,
-      '%d found: %d shared-component literals, GAP-reported' % (em_vis, em_vis))
+      '%d found: 2 shared-component literals + 1 in owner-supplied S2 copy' % em_vis)
 check('11.3 zero em dash in metadata', em_meta == 0, '%d found' % em_meta)
 alts = re.findall(r'\balt="([^"]*)"', raw)
 check('11.3 zero em dash in alt text', sum(a.count('—') for a in alts) == 0,
@@ -163,13 +169,18 @@ _s2 = raw[raw.find('saman-s2-split'):]
 _body = _s2[_s2.find('saman-s2-split-body'):_s2.find('saman-s2-split-cta')]
 _above = raw[:raw.find('saman-s2-split')]
 _body_txt = norm(strip_tags(_body[_body.find('>') + 1:]))
-check('S2 layout: both paragraphs inside the copy column',
-      _body_txt.startswith('Choose this cabin by exposure')
-      and 'If your site is dry and inland' in _body_txt, '')
+check('S2 layout: copy column opens with the H2 then paragraph 1',
+      _body_txt.startswith('When a GI Porta Cabin Outperforms Painted Steel on Real-World Sites'
+                           'A GI porta cabin should be selected'), _body_txt[:70])
 check('S2 layout: CTA follows the paragraphs',
-      _s2.find('saman-s2-split-cta') > _s2.find('If your site is dry and inland'), '')
+      _s2.find('saman-s2-split-cta') > _s2.find('provide a fixed quotation within 48 hours'), '')
 check('S2 layout: no paragraph left above the card',
-      'Choose this cabin by exposure' not in _above, '')
+      'A GI porta cabin should be selected' not in _above, '')
+check('S2 layout: H2 sits inside the copy column, not above the image',
+      'When a GI Porta Cabin Outperforms' in _body and 'When a GI Porta Cabin Outperforms' not in _above, '')
+check('S2 layout: four paragraphs in the copy column',
+      _body.count('text-sm leading-relaxed text-slate-700') == 4,
+      '%d found' % _body.count('text-sm leading-relaxed text-slate-700'))
 check('R2 split card invents no sub-heading or body',
       'saman-s2-split-subheading' not in raw and 'saman-s2-split-text' not in raw, '')
 
@@ -216,7 +227,7 @@ check('11.5 excluded 40x8 end-elevation absent', not walk_hits and '40x8-end-ele
 # ── 11.6 links ───────────────────────────────────────────────────────────────
 LINKS = {
     'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin': 'MS porta cabin',
-    'https://www.samanportable.com/contact': 'Get a GI cabin quote',
+    'https://www.samanportable.com/contact': 'Get a GI porta cabin quote',
     'https://www.samanportable.com/product/porta-cabins/puf-porta-cabin': 'PUF porta cabin',
     'https://www.samanportable.com/product/porta-cabins': 'porta cabins range',
 }
@@ -227,7 +238,9 @@ for href, anchor in LINKS.items():
     # The contact CTA is the one approved anchor that legitimately appears twice from
     # revision v1.2 R2: once inline in Section 2 paragraph 2 (checksum-bearing) and once
     # as the mandatory split-card CTA. Same anchor text, same approved destination.
-    want = 2 if href.endswith('/contact') else 1
+    # Draft v4 removed the inline contact anchor from the body copy, so /contact is a
+    # single anchor again: the split-card CTA.
+    want = 1
     check('11.6 link "%s"' % anchor, len(hit) == want,
           '%d occurrence(s), expected %d' % (len(hit), want))
 extra = [a for a in approved if (a[0], a[1]) not in LINKS.items()]
@@ -238,8 +251,8 @@ check('11.6 exactly 4 approved destinations', len({a[0] for a in approved}) == 4
 # and the same approved destination as the section 6 row-2 link, so /contact now appears
 # twice as an anchor while the page still carries only the four approved destinations.
 contact = [a for a in approved if a[0].endswith('/contact')]
-check('11.6 contact anchor: inline + split-card CTA', len(contact) == 2,
-      '%d occurrence(s), both the approved anchor text' % len(contact))
+check('11.6 contact anchor: split-card CTA only', len(contact) == 1,
+      '%d occurrence(s)' % len(contact))
 
 # ── 11.7 calculator ──────────────────────────────────────────────────────────
 check('11.7 calc-entry band present', 'calc-entry' in raw and 'data-calculator-entry' in raw, '')
