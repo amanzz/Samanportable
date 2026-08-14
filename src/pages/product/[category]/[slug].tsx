@@ -608,6 +608,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         ? { config: { productId: embeddedCalculatorMapping.productId }, ladderKey: embeddedCalculatorMapping.ladderKey, productName: product?.name }
         : {}),
       pageUrl: makeCalculatorPageUrl(category, slug),
+      // PC-05 revision v1.3, R5 — this route has no registered calculator
+      // ladder (fire-rated-porta-cabin's six-size ladder is page-surface data
+      // only, PART 1-A), so the accordion would otherwise show a generic,
+      // unpriced table next to a page that publishes six real prices. Display
+      // suppression only; every other route keeps the accordion unchanged.
+      hidePublishedPriceTable: slug === 'fire-rated-porta-cabin',
     });
   }, [category, slug, embeddedCalculatorMapping]);
 

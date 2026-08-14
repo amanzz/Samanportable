@@ -308,6 +308,11 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
   // approved §7 link map carries exactly two S2 body links: MS porta cabin and
   // /contact. No splitCard: copy pack v2 supplies no distinct split-card
   // sub-copy, so none is invented (most cluster entries have none).
+  // PC-05 revision v1.3 (14 Aug 2026) — R2: S2_P2 rewritten in copy pack v3
+  // (382 -> 415 chars); S2_H2/S2_P1 are byte-identical to v2. R1: split card
+  // added, copy verbatim from copy pack v3 SPLIT_CARD_H3/BODY/CTA. CTA href is
+  // literally the hub's own splitCard.ctaHref ('/gallery'), read from the hub
+  // entry above rather than invented, per the ticket's explicit instruction.
   'fire-rated-porta-cabin': {
     heading: 'When Your Project Fire Strategy Demands a Fire-Rated Cabin',
     body: (
@@ -317,9 +322,19 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
     comparison: (
       <>
-        With the fire-rated build, you state the required performance and we specify mineral-wool assemblies, fire-grade linings, rated door sets and fire-stopped penetrations to match, with the supporting documentation listed in your quotation. Send your fire criteria, size and site location through our <Link className={linkClass} href="/contact">contact page</Link> and our engineering team will return a fixed quotation within 48 hours.
+        With the fire-rated build, you state the required performance and we specify mineral-wool assemblies, fire-grade linings, rated door sets and fire-stopped penetrations to match. The supporting documentation is listed in your quotation, so the file you hand a fire officer traces every claim to a source. Send your fire criteria, size and site location through our <Link className={linkClass} href="/contact">contact page</Link> for a fixed quotation within 48 hours.
       </>
     ),
+    splitCard: {
+      imageSrc: '/images/products/fire-rated-porta-cabin/20x10/fire-rated-porta-cabin-20x10-tan-side.webp',
+      imageAlt: 'Tan 20x10 ft porta cabin on open ground, side elevation',
+      imageWidth: 1254,
+      imageHeight: 1254,
+      subheading: 'See the build quality behind the fire-rated spec',
+      body: 'The fire-rated configuration sits on the same chassis, factory process and quality checks as every other SAMAN porta cabin. Browse completed projects from our Bengaluru and Greater Noida units to judge steelwork, openings and finish on real deliveries. Then bring your fire criteria to the quotation, where the tested systems are named.',
+      ctaLabel: 'Explore the project gallery',
+      ctaHref: '/gallery',
+    },
   },
   'steel-porta-cabin': {
     heading: 'Why choose the Steel Porta Cabin',

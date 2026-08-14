@@ -12,14 +12,6 @@
   "deliveryLabel": "7-21 working days",
   "coverageLabel": "Pan-India, 15+ states served",
   "applicationsDataset": "fire-rated-porta-cabin",
-  "explorerImageTemplate": {
-    "10x10": "/images/products/fire-rated-porta-cabin/10x10/fire-rated-porta-cabin-10x10-tan-green-exterior.webp",
-    "20x8": "/images/products/fire-rated-porta-cabin/20x8/fire-rated-porta-cabin-20x8-cream-green-side.webp",
-    "20x10": "/images/products/fire-rated-porta-cabin/20x10/fire-rated-porta-cabin-20x10-blue-front.webp",
-    "20x12": "/images/products/fire-rated-porta-cabin/20x12/fire-rated-porta-cabin-20x12-yellow-grey.webp",
-    "40x10": "/images/products/fire-rated-porta-cabin/40x10/fire-rated-porta-cabin-40x10-two-tone-green.webp",
-    "40x12": "/images/products/fire-rated-porta-cabin/40x12/fire-rated-porta-cabin-40x12-red-front.webp"
-  },
   "variants": [
     {
       "sizeSlug": "10x10",

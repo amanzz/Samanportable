@@ -2910,7 +2910,7 @@
           "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
           "component": "Reference configuration",
           "detail": "20x10x8.5 ft; six published sizes 10x10 / 20x8 / 20x10 / 20x12 / 40x10 / 40x12 ft x 8.5 ft height",
-          "classification": "Product-Specific"
+          "classification": "n/a"
         },
         {
           "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
@@ -3064,8 +3064,14 @@
         },
         {
           "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
-          "component": "External finish / coating",
-          "detail": "Project-selected colour and compatible coating; substrate-appropriate corrosion protection",
+          "component": "Decorative / external finish",
+          "detail": "Project-selected colour and compatible coating system; substrate preparation and compatibility confirmed at order",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Painting / coating",
+          "detail": "Corrosion protection matched to substrate and exposure; prepared MS receives the approved coating system, with touch-up on site",
           "classification": "Platform Common"
         },
         {
