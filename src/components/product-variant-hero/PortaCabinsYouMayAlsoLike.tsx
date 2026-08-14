@@ -18,7 +18,17 @@ import type { RelatedRailItem } from '@/lib/c16PanelCatalog';
 // "Derived planning estimate" price in the SSOT.
 const ROTATE_MS = 4000;
 
-export default function PortaCabinsYouMayAlsoLike({ items }: { items: RelatedRailItem[] }) {
+// PC-01 (14 Aug 2026) — `subline` is opt-in. Omitted (undefined) keeps the hub's
+// deployed sentence byte-identical; `null` renders no sub-line at all, which is what
+// the MS page passes: its approved copy supplies no sub-line for this component and
+// the hub's "Ten more…" sentence is untrue on a page that lists nine siblings.
+export default function PortaCabinsYouMayAlsoLike({
+  items,
+  subline,
+}: {
+  items: RelatedRailItem[];
+  subline?: string | null;
+}) {
   const [index, setIndex] = useState(0);
   const [perView, setPerView] = useState(3);
   const [paused, setPaused] = useState(false);
@@ -79,7 +89,9 @@ export default function PortaCabinsYouMayAlsoLike({ items }: { items: RelatedRai
       onBlurCapture={() => setPaused(false)}
     >
       <h2 className="text-2xl font-bold">You may also like</h2>
-      <p className="sub">Ten more porta cabin configurations, built on the same platform.</p>
+      {subline !== null && (
+        <p className="sub">{subline ?? 'Ten more porta cabin configurations, built on the same platform.'}</p>
+      )}
 
       <div
         className="saman-ymal-viewport"

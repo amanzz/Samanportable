@@ -43,7 +43,10 @@ import {
   orderPortaCabinStrip,
   slugFromProductHref,
   c01HubReturnAnchorForSlug,
+  PORTA_CABIN_MS_RAIL,
+  PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
+import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
@@ -544,6 +547,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (isC16PanelSlug(currentSlug)) {
       return getC16PanelSiblingRail(currentSlug);
     }
+    // PC-01 (14 Aug 2026) — the MS page's Column 3 is the approved three-item
+    // comparison rail from its own build ticket, not the full-cluster strip. Scoped
+    // to this one slug, so every sibling keeps orderPortaCabinStrip() below.
+    if (currentSlug === 'ms-porta-cabin') {
+      return PORTA_CABIN_MS_RAIL;
+    }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
@@ -712,6 +721,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   ratingCount={product.rating_count}
                   railItems={relatedRailItems}
                   currentHref={`/product/${category}/${slug}`}
+                  // PC-01 (14 Aug 2026) — the cluster design system, scoped to the
+                  // one page that has been rebuilt to it. Every other page using
+                  // this shared hero keeps the defaults (false) and is byte-identical.
+                  showSectionDividers={slug === 'ms-porta-cabin'}
+                  usePremiumSizeTabs={slug === 'ms-porta-cabin'}
+                  explorerPanelHeadingAsH2={slug === 'ms-porta-cabin'}
                 />
               ) : (
               <ProductSummaryLayout
@@ -988,6 +1003,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
               )}
 
+              {/* PC-01 (14 Aug 2026) — divider 3, Section 3 → Section 4
+                  (calculator), OUTSIDE the calculator's own container. MS page only. */}
+              {slug === 'ms-porta-cabin' && embeddedCalculatorHtml && (
+                <hr className="saman-section-divider" aria-hidden="true" />
+              )}
+
               {/* One entry point per page: the dark band above is it. The white
                   "Estimate your cabin cost / Open the calculator" strip that used
                   to sit here was the entry point the band replaced, so it is gone.
@@ -996,6 +1017,19 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <section className="mt-4" id="cabin-calculator">
                   <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
                 </section>
+              )}
+
+              {/* PC-01 — "You may also like" carousel, calculator → tabs, MS page
+                  only. Lists the cluster's other nine children with the hub's own
+                  R16 card images. No prices on cards. */}
+              {slug === 'ms-porta-cabin' && (
+                <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
+              )}
+
+              {/* PC-01 — divider 4, "You may also like" → Section 5 (Product
+                  Details tabs). MS page only. */}
+              {slug === 'ms-porta-cabin' && (
+                <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
               {/* Product Tabs */}

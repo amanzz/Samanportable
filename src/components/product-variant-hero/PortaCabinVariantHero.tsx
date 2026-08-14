@@ -28,6 +28,7 @@ import type { VariantImage, VariantProductData } from './types';
 import { formatIndianPrice } from './types';
 import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
+import msPortaCabinApplications from '@/data/products/ms-porta-cabin-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -161,6 +162,17 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
       ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
     )
   ),
+  // PC-01 ms-porta-cabin — §4 SECTION 3 of the approved MS build ticket. Six
+  // panels, one per published size, each carrying its own explorer image and alt.
+  // The approved copy supplies no application bullets and no section heading or
+  // intro, so neither is invented: the component omits both.
+  //
+  // Registered AFTER the two Section-H spreads on purpose. `section-h-datasets.json`
+  // still carries a stale T25-era `ms-porta-cabin` drop written against the old
+  // nine-size ladder; an earlier key would be silently overwritten by that spread,
+  // which is exactly what happened on the first build of this page. Only this slug
+  // is re-bound, so every other Section-H page keeps its drop.
+  'ms-porta-cabin': msPortaCabinApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -249,6 +261,11 @@ interface PortaCabinVariantHeroProps {
       eyebrow line. Same blast-radius rule as showSectionDividers: default false,
       hub-only for now. */
   usePremiumSizeTabs?: boolean;
+  /** PC-01 (14 Aug 2026) — render the Explorer panel headings as `h2` instead of
+      `h3`. Needed only where the approved copy specifies Section-3 headings at H2
+      and the section itself carries no H2 of its own (ms-porta-cabin). Default
+      false keeps every other page's heading level byte-identical. */
+  explorerPanelHeadingAsH2?: boolean;
 }
 
 // Star row for the review badge (Amendment G v2 — real rating: 4.6 from the 5
@@ -517,6 +534,7 @@ export function PortaCabinVariantHero({
   currentHref,
   showSectionDividers = false,
   usePremiumSizeTabs = false,
+  explorerPanelHeadingAsH2 = false,
 }: PortaCabinVariantHeroProps) {
   const defaultIndex = Math.max(
     0,
@@ -792,7 +810,10 @@ export function PortaCabinVariantHero({
     // portable-office (W3-A Ruling 1) → byte-identical Material cell everywhere else.
     { label: 'Material', value: data.materialLabel || preset.materialLabel || 'MS Frame · Insulated Panels' },
     { label: 'Delivery', value: data.deliveryLabel || '7–21 Working Days' },
-    { label: 'Coverage', value: 'Bangalore · Delhi NCR' },
+    // PC-01 (14 Aug 2026) — Coverage is data-driven the same way Material and
+    // Delivery already are. Absent on every product except ms-porta-cabin, so the
+    // deployed literal below is what every other page still renders.
+    { label: 'Coverage', value: data.coverageLabel || 'Bangalore · Delhi NCR' },
     { label: 'Brand', value: 'SAMAN Portable' },
     // Application: omitted, not defaulted, when the product has no approved
     // per-size use-case copy. Filtered below so the cell never renders empty.
@@ -1117,6 +1138,7 @@ export function PortaCabinVariantHero({
             onSelectTab={selectExplorer}
             onGetQuote={openQuote}
             usePremiumSizeTabs={usePremiumSizeTabs}
+            panelHeadingAsH2={explorerPanelHeadingAsH2}
           />
         </div>
         )}
@@ -1173,9 +1195,11 @@ interface SizeApplicationsExplorerProps {
   /** R20b (v1.5) — opt-in SAP-style tab strip for this section. Default false
       keeps every other product's strip byte-identical. */
   usePremiumSizeTabs?: boolean;
+  /** PC-01 — see `explorerPanelHeadingAsH2` on the hero. Default false. */
+  panelHeadingAsH2?: boolean;
 }
 
-function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false }: SizeApplicationsExplorerProps) {
+function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false }: SizeApplicationsExplorerProps) {
   // T25 — HARD NULL. The per-slug applications copy is owner-authored; when a
   // product has none this section renders NOTHING. It must never fall back to the
   // porta-cabins copy.
@@ -1289,7 +1313,13 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   manifestImage?.alt ||
                   (panelSrc === variantImages[0]?.src && variantImages[0]?.alt
                     ? variantImages[0].alt
-                    : applicationAlt(v.label, panel.applications[0], productNameLower)),
+                    // PC-01: the derived alt needs a first application to name; a
+                    // dataset with no bullets always supplies its own panel alt
+                    // above, so this branch is unreachable for it and must not
+                    // read applications[0] of an empty list.
+                    : panel.applications.length > 0
+                      ? applicationAlt(v.label, panel.applications[0], productNameLower)
+                      : ''),
               }
             : null;
           const rate = pricePerSqft(data.pricePerSqft, v.sizeSlug, v.priceExGst, v.areaSqft);
@@ -1357,7 +1387,13 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   keeps justify-center exactly as before. This is the one sanctioned
                   shared-component change; every §H page inherits it. */}
               <div className="flex min-w-0 flex-1 flex-col justify-center lg:justify-between">
-                <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{rewriteC04VisiblePunctuation(panel.h3, data.productSlug, true)}</h3>
+                {/* PC-01 — heading LEVEL is opt-in; the class string is identical in
+                    both branches, so the rendered look never changes. */}
+                {panelHeadingAsH2 ? (
+                  <h2 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{rewriteC04VisiblePunctuation(panel.h3, data.productSlug, true)}</h2>
+                ) : (
+                  <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{rewriteC04VisiblePunctuation(panel.h3, data.productSlug, true)}</h3>
+                )}
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph, data.productSlug)}</p>
 
                 {/* Sub-heading above the applications list — T25 Section H drop only. */}
@@ -1368,7 +1404,11 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 )}
 
                 {/* Margin class stays FIRST so the flagship keeps its exact original
-                    class string ("mt-4 grid gap-2 sm:grid-cols-2") byte-for-byte. */}
+                    class string ("mt-4 grid gap-2 sm:grid-cols-2") byte-for-byte.
+                    PC-01: a dataset whose approved copy supplies NO application
+                    bullets (ms-porta-cabin) renders no list at all rather than an
+                    empty <ul>. Every dataset that has bullets is unaffected. */}
+                {panel.applications.length > 0 && (
                 <ul className={cn(panel.applicationsHeading ? 'mt-2' : 'mt-4', 'grid gap-2 sm:grid-cols-2')}>
                   {panel.applications.map((app, ai) => (
                     <li key={ai} className="flex items-start gap-2 text-sm text-[var(--ds-color-ink)]">
@@ -1377,6 +1417,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                     </li>
                   ))}
                 </ul>
+                )}
 
                 {/* Stats + CTA are ONE space-between group (REV 2): free height is
                     absorbed above them, never between the figures and the button. */}

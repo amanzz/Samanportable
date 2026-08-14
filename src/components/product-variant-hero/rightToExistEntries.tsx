@@ -274,18 +274,34 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  // PC-01 (14 Aug 2026) — Section 2 "buyer orientation" copy from the approved MS
+  // build ticket, verbatim, mapped onto this existing heading/body/comparison card.
+  // The previous entry's links to steel-porta-cabin and portacabin-office are gone:
+  // the approved §7 link map carries exactly two S2 body links, the hub and /contact.
   'ms-porta-cabin': {
-    heading: 'Why choose the MS Porta Cabin build',
+    heading: 'Is the Heavy MS Build the Right Porta Cabin for Your Site?',
     body: (
       <>
-        The heavy industrial grade of our newly fabricated cabin, specified for plants, workshops and hostile environments. It carries a 1.6 mm exterior and roof, 8–10 mm fibre-cement lining, a 24 mm cement board floor and 2–3 mm commercial PVC or epoxy finish behind a single-leaf industrial door. Choose it for a fixed industrial position; the <Link className={linkClass} href={href('steel-porta-cabin')}>Steel Porta Cabin</Link> covers units that are lifted and re-sited repeatedly.
+        Buy the MS Porta Cabin when the cabin must work like plant equipment. Its IS 2062 Grade A frame, 1.6 mm corrugated shell and mineral-wool insulation are specified for years of fixed-position duty in industrial conditions. When you only need an economical office for general site use, choose the standard build from the <Link className={linkClass} href={CABIN_HREF}>porta cabin range</Link> instead. It carries lighter sheets, and it costs less for the same floor area.
       </>
     ),
     comparison: (
       <>
-        Housing an office rather than a workshop? The <Link className={linkClass} href={href('portacabin-office')}>Portacabin Office</Link> trades industrial lining for a working fit-out.
+        Material is the second decision. Mild steel with a maintained coating suits most inland and dry sites. In practice, it is also what a steel porta cabin means in the Indian market. Sustained humidity or coastal salt air points to the galvanized build instead. If your duty is heavy and your site is inland, this page is the right place. Share your size and site details, and <Link className={linkClass} href="/contact">request a fixed 48-hour quotation</Link>.
       </>
     ),
+    // Split-card copy is verbatim from the ticket's §4 header table; the CTA points
+    // at the site's existing Gallery page (verified 200), as on the hub.
+    splitCard: {
+      imageSrc: '/images/products/ms-porta-cabin/section2/ms-porta-cabin-10x10-end-elevation.webp',
+      imageAlt: 'End wall of a 10x10 ft MS porta cabin in corrugated steel with a single sliding window',
+      imageWidth: 1280,
+      imageHeight: 720,
+      subheading: 'Judge the MS build with your own eyes first',
+      body: 'Frame sections, shell thickness and lined interiors are easier to judge in pictures than in tables. Browse finished SAMAN cabins in the gallery, note the details that matter for plant duty, then come back and match the six MS sizes to your site.',
+      ctaLabel: 'Browse the gallery',
+      ctaHref: '/gallery',
+    },
   },
   'steel-porta-cabin': {
     heading: 'Why choose the Steel Porta Cabin',

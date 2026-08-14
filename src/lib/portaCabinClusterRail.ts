@@ -119,6 +119,49 @@ export const PORTA_CABIN_HUB_RAIL: import('./c16PanelCatalog').RelatedRailItem[]
 ];
 
 /**
+ * PC-01 (14 Aug 2026) — the MS page's OWN Column 3 rail. The approved MS build
+ * ticket (§4 Column 3) names exactly three comparison destinations with the buyer
+ * reason each one serves, so this page does NOT show the full-cluster rail that
+ * `orderPortaCabinStrip` builds for its siblings. Titles and blurbs are verbatim
+ * from that table; the card images are the same R16 files the hub rail uses, so no
+ * product is represented by another product's image.
+ */
+export const PORTA_CABIN_MS_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
+  {
+    title: 'GI Porta Cabin',
+    href: '/product/porta-cabins/gi-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Zinc-coated material route for coastal/humid sites',
+    imageSrc: '/images/products/porta-cabins/children/gi-porta-cabin-card.webp',
+    imageAlt: 'GI (Galvanized Iron) Porta Cabin by SAMAN — exterior view',
+  },
+  {
+    title: 'PUF Porta Cabin',
+    href: '/product/porta-cabins/puf-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Higher thermal-insulation build',
+    imageSrc: '/images/products/porta-cabins/children/puf-porta-cabin-card.webp',
+    imageAlt: 'PUF Porta Cabin by SAMAN — exterior view',
+  },
+  {
+    title: 'Porta Cabin with Toilet',
+    href: '/product/porta-cabins/porta-cabin-with-toilet',
+    category: 'Porta Cabins',
+    blurb: 'Cabin plus attached sanitation',
+    imageSrc: '/images/products/porta-cabins/children/porta-cabin-with-toilet-card.webp',
+    imageAlt: 'Porta Cabin with Toilet by SAMAN — exterior view',
+  },
+];
+
+/**
+ * PC-01 — "You may also like" on the MS page lists the cluster's other nine
+ * configuration children (the hub rail minus this page itself), reusing the hub's
+ * exact R16 card images and blurbs. Navigation component: no prices on cards.
+ */
+export const PORTA_CABIN_SIBLING_YMAL = (slug: string) =>
+  PORTA_CABIN_HUB_RAIL.filter((item) => slugFromProductHref(item.href) !== slug);
+
+/**
  * Canonical cluster order. Taken from the internal-linking matrix v2's own S4 table,
  * which is the cluster's canonical listing in the ruling document.
  */

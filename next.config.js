@@ -193,6 +193,35 @@ const nextConfig = {
       { source: '/product/prefabricated-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
 
       { source: '/product/porta-cabin/ms-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
+
+      // ----------------------------------------------------------------------
+      // PC-01 §8 — STAGED, DELIBERATELY NOT ENABLED (14 Aug 2026).
+      //
+      // These four rules are prepared for the coordinated cluster release and
+      // MUST stay commented out until the MS page is live-verified AND SAMAN
+      // gives separate written go-ahead, each with its QA-gate evidence (full
+      // GSC export, backlinks, leads, same-intent, target 200/self-canonical).
+      // Enabling them is a deploy action, not a build action.
+      //
+      // Rule 1 — steel-porta-cabin consolidation (owner ruling 14 Aug 2026).
+      // The same release must also remove /product/porta-cabins/steel-porta-cabin
+      // from the sitemap and from every internal link, and re-point its two
+      // inbound legacy rules (below) straight at the MS page so no chain forms.
+      // The two legacy sources are LIVE TODAY at lines above pointing to
+      // .../steel-porta-cabin; enabling rule 1 without editing them creates a
+      // two-hop chain, which the ruling forbids.
+      //
+      // { source: '/product/porta-cabins/steel-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
+      // { source: '/product/porta-cabin/steel-porta-cabin',  destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },  // REPLACES the live rule above
+      // { source: '/product/steel-porta-cabin',              destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },  // REPLACES the live rule above
+      //
+      // Rule 2 — portable-cabin term variant (owner ruling 14 Aug 2026, hub Block I).
+      // Note the existing live rule for /product/ms-portable-cabin points at
+      // /product/portable-cabin/ms-portable-cabin; when this is enabled that rule
+      // must be re-pointed at the MS page in the same release, or it chains.
+      //
+      // { source: '/product/portable-cabin/ms-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
+      // ----------------------------------------------------------------------
       { source: '/product/porta-cabins/porta-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/product/porta-cabin-house', destination: 'https://www.samanportable.com/product/prefabricated-houses/porta-cabin-house', statusCode: 301 },
       { source: '/product-category/porta-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },

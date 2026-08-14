@@ -146,6 +146,11 @@ export interface VariantProductData {
       Set only where the product's approved copy states a different material line
       (W3-A Ruling 1: portable-office → "MS structural frame + insulated panel build"). */
   materialLabel?: string;
+  /** PC-01 (14 Aug 2026) — override for the buy-box "Coverage" feature cell. Default
+      (absent) keeps the deployed literal "Bangalore · Delhi NCR", so every other
+      product renders byte-identically. Set only where the product's approved copy
+      states a different coverage line. */
+  coverageLabel?: string;
   /** Emit an ex-GST AggregateOffer (lowPrice/highPrice/offerCount) on the ProductGroup
       instead of per-variant Offers. Absent on porta-cabins → per-variant Offers kept,
       byte-identical. Set true only when a page's price ladder is confirmed. */
