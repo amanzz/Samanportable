@@ -4,448 +4,409 @@
   "defaultVariant": "20x10",
   "hsn": "9406",
   "gstPercent": 18,
+  "h1": "MS Porta Cabin: Heavy-Duty Mild Steel Site Office Cabins",
+  "seoTitle": "MS Porta Cabin | IS 2062 Steel, Sizes and Prices | SAMAN",
+  "metaDescription": "MS porta cabin on an IS 2062 Grade A steel frame with 1.6 mm corrugated shell. Six sizes from ₹1,29,375 ex-GST, factory-built, delivered in 7-21 working days.",
+  "opener": "The MS Porta Cabin is SAMAN's heavy industrial build: an IS 2062 Grade A mild-steel frame, a 1.6 mm corrugated MS shell and a 24 mm-class rigid floor, made for plant rooms, EPC site offices and workshops that stay put for years. Where the standard porta cabin serves general duty, this build carries thicker steel in every layer for demanding fixed-position service. Walls hold 50-75 mm mineral wool and the roof 75-100 mm, behind a fibre-cement or metal liner that tolerates impact and moisture. Six published sizes run from 10x10 ft at ₹1,29,375 to 40x10 ft at ₹4,27,500 ex-GST. Download the technical specification below, and get your fixed-price quotation within 48 hours.",
+  "materialLabel": "IS 2062 Grade A MS frame, 1.6 mm corrugated shell",
+  "deliveryLabel": "7–21 working days",
+  "coverageLabel": "India-wide from Bengaluru & Greater Noida",
+  "pricePerSqft": {
+    "10x10": "1,293.75",
+    "20x8": "1,237.50",
+    "20x10": "1,125.00",
+    "20x12": "1,080.00",
+    "30x10": "1,080.00",
+    "40x10": "1,068.75"
+  },
+  "applicationsDataset": "ms-porta-cabin",
   "variants": [
     {
       "sizeSlug": "10x10",
       "label": "10x10 ft",
       "dims": "10x10x8.5 ft",
       "areaSqft": 100,
-      "priceExGst": 198000,
-      "capacity": "2–3 people",
-      "useCase": "Exposed-Site Guard Post",
-      "sku": "SP-MSPC-10x10",
+      "priceExGst": 129375,
+      "priceInclGst": 152663,
+      "useCase": "plant, EPC, workshop fixed-position duty",
       "images": [
         {
           "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-hero-view.webp",
-          "alt": "MS porta cabin 10×10 ft. IS 2062 mild-steel site office exterior by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Teal 10x10 ft MS porta cabin with corrugated steel walls, two sliding windows and a door on the long face",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-front-angle.webp",
-          "alt": "10×10 ft MS porta cabin: front view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Cream and red 10x10 ft MS porta cabin, double-leaf door centred between two windows",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-side-elevation.webp",
-          "alt": "10×10 ft MS porta cabin: side view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Dark green 10x10 ft MS porta cabin seen square on, central double door flanked by two windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-rear-angle.webp",
+          "alt": "Grey and yellow 10x10 ft MS porta cabin from the rear corner, corrugated cladding on a black steel base",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-workspace-interior.webp",
-          "alt": "Inside a 10×10 ft MS porta cabin: workspace, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Inside a 10x10 ft MS porta cabin: two-desk workstation, storage cabinet and windows on both walls",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/10x10/ms-porta-cabin-10x10-entrance-interior.webp",
-          "alt": "Inside a 10×10 ft MS porta cabin: entrance, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Looking into a 10x10 ft MS porta cabin from the doorway, desk, task chair and side cabinet",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "A compact IS 2062 mild-steel cabin for guard posts and gate offices where the frame has to last years on an exposed site, not months.",
-      "priceInclGst": 233640
+      ]
     },
     {
       "sizeSlug": "20x8",
       "label": "20x8 ft",
       "dims": "20x8x8.5 ft",
       "areaSqft": 160,
-      "priceExGst": 316800,
-      "capacity": "3–4 people",
-      "useCase": "Boundary-Wall Site Office",
-      "sku": "SP-MSPC-20x8",
+      "priceExGst": 198000,
+      "priceInclGst": 233640,
+      "useCase": "plant, EPC, workshop fixed-position duty",
       "images": [
         {
           "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-hero-view.webp",
-          "alt": "MS porta cabin 20×8 ft. IS 2062 mild-steel site office exterior by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Tan and charcoal 20x8 ft MS porta cabin, corrugated steel long wall with three windows and a door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-front-angle.webp",
-          "alt": "20×8 ft MS porta cabin: front view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Light blue 20x8 ft MS porta cabin from the front corner, three sliding windows beside the entrance door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-side-elevation.webp",
-          "alt": "20×8 ft MS porta cabin: side view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Sage green and cream 20x8 ft MS porta cabin seen square on, two windows either side of a central door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-rear-angle.webp",
+          "alt": "Orange-red 20x8 ft MS porta cabin from the rear corner on a black steel chassis",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-workspace-interior.webp",
-          "alt": "Inside a 20×8 ft MS porta cabin: workspace, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Inside a 20x8 ft MS porta cabin: desk with two visitor chairs, bookcase and an internal door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x8/ms-porta-cabin-20x8-entrance-interior.webp",
-          "alt": "Inside a 20×8 ft MS porta cabin: entrance, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Entrance view into a 20x8 ft MS porta cabin with desk, chair, low cabinet and lined walls",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "A narrow-plot MS site office: 8 ft wide for boundary-wall and road-margin placement, full IS 2062 frame, surface-treated for humidity.",
-      "priceInclGst": 373824
+      ]
     },
     {
       "sizeSlug": "20x10",
       "label": "20x10 ft",
       "dims": "20x10x8.5 ft",
       "areaSqft": 200,
-      "priceExGst": 360000,
-      "capacity": "4–6 people",
-      "useCase": "EPC Standard Site Office",
-      "sku": "SP-MSPC-20x10",
+      "priceExGst": 225000,
+      "priceInclGst": 265500,
+      "useCase": "plant, EPC, workshop fixed-position duty",
       "images": [
         {
           "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-hero-view.webp",
-          "alt": "MS porta cabin 20×10 ft. IS 2062 mild-steel site office exterior by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Grey and yellow 20x10 ft MS porta cabin with corrugated steel walls and a row of sliding windows",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-front-angle.webp",
-          "alt": "20×10 ft MS porta cabin: front view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Light grey 20x10 ft MS porta cabin from the front corner, hooded windows and a single-leaf door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-side-elevation.webp",
-          "alt": "20×10 ft MS porta cabin: side view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Sand and charcoal 20x10 ft MS porta cabin seen square on, two grilled windows beside a central door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-rear-angle.webp",
+          "alt": "Pale blue 20x10 ft MS porta cabin from the rear corner, corrugated cladding on a black base frame",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-workspace-interior.webp",
-          "alt": "Inside a 20×10 ft MS porta cabin: workspace, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Inside a 20x10 ft MS porta cabin: long desk run with task chairs, credenza and chequered floor",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x10/ms-porta-cabin-20x10-entrance-interior.webp",
-          "alt": "Inside a 20×10 ft MS porta cabin: entrance, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Entrance view into a 20x10 ft MS porta cabin with a desk, task chair and side cabinet",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "The standard MS site office. Four to six staff on a certified IS 2062 Grade A frame, the size most EPC contractors specify.",
-      "priceInclGst": 424800
+      ]
     },
     {
       "sizeSlug": "20x12",
       "label": "20x12 ft",
       "dims": "20x12x8.5 ft",
       "areaSqft": 240,
-      "priceExGst": 414720,
-      "capacity": "5–7 people",
-      "useCase": "Office with Manager Corner",
-      "sku": "SP-MSPC-20x12",
+      "priceExGst": 259200,
+      "priceInclGst": 305856,
+      "useCase": "plant, EPC, workshop fixed-position duty",
       "images": [
         {
           "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-hero-view.webp",
-          "alt": "MS porta cabin 20×12 ft. IS 2062 mild-steel site office exterior by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Pink and teal 20x12 ft MS porta cabin with corrugated steel walls, door and three windows on the long face",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-front-angle.webp",
-          "alt": "20×12 ft MS porta cabin: front view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Turquoise 20x12 ft MS porta cabin from the front corner, three windows and a central door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-side-elevation.webp",
-          "alt": "20×12 ft MS porta cabin: side view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Cream and red 20x12 ft MS porta cabin seen square on, two windows either side of a central door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-rear-angle.webp",
+          "alt": "Dark green 20x12 ft MS porta cabin from the rear corner with four windows along the long wall",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-workspace-interior.webp",
-          "alt": "Inside a 20×12 ft MS porta cabin: workspace, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Inside a 20x12 ft MS porta cabin: desk with two visitor chairs, shelving unit and an internal door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/20x12/ms-porta-cabin-20x12-entrance-interior.webp",
-          "alt": "Inside a 20×12 ft MS porta cabin: entrance, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Entrance view into a 20x12 ft MS porta cabin with desk, chair and low storage cabinet",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "The extra width for a partitioned manager corner, on the same 20+ year mild-steel structure.",
-      "priceInclGst": 489370
+      ]
     },
     {
       "sizeSlug": "30x10",
       "label": "30x10 ft",
       "dims": "30x10x8.5 ft",
       "areaSqft": 300,
-      "priceExGst": 518400,
-      "capacity": "6–8 people",
-      "useCase": "Office + Records Room",
-      "sku": "SP-MSPC-30x10",
+      "priceExGst": 324000,
+      "priceInclGst": 382320,
+      "useCase": "plant, EPC, workshop fixed-position duty",
       "images": [
         {
           "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-hero-view.webp",
-          "alt": "MS porta cabin 30×10 ft. IS 2062 mild-steel site office exterior by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Light blue 30x10 ft MS porta cabin, long corrugated steel wall with six windows and a door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-front-angle.webp",
-          "alt": "30×10 ft MS porta cabin: front view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Olive green and cream 30x10 ft MS porta cabin from the front corner with five windows",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-side-elevation.webp",
-          "alt": "30×10 ft MS porta cabin: side view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Rust red 30x10 ft MS porta cabin seen square on, four grilled windows around a central door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-rear-angle.webp",
+          "alt": "Grey and maroon 30x10 ft MS porta cabin from the rear corner on a black steel chassis",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-workspace-interior.webp",
-          "alt": "Inside a 30×10 ft MS porta cabin: workspace, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Inside a 30x10 ft MS porta cabin: two facing desk runs with task chairs and a chequered floor",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/30x10/ms-porta-cabin-30x10-entrance-interior.webp",
-          "alt": "Inside a 30×10 ft MS porta cabin: entrance, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Entrance view along a 30x10 ft MS porta cabin interior with a desk, cabinet and window row",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "A two-zone MS cabin, office plus records/meeting, for site teams that keep the unit for the full project duration.",
-      "priceInclGst": 611712
-    },
-    {
-      "sizeSlug": "40x8",
-      "label": "40x8 ft",
-      "dims": "40x8x8.5 ft",
-      "areaSqft": 320,
-      "priceExGst": 541440,
-      "capacity": "7–9 people",
-      "useCase": "Linear Bunkhouse Office",
-      "sku": "SP-MSPC-40x8",
-      "images": [
-        {
-          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-hero-view.webp",
-          "alt": "MS porta cabin 40×8 ft. IS 2062 mild-steel site office exterior by SAMAN Portable",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-front-angle.webp",
-          "alt": "40×8 ft MS porta cabin: front view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-side-elevation.webp",
-          "alt": "40×8 ft MS porta cabin: side view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-workspace-interior.webp",
-          "alt": "Inside a 40×8 ft MS porta cabin: workspace, lined interior and vinyl floor",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/40x8/ms-porta-cabin-40x8-entrance-interior.webp",
-          "alt": "Inside a 40×8 ft MS porta cabin: entrance, lined interior and vinyl floor",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "A long linear MS unit for bunkhouses and in-line site offices, IS 2062 frame along a wall or platform edge.",
-      "priceInclGst": 638899
-    },
-    {
-      "sizeSlug": "20x20",
-      "label": "20x20 ft",
-      "dims": "20x20x8.5 ft",
-      "areaSqft": 400,
-      "priceExGst": 676800,
-      "capacity": "8–10 people",
-      "useCase": "Training / Command Room",
-      "sku": "SP-MSPC-20x20",
-      "images": [
-        {
-          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-hero-view.webp",
-          "alt": "MS porta cabin 20×20 ft. IS 2062 mild-steel site office exterior by SAMAN Portable",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-front-angle.webp",
-          "alt": "20×20 ft MS porta cabin: front view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-side-elevation.webp",
-          "alt": "20×20 ft MS porta cabin: side view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-workspace-interior.webp",
-          "alt": "Inside a 20×20 ft MS porta cabin: workspace, lined interior and vinyl floor",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/20x20/ms-porta-cabin-20x20-entrance-interior.webp",
-          "alt": "Inside a 20×20 ft MS porta cabin: entrance, lined interior and vinyl floor",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "A square open MS floor for training halls and site command rooms where structural integrity matters as much as space.",
-      "priceInclGst": 798624
+      ]
     },
     {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
       "dims": "40x10x8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 676800,
-      "capacity": "8–10 people",
-      "useCase": "Large Certified-Frame Office",
-      "sku": "SP-MSPC-40x10",
+      "priceExGst": 427500,
+      "priceInclGst": 504450,
+      "useCase": "plant, EPC, workshop fixed-position duty",
       "images": [
         {
           "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-hero-view.webp",
-          "alt": "MS porta cabin 40×10 ft. IS 2062 mild-steel site office exterior by SAMAN Portable",
-          "provenance": "unknown",
+          "alt": "Grey and maroon 40x10 ft MS porta cabin, long corrugated steel wall with seven windows",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-front-angle.webp",
-          "alt": "40×10 ft MS porta cabin: front view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Olive green 40x10 ft MS porta cabin from the front corner with five windows and a door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-side-elevation.webp",
-          "alt": "40×10 ft MS porta cabin: side view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
+          "alt": "Blue and charcoal 40x10 ft MS porta cabin seen square on, seven windows around a central door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-rear-angle.webp",
+          "alt": "Yellow 40x10 ft MS porta cabin from the rear corner on a black steel base frame",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-workspace-interior.webp",
-          "alt": "Inside a 40×10 ft MS porta cabin: workspace, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Inside a 40x10 ft MS porta cabin: two long desk runs with task chairs down the length of the room",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/ms-porta-cabin/40x10/ms-porta-cabin-40x10-entrance-interior.webp",
-          "alt": "Inside a 40×10 ft MS porta cabin: entrance, lined interior and vinyl floor",
-          "provenance": "unknown",
+          "alt": "Entrance view along a 40x10 ft MS porta cabin interior with desk, cabinet and window row",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
-      ],
-      "shortDescription": "The largest single-module MS office floor, eight to ten staff on a certified frame, craned in as one unit.",
-      "priceInclGst": 798624
-    },
-    {
-      "sizeSlug": "40x12",
-      "label": "40x12 ft",
-      "dims": "40x12x8.5 ft",
-      "areaSqft": 480,
-      "priceExGst": 794880,
-      "capacity": "10–12 people",
-      "useCase": "Multi-Room Project Office",
-      "sku": "SP-MSPC-40x12",
-      "images": [
-        {
-          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-hero-view.webp",
-          "alt": "MS porta cabin 40×12 ft. IS 2062 mild-steel site office exterior by SAMAN Portable",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-front-angle.webp",
-          "alt": "40×12 ft MS porta cabin: front view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-side-elevation.webp",
-          "alt": "40×12 ft MS porta cabin: side view, corrugated steel shell on IS 2062 frame",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-workspace-interior.webp",
-          "alt": "Inside a 40×12 ft MS porta cabin: workspace, lined interior and vinyl floor",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/ms-porta-cabin/40x12/ms-porta-cabin-40x12-entrance-interior.webp",
-          "alt": "Inside a 40×12 ft MS porta cabin: entrance, lined interior and vinyl floor",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "The flagship MS cabin: near 500 sq ft of multi-room office on a full IS 2062 Grade A structure.",
-      "priceInclGst": 937958
+      ]
     }
   ],
-  "specPdfHref": "/specs/ms-porta-cabin-technical-specification.pdf"
+  "descriptionHtml": "<h2>The Heavy Industrial Build in the SAMAN Porta Cabin Range</h2><p>Every porta cabin family needs one build that treats the cabin as plant, not furniture. In the SAMAN range, that build is the MS Porta Cabin. It uses the strongest mild-steel profile in the porta cabin cluster. The frame is IS 2062 Grade A industrial steel. The shell is 1.6 mm-class corrugated sheet on both walls and roof. The floor is a rigid 24 mm-class build-up. This specification serves plant compounds, EPC projects, workshops and other demanding fixed-position duty, where the cabin works through one long deployment rather than moving between short ones.</p><p>The name deserves one honest sentence. MS simply means mild steel, the carbon steel that Indian fabrication runs on. When buyers search for a steel porta cabin, this mild-steel build is almost always the product they mean. This page therefore covers both names with one published specification, one price ladder and one quotation process. Every number here traces to SAMAN's controlled costing and specification workbook. The downloadable PDF in the hero carries the same data under a document version you can hold us to.</p><p>That traceability is the practical difference between this page and a directory listing. A listing shows a price and a photograph. This page shows the sections, thicknesses and scope boundaries behind the price, so your comparison starts from evidence rather than adjectives.</p><h2>Inside the Build: Frame, Shell, Floor and Insulation</h2><img src=\"/images/products/ms-porta-cabin/description/saman-ms-porta-cabin-20x10-exterior.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"MS porta cabin exterior in red-oxide corrugated steel with sliding windows, hooded rain covers and a black steel base frame\"><p>The chassis is the heart of the specification. A 100x50x3 mm MS C-channel primary base frame, ISI-standard or approved equivalent, forms the load-bearing foundation of the cabin. Bottom stiffeners use 100x50 mm C-channels, 50x50 mm MS angles, 75x40 mm channels and approved square-pipe supports. Their spacing is coordinated at about 4 ft intervals to the final floor load and lifting design. On that grid sits an 18 mm cement-fibre floor board fixed with approved self-tapping fasteners. The floor builds up to its 24 mm class and takes a 2-3 mm commercial PVC, epoxy or 3 mm chequered-plate finish.</p><p>The frame above follows the same industrial logic. Corner and wall posts use 50x50x2 mm MS square pipe, or an approved 60x60 mm MS-angle alternative. Door and window openings are reinforced, and the wall cavity runs approximately 60 mm. The top perimeter is 50x50x1.6 mm square pipe. Roof stiffeners of 50x50x1.2 mm carry secondary members sized to span, ceiling support and drainage slope. Walls and roof both carry 1.6 mm corrugated MS sheet. For comparison, the standard porta cabin uses 1.2 mm walls and a 1.4 mm roof. The MS build runs heavier metal exactly where site abuse lands.</p><p>Inside, the lining is chosen for punishment rather than polish. Interior walls take 8-10 mm fibre-cement board or a 0.50 mm pre-painted metal liner. The ceiling matches, with 8 mm fibre-cement or metal lining. Both options tolerate impact and moisture better than decorative boards do. Thermal duty is covered by 50-75 mm mineral wool in the walls and 75-100 mm in the roof, where Indian sun load actually strikes.</p><p>The result is a shell that holds its interior through years of plant service. Welded and bolted connections follow approved shop drawings. Edges are deburred, dimensions inspected, and panels closed only after the frame passes inspection. Final engineering, the bill of materials and the drawings remain controlled documents, issued with your order rather than improvised at the factory.</p><h2>MS, GI or Pre-Galvanized: Choosing Your Steel</h2><p>Steel porta cabins are specified in three material routes, and the right one depends on your site, not on a sales pitch. Mild steel protected by a maintained coating system is the standard industrial choice for inland and normal-humidity sites. Galvanized iron adds a zinc layer for sustained humidity. Pre-galvanized sheet is coated before fabrication, for the most exposure-critical panels. The table below states the practical selection logic in one view, because material questions are the ones buyers most often get conflicting answers on.</p><table class=\"saman-table\"><thead><tr><th>Steel route</th><th>Best-fit site</th><th>What it changes</th></tr></thead><tbody><tr><td>MS (this page)</td><td>Inland, dry and normal-humidity industrial sites</td><td>Standard heavy build; approved primer/topcoat system maintained through life</td></tr><tr><td>GI (galvanized)</td><td>Coastal, high-humidity and long-exposure sites</td><td>Zinc-coated steel for corrosion duty — see the GI Porta Cabin page</td></tr><tr><td>Pre-galvanized</td><td>Exposure-critical panels on aggressive sites</td><td>Sheet coated before fabrication; specified per project at quotation</td></tr></tbody></table><p>The honest guidance is simpler than the market makes it. If your site is inland and your duty is heavy, the MS build on this page is the specified answer. Its coating system is part of the published specification, not an extra. If your cabin will serve on the coast, near brine or in permanently humid air, read the <a href=\"https://www.samanportable.com/product/porta-cabins/gi-porta-cabin\">GI Porta Cabin</a> page instead, which owns the galvanized configuration in this range.</p><p>State the site environment in your enquiry, and the quotation names the material route we recommend for it. We quote the route the site needs, not the costliest one that sounds safer. Whichever route you pick, the cabin sizes, layout options and quotation process on this page stay the same.</p><img src=\"/images/products/ms-porta-cabin/description/saman-ms-porta-cabin-40x10-exterior.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Long 40 ft MS porta cabin in grey corrugated steel with four windows, a single door and a black chassis in a factory yard\"><h2>MS Porta Cabin Prices: Six Published Sizes</h2><p>Most industrial cabin suppliers quote prices only after a call. SAMAN publishes the ladder. The six sizes below are the published MS configurations, priced from the costing workbook at a base rate of ₹1,125 per sq ft for the 20x10 ft reference cabin. Smaller bodies carry a premium band, because the chassis, door and electricals cost the same in any size. Larger bodies earn a reduction band on the same logic.</p><table class=\"saman-table\"><thead><tr><th>Size (L×W×H)</th><th>Area</th><th>Price ex-GST</th><th>Incl. 18% GST</th></tr></thead><tbody><tr><td>10x10x8.5 ft</td><td>100 sq ft</td><td>₹1,29,375</td><td>₹1,52,663</td></tr><tr><td>20x8x8.5 ft</td><td>160 sq ft</td><td>₹1,98,000</td><td>₹2,33,640</td></tr><tr><td>20x10x8.5 ft</td><td>200 sq ft</td><td>₹2,25,000</td><td>₹2,65,500</td></tr><tr><td>20x12x8.5 ft</td><td>240 sq ft</td><td>₹2,59,200</td><td>₹3,05,856</td></tr><tr><td>30x10x8.5 ft</td><td>300 sq ft</td><td>₹3,24,000</td><td>₹3,82,320</td></tr><tr><td>40x10x8.5 ft</td><td>400 sq ft</td><td>₹4,27,500</td><td>₹5,04,450</td></tr></tbody></table><p>These are base-specification supply prices for the cabin itself. Interior fit-out, optional additions, transport and installation are excluded and quoted separately. GST applies at 18% under HSN 9406 for prefabricated buildings. Site works and foundations remain the buyer's scope. The same figures appear in the hero selector, the technical PDF and your quotation, so the number you compare is the number you sign. If your requirement sits between two published sizes, or beyond 40 ft, custom dimensions are quoted against an approved drawing.</p><h2>Where the MS Build Earns Its Cost</h2><img src=\"/images/products/ms-porta-cabin/description/saman-ms-porta-cabin-30x10-end-elevation.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Green MS porta cabin showing the full long wall with three windows, a central door and corner castings on a steel base\"><p>The MS Porta Cabin earns its premium over the standard build wherever the cabin works as part of the plant. Typical deployments run through cement, steel, power and process plants: gate and weighbridge control rooms, shift offices beside running lines, instrument and panel rooms, and sampling stations. EPC and infrastructure contractors specify it as the resident site office that must outlast a multi-year contract. Workshops use it as a supervisor cabin and records room inside fabrication bays, where trolleys, material and the occasional impact are daily facts.</p><p>The common condition in all of these is fixed-position service under industrial exposure: vibration nearby, material movement around the shell, sun on the roof for years. Layout stays flexible inside the open single-room baseline. Partitions and furniture follow your approved drawing, and ventilation runs from natural cross-flow with fan, exhaust and AC provision as the schedule requires.</p><p>Where the requirement is a light office for a short project, the heavier steel is not the economical answer, and we say so plainly. In that case, the standard build in the porta cabin range serves better. Duty decides the build; size then decides the price.</p><h2>Corrosion Protection, Service Life and Maintenance</h2><img src=\"/images/products/ms-porta-cabin/description/saman-ms-porta-cabin-20x12-interior.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Empty MS porta cabin interior with beige lined walls, four sliding windows, LED panel light and chequered-pattern floor\"><p>Mild steel lasts as long as its protection system, so the specification treats coating as structure. Prepared MS surfaces receive the approved primer and topcoat system, matched to substrate and exposure category. Cut edges and fabrication damage are repaired before dispatch. The final colour is project-selected and confirmed in the finish schedule. That is why the photographs on this page show different finishes rather than one catalogue colour.</p><p>Under proper use and maintenance, the service life of the build is 20-25 years. That is a design-life statement, not a warranty period. The standard warranty is 5 years structural and 1 year finishing, extendable to 2 years on request and confirmed at quotation. Maintenance is ordinary industrial practice: keep the coating intact, attend to damage promptly, and keep roof drainage clear.</p><p>Quality is checked before dispatch, not argued after delivery. Pre-dispatch QA covers dimensions, member and panel identification, connections, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional checks. Corrosion-compatible fasteners and EPDM, butyl or approved sealants close every panel joint, corner, roof lap and penetration, and no unsealed field cut is accepted.</p><h2>Scope: What Is Standard, Optional, Custom and Excluded</h2><img src=\"/images/products/ms-porta-cabin/description/saman-ms-porta-cabin-10x10-interior.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Compact MS porta cabin interior fitted with two desks, task chairs, a storage cabinet and three windows\"><p>The published price buys a defined industrial specification, and the boundaries are stated rather than discovered at delivery. STANDARD scope covers the IS 2062 Grade A frame, the 1.6 mm corrugated enclosure, insulation, lined interior, floor and finish. It includes a heavy MS main door with an industrial lockset, in single or double leaf. Windows are reduced-size aluminium units or louvered ventilators with 5 mm glass, where the opening schedule uses them.</p><p>The electrical baseline is complete rather than token. Protected copper wiring runs on a 1.5/2.5/4 sq.mm starting schedule, controlled by a distribution board with MCB/RCCB protection and earthing. LED lights, modular switches and 6A/16A sockets are fitted as scheduled. Final circuit quantities and equipment loads follow the approved electrical drawing and your quotation.</p><p>OPTIONAL additions include AC provision and units, exhaust and ventilation fittings, grills, mesh and guards, and furniture or partition packages. CUSTOM decisions cover the layout, openings and colour, all finalized by your approved drawing, because the open single-room baseline is deliberately a starting point. EXCLUDED scope is equally explicit. Plumbing and sanitary work are not included unless your approved scope shows them. Transport, installation, foundations and project engineering are quoted separately. Options never silently become standard, and the quotation lists each one as its own line.</p><h2>Delivery, Lifting and Site Readiness</h2><img src=\"/images/products/ms-porta-cabin/description/saman-ms-porta-cabin-20x8-interior.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"MS porta cabin interior with cream lined walls, internal door, three windows and grey vinyl flooring\"><p>Your fixed-price quotation arrives within 48 hours of sharing requirements. Standard delivery takes 7-21 working days from confirmed order. Cabins dispatch from the nearer factory, Bengaluru for the South and Greater Noida for the North, on 20 ft or 40 ft open trailers priced by the distance ladder in the Shipping tab. Delivery within Bangalore city and the listed Delhi NCR areas is free. Every module carries engineered lifting and handling points. Move the completed module only to the approved lifting, support and transport drawing.</p><p>Because the MS build is the heaviest cabin in the porta cabin range, arrange the crane and confirm approach access before the trailer arrives. If the cabin will move between sites repeatedly as a planned duty, tell us at enquiry. The <a href=\"https://www.samanportable.com/product/porta-cabins/skid-mounted-porta-cabin\">Skid-Mounted Porta Cabin</a> is the configuration built around repeated relocation, and it may fit that duty better. Send these details with your enquiry, and the first quotation arrives ready to compare:</p><ul><li>Site location pin code, and whether access suits a 20 ft or 40 ft trailer</li><li>Cabin size and duty, with the rooms or zones you need inside</li><li>Door, window and ventilation positions, if already decided</li><li>Electrical load expectations, including AC and equipment points</li><li>The base you will prepare: compacted ground, plinth or columns</li><li>Target delivery date, and the person authorised to receive the module</li></ul><h2>MS Porta Cabin FAQs</h2><p><strong>Is an MS porta cabin the same as a steel porta cabin?</strong> In practice, yes. MS means mild steel, and the mild-steel build is what steel porta cabin almost always refers to in the Indian market. Galvanized and pre-galvanized variants are the exceptions, and each is specified separately in this range.</p><p><strong>What does an MS porta cabin cost?</strong> The published ladder runs from ₹1,29,375 for 10x10 ft to ₹4,27,500 for 40x10 ft ex-GST, on a ₹1,125 per sq ft base rate at the 20x10 ft reference size. Interior fit-out, transport and installation are quoted separately.</p><p><strong>What steel grade does SAMAN use in the frame?</strong> The frame is specified in IS 2062 Grade A mild steel, the Indian structural standard for general engineering, in an ISI-standard or approved equivalent C-channel chassis.</p><p><strong>How long does an MS porta cabin last?</strong> Service life is 20-25 years under proper use and maintenance, with the coating system kept intact. The warranty itself is 5 years structural and 1 year finishing, extendable to 2 years on request.</p><p><strong>Can I use an MS porta cabin on a coastal site?</strong> We recommend the galvanized build for sustained humidity or salt air. Mild steel with a maintained coating serves inland sites well, but zinc protection is the right specification near the coast.</p><p><strong>Can the cabin be relocated later?</strong> Yes. Engineered lifting points are part of the structure, and the module relocates by crane and trailer to the approved handling drawing. For duties that involve repeated planned moves, the skid-mounted configuration is purpose-built.</p><p><strong>Is plumbing included in the MS porta cabin?</strong> Not by default. Plumbing and sanitary work appear only when your approved scope shows them. If the cabin needs a washroom, say so at enquiry, and the quotation prices that scope as its own line.</p>",
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.samanportable.com/product/porta-cabins/ms-porta-cabin#faq",
+    "url": "https://www.samanportable.com/product/porta-cabins/ms-porta-cabin",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is an MS porta cabin the same as a steel porta cabin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In practice, yes. MS means mild steel, and the mild-steel build is what steel porta cabin almost always refers to in the Indian market. Galvanized and pre-galvanized variants are the exceptions, and each is specified separately in this range."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does an MS porta cabin cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The published ladder runs from ₹1,29,375 for 10x10 ft to ₹4,27,500 for 40x10 ft ex-GST, on a ₹1,125 per sq ft base rate at the 20x10 ft reference size. Interior fit-out, transport and installation are quoted separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What steel grade does SAMAN use in the frame?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The frame is specified in IS 2062 Grade A mild steel, the Indian structural standard for general engineering, in an ISI-standard or approved equivalent C-channel chassis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does an MS porta cabin last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Service life is 20-25 years under proper use and maintenance, with the coating system kept intact. The warranty itself is 5 years structural and 1 year finishing, extendable to 2 years on request."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use an MS porta cabin on a coastal site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We recommend the galvanized build for sustained humidity or salt air. Mild steel with a maintained coating serves inland sites well, but zinc protection is the right specification near the coast."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the cabin be relocated later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Engineered lifting points are part of the structure, and the module relocates by crane and trailer to the approved handling drawing. For duties that involve repeated planned moves, the skid-mounted configuration is purpose-built."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is plumbing included in the MS porta cabin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not by default. Plumbing and sanitary work appear only when your approved scope shows them. If the cabin needs a washroom, say so at enquiry, and the quotation prices that scope as its own line."
+        }
+      }
+    ]
+  },
+  "suppressLegacyFaqSchema": true,
+  "specPdfHref": "/specs/saman-ms-porta-cabin-technical-specification.pdf",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "hasProductVideo": false
 }
