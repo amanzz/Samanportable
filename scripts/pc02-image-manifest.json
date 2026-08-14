@@ -1,0 +1,63 @@
+{
+  "note": "PC-02 GI porta cabin. 36 gallery slots (Section A of the v1.1 addendum, verbatim alts) + 6 description slots (build prompt v1 Description tab [IMAGE n] markers, verbatim alts) = the 42 hash-unique slots of acceptance criterion 11.5. Non-luxury sources keep their stem; only luxury-* sources are renamed, exactly as Section A's arrows specify.",
+  "sourceRoot": "D:/Project-shekhar/all-product-images/Hub Page (Porta Cabins)/Galvanized Iron (GI) Porta Cabin",
+  "gallery": {
+    "10x10": [
+      ["gi-porta-cabin-10x10-olive-green-front-elevation.jpg", "gi-porta-cabin-10x10-olive-green-front-elevation.webp", "Olive-green corrugated GI porta cabin 10x10 ft with steel door and sliding windows"],
+      ["galvanized-iron-prefab-cabin-10x10-blue-saman-portable.jpg", "galvanized-iron-prefab-cabin-10x10-blue-saman-portable.webp", "Light-blue and grey two-tone GI porta cabin 10x10 ft, angled exterior view"],
+      ["galvanized-iron-site-office-10x10-tan-exterior-saman.jpg", "galvanized-iron-site-office-10x10-tan-exterior-saman.webp", "Cream and green two-tone 10x10 ft GI site office cabin in a factory yard"],
+      ["galvanized-iron-modular-cabin-10x10-grey-profile.jpg", "galvanized-iron-modular-cabin-10x10-grey-profile.webp", "Grey corrugated 10x10 ft GI cabin, front profile with single sliding window"],
+      ["galvanized-iron-porta-cabin-10x10-interior-office.jpg", "galvanized-iron-porta-cabin-10x10-interior-office.webp", "10x10 ft GI cabin interior with desk, chairs and two windows"],
+      ["gi-portable-office-10x10-interior-wood-finish.jpg", "gi-portable-office-10x10-interior-wood-finish.webp", "10x10 ft GI cabin interior with wood-finish desk area and ceiling lights"]
+    ],
+    "20x8": [
+      ["galvanized-iron-modular-cabin-20x8-dark-green-profile.jpg", "galvanized-iron-modular-cabin-20x8-dark-green-profile.webp", "Dark-green 20x8 ft GI porta cabin, long-wall view with three windows"],
+      ["galvanized-iron-prefab-cabin-20x8-cyan-saman-portable.jpg", "galvanized-iron-prefab-cabin-20x8-cyan-saman-portable.webp", "Turquoise 20x8 ft GI porta cabin, angled view with door on the long wall"],
+      ["galvanized-iron-site-office-20x8-tan-exterior-saman.jpg", "galvanized-iron-site-office-20x8-tan-exterior-saman.webp", "Cream and red two-tone 20x8 ft GI site office, long-wall elevation"],
+      ["gi-porta-cabin-20x8-white-exterior-saman.jpg", "gi-porta-cabin-20x8-white-exterior-saman.webp", "Light-grey 20x8 ft GI porta cabin, angled exterior in a factory yard"],
+      ["galvanized-iron-porta-cabin-20x8-interior-hall.jpg", "galvanized-iron-porta-cabin-20x8-interior-hall.webp", "Empty lined interior of a 20x8 ft GI cabin with door and two windows"],
+      ["gi-modular-office-20x8-interior-meeting-space.jpg", "gi-modular-office-20x8-interior-meeting-space.webp", "20x8 ft GI cabin interior arranged as a small office with desk and chairs"]
+    ],
+    "20x10": [
+      ["gi-porta-cabin-20x10-dark-green-exterior-saman.png", "gi-porta-cabin-20x10-dark-green-exterior-saman.webp", "Dark-green 20x10 ft GI porta cabin with door and two windows, angled view"],
+      ["galvanized-iron-modular-cabin-20x10-tan-red-profile.png", "galvanized-iron-modular-cabin-20x10-tan-red-profile.webp", "Cream and red two-tone 20x10 ft GI cabin, front elevation with door and windows"],
+      ["galvanized-iron-site-office-20x10-cyan-exterior-saman.png", "galvanized-iron-site-office-20x10-cyan-exterior-saman.webp", "Cyan 20x10 ft GI site office cabin, angled exterior view"],
+      ["gi-porta-cabin-20x10-tan-green-front-elevation.png", "gi-porta-cabin-20x10-tan-green-front-elevation.webp", "Cream and green two-tone 20x10 ft GI porta cabin, angled long-wall view"],
+      ["gi-modular-office-20x10-interior-meeting-space.png", "gi-modular-office-20x10-interior-meeting-space.webp", "20x10 ft GI cabin interior with meeting desk, chairs and storage unit"],
+      ["gi-portable-office-20x10-interior-wood-finish.png", "gi-portable-office-20x10-interior-wood-finish.webp", "20x10 ft GI cabin interior in wood finish with office desk and door"]
+    ],
+    "20x12": [
+      ["luxury-porta-cabin-20x12-hero-view.png", "gi-porta-cabin-20x12-hero-view.webp", "White and red two-tone 20x12 ft GI porta cabin, long-wall exterior"],
+      ["luxury-porta-cabin-20x12-front-angle.png", "gi-porta-cabin-20x12-front-angle.webp", "Olive-green 20x12 ft GI porta cabin, angled exterior with door"],
+      ["luxury-porta-cabin-20x12-rear-angle.png", "gi-porta-cabin-20x12-rear-angle.webp", "Yellow 20x12 ft GI porta cabin, angled rear exterior view"],
+      ["luxury-porta-cabin-20x12-side-elevation.png", "gi-porta-cabin-20x12-side-elevation.webp", "Light-blue 20x12 ft GI porta cabin with dark base, long-wall elevation"],
+      ["luxury-porta-cabin-20x12-entrance-interior.png", "gi-porta-cabin-20x12-entrance-interior.webp", "Entrance view inside a 20x12 ft GI cabin with door and office furniture"],
+      ["luxury-porta-cabin-20x12-workspace-interior.png", "gi-porta-cabin-20x12-workspace-interior.webp", "Workspace interior of a 20x12 ft GI cabin with desks and window light"]
+    ],
+    "40x8": [
+      ["luxury-porta-cabin-40x8-hero-view.png", "gi-porta-cabin-40x8-hero-view.webp", "Dark-green 40x8 ft GI porta cabin, full-length exterior with windows"],
+      ["luxury-porta-cabin-40x8-front-angle.png", "gi-porta-cabin-40x8-front-angle.webp", "Silver 40x8 ft GI porta cabin with orange base band, angled full-length view"],
+      ["luxury-porta-cabin-40x8-rear-angle.png", "gi-porta-cabin-40x8-rear-angle.webp", "Cream 40x8 ft GI porta cabin with dark base, angled long-wall view"],
+      ["luxury-porta-cabin-40x8-side-elevation.png", "gi-porta-cabin-40x8-side-elevation.webp", "Grey 40x8 ft GI porta cabin, long-wall elevation with four windows"],
+      ["luxury-porta-cabin-40x8-workspace-interior.png", "gi-porta-cabin-40x8-workspace-interior.webp", "Open-plan interior of a 40x8 ft GI cabin with multiple desks"],
+      ["luxury-porta-cabin-40x8-rear-interior.png", "gi-porta-cabin-40x8-rear-interior.webp", "Long corridor interior of a 40x8 ft GI cabin with windows both sides"]
+    ],
+    "40x10": [
+      ["luxury-porta-cabin-40x10-elevated-view.png", "gi-porta-cabin-40x10-elevated-view.webp", "Red-orange corrugated 40x10 ft GI porta cabin, full-length exterior"],
+      ["luxury-porta-cabin-40x10-front-angle.png", "gi-porta-cabin-40x10-front-angle.webp", "Grey 40x10 ft GI porta cabin, angled full-length exterior view"],
+      ["luxury-porta-cabin-40x10-hero-view.png", "gi-porta-cabin-40x10-hero-view.webp", "White 40x10 ft GI porta cabin with orange base band, long-wall view"],
+      ["luxury-porta-cabin-40x10-rear-angle.png", "gi-porta-cabin-40x10-rear-angle.webp", "Light-blue 40x10 ft GI porta cabin, angled long-wall exterior"],
+      ["luxury-porta-cabin-40x10-rear-interior.png", "gi-porta-cabin-40x10-rear-interior.webp", "Interior of a 40x10 ft GI cabin with desks along the window wall"],
+      ["luxury-porta-cabin-40x10-workspace-interior.png", "gi-porta-cabin-40x10-workspace-interior.webp", "Office interior of a 40x10 ft GI cabin with desk, seating and door"]
+    ]
+  },
+  "description": [
+    ["gi-porta-cabin-corrugated-exterior-door-barred-windows.webp", "Grey corrugated GI porta cabin with steel door and two grilled sliding windows in a stock yard"],
+    ["gi-porta-cabin-window-grill-corrugated-wall-detail.webp", "Close view of a grilled sliding window set in corrugated zinc-coated wall sheet"],
+    ["gi-porta-cabin-interior-metal-liner-panels-window.webp", "GI porta cabin interior with pre-painted metal liner walls, ceiling lights and wood-look vinyl floor"],
+    ["gi-porta-cabin-front-elevation-two-barred-windows.webp", "Front elevation of a grey GI porta cabin showing two grilled windows and corrugated cladding"],
+    ["gi-porta-cabin-crane-lifting-slings-transport.webp", "GI porta cabin lifted on slings by a mobile crane during positioning; crane and rigging are arranged by the buyer unless quoted"],
+    ["gi-porta-cabin-chassis-corner-forklift-pockets.webp", "Corner of a GI porta cabin chassis showing base member, forklift pockets and coated underside"]
+  ],
+  "excluded": ["luxury-porta-cabin-40x8-end-elevation.png"]
+}

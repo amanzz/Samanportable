@@ -36,6 +36,29 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  // PC-02 gi-porta-cabin — Section 2 "buyer orientation" of the approved GI build
+  // ticket, verbatim: the H2 into `heading`, paragraph 1 into `body`, paragraph 2
+  // into `comparison`. The two anchors are exactly rows 1 and 2 of the section 6
+  // link map and nothing else; the anchor TEXT is the approved bracket content
+  // unchanged, so the rendered sentence reads word for word as approved.
+  //
+  // No `splitCard`: the R15 split layout is an opt-in cluster amendment, and the
+  // approved GI copy supplies no sub-heading, card body or CTA label for it. An
+  // invented card would breach the zero-invention rule, so the section renders
+  // with its two paragraphs exactly as the copy is written.
+  'gi-porta-cabin': {
+    heading: 'When a GI Porta Cabin Beats Painted Steel on Real Sites',
+    body: (
+      <>
+        Choose this cabin by exposure, not by habit. Within roughly 500 m of the sea, beside cooling towers, in persistently humid halls or near chemical stores, paint systems on plain steel break down early. Every repaint then costs downtime. Zinc coating protects sacrificially: even at a scratch, the surrounding coating keeps corroding preferentially, so the steel underneath survives handling damage that would rust a painted shell. That is the practical difference buyers pay for.
+      </>
+    ),
+    comparison: (
+      <>
+        If your site is dry and inland, the <Link className={linkClass} href="https://www.samanportable.com/product/porta-cabins/ms-porta-cabin">MS porta cabin</Link> usually serves the same office duty at a lower rate. Its IS 2062 frame carries the same platform electricals and QA. Compare the two ladders, then send your site pin, exposure notes and headcount to our engineering team for a fixed 48-hour quotation. <Link className={linkClass} href="https://www.samanportable.com/contact">Get a GI cabin quote</Link>
+      </>
+    ),
+  },
   // C-05 container-cafe HUB — §5 of the 08 Aug draft of record, verbatim. The
   // comparison line's anchor is exactly the ruled §9 string; it is neither
   // extended nor shortened. No `appendix`: the draft supplies none.

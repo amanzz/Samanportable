@@ -1,0 +1,59 @@
+{
+ "/product/porta-cabins": {
+  "sha": "3846a9ebd85d898c",
+  "bytes": 580419
+ },
+ "/product/porta-cabins/ms-porta-cabin": {
+  "sha": "2143a90a349be417",
+  "bytes": 565180
+ },
+ "/product/porta-cabins/steel-porta-cabin": {
+  "sha": "ac79e2e20fba2ea2",
+  "bytes": 533974
+ },
+ "/product/porta-cabins/luxury-porta-cabin": {
+  "sha": "c0520ae42e21854c",
+  "bytes": 544637
+ },
+ "/product/porta-cabins/mini-porta-cabin": {
+  "sha": "7067554e37c8bccd",
+  "bytes": 466428
+ },
+ "/product/porta-cabins/low-cost-porta-cabin": {
+  "sha": "dc23db6691a5656b",
+  "bytes": 536512
+ },
+ "/product/porta-cabins/porta-cabin-shop": {
+  "sha": "ee5b73d0e3980f83",
+  "bytes": 554193
+ },
+ "/product/porta-cabins/porta-cabin-with-toilet": {
+  "sha": "c6779e1edcfdb4bd",
+  "bytes": 544834
+ },
+ "/product/porta-cabins/porta-cabin-house": {
+  "sha": "ERROR",
+  "bytes": 0,
+  "error": "HTTP Error 404: Not Found"
+ },
+ "/product/container-offices": {
+  "sha": "58500c6c776ea9d2",
+  "bytes": 577745
+ },
+ "/product/portable-office": {
+  "sha": "9f5a5821628ac069",
+  "bytes": 553944
+ },
+ "/product/container-cafe": {
+  "sha": "9785735bbea8abd7",
+  "bytes": 486768
+ },
+ "/product/portable-cabin": {
+  "sha": "6dd5e39dfc1a195d",
+  "bytes": 500468
+ },
+ "/product/puf-panel": {
+  "sha": "f38ea841538e02f7",
+  "bytes": 192258
+ }
+}

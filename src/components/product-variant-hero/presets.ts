@@ -241,6 +241,23 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     categoryLabel: 'Container Cafe',
     categoryHref: '/product/container-cafe',
   },
+  // PC-02 GI PORTA CABIN subpage (/product/porta-cabins/gi-porta-cabin). Its own
+  // data/products/gi-porta-cabin.json supplies the six variants, the ladder, the
+  // per-size galleries, the L3 meta and the spec PDF. This preset supplies only the
+  // derived surfaces: the singular product noun, the cluster Category row and the
+  // page-level SKU (Ruling 3: cluster code GIPC, `SP-GIPC-{defaultSize}`, following
+  // the ruled sibling pattern `SP-MSPC-20x10`).
+  //
+  // Deliberately ABSENT: `explorerImageTemplate` — the approved 42-slot manifest has
+  // no Explorer image, and the hero is told so explicitly via `explorerHidePanelImages`
+  // rather than being left to derive a path that does not exist on disk.
+  // `applicationsDataset` lives on the data file. `video` — none exists.
+  'gi-porta-cabin': {
+    productName: 'GI Porta Cabin',
+    categoryLabel: 'Porta Cabins',
+    categoryHref: '/product/porta-cabins',
+    productSku: 'SP-GIPC-20x10',
+  },
   ...subpagePresets(),
 };
 
