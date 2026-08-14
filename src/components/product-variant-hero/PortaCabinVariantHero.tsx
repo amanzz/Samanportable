@@ -29,6 +29,7 @@ import { formatIndianPrice } from './types';
 import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
 import msPortaCabinApplications from '@/data/products/ms-porta-cabin-applications.json';
+import fireRatedPortaCabinApplications from '@/data/products/fire-rated-porta-cabin-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -173,6 +174,11 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // which is exactly what happened on the first build of this page. Only this slug
   // is re-bound, so every other Section-H page keeps its drop.
   'ms-porta-cabin': msPortaCabinApplications as ApplicationsData,
+  // PC-05 fire-rated-porta-cabin — copy pack v2 §1 V1-V6. Six panels, Shape A
+  // (H2 + two paragraphs, V1-V4: no bullets) or Shape B (H2 + one paragraph +
+  // 4 bullets, V5/V6). No stale Section-H drop exists for this slug (checked),
+  // so no re-registration-after-spread trap applies here.
+  'fire-rated-porta-cabin': fireRatedPortaCabinApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -1394,7 +1400,22 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 ) : (
                   <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{rewriteC04VisiblePunctuation(panel.h3, data.productSlug, true)}</h3>
                 )}
-                <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph, data.productSlug)}</p>
+                {/* PC-05 standing rule 13 — Shape A panels carry a blank-line
+                    break between two approved paragraphs; each becomes its own
+                    <p>, same convention as the buy-box opener (R10). No existing
+                    panel paragraph contains "\n\n", so every other product's
+                    single <p> is unaffected. */}
+                {panel.paragraph.includes('\n\n') ? (
+                  <div className="mt-2 space-y-2">
+                    {panel.paragraph.split('\n\n').map((para, pi) => (
+                      <p key={pi} className="text-sm leading-relaxed text-[var(--ds-color-steel)]">
+                        {rewriteC04VisiblePunctuation(para, data.productSlug)}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph, data.productSlug)}</p>
+                )}
 
                 {/* Sub-heading above the applications list — T25 Section H drop only. */}
                 {panel.applicationsHeading && (

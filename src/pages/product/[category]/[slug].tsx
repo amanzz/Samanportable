@@ -44,6 +44,7 @@ import {
   slugFromProductHref,
   c01HubReturnAnchorForSlug,
   PORTA_CABIN_MS_RAIL,
+  PORTA_CABIN_FIRE_RATED_RAIL,
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
@@ -78,6 +79,14 @@ const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
 
 const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
   'portable-office-cabin',
+]);
+
+// PC-01 + PC-05 (14 Aug 2026) — the porta-cabins subpages rebuilt to the
+// cluster design system. Every page using this set is opt-in only, default
+// false/absent for every other page using the same shared components.
+const PORTA_CABIN_CLUSTER_DESIGN_SLUGS = new Set([
+  'ms-porta-cabin',
+  'fire-rated-porta-cabin',
 ]);
 
 // P0 commercial-truth gate (SAMAN, 03 Aug 2026): this retained route has no
@@ -553,6 +562,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (currentSlug === 'ms-porta-cabin') {
       return PORTA_CABIN_MS_RAIL;
     }
+    // PC-05 (14 Aug 2026) — same pattern: the fire-rated page's own four-item
+    // Column 3 rail from its own build ticket §4, scoped to this one slug.
+    if (currentSlug === 'fire-rated-porta-cabin') {
+      return PORTA_CABIN_FIRE_RATED_RAIL;
+    }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
@@ -721,12 +735,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   ratingCount={product.rating_count}
                   railItems={relatedRailItems}
                   currentHref={`/product/${category}/${slug}`}
-                  // PC-01 (14 Aug 2026) — the cluster design system, scoped to the
-                  // one page that has been rebuilt to it. Every other page using
-                  // this shared hero keeps the defaults (false) and is byte-identical.
-                  showSectionDividers={slug === 'ms-porta-cabin'}
-                  usePremiumSizeTabs={slug === 'ms-porta-cabin'}
-                  explorerPanelHeadingAsH2={slug === 'ms-porta-cabin'}
+                  // PC-01 + PC-05 (14 Aug 2026) — the cluster design system, scoped to
+                  // the pages rebuilt to it. Every other page using this shared hero
+                  // keeps the defaults (false) and is byte-identical.
+                  showSectionDividers={PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug)}
+                  usePremiumSizeTabs={PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug)}
+                  explorerPanelHeadingAsH2={PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug)}
                 />
               ) : (
               <ProductSummaryLayout
@@ -1003,9 +1017,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
               )}
 
-              {/* PC-01 (14 Aug 2026) — divider 3, Section 3 → Section 4
-                  (calculator), OUTSIDE the calculator's own container. MS page only. */}
-              {slug === 'ms-porta-cabin' && embeddedCalculatorHtml && (
+              {/* PC-01 + PC-05 (14 Aug 2026) — divider 3, Section 3 → Section 4
+                  (calculator), OUTSIDE the calculator's own container. */}
+              {PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug) && embeddedCalculatorHtml && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
@@ -1019,16 +1033,16 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 </section>
               )}
 
-              {/* PC-01 — "You may also like" carousel, calculator → tabs, MS page
-                  only. Lists the cluster's other nine children with the hub's own
+              {/* PC-01 + PC-05 — "You may also like" carousel, calculator → tabs.
+                  Lists the cluster's other nine children with the hub's own
                   R16 card images. No prices on cards. */}
-              {slug === 'ms-porta-cabin' && (
+              {PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug) && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
 
-              {/* PC-01 — divider 4, "You may also like" → Section 5 (Product
-                  Details tabs). MS page only. */}
-              {slug === 'ms-porta-cabin' && (
+              {/* PC-01 + PC-05 — divider 4, "You may also like" → Section 5
+                  (Product Details tabs). */}
+              {PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug) && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 

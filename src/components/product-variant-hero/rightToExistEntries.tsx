@@ -303,6 +303,24 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: '/gallery',
     },
   },
+  // PC-05 (14 Aug 2026) — Section 2 "buyer orientation" copy from the approved
+  // fire-rated build ticket (copy pack v2, S2_H2/S2_P1/S2_P2), verbatim. The
+  // approved §7 link map carries exactly two S2 body links: MS porta cabin and
+  // /contact. No splitCard: copy pack v2 supplies no distinct split-card
+  // sub-copy, so none is invented (most cluster entries have none).
+  'fire-rated-porta-cabin': {
+    heading: 'When Your Project Fire Strategy Demands a Fire-Rated Cabin',
+    body: (
+      <>
+        Choose this configuration when a contract, fire consultant or statutory audit asks the cabin to meet stated fire criteria. That demand appears on refinery and plant sites, in warehouses holding combustible goods, near fuel or chemical storage, and in EPC and government tenders that specify cabin fire performance. A standard <Link className={linkClass} href={href('ms-porta-cabin')}>MS porta cabin</Link> shares the same heavy steel platform, but its conventional panels and ordinary glazing are never specified against a fire criterion.
+      </>
+    ),
+    comparison: (
+      <>
+        With the fire-rated build, you state the required performance and we specify mineral-wool assemblies, fire-grade linings, rated door sets and fire-stopped penetrations to match, with the supporting documentation listed in your quotation. Send your fire criteria, size and site location through our <Link className={linkClass} href="/contact">contact page</Link> and our engineering team will return a fixed quotation within 48 hours.
+      </>
+    ),
+  },
   'steel-porta-cabin': {
     heading: 'Why choose the Steel Porta Cabin',
     body: (

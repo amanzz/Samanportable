@@ -154,6 +154,49 @@ export const PORTA_CABIN_MS_RAIL: import('./c16PanelCatalog').RelatedRailItem[] 
 ];
 
 /**
+ * PC-05 (14 Aug 2026) — the fire-rated page's OWN Column 3 rail. The approved
+ * build ticket (§4 Column 3) names exactly four comparison destinations: MS
+ * Porta Cabin, Soundproof Porta Cabin, PUF Porta Cabin, and the Porta Cabins
+ * hub. The hub has no dedicated `children/` card (it isn't a child of itself),
+ * so its own default-variant hero image is used — a real product photo, same
+ * rule as every other card here.
+ */
+export const PORTA_CABIN_FIRE_RATED_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
+  {
+    title: 'MS Porta Cabin',
+    href: '/product/porta-cabins/ms-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Heavy industrial duty in a thicker mild-steel build',
+    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
+    imageAlt: 'MS Porta Cabin by SAMAN — exterior view',
+  },
+  {
+    title: 'Soundproof Porta Cabin',
+    href: '/product/porta-cabins/soundproof-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Acoustic-controlled rooms near noise',
+    imageSrc: '/images/products/porta-cabins/children/soundproof-porta-cabin-card.webp',
+    imageAlt: 'Soundproof Porta Cabin by SAMAN — exterior view',
+  },
+  {
+    title: 'PUF Porta Cabin',
+    href: '/product/porta-cabins/puf-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Higher thermal insulation duty',
+    imageSrc: '/images/products/porta-cabins/children/puf-porta-cabin-card.webp',
+    imageAlt: 'PUF Porta Cabin by SAMAN — exterior view',
+  },
+  {
+    title: 'Porta Cabins',
+    href: '/product/porta-cabins',
+    category: 'Porta Cabins',
+    blurb: 'The standard reference specification and full size range',
+    imageSrc: '/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-hero-view.webp',
+    imageAlt: 'SAMAN porta cabin exterior, 20x10 ft reference size',
+  },
+];
+
+/**
  * PC-01 — "You may also like" on the MS page lists the cluster's other nine
  * configuration children (the hub rail minus this page itself), reusing the hub's
  * exact R16 card images and blurbs. Navigation component: no prices on cards.
