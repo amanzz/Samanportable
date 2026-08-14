@@ -15,20 +15,60 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
 
   const headingId = getRightToExistHeadingId(productSlug);
   const card = entry.splitCard;
+  // PC-02 rulings v1.3 follow-up — `copyInPanel` relocates these two paragraphs into the
+  // card's copy column, beside the image and above the CTA. The markup and classes are
+  // identical in both positions, so this is placement only, never a copy change. Default
+  // false → the hub keeps paragraphs-above-card byte-identically.
+  const copyInPanel = Boolean(card?.copyInPanel);
+  const paragraphs = entry.bodyParagraphs ? (
+    <>
+      {entry.bodyParagraphs.map((para, i) => (
+        <p
+          key={i}
+          className={
+            i === 0
+              ? 'text-sm leading-relaxed text-slate-700'
+              : 'mt-3 text-sm leading-relaxed text-slate-700'
+          }
+        >
+          {para}
+        </p>
+      ))}
+    </>
+  ) : (
+    <>
+      <p className="text-sm leading-relaxed text-slate-700">{entry.body}</p>
+      <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">
+        {entry.comparison}
+        {entry.appendix}
+      </p>
+    </>
+  );
 
-  // Ad-hoc revision (15 Aug 2026, owner instruction) — when the comparison
-  // paragraph moves inside the split card, it takes the card's own body
-  // typography (saman-s2-split-text) instead of the outside bold styling, so
-  // it reads as the card's second paragraph rather than a mismatched insert.
-  const insideCard = card?.position === 'comparisonInsideCard';
-  const comparisonParagraph = (
-    <p
-      className={
-        insideCard
-          ? 'saman-s2-split-text'
-          : 'mt-3 text-sm font-semibold leading-relaxed text-slate-800'
-      }
+  // Owner review, 14 Aug 2026: with `copyInPanel` the H2 belongs at the top of the copy
+  // column, not spanning the full width above the image, so the heading, the paragraphs
+  // and the CTA read as one aligned block beside the picture.
+  const heading = (
+    <h2
+      id={headingId}
+      className="mb-3 text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl"
     >
+      {entry.heading}
+    </h2>
+  );
+
+  // PC-05 revision v1.4 (R9) — the split card renders complete (image + heading +
+  // body + CTA, no extra slot) between the two lead paragraphs; the comparison
+  // paragraph is a Section-2 body paragraph and stays outside the card, as the
+  // section's closing line. Only applies to the classic body+comparison shape
+  // (no bodyParagraphs) and only when copyInPanel is unset — those are PC-02's
+  // own axes and take precedence when a page uses them. Every entry that
+  // doesn't set `position` (every page except fire-rated-porta-cabin) keeps
+  // the original order byte-identical.
+  const cardBetweenParagraphs = !entry.bodyParagraphs && !copyInPanel && card?.position === 'betweenParagraphs';
+  const firstParagraph = <p className="text-sm leading-relaxed text-slate-700">{entry.body}</p>;
+  const comparisonParagraph = (
+    <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">
       {entry.comparison}
       {entry.appendix}
     </p>
@@ -50,46 +90,39 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         />
       </div>
       <div className="saman-s2-split-body">
-        <h3 className="saman-s2-split-subheading">{card.subheading}</h3>
-        <p className="saman-s2-split-text">{card.body}</p>
-        {insideCard && comparisonParagraph}
-        <Link className="saman-s2-split-cta" href={card.ctaHref}>
+        {/* PC-02 revision v1.2 — both are optional now. A page whose approved copy
+            supplies no card sub-heading or body renders the panel without them
+            instead of inventing either; the hub supplies both and is unchanged. */}
+        {copyInPanel && heading}
+        {card.subheading && <h3 className="saman-s2-split-subheading">{card.subheading}</h3>}
+        {card.body && <p className="saman-s2-split-text">{card.body}</p>}
+        {copyInPanel && paragraphs}
+        <Link
+          className={copyInPanel ? 'saman-s2-split-cta mt-4' : 'saman-s2-split-cta'}
+          href={card.ctaHref}
+        >
           {card.ctaLabel}
         </Link>
       </div>
     </div>
   );
 
-  // PC-05 revision v1.3 (14 Aug 2026) — SAMAN instruction: the split card
-  // moves between the two paragraphs instead of after both, so the
-  // comparison paragraph's own CTA becomes the closing line rather than
-  // sitting immediately above the card's CTA. Opt-in per entry
-  // (`splitCardPosition`); every entry that doesn't set it (every page
-  // except fire-rated-porta-cabin) keeps the original order byte-identical.
-  const cardBetweenParagraphs = card?.position === 'betweenParagraphs';
-
   return (
     <section
       className="rounded-xl border border-emerald-200 bg-white p-5 shadow-sm sm:p-6"
       aria-labelledby={headingId}
     >
-      <h2
-        id={headingId}
-        className="mb-3 text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl"
-      >
-        {entry.heading}
-      </h2>
-      <p className="text-sm leading-relaxed text-slate-700">{entry.body}</p>
-      {insideCard ? (
-        splitCard
-      ) : cardBetweenParagraphs ? (
+      {cardBetweenParagraphs ? (
         <>
+          {heading}
+          {firstParagraph}
           {splitCard}
           {comparisonParagraph}
         </>
       ) : (
         <>
-          {comparisonParagraph}
+          {!copyInPanel && heading}
+          {!copyInPanel && paragraphs}
           {splitCard}
         </>
       )}

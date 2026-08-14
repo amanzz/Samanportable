@@ -45,6 +45,8 @@ import {
   c01HubReturnAnchorForSlug,
   PORTA_CABIN_MS_RAIL,
   PORTA_CABIN_FIRE_RATED_RAIL,
+  buildPortaCabinGiRail,
+  PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
@@ -81,12 +83,16 @@ const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
   'portable-office-cabin',
 ]);
 
-// PC-01 + PC-05 (14 Aug 2026) — the porta-cabins subpages rebuilt to the
-// cluster design system. Every page using this set is opt-in only, default
-// false/absent for every other page using the same shared components.
+// PC-01 + PC-02 + PC-05 (14 Aug 2026) — the porta-cabins subpages rebuilt to
+// the cluster design system. Every page using this set is opt-in only,
+// default false/absent for every other page using the same shared
+// components. The porta-cabins-hub YMAL block below has its own per-slug
+// data-source split (gi-porta-cabin needs the em-dash-stripped variant) and
+// is NOT gated by this set alone.
 const PORTA_CABIN_CLUSTER_DESIGN_SLUGS = new Set([
   'ms-porta-cabin',
   'fire-rated-porta-cabin',
+  'gi-porta-cabin',
 ]);
 
 // P0 commercial-truth gate (SAMAN, 03 Aug 2026): this retained route has no
@@ -577,6 +583,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       imageAlt: relatedProduct.title,
     }));
 
+    // PC-02 (14 Aug 2026) — the GI page's Column 3 is the approved three-item
+    // comparison rail from its own build ticket (hub, MS, PUF), not the full-cluster
+    // strip. Scoped to this one slug, so every sibling keeps orderPortaCabinStrip()
+    // below.
+    if (currentSlug === 'gi-porta-cabin') {
+      return buildPortaCabinGiRail(built, (item) => slugFromProductHref(item.href));
+    }
+
     // T25 — S4 strip order is LOCKED by the internal-linking matrix v2: hub first,
     // then exactly the three assigned siblings. Applies only to porta cabin
     // cluster slugs; every other product keeps the live related ordering.
@@ -741,16 +755,16 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   ratingCount={product.rating_count}
                   railItems={relatedRailItems}
                   currentHref={`/product/${category}/${slug}`}
-                  // PC-01 + PC-05 (14 Aug 2026) — the cluster design system, scoped to
-                  // the pages rebuilt to it. Every other page using this shared hero
-                  // keeps the defaults (false) and is byte-identical.
+                  // PC-01 + PC-02 + PC-05 (14 Aug 2026) — the cluster design system,
+                  // scoped to the pages rebuilt to it. Every other page using this
+                  // shared hero keeps the defaults (false) and is byte-identical.
                   showSectionDividers={PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug)}
                   usePremiumSizeTabs={PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug)}
                   explorerPanelHeadingAsH2={PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug)}
                   // Ad-hoc revision (14 Aug 2026, owner screenshots) — mobile
                   // divider gap fix, scoped to this page only per the
                   // component-level comment; every other cluster-design page
-                  // (currently ms-porta-cabin) keeps the default 40px margin.
+                  // (ms-porta-cabin, gi-porta-cabin) keeps the default 40px margin.
                   compactMobileDividers={slug === 'fire-rated-porta-cabin'}
                 />
               ) : (
@@ -1028,7 +1042,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
               )}
 
-              {/* PC-01 + PC-05 (14 Aug 2026) — divider 3, Section 3 → Section 4
+              {/* PC-01 + PC-02 + PC-05 (14 Aug 2026) — divider 3, Section 3 → Section 4
                   (calculator), OUTSIDE the calculator's own container. */}
               {PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug) && embeddedCalculatorHtml && (
                 <hr className="saman-section-divider" aria-hidden="true" />
@@ -1044,14 +1058,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 </section>
               )}
 
-              {/* PC-01 + PC-05 — "You may also like" carousel, calculator → tabs.
-                  Lists the cluster's other nine children with the hub's own
-                  R16 card images. No prices on cards. */}
-              {PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug) && (
+              {/* PC-01 + PC-02 + PC-05 — "You may also like" carousel, calculator →
+                  tabs. Lists the cluster's other nine children with the hub's own R16
+                  card images. No prices on cards. The GI page takes the variant whose
+                  alts carry no em dash; MS and fire-rated keep PC-01's original list. */}
+              {PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'gi-porta-cabin' && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
+              {slug === 'gi-porta-cabin' && (
+                <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+              )}
 
-              {/* PC-01 + PC-05 — divider 4, "You may also like" → Section 5
+              {/* PC-01 + PC-02 + PC-05 — divider 4, "You may also like" → Section 5
                   (Product Details tabs). */}
               {PORTA_CABIN_CLUSTER_DESIGN_SLUGS.has(slug) && (
                 <hr className="saman-section-divider" aria-hidden="true" />

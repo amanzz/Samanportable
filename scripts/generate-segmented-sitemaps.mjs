@@ -67,7 +67,7 @@ const candidates = remaining.filter(pathname => locationPattern.test(pathname));
 const locations = candidates.slice(0, 213);
 const editorial = remaining.filter(pathname => !locations.includes(pathname));
 const unfilteredSegments = { products, locations, projects, editorial };
-const expectedSegments = { products: 159, locations: 213, projects: 1, editorial: 79 };
+const expectedSegments = { products: 160, locations: 213, projects: 1, editorial: 79 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -109,12 +109,14 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
     throw new Error(`Page sitemap ${name} changed from ${expected} to ${unfilteredSegments[name].length}`);
   }
 }
-// 452 = 450 at the merge base, +1 for /cabin-cost-calculator (this branch) and
-// +1 for the page origin/static-migration added. Both sides independently wrote
+// 453 = 452 before PC-02, +1 for /product/porta-cabins/gi-porta-cabin, which
+// Ruling 6 (14 Aug 2026) puts in the sitemap in this deploy rather than leaving
+// the new page to organic discovery. The products segment moves 159 -> 160 with
+// it. Earlier note, still true: both sides of an old merge independently wrote
 // 451 here for different pages, so git merged the literal cleanly and silently
-// left it one short — the segment gates above are what caught it.
-if (all.length !== 452) {
-  throw new Error(`Page sitemap total changed from 452 to ${all.length}`);
+// left it one short, and the segment gates above are what caught it.
+if (all.length !== 453) {
+  throw new Error(`Page sitemap total changed from 453 to ${all.length}`);
 }
 
 const pageMap = new Map();

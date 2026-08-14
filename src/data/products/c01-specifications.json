@@ -3093,6 +3093,232 @@
           "classification": "Platform Common (L15 verbatim)"
         }
       ]
+    },
+    "gi-porta-cabin": {
+      "name": "Galvanized Iron (GI) Porta Cabin",
+      "sheet": "PC-GI-03",
+      "canonical": "https://www.samanportable.com/product/porta-cabins/gi-porta-cabin",
+      "specifications": [
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Bottom frame",
+          "detail": "100×50×3 mm structural channel reference; hot-dip galvanized for the full-GI build, to approved galvanizing schedule with certificates and coating-repair procedure",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Bottom stiffeners",
+          "detail": "100×50 channels, 50×50 angles, 75×40 channels or engineered equivalent; galvanized/zinc-protected; welded/cut locations repaired with approved zinc-rich system",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Floor frame",
+          "detail": "Galvanized/MS cross-grid; dissimilar-material contact and trapped-water pockets isolated or drained; underside corrosion-protected",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Top frame",
+          "detail": "50×50×1.6 mm SHS reference, galvanized/pre-galvanized; final section by span and openings",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Roof stiffeners",
+          "detail": "50×50×1.2 mm primary with 50×40 / 40×40 / 50×25 secondary members as required; positive drainage retained",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Corner posts / walls",
+          "detail": "50×50×2 mm SHS or 60×60 mm angle reference, galvanized/zinc-protected; reinforced door/window openings",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Exterior walls",
+          "detail": "0.8–1.2 mm BMT corrugated GI/PPGI; IS 277 or approved equivalent; BMT and coating mass stated in project schedule",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Roof sheet",
+          "detail": "1.0–1.4 mm BMT profiled GI/PPGI; sealed laps and flashings; compatible fasteners and washers",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Floor base",
+          "detail": "18–24 mm cement-bonded board on protected steel grid, screw-fixed with corrosion-compatible fasteners",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Floor finish",
+          "detail": "2 mm commercial vinyl (office duty) or 3 mm chequered steel (rough duty), per quotation",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Lifting / handling",
+          "detail": "Engineered lifting/support points; movement only to approved lifting, support and transport drawing",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Welding & fabrication",
+          "detail": "Qualified welding/bolting to approved shop drawings; frame inspected before panels close",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Interior walls",
+          "detail": "0.40–0.50 mm pre-painted GI liner (default) or 8 mm fibre-cement board; MDF not default in damp service",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Ceiling",
+          "detail": "0.40–0.50 mm pre-painted metal liner or 6–8 mm fibre-cement board; cut edges and penetrations sealed",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Wall insulation",
+          "detail": "50–75 mm mineral wool or 50 mm PUF/PIR infill; climate-specific vapour control",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Roof insulation",
+          "detail": "75–100 mm mineral wool or 60–80 mm insulated roof panel; condensation, drainage and flashings detailed as one system",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "External finish",
+          "detail": "Project-selected colour and compatible coating system per approved finish schedule",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Fasteners & sealing",
+          "detail": "Corrosion-compatible fasteners; EPDM/butyl/approved sealants at joints, corners, laps, penetrations; no unsealed field cuts",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Main door",
+          "detail": "7×3 ft office door or heavy-duty leaf; galvanized/MS frame; compatible hardware; anti-water-trap threshold",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Windows",
+          "detail": "Powder-coated aluminium, 4–5 mm glass, sealed and isolated from dissimilar steel; louvers/reduced openings optional",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Grills / mesh",
+          "detail": "Grill, mosquito mesh, guard or louver only where the approved opening schedule requires",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Electrical wiring",
+          "detail": "1.5 / 2.5 / 4 sq.mm copper starting schedule; final by load and approved drawing",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Electrical protection",
+          "detail": "DB with MCB/RCCB, earthing, segregated circuits to approved electrical drawing",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Electrical fittings",
+          "detail": "LED lights, modular switches, 6A/16A sockets, fan/AC provision; quantities quotation-specific",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Ventilation / AC",
+          "detail": "Natural ventilation, corrosion-resistant louver/exhaust, AC provision; condensate routed clear of chassis and cladding",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Plumbing (optional)",
+          "detail": "Not standard; sleeved, sealed penetrations; dissimilar metals isolated",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Layout",
+          "detail": "Single-room or partitioned; quotation states full-GI / hybrid / GI-cladding route",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Painting / coating",
+          "detail": "Substrate-matched protection; galvanized steel gets compatible cut-edge and damage repair",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch dimensional, enclosure, service and functional QA; specialist certificates verified where required",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services, protection and scope",
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation",
+          "sourceSheet": "PC-GI-03",
+          "differsFromHub": false
+        }
+      ],
+      "narrative": "These specifications change three things a buyer feels later. The stated BMT-plus-coating-mass line makes offers comparable and auditable at delivery. The corrosion-compatible fastener and sealing scope removes the usual first failure points. And the quotation-named build route decides which members carry certificates, so procurement files close without follow-up letters.",
+      "premiumTables": true,
+      "diagram": {
+        "src": "/images/products/gi-porta-cabin/diagrams/gi-porta-cabin-diagram-2.webp",
+        "alt": "GI porta cabin wall and roof build-up showing cladding, insulation, liner and sealing",
+        "caption": "Figure 1. GI porta cabin wall and roof build-up. Diagram version DGM-PC-GI-03-02 Rev 1, 14 August 2026. Illustrative, not for construction.",
+        "width": 1672,
+        "height": 941
+      }
     }
   }
 }

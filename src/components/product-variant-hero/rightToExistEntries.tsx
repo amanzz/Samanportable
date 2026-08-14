@@ -17,9 +17,16 @@ const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline
 
 export interface RightToExistEntry {
   heading: string;
-  body: ReactNode;
-  comparison: ReactNode;
+  /** Optional only because `bodyParagraphs` can replace the pair below. Every entry
+      that predates that field still supplies both, so nothing else changes. */
+  body?: ReactNode;
+  comparison?: ReactNode;
   appendix?: ReactNode;
+  /** PC-02 Section 2 draft v4 (14 Aug 2026) — an arbitrary-length run of uniformly
+      styled paragraphs, for approved copy that is not the two-part
+      body-plus-bolded-comparison shape. When present it replaces `body`, `comparison`
+      and `appendix`. Absent everywhere else, so their markup is byte-identical. */
+  bodyParagraphs?: ReactNode[];
   /** R15 (v1.4, 14 Aug 2026) — optional image-left / content-right split card
       rendered below the lead paragraphs. Present only on the porta-cabins hub;
       every other entry renders byte-identically to before. */
@@ -28,21 +35,90 @@ export interface RightToExistEntry {
     imageAlt: string;
     imageWidth: number;
     imageHeight: number;
-    subheading: string;
-    body: string;
+    /** PC-02 revision v1.2 (14 Aug 2026) — optional. The split layout is a mandatory
+        cluster design, but a page whose approved copy supplies no card sub-heading or
+        card body must render the panel without them rather than invent either. The hub
+        supplies both, so its markup is unchanged. */
+    subheading?: string;
+    body?: string;
+    /** PC-02 rulings v1.3 follow-up (14 Aug 2026) — render the section's two approved
+        paragraphs INSIDE the card's copy column, beside the image and above the CTA,
+        instead of full-width above the card. Default (absent) keeps the hub's deployed
+        stacking: paragraphs above, then the card. Layout only; not a word changes. */
+    copyInPanel?: boolean;
     ctaLabel: string;
     ctaHref: string;
-    /** PC-05 revision v1.3 (14 Aug 2026) — opt-in placement. Omitted (default)
-        renders the card after both lead paragraphs, unchanged for every
-        existing entry. 'betweenParagraphs' renders it between `body` and
-        `comparison`. 'comparisonInsideCard' (ad-hoc revision, 15 Aug 2026)
-        nests `comparison` inside the card itself, as its second paragraph
-        between `body` and the CTA — set only on fire-rated-porta-cabin. */
-    position?: 'end' | 'betweenParagraphs' | 'comparisonInsideCard';
+    /** PC-05 revision v1.3/v1.4 (R9, 14-15 Aug 2026) — opt-in placement.
+        Omitted (default) renders the card after both lead paragraphs,
+        unchanged for every existing entry. 'betweenParagraphs' renders the
+        COMPLETE card (image + heading + body + CTA, no extra slot) between
+        `body` and `comparison` — `comparison` stays outside the card, as
+        Section 2's closing paragraph. Set only on fire-rated-porta-cabin. */
+    position?: 'end' | 'betweenParagraphs';
   };
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  // PC-02 gi-porta-cabin — Section 2, DRAFT V4. Copy supplied by the owner on
+  // 14 Aug 2026 and wired verbatim; it supersedes the build prompt v1 §3 Section 2
+  // text and its S2_H2 / S2_P1 / S2_P2_visible checksums. Computed checksums for the
+  // new copy, for the record: H2 c08c9f4732c24523 · P1 ea08de68f769c864 ·
+  // P2 cadf6eff43212279 · P3 e474a52d0df7924d · P4 8e26265b762c80b8 ·
+  // CTA 89f209a72651c1d9.
+  //
+  // GAP: paragraph 1 contains one U+2014 em dash ("the conditions it will face—not
+  // simply out of habit"), which acceptance criterion 11.3 bans from rendered copy.
+  // It is carried VERBATIM rather than silently corrected, because editing approved
+  // copy is not the builder's call. Reported for a one-character ruling.
+  //
+  // Four uniformly styled paragraphs, so `bodyParagraphs` is used instead of the
+  // body-plus-bolded-comparison pair. The section 6 row-1 anchor (MS porta cabin) is
+  // preserved inside paragraph 3; the row-2 destination is now carried solely by the
+  // card CTA, whose label the new copy changes to "Get a GI porta cabin quote".
+  'gi-porta-cabin': {
+    heading: 'When a GI Porta Cabin Outperforms Painted Steel on Real-World Sites',
+    bodyParagraphs: [
+      (
+        <>
+          A GI porta cabin should be selected for the conditions it will face—not simply out of habit. On coastal sites within roughly 500 metres of the sea, beside cooling towers, inside persistently humid facilities, or near chemical storage areas, ordinary painted steel can deteriorate much sooner than expected. Once corrosion begins, repeated surface preparation and repainting add maintenance costs, disrupt operations, and reduce the cabin’s service life.
+        </>
+      ),
+      (
+        <>
+          A galvanized iron porta cabin offers stronger, longer-lasting corrosion protection. Its zinc coating acts sacrificially, meaning that even when the surface is scratched during transport, lifting, or daily site use, the surrounding zinc corrodes before the steel underneath. This makes a GI portable cabin a practical choice for coastal projects, industrial plants, construction sites, and other demanding environments where moisture and corrosive exposure cannot be avoided.
+        </>
+      ),
+      (
+        <>
+          For dry, inland locations, an <Link className={linkClass} href="https://www.samanportable.com/product/porta-cabins/ms-porta-cabin">MS porta cabin</Link> can often deliver the same reliable performance at a lower initial cost. Its IS 2062 structural frame can support the same platform electrics, quality checks, and office functions required for a dependable portable site office.
+        </>
+      ),
+      (
+        <>
+          Compare both options, then send us your site pin, exposure conditions, intended use, and preferred headcount. Our engineering team will recommend the right cabin specification and provide a fixed quotation within 48 hours.
+        </>
+      ),
+    ],
+    // Rulings v1.3 D1 — the split card's own image, no longer a re-used gallery file.
+    // A previously unselected 20x10 source, renamed at build, with the owner-written
+    // alt (checksum 979aa00ef7623d2a) carried verbatim. This is the page's 43rd image
+    // slot and it is hash-unique against the other 42.
+    //
+    // D2 — the CTA carries the section 6 row-2 destination. Draft v4 drops the inline
+    // contact anchor from the body copy, so /contact is now a single anchor on the
+    // page again, in the card CTA.
+    splitCard: {
+      imageSrc: '/images/products/gi-porta-cabin/section2/gi-porta-cabin-20x10-dark-grey-exterior.webp',
+      imageAlt: 'Dark grey corrugated GI porta cabin 20x10 ft with a central door and three sliding windows in a factory yard',
+      imageWidth: 1254,
+      imageHeight: 1254,
+      // Owner review of the v1.3 preview: the H2 and all four paragraphs belong beside
+      // the image and above the CTA, not stacked full-width on top of it.
+      copyInPanel: true,
+      ctaLabel: 'Get a GI porta cabin quote',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
   // C-05 container-cafe HUB — §5 of the 08 Aug draft of record, verbatim. The
   // comparison line's anchor is exactly the ruled §9 string; it is neither
   // extended nor shortened. No `appendix`: the draft supplies none.
@@ -323,6 +399,11 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
   // Ad-hoc revision (14 Aug 2026, owner screenshots) — `position:
   // 'betweenParagraphs'` moves the card between body and comparison; every
   // other entry above/below is untouched and keeps the default end position.
+  // PC-05 revision v1.4 (R9, 15 Aug 2026) — reverted the 15 Aug ad-hoc change
+  // that nested `comparison` inside the card; it regressed Section 2 to one
+  // prose paragraph and buried the /contact CTA under the gallery CTA. Back
+  // to `betweenParagraphs`: comparison renders outside, after the complete
+  // card, as the section's closing paragraph.
   'fire-rated-porta-cabin': {
     heading: 'When Your Project Fire Strategy Demands a Fire-Rated Cabin',
     body: (
@@ -344,7 +425,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       body: 'The fire-rated configuration sits on the same chassis, factory process and quality checks as every other SAMAN porta cabin. Browse completed projects from our Bengaluru and Greater Noida units to judge steelwork, openings and finish on real deliveries. Then bring your fire criteria to the quotation, where the tested systems are named.',
       ctaLabel: 'Explore the project gallery',
       ctaHref: '/gallery',
-      position: 'comparisonInsideCard',
+      position: 'betweenParagraphs',
     },
   },
   'steel-porta-cabin': {
