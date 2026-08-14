@@ -118,7 +118,7 @@ export const CLOSED_STATE = {
  * never from a marketing preference.
  */
 export const PRODUCT_STEP = [
-  { id: 'porta-cabin', name: 'Porta Cabin', description: 'Our standard modular cabin, nine published sizes.', platform: 'Newly fabricated' },
+  { id: 'porta-cabin', name: 'Porta Cabin', description: 'Our standard modular cabin, six published sizes.', platform: 'Newly fabricated' },
   { id: 'portable-cabin', name: 'Portable Cabin', description: 'General-purpose portable unit for site and storage use.', platform: 'Newly fabricated' },
   { id: 'office-cabin', name: 'Portable Office', description: 'Fitted workspace with electrical and interior finishes.', platform: 'Newly fabricated' },
   { id: 'container-office', name: 'Container Offices', description: 'Container-form office in insulated panel construction.', platform: 'Newly fabricated' },

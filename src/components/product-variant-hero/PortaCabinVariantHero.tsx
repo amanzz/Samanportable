@@ -239,6 +239,16 @@ interface PortaCabinVariantHeroProps {
   ratingCount: number;
   railItems: RelatedRailItem[];
   currentHref: string;
+  /** PC-00 (14 Aug 2026) — opt-in for the four `.saman-section-divider` rules.
+      Default false = byte-identical to today on every page. Pass true ONLY from
+      the page route that has been rebuilt to the divider spec (currently just
+      the porta-cabins hub); every sibling page using this shared component stays
+      unaffected until its own rewrite turns this on. */
+  showSectionDividers?: boolean;
+  /** R3 (14 Aug 2026) — opt-in brand-chip restyle of the size selector, plus its
+      eyebrow line. Same blast-radius rule as showSectionDividers: default false,
+      hub-only for now. */
+  usePremiumSizeTabs?: boolean;
 }
 
 // Star row for the review badge (Amendment G v2 — real rating: 4.6 from the 5
@@ -505,6 +515,8 @@ export function PortaCabinVariantHero({
   ratingCount,
   railItems,
   currentHref,
+  showSectionDividers = false,
+  usePremiumSizeTabs = false,
 }: PortaCabinVariantHeroProps) {
   const defaultIndex = Math.max(
     0,
@@ -765,7 +777,7 @@ export function PortaCabinVariantHero({
             className="flex w-full items-center justify-center gap-2 rounded-md border border-[var(--ds-color-leaf)] bg-white px-4 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:bg-[var(--ds-color-mist)]"
           >
             <Download className="h-4 w-4" aria-hidden="true" />
-            Download Specification PDF
+            {data.specPdfButtonLabel || 'Download Specification PDF'}
           </a>
           )}
         </div>
@@ -799,7 +811,8 @@ export function PortaCabinVariantHero({
               that is not the product noun. It is deliberately NOT `productName`: that
               value also feeds alts, aria-labels and the enquiry prefill, so a long
               marketing heading must not be routed through it. Absent everywhere today
-              except the C-05 subpages, so every other product renders byte-identically. */}
+              except the C-05 subpages and the porta-cabins hub, so every other product
+              renders byte-identically. */}
           <Heading className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">{data.h1 || data.productName || productTitle}</Heading>
           {/* Amendment G v2 — real rating badge: the computed 4.6 average of the 5
               SAMAN-verified reviews only (ratingCount 5). Matches the JSON-LD
@@ -815,20 +828,33 @@ export function PortaCabinVariantHero({
         </div>
 
         <div className="space-y-2">
-          <p className="text-sm font-semibold text-foreground">Choose size</p>
-          <div className="grid grid-cols-3 gap-2" role="group" aria-label={`Choose ${productNameLower} size`}>
+          {usePremiumSizeTabs ? (
+            <p className="text-sm font-semibold text-foreground">Choose your size — six factory-built options</p>
+          ) : (
+            <p className="text-sm font-semibold text-foreground">Choose size</p>
+          )}
+          {/* R20a (v1.5) — the HERO buy-box selector is the premium CHIP design
+              (pills). The SAP underline strip belongs to the Section 3 explorer,
+              not here; v1.4 had applied it to the wrong selector. */}
+          <div
+            className={usePremiumSizeTabs ? 'saman-size-chips' : 'grid grid-cols-3 gap-2'}
+            role="group"
+            aria-label={`Choose ${productNameLower} size`}
+          >
             {data.variants.map((v, i) => (
               <button
                 key={v.sizeSlug}
                 type="button"
                 aria-pressed={i === heroIndex}
                 onClick={() => selectHero(i)}
-                className={cn(
-                  'min-h-11 rounded-lg border px-2 py-2 text-sm font-semibold transition-colors',
-                  i === heroIndex
-                    ? 'bg-[var(--ds-color-leaf)] text-white border-[var(--ds-color-leaf)] shadow-sm'
-                    : 'bg-white text-foreground border-slate-200 hover:border-[var(--ds-color-leaf)]'
-                )}
+                className={usePremiumSizeTabs
+                  ? cn('saman-size-chip', i === heroIndex && 'active')
+                  : cn(
+                      'min-h-11 rounded-lg border px-2 py-2 text-sm font-semibold transition-colors',
+                      i === heroIndex
+                        ? 'bg-[var(--ds-color-leaf)] text-white border-[var(--ds-color-leaf)] shadow-sm'
+                        : 'bg-white text-foreground border-slate-200 hover:border-[var(--ds-color-leaf)]'
+                    )}
               >
                 {v.label}
                 {/* Quotation-mode products carry no price ladder, so the size
@@ -880,12 +906,25 @@ export function PortaCabinVariantHero({
             1280+:4L(84). All 9 share one height per tier, so size swaps are zero-CLS;
             every blurb fits with no truncation at 360/768/1024/1440. overflow-hidden
             is a safety net only (nothing is actually clipped at any width ≥320). */}
+        {/* R10 (14 Aug 2026) — an opener may contain a "\n\n" paragraph break;
+            each becomes its own <p>, same text, no rewrite. Single-paragraph
+            openers and the per-variant shortDescription fallback are unaffected. */}
         {(heroActive.shortDescription || data.opener) && (
-          <p className={data.opener
-            ? 'text-sm leading-[1.5] text-[var(--ds-color-steel)]'
-            : 'h-[126px] min-[360px]:h-[105px] sm:h-[63px] md:h-[42px] lg:h-[105px] xl:h-[84px] overflow-hidden text-sm leading-[1.5] text-[var(--ds-color-steel)]'}>
-            {rewriteC04VisiblePunctuation(data.opener || heroActive.shortDescription, data.productSlug)}
-          </p>
+          data.opener && data.opener.includes('\n\n') ? (
+            <div className="space-y-2">
+              {data.opener.split('\n\n').map((para, i) => (
+                <p key={i} className="text-sm leading-[1.5] text-[var(--ds-color-steel)]">
+                  {rewriteC04VisiblePunctuation(para, data.productSlug)}
+                </p>
+              ))}
+            </div>
+          ) : (
+            <p className={data.opener
+              ? 'text-sm leading-[1.5] text-[var(--ds-color-steel)]'
+              : 'h-[126px] min-[360px]:h-[105px] sm:h-[63px] md:h-[42px] lg:h-[105px] xl:h-[84px] overflow-hidden text-sm leading-[1.5] text-[var(--ds-color-steel)]'}>
+              {rewriteC04VisiblePunctuation(data.opener || heroActive.shortDescription, data.productSlug)}
+            </p>
+          )
         )}
 
         {/* Feature grid — 2-column bordered cells, small-caps gray labels, bold
@@ -954,7 +993,7 @@ export function PortaCabinVariantHero({
           className="flex w-full items-center justify-center gap-2 rounded-md border border-[var(--ds-color-leaf)] bg-white px-4 py-2 text-sm font-semibold text-[var(--ds-color-leaf)] transition-colors hover:bg-[var(--ds-color-mist)]"
         >
           <Download className="h-4 w-4" aria-hidden="true" />
-          {hasRightToExist ? 'Download Specification PDF' : 'Download specifications'}
+          {data.specPdfButtonLabel || (hasRightToExist ? 'Download Specification PDF' : 'Download specifications')}
         </a>
         )}
 
@@ -992,7 +1031,16 @@ export function PortaCabinVariantHero({
       <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}`
         + `.pc-hero-grid{display:block;}`
         + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-transcript{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rte{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
-        + `@media(min-width:1024px){.pc-hero-grid{display:grid;grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "transcript transcript transcript" "rte rte rte" "explorer explorer explorer";}.pc-hero-grid>.pc-rail{grid-area:rail;margin-top:0;}.pc-hero-grid>.pc-gallery{grid-area:gallery;}.pc-hero-grid>.pc-buybox{grid-area:buybox;margin-top:0;}.pc-hero-grid>.pc-transcript{grid-area:transcript;margin-top:0;}.pc-hero-grid>.pc-rte{grid-area:rte;margin-top:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;margin-top:0;}}` } } />
+        // PC-00 divider rows are inserted into grid-template-areas ONLY when
+        // showSectionDividers is on, so the areas string (and every sibling
+        // page that never sets the prop) stays byte-identical to before.
+        + `@media(min-width:1024px){.pc-hero-grid{display:grid;grid-template-columns:minmax(0,25fr) minmax(0,40fr) minmax(0,35fr);column-gap:1.5rem;row-gap:2rem;align-items:stretch;grid-template-areas:"rail gallery buybox" "transcript transcript transcript" `
+        + (showSectionDividers ? `"divider1 divider1 divider1" ` : ``)
+        + `"rte rte rte" `
+        + (showSectionDividers ? `"divider2 divider2 divider2" ` : ``)
+        + `"explorer explorer explorer";}.pc-hero-grid>.pc-rail{grid-area:rail;margin-top:0;}.pc-hero-grid>.pc-gallery{grid-area:gallery;}.pc-hero-grid>.pc-buybox{grid-area:buybox;margin-top:0;}.pc-hero-grid>.pc-transcript{grid-area:transcript;margin-top:0;}.pc-hero-grid>.pc-rte{grid-area:rte;margin-top:0;}.pc-hero-grid>.pc-explorer{grid-area:explorer;margin-top:0;}`
+        + (showSectionDividers ? `.pc-hero-grid>.pc-divider1{grid-area:divider1;margin-top:0;}.pc-hero-grid>.pc-divider2{grid-area:divider2;margin-top:0;}` : ``)
+        + `}` } } />
 
       {/* SINGLE responsive tree (V5 fix). Every piece — rail, gallery, buy box,
           explorer — is mounted EXACTLY ONCE; grid-template-areas (see <style>)
@@ -1036,10 +1084,18 @@ export function PortaCabinVariantHero({
           </details>
         )}
 
+        {showSectionDividers && hasRightToExist && (
+          <hr className="pc-divider1 saman-section-divider" aria-hidden="true" />
+        )}
+
         {hasRightToExist && (
           <div className="pc-rte">
             <RightToExist productSlug={data.productSlug} />
           </div>
+        )}
+
+        {showSectionDividers && hasRightToExist && applications && (
+          <hr className="pc-divider2 saman-section-divider" aria-hidden="true" />
         )}
 
         {/* Size Applications Explorer — full-width row below on desktop, third on
@@ -1060,6 +1116,7 @@ export function PortaCabinVariantHero({
             activeIndex={explorerIndex}
             onSelectTab={selectExplorer}
             onGetQuote={openQuote}
+            usePremiumSizeTabs={usePremiumSizeTabs}
           />
         </div>
         )}
@@ -1113,9 +1170,12 @@ interface SizeApplicationsExplorerProps {
   activeIndex: number;
   onSelectTab: (index: number) => void;
   onGetQuote: (index: number) => void;
+  /** R20b (v1.5) — opt-in SAP-style tab strip for this section. Default false
+      keeps every other product's strip byte-identical. */
+  usePremiumSizeTabs?: boolean;
 }
 
-function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote }: SizeApplicationsExplorerProps) {
+function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false }: SizeApplicationsExplorerProps) {
   // T25 — HARD NULL. The per-slug applications copy is owner-authored; when a
   // product has none this section renders NOTHING. It must never fall back to the
   // porta-cabins copy.
@@ -1154,8 +1214,17 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
       )}
 
       {/* Tab strip — horizontal, scrollable on mobile; selected = leaf underline
-          + forest text (homepage PopularSizes design language). */}
-      <div role="tablist" aria-label={`${sentenceCase(productName)} sizes`} className="flex gap-1 overflow-x-auto border-b border-[var(--ds-color-border)]">
+          + forest text (homepage PopularSizes design language).
+          R20b (v1.5): opt-in SAP-style strip (white ground, brand-green label,
+          3px green underline). This section is full-page-width, so all six tabs
+          sit in one row on desktop. Keyboard/ARIA behaviour is unchanged. */}
+      <div
+        role="tablist"
+        aria-label={`${sentenceCase(productName)} sizes`}
+        className={usePremiumSizeTabs
+          ? 'saman-size-tabs'
+          : 'flex gap-1 overflow-x-auto border-b border-[var(--ds-color-border)]'}
+      >
         {data.variants.map((v, i) => {
           const selected = i === activeIndex;
           return (
@@ -1167,12 +1236,14 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               aria-controls={`app-panel-${v.sizeSlug}`}
               id={`app-tab-${v.sizeSlug}`}
               onClick={() => onSelectTab(i)}
-              className={cn(
-                '-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition-colors',
-                selected
-                  ? 'border-[var(--ds-color-leaf)] text-[var(--ds-color-forest)]'
-                  : 'border-transparent text-[var(--ds-color-steel)] hover:text-[var(--ds-color-forest)]'
-              )}
+              className={usePremiumSizeTabs
+                ? cn('saman-size-tab', selected && 'active')
+                : cn(
+                    '-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition-colors',
+                    selected
+                      ? 'border-[var(--ds-color-leaf)] text-[var(--ds-color-forest)]'
+                      : 'border-transparent text-[var(--ds-color-steel)] hover:text-[var(--ds-color-forest)]'
+                  )}
             >
               {panelBySlug.get(v.sizeSlug)?.tabLabel || v.label}
             </button>
