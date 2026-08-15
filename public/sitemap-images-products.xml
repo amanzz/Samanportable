@@ -51,10 +51,6 @@
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.samanportable.com/portable-cabin-price-calculator</loc>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://www.samanportable.com/product</loc>
     <image:image><image:loc>https://www.samanportable.com/images/puf-panel/cold-storage/100mm-dairy-cold-storage-room-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/puf-panel/house/puf-panel-house-installation-wall-roof.webp</image:loc></image:image>
@@ -1926,7 +1922,6 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/red-porta-cabin-office-exterior.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/gi-porta-cabin/10x10/galvanized-iron-modular-cabin-10x10-grey-profile.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/gi-porta-cabin/10x10/galvanized-iron-porta-cabin-10x10-interior-office.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/gi-porta-cabin/10x10/galvanized-iron-prefab-cabin-10x10-blue-saman-portable.webp</image:loc></image:image>
@@ -1977,6 +1972,7 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/ms-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-shop-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-with-toilet-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabins-range-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/puf-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/skid-mounted-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/soundproof-porta-cabin-card.webp</image:loc></image:image>
@@ -2037,190 +2033,16 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/knock-down-porta-cabin/diagrams/kd-diagram-envelope-services.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/knock-down-porta-cabin/diagrams/kd-diagram-exploded-assembly.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/knock-down-porta-cabin/section2/kd-section2-card-exterior-graphite-20x10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/double-story-porta-cabin-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/fire-rated-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/gi-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/ms-porta-cabin-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-shop-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-with-toilet-card.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/porta-cabins/low-cost-porta-cabin</loc>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/luxury-porta-cabin-interior-dark-workstations.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/mini-porta-cabin-exterior-orange-bangalore.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/ms-porta-cabin-exterior-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-exterior-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-shop-interior-premium-wooden.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-with-toilet-exterior-red.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/portacabin-office-exterior-dual-door.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/red-porta-cabin-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/10x10/low-cost-porta-cabin-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x10/low-cost-porta-cabin-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x12/low-cost-porta-cabin-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x20/low-cost-porta-cabin-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/20x8/low-cost-porta-cabin-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/30x10/low-cost-porta-cabin-30x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-end-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x10/low-cost-porta-cabin-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x12/low-cost-porta-cabin-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/low-cost-porta-cabin/40x8/low-cost-porta-cabin-40x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/porta-cabins/luxury-porta-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modern-container-style-house-with-pergola.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modern-garden-with-blue-shipping-container.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modern-modular-building-at-dusk.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modern-office-with-dark-wood-furniture.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modern-olive-building-with-landscaped-yard.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/low-cost-porta-cabin-red-white-side.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/mini-porta-cabin-exterior-orange-bangalore.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/ms-porta-cabin-exterior-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-exterior-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-shop-interior-premium-wooden.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-with-toilet-exterior-red.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/portacabin-office-exterior-dual-door.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/red-porta-cabin-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/10x10/luxury-porta-cabin-10x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/10x10/luxury-porta-cabin-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/10x10/luxury-porta-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/10x10/luxury-porta-cabin-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/10x10/luxury-porta-cabin-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x10/luxury-porta-cabin-20x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x10/luxury-porta-cabin-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x10/luxury-porta-cabin-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x10/luxury-porta-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x10/luxury-porta-cabin-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x10/luxury-porta-cabin-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x12/luxury-porta-cabin-20x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x12/luxury-porta-cabin-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x12/luxury-porta-cabin-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x12/luxury-porta-cabin-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x12/luxury-porta-cabin-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x20/luxury-porta-cabin-20x20-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x20/luxury-porta-cabin-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x20/luxury-porta-cabin-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x20/luxury-porta-cabin-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x20/luxury-porta-cabin-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x8/luxury-porta-cabin-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x8/luxury-porta-cabin-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x8/luxury-porta-cabin-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x8/luxury-porta-cabin-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/20x8/luxury-porta-cabin-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/30x10/luxury-porta-cabin-30x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/30x10/luxury-porta-cabin-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/30x10/luxury-porta-cabin-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/30x10/luxury-porta-cabin-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/30x10/luxury-porta-cabin-30x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x10/luxury-porta-cabin-40x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x10/luxury-porta-cabin-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x10/luxury-porta-cabin-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x10/luxury-porta-cabin-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x10/luxury-porta-cabin-40x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x12/luxury-porta-cabin-40x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x12/luxury-porta-cabin-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x12/luxury-porta-cabin-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x12/luxury-porta-cabin-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x12/luxury-porta-cabin-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x8/luxury-porta-cabin-40x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x8/luxury-porta-cabin-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x8/luxury-porta-cabin-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x8/luxury-porta-cabin-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-porta-cabin/40x8/luxury-porta-cabin-40x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/porta-cabins/mini-porta-cabin</loc>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/low-cost-porta-cabin-red-white-side.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/luxury-porta-cabin-interior-dark-workstations.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/ms-porta-cabin-exterior-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-exterior-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-shop-interior-premium-wooden.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-with-toilet-exterior-red.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/portacabin-office-exterior-dual-door.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/red-porta-cabin-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/10x10/mini-porta-cabin-10x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/10x10/mini-porta-cabin-10x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/10x10/mini-porta-cabin-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/10x10/mini-porta-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/10x10/mini-porta-cabin-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/10x10/mini-porta-cabin-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x10/mini-porta-cabin-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x10/mini-porta-cabin-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x10/mini-porta-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x10/mini-porta-cabin-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x10/mini-porta-cabin-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x12/mini-porta-cabin-20x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x12/mini-porta-cabin-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x12/mini-porta-cabin-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x12/mini-porta-cabin-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x12/mini-porta-cabin-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x8/mini-porta-cabin-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x8/mini-porta-cabin-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x8/mini-porta-cabin-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x8/mini-porta-cabin-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/mini-porta-cabin/20x8/mini-porta-cabin-20x8-workspace-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabins-range-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/puf-porta-cabin-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/skid-mounted-porta-cabin-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/soundproof-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -2290,6 +2112,7 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/knock-down-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-shop-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-with-toilet-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabins-range-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/puf-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/skid-mounted-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/soundproof-porta-cabin-card.webp</image:loc></image:image>
@@ -2354,6 +2177,7 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/knock-down-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/ms-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-with-toilet-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabins-range-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/puf-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/skid-mounted-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/soundproof-porta-cabin-card.webp</image:loc></image:image>
@@ -2422,82 +2246,9 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/ms-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-shop-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabins-range-card.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/portable-toilet-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/puf-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/skid-mounted-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/soundproof-porta-cabin-card.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/porta-cabins/portacabin-office</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modern-portacabin-office-in-autumnpark.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portacabin-office-in-a-green-garden.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portacabin-office-with-glass-doors.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portacabin-office-with-minimal-landscaping.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portacabin-office-with-sleek-architecture.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/low-cost-porta-cabin-red-white-side.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/luxury-porta-cabin-interior-dark-workstations.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/mini-porta-cabin-exterior-orange-bangalore.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/ms-porta-cabin-exterior-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-exterior-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-shop-interior-premium-wooden.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-with-toilet-exterior-red.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/red-porta-cabin-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/10x10/porta-cabin-office-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x10/porta-cabin-office-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x12/porta-cabin-office-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x20/porta-cabin-office-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/20x8/porta-cabin-office-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/30x10/porta-cabin-office-30x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x10/porta-cabin-office-40x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x12/porta-cabin-office-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabin-office/40x8/porta-cabin-office-40x8-workspace-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -2518,6 +2269,7 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/ms-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-shop-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabin-with-toilet-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/porta-cabins-range-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/skid-mounted-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/soundproof-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/puf-porta-cabin/10x10/puf-porta-cabin-10x10-01-main-exterior.webp</image:loc></image:image>
@@ -2564,548 +2316,6 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/puf-porta-cabin/description/puf-porta-cabin-yellow-exterior-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/puf-porta-cabin/diagrams/puf-porta-cabin-diagram-1.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/puf-porta-cabin/diagrams/puf-porta-cabin-diagram-2.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/porta-cabins/steel-porta-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/cozy-woodland-tiny-home-retreat.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/industrial-office-container-with-tech-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/off-grid-sanctuary-in-nature-embrace.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/low-cost-porta-cabin-red-white-side.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/luxury-porta-cabin-interior-dark-workstations.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/mini-porta-cabin-exterior-orange-bangalore.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/ms-porta-cabin-exterior-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-shop-interior-premium-wooden.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/porta-cabin-with-toilet-exterior-red.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/portacabin-office-exterior-dual-door.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/porta-cabins/red-porta-cabin-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/10x10/steel-porta-cabin-10x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/10x10/steel-porta-cabin-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/10x10/steel-porta-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/10x10/steel-porta-cabin-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/10x10/steel-porta-cabin-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x10/steel-porta-cabin-20x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x10/steel-porta-cabin-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x10/steel-porta-cabin-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x10/steel-porta-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x10/steel-porta-cabin-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x10/steel-porta-cabin-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x12/steel-porta-cabin-20x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x12/steel-porta-cabin-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x12/steel-porta-cabin-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x12/steel-porta-cabin-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x12/steel-porta-cabin-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x20/steel-porta-cabin-20x20-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x20/steel-porta-cabin-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x20/steel-porta-cabin-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x20/steel-porta-cabin-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x20/steel-porta-cabin-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x8/steel-porta-cabin-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x8/steel-porta-cabin-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x8/steel-porta-cabin-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x8/steel-porta-cabin-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/20x8/steel-porta-cabin-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/30x10/steel-porta-cabin-30x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/30x10/steel-porta-cabin-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/30x10/steel-porta-cabin-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/30x10/steel-porta-cabin-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/30x10/steel-porta-cabin-30x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x10/steel-porta-cabin-40x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x10/steel-porta-cabin-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x10/steel-porta-cabin-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x10/steel-porta-cabin-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x10/steel-porta-cabin-40x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x12/steel-porta-cabin-40x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x12/steel-porta-cabin-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x12/steel-porta-cabin-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x12/steel-porta-cabin-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x12/steel-porta-cabin-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x8/steel-porta-cabin-40x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x8/steel-porta-cabin-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x8/steel-porta-cabin-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x8/steel-porta-cabin-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/steel-porta-cabin/40x8/steel-porta-cabin-40x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/exterior-shot-of-the-portable-cabin.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/portable-cabin-product-video-poster.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/10x10/portable-cabin-10x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/10x10/portable-cabin-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/10x10/portable-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/10x10/portable-cabin-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/10x10/portable-cabin-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x12/portable-cabin-20x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x12/portable-cabin-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x12/portable-cabin-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x12/portable-cabin-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x12/portable-cabin-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x20/portable-cabin-20x20-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x20/portable-cabin-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x20/portable-cabin-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x20/portable-cabin-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x20/portable-cabin-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x8/portable-cabin-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x8/portable-cabin-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x8/portable-cabin-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x8/portable-cabin-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x8/portable-cabin-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/30x10/portable-cabin-30x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/30x10/portable-cabin-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/30x10/portable-cabin-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/30x10/portable-cabin-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/30x10/portable-cabin-30x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x10/portable-cabin-40x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x10/portable-cabin-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x10/portable-cabin-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x10/portable-cabin-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x10/portable-cabin-40x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x12/portable-cabin-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x12/portable-cabin-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x12/portable-cabin-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x12/portable-cabin-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x8/portable-cabin-40x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x8/portable-cabin-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x8/portable-cabin-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x8/portable-cabin-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/40x8/portable-cabin-40x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/buy-portable-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-exterior-back.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-exterior-front.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-green-landscape.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-light-wood-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-office-in-daylight.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-retreat.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-white-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/buy-portable-cabin-with-greenery.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/container-portable-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-front-door.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-in-sunny-lot.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-in-tidy-industrial-yard.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-industrial-yard.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-meeting-room.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-single-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/container-portable-cabin-workstations.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/temporary-siteoffice-on-construction-lot.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/modular-portable-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modular-office-park-in-city.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modular-portabe-cabin-with-glowing-interior-details.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modular-portabe-cabin-with-lush-greenery.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modular-portabe-cabin-with-sleek-design.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modular-portable-cabin-conference-room.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modular-portable-cabin-meeting-room.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modular-portable-cabin-office-sofa.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modular-portable-cabin-workstations.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/ms-portable-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/construction-site-with-ms-portable-cabin.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/hospital-entrance-with-ms-portable-cabin.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/logistics-facility-with-ms-portable-cabin.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-blue-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-by-schoolyard.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-carnival-backdrop.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-dual-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-light-grey-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/ms-portable-cabin-orange-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/office-portable-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modular-office-portable-cabin-in-daylight.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-conference-room.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-glass-front.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-in-daylight.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-in-leafy-setting.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-meeting-room.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-with-greenery.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/office-portable-cabin-workstation.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/portable-cabin-building</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/orange-container-building-with-landscaping.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-backside-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-exterior-side.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-interior-lounge.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-reception-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-with-garden-setting.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-building-with-glass-door.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/purple-container-home-in-nature.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/portable-cabin-with-toilet</loc>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/10x10/portable-cabin-with-toilet-10x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/10x10/portable-cabin-with-toilet-10x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/10x10/portable-cabin-with-toilet-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/10x10/portable-cabin-with-toilet-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/10x10/portable-cabin-with-toilet-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/10x10/portable-cabin-with-toilet-10x10-space-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-space-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x12/portable-cabin-with-toilet-20x12-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x12/portable-cabin-with-toilet-20x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x12/portable-cabin-with-toilet-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x12/portable-cabin-with-toilet-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x12/portable-cabin-with-toilet-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x12/portable-cabin-with-toilet-20x12-space-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x20/portable-cabin-with-toilet-20x20-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x20/portable-cabin-with-toilet-20x20-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x20/portable-cabin-with-toilet-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x20/portable-cabin-with-toilet-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x20/portable-cabin-with-toilet-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x20/portable-cabin-with-toilet-20x20-space-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x8/portable-cabin-with-toilet-20x8-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x8/portable-cabin-with-toilet-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x8/portable-cabin-with-toilet-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x8/portable-cabin-with-toilet-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x8/portable-cabin-with-toilet-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x8/portable-cabin-with-toilet-20x8-space-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/30x10/portable-cabin-with-toilet-30x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/30x10/portable-cabin-with-toilet-30x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/30x10/portable-cabin-with-toilet-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/30x10/portable-cabin-with-toilet-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/30x10/portable-cabin-with-toilet-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/30x10/portable-cabin-with-toilet-30x10-space-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x10/portable-cabin-with-toilet-40x10-space-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x12/portable-cabin-with-toilet-40x12-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x12/portable-cabin-with-toilet-40x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x12/portable-cabin-with-toilet-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x12/portable-cabin-with-toilet-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x12/portable-cabin-with-toilet-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x12/portable-cabin-with-toilet-40x12-space-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x8/portable-cabin-with-toilet-40x8-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x8/portable-cabin-with-toilet-40x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x8/portable-cabin-with-toilet-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x8/portable-cabin-with-toilet-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x8/portable-cabin-with-toilet-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/40x8/portable-cabin-with-toilet-40x8-space-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/portable-shop-cabin</loc>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x10/portable-shop-cabin-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x10/portable-shop-cabin-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x10/portable-shop-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x10/portable-shop-cabin-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x10/portable-shop-cabin-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x12/portable-shop-cabin-20x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x12/portable-shop-cabin-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x12/portable-shop-cabin-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x12/portable-shop-cabin-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x12/portable-shop-cabin-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x20/portable-shop-cabin-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x8/portable-shop-cabin-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x8/portable-shop-cabin-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x8/portable-shop-cabin-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x8/portable-shop-cabin-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/20x8/portable-shop-cabin-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/30x10/portable-shop-cabin-30x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/30x10/portable-shop-cabin-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/30x10/portable-shop-cabin-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/30x10/portable-shop-cabin-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/30x10/portable-shop-cabin-30x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x10/portable-shop-cabin-40x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x10/portable-shop-cabin-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x10/portable-shop-cabin-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x10/portable-shop-cabin-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x10/portable-shop-cabin-40x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x12/portable-shop-cabin-40x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x12/portable-shop-cabin-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x12/portable-shop-cabin-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x12/portable-shop-cabin-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x12/portable-shop-cabin-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x8/portable-shop-cabin-40x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x8/portable-shop-cabin-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x8/portable-shop-cabin-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x8/portable-shop-cabin-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/40x8/portable-shop-cabin-40x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/prefabricated-portable-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-cabin-interior-blue-ac.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-portable-cabin-dark-finish.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-portable-cabin-dual-entry.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-portable-cabin-in-industrial-yard.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-portable-cabin-in-sunny-yard.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-portable-cabin-space.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-portable-cabin-with-natural-light.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-portable-office-wooden-finish.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/portable-cabin/small-portable-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/small-portable-cabin-blue-side-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/small-portable-cabin-by-rural-lot.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/small-portable-cabin-dual-workstation.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/small-portable-cabin-in-industrial-yard.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/small-portable-cabin-in-nature.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/small-portable-cabin-outdoor-storage-yard.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/small-portable-cabin-with-greenery.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/small-portable-cabin-wooden-interior-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/small-portable-cabin-yellow-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/buy-portable-cabin-dark-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/container-portable-cabin-3-windows.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/modular-portable-cabin-glass-office.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/ms-portable-cabin-wooden-interior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/office-portable-cabin-lounge-area.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/portable-cabin-building-front-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/prefabricated-portable-cabin-red-base.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/portable-cabin/small-portable-cabin-manager-office-setup.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin-with-toilet/20x10/portable-cabin-with-toilet-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-cabin/20x10/portable-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/portable-shop-cabin/10x10/portable-shop-cabin-10x10-hero-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -4080,7 +3290,6 @@
     <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-house-living-room-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/bunkhouse-cabin-hero-forest-green-20x20-1.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/porta-cabin-house-hero-sandstone-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/portable-cabin-house-sage-green-hero.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefab-site-office-hero-navy-blue.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-bunkhouse-hero-forest-green.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-house-white-front-view.webp</image:loc></image:image>
@@ -4100,7 +3309,6 @@
     <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/bunkhouse-cabin-side-steel-blue-20x20-1.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/bunkhouse-cabin-hero-forest-green-20x20-1.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/porta-cabin-house-hero-sandstone-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/portable-cabin-house-sage-green-hero.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefab-site-office-hero-navy-blue.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-bunkhouse-hero-forest-green.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-house-white-front-view.webp</image:loc></image:image>
@@ -4120,27 +3328,6 @@
     <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/porta-cabin-house-wall-panel-detail-steel-blue.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/bunkhouse-cabin-hero-forest-green-20x20-1.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/porta-cabin-house-hero-sandstone-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/portable-cabin-house-sage-green-hero.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefab-site-office-hero-navy-blue.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-bunkhouse-hero-forest-green.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-house-white-front-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/saman-prefab-office-hero-navy-blue.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/prefabricated-houses/portable-cabin-house</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-house-delivery-placement-pure-white.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-house-front-sandstone-beige-200sqft.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-house-interior-comfort-warm-taupe.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-house-pure-white-interior-living.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-house-residential-plot-sage-green.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-house-sage-green-panel-detail.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-house-sandstone-beige-side.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-house-two-sizes-sage-green-comparison.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/portable-cabin-house-warm-taupe-front.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/bunkhouse-cabin-hero-forest-green-20x20-1.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/porta-cabin-house-hero-sandstone-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/portable-cabin-house-sage-green-hero.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefab-site-office-hero-navy-blue.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-bunkhouse-hero-forest-green.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-house-white-front-view.webp</image:loc></image:image>
@@ -4160,7 +3347,6 @@
     <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefab-site-office-side-steel-grey.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/bunkhouse-cabin-hero-forest-green-20x20-1.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/porta-cabin-house-hero-sandstone-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/portable-cabin-house-sage-green-hero.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefab-site-office-hero-navy-blue.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-bunkhouse-hero-forest-green.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-house-white-front-view.webp</image:loc></image:image>
@@ -4180,7 +3366,6 @@
     <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/prefabricated-bunkhouse-transmission-spread-dusk.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/bunkhouse-cabin-hero-forest-green-20x20-1.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/porta-cabin-house-hero-sandstone-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/portable-cabin-house-sage-green-hero.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefab-site-office-hero-navy-blue.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-bunkhouse-hero-forest-green.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-house-white-front-view.webp</image:loc></image:image>
@@ -4200,7 +3385,6 @@
     <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/saman-prefab-office-startup-plot-orange.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/bunkhouse-cabin-hero-forest-green-20x20-1.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/porta-cabin-house-hero-sandstone-beige.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/portable-cabin-house-sage-green-hero.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefab-site-office-hero-navy-blue.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-bunkhouse-hero-forest-green.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/prefabricated-houses/prefabricated-house-white-front-view.webp</image:loc></image:image>

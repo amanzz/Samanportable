@@ -267,35 +267,44 @@ export const PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH = (slug: string) =>
  */
 export const PORTA_CABIN_CLUSTER_SLUGS: readonly string[] = [
   'ms-porta-cabin',
-  'steel-porta-cabin',
-  'luxury-porta-cabin',
-  'mini-porta-cabin',
-  'portacabin-office',
   'porta-cabin-shop',
   'porta-cabin-with-toilet',
-  'low-cost-porta-cabin',
 ];
 
-/** 301'd slugs — never railed. */
+/**
+ * 301'd slugs, never railed.
+ *
+ * Phase 1 (SAMAN approval, 15 Aug 2026) moved five slugs here from the cluster list
+ * above: steel, luxury, mini and low-cost, plus portacabin-office. All five now 301,
+ * and a rail must never link to a redirect.
+ *
+ * Known gap, deliberately not closed in this release: the seven newer approved pages
+ * (gi, double-story, fire-rated, soundproof, puf, skid-mounted, knock-down) have never
+ * been in this rail. Adding them changes what the rail renders on every cluster page,
+ * which is a visible content change and belongs to its own ticket with approved anchors.
+ */
 export const PORTA_CABIN_REDIRECTED_SLUGS: readonly string[] = [
   'toilet-porta-cabins',
   'buy-porta-cabins',
   'small-portacabin',
   'porta-cabin-office',
   'prefabricated-porta-cabin',
+  'steel-porta-cabin',
+  'luxury-porta-cabin',
+  'mini-porta-cabin',
+  'portacabin-office',
+  'low-cost-porta-cabin',
 ];
 
 export const isPortaCabinStripSlug = (slug: string): boolean =>
   PORTA_CABIN_CLUSTER_SLUGS.includes(slug);
 
+// Keyed by the slug of the page that renders the anchor. Phase 1 removed the five
+// entries whose page now 301s (low-cost, luxury, steel, mini, portacabin-office):
+// those keys are unreachable once the redirect is live.
 const C01_HUB_RETURN_ANCHORS: Record<string, string> = {
-  'low-cost-porta-cabin': 'the full cabin range and its standard specification',
-  'luxury-porta-cabin': 'our complete range of factory-built cabins',
-  'steel-porta-cabin': 'the standard cabin build',
   'porta-cabin-with-toilet': 'the standard cabin without sanitary provision',
   'porta-cabin-shop': 'see how the base cabin is specified',
-  'mini-porta-cabin': 'all nine standard cabin sizes',
-  'portacabin-office': 'the wider cabin range',
   'ms-porta-cabin': 'the standard reference specification',
 };
 

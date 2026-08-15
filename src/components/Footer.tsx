@@ -60,7 +60,9 @@ const HOMEPAGE_POPULAR_RESOURCE_LINKS = [
 
 const PRODUCT_CATEGORIES = [
   { label: "Porta Cabin", href: "/product/porta-cabins" },
-  { label: "Portable Cabin", href: "/product/portable-cabin" },
+  // Phase 1 (15 Aug 2026): 'Portable Cabin' deleted, not re-pointed. It 301s
+  // into /product/porta-cabins, the entry directly above, so a re-point would
+  // duplicate the label sitewide. Same fix as the Header mega-menu.
   { label: "Portable Office Cabin", href: "/product/portable-office" },
   { label: "Container Office", href: "/product/container-offices" },
   { label: "Container Cafe", href: "/product/container-cafe" },

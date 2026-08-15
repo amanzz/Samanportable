@@ -173,6 +173,111 @@ const nextConfig = {
 
     const redirects = [
       ...customProductDuplicateRedirects,
+
+      // ==================================================================
+      // PHASE 1 PORTA CABIN REDIRECT CONSOLIDATION (SAMAN approval, 15 Aug 2026).
+      //
+      // 125 one-hop 301 rules total: 86 new literals below, plus 39 existing
+      // literals re-pointed in place further down this file. Placed FIRST in the
+      // array so first-match-wins over ...csvRedirects and over every stale rule,
+      // which is this file's established pattern.
+      //
+      // Targets are the 11 approved Porta Cabin pages, plus ONE owner-approved
+      // exception: /product/prefabricated-houses/porta-cabin-house, the surviving
+      // house URL. Residential intent must not land in a commercial sale hub.
+      //
+      // Verified before commit: unique sources, no chain (no target is a source),
+      // no loop, all 301, and no Phase 2 / rental / calculator URL present.
+      // ==================================================================
+      // P0 - mandated variant consolidation
+      { source: '/product/porta-cabins/low-cost-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabins/luxury-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabins/mini-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabins/portacabin-office', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabins/steel-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
+      // P1 - Portable Cabin owner override and owner rulings
+      { source: '/cheap-porta-cabins-for-sale', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product-category/portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/portable-cabin/buy-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/portable-cabin/container-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/portable-cabin/modular-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/portable-cabin/ms-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
+      { source: '/product/portable-cabin/office-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/portable-cabin/portable-cabin-building', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/portable-cabin/portable-cabin-with-toilet', destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet', statusCode: 301 },
+      { source: '/product/portable-cabin/portable-shop-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-shop', statusCode: 301 },
+      { source: '/product/portable-cabin/prefabricated-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/portable-cabin/small-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/prefabricated-houses/portable-cabin-house', destination: 'https://www.samanportable.com/product/prefabricated-houses/porta-cabin-house', statusCode: 301 },
+      // P2 - flattening: these already redirected, their target now retires
+      { source: '/2-story-portable-cabins-affordable-solutions', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/cabin-styles', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/cabins-on-wheels-benefits-and-options', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/cabins-portable-features-benefits-overview', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/contemporary-cabin-design', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/cost-of-portable-cabins-guide-2024', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/creative-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/custom-portable-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/custom-portable-cabins-manufacturer', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/designs-and-plans-of-portable-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/eco-friendly-portable-cabins-delhi', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/elegant-rustic-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/frp-cabin-price', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/gi-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/gi-porta-cabin', statusCode: 301 },
+      { source: '/here-is-why-you-should-own-a-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/indian-portable-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/insulated-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/is-portable-cabins-useful-for-a-project', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/luxury-portable-cabins-for-sale', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/metal-portable-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/mini-portable-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/mobile-cabin-for-sale', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/modern-cabin-house', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/modern-cabin-styles', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/modern-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/modern-portable-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/ms-portable-cabin-for-sale', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
+      { source: '/pop-up-cabin-benefits-flexible-affordable', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabin-designs', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabin-for-construction-sites', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabin-installation-services', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabin-manufacturer', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabin-price-2024-guide', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabin-price-in-india', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabin-second-hand', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabin-solutions', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabin-with-bathroom', destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet', statusCode: 301 },
+      { source: '/portable-cabins-advantages', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-for-office-use', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-in-basavanagudi', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-healthcare-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-site-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-site-cabins-2', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/pre-built-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/pre-built-small-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/prefabricated-portable-cabins-in-2024', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/prefabricated-portable-cabins-india', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/price-difference-of-portable-cabins-in-metro-cities', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/quick-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/site-preparation-for-portable-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/small-cabin-design-tips', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/small-cabin-pictures-inspiration', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/small-mobile-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/small-modern-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/small-wood-cabin-benefits-features', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/stay-in-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/styles-of-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/sustainable-portable-cabin-solutions', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/temporary-site-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/tiny-cabin-homes-overview-and-benefits', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/tiny-wood-cabins-sustainable-living-options', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/top-8-designs-of-prefab-portable-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/top-portable-cabin-supplier', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/top-portable-cabins-for-your-needs', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/types-of-portable-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/types-of-portable-cabins-guide-2024', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/used-portable-cabin-delhi', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       // C01 retirement and singular-namespace closure (Fable 5 + SAMAN,
       // 27 Jul 2026). Keep every literal rule before the catch-all so the
       // self-slug alias lands directly on the hub instead of chaining through
@@ -180,16 +285,16 @@ const nextConfig = {
       // non-slash HTTP-200 canonicals.
       { source: '/product/porta-cabins/buy-porta-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/product/porta-cabins/prefabricated-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
-      { source: '/product/porta-cabins/porta-cabin-office', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', statusCode: 301 },
-      { source: '/product/porta-cabins/small-portacabin', destination: 'https://www.samanportable.com/product/porta-cabins/mini-porta-cabin', statusCode: 301 },
+      { source: '/product/porta-cabins/porta-cabin-office', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabins/small-portacabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/product/porta-cabins/toilet-porta-cabins', destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet', statusCode: 301 },
 
-      { source: '/product/luxury-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/luxury-porta-cabin', statusCode: 301 },
-      { source: '/product/low-cost-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/low-cost-porta-cabin', statusCode: 301 },
-      { source: '/product/steel-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/steel-porta-cabin', statusCode: 301 },
+      { source: '/product/luxury-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/low-cost-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/steel-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
       { source: '/product/porta-cabin-shop', destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-shop', statusCode: 301 },
       { source: '/product/buy-porta-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
-      { source: '/product/porta-cabin-office', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', statusCode: 301 },
+      { source: '/product/porta-cabin-office', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/product/prefabricated-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
 
       { source: '/product/porta-cabin/ms-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
@@ -232,19 +337,19 @@ const nextConfig = {
       { source: '/porta-cabin-cost-per-square-foot', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', statusCode: 301 },
       { source: '/porta-cabin-price-in-india', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', statusCode: 301 },
       { source: '/porta-cabin-costs-2024-guide', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', statusCode: 301 },
-      { source: '/porta-cabin-office-price', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', statusCode: 301 },
+      { source: '/porta-cabin-office-price', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/porta-cabins-under-4-lakhs', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', statusCode: 301 },
       { source: '/porta-cabins-under-5-lakhs', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', statusCode: 301 },
       { source: '/porta-cabins-under-6-lakhs', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', statusCode: 301 },
 
-      { source: '/product/porta-cabin/low-cost-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/low-cost-porta-cabin', statusCode: 301 },
-      { source: '/product/porta-cabin/luxury-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/luxury-porta-cabin', statusCode: 301 },
-      { source: '/product/porta-cabin/mini-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/mini-porta-cabin', statusCode: 301 },
-      { source: '/product/porta-cabin/portacabin-office', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', statusCode: 301 },
+      { source: '/product/porta-cabin/low-cost-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabin/luxury-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabin/mini-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/product/porta-cabin/portacabin-office', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/product/porta-cabin/porta-cabins', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/product/porta-cabin/porta-cabin-shop', destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-shop', statusCode: 301 },
       { source: '/product/porta-cabin/porta-cabin-with-toilet', destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet', statusCode: 301 },
-      { source: '/product/porta-cabin/steel-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/steel-porta-cabin', statusCode: 301 },
+      { source: '/product/porta-cabin/steel-porta-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
 
       // Safety net for future, previously unenumerated aliases. Literal rules
       // above always win, especially /product/porta-cabin/porta-cabins.
@@ -408,8 +513,8 @@ const nextConfig = {
       // Blog to product page redirect
       {
         source: '/luxury-porta-cabins-your-portable-oasis-of-comfort-and-style',
-        destination: 'https://www.samanportable.com/product/porta-cabins/luxury-porta-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
 
       // NEW REDIRECTS FROM BROKEN LINKS LIST - 301 REDIRECTS
@@ -430,8 +535,8 @@ const nextConfig = {
       },
       {
         source: '/project/portable-cabins-manufacturer',
-        destination: 'https://www.samanportable.com/product/portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/project/industrial-shed-manufacturer',
@@ -455,8 +560,8 @@ const nextConfig = {
       },
       {
         source: '/products/portable-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/products/mobile-toilet',
@@ -530,8 +635,8 @@ const nextConfig = {
       },
       {
         source: '/project/portable-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/labour-camps-in-noida',
@@ -839,13 +944,13 @@ const nextConfig = {
       // Destinations are slash-less (trailingSlash:false). No CMS recategorisation here.
       {
         source: '/product/uncategorized/office-portable-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin/office-portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/product/uncategorized/small-portable-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin/small-portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/product/uncategorized/mobile-office-container',
@@ -854,8 +959,8 @@ const nextConfig = {
       },
       {
         source: '/product/uncategorized/portable-cabin-with-toilet',
-        destination: 'https://www.samanportable.com/product/portable-cabin/portable-cabin-with-toilet',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet',
+        statusCode: 301,
       },
       {
         source: '/home',
@@ -903,8 +1008,8 @@ const nextConfig = {
       },
       {
         source: '/portfolio/portable-cabin-manufacturers-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
 
       // ──────────────────────────────────────────────────
@@ -1100,8 +1205,8 @@ const nextConfig = {
       },
       {
         source: '/product/buy-portable-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin/buy-portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/product/cargo-container-house',
@@ -1130,8 +1235,8 @@ const nextConfig = {
       },
       {
         source: '/product/container-portable-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin/container-portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/product/container-portable-office',
@@ -1212,8 +1317,8 @@ const nextConfig = {
       },
       {
         source: '/product/modular-portable-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin/modular-portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         // C03 chain-flatten (25 Jul 2026): modular-portable-office-cabin now 301s to the
@@ -1234,8 +1339,8 @@ const nextConfig = {
       },
       {
         source: '/product/ms-portable-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin/ms-portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin',
+        statusCode: 301,
       },
       {
         // C03 chain-flatten (25 Jul 2026): ms-portable-office-cabin now 301s to the MS
@@ -1246,13 +1351,13 @@ const nextConfig = {
       },
       {
         source: '/product/portable-cabin-building',
-        destination: 'https://www.samanportable.com/product/portable-cabin/portable-cabin-building',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/product/portable-cabin-house',
-        destination: 'https://www.samanportable.com/product/portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/prefabricated-houses/porta-cabin-house',
+        statusCode: 301,
       },
       {
         source: '/product/portable-cabin-with-toilet',
@@ -1283,8 +1388,8 @@ const nextConfig = {
       },
       {
         source: '/product/portable-shop-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin/portable-shop-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins/porta-cabin-shop',
+        statusCode: 301,
       },
       {
         source: '/product/portable-toilet-cabin',
@@ -1338,8 +1443,8 @@ const nextConfig = {
       },
       {
         source: '/product/prefabricated-portable-cabin',
-        destination: 'https://www.samanportable.com/product/portable-cabin/prefabricated-portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/product/prefabricated-portable-office-cabin',
@@ -1473,13 +1578,13 @@ const nextConfig = {
       },
       {
         source: '/project/portable-cabin-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/project/portable-cabin-manufacturers-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/portable-cabin',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/project/portable-security-cabin',
@@ -1862,26 +1967,26 @@ const nextConfig = {
       },
 
       // === C1 PORTA CABIN redirect specificity upgrades (Agent B P3 2026-06-22, 28) — repoint generic hub redirects to closest live keeper; BEFORE ...csvRedirects (first-match-wins) ===
-      { source: '/porta-cabin-office-with-toilet', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', permanent: true },
+      { source: '/porta-cabin-office-with-toilet', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/porta-cabin-is-the-best-option', destination: 'https://www.samanportable.com/porta-cabins-in-delhi-ncr', permanent: true },
       { source: '/porta-cabin-bangalore', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bangalore', permanent: true },
-      { source: '/porta-cabin-offices-for-sale', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', permanent: true },
-      { source: '/luxury-office-porta-cabins-benefits', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', permanent: true },
+      { source: '/porta-cabin-offices-for-sale', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/luxury-office-porta-cabins-benefits', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/porta-cabin-cost', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', permanent: true },
       { source: '/porta-cabin-toilet-price', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', permanent: true },
-      { source: '/porta-cabins-under-1-lakh', destination: 'https://www.samanportable.com/cheap-porta-cabins-for-sale', permanent: true },
+      { source: '/porta-cabins-under-1-lakh', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/rent-vs-buy-porta-cabins', destination: 'https://www.samanportable.com/porta-cabins-on-rent', permanent: true },
-      { source: '/the-rise-of-portacabin-offices', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', permanent: true },
-      { source: '/small-modular-porta-cabins-benefits', destination: 'https://www.samanportable.com/cheap-porta-cabins-for-sale', permanent: true },
-      { source: '/office-porta-cabin-for-sale', destination: 'https://www.samanportable.com/product/porta-cabins/portacabin-office', permanent: true },
+      { source: '/the-rise-of-portacabin-offices', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/small-modular-porta-cabins-benefits', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/office-porta-cabin-for-sale', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/porta-cabin-supplier-delhi-custom-solutions', destination: 'https://www.samanportable.com/best-porta-cabin-manufacturer-ncr', permanent: true },
       { source: '/porta-cabin-manufacturer', destination: 'https://www.samanportable.com/best-porta-cabin-manufacturer-ncr', permanent: true },
       { source: '/used-portacabin-for-sale-porta-cabin-office-second-hand-portacabins', destination: 'https://www.samanportable.com/2nd-hand-porta-cabins', statusCode: 301 },
       { source: '/used-portacabin-for-sale-porta-cabin-office-second-hand-portacabin', destination: 'https://www.samanportable.com/2nd-hand-porta-cabins', permanent: true },
-      { source: '/porta-cabins-under-3-lakhs', destination: 'https://www.samanportable.com/cheap-porta-cabins-for-sale', permanent: true },
+      { source: '/porta-cabins-under-3-lakhs', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/porta-cabin-price-list', destination: 'https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025', permanent: true },
       { source: '/portacabins-for-sale-in-mg-road', destination: 'https://www.samanportable.com/2nd-hand-porta-cabins', permanent: true },
-      { source: '/porta-cabins-under-2-lakhs', destination: 'https://www.samanportable.com/cheap-porta-cabins-for-sale', permanent: true },
+      { source: '/porta-cabins-under-2-lakhs', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/bommasandra-porta-cabins', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bommasandra', permanent: true },
       { source: '/20ft-porta-cabin', destination: 'https://www.samanportable.com/porta-cabin-sizes-and-specifications-in-india', permanent: true },
       { source: '/porta-cabins-in-mg-road', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bangalore', permanent: true },

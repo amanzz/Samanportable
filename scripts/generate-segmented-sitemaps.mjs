@@ -67,7 +67,21 @@ const candidates = remaining.filter(pathname => locationPattern.test(pathname));
 const locations = candidates.slice(0, 213);
 const editorial = remaining.filter(pathname => !locations.includes(pathname));
 const unfilteredSegments = { products, locations, projects, editorial };
-const expectedSegments = { products: 162, locations: 213, projects: 1, editorial: 79 };
+// Phase 1 Porta Cabin redirect consolidation (SAMAN approval, 15 Aug 2026):
+// products 162 -> 144, editorial 79 -> 78.
+//
+// Nineteen paths leave sitemapCanonicalPaths.json across this release, not
+// eighteen. Eighteen are Phase 1 retired sources: the five P0 variant pages, the
+// eleven Portable Cabin product pages, /product/prefabricated-houses/portable-cabin-house,
+// and /cheap-porta-cabins-for-sale, which is the single editorial removal. Every one
+// of them now 301s, and a sitemap must never advertise a redirect.
+//
+// The nineteenth is /portable-cabin-price-calculator, dropped by the calculator
+// parity commit in this same release when that route went noindex. That commit did
+// not bump these guards, so it carried the exact PC-07 defect described below and
+// would have failed the postbuild on its own. The Phase 1 build caught it. Both
+// movements are folded into the numbers here.
+const expectedSegments = { products: 144, locations: 213, projects: 1, editorial: 78 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -130,8 +144,11 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // sitemapCanonicalPaths.json yet. Do not add them here as a side effect of an
 // unrelated change - that is its own release decision, pending an owner
 // ruling, not a guard-baseline fix.
-if (all.length !== 455) {
-  throw new Error(`Page sitemap total changed from 455 to ${all.length}`);
+// 436 = 455 minus the 19 paths this release removes from sitemapCanonicalPaths.json:
+// 18 Phase 1 retired sources plus /portable-cabin-price-calculator from the calculator
+// parity commit. See the expectedSegments note above for the breakdown.
+if (all.length !== 436) {
+  throw new Error(`Page sitemap total changed from 436 to ${all.length}`);
 }
 
 const pageMap = new Map();

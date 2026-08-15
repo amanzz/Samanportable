@@ -11,7 +11,10 @@ export interface SeoAnchorEntry {
 
 export const SEO_ANCHOR_MAP: Record<string, SeoAnchorEntry> = {
   'porta-cabins': { anchorText: 'Porta Cabin', hubUrl: '/product/porta-cabins' },
-  'portable-cabin': { anchorText: 'Portable Cabin', hubUrl: '/product/portable-cabin' },
+  // Phase 1 (15 Aug 2026): hubUrl re-pointed to the live hub. The key is kept so
+  // any surviving caller resolves to a 200 instead of falling through to the
+  // generic '/product' default; the anchor text is untouched approved copy.
+  'portable-cabin': { anchorText: 'Portable Cabin', hubUrl: '/product/porta-cabins' },
   'container-offices': { anchorText: 'Container Office', hubUrl: '/product/container-offices' },
   'container-cafe': { anchorText: 'Container Cafe', hubUrl: '/product/container-cafe' },
   'labor-colony': { anchorText: 'Labour Colony', hubUrl: '/product/labor-colony' },

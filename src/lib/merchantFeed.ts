@@ -550,14 +550,16 @@ export type SubpageVariantConfig = { slug: string; name: string; descriptor: str
 // feed entirely — no hub-landing replacement). portacabin-office gets no feed entry here;
 // that follows later via the standard merchant flag-flip (separate ticket). Seven
 // surviving subpage groups remain.
+// Phase 1 Porta Cabin consolidation (SAMAN approval, 15 Aug 2026): steel-porta-cabin,
+// luxury-porta-cabin, mini-porta-cabin and low-cost-porta-cabin now 301 to the hub
+// (steel to MS), so their variant groups are DROPPED from the feed on the same
+// precedent as the C01 four above: the groups leave the feed entirely, with no
+// hub-landing replacement. A feed item must not resolve to a redirect. Three
+// surviving subpage groups remain.
 export const SUBPAGE_VARIANT_CONFIGS: readonly SubpageVariantConfig[] = [
   { slug: 'ms-porta-cabin', name: 'MS Porta Cabin', descriptor: 'IS 2062 Steel Site Office' },
-  { slug: 'steel-porta-cabin', name: 'Steel Porta Cabin', descriptor: 'MS/GI/Pre-Galv Site Office' },
-  { slug: 'luxury-porta-cabin', name: 'Luxury Porta Cabin', descriptor: 'Premium Executive Cabin' },
-  { slug: 'mini-porta-cabin', name: 'Mini Porta Cabin', descriptor: 'Compact Guard/Gate Cabin' },
   { slug: 'porta-cabin-shop', name: 'Porta Cabin Shop', descriptor: 'Retail Counter Cabin' },
   { slug: 'porta-cabin-with-toilet', name: 'Porta Cabin with Toilet', descriptor: 'Office + Sanitation' },
-  { slug: 'low-cost-porta-cabin', name: 'Low Cost Porta Cabin', descriptor: 'Value-Tier Site Cabin' },
 ];
 
 /**

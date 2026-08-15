@@ -70,9 +70,12 @@ const Custom404Page = () => {
                 Try searching for portable cabins, container offices, or contact us for custom solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Link href="/product/portable-cabin">
+                {/* Phase 1 (15 Aug 2026): re-pointed from /product/portable-cabin,
+                    which now 301s to the hub. A 404 page must not offer a link
+                    that immediately redirects. */}
+                <Link href="/product/porta-cabins">
                   <Button variant="secondary" size="sm">
-                    Portable Cabins
+                    Porta Cabins
                   </Button>
                 </Link>
                 <Link href="/product/container-offices">

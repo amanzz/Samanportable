@@ -43,7 +43,9 @@ export type CategoryDef = {
 
 export const CATEGORIES: CategoryDef[] = [
   { name: 'Porta Cabins', slug: 'porta-cabins', href: '/product/porta-cabins', icon: Building2, description: 'The standard welded-steel cabin range: site offices and rooms, 9 sizes, delivered in 7–21 working days.' },
-  { name: 'Portable Cabin', slug: 'portable-cabin', href: '/product/portable-cabin', icon: Home, description: 'Cabins engineered to lift, relocate and reuse across sites, choose this when the unit will move.' },
+  // Phase 1 (15 Aug 2026): the 'Portable Cabin' card is removed, not re-pointed.
+  // /product/portable-cabin 301s to /product/porta-cabins, which is the card
+  // directly above, so a re-point would show the same destination twice in the grid.
   { name: 'Portable Office', slug: 'portable-office', href: '/product/portable-office', icon: Briefcase, description: 'Fitted office cabins: workstations, electricals and AC provision, working from day one.' },
   { name: 'Container Offices', slug: 'container-offices', href: '/product/container-offices', icon: Container, description: 'Container-form and converted ISO offices for industrial duty, yards and hard sites.' },
   { name: 'Container Cafe', slug: 'container-cafe', href: '/product/container-cafe', icon: Coffee, description: 'Cafes, restaurants and food-truck units built for food businesses.' },
