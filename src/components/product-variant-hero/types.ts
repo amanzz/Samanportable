@@ -77,6 +77,10 @@ export interface VariantProductData {
   /** PC-00 — overrides the "Download Specification PDF" / "Download specifications"
       button label. Absent → deployed literal, byte-identical everywhere else. */
   specPdfButtonLabel?: string;
+  /** PC-09 — optional caption rendered directly beneath the PDF button, for
+      approved copy that carries a "not for construction" control the PDF
+      itself lacks. Absent → no caption renders, byte-identical everywhere else. */
+  specPdfCaption?: string;
   /** Owner-approved SEO title and meta description for runtime replacement of
       stale WordPress head fields. */
   seoTitle?: string;

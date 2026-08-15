@@ -36,6 +36,7 @@ import soundproofPortaCabinApplications from '@/data/products/soundproof-porta-c
 import giPortaCabinApplications from '@/data/products/gi-porta-cabin-applications.json';
 import doubleStoryPortaCabinApplications from '@/data/products/double-story-porta-cabin-applications.json';
 import skidMountedPortaCabinApplications from '@/data/products/skid-mounted-porta-cabin-applications.json';
+import knockDownPortaCabinApplications from '@/data/products/knock-down-porta-cabin-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -244,6 +245,13 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // this slug (checked), but registered AFTER both Section-H spreads anyway,
   // matching every sibling above.
   'skid-mounted-porta-cabin': skidMountedPortaCabinApplications as ApplicationsData,
+  // PC-09 (15 Aug 2026) — knock-down-porta-cabin, copy pack v1 section 4. Six
+  // panels, one per published size, single paragraph each (no bullets), same
+  // shape as PC-08. No dedicated Section-3 image slot in the 42-slot manifest,
+  // so each panel reuses that size's own hero gallery slot-1 (exterior) image
+  // and alt, matching the PC-08 precedent exactly. Registered after both
+  // Section-H spreads.
+  'knock-down-porta-cabin': knockDownPortaCabinApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -1114,6 +1122,13 @@ export function PortaCabinVariantHero({
           <Download className="h-4 w-4" aria-hidden="true" />
           {data.specPdfButtonLabel || (hasRightToExist ? 'Download Specification PDF' : 'Download specifications')}
         </a>
+        )}
+        {/* PC-09 (15 Aug 2026) — optional caption rendered directly beneath the
+            PDF button, carrying the "not for construction" control the PDF
+            itself lacks (copy pack v1 §2). Absent on every other product ->
+            byte-identical elsewhere. */}
+        {specPdfHref && !isC08Product && data.specPdfCaption && (
+        <p className="-mt-1 text-xs italic text-slate-500 text-center">{data.specPdfCaption}</p>
         )}
 
         <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">

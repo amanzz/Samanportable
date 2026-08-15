@@ -678,6 +678,48 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },
+  // PC-09 (15 Aug 2026) — Section 2 "buyer orientation" copy from copy pack v1
+  // section 3, verbatim, both blocks mandatory. The ticket's own paragraph-1
+  // label says "(contains the one contextual internal link)" but both approved
+  // anchors ("mild steel porta cabin" -> ms-porta-cabin, "request a fixed
+  // 48-hour quotation" -> /contact) are textually inside paragraph 2, not
+  // paragraph 1 — paragraph 1 carries no anchor phrase at all. Wired to match
+  // where the anchor text actually sits, per the ticket's own explicit Link 1 /
+  // Link 2 instructions, not the header label; flagged as a one-line ticket
+  // inconsistency. Two equal-weight paragraphs -> `bodyParagraphs`, default
+  // (`end`) position: split card renders below both, as its own block, matching
+  // the ticket's "TWO BLOCKS, both mandatory" structure.
+  'knock-down-porta-cabin': {
+    heading: 'When a Cabin Should Arrive as a Kit Instead of a Finished Box',
+    bodyParagraphs: [
+      (
+        <>
+          Most site cabins are welded up in the factory and delivered whole. That is the right answer when a trailer can reach the position and the cabin will stay there. It stops being the right answer when the approach road will not take a 40 ft load, when the set-down point sits behind a gate or inside a built compound, or when the cabin must come down again and go up elsewhere. A kit turns one heavy lift into a sequence of components people can carry, place and bolt.
+        </>
+      ),
+      (
+        <>
+          The trade is real and worth stating plainly. A bolted cabin carries more connections than a welded one, and every connection is a joint that has to be sealed, checked and re-tightened. If your cabin is going to one place and staying there, a <Link className={linkClass} href={href('ms-porta-cabin')}>mild steel porta cabin</Link> is the simpler and cheaper answer. Tell us your access constraint and your reuse plan, and we will <Link className={linkClass} href="https://www.samanportable.com/contact">request a fixed 48-hour quotation</Link> against both routes.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/knock-down-porta-cabin/section2/kd-section2-card-exterior-graphite-20x10.webp',
+      imageAlt: 'Graphite grey 20x10 ft knock-down porta cabin with champagne corner posts and a white door',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'What You Are Actually Buying When You Buy a Kit',
+      body: 'A kit is not a pile of steel with a drawing. It is a defined set of numbered members, panels, gaskets and fasteners, supplied with the sequence they go together in and the torques they are tightened to.',
+      bullets: [
+        'Numbered structural members with engineered splice plates and bolts',
+        'A panel schedule matching every wall, roof and floor position',
+        'A gasket and sealant set for joints, corners and penetrations',
+        'A fastener schedule with the assembly and torque sequence',
+      ],
+      ctaLabel: 'Ask us what the kit includes for your size',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
   'portacabin-office': {
     heading: 'Why choose the Portacabin Office',
     body: (

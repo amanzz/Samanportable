@@ -1,0 +1,82 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft Knock-Down Cabin: One Room, One Truck Load",
+      "paragraph": "At 100 sq.ft. this is the smallest kit we supply, and the one most often chosen because a finished cabin simply cannot reach the position. The whole unit breaks into components that a small crew can carry through a gate, up a ramp or along a service corridor. It takes a single desk, a guard point or a store. Because the area band adds 15% to the base rate, the rate per square foot is the highest on the ladder. You are paying for a full kit at a small area.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-exterior-blue.webp",
+        "alt": "Mid-blue 10x10 ft knock-down porta cabin with charcoal corner posts and three windows",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8 ft Knock-Down Cabin: Narrow Gates and Tight Sites",
+      "paragraph": "The 8 ft width is the reason this size exists. It clears gateways, lane widths and compound openings that a 10 ft cabin does not, and the components are correspondingly narrower to handle. Inside, 160 sq.ft. reads as a corridor rather than a room, which suits a two-desk site office or a single-sided workstation run better than a meeting layout. Choose it when the constraint is what you have to get through, not what you need to sit in.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-exterior-yellow.webp",
+        "alt": "Pale yellow 20x8 ft knock-down porta cabin with three windows and one door",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft Knock-Down Cabin: The Costed Reference Size",
+      "paragraph": "This 200 sq.ft. unit is the size the specification is costed against, at the base rate of Rs 1,280 per sq.ft. before any area-band adjustment. Every other price on this page derives from it. It holds a two or three person office, a small control point or a briefing space, and it is the size our assembly sequence is documented against. If you are comparing us with another supplier, compare at this size. It is the one where both sides are quoting the same thing.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-exterior-white-maroon.webp",
+        "alt": "White 20x10 ft knock-down porta cabin with maroon skirt and three sliding windows",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft Knock-Down Cabin: Two Zones From a Single Kit",
+      "paragraph": "At 300 sq.ft. the plan is long enough to carry two working zones behind one entrance, which is where an internal partition starts to earn its place. A partition in a bolted build is a component like any other, so it can be positioned to your drawing and moved at a later reassembly rather than cut in. The area band takes 4% off the base rate here. This is usually the smallest size where a site puts supervision and a meeting table in the same cabin without either suffering.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-exterior-yellow.webp",
+        "alt": "Pale yellow 30x10 ft knock-down porta cabin with four windows and forklift pockets",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft Knock-Down Cabin: Long Span, More Bolted Joints",
+      "paragraph": "A 400 sq.ft. kit is a genuinely different assembly job from a 200 sq.ft. one. The base rails arrive in more transportable lengths, so there are more splice nodes to set, align and torque, and the frame needs its temporary bracing kept in place longer before the panels close it. None of that is difficult, but it is time, and time is what the assembly quotation prices. In return you get the longest single-storey open plan on this ladder at the second-lowest rate per square foot.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-exterior-pink-teal.webp",
+        "alt": "Salmon pink 40x10 ft knock-down porta cabin with teal skirt and five windows",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x12",
+      "h3": "40x12 ft Knock-Down Cabin: The Widest Kit We Supply",
+      "paragraph": "At 480 sq.ft. this is the largest and lowest-rate unit on the ladder, and the 12 ft width is what you are buying. Two facing desk runs fit with a usable circulation route between them, which 10 ft does not give you. The wider span also means wider floor and roof cassettes, so handling on site needs more people or light lifting equipment rather than more time. Confirm your access route before selecting it, because the components are wider as well as longer.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-exterior-orange.webp",
+        "alt": "Rust orange 40x12 ft knock-down porta cabin with seven windows and one door",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  ]
+}
