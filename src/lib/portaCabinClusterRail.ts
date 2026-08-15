@@ -152,6 +152,48 @@ export const PORTA_CABIN_MS_RAIL: import('./c16PanelCatalog').RelatedRailItem[] 
     imageAlt: 'Porta Cabin with Toilet by SAMAN — exterior view',
   },
 ];
+/**
+ * PC-04 (14 Aug 2026) — the with-toilet page's Column 3, exactly the three tabs and
+ * the three buyer-comparison reasons in §1 of the approved draft v2. Not the
+ * full-cluster strip, so it is scoped to this one slug in the route.
+ *
+ * v1.3 §1.2 — every card carries a real image of its own product, selected by the
+ * ticket's deterministic rule and visually confirmed before wiring:
+ *   MS Porta Cabin  -> children/ms-porta-cabin-card.webp (existing purpose-built card)
+ *   Portable Toilet -> product-heroes/portable-toilet/mobile-toilet-cabin-white-exterior.webp
+ *                      (first "exterior" match in that product's own folder)
+ *   Porta Cabins    -> products/porta-cabins/40x12/porta-cabin-40x12-hero-view.webp
+ *                      (no top-level file; first "hero" match in the largest size folder)
+ * The latter two were processed to the cluster's 640x360 card format. No product is
+ * ever shown under another product's image. Alts use the hyphen form, so no em dash
+ * enters this page's markup.
+ */
+export const PORTA_CABIN_WITH_TOILET_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
+  {
+    title: 'MS Porta Cabin',
+    href: '/product/porta-cabins/ms-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Same frame and shell without the wet zone, lower rate',
+    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
+    imageAlt: 'MS Porta Cabin by SAMAN - exterior view',
+  },
+  {
+    title: 'Portable Toilet',
+    href: '/product/portable-toilet',
+    category: 'Portable Toilet',
+    blurb: 'Sanitation-only alternative when no working room is needed',
+    imageSrc: '/images/products/porta-cabins/children/portable-toilet-card.webp',
+    imageAlt: 'Portable Toilet by SAMAN - exterior view',
+  },
+  {
+    title: 'Porta Cabins Range',
+    href: '/product/porta-cabins',
+    category: 'Porta Cabins',
+    blurb: 'Compare every cabin configuration and the full ladder',
+    imageSrc: '/images/products/porta-cabins/children/porta-cabins-range-card.webp',
+    imageAlt: 'Porta Cabins Range by SAMAN - exterior view',
+  },
+];
 
 /**
  * PC-05 (14 Aug 2026) — the fire-rated page's OWN Column 3 rail. The approved
