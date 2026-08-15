@@ -53,6 +53,11 @@ interface C01SpecificationEntry {
   /** PC-00 — optional technical diagram rendered after the group cards, with
       its mandatory illustrative-only caption. Absent everywhere else. */
   diagram?: { src: string; alt: string; caption: string; width: number; height: number };
+  /** PC-04 (14 Aug 2026) — a product whose approved drawing set has more than one
+      diagram lists them here instead. Each renders in the same figure markup as
+      `diagram`, in order. Absent on every other entry, so the single-diagram path
+      above is untouched and their markup stays byte-identical. */
+  diagrams?: { src: string; alt: string; caption: string; width: number; height: number }[];
   /** R4 (14 Aug 2026) — opt-in premium `.saman-table` styling on this entry's
       group tables. Absent/false on every entry except porta-cabins → the
       existing plain table markup is byte-identical elsewhere. */
@@ -186,14 +191,18 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
   const narrative = entry.narrative
     ? `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(entry.narrative)}</p>`
     : '';
+  const asFigure = (d: NonNullable<C01SpecificationEntry['diagram']>) =>
+    `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+      `<img src="${esc(d.src)}" alt="${esc(d.alt)}" ` +
+      `width="${d.width}" height="${d.height}" loading="lazy" ` +
+      `class="w-full h-auto rounded-lg" />` +
+      `<figcaption class="mt-2 text-xs italic text-slate-500">${esc(d.caption)}</figcaption>` +
+    `</figure>`;
+  // Single-diagram entries keep the exact markup they already emit; `diagrams`
+  // is the PC-04 multi-drawing path and is absent everywhere else.
   const diagram = entry.diagram
-    ? `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
-        `<img src="${esc(entry.diagram.src)}" alt="${esc(entry.diagram.alt)}" ` +
-        `width="${entry.diagram.width}" height="${entry.diagram.height}" loading="lazy" ` +
-        `class="w-full h-auto rounded-lg" />` +
-        `<figcaption class="mt-2 text-xs italic text-slate-500">${esc(entry.diagram.caption)}</figcaption>` +
-      `</figure>`
-    : '';
+    ? asFigure(entry.diagram)
+    : (entry.diagrams || []).map(asFigure).join('');
 
   return `<div class="not-prose">${narrative}${cards}${diagram}</div>`;
 }

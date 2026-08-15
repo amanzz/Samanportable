@@ -1881,340 +1881,174 @@
     },
     "porta-cabin-with-toilet": {
       "name": "Porta Cabin with Toilet",
-      "sheet": "09 Porta Cabin with Toilet",
-      "canonical": "https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet",
+      "narrative": "These specifications decide three things for a buyer: how the cabin survives water, how it travels, and what your quotation must confirm. Table 1 covers the structure and envelope that carry the cabin through lifting, transport and weather. Table 2 covers the wet-zone interior, the services and the scope boundaries. Final engineering, bill of materials and drawings remain controlled documents, and quantities scale with the approved drawing for your size.",
+      "premiumTables": true,
       "specifications": [
         {
-          "group": "Steel Structure",
+          "group": "Table 1 - Structure and envelope",
           "component": "Bottom frame",
-          "detail": "100×50×3 mm MS C-channel primary base frame, ISI-standard or approved equivalent, fabricated as the load-bearing chassis.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 14,
-          "differsFromHub": false
+          "detail": "100x50x3 mm MS C-channel primary base frame, ISI-standard or approved equivalent, fabricated as the load-bearing chassis"
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 - Structure and envelope",
           "component": "Bottom stiffeners",
-          "detail": "100×50 mm C-channels, 50×50 mm MS angles, 75×40 mm channels and approved square-pipe supports, typically coordinated at about 4 ft intervals to the final floor load and lifting design.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 15,
-          "differsFromHub": false
+          "detail": "100x50 mm C-channels, 50x50 mm MS angles, 75x40 mm channels and approved square-pipe supports, typically coordinated at about 4 ft intervals to the final floor load and lifting design"
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 - Structure and envelope",
           "component": "Floor frame",
-          "detail": "MS base and cross-member grid supporting an 18 mm Bison/cement-fibre floor board fixed with approved self-tapping fasteners; spacing follows the final drawing and design load.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 16,
-          "differsFromHub": false
+          "detail": "MS base and cross-member grid supporting an 18 mm Bison/cement-fibre floor board fixed with approved self-tapping fasteners; spacing per the final drawing and design load"
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 - Structure and envelope",
           "component": "Top frame",
-          "detail": "50×50×1.6 mm MS square-pipe top perimeter frame of approved make or equivalent.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 17,
-          "differsFromHub": false
+          "detail": "50x50x1.6 mm MS square-pipe top perimeter frame of approved make or equivalent"
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 - Structure and envelope",
           "component": "Roof stiffeners",
-          "detail": "50×50×1.2 mm MS square-pipe roof stiffeners with 50×40, 40×40, 50×25 or 25×25 mm secondary members where required by span, ceiling support and drainage slope.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 18,
-          "differsFromHub": false
+          "detail": "50x50x1.2 mm MS square-pipe roof stiffeners with 50x40, 40x40, 50x25 or 25x25 mm secondary members where required by span, ceiling support and drainage slope"
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1 - Structure and envelope",
           "component": "Corner posts / walls",
-          "detail": "50×50×2 mm MS square-pipe corner and wall posts or approved 60×60 mm MS-angle alternative, with reinforced door and window openings and an approximately 60 mm wall cavity.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 19,
-          "differsFromHub": false
+          "detail": "50x50x2 mm MS square-pipe corner and wall posts or approved 60x60 mm MS-angle alternative, with reinforced door and window openings and an approximately 60 mm wall cavity"
         },
         {
-          "group": "Steel Structure",
-          "component": "Lifting / handling",
-          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 20,
-          "differsFromHub": false
-        },
-        {
-          "group": "Steel Structure",
-          "component": "Welding & fabrication",
-          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 21,
-          "differsFromHub": false
-        },
-        {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 - Structure and envelope",
           "component": "Exterior walls",
-          "detail": "1.2–1.6 mm corrugated MS sheet",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 25,
-          "differsFromHub": true
+          "detail": "1.2-1.6 mm corrugated MS sheet"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 - Structure and envelope",
           "component": "Roof",
-          "detail": "1.4–1.6 mm corrugated MS sheet",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 26,
-          "differsFromHub": true
+          "detail": "1.4-1.6 mm corrugated MS sheet"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Interior walls",
-          "detail": "10–12 mm fibre-cement board with moisture-tolerant fibre-cement lining with an approved hygienic finish in wet zones",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 27,
-          "differsFromHub": true
-        },
-        {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Ceiling",
-          "detail": "8–10 mm fibre-cement or washable PVC ceiling",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 28,
-          "differsFromHub": true
-        },
-        {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 - Structure and envelope",
           "component": "Floor base",
-          "detail": "18–24 mm cement board with waterproof membrane",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 29,
-          "differsFromHub": true
+          "detail": "18-24 mm cement board with waterproof membrane"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 - Structure and envelope",
           "component": "Floor finish",
-          "detail": "2.5–3 mm anti-skid safety vinyl, 2.5–3 mm anti-skid safety vinyl with sealed joints",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 30,
-          "differsFromHub": true
+          "detail": "2.5-3 mm anti-skid safety vinyl with sealed joints"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 - Structure and envelope",
           "component": "Wall insulation",
-          "detail": "50 mm mineral wool where required",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 31,
-          "differsFromHub": true
+          "detail": "50 mm mineral wool where required"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1 - Structure and envelope",
           "component": "Roof insulation",
-          "detail": "75 mm glass/mineral wool",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 32,
-          "differsFromHub": true
+          "detail": "75 mm glass/mineral wool"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Decorative / external finish",
-          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 33,
-          "differsFromHub": false
+          "group": "Table 1 - Structure and envelope",
+          "component": "Lifting / handling",
+          "detail": "Engineered lifting and support points for each transportable module; move the completed module only to the approved lifting, support and transport drawing"
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Fasteners & sealing",
-          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 34,
-          "differsFromHub": false
+          "group": "Table 1 - Structure and envelope",
+          "component": "Welding and fabrication",
+          "detail": "Qualified welded and/or bolted structural connections to approved shop drawings; deburred safe edges, dimensional inspection, protected cut edges; panels close only after frame inspection"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Main door / service door",
-          "detail": "Waterproof flush doors with corrosion-resistant hardware and privacy fittings.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 38,
-          "differsFromHub": true
+          "group": "Table 1 - Structure and envelope",
+          "component": "External finish",
+          "detail": "Project-selected colour and compatible coating system, confirmed in the approved finish schedule"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Windows / service opening",
-          "detail": "Frosted aluminium ventilators/windows.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 39,
-          "differsFromHub": true
+          "group": "Table 1 - Structure and envelope",
+          "component": "Fasteners and sealing",
+          "detail": "Corrosion-compatible mechanical fasteners, EPDM/butyl or approved sealants and flashings at panel joints, corners, roof laps and penetrations; no unsealed field cuts"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 - Wet-zone interior, services and scope",
+          "component": "Interior walls",
+          "detail": "10-12 mm fibre-cement board with moisture-tolerant lining and approved hygienic finish in wet zones"
+        },
+        {
+          "group": "Table 2 - Wet-zone interior, services and scope",
+          "component": "Ceiling",
+          "detail": "8-10 mm fibre-cement or washable PVC"
+        },
+        {
+          "group": "Table 2 - Wet-zone interior, services and scope",
+          "component": "Doors",
+          "detail": "Waterproof flush doors with corrosion-resistant hardware and privacy fittings"
+        },
+        {
+          "group": "Table 2 - Wet-zone interior, services and scope",
+          "component": "Windows / openings",
+          "detail": "Frosted aluminium ventilators and windows"
+        },
+        {
+          "group": "Table 2 - Wet-zone interior, services and scope",
           "component": "Grills / mosquito mesh",
-          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 40,
-          "differsFromHub": false
+          "detail": "Provided only where the approved opening schedule and intended use require"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 - Wet-zone interior, services and scope",
           "component": "Electrical wiring",
-          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 41,
-          "differsFromHub": false
+          "detail": "Concealed or protected copper wiring: 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm higher-load or AC circuits, subject to the final load schedule and approved electrical drawing"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 - Wet-zone interior, services and scope",
           "component": "Electrical protection",
-          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 42,
-          "differsFromHub": false
+          "detail": "Distribution board with MCB/RCCB protection, earthing, and segregation of lighting, socket, wet-area and AC circuits per the approved drawing"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 - Wet-zone interior, services and scope",
           "component": "Electrical fittings",
-          "detail": "Moisture-protected LED lights, exhaust fans, safe-position switches and RCCB/MCB protection.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 43,
-          "differsFromHub": true
+          "detail": "LED lights, modular switches, 6A/16A sockets, fan points and AC provision coordinated with the approved layout; final quantities and equipment loads are quotation-specific"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 - Wet-zone interior, services and scope",
           "component": "Ventilation / AC",
-          "detail": "Mandatory mechanical exhaust with natural ventilators.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 44,
-          "differsFromHub": true
+          "detail": "Mandatory mechanical exhaust with natural ventilators"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 - Wet-zone interior, services and scope",
           "component": "Plumbing / sanitary",
-          "detail": "EWC/Indian WC, urinals, washbasins, flushing, CPVC supply, UPVC waste, traps and floor drains according to layout.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 45,
-          "differsFromHub": true
+          "detail": "EWC or Indian WC, urinals, washbasins, flushing, CPVC supply, UPVC waste, traps and floor drains according to layout"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Layout / configuration",
-          "detail": "Separated toilet, urinal and washbasin zones according to selected seat count.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 46,
-          "differsFromHub": true
+          "group": "Table 2 - Wet-zone interior, services and scope",
+          "component": "Layout",
+          "detail": "Separated toilet, urinal and washbasin zones according to the selected seat count"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 - Wet-zone interior, services and scope",
           "component": "Painting / coating",
-          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 47,
-          "differsFromHub": false
+          "detail": "Substrate-matched corrosion protection: approved primer/topcoat on prepared MS; compatible cut-edge repair and touch-up on coated steel where specified"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 - Wet-zone interior, services and scope",
           "component": "Quality checks",
-          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 48,
-          "differsFromHub": false
+          "detail": "Pre-dispatch dimensional, enclosure, service and functional QA; specialist performance certificates verified where required"
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2 - Wet-zone interior, services and scope",
           "component": "Warranty",
-          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
-          "sourceSheet": "09 Porta Cabin with Toilet",
-          "sourceRow": 49,
-          "differsFromHub": false
+          "detail": "Warranty period and exclusions confirmed in the final quotation; published standard: 5-year structural warranty and 1-year finishing warranty, finishing extendable to 2 years on request"
         }
       ],
-      "prices": [
+      "diagrams": [
         {
-          "sizeSlug": "10x10",
-          "variantSku": "S64-09-SZ-01",
-          "publishedSize": "10x10x8.5 ft",
-          "areaSqft": 100,
-          "ratePerSqft": 1650,
-          "priceExGst": 165000,
-          "priceInclGst": 194700,
-          "costingStatus": "Approved, direct source"
+          "src": "/images/products/porta-cabin-with-toilet/diagrams/porta-cabin-with-toilet-diagram-1.webp",
+          "alt": "Reference plan layout of a 20x10x8.5 ft porta cabin with toilet, showing the dry room with fibre-cement lining and insulated cavity beside a separated wet zone carrying WC, urinal and washbasin zones, with CPVC water inlet and a single waste outlet point",
+          "caption": "Porta Cabin with Toilet reference plan layout, 20 x 10 x 8.5 ft. Illustrative - not for construction. Drawing SP-PC-WC-05-DWG-R1.",
+          "width": 1400,
+          "height": 900
         },
         {
-          "sizeSlug": "20x8",
-          "variantSku": "S64-09-SZ-08",
-          "publishedSize": "20x8x8.5 ft",
-          "areaSqft": 160,
-          "ratePerSqft": 1650,
-          "priceExGst": 264000,
-          "priceInclGst": 311520,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x10",
-          "variantSku": "S64-09-SZ-02",
-          "publishedSize": "20x10x8.5 ft",
-          "areaSqft": 200,
-          "ratePerSqft": 1500,
-          "priceExGst": 300000,
-          "priceInclGst": 354000,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x12",
-          "variantSku": "S64-09-SZ-06",
-          "publishedSize": "20x12x8.5 ft",
-          "areaSqft": 240,
-          "ratePerSqft": 1440,
-          "priceExGst": 345600,
-          "priceInclGst": 407808,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "30x10",
-          "variantSku": "S64-09-SZ-03",
-          "publishedSize": "30x10x8.5 ft",
-          "areaSqft": 300,
-          "ratePerSqft": 1440,
-          "priceExGst": 432000,
-          "priceInclGst": 509760,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "40x8",
-          "variantSku": "S64-09-SZ-09",
-          "publishedSize": "40x8x8.5 ft",
-          "areaSqft": 320,
-          "ratePerSqft": 1410,
-          "priceExGst": 451200,
-          "priceInclGst": 532416,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x20",
-          "variantSku": "S64-09-SZ-05",
-          "publishedSize": "20x20x8.5 ft",
-          "areaSqft": 400,
-          "ratePerSqft": 1410,
-          "priceExGst": 564000,
-          "priceInclGst": 665520,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "40x10",
-          "variantSku": "S64-09-SZ-04",
-          "publishedSize": "40x10x8.5 ft",
-          "areaSqft": 400,
-          "ratePerSqft": 1410,
-          "priceExGst": 564000,
-          "priceInclGst": 665520,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "40x12",
-          "variantSku": "S64-09-SZ-07",
-          "publishedSize": "40x12x8.5 ft",
-          "areaSqft": 480,
-          "ratePerSqft": 1380,
-          "priceExGst": 662400,
-          "priceInclGst": 781632,
-          "costingStatus": "Approved, direct source"
+          "src": "/images/products/porta-cabin-with-toilet/diagrams/porta-cabin-with-toilet-diagram-2.webp",
+          "alt": "Envelope and wet-zone build-up showing the numbered layer sequence for the wall section, roof and wet-zone floor, from corrugated MS sheet and mineral wool through fibre-cement board to the anti-skid vinyl finish",
+          "caption": "Porta Cabin with Toilet envelope and wet-zone build-up, layer sequence and approved thickness ranges. Illustrative - not for construction. Drawing SP-PC-WC-05-DWG-R2.",
+          "width": 1400,
+          "height": 900
         }
       ]
     },

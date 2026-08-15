@@ -25,7 +25,10 @@ export interface RightToExistEntry {
   /** PC-02 Section 2 draft v4 (14 Aug 2026) — an arbitrary-length run of uniformly
       styled paragraphs, for approved copy that is not the two-part
       body-plus-bolded-comparison shape. When present it replaces `body`, `comparison`
-      and `appendix`. Absent everywhere else, so their markup is byte-identical. */
+      and `appendix`. Absent everywhere else, so their markup is byte-identical.
+      PC-04 also uses it: its two Section-2 paragraphs are both body copy, so the
+      earlier `uniformParagraphWeight` flag is dropped in favour of this field, which
+      renders the identical classes. */
   bodyParagraphs?: ReactNode[];
   /** R15 (v1.4, 14 Aug 2026) — optional image-left / content-right split card
       rendered below the lead paragraphs. Present only on the porta-cabins hub;
@@ -405,18 +408,43 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  // PC-04 (14 Aug 2026) — Section 2 "buyer orientation" copy from the approved
+  // draft v2, verbatim, mapped onto this existing heading/body/comparison card.
+  // The approved §6 link map carries exactly two S2 body links: the portable-toilet
+  // hub and /contact. The previous entry's wet-zone spec sentence is gone — that
+  // material detail now lives in the Description and Specifications tabs.
   'porta-cabin-with-toilet': {
-    heading: 'Why choose the Porta Cabin with Toilet',
-    body: (
-      <>
-        A working cabin with its own attached toilet in one newly fabricated unit: one delivery, one base, one drainage connection, no separate sanitary block. The wet zone uses 10–12 mm moisture-tolerant fibre-cement lining, an 18–24 mm cement board deck with waterproof membrane, and 2.5–3 mm anti-skid safety vinyl with sealed joints. Choose it wherever staff work and need facilities on the spot rather than at the far end of a site.
-      </>
-    ),
-    comparison: (
-      <>
-        Need a standalone sanitary unit with no working space? The <Link className={linkClass} href="/product/portable-toilet">portable toilet range</Link> is sized by model, not by cabin.
-      </>
-    ),
+    heading: 'Choose One Combined Unit Instead of Two Separate Deliveries',
+    // v1.3 §1.1 — both Section-2 paragraphs are body copy, not body-plus-emphasis, so
+    // they ride the `bodyParagraphs` run PC-02 introduced. That renders exactly the
+    // classes the PC-04 `uniformParagraphWeight` flag used to produce, so the flag is
+    // dropped rather than kept as a second mechanism doing the same job.
+    bodyParagraphs: [
+      (
+        <>
+          Buyers usually reach this page with one decision to make: order a cabin and a toilet as separate units, or take both inside one shell. A combined unit needs one transport slot, one level base and one plumbing hook-up. Its wet zone arrives lined, waterproofed and piped from the factory. Separate units make sense when the toilet must sit away from the work area, or when several crews share one facility. If you need sanitation alone, without a working room, a <Link className={linkClass} href="/product/portable-toilet">standalone portable toilet</Link> is the better fit and costs less.
+        </>
+      ),
+      (
+        <>
+          The porta cabin with toilet suits gate offices, supervisor cabins and crew facilities where people work through the day and the washroom must stay inside the same footprint. Share your size, seat count and site location, and <Link className={linkClass} href="/contact">request a fixed quotation</Link> from our team; we return it within 48 hours.
+        </>
+      ),
+    ],
+    // v1.3 §1.1 — premium split card. Copy verbatim from the ticket. The image is
+    // the 20x10 corner-interior shot, used by no gallery or Description slot, so
+    // page-wide file uniqueness holds. CTA target taken from the live main
+    // navigation (Header.tsx: Gallery -> /gallery), not guessed.
+    splitCard: {
+      imageSrc: '/images/products/porta-cabin-with-toilet/section2/porta-cabin-with-toilet-20x10-corner-interior.webp',
+      imageAlt: 'Cubicle row with washbasin counter and mirror inside the 20x10 unit',
+      imageWidth: 1280,
+      imageHeight: 720,
+      subheading: 'See the wet-zone finish before you commit',
+      body: 'Look at completed SAMAN cabins from our Bengaluru and Greater Noida factories: the lining, the sealed vinyl floor, the door hardware and the openings. Judge the finish on real deliveries, then settle your size and seat count with confidence.',
+      ctaLabel: 'Explore the project gallery',
+      ctaHref: '/gallery',
+    },
   },
   'portacabin-office': {
     heading: 'Why choose the Portacabin Office',

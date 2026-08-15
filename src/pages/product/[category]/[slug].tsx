@@ -44,6 +44,7 @@ import {
   slugFromProductHref,
   c01HubReturnAnchorForSlug,
   PORTA_CABIN_MS_RAIL,
+  PORTA_CABIN_WITH_TOILET_RAIL,
   buildPortaCabinGiRail,
   PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
   PORTA_CABIN_SIBLING_YMAL,
@@ -62,6 +63,12 @@ import { injectInfoImages } from '../../../lib/infoImageLayout';
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
+
+// Pages rebuilt to the Porta Cabins cluster design system (section dividers, SAP
+// size strip, Section-3 headings at H2, the YMAL carousel). PC-01 added the MS page;
+// PC-04 adds the with-toilet page. Every other page using the shared hero keeps the
+// defaults (false) and renders byte-identically.
+const CLUSTER_DESIGN_SLUGS = new Set(['ms-porta-cabin', 'gi-porta-cabin', 'porta-cabin-with-toilet']);
 
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
@@ -555,6 +562,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (currentSlug === 'ms-porta-cabin') {
       return PORTA_CABIN_MS_RAIL;
     }
+    // PC-04 (14 Aug 2026) — same treatment for the with-toilet page: Column 3 is the
+    // three-item comparison rail named in §1 of its approved draft, not the
+    // full-cluster strip. Scoped to this one slug.
+    if (currentSlug === 'porta-cabin-with-toilet') {
+      return PORTA_CABIN_WITH_TOILET_RAIL;
+    }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
@@ -731,12 +744,20 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   ratingCount={product.rating_count}
                   railItems={relatedRailItems}
                   currentHref={`/product/${category}/${slug}`}
-                  // PC-01/PC-02 (14 Aug 2026) — the cluster design system, scoped to
-                  // the pages rebuilt to it. Every other page using this shared hero
-                  // keeps the defaults (false) and is byte-identical.
-                  showSectionDividers={slug === 'ms-porta-cabin' || slug === 'gi-porta-cabin'}
-                  usePremiumSizeTabs={slug === 'ms-porta-cabin' || slug === 'gi-porta-cabin'}
-                  explorerPanelHeadingAsH2={slug === 'ms-porta-cabin' || slug === 'gi-porta-cabin'}
+                  // PC-01/PC-02/PC-04 (14 Aug 2026) — the cluster design system, scoped
+                  // to the pages rebuilt to it via CLUSTER_DESIGN_SLUGS. Every other page
+                  // using this shared hero keeps the defaults (false) and is byte-identical.
+                  showSectionDividers={CLUSTER_DESIGN_SLUGS.has(slug)}
+                  usePremiumSizeTabs={CLUSTER_DESIGN_SLUGS.has(slug)}
+                  explorerPanelHeadingAsH2={CLUSTER_DESIGN_SLUGS.has(slug)}
+                  // PC-04 — its approved eyebrow uses a hyphen, not the em dash in
+                  // the shared default. Passed from this slug only, so the hub, the MS
+                  // page and the GI page keep the deployed literal.
+                  sizeEyebrowText={
+                    slug === 'porta-cabin-with-toilet'
+                      ? 'Choose your size - six factory-built options'
+                      : undefined
+                  }
                 />
               ) : (
               <ProductSummaryLayout
@@ -1013,9 +1034,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
               )}
 
-              {/* PC-01/PC-02 (14 Aug 2026) — divider 3, Section 3 → Section 4
+              {/* PC-01/PC-02/PC-04 (14 Aug 2026) — divider 3, Section 3 → Section 4
                   (calculator), OUTSIDE the calculator's own container. */}
-              {(slug === 'ms-porta-cabin' || slug === 'gi-porta-cabin') && embeddedCalculatorHtml && (
+              {CLUSTER_DESIGN_SLUGS.has(slug) && embeddedCalculatorHtml && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
@@ -1029,20 +1050,21 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 </section>
               )}
 
-              {/* PC-01/PC-02 — "You may also like" carousel, calculator → tabs.
+              {/* PC-01/PC-02/PC-04 — "You may also like" carousel, calculator → tabs.
                   Lists the cluster's other nine children with the hub's own R16 card
-                  images. No prices on cards. The GI page takes the variant whose alts
-                  carry no em dash; the MS page keeps PC-01's original list. */}
+                  images. No prices on cards. The GI and with-toilet pages take the
+                  variant whose alts carry no em dash, because both are held to zero
+                  U+2014 in rendered copy; the MS page keeps PC-01's original list. */}
               {slug === 'ms-porta-cabin' && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
-              {slug === 'gi-porta-cabin' && (
+              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
               )}
 
-              {/* PC-01/PC-02 — divider 4, "You may also like" → Section 5 (Product
-                  Details tabs). */}
-              {(slug === 'ms-porta-cabin' || slug === 'gi-porta-cabin') && (
+              {/* PC-01/PC-02/PC-04 — divider 4, "You may also like" → Section 5
+                  (Product Details tabs). */}
+              {CLUSTER_DESIGN_SLUGS.has(slug) && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
