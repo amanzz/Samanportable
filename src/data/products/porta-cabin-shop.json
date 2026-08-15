@@ -4,6 +4,13 @@
   "defaultVariant": "20x10",
   "hsn": "9406",
   "gstPercent": 18,
+  "h1": "Porta Cabin Shop: Steel Retail Unit With a Counter Front",
+  "seoTitle": "Porta Cabin Shop: Counter Frontage, Sizes, Prices | SAMAN",
+  "metaDescription": "A portable cabin shop built to trade from: service glazing, a lockable counter opening and a shutter. Six sizes from Rs 1,54,000 ex-GST, full specification.",
+  "opener": "The Porta Cabin Shop is a steel porta cabin built around the customer standing outside it. Large aluminium service glazing with a lockable counter opening is framed and weather-sealed into the chassis, rather than cut into a finished office cabin afterwards. A staff or customer door and a lockable service shutter close the unit at the end of trading, and the interior is specified as a customer-facing finish rather than a site-office lining.\n\nSix sizes publish, from a 100 sq.ft. single-counter unit to a 400 sq.ft. three-zone run. As a portable cabin shop it is set down on a prepared base rather than built in, and it can be lifted and moved again to the approved drawing. Fit-out and transport are quoted separately.",
+  "frontageLabel": "Service glazing with lockable counter opening",
+  "deliveryLabel": "7-21 working days",
+  "fitOutLabel": "Quoted separately",
   "variants": [
     {
       "sizeSlug": "10x10",
@@ -11,47 +18,52 @@
       "dims": "10x10x8.5 ft",
       "areaSqft": 100,
       "priceExGst": 154000,
-      "capacity": "2–3 people",
-      "useCase": "Single-Counter Kiosk",
+      "capacity": "2 persons",
       "sku": "SP-PCS-10x10",
       "images": [
         {
-          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-hero-view.webp",
-          "alt": "Porta cabin shop 10×10 ft, retail counter cabin by SAMAN Portable",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-01-three-quarter-mustard.webp",
+          "alt": "Mustard yellow 10x10 ft shop cabin with a dark green lower band and an open service counter with a timber ledge",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-front-angle.webp",
-          "alt": "10×10 ft porta cabin shop, front view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-02-three-quarter-charcoal.webp",
+          "alt": "Charcoal 10x10 ft shop cabin with a propped awning over the service opening and a glazed steel door alongside",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-side-elevation.webp",
-          "alt": "10×10 ft porta cabin shop, side view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-03-three-quarter-sage.webp",
+          "alt": "Sage green 10x10 ft shop cabin with a corner service opening, timber counter ledge and a solid green steel door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-workspace-interior.webp",
-          "alt": "Inside a 10×10 ft porta cabin shop, workspace with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-04-three-quarter-cream.webp",
+          "alt": "Cream 10x10 ft shop cabin with a black base plinth, an open service counter and shelving visible inside",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-entrance-interior.webp",
-          "alt": "Inside a 10×10 ft porta cabin shop, entrance with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-05-interior-counter.webp",
+          "alt": "Interior of a 10x10 ft shop cabin with a grey service counter, stocked display shelving and an open counter hatch",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-06-interior-worktop.webp",
+          "alt": "Interior of a 10x10 ft shop cabin in pale sage with a timber worktop, open shelving and a sliding window",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
       ],
-      "shortDescription": "A compact shop cabin: a single-counter kiosk for tickets, telecom or a brand outlet.",
       "priceInclGst": 181720
     },
     {
@@ -60,47 +72,52 @@
       "dims": "20x8x8.5 ft",
       "areaSqft": 160,
       "priceExGst": 246400,
-      "capacity": "3–4 people",
-      "useCase": "Roadside Slim Retail Unit",
+      "capacity": "4 persons",
       "sku": "SP-PCS-20x8",
       "images": [
         {
-          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-hero-view.webp",
-          "alt": "Porta cabin shop 20×8 ft, retail counter cabin by SAMAN Portable",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-01-three-quarter-light-grey.webp",
+          "alt": "Light grey 20x8 ft shop cabin with a wide service opening, timber counter ledge and two side windows",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-front-angle.webp",
-          "alt": "20×8 ft porta cabin shop, front view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-02-front-elevation-slate-blue.webp",
+          "alt": "Slate blue 20x8 ft shop cabin seen straight on, with a centred service opening and a solid blue steel door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-side-elevation.webp",
-          "alt": "20×8 ft porta cabin shop, side view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-03-three-quarter-terracotta.webp",
+          "alt": "Beige 20x8 ft shop cabin with a terracotta lower band, a service opening and a door on the short end face",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-workspace-interior.webp",
-          "alt": "Inside a 20×8 ft porta cabin shop, workspace with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-04-three-quarter-white-charcoal.webp",
+          "alt": "White 20x8 ft shop cabin with a charcoal lower band, an open service counter and a glazed upper door panel",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-entrance-interior.webp",
-          "alt": "Inside a 20×8 ft porta cabin shop, entrance with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-05-interior-counter.webp",
+          "alt": "Interior of a 20x8 ft shop cabin with a timber-fronted service counter, lit display shelving and a glass case",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-06-interior-back-counter.webp",
+          "alt": "Interior of a 20x8 ft shop cabin with a dark walnut counter run, wall niches and two ceiling fans",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
       ],
-      "shortDescription": "A slim retail unit for boundary or roadside trading where width is tight.",
       "priceInclGst": 290752
     },
     {
@@ -109,47 +126,52 @@
       "dims": "20x10x8.5 ft",
       "areaSqft": 200,
       "priceExGst": 280000,
-      "capacity": "4–6 people",
-      "useCase": "Counter + Display Shop",
+      "capacity": "4 persons",
       "sku": "SP-PCS-20x10",
       "images": [
         {
-          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-hero-view.webp",
-          "alt": "Porta cabin shop 20×10 ft, retail counter cabin by SAMAN Portable",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-01-three-quarter-wheat.webp",
+          "alt": "Wheat yellow 20x10 ft shop cabin with a black base skirt, an open service counter and a glazed upper door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-front-angle.webp",
-          "alt": "20×10 ft porta cabin shop, front view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-02-three-quarter-sage-charcoal.webp",
+          "alt": "Sage 20x10 ft shop cabin with a charcoal lower band, propped awning and a six-pane glazed door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-side-elevation.webp",
-          "alt": "20×10 ft porta cabin shop, side view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-03-front-elevation-brick-red.webp",
+          "alt": "Brick red 20x10 ft shop cabin seen straight on, with a stone counter ledge and a solid red steel door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-workspace-interior.webp",
-          "alt": "Inside a 20×10 ft porta cabin shop, workspace with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-04-three-quarter-steel-blue.webp",
+          "alt": "Steel blue 20x10 ft shop cabin with a dark grey lower band, a service opening and a solid charcoal door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-entrance-interior.webp",
-          "alt": "Inside a 20×10 ft porta cabin shop, entrance with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-05-three-quarter-olive-mustard.webp",
+          "alt": "Olive 20x10 ft shop cabin with a mustard lower band, an open counter and a glass drinks chiller inside",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-06-interior-counter.webp",
+          "alt": "Interior of a 20x10 ft shop cabin with a slatted service counter, lit niche shelving and a glass display case",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
       ],
-      "shortDescription": "The standard porta cabin shop, counter, shutter and display space for a small outlet.",
       "priceInclGst": 330400
     },
     {
@@ -158,47 +180,52 @@
       "dims": "20x12x8.5 ft",
       "areaSqft": 240,
       "priceExGst": 322560,
-      "capacity": "5–7 people",
-      "useCase": "Shop with Customer Area",
+      "capacity": "5 persons",
       "sku": "SP-PCS-20x12",
       "images": [
         {
-          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-hero-view.webp",
-          "alt": "Porta cabin shop 20×12 ft, retail counter cabin by SAMAN Portable",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-01-three-quarter-anthracite.webp",
+          "alt": "Anthracite 20x12 ft shop cabin on wet paving, with an open service counter and a large glazed door panel",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-front-angle.webp",
-          "alt": "20×12 ft porta cabin shop, front view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-02-three-quarter-ochre-green.webp",
+          "alt": "Ochre 20x12 ft shop cabin with a forest green lower band, dark green awnings and a long stone counter ledge",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-side-elevation.webp",
-          "alt": "20×12 ft porta cabin shop, side view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-03-front-elevation-pale-green.webp",
+          "alt": "Pale green 20x12 ft shop cabin seen straight on, with a white counter ledge and a solid green steel door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-workspace-interior.webp",
-          "alt": "Inside a 20×12 ft porta cabin shop, workspace with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-04-three-quarter-wheat-charcoal.webp",
+          "alt": "Wheat 20x12 ft shop cabin with a charcoal lower band, a propped awning and a solid yellow steel door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-entrance-interior.webp",
-          "alt": "Inside a 20×12 ft porta cabin shop, entrance with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-05-interior-counter.webp",
+          "alt": "Interior of a 20x12 ft shop cabin with a dark grey service counter, backlit display niches and a glass case",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-06-interior-display-run.webp",
+          "alt": "Interior of a 20x12 ft shop cabin in pale sage with a light timber cabinet run and a wide open counter hatch",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
       ],
-      "shortDescription": "Added width for counter plus a small customer-standing area.",
       "priceInclGst": 380621
     },
     {
@@ -207,146 +234,53 @@
       "dims": "30x10x8.5 ft",
       "areaSqft": 300,
       "priceExGst": 403200,
-      "capacity": "6–8 people",
-      "useCase": "Shop + Rear Stock Room",
+      "capacity": "7 persons",
       "sku": "SP-PCS-30x10",
       "images": [
         {
-          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-hero-view.webp",
-          "alt": "Porta cabin shop 30×10 ft, retail counter cabin by SAMAN Portable",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-01-three-quarter-ivory-green.webp",
+          "alt": "Ivory 30x10 ft shop cabin with a bottle green lower band, an open service counter and stocked shelving inside",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-front-angle.webp",
-          "alt": "30×10 ft porta cabin shop, front view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-02-three-quarter-silver.webp",
+          "alt": "Silver grey 30x10 ft shop cabin with a black base plinth, an open service counter and a four-pane glazed door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-side-elevation.webp",
-          "alt": "30×10 ft porta cabin shop, side view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-03-front-elevation-beige-terracotta.webp",
+          "alt": "Beige 30x10 ft shop cabin seen straight on, with a terracotta lower band and a solid flush steel door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-workspace-interior.webp",
-          "alt": "Inside a 30×10 ft porta cabin shop, workspace with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-04-three-quarter-olive.webp",
+          "alt": "Olive green 30x10 ft shop cabin with black awnings, an open counter and a glass drinks chiller inside",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-entrance-interior.webp",
-          "alt": "Inside a 30×10 ft porta cabin shop, entrance with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-05-interior-counter.webp",
+          "alt": "Interior of a 30x10 ft shop cabin with a slatted counter, a long run of lit oak display shelving and two fans",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-06-interior-charcoal-run.webp",
+          "alt": "Interior of a 30x10 ft shop cabin in grey with a charcoal cabinet run, lit black shelving and a wide hatch",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
       ],
-      "shortDescription": "A two-zone shop, counter/display at front, stock at the rear.",
       "priceInclGst": 475776
-    },
-    {
-      "sizeSlug": "40x8",
-      "label": "40x8 ft",
-      "dims": "40x8x8.5 ft",
-      "areaSqft": 320,
-      "priceExGst": 421120,
-      "capacity": "7–9 people",
-      "useCase": "In-Line Market Counter",
-      "sku": "SP-PCS-40x8",
-      "images": [
-        {
-          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-hero-view.webp",
-          "alt": "Porta cabin shop 40×8 ft, retail counter cabin by SAMAN Portable",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-front-angle.webp",
-          "alt": "40×8 ft porta cabin shop, front view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-side-elevation.webp",
-          "alt": "40×8 ft porta cabin shop, side view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-workspace-interior.webp",
-          "alt": "Inside a 40×8 ft porta cabin shop, workspace with counter and display area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/40x8/porta-cabin-shop-40x8-entrance-interior.webp",
-          "alt": "Inside a 40×8 ft porta cabin shop, entrance with counter and display area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "A long retail run for an in-line market or parts counter.",
-      "priceInclGst": 496922
-    },
-    {
-      "sizeSlug": "20x20",
-      "label": "20x20 ft",
-      "dims": "20x20x8.5 ft",
-      "areaSqft": 400,
-      "priceExGst": 526400,
-      "capacity": "8–10 people",
-      "useCase": "Walk-In Shop Floor",
-      "sku": "SP-PCS-20x20",
-      "images": [
-        {
-          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-hero-view.webp",
-          "alt": "Porta cabin shop 20×20 ft, retail counter cabin by SAMAN Portable",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-front-angle.webp",
-          "alt": "20×20 ft porta cabin shop, front view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-side-elevation.webp",
-          "alt": "20×20 ft porta cabin shop, side view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-workspace-interior.webp",
-          "alt": "Inside a 20×20 ft porta cabin shop, workspace with counter and display area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/20x20/porta-cabin-shop-20x20-entrance-interior.webp",
-          "alt": "Inside a 20×20 ft porta cabin shop, entrance with counter and display area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "A square walk-in shop floor for a larger outlet or showroom.",
-      "priceInclGst": 621152
     },
     {
       "sizeSlug": "40x10",
@@ -354,98 +288,59 @@
       "dims": "40x10x8.5 ft",
       "areaSqft": 400,
       "priceExGst": 526400,
-      "capacity": "8–10 people",
-      "useCase": "Large Shop-Floor Module",
+      "capacity": "9 persons",
       "sku": "SP-PCS-40x10",
       "images": [
         {
-          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-hero-view.webp",
-          "alt": "Porta cabin shop 40×10 ft, retail counter cabin by SAMAN Portable",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-01-three-quarter-forest-green.webp",
+          "alt": "Forest green 40x10 ft shop cabin with four windows along the long wall and an open service counter",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-front-angle.webp",
-          "alt": "40×10 ft porta cabin shop, front view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-02-three-quarter-sage-cream.webp",
+          "alt": "Sage 40x10 ft shop cabin with a cream lower band, three windows and a propped awning over the counter",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-side-elevation.webp",
-          "alt": "40×10 ft porta cabin shop, side view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-03-front-elevation-sand.webp",
+          "alt": "Sand beige 40x10 ft shop cabin seen straight on, with three windows, a service opening and a solid door",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-workspace-interior.webp",
-          "alt": "Inside a 40×10 ft porta cabin shop, workspace with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-04-three-quarter-powder-blue.webp",
+          "alt": "Powder blue 40x10 ft shop cabin with a charcoal lower band, three windows and an open service counter",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
-          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-entrance-interior.webp",
-          "alt": "Inside a 40×10 ft porta cabin shop, entrance with counter and display area",
-          "provenance": "unknown",
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-05-interior-counter.webp",
+          "alt": "Interior of a 40x10 ft shop cabin in pale sage with a slatted counter, lit oak shelving and a glass case",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-06-interior-walnut-run.webp",
+          "alt": "Interior of a 40x10 ft shop cabin with a dark walnut cabinet run, lit display shelves and a wide open hatch",
+          "provenance": "render",
           "width": 1254,
           "height": 1254
         }
       ],
-      "shortDescription": "A large single-module shop floor delivered as one unit.",
       "priceInclGst": 621152
-    },
-    {
-      "sizeSlug": "40x12",
-      "label": "40x12 ft",
-      "dims": "40x12x8.5 ft",
-      "areaSqft": 480,
-      "priceExGst": 618240,
-      "capacity": "10–12 people",
-      "useCase": "Full Retail Unit with Stock Zone",
-      "sku": "SP-PCS-40x12",
-      "images": [
-        {
-          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-hero-view.webp",
-          "alt": "Porta cabin shop 40×12 ft, retail counter cabin by SAMAN Portable",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-front-angle.webp",
-          "alt": "40×12 ft porta cabin shop, front view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-side-elevation.webp",
-          "alt": "40×12 ft porta cabin shop, side view, corrugated steel retail unit with shutter",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-workspace-interior.webp",
-          "alt": "Inside a 40×12 ft porta cabin shop, workspace with counter and display area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "src": "/images/products/porta-cabin-shop/40x12/porta-cabin-shop-40x12-entrance-interior.webp",
-          "alt": "Inside a 40×12 ft porta cabin shop, entrance with counter and display area",
-          "provenance": "unknown",
-          "width": 1254,
-          "height": 1254
-        }
-      ],
-      "shortDescription": "The flagship shop cabin: a full walk-in retail unit with counter, display and stock zones.",
-      "priceInclGst": 729523
     }
   ],
-  "specPdfHref": "/specs/porta-cabin-shop-technical-specification.pdf"
+  "applicationsDataset": "porta-cabin-shop",
+  "descriptionHtml": "<h3>What makes a shop cabin a shop, and not a cabin you sell from</h3><p>Most portable cabins in India are one product with several labels. The same box is offered as a site office, a store, a guard room and a shop, and the only thing that changes is the description. This page is about the version where the building itself is different.</p><p>The difference starts at the wall your customer meets. A retail unit is planned around a large service opening: aluminium glazing with a lockable counter opening, sized and positioned for how you actually serve people. That opening is framed and weather-sealed into the chassis while the frame is being fabricated, not cut into a finished cabin afterwards. Around it sit the things a trading unit needs and an office does not: a staff or customer door chosen for your trading pattern, a lockable service shutter that closes the unit overnight, an interior specified as a customer-facing finish, and power points positioned for signage and equipment rather than for desks.</p><p>Everything below follows from that. The structure, the panels and the electrical work are the same disciplined build as the rest of the range. What changes is the front, the security, the finish and the layout, and those four things are what you are paying the difference for.</p><img src=\"/images/products/porta-cabin-shop/description/porta-cabin-shop-description-01-frontage-burgundy.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Burgundy shop cabin with two propped service openings, counter ledges and a full-height glazed door between them\"><h3>The frontage decision</h3><p>This is the decision that most affects how the unit trades, and it is the one no competitor in this market publishes in any detail.</p><p>Start with how the transaction happens. If your customer stays outside and you serve through an opening, the counter opening is the product: its width, its sill height, how it locks, and whether the glazing beside it is there to display stock or simply to let light in. If your customer comes inside, the door becomes the primary opening and the glazing becomes a shopfront rather than a service point. Those are different buildings with different opening schedules, and choosing between them at enquiry is far cheaper than changing it later.</p><p>Then consider closing time. A shutter is not an accessory bolted on at the end. Its fixing points, its housing and the reinforcement around the opening are part of the opening design, which is why the specification treats the door and shutter as one assembly. A unit that is secured properly at night is a unit whose opening was planned to be secured.</p><p>Then the signage and power. Retail equipment is not office equipment. A chiller, a display fridge, a fryer, a card machine and an illuminated sign each have their own position and their own load, and they are coordinated with the approved electrical drawing rather than added to whatever sockets happen to be there. Tell us what you will plug in, and where, before the drawing is issued.</p><img src=\"/images/products/porta-cabin-shop/description/porta-cabin-shop-description-02-interior-terracotta.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Terracotta shop cabin interior with a service counter, wall shelving of pouches and canisters and a split air conditioner\"><h3>What the interior is specified for</h3><p>The interior of a retail cabin takes a different kind of wear from an office, and the specification reflects that.</p><p>Interior walls are 8 to 12 mm plywood with laminate, or 6 to 8 mm HPL panels. The ceiling is an 8 mm decorative board or a 4 mm ACP ceiling. Underfoot, an 18 mm Bison or marine-grade floor board carries a 3 to 4 mm LVT or SPC finish, or a 2 mm commercial vinyl. Those are surfaces chosen to be cleaned repeatedly, to take trolley wheels and dropped stock, and to still look like a shop after a year of it. A site office lining would not.</p><p>Insulation is 50 mm glass wool in the walls and 75 mm in the roof. That matters more in a shop than in a store room, because a customer-facing unit is usually occupied through the hottest part of the day with an opening that spends a good deal of time open.</p><img src=\"/images/products/porta-cabin-shop/description/porta-cabin-shop-description-03-base-and-handling.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Beige shop cabin on a paved surface, showing the black steel base frame, forklift pockets and corner lifting lugs\"><h3>What the site has to prepare</h3><p>This is the section the category leaves out entirely, and it is the one that most often decides whether a delivery goes well.</p><p>The base comes first. The unit arrives complete and is set down in position, so the position has to be ready. A level, compacted, load-bearing base is the requirement. It does not have to be a concrete raft in every case, but it does have to be level and it does have to take the load without settling unevenly, because a unit set down out of level will show it at the door and at the shutter before it shows it anywhere else.</p><p>Access comes second, and it is worth checking before you order rather than on the morning of delivery. The smaller sizes travel on a 20 ft trailer; the 30x10 and the 40x10 need a 40 ft trailer. What the vehicle needs is a route in, room to turn, and space beside the final position to set the unit down. Overhead clearance matters as much as width. Where a crane or other lifting equipment is needed, that is arranged and quoted for your site rather than assumed.</p><p>Services come third. Power to the unit is your connection; the distribution board, protection and internal circuits are ours. Where the layout includes a sink or handwash point, water supply and drainage to the unit are site scope. Confirm what exists at the position before the layout is finalised, because moving a wet point after the floor is laid is not a small change.</p><h3>Branding, colour and finish</h3><p>The exterior colour and coating system are project-selected, and the finish schedule confirms substrate preparation, compatibility, touch-up and the maintenance appropriate to the exposure category. In practice that means a franchise or brand colour can be matched, and the way it is applied and maintained is agreed rather than assumed.</p><p>Two honest limits belong here. First, colour matching on a coated steel substrate is agreed against the approved finish schedule, not against a printed swatch held up to a wall. Second, coastal, industrial and heavy-traffic roadside positions are different exposure categories, and the maintenance interval that keeps a brand colour looking right is not the same in each. If the unit is going somewhere aggressive, say so at enquiry: a <a href=\"https://www.samanportable.com/product/porta-cabins/gi-porta-cabin\">galvanized iron porta cabin</a> may be the better substrate to start that conversation from.</p><h3>What a portable cabin shop gives you on a leased plot</h3><p>Most retail positions in India are not owned outright. They are leased, licensed for a season, allotted on a forecourt, or held on a plot the owner may want back at short notice. That is the situation this build is designed around, and it is where a portable cabin shop earns its cost against a permanent structure.</p><p>The unit is set down on a prepared level base rather than founded into the ground. Nothing about it is poured. Engineered lifting and handling points and support locations are provided for each transportable module, so the shop can be lifted and relocated later, moved to the approved lifting, support and transport drawing rather than improvised on the day. If the lease ends, the shop leaves with you and the plot goes back as it was.</p><p>Two honest qualifications belong with that. First, relocating is a planned operation involving a trailer and, depending on the size and the position, lifting equipment. It is quoted for the move; it is not included in the purchase. Second, a unit that has been set down, connected and traded from for a year is not a piece of furniture. Services are disconnected, the base at the new position is prepared in advance, and the approved drawing governs the lift. Plan the second move when you plan the first and it is a straightforward job. Discover it on the last day of a lease and it is not.</p><h3>Compliance is yours, and it is worth knowing early</h3><p>No prefab manufacturer in this market publishes anything about the permissions a portable shop needs, which is odd, because it is one of the first questions a first-time retailer asks.</p><p>The short version is that the building being movable does not remove the obligations that come with trading from it. Registration under the relevant state Shops and Establishments Act, any trade licence your municipal body requires, and any permission needed to place a structure on the plot or forecourt you have in mind are all yours to obtain, and they vary by state and by municipality. We supply the unit, its specification and its documentation. We do not obtain permissions, and any supplier who implies otherwise is worth a second question.</p><p>Food service deserves its own line, because it is where the boundary of this product sits. If you intend to prepare or serve food, FSSAI registration or licensing is a separate requirement and is entirely yours. More importantly for your specification: <strong>food-service exhaust and plumbing equipment is outside this product's baseline unless it is separately specified.</strong> What the shop and kiosk build includes is provision - an exhaust or duct provision, a fresh-air opening, a sink or handwash point, water and waste connections and equipment connection points according to your layout. That is provision for equipment, not a fitted commercial kitchen. If your business is a cafe, a restaurant or a food outlet rather than a shop that happens to sell something edible, the <a href=\"https://www.samanportable.com/product/container-cafe\">container cafe range</a> is built around that duty and is the better place to start.</p><h3>Where a shop cabin is the wrong answer</h3><p>Three cases, stated plainly.</p><p>If nobody buys anything at the wall, you do not need this build. A cabin for staff, storage, supervision or site administration is a simpler and cheaper product, and the retail frontage package is money spent on an opening you will never serve through.</p><p>If your business is food preparation at any scale, the point above applies. Provision is not a kitchen.</p><p>If staff will spend a full working day in the unit and there is no toilet within reach of the position, sanitation is not a detail to solve afterwards. A <a href=\"https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet\">porta cabin with toilet</a> puts a wet area inside the same footprint and details it properly, and on a retail plot with no facilities that is often the more useful configuration than a slightly larger selling floor. The full <a href=\"https://www.samanportable.com/product/porta-cabins\">porta cabin range</a> sets the options out against each other.</p><img src=\"/images/products/porta-cabin-shop/description/porta-cabin-shop-description-04-interior-blue-floor.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Blue shop cabin interior laid out as a walk-in floor with a central display island, perimeter shelving and a rear counter\"><h3>Choosing between the six sizes</h3><p>The specification is costed against the 20x10x8.5 ft reference. The rate per square foot falls as the unit grows, which is why comparing a 10x10 against a 40x10 on headline price alone reads the value wrongly.</p><div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Size</th><th>Area</th><th>Occupancy</th><th>Rate per sq.ft.</th><th>Price ex-GST</th><th>With 18% GST</th></tr></thead><tbody><tr><td>10x10x8.5 ft</td><td>100 sq.ft.</td><td>2 persons</td><td>Rs 1,540</td><td>Rs 1,54,000</td><td>Rs 1,81,720</td></tr><tr><td>20x8x8.5 ft</td><td>160 sq.ft.</td><td>4 persons</td><td>Rs 1,540</td><td>Rs 2,46,400</td><td>Rs 2,90,752</td></tr><tr><td>20x10x8.5 ft</td><td>200 sq.ft.</td><td>4 persons</td><td>Rs 1,400</td><td>Rs 2,80,000</td><td>Rs 3,30,400</td></tr><tr><td>20x12x8.5 ft</td><td>240 sq.ft.</td><td>5 persons</td><td>Rs 1,344</td><td>Rs 3,22,560</td><td>Rs 3,80,621</td></tr><tr><td>30x10x8.5 ft</td><td>300 sq.ft.</td><td>7 persons</td><td>Rs 1,344</td><td>Rs 4,03,200</td><td>Rs 4,75,776</td></tr><tr><td>40x10x8.5 ft</td><td>400 sq.ft.</td><td>9 persons</td><td>Rs 1,316</td><td>Rs 5,26,400</td><td>Rs 6,21,152</td></tr></tbody></table></div><p>These are planning figures for the cabin as specified, confirmed in the final quotation. They exclude interior fit-out and retail fixtures, optional add-ons, transport and installation, foundations and hardstanding, and any project-specific engineering or testing. On this product the fit-out exclusion is the one that catches people out: the number above buys the shop, not the shelving, counters, chillers and display units that go in it.</p><img src=\"/images/products/porta-cabin-shop/description/porta-cabin-shop-description-05-interior-plum-fitout.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Plum shop cabin interior with long display counters, backlit wall niches, track lighting and two split air conditioners\"><h3>Standard, optional, custom and excluded</h3><p><strong>Standard:</strong> the MS structure with its base frame, stiffeners, floor frame, top frame, roof stiffeners and corner and wall posts; engineered lifting and handling points; corrugated MS exterior walls and roof; the plywood, laminate or HPL interior and the decorative or ACP ceiling; the Bison or marine-ply floor base with LVT, SPC or commercial vinyl finish; 50 mm wall and 75 mm roof glass wool insulation; the staff or customer door with lockable service counter or shutter; large aluminium service glazing with a lockable counter opening; the electrical installation to the approved drawing, with DB, MCB and RCCB protection, earthing and segregated circuits; corrosion protection matched to substrate; pre-dispatch quality checks.</p><p><strong>Optional:</strong> air conditioning for the customer zone; exhaust hood and duct provision; sink, handwash and plumbing connections; grills, mosquito mesh, guards and louvers where the opening schedule requires them; additional openings and service panels; project-selected decorative and external finish.</p><p><strong>Custom:</strong> the layout itself, meaning the front service counter and the separation between staff preparation and storage zones; the opening schedule; equipment positions and their electrical provision.</p><p><strong>Excluded unless written into the quotation:</strong> interior fit-out and retail fixtures, transport and installation, craneage or lifting equipment, foundations and hardstanding, site power and water connections, any project-specific engineering, drawings or testing, and any permission, registration or licence.</p><h3>What we need to quote</h3><p>A shop is quoted from its frontage, not from its floor area, so the useful enquiry looks different from an office cabin enquiry:</p><ul><li>The size you want, and the plot or frontage width you have to fit it into</li><li>How you serve: through a counter opening, or across a floor customers walk onto</li><li>Your closing arrangement: shutter, door, or both, and what has to be secured overnight</li><li>The opening schedule, with positions: glazing, counter, doors, louvers and any service penetration</li><li>What you will plug in and where, including chillers, display units, signage and any equipment load</li><li>Whether sink, handwash or plumbing is needed, and what water and drainage exists at the position</li><li>Your brand colour or finish requirement, and the exposure at the position</li><li>The base you intend to set the unit on, who is preparing it, and the delivery access route</li></ul><p>The first two change the quotation most. Tell us those early.</p><h3>Delivery, warranty and service life</h3><p>SAMAN POS India Private Limited manufactures under the SAMAN Portable brand. Our factories are in Bengaluru and Greater Noida, so units for southern and northern projects are built at the nearer plant. The company was founded in 2009 and incorporated in 2019, with over 15 years of experience. We have a team of over 200, and more than 500 projects and 3,000 customers across over 15 states. We manufacture rather than resell.</p><p>A fixed-price quotation is issued within 48 hours of a complete enquiry. Delivery runs 7 to 21 working days, depending on size, configuration and the current build queue. Office hours are Monday to Saturday, 09:00 to 20:00 IST. GST is 18% and the HSN code is 9406.</p><p>Warranty is stated as follows: 5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Warranty scope and exclusions are confirmed in the final quotation, and misuse, site services, consumables and unapproved alterations remain outside the agreed scope unless explicitly included. Service life is 20 to 25 years under proper use and maintenance. That is a design life, not a warranty period.</p><h3>Questions shop owners ask</h3><h4><strong>Can I put a portable cabin shop on leased land without a permanent foundation?</strong></h4><p>The unit is set down on a prepared level base rather than built into the ground, which is exactly why it suits leased and temporary positions, and it carries engineered lifting points so it can be moved again to the approved drawing. Whether your lease and your local authority permit a structure on that plot is a separate question, and it is yours to confirm. We can tell you what base the unit needs; we cannot tell you what your landlord or municipality will allow.</p><h4><strong>Can you match my franchise colour exactly?</strong></h4><p>Colour and coating are project-selected and agreed in the approved finish schedule, which is where the match is confirmed against the actual substrate and coating system rather than against a printed swatch. Bring the brand specification to the enquiry and it is agreed before fabrication, not after.</p><h4><strong>How is it secured at night?</strong></h4><p>Through the lockable service counter or shutter and the door lockset, both part of the opening assembly rather than added later. Tell us what has to be secured and how the unit is left overnight, and the opening schedule is planned around it.</p><h4><strong>Can I run a food outlet from it?</strong></h4><p>You can sell food from a shop. Preparing food is a different scope: the baseline carries provision, meaning an exhaust or duct provision, a fresh-air opening and sink, water, waste and equipment connection points, but not fitted food-service equipment unless it is separately specified. FSSAI registration is yours. If food is the business rather than part of the stock, look at the container cafe range instead.</p><h4><strong>How is this different from your office cabins?</strong></h4><p>The frontage, the security, the finish and the layout. The structure and the services discipline are shared with the rest of the range, which is deliberate; a shop should not be a weaker building than an office, only a differently planned one.</p><h4><strong>What arrives, and what do I still have to buy?</strong></h4><p>The building arrives complete to the specification above, with its openings, finishes and electrical installation. Shelving, counters, chillers, display units and everything else that makes it your shop is fit-out, and it is quoted separately.</p>",
+  "suppressLegacyFaqSchema": true,
+  "specPdfHref": "/specs/porta-cabin-shop-technical-specification.pdf",
+  "specPdfButtonLabel": "Download Specification PDF",
+  "hasProductVideo": false
 }

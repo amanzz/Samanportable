@@ -236,14 +236,20 @@ export const PORTA_CABIN_SIBLING_YMAL = (slug: string) =>
  * dash to comma) and changes no word. It is a SEPARATE export rather than a change to
  * the function above, so the hub's and the MS page's rendered alts are untouched.
  */
-// PC-03 (15 Aug 2026) held PORTA_CABIN_DS_RAIL here and PC-08 (15 Aug 2026) held
-// PORTA_CABIN_SKID_RAIL: the double-story and skid-mounted pages' own three-item
-// Column 3 rails, each named by its own build prompt. Both are deleted by the C01
-// rail-consistency correction above, which restores RULING v2.1's full-cluster rail
-// on every subpage. Neither carried an authored string - both looked their rows up in
-// PORTA_CABIN_HUB_RAIL and normalised the alt punctuation, exactly as
-// portaCabinSubpageRail() now does for all ten pages at once. PC-08's rail also railed
-// knock-down-porta-cabin before it was built; the new `live` flag stops that.
+// PC-03 (15 Aug 2026) held PORTA_CABIN_DS_RAIL here, PC-08 (15 Aug 2026) held
+// PORTA_CABIN_SKID_RAIL and PC-10 (15 Aug 2026) held PORTA_CABIN_SHOP_RAIL: the
+// double-story, skid-mounted and shop pages' own three-item Column 3 rails, each
+// named by its own build prompt. All three are deleted by the C01 rail-consistency
+// correction above, which restores RULING v2.1's full-cluster rail on every subpage.
+// None carried an authored string - each looked its rows up in PORTA_CABIN_HUB_RAIL
+// and normalised the alt punctuation, exactly as portaCabinSubpageRail() now does for
+// all ten pages at once. PC-08's rail also railed knock-down-porta-cabin before it was
+// built; the new `live` flag stops that.
+//
+// PC-10 landed on static-migration AFTER this correction was written and was folded in
+// on merge. It is the eighth page-at-a-time rail this ticket removes, and evidence the
+// pattern reproduces itself: each new build copies the last one's bespoke rail. New
+// cluster pages need NO rail code at all now - add the slug to PORTA_CABIN_RAIL_ORDER.
 
 export const PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH = (slug: string) =>
   PORTA_CABIN_SIBLING_YMAL(slug).map((item) =>

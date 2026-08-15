@@ -1,0 +1,82 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft Shop Cabin: Serve One Queue Through a Counter",
+      "paragraph": "At 100 sq.ft. this is a counter unit rather than a shop you walk into. The customer stays on the pavement and the sale happens through the service opening, so the glazing and counter detail matter far more here than the floor area does. Two staff is the working limit. It suits ticket windows, recharge and payment points, cigarette and pan counters and forecourt kiosks. The rate per square foot is the highest on this ladder, because a full frontage package sits on a small floor.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/porta-cabin-shop/10x10/porta-cabin-shop-10x10-01-three-quarter-mustard.webp",
+        "alt": "Mustard yellow 10x10 ft shop cabin with a dark green lower band and an open service counter with a timber ledge",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8 ft Shop Cabin: A Long Counter on a Narrow Front",
+      "paragraph": "The 8 ft depth is both the constraint and the point. It fits plot frontages and market rows where a 10 ft cabin will not sit square, and it buys you a genuinely long counter run for the money. Inside, 160 sq.ft. reads as a service corridor: staff work along one wall with stock behind them, and customers stay outside. Choose it when your frontage is generous and your depth is not. It carries the same rate per square foot as the 10x10.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/porta-cabin-shop/20x8/porta-cabin-shop-20x8-01-three-quarter-light-grey.webp",
+        "alt": "Light grey 20x8 ft shop cabin with a wide service opening, timber counter ledge and two side windows",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft Shop Cabin: The Costed Reference Retail Size",
+      "paragraph": "This is the size the specification is costed against, and every other price on this page relates back to it. At 200 sq.ft. you get a serving front and a usable store or preparation zone behind it, which is the first point where the unit stops being only a counter. Four staff work here without crowding. If you are comparing quotations from more than one supplier, compare at this size. It is the one where both of you are describing the same building.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/porta-cabin-shop/20x10/porta-cabin-shop-20x10-01-three-quarter-wheat.webp",
+        "alt": "Wheat yellow 20x10 ft shop cabin with a black base skirt, an open service counter and a glazed upper door",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12 ft Shop Cabin: Depth to Bring Customers Inside",
+      "paragraph": "The extra two feet of depth change the trading pattern rather than the storage. At 240 sq.ft. there is room for customers to stand inside the unit while they are served, which a 10 ft depth does not allow once a counter and a staff run are in place. That suits pharmacies, mobile and accessory shops, spare-part counters and any trade where the customer looks at stock before deciding. This is the first size on the ladder priced below the base rate.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/porta-cabin-shop/20x12/porta-cabin-shop-20x12-01-three-quarter-anthracite.webp",
+        "alt": "Anthracite 20x12 ft shop cabin on wet paving, with an open service counter and a large glazed door panel",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft Shop Cabin: Selling Floor With a Back of House",
+      "paragraph": "At 300 sq.ft. the plan is long enough to separate the selling floor from everything that supports it. Counter and display sit at the front, and a partitioned rear zone takes stock, a staff area and a handwash point where the layout calls for one. Seven is the stated occupancy. This is usually the smallest size where a shop can hold a full day of stock without the customer looking at it, and it shares the 20x12 rate.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/porta-cabin-shop/30x10/porta-cabin-shop-30x10-01-three-quarter-ivory-green.webp",
+        "alt": "Ivory 30x10 ft shop cabin with a bottle green lower band, an open service counter and stocked shelving inside",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft Shop Cabin: A Three-Zone Full-Length Retail Run",
+      "paragraph": "A 400 sq.ft. unit is planned in three zones rather than two: a customer area you walk into, a serving line, and a back of house behind that. It is a different retail proposition from a counter, and it needs a considered opening schedule, because a 40 ft frontage with one door and one window trades badly. This is the lowest rate per square foot on the ladder. Confirm your access route early, because this size travels on a 40 ft trailer.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/porta-cabin-shop/40x10/porta-cabin-shop-40x10-01-three-quarter-forest-green.webp",
+        "alt": "Forest green 40x10 ft shop cabin with four windows along the long wall and an open service counter",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  ]
+}

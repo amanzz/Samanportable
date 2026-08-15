@@ -79,6 +79,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'double-story-porta-cabin',
   'puf-porta-cabin',
   'skid-mounted-porta-cabin',
+  'porta-cabin-shop',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -591,8 +592,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       imageAlt: relatedProduct.title,
     }));
 
-    // PC-02's GI rail, PC-03's double-story rail and PC-08's skid-mounted rail stood
-    // here until C01 folded all three into the one derived cluster rail above.
+    // PC-02's GI rail, PC-03's double-story rail, PC-08's skid-mounted rail and
+    // PC-10's shop rail stood here until C01 folded all four into the one derived
+    // cluster rail above.
 
     // T25 — S4 strip order is LOCKED by the internal-linking matrix v2: hub first,
     // then exactly the three assigned siblings. Applies only to porta cabin
@@ -778,7 +780,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // from these slugs only, so the hub, the MS page and the GI page
                   // keep the deployed literal.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin'
+                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
@@ -1083,7 +1085,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {(slug === 'ms-porta-cabin' || slug === 'fire-rated-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
-              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin') && (
+              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
               )}
 
