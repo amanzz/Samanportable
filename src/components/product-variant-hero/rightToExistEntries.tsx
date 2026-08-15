@@ -367,49 +367,16 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: '/gallery',
     },
   },
-  'low-cost-porta-cabin': {
-    heading: 'Why choose the Low Cost Porta Cabin',
-    body: (
-      <>
-        The value grade of our newly fabricated porta cabin, built on the identical welded MS frame and offered across all nine standard sizes. It specifies a 0.8–1.0 mm corrugated exterior, 6 mm pre-laminated lining and 1.5 mm vinyl over an 18 mm BWP plywood floor, saving on finish and never on structure. Choose it when the cabin serves your own team; move to the <Link className={linkClass} href={href('luxury-porta-cabin')}>Luxury Porta Cabin</Link> when clients will walk into it.
-      </>
-    ),
-    comparison: (
-      <>
-        Only need a compact footprint? The <Link className={linkClass} href={href('mini-porta-cabin')}>Mini Porta Cabin</Link> covers the four smallest sizes at this same value grade.
-      </>
-    ),
-  },
-  'luxury-porta-cabin': {
-    heading: 'Why choose the Luxury Porta Cabin',
-    body: (
-      <>
-        The premium grade of the same newly fabricated cabin, specified for reception areas and client-facing rooms. It carries a 1.25–1.6 mm exterior, 12 mm plywood lining with laminate and HPL feature panels, a 12.5 mm gypsum ceiling and 5–6 mm SPC flooring over marine ply. Choose it where the room is seen by customers; the <Link className={linkClass} href={href('portacabin-office')}>Portacabin Office</Link> covers working offices at upgraded rather than premium grade.
-      </>
-    ),
-    comparison: (
-      <>
-        Want this finish without a desk layout? This page keeps the open room; <Link className={linkClass} href={href('portacabin-office')}>office fit-outs</Link> sit one grade below.
-      </>
-    ),
-  },
-  'mini-porta-cabin': {
-    heading: 'Why choose the Mini Porta Cabin',
-    body: (
-      <>
-        The compact end of our newly fabricated range, covering the four smallest sizes from a one-person duty post to a four-person room. It keeps the value specification: a 0.8–1.0 mm exterior with 6 mm lining, and adds a second window and separate socket circuit once the cabin passes 200 sq ft. Choose it for gate posts, kiosks and small teams; the <Link className={linkClass} href={href('low-cost-porta-cabin')}>Low Cost Porta Cabin</Link> carries the same grade in the larger sizes.
-      </>
-    ),
-    comparison: (
-      <>
-        Need a fitted workspace rather than a duty room? The <Link className={linkClass} href={href('portacabin-office')}>Portacabin Office</Link> adds workstations, storage and glazing.
-      </>
-    ),
-  },
   // PC-01 (14 Aug 2026) — Section 2 "buyer orientation" copy from the approved MS
   // build ticket, verbatim, mapped onto this existing heading/body/comparison card.
   // The previous entry's links to steel-porta-cabin and portacabin-office are gone:
   // the approved §7 link map carries exactly two S2 body links, the hub and /contact.
+  // Phase 1 Porta Cabin consolidation (SAMAN approval, 15 Aug 2026): the entries
+  // for low-cost-porta-cabin, luxury-porta-cabin, mini-porta-cabin,
+  // steel-porta-cabin and portacabin-office are removed. All five routes now 301,
+  // so the entries were unreachable, and between them they carried the last
+  // in-copy links to portacabin-office anywhere in this file. No copy that renders
+  // on a surviving page was edited: every removed block belonged to a retired page.
   'ms-porta-cabin': {
     heading: 'Is the Heavy MS Build the Right Porta Cabin for Your Site?',
     body: (
@@ -482,19 +449,6 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: '/gallery',
       position: 'comparisonInsideCard',
     },
-  },
-  'steel-porta-cabin': {
-    heading: 'Why choose the Steel Porta Cabin',
-    body: (
-      <>
-        The heavy relocation build of our newly fabricated cabin, made for units that are lifted, moved and stacked repeatedly. It takes the 1.6 mm exterior with a 0.50 mm pre-painted metal liner, a heavy MS floor plate with 3 mm chequered plate finish, double-leaf MS doors and upgraded lifting lugs. Choose it where the cabin moves between sites; the <Link className={linkClass} href={href('ms-porta-cabin')}>MS Porta Cabin</Link> suits a unit that stays in one position.
-      </>
-    ),
-    comparison: (
-      <>
-        Need a lighter cabin that stays on one site? The <Link className={linkClass} href={CABIN_HREF}>Porta Cabins hub</Link> carries the standard reference specification.
-      </>
-    ),
   },
   // PC-10 (15 Aug 2026) - Section 2 "buyer orientation" rewrite from copy pack v1
   // section 3, verbatim, SHA-256 verified (SECTION2_H2 0f6fa307, SECTION2_P1
@@ -746,19 +700,6 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaLabel: 'Ask us what the kit includes for your size',
       ctaHref: 'https://www.samanportable.com/contact',
     },
-  },
-  'portacabin-office': {
-    heading: 'Why choose the Portacabin Office',
-    body: (
-      <>
-        The office configuration of our newly fabricated cabin: workstations, storage and an optional manager partition. Upgraded lining and flooring sit under office-grade glazing, with power and data drawn to your furniture plan and none of the gypsum ceiling or HPL panelling of the premium build. Choose it for any working office; at ₹1,450 per square foot it sits between the <Link className={linkClass} href={CABIN_HREF}>plain cabin</Link> and the <Link className={linkClass} href={href('luxury-porta-cabin')}>premium build</Link>.
-      </>
-    ),
-    comparison: (
-      <>
-        Room will be seen by clients? The <Link className={linkClass} href={href('luxury-porta-cabin')}>Luxury Porta Cabin</Link> adds the gypsum ceiling, feature panelling and SPC flooring.
-      </>
-    ),
   },
   'labor-colony': {
     heading: 'Why the colony page and not a single building',

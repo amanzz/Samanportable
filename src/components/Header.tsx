@@ -86,7 +86,10 @@ const MEGA_COLUMNS = [
     title: 'Cabins & Offices',
     items: [
       { name: 'Porta Cabin', href: '/product/porta-cabins' },
-      { name: 'Portable Cabin', href: '/product/portable-cabin' },
+      // Phase 1 (15 Aug 2026): the 'Portable Cabin' entry is deleted, not
+      // re-pointed. /product/portable-cabin 301s into /product/porta-cabins,
+      // which is the entry directly above, so re-pointing would leave two
+      // identically-labelled items on the same URL in every page's mega-menu.
       { name: 'Portable Office Cabin', href: '/product/portable-office' },
       { name: 'Container Office', href: '/product/container-offices' },
       { name: 'Container Cafe', href: '/product/container-cafe' },

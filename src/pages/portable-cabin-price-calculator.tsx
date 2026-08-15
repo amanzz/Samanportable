@@ -476,6 +476,13 @@ const ProductCalculatorPage = () => {
         fallbackDescription={CALCULATOR_DESCRIPTION}
         fallbackCanonical={`${siteConfig.url}/portable-cabin-price-calculator`}
         structuredData={structuredData}
+        // SAMAN ruling, 15 Aug 2026: this route is a buyer tool, not a landing
+        // page. 57 words of body copy behind a form, and 0 clicks from 21
+        // impressions in 16 months. noindex keeps it out of the index so it
+        // cannot compete with the eleven approved Porta Cabin pages; follow
+        // keeps every link on it passing authority through to them. Its entry
+        // in sitemapCanonicalPaths.json is removed in the same change.
+        noindex
       />
 
       <main className="bg-background min-h-screen">

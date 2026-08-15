@@ -17,19 +17,16 @@
  * same JSON the page renders from. There is no formula here and no fallback.
  */
 import portaCabins from '@/data/products/porta-cabins.json';
-import lowCostPortaCabin from '@/data/products/low-cost-porta-cabin.json';
-import luxuryPortaCabin from '@/data/products/luxury-porta-cabin.json';
-import miniPortaCabin from '@/data/products/mini-porta-cabin.json';
 import msPortaCabin from '@/data/products/ms-porta-cabin.json';
 import giPortaCabin from '@/data/products/gi-porta-cabin.json';
 import soundproofPortaCabin from '@/data/products/soundproof-porta-cabin.json';
+import fireRatedPortaCabin from '@/data/products/fire-rated-porta-cabin.json';
+import pufPortaCabin from '@/data/products/puf-porta-cabin.json';
 import doubleStoryPortaCabin from '@/data/products/double-story-porta-cabin.json';
 import skidMountedPortaCabin from '@/data/products/skid-mounted-porta-cabin.json';
 import knockDownPortaCabin from '@/data/products/knock-down-porta-cabin.json';
 import portaCabinShop from '@/data/products/porta-cabin-shop.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
-import portacabinOffice from '@/data/products/portacabin-office.json';
-import steelPortaCabin from '@/data/products/steel-porta-cabin.json';
 import portableOffice from '@/data/products/portable-office.json';
 import modernOfficeCabin from '@/data/products/modern-office-cabin.json';
 import portableOfficeContainer from '@/data/products/portable-office-container.json';
@@ -40,9 +37,6 @@ import containerOfficesJson from '@/data/products/container-offices.json';
 import containerOfficeCabinJson from '@/data/products/container-office-cabin.json';
 import shippingContainerOfficeJson from '@/data/products/shipping-container-office.json';
 import siteOfficeContainer from '@/data/products/site-office-container.json';
-import portableCabin from '@/data/products/portable-cabin.json';
-import portableCabinWithToilet from '@/data/products/portable-cabin-with-toilet.json';
-import portableShopCabin from '@/data/products/portable-shop-cabin.json';
 // C-05 container cafe cluster, added in CALC-L4 (09 Aug 2026). Each of the six
 // routes publishes its own six-row ladder on its own page; these read that JSON
 // and nothing else, so the cluster follows the same route-owns-its-ladder rule
@@ -158,9 +152,13 @@ function containerHouseLadder(key: string): LadderRow[] {
  */
 export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'porta-cabins': toRows(portaCabins),
-  'low-cost-porta-cabin': toRows(lowCostPortaCabin),
-  'luxury-porta-cabin': toRows(luxuryPortaCabin),
-  'mini-porta-cabin': toRows(miniPortaCabin),
+  // Phase 1 Porta Cabin consolidation (SAMAN approval, 15 Aug 2026): seven
+  // route-only ladder keys removed together with the redirects that retire their
+  // routes - low-cost, luxury, mini, portacabin-office, steel, and the Portable
+  // Cabin toilet and shop pages. Nothing else reads them; the approved successors
+  // (ms-porta-cabin, porta-cabin-with-toilet, porta-cabin-shop) keep their own
+  // entries. Removing them earlier would have dropped still-live pages into quote
+  // mode, which is why they were held back from the calculator patch.
   'ms-porta-cabin': toRows(msPortaCabin),
   // PC-02: derived from the GI product JSON's own six variants, so the calc-entry
   // banner price and the published ladder cannot drift (Calculator Standing Rule 3).
@@ -170,6 +168,15 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // own product JSON, same pattern as GI, so the calculator and the page
   // cannot drift apart.
   'soundproof-porta-cabin': toRows(soundproofPortaCabin),
+  // CALC parity patch (SAMAN ruling, 15 Aug 2026). Both pages publish a six-row
+  // ladder but had no entry here, so getRouteLadder returned null and the
+  // calculator rendered "Price on request" under a published price table. Same
+  // standing rule as GI and Soundproof: read the page's own product JSON so the
+  // calculator and the published ladder cannot drift. The two ladders carry
+  // different size sets (fire-rated has 40x12 and no 30x10; PUF the reverse) -
+  // toRows()/dimsFromSizeSlug() are generic parsers, so neither needs handling.
+  'fire-rated-porta-cabin': toRows(fireRatedPortaCabin),
+  'puf-porta-cabin': toRows(pufPortaCabin),
   // PC-03: derived from the double-story product JSON's own six variants, so the
   // calc-entry banner price and the published ladder cannot drift. This is the
   // standard entry every page gets (SAMAN ruling, 15 Aug 2026); no other calculator
@@ -186,8 +193,6 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'knock-down-porta-cabin': toRows(knockDownPortaCabin),
   'porta-cabin-shop': toRows(portaCabinShop),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
-  'portacabin-office': toRows(portacabinOffice),
-  'steel-porta-cabin': toRows(steelPortaCabin),
   'portable-office': toRows(portableOffice),
   'modern-office-cabin': toRows(modernOfficeCabin),
   'portable-office-container': toRows(portableOfficeContainer),
@@ -198,9 +203,12 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'container-office-cabin': toRows(containerOfficeCabinJson),
   'shipping-container-office': toRows(shippingContainerOfficeJson),
   'site-office-container': toRows(siteOfficeContainer),
-  'portable-cabin': toRows(portableCabin),
-  'portable-cabin-with-toilet': toRows(portableCabinWithToilet),
-  'portable-shop-cabin': toRows(portableShopCabin),
+  // 'portable-cabin' removed with its product-list entry (SAMAN ruling, 15 Aug
+  // 2026). The Portable Cabin cluster retires into /product/porta-cabins, so the
+  // retired terminology must not survive as a separate calculator product with a
+  // price of its own. Deliberately NOT remapped to the porta-cabins ladder: that
+  // would reinstate the inherited-rate pattern the 03 Aug 2026 binding ruling
+  // removed. This entry and PRODUCTS in cabinCalculatorSSR.ts move together.
   'container-cafe': toRows(containerCafe),
   'container-coffee-shop': toRows(containerCoffeeShop),
   'container-hotel': toRows(containerHotel),
