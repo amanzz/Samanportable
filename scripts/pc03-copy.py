@@ -24,8 +24,15 @@ def sha(s):
 # ── fenced fields carrying an inline sha256 ──────────────────────────────────
 # heading line holds the field name and `sha256:<64hex>`; the next ``` fence holds
 # the copy. The fence markers are not copy (ticket section 12 preamble).
+#
+# Post-build correction 2 (15 Aug 2026) added SC_CTA, whose heading is followed by one
+# line of explanatory prose ("Reuses the existing Section 2 destination...") before the
+# fence, rather than a blank line straight into it. The connector below tolerates any
+# number of non-fence lines between the heading and the opening ```, so both shapes
+# parse with one pattern; it still stops at the first literal ``` it meets.
 FIELD = re.compile(
-    r'^#{3,4}\s+([A-Z0-9_]+)[^\n]*?`sha256:([0-9a-f]{64})`[^\n]*\n+```\n(.*?)\n```',
+    r'^#{3,4}\s+([A-Z0-9_]+)[^\n]*?`sha256:([0-9a-f]{64})`[^\n]*\n'
+    r'(?:(?!```)(?!#{2,4}\s)[^\n]*\n)*```\n(.*?)\n```',
     re.M | re.S)
 
 fields = {}

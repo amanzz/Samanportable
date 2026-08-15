@@ -125,15 +125,25 @@ LINKS = {
 anchors = [(h, norm(strip_tags(t)))
            for h, t in re.findall(r'<a[^>]+href="(https://www\.samanportable\.com[^"]*)"[^>]*>(.*?)</a>',
                                   raw, re.S)]
+# Post-build correction 2's SC_CTA "reuses the existing Section 2 destination; does not
+# add a new internal link" (ticket, verbatim). So /contact now carries two anchors with
+# the same approved text: the inline one inside S2_P2 prose, and the split card's own
+# fixed CTA button, which section 9 explicitly permits alongside the one-in-prose rule
+# ("the template's own fixed CTA button is separate and permitted").
+CONTACT_URL = 'https://www.samanportable.com/contact'
 for href, text in LINKS.items():
+    want = 2 if href == CONTACT_URL else 1
     hit = [a for a in anchors if a == (href, text)]
-    check('5 link "%s"' % text, len(hit) == 1, '%d occurrence(s)' % len(hit))
+    check('5 link "%s"' % text, len(hit) == want,
+          '%d occurrence(s), expected %d' % (len(hit), want))
 extra = [a for a in anchors if (a[0], a[1]) not in LINKS.items()]
 check('5 no unapproved body links', not extra, str(extra[:2]))
 desc_html = COPY['DESCRIPTION_TAB']
 check('5 Section 2 destination not repeated in Description',
       'samanportable.com/contact' not in desc_html, '')
-check('5 /contact once in prose', sum(1 for a in anchors if a[0].endswith('/contact')) == 1, '')
+_contact_total = sum(1 for a in anchors if a[0] == CONTACT_URL)
+check('5 /contact: one inline-prose anchor + one fixed CTA button, per section 9',
+      _contact_total == 2, '%d total' % _contact_total)
 # Global nav and footer render /product/portable-cabin on every page of the site. The
 # rule governs body links, so scope the check to the page body between the two.
 body = raw[raw.find('<main'):raw.find('</main>')]
@@ -150,26 +160,51 @@ check('5 /product/portable-cabin only in header dropdown and footer',
 IMG = json.load(io.open(os.path.join(HERE, 'pc03-image-report.json'), encoding='utf-8'))
 g = [r for r in IMG if r['slot'] == 'gallery']
 d = [r for r in IMG if r['slot'] == 'description']
-check('6 41 slots (36 gallery + 5 Description)', len(g) == 36 and len(d) == 5,
-      '%d + %d' % (len(g), len(d)))
-check('6 hash-unique page-wide', len({r['sha'] for r in IMG}) == 41,
-      '%d unique files' % len({r['sha'] for r in IMG}))
+sc = [r for r in IMG if r['slot'] == 'splitcard']
+check('6 41 slots (36 gallery + 5 Description), original criterion',
+      len(g) == 36 and len(d) == 5, '%d + %d' % (len(g), len(d)))
+check('6 +1 slot: Section 2 split-card image (post-build correction 2)',
+      len(sc) == 1, '%d' % len(sc))
+check('6 hash-unique page-wide, 42 total after the split-card addition',
+      len({r['sha'] for r in IMG}) == 42, '%d unique files' % len({r['sha'] for r in IMG}))
 missing = [r['out'] for r in IMG if r['out'] not in raw]
 check('6 every slot wired into the page', not missing, '%d missing' % len(missing))
 altmiss = [r['alt'] for r in IMG if r['alt'] not in raw and H.escape(r['alt'], quote=True) not in raw]
 check('6 every alt verbatim in the page', not altmiss, '%d missing' % len(altmiss))
-check('6 aspect ratio preserved (1:1 gallery, 16:9 Description)',
+check('6 unique alts page-wide, 42 total', len({r['alt'] for r in IMG}) == 42,
+      '%d unique' % len({r['alt'] for r in IMG}))
+check('6 aspect ratio preserved (1:1 gallery, 16:9 Description+splitcard)',
       all(abs(r['sw'] / r['sh'] - r['w'] / r['h']) < 0.001 for r in IMG)
       and {round(r['w'] / r['h'], 3) for r in g} == {1.0}
-      and {round(r['w'] / r['h'], 3) for r in d} == {1.778}, '')
+      and {round(r['w'] / r['h'], 3) for r in d} == {1.778}
+      and {round(r['w'] / r['h'], 3) for r in sc} == {1.778}, '')
 check('6 renames applied (no double-storey / uuid in output paths)',
       not any(re.search(r'double-storey|two-story-modular-office|prefab-double-story-building|exec-[0-9a-f]{8}', r['out']) for r in IMG), '')
 check('6 no processed-16x9-webp source used',
       not any('processed-16x9-webp' in r['src'] for r in IMG), '')
-check('6 02_ Description source absent',
-      not any(r['src'].startswith('02_') for r in IMG), '')
+check('6 02_ absent from Description tab (still true after correction 2)',
+      not any(r['src'].startswith('02_') for r in d), '')
+check('6 02_ now used exactly once, in the Section 2 split card',
+      sum(1 for r in sc if r['src'].startswith('02_')) == 1, '')
 check('6 40x20 absent', not any(r['size'] == '40x20' for r in IMG)
       and '40x20' not in raw, '')
+
+# ── 6b Section 2 split card (post-build correction 2) ────────────────────────
+S2_SEC = raw[raw.find('c01-right-to-exist-double-story-porta-cabin'):]
+S2_SEC = S2_SEC[:S2_SEC.find('</section>')]
+check('6b split card renders (saman-s2-split)', 'saman-s2-split' in S2_SEC, '')
+check('6b split-card image wired', sc[0]['out'] in S2_SEC if sc else False, '')
+check('6b split-card alt matches manifest', sc[0]['alt'] in S2_SEC if sc else False, '')
+check('6b SC_H3 rendered verbatim', norm(COPY['SC_H3']) in visible, '')
+check('6b SC_BODY_P rendered verbatim', norm(COPY['SC_BODY_P']) in visible, '')
+for i in range(1, 5):
+    check('6b SC_BULLET%d rendered verbatim' % i, norm(COPY['SC_BULLET%d' % i]) in visible, '')
+check('6b all 4 bullets present as <li> in the split card',
+      S2_SEC.count('<li>') == 4, '%d found' % S2_SEC.count('<li>'))
+check('6b split-card CTA label + href',
+      COPY['SC_CTA'] in S2_SEC and 'href="https://www.samanportable.com/contact"' in S2_SEC, '')
+check('6b split-card reuses the Section 2 destination, no new link',
+      len(set(re.findall(r'href="(https://www\.samanportable\.com/contact)"', S2_SEC))) == 1, '')
 
 # ── 8 calculator ─────────────────────────────────────────────────────────────
 check('8 calc-entry band present', 'calc-entry' in raw and 'data-calculator-entry' in raw, '')

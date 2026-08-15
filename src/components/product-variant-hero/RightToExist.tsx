@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Check } from 'lucide-react';
 import { shouldBypassOptimizer } from '@/lib/imageSrc';
 import {
   getRightToExistEntry,
@@ -104,6 +105,20 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         {copyInPanel && heading}
         {card.subheading && <h3 className="saman-s2-split-subheading">{card.subheading}</h3>}
         {card.body && <p className="saman-s2-split-text">{card.body}</p>}
+        {/* PC-03 post-build correction 2 — checkmarked trust-signal bullets below
+            the card body. Same Check icon and colour token the Section 3 explorer
+            already uses for its application list, so no new visual pattern is
+            introduced. Absent everywhere else. */}
+        {card.bullets && card.bullets.length > 0 && (
+          <ul className="saman-s2-split-bullets">
+            {card.bullets.map((b, i) => (
+              <li key={i}>
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--ds-color-leaf)]" aria-hidden="true" />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        )}
         {copyInPanel && paragraphs}
         {comparisonInsideCard && comparisonParagraph}
         <Link

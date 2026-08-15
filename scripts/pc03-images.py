@@ -135,12 +135,47 @@ for order, out, alt, caption, placement in desc:
                       order=int(order), sw=sw, sh=sh, w=o.width, h=o.height,
                       kb=round(os.path.getsize(op) / 1024, 1), sha=sha(op)))
 
+# ── Section 2 split-card image, 1 slot (post-build correction 2, 15 Aug 2026) ──
+# The 02_ file, deliberately excluded from the Description tab in 8.2 as a near-
+# duplicate of the 4K beige-interior file used there, is placed here instead. Opened
+# and confirmed to show the same beige panel interior scene (walls, AC unit, steel
+# door) before wiring, per the ticket's own re-confirmation instruction.
+SPLITCARD_SRC = '02_Double_Story_G1_Porta_Cabin_Premium_Beige_Interior_Full_Background_16x9.jpg'
+SPLITCARD_OUT = 'double-story-porta-cabin-splitcard-beige-interior.webp'
+SPLITCARD_ALT = ('Second view of the beige panel interior room in a double storey '
+                  'porta cabin ground floor')
+sp = os.path.join(DESC_DIR, SPLITCARD_SRC)
+if not os.path.exists(sp):
+    errors.append('MISSING SOURCE: ' + sp)
+else:
+    im = Image.open(sp)
+    sw, sh = im.width, im.height
+    if im.mode not in ('RGB', 'RGBA'):
+        im = im.convert('RGB')
+    TARGET_W = 1280
+    if im.width != TARGET_W:
+        im = im.resize((TARGET_W, round(TARGET_W * sh / sw)), Image.LANCZOS)
+    od = os.path.join(OUT_ROOT, 'section2')
+    os.makedirs(od, exist_ok=True)
+    op = os.path.join(od, SPLITCARD_OUT)
+    for q in (86, 82, 78, 74, 70):
+        im.save(op, 'WEBP', quality=q, method=6)
+        if os.path.getsize(op) <= 120 * 1024:
+            break
+    o = Image.open(op)
+    slots.append(dict(slot='splitcard', size='-', src=SPLITCARD_SRC,
+                      out='/images/products/double-story-porta-cabin/section2/%s' % SPLITCARD_OUT,
+                      alt=SPLITCARD_ALT, caption='', order=0, sw=sw, sh=sh, w=o.width, h=o.height,
+                      kb=round(os.path.getsize(op) / 1024, 1), sha=sha(op)))
+
 json.dump(slots, io.open(os.path.join(HERE, 'pc03-image-report.json'), 'w', encoding='utf-8'),
           ensure_ascii=False, indent=1)
 
 g = [s for s in slots if s['slot'] == 'gallery']
 d = [s for s in slots if s['slot'] == 'description']
-print('slots: %d gallery + %d description = %d (expect 36 + 5 = 41)' % (len(g), len(d), len(slots)))
+sc = [s for s in slots if s['slot'] == 'splitcard']
+print('slots: %d gallery + %d description + %d splitcard = %d (expect 36 + 5 + 1 = 42)'
+      % (len(g), len(d), len(sc), len(slots)))
 print('unique files: %d' % len({s['sha'] for s in slots}))
 print('unique alts : %d' % len({s['alt'] for s in slots}))
 bad_ar = [(s['out'], s['sw'], s['sh'], s['w'], s['h']) for s in slots
@@ -151,8 +186,12 @@ print('desc ratios    : %s' % sorted({round(s['w'] / s['h'], 4) for s in d}))
 print('gallery dims   : %s' % sorted({'%dx%d' % (s['w'], s['h']) for s in g}))
 print('desc dims      : %s' % sorted({'%dx%d' % (s['w'], s['h']) for s in d}))
 print('desc KB        : %.1f to %.1f' % (min(x['kb'] for x in d), max(x['kb'] for x in d)))
+print('splitcard ratio: %s  KB: %.1f' % (
+    (round(sc[0]['w'] / sc[0]['h'], 4) if sc else 'MISSING'), sc[0]['kb'] if sc else 0))
 print('40x20 in output: %s' % ('YES' if any(s['size'] == '40x20' for s in slots) else 'NO'))
-print('02_ excluded   : %s' % ('NO' if any(EXCLUDED_DESC in s['src'] for s in slots) else 'YES'))
+print('02_ absent from Description tab: %s   used in Section 2 split card: %s'
+      % ('YES' if not any(EXCLUDED_DESC in s['src'] for s in d) else 'NO',
+         'YES' if any(EXCLUDED_DESC in s['src'] for s in sc) else 'NO'))
 print('processed-16x9-webp used: NO (never opened; refusal guard active)')
 if errors:
     print('\nERRORS:')

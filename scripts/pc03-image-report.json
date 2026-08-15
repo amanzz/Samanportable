@@ -541,5 +541,20 @@
   "h": 720,
   "kb": 72.9,
   "sha": "3dff55d7fca5c2c6b140032ce8a12625b09a0da67b7b975bf5cf6f38f1a29a22"
+ },
+ {
+  "slot": "splitcard",
+  "size": "-",
+  "src": "02_Double_Story_G1_Porta_Cabin_Premium_Beige_Interior_Full_Background_16x9.jpg",
+  "out": "/images/products/double-story-porta-cabin/section2/double-story-porta-cabin-splitcard-beige-interior.webp",
+  "alt": "Second view of the beige panel interior room in a double storey porta cabin ground floor",
+  "caption": "",
+  "order": 0,
+  "sw": 1600,
+  "sh": 900,
+  "w": 1280,
+  "h": 720,
+  "kb": 31.3,
+  "sha": "c87780becb32174808957a8b0fd9125e675cf3247438077c416926f877b59bb3"
  }
 ]
