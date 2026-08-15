@@ -51,13 +51,16 @@ export interface RightToExistEntry {
     copyInPanel?: boolean;
     ctaLabel: string;
     ctaHref: string;
-    /** PC-05 revision v1.3/v1.4 (R9, 14-15 Aug 2026) — opt-in placement.
+    /** PC-05 revision v1.3/v1.4/ad-hoc (14-15 Aug 2026) — opt-in placement.
         Omitted (default) renders the card after both lead paragraphs,
         unchanged for every existing entry. 'betweenParagraphs' renders the
         COMPLETE card (image + heading + body + CTA, no extra slot) between
-        `body` and `comparison` — `comparison` stays outside the card, as
-        Section 2's closing paragraph. Set only on fire-rated-porta-cabin. */
-    position?: 'end' | 'betweenParagraphs';
+        `body` and `comparison`, with `comparison` outside the card as
+        Section 2's closing paragraph. 'comparisonInsideCard' (owner
+        screenshot review, 15 Aug 2026) instead renders `comparison` beside
+        the image, as the card's second paragraph, before the CTA. Set only
+        on fire-rated-porta-cabin. */
+    position?: 'end' | 'betweenParagraphs' | 'comparisonInsideCard';
   };
 }
 
@@ -402,11 +405,17 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
   // Ad-hoc revision (14 Aug 2026, owner screenshots) — `position:
   // 'betweenParagraphs'` moves the card between body and comparison; every
   // other entry above/below is untouched and keeps the default end position.
-  // PC-05 revision v1.4 (R9, 15 Aug 2026) — reverted the 15 Aug ad-hoc change
-  // that nested `comparison` inside the card; it regressed Section 2 to one
-  // prose paragraph and buried the /contact CTA under the gallery CTA. Back
-  // to `betweenParagraphs`: comparison renders outside, after the complete
-  // card, as the section's closing paragraph.
+  // PC-05 revision v1.4 (R9, 15 Aug 2026) — reverted an earlier same-day ad-hoc
+  // change that nested `comparison` inside the card; it regressed Section 2 to
+  // one prose paragraph and buried the /contact CTA under the gallery CTA. Set
+  // to `betweenParagraphs`.
+  // Ad-hoc revision (15 Aug 2026, later owner screenshot review) — moved back
+  // to `comparisonInsideCard`: SAMAN's explicit instruction, after seeing the
+  // rendered preview, was that `comparison` reads better beside the image as
+  // the card's second paragraph than as a full-width line beneath the card.
+  // This supersedes R9's stated reasoning for this one page by direct owner
+  // instruction on the rendered result; the /contact CTA text itself is
+  // unchanged, only its position relative to the card's own CTA.
   'fire-rated-porta-cabin': {
     heading: 'When Your Project Fire Strategy Demands a Fire-Rated Cabin',
     body: (
@@ -428,7 +437,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       body: 'The fire-rated configuration sits on the same chassis, factory process and quality checks as every other SAMAN porta cabin. Browse completed projects from our Bengaluru and Greater Noida units to judge steelwork, openings and finish on real deliveries. Then bring your fire criteria to the quotation, where the tested systems are named.',
       ctaLabel: 'Explore the project gallery',
       ctaHref: '/gallery',
-      position: 'betweenParagraphs',
+      position: 'comparisonInsideCard',
     },
   },
   'steel-porta-cabin': {

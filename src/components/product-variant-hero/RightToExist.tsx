@@ -57,18 +57,26 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
     </h2>
   );
 
-  // PC-05 revision v1.4 (R9) — the split card renders complete (image + heading +
-  // body + CTA, no extra slot) between the two lead paragraphs; the comparison
-  // paragraph is a Section-2 body paragraph and stays outside the card, as the
-  // section's closing line. Only applies to the classic body+comparison shape
-  // (no bodyParagraphs) and only when copyInPanel is unset — those are PC-02's
-  // own axes and take precedence when a page uses them. Every entry that
-  // doesn't set `position` (every page except fire-rated-porta-cabin) keeps
-  // the original order byte-identical.
+  // PC-05 revision v1.3/v1.4/ad-hoc (14-15 Aug 2026) — placement axis for the
+  // classic body+comparison shape only (no bodyParagraphs, copyInPanel unset —
+  // those are PC-02's own axes and take precedence when a page uses them).
+  // 'betweenParagraphs': complete card between the two paragraphs, comparison
+  // stays outside, after the card. 'comparisonInsideCard' (ad-hoc revision,
+  // 15 Aug 2026, owner screenshot review): comparison renders beside the image,
+  // as the card's second paragraph, before the gallery CTA — not full-width
+  // below the card. Every entry that doesn't set `position` (every page except
+  // fire-rated-porta-cabin) keeps the original order byte-identical.
   const cardBetweenParagraphs = !entry.bodyParagraphs && !copyInPanel && card?.position === 'betweenParagraphs';
+  const comparisonInsideCard = !entry.bodyParagraphs && !copyInPanel && card?.position === 'comparisonInsideCard';
   const firstParagraph = <p className="text-sm leading-relaxed text-slate-700">{entry.body}</p>;
   const comparisonParagraph = (
-    <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">
+    <p
+      className={
+        comparisonInsideCard
+          ? 'saman-s2-split-text mt-3'
+          : 'mt-3 text-sm font-semibold leading-relaxed text-slate-800'
+      }
+    >
       {entry.comparison}
       {entry.appendix}
     </p>
@@ -97,6 +105,7 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         {card.subheading && <h3 className="saman-s2-split-subheading">{card.subheading}</h3>}
         {card.body && <p className="saman-s2-split-text">{card.body}</p>}
         {copyInPanel && paragraphs}
+        {comparisonInsideCard && comparisonParagraph}
         <Link
           className={copyInPanel ? 'saman-s2-split-cta mt-4' : 'saman-s2-split-cta'}
           href={card.ctaHref}
@@ -112,7 +121,13 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
       className="rounded-xl border border-emerald-200 bg-white p-5 shadow-sm sm:p-6"
       aria-labelledby={headingId}
     >
-      {cardBetweenParagraphs ? (
+      {comparisonInsideCard ? (
+        <>
+          {heading}
+          {firstParagraph}
+          {splitCard}
+        </>
+      ) : cardBetweenParagraphs ? (
         <>
           {heading}
           {firstParagraph}
