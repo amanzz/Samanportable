@@ -104,6 +104,16 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         {copyInPanel && heading}
         {card.subheading && <h3 className="saman-s2-split-subheading">{card.subheading}</h3>}
         {card.body && <p className="saman-s2-split-text">{card.body}</p>}
+        {/* PC-06 v1.2 addendum — optional bullet list, absent on every entry
+            except soundproof-porta-cabin so every other card's markup is
+            byte-identical. */}
+        {card.bullets && (
+          <ul className="saman-s2-split-bullets">
+            {card.bullets.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        )}
         {copyInPanel && paragraphs}
         {comparisonInsideCard && comparisonParagraph}
         <Link

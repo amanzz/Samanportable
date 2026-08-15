@@ -1,0 +1,40 @@
+{
+  "id": 990023,
+  "name": "Soundproof Porta Cabin",
+  "slug": "soundproof-porta-cabin",
+  "date_created": "2026-08-15T00:00:00",
+  "status": "publish",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-SPPC-20x10",
+  "price": "330000",
+  "regular_price": "330000",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 202,
+      "name": "Porta Cabins",
+      "slug": "porta-cabins"
+    }
+  ],
+  "images": [
+    {
+      "id": 990023,
+      "src": "/images/products/soundproof-porta-cabin/20x10/soundproof-porta-cabin-20x10-grey-navy-exterior.webp",
+      "name": "Soundproof Porta Cabin",
+      "alt": "Grey 20x10 ft porta cabin with a navy lower band, three windows and a door"
+    }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  }
+}

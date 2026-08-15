@@ -22,6 +22,7 @@ import luxuryPortaCabin from '@/data/products/luxury-porta-cabin.json';
 import miniPortaCabin from '@/data/products/mini-porta-cabin.json';
 import msPortaCabin from '@/data/products/ms-porta-cabin.json';
 import giPortaCabin from '@/data/products/gi-porta-cabin.json';
+import soundproofPortaCabin from '@/data/products/soundproof-porta-cabin.json';
 import portaCabinShop from '@/data/products/porta-cabin-shop.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
 import portacabinOffice from '@/data/products/portacabin-office.json';
@@ -161,6 +162,11 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // PC-02: derived from the GI product JSON's own six variants, so the calc-entry
   // banner price and the published ladder cannot drift (Calculator Standing Rule 3).
   'gi-porta-cabin': toRows(giPortaCabin),
+  // PC-06 v1.2 addendum (15 Aug 2026) — standing rule, now in CLAUDE.md: a page
+  // that publishes a price ladder gets a ROUTE_LADDERS entry derived from its
+  // own product JSON, same pattern as GI, so the calculator and the page
+  // cannot drift apart.
+  'soundproof-porta-cabin': toRows(soundproofPortaCabin),
   'porta-cabin-shop': toRows(portaCabinShop),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
   'portacabin-office': toRows(portacabinOffice),

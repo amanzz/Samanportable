@@ -3153,6 +3153,179 @@
         "width": 1672,
         "height": 941
       }
+    },
+    "soundproof-porta-cabin": {
+      "name": "Soundproof Porta Cabin",
+      "narrative": "Read these two tables as one system rather than a parts list. Table 1 covers everything that carries load and keeps weather out, and it is sized for the mass of the acoustic package rather than for a lightweight office cabin. Table 2 covers the layers and openings that decide how much sound actually gets through. The lines marked as product-specific are where this cabin diverges from a standard porta cabin: 19 of the 30 technical lines are specific to the acoustic build, and 11 are shared platform items.",
+      "premiumTables": true,
+      "specifications": [
+        {
+          "group": "Table 1",
+          "component": "Bottom frame",
+          "detail": "Mass-capable primary chassis; 150x75x5 mm MS C-channel reference; final by mass and load calculation"
+        },
+        {
+          "group": "Table 1",
+          "component": "Bottom stiffeners",
+          "detail": "Stiffened vibration-controlled base; 100x50x3 mm channels or RHS with isolation points where designed"
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor frame",
+          "detail": "Acoustic floor-support frame; Engineered steel grid plus 18-24 mm rigid board or mass layer plus resilient underlay"
+        },
+        {
+          "group": "Table 1",
+          "component": "Top frame",
+          "detail": "Isolated internal top support; 80x40x3 mm structural perimeter reference plus resilient internal furring or hangers"
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof stiffeners",
+          "detail": "Acoustically isolated ceiling support; 60x40x2.5 mm roof frame reference plus resilient ceiling channels or hangers"
+        },
+        {
+          "group": "Table 1",
+          "component": "Corner posts and walls",
+          "detail": "Double-layer wall with isolated inner frame; 60x60x3 mm structural posts reference plus resilient channel or independent inner studs"
+        },
+        {
+          "group": "Table 1",
+          "component": "Lifting and handling",
+          "detail": "Approved handling provision; Engineered lifting and support points to the approved drawing"
+        },
+        {
+          "group": "Table 1",
+          "component": "Welding and fabrication",
+          "detail": "Fabrication control; Welded or bolted connections to approved shop drawings"
+        },
+        {
+          "group": "Table 1",
+          "component": "Exterior walls",
+          "detail": "Massive external shell; 1.2-1.6 mm corrugated MS or PPGI outer skin with sealed joints"
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof",
+          "detail": "Acoustic roof build; 1.4-1.6 mm roof skin plus absorptive core plus isolated internal ceiling"
+        },
+        {
+          "group": "Table 1",
+          "component": "Interior walls",
+          "detail": "Decoupled multi-layer internal lining; Two 12.5 mm board layers or equivalent mass lining on resilient or independent support, staggered joints"
+        },
+        {
+          "group": "Table 1",
+          "component": "Ceiling",
+          "detail": "Acoustic ceiling; Multi-layer board ceiling on resilient channels or hangers with sealed perimeter"
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor base",
+          "detail": "Mass plus resilient floor base; 18-24 mm rigid floor board or dense barrier plus resilient underlay"
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor finish",
+          "detail": "Quiet walking finish; 2-3 mm resilient vinyl, rubber or carpet tile over acoustic underlay as use permits"
+        },
+        {
+          "group": "Table 2",
+          "component": "Wall insulation",
+          "detail": "High-absorption wall infill; 75-100 mm stone or mineral wool, Safe n Silent type, density and type per acoustic design"
+        },
+        {
+          "group": "Table 2",
+          "component": "Roof insulation",
+          "detail": "High-absorption roof and ceiling infill; 75-100 mm stone or mineral wool with continuous cavity fill"
+        },
+        {
+          "group": "Table 2",
+          "component": "Decorative and external finish",
+          "detail": "Coating or facade finish; Project-selected colour and compatible coating system"
+        },
+        {
+          "group": "Table 2",
+          "component": "Fasteners and sealing",
+          "detail": "Approved joints and seals; Corrosion-compatible fasteners, EPDM, butyl or approved sealants"
+        },
+        {
+          "group": "Table 2",
+          "component": "Main door and service door",
+          "detail": "Acoustic door set; Solid-core or acoustic door with perimeter seals and automatic or drop threshold where required"
+        },
+        {
+          "group": "Table 2",
+          "component": "Windows and service openings",
+          "detail": "Acoustic glazing; Sealed laminated or double glazing; 6/12/6 mm is a design starting point only"
+        },
+        {
+          "group": "Table 2",
+          "component": "Grills and mosquito mesh",
+          "detail": "Opening protection; Grill, mosquito mesh, guard or louver as scheduled"
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical wiring",
+          "detail": "Copper wiring and containment; 1.5, 2.5 and 4 sq.mm copper starting schedule; final by load"
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical protection",
+          "detail": "DB, MCB, RCCB and earthing; Segregated protected circuits to approved electrical drawing"
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical fittings",
+          "detail": "Lights, sockets and equipment points; LED lights, modular switches, 6A and 16A sockets, fan and AC provision"
+        },
+        {
+          "group": "Table 2",
+          "component": "Ventilation and AC",
+          "detail": "Silenced ventilation and AC path; Duct attenuator, acoustic louver or baffled air path; no direct open vent where isolation is required"
+        },
+        {
+          "group": "Table 2",
+          "component": "Plumbing and services",
+          "detail": "Acoustically sealed services; Staggered and sealed boxes, sleeved pipes and resilient supports; no unsealed through-penetrations"
+        },
+        {
+          "group": "Table 2",
+          "component": "Layout and configuration",
+          "detail": "Performance-defined sound-control layout; Target Rw or STC and internal NR or NC criteria stated by project; laboratory or field evidence required for numeric claims"
+        },
+        {
+          "group": "Table 2",
+          "component": "Painting and coating",
+          "detail": "Corrosion-protection system; Substrate-appropriate corrosion protection and touch-up"
+        },
+        {
+          "group": "Table 2",
+          "component": "Quality checks",
+          "detail": "Inspection and testing; Pre-dispatch dimensional, enclosure, service and functional QA"
+        },
+        {
+          "group": "Table 2",
+          "component": "Warranty",
+          "detail": "Commercially confirmed warranty; Final quotation governs warranty scope and exclusions"
+        }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/soundproof-porta-cabin/diagrams/soundproof-porta-cabin-diagram-1.webp",
+          "alt": "Reference plan layout, 20x10x8.5 ft, envelope and acoustic build-up in plan view with openings shown indicatively",
+          "caption": "Figure 1. Reference plan layout, 20x10x8.5 ft. Diagram SP-PC-SP-07-DWG-R1, issued 15 August 2026. Illustrative, not for construction.",
+          "width": 2000,
+          "height": 1350
+        },
+        {
+          "src": "/images/products/soundproof-porta-cabin/diagrams/soundproof-porta-cabin-diagram-2.webp",
+          "alt": "Envelope build-up indicative section showing roof, wall and floor layers of the mass-spring-mass assembly",
+          "caption": "Figure 2. Envelope build-up, indicative section. Diagram SP-PC-SP-07-DWG-R2, issued 15 August 2026. Illustrative, not for construction.",
+          "width": 2000,
+          "height": 1350
+        }
+      ]
     }
   }
 }

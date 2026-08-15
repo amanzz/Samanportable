@@ -67,13 +67,15 @@ const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 
 // Pages rebuilt to the Porta Cabins cluster design system (section dividers, SAP
 // size strip, Section-3 headings at H2, the YMAL carousel). PC-01 added the MS page;
-// PC-05 adds fire-rated; PC-02 adds GI; PC-04 adds the with-toilet page. Every other
-// page using the shared hero keeps the defaults (false) and renders byte-identically.
+// PC-05 adds fire-rated; PC-02 adds GI; PC-04 adds the with-toilet page; PC-06 adds
+// the soundproof page. Every other page using the shared hero keeps the defaults
+// (false) and renders byte-identically.
 const CLUSTER_DESIGN_SLUGS = new Set([
   'ms-porta-cabin',
   'fire-rated-porta-cabin',
   'gi-porta-cabin',
   'porta-cabin-with-toilet',
+  'soundproof-porta-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -775,14 +777,16 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // Ad-hoc revision (14 Aug 2026, owner screenshots) — mobile
                   // divider gap fix, scoped to this page only per the
                   // component-level comment; every other cluster-design page
-                  // (ms-porta-cabin, gi-porta-cabin, porta-cabin-with-toilet)
-                  // keeps the default 40px margin.
+                  // (ms-porta-cabin, gi-porta-cabin, porta-cabin-with-toilet,
+                  // soundproof-porta-cabin) keeps the default 40px margin.
                   compactMobileDividers={slug === 'fire-rated-porta-cabin'}
-                  // PC-04 — its approved eyebrow uses a hyphen, not the em dash in
-                  // the shared default. Passed from this slug only, so the hub, the MS
-                  // page and the GI page keep the deployed literal.
+                  // PC-04 + PC-06 — both pages' acceptance gates require zero U+2014
+                  // in rendered copy, and PC-06's additionally bans U+2013, so
+                  // neither can inherit the shared default's em dash. Passed from
+                  // these two slugs only, so the hub, the MS page and the GI page
+                  // keep the deployed literal.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet'
+                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
@@ -1078,15 +1082,16 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 </section>
               )}
 
-              {/* PC-01/PC-02/PC-04/PC-05 — "You may also like" carousel, calculator →
-                  tabs. Lists the cluster's other nine children with the hub's own R16
-                  card images. No prices on cards. The GI and with-toilet pages take the
-                  variant whose alts carry no em dash, because both are held to zero
-                  U+2014 in rendered copy; MS and fire-rated keep PC-01's original list. */}
+              {/* PC-01/PC-02/PC-04/PC-05/PC-06 — "You may also like" carousel, calculator
+                  → tabs. Lists the cluster's other nine children with the hub's own R16
+                  card images. No prices on cards. GI, with-toilet and soundproof take
+                  the variant whose alts carry no em dash, because all three are held to
+                  zero U+2014 in rendered copy; MS and fire-rated keep PC-01's original
+                  list. */}
               {(slug === 'ms-porta-cabin' || slug === 'fire-rated-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
-              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet') && (
+              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
               )}
 

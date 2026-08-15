@@ -1010,6 +1010,35 @@
   line-height: 1.6;
   margin-bottom: 12px;
 }
+/* PC-06 v1.2 addendum (15 Aug 2026) — optional bullet list inside the split
+   card's copy column, rendered only when an entry supplies `splitCard.bullets`
+   (currently soundproof-porta-cabin only). Typography matches
+   .saman-s2-split-text; every other card's markup is unaffected. */
+.saman-s2-split-bullets {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.saman-s2-split-bullets li {
+  position: relative;
+  padding-left: 22px;
+  color: #3f4d46;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.saman-s2-split-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ds-color-leaf, #2d7a3f);
+}
 .saman-s2-split-cta {
   color: var(--ds-color-leaf, #2d7a3f);
   font-weight: 600;

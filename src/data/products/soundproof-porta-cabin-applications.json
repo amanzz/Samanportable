@@ -1,0 +1,82 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10x8.5 ft Soundproof Cabin for a Single Quiet Room",
+      "paragraph": "At 100 sq.ft. this is the smallest published acoustic cabin. It suits one supervisor, a measurement point, or a single-occupant call room set close to the source. Understand the trade before you order it. The lining build-up is a fixed thickness on every face. On a 10 ft span it therefore eats a larger share of internal width than it does on a 40 ft unit. Plan the desk and the door swing on the finished internal dimension, not the external one.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/soundproof-porta-cabin/10x10/soundproof-porta-cabin-10x10-green-cream-exterior.webp",
+        "alt": "Green and cream 10x10 ft porta cabin with two windows and a central door",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8x8.5 ft Soundproof Cabin for Narrow Site Corridors",
+      "paragraph": "At 160 sq.ft. on an 8 ft width, this size fits tight strips of ground. Think of a gap between a boundary wall and a plant road, or a compound edge where a wider module cannot be craned in. The narrow width suits a single desk run along one long wall, with a clear circulation lane. It is also the least forgiving size for services. Fix socket, light and air-path positions before fabrication rather than cutting later.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/soundproof-porta-cabin/20x8/soundproof-porta-cabin-20x8-yellow-grey-exterior.webp",
+        "alt": "Yellow 20x8 ft porta cabin with a dark grey lower band, two windows and a door",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10x8.5 ft Soundproof Cabin, the Costed Reference Size",
+      "paragraph": "This 200 sq.ft. unit is the reference size the specification is costed against. It carries the base rate of ₹1,650 per sq.ft. before any area-band adjustment. The room takes a two to three person office, a small control room, or a briefing space with a desk run and visitor seating. The acoustic assembly is documented against this size. That makes it the quickest layout to price and the easiest to compare against a target.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/soundproof-porta-cabin/20x10/soundproof-porta-cabin-20x10-grey-navy-exterior.webp",
+        "alt": "Grey 20x10 ft porta cabin with a navy lower band, three windows and a door",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12x8.5 ft Soundproof Cabin for Meetings Near Plant",
+      "paragraph": "The extra 2 ft of width takes the unit to 240 sq.ft. It changes what the room can hold: a meeting table with chairs pulled back, or a desk run plus a separate discussion corner. That matters acoustically as well as spatially. Speech clarity depends on the room itself, not only on what the wall keeps out. Absorptive treatment for reverberation control is specified separately from the transmission build-up.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/soundproof-porta-cabin/20x12/soundproof-porta-cabin-20x12-white-maroon-exterior.webp",
+        "alt": "White 20x12 ft porta cabin with a maroon lower band, standing on paving beneath an elevated viaduct",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10x8.5 ft Soundproof Cabin for a Full Project Team",
+      "paragraph": "At 400 sq.ft. this becomes a team space rather than a single room. Expect an open desk layout, or two zones either side of a partition. Two things change at this length. Ventilation load rises, so the silenced air path has to be designed rather than scaled up from a smaller unit. Floor deflection over the longer span is controlled by the cross-members that also carry the resilient floor layers. Neither point is an add-on you can bolt on later.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/soundproof-porta-cabin/40x10/soundproof-porta-cabin-40x10-blue-grey-exterior.webp",
+        "alt": "Blue 40x10 ft porta cabin with a grey lower band and a run of six windows, in a rail yard",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x12",
+      "h3": "40x12x8.5 ft Soundproof Cabin, the Largest Published Size",
+      "paragraph": "At 480 sq.ft. this is the largest published unit. It suits a full site office, a control room with equipment, or a combined workspace and meeting area. Check access first. Length, width and lifting points all have to suit the approved transport and lifting drawing. A 40 ft module also needs a clear path and hardstanding at the final position. Confirm the route before you order, not on delivery day.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/soundproof-porta-cabin/40x12/soundproof-porta-cabin-40x12-charcoal-exterior.webp",
+        "alt": "Charcoal 40x12 ft porta cabin with four windows and a single door, on open hardstanding",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  ]
+}
