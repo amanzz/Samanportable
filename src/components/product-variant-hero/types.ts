@@ -155,6 +155,16 @@ export interface VariantProductData {
       product renders byte-identically. Set only where the product's approved copy
       states a different coverage line. */
   coverageLabel?: string;
+  /** PC-10 (15 Aug 2026) — replaces the "Material" feature cell with a "Frontage"
+      cell (label AND value), for a product whose approved FEATURE_CELLS table names
+      a frontage line rather than a material line. Absent on every other product →
+      the Material cell renders exactly as before, byte-identical. */
+  frontageLabel?: string;
+  /** PC-10 (15 Aug 2026) — replaces the "Coverage" feature cell with a "Fit-out"
+      cell (label AND value), for a product whose approved FEATURE_CELLS table names
+      a fit-out line rather than a coverage line. Absent on every other product →
+      the Coverage cell renders exactly as before, byte-identical. */
+  fitOutLabel?: string;
   /** Emit an ex-GST AggregateOffer (lowPrice/highPrice/offerCount) on the ProductGroup
       instead of per-variant Offers. Absent on porta-cabins → per-variant Offers kept,
       byte-identical. Set true only when a page's price ladder is confirmed. */

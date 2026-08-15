@@ -1541,343 +1541,222 @@
       }
     },
     "porta-cabin-shop": {
-      "name": "Porta Cabin Shop",
-      "sheet": "08 Porta Cabin Shop",
+      "name": "Porta Cabin Shop & Kiosk",
+      "sheet": "11 Porta Cabin Shop & Kiosk",
       "canonical": "https://www.samanportable.com/product/porta-cabins/porta-cabin-shop",
       "specifications": [
         {
-          "group": "Steel Structure",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Bottom frame",
-          "detail": "100×50×3 mm MS C-channel primary base frame, ISI-standard or approved equivalent, fabricated as the load-bearing chassis.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 14,
+          "detail": "100x50x3 mm MS C-channel primary base frame, ISI-standard or approved equivalent, fabricated as the load-bearing chassis.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Bottom stiffeners",
-          "detail": "100×50 mm C-channels, 50×50 mm MS angles, 75×40 mm channels and approved square-pipe supports, typically coordinated at about 4 ft intervals to the final floor load and lifting design.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 15,
+          "detail": "100x50 mm C-channels, 50x50 mm MS angles, 75x40 mm channels and approved square-pipe supports, typically coordinated at about 4 ft intervals to the final floor load and lifting design.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Floor frame",
-          "detail": "MS base and cross-member grid supporting an 18 mm Bison/cement-fibre floor board fixed with approved self-tapping fasteners; spacing follows the final drawing and design load.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 16,
+          "detail": "MS base and cross-member grid supporting an 18 mm Bison or cement-fibre floor board fixed with approved self-tapping fasteners; spacing follows the final drawing and design load.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Top frame",
-          "detail": "50×50×1.6 mm MS square-pipe top perimeter frame of approved make or equivalent.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 17,
+          "detail": "50x50x1.6 mm MS square-pipe top perimeter frame of approved make or equivalent.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Roof stiffeners",
-          "detail": "50×50×1.2 mm MS square-pipe roof stiffeners with 50×40, 40×40, 50×25 or 25×25 mm secondary members where required by span, ceiling support and drainage slope.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 18,
+          "detail": "50x50x1.2 mm MS square-pipe roof stiffeners with 50x40, 40x40, 50x25 or 25x25 mm secondary members where required by span, ceiling support and drainage slope.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
-          "component": "Corner posts / walls",
-          "detail": "50×50×2 mm MS square-pipe corner and wall posts or approved 60×60 mm MS-angle alternative, with reinforced door and window openings and an approximately 60 mm wall cavity.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 19,
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
+          "component": "Corner posts and walls",
+          "detail": "50x50x2 mm MS square-pipe corner and wall posts, or approved 60x60 mm MS-angle alternative, with reinforced door and window openings and an approximately 60 mm wall cavity.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
-          "component": "Lifting / handling",
-          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 20,
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
+          "component": "Lifting and handling",
+          "detail": "Engineered lifting or handling points and support locations provided for each transportable module; move the completed module only to the approved lifting, support and transport drawing.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
-          "component": "Welding & fabrication",
-          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 21,
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
+          "component": "Welding and fabrication",
+          "detail": "Structural-steel connections fabricated by qualified welding and/or bolting to approved shop drawings; edges deburred, dimensions inspected, cut edges protected, panels closed only after frame inspection.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Exterior walls",
-          "detail": "1.2–1.25 mm corrugated MS sheet",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 25,
-          "differsFromHub": true
+          "detail": "1.2 to 1.25 mm corrugated MS sheet.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Roof",
-          "detail": "1.4 mm corrugated MS sheet",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 26,
+          "detail": "1.4 mm corrugated MS sheet.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Interior walls",
-          "detail": "8–12 mm plywood with laminate or 6–8 mm HPL panels",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 27,
-          "differsFromHub": true
+          "detail": "8 to 12 mm plywood with laminate, or 6 to 8 mm HPL panels.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Ceiling",
-          "detail": "8 mm decorative board or 4 mm ACP ceiling",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 28,
-          "differsFromHub": true
+          "detail": "8 mm decorative board or 4 mm ACP ceiling.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Floor base",
-          "detail": "18 mm Bison or marine-grade plywood",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 29,
-          "differsFromHub": true
+          "detail": "18 mm Bison or marine-grade plywood.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Floor finish",
-          "detail": "3–4 mm LVT/SPC or 2 mm commercial vinyl",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 30,
-          "differsFromHub": true
+          "detail": "3 to 4 mm LVT or SPC, or 2 mm commercial vinyl.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Wall insulation",
-          "detail": "50 mm glass wool",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 31,
-          "differsFromHub": true
+          "detail": "50 mm glass wool.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
           "component": "Roof insulation",
-          "detail": "75 mm glass wool",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 32,
-          "differsFromHub": true
-        },
-        {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Decorative / external finish",
-          "detail": "Standard anti-rust enamel exterior finish in an approved colour combination.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 33,
+          "detail": "75 mm glass wool.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Fasteners & sealing",
-          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 34,
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
+          "component": "Decorative and external finish",
+          "detail": "Final colour and coating system are project-selected; substrate preparation, compatibility, touch-up and exposure-category maintenance are confirmed in the approved finish schedule.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 1: Structure, envelope, roof, floor and insulation",
+          "component": "Fasteners and sealing",
+          "detail": "Corrosion-compatible mechanical fasteners, EPDM, butyl or approved sealants and flashings at panel joints, corners, roof laps and penetrations; no unsealed field cuts are accepted.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Openings, services, finish and commercial scope",
           "component": "Main door / service door",
-          "detail": "Staff/customer door plus lockable service counter or shutter.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 38,
-          "differsFromHub": true
+          "detail": "Staff or customer door plus lockable service counter or shutter.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2: Openings, services, finish and commercial scope",
           "component": "Windows / service opening",
-          "detail": "Large aluminium service glazing with lockable counter opening.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 39,
-          "differsFromHub": true
+          "detail": "Large aluminium service glazing with a lockable counter opening.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2: Openings, services, finish and commercial scope",
           "component": "Grills / mosquito mesh",
-          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 40,
+          "detail": "Security grill, mosquito mesh, guard or louver provided only where the approved opening schedule and intended use require it.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2: Openings, services, finish and commercial scope",
           "component": "Electrical wiring",
-          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 41,
+          "detail": "Concealed or protected copper wiring, typically 1.5 sq.mm for lighting, 2.5 sq.mm for sockets and 4 sq.mm for higher-load or AC circuits, subject to the final load schedule and approved electrical drawing.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2: Openings, services, finish and commercial scope",
           "component": "Electrical protection",
-          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 42,
+          "detail": "Distribution board with MCB and RCCB protection, earthing, and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2: Openings, services, finish and commercial scope",
           "component": "Electrical fittings",
-          "detail": "LED lighting, signage supply, multiple 6A/16A appliance sockets, dedicated equipment circuits and DB/MCB protection.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 43,
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Ventilation / AC",
-          "detail": "Exhaust-hood/duct provision, fresh-air opening and optional AC for the customer zone.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 44,
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Plumbing / sanitary",
-          "detail": "Sink/handwash, CPVC water supply, UPVC waste and equipment connection points according to layout.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 45,
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Layout / configuration",
-          "detail": "Front service counter with separate staff preparation and storage zones.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 46,
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Painting / coating",
-          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 47,
+          "detail": "LED lights, modular switches, 6A and 16A sockets, fan points and AC provision coordinated with the approved layout; final quantities and equipment loads are quotation-specific.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2: Openings, services, finish and commercial scope",
+          "component": "Ventilation and AC",
+          "detail": "Exhaust hood and duct provision, fresh-air opening and optional air conditioning for the customer zone. **Provision only. Food-service exhaust equipment is outside this baseline unless separately specified.**",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Openings, services, finish and commercial scope",
+          "component": "Plumbing and sanitary",
+          "detail": "Sink or handwash, CPVC water supply, UPVC waste and equipment connection points according to layout. **Optional. Food-service plumbing equipment is outside this baseline unless separately specified.**",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Openings, services, finish and commercial scope",
+          "component": "Layout and configuration",
+          "detail": "Front service counter with separate staff preparation and storage zones. Large openings are framed, weather-sealed and coordinated with the chassis rather than cut into a finished cabin afterwards.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Openings, services, finish and commercial scope",
+          "component": "Painting and coating",
+          "detail": "Corrosion protection matched to substrate and exposure: prepared MS receives the approved primer and topcoat system; galvanized or coated steel receives compatible cut-edge and damage repair plus coating touch-up where specified.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Openings, services, finish and commercial scope",
           "component": "Quality checks",
-          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 48,
+          "detail": "Pre-dispatch QA covering dimensions, member and panel identification, connections, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional checks; specialist performance certificates verified where required.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2: Openings, services, finish and commercial scope",
           "component": "Warranty",
-          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
-          "sourceSheet": "08 Porta Cabin Shop",
-          "sourceRow": 49,
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; misuse, site services, consumables and unapproved alterations remain outside the agreed scope unless explicitly included.",
+          "sourceSheet": "11 Porta Cabin Shop & Kiosk",
           "differsFromHub": false
         }
       ],
-      "prices": [
-        {
-          "sizeSlug": "10x10",
-          "variantSku": "S64-08-SZ-01",
-          "publishedSize": "10x10x8.5 ft",
-          "areaSqft": 100,
-          "ratePerSqft": 1540,
-          "priceExGst": 154000,
-          "priceInclGst": 181720,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x8",
-          "variantSku": "S64-08-SZ-08",
-          "publishedSize": "20x8x8.5 ft",
-          "areaSqft": 160,
-          "ratePerSqft": 1540,
-          "priceExGst": 246400,
-          "priceInclGst": 290752,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x10",
-          "variantSku": "S64-08-SZ-02",
-          "publishedSize": "20x10x8.5 ft",
-          "areaSqft": 200,
-          "ratePerSqft": 1400,
-          "priceExGst": 280000,
-          "priceInclGst": 330400,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x12",
-          "variantSku": "S64-08-SZ-06",
-          "publishedSize": "20x12x8.5 ft",
-          "areaSqft": 240,
-          "ratePerSqft": 1344,
-          "priceExGst": 322560,
-          "priceInclGst": 380621,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "30x10",
-          "variantSku": "S64-08-SZ-03",
-          "publishedSize": "30x10x8.5 ft",
-          "areaSqft": 300,
-          "ratePerSqft": 1344,
-          "priceExGst": 403200,
-          "priceInclGst": 475776,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "40x8",
-          "variantSku": "S64-08-SZ-09",
-          "publishedSize": "40x8x8.5 ft",
-          "areaSqft": 320,
-          "ratePerSqft": 1316,
-          "priceExGst": 421120,
-          "priceInclGst": 496922,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "20x20",
-          "variantSku": "S64-08-SZ-05",
-          "publishedSize": "20x20x8.5 ft",
-          "areaSqft": 400,
-          "ratePerSqft": 1316,
-          "priceExGst": 526400,
-          "priceInclGst": 621152,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "40x10",
-          "variantSku": "S64-08-SZ-04",
-          "publishedSize": "40x10x8.5 ft",
-          "areaSqft": 400,
-          "ratePerSqft": 1316,
-          "priceExGst": 526400,
-          "priceInclGst": 621152,
-          "costingStatus": "Approved, direct source"
-        },
-        {
-          "sizeSlug": "40x12",
-          "variantSku": "S64-08-SZ-07",
-          "publishedSize": "40x12x8.5 ft",
-          "areaSqft": 480,
-          "ratePerSqft": 1288,
-          "priceExGst": 618240,
-          "priceInclGst": 729523,
-          "costingStatus": "Approved, direct source"
-        }
-      ]
+      "narrative": "Read the second table first if you are deciding between suppliers. The first table describes a well-built steel cabin, and a competent manufacturer should be able to match most of it. The second describes the opening, the security, the finish and the services that make it a shop, and that is where the products in this market actually diverge."
     },
     "porta-cabin-with-toilet": {
       "name": "Porta Cabin with Toilet",

@@ -52,6 +52,7 @@ import {
   PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
   PORTA_CABIN_DS_RAIL,
   PORTA_CABIN_SKID_RAIL,
+  PORTA_CABIN_SHOP_RAIL,
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
@@ -85,6 +86,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'double-story-porta-cabin',
   'puf-porta-cabin',
   'skid-mounted-porta-cabin',
+  'porta-cabin-shop',
   // PC-09 (15 Aug 2026) — omitted when this set was first written because
   // Section 2/3 had no copy yet (v1.0 partial build). Now that the copy pack
   // is fully wired, this page joins the same premium chip/tab treatment
@@ -640,6 +642,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       return PORTA_CABIN_SKID_RAIL;
     }
 
+    // PC-10 (15 Aug 2026) — the shop cabin page's Column 3 is the approved
+    // three-item rail from build prompt v1.1 section 9 (MS, GI, with-toilet), not
+    // the full-cluster strip. Scoped to this one slug.
+    if (currentSlug === 'porta-cabin-shop') {
+      return PORTA_CABIN_SHOP_RAIL;
+    }
+
     if (currentSlug === 'gi-porta-cabin') {
       return buildPortaCabinGiRail(built, (item) => slugFromProductHref(item.href));
     }
@@ -828,7 +837,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // from these slugs only, so the hub, the MS page and the GI page
                   // keep the deployed literal.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin'
+                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
@@ -1133,7 +1142,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {(slug === 'ms-porta-cabin' || slug === 'fire-rated-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
-              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin') && (
+              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
               )}
 
