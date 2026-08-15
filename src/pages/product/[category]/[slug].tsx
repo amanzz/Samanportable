@@ -48,6 +48,7 @@ import {
   PORTA_CABIN_WITH_TOILET_RAIL,
   buildPortaCabinGiRail,
   PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
+  PORTA_CABIN_DS_RAIL,
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
@@ -68,14 +69,15 @@ const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 // Pages rebuilt to the Porta Cabins cluster design system (section dividers, SAP
 // size strip, Section-3 headings at H2, the YMAL carousel). PC-01 added the MS page;
 // PC-05 adds fire-rated; PC-02 adds GI; PC-04 adds the with-toilet page; PC-06 adds
-// the soundproof page. Every other page using the shared hero keeps the defaults
-// (false) and renders byte-identically.
+// the soundproof page; PC-03 adds the double-story page. Every other page using the
+// shared hero keeps the defaults (false) and renders byte-identically.
 const CLUSTER_DESIGN_SLUGS = new Set([
   'ms-porta-cabin',
   'fire-rated-porta-cabin',
   'gi-porta-cabin',
   'porta-cabin-with-toilet',
   'soundproof-porta-cabin',
+  'double-story-porta-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -599,6 +601,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     // comparison rail from its own build ticket (hub, MS, PUF), not the full-cluster
     // strip. Scoped to this one slug, so every sibling keeps orderPortaCabinStrip()
     // below.
+    // PC-03: the double-story page's Column 3 is the approved three-item rail from
+    // build prompt v2 section 9, not the full-cluster strip. Scoped to this one slug.
+    if (currentSlug === 'double-story-porta-cabin') {
+      return PORTA_CABIN_DS_RAIL;
+    }
+
     if (currentSlug === 'gi-porta-cabin') {
       return buildPortaCabinGiRail(built, (item) => slugFromProductHref(item.href));
     }
@@ -767,10 +775,10 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   ratingCount={product.rating_count}
                   railItems={relatedRailItems}
                   currentHref={`/product/${category}/${slug}`}
-                  // PC-01/PC-02/PC-04/PC-05 (14 Aug 2026) — the cluster design system,
-                  // scoped to the pages rebuilt to it via CLUSTER_DESIGN_SLUGS. Every other
-                  // page using this shared hero keeps the defaults (false) and is
-                  // byte-identical.
+                  // PC-01/PC-02/PC-03/PC-04/PC-05 (14-15 Aug 2026) — the cluster design
+                  // system, scoped to the pages rebuilt to it via CLUSTER_DESIGN_SLUGS.
+                  // Every other page using this shared hero keeps the defaults (false)
+                  // and is byte-identical.
                   showSectionDividers={CLUSTER_DESIGN_SLUGS.has(slug)}
                   usePremiumSizeTabs={CLUSTER_DESIGN_SLUGS.has(slug)}
                   explorerPanelHeadingAsH2={CLUSTER_DESIGN_SLUGS.has(slug)}
@@ -778,7 +786,8 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // divider gap fix, scoped to this page only per the
                   // component-level comment; every other cluster-design page
                   // (ms-porta-cabin, gi-porta-cabin, porta-cabin-with-toilet,
-                  // soundproof-porta-cabin) keeps the default 40px margin.
+                  // soundproof-porta-cabin, double-story-porta-cabin) keeps the
+                  // default 40px margin.
                   compactMobileDividers={slug === 'fire-rated-porta-cabin'}
                   // PC-04 + PC-06 — both pages' acceptance gates require zero U+2014
                   // in rendered copy, and PC-06's additionally bans U+2013, so
@@ -1094,9 +1103,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
               )}
+              {slug === 'double-story-porta-cabin' && (
+                <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+              )}
 
-              {/* PC-01/PC-02/PC-04/PC-05 — divider 4, "You may also like" → Section 5
-                  (Product Details tabs). */}
+              {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →
+                  Section 5 (Product Details tabs). */}
               {CLUSTER_DESIGN_SLUGS.has(slug) && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}

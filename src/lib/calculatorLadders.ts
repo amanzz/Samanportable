@@ -23,6 +23,7 @@ import miniPortaCabin from '@/data/products/mini-porta-cabin.json';
 import msPortaCabin from '@/data/products/ms-porta-cabin.json';
 import giPortaCabin from '@/data/products/gi-porta-cabin.json';
 import soundproofPortaCabin from '@/data/products/soundproof-porta-cabin.json';
+import doubleStoryPortaCabin from '@/data/products/double-story-porta-cabin.json';
 import portaCabinShop from '@/data/products/porta-cabin-shop.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
 import portacabinOffice from '@/data/products/portacabin-office.json';
@@ -167,6 +168,11 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // own product JSON, same pattern as GI, so the calculator and the page
   // cannot drift apart.
   'soundproof-porta-cabin': toRows(soundproofPortaCabin),
+  // PC-03: derived from the double-story product JSON's own six variants, so the
+  // calc-entry banner price and the published ladder cannot drift. This is the
+  // standard entry every page gets (SAMAN ruling, 15 Aug 2026); no other calculator
+  // logic, step or formula is touched and the banner is never hardcoded.
+  'double-story-porta-cabin': toRows(doubleStoryPortaCabin),
   'porta-cabin-shop': toRows(portaCabinShop),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
   'portacabin-office': toRows(portacabinOffice),
