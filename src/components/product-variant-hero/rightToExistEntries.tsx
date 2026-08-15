@@ -45,13 +45,10 @@ export interface RightToExistEntry {
     subheading?: string;
     body?: string;
     /** PC-03 post-build correction 2 (15 Aug 2026) — a short list of discrete trust
-        signals rendered as checkmarked bullets below `body`. SAMAN's own reasoning for
-        choosing this shape over a second flowing paragraph: four numbers-led facts
-        (project count, factory footprint, three ISO certifications, manufacturer
-        status) scan faster as a list than folded into prose, and each stays legible on
-        its own. Absent everywhere else, so every other page's split card is
-        byte-identical; gap-driven addition, reported per section 2 of the ticket
-        rather than silently added. */
+        signals or requirements rendered as checkmarked bullets below `body`. Also
+        used by PC-06's Section 2 card (four quotation-input bullets) via the same
+        field and rendering. Absent everywhere else, so every other page's split
+        card is byte-identical. */
     bullets?: string[];
     /** PC-02 rulings v1.3 follow-up (14 Aug 2026) — render the section's two approved
         paragraphs INSIDE the card's copy column, beside the image and above the CTA,
@@ -548,6 +545,44 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       body: 'Look at completed SAMAN cabins from our Bengaluru and Greater Noida factories: the lining, the sealed vinyl floor, the door hardware and the openings. Judge the finish on real deliveries, then settle your size and seat count with confidence.',
       ctaLabel: 'Explore the project gallery',
       ctaHref: '/gallery',
+    },
+  },
+  // PC-06 (15 Aug 2026) — Section 2 "buyer orientation" copy from copy pack v2,
+  // verbatim. The approved link map carries exactly two S2 body links: MS porta
+  // cabin and /contact.
+  // v1.2 addendum (15 Aug 2026) — split card added from copy pack v3
+  // SECTION2_CARD_* fields, verbatim. The card's own CTA targets the same
+  // /contact destination as the top block's CTA (deliberate per the addendum:
+  // one conversion destination, two appearances), so the page's internal-link
+  // count stays five. Card image is the reallocated Description-tab D1 slot
+  // (charcoal exterior); the Description tab now carries D2-D6 only.
+  'soundproof-porta-cabin': {
+    heading: 'Choose this cabin when noise, not weather, sets the site problem',
+    body: (
+      <>
+        Most site accommodation is chosen on footprint, weather cover and price. This cabin is chosen when the deciding factor is the sound coming through the wall. A supervisor cannot take a call beside a running genset. A QA team cannot hear a measurement in a crusher yard. A shift briefing fails when the highway sits twelve metres away. The acoustic build changes four things: the chassis sizing, the wall and ceiling layers, the door and glazing, and the ventilation route.
+      </>
+    ),
+    comparison: (
+      <>
+        If noise is not the governing issue, the standard <Link className={linkClass} href={href('ms-porta-cabin')}>MS porta cabin</Link> is better value. You would be paying for lining mass and decoupling you will not use. Where noise does govern, <Link className={linkClass} href="/contact">tell us the source, the distance and the internal condition you need to hold</Link>. We will then price the assembly against that target rather than sell a generic claim.
+      </>
+    ),
+    splitCard: {
+      imageSrc: '/images/products/soundproof-porta-cabin/description/soundproof-porta-cabin-charcoal-exterior.webp',
+      imageAlt: 'Charcoal soundproof porta cabin with a single door and one window, standing on concrete pads',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'What to send us so the acoustic build can be priced',
+      body: 'Sound control is priced against a target, not sold from a catalogue. Four inputs let the engineering team size the mass, the cavity and the openings correctly before the quotation is issued.',
+      bullets: [
+        'The noise source: genset, crusher, highway, plant room or workshop',
+        'Its distance from the cabin, and whether anything blocks the path',
+        'The internal condition you need to hold, stated as your criterion',
+        'Hours of use, and whether the site also runs at night',
+      ],
+      ctaLabel: 'Request a fixed 48-hour quotation',
+      ctaHref: 'https://www.samanportable.com/contact',
     },
   },
   'portacabin-office': {

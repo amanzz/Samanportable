@@ -108,7 +108,8 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         {/* PC-03 post-build correction 2 — checkmarked trust-signal bullets below
             the card body. Same Check icon and colour token the Section 3 explorer
             already uses for its application list, so no new visual pattern is
-            introduced. Absent everywhere else. */}
+            introduced. Absent everywhere else. Also used by PC-06's Section 2
+            card (four quotation-input bullets) via the same field. */}
         {card.bullets && card.bullets.length > 0 && (
           <ul className="saman-s2-split-bullets">
             {card.bullets.map((b, i) => (
