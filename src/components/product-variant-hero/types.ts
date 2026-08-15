@@ -37,6 +37,13 @@ export interface ProductVariant {
   /** Per-size buy-box blurb (Fable 5 Section E). Rendered only when present —
       the copy has not been supplied yet, so the slot stays empty until then. */
   shortDescription?: string;
+  /** LC-00 (16 Aug 2026) — full replacement for the standard five-cell
+      Size/Material/Delivery/Coverage/Brand set, for a product whose approved
+      FEATURE_CELLS table names entirely different concepts (labour colony:
+      built-up area, sleeping capacity, rooms and floors, level ground needed,
+      price ex-GST). Absent on every other product's variants -> the standard
+      cell computation is untouched and byte-identical. */
+  featureCells?: { label: string; value: string }[];
 }
 
 export interface VariantProductData {

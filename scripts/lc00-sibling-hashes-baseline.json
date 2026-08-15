@@ -1,0 +1,77 @@
+{
+ "/product/porta-cabins": {
+  "sha": "c02d569a84f81dc2",
+  "markup": "23e96729ae0a8410",
+  "bytes": 582523
+ },
+ "/product/porta-cabins/ms-porta-cabin": {
+  "sha": "e643422ddab7ee14",
+  "markup": "564c758525fe3fb4",
+  "bytes": 548387
+ },
+ "/product/porta-cabins/gi-porta-cabin": {
+  "sha": "506213cae6e8dee1",
+  "markup": "03781e7f2a0cbd7f",
+  "bytes": 528222
+ },
+ "/product/porta-cabins/porta-cabin-shop": {
+  "sha": "ba7cba910eed272a",
+  "markup": "4b8ab1904c25ce4a",
+  "bytes": 537992
+ },
+ "/product/porta-cabins/fire-rated-porta-cabin": {
+  "sha": "a021593124b79c9a",
+  "markup": "7b4faa4b1e599b6a",
+  "bytes": 528886
+ },
+ "/product/porta-cabins/skid-mounted-porta-cabin": {
+  "sha": "b52dd2384b089c1d",
+  "markup": "1a4580a5cc4bcf91",
+  "bytes": 552625
+ },
+ "/product/container-offices": {
+  "sha": "a98457a7d2f545d5",
+  "markup": "ea9b085da49552c6",
+  "bytes": 577745
+ },
+ "/product/portable-office": {
+  "sha": "cc3d8c30873df084",
+  "markup": "fa7f80fafad6b26a",
+  "bytes": 553944
+ },
+ "/product/container-cafe": {
+  "sha": "2f5f300c54e4ec59",
+  "markup": "d1be45b80beb781c",
+  "bytes": 486768
+ },
+ "/product/portable-cabin": {
+  "sha": "d05bd9e3596f913d",
+  "markup": "9060ab86c0de5085",
+  "bytes": 500468
+ },
+ "/product/puf-panel": {
+  "sha": "7299084592a943dc",
+  "markup": "297135cfd4a27e25",
+  "bytes": 192258
+ },
+ "/product/labor-colony/labor-sheds": {
+  "sha": "bd797ad4ebb454bd",
+  "markup": "bc3ef9a0b3a7c122",
+  "bytes": 467223
+ },
+ "/product/labor-colony/labor-hutments": {
+  "sha": "7b11030178492bc1",
+  "markup": "e20e915955baf088",
+  "bytes": 467421
+ },
+ "/product/labor-colony/prefab-labor-camps": {
+  "sha": "2045b248143a4935",
+  "markup": "ee800361fda1cd17",
+  "bytes": 471360
+ },
+ "/product/container-offices/container-office-cabin": {
+  "sha": "b7152e232483f787",
+  "markup": "2d99f921c04916b4",
+  "bytes": 560385
+ }
+}

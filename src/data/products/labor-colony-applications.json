@@ -1,0 +1,82 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "60x24-gplus1",
+      "h3": "60x24 ft G+1 Dormitory Block, 2,880 sq ft, 58 Bunks",
+      "paragraph": "This is the smallest colony block we build. It runs two floors and 24 rooms, and it sleeps 58 people. So choose it when the plot is narrow. It also suits a new site that will add blocks later. You need about 64x28 ft of level ground once you allow a working margin. In practice, many buyers order two of these instead of one long block. Two short blocks simply fit awkward plots better. The price is Rs 19,44,000 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp",
+        "alt": "Two-storey labour colony block with cream panels, grey steel frame and railed walkways on both levels",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "90x24-gplus1",
+      "h3": "90x24 ft G+1 Dormitory Block, 4,320 sq ft, 86 Bunks",
+      "paragraph": "This block adds half as much again over the 60 ft size. It sleeps 86 people across 36 rooms on two floors. Therefore it suits a steady mid-size job: a highway package, a factory build or a housing project. The ground must be level over roughly 94x28 ft. In most cases, one block plus a toilet block and a small canteen houses about 90 workers well. That mix also keeps your first phase simple. The price is Rs 29,16,000 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-colony/90x24-gplus1/labour-colony-90x24-gplus1-front-left-three-quarter.webp",
+        "alt": "Two-storey labour colony block in cream panels with charcoal steel frame and full-length railed walkways",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "90x24-gplus2",
+      "h3": "90x24 ft G+2 Dormitory Block, 6,480 sq ft, 129 Bunks",
+      "paragraph": "The footprint matches the 90 ft two-storey block. However, a third floor lifts it to 129 bunks. So choose it when land is tight and you cannot spread outward. You gain half as much sleeping space again on the same 94x28 ft of ground. Because the stair load rises, plan wider walkways and a second exit route. Sites short of plot area pick this over two separate blocks. The price is Rs 43,74,000 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-colony/90x24-gplus2/labour-colony-90x24-gplus2-front-left-three-quarter.webp",
+        "alt": "Three-storey labour colony block in cream panels with tan steel frame and railed walkways on each level",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "120x24-gplus1",
+      "h3": "120x24 ft G+1 Dormitory Block, 5,760 sq ft, 115 Bunks",
+      "paragraph": "This is a long two-storey block with 48 rooms and 115 bunks. Usually it is the workhorse size on large sites. It gives you high capacity without a third floor. Movement therefore stays simple and evacuation runs quicker. You need about 124x28 ft of level ground. So choose it when your plot is long rather than deep. Many large contractors standardise on this one size and repeat it. The price is Rs 38,88,000 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-colony/120x24-gplus1/labour-colony-120x24-gplus1-front-left-three-quarter.webp",
+        "alt": "Two-storey labour colony block with white panels, navy steel frame and railed walkways on both levels",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "118x30-gplus1",
+      "h3": "118x30 ft G+1 Dormitory Block, 7,080 sq ft, 142 Bunks",
+      "paragraph": "This is the deep block. At 30 ft it runs six feet wider than every other size. That extra width gives roomier dormitories and a wider internal passage. It sleeps 142 people over two floors. So choose it when you want better living conditions per person. It also helps when a client audits worker welfare. You need about 122x34 ft of level ground. Because the depth changes, check site access early. The price is Rs 47,79,000 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-front-left-three-quarter.webp",
+        "alt": "Two-storey labour colony block in cream panels with sage-green steel frame and railed walkways",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "120x24-gplus2",
+      "h3": "120x24 ft G+2 Dormitory Block, 8,640 sq ft, 173 Bunks",
+      "paragraph": "This is the largest block we build. Three floors, 72 rooms and 173 bunks sit in one structure. So it uses the least land per worker of any size here. Therefore choose it for dense urban sites and big infrastructure jobs, where plot area costs real money. You need about 124x28 ft of level ground. Because the building is tall, fire routes, stairs and water pressure all need proper planning. The price is Rs 58,32,000 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-colony/120x24-gplus2/labour-colony-120x24-gplus2-front-left-three-quarter.webp",
+        "alt": "Three-storey 120x24 ft colony block with tan steel frame, seven door and window bays per level and corridor walkways",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  ]
+}
