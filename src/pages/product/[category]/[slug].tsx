@@ -43,14 +43,9 @@ import {
   orderPortaCabinStrip,
   slugFromProductHref,
   c01HubReturnAnchorForSlug,
-  PORTA_CABIN_MS_RAIL,
-  PORTA_CABIN_FIRE_RATED_RAIL,
-  PORTA_CABIN_WITH_TOILET_RAIL,
-  PORTA_CABIN_PUF_RAIL,
-  buildPortaCabinGiRail,
+  isPortaCabinRailSlug,
+  portaCabinSubpageRail,
   PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
-  PORTA_CABIN_DS_RAIL,
-  PORTA_CABIN_SKID_RAIL,
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
@@ -576,28 +571,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (isC16PanelSlug(currentSlug)) {
       return getC16PanelSiblingRail(currentSlug);
     }
-    // PC-01 (14 Aug 2026) — the MS page's Column 3 is the approved three-item
-    // comparison rail from its own build ticket, not the full-cluster strip. Scoped
-    // to this one slug, so every sibling keeps orderPortaCabinStrip() below.
-    if (currentSlug === 'ms-porta-cabin') {
-      return PORTA_CABIN_MS_RAIL;
-    }
-    // PC-05 (14 Aug 2026) — same pattern: the fire-rated page's own four-item
-    // Column 3 rail from its own build ticket §4, scoped to this one slug.
-    if (currentSlug === 'fire-rated-porta-cabin') {
-      return PORTA_CABIN_FIRE_RATED_RAIL;
-    }
-    // PC-04 (14 Aug 2026) — same treatment for the with-toilet page: Column 3 is the
-    // three-item comparison rail named in §1 of its approved draft, not the
-    // full-cluster strip. Scoped to this one slug.
-    if (currentSlug === 'porta-cabin-with-toilet') {
-      return PORTA_CABIN_WITH_TOILET_RAIL;
-    }
-    // PC-07 (15 Aug 2026) — same treatment for the PUF page: Column 3 is the
-    // three-item comparison rail named in build prompt §10 (MS, GI, Fire-Rated),
-    // not the full-cluster strip. Scoped to this one slug.
-    if (currentSlug === 'puf-porta-cabin') {
-      return PORTA_CABIN_PUF_RAIL;
+    // C01 (15 Aug 2026) - "Explore the Range" rail consistency. PC-01, PC-04, PC-05
+    // and PC-07 each returned their own hand-authored three- or four-item rail here,
+    // and PC-02, PC-03 and PC-08 did the same further down, so every cluster page
+    // showed a different set and a buyer landing on a subpage could not see the range.
+    // All seven early returns are replaced by the one derived list, which restores
+    // RULING v2.1 (SAMAN veto, 18 Jul 2026): hub first, then every live sibling in
+    // canonical order, self excluded. Navigation only; no in-body link is affected.
+    if (isPortaCabinRailSlug(currentSlug)) {
+      return portaCabinSubpageRail(currentSlug);
     }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
@@ -609,26 +591,8 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       imageAlt: relatedProduct.title,
     }));
 
-    // PC-02 (14 Aug 2026) — the GI page's Column 3 is the approved three-item
-    // comparison rail from its own build ticket (hub, MS, PUF), not the full-cluster
-    // strip. Scoped to this one slug, so every sibling keeps orderPortaCabinStrip()
-    // below.
-    // PC-03: the double-story page's Column 3 is the approved three-item rail from
-    // build prompt v2 section 9, not the full-cluster strip. Scoped to this one slug.
-    if (currentSlug === 'double-story-porta-cabin') {
-      return PORTA_CABIN_DS_RAIL;
-    }
-
-    // PC-08 (15 Aug 2026) — the skid-mounted page's Column 3 is the approved
-    // three-item rail from build prompt v1 section 2 (assembly map, hero column
-    // 3), not the full-cluster strip. Scoped to this one slug.
-    if (currentSlug === 'skid-mounted-porta-cabin') {
-      return PORTA_CABIN_SKID_RAIL;
-    }
-
-    if (currentSlug === 'gi-porta-cabin') {
-      return buildPortaCabinGiRail(built, (item) => slugFromProductHref(item.href));
-    }
+    // PC-02's GI rail, PC-03's double-story rail and PC-08's skid-mounted rail stood
+    // here until C01 folded all three into the one derived cluster rail above.
 
     // T25 — S4 strip order is LOCKED by the internal-linking matrix v2: hub first,
     // then exactly the three assigned siblings. Applies only to porta cabin
