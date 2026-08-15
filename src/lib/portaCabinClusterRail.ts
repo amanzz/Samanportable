@@ -174,8 +174,9 @@ const PORTA_CABIN_RAIL_HUB_CARD: import('./c16PanelCatalog').RelatedRailItem = {
  * never rendered for a URL that 404s, so turning a page on after it deploys is a
  * one-word change here and nowhere else.
  *
- * Live status verified by request on 15 Aug 2026: every slug below returned 200 except
- * knock-down-porta-cabin, which returned 404 because PC-09 is not yet deployed.
+ * Live status verified by request on 15 Aug 2026: all ten slugs below return 200.
+ * knock-down-porta-cabin was the one exception until PC-09 deployed later the same
+ * day; the flag was flipped after re-confirming 200, not on the assumption it shipped.
  *
  * The five legacy cluster slugs in PORTA_CABIN_CLUSTER_SLUGS below (steel-, luxury-,
  * mini-, low-cost-porta-cabin and portacabin-office) are deliberately absent: they are
@@ -192,8 +193,8 @@ export const PORTA_CABIN_RAIL_ORDER: readonly { slug: string; live: boolean }[] 
   { slug: 'soundproof-porta-cabin', live: true },
   { slug: 'puf-porta-cabin', live: true },
   { slug: 'skid-mounted-porta-cabin', live: true },
-  // PC-09 is not deployed; this returns 404 today. Flip to true when it ships.
-  { slug: 'knock-down-porta-cabin', live: false },
+  // PC-09 deployed 15 Aug 2026; confirmed 200 by request. Flipped from false.
+  { slug: 'knock-down-porta-cabin', live: true },
   { slug: 'porta-cabin-shop', live: true },
 ];
 
@@ -246,10 +247,12 @@ export const PORTA_CABIN_SIBLING_YMAL = (slug: string) =>
 // all ten pages at once. PC-08's rail also railed knock-down-porta-cabin before it was
 // built; the new `live` flag stops that.
 //
-// PC-10 landed on static-migration AFTER this correction was written and was folded in
-// on merge. It is the eighth page-at-a-time rail this ticket removes, and evidence the
-// pattern reproduces itself: each new build copies the last one's bespoke rail. New
-// cluster pages need NO rail code at all now - add the slug to PORTA_CABIN_RAIL_ORDER.
+// PC-09 held PORTA_CABIN_KNOCK_DOWN_RAIL and PC-10 held PORTA_CABIN_SHOP_RAIL. Both
+// landed on static-migration AFTER this correction was written and were folded in on
+// merge, taking the count from seven bespoke rails to nine. That is the clearest
+// evidence for this ticket: the pattern reproduces itself, because each new build
+// copies the last one's bespoke rail. A new cluster page now needs NO rail code at
+// all - add its slug to PORTA_CABIN_RAIL_ORDER and every sibling picks it up.
 
 export const PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH = (slug: string) =>
   PORTA_CABIN_SIBLING_YMAL(slug).map((item) =>

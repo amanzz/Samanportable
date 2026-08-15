@@ -3763,6 +3763,209 @@
           "height": 941
         }
       ]
+    },
+    "knock-down-porta-cabin": {
+      "name": "Knock-Down Porta Cabin",
+      "narrative": "Read these rows with one question in mind: what has to come apart again. Almost every product-specific line below exists because a connection that would normally be welded, cut or wet-jointed has been made mechanical instead. That is where the cost sits and it is also where the maintenance sits, because a bolted, gasketed joint is an inspected item in a way a weld is not.",
+      "premiumTables": true,
+      "specifications": [
+        {
+          "group": "Table 1",
+          "component": "Bottom frame",
+          "detail": "Segmented bolted base rails, 100x50x3 mm channel segments reference, with engineered splice plates and bolts. Bolt size, grade, hole tolerance, bearing and slip requirements are connection-design items documented per project.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Bottom stiffeners",
+          "detail": "Demountable base cross-members, 75x40 or 50x50 structural members with bolted cleats as engineered. Numbered so the floor cassette lifts out without destructive cutting; connections stay accessible for inspection and re-tightening.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor frame",
+          "detail": "Modular floor cassettes, 50x50x2 mm frame reference with 18 mm cement-bonded board panels, sized for handling, with joint strips keeping the walking surface continuous.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Top frame",
+          "detail": "Bolted top rails, 50x50x1.6 mm SHS or formed rail reference, with demountable corner nodes. Assembly sequence and temporary bracing provided so the frame is stable before panels close it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof stiffeners",
+          "detail": "Demountable roof cassettes, 50x50x1.6 mm or engineered secondary members with bolted splice details and removable flashings and seals. No site welding needed for routine planned assembly unless specifically stated.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Corner posts and walls",
+          "detail": "Demountable corner and wall posts, 50x50x2 mm SHS reference, with bolted corner plates and replaceable opening frames. Structural nodes, not wall panels, carry the primary frame actions.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Lifting and handling",
+          "detail": "Engineered lifting or handling points and support locations provided for each transportable module; move only to the approved lifting, support and transport drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Welding and fabrication",
+          "detail": "Welded and/or bolted connections to approved shop drawings; safe edges deburred, dimensions inspected, cut edges protected, panels closed only after frame inspection.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Exterior walls",
+          "detail": "Demountable insulated wall panels, 50 mm PUF, PIR or mineral wool sandwich, 0.5 to 0.8 mm pre-coated GI or GL facings typical, with repeatable mechanical joints and replaceable seals. Mineral wool where non-combustible construction is required.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof",
+          "detail": "Demountable insulated roof panels, 60 to 80 mm, with removable flashings and sealed fasteners. Fastener locations standardised and documented.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor base",
+          "detail": "Modular floor substrate, 18 mm cement-bonded board panels, 24 mm option for higher duty, mechanically fastened to numbered cassettes. Wet-area variants require separate waterproofing renewable at reassembly.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor finish",
+          "detail": "Panelized floor finish, 1.5 to 2.0 mm commercial vinyl with removable threshold and joint trims, detailed so module joints open without destroying the finish. Premium finishes are optional fit-out.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Wall insulation",
+          "detail": "Demountable wall insulation core, 50 mm PUF, PIR or mineral wool according to panel selection, encapsulated within panels. Damaged panels or seals are replaced before reuse.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof insulation",
+          "detail": "Demountable roof insulation core, 60 to 80 mm PUF, PIR or mineral wool according to roof panel; thickness chosen for thermal or fire target and panel span.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Interior walls",
+          "detail": "Factory-finished internal panel face, pre-coated metal inner skin, with optional removable decorative liner clipped or screwed in removable modules. Reduces fragile interior layers during repeated assembly.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Ceiling",
+          "detail": "Removable service ceiling or finished inner roof-panel face; modular service ceiling panels remain accessible to wiring and connectors and are designed for repeated removal rather than wet jointing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Main door / service door",
+          "detail": "Bolt-on door module: pre-hung door and frame cassette mechanically fixed to the structural opening, removed as a unit for transport or replacement. Threshold, canopy and perimeter gaskets are standardised kit components.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Windows / service opening",
+          "detail": "Bolt-on window module: pre-glazed aluminium window cassette with replaceable perimeter gasket, mounted to framed openings without uncontrolled panel cutting. Reassembly includes gasket inspection and water-seal check.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, mosquito mesh, guard or louver provided only where the approved opening schedule and intended use require it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Ventilation / AC",
+          "detail": "Removable ventilation and AC modules: bolt-on louver, exhaust and AC service panels with factory-planned cut-outs. Penetrations concentrated in replaceable service panels; major field cuts in sandwich panels avoided to preserve reuse and sealing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Plumbing / sanitary",
+          "detail": "Quick-connect optional plumbing: factory-planned service panel, union or quick-connect interfaces and removable pipe supports. Connections and traps accessible for draining before disassembly; wet panels inspected before repacking.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical wiring",
+          "detail": "Concealed or protected copper wiring, typically 1.5 sq.mm for lighting, 2.5 sq.mm for sockets and 4 sq.mm for higher-load or AC circuits, subject to the final load schedule and approved electrical drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB and RCCB protection, earthing, and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical fittings",
+          "detail": "LED lights, modular switches, 6A and 16A sockets, fan points and AC provision coordinated with the approved layout; final quantities and equipment loads are quotation-specific.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Layout / configuration",
+          "detail": "Flat-pack knock-down assembly system: numbered members, panel schedule, gasket set, fastener schedule and assembly and torque sequence. Reuse is conditional on inspection of members, holes, fasteners, panels and seals; damaged components are replaced rather than forced back into tolerance.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Fasteners and sealing",
+          "detail": "Corrosion-compatible mechanical fasteners, EPDM, butyl or approved sealants and flashings at panel joints, corners, roof laps and penetrations. No unsealed field cuts are accepted.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Decorative / external finish",
+          "detail": "Final colour and coating system project-selected; substrate preparation, compatibility, touch-up and exposure-category maintenance confirmed in the approved finish schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Painting / coating",
+          "detail": "Corrosion protection matched to substrate and exposure: prepared MS receives the approved primer and topcoat system; galvanized or coated steel receives compatible cut-edge and damage repair plus coating touch-up where specified.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch QA covering dimensions, member and panel identification, connections, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional checks; specialist performance certificates verified where required.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Warranty",
+          "detail": "Warranty period and exclusions confirmed in the final quotation; relocation damage, misuse, site services, consumables and unapproved alterations remain outside the agreed scope unless explicitly included.",
+          "differsFromHub": false
+        }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/diagrams/kd-diagram-exploded-assembly.webp",
+          "alt": "Exploded diagram of a knock-down porta cabin showing roof cassettes, top rails, posts, insulated wall panels, bolted base and modular openings",
+          "caption": "Exploded assembly of the 20x10x8.5 ft reference configuration. Illustrative, not for construction. Sections are workbook reference values; final engineering, bill of materials and drawings remain controlled.",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/diagrams/kd-diagram-envelope-services.webp",
+          "alt": "Section diagram of a knock-down porta cabin showing roof and floor build-up, wall envelope, electrical distribution and bolt-on service modules",
+          "caption": "Envelope and services logic for the reference configuration. Illustrative, not for construction. Electrical quantities and service positions are set by the approved drawing and the final load schedule.",
+          "width": 1600,
+          "height": 900
+        }
+      ]
     }
   }
 }

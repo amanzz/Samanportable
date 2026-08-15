@@ -80,6 +80,13 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'puf-porta-cabin',
   'skid-mounted-porta-cabin',
   'porta-cabin-shop',
+  // PC-09 (15 Aug 2026) — omitted when this set was first written because
+  // Section 2/3 had no copy yet (v1.0 partial build). Now that the copy pack
+  // is fully wired, this page joins the same premium chip/tab treatment
+  // every other cluster page already has. No new styling: reuses the
+  // existing usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2
+  // opt-ins byte-for-byte, exactly as every sibling above does.
+  'knock-down-porta-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -582,6 +589,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (isPortaCabinRailSlug(currentSlug)) {
       return portaCabinSubpageRail(currentSlug);
     }
+    // PC-09's own knock-down rail stood here and is folded in above too.
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
