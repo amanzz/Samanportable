@@ -1,0 +1,92 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft Fire-Rated Porta Cabin: Compact Permit Office",
+      "paragraph": "The 100 sq ft unit suits a single controlled room: a hot-work permit desk, a gate documentation point or a marshal station near fuel storage. One rated door set covers the only opening, which keeps the certified build simple and the documentation short.\n\nThe cabin moves on a standard truck and fits tight plot corners beside existing structures. Its planning price of Rs 1,78,250 ex-GST is the smallest entry on the fire-rated ladder.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/fire-rated-porta-cabin/explorer/fire-rated-porta-cabin-10x10-yellow-dark-exterior.webp",
+        "alt": "Yellow and dark grey 10x10 ft porta cabin, three-quarter view on a paved apron",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8 ft Fire-Rated Porta Cabin: Narrow Transport Build",
+      "paragraph": "At 160 sq ft, the 8 ft width is the practical advantage: the cabin rides a standard trailer without over-dimensional formalities on most routes. Sites with narrow access roads, congested gates or width limits usually land on this size.\n\nThe long wall takes a desk zone at one end and records or storage at the other, with the rated door between them. The planning price is Rs 2,72,800 ex-GST, on the same certified-assembly specification as every other size.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/fire-rated-porta-cabin/explorer/fire-rated-porta-cabin-20x8-orange-base-side.webp",
+        "alt": "Cream 20x8 ft porta cabin with orange base band, long side elevation",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft Fire-Rated Porta Cabin: Reference Site Office",
+      "paragraph": "This 200 sq ft size is the reference configuration for the whole product. The authoritative rate of Rs 1,550 per sq ft is set here, so its Rs 3,10,000 ex-GST price anchors the six-size ladder.\n\nThe floor plan carries two desks comfortably, or one office zone plus a records area behind a partition. If you are comparing fire-rated quotes across suppliers, use this size to compare like for like: same area, same reference rate, same stated criteria.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/fire-rated-porta-cabin/explorer/fire-rated-porta-cabin-20x10-green-grey-dockside.webp",
+        "alt": "Green and grey 20x10 ft porta cabin at a dockside yard",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12 ft Fire-Rated Porta Cabin: Wide Meeting Layout",
+      "paragraph": "The extra 2 ft of width changes how the room works. Its 240 sq ft seats a toolbox-talk or induction table alongside working desks, which matters where permits and briefings happen in the same room.\n\nThe wider span uses the engineered top-frame and roof-support sections from the approved specification. Note that 12 ft wide loads travel as over-dimensional cargo, so route charges are confirmed with your delivery location. The planning price is Rs 3,57,120 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/fire-rated-porta-cabin/explorer/fire-rated-porta-cabin-20x12-tan-green-exterior.webp",
+        "alt": "Tan and green 20x12 ft porta cabin on open ground",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft Fire-Rated Porta Cabin: Multi-Room Site Block",
+      "paragraph": "With 400 sq ft on one chassis, this size takes partitioned layouts under a single protected envelope. Compartment boundaries, door positions and exits follow your approved layout drawing, and every opening that sits in a rated wall is specified as part of the certified build rather than cut in afterwards. Freight moves on the 40 ft trailer band of the published ladder. The planning price is Rs 5,89,000 ex-GST.",
+      "applications": [
+        "Separate engineer, document and meeting rooms behind rated partitions",
+        "Corridor or open-plan circulation, fixed at drawing stage",
+        "Additional rated door sets quoted per opening",
+        "Detector and alarm interfaces positioned to your fire strategy"
+      ],
+      "image": {
+        "src": "/images/products/fire-rated-porta-cabin/explorer/fire-rated-porta-cabin-40x10-white-red-side.webp",
+        "alt": "White 40x10 ft porta cabin with dark red base band, long side elevation",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x12",
+      "h3": "40x12 ft Fire-Rated Porta Cabin: Largest Tender Size",
+      "paragraph": "The 480 sq ft flagship matches the 40x12 ft cabin format that appears in government e-marketplace specifications, which makes it the usual pick for tender-driven procurement. The width supports control-room and document-room layouts served by a central corridor. It ships as over-dimensional cargo, so the route is confirmed before dispatch. The planning price is Rs 6,99,360 ex-GST, the top of the published fire-rated ladder.",
+      "applications": [
+        "Control room, document room and meeting space in one delivered unit",
+        "Central corridor with a rated door to each compartment",
+        "Documentation pack assembled from the tested systems actually quoted",
+        "Over-dimensional movement: route confirmed at order, not assumed"
+      ],
+      "image": {
+        "src": "/images/products/fire-rated-porta-cabin/explorer/fire-rated-porta-cabin-40x12-tan-window-row.webp",
+        "alt": "Tan 40x12 ft porta cabin with a row of windows, industrial backdrop",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  ]
+}

@@ -296,6 +296,12 @@ function subpagePresets(): Record<string, VariantProductPreset> {
     'small-portacabin': ['SP-SMPC', '10x10'],
     'steel-porta-cabin': ['SP-STPC', '20x10'],
     'low-cost-porta-cabin': ['SP-LCPC', '20x10'],
+    // PC-05 (14 Aug 2026) — Ruling G: FRPC is the ruled SKU cluster code for
+    // this page, recorded here rather than invented per-variant. explorerImageTemplate
+    // is overridden per-size in the page's own data file (data wins over preset),
+    // so the derived `{slug}-{sizeSlug}-elevated-view.webp` pattern below is never
+    // read for this slug — kept only for shape consistency with every other entry.
+    'fire-rated-porta-cabin': ['SP-FRPC', '20x10'],
   };
   const out: Record<string, VariantProductPreset> = {};
   for (const [slug, [code, defaultSize]] of Object.entries(SUBPAGES)) {

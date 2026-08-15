@@ -2735,6 +2735,199 @@
         }
       ]
     },
+    "fire-rated-porta-cabin": {
+      "name": "Fire-Rated Porta Cabin",
+      "narrative": "The two tables below reproduce the approved specification for this configuration: nineteen product-specific lines and eleven platform-common lines. Read them as a compliance tool. Table 1 tells your structural reviewer what carries the loads and what the envelope is made of. Table 2 tells your fire consultant how linings, openings and service penetrations are treated, and where scope passes from SAMAN to your project. Items marked as project-specified stay flexible until your fire criteria fix them. The quotation then records the exact tested systems selected for your order.",
+      "premiumTables": true,
+      "specifications": [
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Reference configuration",
+          "detail": "20x10x8.5 ft; six published sizes 10x10 / 20x8 / 20x10 / 20x12 / 40x10 / 40x12 ft x 8.5 ft height",
+          "classification": "n/a"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Bottom frame",
+          "detail": "Heavy MS primary frame, 150x75x5 mm C-channel reference; final by structural/fire protection design",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Bottom stiffeners",
+          "detail": "100x50x3 mm channels/RHS and engineered cross-members supporting non-combustible floor construction",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Floor frame",
+          "detail": "80x40x3 mm / engineered steel grid + 18-24 mm cement-bonded board",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Top frame",
+          "detail": "80x40x3 mm RHS reference with protected connection zones for tested wall/ceiling junctions",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Roof stiffeners",
+          "detail": "60x40x2.5-3 mm secondary steel supporting the selected mineral-wool / non-combustible roof",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Corner posts / wall frame",
+          "detail": "60x60x3 mm SHS with reinforced rated openings",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Exterior walls",
+          "detail": "75-100 mm mineral-wool sandwich panel; 0.5-0.8 mm pre-coated GI/GL facings; project reaction-to-fire class",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Roof",
+          "detail": "75-100 mm mineral-wool roof panel or tested non-combustible roof build; joints, fasteners, penetrations per tested system",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Floor base",
+          "detail": "18-24 mm cement-bonded board or engineered steel/cementitious deck (non-combustible default)",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Floor finish",
+          "detail": "Commercial resilient/epoxy system with documented fire characteristics where required",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Lifting / handling",
+          "detail": "Engineered lifting/support points per transportable unit",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 1 - Dimensions, structure, chassis, envelope, roof and floor",
+          "component": "Welding & fabrication",
+          "detail": "Welded and/or bolted connections to approved shop drawings by qualified fabricators",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Interior wall lining",
+          "detail": "12.5 mm fire-grade gypsum / calcium-silicate / fibre-cement as certified system (layer count, stud spacing, fixings per test)",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Ceiling",
+          "detail": "Certified fire-grade board or mineral-wool panel assembly; continuous at partitions",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Wall insulation",
+          "detail": "75-100 mm stone/mineral wool; A1-class product where the project specifies this level (ROCKWOOL Safe n Silent Pro publishes Euroclass A1)",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Roof insulation",
+          "detail": "75-100 mm stone/mineral wool or certified mineral-wool roof core; continuity and joint protection",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Main / service door",
+          "detail": "Tested fire-door assembly: certified leaf, frame, hardware, self-closer and seals as required; rating per project fire strategy",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Windows / openings",
+          "detail": "Fire-rated glazing system only where permitted and certified; otherwise glazing omitted in rated walls (ordinary aluminium windows are not fire-rated)",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Ventilation / AC",
+          "detail": "HVAC/louver penetrations with tested dampers/fire-stopping where the fire strategy requires",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Service penetrations",
+          "detail": "Tested penetration seals for cables, pipes and conduits; plumbing only if included",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Layout / configuration",
+          "detail": "Compartment boundaries, exits, detector/extinguisher/alarm interfaces and signage to project fire strategy; sold as fire-rated only when tested systems are confirmed",
+          "classification": "Product-Specific"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Grills / mesh / louvers",
+          "detail": "Only where the approved opening schedule allows",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Electrical wiring",
+          "detail": "Copper 1.5 / 2.5 / 4 sq mm starting schedule; final by load",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Electrical protection",
+          "detail": "DB with MCB/RCCB, earthing, segregated circuits to approved drawing",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Electrical fittings",
+          "detail": "LED lights, modular switches, 6A/16A sockets, fan / AC provision",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Decorative / external finish",
+          "detail": "Project-selected colour and compatible coating system; substrate preparation and compatibility confirmed at order",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Painting / coating",
+          "detail": "Corrosion protection matched to substrate and exposure; prepared MS receives the approved coating system, with touch-up on site",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Fasteners & sealing",
+          "detail": "Corrosion-compatible fasteners; EPDM / butyl / approved sealants and flashings",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch dimensional, enclosure, service and functional QA",
+          "classification": "Platform Common"
+        },
+        {
+          "group": "Table 2 - Linings, insulation, openings, services, options and site scope",
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Final quotation governs certified-assembly warranty scope",
+          "classification": "Platform Common (L15 verbatim)"
+        }
+      ]
+    },
     "gi-porta-cabin": {
       "name": "Galvanized Iron (GI) Porta Cabin",
       "sheet": "PC-GI-03",

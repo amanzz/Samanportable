@@ -29,6 +29,7 @@ import { formatIndianPrice } from './types';
 import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from './presets';
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
 import msPortaCabinApplications from '@/data/products/ms-porta-cabin-applications.json';
+import fireRatedPortaCabinApplications from '@/data/products/fire-rated-porta-cabin-applications.json';
 import portaCabinWithToiletApplications from '@/data/products/porta-cabin-with-toilet-applications.json';
 import giPortaCabinApplications from '@/data/products/gi-porta-cabin-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
@@ -181,6 +182,11 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // which is exactly what happened on the first build of this page. Only this slug
   // is re-bound, so every other Section-H page keeps its drop.
   'ms-porta-cabin': msPortaCabinApplications as ApplicationsData,
+  // PC-05 fire-rated-porta-cabin — copy pack v2 §1 V1-V6. Six panels, Shape A
+  // (H2 + two paragraphs, V1-V4: no bullets) or Shape B (H2 + one paragraph +
+  // 4 bullets, V5/V6). No stale Section-H drop exists for this slug (checked),
+  // so no re-registration-after-spread trap applies here.
+  'fire-rated-porta-cabin': fireRatedPortaCabinApplications as ApplicationsData,
   // PC-04 porta-cabin-with-toilet — Section 3 of the approved draft v2. Six panels,
   // one per published size. The approved copy supplies no section heading or intro,
   // so neither is invented. Panels carry no explicit image: the product data file's
@@ -295,6 +301,16 @@ interface PortaCabinVariantHeroProps {
       and the section itself carries no H2 of its own (ms-porta-cabin). Default
       false keeps every other page's heading level byte-identical. */
   explorerPanelHeadingAsH2?: boolean;
+  /** Ad-hoc revision (14 Aug 2026, owner screenshots) — halves the mobile
+      (<1024px) top/bottom margin on the two `.saman-section-divider` rules
+      this component renders, from the global 40px to 20px. The global rule
+      (and every other page that renders `.saman-section-divider`) is
+      untouched; this only overrides the two dividers inside THIS component's
+      own `.pc-hero-grid` scope, and only when the flag is on. Default false
+      keeps every existing page (including ms-porta-cabin, which already has
+      showSectionDividers on) byte-identical; pass true only for
+      fire-rated-porta-cabin. */
+  compactMobileDividers?: boolean;
   /** PC-04 (14 Aug 2026) — opt-in override for the premium size-selector eyebrow.
       Absent (the default) renders the deployed literal below, which contains an
       em dash, so every other page using `usePremiumSizeTabs` stays byte-identical.
@@ -578,6 +594,7 @@ export function PortaCabinVariantHero({
   showSectionDividers = false,
   usePremiumSizeTabs = false,
   explorerPanelHeadingAsH2 = false,
+  compactMobileDividers = false,
   sizeEyebrowText,
   explorerHidePanelImages = false,
 }: PortaCabinVariantHeroProps) {
@@ -1097,6 +1114,12 @@ export function PortaCabinVariantHero({
       <style dangerouslySetInnerHTML={{ __html: `[data-ds-root]{${dsCssVariables()}}`
         + `.pc-hero-grid{display:block;}`
         + `.pc-hero-grid>.pc-gallery{min-width:0;}.pc-hero-grid>.pc-buybox{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-transcript{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rte{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-explorer{min-width:0;margin-top:1rem;}.pc-hero-grid>.pc-rail{margin-top:1rem;}`
+        // Ad-hoc revision (14 Aug 2026) — compactMobileDividers halves the
+        // global 40px mobile divider margin to 20px, ONLY for this
+        // component's own .pc-divider1/.pc-divider2 elements, ONLY below the
+        // 1024px breakpoint (the desktop rule below already sets margin:0 and
+        // wins at >=1024px regardless), and ONLY when the flag is on.
+        + (compactMobileDividers ? `.pc-hero-grid>.pc-divider1,.pc-hero-grid>.pc-divider2{margin:20px auto;}` : ``)
         // PC-00 divider rows are inserted into grid-template-areas ONLY when
         // showSectionDividers is on, so the areas string (and every sibling
         // page that never sets the prop) stays byte-identical to before.
@@ -1447,11 +1470,28 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 ) : (
                   <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{rewriteC04VisiblePunctuation(panel.h3, data.productSlug, true)}</h3>
                 )}
-                <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph, data.productSlug)}</p>
-                {/* PC-02 revision v1.2 — Shape A second paragraph. Same class string as
-                    the first, so a dataset that supplies none is byte-identical. */}
-                {panel.paragraph2 && (
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph2, data.productSlug)}</p>
+                {/* PC-05 standing rule 13 — Shape A panels carry a blank-line
+                    break between two approved paragraphs; each becomes its own
+                    <p>, same convention as the buy-box opener (R10). No existing
+                    panel paragraph contains "\n\n", so every other product's
+                    single <p> is unaffected. */}
+                {panel.paragraph.includes('\n\n') ? (
+                  <div className="mt-2 space-y-2">
+                    {panel.paragraph.split('\n\n').map((para, pi) => (
+                      <p key={pi} className="text-sm leading-relaxed text-[var(--ds-color-steel)]">
+                        {rewriteC04VisiblePunctuation(para, data.productSlug)}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph, data.productSlug)}</p>
+                    {/* PC-02 revision v1.2 — Shape A second paragraph. Same class string as
+                        the first, so a dataset that supplies none is byte-identical. */}
+                    {panel.paragraph2 && (
+                      <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph2, data.productSlug)}</p>
+                    )}
+                  </>
                 )}
 
                 {/* Sub-heading above the applications list — T25 Section H drop only. */}

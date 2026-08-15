@@ -1,0 +1,53 @@
+{
+  "id": 990022,
+  "name": "Fire-Rated Porta Cabin",
+  "slug": "fire-rated-porta-cabin",
+  "permalink": "https://www.samanportable.com/product/porta-cabins/fire-rated-porta-cabin/",
+  "date_created": "2026-08-14T00:00:00",
+  "date_created_gmt": "2026-08-14T00:00:00",
+  "date_modified": "2026-08-14T00:00:00",
+  "date_modified_gmt": "2026-08-14T00:00:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-FRPC-20x10",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": true,
+  "virtual": false,
+  "downloadable": false,
+  "tax_status": "taxable",
+  "tax_class": "",
+  "manage_stock": false,
+  "stock_quantity": null,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "shipping_required": true,
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "parent_id": 0,
+  "categories": [
+    {
+      "id": 202,
+      "name": "Porta Cabins",
+      "slug": "porta-cabins"
+    }
+  ],
+  "images": [],
+  "attributes": [],
+  "menu_order": 0,
+  "related_ids": [],
+  "meta_data": [],
+  "stock_status": "instock",
+  "has_options": false
+}

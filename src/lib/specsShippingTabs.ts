@@ -384,10 +384,30 @@ const WARRANTY_BLOCK =
   `</section>`;
 
 /** The shared Shipping tab body (identical on all 13 pages). */
-export function buildShippingHtml(): string {
+export interface ShippingHtmlOptions {
+  /**
+   * PC-05 revision v1.3 (14 Aug 2026) — opt-in lead image, rendered once
+   * between the intro paragraph and the free-delivery banner. Absent for
+   * every caller of buildShippingHtml() except the one route that supplies
+   * it, so the shared component's markup stays byte-identical everywhere
+   * else. The image is one of the six already-approved Description-tab
+   * assets, reused with its existing approved caption — not a new file, not
+   * new copy.
+   */
+  leadImage?: { src: string; alt: string; caption: string };
+}
+
+export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
+  const leadImageHtml = options.leadImage
+    ? `<figure class="mb-4 m-0 overflow-hidden rounded-xl border border-slate-200">` +
+        `<img src="${esc(options.leadImage.src)}" alt="${esc(options.leadImage.alt)}" width="1280" height="720" loading="lazy" class="w-full h-auto" />` +
+        `<figcaption class="px-4 py-2 text-xs italic text-slate-500 bg-slate-50">${esc(options.leadImage.caption)}</figcaption>` +
+      `</figure>`
+    : '';
   return (
     `<div class="not-prose space-y-2">` +
       `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(SHIPPING_INTRO)}</p>` +
+      leadImageHtml +
       `<div class="mb-6 flex items-start gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3">` +
         `<span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>` +
         `<p class="m-0 text-sm font-medium text-emerald-900">${esc(FREE_DELIVERY)}</p>` +
@@ -754,7 +774,18 @@ export function getProductTabsHtml(
   if (pageSlug && C01_DATASET.products[pageSlug]) {
     return {
       specificationsHtml: buildC01SpecificationsHtml(C01_DATASET.products[pageSlug]),
-      shippingHtml: buildShippingHtml(),
+      // PC-05 revision v1.3 — this one page's Shipping tab carries a lead
+      // image (owner instruction, 14 Aug 2026); every other C01 page's
+      // shippingHtml is byte-identical (buildShippingHtml() with no options).
+      shippingHtml: pageSlug === 'fire-rated-porta-cabin'
+        ? buildShippingHtml({
+            leadImage: {
+              src: '/images/products/fire-rated-porta-cabin/description/fire-rated-porta-cabin-trailer-transport.webp',
+              alt: 'Fire-rated porta cabin loaded on a multi-axle trailer',
+              caption: 'Transport shown for illustration; freight follows the published trailer ladder, route confirmed at order',
+            },
+          })
+        : buildShippingHtml(),
     };
   }
   if (pageSlug && C06_DATASET.products[pageSlug]) {

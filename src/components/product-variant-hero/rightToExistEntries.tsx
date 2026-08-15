@@ -51,6 +51,13 @@ export interface RightToExistEntry {
     copyInPanel?: boolean;
     ctaLabel: string;
     ctaHref: string;
+    /** PC-05 revision v1.3/v1.4 (R9, 14-15 Aug 2026) — opt-in placement.
+        Omitted (default) renders the card after both lead paragraphs,
+        unchanged for every existing entry. 'betweenParagraphs' renders the
+        COMPLETE card (image + heading + body + CTA, no extra slot) between
+        `body` and `comparison` — `comparison` stays outside the card, as
+        Section 2's closing paragraph. Set only on fire-rated-porta-cabin. */
+    position?: 'end' | 'betweenParagraphs';
   };
 }
 
@@ -380,6 +387,48 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       body: 'Frame sections, shell thickness and lined interiors are easier to judge in pictures than in tables. Browse finished SAMAN cabins in the gallery, note the details that matter for plant duty, then come back and match the six MS sizes to your site.',
       ctaLabel: 'Browse the gallery',
       ctaHref: '/gallery',
+    },
+  },
+  // PC-05 (14 Aug 2026) — Section 2 "buyer orientation" copy from the approved
+  // fire-rated build ticket (copy pack v2, S2_H2/S2_P1/S2_P2), verbatim. The
+  // approved §7 link map carries exactly two S2 body links: MS porta cabin and
+  // /contact. No splitCard: copy pack v2 supplies no distinct split-card
+  // sub-copy, so none is invented (most cluster entries have none).
+  // PC-05 revision v1.3 (14 Aug 2026) — R2: S2_P2 rewritten in copy pack v3
+  // (382 -> 415 chars); S2_H2/S2_P1 are byte-identical to v2. R1: split card
+  // added, copy verbatim from copy pack v3 SPLIT_CARD_H3/BODY/CTA. CTA href is
+  // literally the hub's own splitCard.ctaHref ('/gallery'), read from the hub
+  // entry above rather than invented, per the ticket's explicit instruction.
+  // Ad-hoc revision (14 Aug 2026, owner screenshots) — `position:
+  // 'betweenParagraphs'` moves the card between body and comparison; every
+  // other entry above/below is untouched and keeps the default end position.
+  // PC-05 revision v1.4 (R9, 15 Aug 2026) — reverted the 15 Aug ad-hoc change
+  // that nested `comparison` inside the card; it regressed Section 2 to one
+  // prose paragraph and buried the /contact CTA under the gallery CTA. Back
+  // to `betweenParagraphs`: comparison renders outside, after the complete
+  // card, as the section's closing paragraph.
+  'fire-rated-porta-cabin': {
+    heading: 'When Your Project Fire Strategy Demands a Fire-Rated Cabin',
+    body: (
+      <>
+        Choose this configuration when a contract, fire consultant or statutory audit asks the cabin to meet stated fire criteria. That demand appears on refinery and plant sites, in warehouses holding combustible goods, near fuel or chemical storage, and in EPC and government tenders that specify cabin fire performance. A standard <Link className={linkClass} href={href('ms-porta-cabin')}>MS porta cabin</Link> shares the same heavy steel platform, but its conventional panels and ordinary glazing are never specified against a fire criterion.
+      </>
+    ),
+    comparison: (
+      <>
+        With the fire-rated build, you state the required performance and we specify mineral-wool assemblies, fire-grade linings, rated door sets and fire-stopped penetrations to match. The supporting documentation is listed in your quotation, so the file you hand a fire officer traces every claim to a source. Send your fire criteria, size and site location through our <Link className={linkClass} href="/contact">contact page</Link> for a fixed quotation within 48 hours.
+      </>
+    ),
+    splitCard: {
+      imageSrc: '/images/products/fire-rated-porta-cabin/20x10/fire-rated-porta-cabin-20x10-tan-side.webp',
+      imageAlt: 'Tan 20x10 ft porta cabin on open ground, side elevation',
+      imageWidth: 1254,
+      imageHeight: 1254,
+      subheading: 'See the build quality behind the fire-rated spec',
+      body: 'The fire-rated configuration sits on the same chassis, factory process and quality checks as every other SAMAN porta cabin. Browse completed projects from our Bengaluru and Greater Noida units to judge steelwork, openings and finish on real deliveries. Then bring your fire criteria to the quotation, where the tested systems are named.',
+      ctaLabel: 'Explore the project gallery',
+      ctaHref: '/gallery',
+      position: 'betweenParagraphs',
     },
   },
   'steel-porta-cabin': {
