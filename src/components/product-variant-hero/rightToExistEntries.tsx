@@ -44,6 +44,15 @@ export interface RightToExistEntry {
         supplies both, so its markup is unchanged. */
     subheading?: string;
     body?: string;
+    /** PC-03 post-build correction 2 (15 Aug 2026) — a short list of discrete trust
+        signals rendered as checkmarked bullets below `body`. SAMAN's own reasoning for
+        choosing this shape over a second flowing paragraph: four numbers-led facts
+        (project count, factory footprint, three ISO certifications, manufacturer
+        status) scan faster as a list than folded into prose, and each stays legible on
+        its own. Absent everywhere else, so every other page's split card is
+        byte-identical; gap-driven addition, reported per section 2 of the ticket
+        rather than silently added. */
+    bullets?: string[];
     /** PC-02 rulings v1.3 follow-up (14 Aug 2026) — render the section's two approved
         paragraphs INSIDE the card's copy column, beside the image and above the CTA,
         instead of full-width above the card. Default (absent) keeps the hub's deployed
@@ -65,6 +74,43 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  // PC-03 double-story-porta-cabin - Section 2 buyer orientation, build prompt v2 12.4,
+  // verbatim and SHA-256 verified before wiring (S2_H2 2dfd9911, S2_P1 571b9418,
+  // S2_P2 1c304999). Two equal-weight paragraphs, so `bodyParagraphs` is used rather
+  // than the body-plus-bolded-comparison pair. The two anchors are exactly rows 1 and 2
+  // of the section 9 link map. No `splitCard`: build prompt v2 supplies no card image,
+  // sub-heading, body or CTA label for this page, and the builder writes none.
+  'double-story-porta-cabin': {
+    heading: 'When a G+1 Porta Cabin Beats Two Single Storey Cabins on Site',
+    bodyParagraphs: [
+      (
+        <>
+          Compare the two ways to double cabin space. Two separate cabins need double the ground area, two plinths and a walkway between them. A G+1 cabin needs one plinth, keeps vehicle lanes untouched, and puts the second team one staircase away. Choose the stacked build when ground area is the scarce resource. Choose two separate units, such as a standard <Link className={linkClass} href="https://www.samanportable.com/product/porta-cabins/ms-porta-cabin">MS porta cabin</Link> pair, when the site has spare ground and you want to avoid stair access.
+        </>
+      ),
+      (
+        <>
+          The G+1 decision also changes the engineering scope. The ground floor module carries both storeys, so the chassis, columns and foundations are checked by structural calculation, not taken from single storey practice. That check protects you at windy, elevated or soft-soil sites. Share your site pin code, floor use and occupancy plan for a fixed 48-hour quotation with the structural scope stated. <Link className={linkClass} href="https://www.samanportable.com/contact">Send your G+1 requirement now</Link>.
+        </>
+      ),
+    ],
+    // Post-build correction 2 (15 Aug 2026), SAMAN-approved verbatim, SHA-256 verified:
+    // SC_H3 6bb37376, SC_BODY_P aa7a023a, SC_BULLET1-4 35e0aa28/8384e5be/d571b527/291f5832,
+    // SC_CTA 8c985f7d. Format (one paragraph + four bullets) is SAMAN's own call, delegated
+    // in chat 15 Aug 2026 ("do not ask me anything"). copyInPanel is absent (default false):
+    // the ticket keeps the top block full-width above the card, not folded into it.
+    splitCard: {
+      imageSrc: '/images/products/double-story-porta-cabin/section2/double-story-porta-cabin-splitcard-beige-interior.webp',
+      imageAlt: 'Second view of the beige panel interior room in a double storey porta cabin ground floor',
+      imageWidth: 1280,
+      imageHeight: 720,
+      subheading: 'See a Double Story Build Before You Order',
+      body: "Every double storey build ships from the same two factories and quality system used across SAMAN's full porta cabin range, not a one-off configuration.",
+      bullets: ['500+ projects delivered to 3,000+ customers across 15+ states', 'Two owned factories: Bengaluru (South) and Greater Noida (North)', 'ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified', 'Manufacturer, not reseller: direct factory pricing and accountability'],
+      ctaLabel: 'Send your G+1 requirement now',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
   // PC-02 gi-porta-cabin — Section 2, DRAFT V4. Copy supplied by the owner on
   // 14 Aug 2026 and wired verbatim; it supersedes the build prompt v1 §3 Section 2
   // text and its S2_H2 / S2_P1 / S2_P2_visible checksums. Computed checksums for the

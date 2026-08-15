@@ -1,0 +1,83 @@
+{
+  "intro": "Choose your footprint: six factory-engineered G+1 options.",
+  "panels": [
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft G+1: 400 sq ft of Rooms on a 200 sq ft Plot",
+      "paragraph": "The entry size stacks two 20x10 ft floors, so 200 sq ft of ground returns 400 sq ft of built-up space. It fits gate zones, plant corners and city plots where a second cabin simply cannot land. Buyers usually run a working office below and a cabin room, records room or rest room above. The external staircase sits on the short side; leave about 4 ft clear for it when you mark the plinth. Planning price: Rs 4,97,800 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/double-story-porta-cabin/20x10/20x10-double-story-porta-cabin-01-main-exterior.webp",
+        "alt": "ivory double storey G+1 porta cabin with black external steel staircase and guard rails, 20x10 ft footprint",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft G+1: 600 sq ft Along a Narrow Boundary Strip",
+      "paragraph": "This linear size suits the strip beside a boundary wall or an internal road, where plots stay 10 ft deep but run long. Each 300 sq ft floor takes a two-room layout with direct doors, so departments stay separate without a corridor. Site teams often pair a ground supervision office with upper documentation or meeting space. Transport still uses standard trailers per module. Planning price: Rs 7,30,980 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/double-story-porta-cabin/30x10/30x10-double-story-porta-cabin-01-main-exterior.webp",
+        "alt": "cobalt double storey G+1 porta cabin with black external steel staircase and guard rails, 30x10 ft footprint",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x20",
+      "h3": "20x20 ft G+1: 800 sq ft Inside a Compact Square Plan",
+      "paragraph": "The square option gives two 400 sq ft floor plates on a 20x20 ft base. Wider rooms suit open team seating, training batches and drawing review tables that a 10 ft deep cabin cannot hold. The wider floor is produced as an engineered joined-module assembly, so module joints, sealing and connection details follow the approved drawing. Pick it when depth matters more than frontage. Planning price: Rs 9,53,680 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/double-story-porta-cabin/20x20/20x20-double-story-porta-cabin-01-main-exterior.webp",
+        "alt": "charcoal double storey G+1 porta cabin with black external steel staircase and guard rails, 20x20 ft footprint",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft G+1: 800 sq ft Along One Long Linear Edge",
+      "paragraph": "This size delivers the same 800 sq ft built-up area as the 20x20 ft option, but as two long 400 sq ft floors along one edge of the site. Choose by plot shape: the 40 ft run suits multi-room rows for engineers, stores and cabin rooms with separate entries. Each 40 ft module travels on a 40 ft open trailer, so confirm the approach road and turning room before dispatch. Planning price: Rs 9,53,680 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/double-story-porta-cabin/40x10/40x10-double-story-porta-cabin-01-main-exterior.webp",
+        "alt": "terracotta double storey G+1 porta cabin with black external steel staircase and guard rails, 40x10 ft footprint",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x12",
+      "h3": "40x12 ft G+1: 960 sq ft With Deeper 12 ft Floor Plates",
+      "paragraph": "The 12 ft width adds real room depth over the standard 10 ft module, so each 480 sq ft floor holds wider offices, a conference row or supervised open seating. The extra width can classify road movement as an over-dimensional consignment; the shipping schedule keeps ODC charges estate-dependent and confirmed at order. Pick this size when room proportion, not just area, drives the layout. Planning price: Rs 11,31,840 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/double-story-porta-cabin/40x12/40x12-double-story-porta-cabin-main-exterior.webp",
+        "alt": "Red 40x12 ft double storey porta cabin, corner view with external steel staircase and guard rails",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "30x20",
+      "h3": "30x20 ft G+1: 1,200 sq ft, the Largest Stacked Build",
+      "paragraph": "The flagship size stacks two 600 sq ft floor plates into one compact two-storey office building. Campuses and plants use it to hold several departments on a single plinth instead of scattering cabins across the yard. Both floors use engineered joined-module width, and foundation reactions are the highest in the range, so the structural quotation leads this purchase. Planning price: Rs 14,14,800 ex-GST.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/double-story-porta-cabin/30x20/30x20-double-story-porta-cabin-01-main-exterior.webp",
+        "alt": "forest double storey G+1 porta cabin with black external steel staircase and guard rails, 30x20 ft footprint",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  ]
+}
