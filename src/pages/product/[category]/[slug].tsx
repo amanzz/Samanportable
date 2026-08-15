@@ -50,6 +50,7 @@ import {
   buildPortaCabinGiRail,
   PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
   PORTA_CABIN_DS_RAIL,
+  PORTA_CABIN_SKID_RAIL,
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
@@ -70,7 +71,8 @@ const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 // Pages rebuilt to the Porta Cabins cluster design system (section dividers, SAP
 // size strip, Section-3 headings at H2, the YMAL carousel). PC-01 added the MS page;
 // PC-05 adds fire-rated; PC-02 adds GI; PC-04 adds the with-toilet page; PC-06 adds
-// the soundproof page; PC-03 adds the double-story page; PC-07 adds the PUF page.
+// the soundproof page; PC-03 adds the double-story page; PC-07 adds the PUF page;
+// PC-08 adds the skid-mounted page.
 // Every other page using the shared hero keeps the defaults (false) and renders
 // byte-identically.
 const CLUSTER_DESIGN_SLUGS = new Set([
@@ -81,6 +83,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'soundproof-porta-cabin',
   'double-story-porta-cabin',
   'puf-porta-cabin',
+  'skid-mounted-porta-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -616,6 +619,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       return PORTA_CABIN_DS_RAIL;
     }
 
+    // PC-08 (15 Aug 2026) — the skid-mounted page's Column 3 is the approved
+    // three-item rail from build prompt v1 section 2 (assembly map, hero column
+    // 3), not the full-cluster strip. Scoped to this one slug.
+    if (currentSlug === 'skid-mounted-porta-cabin') {
+      return PORTA_CABIN_SKID_RAIL;
+    }
+
     if (currentSlug === 'gi-porta-cabin') {
       return buildPortaCabinGiRail(built, (item) => slugFromProductHref(item.href));
     }
@@ -798,13 +808,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // soundproof-porta-cabin, double-story-porta-cabin) keeps the
                   // default 40px margin.
                   compactMobileDividers={slug === 'fire-rated-porta-cabin'}
-                  // PC-04 + PC-06 + PC-07 — all three pages' acceptance gates require
-                  // zero U+2014 in rendered copy (PC-06's additionally bans U+2013),
-                  // so none can inherit the shared default's em dash. Passed from
-                  // these slugs only, so the hub, the MS page and the GI page keep
-                  // the deployed literal.
+                  // PC-04 + PC-06 + PC-07 + PC-08 — all four pages' acceptance gates
+                  // require zero U+2014 in rendered copy (PC-06's additionally bans
+                  // U+2013), so none can inherit the shared default's em dash. Passed
+                  // from these slugs only, so the hub, the MS page and the GI page
+                  // keep the deployed literal.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin'
+                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
@@ -1109,7 +1119,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {(slug === 'ms-porta-cabin' || slug === 'fire-rated-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
-              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin') && (
+              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
               )}
 
