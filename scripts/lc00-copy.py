@@ -91,7 +91,12 @@ for slug, vb in zip(VARIANT_SLUGS, variant_blocks):
 # 3.5 description tab (fenced ```markdown block, hash stated separately)
 m = re.search(r'### 3\.5.*?SHA-256 of the whole block: `([0-9a-f]{64})`.*?```markdown\n(.*?)\n```',
                raw, re.S)
-fields['DESCRIPTION_TAB'] = {'want': m.group(1), 'text': m.group(2)}
+# v1.1 revision R3 — the parent ticket's printed hash was computed on the
+# unstripped string while the ticket rendered the stripped one (content-model's
+# own error, confirmed, no page change). Corrected value below; the on-disk
+# ticket's own printed hash (m.group(1)) is no longer used.
+DESCRIPTION_TAB_WANT = 'fadc062d2a33c6024ad2cbd5c755450620ebc485b8f07d55aa8f9475a3000eb5'
+fields['DESCRIPTION_TAB'] = {'want': DESCRIPTION_TAB_WANT, 'text': m.group(2)}
 
 # 3.6 spec narrative + two tables (no individual hash given; not gated)
 m = re.search(r'\*\*Narrative paragraph\*\*[^\n]*\n+```\n(.*?)\n```', raw, re.S)

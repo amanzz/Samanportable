@@ -706,9 +706,19 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   // PC-00 (14 Aug 2026) — divider rollout scoped to the porta-cabins
                   // hub only; every other page using this shared hero (its own
                   // siblings included) keeps the default false / byte-identical.
-                  showSectionDividers={category === 'porta-cabins'}
+                  // LC-00 R1/R2 (16 Aug 2026) — labor-colony opts into the identical
+                  // porta-cabins treatment (both props, same values, same component),
+                  // to match the reference exactly rather than approximate it.
+                  showSectionDividers={category === 'porta-cabins' || category === 'labor-colony'}
                   // R3 (14 Aug 2026) — same hub-only scoping as the dividers.
-                  usePremiumSizeTabs={category === 'porta-cabins'}
+                  usePremiumSizeTabs={category === 'porta-cabins' || category === 'labor-colony'}
+                  // LC-00 R1 (16 Aug 2026) — the premium branch shows sizeEyebrowText
+                  // (falling back to the porta-cabins hub's own em-dash sentence when
+                  // absent), not the plain branch's hardcoded "Choose size". R1 asks
+                  // for premium STYLING only, with the "Choose size" wording the page
+                  // already shows kept unchanged, so it is passed through explicitly
+                  // here rather than inherited from the fallback.
+                  sizeEyebrowText={category === 'labor-colony' ? 'Choose size' : undefined}
                 />
               ) : (
               <ProductSummaryLayout
@@ -990,8 +1000,9 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               {/* PC-00 (14 Aug 2026) — divider 3, Section 3 → Section 4 (calculator),
                   outside the calculator's own container and now placed above the
                   production entry band, which is the calculator's entry point.
-                  Hub page only. */}
-              {category === 'porta-cabins' && (calculatorEntryHtml || embeddedCalculatorHtml) && (
+                  Hub page only. LC-00 R2 (16 Aug 2026) — labor-colony opts into the
+                  identical treatment, so all four dividers match porta-cabins. */}
+              {(category === 'porta-cabins' || category === 'labor-colony') && (calculatorEntryHtml || embeddedCalculatorHtml) && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
@@ -1017,8 +1028,12 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               )}
 
               {/* PC-00 (14 Aug 2026) — divider 4, now between the "You may also
-                  like" grid and Section 5 (Product Details tabs). Hub page only. */}
-              {category === 'porta-cabins' && (
+                  like" grid and Section 5 (Product Details tabs). Hub page only.
+                  LC-00 R2 (16 Aug 2026) — labor-colony has no "you may also like"
+                  grid of its own (out of scope for this revision), so this divider
+                  sits directly between the calculator and the tabs instead; still
+                  the same top-level section boundary the prop is meant to mark. */}
+              {(category === 'porta-cabins' || category === 'labor-colony') && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 

@@ -122,9 +122,11 @@ GALLERY = [
      'labour-colony-118x30-gplus1-dormitory-entrance-view.webp',
      'Colony dormitory from the doorway with bunks either side, lockers at the corners and a window ahead'),
 
+    # v1.1 revision R4 — replaces the alt that was byte-identical to M13's,
+    # SHA-256 92b57582b7e885f1f7a56647ba5b86371f4d0b4680b7692e5e4914c272996640.
     ('120x24-gplus2', '120x24 ft G+2', 'labour-colony-120x24-ft-gplus2-front-left-hero-x-stair-s21-b21.png',
      'labour-colony-120x24-gplus2-front-left-three-quarter.webp',
-     'Three-storey labour colony block in cream panels with tan steel frame and railed walkways on each level'),
+     'Three-storey 120x24 ft colony block with tan steel frame, seven door and window bays per level and corridor walkways'),
     ('120x24-gplus2', '120x24 ft G+2', 'labour-colony-120x24-ft-gplus2-exact-front-elevation-s21-b21.png',
      'labour-colony-120x24-gplus2-front-elevation.webp',
      'Front elevation of the three-storey 120x24 ft colony block with seven door and window bays per floor'),
