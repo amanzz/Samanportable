@@ -25,6 +25,7 @@ import giPortaCabin from '@/data/products/gi-porta-cabin.json';
 import soundproofPortaCabin from '@/data/products/soundproof-porta-cabin.json';
 import doubleStoryPortaCabin from '@/data/products/double-story-porta-cabin.json';
 import skidMountedPortaCabin from '@/data/products/skid-mounted-porta-cabin.json';
+import knockDownPortaCabin from '@/data/products/knock-down-porta-cabin.json';
 import portaCabinShop from '@/data/products/porta-cabin-shop.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
 import portacabinOffice from '@/data/products/portacabin-office.json';
@@ -178,6 +179,11 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // product JSON's own six variants so the calc-entry banner price and the
   // published ladder cannot drift.
   'skid-mounted-porta-cabin': toRows(skidMountedPortaCabin),
+  // PC-09 (15 Aug 2026): same standing rule. This page's ladder carries 40x12
+  // and does not carry 20x12 (build prompt v1 §5) - toRows()/dimsFromSizeSlug()
+  // are generic regex parsers with no hardcoded cluster size set, verified
+  // before wiring, so the odd shape needs no special handling here.
+  'knock-down-porta-cabin': toRows(knockDownPortaCabin),
   'porta-cabin-shop': toRows(portaCabinShop),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
   'portacabin-office': toRows(portacabinOffice),

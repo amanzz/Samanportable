@@ -1,0 +1,331 @@
+{
+  "productSlug": "knock-down-porta-cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "h1": "Knock-Down Porta Cabin: Bolted Kit for Site Assembly",
+  "seoTitle": "Knock-Down Porta Cabin: Bolted Kit, Prices, Specs | SAMAN",
+  "metaDescription": "A porta cabin supplied as a bolted kit and assembled on site. Six published sizes from Rs 1,47,200 ex-GST, full specification, assembly quoted separately.",
+  "specPdfHref": "/specs/saman-knock-down-porta-cabin-technical-specification.pdf",
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 147200,
+      "priceInclGst": 173696,
+      "sku": "SP-KD-10x10",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-exterior-blue.webp",
+          "alt": "Mid-blue 10x10 ft knock-down porta cabin with charcoal corner posts and three windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-side-elevation-orange.webp",
+          "alt": "Terracotta orange 10x10 ft cabin side elevation with charcoal skirt and forklift pockets",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-exterior-light-blue.webp",
+          "alt": "Light blue 10x10 ft cabin with dark charcoal lower skirt and single hinged door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-exterior-sage-green.webp",
+          "alt": "Sage green 10x10 ft cabin with cream lower skirt on a factory apron",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-interior-workspace.webp",
+          "alt": "10x10 ft cabin interior with desk, split air conditioner and dark laminate floor",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-interior-layout.webp",
+          "alt": "10x10 ft cabin interior with executive desk and grey speckled vinyl flooring",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 225280,
+      "priceInclGst": 265830,
+      "sku": "SP-KD-20x8",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-exterior-yellow.webp",
+          "alt": "Pale yellow 20x8 ft knock-down porta cabin with three windows and one door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-side-elevation-dark-grey.webp",
+          "alt": "Dark grey 20x8 ft cabin side elevation with two windows and a door closer",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-exterior-cream-green.webp",
+          "alt": "Cream 20x8 ft cabin with forest green lower skirt and green support legs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-end-elevation-turquoise.webp",
+          "alt": "Turquoise 20x8 ft cabin narrow end elevation showing the eight foot width",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-interior-workspace.webp",
+          "alt": "20x8 ft cabin interior with walnut desk and an open dark green door leaf",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-interior-office.webp",
+          "alt": "20x8 ft cabin interior with monitor workstation and tall storage cabinet",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 256000,
+      "priceInclGst": 302080,
+      "sku": "SP-KD-20x10",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-exterior-white-maroon.webp",
+          "alt": "White 20x10 ft knock-down porta cabin with maroon skirt and three sliding windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-side-elevation-light-blue.webp",
+          "alt": "Light blue 20x10 ft cabin side elevation with dark grey skirt and forklift pockets",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-exterior-dark-grey.webp",
+          "alt": "Dark grey 20x10 ft knock-down porta cabin on a factory apron",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-exterior-olive-green.webp",
+          "alt": "Olive green 20x10 ft cabin with matching door and three sliding windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-interior-workspace.webp",
+          "alt": "20x10 ft cabin interior with twin desk runs, split air conditioner and ceiling fan",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-interior-layout.webp",
+          "alt": "20x10 ft cabin interior laid out with worktops along both side walls",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 368640,
+      "priceInclGst": 434995,
+      "sku": "SP-KD-30x10",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-exterior-yellow.webp",
+          "alt": "Pale yellow 30x10 ft knock-down porta cabin with four windows and forklift pockets",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-side-elevation-dark-grey.webp",
+          "alt": "Dark grey 30x10 ft cabin side elevation with three windows and a central door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-exterior-cream-red.webp",
+          "alt": "Cream 30x10 ft cabin with brick red skirt and six windows along the long wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-exterior-cream-green.webp",
+          "alt": "Cream 30x10 ft cabin with forest green skirt and six sliding windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-interior-entrance.webp",
+          "alt": "30x10 ft cabin interior entrance with desk, wardrobe and split air conditioner",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-interior-layout.webp",
+          "alt": "30x10 ft cabin interior with two desks, partition screens and a dark ceiling panel",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 486400,
+      "priceInclGst": 573952,
+      "sku": "SP-KD-40x10",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-exterior-pink-teal.webp",
+          "alt": "Salmon pink 40x10 ft knock-down porta cabin with teal skirt and five windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-side-elevation-cream-red.webp",
+          "alt": "Cream 40x10 ft cabin side elevation with brick red skirt and five windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-exterior-white.webp",
+          "alt": "Light grey 40x10 ft cabin with white corrugated roof and six windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-exterior-turquoise.webp",
+          "alt": "Turquoise 40x10 ft knock-down porta cabin with seven windows along one wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-interior-workspace.webp",
+          "alt": "40x10 ft cabin interior with executive desk, tall wardrobe and wall thermostat",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-interior-layout.webp",
+          "alt": "40x10 ft cabin interior with large desk, two credenzas and grey speckled vinyl",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 577536,
+      "priceInclGst": 681492,
+      "sku": "SP-KD-40x12",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-exterior-orange.webp",
+          "alt": "Rust orange 40x12 ft knock-down porta cabin with seven windows and one door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-side-elevation-olive-green.webp",
+          "alt": "Olive green 40x12 ft cabin side elevation with black base rail and four windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-exterior-cream-green.webp",
+          "alt": "Cream 40x12 ft cabin with forest green skirt, roof visible from a raised angle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-exterior-white-maroon.webp",
+          "alt": "White 40x12 ft cabin with maroon skirt and eight windows along the long wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-interior-workspace.webp",
+          "alt": "40x12 ft cabin interior with desk, tall file cabinet and split air conditioner",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-interior-layout.webp",
+          "alt": "40x12 ft cabin interior with two desks, oak laminate floor and potted palm",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ]
+}

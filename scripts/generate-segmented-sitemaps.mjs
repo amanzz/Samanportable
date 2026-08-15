@@ -67,7 +67,7 @@ const candidates = remaining.filter(pathname => locationPattern.test(pathname));
 const locations = candidates.slice(0, 213);
 const editorial = remaining.filter(pathname => !locations.includes(pathname));
 const unfilteredSegments = { products, locations, projects, editorial };
-const expectedSegments = { products: 161, locations: 213, projects: 1, editorial: 79 };
+const expectedSegments = { products: 162, locations: 213, projects: 1, editorial: 79 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -118,12 +118,20 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 454 = 453 before PC-07, +1 for /product/porta-cabins/puf-porta-cabin, same
 // Ruling 6 basis. The products segment moves 160 -> 161 with it.
 //
-// double-story-porta-cabin, soundproof-porta-cabin and fire-rated-porta-cabin
-// are built and routable but are deliberately NOT in sitemapCanonicalPaths.json
-// yet. Do not add them here as a side effect of an unrelated change — that is
-// its own release decision, pending an owner ruling, not a guard-baseline fix.
-if (all.length !== 454) {
-  throw new Error(`Page sitemap total changed from 454 to ${all.length}`);
+// 455 = 454 before PC-09, +1 for /product/porta-cabins/knock-down-porta-cabin,
+// same Ruling 6 basis. The products segment moves 161 -> 162 with it. Bumped
+// in the same commit as the canonical-paths addition this time, not as a
+// follow-up hotfix (PC-07 shipped the sitemapCanonicalPaths.json entry without
+// moving this guard, which correctly failed the DO postbuild and needed
+// PR #132 to fix - see that PR for the incident).
+//
+// double-story-porta-cabin, soundproof-porta-cabin, fire-rated-porta-cabin and
+// skid-mounted-porta-cabin are built and routable but are deliberately NOT in
+// sitemapCanonicalPaths.json yet. Do not add them here as a side effect of an
+// unrelated change - that is its own release decision, pending an owner
+// ruling, not a guard-baseline fix.
+if (all.length !== 455) {
+  throw new Error(`Page sitemap total changed from 455 to ${all.length}`);
 }
 
 const pageMap = new Map();

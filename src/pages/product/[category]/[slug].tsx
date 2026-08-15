@@ -47,6 +47,7 @@ import {
   PORTA_CABIN_FIRE_RATED_RAIL,
   PORTA_CABIN_WITH_TOILET_RAIL,
   PORTA_CABIN_PUF_RAIL,
+  PORTA_CABIN_KNOCK_DOWN_RAIL,
   buildPortaCabinGiRail,
   PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
   PORTA_CABIN_DS_RAIL,
@@ -598,6 +599,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     // not the full-cluster strip. Scoped to this one slug.
     if (currentSlug === 'puf-porta-cabin') {
       return PORTA_CABIN_PUF_RAIL;
+    }
+    // PC-09 (15 Aug 2026) — same treatment for the knock-down page: Column 3 is
+    // the three-item comparison rail named in build prompt §7 (MS, GI, with-
+    // toilet), not the full-cluster strip. Scoped to this one slug.
+    if (currentSlug === 'knock-down-porta-cabin') {
+      return PORTA_CABIN_KNOCK_DOWN_RAIL;
     }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
