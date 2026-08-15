@@ -1,0 +1,40 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft PUF Cabin: One Cooled Room on a Tight Plot",
+      "paragraph": "At 100 sq.ft. this is the smallest published PUF cabin and it carries the highest rate per square foot in the ladder, Rs 1,408.75. The reason is geometry, not specification. A small square plan has more perimeter, more corners and more sealed joints for every usable square foot, while the door, window and electrical scope barely shrinks. Take it for one cooled room on a congested plot: a gate office, a supervisor cabin, an instrument room. It is also the quickest of the six to place.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8 ft PUF Cabin: Narrow Body for Restricted Access",
+      "paragraph": "The 8 ft body is the narrowest option and it exists for access rather than economy. Where the approach road, gate width or internal turning circle will not take a 10 ft body, this one still reaches the position. Internally the 8 ft width sets the limit: a desk run along one wall with circulation past it works, two facing desk rows do not. Rate per square foot is Rs 1,347.50, the second highest, again because the envelope and services scale with perimeter rather than with floor area.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft PUF Cabin: The Reference Build for Pricing",
+      "paragraph": "This is the reference configuration for the whole specification. The Rs 1,225 per square foot Cost Estimation Input is set here, and every other size derives from it through the area band adjustment. The 30 technical line items describe this build, and the specification document is written around it. Choose it when nothing pushes you narrower or longer, because it gives the most conventional room proportion and the specification everyone can check against.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12 ft PUF Cabin: Extra Width Buys a Second Zone",
+      "paragraph": "Twelve feet of width changes what fits, not just how much. The extra two feet over the reference build is usually what lets a room hold a meeting end, a partitioned cabin or a desk row on both sides with circulation between them. Rate drops to Rs 1,176 per square foot, the first size to cross into the area band reduction. Width is also the constraint that decides road movement, so confirm the approach and any over-dimension route restriction before you commit to this footprint.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft PUF Cabin: Length for Two Separated Zones",
+      "paragraph": "Length rather than width is what this size buys. Thirty feet on a 10 ft body is enough to separate two working zones behind an internal partition while keeping a single delivered module, which suits an office plus a small meeting or record room. It shares the Rs 1,176 rate with the 20x12 build, so the choice between them is a plan-shape decision rather than a price one. Panel joints, roof drainage runs and service routes all lengthen, and each of those is planned before manufacture.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft PUF Cabin: Longest Run, Most Panel Joints",
+      "paragraph": "At 400 sq.ft. this carries the lowest rate in the ladder, Rs 1,163.75 per square foot, and the most envelope to get right. The longest run means the most wall panel joints, the largest continuous roof area and the longest drainage path, so fixing pattern, end laps, flashings and vapour sealing all receive proportionately more attention. It also moves on a 40 ft trailer rather than a 20 ft one, which changes the freight band. Take it when one long module beats two separate deliveries.",
+      "applications": []
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "productSlug": "puf-porta-cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "h1": "PUF Porta Cabin with Insulated Sandwich Panel Walls",
+  "seoTitle": "PUF Porta Cabin: Insulated Panel Build, Six Sizes | SAMAN",
+  "metaDescription": "Thermally insulated porta cabin built from factory PUF sandwich panels on an MS chassis. Six sizes, published prices, full specification and quotation inputs.",
+  "opener": "The PUF Porta Cabin is a transportable steel-chassis cabin whose walls and roof are factory-made PUF sandwich panels. The panel face is the finished surface inside and out, so we fit no separate lining on site. The planning build uses 50 mm wall panels and 60 to 80 mm roof panels with pre-coated GI or GL facings, sealed interlocking joints and service openings planned before manufacture.\n\nChoose it when people will occupy the room through an Indian summer and the interior has to look finished from day one. Panel brand, skin thickness, core density, thermal data and fire classification are named in the purchase order and confirmed by supplier certificate. None of them can be read off a panel thickness.",
+  "materialLabel": "MS chassis with 50 mm PUF panel envelope",
+  "deliveryLabel": "7-21 working days",
+  "pricePerSqft": {
+    "10x10": "1,408.75",
+    "20x8": "1,347.50",
+    "20x10": "1,225.00",
+    "20x12": "1,176.00",
+    "30x10": "1,176.00",
+    "40x10": "1,163.75"
+  },
+  "applicationsDataset": "puf-porta-cabin",
+  "explorerImageTemplate": "/images/products/puf-porta-cabin/{sizeSlug}/puf-porta-cabin-{sizeSlug}-02-front-elevation.webp",
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 140875,
+      "priceInclGst": 166233,
+      "useCase": "Gate office, supervisor cabin, instrument room",
+      "sku": "SP-PUF-10x10",
+      "images": [
+        {
+          "src": "/images/products/puf-porta-cabin/10x10/puf-porta-cabin-10x10-01-main-exterior.webp",
+          "alt": "Off-white PUF porta cabin on a paver yard, charcoal trim, entry door with two-tread steel stair",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/10x10/puf-porta-cabin-10x10-02-front-elevation.webp",
+          "alt": "Off-white PUF porta cabin on a concrete apron with a concrete flyover viaduct behind it",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/10x10/puf-porta-cabin-10x10-04-service-elevation.webp",
+          "alt": "Off-white PUF porta cabin on a gravel yard beside stacked concrete pipes and viaduct piers",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/10x10/puf-porta-cabin-10x10-05-rear-elevation.webp",
+          "alt": "Off-white PUF porta cabin in a marked parking bay with a warehouse loading shed behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/10x10/puf-porta-cabin-10x10-07-main-interior.webp",
+          "alt": "Beige panel interior with visible vertical joints, one desk, task chair and wall-mounted split AC",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/10x10/puf-porta-cabin-10x10-08-reverse-interior.webp",
+          "alt": "Beige panel interior viewed from the far end, showing the entry door, low cabinet and linear light",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 215600,
+      "priceInclGst": 254408,
+      "useCase": "Restricted-access site office",
+      "sku": "SP-PUF-20x8",
+      "images": [
+        {
+          "src": "/images/products/puf-porta-cabin/20x8/puf-porta-cabin-20x8-01-main-exterior.webp",
+          "alt": "Charcoal PUF porta cabin under trees on a paver yard, two sliding windows and a canopied door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x8/puf-porta-cabin-20x8-02-front-elevation.webp",
+          "alt": "Charcoal PUF porta cabin on a concrete apron in front of a concrete flyover and palisade fence",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x8/puf-porta-cabin-20x8-04-service-elevation.webp",
+          "alt": "Charcoal PUF porta cabin on a gravel yard beside a viaduct under construction with a launching gantry",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x8/puf-porta-cabin-20x8-05-rear-elevation.webp",
+          "alt": "Charcoal PUF porta cabin in evening light in a marked parking bay beside an industrial shed",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x8/puf-porta-cabin-20x8-07-main-interior.webp",
+          "alt": "Mint green panel interior with plank vinyl floor, two desks, pedestal units and twin linear lights",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x8/puf-porta-cabin-20x8-08-reverse-interior.webp",
+          "alt": "Mint green panel interior from the opposite end, showing the entry door, socket outlets and conduit",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 245000,
+      "priceInclGst": 289100,
+      "useCase": "General site office, reference build",
+      "sku": "SP-PUF-20x10",
+      "images": [
+        {
+          "src": "/images/products/puf-porta-cabin/20x10/puf-porta-cabin-20x10-01-main-exterior.webp",
+          "alt": "Blue PUF porta cabin on a paver yard, three windows, entry door, stair and two split AC outdoor units",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x10/puf-porta-cabin-20x10-02-front-elevation.webp",
+          "alt": "Blue PUF porta cabin on a paved apron with an elevated flyover and site fencing behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x10/puf-porta-cabin-20x10-04-service-elevation.webp",
+          "alt": "Blue PUF porta cabin on a gravel construction site with bridge piers and a yellow gantry crane behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x10/puf-porta-cabin-20x10-05-rear-elevation.webp",
+          "alt": "Blue PUF porta cabin seen from the opposite end in a marked bay, AC units on the near end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x10/puf-porta-cabin-20x10-07-main-interior.webp",
+          "alt": "Light blue panel interior with visible joints, two screened desks, upholstered bench and split AC",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x10/puf-porta-cabin-20x10-08-reverse-interior.webp",
+          "alt": "Light blue panel interior from the far end, showing the entry door, bench storage and grey vinyl floor",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 282240,
+      "priceInclGst": 333043,
+      "useCase": "Office with meeting or partitioned zone",
+      "sku": "SP-PUF-20x12",
+      "images": [
+        {
+          "src": "/images/products/puf-porta-cabin/20x12/puf-porta-cabin-20x12-01-main-exterior.webp",
+          "alt": "Deep green PUF porta cabin on a paver yard, half-glazed entry door and stair with two handrails",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x12/puf-porta-cabin-20x12-02-front-elevation.webp",
+          "alt": "Deep green PUF porta cabin on a concrete apron with a rail viaduct and catenary masts behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x12/puf-porta-cabin-20x12-04-service-elevation.webp",
+          "alt": "Deep green PUF porta cabin on a construction laydown among concrete pipes, rebar and timber",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x12/puf-porta-cabin-20x12-05-rear-elevation.webp",
+          "alt": "Deep green PUF porta cabin in a paver parking bay between factory sheds in hazy daylight",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x12/puf-porta-cabin-20x12-07-main-interior.webp",
+          "alt": "Salmon panel interior with wood-look floor, four screened desks, meeting table and tall storage cabinet",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/20x12/puf-porta-cabin-20x12-08-reverse-interior.webp",
+          "alt": "Salmon panel interior from the far end, showing the glazed door, meeting table and linear ceiling lights",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 352800,
+      "priceInclGst": 416304,
+      "useCase": "Two separated working zones",
+      "sku": "SP-PUF-30x10",
+      "images": [
+        {
+          "src": "/images/products/puf-porta-cabin/30x10/puf-porta-cabin-30x10-01-main-exterior.webp",
+          "alt": "Orange PUF porta cabin on a paver yard, four windows along the long wall and a solid entry door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/30x10/puf-porta-cabin-30x10-02-front-elevation.webp",
+          "alt": "Orange PUF porta cabin on concrete pavement with an elevated viaduct and floodlight mast behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/30x10/puf-porta-cabin-30x10-04-service-elevation.webp",
+          "alt": "Orange PUF porta cabin on a gravel site with gantry launchers, containers and stacked rebar behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/30x10/puf-porta-cabin-30x10-05-rear-elevation.webp",
+          "alt": "Orange PUF porta cabin in a paver parking bay, AC outdoor units and electrical box on the near end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/30x10/puf-porta-cabin-30x10-07-main-interior.webp",
+          "alt": "Lilac panel interior with grey floor, three screened desks and a glazed partition to a rear cabin",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/30x10/puf-porta-cabin-30x10-08-reverse-interior.webp",
+          "alt": "Lilac panel interior from the far end, showing the glazed partition doors and surface conduit runs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 465500,
+      "priceInclGst": 549290,
+      "useCase": "Long open-plan site office",
+      "sku": "SP-PUF-40x10",
+      "images": [
+        {
+          "src": "/images/products/puf-porta-cabin/40x10/puf-porta-cabin-40x10-01-main-exterior.webp",
+          "alt": "Purple PUF porta cabin on a paver yard, double entry door, three windows and three AC outdoor units",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/40x10/puf-porta-cabin-40x10-02-front-elevation.webp",
+          "alt": "Purple PUF porta cabin on a concrete yard with a viaduct and blue palisade fencing behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/40x10/puf-porta-cabin-40x10-04-service-elevation.webp",
+          "alt": "Purple PUF porta cabin on an active construction site with gantry cranes and stacked steel sections",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/40x10/puf-porta-cabin-40x10-05-rear-elevation.webp",
+          "alt": "Purple PUF porta cabin seen from the opposite end in a paved parking area beside a roller shutter",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/40x10/puf-porta-cabin-40x10-07-main-interior.webp",
+          "alt": "Mustard panel interior with wood-look floor, two desk rows and a glazed partition cabin on the right",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/40x10/puf-porta-cabin-40x10-08-reverse-interior.webp",
+          "alt": "Mustard panel interior, open plan with two desk rows, central aisle and a double door at the far end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "specPdfHref": "/specs/saman-puf-porta-cabin-technical-specification.pdf",
+  "descriptionHtml": "<h2>What a PUF porta cabin actually is</h2><p>A PUF porta cabin is a transportable building whose walls and roof are factory-made sandwich panels rather than a frame with insulation added inside it. Each panel arrives as one finished element. It carries a pre-coated steel skin outside, a rigid polyurethane foam core in the middle, and a second pre-coated steel skin inside. That inner skin becomes the visible wall surface of the room.</p><p>That single sentence carries most of the difference. In a framed and lined cabin, insulation is a layer inside a shell, and the interior finish is a separate material fixed over it. Here the insulation, the weather skin and the interior finish are the same component. The steel structure underneath still does the structural work. Its sizing follows what the chosen panel can span rather than what a cladding sheet needs.</p><p>The standard planning build uses 50 mm wall panels and 60 to 80 mm roof panels. Facings are pre-coated GI or GL in the 0.5 to 0.8 mm range that the panel industry typically supplies. We offer an 80 mm wall panel where a project needs higher insulation. The chassis is a 100 x 50 x 3 mm MS C-channel reference frame. The floor sits on an MS cross-grid and uses an 18 mm cement-bonded board, with a 24 mm option for higher duty.</p><figure><img src=\"/images/products/puf-porta-cabin/description/puf-porta-cabin-panel-white-exterior.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Cream PUF panel cabin with brown trim, showing flat panel faces and visible vertical panel joints\"><figcaption>Flat sandwich panel faces with the panel joints visible. The inner face of the same panel is the finished wall.</figcaption></figure><h2>Where the panel build earns its money</h2><h3>Rooms people occupy through the summer</h3><p>The clearest case is a room somebody sits in all day, in a place that gets genuinely hot. A continuous insulated envelope with sealed joints cuts the heat reaching the inside face. It also cuts the air leakage that makes an air-conditioned cabin expensive to hold at temperature. Site offices, control rooms, testing rooms and any cabin with instruments or people in it for a full shift are the honest applications.</p><h3>Space that has to look finished immediately</h3><p>Because the panel inner face is the finished wall, a PUF cabin does not need a lining trade on site. There is no MDF to fit, no joint to fill, no surface to paint before anyone moves in. A cabin delivered on Tuesday can be occupied on Tuesday. For marketing offices, client-facing site offices and anything a visitor will walk into, that matters as much as the thermal performance.</p><h3>Interiors that need a wipeable surface</h3><p>The pre-coated steel inner face is a hard, smooth, cleanable surface. That suits rooms where dust, handling or hygiene expectations make a soft lining a liability. This is not a clean-room specification and we do not claim one. The base surface simply starts from a better place than a board lining.</p><h2>The envelope, layer by layer</h2><h3>Wall panels: 50 mm standard, 80 mm option</h3><p>Fifty millimetres is the standard planning thickness. The published price ladder costs against this thickness, and it suits most site offices in most Indian conditions. Eighty millimetres is the documented higher-insulation option. Specify it when the cabin faces long solar exposure, when air-conditioning load drives your operating cost, or when the room must hold temperature with plant running outside.</p><p>Thickness is a planning decision, not a performance certificate. Core density and thermal conductivity come from the panel supplier's certificate for the system you actually buy, and the purchase order names them. We publish no conductivity figure or U-value for the cabin. A cabin figure would have to account for the frame, the joints, the openings and the installation, and none of that is fixed until the design is.</p><h3>Roof panels: why the range is 60 to 80 mm</h3><p>The roof gets more thickness than the walls for a simple reason. It takes the most direct solar gain, it spans further, and it has to carry drainage and any service loads. The factory roof panel gives you weather skin, insulation and finished underside in one element. Its outer skin is profiled and its inner liner arrives finished.</p><p>Where the roof lands inside the 60 to 80 mm range depends on heat gain, on the span the design needs, and on condensation requirements. The panel supplier's structural and thermal data governs the allowable span and the fastener spacing. We therefore coordinate the roof secondary members to the panel rather than assume them. These are typically 50 x 50 x 1.2 mm and engineered as the span requires.</p><figure><img src=\"/images/products/puf-porta-cabin/description/puf-porta-cabin-yellow-exterior-view.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Yellow PUF panel cabin in a gravel yard, long panel run with three windows and a charcoal door\"><figcaption>A longer run means more panel joints and a longer roof drainage path, both planned before manufacture.</figcaption></figure><h3>Facings, joints and why sealing decides the result</h3><p>A good panel installed with poor joints performs like a poor panel. The controls that matter are unglamorous. We use interlocking joint profiles, corrosion-compatible mechanical fasteners, EPDM or butyl or approved sealants, and flashings at joints, corners, roof laps and every penetration.</p><p>We accept no unsealed field cut. Every cut edge exposes the core, and an exposed core is where water, vapour and time get in. Where a cut has to happen, we close it with the approved flashing and sealant detail before the panel passes inspection.</p><h2>The steel under the panels</h2><p>It is worth being explicit about this, because the panel is the visible part and it is easy to assume it does everything. It does not. The transport and lifting chassis remains structural steel, and we size it independently for cabin loads and for handling. Panel fasteners never substitute for structural connections.</p><p>The reference build uses a 100 x 50 x 3 mm MS C-channel bottom frame. Stiffeners in 100 x 50 and 75 x 40 channel and square pipe support the floor loads and the panel perimeter rails. A 50 x 50 x 1.6 mm MS SHS top frame gives the wall panel heads a straight, level bearing. Wall framing is 50 x 50 x 2 mm MS SHS, with framed openings locally reinforced.</p><p>That last point has a practical consequence. Large openings need local reinforcement, and we design that reinforcement in rather than cut or crush the panel core to get it. A wide window or a double door is a structural decision taken before manufacture, not an adjustment made later.</p><p>Lifting and handling points are engineered provisions. We move a completed module only to the approved lifting, support and transport drawing. We weld or bolt structural connections to approved shop drawings, deburr and inspect edges, and close panels only after the frame passes inspection.</p><h2>Services: planned before manufacture, never cut in later</h2><p>This is the single discipline that separates a PUF cabin that lasts from one that disappoints, and it is the thing most buyers are never told.</p><p>You cannot route services by cutting channels through a sandwich panel. Doing so removes core, breaks the vapour path and leaves an unsealed edge inside the wall where nobody will ever see it fail. So we settle the service strategy before the panels are made.</p><p>In practice that means:</p><ul><li>Wiring runs in planned chases and raceways, or in surface containment, rather than in improvised cuts.</li><li>Copper wiring follows the standard starting schedule: 1.5 sq.mm for lighting, 2.5 sq.mm for sockets, 4 sq.mm for higher-load or air-conditioning circuits. The load schedule and the approved electrical drawing set the final sizes.</li><li>We provide a distribution board with MCB and RCCB protection, earthing, and segregation of lighting, socket, wet-area and air-conditioning circuits, to the approved drawing.</li><li>Plumbing, where you order it at all, uses factory-planned sleeves and chases. We seal every penetration and protect the core, and we plan service zones and removable covers before manufacture.</li><li>We plan air-conditioning sleeves and condensate drains at the factory, so we restore insulation and vapour sealing around each penetration rather than patch it later.</li></ul><p>Final quantities of lights, switches, sockets, fan points and air-conditioning provision stay quotation-specific, and we coordinate them with the approved layout. We do not publish fixed counts, because a count that is right for one layout is wrong for the next.</p><figure><img src=\"/images/products/puf-porta-cabin/description/puf-porta-cabin-interior-executive-office.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Off-white PUF panel office interior with wall-mounted split AC, recessed downlights and wood-look floor\"><figcaption>The wall AC and its sleeve are planned at the factory so insulation and vapour sealing are restored around the penetration.</figcaption></figure><h2>Condensation, ventilation and air conditioning</h2><p>An insulated, well-sealed box behaves differently from a leaky one, and that is mostly the point. It also means the ventilation strategy has to be chosen deliberately rather than left to the gaps.</p><p>We select the ventilation approach for occupancy and climate. It may use natural ventilation through the opening schedule, or air conditioning with controlled condensate. What it must not be is uncontrolled vapour movement through panel joints, because that is how moisture reaches places it cannot dry from.</p><p>Where a false or service ceiling is added below the insulated roof, it creates a void for services. It does not replace the roof panel's thermal function, and the vapour and condensation control has to stay continuous above it. That distinction is easy to lose on site and expensive to rediscover later.</p><h2>What a PUF panel does not do</h2><p>Two limits deserve stating plainly, because the market around this product is not always honest about them.</p><p>The first is fire. Fire resistance cannot be inferred from PUF thickness. A thicker PUF panel is a better insulator; it is not a fire rating. Where a project requires a non-combustible core, the answer is a tested mineral-wool panel system rather than more polyurethane. That is a different build with a different specification. If fire performance is what your project is actually buying, start at the <a href=\"https://www.samanportable.com/product/porta-cabins/fire-rated-porta-cabin\">fire-rated porta cabin</a> instead of specifying this one and hoping.</p><p>The second is that a panel is not a structure. The chassis carries the building. The panel closes it, insulates it and finishes it. Treat with suspicion any claim that a sandwich panel cabin needs less steel because the panels are strong.</p><h2>Choosing between 50 mm and 80 mm</h2><p>The honest guidance is narrower than most buyers expect.</p><p>Specify 50 mm for a normal site office in normal conditions. It suits cabins where air conditioning runs during working hours rather than continuously, and cabins you expect to relocate within a few years. This is the standard build, and the published prices cover it.</p><p>Specify 80 mm where solar exposure runs long and unshaded, or where the room must hold a set temperature against a continuous heat load. It also earns its cost when air-conditioning running cost over a multi-year deployment is a real line in your budget, and on semi-permanent cabins.</p><p>Specify neither on the basis of a number you found on a competitor's page. Panel data belongs to the panel you actually buy, and the supplier issues it as a certificate against that purchase order.</p><h2>Standard, optional, custom and excluded</h2><table class=\"saman-table\"><thead><tr><th>Scope</th><th>What it covers on this page</th></tr></thead><tbody><tr><td>STANDARD</td><td>MS chassis and framing to the reference sections, 50 mm PUF wall panels, 60 to 80 mm PUF or PIR roof panel, factory-finished inner faces, 18 mm cement-bonded floor base with 1.5 to 2.0 mm commercial vinyl, insulated door assembly, sealed aluminium windows, lighting, sockets, DB with MCB and RCCB, earthing, pre-dispatch QA</td></tr><tr><td>OPTIONAL</td><td>80 mm wall panel, 24 mm floor base, SPC or epoxy floor finish, decorative or hygienic inner lining, service ceiling below the insulated roof, upgraded glazing, grills, mesh, guards or louvers, air-conditioning provision, plumbing with planned sleeves</td></tr><tr><td>CUSTOM</td><td>Non-standard footprints, framed structural openings, partitioned layouts, project-selected colour and coating system, panel system nominated by the client</td></tr><tr><td>EXCLUDED</td><td>Interior fit-out and furniture, transport and installation, foundations, offloading and craneage, project-specific engineering, performance testing and certification, GST</td></tr></tbody></table><p>We publish this table because the most common source of dispute on a modular building is not the price. It is the boundary between what arrived and what somebody assumed would arrive.</p><figure><img src=\"/images/products/puf-porta-cabin/description/puf-porta-cabin-green-exterior-view.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Sage green PUF panel cabin on a gravel yard, showing the steel base frame below the panel walls\"><figcaption>The steel chassis under the panels carries the building. The panels close, insulate and finish it.</figcaption></figure><h2>Six sizes and published prices</h2><table class=\"saman-table\"><thead><tr><th>Size</th><th>Area</th><th>Rate per sq.ft.</th><th>Price ex-GST</th><th>With 18% GST</th></tr></thead><tbody><tr><td>10x10x8.5 ft</td><td>100 sq.ft.</td><td>Rs 1,408.75</td><td>Rs 1,40,875</td><td>Rs 1,66,233</td></tr><tr><td>20x8x8.5 ft</td><td>160 sq.ft.</td><td>Rs 1,347.50</td><td>Rs 2,15,600</td><td>Rs 2,54,408</td></tr><tr><td>20x10x8.5 ft</td><td>200 sq.ft.</td><td>Rs 1,225.00</td><td>Rs 2,45,000</td><td>Rs 2,89,100</td></tr><tr><td>20x12x8.5 ft</td><td>240 sq.ft.</td><td>Rs 1,176.00</td><td>Rs 2,82,240</td><td>Rs 3,33,043</td></tr><tr><td>30x10x8.5 ft</td><td>300 sq.ft.</td><td>Rs 1,176.00</td><td>Rs 3,52,800</td><td>Rs 4,16,304</td></tr><tr><td>40x10x8.5 ft</td><td>400 sq.ft.</td><td>Rs 1,163.75</td><td>Rs 4,65,500</td><td>Rs 5,49,290</td></tr></tbody></table><p>These are derived planning estimates, and we confirm the panel system at quotation. The rate falls as the footprint grows because the envelope, the openings and the services scale with perimeter rather than with floor area. Interior fit-out, optional add-ons, transport, installation, foundations and any project-specific engineering or testing sit outside these figures. The wider <a href=\"https://www.samanportable.com/product/porta-cabins\">porta cabins range</a> covers the other configurations in this cluster if the insulated build is not what your site needs.</p><p>If you want the panels on their own rather than a finished cabin, we <a href=\"https://www.samanportable.com/product/puf-panel\">supply PUF panels separately</a> and price them by thickness.</p><h2>Site readiness and handover</h2><p>A PUF cabin asks for the same site preparation as any other module in the range, with two additions worth planning for.</p><p>Prepare a level, load-bearing base with drainage away from the cabin footprint. Pedestal or plinth support at the designed positions matters more here than on a framed cabin. A module that sits out of level puts the panel joints out of line, and joints out of line do not seal as designed.</p><p>Keep the panel faces protected during offloading and positioning. A pre-coated skin is the finished surface, so a gouge is not a scratch on a cladding sheet, it is damage to the finished wall. Touch-up is possible, and we match the corrosion protection system to substrate and exposure, but prevention costs nothing.</p><p>Pre-dispatch quality checks cover dimensions, member and panel identification, connections, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional checks. We verify specialist performance certificates where the product requires them.</p><p>The final quotation confirms warranty period and exclusions. Relocation damage, misuse, site services, consumables and unapproved alterations sit outside the agreed scope unless the quotation explicitly includes them.</p><figure><img src=\"/images/products/puf-porta-cabin/description/puf-porta-cabin-modular-beige-exterior.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Beige PUF panel cabin in a factory yard with a glazed end door and a visible module junction seam\"><figcaption>Modules are set level so the panel joints line up. Joints out of line do not seal as designed.</figcaption></figure><h2>What we need in order to quote accurately</h2><p>A PUF cabin quotation moves faster when these are settled at enquiry:</p><ul><li>Footprint and quantity, and whether the cabin is a standalone module or part of a linked set.</li><li>Wall panel thickness, 50 mm or 80 mm, and whether the roof sits at 60 mm or 80 mm.</li><li>Any nominated panel system or brand, or confirmation that we may propose one.</li><li>Opening schedule: door type and position, window sizes and positions, and any framed structural opening.</li><li>Service requirements: lighting and socket layout, air-conditioning provision and sleeve positions, and whether plumbing is in scope.</li><li>Floor duty, so we can confirm 18 mm or 24 mm base and the finish.</li><li>Site access, approach width, offloading arrangement and the delivery location for freight.</li><li>Colour and coating preference, and whether the cabin is a short deployment or semi-permanent.</li></ul><p>Anything we cannot confirm from that list stays a quotation input rather than a website claim.</p><figure><img src=\"/images/products/puf-porta-cabin/description/puf-porta-cabin-interior-conference-room.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Off-white PUF panel meeting room interior with a boardroom table, chairs, split AC and ceiling LED panels\"><figcaption>Layout, opening schedule and service positions are settled at enquiry, not after the panels are made.</figcaption></figure><h2>Questions buyers actually ask</h2><p><strong>Is a PUF cabin cooler than a standard site office?</strong> A continuous insulated envelope with sealed joints reduces heat transfer and air leakage, and buyers report that as a more comfortable room. We publish no temperature difference. The honest answer depends on orientation, glazing, ventilation, occupancy and the air-conditioning system, and the design fixes none of those until it is complete.</p><p><strong>Can I get a U-value or a thermal conductivity figure?</strong> For the panel you actually buy, yes, from the supplier's certificate, and the purchase order names it. For the finished cabin as an assembly, that needs a defined calculation or test method covering the frame, joints and openings. We quote a cabin figure only against such a method.</p><p><strong>Is PUF fire resistant?</strong> No, not by virtue of being PUF, and not more so because it is thicker. Where a project requires a non-combustible core, a tested mineral-wool panel system replaces PUF.</p><p><strong>Can I cut a new opening after delivery?</strong> Not without a designed detail. We protect the core, then seal and flash the cut edge, and larger openings need local reinforcement. Tell us at enquiry if a future opening is likely.</p><p><strong>Does the interior need painting?</strong> No. The panel inner face is the finished surface. A decorative or hygienic lining is a separate order if you want one.</p><p><strong>Is the 80 mm option worth it?</strong> It is worth it for long solar exposure, continuous temperature holding, or a multi-year deployment where air-conditioning running cost matters. For a normal site office on a normal programme, 50 mm is the specification we would recommend.</p>"
+}

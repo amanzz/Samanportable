@@ -30,6 +30,7 @@ import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
 import msPortaCabinApplications from '@/data/products/ms-porta-cabin-applications.json';
 import fireRatedPortaCabinApplications from '@/data/products/fire-rated-porta-cabin-applications.json';
+import pufPortaCabinApplications from '@/data/products/puf-porta-cabin-applications.json';
 import portaCabinWithToiletApplications from '@/data/products/porta-cabin-with-toilet-applications.json';
 import soundproofPortaCabinApplications from '@/data/products/soundproof-porta-cabin-applications.json';
 import giPortaCabinApplications from '@/data/products/gi-porta-cabin-applications.json';
@@ -189,6 +190,16 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // 4 bullets, V5/V6). No stale Section-H drop exists for this slug (checked),
   // so no re-registration-after-spread trap applies here.
   'fire-rated-porta-cabin': fireRatedPortaCabinApplications as ApplicationsData,
+  // PC-07 (15 Aug 2026) — Section 3 of the approved copy pack v1 §4. Six panels,
+  // one per published size, checksum-verified H2/body pairs. No application
+  // bullets or explorer image were supplied, so neither is invented: the
+  // component's own data row (dims/area/price/rate) already carries the
+  // "Published size"/"Price" facts, and explorerImageTemplate on the product
+  // data file points each panel at that size's front-elevation gallery slot.
+  // Registered AFTER both Section-H spreads for the same reason as every
+  // sibling above: a stale same-slug drop would silently overwrite an earlier
+  // key (the failure PC-01 hit on ms-porta-cabin).
+  'puf-porta-cabin': pufPortaCabinApplications as ApplicationsData,
   // PC-04 porta-cabin-with-toilet — Section 3 of the approved draft v2. Six panels,
   // one per published size. The approved copy supplies no section heading or intro,
   // so neither is invented. Panels carry no explicit image: the product data file's

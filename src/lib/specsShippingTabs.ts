@@ -395,6 +395,14 @@ export interface ShippingHtmlOptions {
    * new copy.
    */
   leadImage?: { src: string; alt: string; caption: string };
+  /**
+   * PC-07 (15 Aug 2026) — one page-specific routing note as plain text, stating
+   * which existing freight band a size reads from rather than introducing a new
+   * figure. Rendered once, directly after the 40 ft freight table. Absent for
+   * every caller of buildShippingHtml() except the one route that supplies it,
+   * so the shared component's markup stays byte-identical everywhere else.
+   */
+  routingNote?: string;
 }
 
 export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
@@ -403,6 +411,9 @@ export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
         `<img src="${esc(options.leadImage.src)}" alt="${esc(options.leadImage.alt)}" width="1280" height="720" loading="lazy" class="w-full h-auto" />` +
         `<figcaption class="px-4 py-2 text-xs italic text-slate-500 bg-slate-50">${esc(options.leadImage.caption)}</figcaption>` +
       `</figure>`
+    : '';
+  const routingNoteHtml = options.routingNote
+    ? `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(options.routingNote)}</p>`
     : '';
   return (
     `<div class="not-prose space-y-2">` +
@@ -414,6 +425,7 @@ export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
       `</div>` +
       freightTable('20 ft open trailer · freight by distance (both zones)', FREIGHT_20FT) +
       freightTable('40 ft open trailer · freight by distance (both zones)', FREIGHT_40FT) +
+      routingNoteHtml +
       destinationTable('Typical destinations from our Bengaluru unit (South zone)', DEST_NOTE, DEST_SOUTH) +
       destinationTable('Typical destinations from our Greater Noida unit (North zone)', DEST_NOTE, DEST_NORTH) +
       `<p class="mt-2 text-xs leading-relaxed text-slate-500">${esc(FOOTNOTES)}</p>` +
@@ -775,7 +787,9 @@ export function getProductTabsHtml(
     return {
       specificationsHtml: buildC01SpecificationsHtml(C01_DATASET.products[pageSlug]),
       // PC-05 revision v1.3 — this one page's Shipping tab carries a lead
-      // image (owner instruction, 14 Aug 2026); every other C01 page's
+      // image (owner instruction, 14 Aug 2026). PC-07 build prompt v1 §7 —
+      // this one page carries a one-line routing note (which existing band
+      // the 40x10 size reads from, not a new figure). Every other C01 page's
       // shippingHtml is byte-identical (buildShippingHtml() with no options).
       shippingHtml: pageSlug === 'fire-rated-porta-cabin'
         ? buildShippingHtml({
@@ -784,6 +798,10 @@ export function getProductTabsHtml(
               alt: 'Fire-rated porta cabin loaded on a multi-axle trailer',
               caption: 'Transport shown for illustration; freight follows the published trailer ladder, route confirmed at order',
             },
+          })
+        : pageSlug === 'puf-porta-cabin'
+        ? buildShippingHtml({
+            routingNote: 'The 40x10 size moves on a 40 ft trailer and reads from the 40 ft freight band.',
           })
         : buildShippingHtml(),
     };
