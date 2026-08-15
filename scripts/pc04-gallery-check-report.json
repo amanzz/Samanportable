@@ -1,0 +1,290 @@
+[
+ {
+  "size": "10x10",
+  "label": "desktop",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-10x10",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "20x8",
+  "label": "desktop",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-20x8",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "20x10",
+  "label": "desktop",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-20x10",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "20x12",
+  "label": "desktop",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-20x12",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "30x10",
+  "label": "desktop",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-30x10",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "40x10",
+  "label": "desktop",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-40x10",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "10x10",
+  "label": "mobile",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-10x10",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "20x8",
+  "label": "mobile",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-20x8",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/20x8/porta-cabin-with-toilet-20x8-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "20x10",
+  "label": "mobile",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-20x10",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/20x10/porta-cabin-with-toilet-20x10-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "20x12",
+  "label": "mobile",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-20x12",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/20x12/porta-cabin-with-toilet-20x12-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "30x10",
+  "label": "mobile",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-30x10",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/30x10/porta-cabin-with-toilet-30x10-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ },
+ {
+  "size": "40x10",
+  "label": "mobile",
+  "fragOk": true,
+  "url": "http://localhost:5311/product/porta-cabins/porta-cabin-with-toilet#size-40x10",
+  "thisSizeSrcs": [
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-hero-view.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-front-angle.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-elevated-view.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-end-elevation.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-space-interior.webp",
+   "/images/products/porta-cabin-with-toilet/40x10/porta-cabin-with-toilet-40x10-rear-interior.webp"
+  ],
+  "views": [
+   "elevated-view",
+   "end-elevation",
+   "front-angle",
+   "hero-view",
+   "rear-interior",
+   "space-interior"
+  ],
+  "viewsOk": true,
+  "overflow": false
+ }
+]
