@@ -1,0 +1,335 @@
+{
+  "productSlug": "knock-down-porta-cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "applicationsDataset": "knock-down-porta-cabin",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "h1": "Knock-Down Porta Cabin: Bolted Kit for Site Assembly",
+  "seoTitle": "Knock-Down Porta Cabin: Bolted Kit, Prices, Specs | SAMAN",
+  "metaDescription": "A porta cabin supplied as a bolted kit and assembled on site. Six published sizes from Rs 1,47,200 ex-GST, full specification, assembly quoted separately.",
+  "specPdfHref": "/specs/saman-knock-down-porta-cabin-technical-specification.pdf",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "specPdfCaption": "Illustrative and budgetary. Not for construction unless approved. The final written quotation, approved drawing and bill of materials govern the order.",
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 147200,
+      "priceInclGst": 173696,
+      "sku": "SP-KD-10x10",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-exterior-blue.webp",
+          "alt": "Mid-blue 10x10 ft knock-down porta cabin with charcoal corner posts and three windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-side-elevation-orange.webp",
+          "alt": "Terracotta orange 10x10 ft cabin side elevation with charcoal skirt and forklift pockets",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-exterior-light-blue.webp",
+          "alt": "Light blue 10x10 ft cabin with dark charcoal lower skirt and single hinged door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-exterior-sage-green.webp",
+          "alt": "Sage green 10x10 ft cabin with cream lower skirt on a factory apron",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-interior-workspace.webp",
+          "alt": "10x10 ft cabin interior with desk, split air conditioner and dark laminate floor",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/10x10/kd-10x10-interior-layout.webp",
+          "alt": "10x10 ft cabin interior with executive desk and grey speckled vinyl flooring",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 225280,
+      "priceInclGst": 265830,
+      "sku": "SP-KD-20x8",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-exterior-yellow.webp",
+          "alt": "Pale yellow 20x8 ft knock-down porta cabin with three windows and one door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-side-elevation-dark-grey.webp",
+          "alt": "Dark grey 20x8 ft cabin side elevation with two windows and a door closer",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-exterior-cream-green.webp",
+          "alt": "Cream 20x8 ft cabin with forest green lower skirt and green support legs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-end-elevation-turquoise.webp",
+          "alt": "Turquoise 20x8 ft cabin narrow end elevation showing the eight foot width",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-interior-workspace.webp",
+          "alt": "20x8 ft cabin interior with walnut desk and an open dark green door leaf",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x8/kd-20x8-interior-office.webp",
+          "alt": "20x8 ft cabin interior with monitor workstation and tall storage cabinet",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 256000,
+      "priceInclGst": 302080,
+      "sku": "SP-KD-20x10",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-exterior-white-maroon.webp",
+          "alt": "White 20x10 ft knock-down porta cabin with maroon skirt and three sliding windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-side-elevation-light-blue.webp",
+          "alt": "Light blue 20x10 ft cabin side elevation with dark grey skirt and forklift pockets",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-exterior-dark-grey.webp",
+          "alt": "Dark grey 20x10 ft knock-down porta cabin on a factory apron",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-exterior-olive-green.webp",
+          "alt": "Olive green 20x10 ft cabin with matching door and three sliding windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-interior-workspace.webp",
+          "alt": "20x10 ft cabin interior with twin desk runs, split air conditioner and ceiling fan",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/20x10/kd-20x10-interior-layout.webp",
+          "alt": "20x10 ft cabin interior laid out with worktops along both side walls",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 368640,
+      "priceInclGst": 434995,
+      "sku": "SP-KD-30x10",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-exterior-yellow.webp",
+          "alt": "Pale yellow 30x10 ft knock-down porta cabin with four windows and forklift pockets",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-side-elevation-dark-grey.webp",
+          "alt": "Dark grey 30x10 ft cabin side elevation with three windows and a central door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-exterior-cream-red.webp",
+          "alt": "Cream 30x10 ft cabin with brick red skirt and six windows along the long wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-exterior-cream-green.webp",
+          "alt": "Cream 30x10 ft cabin with forest green skirt and six sliding windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-interior-entrance.webp",
+          "alt": "30x10 ft cabin interior entrance with desk, wardrobe and split air conditioner",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/30x10/kd-30x10-interior-layout.webp",
+          "alt": "30x10 ft cabin interior with two desks, partition screens and a dark ceiling panel",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 486400,
+      "priceInclGst": 573952,
+      "sku": "SP-KD-40x10",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-exterior-pink-teal.webp",
+          "alt": "Salmon pink 40x10 ft knock-down porta cabin with teal skirt and five windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-side-elevation-cream-red.webp",
+          "alt": "Cream 40x10 ft cabin side elevation with brick red skirt and five windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-exterior-white.webp",
+          "alt": "Light grey 40x10 ft cabin with white corrugated roof and six windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-exterior-turquoise.webp",
+          "alt": "Turquoise 40x10 ft knock-down porta cabin with seven windows along one wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-interior-workspace.webp",
+          "alt": "40x10 ft cabin interior with executive desk, tall wardrobe and wall thermostat",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x10/kd-40x10-interior-layout.webp",
+          "alt": "40x10 ft cabin interior with large desk, two credenzas and grey speckled vinyl",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 577536,
+      "priceInclGst": 681492,
+      "sku": "SP-KD-40x12",
+      "images": [
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-exterior-orange.webp",
+          "alt": "Rust orange 40x12 ft knock-down porta cabin with seven windows and one door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-side-elevation-olive-green.webp",
+          "alt": "Olive green 40x12 ft cabin side elevation with black base rail and four windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-exterior-cream-green.webp",
+          "alt": "Cream 40x12 ft cabin with forest green skirt, roof visible from a raised angle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-exterior-white-maroon.webp",
+          "alt": "White 40x12 ft cabin with maroon skirt and eight windows along the long wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-interior-workspace.webp",
+          "alt": "40x12 ft cabin interior with desk, tall file cabinet and split air conditioner",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/knock-down-porta-cabin/40x12/kd-40x12-interior-layout.webp",
+          "alt": "40x12 ft cabin interior with two desks, oak laminate floor and potted palm",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "descriptionHtml": "<h2>What \"knock-down\" means, and what it does not</h2><p>Knock-down describes how the cabin is delivered and put together, not what it is made of or what duty it is built for. The cabin arrives as an engineered kit: numbered structural members, a schedule of insulated panels, a gasket set, a fastener schedule and the sequence they go together in. A crew assembles it on your site. When the job ends, the same sequence runs backwards and the components are inspected, repacked and moved.</p><p>That is worth separating from two things it is regularly confused with, because the confusion is in the market rather than in the buyer.</p><p>The first is a folding or expandable unit. Those arrive as one hinged assembly that opens out. Nothing is bolted together on site, and nothing comes apart into components. It is a different mechanism with a different price and a different set of limits.</p><p>The second is a cabin that moves whole. A finished module can be lifted onto a trailer and set down somewhere else, and for many sites that is the better answer because nothing has to be dismantled at all. The skid-mounted configuration is built for exactly that duty, with heavy runners and engineered handling points, and it stays a single unit throughout. If your cabin has to move often but can travel whole, that is the route to look at rather than this one.</p><p>So the question this page answers is narrow and specific. Should the cabin arrive finished, or should it arrive as parts? Everything below is about what changes when the answer is parts.</p><figure class=\"m-0\"><img src=\"/images/products/knock-down-porta-cabin/description/kd-description-exterior-navy-30x10.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Navy blue 30x10 ft knock-down porta cabin with silver corner posts and a glazed double door\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Exterior colour and coating system are project-selected and confirmed in the approved finish schedule.</figcaption></figure><h2>What is actually in the kit</h2><p>Suppliers describe products as flat-pack without ever saying what arrives. Here is what the specification defines.</p><p>The structure comes as segmented bolted base rails, referenced at 100x50x3 mm channel segments, joined through engineered splice plates and bolts. Base cross-members at 75x40 or 50x50 are numbered and bolted to those rails with cleats. Corner and wall posts are referenced at 50x50x2 mm SHS with bolted corner plates. The top rails are 50x50x1.6 mm SHS or formed rail, connecting to the posts through repeatable bolted nodes. Roof secondary members are 50x50x1.6 mm or engineered equivalents with bolted splice details.</p><p>One honest qualification belongs here rather than in the small print. Bolt size, bolt grade, hole tolerance, bearing and slip requirements are connection-design items. They are documented for your project, not fixed at catalogue level, because they follow the loads and the configuration you order. Any supplier quoting you a universal bolt grade for every cabin is telling you something about their process rather than about your building.</p><p>The floor arrives as modular cassettes on a 50x50x2 mm frame reference, carrying 18 mm cement-bonded board panels, with a 24 mm option where the duty is higher. The cassettes are sized for handling, and joint strips keep the walking surface continuous while still allowing the floor to be opened later. The finish is 1.5 to 2.0 mm commercial vinyl with removable threshold and joint trims, detailed so that module joints can be opened without destroying the whole floor covering.</p><p>The envelope arrives as demountable insulated panels. Walls are 50 mm PUF, PIR or mineral-wool sandwich panels, typically with 0.5 to 0.8 mm pre-coated GI or GL facings. Roof panels run 60 to 80 mm with removable flashings and sealed fasteners. Core type is selected against the thermal or fire requirement you state, and mineral wool is used where non-combustible construction is required. Insulation is encapsulated inside the panels, so assembly never depends on loose infill being packed correctly by whoever is on site that week.</p><p>Openings arrive as modules. The door is a pre-hung door and frame cassette that fixes mechanically to a structural opening and comes off again as a unit. Windows are pre-glazed aluminium cassettes with replaceable perimeter gaskets, mounted to framed openings so nobody has to cut a panel to fit one. Ventilation, louvers, exhaust and air conditioning provisions are bolt-on service panels with factory-planned cut-outs.</p><p>And the kit includes the instructions that make the rest of it work: the numbered member schedule, the panel schedule, the gasket set, the fastener schedule and the assembly and torque sequence.</p><figure class=\"m-0\"><img src=\"/images/products/knock-down-porta-cabin/description/kd-description-exterior-green-40x10.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Forest green 40x10 ft knock-down porta cabin with a black frame and five windows\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Window and door positions are set by the approved opening schedule.</figcaption></figure><h2>Why the interior is built the way it is</h2><p>The interior face of a knock-down cabin looks plainer than a fitted-out finished cabin, and that is deliberate rather than a saving.</p><p>A factory-finished sandwich-panel face is specified as the internal skin, in pre-coated metal. The reason is that fragile interior layers do not survive repeated assembly. Board linings crack at the fixings, joints open, and the surface that looked good on day one looks poor after the second cycle. A panel face takes handling. Where decorative lining is ordered, it is clipped or screwed on in removable modules rather than wet-jointed, so it comes off cleanly instead of being destroyed on the way out.</p><p>The service ceiling follows the same logic. Ceiling panels stay accessible to wiring and connectors, and any additional ceiling is designed for repeated removal rather than being sealed in place.</p><figure class=\"m-0\"><img src=\"/images/products/knock-down-porta-cabin/description/kd-description-interior-beige-20x10.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Beige panel-lined 20x10 ft cabin interior with a desk, two visitor chairs and a split air conditioner\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Interior fit-out, furniture and air conditioning are optional scope and are quoted separately.</figcaption></figure><h2>What the site has to do</h2><p>This is the part the category leaves out, and it is the part that decides whether a knock-down cabin is a good decision for you.</p><p>Start with the ground. The kit is assembled in position, which means the position has to be right before assembly starts, not adjusted afterwards. A level, compacted, load-bearing base is not a nicety here. A frame assembled out of level will fight you at every bolted node, and panels will not close cleanly onto a racked frame.</p><p>Then access, and this is usually the reason a buyer is on this page at all. Components have to reach the assembly position. That is a genuinely lower bar than getting a 40 ft finished cabin there, which is the whole point, but it is not zero. Panels are large flat objects. Base rails are long. The wider kits, particularly at 12 ft, have wider floor and roof cassettes that need more hands or light lifting equipment rather than simply more time.</p><p>Then the crew and the programme. Assembly is a sequenced job with a defined order and defined torques. It is not a task to hand to whoever is free that afternoon. The frame goes up with temporary bracing and stays braced until the panels close it. On a 40 ft kit there are more splice nodes to set, align and torque than on a 20 ft one, and that difference is real time on site.</p><p>What the site does not have to supply, in the normal case, is welding. The specification states that no site welding should be needed for routine planned assembly unless specifically stated for your configuration. That takes hot-work permits, welding power and welder availability out of your site plan, which on a live industrial or occupied site is often worth more than the steel it saves.</p><h2>Sealing, and why field cuts are refused</h2><p>A knock-down cabin is a sealed envelope made of parts that are designed to come apart. Those two facts pull against each other, and sealing is where the tension is resolved.</p><p>Joints, corners, roof laps and penetrations use corrosion-compatible fasteners with EPDM, butyl or approved sealants and flashings. No unsealed field cut is accepted. That is not a preference. A cut made on site through a sandwich panel exposes the core, breaks the facing, and creates an edge that cannot be sealed to the same standard as a factory edge, and it will be the first place that leaks at the next reassembly.</p><p>This is why ventilation penetrations are concentrated in replaceable service panels rather than being spread wherever a duct happens to land. If a service position changes, a service panel is changed. The rest of the envelope is untouched. Major field cuts in sandwich panels are avoided specifically to preserve reuse and sealing, and that constraint should shape your services layout at enquiry rather than being discovered during installation.</p><p>Where plumbing is specified, and it is optional on this product, connections and traps are made accessible so the system can be drained before disassembly. Wet panels are inspected before repacking. A panel that has sat against a leaking trap for a season is not a panel to bolt back up on the next site.</p><figure class=\"m-0\"><img src=\"/images/products/knock-down-porta-cabin/description/kd-description-interior-white-30x10.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"White 30x10 ft cabin interior with a workstation, round meeting table and full-length storage run\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Fit-out shown is optional scope. The published prices cover the cabin as specified.</figcaption></figure><h2>Reuse is a condition, not a promise</h2><p>The commercial appeal of a knock-down cabin is that you can use it again. That is true, and it is conditional, and the conditions are worth reading before the appeal is priced into your business case.</p><p>Reuse depends on inspection. Members, holes, fasteners, panels and seals are all checked between cycles. Bolt holes elongate if a frame has been forced into alignment. Fasteners fatigue. Gaskets take a compression set and stop sealing. Panel facings dent, and a dented facing at a joint line is a leak path.</p><p>The specification is explicit about what happens when something fails that inspection: damaged components are replaced rather than forced back into tolerance. That sentence is the difference between a system that can genuinely be reused and one that merely can be taken apart. A cabin reassembled from components that were bent back into shape is a cabin that will leak, rack and disappoint, and it will do so on the site where you needed it most.</p><p>Plan for a consumable element, then. Gaskets and sealants are the usual replacements. That is not a defect in the product; it is what a demountable seal is.</p><h2>Where a knock-down cabin is the wrong answer</h2><p>Two cases, stated plainly, because sending the wrong buyer down this route helps nobody.</p><p>If the cabin is going to one position and staying there for its service life, you are paying for connections you will never undo. A standard welded build is simpler, faster to install and cheaper. The full <a href=\"https://www.samanportable.com/product/porta-cabins\">porta cabin range</a> sets out those options against each other.</p><p>If the cabin has to move repeatedly but can travel whole, dismantling it every time is the expensive way to solve that problem. A unit engineered to be lifted and trailered as one piece is the better route.</p><p>There is also a case where knock-down is right but something else governs the specification. On coastal or chemically aggressive sites, where the same components will be reassembled outdoors more than once, corrosion behaviour at every cut edge, fastener and joint matters more than the assembly method, and the <a href=\"https://www.samanportable.com/product/porta-cabins/gi-porta-cabin\">galvanized iron porta cabin</a> is the better starting point for that conversation. Where sanitation has to sit inside the same footprint, the <a href=\"https://www.samanportable.com/product/porta-cabins/porta-cabin-with-toilet\">porta cabin with toilet</a> is the configuration to look at, and the wet-area detailing there is designed around permanence rather than repeated demounting.</p><h2>Choosing between the six sizes</h2><p>Six sizes publish. The specification is costed against the 20x10x8.5 ft reference at Rs 1,280 per sq.ft. The other five derive from that input through the area-band adjustment, which is why the rate per square foot falls as the unit grows.</p><table class=\"saman-table\"><thead><tr><th>Size</th><th>Area</th><th>Rate per sq.ft.</th><th>Price ex-GST</th><th>With 18% GST</th></tr></thead><tbody><tr><td>10x10x8.5 ft</td><td>100 sq.ft.</td><td>Rs 1,472.00</td><td>Rs 1,47,200</td><td>Rs 1,73,696</td></tr><tr><td>20x8x8.5 ft</td><td>160 sq.ft.</td><td>Rs 1,408.00</td><td>Rs 2,25,280</td><td>Rs 2,65,830</td></tr><tr><td>20x10x8.5 ft</td><td>200 sq.ft.</td><td>Rs 1,280.00</td><td>Rs 2,56,000</td><td>Rs 3,02,080</td></tr><tr><td>30x10x8.5 ft</td><td>300 sq.ft.</td><td>Rs 1,228.80</td><td>Rs 3,68,640</td><td>Rs 4,34,995</td></tr><tr><td>40x10x8.5 ft</td><td>400 sq.ft.</td><td>Rs 1,216.00</td><td>Rs 4,86,400</td><td>Rs 5,73,952</td></tr><tr><td>40x12x8.5 ft</td><td>480 sq.ft.</td><td>Rs 1,203.20</td><td>Rs 5,77,536</td><td>Rs 6,81,492</td></tr></tbody></table><p>The table exists because the rate is not flat across sizes, and a buyer comparing a 10x10 against a 40x12 on headline price alone will read the value wrongly.</p><p>These are planning figures for the cabin as specified, on a derived basis, and they are confirmed in the final quotation. <strong>They exclude site assembly.</strong> They also exclude interior fit-out, optional add-ons, transport, installation, foundations and any project-specific engineering or testing. On this product the assembly exclusion is the one that matters most, because assembly is the thing that distinguishes it, so it is worth being direct: the number above buys you the kit delivered, not the kit standing.</p><h2>Standard, optional, custom and excluded</h2><p>Standard: the bolted steel structure with its splice plates and connection hardware, the insulated wall and roof panel envelope, the modular floor cassettes with board and vinyl finish, the factory-finished internal panel face, the bolt-on door and window cassettes, the electrical installation to the approved drawing, corrosion protection matched to substrate, the gasket and fastener schedules, the assembly and torque sequence, and pre-dispatch quality checks.</p><p>Optional: plumbing with quick-connect interfaces, decorative removable lining, internal partitions, air conditioning, additional openings and service panels, and the 24 mm higher-duty floor board.</p><p>Custom: layouts, opening schedules, service positions and equipment provisions set against your drawing.</p><p>Excluded unless written into the quotation: <strong>site assembly and disassembly</strong>, interior fit-out, transport, craneage or lifting equipment, foundations and hardstanding, site power and water, and any project-specific engineering, drawings or testing.</p><figure class=\"m-0\"><img src=\"/images/products/knock-down-porta-cabin/description/kd-description-interior-walnut-40x10.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Walnut-panelled 40x10 ft cabin interior with an executive desk, boardroom table and seating area\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Premium fit-out shown is optional and custom scope. It is not included in the published price.</figcaption></figure><h2>What we need to quote</h2><p>A useful quotation for a knock-down cabin needs more than a size, because the assembly is half the job:</p><ul><li>The size you want, and the access constraint that led you to a kit in the first place</li><li>The delivery route and the assembly position, including gate widths, turning space and any level changes components have to pass</li><li>Whether you expect to dismantle and reassemble, and roughly how often</li><li>Your thermal or fire requirement, which selects the panel core</li><li>The opening schedule: doors, windows, louvers and service penetrations, with positions</li><li>Electrical scope, air conditioning provision and any plumbing requirement</li><li>The base you intend to assemble on, and who is preparing it</li><li>Whether you want SAMAN to assemble, or your own contractor will</li></ul><p>The last one changes the quotation most. Tell us early.</p><h2>Delivery, warranty and service life</h2><p>SAMAN POS India Private Limited manufactures under the SAMAN Portable brand. Our factories are in Bengaluru and Greater Noida, so units for southern and northern projects are built at the nearer plant. The company was founded in 2009 and incorporated in 2019, with over 15 years of experience. We have a team of over 200, and more than 500 projects and 3,000 customers across over 15 states. We manufacture rather than resell.</p><p>A fixed-price quotation is issued within 48 hours of a complete enquiry. Delivery runs 7 to 21 working days, depending on size, configuration and the current build queue. Office hours are Monday to Saturday, 09:00 to 20:00 IST. GST is 18% and the HSN code is 9406.</p><p>Warranty is stated as follows: 5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Warranty scope and exclusions are confirmed in the final quotation. On this product one exclusion deserves stating in advance rather than being discovered later: damage arising from disassembly, transport and reassembly sits outside the agreed scope unless it is explicitly included, along with misuse, site services, consumables and unapproved alterations. Service life is 20 to 25 years under proper use and maintenance. That is a design life, not a warranty period, and on a demountable product it assumes the inspection and replacement discipline described above is actually followed.</p><h2>Common questions</h2><h4><strong>Can I assemble it myself?</strong></h4><p>You can have it assembled by your own contractor, and many buyers do. It is not a domestic flat-pack exercise. The build follows a defined sequence with specified torques and temporary bracing, and the work should be done by people who read structural drawings. We will supply the sequence, and we will quote the assembly if you would rather we did it.</p><h4><strong>How many times can it be taken down and put back up?</strong></h4><p>We do not publish a cycle count, because an honest one does not exist independently of how the cabin is handled. Reuse is governed by inspection, not by a number. Members, holes, fasteners, panels and seals are checked each time, and anything outside tolerance is replaced rather than forced.</p><h4><strong>Is this the same as a foldable or expandable cabin?</strong></h4><p>No. A foldable unit is one hinged assembly that opens out. This is a set of components that bolt together and come apart. Different mechanism, different price, different limits.</p><h4><strong>Why is it not much cheaper than a normal cabin?</strong></h4><p>It is not primarily a cost-saving product. A bolted build carries more connections, more panel interfaces and more sealing detail than a welded one. What you buy is access and reuse, not a lower cabin price, and the site assembly cost sits on top of the figures published above.</p><h4><strong>Will it be as weathertight as a welded cabin?</strong></h4><p>It is designed to be, through gasketed and flashed joints rather than continuous welds, and that is why the specification refuses unsealed field cuts and puts seals on the inspection list between cycles. A demountable seal is a maintained item in a way a weld is not.</p><h4><strong>Do you supply just the kit, without assembly?</strong></h4><p>Yes. That is the default, and it is what the published prices cover. Assembly is quoted separately, either by us or by your contractor.</p>"
+}

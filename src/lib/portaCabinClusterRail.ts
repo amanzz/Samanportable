@@ -273,6 +273,41 @@ export const PORTA_CABIN_PUF_RAIL: import('./c16PanelCatalog').RelatedRailItem[]
 ];
 
 /**
+ * PC-09 (15 Aug 2026) — the Knock-Down page's OWN Column 3 rail. The approved
+ * build prompt §7 names exactly three destinations: MS Porta Cabin, GI Porta
+ * Cabin, Porta Cabin with Toilet. Titles, blurbs and card images reused
+ * verbatim from the entries already established elsewhere in this file for
+ * these same three products (owner-approved under PC-00 R1a/R16 and the MS/GI
+ * rails above), so nothing here is newly authored. Alts use the hyphen form.
+ */
+export const PORTA_CABIN_KNOCK_DOWN_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
+  {
+    title: 'MS Porta Cabin',
+    href: '/product/porta-cabins/ms-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Heavy industrial duty in a thicker mild-steel build',
+    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
+    imageAlt: 'MS Porta Cabin by SAMAN - exterior view',
+  },
+  {
+    title: 'GI Porta Cabin',
+    href: '/product/porta-cabins/gi-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Coastal and high-corrosion sites',
+    imageSrc: '/images/products/porta-cabins/children/gi-porta-cabin-card.webp',
+    imageAlt: 'GI Porta Cabin by SAMAN - exterior view',
+  },
+  {
+    title: 'Porta Cabin with Toilet',
+    href: '/product/porta-cabins/porta-cabin-with-toilet',
+    category: 'Porta Cabins',
+    blurb: 'Cabin plus attached sanitation',
+    imageSrc: '/images/products/porta-cabins/children/porta-cabin-with-toilet-card.webp',
+    imageAlt: 'Porta Cabin with Toilet by SAMAN - exterior view',
+  },
+];
+
+/**
  * PC-02 (14 Aug 2026) — the GI page's OWN Column 3 rail. The approved GI build ticket
  * (section 4, "Column 3 related tabs") names exactly three destinations: the Porta
  * Cabins hub, the MS Porta Cabin and the PUF Porta Cabin, with no prices. So this page

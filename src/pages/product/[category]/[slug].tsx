@@ -47,6 +47,7 @@ import {
   PORTA_CABIN_FIRE_RATED_RAIL,
   PORTA_CABIN_WITH_TOILET_RAIL,
   PORTA_CABIN_PUF_RAIL,
+  PORTA_CABIN_KNOCK_DOWN_RAIL,
   buildPortaCabinGiRail,
   PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
   PORTA_CABIN_DS_RAIL,
@@ -86,6 +87,13 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'puf-porta-cabin',
   'skid-mounted-porta-cabin',
   'porta-cabin-shop',
+  // PC-09 (15 Aug 2026) — omitted when this set was first written because
+  // Section 2/3 had no copy yet (v1.0 partial build). Now that the copy pack
+  // is fully wired, this page joins the same premium chip/tab treatment
+  // every other cluster page already has. No new styling: reuses the
+  // existing usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2
+  // opt-ins byte-for-byte, exactly as every sibling above does.
+  'knock-down-porta-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -600,6 +608,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     // not the full-cluster strip. Scoped to this one slug.
     if (currentSlug === 'puf-porta-cabin') {
       return PORTA_CABIN_PUF_RAIL;
+    }
+    // PC-09 (15 Aug 2026) — same treatment for the knock-down page: Column 3 is
+    // the three-item comparison rail named in build prompt §7 (MS, GI, with-
+    // toilet), not the full-cluster strip. Scoped to this one slug.
+    if (currentSlug === 'knock-down-porta-cabin') {
+      return PORTA_CABIN_KNOCK_DOWN_RAIL;
     }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
