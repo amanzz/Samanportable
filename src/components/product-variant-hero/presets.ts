@@ -258,6 +258,18 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
     categoryHref: '/product/porta-cabins',
     productSku: 'SP-GIPC-20x10',
   },
+  // PC-03 DOUBLE STORY (G+1) subpage (/product/porta-cabins/double-story-porta-cabin).
+  // Its own data/products/double-story-porta-cabin.json supplies the six variants, the
+  // ladder, the per-size galleries, the L3 meta and the spec PDF. This preset supplies
+  // only the derived surfaces: the singular product noun, the cluster Category row and
+  // the page-level SKU. Deliberately absent: `explorerImageTemplate` (each panel names
+  // its own image in the applications dataset) and `video` (none exists).
+  'double-story-porta-cabin': {
+    productName: 'Double Story (G+1) Porta Cabin',
+    categoryLabel: 'Porta Cabins',
+    categoryHref: '/product/porta-cabins',
+    productSku: 'SP-DSPC-20x10',
+  },
   ...subpagePresets(),
 };
 

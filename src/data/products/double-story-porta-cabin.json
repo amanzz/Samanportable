@@ -1,0 +1,354 @@
+{
+  "productSlug": "double-story-porta-cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "h1": "Double Story (G+1) Porta Cabin: Two Floors on One Footprint",
+  "seoTitle": "Double Story (G+1) Porta Cabin: Two-Floor Build | SAMAN",
+  "metaDescription": "Double story G+1 porta cabin with engineered stacking, stair access and six sizes, 400 to 1,200 sq ft built-up. Published planning prices. Get a 48-hour quote.",
+  "opener": "The double story (G+1) porta cabin stacks two factory-built floors on one plot area, so a 200 sq ft ground slot carries up to 400 sq ft of finished rooms. It serves project owners, plant heads and campus administrators who have run out of ground space but not of people.\n\nSAMAN engineers the stacked build on a two-storey transfer chassis with dedicated stacking columns, a structural upper floor and an external steel staircase with guards. Six footprints run from 20x10 ft to 30x20 ft, giving 400 to 1,200 sq ft of total built-up area. The published ladder is a planning estimate; final member sizes and the final price follow your structural quotation. Standard delivery takes 7 to 21 working days after approval.",
+  "materialLabel": "MS Frame · Engineered Stacked Modules",
+  "deliveryLabel": "7-21 Working Days",
+  "pricePerSqft": {
+    "20x10": "1,244.50",
+    "30x10": "1,218.30",
+    "20x20": "1,192.10",
+    "40x10": "1,192.10",
+    "40x12": "1,179.00",
+    "30x20": "1,179.00"
+  },
+  "applicationsDataset": "double-story-porta-cabin",
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10 ft x G+1",
+      "areaSqft": 400,
+      "priceExGst": 497800,
+      "priceInclGst": 587404,
+      "sku": "SP-DSPC-20x10",
+      "useCase": "office over office, gate zone",
+      "images": [
+        {
+          "src": "/images/products/double-story-porta-cabin/20x10/20x10-double-story-porta-cabin-01-main-exterior.webp",
+          "alt": "ivory double storey G+1 porta cabin with black external steel staircase and guard rails, 20x10 ft footprint",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x10/20x10-double-story-porta-cabin-02-infrastructure-front.webp",
+          "alt": "Front elevation of ivory 20x10 ft G+1 porta cabin with sliding windows on both floors",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x10/20x10-double-story-porta-cabin-04-staircase-elevation.webp",
+          "alt": "Staircase side of ivory double storey porta cabin showing landing, handrails and upper floor door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x10/20x10-double-story-porta-cabin-05-solar-site-rear.webp",
+          "alt": "Rear angle of ivory G+1 porta cabin placed at an open site with the stair flight to the upper level",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x10/20x10-double-story-porta-cabin-07-ground-floor-interior.webp",
+          "alt": "Ground floor interior of the double storey porta cabin with panel walls, sliding windows and vinyl floor",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x10/20x10-double-story-porta-cabin-09-upper-floor-interior.webp",
+          "alt": "Upper floor interior of the double storey porta cabin with strip lighting and balcony access door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10 ft x G+1",
+      "areaSqft": 600,
+      "priceExGst": 730980,
+      "priceInclGst": 862556,
+      "sku": "SP-DSPC-30x10",
+      "useCase": "boundary-strip offices",
+      "images": [
+        {
+          "src": "/images/products/double-story-porta-cabin/30x10/30x10-double-story-porta-cabin-01-main-exterior.webp",
+          "alt": "cobalt double storey G+1 porta cabin with black external steel staircase and guard rails, 30x10 ft footprint",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x10/30x10-double-story-porta-cabin-02-infrastructure-front.webp",
+          "alt": "Front elevation of cobalt 30x10 ft G+1 porta cabin with sliding windows on both floors",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x10/30x10-double-story-porta-cabin-04-staircase-elevation.webp",
+          "alt": "Staircase side of cobalt double storey porta cabin showing landing, handrails and upper floor door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x10/30x10-double-story-porta-cabin-05-solar-site-rear.webp",
+          "alt": "Rear angle of cobalt G+1 porta cabin placed at an open site with the stair flight to the upper level",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x10/30x10-double-story-porta-cabin-07-ground-floor-interior.webp",
+          "alt": "Ground floor interior of the double storey porta cabin with panel walls, sliding windows and vinyl floor",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x10/30x10-double-story-porta-cabin-09-upper-floor-interior.webp",
+          "alt": "Upper floor interior of the double storey porta cabin with strip lighting and balcony access door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20x20 ft",
+      "dims": "20x20 ft x G+1",
+      "areaSqft": 800,
+      "priceExGst": 953680,
+      "priceInclGst": 1125342,
+      "sku": "SP-DSPC-20x20",
+      "useCase": "open team rooms, training",
+      "images": [
+        {
+          "src": "/images/products/double-story-porta-cabin/20x20/20x20-double-story-porta-cabin-01-main-exterior.webp",
+          "alt": "charcoal double storey G+1 porta cabin with black external steel staircase and guard rails, 20x20 ft footprint",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x20/20x20-double-story-porta-cabin-02-infrastructure-front.webp",
+          "alt": "Front elevation of charcoal 20x20 ft G+1 porta cabin with sliding windows on both floors",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x20/20x20-double-story-porta-cabin-04-staircase-elevation.webp",
+          "alt": "Staircase side of charcoal double storey porta cabin showing landing, handrails and upper floor door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x20/20x20-double-story-porta-cabin-05-solar-site-rear.webp",
+          "alt": "Rear angle of charcoal G+1 porta cabin placed at an open site with the stair flight to the upper level",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x20/20x20-double-story-porta-cabin-07-ground-floor-interior.webp",
+          "alt": "Ground floor interior of the double storey porta cabin with panel walls, sliding windows and vinyl floor",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/20x20/20x20-double-story-porta-cabin-09-upper-floor-interior.webp",
+          "alt": "Upper floor interior of the double storey porta cabin with strip lighting and balcony access door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10 ft x G+1",
+      "areaSqft": 800,
+      "priceExGst": 953680,
+      "priceInclGst": 1125342,
+      "sku": "SP-DSPC-40x10",
+      "useCase": "multi-room linear rows",
+      "images": [
+        {
+          "src": "/images/products/double-story-porta-cabin/40x10/40x10-double-story-porta-cabin-01-main-exterior.webp",
+          "alt": "terracotta double storey G+1 porta cabin with black external steel staircase and guard rails, 40x10 ft footprint",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x10/40x10-double-story-porta-cabin-02-infrastructure-front.webp",
+          "alt": "Front elevation of terracotta 40x10 ft G+1 porta cabin with sliding windows on both floors",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x10/40x10-double-story-porta-cabin-04-staircase-elevation.webp",
+          "alt": "Staircase side of terracotta double storey porta cabin showing landing, handrails and upper floor door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x10/40x10-double-story-porta-cabin-05-solar-site-rear.webp",
+          "alt": "Rear angle of terracotta G+1 porta cabin placed at an open site with the stair flight to the upper level",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x10/40x10-double-story-porta-cabin-07-ground-floor-interior.webp",
+          "alt": "Ground floor interior of the double storey porta cabin with panel walls, sliding windows and vinyl floor",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x10/40x10-double-story-porta-cabin-09-upper-floor-interior.webp",
+          "alt": "Upper floor interior of the double storey porta cabin with strip lighting and balcony access door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12 ft x G+1",
+      "areaSqft": 960,
+      "priceExGst": 1131840,
+      "priceInclGst": 1335571,
+      "sku": "SP-DSPC-40x12",
+      "useCase": "deeper offices, conference",
+      "images": [
+        {
+          "src": "/images/products/double-story-porta-cabin/40x12/40x12-double-story-porta-cabin-main-exterior.webp",
+          "alt": "Red 40x12 ft double storey porta cabin, corner view with external steel staircase and guard rails",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x12/40x12-double-story-porta-cabin-front-elevation.webp",
+          "alt": "Front elevation of the red 40x12 ft G+1 porta cabin with windows across both floors",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x12/40x12-double-story-porta-cabin-staircase-side.webp",
+          "alt": "Staircase end of the red double storey porta cabin showing stair flight, landing and upper door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x12/40x12-double-story-porta-cabin-site-placement.webp",
+          "alt": "Red G+1 porta cabin placed on a paved pad with landscaping, rear corner angle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x12/40x12-double-story-porta-cabin-interior-workstations.webp",
+          "alt": "Interior room of the double storey porta cabin furnished with tables and chairs in rows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/40x12/40x12-double-story-porta-cabin-interior-hall.webp",
+          "alt": "Open interior hall of the double storey porta cabin with wood-look floor and balcony access door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x20",
+      "label": "30x20 ft",
+      "dims": "30x20 ft x G+1",
+      "areaSqft": 1200,
+      "priceExGst": 1414800,
+      "priceInclGst": 1669464,
+      "sku": "SP-DSPC-30x20",
+      "useCase": "multi-department building",
+      "images": [
+        {
+          "src": "/images/products/double-story-porta-cabin/30x20/30x20-double-story-porta-cabin-01-main-exterior.webp",
+          "alt": "forest double storey G+1 porta cabin with black external steel staircase and guard rails, 30x20 ft footprint",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x20/30x20-double-story-porta-cabin-02-infrastructure-front.webp",
+          "alt": "Front elevation of forest 30x20 ft G+1 porta cabin with sliding windows on both floors",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x20/30x20-double-story-porta-cabin-04-staircase-elevation.webp",
+          "alt": "Staircase side of forest double storey porta cabin showing landing, handrails and upper floor door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x20/30x20-double-story-porta-cabin-05-solar-site-rear.webp",
+          "alt": "Rear angle of forest G+1 porta cabin placed at an open site with the stair flight to the upper level",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x20/30x20-double-story-porta-cabin-07-ground-floor-interior.webp",
+          "alt": "Ground floor interior of the double storey porta cabin with panel walls, sliding windows and vinyl floor",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/double-story-porta-cabin/30x20/30x20-double-story-porta-cabin-09-upper-floor-interior.webp",
+          "alt": "Upper floor interior of the double storey porta cabin with strip lighting and balcony access door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "descriptionHtml": "<h2>What a Double Story (G+1) Porta Cabin Is, and When It Pays</h2><p>A double story (G+1) porta cabin is a stacked modular building. The factory builds two cabin modules, and an engineered chassis, stacking columns and inter-module connections turn them into one two-floor structure on site. You get a ground floor, an upper floor and an external steel staircase, all on the plot area of a single cabin.</p><p>The buyer problem it solves is simple. Most working sites run out of ground before they run out of people. Vehicle lanes, material yards, cranes and stores claim the plot first. Meanwhile the team still needs offices, meeting rooms, records rooms and rest rooms. The G+1 build takes the one resource the site still has: the air above an existing cabin footprint.</p><p>So the page ahead answers the four questions G+1 buyers actually ask. First, when stacking beats buying two separate cabins. Second, what changes structurally, because a stacked cabin is not two standard cabins placed on top of each other. Third, what each of the six sizes really decides. Fourth, what the published price covers and what the structural quotation adds.</p><img src=\"/images/products/double-story-porta-cabin/description/double-story-porta-cabin-dark-grey-exterior-hero.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Dark grey double storey G+1 porta cabin with window grills, external staircase and planters at the base\"><h2>The Ground Area Maths: One Footprint, Twice the Rooms</h2><p>Work the numbers before you choose. A 20x10 ft cabin gives 200 sq ft of rooms on 200 sq ft of ground. Two of them give 400 sq ft of rooms but consume roughly 500 sq ft of plot once you add the gap and walkway between units. The G+1 version gives the same 400 sq ft of rooms on the original 200 sq ft plinth.</p><p>The table below puts the two routes side by side, because this single comparison decides most G+1 purchases.</p><div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Decision factor</th><th>Two single storey cabins</th><th>One G+1 porta cabin</th></tr></thead><tbody><tr><td>Ground area used</td><td>Roughly 2.5x one cabin footprint</td><td>One cabin footprint</td></tr><tr><td>Plinth and base work</td><td>Two plinths, two levelling jobs</td><td>One plinth, one levelling job</td></tr><tr><td>Team separation</td><td>Two doors across the yard</td><td>Two floors, one staircase apart</td></tr><tr><td>Structural scope</td><td>Standard single storey practice</td><td>Project structural calculation</td></tr><tr><td>Access</td><td>Ground level only</td><td>External stair, guards and landing</td></tr></tbody></table></div><p>Read the last two rows carefully. The stacked route saves ground but adds engineering scope and stair access. That trade is worth it on tight plots. It is unnecessary on open ones, which is why we say so plainly in the orientation section above.</p><h2>What Changes Structurally From a Single Storey Cabin</h2><p>Here is the honest engineering core of this product. A single storey cabin never carries another building on its roof. A G+1 ground module does, so SAMAN re-engineers the load path from top to bottom rather than reusing single storey members.</p><p>The ground floor chassis becomes a two-storey transfer chassis. Its reference starting section is a 150x75x5 mm MS C-channel, which is substantially heavier than a standard cabin base. Transfer members and base stiffeners line up under the stacking posts of the upper module. Corner columns become stacking columns, with a 60x60x3 mm SHS reference section in place of standard single storey posts, and each module carries a reinforced ring beam that moves vertical and lateral loads into the stacking connections.</p><p>The upper floor deserves its own paragraph, because it is the most misunderstood part of a stacked cabin. It is not a roof with flooring laid over it. It is an engineered structural floor, checked for live load, deflection and vibration, with a 24 mm cement board or heavy deck walking surface. Only the top module carries the weather roof, with a positive slope and sealed penetrations. The lower module top is treated as inter-storey construction instead.</p><p>One rule ties all of this together. Every section named above is a reference starting section, and the final member sizes, foundation reactions, wind and seismic stability, connection plates and anchors come from project structural calculations. SAMAN publishes the reference sections so you can compare vendors honestly, and releases fabrication only against the approved structural package. Treat any G+1 quotation without that calculation step as incomplete.</p><img src=\"/images/products/double-story-porta-cabin/description/double-story-porta-cabin-side-walkway-staircase.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Side view of the dark grey G+1 porta cabin showing the stair flight, upper walkway rail and door positions\"><h2>Stairs, Access and Egress Are Engineered Scope</h2><p>The staircase is part of the structure, not an accessory. Stair clear width, riser geometry, handrails, guards, landings and escape routes are set by the approved egress plan for your occupancy, and the stair, landing and guard steel is designed with the building. Doors on occupied floors open outward as the egress plan requires, and upper floor access is coordinated with the stair and landing system.</p><p>Openings follow the same discipline. Windows and service openings cannot cut stacking posts, transfer members or required bracing, so large openings get reinforcement shown on the approved shop drawings. If a layout sketch shows a window where a stacking column stands, the drawing changes before fabrication, never on site.</p><h2>Services Floor by Floor</h2><p>Each floor runs its own services. Electrical wiring follows the protected copper schedule of 1.5, 2.5 and 4 sq.mm circuits with a distribution board, MCB and RCCB protection and earthing, engineered per floor to the approved load schedule. Ventilation and air-conditioning run floor by floor as well, with sealed service risers and no uncontrolled openings between storeys.</p><p>Plumbing stays excluded unless you order it. When you do, wet areas stack vertically where practical, so risers, vents and drainage stay short and serviceable, and every floor penetration receives waterproofing treatment as required. Decide toilets and pantries at drawing stage; they are simple to align between floors on paper and expensive to relocate after fabrication.</p><img src=\"/images/products/double-story-porta-cabin/description/double-story-porta-cabin-rear-services-ac-units.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Rear elevation of the stacked porta cabin with air-conditioner units mounted at both floor levels\"><h2>Six Sizes and the Published Planning Ladder</h2><p>SAMAN publishes the full six-size ladder, because a G+1 buyer deserves a working budget figure before the structural quotation arrives. Every figure below is a planning estimate derived from the published rate input of Rs 1,310 per sq ft and the area band adjustments, and the area basis is the total built-up floor area across both floors. The final price follows your structural quotation.</p><div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Size (footprint x G+1)</th><th>Built-up area</th><th>Rate per sq ft</th><th>Price ex-GST</th><th>Incl. 18% GST</th></tr></thead><tbody><tr><td>20x10 ft</td><td>400 sq ft</td><td>Rs 1,244.50</td><td>Rs 4,97,800</td><td>Rs 5,87,404</td></tr><tr><td>30x10 ft</td><td>600 sq ft</td><td>Rs 1,218.30</td><td>Rs 7,30,980</td><td>Rs 8,62,556</td></tr><tr><td>20x20 ft</td><td>800 sq ft</td><td>Rs 1,192.10</td><td>Rs 9,53,680</td><td>Rs 11,25,342</td></tr><tr><td>40x10 ft</td><td>800 sq ft</td><td>Rs 1,192.10</td><td>Rs 9,53,680</td><td>Rs 11,25,342</td></tr><tr><td>40x12 ft</td><td>960 sq ft</td><td>Rs 1,179.00</td><td>Rs 11,31,840</td><td>Rs 13,35,571</td></tr><tr><td>30x20 ft</td><td>1,200 sq ft</td><td>Rs 1,179.00</td><td>Rs 14,14,800</td><td>Rs 16,69,464</td></tr></tbody></table></div><p>Four exclusions apply to every row, and we state them here rather than in fine print. Interior fit-out is quoted separately. Optional additions are quoted separately. Transport, unloading, foundations and project engineering are quoted separately. GST applies at 18% under HSN 9406 for prefabricated buildings.</p><h2>What Buyers Put on Each Floor</h2><p>The most common configuration is office over office: supervision and visitor handling below, engineering, documentation or management above. Plants and campuses also run office over store, keeping ground level for material receipt while records and quality teams sit upstairs. Marketing and administration setups use the upper floor for meetings, since visitors experience the stair once and the ground floor keeps daily traffic.</p><p>Know the boundary of this product as well. A single G+1 cabin serves one team or two, up to the 1,200 sq ft flagship. Project-scale worker housing with rows of rooms, kitchens and ablution blocks is a different product family, and our <a href=\"https://www.samanportable.com/product/labor-colony\">labour colony</a> pages cover those G+1 and G+2 accommodation blocks with their own capacity planning. Residential living layouts belong to the porta cabin house instead. Keeping those boundaries clear protects your specification and your budget.</p><img src=\"/images/products/double-story-porta-cabin/description/double-story-porta-cabin-beige-interior-room.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Beige panel interior room of the double storey porta cabin with air-conditioner, exhaust unit and steel door\"><h2>Scope: What Is Standard, Optional, Custom and Excluded</h2><p>STANDARD scope covers the engineered stacked structure: transfer chassis, stacking columns, both floor structures, the top-storey weather roof, insulated envelope, interior lining, doors and windows per the approved opening schedule, the external stair package and the per-floor electrical baseline.</p><p>OPTIONAL scope covers partitions, furniture, air-conditioning units, stacked wet areas with the vertical plumbing riser, grills and mesh, and extra doors or windows where the structure allows them.</p><p>CUSTOM scope covers layouts, colours, cladding selection and opening positions, always through the approved drawing. EXCLUDED scope covers foundations, transport, unloading, site power supply and project-specific engineering and tests, which are quoted separately once your site details are known. Every option lands as a line item on the quotation, so you can add or remove scope and watch the effect.</p><h2>Transport, Unloading and Site Readiness</h2><p>A G+1 cabin travels as separate modules and becomes a two-storey building during installation. Modules up to 20 ft ride a 20 ft open trailer, and 30 to 40 ft modules ride a 40 ft open trailer, with freight following the distance ladder in the Shipping tab. The 12 ft wide modules of the 40x12 ft size can classify as an over-dimensional consignment, and ODC charges stay estate-dependent until the route is confirmed.</p><img src=\"/images/products/double-story-porta-cabin/description/double-story-porta-cabin-crane-module-installation.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" alt=\"Mobile crane lifting the upper module of a double storey porta cabin onto the ground floor module\"><figcaption class=\"saman-figcaption\">Crane arrangements and unloading are confirmed per site in your delivery quotation.</figcaption><p>Prepare the site before the trailers arrive. You need a level base built to the approved foundation drawing, clear approach and turning room for the trailer, working space for the crane during stacking, and a power point for the distribution board hook-up. Anchoring follows the structural package. The staircase side needs its clear strip, so mark it on the plinth plan from day one.</p><h2>What Your Structural Quotation Needs From You</h2><p>Send these inputs with your enquiry, and the 48-hour quotation comes back with the structural scope already framed: your site pin code and city, the intended use of each floor, expected occupancy per floor, preferred footprint from the six-size ladder, any heavy equipment or storage loads, known wind exposure or rooftop placement plans, and whether you need stacked wet areas. Soil information helps early when you have it, because foundation reactions from the G+1 structure drive the base design.</p><p>Our range works from two owned factories, in Bengaluru for the South and Greater Noida for the North, and you can compare this stacked configuration with every other build in the <a href=\"https://www.samanportable.com/product/porta-cabins\">porta cabins range</a> before you commit.</p><h2>How to Compare G+1 Quotations Line by Line</h2><p>Cheap stacked-cabin quotes hide their savings in the structure, and you cannot see the structure in a photograph. So compare quotations on five numbers before you compare prices. Ask every vendor for the transfer chassis section under the ground module, and compare it against our published 150x75x5 mm reference. Ask for the stacking column section, against our 60x60x3 mm SHS reference. Ask what the upper floor is designed for, because a converted roof and an engineered floor look identical in a render and behave differently under a loaded file rack.</p><p>Then ask two scope questions. Does the quotation include project structural calculations, foundation reactions and an approved drawing set, or does it reuse single storey members without a check? And is the stair package, with guards, landings and egress geometry, inside the price or left as a site extra? A vendor who cannot answer these five points in writing is not quoting the same product. Ours are printed here, in the Specifications tab and in the versioned PDF, so you can hold the delivered building to the promise.</p><h2>Why Buy the G+1 From SAMAN</h2><p>SAMAN POS India Private Limited, brand SAMAN Portable, was founded in 2009 and incorporated in 2019, which gives you over 15 years of manufacturing experience behind the stacked build. Two owned factory units, in Bengaluru and Greater Noida, serve the South and North directly, so you buy from the manufacturer rather than a reseller. The delivery record stands at 500+ projects for 3,000+ customers across 15+ states, executed by a 200+ member team, with ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certifications and NSIC SPRS registration. Working hours run Monday to Saturday, 09:00 to 20:00 IST.</p><h2>Quality, Warranty and Honest Limits</h2><p>Every module passes pre-dispatch QA covering dimensions, member and panel identification, connections, coating, roof drainage, weather sealing, doors, windows and electrical continuity. You get a 5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Service life runs 20 to 25 years under proper use and maintenance, and that is a design-life statement, not a warranty period.</p><p>The honest limits matter just as much. SAMAN does not publish generic occupancy numbers, floor load ratings or wind speed claims for this product, because those values belong to your project calculation, not to a brochure. The published ladder is a planning estimate. The structural quotation is the number you sign.</p><h2>Double Story Porta Cabin FAQs</h2><h3>How is the price of a G+1 porta cabin calculated?</h3><p>The planning ladder prices total built-up area across both floors at the published rate input of Rs 1,310 per sq ft with area band adjustments. A 20x10 ft G+1 therefore prices 400 sq ft, not 200. The final price follows the structural quotation for your site.</p><h3>Do I need a foundation for a double storey porta cabin?</h3><p>Yes, and it is designed, not assumed. The G+1 structure concentrates both storeys into the ground module supports, so the base and anchoring follow the foundation drawing produced from project structural calculations. Simple levelled ground that serves a single cabin is not automatically enough.</p><h3>Can I put a G+1 porta cabin on a rooftop?</h3><p>Only after your structural engineer confirms the slab can carry the stacked loads at the planned position, and only with crane access to that level. Share the building details with your enquiry and we will advise on feasibility before quoting.</p><h3>How long does delivery take?</h3><p>Standard delivery takes 7 to 21 working days after order confirmation, plus transit per the Shipping tab. The structural approval step for your configuration is scheduled within the quotation, so the committed programme is stated there.</p><h3>Can the two floors have different uses?</h3><p>Yes. Office over office is the most common split, followed by office over store. Each floor runs its own electrical circuits and ventilation, and stacked wet areas are available as optional scope where drawings allow.</p><h3>Are custom sizes possible beyond the six published options?</h3><p>Yes. The six-size ladder covers standard footprints from 20x10 ft to 30x20 ft. Other footprints follow the same engineering route against an approved drawing and quotation.</p>",
+  "suppressLegacyFaqSchema": true,
+  "specPdfHref": "/specs/saman-double-story-porta-cabin-technical-specification.pdf",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "hasProductVideo": false
+}

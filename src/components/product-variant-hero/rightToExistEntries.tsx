@@ -65,6 +65,27 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  // PC-03 double-story-porta-cabin - Section 2 buyer orientation, build prompt v2 12.4,
+  // verbatim and SHA-256 verified before wiring (S2_H2 2dfd9911, S2_P1 571b9418,
+  // S2_P2 1c304999). Two equal-weight paragraphs, so `bodyParagraphs` is used rather
+  // than the body-plus-bolded-comparison pair. The two anchors are exactly rows 1 and 2
+  // of the section 9 link map. No `splitCard`: build prompt v2 supplies no card image,
+  // sub-heading, body or CTA label for this page, and the builder writes none.
+  'double-story-porta-cabin': {
+    heading: 'When a G+1 Porta Cabin Beats Two Single Storey Cabins on Site',
+    bodyParagraphs: [
+      (
+        <>
+          Compare the two ways to double cabin space. Two separate cabins need double the ground area, two plinths and a walkway between them. A G+1 cabin needs one plinth, keeps vehicle lanes untouched, and puts the second team one staircase away. Choose the stacked build when ground area is the scarce resource. Choose two separate units, such as a standard <Link className={linkClass} href="https://www.samanportable.com/product/porta-cabins/ms-porta-cabin">MS porta cabin</Link> pair, when the site has spare ground and you want to avoid stair access.
+        </>
+      ),
+      (
+        <>
+          The G+1 decision also changes the engineering scope. The ground floor module carries both storeys, so the chassis, columns and foundations are checked by structural calculation, not taken from single storey practice. That check protects you at windy, elevated or soft-soil sites. Share your site pin code, floor use and occupancy plan for a fixed 48-hour quotation with the structural scope stated. <Link className={linkClass} href="https://www.samanportable.com/contact">Send your G+1 requirement now</Link>.
+        </>
+      ),
+    ],
+  },
   // PC-02 gi-porta-cabin — Section 2, DRAFT V4. Copy supplied by the owner on
   // 14 Aug 2026 and wired verbatim; it supersedes the build prompt v1 §3 Section 2
   // text and its S2_H2 / S2_P1 / S2_P2_visible checksums. Computed checksums for the

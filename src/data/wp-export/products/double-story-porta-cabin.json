@@ -1,0 +1,40 @@
+{
+  "id": 990023,
+  "name": "Double Story (G+1) Porta Cabin",
+  "slug": "double-story-porta-cabin",
+  "date_created": "2026-08-15T00:00:00",
+  "status": "publish",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-DSPC-20x10",
+  "price": "497800",
+  "regular_price": "497800",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 202,
+      "name": "Porta Cabins",
+      "slug": "porta-cabins"
+    }
+  ],
+  "images": [
+    {
+      "id": 990023,
+      "src": "/images/products/double-story-porta-cabin/20x10/20x10-double-story-porta-cabin-01-main-exterior.webp",
+      "name": "Double Story (G+1) Porta Cabin",
+      "alt": "ivory double storey G+1 porta cabin with black external steel staircase and guard rails, 20x10 ft footprint"
+    }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  }
+}
