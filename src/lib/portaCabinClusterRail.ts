@@ -118,241 +118,107 @@ export const PORTA_CABIN_HUB_RAIL: import('./c16PanelCatalog').RelatedRailItem[]
   },
 ];
 
+// ---------------------------------------------------------------------------
+// C01 "Explore the Range" rail consistency (15 Aug 2026) - DRIFT CORRECTION.
+//
+// SAMAN reported that the left-hand rail showed a different, apparently arbitrary
+// set of products on every subpage, so a buyer landing on a subpage could not see
+// the range. Cause: PORTA_CABIN_CLUSTER_SLUGS below is a stale WooCommerce-era list
+// that names NONE of the rebuilt cluster pages, so isPortaCabinStripSlug() returned
+// false for them and the shared full-cluster machinery never ran. Each page was then
+// given its own hand-authored three-item rail (PORTA_CABIN_MS_RAIL,
+// PORTA_CABIN_FIRE_RATED_RAIL, PORTA_CABIN_WITH_TOILET_RAIL, PORTA_CABIN_PUF_RAIL,
+// PORTA_CABIN_DS_RAIL, PORTA_CABIN_SKID_RAIL and buildPortaCabinGiRail), authored one
+// page at a time and never reconciled. Those seven constants are deleted here.
+//
+// This RESTORES RULING v2.1 at the top of this file (SAMAN veto, 18 Jul 2026): every
+// subpage's rail shows the FULL cluster, hub first, then all sibling subpages in
+// canonical order, self excluded. It invents no policy. The same ruling settles the
+// SEO question: rail entries are NAVIGATION, exempt from the exact-match anchor cap.
+// In-body editorial links, in Section 2 and the Description tab, are UNCHANGED.
+//
+// The hub's own rail (PORTA_CABIN_HUB_RAIL, consumed by /product/[category]/index.tsx)
+// is deliberately NOT touched: "The flagship's own rail is untouched."
+//
+// Nothing here is authored. Every child card is looked up in PORTA_CABIN_HUB_RAIL by
+// slug, so titles, blurbs, images and alts are the R16 strings already approved. The
+// hub card is the "Porta Cabins Range" card moved verbatim out of the deleted
+// PORTA_CABIN_WITH_TOILET_RAIL - it is the only hub card in this file carrying a
+// purpose-built 640x360 image from the cluster's own `children/` folder.
+// ---------------------------------------------------------------------------
+
 /**
- * PC-01 (14 Aug 2026) — the MS page's OWN Column 3 rail. The approved MS build
- * ticket (§4 Column 3) names exactly three comparison destinations with the buyer
- * reason each one serves, so this page does NOT show the full-cluster rail that
- * `orderPortaCabinStrip` builds for its siblings. Titles and blurbs are verbatim
- * from that table; the card images are the same R16 files the hub rail uses, so no
- * product is represented by another product's image.
+ * The one em-dash-to-comma transform this file already applied inline in
+ * PORTA_CABIN_DS_RAIL, PORTA_CABIN_SKID_RAIL and PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH.
+ * The hub rail's R16 alts carry a U+2014, which CLAUDE.md bans from built output on
+ * every page rebuilt in this cluster, so subpage rails route their alts through it.
+ * Punctuation only: no word changes, and PORTA_CABIN_HUB_RAIL itself is not modified.
  */
-export const PORTA_CABIN_MS_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
-  {
-    title: 'GI Porta Cabin',
-    href: '/product/porta-cabins/gi-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Zinc-coated material route for coastal/humid sites',
-    imageSrc: '/images/products/porta-cabins/children/gi-porta-cabin-card.webp',
-    imageAlt: 'GI (Galvanized Iron) Porta Cabin by SAMAN — exterior view',
-  },
-  {
-    title: 'PUF Porta Cabin',
-    href: '/product/porta-cabins/puf-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Higher thermal-insulation build',
-    imageSrc: '/images/products/porta-cabins/children/puf-porta-cabin-card.webp',
-    imageAlt: 'PUF Porta Cabin by SAMAN — exterior view',
-  },
-  {
-    title: 'Porta Cabin with Toilet',
-    href: '/product/porta-cabins/porta-cabin-with-toilet',
-    category: 'Porta Cabins',
-    blurb: 'Cabin plus attached sanitation',
-    imageSrc: '/images/products/porta-cabins/children/porta-cabin-with-toilet-card.webp',
-    imageAlt: 'Porta Cabin with Toilet by SAMAN — exterior view',
-  },
-];
+const normaliseRailAlt = <T extends import('./c16PanelCatalog').RelatedRailItem>(item: T): T =>
+  item.imageAlt && item.imageAlt.includes('—')
+    ? { ...item, imageAlt: item.imageAlt.replace(/\s*—\s*/g, ', ') }
+    : item;
+
+/** The hub card that leads every subpage rail. Moved verbatim from PC-04's rail. */
+const PORTA_CABIN_RAIL_HUB_CARD: import('./c16PanelCatalog').RelatedRailItem = {
+  title: 'Porta Cabins Range',
+  href: '/product/porta-cabins',
+  category: 'Porta Cabins',
+  blurb: 'Compare every cabin configuration and the full ladder',
+  imageSrc: '/images/products/porta-cabins/children/porta-cabins-range-card.webp',
+  imageAlt: 'Porta Cabins Range by SAMAN - exterior view',
+};
+
 /**
- * PC-04 (14 Aug 2026) — the with-toilet page's Column 3, exactly the three tabs and
- * the three buyer-comparison reasons in §1 of the approved draft v2. Not the
- * full-cluster strip, so it is scoped to this one slug in the route.
+ * The ten approved children, in approved-plan order. `live` gates rendering: a card is
+ * never rendered for a URL that 404s, so turning a page on after it deploys is a
+ * one-word change here and nowhere else.
  *
- * v1.3 §1.2 — every card carries a real image of its own product, selected by the
- * ticket's deterministic rule and visually confirmed before wiring:
- *   MS Porta Cabin  -> children/ms-porta-cabin-card.webp (existing purpose-built card)
- *   Portable Toilet -> product-heroes/portable-toilet/mobile-toilet-cabin-white-exterior.webp
- *                      (first "exterior" match in that product's own folder)
- *   Porta Cabins    -> products/porta-cabins/40x12/porta-cabin-40x12-hero-view.webp
- *                      (no top-level file; first "hero" match in the largest size folder)
- * The latter two were processed to the cluster's 640x360 card format. No product is
- * ever shown under another product's image. Alts use the hyphen form, so no em dash
- * enters this page's markup.
+ * Live status verified by request on 15 Aug 2026: all ten slugs below return 200.
+ * knock-down-porta-cabin was the one exception until PC-09 deployed later the same
+ * day; the flag was flipped after re-confirming 200, not on the assumption it shipped.
+ *
+ * The five legacy cluster slugs in PORTA_CABIN_CLUSTER_SLUGS below (steel-, luxury-,
+ * mini-, low-cost-porta-cabin and portacabin-office) are deliberately absent: they are
+ * redirect-slated under the site-wide ruling of 14 Aug 2026 and are not in the 106-page
+ * approved plan, and this file's own rule is that a redirect-slated slug is never
+ * railed. Reported to SAMAN as decision A; adding them is a five-line change here.
  */
-export const PORTA_CABIN_WITH_TOILET_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
-  {
-    title: 'MS Porta Cabin',
-    href: '/product/porta-cabins/ms-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Same frame and shell without the wet zone, lower rate',
-    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
-    imageAlt: 'MS Porta Cabin by SAMAN - exterior view',
-  },
-  {
-    title: 'Portable Toilet',
-    href: '/product/portable-toilet',
-    category: 'Portable Toilet',
-    blurb: 'Sanitation-only alternative when no working room is needed',
-    imageSrc: '/images/products/porta-cabins/children/portable-toilet-card.webp',
-    imageAlt: 'Portable Toilet by SAMAN - exterior view',
-  },
-  {
-    title: 'Porta Cabins Range',
-    href: '/product/porta-cabins',
-    category: 'Porta Cabins',
-    blurb: 'Compare every cabin configuration and the full ladder',
-    imageSrc: '/images/products/porta-cabins/children/porta-cabins-range-card.webp',
-    imageAlt: 'Porta Cabins Range by SAMAN - exterior view',
-  },
+export const PORTA_CABIN_RAIL_ORDER: readonly { slug: string; live: boolean }[] = [
+  { slug: 'ms-porta-cabin', live: true },
+  { slug: 'gi-porta-cabin', live: true },
+  { slug: 'double-story-porta-cabin', live: true },
+  { slug: 'porta-cabin-with-toilet', live: true },
+  { slug: 'fire-rated-porta-cabin', live: true },
+  { slug: 'soundproof-porta-cabin', live: true },
+  { slug: 'puf-porta-cabin', live: true },
+  { slug: 'skid-mounted-porta-cabin', live: true },
+  // PC-09 deployed 15 Aug 2026; confirmed 200 by request. Flipped from false.
+  { slug: 'knock-down-porta-cabin', live: true },
+  { slug: 'porta-cabin-shop', live: true },
 ];
 
-/**
- * PC-05 (14 Aug 2026) — the fire-rated page's OWN Column 3 rail. The approved
- * build ticket (§4 Column 3) names exactly four comparison destinations: MS
- * Porta Cabin, Soundproof Porta Cabin, PUF Porta Cabin, and the Porta Cabins
- * hub. The hub has no dedicated `children/` card (it isn't a child of itself),
- * so its own default-variant hero image is used — a real product photo, same
- * rule as every other card here.
- */
-export const PORTA_CABIN_FIRE_RATED_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
-  {
-    title: 'MS Porta Cabin',
-    href: '/product/porta-cabins/ms-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Heavy industrial duty in a thicker mild-steel build',
-    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
-    imageAlt: 'MS Porta Cabin by SAMAN — exterior view',
-  },
-  {
-    title: 'Soundproof Porta Cabin',
-    href: '/product/porta-cabins/soundproof-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Acoustic-controlled rooms near noise',
-    imageSrc: '/images/products/porta-cabins/children/soundproof-porta-cabin-card.webp',
-    imageAlt: 'Soundproof Porta Cabin by SAMAN — exterior view',
-  },
-  {
-    title: 'PUF Porta Cabin',
-    href: '/product/porta-cabins/puf-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Higher thermal insulation duty',
-    imageSrc: '/images/products/porta-cabins/children/puf-porta-cabin-card.webp',
-    imageAlt: 'PUF Porta Cabin by SAMAN — exterior view',
-  },
-  {
-    title: 'Porta Cabins',
-    href: '/product/porta-cabins',
-    category: 'Porta Cabins',
-    blurb: 'The standard reference specification and full size range',
-    imageSrc: '/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-hero-view.webp',
-    imageAlt: 'SAMAN porta cabin exterior, 20x10 ft reference size',
-  },
-];
+/** True for the ten approved cluster children, live or not. */
+export const isPortaCabinRailSlug = (slug: string): boolean =>
+  PORTA_CABIN_RAIL_ORDER.some((entry) => entry.slug === slug);
 
 /**
- * PC-07 (15 Aug 2026) — the PUF page's OWN Column 3 rail. The approved build
- * prompt (§10 "Related product tabs") names exactly three destinations: MS
- * Porta Cabin, GI Porta Cabin, Fire-Rated Porta Cabin. Card images reused
- * verbatim from `children/` (owner-approved under PC-00 R1a/R16); alts use the
- * hyphen form because this page's own copy is held to zero U+2014.
+ * The rail every cluster subpage renders: the hub, then every LIVE sibling in the
+ * canonical order above, self excluded. A slug with no row in PORTA_CABIN_HUB_RAIL is
+ * skipped rather than substituted, so a gap stays visible and is never back-filled
+ * with an unrelated product.
  */
-export const PORTA_CABIN_PUF_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
-  {
-    title: 'MS Porta Cabin',
-    href: '/product/porta-cabins/ms-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Heavy industrial duty in a thicker mild-steel build',
-    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
-    imageAlt: 'MS Porta Cabin by SAMAN - exterior view',
-  },
-  {
-    title: 'GI Porta Cabin',
-    href: '/product/porta-cabins/gi-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Coastal and high-corrosion sites',
-    imageSrc: '/images/products/porta-cabins/children/gi-porta-cabin-card.webp',
-    imageAlt: 'GI Porta Cabin by SAMAN - exterior view',
-  },
-  {
-    title: 'Fire-Rated Porta Cabin',
-    href: '/product/porta-cabins/fire-rated-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Sites with fire-performance requirements',
-    imageSrc: '/images/products/porta-cabins/children/fire-rated-porta-cabin-card.webp',
-    imageAlt: 'Fire-Rated Porta Cabin by SAMAN - exterior view',
-  },
+export const portaCabinSubpageRail = (
+  slug: string
+): import('./c16PanelCatalog').RelatedRailItem[] => [
+  PORTA_CABIN_RAIL_HUB_CARD,
+  ...PORTA_CABIN_RAIL_ORDER.filter((entry) => entry.live && entry.slug !== slug)
+    .map((entry) =>
+      PORTA_CABIN_HUB_RAIL.find((row) => slugFromProductHref(row.href) === entry.slug)
+    )
+    .filter((row): row is import('./c16PanelCatalog').RelatedRailItem => row !== undefined)
+    .map(normaliseRailAlt),
 ];
-
-/**
- * PC-09 (15 Aug 2026) — the Knock-Down page's OWN Column 3 rail. The approved
- * build prompt §7 names exactly three destinations: MS Porta Cabin, GI Porta
- * Cabin, Porta Cabin with Toilet. Titles, blurbs and card images reused
- * verbatim from the entries already established elsewhere in this file for
- * these same three products (owner-approved under PC-00 R1a/R16 and the MS/GI
- * rails above), so nothing here is newly authored. Alts use the hyphen form.
- */
-export const PORTA_CABIN_KNOCK_DOWN_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
-  {
-    title: 'MS Porta Cabin',
-    href: '/product/porta-cabins/ms-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Heavy industrial duty in a thicker mild-steel build',
-    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
-    imageAlt: 'MS Porta Cabin by SAMAN - exterior view',
-  },
-  {
-    title: 'GI Porta Cabin',
-    href: '/product/porta-cabins/gi-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Coastal and high-corrosion sites',
-    imageSrc: '/images/products/porta-cabins/children/gi-porta-cabin-card.webp',
-    imageAlt: 'GI Porta Cabin by SAMAN - exterior view',
-  },
-  {
-    title: 'Porta Cabin with Toilet',
-    href: '/product/porta-cabins/porta-cabin-with-toilet',
-    category: 'Porta Cabins',
-    blurb: 'Cabin plus attached sanitation',
-    imageSrc: '/images/products/porta-cabins/children/porta-cabin-with-toilet-card.webp',
-    imageAlt: 'Porta Cabin with Toilet by SAMAN - exterior view',
-  },
-];
-
-/**
- * PC-02 (14 Aug 2026) — the GI page's OWN Column 3 rail. The approved GI build ticket
- * (section 4, "Column 3 related tabs") names exactly three destinations: the Porta
- * Cabins hub, the MS Porta Cabin and the PUF Porta Cabin, with no prices. So this page
- * does NOT show the full-cluster strip that `orderPortaCabinStrip` builds for its
- * siblings.
- */
-// The two sibling rows. Titles, blurbs and card images are reused VERBATIM from
-// PORTA_CABIN_HUB_RAIL above (owner-approved under PC-00 R1a/R16), so nothing here is
-// authored. The one edit is punctuation: the hub's alts carry a U+2014 em dash, which
-// acceptance criterion 11.3 bans from this page's rendered output, so the em dash is
-// normalised to a comma exactly as the repo's own `rewriteC04VisiblePunctuation`
-// already does elsewhere. No word changes.
-const PORTA_CABIN_GI_SIBLINGS: import('./c16PanelCatalog').RelatedRailItem[] = [
-  {
-    title: 'MS Porta Cabin',
-    href: '/product/porta-cabins/ms-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Heavy industrial duty in a thicker mild-steel build',
-    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
-    imageAlt: 'MS Porta Cabin by SAMAN, exterior view',
-  },
-  {
-    title: 'PUF Porta Cabin',
-    href: '/product/porta-cabins/puf-porta-cabin',
-    category: 'Porta Cabins',
-    blurb: 'Higher thermal insulation duty',
-    imageSrc: '/images/products/porta-cabins/children/puf-porta-cabin-card.webp',
-    imageAlt: 'PUF Porta Cabin by SAMAN, exterior view',
-  },
-];
-
-/**
- * Builds the GI page's three-item rail. The hub row is taken from the LIVE
- * platform-derived rail so its title, blurb and image come from the hub's own product
- * record rather than being written here; the two sibling rows are the approved static
- * entries above. If the hub row is missing from the live list the rail degrades to the
- * two siblings rather than inventing a hub card.
- */
-export function buildPortaCabinGiRail<T extends { href: string }>(
-  built: T[],
-  hrefToSlug: (item: T) => string
-): Array<T | import('./c16PanelCatalog').RelatedRailItem> {
-  const hubRow = built.find((item) => hrefToSlug(item) === PORTA_CABIN_HUB_SLUG);
-  return [...(hubRow ? [hubRow] : []), ...PORTA_CABIN_GI_SIBLINGS];
-}
 
 /**
  * PC-01 — "You may also like" lists the cluster's other nine configuration children
@@ -371,78 +237,22 @@ export const PORTA_CABIN_SIBLING_YMAL = (slug: string) =>
  * dash to comma) and changes no word. It is a SEPARATE export rather than a change to
  * the function above, so the hub's and the MS page's rendered alts are untouched.
  */
-/**
- * PC-03 (15 Aug 2026) - the double-story page's OWN Column 3 rail. Build prompt v2
- * section 9 names exactly three related tabs: MS Porta Cabin, Porta Cabin with Toilet
- * and Skid-Mounted Porta Cabin. Titles, hrefs, blurbs and card images are taken
- * VERBATIM from PORTA_CABIN_HUB_RAIL above, so nothing here is authored. Alts are
- * routed through the same em-dash normalisation the GI page uses, because CLAUDE.md
- * bans U+2014 from alt text; the hub's own array is not modified.
- */
-const PORTA_CABIN_DS_RAIL_SLUGS = [
-  'ms-porta-cabin',
-  'porta-cabin-with-toilet',
-  'skid-mounted-porta-cabin',
-] as const;
-
-export const PORTA_CABIN_DS_RAIL: import('./c16PanelCatalog').RelatedRailItem[] =
-  PORTA_CABIN_DS_RAIL_SLUGS.map((wanted) => {
-    const item = PORTA_CABIN_HUB_RAIL.find((row) => slugFromProductHref(row.href) === wanted);
-    if (!item) throw new Error(`PC-03 rail: no hub-rail row for ${wanted}`);
-    return item.imageAlt && item.imageAlt.includes('—')
-      ? { ...item, imageAlt: item.imageAlt.replace(/\s*—\s*/g, ', ') }
-      : item;
-  });
-
-/**
- * PC-08 (15 Aug 2026) - the skid-mounted page's OWN Column 3 rail. Build prompt v1
- * section 2 (assembly map, hero column 3) names exactly three related tabs: MS
- * Porta Cabin, Knock-Down Porta Cabin and Double Story (G+1) Porta Cabin. Titles,
- * hrefs, blurbs and card images are taken VERBATIM from PORTA_CABIN_HUB_RAIL above
- * (both card images already exist under `children/`, confirmed before wiring), so
- * nothing here is authored. Knock-down-porta-cabin is not yet built and will 404
- * until its own ticket lands; that follows the same precedent PC-03's rail set for
- * this very skid-mounted page before this ticket existed. Alts are routed through
- * the same em-dash normalisation as the DS rail, because this page's own copy is
- * held to zero U+2014.
- */
-const PORTA_CABIN_SKID_RAIL_SLUGS = [
-  'ms-porta-cabin',
-  'knock-down-porta-cabin',
-  'double-story-porta-cabin',
-] as const;
-
-export const PORTA_CABIN_SKID_RAIL: import('./c16PanelCatalog').RelatedRailItem[] =
-  PORTA_CABIN_SKID_RAIL_SLUGS.map((wanted) => {
-    const item = PORTA_CABIN_HUB_RAIL.find((row) => slugFromProductHref(row.href) === wanted);
-    if (!item) throw new Error(`PC-08 rail: no hub-rail row for ${wanted}`);
-    return item.imageAlt && item.imageAlt.includes('—')
-      ? { ...item, imageAlt: item.imageAlt.replace(/\s*—\s*/g, ', ') }
-      : item;
-  });
-
-/**
- * PC-10 (15 Aug 2026) - the shop cabin page's OWN Column 3 rail. Build prompt v1.1
- * section 9 names exactly three related tabs: MS Porta Cabin, GI Porta Cabin and
- * Porta Cabin with Toilet. Titles, hrefs, blurbs and card images are taken VERBATIM
- * from PORTA_CABIN_HUB_RAIL above, so nothing here is authored. Alts are routed
- * through the same em-dash normalisation as the other bespoke rails, because this
- * page's own copy is held to zero U+2014.
- */
-const PORTA_CABIN_SHOP_RAIL_SLUGS = [
-  'ms-porta-cabin',
-  'gi-porta-cabin',
-  'porta-cabin-with-toilet',
-] as const;
-
-export const PORTA_CABIN_SHOP_RAIL: import('./c16PanelCatalog').RelatedRailItem[] =
-  PORTA_CABIN_SHOP_RAIL_SLUGS.map((wanted) => {
-    const item = PORTA_CABIN_HUB_RAIL.find((row) => slugFromProductHref(row.href) === wanted);
-    if (!item) throw new Error(`PC-10 rail: no hub-rail row for ${wanted}`);
-    return item.imageAlt && item.imageAlt.includes('—')
-      ? { ...item, imageAlt: item.imageAlt.replace(/\s*—\s*/g, ', ') }
-      : item;
-  });
+// PC-03 (15 Aug 2026) held PORTA_CABIN_DS_RAIL here, PC-08 (15 Aug 2026) held
+// PORTA_CABIN_SKID_RAIL and PC-10 (15 Aug 2026) held PORTA_CABIN_SHOP_RAIL: the
+// double-story, skid-mounted and shop pages' own three-item Column 3 rails, each
+// named by its own build prompt. All three are deleted by the C01 rail-consistency
+// correction above, which restores RULING v2.1's full-cluster rail on every subpage.
+// None carried an authored string - each looked its rows up in PORTA_CABIN_HUB_RAIL
+// and normalised the alt punctuation, exactly as portaCabinSubpageRail() now does for
+// all ten pages at once. PC-08's rail also railed knock-down-porta-cabin before it was
+// built; the new `live` flag stops that.
+//
+// PC-09 held PORTA_CABIN_KNOCK_DOWN_RAIL and PC-10 held PORTA_CABIN_SHOP_RAIL. Both
+// landed on static-migration AFTER this correction was written and were folded in on
+// merge, taking the count from seven bespoke rails to nine. That is the clearest
+// evidence for this ticket: the pattern reproduces itself, because each new build
+// copies the last one's bespoke rail. A new cluster page now needs NO rail code at
+// all - add its slug to PORTA_CABIN_RAIL_ORDER and every sibling picks it up.
 
 export const PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH = (slug: string) =>
   PORTA_CABIN_SIBLING_YMAL(slug).map((item) =>
