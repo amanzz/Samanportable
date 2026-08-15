@@ -120,6 +120,13 @@ export function resolveSpecsKey(pageSlug: string | undefined | null): string | n
 const esc = (v: string | number): string =>
   String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+// PC-10 (15 Aug 2026) — spec-table detail cells may carry the copy pack's own
+// `**bold**` markdown (used twice, to flag "provision only" scope limits). No
+// existing row anywhere in c01/c04/c05/c06/c08 contains "**", so this is a
+// no-op everywhere except those two PC-10 rows.
+const escBold = (v: string | number): string =>
+  esc(v).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
 // Render order is fixed by the ticket; a group absent from a product is skipped.
 const GROUP_ORDER = [
   'Structure & Chassis',
@@ -164,7 +171,7 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
         return (
           `<tr class="${differingClass.trim()}">` +
             `<td class="${TD} font-semibold text-slate-700">${esc(row.component)}</td>` +
-            `<td class="${TD}">${esc(row.detail)}</td>` +
+            `<td class="${TD}">${escBold(row.detail)}</td>` +
           `</tr>`
         );
       })

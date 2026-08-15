@@ -1,0 +1,97 @@
+{
+ "/product/porta-cabins": {
+  "sha": "c0cfda75cb9b9ea7",
+  "markup": "7562cb3f6940ac75",
+  "bytes": 582288
+ },
+ "/product/porta-cabins/ms-porta-cabin": {
+  "sha": "f52548a5ea3e5d2f",
+  "markup": "e7daca6c188f0032",
+  "bytes": 541899
+ },
+ "/product/porta-cabins/steel-porta-cabin": {
+  "sha": "ccd8f0e6e5616d16",
+  "markup": "d49264e21cee7fd9",
+  "bytes": 535843
+ },
+ "/product/porta-cabins/luxury-porta-cabin": {
+  "sha": "6f1b99e98cf76514",
+  "markup": "5fd276d09a8f8902",
+  "bytes": 546506
+ },
+ "/product/porta-cabins/mini-porta-cabin": {
+  "sha": "7ba5f0d8e85723e4",
+  "markup": "639fa96e47d37394",
+  "bytes": 468297
+ },
+ "/product/porta-cabins/low-cost-porta-cabin": {
+  "sha": "1eb4316c6f4397e4",
+  "markup": "7cce4d0815117dbe",
+  "bytes": 538381
+ },
+ "/product/porta-cabins/porta-cabin-shop": {
+  "sha": "5d77610cf75545a8",
+  "markup": "d23d645f7948938f",
+  "bytes": 556062
+ },
+ "/product/porta-cabins/porta-cabin-with-toilet": {
+  "sha": "1f11be65e8808f36",
+  "markup": "927ec1c9704375a2",
+  "bytes": 525378
+ },
+ "/product/porta-cabins/gi-porta-cabin": {
+  "sha": "0aeafd58704c54f4",
+  "markup": "b719201e6fbc7535",
+  "bytes": 522205
+ },
+ "/product/porta-cabins/fire-rated-porta-cabin": {
+  "sha": "4bca0a66f97477aa",
+  "markup": "e16104bccaacbc80",
+  "bytes": 523510
+ },
+ "/product/porta-cabins/soundproof-porta-cabin": {
+  "sha": "2e4913c9a21f36ab",
+  "markup": "4426da1ec56acc19",
+  "bytes": 534766
+ },
+ "/product/porta-cabins/double-story-porta-cabin": {
+  "sha": "8ea51f9dfd6f5f90",
+  "markup": "bbb8b37bcfebb572",
+  "bytes": 522016
+ },
+ "/product/porta-cabins/puf-porta-cabin": {
+  "sha": "77a91e83eb61fb13",
+  "markup": "c316583eee6e15c6",
+  "bytes": 534917
+ },
+ "/product/porta-cabins/skid-mounted-porta-cabin": {
+  "sha": "109d713c2b8b930e",
+  "markup": "e48a933d9c3d2db7",
+  "bytes": 546200
+ },
+ "/product/container-offices": {
+  "sha": "a98457a7d2f545d5",
+  "markup": "ea9b085da49552c6",
+  "bytes": 577745
+ },
+ "/product/portable-office": {
+  "sha": "cc3d8c30873df084",
+  "markup": "fa7f80fafad6b26a",
+  "bytes": 553944
+ },
+ "/product/container-cafe": {
+  "sha": "2f5f300c54e4ec59",
+  "markup": "d1be45b80beb781c",
+  "bytes": 486768
+ },
+ "/product/portable-cabin": {
+  "sha": "d05bd9e3596f913d",
+  "markup": "9060ab86c0de5085",
+  "bytes": 500468
+ },
+ "/product/puf-panel": {
+  "sha": "7299084592a943dc",
+  "markup": "297135cfd4a27e25",
+  "bytes": 192258
+ }
+}

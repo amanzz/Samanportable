@@ -496,18 +496,45 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  // PC-10 (15 Aug 2026) - Section 2 "buyer orientation" rewrite from copy pack v1
+  // section 3, verbatim, SHA-256 verified (SECTION2_H2 0f6fa307, SECTION2_P1
+  // 6f914343, SECTION2_P2 8c584530). Two paragraphs on `bodyParagraphs`: the first
+  // carries no link, the second carries both approved link-map anchors (MS porta
+  // cabin, /contact). Split card fields (SECTION2_CARD_*) verified separately; the
+  // card CTA reuses the same /contact destination as the top block's CTA, per the
+  // build prompt's own link map (five unique destinations, plus /contact twice).
+  // Card image is manifest slot 42, the native 16:9 teal-exterior render - no crop,
+  // no reuse from the gallery or Description tab.
   'porta-cabin-shop': {
-    heading: 'Why choose the Porta Cabin Shop',
-    body: (
-      <>
-        The retail configuration of our newly fabricated cabin, planned around a front service counter with staff preparation and storage behind it. It carries 8–12 mm plywood with laminate or 6–8 mm HPL panels, a 4 mm ACP or decorative ceiling, 3–4 mm LVT flooring and large service glazing with a lockable counter opening. Choose it when customers are served at the cabin; the <Link className={linkClass} href={href('portacabin-office')}>Portacabin Office</Link> covers staff-only working space.
-      </>
-    ),
-    comparison: (
-      <>
-        Selling food or drink rather than goods? The <Link className={linkClass} href="/product/container-cafe">container cafe range</Link> is planned around kitchen services instead.
-      </>
-    ),
+    heading: 'Why a Trading Cabin Is Not an Office Cabin With a Window Cut In',
+    bodyParagraphs: [
+      (
+        <>
+          An office cabin is designed for the people inside it. A shop is designed for the person standing outside it, and nearly every specification choice follows from that. The opening has to be wide enough to serve through and secure enough to close. The floor takes trolleys, spills and customer traffic rather than office chairs. The face your customer looks at is a finish, not a lining.
+        </>
+      ),
+      (
+        <>
+          This is also why cutting a service window into a finished office cabin rarely ends well. A large opening in a wall never framed for it weakens the panel run, and a cut edge made on site cannot be sealed to the standard of a factory edge. If your staff work inside and nobody buys anything at the wall, a <Link className={linkClass} href={href('ms-porta-cabin')}>mild steel porta cabin</Link> is the simpler and cheaper build. If you are trading from it, tell us your frontage width and your closing arrangement, and we will <Link className={linkClass} href="/contact">send a fixed quotation within 48 hours</Link>.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/porta-cabin-shop/section2/porta-cabin-shop-section2-frontage-teal.webp',
+      imageAlt: 'Teal shop cabin with a wide propped service opening, a counter ledge and a full-height glazed customer door',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'The Frontage Is the Part You Are Actually Buying',
+      body: 'Four decisions set what your shop looks like from the pavement: how much of the front is glazed, whether you serve through a counter opening or across a floor, how the unit locks overnight, and where the signage sits.',
+      bullets: [
+        'Large aluminium service glazing with a lockable counter opening',
+        'Staff or customer door, positioned for your trading pattern',
+        'Lockable service shutter for closing the unit overnight',
+        'Signage zones and equipment power points set to your layout',
+      ],
+      ctaLabel: 'Tell us your frontage width and we will price it',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   // PC-04 (14 Aug 2026) — Section 2 "buyer orientation" copy from the approved
   // draft v2, verbatim, mapped onto this existing heading/body/comparison card.

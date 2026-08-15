@@ -36,6 +36,7 @@ import soundproofPortaCabinApplications from '@/data/products/soundproof-porta-c
 import giPortaCabinApplications from '@/data/products/gi-porta-cabin-applications.json';
 import doubleStoryPortaCabinApplications from '@/data/products/double-story-porta-cabin-applications.json';
 import skidMountedPortaCabinApplications from '@/data/products/skid-mounted-porta-cabin-applications.json';
+import portaCabinShopApplications from '@/data/products/porta-cabin-shop-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -244,6 +245,10 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // this slug (checked), but registered AFTER both Section-H spreads anyway,
   // matching every sibling above.
   'skid-mounted-porta-cabin': skidMountedPortaCabinApplications as ApplicationsData,
+  // PC-10 (15 Aug 2026) — registered AFTER the Section-H spreads and every earlier
+  // cluster entry, per the documented PC-01 failure mode (silent key overwrite if
+  // registered before them). Six panels, one per published size.
+  'porta-cabin-shop': portaCabinShopApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -906,12 +911,20 @@ export function PortaCabinVariantHero({
     { label: 'Size', value: heroActive.dims },
     // Material: data → preset → the deployed literal. Absent on every product except
     // portable-office (W3-A Ruling 1) → byte-identical Material cell everywhere else.
-    { label: 'Material', value: data.materialLabel || preset.materialLabel || 'MS Frame · Insulated Panels' },
+    // PC-10 — `frontageLabel` replaces this cell (label and value) outright, for a
+    // product whose FEATURE_CELLS table names a frontage line, not a material line.
+    data.frontageLabel
+      ? { label: 'Frontage', value: data.frontageLabel }
+      : { label: 'Material', value: data.materialLabel || preset.materialLabel || 'MS Frame · Insulated Panels' },
     { label: 'Delivery', value: data.deliveryLabel || '7–21 Working Days' },
     // PC-01 (14 Aug 2026) — Coverage is data-driven the same way Material and
     // Delivery already are. Absent on every product except ms-porta-cabin, so the
     // deployed literal below is what every other page still renders.
-    { label: 'Coverage', value: data.coverageLabel || 'Bangalore · Delhi NCR' },
+    // PC-10 — `fitOutLabel` replaces this cell (label and value) outright, for a
+    // product whose FEATURE_CELLS table names a fit-out line, not a coverage line.
+    data.fitOutLabel
+      ? { label: 'Fit-out', value: data.fitOutLabel }
+      : { label: 'Coverage', value: data.coverageLabel || 'Bangalore · Delhi NCR' },
     { label: 'Brand', value: 'SAMAN Portable' },
     // Application: omitted, not defaulted, when the product has no approved
     // per-size use-case copy. Filtered below so the cell never renders empty.
