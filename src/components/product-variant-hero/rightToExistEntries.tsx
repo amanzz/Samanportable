@@ -701,18 +701,48 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },
+  // LC-00 (16 Aug 2026) - Section 2 "buyer orientation" rewrite from build prompt
+  // v1 section 3.2/3.3, verbatim, SHA-256 verified against every granular field in
+  // the ticket (only the whole-document Description-tab convenience hash was
+  // stale; this Section 2 copy is unaffected). Two paragraphs on `bodyParagraphs`:
+  // the second carries the one approved link, `a labour shed` -> labor-sheds.
+  // Split card CTA reuses the same /contact destination as the top block's CTA,
+  // per the ticket's own link map (section 10).
   'labor-colony': {
-    heading: 'Why the colony page and not a single building',
-    body: (
-      <>
-        This page carries the whole worker housing site, dormitory buildings plus the toilet blocks, kitchens and services that make a colony liveable, so a contractor plans the site once instead of buying buildings one at a time. Every building on it is newly fabricated steel in the six approved configurations. Choose it when your brief is the site, not one block.
-      </>
-    ),
-    comparison: (
-      <>
-        Need only one open sleeping hall rather than a full site? The <Link className={linkClass} href={labourHref('labor-sheds')}>Labor Sheds page</Link> carries that single-hall building.
-      </>
-    ),
+    heading: 'Why This Page Covers a Whole Colony, Not a Single Building',
+    bodyParagraphs: [
+      (
+        <>
+          Most buyers reach this page with a headcount, not a drawing. That is the right place to start. A colony is a settlement, so the real question is how many blocks you need. Then you decide how they sit on the plot. After that, you fix where the toilets, kitchen and site office go. Get that order wrong and the colony works badly for years. So we plan the whole site first and price the buildings second.
+        </>
+      ),
+      (
+        <>
+          A single structure is a different purchase altogether. If you only need one building standing on its own, <Link className={linkClass} href={labourHref('labor-sheds')}>a labour shed</Link> answers that need directly and costs far less. This page is instead for the buyer who must house a workforce and run a site around it. Because every plot differs, we start from your numbers. Send us your peak headcount, plot size and location. Then we return a block mix, a layout and a fixed written price.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/labor-colony/section2/labour-colony-block-site-context-16x9.webp',
+      imageAlt: 'Two-storey labour colony block on a paved site, with external stair and railed walkways to both floors',
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: 'How Many Blocks Does Your Site Actually Need?',
+      body: 'First divide your peak headcount by the bunks in one block. Then add a block for growth, because sites almost always grow. So a 300-worker site usually runs two or three dormitory blocks plus its services.',
+      bullets: [
+        'Count your peak workers, not just the day-one crew',
+        'Keep the sleeping blocks well away from the kitchen',
+        'Leave a clear fire route and ambulance access lane',
+        'Fix the toilet block ratio before you place the order',
+      ],
+      // No CTA label text is given in the ticket (section 3.3 hashes the H3,
+      // paragraph and four bullets, not a CTA string) - "request a fixed
+      // 48-hour quotation" is the exact phrase already reused verbatim on
+      // three other pages in this file for the same /contact destination,
+      // not authored fresh for this entry.
+      ctaLabel: 'request a fixed 48-hour quotation',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'labor-sheds': {
     heading: 'Why choose the shed over the room block',

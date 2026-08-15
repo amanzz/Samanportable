@@ -1,0 +1,150 @@
+{
+ "t1": [
+  [
+   "Bottom frame",
+   "Platform common",
+   "MS channel, RHS or formed sections to the signed structural drawing",
+   "Final member sizes come from your project's structural design, not from a nominal section"
+  ],
+  [
+   "Bottom stiffeners",
+   "Platform common",
+   "RHS, channel or angle stiffeners to the approved floor grid",
+   "Spacing follows partitions, bunk posts and openings; site cutting needs approval"
+  ],
+  [
+   "Floor frame",
+   "Product-specific",
+   "Semi-permanent: RCC or approved slab. Relocatable: steel joists with cement board or marine-ply class deck",
+   "Each block declares its own floor family; dormitory and wet blocks differ"
+  ],
+  [
+   "Top frame and corner posts",
+   "Platform common",
+   "Bolted MS/RHS panel frame, container modules or light PEB blocks as selected",
+   "The selected system decides the frame, so confirm it before fabrication"
+  ],
+  [
+   "Roof and roof stiffeners",
+   "Product-specific",
+   "Insulated PPGI/PPGL sheet or sandwich-panel roof, defined slope, flashing, gutters",
+   "Build-up is coordinated with monsoon drainage and heat gain"
+  ],
+  [
+   "Exterior walls",
+   "Product-specific",
+   "GI/PPGI cladding with liner, or nominal 40-80 mm PUF, EPS or mineral-wool sandwich panel",
+   "These are alternatives; the panel is selected per block and project brief"
+  ],
+  [
+   "Interior walls and ceiling",
+   "Product-specific",
+   "Dry areas: prelaminated or cement board. Wet and canteen areas: washable moisture-tolerant board or approved liner",
+   "Wet areas are not represented by a dry-room lining"
+  ],
+  [
+   "Wall and roof insulation",
+   "Product-specific",
+   "Nominal 40-80 mm PUF, EPS or mineral-wool class",
+   "Thickness is confirmed per order against climate and fire strategy"
+  ],
+  [
+   "Floor base and finish",
+   "Product-specific",
+   "Dry blocks: steel deck with cement board or slab. Wet areas: cementitious or RCC base with waterproofing and falls",
+   "Wet-area falls and drainage must be fixed early, not on site"
+  ],
+  [
+   "Lifting and handling",
+   "Common",
+   "Designed MS lifting hooks or lugs matched to the completed unit weight",
+   "Handle only by the approved lifting drawing"
+  ],
+  [
+   "Welding and fabrication",
+   "Common",
+   "Welded MS fabrication with cleaned joints, safe edges and dimensional inspection",
+   "Coating touch-up is completed before panel closure and dispatch"
+  ],
+  [
+   "Painting and coating",
+   "Common",
+   "One red-oxide primer coat plus two anti-rust enamel coats on prepared MS",
+   "Coastal or chemical exposure may need an upgraded system, confirmed at quotation"
+  ]
+ ],
+ "t2": [
+  [
+   "Main and service doors",
+   "Product-specific",
+   "MS, insulated or flush doors by dormitory, canteen, wet-block and admin use",
+   "Size, swing, seal and lockset are frozen in the opening schedule"
+  ],
+  [
+   "Windows and service openings",
+   "Product-specific",
+   "Aluminium, uPVC or steel windows, high-level louvres and screened vents by room function",
+   "Opposing openings are used where cross-ventilation is intended"
+  ],
+  [
+   "Grills and mosquito mesh",
+   "Platform common",
+   "Removable mesh, louvres, restrictors or protected MS grilles where the schedule requires",
+   "Not assumed on every opening; escape and cleaning access are preserved"
+  ],
+  [
+   "Electrical wiring",
+   "Common",
+   "Concealed PVC-insulated copper, typically 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm higher loads",
+   "Final circuits follow the approved load schedule"
+  ],
+  [
+   "Electrical protection",
+   "Common",
+   "Distribution board with MCB and RCCB protection, earthing, segregated circuits",
+   "Wet-area circuits are never combined with general socket circuits"
+  ],
+  [
+   "Electrical fittings",
+   "Product-specific",
+   "LED lighting, fan points, socket outlets and equipment points scheduled per drawing",
+   "Point counts follow the room layout you sign off"
+  ],
+  [
+   "Ventilation and cooling",
+   "Product-specific",
+   "Natural cross-ventilation with fans as scheduled; mechanical cooling only where quoted",
+   "Air-conditioning is an option, never assumed"
+  ],
+  [
+   "Plumbing and sanitary",
+   "Product-specific",
+   "Water basis, storage, pumps, CPVC/PPR supply, uPVC soil and waste, wash points",
+   "Seat and shower counts follow the ratio your project or client sets"
+  ],
+  [
+   "Layout and configuration",
+   "Product-specific",
+   "Dormitory, toilet and bath, canteen, kitchen, admin, first aid, security, stores, laundry, circulation",
+   "The hub coordinates these; each child page carries its own framework"
+  ],
+  [
+   "Quality checks",
+   "Common",
+   "Pre-dispatch checks on dimensions, welds, coating, roof drainage, sealing, doors, windows and electrical continuity",
+   "Specialist certificates are verified only where the contract requires"
+  ],
+  [
+   "Warranty",
+   "Common",
+   "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation",
+   "Verbatim company fact; do not alter"
+  ],
+  [
+   "Excluded from block price",
+   "Scope",
+   "Land, levelling, foundations, external water, drainage, incoming power, roads, loose furniture, transport, statutory approvals unless quoted",
+   "Read this before comparing prices"
+  ]
+ ]
+}

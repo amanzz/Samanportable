@@ -1,0 +1,452 @@
+[
+  {
+    "sizeSlug": "60x24-gplus1",
+    "label": "60x24 ft G+1",
+    "dims": "60x24 ft G+1",
+    "areaSqft": 2880,
+    "priceExGst": 1944000,
+    "priceInclGst": 2293920,
+    "sku": "SP-90-24-LC-24",
+    "featureCells": [
+      {
+        "label": "Built-up area",
+        "value": "2,880 sq ft"
+      },
+      {
+        "label": "Sleeping capacity",
+        "value": "58 bunks"
+      },
+      {
+        "label": "Rooms and floors",
+        "value": "24 rooms, G+1"
+      },
+      {
+        "label": "Level ground needed",
+        "value": "about 64x28 ft"
+      },
+      {
+        "label": "Price ex-GST",
+        "value": "Rs 19,44,000"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp",
+        "alt": "Two-storey labour colony block with cream panels, grey steel frame and railed walkways on both levels",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-stair-end-view.webp",
+        "alt": "End view of the 60x24 ft colony block showing the external steel stair to the first-floor walkway",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-opposite-end-elevation.webp",
+        "alt": "Blank gable end elevation of the 60x24 ft colony block with walkway decks returning on both sides",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-room-four-bunk-layout.webp",
+        "alt": "Colony room with two double-tier bunks, wardrobe unit, ceiling fan and tube light",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-room-entrance-view.webp",
+        "alt": "Colony room seen from the doorway with two double-tier bunks and tall lockers on the left",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-room-lockers-and-window.webp",
+        "alt": "Colony room showing louvred lockers, sliding window and socket points on the panel wall",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ]
+  },
+  {
+    "sizeSlug": "90x24-gplus1",
+    "label": "90x24 ft G+1",
+    "dims": "90x24 ft G+1",
+    "areaSqft": 4320,
+    "priceExGst": 2916000,
+    "priceInclGst": 3440880,
+    "sku": "SP-90-24-LC-24",
+    "featureCells": [
+      {
+        "label": "Built-up area",
+        "value": "4,320 sq ft"
+      },
+      {
+        "label": "Sleeping capacity",
+        "value": "86 bunks"
+      },
+      {
+        "label": "Rooms and floors",
+        "value": "36 rooms, G+1"
+      },
+      {
+        "label": "Level ground needed",
+        "value": "about 94x28 ft"
+      },
+      {
+        "label": "Price ex-GST",
+        "value": "Rs 29,16,000"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/labor-colony/90x24-gplus1/labour-colony-90x24-gplus1-front-left-three-quarter.webp",
+        "alt": "Two-storey labour colony block in cream panels with charcoal steel frame and full-length railed walkways",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus1/labour-colony-90x24-gplus1-front-elevation.webp",
+        "alt": "Front elevation of the 90x24 ft colony block showing repeating door and window bays on both floors",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus1/labour-colony-90x24-gplus1-x-stair-end-elevation.webp",
+        "alt": "End elevation of the 90x24 ft colony block with a crossing external steel stair serving both levels",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus1/labour-colony-90x24-gplus1-opposite-end-elevation.webp",
+        "alt": "Blank gable end elevation of the 90x24 ft colony block with walkway decks on both sides",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus1/labour-colony-90x24-gplus1-dormitory-bunk-rows.webp",
+        "alt": "Long colony dormitory with double-tier bunks in two rows, wall fans and a steel locker bank",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus1/labour-colony-90x24-gplus1-dormitory-entrance-view.webp",
+        "alt": "Colony dormitory seen from the entrance with bunk rows either side and lockers at the far wall",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ]
+  },
+  {
+    "sizeSlug": "90x24-gplus2",
+    "label": "90x24 ft G+2",
+    "dims": "90x24 ft G+2",
+    "areaSqft": 6480,
+    "priceExGst": 4374000,
+    "priceInclGst": 5161320,
+    "sku": "SP-90-24-LC-24",
+    "featureCells": [
+      {
+        "label": "Built-up area",
+        "value": "6,480 sq ft"
+      },
+      {
+        "label": "Sleeping capacity",
+        "value": "129 bunks"
+      },
+      {
+        "label": "Rooms and floors",
+        "value": "54 rooms, G+2"
+      },
+      {
+        "label": "Level ground needed",
+        "value": "about 94x28 ft"
+      },
+      {
+        "label": "Price ex-GST",
+        "value": "Rs 43,74,000"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/labor-colony/90x24-gplus2/labour-colony-90x24-gplus2-front-left-three-quarter.webp",
+        "alt": "Three-storey labour colony block in cream panels with tan steel frame and railed walkways on each level",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus2/labour-colony-90x24-gplus2-front-elevation.webp",
+        "alt": "Front elevation of the three-storey 90x24 ft colony block with five door and window bays per floor",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus2/labour-colony-90x24-gplus2-x-stair-end-elevation.webp",
+        "alt": "End elevation of the three-storey colony block with a full-height crossing external steel stair",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus2/labour-colony-90x24-gplus2-opposite-end-elevation.webp",
+        "alt": "Blank gable end elevation of the three-storey 90x24 ft colony block showing three panel bands",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus2/labour-colony-90x24-gplus2-dormitory-bunk-rows.webp",
+        "alt": "Colony dormitory with four double-tier bunks, a five-door locker bank and wall-mounted fans",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/90x24-gplus2/labour-colony-90x24-gplus2-dormitory-entrance-view.webp",
+        "alt": "Colony dormitory from the doorway with bunks either side and tall lockers flanking the entrance",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ]
+  },
+  {
+    "sizeSlug": "120x24-gplus1",
+    "label": "120x24 ft G+1",
+    "dims": "120x24 ft G+1",
+    "areaSqft": 5760,
+    "priceExGst": 3888000,
+    "priceInclGst": 4587840,
+    "sku": "SP-90-24-LC-24",
+    "featureCells": [
+      {
+        "label": "Built-up area",
+        "value": "5,760 sq ft"
+      },
+      {
+        "label": "Sleeping capacity",
+        "value": "115 bunks"
+      },
+      {
+        "label": "Rooms and floors",
+        "value": "48 rooms, G+1"
+      },
+      {
+        "label": "Level ground needed",
+        "value": "about 124x28 ft"
+      },
+      {
+        "label": "Price ex-GST",
+        "value": "Rs 38,88,000"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/labor-colony/120x24-gplus1/labour-colony-120x24-gplus1-front-left-three-quarter.webp",
+        "alt": "Two-storey labour colony block with white panels, navy steel frame and railed walkways on both levels",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus1/labour-colony-120x24-gplus1-front-elevation.webp",
+        "alt": "Front elevation of the 120x24 ft colony block showing eight door and window bays on each floor",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus1/labour-colony-120x24-gplus1-x-stair-end-elevation.webp",
+        "alt": "End elevation of the 120x24 ft colony block with a crossing external steel stair to the upper walkway",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus1/labour-colony-120x24-gplus1-front-right-three-quarter.webp",
+        "alt": "Long two-storey colony block viewed from the right with the blank gable end nearest the camera",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus1/labour-colony-120x24-gplus1-dormitory-bunk-rows.webp",
+        "alt": "Colony dormitory with four double-tier bunks, tall lockers either side of the window and wall fans",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus1/labour-colony-120x24-gplus1-dormitory-entrance-view.webp",
+        "alt": "Colony dormitory from the doorway with bunk rows either side and locker banks at the far wall",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ]
+  },
+  {
+    "sizeSlug": "118x30-gplus1",
+    "label": "118x30 ft G+1",
+    "dims": "118x30 ft G+1",
+    "areaSqft": 7080,
+    "priceExGst": 4779000,
+    "priceInclGst": 5639220,
+    "sku": "SP-90-24-LC-24",
+    "featureCells": [
+      {
+        "label": "Built-up area",
+        "value": "7,080 sq ft"
+      },
+      {
+        "label": "Sleeping capacity",
+        "value": "142 bunks"
+      },
+      {
+        "label": "Rooms and floors",
+        "value": "59 rooms, G+1"
+      },
+      {
+        "label": "Level ground needed",
+        "value": "about 122x34 ft"
+      },
+      {
+        "label": "Price ex-GST",
+        "value": "Rs 47,79,000"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-front-left-three-quarter.webp",
+        "alt": "Two-storey labour colony block in cream panels with sage-green steel frame and railed walkways",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-front-elevation.webp",
+        "alt": "Front elevation of the 118x30 ft colony block with repeating door and window bays on both floors",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-stair-end-elevation.webp",
+        "alt": "End elevation of the 118x30 ft colony block showing the crossing external steel stair",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-opposite-end-elevation.webp",
+        "alt": "Blank gable end elevation of the 118x30 ft colony block with walkway bays on both long faces",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-dormitory-bunk-rows.webp",
+        "alt": "Wide colony dormitory with double-tier bunks in two rows, steel lockers and a central aisle",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-dormitory-entrance-view.webp",
+        "alt": "Colony dormitory from the doorway with bunks either side, lockers at the corners and a window ahead",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ]
+  },
+  {
+    "sizeSlug": "120x24-gplus2",
+    "label": "120x24 ft G+2",
+    "dims": "120x24 ft G+2",
+    "areaSqft": 8640,
+    "priceExGst": 5832000,
+    "priceInclGst": 6881760,
+    "sku": "SP-90-24-LC-24",
+    "featureCells": [
+      {
+        "label": "Built-up area",
+        "value": "8,640 sq ft"
+      },
+      {
+        "label": "Sleeping capacity",
+        "value": "173 bunks"
+      },
+      {
+        "label": "Rooms and floors",
+        "value": "72 rooms, G+2"
+      },
+      {
+        "label": "Level ground needed",
+        "value": "about 124x28 ft"
+      },
+      {
+        "label": "Price ex-GST",
+        "value": "Rs 58,32,000"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/labor-colony/120x24-gplus2/labour-colony-120x24-gplus2-front-left-three-quarter.webp",
+        "alt": "Three-storey labour colony block in cream panels with tan steel frame and railed walkways on each level",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus2/labour-colony-120x24-gplus2-front-elevation.webp",
+        "alt": "Front elevation of the three-storey 120x24 ft colony block with seven door and window bays per floor",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus2/labour-colony-120x24-gplus2-x-stair-end-elevation.webp",
+        "alt": "End elevation of the three-storey 120x24 ft colony block with a full-height crossing steel stair",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus2/labour-colony-120x24-gplus2-front-right-three-quarter.webp",
+        "alt": "Three-storey colony block viewed from the right with the blank gable end nearest the camera",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus2/labour-colony-120x24-gplus2-dormitory-bunk-rows.webp",
+        "alt": "Colony dormitory with double-tier bunks, tan lockers below the window and wall-mounted fans",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-colony/120x24-gplus2/labour-colony-120x24-gplus2-dormitory-entrance-view.webp",
+        "alt": "Colony dormitory from the doorway with bunk rows either side and a locker bank under the window",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ]
+  }
+]

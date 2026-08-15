@@ -38,6 +38,7 @@ import doubleStoryPortaCabinApplications from '@/data/products/double-story-port
 import skidMountedPortaCabinApplications from '@/data/products/skid-mounted-porta-cabin-applications.json';
 import knockDownPortaCabinApplications from '@/data/products/knock-down-porta-cabin-applications.json';
 import portaCabinShopApplications from '@/data/products/porta-cabin-shop-applications.json';
+import laborColonyApplications from '@/data/products/labor-colony-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -257,6 +258,11 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // cluster entry, per the documented PC-01 failure mode (silent key overwrite if
   // registered before them). Six panels, one per published size.
   'porta-cabin-shop': portaCabinShopApplications as ApplicationsData,
+  // LC-00 (16 Aug 2026) — labor-colony hub, build prompt v1 section 7. Six
+  // panels, one per published size. Registered after every earlier entry, per
+  // the documented PC-01 failure mode (silent key overwrite if registered
+  // before the Section-H spreads).
+  'labor-colony': laborColonyApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -915,7 +921,12 @@ export function PortaCabinVariantHero({
     </Card>
   );
 
-  const FEATURE_CELLS = [
+  // LC-00 (16 Aug 2026) — a variant carrying its own `featureCells` replaces the
+  // standard five-cell set outright, for a product whose approved FEATURE_CELLS
+  // table names entirely different concepts. Absent everywhere else, so the
+  // standard computation below is unreached and byte-identical on every other
+  // product.
+  const FEATURE_CELLS = heroActive.featureCells || [
     { label: 'Size', value: heroActive.dims },
     // Material: data → preset → the deployed literal. Absent on every product except
     // portable-office (W3-A Ruling 1) → byte-identical Material cell everywhere else.

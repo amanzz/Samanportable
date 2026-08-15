@@ -43,6 +43,13 @@ interface C01SpecificationRow {
   component: string;
   detail: string;
   differsFromHub: boolean;
+  /** LC-00 (16 Aug 2026) — two extra columns for a product whose approved spec
+      table names a scope class and a buyer-facing "what it means" column
+      alongside Component/Baseline specification. Present only when the whole
+      entry's table is four-column (checked once, not per row); absent on
+      every other entry keeps the plain two-column table byte-identical. */
+  scopeClass?: string;
+  meaning?: string;
 }
 interface C01SpecificationEntry {
   name: string;
@@ -160,6 +167,11 @@ function specGroupCard(title: string, fields: Record<string, string | number>): 
 }
 
 function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
+  // LC-00 — four-column mode, checked once for the whole entry (a table is
+  // either two-column or four-column throughout, never mixed row to row).
+  // Absent on every entry except labor-colony → every other table's markup
+  // below is unreached and byte-identical.
+  const fourColumn = entry.specifications.some((row) => row.scopeClass !== undefined);
   const groups = Array.from(new Set(entry.specifications.map((row) => row.group)));
   const cards = groups.map((group) => {
     const rows = entry.specifications
@@ -168,10 +180,15 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
         const differingClass = row.differsFromHub
           ? ' border-l-4 border-l-emerald-500 bg-emerald-50/70'
           : '';
+        const extraCols = fourColumn
+          ? `<td class="${TD}">${esc(row.scopeClass || '')}</td>` +
+            `<td class="${TD}">${esc(row.meaning || '')}</td>`
+          : '';
         return (
           `<tr class="${differingClass.trim()}">` +
             `<td class="${TD} font-semibold text-slate-700">${esc(row.component)}</td>` +
             `<td class="${TD}">${escBold(row.detail)}</td>` +
+            extraCols +
           `</tr>`
         );
       })
@@ -182,11 +199,15 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
       ? `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>`
       : `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>`;
     const th = entry.premiumTables ? '' : ` class="${TH}"`;
+    const extraHeaders = fourColumn
+      ? `<th${th}>Scope class</th><th${th}>What it means for you</th>`
+      : '';
     return (
       `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
         `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group)}</h4>` +
         tableOpen +
-          `<th${th}>Component</th><th${th}>Detail</th>` +
+          `<th${th}>Component</th><th${th}>${fourColumn ? 'Baseline specification' : 'Detail'}</th>` +
+          extraHeaders +
         `</tr></thead><tbody>${rows}</tbody></table></div>` +
       `</section>`
     );

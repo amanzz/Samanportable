@@ -3966,6 +3966,213 @@
           "height": 900
         }
       ]
+    },
+    "labor-colony": {
+      "name": "Labour Colony",
+      "sheet": "SAMAN_Labour_Colony_8_Pages_6_Sizes_Technical_Specs_Priced",
+      "canonical": "https://www.samanportable.com/product/labor-colony",
+      "specifications": [
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Bottom frame",
+          "detail": "MS channel, RHS or formed sections to the signed structural drawing",
+          "scopeClass": "Platform common",
+          "meaning": "Final member sizes come from your project's structural design, not from a nominal section",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Bottom stiffeners",
+          "detail": "RHS, channel or angle stiffeners to the approved floor grid",
+          "scopeClass": "Platform common",
+          "meaning": "Spacing follows partitions, bunk posts and openings; site cutting needs approval",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Floor frame",
+          "detail": "Semi-permanent: RCC or approved slab. Relocatable: steel joists with cement board or marine-ply class deck",
+          "scopeClass": "Product-specific",
+          "meaning": "Each block declares its own floor family; dormitory and wet blocks differ",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Top frame and corner posts",
+          "detail": "Bolted MS/RHS panel frame, container modules or light PEB blocks as selected",
+          "scopeClass": "Platform common",
+          "meaning": "The selected system decides the frame, so confirm it before fabrication",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Roof and roof stiffeners",
+          "detail": "Insulated PPGI/PPGL sheet or sandwich-panel roof, defined slope, flashing, gutters",
+          "scopeClass": "Product-specific",
+          "meaning": "Build-up is coordinated with monsoon drainage and heat gain",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Exterior walls",
+          "detail": "GI/PPGI cladding with liner, or nominal 40-80 mm PUF, EPS or mineral-wool sandwich panel",
+          "scopeClass": "Product-specific",
+          "meaning": "These are alternatives; the panel is selected per block and project brief",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Interior walls and ceiling",
+          "detail": "Dry areas: prelaminated or cement board. Wet and canteen areas: washable moisture-tolerant board or approved liner",
+          "scopeClass": "Product-specific",
+          "meaning": "Wet areas are not represented by a dry-room lining",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Wall and roof insulation",
+          "detail": "Nominal 40-80 mm PUF, EPS or mineral-wool class",
+          "scopeClass": "Product-specific",
+          "meaning": "Thickness is confirmed per order against climate and fire strategy",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Floor base and finish",
+          "detail": "Dry blocks: steel deck with cement board or slab. Wet areas: cementitious or RCC base with waterproofing and falls",
+          "scopeClass": "Product-specific",
+          "meaning": "Wet-area falls and drainage must be fixed early, not on site",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Lifting and handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight",
+          "scopeClass": "Common",
+          "meaning": "Handle only by the approved lifting drawing",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Welding and fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges and dimensional inspection",
+          "scopeClass": "Common",
+          "meaning": "Coating touch-up is completed before panel closure and dispatch",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Painting and coating",
+          "detail": "One red-oxide primer coat plus two anti-rust enamel coats on prepared MS",
+          "scopeClass": "Common",
+          "meaning": "Coastal or chemical exposure may need an upgraded system, confirmed at quotation",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Main and service doors",
+          "detail": "MS, insulated or flush doors by dormitory, canteen, wet-block and admin use",
+          "scopeClass": "Product-specific",
+          "meaning": "Size, swing, seal and lockset are frozen in the opening schedule",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Windows and service openings",
+          "detail": "Aluminium, uPVC or steel windows, high-level louvres and screened vents by room function",
+          "scopeClass": "Product-specific",
+          "meaning": "Opposing openings are used where cross-ventilation is intended",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Grills and mosquito mesh",
+          "detail": "Removable mesh, louvres, restrictors or protected MS grilles where the schedule requires",
+          "scopeClass": "Platform common",
+          "meaning": "Not assumed on every opening; escape and cleaning access are preserved",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Electrical wiring",
+          "detail": "Concealed PVC-insulated copper, typically 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm higher loads",
+          "scopeClass": "Common",
+          "meaning": "Final circuits follow the approved load schedule",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB and RCCB protection, earthing, segregated circuits",
+          "scopeClass": "Common",
+          "meaning": "Wet-area circuits are never combined with general socket circuits",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Electrical fittings",
+          "detail": "LED lighting, fan points, socket outlets and equipment points scheduled per drawing",
+          "scopeClass": "Product-specific",
+          "meaning": "Point counts follow the room layout you sign off",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Ventilation and cooling",
+          "detail": "Natural cross-ventilation with fans as scheduled; mechanical cooling only where quoted",
+          "scopeClass": "Product-specific",
+          "meaning": "Air-conditioning is an option, never assumed",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Plumbing and sanitary",
+          "detail": "Water basis, storage, pumps, CPVC/PPR supply, uPVC soil and waste, wash points",
+          "scopeClass": "Product-specific",
+          "meaning": "Seat and shower counts follow the ratio your project or client sets",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Layout and configuration",
+          "detail": "Dormitory, toilet and bath, canteen, kitchen, admin, first aid, security, stores, laundry, circulation",
+          "scopeClass": "Product-specific",
+          "meaning": "The hub coordinates these; each child page carries its own framework",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks on dimensions, welds, coating, roof drainage, sealing, doors, windows and electrical continuity",
+          "scopeClass": "Common",
+          "meaning": "Specialist certificates are verified only where the contract requires",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation",
+          "scopeClass": "Common",
+          "meaning": "Verbatim company fact; do not alter",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Doors, windows, services, scope and site",
+          "component": "Excluded from block price",
+          "detail": "Land, levelling, foundations, external water, drainage, incoming power, roads, loose furniture, transport, statutory approvals unless quoted",
+          "scopeClass": "Scope",
+          "meaning": "Read this before comparing prices",
+          "differsFromHub": false
+        }
+      ],
+      "narrative": "Two things in these tables decide most of your cost and most of your risk. The first is the envelope: panel type and thickness follow your climate and your project's fire brief, so we confirm them per order instead of claiming one build-up suits every site. The second is the split between what sits inside the block price and what belongs to your civil scope. Foundations, external utilities and drainage are project scope unless your quotation says otherwise. Read the exclusions before you compare our price with anyone else's.",
+      "diagram": {
+        "src": "/images/products/labor-colony/specifications/labour-colony-service-network-16x9.webp",
+        "alt": "Service network diagram showing water storage, sanitation, canteen supply and site admin connecting to the colony core blocks, with two planned expansion slots",
+        "caption": "Labour colony service network, illustrative only, not for construction. Source: SAMAN_Labour_Colony_8_Pages_6_Sizes_Technical_Specs_Priced.",
+        "width": 1920,
+        "height": 1080
+      }
     }
   }
 }

@@ -45,6 +45,7 @@ import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 import { PORTA_CABIN_HUB_RAIL } from '../../../lib/portaCabinClusterRail';
+import { LABOR_COLONY_HUB_RAIL } from '../../../lib/labourColonyClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
@@ -558,6 +559,12 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
     // related-products list (7 of the 10 are not yet live pages).
     if (category === 'porta-cabins') {
       return PORTA_CABIN_HUB_RAIL;
+    }
+    // LC-00 (16 Aug 2026) — the labour colony hub's own Column 3 rail, build
+    // prompt v1 section 4.3: exactly three tabs, not the live related-products
+    // list (which would otherwise pull in unbuilt sibling URLs).
+    if (category === 'labor-colony') {
+      return LABOR_COLONY_HUB_RAIL;
     }
 
     return transformedRelatedProducts.map((relatedProduct) => ({
