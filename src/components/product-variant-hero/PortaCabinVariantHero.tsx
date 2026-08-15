@@ -30,6 +30,7 @@ import { getVariantPreset, resolveVariantProductName, resolveVariantVideo } from
 import portaCabinsApplications from '@/data/products/porta-cabins-applications.json';
 import msPortaCabinApplications from '@/data/products/ms-porta-cabin-applications.json';
 import portaCabinWithToiletApplications from '@/data/products/porta-cabin-with-toilet-applications.json';
+import giPortaCabinApplications from '@/data/products/gi-porta-cabin-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -50,6 +51,12 @@ interface ApplicationPanel {
   sizeSlug: string;
   h3: string;
   paragraph: string;
+  /** PC-02 revision v1.2 (14 Aug 2026) — second body paragraph, for the owner's
+      Shape A variant section (H2 + two paragraphs). Absent on every dataset that
+      predates the rule, so their panels render one paragraph exactly as before.
+      Shape B (H2 + one paragraph + 3 to 5 bullets) leaves this unset and uses
+      `applications` instead. */
+  paragraph2?: string;
   applications: string[];
   /** Sub-heading above the applications list. Present only in the T25 Section H
       drop (its per-panel `h3`); the flagship dataset has no equivalent. */
@@ -185,6 +192,16 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // drop written against the retired nine-size ladder, and an earlier key would be
   // silently overwritten by that spread.
   'porta-cabin-with-toilet': portaCabinWithToiletApplications as ApplicationsData,
+  // PC-02 gi-porta-cabin — Section 3 of the approved GI build ticket. Six panels,
+  // one per published size, carrying that size's approved H2 and body. The approved
+  // copy supplies no application bullets, no section heading and no intro, and the
+  // 42-slot image manifest has no Explorer image, so none of the three is invented:
+  // the component omits the list, the heading and the picture.
+  //
+  // Registered AFTER both Section-H spreads on purpose. `gi-porta-cabin` carries no
+  // drop in either file today, but an earlier key would be silently overwritten if
+  // one were ever added — the failure mode PC-01 hit on ms-porta-cabin.
+  'gi-porta-cabin': giPortaCabinApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -286,6 +303,12 @@ interface PortaCabinVariantHeroProps {
       page's own copy. Fixing the shared literal in place would change the hub and
       the MS page too, so the string is opted into, not edited. */
   sizeEyebrowText?: string;
+  /** PC-02 (14 Aug 2026) — suppress the Explorer panel image. The GI page's approved
+      manifest is exactly 42 slots (36 gallery + 6 description) and supplies no
+      seventh image or alt per size, so Section 3 renders copy-only rather than
+      repeating a gallery file or deriving an unapproved alt. Default false keeps
+      every other page's Explorer imagery byte-identical. */
+  explorerHidePanelImages?: boolean;
 }
 
 // Star row for the review badge (Amendment G v2 — real rating: 4.6 from the 5
@@ -556,6 +579,7 @@ export function PortaCabinVariantHero({
   usePremiumSizeTabs = false,
   explorerPanelHeadingAsH2 = false,
   sizeEyebrowText,
+  explorerHidePanelImages = false,
 }: PortaCabinVariantHeroProps) {
   const defaultIndex = Math.max(
     0,
@@ -1160,6 +1184,7 @@ export function PortaCabinVariantHero({
             onGetQuote={openQuote}
             usePremiumSizeTabs={usePremiumSizeTabs}
             panelHeadingAsH2={explorerPanelHeadingAsH2}
+            hidePanelImages={explorerHidePanelImages}
           />
         </div>
         )}
@@ -1216,11 +1241,13 @@ interface SizeApplicationsExplorerProps {
   /** R20b (v1.5) — opt-in SAP-style tab strip for this section. Default false
       keeps every other product's strip byte-identical. */
   usePremiumSizeTabs?: boolean;
-  /** PC-01 — see `explorerPanelHeadingAsH2` on the hero. Default false. */
+  /** PC-02 — see `explorerPanelHeadingAsH2` on the hero. Default false. */
   panelHeadingAsH2?: boolean;
+  /** PC-02 — see `explorerHidePanelImages` on the hero. Default false. */
+  hidePanelImages?: boolean;
 }
 
-function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false }: SizeApplicationsExplorerProps) {
+function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false, hidePanelImages = false }: SizeApplicationsExplorerProps) {
   // T25 — HARD NULL. The per-slug applications copy is owner-authored; when a
   // product has none this section renders NOTHING. It must never fall back to the
   // porta-cabins copy.
@@ -1313,8 +1340,13 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
             ? variantImages[5]
             : undefined;
           const hasPhotos = variantImages.length > 0;
-          const panelSrc =
-            panel.image?.src ||
+          // PC-02 revision v1.2: `hidePanelImages` is retained but is no longer used by
+          // any product. R3/R4 ruled that a panel must never fall through to the
+          // component's "Reference photographs … on request" placeholder, so the GI page
+          // supplies a real per-panel image instead of suppressing the slot.
+          const panelSrc = hidePanelImages
+            ? null
+            : panel.image?.src ||
             c08ExplorerImage?.src ||
             (hasPhotos
               ? explorerImageSrc(explorerTemplate, explorerShot, v.sizeSlug, variantImages[0]?.src)
@@ -1416,6 +1448,11 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   <h3 className="text-lg font-bold text-[var(--ds-color-ink)] sm:text-xl">{rewriteC04VisiblePunctuation(panel.h3, data.productSlug, true)}</h3>
                 )}
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph, data.productSlug)}</p>
+                {/* PC-02 revision v1.2 — Shape A second paragraph. Same class string as
+                    the first, so a dataset that supplies none is byte-identical. */}
+                {panel.paragraph2 && (
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph2, data.productSlug)}</p>
+                )}
 
                 {/* Sub-heading above the applications list — T25 Section H drop only. */}
                 {panel.applicationsHeading && (

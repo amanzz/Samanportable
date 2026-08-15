@@ -152,7 +152,6 @@ export const PORTA_CABIN_MS_RAIL: import('./c16PanelCatalog').RelatedRailItem[] 
     imageAlt: 'Porta Cabin with Toilet by SAMAN — exterior view',
   },
 ];
-
 /**
  * PC-04 (14 Aug 2026) — the with-toilet page's Column 3, exactly the three tabs and
  * the three buyer-comparison reasons in §1 of the approved draft v2. Not the
@@ -197,12 +196,75 @@ export const PORTA_CABIN_WITH_TOILET_RAIL: import('./c16PanelCatalog').RelatedRa
 ];
 
 /**
- * PC-01 — "You may also like" on the MS page lists the cluster's other nine
- * configuration children (the hub rail minus this page itself), reusing the hub's
- * exact R16 card images and blurbs. Navigation component: no prices on cards.
+ * PC-02 (14 Aug 2026) — the GI page's OWN Column 3 rail. The approved GI build ticket
+ * (section 4, "Column 3 related tabs") names exactly three destinations: the Porta
+ * Cabins hub, the MS Porta Cabin and the PUF Porta Cabin, with no prices. So this page
+ * does NOT show the full-cluster strip that `orderPortaCabinStrip` builds for its
+ * siblings.
+ */
+// The two sibling rows. Titles, blurbs and card images are reused VERBATIM from
+// PORTA_CABIN_HUB_RAIL above (owner-approved under PC-00 R1a/R16), so nothing here is
+// authored. The one edit is punctuation: the hub's alts carry a U+2014 em dash, which
+// acceptance criterion 11.3 bans from this page's rendered output, so the em dash is
+// normalised to a comma exactly as the repo's own `rewriteC04VisiblePunctuation`
+// already does elsewhere. No word changes.
+const PORTA_CABIN_GI_SIBLINGS: import('./c16PanelCatalog').RelatedRailItem[] = [
+  {
+    title: 'MS Porta Cabin',
+    href: '/product/porta-cabins/ms-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Heavy industrial duty in a thicker mild-steel build',
+    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
+    imageAlt: 'MS Porta Cabin by SAMAN, exterior view',
+  },
+  {
+    title: 'PUF Porta Cabin',
+    href: '/product/porta-cabins/puf-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Higher thermal insulation duty',
+    imageSrc: '/images/products/porta-cabins/children/puf-porta-cabin-card.webp',
+    imageAlt: 'PUF Porta Cabin by SAMAN, exterior view',
+  },
+];
+
+/**
+ * Builds the GI page's three-item rail. The hub row is taken from the LIVE
+ * platform-derived rail so its title, blurb and image come from the hub's own product
+ * record rather than being written here; the two sibling rows are the approved static
+ * entries above. If the hub row is missing from the live list the rail degrades to the
+ * two siblings rather than inventing a hub card.
+ */
+export function buildPortaCabinGiRail<T extends { href: string }>(
+  built: T[],
+  hrefToSlug: (item: T) => string
+): Array<T | import('./c16PanelCatalog').RelatedRailItem> {
+  const hubRow = built.find((item) => hrefToSlug(item) === PORTA_CABIN_HUB_SLUG);
+  return [...(hubRow ? [hubRow] : []), ...PORTA_CABIN_GI_SIBLINGS];
+}
+
+/**
+ * PC-01 — "You may also like" lists the cluster's other nine configuration children
+ * (the hub rail minus this page itself), reusing the hub's exact R16 card images and
+ * blurbs. Navigation component: no prices on cards. Used by the MS page; left exactly
+ * as PC-01 shipped it so that page's rendered alts stay byte-identical.
  */
 export const PORTA_CABIN_SIBLING_YMAL = (slug: string) =>
   PORTA_CABIN_HUB_RAIL.filter((item) => slugFromProductHref(item.href) !== slug);
+
+/**
+ * PC-02 — the same nine children for the GI page, with the card ALTS normalised on the
+ * way out: the hub's R16 alts carry a U+2014 em dash ("… by SAMAN — exterior view"),
+ * which acceptance criterion 11.3 bans from this page's rendered output. The
+ * substitution is exactly the repo's own `rewriteC04VisiblePunctuation` transform (em
+ * dash to comma) and changes no word. It is a SEPARATE export rather than a change to
+ * the function above, so the hub's and the MS page's rendered alts are untouched.
+ */
+export const PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH = (slug: string) =>
+  PORTA_CABIN_SIBLING_YMAL(slug).map((item) =>
+    item.imageAlt && item.imageAlt.includes('—')
+      ? { ...item, imageAlt: item.imageAlt.replace(/\s*—\s*/g, ', ') }
+      : item
+  );
 
 /**
  * Canonical cluster order. Taken from the internal-linking matrix v2's own S4 table,

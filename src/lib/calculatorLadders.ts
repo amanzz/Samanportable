@@ -21,6 +21,7 @@ import lowCostPortaCabin from '@/data/products/low-cost-porta-cabin.json';
 import luxuryPortaCabin from '@/data/products/luxury-porta-cabin.json';
 import miniPortaCabin from '@/data/products/mini-porta-cabin.json';
 import msPortaCabin from '@/data/products/ms-porta-cabin.json';
+import giPortaCabin from '@/data/products/gi-porta-cabin.json';
 import portaCabinShop from '@/data/products/porta-cabin-shop.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
 import portacabinOffice from '@/data/products/portacabin-office.json';
@@ -157,6 +158,9 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'luxury-porta-cabin': toRows(luxuryPortaCabin),
   'mini-porta-cabin': toRows(miniPortaCabin),
   'ms-porta-cabin': toRows(msPortaCabin),
+  // PC-02: derived from the GI product JSON's own six variants, so the calc-entry
+  // banner price and the published ladder cannot drift (Calculator Standing Rule 3).
+  'gi-porta-cabin': toRows(giPortaCabin),
   'porta-cabin-shop': toRows(portaCabinShop),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
   'portacabin-office': toRows(portacabinOffice),

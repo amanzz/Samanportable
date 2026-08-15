@@ -1,0 +1,40 @@
+{
+  "id": 990022,
+  "name": "Galvanized Iron (GI) Porta Cabin",
+  "slug": "gi-porta-cabin",
+  "date_created": "2026-08-14T00:00:00",
+  "status": "publish",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-GIPC-20x10",
+  "price": "275000",
+  "regular_price": "275000",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 202,
+      "name": "Porta Cabins",
+      "slug": "porta-cabins"
+    }
+  ],
+  "images": [
+    {
+      "id": 990022,
+      "src": "/images/products/gi-porta-cabin/20x10/gi-porta-cabin-20x10-dark-green-exterior-saman.webp",
+      "name": "Galvanized Iron (GI) Porta Cabin",
+      "alt": "Dark-green 20x10 ft GI porta cabin with door and two windows, angled view"
+    }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  }
+}
