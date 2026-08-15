@@ -81,7 +81,19 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // not bump these guards, so it carried the exact PC-07 defect described below and
 // would have failed the postbuild on its own. The Phase 1 build caught it. Both
 // movements are folded into the numbers here.
-const expectedSegments = { products: 144, locations: 213, projects: 1, editorial: 78 };
+//
+// Phase 2 local doorway cleanup (SAMAN approval, 15 Aug 2026): locations
+// 213 -> 196, editorial 78 -> 65, total 436 -> 406. Thirty local paths leave
+// sitemapCanonicalPaths.json: 11 that now 301 to the hub, and 19 that stay live
+// on `noindex, follow`. A sitemap must advertise neither a redirect nor a
+// noindex URL.
+//
+// Note the locations cap above stops binding at this size. `candidates` is now
+// 196, below the 213 slice, so every location candidate lands in the locations
+// segment and none spills into editorial. That is why editorial falls by 13
+// while only 8 of the 30 removed paths were editorial: the other 5 of the drop
+// is spill that no longer happens. Do not "fix" this by raising the cap.
+const expectedSegments = { products: 144, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -147,8 +159,10 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 436 = 455 minus the 19 paths this release removes from sitemapCanonicalPaths.json:
 // 18 Phase 1 retired sources plus /portable-cabin-price-calculator from the calculator
 // parity commit. See the expectedSegments note above for the breakdown.
-if (all.length !== 436) {
-  throw new Error(`Page sitemap total changed from 436 to ${all.length}`);
+// 406 = 436 minus the 30 local paths removed by the Phase 2 cleanup (11 redirected,
+// 19 noindex). See the expectedSegments note above for the segment breakdown.
+if (all.length !== 406) {
+  throw new Error(`Page sitemap total changed from 406 to ${all.length}`);
 }
 
 const pageMap = new Map();
