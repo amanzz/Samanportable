@@ -44,6 +44,12 @@ export interface RightToExistEntry {
         supplies both, so its markup is unchanged. */
     subheading?: string;
     body?: string;
+    /** PC-03 post-build correction 2 (15 Aug 2026) — a short list of discrete trust
+        signals or requirements rendered as checkmarked bullets below `body`. Also
+        used by PC-06's Section 2 card (four quotation-input bullets) via the same
+        field and rendering. Absent everywhere else, so every other page's split
+        card is byte-identical. */
+    bullets?: string[];
     /** PC-02 rulings v1.3 follow-up (14 Aug 2026) — render the section's two approved
         paragraphs INSIDE the card's copy column, beside the image and above the CTA,
         instead of full-width above the card. Default (absent) keeps the hub's deployed
@@ -65,6 +71,43 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  // PC-03 double-story-porta-cabin - Section 2 buyer orientation, build prompt v2 12.4,
+  // verbatim and SHA-256 verified before wiring (S2_H2 2dfd9911, S2_P1 571b9418,
+  // S2_P2 1c304999). Two equal-weight paragraphs, so `bodyParagraphs` is used rather
+  // than the body-plus-bolded-comparison pair. The two anchors are exactly rows 1 and 2
+  // of the section 9 link map. No `splitCard`: build prompt v2 supplies no card image,
+  // sub-heading, body or CTA label for this page, and the builder writes none.
+  'double-story-porta-cabin': {
+    heading: 'When a G+1 Porta Cabin Beats Two Single Storey Cabins on Site',
+    bodyParagraphs: [
+      (
+        <>
+          Compare the two ways to double cabin space. Two separate cabins need double the ground area, two plinths and a walkway between them. A G+1 cabin needs one plinth, keeps vehicle lanes untouched, and puts the second team one staircase away. Choose the stacked build when ground area is the scarce resource. Choose two separate units, such as a standard <Link className={linkClass} href="https://www.samanportable.com/product/porta-cabins/ms-porta-cabin">MS porta cabin</Link> pair, when the site has spare ground and you want to avoid stair access.
+        </>
+      ),
+      (
+        <>
+          The G+1 decision also changes the engineering scope. The ground floor module carries both storeys, so the chassis, columns and foundations are checked by structural calculation, not taken from single storey practice. That check protects you at windy, elevated or soft-soil sites. Share your site pin code, floor use and occupancy plan for a fixed 48-hour quotation with the structural scope stated. <Link className={linkClass} href="https://www.samanportable.com/contact">Send your G+1 requirement now</Link>.
+        </>
+      ),
+    ],
+    // Post-build correction 2 (15 Aug 2026), SAMAN-approved verbatim, SHA-256 verified:
+    // SC_H3 6bb37376, SC_BODY_P aa7a023a, SC_BULLET1-4 35e0aa28/8384e5be/d571b527/291f5832,
+    // SC_CTA 8c985f7d. Format (one paragraph + four bullets) is SAMAN's own call, delegated
+    // in chat 15 Aug 2026 ("do not ask me anything"). copyInPanel is absent (default false):
+    // the ticket keeps the top block full-width above the card, not folded into it.
+    splitCard: {
+      imageSrc: '/images/products/double-story-porta-cabin/section2/double-story-porta-cabin-splitcard-beige-interior.webp',
+      imageAlt: 'Second view of the beige panel interior room in a double storey porta cabin ground floor',
+      imageWidth: 1280,
+      imageHeight: 720,
+      subheading: 'See a Double Story Build Before You Order',
+      body: "Every double storey build ships from the same two factories and quality system used across SAMAN's full porta cabin range, not a one-off configuration.",
+      bullets: ['500+ projects delivered to 3,000+ customers across 15+ states', 'Two owned factories: Bengaluru (South) and Greater Noida (North)', 'ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified', 'Manufacturer, not reseller: direct factory pricing and accountability'],
+      ctaLabel: 'Send your G+1 requirement now',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
   // PC-02 gi-porta-cabin — Section 2, DRAFT V4. Copy supplied by the owner on
   // 14 Aug 2026 and wired verbatim; it supersedes the build prompt v1 §3 Section 2
   // text and its S2_H2 / S2_P1 / S2_P2_visible checksums. Computed checksums for the
@@ -560,6 +603,44 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       body: 'Look at completed SAMAN cabins from our Bengaluru and Greater Noida factories: the lining, the sealed vinyl floor, the door hardware and the openings. Judge the finish on real deliveries, then settle your size and seat count with confidence.',
       ctaLabel: 'Explore the project gallery',
       ctaHref: '/gallery',
+    },
+  },
+  // PC-06 (15 Aug 2026) — Section 2 "buyer orientation" copy from copy pack v2,
+  // verbatim. The approved link map carries exactly two S2 body links: MS porta
+  // cabin and /contact.
+  // v1.2 addendum (15 Aug 2026) — split card added from copy pack v3
+  // SECTION2_CARD_* fields, verbatim. The card's own CTA targets the same
+  // /contact destination as the top block's CTA (deliberate per the addendum:
+  // one conversion destination, two appearances), so the page's internal-link
+  // count stays five. Card image is the reallocated Description-tab D1 slot
+  // (charcoal exterior); the Description tab now carries D2-D6 only.
+  'soundproof-porta-cabin': {
+    heading: 'Choose this cabin when noise, not weather, sets the site problem',
+    body: (
+      <>
+        Most site accommodation is chosen on footprint, weather cover and price. This cabin is chosen when the deciding factor is the sound coming through the wall. A supervisor cannot take a call beside a running genset. A QA team cannot hear a measurement in a crusher yard. A shift briefing fails when the highway sits twelve metres away. The acoustic build changes four things: the chassis sizing, the wall and ceiling layers, the door and glazing, and the ventilation route.
+      </>
+    ),
+    comparison: (
+      <>
+        If noise is not the governing issue, the standard <Link className={linkClass} href={href('ms-porta-cabin')}>MS porta cabin</Link> is better value. You would be paying for lining mass and decoupling you will not use. Where noise does govern, <Link className={linkClass} href="/contact">tell us the source, the distance and the internal condition you need to hold</Link>. We will then price the assembly against that target rather than sell a generic claim.
+      </>
+    ),
+    splitCard: {
+      imageSrc: '/images/products/soundproof-porta-cabin/description/soundproof-porta-cabin-charcoal-exterior.webp',
+      imageAlt: 'Charcoal soundproof porta cabin with a single door and one window, standing on concrete pads',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'What to send us so the acoustic build can be priced',
+      body: 'Sound control is priced against a target, not sold from a catalogue. Four inputs let the engineering team size the mass, the cavity and the openings correctly before the quotation is issued.',
+      bullets: [
+        'The noise source: genset, crusher, highway, plant room or workshop',
+        'Its distance from the cabin, and whether anything blocks the path',
+        'The internal condition you need to hold, stated as your criterion',
+        'Hours of use, and whether the site also runs at night',
+      ],
+      ctaLabel: 'Request a fixed 48-hour quotation',
+      ctaHref: 'https://www.samanportable.com/contact',
     },
   },
   'portacabin-office': {

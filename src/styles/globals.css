@@ -1010,6 +1010,25 @@
   line-height: 1.6;
   margin-bottom: 12px;
 }
+/* PC-03 post-build correction 2 (15 Aug 2026) — checkmarked trust-signal bullets in
+   the split card, below `.saman-s2-split-text`. Rendered only where an entry supplies
+   splitCard.bullets, so every other split card is unchanged. Also used by PC-06's
+   Section 2 card via the same field. */
+.saman-s2-split-bullets {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.saman-s2-split-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #3f4d46;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
 .saman-s2-split-cta {
   color: var(--ds-color-leaf, #2d7a3f);
   font-weight: 600;

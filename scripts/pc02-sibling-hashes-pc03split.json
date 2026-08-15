@@ -1,0 +1,72 @@
+{
+ "/product/porta-cabins": {
+  "sha": "1d68ae3075c7412c",
+  "markup": "489584a4421af383",
+  "bytes": 580909
+ },
+ "/product/porta-cabins/ms-porta-cabin": {
+  "sha": "22cacc8e27bf3f25",
+  "markup": "2e1508c4922f14ca",
+  "bytes": 540520
+ },
+ "/product/porta-cabins/steel-porta-cabin": {
+  "sha": "99043ea8a5627434",
+  "markup": "a8e9523f65df6e3d",
+  "bytes": 534464
+ },
+ "/product/porta-cabins/luxury-porta-cabin": {
+  "sha": "186e17dabfc09255",
+  "markup": "5130bcc2e6a8d4da",
+  "bytes": 545127
+ },
+ "/product/porta-cabins/mini-porta-cabin": {
+  "sha": "1e570699ff3dd62e",
+  "markup": "feb8dba928d13d25",
+  "bytes": 466918
+ },
+ "/product/porta-cabins/low-cost-porta-cabin": {
+  "sha": "96f3171ad9fff7f3",
+  "markup": "916dd1a42e0bc1b7",
+  "bytes": 537002
+ },
+ "/product/porta-cabins/porta-cabin-shop": {
+  "sha": "9377f7388f5e8f89",
+  "markup": "3dd9b745fe51af78",
+  "bytes": 554683
+ },
+ "/product/porta-cabins/porta-cabin-with-toilet": {
+  "sha": "134cb6afd3de8ae6",
+  "markup": "d99c64ec6fff5a42",
+  "bytes": 545324
+ },
+ "/product/porta-cabins/gi-porta-cabin": {
+  "sha": "0eb7427bb02836d0",
+  "markup": "91395d37983869f2",
+  "bytes": 521282
+ },
+ "/product/container-offices": {
+  "sha": "0ad1f198a2820892",
+  "markup": "797747ba12d776a2",
+  "bytes": 577745
+ },
+ "/product/portable-office": {
+  "sha": "58a66604a3b137aa",
+  "markup": "d1fa8bdcf9cf2be6",
+  "bytes": 553944
+ },
+ "/product/container-cafe": {
+  "sha": "e22071e118c7ab08",
+  "markup": "7c38ac6d7eb8607c",
+  "bytes": 486768
+ },
+ "/product/portable-cabin": {
+  "sha": "a36802a66e918ce3",
+  "markup": "6da27c3f96ab48ff",
+  "bytes": 500468
+ },
+ "/product/puf-panel": {
+  "sha": "7299084592a943dc",
+  "markup": "297135cfd4a27e25",
+  "bytes": 192258
+ }
+}

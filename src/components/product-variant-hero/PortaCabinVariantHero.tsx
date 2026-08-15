@@ -32,7 +32,9 @@ import msPortaCabinApplications from '@/data/products/ms-porta-cabin-application
 import fireRatedPortaCabinApplications from '@/data/products/fire-rated-porta-cabin-applications.json';
 import pufPortaCabinApplications from '@/data/products/puf-porta-cabin-applications.json';
 import portaCabinWithToiletApplications from '@/data/products/porta-cabin-with-toilet-applications.json';
+import soundproofPortaCabinApplications from '@/data/products/soundproof-porta-cabin-applications.json';
 import giPortaCabinApplications from '@/data/products/gi-porta-cabin-applications.json';
+import doubleStoryPortaCabinApplications from '@/data/products/double-story-porta-cabin-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -219,6 +221,19 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // drop in either file today, but an earlier key would be silently overwritten if
   // one were ever added — the failure mode PC-01 hit on ms-porta-cabin.
   'gi-porta-cabin': giPortaCabinApplications as ApplicationsData,
+  // PC-06 soundproof-porta-cabin — Section 3 of copy pack v2, VARIANT_1-6_H2/BODY.
+  // Six panels, one per published size, single paragraph each (no bodyParagraph2,
+  // no bullets). The 42-slot manifest (36 gallery + 6 description) allocates no
+  // dedicated Section-3 image, so each panel reuses that size's own gallery slot 1
+  // image and alt, matching the gi-porta-cabin precedent for the identical
+  // 42-slot situation. No stale Section-H drop exists for this slug (checked).
+  'soundproof-porta-cabin': soundproofPortaCabinApplications as ApplicationsData,
+  // PC-03 double-story-porta-cabin - Section 3 of build prompt v2 (12.5). Six panels,
+  // one per shipping size, each carrying that size's approved H2 and body plus its lead
+  // gallery image. The approved copy supplies no application bullets and no section
+  // heading, so neither is invented. Registered AFTER both Section-H spreads for the
+  // same reason as the two entries above: an earlier key would be silently overwritten.
+  'double-story-porta-cabin': doubleStoryPortaCabinApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([

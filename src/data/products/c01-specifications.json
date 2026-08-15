@@ -3154,6 +3154,391 @@
         "height": 941
       }
     },
+    "soundproof-porta-cabin": {
+      "name": "Soundproof Porta Cabin",
+      "narrative": "Read these two tables as one system rather than a parts list. Table 1 covers everything that carries load and keeps weather out, and it is sized for the mass of the acoustic package rather than for a lightweight office cabin. Table 2 covers the layers and openings that decide how much sound actually gets through. The lines marked as product-specific are where this cabin diverges from a standard porta cabin: 19 of the 30 technical lines are specific to the acoustic build, and 11 are shared platform items.",
+      "premiumTables": true,
+      "specifications": [
+        {
+          "group": "Table 1",
+          "component": "Bottom frame",
+          "detail": "Mass-capable primary chassis; 150x75x5 mm MS C-channel reference; final by mass and load calculation"
+        },
+        {
+          "group": "Table 1",
+          "component": "Bottom stiffeners",
+          "detail": "Stiffened vibration-controlled base; 100x50x3 mm channels or RHS with isolation points where designed"
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor frame",
+          "detail": "Acoustic floor-support frame; Engineered steel grid plus 18-24 mm rigid board or mass layer plus resilient underlay"
+        },
+        {
+          "group": "Table 1",
+          "component": "Top frame",
+          "detail": "Isolated internal top support; 80x40x3 mm structural perimeter reference plus resilient internal furring or hangers"
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof stiffeners",
+          "detail": "Acoustically isolated ceiling support; 60x40x2.5 mm roof frame reference plus resilient ceiling channels or hangers"
+        },
+        {
+          "group": "Table 1",
+          "component": "Corner posts and walls",
+          "detail": "Double-layer wall with isolated inner frame; 60x60x3 mm structural posts reference plus resilient channel or independent inner studs"
+        },
+        {
+          "group": "Table 1",
+          "component": "Lifting and handling",
+          "detail": "Approved handling provision; Engineered lifting and support points to the approved drawing"
+        },
+        {
+          "group": "Table 1",
+          "component": "Welding and fabrication",
+          "detail": "Fabrication control; Welded or bolted connections to approved shop drawings"
+        },
+        {
+          "group": "Table 1",
+          "component": "Exterior walls",
+          "detail": "Massive external shell; 1.2-1.6 mm corrugated MS or PPGI outer skin with sealed joints"
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof",
+          "detail": "Acoustic roof build; 1.4-1.6 mm roof skin plus absorptive core plus isolated internal ceiling"
+        },
+        {
+          "group": "Table 1",
+          "component": "Interior walls",
+          "detail": "Decoupled multi-layer internal lining; Two 12.5 mm board layers or equivalent mass lining on resilient or independent support, staggered joints"
+        },
+        {
+          "group": "Table 1",
+          "component": "Ceiling",
+          "detail": "Acoustic ceiling; Multi-layer board ceiling on resilient channels or hangers with sealed perimeter"
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor base",
+          "detail": "Mass plus resilient floor base; 18-24 mm rigid floor board or dense barrier plus resilient underlay"
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor finish",
+          "detail": "Quiet walking finish; 2-3 mm resilient vinyl, rubber or carpet tile over acoustic underlay as use permits"
+        },
+        {
+          "group": "Table 2",
+          "component": "Wall insulation",
+          "detail": "High-absorption wall infill; 75-100 mm stone or mineral wool, Safe n Silent type, density and type per acoustic design"
+        },
+        {
+          "group": "Table 2",
+          "component": "Roof insulation",
+          "detail": "High-absorption roof and ceiling infill; 75-100 mm stone or mineral wool with continuous cavity fill"
+        },
+        {
+          "group": "Table 2",
+          "component": "Decorative and external finish",
+          "detail": "Coating or facade finish; Project-selected colour and compatible coating system"
+        },
+        {
+          "group": "Table 2",
+          "component": "Fasteners and sealing",
+          "detail": "Approved joints and seals; Corrosion-compatible fasteners, EPDM, butyl or approved sealants"
+        },
+        {
+          "group": "Table 2",
+          "component": "Main door and service door",
+          "detail": "Acoustic door set; Solid-core or acoustic door with perimeter seals and automatic or drop threshold where required"
+        },
+        {
+          "group": "Table 2",
+          "component": "Windows and service openings",
+          "detail": "Acoustic glazing; Sealed laminated or double glazing; 6/12/6 mm is a design starting point only"
+        },
+        {
+          "group": "Table 2",
+          "component": "Grills and mosquito mesh",
+          "detail": "Opening protection; Grill, mosquito mesh, guard or louver as scheduled"
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical wiring",
+          "detail": "Copper wiring and containment; 1.5, 2.5 and 4 sq.mm copper starting schedule; final by load"
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical protection",
+          "detail": "DB, MCB, RCCB and earthing; Segregated protected circuits to approved electrical drawing"
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical fittings",
+          "detail": "Lights, sockets and equipment points; LED lights, modular switches, 6A and 16A sockets, fan and AC provision"
+        },
+        {
+          "group": "Table 2",
+          "component": "Ventilation and AC",
+          "detail": "Silenced ventilation and AC path; Duct attenuator, acoustic louver or baffled air path; no direct open vent where isolation is required"
+        },
+        {
+          "group": "Table 2",
+          "component": "Plumbing and services",
+          "detail": "Acoustically sealed services; Staggered and sealed boxes, sleeved pipes and resilient supports; no unsealed through-penetrations"
+        },
+        {
+          "group": "Table 2",
+          "component": "Layout and configuration",
+          "detail": "Performance-defined sound-control layout; Target Rw or STC and internal NR or NC criteria stated by project; laboratory or field evidence required for numeric claims"
+        },
+        {
+          "group": "Table 2",
+          "component": "Painting and coating",
+          "detail": "Corrosion-protection system; Substrate-appropriate corrosion protection and touch-up"
+        },
+        {
+          "group": "Table 2",
+          "component": "Quality checks",
+          "detail": "Inspection and testing; Pre-dispatch dimensional, enclosure, service and functional QA"
+        },
+        {
+          "group": "Table 2",
+          "component": "Warranty",
+          "detail": "Commercially confirmed warranty; Final quotation governs warranty scope and exclusions"
+        }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/soundproof-porta-cabin/diagrams/soundproof-porta-cabin-diagram-1.webp",
+          "alt": "Reference plan layout, 20x10x8.5 ft, envelope and acoustic build-up in plan view with openings shown indicatively",
+          "caption": "Figure 1. Reference plan layout, 20x10x8.5 ft. Diagram SP-PC-SP-07-DWG-R1, issued 15 August 2026. Illustrative, not for construction.",
+          "width": 2000,
+          "height": 1350
+        },
+        {
+          "src": "/images/products/soundproof-porta-cabin/diagrams/soundproof-porta-cabin-diagram-2.webp",
+          "alt": "Envelope build-up indicative section showing roof, wall and floor layers of the mass-spring-mass assembly",
+          "caption": "Figure 2. Envelope build-up, indicative section. Diagram SP-PC-SP-07-DWG-R2, issued 15 August 2026. Illustrative, not for construction.",
+          "width": 2000,
+          "height": 1350
+        }
+      ]
+    },
+    "double-story-porta-cabin": {
+      "name": "Double Story (G+1) Porta Cabin",
+      "sheet": "PC-G1-04",
+      "canonical": "https://www.samanportable.com/product/porta-cabins/double-story-porta-cabin",
+      "specifications": [
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Two-storey transfer chassis",
+          "detail": "150x75x5 mm MS C-channel reference starting section; final sections, reactions and anchorage by structural calculation",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Base stiffeners / transfer members",
+          "detail": "100x50x3 mm channel/RHS reference at support and stacking lines; reinforced under stairs and connection nodes",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Inter-storey structural floor",
+          "detail": "80x40x3 mm and 50x50x2.5 mm secondary steel reference; checked for live load, deflection and vibration",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Top frame / ring beam",
+          "detail": "80x40x3 mm RHS reference with reinforced stack nodes; connections shop-drawing controlled",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Stacking columns",
+          "detail": "60x60x3 mm SHS reference only; single storey 50x50x2 mm posts not automatically acceptable",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Top-storey roof structure",
+          "detail": "60x40x2.5 mm / engineered secondary members with positive roof slope",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Exterior walls",
+          "detail": "1.2-1.6 mm profiled MS/PPGI or engineered insulated panel system, segmented around inter-module joints",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Roof (top storey only)",
+          "detail": "1.4-1.6 mm profiled sheet or insulated roof panel to approved roof design; sealed penetrations",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Floor deck and finish",
+          "detail": "24 mm cement board or engineered heavy deck; 2-3 mm commercial resilient flooring; anti-slip stair surfaces",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Wall insulation",
+          "detail": "50-75 mm mineral wool or approved sandwich-panel core, continuity kept at module joints",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Roof insulation",
+          "detail": "75-100 mm mineral wool or insulated roof panel to thermal requirement",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Lifting and handling",
+          "detail": "Engineered lifting/support points; modules move only per the approved lifting and transport drawing",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Welding and fabrication",
+          "detail": "Welded/bolted connections to approved shop drawings; frame inspection before panel closure",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, chassis, envelope, roof and floor",
+          "component": "Fasteners and sealing",
+          "detail": "Corrosion-compatible fasteners; EPDM/butyl or approved sealants at joints, laps and penetrations",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Interior wall lining",
+          "detail": "8-10 mm fibre-cement/MDF/metal liner selected by occupancy and fire strategy",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Ceiling / inter-storey soffit",
+          "detail": "8-10 mm fibre-cement or approved board/liner; coordinated with upper-floor structure and services",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Doors",
+          "detail": "Externally opening doors on occupied floors as required by the approved egress plan",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Windows / openings",
+          "detail": "Aluminium windows or project glazing; openings cannot cut stacking posts, transfer members or bracing",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Grills / mosquito mesh",
+          "detail": "Provided only where the approved opening schedule and intended use require",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Electrical wiring",
+          "detail": "Concealed/protected copper, 1.5 / 2.5 / 4 sq.mm starting schedule; final by load schedule, per floor",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Electrical protection",
+          "detail": "Distribution board with MCB/RCCB, earthing, segregated circuits to the approved electrical drawing",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Electrical fittings",
+          "detail": "LED lights, modular switches, 6A/16A sockets, fan and AC provision; quantities quotation-specific",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Ventilation / AC",
+          "detail": "Independent floor-by-floor strategy; sealed service risers; no uncontrolled inter-storey openings",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Plumbing (OPTIONAL)",
+          "detail": "Excluded unless ordered; stacked wet areas with riser, vent, traps and isolation valves by services design",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "G+1 configuration",
+          "detail": "Two factory modules/storeys, engineered inter-module nodes, stair, landing, guards, foundations and anchors",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Painting / coating",
+          "detail": "Substrate-appropriate corrosion protection; approved primer/topcoat or compatible touch-up system",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch dimensional, enclosure, service and functional QA per module",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, openings, services and scope",
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation.",
+          "sourceSheet": "PC-G1-04",
+          "differsFromHub": false
+        }
+      ],
+      "narrative": "The specification below is what separates a stacked building from two cabins piled up. Read Table 1 for the load path: the transfer chassis, stacking columns and the engineered upper floor are the members that carry the second storey, and every reference section in it is finalised by your project structural calculation. Read Table 2 for how each floor lives day to day: lining, openings, per-floor electrical and ventilation, and the optional stacked wet areas. Where a row says a value follows the approved drawing, that is scope honesty, not a gap: G+1 values are project-specific by design.",
+      "premiumTables": true,
+      "diagram": {
+        "src": "/images/products/double-story-porta-cabin/diagrams/double-story-porta-cabin-diagram-2.webp",
+        "alt": "Stacking, circulation and services overview of the double storey G+1 porta cabin, axonometric and vertical section",
+        "caption": "Illustrative, not for construction.",
+        "width": 1672,
+        "height": 941
+      }
+    },
     "puf-porta-cabin": {
       "name": "PUF Porta Cabin",
       "narrative": "Two rows in these tables change more for the buyer than the rest combined. The first is Interior walls, because no separate MDF lining is why a PUF cabin needs no finishing trade on site and why the room is usable on delivery day. The second is Wall insulation, because the note attached to it is the one the market keeps getting wrong: thickness buys insulation, never fire performance. Read those two rows first, then read the door, window and ventilation rows together, because openings and penetrations are where a good panel build is usually lost.",
