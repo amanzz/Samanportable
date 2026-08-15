@@ -1,0 +1,40 @@
+{
+  "id": 990024,
+  "name": "Skid-Mounted Porta Cabin",
+  "slug": "skid-mounted-porta-cabin",
+  "date_created": "2026-08-15T00:00:00",
+  "status": "publish",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-SKPC-20x10",
+  "price": "350000",
+  "regular_price": "350000",
+  "sale_price": "",
+  "on_sale": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 202,
+      "name": "Porta Cabins",
+      "slug": "porta-cabins"
+    }
+  ],
+  "images": [
+    {
+      "id": 990024,
+      "src": "/images/products/skid-mounted-porta-cabin/size-20x10/skid-mounted-porta-cabin-20x10-01-main-exterior.webp",
+      "name": "Skid-Mounted Porta Cabin",
+      "alt": "Dark green 20x10 ft cabin with three grilled windows and a centred steel door with a keyed lockset"
+    }
+  ],
+  "attributes": [],
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  }
+}

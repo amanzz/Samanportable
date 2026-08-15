@@ -24,6 +24,7 @@ import msPortaCabin from '@/data/products/ms-porta-cabin.json';
 import giPortaCabin from '@/data/products/gi-porta-cabin.json';
 import soundproofPortaCabin from '@/data/products/soundproof-porta-cabin.json';
 import doubleStoryPortaCabin from '@/data/products/double-story-porta-cabin.json';
+import skidMountedPortaCabin from '@/data/products/skid-mounted-porta-cabin.json';
 import portaCabinShop from '@/data/products/porta-cabin-shop.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
 import portacabinOffice from '@/data/products/portacabin-office.json';
@@ -173,6 +174,10 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // standard entry every page gets (SAMAN ruling, 15 Aug 2026); no other calculator
   // logic, step or formula is touched and the banner is never hardcoded.
   'double-story-porta-cabin': toRows(doubleStoryPortaCabin),
+  // PC-08 (15 Aug 2026): same standing rule, derived from the skid-mounted
+  // product JSON's own six variants so the calc-entry banner price and the
+  // published ladder cannot drift.
+  'skid-mounted-porta-cabin': toRows(skidMountedPortaCabin),
   'porta-cabin-shop': toRows(portaCabinShop),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
   'portacabin-office': toRows(portacabinOffice),

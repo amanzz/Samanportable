@@ -643,6 +643,41 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },
+  // PC-08 (15 Aug 2026) - Section 2 "buyer orientation" copy from copy pack v1
+  // section 3, verbatim, SHA-256 verified (S2_H2 70e3190c, S2_BODY c6c9c882). Two
+  // paragraphs: the first carries no link, the second carries both approved link-map
+  // anchors (MS porta cabin, /contact). Split card fields (SECTION2_CARD_*) verified
+  // separately; the card CTA targets the same /contact destination named in the
+  // ticket's own link map, distinct wording from the top-block CTA.
+  'skid-mounted-porta-cabin': {
+    heading: 'When a Skid Chassis Earns Its Cost on a Cabin That Moves',
+    body: (
+      <>
+        We design a standard site cabin around the position it will occupy. A skid-mounted cabin answers the journey between positions instead, and that changes the build rather than the finish. The runners take the lift. The bracing resists the twist a trailer bed puts through the frame. The liner tolerates vibration that loosens board joints. Services terminate at a labelled external zone, so a site working in a hurry cannot tear the internal distribution.
+      </>
+    ),
+    comparison: (
+      <>
+        The trade runs both ways, and we state it plainly. You pay the highest rate in our porta cabin range. In return the cabin survives a duty that quietly destroys lighter units. Where it will sit in one place for its working life, the heavy industrial build of the <Link className={linkClass} href={href('ms-porta-cabin')}>MS porta cabin</Link> gives you more for the same money. <Link className={linkClass} href="/contact">Tell us how often the cabin moves and how it will be lifted</Link> and we will quote the runner sizing against it.
+      </>
+    ),
+    splitCard: {
+      imageSrc: '/images/products/skid-mounted-porta-cabin/section2/skid-mounted-porta-cabin-section2-green-exterior.webp',
+      imageAlt: 'Dark green relocatable steel cabin with three windows, a flush door, wall vents and free-standing steel steps',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'What Repeated Handling Breaks First on a Cabin',
+      body: 'Cabins rarely fail on the lift itself. They fail slowly, in details a single placement never tests. The skid specification therefore concentrates on the four things that give way first.',
+      bullets: [
+        'Door frames that rack and stop closing square',
+        'Panel and liner joints loosened by road vibration',
+        'Wall insulation that slumps and is never seen',
+        'Service connections torn because nobody disconnected them first',
+      ],
+      ctaLabel: 'Send your move plan for a 48-hour quotation',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
   'portacabin-office': {
     heading: 'Why choose the Portacabin Office',
     body: (

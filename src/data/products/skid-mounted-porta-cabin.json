@@ -1,0 +1,348 @@
+{
+  "productSlug": "skid-mounted-porta-cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "h1": "Skid-Mounted Porta Cabin for Repeated Site Relocation",
+  "seoTitle": "Skid-Mounted Porta Cabin: Heavy Relocation Build | SAMAN",
+  "metaDescription": "Porta cabin on engineered steel skid runners for repeated crane and trailer moves. Six published sizes, planning prices, handling rules and specifications.",
+  "opener": "The Skid-Mounted Porta Cabin is built for units that move again and again. Longitudinal steel skid runners carry it, referenced at 150x75x5 mm MS C-channel or engineered RHS, with wear and nose plates at the ends. Anti-racking cross-members sit above them, with reinforced lift and tie-down zones. A rough-service floor, a transit-tolerant liner and mechanically retained insulation then absorb what repeated handling does to an ordinary cabin.\n\nChoose it when the cabin will be craned on and off a trailer through its working life rather than placed once. The runners are engineered for lifting, transport and controlled positioning. This design does not permit towing or dragging, and every move follows the approved handling drawing.",
+  "materialLabel": "Heavy MS frame on engineered skid runners",
+  "deliveryLabel": "7-21 working days",
+  "coverageLabel": "Pan-India, 15+ states served",
+  "pricePerSqft": {
+    "10x10": "2,012.50",
+    "20x8": "1,925.00",
+    "20x10": "1,750.00",
+    "20x12": "1,680.00",
+    "30x10": "1,680.00",
+    "40x10": "1,662.50"
+  },
+  "applicationsDataset": "skid-mounted-porta-cabin",
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 201250,
+      "priceInclGst": 237475,
+      "useCase": "Gate office, permit cabin, instrument room",
+      "images": [
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-10x10/skid-mounted-porta-cabin-10x10-01-main-exterior.webp",
+          "alt": "Dusty pink 10x10 ft cabin with dark teal lower band, three grilled windows and a steel door, on a paved factory yard",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-10x10/skid-mounted-porta-cabin-10x10-02-alternate-exterior.webp",
+          "alt": "Dark green 10x10 ft cabin with three grilled windows and an off-centre steel door in front of an industrial shed",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-10x10/skid-mounted-porta-cabin-10x10-03-end-elevation.webp",
+          "alt": "End elevation of a cream and maroon 10x10 ft cabin with two grilled windows either side of a centred steel door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-10x10/skid-mounted-porta-cabin-10x10-04-side-elevation.webp",
+          "alt": "Side elevation of a pale grey and mustard 10x10 ft cabin with one grilled window, raised on corner pad feet",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-10x10/skid-mounted-porta-cabin-10x10-05-interior-office.webp",
+          "alt": "10x10 ft cabin interior in wood-tone lining with overhead and base cabinets, one desk and three chairs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-10x10/skid-mounted-porta-cabin-10x10-06-interior-workspace.webp",
+          "alt": "10x10 ft cabin interior with a wood-tone desk, credenza, ceiling exhaust fixture and a potted plant",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 308000,
+      "priceInclGst": 363440,
+      "useCase": "Restricted-access site office",
+      "images": [
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x8/skid-mounted-porta-cabin-20x8-01-main-exterior.webp",
+          "alt": "Light grey 20x8 ft cabin with three plain sliding windows and a flush steel door on the long wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x8/skid-mounted-porta-cabin-20x8-02-alternate-exterior.webp",
+          "alt": "Light grey 20x8 ft cabin with a maroon lower band and three grilled windows, on a paved yard beside steel racking",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x8/skid-mounted-porta-cabin-20x8-03-side-elevation.webp",
+          "alt": "Side elevation of a sky blue 20x8 ft cabin with two grilled windows and a centred flush steel door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x8/skid-mounted-porta-cabin-20x8-04-end-elevation.webp",
+          "alt": "End elevation of a burnt orange 20x8 ft cabin with a single plain sliding window and no door on this face",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x8/skid-mounted-porta-cabin-20x8-05-interior-office.webp",
+          "alt": "20x8 ft cabin interior in oak-tone lining with a desk, high-back chair, side credenza and a ceiling fan",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x8/skid-mounted-porta-cabin-20x8-06-interior-workspace.webp",
+          "alt": "20x8 ft cabin interior with a desk, mesh chair, low credenza carrying files and recessed ceiling downlights",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 350000,
+      "priceInclGst": 413000,
+      "useCase": "General site office, reference build",
+      "images": [
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x10/skid-mounted-porta-cabin-20x10-01-main-exterior.webp",
+          "alt": "Dark green 20x10 ft cabin with three grilled windows and a centred steel door with a keyed lockset",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x10/skid-mounted-porta-cabin-20x10-02-alternate-exterior.webp",
+          "alt": "Olive and cream 20x10 ft cabin with three grilled windows and a steel door set left of centre",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x10/skid-mounted-porta-cabin-20x10-03-side-elevation.webp",
+          "alt": "Side elevation of an off-white 20x10 ft cabin with two grilled windows flanking a centred steel door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x10/skid-mounted-porta-cabin-20x10-04-end-elevation.webp",
+          "alt": "End elevation of a powder blue 20x10 ft cabin with one high grilled window and pad feet at both corners",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x10/skid-mounted-porta-cabin-20x10-05-interior-unfurnished.webp",
+          "alt": "Unfurnished 20x10 ft cabin interior showing wood-tone lining, wood-look floor, ceiling fan and a wall socket",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x10/skid-mounted-porta-cabin-20x10-06-interior-workspace.webp",
+          "alt": "20x10 ft cabin interior with a single desk, mesh chair, sideboard holding lever-arch files and a ceiling fan",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20x12 ft",
+      "dims": "20x12x8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 403200,
+      "priceInclGst": 475776,
+      "useCase": "Office with meeting or partitioned zone",
+      "images": [
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x12/skid-mounted-porta-cabin-20x12-01-main-exterior.webp",
+          "alt": "Charcoal grey 20x12 ft cabin with three plain sliding windows and a flush door set right of centre",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x12/skid-mounted-porta-cabin-20x12-02-alternate-exterior.webp",
+          "alt": "Cream and red 20x12 ft cabin with three grilled windows and a flush door left of centre, on a concrete yard",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x12/skid-mounted-porta-cabin-20x12-03-side-elevation.webp",
+          "alt": "Side elevation of a turquoise 20x12 ft cabin with two plain windows and a colour-matched centred door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x12/skid-mounted-porta-cabin-20x12-04-end-elevation.webp",
+          "alt": "End elevation of a dark green 20x12 ft cabin with one grilled window, raised on square corner pad feet",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x12/skid-mounted-porta-cabin-20x12-05-interior-unfurnished.webp",
+          "alt": "Unfurnished 20x12 ft cabin interior with cream wall panels, a white panel ceiling and two recessed downlights",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-20x12/skid-mounted-porta-cabin-20x12-06-interior-workspace.webp",
+          "alt": "20x12 ft cabin interior in beige panels with a desk, mesh chair, low cabinet of files and a ceiling fan",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 504000,
+      "priceInclGst": 594720,
+      "useCase": "Two separated working zones",
+      "images": [
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-30x10/skid-mounted-porta-cabin-30x10-01-main-exterior.webp",
+          "alt": "Tan and charcoal 30x10 ft cabin with four grilled windows along the long wall and a centred steel door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-30x10/skid-mounted-porta-cabin-30x10-02-alternate-exterior.webp",
+          "alt": "Burnt orange 30x10 ft cabin with four grilled windows and a centred colour-matched door, on a paved yard",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-30x10/skid-mounted-porta-cabin-30x10-03-side-elevation.webp",
+          "alt": "Side elevation of a sage and cream 30x10 ft cabin with three grilled windows and a centred door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-30x10/skid-mounted-porta-cabin-30x10-04-end-elevation.webp",
+          "alt": "End elevation of a light grey and maroon 30x10 ft cabin with a single small grilled window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-30x10/skid-mounted-porta-cabin-30x10-05-interior-unfurnished.webp",
+          "alt": "Unfurnished 30x10 ft cabin interior in wood-tone lining with four grilled windows and two ceiling fans",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-30x10/skid-mounted-porta-cabin-30x10-06-interior-workspace.webp",
+          "alt": "30x10 ft cabin interior fitted with an executive desk, visitor chairs, tall cabinet and a wall-mounted AC unit",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 665000,
+      "priceInclGst": 784700,
+      "useCase": "Long open-plan site office",
+      "images": [
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-40x10/skid-mounted-porta-cabin-40x10-01-main-exterior.webp",
+          "alt": "Burnt orange 40x10 ft cabin with five grilled windows along the long wall and a flush door right of centre",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-40x10/skid-mounted-porta-cabin-40x10-02-alternate-exterior.webp",
+          "alt": "Sky blue and charcoal 40x10 ft cabin with five grilled windows and a flush door set left of centre",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-40x10/skid-mounted-porta-cabin-40x10-03-side-elevation.webp",
+          "alt": "Side elevation of an olive green 40x10 ft cabin with four grilled windows and a door right of centre",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-40x10/skid-mounted-porta-cabin-40x10-04-end-elevation.webp",
+          "alt": "End elevation of a pale yellow 40x10 ft cabin with one centred grilled window and no door on this face",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-40x10/skid-mounted-porta-cabin-40x10-05-interior-unfurnished.webp",
+          "alt": "Unfurnished 40x10 ft cabin interior with cream wall panels, a grid ceiling, five windows and two internal doors",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/size-40x10/skid-mounted-porta-cabin-40x10-06-interior-workspace.webp",
+          "alt": "40x10 ft cabin interior fitted with a desk, low sofa, coffee table, storage cabinets and a wall-mounted AC unit",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "descriptionHtml": "<h2>What a Skid-Mounted Porta Cabin Is, and When the Skid Earns Its Cost</h2><p>Most site cabins move once. A trailer brings the unit in, a crane sets it on its plinth, and it stays there until the project ends. For that duty almost any well-built steel cabin will do. Paying for a heavier base buys a capability you never use.</p><p>A skid-mounted porta cabin answers the opposite situation. Here the cabin moves repeatedly, across a project life or across several projects. Every move means a lift, a road journey and a placement. SAMAN therefore builds this configuration on longitudinal steel skid runners, under a heavy frame, with a rough-service floor, protected openings and defined lift, tie-down and service-disconnect points.</p><p>The distinction matters commercially. Nineteen of the thirty technical line items in this product differ from our standard cabin specification. They differ for one reason. Repeated handling is a fatigue and damage problem, not a strength problem.</p><p>A cabin does not fail on the first lift. It fails slowly. Doors stop closing square. Panel joints work loose. Insulation slumps out of sight. Service connections tear because somebody moved the unit before disconnecting them.</p><p>So read this page as a duty decision rather than a size decision. Will the cabin be craned on and off a trailer more than once or twice in its life? If yes, the skid build repays itself in avoided repair and avoided downtime. If no, our standard configurations serve you better and cost less.</p><figure class=\"m-0\"><img src=\"/images/products/skid-mounted-porta-cabin/description/skid-mounted-porta-cabin-graphite-exterior.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Graphite grey relocatable steel cabin with two dark-framed sliding windows and a flush door, on block paving\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Colour, glazing and setting are project-selected. The standard build and its options are listed in the Specifications tab.</figcaption></figure><h2>What Changes in the Build When a Cabin Is Designed to Move</h2><h3>The chassis becomes the product</h3><p>The primary structure is a set of longitudinal skid runners. The reference section is 150x75x5 mm MS C-channel or engineered RHS, with wear and nose plates at the ends. Those runners carry transport loads, crane placement and the limited controlled positioning that the approved handling drawing permits.</p><p>Runner depth, end geometry and wear-plate extent never come from a catalogue. We finalise them from the unit weight, the support spacing and the handling method your project will actually use. That is why our enquiry asks how the cabin will move before it asks anything about the interior.</p><p>Above the runners sit cross-members and anti-racking bracing, referenced at 100x50x3 mm channel or RHS, with reinforced lift and tie-down zones. Racking is the specific enemy here. A cabin twists on a trailer bed, then twists again on the slings. A frame that resists that twist keeps its openings square for years longer.</p><h3>The envelope suits handling, not only weather</h3><p>The exterior shell is 1.6 mm corrugated MS or PPGI. We select that gauge for impact and repeated handling rather than for the lowest weight. Where a site will need maintenance access, we fit removable panels instead. Field-cutting a shell creates an unsealed edge, and on a cabin with fifteen moves still ahead of it that edge never behaves again.</p><p>Inside, the standard liner is 0.50 mm pre-painted metal or impact-resistant fibre-cement board. We prefer the metal liner on frequently moved units for a plain reason. Board joints loosen under road vibration, and a loosened joint is visible, annoying and awkward to repair on site. Panel joints and service trims allow inspection and tightening after a move rather than replacement.</p><p>Wall insulation is 50 to 75 mm mineral wool. Roof insulation runs 75 to 100 mm. Both are retained mechanically so they cannot slump in transit. Slumped insulation is the classic hidden failure in relocated cabins. Nothing looks wrong from outside. The room simply gets hotter every year.</p><h3>The floor takes the abuse</h3><p>Floor duty is heavier in a relocated cabin than in a fixed one. The cabin flexes during handling, and the people using it usually arrive in site boots.</p><p>The floor base is a heavy MS plate, or 24 mm cement-bonded board on a stiffened grid. The finish is 3 mm chequered plate, or a 2 to 3 mm heavy commercial PVC or epoxy system. Chequered plate suits stores, workshops and high-traffic welfare use. Commercial PVC over a rigid deck suits office variants where appearance matters.</p><p>Tell us at enquiry where a machine, a battery bank or a heavy cabinet will stand. The deck then receives a reinforced pad, rather than an apology later.</p><h3>Openings sit around the structure, not through it</h3><p>Windows stay smaller than on a fixed cabin. We position them away from high-stress skid and bracing zones, and add guards where exposure warrants them. Doors are heavy assemblies in reinforced frames. A door frame that racks by a few millimetres becomes the first thing a site notices and the last thing anybody wants to fix in the field.</p><p>We specify double-leaf access where equipment or furniture passes through regularly. Glazing restraint appears on the inspection list after every relocation, rather than being left to memory.</p><h3>Services are designed to be disconnected</h3><p>Competitors do not discuss this part at all. A frequently moved cabin gets clearly labelled external service connection zones. Site utilities then disconnect and cap without anybody pulling on internal distribution.</p><p>We secure ventilation and air-conditioning fittings against road vibration. Before a move, the relocation procedure removes or restrains AC outdoor units, condensate lines and external accessories. Plumbing arrives only when you order it, and the same principle governs it. The interface sits outside, labelled and accessible, so the disconnect takes minutes and damages nothing.</p><figure class=\"m-0\"><img src=\"/images/products/skid-mounted-porta-cabin/description/skid-mounted-porta-cabin-navy-exterior.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Navy relocatable steel cabin with a full-height glazed entry door, tinted windows and free-standing steel steps\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Glazed doors, ungrilled windows and steps are optional or custom scope, not part of the standard skid build.</figcaption></figure><h2>Lift, Tie-Down, and the Rule That Protects Your Investment</h2><p>A skid base is a lifting and restraint system. It is not permission to tow the cabin behind a vehicle. It is not permission to drag it across a yard.</p><p>We say that plainly for a reason. The market uses the phrase &quot;skid-mounted&quot; loosely, and a buyer who reads it as towable will damage an expensive asset on the first attempt. The runners suit lifting, transport and controlled positioning. Any permitted skid movement on site happens by winch or rollers, only where engineered, and only where the approved handling drawing shows it.</p><p>Three rules travel with every unit:</p><ul><li>Lift only from the engineered lift and support points on the drawing.</li><li>Restrain only at the designated tie-down points, using the specified transport restraint.</li><li>Support the cabin under the skid runners on the trailer bed, never at mid-span.</li></ul><p>That last rule prevents the most expensive avoidable failure we see. A unit supported at mid-span sags between its supports. Months later the sag shows up as doors that bind and joints that leak.</p><h2>Moving the Cabin: Before, During and After</h2><p>The sequence below comes from the specification document. Read it before your first move rather than after it.</p><p><strong>Before the lift.</strong> Disconnect and cap electrical and any plumbing services at the external connection zone. Remove or secure the AC outdoor unit and its condensate line. Secure or remove external accessories, which usually means signage, lights, antennas, vents, step units and any projecting fixture. Lock all doors and windows. Secure loose items inside, because road vibration finds whatever you left on a shelf.</p><p><strong>During the lift and transport.</strong> Use certified lifting gear and lift vertically from the engineered points. Restrain the unit at the designated tie-down points, with support under the runners. Confirm the route for width and height restrictions before the vehicle leaves, particularly for the 12 ft wide body.</p><p><strong>After placement.</strong> Inspect before the cabin returns to service. Check that doors open, close and lock properly, and check hinges, frames and seals. Check windows the same way, plus glass and latch condition. Inspect the roof, gutters and downpipes, and confirm drainage still runs clear. A move disturbs drainage more often than anything else. Check that external and internal fasteners, brackets and fixings remain secure. Then reconnect services.</p><p>None of that is difficult. Sites skip it often enough that we print it here instead of assuming.</p><figure class=\"m-0\"><img src=\"/images/products/skid-mounted-porta-cabin/description/skid-mounted-porta-cabin-open-plan-office.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Open-plan cabin interior with two desk rows, mesh chairs, roller blinds, linear lighting and two wall AC units\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Furniture, blinds, air-conditioning and detection devices shown here are optional or excluded scope, quoted separately.</figcaption></figure><h2>Six Sizes and the Published Planning Ladder</h2><p>The skid configuration prices from an authoritative input rate of Rs 1,750 per sq ft, set at the 20x10 ft reference size. A published area-band adjustment then applies. Smaller cabins price above the reference rate, and larger cabins below it.</p><table class=\"saman-table\"><thead><tr><th>Size (ft)</th><th>Area (sq ft)</th><th>Rate per sq ft</th><th>Price ex-GST</th><th>Price incl. 18% GST</th></tr></thead><tbody><tr><td>10x10x8.5</td><td>100</td><td>Rs 2,012.50</td><td>Rs 2,01,250</td><td>Rs 2,37,475</td></tr><tr><td>20x8x8.5</td><td>160</td><td>Rs 1,925.00</td><td>Rs 3,08,000</td><td>Rs 3,63,440</td></tr><tr><td>20x10x8.5</td><td>200</td><td>Rs 1,750.00</td><td>Rs 3,50,000</td><td>Rs 4,13,000</td></tr><tr><td>20x12x8.5</td><td>240</td><td>Rs 1,680.00</td><td>Rs 4,03,200</td><td>Rs 4,75,776</td></tr><tr><td>30x10x8.5</td><td>300</td><td>Rs 1,680.00</td><td>Rs 5,04,000</td><td>Rs 5,94,720</td></tr><tr><td>40x10x8.5</td><td>400</td><td>Rs 1,662.50</td><td>Rs 6,65,000</td><td>Rs 7,84,700</td></tr></tbody></table><p>Treat every figure as a derived planning estimate. The final price follows the handling method, the runner sizing and the options your project confirms. A cabin lifted twice a year and a cabin lifted twice a month are not the same specification. Interior fit-out, optional add-ons, transport, installation, foundations and project-specific engineering or tests fall outside these figures unless your quotation states otherwise.</p><p>One honest comparison helps here. This is the highest published rate in our porta cabin range, and it should be. You are buying a heavier chassis, a rough-service floor, a transit-tolerant interior and a defined handling system. If your cabin will sit in one position, take a lighter configuration from the <a href=\"/product/porta-cabins\">porta cabins range</a> and put the difference into the fit-out.</p><h2>Scope You Can Check Before You Sign</h2><table class=\"saman-table\"><thead><tr><th>Scope class</th><th>What it covers</th></tr></thead><tbody><tr><td>STANDARD</td><td>Skid runner chassis with wear and nose plates, anti-racking cross-members, reinforced lift and tie-down zones, heavy frame, 1.6 mm shell and roof, mineral wool insulation, transit-tolerant liner, rough-service floor, heavy door assembly, protected openings, platform electrical package, external service connection zone, pre-dispatch QA</td></tr><tr><td>OPTIONAL</td><td>Double-leaf access, additional openings and guards, AC units and their transport restraints, plumbing and sanitary fittings, furniture, chequered plate in place of PVC or the reverse</td></tr><tr><td>CUSTOM</td><td>Internal layout and partitions, reinforced equipment pads, colour and coating system, opening schedule, service and AC positions, handling drawing for a specific lifting method</td></tr><tr><td>EXCLUDED</td><td>Interior fit-out beyond standard, transport, unloading, crane hire, foundations and plinths, statutory approvals, site power supply, project-specific engineering and tests</td></tr></tbody></table><p>Crane and unloading arrangements deserve one clear sentence. We do not supply crane services, and no price on this page includes one. Your delivery quotation confirms freight and unloading per order. The lift at your end remains your project&#x27;s arrangement, made to our handling drawing.</p><h2>Skid-Mounted or Knock-Down: Two Ways to Move a Cabin</h2><p>Both configurations answer the same question, and they answer it differently.</p><p>A skid-mounted cabin moves as one finished unit. It arrives working and it leaves working, so a move costs you the lift, the road journey and the placement. It does need crane access at both ends, and a route that takes the full body width. Choose it when moves are frequent, when downtime is expensive, and when access at both ends is good.</p><p>A knock-down cabin travels as components and goes back together on site. It reaches positions a crane cannot serve, and it rides in ordinary vehicles. Every move then costs assembly labour and time. Choose it when access binds harder than speed does.</p><p>If your sites vary, decide on the worst access you expect rather than the typical one. That is the move that decides whether the cabin arrives at all.</p><figure class=\"m-0\"><img src=\"/images/products/skid-mounted-porta-cabin/description/skid-mounted-porta-cabin-manager-office.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Private cabin office with a desk, high-back chair, two visitor chairs, cove lighting and a wall AC unit\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Interior fit-out to this level is quoted separately. Plan service and AC positions before manufacture on a cabin that will move.</figcaption></figure><h2>What to Put in Your Enquiry</h2><p>A skid enquiry moves fastest when it carries the handling facts, not just the floor area. Include these points and your quotation comes back specific:</p><ul><li>How often the cabin will move, and over what kind of distance</li><li>The lifting equipment available at both ends, and whether crane access is confirmed</li><li>Trailer type available, and any known route width or height restriction</li><li>Floor duty, including machinery, battery banks or heavy storage and their positions</li><li>Opening schedule, marking any door that must take equipment through it</li><li>Electrical load points, AC requirement and whether you need plumbing</li><li>Receiving-end site conditions, including ground bearing and approach</li></ul><p>If the move plan is still undefined, say so. We will quote the base skid build and mark the handling-dependent items as options. Your budget then stays honest while the logistics settle.</p><h2>Delivery, Freight and Site Readiness</h2><p>Standard production runs 7 to 21 working days from confirmed order. A fixed-price quotation reaches you within 48 hours of a complete enquiry. Cabins ship from our Bengaluru and Greater Noida units.</p><p>Freight follows the published trailer ladder in the Shipping tab. Your site needs a level, load-bearing base, clear approach and turning room for the trailer, working space for the lift, and a power point for the hook-up.</p><p>For a cabin that will move again, plan the receiving position with the next move in mind. A unit placed where a crane cannot reach it a second time has quietly become a fixed building.</p><p>Exposed coastal or chemical-adjacent duty deserves a separate conversation. Repeated handling and an aggressive atmosphere together are harder on a coating system than either alone. Our <a href=\"/product/porta-cabins/gi-porta-cabin\">galvanized iron porta cabin</a> page covers the corrosion side of that decision.</p><h2>Quality, Warranty and Honest Limits</h2><p>Every cabin passes pre-dispatch inspection. The checks cover dimensions, member and panel identification, connections, coating, roof drainage, weather sealing, doors, windows and electrical continuity. SAMAN POS India Private Limited operates ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 certified management systems. The company has delivered 500+ projects for 3,000+ customers across 15+ states from two owned factories.</p><p>The commercial warranty reads the same on every SAMAN page, because it comes from one controlled source: 5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Relocation damage, misuse, site services, consumables and unapproved alterations sit outside that scope. On a product built to move, that boundary matters more than usual. Plan each lift with competent riggers and to the approved drawing, and the exclusion stays theoretical.</p><p>Service life runs 20 to 25 years under proper use and maintenance. That is a design-life statement, not a warranty period. On a relocated cabin the maintenance half of the sentence carries real weight.</p><p>We publish no lifting capacity, safe working load, safety factor, weight or permitted number of relocations. Those values belong to the approved handling drawing for your unit and its stated move method. A website figure would be a guess dressed as an engineering number. Where a fire criterion governs your site instead, our <a href=\"/product/porta-cabins/fire-rated-porta-cabin\">fire-rated porta cabin</a> works from tested assemblies rather than from this build.</p><figure class=\"m-0\"><img src=\"/images/products/skid-mounted-porta-cabin/description/skid-mounted-porta-cabin-meeting-room.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Cabin meeting room with an oval table, six chairs, a wall-mounted screen, acoustic wall panels and a roller blind\"><figcaption class=\"mt-2 text-xs italic text-slate-500\">Meeting fit-out shown is optional scope. Wall-mounted equipment is secured for road vibration before each relocation.</figcaption></figure><h2>Skid-Mounted Porta Cabin FAQs</h2><h4><strong>Can the cabin be towed or dragged?</strong></h4><p>No. The skid runners suit lifting, transport on a trailer and controlled positioning. Towing and dragging are not permitted. Any on-site skid movement happens by winch or rollers, only where engineered, and only where the approved handling drawing shows it.</p><h4><strong>How many times can it be relocated?</strong></h4><p>We publish no number. The honest answer depends on the move method, the rigging discipline and the inspection routine. What we do publish is the build that makes repeated moves survivable, and the inspection list that keeps them that way.</p><h4><strong>Do I need a crane at both ends?</strong></h4><p>For a standard lift, yes. No price on this page includes crane hire, and access for the lift remains your project&#x27;s arrangement. Confirm crane access at the receiving end before the cabin leaves. A unit nobody can set down cannot be delivered.</p><h4><strong>What is the difference from a standard porta cabin?</strong></h4><p>Nineteen of thirty technical line items. In practice you get a skid runner chassis, anti-racking bracing, a rough-service floor, a transit-tolerant liner, mechanically retained insulation, reinforced door frames, protected openings and an external service disconnect zone.</p><h4><strong>Is the price higher than other porta cabins?</strong></h4><p>Yes, deliberately. At Rs 1,750 per sq ft at the reference size this is the highest published rate in our porta cabin range. The chassis, floor and interior all carry handling duty. For a cabin that will not move, a lighter configuration costs less and serves you better.</p><h4><strong>Can I order it with a toilet or an office fit-out?</strong></h4><p>Plumbing and fit-out are optional scope, and both belong at drawing stage. On a frequently moved unit the service interface positions matter more than the fittings themselves. Send us the move plan alongside the fit-out you want.</p>",
+  "suppressLegacyFaqSchema": true,
+  "specPdfHref": "/specs/saman-skid-mounted-porta-cabin-technical-specification.pdf",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "hasProductVideo": false
+}

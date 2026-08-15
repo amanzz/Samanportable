@@ -35,6 +35,7 @@ import portaCabinWithToiletApplications from '@/data/products/porta-cabin-with-t
 import soundproofPortaCabinApplications from '@/data/products/soundproof-porta-cabin-applications.json';
 import giPortaCabinApplications from '@/data/products/gi-porta-cabin-applications.json';
 import doubleStoryPortaCabinApplications from '@/data/products/double-story-porta-cabin-applications.json';
+import skidMountedPortaCabinApplications from '@/data/products/skid-mounted-porta-cabin-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -234,6 +235,15 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // heading, so neither is invented. Registered AFTER both Section-H spreads for the
   // same reason as the two entries above: an earlier key would be silently overwritten.
   'double-story-porta-cabin': doubleStoryPortaCabinApplications as ApplicationsData,
+  // PC-08 (15 Aug 2026) — skid-mounted-porta-cabin, Section 3 of copy pack v1
+  // section 4, V1-V6_H2/BODY. Six panels, one per published size, single
+  // paragraph each (no bodyParagraph2, no bullets), matching the PC-06/PC-03
+  // precedent. The 42-slot manifest allocates no dedicated Section-3 image (36
+  // gallery + 1 Section-2 card + 5 Description), so each panel reuses that
+  // size's own gallery slot 1 image and alt. No stale Section-H drop exists for
+  // this slug (checked), but registered AFTER both Section-H spreads anyway,
+  // matching every sibling above.
+  'skid-mounted-porta-cabin': skidMountedPortaCabinApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([

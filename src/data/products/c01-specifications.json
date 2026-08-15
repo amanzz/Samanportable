@@ -3327,6 +3327,179 @@
         }
       ]
     },
+    "skid-mounted-porta-cabin": {
+      "name": "Skid-Mounted Porta Cabin",
+      "narrative": "Read these two tables as a handling specification rather than a materials list. The first covers what carries the cabin and what encloses it. Almost every line there is heavier than its equivalent in a fixed-position cabin, for one reason: repeated lifting, road vibration and placement are fatigue duties, not one-off loads. The second table covers the interior and the service boundary. Those differences are subtler, and they matter just as much on a unit that a site will disconnect, move and reconnect many times. Every dimension shown is a reference starting section. We finalise runner depth, end geometry, wear-plate extent, cross-member spacing and lift point positions from the unit weight, the support spacing and the confirmed handling method. They then appear on the approved handling drawing that governs every move the cabin makes.",
+      "premiumTables": true,
+      "specifications": [
+        {
+          "group": "Table 1",
+          "component": "Bottom frame",
+          "detail": "Longitudinal skid chassis; 150x75x5 mm MS C-channel or engineered RHS skid runners with wear and nose plates; Primary runners carry transport, crane placement and limited approved sliding or positioning actions. Runner depth, end geometry and wear plates are finalized from unit weight, support spacing and handling method."
+        },
+        {
+          "group": "Table 1",
+          "component": "Bottom stiffeners",
+          "detail": "Skid cross-members and anti-racking bracing; 100x50x3 mm channel or RHS cross-members with reinforced lift and tie-down zones; Cross-members and diaphragms resist racking during trailer transport and crane handling."
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor frame",
+          "detail": "Heavy floor frame; 100x50x3 mm or engineered steel grid supporting heavy MS deck or 24 mm cement board; Floor support prioritizes stiffness under movement and point loads. Underfloor members and welds remain inspectable at critical skid and lift zones."
+        },
+        {
+          "group": "Table 1",
+          "component": "Top frame",
+          "detail": "Heavy top perimeter; 80x40x3 mm RHS reference; Upper frame controls door and window squareness after repeated handling. Final member sizing follows cabin length and lifting analysis."
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof stiffeners",
+          "detail": "Heavy roof frame; 60x40x3 mm or engineered secondary members; Roof structure is stiffened for transport vibration and maintains drainage slope after relocation. Rooftop equipment needs dedicated supports."
+        },
+        {
+          "group": "Table 1",
+          "component": "Corner posts and walls",
+          "detail": "Heavy wall and corner posts; 60x60x3 mm SHS reference with reinforced openings; Posts and opening frames resist repeated racking. Long cabins may require additional bracing per the approved transport or structural drawing."
+        },
+        {
+          "group": "Table 1",
+          "component": "Lifting and handling",
+          "detail": "Approved handling provision; Engineered lifting and support points; Provide engineered lifting or handling points and support locations for each transportable module; move the completed module only to the approved lifting, support and transport drawing."
+        },
+        {
+          "group": "Table 1",
+          "component": "Welding and fabrication",
+          "detail": "Fabrication control; Welded and bolted connections to approved shop drawings; Fabricate structural-steel connections by qualified welding or bolting to approved shop drawings; deburr edges, inspect dimensions, protect cut edges and close panels only after frame inspection."
+        },
+        {
+          "group": "Table 1",
+          "component": "Exterior walls",
+          "detail": "Heavy corrugated exterior; 1.6 mm corrugated MS or PPGI shell or approved heavy-duty equivalent; Shell is selected for impact and repeated handling resistance. Removable access panels are used where maintenance is expected instead of field cutting the shell."
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof",
+          "detail": "Heavy roof sheet; 1.6 mm corrugated or profiled roof, or heavy insulated roof system; Roof edges, flashings and gutters are reinforced against handling damage and checked for drainage after each major relocation."
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor base",
+          "detail": "Heavy floor base; Heavy MS floor plate or 24 mm cement-bonded board on stiffened grid; Floor base is selected for moving equipment and cabin flex during handling; local machinery loads require reinforced pads."
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor finish",
+          "detail": "Rough-service floor finish; 3 mm chequered plate or 2-3 mm heavy commercial PVC or epoxy; Chequered plate is preferred for high-abuse movement and service use; office variants can use commercial PVC over a rigid deck."
+        },
+        {
+          "group": "Table 1",
+          "component": "Decorative and external finish",
+          "detail": "Coating and facade finish; Project-selected colour and compatible coating system; Final colour and coating system are project-selected; substrate preparation, compatibility, touch-up and exposure-category maintenance are confirmed in the approved finish schedule."
+        },
+        {
+          "group": "Table 1",
+          "component": "Fasteners and sealing",
+          "detail": "Approved joints and seals; Corrosion-compatible fasteners, EPDM, butyl or approved sealants; Use corrosion-compatible mechanical fasteners, EPDM or butyl or approved sealants and flashings at panel joints, corners, roof laps and penetrations; no unsealed field cuts are accepted."
+        },
+        {
+          "group": "Table 2",
+          "component": "Interior walls",
+          "detail": "Transit-tolerant internal liner; 0.50 mm pre-painted metal liner or impact-resistant fibre-cement board; Metal liner is preferred where repeated movement may damage board joints. Panel joints and service trims allow inspection and tightening after relocation."
+        },
+        {
+          "group": "Table 2",
+          "component": "Ceiling",
+          "detail": "Transit-tolerant ceiling; 0.50 mm metal liner or impact-resistant board ceiling; Ceiling fittings are mechanically secured for road vibration. Access panels are retained with positive fasteners."
+        },
+        {
+          "group": "Table 2",
+          "component": "Wall insulation",
+          "detail": "Wall insulation; 50-75 mm mineral wool or approved insulated liner; Insulation is retained mechanically so it does not slump during repeated transport; material is selected for thermal, fire or acoustic duty."
+        },
+        {
+          "group": "Table 2",
+          "component": "Roof insulation",
+          "detail": "Roof insulation; 75-100 mm mineral wool or insulated roof panel; Roof insulation and liner fixings are vibration-resistant and allow inspection around lifting and roof-frame zones."
+        },
+        {
+          "group": "Table 2",
+          "component": "Main door and service door",
+          "detail": "Heavy-duty door assembly; Heavy single or double-leaf MS door with anti-rack latch and lockset as required; Door frame is reinforced to stay square after handling. Double-leaf access is used where equipment or furniture movement warrants it."
+        },
+        {
+          "group": "Table 2",
+          "component": "Windows and service openings",
+          "detail": "Protected openings; Reduced-size aluminium windows or louvered openings with 5 mm glass and guards where exposed; Openings are kept away from high-stress skid and brace zones and protected from handling damage. Glazing restraint is checked after relocation."
+        },
+        {
+          "group": "Table 2",
+          "component": "Grills and mosquito mesh",
+          "detail": "Opening protection; Grill, mosquito mesh, guard or louver as scheduled; Provided only where the approved opening schedule and intended use require it."
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical wiring",
+          "detail": "Copper wiring and containment; 1.5 / 2.5 / 4 sq.mm copper starting schedule; final by load; Concealed or protected copper wiring is typically 1.5 sq.mm for lighting, 2.5 sq.mm for sockets and 4 sq.mm for higher-load or AC circuits, subject to the final load schedule and approved electrical drawing."
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical protection",
+          "detail": "DB, MCB, RCCB and earthing; Segregated protected circuits to approved electrical drawing; Provide a distribution board with MCB and RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing."
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical fittings",
+          "detail": "Lights, sockets and equipment points; LED lights, modular switches, 6A and 16A sockets, fan and AC provision; Coordinated with the approved layout; final quantities and equipment loads are quotation-specific."
+        },
+        {
+          "group": "Table 2",
+          "component": "Ventilation and AC",
+          "detail": "Relocation-resistant ventilation and AC; Vibration-secured fans and louvers; removable AC supports and protected service penetrations; AC outdoor units, condensate lines and external accessories are removed or secured for transport according to the relocation procedure."
+        },
+        {
+          "group": "Table 2",
+          "component": "Plumbing and sanitary",
+          "detail": "Quick-disconnect service interfaces; Optional protected electrical and plumbing connection points; plumbing only when ordered; Frequently moved cabins use clearly labelled external service connection zones so site utilities can be disconnected without damaging internal distribution."
+        },
+        {
+          "group": "Table 2",
+          "component": "Layout and configuration",
+          "detail": "Skid-mounted repeated-relocation configuration; Skid runners, lift and tie-down zones and approved handling procedure; This is not permission to tow or drag the cabin arbitrarily. The move method, support points, trailer restraints and any permitted skid movement are defined by the handling drawing and site procedure."
+        },
+        {
+          "group": "Table 2",
+          "component": "Painting and coating",
+          "detail": "Corrosion-protection system; Substrate-appropriate corrosion protection and touch-up; Corrosion protection is matched to substrate and exposure: prepared MS receives the approved primer and topcoat system, while galvanized or coated steel receives compatible cut-edge and damage repair plus coating touch-up where specified."
+        },
+        {
+          "group": "Table 2",
+          "component": "Quality checks",
+          "detail": "Inspection and testing; Pre-dispatch dimensional, enclosure, service and functional QA; Pre-dispatch QA covers dimensions, member and panel identification, connections, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional checks."
+        },
+        {
+          "group": "Table 2",
+          "component": "Warranty",
+          "detail": "Commercially confirmed warranty; Standard warranty plus quotation-specific scope; 5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Relocation damage, misuse, site services, consumables and unapproved alterations remain outside the agreed scope unless explicitly included."
+        }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/diagrams/skid-mounted-porta-cabin-diagram-1.webp",
+          "alt": "Relocation chassis anatomy. Reference sections only. Illustrative - not for construction.",
+          "caption": "Relocation chassis anatomy. Reference sections only. Illustrative - not for construction.",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "src": "/images/products/skid-mounted-porta-cabin/diagrams/skid-mounted-porta-cabin-diagram-2.webp",
+          "alt": "Handling, tie-down and service overview. Illustrative - not for construction.",
+          "caption": "Handling, tie-down and service overview. Illustrative - not for construction.",
+          "width": 1672,
+          "height": 941
+        }
+      ]
+    },
     "double-story-porta-cabin": {
       "name": "Double Story (G+1) Porta Cabin",
       "sheet": "PC-G1-04",

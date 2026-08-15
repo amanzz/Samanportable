@@ -1,0 +1,82 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft Skid Cabin: The Unit That Moves Most Often",
+      "paragraph": "At 100 sq ft this is the smallest skid build and it carries the ladder's highest rate, Rs 2,012.50 per sq ft. Geometry drives that, not specification. A small plan carries more perimeter, more corners and more runner end detail for each usable foot, while the door, window and service scope barely shrinks. It is also the size that moves most often, because a gate office, a permit cabin or an instrument room follows the work front. Short runners make it the easiest of the six to lift and place.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/skid-mounted-porta-cabin/size-10x10/skid-mounted-porta-cabin-10x10-01-main-exterior.webp",
+        "alt": "Dusty pink 10x10 ft cabin with dark teal lower band, three grilled windows and a steel door, on a paved factory yard",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8 ft Skid Cabin: The Narrow Body for Tight Routes",
+      "paragraph": "The 8 ft body exists for the journey rather than the floor plan. Where a gate, a haul road or a turning circle will not take a 10 ft body, this one still reaches the position. A narrower load also simplifies route approval on repeat moves. Internally the width sets the limit: one desk run with circulation past it works, two facing rows do not. The rate is Rs 1,925 per sq ft, second highest, because the envelope and the chassis scale with perimeter rather than with area.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/skid-mounted-porta-cabin/size-20x8/skid-mounted-porta-cabin-20x8-01-main-exterior.webp",
+        "alt": "Light grey 20x8 ft cabin with three plain sliding windows and a flush steel door on the long wall",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft Skid Cabin: The Reference Build and Its Rate",
+      "paragraph": "This is the reference configuration for the whole specification. We set the Rs 1,750 per sq ft input rate here, and every other size derives from it. The thirty technical line items and the specification document describe this build. At 200 sq ft it stays inside ordinary trailer and lifting practice, which keeps the cost and the complexity of each move predictable. Choose it when nothing about your route or your layout pushes you narrower or longer, and compare competing quotations against it.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/skid-mounted-porta-cabin/size-20x10/skid-mounted-porta-cabin-20x10-01-main-exterior.webp",
+        "alt": "Dark green 20x10 ft cabin with three grilled windows and a centred steel door with a keyed lockset",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x12",
+      "h3": "20x12 ft Skid Cabin: The Width That Changes the Route",
+      "paragraph": "Two extra feet of width usually lets a cabin hold a meeting end, a partitioned office, or desks on both sides with circulation between them. It also changes the journey. A 12 ft body can classify as over-dimensional cargo. Route approval, escort requirements and timing then join every move rather than a one-off exercise. The rate falls to Rs 1,680 per sq ft, the first size to reach the area-band reduction. Confirm your worst expected route before committing to this width.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/skid-mounted-porta-cabin/size-20x12/skid-mounted-porta-cabin-20x12-01-main-exterior.webp",
+        "alt": "Charcoal grey 20x12 ft cabin with three plain sliding windows and a flush door set right of centre",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft Skid Cabin: Length for Two Separated Zones",
+      "paragraph": "Length rather than width is what this size buys. Thirty feet on a 10 ft body separates two working zones behind an internal partition, yet still arrives as one module. That suits an office with a meeting or records room attached. It shares the Rs 1,680 rate with the 20x12 build, so the choice between them turns on plan shape and route, not price. Longer runners need more careful support spacing on the trailer bed, and that spacing is set on the handling drawing.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/skid-mounted-porta-cabin/size-30x10/skid-mounted-porta-cabin-30x10-01-main-exterior.webp",
+        "alt": "Tan and charcoal 30x10 ft cabin with four grilled windows along the long wall and a centred steel door",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft Skid Cabin: The Longest Single-Lift Module",
+      "paragraph": "At 400 sq ft this carries the ladder's lowest rate, Rs 1,662.50 per sq ft, and the most demanding handling. The longest body spans furthest between supports. Runner depth, lifting point positions and trailer support zones therefore receive proportionately more attention, and mid-span support becomes the costliest mistake. It moves on a 40 ft trailer rather than a 20 ft one, which changes the freight band. Take it when one long module beats two separate deliveries and two separate lifts.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/skid-mounted-porta-cabin/size-40x10/skid-mounted-porta-cabin-40x10-01-main-exterior.webp",
+        "alt": "Burnt orange 40x10 ft cabin with five grilled windows along the long wall and a flush door right of centre",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  ]
+}
