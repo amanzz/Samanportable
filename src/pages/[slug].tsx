@@ -28,6 +28,7 @@ import dynamic from 'next/dynamic';
 import type { BlogPost, RankMathSEOData } from '../config/api';
 import { RelatedProductLink } from '../components/ds';
 import type { BlogHubLink } from '../lib/blogHubLink';
+import { isPhase2NoindexSlug } from '../lib/phase2LocalNoindex';
 import { generateBlogPostSchema, BlogPostSchema, generateBreadcrumbSchema, extractFAQSchema, generateUnifiedBlogGraph, getCityServiceSchema, getCityPageGraph, getFAQSchemaOverride } from '../lib/schema';
 import { decodeHtmlEntities } from '../lib/utils';
 import { Breadcrumb } from '../components/ds/Breadcrumb';
@@ -837,8 +838,13 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink, siblings }: BlogPostPr
   return (
     <Layout>
       {/* Unified SEO - Single source of truth for all meta tags */}
-      <UnifiedSEO 
-        rankMathSEO={rankMathSEO} 
+      {/* Phase 2 local doorway cleanup (owner ruling, 15 Aug 2026): 19 local pages
+          stay live and keep their internal links, but leave the index so they
+          cannot compete with the eleven approved Porta Cabin pages. `follow` is
+          deliberate, so their outbound links keep passing authority. */}
+      <UnifiedSEO
+        rankMathSEO={rankMathSEO}
+        noindex={isPhase2NoindexSlug(slug)}
         fallbackCanonical={`https://www.samanportable.com/${slug}`}
         fallbackTitle={`${decodeHtmlEntities(post?.title?.rendered || 'Blog Post')} - Saman Portable`}
         fallbackDescription={decodeHtmlEntities(post?.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 160) || 'Read our latest blog post at Saman Portable.')}

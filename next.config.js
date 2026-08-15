@@ -175,6 +175,40 @@ const nextConfig = {
       ...customProductDuplicateRedirects,
 
       // ==================================================================
+      // ==================================================================
+      // PHASE 2 LOCAL DOORWAY AND HELD-URL CLEANUP (SAMAN approval, 15 Aug 2026).
+      //
+      // 30 one-hop 301 rules: 13 new literals below, plus 17 existing literals
+      // re-pointed in place further down. Placed after the Phase 1 block and
+      // before ...csvRedirects, same first-match-wins pattern.
+      //
+      // 11 local pages retire. Each carries 1,300-3,000 words but mentions its
+      // own city three times or fewer: national hub copy with a city in the URL.
+      // None has ever earned a click. Pages that ARE earning were excluded by
+      // rule, and 62 local pages with real local content stay live and indexable.
+      //
+      // Two held rules get their own destinations and deliberately do NOT go to
+      // the Porta Cabin hub: rental and sanitation are different buyer tasks.
+      //   /temporary-toilet-cabin -> /product/portable-toilet
+      //   /mobile-cabins-for-rent -> /rental-services
+      // /readymade-bathroom-cabin stays held: 428 historic clicks, and the GSC
+      // query set has to be read before choosing its destination.
+      // ==================================================================
+      // Local doorway pages: city name only, no local buyer value.
+      { source: '/porta-cabins-in-anekal', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/porta-cabins-in-jp-nagar', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/porta-cabins-in-koramangala', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-in-bellandur', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-in-hennur', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-in-hoskote', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-in-kr-puram', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-in-magadi-road', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-in-north-delhi', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-in-peenya', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portable-cabins-in-shivajinagar', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      // Held rules, owner-ruled destinations outside the Porta Cabin cluster.
+      { source: '/mobile-cabins-for-rent', destination: 'https://www.samanportable.com/rental-services', statusCode: 301 },
+      { source: '/temporary-toilet-cabin', destination: 'https://www.samanportable.com/product/portable-toilet', statusCode: 301 },
       // PHASE 1 PORTA CABIN REDIRECT CONSOLIDATION (SAMAN approval, 15 Aug 2026).
       //
       // 125 one-hop 301 rules total: 86 new literals below, plus 39 existing
@@ -760,8 +794,8 @@ const nextConfig = {
       },
       {
         source: '/portacabins-for-sale-in-anekal',
-        destination: 'https://www.samanportable.com/porta-cabins-in-anekal',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/portacabins-for-sale-in-banashankari',
@@ -775,8 +809,8 @@ const nextConfig = {
       },
       {
         source: '/portacabins-for-sale-in-bellandur',
-        destination: 'https://www.samanportable.com/portable-cabins-in-bellandur',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/portacabins-for-sale-in-btm-layout',
@@ -815,8 +849,8 @@ const nextConfig = {
       },
       {
         source: '/portacabins-for-sale-in-jp-nagar',
-        destination: 'https://www.samanportable.com/porta-cabins-in-jp-nagar',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/portacabins-for-sale-in-kengeri',
@@ -825,8 +859,8 @@ const nextConfig = {
       },
       {
         source: '/portacabins-for-sale-in-koramangala',
-        destination: 'https://www.samanportable.com/porta-cabins-in-koramangala',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/portacabins-for-sale-in-malleshwaram',
@@ -849,8 +883,8 @@ const nextConfig = {
         // porta-cabins-in-peenya-f -> /portable-cabins-in-peenya. (was: /porta-
         // cabins-in-peenya-f). Revert with the rest of B58.
         source: '/portacabins-for-sale-in-peenya',
-        destination: 'https://www.samanportable.com/portable-cabins-in-peenya',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/portacabins-for-sale-in-rajajinagar',
@@ -899,18 +933,18 @@ const nextConfig = {
       },
       {
         source: '/portable-cabin-solutions-in-hennur',
-        destination: 'https://www.samanportable.com/portable-cabins-in-hennur',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       {
         source: '/trusted-porta-cabins-in-shivajinagar',
-        destination: 'https://www.samanportable.com/portable-cabins-in-shivajinagar',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
 
       // C1/C2 locality consolidation (2026-06-26): one-hop 308s into keeper
       // pages. Do not add Bangalore/India catch-alls here.
-      { source: '/portable-cabins-in-anekal', destination: 'https://www.samanportable.com/porta-cabins-in-anekal', permanent: true },
+      { source: '/portable-cabins-in-anekal', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/portable-cabins-in-banashankari', destination: 'https://www.samanportable.com/porta-cabins-in-banashankari', permanent: true },
       { source: '/portable-cabins-in-bannerghatta-road', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bannerghatta-road', permanent: true },
       { source: '/portable-cabins-in-bommasandra', destination: 'https://www.samanportable.com/portacabins-for-sale-in-bommasandra', permanent: true },
@@ -921,9 +955,9 @@ const nextConfig = {
       { source: '/portable-cabins-in-hsr-layout', destination: 'https://www.samanportable.com/porta-cabins-in-hsr-layout', permanent: true },
       { source: '/portable-cabins-in-jayanagar', destination: 'https://www.samanportable.com/porta-cabins-in-jayanagar', permanent: true },
       { source: '/portable-cabins-in-jigani', destination: 'https://www.samanportable.com/porta-cabins-in-jigani', permanent: true },
-      { source: '/portable-cabins-in-jp-nagar', destination: 'https://www.samanportable.com/porta-cabins-in-jp-nagar', permanent: true },
+      { source: '/portable-cabins-in-jp-nagar', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/portable-cabins-in-kengeri', destination: 'https://www.samanportable.com/porta-cabins-in-kengeri', permanent: true },
-      { source: '/portable-cabins-in-koramangala', destination: 'https://www.samanportable.com/porta-cabins-in-koramangala', permanent: true },
+      { source: '/portable-cabins-in-koramangala', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/portable-cabins-in-malleshwaram', destination: 'https://www.samanportable.com/porta-cabins-in-malleshwaram', permanent: true },
       { source: '/portable-cabins-in-marathahalli', destination: 'https://www.samanportable.com/porta-cabins-in-marathahalli', permanent: true },
       { source: '/portable-cabins-in-nagarbhavi', destination: 'https://www.samanportable.com/porta-cabins-in-nagarbhavi', permanent: true },
@@ -935,8 +969,8 @@ const nextConfig = {
       { source: '/portable-cabins-in-vijayanagar', destination: 'https://www.samanportable.com/porta-cabins-in-vijayanagar', permanent: true },
       { source: '/portable-cabins-in-whitefield', destination: 'https://www.samanportable.com/portacabins-for-sale-in-whitefield', permanent: true },
       { source: '/portable-cabins-in-yelahanka', destination: 'https://www.samanportable.com/porta-cabins-in-yelahanka', permanent: true },
-      { source: '/porta-cabins-in-bellandur', destination: 'https://www.samanportable.com/portable-cabins-in-bellandur', permanent: true },
-      { source: '/portacabins-for-sale-in-shivajinagar', destination: 'https://www.samanportable.com/portable-cabins-in-shivajinagar', permanent: true },
+      { source: '/porta-cabins-in-bellandur', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
+      { source: '/portacabins-for-sale-in-shivajinagar', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },
       { source: '/affordable-porta-cabins-in-hosur', destination: 'https://www.samanportable.com/portable-cabins-in-hosur', permanent: true },
 
       // ─── GSC "Not found 404" redirect-worthy small batch (1:1 equivalents) ─
@@ -1916,14 +1950,14 @@ const nextConfig = {
       // /portable-cabin-solutions-in-hennur, already live.)
       {
         source: '/portacabins-for-sale-in-hennur',
-        destination: 'https://www.samanportable.com/portable-cabins-in-hennur',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       // (B58-2) Hoskote — C1 twin, 0/0 GSC.
       {
         source: '/portacabins-for-sale-in-hoskote',
-        destination: 'https://www.samanportable.com/portable-cabins-in-hoskote',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       // (B58-3) Indiranagar — C1 twin, 0/0 GSC. (C1 twin also carried fake
       // reviews/client claims — redirect removes that liability for free.)
@@ -1936,15 +1970,15 @@ const nextConfig = {
       // page" in the Master Keyword Map.)
       {
         source: '/portacabins-for-sale-in-kr-puram',
-        destination: 'https://www.samanportable.com/portable-cabins-in-kr-puram',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       // (B58-5) Magadi Road — C1 twin, 0/0 GSC. (C1 twin carried banned words +
       // a client claim — redirect removes it.)
       {
         source: '/portacabins-for-sale-in-magadi-road',
-        destination: 'https://www.samanportable.com/portable-cabins-in-magadi-road',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       // (B58-6) Peenya — C1 twin porta-cabins-in-peenya-f (live 200, 0 clicks)
       // -> keeper portable-cabins-in-peenya (live 200; GSC 0clk/9impr/pos 6, the
@@ -1952,8 +1986,8 @@ const nextConfig = {
       // to the same keeper above (B58) to avoid a 2-hop chain.
       {
         source: '/porta-cabins-in-peenya-f',
-        destination: 'https://www.samanportable.com/portable-cabins-in-peenya',
-        permanent: true,
+        destination: 'https://www.samanportable.com/product/porta-cabins',
+        statusCode: 301,
       },
       // (B58-7) Frazer — C1 twin porta-cabins-in-frazer (live 200, 0 clicks) ->
       // keeper portable-cabins-in-frazer-town (live 200; "Frazer Town" is the
