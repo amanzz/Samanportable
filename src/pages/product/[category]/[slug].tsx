@@ -85,6 +85,13 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'double-story-porta-cabin',
   'puf-porta-cabin',
   'skid-mounted-porta-cabin',
+  // PC-09 (15 Aug 2026) — omitted when this set was first written because
+  // Section 2/3 had no copy yet (v1.0 partial build). Now that the copy pack
+  // is fully wired, this page joins the same premium chip/tab treatment
+  // every other cluster page already has. No new styling: reuses the
+  // existing usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2
+  // opt-ins byte-for-byte, exactly as every sibling above does.
+  'knock-down-porta-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
