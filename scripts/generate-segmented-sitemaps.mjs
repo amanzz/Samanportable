@@ -67,7 +67,7 @@ const candidates = remaining.filter(pathname => locationPattern.test(pathname));
 const locations = candidates.slice(0, 213);
 const editorial = remaining.filter(pathname => !locations.includes(pathname));
 const unfilteredSegments = { products, locations, projects, editorial };
-const expectedSegments = { products: 160, locations: 213, projects: 1, editorial: 79 };
+const expectedSegments = { products: 161, locations: 213, projects: 1, editorial: 79 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -115,8 +115,15 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // it. Earlier note, still true: both sides of an old merge independently wrote
 // 451 here for different pages, so git merged the literal cleanly and silently
 // left it one short, and the segment gates above are what caught it.
-if (all.length !== 453) {
-  throw new Error(`Page sitemap total changed from 453 to ${all.length}`);
+// 454 = 453 before PC-07, +1 for /product/porta-cabins/puf-porta-cabin, same
+// Ruling 6 basis. The products segment moves 160 -> 161 with it.
+//
+// double-story-porta-cabin, soundproof-porta-cabin and fire-rated-porta-cabin
+// are built and routable but are deliberately NOT in sitemapCanonicalPaths.json
+// yet. Do not add them here as a side effect of an unrelated change — that is
+// its own release decision, pending an owner ruling, not a guard-baseline fix.
+if (all.length !== 454) {
+  throw new Error(`Page sitemap total changed from 454 to ${all.length}`);
 }
 
 const pageMap = new Map();
