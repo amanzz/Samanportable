@@ -386,6 +386,29 @@ export const PORTA_CABIN_SKID_RAIL: import('./c16PanelCatalog').RelatedRailItem[
       : item;
   });
 
+/**
+ * PC-10 (15 Aug 2026) - the shop cabin page's OWN Column 3 rail. Build prompt v1.1
+ * section 9 names exactly three related tabs: MS Porta Cabin, GI Porta Cabin and
+ * Porta Cabin with Toilet. Titles, hrefs, blurbs and card images are taken VERBATIM
+ * from PORTA_CABIN_HUB_RAIL above, so nothing here is authored. Alts are routed
+ * through the same em-dash normalisation as the other bespoke rails, because this
+ * page's own copy is held to zero U+2014.
+ */
+const PORTA_CABIN_SHOP_RAIL_SLUGS = [
+  'ms-porta-cabin',
+  'gi-porta-cabin',
+  'porta-cabin-with-toilet',
+] as const;
+
+export const PORTA_CABIN_SHOP_RAIL: import('./c16PanelCatalog').RelatedRailItem[] =
+  PORTA_CABIN_SHOP_RAIL_SLUGS.map((wanted) => {
+    const item = PORTA_CABIN_HUB_RAIL.find((row) => slugFromProductHref(row.href) === wanted);
+    if (!item) throw new Error(`PC-10 rail: no hub-rail row for ${wanted}`);
+    return item.imageAlt && item.imageAlt.includes('—')
+      ? { ...item, imageAlt: item.imageAlt.replace(/\s*—\s*/g, ', ') }
+      : item;
+  });
+
 export const PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH = (slug: string) =>
   PORTA_CABIN_SIBLING_YMAL(slug).map((item) =>
     item.imageAlt && item.imageAlt.includes('—')
