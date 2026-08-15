@@ -224,7 +224,12 @@ export const PRODUCTS: readonly ProductDefinition[] = [
   { id: 'accommodation-cabin', name: 'Accommodation Cabin', subtitle: 'Bunkhouse / staff stay' },
   { id: 'container-office', name: 'Container Office', subtitle: 'Insulated container workspace', ladderKey: 'container-offices' },
   { id: 'site-office', name: 'Site Office', subtitle: 'On-site project office', ladderKey: 'site-office-container' },
-  { id: 'portable-cabin', name: 'Portable Cabin', subtitle: 'General-purpose portable cabin', ladderKey: 'portable-cabin' },
+  // 'portable-cabin' removed from the product list (SAMAN ruling, 15 Aug 2026).
+  // The dropdown offered both "Porta Cabin" and "Portable Cabin" as separate
+  // priced products; the Portable Cabin cluster retires into the Porta Cabins
+  // hub, so the duplicate option and its ROUTE_LADDERS entry are removed
+  // together. The ProductId union keeps 'portable-cabin' so the route resolvers
+  // and PRODUCT_ICON stay valid; no formula, layout, banner or logic changed.
   { id: 'container-houses', name: 'Container House', subtitle: 'Standard container home', ladderKey: 'container-houses' },
   { id: 'prefab-container-homes', name: 'Prefab Container Home', subtitle: 'Prefab home specification', ladderKey: 'prefab-container-homes' },
   { id: 'shipping-container-homes', name: 'Shipping Container Home', subtitle: 'Shipping-grade shell', ladderKey: 'shipping-container-homes' },

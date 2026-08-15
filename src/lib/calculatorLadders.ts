@@ -23,6 +23,8 @@ import miniPortaCabin from '@/data/products/mini-porta-cabin.json';
 import msPortaCabin from '@/data/products/ms-porta-cabin.json';
 import giPortaCabin from '@/data/products/gi-porta-cabin.json';
 import soundproofPortaCabin from '@/data/products/soundproof-porta-cabin.json';
+import fireRatedPortaCabin from '@/data/products/fire-rated-porta-cabin.json';
+import pufPortaCabin from '@/data/products/puf-porta-cabin.json';
 import doubleStoryPortaCabin from '@/data/products/double-story-porta-cabin.json';
 import skidMountedPortaCabin from '@/data/products/skid-mounted-porta-cabin.json';
 import knockDownPortaCabin from '@/data/products/knock-down-porta-cabin.json';
@@ -40,7 +42,6 @@ import containerOfficesJson from '@/data/products/container-offices.json';
 import containerOfficeCabinJson from '@/data/products/container-office-cabin.json';
 import shippingContainerOfficeJson from '@/data/products/shipping-container-office.json';
 import siteOfficeContainer from '@/data/products/site-office-container.json';
-import portableCabin from '@/data/products/portable-cabin.json';
 import portableCabinWithToilet from '@/data/products/portable-cabin-with-toilet.json';
 import portableShopCabin from '@/data/products/portable-shop-cabin.json';
 // C-05 container cafe cluster, added in CALC-L4 (09 Aug 2026). Each of the six
@@ -170,6 +171,15 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // own product JSON, same pattern as GI, so the calculator and the page
   // cannot drift apart.
   'soundproof-porta-cabin': toRows(soundproofPortaCabin),
+  // CALC parity patch (SAMAN ruling, 15 Aug 2026). Both pages publish a six-row
+  // ladder but had no entry here, so getRouteLadder returned null and the
+  // calculator rendered "Price on request" under a published price table. Same
+  // standing rule as GI and Soundproof: read the page's own product JSON so the
+  // calculator and the published ladder cannot drift. The two ladders carry
+  // different size sets (fire-rated has 40x12 and no 30x10; PUF the reverse) -
+  // toRows()/dimsFromSizeSlug() are generic parsers, so neither needs handling.
+  'fire-rated-porta-cabin': toRows(fireRatedPortaCabin),
+  'puf-porta-cabin': toRows(pufPortaCabin),
   // PC-03: derived from the double-story product JSON's own six variants, so the
   // calc-entry banner price and the published ladder cannot drift. This is the
   // standard entry every page gets (SAMAN ruling, 15 Aug 2026); no other calculator
@@ -198,7 +208,12 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'container-office-cabin': toRows(containerOfficeCabinJson),
   'shipping-container-office': toRows(shippingContainerOfficeJson),
   'site-office-container': toRows(siteOfficeContainer),
-  'portable-cabin': toRows(portableCabin),
+  // 'portable-cabin' removed with its product-list entry (SAMAN ruling, 15 Aug
+  // 2026). The Portable Cabin cluster retires into /product/porta-cabins, so the
+  // retired terminology must not survive as a separate calculator product with a
+  // price of its own. Deliberately NOT remapped to the porta-cabins ladder: that
+  // would reinstate the inherited-rate pattern the 03 Aug 2026 binding ruling
+  // removed. This entry and PRODUCTS in cabinCalculatorSSR.ts move together.
   'portable-cabin-with-toilet': toRows(portableCabinWithToilet),
   'portable-shop-cabin': toRows(portableShopCabin),
   'container-cafe': toRows(containerCafe),
