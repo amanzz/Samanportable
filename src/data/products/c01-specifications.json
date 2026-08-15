@@ -3153,6 +3153,179 @@
         "width": 1672,
         "height": 941
       }
+    },
+    "puf-porta-cabin": {
+      "name": "PUF Porta Cabin",
+      "narrative": "Two rows in these tables change more for the buyer than the rest combined. The first is Interior walls, because no separate MDF lining is why a PUF cabin needs no finishing trade on site and why the room is usable on delivery day. The second is Wall insulation, because the note attached to it is the one the market keeps getting wrong: thickness buys insulation, never fire performance. Read those two rows first, then read the door, window and ventilation rows together, because openings and penetrations are where a good panel build is usually lost.",
+      "premiumTables": true,
+      "specifications": [
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Bottom frame",
+          "detail": "Standard MS primary chassis - 100 x 50 x 3 mm MS C-channel reference: The chassis is sized independently for cabin loads and handling. Panels are enclosure components, not structure."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Bottom stiffeners",
+          "detail": "MS base stiffeners - 100 x 50 / 75 x 40 channel and square pipe as engineered: Stiffeners carry floor loads and support the panel perimeter rails."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Floor frame",
+          "detail": "Floor support frame - MS cross-grid with 18 mm cement-bonded or Bison board: The grid is isolated from external water ingress and gives a rigid finish-ready floor. Higher loads may need 24 mm board or steel deck."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Top frame",
+          "detail": "Panel-support top perimeter - 50 x 50 x 1.6 mm MS SHS reference: Gives wall panel heads a straight, level bearing. Final section and spacing follow span and handling design."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Roof stiffeners",
+          "detail": "Insulated roof support frame - 50 x 50 x 1.2 mm or engineered members as panel span requires: Coordinated with the chosen panel's allowable span, fixings, overhang, drainage and service loads."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Corner posts and walls",
+          "detail": "Panel-support wall frame - 50 x 50 x 2 mm MS SHS reference, framed openings reinforced: Large openings need local reinforcement designed in, without crushing or cutting the PUF core."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Lifting and handling",
+          "detail": "Approved handling provision - Engineered lifting and support points: The completed module moves only to the approved lifting, support and transport drawing."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Welding and fabrication",
+          "detail": "Fabrication control - Welded and bolted connections to approved shop drawings: Qualified welding and bolting, deburred edges, dimensional inspection, panels closed only after frame inspection."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Exterior walls",
+          "detail": "PUF insulated wall sandwich panel - 50 mm default, 80 mm higher-insulation option, 0.5-0.8 mm pre-coated GI or GL facings: Skin thickness, core density, panel thickness and joint profile are stated in the purchase order."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Roof",
+          "detail": "PUF or PIR insulated roof panel - 60-80 mm default range, profiled outer skin with finished inner liner: One element gives weather skin, insulation and finished underside. Fixings, laps, flashings, sealants and drainage follow the panel system."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Floor base",
+          "detail": "Rigid floor base - 18 mm cement-bonded or Bison board, 24 mm option: Mechanically fixed to the chassis grid and sealed at edges. Wet or heavy-duty uses need a separately specified substrate and waterproofing."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Floor finish",
+          "detail": "Standard resilient floor finish - 1.5-2.0 mm commercial vinyl, optional SPC or epoxy: Independent of wall panel thickness. Fit-out packages stay outside the base cabin price."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Decorative and external finish",
+          "detail": "Coating and facade finish - Project-selected colour and compatible coating system: Substrate preparation, compatibility, touch-up and exposure-category maintenance are confirmed in the approved finish schedule."
+        },
+        {
+          "group": "Table 1: structure, chassis, envelope, roof and floor",
+          "component": "Fasteners and sealing",
+          "detail": "Approved joints and seals - Corrosion-compatible fasteners, EPDM, butyl or approved sealants: No unsealed field cut is accepted at joints, corners, roof laps or penetrations."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Wall insulation",
+          "detail": "PUF wall thermal core - 50 mm standard planning thickness, 80 mm option, density and thermal data by supplier certificate: Do not infer fire resistance from PUF thickness. A non-combustible core means a tested mineral-wool panel system instead."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Roof insulation",
+          "detail": "PUF or PIR roof thermal core - 60-80 mm planning range, supplier-certified density and thermal data: Thickness is selected for heat gain, span and condensation. Supplier data governs allowable spans and fastener spacing."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Interior walls",
+          "detail": "Factory-finished inner wall face - Inner PPGI or GI panel facing, no separate MDF lining in the standard build: The panel inner face is the finished wall unless a decorative or hygienic lining is separately ordered."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Ceiling",
+          "detail": "Insulated roof underside or optional service ceiling - Exposed inner panel liner, or lightweight service ceiling below: A false ceiling creates a service void. It does not replace the roof panel's thermal function, and vapour control stays continuous."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Main door and service door",
+          "detail": "Insulated door assembly - PUF-panel or insulated MS door with sealed perimeter: Leaf and frame are selected to reduce thermal bridging and air leakage. Hardware suits transport and repeated use."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Windows and service opening",
+          "detail": "Sealed aluminium window assembly - Powder-coated aluminium with 4-5 mm glass or upgraded glazing: Frames are flashed and sealed into the panel with no exposed core. Larger glazing needs a framed structural opening."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Grills and mosquito mesh",
+          "detail": "Opening protection - Grill, mesh, guard or louver as scheduled: Provided only where the approved opening schedule and intended use require it."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Electrical wiring",
+          "detail": "Copper wiring and containment - 1.5 / 2.5 / 4 sq.mm copper starting schedule, final by load: Lighting, socket and higher-load or AC circuits, subject to the final load schedule and approved electrical drawing."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Electrical protection",
+          "detail": "DB, MCB, RCCB and earthing - Segregated protected circuits to approved electrical drawing: Lighting, socket, wet-area and AC circuits are segregated per the approved drawing."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Electrical fittings",
+          "detail": "Lights, sockets and equipment points - LED lights, modular switches, 6A and 16A sockets, fan and AC provision: Final quantities and equipment loads are quotation-specific."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Ventilation and AC",
+          "detail": "Condensation-aware ventilation or AC - Natural ventilation or AC with controlled condensate: AC sleeves and drains are factory planned so insulation and vapour sealing are restored around penetrations."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Plumbing and sanitary",
+          "detail": "Optional plumbing in insulated panels - Factory-planned sleeves and chases, penetrations sealed, core protected: Pipes are never routed by cutting large unprotected channels through panels. Service zones are planned before manufacture."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Layout and configuration",
+          "detail": "Interlocking insulated-panel cabin - Factory-cut panels, interlocking joints, butyl or approved sealants and flashings: Precision interlocking and joint sealing limit air gaps and thermal bridges. The purchase order identifies the selected panel system."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Painting and coating",
+          "detail": "Corrosion-protection system - Substrate-appropriate protection and touch-up: Prepared MS takes the approved primer and topcoat. Galvanized or coated steel takes compatible cut-edge repair and touch-up."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Quality checks",
+          "detail": "Inspection and testing - Pre-dispatch dimensional, enclosure, service and functional QA: Covers dimensions, panel identification, connections, coating, drainage, weather sealing, doors, windows and electrical continuity."
+        },
+        {
+          "group": "Table 2: insulation, interior, openings, services, options and scope",
+          "component": "Warranty",
+          "detail": "Commercially confirmed warranty - Final quotation governs scope and exclusions: 5-year structural and 1-year finishing warranty as standard, finishing extendable to 2 years on request, confirmed at quotation."
+        }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/puf-porta-cabin/diagrams/puf-porta-cabin-diagram-1.webp",
+          "alt": "Cross-section of a PUF porta cabin showing the MS chassis, floor grid, wall and roof sandwich panels with the steel schedule",
+          "caption": "Insulated panel construction, cross-section through the 20 x 10 x 8.5 ft reference configuration. Illustrative, not for construction. Drawing SP-PC-PUF-08-DWG-R1.",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "src": "/images/products/puf-porta-cabin/diagrams/puf-porta-cabin-diagram-2.webp",
+          "alt": "Detail sheet showing an interlocking wall panel joint, flashed junctions, a sealed service penetration and the envelope specification",
+          "caption": "Envelope continuity and joint sealing: joints, junctions, penetrations and openings. Illustrative, not for construction. Drawing SP-PC-PUF-08-DWG-R2.",
+          "width": 1672,
+          "height": 941
+        }
+      ]
     }
   }
 }

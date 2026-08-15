@@ -46,6 +46,7 @@ import {
   PORTA_CABIN_MS_RAIL,
   PORTA_CABIN_FIRE_RATED_RAIL,
   PORTA_CABIN_WITH_TOILET_RAIL,
+  PORTA_CABIN_PUF_RAIL,
   buildPortaCabinGiRail,
   PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
   PORTA_CABIN_SIBLING_YMAL,
@@ -67,13 +68,15 @@ const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 
 // Pages rebuilt to the Porta Cabins cluster design system (section dividers, SAP
 // size strip, Section-3 headings at H2, the YMAL carousel). PC-01 added the MS page;
-// PC-05 adds fire-rated; PC-02 adds GI; PC-04 adds the with-toilet page. Every other
-// page using the shared hero keeps the defaults (false) and renders byte-identically.
+// PC-05 adds fire-rated; PC-02 adds GI; PC-04 adds the with-toilet page; PC-07 adds
+// the PUF page. Every other page using the shared hero keeps the defaults (false)
+// and renders byte-identically.
 const CLUSTER_DESIGN_SLUGS = new Set([
   'ms-porta-cabin',
   'fire-rated-porta-cabin',
   'gi-porta-cabin',
   'porta-cabin-with-toilet',
+  'puf-porta-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -583,6 +586,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (currentSlug === 'porta-cabin-with-toilet') {
       return PORTA_CABIN_WITH_TOILET_RAIL;
     }
+    // PC-07 (15 Aug 2026) — same treatment for the PUF page: Column 3 is the
+    // three-item comparison rail named in build prompt §10 (MS, GI, Fire-Rated),
+    // not the full-cluster strip. Scoped to this one slug.
+    if (currentSlug === 'puf-porta-cabin') {
+      return PORTA_CABIN_PUF_RAIL;
+    }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
@@ -778,11 +787,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // (ms-porta-cabin, gi-porta-cabin, porta-cabin-with-toilet)
                   // keeps the default 40px margin.
                   compactMobileDividers={slug === 'fire-rated-porta-cabin'}
-                  // PC-04 — its approved eyebrow uses a hyphen, not the em dash in
-                  // the shared default. Passed from this slug only, so the hub, the MS
-                  // page and the GI page keep the deployed literal.
+                  // PC-04/PC-07 — their approved eyebrow uses a hyphen, not the em
+                  // dash in the shared default. Passed from these slugs only, so the
+                  // hub, the MS page and the GI page keep the deployed literal.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet'
+                    slug === 'porta-cabin-with-toilet' || slug === 'puf-porta-cabin'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
@@ -1078,15 +1087,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 </section>
               )}
 
-              {/* PC-01/PC-02/PC-04/PC-05 — "You may also like" carousel, calculator →
+              {/* PC-01/PC-02/PC-04/PC-05/PC-07 — "You may also like" carousel, calculator →
                   tabs. Lists the cluster's other nine children with the hub's own R16
-                  card images. No prices on cards. The GI and with-toilet pages take the
-                  variant whose alts carry no em dash, because both are held to zero
-                  U+2014 in rendered copy; MS and fire-rated keep PC-01's original list. */}
+                  card images. No prices on cards. The GI, with-toilet and PUF pages take
+                  the variant whose alts carry no em dash, because all three are held to
+                  zero U+2014 in rendered copy; MS and fire-rated keep PC-01's original list. */}
               {(slug === 'ms-porta-cabin' || slug === 'fire-rated-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
-              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet') && (
+              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'puf-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
               )}
 

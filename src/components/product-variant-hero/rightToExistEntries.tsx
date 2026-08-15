@@ -471,6 +471,64 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
   // The approved §6 link map carries exactly two S2 body links: the portable-toilet
   // hub and /contact. The previous entry's wet-zone spec sentence is gone — that
   // material detail now lives in the Description and Specifications tabs.
+  // PC-07 (15 Aug 2026, revised same day per SAMAN's screenshot instruction) —
+  // rebuilt to match the porta-cabins HUB's own Section 2 structure exactly
+  // (CLAUDE.md: "The reference is the 'Which Porta Cabin Should You Buy?' card
+  // on the live /product/porta-cabins hub. Match it exactly."), using the
+  // `comparisonInsideCard` axis PC-05 already established for this shape: H2 +
+  // one full-width paragraph, then the split card with an H3 + up to two
+  // paragraphs beside the image, then the CTA.
+  //
+  // Provenance, field by field:
+  //   heading            — approved copy pack v1 §3 S2_H2, checksum-verified, unchanged.
+  //   body (top, full width) — NOT in the copy pack. Typed directly by SAMAN in
+  //                        chat on 15 Aug 2026 to match the hub reference
+  //                        screenshot. No checksum exists for it.
+  //   splitCard.subheading (H3) — likewise typed directly by SAMAN, not in the
+  //                        copy pack, no checksum.
+  //   splitCard.body (first paragraph beside the image) — approved S2_BODY
+  //                        paragraph 1, checksum-verified, unchanged.
+  //   comparison (second paragraph beside the image, via comparisonInsideCard)
+  //                        — approved S2_BODY paragraph 2, checksum-verified,
+  //                        unchanged, both approved links intact.
+  // So every word already in the checksum-verified copy pack survives verbatim;
+  // only the new top paragraph and the new H3 lack a copy-pack checksum. Flagged
+  // in the build report for copy-side confirmation before this ships.
+  //
+  // ctaLabel/ctaHref reuse the "Explore the project gallery" -> /gallery pair
+  // already established by the hub itself, fire-rated and with-toilet.
+  // Card image: no dedicated 16:9 split-card asset was supplied in the handoff,
+  // and every one of this page's 36 gallery photos is 1254x1254 (1:1) — cropping
+  // one is forbidden. Per CLAUDE.md's own fallback ("If a page has no spare 16:9
+  // image, reallocate one from the Description tab"), this reuses the
+  // Description tab's img-1 (`puf-porta-cabin-panel-white-exterior.webp`, true
+  // 1672x941), whose approved alt — "flat panel faces and visible vertical
+  // panel joints" — ties directly to the copy beside it. Carried verbatim; no
+  // new alt authored.
+  'puf-porta-cabin': {
+    heading: 'When a PUF Panel Envelope Beats a Framed and Lined Cabin',
+    body: (
+      <>
+        Choosing the right cabin is easier when you focus on how the space will actually be used. If you need a comfortable, insulated room that looks finished as soon as it arrives, a PUF panel cabin often makes more sense.
+      </>
+    ),
+    comparison: (
+      <>
+        That trade suits occupied rooms in hot climates and any project where the interior has to look finished immediately. Where the priority is a heavy fixed-position industrial shell instead, the <Link className={linkClass} href={href('ms-porta-cabin')}>MS porta cabin</Link> answers it better. <Link className={linkClass} href="/contact">Send us your site conditions and opening schedule</Link> and we will quote the panel system against them.
+      </>
+    ),
+    splitCard: {
+      imageSrc: '/images/products/puf-porta-cabin/description/puf-porta-cabin-panel-white-exterior.webp',
+      imageAlt: 'Cream PUF panel cabin with brown trim, showing flat panel faces and visible vertical panel joints',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'One panel does three jobs',
+      body: 'A framed cabin carries insulation inside a structural shell, so the wall builds up in layers and the lining becomes a separate trade. A PUF cabin inverts that. The panel is the wall: outer skin, insulated core and finished inner face arrive as one factory element, and the steel takes its sizing from that panel\'s span. You gain a continuous insulated envelope and a clean interior on day one. You accept a discipline in exchange, because the core cannot be cut open for services after the fact.',
+      position: 'comparisonInsideCard',
+      ctaLabel: 'Explore the project gallery',
+      ctaHref: '/gallery',
+    },
+  },
   'porta-cabin-with-toilet': {
     heading: 'Choose One Combined Unit Instead of Two Separate Deliveries',
     // v1.3 §1.1 — both Section-2 paragraphs are body copy, not body-plus-emphasis, so

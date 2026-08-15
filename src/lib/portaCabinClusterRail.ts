@@ -239,6 +239,40 @@ export const PORTA_CABIN_FIRE_RATED_RAIL: import('./c16PanelCatalog').RelatedRai
 ];
 
 /**
+ * PC-07 (15 Aug 2026) — the PUF page's OWN Column 3 rail. The approved build
+ * prompt (§10 "Related product tabs") names exactly three destinations: MS
+ * Porta Cabin, GI Porta Cabin, Fire-Rated Porta Cabin. Card images reused
+ * verbatim from `children/` (owner-approved under PC-00 R1a/R16); alts use the
+ * hyphen form because this page's own copy is held to zero U+2014.
+ */
+export const PORTA_CABIN_PUF_RAIL: import('./c16PanelCatalog').RelatedRailItem[] = [
+  {
+    title: 'MS Porta Cabin',
+    href: '/product/porta-cabins/ms-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Heavy industrial duty in a thicker mild-steel build',
+    imageSrc: '/images/products/porta-cabins/children/ms-porta-cabin-card.webp',
+    imageAlt: 'MS Porta Cabin by SAMAN - exterior view',
+  },
+  {
+    title: 'GI Porta Cabin',
+    href: '/product/porta-cabins/gi-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Coastal and high-corrosion sites',
+    imageSrc: '/images/products/porta-cabins/children/gi-porta-cabin-card.webp',
+    imageAlt: 'GI Porta Cabin by SAMAN - exterior view',
+  },
+  {
+    title: 'Fire-Rated Porta Cabin',
+    href: '/product/porta-cabins/fire-rated-porta-cabin',
+    category: 'Porta Cabins',
+    blurb: 'Sites with fire-performance requirements',
+    imageSrc: '/images/products/porta-cabins/children/fire-rated-porta-cabin-card.webp',
+    imageAlt: 'Fire-Rated Porta Cabin by SAMAN - exterior view',
+  },
+];
+
+/**
  * PC-02 (14 Aug 2026) — the GI page's OWN Column 3 rail. The approved GI build ticket
  * (section 4, "Column 3 related tabs") names exactly three destinations: the Porta
  * Cabins hub, the MS Porta Cabin and the PUF Porta Cabin, with no prices. So this page
