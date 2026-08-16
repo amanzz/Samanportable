@@ -93,7 +93,16 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // segment and none spills into editorial. That is why editorial falls by 13
 // while only 8 of the 30 removed paths were editorial: the other 5 of the drop
 // is spill that no longer happens. Do not "fix" this by raising the cap.
-const expectedSegments = { products: 144, locations: 196, projects: 1, editorial: 65 };
+//
+// Sitemap inclusion for the four held pages (SAMAN approval, 16 Aug 2026):
+// products 144 -> 148. double-story-porta-cabin, fire-rated-porta-cabin,
+// soundproof-porta-cabin and skid-mounted-porta-cabin were built and routable
+// but deliberately excluded from sitemapCanonicalPaths.json pending this exact
+// ruling (see the PC-07/PR #132 note above this file already carries). All
+// four re-verified 200/self-canonical/index,follow immediately before this
+// change. No content, title, H1, redirect, calculator, rental or size change
+// rides with this commit - sitemap inclusion only.
+const expectedSegments = { products: 148, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -152,17 +161,18 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // PR #132 to fix - see that PR for the incident).
 //
 // double-story-porta-cabin, soundproof-porta-cabin, fire-rated-porta-cabin and
-// skid-mounted-porta-cabin are built and routable but are deliberately NOT in
-// sitemapCanonicalPaths.json yet. Do not add them here as a side effect of an
-// unrelated change - that is its own release decision, pending an owner
-// ruling, not a guard-baseline fix.
+// skid-mounted-porta-cabin were built and routable but deliberately held out of
+// sitemapCanonicalPaths.json pending an owner ruling - resolved 16 Aug 2026,
+// see the expectedSegments note above. Kept here so the "why 406 before, why
+// 410 now" history stays in one place rather than needing the git log.
 // 436 = 455 minus the 19 paths this release removes from sitemapCanonicalPaths.json:
 // 18 Phase 1 retired sources plus /portable-cabin-price-calculator from the calculator
 // parity commit. See the expectedSegments note above for the breakdown.
 // 406 = 436 minus the 30 local paths removed by the Phase 2 cleanup (11 redirected,
 // 19 noindex). See the expectedSegments note above for the segment breakdown.
-if (all.length !== 406) {
-  throw new Error(`Page sitemap total changed from 406 to ${all.length}`);
+// 410 = 406 plus the four porta-cabin pages this commit adds to the sitemap.
+if (all.length !== 410) {
+  throw new Error(`Page sitemap total changed from 410 to ${all.length}`);
 }
 
 const pageMap = new Map();
