@@ -1136,7 +1136,22 @@ export function PortaCabinVariantHero({
 
         {/* Trust row — anchored at the card bottom (mt-auto within the
             full-height flex column). */}
-        {specPdfHref && !isC08Product && (
+        {/* LC-02 (16 Aug 2026) — disabled state: the control renders, visibly
+            inactive, when a page's PDF exists but is unsigned/draft and must
+            not be linked. Same label text as the working button; no href, no
+            download, no click. Absent on every other product -> unchanged. */}
+        {data.specPdfDisabled && !isC08Product && (
+        <button
+          type="button"
+          disabled
+          aria-disabled="true"
+          className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-400"
+        >
+          <Download className="h-4 w-4" aria-hidden="true" />
+          {data.specPdfButtonLabel || (hasRightToExist ? 'Download Specification PDF' : 'Download specifications')}
+        </button>
+        )}
+        {specPdfHref && !data.specPdfDisabled && !isC08Product && (
         <a
           href={specPdfHref}
           download
@@ -1151,7 +1166,7 @@ export function PortaCabinVariantHero({
             PDF button, carrying the "not for construction" control the PDF
             itself lacks (copy pack v1 §2). Absent on every other product ->
             byte-identical elsewhere. */}
-        {specPdfHref && !isC08Product && data.specPdfCaption && (
+        {specPdfHref && !data.specPdfDisabled && !isC08Product && data.specPdfCaption && (
         <p className="-mt-1 text-xs italic text-slate-500 text-center">{data.specPdfCaption}</p>
         )}
 
@@ -1613,8 +1628,18 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                     </>
                   )}
                   <span className="font-bold text-[var(--ds-color-forest)]">{v.priceExGst == null ? 'Price on request' : <>{formatIndianPrice(v.priceExGst)} + GST</>}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>₹{rate}/sq ft</span>
+                  {/* LC-02 (16 Aug 2026) — same guard as `v.capacity` above: `rate` is
+                      already '' for a gated/quote-mode variant (pricePerSqft() returns
+                      '' when priceExGst is null), but this span rendered unconditionally,
+                      printing a bare "₹/sq ft" fragment between two separators. Never
+                      reached before this page, since every prior product had a real
+                      price on every variant. */}
+                  {rate && (
+                    <>
+                      <span aria-hidden="true">·</span>
+                      <span>₹{rate}/sq ft</span>
+                    </>
+                  )}
                 </div>
 
                 <div className="mt-4">

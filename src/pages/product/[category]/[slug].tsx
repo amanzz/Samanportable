@@ -50,6 +50,7 @@ import {
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { LABOR_SHEDS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
@@ -117,6 +118,11 @@ const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
 // monetary strings and legacy commercial entities are suppressed at render time.
 const PENDING_APPROVED_LADDER_SLUGS = new Set([
   'prefabricated-container-house',
+  // LC-02 (16 Aug 2026) - rewrite publishes an indicative rate scale, not a
+  // per-size ladder (build prompt v1 s8, R1 quote mode). Suppresses Product /
+  // Offer / AggregateOffer / aggregateRating schema (ticket s9: ItemPage
+  // only) and the legacy wp-export record's stale price/sale-price surfaces.
+  'labor-sheds',
 ]);
 
 // Section 17: exported WordPress records are immutable. Route-specific content
@@ -213,6 +219,19 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
 
     // Fetch lightweight product data first
     const product = await staticContent.fetchLightweightProduct(slug);
+
+    // LC-02 (16 Aug 2026) - spelling rule (build prompt v1 s2): the URL keeps
+    // American "labor", but ALL customer-facing copy uses Indian "labour".
+    // `product.name` (the wp-export record, immutable per Section 17's own
+    // convention) is American-spelled and feeds many downstream consumers
+    // directly - the ItemPage schema name, the calculator's entry headline
+    // and summary panel, the review-dialog title, meta keywords - not just
+    // the breadcrumb. One override here, before any of them read it, rather
+    // than patching each call site (and rather than editing the wp-export
+    // file itself, which the existing convention treats as immutable).
+    if (product && categoryLower === 'labor-colony' && slugLower === 'labor-sheds') {
+      product.name = 'Labour Sheds';
+    }
 
     // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin cluster
     // subpages; null for every other subpage (its tabs stay unchanged).
@@ -519,10 +538,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // SHIKHAR C1 — single source for BOTH the visible breadcrumb and the
   // BreadcrumbList JSON-LD (fed to ProductStructuredData below), so they match
   // exactly: Home › Products › {Cluster} › {Product}, cluster node linked to its hub.
+  // LC-02 (16 Aug 2026) - spelling rule (build prompt v1 s2): the URL keeps
+  // American "labor" and carries its own equity, but ALL customer-facing
+  // copy uses Indian "labour", including the visible breadcrumb the ticket
+  // states explicitly ("Home / Products / Labour Colony / Labour Sheds").
+  // Both `product.name` (wp-export record) and the shared category record's
+  // `primaryCategory.name` are American-spelled; overridden here, scoped to
+  // this one page only, rather than editing either shared source.
+  const isLaborShedsPage = category === 'labor-colony' && slug === 'labor-sheds';
   const breadcrumbCrumbs = getProductBreadcrumb({
-    productName: product?.name || '',
+    productName: isLaborShedsPage ? 'Labour Sheds' : (product?.name || ''),
     productSlug: slug,
-    clusterName: primaryCategory.name,
+    clusterName: isLaborShedsPage ? 'Labour Colony' : primaryCategory.name,
     clusterSlug: primaryCategory.slug,
     isHub: false,
   });
@@ -590,6 +617,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       return portaCabinSubpageRail(currentSlug);
     }
     // PC-09's own knock-down rail stood here and is folded in above too.
+
+    // LC-02 (16 Aug 2026) - this page's own rail (hub, Labour Hutments, Prefab
+    // Labour Camps, in that order), fixing a live defect: the derived rail
+    // below was missing the hub link and showed the two siblings reversed.
+    // Scoped to this one page only; every other labor-colony page keeps its
+    // existing derived rail, unchanged.
+    if (currentSlug === 'labor-sheds') {
+      return LABOR_SHEDS_RAIL;
+    }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
@@ -686,7 +722,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   const images = getProductImages();
 
   return (
-    <Layout>
+    <Layout hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}>
       {!transformedProduct ? (
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
@@ -1109,7 +1145,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   description={product.description || ''}
                   specificationsHtml={specificationsHtml}
                   shippingHtml={shippingHtml}
-                  productTitle={transformedProduct.title}
+                  productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
                   reviews={reviews}
                   averageRating={product.average_rating}
                   ratingCount={product.rating_count}

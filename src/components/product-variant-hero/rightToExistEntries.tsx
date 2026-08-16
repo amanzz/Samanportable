@@ -744,18 +744,46 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },
+  // LC-02 (16 Aug 2026) - Section 2 "buyer orientation" rewrite from copy pack
+  // v1, verbatim, SHA-256 verified against every field (25/25 match). TWO
+  // BLOCKS per the ticket's own repeated rule: top block on `bodyParagraphs`
+  // (both paragraphs are equal-weight prose, not a body-plus-emphasis pair),
+  // split card below with its own H3/paragraph/4 bullets/CTA. Both approved
+  // S2_PARA_2 links sit inside that single paragraph: `labour hutments` to
+  // labor-hutments, and the /contact CTA phrase. Card image is the sole
+  // approved split-card asset (media manifest 5.2), reallocated from the
+  // Description tab per the ticket's own note - the original split-card
+  // source was rejected (gap G3).
   'labor-sheds': {
-    heading: 'Why choose the shed over the room block',
-    body: (
-      <>
-        The shed puts every bed into one open hall per floor, which is the cheapest way to house a large crew and by far the easiest arrangement to supervise as a single space. Fire exits, zoned lighting circuits and high-level ventilation are all sized for open-hall occupancy rather than for individual rooms. Choose it when bed count per rupee matters more than room privacy.
-      </>
-    ),
-    comparison: (
-      <>
-        Crews that need lockable individual rooms are better served by the Labor Hutments room block, and <Link className={linkClass} href={LABOUR_COLONY_HREF}>the full worker housing range</Link> shows where each build fits.
-      </>
-    ),
+    heading: 'Why an Open Hall Beats a Room Block for Large Site Crews',
+    bodyParagraphs: [
+      (
+        <>
+          The decision is not really about the building. It is about whether your workforce can share one sleeping space. An open hall puts every bunk under one roof with one aisle, which is why it costs less per bed and goes up faster than any partitioned option. Nothing inside is spent on walls, doors or corridors, and the money saved goes into the frame, the floor and the ventilation. The trade you accept is privacy: there is no lockable room anywhere in the hall.
+        </>
+      ),
+      (
+        <>
+          If the crew needs lockable rooms, supervisor privacy or family accommodation, the shed is the wrong product and a partitioned block is the right one. That is a real fork in the road, so compare the two before you price either, because switching later means rebuilding rather than adapting. Our <Link className={linkClass} href={labourHref('labor-hutments')}>labour hutments</Link> page covers the room-block route. When you know which one fits, <Link className={linkClass} href="https://www.samanportable.com/contact">send us your crew size and site details</Link> and we will quote it.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/labor-sheds/section2/labour-shed-open-hall-split-card.webp',
+      imageAlt: 'Single-storey labour shed with an open door showing bunk beds inside and a continuous louvre band',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'Shed or Room Block: How to Decide Quickly',
+      body: 'Answer one question first. Can the crew sleep in shared, undivided space for the length of this project? If yes, the shed is cheaper per bed and quicker to erect.',
+      bullets: [
+        'Shed: highest bed density, lowest cost per bed',
+        'Shed: one hall, one aisle, distributed exits',
+        'Room block: lockable rooms, supervisor and family use',
+        'Both: sanitation stays in a separate structure',
+      ],
+      ctaLabel: 'Get a quote for your crew',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'labor-hutments': {
     heading: 'Why choose rooms over an open hall',

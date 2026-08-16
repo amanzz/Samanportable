@@ -9,9 +9,11 @@ import ProductCalculatorLayoutFallback, {
 interface LayoutProps {
   children: React.ReactNode;
   homepageNeutrality?: boolean;
+  /** LC-02 - passthrough to Footer's opt-in resource-strip removal. */
+  hideFooterResourceStrip?: boolean;
 }
 
-export default function Layout({ children, homepageNeutrality = false }: LayoutProps) {
+export default function Layout({ children, homepageNeutrality = false, hideFooterResourceStrip = false }: LayoutProps) {
   const router = useRouter();
   const hasLayoutStreamGuard = needsProductCalculatorLayoutStreamGuard(router.pathname || '');
 
@@ -29,7 +31,7 @@ export default function Layout({ children, homepageNeutrality = false }: LayoutP
         {children}
         <ProductCalculatorLayoutFallback />
       </main>
-      <Footer homepageNeutrality={homepageNeutrality} />
+      <Footer homepageNeutrality={homepageNeutrality} hideResourceStrip={hideFooterResourceStrip} />
     </div>
   );
 }
