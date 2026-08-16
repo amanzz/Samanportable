@@ -88,6 +88,14 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // existing usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2
   // opt-ins byte-for-byte, exactly as every sibling above does.
   'knock-down-porta-cabin',
+  // LC-02 (16 Aug 2026) — SAMAN's explicit instruction in chat, referencing a
+  // screenshot of this exact chip/tab design on the live porta-cabins hub.
+  // Set is checked by literal slug value only (not scoped to any one
+  // category), so this is additive here too: reuses the existing
+  // usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2 opt-ins,
+  // no new styling. Every other labor-colony page is unaffected (none is in
+  // this set).
+  'labor-sheds',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
