@@ -187,12 +187,24 @@ const nextConfig = {
       // None has ever earned a click. Pages that ARE earning were excluded by
       // rule, and 62 local pages with real local content stay live and indexable.
       //
-      // Two held rules get their own destinations and deliberately do NOT go to
+      // Three rules get their own destinations and deliberately do NOT go to
       // the Porta Cabin hub: rental and sanitation are different buyer tasks.
       //   /temporary-toilet-cabin -> /product/portable-toilet
       //   /mobile-cabins-for-rent -> /rental-services
-      // /readymade-bathroom-cabin stays held: 428 historic clicks, and the GSC
-      // query set has to be read before choosing its destination.
+      // /readymade-bathroom-cabin (SAMAN ruling, 16 Aug 2026) -> /product/portable-toilet.
+      // Largest single equity transfer in this programme: 428 historic clicks,
+      // 21,617 impressions (16-month GSC Pages.csv, both URL variants combined).
+      // Live per-page query pairing was not available (GSC Search Analytics API
+      // is not connected in this environment), so the decision rests on the term
+      // itself plus the owner's stated default: "readymade bathroom cabin" reads
+      // as a standalone sanitation unit, not an office cabin with an attached
+      // toilet, so it does not match /product/porta-cabins/porta-cabin-with-toilet.
+      // The hub was never a candidate under any reading of this URL. A narrower
+      // candidate exists (/product/portable-toilet/portable-toilet-cabin, live,
+      // 200) but carries only 12 of the 428 clicks against the cluster hub's 223,
+      // so the hub is the safer target for the bulk of the historic traffic.
+      // Redirected here (redirects-from-csv.js) rather than added as a literal
+      // override, matching how the equivalent Phase 1 re-points were done.
       // ==================================================================
       // Local doorway pages: city name only, no local buyer value.
       { source: '/porta-cabins-in-anekal', destination: 'https://www.samanportable.com/product/porta-cabins', statusCode: 301 },

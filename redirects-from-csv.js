@@ -214,7 +214,7 @@ const csvRedirects = [
   { source: '/prefabricated-portable-cabins-india', destination: 'https://www.samanportable.com/product/portable-cabin', permanent: true },
   { source: '/price-difference-of-portable-cabins-in-metro-cities', destination: 'https://www.samanportable.com/product/portable-cabin', permanent: true },
   { source: '/quick-cabins', destination: 'https://www.samanportable.com/product/portable-cabin', permanent: true },
-  { source: '/readymade-bathroom-cabin', destination: 'https://www.samanportable.com/product/portable-cabin', permanent: true },
+  { source: '/readymade-bathroom-cabin', destination: 'https://www.samanportable.com/product/portable-toilet', permanent: true },
   { source: '/site-preparation-for-portable-cabins', destination: 'https://www.samanportable.com/product/portable-cabin', permanent: true },
   { source: '/small-cabin-design-tips', destination: 'https://www.samanportable.com/product/portable-cabin', permanent: true },
   { source: '/small-cabin-pictures-inspiration', destination: 'https://www.samanportable.com/product/portable-cabin', permanent: true },
