@@ -1,0 +1,374 @@
+[
+  {
+    "sizeSlug": "10x10",
+    "label": "10x10 ft",
+    "dims": "10x10 ft",
+    "areaSqft": 100,
+    "priceExGst": 87975,
+    "priceInclGst": 103810,
+    "capacity": "4 workers",
+    "sku": "SP-LH-10x10",
+    "images": [
+      {
+        "src": "/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp",
+        "alt": "Front elevation of a 10x10 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/10x10/labor-hutments-10x10-front-right-three-quarter.webp",
+        "alt": "10x10 ft labour hutment from the front right, door wall and side wall visible on a level site.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/10x10/labor-hutments-10x10-front-left-three-quarter.webp",
+        "alt": "10x10 ft labour hutment from the front left, showing the door wall and the opposite side wall.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/10x10/labor-hutments-10x10-rear-left-three-quarter.webp",
+        "alt": "Rear left view of a 10x10 ft labour hutment, back wall and one long side wall on concrete plinth pads.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ],
+    "featureCells": [
+      {
+        "label": "Sizes",
+        "value": "10x10 ft to 20x20 ft, 100 to 400 sq ft"
+      },
+      {
+        "label": "Sleeps",
+        "value": "4 to 16 workers, one figure per size"
+      },
+      {
+        "label": "Price",
+        "value": "Rs 87,975 to Rs 2,90,700 ex-GST"
+      },
+      {
+        "label": "Wall options",
+        "value": "Profiled GI sheet, or 30 to 40 mm insulated PUF panel"
+      },
+      {
+        "label": "Delivery",
+        "value": "7 to 21 working days from confirmed order"
+      }
+    ]
+  },
+  {
+    "sizeSlug": "12x10",
+    "label": "12x10 ft",
+    "dims": "12x10 ft",
+    "areaSqft": 120,
+    "priceExGst": 105570,
+    "priceInclGst": 124573,
+    "capacity": "5 workers",
+    "sku": "SP-LH-12x10",
+    "images": [
+      {
+        "src": "/images/products/labor-hutments/12x10/labor-hutments-12x10-front-elevation.webp",
+        "alt": "Front elevation of a 12x10 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/12x10/labor-hutments-12x10-front-right-three-quarter.webp",
+        "alt": "12x10 ft labour hutment from the front right, door wall and side wall visible on a level site.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/12x10/labor-hutments-12x10-front-left-three-quarter.webp",
+        "alt": "12x10 ft labour hutment from the front left, showing the door wall and the opposite side wall.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/12x10/labor-hutments-12x10-rear-left-three-quarter.webp",
+        "alt": "Rear left view of a 12x10 ft labour hutment, back wall and one long side wall on concrete plinth pads.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ],
+    "featureCells": [
+      {
+        "label": "Sizes",
+        "value": "10x10 ft to 20x20 ft, 100 to 400 sq ft"
+      },
+      {
+        "label": "Sleeps",
+        "value": "4 to 16 workers, one figure per size"
+      },
+      {
+        "label": "Price",
+        "value": "Rs 87,975 to Rs 2,90,700 ex-GST"
+      },
+      {
+        "label": "Wall options",
+        "value": "Profiled GI sheet, or 30 to 40 mm insulated PUF panel"
+      },
+      {
+        "label": "Delivery",
+        "value": "7 to 21 working days from confirmed order"
+      }
+    ]
+  },
+  {
+    "sizeSlug": "12x15",
+    "label": "12x15 ft",
+    "dims": "12x15 ft",
+    "areaSqft": 180,
+    "priceExGst": 151470,
+    "priceInclGst": 178735,
+    "capacity": "7 workers",
+    "sku": "SP-LH-12x15",
+    "images": [
+      {
+        "src": "/images/products/labor-hutments/12x15/labor-hutments-12x15-front-elevation.webp",
+        "alt": "Front elevation of a 12x15 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/12x15/labor-hutments-12x15-front-right-three-quarter.webp",
+        "alt": "12x15 ft labour hutment from the front right, door wall and side wall visible on a level site.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/12x15/labor-hutments-12x15-front-left-three-quarter.webp",
+        "alt": "12x15 ft labour hutment from the front left, showing the door wall and the opposite side wall.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/12x15/labor-hutments-12x15-rear-left-three-quarter.webp",
+        "alt": "Rear left view of a 12x15 ft labour hutment, back wall and one long side wall on concrete plinth pads.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ],
+    "featureCells": [
+      {
+        "label": "Sizes",
+        "value": "10x10 ft to 20x20 ft, 100 to 400 sq ft"
+      },
+      {
+        "label": "Sleeps",
+        "value": "4 to 16 workers, one figure per size"
+      },
+      {
+        "label": "Price",
+        "value": "Rs 87,975 to Rs 2,90,700 ex-GST"
+      },
+      {
+        "label": "Wall options",
+        "value": "Profiled GI sheet, or 30 to 40 mm insulated PUF panel"
+      },
+      {
+        "label": "Delivery",
+        "value": "7 to 21 working days from confirmed order"
+      }
+    ]
+  },
+  {
+    "sizeSlug": "12x20",
+    "label": "12x20 ft",
+    "dims": "12x20 ft",
+    "areaSqft": 240,
+    "priceExGst": 176256,
+    "priceInclGst": 207982,
+    "capacity": "10 workers",
+    "sku": "SP-LH-12x20",
+    "images": [
+      {
+        "src": "/images/products/labor-hutments/12x20/labor-hutments-12x20-front-elevation.webp",
+        "alt": "Front elevation of a 12x20 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/12x20/labor-hutments-12x20-front-right-three-quarter.webp",
+        "alt": "12x20 ft labour hutment from the front right, door wall and side wall visible on a level site.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/12x20/labor-hutments-12x20-front-left-three-quarter.webp",
+        "alt": "12x20 ft labour hutment from the front left, showing the door wall and the opposite side wall.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/12x20/labor-hutments-12x20-rear-left-three-quarter.webp",
+        "alt": "Rear left view of a 12x20 ft labour hutment, back wall and one long side wall on concrete plinth pads.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ],
+    "featureCells": [
+      {
+        "label": "Sizes",
+        "value": "10x10 ft to 20x20 ft, 100 to 400 sq ft"
+      },
+      {
+        "label": "Sleeps",
+        "value": "4 to 16 workers, one figure per size"
+      },
+      {
+        "label": "Price",
+        "value": "Rs 87,975 to Rs 2,90,700 ex-GST"
+      },
+      {
+        "label": "Wall options",
+        "value": "Profiled GI sheet, or 30 to 40 mm insulated PUF panel"
+      },
+      {
+        "label": "Delivery",
+        "value": "7 to 21 working days from confirmed order"
+      }
+    ]
+  },
+  {
+    "sizeSlug": "15x20",
+    "label": "15x20 ft",
+    "dims": "15x20 ft",
+    "areaSqft": 300,
+    "priceExGst": 220320,
+    "priceInclGst": 259978,
+    "capacity": "12 workers",
+    "sku": "SP-LH-15x20",
+    "images": [
+      {
+        "src": "/images/products/labor-hutments/15x20/labor-hutments-15x20-front-elevation.webp",
+        "alt": "Front elevation of a 15x20 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/15x20/labor-hutments-15x20-front-right-three-quarter.webp",
+        "alt": "15x20 ft labour hutment from the front right, door wall and side wall visible on a level site.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/15x20/labor-hutments-15x20-front-left-three-quarter.webp",
+        "alt": "15x20 ft labour hutment from the front left, showing the door wall and the opposite side wall.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/15x20/labor-hutments-15x20-rear-left-three-quarter.webp",
+        "alt": "Rear left view of a 15x20 ft labour hutment, back wall and one long side wall on concrete plinth pads.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ],
+    "featureCells": [
+      {
+        "label": "Sizes",
+        "value": "10x10 ft to 20x20 ft, 100 to 400 sq ft"
+      },
+      {
+        "label": "Sleeps",
+        "value": "4 to 16 workers, one figure per size"
+      },
+      {
+        "label": "Price",
+        "value": "Rs 87,975 to Rs 2,90,700 ex-GST"
+      },
+      {
+        "label": "Wall options",
+        "value": "Profiled GI sheet, or 30 to 40 mm insulated PUF panel"
+      },
+      {
+        "label": "Delivery",
+        "value": "7 to 21 working days from confirmed order"
+      }
+    ]
+  },
+  {
+    "sizeSlug": "20x20",
+    "label": "20x20 ft",
+    "dims": "20x20 ft",
+    "areaSqft": 400,
+    "priceExGst": 290700,
+    "priceInclGst": 343026,
+    "capacity": "16 workers",
+    "sku": "SP-LH-20x20",
+    "images": [
+      {
+        "src": "/images/products/labor-hutments/20x20/labor-hutments-20x20-front-elevation.webp",
+        "alt": "Front elevation of a 20x20 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/20x20/labor-hutments-20x20-front-right-three-quarter.webp",
+        "alt": "20x20 ft labour hutment from the front right, door wall and side wall visible on a level site.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/20x20/labor-hutments-20x20-front-left-three-quarter.webp",
+        "alt": "20x20 ft labour hutment from the front left, showing the door wall and the opposite side wall.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "src": "/images/products/labor-hutments/20x20/labor-hutments-20x20-rear-left-three-quarter.webp",
+        "alt": "Rear left view of a 20x20 ft labour hutment, back wall and one long side wall on concrete plinth pads.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    ],
+    "featureCells": [
+      {
+        "label": "Sizes",
+        "value": "10x10 ft to 20x20 ft, 100 to 400 sq ft"
+      },
+      {
+        "label": "Sleeps",
+        "value": "4 to 16 workers, one figure per size"
+      },
+      {
+        "label": "Price",
+        "value": "Rs 87,975 to Rs 2,90,700 ex-GST"
+      },
+      {
+        "label": "Wall options",
+        "value": "Profiled GI sheet, or 30 to 40 mm insulated PUF panel"
+      },
+      {
+        "label": "Delivery",
+        "value": "7 to 21 working days from confirmed order"
+      }
+    ]
+  }
+]

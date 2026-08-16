@@ -1,0 +1,82 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft Hutment: Four Beds on the Smallest Footprint",
+      "paragraph": "At 100 sq ft this is the smallest unit SAMAN builds for sleeping, and it holds four workers in two bunks with a clear aisle between them. It suits a watchman pair, a small commissioning team or the first crew on a site that has no infrastructure yet. Because the footprint is barely larger than a parking bay, it fits into leftover corners of a plot without disturbing material stacking or crane access, and one trailer carries it whole.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp",
+        "alt": "Front elevation of a 10x10 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "12x10",
+      "h3": "12x10 ft Hutment: Five Beds for a Gang or Guard Post",
+      "paragraph": "At 120 sq ft the extra two feet of length give room for a fifth bed or, more usefully, for lockers and a small changing space at the door end. Contractors commonly use this size where a gang of five works a single shift, and where a supervisor needs to be housed close to the gate rather than in the main accommodation area. It carries the same single door and opposing window pair as the smallest unit, so ventilation behaves identically.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-hutments/12x10/labor-hutments-12x10-front-elevation.webp",
+        "alt": "Front elevation of a 12x10 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "12x15",
+      "h3": "12x15 ft Hutment: Seven Beds and a Usable Central Aisle",
+      "paragraph": "At 180 sq ft the aisle finally becomes properly usable, and seven beds fit without anyone climbing over a neighbour to reach the door. This is the first size where the two-room option makes sense, splitting the module so a supervisor or a couple can be housed separately behind their own door. Site planners often treat this as the default when the workforce is settled rather than mobilising, because the comfort gain over 120 sq ft is disproportionate.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-hutments/12x15/labor-hutments-12x15-front-elevation.webp",
+        "alt": "Front elevation of a 12x15 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "12x20",
+      "h3": "12x20 ft Hutment: Ten Beds in One Long Narrow Room",
+      "paragraph": "At 240 sq ft the room runs twenty feet back from the door, and ten beds line the two long walls with the aisle down the centre. The long narrow shape is deliberate: it keeps the unit within a standard trailer envelope while adding capacity, and it puts every bed within reach of the cross draught between the two end windows. Where a site is short of frontage but has depth, this is usually the most efficient unit on the ladder.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-hutments/12x20/labor-hutments-12x20-front-elevation.webp",
+        "alt": "Front elevation of a 12x20 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "15x20",
+      "h3": "15x20 ft Hutment: Twelve Beds and Wider Circulation",
+      "paragraph": "At 300 sq ft the width grows to fifteen feet, which widens the aisle rather than adding another bed row. Twelve workers sleep here with genuine circulation space, room for lockers along one wall and clearance to move a stretcher or a large kit bag through without disturbing the beds. Sites running two shifts favour this size, because people are moving in and out at all hours and a tight aisle becomes a nightly argument.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-hutments/15x20/labor-hutments-15x20-front-elevation.webp",
+        "alt": "Front elevation of a 15x20 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "sizeSlug": "20x20",
+      "h3": "20x20 ft Hutment: Sixteen Beds in One Square Module",
+      "paragraph": "At 400 sq ft this is the largest single hutment, holding sixteen workers in one square room roughly the footprint of a double garage. It is the point at which a buyer should genuinely compare a hutment against an open shed, because the room is now large enough that partitioning starts to matter. Choose it when the whole gang must be housed together and the site has the frontage and the crane access to place a single large module.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/labor-hutments/20x20/labor-hutments-20x20-front-elevation.webp",
+        "alt": "Front elevation of a 20x20 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.",
+        "provenance": "render",
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  ]
+}

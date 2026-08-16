@@ -4173,6 +4173,198 @@
         "width": 1920,
         "height": 1080
       }
+    },
+    "labor-hutments": {
+      "name": "Labour Hutments",
+      "sheet": "02 Labor Hutments",
+      "canonical": "https://www.samanportable.com/product/labor-colony/labor-hutments",
+      "specifications": [
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Bottom frame",
+          "detail": "IS 2062 or approved equivalent MS channel, RHS or formed sections; member sizes and support reactions from the signed structural drawing",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Bottom stiffeners",
+          "detail": "RHS, channel or angle stiffeners selected to the approved floor grid, partitions, bunks and relocation duty",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Floor frame",
+          "detail": "Prefab option: steel joists with 18 to 24 mm cement, cement-fibre or plywood class board and vinyl. Fixed option: level RCC plinth with screed",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Top frame",
+          "detail": "MS RHS or channel, or the documented proprietary upper rail, sized for roof reactions, wall restraint and opening headers",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Roof stiffeners",
+          "detail": "Light RHS or angle rafters and purlins for a single-slope or simple gable PPGI roof; insulated-panel roof on the selected prefab tier only",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Corner posts and walls",
+          "detail": "Light welded or bolted MS angle or RHS corner posts with intermediate rails sized for the selected GI or PUF wall system",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Welding and fabrication",
+          "detail": "IS 2062 or IS 1161 class structural steel or approved equivalent; weld sizes, bolt grades and joint details as the fabrication drawings",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Lifting and handling",
+          "detail": "Marked lifting lugs, corner fittings, skid points or transport brackets only where shown on the signed GA and lifting drawing",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Exterior walls",
+          "detail": "Budget tier: GI or PPGI sheet with bracing and liner as specified. Insulated tier: nominal 30 to 40 mm PUF panel; 40 to 60 mm only where the signed BOM selects it",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Roof",
+          "detail": "Profiled PPGI or GI sheet, or insulated roof panel on light framing, with roof fall, side flashing, weatherhood at the door and optional gutter",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Floor base",
+          "detail": "18 to 24 mm board or cement board on verified steel joists for relocatable units, or RCC plinth for site-built hutments",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1: Structure, envelope, roof and floor",
+          "component": "Floor finish",
+          "detail": "Commercial vinyl or PVC, or sealed cement screed as selected; slip-resistant upgrade where site conditions justify it",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Interior walls",
+          "detail": "Painted sheet, prelaminated board or cement-board liner according to the wall tier; no premium decorative package in the baseline",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Ceiling",
+          "detail": "Optional prelaminated or cement board, or the underside of the insulated roof panel; service battens only where needed",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Wall insulation",
+          "detail": "None or liner for the GI budget option; nominal 30 to 40 mm PUF for the insulated option; higher thickness only by climate or contract",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Roof insulation",
+          "detail": "30 to 40 mm insulated roof panel, or light roof plus an approved radiant or insulation layer where specified",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Main door",
+          "detail": "One nominal 900 mm class MS, insulated or flush door with weather seal, durable hinges and lockset; swing from the room plan",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Windows",
+          "detail": "Typically two aluminium sliding or openable windows on opposing walls, with louvre and mesh options, for cross ventilation and daylight",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Grilles and mesh",
+          "detail": "Removable mosquito mesh, louvres, restrictors, privacy screens or protected MS grilles only where the approved opening schedule requires",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Electrical wiring",
+          "detail": "FR or FRLS copper in approved conduit or trunking. Typical references 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm AC or high-load; final sizing from the project electrical schedule",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Electrical protection",
+          "detail": "Main isolator, MCB, RCBO or RCCB protection, labelled neutral and earth bars, bonding, and surge protection where the supply or risk assessment requires",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Electrical fittings",
+          "detail": "LED luminaires, fan points, 6A and 16A sockets, exhaust points and dedicated outlets only in the quantities on the approved schedule",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Ventilation and cooling",
+          "detail": "Opposed windows and louvres plus ceiling or wall fans; split-AC point only when specifically ordered",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Plumbing and sanitary",
+          "detail": "No internal plumbing in the baseline sleeping hutment; optional basin or pantry point only with a dedicated supply and waste connection",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Layout",
+          "detail": "Single open room or two simple sleeping rooms with beds and bunks, central aisle, lockers and opposing openings",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Painting and coating",
+          "detail": "Prepared carbon steel with compatible primer and top coats, or galvanized or pre-painted sheet with repaired cut edges; upgraded for coastal, industrial or wet exposure",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Quality checks",
+          "detail": "Dimensional, member, weld and bolt, coating, panel, roof-drainage, opening and electrical checks, with handover evidence",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2: Interior, insulation, openings, services and scope",
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation",
+          "differsFromHub": false
+        }
+      ],
+      "narrative": "Two lines in these tables change what a buyer pays and what a worker experiences. The wall tier decides whether the room is survivable in a hot month, and the plumbing line decides whether this order stays a building purchase or becomes a civil job. Everything else follows from the size and the bed plan.",
+      "diagrams": [
+        {
+          "src": "/images/products/labor-hutments/specifications/labor-hutments-module-plan-diagram-16x9.webp",
+          "alt": "Plan diagram of a typical labour hutment module: one room, central aisle, entry door and end windows.",
+          "caption": "Typical Hutment Module Plan. Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/labor-hutments/specifications/labor-hutments-material-services-diagram-16x9.webp",
+          "alt": "Diagram of labour hutment wall, roof and floor build-up with the electrical services route marked.",
+          "caption": "Hutment wall, roof and floor build-up with the services route. Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
     }
   }
 }

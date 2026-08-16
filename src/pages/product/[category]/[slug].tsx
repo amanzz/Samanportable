@@ -49,6 +49,7 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
+import { LABOR_HUTMENTS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
@@ -590,6 +591,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       return portaCabinSubpageRail(currentSlug);
     }
     // PC-09's own knock-down rail stood here and is folded in above too.
+
+    // LC-01 (17 Aug 2026) - the hutments page's own Column 3 rail. Build prompt
+    // v1 section 4, hero column 3: exactly three tabs (Labour Sheds, Labour
+    // Colony, Prefab Labour Camps), not the live related-products list. Scoped
+    // to this one slug; the porta-cabins cluster's derived-rail consistency
+    // ruling above does not apply to the labour-colony cluster.
+    if (currentSlug === 'labor-hutments') {
+      return LABOR_HUTMENTS_RAIL;
+    }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
