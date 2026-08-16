@@ -41,13 +41,20 @@ export const RATE_CARD = {
   },
 } as const;
 
-type LadderItem = { label: string; areaSqft: number; priceExGst: number; capacity?: string; capacityMin?: number; capacityMax?: number };
+type LadderItem = { label: string; areaSqft: number; priceExGst: number | null; capacity?: string; capacityMin?: number; capacityMax?: number };
 
-const toLadder = (items: Array<{ label?: string; dims?: string; areaSqft?: number; priceExGst?: number; capacity?: string }>): LadderItem[] =>
+// LC-02 (16 Aug 2026) — `priceExGst: item.priceExGst ?? null` (was `|| 0`).
+// The `||` fallback coerced a gated/quote-mode variant's `null` price into a
+// literal 0, which productPriceRows() then rendered as "₹0" (money(0)),
+// not the "price on request" text it renders for a genuine null. Every other
+// PRODUCT_LADDERS source has real prices on every variant today (verified,
+// zero nulls), so this only changes behaviour for a product that is actually
+// null — quote mode now renders correctly instead of a false ₹0.
+const toLadder = (items: Array<{ label?: string; dims?: string; areaSqft?: number; priceExGst?: number | null; capacity?: string }>): LadderItem[] =>
   items.map((item) => ({
     label: item.label || item.dims || '',
     areaSqft: item.areaSqft || 0,
-    priceExGst: item.priceExGst || 0,
+    priceExGst: item.priceExGst ?? null,
     capacity: item.capacity,
     capacityMin: item.capacity ? Number(item.capacity.match(/\d+/)?.[0] || 0) : undefined,
     capacityMax: item.capacity ? Number(item.capacity.match(/(\d+)\s*workers?$/)?.[1] || item.capacity.match(/(\d+)\s*$/)?.[1] || 0) : undefined,

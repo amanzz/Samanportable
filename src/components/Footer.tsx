@@ -80,14 +80,22 @@ const PRODUCT_CATEGORIES = [
 
 interface FooterProps {
   homepageNeutrality?: boolean;
+  /** LC-02 (16 Aug 2026) - opt-in, per-page removal of the Popular Portable
+      Cabin Resources strip. The ticket names two of its links
+      (/labour-colonies-in-gurgaon, /industrial-sheds-in-bangalore) as
+      destinations this page must not carry, and asks for the whole block
+      removed rather than edited. Absent/false on every other page, so the
+      strip stays byte-identical everywhere else. */
+  hideResourceStrip?: boolean;
 }
 
-const Footer = ({ homepageNeutrality = false }: FooterProps) => {
+const Footer = ({ homepageNeutrality = false, hideResourceStrip = false }: FooterProps) => {
   const resourceLinks = homepageNeutrality ? HOMEPAGE_POPULAR_RESOURCE_LINKS : MONEY_STRIP_LINKS;
 
   return (
     <footer className="bg-black text-white relative z-20 pb-16 lg:pb-0">
       {/* Footer Money Keyword Strip */}
+      {!hideResourceStrip && (
       <div
         data-homepage-resources={homepageNeutrality ? true : undefined}
         className="border-b border-zinc-900/50 relative z-10 bg-black"
@@ -112,6 +120,7 @@ const Footer = ({ homepageNeutrality = false }: FooterProps) => {
           </div>
         </div>
       </div>
+      )}
 
       {/* Main Footer Content - 5 Columns */}
       <div className="max-w-7xl mx-auto px-4 py-12">

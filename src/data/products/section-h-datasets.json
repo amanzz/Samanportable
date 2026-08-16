@@ -1989,78 +1989,47 @@
     }
   },
   "labor-sheds": {
-    "h2": "Every labour shed size, and the crew each hall sleeps",
-    "60x24-gplus1": {
-      "h2": "60x24 ft G+1, 2880 sq ft planned for 58 to 72 workers",
-      "intro": "One open hall per floor with a central aisle, sleeping 58 to 72 workers across two levels. The small shed suits a single supervised crew where the foreman wants every bed visible from the aisle. High-level ventilators run the length of both halls, and zoned lighting lets the night shift sleep while the day shift dresses. At Rs 684 per square foot the 2,880 square feet land at Rs 19,69,920 ex-GST. A canteen lean-to bolts onto either gable later without touching the hall structure, a common second-season addition. Both gables carry ventilator banks as standard.",
-      "h3": "Use-cases",
-      "applications": [
-        "Crews of 58 plus",
-        "Phase-one site setup",
-        "Occupancy-normed planning",
-        "48-hour fixed quotation"
-      ],
-      "imageAlt": "Labour shed, 60x24 ft G+1, from the front left with the end stair, two floors on a 60 ft footprint in the open-hall shed build."
+    "20x10": {
+      "h2": "20x10 ft Labour Shed: 200 sq ft With a Single Bunk Row",
+      "intro": "The smallest published shed. At 10 ft wide there is room for one bunk row along a single long wall and a clear walking aisle beside it, so the plan stays simple and the exit is never blocked by a bed. It suits a small gang, a night shift crew or a remote outpost where a full hall is not justified. Below this footprint a shed stops making sense: the frame, roof and door cost much the same whatever the length, so an insulated PUF porta cabin becomes the better buy.",
+      "h3": "",
+      "applications": [],
+      "imageAlt": "20x10 ft labour shed in ivory white cladding, front-left view, with a continuous louvre band under the eaves"
     },
-    "90x24-gplus1": {
-      "h2": "90x24 ft G+1, 4320 sq ft planned for 86 to 108 workers",
-      "intro": "The 90 ft hall pairs two sleeping floors for 86 to 108 workers and leads the range on order volume. Beds run in facing rows with the aisle down the spine, so one supervisor covers a whole floor from the door. Drinking water points sit at the hall ends per the standard plan. Its 4,320 square feet work out at Rs 29,54,880 ex-GST. Bedding, lockers and fans install in a day because the hall has no internal walls to work around, and the whole floor cleans with one crew. Lead time here is the shortest on the page, its parts held in rolling stock. Hall lighting is zoned in thirds along its length.",
-      "h3": "Use-cases",
-      "applications": [
-        "Crews of 86 plus",
-        "Phase-one site setup",
-        "Occupancy-normed planning",
-        "48-hour fixed quotation"
-      ],
-      "imageAlt": "Labour shed, 90x24 ft G+1, from the left corner at the stair end, two floors on a 90 ft footprint in the open-hall shed build."
+    "20x15": {
+      "h2": "20x15 ft Labour Shed: 300 sq ft, Two Rows and Aisle",
+      "intro": "Fifteen feet of width is the point where a second bunk row becomes practical. Bunks sit against both long walls with a central aisle between them, which roughly doubles the beds without doubling the roof or the slab. This is the first size that behaves like a proper dormitory rather than a bunk room, and it is a common choice for a single trade gang working one defined package on a short site programme.",
+      "h3": "",
+      "applications": [],
+      "imageAlt": "20x15 ft labour shed in olive-green cladding, front-left view, with two doors along the long wall"
     },
-    "90x24-gplus2": {
-      "h2": "90x24 ft G+2, 6480 sq ft planned for 129 to 162 workers",
-      "intro": "Stacking a third hall on the 90 ft footprint gives 129 to 162 beds where the plot cannot grow. Each level stays one open space, so supervision does not change character as the building rises; only the stair discipline does, and the end stair tower is sized for shift changes. The 6,480 square feet settle at Rs 44,32,320 ex-GST at the unchanged shed rate. Water pressure for the top level is planned from day one, with the tank platform included in the structure. Top-hall ventilators are motorised where a site standard requires it.",
-      "h3": "Use-cases",
-      "applications": [
-        "Crews of 129 plus",
-        "Phase-one site setup",
-        "Occupancy-normed planning",
-        "48-hour fixed quotation"
-      ],
-      "imageAlt": "Labour shed, 90x24 ft G+2, from the stair end on the left, three floors on a 90 ft footprint in the open-hall shed build."
+    "20x20": {
+      "h2": "20x20 ft Labour Shed: 400 sq ft With a Wider Centre Aisle",
+      "intro": "At 20 ft square the hall becomes genuinely comfortable to move through. The extra width goes into the central aisle and into locker space at each end, so men can dress and store kit without standing on each other at shift change. Cleaning is faster too, because the aisle takes a trolley rather than forcing hand work between beds. Choose this when occupancy is steady and the shed will stand for several months.",
+      "h3": "",
+      "applications": [],
+      "imageAlt": "20x20 ft labour shed in blue-grey cladding, front-left view, two doors spaced along the long wall"
     },
-    "120x24-gplus1": {
-      "h2": "120x24 ft G+1, 5760 sq ft planned for 115 to 144 workers",
-      "intro": "At 120 ft the two-floor hall reaches 115 to 144 beds, the capacity class most big projects order first. The extra length goes entirely into bed rows, not circulation, which is what keeps cost per bed the lowest on this page. Emergency lighting and multiple exits are laid out for full-hall occupancy. Price for 5,760 square feet: Rs 39,39,840 ex-GST. When crews rotate seasonally, the open hall re-allocates overnight with no room-by-room administration at all. Bed numbering follows one plan across every repeat of this hall.",
-      "h3": "Use-cases",
-      "applications": [
-        "Crews of 115 plus",
-        "Phase-one site setup",
-        "Occupancy-normed planning",
-        "48-hour fixed quotation"
-      ],
-      "imageAlt": "Labour shed, 120x24 ft G+1, from the front left with the end stair, two floors on a 120 ft footprint in the open-hall shed build."
+    "20x25": {
+      "h2": "20x25 ft Labour Shed: 500 sq ft, Mid-Point Second Exit",
+      "intro": "Length is what changes here rather than width. At 25 ft the walk from the far bunk to a single door gets long, so a second personnel door goes into the long wall near the mid-point. Two exits shorten travel distance in an emergency and give the hall a second cross-flow air path on still days. This is the size at which exit planning starts to drive the hall layout rather than simply follow it.",
+      "h3": "",
+      "applications": [],
+      "imageAlt": "20x25 ft labour shed in champagne cladding with a double-leaf door and canopy on the gable end"
     },
-    "118x30-gplus1": {
-      "h2": "118x30 ft G+1, 7080 sq ft planned for 142 to 177 workers",
-      "intro": "The wide-body shed uses its 30 ft depth for double aisle circulation, cutting the walk between bed and exit on a full floor of 142 to 177 workers. Where local norms ask for more air volume per occupant, the extra width earns its keep without changing the hall concept. The 7,080 square feet list at Rs 48,42,720 ex-GST. The wider hall also takes a second locker row without narrowing the aisles, something the 24 ft buildings cannot do, and evening queues at the exits clear noticeably faster. Several state norms count air volume per sleeper, and the wide hall clears them with margin to spare.",
-      "h3": "Use-cases",
-      "applications": [
-        "Crews of 142 plus",
-        "Phase-one site setup",
-        "Occupancy-normed planning",
-        "48-hour fixed quotation"
-      ],
-      "imageAlt": "Labour shed, 118x30 ft G+1, from the left corner at the stair end, two floors on the wide 30 ft body in the open-hall shed build."
+    "20x30": {
+      "h2": "20x30 ft Labour Shed: 600 sq ft With a Door at Each End",
+      "intro": "Thirty feet gives a full-length central aisle running door to door, which is the cleanest circulation this product achieves. Air enters through the louvre band along both walls, crosses the bunks and leaves at the ridge without anything blocking the path. It is the size we use as the reference plan on the technical drawing, because at 30 ft every control the shed depends on is visible in a single view.",
+      "h3": "",
+      "applications": [],
+      "imageAlt": "20x30 ft labour shed in pearl-grey cladding, front-left view, with a ridge ventilator along the apex"
     },
-    "120x24-gplus2": {
-      "h2": "120x24 ft G+2, 8640 sq ft planned for 173 to 216 workers",
-      "intro": "The largest shed stacks three 120 ft halls for 173 to 216 workers, more beds than any other block, a single SAMAN building provides. It is the building of choice where land is the constraint and the workforce is managed as large shifts. Structure, exits and services are engineered for that occupancy from the first drawing. Cost: Rs 59,09,760 ex-GST for 8,640 square feet. Staged handover is normal here: the ground hall opens while upper floors are still being fitted out. Its exit-width calculations ship inside the quotation pack.",
-      "h3": "Use-cases",
-      "applications": [
-        "Crews of 173 plus",
-        "Phase-one site setup",
-        "Occupancy-normed planning",
-        "48-hour fixed quotation"
-      ],
-      "imageAlt": "Labour shed, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the open-hall shed build."
+    "20x40": {
+      "h2": "20x40 ft Labour Shed: 800 sq ft, Three Distributed Exits",
+      "intro": "The largest published shed and the lowest rate per square foot, because one roof and one slab now cover twice the floor of the 20x20. Two long bunk rows face a full-length aisle, with three doors distributed along the length so no bunk sits far from an exit. Beyond this footprint the frame needs a wider clear span, so the shed is engineered and quoted individually rather than taken from the published six.",
+      "h3": "",
+      "applications": [],
+      "imageAlt": "20x40 ft labour shed in graphite cladding, front-left view, with a continuous eaves louvre band"
     }
   },
   "labor-hutments": {

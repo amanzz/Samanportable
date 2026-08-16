@@ -88,6 +88,12 @@ export interface VariantProductData {
       approved copy that carries a "not for construction" control the PDF
       itself lacks. Absent → no caption renders, byte-identical everywhere else. */
   specPdfCaption?: string;
+  /** LC-02 — render the spec-PDF control in a disabled state (visible, no href,
+      no download, no click) instead of omitting it, for a product whose PDF
+      exists but is unsigned/draft and must not be linked. Uses the same default
+      label text as the working button — no new copy is written for the
+      disabled state. Absent → unchanged working-link behaviour everywhere else. */
+  specPdfDisabled?: boolean;
   /** Owner-approved SEO title and meta description for runtime replacement of
       stale WordPress head fields. */
   seoTitle?: string;

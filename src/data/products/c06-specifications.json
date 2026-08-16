@@ -187,186 +187,204 @@
     },
     "labor-sheds": {
       "name": "Labor Sheds",
+      "narrative": "Two numbers on this page change what a shed costs and how it performs, and neither is obvious from a photograph. The first is the floor: an RCC slab rather than a board platform is what lets a hall take dense bed rows and daily wet cleaning for years. The second is the ventilation build-up: a continuous louvre band integrated into the wall, working with a ridge ventilator, is what keeps a single large volume habitable without power. When you compare quotations line by line, compare those two first.",
+      "premiumTables": true,
       "specifications": [
         {
-          "group": "Steel Structure",
+          "group": "Table 1",
           "component": "Bottom frame",
-          "detail": "Light portal/truss or PEB-style frame; larger clear span than hutment; bolted frames for site assembly.",
-          "differsFromHub": true
+          "detail": "IS 2062 or approved equivalent MS channel, RHS or formed sections; member sizes and support reactions from the signed structural drawing",
+          "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1",
           "component": "Bottom stiffeners",
-          "detail": "Demountable bolted shed possible, but relocation requires member inspection and new foundation/anchors.",
-          "differsFromHub": true
+          "detail": "RHS, channel or angle stiffeners set to the approved floor grid, bunk positions and relocation duty",
+          "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1",
           "component": "Floor frame",
-          "detail": "RCC slab preferred for high occupancy and cleaning; epoxy/PVC finish only when approved.",
-          "differsFromHub": true
+          "detail": "RCC slab or designed hardstanding preferred; factory floor cassette only on smaller relocatable formats",
+          "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
+          "group": "Table 1",
+          "component": "Frame and walls",
+          "detail": "Bolted or welded MS portal or truss system with side rails and bracing; clear span larger than a hutment module",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
           "component": "Top frame",
-          "detail": "Light portal/truss or PEB-style frame; larger clear span than hutment; bolted frames for site assembly.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Steel Structure",
-          "component": "Roof stiffeners",
-          "detail": "Double-slope or single-slope PPGI roof, ridge ventilator/turbo vents and gutters; optional insulated underlay.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Steel Structure",
-          "component": "Corner posts / walls",
-          "detail": "Light portal/truss or PEB-style frame; larger clear span than hutment; bolted frames for site assembly.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Steel Structure",
-          "component": "Lifting / handling",
-          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
+          "detail": "MS RHS or channel upper rail sized for roof reactions, wall restraint and opening headers",
           "differsFromHub": false
         },
         {
-          "group": "Steel Structure",
-          "component": "Welding & fabrication",
-          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
+          "group": "Table 1",
+          "component": "Roof structure",
+          "detail": "Light portal or truss frame with C, Z or RHS purlins; single or double slope PPGI roof with ridge or turbo ventilators and gutters",
           "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1",
           "component": "Exterior walls",
-          "detail": "PPGI cladding with ventilated high-level band, or insulated panel where climate requires; robust lower wall/liner.",
-          "differsFromHub": true
+          "detail": "PPGI or GI sheet with robust lower liner and a continuous high-level ventilation band; insulated panel where climate or noise requires",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1",
           "component": "Roof",
-          "detail": "Double-slope or single-slope PPGI roof, ridge ventilator/turbo vents and gutters; optional insulated underlay.",
-          "differsFromHub": true
+          "detail": "Profiled PPGI with defined overlap, ridge and eave details, gutters and downpipes; optional insulated underlay or panel",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1",
           "component": "Interior walls",
-          "detail": "PPGI cladding with ventilated high-level band, or insulated panel where climate requires; robust lower wall/liner.",
-          "differsFromHub": true
+          "detail": "Painted or galvanised sheet, or durable low-wall liner; no decorative partition lining in the standard open dormitory",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1",
           "component": "Ceiling",
-          "detail": "Double-slope or single-slope PPGI roof, ridge ventilator/turbo vents and gutters; optional insulated underlay.",
-          "differsFromHub": true
+          "detail": "No false ceiling as baseline; exposed insulated roof underside or simple liner where justified, preserving ridge airflow",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1",
           "component": "Floor base",
-          "detail": "RCC slab preferred for high occupancy and cleaning; epoxy/PVC finish only when approved.",
-          "differsFromHub": true
+          "detail": "RCC slab or specified industrial floor on prepared subgrade; no generic marine-ply platform on the standard shed",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1",
           "component": "Floor finish",
-          "detail": "RCC slab preferred for high occupancy and cleaning; epoxy/PVC finish only when approved.",
-          "differsFromHub": true
+          "detail": "Power-trowelled or sealed concrete, epoxy or PVC, selected from project duration and cleaning regime",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 1",
+          "component": "Welding and fabrication",
+          "detail": "IS 2062 / IS 1161 class steel or approved equivalent; weld sizes, bolt grades and joint details per fabrication drawings",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Painting and coating",
+          "detail": "Prepared carbon steel with compatible primer and top coats, or galvanised sheet with repaired cut edges; upgraded for coastal, industrial or wet exposure",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
           "component": "Wall insulation",
-          "detail": "PPGI cladding with ventilated high-level band, or insulated panel where climate requires; robust lower wall/liner.",
-          "differsFromHub": true
+          "detail": "Optional PUF or sandwich-panel upgrade, or insulated liner, where climate or occupancy requires; GI tier may remain uninsulated with the ventilation strategy",
+          "differsFromHub": false
         },
         {
-          "group": "Walls, Roof, Floor & Insulation",
+          "group": "Table 2",
           "component": "Roof insulation",
-          "detail": "Double-slope or single-slope PPGI roof, ridge ventilator/turbo vents and gutters; optional insulated underlay.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Decorative / external finish",
-          "detail": "Fire access strip, drains, paved walkway, external lighting and sanitation connection.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Walls, Roof, Floor & Insulation",
-          "component": "Fasteners & sealing",
-          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "detail": "Optional insulated roof panel, reflective underlay or mineral or glass-wool class layer compatible with ridge ventilation",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Main door / service door",
-          "detail": "Multiple doors/exits by occupancy; high-level/louvre windows, mesh and continuous ventilation strategy.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Windows / service opening",
-          "detail": "Multiple doors/exits by occupancy; high-level/louvre windows, mesh and continuous ventilation strategy.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Grills / mosquito mesh",
-          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+          "group": "Table 2",
+          "component": "Doors and exits",
+          "detail": "Personnel doors distributed along the hall per approved occupancy, travel path and local requirements; robust MS or insulated doors as scheduled",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2",
+          "component": "Windows and openings",
+          "detail": "Continuous or repeated high-level louvres on the long elevations, protected end openings, insect mesh and security features where required",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Grilles and mesh",
+          "detail": "Removable mosquito mesh, louvres, restrictors or protected MS grilles only where the approved opening schedule requires",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Ventilation",
+          "detail": "High-volume natural and fan ventilation: cross ventilation, ridge or stack exhaust, ceiling or wall fans, optional evaporative or mechanical assist. Split AC is not the default for a large open dormitory",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
           "component": "Electrical wiring",
-          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
+          "detail": "FR or FRLS copper in approved conduit or trunking; typical references 1.5 sq mm lighting, 2.5 sq mm socket, 4 sq mm high-load; final sizing per the project electrical schedule",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2",
           "component": "Electrical protection",
-          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
+          "detail": "Main isolator, MCB, RCBO or RCCB protection, labelled neutral and earth bars, bonding and surge protection per the supply and risk assessment",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2",
           "component": "Electrical fittings",
-          "detail": "Zoned lighting/fan circuits, emergency lights, distribution board, earthing and optional evaporative/mechanical ventilation.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Ventilation / AC",
-          "detail": "Multiple doors/exits by occupancy; high-level/louvre windows, mesh and continuous ventilation strategy.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Plumbing / sanitary",
-          "detail": "Drinking-water points and wash basins nearby; no long internal water line through sleeping area unless designed.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Layout / configuration",
-          "detail": "Open sleeping hall with central/dual aisles, end exits, cross-ventilation and separate common sanitation block.",
-          "differsFromHub": true
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Painting / coating",
-          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
+          "detail": "LED luminaires, fan points, 6A and 16A sockets, exhaust and emergency lighting only in the quantities on the approved schedule",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
+          "group": "Table 2",
+          "component": "Plumbing and sanitary",
+          "detail": "Externalised. Soil and waste networks remain in a separate sanitation block rather than running through the sleeping hall",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Layout and configuration",
+          "detail": "Open dormitory bed-hall plan: parallel bunk rows, central or dual aisles, distributed exits, cross ventilation, separate common sanitation block",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Lifting and handling",
+          "detail": "Marked lifting lugs, skid points or transport brackets only where the signed GA and lifting drawing show them; one-piece lifting is not assumed for a site-assembled shed",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Fasteners and sealing",
+          "detail": "Corrosion-compatible fasteners, EPDM washers, butyl or PU sealants, closures and flashings matched to the selected build-up",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
           "component": "Quality checks",
-          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
+          "detail": "Dimensional, member, weld and bolt, coating, panel, roof-drainage, opening, electrical and plumbing checks, plus handover evidence",
           "differsFromHub": false
         },
         {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Warranty",
-          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
+          "group": "Table 2",
+          "component": "Excluded from supply",
+          "detail": "Bunks, mattresses, lockers, slab and foundations, site levelling, drainage, external walkways and lighting, water supply, sanitation block, fire systems, statutory approvals, large-span structural redesign",
           "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Warranty",
+          "detail": "Period, start date, remedy, relocation conditions and exclusions exactly as stated in the signed quotation and handover documents",
+          "differsFromHub": false
+        }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/labor-sheds/diagrams/labour-shed-open-dormitory-plan.webp",
+          "alt": "Open dormitory shed plan for the 20x30 ft labour shed with dimensions, aisle and exit positions",
+          "caption": "Illustrative - not for construction unless approved",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/labor-sheds/diagrams/labour-shed-structural-elevation.webp",
+          "alt": "Structural section of a 20 ft clear-span labour shed showing eave, ridge and ventilation controls",
+          "caption": "Illustrative - not for construction unless approved",
+          "width": 1920,
+          "height": 1080
         }
       ]
     },

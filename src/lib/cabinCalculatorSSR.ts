@@ -2151,7 +2151,20 @@ export function parseCalculatorQuery(query: CalculatorQuery = {}): CalculatorCon
  * price, where it agrees with the ladder anyway.
  */
 function rendersQuoteMode(product: ProductDefinition, ladderKey?: string | null): boolean {
-  if (isColonyProduct(product.id)) return false;
+  // LC-02 (16 Aug 2026) — this unconditionally returned false for every
+  // colony product, correct until now because all four had a real price on
+  // every variant. That return value becomes `data-quote-only` on the
+  // client (cabin-cost-calculator.js), which the interactive widget trusts
+  // completely for colony products (its own quoteOnly check is `quoteProduct
+  // || (!colony && ...)` — the non-colony fallback never runs for a colony
+  // product). Left as `false` here, a null-priced colony product's
+  // interactive estimate would compute and display ₹0, not "Price on
+  // request". A product only renders quote mode once EVERY variant in its
+  // ladder is null — verified zero effect on the three siblings, whose
+  // ladders currently have no null variants at all.
+  if (isColonyProduct(product.id)) {
+    return colonyLadder(product.id).every((item) => item.priceExGst === null);
+  }
   const key = ladderKey ?? product.ladderKey;
   if (getRouteLadder(key)) return false;
   return ladderAnchorRate(key) === null;
@@ -2192,7 +2205,15 @@ function ladderKeyFor(config: CalculatorConfig): string | null {
  */
 function calculateBase(config: CalculatorConfig): number | null {
   if (isColonyProduct(config.productId)) {
-    return (colonyLadder(config.productId)[config.colonyVariant]?.priceExGst || 0) * config.quantity;
+    // LC-02 (16 Aug 2026) — the colony branch never returned null before,
+    // because every colony product had a real price on every variant until
+    // now. A null variant price means SAMAN has stated no rate (quote mode,
+    // same meaning as the non-colony `rate === null` case just below), not
+    // zero — so this must return null too, or the estimate silently prices
+    // the building at ₹0 instead of asking for a quotation.
+    const colonyPrice = colonyLadder(config.productId)[config.colonyVariant]?.priceExGst;
+    if (colonyPrice === null || colonyPrice === undefined) return null;
+    return colonyPrice * config.quantity;
   }
 
   // A route with no ladder of its own prices on drawing — Security Cabins is
@@ -3048,7 +3069,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
 
   const selectedColony = colonyLadder(config.productId)[config.colonyVariant];
   const suggestedQuantity = config.workers > 0 && selectedColony?.capacityMax ? Math.ceil(config.workers / selectedColony.capacityMax) : config.quantity;
-  const colonySize = `<label>Workers to accommodate<input type="number" inputmode="numeric" min="1" max="100000" name="workers" value="${config.workers || ''}" data-workers></label><p data-worker-suggestion>${config.workers > 0 && selectedColony ? `${selectedColony.label} × ${suggestedQuantity} accommodates at least ${config.workers.toLocaleString('en-IN')} workers.` : 'Enter the worker headcount to see the smallest sufficient configuration and quantity.'}</p><fieldset><legend>Approved building configuration</legend>${colonyLadder(config.productId).map((item, index) => radio('colonyVariant', String(index), `${item.label}, ${item.areaSqft.toLocaleString('en-IN')} sq ft`, index === config.colonyVariant, `${item.capacity || 'Capacity confirmed at quotation'} · ${money(item.priceExGst)} ex-GST`, ` data-price="${item.priceExGst}" data-area="${item.areaSqft}" data-capacity-max="${item.capacityMax || 0}"`)).join('')}</fieldset><label>Building quantity<input type="number" inputmode="numeric" min="1" max="50" name="quantity" value="${config.quantity}"></label>`;
+  const colonySize = `<label>Workers to accommodate<input type="number" inputmode="numeric" min="1" max="100000" name="workers" value="${config.workers || ''}" data-workers></label><p data-worker-suggestion>${config.workers > 0 && selectedColony ? `${selectedColony.label} × ${suggestedQuantity} accommodates at least ${config.workers.toLocaleString('en-IN')} workers.` : 'Enter the worker headcount to see the smallest sufficient configuration and quantity.'}</p><fieldset><legend>Approved building configuration</legend>${colonyLadder(config.productId).map((item, index) => radio('colonyVariant', String(index), `${item.label}, ${item.areaSqft.toLocaleString('en-IN')} sq ft`, index === config.colonyVariant, `${item.capacity || 'Capacity confirmed at quotation'} · ${item.priceExGst === null ? 'Price on request' : `${money(item.priceExGst)} ex-GST`}`, ` data-price="${item.priceExGst ?? 0}" data-area="${item.areaSqft}" data-capacity-max="${item.capacityMax || 0}"`)).join('')}</fieldset><label>Building quantity<input type="number" inputmode="numeric" min="1" max="50" name="quantity" value="${config.quantity}"></label>`;
   // The tile shows the same base the estimate's first line shows.
   const basePriceForDrawing = estimate.lines[0]?.amount ?? null;
   const regularSize = `<div class="field-grid"><label>Length in ft<input type="number" inputmode="decimal" min="4" max="60" step="0.5" name="length" value="${config.length}" required aria-describedby="size-guidance"></label><label>Width in ft<input type="number" inputmode="decimal" min="4" max="60" step="0.5" name="width" value="${config.width}" required aria-describedby="size-guidance"></label><label>Height in ft<input type="number" inputmode="decimal" min="7" max="16" step="0.5" name="height" value="${config.height}"></label><label>Cabin quantity<input type="number" inputmode="numeric" min="1" max="50" step="1" name="quantity" value="${config.quantity}"></label></div><p id="size-guidance">${SIZE_ERROR}</p><fieldset class="room-chips"><legend>Rooms and partitions</legend>${[1, 2, 3, 4, 5, 6].map((count) => radio('rooms', String(count), count === 1 ? '1 room, no partition' : `${count} rooms, ${count - 1} partitions`, config.rooms === count, '', ' data-room-count')).join('')}</fieldset><div class="room-lengths" data-room-lengths>${Array.from({ length: config.rooms }, (unused, index) => `<label>Room ${index + 1} length in ft<input type="number" inputmode="decimal" min="0" max="60" step="any" name="roomLengths[${index}]" value="${(drawGeometry(config).roomLengths[index] || 0).toFixed(1)}" data-room-length="${index}"></label>`).join('')}<button type="button" data-action="distribute-rooms" class="ghost">Distribute equally</button></div><fieldset><legend>Partition doors</legend>${[0, 1, 2, 3, 4, 5].slice(0, Math.max(1, config.rooms)).map((count) => radio('partitionDoors', String(count), count === 0 ? 'No partition door' : `${count} partition door${count > 1 ? 's' : ''}`, config.partitionDoors === count, count === 0 ? 'Included' : `${money(RATE_CARD.marketRates.steelDoor)} each, ex-GST`, ` data-rate="${count === 0 ? 0 : RATE_CARD.marketRates.steelDoor * count}" data-rate-basis="each" data-line-label="${count} partition door${count > 1 ? 's' : ''}"`)).join('')}</fieldset>${renderDrawing(config, basePriceForDrawing)}`;
