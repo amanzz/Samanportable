@@ -109,6 +109,13 @@
           "provenance": "render",
           "width": 1254,
           "height": 1254
+        },
+        {
+          "src": "/images/products/labor-hutments/10x10/labor-hutments-10x10-interior-bunk-layout.webp",
+          "alt": "Inside a 10x10 ft labour hutment room, two bunk beds facing each other with a sliding window and storage lockers between them.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         }
       ],
       "featureCells": [
@@ -292,6 +299,20 @@
         {
           "src": "/images/products/labor-hutments/12x20/labor-hutments-12x20-rear-left-three-quarter.webp",
           "alt": "Rear left view of a 12x20 ft labour hutment, back wall and one long side wall on concrete plinth pads.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/labor-hutments/12x20/labor-hutments-12x20-gi-sheet-wall-tier.webp",
+          "alt": "12x20 ft labour hutment in the GI sheet wall option, ribbed corrugated steel cladding from front right three-quarter.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/labor-hutments/12x20/labor-hutments-12x20-puf-panel-wall-tier.webp",
+          "alt": "12x20 ft labour hutment in the PUF panel wall option, smooth sandwich panel cladding with fine vertical joints from front right three-quarter.",
           "provenance": "render",
           "width": 1254,
           "height": 1254
