@@ -88,6 +88,12 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // existing usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2
   // opt-ins byte-for-byte, exactly as every sibling above does.
   'knock-down-porta-cabin',
+  // LC-01 (17 Aug 2026) — revision: size pills and section spacing were not
+  // premium-styled on first build. Same opt-ins as every page above, no new
+  // styling: usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2
+  // byte-for-byte, plus the two extra CLUSTER_DESIGN_SLUGS-gated <hr>
+  // dividers around the calculator and YMAL blocks below.
+  'labor-hutments',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues

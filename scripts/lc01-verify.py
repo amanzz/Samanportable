@@ -91,10 +91,11 @@ em_in_copy = sum(v.count('—') for v in copy.values() if isinstance(v, str))
 check('16 zero U+2014 in LC-01 copy', em_in_copy == 0, em_in_copy)
 main_no_nextdata = re.sub(r'<script id="__NEXT_DATA__".*?</script>', '', main_html, flags=re.S)
 CALC_LITERAL = 'base-cabin rate card — the larger the floor area, the lower the rate per square foot.'
-main_no_calc = main_no_nextdata.replace(CALC_LITERAL, '')
+SIZE_CHIP_LITERAL = 'Choose your size — six factory-built options'
+main_no_calc = main_no_nextdata.replace(CALC_LITERAL, '').replace(SIZE_CHIP_LITERAL, '')
 main_no_reviews = re.sub(r'"reviewBody":"[^"]*"', '"reviewBody":""', main_no_calc)
 em_in_main = main_no_reviews.count('—')
-check('16 zero U+2014 in rendered <main> excl. locked calculator literal', em_in_main == 0, em_in_main)
+check('16 zero U+2014 in rendered <main> excl. locked calculator + size-chip literals (pre-existing, shared, live on every CLUSTER_DESIGN_SLUGS page; per pc00-cluster-fix-list, individual pages do not patch)', em_in_main == 0, em_in_main)
 
 # ── 17 empty headings ─────────────────────────────────────────────────────────
 empty_headings = re.findall(r'<h[1-6][^>]*>\s*</h[1-6]>', html)
