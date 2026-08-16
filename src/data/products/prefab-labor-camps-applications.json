@@ -1,0 +1,46 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "20x10",
+      "tabLabel": "20x10 ft",
+      "h3": "20x10 ft Camp Block, 200 sq ft, The First Unit Ordered",
+      "paragraph": "The 200 sq ft block is the smallest unit we repeat, and it is the one most projects order first. It suits a single crew, a site supervisor, a small store or a first-aid point, and it moves on an ordinary trailer without a permit conversation. Because it is short, it also fits the awkward plots left over once the main works are set out. Rate is Rs 1,150 per sq ft ex-GST, the highest in the ladder; the rate falls as the block gets longer, since frame and services spread over more floor.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "30x10",
+      "tabLabel": "30x10 ft",
+      "h3": "30x10 ft Camp Block, 300 sq ft, Two-Room Planning Size",
+      "paragraph": "At 300 sq ft the block takes a partition without either half feeling like a corridor. Projects use it for a two-room sleeping block, or for one sleeping room plus a store or supervisor room under one roof. It stays inside the 10 ft width, so it travels and lifts exactly like the 200 sq ft block and shares the same spares. Rate is Rs 1,125 per sq ft ex-GST. Choose this size when you want the option to split the interior later without ordering a second building.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "40x10",
+      "tabLabel": "40x10 ft",
+      "h3": "40x10 ft Camp Block, 400 sq ft, The Long Dormitory",
+      "paragraph": "Four hundred square feet in a 10 ft width gives a long, single-volume dormitory with the door at one end and windows down both sides. Cross ventilation works well in this shape, which matters in an uncooled block through an Indian summer. It is the largest size that still handles like a standard 10 ft wide unit on site. Rate is Rs 1,100 per sq ft ex-GST. Pick it when you want the most sleeping floor per connection point without moving up to a 20 ft wide building.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "30x20",
+      "tabLabel": "30x20 ft",
+      "h3": "30x20 ft Camp Block, 600 sq ft, First Wide-Body Size",
+      "paragraph": "Doubling the width to 20 ft changes the building rather than just enlarging it. A 600 sq ft block holds two proper rooms side by side, or one room plus a wet area, and it needs a central line of support instead of spanning wall to wall. Transport and setting out also change: the plot has to take a wider footprint with working margin on both sides. Rate is Rs 1,050 per sq ft ex-GST. This is the size where the camp stops being a row of cabins and starts being a building.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "40x20",
+      "tabLabel": "40x20 ft",
+      "h3": "40x20 ft Camp Block, 800 sq ft, Multi-Room Wide Body",
+      "paragraph": "At 800 sq ft you can plan three or four separate rooms off a shared internal circulation, which is what a sanitation block, a canteen or a mixed dormitory and admin block usually needs. Interior linings differ by room here, because a washable canteen wall and a dry sleeping wall are not the same specification. Rate is Rs 950 per sq ft ex-GST. Order this size when one block has to do more than one job and you would rather not run two connections.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "45x20",
+      "tabLabel": "45x20 ft",
+      "h3": "45x20 ft Camp Block, 900 sq ft, The Largest Priced Size",
+      "paragraph": "Nine hundred square feet is the largest block we price on this page, and it carries the lowest rate at Rs 900 per sq ft ex-GST. It suits a full sanitation block, a canteen with a separate dining volume, or a dormitory wing planned as one unit. Beyond this footprint the cost is driven by external infrastructure rather than by the building, so anything larger is quoted manually by block mix rather than by an area rate.",
+      "applications": []
+    }
+  ]
+}

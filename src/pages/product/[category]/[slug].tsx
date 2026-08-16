@@ -49,9 +49,8 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
-import { LABOR_HUTMENTS_RAIL } from '../../../lib/labourColonyClusterRail';
+import { LABOR_HUTMENTS_RAIL, LABOR_SHEDS_RAIL, PREFAB_LABOR_CAMPS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
-import { LABOR_SHEDS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
@@ -103,6 +102,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // byte-for-byte, plus the two extra CLUSTER_DESIGN_SLUGS-gated <hr>
   // dividers around the calculator and YMAL blocks below.
   'labor-hutments',
+  'prefab-labor-camps',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -247,6 +247,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     if (product && categoryLower === 'labor-colony' && slugLower === 'labor-sheds') {
       product.name = 'Labour Sheds';
     }
+    if (product && categoryLower === 'labor-colony' && slugLower === 'prefab-labor-camps') {
+      product.name = 'Prefab Labour Camps';
+    }
 
     // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin cluster
     // subpages; null for every other subpage (its tabs stay unchanged).
@@ -363,8 +366,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
         || variantImages[0]
       : undefined;
-    const variantSocialImage = defaultVariantHero?.src
-      ? `https://www.samanportable.com${defaultVariantHero.src}`
+    const variantSocialImageSource = defaultVariantHero || (variantData?.heroGalleryHeld ? variantData.infoImages?.[0] : undefined);
+    const variantSocialImage = variantSocialImageSource?.src
+      ? `https://www.samanportable.com${variantSocialImageSource.src}`
       : undefined;
 
     if (variantData?.seoTitle || variantData?.metaDescription) {
@@ -449,7 +453,13 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
               || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
             variantData?.infoImages
           ),
-          images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
+          images: (
+            variantImages.length
+              ? variantImages
+              : variantData?.heroGalleryHeld
+                ? variantData.infoImages || []
+                : descriptionData?.images || []
+          ).map((img, index) => ({
             id: index,
             src: img.src,
             alt: img.alt,
@@ -561,10 +571,16 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // `primaryCategory.name` are American-spelled; overridden here, scoped to
   // this one page only, rather than editing either shared source.
   const isLaborShedsPage = category === 'labor-colony' && slug === 'labor-sheds';
+  const isPrefabLaborCampsPage = category === 'labor-colony' && slug === 'prefab-labor-camps';
+  const labourColonyProductName = isLaborShedsPage
+    ? 'Labour Sheds'
+    : isPrefabLaborCampsPage
+      ? 'Prefab Labour Camps'
+      : null;
   const breadcrumbCrumbs = getProductBreadcrumb({
-    productName: isLaborShedsPage ? 'Labour Sheds' : (product?.name || ''),
+    productName: labourColonyProductName || (product?.name || ''),
     productSlug: slug,
-    clusterName: isLaborShedsPage ? 'Labour Colony' : primaryCategory.name,
+    clusterName: labourColonyProductName ? 'Labour Colony' : primaryCategory.name,
     clusterSlug: primaryCategory.slug,
     isHub: false,
   });
@@ -648,6 +664,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     // ruling above does not apply to the labour-colony cluster.
     if (currentSlug === 'labor-hutments') {
       return LABOR_HUTMENTS_RAIL;
+    }
+    if (currentSlug === 'prefab-labor-camps') {
+      return PREFAB_LABOR_CAMPS_RAIL;
     }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
@@ -745,7 +764,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   const images = getProductImages();
 
   return (
-    <Layout hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}>
+    <Layout hideFooterResourceStrip={category === 'labor-colony' && (slug === 'labor-sheds' || slug === 'prefab-labor-camps')}>
       {!transformedProduct ? (
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
@@ -780,7 +799,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             reviews={reviews}
             breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
             variantData={variantData || undefined}
-            suppressProductEntity={suppressLegacyCommercialSurfaces}
+            suppressProductEntity={suppressLegacyCommercialSurfaces || isPrefabLaborCampsPage}
             metaDescription={rankMathSEO?.description}
           />
 
@@ -1168,7 +1187,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   description={product.description || ''}
                   specificationsHtml={specificationsHtml}
                   shippingHtml={shippingHtml}
-                  productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
+                  productTitle={labourColonyProductName || transformedProduct.title}
                   reviews={reviews}
                   averageRating={product.average_rating}
                   ratingCount={product.rating_count}
@@ -1369,5 +1388,3 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 };
 
 export default ProductDetails;
-
-
