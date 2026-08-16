@@ -401,13 +401,22 @@ function destinationTable(caption: string, note: string, rows: [string, string, 
 
 const DEST_NOTE = 'approximate road distance, find your freight band in the tables above; final charge confirmed at quotation';
 
-// Warranty & Support — Master wording "5–10 years confirmed at quotation" (replaces the
-// generic "5-Year Structural / 1-Year Standard" placeholder that shipped before T31).
+// Warranty & Support — P0 fix (I-03, 16 Aug 2026): this block previously read
+// "Structural warranty 5–10 years, confirmed at quotation," contradicting the
+// approved description wording used on every one of the 11 pages ("5-year
+// structural warranty and 1-year finishing warranty as standard..."). This is
+// the single shared source for the Shipping tab warranty text on all 11
+// approved Porta Cabins pages (via C01_DATASET, see getProductTabsHtml below)
+// plus every other caller of buildShippingHtml(). Replaced with the exact
+// Fixed Facts (L15) wording, verbatim from the P0 fix instruction.
 const WARRANTY_BLOCK =
   `<section class="mt-2 rounded-xl border border-emerald-200 bg-emerald-50 p-5">` +
     `<h4 class="mb-2 text-base font-bold text-emerald-900">Warranty &amp; Support</h4>` +
-    `<p class="m-0 text-sm leading-relaxed text-emerald-800">Structural warranty 5–10 years, confirmed at ` +
-    `quotation. Base specification price: customisations quoted separately. After-sales support and ` +
+    `<p class="m-0 text-sm leading-relaxed text-emerald-800">5-year structural warranty and 1-year ` +
+    `finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at ` +
+    `quotation. Warranty scope and exclusions are confirmed in the final quotation, and misuse, site ` +
+    `services, consumables and unapproved alterations remain outside the agreed scope unless explicitly ` +
+    `included. Base specification price: customisations quoted separately. After-sales support and ` +
     `spare parts available from our Bengaluru and Greater Noida units.</p>` +
   `</section>`;
 
