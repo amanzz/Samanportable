@@ -49,6 +49,7 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
+import { LABOR_HUTMENTS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { LABOR_SHEDS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
@@ -96,6 +97,12 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // no new styling. Every other labor-colony page is unaffected (none is in
   // this set).
   'labor-sheds',
+  // LC-01 (17 Aug 2026) — revision: size pills and section spacing were not
+  // premium-styled on first build. Same opt-ins as every page above, no new
+  // styling: usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2
+  // byte-for-byte, plus the two extra CLUSTER_DESIGN_SLUGS-gated <hr>
+  // dividers around the calculator and YMAL blocks below.
+  'labor-hutments',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -633,6 +640,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     // existing derived rail, unchanged.
     if (currentSlug === 'labor-sheds') {
       return LABOR_SHEDS_RAIL;
+    }
+    // LC-01 (17 Aug 2026) - the hutments page's own Column 3 rail. Build prompt
+    // v1 section 4, hero column 3: exactly three tabs (Labour Sheds, Labour
+    // Colony, Prefab Labour Camps), not the live related-products list. Scoped
+    // to this one slug; the porta-cabins cluster's derived-rail consistency
+    // ruling above does not apply to the labour-colony cluster.
+    if (currentSlug === 'labor-hutments') {
+      return LABOR_HUTMENTS_RAIL;
     }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({

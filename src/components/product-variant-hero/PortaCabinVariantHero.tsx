@@ -39,6 +39,7 @@ import skidMountedPortaCabinApplications from '@/data/products/skid-mounted-port
 import knockDownPortaCabinApplications from '@/data/products/knock-down-porta-cabin-applications.json';
 import portaCabinShopApplications from '@/data/products/porta-cabin-shop-applications.json';
 import laborColonyApplications from '@/data/products/labor-colony-applications.json';
+import laborHutmentsApplications from '@/data/products/labor-hutments-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -263,6 +264,9 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // the documented PC-01 failure mode (silent key overwrite if registered
   // before the Section-H spreads).
   'labor-colony': laborColonyApplications as ApplicationsData,
+  // LC-01 (17 Aug 2026) - build prompt v1 section 3. Six panels, one per
+  // published size.
+  'labor-hutments': laborHutmentsApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([

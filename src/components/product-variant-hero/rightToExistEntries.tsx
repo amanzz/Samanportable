@@ -785,18 +785,44 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },
+  // LC-01 (17 Aug 2026) - Section 2 "buyer orientation" rewrite from build prompt
+  // v1 section 4, verbatim (no SHA-256 was supplied in this ticket, unlike
+  // LC-00/PC-10; verified instead against every character count in the
+  // ticket's own acceptance table, section 9 - 20/20 exact matches). Two
+  // paragraphs on `bodyParagraphs`: the second carries both approved links,
+  // `plan the whole colony` -> the colony hub and `request a hutment
+  // quotation` -> /contact. Split card CTA reuses the same /contact
+  // destination, per the ticket's own link map (section 6).
   'labor-hutments': {
-    heading: 'Why choose rooms over an open hall',
-    body: (
-      <>
-        The hutment divides each floor into individual sleeping rooms with their own doors, windows, fans and distribution boards, so mixed gangs, supervisors and longer-posting crews get privacy and lockable space that an open hall cannot offer. The trade is a lower bed count per floor at a slightly higher rate. Choose it when room separation matters on your site.
-      </>
-    ),
-    comparison: (
-      <>
-        If maximum beds in one supervised space is the priority, the open-hall Labor Sheds building houses more per floor; see <Link className={linkClass} href={LABOUR_COLONY_HREF}>every colony building compared</Link> before you choose.
-      </>
-    ),
+    heading: 'Why a Single Hutment Beats a Block When the Crew Is Small',
+    bodyParagraphs: [
+      (
+        <>
+          A colony block is the right answer when a site houses a hundred workers for two years. It is the wrong answer when a contractor needs sixteen beds next month on a plot corner that will be built over later. The hutment exists for that second case. Each unit is complete on its own, so beds arrive in the number the programme needs, and the order can be repeated when the workforce grows.
+        </>
+      ),
+      (
+        <>
+          That also changes what happens at the end. A hutment sits on plinth pads rather than a poured raft, and the prefab floor option is built to be lifted and set down again, so a unit can follow the work to the next site. If the requirement is instead a full settlement with roads, sanitation and dining, <Link className={linkClass} href={LABOUR_COLONY_HREF}>plan the whole colony</Link> rather than ordering units one at a time. Send us your crew size, site location and start date and we will price the exact combination you need: <Link className={linkClass} href="/contact">request a hutment quotation</Link>.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/labor-hutments/section2/labor-hutments-single-unit-site-context-16x9.webp',
+      imageAlt: 'A single labour hutment standing alone on a prepared site hardstanding with open space around it.',
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: 'Which Hutment Size Fits Your Site Crew?',
+      body: 'Size follows the bed plan, not the other way round. Count the workers who must sleep on site at peak, allow for a clear central aisle and locker space, then pick the smallest unit that holds them comfortably.',
+      bullets: [
+        'Four to five workers, take the 10x10 or 12x10',
+        'Seven to ten workers, take the 12x15 or 12x20',
+        'Twelve to sixteen workers, take the 15x20 or 20x20',
+        'Mixed gangs or shift work, order two smaller units',
+      ],
+      ctaLabel: 'Request a hutment quotation',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'prefab-labor-camps': {
     heading: 'Why choose the relocatable camp build',
