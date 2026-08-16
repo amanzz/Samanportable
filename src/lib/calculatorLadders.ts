@@ -28,6 +28,7 @@ import knockDownPortaCabin from '@/data/products/knock-down-porta-cabin.json';
 import portaCabinShop from '@/data/products/porta-cabin-shop.json';
 import laborColony from '@/data/products/labor-colony.json';
 import laborHutments from '@/data/products/labor-hutments.json';
+import prefabLaborCamps from '@/data/products/prefab-labor-camps.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
 import portableOffice from '@/data/products/portable-office.json';
 import modernOfficeCabin from '@/data/products/modern-office-cabin.json';
@@ -202,6 +203,7 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // read from this route's own product JSON. Six single-unit sizes, prices
   // unchanged from the ladder this rewrite publishes.
   'labor-hutments': toRows(laborHutments),
+  'prefab-labor-camps': toRows(prefabLaborCamps),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
   'portable-office': toRows(portableOffice),
   'modern-office-cabin': toRows(modernOfficeCabin),
