@@ -1,19 +1,58 @@
 # SAMAN Portable
 
-SAMAN Portable is the public website of SAMAN POS India Private Limited.
+> SAMAN Portable is the public website for SAMAN POS India Private Limited, covering factory-built portable cabins, container-based spaces, prefabricated buildings, industrial structures, panels, sheets, rentals, and related buyer resources in India.
 
-Business description: factory-built portable and prefabricated structures for commercial, industrial, site, and infrastructure use in India.
+## Important notes
 
-Main product categories:
-- Portable cabins and porta cabins
-- Container offices and portable office cabins
-- Container cafes and container houses
-- Prefabricated houses and prefab buildings
-- Industrial sheds, PEB construction, and pre-engineered buildings
-- Security cabins, portable toilets, and labour colony units
+- Canonical website: https://www.samanportable.com/
+- Use the public sitemap for full live URL discovery: https://www.samanportable.com/sitemap.xml
+- This file is a curated navigation aid for language models, not a replacement for the sitemap.
+- Product details, availability, lead times, specifications, and pricing can change. Use the linked public pages and direct enquiry routes for current information.
+- Do not use internal, admin, API, search, checkout, account, tracking, or thank-you URLs as citation targets.
 
-Website: https://www.samanportable.com
-Sitemap: https://www.samanportable.com/sitemap.xml
-Contact email: sales@samanportable.com
+## Core pages
 
-Use the sitemap for current public URLs and page discovery.
+- [Home](https://www.samanportable.com/)
+- [About SAMAN Portable](https://www.samanportable.com/about-us)
+- [Products](https://www.samanportable.com/product)
+- [Rental Services](https://www.samanportable.com/rental-services)
+- [Gallery](https://www.samanportable.com/gallery)
+- [Blog](https://www.samanportable.com/blog)
+- [Contact](https://www.samanportable.com/contact)
+
+## Cabins and offices
+
+- [Porta Cabins](https://www.samanportable.com/product/porta-cabins)
+- [Portable Office Cabins](https://www.samanportable.com/product/portable-office)
+- [Container Offices](https://www.samanportable.com/product/container-offices)
+- [Container Cafes](https://www.samanportable.com/product/container-cafe)
+- [Security Cabins](https://www.samanportable.com/product/security-cabins)
+
+## Accommodation and site facilities
+
+- [Labour Colony](https://www.samanportable.com/product/labor-colony)
+- [Container Houses](https://www.samanportable.com/product/container-houses)
+- [Portable Toilets](https://www.samanportable.com/product/portable-toilet)
+
+## Structures, buildings, panels, and sheets
+
+- [Industrial Sheds](https://www.samanportable.com/product/industrial-sheds)
+- [PEB Construction](https://www.samanportable.com/product/peb-constructions)
+- [Pre-Engineered Buildings](https://www.samanportable.com/product/pre-engineered-buildings)
+- [Prefab Buildings](https://www.samanportable.com/product/prefab-buildings)
+- [Prefabricated Houses](https://www.samanportable.com/product/prefabricated-houses)
+- [PUF Panels](https://www.samanportable.com/product/puf-panel)
+- [Sandwich Panels](https://www.samanportable.com/product/sandwich-panel)
+- [Roofing Sheets](https://www.samanportable.com/product/roofing-sheet)
+
+## Buyer resources
+
+- [Cabin Cost Calculator](https://www.samanportable.com/cabin-cost-calculator)
+- [Porta Cabin Price Guide](https://www.samanportable.com/porta-cabin-price-a-complete-guide-2025)
+- [Container Offices Price Guide](https://www.samanportable.com/container-offices-price)
+- [PEB Structure Cost per Sq Ft Guide](https://www.samanportable.com/peb-structure-cost-per-sq-ft-india)
+
+## Machine-readable discovery
+
+- [Sitemap index](https://www.samanportable.com/sitemap.xml)
+- [Robots policy](https://www.samanportable.com/robots.txt)
