@@ -44,6 +44,12 @@ export interface RightToExistEntry {
         supplies both, so its markup is unchanged. */
     subheading?: string;
     body?: string;
+    /** LC-03 (17 Aug 2026) — a second card paragraph, for approved copy that
+        splits the card body into two short paragraphs rather than one
+        paragraph plus bullets (the standing Section 2 shape rule allows
+        either). Rendered directly below `body`. Absent everywhere else, so
+        every other split card's markup is byte-identical. */
+    body2?: string;
     /** PC-03 post-build correction 2 (15 Aug 2026) — a short list of discrete trust
         signals or requirements rendered as checkmarked bullets below `body`. Also
         used by PC-06's Section 2 card (four quotation-input bullets) via the same
@@ -956,6 +962,32 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
         Team growing past four, or need a store and partitions? The full portable office cabin range carries the nine-size ladder.
       </>
     ),
+  },
+  'oil-field-camp': {
+    heading: 'Why a Camp That Moves Is Built Differently From One That Stays',
+    bodyParagraphs: [
+      (
+        <>
+          Buyers reach this page from two directions. Some need worker housing for a project that will run in one place for years, which is a settlement question rather than a module question. Others need four to sixteen people fed, rested and back on shift beside a rig that will be released in a few months. This page is written for the second buyer. A camp that stays can be bolted together on a prepared pad; a camp that moves has to survive every lift, every move and every reinstatement.
+        </>
+      ),
+      (
+        <>
+          That difference drives almost every choice here: the runner-beam skid, the welded superstructure, the reduced glazing, the service entries that disconnect without cutting. If your crew is not going anywhere, a fixed block from our <Link className={linkClass} href={labourHref('prefab-labor-camps')}>prefab labour camps range</Link> will serve you better and cost less. If it is, <Link className={linkClass} href="/contact">send us the location, the crew size and the moves you expect</Link> and we will quote the right module.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/oil-field-camp/section2/oil-field-camp-door-and-services-detail.webp',
+      imageAlt: 'Door end of an oil field camp module showing steps, external AC condenser and protected electrical entry',
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: 'Shell Price or Fitted Price: What Changes',
+      body: 'Two prices appear against every size. The shell rate covers the module itself: structure, skid, envelope, insulation, lining, floor finish, doors, windows, lighting, sockets and earthing.',
+      body2: 'The fitted rate adds what crews always ask about: bunk beds, the toilet fit-out and the split AC unit itself. The shell carries AC provision, meaning the bracket, the point and the wall penetration, not the machine.',
+      ctaLabel: 'Ask for a fitted-scope quotation',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
 };
 

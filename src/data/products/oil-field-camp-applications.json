@@ -1,0 +1,82 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft Oil Field Camp: 4-Bed Crew Sleeper Module",
+      "paragraph": "The smallest module in the range, and the one most often used as a two-man-per-shift sleeper beside a single rig. Four beds sit as two bunk frames along one wall, leaving a clear aisle and one desk position for shift paperwork. At 200 sq ft it is light enough for a single-point lift on most locations and small enough to place inside a tight pad layout without redrawing access. Choose it when the crew count is fixed and low, and when you expect the module to move more often than the others.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/oil-field-camp/20x10/oil-field-camp-20x10-front-left-hero.webp",
+        "alt": "20x10 ft oil field camp module in Oyster White, front left view, steel skid base and entrance steps",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      }
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft Camp Module: 6 Beds With an Internal Toilet",
+      "paragraph": "Adding ten feet of length turns the sleeper into a self-contained unit. Six beds sit as three bunk frames, and an internal toilet compartment at one end removes the daily walk to a shared block. That matters most on locations where the ablution block sits across an access road, or where night movement is restricted. The module still lifts as one piece and still fits a standard trailer bed. It is the usual first step up when a location runs two shifts rather than one.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/oil-field-camp/30x10/oil-field-camp-30x10-front-left-hero.webp",
+        "alt": "30x10 ft oil field camp module in Denim Blue, front left view, steel skid base and entrance steps",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      }
+    },
+    {
+      "sizeSlug": "32x10",
+      "h3": "32x10 ft Toolpusher Unit: 2 Beds, Office and Toilet",
+      "paragraph": "This is not a dormitory. The 32x10 ft unit is the toolpusher or site-in-charge module: a working office with desks, files and a meeting position at one end, two beds and a toilet at the other. It exists because supervision needs a door that closes and a surface to spread a drawing on, and because putting that person in a crew sleeper costs you both. Order it alongside any of the sleeper sizes rather than instead of one.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/oil-field-camp/32x10/oil-field-camp-32x10-front-left-hero.webp",
+        "alt": "32x10 ft oil field camp module in Clay Brown, front left view, steel skid base and entrance steps",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      }
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft Camp Module: 8 Beds, Toilet and Pantry Bay",
+      "paragraph": "Eight beds, a toilet and a pantry bay in one forty-foot module, which is where most multi-week campaigns settle. The pantry keeps food preparation out of the sleeping area without committing you to a separate canteen building, and the toilet removes the shared-block dependency for a full crew. It remains a ten-foot-wide unit, so it moves on the same trailer and lifts on the same rigging as the shorter sizes. Length, not width, is what changes here.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/oil-field-camp/40x10/oil-field-camp-40x10-front-left-hero.webp",
+        "alt": "40x10 ft oil field camp module in Moss Green, front left view, steel skid base and entrance steps",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      }
+    },
+    {
+      "sizeSlug": "30x20",
+      "h3": "30x20 ft Wide-Body Module: 8 Beds Across Two Rooms",
+      "paragraph": "The first wide-body size, and the point at which the internal layout genuinely changes. At twenty feet wide the module is built as two joined sections, giving eight beds in two separate four-bed rooms off a common lobby rather than one long corridor. Crews on opposing shifts stop waking each other. It ships in sections and is joined on site, so plan for a larger crane window and a level pad than the ten-foot sizes need.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/oil-field-camp/30x20/oil-field-camp-30x20-front-left-hero.webp",
+        "alt": "30x20 ft oil field camp module in Flint Grey, front left view, steel skid base and entrance steps",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      }
+    },
+    {
+      "sizeSlug": "40x20",
+      "h3": "40x20 ft Wide-Body Module: 16 Beds for a Full Crew",
+      "paragraph": "The largest module SAMAN publishes on this page: 800 sq ft, sixteen beds, and the lowest rate per square foot in the range. It suits a full drilling crew or a shared camp serving two contractors, where one building replaces four smaller ones and cuts the number of lifts, pads and service connections. Anything larger than this stops being a module and becomes a multi-building camp, which we quote as a project rather than from a rate.",
+      "applications": [],
+      "image": {
+        "src": "/images/products/oil-field-camp/40x20/oil-field-camp-40x20-front-left-hero.webp",
+        "alt": "40x20 ft oil field camp module in Amber Ochre, front left view, steel skid base and entrance steps",
+        "provenance": "render",
+        "width": 1200,
+        "height": 1200
+      }
+    }
+  ]
+}

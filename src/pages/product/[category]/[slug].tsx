@@ -49,7 +49,7 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
-import { LABOR_HUTMENTS_RAIL, PREFAB_SITE_CANTEEN_RAIL } from '../../../lib/labourColonyClusterRail';
+import { LABOR_HUTMENTS_RAIL, PREFAB_SITE_CANTEEN_RAIL, OIL_FIELD_CAMP_RAIL } from '../../../lib/labourColonyClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { LABOR_SHEDS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
@@ -673,6 +673,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     // Labour Camps, Labour Sheds, Labour Colony, in that exact order.
     if (currentSlug === 'prefab-site-canteen') {
       return PREFAB_SITE_CANTEEN_RAIL;
+    }
+    // LC-03 (17 Aug 2026) - the oil-field-camp page's own Column 3 rail. Build
+    // prompt v1 section 2, Column 3: exactly three tabs (Prefab Labor Camps,
+    // Labour Colony, Labor Sheds), not the live related-products list. Scoped
+    // to this one slug, same pattern as labor-hutments/labor-sheds above.
+    if (currentSlug === 'oil-field-camp') {
+      return OIL_FIELD_CAMP_RAIL;
     }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({

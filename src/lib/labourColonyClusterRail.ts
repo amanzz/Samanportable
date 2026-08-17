@@ -144,3 +144,35 @@ export const PREFAB_SITE_CANTEEN_RAIL: RelatedRailItem[] = [
     imageAlt: 'Labour Colony by SAMAN Portable, worker housing site',
   },
 ];
+
+// LC-03 (17 Aug 2026) — the oil-field-camp page's own Column 3 rail (build
+// prompt v1 s2, Column 3): Prefab Labor Camps, Labour Colony, Labor Sheds, in
+// that order, self excluded. Title, href and image come from each sibling's
+// own live product data; blurb is that sibling's own already-approved
+// opener, first sentence only, so no new copy is authored here.
+export const OIL_FIELD_CAMP_RAIL: RelatedRailItem[] = [
+  {
+    title: 'Prefab Labor Camps',
+    href: '/product/labor-colony/prefab-labor-camps',
+    category: 'Labour Colony',
+    blurb: 'A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project.',
+    imageSrc: '/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp',
+    imageAlt: 'Prefab Labor Camps by SAMAN Portable, exterior view',
+  },
+  {
+    title: 'Labour Colony',
+    href: '/product/labor-colony',
+    category: 'Labour Colony',
+    blurb: 'A labour colony is a whole worker housing site. It is not one building.',
+    imageSrc: '/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-right-hero.webp',
+    imageAlt: 'Labour Colony by SAMAN Portable, worker housing site',
+  },
+  {
+    title: 'Labor Sheds',
+    href: '/product/labor-colony/labor-sheds',
+    category: 'Labour Colony',
+    blurb: 'A labour shed is one undivided sleeping hall under a single roof.',
+    imageSrc: '/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp',
+    imageAlt: 'Labor Sheds by SAMAN Portable, exterior view',
+  },
+];

@@ -773,8 +773,7 @@
           "height": 1080
         }
       ]
-    }
-,
+    },
     "prefab-site-canteen": {
       "name": "Prefab Site Canteen",
       "narrative": "Two lines in the tables below change what you actually buy. The first is that the floor and wall finishes split by zone, so a dining wall and a wash-area wall are not the same specification and are not priced as though they were. The second is that the roof exhaust package is conditional: a dining-only canteen does not inherit a heavy kitchen hood, and a canteen with a cookline needs one engineered before manufacture rather than cut in afterwards.",
@@ -977,6 +976,198 @@
           "height": 1080
         }
       ]
-    }
+    },
+    "oil-field-camp": {
+        "name": "Oil Field Camp",
+        "specifications": [
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Bottom frame",
+            "detail": "IS 2062 or approved equivalent MS channel, RHS or formed sections; member sizes and support reactions from the signed structural drawing",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Bottom stiffeners",
+            "detail": "RHS, channel or angle stiffeners set to the approved floor grid, partitions, bunks and relocation duty",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Floor frame",
+            "detail": "Heavy-duty lift-and-carry skid chassis with two runner beams and reinforced cross-members; skid reactions, lift points and deck supports shown on the transport drawing",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Top frame",
+            "detail": "MS RHS or channel upper perimeter ring sized for roof reactions, wall restraint and opening headers",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Roof stiffeners",
+            "detail": "RHS or formed roof members supporting a nominal 60 mm class insulated roof panel",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Corner posts and walls",
+            "detail": "Welded MS or RHS corner posts and rails tied directly into the skid, with local reinforcement at door, AC, service and wet-room openings",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Lifting and handling",
+            "detail": "Marked lifting lugs, corner fittings, skid points or transport brackets, only where shown on the signed GA and lifting drawing",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Welding and fabrication",
+            "detail": "IS 2062 or IS 1161 class structural steel or approved equivalent; weld sizes, bolt grades and joint details per the fabrication drawings",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Exterior walls",
+            "detail": "Nominal 60 mm PUF or approved insulated panel with PPGI or prepainted faces; external service entries protected by glands and hoods",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Roof",
+            "detail": "PPGI or PPGL outer roof with nominal 60 mm PUF or approved insulated sandwich construction, sealed laps, protected penetrations",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Wall insulation",
+            "detail": "Nominal 60 mm PUF; alternate mineral wool or PIR system by fire and climate brief",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Roof insulation",
+            "detail": "Nominal 60 mm insulated roof or higher project-selected build-up with condensation and vapour control",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Floor base",
+            "detail": "Steel-supported cement board or heavy structural deck for dry sleepers; cementitious waterproof substrate in wet modules",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Painting and coating",
+            "detail": "Prepared carbon steel with compatible primer and top coats, or galvanized and pre-painted sheet with repaired cut edges; system upgraded for coastal, industrial or wet-service exposure",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Fasteners and sealing",
+            "detail": "Corrosion-compatible fasteners, EPDM washers, butyl or PU sealants, closures, flashing, sleeves and isolation tapes matched to the selected build-up",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Interior walls",
+            "detail": "Prelaminated, PPGI or cement-board class liner in dry rooms; FRP, PVC or cementitious wet liner in toilet and shower modules only",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Ceiling",
+            "detail": "PUF panel underside or durable liner below roof insulation, with removable access at cable, AC and exhaust interfaces",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Floor finish",
+            "detail": "Heavy commercial vinyl or project-selected resilient finish in dry areas; slip-resistant wet finish with coved or upstand details in sanitation zones",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Doors",
+            "detail": "Weather-sealed steel or insulated doors, heavy hinges, positive latching, reinforced frames; additional emergency or service doors per the approved room plan",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Windows",
+            "detail": "Aluminium windows with mesh or grille, optional storm or security shutters; glazing area chosen against daylight, heat gain, privacy and site risk",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Grilles and mesh",
+            "detail": "Removable mosquito mesh, louvres, restrictors or protected MS grilles only where the approved opening schedule requires them",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Electrical wiring",
+            "detail": "FR or FRLS copper in approved conduit or trunking; typical references 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm AC and high-load; final sizing per the project electrical schedule",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Electrical protection",
+            "detail": "Main isolator, MCB, RCBO or RCCB protection, labelled neutral and earth bars, bonding, and surge protection where required",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Electrical fittings",
+            "detail": "LED luminaires, fan points, 6A and 16A sockets, exhaust points and dedicated equipment outlets, in the quantities on the approved schedule",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Ventilation and AC",
+            "detail": "Split or package AC provision sized from remote heat load. Normal-area equipment in the base module. Ex equipment or interfaces only where the client hazardous-area classification requires it",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Plumbing and sanitary",
+            "detail": "WC, shower, basin or pantry manifolds, water tank and pump, uPVC waste and vent, protected external stubs, for designated variants only. Dry crew sleepers carry no plumbing",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Layout and configuration",
+            "detail": "Crew sleeper, toolpusher or officer, and wide-body two-room configurations, per the published size schedule",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Quality checks",
+            "detail": "Dimensional, member, weld and bolt, coating, panel, roof-drainage, opening, electrical and plumbing checks, plus deployment checks",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Warranty",
+            "detail": "5-year structural and 1-year finishing as standard; finishing extendable to 2 years on request, confirmed at quotation",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Delivery and tax",
+            "detail": "7 to 21 working days; fixed-price quotation in 48 hours; prices ex-GST, GST 18%, HSN 9406",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Excluded scope",
+            "detail": "Ex-rated equipment, gas detection, blast and fire engineering, process interfaces, hazardous-area certification, sanitary tanks, transport, craneage, foundations, site infrastructure, statutory approvals, commissioning",
+            "differsFromHub": true
+          }
+        ],
+        "narrative": "Two lines in these tables change more for a buyer than the rest combined. The first is the floor frame: a lift-and-carry skid with runner beams is what makes the building relocatable, and it is why the transport drawing, not the floor plan, governs how the unit may be handled. The second is ventilation and AC: the base module is normal-area, so a location with a classified hazardous area needs a separate engineered package, priced against your own classification document. Everything else in Table 1 supports the first of those, and most of Table 2 supports the second."
+      }
   }
 }
