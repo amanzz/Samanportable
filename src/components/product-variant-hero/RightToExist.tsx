@@ -57,11 +57,6 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
       {entry.heading}
     </h2>
   );
-  const topCta = entry.ctaLabel && entry.ctaHref ? (
-    <Link className="saman-s2-split-cta mt-4" href={entry.ctaHref}>
-      {entry.ctaLabel}
-    </Link>
-  ) : null;
 
   // PC-05 revision v1.3/v1.4/ad-hoc (14-15 Aug 2026) — placement axis for the
   // classic body+comparison shape only (no bodyParagraphs, copyInPanel unset —
@@ -159,7 +154,6 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         <>
           {!copyInPanel && heading}
           {!copyInPanel && paragraphs}
-          {!copyInPanel && topCta}
           {splitCard}
         </>
       )}

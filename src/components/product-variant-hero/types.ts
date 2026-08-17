@@ -57,12 +57,6 @@ export interface VariantProductData {
       not yet assigned per-size galleries. Existing products keep per-variant
       `images` and are unaffected. */
   galleryImages?: VariantImage[];
-  /** Explicit hold on the hero media slot. When true, no fallback placeholder or
-      substitute image is rendered. Absent -> existing gallery behaviour. */
-  heroGalleryHeld?: boolean;
-  /** Explicitly removes the Size & Applications Explorer image column when no
-      approved media exists for that slot. Absent -> existing image/placeholder path. */
-  explorerSuppressImageColumn?: boolean;
 
   /* ------------------------------------------------------------------ */
   /* T25 — OPTIONAL per-product overrides. Every one of these is absent  */

@@ -1,59 +1,25 @@
 {
   "productSlug": "prefab-labor-camps",
-  "productName": "Prefab Labour Camps",
+  "productName": "Prefab Labor Camps",
   "variantAxis": "size",
-  "defaultVariant": "20x10",
+  "defaultVariant": "120x24-gplus1",
   "hsn": "9406",
   "gstPercent": 18,
   "applicationsDataset": "prefab-labor-camps",
-  "heroGalleryHeld": true,
-  "explorerSuppressImageColumn": true,
-  "suppressLegacySku": true,
-  "suppressLegacyFaqSchema": true,
-  "categoryLabel": "Labour Colony",
-  "categoryHref": "/product/labor-colony",
-  "h1": "Prefab Labour Camps: Repeatable Blocks for Site Camps",
-  "seoTitle": "Prefab Labour Camps: Six Repeatable Block Sizes | SAMAN",
-  "metaDescription": "Prefab labour camps supplied as repeatable blocks. Six sizes from 200 to 900 sq ft, each priced separately. Panel build, plug-in services, phased expansion.",
-  "opener": "Prefab labour camps from SAMAN are supplied as repeatable accommodation blocks rather than as one finished settlement. You buy a block, and you repeat it around a service spine as the workforce grows. Each block leaves our Bengaluru or Greater Noida works as a bolted steel bay frame clad in insulated sandwich panel, with services routed to a single connection point so a plot can be added or taken out of use without disturbing the rest of the camp. Six block sizes are published, from 200 to 900 sq ft, and each carries its own rate. Anything above 900 sq ft of covered area is quoted manually by block mix, because at that point the external infrastructure drives the cost rather than the buildings do.",
-  "descriptionHtml": "<h2>What a repeatable camp block actually is</h2><p>A prefab labour camp block is a complete, self-contained building that leaves the factory finished and arrives on site ready to connect. It is not a kit of panels assembled in place, and it is not a converted shipping container. The structure is a bolted light steel bay frame on pedestals or a strip plinth, clad in insulated sandwich panel. The roof is insulated panel or PPGI sheet with a proper ridge, eave and gutter line.</p><p>The word that matters in the product name is repeatable. Every block we make for a camp shares one bay spacing, one panel module, one door and window family and one service interface. That sounds like a manufacturing convenience, and it is. But the benefit lands on your site rather than in our works, because we reproduce blocks batch after batch without redrawing anything. A damaged panel on the fourth block is the same panel as on the first. A door that fails in year three comes from stock rather than from a fabricator matching it.</p><p>It also means the camp is not a single object. It is a set of components on a grid, and the grid is the product.</p><h2>How the six sizes change the camp plan</h2><p>The six published sizes fall into two families, and the split between them is more useful to a planner than the areas are.</p><p><strong>The 10 ft wide family: 20x10, 30x10 and 40x10 ft</strong></p><p>Everything at 10 ft wide behaves the same way in transport, in lifting and in setting out. These three sizes travel on standard trailers, need the same working margin around the plot, and use the same spares. They are single-volume or simply partitioned buildings, and cross ventilation through opposite walls works because the room is never deep. Most camps buy several of these before they buy anything wider.</p><p><strong>The 20 ft wide family: 30x20, 40x20 and 45x20 ft</strong></p><p>At 20 ft the building changes character. The floor needs an internal support line. The plot needs a wider footprint with margin on both sides. Inside, rooms can sit off a circulation route instead of forming one volume. These sizes are where sanitation blocks, canteens and mixed-use blocks live. They also carry the lower rates, because the frame and the services spread across more floor area.</p><p>Rates fall as the block grows. A 200 sq ft block runs at Rs 1,150 per sq ft; a 900 sq ft block runs at Rs 900. That is not a volume discount on the same product. It reflects the fact that a longer, wider block reuses one connection point, one roof drainage run and one base frame across more usable floor.</p><h2>What the quoted rate covers, and what it does not</h2><p>This is the part most quotations leave vague, so we state it plainly.</p><p><strong>Included in the published rate</strong></p><ul><li>The block enclosure: frame, floor, walls, roof, insulation, doors and windows</li><li>Standard services-ready fit-out: internal wiring in conduit, protection, lighting and fan points, and a single service interface for water, waste and power</li><li>Factory quality checks, dimensional inspection, coating touch-up and dispatch protection</li></ul><p><strong>Not included, quoted separately when you need it</strong></p><ul><li>Loose beds, bunks, lockers and any furniture</li><li>Kitchen equipment and canteen fit-out</li><li>External sanitation plant, septic systems and sewer connection</li><li>Foundations, plinths, pedestals and site levelling</li><li>Transport, offloading, positioning and erection</li><li>Utility distribution across the camp, and the service spine itself</li><li>Statutory approvals and project-specific structural or performance engineering</li></ul><p>A block that arrives with beds in it has been quoted with beds in it. Nothing here assumes otherwise. Where an interior image shows bunk frames, it shows a fitted example rather than the standard supply.</p><h2>The service spine, and why blocks are planned around it</h2><p>Camps that fail operationally usually fail on services, not on buildings. Water reaches the dormitories but not the wash block. Waste from the canteen crosses the pedestrian route. A repair to one drain shuts down half the camp because nothing can be isolated.</p><p>We plan camps around a service spine for that reason. Water, waste and power run along one route, and every block connects to it at a single interface with its own isolation. The consequences are practical. A block can be taken out of service without touching its neighbours. A new plot can be trenched and connected before its building arrives. Zones can be metered and watched separately, so a leak shows up as a reading rather than as a flood.</p><p>Zoning follows the same logic. Dormitory, sanitation, canteen and supervisor or admin functions sit in defined zones, and pedestrian movement is kept clear of service vehicle routes. On a camp that runs three shifts, that separation is a safety measure rather than a layout preference.</p><h2>Panels, roof and floor: one assembly chosen per block type</h2><p>The specification allows nominal 50, 60 or 80 mm PUF, EPS or mineral-wool panels. We select one panel family per block type on the project brief, and we do not mix them within a block. Climate drives part of that choice and the project fire strategy drives the rest. Thicker is not automatically better. Core, facing, joint detail and ventilation all matter more than the number on the datasheet.</p><p>Roofs are insulated panel or PPGI with a defined ridge, eave, flashing and gutter run. In hot climates we plan the ventilation or ceiling strategy alongside the insulation, not after it. A thick roof panel on its own does not fix a hot dormitory. Ceiling fans, ridge and eave airflow and condensation risk are considered together.</p><p>Floors are where the two block types genuinely diverge. Dry blocks such as dormitories and admin rooms use a bolted steel joist deck with a cement board or ply platform, finished in commercial vinyl. Wet blocks such as toilets, wash areas and kitchens use a waterproof cementitious or RCC substrate with an epoxy, tile or safety finish. That is a deliberate split, not an inconsistency, and it has a consequence worth knowing before you plan a move.</p><h2>Moving the camp, and what actually moves</h2><p>Dry blocks are designed to be demounted and relocated. Wet blocks depend on fixed site civil work, drainage falls and connections that cannot travel with the building. Any supplier who tells you an entire camp lifts and moves as one is describing a sales pitch rather than a wet block.</p><p>A planned demobilisation runs as a sequence. Services are isolated block by block at the spine. Interiors are cleared and the packing list is checked against the original bill of materials. Blocks are disconnected, inspected for reuse, and lifted or loaded on the approved lifting and support points shown on the general arrangement drawing. Panels, trims and fixings that will be reused are recorded; those that will not are noted so the next site is quoted honestly.</p><p>We do not publish a number of moves. It depends on handling discipline, lifting method, exposure at each site, and how well the crew maintained seals and coatings in between. What we will do is inspect a returning block and tell you what it needs before it goes out again.</p><h2>What your site has to be ready for</h2><p>The block is our scope. The ground it stands on is yours, and camps are delayed by ground far more often than by buildings.</p><ul><li>Level, compacted ground with working margin on all sides of each plot</li><li>Foundations, plinths or pedestals set out and cured to the approved drawing</li><li>Access for a trailer and for the offloading method agreed in the quotation</li><li>The service spine trenched, and water, waste and power available at the block interface</li><li>Drainage falls established, particularly around wet blocks</li><li>Statutory approvals in place for the camp as a whole</li></ul><p>Sort the plot and the spine before delivery. That one step does more than anything else to keep an installation to days rather than weeks.</p><h2>Where the block ladder stops and a project quotation begins</h2><p>Every size on this page is priced by area rate. Above 900 sq ft of covered area we stop doing that, and we say so rather than extrapolating.</p><p>The reason is that beyond a certain size the cost of a camp is no longer mostly the buildings. Water storage and pumping, sewage treatment or septic capacity, power distribution and standby, roads and drainage, boundary and security, and the approvals all start to dominate. Multiplying a per-square-foot rate by a larger number produces a figure that looks precise and is wrong. So a larger camp is quoted manually, by block mix and by external infrastructure scope.</p><p>Two alternatives are worth knowing about. Our <a href=\"https://www.samanportable.com/product/labor-colony/labor-sheds\">labour sheds</a> page covers one large open dormitory hall. That is a cheaper way to house a big crew when the building stays put and privacy is not a requirement. For small partitioned rooms below 200 sq ft, <a href=\"https://www.samanportable.com/product/labor-colony/labor-hutments\">labour hutments</a> fits better.</p><h2>A note on two-storey blocks</h2><p>Stacking a block to G+1 is a separate engineered package. It brings its own frame, staircase and access walkway design, and it is not included in the single-storey rates published on this page. Tell us at enquiry stage if your plot is tight enough that stacking is the only option. We then quote the engineering with the blocks rather than after them.</p><h2>What you get at handover</h2><p>Each block is checked before dispatch and again at handover. Dimensional and member checks come first, then weld and bolt inspection, coating condition, panel fit, roof drainage and every opening. Electrical and plumbing checks follow.</p><p>The handover pack names the approved general arrangement drawing and bill of materials, the material schedule, test records where the contract calls for them, photographs, outstanding punch items, the lifting and service-connection data, and the maintenance points. Fire, thermal, acoustic, structural and hygiene performance appear only where the contracted evidence supports them, which on a standard camp block usually means they do not appear at all.</p><h2>What to send us for a quotation</h2><ul><li>Site location, and access constraints for a trailer</li><li>Block mix and quantity, by size</li><li>What each block is for: sleeping, sanitation, canteen, admin or store</li><li>Project duration, and whether the camp will be relocated</li><li>Whether foundations, transport, erection and utility distribution are in your scope or ours</li><li>Any fire, thermal or acoustic requirement your client has specified in writing</li><li>Required delivery date</li></ul><p>We return a fixed-price quotation within 48 hours. Standard delivery is 7 to 21 working days from order confirmation, depending on the block mix and the works loading at the time.</p><h2>Questions buyers ask about prefab labour camps</h2><h3><strong>What does a prefab labour camp cost in India?</strong></h3><p>Our published block rates run from Rs 1,150 per sq ft at 200 sq ft down to Rs 900 at 900 sq ft, ex-GST. That covers the block enclosure and services-ready fit-out. Market figures quoted elsewhere vary enormously because they bundle different scopes. Always ask what a rate includes before comparing it.</p><h3><strong>What is the difference between a labour camp and a labour colony?</strong></h3><p>In common use they describe the same thing at different scales. On this site, camp means a set of repeatable blocks bought and connected in phases. Colony means a complete settlement planned and priced as one project.</p><h3><strong>Can blocks be added later?</strong></h3><p>Yes, and that is the point of the grid. We trench and connect a new plot to the existing spine. The new block then uses the same bay module, panel and service interface as the ones already standing.</p><h3><strong>Can the camp be moved to the next site?</strong></h3><p>Dry blocks are designed for demounting and relocation. Wet blocks depend on fixed civil work that stays behind. Plan a move as a block-by-block sequence with a reuse inspection, not as a single lift of the whole camp.</p><h3><strong>Do we need permission for a prefab camp?</strong></h3><p>Statutory approvals for worker accommodation are the project's responsibility and vary by state and by client. We supply the drawings and specifications your approval submission needs. We do not certify compliance.</p><h3><strong>How long does installation take?</strong></h3><p>Delivery is 7 to 21 working days from order confirmation. Time on site depends on the block mix, the readiness of the plot and the spine, and the offloading method. Ground that is not ready is the usual cause of overrun.</p>",
-  "infoImages": [
-    {
-      "src": "/images/products/prefab-labor-camps/description/prefab-labour-camp-block-site-context.webp",
-      "alt": "Green prefab labour camp block on level ground at an Indian construction site",
-      "provenance": "render",
-      "width": 1920,
-      "height": 1080
-    },
-    {
-      "src": "/images/products/prefab-labor-camps/description/prefab-labour-camp-panel-roof-detail.webp",
-      "alt": "Panel joint, corner post, steel base frame, eave and gutter on a cream camp block",
-      "provenance": "render",
-      "width": 1920,
-      "height": 1080
-    },
-    {
-      "src": "/images/products/prefab-labor-camps/description/prefab-labour-camp-dormitory-interior.webp",
-      "alt": "Dormitory block interior with steel bunk frames along both walls and a vinyl floor",
-      "provenance": "render",
-      "width": 1920,
-      "height": 1080
-    },
-    {
-      "src": "/images/products/prefab-labor-camps/description/prefab-labour-camp-block-width-comparison.webp",
-      "alt": "A 10 ft wide camp block beside a 20 ft wide block at the same camera distance",
-      "provenance": "render",
-      "width": 1920,
-      "height": 1080
-    },
-    {
-      "src": "/images/products/prefab-labor-camps/description/prefab-labour-camp-phased-expansion.webp",
-      "alt": "Completed camp blocks around a service route with a new block plot being framed",
-      "provenance": "render",
-      "width": 1920,
-      "height": 1080
-    }
-  ],
+  "explorerImageTemplate": {
+    "60x24-gplus1": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-left-hero.webp",
+    "90x24-gplus1": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-front-left-hero.webp",
+    "90x24-gplus2": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-front-left-hero.webp",
+    "120x24-gplus1": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-left-hero.webp",
+    "118x30-gplus1": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-front-left-hero.webp",
+    "120x24-gplus2": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-left-hero.webp"
+  },
+  "emitAggregateOffer": true,
+  "productSku": "SP-90-PLC-2024",
+  "specPdfHref": "/specs/prefab-labor-camps-technical-specification.pdf",
+  "priceCaption": "Base specification price, customisations quoted separately.",
+  "opener": "A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project. Blocks arrange around a central services spine to the approved site plan. Sizes span 60x24 ft G+1 through 120x24 ft G+2 for 58 to 216 workers a building, each priced ex-factory on the camp's own square-foot rate with a fixed quote in 48 hours.",
+  "descriptionHtml": "<h2>The Prefab Labour Camp: Housing That Moves With the Work</h2><p>Most worker housing is written off when the project ends. The prefab labour camp is engineered so it is not. Wall, floor and roof panels share one bolted module, the block stands on pedestal pads instead of a poured slab, and electrical blocks plug together through external cable trays. When the project finishes, the camp unbolts, travels on trailers with panels numbered for reassembly, and stands again at the next site far faster than it first went up.</p><img src=\"/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-right-hero-wide.webp\" width=\"1200\" height=\"675\" loading=\"lazy\" alt=\"Bolted-panel labour camp block of 120x24 ft from the corner, module joints visible in the wall run.\"><h2>The Arithmetic of Moving</h2><p>Rate for rate a camp runs a little above <a href=\"/product/labor-colony/labor-sheds\">a fixed open-hall shed</a> of the same size, and repays the difference the first time it moves. Across three projects the same block becomes the cheapest housing a contractor owns. Owners who repeat the block report a second erection needs about half the first one's hours, and pedestal footings mean leaving a site means lifting pads, never breaking concrete.</p><img src=\"/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-rear-left-three-quarter-wide.webp\" width=\"1200\" height=\"675\" loading=\"lazy\" alt=\"Rear quarter of the starter camp block showing panel joints and service entries.\"><h2>Six Camp Sizes</h2><div class=\"overflow-x-auto\"><table><thead><tr><th>Size</th><th>Built area</th><th>Workers (planning)</th><th>Price ex-GST</th></tr></thead><tbody><tr><td>60x24 ft G+1</td><td>2,880 sq ft</td><td>58 to 72</td><td>Rs 19,56,960</td></tr><tr><td>90x24 ft G+1</td><td>4,320 sq ft</td><td>86 to 108</td><td>Rs 29,35,440</td></tr><tr><td>90x24 ft G+2</td><td>6,480 sq ft</td><td>129 to 162</td><td>Rs 44,03,160</td></tr><tr><td>120x24 ft G+1</td><td>5,760 sq ft</td><td>115 to 144</td><td>Rs 39,13,920</td></tr><tr><td>118x30 ft G+1</td><td>7,080 sq ft</td><td>142 to 177</td><td>Rs 48,10,860</td></tr><tr><td>120x24 ft G+2</td><td>8,640 sq ft</td><td>173 to 216</td><td>Rs 58,70,880</td></tr></tbody></table></div><p>Every size is fully demountable, including both G+2 entries, whose third floor bolts onto the identical module the ground floor uses.</p><h2>Engineering for Repeat Moves</h2><p>Bolted light steel frames on pedestals form the skeleton; PUF or approved EPS panels in 50, 60 and 80 mm form the envelope; and repeatable door and window modules mean one damaged panel is exchanged instead of condemning the wall. Service entries are protected for transit, and the document set includes the block's move log. The Specifications tab lists every row of the build standard.</p><img src=\"/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-exact-x-stair-end-elevation-wide.webp\" width=\"1200\" height=\"675\" loading=\"lazy\" alt=\"Stair-end elevation of the 90 ft camp block, panel grid and landings in line.\"><h2>Camp Layouts</h2><p>The blocks group along a single services spine carrying ring-main water and zoned power, hookup drawings issued per site. The wide-body size keeps a full utility zone indoors, which cold-region postings appreciate. Repeat customers carry one block numbering from site to site so the layout plan follows the buildings.</p><img src=\"/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-bunk-bed-layout-wide-interior-wide.webp\" width=\"1200\" height=\"675\" loading=\"lazy\" alt=\"Camp sleeping room in wide view, bunks ranged inside the panel shell.\"><h2>Camp Pricing</h2><p>Rs 679.50 per square foot ex-GST at every size. Trailer counts and crane hours for a future move are stated on the quotation itself, so relocation is budgeted before purchase, not discovered after. Freight and fit-out are quoted separately, fixed within 48 hours.</p><h2>Delivery, Erection, Re-erection</h2><p>First delivery runs 7 to 21 working days from drawing approval. Erection is bolt-up on pre-marked pad positions from the ground template. Dismantling runs assembly in reverse, each numbered panel returning to its trailer. Warranty rides along: structure covered 5 years, finishing covered 1.</p><img src=\"/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-left-hero-wide.webp\" width=\"1200\" height=\"675\" loading=\"lazy\" alt=\"The largest demountable camp block, three panel floors from the stair end.\"><h2>Why Buy the Camp From SAMAN</h2><p>Because demountability is a factory discipline, not a site improvisation. Panel tolerances, module repeats and connection details are controlled where they are made. Crews wanting lockable rooms in a movable block should compare <a href=\"/product/labor-colony/labor-hutments\">the room-block hutment</a> first, and <a href=\"/product/labor-colony\">the full colony line-up</a> shows the fixed buildings that cost less for the same area when nothing ever moves.</p><img src=\"/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-entrance-axis-interior-wide.webp\" width=\"1200\" height=\"675\" loading=\"lazy\" alt=\"Down the room axis of the wide-body camp block from its entrance door.\"><h2>Prefab Labour Camp FAQs</h2><h4><strong>How many times can the camp move?</strong></h4><p>The module is designed for repeated cycles; blocks in service have moved several times with panel swaps as the only maintenance.</p><h4><strong>How long does a move take?</strong></h4><p>Dismantling, transport and re-erection are quoted per site; the second build typically halves the first build's hours.</p><h4><strong>Does moving void the warranty?</strong></h4><p>Relocation by the documented procedure keeps warranty terms; the move log records each cycle.</p><h4><strong>Can it become permanent?</strong></h4><p>Yes, grouting the pedestals turns the block permanent, nothing altered structurally above the base line.</p><h4><strong>What foundations does it need?</strong></h4><p>Pedestal pads on compacted ground, positions pre-marked from the ground template supplied with the block.</p>",
   "faqSchema": {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -62,232 +28,332 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What does a prefab labour camp cost in India?",
+        "name": "How many times can the camp move?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our published block rates run from Rs 1,150 per sq ft at 200 sq ft down to Rs 900 at 900 sq ft, ex-GST. That covers the block enclosure and services-ready fit-out. Market figures quoted elsewhere vary enormously because they bundle different scopes. Always ask what a rate includes before comparing it."
+          "text": "The module is designed for repeated cycles; blocks in service have moved several times with panel swaps as the only maintenance."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the difference between a labour camp and a labour colony?",
+        "name": "How long does a move take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In common use they describe the same thing at different scales. On this site, camp means a set of repeatable blocks bought and connected in phases. Colony means a complete settlement planned and priced as one project."
+          "text": "Dismantling, transport and re-erection are quoted per site; the second build typically halves the first build's hours."
         }
       },
       {
         "@type": "Question",
-        "name": "Can blocks be added later?",
+        "name": "Does moving void the warranty?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, and that is the point of the grid. We trench and connect a new plot to the existing spine. The new block then uses the same bay module, panel and service interface as the ones already standing."
+          "text": "Relocation by the documented procedure keeps warranty terms; the move log records each cycle."
         }
       },
       {
         "@type": "Question",
-        "name": "Can the camp be moved to the next site?",
+        "name": "Can it become permanent?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dry blocks are designed for demounting and relocation. Wet blocks depend on fixed civil work that stays behind. Plan a move as a block-by-block sequence with a reuse inspection, not as a single lift of the whole camp."
+          "text": "Yes, grouting the pedestals turns the block permanent, nothing altered structurally above the base line."
         }
       },
       {
         "@type": "Question",
-        "name": "Do we need permission for a prefab camp?",
+        "name": "What foundations does it need?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Statutory approvals for worker accommodation are the project's responsibility and vary by state and by client. We supply the drawings and specifications your approval submission needs. We do not certify compliance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does installation take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Delivery is 7 to 21 working days from order confirmation. Time on site depends on the block mix, the readiness of the plot and the spine, and the offloading method. Ground that is not ready is the usual cause of overrun."
+          "text": "Pedestal pads on compacted ground, positions pre-marked from the ground template supplied with the block."
         }
       }
     ]
   },
   "variants": [
     {
-      "sizeSlug": "20x10",
-      "label": "20x10 ft",
-      "dims": "20x10 ft",
-      "areaSqft": 200,
-      "priceExGst": 230000,
-      "priceInclGst": 271400,
-      "featureCells": [
+      "sizeSlug": "60x24-gplus1",
+      "label": "60x24 ft G+1",
+      "dims": "60x24 ft G+1",
+      "areaSqft": 2880,
+      "priceExGst": 1956960,
+      "priceInclGst": 2309213,
+      "capacity": "58 to 72 workers",
+      "useCase": "Crews of 58 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
         {
-          "label": "Published block sizes",
-          "value": "Six, from 20x10 ft to 45x20 ft (200 to 900 sq ft)"
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp",
+          "alt": "Prefab labour camp, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Rate",
-          "value": "Rs 1,150 down to Rs 900 per sq ft, ex-GST, lower at larger sizes"
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 60x24 ft G+1, flat on across the whole front, both floors on a 60 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Construction",
-          "value": "Bolted steel bay frame, 50, 60 or 80 mm PUF, EPS or mineral-wool panel"
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 60x24 ft G+1 prefab labour camp, double bunks in facing rows in the bolted panel block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Above 900 sq ft",
-          "value": "Quoted manually by block mix and external infrastructure scope"
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 60x24 ft G+1 prefab labour camp, the entrance end of the room in the bolted panel block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Warranty",
-          "value": "5-year structural, 1-year finishing, extendable to 2 years on request"
+          "src": "/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 60x24 ft G+1 prefab labour camp, the return view toward the door in the bolted panel block, sleeping planned for 58 to 72 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         }
       ]
     },
     {
-      "sizeSlug": "30x10",
-      "label": "30x10 ft",
-      "dims": "30x10 ft",
-      "areaSqft": 300,
-      "priceExGst": 337500,
-      "priceInclGst": 398250,
-      "featureCells": [
+      "sizeSlug": "90x24-gplus1",
+      "label": "90x24 ft G+1",
+      "dims": "90x24 ft G+1",
+      "areaSqft": 4320,
+      "priceExGst": 2935440,
+      "priceInclGst": 3463819,
+      "capacity": "86 to 108 workers",
+      "useCase": "Crews of 86 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
         {
-          "label": "Published block sizes",
-          "value": "Six, from 20x10 ft to 45x20 ft (200 to 900 sq ft)"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-front-right-hero.webp",
+          "alt": "Prefab labour camp, 90x24 ft G+1, from the right-hand corner, both floors on a 90 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Rate",
-          "value": "Rs 1,150 down to Rs 900 per sq ft, ex-GST, lower at larger sizes"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 90x24 ft G+1, face on along the full frontage, both floors on a 90 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Construction",
-          "value": "Bolted steel bay frame, 50, 60 or 80 mm PUF, EPS or mineral-wool panel"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 90x24 ft G+1 prefab labour camp, bunk beds ranged along both walls in the bolted panel block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Above 900 sq ft",
-          "value": "Quoted manually by block mix and external infrastructure scope"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+1 prefab labour camp, the doorway into the sleeping room in the bolted panel block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Warranty",
-          "value": "5-year structural, 1-year finishing, extendable to 2 years on request"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus1/prefab-labor-camps-90x24-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+1 prefab labour camp, looking back toward the room door in the bolted panel block, sleeping planned for 86 to 108 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         }
       ]
     },
     {
-      "sizeSlug": "40x10",
-      "label": "40x10 ft",
-      "dims": "40x10 ft",
-      "areaSqft": 400,
-      "priceExGst": 440000,
-      "priceInclGst": 519200,
-      "featureCells": [
+      "sizeSlug": "90x24-gplus2",
+      "label": "90x24 ft G+2",
+      "dims": "90x24 ft G+2",
+      "areaSqft": 6480,
+      "priceExGst": 4403160,
+      "priceInclGst": 5195729,
+      "capacity": "129 to 162 workers",
+      "useCase": "Crews of 129 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
         {
-          "label": "Published block sizes",
-          "value": "Six, from 20x10 ft to 45x20 ft (200 to 900 sq ft)"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-front-right-hero.webp",
+          "alt": "Prefab labour camp, 90x24 ft G+2, from the near right corner, all three floors on a 90 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Rate",
-          "value": "Rs 1,150 down to Rs 900 per sq ft, ex-GST, lower at larger sizes"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 90x24 ft G+2, square on to the full front, all three floors on a 90 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Construction",
-          "value": "Bolted steel bay frame, 50, 60 or 80 mm PUF, EPS or mineral-wool panel"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 90x24 ft G+2 prefab labour camp, the sleeping bay set out in double bunks in the bolted panel block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Above 900 sq ft",
-          "value": "Quoted manually by block mix and external infrastructure scope"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-entrance-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+2 prefab labour camp, looking in from the room door in the bolted panel block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Warranty",
-          "value": "5-year structural, 1-year finishing, extendable to 2 years on request"
+          "src": "/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-reverse-axis-interior.webp",
+          "alt": "Inside a 90x24 ft G+2 prefab labour camp, the room seen from its far end in the bolted panel block, sleeping planned for 129 to 162 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         }
       ]
     },
     {
-      "sizeSlug": "30x20",
-      "label": "30x20 ft",
-      "dims": "30x20 ft",
-      "areaSqft": 600,
-      "priceExGst": 630000,
-      "priceInclGst": 743400,
-      "featureCells": [
+      "sizeSlug": "120x24-gplus1",
+      "label": "120x24 ft G+1",
+      "dims": "120x24 ft G+1",
+      "areaSqft": 5760,
+      "priceExGst": 3913920,
+      "priceInclGst": 4618426,
+      "capacity": "115 to 144 workers",
+      "useCase": "Crews of 115 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
         {
-          "label": "Published block sizes",
-          "value": "Six, from 20x10 ft to 45x20 ft (200 to 900 sq ft)"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-front-right-hero.webp",
+          "alt": "Prefab labour camp, 120x24 ft G+1, from the front right corner, both floors on a 120 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Rate",
-          "value": "Rs 1,150 down to Rs 900 per sq ft, ex-GST, lower at larger sizes"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 120x24 ft G+1, flat on across the whole front, both floors on a 120 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Construction",
-          "value": "Bolted steel bay frame, 50, 60 or 80 mm PUF, EPS or mineral-wool panel"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 120x24 ft G+1 prefab labour camp, double bunks in facing rows in the bolted panel block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Above 900 sq ft",
-          "value": "Quoted manually by block mix and external infrastructure scope"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+1 prefab labour camp, the entrance end of the room in the bolted panel block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Warranty",
-          "value": "5-year structural, 1-year finishing, extendable to 2 years on request"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus1/prefab-labor-camps-120x24-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+1 prefab labour camp, the return view toward the door in the bolted panel block, sleeping planned for 115 to 144 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         }
       ]
     },
     {
-      "sizeSlug": "40x20",
-      "label": "40x20 ft",
-      "dims": "40x20 ft",
-      "areaSqft": 800,
-      "priceExGst": 760000,
-      "priceInclGst": 896800,
-      "featureCells": [
+      "sizeSlug": "118x30-gplus1",
+      "label": "118x30 ft G+1",
+      "dims": "118x30 ft G+1",
+      "areaSqft": 7080,
+      "priceExGst": 4810860,
+      "priceInclGst": 5676815,
+      "capacity": "142 to 177 workers",
+      "useCase": "Crews of 142 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
         {
-          "label": "Published block sizes",
-          "value": "Six, from 20x10 ft to 45x20 ft (200 to 900 sq ft)"
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-front-right-hero.webp",
+          "alt": "Prefab labour camp, 118x30 ft G+1, from the right-hand corner, both floors on the wide 30 ft body of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Rate",
-          "value": "Rs 1,150 down to Rs 900 per sq ft, ex-GST, lower at larger sizes"
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 118x30 ft G+1, face on along the full frontage, both floors on the wide 30 ft body of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Construction",
-          "value": "Bolted steel bay frame, 50, 60 or 80 mm PUF, EPS or mineral-wool panel"
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 118x30 ft G+1 prefab labour camp, bunk beds ranged along both walls in the bolted panel block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Above 900 sq ft",
-          "value": "Quoted manually by block mix and external infrastructure scope"
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-entrance-axis-interior.webp",
+          "alt": "Inside a 118x30 ft G+1 prefab labour camp, the doorway into the sleeping room in the bolted panel block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Warranty",
-          "value": "5-year structural, 1-year finishing, extendable to 2 years on request"
+          "src": "/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-room-reverse-axis-interior.webp",
+          "alt": "Inside a 118x30 ft G+1 prefab labour camp, looking back toward the room door in the bolted panel block, sleeping planned for 142 to 177 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         }
       ]
     },
     {
-      "sizeSlug": "45x20",
-      "label": "45x20 ft",
-      "dims": "45x20 ft",
-      "areaSqft": 900,
-      "priceExGst": 810000,
-      "priceInclGst": 955800,
-      "featureCells": [
+      "sizeSlug": "120x24-gplus2",
+      "label": "120x24 ft G+2",
+      "dims": "120x24 ft G+2",
+      "areaSqft": 8640,
+      "priceExGst": 5870880,
+      "priceInclGst": 6927638,
+      "capacity": "173 to 216 workers",
+      "useCase": "Crews of 173 plus",
+      "sku": "SP-90-PLC-2024",
+      "images": [
         {
-          "label": "Published block sizes",
-          "value": "Six, from 20x10 ft to 45x20 ft (200 to 900 sq ft)"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-front-right-hero.webp",
+          "alt": "Prefab labour camp, 120x24 ft G+2, from the near right corner, all three floors on a 120 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Rate",
-          "value": "Rs 1,150 down to Rs 900 per sq ft, ex-GST, lower at larger sizes"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-exact-front-elevation.webp",
+          "alt": "Prefab labour camp, 120x24 ft G+2, square on to the full front, all three floors on a 120 ft footprint of the bolted panel camp build in view.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Construction",
-          "value": "Bolted steel bay frame, 50, 60 or 80 mm PUF, EPS or mineral-wool panel"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-bunk-bed-layout-wide-interior.webp",
+          "alt": "Inside a 120x24 ft G+2 prefab labour camp, the sleeping bay set out in double bunks in the bolted panel block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Above 900 sq ft",
-          "value": "Quoted manually by block mix and external infrastructure scope"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-room-entrance-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+2 prefab labour camp, looking in from the room door in the bolted panel block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         },
         {
-          "label": "Warranty",
-          "value": "5-year structural, 1-year finishing, extendable to 2 years on request"
+          "src": "/images/products/prefab-labor-camps/120x24-gplus2/prefab-labor-camps-120x24-gplus2-room-reverse-axis-interior.webp",
+          "alt": "Inside a 120x24 ft G+2 prefab labour camp, the room seen from its far end in the bolted panel block, sleeping planned for 173 to 216 workers.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
         }
       ]
     }
