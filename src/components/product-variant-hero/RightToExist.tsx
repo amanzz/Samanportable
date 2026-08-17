@@ -105,6 +105,7 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         {copyInPanel && heading}
         {card.subheading && <h3 className="saman-s2-split-subheading">{card.subheading}</h3>}
         {card.body && <p className="saman-s2-split-text">{card.body}</p>}
+        {card.body2 && <p className="saman-s2-split-text mt-2">{card.body2}</p>}
         {/* PC-03 post-build correction 2 — checkmarked trust-signal bullets below
             the card body. Same Check icon and colour token the Section 3 explorer
             already uses for its application list, so no new visual pattern is
