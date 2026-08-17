@@ -302,7 +302,7 @@ const PRODUCT_ICON: Record<ProductId, IconName> = {
   'labor-sheds': 'colony',
   'labor-hutments': 'colony',
   'prefab-labor-camps': 'colony',
-  'oil-field-camp': 'unit',
+  'oil-field-camp': 'colony',
 };
 
 function productIcon(id: ProductId): string {
