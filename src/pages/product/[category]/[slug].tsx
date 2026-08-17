@@ -999,9 +999,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // from these slugs only, so the hub, the MS page and the GI page
                   // keep the deployed literal.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container'
-                      ? 'Choose your size - six factory-built options'
-                      : undefined
+                    slug === 'labor-sheds'
+                      ? 'Choose your size: six factory-built options'
+                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container'
+                        ? 'Choose your size - six factory-built options'
+                        : undefined
                   }
                   emitSizeAnchors={slug === 'accommodation-container'}
                   explorerHidePanelImages={slug === 'accommodation-container'}

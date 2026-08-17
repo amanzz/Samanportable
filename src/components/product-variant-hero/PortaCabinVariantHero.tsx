@@ -1123,7 +1123,7 @@ export function PortaCabinVariantHero({
               incl-GST line. When priceExGst is a number the ORIGINAL two elements
               render unchanged (the fragment is transparent → flagship byte-identity). */}
           {heroActive.priceExGst == null ? (
-            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">{data.gatedPriceLabel || 'Price on request — send enquiry'}</span>
+            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">{data.gatedPriceLabel || (data.productSlug === 'labor-sheds' ? 'Price on request' : 'Price on request — send enquiry')}</span>
           ) : (
             <>
               <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
