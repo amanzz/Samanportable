@@ -731,15 +731,28 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // The calculator entry band. Sits between the buy box and the description
   // tabs so a buyer cannot scroll past the tool without meeting it.
   const calculatorEntryHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
     // The entry band names the product and prints its price, so a no-prefill
-    // route gets no band at all rather than a band claiming to price a panel.
-    if (!embeddedCalculatorMapping || !embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) return null;
+    // route gets no priced band rather than one claiming to price a panel.
+    // LC-06 FIX v1.1 (17 Aug 2026) - prefab-site-canteen is the one exception:
+    // SAMAN's own review caught the page rendering the full open calculator
+    // with no band above it at all, immediately below the buy box, instead of
+    // the band-then-anchor-down pattern every other page uses. Scoped to this
+    // one slug: every other no-prefill route (UNVERIFIED_PRODUCT_ID_CLUSTERS)
+    // keeps today's no-band behaviour unchanged, since that is a separate,
+    // uncoordinated change this ticket did not ask for.
+    if (!embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) {
+      if (!isPrefabSiteCanteenPage) return null;
+      return renderCalculatorEntrySection({
+        productName: product?.name || 'Prefab Site Canteen',
+      });
+    }
     return renderCalculatorEntrySection({
       productId: embeddedCalculatorMapping.productId,
       productName: product?.name || embeddedCalculatorSummary?.name || '',
       ladderKey: embeddedCalculatorMapping.ladderKey,
     });
-  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name]);
+  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
