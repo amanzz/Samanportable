@@ -14,7 +14,7 @@
 /** Step headings and their one-line help, in render order. */
 export const STEP_COPY = [
   { key: 'product', heading: 'Choose your product', help: 'Pick the building closest to what you need. You can change it at any point.' },
-  { key: 'size', heading: 'Set the size', help: 'Area and price update as you type. Every size prices from our base-cabin rate card — the larger the floor area, the lower the rate per square foot.' },
+  { key: 'size', heading: 'Set the size', help: 'Area and price update as you type. Every size prices from our base-cabin rate card: the larger the floor area, the lower the rate per square foot.' },
   // Approved 05 Aug for this step specifically. The earlier build reused
   // CONSTRUCTION_DISCLOSURE's strings; that reuse was refused, and the
   // duplicate disclosure block stays removed.

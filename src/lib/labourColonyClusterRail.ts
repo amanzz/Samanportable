@@ -13,8 +13,8 @@ export const LABOR_COLONY_HUB_RAIL: RelatedRailItem[] = [
     href: '/product/labor-colony/labor-sheds',
     category: 'Labour Colony',
     blurb: 'A labour shed is the open-hall version of SAMAN worker housing: one clear sleeping hall per floor with central aisles, built as a light portal-frame steel building with PPGI cladding and high-level ventilation.',
-    imageSrc: '/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Labor Sheds by SAMAN Portable, exterior view',
+    imageSrc: '/images/products/labor-sheds/20x30/labour-shed-20x30-front-left-exterior.webp',
+    imageAlt: '20x30 ft labour shed in pearl-grey cladding, front-left view, with a ridge ventilator along the apex',
   },
   {
     title: 'Labour Hutments',
@@ -91,8 +91,8 @@ export const LABOR_HUTMENTS_RAIL: RelatedRailItem[] = [
     href: '/product/labor-colony/labor-sheds',
     category: 'Labour Colony',
     blurb: 'A labour shed is the open-hall version of SAMAN worker housing: one clear sleeping hall per floor with central aisles, built as a light portal-frame steel building with PPGI cladding and high-level ventilation.',
-    imageSrc: '/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Labor Sheds by SAMAN Portable, exterior view',
+    imageSrc: '/images/products/labor-sheds/20x30/labour-shed-20x30-front-left-exterior.webp',
+    imageAlt: '20x30 ft labour shed in pearl-grey cladding, front-left view, with a ridge ventilator along the apex',
   },
   {
     title: 'Labour Colony',

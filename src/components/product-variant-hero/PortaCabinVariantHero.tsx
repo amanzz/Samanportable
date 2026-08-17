@@ -297,6 +297,11 @@ const GALLERY_TRACK_CLASS: Record<number, string> = {
   6: 'grid grid-cols-6 gap-2',
 };
 
+const productThumbSrc = (src: string): string =>
+  src.startsWith('/images/products/')
+    ? src.replace('/images/products/', '/images/product-thumbs/')
+    : src;
+
 const rewriteC04VisiblePunctuation = (
   value: string | undefined,
   productSlug: string,
@@ -687,6 +692,8 @@ export function PortaCabinVariantHero({
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
   const isC04Product = C04_PRODUCT_SLUGS.has(data.productSlug);
   const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
+  const requiresUniqueThumbnailAlts = data.productSlug === 'labor-sheds';
+  const optimizeInViewportThumbnails = data.productSlug === 'labor-sheds';
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
@@ -854,7 +861,23 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt)} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                <Image
+                  src={optimizeInViewportThumbnails ? productThumbSrc(img.src) : img.src}
+                  unoptimized={optimizeInViewportThumbnails || shouldBypassOptimizer(img.src)}
+                  alt={
+                    requiresUniqueThumbnailAlts
+                      ? `${img.alt} thumbnail`
+                      : isC04Product || isC08Product
+                        ? img.alt
+                        : (!showVideo && i === activeImageIndex ? '' : img.alt)
+                  }
+                  width={150}
+                  height={150}
+                  className="w-full h-full object-cover"
+                  loading={optimizeInViewportThumbnails ? 'eager' : 'lazy'}
+                  decoding="async"
+                  sizes="(max-width: 1023px) 18vw, 80px"
+                />
               </button>
             ))}
 
@@ -984,7 +1007,7 @@ export function PortaCabinVariantHero({
 
         <div className="space-y-2">
           {usePremiumSizeTabs ? (
-            <p className="text-sm font-semibold text-foreground">{sizeEyebrowText || 'Choose your size — six factory-built options'}</p>
+            <p className="text-sm font-semibold text-foreground">{sizeEyebrowText || 'Choose your size: six factory-built options'}</p>
           ) : (
             <p className="text-sm font-semibold text-foreground">Choose size</p>
           )}
@@ -1036,7 +1059,7 @@ export function PortaCabinVariantHero({
               incl-GST line. When priceExGst is a number the ORIGINAL two elements
               render unchanged (the fragment is transparent → flagship byte-identity). */}
           {heroActive.priceExGst == null ? (
-            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">{data.gatedPriceLabel || 'Price on request — send enquiry'}</span>
+            <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">{data.gatedPriceLabel || 'Price on request, send enquiry'}</span>
           ) : (
             <>
               <span className="text-2xl md:text-3xl font-bold text-[var(--ds-color-forest)] break-words">
@@ -1249,6 +1272,8 @@ export function PortaCabinVariantHero({
               currentHref={currentHref}
               className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
               scroll
+              optimizeThumbnails={optimizeInViewportThumbnails}
+              eagerThumbnails={optimizeInViewportThumbnails}
             />
           </div>
         </aside>

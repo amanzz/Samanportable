@@ -10,9 +10,16 @@ type RelatedProductRailProps = {
   currentHref?: string;
   className?: string;
   scroll?: boolean;
+  optimizeThumbnails?: boolean;
+  eagerThumbnails?: boolean;
 };
 
-const RelatedProductRail = ({ items, currentHref, className, scroll = false }: RelatedProductRailProps) => {
+const productThumbSrc = (src: string): string =>
+  src.startsWith('/images/products/')
+    ? src.replace('/images/products/', '/images/product-thumbs/')
+    : src;
+
+const RelatedProductRail = ({ items, currentHref, className, scroll = false, optimizeThumbnails = false, eagerThumbnails = false }: RelatedProductRailProps) => {
   return (
     <div className={cn('h-full rounded-lg border border-slate-200 bg-white/90 p-4 shadow-sm', className)}>
       <div className="mb-4 flex items-center gap-3">
@@ -29,6 +36,7 @@ const RelatedProductRail = ({ items, currentHref, className, scroll = false }: R
         {items.length > 0 ? (
           items.map((item) => {
             const isCurrent = currentHref === item.href;
+            const imageSrc = item.imageSrc && optimizeThumbnails ? productThumbSrc(item.imageSrc) : item.imageSrc;
             return (
               <Link
                 key={item.href}
@@ -48,13 +56,14 @@ const RelatedProductRail = ({ items, currentHref, className, scroll = false }: R
                   >
                     {item.imageSrc ? (
                       <Image
-                        src={item.imageSrc}
-                        unoptimized={shouldBypassOptimizer(item.imageSrc)}
+                        src={imageSrc || item.imageSrc}
+                        unoptimized={optimizeThumbnails || shouldBypassOptimizer(imageSrc)}
                         alt={item.imageAlt || item.title}
                         className="h-full w-full object-cover"
                         width={56}
                         height={56}
-                        loading="lazy"
+                        loading={eagerThumbnails ? 'eager' : 'lazy'}
+                        decoding={eagerThumbnails ? 'async' : undefined}
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center" data-rail-fallback="true">

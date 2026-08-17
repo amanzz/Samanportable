@@ -46,6 +46,9 @@ const decodeEntities = value => String(value || '')
   .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
   .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)));
 
+const isDerivativeThumbnailPath = pathname =>
+  pathname.startsWith('/images/product-thumbs/');
+
 const walk = directory => {
   if (!fs.existsSync(directory)) return [];
   const files = [];
@@ -73,6 +76,7 @@ const normalizeImageUrl = rawValue => {
     }
     if (!['http:', 'https:'].includes(candidate.protocol)) return null;
     if (!imageExtensions.has(path.posix.extname(candidate.pathname).toLowerCase())) return null;
+    if (candidate.hostname === 'www.samanportable.com' && isDerivativeThumbnailPath(candidate.pathname)) return null;
     candidate.hash = '';
     return candidate.href;
   } catch {
@@ -325,6 +329,7 @@ for (const absolute of walk(path.join(root, 'public'))) {
   const extension = path.extname(absolute).toLowerCase();
   if (!imageExtensions.has(extension)) continue;
   const relative = toPosix(path.relative(path.join(root, 'public'), absolute));
+  if (relative.startsWith('images/product-thumbs/')) continue;
   const encodedPath = `/${relative.split('/').map(encodeURIComponent).join('/')}`;
   const resolvedUrl = new URL(encodedPath, site).href;
   const buffer = fs.readFileSync(absolute);
