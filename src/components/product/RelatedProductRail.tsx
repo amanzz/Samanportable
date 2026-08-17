@@ -15,7 +15,14 @@ type RelatedProductRailProps = {
   deferImagesUntilVisible?: boolean;
   /** Optional upstream paint gate used only with deferred images. */
   imageLoadGate?: boolean;
+  optimizeThumbnails?: boolean;
+  eagerThumbnails?: boolean;
 };
+
+const productThumbSrc = (src: string): string =>
+  src.startsWith('/images/products/')
+    ? src.replace('/images/products/', '/images/product-thumbs/')
+    : src;
 
 const RelatedProductRail = ({
   items,
@@ -24,6 +31,8 @@ const RelatedProductRail = ({
   scroll = false,
   deferImagesUntilVisible = false,
   imageLoadGate = true,
+  optimizeThumbnails = false,
+  eagerThumbnails = false,
 }: RelatedProductRailProps) => {
   const railRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(!deferImagesUntilVisible);
@@ -63,6 +72,7 @@ const RelatedProductRail = ({
         {items.length > 0 ? (
           items.map((item) => {
             const isCurrent = currentHref === item.href;
+            const imageSrc = item.imageSrc && optimizeThumbnails ? productThumbSrc(item.imageSrc) : item.imageSrc;
             return (
               <Link
                 key={item.href}
@@ -82,13 +92,14 @@ const RelatedProductRail = ({
                   >
                     {item.imageSrc && mayRenderImages ? (
                       <Image
-                        src={item.imageSrc}
-                        unoptimized={shouldBypassOptimizer(item.imageSrc)}
+                        src={imageSrc || item.imageSrc}
+                        unoptimized={optimizeThumbnails || shouldBypassOptimizer(imageSrc)}
                         alt={item.imageAlt || item.title}
                         className="h-full w-full object-cover"
                         width={56}
                         height={56}
-                        loading="lazy"
+                        loading={eagerThumbnails ? 'eager' : 'lazy'}
+                        decoding={eagerThumbnails ? 'async' : undefined}
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center" data-rail-fallback="true">

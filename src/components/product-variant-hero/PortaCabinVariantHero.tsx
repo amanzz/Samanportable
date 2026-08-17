@@ -304,6 +304,11 @@ const GALLERY_TRACK_CLASS: Record<number, string> = {
   6: 'grid grid-cols-6 gap-2',
 };
 
+const productThumbSrc = (src: string): string =>
+  src.startsWith('/images/products/')
+    ? src.replace('/images/products/', '/images/product-thumbs/')
+    : src;
+
 const rewriteC04VisiblePunctuation = (
   value: string | undefined,
   productSlug: string,
@@ -749,6 +754,8 @@ export function PortaCabinVariantHero({
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
   const isC04Product = C04_PRODUCT_SLUGS.has(data.productSlug);
   const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
+  const requiresUniqueThumbnailAlts = data.productSlug === 'labor-sheds';
+  const optimizeInViewportThumbnails = data.productSlug === 'labor-sheds';
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
@@ -917,7 +924,23 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt)} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
+                {nonLcpImagesReady && <Image
+                  src={optimizeInViewportThumbnails ? productThumbSrc(img.src) : img.src}
+                  unoptimized={optimizeInViewportThumbnails || (data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src))}
+                  alt={
+                    requiresUniqueThumbnailAlts
+                      ? `${img.alt} thumbnail`
+                      : isC04Product || isC08Product
+                        ? img.alt
+                        : (!showVideo && i === activeImageIndex ? '' : img.alt)
+                  }
+                  width={150}
+                  height={150}
+                  className="w-full h-full object-cover"
+                  loading={optimizeInViewportThumbnails ? 'eager' : 'lazy'}
+                  decoding="async"
+                  sizes="(max-width: 1023px) 18vw, 80px"
+                />}
               </button>
             ))}
 
@@ -1315,6 +1338,8 @@ export function PortaCabinVariantHero({
               scroll
               deferImagesUntilVisible={deferNonLcpImagesUntilHeroPaint}
               imageLoadGate={nonLcpImagesReady}
+              optimizeThumbnails={optimizeInViewportThumbnails}
+              eagerThumbnails={optimizeInViewportThumbnails}
             />
           </div>
         </aside>

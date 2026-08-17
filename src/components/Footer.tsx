@@ -133,7 +133,7 @@ const Footer = ({ homepageNeutrality = false, hideResourceStrip = false }: Foote
               <div className="flex items-center space-x-2 mb-4">
                 <Image 
                   src="/saman-logo.svg"
-                  alt="SAMAN Portable Logo"
+                  alt="SAMAN Portable footer logo"
                   width={200}
                   height={40}
                   className="h-8 w-auto object-contain"

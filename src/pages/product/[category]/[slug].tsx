@@ -898,6 +898,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
             variantData={variantData || undefined}
             suppressProductEntity={suppressLegacyCommercialSurfaces || isPrefabSiteCanteenPage}
+            itemPageOnly={isLaborShedsPage}
             metaDescription={rankMathSEO?.description}
           />
 
