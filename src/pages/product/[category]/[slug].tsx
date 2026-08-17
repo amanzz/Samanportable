@@ -49,7 +49,7 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
-import { LABOR_HUTMENTS_RAIL } from '../../../lib/labourColonyClusterRail';
+import { LABOR_HUTMENTS_RAIL, PREFAB_SITE_CANTEEN_RAIL } from '../../../lib/labourColonyClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { LABOR_SHEDS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
@@ -106,6 +106,15 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // LC-05 (16 Aug 2026) - Accommodation Container uses the locked production
   // premium size-selector, dividers and H2 explorer treatment. No styling fork.
   'accommodation-container',
+  // LC-04 (17 Aug 2026) — same SAMAN instruction pattern as LC-01/LC-02: size
+  // pills and section spacing on the live (reverted) prefab-labor-camps page
+  // brought in line with the porta-cabins reference. Same opt-ins, no new
+  // styling, byte-for-byte identical to every page above.
+  'prefab-labor-camps',
+  // LC-06 (17 Aug 2026) - built with the premium chip/tab design from the
+  // start, matching current cluster convention (every labor-colony page
+  // built so far ends up here). Same opt-ins, no new styling.
+  'prefab-site-canteen',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -615,11 +624,24 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // `primaryCategory.name` are American-spelled; overridden here, scoped to
   // this one page only, rather than editing either shared source.
   const isLaborShedsPage = category === 'labor-colony' && slug === 'labor-sheds';
+  // LC-06 (17 Aug 2026) - own product name needs no labor/labour correction
+  // (it contains neither word), but the shared category record's cluster
+  // name still does ("Labor Colony"), so this still needs the same
+  // breadcrumb-level override isLaborShedsPage already uses, scoped to this
+  // one page only.
+  const isPrefabSiteCanteenPage = category === 'labor-colony' && slug === 'prefab-site-canteen';
   const usesIndianLabourBreadcrumb = category === 'labor-colony' && (
-    slug === 'labor-sheds' || slug === 'accommodation-container'
+    slug === 'labor-sheds' ||
+    slug === 'accommodation-container' ||
+    slug === 'prefab-site-canteen'
   );
+  const labourColonyProductName = isLaborShedsPage
+    ? 'Labour Sheds'
+    : isPrefabSiteCanteenPage
+      ? 'Prefab Site Canteen'
+      : null;
   const breadcrumbCrumbs = getProductBreadcrumb({
-    productName: isLaborShedsPage ? 'Labour Sheds' : (product?.name || ''),
+    productName: labourColonyProductName || (product?.name || ''),
     productSlug: slug,
     clusterName: usesIndianLabourBreadcrumb ? 'Labour Colony' : primaryCategory.name,
     clusterSlug: primaryCategory.slug,
@@ -709,6 +731,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (currentSlug === 'labor-hutments') {
       return LABOR_HUTMENTS_RAIL;
     }
+    // LC-06 (17 Aug 2026) - this page's own rail (build prompt v1 s4): Prefab
+    // Labour Camps, Labour Sheds, Labour Colony, in that exact order.
+    if (currentSlug === 'prefab-site-canteen') {
+      return PREFAB_SITE_CANTEEN_RAIL;
+    }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
@@ -771,15 +798,28 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // The calculator entry band. Sits between the buy box and the description
   // tabs so a buyer cannot scroll past the tool without meeting it.
   const calculatorEntryHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
     // The entry band names the product and prints its price, so a no-prefill
-    // route gets no band at all rather than a band claiming to price a panel.
-    if (!embeddedCalculatorMapping || !embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) return null;
+    // route gets no priced band rather than one claiming to price a panel.
+    // LC-06 FIX v1.1 (17 Aug 2026) - prefab-site-canteen is the one exception:
+    // SAMAN's own review caught the page rendering the full open calculator
+    // with no band above it at all, immediately below the buy box, instead of
+    // the band-then-anchor-down pattern every other page uses. Scoped to this
+    // one slug: every other no-prefill route (UNVERIFIED_PRODUCT_ID_CLUSTERS)
+    // keeps today's no-band behaviour unchanged, since that is a separate,
+    // uncoordinated change this ticket did not ask for.
+    if (!embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) {
+      if (!isPrefabSiteCanteenPage) return null;
+      return renderCalculatorEntrySection({
+        productName: product?.name || 'Prefab Site Canteen',
+      });
+    }
     return renderCalculatorEntrySection({
       productId: embeddedCalculatorMapping.productId,
       productName: product?.name || embeddedCalculatorSummary?.name || '',
       ladderKey: embeddedCalculatorMapping.ladderKey,
     });
-  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name]);
+  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
@@ -845,7 +885,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             reviews={reviews}
             breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
             variantData={variantData || undefined}
-            suppressProductEntity={suppressLegacyCommercialSurfaces}
+            suppressProductEntity={suppressLegacyCommercialSurfaces || isPrefabSiteCanteenPage}
             metaDescription={rankMathSEO?.description}
           />
 

@@ -871,6 +871,48 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  // LC-06 (17 Aug 2026) - Section 2 "buyer orientation" rewrite from copy pack
+  // v1, verbatim, SHA-256 verified against every field (28/28 match). Both
+  // paragraphs are equal-weight prose on `bodyParagraphs`. The single
+  // approved contextual link sits inside paragraph 2: `prefab labour camps`
+  // to prefab-labor-camps. The ticket's own separate SECTION2_CTA field has
+  // no top-level ctaLabel/ctaHref slot to render into on this branch of the
+  // interface (RightToExistEntry only carries ctaLabel/ctaHref inside
+  // splitCard) - the LC-04 revert removed that field before this page
+  // merged, so the CTA sentence is instead rendered as an inline link
+  // closing paragraph 2, the same convention labor-hutments above already
+  // uses for its own closing CTA.
+  'prefab-site-canteen': {
+    heading: 'Buying the canteen building rather than the catering operation',
+    bodyParagraphs: [
+      (
+        <>
+          Most canteen quotations in this market arrive as a single rate per square foot with no scope attached. That is why the same 400 sq ft canteen can be quoted at Rs 600 and at Rs 1,200. One price covers a clean enclosure with a serving hatch and a drain. The other quietly includes a cookline, an extraction hood and a set of tables. Neither supplier is lying. They are answering different questions.
+        </>
+      ),
+      (
+        <>
+          This page answers one question only: what does the building cost. If you also need the whole camp around it, our <Link className={linkClass} href="https://www.samanportable.com/product/labor-colony/prefab-labor-camps">prefab labour camps</Link> page prices accommodation blocks the same way, block by block. Your caterer or contractor brings the cooking equipment, and we frame the openings and run the services it needs. Tell us the headcount, the number of meal sittings and whether cooking happens on site or arrives in insulated carriers, and the size answers itself. <Link className={linkClass} href="https://www.samanportable.com/contact">Send us your headcount and meal sittings for a canteen quotation</Link>.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/prefab-site-canteen/section2/canteen-splitcard-serving-and-dining.webp',
+      imageAlt: 'Prefab site canteen showing the serving hatch side and dining glazing',
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: 'Why we do not print a diner count on this page',
+      body: 'Seating follows the table plan and the number of meal sittings, not the floor area. The same 600 sq ft block feeds twice as many workers on two sittings as on one. A published diner count would be a guess.',
+      bullets: [
+        'Two sittings roughly double the workforce a block serves',
+        'Bench seating fits more diners than four-seat tables',
+        'Serving-line length sets the queue, not the dining floor',
+        'Tray return and wash areas take floor away from seating',
+      ],
+      ctaLabel: 'Ask for a seating and sittings layout',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
   'portable-office': {
     heading: 'Why the range page and not a single cabin',
     body: (
