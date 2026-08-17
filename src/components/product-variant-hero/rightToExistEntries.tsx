@@ -38,6 +38,8 @@ export interface RightToExistEntry {
     imageAlt: string;
     imageWidth: number;
     imageHeight: number;
+    /** LC-05 - reserve the ruled 16:9 media slot while the source is awaiting
+        human verification. No image, alt text or substitute is emitted. */
     /** PC-02 revision v1.2 (14 Aug 2026) — optional. The split layout is a mandatory
         cluster design, but a page whose approved copy supplies no card sub-heading or
         card body must render the panel without them rather than invent either. The hub
@@ -827,6 +829,38 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
         'Mixed gangs or shift work, order two smaller units',
       ],
       ctaLabel: 'Request a hutment quotation',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
+  // LC-05 (16 Aug 2026) - build prompt v1 Section 2, both blocks mandatory.
+  'accommodation-container': {
+    heading: 'Container Module or Panel Bunkhouse: Which One Your Site Needs',
+    bodyParagraphs: [
+      (
+        <>
+          A container module and a panel bunkhouse both sleep site crews, and they are built differently. SAMAN fabricates the bunkhouse from PUF and EPS panel on a steel base. The Accommodation Container is a container-form steel box. At 8 ft width it begins as a used shipping container, and above that width we weld it up from MS corrugated sheet. Choose the container route when the unit will be lifted between sites repeatedly and handled by yard equipment.
+        </>
+      ),
+      (
+        <>
+          Width is the second decision, and it changes the plan more than length does. An 8 ft shell gives one bunk run and a side aisle. A 10 or 12 ft wide-body gives two bunk runs with a central aisle, which is why most site managers move up once the crew grows. The wider range of worker housing, from single modules to complete settlements, sits on the <Link className={linkClass} href="https://www.samanportable.com/product/labor-colony">labour colony hub</Link>. <Link className={linkClass} href="https://www.samanportable.com/contact">Send us your headcount and site access and we will quote the right width.</Link>
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/accommodation-container/section2/lc05-split-build-routes.webp',
+      imageAlt: 'Converted 20x8 ft shipping container beside a fabricated 40x12 ft wide-body module',
+      imageWidth: 1280,
+      imageHeight: 720,
+      subheading: 'Converted Shell or Fabricated Wide-Body?',
+      body: 'The two routes are priced and specified differently, and the difference is visible on the drawing rather than in the brochure. Match the route to how the unit will be moved and how long it stays.',
+      bullets: [
+        'Converted shells: 20x8 ft and 40x8 ft only',
+        'Wide-body fabricated: 20x10, 30x10, 40x10, 40x12 ft',
+        'Donor condition is inspected and recorded before build',
+        'Cut openings receive engineered headers and jambs',
+      ],
+      ctaLabel: 'Ask for a route recommendation',
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },

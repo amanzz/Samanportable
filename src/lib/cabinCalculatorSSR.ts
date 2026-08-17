@@ -205,6 +205,8 @@ export interface RenderCalculatorOptions {
    * calculator logic changes; this hides markup only.
    */
   hidePublishedPriceTable?: boolean;
+  /** LC-05 CWV: explicit opt-in for viewport-delayed client enhancement. */
+  deferEnhancement?: boolean;
 }
 
 export interface EmbeddedProductSummary {
@@ -300,6 +302,7 @@ const PRODUCT_ICON: Record<ProductId, IconName> = {
   'labor-sheds': 'colony',
   'labor-hutments': 'colony',
   'prefab-labor-camps': 'colony',
+  'oil-field-camp': 'unit',
 };
 
 function productIcon(id: ProductId): string {
@@ -3121,7 +3124,8 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   // SAMAN's base-cabin rate card, published once on the root so the browser
   // prices from the same numbers the server did. The six area-band multipliers
   // that used to sit here are gone with the formula they belonged to.
-  const rootRates = `data-base-fixed="${esc(BASE_CABIN_RATE_CARD_DATASET.fixed)}" data-base-bands="${esc(BASE_CABIN_RATE_CARD_DATASET.bands)}" data-base-band-top="${esc(BASE_CABIN_RATE_CARD_DATASET.top)}" data-base-slide="${esc(BASE_CABIN_RATE_CARD_DATASET.slide)}" data-base-cap="${esc(BASE_CABIN_RATE_CARD_DATASET.cap)}" data-base-unrated-ceiling="${esc(BASE_CABIN_RATE_CARD_DATASET.floor)}" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
+  let rootRates = `data-base-fixed="${esc(BASE_CABIN_RATE_CARD_DATASET.fixed)}" data-base-bands="${esc(BASE_CABIN_RATE_CARD_DATASET.bands)}" data-base-band-top="${esc(BASE_CABIN_RATE_CARD_DATASET.top)}" data-base-slide="${esc(BASE_CABIN_RATE_CARD_DATASET.slide)}" data-base-cap="${esc(BASE_CABIN_RATE_CARD_DATASET.cap)}" data-base-unrated-ceiling="${esc(BASE_CABIN_RATE_CARD_DATASET.floor)}" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
+  if (options.deferEnhancement) rootRates += ' data-defer-enhancement="true"';
   const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-quote-only="${rendersQuoteMode(product, config.ladderKey) ? 'true' : 'false'}" data-ladder="${esc(config.ladderKey || product.ladderKey || (isColonyProduct(product.id) ? product.id : 'none'))}">` : '';
   const standardPostFields = `${hiddenProduct}<input type="hidden" name="message" value="${esc(itemisedMessage)}"><input type="hidden" name="productName" value="${esc(product.name)}"><input type="hidden" name="pageUrl" value="${esc(pageUrl)}"><input type="hidden" name="returnTo" value="${esc(pageUrl)}">`;
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';

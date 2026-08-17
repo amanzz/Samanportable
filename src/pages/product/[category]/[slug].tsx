@@ -103,6 +103,9 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // byte-for-byte, plus the two extra CLUSTER_DESIGN_SLUGS-gated <hr>
   // dividers around the calculator and YMAL blocks below.
   'labor-hutments',
+  // LC-05 (16 Aug 2026) - Accommodation Container uses the locked production
+  // premium size-selector, dividers and H2 explorer treatment. No styling fork.
+  'accommodation-container',
   // LC-04 (17 Aug 2026) — same SAMAN instruction pattern as LC-01/LC-02: size
   // pills and section spacing on the live (reverted) prefab-labor-camps page
   // brought in line with the porta-cabins reference. Same opt-ins, no new
@@ -199,6 +202,22 @@ function removeLeadingOpenerParagraph(html: string, opener: string): string {
     : html;
 }
 
+function applyDescriptionHtmlAdditions(
+  html: string,
+  additions?: { beforeHtml?: string; insertHtml?: string; appendHtml?: string }
+): string {
+  if (!additions) return html;
+  let next = html;
+  if (additions.beforeHtml && additions.insertHtml) {
+    const first = next.indexOf(additions.beforeHtml);
+    if (first < 0 || next.indexOf(additions.beforeHtml, first + additions.beforeHtml.length) >= 0) {
+      throw new Error('Description HTML insertion anchor must occur exactly once.');
+    }
+    next = next.slice(0, first) + additions.insertHtml + next.slice(first);
+  }
+  return next + (additions.appendHtml || '');
+}
+
 interface ProductDetailsProps {
   product: WooCommerceProduct | null;
   category: string;
@@ -215,6 +234,16 @@ interface ProductDetailsProps {
   // the generic ProductSummaryLayout hero, byte-for-byte.
   variantData?: VariantProductData | null;
   opener?: string;
+}
+
+function lazyLoadStaticHtmlImages(html: string): string {
+  return html.replace(/<img\b([^>]*)>/gi, (match, attrs: string) => {
+    let next = attrs;
+    if (!/\sloading\s*=/i.test(next)) next += ' loading="lazy"';
+    if (!/\sdecoding\s*=/i.test(next)) next += ' decoding="async"';
+    if (!/\sfetchpriority\s*=/i.test(next)) next += ' fetchpriority="low"';
+    return `<img${next}>`;
+  });
 }
 
 export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
@@ -445,6 +474,28 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       }
       delete productForPageProps.short_description;
     }
+    const productImagesForPageProps = variantImages.length
+      ? (
+          variantData?.productSlug === 'accommodation-container' && variantData.schemaImageLimit
+            ? variantImages.slice(0, variantData.schemaImageLimit)
+            : variantImages
+        )
+      : (descriptionData?.images || []);
+    const variantDataForPageProps = variantData?.productSlug === 'accommodation-container'
+      ? (() => {
+          const {
+            descriptionHtml: _descriptionHtml,
+            descriptionHtmlAdditions: _descriptionHtmlAdditions,
+            infoImages: _infoImages,
+            seoTitle: _seoTitle,
+            metaDescription: _metaDescription,
+            suppressLegacyDescription: _suppressLegacyDescription,
+            suppressLegacyFaqSchema: _suppressLegacyFaqSchema,
+            ...hydrationData
+          } = variantData;
+          return hydrationData;
+        })()
+      : variantData;
 
     return {
       props: {
@@ -459,11 +510,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
             // page HOLDS the tab empty rather than shipping the contradiction. An empty
             // descriptionHtml cannot express that (it is falsy and falls through), so
             // the suppression is an explicit flag.
-            variantData?.descriptionHtml
-              || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
+            applyDescriptionHtmlAdditions(
+              variantData?.descriptionHtml
+                || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
+              variantData?.descriptionHtmlAdditions
+            ),
             variantData?.infoImages
           ),
-          images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
+          images: productImagesForPageProps.map((img, index) => ({
             id: index,
             src: img.src,
             alt: img.alt,
@@ -496,7 +550,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         // it added ~7KB of dead data to __NEXT_DATA__.
         rankMathSEO,
         reviews,
-        variantData,
+        variantData: variantDataForPageProps,
         opener,
       },
     };
@@ -581,6 +635,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // breadcrumb-level override isLaborShedsPage already uses, scoped to this
   // one page only.
   const isPrefabSiteCanteenPage = category === 'labor-colony' && slug === 'prefab-site-canteen';
+  const usesIndianLabourBreadcrumb = category === 'labor-colony' && (
+    slug === 'labor-sheds' ||
+    slug === 'accommodation-container' ||
+    slug === 'prefab-site-canteen'
+  );
   const labourColonyProductName = isLaborShedsPage
     ? 'Labour Sheds'
     : isPrefabSiteCanteenPage
@@ -589,7 +648,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   const breadcrumbCrumbs = getProductBreadcrumb({
     productName: labourColonyProductName || (product?.name || ''),
     productSlug: slug,
-    clusterName: (isLaborShedsPage || isPrefabSiteCanteenPage) ? 'Labour Colony' : primaryCategory.name,
+    clusterName: usesIndianLabourBreadcrumb ? 'Labour Colony' : primaryCategory.name,
     clusterSlug: primaryCategory.slug,
     isHub: false,
   });
@@ -666,6 +725,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (currentSlug === 'labor-sheds') {
       return LABOR_SHEDS_RAIL;
     }
+    if (currentSlug === 'accommodation-container') {
+      return LABOR_SHEDS_RAIL;
+    }
     // LC-01 (17 Aug 2026) - the hutments page's own Column 3 rail. Build prompt
     // v1 section 4, hero column 3: exactly three tabs (Labour Sheds, Labour
     // Colony, Prefab Labour Camps), not the live related-products list. Scoped
@@ -722,7 +784,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const embeddedCalculatorHtml = useMemo(() => {
     if (!embeddedCalculatorMapping) return null;
-    return renderCabinCalculatorSSR({
+    const html = renderCabinCalculatorSSR({
       embedded: true,
       // A NO-PREFILL route mounts the general cabin calculator, exactly as at
       // /cabin-cost-calculator: no product, no ladder, no product name. It must
@@ -737,7 +799,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       // unpriced table next to a page that publishes six real prices. Display
       // suppression only; every other route keeps the accordion unchanged.
       hidePublishedPriceTable: slug === 'fire-rated-porta-cabin',
+      deferEnhancement: slug === 'accommodation-container',
     });
+    // LC-05's acceptance gate is zero U+2014 in built output. Quote-mode logic,
+    // controls and calculations remain untouched; only the one shared help-copy
+    // dash is normalised on this route.
+    return slug === 'accommodation-container' ? html.replace(/\s*\u2014\s*/g, ', ') : html;
   }, [category, slug, embeddedCalculatorMapping]);
 
   // The calculator entry band. Sits between the buy box and the description
@@ -844,7 +911,41 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               />
             </Head>
           )}
-          {embeddedCalculatorHtml && (
+          {embeddedCalculatorHtml && slug === 'accommodation-container' && (
+            <Head>
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `(() => {
+  const load = () => {
+    if (window.__samanLc05CalculatorActivated) return;
+    window.__samanLc05CalculatorActivated = true;
+    const script = document.createElement('script');
+    script.src = '/scripts/cabin-cost-calculator.js?lc05=active';
+    script.async = true;
+    document.head.appendChild(script);
+  };
+  const watch = () => {
+    const calculator = document.querySelector('[data-cabin-calculator][data-defer-enhancement="true"]');
+    if (!calculator || !('IntersectionObserver' in window)) {
+      load();
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect();
+        load();
+      }
+    }, { rootMargin: '600px 0px' });
+    observer.observe(calculator);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', watch, { once: true });
+  else watch();
+})();`,
+                }}
+              />
+            </Head>
+          )}
+          {embeddedCalculatorHtml && slug !== 'accommodation-container' && (
             <Head>
               <script defer src="/scripts/cabin-cost-calculator.js" />
             </Head>
@@ -897,10 +998,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // from these slugs only, so the hub, the MS page and the GI page
                   // keep the deployed literal.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop'
+                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
+                  emitSizeAnchors={slug === 'accommodation-container'}
+                  explorerHidePanelImages={slug === 'accommodation-container'}
+                  deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
+                  renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}
                 />
               ) : (
               <ProductSummaryLayout
@@ -1174,7 +1279,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
               {/* The entry band: after the buy box, before the description tabs. */}
               {calculatorEntryHtml && (
-                <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
+                <div
+                  dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }}
+                />
               )}
 
               {/* PC-01/PC-02/PC-04/PC-05 (14 Aug 2026) — divider 3, Section 3 → Section 4
@@ -1202,26 +1309,32 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {(slug === 'ms-porta-cabin' || slug === 'fire-rated-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
-              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop') && (
-                <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container') && (
+                slug === 'accommodation-container' ? (
+                  <div>
+                    <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+                  </div>
+                ) : (
+                  <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+                )
               )}
 
               {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →
                   Section 5 (Product Details tabs). */}
-              {CLUSTER_DESIGN_SLUGS.has(slug) && (
+              {CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'accommodation-container' && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
               {/* Product Tabs */}
               <div className="mt-4">
                 <ProductTabs
-                  description={product.description || ''}
-                  specificationsHtml={specificationsHtml}
-                  shippingHtml={shippingHtml}
+                  description={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(product.description || '') : product.description || ''}
+                  specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
+                  shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={reviews}
-                  averageRating={product.average_rating}
-                  ratingCount={product.rating_count}
+                  reviews={slug === 'accommodation-container' ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
                 />
@@ -1419,5 +1532,3 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 };
 
 export default ProductDetails;
-
-

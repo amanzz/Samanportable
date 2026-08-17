@@ -83,6 +83,7 @@ function resolveForPortaCabins(category: string, slug?: string): ProductId {
 
 function resolveForLaborColony(category: string, slug?: string): ProductId {
   const target = normalise(slug || category);
+  if (target.includes('accommodation-container')) return 'accommodation-cabin';
   if (target.includes('labor-shed') || target.includes('labour-shed') || target.includes('sheds')) return 'labor-sheds';
   if (target.includes('labor-hut') || target.includes('labor-hutment') || target.includes('hutment')) return 'labor-hutments';
   if (target.includes('prefab-labor-camp') || target.includes('prefab-labour-camp') || target.includes('prefab-camp')) return 'prefab-labor-camps';
