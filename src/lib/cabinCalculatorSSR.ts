@@ -3039,7 +3039,7 @@ export function renderCalculatorEntrySection(options: {
     + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
     + `<picture class="calc-entry-photo">`
     + `<source type="image/webp" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1216.webp 1216w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w">`
-    + `<img src="/credentials/optimized/calculator-band-v1-1926.jpg" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1216.jpg 1216w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w" alt="" width="1926" height="817" loading="lazy" decoding="async">`
+    + `<img src="/credentials/optimized/calculator-band-v1-1926.jpg" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1216.jpg 1216w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w" alt="SAMAN cabin calculator background image" width="1926" height="817" loading="lazy" decoding="async">`
     + `</picture>`
     + `<div class="calc-entry-scrim" aria-hidden="true"></div>`
     + `<div class="calc-entry-inner">`

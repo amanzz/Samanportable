@@ -610,7 +610,7 @@ const Header = () => {
         <div className="pointer-events-auto fixed inset-0 z-50 flex flex-col bg-white lg:hidden">
           <div className="flex flex-shrink-0 items-center justify-between border-b border-border p-4">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
-              <Image src="/saman-logo.svg" alt="SAMAN Portable Logo" width={200} height={100} className="h-8 w-auto object-contain" unoptimized />
+              <Image src="/saman-logo.svg" alt="SAMAN Portable mobile menu logo" width={200} height={100} className="h-8 w-auto object-contain" unoptimized />
             </Link>
             <button className="p-2" onClick={() => setIsMenuOpen(false)} aria-label="Close mobile menu">
               <X className="h-6 w-6 text-foreground" />

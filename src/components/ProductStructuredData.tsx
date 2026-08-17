@@ -21,12 +21,15 @@ interface ProductStructuredDataProps {
   // Commercial-truth gate for a live route awaiting an owner-approved ladder.
   // ItemPage/BreadcrumbList may remain, but Product and Offer must not emit.
   suppressProductEntity?: boolean;
+  // LC-02: emit a bare ItemPage node only. Default false preserves every other
+  // page's nested BreadcrumbList output.
+  itemPageOnly?: boolean;
   /** The page's approved meta description. Becomes the schema `description` so the
       Product node carries a concise summary rather than a slice of the body. */
   metaDescription?: string;
 }
 
-export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData, suppressProductEntity = false, metaDescription }: ProductStructuredDataProps) {
+export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData, suppressProductEntity = false, itemPageOnly = false, metaDescription }: ProductStructuredDataProps) {
   if (!product) return null;
 
   const baseUrl = 'https://www.samanportable.com';
@@ -322,7 +325,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
     // document. One copy, on the entity the field actually describes.
     url: productUrl,
     ...(productStructuredData ? { mainEntity: productStructuredData } : {}),
-    breadcrumb: breadcrumbStructuredData
+    ...(itemPageOnly ? {} : { breadcrumb: breadcrumbStructuredData })
   };
 
   return (
