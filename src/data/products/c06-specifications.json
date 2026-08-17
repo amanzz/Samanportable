@@ -1167,7 +1167,23 @@
             "differsFromHub": true
           }
         ],
-        "narrative": "Two lines in these tables change more for a buyer than the rest combined. The first is the floor frame: a lift-and-carry skid with runner beams is what makes the building relocatable, and it is why the transport drawing, not the floor plan, governs how the unit may be handled. The second is ventilation and AC: the base module is normal-area, so a location with a classified hazardous area needs a separate engineered package, priced against your own classification document. Everything else in Table 1 supports the first of those, and most of Table 2 supports the second."
-      }
+        "narrative": "Two lines in these tables change more for a buyer than the rest combined. The first is the floor frame: a lift-and-carry skid with runner beams is what makes the building relocatable, and it is why the transport drawing, not the floor plan, governs how the unit may be handled. The second is ventilation and AC: the base module is normal-area, so a location with a classified hazardous area needs a separate engineered package, priced against your own classification document. Everything else in Table 1 supports the first of those, and most of Table 2 supports the second.",
+      "diagrams": [
+        {
+          "src": "/images/products/oil-field-camp/specifications/oil-field-camp-layout-diagram.webp",
+          "alt": "Oil field camp module layout diagram showing the standard narrow-body plan and the wide-body 20 ft two-room arrangement",
+          "caption": "Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/oil-field-camp/specifications/oil-field-camp-services-coordination-diagram.webp",
+          "alt": "Remote site access and service coordination diagram showing camp modules, crane standing zone and utility routing",
+          "caption": "Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    }
   }
 }

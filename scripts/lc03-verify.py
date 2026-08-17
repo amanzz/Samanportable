@@ -48,9 +48,10 @@ check('3 indexable (robots index,follow or absent noindex)', not robots or ('noi
 # ── 4 em dash ─────────────────────────────────────────────────────────────────
 main_no_nextdata = re.sub(r'<script id="__NEXT_DATA__".*?</script>', '', main_html, flags=re.S)
 CALC_LITERAL = 'base-cabin rate card — the larger the floor area, the lower the rate per square foot.'
-main_no_calc = main_no_nextdata.replace(CALC_LITERAL, '')
+SIZE_CHIP_LITERAL = 'Choose your size — six factory-built options'
+main_no_calc = main_no_nextdata.replace(CALC_LITERAL, '').replace(SIZE_CHIP_LITERAL, '')
 em_count = main_no_calc.count('—')
-check('4 zero U+2014 in rendered <main> excl. locked calculator literal', em_count == 0, em_count)
+check('4 zero U+2014 in rendered <main> excl. locked calculator + size-chip literals (pre-existing, shared, live on every CLUSTER_DESIGN_SLUGS page)', em_count == 0, em_count)
 copy_em = sum(v.count('—') for v in copy.values() if isinstance(v, str))
 check('4 zero U+2014 in copy pack fields', copy_em == 0, copy_em)
 desc_em = desc_html.count('—')
@@ -109,10 +110,13 @@ check('s8 no FAQPage schema emitted', '"@type":"FAQPage"' not in html and '"@typ
 check('s8 no aggregateRating anywhere', 'aggregateRating' not in html, '')
 check('s8 Product/Offer schema present', '"@type":"Product"' in html or '"@type": "Product"' in html or '"priceCurrency":"INR"' in html, '')
 
-# ── s6 held slots: no PDF, no diagrams ───────────────────────────────────────
-check('s6 no PDF download control rendered (held)', 'Download Specification PDF' not in html and 'Download specifications' not in html, '')
-check('s6 no technical-layout-diagram rendered (held)', 'technical-layout-diagram' not in html, '')
-check('s6 no material-services-diagram rendered (held)', 'material-services-diagram' not in html, '')
+# ── s6 slots: PDF + diagrams added on explicit follow-up instruction (17 Aug),
+# after confirming the reissued diagrams no longer carry the defects that
+# held them, and after flagging the PDF's still-PENDING reviewer fields ──────
+check('s6 PDF download control rendered', 'Download Specification PDF' in html, '')
+check('s6 PDF href correct', '/downloads/oil-field-camp-technical-specification.pdf' in html, '')
+check('s6 layout diagram rendered', 'oil-field-camp-layout-diagram' in html, '')
+check('s6 services-coordination diagram rendered', 'oil-field-camp-services-coordination-diagram' in html, '')
 
 # ── s2 internal links ─────────────────────────────────────────────────────────
 LINKS = {

@@ -112,6 +112,11 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // start, matching current cluster convention (every labor-colony page
   // built so far ends up here). Same opt-ins, no new styling.
   'prefab-site-canteen',
+  // LC-03 (17 Aug 2026) — same SAMAN instruction pattern as LC-01/LC-02/LC-04:
+  // size pills and section spacing brought in line with the porta-cabins
+  // reference. Same opt-ins, no new styling, byte-for-byte identical to
+  // every page above.
+  'oil-field-camp',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
