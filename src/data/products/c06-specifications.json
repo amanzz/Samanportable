@@ -574,204 +574,187 @@
       ]
     },
     "prefab-labor-camps": {
-      "name": "Prefab Labour Camps",
-      "narrative": "Two things in the tables below change what you actually buy. The first is that the floor specification splits by block type, so a dormitory can be demounted and a toilet block largely cannot. The second is that panel selection is made once per block type and then held, which is why a project fire or climate brief has to be settled before manufacture rather than during it.",
+      "name": "Prefab Labor Camps",
       "specifications": [
         {
-          "group": "Structure, envelope, roof and floor",
+          "group": "Steel Structure",
           "component": "Bottom frame",
-          "detail": "IS 2062 or approved equivalent MS channel, RHS or formed sections; member sizes and support reactions from the signed structural drawing",
-          "differsFromHub": false
+          "detail": "Bolted light steel/RHS frames on pedestals or strip/plinth foundation; standardised bay grid for repeat fabrication.",
+          "differsFromHub": true
         },
         {
-          "group": "Structure, envelope, roof and floor",
+          "group": "Steel Structure",
           "component": "Bottom stiffeners",
-          "detail": "RHS, channel or angle stiffeners set to the approved floor grid, partitions, wet services and relocation duty",
-          "differsFromHub": false
+          "detail": "Bolted panels and repeatable service interfaces; demobilisation sequence, packing list and reuse inspection.",
+          "differsFromHub": true
         },
         {
-          "group": "Structure, envelope, roof and floor",
-          "component": "Corner posts and walls",
-          "detail": "Bolted light MS or RHS posts, beams and bracing on pedestals or strip plinth; standardised bay spacing for repeat fabrication",
-          "differsFromHub": false
+          "group": "Steel Structure",
+          "component": "Floor frame",
+          "detail": "Steel joists + cement board/ply platform for relocatable blocks; tiled/epoxy/RCC wet and kitchen areas as approved.",
+          "differsFromHub": true
         },
         {
-          "group": "Structure, envelope, roof and floor",
+          "group": "Steel Structure",
           "component": "Top frame",
-          "detail": "MS RHS or channel upper rail sized for roof reactions, wall restraint and opening headers",
+          "detail": "Bolted light steel/RHS frames on pedestals or strip/plinth foundation; standardised bay grid for repeat fabrication.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Roof stiffeners",
+          "detail": "Insulated panel or PPGI roof with ridge/flashings, gutters and optional false ceiling; hot-climate radiant/ventilation strategy.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Corner posts / walls",
+          "detail": "Bolted light steel/RHS frames on pedestals or strip/plinth foundation; standardised bay grid for repeat fabrication.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Steel Structure",
+          "component": "Lifting / handling",
+          "detail": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
           "differsFromHub": false
         },
         {
-          "group": "Structure, envelope, roof and floor",
-          "component": "Roof frame",
-          "detail": "Bolted light steel or RHS roof bay supporting insulated panel or PPGI roof, with ridge, flashings and gutters",
+          "group": "Steel Structure",
+          "component": "Welding & fabrication",
+          "detail": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch.",
           "differsFromHub": false
         },
         {
-          "group": "Structure, envelope, roof and floor",
+          "group": "Walls, Roof, Floor & Insulation",
           "component": "Exterior walls",
-          "detail": "Nominal 50, 60 or 80 mm PUF, EPS or mineral-wool sandwich panel, one family selected per block type",
-          "differsFromHub": false
+          "detail": "50/60/80 mm PUF or project-approved EPS/Rockwool panels; separate wet-area liner and impact protection.",
+          "differsFromHub": true
         },
         {
-          "group": "Structure, envelope, roof and floor",
+          "group": "Walls, Roof, Floor & Insulation",
           "component": "Roof",
-          "detail": "Insulated panel or PPGI with defined ridge, eave, flashing, gutter and downpipe",
-          "differsFromHub": false
+          "detail": "Insulated panel or PPGI roof with ridge/flashings, gutters and optional false ceiling; hot-climate radiant/ventilation strategy.",
+          "differsFromHub": true
         },
         {
-          "group": "Structure, envelope, roof and floor",
-          "component": "Floor base, dry blocks",
-          "detail": "Bolted steel joist deck with cement board or ply platform",
-          "differsFromHub": false
-        },
-        {
-          "group": "Structure, envelope, roof and floor",
-          "component": "Floor base, wet blocks",
-          "detail": "Waterproof cementitious or RCC substrate with drainage falls",
-          "differsFromHub": false
-        },
-        {
-          "group": "Structure, envelope, roof and floor",
-          "component": "Floor finish",
-          "detail": "Commercial vinyl or PVC in sleeping and admin; epoxy, tile or safety finish in kitchen and wet areas",
-          "differsFromHub": false
-        },
-        {
-          "group": "Structure, envelope, roof and floor",
-          "component": "Lifting and handling",
-          "detail": "Marked lifting lugs, corner fittings or transport brackets only where shown on the signed GA and lifting drawing",
-          "differsFromHub": false
-        },
-        {
-          "group": "Structure, envelope, roof and floor",
-          "component": "Painting and coating",
-          "detail": "Prepared carbon steel with compatible primer and top coats, or galvanised and pre-painted sheet with repaired cut edges; system upgraded for coastal or industrial exposure",
-          "differsFromHub": false
-        },
-        {
-          "group": "Structure, envelope, roof and floor",
-          "component": "Two-storey",
-          "detail": "G+1 is a separate engineered frame, stair and walkway package, not included in the published single-storey rates",
-          "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Wall insulation",
-          "detail": "50, 60 or 80 mm class PUF, EPS or mineral-wool; one assembly per block type on climate and fire brief",
-          "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Roof insulation",
-          "detail": "Insulated roof panel or approved under-roof insulation with vapour and radiant control, planned with ventilation",
-          "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
+          "group": "Walls, Roof, Floor & Insulation",
           "component": "Interior walls",
-          "detail": "Dry dormitory and admin liner; washable canteen liner; moisture-tolerant wet-area liner, all on one modular panel grid",
-          "differsFromHub": false
+          "detail": "50/60/80 mm PUF or project-approved EPS/Rockwool panels; separate wet-area liner and impact protection.",
+          "differsFromHub": true
         },
         {
-          "group": "Insulation, interior, services, scope and site",
+          "group": "Walls, Roof, Floor & Insulation",
           "component": "Ceiling",
-          "detail": "Optional suspended or removable ceiling on the modular bay, with labelled access to distribution boards, valves and exhaust",
+          "detail": "Insulated panel or PPGI roof with ridge/flashings, gutters and optional false ceiling; hot-climate radiant/ventilation strategy.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor base",
+          "detail": "Steel joists + cement board/ply platform for relocatable blocks; tiled/epoxy/RCC wet and kitchen areas as approved.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Floor finish",
+          "detail": "Steel joists + cement board/ply platform for relocatable blocks; tiled/epoxy/RCC wet and kitchen areas as approved.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Wall insulation",
+          "detail": "50/60/80 mm PUF or project-approved EPS/Rockwool panels; separate wet-area liner and impact protection.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Roof insulation",
+          "detail": "Insulated panel or PPGI roof with ridge/flashings, gutters and optional false ceiling; hot-climate radiant/ventilation strategy.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Decorative / external finish",
+          "detail": "Modular roads/walkways, drainage, utility trench, fencing, security, laundry/drying yard and waste collection.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Walls, Roof, Floor & Insulation",
+          "component": "Fasteners & sealing",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
           "differsFromHub": false
         },
         {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Doors",
-          "detail": "Standardised MS, insulated or flush door families with common frames and hardware; wet-service and emergency variants as scheduled",
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Main door / service door",
+          "detail": "Repeatable door/window module; cross-ventilation, louvres, mosquito mesh and security bars according to camp risk.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Windows / service opening",
+          "detail": "Repeatable door/window module; cross-ventilation, louvres, mosquito mesh and security bars according to camp risk.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Grills / mosquito mesh",
+          "detail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
           "differsFromHub": false
         },
         {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Windows",
-          "detail": "Standard aluminium or uPVC windows, louvres and mesh aligned to panel bays; serving hatches and wet-room vents are separate modules",
-          "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Grilles and mesh",
-          "detail": "Removable mosquito mesh, louvres, restrictors, privacy screens or MS grilles only where the approved opening schedule requires",
-          "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
+          "group": "Doors, Windows, Electrical & Services",
           "component": "Electrical wiring",
-          "detail": "FR or FRLS copper in approved conduit or trunking; typical references 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm high-load; final sizing from the project electrical schedule",
+          "detail": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
           "differsFromHub": false
         },
         {
-          "group": "Insulation, interior, services, scope and site",
+          "group": "Doors, Windows, Electrical & Services",
           "component": "Electrical protection",
-          "detail": "Main isolator, MCB, RCBO or RCCB protection, labelled neutral and earth bars, bonding, and surge protection where the supply risk assessment requires",
+          "detail": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
           "differsFromHub": false
         },
         {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Ventilation and cooling",
-          "detail": "Cross ventilation, fans and exhaust as baseline; evaporative, mechanical or split-AC provision selected per block and climate",
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Electrical fittings",
+          "detail": "Plug-and-play block DBs, external cable trays/ducts, quick isolation, site lighting and backup power interface.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Ventilation / AC",
+          "detail": "Repeatable door/window module; cross-ventilation, louvres, mosquito mesh and security bars according to camp risk.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Plumbing / sanitary",
+          "detail": "Ring-main or zoned supply with quick-connect manifolds, overhead/ground tanks and pump set; isolation per block.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Layout / configuration",
+          "detail": "Single-storey blocks around a central service spine or courtyard; segregate sleeping, dining, sanitation, admin and vehicle/service movement.",
+          "differsFromHub": true
+        },
+        {
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Painting / coating",
+          "detail": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
           "differsFromHub": false
         },
         {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Plumbing",
-          "detail": "Zoned CPVC or PPR supply with block isolation and quick-connect manifolds; uPVC waste and vent stubs",
+          "group": "Doors, Windows, Electrical & Services",
+          "component": "Quality checks",
+          "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
           "differsFromHub": false
         },
         {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Layout",
-          "detail": "Dormitory, sanitation, canteen and supervisor or admin blocks arranged around a service spine, with pedestrian and service movement separated",
-          "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Standard scope",
-          "detail": "Block enclosure and services-ready fit-out",
-          "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Excluded unless quoted",
-          "detail": "Camp infrastructure, loose beds and furniture, kitchens, external sanitation plant, foundations, transport, erection, utility distribution, statutory approvals",
-          "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
+          "group": "Doors, Windows, Electrical & Services",
           "component": "Warranty",
-          "detail": "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation",
+          "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
           "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "GST and HSN",
-          "detail": "18% GST, HSN 9406",
-          "differsFromHub": false
-        },
-        {
-          "group": "Insulation, interior, services, scope and site",
-          "component": "Delivery",
-          "detail": "7 to 21 working days from order confirmation; fixed-price quotation within 48 hours",
-          "differsFromHub": false
-        }
-      ],
-      "diagrams": [
-        {
-          "src": "/images/products/prefab-labor-camps/specifications/prefab-labour-camp-block-grid-diagram.webp",
-          "alt": "Prefab camp block grid showing dormitory, toilet, canteen, admin and store blocks",
-          "caption": "Prefab Camp Block Grid. Illustrative - not for construction unless approved. Rev 2 | 16 August 2026 | SP-LC-PLC-TS-R2.",
-          "width": 1920,
-          "height": 1080
-        },
-        {
-          "src": "/images/products/prefab-labor-camps/specifications/prefab-labour-camp-services-spine-diagram.webp",
-          "alt": "Plug-in services diagram linking camp blocks to water, waste and power through a service spine",
-          "caption": "Plug-In Services and Demobilization Logic. Illustrative - not for construction unless approved. Rev 2 | 16 August 2026 | SP-LC-PLC-TS-R2.",
-          "width": 1920,
-          "height": 1080
         }
       ]
     }

@@ -30,8 +30,6 @@ export interface RightToExistEntry {
       earlier `uniformParagraphWeight` flag is dropped in favour of this field, which
       renders the identical classes. */
   bodyParagraphs?: ReactNode[];
-  ctaLabel?: string;
-  ctaHref?: string;
   /** R15 (v1.4, 14 Aug 2026) — optional image-left / content-right split card
       rendered below the lead paragraphs. Present only on the porta-cabins hub;
       every other entry renders byte-identically to before. */
@@ -827,37 +825,17 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     },
   },
   'prefab-labor-camps': {
-    heading: 'Choosing a repeatable camp block instead of a whole colony build',
-    bodyParagraphs: [
-      (
-        <>
-          A labour camp rarely arrives at its full size on day one. Most projects start with one crew, add a second when the structure work begins, and shed both when the job winds down. Buying a finished colony forces you to commit to that peak on the first purchase order. Buying a block does not. Each block is priced, quoted and delivered on its own, so the camp grows in the same steps your headcount does.
-        </>
-      ),
-      (
-        <>
-          That is the difference between this page and our <Link className={linkClass} href="https://www.samanportable.com/product/labor-colony">labour colony</Link> page, which plans and prices a complete settlement in one go. Choose the colony route when the site is fixed, the headcount is known and the camp stays put. Choose blocks when the number is uncertain, the phases are staged, or the whole camp has to move on intact. Send us your site, your phasing and the block mix you have in mind, and we will quote each block separately.
-        </>
-      ),
-    ],
-    ctaLabel: 'Send us your site and phasing for a block-by-block quotation',
-    ctaHref: 'https://www.samanportable.com/contact',
-    splitCard: {
-      imageSrc: '/images/products/prefab-labor-camps/section2/prefab-labour-camp-blocks-service-spine.webp',
-      imageAlt: 'Four single-storey prefab labour camp blocks facing a central covered service trench',
-      imageWidth: 1920,
-      imageHeight: 1080,
-      subheading: 'How the service spine decides your camp layout',
-      body: 'Blocks are not simplyparked in rows. Water, waste and power run along a central spine, and every block connects to it at one point. That is what lets a plot be isolated or removed without cutting into a live camp.',
-      bullets: [
-        'One connection point per block, isolated at the spine',
-        'Dormitory, sanitation, canteen and admin zoned separately',
-        'Pedestrian and service vehicle routes kept apart',
-        'New plots trenched before the block arrives',
-      ],
-      ctaLabel: 'Ask for a spine and block layout',
-      ctaHref: 'https://www.samanportable.com/contact',
-    },
+    heading: 'Why choose the relocatable camp build',
+    body: (
+      <>
+        The camp is engineered to move: bolted panel joints, pedestal footings and plug-and-play services mean the same buildings dismantle at one project and re-erect at the next instead of being written off. It costs slightly more per square foot than the fixed shed and repays it the first time the camp relocates. Choose it when your projects move.
+      </>
+    ),
+    comparison: (
+      <>
+        If the housing stays on one site for its whole life, the Labour Colony configuration is more economical, with <Link className={linkClass} href={LABOUR_COLONY_HREF}>fixed and movable options side by side</Link> on the range page.
+      </>
+    ),
   },
   'portable-office': {
     heading: 'Why the range page and not a single cabin',
