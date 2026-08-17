@@ -138,3 +138,36 @@ export const PREFAB_LABOR_CAMPS_RAIL: RelatedRailItem[] = [
     imageAlt: 'Labor Hutments by SAMAN Portable, exterior view',
   },
 ];
+
+// LC-06 (17 Aug 2026) - the canteen page's own Column 3 rail (build prompt v1
+// s4): Prefab Labour Camps, Labour Sheds, Labour Colony, in that exact order.
+// Oil Field Camp, Accommodation Container and Multi-Toilet Ablution Block are
+// explicitly excluded (all three 404, unpublished). Title, href, image and
+// blurb reused verbatim from the entries already established above for these
+// same three destinations - no new copy authored here.
+export const PREFAB_SITE_CANTEEN_RAIL: RelatedRailItem[] = [
+  {
+    title: 'Prefab Labour Camps',
+    href: '/product/labor-colony/prefab-labor-camps',
+    category: 'Labour Colony',
+    blurb: 'A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project.',
+    imageSrc: '/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp',
+    imageAlt: 'Prefab Labor Camps by SAMAN Portable, exterior view',
+  },
+  {
+    title: 'Labour Sheds',
+    href: '/product/labor-colony/labor-sheds',
+    category: 'Labour Colony',
+    blurb: 'A labour shed is the open-hall version of SAMAN worker housing: one clear sleeping hall per floor with central aisles, built as a light portal-frame steel building with PPGI cladding and high-level ventilation.',
+    imageSrc: '/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp',
+    imageAlt: 'Labor Sheds by SAMAN Portable, exterior view',
+  },
+  {
+    title: 'Labour Colony',
+    href: '/product/labor-colony',
+    category: 'Labour Colony',
+    blurb: 'A labour colony is a whole worker housing site. It is not one building.',
+    imageSrc: '/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-right-hero.webp',
+    imageAlt: 'Labour Colony by SAMAN Portable, worker housing site',
+  },
+];

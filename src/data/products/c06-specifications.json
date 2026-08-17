@@ -774,6 +774,209 @@
           "height": 1080
         }
       ]
+    },
+    "prefab-site-canteen": {
+      "name": "Prefab Site Canteen",
+      "narrative": "Two lines in the tables below change what you actually buy. The first is that the floor and wall finishes split by zone, so a dining wall and a wash-area wall are not the same specification and are not priced as though they were. The second is that the roof exhaust package is conditional: a dining-only canteen does not inherit a heavy kitchen hood, and a canteen with a cookline needs one engineered before manufacture rather than cut in afterwards.",
+      "premiumTables": true,
+      "specifications": [
+        {
+          "group": "Table 1",
+          "component": "Bottom frame",
+          "detail": "IS 2062 or approved equivalent MS channel/RHS/formed sections; exact member sizes and support reactions from the signed structural drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Bottom stiffeners",
+          "detail": "RHS/channel/angle stiffeners selected to the approved floor grid, partitions, wet services and lifting/relocation duty.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor frame",
+          "detail": "MS floor frame or slab designed for dining live load plus concentrated serving, kitchen and wash loads; wet zones receive cementitious reinforcement and drain falls.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Top frame",
+          "detail": "MS RHS/channel or the documented proprietary upper rail sized for roof reactions, wall restraint and opening headers.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof stiffeners",
+          "detail": "RHS/light truss roof members supporting insulated PPGI/PPGL roof; framed curbs and openings for kitchen hood or exhaust only where a cooking package is included.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Corner posts / walls",
+          "detail": "MS/RHS posts and rails with local headers and jambs at serving hatch, external doors, exhaust, plumbing and equipment service openings.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Lifting / handling",
+          "detail": "Marked lifting lugs, corner fittings, skid points or temporary transport brackets only where shown on the signed GA and lifting drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Welding & fabrication",
+          "detail": "IS 2062 / IS 1161 class structural steel or approved equivalent; weld sizes, bolt grades, hole tolerances and joint details as the fabrication drawings.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Exterior walls",
+          "detail": "Nominal 50 mm PUF/EPS sandwich panel or approved insulated wall with washable, non-absorbent finish in food handling and wash zones.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof",
+          "detail": "Sloped PPGI or insulated roof with gutters, sealed service curbs and condensation strategy; higher heat-control package where cooking loads justify it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor base",
+          "detail": "Cement board, RCC or equivalent rigid base; kitchen and wash zones receive waterproofing, coved edges and slope to trapped drains where designed.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor finish",
+          "detail": "Commercial anti-skid vinyl for dry dining, or tile/kota/epoxy/safety finish in kitchen and wash zones, with coved skirting where hygienic cleaning requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Interior walls",
+          "detail": "Washable prelaminated, FRP, metal or cementitious liner in preparation, serving and wash zones; durable dry liner in dining areas.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Ceiling",
+          "detail": "Smooth moisture-resistant ceiling or liner with sealed edges and removable access above service points; hood zone uses materials compatible with heat and cleaning duty.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Wall insulation",
+          "detail": "Nominal 50 mm PUF/EPS for the general envelope; non-combustible, mineral-wool or heat shield only around cooking and heat sources when engineered.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Roof insulation",
+          "detail": "Nominal 50 mm insulated roof or approved equivalent plus ventilation and radiant controls; kitchen hood make-up air considered separately.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Serving, wash and waste interfaces",
+          "detail": "Serving counter or hatch, hand-wash point, washable waste holding area, insect-control screens and external LPG cylinder cage only when the corresponding kitchen scope is included.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Fasteners & sealing",
+          "detail": "Corrosion-compatible fasteners, EPDM washers, butyl/PU sealants, closures, flashing, sleeves and isolation tapes matched to the selected wall, roof and floor build-up.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Main door / service door",
+          "detail": "Separate staff/service and diner access where layout allows; robust cleanable door surfaces and weather and insect control at external openings.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Windows / service opening",
+          "detail": "Framed serving hatch plus aluminium windows or louvres with insect screens; opening arrangement follows food flow, daylight and ventilation.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Grills / mosquito mesh",
+          "detail": "Removable mosquito mesh, louvres, restrictors, privacy screens or protected MS grilles only where required by room use and the approved opening schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical wiring",
+          "detail": "Typical references: 1.5 sq.mm lighting, 2.5 sq.mm socket circuits and 4 sq.mm AC/high-load circuits; final cable sizing follows connected load, voltage drop and protection coordination.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical protection",
+          "detail": "Main isolator, MCB/RCBO or RCCB protection, labelled neutral and earth bars, bonding and surge protection where required by the supply or risk assessment.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical fittings",
+          "detail": "LED luminaires, fan points, 6A/16A sockets, exhaust points, emergency lighting and dedicated equipment outlets only in quantities shown on the approved room and electrical schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Ventilation / AC",
+          "detail": "Dining area uses cross ventilation, fans or comfort cooling; cooking zone uses a dedicated exhaust hood, duct and make-up air only when a cookline is included.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Plumbing / sanitary",
+          "detail": "Potable-water supply to hand-wash and kitchen sinks, trapped floor drains and uPVC waste; grease trap and hot-water system when the cooking and wash process requires them.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Layout / configuration",
+          "detail": "Receiving and storage, preparation, serving, dining, tray and utensil return, and wash and waste areas arranged to the selected operating model and meal sittings.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Painting / coating",
+          "detail": "Prepared carbon steel with compatible primer and top coats, or galvanized/pre-painted sheet with repaired cut edges; system upgraded for coastal, industrial or wet-service exposure.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Quality checks",
+          "detail": "Dimensional, member, weld/bolt, coating, panel, roof-drainage, opening, electrical and plumbing checks plus product-specific deployment or wet-test checks.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Warranty",
+          "detail": "Warranty period, start date, remedy, relocation conditions, consumables and exclusions exactly as stated in the signed quotation and handover documents.",
+          "differsFromHub": false
+        }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/prefab-site-canteen/diagrams/canteen-diagram-process-layout-R2.webp",
+          "alt": "Site canteen process layout from receiving to waste holding, with scope legend",
+          "caption": "Illustrative - not for construction unless approved. Final drawing and quotation govern.",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/prefab-site-canteen/diagrams/canteen-diagram-food-service-utility-R2.webp",
+          "alt": "Food-service utility diagram showing water, waste, optional exhaust and queue path",
+          "caption": "Illustrative - not for construction unless approved. Final drawing and quotation govern.",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
     }
   }
 }

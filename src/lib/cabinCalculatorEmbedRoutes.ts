@@ -279,6 +279,21 @@ export function resolveEmbeddedCalculatorProduct(
   // prices (Rs 38,88,000 and up) while the calculator beside them rendered quote
   // mode, contradicting the page in the same direction the C-05 six did.
   if (c === 'labor-colony' || c === 'c06' || c === 'labour-colony') {
+    // LC-06 (17 Aug 2026) - a fifth labor-colony route that resolveForLaborColony
+    // does not name falls through its own default to 'labour-colony' (the hub's
+    // own ProductId), which the wizard then prices from the HUB's ladder. On
+    // this route that produced a banner reading "Your Prefab Site Canteen from
+    // Rs 19,44,000" - the hub's own base price - directly contradicting this
+    // page's own published Rs 1,50,000 starting price a few sections below it.
+    // LC-06's build prompt explicitly wants zero calculator integration for
+    // this page (no ROUTE_LADDERS entry, no colony-ladder entry, "Calculator:
+    // NONE - DO NOT TOUCH"), so the correct fix is no attribution at all here,
+    // not a fifth entry in isColonyProduct/colonyLadder. Mirrors the existing
+    // UNVERIFIED_PRODUCT_ID_CLUSTERS no-prefill shape used elsewhere in this
+    // file. Scoped to this one slug; the four routes above are unaffected.
+    if (slug && normalise(slug) === 'prefab-site-canteen') {
+      return { category, slug, prefill: false, productId: undefined, ladderKey: '' };
+    }
     return {
       category,
       slug,

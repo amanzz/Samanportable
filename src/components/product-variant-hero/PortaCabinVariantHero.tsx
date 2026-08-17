@@ -41,6 +41,7 @@ import portaCabinShopApplications from '@/data/products/porta-cabin-shop-applica
 import laborColonyApplications from '@/data/products/labor-colony-applications.json';
 import laborHutmentsApplications from '@/data/products/labor-hutments-applications.json';
 import prefabLaborCampsApplications from '@/data/products/prefab-labor-camps-applications.json';
+import prefabSiteCanteenApplications from '@/data/products/prefab-site-canteen-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -269,6 +270,7 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // published size.
   'labor-hutments': laborHutmentsApplications as ApplicationsData,
   'prefab-labor-camps': prefabLaborCampsApplications as ApplicationsData,
+  'prefab-site-canteen': prefabSiteCanteenApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([

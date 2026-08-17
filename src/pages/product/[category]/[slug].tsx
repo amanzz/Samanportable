@@ -49,7 +49,7 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
-import { LABOR_HUTMENTS_RAIL, LABOR_SHEDS_RAIL, PREFAB_LABOR_CAMPS_RAIL } from '../../../lib/labourColonyClusterRail';
+import { LABOR_HUTMENTS_RAIL, LABOR_SHEDS_RAIL, PREFAB_LABOR_CAMPS_RAIL, PREFAB_SITE_CANTEEN_RAIL } from '../../../lib/labourColonyClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
@@ -103,6 +103,10 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // dividers around the calculator and YMAL blocks below.
   'labor-hutments',
   'prefab-labor-camps',
+  // LC-06 (17 Aug 2026) - built with the premium chip/tab design from the
+  // start, matching current cluster convention (every labor-colony page
+  // built so far ends up here). Same opt-ins, no new styling.
+  'prefab-site-canteen',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -572,11 +576,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // this one page only, rather than editing either shared source.
   const isLaborShedsPage = category === 'labor-colony' && slug === 'labor-sheds';
   const isPrefabLaborCampsPage = category === 'labor-colony' && slug === 'prefab-labor-camps';
+  // LC-06 - own product name needs no labor/labour correction (it contains
+  // neither word), but the shared category record's cluster name still does
+  // ("Labor Colony"), so this still needs to be in the ternary to get the
+  // breadcrumb's cluster node right.
+  const isPrefabSiteCanteenPage = category === 'labor-colony' && slug === 'prefab-site-canteen';
   const labourColonyProductName = isLaborShedsPage
     ? 'Labour Sheds'
     : isPrefabLaborCampsPage
       ? 'Prefab Labour Camps'
-      : null;
+      : isPrefabSiteCanteenPage
+        ? 'Prefab Site Canteen'
+        : null;
   const breadcrumbCrumbs = getProductBreadcrumb({
     productName: labourColonyProductName || (product?.name || ''),
     productSlug: slug,
@@ -667,6 +678,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     }
     if (currentSlug === 'prefab-labor-camps') {
       return PREFAB_LABOR_CAMPS_RAIL;
+    }
+    // LC-06 (17 Aug 2026) - this page's own rail (build prompt v1 s4): Prefab
+    // Labour Camps, Labour Sheds, Labour Colony, in that exact order.
+    if (currentSlug === 'prefab-site-canteen') {
+      return PREFAB_SITE_CANTEEN_RAIL;
     }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
@@ -799,7 +815,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             reviews={reviews}
             breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
             variantData={variantData || undefined}
-            suppressProductEntity={suppressLegacyCommercialSurfaces || isPrefabLaborCampsPage}
+            suppressProductEntity={suppressLegacyCommercialSurfaces || isPrefabLaborCampsPage || isPrefabSiteCanteenPage}
             metaDescription={rankMathSEO?.description}
           />
 

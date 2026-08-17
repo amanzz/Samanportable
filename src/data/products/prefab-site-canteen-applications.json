@@ -1,0 +1,46 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "20x10",
+      "tabLabel": "20x10 ft",
+      "h3": "20x10 ft Site Canteen, 200 sq ft, The Starter Block",
+      "paragraph": "Two hundred square feet is the smallest canteen we price, and it works as a serving and dining point rather than a full food-service building. One counter run sits against the end wall, with a short bench layout in front of it. It suits a single crew, or a site where cooked food arrives in insulated carriers and only needs holding and serving. The rate is Rs 750 per sq ft ex-GST, the highest in the ladder, because the frame, roof drainage and service connection spread across the least floor.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "30x10",
+      "tabLabel": "30x10 ft",
+      "h3": "30x10 ft Site Canteen, 300 sq ft, Serving Plus Dining",
+      "paragraph": "At 300 sq ft the serving run and the dining floor stop competing for the same space. You get a counter along one wall and enough clear depth in front of it for a queue that does not back into the seating. This is the smallest size where a tray return point fits without crowding the exit. The rate falls to Rs 720 per sq ft ex-GST. Choose it when one crew eats in two sittings and you want the queue inside the building rather than outside it.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "40x10",
+      "tabLabel": "40x10 ft",
+      "h3": "40x10 ft Site Canteen, 400 sq ft, The Long Serving Run",
+      "paragraph": "Four hundred square feet in a 10 ft width gives a long, single-volume room with the serving line down one side and dining down the other. Cross ventilation works well in this shape, which matters in an uncooled room through an Indian summer. It is also the largest size that still handles as a standard 10 ft wide unit on site. The rate is Rs 712.50 per sq ft ex-GST. Pick it when the queue length, not the seating, is what slows your meal break.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "25x20",
+      "tabLabel": "25x20 ft",
+      "h3": "25x20 ft Site Canteen, 500 sq ft, First Wide-Body Size",
+      "paragraph": "Doubling the width to 20 ft changes the building rather than just enlarging it. At 500 sq ft the serving, dining and wash functions can sit in separate zones instead of along one wall, so dirty trays stop crossing the food route. The floor needs an internal support line, and the plot needs working margin on both sides. The rate is Rs 705 per sq ft ex-GST. This is where a canteen starts behaving like a planned food-service layout.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "30x20",
+      "tabLabel": "30x20 ft",
+      "h3": "30x20 ft Site Canteen, 600 sq ft, Two Sittings at Once",
+      "paragraph": "Six hundred square feet holds a serving zone, a dining floor and a separate wash and waste area under one roof, with room to run two meal sittings back to back. Wet-zone flooring, coved skirting and trapped drains are worth specifying properly at this size, because the wash area is now doing real work. The rate is Rs 697.50 per sq ft ex-GST. Order it when the canteen serves a whole camp rather than a single crew.",
+      "applications": []
+    },
+    {
+      "sizeSlug": "40x20",
+      "tabLabel": "40x20 ft",
+      "h3": "40x20 ft Site Canteen, 800 sq ft, The Largest Priced Size",
+      "paragraph": "Eight hundred square feet is the largest canteen we price by area rate, and it carries the lowest rate at Rs 682.50 per sq ft ex-GST. It takes a full separated layout: receiving and dry store at one end, preparation and serving in the middle, dining, tray return and wash at the other. Above 900 sq ft of covered area we stop using a rate, because kitchen services and external infrastructure start driving the cost instead of the building.",
+      "applications": []
+    }
+  ]
+}
