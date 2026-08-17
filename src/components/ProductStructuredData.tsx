@@ -103,6 +103,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
     : [];
 
   const schemaAvailability = getSchemaAvailability(product.stock_status);
+  const schemaItemCondition = getSchemaItemCondition(variantData?.schemaItemCondition);
   const offerStructuredData = (salePrice || price) > 0 ? {
     '@type': 'Offer',
     url: productUrl,
@@ -117,7 +118,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
       },
     } : {}),
     ...(schemaAvailability ? { availability: schemaAvailability } : {}),
-    itemCondition: 'https://schema.org/NewCondition',
+    itemCondition: schemaItemCondition,
     // Seller information removed to avoid duplicate Organization schemas
     // Manufacturer already provides Organization information
     // Mirrors the published policy at /refund-and-return-policy: 7-day window,
@@ -171,13 +172,18 @@ export default function ProductStructuredData({ product, category, reviews, brea
     delete (offerStructuredData as any).shippingDetails;
   }
 
-  const aggregateRatingStructuredData = shouldEmitRatingSchema ? {
+  const aggregateRatingStructuredData = shouldEmitRatingSchema && !variantData?.suppressAggregateRatingSchema ? {
     '@type': 'AggregateRating',
     ratingValue: product.average_rating,
     reviewCount: product.rating_count,
     bestRating: '5',
     worstRating: '1'
   } : undefined;
+  const productImages = product.images?.length
+    ? product.images
+        .slice(0, variantData?.schemaImageLimit && variantData.schemaImageLimit > 0 ? variantData.schemaImageLimit : product.images.length)
+        .map(img => img.src)
+    : [];
 
   // Variant pages render one primary Product. The visible size selector remains UI,
   // while its approved ex-GST ladder becomes a single AggregateOffer. This avoids
@@ -185,8 +191,23 @@ export default function ProductStructuredData({ product, category, reviews, brea
   const exGstPrices = variantData
     ? variantData.variants.map((v) => v.priceExGst).filter((p): p is number => p != null)
     : [];
+  const variantOfferStructuredData =
+    variantData &&
+    variantData.schemaOfferType === 'offer' &&
+    exGstPrices.length === variantData.variants.length &&
+    exGstPrices.length > 0
+      ? {
+          '@type': 'Offer',
+          url: productUrl,
+          priceCurrency: 'INR',
+          price: Math.min(...exGstPrices),
+          ...(schemaAvailability ? { availability: schemaAvailability } : {}),
+          itemCondition: schemaItemCondition,
+        }
+      : null;
   const aggregateOfferStructuredData =
     variantData &&
+    variantData.schemaOfferType !== 'offer' &&
     exGstPrices.length === variantData.variants.length &&
     exGstPrices.length > 0
       ? {
@@ -204,7 +225,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
         }
       : null;
 
-  const productOfferStructuredData = aggregateOfferStructuredData || offerStructuredData;
+  const productOfferStructuredData = variantOfferStructuredData || aggregateOfferStructuredData || offerStructuredData;
   const hasProductRichResultEvidence = Boolean(
     productOfferStructuredData ||
     aggregateRatingStructuredData ||
@@ -237,13 +258,13 @@ export default function ProductStructuredData({ product, category, reviews, brea
   // Generate structured data for Product only when it has real Product-snippet
   // evidence. Quote-only/unrated products must not emit an ineligible Product
   // node with no offers, aggregateRating, or review.
-  const productStructuredData = !suppressProductEntity && hasProductRichResultEvidence ? {
+  const productStructuredData = !suppressProductEntity && (hasProductRichResultEvidence || variantData?.emitQuoteOnlyProduct) ? {
     '@context': 'https://schema.org/',
     '@type': 'Product',
     '@id': `${productUrl}#product`,
     name: product.name.length > 150 ? product.name.substring(0, 147) + '...' : product.name,
     ...(description ? { description } : {}),
-    ...(product.images?.length ? { image: product.images.map(img => img.src) } : {}),
+    ...(productImages.length ? { image: productImages } : {}),
     url: productUrl,
     brand: {
       '@type': 'Brand',
@@ -335,5 +356,17 @@ function getSchemaAvailability(stockStatus: string): string | undefined {
       return 'https://schema.org/BackOrder';
     default:
       return undefined;
+  }
+}
+
+function getSchemaItemCondition(condition: VariantProductData['schemaItemCondition'] | undefined): string {
+  switch (condition) {
+    case 'used':
+      return 'https://schema.org/UsedCondition';
+    case 'refurbished':
+      return 'https://schema.org/RefurbishedCondition';
+    case 'new':
+    default:
+      return 'https://schema.org/NewCondition';
   }
 }

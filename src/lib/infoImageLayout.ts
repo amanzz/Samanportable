@@ -22,6 +22,9 @@ export interface InfoImage {
   alt: string;
   width: number;
   height: number;
+  /** Optional exact H2 text whose complete section this image follows. When
+      absent, the established even-distribution algorithm remains unchanged. */
+  afterSectionHeading?: string;
 }
 
 /**
@@ -185,6 +188,31 @@ export function injectInfoImages(html: string, images: InfoImage[] | undefined):
   if (/data-c08-info-image|<img[^>]+\/info\//i.test(html)) return html;
   const blocks = splitTopLevelBlocks(html);
   if (blocks.length < 2) return html;
+
+  // LC-05 (16 Aug 2026) - explicit, data-owned section placement. This path is
+  // opt-in per image; existing datasets omit `afterSectionHeading` and continue
+  // through the original evenly-spaced placement below byte-for-byte.
+  if (images.some((image) => image.afterSectionHeading)) {
+    const insertBefore = new Map<number, string>();
+    const append: string[] = [];
+    for (const image of images) {
+      if (!image.afterSectionHeading) continue;
+      const headingIndex = blocks.findIndex((block) => {
+        if (!/^\s*<h2\b/i.test(block)) return false;
+        const text = block.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+        return text === image.afterSectionHeading;
+      });
+      if (headingIndex < 0) {
+        throw new Error(`Info image section heading not found: ${image.afterSectionHeading}`);
+      }
+      const nextHeadingIndex = blocks.findIndex((block, index) => index > headingIndex && /^\s*<h2\b/i.test(block));
+      const imageHtml = infoImageHtml(image);
+      if (nextHeadingIndex < 0) append.push(imageHtml);
+      else insertBefore.set(nextHeadingIndex, (insertBefore.get(nextHeadingIndex) || '') + imageHtml);
+    }
+    return blocks.map((block, index) => (insertBefore.get(index) || '') + block).join('') + append.join('');
+  }
+
   const slots = imageSlots(blocks, images.length);
   if (!slots.length) return html;
 

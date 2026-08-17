@@ -2,6 +2,38 @@
 (() => {
   'use strict';
 
+  // LC-05 keeps the complete server-rendered quote-mode calculator in the
+  // document, but its enhancement runtime is not needed in the first viewport.
+  // Delay only an explicitly opted-in calculator until it approaches the
+  // viewport. Every sibling follows the existing immediate enhancement path.
+  const deferredCalculator = document.querySelector('[data-cabin-calculator][data-defer-enhancement="true"]');
+  if (deferredCalculator && !window.__samanLc05CalculatorActivated) {
+    if (window.__samanLc05CalculatorDeferred) return;
+    window.__samanLc05CalculatorDeferred = true;
+
+    let deferredObserver;
+    const activateLc05Calculator = () => {
+      deferredObserver?.disconnect();
+      window.__samanLc05CalculatorActivated = true;
+      const script = document.createElement('script');
+      script.src = '/scripts/cabin-cost-calculator.js?lc05=active';
+      script.async = true;
+      document.head.appendChild(script);
+    };
+
+    const calculator = deferredCalculator;
+    if (!calculator || !('IntersectionObserver' in window)) {
+      activateLc05Calculator();
+      return;
+    }
+
+    deferredObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) activateLc05Calculator();
+    }, { rootMargin: '600px 0px' });
+    deferredObserver.observe(calculator);
+    return;
+  }
+
   const RUNTIME_KEY = '__samanCabinCalculatorRuntime';
   if (window[RUNTIME_KEY]) return;
   window[RUNTIME_KEY] = true;

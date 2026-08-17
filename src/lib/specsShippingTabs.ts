@@ -57,6 +57,9 @@ interface C01SpecificationEntry {
   /** PC-00 (14 Aug 2026) — optional narrative shown above the group cards.
       Absent on every entry except porta-cabins → byte-identical elsewhere. */
   narrative?: string;
+  /** LC-05 - approved narrative paragraphs rendered after both tables and their
+      interleaved diagrams. Absent on siblings, preserving their existing order. */
+  narrativeParagraphsAfter?: string[];
   /** PC-00 — optional technical diagram rendered after the group cards, with
       its mandatory illustrative-only caption. Absent everywhere else. */
   diagram?: { src: string; alt: string; caption: string; width: number; height: number };
@@ -65,6 +68,10 @@ interface C01SpecificationEntry {
       `diagram`, in order. Absent on every other entry, so the single-diagram path
       above is untouched and their markup stays byte-identical. */
   diagrams?: { src: string; alt: string; caption: string; width: number; height: number }[];
+  /** LC-05 - one approved diagram after a named table/group. */
+  diagramsAfterGroup?: Record<string, { src: string; alt: string; caption?: string; width: number; height: number }>;
+  /** LC-05 - exact buyer-facing column labels for its two ruled tables. */
+  columnHeaders?: { first: string; second: string };
   /** R4 (14 Aug 2026) — opt-in premium `.saman-table` styling on this entry's
       group tables. Absent/false on every entry except porta-cabins → the
       existing plain table markup is byte-identical elsewhere. */
@@ -172,6 +179,13 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
   // Absent on every entry except labor-colony → every other table's markup
   // below is unreached and byte-identical.
   const fourColumn = entry.specifications.some((row) => row.scopeClass !== undefined);
+  const asFigure = (d: { src: string; alt: string; caption?: string; width: number; height: number }) =>
+    `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+      `<img src="${esc(d.src)}" alt="${esc(d.alt)}" ` +
+      `width="${d.width}" height="${d.height}" loading="lazy" ` +
+      `class="w-full h-auto rounded-lg" />` +
+      (d.caption ? `<figcaption class="mt-2 text-xs italic text-slate-500">${esc(d.caption)}</figcaption>` : '') +
+    `</figure>`;
   const groups = Array.from(new Set(entry.specifications.map((row) => row.group)));
   const cards = groups.map((group) => {
     const rows = entry.specifications
@@ -202,15 +216,17 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
     const extraHeaders = fourColumn
       ? `<th${th}>Scope class</th><th${th}>What it means for you</th>`
       : '';
-    return (
+    const card = (
       `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
         `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group)}</h4>` +
         tableOpen +
-          `<th${th}>Component</th><th${th}>${fourColumn ? 'Baseline specification' : 'Detail'}</th>` +
+          `<th${th}>${esc(entry.columnHeaders?.first || 'Component')}</th><th${th}>${esc(entry.columnHeaders?.second || (fourColumn ? 'Baseline specification' : 'Detail'))}</th>` +
           extraHeaders +
         `</tr></thead><tbody>${rows}</tbody></table></div>` +
       `</section>`
     );
+    const groupDiagram = entry.diagramsAfterGroup?.[group];
+    return card + (groupDiagram ? asFigure(groupDiagram) : '');
   }).join('');
 
   // PC-00 (14 Aug 2026) — optional narrative above the cards and optional
@@ -219,20 +235,16 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
   const narrative = entry.narrative
     ? `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(entry.narrative)}</p>`
     : '';
-  const asFigure = (d: NonNullable<C01SpecificationEntry['diagram']>) =>
-    `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
-      `<img src="${esc(d.src)}" alt="${esc(d.alt)}" ` +
-      `width="${d.width}" height="${d.height}" loading="lazy" ` +
-      `class="w-full h-auto rounded-lg" />` +
-      `<figcaption class="mt-2 text-xs italic text-slate-500">${esc(d.caption)}</figcaption>` +
-    `</figure>`;
   // Single-diagram entries keep the exact markup they already emit; `diagrams`
   // is the PC-04 multi-drawing path and is absent everywhere else.
   const diagram = entry.diagram
     ? asFigure(entry.diagram)
     : (entry.diagrams || []).map(asFigure).join('');
+  const narrativeAfter = (entry.narrativeParagraphsAfter || [])
+    .map((paragraph) => `<p class="mt-4 text-sm leading-relaxed text-slate-600">${esc(paragraph)}</p>`)
+    .join('');
 
-  return `<div class="not-prose">${narrative}${cards}${diagram}</div>`;
+  return `<div class="not-prose">${narrative}${cards}${diagram}${narrativeAfter}</div>`;
 }
 
 export function buildC04SpecificationsHtml(pageSlug: string): string {

@@ -103,6 +103,13 @@ export interface VariantProductData {
   opener?: string;
   /** Owner-approved replacement for the legacy Description-tab HTML. */
   descriptionHtml?: string;
+  /** Optional owner-approved additions to an existing Description-tab string.
+      Absent means the original HTML is returned byte-for-byte. */
+  descriptionHtmlAdditions?: {
+    beforeHtml?: string;
+    insertHtml?: string;
+    appendHtml?: string;
+  };
   /** HOLD the Description tab empty-safe. An empty `descriptionHtml` cannot express
       this, because the route falls through to the legacy body on any falsy value.
       Set true only where the legacy body contradicts the rebuilt page and approved
@@ -182,6 +189,25 @@ export interface VariantProductData {
       instead of per-variant Offers. Absent on porta-cabins → per-variant Offers kept,
       byte-identical. Set true only when a page's price ladder is confirmed. */
   emitAggregateOffer?: boolean;
+  /** Merchant schema offer mode. Default aggregateOffer keeps existing variant pages
+      unchanged; "offer" emits a single from-price Offer derived from the ladder. */
+  schemaOfferType?: 'aggregateOffer' | 'offer';
+  /** Merchant condition for the Product Offer, encoded from an owner/commercial ruling.
+      Default remains new, matching the legacy product schema. */
+  schemaItemCondition?: 'new' | 'refurbished' | 'used';
+  /** Opt-in removal of product AggregateRating for pages whose ticket forbids it. */
+  suppressAggregateRatingSchema?: boolean;
+  /** Optional cap for Product JSON-LD image URLs. Absent keeps current pages unchanged. */
+  schemaImageLimit?: number;
+  /** LC-05 (16 Aug 2026) - emit the sourced Product entity even while its owner-
+      approved price ladder is pending. The entity carries no Offer, rating or
+      review. Absent everywhere else, so the existing rich-result evidence gate
+      remains unchanged for every sibling. */
+  emitQuoteOnlyProduct?: boolean;
+  /** LC-05 (16 Aug 2026) - allow Next's responsive image pipeline for a page whose
+      gallery assets are local WebPs. Absent/false preserves the deployed bypass
+      decision byte-for-byte on every sibling product. */
+  optimizeLocalGalleryImages?: boolean;
   /** Middle segment of the buy-box trust strip. Default (absent) → preset, else the
       deployed literal "5-yr structural warranty" (flagship byte-identical). */
   trustWarranty?: string;

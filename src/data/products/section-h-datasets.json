@@ -2181,5 +2181,43 @@
       ],
       "imageAlt": "Prefab labour camp, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the bolted panel camp build."
     }
+  },
+  "accommodation-container": {
+    "20x8": {
+      "h2": "20x8 ft Converted Container for a Small Resident Crew",
+      "intro": "This is the smallest unit we build, and it starts life as a used 20 ft shipping container. We strip the donor shell, repair corrosion, cut and reinforce the openings, then insulate and line it. At 8 ft internal width the plan runs one bunk line down one side with a walking aisle beside it. Site managers choose it for a gate crew, a security detail or a supervisor pair, and for sites where the crane window is short and the unit must land in one lift.",
+      "h3": "",
+      "applications": []
+    },
+    "20x10": {
+      "h2": "20x10 ft Wide-Body Sleeping Module on a Short Footprint",
+      "intro": "At 10 ft width the plan changes completely. Two bunk runs face each other across a central aisle, so the same length holds a materially larger crew and people can pass without turning sideways. No shipping container is made 10 ft wide, so we fabricate this one from MS corrugated sheet on a new steel frame. It is the reference size for our specification and the one most sites start with when the footprint is tight but the headcount is not.",
+      "h3": "",
+      "applications": []
+    },
+    "30x10": {
+      "h2": "30x10 ft Wide-Body Module for a Camp That Stays Put",
+      "intro": "Thirty feet gives you room the 20 ft sizes cannot: a locker and storage zone at one end without stealing bunk space, and enough wall to place windows for genuine cross-ventilation. Fabricated wide-body, like every 10 ft unit. Choose it when the camp is settled for a season or more and the crew needs somewhere to keep kit dry. It also transports on a standard trailer, which the 40 ft sizes do not always do on a constrained access road.",
+      "h3": "",
+      "applications": []
+    },
+    "40x8": {
+      "h2": "40x8 ft Converted Container on a Standard ISO Footprint",
+      "intro": "The second conversion size, built on a used 40 ft shipping container. You get double the length of the 20x8 at the same 8 ft width, so the plan stays a single bunk run with a side aisle and simply runs longer. It suits sites that already handle 40 ft units and have the yard equipment and access for them. Because the donor shell is second-hand, we inspect and record its condition before quoting, and structural repair is priced against what we find.",
+      "h3": "",
+      "applications": []
+    },
+    "40x10": {
+      "h2": "40x10 ft Wide-Body Module for a Full Night Shift Crew",
+      "intro": "This is the workhorse of the range. Forty feet of length at 10 ft width gives two long bunk runs, a central aisle that stays walkable when everyone is changing at once, and enough wall for a proper window and fan layout. Fabricated wide-body. Most sites reach it when one shift no longer fits a 30 ft unit and splitting the crew across two smaller modules costs more in transport than one larger one.",
+      "h3": "",
+      "applications": []
+    },
+    "40x12": {
+      "h2": "40x12 ft Wide-Body Module with the Widest Central Aisle",
+      "intro": "The widest unit we build, and the only one where the central aisle stops being a corridor. Twelve feet leaves room for lockers along the aisle without narrowing it, which matters when a crew changes shift together rather than in ones and twos. Fabricated wide-body on a new steel frame. Check your transport route first: at 12 ft the unit is an over-dimension load on most Indian roads and needs the permit and escort arranged before dispatch.",
+      "h3": "",
+      "applications": []
+    }
   }
 }
