@@ -40,6 +40,7 @@ import knockDownPortaCabinApplications from '@/data/products/knock-down-porta-ca
 import portaCabinShopApplications from '@/data/products/porta-cabin-shop-applications.json';
 import laborColonyApplications from '@/data/products/labor-colony-applications.json';
 import laborHutmentsApplications from '@/data/products/labor-hutments-applications.json';
+import prefabSiteCanteenApplications from '@/data/products/prefab-site-canteen-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -267,6 +268,7 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // LC-01 (17 Aug 2026) - build prompt v1 section 3. Six panels, one per
   // published size.
   'labor-hutments': laborHutmentsApplications as ApplicationsData,
+  'prefab-site-canteen': prefabSiteCanteenApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([

@@ -3001,14 +3001,26 @@ export function renderProductPlanPreview(productId: string, ladderKey?: string |
  * The entry band. Placeholder copy only, each slot marked data-copy-slot.
  */
 export function renderCalculatorEntrySection(options: {
-  productId: string;
+  productId?: string;
   productName: string;
   ladderKey?: string | null;
   href?: string;
 }): string {
-  const product = productFor(options.productId as ProductId);
-  const rows = productPriceRows(product, options.ladderKey ?? product.ladderKey);
-  const entry = rows.find((row) => row.ex !== null && row.ex !== undefined);
+  // LC-06 FIX v1.1 (17 Aug 2026) — `productId` is now optional so a no-prefill
+  // route (this page's own calculator misattribution fix; also every existing
+  // UNVERIFIED_PRODUCT_ID_CLUSTERS route) can still show this entry band
+  // instead of no band at all. With no productId there is no ladder to read a
+  // price from, so `entry` stays undefined and the existing "Design your
+  // {product}" branch below renders exactly as it already does for
+  // container-cafe and every other unpriced-ladder route. Every existing
+  // caller still passes a real productId, so their output is unchanged.
+  const entry = options.productId
+    ? (() => {
+        const product = productFor(options.productId as ProductId);
+        const rows = productPriceRows(product, options.ladderKey ?? product.ladderKey);
+        return rows.find((row) => row.ex !== null && row.ex !== undefined);
+      })()
+    : undefined;
     // An in-page anchor, not a route. The whole calculator is already embedded
   // further down this page; sending the buyer to /cabin-cost-calculator threw
   // away the product context and the scroll position. The standalone route
