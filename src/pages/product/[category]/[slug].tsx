@@ -103,6 +103,11 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // byte-for-byte, plus the two extra CLUSTER_DESIGN_SLUGS-gated <hr>
   // dividers around the calculator and YMAL blocks below.
   'labor-hutments',
+  // LC-04 (17 Aug 2026) — same SAMAN instruction pattern as LC-01/LC-02: size
+  // pills and section spacing on the live (reverted) prefab-labor-camps page
+  // brought in line with the porta-cabins reference. Same opt-ins, no new
+  // styling, byte-for-byte identical to every page above.
+  'prefab-labor-camps',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
