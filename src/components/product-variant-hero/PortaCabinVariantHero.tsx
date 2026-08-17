@@ -40,7 +40,6 @@ import knockDownPortaCabinApplications from '@/data/products/knock-down-porta-ca
 import portaCabinShopApplications from '@/data/products/porta-cabin-shop-applications.json';
 import laborColonyApplications from '@/data/products/labor-colony-applications.json';
 import laborHutmentsApplications from '@/data/products/labor-hutments-applications.json';
-import prefabLaborCampsApplications from '@/data/products/prefab-labor-camps-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -268,7 +267,6 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // LC-01 (17 Aug 2026) - build prompt v1 section 3. Six panels, one per
   // published size.
   'labor-hutments': laborHutmentsApplications as ApplicationsData,
-  'prefab-labor-camps': prefabLaborCampsApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -702,8 +700,7 @@ export function PortaCabinVariantHero({
     return isC08Product && images.length === 6 ? images.slice(0, 5) : images;
   };
   const activeVariantImages = imagesForVariant(heroActive);
-  const heroGalleryHeld = data.heroGalleryHeld === true;
-  const heroImages = !heroGalleryHeld && activeVariantImages.length > 0 ? activeVariantImages : null;
+  const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
   // Columns in the thumbnail strip: the product's LARGEST thumb count across all
   // its sizes, plus the video facade thumb when the product has one. Taking the
   // maximum (not the active size's count) keeps the track constant while the size
@@ -771,7 +768,7 @@ export function PortaCabinVariantHero({
   /* so the H1 exists exactly once per page (mobile = real h1).          */
   /* ------------------------------------------------------------------ */
 
-  const galleryColumn = heroGalleryHeld ? null : (
+  const galleryColumn = (
     <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm lg:h-full lg:flex lg:flex-col">
       <div className="space-y-2 lg:flex lg:flex-1 lg:flex-col">
         <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
@@ -1305,7 +1302,6 @@ export function PortaCabinVariantHero({
             usePremiumSizeTabs={usePremiumSizeTabs}
             panelHeadingAsH2={explorerPanelHeadingAsH2}
             hidePanelImages={explorerHidePanelImages}
-            suppressImageColumn={data.explorerSuppressImageColumn === true}
           />
         </div>
         )}
@@ -1366,10 +1362,9 @@ interface SizeApplicationsExplorerProps {
   panelHeadingAsH2?: boolean;
   /** PC-02 — see `explorerHidePanelImages` on the hero. Default false. */
   hidePanelImages?: boolean;
-  suppressImageColumn?: boolean;
 }
 
-function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false, hidePanelImages = false, suppressImageColumn = false }: SizeApplicationsExplorerProps) {
+function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false, hidePanelImages = false }: SizeApplicationsExplorerProps) {
   // T25 — HARD NULL. The per-slug applications copy is owner-authored; when a
   // product has none this section renders NOTHING. It must never fall back to the
   // porta-cabins copy.
@@ -1506,8 +1501,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               aria-labelledby={`app-tab-${v.sizeSlug}`}
               aria-hidden={i !== activeIndex}
               className={cn(
-                '[grid-area:1/1] flex flex-col gap-6',
-                !suppressImageColumn && 'lg:flex-row lg:items-stretch lg:gap-10',
+                '[grid-area:1/1] flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10',
                 i === activeIndex ? 'visible' : 'invisible pointer-events-none'
               )}
             >
@@ -1519,7 +1513,6 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   ships in SSR (crawlable); the newly-active panel mounts and fetches
                   its image on demand when the tab is selected — into the already
                   reserved box, so activation is zero-CLS. */}
-              {!suppressImageColumn && (
               <div className="lg:w-[44%]">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
                   {panelImage ? (
@@ -1554,7 +1547,6 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   )}
                 </div>
               </div>
-              )}
 
               {/* RIGHT — H3, paragraph, 4 checkmark applications, data row, CTA.
                   L13 REV 2 STRUCTURAL FILL RULE: on lg+ the column distributes its
