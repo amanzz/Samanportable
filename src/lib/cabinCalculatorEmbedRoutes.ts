@@ -87,6 +87,11 @@ function resolveForLaborColony(category: string, slug?: string): ProductId {
   if (target.includes('labor-shed') || target.includes('labour-shed') || target.includes('sheds')) return 'labor-sheds';
   if (target.includes('labor-hut') || target.includes('labor-hutment') || target.includes('hutment')) return 'labor-hutments';
   if (target.includes('prefab-labor-camp') || target.includes('prefab-labour-camp') || target.includes('prefab-camp')) return 'prefab-labor-camps';
+  // LC-03 (17 Aug 2026) — without this, oil-field-camp fell through to the
+  // 'labour-colony' default, which is an isColonyProduct entry: the entry
+  // band and calculator would have silently priced from the hub's own
+  // ladder instead of this page's, while still showing this page's name.
+  if (target.includes('oil-field-camp') || target.includes('oil-field')) return 'oil-field-camp';
   return 'labour-colony';
 }
 

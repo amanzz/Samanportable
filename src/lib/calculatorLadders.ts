@@ -29,6 +29,7 @@ import portaCabinShop from '@/data/products/porta-cabin-shop.json';
 import laborColony from '@/data/products/labor-colony.json';
 import laborHutments from '@/data/products/labor-hutments.json';
 import accommodationContainer from '@/data/products/accommodation-container.json';
+import oilFieldCamp from '@/data/products/oil-field-camp.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
 import portableOffice from '@/data/products/portable-office.json';
 import modernOfficeCabin from '@/data/products/modern-office-cabin.json';
@@ -206,6 +207,10 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // LC-05 v3 (17 Aug 2026): derived from accommodation-container.json so the
   // calculator, price table and entry banner follow the page ladder.
   'accommodation-container': toRows(accommodationContainer),
+  // LC-03 (17 Aug 2026) — build prompt v1 section 10: one ROUTE_LADDERS entry,
+  // read from this route's own product JSON, using the shell price ladder as
+  // the base (priceExGst/priceInclGst on each variant are the shell figures).
+  'oil-field-camp': toRows(oilFieldCamp),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
   'portable-office': toRows(portableOffice),
   'modern-office-cabin': toRows(modernOfficeCabin),

@@ -1,0 +1,128 @@
+{
+  "id": 990025,
+  "name": "Oil Field Camp",
+  "slug": "oil-field-camp",
+  "permalink": "https://blog.samanportable.com/product/labor-colony/oil-field-camp/",
+  "date_created": "2026-08-17T00:00:00",
+  "date_created_gmt": "2026-08-16T18:30:00",
+  "date_modified": "2026-08-17T00:00:00",
+  "date_modified_gmt": "2026-08-16T18:30:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "SP-OFC-2024",
+  "price": "310000",
+  "regular_price": "310000",
+  "sale_price": "",
+  "date_on_sale_from": null,
+  "date_on_sale_from_gmt": null,
+  "date_on_sale_to": null,
+  "date_on_sale_to_gmt": null,
+  "on_sale": false,
+  "purchasable": true,
+  "total_sales": 0,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "download_limit": -1,
+  "download_expiry": -1,
+  "external_url": "",
+  "button_text": "",
+  "tax_status": "taxable",
+  "tax_class": "",
+  "manage_stock": false,
+  "stock_quantity": null,
+  "backorders": "no",
+  "backorders_allowed": false,
+  "backordered": false,
+  "low_stock_amount": null,
+  "sold_individually": false,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "shipping_required": true,
+  "shipping_taxable": true,
+  "shipping_class": "",
+  "shipping_class_id": 0,
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "upsell_ids": [],
+  "cross_sell_ids": [],
+  "parent_id": 0,
+  "purchase_note": "",
+  "categories": [
+    {
+      "id": 289,
+      "name": "Labor Colony",
+      "slug": "labor-colony"
+    }
+  ],
+  "brands": [
+    {
+      "id": 3870,
+      "name": "Saman Portable",
+      "slug": "saman-portable"
+    }
+  ],
+  "tags": [],
+  "images": [
+    {
+      "id": 0,
+      "date_created": "2026-08-17T00:00:00",
+      "date_created_gmt": "2026-08-16T18:30:00",
+      "date_modified": "2026-08-17T00:00:00",
+      "date_modified_gmt": "2026-08-16T18:30:00",
+      "src": "/images/products/oil-field-camp/20x10/oil-field-camp-20x10-front-left-hero.webp",
+      "name": "oil-field-camp-20x10-front-left-hero",
+      "alt": "20x10 ft oil field camp module in Oyster White, front left view, steel skid base and entrance steps"
+    }
+  ],
+  "attributes": [],
+  "default_attributes": [],
+  "variations": [],
+  "grouped_products": [],
+  "menu_order": 0,
+  "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#8377;</span>1,754,849.00</bdi></span>",
+  "related_ids": [],
+  "meta_data": [],
+  "stock_status": "instock",
+  "has_options": false,
+  "post_password": "",
+  "global_unique_id": "",
+  "google_listings_and_ads__channel_visibility": {
+    "is_visible": true,
+    "channel_visibility": "sync-and-show",
+    "sync_status": "synced",
+    "issues": []
+  },
+  "_links": {
+    "self": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products/3809",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://blog.samanportable.com/wp-json/wc/v3/products"
+      }
+    ]
+  },
+  "_rank_math_head": null,
+  "valueAddedTaxIncluded": true
+}

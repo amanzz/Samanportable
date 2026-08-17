@@ -36,7 +36,8 @@ export type ProductId =
   | 'labour-colony'
   | 'labor-sheds'
   | 'labor-hutments'
-  | 'prefab-labor-camps';
+  | 'prefab-labor-camps'
+  | 'oil-field-camp';
 
 export type ColonyProductSlug = 'labor-colony' | 'labor-sheds' | 'labor-hutments' | 'prefab-labor-camps';
 
@@ -246,6 +247,11 @@ export const PRODUCTS: readonly ProductDefinition[] = [
   { id: 'labor-sheds', name: 'Labour Sheds', subtitle: 'Open-hall worker dormitories' },
   { id: 'labor-hutments', name: 'Labour Hutments', subtitle: 'Room-based worker housing' },
   { id: 'prefab-labor-camps', name: 'Prefab Labour Camps', subtitle: 'Relocatable worker camp blocks' },
+  // LC-03 (17 Aug 2026) — not a colony product (isColonyProduct's bespoke
+  // multi-step flow is scoped to the four entries above): this page publishes
+  // its own six-size ladder and prices from it directly, same pattern as
+  // container-cafe above.
+  { id: 'oil-field-camp', name: 'Oil Field Camp', subtitle: 'Skid-mounted relocatable crew modules', ladderKey: 'oil-field-camp' },
 ] as const;
 
 /**
@@ -296,6 +302,7 @@ const PRODUCT_ICON: Record<ProductId, IconName> = {
   'labor-sheds': 'colony',
   'labor-hutments': 'colony',
   'prefab-labor-camps': 'colony',
+  'oil-field-camp': 'unit',
 };
 
 function productIcon(id: ProductId): string {
