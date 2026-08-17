@@ -756,6 +756,22 @@
           "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
           "differsFromHub": false
         }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/prefab-labor-camps/specifications/prefab-labour-camp-block-grid-diagram.webp",
+          "alt": "Prefab camp block grid showing dormitory, toilet, canteen, admin and store blocks",
+          "caption": "Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/specifications/prefab-labour-camp-services-spine-diagram.webp",
+          "alt": "Plug-in services diagram linking camp blocks to water, waste and power through a service spine",
+          "caption": "Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        }
       ]
     }
   }
