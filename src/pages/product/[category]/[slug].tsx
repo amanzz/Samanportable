@@ -49,7 +49,7 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
-import { LABOR_HUTMENTS_RAIL, PREFAB_SITE_CANTEEN_RAIL, OIL_FIELD_CAMP_RAIL } from '../../../lib/labourColonyClusterRail';
+import { LABOR_HUTMENTS_RAIL, PREFAB_SITE_CANTEEN_RAIL, OIL_FIELD_CAMP_RAIL, ABLUTION_BLOCK_RAIL } from '../../../lib/labourColonyClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { LABOR_SHEDS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
@@ -120,6 +120,10 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // reference. Same opt-ins, no new styling, byte-for-byte identical to
   // every page above.
   'oil-field-camp',
+  // LC-07 (17 Aug 2026) — built with the premium chip/tab design from the
+  // start, matching current cluster convention (every labor-colony page
+  // built so far ends up here). Same opt-ins, no new styling.
+  'ablution-block',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -747,6 +751,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     // to this one slug, same pattern as labor-hutments/labor-sheds above.
     if (currentSlug === 'oil-field-camp') {
       return OIL_FIELD_CAMP_RAIL;
+    }
+    // LC-07 (17 Aug 2026) - the ablution-block page's own Column 3 rail. Build
+    // prompt v1.1 section 6, cross-referencing section 9: three tabs (Prefab
+    // Labour Camps, Porta Cabin with Toilet, Portable Toilet), the latter two
+    // outside the labor-colony cluster. Scoped to this one slug.
+    if (currentSlug === 'ablution-block') {
+      return ABLUTION_BLOCK_RAIL;
     }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({

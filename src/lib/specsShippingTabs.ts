@@ -70,8 +70,12 @@ interface C01SpecificationEntry {
   diagrams?: { src: string; alt: string; caption: string; width: number; height: number }[];
   /** LC-05 - one approved diagram after a named table/group. */
   diagramsAfterGroup?: Record<string, { src: string; alt: string; caption?: string; width: number; height: number }>;
-  /** LC-05 - exact buyer-facing column labels for its two ruled tables. */
-  columnHeaders?: { first: string; second: string };
+  /** LC-05 - exact buyer-facing column labels for its two ruled tables.
+      LC-07 (17 Aug 2026) - `third`/`fourth` extend this to the two
+      four-column headers, which were previously hardcoded "Scope class" /
+      "What it means for you". Both optional, defaulting to that exact text,
+      so labor-colony (the only other four-column entry) stays byte-identical. */
+  columnHeaders?: { first: string; second: string; third?: string; fourth?: string };
   /** R4 (14 Aug 2026) — opt-in premium `.saman-table` styling on this entry's
       group tables. Absent/false on every entry except porta-cabins → the
       existing plain table markup is byte-identical elsewhere. */
@@ -214,7 +218,7 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
       : `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>`;
     const th = entry.premiumTables ? '' : ` class="${TH}"`;
     const extraHeaders = fourColumn
-      ? `<th${th}>Scope class</th><th${th}>What it means for you</th>`
+      ? `<th${th}>${esc(entry.columnHeaders?.third || 'Scope class')}</th><th${th}>${esc(entry.columnHeaders?.fourth || 'What it means for you')}</th>`
       : '';
     const card = (
       `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +

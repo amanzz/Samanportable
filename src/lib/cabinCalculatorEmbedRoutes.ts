@@ -92,6 +92,10 @@ function resolveForLaborColony(category: string, slug?: string): ProductId {
   // band and calculator would have silently priced from the hub's own
   // ladder instead of this page's, while still showing this page's name.
   if (target.includes('oil-field-camp') || target.includes('oil-field')) return 'oil-field-camp';
+  // LC-07 (17 Aug 2026) — same failure mode as LC-03's oil-field-camp fix:
+  // without this, ablution-block falls through to 'labour-colony' and
+  // silently prices from the hub's own ladder instead of its own.
+  if (target.includes('ablution-block') || target.includes('ablution')) return 'ablution-block';
   return 'labour-colony';
 }
 

@@ -1,0 +1,98 @@
+# -*- coding: utf-8 -*-
+"""LC-07 copy pack transcription + SHA-256 verification."""
+import hashlib
+import json
+
+COPY = {
+"H1": "Multi-Toilet Ablution Block for Labour Camp Sanitation",
+"SEO_TITLE": "Labour Camp Ablution Block: Six Sizes and Prices | SAMAN",
+"META_DESCRIPTION": "A multi-toilet ablution block for labour camps: six sizes from 120 to 800 sq ft, one shared plumbing manifold, and a clear line on what the price excludes.",
+"HERO_SHORT_DESCRIPTION": "A multi-toilet ablution block is one wet-service building that serves a whole camp from a single plumbing manifold. Repeated WC, shower and basin banks sit along a service route, so a fitter can isolate one bank and work on it while the rest of the block stays open. SAMAN builds it as a waterproofed steel-framed block: a membrane floor with positive fall to trapped drains, washable moisture-tolerant linings, high-level privacy ventilation and sealed vent penetrations through an insulated roof. Choose it once your camp has outgrown single toilet cabins and you want one connection point, one cleaning round and one maintenance route instead of a scatter of separate units.",
+"SECTION2_H2": "When One Wash Block Beats a Scatter of Single Toilet Cabins",
+"SECTION2_PARAGRAPH_1": "Most camps reach this page after the single cabins stop coping. Ten units mean ten water connections, ten drain runs and ten cleaning stops, and the crew still queues at the two nearest ones. A multi-toilet ablution block replaces that with one building on one manifold, planned around the wash routine rather than around what fits on a trailer. It belongs inside a wider camp layout, so plan it alongside the accommodation and the service spine on your labour colony plot.",
+"SECTION2_PARAGRAPH_2": "The block suits any project where the workforce stays long enough to justify a settled wash routine: a construction camp, a plant shutdown, a highway or transmission job, a mine, a relief deployment. Where you need sanitation for a few people at a gate, a single cabin is still the cheaper answer. Send us your headcount, your shift pattern and your drainage level, and request a fixed quotation; we return it within 48 hours.",
+"SECTION2_CARD_H3": "Choose the Depth Before You Choose the Length",
+"SECTION2_CARD_PARAGRAPH": "Length adds cubicles. Depth changes the plan. At 10 ft the block runs one bank served from one wall. At 12 ft two banks face each other across a central pipe duct, and every fixture sits nearer its isolation valve.",
+"SECTION2_CARD_BULLETS": "10 ft depth: one bank, shortest service run, smallest plot | 12 ft depth: two banks sharing one central pipe duct | 20 ft depth: dry entry lobby and split sides become possible | Every depth ships as one factory-built and wet-tested block",
+"SECTION2_CARD_CTA_TEXT": "Send your camp headcount and site levels and request a fixed quotation.",
+"SECTION2_CARD_CTA_HREF": "https://www.samanportable.com/contact",
+"VARIANT1_H2": "12x10 ft Ablution Block: The Smallest Standalone Bank",
+"VARIANT1_BODY": "The 120 sq ft block is the smallest size we build as a shared facility rather than a cabin. One bank of cubicles runs along a single serviced wall, which keeps the pipe route short and the plot small. It suits a gate, a sub-camp, or a first phase that will grow later. Because every fixture sits on one wall, a single isolation point takes the whole block out of service, so plan the second block before the camp doubles rather than after.",
+"VARIANT1_BULLETS": "Published size: 12x10 ft, 120 sq ft built-up wet-block area | Price: Rs 2,10,000 ex-GST (Rs 2,47,800 incl. 18% GST) | Plan: single-loaded, one serviced wall | Site: level standing with a clear working margin on the service side",
+"VARIANT2_H2": "16x10 ft Ablution Block: A Longer Single-Loaded Run",
+"VARIANT2_BODY": "Choose 160 sq ft when the queue is the problem and the plot is not. The plan stays single-loaded, so the block is no harder to connect than the 12x10, and the extra length simply adds fixtures along the same serviced wall. This is the usual first block on a medium camp. Keep the service side clear for its full length, because the drain run and the isolation valves all sit behind that wall and a fitter has to reach them.",
+"VARIANT2_BULLETS": "Published size: 16x10 ft, 160 sq ft built-up wet-block area | Price: Rs 2,72,000 ex-GST (Rs 3,20,960 incl. 18% GST) | Plan: single-loaded, one serviced wall | Site: full-length access along the service wall",
+"VARIANT3_H2": "24x12 ft Ablution Block: Two Banks on One Pipe Duct",
+"VARIANT3_BODY": "At 12 ft deep the plan changes completely. Two banks face each other across a central pipe duct, so supply and waste reach both sides from one spine. Each side isolates on its own, which means half the block keeps working during a repair. The 288 sq ft size is where most camps stop buying more small blocks and start buying one proper wash building. Allow access to both long walls, not only to one.",
+"VARIANT3_BULLETS": "Published size: 24x12 ft, 288 sq ft built-up wet-block area | Price: Rs 4,60,800 ex-GST (Rs 5,43,744 incl. 18% GST) | Plan: double-loaded, central pipe duct, isolation by bank | Site: working margin on both long sides",
+"VARIANT4_H2": "30x12 ft Ablution Block: The Main Camp Wash Building",
+"VARIANT4_BODY": "The 360 sq ft block is the workhorse of a settled camp. The extra length lets the wash run sit clear of the WC bank, so hand washing and shaving stop competing with cubicle queues at shift change. Circulation stays dry because the floor falls carry water away from the entry. Order this size once the camp is stable for a season or more, and when daily throughput rather than headcount alone is what you are planning around.",
+"VARIANT4_BULLETS": "Published size: 30x12 ft, 360 sq ft built-up wet-block area | Price: Rs 5,58,000 ex-GST (Rs 6,58,440 incl. 18% GST) | Plan: double-loaded, wash run separated from the WC bank | Site: working margin on both long sides",
+"VARIANT5_H2": "40x12 ft Ablution Block: More Fixtures, One Connection",
+"VARIANT5_BODY": "At 480 sq ft you are paying for fixtures rather than for building. The frame, the roof drainage and the service entry already exist, so the rate per square foot falls and each further cubicle costs less than it did on a smaller block. One connection point serves the whole facility, which keeps site trenching short. Confirm your water pressure at this size, because a long manifold with many outlets is where a weak supply shows itself first.",
+"VARIANT5_BULLETS": "Published size: 40x12 ft, 480 sq ft built-up wet-block area | Price: Rs 6,96,000 ex-GST (Rs 8,21,280 incl. 18% GST) | Plan: double-loaded, single service entry | Site: confirm supply pressure and drainage invert before order",
+"VARIANT6_H2": "40x20 ft Ablution Block: Dry Lobby and Split Sides",
+"VARIANT6_BODY": "The 800 sq ft block is a camp facility rather than a wash unit. At 20 ft deep the plan carries a dry entry lobby, and the two sides can be separated and signed independently where the project calls for gender separation. It replaces three or four smaller blocks with one cleaning round and one maintenance route. Transport moves on a 40 ft open trailer, so confirm the access route and the offloading area before you order.",
+"VARIANT6_BULLETS": "Published size: 40x20 ft, 800 sq ft built-up wet-block area | Price: Rs 10,80,000 ex-GST (Rs 12,74,400 incl. 18% GST) | Plan: double-loaded with a dry entry lobby; sides separable | Transport: 40 ft open trailer; confirm access and offloading",
+}
+
+HASHES = {
+"H1": "d1b252e77908429e0d2439d8865d2ce5e09e15a979a9b0a0cecbf310b5a99e93",
+"SEO_TITLE": "478009e50eeb296f8eb740ae42f8063e943fa616ec521985a12f728ca17708f1",
+"META_DESCRIPTION": "089a91e036f40128f34a661f7cbdecb9a48f9398acebe34f5a9bdff102dd39bf",
+"HERO_SHORT_DESCRIPTION": "4dd644a390f87902ef18fa685396fe586cedf0093ba1c7bc33a3e116e76150f8",
+"SECTION2_H2": "73dd6f4f6c62610d0c366a1c4ca2c1bbefe837e57330584cb3fedd7df8e608db",
+"SECTION2_PARAGRAPH_1": "ab24088082f1b314e3af65e86a9fb1351887ca8625d906b71dfaf8a6fab4adf1",
+"SECTION2_PARAGRAPH_2": "d07a2782f08f09bed20aa21c999d24b52fa3b2d4047bb99a7c869c0ae86c6a5b",
+"SECTION2_CARD_H3": "d646bb1d3ccedbf2a7308f923f3d1087dccae6d9063668823ff0ce8f70821f9b",
+"SECTION2_CARD_PARAGRAPH": "6d77bfc18478bf01dbb6f0349a4e84f9acb461af7e9640ec1679e19efc6896bc",
+"SECTION2_CARD_BULLETS": "d05fd991973c1c65a5ac5d329336447979f1444434816d345af2f95ccbb58cdc",
+"SECTION2_CARD_CTA_TEXT": "35af3c752d0783cc2d0362e9338c0f1ebc3c925b2a200bdd8a3652182f847207",
+"SECTION2_CARD_CTA_HREF": "058040372c3fd79507c00ed119bf3c2f632d3522483d41f2ff05b2b93c2cbc19",
+"VARIANT1_H2": "f904a5876ad5434bc6cbdd7f6b0855556521ebd72dd6eadeda0fdcbee7b167bc",
+"VARIANT1_BODY": "9f372b55a7306a5f4bc025c2c62ff201cf71615aedb3fd45bc1b11ce46266dab",
+"VARIANT1_BULLETS": "b8df78842e55ecfa926ea4ce6ae01bea73f32865d426419b0b0ce5d82ff7e402",
+"VARIANT2_H2": "38e1dc29b891d6db25705cc4a37b4d5bb14d9c79d557c93b29d78b7047fd2de8",
+"VARIANT2_BODY": "f58b1b40b2d19a2e251b8b1d670380489d236051de8835b0ac434a6e820e6b0c",
+"VARIANT2_BULLETS": "25b9a3147695100203b1e5dd0f34cef20747deadc1defe26453c4b562bcabe3a",
+"VARIANT3_H2": "ef3ad0cac7269f1339174a38775fea550fd6aca6b624a8ee19941db3b8cb762f",
+"VARIANT3_BODY": "c9105a235797d982e1d5fabd7c2e8c3eca54f4b36c3dbcf5d859bf44f804d1a7",
+"VARIANT3_BULLETS": "fd4f8345a5843039860f76481aa23dd9bf37117f1c84fce87f7fe72ada74326a",
+"VARIANT4_H2": "1e2aa82897d54d04535a4bbdf6f8bc749b6a053f532d329e17e35b9077c31380",
+"VARIANT4_BODY": "b8d7293bbe7d81716810aa438cd1e4fb426a57689c004d06556d1e1f3e9089a4",
+"VARIANT4_BULLETS": "838edd09eb957cc54e9d1c6e552c24f338426a7b83296feaca8ede810bbebe0f",
+"VARIANT5_H2": "6b4f915527802deebccc85516d4507567a751be34b77cdbedf8e801d1316cf6a",
+"VARIANT5_BODY": "24f1eb48a3d55d2854cee6d4ab8b72cb871fc4386725f13fd319a5a605e44f4b",
+"VARIANT5_BULLETS": "674d00ae4d3b493344c6e8439e225da349ec788255ecc864f78a80c74124fc56",
+"VARIANT6_H2": "b4c0bae0728124331719962b6b51beeb77397d86ab0364b90a5a12186422657d",
+"VARIANT6_BODY": "15146e8f7fa1a3446eb43e6ddb1dca95ca7f29b247372141fda6b4c6a04b30a2",
+"VARIANT6_BULLETS": "0e90b65506d56bf16c04341d939e0ec3909167d7e412d916b5da83a18218a499",
+}
+
+CHAR_COUNTS = {
+"H1": 54, "SEO_TITLE": 56, "META_DESCRIPTION": 155, "HERO_SHORT_DESCRIPTION": 677,
+"SECTION2_H2": 59, "SECTION2_PARAGRAPH_1": 473, "SECTION2_PARAGRAPH_2": 426,
+"SECTION2_CARD_H3": 45, "SECTION2_CARD_PARAGRAPH": 214, "SECTION2_CARD_BULLETS": 238,
+"SECTION2_CARD_CTA_TEXT": 71, "SECTION2_CARD_CTA_HREF": 37,
+"VARIANT1_H2": 53, "VARIANT1_BODY": 439, "VARIANT1_BULLETS": 227,
+"VARIANT2_H2": 51, "VARIANT2_BODY": 423, "VARIANT2_BULLETS": 206,
+"VARIANT3_H2": 51, "VARIANT3_BODY": 400, "VARIANT3_BULLETS": 217,
+"VARIANT4_H2": 52, "VARIANT4_BODY": 424, "VARIANT4_BULLETS": 216,
+"VARIANT5_H2": 54, "VARIANT5_BODY": 443, "VARIANT5_BULLETS": 224,
+"VARIANT6_H2": 50, "VARIANT6_BODY": 423, "VARIANT6_BULLETS": 242,
+}
+
+if __name__ == "__main__":
+    ok = True
+    for k, v in COPY.items():
+        h = hashlib.sha256(v.encode("utf-8")).hexdigest()
+        want = HASHES[k]
+        hash_ok = h == want
+        count_ok = len(v) == CHAR_COUNTS[k]
+        status = "PASS" if (hash_ok and count_ok) else "FAIL"
+        if not (hash_ok and count_ok):
+            ok = False
+        print("%-24s %-4s chars=%d/%d  sha256=%s" % (k, status, len(v), CHAR_COUNTS[k], "match" if hash_ok else "MISMATCH " + h))
+    print()
+    print("ALL PASS" if ok else "SOME FAILED")
+    json.dump(COPY, open("scripts/lc07-copy.json", "w", encoding="utf-8"), indent=2, ensure_ascii=False)
