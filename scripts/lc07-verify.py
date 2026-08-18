@@ -154,11 +154,11 @@ check('13 no rate-per-sq-ft / multiplier / control-rate language (own content, e
 fixture_number_pattern = re.findall(r'\b\d+\s*(?:WCs?|toilets?|cubicles?|urinals?|basins?|showers?|seats?|beds?|bunks?)\b', strip_tags(main_html), re.I)
 check('13 no numeric fixture/occupancy count found', not fixture_number_pattern, fixture_number_pattern or 'none found')
 
-# ── s6 PDF gate: control built and wired but disabled ────────────────────────
-check('s6 PDF button label present', 'Download the technical specification (PDF)' in html, '')
-check('s6 PDF control is disabled (button, not link)', 'aria-disabled="true"' in html, '')
-check('s6 PDF href NOT active (no working download anchor with this href)',
-      not re.search(r'<a[^>]+href="[^"]*multi-toilet-ablution-block-technical-specification-priced\.pdf"', html), '')
+# ── PDF published active on explicit follow-up instruction (18 Aug) ──────────
+check('PDF button label present', 'Download the technical specification (PDF)' in html, '')
+check('PDF control is an active working link, not disabled',
+      bool(re.search(r'<a[^>]+href="[^"]*multi-toilet-ablution-block-technical-specification-priced\.pdf"', html)), '')
+check('PDF control not rendered disabled', 'aria-disabled="true"' not in html, '')
 
 # ── schema (s10): Product/Offer present, no FAQPage unless visible FAQs match ─
 check('s10 Product/Offer schema present', '"@type":"Product"' in html or '"@type": "Product"' in html or '"priceCurrency":"INR"' in html, '')

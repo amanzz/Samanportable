@@ -57,10 +57,9 @@ for size in SIZES:
     order = WIDE_ORDER if size in ("40x12", "40x20") else STANDARD_ORDER
     explorer_template[size] = img_by_slot["gallery-%s-%s" % (size, order[0])]["out"]
 
-# specPdfHref: control is built and wired, but per section 4c PDF gate, both
-# reviewer fields inside the PDF still read PENDING, so the download control
-# renders disabled -- handled in the hero component via specPdfDisabled, not
-# by omitting specPdfHref (the ticket says "built and wired", not "held").
+# specPdfHref: the PDF's own reviewer fields still read PENDING/DRAFT, but
+# published active on explicit follow-up instruction after being flagged,
+# same disposition as the LC-03/LC-04 PDFs earlier in this project.
 product = {
     "productSlug": "ablution-block",
     "productName": "Multi-Toilet Ablution Block",
@@ -75,7 +74,6 @@ product = {
     "priceCaption": "Base specification price; fixture schedule and site services quoted separately.",
     # P01: "filename unchanged" per section 4c, unlike every other asset.
     "specPdfHref": "/downloads/multi-toilet-ablution-block-technical-specification-priced.pdf",
-    "specPdfDisabled": True,
     "specPdfButtonLabel": "Download the technical specification (PDF)",
     "h1": COPY["H1"],
     "seoTitle": COPY["SEO_TITLE"],
