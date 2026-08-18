@@ -37,7 +37,8 @@ export type ProductId =
   | 'labor-sheds'
   | 'labor-hutments'
   | 'prefab-labor-camps'
-  | 'oil-field-camp';
+  | 'oil-field-camp'
+  | 'ablution-block';
 
 export type ColonyProductSlug = 'labor-colony' | 'labor-sheds' | 'labor-hutments' | 'prefab-labor-camps';
 
@@ -252,6 +253,9 @@ export const PRODUCTS: readonly ProductDefinition[] = [
   // its own six-size ladder and prices from it directly, same pattern as
   // container-cafe above.
   { id: 'oil-field-camp', name: 'Oil Field Camp', subtitle: 'Skid-mounted relocatable crew modules', ladderKey: 'oil-field-camp' },
+  // LC-07 (17 Aug 2026) — not a colony product: publishes its own six-size
+  // ladder and prices from it directly, same pattern as oil-field-camp above.
+  { id: 'ablution-block', name: 'Multi-Toilet Ablution Block', subtitle: 'Camp wet-service and sanitation block', ladderKey: 'ablution-block' },
 ] as const;
 
 /**
@@ -303,6 +307,9 @@ const PRODUCT_ICON: Record<ProductId, IconName> = {
   'labor-hutments': 'colony',
   'prefab-labor-camps': 'colony',
   'oil-field-camp': 'colony',
+  // LC-07 (17 Aug 2026) — matches every other labor-colony-cluster product's
+  // icon; no IconName value fits a wet-service block more specifically.
+  'ablution-block': 'colony',
 };
 
 function productIcon(id: ProductId): string {

@@ -42,6 +42,7 @@ import laborColonyApplications from '@/data/products/labor-colony-applications.j
 import laborHutmentsApplications from '@/data/products/labor-hutments-applications.json';
 import prefabSiteCanteenApplications from '@/data/products/prefab-site-canteen-applications.json';
 import oilFieldCampApplications from '@/data/products/oil-field-camp-applications.json';
+import ablutionBlockApplications from '@/data/products/ablution-block-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -274,6 +275,10 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // published size. Registered after every earlier entry, per the documented
   // PC-01 failure mode (silent key overwrite if registered before it).
   'oil-field-camp': oilFieldCampApplications as ApplicationsData,
+  // LC-07 (17 Aug 2026) - build prompt v1.1 section 6. Six panels, one per
+  // published size. Registered after every earlier entry, per the documented
+  // PC-01 failure mode (silent key overwrite if registered before it).
+  'ablution-block': ablutionBlockApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([

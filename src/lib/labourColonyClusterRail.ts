@@ -176,3 +176,38 @@ export const OIL_FIELD_CAMP_RAIL: RelatedRailItem[] = [
     imageAlt: 'Labor Sheds by SAMAN Portable, exterior view',
   },
 ];
+
+// LC-07 (17 Aug 2026) - the ablution-block page's own Column 3 rail (build
+// prompt v1.1 section 6, cross-referencing section 9's link map): Prefab
+// Labour Camps, Porta Cabin with Toilet, Portable Toilet, in that order.
+// The latter two are outside the labor-colony cluster, so title/href/image
+// are each sibling's own live product data same as every rail above; blurb
+// is required by RelatedRailItem but is not rendered anywhere by
+// RelatedProductRail.tsx (confirmed by reading the component), so this is
+// dead data structurally, not visible copy.
+export const ABLUTION_BLOCK_RAIL: RelatedRailItem[] = [
+  {
+    title: 'Prefab Labour Camps',
+    href: '/product/labor-colony/prefab-labor-camps',
+    category: 'Labour Colony',
+    blurb: 'A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project.',
+    imageSrc: '/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp',
+    imageAlt: 'Prefab Labor Camps by SAMAN Portable, exterior view',
+  },
+  {
+    title: 'Porta Cabin with Toilet',
+    href: '/product/porta-cabins/porta-cabin-with-toilet',
+    category: 'Porta Cabins',
+    blurb: 'The SAMAN porta cabin with toilet is one factory-built MS cabin that carries its own washroom.',
+    imageSrc: '/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-hero-view.webp',
+    imageAlt: 'Cream 10x10 porta cabin with toilet, main door, grille window and separate end toilet door',
+  },
+  {
+    title: 'Portable Toilet',
+    href: '/product/portable-toilet',
+    category: 'Portable Toilet',
+    blurb: 'A standalone MS portable toilet unit for a single location.',
+    imageSrc: '/images/product-heroes/portable-toilet/green-shed-under-bright-midday-sun.jpeg',
+    imageAlt: 'MS portable toilet corrugated steel single unit grey factory yard SAMAN',
+  },
+];

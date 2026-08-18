@@ -1023,6 +1023,37 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },
+  'ablution-block': {
+    heading: 'When One Wash Block Beats a Scatter of Single Toilet Cabins',
+    bodyParagraphs: [
+      (
+        <>
+          Most camps reach this page after the single cabins stop coping. Ten units mean ten water connections, ten drain runs and ten cleaning stops, and the crew still queues at the two nearest ones. A multi-toilet ablution block replaces that with one building on one manifold, planned around the wash routine rather than around what fits on a trailer. It belongs inside a wider camp layout, so plan it alongside the accommodation and the service spine on your <Link className={linkClass} href={LABOUR_COLONY_HREF}>labour colony</Link> plot.
+        </>
+      ),
+      (
+        <>
+          The block suits any project where the workforce stays long enough to justify a settled wash routine: a construction camp, a plant shutdown, a highway or transmission job, a mine, a relief deployment. Where you need sanitation for a few people at a gate, a single cabin is still the cheaper answer. Send us your headcount, your shift pattern and your drainage level, and <Link className={linkClass} href="/contact">request a fixed quotation</Link>; we return it within 48 hours.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/ablution-block/section2/ablution-block-split-card-camp-context.webp',
+      imageAlt: 'Ablution block installed on an Indian labour camp site, entry and service side both visible',
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: 'Choose the Depth Before You Choose the Length',
+      body: 'Length adds cubicles. Depth changes the plan. At 10 ft the block runs one bank served from one wall. At 12 ft two banks face each other across a central pipe duct, and every fixture sits nearer its isolation valve.',
+      bullets: [
+        '10 ft depth: one bank, shortest service run, smallest plot',
+        '12 ft depth: two banks sharing one central pipe duct',
+        '20 ft depth: dry entry lobby and split sides become possible',
+        'Every depth ships as one factory-built and wet-tested block',
+      ],
+      ctaLabel: 'Send your camp headcount and site levels and request a fixed quotation.',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
 };
 
 export const hasRightToExistEntry = (slug: string): boolean =>

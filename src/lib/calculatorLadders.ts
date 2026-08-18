@@ -30,6 +30,7 @@ import laborColony from '@/data/products/labor-colony.json';
 import laborHutments from '@/data/products/labor-hutments.json';
 import accommodationContainer from '@/data/products/accommodation-container.json';
 import oilFieldCamp from '@/data/products/oil-field-camp.json';
+import ablutionBlock from '@/data/products/ablution-block.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
 import portableOffice from '@/data/products/portable-office.json';
 import modernOfficeCabin from '@/data/products/modern-office-cabin.json';
@@ -211,6 +212,10 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // read from this route's own product JSON, using the shell price ladder as
   // the base (priceExGst/priceInclGst on each variant are the shell figures).
   'oil-field-camp': toRows(oilFieldCamp),
+  // LC-07 (17 Aug 2026) — build prompt v1.1 section 8: one ROUTE_LADDERS
+  // entry, read from this route's own product JSON. From-price banner
+  // derives and must read Rs 2,10,000 ex-GST (the 12x10 ft shell price).
+  'ablution-block': toRows(ablutionBlock),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
   'portable-office': toRows(portableOffice),
   'modern-office-cabin': toRows(modernOfficeCabin),
