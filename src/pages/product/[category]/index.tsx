@@ -45,7 +45,7 @@ import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 import { PORTA_CABIN_HUB_RAIL } from '../../../lib/portaCabinClusterRail';
-import { LABOR_COLONY_HUB_RAIL } from '../../../lib/labourColonyClusterRail';
+import { getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
@@ -560,11 +560,12 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
     if (category === 'porta-cabins') {
       return PORTA_CABIN_HUB_RAIL;
     }
-    // LC-00 (16 Aug 2026) — the labour colony hub's own Column 3 rail, build
-    // prompt v1 section 4.3: exactly three tabs, not the live related-products
-    // list (which would otherwise pull in unbuilt sibling URLs).
+    // LC-07 fix v3 (17 Aug 2026) - SAMAN ruling: the Explore the Range panel
+    // shows the current page's own cluster and nothing else. Same derived
+    // rail as every labor-colony subpage in [slug].tsx; the hub's own tile
+    // is filtered out by passing its own slug as currentSlug.
     if (category === 'labor-colony') {
-      return LABOR_COLONY_HUB_RAIL;
+      return getLabourColonyClusterRail('labor-colony');
     }
 
     return transformedRelatedProducts.map((relatedProduct) => ({
