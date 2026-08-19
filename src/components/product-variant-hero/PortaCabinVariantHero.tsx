@@ -899,7 +899,16 @@ export function PortaCabinVariantHero({
             the strip — the row keeps a constant height and CLS stays 0.
             Full class names (never an interpolated `grid-cols-${n}`) so Tailwind's
             scanner emits them. */}
-        {heroImages && (
+        {/* CO-00 (19 Aug 2026) — a product whose largest per-variant image count
+            is 1 (no real thumbnail to browse) previously still rendered a
+            grid-cols-1 thumbnail row, and a single aspect-square thumbnail at
+            full track width is visually indistinguishable from a second copy
+            of the hero image stacked underneath it. Suppressing the row when
+            there is nothing to browse to (thumbTrackCount <= 1, no video)
+            fixes that for any such product; every existing product has at
+            least 2 images per variant, so this is unreached and byte-identical
+            everywhere else. */}
+        {heroImages && thumbTrackCount > 1 && (
           <div className={GALLERY_TRACK_CLASS[thumbTrackCount] || 'grid grid-cols-5 gap-2'}>
             {heroImages.map((img, i) => (
               <button
