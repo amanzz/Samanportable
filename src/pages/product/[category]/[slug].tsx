@@ -49,9 +49,8 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
-import { LABOR_HUTMENTS_RAIL, PREFAB_SITE_CANTEEN_RAIL, OIL_FIELD_CAMP_RAIL, ABLUTION_BLOCK_RAIL } from '../../../lib/labourColonyClusterRail';
+import { isLabourColonyClusterSlug, getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
-import { LABOR_SHEDS_RAIL } from '../../../lib/labourColonyClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
@@ -721,43 +720,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     }
     // PC-09's own knock-down rail stood here and is folded in above too.
 
-    // LC-02 (16 Aug 2026) - this page's own rail (hub, Labour Hutments, Prefab
-    // Labour Camps, in that order), fixing a live defect: the derived rail
-    // below was missing the hub link and showed the two siblings reversed.
-    // Scoped to this one page only; every other labor-colony page keeps its
-    // existing derived rail, unchanged.
-    if (currentSlug === 'labor-sheds') {
-      return LABOR_SHEDS_RAIL;
-    }
-    if (currentSlug === 'accommodation-container') {
-      return LABOR_SHEDS_RAIL;
-    }
-    // LC-01 (17 Aug 2026) - the hutments page's own Column 3 rail. Build prompt
-    // v1 section 4, hero column 3: exactly three tabs (Labour Sheds, Labour
-    // Colony, Prefab Labour Camps), not the live related-products list. Scoped
-    // to this one slug; the porta-cabins cluster's derived-rail consistency
-    // ruling above does not apply to the labour-colony cluster.
-    if (currentSlug === 'labor-hutments') {
-      return LABOR_HUTMENTS_RAIL;
-    }
-    // LC-06 (17 Aug 2026) - this page's own rail (build prompt v1 s4): Prefab
-    // Labour Camps, Labour Sheds, Labour Colony, in that exact order.
-    if (currentSlug === 'prefab-site-canteen') {
-      return PREFAB_SITE_CANTEEN_RAIL;
-    }
-    // LC-03 (17 Aug 2026) - the oil-field-camp page's own Column 3 rail. Build
-    // prompt v1 section 2, Column 3: exactly three tabs (Prefab Labor Camps,
-    // Labour Colony, Labor Sheds), not the live related-products list. Scoped
-    // to this one slug, same pattern as labor-hutments/labor-sheds above.
-    if (currentSlug === 'oil-field-camp') {
-      return OIL_FIELD_CAMP_RAIL;
-    }
-    // LC-07 (17 Aug 2026) - the ablution-block page's own Column 3 rail. Build
-    // prompt v1.1 section 6, cross-referencing section 9: three tabs (Prefab
-    // Labour Camps, Porta Cabin with Toilet, Portable Toilet), the latter two
-    // outside the labor-colony cluster. Scoped to this one slug.
-    if (currentSlug === 'ablution-block') {
-      return ABLUTION_BLOCK_RAIL;
+    // LC-07 fix v3 (17 Aug 2026) - SAMAN ruling: the Explore the Range panel
+    // shows the current page's own cluster and nothing else. One derived rail
+    // for all eight Labour Colony pages (hub + seven subpages), current page
+    // filtered out - replaces six hand-authored per-slug branches that had
+    // drifted out of sync with each other (see labourColonyClusterRail.ts).
+    if (isLabourColonyClusterSlug(currentSlug)) {
+      return getLabourColonyClusterRail(currentSlug);
     }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({

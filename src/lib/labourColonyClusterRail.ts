@@ -1,56 +1,31 @@
-// LC-00 (16 Aug 2026) — the labour colony hub's own Column 3 rail. Build prompt
-// v1 section 4.3 names exactly three tabs, in this order: Labour Sheds, Labour
-// Hutments, Prefab Labour Camps — not oil field camp, accommodation container,
-// prefab site canteen or ablution block, which 404 until built. Title, href and
-// image come from each sibling's own live product data; blurb is that sibling's
-// own already-approved opener, first sentence only, so no new copy is authored
-// here.
+// LC-07 fix v3 (17 Aug 2026) - SAMAN ruling: the Explore the Range panel shows
+// the current page's own cluster and nothing else. No cross-cluster tiles.
+// Supersedes the eight hand-authored per-page rail constants this file used
+// to hold (LABOR_COLONY_HUB_RAIL, LABOR_SHEDS_RAIL, LABOR_HUTMENTS_RAIL,
+// PREFAB_SITE_CANTEEN_RAIL, OIL_FIELD_CAMP_RAIL, ABLUTION_BLOCK_RAIL) - those
+// drifted out of sync with each other (different curated sets, one page
+// reusing a sibling's list, one page falling through to a generic derived
+// list that showed the whole catalogue) because each was authored by hand,
+// once, per page. One derived rail now serves all eight pages: same ordered
+// list, current page filtered out, so by construction no panel can drift
+// from another or link to itself.
+//
+// Title, href, image and imageAlt for every entry are each destination's own
+// live product data (first-variant hero, same pattern already in use
+// elsewhere on the site) - no new copy authored here. Tile labels use the
+// Indian "labour" spelling per the 17 Aug 2026 ruling even on pages whose
+// slug/productName field uses the American "labor" spelling (labor-hutments,
+// prefab-labor-camps) - that combination is correct, not a defect.
 import type { RelatedRailItem } from './c16PanelCatalog';
 
-export const LABOR_COLONY_HUB_RAIL: RelatedRailItem[] = [
-  {
-    title: 'Labour Sheds',
-    href: '/product/labor-colony/labor-sheds',
-    category: 'Labour Colony',
-    blurb: 'A labour shed is the open-hall version of SAMAN worker housing: one clear sleeping hall per floor with central aisles, built as a light portal-frame steel building with PPGI cladding and high-level ventilation.',
-    imageSrc: '/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Labor Sheds by SAMAN Portable, exterior view',
-  },
-  {
-    title: 'Labour Hutments',
-    href: '/product/labor-colony/labor-hutments',
-    category: 'Labour Colony',
-    // LC-01 (17 Aug 2026) — blurb and image updated to match the rewritten page:
-    // the old colony-block six-size ladder (60x24-gplus1 etc.) is withdrawn from
-    // this route, so the image this card pointed to no longer exists. New blurb
-    // is this sibling's own approved opener, first sentence only, same
-    // convention as the other two cards.
-    blurb: 'A labour hutment is one small sleeping unit, built complete in the factory and set down on its own plinth.',
-    imageSrc: '/images/products/labor-hutments/10x10/labor-hutments-10x10-front-right-three-quarter.webp',
-    imageAlt: 'Labor Hutments by SAMAN Portable, exterior view',
-  },
-  {
-    title: 'Prefab Labour Camps',
-    href: '/product/labor-colony/prefab-labor-camps',
-    category: 'Labour Colony',
-    blurb: 'A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project.',
-    imageSrc: '/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Prefab Labor Camps by SAMAN Portable, exterior view',
-  },
-];
+type LabourColonyClusterPage = RelatedRailItem & { slug: string };
 
-// LC-02 (16 Aug 2026) — the labor-sheds page's own Column 3 rail (build prompt
-// v1 s4 row 3): Labour Colony (hub), Labour Hutments, Prefab Labour Camps, in
-// that order, self excluded. The live page's rail was missing the hub link
-// entirely and showed the two siblings in the opposite order — a real defect
-// this rewrite fixes, scoped to this one page only (mirrors the PC-09
-// knock-down-porta-cabin precedent: a dedicated rail constant, gated by slug
-// in [slug].tsx, rather than touching the generic derived-rail path every
-// other labor-colony page still uses). Images and blurbs are each
-// destination's own already-approved asset/opener first sentence, reused
-// verbatim from LABOR_COLONY_HUB_RAIL and labor-colony.json — no new copy.
-export const LABOR_SHEDS_RAIL: RelatedRailItem[] = [
+// Approved-plan order, hub first. This ordering is the single source of
+// truth for every page's panel - each page's own tile is filtered out at
+// render time, so the remaining seven always appear in this relative order.
+const LABOUR_COLONY_CLUSTER_PAGES: LabourColonyClusterPage[] = [
   {
+    slug: 'labor-colony',
     title: 'Labour Colony',
     href: '/product/labor-colony',
     category: 'Labour Colony',
@@ -59,155 +34,83 @@ export const LABOR_SHEDS_RAIL: RelatedRailItem[] = [
     imageAlt: 'Two-storey labour colony block with cream panels, grey steel frame and railed walkways on both levels',
   },
   {
+    slug: 'labor-hutments',
     title: 'Labour Hutments',
     href: '/product/labor-colony/labor-hutments',
     category: 'Labour Colony',
-    // Merge note (17 Aug 2026) — reused LC-01's own rewritten blurb/image
-    // (LABOR_COLONY_HUB_RAIL above) rather than the pre-LC-01 pair this
-    // entry was authored against, which pointed at the retired six-size
-    // ladder's now-removed image.
     blurb: 'A labour hutment is one small sleeping unit, built complete in the factory and set down on its own plinth.',
-    imageSrc: '/images/products/labor-hutments/10x10/labor-hutments-10x10-front-right-three-quarter.webp',
-    imageAlt: 'Labor Hutments by SAMAN Portable, exterior view',
+    imageSrc: '/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp',
+    imageAlt: 'Front elevation of a 10x10 ft single-storey labour hutment, ivory wall panels with charcoal steel trim.',
   },
   {
-    title: 'Prefab Labour Camps',
-    href: '/product/labor-colony/prefab-labor-camps',
-    category: 'Labour Colony',
-    blurb: 'A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project.',
-    imageSrc: '/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Prefab Labor Camps by SAMAN Portable, exterior view',
-  },
-];
-
-// LC-01 (17 Aug 2026) - the hutments page's own Column 3 rail. Build prompt v1
-// section 4, hero column 3: exactly three tabs, in this order: Labour Sheds,
-// Labour Colony, Prefab Labour Camps. Title, href and image come from each
-// sibling's own live product data; blurb is that sibling's own already-approved
-// opener, first sentence(s) only, so no new copy is authored here.
-export const LABOR_HUTMENTS_RAIL: RelatedRailItem[] = [
-  {
+    slug: 'labor-sheds',
     title: 'Labour Sheds',
-    href: '/product/labor-colony/labor-sheds',
-    category: 'Labour Colony',
-    blurb: 'A labour shed is the open-hall version of SAMAN worker housing: one clear sleeping hall per floor with central aisles, built as a light portal-frame steel building with PPGI cladding and high-level ventilation.',
-    imageSrc: '/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Labor Sheds by SAMAN Portable, exterior view',
-  },
-  {
-    title: 'Labour Colony',
-    href: '/product/labor-colony',
-    category: 'Labour Colony',
-    blurb: 'A labour colony is a whole worker housing site. It is not one building.',
-    imageSrc: '/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Labour Colony by SAMAN Portable, worker housing site',
-  },
-  {
-    title: 'Prefab Labour Camps',
-    href: '/product/labor-colony/prefab-labor-camps',
-    category: 'Labour Colony',
-    blurb: 'A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project.',
-    imageSrc: '/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Prefab Labor Camps by SAMAN Portable, exterior view',
-  },
-];
-
-// LC-06 (17 Aug 2026) - the canteen page's own Column 3 rail (build prompt v1
-// s4): Prefab Labour Camps, Labour Sheds, Labour Colony, in that exact order.
-// Oil Field Camp, Accommodation Container and Multi-Toilet Ablution Block are
-// explicitly excluded (all three 404, unpublished). Title, href, image and
-// blurb reused verbatim from the entries already established above for these
-// same three destinations - no new copy authored here.
-export const PREFAB_SITE_CANTEEN_RAIL: RelatedRailItem[] = [
-  {
-    title: 'Prefab Labour Camps',
-    href: '/product/labor-colony/prefab-labor-camps',
-    category: 'Labour Colony',
-    blurb: 'A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project.',
-    imageSrc: '/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Prefab Labor Camps by SAMAN Portable, exterior view',
-  },
-  {
-    title: 'Labour Sheds',
-    href: '/product/labor-colony/labor-sheds',
-    category: 'Labour Colony',
-    blurb: 'A labour shed is the open-hall version of SAMAN worker housing: one clear sleeping hall per floor with central aisles, built as a light portal-frame steel building with PPGI cladding and high-level ventilation.',
-    imageSrc: '/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Labor Sheds by SAMAN Portable, exterior view',
-  },
-  {
-    title: 'Labour Colony',
-    href: '/product/labor-colony',
-    category: 'Labour Colony',
-    blurb: 'A labour colony is a whole worker housing site. It is not one building.',
-    imageSrc: '/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Labour Colony by SAMAN Portable, worker housing site',
-  },
-];
-
-// LC-03 (17 Aug 2026) — the oil-field-camp page's own Column 3 rail (build
-// prompt v1 s2, Column 3): Prefab Labor Camps, Labour Colony, Labor Sheds, in
-// that order, self excluded. Title, href and image come from each sibling's
-// own live product data; blurb is that sibling's own already-approved
-// opener, first sentence only, so no new copy is authored here.
-export const OIL_FIELD_CAMP_RAIL: RelatedRailItem[] = [
-  {
-    title: 'Prefab Labor Camps',
-    href: '/product/labor-colony/prefab-labor-camps',
-    category: 'Labour Colony',
-    blurb: 'A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project.',
-    imageSrc: '/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Prefab Labor Camps by SAMAN Portable, exterior view',
-  },
-  {
-    title: 'Labour Colony',
-    href: '/product/labor-colony',
-    category: 'Labour Colony',
-    blurb: 'A labour colony is a whole worker housing site. It is not one building.',
-    imageSrc: '/images/products/labor-colony/60x24-gplus1/labor-colony-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Labour Colony by SAMAN Portable, worker housing site',
-  },
-  {
-    title: 'Labor Sheds',
     href: '/product/labor-colony/labor-sheds',
     category: 'Labour Colony',
     blurb: 'A labour shed is one undivided sleeping hall under a single roof.',
     imageSrc: '/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp',
-    imageAlt: 'Labor Sheds by SAMAN Portable, exterior view',
+    imageAlt: '20x10 ft labour shed in ivory white cladding, front-left view, with a continuous louvre band under the eaves',
   },
-];
-
-// LC-07 (17 Aug 2026) - the ablution-block page's own Column 3 rail (build
-// prompt v1.1 section 6, cross-referencing section 9's link map): Prefab
-// Labour Camps, Porta Cabin with Toilet, Portable Toilet, in that order.
-// The latter two are outside the labor-colony cluster, so title/href/image
-// are each sibling's own live product data same as every rail above; blurb
-// is required by RelatedRailItem but is not rendered anywhere by
-// RelatedProductRail.tsx (confirmed by reading the component), so this is
-// dead data structurally, not visible copy.
-export const ABLUTION_BLOCK_RAIL: RelatedRailItem[] = [
   {
+    slug: 'oil-field-camp',
+    title: 'Oil Field Camp',
+    href: '/product/labor-colony/oil-field-camp',
+    category: 'Labour Colony',
+    blurb: 'An oil field camp module houses a drilling or well-site crew on a location that will not stay put.',
+    imageSrc: '/images/products/oil-field-camp/20x10/oil-field-camp-20x10-front-left-hero.webp',
+    imageAlt: '20x10 ft oil field camp module in Oyster White, front left view, steel skid base and entrance steps',
+  },
+  {
+    slug: 'prefab-labor-camps',
     title: 'Prefab Labour Camps',
     href: '/product/labor-colony/prefab-labor-camps',
     category: 'Labour Colony',
     blurb: 'A prefab labour camp is the relocatable build in the SAMAN worker housing family: bolted light-steel panels on pedestal footings, with repeatable door and window modules and plug-and-play electrical blocks, so the same camp dismantles and re-erects at the next project.',
     imageSrc: '/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp',
-    imageAlt: 'Prefab Labor Camps by SAMAN Portable, exterior view',
+    imageAlt: 'Prefab labour camp, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the bolted panel camp build in view.',
   },
   {
-    title: 'Porta Cabin with Toilet',
-    href: '/product/porta-cabins/porta-cabin-with-toilet',
-    category: 'Porta Cabins',
-    blurb: 'The SAMAN porta cabin with toilet is one factory-built MS cabin that carries its own washroom.',
-    imageSrc: '/images/products/porta-cabin-with-toilet/10x10/porta-cabin-with-toilet-10x10-hero-view.webp',
-    imageAlt: 'Cream 10x10 porta cabin with toilet, main door, grille window and separate end toilet door',
+    slug: 'accommodation-container',
+    title: 'Accommodation Container',
+    href: '/product/labor-colony/accommodation-container',
+    category: 'Labour Colony',
+    blurb: 'SAMAN builds the Accommodation Container as a transportable steel sleeping module for project workforces.',
+    imageSrc: '/images/products/accommodation-container/20x8/lc05-20x8-hero.webp',
+    imageAlt: 'Dove grey 20x8 ft converted shipping container with teal corner posts, front left view',
   },
   {
-    title: 'Portable Toilet',
-    href: '/product/portable-toilet',
-    category: 'Portable Toilet',
-    blurb: 'A standalone MS portable toilet unit for a single location.',
-    imageSrc: '/images/product-heroes/portable-toilet/green-shed-under-bright-midday-sun.jpeg',
-    imageAlt: 'MS portable toilet corrugated steel single unit grey factory yard SAMAN',
+    slug: 'prefab-site-canteen',
+    title: 'Prefab Site Canteen',
+    href: '/product/labor-colony/prefab-site-canteen',
+    category: 'Labour Colony',
+    blurb: 'A prefab site canteen from SAMAN is the building your workforce eats in, not the kitchen business that feeds them.',
+    imageSrc: '/images/products/prefab-site-canteen/20x10/canteen-20x10-01-front-elevation.webp',
+    imageAlt: 'Bone white prefab site canteen with roof exhaust cowl on a compacted site',
+  },
+  {
+    slug: 'ablution-block',
+    title: 'Multi-Toilet Ablution Block',
+    href: '/product/labor-colony/ablution-block',
+    category: 'Labour Colony',
+    blurb: 'A multi-toilet ablution block is one wet-service building that serves a whole camp from a single plumbing manifold.',
+    imageSrc: '/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp',
+    imageAlt: 'Cornflower Blue 12x10 ft ablution block, front left three-quarter view, white trim and high-level privacy louvres',
   },
 ];
+
+const LABOUR_COLONY_CLUSTER_SLUGS = new Set(LABOUR_COLONY_CLUSTER_PAGES.map((p) => p.slug));
+
+/** True for the hub slug and every one of the eight C05 subpage slugs. */
+export const isLabourColonyClusterSlug = (slug: string): boolean =>
+  LABOUR_COLONY_CLUSTER_SLUGS.has(slug);
+
+/**
+ * The Explore the Range panel for any Labour Colony cluster page: every one
+ * of the eight approved pages, hub first, in approved-plan order, with the
+ * current page filtered out. Same list for all eight call sites - a page
+ * cannot drift from its siblings or link to itself.
+ */
+export const getLabourColonyClusterRail = (currentSlug: string): RelatedRailItem[] =>
+  LABOUR_COLONY_CLUSTER_PAGES.filter((p) => p.slug !== currentSlug).map(
+    ({ slug: _slug, ...item }) => item
+  );
