@@ -309,14 +309,21 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
   },
   // CO-00 (19 Aug 2026) — build-prompt-v1 §3.4, verbatim, character-count
-  // verified (H2 60/60, P1 394, P2 424, total 818 against the ticket's own
-  // stated 819 — reported as a one-character ticket-arithmetic discrepancy,
-  // copy carried exactly as written per the ticket's own Rule 1). The single
-  // approved link sits on "the shipping container office" in paragraph 2, per
-  // §7 row 1. No subheading/body/bullets copy was supplied in the build
-  // prompt for the split card's right-hand panel (§6.2 supplies only the
-  // image) — rendered with image + CTA only rather than inventing card copy;
-  // flagged in the build report as a gap for the content model to fill.
+  // verified (H2 60/60, P1 394, P2 424, rendered total 818 across two
+  // separate <p> elements — addendum v1.1 §1.1 confirms 818 is correct and
+  // corrects the ticket's own 819, which had summed the two paragraphs with
+  // a synthetic joining space that does not exist in the DOM). The single
+  // approved link sits on "the shipping container office" in paragraph 2,
+  // per §7 row 1.
+  //
+  // Split card right panel: H3 + 3 bullets supplied by addendum v1.1 §1.2
+  // (the original ticket supplied only the card image). Per the addendum,
+  // this panel is a "component region for rapid data transfer" outside the
+  // Section 2 body's 800-900 char / two-paragraph / no-bullets rule — the
+  // body above is unchanged at 818 chars, two paragraphs, no bullets. The
+  // addendum flags this bullets-in-a-split-card placement as a recorded
+  // judgement call for the SEO reviewer, not a settled standard; if reviewed
+  // as inside Section 2's body, the three bullets come out and the H3 stays.
   'container-offices': {
     heading: 'Why start on this page instead of one container office model',
     bodyParagraphs: [
@@ -336,6 +343,12 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       imageAlt: 'Three container offices of increasing length standing on a gravel yard beside an industrial shed',
       imageWidth: 1672,
       imageHeight: 941,
+      subheading: 'Three answers that decide your container office',
+      bullets: [
+        'Shell: a fabricated steel module, or a converted ISO freight container',
+        'Duty: fixed in one compound, or relocated between project phases',
+        'Load: occupancy, air-conditioning, and any UPS or server equipment',
+      ],
       ctaLabel: 'Send us your site details and get a project quote',
       ctaHref: 'https://www.samanportable.com/contact',
     },
