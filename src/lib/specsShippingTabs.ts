@@ -76,6 +76,13 @@ interface C01SpecificationEntry {
       "What it means for you". Both optional, defaulting to that exact text,
       so labor-colony (the only other four-column entry) stays byte-identical. */
   columnHeaders?: { first: string; second: string; third?: string; fourth?: string };
+  /** CO-00 (19 Aug 2026) — per-group override for the 3rd/4th four-column
+      headers, keyed by group name. Falls back to `columnHeaders` and then the
+      hardcoded default when a group has no entry here. Needed when an entry's
+      two four-column tables use different 3rd-column labels (e.g. "Section /
+      size / thickness" vs "Specification"). Absent on every other entry
+      (labor-colony has one table, one header set) → byte-identical elsewhere. */
+  groupColumnHeaders?: Record<string, { third?: string; fourth?: string }>;
   /** R4 (14 Aug 2026) — opt-in premium `.saman-table` styling on this entry's
       group tables. Absent/false on every entry except porta-cabins → the
       existing plain table markup is byte-identical elsewhere. */
@@ -217,8 +224,9 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
       ? `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>`
       : `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>`;
     const th = entry.premiumTables ? '' : ` class="${TH}"`;
+    const groupHeaders = entry.groupColumnHeaders?.[group];
     const extraHeaders = fourColumn
-      ? `<th${th}>${esc(entry.columnHeaders?.third || 'Scope class')}</th><th${th}>${esc(entry.columnHeaders?.fourth || 'What it means for you')}</th>`
+      ? `<th${th}>${esc(groupHeaders?.third || entry.columnHeaders?.third || 'Scope class')}</th><th${th}>${esc(groupHeaders?.fourth || entry.columnHeaders?.fourth || 'What it means for you')}</th>`
       : '';
     const card = (
       `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +

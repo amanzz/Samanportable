@@ -308,14 +308,50 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>If you expect to add units or extend later, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>repeatable module line</Link> earns its premium over a fixed plan.</>
     ),
   },
+  // CO-00 (19 Aug 2026) — build-prompt-v1 §3.4, verbatim, character-count
+  // verified (H2 60/60, P1 394, P2 424, rendered total 818 across two
+  // separate <p> elements — addendum v1.1 §1.1 confirms 818 is correct and
+  // corrects the ticket's own 819, which had summed the two paragraphs with
+  // a synthetic joining space that does not exist in the DOM). The single
+  // approved link sits on "the shipping container office" in paragraph 2,
+  // per §7 row 1.
+  //
+  // Split card right panel: H3 + 3 bullets supplied by addendum v1.1 §1.2
+  // (the original ticket supplied only the card image). Per the addendum,
+  // this panel is a "component region for rapid data transfer" outside the
+  // Section 2 body's 800-900 char / two-paragraph / no-bullets rule — the
+  // body above is unchanged at 818 chars, two paragraphs, no bullets. The
+  // addendum flags this bullets-in-a-split-card placement as a recorded
+  // judgement call for the SEO reviewer, not a settled standard; if reviewed
+  // as inside Section 2's body, the three bullets come out and the H3 stays.
   'container-offices': {
-    heading: 'Why the range page instead of one model',
-    body: (
-      <>This page holds the whole container office range so a buyer can set the cabin, shipping-form and site-office builds against each other before committing to one. All three are newly fabricated steel modules from our own works, differing in duty, layout and finish rather than in platform. Start here when you know the need but not yet the model.</>
-    ),
-    comparison: (
-      <>Already certain a construction site office is the job? <Link className={linkClass} href={containerOfficeHref('site-office-container')}>The dedicated site office page</Link> carries that build alone.</>
-    ),
+    heading: 'Why start on this page instead of one container office model',
+    bodyParagraphs: [
+      (
+        <>
+          Most buyers arrive knowing they want a steel office module and not knowing which one. The decision rarely turns on price. It turns on whether your shell must be a converted freight container, how often the unit will be relocated, how many people work inside it, and what your electrical load looks like once the drawings are frozen. Fix those four answers and the size follows almost by itself.
+        </>
+      ),
+      (
+        <>
+          This hub covers the standard fabricated container office at six footprints. If your structural shell must be a genuine ISO freight container, with the corner castings and cargo-door end that come with it, <Link className={linkClass} href={containerOfficeHref('shipping-container-office')}>the shipping container office</Link> is the right build and a different specification. Tell us the site, the occupancy and the electrical load you expect, and we will size the module with you and put the exclusions in writing.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/container-offices/section2/co-00-container-offices-ld01-range-comparison-line-16x9.webp',
+      imageAlt: 'Three container offices of increasing length standing on a gravel yard beside an industrial shed',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'Three answers that decide your container office',
+      bullets: [
+        'Shell: a fabricated steel module, or a converted ISO freight container',
+        'Duty: fixed in one compound, or relocated between project phases',
+        'Load: occupancy, air-conditioning, and any UPS or server equipment',
+      ],
+      ctaLabel: 'Send us your site details and get a project quote',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'container-office-cabin': {
     heading: 'Why the cabin model earns its own page',

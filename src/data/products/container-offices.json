@@ -5,64 +5,94 @@
   "hsn": "9406",
   "gstPercent": 18,
   "emitAggregateOffer": true,
-  "specPdfHref": "/specs/container-offices-technical-specification.pdf",
   "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
+  "h1": "Container Offices Built, Fitted and Delivered in India",
+  "seoTitle": "Container Office Sizes, Build, Rates and Fit-Out | SAMAN",
+  "metaDescription": "Compare SAMAN container office sizes from 10x10 to 40x10 ft, with steel specifications, published rates, inclusions and site notes before you ask for a quote.",
+  "opener": "A container office is a steel office module built on a welded MS frame, insulated, wired and finished before it leaves our works. SAMAN builds them for construction, industrial, logistics and commercial sites across India. This page is the selection page for the range. It publishes the standard six-configuration ladder, the structural members behind each module, and the boundary between this standard office and our specialist container products. Use it to fix your footprint, your opening schedule and your service load before you ask for a price. Where a converted freight shell, a site-duty build or a value-line cabin suits you better, the comparison below says so plainly rather than selling you the nearest option.",
   "variants": [
     {
       "sizeSlug": "10x10",
       "label": "10x10 ft",
       "dims": "10x10x8.5 ft",
       "areaSqft": 100,
-      "priceExGst": 159500,
-      "priceInclGst": 188210,
-      "capacity": "~1–2 people",
-      "useCase": "Gate & supervisor office",
+      "priceExGst": 166750,
+      "priceInclGst": 196765,
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-hero-view.webp",
-          "alt": "Grey and navy two-tone container office, 10x10 ft, three-quarter exterior view with twin sliding windows",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/10x10/co-00-container-office-10x10-cream-exterior.webp",
+          "alt": "Cream 10x10 ft container office with a black base rail, one door and two sliding windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-front-angle.webp",
-          "alt": "Cream-panelled 10x10 ft container office seen from the front corner on a paved yard",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/10x10/co-00-container-office-10x10-grey-navy-elevation.webp",
+          "alt": "Grey 10x10 ft container office with a navy blue lower band, flat front elevation with one door and two windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-side-elevation.webp",
-          "alt": "Dark grey side elevation of a compact 10x10 ft container office with a single entry door",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/10x10/co-00-container-office-10x10-white-maroon-exterior.webp",
+          "alt": "White 10x10 ft container office with a maroon lower band, standing on a paved path lined with trees",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-workspace-interior.webp",
-          "alt": "Inside a 10x10 ft container office: timber desk against the window wall with task chair",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/10x10/co-00-container-office-10x10-teal-exterior.webp",
+          "alt": "Teal 10x10 ft container office on a paved plaza in front of a glazed commercial building",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-corner-interior.webp",
-          "alt": "Corner desk arrangement inside a 10x10 ft container office, two workstations meeting at the wall",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/10x10/co-00-container-office-10x10-interior-workspace.webp",
+          "alt": "Interior of a 10x10 ft container office with a single desk, wall art and a storage cabinet",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/10x10/container-offices-10x10-team-interior.webp",
-          "alt": "Two facing desks fitted into a 10x10 ft container office interior with white wall panels",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/10x10/co-00-container-office-10x10-interior-desk-visitor-chairs.webp",
+          "alt": "Desk with laptop and two visitor chairs inside a 10x10 ft container office, with a wall storage unit",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The compact container office, one supervisor room in a crane-movable steel shell. Drops onto any levelled pad at a plant gate, weighbridge or small site and is working the same day."
+      "featureCells": [
+        {
+          "label": "Sizes available",
+          "value": "Six configurations, 100 to 400 sq.ft."
+        },
+        {
+          "label": "Reference rate",
+          "value": "Rs 1,450 per sq.ft. at 200 sq.ft., ex-GST"
+        },
+        {
+          "label": "Structure",
+          "value": "150x75x5 mm MS C-channel base frame"
+        },
+        {
+          "label": "Insulation",
+          "value": "75 mm wall, 100 mm roof, mineral or glass wool"
+        },
+        {
+          "label": "Electrical",
+          "value": "DB with MCB/RCCB, LED lighting, dedicated AC circuit"
+        }
+      ],
+      "sectionH2": "10x10 ft Container Office for One Desk and a Visitor",
+      "sectionBody": "At 100 sq.ft. this is the smallest module we build as a working office. One desk, one visitor chair and a storage unit fit comfortably; a second workstation does not. Site engineers and security supervisors take this size most often, because it lifts onto a small plinth and needs no crane road closure. The near-square footprint means the door and the window compete for the same wall, so agree the opening schedule early. Rate carries the below-200 sq.ft. premium.",
+      "sectionBullets": [
+        "100 sq.ft. floor area",
+        "Rs 1,66,750 ex-GST",
+        "One workstation, one visitor",
+        "Fits a compact plinth or bearer pair"
+      ]
     },
     {
       "sizeSlug": "20x8",
@@ -71,54 +101,81 @@
       "areaSqft": 160,
       "priceExGst": 255200,
       "priceInclGst": 301136,
-      "capacity": "~2–3 people",
-      "useCase": "Slim site office",
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-hero-view.webp",
-          "alt": "Blue and grey 20x8 ft container office photographed at an angle showing door and window band",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x8/co-00-container-office-20x8-olive-mustard-exterior.webp",
+          "alt": "Olive green 20x8 ft container office with a mustard lower band, steel support legs and a substation behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-front-angle.webp",
-          "alt": "Yellow-finished 20x8 ft container office, front corner view on open hardstanding",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x8/co-00-container-office-20x8-olive-khaki-elevated-view.webp",
+          "alt": "Olive green and khaki 20x8 ft container office on steel support legs, elevated view in a plaza near a substation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-side-elevation.webp",
-          "alt": "Long dark grey side wall of a 20x8 ft container office with evenly spaced windows",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x8/co-00-container-office-20x8-dark-grey-exterior.webp",
+          "alt": "Dark grey 20x8 ft container office on steel support legs against a plain curved white wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-workspace-interior.webp",
-          "alt": "Single workstation with monitor inside a 20x8 ft container office, walls in white liner panel",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x8/co-00-container-office-20x8-oxide-red-elevation.webp",
+          "alt": "Oxide red 20x8 ft container office, flat front elevation on a paved plaza with a reflecting pool behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-team-interior.webp",
-          "alt": "Row of desks running the length of a 20x8 ft container office interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x8/co-00-container-office-20x8-interior-meeting-space.webp",
+          "alt": "Desk and a round meeting table with two chairs inside a 20x8 ft container office, storage cabinet at the rear",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x8/container-offices-20x8-corner-interior.webp",
-          "alt": "Partitioned desk bays inside a 20x8 ft container office, screens dividing each seat",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x8/co-00-container-office-20x8-interior-corridor-desk.webp",
+          "alt": "Long corridor interior of a 20x8 ft container office with a dark wood desk and wall cabinet at the far end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The slim site unit: a 20-ft-class module that rides a standard trailer and fits tight laydown areas; one to two workstations with storage."
+      "featureCells": [
+        {
+          "label": "Sizes available",
+          "value": "Six configurations, 100 to 400 sq.ft."
+        },
+        {
+          "label": "Reference rate",
+          "value": "Rs 1,450 per sq.ft. at 200 sq.ft., ex-GST"
+        },
+        {
+          "label": "Structure",
+          "value": "150x75x5 mm MS C-channel base frame"
+        },
+        {
+          "label": "Insulation",
+          "value": "75 mm wall, 100 mm roof, mineral or glass wool"
+        },
+        {
+          "label": "Electrical",
+          "value": "DB with MCB/RCCB, LED lighting, dedicated AC circuit"
+        }
+      ],
+      "sectionH2": "20x8 ft Container Office for Narrow Site Boundaries",
+      "sectionBody": "The 20x8 module suits sites where the boundary, not the budget, sets the limit. At 160 sq.ft. it takes two desks along one wall with a clear walking line beside them. Because it matches the footprint of a standard 20 ft freight container, it moves on ordinary trailers and drops into compounds that will not take a wide-body unit. The narrower span also keeps the floor frame stiff under filing loads.",
+      "sectionBullets": [
+        "160 sq.ft. floor area",
+        "Rs 2,55,200 ex-GST",
+        "Two desks in line",
+        "Standard 20 ft transport envelope"
+      ]
     },
     {
       "sizeSlug": "20x10",
@@ -127,110 +184,81 @@
       "areaSqft": 200,
       "priceExGst": 290000,
       "priceInclGst": 342200,
-      "capacity": "~3–4 people",
-      "useCase": "Standard project office",
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-hero-view.webp",
-          "alt": "Green-painted 20x10 ft container office, hero exterior angle with corrugated steel cladding",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x10/co-00-container-office-20x10-powder-blue-dark-green-exterior.webp",
+          "alt": "Powder blue 20x10 ft container office with a dark green lower band and a warehouse behind it",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-front-angle.webp",
-          "alt": "White 20x10 ft container office viewed from the front with dark trim around openings",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x10/co-00-container-office-20x10-tan-charcoal-exterior.webp",
+          "alt": "Tan 20x10 ft container office with a charcoal lower band, parked in front of an industrial warehouse",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-side-elevation.webp",
-          "alt": "Black side elevation of a 20x10 ft container office, matt finish and flush window frames",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x10/co-00-container-office-20x10-white-exterior.webp",
+          "alt": "White 20x10 ft container office with a black base rail, standing against a plain industrial wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-workspace-interior.webp",
-          "alt": "Executive desk with visitor chairs inside a 20x10 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x10/co-00-container-office-20x10-dark-grey-plaza.webp",
+          "alt": "Dark grey 20x10 ft container office on a paved plaza in front of a curved glass-fronted building",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-corner-interior.webp",
-          "alt": "L-shaped corner desk fitted inside a 20x10 ft container office interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x10/co-00-container-office-20x10-interior-desk-storage.webp",
+          "alt": "Grey-toned interior of a 20x10 ft container office with an executive desk and a dark storage cabinet",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/20x10/container-offices-20x10-entrance-interior.webp",
-          "alt": "View towards the entry door of a 20x10 ft container office with a desk beside the doorway",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/20x10/co-00-container-office-20x10-interior-two-desks.webp",
+          "alt": "Two workstations inside a 20x10 ft container office with a sea view visible through the window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The standard project office. The size most site teams specify: 3–4 workstations, files and a visitor chair in one lift-and-place container unit."
-    },
-    {
-      "sizeSlug": "20x12",
-      "label": "20x12 ft",
-      "dims": "20x12x8.5 ft",
-      "areaSqft": 240,
-      "priceExGst": 334080,
-      "priceInclGst": 394214,
-      "capacity": "~4–5 people",
-      "useCase": "Office with meeting room",
-      "sku": "SP-20-CO-2024",
-      "images": [
+      "featureCells": [
         {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-hero-view.webp",
-          "alt": "Turquoise 20x12 ft container office, three-quarter hero view on level paving",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Sizes available",
+          "value": "Six configurations, 100 to 400 sq.ft."
         },
         {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-front-angle.webp",
-          "alt": "White-bodied 20x12 ft container office with dark plinth, front corner perspective",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Reference rate",
+          "value": "Rs 1,450 per sq.ft. at 200 sq.ft., ex-GST"
         },
         {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-side-elevation.webp",
-          "alt": "Dark grey 20x12 ft container office standing on grass, full side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Structure",
+          "value": "150x75x5 mm MS C-channel base frame"
         },
         {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-workspace-interior.webp",
-          "alt": "Workstation with dual monitors inside a 20x12 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Insulation",
+          "value": "75 mm wall, 100 mm roof, mineral or glass wool"
         },
         {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-team-interior.webp",
-          "alt": "Paired desks for two staff inside a 20x12 ft container office interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/container-offices/20x12/container-offices-20x12-meeting-interior.webp",
-          "alt": "Small meeting desk with chairs set up inside a 20x12 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Electrical",
+          "value": "DB with MCB/RCCB, LED lighting, dedicated AC circuit"
         }
       ],
-      "shortDescription": "Extra width for a meeting table beside the workstations, one container module, no site construction."
+      "sectionH2": "20x10 ft Container Office, the Size Most Orders Start From",
+      "sectionBody": "This is the reference configuration for the whole range, and the size our published rate is calculated from. Two hundred square feet gives you three workstations, or two plus a small meeting table, without the room feeling like a corridor. The extra two feet of width over the 20x8 changes how desks face each other, which matters more in daily use than the area figure suggests. Every specification on this page is drawn against this module.",
+      "sectionBullets": [
+        "200 sq.ft. floor area",
+        "Rs 2,90,000 ex-GST",
+        "Three workstations or two plus meeting",
+        "Reference size for all published rates"
+      ]
     },
     {
       "sizeSlug": "30x10",
@@ -239,279 +267,307 @@
       "areaSqft": 300,
       "priceExGst": 417600,
       "priceInclGst": 492768,
-      "capacity": "~5–6 people",
-      "useCase": "Multi-desk engineering office",
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-hero-view.webp",
-          "alt": "Green 30x10 ft container office at a port-side location, hero exterior angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/30x10/co-00-container-office-30x10-mustard-tan-exterior.webp",
+          "alt": "Mustard tan 30x10 ft container office with a black base rail, one door and four windows, arid hills behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-front-angle.webp",
-          "alt": "Yellow 30x10 ft container office with a multi-window front band",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/30x10/co-00-container-office-30x10-dark-grey-exterior.webp",
+          "alt": "Dark grey 30x10 ft container office with three windows and one door, standing beside a rail yard",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-side-elevation.webp",
-          "alt": "Blue-grey side elevation of a 30x10 ft container office with three window bays",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/30x10/co-00-container-office-30x10-oxide-red-exterior.webp",
+          "alt": "Oxide red 30x10 ft container office with four windows and one door, standing beside a rail yard",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-workspace-interior.webp",
-          "alt": "Executive workstation at the end wall of a 30x10 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/30x10/co-00-container-office-30x10-sage-green-charcoal-exterior.webp",
+          "alt": "Sage green 30x10 ft container office with a charcoal lower band, gantry cranes visible in the background",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-team-interior.webp",
-          "alt": "Open-plan desk layout inside a 30x10 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/30x10/co-00-container-office-30x10-interior-multi-desk.webp",
+          "alt": "Multiple workstations with monitors inside a 30x10 ft container office, storage cabinets along the wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/30x10/container-offices-30x10-corner-interior.webp",
-          "alt": "Desks grouped along the corner of a 30x10 ft container office interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/30x10/co-00-container-office-30x10-interior-desk-meeting-zone.webp",
+          "alt": "Executive desk in the foreground of a 30x10 ft container office with a four-seat meeting table beyond a partition",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The multi-desk unit: engineer + documentation bays in a single 30-ft steel module, still one crane lift."
+      "featureCells": [
+        {
+          "label": "Sizes available",
+          "value": "Six configurations, 100 to 400 sq.ft."
+        },
+        {
+          "label": "Reference rate",
+          "value": "Rs 1,450 per sq.ft. at 200 sq.ft., ex-GST"
+        },
+        {
+          "label": "Structure",
+          "value": "150x75x5 mm MS C-channel base frame"
+        },
+        {
+          "label": "Insulation",
+          "value": "75 mm wall, 100 mm roof, mineral or glass wool"
+        },
+        {
+          "label": "Electrical",
+          "value": "DB with MCB/RCCB, LED lighting, dedicated AC circuit"
+        }
+      ],
+      "sectionH2": "30x10 ft Container Office That Splits Into Two Rooms",
+      "sectionBody": "Three hundred square feet is the first size where a partition earns its place. A manager's cabin at one end and an open bay at the other is the layout we build most often here. The partition changes the electrical drawing as well as the plan, because each room needs its own lighting circuit and switch position. Confirm the partition line before fabrication starts; moving it afterwards means opening the ceiling.",
+      "sectionBullets": [
+        "300 sq.ft. floor area",
+        "Rs 4,17,600 ex-GST",
+        "Supports one internal partition",
+        "Separate lighting circuit per room"
+      ]
     },
     {
       "sizeSlug": "40x8",
       "label": "40x8 ft",
       "dims": "40x8x8.5 ft",
       "areaSqft": 320,
-      "priceExGst": 436160,
-      "priceInclGst": 514669,
-      "capacity": "~5–6 people",
-      "useCase": "Corridor office, ports & yards",
+      "priceExGst": 440800,
+      "priceInclGst": 520144,
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-hero-view.webp",
-          "alt": "White 40x8 ft container office, long hero exterior with continuous window line",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x8/co-00-container-office-40x8-light-grey-charcoal-exterior.webp",
+          "alt": "Light grey 40x8 ft container office with a charcoal lower band, six windows with white grilles and steel legs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-front-angle.webp",
-          "alt": "Cream and green 40x8 ft container office seen from the front corner",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x8/co-00-container-office-40x8-light-grey-charcoal-elevation.webp",
+          "alt": "Light grey 40x8 ft container office with a charcoal lower band, flat front elevation against a warehouse wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-elevated-view.webp",
-          "alt": "Elevated view over an olive-toned 40x8 ft container office showing the full roofline",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x8/co-00-container-office-40x8-white-dark-green-exterior.webp",
+          "alt": "White 40x8 ft container office with a dark green lower band, on a paved courtyard beside a landscaped pond",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-workspace-interior.webp",
-          "alt": "Single desk placed midway along a 40x8 ft container office corridor interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x8/co-00-container-office-40x8-grey-charcoal-parking-lot.webp",
+          "alt": "Light grey 40x8 ft container office with a charcoal lower band and barred windows, parked on an empty lot",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-team-interior.webp",
-          "alt": "Desk row seating several staff inside a 40x8 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x8/co-00-container-office-40x8-interior-long-corridor-desk.webp",
+          "alt": "Long corridor interior of a 40x8 ft container office lined with windows on both sides, single desk at the far end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x8/container-offices-40x8-corner-interior.webp",
-          "alt": "Desk and wall-mounted screen in the corner of a 40x8 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x8/co-00-container-office-40x8-interior-partitioned-workstations.webp",
+          "alt": "Blue-walled interior of a 40x8 ft container office with partitioned workstations and a printer station",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The 40-ft-class slim office. A corridor-style admin run for ports, yards and linear sites; travels on a 40-ft trailer."
-    },
-    {
-      "sizeSlug": "20x20",
-      "label": "20x20 ft",
-      "dims": "20x20x8.5 ft",
-      "areaSqft": 400,
-      "priceExGst": 545200,
-      "priceInclGst": 643336,
-      "capacity": "~7–8 people",
-      "useCase": "Two-bay office floor",
-      "sku": "SP-20-CO-2024",
-      "images": [
+      "featureCells": [
         {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-hero-view.webp",
-          "alt": "Dark green 20x20 ft container office, square-format hero exterior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Sizes available",
+          "value": "Six configurations, 100 to 400 sq.ft."
         },
         {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-front-angle.webp",
-          "alt": "Orange and yellow two-tone 20x20 ft container office from the front corner",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Reference rate",
+          "value": "Rs 1,450 per sq.ft. at 200 sq.ft., ex-GST"
         },
         {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-side-elevation.webp",
-          "alt": "Beige 20x20 ft container office beside a bridge, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Structure",
+          "value": "150x75x5 mm MS C-channel base frame"
         },
         {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-workspace-interior.webp",
-          "alt": "Desk against a planted feature wall inside a 20x20 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Insulation",
+          "value": "75 mm wall, 100 mm roof, mineral or glass wool"
         },
         {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-team-interior.webp",
-          "alt": "Two desks arranged face-to-face inside a 20x20 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/container-offices/20x20/container-offices-20x20-corner-interior.webp",
-          "alt": "Workstations along two walls of a 20x20 ft container office interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Electrical",
+          "value": "DB with MCB/RCCB, LED lighting, dedicated AC circuit"
         }
       ],
-      "shortDescription": "Twin-module square footprint. A two-bay office floor assembled from container modules, ODC-planned delivery."
+      "sectionH2": "40x8 ft Container Office for Long, Narrow Compounds",
+      "sectionBody": "The 40x8 gives you 320 sq.ft. in the narrowest band we build at full length. It suits a line of desks against one wall, which is why contractors use it as a document and drawing office. The narrow span limits how you can partition it, so treat it as one long room rather than two. It travels on the same trailer as a 40 ft container and needs the matching turning circle on site, which is the constraint that catches most buyers out on a tight compound.",
+      "sectionBullets": [
+        "320 sq.ft. floor area",
+        "Rs 4,40,800 ex-GST",
+        "One long room, limited partitioning",
+        "40 ft transport envelope"
+      ]
     },
     {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
       "dims": "40x10x8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 545200,
-      "priceInclGst": 643336,
-      "capacity": "~7–8 people",
-      "useCase": "Large-site admin office",
+      "priceExGst": 551000,
+      "priceInclGst": 650180,
       "sku": "SP-20-CO-2024",
       "images": [
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-hero-view.webp",
-          "alt": "White 40x10 ft container office, hero exterior along the access road",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x10/co-00-container-office-40x10-slate-blue-elevation.webp",
+          "alt": "Slate blue 40x10 ft container office photographed as a flat side elevation against a plain warehouse wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-front-angle.webp",
-          "alt": "Cream 40x10 ft container office with green base band, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x10/co-00-container-office-40x10-slate-blue-exterior.webp",
+          "alt": "Slate blue 40x10 ft container office, three-quarter exterior view with five windows and one door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-side-elevation.webp",
-          "alt": "Flat-fronted blue 40x10 ft container office, complete side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x10/co-00-container-office-40x10-cream-terracotta-exterior.webp",
+          "alt": "Cream 40x10 ft container office with a terracotta lower band, photographed inside a steel-framed warehouse",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-workspace-interior.webp",
-          "alt": "Desk run fitted along one wall of a 40x10 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x10/co-00-container-office-40x10-beige-dark-green-exterior.webp",
+          "alt": "Beige 40x10 ft container office with a dark green lower band, on a paved plaza with bare trees behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-team-interior.webp",
-          "alt": "Open desks for a working team inside a 40x10 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x10/co-00-container-office-40x10-interior-manager-desk-open-bay.webp",
+          "alt": "Manager desk with a visitor chair in the foreground of a 40x10 ft container office, a second desk visible in the open bay beyond",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/container-offices/40x10/container-offices-40x10-corner-interior.webp",
-          "alt": "Dark-finished desks meeting in the corner of a 40x10 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/container-offices/40x10/co-00-container-office-40x10-interior-open-floor-desks.webp",
+          "alt": "Dark wood-floored open bay inside a 40x10 ft container office with multiple desks and container units visible outside",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The full 40-ft project office, team floor with manager partition option; the standard large-site administration unit."
-    },
-    {
-      "sizeSlug": "40x12",
-      "label": "40x12 ft",
-      "dims": "40x12x8.5 ft",
-      "areaSqft": 480,
-      "priceExGst": 640320,
-      "priceInclGst": 755578,
-      "capacity": "~9–10 people",
-      "useCase": "Largest single-module office",
-      "sku": "SP-20-CO-2024",
-      "images": [
+      "featureCells": [
         {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-hero-view.webp",
-          "alt": "Sage green 40x12 ft container office, wide hero exterior angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Sizes available",
+          "value": "Six configurations, 100 to 400 sq.ft."
         },
         {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-front-angle.webp",
-          "alt": "White 40x12 ft container office viewed from the front on open ground",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Reference rate",
+          "value": "Rs 1,450 per sq.ft. at 200 sq.ft., ex-GST"
         },
         {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-side-elevation.webp",
-          "alt": "Dark grey 40x12 ft container office against a glazed building, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Structure",
+          "value": "150x75x5 mm MS C-channel base frame"
         },
         {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-workspace-interior.webp",
-          "alt": "Single managed workstation inside a 40x12 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Insulation",
+          "value": "75 mm wall, 100 mm roof, mineral or glass wool"
         },
         {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-team-interior.webp",
-          "alt": "Bank of workstations inside a 40x12 ft container office interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/container-offices/40x12/container-offices-40x12-corner-interior.webp",
-          "alt": "Desks set against a green accent wall in a 40x12 ft container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Electrical",
+          "value": "DB with MCB/RCCB, LED lighting, dedicated AC circuit"
         }
       ],
-      "shortDescription": "The largest single module: 480 sq ft of office in one engineered steel unit before you stack or join modules."
+      "sectionH2": "40x10 ft Container Office for a Complete Project Team",
+      "sectionBody": "Four hundred square feet is the largest single module in this range, and the point where most projects stop adding units and start planning one building. It holds an open workstation bay and a partitioned manager's cabin comfortably. Above this size we would usually place two modules end to end or move you to a multi-storey build, because a single longer unit becomes difficult to lift and to transport safely.",
+      "sectionBullets": [
+        "400 sq.ft. floor area",
+        "Rs 5,51,000 ex-GST",
+        "Open bay plus partitioned cabin",
+        "Largest single module in this range"
+      ]
     }
   ],
-  "explorerImageTemplate": "/images/products/container-offices/{sizeSlug}/container-offices-{sizeSlug}-hero-view.webp"
+  "explorerImageTemplate": {
+    "10x10": "/images/products/container-offices/10x10/co-00-container-office-10x10-cream-exterior.webp",
+    "20x8": "/images/products/container-offices/20x8/co-00-container-office-20x8-olive-mustard-exterior.webp",
+    "20x10": "/images/products/container-offices/20x10/co-00-container-office-20x10-powder-blue-dark-green-exterior.webp",
+    "30x10": "/images/products/container-offices/30x10/co-00-container-office-30x10-mustard-tan-exterior.webp",
+    "40x8": "/images/products/container-offices/40x8/co-00-container-office-40x8-light-grey-charcoal-exterior.webp",
+    "40x10": "/images/products/container-offices/40x10/co-00-container-office-40x10-slate-blue-elevation.webp"
+  },
+  "descriptionHtml": "<h2>What a container office is, and what it is not</h2><p>A container office is a steel office module. We build it on a welded mild steel frame, clad it, insulate it, wire it and finish it inside our works. It arrives as a finished room on a truck. You lift it onto a prepared base and connect the power.</p><p>That is not the same thing as a shipping container with a door cut into it. Most modules on this page are fabricated from new steel to a container form factor. They borrow the proportions, the corner castings and the handling method. They do not start life carrying freight.</p><p>The difference matters commercially. A fabricated module gives you a clean shell, a known steel history and openings framed where you want them. A converted freight shell gives you the genuine article, with the provenance some clients ask for. Both are honest choices, and we build both.</p><h2>The six configurations, and how the rate moves with area</h2><p>We publish six footprints. They run from 100 to 400 square feet, and they cover the great majority of what sites actually order. Each one is the same controlled platform. What changes is the floor area, the opening schedule and how the inside can be divided.</p><p>Our rate is calculated from the 20x10 ft module at 200 square feet. Below that size the rate per square foot rises, because the fixed content of a module does not shrink with the floor. A door, a distribution board, a frame and a coating system cost roughly the same at 100 square feet as at 200. Above 200 square feet the rate falls, for the same reason in reverse.</p><table><thead><tr><th>Size</th><th>Area</th><th>Rate per sq.ft.</th><th>Price ex-GST</th></tr></thead><tbody><tr><td>10x10x8.5 ft</td><td>100 sq.ft.</td><td>Rs 1,667.50</td><td>Rs 1,66,750</td></tr><tr><td>20x8x8.5 ft</td><td>160 sq.ft.</td><td>Rs 1,595.00</td><td>Rs 2,55,200</td></tr><tr><td>20x10x8.5 ft</td><td>200 sq.ft.</td><td>Rs 1,450.00</td><td>Rs 2,90,000</td></tr><tr><td>30x10x8.5 ft</td><td>300 sq.ft.</td><td>Rs 1,392.00</td><td>Rs 4,17,600</td></tr><tr><td>40x8x8.5 ft</td><td>320 sq.ft.</td><td>Rs 1,377.50</td><td>Rs 4,40,800</td></tr><tr><td>40x10x8.5 ft</td><td>400 sq.ft.</td><td>Rs 1,377.50</td><td>Rs 5,51,000</td></tr></tbody></table><p><em>Rates are workbook-controlled budgetary figures, ex-GST. The signed quote governs.</em></p><p><strong>Why this is a table and not prose.</strong> Six sizes, each with an area, a rate and a price, is a three-variable comparison the buyer scans rather than reads. Written as sentences it forces the reader to hold five numbers in memory to compare the sixth. This is the only table in the Description tab, and the specification tables in Tab 2 are not repeated here.</p><p>So the cheapest module is not the cheapest office. Work out your occupancy first, then read the rate. A buyer who needs three desks and orders a 20x8 to save money usually orders a second unit within the year.</p><img src=\"/images/products/container-offices/description/co-00-container-offices-ld03-40ft-workstation-manager-layout-16x9.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Interior of a 40 ft container office with an open workstation bay and a glazed partitioned manager cabin\"><h2>Which container office product actually fits your project</h2><p>This page sells the standard fabricated office. Four other decisions can pull you off it, and it is cheaper to find that out now than after a quotation.</p><h3>When the shell has to be a real freight container</h3><p>Some clients need the freight shell itself. Port and logistics work, client specifications that name ISO dimensions, and projects where the unit may later move as cargo all point that way. That is a conversion, not a fabrication, and it carries its own spec and its own price.</p><h3>When site duty is the deciding factor</h3><p>If the module will be lifted, dragged and relocated several times across a project, the build changes. Base rails, lifting points and the coating system all take more punishment. <a href=\"https://www.samanportable.com/product/container-offices/site-office-container\">our site office container</a> is specified for that life, and it is the right answer for a contractor moving offices between phases.</p><h3>When the value line is enough</h3><p>Not every office needs the full platform. Some units sit in one compound, house one or two people and never move again. For that job <a href=\"https://www.samanportable.com/product/container-offices/container-office-cabin\">the container office cabin</a> does the work at a lower rate. It is a built cabin. It has no ISO container history, and we never present it as if it did.</p><h3>When a specialist system replaces the office entirely</h3><p>Battery storage enclosures, containerised data centre shells, customer-facing marketing offices, multi-storey stacks, flat-pack kits and fold-out expandable units are separate products with separate scopes. If your requirement names one of those, this standard office is the wrong starting point. Ask us and we will point you at the right specification.</p><img src=\"/images/products/container-offices/description/co-00-container-offices-ld05-end-to-end-site-configuration-16x9.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Two container offices joined end to end on levelling blocks with a shared timber deck and two entrance steps\"><h2>How the module is built</h2><h3>Steel structure and the load path</h3><p>The base is a 150x75x5 mm mild steel C-channel perimeter. It carries the floor, the walls, the transport loads and the reactions at every support point. Inside it we run 100x50x4 mm channels and 80x40x3 mm tubular members as stiffeners, spaced to suit the floor boards and the partitions above them.</p><p>The floor frame uses 100x50x3 mm primary members with 80x40x3 mm secondaries. Corner posts are 60x60x3 mm, with 60x60x3 mm at the corners and 50x50x3 mm intermediates completing the wall frame. The top perimeter is 80x40x3 mm. Roof rafters are 60x40x2.5 mm, with 50x50x2.5 mm purlins across them.</p><p>Those numbers matter for one practical reason. Every door, window and service cut-out has to be framed and the load carried around the opening. An opening is never simply removed from a wall. If you move a window after fabrication, that framing has to move with it.</p><img src=\"/images/products/container-offices/description/co-00-container-offices-ld04-corner-construction-detail-16x9.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Close view of a charcoal container office corner showing the corner casting, base rail and window sill flashing\"><h3>Envelope, insulation and finish</h3><p>Exterior walls are 1.25 to 1.6 mm corrugated MS sheet. The roof is 1.6 mm corrugated sheet, laid to a positive fall with sealed laps and controlled rainwater discharge. Wall insulation is 75 mm mineral wool. Roof insulation is 100 mm glass wool or mineral wool.</p><p>Nominal thickness alone does not describe performance. Density, combustibility, vapour control and thermal bridging all move the result, and they are selected against your climate and your project fire strategy. We will not quote a U-value or a fire rating for an assembly we have not tested.</p><p>Inside, walls are 12 mm plywood with 0.8 to 1.0 mm laminate. The ceiling is 12.5 mm gypsum or a laminated panel. The floor base is 19 mm marine-grade plywood or 18 mm Bison panel. On top of it we lay 5 to 6 mm SPC or 3 to 4 mm LVT. Externally the module takes a red-oxide primer coat and two anti-rust enamel coats.</p><h3>Electrical and services</h3><p>Wiring is concealed PVC-insulated copper. Typical starting sizes are 1.5 sq.mm for lighting, 2.5 sq.mm for sockets and 4 sq.mm for air-conditioning and higher loads. Those are starting values only. Final conductor sizes follow your approved load schedule.</p><p>Each module carries a distribution board with MCB and RCCB protection, protective earthing, and segregated lighting, socket and air-conditioning circuits. We provide LED lighting, data points, a UPS provision, 6A and 16A sockets, fan points and a dedicated air-conditioning circuit. Plumbing is excluded unless your approved scope says otherwise.</p><img src=\"/images/products/container-offices/description/co-00-container-offices-ld02-crane-placement-prepared-plinth-16x9.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"White and blue container office on a four-point spreader beam lowering onto a concrete plinth at a construction site\"><h2>Standard, optional and excluded: where our scope stops</h2><p>Most disputes on modular orders start at the boundary, not the build. So we set it out plainly. Standard scope covers the structure, the envelope, the insulation and the internal finish. It also covers the doors and windows on the approved schedule, plus the electrical package described above.</p><p>Optional items include air-conditioning, better flooring, security grilles, insect mesh, extra partitions and branding. Custom items include odd-sized openings, heavy-duty coatings for harsh exposure, and any frame change for a special load.</p><p>Excluded unless your order states otherwise:</p><ul><li>Loose furniture and office equipment</li><li>Transport, unloading, craneage and installation</li><li>Foundations, plinths and site levelling</li><li>Site utilities up to the module connection point</li><li>Statutory approvals and project certification</li></ul><p>None of that is a hidden cost. It is a scope line. Tell us which items you want inside the order and we will price them; leave them out and the quote will say so in writing.</p><h2>Getting the site ready before the module arrives</h2><p>A container office needs a level, firm, load-bearing base. Concrete plinths, precast blocks or steel bearers all work. What matters is that the support points sit under the frame where the drawing says, and that the surface is level across the full footprint.</p><p>Water is the second thing to plan. The roof discharges rainwater at defined points, so the ground around the module has to take it away. On monsoon-season sites, raise the module enough that the step-up stays usable when the compound turns to mud.</p><p>Then check your incoming supply. We deliver the module wired to its board, ready for a single connection. The cable from your site distribution to that point is yours to provide. So is the isolator at it, unless the quote says we are doing it.</p><img src=\"/images/products/container-offices/description/co-00-container-offices-ld06-low-loader-transport-envelope-16x9.webp\" width=\"1672\" height=\"941\" loading=\"lazy\" alt=\"Container office chained to a low-loader trailer on an Indian highway beneath a concrete flyover\"><h2>Transport, craneage and site access</h2><p>Every module in this range travels as one finished unit on a flatbed or low-loader. The 40 ft sizes need the road, the gate and the turning circle that a 40 ft trailer needs. That constraint catches more buyers than any other, and it is worth checking before you choose a size.</p><p>Lifting is by crane or telehandler, from the approved lifting points only. We issue the shipped weight, the centre of gravity and the support points before dispatch. Lift from anywhere else and you distort the frame.</p><p>Transport, unloading, craneage and installation are quoted separately unless your order says so. Freight in India varies by route, vehicle and season. We would rather price it against your actual site than bury an average in the module rate.</p><h2>What we check before the module leaves the works</h2><p>Pre-dispatch inspection covers dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows and electrical continuity. We test the electrical installation for continuity, insulation resistance, polarity and RCD operation.</p><p>Punch-list items close before dispatch, not after arrival. Damaged coating is repaired at the works, where it can be done properly. That is the whole argument for factory-built offices, and it only holds if the factory finishes the job.</p><h2>What to send us so we can quote well</h2><p>A vague enquiry gets a vague number. Five inputs let us quote properly, and they take about ten minutes to gather.</p><ul><li>Delivery location and site access width</li><li>Occupancy: how many people, and what they do</li><li>Equipment load, including air-conditioning, UPS or servers</li><li>Whether the module will be relocated, and how often</li><li>Your required handover date</li></ul><p>Send those and your quote comes back with the inclusions and the exclusions written out. You will not get a rate per square foot that moves at order stage.</p><h2>Questions buyers ask before ordering</h2><h4><strong>What does a container office cost in India?</strong></h4><p>Our published rate is Rs 1,450 per square foot at the 200 sq.ft. reference size, with a premium below that area and a reduction above it. A 20x10 ft module is Rs 2,90,000 before GST. Those are workbook rates for the standard specification. Your signed quote sets the final figure.</p><h4><strong>Is this an ISO-certified shipping container?</strong></h4><p>No. The modules on this page are fabricated to a container form factor. We do not claim ISO 668 compliance, CSC plate approval or stackability for them without project-specific evidence. If you need a genuine converted freight shell, that is a different product and we build it.</p><h4><strong>Can it be moved again later?</strong></h4><p>Yes, from the approved lifting points, on a suitable vehicle. Repeated relocation is harder on the base and the coating than a single delivery. So tell us at enquiry stage if the module will move several times. We specify it differently.</p><h4><strong>How long does delivery take?</strong></h4><p>It depends on the size, the fit-out and the current works load. We confirm it in your quote rather than publish a figure we cannot hold for every order.</p><h4><strong>What is the warranty?</strong></h4><p>The warranty period and its exclusions are confirmed in your final quote. Relocation damage, misuse, site utilities and unapproved alterations sit outside it. Every container office we build carries the same pre-dispatch checks listed above, whichever size you order.</p><h2>One module or several: configuring a larger office</h2><p>Four hundred square feet is our largest single module. Above that, you stop buying an office and start planning a layout. There are two honest ways forward, and they behave differently on site.</p><p>The first is to place modules end to end. Two 40x10 units give you 800 square feet with a shared entrance deck between them. Each unit still arrives finished, and each still lifts on its own. The joint between them needs a weather detail and a level base across both footprints.</p><p>The second is to go upward. A stacked build brings in foundations, external stairs, landings, guardrails and structural calculations for the project. That is a different product with its own design scope. So we quote it apart, not as a bigger office.</p><p>In practice, most sites reach four modules before a permanent building starts to make better sense. We will say so if your requirement crosses that line. Selling you a sixth container office when a shed would serve you better helps nobody.</p><h2>How long the module lasts, and what it needs</h2><p>Life span rests far more on upkeep and exposure than on the build. Coastal air, industrial fumes and standing water all shorten it. Reseal and touch up a module in a dry inland yard and it lasts well. Leave the same unit in a wet corner of a coastal site and it will not.</p><p>Three habits do most of the work. Keep the roof drainage clear so water leaves the module instead of sitting on it. Touch up coating damage as soon as it appears, before rust gets under the paint. Reseal around openings after any relocation, because transport moves joints that looked sound.</p><p>We do not publish a life-span figure in years. Any number we printed would rest on your site, your upkeep and your exposure. We cannot check those from here. What we can tell you is the coating system, the steel sections and the sealing detail, which is what actually determines the answer.</p><h2>New build or refurbished shell: what changes</h2><p>Buyers often ask if a second-hand shell costs less. It usually does. It also brings trade-offs worth naming first.</p><p>A used shell carries a past you did not see. Floor condition, previous cargo, repair welds and existing corrosion all vary between units, so the specification cannot be identical from one order to the next. That is fine on a short-life site office. It is awkward on a five-year one.</p><p>A new module gives you a known steel history. Openings sit where you want them, and the finish matches across every unit in a large order. Where a project needs ten offices that match, that consistency is usually worth more than the saving on a refurbished shell.</p>",
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.samanportable.com/product/container-offices#faq",
+    "url": "https://www.samanportable.com/product/container-offices",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a container office cost in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our published rate is Rs 1,450 per square foot at the 200 sq.ft. reference size, with a premium below that area and a reduction above it. A 20x10 ft module is Rs 2,90,000 before GST. Those are workbook rates for the standard specification. Your signed quote sets the final figure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this an ISO-certified shipping container?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The modules on this page are fabricated to a container form factor. We do not claim ISO 668 compliance, CSC plate approval or stackability for them without project-specific evidence. If you need a genuine converted freight shell, that is a different product and we build it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it be moved again later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, from the approved lifting points, on a suitable vehicle. Repeated relocation is harder on the base and the coating than a single delivery. So tell us at enquiry stage if the module will move several times. We specify it differently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does delivery take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the size, the fit-out and the current works load. We confirm it in your quote rather than publish a figure we cannot hold for every order."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the warranty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The warranty period and its exclusions are confirmed in your final quote. Relocation damage, misuse, site utilities and unapproved alterations sit outside it. Every container office we build carries the same pre-dispatch checks listed above, whichever size you order."
+        }
+      }
+    ]
+  },
+  "suppressLegacyFaqSchema": true,
+  "emitSizeAnchors": true,
+  "specPdfHref": "/specs/container-offices-technical-specification.pdf"
 }
