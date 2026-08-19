@@ -720,6 +720,10 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   // already shows kept unchanged, so it is passed through explicitly
                   // here rather than inherited from the fallback.
                   sizeEyebrowText={category === 'labor-colony' ? 'Choose size' : undefined}
+                  // CO-00 (19 Aug 2026) — data-driven, same forwarding pattern as
+                  // suppressLegacyFaqSchema above. Absent/false on every other
+                  // product's variantData → no id emitted, byte-identical elsewhere.
+                  emitSizeAnchors={variantData?.emitSizeAnchors}
                 />
               ) : (
               <ProductSummaryLayout

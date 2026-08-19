@@ -130,6 +130,11 @@ export interface VariantProductData {
   /** Suppress a stale Rank Math FAQ graph when the approved replacement does not
       include product FAQs. */
   suppressLegacyFaqSchema?: boolean;
+  /** CO-00 (19 Aug 2026) — opt in to `#size-<slug>` DOM ids on each size section,
+      forwarded to PortaCabinVariantHero's own `emitSizeAnchors` prop (default
+      false there too). Absent on every other product → no id is emitted,
+      byte-identical elsewhere. */
+  emitSizeAnchors?: boolean;
   /** "Download specifications" target. The button is omitted when absent. */
   specPdfHref?: string;
   /** Replaces the default "Price on request — send enquiry" line wherever a
