@@ -358,5 +358,6 @@
     ]
   },
   "suppressLegacyFaqSchema": true,
-  "emitSizeAnchors": true
+  "emitSizeAnchors": true,
+  "specPdfHref": "/specs/container-offices-technical-specification.pdf"
 }
