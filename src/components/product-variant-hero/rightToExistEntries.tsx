@@ -308,14 +308,37 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>If you expect to add units or extend later, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>repeatable module line</Link> earns its premium over a fixed plan.</>
     ),
   },
+  // CO-00 (19 Aug 2026) — build-prompt-v1 §3.4, verbatim, character-count
+  // verified (H2 60/60, P1 394, P2 424, total 818 against the ticket's own
+  // stated 819 — reported as a one-character ticket-arithmetic discrepancy,
+  // copy carried exactly as written per the ticket's own Rule 1). The single
+  // approved link sits on "the shipping container office" in paragraph 2, per
+  // §7 row 1. No subheading/body/bullets copy was supplied in the build
+  // prompt for the split card's right-hand panel (§6.2 supplies only the
+  // image) — rendered with image + CTA only rather than inventing card copy;
+  // flagged in the build report as a gap for the content model to fill.
   'container-offices': {
-    heading: 'Why the range page instead of one model',
-    body: (
-      <>This page holds the whole container office range so a buyer can set the cabin, shipping-form and site-office builds against each other before committing to one. All three are newly fabricated steel modules from our own works, differing in duty, layout and finish rather than in platform. Start here when you know the need but not yet the model.</>
-    ),
-    comparison: (
-      <>Already certain a construction site office is the job? <Link className={linkClass} href={containerOfficeHref('site-office-container')}>The dedicated site office page</Link> carries that build alone.</>
-    ),
+    heading: 'Why start on this page instead of one container office model',
+    bodyParagraphs: [
+      (
+        <>
+          Most buyers arrive knowing they want a steel office module and not knowing which one. The decision rarely turns on price. It turns on whether your shell must be a converted freight container, how often the unit will be relocated, how many people work inside it, and what your electrical load looks like once the drawings are frozen. Fix those four answers and the size follows almost by itself.
+        </>
+      ),
+      (
+        <>
+          This hub covers the standard fabricated container office at six footprints. If your structural shell must be a genuine ISO freight container, with the corner castings and cargo-door end that come with it, <Link className={linkClass} href={containerOfficeHref('shipping-container-office')}>the shipping container office</Link> is the right build and a different specification. Tell us the site, the occupancy and the electrical load you expect, and we will size the module with you and put the exclusions in writing.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/container-offices/section2/co-00-container-offices-ld01-range-comparison-line-16x9.webp',
+      imageAlt: 'Three container offices of increasing length standing on a gravel yard beside an industrial shed',
+      imageWidth: 1672,
+      imageHeight: 941,
+      ctaLabel: 'Send us your site details and get a project quote',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'container-office-cabin': {
     heading: 'Why the cabin model earns its own page',
