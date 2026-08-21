@@ -400,13 +400,21 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     // R15 (v1.4) — split card copy is verbatim from the revision ticket; the
     // CTA destination is the site's existing Gallery page, taken from the live
     // main navigation and verified 200.
+    // PC-00 asset refresh v1 (21 Aug 2026) — copy pack C7/C8/C9: the card image
+    // is an approved visualisation, not a delivered unit, so the heading/body
+    // no longer claim "finished cabins"/"real deliveries" beside it. C9 is a
+    // new second paragraph (`body2`) that keeps that claim, correctly, at the
+    // CTA destination instead. CTA label/href are unchanged per the copy pack's
+    // Part C ("must NOT change" list). Image is native 1920x1080 (was 1280x720)
+    // per the ticket's "convert only, no resize except the GA boards" rule.
     splitCard: {
-      imageSrc: '/images/products/porta-cabins/section2/saman-porta-cabin-20x10-elevated.webp',
-      imageAlt: 'Elevated view of a 20x10 ft SAMAN porta cabin exterior',
-      imageWidth: 1280,
-      imageHeight: 720,
-      subheading: 'See finished SAMAN cabins before you decide',
-      body: 'Browse completed porta cabin projects from our Bengaluru and Greater Noida factories — site offices, guard rooms, retail units and interiors. Judge the finish, the openings and the build quality on real deliveries, then shortlist your size with confidence.',
+      imageSrc: '/images/products/porta-cabins/section2/porta-cabin-section2-20x10-desert-ochre-site.webp',
+      imageAlt: 'Desert Ochre 20x10 ft porta cabin placed on levelled ground at an active construction site',
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: 'Standard build here, real deliveries in the gallery',
+      body: "The image beside this text is SAMAN's approved visualisation of the standard 20x10 ft build, shown so you can read the openings, the corrugation and the base frame clearly.",
+      body2: 'For finished units from our Bengaluru and Greater Noida factories, including site offices, guard rooms and retail units, open the project gallery and judge the finish on real deliveries.',
       ctaLabel: 'Explore the project gallery',
       ctaHref: '/gallery',
     },
