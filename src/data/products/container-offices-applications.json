@@ -1,105 +1,114 @@
 {
   "h2": "Explore every Container Office size & its applications",
-  "intro": "Nine sizes across three fabricated builds. Pick the floor first, then the model your duty needs.",
+  "intro": "Six approved general arrangements, one controlled platform. Pick the footprint by how many people work inside it, then check the opening schedule and the partition line on the drawing before you order.",
   "panels": [
     {
       "sizeSlug": "10x10",
-      "h3": "10x10 ft, the one-desk module every build offers",
-      "paragraph": "One hundred square feet runs a gate office, a ticket counter or a single supervisor's room, and every model in the range fabricates it. At this size the differences between cabin, shipping-form and site builds are smallest, so buyers usually decide on duty alone: daily comfort points to the cabin, repeated lifting to the shipping-form build. The ladder starts here at the range's entry price, and upgrades chosen at drawing stage cost less than retrofits ever do. If the room must later travel, say so in the enquiry and the build is hardened from the start.",
+      "h3": "10x10 ft Container Office: Four Seats, One Central Aisle",
+      "paragraph": "The compact site office in the range. Its approved arrangement places four workstations and four cabinets around a clear central working zone, with one door on the front long wall. Each of the other three walls carries one window, so daylight reaches the room from three sides. That near-square plan is also the constraint: door and window compete for the same wall length, which is why the opening schedule is agreed before fabrication rather than after. Rate carries the below-200 sq.ft. premium.",
       "applications": [
-        "A one-desk gate position",
-        "Ticket or enquiry counters",
-        "A supervisor's own room",
-        "First office on a new plot"
-      ]
+        "100 sq.ft. floor area, Rs 1,66,750 ex-GST",
+        "4 workstations, 4 seats, 4 cabinets",
+        "1 door, 3 windows, no partition",
+        "Lifts onto a compact plinth or a bearer pair"
+      ],
+      "image": {
+        "src": "/images/products/container-offices/size-section/co-00-container-office-10x10-general-arrangement-board.webp",
+        "alt": "General arrangement drawing for the 10x10 ft container office: floor plan, four elevations, opening map and furniture list",
+        "provenance": "render",
+        "width": 1600,
+        "height": 1200
+      }
     },
     {
       "sizeSlug": "20x8",
-      "h3": "20x8 ft, the slim module for tight boundaries",
-      "paragraph": "Twenty feet by eight slides along a compound wall or between existing structures where nothing wider fits, and still seats a working pair with storage behind them. Contractors take this size when the plot is committed before the office is, which is more common than anyone admits. The shipping-form build suits it especially well because slim modules travel as standard freight. Ask for the door on the long face or the end depending on where the walkway will actually run, and the drawing pack settles it before fabrication.",
+      "h3": "20x8 ft Container Office: Narrow Sites, Three Workstations",
+      "paragraph": "Sixty per cent more floor than the 10x10, and one workstation fewer. That is not a drafting error; it is what eight feet of internal width does. The approved arrangement seats three people against opposite walls with clear entry circulation between them, and both end walls stay blank, so all four windows sit on the two long faces. Choose this size when the site boundary rather than the headcount sets the limit, and when the module must drop into a compound that will not accept a wide-body unit.",
       "applications": [
-        "Offices along boundary walls",
-        "A working pair with storage",
-        "Standard-freight relocation",
-        "Doors set to the real walkway"
-      ]
+        "160 sq.ft. floor area, Rs 2,55,200 ex-GST",
+        "3 workstations, 3 seats, 3 cabinets",
+        "1 door, 4 windows, both end walls blank",
+        "Standard 20 ft transport envelope"
+      ],
+      "image": {
+        "src": "/images/products/container-offices/size-section/co-00-container-office-20x8-general-arrangement-board.webp",
+        "alt": "General arrangement drawing for the 20x8 ft container office: floor plan, four elevations, opening map and furniture list",
+        "provenance": "render",
+        "width": 1600,
+        "height": 1200
+      }
     },
     {
       "sizeSlug": "20x10",
-      "h3": "20x10 ft, the size most orders start from",
-      "paragraph": "Two hundred square feet serves as this range's reference floor, the size the costing sheet itself is built on, and the quickest to quote because nothing about it needs deciding. Four desks work without crowding in the cabin layout, while the site build trades two desks for a plan table. Every model prices this size sharpest, and dispatch slots favour it because the panels are always in work. When a buyer cannot name their size, this is the one the enquiry conversation almost always lands on. Its drawings never wait on decisions.",
+      "h3": "20x10 ft Container Office: The 200 sq.ft. Reference Size",
+      "paragraph": "Two extra feet of width over the 20x8 lift the arrangement from three workstations to five, and add a window in each end wall. That is the cross-ventilation this configuration is named for, and it is why most orders settle here. Every published rate on this page is calculated from this module at Rs 1,450 per square foot, and every other size derives from it through the area-band table. Compare vendor quotations at this size first, because both the specification and the price are anchored to it.",
       "applications": [
-        "Four-desk working offices",
-        "Fastest quotation turnaround",
-        "Plan table with two desks",
-        "The range's reference floor"
-      ]
-    },
-    {
-      "sizeSlug": "20x12",
-      "h3": "20x12 ft, two more feet where the desks face",
-      "paragraph": "The extra two feet of width turn a corridor office into a room where chairs pull back without touching the wall. Meetings of five or six stop being a squeeze, and the cabin model fits a records wall the 20x10 cannot take. Site builds use the width for a second pin-up wall beside the plan table. Choose this size when the office hosts visitors rather than just staff, because width is what visitors feel first. It remains one lift to place, so the wider room costs nothing in handling. The width pays for itself at every meeting.",
-      "applications": [
-        "Rooms where chairs pull back",
-        "Five and six person meetings",
-        "A records wall in the cabin",
-        "Second pin-up wall on site"
-      ]
+        "200 sq.ft. floor area, Rs 2,90,000 ex-GST at Rs 1,450/sq.ft.",
+        "5 workstations, 5 seats, 5 cabinets",
+        "1 door, 6 windows including both end walls",
+        "Reference size for every published rate"
+      ],
+      "image": {
+        "src": "/images/products/container-offices/size-section/co-00-container-office-20x10-general-arrangement-board.webp",
+        "alt": "General arrangement drawing for the 20x10 ft container office: floor plan, four elevations, opening map and furniture list",
+        "provenance": "render",
+        "width": 1600,
+        "height": 1200
+      }
     },
     {
       "sizeSlug": "30x10",
-      "h3": "30x10 ft, one office that splits into two rooms",
-      "paragraph": "Three hundred square feet is where a single module starts behaving like a small building: a manager's room partitions off cleanly while the outer office keeps four desks working. The cabin build runs it as front-office-plus-cabin, the site build as plan room plus meeting space. One delivery, one lift, one electrical connection, yet two working rooms from the day it lands. Buyers stepping up from 20x10 usually step to here, skipping sizes, because the second room is what they were actually missing.",
+      "h3": "30x10 ft Container Office: Twelve Seats, Two Entry Doors",
+      "paragraph": "The largest open-plan arrangement we build, and the biggest single step in the ladder: five workstations at 20x10 become twelve here. Two doors on the front long wall let a twelve-person office empty without everyone crossing the same aisle, which matters at shift change and matters more in an emergency. There is no partition on the approved drawing. Where a separate manager's room is needed, the 40 ft arrangements carry one as standard rather than as a modification to this plan.",
       "applications": [
-        "A partitioned manager's room",
-        "Front office plus cabin",
-        "Plan room and meeting space",
-        "Two rooms from one lift"
-      ]
+        "300 sq.ft. floor area, Rs 4,17,600 ex-GST",
+        "12 workstations, 12 seats, 12 cabinets",
+        "2 doors, 8 windows, continuous central aisle",
+        "Open plan, no partition on the approved GA"
+      ],
+      "image": {
+        "src": "/images/products/container-offices/size-section/co-00-container-office-30x10-general-arrangement-board.webp",
+        "alt": "General arrangement drawing for the 30x10 ft container office: floor plan, four elevations, opening map and furniture list",
+        "provenance": "render",
+        "width": 1600,
+        "height": 1200
+      }
     },
     {
       "sizeSlug": "40x8",
-      "h3": "40x8 ft, forty feet of line offices on one trailer",
-      "paragraph": "The forty-by-eight runs offices in a line: three small rooms, or a long open bay with the corridor down one side. It ships on a standard forty-foot trailer with no escort, which keeps its freight the most predictable in the range. Shipping-form buyers favour this size for multi-site programmes because identical slim modules standardise every later move. On plots where depth is the scarce dimension it fits where the 40x10 cannot, giving up only aisle width to do it. Freight quotes hold firm on this size.",
+      "h3": "40x8 ft Container Office: Manager Cabin Plus Seven Desks",
+      "paragraph": "This is where the partition arrives. The approved GA divides forty feet into a ten-foot manager cabin and a thirty-foot common office, joined by one internal door. Seven workstations plus the manager and two guest chairs give ten seats, three fewer than the shorter 30x10, because eight feet of width and a partition each cost desk positions. Both end walls stay blank again. It travels on a 40 ft trailer, so check your gate and turning circle before choosing length over width.",
       "applications": [
-        "Three small rooms in a line",
-        "A long single working bay",
-        "No-escort standard freight",
-        "Multi-site programme modules"
-      ]
-    },
-    {
-      "sizeSlug": "20x20",
-      "h3": "20x20 ft, the square floor for a full team",
-      "paragraph": "Four hundred square feet set out square seats a full project team in one room, and the shape matters as much as the area: a square room holds a central table with desks around it, which no forty-foot module can offer. Cabin buyers take it as an open-plan office; site buyers run it as the project's war room with drawings on every wall. It travels as two joined modules and closes into one weathertight room on site, the joint drawn before fabrication so it lands invisible. Both halves are craned in a morning. The war-room layout ships pre-drawn.",
-      "applications": [
-        "A central table with desks around",
-        "Open-plan office for a team",
-        "The project's drawing war room",
-        "Two modules closing into one"
-      ]
+        "320 sq.ft. floor area, Rs 4,40,800 ex-GST",
+        "7 workstations, 10 seats, 7 cabinets",
+        "2 external doors, 1 internal door, 1 partition",
+        "10 ft manager cabin plus 30 ft common office"
+      ],
+      "image": {
+        "src": "/images/products/container-offices/size-section/co-00-container-office-40x8-general-arrangement-board.webp",
+        "alt": "General arrangement drawing for the 40x8 ft container office: floor plan, four elevations, opening map and furniture list",
+        "provenance": "render",
+        "width": 1600,
+        "height": 1200
+      }
     },
     {
       "sizeSlug": "40x10",
-      "h3": "40x10 ft, the full-length office most sites end up with",
-      "paragraph": "Four hundred square feet in the classic container proportion: reception at the door, working bay in the middle, cabin at the far end, the layout half the range's repeat buyers standardise on. One trailer moves it and one crane sets it, so growing sites treat it as the last office they will need to buy. The cabin model fits eight desks with storage; the site model runs six plus the plan table. When two 20x10s are being considered, this is usually the better answer. Storage walls come drawn, not improvised.",
+      "h3": "40x10 ft Container Office: Fifteen Seats and a Manager",
+      "paragraph": "The largest single module in the range. It carries the same ten-foot manager cabin and thirty-foot common office as the 40x8, but at ten feet of width that common office takes twelve workstations instead of seven. Fifteen seats in total, ten windows including one in each end wall, and one internal door into the cabin. Above this size we place modules end to end or move you to a multi-storey build, because a longer single unit becomes difficult to lift and to transport safely on Indian roads.",
       "applications": [
-        "Reception, bay and cabin in one",
-        "Eight desks with storage walls",
-        "Six desks plus the plan table",
-        "The office repeat buyers pick"
-      ]
-    },
-    {
-      "sizeSlug": "40x12",
-      "h3": "40x12 ft, the widest floor before two buildings",
-      "paragraph": "The biggest single module in the range, four hundred eighty square feet, wide enough for facing desk rows with a real aisle between them. This is the size that replaces a rented site building rather than another cabin: ten people work without queuing at the door. Site builds add a meeting room behind a partition and still keep six desks. Beyond this floor the honest advice is two modules or the modular office range, and the enquiry team will say so rather than force one box to do it. Growing teams stop moving after this one.",
-      "applications": [
-        "Facing desk rows with an aisle",
-        "Ten people in one module",
-        "A partitioned meeting room",
-        "The step before two buildings"
-      ]
+        "400 sq.ft. floor area, Rs 5,51,000 ex-GST",
+        "12 workstations, 15 seats, 12 cabinets",
+        "2 external doors, 1 internal door, 1 partition",
+        "Largest single module, 10 windows including both end walls"
+      ],
+      "image": {
+        "src": "/images/products/container-offices/size-section/co-00-container-office-40x10-general-arrangement-board.webp",
+        "alt": "General arrangement drawing for the 40x10 ft container office: floor plan, four elevations, opening map and furniture list",
+        "provenance": "render",
+        "width": 1600,
+        "height": 1200
+      }
     }
   ]
 }
