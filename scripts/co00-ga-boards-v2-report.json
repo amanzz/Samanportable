@@ -1,0 +1,134 @@
+[
+  {
+    "folder": "10x10x8.5",
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-2d-GA-for-6-sizesection\\10x10x8.5\\container-office-10x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:/tmp/saman-co00/public/images/products/container-offices/size-section\\co-00-container-office-10x10-general-arrangement-board.webp",
+    "src_w": 3912,
+    "src_h": 2992,
+    "bg_color": [
+      244,
+      240,
+      231
+    ],
+    "scaled_w": 1569,
+    "scaled_h": 1200,
+    "offset": [
+      15,
+      0
+    ],
+    "canvas_w": 1600,
+    "canvas_h": 1200,
+    "kb": 80.9,
+    "sha": "1fb4eeba3899533872d51c6e3e5331542da26d217f8e1838b6611b14ee55d9b2"
+  },
+  {
+    "folder": "20x8x8.5",
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-2d-GA-for-6-sizesection\\20x8x8.5\\container-office-20x8x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:/tmp/saman-co00/public/images/products/container-offices/size-section\\co-00-container-office-20x8-general-arrangement-board.webp",
+    "src_w": 3912,
+    "src_h": 2992,
+    "bg_color": [
+      244,
+      240,
+      231
+    ],
+    "scaled_w": 1569,
+    "scaled_h": 1200,
+    "offset": [
+      15,
+      0
+    ],
+    "canvas_w": 1600,
+    "canvas_h": 1200,
+    "kb": 83.9,
+    "sha": "98f9a51ff16f7c53fb94645e5900c9a002dc2fdc159ed24228f33c19cfd8229a"
+  },
+  {
+    "folder": "20x10x8.5",
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-2d-GA-for-6-sizesection\\20x10x8.5\\container-office-20x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:/tmp/saman-co00/public/images/products/container-offices/size-section\\co-00-container-office-20x10-general-arrangement-board.webp",
+    "src_w": 3912,
+    "src_h": 2992,
+    "bg_color": [
+      244,
+      240,
+      231
+    ],
+    "scaled_w": 1569,
+    "scaled_h": 1200,
+    "offset": [
+      15,
+      0
+    ],
+    "canvas_w": 1600,
+    "canvas_h": 1200,
+    "kb": 86.6,
+    "sha": "787b182d513063d80ceaa6a65ffe8c3fee386ee4d836018ab9bda9614d906103"
+  },
+  {
+    "folder": "30x10x8.5",
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-2d-GA-for-6-sizesection\\30x10x8.5\\container-office-30x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:/tmp/saman-co00/public/images/products/container-offices/size-section\\co-00-container-office-30x10-general-arrangement-board.webp",
+    "src_w": 3912,
+    "src_h": 2992,
+    "bg_color": [
+      244,
+      240,
+      231
+    ],
+    "scaled_w": 1569,
+    "scaled_h": 1200,
+    "offset": [
+      15,
+      0
+    ],
+    "canvas_w": 1600,
+    "canvas_h": 1200,
+    "kb": 95.6,
+    "sha": "2eab204d0c06edd357dde93717df661c3605b3e4027cbad9205850aa7f300905"
+  },
+  {
+    "folder": "40x8x8.5",
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-2d-GA-for-6-sizesection\\40x8x8.5\\container-office-40x8x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:/tmp/saman-co00/public/images/products/container-offices/size-section\\co-00-container-office-40x8-general-arrangement-board.webp",
+    "src_w": 3912,
+    "src_h": 2992,
+    "bg_color": [
+      244,
+      240,
+      231
+    ],
+    "scaled_w": 1569,
+    "scaled_h": 1200,
+    "offset": [
+      15,
+      0
+    ],
+    "canvas_w": 1600,
+    "canvas_h": 1200,
+    "kb": 94.6,
+    "sha": "0bdb917fc3bda7b56e6c08960f3b4caa6a39045da329306d03a44d18b5b675ce"
+  },
+  {
+    "folder": "40x10x8.5",
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-2d-GA-for-6-sizesection\\40x10x8.5\\container-office-40x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:/tmp/saman-co00/public/images/products/container-offices/size-section\\co-00-container-office-40x10-general-arrangement-board.webp",
+    "src_w": 3912,
+    "src_h": 2992,
+    "bg_color": [
+      244,
+      240,
+      231
+    ],
+    "scaled_w": 1569,
+    "scaled_h": 1200,
+    "offset": [
+      15,
+      0
+    ],
+    "canvas_w": 1600,
+    "canvas_h": 1200,
+    "kb": 100.4,
+    "sha": "1db8f744d7ddb5419c5543e8b121d8f2d3207664d72e03a02d728c3158ff044e"
+  }
+]

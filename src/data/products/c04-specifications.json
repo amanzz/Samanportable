@@ -240,12 +240,12 @@
           "group": "Finish, openings, electrical, services and scope",
           "component": "Warranty",
           "detail": "Commercially confirmed warranty",
-          "scopeClass": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope.",
+          "scopeClass": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope…",
           "meaning": "Common",
           "differsFromHub": false
         }
       ],
-      "narrative": "What the specification changes for you. Two lines in these tables decide most site problems. The 150x75x5 mm base frame sets where the module may be supported, so your plinth positions follow it rather than the other way round. And the electrical line states starting cable sizes only: the final conductor size comes from your approved load schedule, which is why we ask for your equipment list before quoting.",
+      "narrative": "What the specification changes for you. Three lines in these tables decide most site problems. The 150x75x5 mm base frame sets where the module may be supported, so your plinth positions follow it rather than the other way round. The electrical line states starting cable sizes only, which is why we ask for your equipment list before quoting. And the layout line allows an optional manager or meeting partition, which the approved GA boards place on the 40 ft sizes and not on the shorter ones.",
       "columnHeaders": {
         "first": "Component",
         "second": "Type",
@@ -261,18 +261,18 @@
       },
       "diagrams": [
         {
-          "src": "/images/products/container-offices/specifications/co-00-container-offices-dgm1-reference-module-dimensions-16x9.webp",
-          "alt": "Plan and long elevation of the 20x10x8.5 ft module with six structural member callouts",
+          "src": "/images/products/container-offices/specifications/co-00-container-office-frame-and-sheet-fixing-detail.webp",
+          "alt": "Three-stage diagram of container office frame connection and corrugated sheet fixing, from alignment to weld to sealed cladding",
           "caption": "Illustrative - not for construction.",
-          "width": 1920,
-          "height": 1080
+          "width": 1600,
+          "height": 900
         },
         {
-          "src": "/images/products/container-offices/specifications/co-00-container-offices-dgm2-selection-decision-tree-16x9.webp",
-          "alt": "Four-branch decision tree routing a buyer to the right container office product",
+          "src": "/images/products/container-offices/specifications/co-00-container-office-window-electrical-fan-detail.webp",
+          "alt": "Three-stage diagram of container office window setting, distribution board circuits and fan installation with test checks",
           "caption": "Illustrative - not for construction.",
-          "width": 1920,
-          "height": 1080
+          "width": 1600,
+          "height": 900
         }
       ]
     },

@@ -1,0 +1,68 @@
+[
+  {
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-images-for-long-description-tab\\container-office-20x10-deep-forest-green-finished-product-16x9.png",
+    "out": "public/images/products/container-offices/section2\\co-00-container-office-20x10-deep-forest-green-finished-16x9.webp",
+    "alt": "Deep forest green 20x10 ft container office with a central door and windows either side, on paving",
+    "sw": 1920,
+    "sh": 1080,
+    "w": 1280,
+    "h": 720,
+    "kb": 115.5,
+    "sha": "437df19caadeed8873b4e6c7c15dc5dfa0d5ec385405156bc6f55cbe6aed98be"
+  },
+  {
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-images-for-long-description-tab\\container-office-10x10-midnight-navy-finished-product-16x9.png",
+    "out": "public/images/products/container-offices/description\\co-00-container-office-10x10-midnight-navy-finished-16x9.webp",
+    "alt": "Midnight navy 10x10 ft container office on paving, with a single door, one window and black corner castings",
+    "sw": 1920,
+    "sh": 1080,
+    "w": 1600,
+    "h": 900,
+    "kb": 105.2,
+    "sha": "fe0277efeb328da15947c85c4050e2e6e48fc3ae2de3c0b6233cc79f42f165bb"
+  },
+  {
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-images-for-long-description-tab\\container-office-20x8-graphite-charcoal-finished-product-16x9.png",
+    "out": "public/images/products/container-offices/description\\co-00-container-office-20x8-graphite-charcoal-finished-16x9.webp",
+    "alt": "Graphite charcoal 20x8 ft container office with two windows either side of a central door, on paving",
+    "sw": 1920,
+    "sh": 1080,
+    "w": 1600,
+    "h": 900,
+    "kb": 104.2,
+    "sha": "5f99a3c5b2de35ee687a7f2b93b3bf0388238d3116820debbaad8f349a2ea714"
+  },
+  {
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-images-for-long-description-tab\\container-office-30x10-burnt-terracotta-finished-product-16x9.png",
+    "out": "public/images/products/container-offices/description\\co-00-container-office-30x10-burnt-terracotta-finished-16x9.webp",
+    "alt": "Burnt terracotta 30x10 ft container office with two doors and three windows visible, on paving",
+    "sw": 1920,
+    "sh": 1080,
+    "w": 1600,
+    "h": 900,
+    "kb": 107.8,
+    "sha": "f4c53e993282560655d590bcae7e1d96e4dfb02d4b2c2a84a27ade8c0ee1aa9d"
+  },
+  {
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-images-for-long-description-tab\\container-office-40x8-deep-burgundy-finished-product-16x9.png",
+    "out": "public/images/products/container-offices/description\\co-00-container-office-40x8-deep-burgundy-finished-16x9.webp",
+    "alt": "Deep burgundy 40x8 ft container office with windows and a door on the long wall, industrial building behind",
+    "sw": 1920,
+    "sh": 1080,
+    "w": 1600,
+    "h": 900,
+    "kb": 49.1,
+    "sha": "27bf7f5db83fcef09270eb5e39ae8c04ca4d2752cc78148399384c615d429a69"
+  },
+  {
+    "src": "D:/Project-shekhar/all-product-images/Hub page (Container Offices)/container-offices/6-images-for-long-description-tab\\container-office-40x10-pearl-white-finished-product-16x9.png",
+    "out": "public/images/products/container-offices/description\\co-00-container-office-40x10-pearl-white-finished-16x9.webp",
+    "alt": "Pearl white 40x10 ft container office with a row of windows and a door on the long wall, palms behind",
+    "sw": 1920,
+    "sh": 1080,
+    "w": 1280,
+    "h": 720,
+    "kb": 109.1,
+    "sha": "33273d7a42595b6ec6ab5dcf0d1d2c2b01df7dc72221245a06d8b92388e92b44"
+  }
+]
