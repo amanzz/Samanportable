@@ -68,6 +68,14 @@ interface C01SpecificationEntry {
       `diagram`, in order. Absent on every other entry, so the single-diagram path
       above is untouched and their markup stays byte-identical. */
   diagrams?: { src: string; alt: string; caption: string; width: number; height: number }[];
+  /** PC-00 asset-refresh v1 (21 Aug 2026) — one short paragraph rendered directly
+      above the diagram(s), after the group cards. No existing field renders in
+      that position: `narrative` sits above the cards, `narrativeParagraphsAfter`
+      sits after the diagram(s). Needed because copy pack string C10 gives the
+      two new porta-cabins diagrams a shared reason to be on the page, which
+      belongs beside them, not above the specification tables. Absent on every
+      other entry, so their markup stays byte-identical. */
+  diagramsIntro?: string;
   /** LC-05 - one approved diagram after a named table/group. */
   diagramsAfterGroup?: Record<string, { src: string; alt: string; caption?: string; width: number; height: number }>;
   /** LC-05 - exact buyer-facing column labels for its two ruled tables.
@@ -252,11 +260,14 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
   const diagram = entry.diagram
     ? asFigure(entry.diagram)
     : (entry.diagrams || []).map(asFigure).join('');
+  const diagramsIntro = entry.diagramsIntro
+    ? `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(entry.diagramsIntro)}</p>`
+    : '';
   const narrativeAfter = (entry.narrativeParagraphsAfter || [])
     .map((paragraph) => `<p class="mt-4 text-sm leading-relaxed text-slate-600">${esc(paragraph)}</p>`)
     .join('');
 
-  return `<div class="not-prose">${narrative}${cards}${diagram}${narrativeAfter}</div>`;
+  return `<div class="not-prose">${narrative}${cards}${diagramsIntro}${diagram}${narrativeAfter}</div>`;
 }
 
 export function buildC04SpecificationsHtml(pageSlug: string): string {

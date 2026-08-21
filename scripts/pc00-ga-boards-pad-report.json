@@ -1,0 +1,140 @@
+[
+  {
+    "folder": "10x10x8.5",
+    "src": "D:\\video-project\\saman-products-video\\ms-porta-cabin\\technical-presentation-boards\\10x10x8.5\\porta-cabin-10x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:\\tmp\\pc00-asset-refresh-v1\\public\\images\\products\\porta-cabins\\size-section\\porta-cabin-ga-plan-10x10.webp",
+    "src_w": 3840,
+    "src_h": 2160,
+    "bg_color": [
+      243,
+      233,
+      222
+    ],
+    "scaled_w": 1920,
+    "scaled_h": 1080,
+    "offset": [
+      0,
+      180
+    ],
+    "canvas_w": 1920,
+    "canvas_h": 1440,
+    "kb": 79.4,
+    "quality": 88,
+    "sha": "754e4935036d8f9830cf2a028e95a13b242672daef8fbd34c08e25391a47af8f"
+  },
+  {
+    "folder": "20x8x8.5",
+    "src": "D:\\video-project\\saman-products-video\\ms-porta-cabin\\technical-presentation-boards\\20x8x8.5\\porta-cabin-20x8x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:\\tmp\\pc00-asset-refresh-v1\\public\\images\\products\\porta-cabins\\size-section\\porta-cabin-ga-plan-20x8.webp",
+    "src_w": 3840,
+    "src_h": 2160,
+    "bg_color": [
+      243,
+      233,
+      222
+    ],
+    "scaled_w": 1920,
+    "scaled_h": 1080,
+    "offset": [
+      0,
+      180
+    ],
+    "canvas_w": 1920,
+    "canvas_h": 1440,
+    "kb": 81.9,
+    "quality": 88,
+    "sha": "6016083385f80228da40c4da9f2dd4e1e1be1cdac126f6a90f9d0615a6d9c8a4"
+  },
+  {
+    "folder": "20x10x8.5",
+    "src": "D:\\video-project\\saman-products-video\\ms-porta-cabin\\technical-presentation-boards\\20x10x8.5\\porta-cabin-20x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:\\tmp\\pc00-asset-refresh-v1\\public\\images\\products\\porta-cabins\\size-section\\porta-cabin-ga-plan-20x10.webp",
+    "src_w": 3840,
+    "src_h": 2160,
+    "bg_color": [
+      243,
+      233,
+      222
+    ],
+    "scaled_w": 1920,
+    "scaled_h": 1080,
+    "offset": [
+      0,
+      180
+    ],
+    "canvas_w": 1920,
+    "canvas_h": 1440,
+    "kb": 85.0,
+    "quality": 88,
+    "sha": "0e30e0b496bf19482c47753db5ab1e457817b69f2f92c72001bec0f87ec043a8"
+  },
+  {
+    "folder": "20x12x8.5",
+    "src": "D:\\video-project\\saman-products-video\\ms-porta-cabin\\technical-presentation-boards\\20x12x8.5\\porta-cabin-20x12x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:\\tmp\\pc00-asset-refresh-v1\\public\\images\\products\\porta-cabins\\size-section\\porta-cabin-ga-plan-20x12.webp",
+    "src_w": 3840,
+    "src_h": 2160,
+    "bg_color": [
+      243,
+      233,
+      222
+    ],
+    "scaled_w": 1920,
+    "scaled_h": 1080,
+    "offset": [
+      0,
+      180
+    ],
+    "canvas_w": 1920,
+    "canvas_h": 1440,
+    "kb": 85.4,
+    "quality": 88,
+    "sha": "73df46ddacffd45110d7d0896e5555679fd8522f73c0d085cf02a70639c80db4"
+  },
+  {
+    "folder": "30x10x8.5",
+    "src": "D:\\video-project\\saman-products-video\\ms-porta-cabin\\technical-presentation-boards\\30x10x8.5\\porta-cabin-30x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:\\tmp\\pc00-asset-refresh-v1\\public\\images\\products\\porta-cabins\\size-section\\porta-cabin-ga-plan-30x10.webp",
+    "src_w": 3840,
+    "src_h": 2160,
+    "bg_color": [
+      243,
+      233,
+      222
+    ],
+    "scaled_w": 1920,
+    "scaled_h": 1080,
+    "offset": [
+      0,
+      180
+    ],
+    "canvas_w": 1920,
+    "canvas_h": 1440,
+    "kb": 92.3,
+    "quality": 88,
+    "sha": "dbf5657c430f31ad9db2b5464a5d4e12e8d9e59be82fa02fcb2f7d1c4956f85f"
+  },
+  {
+    "folder": "40x10x8.5",
+    "src": "D:\\video-project\\saman-products-video\\ms-porta-cabin\\technical-presentation-boards\\40x10x8.5\\porta-cabin-40x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "C:\\tmp\\pc00-asset-refresh-v1\\public\\images\\products\\porta-cabins\\size-section\\porta-cabin-ga-plan-40x10.webp",
+    "src_w": 3840,
+    "src_h": 2160,
+    "bg_color": [
+      243,
+      233,
+      222
+    ],
+    "scaled_w": 1920,
+    "scaled_h": 1080,
+    "offset": [
+      0,
+      180
+    ],
+    "canvas_w": 1920,
+    "canvas_h": 1440,
+    "kb": 97.8,
+    "quality": 88,
+    "sha": "1f06d0b5b379d132ef5176b3a1f654df6cf7ca1f2fdb9e5b6b50856bedf0bf4c"
+  }
+]

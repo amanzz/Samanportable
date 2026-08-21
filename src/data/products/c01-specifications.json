@@ -400,13 +400,23 @@
         }
       ],
       "narrative": "This specification is what you are actually buying, line by line. Nineteen of the thirty lines are product-specific to this cabin; eleven are SAMAN platform standards shared across the family. Use the tables to compare quotations item by item — frame section, sheet thickness, insulation density — rather than by total price alone. Final openings, colours, service loads and fit-out follow your approved drawing and quotation.",
-      "diagram": {
-        "src": "/images/products/porta-cabins/diagrams/saman-porta-cabin-build-anatomy.webp",
-        "alt": "Exploded diagram of porta cabin layers from MS chassis to corrugated roof with labelled thicknesses",
-        "caption": "SAMAN porta cabin build anatomy — Illustrative, not for construction. Source: SP-PC-HUB-01-TS-R1.",
-        "width": 1672,
-        "height": 941
-      },
+      "diagramsIntro": "The two diagrams below show where the specification is actually made or lost. The first covers the frame joint and the sheet seal, which decide squareness and weather performance. The second covers the window seal and the circuit split, which decide how the cabin behaves once it is powered on site.",
+      "diagrams": [
+        {
+          "src": "/images/products/porta-cabins/specifications/porta-cabin-diagram-1-frame-and-sheet-assembly.webp",
+          "alt": "SAMAN diagram of porta cabin frame assembly: align and clamp, tack and weld, then seal the sheet",
+          "caption": "Detail 01 - frame and corrugated sheet assembly. Buyer-facing diagram; approved shop drawings and qualified welding procedures govern fabrication.",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/porta-cabins/specifications/porta-cabin-diagram-2-window-electrical-fan.webp",
+          "alt": "SAMAN diagram of window sealing, distribution board circuits and fan installation checks",
+          "caption": "Detail 02 - window, electrical and fan installation. Buyer-facing diagram; the approved electrical drawing, final load schedule and licensed installation govern execution.",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
       "premiumTables": true
     },
     "low-cost-porta-cabin": {

@@ -12,7 +12,7 @@
         "Sales kiosks and enquiry booths",
         "Rooftop or terrace utility rooms"
       ],
-      "imageAlt": "Turquoise 10x10 ft porta cabin from a raised angle, door and sliding windows on the corrugated face"
+      "imageAlt": "Approved 10x10 ft porta cabin GA plan: one door, three windows, four workstations, four seats"
     },
     {
       "sizeSlug": "20x8",
@@ -24,7 +24,7 @@
         "Supervisor and timekeeper cabins",
         "Weighbridge and dispatch offices"
       ],
-      "imageAlt": "Tan and grey 20x8 ft porta cabin from a raised angle, door set between two sliding windows"
+      "imageAlt": "Approved 20x8 ft porta cabin GA plan: one door, four windows, three workstations, three seats"
     },
     {
       "sizeSlug": "20x10",
@@ -36,7 +36,7 @@
         "Clinics, labs and consultation rooms",
         "Accounts and documentation offices"
       ],
-      "imageAlt": "Dark green 20x10 ft porta cabin seen straight on, door centred between two sliding windows"
+      "imageAlt": "Approved 20x10 ft porta cabin GA plan: one door, six windows, five workstations, five seats"
     },
     {
       "sizeSlug": "20x12",
@@ -48,7 +48,7 @@
         "Interview and HR cabins at large sites",
         "Site offices with records storage"
       ],
-      "imageAlt": "Pink and teal 20x12 ft porta cabin from a raised angle showing the roof and window line"
+      "imageAlt": "Approved 20x12 ft porta cabin GA plan: one door, six windows, five workstations, wide central aisle"
     },
     {
       "sizeSlug": "30x10",
@@ -60,7 +60,7 @@
         "Site training and induction rooms",
         "Document control and QA offices"
       ],
-      "imageAlt": "Light blue 30x10 ft porta cabin at an angle, three sliding windows along the long wall beside the door"
+      "imageAlt": "Approved 30x10 ft porta cabin GA plan: two doors, eight windows, twelve workstations and seats"
     },
     {
       "sizeSlug": "40x10",
@@ -72,7 +72,7 @@
         "Multi-team engineering offices",
         "Banking and enrolment outposts"
       ],
-      "imageAlt": "White and maroon 40x10 ft porta cabin at an angle, window row running the full length beside the door"
+      "imageAlt": "Approved 40x10 ft porta cabin GA plan: manager cabin, partition, three doors, twelve workstations"
     }
   ]
 }
