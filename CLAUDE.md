@@ -247,7 +247,7 @@ update this section in the SAME commit/session, not "later." A wrong
 "current page" pointer costs the next session a full re-diagnosis before
 it can even start.
 
-**CO-09 Container Office Cabin**, `/product/container-offices/container-office-cabin`, branch `feature/co-09-container-office-cabin` (pre-build SHA `2ff60ca2`, backup ref `backup/co-09-container-office-cabin-prebuild-2026-08-22`). Built to draft v1.3 / build prompt v1.2, all 23 acceptance criteria self-checked and reported, PR opened against `static-migration` — **not yet merged.**
+**CO-09 Container Office Cabin**, `/product/container-offices/container-office-cabin`, branch `feature/co-09-container-office-cabin` (pre-build SHA `2ff60ca2`, backup ref `backup/co-09-container-office-cabin-prebuild-2026-08-22`). Built to draft v1.3 / build prompt v1.2, all 23 acceptance criteria self-checked and reported. **PR #167** (`https://github.com/amanzz/Samanportable/pull/167`) open against `static-migration` — **not yet merged.**
 
 **Two things block merge, both must be resolved before this section is cleared:**
 1. **The 40x8 ft price, Rs 3,80,000 ex-GST, is computed (not a workbook row) and is still awaiting SAMAN's written confirmation.** If SAMAN returns a different figure it changes three cells in the ladder (`container-office-cabin.json`) and nothing else — no copy string moves.
