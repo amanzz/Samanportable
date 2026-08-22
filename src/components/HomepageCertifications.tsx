@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight, X } from 'lucide-react';
 
 // T6.16 — homepage "Certifications & Recognition" section, placed directly after the
@@ -233,8 +234,17 @@ const HomepageCertifications = () => {
           <p className="text-base font-light leading-relaxed text-gray-600">
             Every credential below is issued by a Government of India body — open the certificate and check it yourself.
           </p>
+          <p className="mt-3 text-base font-light leading-relaxed text-gray-600">
+            For office-specific requirements from our Bengaluru manufacturing unit, see{' '}
+            <Link
+              href="/portable-office-cabin-manufacturers-in-bangalore"
+              className="font-medium text-[var(--ds-surface-inverse)] underline underline-offset-4 hover:text-[var(--ds-primary)]"
+            >
+              portable office cabin manufacturing in Bangalore
+            </Link>
+            .
+          </p>
         </div>
-
         {/* Cards: mobile carousel (scroll-snap) / tablet 2x2 / desktop 4-across */}
         <div
           ref={trackRef}

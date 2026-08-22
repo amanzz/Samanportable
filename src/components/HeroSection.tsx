@@ -7,7 +7,7 @@ import QuoteFormTrigger from './QuoteFormTrigger';
 const heroImages = [
   {
     src: '/hero-image/saman-portable-office-cabin-bangalore-clean.webp',
-    alt: 'Saman Portable Office Cabin in Bangalore - High Quality Site Office'
+    alt: 'Modular office buildings with lit windows at dusk'
   },
   {
     src: '/hero-image/premium-container-site-office-rental-clean.webp',
@@ -97,7 +97,6 @@ const HeroSection = () => {
             <p className="text-lg md:text-xl text-white/80 mb-10 max-w-xl leading-relaxed font-light">
               India&apos;s leading manufacturer of high-ticket prefab structures for industrial, construction and commercial headquarters. Delivered ready-to-use since 2009.
             </p>
-
             {/* CTA Buttons — three CTAs (T2: form removed from hero) */}
             <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <QuoteFormTrigger
