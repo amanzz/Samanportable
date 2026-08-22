@@ -3,13 +3,8 @@ import {
   buildC04SpecificationsHtml,
 } from '@/lib/specsShippingTabs';
 
-const SPECIFICATIONS_INTRO =
-  'A shipping container office starts from marine-grade corrugated container steel: the specification below covers the conversion: structural frame retained, openings framed into the corrugation, insulation and interior built inside the original shell.';
-
-const SHIPPING_INTRO =
-  'A converted shipping container office moves the way containers always have: craned onto an open trailer, hauled, and craned off at site, with the structural frame carrying every lift. The distance-based freight tables below cover both zones; your exact pin code cost is fixed in the quotation.';
-
-const WARRANTY_LINE = '12-month workmanship warranty, confirmed at quotation.';
+const SPECIFICATIONS_NARRATIVE =
+  'Read these two tables as a pair. The first fixes what the shell is and what it can take. The second fixes what you get inside it and what you still have to buy. Two numbers matter more than the rest. The 1.6 mm skin is what separates this product from a 0.5 mm panel cabin. The 60 x 60 x 3 mm boxed posts are what make a cut opening safe in a wall that used to be continuous. Sizes and grades below are the approved starting values for a standard unit. Final member sizes, loads, lifting points and electrical design follow the signed quotation and project engineering.';
 
 /**
  * A MATCHING KEY, NOT COPY. Never rendered — its only use is the `includes`
@@ -62,15 +57,57 @@ const replaceFirstParagraph = (
 };
 
 export const buildShippingContainerOfficeSpecificationsHtml = (): string => {
-  return buildC04SpecificationsHtml('shipping-container-office');
+  const table = (title: string, rows: [string, string][]) =>
+    '<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">' +
+      `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${title}</h4>` +
+      '<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr><th class="border border-slate-200 bg-slate-50 px-4 py-3 text-left text-sm font-semibold text-slate-700">Item</th><th class="border border-slate-200 bg-slate-50 px-4 py-3 text-left text-sm font-semibold text-slate-700">Approved value</th></tr></thead><tbody>' +
+      rows.map(([item, value]) => `<tr><td class="border border-slate-200 px-4 py-3 align-top text-sm font-semibold text-slate-700">${item}</td><td class="border border-slate-200 px-4 py-3 align-top text-sm text-slate-600">${value}</td></tr>`).join('') +
+      '</tbody></table></div></section>';
+  const figure = (src: string, alt: string) =>
+    `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"><img src="${src}" alt="${alt}" width="1920" height="1080" loading="lazy" class="w-full h-auto rounded-lg" /><figcaption class="mt-2 text-xs italic text-slate-500">Illustrative - not for construction. Diagram v1.1, issued 22 August 2026.</figcaption></figure>`;
+  return '<div class="not-prose">' +
+    `<p class="mb-5 text-sm leading-relaxed text-slate-600">${SPECIFICATIONS_NARRATIVE}</p>` +
+    table('Shell, structure, envelope, roof and floor', [
+      ['External sizes', '20x8, 20x10, 20x12, 30x10, 40x8 and 40x10 ft, all 8 ft 6 in external height'],
+      ['Finished wall thickness', '100 mm'],
+      ['Bottom frame', '150 x 75 x 5 mm MS C-channel'],
+      ['Bottom stiffeners', '100 x 50 x 4 mm channels with 80 x 40 x 3 mm cross members and local reinforcement'],
+      ['Floor frame', '100 x 50 x 3 mm primary members, 80 x 40 x 3 mm secondary members'],
+      ['Top frame', '80 x 40 x 3 mm MS rectangular-pipe top perimeter'],
+      ['Corner posts and opening frame', '60 x 60 x 3 mm MS square-pipe posts, 80 x 40 x 3 mm boxed head at each cut-out'],
+      ['Roof stiffeners', '60 x 40 x 2.5 mm rafters and purlins'],
+      ['Exterior wall skin', '1.6 mm corrugated MS sheet, vertical profile'],
+      ['Roof sheet', '1.6 mm corrugated MS sheet'],
+      ['Roof family', 'Flat ISO container roof with container corner posts and ISO corner castings'],
+      ['Floor base', '24 mm cement board or heavy MS floor plate'],
+      ['Floor finish', '2 to 3 mm commercial PVC, epoxy, or 3 mm chequered plate'],
+      ['Coating system', 'One red-oxide primer coat plus two compatible anti-rust enamel coats on prepared MS'],
+      ['Fabrication control', 'Welded MS fabrication, cleaned joints, safe edges, dimensional inspection, coating touch-up before dispatch'],
+    ]) +
+    figure('/images/products/shipping-container-office/diagrams/01-container-office-opening-reinforcement-diagram.png', 'Diagram of a shipping container office wall: outer skin, mineral wool, inner lining and boxed opening frame') +
+    table('Insulation, interior, openings, services and scope', [
+      ['Wall insulation', '50 to 75 mm mineral wool, fitted around corrugations and conversion steel'],
+      ['Roof insulation', '75 to 100 mm mineral wool on pins and retainers'],
+      ['Interior lining', '8 to 10 mm fibre-cement board or 0.50 mm pre-painted metal liner'],
+      ['Ceiling', '8 mm fibre-cement ceiling or 0.50 mm metal liner, removable panels at service points'],
+      ['External door', '3 x 7 ft heavy single or double-leaf MS door with industrial lockset; corrugation, profile and colour matched to the adjacent wall'],
+      ['Internal partition door', '3 x 7 ft, on 40x8 and 40x10 only, one per unit'],
+      ['Windows', '4 x 3 ft reduced-size aluminium with 5 mm glass, boxed frame and drained sill; sill 3 ft 6 in, head 6 ft 6 in'],
+      ['Opening counts by size', '20x8, 20x10 and 20x12: 1 door and 6 windows. 30x10: 2 doors and 8 windows. 40x8 and 40x10: 2 external doors, 1 internal door and 10 windows'],
+      ['Electrical wiring', 'Concealed PVC-insulated copper: 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm AC and higher load, subject to the final load schedule'],
+      ['Electrical protection', 'Distribution board with MCB and RCCB protection, protective earthing, segregated lighting, socket and AC circuits'],
+      ['Electrical fittings', 'LED ceiling lights, data points, UPS provision, 6A and 16A sockets, fan points, dedicated AC circuit'],
+      ['Ventilation and cooling', 'Cross ventilation through controlled openings, wall or ceiling fans, split-AC provision'],
+      ['Plumbing and sanitary', 'EXCLUDED unless shown in the approved scope; framed and sealed penetrations required where included'],
+      ['Lifting provision', 'Designed MS lifting hooks or lugs matched to the finished unit weight, issued with an approved lifting and support-point drawing'],
+      ['Quality checks and warranty', 'Pre-dispatch checks on dimensions, welds, coating, roof drainage, sealing, doors, windows and electrical function. Warranty period and exclusions confirmed in the final quotation only'],
+    ]) +
+    figure('/images/products/shipping-container-office/diagrams/02-container-office-electrical-ventilation-diagram.png', 'Diagram of window, electrical and ventilation integration in a shipping container office shell') +
+  '</div>';
 };
 
 export const buildShippingContainerOfficeShippingHtml = (): string =>
-  replaceFirstParagraph(
-    buildContainerOfficesShippingHtml(),
-    'mb-4 text-sm leading-relaxed text-slate-600',
-    SHIPPING_INTRO
-  );
+  buildContainerOfficesShippingHtml();
 
 const PRICE_SECTION =
   '<section id="shipping-container-office-price-by-size">' +

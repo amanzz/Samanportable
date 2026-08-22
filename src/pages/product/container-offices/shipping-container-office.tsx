@@ -3,7 +3,6 @@ import GenericProductDetails, {
   getServerSideProps as getGenericProductServerSideProps,
 } from '../[category]/[slug]';
 import {
-  appendShippingContainerOfficePriceSection,
   buildShippingContainerOfficeShippingHtml,
   buildShippingContainerOfficeSpecificationsHtml,
 } from '@/page-specific/shipping-container-office/content';
@@ -34,7 +33,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       ...props,
       product: {
         ...product,
-        description: appendShippingContainerOfficePriceSection(product.description || ''),
         shippingHtml: true,
       },
       category: CATEGORY,

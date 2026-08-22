@@ -202,7 +202,7 @@ export interface VariantProductData {
   emitAggregateOffer?: boolean;
   /** Merchant schema offer mode. Default aggregateOffer keeps existing variant pages
       unchanged; "offer" emits a single from-price Offer derived from the ladder. */
-  schemaOfferType?: 'aggregateOffer' | 'offer';
+  schemaOfferType?: 'aggregateOffer' | 'offer' | 'offers';
   /** Merchant condition for the Product Offer, encoded from an owner/commercial ruling.
       Default remains new, matching the legacy product schema. */
   schemaItemCondition?: 'new' | 'refurbished' | 'used';
