@@ -1,0 +1,84 @@
+{
+  "h2": "When a converted container shell suits you better than a cabin",
+  "intro": "Buyers reach this page for one reason. They want the shell itself to be shipping container steel, not a panel cabin dressed to look like one. That choice pays off in a hard yard. Corrugated 1.6 mm skin shrugs off knocks that dent a thin panel wall. The channel base takes a forklift, a crane and a long trailer run without a purpose-built frame. If your unit will move between sites every few months, that robustness decides the job.\n\nThe trade-off sits in the openings. Cutting a 3 x 7 ft door into a container wall removes steel that was carrying load. So we rebuild that path with boxed posts, headers and sills. A fabricated cabin never faces that problem, and it costs less. Compare both routes across [the wider container office range](https://www.samanportable.com/product/container-offices) before you commit. [Send us your site plan and we will price the right shell for it](https://www.samanportable.com/contact).",
+  "panels": [
+    {
+      "sizeSlug": "20x8",
+      "tabLabel": "20x8 ft",
+      "h3": "20 x 8 ft: three seats along a single clear long wall",
+      "paragraph": "The narrowest approved shell suits a gate office, a stores desk or a two-shift site cabin. Its general arrangement puts all three workstations on the rear long wall. The front wall stays clear apart from the entrance, so nobody works with their back to the door. Six windows light the room: two on each long wall and one centred on each 8 ft end. At 8 ft wide the aisle is tight, so we keep both end walls free of furniture.",
+      "applicationsHeading": "Approved GA data",
+      "applications": [
+        "front long wall W1 - D1 - W2; rear long wall W3 - W4; end walls W5 / W6",
+        "Doors: 1 external; windows: 6",
+        "Workstations: 0 front / 3 rear",
+        "Seats: 3; partition: 0"
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "tabLabel": "20x10 ft",
+      "h3": "20 x 10 ft: five seats and a genuine central aisle",
+      "paragraph": "This is the reference size, and the rate card is anchored here at Rs 1,800 per sq ft. Two extra feet of width change the room completely. Now five people work in it: three along the rear wall and two either side of the door. A clear aisle runs down the middle, so a chair can push back without blocking traffic. Most first-time buyers order this size, then scale up or down from its drawing. Six windows and one door keep the opening count identical to the 20 x 8 ft plan.",
+      "applicationsHeading": "Approved GA data",
+      "applications": [
+        "front long wall W1 - D1 - W2; rear long wall W3 - W4; end walls W5 / W6",
+        "Doors: 1 external; windows: 6",
+        "Workstations: 2 front / 3 rear",
+        "Seats: 5; partition: 0"
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "tabLabel": "20x12 ft",
+      "h3": "20 x 12 ft: the same five seats with wider circulation",
+      "paragraph": "The 12 ft shell is the 20 x 10 drawing widened by one foot on each long wall. Nothing else moves. The door keeps its position, the six windows keep theirs, and the desk count stays at five. Every added inch becomes floor. Choose it when a survey table, a plan chest or a visitor chair must sit clear of the working aisle. Because the width grows and the seat count does not, the price per seat rises.",
+      "applicationsHeading": "Approved GA data",
+      "applications": [
+        "front long wall W1 - D1 - W2; rear long wall W3 - W4; end walls W5 / W6",
+        "Doors: 1 external; windows: 6",
+        "Workstations: 2 front / 3 rear",
+        "Seats: 5; partition: 0"
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "tabLabel": "30x10 ft",
+      "h3": "30 x 10 ft: twelve seats behind two separate doors",
+      "paragraph": "Thirty feet is where a site office becomes a team room. Twelve workstations line the two long walls, seven at the back and five at the front. Two doors sit near the ends of the front wall, so a crew can enter one end while a meeting runs at the other. Eight windows keep the middle of a 30 ft box from going dark. The centre bay between the two window pairs stays solid, which is where we run services.",
+      "applicationsHeading": "Approved GA data",
+      "applications": [
+        "front long wall D1 - W1 - W2 - D2; rear long wall W3 - W4 - W5 - W6; end walls W7 / W8",
+        "Doors: 2 external; windows: 8",
+        "Workstations: 5 front / 7 rear",
+        "Seats: 12; partition: 0"
+      ]
+    },
+    {
+      "sizeSlug": "40x8",
+      "tabLabel": "40x8 ft",
+      "h3": "40 x 8 ft: a manager cabin plus seven narrow-office seats",
+      "paragraph": "The first ten feet at one end become a private manager cabin, and the remaining thirty stay open. A partition with a single 3 x 7 ft internal door separates them. The manager has no outside door of their own. Visitors come through the common office, which is exactly how a site supervisor wants it. At 8 ft wide the common run carries seven desks on one wall only, and the front wall stays clear. Ten seats sit down in total once you count the manager and two visitors.",
+      "applicationsHeading": "Approved GA data",
+      "applications": [
+        "front long wall MW1 - D1 - W1 - W2 - D2; rear long wall MW2 - W3 - W4 - W5 - W6; end walls MW3 / W7",
+        "Doors: 2 external + P1 internal; windows: 10",
+        "Workstations: 0 front / 7 rear",
+        "Seats: 10; partition: 1"
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "tabLabel": "40x10 ft",
+      "h3": "40 x 10 ft: a square manager room and twelve team seats",
+      "paragraph": "The largest approved shell gives the manager a true 10 x 10 ft room with three outside windows. Behind the partition, twelve workstations fill the 30 ft common office, seven at the rear and five at the front. Fifteen people can sit down at once, counting the manager and two visitor chairs. Two external doors serve the common office at either end. Order this size when one shell must hold a whole project team.",
+      "applicationsHeading": "Approved GA data",
+      "applications": [
+        "front long wall MW1 - D1 - W1 - W2 - D2; rear long wall MW2 - W3 - W4 - W5 - W6; end walls MW3 / W7",
+        "Doors: 2 external + P1 internal; windows: 10",
+        "Workstations: 5 front / 7 rear",
+        "Seats: 15; partition: 1"
+      ]
+    }
+  ]
+}

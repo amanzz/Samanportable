@@ -400,6 +400,7 @@ const C04_PLATFORM_DISCLOSURES: Record<string, { marker: string; sentence: strin
 };
 
 function applyC04GapCloseCopy(html: string, slug: string): string {
+  if (slug === 'shipping-container-office') return html;
   const disclosure = C04_PLATFORM_DISCLOSURES[slug];
   if (!disclosure) return html;
 

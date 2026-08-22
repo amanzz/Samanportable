@@ -993,7 +993,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
                   // anchors preserved byte-identically. Same existing opt-in
                   // as accommodation-container, additive to this one slug.
-                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin'}
+                  emitSizeAnchors={Boolean(variantData?.emitSizeAnchors) || slug === 'accommodation-container' || slug === 'container-office-cabin'}
                   explorerHidePanelImages={slug === 'accommodation-container'}
                   deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
                   renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}

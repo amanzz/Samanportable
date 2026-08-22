@@ -185,15 +185,15 @@ export default function ProductStructuredData({ product, category, reviews, brea
         .map(img => img.src)
     : [];
 
-  // Variant pages render one primary Product. The visible size selector remains UI,
-  // while its approved ex-GST ladder becomes a single AggregateOffer. This avoids
-  // producing one incomplete Product rich-result candidate per size.
+    // Variant pages render one primary Product. Most pages keep one Product-level
+    // Offer/AggregateOffer; pages with an owner-approved per-size schema ruling can
+    // opt into a six-offer array without turning selector options into Products.
   const exGstPrices = variantData
     ? variantData.variants.map((v) => v.priceExGst).filter((p): p is number => p != null)
     : [];
   const variantOfferStructuredData =
-    variantData &&
-    variantData.schemaOfferType === 'offer' &&
+      variantData &&
+      variantData.schemaOfferType === 'offer' &&
     exGstPrices.length === variantData.variants.length &&
     exGstPrices.length > 0
       ? {
@@ -203,8 +203,30 @@ export default function ProductStructuredData({ product, category, reviews, brea
           price: Math.min(...exGstPrices),
           ...(schemaAvailability ? { availability: schemaAvailability } : {}),
           itemCondition: schemaItemCondition,
-        }
-      : null;
+          }
+        : null;
+  const variantOffersStructuredData =
+      variantData &&
+      variantData.schemaOfferType === 'offers' &&
+      exGstPrices.length === variantData.variants.length &&
+      exGstPrices.length > 0
+        ? variantData.variants.map((variant) => ({
+            '@type': 'Offer',
+            url: `${productUrl}#size-${variant.sizeSlug}`,
+            name: `${variant.label} ${variantData.productName || product.name}`,
+            priceCurrency: 'INR',
+            price: variant.priceExGst,
+            priceValidUntil: '2027-12-31',
+            ...(schemaAvailability ? { availability: schemaAvailability } : {}),
+            itemCondition: schemaItemCondition,
+            priceSpecification: {
+              '@type': 'PriceSpecification',
+              price: variant.priceExGst,
+              priceCurrency: 'INR',
+              valueAddedTaxIncluded: false,
+            },
+          }))
+        : null;
   const aggregateOfferStructuredData =
     variantData &&
     variantData.schemaOfferType !== 'offer' &&
@@ -225,7 +247,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
         }
       : null;
 
-  const productOfferStructuredData = variantOfferStructuredData || aggregateOfferStructuredData || offerStructuredData;
+  const productOfferStructuredData = variantOffersStructuredData || variantOfferStructuredData || aggregateOfferStructuredData || offerStructuredData;
   const hasProductRichResultEvidence = Boolean(
     productOfferStructuredData ||
     aggregateRatingStructuredData ||
@@ -262,7 +284,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
     '@context': 'https://schema.org/',
     '@type': 'Product',
     '@id': `${productUrl}#product`,
-    name: product.name.length > 150 ? product.name.substring(0, 147) + '...' : product.name,
+      name: (variantData?.h1 || product.name).length > 150 ? (variantData?.h1 || product.name).substring(0, 147) + '...' : (variantData?.h1 || product.name),
     ...(description ? { description } : {}),
     ...(productImages.length ? { image: productImages } : {}),
     url: productUrl,

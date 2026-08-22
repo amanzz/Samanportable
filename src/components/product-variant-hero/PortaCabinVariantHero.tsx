@@ -41,6 +41,7 @@ import portaCabinShopApplications from '@/data/products/porta-cabin-shop-applica
 import laborColonyApplications from '@/data/products/labor-colony-applications.json';
 import laborHutmentsApplications from '@/data/products/labor-hutments-applications.json';
 import prefabSiteCanteenApplications from '@/data/products/prefab-site-canteen-applications.json';
+import shippingContainerOfficeApplications from '@/data/products/shipping-container-office-applications.json';
 import oilFieldCampApplications from '@/data/products/oil-field-camp-applications.json';
 import ablutionBlockApplications from '@/data/products/ablution-block-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
@@ -290,8 +291,9 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // panel sets `image.fit: 'contain'` — see the doc comment on VariantImage
   // in ./types.ts. Registered after every earlier entry and both Section-H
   // spreads, per the documented PC-01 failure mode.
-  'container-office-cabin': containerOfficeCabinApplications as ApplicationsData,
-};
+    'container-office-cabin': containerOfficeCabinApplications as ApplicationsData,
+    'shipping-container-office': shippingContainerOfficeApplications as ApplicationsData,
+  };
 
 const C04_PRODUCT_SLUGS = new Set([
   'container-offices',
@@ -342,6 +344,16 @@ const applicationAlt = (label: string, firstApp: string, productLower: string) =
 // "Porta Cabin" -> "Porta cabin". Used where the original copy was sentence-cased
 // mid-string; keeps the flagship's aria-labels byte-identical.
 const sentenceCase = (name: string) => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+
+const markdownLinksToHtml = (value: string): string =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(
+      /\[([^\]]+)\]\((https:\/\/www\.samanportable\.com\/[^)]+)\)/g,
+      '<a class="font-semibold text-emerald-800 underline underline-offset-2" href="$2">$1</a>'
+    );
 
 // Explorer panel image. Prefers an explicit template (`{sizeSlug}` token); with no
 // template it derives the path from that size's FIRST gallery image by swapping the
@@ -1498,7 +1510,16 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
             {rewriteC04VisiblePunctuation(applications.h2, data.productSlug, true)}
           </h2>
           {applications.intro && (
-            <p className="mt-1 text-sm text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(applications.intro, data.productSlug)}</p>
+            <div className="mt-1 space-y-2 text-sm text-[var(--ds-color-steel)]">
+              {(rewriteC04VisiblePunctuation(applications.intro!, data.productSlug) || '')
+                .split('\n\n')
+                .map((paragraph, index) => (
+                  <p
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: markdownLinksToHtml(paragraph) }}
+                  />
+                ))}
+            </div>
           )}
         </div>
       )}
