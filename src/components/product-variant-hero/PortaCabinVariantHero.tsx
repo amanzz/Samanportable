@@ -54,6 +54,7 @@ import foodTruckContainersApplications from '@/data/products/food-truck-containe
 import containerHotelApplications from '@/data/products/container-hotel-applications.json';
 import modularContainerCafeApplications from '@/data/products/modular-container-cafe-applications.json';
 import containerCoffeeShopApplications from '@/data/products/container-coffee-shop-applications.json';
+import containerOfficeCabinApplications from '@/data/products/container-office-cabin-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
@@ -279,6 +280,17 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // published size. Registered after every earlier entry, per the documented
   // PC-01 failure mode (silent key overwrite if registered before it).
   'ablution-block': ablutionBlockApplications as ApplicationsData,
+  // CO-09 (22 Aug 2026) - build prompt v1.2 section 8.3. Six panels, one per
+  // published size: one paragraph plus six approved bullets (`applications`),
+  // per the standing Section 3 rule that prose alone is never permitted. Each
+  // panel also carries its approved GA plan as `image`, downscaled
+  // proportionally from the 3912x2992 master per section 7.2 (never the
+  // 489x374 preview). The GA ratio (1.3075) is not exactly the panel box's
+  // aspect-[4/3], and cropping a dimensioned drawing is forbidden, so every
+  // panel sets `image.fit: 'contain'` — see the doc comment on VariantImage
+  // in ./types.ts. Registered after every earlier entry and both Section-H
+  // spreads, per the documented PC-01 failure mode.
+  'container-office-cabin': containerOfficeCabinApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -1579,6 +1591,10 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                     : panel.applications.length > 0
                       ? applicationAlt(v.label, panel.applications[0], productNameLower)
                       : ''),
+                // CO-09 — see the `fit` doc comment on VariantImage in ./types.ts.
+                // Absent everywhere else, so this defaults to 'cover' below,
+                // byte-identical to every other product's panel image.
+                fit: panel.image?.fit,
               }
             : null;
           const rate = pricePerSqft(data.pricePerSqft, v.sizeSlug, v.priceExGst, v.areaSqft);
@@ -1621,7 +1637,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                         alt={panelImage.alt}
                         width={panel.image?.width || manifestImage?.width || 1254}
                         height={panel.image?.height || manifestImage?.height || 1254}
-                        className="w-full h-full object-cover"
+                        className={cn('w-full h-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
                         sizes="(max-width: 1023px) calc(100vw - 34px), 500px"
                         loading="lazy"
                         decoding="async"
