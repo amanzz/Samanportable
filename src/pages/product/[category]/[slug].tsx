@@ -123,6 +123,12 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // start, matching current cluster convention (every labor-colony page
   // built so far ends up here). Same opt-ins, no new styling.
   'ablution-block',
+  // CO-09 (22 Aug 2026) — design lock ("SAMAN_PORTA_CABINS_DESIGN_LOCK.md",
+  // Canonical page shape row 3) requires the premium size-selector chips on
+  // every page matching the live porta-cabins template. No C02 sibling was in
+  // this set before; only this one slug is added, scoped to CO-09 alone. Same
+  // opt-ins as every page above, no new styling.
+  'container-office-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -976,13 +982,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // require zero U+2014 in rendered copy (PC-06's additionally bans
                   // U+2013), so none can inherit the shared default's em dash. Passed
                   // from these slugs only, so the hub, the MS page and the GI page
-                  // keep the deployed literal.
+                  // keep the deployed literal. CO-09 (22 Aug 2026) added on the same
+                  // basis: build prompt v1.2 acceptance criterion 6 requires zero
+                  // U+2014, and the shared default renders one.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container'
+                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
-                  emitSizeAnchors={slug === 'accommodation-container'}
+                  // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
+                  // anchors preserved byte-identically. Same existing opt-in
+                  // as accommodation-container, additive to this one slug.
+                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin'}
                   explorerHidePanelImages={slug === 'accommodation-container'}
                   deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
                   renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}

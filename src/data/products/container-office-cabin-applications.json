@@ -1,0 +1,132 @@
+{
+  "h2": "Explore every Container Office Cabin size and its plan",
+  "intro": "Six approved general-arrangement plans, one controlled rate card. Pick the footprint by seat count, then check the door, window and partition line on the approved plan before you order.",
+  "panels": [
+    {
+      "sizeSlug": "10x10",
+      "h3": "10x10 ft: the compact 100 sq.ft. cabin that seats four",
+      "paragraph": "One hundred square feet, one door and three windows. The approved plan puts four workstations around the walls with a clear centre, which is why this size works as a gate office, a store with a desk, or a two-shift supervisor cabin rather than a team room. At 10 ft square it drops onto a small levelled pad and lifts as one piece. It also carries the highest rate in the ladder, because a door, a distribution board and a roof do not get cheaper when the floor gets smaller.",
+      "applications": [
+        "One door and three windows on the approved plan",
+        "Four workstations, four seats",
+        "One open room, no partition",
+        "A centred window on each end wall",
+        "Drops onto a small levelled pad and lifts as one module",
+        "Suits a gate office, a store with a desk, or a supervisor cabin"
+      ],
+      "image": {
+        "src": "/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-10x10.webp",
+        "alt": "Approved 10x10 ft cabin GA plan: one door, three windows, four workstations, four seats",
+        "provenance": "render",
+        "width": 1400,
+        "height": 1071,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "20x8",
+      "h3": "20x8 ft: 160 sq.ft. of length for sites without width",
+      "paragraph": "Sixty per cent more floor than the 10x10 ft, and one seat fewer. That is not an error in the plan. Eight feet of internal width will not take facing desks with a working aisle, so the approved 20x8 ft runs a single three-station line down one wall under six windows. Choose it when the site gives you length but not width: a boundary wall, a service road edge, a strip between stacked material. If you need four seats or more, the 20x10 ft is the cheaper answer per seat.",
+      "applications": [
+        "One door, six windows",
+        "Three workstations in a single line, three seats",
+        "No partition; one open room",
+        "Eight feet of width takes one desk run, not two",
+        "Suits a boundary wall, a service road edge or a narrow strip",
+        "Step up to 20x10 ft if you need four seats or more"
+      ],
+      "image": {
+        "src": "/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-20x8.webp",
+        "alt": "Approved 20x8 ft cabin GA plan: one door, six windows, three workstations, three seats",
+        "provenance": "render",
+        "width": 1400,
+        "height": 1071,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "20x10",
+      "h3": "20x10 ft: the 200 sq.ft. reference size and base rate",
+      "paragraph": "Two hundred square feet is the reference configuration. The rate card, the calculator and the technical pack all start here, at Rs 1,250 per sq.ft. Ten feet of internal width is the point where facing desk runs and a usable aisle both fit, so the approved plan seats five where the 20x8 ft seats three at a similar cost. This is the size most site offices and small project offices settle on, and the one we hold closest to standard across both factories.",
+      "applications": [
+        "One door, six windows",
+        "Five workstations, five seats",
+        "Open plan, no internal wall",
+        "Ten feet of width takes facing desk runs and a working aisle",
+        "The 200 sq.ft. reference the whole rate card is built from",
+        "Held closest to standard at both factories"
+      ],
+      "image": {
+        "src": "/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-20x10.webp",
+        "alt": "Approved 20x10 ft cabin GA plan: one door, six windows, five workstations, five seats",
+        "provenance": "render",
+        "width": 1400,
+        "height": 1071,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "30x10",
+      "h3": "30x10 ft: 300 sq.ft., twelve workstations, no partition",
+      "paragraph": "Three hundred square feet, two doors, eight windows and twelve workstations, with no internal partition. This is the open-plan size: one room, two entrances, desks along both long walls. The second door matters more than it sounds, because it lets you separate a site-facing entrance from a clean office entrance without building a wall and losing floor. If you would rather have a closed manager room than the extra open floor, step up to a 40 ft size.",
+      "applications": [
+        "Two doors, eight windows",
+        "Twelve workstations, twelve seats",
+        "Open throughout; the plan carries no partition",
+        "The second door separates a site entrance from a clean entrance",
+        "Desk runs along both long walls",
+        "The largest open-plan size before a manager room appears"
+      ],
+      "image": {
+        "src": "/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-30x10.webp",
+        "alt": "Approved 30x10 ft cabin GA plan: two doors, eight windows, twelve workstations, no partition",
+        "provenance": "render",
+        "width": 1400,
+        "height": 1071,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "40x8",
+      "h3": "40x8 ft: a manager room on a narrow 320 sq.ft. plan",
+      "paragraph": "Three hundred and twenty square feet in a 40 ft long, 8 ft wide body, and the narrowest plan that still gives you a private room. The approved arrangement is a ten-foot manager cabin plus a thirty-foot common office, with three doors, ten windows, seven workstations and ten seats in total. The width still allows only one desk line in the common office. Pick it when the site is a long narrow strip and a closed manager room is not negotiable.",
+      "applications": [
+        "Three doors, ten windows",
+        "Seven workstations, ten seats in total",
+        "One partition: a ten-foot manager cabin and a thirty-foot common office",
+        "Eight feet of width allows one desk line in the common office",
+        "The narrowest plan that still includes a private room",
+        "Manager room seats three at a meeting table"
+      ],
+      "image": {
+        "src": "/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-40x8.webp",
+        "alt": "Approved 40x8 ft cabin GA plan: manager room, one partition, three doors, seven workstations",
+        "provenance": "render",
+        "width": 1400,
+        "height": 1071,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "40x10",
+      "h3": "40x10 ft: 400 sq.ft. and fifteen seats, manager included",
+      "paragraph": "Four hundred square feet, twelve workstations and fifteen seats, arranged as a ten-foot manager cabin and a thirty-foot common office with facing desk runs. It is the largest single module in this ladder and it carries the lowest rate per square foot. Check access before you choose it: a 40 ft body needs trailer approach, turning room and a clear crane position at both lift points. Where access is tight, two 20 ft cabins placed side by side often land more easily.",
+      "applications": [
+        "Three doors, ten windows",
+        "Twelve workstations, fifteen seats in total",
+        "Manager cabin of ten feet, common office of thirty, one partition",
+        "Facing desk runs with a full-length aisle",
+        "The largest single module in this ladder",
+        "Needs trailer approach, turning room and a clear crane position"
+      ],
+      "image": {
+        "src": "/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-40x10.webp",
+        "alt": "Approved 40x10 ft cabin GA plan: manager room, one partition, twelve workstations, fifteen seats",
+        "provenance": "render",
+        "width": 1400,
+        "height": 1071,
+        "fit": "contain"
+      }
+    }
+  ]
+}

@@ -6,6 +6,12 @@ export interface VariantImage {
   provenance: ImageProvenance;
   width: number;
   height: number;
+  /** CO-09 (22 Aug 2026) — explorer-panel-only override for the fixed aspect-[4/3]
+      object-cover box. A GA plan's approved ratio (1.3075) is close to but not
+      exactly 4:3, and the ticket forbids cropping a dimensioned drawing under any
+      circumstance. Absent everywhere else, so every other panel keeps its exact
+      object-cover crop, byte-identical. */
+  fit?: 'cover' | 'contain';
 }
 
 export interface ProductVariant {

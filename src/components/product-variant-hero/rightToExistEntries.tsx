@@ -353,14 +353,40 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: '#size-20x10',
     },
   },
+  // CO-09 (22 Aug 2026) — build prompt v1.1 §8.1/§8.2, verbatim. Block-1 body
+  // 897 chars across exactly two paragraphs (443 + 454), rule 800-900. The one
+  // contextual link sits on "the full container office range" in paragraph 2,
+  // per §7 row 1; the CTA sentence in the same paragraph carries the /contact
+  // link, per §7 row 2. Split card: H3 + two prose paragraphs (158 + 205
+  // chars) per §8.2, CTA to /contact, same destination as block 1 per the
+  // split-card rule. Image is the Section-2-card 16:9 slot from §7.3 (the
+  // 20x10 reference-size exterior, reallocated from the six supplied
+  // description images).
   'container-office-cabin': {
-    heading: 'Why the cabin model earns its own page',
-    body: (
-      <>The cabin is the office-first member of the range: a defined manager-and-staff layout, computer and data points, lockable records storage and AC provision all arrive as one quotation-ready module. It is specified for the people who will sit in it every working day, not just visit it between rounds. Choose it when the office itself matters more than the relocation schedule.</>
-    ),
-    comparison: (
-      <>Moving the office between projects every season? The <Link className={linkClass} href={containerOfficeHref('shipping-container-office')}>shipping-form container office</Link> is hardened for exactly that duty.</>
-    ),
+    heading: 'Why a fabricated cabin costs less than a converted container',
+    bodyParagraphs: [
+      (
+        <>
+          Two products on this site look almost identical from thirty feet away, and they are not the same thing. SAMAN fabricates this cabin: we cut and weld an MS frame, clad it in corrugated steel and finish it as an office. A shipping container office begins as a freight box that has already worked at sea, and is then cut, reinforced, insulated and lined. The converted unit costs more because the shell costs more and the cutting work is heavier.
+        </>
+      ),
+      (
+        <>
+          Choose the cabin when the office will sit on one site for years, arrive on a trailer and be craned into place once or twice. Choose a converted shell when the unit must move repeatedly, be handled by container equipment, or carry the provenance of a real freight box. If you are weighing the two, <Link className={linkClass} href={CONTAINER_OFFICES_HREF}>the full container office range</Link> sets out what each build is for. Send us your site dimensions and seat count and we will <Link className={linkClass} href="https://www.samanportable.com/contact">price the cabin against your layout</Link>.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/container-office-cabin/section2/container-office-cabin-section2-20x10-moss-olive.webp',
+      imageAlt: 'Moss olive 20x10 ft container office cabin on paved ground, door and window line on the long wall',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'Read the approved plan before you fix a size',
+      body: 'The image beside this text is SAMAN\'s approved visualisation of the 20x10 ft cabin, the 200 sq.ft. reference size that the whole rate card is calculated from.',
+      body2: 'Every size on this page carries its own general-arrangement plan showing the door positions, the window line, the workstation grid and the seat count, so you can test your layout on paper before you order.',
+      ctaLabel: 'Talk to us about your size and layout',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'shipping-container-office': {
     heading: 'Why the shipping-form build stands apart',
