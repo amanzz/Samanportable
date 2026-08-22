@@ -11,6 +11,7 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Separator } from '../components/ui/separator';
 import OptimizedContent from '../components/OptimizedContent';
+import QuoteForm from '../components/QuoteForm';
 import { 
   Calendar, 
   User, 
@@ -43,6 +44,7 @@ interface BlogPostProps {
 const METADATA_IMAGE_OVERRIDES: Record<string, string> = {
   'best-porta-cabin-supplier': 'https://www.samanportable.com/container-office-by-saman-1.webp',
   'owning-a-porta-cabin-is-perfect': 'https://www.samanportable.com/hero-image/saman-portable-office-cabin-bangalore.webp',
+  'portable-office-cabin-manufacturers-in-bangalore': 'https://www.samanportable.com/images/blr-01/portable-office-cabin-manufacturer-bangalore-hero.webp',
 };
 // Distinctive marker of the broken WordPress image (matches its size variants).
 const BROKEN_WP_IMAGE_MARKER = 'container-office-by-saman-13-1_11zon';
@@ -57,7 +59,86 @@ const SEO_METADATA_OVERRIDES: Record<string, { title: string; description: strin
     title: 'Why Own a Porta Cabin? Benefits, Sizes & Buyer Guide',
     description: 'Should you own a porta cabin? See the benefits, sizes, uses and buying checks before you choose a factory-built SAMAN porta cabin.',
   },
+  'portable-office-cabin-manufacturers-in-bangalore': {
+    title: 'Portable Office Cabin Manufacturer in Bangalore | SAMAN',
+    description: 'Portable office cabins built at our own Gopasandra, Bengaluru unit. Nine sizes, insulated panels and free Bangalore city delivery in 7 to 21 working days.',
+  },
 };
+
+const BANGALORE_OFFICE_CABIN_SLUG = 'portable-office-cabin-manufacturers-in-bangalore';
+const BANGALORE_OFFICE_CABIN_URL = `https://www.samanportable.com/${BANGALORE_OFFICE_CABIN_SLUG}`;
+const BANGALORE_OFFICE_CABIN_SEO_TITLE = 'Portable Office Cabin Manufacturer in Bangalore | SAMAN';
+const BANGALORE_OFFICE_CABIN_META_DESCRIPTION = 'Portable office cabins built at our own Gopasandra, Bengaluru unit. Nine sizes, insulated panels and free Bangalore city delivery in 7 to 21 working days.';
+const BANGALORE_OFFICE_CABIN_HERO_IMAGE = '/images/blr-01/portable-office-cabin-manufacturer-bangalore-hero.webp';
+const BANGALORE_OFFICE_CABIN_HERO_ALT = 'Grey portable office cabin with glass door and window by a roadside';
+const BANGALORE_OFFICE_CABIN_MAP_EMBED = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15556.703211516599!2d77.7291942!3d12.8509838!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6d55f6f82ca7%3A0xf28e36c870c3ef6a!2sSAMAN%20POS%20India%20Private%20Limited!5e0!3m2!1sen!2sin!4v1712400000000!5m2!1sen!2sin';
+const BANGALORE_OFFICE_CABIN_DIRECTIONS = 'https://www.google.com/maps/search/?api=1&query=SAMAN%20POS%20India%20Private%20Limited%20Gopasandra%20Bengaluru%20560099';
+const BANGALORE_OFFICE_CABIN_FAQS = [
+  {
+    question: 'Where are your portable office cabins manufactured?',
+    answer: 'At our own unit at Sy No 34/2, Gopasandra, Bengaluru 560099. Cabins for Bangalore projects are fabricated, fitted and finished there and dispatched from that address.',
+  },
+  {
+    question: 'Is delivery inside Bangalore charged separately?',
+    answer: 'Standard delivery within Bangalore city limits is included for our standard cabin sizes to accessible sites. Crane hire, night-movement permits and restricted-access sites are quoted separately.',
+  },
+  {
+    question: 'How long does a portable office cabin take from order to placement?',
+    answer: 'Normally 7 to 21 working days from drawing approval. The variable is the specification, not the queue. Confirm your layout early and the schedule holds.',
+  },
+  {
+    question: 'Can I visit the Gopasandra factory before ordering?',
+    answer: 'Yes, and we encourage it. Call +91 88616 22859 between 9:00 am and 8:00 pm, Monday to Saturday, to arrange a visit. Ask to see a cabin at the panelling stage.',
+  },
+  {
+    question: 'Which size suits a four-person site office?',
+    answer: 'A 20 by 10 foot cabin at 200 square feet is the usual choice for four people with desks, storage and a small meeting corner. If the same cabin must also hold a toilet, move up rather than partition down.',
+  },
+  {
+    question: 'Do you supply used or refurbished portable office cabins?',
+    answer: 'No. Every cabin we deliver is newly fabricated at our Bengaluru unit. It carries a five-year structural warranty on the frame and base, with one-year warranty on finishing. A used cabin carries neither.',
+  },
+  {
+    question: 'Do you deliver portable office cabins outside Bangalore city limits?',
+    answer: 'Yes, across Karnataka and the wider south zone from the same Gopasandra unit. Delivery inside Bangalore city limits is included for standard sizes to accessible sites; beyond the city limits freight is quoted against the distance and the vehicle the route requires.',
+  },
+  {
+    question: 'Can two office cabins be joined into one larger office?',
+    answer: 'Yes, provided the units are built to the same module. That is decided at the drawing stage, not at delivery, so tell us at enquiry if you expect to extend later. Joining two cabins built to different modules afterwards is not a site adjustment.',
+  },
+];
+
+const BANGALORE_OFFICE_CABIN_SCHEMA = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'SAMAN POS India Private Limited',
+    url: BANGALORE_OFFICE_CABIN_URL,
+    telephone: '+91 88616 22859',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Sy No 34/2, Gopasandra',
+      addressLocality: 'Bengaluru',
+      addressRegion: 'Karnataka',
+      postalCode: '560099',
+      addressCountry: 'IN',
+    },
+    openingHours: 'Mo-Sa 09:00-20:00',
+    areaServed: 'Bengaluru',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: BANGALORE_OFFICE_CABIN_FAQS.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  },
+];
 
 const CONTENT_H1_DEMOTION_SLUGS = new Set([
   'best-porta-cabins-in-bangalore',
@@ -471,6 +552,327 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({ pa
   }
 };
 
+const BangalorePortableOfficeCabinLanding = ({ rankMathSEO }: { rankMathSEO?: RankMathSEOData | null }) => {
+  return (
+    <Layout>
+      <UnifiedSEO
+        rankMathSEO={rankMathSEO}
+        canonical={BANGALORE_OFFICE_CABIN_URL}
+        fallbackTitle={BANGALORE_OFFICE_CABIN_SEO_TITLE}
+        fallbackDescription={BANGALORE_OFFICE_CABIN_META_DESCRIPTION}
+        fallbackCanonical={BANGALORE_OFFICE_CABIN_URL}
+        fallbackOgTitle={BANGALORE_OFFICE_CABIN_SEO_TITLE}
+        fallbackOgDescription={BANGALORE_OFFICE_CABIN_META_DESCRIPTION}
+        fallbackOgImage={`https://www.samanportable.com${BANGALORE_OFFICE_CABIN_HERO_IMAGE}`}
+        author=""
+        publisher=""
+        structuredData={BANGALORE_OFFICE_CABIN_SCHEMA}
+      />
+
+      <main className="min-h-screen bg-background">
+        <section className="bg-[#0A3D2A] text-white py-16 sm:py-20">
+          <div className="max-w-7xl mx-auto container-padding">
+            <div className="max-w-4xl">
+              <nav className="text-sm text-white/75 mb-8" aria-label="Breadcrumb">
+                Home › Bangalore › Portable Office Cabin Manufacturer
+              </nav>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
+                Portable Office Cabin Manufacturer in Bangalore
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8">
+                SAMAN manufactures portable office cabins at its own unit in Gopasandra, Bengaluru, for construction sites, factories, warehouses, institutions and commercial projects across Bangalore. We build site office cabins for project durations. We build modular office cabins that reconfigure as a team grows, and prefab office cabins for permanent commercial use. Each unit leaves the factory with insulated wall and roof panels, wiring, flooring, doors and windows already fitted. Our Bangalore team handles layout confirmation, fabrication, delivery and placement. Tell us your size, layout and site location for a factory-direct quotation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-white text-[#0A3D2A] hover:bg-white/90" asChild>
+                  <a href="https://www.samanportable.com/contact">Get a factory-direct quote</a>
+                </Button>
+                <Button size="lg" variant="heroOutline" asChild>
+                  <a href="tel:+918861622859">Call +91 88616 22859</a>
+                </Button>
+              </div>
+              <div className="mt-10 overflow-hidden rounded-lg border border-white/15 shadow-2xl">
+                <Image
+                  src={BANGALORE_OFFICE_CABIN_HERO_IMAGE}
+                  alt={BANGALORE_OFFICE_CABIN_HERO_ALT}
+                  width={1344}
+                  height={756}
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 896px"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-border bg-white">
+          <div className="max-w-7xl mx-auto container-padding py-5">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5 text-sm font-medium text-foreground">
+              <div>Own manufacturing unit · Gopasandra, Bengaluru 560099</div>
+              <div>ISO 9001:2015 · 14001:2015 · 45001:2018 certified</div>
+              <div>Free delivery inside Bangalore city limits</div>
+              <div>7 to 21 working days from drawing approval</div>
+              <div>Mon–Sat, 9:00 am to 8:00 pm · +91 88616 22859</div>
+            </div>
+          </div>
+        </section>
+
+        <div className="max-w-5xl mx-auto container-padding py-12 sm:py-16 space-y-14">
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Portable Office Cabins Built at Our Gopasandra Unit</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Our Bangalore unit at Sy No 34/2, Gopasandra, Karnataka 560099 fabricates complete cabins rather than assembling bought-in shells. The frame is cut, welded and squared on our own jigs, then panelled, wired and finished under one roof. Fabrication and finishing happen in the same building. A layout change requested mid-build therefore stays in-house, and the schedule holds.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Buyers are welcome to inspect a unit in progress before dispatch. Most Bangalore customers who visit come at the panelling stage, when the frame, the wall build-up and the electrical routing are all still visible. That is the right moment to check what you are buying. A finished cabin, closed up, shows you far less.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Our Gopasandra unit serves Bangalore city and the surrounding industrial belt directly. Our second unit at Jalpura, Greater Noida covers the north zone. A company running sites in both regions orders to one specification and receives matching cabins in each city.</p>
+            <div className="aspect-video overflow-hidden rounded-lg border bg-muted">
+              <iframe
+                src={BANGALORE_OFFICE_CABIN_MAP_EMBED}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="SAMAN POS India Private Limited Gopasandra unit map"
+                className="h-full w-full"
+              />
+            </div>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Site Office Cabin, Modular Office Cabin or Prefab Office Cabin</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Three different buyers arrive at this page, and they need different cabins.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">A site office cabin is bought for the duration of a project. It will be craned onto uneven ground, used hard for eighteen months, then lifted and moved to the next site. Here the frame and the base matter more than the finish. A cabin that takes repeated lifting without racking beats one with a better interior.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">A modular office cabin is bought when the team size is not settled. Two or three units are placed side by side and joined, and a fourth is added later. This only works if the cabins share one module from the outset. We therefore fix the module at the drawing stage, not at delivery.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">A prefab office cabin is bought as a permanent building. It sits on a prepared plinth, it is wired into the mains rather than a generator, and it is specified for daily occupancy over years. Insulation, ventilation and finish quality carry the most weight in this configuration.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Small requirements are common in Bangalore. Our smallest standard unit is 10 by 10 feet at 100 square feet. It suits a one or two-person site office, a security-cum-supervisor cabin or a compact sales office.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Choosing a Site Office Cabin Size for Your Bangalore Project</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Size selection starts with use, not with a catalogue. A contractor asking for a site office cabin may need one table, two visitor chairs and a drawing rack. A factory may need a supervisor desk, a small records area and air-conditioning. A sales office may need a front-facing counter and enough open space for customers to stand without blocking the door.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">The first constraint is width. A 10-foot width is easy to move through most Bangalore industrial roads and works well for single-room site cabins. A 12-foot width gives better internal movement and is preferred where the cabin will be used for longer working hours. Length then decides whether the cabin remains a compact office or becomes a divided unit with meeting, store or pantry space.</p>
+            <div className="overflow-x-auto">
+              <table className="min-w-[720px] w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr className="border-b bg-muted/60">
+                    <th className="p-3 font-semibold text-foreground">Common size</th>
+                    <th className="p-3 font-semibold text-foreground">Typical Bangalore use</th>
+                    <th className="p-3 font-semibold text-foreground">Layout note</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y">
+                  <tr>
+                    <td className="p-3 text-muted-foreground">10 x 10 ft</td>
+                    <td className="p-3 text-muted-foreground">Compact site office, security-cum-supervisor cabin, small sales office</td>
+                    <td className="p-3 text-muted-foreground">Keep furniture light and avoid inward door conflicts</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">20 x 10 ft</td>
+                    <td className="p-3 text-muted-foreground">Project office, billing office, site coordination room</td>
+                    <td className="p-3 text-muted-foreground">Allows a desk zone and visitor zone in one room</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">30 x 10 ft</td>
+                    <td className="p-3 text-muted-foreground">Larger construction office, factory admin cabin, records office</td>
+                    <td className="p-3 text-muted-foreground">Can take a partition if the door and window positions are planned early</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">40 x 10 ft or 40 x 12 ft</td>
+                    <td className="p-3 text-muted-foreground">Extended office, meeting room, combined admin and site control cabin</td>
+                    <td className="p-3 text-muted-foreground">Route access and crane placement should be checked before quotation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed">Do not decide only by asking how many people can sit inside. Desks, files, electrical points, AC location, visitor movement and the door swing all change the usable space. A 20 x 10 ft office cabin can feel larger than a poorly planned 30 x 10 ft unit if the furniture and openings are set correctly.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Occupancy depends on the internal layout you approve, not on floor area alone. We confirm the working headcount against your drawing before quoting.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">What a Portable Office Cabin Really Costs in Bangalore</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Search for a portable office cabin in Bangalore. On one screen you will see the same product at nine hundred rupees and at seven and a half lakh. Both figures are real. Neither is a price.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">The low numbers are almost always a rate per square foot, or a component price, entered into a marketplace field meant for a unit price. Take a listing showing nine hundred rupees for a thirty-by-ten cabin. That is three hundred square feet at the rate, or two lakh seventy thousand for the shell. The very low figures, in the one to fifteen thousand range, are usually a single panel or a door.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">What changes a real quotation in Bangalore is straightforward. Floor area sets the base. The wall and roof build-up moves it next, because an insulated panel cabin and a plain sheeted cabin are different products with similar photographs. After that come the openings, the electrical load, the flooring, and whether the site needs a crane. The per-square-foot rate falls as the cabin gets larger, so a forty-by-ten unit does not cost four times a ten-by-ten.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">We publish a <Link href="/product/portable-office" className="text-green-700 underline underline-offset-4 hover:text-green-900">full size and price ladder</Link> rather than a single headline number, and we quote against a drawing you have approved.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Portable Office Cabin, Container Office or Porta Cabin</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Many Bangalore buyers compare these terms before they enquire. They are related, but they should not be bought as if they mean the same thing.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">A portable office cabin is the right search when the primary requirement is a working office: a finished room with insulation, wiring, door and window positions, flooring and a layout that suits day-to-day staff use. A container office usually starts from a container-style shell or heavy-duty steel module and is chosen where rugged transport, stacking feel or container aesthetics matter. A porta cabin is the broadest market term and can refer to office cabins, guard rooms, toilets, stores, kiosks and several other portable structures.</p>
+            <div className="overflow-x-auto">
+              <table className="min-w-[760px] w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr className="border-b bg-muted/60">
+                    <th className="p-3 font-semibold text-foreground">Buyer term</th>
+                    <th className="p-3 font-semibold text-foreground">Best fit</th>
+                    <th className="p-3 font-semibold text-foreground">What to check before ordering</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y">
+                  <tr>
+                    <td className="p-3 text-muted-foreground">Portable office cabin</td>
+                    <td className="p-3 text-muted-foreground">Site office, modular office, prefab office, sales office, admin cabin</td>
+                    <td className="p-3 text-muted-foreground">Layout, insulation, electrical load, flooring, delivery access and warranty</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">Container office</td>
+                    <td className="p-3 text-muted-foreground">Heavy-duty steel office module or container-style workspace</td>
+                    <td className="p-3 text-muted-foreground">Shell type, weight, lifting points, corrosion protection and internal finish</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">Porta cabin</td>
+                    <td className="p-3 text-muted-foreground">General portable structure requirement</td>
+                    <td className="p-3 text-muted-foreground">Whether the quotation is for an office cabin, toilet, guard room, store or another category</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed">If your requirement is a heavy-duty steel workspace, compare our <a href="https://www.samanportable.com/container-office-in-bangalore" className="text-green-700 underline underline-offset-4 hover:text-green-900">container office in Bangalore</a> page. If you are still at the broad category stage, the <a href="https://www.samanportable.com/portacabins-for-sale-in-bangalore" className="text-green-700 underline underline-offset-4 hover:text-green-900">porta cabins for sale in Bangalore</a> page explains the wider product family.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">This page stays focused on office cabin manufacturing. We do not mix price ladders, size ladders or technical specifications for the other two product categories here because that creates the wrong comparison and makes quoting less clear.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Delivery, Crane Placement and Site Access in Bangalore</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">This is where most Bangalore orders succeed or go wrong, and it is worth reading before you order.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Standard delivery within Bangalore city limits is included for our standard cabin sizes to accessible sites. Fabrication and delivery normally take 7 to 21 working days from drawing approval. Crane hire, night-movement permits and restricted-access sites are quoted separately.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">A cabin up to twenty feet travels on a standard trailer. Anything longer, or any double-storey unit, needs a route check before we confirm a date. Inside Bangalore the constraints are consistent: the older central areas have narrow approaches and low cable spans, several arterial roads restrict heavy vehicles during the day so placement is scheduled at night, and a number of industrial and tech-park sites require gate passes arranged in advance.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Your side of the work is short but not optional. The cabin needs a level, compacted base that will carry it without settling. The crane needs standing room and clear overhead space above the final position. Someone with authority to accept the unit should be on site at the delivery window. A cabin that cannot be placed on arrival still occupies the trailer.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">We confirm all of this on a call before dispatch rather than at the gate. Tell us the site address and the access at enquiry stage and the placement plan comes back with the quotation.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Delivering a Site Office Cabin Across Bangalore&apos;s Industrial Corridors</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Bangalore delivery is not one route. A cabin going to Peenya, Jigani, Bommasandra, Electronic City, Hoskote, Nelamangala, Whitefield, Devanahalli or Bidadi faces different access limits. Some sites are easy during the day. Some are better handled at night. Some industrial parks allow a trailer inside only after security paperwork is completed.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">For that reason we ask for the exact delivery point before confirming dispatch. A Google Maps pin helps, but it is not enough by itself. We also need the gate width, the turning radius near the final location, the overhead clearance and the distance from the unloading point to the prepared base.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">If the cabin has to be placed over a compound wall, between sheds or beside an active production area, the crane plan changes. A small crane may reach the gate but fail at the final lift. A larger crane may need road permission or a night slot. We prefer to catch that before the cabin leaves Gopasandra.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Sites outside Bangalore city limits are handled from the same unit. The quotation separates the cabin cost from additional freight or route-specific placement cost so the buyer can see what belongs to manufacturing and what belongs to transport.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Specifying a Prefab Office Cabin for Bangalore Site Conditions</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">A prefab office cabin used in Bangalore should be specified for heat, rain, dust and long working hours. The wall and roof panel decide how comfortable the office remains in the afternoon. The false ceiling and air-conditioning point decide whether cooling is practical. The window position decides whether daylight helps the room or creates glare on desks and screens.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">For construction sites, we usually prioritise a stronger base frame, practical flooring and easy-to-clean internal surfaces. For factories and warehouses, electrical load, earthing route and dust control become more important. For sales or customer-facing cabins, the visible finish, front glazing, signboard provision and visitor movement matter more than they would on a back-office site cabin.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Bangalore sites also vary by season. A cabin placed before the monsoon needs drainage around the base so water does not stand below the floor. A cabin beside a dusty yard needs window placement and cleaning access planned from the start. These are small decisions during drawing approval, but they decide how the cabin feels after three months of daily use.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">The right specification is therefore not the most expensive one. It is the one that matches the cabin&apos;s working environment. When you share the site use, we can recommend where to spend and where not to overbuild.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Portable Office Cabin Sizes, Materials and Technical Options</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed"><Link href="/product/portable-office" className="text-green-700 underline underline-offset-4 hover:text-green-900">Nine standard sizes</Link> run from 10 by 10 feet at 100 square feet to 40 by 12 feet at 480 square feet, all at 8.5 feet height, and we build to custom dimensions where a site demands it. The standard build is a mild steel frame to IS 2062 with insulated sandwich panel walls and roof, an 18 mm Bison panel floor base finished in 1.3 mm vinyl, a false ceiling, full internal wiring with a switchboard, and an air-conditioning connection point. Door and window positions are set on your drawing, not fixed by a catalogue. Internal partitions, toilet and pantry compartments, and double-storey configurations are available as options.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Every unit carries a five-year structural warranty on the frame and base, with one-year warranty on finishing.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">What Your Quotation Includes and What It Does Not</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">A clear office cabin quotation should separate manufacturing scope from site scope. This avoids the common misunderstanding where the buyer expects civil work, crane work or external power connection to be included in the cabin price.</p>
+            <div className="overflow-x-auto">
+              <table className="min-w-[760px] w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr className="border-b bg-muted/60">
+                    <th className="p-3 font-semibold text-foreground">Scope item</th>
+                    <th className="p-3 font-semibold text-foreground">Usually included in cabin quote</th>
+                    <th className="p-3 font-semibold text-foreground">Usually buyer/site scope unless named</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y">
+                  <tr>
+                    <td className="p-3 text-muted-foreground">Cabin frame, wall panels, roof and floor base</td>
+                    <td className="p-3 text-muted-foreground">Yes</td>
+                    <td className="p-3 text-muted-foreground">No</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">Internal wiring, switchboard and AC point</td>
+                    <td className="p-3 text-muted-foreground">Yes, as per approved drawing</td>
+                    <td className="p-3 text-muted-foreground">External power supply and mains connection</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">Doors, windows, flooring and false ceiling</td>
+                    <td className="p-3 text-muted-foreground">Yes, as specified</td>
+                    <td className="p-3 text-muted-foreground">Changes after approval unless revised in writing</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">Delivery inside Bangalore city limits</td>
+                    <td className="p-3 text-muted-foreground">Yes, for standard sizes to accessible sites</td>
+                    <td className="p-3 text-muted-foreground">Restricted access, special permits or waiting charges</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">Crane placement</td>
+                    <td className="p-3 text-muted-foreground">Only if named in quotation</td>
+                    <td className="p-3 text-muted-foreground">Buyer scope by default</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 text-muted-foreground">Ground preparation, plinth and approvals</td>
+                    <td className="p-3 text-muted-foreground">No</td>
+                    <td className="p-3 text-muted-foreground">Buyer/site scope</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed">If you want any buyer-scope item handled by us, ask before quotation. We can price it where practical, but it must be written into the order. Spoken assumptions at delivery do not help either side.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Why Buyers Choose an Office Cabin Manufacturer in Bangalore</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">As an office cabin manufacturer in Bangalore rather than a reseller, we control the parts of the job that usually slip. That is the practical difference on most enquiries. The frame specification is ours and so is the fabrication schedule. A mid-build change is a conversation with the shop floor, not a renegotiation with a supplier.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">The company is certified to ISO 9001:2015 for quality management, ISO 14001:2015 for environmental management and ISO 45001:2018 for occupational health and safety. It is also NSIC enlisted, DPIIT startup recognised and Udyam registered. That matters when a cabin is bought through corporate or government procurement, where vendor documentation is checked.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">We would rather lose an enquiry at the quotation stage than at the gate, so we say what is not included: ground preparation, civil plinth work, crane hire outside standard placement, external power connection and statutory site approvals remain with the buyer unless the quotation names them.</p>
+          </section>
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Portable Office Cabin Questions From Bangalore Buyers</h2>
+            <div className="space-y-4">
+              {BANGALORE_OFFICE_CABIN_FAQS.map((faq) => (
+                <div key={faq.question} className="rounded-lg border bg-card p-6">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">{faq.question}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="space-y-8 rounded-lg border bg-muted/30 p-6 sm:p-8">
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Get a Factory-Direct Quote From Our Bangalore Team</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">Send us the cabin size or the floor area you need, how many units, the layout including door, window and partition positions, the delivery address, and the date you need it on site. A quotation comes back against those five inputs. Unsure of the size? Tell us how many people will use the cabin and what else must fit inside. We will propose one.</p>
+              <dl className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <dt className="font-semibold text-foreground">Phone</dt>
+                  <dd><a href="tel:+918861622859" className="text-green-700 underline underline-offset-4 hover:text-green-900">+91 88616 22859</a></dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-foreground">Hours</dt>
+                  <dd className="text-muted-foreground">Monday to Saturday, 9:00 am to 8:00 pm</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-foreground">Unit</dt>
+                  <dd className="text-muted-foreground">Sy No 34/2, Gopasandra, Bengaluru, Karnataka 560099</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-foreground">Directions</dt>
+                  <dd><a href={BANGALORE_OFFICE_CABIN_DIRECTIONS} className="text-green-700 underline underline-offset-4 hover:text-green-900" target="_blank" rel="noopener noreferrer">Google Maps</a></dd>
+                </div>
+              </dl>
+              <Button size="lg" asChild>
+                <Link href="/contact">Request a quote</Link>
+              </Button>
+            </div>
+            <QuoteForm variant="default" />
+          </section>
+
+          <nav className="border-t pt-8" aria-label="Local links">
+            <div className="grid gap-3 sm:grid-cols-3">
+              <Link href="/product/portable-office" className="rounded-lg border bg-card p-4 font-medium text-foreground hover:text-green-700 transition-colors">Portable office cabin sizes, prices and specifications</Link>
+              <Link href="/portable-cabin-price-in-bangalore" className="rounded-lg border bg-card p-4 font-medium text-foreground hover:text-green-700 transition-colors">Portable cabin prices in Bangalore</Link>
+              <Link href="/contact" className="rounded-lg border bg-card p-4 font-medium text-foreground hover:text-green-700 transition-colors">Contact our Bangalore team</Link>
+            </div>
+          </nav>
+        </div>
+      </main>
+    </Layout>
+  );
+};
+
 const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
   const [loading, setLoading] = useState(false);
   const [isClient, setIsClient] = useState(false);
@@ -493,6 +895,10 @@ const BlogPostPage = ({ post, slug, rankMathSEO }: BlogPostProps) => {
         </main>
       </>
     );
+  }
+
+  if (slug === BANGALORE_OFFICE_CABIN_SLUG) {
+    return <BangalorePortableOfficeCabinLanding rankMathSEO={rankMathSEO} />;
   }
 
   // Format date for display
