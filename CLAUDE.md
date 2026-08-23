@@ -10,6 +10,11 @@ Rebuild **106 approved pages** on samanportable.com: new content, new images, ex
 
 The design is finished. It is the live template at `https://www.samanportable.com/product/porta-cabins`. Nothing about layout, components, spacing, tokens or component order is open for discussion on any page. **Only content and images change.** A page that looks different from the template is a defect, not a variation.
 
+For porta-cabins product-page template work, especially CO-01 Shipping Container
+Office, the project-level Template Conformance Gate lives at
+`claude/SAMAN_PORTA_CABINS_DESIGN_LOCK.md`. Read it before editing and report
+its six named results before handoff.
+
 This is deliberately repetitive work. The same build, 106 times, with different copy and different pictures. It should be boring. If a page is taking a long argument, something has gone wrong with the process, not with the page.
 
 ---
@@ -172,11 +177,10 @@ agent) doesn't re-learn these the slow way.**
   (`/hub/hub`) instead of linking the hub. If a page needs to link its own
   cluster hub, use the hub constant directly, not the sibling-link helper.
   Grep any new `*Href('<hub-slug>')` call before shipping.
-- **`claude/SAMAN_PORTA_CABINS_DESIGN_LOCK.md` (the Template Conformance Gate
-  doc referenced by build prompts) does not exist anywhere in this repo.**
-  Do not assume it silently passed; report it as an unreachable reference
-  per the self-contained-build-prompts rule, and substitute a manual
-  component-order + screenshot + prop-audit pass.
+- **`claude/SAMAN_PORTA_CABINS_DESIGN_LOCK.md` is now tracked and mandatory.**
+  Read it before any porta-cabins product-page template work, especially CO-01.
+  Report its six Template Conformance Gate results in the PR or handoff
+  comment, alongside verifier output and screenshots.
 - **A full-page screenshot (Chrome `--screenshot`, Playwright `fullPage`)
   tiles a tall page by scrolling, and any `position: sticky`/`fixed` element
   (fixed header, mobile sticky CTA bar, calculator step bar) repaints once

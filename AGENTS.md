@@ -17,3 +17,8 @@ If you are Codex or another agent that defaults to reading `AGENTS.md` for
 instructions and stops here: this file is intentionally just a pointer.
 Open `CLAUDE.md` now — it has the actual rules, the current page state, and
 the process this project runs on.
+
+For CO-01 Shipping Container Office or any porta-cabins product-page template
+work, also open [`claude/SAMAN_PORTA_CABINS_DESIGN_LOCK.md`](./claude/SAMAN_PORTA_CABINS_DESIGN_LOCK.md)
+before editing. That file is the project-level Template Conformance Gate and
+contains the CO-01 no-deviation checklist.
