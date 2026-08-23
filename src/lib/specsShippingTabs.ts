@@ -370,6 +370,7 @@ const FOOTNOTES =
   'Distances beyond 1,000 km are quoted at booking. ODC (over-dimensional cargo) charges depend on ' +
   'the state. All freight figures are tentative, the final charge is confirmed once your delivery ' +
   'location and order are confirmed, and may vary slightly with the route and return-vehicle availability.';
+const FREE_DELIVERY_LINE = `<p class="mb-6 text-xs font-medium text-emerald-800">${esc(FREE_DELIVERY)}</p>`;
 
 // [distance, freight] — 20 ft open trailer
 const FREIGHT_20FT: [string, string][] = [
@@ -495,8 +496,8 @@ export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
         `<span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>` +
         `<p class="m-0 text-sm font-medium text-emerald-900">${esc(FREE_DELIVERY)}</p>` +
       `</div>` +
-      freightTable('20 ft open trailer · freight by distance (both zones)', FREIGHT_20FT) +
-      freightTable('40 ft open trailer · freight by distance (both zones)', FREIGHT_40FT) +
+      freightTable('20 ft open trailer · freight by distance (both zones)', FREIGHT_20FT) + FREE_DELIVERY_LINE +
+      freightTable('40 ft open trailer · freight by distance (both zones)', FREIGHT_40FT) + FREE_DELIVERY_LINE +
       routingNoteHtml +
       destinationTable('Typical destinations from our Bengaluru unit (South zone)', DEST_NOTE, DEST_SOUTH) +
       destinationTable('Typical destinations from our Greater Noida unit (North zone)', DEST_NOTE, DEST_NORTH) +
