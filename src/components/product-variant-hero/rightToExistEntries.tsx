@@ -459,6 +459,17 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     comparison: (
       <>Need the same module hardened for repeated lifts between projects? The <Link className={linkClass} href={containerOfficeHref('shipping-container-office')}>shipping-form office build</Link> carries that duty.</>
     ),
+    splitCard: {
+      imageSrc: '/images/products/site-office-container/description/05-site-office-container-20x10-entrance-and-levelling.webp',
+      imageAlt: 'Site office container entrance set on concrete bearing pads with level reference line',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'Site-ready details before the cabin leaves the works',
+      body: 'The image beside this text shows the 20 x 10 ft site office container as a placed project office, with the entry point and bearing pads visible before daily use begins.',
+      body2: 'Use the six GA plan tabs below to check desk count, door positions, windows and the manager cabin before you ask for the final quotation.',
+      ctaLabel: 'Compare the six approved GA plans',
+      ctaHref: '#site-office-size-applications',
+    },
   },
   // PC-00 (14 Aug 2026) — Section 2 "buyer orientation" copy from the approved
   // hub draft, mapped onto this existing heading/body/comparison card (no new

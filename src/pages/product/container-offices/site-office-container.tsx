@@ -41,21 +41,40 @@ import {
   orderPortaCabinStrip,
   slugFromProductHref,
 } from '../../../lib/portaCabinClusterRail';
-import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { containerOfficeYmalItems, orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
+import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 import { SiteOfficeContainerVariantHero } from '../../../page-specific/site-office-container/SiteOfficeContainerVariantHero';
 import {
+  addSiteOfficeContainerCalculatorImage,
   buildSiteOfficeContainerShippingHtml,
   buildSiteOfficeContainerSpecificationsHtml,
-  insertSiteOfficeContainerPriceSection,
 } from '../../../page-specific/site-office-container/content';
 
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
+
+const normaliseSocRenderedDashes = <T,>(value: T): T => {
+  if (typeof value === 'string') {
+    return value.replace(/[–—]/g, '-') as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => normaliseSocRenderedDashes(item)) as T;
+  }
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, item]) => [
+        key,
+        normaliseSocRenderedDashes(item),
+      ])
+    ) as T;
+  }
+  return value;
+};
 
 // Dynamic import for ProductTabs to avoid SSR issues
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
@@ -72,9 +91,7 @@ const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
   )
 });
 
-const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
-  'portable-office-cabin',
-]);
+const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set<string>();
 
 interface ProductDetailsProps {
   product: WooCommerceProduct | null;
@@ -128,8 +145,8 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin cluster
     // subpages; null for every other subpage (its tabs stay unchanged).
     const t31Tabs = {
-      specificationsHtml: buildSiteOfficeContainerSpecificationsHtml(),
-      shippingHtml: buildSiteOfficeContainerShippingHtml(),
+      specificationsHtml: normaliseSocRenderedDashes(buildSiteOfficeContainerSpecificationsHtml()),
+      shippingHtml: normaliseSocRenderedDashes(buildSiteOfficeContainerShippingHtml()),
     };
 
     if (!product) {
@@ -180,10 +197,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
             : [],
         })) as unknown as WooCommerceProduct[];
       const { excludeRedirectingProducts } = await import('../../../lib/redirectSources');
-      relatedProducts = orderContainerOfficeRail(
+      relatedProducts = normaliseSocRenderedDashes(orderContainerOfficeRail(
         slug,
         await excludeRedirectingProducts(relatedProducts)
-      );
+      ));
     } catch (error) {
       // Silent error handling for production
     }
@@ -193,7 +210,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     const baseProductDescription = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
       ? demoteHtmlH1ToH2(descriptionData?.description || '')
       : descriptionData?.description || '';
-    const productDescription = insertSiteOfficeContainerPriceSection(baseProductDescription);
+    const productDescription = normaliseSocRenderedDashes(baseProductDescription);
 
     // Fetch REAL approved backend reviews — ONLY when the product actually has
     // ratings (rating_count > 0), so unrated products skip the extra API call.
@@ -226,6 +243,26 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .catch(() => null)
       : null;
 
+    if (variantData) {
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        title: variantData.seoTitle || rankMathSEO?.title,
+        description: variantData.metaDescription || rankMathSEO?.description,
+        canonical: `https://www.samanportable.com/product/${category}/${slug}`,
+        og_title: variantData.seoTitle || rankMathSEO?.og_title,
+        og_description: variantData.metaDescription || rankMathSEO?.og_description,
+        og_image: variantData.variants?.[0]?.images?.[0]?.src
+          ? `https://www.samanportable.com${variantData.variants[0].images![0].src}`
+          : rankMathSEO?.og_image,
+        twitter_title: variantData.seoTitle || rankMathSEO?.twitter_title,
+        twitter_description: variantData.metaDescription || rankMathSEO?.twitter_description,
+        twitter_image: variantData.variants?.[0]?.images?.[0]?.src
+          ? `https://www.samanportable.com${variantData.variants[0].images![0].src}`
+          : rankMathSEO?.twitter_image,
+        ...(variantData.suppressLegacyFaqSchema ? { faqSchema: null } : {}),
+      };
+    }
+
     // Event B owns all commercial size/price data for this bespoke route.
     // The variant branch does not render the legacy short description or attributes,
     // so omit them with the obsolete commercial fields instead of hydrating conflicts.
@@ -247,7 +284,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
 
     return {
       props: {
-        product: {
+        product: normaliseSocRenderedDashes({
           ...productForPageProps,
           description: productDescription,
           images: descriptionData?.images?.map((img, index) => ({
@@ -271,7 +308,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           weight: '',
           date_created: '',
           date_modified: '',
-        } as unknown as WooCommerceProduct,
+        } as unknown as WooCommerceProduct),
         category,
         slug,
         // T31 — real tab HTML for the 12 in-scope cluster pages; null otherwise.
@@ -432,6 +469,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     return built;
   }, [slug, transformedProduct?.slug, transformedRelatedProducts]);
 
+  const containerOfficeYouMayAlsoLikeItems = useMemo(
+    () => containerOfficeYmalItems(transformedProduct?.slug || slug, relatedRailItems),
+    [slug, transformedProduct?.slug, relatedRailItems]
+  );
+
   const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
   const embeddedCalculatorSummary = useMemo(() => (
     embeddedCalculatorMapping && embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
@@ -444,7 +486,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const embeddedCalculatorHtml = useMemo(() => {
     if (!embeddedCalculatorMapping) return null;
-    return renderCabinCalculatorSSR({
+    return normaliseSocRenderedDashes(renderCabinCalculatorSSR({
       embedded: true,
       // A NO-PREFILL route mounts the general cabin calculator, exactly as at
       // /cabin-cost-calculator: no product, no ladder, no product name. It must
@@ -453,7 +495,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         ? { config: { productId: embeddedCalculatorMapping.productId }, ladderKey: embeddedCalculatorMapping.ladderKey, productName: product?.name }
         : {}),
       pageUrl: makeCalculatorPageUrl(category, slug),
-    });
+    }));
   }, [category, slug, embeddedCalculatorMapping]);
 
   // The calculator entry band. Sits between the buy box and the description
@@ -462,11 +504,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     // The entry band names the product and prints its price, so a no-prefill
     // route gets no band at all rather than a band claiming to price a panel.
     if (!embeddedCalculatorMapping || !embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) return null;
-    return renderCalculatorEntrySection({
+    return normaliseSocRenderedDashes(addSiteOfficeContainerCalculatorImage(renderCalculatorEntrySection({
       productId: embeddedCalculatorMapping.productId,
       productName: product?.name || embeddedCalculatorSummary?.name || '',
       ladderKey: embeddedCalculatorMapping.ladderKey,
-    });
+    })));
   }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration
@@ -852,6 +894,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
                 </section>
               )}
+
+              {containerOfficeYouMayAlsoLikeItems.length > 0 && (
+                <PortaCabinsYouMayAlsoLike
+                  items={containerOfficeYouMayAlsoLikeItems}
+                  subline="Other container office configurations in the same range."
+                />
+              )}
+
+              <hr className="saman-section-divider" aria-hidden="true" />
 
               {/* Product Tabs */}
               <div className="mt-4">
