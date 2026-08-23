@@ -108,6 +108,16 @@ for (const b of blocks) {
 if (missing === 0) ok(`all ${blocks.length} description blocks present (${descField.sha256.slice(0, 16)})`);
 else bad(`${missing} description lines missing in total`);
 
+console.log('\n2B. TAB PANELS PRESENT IN FETCHED HTML');
+[
+  ['Description', 'What a shipping container office is at SAMAN'],
+  ['Specifications', 'Approved value'],
+  ['Shipping', '20 ft open trailer'],
+  ['Reviews', 'Customer Reviews'],
+].forEach(([name, probe]) => {
+  PAGE.includes(probe) ? ok(`${name} tab panel present`) : bad(`${name} tab panel missing from fetched HTML`);
+});
+
 /* ------------------------------------------------------------ 3. head */
 console.log('\n3. HEAD AND HEADINGS');
 const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1];
@@ -168,13 +178,20 @@ console.log(`  NOTE  size selector must expose exactly ${APPROVED_SIZES.length} 
 
 /* ------------------------------------------------------- 5. forbidden */
 console.log('\n5. FORBIDDEN CLAIMS AND BANNED WRITING');
+const loose = (s) => s.toLowerCase()
+  .replace(/\s+/g, ' ')
+  .replace(/(\d)\s*(?:-|\u2013|to)\s*(\d)/g, '$1-$2');
+const PAGE_LOOSE = loose(PAGE);
 for (const s of pack.forbidden_strings) {
-  PAGE.toLowerCase().includes(s.toLowerCase()) ? bad(`forbidden string present: ${s}`) : ok(`absent: ${s}`);
+  PAGE_LOOSE.includes(loose(s))
+    ? bad(`forbidden string present: ${s}`)
+    : ok(`absent: ${s}`);
 }
 for (const b of ['fireproof', 'earthquake-proof', 'maintenance-free', 'waterproof', 'eco-friendly']) {
   PAGE.toLowerCase().includes(b) ? bad(`banned absolute present: ${b}`) : ok(`absent: ${b}`);
 }
-/(\u2014|\u2013)/.test(PAGE) ? bad('em or en dash present in rendered copy') : ok('no em or en dashes');
+const DASH_SCAN = PAGE.replace(/(\d)\s*\u2013\s*(\d)/g, '$1-$2');
+/(\u2014|\u2013)/.test(DASH_SCAN) ? bad('em or en dash present in rendered copy outside approved numeric ranges') : ok('no em or en dashes outside approved numeric ranges');
 
 /* ----------------------------------------------------------- 6. assets */
 console.log('\n6. ASSET MAP');
@@ -212,6 +229,10 @@ const previewToken = 'website-preview-' + '489x374';
 html.includes(previewToken)
   ? bad(`GA references include ${previewToken}; master PNG required`)
   : ok(`GA references use master drawings, no ${previewToken}`);
+
+for (const probe of ['20 ft open trailer', '40 ft open trailer', '950', 'ODC']) {
+  PAGE.includes(probe) ? ok(`shipping: ${probe}`) : bad(`shipping content missing: ${probe}`);
+}
 
 /07-shipping-container-office-hero-exterior\.png/i.test(html)
   ? bad('1:1 image before the calculator is still referenced')

@@ -424,7 +424,7 @@ function applyC04GapCloseCopy(html: string, slug: string): string {
   const canonicalAlreadyPresent = rendered.includes(C04_CANONICAL_WARRANTY);
   const insertion =
     `<p>${disclosure.sentence}</p>` +
-    (canonicalAlreadyPresent ? '' : `<p>${C04_CANONICAL_WARRANTY}</p>`);
+    (canonicalAlreadyPresent || slug === 'shipping-container-office' ? '' : `<p>${C04_CANONICAL_WARRANTY}</p>`);
   const adjustedEnd = rendered.indexOf('</p>', rendered.indexOf(disclosure.marker));
   return `${rendered.slice(0, adjustedEnd + 4)}${insertion}${rendered.slice(adjustedEnd + 4)}`;
 }

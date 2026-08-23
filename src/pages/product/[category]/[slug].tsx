@@ -787,6 +787,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       // suppression only; every other route keeps the accordion unchanged.
       hidePublishedPriceTable: slug === 'fire-rated-porta-cabin',
       deferEnhancement: slug === 'accommodation-container',
+      suppressCommitmentCopy: slug === 'shipping-container-office',
     });
     // LC-05's acceptance gate is zero U+2014 in built output. Quote-mode logic,
     // controls and calculations remain untouched; only the one shared help-copy
@@ -823,6 +824,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       productId: embeddedCalculatorMapping.productId,
       productName: product?.name || embeddedCalculatorSummary?.name || '',
       ladderKey: embeddedCalculatorMapping.ladderKey,
+      suppressCommitmentCopy: slug === 'shipping-container-office',
     });
   }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage]);
 
