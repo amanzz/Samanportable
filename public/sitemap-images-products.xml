@@ -70,7 +70,7 @@
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-container-site-office-exterior-front.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/shipping-container-office-20ft-hero-three-quarter-india.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -746,11 +746,6 @@
   </url>
   <url>
     <loc>https://www.samanportable.com/product/container-offices</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/construction-site-at-goldenhour.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/guiding-the-lift-on-site.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/industrial-construction-site-with-portable-offices.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/modern-minimalist-office-with-site-view.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/rusty-metal-corner-of-shipping-container.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
@@ -762,70 +757,61 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-container-site-office-exterior-front.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/shipping-container-office-20ft-hero-three-quarter-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/container-offices-10x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/container-offices-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/container-offices-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/container-offices-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/container-offices-10x10-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/container-offices-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/container-offices-20x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/container-offices-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/container-offices-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/container-offices-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/container-offices-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/container-offices-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x12/container-offices-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x12/container-offices-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x12/container-offices-20x12-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x12/container-offices-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x12/container-offices-20x12-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x12/container-offices-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x20/container-offices-20x20-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x20/container-offices-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x20/container-offices-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x20/container-offices-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x20/container-offices-20x20-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x20/container-offices-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/container-offices-20x8-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/container-offices-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/container-offices-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/container-offices-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/container-offices-20x8-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/container-offices-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/container-offices-30x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/container-offices-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/container-offices-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/container-offices-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/container-offices-30x10-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/container-offices-30x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/container-offices-40x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/container-offices-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/container-offices-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/container-offices-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/container-offices-40x10-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/container-offices-40x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x12/container-offices-40x12-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x12/container-offices-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x12/container-offices-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x12/container-offices-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x12/container-offices-40x12-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x12/container-offices-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/container-offices-40x8-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/container-offices-40x8-elevated-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/container-offices-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/container-offices-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/container-offices-40x8-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/container-offices-40x8-workspace-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/co-00-container-office-10x10-midnight-navy-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/co-00-container-office-10x10-midnight-navy-interior-second.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/co-00-container-office-10x10-midnight-navy-long-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/co-00-container-office-10x10-midnight-navy-main-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/co-00-container-office-10x10-midnight-navy-second-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/10x10/co-00-container-office-10x10-midnight-navy-site-context.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/co-00-container-office-20x10-deep-forest-green-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/co-00-container-office-20x10-deep-forest-green-interior-second.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/co-00-container-office-20x10-deep-forest-green-long-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/co-00-container-office-20x10-deep-forest-green-main-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/co-00-container-office-20x10-deep-forest-green-second-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x10/co-00-container-office-20x10-deep-forest-green-site-context.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/co-00-container-office-20x8-graphite-charcoal-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/co-00-container-office-20x8-graphite-charcoal-interior-second.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/co-00-container-office-20x8-graphite-charcoal-long-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/co-00-container-office-20x8-graphite-charcoal-main-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/co-00-container-office-20x8-graphite-charcoal-second-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/20x8/co-00-container-office-20x8-graphite-charcoal-site-context.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/co-00-container-office-30x10-burnt-terracotta-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/co-00-container-office-30x10-burnt-terracotta-interior-second.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/co-00-container-office-30x10-burnt-terracotta-long-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/co-00-container-office-30x10-burnt-terracotta-main-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/co-00-container-office-30x10-burnt-terracotta-second-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/30x10/co-00-container-office-30x10-burnt-terracotta-site-context.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/co-00-container-office-40x10-pearl-white-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/co-00-container-office-40x10-pearl-white-interior-second.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/co-00-container-office-40x10-pearl-white-long-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/co-00-container-office-40x10-pearl-white-main-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/co-00-container-office-40x10-pearl-white-second-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x10/co-00-container-office-40x10-pearl-white-site-context.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/co-00-container-office-40x8-deep-burgundy-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/co-00-container-office-40x8-deep-burgundy-interior-second.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/co-00-container-office-40x8-deep-burgundy-long-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/co-00-container-office-40x8-deep-burgundy-main-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/co-00-container-office-40x8-deep-burgundy-second-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/40x8/co-00-container-office-40x8-deep-burgundy-site-context.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/description/co-00-container-office-10x10-midnight-navy-finished-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/description/co-00-container-office-20x8-graphite-charcoal-finished-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/description/co-00-container-office-30x10-burnt-terracotta-finished-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/description/co-00-container-office-40x10-pearl-white-finished-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/description/co-00-container-office-40x8-deep-burgundy-finished-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/section2/co-00-container-office-20x10-deep-forest-green-finished-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/size-section/co-00-container-office-10x10-general-arrangement-board.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/size-section/co-00-container-office-20x10-general-arrangement-board.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/size-section/co-00-container-office-20x8-general-arrangement-board.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/size-section/co-00-container-office-30x10-general-arrangement-board.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/size-section/co-00-container-office-40x10-general-arrangement-board.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/size-section/co-00-container-office-40x8-general-arrangement-board.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/specifications/co-00-container-office-frame-and-sheet-fixing-detail.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/specifications/co-00-container-office-window-electrical-fan-detail.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/container-offices/container-office-cabin</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/construction-site-by-the-riverbank.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/construction-site-with-cabins-and-machinery.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/construction-site-with-machinery-and-worker.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/construction-site-with-workers-and-offices.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/industrial-mine-site-in-evening-light.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
@@ -837,70 +823,61 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-container-site-office-exterior-front.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/shipping-container-office-20ft-hero-three-quarter-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x12/container-office-cabin-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x12/container-office-cabin-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x12/container-office-cabin-20x12-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x12/container-office-cabin-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x12/container-office-cabin-20x12-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x12/container-office-cabin-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x20/container-office-cabin-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x20/container-office-cabin-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x20/container-office-cabin-20x20-lounge-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x20/container-office-cabin-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x20/container-office-cabin-20x20-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x20/container-office-cabin-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-corridor-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x12/container-office-cabin-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x12/container-office-cabin-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x12/container-office-cabin-40x12-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x12/container-office-cabin-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x12/container-office-cabin-40x12-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x12/container-office-cabin-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-team-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-04-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-05-interior-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/10x10/container-office-cabin-10x10-06-interior-end.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-04-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-05-interior-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x10/container-office-cabin-20x10-06-interior-end.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-04-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-05-interior-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/20x8/container-office-cabin-20x8-06-interior-end.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-04-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-05-interior-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/30x10/container-office-cabin-30x10-06-interior-end.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-04-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-05-interior-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x10/container-office-cabin-40x10-06-interior-end.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-04-interior-main.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-05-interior-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/40x8/container-office-cabin-40x8-06-interior-end.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/description/container-office-cabin-description-01-10x10-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/description/container-office-cabin-description-02-20x8-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/description/container-office-cabin-description-03-30x10-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/description/container-office-cabin-description-04-40x8-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/description/container-office-cabin-description-05-40x10-manager.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/diagrams/container-office-cabin-diagram-1-shell-materials-and-joints.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/diagrams/container-office-cabin-diagram-2-electrical-and-services.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-10x10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-20x10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-20x8.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-30x10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-40x10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-40x8.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/section2/container-office-cabin-section2-20x10-moss-olive.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/container-offices/shipping-container-office</loc>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-bridge-construction-site-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-metro-rail-construction-site-india-1.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-nhai-highway-project-site-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-thermal-power-plant-site-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://blog.samanportable.com/wp-content/uploads/2024/10/shipping-container-office-warehouse-factory-delivery-india.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
@@ -913,61 +890,57 @@
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-container-site-office-exterior-front.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-corridor-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/10x10/shipping-container-office-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x10/shipping-container-office-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x12/shipping-container-office-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x20/shipping-container-office-20x20-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/20x8/shipping-container-office-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-lounge-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-meeting-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/30x10/shipping-container-office-30x10-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-corner-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x10/shipping-container-office-40x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-lounge-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x12/shipping-container-office-40x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-corridor-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-team-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/40x8/shipping-container-office-40x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/07-shipping-container-office-hero-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/description/01-shipping-container-office-20x8-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/description/02-shipping-container-office-20x10-workstations.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/description/03-shipping-container-office-20x12-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/description/04-shipping-container-office-30x10-workstations.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/description/05-shipping-container-office-40x8-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/description/06-shipping-container-office-40x10-teamroom.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/diagrams/01-container-office-opening-reinforcement-diagram.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/diagrams/02-container-office-electrical-ventilation-diagram.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/ga/shipping-container-office-20x10x8-5-premium-ga-specification-board-v1.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/ga/shipping-container-office-20x12x8-5-premium-ga-specification-board-v1.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/ga/shipping-container-office-20x8x8-5-premium-ga-specification-board-v1.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/ga/shipping-container-office-30x10x8-5-premium-ga-specification-board-v1.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/ga/shipping-container-office-40x10x8-5-premium-ga-specification-board-v1.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/ga/shipping-container-office-40x8x8-5-premium-ga-specification-board-v1.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x10/01-shipping-container-office-front-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x10/02-shipping-container-office-rear-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x10/03-shipping-container-office-corner-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x10/04-shipping-container-office-workstation-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x10/05-shipping-container-office-aisle-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x10/06-shipping-container-office-entrance-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x12/01-shipping-container-office-front-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x12/02-shipping-container-office-rear-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x12/03-shipping-container-office-corner-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x12/04-shipping-container-office-workstation-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x12/05-shipping-container-office-aisle-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x12/06-shipping-container-office-entrance-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/02-shipping-container-office-rear-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/03-shipping-container-office-corner-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/04-shipping-container-office-workstation-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/05-shipping-container-office-aisle-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/06-shipping-container-office-entrance-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-30x10/01-shipping-container-office-front-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-30x10/02-shipping-container-office-rear-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-30x10/03-shipping-container-office-corner-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-30x10/04-shipping-container-office-workstation-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-30x10/05-shipping-container-office-aisle-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-30x10/06-shipping-container-office-entrance-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x10/01-shipping-container-office-front-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x10/02-shipping-container-office-rear-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x10/03-shipping-container-office-corner-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x10/04-shipping-container-office-workstation-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x10/05-shipping-container-office-aisle-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x10/06-shipping-container-office-manager-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x8/02-shipping-container-office-rear-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x8/03-shipping-container-office-corner-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x8/04-shipping-container-office-workstation-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x8/05-shipping-container-office-aisle-interior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-40x8/06-shipping-container-office-manager-interior.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.samanportable.com/product/container-offices/site-office-container</loc>
@@ -992,7 +965,7 @@
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-container-site-office-exterior-front.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/shipping-container-office-20ft-hero-three-quarter-india.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/site-office-container/10x10/site-office-container-10x10-corner-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/site-office-container/10x10/site-office-container-10x10-front-angle.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/site-office-container/10x10/site-office-container-10x10-hero-view.webp</image:loc></image:image>
@@ -1301,6 +1274,8 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-dormitory-bunk-rows.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-dormitory-entrance-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-front-elevation.webp</image:loc></image:image>
@@ -1343,9 +1318,11 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/description/labour-colony-room-interior-four-bunks-16x9.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/section2/labour-colony-block-site-context-16x9.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/specifications/labour-colony-service-network-16x9.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/60x24-gplus1/labor-sheds-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/oil-field-camp/20x10/oil-field-camp-20x10-front-left-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-site-canteen/20x10/canteen-20x10-01-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -1359,51 +1336,47 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/Modular-worker-cabins-developed-by-SAMAN-Portable.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-shed-single-block-multi-room-bangalore-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/prefab-labor-camp-hero-full-deployment-india.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-exact-front-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-front-right-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-bunk-layout.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-room-entrance.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/118x30-gplus1/labor-hutments-118x30-gplus1-rear-left-three-quarter-wide.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-right-hero-wide.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-front-right-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-bunk-layout-wide.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus1/labor-hutments-120x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-front-right-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-bunk-layout.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-room-entrance.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/120x24-gplus2/labor-hutments-120x24-gplus2-interior-storage-ventilation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-room-entrance-wide.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-exact-front-elevation-wide.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-exact-front-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-front-right-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-bunk-layout.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-room-entrance.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus1/labor-hutments-90x24-gplus1-interior-storage-ventilation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-exact-front-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-left-hero-wide.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-front-right-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-bunk-layout.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-room-entrance.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/90x24-gplus2/labor-hutments-90x24-gplus2-interior-storage-ventilation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-right-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-interior-bunk-layout.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-rear-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x10/labor-hutments-12x10-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x10/labor-hutments-12x10-front-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x10/labor-hutments-12x10-front-right-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x10/labor-hutments-12x10-rear-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x15/labor-hutments-12x15-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x15/labor-hutments-12x15-front-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x15/labor-hutments-12x15-front-right-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x15/labor-hutments-12x15-rear-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x20/labor-hutments-12x20-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x20/labor-hutments-12x20-front-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x20/labor-hutments-12x20-front-right-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x20/labor-hutments-12x20-gi-sheet-wall-tier.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x20/labor-hutments-12x20-puf-panel-wall-tier.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/12x20/labor-hutments-12x20-rear-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/15x20/labor-hutments-15x20-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/15x20/labor-hutments-15x20-front-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/15x20/labor-hutments-15x20-front-right-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/15x20/labor-hutments-15x20-rear-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/20x20/labor-hutments-20x20-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/20x20/labor-hutments-20x20-front-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/20x20/labor-hutments-20x20-front-right-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/20x20/labor-hutments-20x20-rear-left-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/description/labor-hutments-door-and-weatherhood-detail-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/description/labor-hutments-roof-and-ventilation-detail-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/description/labor-hutments-room-scale-reference-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/description/labor-hutments-two-units-placed-apart-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/section2/labor-hutments-single-unit-site-context-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/specifications/labor-hutments-material-services-diagram-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/specifications/labor-hutments-module-plan-diagram-16x9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/oil-field-camp/20x10/oil-field-camp-20x10-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-site-canteen/20x10/canteen-20x10-01-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -1417,8 +1390,10 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/60x24-gplus1/labor-hutments-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-gable-end.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-interior-open-hall.webp</image:loc></image:image>
@@ -1456,7 +1431,9 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/diagrams/labour-shed-open-dormitory-plan.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/diagrams/labour-shed-structural-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/section2/labour-shed-open-hall-split-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/oil-field-camp/20x10/oil-field-camp-20x10-front-left-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/60x24-gplus1/prefab-labor-camps-60x24-gplus1-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-site-canteen/20x10/canteen-20x10-01-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -1470,9 +1447,12 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/Modular-worker-cabins-developed-by-SAMAN-Portable.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-hutments-12x20-ft-mid-duration-project-site-india-hero.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/labor-colony/labor-shed-single-block-multi-room-bangalore-india.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/oil-field-camp/20x10/oil-field-camp-20x10-front-left-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-bunk-bed-layout-wide-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-exact-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/118x30-gplus1/prefab-labor-camps-118x30-gplus1-front-left-hero.webp</image:loc></image:image>
@@ -1515,6 +1495,9 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-entrance-axis-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/90x24-gplus2/prefab-labor-camps-90x24-gplus2-room-reverse-axis-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/specifications/prefab-labour-camp-block-grid-diagram.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-labor-camps/specifications/prefab-labour-camp-services-spine-diagram.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/prefab-site-canteen/20x10/canteen-20x10-01-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -1846,42 +1829,42 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-end-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/saman-porta-cabin-10x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-rear-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/saman-porta-cabin-20x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-rear-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/saman-porta-cabin-20x12-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-end-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-rear-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/saman-porta-cabin-20x8-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-rear-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/saman-porta-cabin-30x10-workspace-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-entrance-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-front-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-hero-view.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-rear-angle.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-side-elevation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/saman-porta-cabin-40x10-workspace-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/porta-cabin-10x10-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/porta-cabin-10x10-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/porta-cabin-10x10-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/porta-cabin-10x10-04-interior-entry-to-rear.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/porta-cabin-10x10-05-interior-front-left-angle.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/10x10/porta-cabin-10x10-06-interior-rear-to-entry.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/porta-cabin-20x10-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/porta-cabin-20x10-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/porta-cabin-20x10-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/porta-cabin-20x10-04-interior-entry-to-rear.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/porta-cabin-20x10-05-interior-left-end-lengthwise.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x10/porta-cabin-20x10-06-interior-right-end-lengthwise.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/porta-cabin-20x12-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/porta-cabin-20x12-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/porta-cabin-20x12-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/porta-cabin-20x12-04-interior-left-end-lengthwise.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/porta-cabin-20x12-05-interior-right-end-lengthwise.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x12/porta-cabin-20x12-06-interior-entry-to-rear.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/porta-cabin-20x8-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/porta-cabin-20x8-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/porta-cabin-20x8-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/porta-cabin-20x8-04-interior-left-end-lengthwise.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/porta-cabin-20x8-05-interior-right-end-lengthwise.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/20x8/porta-cabin-20x8-06-interior-door-to-rear.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/porta-cabin-30x10-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/porta-cabin-30x10-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/porta-cabin-30x10-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/porta-cabin-30x10-04-interior-left-end-lengthwise.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/porta-cabin-30x10-05-interior-right-end-lengthwise.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/30x10/porta-cabin-30x10-06-interior-entry-to-far-end.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/porta-cabin-40x10-01-exterior-front-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/porta-cabin-40x10-02-exterior-front-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/porta-cabin-40x10-03-exterior-rear-left.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/porta-cabin-40x10-04-interior-common-right-to-partition.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/porta-cabin-40x10-05-interior-common-partition-to-right.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/40x10/porta-cabin-40x10-06-interior-manager-cabin.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/double-story-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/fire-rated-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/gi-porta-cabin-card.webp</image:loc></image:image>
@@ -1892,18 +1875,21 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/puf-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/skid-mounted-porta-cabin-card.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/children/soundproof-porta-cabin-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/description/porta-cabin-description-01-10x10-oxford-teal-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/description/porta-cabin-description-02-20x8-narrow-office-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/description/porta-cabin-description-03-20x12-wide-aisle-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/description/porta-cabin-description-04-30x10-eucalyptus-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/description/porta-cabin-description-05-40x10-manager-and-common-office.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/description/saman-porta-cabin-10x10-compact-site.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/description/saman-porta-cabin-20x12-partition-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/description/saman-porta-cabin-20x8-narrow-office.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/description/saman-porta-cabin-40x10-multiroom-interior.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/diagrams/saman-porta-cabin-build-anatomy.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/explorer/saman-porta-cabin-10x10-explorer.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/explorer/saman-porta-cabin-20x10-explorer.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/explorer/saman-porta-cabin-20x12-explorer.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/explorer/saman-porta-cabin-20x8-explorer.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/explorer/saman-porta-cabin-30x10-explorer.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/explorer/saman-porta-cabin-40x10-explorer.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/section2/saman-porta-cabin-20x10-elevated.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/section2/porta-cabin-section2-20x10-desert-ochre-site.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/size-section/porta-cabin-ga-plan-10x10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/size-section/porta-cabin-ga-plan-20x10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/size-section/porta-cabin-ga-plan-20x12.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/size-section/porta-cabin-ga-plan-20x8.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/size-section/porta-cabin-ga-plan-30x10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/size-section/porta-cabin-ga-plan-40x10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/specifications/porta-cabin-diagram-1-frame-and-sheet-assembly.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/porta-cabins/specifications/porta-cabin-diagram-2-window-electrical-fan.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>

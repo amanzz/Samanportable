@@ -11,15 +11,16 @@ interface LayoutProps {
   homepageNeutrality?: boolean;
   /** LC-02 - passthrough to Footer's opt-in resource-strip removal. */
   hideFooterResourceStrip?: boolean;
+  hideChrome?: boolean;
 }
 
-export default function Layout({ children, homepageNeutrality = false, hideFooterResourceStrip = false }: LayoutProps) {
+export default function Layout({ children, homepageNeutrality = false, hideFooterResourceStrip = false, hideChrome = false }: LayoutProps) {
   const router = useRouter();
   const hasLayoutStreamGuard = needsProductCalculatorLayoutStreamGuard(router.pathname || '');
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      {!hideChrome && <Header />}
       {/* Mobile bottom padding - only applied on mobile devices, removed on desktop */}
       <main className={`flex-1 pb-16 lg:pb-0${hasLayoutStreamGuard ? ' calculator-layout-pending' : ''}`}>
         {hasLayoutStreamGuard ? (
@@ -31,7 +32,7 @@ export default function Layout({ children, homepageNeutrality = false, hideFoote
         {children}
         <ProductCalculatorLayoutFallback />
       </main>
-      <Footer homepageNeutrality={homepageNeutrality} hideResourceStrip={hideFooterResourceStrip} />
+      {!hideChrome && <Footer homepageNeutrality={homepageNeutrality} hideResourceStrip={hideFooterResourceStrip} />}
     </div>
   );
 }

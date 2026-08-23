@@ -388,7 +388,7 @@ const C04_PLATFORM_DISCLOSURES: Record<string, { marker: string; sentence: strin
       'This cabin is newly fabricated in container form; no used cargo shell is involved unless you separately request a converted-container quotation.',
   },
   'shipping-container-office': {
-    marker: 'A SAMAN shipping container office is a new ISO-grade Corten steel structure',
+    marker: 'A shipping container office starts life as a corrugated steel box, not as a set of panels.',
     sentence:
       'The shipping-form office is newly fabricated to container dimensions and hardware standards; conversion of a used ISO cargo container is quoted separately on request.',
   },
