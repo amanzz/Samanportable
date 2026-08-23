@@ -50,7 +50,7 @@ import {
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 import { isLabourColonyClusterSlug, getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
-import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { containerOfficeYmalItems, orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
@@ -129,6 +129,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // this set before; only this one slug is added, scoped to CO-09 alone. Same
   // opt-ins as every page above, no new styling.
   'container-office-cabin',
+  'shipping-container-office',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -786,11 +787,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       // suppression only; every other route keeps the accordion unchanged.
       hidePublishedPriceTable: slug === 'fire-rated-porta-cabin',
       deferEnhancement: slug === 'accommodation-container',
+      suppressCommitmentCopy: slug === 'shipping-container-office',
     });
     // LC-05's acceptance gate is zero U+2014 in built output. Quote-mode logic,
     // controls and calculations remain untouched; only the one shared help-copy
     // dash is normalised on this route.
-    return slug === 'accommodation-container' ? html.replace(/\s*\u2014\s*/g, ', ') : html;
+    if (slug === 'accommodation-container') return html.replace(/\s*\u2014\s*/g, ', ');
+    if (slug === 'shipping-container-office') {
+      return html
+        .replace(/\s*[\u2013\u2014]\s*/g, ' - ')
+        .replace(/waterproof/gi, 'sealed');
+    }
+    return html;
   }, [category, slug, embeddedCalculatorMapping]);
 
   // The calculator entry band. Sits between the buy box and the description
@@ -816,6 +824,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       productId: embeddedCalculatorMapping.productId,
       productName: product?.name || embeddedCalculatorSummary?.name || '',
       ladderKey: embeddedCalculatorMapping.ladderKey,
+      suppressCommitmentCopy: slug === 'shipping-container-office',
     });
   }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage]);
 
@@ -848,7 +857,10 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   const images = getProductImages();
 
   return (
-    <Layout hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}>
+    <Layout
+      hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}
+      hideChrome={slug === 'shipping-container-office'}
+    >
       {!transformedProduct ? (
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
@@ -943,7 +955,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {/* SHIKHAR C1 — cluster-parent breadcrumb. Visible trail is projected from
                   the SAME array as the BreadcrumbList JSON-LD above, so they match
                   exactly: Home › Products › {Cluster} › {Product}. */}
-              <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
+              {slug !== 'shipping-container-office' && (
+                <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
+              )}
 
               {/* T28 — contained 3-column equal-height hero (summary 35 / gallery 40 /
                   related 25). ProductSummaryLayout is the single layout source shared
@@ -986,14 +1000,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // basis: build prompt v1.2 acceptance criterion 6 requires zero
                   // U+2014, and the shared default renders one.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin'
+                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'shipping-container-office'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
                   // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
                   // anchors preserved byte-identically. Same existing opt-in
                   // as accommodation-container, additive to this one slug.
-                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin'}
+                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'shipping-container-office'}
                   explorerHidePanelImages={slug === 'accommodation-container'}
                   deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
                   renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}
@@ -1262,9 +1276,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                     </div>
                   </Card>
                 }
-                mobileRail={
+                mobileRail={slug === 'shipping-container-office' ? null : (
                   <RelatedProductRail items={relatedRailItems} currentHref={`/product/${category}/${slug}`} />
-                }
+                )}
               />
               )}
 
@@ -1308,6 +1322,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 ) : (
                   <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
                 )
+              )}
+              {slug === 'shipping-container-office' && (
+                <PortaCabinsYouMayAlsoLike
+                  items={containerOfficeYmalItems(slug, relatedRailItems)}
+                  subline="Other container office configurations in the same range."
+                />
               )}
 
               {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →
@@ -1472,14 +1492,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                               </Card>
                             </div>
                           ))
-                        ) : (
-                          <div className="flex items-center justify-center w-full py-12">
-                            <div className="text-center">
-                              <Package className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
-                              <p className="text-muted-foreground">No related products available</p>
-                            </div>
-                          </div>
-                        )}
+                        ) : null}
                       </div>
                     </div>
                   </div>
@@ -1488,7 +1501,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               )}
 
               {/* Cluster Hub Link */}
-              <div className="mt-4 text-center">
+              {slug !== 'shipping-container-office' && <div className="mt-4 text-center">
                 <Link
                   href={getHubUrl(category)}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary"
@@ -1498,7 +1511,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                     : <>See the full range: {getSeoAnchorText(category) || transformedProduct?.category || 'Products'}</>}
                   <ArrowLeft className="w-4 h-4 rotate-180" />
                 </Link>
-              </div>
+              </div>}
 
             </div>
           </main>

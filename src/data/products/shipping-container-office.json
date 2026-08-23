@@ -1,535 +1,335 @@
 {
   "productSlug": "shipping-container-office",
   "variantAxis": "size",
-  "defaultVariant": "20x10",
+  "defaultVariant": "20x8",
   "hsn": "9406",
   "gstPercent": 18,
-  "productName": "Shipping Container Office",
+  "productName": "Shipping Container Office Built on a Reinforced Steel Shell",
   "categoryLabel": "Container Offices",
   "categoryHref": "/product/container-offices",
-  "productSku": "SP-20-SCO-2024",
+  "productSku": "SP-CO-01-SCO",
   "pricePerSqft": {
-    "10x10": "1,980",
-    "20x8": "1,980",
-    "20x10": "1,800",
-    "20x12": "1,728",
-    "30x10": "1,728",
-    "40x8": "1,692",
-    "20x20": "1,692",
-    "40x10": "1,692",
-    "40x12": "1,656"
+    "20x8": "1980",
+    "20x10": "1800",
+    "20x12": "1728",
+    "30x10": "1728",
+    "40x8": "1710",
+    "40x10": "1710"
   },
-  "explorerImageTemplate": "/images/products/shipping-container-office/{sizeSlug}/shipping-container-office-{sizeSlug}-hero-view.webp",
   "applicationsDataset": "shipping-container-office",
-  "deliveryLabel": "7–21 working days",
-  "materialLabel": "Corrugated ISO container steel · Insulated",
-  "emitAggregateOffer": true,
-  "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
-  "specPdfHref": "/specs/shipping-container-office-technical-specification.pdf",
+  "deliveryLabel": "Quoted by site and route",
+  "materialLabel": "1.6 mm corrugated MS shell, mineral wool insulation",
+  "emitAggregateOffer": false,
+  "schemaOfferType": "offer",
+  "schemaItemCondition": "new",
+  "suppressAggregateRatingSchema": true,
+  "metaDescription": "Shipping container office in six approved sizes from 160 to 400 sq ft, built to ISO container form with reinforced openings. Priced from Rs 3,16,800 ex-GST.",
+  "specPdfHref": "/docs/saman-shipping-container-office-technical-specification-and-ga-v1.pdf",
   "variants": [
-    {
-      "sizeSlug": "10x10",
-      "label": "10x10 ft",
-      "dims": "10×10×8.5 ft",
-      "areaSqft": 100,
-      "priceExGst": 198000,
-      "priceInclGst": 233640,
-      "capacity": "~2–3 people",
-      "useCase": "Secure gate offices",
-      "sku": "SP-20-SCO-2024",
-      "images": [
-        {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-hero-view.webp",
-          "alt": "Cream shipping container office with green base, 10x10 ft, hero angle beside a walkway",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-front-angle.webp",
-          "alt": "Green 10x10 ft shipping container office near a substation yard, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-side-elevation.webp",
-          "alt": "Blue 10x10 ft shipping container office against a white wall, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-workspace-interior.webp",
-          "alt": "Desk positioned under twin windows inside a 10x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-corridor-interior.webp",
-          "alt": "Timber desk and cabinets lining a 10x10 ft shipping container office interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/10x10/shipping-container-office-10x10-corner-interior.webp",
-          "alt": "Grey executive desk with wall cabinets in a 10x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        }
-      ],
-      "shortDescription": "The compact conversion: 100 sq ft inside genuine corrugated container steel, with the marine-grade shell that shrugs off weather, transit and rough handling."
-    },
     {
       "sizeSlug": "20x8",
       "label": "20x8 ft",
-      "dims": "20×8×8.5 ft",
+      "dims": "20 x 8 x 8.5 ft",
       "areaSqft": 160,
       "priceExGst": 316800,
       "priceInclGst": 373824,
-      "capacity": "~3–4 people",
-      "useCase": "Container-yard offices",
-      "sku": "SP-20-SCO-2024",
+      "capacity": "See approved GA drawing",
+      "useCase": "Shipping container office",
+      "sku": "SP-CO-01-SCO",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-hero-view.webp",
-          "alt": "Grey shipping container office with navy base, 20x8 ft, on a lawn edge, hero angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png",
+          "alt": "Oceanic Teal 20 x 8 ft container office, front wall with window, door and window",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-front-angle.webp",
-          "alt": "Teal blue 20x8 ft shipping container office, front corner view on concrete",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x8/02-shipping-container-office-rear-exterior.png",
+          "alt": "Oceanic Teal 20 x 8 ft container office, rear wall with two windows and a centred end window",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-side-elevation.webp",
-          "alt": "White 20x8 ft shipping container office with dark base below a gantry bridge",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x8/03-shipping-container-office-corner-exterior.png",
+          "alt": "Oceanic Teal 20 x 8 ft container office, front wall and end wall seen from the corner",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-workspace-interior.webp",
-          "alt": "Desk, plant and low sideboard inside a 20x8 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x8/04-shipping-container-office-workstation-interior.png",
+          "alt": "20 x 8 ft container office interior, three workstations along the rear wall under two windows",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-team-interior.webp",
-          "alt": "Continuous desk row with chairs inside a 20x8 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x8/05-shipping-container-office-aisle-interior.png",
+          "alt": "20 x 8 ft container office interior, single desk run beside a clear walkway",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x8/shipping-container-office-20x8-corner-interior.webp",
-          "alt": "Monitor workstation by the window in a 20x8 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x8/06-shipping-container-office-entrance-interior.png",
+          "alt": "20 x 8 ft container office interior from the entrance, desks on the rear wall only",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The ISO-profile footprint: 160 sq ft in the slim proportions the shipping industry standardised, sliding into rows, yards and tight margins that were designed around containers to begin with."
+      "shortDescription": "The narrowest approved shell suits a gate office, a stores desk or a two-shift site cabin. Its general arrangement puts all three workstations on the rear long wall. The front wall stays clear apart from the entrance, so nobody works with their back to the door. Six windows light the room: two on each long wall and one centred on each 8 ft end. At 8 ft wide the aisle is tight, so we keep both end walls free of furniture."
     },
     {
       "sizeSlug": "20x10",
       "label": "20x10 ft",
-      "dims": "20×10×8.5 ft",
+      "dims": "20 x 10 x 8.5 ft",
       "areaSqft": 200,
       "priceExGst": 360000,
       "priceInclGst": 424800,
-      "capacity": "~4–6 people",
-      "useCase": "Classic ISO offices",
-      "sku": "SP-20-SCO-2024",
+      "capacity": "See approved GA drawing",
+      "useCase": "Shipping container office",
+      "sku": "SP-CO-01-SCO",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-hero-view.webp",
-          "alt": "Dark green 20x10 ft shipping container office, hero exterior on patterned paving",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x10/01-shipping-container-office-front-exterior.png",
+          "alt": "Desert Sand 20 x 10 ft container office, front wall with window, door and window",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-front-angle.webp",
-          "alt": "Pale green and white 20x10 ft shipping container office, front angle by a pool court",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x10/02-shipping-container-office-rear-exterior.png",
+          "alt": "Desert Sand 20 x 10 ft container office, rear wall with two windows and a centred end window",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-side-elevation.webp",
-          "alt": "Amber yellow 20x10 ft shipping container office among tropical planting",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x10/03-shipping-container-office-corner-exterior.png",
+          "alt": "Desert Sand 20 x 10 ft container office, front and end walls seen from the corner",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-workspace-interior.webp",
-          "alt": "Timber desk with monitor and phone inside a 20x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x10/04-shipping-container-office-workstation-interior.png",
+          "alt": "20 x 10 ft container office interior, three workstations on the rear wall with overhead cabinets",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-meeting-interior.webp",
-          "alt": "Meeting table with four chairs inside a 20x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x10/05-shipping-container-office-aisle-interior.png",
+          "alt": "20 x 10 ft container office interior, desks either side of a clear central aisle",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x10/shipping-container-office-20x10-entrance-interior.webp",
-          "alt": "Reception counter near the door of a 20x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x10/06-shipping-container-office-entrance-interior.png",
+          "alt": "20 x 10 ft container office interior from the entrance, two desks left and three right",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The classic of the type: 200 sq ft of converted container office, corrugated steel outside, insulated and fully fitted inside."
+      "shortDescription": "This is the reference size, and the rate card is anchored here at Rs 1,800 per sq ft. Two extra feet of width change the room completely. Now five people work in it: three along the rear wall and two either side of the door. A clear aisle runs down the middle, so a chair can push back without blocking traffic. Most first-time buyers order this size, then scale up or down from its drawing. Six windows and one door keep the opening count identical to the 20 x 8 ft plan."
     },
     {
       "sizeSlug": "20x12",
       "label": "20x12 ft",
-      "dims": "20×12×8.5 ft",
+      "dims": "20 x 12 x 8.5 ft",
       "areaSqft": 240,
       "priceExGst": 414720,
       "priceInclGst": 489370,
-      "capacity": "~5–7 people",
-      "useCase": "Steel meeting offices",
-      "sku": "SP-20-SCO-2024",
+      "capacity": "See approved GA drawing",
+      "useCase": "Shipping container office",
+      "sku": "SP-CO-01-SCO",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-hero-view.webp",
-          "alt": "Light grey 20x12 ft shipping container office on a campus forecourt, hero angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x12/01-shipping-container-office-front-exterior.png",
+          "alt": "Indigo Grey 20 x 12 ft container office, front wall with window, door and window",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-front-angle.webp",
-          "alt": "Blue 20x12 ft shipping container office under a site canopy, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x12/02-shipping-container-office-rear-exterior.png",
+          "alt": "Indigo Grey 20 x 12 ft container office, rear wall with two windows and no door",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-side-elevation.webp",
-          "alt": "Beige 20x12 ft shipping container office with terracotta base, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x12/03-shipping-container-office-corner-exterior.png",
+          "alt": "Indigo Grey 20 x 12 ft container office, front and end walls seen from the corner",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-workspace-interior.webp",
-          "alt": "Executive desk with laptop and armchairs inside a 20x12 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x12/04-shipping-container-office-workstation-interior.png",
+          "alt": "20 x 12 ft container office interior, three workstations on the rear wall below two windows",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-team-interior.webp",
-          "alt": "Dark desks with monitors inside a 20x12 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x12/05-shipping-container-office-aisle-interior.png",
+          "alt": "20 x 12 ft container office interior, door wall with a desk either side of the entrance",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/20x12/shipping-container-office-20x12-corner-interior.webp",
-          "alt": "Open floor with sideboard and desk inside a 20x12 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-20x12/06-shipping-container-office-entrance-interior.png",
+          "alt": "20 x 12 ft container office interior, wide aisle between two desk runs",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "Extra width inside structural container steel: 240 sq ft that fits a manager bay or meeting corner alongside five to seven workstations."
+      "shortDescription": "The 12 ft shell is the 20 x 10 drawing widened by one foot on each long wall. Nothing else moves. The door keeps its position, the six windows keep theirs, and the desk count stays at five. Every added inch becomes floor. Choose it when a survey table, a plan chest or a visitor chair must sit clear of the working aisle. Because the width grows and the seat count does not, the price per seat rises."
     },
     {
       "sizeSlug": "30x10",
       "label": "30x10 ft",
-      "dims": "30×10×8.5 ft",
+      "dims": "30 x 10 x 8.5 ft",
       "areaSqft": 300,
       "priceExGst": 518400,
       "priceInclGst": 611712,
-      "capacity": "~6–8 people",
-      "useCase": "Two-room conversions",
-      "sku": "SP-20-SCO-2024",
+      "capacity": "See approved GA drawing",
+      "useCase": "Shipping container office",
+      "sku": "SP-CO-01-SCO",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-hero-view.webp",
-          "alt": "Teal 30x10 ft shipping container office among trees, hero exterior angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-30x10/01-shipping-container-office-front-exterior.png",
+          "alt": "Copper Brown 30 x 10 ft container office, front wall with two doors and two windows",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-front-angle.webp",
-          "alt": "White 30x10 ft shipping container office at a waterside plot, front view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-30x10/02-shipping-container-office-rear-exterior.png",
+          "alt": "Copper Brown 30 x 10 ft container office, rear wall with four windows and an end window",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-side-elevation.webp",
-          "alt": "Charcoal 30x10 ft shipping container office on marked parking, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-30x10/03-shipping-container-office-corner-exterior.png",
+          "alt": "Copper Brown 30 x 10 ft container office, front wall and end wall seen from the corner",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-meeting-interior.webp",
-          "alt": "Meeting desk flanked by two chairs inside a 30x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-30x10/04-shipping-container-office-workstation-interior.png",
+          "alt": "30 x 10 ft container office interior, desk runs on both long walls with a central aisle",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-team-interior.webp",
-          "alt": "Monitor desks beside bright windows in a 30x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-30x10/05-shipping-container-office-aisle-interior.png",
+          "alt": "30 x 10 ft container office interior, rear desk run under four windows",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/30x10/shipping-container-office-30x10-lounge-interior.webp",
-          "alt": "Long work counter and visitor sofa inside a 30x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-30x10/06-shipping-container-office-entrance-interior.png",
+          "alt": "30 x 10 ft container office interior at an entrance door, front desk run alongside",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "A 300 sq ft conversion that partitions into a working area and a private room behind marine-grade walls."
+      "shortDescription": "Thirty feet is where a site office becomes a team room. Twelve workstations line the two long walls, seven at the back and five at the front. Two doors sit near the ends of the front wall, so a crew can enter one end while a meeting runs at the other. Eight windows keep the middle of a 30 ft box from going dark. The centre bay between the two window pairs stays solid, which is where we run services."
     },
     {
       "sizeSlug": "40x8",
       "label": "40x8 ft",
-      "dims": "40×8×8.5 ft",
+      "dims": "40 x 8 x 8.5 ft",
       "areaSqft": 320,
-      "priceExGst": 541440,
-      "priceInclGst": 638899,
-      "capacity": "~7–9 people",
-      "useCase": "Forty-foot yard rows",
-      "sku": "SP-20-SCO-2024",
+      "priceExGst": 547200,
+      "priceInclGst": 645696,
+      "capacity": "See approved GA drawing",
+      "useCase": "Shipping container office",
+      "sku": "SP-CO-01-SCO",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-hero-view.webp",
-          "alt": "Yellow shipping container office with green base, 40x8 ft, before a glass tower, hero angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x8/01-shipping-container-office-front-exterior.png",
+          "alt": "Alpine Green 40 x 8 ft container office, manager end wall with two windows and a door",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-front-angle.webp",
-          "alt": "Long white 40x8 ft shipping container office, front corner perspective",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x8/02-shipping-container-office-rear-exterior.png",
+          "alt": "Alpine Green 40 x 8 ft container office, rear wall with five windows along forty feet",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-side-elevation.webp",
-          "alt": "Yellow 40x8 ft shipping container office with dark base at a waterside road",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x8/03-shipping-container-office-corner-exterior.png",
+          "alt": "Alpine Green 40 x 8 ft container office, front wall with two doors seen from the corner",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-workspace-interior.webp",
-          "alt": "Wall desks and tall wardrobe inside a 40x8 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x8/04-shipping-container-office-workstation-interior.png",
+          "alt": "40 x 8 ft container office interior, desk run on one wall with the opposite wall clear",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-team-interior.webp",
-          "alt": "Long desk row with plants inside a 40x8 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x8/05-shipping-container-office-aisle-interior.png",
+          "alt": "40 x 8 ft container office interior, desk run beside the window wall with overhead cabinets",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x8/shipping-container-office-40x8-corridor-interior.webp",
-          "alt": "Grey desks along the corridor of a 40x8 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x8/06-shipping-container-office-manager-interior.png",
+          "alt": "40 x 8 ft container office manager room, desk with two visitor chairs and a window",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The long ISO run: 320 sq ft of workstations in a single corrugated-steel line, sized for yards and corridors that already move 40 ft containers daily."
-    },
-    {
-      "sizeSlug": "20x20",
-      "label": "20x20 ft",
-      "dims": "20×20×8.5 ft",
-      "areaSqft": 400,
-      "priceExGst": 676800,
-      "priceInclGst": 798624,
-      "capacity": "~8–12 people",
-      "useCase": "Square steel floors",
-      "sku": "SP-20-SCO-2024",
-      "images": [
-        {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-hero-view.webp",
-          "alt": "Blue 20x20 ft shipping container office near a rail yard, hero exterior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-front-angle.webp",
-          "alt": "Green and cream 20x20 ft shipping container office, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-side-elevation.webp",
-          "alt": "Red 20x20 ft shipping container office outside an industrial hall, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-workspace-interior.webp",
-          "alt": "L-shaped desks with monitors inside a 20x20 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-team-interior.webp",
-          "alt": "Twin desks facing a blue door inside a 20x20 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/20x20/shipping-container-office-20x20-corner-interior.webp",
-          "alt": "Timber executive desk with wall shelves in a 20x20 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        }
-      ],
-      "shortDescription": "Four hundred square feet on a square plan in container steel: an open floor with cluster seating and short supervision lines inside the hardest shell we offer."
+      "shortDescription": "The first ten feet at one end become a private manager cabin, and the remaining thirty stay open. A partition with a single 3 x 7 ft internal door separates them. The manager has no outside door of their own. Visitors come through the common office, which is exactly how a site supervisor wants it. At 8 ft wide the common run carries seven desks on one wall only, and the front wall stays clear. Ten seats sit down in total once you count the manager and two visitors."
     },
     {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
-      "dims": "40×10×8.5 ft",
+      "dims": "40 x 10 x 8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 676800,
-      "priceInclGst": 798624,
-      "capacity": "~8–12 people",
-      "useCase": "Flagship conversions",
-      "sku": "SP-20-SCO-2024",
+      "priceExGst": 684000,
+      "priceInclGst": 807120,
+      "capacity": "See approved GA drawing",
+      "useCase": "Shipping container office",
+      "sku": "SP-CO-01-SCO",
       "images": [
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-hero-view.webp",
-          "alt": "Dark green 40x10 ft shipping container office, hero exterior on a marked yard",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x10/01-shipping-container-office-front-exterior.png",
+          "alt": "Storm Blue 40 x 10 ft container office, front wall with two doors and windows",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-front-angle.webp",
-          "alt": "Sage green 40x10 ft shipping container office with clipped shrubs, front angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x10/02-shipping-container-office-rear-exterior.png",
+          "alt": "Storm Blue 40 x 10 ft container office, rear wall with five windows along forty feet",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-side-elevation.webp",
-          "alt": "Cream 40x10 ft shipping container office beside a rendered wall, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x10/03-shipping-container-office-corner-exterior.png",
+          "alt": "Storm Blue 40 x 10 ft container office, front wall and manager end seen from the corner",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-workspace-interior.webp",
-          "alt": "Timber desk with chair and shelf unit inside a 40x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x10/04-shipping-container-office-workstation-interior.png",
+          "alt": "40 x 10 ft container office interior, three desks under two windows beside the partition door",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-corner-interior.webp",
-          "alt": "Wall-length desk with task chairs inside a 40x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x10/05-shipping-container-office-aisle-interior.png",
+          "alt": "40 x 10 ft container office interior, desk run under two windows with overhead cabinets",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/shipping-container-office/40x10/shipping-container-office-40x10-entrance-interior.webp",
-          "alt": "Office chair and desk facing the entry of a 40x10 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/shipping-container-office/size-40x10/06-shipping-container-office-manager-interior.png",
+          "alt": "40 x 10 ft container office manager room, desk with two visitor chairs and two windows",
+          "width": 1254,
+          "height": 1254
         }
       ],
-      "shortDescription": "The flagship conversion: 400 sq ft of department-planned office inside a full-height corrugated shell, with reception, engineering and records zones set on the drawing."
-    },
-    {
-      "sizeSlug": "40x12",
-      "label": "40x12 ft",
-      "dims": "40×12×8.5 ft",
-      "areaSqft": 480,
-      "priceExGst": 794880,
-      "priceInclGst": 937958,
-      "capacity": "~10–14 people",
-      "useCase": "Container campus HQs",
-      "sku": "SP-20-SCO-2024",
-      "images": [
-        {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-hero-view.webp",
-          "alt": "Pale green 40x12 ft shipping container office in a garden setting, hero angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-front-angle.webp",
-          "alt": "Dark green 40x12 ft shipping container office by a site gate, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-side-elevation.webp",
-          "alt": "Yellow 40x12 ft shipping container office on a campus plaza, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-workspace-interior.webp",
-          "alt": "Dark workstations with widescreen displays inside a 40x12 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-team-interior.webp",
-          "alt": "Grouped desks on wood flooring inside a 40x12 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/shipping-container-office/40x12/shipping-container-office-40x12-lounge-interior.webp",
-          "alt": "Open office with sofa corner inside a 40x12 ft shipping container office",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        }
-      ],
-      "shortDescription": "The largest converted-container floor we build: 480 sq ft partitioned into cabins, meeting space and stores behind corrugated steel."
+      "shortDescription": "The largest approved shell gives the manager a true 10 x 10 ft room with three outside windows. Behind the partition, twelve workstations fill the 30 ft common office, seven at the rear and five at the front. Fifteen people can sit down at once, counting the manager and two visitor chairs. Two external doors serve the common office at either end. Order this size when one shell must hold a whole project team."
     }
-  ]
+  ],
+  "h1": "Shipping Container Office Built on a Reinforced Steel Shell",
+  "seoTitle": "Shipping Container Office Price, Six Approved Sizes | SAMAN",
+  "specPdfButtonLabel": "Download the technical specification and all six GA drawings (PDF)",
+  "priceCaption": "Ex-GST starting price. GST at 18% extra.",
+  "suppressLegacyFaqSchema": true
 }

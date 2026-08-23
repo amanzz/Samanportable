@@ -388,7 +388,7 @@ const C04_PLATFORM_DISCLOSURES: Record<string, { marker: string; sentence: strin
       'This cabin is newly fabricated in container form; no used cargo shell is involved unless you separately request a converted-container quotation.',
   },
   'shipping-container-office': {
-    marker: 'A SAMAN shipping container office is a new ISO-grade Corten steel structure',
+    marker: 'A shipping container office starts life as a corrugated steel box, not as a set of panels.',
     sentence:
       'The shipping-form office is newly fabricated to container dimensions and hardware standards; conversion of a used ISO cargo container is quoted separately on request.',
   },
@@ -424,7 +424,7 @@ function applyC04GapCloseCopy(html: string, slug: string): string {
   const canonicalAlreadyPresent = rendered.includes(C04_CANONICAL_WARRANTY);
   const insertion =
     `<p>${disclosure.sentence}</p>` +
-    (canonicalAlreadyPresent ? '' : `<p>${C04_CANONICAL_WARRANTY}</p>`);
+    (canonicalAlreadyPresent || slug === 'shipping-container-office' ? '' : `<p>${C04_CANONICAL_WARRANTY}</p>`);
   const adjustedEnd = rendered.indexOf('</p>', rendered.indexOf(disclosure.marker));
   return `${rendered.slice(0, adjustedEnd + 4)}${insertion}${rendered.slice(adjustedEnd + 4)}`;
 }
