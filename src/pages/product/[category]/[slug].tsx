@@ -50,7 +50,7 @@ import {
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 import { isLabourColonyClusterSlug, getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
-import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { containerOfficeYmalItems, orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
@@ -1297,18 +1297,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   "Estimate your cabin cost / Open the calculator" strip that used
                   to sit here was the entry point the band replaced, so it is gone.
                   The calculator itself is unchanged and still lives here. */}
-              {slug === 'shipping-container-office' && (
-                <figure className="mt-4">
-                  <img
-                    src="/images/products/shipping-container-office/07-shipping-container-office-hero-exterior.png"
-                    alt="Desert Sand shipping container office, end wall window with a window and door on the long wall"
-                    width="1254"
-                    height="1254"
-                    loading="lazy"
-                  />
-                </figure>
-              )}
-
               {embeddedCalculatorHtml && (
                 <section className="mt-4" id="cabin-calculator">
                   <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
@@ -1332,6 +1320,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 ) : (
                   <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
                 )
+              )}
+              {slug === 'shipping-container-office' && (
+                <PortaCabinsYouMayAlsoLike
+                  items={containerOfficeYmalItems(slug, relatedRailItems)}
+                  subline="Other container office configurations in the same range."
+                />
               )}
 
               {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →

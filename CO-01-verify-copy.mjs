@@ -214,8 +214,8 @@ html.includes(previewToken)
   : ok(`GA references use master drawings, no ${previewToken}`);
 
 /07-shipping-container-office-hero-exterior\.png/i.test(html)
-  ? ok('1:1 image before the calculator referenced')
-  : bad('the 1:1 pre-calculator image is not referenced');
+  ? bad('1:1 image before the calculator is still referenced')
+  : ok('1:1 image before the calculator absent');
 
 const DESC = [
   '01-shipping-container-office-20x8-exterior.webp',
@@ -272,11 +272,25 @@ for (const u of expectedRail) {
   railHrefs.includes(u) || railHrefs.includes(path) ? ok(`Explore tile ${u}`) : bad(`Explore tile missing: ${u}`);
 }
 PAGE.includes('No related products') ? bad('No related products empty state is present') : ok('No related products empty state absent');
+const ymal = (html.match(/<section[^>]+class=["'][^"']*saman-youmaylike[^"']*["'][\s\S]*?<\/section>/i) || [])[0] || '';
+ymal ? ok('You may also like block present') : bad('You may also like block missing');
+/porta cabin/i.test(textOf(ymal)) ? bad('porta cabin appears in the YMAL block') : ok('porta cabin absent from the YMAL block');
+[
+  '/product/container-offices/construction-site-office',
+  '/product/container-offices/container-site-office',
+  '/product/container-offices/modular-shipping-container-office',
+  '/product/container-offices/portable-container-offices',
+  '/product/container-offices/prefabricated-container-office',
+].forEach((href) => {
+  html.includes(`href="${href}"`) || html.includes(`href='${href}'`)
+    ? bad(`legacy near-duplicate linked: ${href}`)
+    : ok(`legacy near-duplicate not linked: ${href}`);
+});
 const LINKS = {
-  'https://www.samanportable.com/product/container-offices': 2,
+  'https://www.samanportable.com/product/container-offices': 3,
   'https://www.samanportable.com/contact': 2,
-  'https://www.samanportable.com/product/container-offices/container-office-cabin': 2,
-  'https://www.samanportable.com/product/container-offices/site-office-container': 2,
+  'https://www.samanportable.com/product/container-offices/container-office-cabin': 3,
+  'https://www.samanportable.com/product/container-offices/site-office-container': 3,
 };
 for (const [u, want] of Object.entries(LINKS)) {
   const path = u.replace('https://www.samanportable.com', '');
