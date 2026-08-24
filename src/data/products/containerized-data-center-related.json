@@ -1,0 +1,71 @@
+{
+  "ymalIntro": "The rest of the container office range, on the same platform.",
+  "exploreItems": [
+    {
+      "title": "Container Offices",
+      "href": "https://www.samanportable.com/product/container-offices",
+      "category": "Container Offices",
+      "blurb": "The full range, from site office to shell",
+      "imageSrc": "/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg",
+      "imageAlt": "Green container office module with white glazing and a double door on a paved yard"
+    },
+    {
+      "title": "Shipping Container Office",
+      "href": "https://www.samanportable.com/product/container-offices/shipping-container-office",
+      "category": "Container Offices",
+      "blurb": "Converted shipping form, built for relocation",
+      "imageSrc": "/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png",
+      "imageAlt": "Teal shipping container office with three windows and a central door, front exterior"
+    },
+    {
+      "title": "Site Office Container",
+      "href": "https://www.samanportable.com/product/container-offices/site-office-container",
+      "category": "Container Offices",
+      "blurb": "Supervision, drawings and document storage on site",
+      "imageSrc": "/images/product-heroes/container-offices/modern-container-site-office-exterior-front.jpeg",
+      "imageAlt": "Grey site office container with barred windows and a wall mounted AC unit on a construction site"
+    },
+    {
+      "title": "Container Office Cabin",
+      "href": "https://www.samanportable.com/product/container-offices/container-office-cabin",
+      "category": "Container Offices",
+      "blurb": "Fabricated value line for one stationary posting",
+      "imageSrc": "/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg",
+      "imageAlt": "Grey container office cabin on plinth blocks at a construction site with two site staff beside it"
+    }
+  ],
+  "ymalItems": [
+    {
+      "title": "Container Offices",
+      "href": "https://www.samanportable.com/product/container-offices",
+      "category": "Container Offices",
+      "blurb": "The full range, from site office to shell",
+      "imageSrc": "/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg",
+      "imageAlt": "Green container office module with white glazing and a double door on a paved yard"
+    },
+    {
+      "title": "Shipping Container Office",
+      "href": "https://www.samanportable.com/product/container-offices/shipping-container-office",
+      "category": "Container Offices",
+      "blurb": "Converted shipping form, built for relocation",
+      "imageSrc": "/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png",
+      "imageAlt": "Teal shipping container office with three windows and a central door, front exterior"
+    },
+    {
+      "title": "Site Office Container",
+      "href": "https://www.samanportable.com/product/container-offices/site-office-container",
+      "category": "Container Offices",
+      "blurb": "Supervision, drawings and document storage on site",
+      "imageSrc": "/images/product-heroes/container-offices/modern-container-site-office-exterior-front.jpeg",
+      "imageAlt": "Grey site office container with barred windows and a wall mounted AC unit on a construction site"
+    },
+    {
+      "title": "Container Office Cabin",
+      "href": "https://www.samanportable.com/product/container-offices/container-office-cabin",
+      "category": "Container Offices",
+      "blurb": "Fabricated value line for one stationary posting",
+      "imageSrc": "/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg",
+      "imageAlt": "Grey container office cabin on plinth blocks at a construction site with two site staff beside it"
+    }
+  ]
+}

@@ -25,9 +25,11 @@ const ROTATE_MS = 4000;
 export default function PortaCabinsYouMayAlsoLike({
   items,
   subline,
+  useItemImageAltVerbatim = false,
 }: {
   items: RelatedRailItem[];
   subline?: string | null;
+  useItemImageAltVerbatim?: boolean;
 }) {
   const [index, setIndex] = useState(0);
   const [perView, setPerView] = useState(3);
@@ -124,7 +126,7 @@ export default function PortaCabinsYouMayAlsoLike({
                     <Image
                       src={item.imageSrc}
                       unoptimized={shouldBypassOptimizer(item.imageSrc)}
-                      alt={item.imageAlt || item.title}
+                      alt={useItemImageAltVerbatim ? (item.imageAlt || item.title) : `You may also like card for ${item.imageAlt || item.title}`}
                       width={400}
                       height={225}
                       loading="lazy"
