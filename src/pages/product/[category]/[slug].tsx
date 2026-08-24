@@ -1171,7 +1171,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   syncVariantSelection={slug === CO06_SLUG}
                   eagerActiveGalleryImages={slug === CO06_SLUG}
                   renderInactiveGalleryImages={slug === CO06_SLUG}
-                  explorerImageAfterApplications={slug === CO06_SLUG}
+                  explorerSingleColumnApplications={slug === CO06_SLUG}
                 />
               ) : (
               <ProductSummaryLayout

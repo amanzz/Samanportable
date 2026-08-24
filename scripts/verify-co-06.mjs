@@ -68,6 +68,9 @@ if (res.status !== 200) {
 }
 const html = await res.text();
 const text = toText(html);
+const markup = html
+  .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
+  .replace(/<style\b[\s\S]*?<\/style>/gi, " ");
 
 // ---------------------------------------------------------------- metadata
 section("Metadata");
@@ -91,12 +94,62 @@ for (const [label, value] of Object.entries(control.copy)) {
   check(`copy: ${label}`, text.includes(squash(value)), squash(value).slice(0, 60) + "...");
 }
 
-// ---------------------------------------------------------------- hero table
-section("Hero table");
-for (const [k, v] of control.hero_table) {
-  check(`hero row: ${k}`, text.includes(squash(k)) && text.includes(squash(v)));
+// ---------------------------------------------------------- hero feature cells
+section("Hero feature cells");
+for (const [k, v] of control.feature_cells_first_size) {
+  check(`feature cell: ${k}`, text.includes(squash(k)) && text.includes(squash(v)));
 }
-check("Hero table has five rows only", control.hero_table.length === 5);
+check("Feature-cell control has five rows only", control.feature_cells_first_size.length === 5);
+check("Superseded hero-table row is absent", !text.includes("Six G+1 footprints, 20 x 8 ft to 40 x 32 ft"));
+for (const chip of control.size_chips) {
+  check(`size chip: ${chip}`, text.includes(squash(chip)));
+}
+const heroStart = markup.indexOf("<h1");
+const heroEnd = markup.indexOf("pc-divider1", heroStart);
+const heroMarkup = heroStart >= 0 && heroEnd > heroStart ? markup.slice(heroStart, heroEnd) : "";
+check("No hand-authored table in the hero", heroMarkup.length > 0 && !/<table\b/i.test(heroMarkup));
+
+// ---------------------------------------------------------- v1.2 component map
+section("Addendum v1.2 component map");
+const railCards = (markup.match(/data-related-product-rail-card="true"/g) || []).length;
+check("Three related-product rail cards", railCards === 3, `${railCards} cards`);
+for (const imagePath of control.related_card_images) {
+  check(
+    `related card image: ${imagePath}`,
+    markup.includes(imagePath) || markup.includes(encodeURIComponent(imagePath))
+  );
+}
+check("No related-card icon fallback", !markup.includes('data-rail-fallback="true"'));
+
+const rteStart = markup.indexOf('class="pc-rte"');
+const rteEnd = markup.indexOf("pc-divider2", rteStart);
+const rteMarkup = rteStart >= 0 && rteEnd > rteStart ? markup.slice(rteStart, rteEnd) : "";
+check("Section 2 split card uses the shared component", rteMarkup.includes('class="saman-s2-split"'));
+const contactLinks = (rteMarkup.match(/href="https:\/\/www\.samanportable\.com\/contact"/g) || []).length;
+check("Section 2 has exactly two contact links", contactLinks === 2, `${contactLinks} links`);
+
+const sizeSlugs = Object.keys(control.variant_bullet_counts);
+for (let i = 0; i < sizeSlugs.length; i += 1) {
+  const sizeSlug = sizeSlugs[i];
+  const panelStart = markup.indexOf(`id="app-panel-${sizeSlug}"`);
+  const panelEnd = i + 1 < sizeSlugs.length
+    ? markup.indexOf(`id="app-panel-${sizeSlugs[i + 1]}"`, panelStart + 1)
+    : markup.indexOf("</section>", panelStart);
+  const panelMarkup = panelStart >= 0 && panelEnd > panelStart ? markup.slice(panelStart, panelEnd) : "";
+  const listItems = (panelMarkup.match(/<li\b/g) || []).length;
+  check(`${sizeSlug} has five list items`, listItems === control.variant_bullet_counts[sizeSlug], `${listItems} items`);
+  check(`${sizeSlug} facts stay in one column`, !panelMarkup.includes("sm:grid-cols-2"));
+}
+const firstPanelStart = markup.indexOf('id="app-panel-20x8"');
+const firstPanelEnd = markup.indexOf('id="app-panel-20x16"', firstPanelStart + 1);
+const firstPanel = firstPanelStart >= 0 && firstPanelEnd > firstPanelStart
+  ? markup.slice(firstPanelStart, firstPanelEnd)
+  : "";
+check(
+  "Active GA board occupies the Explorer image slot",
+  firstPanel.indexOf("/ga/multi-story-container-office-ga-plan-20x8.webp") >= 0 &&
+    firstPanel.indexOf("/ga/multi-story-container-office-ga-plan-20x8.webp") < firstPanel.indexOf("<h2")
+);
 
 // ---------------------------------------------------------------- assets
 section("Assets");

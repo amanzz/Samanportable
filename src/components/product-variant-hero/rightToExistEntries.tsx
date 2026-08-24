@@ -465,6 +465,17 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ],
     ctaLabel: 'Send us your plot size, head count and ground conditions for a G plus one quote',
     ctaHref: 'https://www.samanportable.com/contact',
+    splitCard: {
+      imageSrc: '/images/products/multi-story-container-office/section2/multi-story-container-office-section2-card-g1-exterior.webp',
+      imageAlt: 'Two level container office on a prepared yard with the Wall A access deck and external stair in view',
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: 'Read the engineering boundary before you fix a size',
+      body: 'Six approved sizes are drawn, priced and ready to quote. The building around them still needs a designed foundation, a signed connection detail and an erection plan.',
+      body2: 'That work sits outside our published rate, and we would rather show you the line now than move it later. Send the plot, the ground conditions and the head count, and we will tell you what has to be engineered.',
+      ctaLabel: 'Ask us what your ground has to carry',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'bess-container': {
     heading: bessContainerPage.section2.heading,

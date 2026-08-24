@@ -13,28 +13,6 @@
   "canonical": "https://www.samanportable.com/product/container-offices/multi-story-container-office",
   "openGraphImage": "/images/products/multi-story-container-office/20x8/01-multi-story-office-20x8-front.webp",
   "opener": "A multi-story container office stacks two fitted container office floors into one G plus one building. SAMAN supplies six approved footprints, from 20 x 8 ft to 40 x 32 ft. Together they give 320 to 2,560 sq ft of gross floor area across both levels. The ground and first floors repeat the same approved plan, so openings, partitions, workstations and services line up one above the other. Every layout carries its external doors on one long wall, keeps both end walls door free, and reaches the upper floor by an outside deck and stair. Stacking, connections, foundations and erection stay under project engineering, and we price the building from its approved gross area.",
-  "heroTable": [
-    [
-      "Approved sizes",
-      "Six G+1 footprints, 20 x 8 ft to 40 x 32 ft"
-    ],
-    [
-      "Gross floor area",
-      "320 to 2,560 sq ft across two levels"
-    ],
-    [
-      "Price from",
-      "Rs 4,71,200 ex GST for the 20 x 8 ft G+1"
-    ],
-    [
-      "Workstations",
-      "6 to 40 in total, split evenly over both floors"
-    ],
-    [
-      "Upper floor access",
-      "Wall A deck with an external stair at the End D corner"
-    ]
-  ],
   "specPdfHref": "/specs/multi-story-container-office-technical-specification-and-ga.pdf",
   "specPdfButtonLabel": "Download the G+1 technical specification and GA set",
   "applicationsDataset": "multi-story-container-office",
@@ -199,12 +177,19 @@
   "variants": [
     {
       "sizeSlug": "20x8",
-      "label": "20 x 8 ft G+1",
+      "label": "20x8 ft G+1",
       "dims": "20 x 8 ft G+1",
       "areaSqft": 320,
       "priceExGst": 471200,
       "priceInclGst": 556016,
       "sku": "MSCO-20X08-G1-OPEN-V1",
+      "featureCells": [
+        { "label": "Size", "value": "20 x 8 ft per floor, G+1" },
+        { "label": "Gross floor area", "value": "320 sq ft over two levels" },
+        { "label": "Price from", "value": "Rs 4,71,200 ex GST" },
+        { "label": "Workstations", "value": "6 across both floors" },
+        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+      ],
       "images": [
         {
           "src": "/images/products/multi-story-container-office/20x8/01-multi-story-office-20x8-front.webp",
@@ -252,12 +237,19 @@
     },
     {
       "sizeSlug": "20x16",
-      "label": "20 x 16 ft G+1",
+      "label": "20x16 ft G+1",
       "dims": "20 x 16 ft G+1",
       "areaSqft": 640,
       "priceExGst": 912640,
       "priceInclGst": 1076915,
       "sku": "MSCO-20X16-G1-SERVICE-V1",
+      "featureCells": [
+        { "label": "Size", "value": "20 x 16 ft per floor, G+1" },
+        { "label": "Gross floor area", "value": "640 sq ft over two levels" },
+        { "label": "Price from", "value": "Rs 9,12,640 ex GST" },
+        { "label": "Workstations", "value": "8 across both floors" },
+        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+      ],
       "images": [
         {
           "src": "/images/products/multi-story-container-office/20x16/01-multi-story-office-20x16-front.webp",
@@ -305,12 +297,19 @@
     },
     {
       "sizeSlug": "40x8",
-      "label": "40 x 8 ft G+1",
+      "label": "40x8 ft G+1",
       "dims": "40 x 8 ft G+1",
       "areaSqft": 640,
       "priceExGst": 912640,
       "priceInclGst": 1076915,
       "sku": "MSCO-40X08-G1-MANAGER-V1",
+      "featureCells": [
+        { "label": "Size", "value": "40 x 8 ft per floor, G+1" },
+        { "label": "Gross floor area", "value": "640 sq ft over two levels" },
+        { "label": "Price from", "value": "Rs 9,12,640 ex GST" },
+        { "label": "Workstations", "value": "14 across both floors" },
+        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+      ],
       "images": [
         {
           "src": "/images/products/multi-story-container-office/40x8/01-multi-story-office-40x8-front.webp",
@@ -358,12 +357,19 @@
     },
     {
       "sizeSlug": "40x16",
-      "label": "40 x 16 ft G+1",
+      "label": "40x16 ft G+1",
       "dims": "40 x 16 ft G+1",
       "areaSqft": 1280,
       "priceExGst": 1785600,
       "priceInclGst": 2107008,
       "sku": "MSCO-40X16-G1-CORPORATE-V1",
+      "featureCells": [
+        { "label": "Size", "value": "40 x 16 ft per floor, G+1" },
+        { "label": "Gross floor area", "value": "1,280 sq ft over two levels" },
+        { "label": "Price from", "value": "Rs 17,85,600 ex GST" },
+        { "label": "Workstations", "value": "14 across both floors" },
+        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+      ],
       "images": [
         {
           "src": "/images/products/multi-story-container-office/40x16/01-multi-story-office-40x16-front.webp",
@@ -411,12 +417,19 @@
     },
     {
       "sizeSlug": "40x24",
-      "label": "40 x 24 ft G+1",
+      "label": "40x24 ft G+1",
       "dims": "40 x 24 ft G+1",
       "areaSqft": 1920,
       "priceExGst": 2678400,
       "priceInclGst": 3160512,
       "sku": "MSCO-40X24-G1-CORPORATE-V1",
+      "featureCells": [
+        { "label": "Size", "value": "40 x 24 ft per floor, G+1" },
+        { "label": "Gross floor area", "value": "1,920 sq ft over two levels" },
+        { "label": "Price from", "value": "Rs 26,78,400 ex GST" },
+        { "label": "Workstations", "value": "28 across both floors" },
+        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+      ],
       "images": [
         {
           "src": "/images/products/multi-story-container-office/40x24/01-multi-story-office-40x24-front.webp",
@@ -464,12 +477,19 @@
     },
     {
       "sizeSlug": "40x32",
-      "label": "40 x 32 ft G+1",
+      "label": "40x32 ft G+1",
       "dims": "40 x 32 ft G+1",
       "areaSqft": 2560,
       "priceExGst": 3571200,
       "priceInclGst": 4214016,
       "sku": "MSCO-40X32-G1-CORPORATE-V1",
+      "featureCells": [
+        { "label": "Size", "value": "40 x 32 ft per floor, G+1" },
+        { "label": "Gross floor area", "value": "2,560 sq ft over two levels" },
+        { "label": "Price from", "value": "Rs 35,71,200 ex GST" },
+        { "label": "Workstations", "value": "40 across both floors" },
+        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+      ],
       "images": [
         {
           "src": "/images/products/multi-story-container-office/40x32/01-multi-story-office-40x32-front.webp",

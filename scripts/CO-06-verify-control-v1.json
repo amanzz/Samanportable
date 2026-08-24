@@ -3,33 +3,58 @@
   "h1": "Multi-Story Container Office: Six Approved G+1 Sizes",
   "seo_title": "Multi-Story Container Office: G+1 Price and Sizes | SAMAN",
   "meta_description": "Multi-story container office from SAMAN in six approved G+1 sizes, 320 to 2,560 sq ft gross. Published rates from Rs 4,71,200 ex GST for the building.",
-  "hero_table": [
+  "feature_cells_first_size": [
     [
-      "Approved sizes",
-      "Six G+1 footprints, 20 x 8 ft to 40 x 32 ft"
+      "Size",
+      "20 x 8 ft per floor, G+1"
     ],
     [
       "Gross floor area",
-      "320 to 2,560 sq ft across two levels"
+      "320 sq ft over two levels"
     ],
     [
       "Price from",
-      "Rs 4,71,200 ex GST for the 20 x 8 ft G+1"
+      "Rs 4,71,200 ex GST"
     ],
     [
       "Workstations",
-      "6 to 40 in total, split evenly over both floors"
+      "6 across both floors"
     ],
     [
       "Upper floor access",
-      "Wall A deck with an external stair at the End D corner"
+      "Wall A deck, external stair at the End D corner"
     ]
+  ],
+  "size_chips": [
+    "20x8 ft G+1",
+    "20x16 ft G+1",
+    "40x8 ft G+1",
+    "40x16 ft G+1",
+    "40x24 ft G+1",
+    "40x32 ft G+1"
+  ],
+  "variant_bullet_counts": {
+    "20x8": 5,
+    "20x16": 5,
+    "40x8": 5,
+    "40x16": 5,
+    "40x24": 5,
+    "40x32": 5
+  },
+  "related_card_images": [
+    "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-01-exterior-front-left.webp",
+    "/images/products/site-office-container/20x10/01-site-office-container-20x10-front-exterior.webp",
+    "/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png"
   ],
   "copy": {
     "short_description": "A multi-story container office stacks two fitted container office floors into one G plus one building. SAMAN supplies six approved footprints, from 20 x 8 ft to 40 x 32 ft. Together they give 320 to 2,560 sq ft of gross floor area across both levels. The ground and first floors repeat the same approved plan, so openings, partitions, workstations and services line up one above the other. Every layout carries its external doors on one long wall, keeps both end walls door free, and reaches the upper floor by an outside deck and stair. Stacking, connections, foundations and erection stay under project engineering, and we price the building from its approved gross area.",
     "section2_h2": "When Stacking Beats Spreading Out on a Crowded Project Site",
     "section2_p1": "Most site offices grow sideways. A G plus one building grows upward instead, so the same team sits on half the ground area. That matters on a tight compound. It matters again when material stacks fill the plot, or when the office must stay clear of the working face. Two levels also sort the roles out. Site staff work at ground level near the gate. Planning, billing and client meetings move upstairs, away from the boots and the noise.",
     "section2_p2": "The trade is engineering. A single cabin sits on levelled ground and asks for little else. A stacked building needs a designed foundation, a checked column line and a signed connection detail. Your civil contractor receives point loads rather than one simple base rail. If your site cannot carry that, the single-storey options in the full container office range will reach you sooner. They also cost less for each square foot you buy.",
+    "section2_card_h3": "Read the engineering boundary before you fix a size",
+    "section2_card_p1": "Six approved sizes are drawn, priced and ready to quote. The building around them still needs a designed foundation, a signed connection detail and an erection plan.",
+    "section2_card_p2": "That work sits outside our published rate, and we would rather show you the line now than move it later. Send the plot, the ground conditions and the head count, and we will tell you what has to be engineered.",
+    "section2_card_cta": "Ask us what your ground has to carry",
     "variant_20x8_h2": "20 x 8 ft G+1: 320 sq ft From a 160 sq ft Footprint",
     "variant_20x8_body": "This is the smallest approved stack and the one that saves the most ground. Each floor is a single open office of 160 sq ft with three workstations along Wall B and three ceiling cabinets above them. A clear centre aisle runs the length, and both end bays stay free of furniture. One door per floor sits mid way along Wall A, with a window each side of it. Pick it when the gate area is small and six desks are enough.",
     "variant_20x16_h2": "20 x 16 ft G+1: A Fully Serviced Floor, Repeated Twice",
@@ -96,6 +121,9 @@
     "spec_narrative": "Read this the way an engineer reads it. Almost every line below changes because there is a floor above, and the difference is written into the right hand column. Final member sizes, materials and performance stay controlled by the signed quotation, the approved shop drawings and project engineering."
   },
   "assets": {
+    "section 2 split card": [
+      "/images/products/multi-story-container-office/section2/multi-story-container-office-section2-card-g1-exterior.webp"
+    ],
     "gallery images": [
       "/images/products/multi-story-container-office/20x8/01-multi-story-office-20x8-front.webp",
       "/images/products/multi-story-container-office/20x8/02-multi-story-office-20x8-rear.webp",

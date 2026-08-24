@@ -468,8 +468,9 @@ interface PortaCabinVariantHeroProps {
   eagerActiveGalleryImages?: boolean;
   /** CO-06: keep all inactive-size gallery assets in SSR as lazy images. */
   renderInactiveGalleryImages?: boolean;
-  /** CO-06: place the approved GA board below that size's application bullets. */
-  explorerImageAfterApplications?: boolean;
+  /** CO-06 addendum v1.2: render the Explorer's five facts in one list column.
+      Default false preserves the two-column application grid on siblings. */
+  explorerSingleColumnApplications?: boolean;
 }
 
 // Star row for the review badge (Amendment G v2 — real rating: 4.6 from the 5
@@ -748,7 +749,7 @@ export function PortaCabinVariantHero({
   syncVariantSelection = false,
   eagerActiveGalleryImages = false,
   renderInactiveGalleryImages = false,
-  explorerImageAfterApplications = false,
+  explorerSingleColumnApplications = false,
 }: PortaCabinVariantHeroProps) {
   const defaultIndex = Math.max(
     0,
@@ -1543,7 +1544,7 @@ export function PortaCabinVariantHero({
             panelHeadingAsH2={explorerPanelHeadingAsH2}
             hidePanelImages={explorerHidePanelImages}
             renderOnlyActivePanel={renderOnlyActiveExplorerPanel}
-            imageAfterApplications={explorerImageAfterApplications}
+            singleColumnApplications={explorerSingleColumnApplications}
           />
         </div>
         )}
@@ -1630,10 +1631,12 @@ interface SizeApplicationsExplorerProps {
   /** PC-02 — see `explorerHidePanelImages` on the hero. Default false. */
   hidePanelImages?: boolean;
   renderOnlyActivePanel?: boolean;
-  imageAfterApplications?: boolean;
+  /** CO-06 addendum v1.2: retain the shared list DOM and check icons, but keep
+      the five approved facts in one column. Default false preserves siblings. */
+  singleColumnApplications?: boolean;
 }
 
-function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false, hidePanelImages = false, renderOnlyActivePanel = false, imageAfterApplications = false }: SizeApplicationsExplorerProps) {
+function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false, hidePanelImages = false, renderOnlyActivePanel = false, singleColumnApplications = false }: SizeApplicationsExplorerProps) {
   // T25 — HARD NULL. The per-slug applications copy is owner-authored; when a
   // product has none this section renders NOTHING. It must never fall back to the
   // porta-cabins copy.
@@ -1816,7 +1819,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   ships in SSR (crawlable); the newly-active panel mounts and fetches
                   its image on demand when the tab is selected — into the already
                   reserved box, so activation is zero-CLS. */}
-              {!hidePanelImages && !imageAfterApplications && <div className="lg:w-[44%]">
+              {!hidePanelImages && <div className="lg:w-[44%]">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
                   {panelImage ? (
                     (i === activeIndex || data.productSlug === 'container-marketing-office' || data.productSlug === 'shipping-container-office') ? (
@@ -1913,7 +1916,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                     bullets (ms-porta-cabin) renders no list at all rather than an
                     empty <ul>. Every dataset that has bullets is unaffected. */}
                 {panel.applications.length > 0 && (
-                <ul className={cn(panel.applicationsHeading ? 'mt-2' : 'mt-4', 'grid gap-2 sm:grid-cols-2')}>
+                <ul className={cn(panel.applicationsHeading ? 'mt-2' : 'mt-4', 'grid gap-2', !singleColumnApplications && 'sm:grid-cols-2')}>
                   {panel.applications.map((app, ai) => (
                     <li key={ai} className="flex items-start gap-2 text-sm text-[var(--ds-color-ink)]">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--ds-color-leaf)]" aria-hidden="true" />
@@ -1921,37 +1924,6 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                     </li>
                   ))}
                 </ul>
-                )}
-
-                {imageAfterApplications && !hidePanelImages && panelImage && i === activeIndex && (
-                  <div className="mt-4 overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
-                    {panelImage.previewSrc ? (
-                      <picture>
-                        <source media="(max-width: 767px)" srcSet={panelImage.previewSrc} />
-                        <img
-                          src={panelImage.src}
-                          alt={panelImage.alt}
-                          width={panelImage.width}
-                          height={panelImage.height}
-                          className={cn('h-auto w-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      </picture>
-                    ) : (
-                      <Image
-                        src={panelImage.src}
-                        unoptimized={shouldBypassOptimizer(panelImage.src)}
-                        alt={panelImage.alt}
-                        width={panelImage.width}
-                        height={panelImage.height}
-                        className={cn('h-auto w-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
-                        sizes="(max-width: 1023px) calc(100vw - 34px), 900px"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    )}
-                  </div>
                 )}
 
                 {/* Stats + CTA are ONE space-between group (REV 2): free height is
