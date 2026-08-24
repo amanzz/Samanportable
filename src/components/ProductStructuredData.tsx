@@ -346,6 +346,19 @@ export default function ProductStructuredData({ product, category, reviews, brea
     breadcrumb: breadcrumbStructuredData
   };
 
+  if (variantData?.schemaOutputMode === 'productOnly' && productStructuredData) {
+    return (
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(productStructuredData)
+          }}
+        />
+      </Head>
+    );
+  }
+
   return (
     <Head>
       <script

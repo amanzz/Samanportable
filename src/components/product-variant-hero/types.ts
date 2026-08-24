@@ -238,6 +238,9 @@ export interface VariantProductData {
   /** Exact Product JSON-LD override for pages whose build ticket pins a bespoke
       Product node. Absent everywhere else, so existing generated schema remains. */
   schemaOverride?: Record<string, unknown>;
+  /** Emit schemaOverride as the only JSON-LD node for tickets that forbid the
+      default ItemPage/Breadcrumb wrapper. Absent keeps existing pages unchanged. */
+  schemaOutputMode?: 'default' | 'productOnly';
   /** LC-05 (16 Aug 2026) - allow Next's responsive image pipeline for a page whose
       gallery assets are local WebPs. Absent/false preserves the deployed bypass
       decision byte-for-byte on every sibling product. */

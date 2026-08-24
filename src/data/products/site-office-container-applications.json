@@ -1,105 +1,126 @@
 {
-  "h2": "Explore every Site Office Container size & its applications",
-  "guidanceLine": "Staffing shown is layout guidance drawn from common site-office plans, exact capacity is set on your drawing.",
+  "h2": "Which Site Office Container Fits Your Project Programme?",
+  "intro": "Start with how many people sign in every morning, not with the length of the box. Width sets the desk count here. A 20 x 8 ft cabin seats three along one wall and keeps a clear central aisle. Move to 10 or 12 ft of width and a second desk run opens up, which is why the 40 x 12 ft layout reaches twelve workstations. Length then decides whether you get one open room or a manager cabin behind a partition.\n\nCompare that against the rest of [the container office range](https://www.samanportable.com/product/container-offices) before you commit. This page suits a live construction plot, where the office moves as the work front moves. Mud, dust and visitors all arrive at the same door. If the programme is fixed and the office stays put for years, a different build usually costs less. Send us the plot layout and the headcount, and we will mark the size on a GA plan. [Send your site details for a quotation](https://www.samanportable.com/contact).",
   "panels": [
     {
-      "sizeSlug": "10x10",
-      "h3": "10×10 ft: the one-supervisor day-one site unit",
-      "paragraph": "A single-supervisor unit built for the first day of a construction site: 100 sq ft, delivered fitted, placed at the gate before the boundary wall exists. Drawings, a desk and the site records stay secure and dry from excavation to handover. It is deliberately small. The point is presence at the gate from day one, not floor area. When staff numbers grow with the project, larger units join the compound rather than replace it. A lockable door and barred window keep instruments and files safe overnight on open sites.",
-      "applications": [
-        "A one-desk gate command point",
-        "PPE hooks at the entrance step",
-        "The site's first morning office",
-        "Quick power hookup on arrival"
-      ]
-    },
-    {
       "sizeSlug": "20x8",
-      "h3": "20×8 ft: the boundary-line unit for urban sites",
-      "paragraph": "The boundary-line unit: 160 sq ft running thin along the site edge, where hoarding, gates and services leave no depth for a full-width office. Three to four site staff handle entry control, billing and visitor passes in line. Contractors on urban plots, metro stations, road widening, infill builds, specify it because it is the office that still fits after everything else is marked out on the ground. Doors and windows face the traffic side, set on the drawing to match your gate and hoarding plan.",
+      "h3": "20 x 8 ft Site Office Container for a Three-Desk Team",
+      "paragraph": "At 160 sq ft this is the smallest office SAMAN will sign a GA plan for. Three workstations sit along the rear wall, each with a chair and an overhead file cabinet. The aisle down the middle stays clear, so nobody squeezes past a drawing table. One door on the front wall keeps entry controlled at a single point. Six windows give cross light. At 8 ft of width there is no room for a second desk run. Treat three seats as the honest limit.",
       "applications": [
-        "A slim office beside the works",
-        "Boundary-wall siting made easy",
-        "Two desks facing the site gate",
-        "Drawings within arm's reach"
-      ]
+        "Rs 2,37,600 ex GST, Rs 2,80,368 with 18 per cent GST",
+        "1 door, 6 windows, 3 workstations, 3 seats, no partition",
+        "Fits a narrow gate-side plot or a footpath-width setback",
+        "Smallest unit that still takes a full plan table"
+      ],
+      "image": {
+        "src": "/images/products/site-office-container/ga/site-office-container-ga-plan-20x8.webp",
+        "previewSrc": "/images/products/site-office-container/ga/site-office-container-ga-plan-20x8-489.webp",
+        "alt": "Approved GA plan for the 20 x 8 x 8.5 ft site office container showing every wall opening",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      }
     },
     {
       "sizeSlug": "20x10",
-      "h3": "20×10 ft: the standard project-site container",
-      "paragraph": "The standard project-site office: 200 sq ft that four to six engineers and administrators run a live construction site from. RFIs, measurement books, contractor meetings and daily labour management pass through this size more than any other we deliver. Its ₹1,350 reference rate sits mid-cluster; what the site unit adds is the duty configuration, placement, power and access planned around a working construction site rather than a finished plot. It reaches site fitted: lighting, fan and AC provision, sockets and switchboards already wired.",
+      "h3": "20 x 10 ft Site Office Container Seating Five People",
+      "paragraph": "Two extra feet of width change the plan completely. Five workstations now fit, three along the rear wall and two along the front, and the aisle still runs clear between them. This is the size most Indian site teams settle on for a mid-size project. It holds a site engineer, a supervisor, a billing assistant and two more desks without feeling cramped. The door and window positions match the 20 x 8 ft plan, so the entry discipline stays the same.",
       "applications": [
-        "Plan table with two staff desks",
-        "The site's daily briefing room",
-        "Pin-up wall for current drawings",
-        "Service connection in hours"
-      ]
-    },
-    {
-      "sizeSlug": "20x12",
-      "h3": "20×12 ft: a site office plus a meeting corner",
-      "paragraph": "A site office with a meeting corner: 240 sq ft where contractor coordination, client walk-ins and daily planning get a table instead of a crowded desk. Five to seven people work alongside the meeting zone. Project managers add the width when the site holds weekly reviews. It costs ₹41,040 more than the standard size and earns that back at the first review that doesn't happen across working desks. The meeting corner takes a table for six, with the working desks kept clear along the far wall. Racks for drawings and registers line the review wall.",
-      "applications": [
-        "Briefings of six around the plans",
-        "A second pin-up wall fitted",
-        "Muster point beside the door",
-        "Wider plan-table clearance"
-      ]
+        "Rs 2,70,000 ex GST, Rs 3,18,600 with 18 per cent GST",
+        "1 door, 6 windows, 5 workstations, 5 seats, no partition",
+        "200 sq ft is the reference size for our published rate",
+        "Cross ventilation from windows on all four walls"
+      ],
+      "image": {
+        "src": "/images/products/site-office-container/ga/site-office-container-ga-plan-20x10.webp",
+        "previewSrc": "/images/products/site-office-container/ga/site-office-container-ga-plan-20x10-489.webp",
+        "alt": "Approved GA plan for the 20 x 10 x 8.5 ft site office container showing every wall opening",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      }
     },
     {
       "sizeSlug": "30x10",
-      "h3": "30×10 ft: two rooms for the project team",
-      "paragraph": "Three hundred square feet that split into a working office and a separate room for the project head or client meetings. The two-room pattern sized for a construction site's chain of command. Six to eight staff work the floor while decisions happen behind the partition. It arrives as one unit, sits on a prepared base at the gate or inside the hoarding, and relocates intact when the site winds down. Lighting and power run independently in both rooms, so meetings don't share circuits with the floor.",
+      "h3": "30 x 10 ft Site Office Container With Two Site Doors",
+      "paragraph": "Thirty feet of length brings a second door, and that changes how the room works. Site staff enter at one end in boots, while visitors and clients use the other. Eight workstations line up, five along the rear wall and three along the front, with eight windows spreading daylight down the whole run. We keep this at eight desks rather than pushing to twelve, because a project office needs floor space for plan tables and standing conversations.",
       "applications": [
-        "Plan room plus a meeting room",
-        "Manager's cabin off the floor",
-        "Two-room site command layout",
-        "Client meetings without leaving site"
-      ]
+        "Rs 3,88,800 ex GST, Rs 4,58,784 with 18 per cent GST",
+        "2 doors, 8 windows, 8 workstations, 8 seats, no partition",
+        "Separate entry and exit points for staff and visitors",
+        "Comfortable eight-seat plan, not a maximum-capacity plan"
+      ],
+      "image": {
+        "src": "/images/products/site-office-container/ga/site-office-container-ga-plan-30x10.webp",
+        "previewSrc": "/images/products/site-office-container/ga/site-office-container-ga-plan-30x10-489.webp",
+        "alt": "Approved GA plan for the 30 x 10 x 8.5 ft site office container showing every wall opening",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      }
     },
     {
       "sizeSlug": "40x8",
-      "h3": "40×8 ft: the in-line unit for linear projects",
-      "paragraph": "The in-line unit for linear projects: 320 sq ft of workstation row for highways, pipelines, rail corridors and every site that is longer than it is deep. Seven to nine staff sit along the run with entries set to the traffic side. Site rows often pair it with stores and welfare units of the same width, building a facility line that reads as one planned edge along the alignment. Every unit in the row arrives identically fitted, so staff move between them without relearning anything. Entries repeat at fixed intervals along the row.",
+      "h3": "40 x 8 ft Site Office Container With a Manager Cabin",
+      "paragraph": "This is the first layout with a partition. The first 10 ft becomes a private manager cabin with its own desk and two guest chairs, reached through an internal door. Behind it, a 30 ft common office runs seven workstations along one wall. Ten seats in total. At 8 ft of width the common room stays single-sided. Pick it when a closed meeting room matters more to you than want extra desks. An internal door keeps that room quiet.",
       "applications": [
-        "Three site rooms along a line",
-        "Stores, office and briefing bay",
-        "A corridor serving the works",
-        "Slim command point, deep plot"
-      ]
-    },
-    {
-      "sizeSlug": "20x20",
-      "h3": "20×20 ft: the square open floor for site teams",
-      "paragraph": "An open 400 sq ft square for site teams that plan around a common table: drawings spread in the middle, desks around the edge, everyone within speaking distance. The same area and price as the 40×10 makes the decision purely about working style and plot shape. Verify the site approach can receive a 20 ft wide delivery when you plan the compound. Design-and-build teams and survey-heavy phases favour this floor. The open span carries no internal posts, so the table layout is yours to decide and change.",
-      "applications": [
-        "The drawing war room of the project",
-        "Whole-team briefings in one room",
-        "Plans pinned on every wall",
-        "A square floor for site command"
-      ]
+        "Rs 4,10,400 ex GST, Rs 4,84,272 with 18 per cent GST",
+        "2 external doors plus 1 internal door, 10 windows",
+        "7 workstations and 10 seats, including manager and guests",
+        "Private cabin for wage talks, client visits and records"
+      ],
+      "image": {
+        "src": "/images/products/site-office-container/ga/site-office-container-ga-plan-40x8.webp",
+        "previewSrc": "/images/products/site-office-container/ga/site-office-container-ga-plan-40x8-489.webp",
+        "alt": "Approved GA plan for the 40 x 8 x 8.5 ft site office container showing every wall opening",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      }
     },
     {
       "sizeSlug": "40x10",
-      "h3": "40×10 ft: the full site-administration floor",
-      "paragraph": "The full site-administration floor: 400 sq ft holding engineering, quantity survey, documentation and a reception point in one delivered unit. Eight to twelve people run the site from it across the project's life. On big builds it anchors the office compound, with smaller units around it for stores and security. Start here when the roster is above eight from day one, joining two smaller units later costs more than one right-sized floor now. Cabin and reception walls are placed on your approved drawing, and the compound plan grows outward from this floor.",
+      "h3": "40 x 10 ft Site Office Container Seating Fifteen People",
+      "paragraph": "Ten feet of width lets both walls of the common office carry desks. Seven workstations sit along the rear wall and five along the front, which brings the total to twelve. Add the manager and two guest chairs and the cabin seats fifteen. The 10 ft manager room stays private behind the partition. Most infrastructure and EPC teams land here once the site crosses roughly forty people on the ground, and paperwork needs its own desks.",
       "applications": [
-        "Plan table alongside six desks",
-        "Reception for site visitors",
-        "The standard big-site office",
-        "Command point for a long build"
-      ]
+        "Rs 5,13,000 ex GST, Rs 6,05,340 with 18 per cent GST",
+        "2 external doors plus 1 internal door, 10 windows",
+        "12 workstations and 15 seats across two desk runs",
+        "Manager cabin reads as a 10 x 10 ft room, not a corner"
+      ],
+      "image": {
+        "src": "/images/products/site-office-container/ga/site-office-container-ga-plan-40x10.webp",
+        "previewSrc": "/images/products/site-office-container/ga/site-office-container-ga-plan-40x10-489.webp",
+        "alt": "Approved GA plan for the 40 x 10 x 8.5 ft site office container showing every wall opening",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      }
     },
     {
       "sizeSlug": "40x12",
-      "h3": "40×12 ft: the multi-room site command unit",
-      "paragraph": "The multi-room command unit: 480 sq ft partitioned into cabins, a meeting room and document stores, the complete site secretariat in one lift. Ten to fourteen people run administration, engineering and client coordination under one roof. At ₹1,242 per square foot it is the lowest rate on this page's ladder. Mega-sites grow beyond it into joined multi-unit compounds, planned to drawing with this unit as the template. Every partition, door and store wall is fixed on the approved drawing before fabrication begins.",
+      "h3": "40 x 12 ft Site Office Container With a Wide Clear Aisle",
+      "paragraph": "The widest approved layout carries the same twelve workstations as the 40 x 10 ft plan. What you buy with the extra two feet is the aisle. Seven feet of clear floor runs between the two desk runs, so a plan table opens without anyone standing up. The manager cabin also gains width. Choose this when the office doubles as the daily coordination room rather than only a desk space. Both desk runs still take the standard 4 x 2.5 ft module.",
       "applications": [
-        "The largest single site office",
-        "Meeting space behind a partition",
-        "Ten seats for a full site team",
-        "Plans, desks and briefings in one"
-      ]
+        "Rs 6,09,120 ex GST, Rs 7,18,762 with 18 per cent GST",
+        "2 external doors plus 1 internal door, 10 windows",
+        "12 workstations and 15 seats, same as the 40 x 10 ft plan",
+        "Seven-foot clear aisle for plan tables and site meetings"
+      ],
+      "image": {
+        "src": "/images/products/site-office-container/ga/site-office-container-ga-plan-40x12.webp",
+        "previewSrc": "/images/products/site-office-container/ga/site-office-container-ga-plan-40x12-489.webp",
+        "alt": "Approved GA plan for the 40 x 12 x 8.5 ft site office container showing every wall opening",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      }
     }
   ]
 }

@@ -1,535 +1,534 @@
 {
   "productSlug": "site-office-container",
-  "productName": "Site Office Container",
   "variantAxis": "size",
   "defaultVariant": "20x10",
   "hsn": "9406",
   "gstPercent": 18,
+  "productName": "Site Office Container",
+  "h1": "Site Office Container for Live Construction Projects",
+  "seoTitle": "Site Office Container Price, Sizes and GA Layouts | SAMAN",
+  "metaDescription": "Six approved site office container sizes from 160 to 480 sq ft, priced from Rs 2,37,600 ex GST, with signed GA plans, workstation counts and honest site scope.",
+  "opener": "A site office container is the room your project runs from. Engineers mark up drawings there, the contractor signs the day's work, and clients sit down without walking the slab. SAMAN builds it as a welded steel box on a 125 x 75 x 4 mm base channel, clad in corrugated sheet. So it survives being lifted and moved as the work front shifts. Six approved sizes run from 160 to 480 sq ft.\n\nEach one carries a signed general arrangement plan, so you know the door and window positions and the exact workstation count before you order. The two 40 ft wide layouts add a manager cabin behind a partition. Prices below are ex GST and cover the finished cabin.",
   "categoryLabel": "Container Offices",
   "categoryHref": "/product/container-offices",
-  "productSku": "SP-30-SOC-2024",
-  "materialLabel": "MS container shell, site-duty build · Insulated",
-  "deliveryLabel": "7–21 working days",
-  "applicationsDataset": "site-office-container",
-  "explorerImageTemplate": "/images/products/site-office-container/{sizeSlug}/site-office-container-{sizeSlug}-hero-view.webp",
-  "trustWarranty": "5-year structural warranty and 1-year finishing warranty as standard",
-  "specPdfHref": "/specs/site-office-container-technical-specification.pdf",
-  "emitAggregateOffer": true,
+  "productSku": "SP-CO-01-SOC",
   "pricePerSqft": {
-    "10x10": "1,485",
-    "20x8": "1,485",
-    "20x10": "1,350",
-    "20x12": "1,296",
-    "30x10": "1,296",
-    "40x8": "1,269",
-    "20x20": "1,269",
-    "40x10": "1,269",
-    "40x12": "1,242"
+    "20x8": "1,485.00",
+    "20x10": "1,350.00",
+    "30x10": "1,296.00",
+    "40x8": "1,282.50",
+    "40x10": "1,282.50",
+    "40x12": "1,269.00"
   },
-  "variants": [
-    {
-      "sizeSlug": "10x10",
-      "label": "10x10 ft",
-      "dims": "10×10×8.5 ft",
-      "areaSqft": 100,
-      "priceExGst": 148500,
-      "priceInclGst": 175230,
-      "capacity": "~2–3 people",
-      "useCase": "Day-one gate offices",
-      "sku": "SP-30-SOC-2024",
-      "images": [
-        {
-          "src": "/images/products/site-office-container/10x10/site-office-container-10x10-hero-view.webp",
-          "alt": "Green site office container with dark grey base, 10x10 ft, hero exterior angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/10x10/site-office-container-10x10-front-angle.webp",
-          "alt": "Yellow 10x10 ft site office container on mown grass, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/10x10/site-office-container-10x10-side-elevation.webp",
-          "alt": "Red 10x10 ft site office container on gravel by a highway, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/10x10/site-office-container-10x10-workspace-interior.webp",
-          "alt": "Timber desk below the air conditioner inside a 10x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/10x10/site-office-container-10x10-meeting-interior.webp",
-          "alt": "Desk with two visitor chairs inside a 10x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/10x10/site-office-container-10x10-corner-interior.webp",
-          "alt": "Grey desk and storage sideboard in a 10x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        }
-      ],
-      "shortDescription": "A single-supervisor unit built for the first day of a construction site: 100 sq ft, delivered fitted, placed at the gate before the boundary wall exists."
+  "deliveryLabel": "Quoted by site and route",
+  "materialLabel": "125 x 75 x 4 mm MS C-channel base, corrugated MS shell",
+  "coverageLabel": "Bangalore and Greater Noida dispatch",
+  "priceCaption": "Ex GST prices. GST at 18 per cent extra.",
+  "specPdfHref": "/downloads/site-office-container-technical-specification-and-ga-v1.pdf",
+  "specPdfButtonLabel": "Download the technical specification and GA plans (PDF)",
+  "emitAggregateOffer": true,
+  "schemaOfferType": "aggregateOffer",
+  "schemaItemCondition": "new",
+  "suppressAggregateRatingSchema": true,
+  "suppressLegacyFaqSchema": true,
+  "schemaOutputMode": "productOnly",
+  "schemaOverride": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Site Office Container",
+    "category": "Container Offices",
+    "brand": {
+      "@type": "Brand",
+      "name": "SAMAN Portable"
     },
+    "description": "Six approved site office container sizes from 160 to 480 sq ft, priced from Rs 2,37,600 ex GST, with signed GA plans, workstation counts and honest site scope.",
+    "image": [
+      "https://www.samanportable.com/images/products/site-office-container/20x8/01-site-office-container-20x8-front-exterior.webp",
+      "https://www.samanportable.com/images/products/site-office-container/20x10/01-site-office-container-20x10-front-exterior.webp",
+      "https://www.samanportable.com/images/products/site-office-container/30x10/01-site-office-container-30x10-front-exterior.webp",
+      "https://www.samanportable.com/images/products/site-office-container/40x8/03-site-office-container-40x8-front-exterior.webp",
+      "https://www.samanportable.com/images/products/site-office-container/40x10/03-site-office-container-40x10-front-right-exterior.webp",
+      "https://www.samanportable.com/images/products/site-office-container/40x12/03-site-office-container-40x12-front-exterior.webp"
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "237600",
+      "highPrice": "609120",
+      "offerCount": "6",
+      "url": "https://www.samanportable.com/product/container-offices/site-office-container"
+    }
+  },
+  "schemaImageLimit": 6,
+  "optimizeLocalGalleryImages": false,
+  "variants": [
     {
       "sizeSlug": "20x8",
       "label": "20x8 ft",
-      "dims": "20×8×8.5 ft",
+      "dims": "20 x 8 x 8.5 ft",
       "areaSqft": 160,
       "priceExGst": 237600,
       "priceInclGst": 280368,
-      "capacity": "~3–4 people",
-      "useCase": "Hoarding-line offices",
-      "sku": "SP-30-SOC-2024",
-      "images": [
+      "capacity": "3 workstations / 3 seats",
+      "useCase": "Construction site project office",
+      "sku": "SP-CO-01-SOC",
+      "featureCells": [
         {
-          "src": "/images/products/site-office-container/20x8/site-office-container-20x8-hero-view.webp",
-          "alt": "Dark green 20x8 ft site office container beside a rail siding, hero angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Approved sizes",
+          "value": "Six, from 20 x 8 x 8.5 ft to 40 x 12 x 8.5 ft"
         },
         {
-          "src": "/images/products/site-office-container/20x8/site-office-container-20x8-front-angle.webp",
-          "alt": "Amber orange 20x8 ft site office container on a campus court, front view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Workstations",
+          "value": "3 to 12, taken from the signed GA plan"
         },
         {
-          "src": "/images/products/site-office-container/20x8/site-office-container-20x8-side-elevation.webp",
-          "alt": "Pale green and white 20x8 ft site office container at a warehouse, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Base frame",
+          "value": "125 x 75 x 4 mm MS C-channel, welded"
         },
         {
-          "src": "/images/products/site-office-container/20x8/site-office-container-20x8-workspace-interior.webp",
-          "alt": "Desk with chairs and potted plants inside a 20x8 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Insulation",
+          "value": "50 mm glass wool in walls, 75 mm in the roof"
         },
         {
-          "src": "/images/products/site-office-container/20x8/site-office-container-20x8-lounge-interior.webp",
-          "alt": "Workstation beside a grey sofa inside a 20x8 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/20x8/site-office-container-20x8-corner-interior.webp",
-          "alt": "Desk and monitor on wood flooring in a 20x8 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Price from",
+          "value": "Rs 2,37,600 ex GST for 160 sq ft"
         }
       ],
-      "shortDescription": "The boundary-line unit: 160 sq ft running thin along the site edge, where hoarding, gates and services leave no depth for a full-width office."
+      "shortDescription": "At 160 sq ft this is the smallest office SAMAN will sign a GA plan for. Three workstations sit along the rear wall, each with a chair and an overhead file cabinet. The aisle down the middle stays clear, so nobody squeezes past a drawing table. One door on the front wall keeps entry controlled at a single point. Six windows give cross light. At 8 ft of width there is no room for a second desk run. Treat three seats as the honest limit.",
+      "images": [
+        {
+          "src": "/images/products/site-office-container/20x8/01-site-office-container-20x8-front-exterior.webp",
+          "alt": "20 x 8 ft site office container, front wall with window, door and window, end wall behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/20x8/02-site-office-container-20x8-rear-exterior.webp",
+          "alt": "Rear wall of a 20 x 8 ft site office container with two windows and no door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/20x8/03-site-office-container-20x8-front-right-exterior.webp",
+          "alt": "20 x 8 ft site office container from the front right, door wall and end wall window in view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/20x8/04-site-office-container-20x8-interior-aisle.webp",
+          "alt": "Inside a 20 x 8 ft site office container, three desks on the rear wall and a clear aisle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/20x8/05-site-office-container-20x8-interior-end-wall.webp",
+          "alt": "End wall of a 20 x 8 ft site office container with one centred window and no door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/20x8/06-site-office-container-20x8-interior-workstations.webp",
+          "alt": "Three workstations with overhead cabinets in a 20 x 8 ft site office container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
       "label": "20x10 ft",
-      "dims": "20×10×8.5 ft",
+      "dims": "20 x 10 x 8.5 ft",
       "areaSqft": 200,
       "priceExGst": 270000,
       "priceInclGst": 318600,
-      "capacity": "~4–6 people",
-      "useCase": "Standard site offices",
-      "sku": "SP-30-SOC-2024",
-      "images": [
+      "capacity": "5 workstations / 5 seats",
+      "useCase": "Construction site project office",
+      "sku": "SP-CO-01-SOC",
+      "featureCells": [
         {
-          "src": "/images/products/site-office-container/20x10/site-office-container-20x10-hero-view.webp",
-          "alt": "Olive green 20x10 ft site office container near solar panels, hero exterior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Approved sizes",
+          "value": "Six, from 20 x 8 x 8.5 ft to 40 x 12 x 8.5 ft"
         },
         {
-          "src": "/images/products/site-office-container/20x10/site-office-container-20x10-front-angle.webp",
-          "alt": "Light grey 20x10 ft site office container on cast concrete, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Workstations",
+          "value": "3 to 12, taken from the signed GA plan"
         },
         {
-          "src": "/images/products/site-office-container/20x10/site-office-container-20x10-side-elevation.webp",
-          "alt": "Blue 20x10 ft site office container against a grey wall, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Base frame",
+          "value": "125 x 75 x 4 mm MS C-channel, welded"
         },
         {
-          "src": "/images/products/site-office-container/20x10/site-office-container-20x10-workspace-interior.webp",
-          "alt": "Desk backed by a tall wardrobe inside a 20x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Insulation",
+          "value": "50 mm glass wool in walls, 75 mm in the roof"
         },
         {
-          "src": "/images/products/site-office-container/20x10/site-office-container-20x10-meeting-interior.webp",
-          "alt": "Dark desk with meeting table inside a 20x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/20x10/site-office-container-20x10-corner-interior.webp",
-          "alt": "Timber desk beside a red door in a 20x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Price from",
+          "value": "Rs 2,37,600 ex GST for 160 sq ft"
         }
       ],
-      "shortDescription": "The standard project-site office: 200 sq ft that four to six engineers and administrators run a live construction site from."
-    },
-    {
-      "sizeSlug": "20x12",
-      "label": "20x12 ft",
-      "dims": "20×12×8.5 ft",
-      "areaSqft": 240,
-      "priceExGst": 311040,
-      "priceInclGst": 367027,
-      "capacity": "~5–7 people",
-      "useCase": "Weekly-review offices",
-      "sku": "SP-30-SOC-2024",
+      "shortDescription": "Two extra feet of width change the plan completely. Five workstations now fit, three along the rear wall and two along the front, and the aisle still runs clear between them. This is the size most Indian site teams settle on for a mid-size project. It holds a site engineer, a supervisor, a billing assistant and two more desks without feeling cramped. The door and window positions match the 20 x 8 ft plan, so the entry discipline stays the same.",
       "images": [
         {
-          "src": "/images/products/site-office-container/20x12/site-office-container-20x12-hero-view.webp",
-          "alt": "Sage green site office container with dark base, 20x12 ft, hero exterior angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/20x10/01-site-office-container-20x10-front-exterior.webp",
+          "alt": "20 x 10 ft site office container, front wall showing window, door and window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x12/site-office-container-20x12-front-angle.webp",
-          "alt": "Green 20x12 ft site office container with yellow base under a steel canopy",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/20x10/02-site-office-container-20x10-rear-exterior.webp",
+          "alt": "Rear wall of a 20 x 10 ft site office container with two windows and the end wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x12/site-office-container-20x12-side-elevation.webp",
-          "alt": "Red 20x12 ft site office container on a landscaped campus, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/20x10/03-site-office-container-20x10-front-right-exterior.webp",
+          "alt": "20 x 10 ft site office container from the front right, entry door and end wall in view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x12/site-office-container-20x12-workspace-interior.webp",
-          "alt": "Timber desk with two chairs inside a 20x12 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/20x10/04-site-office-container-20x10-interior-aisle.webp",
+          "alt": "Inside a 20 x 10 ft site office container, desks on both long walls with a central aisle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x12/site-office-container-20x12-team-interior.webp",
-          "alt": "Two staff desks on wood flooring inside a 20x12 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/20x10/05-site-office-container-20x10-interior-reverse.webp",
+          "alt": "20 x 10 ft site office container interior looking back toward the entry end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x12/site-office-container-20x12-lounge-interior.webp",
-          "alt": "Desks and a grey sofa sharing a 20x12 ft site office container interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/20x10/06-site-office-container-20x10-interior-workstations.webp",
+          "alt": "Five workstations with overhead cabinets in a 20 x 10 ft site office container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         }
-      ],
-      "shortDescription": "A site office with a meeting corner: 240 sq ft where contractor coordination, client walk-ins and daily planning get a table instead of a crowded desk."
+      ]
     },
     {
       "sizeSlug": "30x10",
       "label": "30x10 ft",
-      "dims": "30×10×8.5 ft",
+      "dims": "30 x 10 x 8.5 ft",
       "areaSqft": 300,
       "priceExGst": 388800,
       "priceInclGst": 458784,
-      "capacity": "~6–8 people",
-      "useCase": "Project-head offices",
-      "sku": "SP-30-SOC-2024",
-      "images": [
+      "capacity": "8 workstations / 8 seats",
+      "useCase": "Construction site project office",
+      "sku": "SP-CO-01-SOC",
+      "featureCells": [
         {
-          "src": "/images/products/site-office-container/30x10/site-office-container-30x10-hero-view.webp",
-          "alt": "Dark green 30x10 ft site office container at a metal-clad factory, hero angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Approved sizes",
+          "value": "Six, from 20 x 8 x 8.5 ft to 40 x 12 x 8.5 ft"
         },
         {
-          "src": "/images/products/site-office-container/30x10/site-office-container-30x10-front-angle.webp",
-          "alt": "Powder blue 30x10 ft site office container with dark base, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Workstations",
+          "value": "3 to 12, taken from the signed GA plan"
         },
         {
-          "src": "/images/products/site-office-container/30x10/site-office-container-30x10-side-elevation.webp",
-          "alt": "Cream 30x10 ft site office container with wind turbines behind, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Base frame",
+          "value": "125 x 75 x 4 mm MS C-channel, welded"
         },
         {
-          "src": "/images/products/site-office-container/30x10/site-office-container-30x10-workspace-interior.webp",
-          "alt": "Desk with green chairs and cabinet inside a 30x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Insulation",
+          "value": "50 mm glass wool in walls, 75 mm in the roof"
         },
         {
-          "src": "/images/products/site-office-container/30x10/site-office-container-30x10-team-interior.webp",
-          "alt": "Desk rows with task chairs inside a 30x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/30x10/site-office-container-30x10-corner-interior.webp",
-          "alt": "Desk and long sideboard on wood floor in a 30x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Price from",
+          "value": "Rs 2,37,600 ex GST for 160 sq ft"
         }
       ],
-      "shortDescription": "Three hundred square feet that split into a working office and a separate room for the project head or client meetings. The two-room pattern sized for a construction site's chain of command."
+      "shortDescription": "Thirty feet of length brings a second door, and that changes how the room works. Site staff enter at one end in boots, while visitors and clients use the other. Eight workstations line up, five along the rear wall and three along the front, with eight windows spreading daylight down the whole run. We keep this at eight desks rather than pushing to twelve, because a project office needs floor space for plan tables and standing conversations.",
+      "images": [
+        {
+          "src": "/images/products/site-office-container/30x10/01-site-office-container-30x10-front-exterior.webp",
+          "alt": "30 x 10 ft site office container, front wall with two doors and two windows between them",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/30x10/02-site-office-container-30x10-rear-exterior.webp",
+          "alt": "Rear wall of a 30 x 10 ft site office container with four windows and no door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/30x10/03-site-office-container-30x10-front-right-exterior.webp",
+          "alt": "30 x 10 ft site office container from the front right, both entry doors in view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/30x10/04-site-office-container-30x10-interior-desk-run.webp",
+          "alt": "Three desks along the front wall of a 30 x 10 ft site office container beside an entry door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/30x10/05-site-office-container-30x10-interior-front-wall-openings.webp",
+          "alt": "Front wall of a 30 x 10 ft site office container, door, two windows, second door, three desks",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/30x10/06-site-office-container-30x10-interior-materials.webp",
+          "alt": "Close view of lining, worktop and overhead cabinet in a 30 x 10 ft site office container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     },
     {
       "sizeSlug": "40x8",
       "label": "40x8 ft",
-      "dims": "40×8×8.5 ft",
+      "dims": "40 x 8 x 8.5 ft",
       "areaSqft": 320,
-      "priceExGst": 406080,
-      "priceInclGst": 479174,
-      "capacity": "~7–9 people",
-      "useCase": "Highway site rows",
-      "sku": "SP-30-SOC-2024",
-      "images": [
+      "priceExGst": 410400,
+      "priceInclGst": 484272,
+      "capacity": "7 workstations / 10 seats",
+      "useCase": "Construction site project office",
+      "sku": "SP-CO-01-SOC",
+      "featureCells": [
         {
-          "src": "/images/products/site-office-container/40x8/site-office-container-40x8-hero-view.webp",
-          "alt": "White 40x8 ft site office container with dark base under a warehouse canopy",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Approved sizes",
+          "value": "Six, from 20 x 8 x 8.5 ft to 40 x 12 x 8.5 ft"
         },
         {
-          "src": "/images/products/site-office-container/40x8/site-office-container-40x8-front-angle.webp",
-          "alt": "White 40x8 ft site office container with maroon base in a formal garden",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Workstations",
+          "value": "3 to 12, taken from the signed GA plan"
         },
         {
-          "src": "/images/products/site-office-container/40x8/site-office-container-40x8-side-elevation.webp",
-          "alt": "Charcoal 40x8 ft site office container on open lawn, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Base frame",
+          "value": "125 x 75 x 4 mm MS C-channel, welded"
         },
         {
-          "src": "/images/products/site-office-container/40x8/site-office-container-40x8-workspace-interior.webp",
-          "alt": "Desk with paired chairs midway along a 40x8 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Insulation",
+          "value": "50 mm glass wool in walls, 75 mm in the roof"
         },
         {
-          "src": "/images/products/site-office-container/40x8/site-office-container-40x8-team-interior.webp",
-          "alt": "Desks the full length of a 40x8 ft site office container interior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/40x8/site-office-container-40x8-corridor-interior.webp",
-          "alt": "Desks lining the right wall of a 40x8 ft site office container corridor",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Price from",
+          "value": "Rs 2,37,600 ex GST for 160 sq ft"
         }
       ],
-      "shortDescription": "The in-line unit for linear projects: 320 sq ft of workstation row for highways, pipelines, rail corridors and every site that is longer than it is deep."
-    },
-    {
-      "sizeSlug": "20x20",
-      "label": "20x20 ft",
-      "dims": "20×20×8.5 ft",
-      "areaSqft": 400,
-      "priceExGst": 507600,
-      "priceInclGst": 598968,
-      "capacity": "~8–12 people",
-      "useCase": "Common-table floors",
-      "sku": "SP-30-SOC-2024",
+      "shortDescription": "This is the first layout with a partition. The first 10 ft becomes a private manager cabin with its own desk and two guest chairs, reached through an internal door. Behind it, a 30 ft common office runs seven workstations along one wall. Ten seats in total. At 8 ft of width the common room stays single-sided. Pick it when a closed meeting room matters more to you than want extra desks. An internal door keeps that room quiet.",
       "images": [
         {
-          "src": "/images/products/site-office-container/20x20/site-office-container-20x20-hero-view.webp",
-          "alt": "Yellow site office container with green base, 20x20 ft, on a campus lawn, hero angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/40x8/01-site-office-container-40x8-rear-left-exterior.webp",
+          "alt": "40 x 8 ft site office container from the rear left, five rear windows and the cabin end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x20/site-office-container-20x20-front-angle.webp",
-          "alt": "Powder blue 20x20 ft site office container with green base, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/40x8/02-site-office-container-40x8-rear-exterior.webp",
+          "alt": "Rear wall of a 40 x 8 ft site office container with five windows and the end wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x20/site-office-container-20x20-side-elevation.webp",
-          "alt": "Sage green 20x20 ft site office container along a garden path, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/40x8/03-site-office-container-40x8-front-exterior.webp",
+          "alt": "Front wall of a 40 x 8 ft site office container, cabin window, two doors and two windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x20/site-office-container-20x20-workspace-interior.webp",
-          "alt": "Black desk and tall cabinet inside a 20x20 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/40x8/04-site-office-container-40x8-interior-common-office.webp",
+          "alt": "Seven desks along one wall of the 30 ft common office in a 40 x 8 ft site office container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x20/site-office-container-20x20-team-interior.webp",
-          "alt": "Open-plan desks on timber flooring inside a 20x20 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/40x8/05-site-office-container-40x8-interior-end-wall.webp",
+          "alt": "End wall of a 40 x 8 ft site office container with one centred window and no door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "/images/products/site-office-container/20x20/site-office-container-20x20-corner-interior.webp",
-          "alt": "Dark desk with visitor chairs in a 20x20 ft site office container corner",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "src": "/images/products/site-office-container/40x8/06-site-office-container-40x8-interior-manager-cabin.webp",
+          "alt": "Manager cabin in a 40 x 8 ft site office container, desk, chair and two guest chairs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
         }
-      ],
-      "shortDescription": "An open 400 sq ft square for site teams that plan around a common table: drawings spread in the middle, desks around the edge, everyone within speaking distance."
+      ]
     },
     {
       "sizeSlug": "40x10",
       "label": "40x10 ft",
-      "dims": "40×10×8.5 ft",
+      "dims": "40 x 10 x 8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 507600,
-      "priceInclGst": 598968,
-      "capacity": "~8–12 people",
-      "useCase": "Site compound anchors",
-      "sku": "SP-30-SOC-2024",
-      "images": [
+      "priceExGst": 513000,
+      "priceInclGst": 605340,
+      "capacity": "12 workstations / 15 seats",
+      "useCase": "Construction site project office",
+      "sku": "SP-CO-01-SOC",
+      "featureCells": [
         {
-          "src": "/images/products/site-office-container/40x10/site-office-container-40x10-hero-view.webp",
-          "alt": "Teal 40x10 ft site office container near a comms tower, hero exterior",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Approved sizes",
+          "value": "Six, from 20 x 8 x 8.5 ft to 40 x 12 x 8.5 ft"
         },
         {
-          "src": "/images/products/site-office-container/40x10/site-office-container-40x10-front-angle.webp",
-          "alt": "Cream 40x10 ft site office container at an industrial block, front corner view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Workstations",
+          "value": "3 to 12, taken from the signed GA plan"
         },
         {
-          "src": "/images/products/site-office-container/40x10/site-office-container-40x10-side-elevation.webp",
-          "alt": "Navy blue 40x10 ft site office container beneath power lines, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Base frame",
+          "value": "125 x 75 x 4 mm MS C-channel, welded"
         },
         {
-          "src": "/images/products/site-office-container/40x10/site-office-container-40x10-entrance-interior.webp",
-          "alt": "Desk run facing a maroon door inside a 40x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Insulation",
+          "value": "50 mm glass wool in walls, 75 mm in the roof"
         },
         {
-          "src": "/images/products/site-office-container/40x10/site-office-container-40x10-team-interior.webp",
-          "alt": "Desks spaced down a long 40x10 ft site office container room",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/40x10/site-office-container-40x10-corner-interior.webp",
-          "alt": "Workstations and drawer units inside a 40x10 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Price from",
+          "value": "Rs 2,37,600 ex GST for 160 sq ft"
         }
       ],
-      "shortDescription": "The full site-administration floor: 400 sq ft holding engineering, quantity survey, documentation and a reception point in one delivered unit."
+      "shortDescription": "Ten feet of width lets both walls of the common office carry desks. Seven workstations sit along the rear wall and five along the front, which brings the total to twelve. Add the manager and two guest chairs and the cabin seats fifteen. The 10 ft manager room stays private behind the partition. Most infrastructure and EPC teams land here once the site crosses roughly forty people on the ground, and paperwork needs its own desks.",
+      "images": [
+        {
+          "src": "/images/products/site-office-container/40x10/01-site-office-container-40x10-rear-left-exterior.webp",
+          "alt": "40 x 10 ft site office container from the rear left with five rear windows in view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x10/02-site-office-container-40x10-rear-exterior.webp",
+          "alt": "Rear wall of a 40 x 10 ft site office container with five windows and the end wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x10/03-site-office-container-40x10-front-right-exterior.webp",
+          "alt": "40 x 10 ft site office container from the front right, both external doors in view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x10/04-site-office-container-40x10-interior-common-office.webp",
+          "alt": "Twelve desks in two runs inside the common office of a 40 x 10 ft site office container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x10/05-site-office-container-40x10-interior-end-wall.webp",
+          "alt": "End wall of a 40 x 10 ft site office container with one centred window and no door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x10/06-site-office-container-40x10-interior-manager-cabin.webp",
+          "alt": "Manager cabin in a 40 x 10 ft site office container with a window on each of three walls",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     },
     {
       "sizeSlug": "40x12",
       "label": "40x12 ft",
-      "dims": "40×12×8.5 ft",
+      "dims": "40 x 12 x 8.5 ft",
       "areaSqft": 480,
-      "priceExGst": 596160,
-      "priceInclGst": 703469,
-      "capacity": "~10–14 people",
-      "useCase": "Site secretariats",
-      "sku": "SP-30-SOC-2024",
-      "images": [
+      "priceExGst": 609120,
+      "priceInclGst": 718762,
+      "capacity": "12 workstations / 15 seats",
+      "useCase": "Construction site project office",
+      "sku": "SP-CO-01-SOC",
+      "featureCells": [
         {
-          "src": "/images/products/site-office-container/40x12/site-office-container-40x12-hero-view.webp",
-          "alt": "Green 40x12 ft site office container with port cranes behind, hero angle",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Approved sizes",
+          "value": "Six, from 20 x 8 x 8.5 ft to 40 x 12 x 8.5 ft"
         },
         {
-          "src": "/images/products/site-office-container/40x12/site-office-container-40x12-front-angle.webp",
-          "alt": "Pale green and white 40x12 ft site office container at a warehouse, front view",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Workstations",
+          "value": "3 to 12, taken from the signed GA plan"
         },
         {
-          "src": "/images/products/site-office-container/40x12/site-office-container-40x12-side-elevation.webp",
-          "alt": "Blue 40x12 ft site office container at a seaside boulevard, side elevation",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Base frame",
+          "value": "125 x 75 x 4 mm MS C-channel, welded"
         },
         {
-          "src": "/images/products/site-office-container/40x12/site-office-container-40x12-workspace-interior.webp",
-          "alt": "Timber desk near a red door inside a 40x12 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Insulation",
+          "value": "50 mm glass wool in walls, 75 mm in the roof"
         },
         {
-          "src": "/images/products/site-office-container/40x12/site-office-container-40x12-team-interior.webp",
-          "alt": "Grey desks under the air conditioner in a 40x12 ft site office container",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
-        },
-        {
-          "src": "/images/products/site-office-container/40x12/site-office-container-40x12-corner-interior.webp",
-          "alt": "Dark desks on wood flooring in a 40x12 ft site office container corner",
-          "provenance": "unknown",
-          "width": 900,
-          "height": 900
+          "label": "Price from",
+          "value": "Rs 2,37,600 ex GST for 160 sq ft"
         }
       ],
-      "shortDescription": "The multi-room command unit: 480 sq ft partitioned into cabins, a meeting room and document stores, the complete site secretariat in one lift."
+      "shortDescription": "The widest approved layout carries the same twelve workstations as the 40 x 10 ft plan. What you buy with the extra two feet is the aisle. Seven feet of clear floor runs between the two desk runs, so a plan table opens without anyone standing up. The manager cabin also gains width. Choose this when the office doubles as the daily coordination room rather than only a desk space. Both desk runs still take the standard 4 x 2.5 ft module.",
+      "images": [
+        {
+          "src": "/images/products/site-office-container/40x12/01-site-office-container-40x12-rear-left-exterior.webp",
+          "alt": "40 x 12 ft site office container from the rear left showing the full 40 ft rear wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x12/02-site-office-container-40x12-rear-exterior.webp",
+          "alt": "Rear wall of a 40 x 12 ft site office container with five windows and plain steel between",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x12/03-site-office-container-40x12-front-exterior.webp",
+          "alt": "Front wall of a 40 x 12 ft site office container, cabin window, two doors and two windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x12/04-site-office-container-40x12-interior-common-office.webp",
+          "alt": "Twelve desks and a seven-foot aisle in a 40 x 12 ft site office container common office",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x12/05-site-office-container-40x12-interior-end-wall.webp",
+          "alt": "End wall of a 40 x 12 ft site office container with one centred window and no door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/site-office-container/40x12/06-site-office-container-40x12-interior-manager-cabin.webp",
+          "alt": "Wide manager cabin in a 40 x 12 ft site office container with desk and two guest chairs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     }
   ]
 }

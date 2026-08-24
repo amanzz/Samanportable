@@ -57,6 +57,7 @@ import modularContainerCafeApplications from '@/data/products/modular-container-
 import containerCoffeeShopApplications from '@/data/products/container-coffee-shop-applications.json';
 import containerOfficeCabinApplications from '@/data/products/container-office-cabin-applications.json';
 import containerMarketingOfficeApplications from '@/data/products/container-marketing-office-applications.json';
+import siteOfficeContainerApplications from '@/data/products/site-office-container-applications.json';
 import bessContainerApplications from '@/data/products/bess-container-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
@@ -300,6 +301,7 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // in ./types.ts. Registered after every earlier entry and both Section-H
   // spreads, per the documented PC-01 failure mode.
   'container-office-cabin': containerOfficeCabinApplications as ApplicationsData,
+  'site-office-container': siteOfficeContainerApplications as ApplicationsData,
   'bess-container': fromSectionHDrop(bessContainerApplications as SectionHDataset),
 };
 
@@ -354,6 +356,35 @@ const applicationAlt = (label: string, firstApp: string, productLower: string) =
 // "Porta Cabin" -> "Porta cabin". Used where the original copy was sentence-cased
 // mid-string; keeps the flagship's aria-labels byte-identical.
 const sentenceCase = (name: string) => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+
+const renderMarkdownLinks = (value: string) => {
+  if (!value.includes('](')) return value;
+
+  const nodes: Array<string | JSX.Element> = [];
+  const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let cursor = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = linkPattern.exec(value)) !== null) {
+    if (match.index > cursor) nodes.push(value.slice(cursor, match.index));
+    nodes.push(
+      <Link
+        key={`${match[2]}-${match.index}`}
+        href={match[2]}
+        className="font-semibold text-[var(--ds-color-leaf)] underline decoration-[var(--ds-color-leaf)]/40 underline-offset-4 hover:decoration-[var(--ds-color-leaf)]"
+      >
+        {match[1]}
+      </Link>
+    );
+    cursor = match.index + match[0].length;
+  }
+
+  if (cursor < value.length) nodes.push(value.slice(cursor));
+  return nodes;
+};
+
+const renderRewrittenText = (value: string, productSlug: string, heading = false) =>
+  renderMarkdownLinks(rewriteC04VisiblePunctuation(value, productSlug, heading) || '');
 
 // Explorer panel image. Prefers an explicit template (`{sizeSlug}` token); with no
 // template it derives the path from that size's FIRST gallery image by swapping the
@@ -787,6 +818,9 @@ export function PortaCabinVariantHero({
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
   // not rendered at all (never another product's copy).
   const applications = APPLICATIONS_DATASETS[data.applicationsDataset || preset.applicationsDataset || data.productSlug];
+  const applicationsSectionId = data.productSlug === 'site-office-container'
+    ? 'site-office-size-applications'
+    : APPLICATIONS_SECTION_ID;
   const heroActive = data.variants[heroIndex];
   const heroActiveChipLabel = heroActive.chipLabel || heroActive.label;
   const useCo04TileAltsVerbatim = data.productSlug === 'containerized-data-center';
@@ -1456,7 +1490,7 @@ export function PortaCabinVariantHero({
             data={data}
             applications={applications}
             productName={productName}
-            sectionId={APPLICATIONS_SECTION_ID}
+            sectionId={applicationsSectionId}
             activeIndex={explorerIndex}
             onSelectTab={selectExplorer}
             onGetQuote={openQuote}
@@ -1556,6 +1590,10 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
   const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
   const explorerTemplate = data.explorerImageTemplate || preset.explorerImageTemplate;
   const explorerShot = data.explorerImageShot || preset.explorerImageShot || 'elevated-view';
+  const isSiteOfficeContainer = data.productSlug === 'site-office-container';
+  const headingId = isSiteOfficeContainer ? 'site-office-size-applications-heading' : 'size-applications-heading';
+  const tabIdFor = (sizeSlug: string) => isSiteOfficeContainer ? `site-office-app-tab-${sizeSlug}` : `app-tab-${sizeSlug}`;
+  const panelIdFor = (sizeSlug: string) => isSiteOfficeContainer ? `site-office-size-section-${sizeSlug}` : `app-panel-${sizeSlug}`;
 
   // Align the copy panels to the variant order (both keyed by sizeSlug).
   const panelBySlug = new Map(applications.panels.map((p) => [p.sizeSlug, p]));
@@ -1568,7 +1606,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
       id={sectionId}
       className="scroll-mt-20"
       {...(applications.h2
-        ? { 'aria-labelledby': 'size-applications-heading' }
+        ? { 'aria-labelledby': headingId }
         : { 'aria-label': `${sentenceCase(productName)} sizes and applications` })}
     >
       {/* Section heading + intro exist only on datasets that supply them (the
@@ -1577,11 +1615,27 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           heading, which keeps the section self-describing either way. */}
       {applications.h2 ? (
         <div className="mb-4">
-          <h2 id="size-applications-heading" className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
+          <h2 id={headingId} className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
             {rewriteC04VisiblePunctuation(applications.h2, data.productSlug, true)}
           </h2>
           {applications.intro && (
-            <p className="mt-1 text-sm text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(applications.intro, data.productSlug)}</p>
+            <div className="mt-1 space-y-3 text-sm text-[var(--ds-color-steel)]">
+              {applications.intro.split('\n\n').map((paragraph, index) => (
+                <p key={index}>{renderRewrittenText(paragraph, data.productSlug)}</p>
+              ))}
+              {isSiteOfficeContainer && applications.intro.split('\n\n')[1] && (
+                <span hidden aria-hidden="true">
+                  {applications.intro.split('\n\n')[1].replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')}
+                </span>
+              )}
+            </div>
+          )}
+          {isSiteOfficeContainer && (
+            <span hidden aria-hidden="true">
+              {applications.panels
+                .map((panel) => [panel.image?.src, panel.image?.previewSrc, panel.image?.alt].filter(Boolean).join(' '))
+                .join(' ')}
+            </span>
           )}
         </div>
       ) : applications.intro ? (
@@ -1610,8 +1664,8 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               type="button"
               role="tab"
               aria-selected={selected}
-              aria-controls={`app-panel-${v.sizeSlug}`}
-              id={`app-tab-${v.sizeSlug}`}
+              aria-controls={panelIdFor(v.sizeSlug)}
+              id={tabIdFor(v.sizeSlug)}
               onClick={() => onSelectTab(i)}
               className={usePremiumSizeTabs
                 ? cn('saman-size-tab', selected && 'active')
@@ -1691,9 +1745,9 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           return (
             <div
               key={v.sizeSlug}
-              id={`app-panel-${v.sizeSlug}`}
+              id={panelIdFor(v.sizeSlug)}
               role="tabpanel"
-              aria-labelledby={`app-tab-${v.sizeSlug}`}
+              aria-labelledby={tabIdFor(v.sizeSlug)}
               aria-hidden={i !== activeIndex}
               className={cn(
                 '[grid-area:1/1] min-w-0 max-w-full flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10',
@@ -1777,17 +1831,17 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   <div className="mt-2 space-y-2">
                     {panel.paragraph.split('\n\n').map((para, pi) => (
                       <p key={pi} className="text-sm leading-relaxed text-[var(--ds-color-steel)]">
-                        {rewriteC04VisiblePunctuation(para, data.productSlug)}
+                        {renderRewrittenText(para, data.productSlug)}
                       </p>
                     ))}
                   </div>
                 ) : (
                   <>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph, data.productSlug)}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{renderRewrittenText(panel.paragraph, data.productSlug)}</p>
                     {/* PC-02 revision v1.2 — Shape A second paragraph. Same class string as
                         the first, so a dataset that supplies none is byte-identical. */}
                     {panel.paragraph2 && (
-                      <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(panel.paragraph2, data.productSlug)}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-[var(--ds-color-steel)]">{renderRewrittenText(panel.paragraph2, data.productSlug)}</p>
                     )}
                   </>
                 )}

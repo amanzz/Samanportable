@@ -339,9 +339,8 @@ const C04_PRODUCT_SLUGS = new Set([
   'container-offices',
   'container-office-cabin',
   'shipping-container-office',
-  'site-office-container',
 ]);
-const C04_REVIEW_PRODUCT_IDS = new Set([1050, 1273, 1281, 1275]);
+const C04_REVIEW_PRODUCT_IDS = new Set([1050, 1273, 1281]);
 
 // C-04 closure micro-REV: the first 100 rendered description words are the
 // byte-frozen L3 zone. Outside that boundary, render em dashes as punctuation
@@ -391,11 +390,6 @@ const C04_PLATFORM_DISCLOSURES: Record<string, { marker: string; sentence: strin
     marker: 'A shipping container office starts life as a corrugated steel box, not as a set of panels.',
     sentence:
       'The shipping-form office is newly fabricated to container dimensions and hardware standards; conversion of a used ISO cargo container is quoted separately on request.',
-  },
-  'site-office-container': {
-    marker: 'The IS 2062 Corten steel frame handles years of outdoor exposure',
-    sentence:
-      'The site office container is newly fabricated in container form at our own works; used-container conversions are a separate, clearly quoted alternative.',
   },
 };
 

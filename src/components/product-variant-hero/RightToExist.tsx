@@ -127,7 +127,7 @@ export default function RightToExist({
           alt={card.imageAlt}
           width={card.imageWidth}
           height={card.imageHeight}
-          loading="lazy"
+          loading={productSlug === 'site-office-container' ? 'eager' : 'lazy'}
           sizes="(max-width: 767px) 100vw, 45vw"
         />}
       </div>
