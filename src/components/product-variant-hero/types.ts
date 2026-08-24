@@ -221,6 +221,15 @@ export interface VariantProductData {
   suppressAggregateRatingSchema?: boolean;
   /** Optional cap for Product JSON-LD image URLs. Absent keeps current pages unchanged. */
   schemaImageLimit?: number;
+  /** Optional schema brand override for route-owned product data. Absent preserves
+      the legacy Product brand name for every existing page. */
+  schemaBrandName?: string;
+  /** Optional schema image selection. `variant-first-images` emits one lead image
+      per size, instead of the first N gallery assets. */
+  schemaImageMode?: 'variant-first-images';
+  /** Optional expansion of the AggregateOffer with one ex-GST Offer per visible
+      size row. Absent keeps existing AggregateOffer output unchanged. */
+  schemaIncludeVariantOffers?: boolean;
   /** LC-05 (16 Aug 2026) - emit the sourced Product entity even while its owner-
       approved price ladder is pending. The entity carries no Offer, rating or
       review. Absent everywhere else, so the existing rich-result evidence gate
@@ -245,6 +254,11 @@ export interface VariantProductData {
   /** Per-product video metadata; overrides the preset. Read only when
       `hasProductVideo` is true. */
   video?: VariantProductVideoData;
+  /** Optional page-owned rail tiles. Used only by routes whose copy pack owns
+      labels and hrefs for the range/YMAL cards. */
+  breadcrumbText?: string;
+  relatedTiles?: Array<{ title: string; href: string; category: string; blurb: string; imageSrc?: string; imageAlt?: string }>;
+  ymalTiles?: Array<{ title: string; href: string; category: string; blurb: string; imageSrc?: string; imageAlt?: string }>;
 }
 
 /** Mirrors VariantProductVideo in ./presets.ts (kept here so a data file can

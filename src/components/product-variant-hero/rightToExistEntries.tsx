@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import bessContainerPage from '@/data/products/bess-container-page.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -442,6 +443,35 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       body2: 'Match the door, counter, private room, wet core and site approach before you agree a size; that is where a marketing office succeeds or fails.',
       ctaLabel: 'Ask for a written quotation against the approved plan',
       ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
+  'bess-container': {
+    heading: bessContainerPage.section2.heading,
+    bodyParagraphs: [
+      (
+        <>
+          {bessContainerPage.section2.paragraph1}
+        </>
+      ),
+      (
+        <>
+          {bessContainerPage.section2.paragraph2}{' '}
+          <Link className={linkClass} href={bessContainerPage.section2.linkHref}>{bessContainerPage.section2.linkAnchor}</Link>
+          {' '}
+          <Link className={linkClass} href={bessContainerPage.section2.ctaHref}>{bessContainerPage.section2.ctaText}</Link>
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: bessContainerPage.section2.cardImageSrc,
+      imageAlt: bessContainerPage.section2.cardImageAlt,
+      imageWidth: bessContainerPage.section2.cardImageWidth,
+      imageHeight: bessContainerPage.section2.cardImageHeight,
+      subheading: bessContainerPage.section2.cardH3,
+      body: bessContainerPage.section2.cardParagraph,
+      bullets: bessContainerPage.section2.cardBullets,
+      ctaLabel: bessContainerPage.section2.cardCtaText,
+      ctaHref: bessContainerPage.section2.cardCtaHref,
     },
   },
   'shipping-container-office': {

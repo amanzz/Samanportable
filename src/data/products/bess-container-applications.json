@@ -1,0 +1,123 @@
+{
+  "guidanceLine": "Six sizes are approved and each one is drawn. The GA board beside each size shows the two rack reservation zones, the service aisle and the technical bay at End D. Rack zones are reserved envelopes. They are not approved rack counts, and no energy figure is implied by length.",
+  "10ft-compact": {
+    "h2": "10 ft compact: 80 sq ft with one double service door",
+    "intro": "The smallest shell we draw, and the only one with a single access assembly. A 6 ft double door at End C is the way everything goes in and comes out. Wall A carries no door on this size, so the thermal and disconnect provision sits flat against the skin. Rack reservation runs 5.5 ft per side, and the technical bay at End D is 2.5 ft. Choose it for a pilot, a small standby bank or a single feeder, and move up a size if the rack schedule is still open.",
+    "h3": "",
+    "applications": [
+      "Rack reservation 5.5 ft per side, technical bay 2.5 ft at End D",
+      "One access assembly only, the 6 ft double door at End C",
+      "Wall A has no service door on this size, unlike the five larger units",
+      "Rs 2,31,840 ex GST, Rs 2,73,571 including 18 per cent GST"
+    ],
+    "image": {
+      "src": "/images/products/bess-container/ga/10ft-compact-approved-ga-board.webp",
+      "alt": "Approved GA board for the 10 ft compact BESS enclosure showing rack zones, aisle and technical bay",
+      "provenance": "render",
+      "width": 2400,
+      "height": 1836,
+      "fit": "contain"
+    },
+    "tab": "10 ft compact"
+  },
+  "20ft-standard": {
+    "h2": "20 ft standard: 160 sq ft and 14 ft of rack per side",
+    "intro": "The size most solar EPC buyers start from. It doubles the rack run to 14 ft per side. It also adds the Wall A service door, so a technician reaches the rear bay without opening the main doors. The End D bay grows to 4 ft, which suits an air cooled thermal design. Two rack zones still face each other across the same three foot aisle. This is the reference shell for a standard air cooled build, and the one most quotations start against.",
+    "h3": "",
+    "applications": [
+      "Rack reservation 14 ft per side, technical bay 4 ft at End D",
+      "Two access assemblies: the End C double door and a 3 ft door in the Wall A rear bay",
+      "Suits an air cooled thermal design rather than a liquid loop",
+      "Rs 4,04,800 ex GST, Rs 4,77,664 including 18 per cent GST"
+    ],
+    "image": {
+      "src": "/images/products/bess-container/ga/20ft-standard-approved-ga-board.webp",
+      "alt": "Approved GA board for the 20 ft standard BESS enclosure with 14 ft rack reservation per side",
+      "provenance": "render",
+      "width": 2400,
+      "height": 1836,
+      "fit": "contain"
+    },
+    "tab": "20 ft standard"
+  },
+  "20ft-high-cube": {
+    "h2": "20 ft high cube: a deeper bay for liquid cooling plant",
+    "intro": "Same footprint as the 20 ft standard, and the same price, but a foot taller and laid out differently inside. Rack reservation drops to 12.5 ft per side so the End D bay can grow to 5.5 ft. That extra bay depth is what a liquid cooling skid and its pipework need. The added height also gives more room above the racks for tray and duct runs. Take this one when your thermal design is liquid rather than air.",
+    "h3": "",
+    "applications": [
+      "Rack reservation 12.5 ft per side, technical bay 5.5 ft at End D",
+      "9 ft 6 in high cube height, one foot taller than the 20 ft standard",
+      "Same 160 sq ft and the same price as the 20 ft standard unit",
+      "Rs 4,04,800 ex GST, Rs 4,77,664 including 18 per cent GST"
+    ],
+    "image": {
+      "src": "/images/products/bess-container/ga/20ft-high-cube-approved-ga-board.webp",
+      "alt": "Approved GA board for the 20 ft high cube BESS enclosure with a 5.5 ft technical bay",
+      "provenance": "render",
+      "width": 2400,
+      "height": 1836,
+      "fit": "contain"
+    },
+    "tab": "20 ft high cube"
+  },
+  "30ft-modular": {
+    "h2": "30 ft modular: 240 sq ft and 23 ft of rack per side",
+    "intro": "The step between the 20 ft and 40 ft shells, and the first size where the rate per sq ft drops. Rack reservation reaches 23 ft per side while the End D bay stays at a workable 5 ft. It suits a site where a 40 ft unit will not turn or will not fit the plinth you already have. The rate per sq ft also drops here, because the workbook area band changes above 200 sq ft. Two rack zones, one aisle and one technical end, exactly as on the smaller shells.",
+    "h3": "",
+    "applications": [
+      "Rack reservation 23 ft per side, technical bay 5 ft at End D",
+      "Rs 2,208 per sq ft, a lower rate than either 20 ft shell",
+      "Fits plinths and approaches that a 40 ft unit cannot reach",
+      "Rs 5,29,920 ex GST, Rs 6,25,306 including 18 per cent GST"
+    ],
+    "image": {
+      "src": "/images/products/bess-container/ga/30ft-modular-approved-ga-board.webp",
+      "alt": "Approved GA board for the 30 ft modular BESS enclosure with 23 ft rack reservation per side",
+      "provenance": "render",
+      "width": 2400,
+      "height": 1836,
+      "fit": "contain"
+    },
+    "tab": "30 ft modular"
+  },
+  "40ft-standard": {
+    "h2": "40 ft standard: 320 sq ft and 32 ft of rack per side",
+    "intro": "The longest rack run in the range. At 32 ft per side it carries more reserved rack length than any other shell we draw. The 6 ft End D bay still leaves room for an air cooled plant and the PCS interface wall. Site access matters more here than on any other size. A 40 ft unit needs a straight approach, a level plinth and a crane position that will still work on the day the racks arrive. Confirm the route before you fix the size.",
+    "h3": "",
+    "applications": [
+      "Rack reservation 32 ft per side, technical bay 6 ft at End D",
+      "The longest reserved rack run of the six approved sizes",
+      "Needs a straight approach, a level plinth and a planned crane position",
+      "Rs 6,99,200 ex GST, Rs 8,25,056 including 18 per cent GST"
+    ],
+    "image": {
+      "src": "/images/products/bess-container/ga/40ft-standard-approved-ga-board.webp",
+      "alt": "Approved GA board for the 40 ft standard BESS enclosure with 32 ft rack reservation per side",
+      "provenance": "render",
+      "width": 2400,
+      "height": 1836,
+      "fit": "contain"
+    },
+    "tab": "40 ft standard"
+  },
+  "40ft-high-cube": {
+    "h2": "40 ft high cube: the deepest technical bay in the range",
+    "intro": "Same 320 sq ft and the same price as the 40 ft standard, with the trade made the other way. Rack reservation comes down to 30 ft per side so the End D bay can open out to 8 ft, the deepest we draw. Utility scale work usually wants that depth. Liquid cooling plant, a PCS interface and a service disconnect zone all compete for the same end of the box. The high cube height helps again above the racks.",
+    "h3": "",
+    "applications": [
+      "Rack reservation 30 ft per side, technical bay 8 ft at End D, the deepest in the range",
+      "9 ft 6 in high cube height for tray, duct and pipe runs above the racks",
+      "Two feet of rack traded for two feet of bay against the 40 ft standard",
+      "Rs 6,99,200 ex GST, Rs 8,25,056 including 18 per cent GST"
+    ],
+    "image": {
+      "src": "/images/products/bess-container/ga/40ft-high-cube-approved-ga-board.webp",
+      "alt": "Approved GA board for the 40 ft high cube BESS enclosure with the 8 ft technical bay",
+      "provenance": "render",
+      "width": 2400,
+      "height": 1836,
+      "fit": "contain"
+    },
+    "tab": "40 ft high cube"
+  }
+}

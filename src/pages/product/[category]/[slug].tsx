@@ -157,6 +157,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // opt-ins as every page above, no new styling.
   'container-office-cabin',
   'container-marketing-office',
+  'bess-container',
   'shipping-container-office',
   'containerized-data-center',
 ]);
@@ -841,6 +842,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
     const currentSlug = transformedProduct?.slug || slug;
+    if (currentSlug === 'bess-container' && variantData?.relatedTiles?.length) {
+      return variantData.relatedTiles;
+    }
     if (isC16PanelSlug(currentSlug)) {
       return getC16PanelSiblingRail(currentSlug);
     }
@@ -889,7 +893,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     }
 
     return built;
-  }, [slug, transformedProduct?.slug, transformedRelatedProducts]);
+  }, [slug, transformedProduct?.slug, transformedRelatedProducts, variantData?.relatedTiles]);
 
   const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
   const embeddedCalculatorSummary = useMemo(() => (
@@ -930,6 +934,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         .replace(/\s*[\u2013\u2014]\s*/g, ' - ')
         .replace(/waterproof/gi, 'sealed');
     }
+    if (slug === 'bess-container') return html.replace(/\s*[\u2013\u2014]\s*/g, ' - ');
     return slug === CMO_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
   }, [category, slug, embeddedCalculatorMapping, product?.name]);
 
@@ -1089,7 +1094,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   the SAME array as the BreadcrumbList JSON-LD above, so they match
                   exactly: Home › Products › {Cluster} › {Product}. */}
               {slug !== 'shipping-container-office' && (
-                <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
+                <>
+                  <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
+                  {slug === 'bess-container' && variantData?.breadcrumbText && (
+                    <span className="sr-only">{variantData.breadcrumbText}</span>
+                  )}
+                </>
               )}
               <Co04SsrManifest data={variantData} />
 
@@ -1136,16 +1146,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   sizeEyebrowText={
                     slug === 'containerized-data-center'
                       ? ''
-                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'shipping-container-office'
-                      ? 'Choose your size - six factory-built options'
-                      : undefined
+                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'bess-container' || slug === 'shipping-container-office'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
                   // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
                   // anchors preserved byte-identically. Same existing opt-in
                   // as accommodation-container, additive to this one slug.
-                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'shipping-container-office'}
+                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'bess-container' || slug === 'shipping-container-office'}
                   explorerHidePanelImages={slug === 'accommodation-container'}
                   deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
                   renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}
@@ -1472,6 +1480,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   items={CO04_YMAL_ITEMS}
                   subline={containerizedDataCenterRelated.ymalIntro}
                   useItemImageAltVerbatim
+                />
+              )}
+              {slug === 'bess-container' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={null}
                 />
               )}
 
